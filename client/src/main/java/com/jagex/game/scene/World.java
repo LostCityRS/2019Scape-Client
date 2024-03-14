@@ -39,22 +39,22 @@ import java.util.Iterator;
 public class World {
 
 	@ObfuscatedName("rl.e")
-	public boolean field5036;
+	public boolean asyncRebuilding;
 
 	@ObfuscatedName("rl.n")
-	public RebuildType field5019;
+	public RebuildType rebuildType;
 
 	@ObfuscatedName("rl.m")
 	public RebuildType field5020;
 
 	@ObfuscatedName("rl.k")
-	public BuildAreaSize field5021;
+	public BuildAreaSize buildAreaSize;
 
 	@ObfuscatedName("rl.f")
-	public ClientMapLoader field5033;
+	public ClientMapLoader underwaterMapLoader;
 
 	@ObfuscatedName("rl.w")
-	public ClientMapLoader field5023;
+	public ClientMapLoader mapLoader;
 
 	@ObfuscatedName("rl.l")
 	public CoordGrid field5018 = new CoordGrid();
@@ -69,13 +69,13 @@ public class World {
 	public int field5059;
 
 	@ObfuscatedName("rl.d")
-	public int field5028;
+	public int mapSizeX;
 
 	@ObfuscatedName("rl.c")
-	public int field5043;
+	public int mapSizeZ;
 
 	@ObfuscatedName("rl.r")
-	public Scene field5030;
+	public Scene scene;
 
 	@ObfuscatedName("rl.v")
 	public EnvironmentManager field5062;
@@ -114,7 +114,7 @@ public class World {
 	public byte[][][] field5029;
 
 	@ObfuscatedName("rl.t")
-	public RebuildStage field5026;
+	public RebuildStage rebuildStage;
 
 	@ObfuscatedName("rl.ae")
 	public int field5044 = 0;
@@ -123,7 +123,7 @@ public class World {
 	public int field5045 = 1;
 
 	@ObfuscatedName("rl.ah")
-	public int field5046 = 0;
+	public int rebuildLocsCount = 0;
 
 	@ObfuscatedName("rl.al")
 	public int field5047 = 1;
@@ -132,28 +132,28 @@ public class World {
 	public int field5048;
 
 	@ObfuscatedName("rl.ai")
-	public int field5049 = 0;
+	public int rebuildMapSquaresCount = 0;
 
 	@ObfuscatedName("rl.aw")
-	public int[] field5054;
+	public int[] rebuildMapSquares;
 
 	@ObfuscatedName("rl.as")
-	public int[] field5051;
+	public int[] rebuildMapSquaresGroupIds;
 
 	@ObfuscatedName("rl.at")
-	public byte[][] field5052;
+	public byte[][] rebuildMapSquaresLands;
 
 	@ObfuscatedName("rl.ad")
-	public byte[][] field5053;
+	public byte[][] rebuildMapSquaresLocs;
 
 	@ObfuscatedName("rl.am")
-	public byte[][] field5024;
+	public byte[][] rebuildMapSquaresNpcs;
 
 	@ObfuscatedName("rl.au")
-	public byte[][] field5055;
+	public byte[][] rebuildMapSquaresUnderwaterLands;
 
 	@ObfuscatedName("rl.ar")
-	public byte[][] field5031;
+	public byte[][] rebuildMapSquaresUnderwaterLocs;
 
 	@ObfuscatedName("rl.ap")
 	public int[][][] field5057;
@@ -171,20 +171,20 @@ public class World {
 	public HashMap field5061 = new HashMap();
 
 	@ObfuscatedName("rl.aj")
-	public int field5027;
+	public int npcViewDistance;
 
-	public World(boolean arg0) {
-		this.field5036 = arg0;
+	public World(boolean asyncRebuilding) {
+		this.asyncRebuilding = asyncRebuilding;
 	}
 
 	@ObfuscatedName("rl.e(I)Lrc;")
 	public RebuildType method7828() {
-		return this.field5019;
+		return this.rebuildType;
 	}
 
 	@ObfuscatedName("rl.n(I)Lrg;")
 	public RebuildStage method7724() {
-		return this.field5026;
+		return this.rebuildStage;
 	}
 
 	@ObfuscatedName("rl.m(I)I")
@@ -194,7 +194,7 @@ public class World {
 
 	@ObfuscatedName("rl.k(I)I")
 	public int method7726() {
-		return 100 - this.field5046 * 100 / this.field5047;
+		return 100 - this.rebuildLocsCount * 100 / this.field5047;
 	}
 
 	@ObfuscatedName("rl.f(I)Lve;")
@@ -204,12 +204,12 @@ public class World {
 
 	@ObfuscatedName("rl.w(I)I")
 	public int method7728() {
-		return this.field5028;
+		return this.mapSizeX;
 	}
 
 	@ObfuscatedName("rl.l(S)I")
 	public int method7758() {
-		return this.field5043;
+		return this.mapSizeZ;
 	}
 
 	@ObfuscatedName("rl.u(I)Ltw;")
@@ -238,13 +238,13 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.r(I)Ltx;")
-	public Scene method7743() {
-		return this.field5030;
+	public Scene getScene() {
+		return this.scene;
 	}
 
 	@ObfuscatedName("rl.v(II)[[B")
 	public byte[][] method7736(int arg0) {
-		return this.field5023 == null || this.field5023.field4517 == null || this.field5023.field4517[arg0] == null ? (byte[][]) null : this.field5023.field4517[arg0];
+		return this.mapLoader == null || this.mapLoader.field4517 == null || this.mapLoader.field4517[arg0] == null ? (byte[][]) null : this.mapLoader.field4517[arg0];
 	}
 
 	@ObfuscatedName("rl.o(I)Lqx;")
@@ -284,7 +284,7 @@ public class World {
 
 	@ObfuscatedName("rl.a(I)Laih;")
 	public ClientMapLoader method7744() {
-		return this.field5023;
+		return this.mapLoader;
 	}
 
 	@ObfuscatedName("rl.g(Laop;I)V")
@@ -301,20 +301,20 @@ public class World {
 
 	@ObfuscatedName("rl.j(B)V")
 	public void method7747() {
-		if (this.field5030 != null) {
+		if (this.scene != null) {
 			PickableEntity.method15000();
-			this.field5061 = this.field5030.method8733();
-			this.field5030.field6959.method8680();
-			this.field5030 = null;
+			this.field5061 = this.scene.method8733();
+			this.scene.field6959.method8680();
+			this.scene = null;
 		}
 	}
 
 	@ObfuscatedName("rl.t(I)V")
 	public void method7729() {
-		this.field5026 = RebuildStage.field5007;
+		this.rebuildStage = RebuildStage.field5007;
 		this.field5044 = 0;
 		this.field5045 = 1;
-		this.field5046 = 0;
+		this.rebuildLocsCount = 0;
 		this.field5047 = 1;
 		this.field5048 = 0;
 	}
@@ -325,7 +325,7 @@ public class World {
 		if (this.field5062 != null && arg0) {
 			var2 = this.field5062.method9981();
 		}
-		this.field5062 = new EnvironmentManager(Client.field8198, Client.spritesJs5, this.field5028 >> 3, this.field5043 >> 3);
+		this.field5062 = new EnvironmentManager(Client.renderer, Client.spritesJs5, this.mapSizeX >> 3, this.mapSizeZ >> 3);
 		if (var2 != null) {
 			this.field5062.method9980(this, var2, 0);
 		}
@@ -339,22 +339,22 @@ public class World {
 	@ObfuscatedName("rl.ah(B)V")
 	public void method7820() {
 		this.field5042 = 200;
-		if (this.field5028 == 0) {
+		if (this.mapSizeX == 0) {
 			this.field5034 = 430;
 		} else {
-			this.field5034 = (int) ((double) (this.field5028) * 34.46D);
+			this.field5034 = (int) ((double) (this.mapSizeX) * 34.46D);
 		}
 		this.field5034 <<= 0x2;
-		if (Client.field8198.method2130()) {
+		if (Client.renderer.method2130()) {
 			this.field5034 += 512;
 		}
 	}
 
 	@ObfuscatedName("rl.al(Lrl;I)V")
 	public void method7752(World arg0) {
-		boolean var2 = arg0.field5036;
-		arg0.field5036 = this.field5036;
-		this.field5036 = var2;
+		boolean var2 = arg0.asyncRebuilding;
+		arg0.asyncRebuilding = this.asyncRebuilding;
+		this.asyncRebuilding = var2;
 		RebuildType var3 = arg0.field5020;
 		arg0.field5020 = this.field5020;
 		this.field5020 = var3;
@@ -365,18 +365,18 @@ public class World {
 
 	@ObfuscatedName("rl.ac(B)V")
 	public void method7753() {
-		if (this.field5036) {
+		if (this.asyncRebuilding) {
 			this.method7729();
 			this.field5060 = -1L;
 			World var1 = Client.world;
-			this.field5049 = var1.field5049;
-			this.field5054 = var1.field5054;
-			this.field5051 = var1.field5051;
-			this.field5052 = var1.field5052;
-			this.field5053 = var1.field5053;
-			this.field5024 = var1.field5024;
-			this.field5055 = var1.field5055;
-			this.field5031 = var1.field5031;
+			this.rebuildMapSquaresCount = var1.rebuildMapSquaresCount;
+			this.rebuildMapSquares = var1.rebuildMapSquares;
+			this.rebuildMapSquaresGroupIds = var1.rebuildMapSquaresGroupIds;
+			this.rebuildMapSquaresLands = var1.rebuildMapSquaresLands;
+			this.rebuildMapSquaresLocs = var1.rebuildMapSquaresLocs;
+			this.rebuildMapSquaresNpcs = var1.rebuildMapSquaresNpcs;
+			this.rebuildMapSquaresUnderwaterLands = var1.rebuildMapSquaresUnderwaterLands;
+			this.rebuildMapSquaresUnderwaterLocs = var1.rebuildMapSquaresUnderwaterLocs;
 			this.field5032 = var1.field5032;
 			this.field5062 = var1.field5062;
 			this.field5057 = var1.field5057;
@@ -387,14 +387,14 @@ public class World {
 			this.field5040 = var1.field5040;
 			this.field5041 = var1.field5041;
 			this.field5029 = var1.field5029;
-			this.field5019 = var1.field5019;
-			this.field5021 = var1.field5021;
+			this.rebuildType = var1.rebuildType;
+			this.buildAreaSize = var1.buildAreaSize;
 			this.field5018 = var1.field5018;
 			this.field5025 = var1.field5025;
 			this.field5022 = var1.field5022;
 			this.field5059 = var1.field5059;
-			this.field5028 = var1.field5028;
-			this.field5043 = var1.field5043;
+			this.mapSizeX = var1.mapSizeX;
+			this.mapSizeZ = var1.mapSizeZ;
 		} else if (Client.state == 4) {
 			Client.setState(10);
 		} else if (Client.state == 13) {
@@ -409,22 +409,22 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ai(Lrt;I)V")
-	public void method7749(RebuildRequest arg0) {
-		this.field5019 = arg0.field5017;
-		if (RebuildType.field5063 == this.field5019) {
+	public void rebuildMap(RebuildRequest request) {
+		this.rebuildType = request.rebuildType;
+		if (RebuildType.field5063 == this.rebuildType) {
 			this.method7773();
-		} else if (RebuildType.field5071 == this.field5019) {
-			this.method7756(arg0.field5016);
-		} else if (RebuildType.field5064 == this.field5019) {
+		} else if (RebuildType.REBUILD_NORMAL == this.rebuildType) {
+			this.rebuildNormalMap(request.buf);
+		} else if (RebuildType.field5064 == this.rebuildType) {
 			this.method7824();
-		} else if (this.field5019.method7887()) {
-			this.method7776(arg0.field5016);
+		} else if (this.rebuildType.isRegionType()) {
+			this.rebuildRegionMap(request.buf);
 		}
 	}
 
 	@ObfuscatedName("rl.aw(B)V")
 	public void method7773() {
-		this.method7791(BuildAreaSize.method3061(Client.preferences.buildArea.getValue()));
+		this.setBuildAreaSize(BuildAreaSize.buildAreaSizeForId(Client.preferences.buildArea.getValue()));
 		int var1 = this.field5018.x;
 		int var2 = this.field5018.z;
 		int var3 = (Client.field7956 >> 12) + (var1 >> 3);
@@ -433,25 +433,25 @@ public class World {
 		Client.field4826 = 0;
 		Client.field4490.method19118(8, 8);
 		byte var5 = 18;
-		this.field5054 = new int[var5];
-		this.field5051 = new int[var5];
-		this.field5052 = new byte[var5][];
-		this.field5053 = new byte[var5][];
-		this.field5024 = new byte[var5][];
-		this.field5055 = new byte[var5][];
-		this.field5031 = new byte[var5][];
+		this.rebuildMapSquares = new int[var5];
+		this.rebuildMapSquaresGroupIds = new int[var5];
+		this.rebuildMapSquaresLands = new byte[var5][];
+		this.rebuildMapSquaresLocs = new byte[var5][];
+		this.rebuildMapSquaresNpcs = new byte[var5][];
+		this.rebuildMapSquaresUnderwaterLands = new byte[var5][];
+		this.rebuildMapSquaresUnderwaterLocs = new byte[var5][];
 		int var6 = 0;
-		for (int var7 = (var3 - (this.field5028 >> 4)) / 8; var7 <= ((this.field5028 >> 4) + var3) / 8; var7++) {
-			for (int var8 = (var4 - (this.field5043 >> 4)) / 8; var8 <= ((this.field5043 >> 4) + var4) / 8; var8++) {
-				int var9 = (var7 << 8) + var8;
-				if (Client.mapsJs5.isGroupValid(this.method7795(var7, var8), Js5MapFile.LAND.id)) {
-					this.field5054[var6] = var9;
-					this.field5051[var6] = this.method7795(var7, var8);
+		for (int var7 = (var3 - (this.mapSizeX >> 4)) / 8; var7 <= ((this.mapSizeX >> 4) + var3) / 8; var7++) {
+			for (int var8 = (var4 - (this.mapSizeZ >> 4)) / 8; var8 <= ((this.mapSizeZ >> 4) + var4) / 8; var8++) {
+				int mapSquareId = (var7 << 8) + var8;
+				if (Client.mapsJs5.isGroupValid(this.mapSquareGroupId(var7, var8), Js5MapFile.LAND.id)) {
+					this.rebuildMapSquares[var6] = mapSquareId;
+					this.rebuildMapSquaresGroupIds[var6] = this.mapSquareGroupId(var7, var8);
 					var6++;
 				}
 			}
 		}
-		this.field5049 = var6;
+		this.rebuildMapSquaresCount = var6;
 		byte var10;
 		if (Client.state == 4) {
 			var10 = 10;
@@ -468,65 +468,65 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.as(Lase;I)V")
-	public void method7756(PacketBit arg0) {
-		int var2 = arg0.g2_alt2();
-		this.field5027 = arg0.g1();
-		int var3 = arg0.g1_alt3();
-		int var4 = arg0.g1();
-		int var5 = arg0.g2_alt2();
-		boolean var6 = arg0.g1_alt3() == 1;
-		if (!this.field5036) {
+	public void rebuildNormalMap(PacketBit arg0) {
+		int z = arg0.g2_alt2();
+		this.npcViewDistance = arg0.g1();
+		int count = arg0.g1_alt3();
+		int buildAreaSize = arg0.g1();
+		int x = arg0.g2_alt2();
+		boolean forceRebuild = arg0.g1_alt3() == 1;
+		if (!this.asyncRebuilding) {
 			this.method7854();
 		}
-		this.method7791(BuildAreaSize.method3061(var4));
-		this.field5054 = new int[var3];
-		this.field5051 = new int[var3];
-		this.field5052 = new byte[var3][];
-		this.field5053 = new byte[var3][];
-		this.field5024 = null;
-		this.field5055 = new byte[var3][];
-		this.field5031 = new byte[var3][];
-		int var7 = 0;
-		for (int var8 = (var2 - (this.field5028 >> 4)) / 8; var8 <= ((this.field5028 >> 4) + var2) / 8; var8++) {
-			for (int var9 = (var5 - (this.field5043 >> 4)) / 8; var9 <= ((this.field5043 >> 4) + var5) / 8; var9++) {
-				if (Client.mapsJs5.isGroupValid(this.method7795(var8, var9), Js5MapFile.LAND.id)) {
-					this.field5054[var7] = (var8 << 8) + var9;
-					this.field5051[var7] = this.method7795(var8, var9);
-					var7++;
+		this.setBuildAreaSize(BuildAreaSize.buildAreaSizeForId(buildAreaSize));
+		this.rebuildMapSquares = new int[count];
+		this.rebuildMapSquaresGroupIds = new int[count];
+		this.rebuildMapSquaresLands = new byte[count][];
+		this.rebuildMapSquaresLocs = new byte[count][];
+		this.rebuildMapSquaresNpcs = null;
+		this.rebuildMapSquaresUnderwaterLands = new byte[count][];
+		this.rebuildMapSquaresUnderwaterLocs = new byte[count][];
+		int mapSquaresCount = 0;
+		for (int zoneX = (z - (this.mapSizeX >> 4)) / 8; zoneX <= ((this.mapSizeX >> 4) + z) / 8; zoneX++) {
+			for (int zoneZ = (x - (this.mapSizeZ >> 4)) / 8; zoneZ <= ((this.mapSizeZ >> 4) + x) / 8; zoneZ++) {
+				if (Client.mapsJs5.isGroupValid(this.mapSquareGroupId(zoneX, zoneZ), Js5MapFile.LAND.id)) {
+					this.rebuildMapSquares[mapSquaresCount] = (zoneX << 8) + zoneZ;
+					this.rebuildMapSquaresGroupIds[mapSquaresCount] = this.mapSquareGroupId(zoneX, zoneZ);
+					mapSquaresCount++;
 				}
 			}
 		}
-		this.field5049 = var7;
-		this.method7829(var2, var5, 3, var6);
+		this.rebuildMapSquaresCount = mapSquaresCount;
+		this.method7829(z, x, 3, forceRebuild);
 	}
 
 	@ObfuscatedName("rl.at(Lase;I)V")
-	public void method7776(PacketBit arg0) {
-		this.field5027 = arg0.g1();
+	public void rebuildRegionMap(PacketBit arg0) {
+		this.npcViewDistance = arg0.g1();
 		int var2 = arg0.g1();
 		int var3 = arg0.g1();
 		if (var3 == 1) {
-			this.field5019 = RebuildType.field5066;
+			this.rebuildType = RebuildType.REBUILD_REGION;
 		} else if (var3 == 2) {
-			this.field5019 = RebuildType.field5067;
+			this.rebuildType = RebuildType.field5067;
 		} else if (var3 == 3) {
-			this.field5019 = RebuildType.field5068;
+			this.rebuildType = RebuildType.field5068;
 		} else if (var3 == 4) {
-			this.field5019 = RebuildType.field5069;
+			this.rebuildType = RebuildType.field5069;
 		}
 		int var4 = arg0.g2();
 		int var5 = arg0.g2_alt1();
 		int var6 = arg0.g1_alt1();
 		boolean var7 = (var6 & 0x1) != 0;
-		if (!this.field5036) {
+		if (!this.asyncRebuilding) {
 			this.method7854();
 		}
-		this.method7791(BuildAreaSize.method3061(var2));
+		this.setBuildAreaSize(BuildAreaSize.buildAreaSizeForId(var2));
 		arg0.accessBits();
 		HashSet var8 = new HashSet();
 		for (int var9 = 0; var9 < 4; var9++) {
-			for (int var10 = 0; var10 < this.field5028 >> 3; var10++) {
-				for (int var11 = 0; var11 < this.field5043 >> 3; var11++) {
+			for (int var10 = 0; var10 < this.mapSizeX >> 3; var10++) {
+				for (int var11 = 0; var11 < this.mapSizeZ >> 3; var11++) {
 					int var12 = arg0.gBit(1);
 					if (var12 == 1) {
 						int var13 = arg0.gBit(26);
@@ -543,24 +543,24 @@ public class World {
 		}
 		arg0.accessBytes();
 		int var17 = var8.size();
-		this.field5054 = new int[var17];
-		this.field5051 = new int[var17];
-		this.field5052 = new byte[var17][];
-		this.field5053 = new byte[var17][];
-		this.field5024 = null;
-		this.field5055 = new byte[var17][];
-		this.field5031 = new byte[var17][];
+		this.rebuildMapSquares = new int[var17];
+		this.rebuildMapSquaresGroupIds = new int[var17];
+		this.rebuildMapSquaresLands = new byte[var17][];
+		this.rebuildMapSquaresLocs = new byte[var17][];
+		this.rebuildMapSquaresNpcs = null;
+		this.rebuildMapSquaresUnderwaterLands = new byte[var17][];
+		this.rebuildMapSquaresUnderwaterLocs = new byte[var17][];
 		int var18 = 0;
 		for (int var19 = 0; var19 < 4; var19++) {
-			for (int var20 = 0; var20 < this.field5028 >> 3; var20++) {
-				for (int var21 = 0; var21 < this.field5043 >> 3; var21++) {
+			for (int var20 = 0; var20 < this.mapSizeX >> 3; var20++) {
+				for (int var21 = 0; var21 < this.mapSizeZ >> 3; var21++) {
 					int var22 = this.field5057[var19][var20][var21];
 					if (var22 != -1) {
 						int var23 = var22 >> 14 & 0x3FF;
 						int var24 = var22 >> 3 & 0x7FF;
 						int var25 = (var23 / 8 << 8) + var24 / 8;
 						for (int var26 = 0; var26 < var18; var26++) {
-							if (this.field5054[var26] == var25) {
+							if (this.rebuildMapSquares[var26] == var25) {
 								var25 = -1;
 								break;
 							}
@@ -568,9 +568,9 @@ public class World {
 						if (var25 != -1) {
 							int var27 = var25 >> 8 & 0xFF;
 							int var28 = var25 & 0xFF;
-							if (Client.mapsJs5.isGroupValid(this.method7795(var27, var28), Js5MapFile.LAND.id)) {
-								this.field5054[var18] = var25;
-								this.field5051[var18] = this.method7795(var27, var28);
+							if (Client.mapsJs5.isGroupValid(this.mapSquareGroupId(var27, var28), Js5MapFile.LAND.id)) {
+								this.rebuildMapSquares[var18] = var25;
+								this.rebuildMapSquaresGroupIds[var18] = this.mapSquareGroupId(var27, var28);
 								var18++;
 							}
 						}
@@ -578,17 +578,17 @@ public class World {
 				}
 			}
 		}
-		this.field5049 = var18;
+		this.rebuildMapSquaresCount = var18;
 		this.method7829(var4, var5, 3, var7);
 	}
 
 	@ObfuscatedName("rl.ad(I)V")
 	public void method7824() {
-		this.field5020 = this.field5019;
-		this.method7791(BuildAreaSize.SIZE_104);
+		this.field5020 = this.rebuildType;
+		this.setBuildAreaSize(BuildAreaSize.SIZE_104);
 		for (int var1 = 0; var1 < 4; var1++) {
-			for (int var2 = 0; var2 < this.field5028 >> 3; var2++) {
-				for (int var3 = 0; var3 < this.field5043 >> 3; var3++) {
+			for (int var2 = 0; var2 < this.mapSizeX >> 3; var2++) {
+				for (int var3 = 0; var3 < this.mapSizeZ >> 3; var3++) {
 					this.field5057[var1][var2][var3] = -1;
 				}
 			}
@@ -639,13 +639,13 @@ public class World {
 			}
 		}
 		int var22 = Client.field10769;
-		this.field5054 = new int[var22];
-		this.field5051 = new int[var22];
-		this.field5052 = new byte[var22][];
-		this.field5053 = new byte[var22][];
-		this.field5024 = null;
-		this.field5055 = new byte[var22][];
-		this.field5031 = new byte[var22][];
+		this.rebuildMapSquares = new int[var22];
+		this.rebuildMapSquaresGroupIds = new int[var22];
+		this.rebuildMapSquaresLands = new byte[var22][];
+		this.rebuildMapSquaresLocs = new byte[var22][];
+		this.rebuildMapSquaresNpcs = null;
+		this.rebuildMapSquaresUnderwaterLands = new byte[var22][];
+		this.rebuildMapSquaresUnderwaterLocs = new byte[var22][];
 		int var23 = 0;
 		for (CutsceneTemplate var24 = (CutsceneTemplate) CutsceneManager.field1712.method14191(); var24 != null; var24 = (CutsceneTemplate) CutsceneManager.field1712.method14161()) {
 			int var25 = var24.field11337 >>> 3;
@@ -664,49 +664,49 @@ public class World {
 				label84: for (int var32 = var26 >>> 3; var32 <= var30; var32++) {
 					int var33 = var31 << 8 | var32;
 					for (int var34 = 0; var34 < var23; var34++) {
-						if (this.field5054[var34] == var33) {
+						if (this.rebuildMapSquares[var34] == var33) {
 							continue label84;
 						}
 					}
-					if (Client.mapsJs5.isGroupValid(this.method7795(var31, var32), Js5MapFile.LAND.id)) {
-						this.field5054[var23] = var33;
-						this.field5051[var23] = this.method7795(var31, var32);
+					if (Client.mapsJs5.isGroupValid(this.mapSquareGroupId(var31, var32), Js5MapFile.LAND.id)) {
+						this.rebuildMapSquares[var23] = var33;
+						this.rebuildMapSquaresGroupIds[var23] = this.mapSquareGroupId(var31, var32);
 						var23++;
 					}
 				}
 			}
 		}
-		this.field5049 = var23;
-		this.method7829(this.field5028 >> 4, this.field5043 >> 4, 3, false);
+		this.rebuildMapSquaresCount = var23;
+		this.method7829(this.mapSizeX >> 4, this.mapSizeZ >> 4, 3, false);
 	}
 
 	@ObfuscatedName("rl.am(III)I")
-	public int method7795(int arg0, int arg1) {
-		return arg0 | arg1 << 7;
+	public int mapSquareGroupId(int zoneX, int zoneZ) {
+		return zoneX | zoneZ << 7;
 	}
 
 	@ObfuscatedName("rl.au(Lib;I)V")
-	public void method7791(BuildAreaSize arg0) {
-		if (this.field5021 == arg0) {
+	public void setBuildAreaSize(BuildAreaSize buildAreaSize) {
+		if (this.buildAreaSize == buildAreaSize) {
 			return;
 		}
-		this.field5028 = this.field5043 = arg0.size;
-		this.field5057 = new int[4][this.field5028 >> 3][this.field5043 >> 3];
-		this.field5040 = new int[this.field5028][this.field5043];
-		this.field5041 = new int[this.field5028][this.field5043];
-		this.field5029 = new byte[4][this.field5028][this.field5043];
-		this.field5032 = new LinkMap(4, this.field5028, this.field5043);
+		this.mapSizeX = this.mapSizeZ = buildAreaSize.size;
+		this.field5057 = new int[4][this.mapSizeX >> 3][this.mapSizeZ >> 3];
+		this.field5040 = new int[this.mapSizeX][this.mapSizeZ];
+		this.field5041 = new int[this.mapSizeX][this.mapSizeZ];
+		this.field5029 = new byte[4][this.mapSizeX][this.mapSizeZ];
+		this.field5032 = new LinkMap(4, this.mapSizeX, this.mapSizeZ);
 		this.method7737(false);
 		Minimap.method829();
-		this.field5021 = arg0;
+		this.buildAreaSize = buildAreaSize;
 	}
 
 	@ObfuscatedName("rl.ar(I)V")
 	public void method7854() {
-		if (RebuildType.field5064 == this.field5019 || RebuildType.field5064 == this.field5020) {
+		if (RebuildType.field5064 == this.rebuildType || RebuildType.field5064 == this.field5020) {
 			return;
 		}
-		if (RebuildType.field5066 == this.field5019 || RebuildType.field5068 == this.field5019 || this.field5020 != this.field5019 && (RebuildType.field5071 == this.field5019 || RebuildType.field5071 == this.field5020)) {
+		if (RebuildType.REBUILD_REGION == this.rebuildType || RebuildType.field5068 == this.rebuildType || this.field5020 != this.rebuildType && (RebuildType.REBUILD_NORMAL == this.rebuildType || RebuildType.REBUILD_NORMAL == this.field5020)) {
 			Iterator var1 = Client.field10838.iterator();
 			while (var1.hasNext()) {
 				ObjectWrapper var2 = (ObjectWrapper) var1.next();
@@ -716,37 +716,37 @@ public class World {
 			Client.field10906 = 0;
 			Client.field10838.method14499();
 		}
-		this.field5020 = this.field5019;
+		this.field5020 = this.rebuildType;
 	}
 
 	@ObfuscatedName("rl.ap(IIIZB)V")
-	public void method7829(int arg0, int arg1, int arg2, boolean arg3) {
+	public void method7829(int arg0, int arg1, int arg2, boolean forceRebuild) {
 		if (Client.field10863 == 4) {
-			if (this.field5036) {
+			if (this.asyncRebuilding) {
 				throw new IllegalStateException();
 			}
 			Client.field10863 = 3;
 			Client.field10862 = -1;
 		}
-		if (!arg3 && this.field5022 == arg0 && this.field5059 == arg1) {
+		if (!forceRebuild && this.field5022 == arg0 && this.field5059 == arg1) {
 			return;
 		}
 		this.field5022 = arg0;
 		this.field5059 = arg1;
-		if (!this.field5036) {
+		if (!this.asyncRebuilding) {
 			Client.setState(arg2);
-			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language), true, Client.field8198, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language), true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
 		if (this.field5018 == null) {
 			this.field5025 = new CoordGrid(0, 0, 0);
 		} else {
 			this.field5025 = this.field5018;
 		}
-		this.field5018 = new CoordGrid(0, (this.field5022 - (this.field5028 >> 4)) * 8, (this.field5059 - (this.field5043 >> 4)) * 8);
-		this.field5035 = WorldMap.method8511(this.field5028 / 2 + this.field5018.x, this.field5028 / 2 + this.field5018.z);
+		this.field5018 = new CoordGrid(0, (this.field5022 - (this.mapSizeX >> 4)) * 8, (this.field5059 - (this.mapSizeZ >> 4)) * 8);
+		this.field5035 = WorldMap.method8511(this.mapSizeX / 2 + this.field5018.x, this.mapSizeX / 2 + this.field5018.z);
 		this.field5058 = null;
 		this.field5060 = -1L;
-		if (!this.field5036) {
+		if (!this.asyncRebuilding) {
 			this.method7762(arg2);
 		}
 	}
@@ -774,8 +774,8 @@ public class World {
 		} else {
 			boolean var9 = false;
 			Client.field11011 = 0;
-			int var10 = this.field5028 - 512;
-			int var11 = this.field5043 - 512;
+			int var10 = this.mapSizeX - 512;
+			int var11 = this.mapSizeZ - 512;
 			for (int var12 = 0; var12 < Client.field10906; var12++) {
 				ObjectWrapper var13 = Client.field10839[var12];
 				if (var13 != null) {
@@ -789,7 +789,7 @@ public class World {
 						for (int var17 = 0; var17 < var14.field10450.length; var17++) {
 							var14.field10450[var17] -= var2;
 							var14.field10448[var17] -= var3;
-							if (var14.field10450[var17] < 0 || var14.field10450[var17] >= this.field5028 || var14.field10448[var17] < 0 || var14.field10448[var17] >= this.field5043) {
+							if (var14.field10450[var17] < 0 || var14.field10450[var17] >= this.mapSizeX || var14.field10448[var17] < 0 || var14.field10448[var17] >= this.mapSizeZ) {
 								var16 = false;
 							}
 						}
@@ -853,7 +853,7 @@ public class World {
 				var30 = var29.length;
 				var31 = var29.width;
 			}
-			if (RebuildType.field5069 != this.field5019 && (var28.field11226 + var30 <= 0 || var28.field11228 + var31 <= 0 || var28.field11226 >= this.field5028 || var28.field11228 >= this.field5043)) {
+			if (RebuildType.field5069 != this.rebuildType && (var28.field11226 + var30 <= 0 || var28.field11228 + var31 <= 0 || var28.field11226 >= this.mapSizeX || var28.field11228 >= this.mapSizeZ)) {
 				var28.method8440();
 			}
 		}
@@ -870,7 +870,7 @@ public class World {
 				var34 = var33.length;
 				var35 = var33.width;
 			}
-			if (RebuildType.field5069 != this.field5019 && (var32.field11226 + var34 <= 0 || var32.field11228 + var35 <= 0 || var32.field11226 >= this.field5028 || var32.field11228 >= this.field5043)) {
+			if (RebuildType.field5069 != this.rebuildType && (var32.field11226 + var34 <= 0 || var32.field11228 + var35 <= 0 || var32.field11226 >= this.mapSizeX || var32.field11228 >= this.mapSizeZ)) {
 				var32.method8440();
 			}
 		}
@@ -880,12 +880,12 @@ public class World {
 			int var39 = var38 - this.field5018.x;
 			int var40 = (int) (var36.field6760 >> 14 & 0x3FFFL);
 			int var41 = var40 - this.field5018.z;
-			if (this.field5030 != null) {
-				if (var39 >= 0 && var41 >= 0 && var39 < this.field5028 && var41 < this.field5043 && var39 < this.field5030.field6910 && var41 < this.field5030.field6911) {
-					if (this.field5030.field6928 != null) {
-						this.field5030.method8742(var37, var39, var41);
+			if (this.scene != null) {
+				if (var39 >= 0 && var41 >= 0 && var39 < this.mapSizeX && var41 < this.mapSizeZ && var39 < this.scene.maxTileX && var41 < this.scene.maxTileZ) {
+					if (this.scene.levelTiles != null) {
+						this.scene.removeObjStack(var37, var39, var41);
 					}
-				} else if (RebuildType.field5069 != this.field5019) {
+				} else if (RebuildType.field5069 != this.rebuildType) {
 					var36.method8440();
 				}
 			}
@@ -910,7 +910,7 @@ public class World {
 			Client.field2626 -= var3;
 			Client.field7956 -= var2 * 512;
 			Client.field1881 -= var3 * 512;
-			if (Math.abs(var2) > this.field5028 || Math.abs(var3) > this.field5043) {
+			if (Math.abs(var2) > this.mapSizeX || Math.abs(var3) > this.mapSizeZ) {
 				this.field5062.method10019();
 			}
 		}
@@ -924,31 +924,31 @@ public class World {
 
 	@ObfuscatedName("rl.ax(I)V")
 	public void method7763() {
-		this.field5033 = null;
-		this.field5023 = null;
+		this.underwaterMapLoader = null;
+		this.mapLoader = null;
 		if (this.field5032 != null) {
 			this.field5032.method7101();
 		}
 		if (this.field5062 != null) {
 			this.field5062.method9998();
 		}
-		if (this.field5030 != null) {
-			this.field5030.field6959.method8680();
-			this.field5030 = null;
+		if (this.scene != null) {
+			this.scene.field6959.method8680();
+			this.scene = null;
 		}
 	}
 
 	@ObfuscatedName("rl.av(B)Z")
-	public boolean method7723() {
-		if (!this.field5036) {
+	public boolean rebuildScene() {
+		if (!this.asyncRebuilding) {
 			MapLogicRelated.method6969(false);
 		}
 		if (this.field5060 == -1L) {
 			this.field5060 = MonotonicTime.method3655();
 		}
 		this.field5044 = 0;
-		for (int var1 = 0; var1 < this.field5049; var1++) {
-			if (!Client.mapsJs5.method6927(this.field5051[var1])) {
+		for (int var1 = 0; var1 < this.rebuildMapSquaresCount; var1++) {
+			if (!Client.mapsJs5.method6927(this.rebuildMapSquaresGroupIds[var1])) {
 				this.field5044++;
 			}
 		}
@@ -965,79 +965,79 @@ public class World {
 			if (this.field5045 < this.field5044) {
 				this.field5045 = this.field5044;
 			}
-			this.field5026 = RebuildStage.field5006;
+			this.rebuildStage = RebuildStage.field5006;
 			return false;
 		}
-		for (int var2 = 0; var2 < this.field5049; var2++) {
-			if (this.field5052[var2] == null) {
-				this.field5052[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.LAND.id);
+		for (int index = 0; index < this.rebuildMapSquaresCount; index++) {
+			if (this.rebuildMapSquaresLands[index] == null) {
+				this.rebuildMapSquaresLands[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.LAND.id);
 			}
-			if (this.field5053[var2] == null) {
-				this.field5053[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.LOC.id);
+			if (this.rebuildMapSquaresLocs[index] == null) {
+				this.rebuildMapSquaresLocs[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.LOC.id);
 			}
-			if (this.field5055[var2] == null) {
-				this.field5055[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.UNDERWATER_LAND.id);
+			if (this.rebuildMapSquaresUnderwaterLands[index] == null) {
+				this.rebuildMapSquaresUnderwaterLands[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.UNDERWATER_LAND.id);
 			}
-			if (this.field5031[var2] == null) {
-				this.field5031[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.UNDERWATER_LOC.id);
+			if (this.rebuildMapSquaresUnderwaterLocs[index] == null) {
+				this.rebuildMapSquaresUnderwaterLocs[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.UNDERWATER_LOC.id);
 			}
-			if (this.field5024 != null && this.field5024[var2] == null) {
-				this.field5024[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.NPC.id);
+			if (this.rebuildMapSquaresNpcs != null && this.rebuildMapSquaresNpcs[index] == null) {
+				this.rebuildMapSquaresNpcs[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.NPC.id);
 			}
 		}
-		int var3 = this.field5046;
+		int var3 = this.rebuildLocsCount;
 		IntegerBox var4 = new IntegerBox(-1);
 		IntegerBox var5 = new IntegerBox(-1);
-		this.field5046 = 0;
-		for (int var6 = 0; var6 < this.field5049; var6++) {
-			byte[] var7 = this.field5053[var6];
-			if (var7 != null) {
-				int var8 = (this.field5054[var6] >> 8) * 64 - this.field5018.x;
-				int var9 = (this.field5054[var6] & 0xFF) * 64 - this.field5018.z;
-				if (this.field5019.method7887()) {
+		this.rebuildLocsCount = 0;
+		for (int index = 0; index < this.rebuildMapSquaresCount; index++) {
+			byte[] locs = this.rebuildMapSquaresLocs[index];
+			if (locs != null) {
+				int var8 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
+				int var9 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
+				if (this.rebuildType.isRegionType()) {
 					var8 = 10;
 					var9 = 10;
 				}
-				int var10 = ClientMapLoader.method4526(this.field5039, var7, var8, var9, this.field5028, this.field5043, var5, var4);
+				int var10 = ClientMapLoader.testReadLocs(this.field5039, locs, var8, var9, this.mapSizeX, this.mapSizeZ, var5, var4);
 				if (var10 > 0) {
-					this.field5046 += var10;
+					this.rebuildLocsCount += var10;
 				}
 			}
-			byte[] var11 = this.field5031[var6];
-			if (var11 != null) {
-				int var12 = (this.field5054[var6] >> 8) * 64 - this.field5018.x;
-				int var13 = (this.field5054[var6] & 0xFF) * 64 - this.field5018.z;
-				if (this.field5019.method7887()) {
+			byte[] ulocs = this.rebuildMapSquaresUnderwaterLocs[index];
+			if (ulocs != null) {
+				int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
+				int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
+				if (this.rebuildType.isRegionType()) {
 					var12 = 10;
 					var13 = 10;
 				}
-				int var14 = ClientMapLoader.method4526(this.field5039, var11, var12, var13, this.field5028, this.field5043, var5, var4);
+				int var14 = ClientMapLoader.testReadLocs(this.field5039, ulocs, var12, var13, this.mapSizeX, this.mapSizeZ, var5, var4);
 				if (var14 > 0) {
-					this.field5046 += var14;
+					this.rebuildLocsCount += var14;
 				}
 			}
 		}
-		if (this.field5046 > 0) {
-			if (this.field5046 != var3) {
+		if (this.rebuildLocsCount > 0) {
+			if (this.rebuildLocsCount != var3) {
 				this.field5048 = Client.field10903;
 			} else if (this.field5048 != 0 && Client.field10903 - this.field5048 == 1000) {
-				GraphicsPacketQueue.method5144(var5.field7958, var4.field7958, this.field5046);
+				GraphicsPacketQueue.method5144(var5.field7958, var4.field7958, this.rebuildLocsCount);
 				GraphicsPacketQueue.method9189();
 			}
-			if (this.field5047 < this.field5046) {
-				this.field5047 = this.field5046;
+			if (this.field5047 < this.rebuildLocsCount) {
+				this.field5047 = this.rebuildLocsCount;
 			}
-			this.field5026 = RebuildStage.field5005;
+			this.rebuildStage = RebuildStage.field5005;
 			return false;
 		}
-		if (!this.field5036 && RebuildStage.field5007 != this.field5026) {
-			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language) + TextUtil.BR + "(100%)", true, Client.field8198, DefaultSprites.field9184, DefaultSprites.field2657);
+		if (!this.asyncRebuilding && RebuildStage.field5007 != this.rebuildStage) {
+			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
-		this.field5026 = RebuildStage.field5008;
-		if (!this.field5036 && Client.field1798 != null) {
+		this.rebuildStage = RebuildStage.field5008;
+		if (!this.asyncRebuilding && Client.field1798 != null) {
 			Client.field1798.method3149();
 		}
-		if (!this.field5036) {
+		if (!this.asyncRebuilding) {
 			for (int var15 = 0; var15 < 2048; var15++) {
 				PlayerEntity var16 = Client.field10944[var15];
 				if (var16 != null) {
@@ -1051,144 +1051,144 @@ public class World {
 				}
 			}
 		}
-		if (!this.field5036) {
+		if (!this.asyncRebuilding) {
 			Client.method14055(true);
 		}
-		boolean var19 = false;
+		boolean underwater = false;
 		if (Client.preferences.waterDetail.getValue() == 2) {
-			for (int var20 = 0; var20 < this.field5049; var20++) {
-				if (this.field5031[var20] != null || this.field5055[var20] != null) {
-					var19 = true;
+			for (int var20 = 0; var20 < this.rebuildMapSquaresCount; var20++) {
+				if (this.rebuildMapSquaresUnderwaterLocs[var20] != null || this.rebuildMapSquaresUnderwaterLands[var20] != null) {
+					underwater = true;
 					break;
 				}
 			}
 		}
 		int var21 = DrawDistance.method17395(Client.preferences.drawDistance.getValue()).field2675;
-		if (Client.field8198.method2130()) {
+		if (Client.renderer.method2130()) {
 			var21++;
 		}
 		this.method7820();
 		this.method7763();
-		this.field5030 = new Scene(Client.field8198, 9, 4, this.field5028, this.field5043, var21, var19, Client.field8198.method2114() > 0);
-		this.field5030.method8703(false);
-		this.field5030.method8701(Client.field11005);
-		this.field5030.method8759(this.field5061);
+		this.scene = new Scene(Client.renderer, 9, 4, this.mapSizeX, this.mapSizeZ, var21, underwater, Client.renderer.method2114() > 0);
+		this.scene.method8703(false);
+		this.scene.method8701(Client.field11005);
+		this.scene.method8759(this.field5061);
 		if (Client.field11005 == 0) {
-			this.field5030.method8737(null);
+			this.scene.method8737(null);
 		} else {
-			this.field5030.method8737(DefaultSprites.field8321);
+			this.scene.method8737(DefaultSprites.field8321);
 		}
 		this.field5050 = new LocTint();
 		this.field5038 = -0.05F + (float) (Math.random() / 10.0D);
-		this.field5023 = new ClientMapLoader(this.field5030, this.field5039, 4, this.field5028, this.field5043, false, this.field5032, this.field5062);
-		this.field5023.method7136();
-		this.field5023.field4515 = Client.preferences.sceneryShadows.getValue();
-		this.field5023.field4571 = Client.preferences.waterDetail.getValue() == 2;
-		this.field5023.field4542 = Client.preferences.lightingDetail.getValue() == 1;
-		this.field5023.field4539 = Client.preferences.groundBlending.getValue() == 1;
-		this.field5023.field4511 = Client.preferences.textures.getValue() == 1;
-		if (this.field5019.method7887()) {
-			this.method7767(this.field5023, this.field5052);
+		this.mapLoader = new ClientMapLoader(this.scene, this.field5039, 4, this.mapSizeX, this.mapSizeZ, false, this.field5032, this.field5062);
+		this.mapLoader.method7136();
+		this.mapLoader.sceneryShadows = Client.preferences.sceneryShadows.getValue();
+		this.mapLoader.isWaterDetail = Client.preferences.waterDetail.getValue() == 2;
+		this.mapLoader.isLightingDetail = Client.preferences.lightingDetail.getValue() == 1;
+		this.mapLoader.isGroundBlending = Client.preferences.groundBlending.getValue() == 1;
+		this.mapLoader.isTexturing = Client.preferences.textures.getValue() == 1;
+		if (this.rebuildType.isRegionType()) {
+			this.readRegionLandscape(this.mapLoader, this.rebuildMapSquaresLands);
 		} else {
-			this.method7766(this.field5023, this.field5052);
+			this.readNormalLandscape(this.mapLoader, this.rebuildMapSquaresLands);
 		}
-		if (this.field5036) {
-			this.method7765(50);
+		if (this.asyncRebuilding) {
+			this.sleep(50);
 		}
-		this.field5062.method9991(this.field5028 >> 4, this.field5043 >> 4);
+		this.field5062.method9991(this.mapSizeX >> 4, this.mapSizeZ >> 4);
 		this.field5062.method10003(this);
-		if (var19) {
-			this.field5030.method8703(true);
-			this.field5033 = new ClientMapLoader(this.field5030, this.field5039, 1, this.field5028, this.field5043, true, this.field5032, this.field5062);
-			this.field5033.method7136();
-			this.field5033.field4515 = Client.preferences.sceneryShadows.getValue();
-			this.field5033.field4571 = Client.preferences.waterDetail.getValue() == 2;
-			this.field5033.field4542 = Client.preferences.lightingDetail.getValue() == 1;
-			this.field5033.field4539 = Client.preferences.groundBlending.getValue() == 1;
-			this.field5033.field4511 = Client.preferences.textures.getValue() == 1;
-			if (this.field5019.method7887()) {
-				this.method7767(this.field5033, this.field5055);
-				if (!this.field5036) {
+		if (underwater) {
+			this.scene.method8703(true);
+			this.underwaterMapLoader = new ClientMapLoader(this.scene, this.field5039, 1, this.mapSizeX, this.mapSizeZ, true, this.field5032, this.field5062);
+			this.underwaterMapLoader.method7136();
+			this.underwaterMapLoader.sceneryShadows = Client.preferences.sceneryShadows.getValue();
+			this.underwaterMapLoader.isWaterDetail = Client.preferences.waterDetail.getValue() == 2;
+			this.underwaterMapLoader.isLightingDetail = Client.preferences.lightingDetail.getValue() == 1;
+			this.underwaterMapLoader.isGroundBlending = Client.preferences.groundBlending.getValue() == 1;
+			this.underwaterMapLoader.isTexturing = Client.preferences.textures.getValue() == 1;
+			if (this.rebuildType.isRegionType()) {
+				this.readRegionLandscape(this.underwaterMapLoader, this.rebuildMapSquaresUnderwaterLands);
+				if (!this.asyncRebuilding) {
 					MapLogicRelated.method6969(true);
 				}
 			} else {
-				this.method7766(this.field5033, this.field5055);
-				if (!this.field5036) {
+				this.readNormalLandscape(this.underwaterMapLoader, this.rebuildMapSquaresUnderwaterLands);
+				if (!this.asyncRebuilding) {
 					MapLogicRelated.method6969(true);
 				}
 			}
-			this.field5033.method7143(0, this.field5023.field4540[0]);
-			this.field5033.method7144(Client.field8198, null);
-			this.field5030.method8703(false);
-			if (this.field5036) {
-				this.method7765(50);
+			this.underwaterMapLoader.method7143(0, this.mapLoader.levelHeightmap[0]);
+			this.underwaterMapLoader.method7144(Client.renderer, null);
+			this.scene.method8703(false);
+			if (this.asyncRebuilding) {
+				this.sleep(50);
 			}
 		}
-		this.field5023.method7144(Client.field8198, var19 ? this.field5033.field4540 : (int[][][]) null);
-		if (this.field5019.method7887()) {
-			if (!this.field5036) {
+		this.mapLoader.method7144(Client.renderer, underwater ? this.underwaterMapLoader.levelHeightmap : (int[][][]) null);
+		if (this.rebuildType.isRegionType()) {
+			if (!this.asyncRebuilding) {
 				MapLogicRelated.method6969(true);
 			}
-			this.method7769(this.field5023, this.field5053);
+			this.readRegionLocs(this.mapLoader, this.rebuildMapSquaresLocs);
 		} else {
-			if (!this.field5036) {
+			if (!this.asyncRebuilding) {
 				MapLogicRelated.method6969(true);
 			}
-			this.method7768(this.field5023, this.field5053);
-			if (this.field5024 != null) {
-				this.method7770();
+			this.readNormalLocs(this.mapLoader, this.rebuildMapSquaresLocs);
+			if (this.rebuildMapSquaresNpcs != null) {
+				this.readNpcs();
 			}
 		}
-		if (!this.field5036) {
+		if (!this.asyncRebuilding) {
 			MapLogicRelated.method6969(true);
 		}
-		this.field5023.method7200(Client.field8198, var19 ? this.field5030.field6917[0] : null, null);
-		if (this.field5036) {
-			this.method7765(75);
+		this.mapLoader.method7200(Client.renderer, underwater ? this.scene.field6917[0] : null, null);
+		if (this.asyncRebuilding) {
+			this.sleep(75);
 		}
-		this.field5023.method16877(Client.field8198, false);
-		if (this.field5036) {
-			this.method7765(75);
+		this.mapLoader.method16877(Client.renderer, false);
+		if (this.asyncRebuilding) {
+			this.sleep(75);
 		}
-		if (!this.field5036) {
+		if (!this.asyncRebuilding) {
 			MapLogicRelated.method6969(true);
 		}
-		if (var19) {
-			this.field5030.method8703(true);
-			if (!this.field5036) {
+		if (underwater) {
+			this.scene.method8703(true);
+			if (!this.asyncRebuilding) {
 				MapLogicRelated.method6969(true);
 			}
-			if (this.field5019.method7887()) {
-				this.method7769(this.field5033, this.field5031);
+			if (this.rebuildType.isRegionType()) {
+				this.readRegionLocs(this.underwaterMapLoader, this.rebuildMapSquaresUnderwaterLocs);
 			} else {
-				this.method7768(this.field5033, this.field5031);
+				this.readNormalLocs(this.underwaterMapLoader, this.rebuildMapSquaresUnderwaterLocs);
 			}
-			if (!this.field5036) {
+			if (!this.asyncRebuilding) {
 				MapLogicRelated.method6969(true);
 			}
-			this.field5033.method7200(Client.field8198, null, this.field5030.field6915[0]);
-			this.field5033.method16877(Client.field8198, true);
-			if (!this.field5036) {
+			this.underwaterMapLoader.method7200(Client.renderer, null, this.scene.field6915[0]);
+			this.underwaterMapLoader.method16877(Client.renderer, true);
+			if (!this.asyncRebuilding) {
 				MapLogicRelated.method6969(true);
 			}
-			this.field5030.method8703(false);
-			if (this.field5036) {
-				this.method7765(50);
+			this.scene.method8703(false);
+			if (this.asyncRebuilding) {
+				this.sleep(50);
 			}
 		}
-		this.field5023.method7137();
-		if (this.field5033 != null) {
-			this.field5033.method7137();
+		this.mapLoader.method7137();
+		if (this.underwaterMapLoader != null) {
+			this.underwaterMapLoader.method7137();
 		}
-		this.field5030.method8875();
-		if (this.field5036) {
+		this.scene.reset();
+		if (this.asyncRebuilding) {
 			MonotonicTime.method3655();
-			while (!Client.field8198.method2215()) {
-				this.method7765(1);
+			while (!Client.renderer.method2215()) {
+				this.sleep(1);
 			}
 		}
 		boolean var22 = false;
-		if (this.field5036) {
+		if (this.asyncRebuilding) {
 			World var23 = Client.world;
 			this.method7752(var23);
 			Client.field3183.method7678(var23);
@@ -1212,8 +1212,8 @@ public class World {
 			GameShell.method135();
 		}
 		for (int var27 = 0; var27 < 4; var27++) {
-			for (int var28 = 0; var28 < this.field5028; var28++) {
-				for (int var29 = 0; var29 < this.field5043; var29++) {
+			for (int var28 = 0; var28 < this.mapSizeX; var28++) {
+				for (int var29 = 0; var29 < this.mapSizeZ; var29++) {
 					Client.method7359(var27, var28, var29);
 				}
 			}
@@ -1225,20 +1225,20 @@ public class World {
 		}
 		Client.method3128();
 		ChangeLocationRequest.method5070();
-		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION && Client.field10849.getStream() != null && Client.state == 3) {
-			ClientMessage var31 = ClientMessage.method1604(ClientProt.DETECT_MODIFIED_CLIENT, Client.field10849.field794);
-			var31.field11432.p4(1057001181);
-			Client.field10849.method934(var31);
+		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION && Client.gameConnection.getStream() != null && Client.state == 3) {
+			ClientMessage var31 = ClientMessage.method1604(ClientProt.DETECT_MODIFIED_CLIENT, Client.gameConnection.field794);
+			var31.buf.p4(1057001181);
+			Client.gameConnection.queue(var31);
 		}
-		if (!this.field5019.method7887()) {
-			int var32 = (this.field5022 - (this.field5028 >> 4)) / 8;
-			int var33 = ((this.field5028 >> 4) + this.field5022) / 8;
-			int var34 = (this.field5059 - (this.field5043 >> 4)) / 8;
-			int var35 = ((this.field5043 >> 4) + this.field5059) / 8;
+		if (!this.rebuildType.isRegionType()) {
+			int var32 = (this.field5022 - (this.mapSizeX >> 4)) / 8;
+			int var33 = ((this.mapSizeX >> 4) + this.field5022) / 8;
+			int var34 = (this.field5059 - (this.mapSizeZ >> 4)) / 8;
+			int var35 = ((this.mapSizeZ >> 4) + this.field5059) / 8;
 			for (int var36 = var32 - 1; var36 <= var33 + 1; var36++) {
 				for (int var37 = var34 - 1; var37 <= var35 + 1; var37++) {
 					if (var36 < var32 || var36 > var33 || var37 < var34 || var37 > var35) {
-						Client.mapsJs5.method6885(this.method7795(var36, var37));
+						Client.mapsJs5.method6885(this.mapSquareGroupId(var36, var37));
 					}
 				}
 			}
@@ -1254,10 +1254,10 @@ public class World {
 			Client.setState(0);
 		} else {
 			Client.setState(18);
-			if (Client.field10849.getStream() != null) {
-				ClientMessage var40 = ClientMessage.method1604(ClientProt.MAP_BUILD_COMPLETE, Client.field10849.field794);
-				var40.field11432.p4((int) var38);
-				Client.field10849.method934(var40);
+			if (Client.gameConnection.getStream() != null) {
+				ClientMessage var40 = ClientMessage.method1604(ClientProt.MAP_BUILD_COMPLETE, Client.gameConnection.field794);
+				var40.buf.p4((int) var38);
+				Client.gameConnection.queue(var40);
 			}
 		}
 		if (this.field5037) {
@@ -1274,65 +1274,65 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ao(II)V")
-	public void method7765(int arg0) {
+	public void sleep(int millis) {
 		try {
-			Thread.sleep((long) arg0);
+			Thread.sleep((long) millis);
 		} catch (InterruptedException var3) {
 		}
 	}
 
 	@ObfuscatedName("rl.aj(Laih;[[BI)V")
-	public void method7766(ClientMapLoader arg0, byte[][] arg1) {
-		int var3 = arg1.length;
-		for (int var4 = 0; var4 < var3; var4++) {
-			byte[] var5 = arg1[var4];
-			if (var5 != null) {
-				Packet var6 = new Packet(var5);
-				int var7 = this.field5054[var4] >> 8;
-				int var8 = this.field5054[var4] & 0xFF;
+	public void readNormalLandscape(ClientMapLoader mapLoader, byte[][] mapSquareLands) {
+		int length = mapSquareLands.length;
+		for (int index = 0; index < length; index++) {
+			byte[] lands = mapSquareLands[index];
+			if (lands != null) {
+				Packet buf = new Packet(lands);
+				int var7 = this.rebuildMapSquares[index] >> 8;
+				int var8 = this.rebuildMapSquares[index] & 0xFF;
 				int var9 = var7 * 64 - this.field5018.x;
 				int var10 = var8 * 64 - this.field5018.z;
-				if (!this.field5036 && Client.field1798 != null) {
+				if (!this.asyncRebuilding && Client.field1798 != null) {
 					Client.field1798.method3149();
 				}
-				arg0.method7170(var6, var9, var10, this.field5018.x, this.field5018.z);
-				arg0.method16872(Client.field8198, var6, var9, var10);
+				mapLoader.readNormalLandscape(buf, var9, var10, this.field5018.x, this.field5018.z);
+				mapLoader.readNormalEnvironment(Client.renderer, buf, var9, var10);
 			}
 		}
-		for (int var11 = 0; var11 < var3; var11++) {
-			int var12 = (this.field5054[var11] >> 8) * 64 - this.field5018.x;
-			int var13 = (this.field5054[var11] & 0xFF) * 64 - this.field5018.z;
-			byte[] var14 = arg1[var11];
-			if (var14 == null && this.field5059 < 800) {
-				if (!this.field5036 && Client.field1798 != null) {
+		for (int index = 0; index < length; index++) {
+			int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
+			int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
+			byte[] lands = mapSquareLands[index];
+			if (lands == null && this.field5059 < 800) {
+				if (!this.asyncRebuilding && Client.field1798 != null) {
 					Client.field1798.method3149();
 				}
-				arg0.method7167(var12, var13, 64, 64);
+				mapLoader.method7167(var12, var13, 64, 64);
 			}
 		}
 	}
 
 	@ObfuscatedName("rl.ay(Laih;[[BI)V")
-	public void method7767(ClientMapLoader arg0, byte[][] arg1) {
-		for (int var3 = 0; var3 < arg0.field4544; var3++) {
-			if (!this.field5036) {
+	public void readRegionLandscape(ClientMapLoader mapLoader, byte[][] mapSquareLands) {
+		for (int level = 0; level < mapLoader.levels; level++) {
+			if (!this.asyncRebuilding) {
 				Client.field1798.method3149();
 			}
-			for (int var4 = 0; var4 < this.field5028 >> 3; var4++) {
-				for (int var5 = 0; var5 < this.field5043 >> 3; var5++) {
-					int var6 = this.field5057[var3][var4][var5];
+			for (int x = 0; x < this.mapSizeX >> 3; x++) {
+				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
+					int var6 = this.field5057[level][x][z];
 					if (var6 != -1) {
 						int var7 = var6 >> 24 & 0x3;
-						if (!arg0.field4549 || var7 == 0) {
+						if (!mapLoader.underwater || var7 == 0) {
 							int var8 = var6 >> 1 & 0x3;
 							int var9 = var6 >> 14 & 0x3FF;
 							int var10 = var6 >> 3 & 0x7FF;
 							int var11 = (var9 / 8 << 8) + var10 / 8;
-							for (int var12 = 0; var12 < this.field5054.length; var12++) {
-								if (this.field5054[var12] == var11 && arg1[var12] != null) {
-									Packet var13 = new Packet(arg1[var12]);
-									arg0.method7161(var13, var3, var4 * 8, var5 * 8, var7, var9, var10, var8);
-									arg0.method16875(Client.field8198, var13, var3, var4 * 8, var5 * 8, var7, var9, var10, var8);
+							for (int var12 = 0; var12 < this.rebuildMapSquares.length; var12++) {
+								if (this.rebuildMapSquares[var12] == var11 && mapSquareLands[var12] != null) {
+									Packet buf = new Packet(mapSquareLands[var12]);
+									mapLoader.readRegionLandscape(buf, level, x * 8, z * 8, var7, var9, var10, var8);
+									mapLoader.readRegionEnvironment(Client.renderer, buf, level, x * 8, z * 8, var7, var9, var10, var8);
 									break;
 								}
 							}
@@ -1341,15 +1341,15 @@ public class World {
 				}
 			}
 		}
-		for (int var14 = 0; var14 < arg0.field4544; var14++) {
-			if (!this.field5036) {
+		for (int level = 0; level < mapLoader.levels; level++) {
+			if (!this.asyncRebuilding) {
 				Client.field1798.method3149();
 			}
-			for (int var15 = 0; var15 < this.field5028 >> 3; var15++) {
-				for (int var16 = 0; var16 < this.field5043 >> 3; var16++) {
-					int var17 = this.field5057[var14][var15][var16];
+			for (int x = 0; x < this.mapSizeX >> 3; x++) {
+				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
+					int var17 = this.field5057[level][x][z];
 					if (var17 == -1) {
-						arg0.method7139(var14, var15 * 8, var16 * 8, 8, 8);
+						mapLoader.method7139(level, x * 8, z * 8, 8, 8);
 					}
 				}
 			}
@@ -1357,49 +1357,49 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ab(Laih;[[BB)V")
-	public void method7768(ClientMapLoader arg0, byte[][] arg1) {
-		for (int var3 = 0; var3 < this.field5049; var3++) {
-			byte[] var4 = arg1[var3];
-			if (var4 != null) {
-				int var5 = (this.field5054[var3] >> 8) * 64 - this.field5018.x;
-				int var6 = (this.field5054[var3] & 0xFF) * 64 - this.field5018.z;
-				if (!this.field5036) {
+	public void readNormalLocs(ClientMapLoader mapLoader, byte[][] mapSquareLocs) {
+		for (int index = 0; index < this.rebuildMapSquaresCount; index++) {
+			byte[] locs = mapSquareLocs[index];
+			if (locs != null) {
+				int var5 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
+				int var6 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
+				if (!this.asyncRebuilding) {
 					Client.field1798.method3149();
 				}
-				arg0.method16888(Client.field8198, var4, var5, var6);
-				if (this.field5036) {
-					this.method7765(10);
+				mapLoader.readNormalLocs(Client.renderer, locs, var5, var6);
+				if (this.asyncRebuilding) {
+					this.sleep(10);
 				}
 			}
 		}
 	}
 
 	@ObfuscatedName("rl.az(Laih;[[BS)V")
-	public void method7769(ClientMapLoader arg0, byte[][] arg1) {
-		for (int var3 = 0; var3 < arg0.field4544; var3++) {
-			if (!this.field5036) {
+	public void readRegionLocs(ClientMapLoader mapLoader, byte[][] mapSquareLocs) {
+		for (int level = 0; level < mapLoader.levels; level++) {
+			if (!this.asyncRebuilding) {
 				Client.field1798.method3149();
 			}
-			for (int var4 = 0; var4 < this.field5028 >> 3; var4++) {
-				for (int var5 = 0; var5 < this.field5043 >> 3; var5++) {
-					int var6 = this.field5057[var3][var4][var5];
+			for (int x = 0; x < this.mapSizeX >> 3; x++) {
+				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
+					int var6 = this.field5057[level][x][z];
 					if (var6 != -1) {
 						int var7 = var6 >> 24 & 0x3;
-						if (!arg0.field4549 || var7 == 0) {
+						if (!mapLoader.underwater || var7 == 0) {
 							int var8 = var6 >> 1 & 0x3;
 							int var9 = var6 >> 14 & 0x3FF;
 							int var10 = var6 >> 3 & 0x7FF;
 							int var11 = (var9 / 8 << 8) + var10 / 8;
-							for (int var12 = 0; var12 < this.field5054.length; var12++) {
-								if (this.field5054[var12] == var11 && arg1[var12] != null) {
-									arg0.method16868(Client.field8198, arg1[var12], var3, var4 * 8, var5 * 8, var7, (var9 & 0x7) * 8, (var10 & 0x7) * 8, var8);
+							for (int var12 = 0; var12 < this.rebuildMapSquares.length; var12++) {
+								if (this.rebuildMapSquares[var12] == var11 && mapSquareLocs[var12] != null) {
+									mapLoader.readRegionLocs(Client.renderer, mapSquareLocs[var12], level, x * 8, z * 8, var7, (var9 & 0x7) * 8, (var10 & 0x7) * 8, var8);
 									break;
 								}
 							}
 						}
 					}
-					if (this.field5036) {
-						this.method7765(5);
+					if (this.asyncRebuilding) {
+						this.sleep(5);
 					}
 				}
 			}
@@ -1407,46 +1407,46 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.aa(B)V")
-	public void method7770() {
-		int var1 = this.field5024.length;
-		for (int var2 = 0; var2 < var1; var2++) {
-			if (this.field5024[var2] != null) {
+	public void readNpcs() {
+		int length = this.rebuildMapSquaresNpcs.length;
+		for (int index = 0; index < length; index++) {
+			if (this.rebuildMapSquaresNpcs[index] != null) {
 				int var3 = -1;
 				for (int var4 = 0; var4 < Client.field10938; var4++) {
-					if (Client.field10859[var4] == this.field5054[var2]) {
+					if (Client.field10859[var4] == this.rebuildMapSquares[index]) {
 						var3 = var4;
 						break;
 					}
 				}
 				if (var3 == -1) {
-					Client.field10859[Client.field10938] = this.field5054[var2];
+					Client.field10859[Client.field10938] = this.rebuildMapSquares[index];
 					var3 = ++Client.field10938 - 1;
 				}
-				Packet var5 = new Packet(this.field5024[var2]);
+				Packet buf = new Packet(this.rebuildMapSquaresNpcs[index]);
 				int var6 = 0;
-				while (var5.pos < this.field5024[var2].length && var6 < 511 && Client.field11011 < 1023) {
+				while (buf.pos < this.rebuildMapSquaresNpcs[index].length && var6 < 511 && Client.field11011 < 1023) {
 					int var7 = var3 | var6++ << 6;
-					int var8 = var5.g2();
+					int var8 = buf.g2();
 					int var9 = var8 >> 14;
 					int var10 = var8 >> 7 & 0x3F;
 					int var11 = var8 & 0x3F;
-					int var12 = (this.field5054[var2] >> 8) * 64 - this.field5018.x + var10;
-					int var13 = (this.field5054[var2] & 0xFF) * 64 - this.field5018.z + var11;
-					NPCType var14 = (NPCType) Client.field7961.list(var5.g2());
+					int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x + var10;
+					int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z + var11;
+					NPCType var14 = (NPCType) Client.field7961.list(buf.g2());
 					ObjectWrapper var15 = (ObjectWrapper) Client.field10838.method14495((long) var7);
-					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.field5028 && var13 >= 0 && var14.size + var13 < this.field5043) {
-						NpcEntity var16 = new NpcEntity(this.field5030);
-						var16.field10406 = var7;
-						ObjectWrapper var17 = new ObjectWrapper(var16);
+					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {
+						NpcEntity npc = new NpcEntity(this.scene);
+						npc.field10406 = var7;
+						ObjectWrapper var17 = new ObjectWrapper(npc);
 						Client.field10838.method14501(var17, (long) var7);
 						Client.field10839[++Client.field10906 - 1] = var17;
 						Client.field11036[++Client.field11011 - 1] = var7;
-						var16.field10440 = Client.field10903;
-						var16.method19156(var14);
-						var16.method16502(var16.field12083.size);
-						var16.field10444 = var16.field12083.field2731 << 3;
-						var16.method16491(var16.field12083.field2727.method13895().getId() << 11 & 0x3FFF, true);
-						var16.method19159(var9, var12, var13, true, var16.method16546());
+						npc.field10440 = Client.field10903;
+						npc.method19156(var14);
+						npc.method16502(npc.field12083.size);
+						npc.field10444 = npc.field12083.field2731 << 3;
+						npc.method16491(npc.field12083.field2727.method13895().getId() << 11 & 0x3FFF, true);
+						npc.method19159(var9, var12, var13, true, npc.method16546());
 					}
 				}
 			}

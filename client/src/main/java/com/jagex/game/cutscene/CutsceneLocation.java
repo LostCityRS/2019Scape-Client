@@ -32,12 +32,12 @@ public class CutsceneLocation {
 
 	public CutsceneLocation(Packet arg0) {
 		this.field1735 = arg0.gSmart2or4null();
-		this.field1736 = (LocShape) SerializableEnums.decode(LocShape.method606(), arg0.g1());
+		this.field1736 = (LocShape) SerializableEnums.decode(LocShape.values(), arg0.g1());
 	}
 
 	@ObfuscatedName("ef.e(IIIIB)V")
 	public void method2847(int arg0, int arg1, int arg2, int arg3) {
-		ChangeLocationRequest.method4653(arg0, arg1, arg2, this.field1736.field7567, this.field1735, this.field1736.field7562, arg3, null);
+		ChangeLocationRequest.method4653(arg0, arg1, arg2, this.field1736.layer, this.field1735, this.field1736.id, arg3, null);
 		this.field1740 = arg0;
 		this.field1737 = arg1;
 		this.field1739 = arg2;
@@ -46,7 +46,7 @@ public class CutsceneLocation {
 
 	@ObfuscatedName("ef.n(B)V")
 	public void method2848() {
-		ChangeLocationRequest.method4653(this.field1740, this.field1737, this.field1739, this.field1736.field7567, -1, this.field1736.field7562, this.field1738, null);
+		ChangeLocationRequest.method4653(this.field1740, this.field1737, this.field1739, this.field1736.layer, -1, this.field1736.id, this.field1738, null);
 	}
 
 	@ObfuscatedName("ef.m(I)Z")
@@ -55,7 +55,7 @@ public class CutsceneLocation {
 			return true;
 		}
 		LocType var1 = (LocType) Client.field1897.list(this.field1735);
-		boolean var2 = var1.method9473(this.field1736.field7562);
+		boolean var2 = var1.method9473(this.field1736.id);
 		int[] var3 = var1.method9484();
 		if (var3 != null) {
 			int[] var4 = var3;

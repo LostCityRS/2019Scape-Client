@@ -442,10 +442,10 @@ public class AudioApi {
 			}
 		}
 		this.field1867.clear();
-		if (this.field1869 != null && this.field1869.method7385() == SoundVolume.field4949 && !this.field1870 && Client.field10849.field794 != null && Client.isStateGame(Client.state)) {
-			ClientMessage var7 = ClientMessage.method1604(ClientProt.SOUND_SONGPRELOADED, Client.field10849.field794);
-			var7.field11432.p4(this.field1869.method7386().method9680());
-			Client.field10849.method934(var7);
+		if (this.field1869 != null && this.field1869.method7385() == SoundVolume.field4949 && !this.field1870 && Client.gameConnection.field794 != null && Client.isStateGame(Client.state)) {
+			ClientMessage var7 = ClientMessage.method1604(ClientProt.SOUND_SONGPRELOADED, Client.gameConnection.field794);
+			var7.buf.p4(this.field1869.method7386().method9680());
+			Client.gameConnection.queue(var7);
 			this.field1870 = true;
 		}
 		Iterator var8 = this.field1848.iterator();
@@ -975,10 +975,10 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.ac(II)V")
 	public void method3144(int arg0) {
-		if (Client.field10849.field794 != null && Client.isStateGame(Client.state)) {
-			ClientMessage var2 = ClientMessage.method1604(ClientProt.SOUND_SONGEND, Client.field10849.field794);
-			var2.field11432.p4(arg0);
-			Client.field10849.method934(var2);
+		if (Client.gameConnection.field794 != null && Client.isStateGame(Client.state)) {
+			ClientMessage var2 = ClientMessage.method1604(ClientProt.SOUND_SONGEND, Client.gameConnection.field794);
+			var2.buf.p4(arg0);
+			Client.gameConnection.queue(var2);
 		}
 	}
 
@@ -1051,10 +1051,10 @@ public class AudioApi {
 		if (this.field1857) {
 			this.field1868.method7381();
 		}
-		if (Client.field10849.field794 != null && Client.isStateGame(Client.state)) {
-			ClientMessage var18 = ClientMessage.method1604(ClientProt.SOUND_SONGPRELOADED, Client.field10849.field794);
-			var18.field11432.p4(this.field1875);
-			Client.field10849.method934(var18);
+		if (Client.gameConnection.field794 != null && Client.isStateGame(Client.state)) {
+			ClientMessage var18 = ClientMessage.method1604(ClientProt.SOUND_SONGPRELOADED, Client.gameConnection.field794);
+			var18.buf.p4(this.field1875);
+			Client.gameConnection.queue(var18);
 		}
 	}
 

@@ -219,28 +219,28 @@ public final class ClientVariableManager extends SparseVarDomain {
 			return;
 		}
 		ServerConnection var4 = Client.method640();
-		if (var4.field791 > 1200) {
+		if (var4.writePos > 1200) {
 			return;
 		}
 		ClientMessage var5 = ClientMessage.method1604(ClientProt.STORE_SERVERPERM_VARCS, var4.field794);
-		var5.field11432.p2(0);
-		int var6 = var5.field11432.pos;
-		var5.field11432.pos++;
+		var5.buf.p2(0);
+		int var6 = var5.buf.pos;
+		var5.buf.pos++;
 		while (this.field10258 < this.field10257.length) {
 			VarValue var7 = this.field10257[this.field10258];
-			if (var5.field11432.pos + var4.field791 + Client.field8911.getValueEncodingLength(var7) > 1500) {
+			if (var5.buf.pos + var4.writePos + Client.field8911.getValueEncodingLength(var7) > 1500) {
 				break;
 			}
-			Client.field8911.encodeVarValue(var5.field11432, var7);
+			Client.field8911.encodeVarValue(var5.buf, var7);
 			this.field10258++;
 		}
-		var5.field11432.psize2(var5.field11432.pos - var6);
+		var5.buf.psize2(var5.buf.pos - var6);
 		if (this.field10258 >= this.field10257.length) {
-			var5.field11432.data[var6] = 1;
+			var5.buf.data[var6] = 1;
 		} else {
-			var5.field11432.data[var6] = 0;
+			var5.buf.data[var6] = 0;
 		}
-		var4.method934(var5);
+		var4.queue(var5);
 		this.field10259 = MonotonicTime.method3655() + 1000L;
 	}
 

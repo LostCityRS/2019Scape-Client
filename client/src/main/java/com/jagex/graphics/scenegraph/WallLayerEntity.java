@@ -3,7 +3,6 @@ package com.jagex.graphics.scenegraph;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.Light;
 import com.jagex.graphics.Renderer;
-import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
@@ -61,22 +60,22 @@ public abstract class WallLayerEntity extends GraphEntity {
 			if ((this.field12463 & var6) == 0) {
 				if (this.field12463 == 1 && var3 > 0) {
 					var3--;
-				} else if (this.field12463 == 4 && var3 <= this.field11716.field6910) {
+				} else if (this.field12463 == 4 && var3 <= this.field11716.maxTileX) {
 					var3++;
 				} else if (this.field12463 == 8 && var4 > 0) {
 					var4--;
-				} else if (this.field12463 == 2 && var4 <= this.field11716.field6911) {
+				} else if (this.field12463 == 2 && var4 <= this.field11716.maxTileZ) {
 					var4++;
-				} else if (this.field12463 == 16 && var3 > 0 && var4 <= this.field11716.field6911) {
+				} else if (this.field12463 == 16 && var3 > 0 && var4 <= this.field11716.maxTileZ) {
 					var3--;
 					var4++;
-				} else if (this.field12463 == 32 && var3 <= this.field11716.field6910 && var4 <= this.field11716.field6911) {
+				} else if (this.field12463 == 32 && var3 <= this.field11716.maxTileX && var4 <= this.field11716.maxTileZ) {
 					var3++;
 					var4++;
 				} else if (this.field12463 == 128 && var3 > 0 && var4 > 0) {
 					var3--;
 					var4--;
-				} else if (this.field12463 == 64 && var3 <= this.field11716.field6910 && var4 > 0) {
+				} else if (this.field12463 == 64 && var3 <= this.field11716.maxTileX && var4 > 0) {
 					var3++;
 					var4--;
 				} else {

@@ -11,20 +11,20 @@ public class LocReference {
 	public final CoordGrid field8196;
 
 	@ObfuscatedName("yv.n")
-	public final int field8195;
+	public final int shape;
 
 	@ObfuscatedName("yv.m")
 	public final int field8197;
 
-	public LocReference(CoordGrid arg0, int arg1, int arg2, int arg3) {
+	public LocReference(CoordGrid arg0, int shape, int rotation, int arg3) {
 		this.field8196 = arg0;
-		this.field8195 = arg1;
+		this.shape = shape;
 		this.field8197 = arg3;
 	}
 
 	@ObfuscatedName("yv.e(I)I")
-	public int method10759() {
-		return Client.field10914[this.field8195];
+	public int getLocLayer() {
+		return Client.locShapeToLayer[this.shape];
 	}
 
 	@ObfuscatedName("yv.n(I)Lst;")
@@ -45,18 +45,18 @@ public class LocReference {
 		CoordGrid var2 = Client.world.method7727();
 		int var3 = this.field8196.x - var2.x;
 		int var4 = this.field8196.z - var2.z;
-		if (var3 < 0 || var4 < 0 || var3 >= Client.world.method7728() || var4 >= Client.world.method7758() || Client.world.method7743() == null) {
+		if (var3 < 0 || var4 < 0 || var3 >= Client.world.method7728() || var4 >= Client.world.method7758() || Client.world.getScene() == null) {
 			return null;
 		}
-		switch(this.method10759()) {
+		switch(this.getLocLayer()) {
 			case 0:
-				return (Location) Client.world.method7743().method8711(var1, var3, var4);
+				return (Location) Client.world.getScene().getWall(var1, var3, var4);
 			case 1:
-				return (Location) Client.world.method7743().method8735(var1, var3, var4);
+				return (Location) Client.world.getScene().getWallDecoration(var1, var3, var4);
 			case 2:
-				return (Location) Client.world.method7743().method8856(var1, var3, var4, Client.field11001);
+				return (Location) Client.world.getScene().getEntity(var1, var3, var4, Client.field11001);
 			case 3:
-				return (Location) Client.world.method7743().method8767(var1, var3, var4);
+				return (Location) Client.world.getScene().getGroundDecoration(var1, var3, var4);
 			default:
 				return null;
 		}

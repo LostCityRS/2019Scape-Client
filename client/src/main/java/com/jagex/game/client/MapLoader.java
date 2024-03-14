@@ -19,52 +19,52 @@ import deob.ObfuscatedName;
 public class MapLoader {
 
 	@ObfuscatedName("qg.e")
-	public FloorOverlayTypeList field4548;
+	public FloorOverlayTypeList overlays;
 
 	@ObfuscatedName("qg.n")
-	public FloorUnderlayTypeList field4503;
+	public FloorUnderlayTypeList underlays;
 
 	@ObfuscatedName("qg.m")
 	public LinkMap field4522;
 
 	@ObfuscatedName("qg.k")
-	public Scene field4577;
+	public Scene scene;
 
 	@ObfuscatedName("qg.w")
-	public int field4515 = 0;
+	public int sceneryShadows = 0;
 
 	@ObfuscatedName("qg.l")
-	public boolean field4571 = false;
+	public boolean isWaterDetail = false;
 
 	@ObfuscatedName("qg.u")
-	public boolean field4542 = false;
+	public boolean isLightingDetail = false;
 
 	@ObfuscatedName("qg.z")
-	public boolean field4539 = false;
+	public boolean isGroundBlending = false;
 
 	@ObfuscatedName("qg.p")
-	public boolean field4511 = false;
+	public boolean isTexturing = false;
 
 	@ObfuscatedName("qg.d")
-	public final int field4544;
+	public final int levels;
 
 	@ObfuscatedName("qg.c")
-	public final int field4513;
+	public final int maxTileX;
 
 	@ObfuscatedName("qg.r")
 	public int field4575 = 0;
 
 	@ObfuscatedName("qg.v")
-	public final int field4514;
+	public final int maxTileZ;
 
 	@ObfuscatedName("qg.o")
-	public final boolean field4549;
+	public final boolean underwater;
 
 	@ObfuscatedName("qg.s")
 	public int field4574;
 
 	@ObfuscatedName("qg.y")
-	public int[][][] field4540;
+	public int[][][] levelHeightmap;
 
 	@ObfuscatedName("qg.q")
 	public byte[][][] field4517;
@@ -73,16 +73,16 @@ public class MapLoader {
 	public boolean field4512;
 
 	@ObfuscatedName("qg.b")
-	public byte[][][] field4562;
+	public byte[][][] levelTileOverlayShape;
 
 	@ObfuscatedName("qg.h")
-	public byte[][][] field4520;
+	public byte[][][] levelTileOverlayRotation;
 
 	@ObfuscatedName("qg.a")
-	public short[][][] field4505;
+	public short[][][] levelTileUnderlayIds;
 
 	@ObfuscatedName("qg.g")
-	public short[][][] field4516;
+	public short[][][] levelTileOverlayIds;
 
 	@ObfuscatedName("qg.i")
 	public byte[][][] field4518;
@@ -237,21 +237,21 @@ public class MapLoader {
 	@ObfuscatedName("qg.cx")
 	public int[] field4589 = null;
 
-	public MapLoader(Scene arg0, int arg1, int arg2, int arg3, boolean arg4, FloorOverlayTypeList arg5, FloorUnderlayTypeList arg6, LinkMap arg7) {
-		this.field4577 = arg0;
-		this.field4544 = arg1;
-		this.field4513 = arg2;
-		this.field4514 = arg3;
-		this.field4549 = arg4;
-		this.field4548 = arg5;
-		this.field4503 = arg6;
+	public MapLoader(Scene scene, int levels, int maxTileX, int maxTileZ, boolean underwater, FloorOverlayTypeList overlays, FloorUnderlayTypeList underlays, LinkMap arg7) {
+		this.scene = scene;
+		this.levels = levels;
+		this.maxTileX = maxTileX;
+		this.maxTileZ = maxTileZ;
+		this.underwater = underwater;
+		this.overlays = overlays;
+		this.underlays = underlays;
 		this.field4522 = arg7;
-		this.field4505 = new short[this.field4544][this.field4513][this.field4514];
-		this.field4516 = new short[this.field4544][this.field4513][this.field4514];
-		this.field4562 = new byte[this.field4544][this.field4513][this.field4514];
-		this.field4520 = new byte[this.field4544][this.field4513][this.field4514];
-		this.field4540 = new int[this.field4544][this.field4513 + 1][this.field4514 + 1];
-		this.field4518 = new byte[this.field4544][this.field4513 + 1][this.field4514 + 1];
+		this.levelTileUnderlayIds = new short[this.levels][this.maxTileX][this.maxTileZ];
+		this.levelTileOverlayIds = new short[this.levels][this.maxTileX][this.maxTileZ];
+		this.levelTileOverlayShape = new byte[this.levels][this.maxTileX][this.maxTileZ];
+		this.levelTileOverlayRotation = new byte[this.levels][this.maxTileX][this.maxTileZ];
+		this.levelHeightmap = new int[this.levels][this.maxTileX + 1][this.maxTileZ + 1];
+		this.field4518 = new byte[this.levels][this.maxTileX + 1][this.maxTileZ + 1];
 	}
 
 	@ObfuscatedName("qg.e(I)V")
@@ -271,7 +271,7 @@ public class MapLoader {
 
 	@ObfuscatedName("qg.m(IIIII)V")
 	public final void method7167(int arg0, int arg1, int arg2, int arg3) {
-		for (int var5 = 0; var5 < this.field4544; var5++) {
+		for (int var5 = 0; var5 < this.levels; var5++) {
 			this.method7139(var5, arg0, arg1, arg2, arg3);
 		}
 	}
@@ -280,111 +280,111 @@ public class MapLoader {
 	public final void method7139(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		for (int var6 = arg2; var6 < arg2 + arg4; var6++) {
 			for (int var7 = arg1; var7 < arg1 + arg3; var7++) {
-				if (var7 >= 0 && var7 < this.field4513 && var6 >= 0 && var6 < this.field4514) {
-					this.field4540[arg0][var7][var6] = arg0 > 0 ? this.field4540[arg0 - 1][var7][var6] - 960 : 0;
+				if (var7 >= 0 && var7 < this.maxTileX && var6 >= 0 && var6 < this.maxTileZ) {
+					this.levelHeightmap[arg0][var7][var6] = arg0 > 0 ? this.levelHeightmap[arg0 - 1][var7][var6] - 960 : 0;
 				}
 			}
 		}
-		if (arg1 > 0 && arg1 < this.field4513) {
+		if (arg1 > 0 && arg1 < this.maxTileX) {
 			for (int var8 = arg2 + 1; var8 < arg2 + arg4; var8++) {
-				if (var8 >= 0 && var8 < this.field4514) {
-					this.field4540[arg0][arg1][var8] = this.field4540[arg0][arg1 - 1][var8];
+				if (var8 >= 0 && var8 < this.maxTileZ) {
+					this.levelHeightmap[arg0][arg1][var8] = this.levelHeightmap[arg0][arg1 - 1][var8];
 				}
 			}
 		}
-		if (arg2 > 0 && arg2 < this.field4514) {
+		if (arg2 > 0 && arg2 < this.maxTileZ) {
 			for (int var9 = arg1 + 1; var9 < arg1 + arg3; var9++) {
-				if (var9 >= 0 && var9 < this.field4513) {
-					this.field4540[arg0][var9][arg2] = this.field4540[arg0][var9][arg2 - 1];
+				if (var9 >= 0 && var9 < this.maxTileX) {
+					this.levelHeightmap[arg0][var9][arg2] = this.levelHeightmap[arg0][var9][arg2 - 1];
 				}
 			}
 		}
-		if (arg1 < 0 || arg2 < 0 || arg1 >= this.field4513 || arg2 >= this.field4514) {
+		if (arg1 < 0 || arg2 < 0 || arg1 >= this.maxTileX || arg2 >= this.maxTileZ) {
 			return;
 		}
 		if (arg0 == 0) {
-			if (arg1 > 0 && this.field4540[arg0][arg1 - 1][arg2] != 0) {
-				this.field4540[arg0][arg1][arg2] = this.field4540[arg0][arg1 - 1][arg2];
-			} else if (arg2 > 0 && this.field4540[arg0][arg1][arg2 - 1] != 0) {
-				this.field4540[arg0][arg1][arg2] = this.field4540[arg0][arg1][arg2 - 1];
-			} else if (arg1 > 0 && arg2 > 0 && this.field4540[arg0][arg1 - 1][arg2 - 1] != 0) {
-				this.field4540[arg0][arg1][arg2] = this.field4540[arg0][arg1 - 1][arg2 - 1];
+			if (arg1 > 0 && this.levelHeightmap[arg0][arg1 - 1][arg2] != 0) {
+				this.levelHeightmap[arg0][arg1][arg2] = this.levelHeightmap[arg0][arg1 - 1][arg2];
+			} else if (arg2 > 0 && this.levelHeightmap[arg0][arg1][arg2 - 1] != 0) {
+				this.levelHeightmap[arg0][arg1][arg2] = this.levelHeightmap[arg0][arg1][arg2 - 1];
+			} else if (arg1 > 0 && arg2 > 0 && this.levelHeightmap[arg0][arg1 - 1][arg2 - 1] != 0) {
+				this.levelHeightmap[arg0][arg1][arg2] = this.levelHeightmap[arg0][arg1 - 1][arg2 - 1];
 			}
-		} else if (arg1 > 0 && this.field4540[arg0 - 1][arg1 - 1][arg2] != this.field4540[arg0][arg1 - 1][arg2]) {
-			this.field4540[arg0][arg1][arg2] = this.field4540[arg0][arg1 - 1][arg2];
-		} else if (arg2 > 0 && this.field4540[arg0 - 1][arg1][arg2 - 1] != this.field4540[arg0][arg1][arg2 - 1]) {
-			this.field4540[arg0][arg1][arg2] = this.field4540[arg0][arg1][arg2 - 1];
-		} else if (arg1 > 0 && arg2 > 0 && this.field4540[arg0 - 1][arg1 - 1][arg2 - 1] != this.field4540[arg0][arg1 - 1][arg2 - 1]) {
-			this.field4540[arg0][arg1][arg2] = this.field4540[arg0][arg1 - 1][arg2 - 1];
+		} else if (arg1 > 0 && this.levelHeightmap[arg0 - 1][arg1 - 1][arg2] != this.levelHeightmap[arg0][arg1 - 1][arg2]) {
+			this.levelHeightmap[arg0][arg1][arg2] = this.levelHeightmap[arg0][arg1 - 1][arg2];
+		} else if (arg2 > 0 && this.levelHeightmap[arg0 - 1][arg1][arg2 - 1] != this.levelHeightmap[arg0][arg1][arg2 - 1]) {
+			this.levelHeightmap[arg0][arg1][arg2] = this.levelHeightmap[arg0][arg1][arg2 - 1];
+		} else if (arg1 > 0 && arg2 > 0 && this.levelHeightmap[arg0 - 1][arg1 - 1][arg2 - 1] != this.levelHeightmap[arg0][arg1 - 1][arg2 - 1]) {
+			this.levelHeightmap[arg0][arg1][arg2] = this.levelHeightmap[arg0][arg1 - 1][arg2 - 1];
 		}
 	}
 
 	@ObfuscatedName("qg.f(Lalw;IIIIB)V")
-	public final void method7170(Packet arg0, int arg1, int arg2, int arg3, int arg4) {
+	public final void readNormalLandscape(Packet buf, int arg1, int arg2, int arg3, int arg4) {
 		int var6 = arg1 + arg3;
 		int var7 = arg2 + arg4;
-		for (int var8 = 0; var8 < this.field4544; var8++) {
-			for (int var9 = 0; var9 < 64; var9++) {
-				for (int var10 = 0; var10 < 64; var10++) {
-					this.method7140(arg0, var8, arg1 + var9, arg2 + var10, 0, 0, var6 + var9, var7 + var10, 0, false);
+		for (int l = 0; l < this.levels; l++) {
+			for (int x = 0; x < 64; x++) {
+				for (int z = 0; z < 64; z++) {
+					this.readLandscape(buf, l, arg1 + x, arg2 + z, 0, 0, var6 + x, var7 + z, 0, false);
 				}
 			}
 		}
 	}
 
 	@ObfuscatedName("qg.w(Lalw;IIIIIIII)V")
-	public final void method7161(Packet arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public final void readRegionLandscape(Packet buf, int level, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		int var9 = (arg5 & 0x7) * 8;
 		int var10 = (arg6 & 0x7) * 8;
 		int var11 = (arg5 & 0xFFFFFFF8) << 3;
 		int var12 = (arg6 & 0xFFFFFFF8) << 3;
-		byte var13 = 0;
-		byte var14 = 0;
+		byte xOffset = 0;
+		byte zOffset = 0;
 		if (arg7 == 1) {
-			var14 = 1;
+			zOffset = 1;
 		} else if (arg7 == 2) {
-			var13 = 1;
-			var14 = 1;
+			xOffset = 1;
+			zOffset = 1;
 		} else if (arg7 == 3) {
-			var13 = 1;
+			xOffset = 1;
 		}
-		for (int var15 = 0; var15 < this.field4544; var15++) {
-			for (int var16 = 0; var16 < 64; var16++) {
-				for (int var17 = 0; var17 < 64; var17++) {
-					if (arg4 == var15 && var16 >= var9 && var16 <= var9 + 8 && var17 >= var10 && var17 <= var10 + 8) {
-						int var18;
-						int var19;
-						if (var9 + 8 == var16 || var10 + 8 == var17) {
+		for (int l = 0; l < this.levels; l++) {
+			for (int x = 0; x < 64; x++) {
+				for (int z = 0; z < 64; z++) {
+					if (arg4 == l && x >= var9 && x <= var9 + 8 && z >= var10 && z <= var10 + 8) {
+						int originX;
+						int originZ;
+						if (var9 + 8 == x || var10 + 8 == z) {
 							if (arg7 == 0) {
-								var18 = var16 - var9 + arg2;
-								var19 = var17 - var10 + arg3;
+								originX = x - var9 + arg2;
+								originZ = z - var10 + arg3;
 							} else if (arg7 == 1) {
-								var18 = var17 - var10 + arg2;
-								var19 = arg3 + 8 - (var16 - var9);
+								originX = z - var10 + arg2;
+								originZ = arg3 + 8 - (x - var9);
 							} else if (arg7 == 2) {
-								var18 = arg2 + 8 - (var16 - var9);
-								var19 = arg3 + 8 - (var17 - var10);
+								originX = arg2 + 8 - (x - var9);
+								originZ = arg3 + 8 - (z - var10);
 							} else {
-								var18 = arg2 + 8 - (var17 - var10);
-								var19 = var16 - var9 + arg3;
+								originX = arg2 + 8 - (z - var10);
+								originZ = x - var9 + arg3;
 							}
-							this.method7140(arg0, arg1, var18, var19, 0, 0, var11 + var16, var12 + var17, 0, true);
+							this.readLandscape(buf, level, originX, originZ, 0, 0, var11 + x, var12 + z, 0, true);
 						} else {
-							var18 = arg2 + MapCoordUtil.method14888(var16 & 0x7, var17 & 0x7, arg7);
-							var19 = arg3 + MapCoordUtil.method14756(var16 & 0x7, var17 & 0x7, arg7);
-							this.method7140(arg0, arg1, var18, var19, var13, var14, var11 + var16, var12 + var17, arg7, false);
+							originX = arg2 + MapCoordUtil.method14888(x & 0x7, z & 0x7, arg7);
+							originZ = arg3 + MapCoordUtil.method14756(x & 0x7, z & 0x7, arg7);
+							this.readLandscape(buf, level, originX, originZ, xOffset, zOffset, var11 + x, var12 + z, arg7, false);
 						}
-						if (var16 == 63 || var17 == 63) {
+						if (x == 63 || z == 63) {
 							byte var20 = 1;
-							if (var16 == 63 && var17 == 63) {
+							if (x == 63 && z == 63) {
 								var20 = 3;
 							}
 							for (int var21 = 0; var21 < var20; var21++) {
-								int var22 = var16;
-								int var23 = var17;
+								int var22 = x;
+								int var23 = z;
 								if (var21 == 0) {
-									var22 = var16 == 63 ? 64 : var16;
-									var23 = var17 == 63 ? 64 : var17;
+									var22 = x == 63 ? 64 : x;
+									var23 = z == 63 ? 64 : z;
 								} else if (var21 == 1) {
 									var22 = 64;
 								} else if (var21 == 2) {
@@ -405,13 +405,13 @@ public class MapLoader {
 									var24 = arg2 + 8 - (var23 - var10);
 									var25 = var22 - var9 + arg3;
 								}
-								if (var24 >= 0 && var24 < this.field4513 && var25 >= 0 && var25 < this.field4514) {
-									this.field4540[arg1][var24][var25] = this.field4540[arg1][var13 + var18][var14 + var19];
+								if (var24 >= 0 && var24 < this.maxTileX && var25 >= 0 && var25 < this.maxTileZ) {
+									this.levelHeightmap[level][var24][var25] = this.levelHeightmap[level][xOffset + originX][zOffset + originZ];
 								}
 							}
 						}
 					} else {
-						this.method7140(arg0, 0, -1, -1, 0, 0, 0, 0, 0, false);
+						this.readLandscape(buf, 0, -1, -1, 0, 0, 0, 0, 0, false);
 					}
 				}
 			}
@@ -419,89 +419,89 @@ public class MapLoader {
 	}
 
 	@ObfuscatedName("qg.l(Lalw;IIIIIIIIZB)V")
-	public final void method7140(Packet arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9) {
+	public final void readLandscape(Packet buf, int level, int originX, int originZ, int xOffset, int zOffset, int arg6, int arg7, int arg8, boolean arg9) {
 		if (arg8 == 1) {
-			arg5 = 1;
+			zOffset = 1;
 		} else if (arg8 == 2) {
-			arg4 = 1;
-			arg5 = 1;
+			xOffset = 1;
+			zOffset = 1;
 		} else if (arg8 == 3) {
-			arg4 = 1;
+			xOffset = 1;
 		}
-		if (arg2 < 0 || arg2 >= this.field4513 || arg3 < 0 || arg3 >= this.field4514) {
-			int var14 = arg0.g1();
-			if ((var14 & 0x1) != 0) {
-				arg0.g1();
-				arg0.gSmart1or2();
+		if (originX < 0 || originX >= this.maxTileX || originZ < 0 || originZ >= this.maxTileZ) {
+			int opcode = buf.g1();
+			if ((opcode & 0x1) != 0) {
+				buf.g1();
+				buf.gSmart1or2();
 			}
-			if ((var14 & 0x2) != 0) {
-				arg0.pos++;
+			if ((opcode & 0x2) != 0) {
+				buf.pos++;
 			}
-			if ((var14 & 0x4) != 0) {
-				arg0.gSmart1or2();
+			if ((opcode & 0x4) != 0) {
+				buf.gSmart1or2();
 			}
-			if ((var14 & 0x8) != 0) {
-				arg0.g1();
+			if ((opcode & 0x8) != 0) {
+				buf.g1();
 			}
 			return;
 		}
-		if (!this.field4549 && !arg9) {
-			this.field4522.field4487[arg1][arg2][arg3] = 0;
+		if (!this.underwater && !arg9) {
+			this.field4522.levelTileFlags[level][originX][originZ] = 0;
 		}
-		int var11 = arg0.g1();
-		if ((var11 & 0x1) != 0) {
+		int opcode = buf.g1();
+		if ((opcode & 0x1) != 0) {
 			if (arg9) {
-				arg0.g1();
-				arg0.gSmart1or2();
+				buf.g1();
+				buf.gSmart1or2();
 			} else {
-				int var12 = arg0.g1();
-				this.field4516[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
-				this.field4562[arg1][arg2][arg3] = (byte) (var12 >> 2);
-				this.field4520[arg1][arg2][arg3] = (byte) (arg8 + var12 & 0x3);
+				int var12 = buf.g1();
+				this.levelTileOverlayIds[level][originX][originZ] = (short) buf.gSmart1or2();
+				this.levelTileOverlayShape[level][originX][originZ] = (byte) (var12 >> 2);
+				this.levelTileOverlayRotation[level][originX][originZ] = (byte) (arg8 + var12 & 0x3);
 			}
 		}
-		if ((var11 & 0x2) != 0) {
-			if (this.field4549 || arg9) {
-				arg0.pos++;
+		if ((opcode & 0x2) != 0) {
+			if (this.underwater || arg9) {
+				buf.pos++;
 			} else {
-				this.field4522.field4487[arg1][arg2][arg3] = arg0.g1b();
+				this.field4522.levelTileFlags[level][originX][originZ] = buf.g1b();
 			}
 		}
-		if ((var11 & 0x4) != 0) {
+		if ((opcode & 0x4) != 0) {
 			if (arg9) {
-				arg0.gSmart1or2();
+				buf.gSmart1or2();
 			} else {
-				this.field4505[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
+				this.levelTileUnderlayIds[level][originX][originZ] = (short) buf.gSmart1or2();
 			}
 		}
-		if ((var11 & 0x8) != 0) {
-			int var13 = arg0.g1();
-			if (this.field4549) {
-				this.field4540[0][arg2 + arg4][arg3 + arg5] = var13 * 8 << 2;
+		if ((opcode & 0x8) != 0) {
+			int height = buf.g1();
+			if (this.underwater) {
+				this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = height * 8 << 2;
 			} else {
-				if (var13 == 1) {
-					var13 = 0;
+				if (height == 1) {
+					height = 0;
 				}
-				if (arg1 == 0) {
-					this.field4540[0][arg2 + arg4][arg3 + arg5] = -var13 * 8 << 2;
+				if (level == 0) {
+					this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = -height * 8 << 2;
 				} else {
-					this.field4540[arg1][arg2 + arg4][arg3 + arg5] = this.field4540[arg1 - 1][arg2 + arg4][arg3 + arg5] - (var13 * 8 << 2);
+					this.levelHeightmap[level][originX + xOffset][originZ + zOffset] = this.levelHeightmap[level - 1][originX + xOffset][originZ + zOffset] - (height * 8 << 2);
 				}
 			}
-		} else if (this.field4549) {
-			this.field4540[0][arg2 + arg4][arg3 + arg5] = 0;
-		} else if (arg1 == 0) {
-			this.field4540[0][arg2 + arg4][arg3 + arg5] = -method251(arg6 + 932731, arg7 + 556238) * 8 << 2;
+		} else if (this.underwater) {
+			this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = 0;
+		} else if (level == 0) {
+			this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = -method251(arg6 + 932731, arg7 + 556238) * 8 << 2;
 		} else {
-			this.field4540[arg1][arg2 + arg4][arg3 + arg5] = this.field4540[arg1 - 1][arg2 + arg4][arg3 + arg5] - 960;
+			this.levelHeightmap[level][originX + xOffset][originZ + zOffset] = this.levelHeightmap[level - 1][originX + xOffset][originZ + zOffset] - 960;
 		}
 	}
 
 	@ObfuscatedName("qg.u(I[[II)V")
 	public final void method7143(int arg0, int[][] arg1) {
-		int[][] var3 = this.field4540[arg0];
-		for (int var4 = 0; var4 < this.field4513 + 1; var4++) {
-			for (int var5 = 0; var5 < this.field4514 + 1; var5++) {
+		int[][] var3 = this.levelHeightmap[arg0];
+		for (int var4 = 0; var4 < this.maxTileX + 1; var4++) {
+			for (int var5 = 0; var5 < this.maxTileZ + 1; var5++) {
 				var3[var4][var5] += arg1[var4][var5];
 			}
 		}
@@ -509,58 +509,58 @@ public class MapLoader {
 
 	@ObfuscatedName("qg.z(Ldh;[[[II)V")
 	public void method7144(Renderer arg0, int[][][] arg1) {
-		for (int var3 = 0; var3 < this.field4544; var3++) {
+		for (int var3 = 0; var3 < this.levels; var3++) {
 			int var4 = 0;
 			int var5 = 0;
-			if (!this.field4549) {
-				if (this.field4571) {
+			if (!this.underwater) {
+				if (this.isWaterDetail) {
 					var5 |= 0x8;
 				}
-				if (this.field4542) {
+				if (this.isLightingDetail) {
 					var4 |= 0x2;
 				}
-				if (this.field4515 != 0) {
+				if (this.sceneryShadows != 0) {
 					var4 |= 0x1;
 					var5 |= 0x10;
 				}
 			}
-			if (this.field4542) {
+			if (this.isLightingDetail) {
 				var5 |= 0x7;
 			}
-			if (!this.field4511) {
+			if (!this.isTexturing) {
 				var5 |= 0x20;
 			}
-			int[][] var6 = arg1 == null || var3 >= arg1.length ? this.field4540[var3] : arg1[var3];
-			this.field4577.method8709(var3, arg0.method2214(this.field4513, this.field4514, this.field4540[var3], var6, 512, var4, var5));
+			int[][] var6 = arg1 == null || var3 >= arg1.length ? this.levelHeightmap[var3] : arg1[var3];
+			this.scene.method8709(var3, arg0.method2214(this.maxTileX, this.maxTileZ, this.levelHeightmap[var3], var6, 512, var4, var5));
 		}
 	}
 
 	@ObfuscatedName("qg.p(Ldh;Lcb;Lcb;B)V")
 	public final void method7200(Renderer arg0, FloorModel arg1, FloorModel arg2) {
-		int[][] var4 = new int[this.field4513][this.field4514];
-		if (this.field4504 == null || this.field4514 != this.field4504.length) {
-			this.field4504 = new int[this.field4514];
-			this.field4525 = new int[this.field4514];
-			this.field4526 = new int[this.field4514];
-			this.field4509 = new int[this.field4514];
-			this.field4528 = new int[this.field4514];
+		int[][] var4 = new int[this.maxTileX][this.maxTileZ];
+		if (this.field4504 == null || this.maxTileZ != this.field4504.length) {
+			this.field4504 = new int[this.maxTileZ];
+			this.field4525 = new int[this.maxTileZ];
+			this.field4526 = new int[this.maxTileZ];
+			this.field4509 = new int[this.maxTileZ];
+			this.field4528 = new int[this.maxTileZ];
 		}
-		for (int var5 = 0; var5 < this.field4544; var5++) {
-			for (int var6 = 0; var6 < this.field4514; var6++) {
+		for (int var5 = 0; var5 < this.levels; var5++) {
+			for (int var6 = 0; var6 < this.maxTileZ; var6++) {
 				this.field4504[var6] = 0;
 				this.field4525[var6] = 0;
 				this.field4526[var6] = 0;
 				this.field4509[var6] = 0;
 				this.field4528[var6] = 0;
 			}
-			for (int var7 = -5; var7 < this.field4513; var7++) {
-				for (int var8 = 0; var8 < this.field4514; var8++) {
+			for (int var7 = -5; var7 < this.maxTileX; var7++) {
+				for (int var8 = 0; var8 < this.maxTileZ; var8++) {
 					int var9 = var7 + 5;
 					int var10002;
-					if (var9 < this.field4513) {
-						int var10 = this.field4505[var5][var9][var8] & 0x7FFF;
+					if (var9 < this.maxTileX) {
+						int var10 = this.levelTileUnderlayIds[var5][var9][var8] & 0x7FFF;
 						if (var10 > 0) {
-							FloorUnderlayType var11 = (FloorUnderlayType) this.field4503.list(var10 - 1);
+							FloorUnderlayType var11 = (FloorUnderlayType) this.underlays.list(var10 - 1);
 							this.field4504[var8] += var11.field8546;
 							this.field4525[var8] += var11.field8541;
 							this.field4526[var8] += var11.field8545;
@@ -570,9 +570,9 @@ public class MapLoader {
 					}
 					int var12 = var7 - 5;
 					if (var12 >= 0) {
-						int var13 = this.field4505[var5][var12][var8] & 0x7FFF;
+						int var13 = this.levelTileUnderlayIds[var5][var12][var8] & 0x7FFF;
 						if (var13 > 0) {
-							FloorUnderlayType var14 = (FloorUnderlayType) this.field4503.list(var13 - 1);
+							FloorUnderlayType var14 = (FloorUnderlayType) this.underlays.list(var13 - 1);
 							this.field4504[var8] -= var14.field8546;
 							this.field4525[var8] -= var14.field8541;
 							this.field4526[var8] -= var14.field8545;
@@ -587,9 +587,9 @@ public class MapLoader {
 					int var17 = 0;
 					int var18 = 0;
 					int var19 = 0;
-					for (int var20 = -5; var20 < this.field4514; var20++) {
+					for (int var20 = -5; var20 < this.maxTileZ; var20++) {
 						int var21 = var20 + 5;
-						if (var21 < this.field4514) {
+						if (var21 < this.maxTileZ) {
 							var15 += this.field4504[var21];
 							var16 += this.field4525[var21];
 							var17 += this.field4526[var21];
@@ -610,39 +610,39 @@ public class MapLoader {
 					}
 				}
 			}
-			if (this.field4539) {
-				this.method7147(arg0, this.field4577.field6913[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
+			if (this.isGroundBlending) {
+				this.method7147(arg0, this.scene.field6913[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
 			} else {
-				this.method7199(arg0, this.field4577.field6913[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
+				this.method7199(arg0, this.scene.field6913[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
 			}
-			this.field4505[var5] = null;
-			this.field4516[var5] = null;
-			this.field4562[var5] = null;
-			this.field4520[var5] = null;
+			this.levelTileUnderlayIds[var5] = null;
+			this.levelTileOverlayIds[var5] = null;
+			this.levelTileOverlayShape[var5] = null;
+			this.levelTileOverlayRotation[var5] = null;
 		}
-		if (!this.field4549) {
-			if (this.field4515 != 0) {
-				this.field4577.method8753();
+		if (!this.underwater) {
+			if (this.sceneryShadows != 0) {
+				this.scene.method8753();
 			}
-			if (this.field4542) {
-				this.field4577.method8755();
+			if (this.isLightingDetail) {
+				this.scene.method8755();
 			}
 		}
-		for (int var23 = 0; var23 < this.field4544; var23++) {
-			this.field4577.field6913[var23].method1555();
+		for (int var23 = 0; var23 < this.levels; var23++) {
+			this.scene.field6913[var23].method1555();
 		}
 	}
 
 	@ObfuscatedName("qg.d(Ldh;Lcb;I[[ILcb;Lcb;I)V")
 	public void method7199(Renderer arg0, FloorModel arg1, int arg2, int[][] arg3, FloorModel arg4, FloorModel arg5) {
-		for (int var7 = 0; var7 < this.field4513; var7++) {
-			for (int var8 = 0; var8 < this.field4514; var8++) {
-				byte var9 = this.field4562[arg2][var7][var8];
-				byte var10 = this.field4520[arg2][var7][var8];
-				int var11 = this.field4516[arg2][var7][var8] & 0x7FFF;
-				int var12 = this.field4505[arg2][var7][var8] & 0x7FFF;
-				FloorOverlayType var13 = (FloorOverlayType) (var11 == 0 ? null : this.field4548.list(var11 - 1));
-				FloorUnderlayType var14 = (FloorUnderlayType) (var12 == 0 ? null : this.field4503.list(var12 - 1));
+		for (int var7 = 0; var7 < this.maxTileX; var7++) {
+			for (int var8 = 0; var8 < this.maxTileZ; var8++) {
+				byte var9 = this.levelTileOverlayShape[arg2][var7][var8];
+				byte var10 = this.levelTileOverlayRotation[arg2][var7][var8];
+				int var11 = this.levelTileOverlayIds[arg2][var7][var8] & 0x7FFF;
+				int var12 = this.levelTileUnderlayIds[arg2][var7][var8] & 0x7FFF;
+				FloorOverlayType var13 = (FloorOverlayType) (var11 == 0 ? null : this.overlays.list(var11 - 1));
+				FloorUnderlayType var14 = (FloorUnderlayType) (var12 == 0 ? null : this.underlays.list(var12 - 1));
 				if (var9 == 0 && var13 == null) {
 					var9 = 12;
 				}
@@ -682,8 +682,8 @@ public class MapLoader {
 							var17++;
 							this.field4574++;
 						}
-						if (!this.field4549 && arg2 == 0) {
-							this.field4577.method8716(var7, var8, var13.field8158, var13.field8159, var13.field8164, var13.field8165, var13.field8166, var13.field8167);
+						if (!this.underwater && arg2 == 0) {
+							this.scene.method8716(var7, var8, var13.field8158, var13.field8159, var13.field8164, var13.field8165, var13.field8166, var13.field8167);
 						}
 					}
 					if (var14 != null) {
@@ -758,16 +758,16 @@ public class MapLoader {
 						}
 					}
 					WaterFogData var50 = new WaterFogData();
-					if (this.field4549) {
-						var50.field1575 = this.field4577.method8729(var7, var8);
-						var50.field1573 = this.field4577.method8710(var7, var8);
-						var50.field1577 = this.field4577.method8790(var7, var8);
-						var50.field1576 = this.field4577.method8713(var7, var8);
-						var50.field1578 = this.field4577.method8760(var7, var8);
-						var50.field1579 = this.field4577.method8715(var7, var8);
+					if (this.underwater) {
+						var50.field1575 = this.scene.method8729(var7, var8);
+						var50.field1573 = this.scene.method8710(var7, var8);
+						var50.field1577 = this.scene.method8790(var7, var8);
+						var50.field1576 = this.scene.method8713(var7, var8);
+						var50.field1578 = this.scene.method8760(var7, var8);
+						var50.field1579 = this.scene.method8715(var7, var8);
 					}
 					arg1.method1525(var7, var8, var29, var31, var30, var32, var19, var20, var21, var22, var25, var23, var24, var50, false);
-					this.field4577.method8851(arg2, var7, var8);
+					this.scene.method8851(arg2, var7, var8);
 				}
 			}
 		}
@@ -775,22 +775,22 @@ public class MapLoader {
 
 	@ObfuscatedName("qg.c(Ldh;Lcb;I[[ILcb;Lcb;I)V")
 	public void method7147(Renderer arg0, FloorModel arg1, int arg2, int[][] arg3, FloorModel arg4, FloorModel arg5) {
-		byte[][] var7 = this.field4562[arg2];
-		byte[][] var8 = this.field4520[arg2];
-		short[][] var9 = this.field4505[arg2];
-		short[][] var10 = this.field4516[arg2];
+		byte[][] var7 = this.levelTileOverlayShape[arg2];
+		byte[][] var8 = this.levelTileOverlayRotation[arg2];
+		short[][] var9 = this.levelTileUnderlayIds[arg2];
+		short[][] var10 = this.levelTileOverlayIds[arg2];
 		boolean[] var11 = new boolean[4];
-		for (int var12 = 0; var12 < this.field4513; var12++) {
-			int var13 = var12 < this.field4513 - 1 ? var12 + 1 : var12;
-			for (int var14 = 0; var14 < this.field4514; var14++) {
-				int var15 = var14 < this.field4514 - 1 ? var14 + 1 : var14;
+		for (int var12 = 0; var12 < this.maxTileX; var12++) {
+			int var13 = var12 < this.maxTileX - 1 ? var12 + 1 : var12;
+			for (int var14 = 0; var14 < this.maxTileZ; var14++) {
+				int var15 = var14 < this.maxTileZ - 1 ? var14 + 1 : var14;
 				this.field4573 = var7[var12][var14];
 				this.field4574 = var8[var12][var14];
 				int var16 = var10[var12][var14] & 0x7FFF;
 				int var17 = var9[var12][var14] & 0x7FFF;
 				if (var16 != 0 || var17 != 0) {
-					FloorOverlayType var18 = (FloorOverlayType) (var16 == 0 ? null : this.field4548.list(var16 - 1));
-					FloorUnderlayType var19 = (FloorUnderlayType) (var17 == 0 ? null : this.field4503.list(var17 - 1));
+					FloorOverlayType var18 = (FloorOverlayType) (var16 == 0 ? null : this.overlays.list(var16 - 1));
+					FloorUnderlayType var19 = (FloorUnderlayType) (var17 == 0 ? null : this.underlays.list(var17 - 1));
 					if (this.field4573 == 0 && var18 == null) {
 						this.field4573 = 12;
 					}
@@ -819,7 +819,7 @@ public class MapLoader {
 					this.method7150(var18, var19);
 					int var25 = this.field4585 + this.field4584;
 					if (var25 <= 0) {
-						this.field4577.method8851(arg2, var12, var14);
+						this.scene.method8851(arg2, var12, var14);
 					} else {
 						if (var11[0]) {
 							var25++;
@@ -854,16 +854,16 @@ public class MapLoader {
 						this.method7152(arg0, arg2, var12, var14, var13, var15, var19, var17, var36, var37, var38, var11, var27, var28, var29, var30, var31, var32, var33, var34, arg3, arg1, arg5, arg4);
 						this.method7153(arg1, var19, var23, arg2, var12, var14, var13, var15, var17, var16);
 						WaterFogData var39 = new WaterFogData();
-						if (this.field4549) {
-							var39.field1575 = this.field4577.method8729(var12, var14);
-							var39.field1573 = this.field4577.method8710(var12, var14);
-							var39.field1577 = this.field4577.method8790(var12, var14);
-							var39.field1576 = this.field4577.method8713(var12, var14);
-							var39.field1578 = this.field4577.method8760(var12, var14);
-							var39.field1579 = this.field4577.method8715(var12, var14);
+						if (this.underwater) {
+							var39.field1575 = this.scene.method8729(var12, var14);
+							var39.field1573 = this.scene.method8710(var12, var14);
+							var39.field1577 = this.scene.method8790(var12, var14);
+							var39.field1576 = this.scene.method8713(var12, var14);
+							var39.field1578 = this.scene.method8760(var12, var14);
+							var39.field1579 = this.scene.method8715(var12, var14);
 						}
 						arg1.method1557(var12, var14, var28, var33, var29, var34, var30, var27, var31, var32, var39, this.field4507);
-						this.field4577.method8851(arg2, var12, var14);
+						this.scene.method8851(arg2, var12, var14);
 					}
 				}
 			}
@@ -872,7 +872,7 @@ public class MapLoader {
 
 	@ObfuscatedName("qg.r(IIIIILcb;[[SB)I")
 	public int method7145(int arg0, int arg1, int arg2, int arg3, int arg4, FloorModel arg5, short[][] arg6) {
-		if (this.field4573 != 0 && this.field4573 != 12 || arg1 <= 0 || arg2 <= 0 || arg1 >= this.field4513 || arg2 >= this.field4514) {
+		if (this.field4573 != 0 && this.field4573 != 12 || arg1 <= 0 || arg2 <= 0 || arg1 >= this.maxTileX || arg2 >= this.maxTileZ) {
 			return this.field4574;
 		}
 		byte var8 = 0;
@@ -935,7 +935,7 @@ public class MapLoader {
 	@ObfuscatedName("qg.v(Ldh;Lyn;Laaz;II[[B[[B[[S[ZI)V")
 	public void method7149(Renderer arg0, FloorOverlayType arg1, FloorUnderlayType arg2, int arg3, int arg4, byte[][] arg5, byte[][] arg6, short[][] arg7, boolean[] arg8) {
 		boolean[] var10 = arg1 != null && arg1.field8161 ? field4527[this.field4573] : field4556[this.field4573];
-		this.method7154(arg0, arg1, arg2, arg3, arg4, this.field4513, this.field4514, arg7, arg5, arg6, arg8);
+		this.method7154(arg0, arg1, arg2, arg3, arg4, this.maxTileX, this.maxTileZ, arg7, arg5, arg6, arg8);
 		this.field4583 = arg1 != null && arg1.field8156 != arg1.rgb;
 		if (!this.field4583) {
 			for (int var11 = 0; var11 < 8; var11++) {
@@ -1116,8 +1116,8 @@ public class MapLoader {
 				}
 				this.field4575++;
 			}
-			if (!this.field4549 && arg1 == 0) {
-				this.field4577.method8716(arg2, arg3, arg4.field8158, arg4.field8159, arg4.field8164, arg4.field8165, arg4.field8166, arg4.field8167);
+			if (!this.underwater && arg1 == 0) {
+				this.scene.method8716(arg2, arg3, arg4.field8158, arg4.field8159, arg4.field8164, arg4.field8165, arg4.field8166, arg4.field8167);
 			}
 			if (this.field4573 != 12 && arg4.rgb != -1 && arg4.field8162) {
 				this.field4507 = true;
@@ -1145,10 +1145,10 @@ public class MapLoader {
 		if (arg10 == 0) {
 			arg10 = arg7;
 		}
-		FloorUnderlayType var25 = (FloorUnderlayType) this.field4503.list(arg7 - 1);
-		FloorUnderlayType var26 = (FloorUnderlayType) this.field4503.list(arg8 - 1);
-		FloorUnderlayType var27 = (FloorUnderlayType) this.field4503.list(arg9 - 1);
-		FloorUnderlayType var28 = (FloorUnderlayType) this.field4503.list(arg10 - 1);
+		FloorUnderlayType var25 = (FloorUnderlayType) this.underlays.list(arg7 - 1);
+		FloorUnderlayType var26 = (FloorUnderlayType) this.underlays.list(arg8 - 1);
+		FloorUnderlayType var27 = (FloorUnderlayType) this.underlays.list(arg9 - 1);
+		FloorUnderlayType var28 = (FloorUnderlayType) this.underlays.list(arg10 - 1);
 		for (int var29 = 0; var29 < this.field4584; var29++) {
 			boolean var30 = false;
 			byte var31;
@@ -1319,7 +1319,7 @@ public class MapLoader {
 			if (arg3 > 0) {
 				int var13 = arg7[arg3 - 1][arg4 - 1] & 0x7FFF;
 				if (var13 > 0) {
-					FloorOverlayType var14 = (FloorOverlayType) this.field4548.list(var13 - 1);
+					FloorOverlayType var14 = (FloorOverlayType) this.overlays.list(var13 - 1);
 					if (var14.rgb != -1 && var14.field8161) {
 						byte var15 = arg8[arg3 - 1][arg4 - 1];
 						int var16 = arg9[arg3 - 1][arg4 - 1] * 2 + 4 & 0x7;
@@ -1338,7 +1338,7 @@ public class MapLoader {
 			if (arg3 < arg5 - 1) {
 				int var18 = arg7[arg3 + 1][arg4 - 1] & 0x7FFF;
 				if (var18 > 0) {
-					FloorOverlayType var19 = (FloorOverlayType) this.field4548.list(var18 - 1);
+					FloorOverlayType var19 = (FloorOverlayType) this.overlays.list(var18 - 1);
 					if (var19.rgb != -1 && var19.field8161) {
 						byte var20 = arg8[arg3 + 1][arg4 - 1];
 						int var21 = arg9[arg3 + 1][arg4 - 1] * 2 + 6 & 0x7;
@@ -1359,7 +1359,7 @@ public class MapLoader {
 			if (arg3 > 0) {
 				int var23 = arg7[arg3 - 1][arg4 + 1] & 0x7FFF;
 				if (var23 > 0) {
-					FloorOverlayType var24 = (FloorOverlayType) this.field4548.list(var23 - 1);
+					FloorOverlayType var24 = (FloorOverlayType) this.overlays.list(var23 - 1);
 					if (var24.rgb != -1 && var24.field8161) {
 						byte var25 = arg8[arg3 - 1][arg4 + 1];
 						int var26 = arg9[arg3 - 1][arg4 + 1] * 2 + 2 & 0x7;
@@ -1378,7 +1378,7 @@ public class MapLoader {
 			if (arg3 < arg5 - 1) {
 				int var28 = arg7[arg3 + 1][arg4 + 1] & 0x7FFF;
 				if (var28 > 0) {
-					FloorOverlayType var29 = (FloorOverlayType) this.field4548.list(var28 - 1);
+					FloorOverlayType var29 = (FloorOverlayType) this.overlays.list(var28 - 1);
 					if (var29.rgb != -1 && var29.field8161) {
 						byte var30 = arg8[arg3 + 1][arg4 + 1];
 						int var31 = arg9[arg3 + 1][arg4 + 1] * 2 & 0x7;
@@ -1398,7 +1398,7 @@ public class MapLoader {
 		if (arg4 > 0) {
 			int var33 = arg7[arg3][arg4 - 1] & 0x7FFF;
 			if (var33 > 0) {
-				FloorOverlayType var34 = (FloorOverlayType) this.field4548.list(var33 - 1);
+				FloorOverlayType var34 = (FloorOverlayType) this.overlays.list(var33 - 1);
 				if (var34.rgb != -1) {
 					byte var35 = arg8[arg3][arg4 - 1];
 					byte var36 = arg9[arg3][arg4 - 1];
@@ -1436,7 +1436,7 @@ public class MapLoader {
 		if (arg4 < arg6 - 1) {
 			int var41 = arg7[arg3][arg4 + 1] & 0x7FFF;
 			if (var41 > 0) {
-				FloorOverlayType var42 = (FloorOverlayType) this.field4548.list(var41 - 1);
+				FloorOverlayType var42 = (FloorOverlayType) this.overlays.list(var41 - 1);
 				if (var42.rgb != -1) {
 					byte var43 = arg8[arg3][arg4 + 1];
 					byte var44 = arg9[arg3][arg4 + 1];
@@ -1474,7 +1474,7 @@ public class MapLoader {
 		if (arg3 > 0) {
 			int var49 = arg7[arg3 - 1][arg4] & 0x7FFF;
 			if (var49 > 0) {
-				FloorOverlayType var50 = (FloorOverlayType) this.field4548.list(var49 - 1);
+				FloorOverlayType var50 = (FloorOverlayType) this.overlays.list(var49 - 1);
 				if (var50.rgb != -1) {
 					byte var51 = arg8[arg3 - 1][arg4];
 					byte var52 = arg9[arg3 - 1][arg4];
@@ -1512,7 +1512,7 @@ public class MapLoader {
 		if (arg3 < arg5 - 1) {
 			int var57 = arg7[arg3 + 1][arg4] & 0x7FFF;
 			if (var57 > 0) {
-				FloorOverlayType var58 = (FloorOverlayType) this.field4548.list(var57 - 1);
+				FloorOverlayType var58 = (FloorOverlayType) this.overlays.list(var57 - 1);
 				if (var58.rgb != -1) {
 					byte var59 = arg8[arg3 + 1][arg4];
 					byte var60 = arg9[arg3 + 1][arg4];

@@ -57,7 +57,7 @@ public class WorldMapAreaMetadata extends SecondaryNode {
 		if (this.field12356 == 255) {
 			this.field12356 = 0;
 		}
-		BuildAreaSize.method3061(arg7);
+		BuildAreaSize.buildAreaSizeForId(arg7);
 		this.field12353 = new IterableQueue();
 	}
 

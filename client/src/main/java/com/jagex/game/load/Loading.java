@@ -296,7 +296,7 @@ public class Loading {
 			}
 		}
 		if (field3419 == LoadingStage.field2904) {
-			Client.field7538 = new FontProvider(Client.field8198, loadingSpritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
+			Client.field7538 = new FontProvider(Client.renderer, loadingSpritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
 		}
 		if (field3419 == LoadingStage.field2905) {
 			int var12 = Client.field7538.method6179();
@@ -315,7 +315,7 @@ public class Loading {
 				}
 			}
 			Client.field7538.method6157(Client.field10833);
-			DefaultSprites.method7114(Client.field8198);
+			DefaultSprites.method7114(Client.renderer);
 			Client.setState(11);
 		}
 		if (field3419 == LoadingStage.OPEN_JS5_ARCHIVES) {
@@ -370,7 +370,7 @@ public class Loading {
 				return (var14 - field2945) * 100 / (100 - field2945);
 			}
 			DefaultSprites.method16430(Client.field11389);
-			Client.field7538 = new FontProvider(Client.field8198, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
+			Client.field7538 = new FontProvider(Client.renderer, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
 		}
 		if (field3419 == LoadingStage.field2909) {
 			byte[] var17 = Client.defaultsJs5.method6894(DefaultsGroup.field7705.field7708);
@@ -541,8 +541,8 @@ public class Loading {
 			}
 			Client.setWindowMode(Client.preferences.maxScreenSize.getValue(), -1, -1, false);
 			Client.field7538.method6157(Client.field10833);
-			DefaultSprites.method7114(Client.field8198);
-			DefaultSprites.method5202(Client.field8198, Client.spritesJs5);
+			DefaultSprites.method7114(Client.renderer);
+			DefaultSprites.method5202(Client.renderer, Client.spritesJs5);
 		}
 		return method3584();
 	}

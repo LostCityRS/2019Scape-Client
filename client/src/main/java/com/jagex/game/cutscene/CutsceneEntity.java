@@ -52,7 +52,7 @@ public final class CutsceneEntity {
 		if (!this.field1744) {
 			this.field1744 = true;
 			if (this.field1743 >= 0) {
-				this.field1745 = new NpcEntity(Client.world.method7743(), 25);
+				this.field1745 = new NpcEntity(Client.world.getScene(), 25);
 				this.field1745.field10406 = this.field1741;
 				this.field1745.field10440 = Client.field10903;
 				this.field1745.method19156((NPCType) Client.field7961.list(this.field1743));
@@ -60,7 +60,7 @@ public final class CutsceneEntity {
 				this.field1745.field10444 = this.field1745.field12083.field2731 << 3;
 				this.field1745.field10404 = ++CutsceneManager.field1715 - 1;
 			} else {
-				this.field1742 = new PlayerEntity(Client.world.method7743(), 25);
+				this.field1742 = new PlayerEntity(Client.world.getScene(), 25);
 				this.field1742.method19129(Client.field8729);
 				this.field1742.field10406 = this.field1741;
 				this.field1742.field10440 = Client.field10903;

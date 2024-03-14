@@ -7,112 +7,112 @@ import deob.ObfuscatedName;
 public class LocShape implements SerializableEnum {
 
 	@ObfuscatedName("vj.e")
-	public static final LocShape field7554 = new LocShape(0, 0);
+	public static final LocShape WALL_STRAIGHT = new LocShape(0, 0);
 
 	@ObfuscatedName("vj.n")
-	public static final LocShape field7551 = new LocShape(1, 0);
+	public static final LocShape WALL_DIAGONAL_CORNER = new LocShape(1, 0);
 
 	@ObfuscatedName("vj.m")
-	public static final LocShape field7545 = new LocShape(2, 0);
+	public static final LocShape WALL_L = new LocShape(2, 0);
 
 	@ObfuscatedName("vj.k")
-	public static final LocShape field7546 = new LocShape(3, 0);
+	public static final LocShape WALL_SQUARE_CORNER = new LocShape(3, 0);
 
 	@ObfuscatedName("vj.f")
-	public static final LocShape field7547 = new LocShape(9, 2);
+	public static final LocShape WALL_DIAGONAL = new LocShape(9, 2);
 
 	@ObfuscatedName("vj.w")
-	public static final LocShape field7548 = new LocShape(4, 1);
+	public static final LocShape WALLDECOR_STRAIGHT_NOOFFSET = new LocShape(4, 1);
 
 	@ObfuscatedName("vj.l")
-	public static final LocShape field7549 = new LocShape(5, 1);
+	public static final LocShape WALLDECOR_STRAIGHT_OFFSET = new LocShape(5, 1);
 
 	@ObfuscatedName("vj.u")
-	public static final LocShape field7550 = new LocShape(6, 1);
+	public static final LocShape WALLDECOR_DIAGONAL_OFFSET = new LocShape(6, 1);
 
 	@ObfuscatedName("vj.z")
-	public static final LocShape field7557 = new LocShape(7, 1);
+	public static final LocShape WALLDECOR_DIAGONAL_NOOFFSET = new LocShape(7, 1);
 
 	@ObfuscatedName("vj.p")
-	public static final LocShape field7543 = new LocShape(8, 1);
+	public static final LocShape WALLDECOR_DIAGONAL_BOTH = new LocShape(8, 1);
 
 	@ObfuscatedName("vj.d")
-	public static final LocShape field7553 = new LocShape(12, 2);
+	public static final LocShape ROOF_STRAIGHT = new LocShape(12, 2);
 
 	@ObfuscatedName("vj.c")
-	public static final LocShape field7552 = new LocShape(13, 2);
+	public static final LocShape ROOF_DIAGONAL_WITH_ROOFEDGE = new LocShape(13, 2);
 
 	@ObfuscatedName("vj.r")
-	public static final LocShape field7565 = new LocShape(14, 2);
+	public static final LocShape ROOF_DIAGONAL = new LocShape(14, 2);
 
 	@ObfuscatedName("vj.v")
-	public static final LocShape field7555 = new LocShape(15, 2);
+	public static final LocShape ROOF_L_CONCAVE = new LocShape(15, 2);
 
 	@ObfuscatedName("vj.o")
-	public static final LocShape field7561 = new LocShape(16, 2);
+	public static final LocShape ROOF_L_CONVEX = new LocShape(16, 2);
 
 	@ObfuscatedName("vj.s")
-	public static final LocShape field7558 = new LocShape(17, 2);
+	public static final LocShape ROOF_FLAT = new LocShape(17, 2);
 
 	@ObfuscatedName("vj.y")
-	public static final LocShape field7559 = new LocShape(18, 2);
+	public static final LocShape ROOFEDGE_STRAIGHT = new LocShape(18, 2);
 
 	@ObfuscatedName("vj.q")
-	public static final LocShape field7560 = new LocShape(19, 2);
+	public static final LocShape ROOFEDGE_DIAGONAL_CORNER = new LocShape(19, 2);
 
 	@ObfuscatedName("vj.x")
-	public static final LocShape field7544 = new LocShape(20, 2);
+	public static final LocShape ROOFEDGE_L = new LocShape(20, 2);
 
 	@ObfuscatedName("vj.b")
-	public static final LocShape field7556 = new LocShape(21, 2);
+	public static final LocShape ROOFEDGE_SQUARE_CORNER = new LocShape(21, 2);
 
 	@ObfuscatedName("vj.h")
-	public static final LocShape field7563 = new LocShape(10, 2);
+	public static final LocShape CENTREPIECE_STRAIGHT = new LocShape(10, 2);
 
 	@ObfuscatedName("vj.a")
-	public static final LocShape field7564 = new LocShape(11, 2);
+	public static final LocShape CENTREPIECE_DIAGONAL = new LocShape(11, 2);
 
 	@ObfuscatedName("vj.g")
-	public static final LocShape field7566 = new LocShape(22, 3);
+	public static final LocShape GROUND_DECOR = new LocShape(22, 3);
 
 	@ObfuscatedName("vj.i")
-	public final int field7562;
+	public final int id;
 
 	@ObfuscatedName("vj.j")
-	public final int field7567;
+	public final int layer;
 
-	public LocShape(int arg0, int arg1) {
-		this.field7562 = arg0;
-		this.field7567 = arg1;
+	public LocShape(int id, int layer) {
+		this.id = id;
+		this.layer = layer;
 	}
 
 	@ObfuscatedName("a.e(I)[Lvj;")
-	public static LocShape[] method606() {
-		return new LocShape[] { field7554, field7551, field7558, field7555, field7545, field7565, field7547, field7546, field7566, field7553, field7564, field7550, field7544, field7563, field7549, field7552, field7557, field7548, field7561, field7543, field7560, field7556, field7559 };
+	public static LocShape[] values() {
+		return new LocShape[] {WALL_STRAIGHT, WALL_DIAGONAL_CORNER, ROOF_FLAT, ROOF_L_CONCAVE, WALL_L, ROOF_DIAGONAL, WALL_DIAGONAL, WALL_SQUARE_CORNER, GROUND_DECOR, ROOF_STRAIGHT, CENTREPIECE_DIAGONAL, WALLDECOR_DIAGONAL_OFFSET, ROOFEDGE_L, CENTREPIECE_STRAIGHT, WALLDECOR_STRAIGHT_OFFSET, ROOF_DIAGONAL_WITH_ROOFEDGE, WALLDECOR_DIAGONAL_NOOFFSET, WALLDECOR_STRAIGHT_NOOFFSET, ROOF_L_CONVEX, WALLDECOR_DIAGONAL_BOTH, ROOFEDGE_DIAGONAL_CORNER, ROOFEDGE_SQUARE_CORNER, ROOFEDGE_STRAIGHT};
 	}
 
     @ObfuscatedName("vj.n()I")
 	public int getId() {
-		return this.field7562;
+		return this.id;
 	}
 
 	@ObfuscatedName("sg.m(II)Z")
-	public static boolean method8381(int arg0) {
-		return arg0 >= field7554.field7562 && arg0 <= field7546.field7562 || field7547.field7562 == arg0;
+	public static boolean isWall(int arg0) {
+		return arg0 >= WALL_STRAIGHT.id && arg0 <= WALL_SQUARE_CORNER.id || WALL_DIAGONAL.id == arg0;
 	}
 
 	@ObfuscatedName("aat.f(II)Z")
-	public static boolean method14238(int arg0) {
-		return arg0 >= field7548.field7562 && arg0 <= field7543.field7562;
+	public static boolean isWallDecor(int arg0) {
+		return arg0 >= WALLDECOR_STRAIGHT_NOOFFSET.id && arg0 <= WALLDECOR_DIAGONAL_BOTH.id;
 	}
 
 	@ObfuscatedName("g.w(II)Z")
-	public static boolean method615(int arg0) {
-		return arg0 >= field7553.field7562 && arg0 <= field7558.field7562;
+	public static boolean isRoof(int arg0) {
+		return arg0 >= ROOF_STRAIGHT.id && arg0 <= ROOF_FLAT.id;
 	}
 
 	@ObfuscatedName("pb.l(II)Z")
-	public static boolean method6788(int arg0) {
-		return arg0 >= field7559.field7562 && arg0 <= field7556.field7562;
+	public static boolean isRoofEdge(int arg0) {
+		return arg0 >= ROOFEDGE_STRAIGHT.id && arg0 <= ROOFEDGE_SQUARE_CORNER.id;
 	}
 }

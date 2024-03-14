@@ -23,7 +23,7 @@ public class LocAnimCutsceneAction extends CutsceneAction {
 	@ObfuscatedName("agv.n(I)V")
 	public void method2890() {
 		CutsceneLocation var1 = CutsceneManager.field7317[this.field10275];
-		Client.method8895(var1.field1740, var1.field1737, var1.field1739, var1.field1736.field7567, var1.field1736.field7562, var1.field1738, null, this.field10274, 0);
+		Client.method8895(var1.field1740, var1.field1737, var1.field1739, var1.field1736.layer, var1.field1736.id, var1.field1738, null, this.field10274, 0);
 	}
 
 	@ObfuscatedName("agv.k(I)Z")

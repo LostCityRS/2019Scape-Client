@@ -584,7 +584,7 @@ public class LocType implements ConfigType {
 	public void method9472() {
 		if (this.field7470 == -1) {
 			this.field7470 = 0;
-			if (this.field7513 != null && this.field7513.length == 1 && LocShape.field7563.field7562 == this.field7513[0]) {
+			if (this.field7513 != null && this.field7513.length == 1 && LocShape.CENTREPIECE_STRAIGHT.id == this.field7513[0]) {
 				this.field7470 = 1;
 			}
 			for (int var1 = 0; var1 < 5; var1++) {
@@ -642,8 +642,8 @@ public class LocType implements ConfigType {
 
 	@ObfuscatedName("vd.c(Ldh;IIILcb;Lcb;IIIZLvp;B)Labg;")
 	public final synchronized Pair method9475(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, boolean arg9, LocTypeCustomisation arg10) {
-		if (LocShape.method14238(arg2)) {
-			arg2 = LocShape.field7548.field7562;
+		if (LocShape.isWallDecor(arg2)) {
+			arg2 = LocShape.WALLDECOR_STRAIGHT_NOOFFSET.id;
 		}
 		long var12 = (long) ((this.id << 10) + (arg2 << 3) + arg3);
 		long var14 = var12 | (long) (arg0.field1595 << 29);
@@ -686,14 +686,14 @@ public class LocType implements ConfigType {
 				var16 = arg0.method2213(var16, var22.method1691());
 			}
 			int var24 = var16;
-			if (LocShape.field7563.field7562 == arg2 && arg3 > 3) {
+			if (LocShape.CENTREPIECE_STRAIGHT.id == arg2 && arg3 > 3) {
 				var24 = var16 | 0x5;
 			}
 			var22 = this.method9476(arg0, var24, arg2, arg3, arg10);
 			if (var22 == null) {
 				return null;
 			}
-			if (LocShape.field7563.field7562 == arg2 && arg3 > 3) {
+			if (LocShape.CENTREPIECE_STRAIGHT.id == arg2 && arg3 > 3) {
 				var22.method1693(2048);
 			}
 			if (arg9 && !var17 && !var18) {
@@ -729,8 +729,8 @@ public class LocType implements ConfigType {
 
 	@ObfuscatedName("vd.r(Ldh;IIILcb;Lcb;IIILaaq;Lvp;B)Ldo;")
 	public final synchronized Model method9470(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, AnimationWrapper arg9, LocTypeCustomisation arg10) {
-		if (LocShape.method14238(arg2)) {
-			arg2 = LocShape.field7548.field7562;
+		if (LocShape.isWallDecor(arg2)) {
+			arg2 = LocShape.WALLDECOR_STRAIGHT_NOOFFSET.id;
 		}
 		long var12 = (long) ((this.id << 10) + (arg2 << 3) + arg3);
 		int var14 = arg1;
@@ -754,7 +754,7 @@ public class LocType implements ConfigType {
 				arg1 |= 0x4;
 			}
 		}
-		if (LocShape.field7563.field7562 == arg2 && arg3 > 3) {
+		if (LocShape.CENTREPIECE_STRAIGHT.id == arg2 && arg3 > 3) {
 			arg1 |= 0x5;
 		}
 		WeightedCache var17 = this.factory.field7532;
@@ -781,7 +781,7 @@ public class LocType implements ConfigType {
 			var22 = true;
 			arg9.method14359(var18, arg3 & 0x3);
 		}
-		if (LocShape.field7563.field7562 == arg2 && arg3 > 3) {
+		if (LocShape.CENTREPIECE_STRAIGHT.id == arg2 && arg3 > 3) {
 			if (!var22) {
 				var18 = var18.method1773((byte) 3, arg1, true);
 				var22 = true;
@@ -813,7 +813,7 @@ public class LocType implements ConfigType {
 		int var6 = this.ambient + 64;
 		int var7 = this.contrast * 5 + 850;
 		int var8 = arg1;
-		boolean var9 = this.mirror || LocShape.field7545.field7562 == arg2 && arg3 > 3;
+		boolean var9 = this.mirror || LocShape.WALL_L.id == arg2 && arg3 > 3;
 		if (var9) {
 			arg1 |= 0x10;
 		}
@@ -921,7 +921,7 @@ public class LocType implements ConfigType {
 		if (var9) {
 			var28.method1698();
 		}
-		if (LocShape.field7548.field7562 == arg2 && arg3 > 3) {
+		if (LocShape.WALLDECOR_STRAIGHT_NOOFFSET.id == arg2 && arg3 > 3) {
 			var28.method1694(2048);
 			var28.method1805(180, 0, -180);
 		}

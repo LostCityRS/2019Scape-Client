@@ -321,12 +321,12 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aue.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
 	@ObfuscatedName("aue.ff(B)V")
-	public final void method17378() {
+	public final void applyLighting() {
 		throw new IllegalStateException();
 	}
 }

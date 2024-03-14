@@ -18,8 +18,8 @@ public class SimpleToolkitChange implements SendablePacket {
 
 	@ObfuscatedName("uo.e(I)V")
 	public void method9201() {
-		ClientMessage var1 = ClientMessage.method1604(ClientProt.SIMPLE_TOOLKIT_CHANGE, Client.field10849.field794);
-		var1.field11432.p1_alt1(this.field7281.getId());
-		Client.field10849.method934(var1);
+		ClientMessage var1 = ClientMessage.method1604(ClientProt.SIMPLE_TOOLKIT_CHANGE, Client.gameConnection.field794);
+		var1.buf.p1_alt1(this.field7281.getId());
+		Client.gameConnection.queue(var1);
 	}
 }

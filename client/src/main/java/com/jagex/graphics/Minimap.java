@@ -118,7 +118,7 @@ public class Minimap {
 
 	@ObfuscatedName("aih.w(Ldh;B)V")
 	public static void method16903(Renderer arg0) {
-		if (field722 != Client.field4490.field11717 && Client.world.method7743() != null) {
+		if (field722 != Client.field4490.field11717 && Client.world.getScene() != null) {
 			MonotonicTime.method3655();
 			if (method14493(arg0, Client.field4490.field11717)) {
 				field722 = Client.field4490.field11717;
@@ -136,7 +136,7 @@ public class Minimap {
 		int var2 = Client.world.method7728();
 		int var3 = Client.world.method7758();
 		LinkMap var4 = Client.world.method7793();
-		Scene var5 = Client.world.method7743();
+		Scene var5 = Client.world.getScene();
 		int var6 = arg1;
 		if (Client.field4490 != null) {
 			int var7 = Client.field4490.field10450[0] >> 3;
@@ -316,7 +316,7 @@ public class Minimap {
 		int var1 = Client.world.method7728();
 		int var2 = Client.world.method7758();
 		LinkMap var3 = Client.world.method7793();
-		Scene var4 = Client.world.method7743();
+		Scene var4 = Client.world.getScene();
 		LocTypeList var5 = Client.world.method7750();
 		int var6 = arg0;
 		if (Client.field4490 != null) {
@@ -329,7 +329,7 @@ public class Minimap {
 		for (int var9 = 0; var9 < var1; var9++) {
 			for (int var10 = 0; var10 < var2; var10++) {
 				for (int var11 = var6; var11 <= arg0 + 1 && var11 <= 3; var11++) {
-					if ((var11 < arg0 || var3.method7104(arg0, var11, var9, var10)) && !method250((Location) var4.method8767(var11, var9, var10), var5, var9, var10) && !method250((Location) var4.method8856(var11, var9, var10, Client.field11001), var5, var9, var10) && !method250((Location) var4.method8711(var11, var9, var10), var5, var9, var10) && method250((Location) var4.method8735(var11, var9, var10), var5, var9, var10)) {
+					if ((var11 < arg0 || var3.method7104(arg0, var11, var9, var10)) && !method250((Location) var4.getGroundDecoration(var11, var9, var10), var5, var9, var10) && !method250((Location) var4.getEntity(var11, var9, var10, Client.field11001), var5, var9, var10) && !method250((Location) var4.getWall(var11, var9, var10), var5, var9, var10) && method250((Location) var4.getWallDecoration(var11, var9, var10), var5, var9, var10)) {
 					}
 				}
 			}
@@ -368,17 +368,17 @@ public class Minimap {
 
 	@ObfuscatedName("af.p(IIII)Z")
 	public static boolean method1005(int arg0, int arg1, int arg2) {
-		Scene var3 = Client.world.method7743();
+		Scene var3 = Client.world.getScene();
 		boolean var4 = true;
-		Location var5 = (Location) var3.method8711(arg0, arg1, arg2);
+		Location var5 = (Location) var3.getWall(arg0, arg1, arg2);
 		if (var5 != null) {
 			var4 &= method17469(var5);
 		}
-		Location var6 = (Location) var3.method8856(arg0, arg1, arg2, Client.field11001);
+		Location var6 = (Location) var3.getEntity(arg0, arg1, arg2, Client.field11001);
 		if (var6 != null) {
 			var4 &= method17469(var6);
 		}
-		Location var7 = (Location) var3.method8767(arg0, arg1, arg2);
+		Location var7 = (Location) var3.getGroundDecoration(arg0, arg1, arg2);
 		if (var7 != null) {
 			var4 &= method17469(var7);
 		}
@@ -398,8 +398,8 @@ public class Minimap {
 
 	@ObfuscatedName("ix.c(Ldh;IIIIIIII)V")
 	public static void method4476(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		Scene var8 = Client.world.method7743();
-		Location var9 = (Location) var8.method8711(arg1, arg2, arg3);
+		Scene var8 = Client.world.getScene();
+		Location var9 = (Location) var8.getWall(arg1, arg2, arg3);
 		if (var9 != null) {
 			LocType var10 = (LocType) Client.world.method7750().list(var9.method8223());
 			int var11 = var9.method8204() & 0x3;
@@ -409,7 +409,7 @@ public class Minimap {
 				if (var10.field7470 > 0) {
 					var13 = arg7;
 				}
-				if (LocShape.field7554.field7562 == var12 || LocShape.field7545.field7562 == var12) {
+				if (LocShape.WALL_STRAIGHT.id == var12 || LocShape.WALL_L.id == var12) {
 					if (var11 == 0) {
 						arg0.method2177(arg4, arg5, 4, var13);
 					} else if (var11 == 1) {
@@ -420,7 +420,7 @@ public class Minimap {
 						arg0.method2176(arg4, arg5 + 3, 4, var13);
 					}
 				}
-				if (LocShape.field7546.field7562 == var12) {
+				if (LocShape.WALL_SQUARE_CORNER.id == var12) {
 					if (var11 == 0) {
 						arg0.method2301(arg4, arg5, 1, 1, var13);
 					} else if (var11 == 1) {
@@ -431,7 +431,7 @@ public class Minimap {
 						arg0.method2301(arg4, arg5 + 3, 1, 1, var13);
 					}
 				}
-				if (LocShape.field7545.field7562 == var12) {
+				if (LocShape.WALL_L.id == var12) {
 					if (var11 == 0) {
 						arg0.method2176(arg4, arg5, 4, var13);
 					} else if (var11 == 1) {
@@ -446,14 +446,14 @@ public class Minimap {
 				method1900(arg0, var10, var11, arg4, arg5);
 			}
 		}
-		Location var14 = (Location) var8.method8856(arg1, arg2, arg3, Client.field11001);
+		Location var14 = (Location) var8.getEntity(arg1, arg2, arg3, Client.field11001);
 		if (var14 != null) {
 			LocType var15 = (LocType) Client.world.method7750().list(var14.method8223());
 			int var16 = var14.method8204() & 0x3;
 			int var17 = var14.method8220();
 			if (var15.field7486 != -1) {
 				method1900(arg0, var15, var16, arg4, arg5);
-			} else if (LocShape.field7547.field7562 == var17) {
+			} else if (LocShape.WALL_DIAGONAL.id == var17) {
 				int var18 = -1118482;
 				if (var15.field7470 > 0) {
 					var18 = -1179648;
@@ -465,7 +465,7 @@ public class Minimap {
 				}
 			}
 		}
-		Location var19 = (Location) var8.method8767(arg1, arg2, arg3);
+		Location var19 = (Location) var8.getGroundDecoration(arg1, arg2, arg3);
 		if (var19 == null) {
 			return;
 		}

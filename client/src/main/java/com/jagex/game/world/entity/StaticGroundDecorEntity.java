@@ -130,7 +130,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 			}
 		}
 		Vector3 var7 = this.method10536().field4298;
-		return var4.method9475(arg0, arg1, LocShape.field7566.field7562, this.field11189, var5, var6, (int) var7.field4308, this.field11194, (int) var7.field4313, arg2, null);
+		return var4.method9475(arg0, arg1, LocShape.GROUND_DECOR.id, this.field11189, var5, var6, (int) var7.field4308, this.field11194, (int) var7.field4313, arg2, null);
 	}
 
 	@ObfuscatedName("ajz.fv(Ldh;B)Luq;")
@@ -184,7 +184,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.fq(Ldh;Lalh;IIIZB)V")
-	public void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (arg1 instanceof StaticGroundDecorEntity) {
 			StaticGroundDecorEntity var7 = (StaticGroundDecorEntity) arg1;
 			if (this.field11192 != null && var7.field11192 != null) {
@@ -194,7 +194,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.ff(B)V")
-	public void method17378() {
+	public void applyLighting() {
 		this.field11184 = false;
 		if (this.field11192 != null) {
 			this.field11192.method1690(this.field11192.method1691() & 0xFFFEFFFF);
@@ -208,7 +208,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.n(I)I")
 	public int method8220() {
-		return LocShape.field7566.field7562;
+		return LocShape.GROUND_DECOR.id;
 	}
 
 	@ObfuscatedName("ajz.m(I)I")

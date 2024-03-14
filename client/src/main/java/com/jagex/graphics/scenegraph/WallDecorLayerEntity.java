@@ -69,12 +69,12 @@ public abstract class WallDecorLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asm.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
 	@ObfuscatedName("asm.ff(B)V")
-	public final void method17378() {
+	public final void applyLighting() {
 		throw new IllegalStateException();
 	}
 }

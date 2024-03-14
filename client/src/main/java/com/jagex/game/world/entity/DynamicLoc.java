@@ -148,7 +148,7 @@ public class DynamicLoc {
 			return null;
 		}
 		Vector3 var6 = this.field6672.method10536().field4298;
-		Scene var7 = Client.world.method7743();
+		Scene var7 = Client.world.getScene();
 		if (arg3) {
 			var7.method8814(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, this.field6679);
 			this.field6670 = false;
@@ -250,7 +250,7 @@ public class DynamicLoc {
 	public void method8242(Renderer arg0) {
 		if (this.field6677 != null) {
 			Vector3 var2 = this.field6672.method10536().field4298;
-			Client.world.method7743().method8814(this.field6677, this.field6663, (int) var2.field4308, (int) var2.field4313, this.field6679);
+			Client.world.getScene().method8814(this.field6677, this.field6663, (int) var2.field4308, (int) var2.field4313, this.field6679);
 			this.field6679 = null;
 			this.field6677 = null;
 		}

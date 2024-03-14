@@ -49,20 +49,20 @@ public class LoadingScreenRelated6 extends LoadingScreenProgressDisplay {
 			return;
 		}
 		int[] var4 = new int[4];
-		Client.field8198.method2171(var4);
-		Client.field8198.method2168(arg1, arg2, this.field3027.field3163 + arg1, this.field3027.field3160 + arg2);
+		Client.renderer.method2171(var4);
+		Client.renderer.method2168(arg1, arg2, this.field3027.field3163 + arg1, this.field3027.field3160 + arg2);
 		int var5 = this.field10539.method1434();
 		int var6 = this.field10539.method1436();
 		int var7 = this.field10542.method1434();
 		int var8 = this.field10542.method1436();
 		this.field10539.method1439(arg1, (this.field3027.field3160 - var6) / 2 + arg2);
 		this.field10542.method1439(this.field3027.field3163 + arg1 - var7, (this.field3027.field3160 - var8) / 2 + arg2);
-		Client.field8198.method2168(arg1, arg2, this.field3027.field3163 + arg1, arg2 + this.field10541.method1436());
+		Client.renderer.method2168(arg1, arg2, this.field3027.field3163 + arg1, arg2 + this.field10541.method1436());
 		this.field10541.method1448(arg1 + var5, arg2, this.field3027.field3163 - var5 - var7, this.field3027.field3160);
 		int var9 = this.field10544.method1436();
-		Client.field8198.method2168(arg1, this.field3027.field3160 + arg2 - var9, this.field3027.field3163 + arg1, this.field3027.field3160 + arg2);
+		Client.renderer.method2168(arg1, this.field3027.field3160 + arg2 - var9, this.field3027.field3163 + arg1, this.field3027.field3160 + arg2);
 		this.field10544.method1448(arg1 + var5, this.field3027.field3160 + arg2 - var9, this.field3027.field3163 - var5 - var7, this.field3027.field3160);
-		Client.field8198.method2168(var4[0], var4[1], var4[2], var4[3]);
+		Client.renderer.method2168(var4[0], var4[1], var4[2], var4[3]);
 	}
 
 	@ObfuscatedName("ahb.p(ZIII)V")
@@ -75,12 +75,12 @@ public class LoadingScreenRelated6 extends LoadingScreenProgressDisplay {
 		int var9 = var7 - var6;
 		int var10 = this.method5123() * var8 / 10000;
 		int[] var11 = new int[4];
-		Client.field8198.method2171(var11);
-		Client.field8198.method2168(var4, var6, var4 + var10, var7);
+		Client.renderer.method2171(var11);
+		Client.renderer.method2168(var4, var6, var4 + var10, var7);
 		this.method16662(var4, var6, var8, var9);
-		Client.field8198.method2168(var4 + var10, var6, var5, var7);
+		Client.renderer.method2168(var4 + var10, var6, var5, var7);
 		this.field10540.method1448(var4, var6, var8, var9);
-		Client.field8198.method2168(var11[0], var11[1], var11[2], var11[3]);
+		Client.renderer.method2168(var11[0], var11[1], var11[2], var11[3]);
 	}
 
 	@ObfuscatedName("ahb.s(IIIII)V")

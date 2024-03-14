@@ -115,7 +115,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("cs.bz(III)I")
 	public static int method1575(int arg0, int arg1) {
-		return LocShape.field7551.field7562 == arg0 || LocShape.field7546.field7562 == arg0 ? field11160[arg1 & 0x3] : field11164[arg1 & 0x3];
+		return LocShape.WALL_DIAGONAL_CORNER.id == arg0 || LocShape.WALL_SQUARE_CORNER.id == arg0 ? field11160[arg1 & 0x3] : field11164[arg1 & 0x3];
 	}
 
 	@ObfuscatedName("ajg.bv(Ldh;II)Ldo;")
@@ -199,7 +199,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.fq(Ldh;Lalh;IIIZB)V")
-	public void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (arg1 instanceof StaticWallEntity) {
 			StaticWallEntity var7 = (StaticWallEntity) arg1;
 			if (this.field11173 != null && var7.field11173 != null) {
@@ -214,7 +214,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.ff(B)V")
-	public void method17378() {
+	public void applyLighting() {
 		this.field11171 = false;
 		if (this.field11173 != null) {
 			this.field11173.method1690(this.field11173.method1691() & 0xFFFEFFFF);

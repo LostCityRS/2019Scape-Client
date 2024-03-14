@@ -110,13 +110,13 @@ public abstract class GraphEntity extends GraphNode {
 	public abstract boolean method16489();
 
 	@ObfuscatedName("alh.ff(B)V")
-	public abstract void method17378();
+	public abstract void applyLighting();
 
 	@ObfuscatedName("alh.fw(Ldh;I)V")
 	public abstract void method17373(Renderer arg0);
 
 	@ObfuscatedName("alh.fq(Ldh;Lalh;IIIZB)V")
-	public abstract void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("alh.ga(Ldh;S)Z")
 	public abstract boolean method18360(Renderer arg0);

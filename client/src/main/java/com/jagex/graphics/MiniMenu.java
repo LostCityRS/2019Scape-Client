@@ -760,7 +760,7 @@ public class MiniMenu {
 		var4.method6611();
 		int var5 = arg1 - field563;
 		int var6 = arg2 - field559;
-		if (Client.world.method7743() == null) {
+		if (Client.world.getScene() == null) {
 			return;
 		}
 		if (!Client.field10973 || (Client.field1765 & 0x40) != 0) {
@@ -785,7 +785,7 @@ public class MiniMenu {
 				var7 = var20 + (Client.field4490.method16546() - 1 << 8) >> 9;
 				var8 = var21 + (Client.field4490.method16546() - 1 << 8) >> 9;
 				byte var22 = Client.field4490.field11717;
-				if (var22 < 3 && (Client.world.method7793().field4487[1][var20 >> 9][var21 >> 9] & 0x2) != 0) {
+				if (var22 < 3 && (Client.world.method7793().levelTileFlags[1][var20 >> 9][var21 >> 9] & 0x2) != 0) {
 					int var91 = var22 + 1;
 				}
 			}
@@ -805,7 +805,7 @@ public class MiniMenu {
 				}
 			}
 		}
-		PickableEntityList var24 = Client.world.method7743().field6959;
+		PickableEntityList var24 = Client.world.getScene().field6959;
 		int var25 = arg1;
 		int var26 = arg2;
 		List var27 = var24.field6885;
@@ -2080,10 +2080,10 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var16 = ClientMessage.method1604(var14, Client.field10849.field794);
-				var16.field11432.p2(var7);
-				var16.field11432.p1_alt1(method14766() ? 1 : 0);
-				Client.field10849.method934(var16);
+				ClientMessage var16 = ClientMessage.method1604(var14, Client.gameConnection.field794);
+				var16.buf.p2(var7);
+				var16.buf.p1_alt1(method14766() ? 1 : 0);
+				Client.gameConnection.queue(var16);
 				Client.method6820(var15.field10450[0], var15.field10448[0]);
 			}
 		}
@@ -2106,12 +2106,12 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var18 = ClientMessage.method1604(var17, Client.field10849.field794);
-			var18.field11432.p1_alt2(method14766() ? 1 : 0);
-			var18.field11432.p2(var10.z + var5);
-			var18.field11432.p4((int) (var8 >>> 32) & Integer.MAX_VALUE);
-			var18.field11432.p2_alt3(var10.x + var4);
-			Client.field10849.method934(var18);
+			ClientMessage var18 = ClientMessage.method1604(var17, Client.gameConnection.field794);
+			var18.buf.p1_alt2(method14766() ? 1 : 0);
+			var18.buf.p2(var10.z + var5);
+			var18.buf.p4((int) (var8 >>> 32) & Integer.MAX_VALUE);
+			var18.buf.p2_alt3(var10.x + var4);
+			Client.gameConnection.queue(var18);
 			Client.method6820(var4, var5);
 		}
 		if (var6 == 23) {
@@ -2120,24 +2120,24 @@ public class MiniMenu {
 			} else {
 				ClientMessage var19 = method9839(var4, var5, var7);
 				if (var7 == 1) {
-					var19.field11432.p1(-1);
-					var19.field11432.p1(-1);
-					var19.field11432.p2((int) Client.field10895);
-					var19.field11432.p1(57);
-					var19.field11432.p1(Client.field10885);
-					var19.field11432.p1(Client.field10887);
-					var19.field11432.p1(89);
+					var19.buf.p1(-1);
+					var19.buf.p1(-1);
+					var19.buf.p2((int) Client.field10895);
+					var19.buf.p1(57);
+					var19.buf.p1(Client.field10885);
+					var19.buf.p1(Client.field10887);
+					var19.buf.p1(89);
 					Vector3 var20 = Client.field4490.method10536().field4298;
-					var19.field11432.p2((int) var20.field4308);
-					var19.field11432.p2((int) var20.field4313);
-					var19.field11432.p1(63);
+					var19.buf.p2((int) var20.field4308);
+					var19.buf.p2((int) var20.field4313);
+					var19.buf.p1(63);
 				} else {
 					Client.field10866 = arg1;
 					Client.field10924 = arg2;
 					Client.field10926 = 1;
 					Client.field10925 = 0;
 				}
-				Client.field10849.method934(var19);
+				Client.gameConnection.queue(var19);
 				Client.method6820(var4, var5);
 			}
 		}
@@ -2163,10 +2163,10 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var24 = ClientMessage.method1604(var21, Client.field10849.field794);
-				var24.field11432.p1_alt3(method14766() ? 1 : 0);
-				var24.field11432.p2_alt2(var7);
-				Client.field10849.method934(var24);
+				ClientMessage var24 = ClientMessage.method1604(var21, Client.gameConnection.field794);
+				var24.buf.p1_alt3(method14766() ? 1 : 0);
+				var24.buf.p2_alt2(var7);
+				Client.gameConnection.queue(var24);
 				Client.method6820(var23.field10450[0], var23.field10448[0]);
 			}
 		}
@@ -2175,15 +2175,15 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var25 = ClientMessage.method1604(ClientProt.OPOBJT, Client.field10849.field794);
-			var25.field11432.p2_alt1(var7);
-			var25.field11432.p1_alt1(method14766() ? 1 : 0);
-			var25.field11432.p2_alt1(Client.field10975);
-			var25.field11432.p2_alt1(var10.z + var5);
-			var25.field11432.p2_alt1(var10.x + var4);
-			var25.field11432.p4_alt2(Client.field6707);
-			var25.field11432.p2_alt3(Client.field10974);
-			Client.field10849.method934(var25);
+			ClientMessage var25 = ClientMessage.method1604(ClientProt.OPOBJT, Client.gameConnection.field794);
+			var25.buf.p2_alt1(var7);
+			var25.buf.p1_alt1(method14766() ? 1 : 0);
+			var25.buf.p2_alt1(Client.field10975);
+			var25.buf.p2_alt1(var10.z + var5);
+			var25.buf.p2_alt1(var10.x + var4);
+			var25.buf.p4_alt2(Client.field6707);
+			var25.buf.p2_alt3(Client.field10974);
+			Client.gameConnection.queue(var25);
 			Client.method6820(var4, var5);
 		}
 		if (var6 == 8) {
@@ -2194,13 +2194,13 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var28 = ClientMessage.method1604(ClientProt.OPNPCT, Client.field10849.field794);
-				var28.field11432.p4(Client.field6707);
-				var28.field11432.p2(var7);
-				var28.field11432.p1_alt1(method14766() ? 1 : 0);
-				var28.field11432.p2_alt1(Client.field10975);
-				var28.field11432.p2(Client.field10974);
-				Client.field10849.method934(var28);
+				ClientMessage var28 = ClientMessage.method1604(ClientProt.OPNPCT, Client.gameConnection.field794);
+				var28.buf.p4(Client.field6707);
+				var28.buf.p2(var7);
+				var28.buf.p1_alt1(method14766() ? 1 : 0);
+				var28.buf.p2_alt1(Client.field10975);
+				var28.buf.p2(Client.field10974);
+				Client.gameConnection.queue(var28);
 				Client.method6820(var27.field10450[0], var27.field10448[0]);
 			}
 		}
@@ -2209,15 +2209,15 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var29 = ClientMessage.method1604(ClientProt.OPLOCT, Client.field10849.field794);
-			var29.field11432.p1_alt1(method14766() ? 1 : 0);
-			var29.field11432.p2_alt1(var10.x + var4);
-			var29.field11432.p2_alt1(Client.field10975);
-			var29.field11432.p2_alt3(var10.z + var5);
-			var29.field11432.p4_alt1(Client.field6707);
-			var29.field11432.p4_alt2((int) (var8 >>> 32) & Integer.MAX_VALUE);
-			var29.field11432.p2(Client.field10974);
-			Client.field10849.method934(var29);
+			ClientMessage var29 = ClientMessage.method1604(ClientProt.OPLOCT, Client.gameConnection.field794);
+			var29.buf.p1_alt1(method14766() ? 1 : 0);
+			var29.buf.p2_alt1(var10.x + var4);
+			var29.buf.p2_alt1(Client.field10975);
+			var29.buf.p2_alt3(var10.z + var5);
+			var29.buf.p4_alt1(Client.field6707);
+			var29.buf.p4_alt2((int) (var8 >>> 32) & Integer.MAX_VALUE);
+			var29.buf.p2(Client.field10974);
+			Client.gameConnection.queue(var29);
 			Client.method6820(var4, var5);
 		}
 		if (var6 == 60) {
@@ -2228,10 +2228,10 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 1;
 				Client.field10925 = 0;
-				ClientMessage var30 = ClientMessage.method1604(ClientProt.FACE_SQUARE, Client.field10849.field794);
-				var30.field11432.p2_alt2(var10.z + var5);
-				var30.field11432.p2_alt3(var10.x + var4);
-				Client.field10849.method934(var30);
+				ClientMessage var30 = ClientMessage.method1604(ClientProt.FACE_SQUARE, Client.gameConnection.field794);
+				var30.buf.p2_alt2(var10.z + var5);
+				var30.buf.p2_alt3(var10.x + var4);
+				Client.gameConnection.queue(var30);
 			}
 		}
 		if (var6 == 16) {
@@ -2239,13 +2239,13 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var31 = ClientMessage.method1604(ClientProt.OPPLAYERT, Client.field10849.field794);
-			var31.field11432.p2(Client.field10974);
-			var31.field11432.p1_alt1(method14766() ? 1 : 0);
-			var31.field11432.p2_alt1(Client.field10975);
-			var31.field11432.p2_alt3(Client.field4490.field10406);
-			var31.field11432.p4_alt2(Client.field6707);
-			Client.field10849.method934(var31);
+			ClientMessage var31 = ClientMessage.method1604(ClientProt.OPPLAYERT, Client.gameConnection.field794);
+			var31.buf.p2(Client.field10974);
+			var31.buf.p1_alt1(method14766() ? 1 : 0);
+			var31.buf.p2_alt1(Client.field10975);
+			var31.buf.p2_alt3(Client.field4490.field10406);
+			var31.buf.p4_alt2(Client.field6707);
+			Client.gameConnection.queue(var31);
 		}
 		ClientProt var32 = null;
 		if (var6 == 18) {
@@ -2266,12 +2266,12 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var33 = ClientMessage.method1604(var32, Client.field10849.field794);
-			var33.field11432.p2_alt1(var7);
-			var33.field11432.p2_alt1(var10.x + var4);
-			var33.field11432.p2(var10.z + var5);
-			var33.field11432.p1_alt3((arg3 ? 2 : 0) | (method14766() ? 1 : 0));
-			Client.field10849.method934(var33);
+			ClientMessage var33 = ClientMessage.method1604(var32, Client.gameConnection.field794);
+			var33.buf.p2_alt1(var7);
+			var33.buf.p2_alt1(var10.x + var4);
+			var33.buf.p2(var10.z + var5);
+			var33.buf.p1_alt3((arg3 ? 2 : 0) | (method14766() ? 1 : 0));
+			Client.gameConnection.queue(var33);
 			Client.method6820(var4, var5);
 		}
 		if (var6 == 15) {
@@ -2281,13 +2281,13 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var35 = ClientMessage.method1604(ClientProt.OPPLAYERT, Client.field10849.field794);
-				var35.field11432.p2(Client.field10974);
-				var35.field11432.p1_alt1(method14766() ? 1 : 0);
-				var35.field11432.p2_alt1(Client.field10975);
-				var35.field11432.p2_alt3(var7);
-				var35.field11432.p4_alt2(Client.field6707);
-				Client.field10849.method934(var35);
+				ClientMessage var35 = ClientMessage.method1604(ClientProt.OPPLAYERT, Client.gameConnection.field794);
+				var35.buf.p2(Client.field10974);
+				var35.buf.p1_alt1(method14766() ? 1 : 0);
+				var35.buf.p2_alt1(Client.field10975);
+				var35.buf.p2_alt3(var7);
+				var35.buf.p4_alt2(Client.field6707);
+				Client.gameConnection.queue(var35);
 				Client.method6820(var34.field10450[0], var34.field10448[0]);
 			}
 		}
@@ -2296,13 +2296,13 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 1;
 			Client.field10925 = 0;
-			ClientMessage var36 = ClientMessage.method1604(ClientProt.APCOORDT, Client.field10849.field794);
-			var36.field11432.p2_alt2(var10.x + var4);
-			var36.field11432.p4_alt1(Client.field6707);
-			var36.field11432.p2(Client.field10975);
-			var36.field11432.p2_alt2(var10.z + var5);
-			var36.field11432.p2_alt2(Client.field10974);
-			Client.field10849.method934(var36);
+			ClientMessage var36 = ClientMessage.method1604(ClientProt.APCOORDT, Client.gameConnection.field794);
+			var36.buf.p2_alt2(var10.x + var4);
+			var36.buf.p4_alt1(Client.field6707);
+			var36.buf.p2(Client.field10975);
+			var36.buf.p2_alt2(var10.z + var5);
+			var36.buf.p2_alt2(Client.field10974);
+			Client.gameConnection.queue(var36);
 			Client.method6820(var4, var5);
 		}
 		if (var6 == 30 && Client.field11056 == null) {
@@ -2324,15 +2324,15 @@ public class MiniMenu {
 	public static ClientMessage method9839(int arg0, int arg1, int arg2) {
 		ClientMessage var3 = null;
 		if (arg2 == 0) {
-			var3 = ClientMessage.method1604(ClientProt.MOVE_GAMECLICK, Client.field10849.field794);
+			var3 = ClientMessage.method1604(ClientProt.MOVE_GAMECLICK, Client.gameConnection.field794);
 		}
 		if (arg2 == 1) {
-			var3 = ClientMessage.method1604(ClientProt.MOVE_MINIMAPCLICK, Client.field10849.field794);
+			var3 = ClientMessage.method1604(ClientProt.MOVE_MINIMAPCLICK, Client.gameConnection.field794);
 		}
 		CoordGrid var4 = Client.world.method7727();
-		var3.field11432.p2(var4.z + arg1);
-		var3.field11432.p1(method14766() ? 1 : 0);
-		var3.field11432.p2_alt3(var4.x + arg0);
+		var3.buf.p2(var4.z + arg1);
+		var3.buf.p1(method14766() ? 1 : 0);
+		var3.buf.p2_alt3(var4.x + arg0);
 		Minimap.field731 = arg0;
 		Minimap.field718 = arg1;
 		Minimap.field730 = false;
@@ -2367,7 +2367,7 @@ public class MiniMenu {
 		float var11 = 0.0F;
 		float var12 = 0.0F;
 		float var13 = 0.0F;
-		Scene var14 = Client.world.method7743();
+		Scene var14 = Client.world.getScene();
 		while (var7 < 1.1F) {
 			float var15 = var7 * var8 + arg0;
 			float var16 = var7 * var9 + arg1;
@@ -2376,7 +2376,7 @@ public class MiniMenu {
 			int var19 = (int) var17 >> 9;
 			if (var18 > 0 && var19 > 0 && var18 < Client.world.method7728() && var19 < Client.world.method7758()) {
 				int var20 = Client.field4490.field11717;
-				if (var20 < 3 && (Client.world.method7793().field4487[1][var18][var19] & 0x2) != 0) {
+				if (var20 < 3 && (Client.world.method7793().levelTileFlags[1][var18][var19] & 0x2) != 0) {
 					var20++;
 				}
 				int var21 = var14.field6915[var20].method1527((int) var15, (int) var17);

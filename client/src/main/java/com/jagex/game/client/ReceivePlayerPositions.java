@@ -61,7 +61,7 @@ public class ReceivePlayerPositions {
 	public static final void method16435(PacketBit arg0) {
 		arg0.accessBits();
 		int var1 = Client.field10945;
-		PlayerEntity var2 = Client.field4490 = Client.field10944[var1] = new PlayerEntity(Client.world.method7743());
+		PlayerEntity var2 = Client.field4490 = Client.field10944[var1] = new PlayerEntity(Client.world.getScene());
 		var2.field10406 = var1;
 		int var3 = arg0.gBit(30);
 		byte var4 = (byte) (var3 >> 28);
@@ -442,7 +442,7 @@ public class ReceivePlayerPositions {
 				throw new RuntimeException();
 			}
 			LowResPlayerInfo var6 = field704[arg1];
-			PlayerEntity var7 = Client.field10944[arg1] = new PlayerEntity(Client.world.method7743());
+			PlayerEntity var7 = Client.field10944[arg1] = new PlayerEntity(Client.world.getScene());
 			var7.field10406 = arg1;
 			if (field706[arg1] != null) {
 				var7.method19129(field706[arg1]);

@@ -124,7 +124,7 @@ public class Preferences {
 				var7 = Client.method15172(3, 1000);
 				if (Client.preferences.displayMode2.getValue() == 3) {
 					var0.method18313(4);
-					RendererInfo var9 = Client.field8198.method2272();
+					RendererInfo var9 = Client.renderer.method2272();
 					long var10 = var9.field1265 & 0xFFFFFFFFFFFFL;
 					switch(var9.field1261) {
 						case 4098:
@@ -268,8 +268,8 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.particles, 2);
 		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.SIZE_104.id);
 		Client.preferences.method18157(Client.preferences.bloom, 0);
-		if (Client.field8198 != null && Client.field8198.method2266() && Client.field8198.method2242()) {
-			Client.field8198.method2273();
+		if (Client.renderer != null && Client.renderer.method2266() && Client.renderer.method2242()) {
+			Client.renderer.method2273();
 		}
 		Client.preferences.method18157(Client.preferences.skyboxes, 1);
 		Client.preferences.method18157(Client.preferences.animDetail, 1);
@@ -300,8 +300,8 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.particles, 1);
 		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.SIZE_104.id);
 		Client.preferences.method18157(Client.preferences.bloom, 0);
-		if (Client.field8198 != null && Client.field8198.method2266() && Client.field8198.method2242()) {
-			Client.field8198.method2273();
+		if (Client.renderer != null && Client.renderer.method2266() && Client.renderer.method2242()) {
+			Client.renderer.method2273();
 		}
 		Client.preferences.method18157(Client.preferences.skyboxes, 1);
 		Client.preferences.method18157(Client.preferences.animDetail, 1);
@@ -332,8 +332,8 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.particles, 0);
 		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.SIZE_104.id);
 		Client.preferences.method18157(Client.preferences.bloom, 0);
-		if (Client.field8198 != null && Client.field8198.method2266() && Client.field8198.method2242()) {
-			Client.field8198.method2273();
+		if (Client.renderer != null && Client.renderer.method2266() && Client.renderer.method2242()) {
+			Client.renderer.method2273();
 		}
 		Client.preferences.method18157(Client.preferences.skyboxes, 0);
 		Client.preferences.method18157(Client.preferences.animDetail, 0);
@@ -364,8 +364,8 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.particles, 0);
 		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.SIZE_104.id);
 		Client.preferences.method18157(Client.preferences.bloom, 0);
-		if (Client.field8198 != null && Client.field8198.method2266() && Client.field8198.method2242()) {
-			Client.field8198.method2273();
+		if (Client.renderer != null && Client.renderer.method2266() && Client.renderer.method2242()) {
+			Client.renderer.method2273();
 		}
 		Client.preferences.method18157(Client.preferences.skyboxes, 0);
 		Client.preferences.method18157(Client.preferences.animDetail, 0);

@@ -73,7 +73,7 @@ public class HintTrail {
 		Iterator var2 = this.field6752.iterator();
 		while (var2.hasNext()) {
 			HintTrailPoint var3 = (HintTrailPoint) var2.next();
-			arg0.method8768(var3, false);
+			arg0.addEntity(var3, false);
 		}
 		this.field6756 = true;
 	}
@@ -86,7 +86,7 @@ public class HintTrail {
 		Iterator var2 = this.field6752.iterator();
 		while (var2.hasNext()) {
 			HintTrailPoint var3 = (HintTrailPoint) var2.next();
-			arg0.method8712(var3.field11717, var3.field12471, var3.field12468, new HintTrailPointPrimaryLayerEntityPredicate(var3));
+			arg0.removeEntity(var3.field11717, var3.field12471, var3.field12468, new HintTrailPointPrimaryLayerEntityPredicate(var3));
 		}
 	}
 
@@ -112,7 +112,7 @@ public class HintTrail {
 				int var7 = Client.field4826;
 				int var8 = var4.x - var3.x;
 				int var9 = var4.z - var3.z;
-				if (var8 >= 0 && var8 < arg0.field6910 && var9 >= 0 && var9 < arg0.field6911) {
+				if (var8 >= 0 && var8 < arg0.maxTileX && var9 >= 0 && var9 < arg0.maxTileZ) {
 					int var10 = (var8 << 9) + 256;
 					int var11 = (var9 << 9) + 256;
 					if (var2.method7105(var8, var9)) {

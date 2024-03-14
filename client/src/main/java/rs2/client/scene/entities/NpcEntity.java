@@ -144,11 +144,11 @@ public class NpcEntity extends PathingEntity {
 		ScaleRotTrans var3 = this.method10536();
 		Matrix4x3 var4 = arg0.method2209();
 		int var5 = this.field10395.method316();
-		Tile var6 = this.field11716.field6928[this.field11717][(int) var3.field4298.field4308 >> 9][(int) var3.field4298.field4313 >> 9];
-		if (var6 == null || var6.field6974 == null) {
+		Tile var6 = this.field11716.levelTiles[this.field11717][(int) var3.field4298.field4308 >> 9][(int) var3.field4298.field4313 >> 9];
+		if (var6 == null || var6.groundDecoration == null) {
 			this.field10408 = (int) ((float) this.field10408 - (float) this.field10408 / 10.0F);
 		} else {
-			int var7 = this.field10408 - var6.field6974.field12448;
+			int var7 = this.field10408 - var6.groundDecoration.field12448;
 			this.field10408 = (int) ((float) this.field10408 - (float) var7 / 10.0F);
 		}
 		var4.method6292(var2);
@@ -516,12 +516,12 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
 	@ObfuscatedName("aqc.ff(B)V")
-	public final void method17378() {
+	public final void applyLighting() {
 		throw new IllegalStateException();
 	}
 

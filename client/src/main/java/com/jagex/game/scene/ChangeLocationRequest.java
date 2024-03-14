@@ -144,22 +144,22 @@ public final class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("uf.k(Lajt;B)V")
 	public static final void method9023(ChangeLocationRequest arg0) {
-		Scene var1 = Client.world.method7743();
+		Scene var1 = Client.world.getScene();
 		if (var1 == null) {
 			return;
 		}
 		Location var2 = null;
 		if (arg0.field11229 == 0) {
-			var2 = (Location) var1.method8711(arg0.field11238, arg0.field11226, arg0.field11228);
+			var2 = (Location) var1.getWall(arg0.field11238, arg0.field11226, arg0.field11228);
 		}
 		if (arg0.field11229 == 1) {
-			var2 = (Location) var1.method8735(arg0.field11238, arg0.field11226, arg0.field11228);
+			var2 = (Location) var1.getWallDecoration(arg0.field11238, arg0.field11226, arg0.field11228);
 		}
 		if (arg0.field11229 == 2) {
-			var2 = (Location) var1.method8856(arg0.field11238, arg0.field11226, arg0.field11228, Client.field11001);
+			var2 = (Location) var1.getEntity(arg0.field11238, arg0.field11226, arg0.field11228, Client.field11001);
 		}
 		if (arg0.field11229 == 3) {
-			var2 = (Location) var1.method8767(arg0.field11238, arg0.field11226, arg0.field11228);
+			var2 = (Location) var1.getGroundDecoration(arg0.field11238, arg0.field11226, arg0.field11228);
 		}
 		if (var2 == null) {
 			arg0.field11227 = -1;
@@ -221,14 +221,14 @@ public final class ChangeLocationRequest extends Node {
 		if (arg0 < 3 && Client.world.method7793().method7105(arg2, arg3)) {
 			var10 = arg0 + 1;
 		}
-		if (Client.world.method7743() == null) {
+		if (Client.world.getScene() == null) {
 			return;
 		}
-		Client.world.method7744().method16871(Client.field8198, arg0, arg1, arg2, arg3);
+		Client.world.method7744().method16871(Client.renderer, arg0, arg1, arg2, arg3);
 		if (arg4 >= 0) {
 			int var11 = Client.preferences.groundDecoration.getValue();
 			Client.preferences.method18157(Client.preferences.groundDecoration, 1);
-			Client.world.method7744().method16867(Client.field8198, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
+			Client.world.method7744().addGroundLoc(Client.renderer, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
 			Client.preferences.method18157(Client.preferences.groundDecoration, var11);
 		}
 		Minimap.method16444(Client.field4490.field11717);
@@ -239,7 +239,7 @@ public final class ChangeLocationRequest extends Node {
 		if (arg2 < 1 || arg3 < 1 || arg2 > Client.world.method7728() - 2 || arg3 > Client.world.method7758() - 2) {
 			return;
 		}
-		if (Client.world.method7743() == null) {
+		if (Client.world.getScene() == null) {
 			return;
 		}
 		Location var5 = Client.world.method7744().method16899(arg0, arg1, arg2, arg3);

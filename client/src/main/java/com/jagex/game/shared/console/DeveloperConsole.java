@@ -423,14 +423,14 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equals("renderer")) {
-				RendererInfo var3 = Client.field8198.method2272();
+				RendererInfo var3 = Client.renderer.method2272();
 				addline("Toolkit ID: " + Client.preferences.displayMode2.getValue());
 				addline("Vendor: " + var3.field1261);
 				addline("Name: " + var3.field1257);
 				addline("Version: " + var3.field1263);
 				addline("Device: " + var3.field1256);
 				addline("Driver Version: " + var3.field1265);
-				String var4 = Client.field8198.method2132();
+				String var4 = Client.renderer.method2132();
 				if (var4.length() > 0) {
 					addline(var4);
 				}
@@ -564,12 +564,12 @@ public class DeveloperConsole {
 					if (Client.state == 18) {
 						Client.method8321();
 					} else if (Client.state == 3) {
-						Client.field10849.field808 = true;
+						Client.gameConnection.field808 = true;
 					}
 					return;
 				}
 				if (arg0.equalsIgnoreCase("breakcon")) {
-					ServerConnection[] var15 = Client.field10850;
+					ServerConnection[] var15 = Client.connections;
 					for (int var16 = 0; var16 < var15.length; var16++) {
 						ServerConnection var17 = var15[var16];
 						if (var17.getStream() != null) {
@@ -654,11 +654,11 @@ public class DeveloperConsole {
 				if (Client.state == 18 || Client.state == 13) {
 					ServerConnection var30 = Client.method640();
 					ClientMessage var31 = ClientMessage.method1604(ClientProt.CLIENT_CHEAT, var30.field794);
-					var31.field11432.p1(arg0.length() + 3);
-					var31.field11432.p1(arg1 ? 1 : 0);
-					var31.field11432.p1(arg2 ? 1 : 0);
-					var31.field11432.pjstr(arg0);
-					var30.method934(var31);
+					var31.buf.p1(arg0.length() + 3);
+					var31.buf.p1(arg1 ? 1 : 0);
+					var31.buf.p1(arg2 ? 1 : 0);
+					var31.buf.pjstr(arg0);
+					var30.queue(var31);
 				}
 			} catch (Exception ex) {
 				ex.printStackTrace();
@@ -684,7 +684,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 11) {
 					addline("" + GameShell.fps);
 				} else if (arg0 == 24) {
-					OcclusionManager var1 = Client.world.method7743().field6930;
+					OcclusionManager var1 = Client.world.getScene().field6930;
 					var1.field7031 = !var1.field7031;
 				} else if (arg0 == 25) {
 					Client.field10794 = true;
@@ -738,7 +738,7 @@ public class DeveloperConsole {
 					addline(((int) var10.field4308 >> 9) + " " + ((int) var10.field4313 >> 9));
 				} else if (arg0 == 16) {
 					Vector3 var11 = Client.field4490.method10536().field4298;
-					addline("" + Client.world.method7743().field6913[Client.field4490.field11717].method1529((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
+					addline("" + Client.world.getScene().field6913[Client.field4490.field11717].method1529((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
 				} else if (arg0 == 27) {
 					addline(Component.field2175.method2926() + " " + Component.field2175.method2925());
 					addline(Component.field2297.method2926() + " " + Component.field2297.method2925());
@@ -746,7 +746,7 @@ public class DeveloperConsole {
 					Client.method14055(false);
 				} else if (arg0 == 13) {
 					Client.field10848 = !Client.field10848;
-					Client.field8198.method2253(Client.field10848);
+					Client.renderer.method2253(Client.field10848);
 					method16752();
 					return;
 				} else if (arg0 == 1) {

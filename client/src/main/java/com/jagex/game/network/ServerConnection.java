@@ -20,10 +20,10 @@ public class ServerConnection {
 	public Stream stream;
 
 	@ObfuscatedName("ax.n")
-	public IterableQueue field803 = new IterableQueue();
+	public IterableQueue writeQueue = new IterableQueue();
 
 	@ObfuscatedName("ax.m")
-	public int field791 = 0;
+	public int writePos = 0;
 
 	@ObfuscatedName("ax.k")
 	public Packet field792 = new Packet(1700);
@@ -88,38 +88,38 @@ public class ServerConnection {
 
 	@ObfuscatedName("ax.e(I)V")
 	public final void method952() {
-		this.field803.method14152();
-		this.field791 = 0;
+		this.writeQueue.method14152();
+		this.writePos = 0;
 	}
 
 	@ObfuscatedName("ax.n(B)V")
 	public final void method933() throws IOException {
-		if (this.stream == null || this.field791 <= 0) {
+		if (this.stream == null || this.writePos <= 0) {
 			return;
 		}
 		this.field792.pos = 0;
 		while (true) {
-			ClientMessage var1 = (ClientMessage) this.field803.method14191();
-			if (var1 == null || var1.field11430 > this.field792.data.length - this.field792.pos) {
+			ClientMessage message = (ClientMessage) this.writeQueue.method14191();
+			if (message == null || message.pos > this.field792.data.length - this.field792.pos) {
 				this.stream.write(this.field792.data, 0, this.field792.pos);
 				this.field801 += this.field792.pos;
 				this.field793 = 0;
 				break;
 			}
-			this.field792.pdata(var1.field11432.data, 0, var1.field11430);
-			this.field791 -= var1.field11430;
-			var1.method8440();
-			var1.field11432.release();
-			var1.method17793();
+			this.field792.pdata(message.buf.data, 0, message.pos);
+			this.writePos -= message.pos;
+			message.method8440();
+			message.buf.release();
+			message.method17793();
 		}
 	}
 
 	@ObfuscatedName("ax.m(Lakl;I)V")
-	public final void method934(ClientMessage arg0) {
-		this.field803.method14153(arg0);
-		arg0.field11430 = arg0.field11432.pos;
-		arg0.field11432.pos = 0;
-		this.field791 += arg0.field11430;
+	public final void queue(ClientMessage message) {
+		this.writeQueue.method14153(message);
+		message.pos = message.buf.pos;
+		message.buf.pos = 0;
+		this.writePos += message.pos;
 	}
 
 	@ObfuscatedName("ax.k(I)V")

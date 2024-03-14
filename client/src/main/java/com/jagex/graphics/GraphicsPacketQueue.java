@@ -52,7 +52,7 @@ public class GraphicsPacketQueue {
 
 	@ObfuscatedName("ud.l(I)V")
 	public static void method9189() {
-		if (Client.state != 18 && Client.state != 3 || Client.field10849 == null) {
+		if (Client.state != 18 && Client.state != 3 || Client.gameConnection == null) {
 			return;
 		}
 		while (true) {

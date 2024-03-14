@@ -51,7 +51,7 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("xm.bz(III)I")
 	public static int method9908(int arg0, int arg1) {
-		return LocShape.field7551.field7562 == arg0 || LocShape.field7546.field7562 == arg0 ? field11182[arg1 & 0x3] : field11180[arg1 & 0x3];
+		return LocShape.WALL_DIAGONAL_CORNER.id == arg0 || LocShape.WALL_SQUARE_CORNER.id == arg0 ? field11182[arg1 & 0x3] : field11180[arg1 & 0x3];
 	}
 
 	@ObfuscatedName("ajj.fv(Ldh;B)Luq;")
@@ -136,12 +136,12 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajj.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
 	@ObfuscatedName("ajj.ff(B)V")
-	public final void method17378() {
+	public final void applyLighting() {
 		throw new IllegalStateException();
 	}
 

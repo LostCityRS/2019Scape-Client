@@ -1091,7 +1091,7 @@ public class WorldMap {
 		int var19 = arg4 - arg3 + 1;
 		for (int var20 = 0; var20 < arg10.length; var20++) {
 			int var21 = arg11[var20] & 0x3F;
-			if (LocShape.field7554.field7562 == var21 || LocShape.field7545.field7562 == var21 || LocShape.field7546.field7562 == var21 || LocShape.field7547.field7562 == var21) {
+			if (LocShape.WALL_STRAIGHT.id == var21 || LocShape.WALL_L.id == var21 || LocShape.WALL_SQUARE_CORNER.id == var21 || LocShape.WALL_DIAGONAL.id == var21) {
 				LocType var22 = (LocType) field6785.list(arg10[var20]);
 				if (var22.field7486 == -1) {
 					int var23 = -3355444;
@@ -1099,7 +1099,7 @@ public class WorldMap {
 						var23 = -3407872;
 					}
 					int var24 = arg11[var20] >> 6 & 0x3;
-					if (LocShape.field7554.field7562 == var21) {
+					if (LocShape.WALL_STRAIGHT.id == var21) {
 						if (var24 == 0) {
 							method8544(arg0, arg1, arg4, var19, arg5, var23);
 						} else if (var24 == 1) {
@@ -1109,7 +1109,7 @@ public class WorldMap {
 						} else {
 							method8543(arg0, arg1, arg3, var18, arg5, var23);
 						}
-					} else if (LocShape.field7545.field7562 == var21) {
+					} else if (LocShape.WALL_L.id == var21) {
 						if (var24 == 0) {
 							method8544(arg0, arg1, arg4, var19, arg5, -1);
 							method8543(arg0, arg1, arg4, var18, arg5, var23);
@@ -1123,7 +1123,7 @@ public class WorldMap {
 							method8544(arg0, arg1, arg4, var19, arg5, -1);
 							method8543(arg0, arg1, arg3, var18, arg5, var23);
 						}
-					} else if (LocShape.field7546.field7562 == var21) {
+					} else if (LocShape.WALL_SQUARE_CORNER.id == var21) {
 						if (var24 == 0) {
 							method8543(arg0, arg1, arg4, 1, arg5, var23);
 						} else if (var24 == 1) {
@@ -1133,7 +1133,7 @@ public class WorldMap {
 						} else {
 							method8543(arg0, arg1, arg3, 1, arg5, var23);
 						}
-					} else if (LocShape.field7547.field7562 == var21) {
+					} else if (LocShape.WALL_DIAGONAL.id == var21) {
 						if (var24 == 0 || var24 == 2) {
 							for (int var26 = 0; var26 < var19; var26++) {
 								method8543(arg0, arg1 + var26, arg3 + var26, 1, arg5, var23);

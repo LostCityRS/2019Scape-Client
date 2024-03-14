@@ -58,8 +58,8 @@ public class MainLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("jr.l(S)V")
 	public void method4916() {
-		if (Client.field8198 != this.field2933) {
-			this.field2933 = Client.field8198;
+		if (Client.renderer != this.field2933) {
+			this.field2933 = Client.renderer;
 			this.field2929 = true;
 		}
 		this.field2933.method2475(3, 0);
@@ -112,7 +112,7 @@ public class MainLoadingScreen implements LoadingScreen {
 		Sprite var2 = (Sprite) field2930.method2930((long) arg1);
 		if (var2 == null) {
 			if (Loading.field2941) {
-				var2 = Client.field8198.method2200(SpriteDataProvider.method1607(arg0, arg1), true);
+				var2 = Client.renderer.method2200(SpriteDataProvider.method1607(arg0, arg1), true);
 			} else {
 				var2 = method3594(arg0.method6894(arg1));
 			}
@@ -151,7 +151,7 @@ public class MainLoadingScreen implements LoadingScreen {
 					int[] var6 = new int[var4 * var5];
 					PixelGrabber var7 = new PixelGrabber(var1, 0, 0, var4, var5, var6, 0, var4);
 					var7.grabPixels();
-					return Client.field8198.method2199(var6, 0, var4, var4, var5);
+					return Client.renderer.method2199(var6, 0, var4, var4, var5);
 				}
 				throw new RuntimeException("");
 			} catch (InterruptedException var9) {

@@ -39,7 +39,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 
 	@ObfuscatedName("pd.bz(III)B")
 	public static byte method6824(int arg0, int arg1) {
-		if (LocShape.field7547.field7562 == arg0) {
+		if (LocShape.WALL_DIAGONAL.id == arg0) {
 			return (byte) ((arg1 & 0x1) == 0 ? 1 : 2);
 		} else {
 			return 0;
@@ -131,12 +131,12 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
 	@ObfuscatedName("ajy.ff(B)V")
-	public final void method17378() {
+	public final void applyLighting() {
 		throw new IllegalStateException();
 	}
 

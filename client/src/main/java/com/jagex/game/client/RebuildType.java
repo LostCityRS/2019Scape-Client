@@ -12,10 +12,10 @@ public class RebuildType {
 	public static final RebuildType field5064 = new RebuildType(true, false);
 
 	@ObfuscatedName("rc.m")
-	public static final RebuildType field5071 = new RebuildType(false, false);
+	public static final RebuildType REBUILD_NORMAL = new RebuildType(false, false);
 
 	@ObfuscatedName("rc.k")
-	public static final RebuildType field5066 = new RebuildType(true, false);
+	public static final RebuildType REBUILD_REGION = new RebuildType(true, false);
 
 	@ObfuscatedName("rc.f")
 	public static final RebuildType field5067 = new RebuildType(true, false);
@@ -30,19 +30,19 @@ public class RebuildType {
 	public static final RebuildType field5070 = new RebuildType(false, false);
 
 	@ObfuscatedName("rc.z")
-	public boolean field5072;
+	public boolean regionType;
 
 	@ObfuscatedName("rc.p")
 	public boolean field5065;
 
-	public RebuildType(boolean arg0, boolean arg1) {
-		this.field5072 = arg0;
+	public RebuildType(boolean regionType, boolean arg1) {
+		this.regionType = regionType;
 		this.field5065 = arg1;
 	}
 
 	@ObfuscatedName("rc.e(I)Z")
-	public boolean method7887() {
-		return this.field5072;
+	public boolean isRegionType() {
+		return this.regionType;
 	}
 
 	@ObfuscatedName("rc.n(B)Z")

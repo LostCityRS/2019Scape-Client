@@ -95,7 +95,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 
 	@ObfuscatedName("zg.bz(III)B")
 	public static byte method14062(int arg0, int arg1) {
-		if (LocShape.field7547.field7562 == arg0) {
+		if (LocShape.WALL_DIAGONAL.id == arg0) {
 			return (byte) ((arg1 & 0x1) == 0 ? 1 : 2);
 		} else {
 			return 0;
@@ -148,7 +148,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 			}
 		}
 		Vector3 var7 = this.method10536().field4298;
-		return var4.method9475(arg0, arg1, LocShape.field7564.field7562 == this.field11137 ? LocShape.field7563.field7562 : this.field11137, LocShape.field7564.field7562 == this.field11137 ? this.field11142 + 4 : this.field11142, var5, var6, (int) var7.field4308, this.field11138, (int) var7.field4313, arg2, null);
+		return var4.method9475(arg0, arg1, LocShape.CENTREPIECE_DIAGONAL.id == this.field11137 ? LocShape.CENTREPIECE_STRAIGHT.id : this.field11137, LocShape.CENTREPIECE_DIAGONAL.id == this.field11137 ? this.field11142 + 4 : this.field11142, var5, var6, (int) var7.field4308, this.field11138, (int) var7.field4313, arg2, null);
 	}
 
 	@ObfuscatedName("ajv.fv(Ldh;B)Luq;")
@@ -202,7 +202,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.fq(Ldh;Lalh;IIIZB)V")
-	public void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		if (arg1 instanceof StaticWallEntity) {
 			StaticWallEntity var7 = (StaticWallEntity) arg1;
 			if (this.field11136 != null && var7.field11173 != null) {
@@ -217,7 +217,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.ff(B)V")
-	public void method17378() {
+	public void applyLighting() {
 		this.field11139 = false;
 		if (this.field11136 != null) {
 			this.field11136.method1690(this.field11136.method1691() & 0xFFFEFFFF);

@@ -16,10 +16,10 @@ public class ClientMessage extends Node {
 	public int field11431;
 
 	@ObfuscatedName("akl.w")
-	public PacketBit field11432;
+	public PacketBit buf;
 
 	@ObfuscatedName("akl.l")
-	public int field11430;
+	public int pos;
 
 	@ObfuscatedName("akl.u")
 	public static ClientMessage[] field11434 = new ClientMessage[300];
@@ -38,19 +38,19 @@ public class ClientMessage extends Node {
 		var2.field11435 = arg0;
 		var2.field11431 = arg0.size;
 		if (var2.field11431 == -1) {
-			var2.field11432 = new PacketBit(260);
+			var2.buf = new PacketBit(260);
 		} else if (var2.field11431 == -2) {
-			var2.field11432 = new PacketBit(10000);
+			var2.buf = new PacketBit(10000);
 		} else if (var2.field11431 <= 18) {
-			var2.field11432 = new PacketBit(20);
+			var2.buf = new PacketBit(20);
 		} else if (var2.field11431 <= 98) {
-			var2.field11432 = new PacketBit(100);
+			var2.buf = new PacketBit(100);
 		} else {
-			var2.field11432 = new PacketBit(260);
+			var2.buf = new PacketBit(260);
 		}
-		var2.field11432.setIsaac(arg1);
-		var2.field11432.pIsaac1(var2.field11435.id);
-		var2.field11430 = 0;
+		var2.buf.setIsaac(arg1);
+		var2.buf.pIsaac1(var2.field11435.id);
+		var2.pos = 0;
 		return var2;
 	}
 
@@ -59,7 +59,7 @@ public class ClientMessage extends Node {
 		ClientMessage var0 = method7898();
 		var0.field11435 = null;
 		var0.field11431 = 0;
-		var0.field11432 = new PacketBit(5000);
+		var0.buf = new PacketBit(5000);
 		return var0;
 	}
 

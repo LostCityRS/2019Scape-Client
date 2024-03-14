@@ -105,7 +105,7 @@ public class OcclusionManager {
 		this.field7023 = 0;
 		this.field7034 = new Occluder[1017];
 		this.field7033 = 0;
-		this.field7026 = new int[this.field7038.field6909][this.field7038.field6910 + 1][this.field7038.field6911 + 1];
+		this.field7026 = new int[this.field7038.maxLevel][this.field7038.maxTileX + 1][this.field7038.maxTileZ + 1];
 		this.field7040 = false;
 		this.field7031 = true;
 		if (this.field7031) {
@@ -116,9 +116,9 @@ public class OcclusionManager {
 	@ObfuscatedName("um.e(IIIIII)V")
 	public void method8957(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		if (arg0 != 8 && arg0 != 16) {
-			Tile var7 = this.field7038.field6928[arg1][arg2][arg3];
+			Tile var7 = this.field7038.levelTiles[arg1][arg2][arg3];
 			if (var7 == null) {
-				this.field7038.field6928[arg1][arg2][arg3] = var7 = new Tile(arg1);
+				this.field7038.levelTiles[arg1][arg2][arg3] = var7 = new Tile(arg1);
 			}
 			if (arg0 == 1) {
 				var7.field6973 = (short) arg4;
@@ -152,7 +152,7 @@ public class OcclusionManager {
 	@ObfuscatedName("um.n(IIII)V")
 	public void method8919(int arg0, int arg1, int arg2, int arg3) {
 		if (arg0 != 8 && arg0 != 16) {
-			Tile var5 = this.field7038.field6928[arg1][arg2][arg3];
+			Tile var5 = this.field7038.levelTiles[arg1][arg2][arg3];
 			if (var5 != null) {
 				if (arg0 == 1) {
 					var5.field6973 = 0;
@@ -186,10 +186,10 @@ public class OcclusionManager {
 			this.field7030[var1] = null;
 		}
 		this.field7029 = 0;
-		for (int var2 = 0; var2 < this.field7038.field6909; var2++) {
-			for (int var3 = 0; var3 < this.field7038.field6910; var3++) {
-				for (int var4 = 0; var4 < this.field7038.field6911; var4++) {
-					Tile var5 = this.field7038.field6928[var2][var4][var3];
+		for (int var2 = 0; var2 < this.field7038.maxLevel; var2++) {
+			for (int var3 = 0; var3 < this.field7038.maxTileX; var3++) {
+				for (int var4 = 0; var4 < this.field7038.maxTileZ; var4++) {
+					Tile var5 = this.field7038.levelTiles[var2][var4][var3];
 					if (var5 != null) {
 						if (var5.field6973 > 0) {
 							var5.field6973 = (short) (var5.field6973 * -1);
@@ -201,23 +201,23 @@ public class OcclusionManager {
 				}
 			}
 		}
-		for (int var6 = 0; var6 < this.field7038.field6909; var6++) {
-			for (int var7 = 0; var7 < this.field7038.field6910; var7++) {
-				for (int var8 = 0; var8 < this.field7038.field6911; var8++) {
-					Tile var9 = this.field7038.field6928[var6][var8][var7];
+		for (int var6 = 0; var6 < this.field7038.maxLevel; var6++) {
+			for (int var7 = 0; var7 < this.field7038.maxTileX; var7++) {
+				for (int var8 = 0; var8 < this.field7038.maxTileZ; var8++) {
+					Tile var9 = this.field7038.levelTiles[var6][var8][var7];
 					if (var9 != null) {
-						boolean var10 = this.field7038.field6928[0][var8][var7] != null && this.field7038.field6928[0][var8][var7].field6965 != null;
+						boolean var10 = this.field7038.levelTiles[0][var8][var7] != null && this.field7038.levelTiles[0][var8][var7].bridge != null;
 						if (var9.field6973 < 0) {
 							int var11 = var7;
 							int var12 = var7;
 							int var14 = var6;
-							Tile var15 = this.field7038.field6928[var6][var8][var7 - 1];
+							Tile var15 = this.field7038.levelTiles[var6][var8][var7 - 1];
 							int var16 = this.field7038.field6915[var6].method1529(var8, var7);
 							while (var11 > 0 && var15 != null && var15.field6973 < 0 && var9.field6973 == var15.field6973 && var9.field6969 == var15.field6969 && var16 == this.field7038.field6915[var6].method1529(var8, var11 - 1) && (var11 - 1 <= 0 || var16 == this.field7038.field6915[var6].method1529(var8, var11 - 2)) && var12 - var11 <= 10) {
 								var11--;
-								var15 = this.field7038.field6928[var6][var8][var11 - 1];
+								var15 = this.field7038.levelTiles[var6][var8][var11 - 1];
 							}
-							for (Tile var17 = this.field7038.field6928[var6][var8][var12 + 1]; var12 < this.field7038.field6911 && var17 != null && var17.field6973 < 0 && var9.field6973 == var17.field6973 && var9.field6969 == var17.field6969 && var16 == this.field7038.field6915[var6].method1529(var8, var12 + 1) && (var12 + 1 >= this.field7038.field6911 || var16 == this.field7038.field6915[var6].method1529(var8, var12 + 2)) && var12 - var11 <= 10; var17 = this.field7038.field6928[var6][var8][var12 + 1]) {
+							for (Tile var17 = this.field7038.levelTiles[var6][var8][var12 + 1]; var12 < this.field7038.maxTileZ && var17 != null && var17.field6973 < 0 && var9.field6973 == var17.field6973 && var9.field6969 == var17.field6969 && var16 == this.field7038.field6915[var6].method1529(var8, var12 + 1) && (var12 + 1 >= this.field7038.maxTileZ || var16 == this.field7038.field6915[var6].method1529(var8, var12 + 2)) && var12 - var11 <= 10; var17 = this.field7038.levelTiles[var6][var8][var12 + 1]) {
 								var12++;
 							}
 							int var18 = var6 - var6 + 1;
@@ -231,7 +231,7 @@ public class OcclusionManager {
 							this.field7030[this.field7029++] = new Occluder(this.field7038, 1, var6, var9.field6969 + var23, var9.field6969 + var23, var9.field6969 + var23, var9.field6969 + var23, var19, var21, var22, var20, var24, var25, var25, var24);
 							for (int var26 = var6; var26 <= var14; var26++) {
 								for (int var27 = var11; var27 <= var12; var27++) {
-									this.field7038.field6928[var26][var8][var27].field6973 = (short) (this.field7038.field6928[var26][var8][var27].field6973 * -1);
+									this.field7038.levelTiles[var26][var8][var27].field6973 = (short) (this.field7038.levelTiles[var26][var8][var27].field6973 * -1);
 								}
 							}
 						}
@@ -239,13 +239,13 @@ public class OcclusionManager {
 							int var28 = var8;
 							int var29 = var8;
 							int var31 = var6;
-							Tile var32 = this.field7038.field6928[var6][var8 - 1][var7];
+							Tile var32 = this.field7038.levelTiles[var6][var8 - 1][var7];
 							int var33 = this.field7038.field6915[var6].method1529(var8, var7);
 							while (var28 > 0 && var32 != null && var32.field6975 < 0 && var9.field6975 == var32.field6975 && var9.field6972 == var32.field6972 && var33 == this.field7038.field6915[var6].method1529(var28 - 1, var7) && (var28 - 1 <= 0 || var33 == this.field7038.field6915[var6].method1529(var28 - 2, var7)) && var29 - var28 <= 10) {
 								var28--;
-								var32 = this.field7038.field6928[var6][var28 - 1][var7];
+								var32 = this.field7038.levelTiles[var6][var28 - 1][var7];
 							}
-							for (Tile var34 = this.field7038.field6928[var6][var29 + 1][var7]; var29 < this.field7038.field6910 && var34 != null && var34.field6975 < 0 && var9.field6975 == var34.field6975 && var9.field6972 == var34.field6972 && var33 == this.field7038.field6915[var6].method1529(var29 + 1, var7) && (var29 + 1 >= this.field7038.field6910 || var33 == this.field7038.field6915[var6].method1529(var29 + 2, var7)) && var29 - var28 <= 10; var34 = this.field7038.field6928[var6][var29 + 1][var7]) {
+							for (Tile var34 = this.field7038.levelTiles[var6][var29 + 1][var7]; var29 < this.field7038.maxTileX && var34 != null && var34.field6975 < 0 && var9.field6975 == var34.field6975 && var9.field6972 == var34.field6972 && var33 == this.field7038.field6915[var6].method1529(var29 + 1, var7) && (var29 + 1 >= this.field7038.maxTileX || var33 == this.field7038.field6915[var6].method1529(var29 + 2, var7)) && var29 - var28 <= 10; var34 = this.field7038.levelTiles[var6][var29 + 1][var7]) {
 								var29++;
 							}
 							int var35 = var6 - var6 + 1;
@@ -259,7 +259,7 @@ public class OcclusionManager {
 							this.field7030[this.field7029++] = new Occluder(this.field7038, 2, var6, var40, var41, var41, var40, var36, var38, var39, var37, var9.field6972 + var42, var9.field6972 + var42, var9.field6972 + var42, var9.field6972 + var42);
 							for (int var43 = var6; var43 <= var31; var43++) {
 								for (int var44 = var28; var44 <= var29; var44++) {
-									this.field7038.field6928[var43][var44][var7].field6975 = (short) (this.field7038.field6928[var43][var44][var7].field6975 * -1);
+									this.field7038.levelTiles[var43][var44][var7].field6975 = (short) (this.field7038.levelTiles[var43][var44][var7].field6975 * -1);
 								}
 							}
 						}

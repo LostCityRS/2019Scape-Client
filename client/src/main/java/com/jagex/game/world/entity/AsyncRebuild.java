@@ -81,12 +81,12 @@ public class AsyncRebuild implements Runnable {
 
 	@ObfuscatedName("ry.l(Lrt;I)V")
 	public void method7689(RebuildRequest arg0) {
-		if (RebuildType.field5070 == arg0.field5017) {
+		if (RebuildType.field5070 == arg0.rebuildType) {
 			this.field5004.method7753();
 		} else {
-			this.field5004.method7749(arg0);
+			this.field5004.rebuildMap(arg0);
 		}
-		for (boolean var2 = this.field5004.method7723(); !var2; var2 = this.field5004.method7723()) {
+		for (boolean var2 = this.field5004.rebuildScene(); !var2; var2 = this.field5004.rebuildScene()) {
 		}
 		this.field5004.method7729();
 		Client.world.method7729();

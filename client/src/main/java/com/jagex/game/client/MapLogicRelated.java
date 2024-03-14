@@ -20,7 +20,7 @@ public class MapLogicRelated {
 		if (!Client.isStateGame(Client.state)) {
 			return;
 		}
-		ServerConnection[] var1 = Client.field10850;
+		ServerConnection[] var1 = Client.connections;
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			ServerConnection var3 = var1[var2];
 			var3.field793++;
@@ -30,7 +30,7 @@ public class MapLogicRelated {
 			var3.field793 = 0;
 			if (!var3.field808 && var3.getStream() != null) {
 				ClientMessage var4 = ClientMessage.method1604(ClientProt.NO_TIMEOUT, var3.field794);
-				var3.method934(var4);
+				var3.queue(var4);
 				try {
 					var3.method933();
 				} catch (IOException var6) {

@@ -28,10 +28,10 @@ public class ObjReference {
 		CoordGrid var2 = Client.world.method7727();
 		int var3 = this.field8244.x - var2.x;
 		int var4 = this.field8244.z - var2.z;
-		if (var3 >= 0 && var4 >= 0 && var3 < Client.world.method7728() && var4 < Client.world.method7758() && Client.world.method7743() != null) {
+		if (var3 >= 0 && var4 >= 0 && var3 < Client.world.method7728() && var4 < Client.world.method7758() && Client.world.getScene() != null) {
 			for (Obj var5 = (Obj) var1.field11263.method14191(); var5 != null; var5 = (Obj) var1.field11263.method14161()) {
 				if (this.field8243 == var5.field11261) {
-					return (ObjStackEntity) Client.world.method7743().method8736(this.field8244.level, var3, var4);
+					return (ObjStackEntity) Client.world.getScene().getObjStack(this.field8244.level, var3, var4);
 				}
 			}
 		}

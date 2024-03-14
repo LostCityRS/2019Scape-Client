@@ -40,12 +40,12 @@ public class BuildAreaSize {
 	}
 
 	@ObfuscatedName("fd.n(IB)Lib;")
-	public static BuildAreaSize method3061(int arg0) {
-		BuildAreaSize[] var1 = values();
-		for (int var2 = 0; var2 < var1.length; var2++) {
-			BuildAreaSize var3 = var1[var2];
-			if (var3.id == arg0) {
-				return var3;
+	public static BuildAreaSize buildAreaSizeForId(int id) {
+		BuildAreaSize[] values = values();
+		for (int index = 0; index < values.length; index++) {
+			BuildAreaSize buildAreaSize = values[index];
+			if (buildAreaSize.id == id) {
+				return buildAreaSize;
 			}
 		}
 		return null;

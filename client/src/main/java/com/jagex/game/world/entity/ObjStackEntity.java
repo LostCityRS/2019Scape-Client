@@ -107,8 +107,8 @@ public class ObjStackEntity extends ObjLayerEntity {
 	@ObfuscatedName("aut.fc(Ldh;I)Ltl;")
 	public PickableEntity method17372(Renderer arg0) {
 		Vector3 var2 = Vector3.method6484(this.method10536().field4298);
-		PrimaryLayerEntityList var3 = this.field11716.method8738(this.field11717, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
-		GroundDecorLayerEntity var4 = this.field11716.method8767(this.field11717, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
+		PrimaryLayerEntityList var3 = this.field11716.getEntities(this.field11717, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
+		GroundDecorLayerEntity var4 = this.field11716.getGroundDecoration(this.field11717, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
 		int var5 = 0;
 		while (var3 != null) {
 			if (var3.field7057.field12470 && var3.field7057.method16523() < var5) {

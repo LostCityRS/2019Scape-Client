@@ -10,31 +10,31 @@ import deob.ObfuscatedName;
 public class Tile {
 
 	@ObfuscatedName("tk.e")
-	public byte field6970;
+	public byte level;
 
 	@ObfuscatedName("tk.n")
-	public Tile field6965;
+	public Tile bridge;
 
 	@ObfuscatedName("tk.m")
-	public WallLayerEntity field6966;
+	public WallLayerEntity wall;
 
 	@ObfuscatedName("tk.k")
-	public WallLayerEntity field6967;
+	public WallLayerEntity dynamicWall;
 
 	@ObfuscatedName("tk.f")
-	public WallDecorLayerEntity field6968;
+	public WallDecorLayerEntity wallDecoration;
 
 	@ObfuscatedName("tk.w")
-	public WallDecorLayerEntity field6976;
+	public WallDecorLayerEntity dynamicWallDecoration;
 
 	@ObfuscatedName("tk.l")
-	public GroundDecorLayerEntity field6974;
+	public GroundDecorLayerEntity groundDecoration;
 
 	@ObfuscatedName("tk.u")
-	public ObjLayerEntity field6971;
+	public ObjLayerEntity objStack;
 
 	@ObfuscatedName("tk.z")
-	public PrimaryLayerEntityList field6964;
+	public PrimaryLayerEntityList entities;
 
 	@ObfuscatedName("tk.p")
 	public short field6973;
@@ -48,7 +48,7 @@ public class Tile {
 	@ObfuscatedName("tk.r")
 	public short field6972;
 
-	public Tile(int arg0) {
-		this.field6970 = (byte) arg0;
+	public Tile(int level) {
+		this.level = (byte) level;
 	}
 }

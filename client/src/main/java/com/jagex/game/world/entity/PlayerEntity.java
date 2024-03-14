@@ -324,11 +324,11 @@ public class PlayerEntity extends PathingEntity {
 		Matrix4x3 var3 = this.method10533();
 		ScaleRotTrans var4 = this.method10536();
 		int var5 = this.field10395.method316();
-		Tile var6 = this.field11716.field6928[this.field11717][(int) var4.field4298.field4308 >> 9][(int) var4.field4298.field4313 >> 9];
-		if (var6 == null || var6.field6974 == null) {
+		Tile var6 = this.field11716.levelTiles[this.field11717][(int) var4.field4298.field4308 >> 9][(int) var4.field4298.field4313 >> 9];
+		if (var6 == null || var6.groundDecoration == null) {
 			this.field10408 = (int) ((float) this.field10408 - (float) this.field10408 / 10.0F);
 		} else {
-			int var7 = this.field10408 - var6.field6974.field12448;
+			int var7 = this.field10408 - var6.groundDecoration.field12448;
 			this.field10408 = (int) ((float) this.field10408 - (float) var7 / 10.0F);
 		}
 		var2.method6292(var3);
@@ -640,12 +640,12 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.fq(Ldh;Lalh;IIIZB)V")
-	public final void method17377(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
 	@ObfuscatedName("aqk.ff(B)V")
-	public final void method17378() {
+	public final void applyLighting() {
 		throw new IllegalStateException();
 	}
 

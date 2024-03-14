@@ -246,7 +246,7 @@ public class TwitchHardwarePlatform {
 	@ObfuscatedName("ff.d(Ljava/lang/String;Ljava/lang/String;B)I")
 	public static int method3124(String arg0, String arg1) {
 		if (field7384) {
-			return Client.method640() == Client.field10849 ? field11755.Login(arg0, arg1) : 42;
+			return Client.method640() == Client.gameConnection ? field11755.Login(arg0, arg1) : 42;
 		} else {
 			return 12;
 		}
@@ -260,7 +260,7 @@ public class TwitchHardwarePlatform {
 	@ObfuscatedName("th.r(I)I")
 	public static int method8632() {
 		if (field7384) {
-			method8885(Client.field8198);
+			method8885(Client.renderer);
 			return field11755.Logout();
 		} else {
 			return 12;
@@ -313,7 +313,7 @@ public class TwitchHardwarePlatform {
 		field894 = null;
 		field7392.clear();
 		field7380.clear();
-		Client.field8198.method2126();
+		Client.renderer.method2126();
 	}
 
 	@ObfuscatedName("nk.q(Ljava/lang/String;I)I")
@@ -559,7 +559,7 @@ public class TwitchHardwarePlatform {
 		if (field7397 != null && field7397.method1459() == field7391.width && field7397.method1435() == field7391.height) {
 			field7397.method1469(0, 0, field7391.width, field7391.height, field7391.buffer, 0, field7391.width);
 		} else {
-			field7397 = Client.field8198.method2188(field7391.buffer, 0, field7391.width, field7391.width, field7391.height, false);
+			field7397 = Client.renderer.method2188(field7391.buffer, 0, field7391.width, field7391.width, field7391.height, false);
 		}
 	}
 

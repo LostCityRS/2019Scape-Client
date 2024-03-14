@@ -39,7 +39,7 @@ public abstract class MouseLogger {
 						break label102;
 					}
 					MouseEvent var6 = (MouseEvent) var5.next();
-					if (var1 != null && var1.field11432.pos - var2 >= 252 - (this.method10263() + 6)) {
+					if (var1 != null && var1.buf.pos - var2 >= 252 - (this.method10263() + 6)) {
 						break label102;
 					}
 					var6.method8440();
@@ -60,9 +60,9 @@ public abstract class MouseLogger {
 					} else {
 						if (var1 == null) {
 							var1 = this.method10267();
-							var1.field11432.p1(0);
-							var2 = var1.field11432.pos;
-							var1.field11432.pos += 2;
+							var1.buf.p1(0);
+							var2 = var1.buf.pos;
+							var1.buf.pos += 2;
 							var3 = 0;
 							var4 = 0;
 						}
@@ -84,42 +84,42 @@ public abstract class MouseLogger {
 						if (var11 < 8 && var9 >= -32 && var9 <= 31 && var10 >= -32 && var10 <= 31) {
 							var9 += 32;
 							var10 += 32;
-							var1.field11432.p2((var9 << 6) + (var11 << 12) + var10);
+							var1.buf.p2((var9 << 6) + (var11 << 12) + var10);
 						} else if (var11 < 32 && var9 >= -128 && var9 <= 127 && var10 >= -128 && var10 <= 127) {
 							var9 += 128;
 							var10 += 128;
-							var1.field11432.p1(var11 + 128);
-							var1.field11432.p2((var9 << 8) + var10);
+							var1.buf.p1(var11 + 128);
+							var1.buf.p2((var9 << 8) + var10);
 						} else if (var11 < 32) {
-							var1.field11432.p1(var11 + 192);
+							var1.buf.p1(var11 + 192);
 							if (var8 == -1 || var7 == -1) {
-								var1.field11432.p4(Integer.MIN_VALUE);
+								var1.buf.p4(Integer.MIN_VALUE);
 							} else {
-								var1.field11432.p4(var8 | var7 << 16);
+								var1.buf.p4(var8 | var7 << 16);
 							}
 						} else {
-							var1.field11432.p2((var11 & 0x1FFF) + 57344);
+							var1.buf.p2((var11 & 0x1FFF) + 57344);
 							if (var8 == -1 || var7 == -1) {
-								var1.field11432.p4(Integer.MIN_VALUE);
+								var1.buf.p4(Integer.MIN_VALUE);
 							} else {
-								var1.field11432.p4(var8 | var7 << 16);
+								var1.buf.p4(var8 | var7 << 16);
 							}
 						}
 						var4++;
-						this.method10264(var1.field11432, var6);
+						this.method10264(var1.buf, var6);
 						this.field7953 = var6.method17834();
 						var6.method17835();
 					}
 				}
 			}
 			if (var1 != null) {
-				var1.field11432.psize1(var1.field11432.pos - var2);
-				int var12 = var1.field11432.pos;
-				var1.field11432.pos = var2;
-				var1.field11432.p1(var3 / var4);
-				var1.field11432.p1(var3 % var4);
-				var1.field11432.pos = var12;
-				Client.field10849.method934(var1);
+				var1.buf.psize1(var1.buf.pos - var2);
+				int var12 = var1.buf.pos;
+				var1.buf.pos = var2;
+				var1.buf.p1(var3 / var4);
+				var1.buf.p1(var3 % var4);
+				var1.buf.pos = var12;
+				Client.gameConnection.queue(var1);
 			}
 		}
 		this.method10270();

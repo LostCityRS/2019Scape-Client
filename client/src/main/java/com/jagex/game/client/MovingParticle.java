@@ -354,7 +354,7 @@ public class MovingParticle extends Particle {
 		int var5 = this.field12159 >> arg0.field6900 + 12;
 		int var6 = this.field12161 >> arg0.field6900 + 12;
 		int var7 = this.field12163 >> 12;
-		if (var7 > 262144 || var7 < -262144 || var5 < 0 || var5 >= arg0.field6910 || var6 < 0 || var6 >= arg0.field6911) {
+		if (var7 > 262144 || var7 < -262144 || var5 < 0 || var5 >= arg0.maxTileX || var6 < 0 || var6 >= arg0.maxTileZ) {
 			this.method19669();
 			return;
 		}
@@ -362,13 +362,13 @@ public class MovingParticle extends Particle {
 		ParticleEmitterType var9 = this.field12526.field7772;
 		FloorModel[] var10 = arg0.field6913;
 		int var11 = var8.field7815;
-		Tile var12 = arg0.field6928[var8.field7815][var5][var6];
+		Tile var12 = arg0.levelTiles[var8.field7815][var5][var6];
 		if (var12 != null) {
-			var11 = var12.field6970;
+			var11 = var12.level;
 		}
 		int var13 = var10[var11].method1529(var5, var6);
 		int var14;
-		if (var11 < arg0.field6909 - 1) {
+		if (var11 < arg0.maxLevel - 1) {
 			var14 = var10[var11 + 1].method1529(var5, var6);
 		} else {
 			var14 = var13 - (0x8 << arg0.field6900);
@@ -392,59 +392,59 @@ public class MovingParticle extends Particle {
 			}
 		}
 		int var15;
-		for (var15 = arg0.field6909 - 1; var15 > 0 && var7 > var10[var15].method1529(var5, var6); var15--) {
+		for (var15 = arg0.maxLevel - 1; var15 > 0 && var7 > var10[var15].method1529(var5, var6); var15--) {
 		}
 		if (var9.field3526 && var15 == 0 && var7 > var10[0].method1529(var5, var6)) {
 			this.method19669();
-		} else if (arg0.field6909 - 1 == var15 && var10[var15].method1529(var5, var6) - var7 > 0x8 << arg0.field6900) {
+		} else if (arg0.maxLevel - 1 == var15 && var10[var15].method1529(var5, var6) - var7 > 0x8 << arg0.field6900) {
 			this.method19669();
 		} else {
-			Tile var16 = arg0.field6928[var15][var5][var6];
+			Tile var16 = arg0.levelTiles[var15][var5][var6];
 			if (var16 == null) {
-				if (var15 == 0 || arg0.field6928[0][var5][var6] == null) {
-					var16 = arg0.field6928[0][var5][var6] = new Tile(0);
+				if (var15 == 0 || arg0.levelTiles[0][var5][var6] == null) {
+					var16 = arg0.levelTiles[0][var5][var6] = new Tile(0);
 				}
-				boolean var17 = arg0.field6928[0][var5][var6].field6965 != null;
+				boolean var17 = arg0.levelTiles[0][var5][var6].bridge != null;
 				if (var15 == 3 && var17) {
 					var15--;
 				}
 				for (int var18 = 1; var18 <= var15; var18++) {
-					if (arg0.field6928[var18][var5][var6] == null) {
-						var16 = arg0.field6928[var18][var5][var6] = new Tile(var18);
+					if (arg0.levelTiles[var18][var5][var6] == null) {
+						var16 = arg0.levelTiles[var18][var5][var6] = new Tile(var18);
 						if (var17) {
-							var16.field6970++;
+							var16.level++;
 						}
 					}
 				}
 				if (var16 == null) {
-					var16 = arg0.field6928[var15][var5][var6];
+					var16 = arg0.levelTiles[var15][var5][var6];
 				}
 			}
 			if (var9.field3508) {
 				int var19 = this.field12159 >> 12;
 				int var20 = this.field12161 >> 12;
-				if (var16.field6966 != null) {
-					EntityBounds var21 = var16.field6966.method17371(arg1);
+				if (var16.wall != null) {
+					EntityBounds var21 = var16.wall.method17371(arg1);
 					if (var21 != null && var21.method8962(var19, var7, var20)) {
 						this.method19669();
 						return;
 					}
 				}
-				if (var16.field6967 != null) {
-					EntityBounds var22 = var16.field6967.method17371(arg1);
+				if (var16.dynamicWall != null) {
+					EntityBounds var22 = var16.dynamicWall.method17371(arg1);
 					if (var22 != null && var22.method8962(var19, var7, var20)) {
 						this.method19669();
 						return;
 					}
 				}
-				if (var16.field6974 != null) {
-					EntityBounds var23 = var16.field6974.method17371(arg1);
+				if (var16.groundDecoration != null) {
+					EntityBounds var23 = var16.groundDecoration.method17371(arg1);
 					if (var23 != null && var23.method8962(var19, var7, var20)) {
 						this.method19669();
 						return;
 					}
 				}
-				for (PrimaryLayerEntityList var24 = var16.field6964; var24 != null; var24 = var24.field7058) {
+				for (PrimaryLayerEntityList var24 = var16.entities; var24 != null; var24 = var24.field7058) {
 					EntityBounds var25 = var24.field7057.method17371(arg1);
 					if (var25 != null && var25.method8962(var19, var7, var20)) {
 						this.method19669();

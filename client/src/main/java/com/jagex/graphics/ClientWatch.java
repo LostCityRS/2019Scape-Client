@@ -122,8 +122,8 @@ public class ClientWatch {
 		field7949.method10280();
 		field7948.method10280();
 		if (Client.field10822 > 0) {
-			ClientMessage var0 = ClientMessage.method1604(ClientProt.EVENT_KEYBOARD, Client.field10849.field794);
-			var0.field11432.p2(Client.field10822 * 4);
+			ClientMessage var0 = ClientMessage.method1604(ClientProt.EVENT_KEYBOARD, Client.gameConnection.field794);
+			var0.buf.p2(Client.field10822 * 4);
 			for (int var1 = 0; var1 < Client.field10822; var1++) {
 				KeyboardEvent var2 = Client.field11024[var1];
 				long var3 = var2.method9133() - field7947;
@@ -131,10 +131,10 @@ public class ClientWatch {
 					var3 = 16777215L;
 				}
 				field7947 = var2.method9133();
-				var0.field11432.p1(var2.method9141());
-				var0.field11432.p3((int) var3);
+				var0.buf.p1(var2.method9141());
+				var0.buf.p3((int) var3);
 			}
-			Client.field10849.method934(var0);
+			Client.gameConnection.queue(var0);
 		}
 		if (field7945 > 0) {
 			field7945--;
@@ -156,46 +156,46 @@ public class ClientWatch {
 				var6 = 0;
 				var8 = 0;
 			}
-			ClientMessage var9 = ClientMessage.method1604(ClientProt.EVENT_CAMERA_POSITION, Client.field10849.field794);
-			var9.field11432.p2_alt3(var8);
-			var9.field11432.p2(var6);
-			Client.field10849.method934(var9);
+			ClientMessage var9 = ClientMessage.method1604(ClientProt.EVENT_CAMERA_POSITION, Client.gameConnection.field794);
+			var9.buf.p2_alt3(var8);
+			var9.buf.p2(var6);
+			Client.gameConnection.queue(var9);
 		}
 		if (GameShell.focus != field7944) {
 			field7944 = GameShell.focus;
-			ClientMessage var10 = ClientMessage.method1604(ClientProt.EVENT_APPLET_FOCUS, Client.field10849.field794);
-			var10.field11432.p1(GameShell.focus ? 1 : 0);
-			Client.field10849.method934(var10);
+			ClientMessage var10 = ClientMessage.method1604(ClientProt.EVENT_APPLET_FOCUS, Client.gameConnection.field794);
+			var10.buf.p1(GameShell.focus ? 1 : 0);
+			Client.gameConnection.queue(var10);
 		}
 		if (!Client.field10800) {
-			ClientMessage var11 = ClientMessage.method1604(ClientProt.CLIENT_DETAILOPTIONS_STATUS, Client.field10849.field794);
-			var11.field11432.p1(0);
-			int var12 = var11.field11432.pos;
+			ClientMessage var11 = ClientMessage.method1604(ClientProt.CLIENT_DETAILOPTIONS_STATUS, Client.gameConnection.field794);
+			var11.buf.p1(0);
+			int var12 = var11.buf.pos;
 			Packet var13 = Client.preferences.createPreferencesBlock();
-			var11.field11432.pdata(var13.data, 0, var13.pos);
-			var11.field11432.psize1(var11.field11432.pos - var12);
-			Client.field10849.method934(var11);
+			var11.buf.pdata(var13.data, 0, var13.pos);
+			var11.buf.psize1(var11.buf.pos - var12);
+			Client.gameConnection.queue(var11);
 			Client.field10800 = true;
 		}
 		if (Client.field10801 || Client.preferences.displayMode.getValue() != 1) {
 			return;
 		}
-		int[] var14 = Client.field8198.method2413();
-		ClientMessage var15 = ClientMessage.method1604(ClientProt.CLIENT_COMPRESSEDTEXTUREFORMAT_SUPPORT, Client.field10849.field794);
-		var15.field11432.p2(0);
-		int var16 = var15.field11432.pos;
+		int[] var14 = Client.renderer.method2413();
+		ClientMessage var15 = ClientMessage.method1604(ClientProt.CLIENT_COMPRESSEDTEXTUREFORMAT_SUPPORT, Client.gameConnection.field794);
+		var15.buf.p2(0);
+		int var16 = var15.buf.pos;
 		if (var14 == null || var14.length == 0) {
-			var15.field11432.p1(0);
+			var15.buf.p1(0);
 		} else {
-			var15.field11432.p1(1);
+			var15.buf.p1(1);
 			CompressedTextureFormat[] var17 = CompressedTextureFormat.method1304();
 			HashSet var18 = new HashSet();
 			ArrayList var19 = new ArrayList();
 			int var20 = 0;
 			label94: while (true) {
 				if (var20 >= var14.length) {
-					SerializableEnums.method618(var18, var15.field11432);
-					var15.field11432.pSmart1or2(var19.size());
+					SerializableEnums.method618(var18, var15.buf);
+					var15.buf.pSmart1or2(var19.size());
 					if (var19.size() <= 0) {
 						break;
 					}
@@ -207,7 +207,7 @@ public class ClientWatch {
 							var23 = var25;
 						}
 					}
-					var15.field11432.pSmart2or4(var23);
+					var15.buf.pSmart2or4(var23);
 					Iterator var26 = var19.iterator();
 					while (true) {
 						if (!var26.hasNext()) {
@@ -215,7 +215,7 @@ public class ClientWatch {
 						}
 						Integer var27 = (Integer) var26.next();
 						if (var27 != var23) {
-							var15.field11432.pSmart2or4(var27 - var23);
+							var15.buf.pSmart2or4(var27 - var23);
 						}
 					}
 				}
@@ -233,8 +233,8 @@ public class ClientWatch {
 				var20++;
 			}
 		}
-		var15.field11432.psize2(var15.field11432.pos - var16);
-		Client.field10849.method934(var15);
+		var15.buf.psize2(var15.buf.pos - var16);
+		Client.gameConnection.queue(var15);
 		Client.field10801 = true;
 	}
 }

@@ -37,12 +37,12 @@ public class LoadingScreenNewsDisplay implements LoadingScreenElement {
 		int var3 = this.field3025.field3155.method5382(this.field3025.field3154, Client.field10941) + this.field3025.field3150;
 		int var4 = this.field3025.field3149.method5375(this.field3025.field3156, Client.field10942) + this.field3025.field3151;
 		if (this.field3025.field3158) {
-			Client.field8198.method2179(var3, var4, this.field3025.field3154, this.field3025.field3156, this.field3025.field3148, 0);
+			Client.renderer.method2179(var3, var4, this.field3025.field3154, this.field3025.field3156, this.field3025.field3148, 0);
 		}
 		int var5 = var4 + this.method5117(DefaultSprites.field10355, var2.field3032, var3, var4, 5) * 12;
 		int var8 = var5 + 8;
 		if (this.field3025.field3158) {
-			Client.field8198.method2185(var3, var8, this.field3025.field3154 + var3 - 1, var8, this.field3025.field3148, 0);
+			Client.renderer.method2185(var3, var8, this.field3025.field3154 + var3 - 1, var8, this.field3025.field3148, 0);
 		}
 		var5 = var8 + 1;
 		int var6 = var5 + this.method5117(DefaultSprites.field10355, var2.field3033, var3, var5, 5) * 12;
