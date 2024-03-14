@@ -7,7 +7,6 @@ import com.jagex.graphics.Light;
 import com.jagex.graphics.Renderer;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ul")
 public class StaticPointLight {
@@ -45,11 +44,14 @@ public class StaticPointLight {
 	@ObfuscatedName("ul.aw")
 	public int field7013;
 
+	@ObfuscatedName("gh.as")
+	public static int[] field1970;
+
 	@ObfuscatedName("ul.at")
 	public int field6990 = -1;
 
 	public StaticPointLight(Renderer arg0, int arg1, Packet arg2, int arg3) {
-		if (Statics.field1970 == null) {
+		if (field1970 == null) {
 			method3615();
 		}
 		this.field7006 = arg2.g1();
@@ -75,7 +77,7 @@ public class StaticPointLight {
 			this.field6981[var10] = (short) (var12 << 8 | var13);
 		}
 		int var14 = (var8 << arg1) + (0x1 << arg1 >> 1);
-		int var15 = Statics.field8151 == null ? Statics.field8149[ColourUtils.method4937(arg2.g2()) & 0xFFFF] : Statics.field8151[arg2.g2()];
+		int var15 = ColourUtils.field8151 == null ? ColourUtils.field8149[ColourUtils.method4937(arg2.g2()) & 0xFFFF] : ColourUtils.field8151[arg2.g2()];
 		int var16 = arg2.g1();
 		this.field7014 = var16 & 0x1F;
 		this.field7011 = (var16 & 0xE0) << 3;
@@ -215,7 +217,7 @@ public class StaticPointLight {
 					var4 = var3;
 					break;
 				case 3:
-					var4 = Statics.field1970[var3] >> 1;
+					var4 = field1970[var3] >> 1;
 					break;
 				case 4:
 					var4 = var3 >> 10 << 11;
@@ -235,6 +237,6 @@ public class StaticPointLight {
 
 	@ObfuscatedName("gj.f(I)V")
 	public static void method3615() {
-		Statics.field1970 = NoiseGenerator.method16661(2048, 35, 8, 8, 4, 0.4F, true);
+		field1970 = NoiseGenerator.method16661(2048, 35, 8, 8, 4, 0.4F, true);
 	}
 }

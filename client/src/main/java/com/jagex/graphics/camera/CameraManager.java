@@ -10,7 +10,6 @@ import com.jagex.game.world.entity.PositionPoint;
 import com.jagex.math.Quaternion;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("a")
@@ -19,33 +18,42 @@ public class CameraManager {
 	@ObfuscatedName("a.e")
 	public static boolean field603 = false;
 
+	@ObfuscatedName("a.n")
+	public static BasicCamera field604;
+
+	@ObfuscatedName("a.m")
+	public static int field605;
+
+	@ObfuscatedName("vx.k")
+	public static int field7284;
+
 	public CameraManager() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("y.e(Lakt;I)V")
 	public static void method542(CoordFine arg0) {
-		Statics.field604 = new BasicCamera(Client.field11034);
-		Statics.field604.method4683(CameraControlMode.field2828);
+		field604 = new BasicCamera(Client.field11034);
+		field604.method4683(CameraControlMode.field2828);
 		try {
-			PositionPoint var1 = (PositionPoint) Statics.field604.method4688(PositionMode.field2816, false);
-			LookatOrientation var2 = (LookatOrientation) Statics.field604.method4684(LookatMode.field2791, false);
+			PositionPoint var1 = (PositionPoint) field604.method4688(PositionMode.field2816, false);
+			LookatOrientation var2 = (LookatOrientation) field604.method4684(LookatMode.field2791, false);
 			var1.method16671(arg0);
 			var2.method18781(new Quaternion(0.0F, 0.0F, 0.0F));
-			Statics.field604.method4695(Vector3.method6483(99999.0F, 99999.0F, 99999.0F));
-			Statics.field604.method4814(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
-			Statics.field604.method4832(Vector3.method6483(99999.0F, 99999.0F, 99999.0F));
-			Statics.field604.method4690(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
+			field604.method4695(Vector3.method6483(99999.0F, 99999.0F, 99999.0F));
+			field604.method4814(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
+			field604.method4832(Vector3.method6483(99999.0F, 99999.0F, 99999.0F));
+			field604.method4690(Vector3.method6483(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
 		} catch (CameraException var4) {
 		}
-		Statics.field605 = Client.field9182.method9086();
-		Statics.field7284 = Client.field9182.method9092();
+		field605 = Client.field9182.method9086();
+		field7284 = Client.field9182.method9092();
 		field603 = true;
 	}
 
 	@ObfuscatedName("hd.n(I)V")
 	public static void method3913() {
-		Statics.field604 = null;
+		field604 = null;
 		field603 = false;
 	}
 
@@ -56,8 +64,8 @@ public class CameraManager {
 
 	@ObfuscatedName("dg.k(B)V")
 	public static void method2585() {
-		PositionPoint var0 = (PositionPoint) Statics.field604.method4709();
-		LookatOrientation var1 = (LookatOrientation) Statics.field604.method4797();
+		PositionPoint var0 = (PositionPoint) field604.method4709();
+		LookatOrientation var1 = (LookatOrientation) field604.method4797();
 		Vector3 var2 = var0.method5219();
 		Quaternion var3 = var1.method18787();
 		if (Client.field10986 != null) {
@@ -67,23 +75,23 @@ public class CameraManager {
 			float var7 = (float) (Math.atan((double) ((float) var4 / 2.0F / var6)) * 2.0D);
 			float var8 = (float) (Math.atan((double) ((float) var5 / 2.0F / var6)) * 2.0D);
 			try {
-				Statics.field604.method4828(var7, var8);
+				field604.method4828(var7, var8);
 			} catch (CameraException var21) {
 			}
 		}
 		if (Client.field9182.method9121()) {
 			Quaternion var10 = Quaternion.method6469();
-			var10.method6414(1.0F, 0.0F, 0.0F, (float) (Client.field9182.method9092() - Statics.field7284) / 200.0F);
+			var10.method6414(1.0F, 0.0F, 0.0F, (float) (Client.field9182.method9092() - field7284) / 200.0F);
 			var3.method6424(var10);
 			Vector3 var11 = Vector3.method6483(0.0F, 1.0F, 0.0F);
 			var11.method6526(var3);
 			Quaternion var12 = Quaternion.method6469();
-			var12.method6413(var11, (float) (Statics.field605 - Client.field9182.method9086()) / 200.0F);
+			var12.method6413(var11, (float) (field605 - Client.field9182.method9086()) / 200.0F);
 			var3.method6424(var12);
 			var1.method18781(var3);
 		}
-		Statics.field605 = Client.field9182.method9086();
-		Statics.field7284 = Client.field9182.method9092();
+		field605 = Client.field9182.method9086();
+		field7284 = Client.field9182.method9092();
 		var3.method6418();
 		if (Client.field11931.method9080(98)) {
 			Vector3 var13 = Vector3.method6483(0.0F, 0.0F, 25.0F);
@@ -114,6 +122,6 @@ public class CameraManager {
 		CoordGrid var18 = Client.world.method7727();
 		int var19 = var18.field7426 << 9;
 		int var20 = var18.field7427 << 9;
-		Statics.field604.method4681(0.02F, Client.world.method7744().field4540, Client.world.method7793(), var19, var20);
+		field604.method4681(0.02F, Client.world.method7744().field4540, Client.world.method7793(), var19, var20);
 	}
 }

@@ -104,6 +104,12 @@ public class DelayedStateChange extends SecondaryNode {
 		var1.method19333();
 	}
 
+	@ObfuscatedName("aqh.u(II)V")
+	public static void method19198(int arg0) {
+		DelayedStateChange var1 = method5072(4, (long) arg0);
+		var1.method19333();
+	}
+
 	@ObfuscatedName("yg.z(IB)V")
 	public static void method10523(int arg0) {
 		DelayedStateChange var1 = method5072(5, (long) arg0);

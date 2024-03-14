@@ -8,7 +8,6 @@ import com.jagex.game.config.vartype.VarIntDomain;
 import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.script.ClientTriggerType;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.clientscript.ScriptRunner;
 
@@ -17,6 +16,21 @@ public class CutsceneManager {
 
 	@ObfuscatedName("eq.e")
 	public static IterableQueue field1712 = new IterableQueue();
+
+	@ObfuscatedName("eq.n")
+	public static CutsceneSpline[] field1714;
+
+	@ObfuscatedName("eq.m")
+	public static CutsceneEntity[] field1721;
+
+	@ObfuscatedName("vl.k")
+	public static CutsceneLocation[] field7317;
+
+	@ObfuscatedName("zs.f")
+	public static CutsceneRoute[] field8358;
+
+	@ObfuscatedName("eq.w")
+	public static CutsceneAction[] field1713;
 
 	@ObfuscatedName("eq.l")
 	public static IterableMap field1718 = new IterableMap(32);
@@ -33,11 +47,26 @@ public class CutsceneManager {
 	@ObfuscatedName("eq.d")
 	public static boolean field1711 = false;
 
+	@ObfuscatedName("ahx.c")
+	public static short field10538;
+
+	@ObfuscatedName("ala.r")
+	public static short field11700;
+
+	@ObfuscatedName("eq.v")
+	public static short field1719;
+
+	@ObfuscatedName("eq.o")
+	public static short field1720;
+
 	@ObfuscatedName("eq.s")
 	public static int field1717 = -1;
 
 	@ObfuscatedName("eq.y")
 	public static int field1722 = -1;
+
+	@ObfuscatedName("ai.q")
+	public static CutsceneLoadingStage field694;
 
 	@ObfuscatedName("eq.x")
 	public static final VarIntDomain field1723 = new CutsceneVarDomain();
@@ -48,12 +77,12 @@ public class CutsceneManager {
 
 	@ObfuscatedName("xj.e(II)Z")
 	public static boolean method10308(int arg0) {
-		if (field1722 != arg0 || Statics.field694 == null) {
+		if (field1722 != arg0 || field694 == null) {
 			method3551();
-			Statics.field694 = CutsceneLoadingStage.field1724;
+			field694 = CutsceneLoadingStage.field1724;
 			field1722 = arg0;
 		}
-		if (Statics.field694 == CutsceneLoadingStage.field1724) {
+		if (field694 == CutsceneLoadingStage.field1724) {
 			byte[] var1 = Client.field3808.method6894(arg0);
 			if (var1 == null) {
 				return false;
@@ -65,49 +94,49 @@ public class CutsceneManager {
 				field1712.method14153(new CutsceneTemplate(var2));
 			}
 			int var5 = var2.gSmart1or2();
-			Statics.field1714 = new CutsceneSpline[var5];
+			field1714 = new CutsceneSpline[var5];
 			for (int var6 = 0; var6 < var5; var6++) {
-				Statics.field1714[var6] = new CutsceneSpline(var2);
+				field1714[var6] = new CutsceneSpline(var2);
 			}
 			int var7 = var2.gSmart1or2();
-			Statics.field1721 = new CutsceneEntity[var7];
+			field1721 = new CutsceneEntity[var7];
 			for (int var8 = 0; var8 < var7; var8++) {
-				Statics.field1721[var8] = new CutsceneEntity(var2, var8);
+				field1721[var8] = new CutsceneEntity(var2, var8);
 			}
 			int var9 = var2.gSmart1or2();
-			Statics.field7317 = new CutsceneLocation[var9];
+			field7317 = new CutsceneLocation[var9];
 			for (int var10 = 0; var10 < var9; var10++) {
-				Statics.field7317[var10] = new CutsceneLocation(var2);
+				field7317[var10] = new CutsceneLocation(var2);
 			}
 			int var11 = var2.gSmart1or2();
-			Statics.field8358 = new CutsceneRoute[var11];
+			field8358 = new CutsceneRoute[var11];
 			for (int var12 = 0; var12 < var11; var12++) {
-				Statics.field8358[var12] = new CutsceneRoute(var2);
+				field8358[var12] = new CutsceneRoute(var2);
 			}
 			int var13 = var2.gSmart1or2();
-			Statics.field1713 = new CutsceneAction[var13];
+			field1713 = new CutsceneAction[var13];
 			for (int var14 = 0; var14 < var13; var14++) {
-				Statics.field1713[var14] = CutsceneAction.method14342(var2);
+				field1713[var14] = CutsceneAction.method14342(var2);
 			}
-			Statics.field694 = CutsceneLoadingStage.field1725;
+			field694 = CutsceneLoadingStage.field1725;
 		}
-		if (Statics.field694 == CutsceneLoadingStage.field1725) {
+		if (field694 == CutsceneLoadingStage.field1725) {
 			boolean var15 = true;
-			CutsceneEntity[] var16 = Statics.field1721;
+			CutsceneEntity[] var16 = field1721;
 			for (int var17 = 0; var17 < var16.length; var17++) {
 				CutsceneEntity var18 = var16[var17];
 				if (!var18.method2871()) {
 					var15 = false;
 				}
 			}
-			CutsceneAction[] var19 = Statics.field1713;
+			CutsceneAction[] var19 = field1713;
 			for (int var20 = 0; var20 < var19.length; var20++) {
 				CutsceneAction var21 = var19[var20];
 				if (!var21.method2891()) {
 					var15 = false;
 				}
 			}
-			CutsceneLocation[] var22 = Statics.field7317;
+			CutsceneLocation[] var22 = field7317;
 			for (int var23 = 0; var23 < var22.length; var23++) {
 				CutsceneLocation var24 = var22[var23];
 				if (!var24.method2849()) {
@@ -117,7 +146,7 @@ public class CutsceneManager {
 			if (!var15) {
 				return false;
 			}
-			Statics.field694 = CutsceneLoadingStage.field1726;
+			field694 = CutsceneLoadingStage.field1726;
 		}
 		return true;
 	}
@@ -141,33 +170,33 @@ public class CutsceneManager {
 	public static void method3551() {
 		field1718.method14499();
 		field1712.method14152();
-		Statics.field1714 = null;
-		Statics.field1721 = null;
-		Statics.field7317 = null;
-		Statics.field8358 = null;
-		Statics.field1713 = null;
+		field1714 = null;
+		field1721 = null;
+		field7317 = null;
+		field8358 = null;
+		field1713 = null;
 		field1715 = 1;
 		field1716 = 0;
 		field1710 = 0;
-		Statics.field694 = null;
+		field694 = null;
 		field1722 = -1;
 		field1717 = -1;
 		if (!field1711) {
 			return;
 		}
-		Client.field10900 = Statics.field10538;
-		Client.field10943 = Statics.field1719;
-		Client.field11070 = Statics.field11700;
-		Client.field11071 = Statics.field1720;
+		Client.field10900 = field10538;
+		Client.field10943 = field1719;
+		Client.field11070 = field11700;
+		Client.field11071 = field1720;
 		field1711 = false;
 	}
 
 	@ObfuscatedName("cs.k(I)V")
 	public static void method1576() {
-		Statics.field10538 = Client.field10900;
-		Statics.field1719 = Client.field10943;
-		Statics.field11700 = Client.field11070;
-		Statics.field1720 = Client.field11071;
+		field10538 = Client.field10900;
+		field1719 = Client.field10943;
+		field11700 = Client.field11070;
+		field1720 = Client.field11071;
 		field1711 = true;
 		field1717 = Client.field1798.method3170();
 		if (field1710 != 0 && field1716 != 0) {
@@ -183,8 +212,8 @@ public class CutsceneManager {
 			return;
 		}
 		if (!arg0) {
-			if (Statics.field1713 != null) {
-				CutsceneAction[] var1 = Statics.field1713;
+			if (field1713 != null) {
+				CutsceneAction[] var1 = field1713;
 				for (int var2 = 0; var2 < var1.length; var2++) {
 					CutsceneAction var3 = var1[var2];
 					var3.method2896();

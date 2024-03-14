@@ -9,6 +9,7 @@ import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
 import com.jagex.core.utils.StringTools;
 import com.jagex.game.client.DataType;
+import com.jagex.game.client.NativeLibraries;
 import com.jagex.game.client.NativeLibraryConfig;
 import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.BillboardTypeList;
@@ -19,7 +20,6 @@ import com.jagex.graphics.*;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.math.*;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaclib.memory.Buffer;
 import jaclib.memory.Stream;
 import jaclib.memory.heap.NativeHeap;
@@ -552,8 +552,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 			} catch (Exception var34) {
 			}
 			this.field9967 = arg6;
-			Statics.method5134().method7902("jaclib");
-			Statics.method5134().method7902("jaggl");
+			NativeLibraries.method5134().method7902("jaclib");
+			NativeLibraries.method5134().method7902("jaggl");
 			this.field10022 = new OpenGL();
 			long var10 = this.field10022.init(arg0, 8, 8, 8, 24, 0, this.field9967);
 			if (var10 == 0L) {

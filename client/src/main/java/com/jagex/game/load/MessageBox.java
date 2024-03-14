@@ -2,11 +2,61 @@ package com.jagex.game.load;
 
 import com.jagex.graphics.*;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("as")
 public class MessageBox {
+
+	@ObfuscatedName("as.e")
+	public static LoadingScreenAlignmentX field709;
+
+	@ObfuscatedName("as.n")
+	public static LoadingScreenAlignmentY field715;
+
+	@ObfuscatedName("as.m")
+	public static int field711;
+
+	@ObfuscatedName("j.k")
+	public static int field621;
+
+	@ObfuscatedName("as.f")
+	public static int field712;
+
+	@ObfuscatedName("x.w")
+	public static int field592;
+
+	@ObfuscatedName("uz.l")
+	public static int field7091;
+
+	@ObfuscatedName("gp.u")
+	public static int field1921;
+
+	@ObfuscatedName("vy.z")
+	public static int field7424;
+
+	@ObfuscatedName("as.p")
+	public static int field713;
+
+	@ObfuscatedName("as.d")
+	public static SpriteData field714;
+
+	@ObfuscatedName("as.c")
+	public static SpriteData field710;
+
+	@ObfuscatedName("rk.r")
+	public static SpriteData field4963;
+
+	@ObfuscatedName("acm.v")
+	public static FontMetrics field8851;
+
+	@ObfuscatedName("as.o")
+	public static PalettedSpriteData field716;
+
+	@ObfuscatedName("ae.s")
+	public static int field627;
+
+	@ObfuscatedName("adx.y")
+	public static boolean field9262;
 
 	public MessageBox() throws Throwable {
 		throw new Error();
@@ -14,58 +64,58 @@ public class MessageBox {
 
 	@ObfuscatedName("fm.e(Lkv;Lky;IIIIIIIIII)V")
 	public static void method3004(LoadingScreenAlignmentX arg0, LoadingScreenAlignmentY arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
-		Statics.field709 = arg0;
-		Statics.field715 = arg1;
-		Statics.field711 = arg2;
-		Statics.field621 = arg3;
-		Statics.field712 = arg4;
-		Statics.field592 = arg5;
-		Statics.field7091 = arg6;
-		Statics.field1921 = arg7;
-		Statics.field7424 = arg8;
-		Statics.field714 = null;
-		Statics.field710 = null;
-		Statics.field4963 = null;
-		Statics.field627 = arg9;
-		Statics.field713 = arg10;
+		field709 = arg0;
+		field715 = arg1;
+		field711 = arg2;
+		field621 = arg3;
+		field712 = arg4;
+		field592 = arg5;
+		field7091 = arg6;
+		field1921 = arg7;
+		field7424 = arg8;
+		field714 = null;
+		field710 = null;
+		field4963 = null;
+		field627 = arg9;
+		field713 = arg10;
 		method16459();
-		Statics.field9262 = true;
+		field9262 = true;
 	}
 
 	@ObfuscatedName("agz.n(I)Z")
 	public static boolean method16459() {
 		boolean var0 = true;
-		if (Statics.field714 == null) {
-			if (Client.field10317.method6889(Statics.field7091)) {
-				Statics.field714 = SpriteDataProvider.method1607(Client.field10317, Statics.field7091);
+		if (field714 == null) {
+			if (Client.field10317.method6889(field7091)) {
+				field714 = SpriteDataProvider.method1607(Client.field10317, field7091);
 			} else {
 				var0 = false;
 			}
 		}
-		if (Statics.field710 == null) {
-			if (Client.field10317.method6889(Statics.field1921)) {
-				Statics.field710 = SpriteDataProvider.method1607(Client.field10317, Statics.field1921);
+		if (field710 == null) {
+			if (Client.field10317.method6889(field1921)) {
+				field710 = SpriteDataProvider.method1607(Client.field10317, field1921);
 			} else {
 				var0 = false;
 			}
 		}
-		if (Statics.field4963 == null) {
-			if (Client.field10317.method6889(Statics.field7424)) {
-				Statics.field4963 = SpriteDataProvider.method1607(Client.field10317, Statics.field7424);
+		if (field4963 == null) {
+			if (Client.field10317.method6889(field7424)) {
+				field4963 = SpriteDataProvider.method1607(Client.field10317, field7424);
 			} else {
 				var0 = false;
 			}
 		}
-		if (Statics.field8851 == null) {
-			if (Client.field7672.method6889(Statics.field713)) {
-				Statics.field8851 = Client.field7538.method6163(Client.field10833, Statics.field713);
+		if (field8851 == null) {
+			if (Client.field7672.method6889(field713)) {
+				field8851 = Client.field7538.method6163(Client.field10833, field713);
 			} else {
 				var0 = false;
 			}
 		}
-		if (Statics.field716 == null) {
-			if (Client.field10317.method6889(Statics.field713)) {
-				Statics.field716 = (PalettedSpriteData) SpriteDataProvider.method1607(Client.field10317, Statics.field713);
+		if (field716 == null) {
+			if (Client.field10317.method6889(field713)) {
+				field716 = (PalettedSpriteData) SpriteDataProvider.method1607(Client.field10317, field713);
 			} else {
 				var0 = false;
 			}
@@ -75,45 +125,45 @@ public class MessageBox {
 
 	@ObfuscatedName("ae.m(Ljava/lang/String;ZLdh;Leu;Laac;B)V")
 	public static void method649(String arg0, boolean arg1, Renderer arg2, Font arg3, FontMetrics arg4) {
-		boolean var5 = !Statics.field9262 || method16459();
+		boolean var5 = !field9262 || method16459();
 		if (!var5) {
 			return;
 		}
-		if (Statics.field9262 && var5) {
-			FontMetrics var6 = Statics.field8851;
-			Font var7 = arg2.method2207(var6, Statics.field716, true);
+		if (field9262 && var5) {
+			FontMetrics var6 = field8851;
+			Font var7 = arg2.method2207(var6, field716, true);
 			int var8 = var6.method14551(arg0, 250, null);
 			int var9 = var6.method14545(arg0, 250, var6.field8566, null);
-			int var10 = Statics.field710.method2639();
+			int var10 = field710.method2639();
 			int var11 = var10 + 4;
 			int var12 = var11 * 2 + var8;
 			int var13 = var11 * 2 + var9;
-			if (var12 < Statics.field712) {
-				var12 = Statics.field712;
+			if (var12 < field712) {
+				var12 = field712;
 			}
-			if (var13 < Statics.field592) {
-				var13 = Statics.field592;
+			if (var13 < field592) {
+				var13 = field592;
 			}
-			int var14 = Statics.field709.method5382(var12, Client.field10941) + Statics.field711;
-			int var15 = Statics.field715.method5375(var13, Client.field10942) + Statics.field621;
-			arg2.method2200(Statics.field4963, false).method1449(var14 + Statics.field714.method2639(), var15 + Statics.field714.method2631(), var12 - Statics.field714.method2639() * 2, var13 - Statics.field714.method2631() * 2, 1, -1, 0);
-			arg2.method2200(Statics.field714, true).method1439(var14, var15);
-			Statics.field714.method2601();
-			arg2.method2200(Statics.field714, true).method1439(var12 + var14 - var10, var15);
-			Statics.field714.method2602();
-			arg2.method2200(Statics.field714, true).method1439(var12 + var14 - var10, var13 + var15 - var10);
-			Statics.field714.method2601();
-			arg2.method2200(Statics.field714, true).method1439(var14, var13 + var15 - var10);
-			Statics.field714.method2602();
-			arg2.method2200(Statics.field710, true).method1448(var14, var15 + Statics.field714.method2631(), var10, var13 - Statics.field714.method2631() * 2);
-			Statics.field710.method2588();
-			arg2.method2200(Statics.field710, true).method1448(var14 + Statics.field714.method2639(), var15, var12 - Statics.field714.method2639() * 2, var10);
-			Statics.field710.method2588();
-			arg2.method2200(Statics.field710, true).method1448(var12 + var14 - var10, var15 + Statics.field714.method2631(), var10, var13 - Statics.field714.method2631() * 2);
-			Statics.field710.method2588();
-			arg2.method2200(Statics.field710, true).method1448(var14 + Statics.field714.method2639(), var13 + var15 - var10, var12 - Statics.field714.method2639() * 2, var10);
-			Statics.field710.method2588();
-			var7.method2720(arg0, var11 + var14, var11 + var15, var12 - var11 * 2, var13 - var11 * 2, Statics.field627 | 0xFF000000, -1, 1, 1, 0, null, null, null, 0, 0);
+			int var14 = field709.method5382(var12, Client.field10941) + field711;
+			int var15 = field715.method5375(var13, Client.field10942) + field621;
+			arg2.method2200(field4963, false).method1449(var14 + field714.method2639(), var15 + field714.method2631(), var12 - field714.method2639() * 2, var13 - field714.method2631() * 2, 1, -1, 0);
+			arg2.method2200(field714, true).method1439(var14, var15);
+			field714.method2601();
+			arg2.method2200(field714, true).method1439(var12 + var14 - var10, var15);
+			field714.method2602();
+			arg2.method2200(field714, true).method1439(var12 + var14 - var10, var13 + var15 - var10);
+			field714.method2601();
+			arg2.method2200(field714, true).method1439(var14, var13 + var15 - var10);
+			field714.method2602();
+			arg2.method2200(field710, true).method1448(var14, var15 + field714.method2631(), var10, var13 - field714.method2631() * 2);
+			field710.method2588();
+			arg2.method2200(field710, true).method1448(var14 + field714.method2639(), var15, var12 - field714.method2639() * 2, var10);
+			field710.method2588();
+			arg2.method2200(field710, true).method1448(var12 + var14 - var10, var15 + field714.method2631(), var10, var13 - field714.method2631() * 2);
+			field710.method2588();
+			arg2.method2200(field710, true).method1448(var14 + field714.method2639(), var13 + var15 - var10, var12 - field714.method2639() * 2, var10);
+			field710.method2588();
+			var7.method2720(arg0, var11 + var14, var11 + var15, var12 - var11 * 2, var13 - var11 * 2, field627 | 0xFF000000, -1, 1, 1, 0, null, null, null, 0, 0);
 			Client.method3066(var14, var15, var12, var13);
 		} else {
 			int var16 = arg4.method14551(arg0, 250, null);

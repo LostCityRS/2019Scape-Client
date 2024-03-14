@@ -14,7 +14,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("ajv")
@@ -60,7 +59,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	public int field11138;
 
 	public StaticSceneryEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, ScaleRotTrans arg18) {
-		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, Statics.method14062(arg14, arg15), arg18);
+		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, method14062(arg14, arg15), arg18);
 		this.field11145 = arg2;
 		this.field11715 = arg3.id;
 		this.field11714 = (byte) arg5;
@@ -92,6 +91,15 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 			}
 		}
 		this.method18363(1);
+	}
+
+	@ObfuscatedName("zg.bz(III)B")
+	public static byte method14062(int arg0, int arg1) {
+		if (LocShape.field7547.field7562 == arg0) {
+			return (byte) ((arg1 & 0x1) == 0 ? 1 : 2);
+		} else {
+			return 0;
+		}
 	}
 
 	@ObfuscatedName("ajv.bu(B)Z")

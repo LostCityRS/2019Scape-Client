@@ -1,7 +1,6 @@
 package com.jagex.game.client;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("asj")
 public class NoiseGenerator extends NoiseGeneratorNode {
@@ -39,7 +38,7 @@ public class NoiseGenerator extends NoiseGeneratorNode {
 
 	@ObfuscatedName("asj.e(I[II)V")
 	public void method19594(int arg0, int[] arg1) {
-		int var3 = this.field12440 * Statics.field9128[arg0];
+		int var3 = this.field12440 * NoiseGeneratorRelated.field9128[arg0];
 		if (this.field12443 == 1) {
 			short var4 = this.field12437[0];
 			int var5 = this.field12432[0] << 12;
@@ -56,15 +55,15 @@ public class NoiseGenerator extends NoiseGeneratorNode {
 			int var13 = this.field12439[var9 & 0xFF] & 0xFF;
 			int var14 = this.field12439[var10 & 0xFF] & 0xFF;
 			if (this.field12438) {
-				for (int var15 = 0; var15 < Statics.field9125; var15++) {
-					int var16 = this.field12441 * Statics.field9124[var15];
+				for (int var15 = 0; var15 < NoiseGeneratorRelated.field9125; var15++) {
+					int var16 = this.field12441 * NoiseGeneratorRelated.field9124[var15];
 					int var17 = this.method19588(var5 * var16 >> 12, var11, var13, var14, var12, var7);
 					int var18 = var4 * var17 >> 12;
 					arg1[var15] = (var18 >> 1) + 2048;
 				}
 			} else {
-				for (int var19 = 0; var19 < Statics.field9125; var19++) {
-					int var20 = this.field12441 * Statics.field9124[var19];
+				for (int var19 = 0; var19 < NoiseGeneratorRelated.field9125; var19++) {
+					int var20 = this.field12441 * NoiseGeneratorRelated.field9124[var19];
 					int var21 = this.method19588(var5 * var20 >> 12, var11, var13, var14, var12, var7);
 					arg1[var19] = var4 * var21 >> 12;
 				}
@@ -86,8 +85,8 @@ public class NoiseGenerator extends NoiseGeneratorNode {
 			int var30 = NoiseGenerator3D.field4199[var29];
 			int var31 = this.field12439[var27 & 0xFF] & 0xFF;
 			int var32 = this.field12439[var28 & 0xFF] & 0xFF;
-			for (int var33 = 0; var33 < Statics.field9125; var33++) {
-				int var34 = this.field12441 * Statics.field9124[var33];
+			for (int var33 = 0; var33 < NoiseGeneratorRelated.field9125; var33++) {
+				int var34 = this.field12441 * NoiseGeneratorRelated.field9124[var33];
 				int var35 = this.method19588(var23 * var34 >> 12, var29, var31, var32, var30, var25);
 				arg1[var33] = var22 * var35 >> 12;
 			}
@@ -109,15 +108,15 @@ public class NoiseGenerator extends NoiseGeneratorNode {
 				int var46 = this.field12439[var42 & 0xFF] & 0xFF;
 				int var47 = this.field12439[var43 & 0xFF] & 0xFF;
 				if (this.field12438 && this.field12443 - 1 == var36) {
-					for (int var48 = 0; var48 < Statics.field9125; var48++) {
-						int var49 = this.field12441 * Statics.field9124[var48];
+					for (int var48 = 0; var48 < NoiseGeneratorRelated.field9125; var48++) {
+						int var49 = this.field12441 * NoiseGeneratorRelated.field9124[var48];
 						int var50 = this.method19588(var38 * var49 >> 12, var44, var46, var47, var45, var40);
 						int var51 = (var37 * var50 >> 12) + arg1[var48];
 						arg1[var48] = (var51 >> 1) + 2048;
 					}
 				} else {
-					for (int var52 = 0; var52 < Statics.field9125; var52++) {
-						int var53 = this.field12441 * Statics.field9124[var52];
+					for (int var52 = 0; var52 < NoiseGeneratorRelated.field9125; var52++) {
+						int var53 = this.field12441 * NoiseGeneratorRelated.field9124[var52];
 						int var54 = this.method19588(var38 * var53 >> 12, var44, var46, var47, var45, var40);
 						arg1[var52] += var37 * var54 >> 12;
 					}

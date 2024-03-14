@@ -20,6 +20,14 @@ public class NativeLibraries {
 		field5077 = arg0;
 	}
 
+	@ObfuscatedName("ke.n(I)Lrn;")
+	public static NativeLibraryLoader method5134() {
+		if (field5077 == null) {
+			throw new IllegalStateException("");
+		}
+		return field5077;
+	}
+
 	@ObfuscatedName("aah.m(I)Z")
 	public static boolean method14526() {
 		return field5077 != null;

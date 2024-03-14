@@ -15,7 +15,6 @@ import com.jagex.game.world.entity.ObjectWrapper;
 import com.jagex.game.world.entity.PlayerStatProvider;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ir")
 public class QuestType implements ConfigType {
@@ -276,7 +275,7 @@ public class QuestType implements ConfigType {
 
 	@ObfuscatedName("ir.r(Lep;I)Z")
 	public boolean method4431(VarIntDomain arg0) {
-		if (Statics.method5179(arg0, this.field2649) < this.field2641) {
+		if (method5179(arg0, this.field2649) < this.field2641) {
 			return false;
 		}
 		if (this.field2640 != null) {
@@ -316,7 +315,7 @@ public class QuestType implements ConfigType {
 
 	@ObfuscatedName("ir.v(Lep;I)Z")
 	public boolean method4440(VarIntDomain arg0) {
-		return Statics.method5179(arg0, this.field2649) >= this.field2641;
+		return method5179(arg0, this.field2649) >= this.field2641;
 	}
 
 	@ObfuscatedName("ir.o(Lep;IB)Z")
@@ -357,5 +356,17 @@ public class QuestType implements ConfigType {
 			int var4 = arg0.getVarBitValue(var3);
 			return var4 >= this.field2647[arg1] && var4 <= this.field2648[arg1];
 		}
+	}
+
+	@ObfuscatedName("ks.x(Lep;Lao;B)I")
+	public static int method5179(VarIntDomain arg0, ConfigTypeList arg1) {
+		int var2 = 0;
+		for (int var3 = 0; var3 < arg1.length(); var3++) {
+			QuestType var4 = (QuestType) arg1.list(var3);
+			if (var4.method4430(arg0)) {
+				var2 += var4.field2637;
+			}
+		}
+		return var2;
 	}
 }

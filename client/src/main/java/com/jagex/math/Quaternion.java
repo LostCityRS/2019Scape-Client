@@ -2,13 +2,18 @@ package com.jagex.math;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ov")
 public final class Quaternion {
 
 	@ObfuscatedName("ov.e")
 	public static Quaternion[] field4303 = new Quaternion[0];
+
+	@ObfuscatedName("ov.n")
+	public static int field4306;
+
+	@ObfuscatedName("ov.m")
+	public static int field4302;
 
 	@ObfuscatedName("ov.k")
 	public float field4301;
@@ -28,20 +33,20 @@ public final class Quaternion {
 
 	@ObfuscatedName("ov.e(I)V")
 	public static void method6406(int arg0) {
-		Statics.field4306 = arg0;
+		field4306 = arg0;
 		field4303 = new Quaternion[arg0];
-		Statics.field4302 = 0;
+		field4302 = 0;
 	}
 
 	@ObfuscatedName("ov.n()Lov;")
 	public static Quaternion method6469() {
 		Quaternion[] var0 = field4303;
 		synchronized (field4303) {
-			if (Statics.field4302 == 0) {
+			if (field4302 == 0) {
 				return new Quaternion();
 			} else {
-				field4303[--Statics.field4302].method6416();
-				return field4303[Statics.field4302];
+				field4303[--field4302].method6416();
+				return field4303[field4302];
 			}
 		}
 	}
@@ -50,11 +55,11 @@ public final class Quaternion {
 	public static Quaternion method6411(float arg0, float arg1, float arg2, float arg3) {
 		Quaternion[] var4 = field4303;
 		synchronized (field4303) {
-			if (Statics.field4302 == 0) {
+			if (field4302 == 0) {
 				return new Quaternion(arg0, arg1, arg2, arg3);
 			} else {
-				field4303[--Statics.field4302].method6448(arg0, arg1, arg2, arg3);
-				return field4303[Statics.field4302];
+				field4303[--field4302].method6448(arg0, arg1, arg2, arg3);
+				return field4303[field4302];
 			}
 		}
 	}
@@ -63,11 +68,11 @@ public final class Quaternion {
 	public static Quaternion method6443(Quaternion arg0) {
 		Quaternion[] var1 = field4303;
 		synchronized (field4303) {
-			if (Statics.field4302 == 0) {
+			if (field4302 == 0) {
 				return new Quaternion(arg0);
 			} else {
-				field4303[--Statics.field4302].method6412(arg0);
-				return field4303[Statics.field4302];
+				field4303[--field4302].method6412(arg0);
+				return field4303[field4302];
 			}
 		}
 	}
@@ -76,8 +81,8 @@ public final class Quaternion {
 	public void method6407() {
 		Quaternion[] var1 = field4303;
 		synchronized (field4303) {
-			if (Statics.field4302 < Statics.field4306 - 1) {
-				field4303[Statics.field4302++] = this;
+			if (field4302 < field4306 - 1) {
+				field4303[field4302++] = this;
 			}
 		}
 	}

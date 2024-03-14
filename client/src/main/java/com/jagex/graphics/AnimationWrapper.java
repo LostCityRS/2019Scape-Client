@@ -3,7 +3,6 @@ package com.jagex.graphics;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.seqtype.SeqTypeList;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("aaq")
 public class AnimationWrapper {
@@ -38,6 +37,9 @@ public class AnimationWrapper {
 	@ObfuscatedName("aaq.r")
 	public boolean field8505 = false;
 
+	@ObfuscatedName("atl.v")
+	public static SeqTypeList field12490;
+
 	@ObfuscatedName("aaq.o")
 	public final FrameSetLoader field8513;
 
@@ -49,7 +51,7 @@ public class AnimationWrapper {
 
 	@ObfuscatedName("nv.e(Laos;I)V")
 	public static void method6114(SeqTypeList arg0) {
-		Statics.field12490 = arg0;
+		field12490 = arg0;
 	}
 
 	public AnimationWrapper(boolean arg0) {
@@ -125,7 +127,7 @@ public class AnimationWrapper {
 			this.field8501 = null;
 		} else {
 			if (this.field8501 == null || this.field8501.id != arg0) {
-				this.field8501 = (SeqType) Statics.field12490.list(arg0);
+				this.field8501 = (SeqType) field12490.list(arg0);
 				if (this.field8501 == null || this.field8501.field1770 == null && !this.field8501.method2985()) {
 					this.field8501 = null;
 					return;
@@ -455,11 +457,11 @@ public class AnimationWrapper {
 		boolean var1 = false;
 		boolean var2;
 		if (this.field8501.method2985()) {
-			var2 = this.field8498.method14443(Statics.field12490, this.field8501);
+			var2 = this.field8498.method14443(field12490, this.field8501);
 		} else {
-			var2 = this.field8513.method14431(Statics.field12490, this.field8501, this.field8511, this.field8506, this.field8501.field1770);
+			var2 = this.field8513.method14431(field12490, this.field8501, this.field8511, this.field8506, this.field8501.field1770);
 			if (var2 && this.field8500 && this.field8501.field1771 != null) {
-				this.field8512.method14431(Statics.field12490, this.field8501, this.field8511, this.field8506, this.field8501.field1771);
+				this.field8512.method14431(field12490, this.field8501, this.field8511, this.field8506, this.field8501.field1771);
 			}
 		}
 		return var2;

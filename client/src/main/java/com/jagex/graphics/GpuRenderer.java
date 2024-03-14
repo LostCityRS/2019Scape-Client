@@ -20,7 +20,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaclib.memory.DirectBufferHelper;
 import jaclib.memory.Stream;
 import jaclib.memory.heap.NativeHeap;
@@ -606,7 +605,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.rb()V")
 	public static void method15968() throws NativeLibraryException {
-		Statics.method5134().method7902("jaclib");
+		NativeLibraries.method5134().method7902("jaclib");
 	}
 
 	public GpuRenderer(MaterialList arg0, TextureList arg1, BillboardTypeList arg2, ParticleEmitterTypeList arg3, ParticleEffectorTypeList arg4, Js5 arg5, int arg6, int arg7) {
@@ -627,9 +626,9 @@ public abstract class GpuRenderer extends Renderer {
 				this.field10188 = new MaterialTextureProvider(this, this.field1596);
 			}
 			if (this.field10185 == 0) {
-				this.field10043 = Statics.field8151;
+				this.field10043 = ColourUtils.field8151;
 			} else {
-				this.field10043 = Statics.field8150;
+				this.field10043 = ColourUtils.field8150;
 			}
 			try {
 				Field var9 = Unsafe.class.getDeclaredField("theUnsafe");

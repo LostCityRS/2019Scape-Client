@@ -50,6 +50,17 @@ public class LinkQueue {
 		arg0.field6759.field6758 = arg0;
 	}
 
+	@ObfuscatedName("adz.k(Ltc;Ltc;B)V")
+	public static void method15212(Link arg0, Link arg1) {
+		if (arg0.field6758 != null) {
+			arg0.method8433();
+		}
+		arg0.field6758 = arg1;
+		arg0.field6759 = arg1.field6759;
+		arg0.field6758.field6759 = arg0;
+		arg0.field6759.field6758 = arg0;
+	}
+
 	@ObfuscatedName("aas.f(I)Ltc;")
 	public Link method14245() {
 		Link var1 = this.field8483.field6759;

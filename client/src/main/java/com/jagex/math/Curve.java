@@ -4,7 +4,6 @@ import com.jagex.core.io.Packet;
 import com.jagex.graphics.KeyFrame;
 import com.jagex.graphics.TransformInfinityType;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("dn")
 public class Curve {
@@ -58,8 +57,8 @@ public class Curve {
 	public int method2036(Packet arg0, int arg1) {
 		int var3 = arg0.g2();
 		CurveType.method2995(arg0.g1());
-		this.field1437 = Statics.method713(arg0.g1());
-		this.field1438 = Statics.method713(arg0.g1());
+		this.field1437 = TransformInfinityType.method713(arg0.g1());
+		this.field1438 = TransformInfinityType.method713(arg0.g1());
 		this.field1435 = arg0.g1() != 0;
 		this.field1439 = new KeyFrame[var3];
 		KeyFrame var4 = null;

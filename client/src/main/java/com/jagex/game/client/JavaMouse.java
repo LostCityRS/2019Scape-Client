@@ -4,7 +4,6 @@ import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.shared.framework.input.Mouse;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -79,7 +78,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 
 	@ObfuscatedName("alb.ay(IIIIB)V")
 	public void method18303(int arg0, int arg1, int arg2, int arg3) {
-		BasicMouseEvent var5 = Statics.method8438(arg0, arg1, arg2, MonotonicTime.method3655(), arg3);
+		BasicMouseEvent var5 = BasicMouseEvent.method8438(arg0, arg1, arg2, MonotonicTime.method3655(), arg3);
 		this.field11696.method14153(var5);
 	}
 

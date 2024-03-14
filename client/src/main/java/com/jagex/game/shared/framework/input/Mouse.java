@@ -1,9 +1,9 @@
 package com.jagex.game.shared.framework.input;
 
+import com.jagex.game.client.BasicMouseEvent;
 import com.jagex.game.client.JavaMouse;
 import com.jagex.game.client.MouseEvent;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("uj")
 public abstract class Mouse {
@@ -15,7 +15,7 @@ public abstract class Mouse {
 
 	@ObfuscatedName("ql.n(II)V")
 	public static void method7232(int arg0) {
-		Statics.method14915(arg0);
+		BasicMouseEvent.method14915(arg0);
 	}
 
 	@ObfuscatedName("uj.l(I)Z")

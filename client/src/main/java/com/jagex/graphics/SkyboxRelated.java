@@ -5,7 +5,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("sw")
 public class SkyboxRelated {
@@ -61,6 +60,15 @@ public class SkyboxRelated {
 	@ObfuscatedName("sw.h")
 	public int field5124;
 
+	@ObfuscatedName("sw.ag")
+	public static Model field5129;
+
+	@ObfuscatedName("sw.ah")
+	public static Sprite field5118;
+
+	@ObfuscatedName("sw.al")
+	public static Sprite field5137;
+
 	@ObfuscatedName("sw.ac")
 	public static final int[] field5138 = new int[4];
 
@@ -80,8 +88,8 @@ public class SkyboxRelated {
 
 	@ObfuscatedName("sw.e()V")
 	public static void method7979() {
-		Statics.field5129 = null;
-		Statics.field5137 = null;
+		field5129 = null;
+		field5137 = null;
 	}
 
 	@ObfuscatedName("sw.n(IIII)Z")
@@ -169,8 +177,8 @@ public class SkyboxRelated {
 	public boolean method7999(Renderer arg0, SkyboxRelated arg1) {
 		if (this.field5128 == null) {
 			if (this.field5112 == 0) {
-				if (Statics.field2421.method1977(TextureRelated2.field7586, this.field5135, -1, TextureRelated1.field7569, 0.7F, this.field5123, this.field5123, false)) {
-					int[] var3 = Statics.field2421.method1983(TextureRelated2.field7586, this.field5135, 0.7F, this.field5123, this.field5123, false);
+				if (SkyBox.field2421.method1977(TextureRelated2.field7586, this.field5135, -1, TextureRelated1.field7569, 0.7F, this.field5123, this.field5123, false)) {
+					int[] var3 = SkyBox.field2421.method1983(TextureRelated2.field7586, this.field5135, 0.7F, this.field5123, this.field5123, false);
 					this.field5128 = arg0.method2199(var3, 0, this.field5123, this.field5123, this.field5123);
 				}
 			} else if (this.field5112 == 2) {
@@ -184,7 +192,7 @@ public class SkyboxRelated {
 
 	@ObfuscatedName("sw.w(Ldh;Lsw;)V")
 	public void method7983(Renderer arg0, SkyboxRelated arg1) {
-		ModelUnlit var3 = ModelUnlit.method1931(Statics.field1810, this.field5135, 0);
+		ModelUnlit var3 = ModelUnlit.method1931(SkyBox.field1810, this.field5135, 0);
 		if (var3 == null) {
 			return;
 		}
@@ -281,7 +289,7 @@ public class SkyboxRelated {
 			var5 = var5 * var10 - var3 * var9 >> 14;
 			var3 = var11;
 		}
-		Model var12 = Statics.field5129.method1773((byte) 0, 51200, true);
+		Model var12 = field5129.method1773((byte) 0, 51200, true);
 		var12.method1744((short) 0, (short) this.field5135);
 		arg0.method2222(1.0F);
 		arg0.method2223(16777215, 1.0F, 1.0F, (float) var3, (float) var4, (float) var5);
@@ -299,11 +307,11 @@ public class SkyboxRelated {
 		var12.method1813(var16, null, 1);
 		int var17 = this.field5123 * 13 / 16;
 		int var18 = (this.field5123 - var17) / 2;
-		Statics.field5118.method1446(var18, var18, var17, var17, 0, this.field5111 | 0xFF000000, 1);
+		field5118.method1446(var18, var18, var17, var17, 0, this.field5111 | 0xFF000000, 1);
 		this.field5128 = arg0.method2314(0, 0, this.field5123, this.field5123, true);
 		arg0.method2475(2, 0);
 		arg0.method2354(0, 0, this.field5123, this.field5123, 0, 0);
-		Statics.field5137.method1446(0, 0, this.field5123, this.field5123, 1, 0, 0);
+		field5137.method1446(0, 0, this.field5123, this.field5123, 1, 0, 0);
 		this.field5128.method1441(0, 0, 3);
 		arg0.method2220(var14);
 		arg0.method2168(field5138[0], field5138[1], field5138[2], field5138[3]);
@@ -311,7 +319,7 @@ public class SkyboxRelated {
 
 	@ObfuscatedName("sw.u(Ldh;)V")
 	public static void method7992(Renderer arg0) {
-		if (Statics.field5129 != null) {
+		if (field5129 != null) {
 			return;
 		}
 		ModelUnlit var1 = new ModelUnlit(580, 1104, 1);
@@ -348,12 +356,12 @@ public class SkyboxRelated {
 		var1.field1397 = null;
 		var1.field1379 = null;
 		var1.field1392 = null;
-		Statics.field5129 = arg0.method2211(var1, 51200, 33, 64, 768);
+		field5129 = arg0.method2211(var1, 51200, 33, 64, 768);
 	}
 
 	@ObfuscatedName("sw.z(Ldh;)V")
 	public static void method7986(Renderer arg0) {
-		if (Statics.field5137 != null) {
+		if (field5137 != null) {
 			return;
 		}
 		int[] var1 = new int[16384];
@@ -380,7 +388,7 @@ public class SkyboxRelated {
 				var1[var7 + var9] = var1[var7 + var12] = var1[var8 + var9] = var1[var8 + var12] = 127 - var15 << 24 | 0xFFFFFF;
 			}
 		}
-		Statics.field5137 = arg0.method2199(var2, 0, 128, 128, 128);
-		Statics.field5118 = arg0.method2199(var1, 0, 128, 128, 128);
+		field5137 = arg0.method2199(var2, 0, 128, 128, 128);
+		field5118 = arg0.method2199(var1, 0, 128, 128, 128);
 	}
 }

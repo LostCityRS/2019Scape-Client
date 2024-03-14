@@ -17,7 +17,6 @@ import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelUnlit;
 import com.jagex.graphics.Renderer;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("ajo")
@@ -28,6 +27,9 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("ajo.f")
 	public static final WeightedCache field11221 = new WeightedCache(10);
+
+	@ObfuscatedName("ajo.w")
+	public static int field11222;
 
 	@ObfuscatedName("ajo.l")
 	public int[] field11223 = new int[] { -1 };
@@ -40,7 +42,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("aau.e(IIZI)I")
 	public static int method14439(int arg0, int arg1, boolean arg2) {
-		ClientInvCache var3 = Statics.method8358(arg0, arg2);
+		ClientInvCache var3 = method8358(arg0, arg2);
 		if (var3 == null) {
 			return -1;
 		} else if (arg1 >= 0 && arg1 < var3.field11223.length) {
@@ -52,7 +54,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("aal.n(IIZI)I")
 	public static int method14483(int arg0, int arg1, boolean arg2) {
-		ClientInvCache var3 = Statics.method8358(arg0, arg2);
+		ClientInvCache var3 = method8358(arg0, arg2);
 		if (var3 == null) {
 			return 0;
 		} else if (arg1 >= 0 && arg1 < var3.field11224.length) {
@@ -66,7 +68,7 @@ public class ClientInvCache extends Node {
 	public static int method15241(int arg0, int arg1, int arg2, boolean arg3) {
 		VarBitType var4 = (VarBitType) Client.field8736.list(arg2);
 		VarType var5 = var4.baseVar;
-		ClientInvCache var6 = Statics.method8358(arg0, arg3);
+		ClientInvCache var6 = method8358(arg0, arg3);
 		int var7;
 		if (var6 == null || arg1 < 0 || arg1 >= var6.field11224.length || var6.field11225 == null || var6.field11225[arg1] == null) {
 			var7 = (Integer) var5.getDefaultValue();
@@ -78,7 +80,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("na.k(IIZB)I")
 	public static int method6002(int arg0, int arg1, boolean arg2) {
-		ClientInvCache var3 = Statics.method8358(arg0, arg2);
+		ClientInvCache var3 = method8358(arg0, arg2);
 		if (var3 == null) {
 			return 0;
 		} else if (arg1 == -1) {
@@ -97,7 +99,7 @@ public class ClientInvCache extends Node {
 	@ObfuscatedName("abe.f(IIZI)I")
 	public static int method14914(int arg0, int arg1, boolean arg2) {
 		int var3 = 0;
-		ClientInvCache var4 = Statics.method8358(arg0, arg2);
+		ClientInvCache var4 = method8358(arg0, arg2);
 		if (var4 == null) {
 			return 0;
 		}
@@ -111,7 +113,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("pu.w(IIZZI)I")
 	public static int method7077(int arg0, int arg1, boolean arg2, boolean arg3) {
-		ClientInvCache var4 = Statics.method8358(arg0, arg3);
+		ClientInvCache var4 = method8358(arg0, arg3);
 		if (var4 == null) {
 			return 0;
 		}
@@ -135,7 +137,7 @@ public class ClientInvCache extends Node {
 		if (arg1) {
 			return 0;
 		}
-		ClientInvCache var2 = Statics.method8358(arg0, arg1);
+		ClientInvCache var2 = method8358(arg0, arg1);
 		if (var2 == null) {
 			return ((InvType) Client.field7762.list(arg0)).size;
 		}
@@ -146,6 +148,12 @@ public class ClientInvCache extends Node {
 			}
 		}
 		return var3 + (((InvType) Client.field7762.list(arg0)).size - var2.field11223.length);
+	}
+
+	@ObfuscatedName("so.u(IZS)Lajo;")
+	public static ClientInvCache method8358(int arg0, boolean arg1) {
+		long var2 = (long) (arg0 | (arg1 ? Integer.MIN_VALUE : 0));
+		return (ClientInvCache) field11220.method14495(var2);
 	}
 
 	@ObfuscatedName("hg.z(IIIILabn;ZI)V")
@@ -192,7 +200,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("qe.p(IZB)V")
 	public static void method7228(int arg0, boolean arg1) {
-		ClientInvCache var2 = Statics.method8358(arg0, arg1);
+		ClientInvCache var2 = method8358(arg0, arg1);
 		if (var2 == null) {
 			return;
 		}
@@ -205,7 +213,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("xj.d(IZB)V")
 	public static void method10309(int arg0, boolean arg1) {
-		ClientInvCache var2 = Statics.method8358(arg0, arg1);
+		ClientInvCache var2 = method8358(arg0, arg1);
 		if (var2 != null) {
 			var2.method8440();
 		}
@@ -305,7 +313,7 @@ public class ClientInvCache extends Node {
 			if (arg5 != null) {
 				var15 = var8 | 0x4000;
 			}
-			var7 = arg0.method2211(var27, var15, Statics.field11222, 65, 852);
+			var7 = arg0.method2211(var27, var15, field11222, 65, 852);
 			if (arg5 != null) {
 				int var28 = 0;
 				label123: while (true) {
@@ -315,17 +323,17 @@ public class ClientInvCache extends Node {
 							if (var30 >= 10) {
 								break label123;
 							}
-							for (int var31 = 0; var31 < Statics.field10766[var30].length; var31++) {
-								if (arg5.field7895[var30] < Statics.field9259[var30][var31].length) {
-									var7.method1744(Statics.field10766[var30][var31], Statics.field9259[var30][var31][arg5.field7895[var30]]);
+							for (int var31 = 0; var31 < PlayerModel.field10766[var30].length; var31++) {
+								if (arg5.field7895[var30] < PlayerModel.field9259[var30][var31].length) {
+									var7.method1744(PlayerModel.field10766[var30][var31], PlayerModel.field9259[var30][var31][arg5.field7895[var30]]);
 								}
 							}
 							var30++;
 						}
 					}
-					for (int var29 = 0; var29 < Statics.field7577[var28].length; var29++) {
-						if (arg5.field7894[var28] < Statics.field1434[var28][var29].length) {
-							var7.method1859(Statics.field7577[var28][var29], Statics.field1434[var28][var29][arg5.field7894[var28]]);
+					for (int var29 = 0; var29 < PlayerModel.field7577[var28].length; var29++) {
+						if (arg5.field7894[var28] < PlayerModel.field1434[var28][var29].length) {
+							var7.method1859(PlayerModel.field7577[var28][var29], PlayerModel.field1434[var28][var29][arg5.field7894[var28]]);
 						}
 					}
 					var28++;
@@ -347,7 +355,12 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("ku.y(IB)V")
 	public static void method5150(int arg0) {
-		Statics.field11222 = arg0;
+		field11222 = arg0;
+		field11221.method2924();
+	}
+
+	@ObfuscatedName("acd.x(I)V")
+	public static void method14941() {
 		field11221.method2924();
 	}
 }

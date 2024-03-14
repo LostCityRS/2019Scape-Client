@@ -3,11 +3,11 @@ package com.jagex.game.world.entity;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.graphics.DefaultSprites;
+import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
 import com.jagex.graphics.Renderer;
 import com.jagex.graphics.SpriteDataProvider;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 import java.awt.*;
@@ -17,6 +17,9 @@ public class ObjIconFactory {
 
 	@ObfuscatedName("ag.e")
 	public static Renderer field630;
+
+	@ObfuscatedName("ag.n")
+	public static Font field629;
 
 	@ObfuscatedName("ag.m")
 	public static IterableQueue field631 = new IterableQueue();
@@ -51,10 +54,10 @@ public class ObjIconFactory {
 			Canvas var2 = new Canvas();
 			var2.setSize(36, 32);
 			field630 = Renderer.method14575(0, var2, Client.field7366, Client.field7669, Client.field9211, Client.field7282, Client.field2013, Client.field2900, 0);
-			Statics.field629 = field630.method2207(FontMetrics.method1593(Client.field7672, DefaultSprites.field506, 0), SpriteDataProvider.method1609(Client.field10317, DefaultSprites.field506, 0), true);
+			field629 = field630.method2207(FontMetrics.method1593(Client.field7672, DefaultSprites.field506, 0), SpriteDataProvider.method1609(Client.field10317, DefaultSprites.field506, 0), true);
 		}
 		for (ObjIconRequest var3 = (ObjIconRequest) field631.method14191(); var3 != null; var3 = (ObjIconRequest) field631.method14161()) {
-			Client.field1842.method18905(field630, arg0, var3.field11256, var3.field11255, var3.field11258, var3.field11257, false, false, var3.field11254, Statics.field629, var3.field11259 ? Client.field4490.field12061 : null, Client.field11389);
+			Client.field1842.method18905(field630, arg0, var3.field11256, var3.field11255, var3.field11258, var3.field11257, false, false, var3.field11254, field629, var3.field11259 ? Client.field4490.field12061 : null, Client.field11389);
 			var3.method8440();
 		}
 	}
@@ -64,7 +67,7 @@ public class ObjIconFactory {
 		if (field630 != null) {
 			field630.method2578();
 			field630 = null;
-			Statics.field629 = null;
+			field629 = null;
 		}
 	}
 }

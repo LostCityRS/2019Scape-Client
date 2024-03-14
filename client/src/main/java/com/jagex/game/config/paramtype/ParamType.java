@@ -2,11 +2,11 @@ package com.jagex.game.config.paramtype;
 
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
+import com.jagex.core.utils.Cp1252;
 import com.jagex.game.client.ConfigRelated;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("adp")
 public class ParamType implements ConfigType, ConfigRelated {
@@ -37,7 +37,7 @@ public class ParamType implements ConfigType, ConfigRelated {
 	@ObfuscatedName("adp.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			char c = Statics.byteToCp1252Char(buf.g1b());
+			char c = Cp1252.byteToCp1252Char(buf.g1b());
 			this.type = ScriptVarType.getDefault(c);
 		} else if (code == 2) {
 			this.defaultInt = buf.g4s();

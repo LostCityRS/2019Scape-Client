@@ -8,7 +8,6 @@ import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.scene.entities.PathingEntity;
 import rs2.client.scene.entities.ProjectileAnimation;
@@ -749,7 +748,7 @@ public class AudioApi {
 		while (var2.hasNext()) {
 			Sound var3 = (Sound) var2.next();
 			int var4 = var3.method7419();
-			boolean var5 = Statics.method10338(var4, arg0);
+			boolean var5 = AudioMixer.method10338(var4, arg0);
 			if (var5) {
 				var3.method7380(50);
 			}

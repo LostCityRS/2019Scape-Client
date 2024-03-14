@@ -3,7 +3,6 @@ package com.jagex.graphics;
 import com.jagex.core.datastruct.DualIterableQueue;
 import com.jagex.core.datastruct.SecondaryNode;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("arn")
 public class MinimenuSubmenu extends SecondaryNode {
@@ -34,7 +33,7 @@ public class MinimenuSubmenu extends SecondaryNode {
 		MinimenuEntry var3 = (MinimenuEntry) this.field12312.method14317();
 		while (var3 != null) {
 			if (MiniMenu.method18853(arg0.field12307, var3.field12307)) {
-				Statics.method9574(arg0, var3);
+				DualIterableQueue.method9574(arg0, var3);
 				this.field12310++;
 				return !var2;
 			}

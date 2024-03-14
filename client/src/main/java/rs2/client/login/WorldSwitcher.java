@@ -8,7 +8,6 @@ import com.jagex.game.client.ServerType;
 import com.jagex.game.shared.framework.gwc.GWC;
 import com.jagex.game.shared.framework.gwc.GWCWorld;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("abz")
@@ -29,11 +28,20 @@ public class WorldSwitcher {
 	@ObfuscatedName("abz.f")
 	public static ServerAddress world;
 
+	@ObfuscatedName("adz.w")
+	public static ServerAddress field9200;
+
 	@ObfuscatedName("abz.l")
 	public static ServerAddress field8753;
 
+	@ObfuscatedName("k.u")
+	public static boolean field488;
+
 	@ObfuscatedName("abz.z")
 	public static boolean field8754 = false;
+
+	@ObfuscatedName("ic.p")
+	public static long field2826;
 
 	@ObfuscatedName("abz.c")
 	public static GWCWorld[] field8748 = new GWCWorld[0];
@@ -107,8 +115,8 @@ public class WorldSwitcher {
 
 	@ObfuscatedName("xq.k(I)V")
 	public static void method10337() {
-		if (Statics.field9200.node != -1) {
-			method9401(Statics.field9200.node, Statics.field9200.host, Statics.field9200.port, Statics.field9200.port2);
+		if (field9200.node != -1) {
+			method9401(field9200.node, field9200.host, field9200.port, field9200.port2);
 		}
 	}
 

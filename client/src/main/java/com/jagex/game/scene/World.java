@@ -27,7 +27,6 @@ import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.js5.Js5MapFile;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.scene.ObjStackList;
 import rs2.client.scene.entities.NpcEntity;
@@ -303,7 +302,7 @@ public class World {
 	@ObfuscatedName("rl.j(B)V")
 	public void method7747() {
 		if (this.field5030 != null) {
-			Statics.method15000();
+			PickableEntity.method15000();
 			this.field5061 = this.field5030.method8733();
 			this.field5030.field6959.method8680();
 			this.field5030 = null;

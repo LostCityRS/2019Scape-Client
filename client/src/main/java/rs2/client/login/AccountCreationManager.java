@@ -10,7 +10,6 @@ import com.jagex.game.client.GameShell;
 import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.network.protocol.LoginProt;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.logic.DelayedStateChange;
 
@@ -19,11 +18,35 @@ import java.io.IOException;
 @ObfuscatedName("y")
 public class AccountCreationManager {
 
+	@ObfuscatedName("y.n")
+	public static int[] field581;
+
 	@ObfuscatedName("y.m")
 	public static int field583 = 0;
 
 	@ObfuscatedName("y.k")
 	public static int field580 = 0;
+
+	@ObfuscatedName("u.f")
+	public static CreateConnectStage field517;
+
+	@ObfuscatedName("y.w")
+	public static ConnectReply field584;
+
+	@ObfuscatedName("pr.l")
+	public static CreateAccountReply field4406;
+
+	@ObfuscatedName("af.u")
+	public static CheckEmailReply field872;
+
+	@ObfuscatedName("hv.z")
+	public static CheckNameReply field2589;
+
+	@ObfuscatedName("y.p")
+	public static SuggestNameReply field585;
+
+	@ObfuscatedName("j.d")
+	public static String field618;
 
 	public AccountCreationManager() throws Throwable {
 		throw new Error();
@@ -38,18 +61,18 @@ public class AccountCreationManager {
 
 	@ObfuscatedName("amf.n(B)V")
 	public static void method18476() {
-		Statics.field517 = CreateConnectStage.field515;
-		Statics.field584 = ConnectReply.field8368;
-		Statics.field4406 = CreateAccountReply.field8390;
-		Statics.field872 = CheckEmailReply.field8397;
-		Statics.field585 = SuggestNameReply.field8394;
-		Statics.field2589 = CheckNameReply.field8407;
-		Statics.field618 = null;
+		field517 = CreateConnectStage.field515;
+		field584 = ConnectReply.field8368;
+		field4406 = CreateAccountReply.field8390;
+		field872 = CheckEmailReply.field8397;
+		field585 = SuggestNameReply.field8394;
+		field2589 = CheckNameReply.field8407;
+		field618 = null;
 	}
 
 	@ObfuscatedName("wa.m(I)Z")
 	public static boolean method9610() {
-		return Statics.field517 != null;
+		return field517 != null;
 	}
 
 	@ObfuscatedName("w.k(Ljava/lang/String;B)V")
@@ -62,10 +85,10 @@ public class AccountCreationManager {
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
 		var1.field11432.pos += 7;
-        var1.field11432.tinyenc(Statics.field581, var2, var1.field11432.pos);
+        var1.field11432.tinyenc(field581, var2, var1.field11432.pos);
 		var1.field11432.psize2(var1.field11432.pos - var2);
 		Client.field10835.method934(var1);
-		Statics.field872 = CheckEmailReply.field8400;
+		field872 = CheckEmailReply.field8400;
 	}
 
 	@ObfuscatedName("alb.f(Ljava/lang/String;I)V")
@@ -78,10 +101,10 @@ public class AccountCreationManager {
 		int var2 = var1.field11432.pos;
 		var1.field11432.pjstr(arg0);
 		var1.field11432.pos += 7;
-        var1.field11432.tinyenc(Statics.field581, var2, var1.field11432.pos);
+        var1.field11432.tinyenc(field581, var2, var1.field11432.pos);
 		var1.field11432.psize1(var1.field11432.pos - var2);
 		Client.field10835.method934(var1);
-		Statics.field2589 = CheckNameReply.field8405;
+		field2589 = CheckNameReply.field8405;
 	}
 
 	@ObfuscatedName("ae.w(I)V")
@@ -89,8 +112,8 @@ public class AccountCreationManager {
 		if (Client.state == 0) {
 			ClientMessage var0 = ClientMessage.method1604(ClientProt.CREATE_SUGGEST_NAMES, Client.field10835.field794);
 			Client.field10835.method934(var0);
-			Statics.field585 = SuggestNameReply.field8392;
-			Statics.field618 = null;
+			field585 = SuggestNameReply.field8392;
+			field618 = null;
 		}
 	}
 
@@ -108,14 +131,14 @@ public class AccountCreationManager {
 		var5.field11432.p1(arg3 ? 1 : 0);
 		var5.field11432.pjstr(arg4);
 		var5.field11432.pos += 7;
-        var5.field11432.tinyenc(Statics.field581, var6, var5.field11432.pos);
+        var5.field11432.tinyenc(field581, var6, var5.field11432.pos);
 		var5.field11432.psize2(var5.field11432.pos - var6);
 		Client.field10835.method934(var5);
 		if (arg2 < 13) {
 			Client.field10814 = true;
 			Client.method3094();
 		}
-		Statics.field4406 = CreateAccountReply.field8388;
+		field4406 = CreateAccountReply.field8388;
 	}
 
 	@ObfuscatedName("afu.u(II)V")
@@ -129,59 +152,64 @@ public class AccountCreationManager {
 
 	@ObfuscatedName("et.z(I)Lzl;")
 	public static ConnectReply method2858() {
-		return Statics.field584 == null ? ConnectReply.field8361 : Statics.field584;
+		return field584 == null ? ConnectReply.field8361 : field584;
 	}
 
 	@ObfuscatedName("amf.p(I)Lzb;")
 	public static CreateAccountReply method18475() {
-		return Statics.field4406 == null ? CreateAccountReply.field8390 : Statics.field4406;
+		return field4406 == null ? CreateAccountReply.field8390 : field4406;
 	}
 
 	@ObfuscatedName("vn.d(B)Lzx;")
 	public static CheckEmailReply method9583() {
-		return Statics.field872 == null ? CheckEmailReply.field8397 : Statics.field872;
+		return field872 == null ? CheckEmailReply.field8397 : field872;
 	}
 
 	@ObfuscatedName("ahj.c(B)Lzr;")
 	public static CheckNameReply method16613() {
-		return Statics.field2589 == null ? CheckNameReply.field8407 : Statics.field2589;
+		return field2589 == null ? CheckNameReply.field8407 : field2589;
 	}
 
 	@ObfuscatedName("ahn.r(B)Lzg;")
 	public static SuggestNameReply method16742() {
-		return Statics.field585 == null ? SuggestNameReply.field8394 : Statics.field585;
+		return field585 == null ? SuggestNameReply.field8394 : field585;
 	}
 
 	@ObfuscatedName("xh.v(B)Ljava/lang/String;")
 	public static String method10209() {
-		return Statics.field618;
+		return field618;
+	}
+
+	@ObfuscatedName("pl.o(Lzb;I)V")
+	public static void method6851(CreateAccountReply arg0) {
+		field4406 = arg0;
 	}
 
 	@ObfuscatedName("gs.s(Lzx;I)V")
 	public static void method3581(CheckEmailReply arg0) {
-		Statics.field872 = arg0;
+		field872 = arg0;
 	}
 
 	@ObfuscatedName("ac.y(Lzr;B)V")
 	public static void method717(CheckNameReply arg0) {
-		Statics.field2589 = arg0;
+		field2589 = arg0;
 	}
 
 	@ObfuscatedName("jl.q(Lzg;I)V")
 	public static void method4664(SuggestNameReply arg0) {
-		Statics.field585 = arg0;
-		Statics.field618 = null;
+		field585 = arg0;
+		field618 = null;
 	}
 
 	@ObfuscatedName("cc.x(Ljava/lang/String;I)V")
 	public static void method1587(String arg0) {
-		Statics.field585 = SuggestNameReply.field8391;
-		Statics.field618 = arg0;
+		field585 = SuggestNameReply.field8391;
+		field618 = arg0;
 	}
 
 	@ObfuscatedName("ack.b(I)V")
 	public static void method14952() {
-		if (Statics.field517 == null) {
+		if (field517 == null) {
 			return;
 		}
 		try {
@@ -193,9 +221,9 @@ public class AccountCreationManager {
 			}
 			field583++;
 			if (field583 > var0) {
-				Statics.method17428();
+				method17428();
 			}
-			if (Statics.field517 == CreateConnectStage.field515) {
+			if (field517 == CreateConnectStage.field515) {
 				Client.field10835.setStream(Stream.createStream(WorldSwitcher.lobby.getSocket(), 40000), WorldSwitcher.lobby.host);
 				Client.field10835.method952();
 				ClientMessage var1 = ClientMessage.method13920();
@@ -204,7 +232,7 @@ public class AccountCreationManager {
 				int var2 = var1.field11432.pos;
 				var1.field11432.p2(910);
 				var1.field11432.p2(1);
-				Statics.field581 = method4942(var1);
+				field581 = method4942(var1);
 				int var3 = var1.field11432.pos;
 				var1.field11432.pjstr(Client.field10789);
 				var1.field11432.p2(Client.field10772);
@@ -221,27 +249,27 @@ public class AccountCreationManager {
 				}
 				Client.field10581.method18188(var1.field11432);
 				var1.field11432.pos += 7;
-                var1.field11432.tinyenc(Statics.field581, var3, var1.field11432.pos);
+                var1.field11432.tinyenc(field581, var3, var1.field11432.pos);
 				var1.field11432.psize2(var1.field11432.pos - var2);
 				Client.field10835.method934(var1);
 				Client.field10835.method933();
-				Statics.field517 = CreateConnectStage.field516;
+				field517 = CreateConnectStage.field516;
 			}
-			if (Statics.field517 == CreateConnectStage.field516) {
+			if (field517 == CreateConnectStage.field516) {
 				if (Client.field10835.getStream() == null) {
-					Statics.method17428();
+					method17428();
 					return;
 				}
 				if (!Client.field10835.getStream().hasAvailable(1)) {
 					return;
 				}
 				Client.field10835.getStream().read(Client.field10835.in.data, 0, 1);
-				Statics.field584 = (ConnectReply) SerializableEnums.decode(ConnectReply.method16743(), Client.field10835.in.data[0] & 0xFF);
-				if (Statics.field584 == ConnectReply.field8364) {
-					Client.field10835.field794 = new Isaac(Statics.field581);
+				field584 = (ConnectReply) SerializableEnums.decode(ConnectReply.method16743(), Client.field10835.in.data[0] & 0xFF);
+				if (field584 == ConnectReply.field8364) {
+					Client.field10835.field794 = new Isaac(field581);
 					int[] var5 = new int[4];
 					for (int var6 = 0; var6 < 4; var6++) {
-						var5[var6] = Statics.field581[var6] + 50;
+						var5[var6] = field581[var6] + 50;
 					}
 					Client.field10835.field809 = new Isaac(var5);
 					new Isaac(var5);
@@ -259,10 +287,10 @@ public class AccountCreationManager {
 					Client.field10835.closeGracefully();
 				}
 				Client.field10835.packetType = null;
-				Statics.field517 = null;
+				field517 = null;
 			}
 		} catch (IOException var8) {
-			Statics.method17428();
+			method17428();
 		}
 	}
 
@@ -285,5 +313,20 @@ public class AccountCreationManager {
 		var1.rsaenc(PublicKeys.field624, PublicKeys.field626);
 		arg0.field11432.pdata(var1.data, 0, var1.pos);
 		return var2;
+	}
+
+	@ObfuscatedName("ajh.a(I)V")
+	public static void method17428() {
+		Client.field10835.closeGracefully();
+		if (field580 < 2) {
+			WorldSwitcher.lobby.configureSocketType();
+			field583 = 0;
+			field580++;
+			field517 = CreateConnectStage.field515;
+		} else {
+			field517 = null;
+			field584 = ConnectReply.field8363;
+			Client.setState(4);
+		}
 	}
 }

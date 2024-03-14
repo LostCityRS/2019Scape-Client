@@ -111,6 +111,22 @@ public class Cp1252 {
 		return false;
 	}
 
+	@ObfuscatedName("vj.k(BS)C")
+	public static char byteToCp1252Char(byte arg0) {
+		int var1 = arg0 & 0xFF;
+		if (var1 == 0) {
+			throw new IllegalArgumentException("" + Integer.toString(var1, 16));
+		}
+		if (var1 >= 128 && var1 < 160) {
+			char var2 = field8326[var1 - 128];
+			if (var2 == 0) {
+				var2 = '?';
+			}
+			var1 = var2;
+		}
+		return (char) var1;
+	}
+
 	@ObfuscatedName("fn.f(Ljava/lang/CharSequence;B)[B")
 	public static byte[] method3064(CharSequence arg0) {
 		int var1 = arg0.length();

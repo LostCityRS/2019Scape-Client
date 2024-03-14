@@ -2,7 +2,6 @@ package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("agg")
 public class EntitySayCutsceneAction extends CutsceneAction {
@@ -29,6 +28,6 @@ public class EntitySayCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agg.n(I)V")
 	public void method2890() {
-		Statics.field1721[this.field10284].method2870().method16510(this.field10286, this.field10285, 0, this.field10283);
+		CutsceneManager.field1721[this.field10284].method2870().method16510(this.field10286, this.field10285, 0, this.field10283);
 	}
 }

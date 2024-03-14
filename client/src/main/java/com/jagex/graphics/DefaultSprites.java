@@ -177,6 +177,11 @@ public class DefaultSprites {
 		return var1;
 	}
 
+	@ObfuscatedName("aam.w(I)I")
+	public static int method14611() {
+		return 10;
+	}
+
 	@ObfuscatedName("kh.l(Ldh;Lpy;I)V")
 	public static void method5202(Renderer arg0, Js5 arg1) {
 		SpriteData[] var2 = SpriteDataProvider.method1608(arg1, field507, 0);

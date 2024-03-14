@@ -4,7 +4,6 @@ import com.jagex.core.datastruct.Link;
 import com.jagex.core.datastruct.LinkQueue;
 import com.jagex.game.config.headbartype.HeadbarType;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("aji")
@@ -35,7 +34,7 @@ public class Headbar extends Link {
 			}
 		}
 		if (var5 != null) {
-			Statics.method15212(new HeadbarUpdate(arg0, arg1, arg2, arg3), var5);
+			LinkQueue.method15212(new HeadbarUpdate(arg0, arg1, arg2, arg3), var5);
 			if (var6 >= Client.field11389.field7719) {
 				this.field11214.method14254().method8433();
 			}

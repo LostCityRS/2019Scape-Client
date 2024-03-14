@@ -1,13 +1,28 @@
 package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
+import java.applet.Applet;
 import java.io.*;
 import java.net.URL;
 
 @ObfuscatedName("atc")
 public class JagException extends RuntimeException {
+
+	@ObfuscatedName("atc.e")
+	public static long field12496;
+
+	@ObfuscatedName("atc.n")
+	public static String field12492;
+
+	@ObfuscatedName("atc.m")
+	public static int field12493;
+
+	@ObfuscatedName("atc.k")
+	public static int field12494;
+
+	@ObfuscatedName("acs.f")
+	public static Applet field9164;
 
 	@ObfuscatedName("atc.w")
 	public static URLWrapper field12495 = null;
@@ -42,8 +57,8 @@ public class JagException extends RuntimeException {
 			method3380(var2);
 			String var3 = WebTools.urlencode(var2);
 			URL var4 = null;
-			if (Statics.field9164 != null) {
-				var4 = Statics.field9164.getCodeBase();
+			if (field9164 != null) {
+				var4 = field9164.getCodeBase();
 			} else if (field12495 != null) {
 				var4 = field12495.method7892((byte) -65);
 			}
@@ -59,7 +74,7 @@ public class JagException extends RuntimeException {
 			}
 
 			try {
-				URL var8 = new URL(var4, "clienterror.ws?c=" + Statics.field12493 + "&cs=" + Statics.field12494 + "&u=" + (Statics.field12492 == null ? "" + Statics.field12496 : WebTools.urlencode(Statics.field12492)) + "&v1=" + WebTools.urlencode(var5) + "&v2=" + WebTools.urlencode(var6) + "&e=" + var3);
+				URL var8 = new URL(var4, "clienterror.ws?c=" + field12493 + "&cs=" + field12494 + "&u=" + (field12492 == null ? "" + field12496 : WebTools.urlencode(field12492)) + "&v1=" + WebTools.urlencode(var5) + "&v2=" + WebTools.urlencode(var6) + "&e=" + var3);
 				DataInputStream var9 = new DataInputStream(var8.openStream());
 				var9.read();
 				var9.close();
@@ -69,6 +84,18 @@ public class JagException extends RuntimeException {
 		} catch (Exception var12) {
 			var12.printStackTrace();
 		}
+	}
+
+	@ObfuscatedName("atl.n(Ljava/lang/Throwable;Ljava/lang/String;)Latc;")
+	public static JagException method19636(Throwable arg0, String arg1) {
+		JagException var2;
+		if (arg0 instanceof JagException) {
+			var2 = (JagException) arg0;
+			var2.field12491 = var2.field12491 + ' ' + arg1;
+		} else {
+			var2 = new JagException(arg0, arg1);
+		}
+		return var2;
 	}
 
 	@ObfuscatedName("anl.m(Ljava/lang/Throwable;I)Ljava/lang/String;")

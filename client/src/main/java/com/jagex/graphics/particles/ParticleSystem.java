@@ -6,7 +6,6 @@ import com.jagex.graphics.ModelParticleEffector;
 import com.jagex.graphics.ModelParticleEmitter;
 import com.jagex.graphics.Renderer;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -68,7 +67,7 @@ public class ParticleSystem {
 		if (ParticleSystemRenderer.field7793 == ParticleSystemRenderer.field7792) {
 			return new ParticleSystem(arg0, arg1);
 		} else {
-			ParticleSystem var2 = Statics.field1920[ParticleSystemRenderer.field7793];
+			ParticleSystem var2 = ParticleSystemRenderer.field1920[ParticleSystemRenderer.field7793];
 			ParticleSystemRenderer.field7793 = ParticleSystemRenderer.field7793 + 1 & ParticleLimits.field1419[ParticleSystemRenderer.field7802];
 			var2.method9929(arg0, arg1);
 			return var2;
@@ -81,7 +80,7 @@ public class ParticleSystem {
 
 	@ObfuscatedName("xy.n(IZ)V")
 	public void method9929(int arg0, boolean arg1) {
-		Statics.field8349.add(this);
+		ParticleSystemRenderer.field8349.add(this);
 		this.field7808 = arg0;
 		this.field7811 = arg0;
 		this.field7814 = true;
@@ -244,7 +243,7 @@ public class ParticleSystem {
 				for (int var7 = 0; var7 < arg0.length && var7 != 16 && this.field7812 != 16; var7++) {
 					if (!field7818[var7]) {
 						ParticleEffector var8 = null;
-						if (arg0[var7].method1509(Statics.field12041).field3549 == 1 && ParticleSystemRenderer.field7796 < 32) {
+						if (arg0[var7].method1509(ParticleSystemRenderer.field12041).field3549 == 1 && ParticleSystemRenderer.field7796 < 32) {
 							var8 = new ParticleEffector(arg0[var7], this);
 							ParticleSystemRenderer.field7800.method14501(var8, (long) arg0[var7].field1228);
 							ParticleSystemRenderer.field7796++;

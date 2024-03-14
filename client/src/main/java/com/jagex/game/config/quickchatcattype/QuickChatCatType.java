@@ -2,8 +2,8 @@ package com.jagex.game.config.quickchatcattype;
 
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
+import com.jagex.core.utils.Cp1252;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("asd")
 public class QuickChatCatType extends SecondaryNode {
@@ -45,7 +45,7 @@ public class QuickChatCatType extends SecondaryNode {
 			for (int var4 = 0; var4 < var3; var4++) {
 				this.field12346[var4] = arg0.g2();
 				byte var5 = arg0.g1b();
-				this.field12345[var4] = var5 == 0 ? 0 : Statics.byteToCp1252Char(var5);
+				this.field12345[var4] = var5 == 0 ? 0 : Cp1252.byteToCp1252Char(var5);
 			}
 		} else if (arg1 == 3) {
 			int var6 = arg0.g1();
@@ -54,7 +54,7 @@ public class QuickChatCatType extends SecondaryNode {
 			for (int var7 = 0; var7 < var6; var7++) {
 				this.field12349[var7] = arg0.g2();
 				byte var8 = arg0.g1b();
-				this.field12347[var7] = var8 == 0 ? 0 : Statics.byteToCp1252Char(var8);
+				this.field12347[var7] = var8 == 0 ? 0 : Cp1252.byteToCp1252Char(var8);
 			}
 		} else if (arg1 == 4) {
 		}

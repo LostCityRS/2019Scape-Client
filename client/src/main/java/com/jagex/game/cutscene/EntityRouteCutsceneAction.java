@@ -2,7 +2,6 @@ package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("agp")
 public class EntityRouteCutsceneAction extends CutsceneAction {
@@ -25,8 +24,8 @@ public class EntityRouteCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agp.n(I)V")
 	public void method2890() {
-		CutsceneEntity var1 = Statics.field1721[this.field10330];
-		CutsceneRoute var2 = Statics.field8358[this.field10331];
+		CutsceneEntity var1 = CutsceneManager.field1721[this.field10330];
+		CutsceneRoute var2 = CutsceneManager.field8358[this.field10331];
 		var2.method2906(var1, this.field10332);
 	}
 }

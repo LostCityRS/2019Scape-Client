@@ -10,19 +10,28 @@ import com.jagex.game.config.ParticleEmitterTypeList;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.Renderer;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 @ObfuscatedName("xl")
 public class ParticleSystemRenderer {
+
+	@ObfuscatedName("zc.e")
+	public static List field8349;
+
+	@ObfuscatedName("xl.n")
+	public static MovingParticle[] field7794;
 
 	@ObfuscatedName("xl.m")
 	public static int field7791 = 0;
 
 	@ObfuscatedName("xl.k")
 	public static int field7797 = 0;
+
+	@ObfuscatedName("gp.f")
+	public static ParticleSystem[] field1920;
 
 	@ObfuscatedName("xl.w")
 	public static int field7793 = 0;
@@ -35,6 +44,9 @@ public class ParticleSystemRenderer {
 
 	@ObfuscatedName("xl.z")
 	public static int field7801 = 0;
+
+	@ObfuscatedName("aqn.p")
+	public static ParticleEffectorTypeList field12041;
 
 	@ObfuscatedName("xl.d")
 	public static ParticleEffectorType[] field7795 = new ParticleEffectorType[16];
@@ -62,7 +74,7 @@ public class ParticleSystemRenderer {
 	public static int method9543(int arg0) {
 		IntWrapper var1 = (IntWrapper) field7799.method14495((long) arg0);
 		if (var1 == null) {
-			ParticleEffectorType var2 = Statics.field12041.method5973(arg0);
+			ParticleEffectorType var2 = field12041.method5973(arg0);
 			if (var2 == null || var2.field3549 != 2) {
 				return -1;
 			}
@@ -77,12 +89,12 @@ public class ParticleSystemRenderer {
 	public static void method706(ParticleEmitterTypeList arg0, ParticleEffectorTypeList arg1) {
 		field7791 = 0;
 		field7797 = 0;
-		Statics.field8349 = new LinkedList();
-		Statics.field7794 = new MovingParticle[1024];
-		Statics.field1920 = new ParticleSystem[ParticleLimits.field1419[field7802] + 1];
+		field8349 = new LinkedList();
+		field7794 = new MovingParticle[1024];
+		field1920 = new ParticleSystem[ParticleLimits.field1419[field7802] + 1];
 		field7793 = 0;
 		field7792 = 0;
-		Statics.field12041 = arg1;
+		field12041 = arg1;
 	}
 
 	@ObfuscatedName("po.m(Ldh;J)V")
@@ -90,13 +102,13 @@ public class ParticleSystemRenderer {
 		field7801 = field7790;
 		field7790 = 0;
 		MonotonicTime.method3655();
-		Iterator var3 = Statics.field8349.iterator();
+		Iterator var3 = field8349.iterator();
 		while (var3.hasNext()) {
 			ParticleSystem var4 = (ParticleSystem) var3.next();
 			boolean var5 = var4.method9934(arg0, arg1);
 			if (!var5) {
 				var3.remove();
-				Statics.field1920[field7792] = var4;
+				field1920[field7792] = var4;
 				field7792 = field7792 + 1 & ParticleLimits.field1419[field7802];
 			}
 		}
@@ -104,7 +116,7 @@ public class ParticleSystemRenderer {
 
 	@ObfuscatedName("tm.k(Ltx;Ldh;B)V")
 	public static void method8460(Scene arg0, Renderer arg1) {
-		Iterator var2 = Statics.field8349.iterator();
+		Iterator var2 = field8349.iterator();
 		while (var2.hasNext()) {
 			ParticleSystem var3 = (ParticleSystem) var2.next();
 			if (var3.field7807) {
@@ -117,7 +129,7 @@ public class ParticleSystemRenderer {
 	public static void method3561() {
 		field7800 = new IterableMap(8);
 		field7796 = 0;
-		Iterator var0 = Statics.field8349.iterator();
+		Iterator var0 = field8349.iterator();
 		while (var0.hasNext()) {
 			ParticleSystem var1 = (ParticleSystem) var0.next();
 			var1.method9968();
@@ -130,8 +142,13 @@ public class ParticleSystemRenderer {
 			arg0 = 0;
 		}
 		field7802 = arg0;
-		Statics.field1920 = new ParticleSystem[ParticleLimits.field1419[field7802] + 1];
+		field1920 = new ParticleSystem[ParticleLimits.field1419[field7802] + 1];
 		field7793 = 0;
 		field7792 = 0;
+	}
+
+	@ObfuscatedName("tm.l(I)I")
+	public static int method8461() {
+		return field7802;
 	}
 }

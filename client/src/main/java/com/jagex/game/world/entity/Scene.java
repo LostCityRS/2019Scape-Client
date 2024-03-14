@@ -6,7 +6,6 @@ import com.jagex.graphics.particles.ParticleSystemRenderer;
 import com.jagex.graphics.scenegraph.*;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -1059,7 +1058,7 @@ public class Scene {
 			while (var34.hasNext()) {
 				PickableEntity var35 = (PickableEntity) var34.next();
 				var34.remove();
-				Statics.method3657(var35);
+				PickableEntity.method3657(var35);
 			}
 		}
 		if (this.field6906) {
@@ -1335,7 +1334,7 @@ public class Scene {
 			var12.field6978 = arg0;
 			this.field6959.method8683(var12);
 		} else {
-			Statics.method3657(var12);
+			PickableEntity.method3657(var12);
 		}
 	}
 

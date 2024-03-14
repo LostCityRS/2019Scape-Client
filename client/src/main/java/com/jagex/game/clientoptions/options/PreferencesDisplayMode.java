@@ -1,8 +1,8 @@
 package com.jagex.game.clientoptions.options;
 
+import com.jagex.game.client.NativeLibraries;
 import com.jagex.game.clientoptions.ClientOptions;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("amd")
 public class PreferencesDisplayMode extends PreferencesOption {
@@ -41,7 +41,7 @@ public class PreferencesDisplayMode extends PreferencesOption {
 
 	@ObfuscatedName("amd.n(II)I")
 	public int method14070(int arg0) {
-		return arg0 == 3 && !Statics.method5134().method7900("jagdx") ? 3 : 2;
+		return arg0 == 3 && !NativeLibraries.method5134().method7900("jagdx") ? 3 : 2;
 	}
 
 	@ObfuscatedName("amd.k(II)V")

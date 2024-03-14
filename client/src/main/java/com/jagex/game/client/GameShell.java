@@ -6,7 +6,6 @@ import com.jagex.core.utils.*;
 import com.jagex.game.fullscreen.Fullscreen;
 import com.jagex.graphics.FullscreenImpl;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaclib.nanotime.QueryPerformanceCounter;
 import rs2.client.Client;
 
@@ -60,11 +59,20 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	@ObfuscatedName("sk.v")
 	public static int canvasHei;
 
+	@ObfuscatedName("yz.o")
+	public static int lastFullscreenWidth;
+
+	@ObfuscatedName("adj.s")
+	public static int lastFullscreenHeight;
+
 	@ObfuscatedName("sk.y")
 	public static int leftMargin = 0;
 
 	@ObfuscatedName("sk.q")
 	public static int topMargin = 0;
+
+	@ObfuscatedName("acr.x")
+	public static Font field9147;
 
 	@ObfuscatedName("sk.b")
 	public static String field6598 = null;
@@ -83,6 +91,9 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.j")
 	public static volatile boolean fullredraw = true;
+
+	@ObfuscatedName("ho.t")
+	public static Image field2575;
 
 	@ObfuscatedName("sk.ae")
 	public static int field6614 = 500;
@@ -200,7 +211,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				frameHei += arg0.getYMargin() * 2;
 				this.createAndShowFrame(arg0.getTitle());
 			}
-			Statics.field9164 = field11885;
+			JagException.field9164 = field11885;
 			this.startCommon(arg1, arg2, arg3, arg4, arg5, arg6);
 		} catch (Throwable var10) {
 			JagException.report(null, var10);
@@ -212,8 +223,8 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	public final void startCommon(String arg0, String arg1, int arg2, int arg3, int arg4, int arg5) throws Exception {
 		archiveCount = arg3;
 		historicCacheId = arg2;
-		Statics.field12493 = arg4;
-		Statics.field12494 = arg5;
+		JagException.field12493 = arg4;
+		JagException.field12494 = arg5;
 		javaVendor = "Unknown";
 		javaVersion = "1.1";
 		try {
@@ -780,7 +791,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 		}
 		if (NativeLibraries.method14526()) {
-			Statics.method5134().method7909();
+			NativeLibraries.method5134().method7909();
 		}
 		if (canvas != null) {
 			try {
@@ -891,8 +902,8 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	public static final void method8913(int arg0, String arg1, Color arg2, Color arg3, Color arg4) {
 		try {
 			Graphics var5 = canvas.getGraphics();
-			if (Statics.field9147 == null) {
-				Statics.field9147 = new java.awt.Font("Helvetica", 1, 13);
+			if (field9147 == null) {
+				field9147 = new java.awt.Font("Helvetica", 1, 13);
 			}
 			if (arg2 == null) {
 				arg2 = new Color(140, 17, 17);
@@ -904,10 +915,10 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				arg4 = new Color(255, 255, 255);
 			}
 			try {
-				if (Statics.field2575 == null) {
-					Statics.field2575 = canvas.createImage(canvasWid, canvasHei);
+				if (field2575 == null) {
+					field2575 = canvas.createImage(canvasWid, canvasHei);
 				}
-				Graphics var6 = Statics.field2575.getGraphics();
+				Graphics var6 = field2575.getGraphics();
 				var6.setColor(Color.black);
 				var6.fillRect(0, 0, canvasWid, canvasHei);
 				int var7 = canvasWid / 2 - 152;
@@ -919,15 +930,15 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				var6.setColor(Color.black);
 				var6.drawRect(var7 + 1, var8 + 1, 301, 31);
 				var6.fillRect(arg0 * 3 + var7 + 2, var8 + 2, 300 - arg0 * 3, 30);
-				var6.setFont(Statics.field9147);
+				var6.setFont(field9147);
 				var6.setColor(arg4);
 				var6.drawString(arg1, var7 + (304 - arg1.length() * 6) / 2, var8 + 22);
 				if (field6598 != null) {
-					var6.setFont(Statics.field9147);
+					var6.setFont(field9147);
 					var6.setColor(arg4);
 					var6.drawString(field6598, canvasWid / 2 - field6598.length() * 6 / 2, canvasHei / 2 - 26);
 				}
-				var5.drawImage(Statics.field2575, 0, 0, null);
+				var5.drawImage(field2575, 0, 0, null);
 			} catch (Exception var13) {
 				var5.setColor(Color.black);
 				var5.fillRect(0, 0, canvasWid, canvasHei);
@@ -940,10 +951,10 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				var5.setColor(Color.black);
 				var5.drawRect(var10 + 1, var11 + 1, 301, 31);
 				var5.fillRect(arg0 * 3 + var10 + 2, var11 + 2, 300 - arg0 * 3, 30);
-				var5.setFont(Statics.field9147);
+				var5.setFont(field9147);
 				var5.setColor(arg4);
 				if (field6598 != null) {
-					var5.setFont(Statics.field9147);
+					var5.setFont(field9147);
 					var5.setColor(arg4);
 					var5.drawString(field6598, canvasWid / 2 - field6598.length() * 6 / 2, canvasHei / 2 - 26);
 				}
@@ -956,8 +967,8 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("ew.at(B)V")
 	public static final void method2901() {
-		Statics.field2575 = null;
-		Statics.field9147 = null;
+		field2575 = null;
+		field9147 = null;
 	}
 
 	@ObfuscatedName("sk.ad(Ljava/lang/String;I)V")
@@ -999,7 +1010,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		if (this.field6601) {
 			return;
 		}
-		Statics.method5134().method7902("jaclib");
+		NativeLibraries.method5134().method7902("jaclib");
 		try {
 			QueryPerformanceCounter.init();
 		} catch (Throwable var2) {

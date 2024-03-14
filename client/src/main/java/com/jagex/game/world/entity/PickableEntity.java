@@ -36,6 +36,25 @@ public class PickableEntity {
 		}
 	}
 
+	@ObfuscatedName("gz.n(Ltl;B)V")
+	public static void method3657(PickableEntity arg0) {
+		arg0.field6978 = null;
+		Stack var1 = field6979;
+		synchronized (field6979) {
+			if (field6979.size() < 200) {
+				field6979.push(arg0);
+			}
+		}
+	}
+
+	@ObfuscatedName("acc.m(S)V")
+	public static void method15000() {
+		Stack var0 = field6979;
+		synchronized (field6979) {
+			field6979 = new Stack();
+		}
+	}
+
 	@ObfuscatedName("tl.k(Ldh;III)Z")
 	public boolean method8889(Renderer arg0, int arg1, int arg2) {
 		int var4 = this.field6978.method18371();

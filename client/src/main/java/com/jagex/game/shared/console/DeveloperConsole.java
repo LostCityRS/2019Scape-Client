@@ -17,7 +17,6 @@ import com.jagex.game.world.entity.SceneManager;
 import com.jagex.graphics.*;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.login.LoginManager;
 import rs2.client.login.WorldSwitcher;
@@ -39,6 +38,9 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("ap.m")
 	public static int field763;
+
+	@ObfuscatedName("qv.k")
+	public static String[] field4845;
 
 	@ObfuscatedName("ap.f")
 	public static int field764 = 0;
@@ -67,6 +69,9 @@ public class DeveloperConsole {
 	@ObfuscatedName("ap.r")
 	public static int field772 = -1;
 
+	@ObfuscatedName("iv.v")
+	public static String[] field2615;
+
 	@ObfuscatedName("ap.o")
 	public static FileOutputStream field773;
 
@@ -88,7 +93,7 @@ public class DeveloperConsole {
 		if (!method1584()) {
 			return;
 		}
-		if (Statics.field4845 == null) {
+		if (field4845 == null) {
 			method8025();
 		}
 		field770 = true;
@@ -99,9 +104,9 @@ public class DeveloperConsole {
 	public static void method8025() {
 		field768 = DefaultSprites.field10268.field8569 + DefaultSprites.field10268.field8562 + 2;
 		field763 = DefaultSprites.field2657.field8569 + DefaultSprites.field2657.field8562 + 2;
-		Statics.field4845 = new String[500];
-		for (int var0 = 0; var0 < Statics.field4845.length; var0++) {
-			Statics.field4845[var0] = "";
+		field4845 = new String[500];
+		for (int var0 = 0; var0 < field4845.length; var0++) {
+			field4845[var0] = "";
 		}
 		addline(LocalisedText.DEBUG_CONSOLE_INFO.method15021(Client.language));
 	}
@@ -143,7 +148,7 @@ public class DeveloperConsole {
 				} catch (Exception var4) {
 				}
 				addline("Pausing for " + var2 + " seconds...");
-				Statics.field2615 = arg0;
+				field2615 = arg0;
 				field772 = var1 + 1;
 				field765 = MonotonicTime.method3655() + (long) (var2 * 1000);
 				return;
@@ -159,11 +164,11 @@ public class DeveloperConsole {
 			field776 = field776 * 36 + 6;
 		}
 		if (field772 != -1 && field765 < MonotonicTime.method3655()) {
-			for (int var0 = field772; var0 < Statics.field2615.length; var0++) {
-				if (Statics.field2615[var0].startsWith("pause")) {
+			for (int var0 = field772; var0 < field2615.length; var0++) {
+				if (field2615[var0].startsWith("pause")) {
 					int var1 = 5;
 					try {
-						var1 = Integer.parseInt(Statics.field2615[var0].substring(6));
+						var1 = Integer.parseInt(field2615[var0].substring(6));
 					} catch (Exception var14) {
 					}
 					addline("Pausing for " + var1 + " seconds...");
@@ -171,7 +176,7 @@ public class DeveloperConsole {
 					field765 = MonotonicTime.method3655() + (long) (var1 * 1000);
 					return;
 				}
-				currententry = Statics.field2615[var0];
+				currententry = field2615[var0];
 				method14718(false);
 			}
 			field772 = -1;
@@ -199,9 +204,9 @@ public class DeveloperConsole {
 			} else if (var5 == 66 && (var7 & 0x4) != 0) {
 				if (Client.field3428 != null) {
 					String var8 = "";
-					for (int var9 = Statics.field4845.length - 1; var9 >= 0; var9--) {
-						if (Statics.field4845[var9] != null && Statics.field4845[var9].length() > 0) {
-							var8 = var8 + Statics.field4845[var9] + '\n';
+					for (int var9 = field4845.length - 1; var9 >= 0; var9--) {
+						if (field4845[var9] != null && field4845[var9].length() > 0) {
+							var8 = var8 + field4845[var9] + '\n';
 						}
 					}
 					Client.field3428.setContents(new StringSelection(var8), null);
@@ -233,7 +238,7 @@ public class DeveloperConsole {
 				commandcharpointer = 0;
 			} else if (var5 == 103) {
 				commandcharpointer = currententry.length();
-			} else if (var5 == 104 && commandpointer < Statics.field4845.length) {
+			} else if (var5 == 104 && commandpointer < field4845.length) {
 				commandpointer++;
 				method3085();
 				commandcharpointer = currententry.length();
@@ -258,11 +263,11 @@ public class DeveloperConsole {
 			return;
 		}
 		int var0 = 0;
-		for (int var1 = 0; var1 < Statics.field4845.length; var1++) {
-			if (Statics.field4845[var1].indexOf("--> ") != -1) {
+		for (int var1 = 0; var1 < field4845.length; var1++) {
+			if (field4845[var1].indexOf("--> ") != -1) {
 				var0++;
 				if (commandpointer == var0) {
-					currententry = Statics.field4845[var1].substring(Statics.field4845[var1].indexOf(62) + 2);
+					currententry = field4845[var1].substring(field4845[var1].indexOf(62) + 2);
 					break;
 				}
 			}
@@ -295,7 +300,7 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("hj.c(Ljava/lang/String;I)V")
 	public static void addline(String arg0) {
-		if (Statics.field4845 == null) {
+		if (field4845 == null) {
 			method8025();
 		}
 		Client.field11088.setTime(new Date(MonotonicTime.method3655()));
@@ -306,16 +311,16 @@ public class DeveloperConsole {
 		String[] var5 = StringTools.method17361(arg0, '\n');
 		for (int var6 = 0; var6 < var5.length; var6++) {
 			for (int var7 = field764; var7 > 0; var7--) {
-				Statics.field4845[var7] = Statics.field4845[var7 - 1];
+				field4845[var7] = field4845[var7 - 1];
 			}
-			Statics.field4845[0] = var4 + ": " + var5[var6];
+			field4845[0] = var4 + ": " + var5[var6];
 			if (field773 != null) {
 				try {
-					field773.write(Cp1252.method3064(Statics.field4845[0] + "\n"));
+					field773.write(Cp1252.method3064(field4845[0] + "\n"));
 				} catch (IOException var9) {
 				}
 			}
-			if (field764 < Statics.field4845.length - 1) {
+			if (field764 < field4845.length - 1) {
 				field764++;
 				if (field771 > 0) {
 					field771++;
@@ -341,7 +346,7 @@ public class DeveloperConsole {
 			}
 			arg0.method2354(GameShell.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
 			for (int var5 = field771; var5 < field771 + var1 && var5 < field764; var5++) {
-				String[] var6 = StringTools.method17361(Statics.field4845[var5], '\b');
+				String[] var6 = StringTools.method17361(field4845[var5], '\b');
 				int var7 = (GameShell.canvasWid - 8 - 16) / var6.length;
 				for (int var8 = 0; var8 < var6.length; var8++) {
 					int var9 = var7 * var8 + 8;

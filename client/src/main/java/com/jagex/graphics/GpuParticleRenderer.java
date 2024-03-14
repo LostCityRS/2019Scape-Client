@@ -5,7 +5,6 @@ import com.jagex.graphics.particles.ParticleList;
 import com.jagex.math.IntMath;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.nio.ByteBuffer;
 
@@ -57,6 +56,9 @@ public class GpuParticleRenderer {
 	@ObfuscatedName("ld.o")
 	public int field3334 = 0;
 
+	@ObfuscatedName("ld.s")
+	public static float field3325;
+
 	public GpuParticleRenderer(GpuRenderer arg0) {
 		this.field3326 = arg0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311, VertexDeclarationElementComponent.field3300 }), new VertexDeclarationElement(VertexDeclarationElementComponent.field3301) });
 		this.field3333 = arg0.method16085(true);
@@ -107,7 +109,7 @@ public class GpuParticleRenderer {
 	@ObfuscatedName("ld.m(Lafc;Ldm;)V")
 	public void method5770(GpuRenderer arg0, ParticleList arg1) {
 		arg0.method2219(false);
-		Statics.field3325 = arg0.field10122;
+		field3325 = arg0.field10122;
 		float var3 = arg0.field10059.field4315[2];
 		float var4 = arg0.field10059.field4315[6];
 		float var5 = arg0.field10059.field4315[10];
@@ -152,8 +154,8 @@ public class GpuParticleRenderer {
 			var16.field2990.method6491(0.0F, 0.0F, 0.0F);
 		}
 		this.method5766(arg0, var10, var14, var8, var15, var16, var17);
-		if (Statics.field3325 != arg0.field10122) {
-			arg0.method2222(Statics.field3325);
+		if (field3325 != arg0.field10122) {
+			arg0.method2222(field3325);
 		}
 		arg0.method2219(true);
 	}
@@ -199,8 +201,8 @@ public class GpuParticleRenderer {
 				}
 				arg0.method16056(var17);
 			}
-			if (var11 && Statics.field3325 != arg0.field10122) {
-				arg0.method2222(Statics.field3325);
+			if (var11 && field3325 != arg0.field10122) {
+				arg0.method2222(field3325);
 			} else if (arg0.field10122 != 1.0F) {
 				arg0.method2222(1.0F);
 			}

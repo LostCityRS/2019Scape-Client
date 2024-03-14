@@ -3,11 +3,9 @@ package com.jagex.game.cutscene;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.game.config.seqtype.SeqType;
-import com.jagex.game.cutscene.CutsceneAction;
 import com.jagex.game.world.entity.ProjectileEntityWrapper;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.scene.entities.PathingEntity;
 import rs2.client.scene.entities.ProjectileAnimation;
@@ -99,7 +97,7 @@ public class ProjAnimCutsceneAction extends CutsceneAction {
 			var2 = this.field10343 * 512 + 256;
 			var3 = this.field10340;
 		} else {
-			PathingEntity var4 = Statics.field1721[this.field10341].method2870();
+			PathingEntity var4 = CutsceneManager.field1721[this.field10341].method2870();
 			Vector3 var5 = var4.method10536().field4298;
 			var1 = (int) var5.field4308;
 			var2 = (int) var5.field4313;
@@ -111,7 +109,7 @@ public class ProjAnimCutsceneAction extends CutsceneAction {
 			var6 = this.field10346 * 512 + 256;
 			var7 = this.field10338 * 512 + 256;
 		} else {
-			PathingEntity var8 = Statics.field1721[this.field10345].method2870();
+			PathingEntity var8 = CutsceneManager.field1721[this.field10345].method2870();
 			Vector3 var9 = var8.method10536().field4298;
 			var6 = (int) var9.field4308;
 			var7 = (int) var9.field4313;

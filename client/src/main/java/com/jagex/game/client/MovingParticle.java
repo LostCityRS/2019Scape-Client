@@ -14,7 +14,6 @@ import com.jagex.graphics.particles.ParticleEmitter;
 import com.jagex.graphics.particles.ParticleSystem;
 import com.jagex.graphics.particles.ParticleSystemRenderer;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.Iterator;
 
@@ -313,7 +312,7 @@ public class MovingParticle extends Particle {
 			if (var8.field3489 == null) {
 				var8.field3489 = new int[var8.field3512.length];
 				for (int var80 = 0; var80 < var8.field3512.length; var80++) {
-					Statics.field12041.method5973(var8.field3512[var80]);
+					ParticleSystemRenderer.field12041.method5973(var8.field3512[var80]);
 					var8.field3489[var80] = ParticleSystemRenderer.method9543(var8.field3512[var80]);
 				}
 			}
@@ -460,7 +459,7 @@ public class MovingParticle extends Particle {
 	@ObfuscatedName("atz.u()V")
 	public void method19669() {
 		this.field12526.field7785.field7805[this.field12523] = null;
-		Statics.field7794[ParticleSystemRenderer.field7797] = this;
+		ParticleSystemRenderer.field7794[ParticleSystemRenderer.field7797] = this;
 		ParticleSystemRenderer.field7797 = ParticleSystemRenderer.field7797 + 1 & 0x3FF;
 		this.method8433();
 		this.method17453();

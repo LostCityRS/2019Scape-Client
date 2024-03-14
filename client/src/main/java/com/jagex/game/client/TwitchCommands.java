@@ -4,7 +4,6 @@ import com.jagex.game.script.ClientScriptState;
 import com.jagex.twitchtv.TwitchWebcamDevice;
 import com.jagex.twitchtv.TwitchWebcamDeviceCapability;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("yi")
@@ -240,11 +239,11 @@ public final class TwitchCommands {
 	public static void method2012(ClientScriptState arg0) {
 		int var1 = TwitchHardwarePlatform.method9275();
 		if (var1 >= 0) {
-			arg0.field8216[++arg0.field8226 - 1] = Statics.field4501.viewerCounts[var1];
-			arg0.field8218[++arg0.field8211 - 1] = Statics.field4501.channelUrls[var1];
-			arg0.field8218[++arg0.field8211 - 1] = Statics.field4501.previewUrlTemplates[var1];
-			arg0.field8218[++arg0.field8211 - 1] = Statics.field4501.streamTitles[var1];
-			arg0.field8218[++arg0.field8211 - 1] = Statics.field4501.channelDisplayNames[var1];
+			arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.field4501.viewerCounts[var1];
+			arg0.field8218[++arg0.field8211 - 1] = TwitchHardwarePlatform.field4501.channelUrls[var1];
+			arg0.field8218[++arg0.field8211 - 1] = TwitchHardwarePlatform.field4501.previewUrlTemplates[var1];
+			arg0.field8218[++arg0.field8211 - 1] = TwitchHardwarePlatform.field4501.streamTitles[var1];
+			arg0.field8218[++arg0.field8211 - 1] = TwitchHardwarePlatform.field4501.channelDisplayNames[var1];
 			return;
 		}
 		arg0.field8216[++arg0.field8226 - 1] = -1;

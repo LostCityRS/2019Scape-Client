@@ -5,10 +5,15 @@ import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("arr")
 public class FrameSet extends SecondaryNode {
+
+	@ObfuscatedName("arr.l")
+	public static Js5 field12325;
+
+	@ObfuscatedName("arr.u")
+    public static Js5 field12326;
 
 	@ObfuscatedName("arr.z")
 	public int field12324;
@@ -21,8 +26,8 @@ public class FrameSet extends SecondaryNode {
 
 	@ObfuscatedName("vw.e(Lpy;Lpy;II)V")
 	public static void method9393(Js5 arg0, Js5 arg1, int arg2) {
-		Statics.field12325 = arg0;
-		Statics.field12326 = arg1;
+		field12325 = arg0;
+		field12326 = arg1;
 	}
 
 	public FrameSet(int arg0) {
@@ -35,15 +40,15 @@ public class FrameSet extends SecondaryNode {
 			return true;
 		}
 		if (this.field12323 == null) {
-			Js5 var1 = Statics.field12325;
-			synchronized (Statics.field12325) {
-				if (!Statics.field12325.method6927(this.field12324)) {
+			Js5 var1 = field12325;
+			synchronized (field12325) {
+				if (!field12325.method6927(this.field12324)) {
 					return false;
 				}
-				int[] var2 = Statics.field12325.method6895(this.field12324);
+				int[] var2 = field12325.method6895(this.field12324);
 				this.field12323 = new byte[var2.length][];
 				for (int var3 = 0; var3 < var2.length; var3++) {
-					this.field12323[var3] = Statics.field12325.getfile(this.field12324, var2[var3]);
+					this.field12323[var3] = field12325.getfile(this.field12324, var2[var3]);
 				}
 			}
 		}
@@ -53,21 +58,21 @@ public class FrameSet extends SecondaryNode {
 			Packet var8 = new Packet(var7);
 			var8.pos = 1;
 			int var9 = var8.g2();
-			Js5 var10 = Statics.field12326;
-			synchronized (Statics.field12326) {
-				var5 &= Statics.field12326.method6889(var9);
+			Js5 var10 = field12326;
+			synchronized (field12326) {
+				var5 &= field12326.method6889(var9);
 			}
 		}
 		if (!var5) {
 			return false;
 		}
 		IterableQueue var12 = new IterableQueue();
-		Js5 var13 = Statics.field12325;
+		Js5 var13 = field12325;
 		int[] var15;
-		synchronized (Statics.field12325) {
-			int var14 = Statics.field12325.method6897(this.field12324);
+		synchronized (field12325) {
+			int var14 = field12325.method6897(this.field12324);
 			this.field12327 = new AnimFrame[var14];
-			var15 = Statics.field12325.method6895(this.field12324);
+			var15 = field12325.method6895(this.field12324);
 		}
 		for (int var17 = 0; var17 < var15.length; var17++) {
 			byte[] var18 = this.field12323[var17];
@@ -82,9 +87,9 @@ public class FrameSet extends SecondaryNode {
 				}
 			}
 			if (var21 == null) {
-				Js5 var23 = Statics.field12326;
-				synchronized (Statics.field12326) {
-					var21 = new AnimBase(var20, Statics.field12326.method6894(var20));
+				Js5 var23 = field12326;
+				synchronized (field12326) {
+					var21 = new AnimBase(var20, field12326.method6894(var20));
 				}
 				var12.method14153(var21);
 			}

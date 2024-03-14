@@ -2,7 +2,6 @@ package com.jagex.math;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.Arrays;
 
@@ -12,6 +11,12 @@ public final class Matrix4x4 {
 	@ObfuscatedName("pq.n")
 	public static Matrix4x4[] field4316 = new Matrix4x4[0];
 
+	@ObfuscatedName("pq.m")
+	public static int field4318;
+
+	@ObfuscatedName("pq.k")
+	public static int field4319;
+
 	@ObfuscatedName("pq.f")
 	public static final Matrix4x4 field4317 = new Matrix4x4();
 
@@ -20,20 +25,20 @@ public final class Matrix4x4 {
 
 	@ObfuscatedName("pq.e(I)V")
 	public static void method6651(int arg0) {
-		Statics.field4318 = arg0;
+		field4318 = arg0;
 		field4316 = new Matrix4x4[arg0];
-		Statics.field4319 = 0;
+		field4319 = 0;
 	}
 
 	@ObfuscatedName("pq.n()Lpq;")
 	public static Matrix4x4 method6641() {
 		Matrix4x4[] var0 = field4316;
 		synchronized (field4316) {
-			if (Statics.field4319 == 0) {
+			if (field4319 == 0) {
 				return new Matrix4x4();
 			} else {
-				field4316[--Statics.field4319].method6603();
-				return field4316[Statics.field4319];
+				field4316[--field4319].method6603();
+				return field4316[field4319];
 			}
 		}
 	}
@@ -42,8 +47,8 @@ public final class Matrix4x4 {
 	public void method6605() {
 		Matrix4x4[] var1 = field4316;
 		synchronized (field4316) {
-			if (Statics.field4319 < Statics.field4318 - 1) {
-				field4316[Statics.field4319++] = this;
+			if (field4319 < field4318 - 1) {
+				field4316[field4319++] = this;
 			}
 		}
 	}

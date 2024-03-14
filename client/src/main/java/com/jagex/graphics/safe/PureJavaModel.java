@@ -14,7 +14,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("afi")
 public class PureJavaModel extends Model {
@@ -371,7 +370,7 @@ public class PureJavaModel extends Model {
 			for (int var35 = 0; var35 < arg1.field1412.length; var35++) {
 				ModelBillboard var36 = arg1.field1412[var35];
 				BillboardType var37 = var8.method6015(var36.field1653);
-				int var38 = Statics.field8149[arg1.field1395[var36.field1654] & 0xFFFF] & 0xFFFFFF;
+				int var38 = ColourUtils.field8149[arg1.field1395[var36.field1654] & 0xFFFF] & 0xFFFFFF;
 				int var39 = var38 | 255 - (arg1.field1393 == null ? 0 : arg1.field1393[var36.field1654] & 0xFF) << 24;
 				this.field9589[var35] = new Billboard(var36.field1654, arg1.field1415[var36.field1654], arg1.field1386[var36.field1654], arg1.field1400[var36.field1654], var37.field3451, var37.field3452, var37.field3455, var37.field3450, var37.field3453, var37.field3456, var36.field1656);
 				this.field9590[var35] = new BillboardPlacement(var39);
@@ -901,7 +900,7 @@ public class PureJavaModel extends Model {
 
 	@ObfuscatedName("afi.hr(ISI)I")
 	public int method15461(int arg0, short arg1, int arg2) {
-		int var4 = Statics.field8151[this.method15462(arg0, arg2)];
+		int var4 = ColourUtils.field8151[this.method15462(arg0, arg2)];
 		Material var5 = this.field9572.field1597.method2043(arg1 & 0xFFFF);
 		int var6 = var5.field1364 & 0xFF;
 		if (var6 != 0) {
@@ -2179,7 +2178,7 @@ public class PureJavaModel extends Model {
 					for (int var79 = 0; var79 < this.field9588; var79++) {
 						Billboard var80 = this.field9589[var79];
 						BillboardPlacement var81 = this.field9590[var79];
-						var81.field819 = var81.field819 & 0xFF000000 | Statics.field8149[ColourUtils.method4937(this.field9575[var80.field901] & 0xFFFF) & 0xFFFF] & 0xFFFFFF;
+						var81.field819 = var81.field819 & 0xFF000000 | ColourUtils.field8149[ColourUtils.method4937(this.field9575[var80.field901] & 0xFFFF) & 0xFFFF] & 0xFFFFFF;
 					}
 				}
 			}
@@ -2657,7 +2656,7 @@ public class PureJavaModel extends Model {
 					for (int var184 = 0; var184 < this.field9588; var184++) {
 						Billboard var185 = this.field9589[var184];
 						BillboardPlacement var186 = this.field9590[var184];
-						var186.field819 = var186.field819 & 0xFF000000 | Statics.field8149[ColourUtils.method4937(this.field9575[var185.field901] & 0xFFFF) & 0xFFFF] & 0xFFFFFF;
+						var186.field819 = var186.field819 & 0xFF000000 | ColourUtils.field8149[ColourUtils.method4937(this.field9575[var185.field901] & 0xFFFF) & 0xFFFF] & 0xFFFFFF;
 					}
 				}
 			}
@@ -2816,7 +2815,7 @@ public class PureJavaModel extends Model {
 				for (int var32 = 0; var32 < this.field9588; var32++) {
 					Billboard var33 = this.field9589[var32];
 					BillboardPlacement var34 = this.field9590[var32];
-					var34.field819 = var34.field819 & 0xFF000000 | Statics.field8149[ColourUtils.method4937(this.field9575[var33.field901] & 0xFFFF) & 0xFFFF] & 0xFFFFFF;
+					var34.field819 = var34.field819 & 0xFF000000 | ColourUtils.field8149[ColourUtils.method4937(this.field9575[var33.field901] & 0xFFFF) & 0xFFFF] & 0xFFFFFF;
 				}
 			}
 		} else if (arg0 == 8) {
@@ -3218,7 +3217,7 @@ public class PureJavaModel extends Model {
 				this.field9536.field935 = this.field9573[arg3] & 0xFF;
 			}
 			if (this.field9565[arg3] == -1) {
-				this.field9536.method1032(arg0, arg1, arg2, this.field9607[var5], this.field9607[var6], this.field9607[var7], this.field9578[var5], this.field9578[var6], this.field9578[var7], this.field9609[var5], this.field9609[var6], this.field9609[var7], Statics.field8149[this.field9563[arg3] & 0xFFFF]);
+				this.field9536.method1032(arg0, arg1, arg2, this.field9607[var5], this.field9607[var6], this.field9607[var7], this.field9578[var5], this.field9578[var6], this.field9578[var7], this.field9609[var5], this.field9609[var6], this.field9609[var7], ColourUtils.field8149[this.field9563[arg3] & 0xFFFF]);
 			} else {
 				this.field9536.method1028(arg0, arg1, arg2, this.field9607[var5], this.field9607[var6], this.field9607[var7], this.field9578[var5], this.field9578[var6], this.field9578[var7], this.field9609[var5], this.field9609[var6], this.field9609[var7], (float) (this.field9563[arg3] & 0xFFFF), (float) (this.field9583[arg3] & 0xFFFF), (float) (this.field9565[arg3] & 0xFFFF));
 			}
@@ -3281,9 +3280,9 @@ public class PureJavaModel extends Model {
 					this.field9536.method1033(arg0, arg1, arg2, this.field9607[var27], this.field9607[var28], this.field9607[var29], this.field9578[var27], this.field9578[var28], this.field9578[var29], this.field9609[var27], this.field9609[var28], this.field9609[var29], this.field9610[var27], this.field9610[var28], this.field9610[var29], this.field9561[arg3][0], this.field9561[arg3][1], this.field9561[arg3][2], this.field9562[arg3][0], this.field9562[arg3][1], this.field9562[arg3][2], var33 | this.field9563[arg3] & 0xFFFFFF, var33 | this.field9583[arg3] & 0xFFFFFF, var33 | this.field9565[arg3] & 0xFFFFFF, this.field9534.field858, var30 * 255.0F, var31 * 255.0F, var32 * 255.0F, this.field9574[arg3] & 0xFFFF);
 				}
 			} else if (this.field9565[arg3] == -1) {
-				this.field9536.method1030(arg0, arg1, arg2, this.field9607[var27], this.field9607[var28], this.field9607[var29], this.field9578[var27], this.field9578[var28], this.field9578[var29], this.field9609[var27], this.field9609[var28], this.field9609[var29], ColourUtils.method19201(Statics.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var30 * 255.0F), ColourUtils.method19201(Statics.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var31 * 255.0F), ColourUtils.method19201(Statics.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var32 * 255.0F));
+				this.field9536.method1030(arg0, arg1, arg2, this.field9607[var27], this.field9607[var28], this.field9607[var29], this.field9578[var27], this.field9578[var28], this.field9578[var29], this.field9609[var27], this.field9609[var28], this.field9609[var29], ColourUtils.method19201(ColourUtils.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var30 * 255.0F), ColourUtils.method19201(ColourUtils.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var31 * 255.0F), ColourUtils.method19201(ColourUtils.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var32 * 255.0F));
 			} else {
-				this.field9536.method1030(arg0, arg1, arg2, this.field9607[var27], this.field9607[var28], this.field9607[var29], this.field9578[var27], this.field9578[var28], this.field9578[var29], this.field9609[var27], this.field9609[var28], this.field9609[var29], ColourUtils.method19201(Statics.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var30 * 255.0F), ColourUtils.method19201(Statics.field8149[this.field9583[arg3] & 0xFFFF], this.field9534.field858, var31 * 255.0F), ColourUtils.method19201(Statics.field8149[this.field9565[arg3] & 0xFFFF], this.field9534.field858, var32 * 255.0F));
+				this.field9536.method1030(arg0, arg1, arg2, this.field9607[var27], this.field9607[var28], this.field9607[var29], this.field9578[var27], this.field9578[var28], this.field9578[var29], this.field9609[var27], this.field9609[var28], this.field9609[var29], ColourUtils.method19201(ColourUtils.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var30 * 255.0F), ColourUtils.method19201(ColourUtils.field8149[this.field9583[arg3] & 0xFFFF], this.field9534.field858, var31 * 255.0F), ColourUtils.method19201(ColourUtils.field8149[this.field9565[arg3] & 0xFFFF], this.field9534.field858, var32 * 255.0F));
 			}
 			return;
 		}
@@ -3345,9 +3344,9 @@ public class PureJavaModel extends Model {
 				this.field9536.method1033(arg0, arg1, arg2, this.field9607[var6], this.field9607[var7], this.field9607[var8], this.field9578[var6], this.field9578[var7], this.field9578[var8], this.field9609[var6], this.field9609[var7], this.field9609[var8], this.field9610[var6], this.field9610[var7], this.field9610[var8], this.field9561[arg3][0], this.field9561[arg3][1], this.field9561[arg3][2], this.field9562[arg3][0], this.field9562[arg3][1], this.field9562[arg3][2], var25 | this.field9563[arg3] & 0xFFFFFF, var25 | this.field9583[arg3] & 0xFFFFFF, var25 | this.field9565[arg3] & 0xFFFFFF, this.field9534.field858, var21 * 255.0F, var22 * 255.0F, var23 * 255.0F, this.field9574[arg3] & 0xFFFF);
 			}
 		} else if (this.field9565[arg3] == -1) {
-			this.field9536.method1030(arg0, arg1, arg2, this.field9607[var6], this.field9607[var7], this.field9607[var8], this.field9578[var6], this.field9578[var7], this.field9578[var8], this.field9609[var6], this.field9609[var7], this.field9609[var8], ColourUtils.method19201(Statics.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var21 * 255.0F), ColourUtils.method19201(Statics.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var22 * 255.0F), ColourUtils.method19201(Statics.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var23 * 255.0F));
+			this.field9536.method1030(arg0, arg1, arg2, this.field9607[var6], this.field9607[var7], this.field9607[var8], this.field9578[var6], this.field9578[var7], this.field9578[var8], this.field9609[var6], this.field9609[var7], this.field9609[var8], ColourUtils.method19201(ColourUtils.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var21 * 255.0F), ColourUtils.method19201(ColourUtils.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var22 * 255.0F), ColourUtils.method19201(ColourUtils.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var23 * 255.0F));
 		} else {
-			this.field9536.method1030(arg0, arg1, arg2, this.field9607[var6], this.field9607[var7], this.field9607[var8], this.field9578[var6], this.field9578[var7], this.field9578[var8], this.field9609[var6], this.field9609[var7], this.field9609[var8], ColourUtils.method19201(Statics.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var21 * 255.0F), ColourUtils.method19201(Statics.field8149[this.field9583[arg3] & 0xFFFF], this.field9534.field858, var22 * 255.0F), ColourUtils.method19201(Statics.field8149[this.field9565[arg3] & 0xFFFF], this.field9534.field858, var23 * 255.0F));
+			this.field9536.method1030(arg0, arg1, arg2, this.field9607[var6], this.field9607[var7], this.field9607[var8], this.field9578[var6], this.field9578[var7], this.field9578[var8], this.field9609[var6], this.field9609[var7], this.field9609[var8], ColourUtils.method19201(ColourUtils.field8149[this.field9563[arg3] & 0xFFFF], this.field9534.field858, var21 * 255.0F), ColourUtils.method19201(ColourUtils.field8149[this.field9583[arg3] & 0xFFFF], this.field9534.field858, var22 * 255.0F), ColourUtils.method19201(ColourUtils.field8149[this.field9565[arg3] & 0xFFFF], this.field9534.field858, var23 * 255.0F));
 		}
 	}
 
@@ -3701,7 +3700,7 @@ public class PureJavaModel extends Model {
 			for (int var4 = 0; var4 < this.field9588; var4++) {
 				Billboard var5 = this.field9589[var4];
 				BillboardPlacement var6 = this.field9590[var4];
-				var6.field819 = var6.field819 & 0xFF000000 | Statics.field8149[ColourUtils.method4937(this.field9575[var5.field901]) & 0xFFFF] & 0xFFFFFF;
+				var6.field819 = var6.field819 & 0xFF000000 | ColourUtils.field8149[ColourUtils.method4937(this.field9575[var5.field901]) & 0xFFFF] & 0xFFFFFF;
 			}
 		}
 		if (this.field9602 == 2) {
@@ -3775,7 +3774,7 @@ public class PureJavaModel extends Model {
 			for (int var10 = 0; var10 < this.field9588; var10++) {
 				Billboard var11 = this.field9589[var10];
 				BillboardPlacement var12 = this.field9590[var10];
-				var12.field819 = var12.field819 & 0xFF000000 | Statics.field8149[ColourUtils.method4937(this.field9575[var11.field901] & 0xFFFF) & 0xFFFF] & 0xFFFFFF;
+				var12.field819 = var12.field819 & 0xFF000000 | ColourUtils.field8149[ColourUtils.method4937(this.field9575[var11.field901] & 0xFFFF) & 0xFFFF] & 0xFFFFFF;
 			}
 		}
 		if (this.field9602 == 2) {

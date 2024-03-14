@@ -5,17 +5,14 @@ import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.IterableQueueIterator;
 import com.jagex.core.utils.MonotonicTime;
-import com.jagex.game.client.GameShell;
-import com.jagex.game.client.LocalisedText;
-import com.jagex.game.client.MapElementContainer;
-import com.jagex.game.client.MapLogicRelated;
+import com.jagex.game.client.*;
+import com.jagex.game.config.iftype.Component;
 import com.jagex.game.config.meltype.MapElementType;
 import com.jagex.game.script.ClientTriggerType;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.*;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.clientscript.ScriptRunner;
 
@@ -47,17 +44,38 @@ public class ClientWorldMap extends WorldMap {
 	@ObfuscatedName("alj.bs")
 	public static int field11651 = 0;
 
+	@ObfuscatedName("io.cl")
+	public static int field2606;
+
+	@ObfuscatedName("xf.cg")
+	public static int field8055;
+
+	@ObfuscatedName("kr.ce")
+	public static int field3121;
+
+	@ObfuscatedName("qe.cu")
+	public static int field4603;
+
 	@ObfuscatedName("alj.ci")
 	public static int field11665 = -1;
 
 	@ObfuscatedName("alj.cn")
 	public static int field11653 = -1;
 
+	@ObfuscatedName("akd.cv")
+	public static int field11443;
+
 	@ObfuscatedName("alj.cp")
 	public static int field11654;
 
+	@ObfuscatedName("kg.ca")
+	public static Component field3044;
+
 	@ObfuscatedName("alj.cx")
 	public static boolean field11663 = false;
+
+	@ObfuscatedName("uw.cw")
+	public static Sprite field7241;
 
 	@ObfuscatedName("alj.ct")
 	public static int field11656 = -1;
@@ -74,6 +92,12 @@ public class ClientWorldMap extends WorldMap {
 	@ObfuscatedName("alj.cm")
 	public static FontMetrics[][] field11660 = new FontMetrics[3][5];
 
+	@ObfuscatedName("as.cq")
+	public static Font field717;
+
+	@ObfuscatedName("ahw.ch")
+	public static FontMetrics field10471;
+
 	@ObfuscatedName("alj.cb")
 	public static HashMap field11661 = new HashMap();
 
@@ -88,6 +112,9 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("alj.cz")
 	public static boolean field11671 = false;
+
+	@ObfuscatedName("ajw.ck")
+	public static IterableQueue field11253;
 
 	@ObfuscatedName("alj.cj")
 	public static boolean field11658 = false;
@@ -118,6 +145,9 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("alj.dm")
 	public static boolean field11674 = false;
+
+	@ObfuscatedName("uu.dq")
+	public static WorldMapAreaMetadata field7280;
 
 	public ClientWorldMap() throws Throwable {
 		throw new Error();
@@ -160,16 +190,16 @@ public class ClientWorldMap extends WorldMap {
 			if (!field11672 && var5 >= 0 && var5 < WorldMap.field6812 && var6 >= 0 && var6 < WorldMap.field6810) {
 				int var9 = var5 + ((int) (Math.random() * 10.0D) - 5);
 				int var10 = var6 + ((int) (Math.random() * 10.0D) - 5);
-				Statics.field11443 = var9;
+				field11443 = var9;
 				field11654 = var10;
 			} else if (field11656 == -1 || field11647 == -1) {
 				WorldMap.field6811.method19470(WorldMap.field6811.field12354 >> 14 & 0x3FFF, WorldMap.field6811.field12354 & 0x3FFF, var4);
-				Statics.field11443 = var4[1] - WorldMap.field6786;
+				field11443 = var4[1] - WorldMap.field6786;
 				field11654 = var4[2] - WorldMap.field6808;
 			} else {
 				WorldMap.field6811.method19470(field11656, field11647, var4);
 				if (var4 != null) {
-					Statics.field11443 = var4[1] - WorldMap.field6786;
+					field11443 = var4[1] - WorldMap.field6786;
 					field11654 = var4[2] - WorldMap.field6808;
 				}
 				field11647 = -1;
@@ -202,7 +232,7 @@ public class ClientWorldMap extends WorldMap {
 			WorldMap.field6799 = WorldMapTileShapes.method18477(WorldMap.field6840);
 			method4643();
 			method8619();
-			Statics.field11253 = new IterableQueue();
+			field11253 = new IterableQueue();
 			field6797 += (int) (Math.random() * 5.0D) - 2;
 			if (field6797 < -8) {
 				field6797 = -8;
@@ -271,13 +301,13 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("jd.dl(I)V")
 	public static void method4643() {
-		if (Statics.field11443 < 0) {
-			Statics.field11443 = 0;
+		if (field11443 < 0) {
+			field11443 = 0;
 			field11665 = -1;
 			field11653 = -1;
 		}
-		if (Statics.field11443 > WorldMap.field6812) {
-			Statics.field11443 = WorldMap.field6812;
+		if (field11443 > WorldMap.field6812) {
+			field11443 = WorldMap.field6812;
 			field11665 = -1;
 			field11653 = -1;
 		}
@@ -295,16 +325,16 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("abv.dp(B)V")
 	public static void method14689() {
-		Statics.field11253 = null;
+		field11253 = null;
 		field11651 = 0;
 		field6793 = 0;
-		Statics.field3044 = null;
+		field3044 = null;
 		method8508();
 		field6806.method14152();
 		WorldMap.field6805 = null;
 		field6831.method2924();
 		field6832.method2924();
-		Statics.field7241 = null;
+		field7241 = null;
 		field11665 = -1;
 		field11653 = -1;
 		if (WorldMap.field6788 != null) {
@@ -343,7 +373,7 @@ public class ClientWorldMap extends WorldMap {
 	public static void method6003() {
 		method14689();
 		WorldMap.field6811 = null;
-		Statics.field7280 = null;
+		field7280 = null;
 		field11667.method14499();
 		field11668.method14499();
 		for (int var0 = 0; var0 < 3; var0++) {
@@ -367,14 +397,14 @@ public class ClientWorldMap extends WorldMap {
 			DefaultSprites.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.method15021(Client.language), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
 			return;
 		}
-		int var8 = Statics.field11443 - (int) ((float) arg3 / WorldMap.field6803);
+		int var8 = field11443 - (int) ((float) arg3 / WorldMap.field6803);
 		int var9 = field11654 + (int) ((float) arg4 / WorldMap.field6803);
-		int var10 = Statics.field11443 + (int) ((float) arg3 / WorldMap.field6803);
+		int var10 = field11443 + (int) ((float) arg3 / WorldMap.field6803);
 		int var11 = field11654 - (int) ((float) arg4 / WorldMap.field6803);
-		Statics.field2606 = Statics.field11443 - (int) ((float) arg3 / WorldMap.field6803);
-		Statics.field8055 = field11654 - (int) ((float) arg4 / WorldMap.field6803);
-		Statics.field3121 = (int) ((float) (arg3 * 2) / WorldMap.field6803);
-		Statics.field4603 = (int) ((float) (arg4 * 2) / WorldMap.field6803);
+		field2606 = field11443 - (int) ((float) arg3 / WorldMap.field6803);
+		field8055 = field11654 - (int) ((float) arg4 / WorldMap.field6803);
+		field3121 = (int) ((float) (arg3 * 2) / WorldMap.field6803);
+		field4603 = (int) ((float) (arg4 * 2) / WorldMap.field6803);
 		field6833 = field6831;
 		method8620(WorldMap.field6786 + var8, WorldMap.field6808 + var9, WorldMap.field6786 + var10, WorldMap.field6808 + var11, arg1, arg2, arg1 + arg3, arg2 + arg4 + 1);
 		method8523(arg0, !field11655, !field11652, Client.field10948, false);
@@ -399,18 +429,53 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("aq.dx(Ldh;Laat;IIB)V")
 	public static void method928(Renderer arg0, IterableQueue arg1, int arg2, int arg3) {
-		Statics.field11253.method14152();
+		field11253.method14152();
 		if (field11658) {
 			return;
 		}
 		for (WorldMapElement var4 = (WorldMapElement) arg1.method14191(); var4 != null; var4 = (WorldMapElement) arg1.method14161()) {
 			MapElementType var5 = (MapElementType) WorldMap.field6788.list(var4.field11446);
-			if (Statics.method18887(var5)) {
+			if (method18887(var5)) {
 				boolean var6 = method3589(arg0, var4, var5, arg2, arg3);
 				if (var6) {
 					method14999(arg0, var4, var5);
 				}
 			}
+		}
+	}
+
+	@ObfuscatedName("aom.dg(Lhs;B)Z")
+	public static boolean method18887(MapElementType arg0) {
+		if (arg0 == null) {
+			return false;
+		}
+		if (arg0.field2392 != null) {
+			arg0 = arg0.method4024(field6791, field6790);
+			if (arg0 == null) {
+				return false;
+			}
+		}
+		if (!arg0.field2379) {
+			return false;
+		} else if (!arg0.method4030(field6791, field6790)) {
+			return false;
+		} else if (field11667.method14495((long) arg0.field2367) != null) {
+			return false;
+		} else if (field11668.method14495((long) arg0.field2374) == null) {
+			if (arg0.field2370 != null) {
+				if (arg0.field2388 == 0 && field11670) {
+					return false;
+				}
+				if (arg0.field2388 == 1 && field11666) {
+					return false;
+				}
+				if (arg0.field2388 == 2 && field11675) {
+					return false;
+				}
+			}
+			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -501,9 +566,9 @@ public class ClientWorldMap extends WorldMap {
 		int var22 = 0;
 		if (arg2.field2370 != null) {
 			method2678(arg2.field2388);
-			if (Statics.field717 != null) {
-				var22 = Statics.field10471.method14545(arg2.field2370, GameShell.canvasWid, 0, null);
-				var17 = Statics.field10471.method14551(arg2.field2370, GameShell.canvasWid, null);
+			if (field717 != null) {
+				var22 = field10471.method14545(arg2.field2370, GameShell.canvasWid, 0, null);
+				var17 = field10471.method14551(arg2.field2370, GameShell.canvasWid, null);
 				var15 = arg2.field2410 * (WorldMap.field6851 - WorldMap.field6801) / (WorldMap.field6847 - WorldMap.field6845) + (arg1.field11449 - var17 / 2);
 				int var23 = arg1.field11451 - arg2.field2394 * (WorldMap.field6852 - WorldMap.field6837) / (WorldMap.field6846 - WorldMap.field6848);
 				if (var9 == null) {
@@ -625,7 +690,7 @@ public class ClientWorldMap extends WorldMap {
 				var14.method1443(arg1.field11449 - var33, arg1.field11451 - var34, 0, var36, 1);
 			}
 		}
-		if (arg2.field2370 != null && Statics.field717 != null) {
+		if (arg2.field2370 != null && field717 != null) {
 			method4287(arg0, arg1, arg2, var15, var16, var22, var17);
 		}
 		if (arg2.field2400 != -1 || arg2.field2370 != null) {
@@ -638,7 +703,7 @@ public class ClientWorldMap extends WorldMap {
 			var37.field11247 = var19;
 			var37.field11250 = var20;
 			var37.field11245 = var21;
-			Statics.field11253.method14153(var37);
+			field11253.method14153(var37);
 		}
 		return false;
 	}
@@ -659,8 +724,8 @@ public class ClientWorldMap extends WorldMap {
 		int var8 = 0;
 		int var9 = 0;
 		if (arg2.field2370 != null) {
-			var9 = Statics.field10471.method14545(arg2.field2370, GameShell.canvasWid, 0, null);
-			var8 = Statics.field10471.method14551(arg2.field2370, GameShell.canvasWid, null);
+			var9 = field10471.method14545(arg2.field2370, GameShell.canvasWid, 0, null);
+			var8 = field10471.method14551(arg2.field2370, GameShell.canvasWid, null);
 		}
 		int var10 = var4 / 2 + arg1.field11449;
 		int var11 = arg1.field11451;
@@ -695,7 +760,7 @@ public class ClientWorldMap extends WorldMap {
 			if (arg2.field2378 != 0) {
 				arg0.method2173(var13, var11, var15 - var13, var16 - var11, arg2.field2378);
 			}
-			Statics.field717.method2720(arg2.field2370, var10, var11, var8, var9, arg2.field2366 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
+			field717.method2720(arg2.field2370, var10, var11, var8, var9, arg2.field2366 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
 		}
 		if (arg2.field2400 == -1 && arg2.field2370 == null) {
 			return;
@@ -709,7 +774,7 @@ public class ClientWorldMap extends WorldMap {
 		var17.field11247 = var15;
 		var17.field11250 = var14;
 		var17.field11245 = var16;
-		Statics.field11253.method14153(var17);
+		field11253.method14153(var17);
 	}
 
 	@ObfuscatedName("ey.eo(II)V")
@@ -738,8 +803,8 @@ public class ClientWorldMap extends WorldMap {
 		} else {
 			return;
 		}
-		Statics.field717 = field11659[var1][var2];
-		Statics.field10471 = field11660[var1][var2];
+		field717 = field11659[var1][var2];
+		field10471 = field11660[var1][var2];
 	}
 
 	@ObfuscatedName("hj.ey(Ldh;Laks;Lhs;IIIII)V")
@@ -756,7 +821,7 @@ public class ClientWorldMap extends WorldMap {
 		if (arg1.field11450 && arg2.field2372 != -1) {
 			var9 = arg2.field2372;
 		}
-		Statics.field717.method2720(arg2.field2370, arg3, arg4, arg6, arg5, var9 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
+		field717.method2720(arg2.field2370, arg3, arg4, arg6, arg5, var9 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
 	}
 
 	@ObfuscatedName("gc.eu(Ldh;IIIIB)V")
@@ -776,18 +841,18 @@ public class ClientWorldMap extends WorldMap {
 		}
 		int var8 = (arg3 - var6) / 2 + arg1;
 		int var9 = (arg4 - var7) / 2 + arg2;
-		if (Statics.field7241 == null || Statics.field7241.method1459() != var6 || Statics.field7241.method1435() != var7) {
+		if (field7241 == null || field7241.method1459() != var6 || field7241.method1435() != var7) {
 			field6833 = field6832;
 			method8620(field6786, field6810 + field6808, field6812 + field6786, field6808, var8, var9, var6 + var8, var7 + var9);
 			method8523(arg0, false, false, Client.field10948, true);
 			arg0.method2202();
-			Statics.field7241 = arg0.method2314(var8, var9, var6, var7, true);
+			field7241 = arg0.method2314(var8, var9, var6, var7, true);
 		}
-		Statics.field7241.method1439(var8, var9);
-		int var10 = Statics.field3121 * var6 / field6812;
-		int var11 = Statics.field4603 * var7 / field6810;
-		int var12 = Statics.field2606 * var6 / field6812 + var8;
-		int var13 = var7 + var9 - Statics.field8055 * var7 / field6810 - var11;
+		field7241.method1439(var8, var9);
+		int var10 = field3121 * var6 / field6812;
+		int var11 = field4603 * var7 / field6810;
+		int var12 = field2606 * var6 / field6812 + var8;
+		int var13 = var7 + var9 - field8055 * var7 / field6810 - var11;
 		int var14 = -1996554240;
 		if (Client.modegame == ModeGame.STELLARDAWN) {
 			var14 = -1996488705;
@@ -796,7 +861,7 @@ public class ClientWorldMap extends WorldMap {
 		arg0.method2179(var12, var13, var10, var11, var14, 0);
 		for (WorldMapElement var15 = (WorldMapElement) field6806.method14191(); var15 != null; var15 = (WorldMapElement) field6806.method14161()) {
 			MapElementType var16 = (MapElementType) field6788.list(var15.field11446);
-			if (Statics.method18887(var16)) {
+			if (method18887(var16)) {
 				WorldMapFlash var17 = (WorldMapFlash) field11661.get(var15.field11446);
 				if (var17 == null) {
 					var17 = (WorldMapFlash) field11662.get(var16.field2374);
@@ -837,7 +902,7 @@ public class ClientWorldMap extends WorldMap {
 			WorldMap.field6799 = WorldMapTileShapes.method18477(WorldMap.field6840);
 		}
 		if (field11665 != -1 && field11653 != -1) {
-			int var2 = field11665 - Statics.field11443;
+			int var2 = field11665 - field11443;
 			if (var2 != 0) {
 				var2 /= Math.min(field11648, Math.abs(var2));
 			}
@@ -845,7 +910,7 @@ public class ClientWorldMap extends WorldMap {
 			if (var3 != 0) {
 				var3 /= Math.min(field11648, Math.abs(var3));
 			}
-			Statics.field11443 += var2;
+			field11443 += var2;
 			field11654 += var3;
 			if (var2 == 0 && var3 == 0) {
 				field11665 = -1;
@@ -865,8 +930,8 @@ public class ClientWorldMap extends WorldMap {
 								WorldMapFlash var7;
 								do {
 									if (!var6.hasNext()) {
-										if (field11663 && Statics.field11253 != null) {
-											for (MapElementContainer var8 = (MapElementContainer) Statics.field11253.method14191(); var8 != null; var8 = (MapElementContainer) Statics.field11253.method14161()) {
+										if (field11663 && field11253 != null) {
+											for (MapElementContainer var8 = (MapElementContainer) field11253.method14191(); var8 != null; var8 = (MapElementContainer) field11253.method14161()) {
 												MapElementType var9 = (MapElementType) WorldMap.field6788.list(var8.field11252.field11446);
 												if (var8.method17518(arg0, arg1)) {
 													if (var9.field2381 != null) {
@@ -971,10 +1036,10 @@ public class ClientWorldMap extends WorldMap {
 		if (var2 == null) {
 			var2 = method8512(WorldMap.field6792.field7695);
 		}
-		if (Statics.field7280 == var2 && !arg0) {
+		if (field7280 == var2 && !arg0) {
 			return;
 		}
-		Statics.field7280 = var2;
+		field7280 = var2;
 		boolean var3 = method8510(var2);
 		if (var3) {
 			field6842 = true;
@@ -984,7 +1049,7 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("tr.ep(IB)V")
 	public static void method8432(int arg0) {
-		Statics.field11443 = arg0;
+		field11443 = arg0;
 		field11665 = -1;
 		field11653 = -1;
 		method4643();
@@ -1029,7 +1094,7 @@ public class ClientWorldMap extends WorldMap {
 		}
 		int var7 = arg0 - (arg2 - var5) / 2;
 		int var8 = arg1 - (arg3 - var6) / 2;
-		Statics.field11443 = WorldMap.field6812 * var7 / var5;
+		field11443 = WorldMap.field6812 * var7 / var5;
 		field11654 = WorldMap.field6810 - WorldMap.field6810 * var8 / var6;
 		field11665 = -1;
 		field11653 = -1;
@@ -1165,7 +1230,7 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("ys.eb(IIB)V")
 	public static void method10453(int arg0, int arg1) {
-		Statics.field11443 = arg0 - field6786;
+		field11443 = arg0 - field6786;
 		field11654 = arg1 - field6808;
 		field11665 = -1;
 		field11653 = -1;

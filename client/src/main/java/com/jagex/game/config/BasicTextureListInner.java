@@ -4,7 +4,6 @@ import com.jagex.graphics.TextureList;
 import com.jagex.graphics.TextureRelated1;
 import com.jagex.graphics.TextureRelated2;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -173,7 +172,7 @@ public abstract class BasicTextureListInner implements TextureList {
 		if (var3 == null) {
 			return null;
 		}
-		int[] var4 = Statics.method14804(var3);
+		int[] var4 = method14804(var3);
 		if (arg1) {
 			for (int var5 = var3.getHeight() - 1; var5 >= 0; var5--) {
 				int var6 = var5 * var3.getWidth();
@@ -188,6 +187,27 @@ public abstract class BasicTextureListInner implements TextureList {
 			}
 		}
 		return var4;
+	}
+
+	@ObfuscatedName("abu.c(Ljava/awt/image/BufferedImage;I)[I")
+	public static int[] method14804(BufferedImage arg0) {
+		if (arg0.getType() != 10 && arg0.getType() != 0) {
+			return arg0.getRGB(0, 0, arg0.getWidth(), arg0.getHeight(), null, 0, arg0.getWidth());
+		}
+		Object var1 = null;
+		int[] var2 = arg0.getRaster().getPixels(0, 0, arg0.getWidth(), arg0.getHeight(), (int[]) var1);
+		int[] var3 = new int[arg0.getWidth() * arg0.getHeight()];
+		if (arg0.getType() == 10) {
+			for (int var4 = 0; var4 < var3.length; var4++) {
+				var3[var4] = (var2[var4] << 16) + (var2[var4] << 8) + var2[var4] + -16777216;
+			}
+		} else {
+			for (int var5 = 0; var5 < var3.length; var5++) {
+				int var6 = var5 * 2;
+				var3[var5] = (var2[var6 + 1] << 24) + var2[var6] + (var2[var6] << 16) + (var2[var6] << 8);
+			}
+		}
+		return var3;
 	}
 
 	@ObfuscatedName("dk.m(Lvk;IILvc;FIIZI)Z")

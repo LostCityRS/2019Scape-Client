@@ -18,11 +18,11 @@ import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.script.CommunityPartnerType;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.WorldMapRelated;
+import com.jagex.game.world.WorldMapRelated2;
 import com.jagex.game.world.entity.*;
 import com.jagex.math.Trig1;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.logic.friendchat.Friend;
 import rs2.client.scene.ObjStackList;
@@ -73,6 +73,12 @@ public class Minimap {
 	@ObfuscatedName("at.s")
 	public static int field724 = 0;
 
+	@ObfuscatedName("at.y")
+	public static Sprite field734;
+
+	@ObfuscatedName("yp.q")
+	public static boolean[][] field8182;
+
 	public Minimap() throws Throwable {
 		throw new Error();
 	}
@@ -94,7 +100,7 @@ public class Minimap {
 
 	@ObfuscatedName("jg.m(S)V")
 	public static void method5065() {
-		Statics.field734 = null;
+		field734 = null;
 		field722 = -1;
 	}
 
@@ -107,7 +113,7 @@ public class Minimap {
 	public static void method829() {
 		int var0 = Client.world.method7728();
 		int var1 = Client.world.method7758();
-		Statics.field8182 = new boolean[var0 >> 3][var1 >> 3];
+		field8182 = new boolean[var0 >> 3][var1 >> 3];
 	}
 
 	@ObfuscatedName("aih.w(Ldh;B)V")
@@ -135,7 +141,7 @@ public class Minimap {
 		if (Client.field4490 != null) {
 			int var7 = Client.field4490.field10450[0] >> 3;
 			int var8 = Client.field4490.field10448[0] >> 3;
-			if (var7 >= 0 && var7 < Statics.field8182.length && var8 >= 0 && var8 < Statics.field8182[var7].length && Statics.field8182[var7][var8]) {
+			if (var7 >= 0 && var7 < field8182.length && var8 >= 0 && var8 < field8182[var7].length && field8182[var7][var8]) {
 				var6 = 0;
 			}
 		}
@@ -170,9 +176,9 @@ public class Minimap {
 		byte var21 = 0;
 		byte var22 = 0;
 		if (field720) {
-			Statics.field734 = arg0.method2197(var17, var17, false, true);
+			field734 = arg0.method2197(var17, var17, false, true);
 			var20 = arg0.method2145();
-			var20.method15439(0, Statics.field734.method1437());
+			var20.method15439(0, field734.method1437());
 			EffectInterface var23 = arg0.method2121(var17, var17);
 			var20.method15441(var23);
 			arg0.method2142(var20);
@@ -181,7 +187,7 @@ public class Minimap {
 			var22 = 48;
 			arg0.method2475(1, 0);
 		} else {
-			Statics.field734 = arg0.method2199(var18, 0, var17, var17, var17);
+			field734 = arg0.method2199(var18, 0, var17, var17, var17);
 		}
 		Client.world.method7816().method9983();
 		int var24 = ((int) (Math.random() * 20.0D) + 238 - 10 << 16) + ((int) (Math.random() * 20.0D) + 238 - 10 << 8) + ((int) (Math.random() * 20.0D) + 238 - 10) | 0xFF000000;
@@ -248,9 +254,9 @@ public class Minimap {
 				arg0.method2354(var30, var31, var9 * 4, var9 * 4, var26, 2);
 				arg0.method2202();
 				if (!field720) {
-					Statics.field734.method1440((var28 - var10) * 4 + 48, var3 * 4 + 48 - (var29 - var11) * 4 - var9 * 4, var9 * 4, var9 * 4, var30, var31);
+					field734.method1440((var28 - var10) * 4 + 48, var3 * 4 + 48 - (var29 - var11) * 4 - var9 * 4, var9 * 4, var9 * 4, var30, var31);
 					if (field728) {
-						Statics.field734.method1439(256, 0);
+						field734.method1439(256, 0);
 						try {
 							arg0.method2115();
 							PreciseSleep.sleep(2000L);
@@ -263,7 +269,7 @@ public class Minimap {
 		if (field720) {
 			arg0.method2143(var20);
 			if (field728) {
-				Statics.field734.method1439(256, 0);
+				field734.method1439(256, 0);
 				try {
 					arg0.method2115();
 					PreciseSleep.sleep(2000L);
@@ -316,7 +322,7 @@ public class Minimap {
 		if (Client.field4490 != null) {
 			int var7 = Client.field4490.field10450[0] >> 3;
 			int var8 = Client.field4490.field10448[0] >> 3;
-			if (var7 >= 0 && var7 < Statics.field8182.length && var8 >= 0 && var8 < Statics.field8182[var7].length && Statics.field8182[var7][var8]) {
+			if (var7 >= 0 && var7 < field8182.length && var8 >= 0 && var8 < field8182[var7].length && field8182[var7][var8]) {
 				var6 = 0;
 			}
 		}
@@ -437,7 +443,7 @@ public class Minimap {
 					}
 				}
 			} else {
-				Statics.method1900(arg0, var10, var11, arg4, arg5);
+				method1900(arg0, var10, var11, arg4, arg5);
 			}
 		}
 		Location var14 = (Location) var8.method8856(arg1, arg2, arg3, Client.field11001);
@@ -446,7 +452,7 @@ public class Minimap {
 			int var16 = var14.method8204() & 0x3;
 			int var17 = var14.method8220();
 			if (var15.field7486 != -1) {
-				Statics.method1900(arg0, var15, var16, arg4, arg5);
+				method1900(arg0, var15, var16, arg4, arg5);
 			} else if (LocShape.field7547.field7562 == var17) {
 				int var18 = -1118482;
 				if (var15.field7470 > 0) {
@@ -466,7 +472,43 @@ public class Minimap {
 		LocType var20 = (LocType) Client.world.method7750().list(var19.method8223());
 		int var21 = var19.method8204() & 0x3;
 		if (var20.field7486 != -1) {
-			Statics.method1900(arg0, var20, var21, arg4, arg5);
+			method1900(arg0, var20, var21, arg4, arg5);
+		}
+	}
+
+	@ObfuscatedName("dz.r(Ldh;Lvd;IIII)V")
+	public static void method1900(Renderer arg0, LocType arg1, int arg2, int arg3, int arg4) {
+		MSIType var5 = (MSIType) Client.field4241.list(arg1.field7486);
+		if (var5.field9151 == -1) {
+			return;
+		}
+		int var7;
+		if (arg1.field7487) {
+			int var6 = arg1.field7488 + arg2;
+			var7 = var6 & 0x3;
+		} else {
+			var7 = 0;
+		}
+		Sprite var8 = var5.method15057(arg0, var7, arg1.field7504);
+		if (var8 == null) {
+			return;
+		}
+		int var9 = arg1.width;
+		int var10 = arg1.length;
+		if ((var7 & 0x1) == 1) {
+			var9 = arg1.length;
+			var10 = arg1.width;
+		}
+		int var11 = var8.method1434();
+		int var12 = var8.method1436();
+		if (var5.field9152) {
+			var11 = var9 * 4;
+			var12 = var10 * 4;
+		}
+		if (var5.field9154 == 0) {
+			var8.method1474(arg3, arg4 - (var10 - 1) * 4, var11, var12);
+		} else {
+			var8.method1446(arg3, arg4 - (var10 - 1) * 4, var11, var12, 0, var5.field9154 | 0xFF000000, 1);
 		}
 	}
 
@@ -489,7 +531,7 @@ public class Minimap {
 			}
 		}
 		arg0.method2168(arg2, arg3, arg1.field2196 + arg2, arg1.field2197 + arg3);
-		if (field724 == 2 || field724 == 5 || Statics.field734 == null) {
+		if (field724 == 2 || field724 == 5 || field734 == null) {
 			if (var5 == null) {
 				return;
 			}
@@ -522,9 +564,9 @@ public class Minimap {
 		int var12 = var7 / 128 + 48;
 		int var13 = Client.world.method7758() * 4 + 48 - var8 / 128;
 		if (var5 == null) {
-			Statics.field734.method1453((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, 1, -1, 1);
+			field734.method1453((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, 1, -1, 1);
 		} else {
-			Statics.field734.method1456((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, var5, arg2, arg3);
+			field734.method1456((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, var5, arg2, arg3);
 		}
 		WorldMapRelated var14 = Client.world.method7871();
 		for (IntWrapper var15 = (IntWrapper) field727.method14191(); var15 != null; var15 = (IntWrapper) field727.method14161()) {
@@ -533,7 +575,7 @@ public class Minimap {
 			int var18 = (var14.field6776[var16] & 0x3FFF) - var6.field7427;
 			int var19 = var17 * 4 + 2 - var7 / 128;
 			int var20 = var18 * 4 + 2 - var8 / 128;
-			Statics.method15085(arg0, var5, arg1, arg2, arg3, var19, var20, var14.field6775[var16]);
+			method15085(arg0, var5, arg1, arg2, arg3, var19, var20, var14.field6775[var16]);
 		}
 		for (int var21 = 0; var21 < field723; var21++) {
 			int var22 = field725[var21] * 4 + 2 - var7 / 128;
@@ -545,7 +587,7 @@ public class Minimap {
 					continue;
 				}
 			}
-			Statics.method15085(arg0, var5, arg1, arg2, arg3, var22, var23, var24.field7485);
+			method15085(arg0, var5, arg1, arg2, arg3, var22, var23, var24.field7485);
 		}
 		for (ObjStackList var25 = (ObjStackList) Client.field10964.method14500(); var25 != null; var25 = (ObjStackList) Client.field10964.method14502()) {
 			int var26 = (int) (var25.field6760 >> 28 & 0x3L);
@@ -591,7 +633,7 @@ public class Minimap {
 						if (var10.field2763 == -1) {
 							method715(arg3, arg4, arg5, arg6, var12, var13, DefaultSprites.field510[1]);
 						} else {
-							Statics.method15085(arg0, arg4, arg3, arg5, arg6, var12, var13, var10.field2763);
+							method15085(arg0, arg4, arg3, arg5, arg6, var12, var13, var10.field2763);
 						}
 					}
 				}
@@ -662,7 +704,7 @@ public class Minimap {
 						Vector3 var11 = var10.method10536().field4298;
 						int var12 = (int) var11.field4308 / 128 - arg0 / 128;
 						int var13 = (int) var11.field4313 / 128 - arg1 / 128;
-						Statics.method15035(arg2, arg3, arg4, arg5, var12, var13, var8.field751, 360000L);
+						method15035(arg2, arg3, arg4, arg5, var12, var13, var8.field751, 360000L);
 					}
 				}
 				if (var8.field745 == 2) {
@@ -670,7 +712,7 @@ public class Minimap {
 					int var15 = var8.field747 * 512 / 128 - arg1 / 128;
 					long var16 = (long) (var8.field748 << 7);
 					long var18 = var16 * var16;
-					Statics.method15035(arg2, arg3, arg4, arg5, var14, var15, var8.field751, var18);
+					method15035(arg2, arg3, arg4, arg5, var14, var15, var8.field751, var18);
 				}
 				if (var8.field745 == 10 && var8.field744 >= 0 && var8.field744 < Client.field10944.length) {
 					PlayerEntity var20 = Client.field10944[var8.field744];
@@ -678,10 +720,188 @@ public class Minimap {
 						Vector3 var21 = var20.method10536().field4298;
 						int var22 = (int) var21.field4308 / 128 - arg0 / 128;
 						int var23 = (int) var21.field4313 / 128 - arg1 / 128;
-						Statics.method15035(arg2, arg3, arg4, arg5, var22, var23, var8.field751, 360000L);
+						method15035(arg2, arg3, arg4, arg5, var22, var23, var8.field751, 360000L);
 					}
 				}
 			}
+		}
+	}
+
+	@ObfuscatedName("ace.q(Ldh;Lch;Lhf;IIIIIB)V")
+	public static void method15085(Renderer arg0, GraphicsRelated arg1, Component arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+		MapElementType var8 = (MapElementType) Client.field5011.list(arg7);
+		if (var8 != null && var8.field2392 != null && var8.method4030(Client.field7410, Client.field7410)) {
+			var8 = var8.method4024(Client.field7410, Client.field7410);
+		}
+		if (var8 == null || !var8.field2404 || !var8.method4030(Client.field7410, Client.field7410)) {
+			return;
+		}
+		if (var8.field2393 != null) {
+			int[] var9 = new int[var8.field2393.length];
+			for (int var10 = 0; var10 < var9.length / 2; var10++) {
+				int var11;
+				if (Client.field3416 == 3) {
+					var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.field10885 & 0x3FFF;
+				} else if (Client.field3416 == 4) {
+					var11 = (int) Client.field10895 & 0x3FFF;
+				} else {
+					var11 = Client.field10885 + (int) Client.field10895 & 0x3FFF;
+				}
+				int var12 = Trig1.field4270[var11];
+				int var13 = Trig1.field4272[var11];
+				if (Client.field3416 != 4) {
+					var12 = var12 * 256 / (Client.field10887 + 256);
+					var13 = var13 * 256 / (Client.field10887 + 256);
+				}
+				var9[var10 * 2] = ((var8.field2393[var10 * 2] * 4 + arg5) * var13 + (var8.field2393[var10 * 2 + 1] * 4 + arg6) * var12 >> 14) + arg2.field2196 / 2 + arg3;
+				var9[var10 * 2 + 1] = arg2.field2197 / 2 + arg4 - ((var8.field2393[var10 * 2 + 1] * 4 + arg6) * var13 - (var8.field2393[var10 * 2] * 4 + arg5) * var12 >> 14);
+			}
+			Graphic var14 = arg2.method3970(arg0);
+			if (var14 != null) {
+				WorldMapRelated2.method2054(arg0, var9, var8.field2398, var14.field2143, var14.field2145);
+			}
+			if (var8.field2399 > 0) {
+				for (int var15 = 0; var15 < var9.length / 2 - 1; var15++) {
+					int var16 = var9[var15 * 2];
+					int var17 = var9[var15 * 2 + 1];
+					int var18 = var9[(var15 + 1) * 2];
+					int var19 = var9[(var15 + 1) * 2 + 1];
+					if (var18 < var16) {
+						int var20 = var16;
+						int var21 = var17;
+						var16 = var18;
+						var17 = var19;
+						var18 = var20;
+						var19 = var21;
+					} else if (var16 == var18 && var19 < var17) {
+						int var22 = var17;
+						var17 = var19;
+						var19 = var22;
+					}
+					if (arg1 == null) {
+						arg0.method2187(var16, var17, var18, var19, var8.field2406[var8.field2407[var15] & 0xFF], 1, var8.field2399, var8.field2369, var8.field2401);
+					} else {
+						arg0.method2537(var16, var17, var18, var19, var8.field2406[var8.field2407[var15] & 0xFF], 1, arg1, arg3, arg4, var8.field2399, var8.field2369, var8.field2401);
+					}
+				}
+				int var23 = var9[var9.length - 2];
+				int var24 = var9[var9.length - 1];
+				int var25 = var9[0];
+				int var26 = var9[1];
+				if (var25 < var23) {
+					int var27 = var23;
+					int var28 = var24;
+					var23 = var25;
+					var24 = var26;
+					var25 = var27;
+					var26 = var28;
+				} else if (var23 == var25 && var26 < var24) {
+					int var29 = var24;
+					var24 = var26;
+					var26 = var29;
+				}
+				if (arg1 == null) {
+					arg0.method2187(var23, var24, var25, var26, var8.field2406[var8.field2407[var8.field2407.length - 1] & 0xFF], 1, var8.field2399, var8.field2369, var8.field2401);
+				} else {
+					arg0.method2537(var23, var24, var25, var26, var8.field2406[var8.field2407[var8.field2407.length - 1] & 0xFF], 1, arg1, arg3, arg4, var8.field2399, var8.field2369, var8.field2401);
+				}
+			} else if (arg1 == null) {
+				for (int var31 = 0; var31 < var9.length / 2 - 1; var31++) {
+					arg0.method2185(var9[var31 * 2], var9[var31 * 2 + 1], var9[(var31 + 1) * 2], var9[(var31 + 1) * 2 + 1], var8.field2406[var8.field2407[var31] & 0xFF], 1);
+				}
+				arg0.method2185(var9[var9.length - 2], var9[var9.length - 1], var9[0], var9[1], var8.field2406[var8.field2407[var8.field2407.length - 1] & 0xFF], 1);
+			} else {
+				for (int var30 = 0; var30 < var9.length / 2 - 1; var30++) {
+					arg0.method2183(var9[var30 * 2], var9[var30 * 2 + 1], var9[(var30 + 1) * 2], var9[(var30 + 1) * 2 + 1], var8.field2406[var8.field2407[var30] & 0xFF], 1, arg1, arg3, arg4);
+				}
+				arg0.method2183(var9[var9.length - 2], var9[var9.length - 1], var9[0], var9[1], var8.field2406[var8.field2407[var8.field2407.length - 1] & 0xFF], 1, arg1, arg3, arg4);
+			}
+		}
+		Sprite var32 = null;
+		if (var8.field2400 != -1) {
+			var32 = var8.method4025(arg0, false);
+			if (var32 != null) {
+				int var33 = var8.field2408 > 0 ? var8.field2408 : Client.field11389.field7730;
+				method4142(arg2, arg1, arg3, arg4, arg5, arg6, var32, (double) var33, var8.field2365, var8.field2405);
+			}
+		}
+		if (var8.field2370 == null) {
+			return;
+		}
+		int var34 = 0;
+		if (var32 != null) {
+			var34 = var32.method1435();
+		}
+		Font var35 = DefaultSprites.field8321;
+		FontMetrics var36 = DefaultSprites.field6778;
+		if (var8.field2388 == 1) {
+			var35 = DefaultSprites.field9184;
+			var36 = DefaultSprites.field2657;
+		}
+		if (var8.field2388 == 2) {
+			var35 = DefaultSprites.field10355;
+			var36 = DefaultSprites.field10268;
+		}
+		method3654(arg2, arg1, arg3, arg4, arg5, arg6, var34, var8.field2370, var35, var36, var8.field2366);
+	}
+
+	@ObfuscatedName("acp.x(Lhf;Lhx;IIIIIJ)V")
+	public static void method15035(Component arg0, Graphic arg1, int arg2, int arg3, int arg4, int arg5, int arg6, long arg7) {
+		int var9 = arg4 * arg4 + arg5 * arg5;
+		if ((long) var9 > arg7) {
+			return;
+		}
+		int var10;
+		if (Client.field3416 == 3) {
+			var10 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.field10885 & 0x3FFF;
+		} else if (Client.field3416 == 4) {
+			var10 = (int) Client.field10895 & 0x3FFF;
+		} else {
+			var10 = Client.field10885 + (int) Client.field10895 & 0x3FFF;
+		}
+		int var11 = Trig1.field4270[var10];
+		int var12 = Trig1.field4272[var10];
+		if (Client.field3416 != 4) {
+			var11 = var11 * 256 / (Client.field10887 + 256);
+			var12 = var12 * 256 / (Client.field10887 + 256);
+		}
+		int var13 = arg4 * var12 + arg5 * var11 >> 14;
+		int var14 = arg5 * var12 - arg4 * var11 >> 14;
+		Sprite var15 = DefaultSprites.field513[arg6];
+		int var16 = var15.method1459();
+		int var17 = var15.method1435();
+		int var18 = arg0.field2196 / 2 + var13 - var16 / 2;
+		int var19 = var16 + var18;
+		int var20 = arg0.field2197 / 2 + -var14 - var17;
+		int var21 = var17 + var20;
+		boolean var22;
+		if (arg1 == null) {
+			int var24 = var16 / 2;
+			var22 = var20 <= -var17 || var21 >= arg0.field2197 || var18 <= -var24 || var19 >= arg0.field2196 + var24;
+		} else {
+			var22 = !arg1.method3914(var18, var20) || !arg1.method3914(var19, var20) || !arg1.method3914(var18, var21) || !arg1.method3914(var19, var21);
+		}
+		if (var22) {
+			double var25 = Math.atan2((double) var13, (double) var14);
+			double var27 = Math.atan2((double) Math.abs(var13), (double) Math.abs(var14));
+			double var29 = Math.atan2((double) (arg0.field2196 / 2), (double) (arg0.field2197 / 2));
+			boolean var31 = false;
+			double var32 = 0.0D;
+			double var34;
+			int var36;
+			if (var27 < var29) {
+				var34 = 1.5707963267948966D - var25;
+				var36 = arg0.field2197 / 2;
+			} else {
+				var34 = var25;
+				var36 = arg0.field2196 / 2;
+			}
+			int var37 = Math.abs((int) -((double) var36 * Math.sin(1.5707963267948966D) / Math.sin(var34)));
+			DefaultSprites.field6719[arg6].method1450((float) arg0.field2196 / 2.0F + (float) arg2 + 0.0F, (float) arg0.field2197 / 2.0F + (float) arg3 - 0.0F, (float) DefaultSprites.field6719[arg6].method1434() / 2.0F, (float) var37, 4096, (int) (-var25 / 6.283185307179586D * 65535.0D));
+		} else if (arg1 == null) {
+			var15.method1439(arg2 + var18, arg3 + var20);
+		} else {
+			var15.method1444(arg2 + var18, arg3 + var20, arg1.field2147, arg2, arg3);
 		}
 	}
 
@@ -782,6 +1002,6 @@ public class Minimap {
 
 	@ObfuscatedName("abb.g(IIZB)V")
 	public static void method14707(int arg0, int arg1, boolean arg2) {
-		Statics.field8182[arg0][arg1] = arg2;
+		field8182[arg0][arg1] = arg2;
 	}
 }

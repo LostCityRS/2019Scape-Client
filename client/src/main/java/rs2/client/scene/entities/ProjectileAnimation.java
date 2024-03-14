@@ -2,6 +2,7 @@ package rs2.client.scene.entities;
 
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.effectanimtype.EffectAnimType;
+import com.jagex.game.cutscene.CutsceneManager;
 import com.jagex.game.world.entity.*;
 import com.jagex.graphics.*;
 import com.jagex.graphics.particles.ParticleList;
@@ -10,7 +11,6 @@ import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.math.*;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("aue")
@@ -166,7 +166,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		}
 		PathingEntity var1 = null;
 		if (Client.field10863 == 0) {
-			var1 = Statics.field1721[this.field12605 - 1].method2870();
+			var1 = CutsceneManager.field1721[this.field12605 - 1].method2870();
 		} else if (this.field12605 < 0) {
 			int var2 = -this.field12605 - 1;
 			if (Client.field10945 == var2) {

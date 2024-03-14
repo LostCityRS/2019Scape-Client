@@ -72,11 +72,11 @@ import com.jagex.graphics.camera.CameraException;
 import com.jagex.graphics.camera.CameraHelpers;
 import com.jagex.graphics.camera.CameraLinearMovementMode;
 import com.jagex.graphics.camera.ShakeMode;
+import com.jagex.graphics.particles.ParticleSystemRenderer;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.*;
 import com.jagex.twitchtv.TwitchEvent;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.clientscript.emoji.EmojiList;
 import rs2.client.logic.DelayedStateChange;
@@ -5746,7 +5746,7 @@ public final class ScriptRunner {
 		arg0.field2294 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 		if (arg0.field2183 == -1 && !arg1.field2150) {
-			Statics.method19198(arg0.field2158);
+			DelayedStateChange.method19198(arg0.field2158);
 		}
 	}
 
@@ -6508,7 +6508,7 @@ public final class ScriptRunner {
 		arg0.field2363 = null;
 		arg0.field2294 = arg2.field8216[--arg2.field8226];
 		if (arg0.field2183 == -1 && !arg1.field2150) {
-			Statics.method19198(arg0.field2158);
+			DelayedStateChange.method19198(arg0.field2158);
 		}
 	}
 
@@ -6534,7 +6534,7 @@ public final class ScriptRunner {
 		arg0.field2294 = Client.field10945;
 		arg0.field2298 = 0;
 		if (arg0.field2183 == -1 && !arg1.field2150) {
-			Statics.method19198(arg0.field2158);
+			DelayedStateChange.method19198(arg0.field2158);
 		}
 	}
 
@@ -6690,7 +6690,7 @@ public final class ScriptRunner {
 		arg0.field2363 = null;
 		arg0.field2294 = arg2.field8216[--arg2.field8226];
 		if (arg0.field2183 == -1 && !arg1.field2150) {
-			Statics.method19198(arg0.field2158);
+			DelayedStateChange.method19198(arg0.field2158);
 		}
 	}
 
@@ -6715,7 +6715,7 @@ public final class ScriptRunner {
 		arg0.field2224 = 5;
 		arg0.field2294 = arg2.field8216[--arg2.field8226];
 		if (arg0.field2183 == -1 && !arg1.field2150) {
-			Statics.method19198(arg0.field2158);
+			DelayedStateChange.method19198(arg0.field2158);
 		}
 	}
 
@@ -6861,7 +6861,7 @@ public final class ScriptRunner {
 		arg0.field2294 = Client.field10945;
 		arg0.field2298 = 0;
 		if (arg0.field2183 == -1 && !arg1.field2150) {
-			Statics.method19198(arg0.field2158);
+			DelayedStateChange.method19198(arg0.field2158);
 		}
 	}
 
@@ -11668,7 +11668,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("kz.afq(Lyf;I)V")
 	public static final void method5128(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field8149[var1 & 0xFFFF];
+		arg0.field8216[++arg0.field8226 - 1] = ColourUtils.field8149[var1 & 0xFFFF];
 	}
 
 	@ObfuscatedName("qi.afy(Lyf;I)V")
@@ -11702,7 +11702,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("tl.afz(Lyf;B)V")
 	public static final void method8893(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8218[++arg0.field8211 - 1] = Statics.method596(var1);
+		arg0.field8218[++arg0.field8211 - 1] = TextUtil.method596(var1);
 	}
 
 	@ObfuscatedName("jx.afe(Lyf;I)V")
@@ -12910,13 +12910,13 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("tw.ajr(Lyf;I)V")
 	public static final void method8497(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field3121;
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field4603;
+		arg0.field8216[++arg0.field8226 - 1] = ClientWorldMap.field3121;
+		arg0.field8216[++arg0.field8226 - 1] = ClientWorldMap.field4603;
 	}
 
 	@ObfuscatedName("vz.akn(Lyf;B)V")
 	public static final void method9552(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field11443 + WorldMap.field6786;
+		arg0.field8216[++arg0.field8226 - 1] = ClientWorldMap.field11443 + WorldMap.field6786;
 		arg0.field8216[++arg0.field8226 - 1] = ClientWorldMap.field11654 + WorldMap.field6808;
 	}
 
@@ -13067,7 +13067,7 @@ public final class ScriptRunner {
 			arg0.field8216[++arg0.field8226 - 1] = -1;
 			return;
 		}
-		boolean var2 = var1.method19482(Statics.field11443 + WorldMap.field6786, ClientWorldMap.field11654 + WorldMap.field6808, field8203);
+		boolean var2 = var1.method19482(ClientWorldMap.field11443 + WorldMap.field6786, ClientWorldMap.field11654 + WorldMap.field6808, field8203);
 		if (var2) {
 			arg0.field8216[++arg0.field8226 - 1] = field8203[1];
 			arg0.field8216[++arg0.field8226 - 1] = field8203[2];
@@ -13328,8 +13328,8 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("kb.alb(Lyf;I)V")
 	public static final void method5248(ClientScriptState arg0) {
-		int var1 = Statics.lastFullscreenWidth;
-		int var2 = Statics.lastFullscreenHeight;
+		int var1 = GameShell.lastFullscreenWidth;
+		int var2 = GameShell.lastFullscreenHeight;
 		int var3 = -1;
 		if (Fullscreen.allowed) {
 			FullscreenMode[] var4 = Client.method16741();
@@ -13469,33 +13469,33 @@ public final class ScriptRunner {
 		arg0.field8226 -= 12;
 		MiniMenu.method6031();
 		MiniMenu.method7617();
-		Statics.field7676 = arg0.field8216[arg0.field8226];
-		Statics.field4488 = arg0.field8216[arg0.field8226 + 1];
-		Statics.field6708 = arg0.field8216[arg0.field8226 + 2];
-		Statics.field11830 = arg0.field8216[arg0.field8226 + 3];
-		Statics.field12340 = arg0.field8216[arg0.field8226 + 4];
-		Statics.field740 = arg0.field8216[arg0.field8226 + 5];
-		Statics.field11642 = arg0.field8216[arg0.field8226 + 6];
-		Statics.field1748 = arg0.field8216[arg0.field8226 + 7];
-		Statics.field1847 = arg0.field8216[arg0.field8226 + 8];
-		Statics.field1266 = arg0.field8216[arg0.field8226 + 9];
-		Statics.field2901 = arg0.field8216[arg0.field8226 + 10];
-		Statics.field8463 = arg0.field8216[arg0.field8226 + 11];
-		Client.field10317.method6889(Statics.field12340);
-		Client.field10317.method6889(Statics.field740);
-		Client.field10317.method6889(Statics.field11642);
-		Client.field10317.method6889(Statics.field1748);
-		Client.field10317.method6889(Statics.field1847);
-		Client.field10317.method6889(Statics.field8463);
-		Client.field7672.method6889(Statics.field8463);
-		Statics.field1224 = null;
-		Statics.field11831 = null;
-		Statics.field11699 = null;
-		Statics.field3568 = null;
-		Statics.field8480 = null;
-		Statics.field9253 = null;
-		Statics.field566 = null;
-		Statics.field10568 = null;
+		MiniMenu.field7676 = arg0.field8216[arg0.field8226];
+		MiniMenu.field4488 = arg0.field8216[arg0.field8226 + 1];
+		MiniMenu.field6708 = arg0.field8216[arg0.field8226 + 2];
+		MiniMenu.field11830 = arg0.field8216[arg0.field8226 + 3];
+		MiniMenu.field12340 = arg0.field8216[arg0.field8226 + 4];
+		MiniMenu.field740 = arg0.field8216[arg0.field8226 + 5];
+		MiniMenu.field11642 = arg0.field8216[arg0.field8226 + 6];
+		MiniMenu.field1748 = arg0.field8216[arg0.field8226 + 7];
+		MiniMenu.field1847 = arg0.field8216[arg0.field8226 + 8];
+		MiniMenu.field1266 = arg0.field8216[arg0.field8226 + 9];
+		MiniMenu.field2901 = arg0.field8216[arg0.field8226 + 10];
+		MiniMenu.field8463 = arg0.field8216[arg0.field8226 + 11];
+		Client.field10317.method6889(MiniMenu.field12340);
+		Client.field10317.method6889(MiniMenu.field740);
+		Client.field10317.method6889(MiniMenu.field11642);
+		Client.field10317.method6889(MiniMenu.field1748);
+		Client.field10317.method6889(MiniMenu.field1847);
+		Client.field10317.method6889(MiniMenu.field8463);
+		Client.field7672.method6889(MiniMenu.field8463);
+		MiniMenu.field1224 = null;
+		MiniMenu.field11831 = null;
+		MiniMenu.field11699 = null;
+		MiniMenu.field3568 = null;
+		MiniMenu.field8480 = null;
+		MiniMenu.field9253 = null;
+		MiniMenu.field566 = null;
+		MiniMenu.field10568 = null;
 		MiniMenu.field564 = true;
 	}
 
@@ -14359,7 +14359,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("eu.apr(Lyf;I)V")
 	public static final void method2735(ClientScriptState arg0) {
-		Statics.method9584();
+		LoginManager.method9584();
 	}
 
 	@ObfuscatedName("ek.apo(Lyf;I)V")
@@ -15146,7 +15146,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("jg.aur(Lyf;B)V")
 	public static final void method5064(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Statics.method8461();
+		arg0.field8216[++arg0.field8226 - 1] = ParticleSystemRenderer.method8461();
 	}
 
 	@ObfuscatedName("wn.auu(Lyf;I)V")
@@ -15433,7 +15433,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		long var4 = TimeFormatter.method8691(0, 0, 12, var1, var2, var3);
-		int var6 = Statics.method13899(var4);
+		int var6 = TimeFormatter.method13899(var4);
 		if (var3 < 1970) {
 			var6--;
 		}
@@ -15485,7 +15485,7 @@ public final class ScriptRunner {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else if (WorldSwitcher.field8754) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
-		} else if (Statics.field2826 > MonotonicTime.method3655() - 1000L) {
+		} else if (WorldSwitcher.field2826 > MonotonicTime.method3655() - 1000L) {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
 			WorldSwitcher.field8754 = true;
@@ -15980,7 +15980,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("adv.ayo(Lyf;I)V")
 	public static final void method15250(ClientScriptState arg0) {
 		int var1 = Preferences.method4288();
-		arg0.field8216[++arg0.field8226 - 1] = Statics.field11775 = Client.field688.displayMode2.method18545();
+		arg0.field8216[++arg0.field8226 - 1] = Preferences.field11775 = Client.field688.displayMode2.method18545();
 		arg0.field8216[++arg0.field8226 - 1] = var1;
 		SpotShadowFactory.method3076();
 		Client.world.method7753();
@@ -16047,9 +16047,9 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("qo.ayy(Lyf;I)V")
 	public static final void method7311(ClientScriptState arg0) {
-		if (Statics.field11775 == 1) {
+		if (Preferences.field11775 == 1) {
 			Preferences.field786 = true;
-		} else if (Statics.field11775 == 3) {
+		} else if (Preferences.field11775 == 3) {
 			Preferences.field788 = true;
 		}
 	}

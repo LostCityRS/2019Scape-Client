@@ -176,6 +176,16 @@ public final class ChangeLocationRequest extends Node {
 		}
 	}
 
+	@ObfuscatedName("gp.f(B)V")
+	public static final void method3486() {
+		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.method14191(); var0 != null; var0 = (ChangeLocationRequest) field11237.method14161()) {
+			method2834(var0, false);
+		}
+		for (ChangeLocationRequest var1 = (ChangeLocationRequest) field11242.method14191(); var1 != null; var1 = (ChangeLocationRequest) field11242.method14161()) {
+			method2834(var1, true);
+		}
+	}
+
 	@ObfuscatedName("eq.w(Lajt;ZI)V")
 	public static final void method2834(ChangeLocationRequest arg0, boolean arg1) {
 		if (arg0.field11240) {

@@ -28,7 +28,6 @@ import com.jagex.graphics.particles.ParticleSystem;
 import com.jagex.js5.Js5;
 import com.jagex.math.Matrix4x3;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("hf")
 public class Component {
@@ -90,6 +89,18 @@ public class Component {
 	@ObfuscatedName("ama.h")
 	public static Interface[] field11725;
 
+	@ObfuscatedName("aag.a")
+	public static boolean[] field8424;
+
+	@ObfuscatedName("ua.g")
+	public static Js5 field7085;
+
+	@ObfuscatedName("ec.i")
+	public static Js5 field1707;
+
+	@ObfuscatedName("zl.j")
+	public static Js5 field8370;
+
 	@ObfuscatedName("hf.t")
 	public static WeightedCache field2175 = new WeightedCache(6000000, 200);
 
@@ -101,6 +112,9 @@ public class Component {
 
 	@ObfuscatedName("hf.ah")
 	public static WeightedCache field2297 = new WeightedCache(50);
+
+	@ObfuscatedName("anq.al")
+	public static int field11802;
 
 	@ObfuscatedName("hf.ac")
 	public static boolean field2338 = false;
@@ -647,11 +661,11 @@ public class Component {
 
 	@ObfuscatedName("gb.e(Lpy;Lpy;Lpy;Lpy;I)V")
 	public static void method3669(Js5 arg0, Js5 arg1, Js5 arg2, Js5 arg3) {
-		Statics.field7085 = arg0;
-		Statics.field1707 = arg1;
-		Statics.field8370 = arg2;
-		field11725 = new Interface[Statics.field7085.method6898()];
-		Statics.field8424 = new boolean[Statics.field7085.method6898()];
+		field7085 = arg0;
+		field1707 = arg1;
+		field8370 = arg2;
+		field11725 = new Interface[field7085.method6898()];
+		field8424 = new boolean[field7085.method6898()];
 	}
 
 	@ObfuscatedName("xh.n(II)Lhf;")
@@ -664,6 +678,11 @@ public class Component {
 			}
 		}
 		return field11725[var1].method3924(arg0);
+	}
+
+	@ObfuscatedName("kp.m(II)Lhq;")
+	public static Interface method5367(int arg0) {
+		return field11725[arg0 >> 16];
 	}
 
 	@ObfuscatedName("ahh.k(IIB)Lhf;")
@@ -680,24 +699,24 @@ public class Component {
 
 	@ObfuscatedName("kn.f(I[II)Z")
 	public static boolean method5364(int arg0, int[] arg1) {
-		if (Statics.field8424[arg0]) {
+		if (field8424[arg0]) {
 			return true;
 		}
 		field11725[arg0] = method5405(arg0, arg1, field11725[arg0], false);
 		if (field11725[arg0] == null) {
 			return false;
 		} else {
-			Statics.field8424[arg0] = true;
+			field8424[arg0] = true;
 			return true;
 		}
 	}
 
 	@ObfuscatedName("la.w(I[ILhq;ZI)Lhq;")
 	public static Interface method5405(int arg0, int[] arg1, Interface arg2, boolean arg3) {
-		if (!Statics.field7085.method6927(arg0)) {
+		if (!field7085.method6927(arg0)) {
 			return null;
 		}
-		int var4 = Statics.field7085.method6897(arg0);
+		int var4 = field7085.method6897(arg0);
 		Component[] var5;
 		if (var4 == 0) {
 			var5 = new Component[0];
@@ -714,7 +733,7 @@ public class Component {
 		}
 		for (int var6 = 0; var6 < var4; var6++) {
 			if (arg2.field2151[var6] == null) {
-				byte[] var7 = Statics.field7085.method6914(arg0, var6, arg1);
+				byte[] var7 = field7085.method6914(arg0, var6, arg1);
 				if (var7 != null) {
 					Component var8 = arg2.field2151[var6] = new Component();
 					var8.field2158 = (arg0 << 16) + var6;
@@ -727,15 +746,15 @@ public class Component {
 
 	@ObfuscatedName("ahr.l(II)V")
 	public static void method16640(int arg0) {
-		if (arg0 != -1 && !Statics.field8424[arg0]) {
-			Statics.field7085.method6899(arg0);
+		if (arg0 != -1 && !field8424[arg0]) {
+			field7085.method6899(arg0);
 			field11725[arg0] = null;
 		}
 	}
 
 	@ObfuscatedName("rq.u(II)V")
 	public static void method7602(int arg0) {
-		Statics.field8424[arg0] = false;
+		field8424[arg0] = false;
 		method16640(arg0);
 	}
 
@@ -1016,7 +1035,7 @@ public class Component {
 		if (var4 != null) {
 			return var4;
 		}
-		SpriteData var5 = SpriteDataProvider.method1609(Statics.field8370, this.field2215, 0);
+		SpriteData var5 = SpriteDataProvider.method1609(field8370, this.field2215, 0);
 		if (var5 == null) {
 			field2338 = true;
 			return null;
@@ -1098,7 +1117,7 @@ public class Component {
 				if (var32 != null) {
 					arg1 = arg0.method2213(arg1, var32.method1691());
 				}
-				ModelUnlit var33 = ModelUnlit.method1931(Statics.field1707, this.field2294, 0);
+				ModelUnlit var33 = ModelUnlit.method1931(field1707, this.field2294, 0);
 				if (var33 == null) {
 					field2338 = true;
 					return null;
@@ -1106,7 +1125,7 @@ public class Component {
 				if (var33.field1372 < 13) {
 					var33.method1947(2);
 				}
-				var32 = arg0.method2211(var33, arg1, Statics.field11802, 64, 768);
+				var32 = arg0.method2211(var33, arg1, field11802, 64, 768);
 				if (this.field2242 != null) {
 					for (int var34 = 0; var34 < this.field2242.length; var34++) {
 						var32.method1859(this.field2242[var34], this.field2243[var34]);
@@ -1208,7 +1227,7 @@ public class Component {
 
 	@ObfuscatedName("ack.q(IB)V")
 	public static void method14950(int arg0) {
-		Statics.field11802 = arg0;
+		field11802 = arg0;
 		field2297.method2924();
 	}
 
@@ -1238,8 +1257,8 @@ public class Component {
 
 	@ObfuscatedName("jh.a(B)V")
 	public static void method5075() {
-		field11725 = new Interface[Statics.field7085.method6898()];
-		Statics.field8424 = new boolean[Statics.field7085.method6898()];
+		field11725 = new Interface[field7085.method6898()];
+		field8424 = new boolean[field7085.method6898()];
 	}
 
 	@ObfuscatedName("hf.g(I)V")
@@ -1340,7 +1359,7 @@ public class Component {
 				return var4;
 			}
 		}
-		SpriteData var5 = SpriteDataProvider.method1609(Statics.field8370, this.field2215, 0);
+		SpriteData var5 = SpriteDataProvider.method1609(field8370, this.field2215, 0);
 		if (var5 == null) {
 			return null;
 		}

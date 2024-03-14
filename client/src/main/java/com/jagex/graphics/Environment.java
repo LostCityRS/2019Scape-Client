@@ -5,7 +5,6 @@ import com.jagex.core.utils.Algorithms;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("xv")
@@ -85,11 +84,11 @@ public class Environment {
 		this.field7864 = 1.2F;
 		this.field7866 = 13156520;
 		this.field7867 = 0;
-		this.field7868 = Statics.field7832;
+		this.field7868 = EnvironmentManager.field7832;
 		this.field7862 = 1.0F;
 		this.field7870 = 0.25F;
 		this.field7874 = 1.0F;
-		this.field7863 = Statics.field7846;
+		this.field7863 = EnvironmentManager.field7846;
 		this.field7873 = 1.0F;
 		this.field7869 = 0.0F;
 		this.field7875 = 1.0F;
@@ -305,7 +304,7 @@ public class Environment {
 			this.field7867 = arg0.g2();
 		}
 		if ((var3 & EnvironmentProperty.field8136.field8144) == 0) {
-			this.field7868 = Statics.field7832;
+			this.field7868 = EnvironmentManager.field7832;
 		} else {
 			int var4 = arg0.g2();
 			this.field7868 = arg1.method9985(var4);

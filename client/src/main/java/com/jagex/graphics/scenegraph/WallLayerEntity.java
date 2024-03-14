@@ -11,6 +11,9 @@ import deob.ObfuscatedName;
 @ObfuscatedName("asw")
 public abstract class WallLayerEntity extends GraphEntity {
 
+	@ObfuscatedName("asw.j")
+	public static final int field12460 = 64;
+
 	@ObfuscatedName("asw.ae")
 	public static final int[] field12454 = new int[] { 19, 55, 38, 155, 255, 110, 137, 205, 76 };
 

@@ -2,11 +2,11 @@ package com.jagex.game.config.enumtype;
 
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
+import com.jagex.core.utils.Cp1252;
 import com.jagex.game.client.ConfigRelated;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -52,10 +52,10 @@ public class EnumType implements ConfigType, ConfigRelated {
 	@ObfuscatedName("abm.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			char var3 = Statics.byteToCp1252Char(buf.g1b());
+			char var3 = Cp1252.byteToCp1252Char(buf.g1b());
 			this.inputtype = ScriptVarType.getDefault(var3);
 		} else if (code == 2) {
-			char var4 = Statics.byteToCp1252Char(buf.g1b());
+			char var4 = Cp1252.byteToCp1252Char(buf.g1b());
 			this.outputtype = ScriptVarType.getDefault(var4);
 		} else if (code == 3) {
 			this.defaultString = buf.gjstr();

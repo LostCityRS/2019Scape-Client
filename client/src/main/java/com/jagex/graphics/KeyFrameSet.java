@@ -5,10 +5,15 @@ import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import com.jagex.math.Curve;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ard")
 public class KeyFrameSet extends SecondaryNode {
+
+	@ObfuscatedName("vi.l")
+	public static Js5 field7411;
+
+	@ObfuscatedName("zy.u")
+	public static Js5 field8302;
 
 	@ObfuscatedName("ard.z")
 	public int field12315;
@@ -42,8 +47,8 @@ public class KeyFrameSet extends SecondaryNode {
 
 	@ObfuscatedName("vz.e(Lpy;Lpy;B)V")
 	public static void method9558(Js5 arg0, Js5 arg1) {
-		Statics.field7411 = arg0;
-		Statics.field8302 = arg1;
+		field7411 = arg0;
+		field8302 = arg1;
 	}
 
 	public KeyFrameSet(int arg0) {
@@ -56,9 +61,9 @@ public class KeyFrameSet extends SecondaryNode {
 			return true;
 		}
 		if (this.field12314 == null) {
-			Js5 var1 = Statics.field7411;
-			synchronized (Statics.field7411) {
-				this.field12314 = Statics.field7411.method6894(this.field12315);
+			Js5 var1 = field7411;
+			synchronized (field7411) {
+				this.field12314 = field7411.method6894(this.field12315);
 				if (this.field12314 == null) {
 					return false;
 				}
@@ -68,17 +73,17 @@ public class KeyFrameSet extends SecondaryNode {
 		Packet var4 = new Packet(this.field12314);
 		int var5 = var4.g1();
 		int var6 = var4.g2();
-		Js5 var7 = Statics.field8302;
+		Js5 var7 = field8302;
 		boolean var8;
-		synchronized (Statics.field8302) {
-			var8 = var3 & Statics.field8302.method6889(var6);
+		synchronized (field8302) {
+			var8 = var3 & field8302.method6889(var6);
 		}
 		if (!var8) {
 			return false;
 		}
-		Js5 var10 = Statics.field7411;
-		synchronized (Statics.field7411) {
-			this.field12317 = new AnimBase(var6, Statics.field8302.method6894(var6));
+		Js5 var10 = field7411;
+		synchronized (field7411) {
+			this.field12317 = new AnimBase(var6, field8302.method6894(var6));
 			this.method19379(var4, var5);
 			this.field12314 = null;
 			return true;

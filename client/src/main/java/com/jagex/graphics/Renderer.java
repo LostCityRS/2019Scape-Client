@@ -6,15 +6,19 @@ import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
+import com.jagex.graphics.dx.Direct3DRendererFactory;
+import com.jagex.graphics.gl.OpenGLRendererFactory;
+import com.jagex.graphics.legacygl.LegacyOpenGLRendererFactory;
 import com.jagex.graphics.particles.ParticleList;
+import com.jagex.graphics.safe.PureJavaRendererFactory;
 import com.jagex.js5.Js5;
 import com.jagex.math.Cuboid;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.awt.*;
+import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
@@ -84,7 +88,22 @@ public abstract class Renderer {
 			var9 = var11.width;
 			var10 = var11.height;
 		}
-		return Statics.method2180(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, var9, var10);
+		return method2180(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, var9, var10);
+	}
+
+	@ObfuscatedName("dh.n(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;IIII)Ldh;")
+	public static synchronized Renderer method2180(int arg0, Canvas arg1, MaterialList arg2, TextureList arg3, BillboardTypeList arg4, ParticleEmitterTypeList arg5, ParticleEffectorTypeList arg6, Js5 arg7, int arg8, int arg9, int arg10) {
+		if (arg0 == 0) {
+			return PureJavaRendererFactory.method3367(arg1, arg2, arg3, arg4, arg5, arg6, arg9, arg10);
+		} else if (arg0 == 1) {
+			return LegacyOpenGLRendererFactory.method1417(arg1, arg2, arg3, arg4, arg5, arg6, arg8);
+		} else if (arg0 == 5) {
+			return OpenGLRendererFactory.method7664(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+		} else if (arg0 == 3) {
+			return Direct3DRendererFactory.method6218(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+		} else {
+			throw new IllegalArgumentException("");
+		}
 	}
 
 	@ObfuscatedName("ai.m(II)Z")
@@ -137,6 +156,16 @@ public abstract class Renderer {
 		this.method2578();
 	}
 
+	@ObfuscatedName("nw.j(Ljava/awt/Canvas;I)V")
+	public static void method6020(Canvas arg0) {
+		try {
+			Class var1 = Class.forName("java.awt.Canvas");
+			Method var2 = var1.getMethod("setIgnoreRepaint", Boolean.TYPE);
+			var2.invoke(arg0, Boolean.TRUE);
+		} catch (Exception var4) {
+		}
+	}
+
 	@ObfuscatedName("dh.t([I)V")
 	public void method2134(int[] arg0) {
 		if (this.field1612 == null) {
@@ -161,7 +190,7 @@ public abstract class Renderer {
 	@ObfuscatedName("dh.ah(Ljava/awt/Canvas;III)V")
 	public final void method2178(Canvas arg0, int arg1, int arg2) {
 		if (!this.field1613.containsKey(arg0)) {
-			Statics.method6020(arg0);
+			method6020(arg0);
 			this.method2138(arg0, this.method2144(arg0, arg1, arg2));
 		}
 	}

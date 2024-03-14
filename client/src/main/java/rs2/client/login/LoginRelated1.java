@@ -1,13 +1,13 @@
 package rs2.client.login;
 
 import com.jagex.core.utils.MonotonicTime;
+import com.jagex.game.load.Loading;
 import com.jagex.game.load.LoadingScreenElement;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
 import com.jagex.graphics.SpriteDataProvider;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("kg")
@@ -44,24 +44,24 @@ public class LoginRelated1 implements LoadingScreenElement {
 		String var4;
 		switch(this.field3039.field3168) {
 			case 0:
-				var4 = Statics.field593.method4853();
+				var4 = Loading.field593.method4853();
 				break;
 			case 1:
-				var4 = "" + Statics.field593.method4851() + "%";
+				var4 = "" + Loading.field593.method4851() + "%";
 				break;
 			case 2:
-				var4 = Statics.field593.method4852();
+				var4 = Loading.field593.method4852();
 				break;
 			default:
 				var4 = "";
 		}
-		int var5 = Statics.field593.method4851();
+		int var5 = Loading.field593.method4851();
 		if (this.field3040 < 0L || var5 == 0 || this.field3038 != var5) {
 			this.field3040 = MonotonicTime.method3655();
 			this.field3038 = var5;
 		}
 		if (this.field3039.field3168 != 1 && MonotonicTime.method3655() - this.field3040 > 10000L) {
-			var4 = var4 + " (" + Statics.field593.method4855().field2920 + ")";
+			var4 = var4 + " (" + Loading.field593.method4855().field2920 + ")";
 		}
 		this.field3041.method2683(var4, var2, var3, this.field3039.field3176, -1);
 	}

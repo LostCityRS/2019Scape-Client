@@ -2,7 +2,6 @@ package com.jagex.graphics.safe;
 
 import com.jagex.core.datastruct.Node;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("aje")
 public class PureJavaTexture extends Node {
@@ -22,6 +21,9 @@ public class PureJavaTexture extends Node {
 	@ObfuscatedName("aje.u")
 	public int[] field11268;
 
+	@ObfuscatedName("aje.z")
+	public static int[] field11269;
+
 	public PureJavaTexture(int arg0, int arg1, int arg2, int[] arg3, boolean arg4) {
 		this.field11267 = arg1;
 		this.field11264 = arg2;
@@ -31,8 +33,8 @@ public class PureJavaTexture extends Node {
 			int[] var7 = new int[this.field11264];
 			int[] var8 = new int[this.field11264];
 			int[] var9 = new int[this.field11264];
-			if (Statics.field11269 == null || Statics.field11269.length != this.field11268.length) {
-				Statics.field11269 = new int[this.field11268.length];
+			if (field11269 == null || field11269.length != this.field11268.length) {
+				field11269 = new int[this.field11268.length];
 			}
 			int var10 = this.field11264;
 			int var11 = this.field11264;
@@ -80,7 +82,7 @@ public class PureJavaTexture extends Node {
 					int var32 = var24 / 9;
 					int var33 = var25 / 9;
 					var20--;
-					Statics.field11269[var20] = var30 << 24 | var31 << 16 | var32 << 8 | var33;
+					field11269[var20] = var30 << 24 | var31 << 16 | var32 << 8 | var33;
 					var27 += var6[var23] - var6[var22];
 					var26 += var7[var23] - var7[var22];
 					var25 += var9[var23] - var9[var22];
@@ -110,8 +112,8 @@ public class PureJavaTexture extends Node {
 				}
 			}
 			int[] var37 = this.field11268;
-			this.field11268 = Statics.field11269;
-			Statics.field11269 = var37;
+			this.field11268 = field11269;
+			field11269 = var37;
 		}
 	}
 
@@ -125,8 +127,8 @@ public class PureJavaTexture extends Node {
 		if (arg0 == 0 && arg1 == 0) {
 			return;
 		}
-		if (Statics.field11269 == null || Statics.field11269.length != this.field11268.length) {
-			Statics.field11269 = new int[this.field11268.length];
+		if (field11269 == null || field11269.length != this.field11268.length) {
+			field11269 = new int[this.field11268.length];
 		}
 		int var3 = this.field11268.length;
 		int var4 = arg0;
@@ -138,11 +140,11 @@ public class PureJavaTexture extends Node {
 			for (int var10 = 0; var10 < this.field11264; var10++) {
 				int var11 = var8 + var10;
 				int var12 = (var4 + var10 & var5) + var9;
-				Statics.field11269[var11] = this.field11268[var12];
+				field11269[var11] = this.field11268[var12];
 			}
 		}
 		int[] var13 = this.field11268;
-		this.field11268 = Statics.field11269;
-		Statics.field11269 = var13;
+		this.field11268 = field11269;
+		field11269 = var13;
 	}
 }

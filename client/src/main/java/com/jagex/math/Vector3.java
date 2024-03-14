@@ -2,13 +2,18 @@ package com.jagex.math;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ox")
 public class Vector3 {
 
 	@ObfuscatedName("ox.e")
 	public static Vector3[] field4309;
+
+    @ObfuscatedName("ox.n")
+    public static int field4312;
+
+	@ObfuscatedName("ox.m")
+	public static int field4310;
 
 	@ObfuscatedName("ox.k")
 	public float field4308;
@@ -27,20 +32,20 @@ public class Vector3 {
 
 	@ObfuscatedName("ox.e(I)V")
 	public static void method6481(int arg0) {
-		Statics.field4312 = arg0;
+		field4312 = arg0;
 		field4309 = new Vector3[arg0];
-		Statics.field4310 = 0;
+		field4310 = 0;
 	}
 
 	@ObfuscatedName("ox.n()Lox;")
 	public static Vector3 method6482() {
 		Vector3[] var0 = field4309;
 		synchronized (field4309) {
-			if (Statics.field4310 == 0) {
+			if (field4310 == 0) {
 				return new Vector3();
 			} else {
-				field4309[--Statics.field4310].method6493();
-				return field4309[Statics.field4310];
+				field4309[--field4310].method6493();
+				return field4309[field4310];
 			}
 		}
 	}
@@ -49,11 +54,11 @@ public class Vector3 {
 	public static Vector3 method6483(float arg0, float arg1, float arg2) {
 		Vector3[] var3 = field4309;
 		synchronized (field4309) {
-			if (Statics.field4310 == 0) {
+			if (field4310 == 0) {
 				return new Vector3(arg0, arg1, arg2);
 			} else {
-				field4309[--Statics.field4310].method6491(arg0, arg1, arg2);
-				return field4309[Statics.field4310];
+				field4309[--field4310].method6491(arg0, arg1, arg2);
+				return field4309[field4310];
 			}
 		}
 	}
@@ -62,11 +67,11 @@ public class Vector3 {
 	public static Vector3 method6484(Vector3 arg0) {
 		Vector3[] var1 = field4309;
 		synchronized (field4309) {
-			if (Statics.field4310 == 0) {
+			if (field4310 == 0) {
 				return new Vector3(arg0);
 			} else {
-				field4309[--Statics.field4310].method6492(arg0);
-				return field4309[Statics.field4310];
+				field4309[--field4310].method6492(arg0);
+				return field4309[field4310];
 			}
 		}
 	}
@@ -75,11 +80,11 @@ public class Vector3 {
 	public static Vector3 method6485(Packet arg0) {
 		Vector3[] var1 = field4309;
 		synchronized (field4309) {
-			if (Statics.field4310 == 0) {
+			if (field4310 == 0) {
 				return new Vector3(arg0);
 			} else {
-				field4309[--Statics.field4310].method6490(arg0);
-				return field4309[Statics.field4310];
+				field4309[--field4310].method6490(arg0);
+				return field4309[field4310];
 			}
 		}
 	}
@@ -88,8 +93,8 @@ public class Vector3 {
 	public void method6486() {
 		Vector3[] var1 = field4309;
 		synchronized (field4309) {
-			if (Statics.field4310 < Statics.field4312 - 1) {
-				field4309[Statics.field4310++] = this;
+			if (field4310 < field4312 - 1) {
+				field4309[field4310++] = this;
 			}
 		}
 	}

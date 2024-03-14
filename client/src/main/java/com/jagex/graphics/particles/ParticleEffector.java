@@ -4,7 +4,6 @@ import com.jagex.core.datastruct.Node;
 import com.jagex.game.config.ParticleEffectorType;
 import com.jagex.graphics.ModelParticleEffector;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("akb")
 public class ParticleEffector extends Node {
@@ -35,7 +34,7 @@ public class ParticleEffector extends Node {
 
 	public ParticleEffector(ModelParticleEffector arg0, ParticleSystem arg1) {
 		this.field11488 = arg0;
-		this.field11483 = this.field11488.method1509(Statics.field12041);
+		this.field11483 = this.field11488.method1509(ParticleSystemRenderer.field12041);
 		this.method17872();
 	}
 

@@ -60,4 +60,37 @@ public class AudioMixer {
 	public static AudioBuss method5401(int arg0) {
 		return field8056 == null ? null : field8056.method5880().method5851(arg0);
 	}
+
+	@ObfuscatedName("xq.l(III)Z")
+	public static boolean method10338(int arg0, int arg1) {
+		if (field8056 == null || field8056.method5880() == null) {
+			return false;
+		} else if (arg0 == arg1) {
+			return true;
+		} else {
+			AudioBuss var2 = field8056.method5880().method5851(arg0);
+			AudioBuss var3 = field8056.method5880().method5851(arg1);
+			AudioBuss var4 = var2;
+			do {
+				if (var4 == null) {
+					AudioBuss var5 = var3;
+					do {
+						if (var5 == null) {
+							return false;
+						}
+						var5 = var5.method5904();
+						if (var2 == var5) {
+							return true;
+						}
+					} while (var3 != var5);
+					return false;
+				}
+				var4 = var4.method5904();
+				if (var3 == var4) {
+					return true;
+				}
+			} while (var2 != var4);
+			return false;
+		}
+	}
 }

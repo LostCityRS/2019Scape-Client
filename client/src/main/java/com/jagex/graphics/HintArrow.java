@@ -2,7 +2,7 @@ package com.jagex.graphics;
 
 import com.jagex.core.datastruct.WeightedCache;
 import deob.ObfuscatedName;
-import deob.Statics;
+import rs2.client.Client;
 
 @ObfuscatedName("au")
 public class HintArrow {
@@ -40,9 +40,44 @@ public class HintArrow {
 	@ObfuscatedName("au.d")
 	public static WeightedCache field752 = new WeightedCache(4);
 
+	@ObfuscatedName("au.c")
+	public static int field753;
+
+	@ObfuscatedName("ka.e(Ldh;IIIIIB)Ldo;")
+	public static Model method5210(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		long var6 = (long) arg5;
+		Model var8 = (Model) field752.method2930(var6);
+		short var9 = 2055;
+		if (var8 == null) {
+			ModelUnlit var10 = ModelUnlit.method1931(Client.field9213, arg5, 0);
+			if (var10 == null) {
+				return null;
+			}
+			if (var10.field1372 < 13) {
+				var10.method1947(2);
+			}
+			var8 = arg0.method2211(var10, var9, field753, 64, 768);
+			field752.method2921(var8, var6);
+		}
+		Model var11 = var8.method1773((byte) 6, var9, true);
+		if (arg1 != 0) {
+			var11.method1693(arg1);
+		}
+		if (arg2 != 0) {
+			var11.method1852(arg2);
+		}
+		if (arg3 != 0) {
+			var11.method1696(arg3);
+		}
+		if (arg4 != 0) {
+			var11.method1805(0, arg4, 0);
+		}
+		return var11;
+	}
+
 	@ObfuscatedName("tt.n(II)V")
 	public static void method8643(int arg0) {
-		Statics.field753 = arg0;
+		field753 = arg0;
 		field752.method2924();
 	}
 

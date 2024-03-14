@@ -1,5 +1,6 @@
 package com.jagex.graphics.gl;
 
+import com.jagex.game.client.NativeLibraries;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
@@ -9,7 +10,6 @@ import com.jagex.graphics.Renderer;
 import com.jagex.graphics.TextureList;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaggl.OpenGL;
 
 import java.awt.*;
@@ -25,8 +25,8 @@ public class OpenGLRendererFactory {
 	public static Renderer method7664(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, Js5 arg6, int arg7) {
 		try {
 			GpuRenderer.method15968();
-			Statics.method5134().method7902("jaggl");
-			Statics.method6020(arg0);
+			NativeLibraries.method5134().method7902("jaggl");
+			Renderer.method6020(arg0);
 			OpenGL var8 = new OpenGL();
 			long var9 = var8.init(arg0, 8, 8, 8, 24, 0, arg7);
 			if (var9 == 0L) {

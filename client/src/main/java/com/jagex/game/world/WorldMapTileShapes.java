@@ -9,6 +9,20 @@ public class WorldMapTileShapes {
 		throw new Error();
 	}
 
+	@ObfuscatedName("agh.e(III)I")
+	public static int method16462(int arg0, int arg1) {
+		if (arg1 == 9) {
+			arg0 = arg0 + 1 & 0x3;
+		}
+		if (arg1 == 10) {
+			arg0 = arg0 + 3 & 0x3;
+		}
+		if (arg1 == 11) {
+			arg0 = arg0 + 3 & 0x3;
+		}
+		return arg0;
+	}
+
 	@ObfuscatedName("uz.n(II)I")
 	public static int method9049(int arg0) {
 		if (arg0 == 9 || arg0 == 10) {

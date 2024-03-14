@@ -13,7 +13,6 @@ import com.jagex.js5.Js5;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jagdx.*;
 
 import java.awt.*;
@@ -230,7 +229,7 @@ public class Direct3DRenderer extends GpuRenderer {
 				}
 				var8 = new Direct3DRenderer(var9, var10, var11, var19, var15, var14, var13, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 				if (!var8.field1613.containsKey(arg0)) {
-					Statics.method6020(arg0);
+					Renderer.method6020(arg0);
 					var8.method2138(arg0, new Direct3DSurface(var8, arg0, arg0.getWidth(), arg0.getHeight(), true));
 				}
 				var8.method2140(arg0);

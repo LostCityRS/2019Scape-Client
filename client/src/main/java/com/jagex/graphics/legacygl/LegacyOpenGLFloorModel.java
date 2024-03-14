@@ -4,11 +4,11 @@ import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.Algorithms;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.HardShadow;
 import com.jagex.graphics.*;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaclib.memory.Stream;
 import jaclib.memory.heap.NativeHeapBuffer;
 import jaggl.OpenGL;
@@ -403,7 +403,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 								} else if (var71 > 126) {
 									var71 = 126;
 								}
-								var55 = Statics.field8151[var47 & 0xFF80 | var71];
+								var55 = ColourUtils.field8151[var47 & 0xFF80 | var71];
 								if ((this.field9457 & 0x7) == 0) {
 									float var72 = this.field9453.field9870[2] * var59 + this.field9453.field9870[0] * var57 + this.field9453.field9870[1] * var58;
 									var56 = this.field9453.field9946 + var72 * (var72 > 0.0F ? this.field9453.field9947 : this.field9453.field9948);
@@ -425,7 +425,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 									} else if (var74 > 126) {
 										var74 = 126;
 									}
-									var75 = Statics.field8151[var48 & 0xFF80 | var74];
+									var75 = ColourUtils.field8151[var48 & 0xFF80 | var74];
 									if ((this.field9457 & 0x7) == 0) {
 										float var76 = this.field9453.field9870[2] * var59 + this.field9453.field9870[0] * var57 + this.field9453.field9870[1] * var58;
 										float var77 = this.field9453.field9946 + var56 * (var56 > 0.0F ? this.field9453.field9947 : this.field9453.field9948);

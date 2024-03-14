@@ -3,6 +3,7 @@ package com.jagex.game.world.entity;
 import com.jagex.core.constants.ModeWhere;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
+import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.TextUtil;
 import com.jagex.game.client.GameShell;
 import com.jagex.game.config.bastype.BASType;
@@ -23,7 +24,6 @@ import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.*;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.scene.entities.NpcEntity;
 import rs2.client.scene.entities.PathingEntity;
@@ -166,7 +166,7 @@ public class PlayerEntity extends PathingEntity {
 		int[] var16 = new int[10];
 		for (int var17 = 0; var17 < 10; var17++) {
 			int var18 = arg0.g1();
-			if (Statics.field1434.length < 1 || var18 < 0 || var18 >= Statics.field1434[var17][0].length) {
+			if (PlayerModel.field1434.length < 1 || var18 < 0 || var18 >= PlayerModel.field1434[var17][0].length) {
 				var18 = 0;
 			}
 			var16[var17] = var18;
@@ -174,7 +174,7 @@ public class PlayerEntity extends PathingEntity {
 		int[] var19 = new int[10];
 		for (int var20 = 0; var20 < 10; var20++) {
 			int var21 = arg0.g1();
-			if (Statics.field9259.length < 1 || var21 < 0 || var21 >= Statics.field9259[var20][0].length) {
+			if (PlayerModel.field9259.length < 1 || var21 < 0 || var21 >= PlayerModel.field9259[var20][0].length) {
 				var21 = 0;
 			}
 			var19[var20] = var21;
@@ -244,7 +244,7 @@ public class PlayerEntity extends PathingEntity {
 		this.field12057 = arg0.gjstr();
 		this.field12062 = this.field12057;
 		if (Client.field4490 == this) {
-			Statics.field12492 = this.field12057;
+			JagException.field12492 = this.field12057;
 		}
 		this.field12064 = arg0.g1();
 		if (var4) {
@@ -265,7 +265,7 @@ public class PlayerEntity extends PathingEntity {
 		int var9 = this.field12067;
 		this.field12067 = arg0.g1();
 		if (this.field12067 == 0) {
-			Statics.method5142(this);
+			PositionedSound.method5142(this);
 			return;
 		}
 		int var10 = this.field12063;
@@ -450,7 +450,7 @@ public class PlayerEntity extends PathingEntity {
 			return;
 		}
 		int var13 = (int) (Math.atan2((double) arg3, (double) arg4) * 2607.5945876176133D - (double) this.field10395.method316()) & 0x3FFF;
-		Model var14 = Statics.method5210(arg0, var13, this.field10405, this.field12466, this.field10407, arg5);
+		Model var14 = HintArrow.method5210(arg0, var13, this.field10405, this.field12466, this.field10407, arg5);
 		if (var14 != null) {
 			arg0.method2219(false);
 			var14.method1813(arg1, null, 0);
@@ -475,7 +475,7 @@ public class PlayerEntity extends PathingEntity {
 			arg1 |= 0x80000;
 		}
 		Model var11 = this.field10459[0] = this.field12061.method10126(arg0, arg1, Client.field11742, Client.field2628, Client.field7961, Client.field1842, Client.field7410, Client.field7410, var5, var6, this.field10398, this.field10442, var9, true, Client.field1709);
-		int var12 = Statics.method18304();
+		int var12 = PlayerModel.method18304();
 		if (GameShell.maxmemory < 96 && var12 > 50) {
 			SceneManager.method7319();
 		}

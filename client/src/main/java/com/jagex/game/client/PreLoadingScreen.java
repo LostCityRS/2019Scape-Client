@@ -1,9 +1,9 @@
 package com.jagex.game.client;
 
 import com.jagex.core.utils.StringTools;
+import com.jagex.game.load.Loading;
 import com.jagex.game.load.LoadingScreen;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 import java.awt.*;
@@ -113,12 +113,12 @@ public class PreLoadingScreen implements LoadingScreen {
 			return;
 		}
 		try {
-			this.field2896 = "" + Statics.field593.method4851() + "%";
-			this.field2897 = Statics.field593.method4852();
-			if (Statics.field2575 == null) {
-				Statics.field2575 = GameShell.canvas.createImage(GameShell.canvasWid, GameShell.canvasHei);
+			this.field2896 = "" + Loading.field593.method4851() + "%";
+			this.field2897 = Loading.field593.method4852();
+			if (GameShell.field2575 == null) {
+				GameShell.field2575 = GameShell.canvas.createImage(GameShell.canvasWid, GameShell.canvasHei);
 			}
-			Graphics var16 = Statics.field2575.getGraphics();
+			Graphics var16 = GameShell.field2575.getGraphics();
 			var16.setColor(Color.BLACK);
 			var16.fillRect(0, 0, GameShell.canvasWid, GameShell.canvasHei);
 			Iterator var17 = this.field2892.iterator();
@@ -126,7 +126,7 @@ public class PreLoadingScreen implements LoadingScreen {
 				PreLoadingRelated var18 = (PreLoadingRelated) var17.next();
 				var18.method4987(var16);
 			}
-			var15.drawImage(Statics.field2575, 0, 0, null);
+			var15.drawImage(GameShell.field2575, 0, 0, null);
 		} catch (Exception var22) {
 			this.field2895 = true;
 		}
@@ -158,7 +158,7 @@ public class PreLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("jm.f(I)V")
 	public void method4890() {
-		GameShell.method8913(Statics.field593.method4851(), Statics.field593.method4852(), Client.field10824[Client.field10773], Client.field10825[Client.field10773], Client.field10826[Client.field10773]);
+		GameShell.method8913(Loading.field593.method4851(), Loading.field593.method4852(), Client.field10824[Client.field10773], Client.field10825[Client.field10773], Client.field10826[Client.field10773]);
 	}
 
 	@ObfuscatedName("jm.w(B)V")

@@ -27,7 +27,6 @@ import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Trig1;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.clientscript.ScriptRunner;
 
@@ -681,7 +680,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		if (var8 == null) {
 			this.field10416.method14244(var13);
 		} else {
-			Statics.method15212(var13, var8);
+			LinkQueue.method15212(var13, var8);
 		}
 		var13.method17456(arg1 + arg3, arg4, arg5, arg2);
 		if (var11 >= Client.field11389.field7745) {

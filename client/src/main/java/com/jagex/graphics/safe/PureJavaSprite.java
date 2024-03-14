@@ -4,7 +4,6 @@ import com.jagex.game.client.JavaGraphicsRelated3;
 import com.jagex.graphics.GraphicsRelated;
 import com.jagex.graphics.Sprite;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ael")
 public abstract class PureJavaSprite extends Sprite {
@@ -32,6 +31,57 @@ public abstract class PureJavaSprite extends Sprite {
 
 	@ObfuscatedName("ael.u")
 	public int[] field9362;
+
+	@ObfuscatedName("ael.c")
+	public static int field9385;
+
+	@ObfuscatedName("ael.r")
+	public static int field9367;
+
+	@ObfuscatedName("ael.v")
+	public static int field9368;
+
+	@ObfuscatedName("ael.o")
+	public static int field9369;
+
+	@ObfuscatedName("ael.s")
+	public static int field9370;
+
+	@ObfuscatedName("ael.y")
+	public static int field9371;
+
+	@ObfuscatedName("ael.q")
+	public static int field9357;
+
+	@ObfuscatedName("ael.x")
+	public static int field9375;
+
+	@ObfuscatedName("ael.b")
+	public static int field9374;
+
+	@ObfuscatedName("ael.h")
+	public static int field9384;
+
+	@ObfuscatedName("ael.a")
+	public static int field9376;
+
+	@ObfuscatedName("ael.g")
+	public static int field9377;
+
+	@ObfuscatedName("ael.i")
+	public static int field9378;
+
+	@ObfuscatedName("ael.j")
+	public static int field9389;
+
+	@ObfuscatedName("ael.t")
+	public static int field9380;
+
+	@ObfuscatedName("ael.ae")
+	public static int field9381;
+
+	@ObfuscatedName("ael.ag")
+	public static int field9361;
 
 	@ObfuscatedName("ael.ah")
 	public static int field9383 = 0;
@@ -210,24 +260,24 @@ public abstract class PureJavaSprite extends Sprite {
 		if (var28 >= 0.0F) {
 			return false;
 		}
-		Statics.field9370 = this.field9373.field9779;
-		Statics.field9371 = (int) ((float) ((int) var25 * Statics.field9370) + var23);
+		field9370 = this.field9373.field9779;
+		field9371 = (int) ((float) ((int) var25 * field9370) + var23);
 		float var29 = (arg2 - arg0) * (arg5 - arg1) - (arg4 - arg0) * (arg3 - arg1);
 		float var30 = (arg4 - arg0) * (arg3 - arg1) - (arg2 - arg0) * (arg5 - arg1);
-		Statics.field9357 = (int) ((arg5 - arg1) * 4096.0F * (float) this.field9356 / var29);
-		Statics.field9375 = (int) ((arg3 - arg1) * 4096.0F * (float) this.field9372 / var30);
-		Statics.field9374 = (int) ((arg4 - arg0) * 4096.0F * (float) this.field9356 / var30);
-		Statics.field9384 = (int) ((arg2 - arg0) * 4096.0F * (float) this.field9372 / var29);
-		Statics.field9376 = (int) (var23 * 16.0F + 8.0F - (arg0 + arg2 + arg4 + var21) / 4.0F * 16.0F);
-		Statics.field9377 = (int) (var25 * 16.0F + 8.0F - (arg1 + arg3 + arg5 + var22) / 4.0F * 16.0F);
-		Statics.field9378 = (this.field9356 >> 1 << 12) + (Statics.field9377 * Statics.field9374 >> 4);
-		Statics.field9389 = (this.field9372 >> 1 << 12) + (Statics.field9384 * Statics.field9377 >> 4);
-		Statics.field9380 = Statics.field9376 * Statics.field9357 >> 4;
-		Statics.field9381 = Statics.field9376 * Statics.field9375 >> 4;
-		Statics.field9385 = (int) var23;
-		Statics.field9367 = (int) var27;
-		Statics.field9368 = (int) var25;
-		Statics.field9369 = (int) var28;
+		field9357 = (int) ((arg5 - arg1) * 4096.0F * (float) this.field9356 / var29);
+		field9375 = (int) ((arg3 - arg1) * 4096.0F * (float) this.field9372 / var30);
+		field9374 = (int) ((arg4 - arg0) * 4096.0F * (float) this.field9356 / var30);
+		field9384 = (int) ((arg2 - arg0) * 4096.0F * (float) this.field9372 / var29);
+		field9376 = (int) (var23 * 16.0F + 8.0F - (arg0 + arg2 + arg4 + var21) / 4.0F * 16.0F);
+		field9377 = (int) (var25 * 16.0F + 8.0F - (arg1 + arg3 + arg5 + var22) / 4.0F * 16.0F);
+		field9378 = (this.field9356 >> 1 << 12) + (field9377 * field9374 >> 4);
+		field9389 = (this.field9372 >> 1 << 12) + (field9384 * field9377 >> 4);
+		field9380 = field9376 * field9357 >> 4;
+		field9381 = field9376 * field9375 >> 4;
+		field9385 = (int) var23;
+		field9367 = (int) var27;
+		field9368 = (int) var25;
+		field9369 = (int) var28;
 		return true;
 	}
 
@@ -236,7 +286,7 @@ public abstract class PureJavaSprite extends Sprite {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		} else if (this.method15366(arg0, arg1, arg2, arg3, arg4, arg5)) {
-			Statics.field9361 = arg7;
+			field9361 = arg7;
 			if (arg6 != 1) {
 				field9383 = arg7 >>> 24;
 				field9366 = 256 - field9383;
@@ -262,7 +312,7 @@ public abstract class PureJavaSprite extends Sprite {
 			throw new IllegalStateException();
 		} else if (this.method15366(arg0, arg1, arg2, arg3, arg4, arg5)) {
 			JavaGraphicsRelated3 var11 = (JavaGraphicsRelated3) arg7;
-			this.method15356(var11.field9414, var11.field9415, Statics.field9385 - arg8, -arg9 - (Statics.field9369 - Statics.field9368));
+			this.method15356(var11.field9414, var11.field9415, field9385 - arg8, -arg9 - (field9369 - field9368));
 		}
 	}
 

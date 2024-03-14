@@ -3,7 +3,6 @@ package lzma.sdk.lzma;
 import lzma.sdk.rangecoder.BitTreeDecoder;
 import lzma.sdk.lz.OutWindow;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -117,6 +116,19 @@ public class Decoder {
 		this.m_RangeDecoder.init();
 	}
 
+	@ObfuscatedName("nc.k([SILjp;II)I")
+	public static int reverseDecode(short[] arg0, int arg1, lzma.sdk.rangecoder.Decoder arg2, int arg3) throws IOException {
+		int var4 = 1;
+		int var5 = 0;
+		for (int var6 = 0; var6 < arg3; var6++) {
+			int var7 = arg2.decodeBit(arg0, arg1 + var4);
+			int var8 = var4 << 1;
+			var4 = var7 + var8;
+			var5 |= var7 << var6;
+		}
+		return var5;
+	}
+
 	@ObfuscatedName("sz.k(Ljava/io/InputStream;Ljava/io/OutputStream;J)Z")
 	public boolean code(InputStream inStream, OutputStream outStream, long outSize) throws IOException {
 		this.m_RangeDecoder.setStream(inStream);
@@ -177,7 +189,7 @@ public class Decoder {
 						int numDirectBits = (var17 >> 1) - 1;
 						int var19 = (var17 & 0x1 | 0x2) << numDirectBits;
 						if (var17 < 14) {
-							rep0 = var19 + Statics.reverseDecode(this.m_PosDecoders, var19 - var17 - 1, this.m_RangeDecoder, numDirectBits);
+							rep0 = var19 + reverseDecode(this.m_PosDecoders, var19 - var17 - 1, this.m_RangeDecoder, numDirectBits);
 							break label71;
 						}
 						int var20 = var19 + (this.m_RangeDecoder.decodeDirectBits(numDirectBits - 4) << 4);

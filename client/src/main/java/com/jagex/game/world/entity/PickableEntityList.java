@@ -3,7 +3,6 @@ package com.jagex.game.world.entity;
 import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -35,7 +34,7 @@ public class PickableEntityList {
 		while (var1.hasNext()) {
 			PickableEntity var2 = (PickableEntity) var1.next();
 			var1.remove();
-			Statics.method3657(var2);
+			PickableEntity.method3657(var2);
 		}
 	}
 
@@ -60,7 +59,7 @@ public class PickableEntityList {
 				PickableEntity var7 = (PickableEntity) var6.next();
 				if (var7.field6978 == var2) {
 					var6.remove();
-					Statics.method3657(var7);
+					PickableEntity.method3657(var7);
 				}
 			}
 		}

@@ -7,7 +7,6 @@ import com.jagex.game.scene.World;
 import com.jagex.js5.Js5;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("xu")
@@ -15,6 +14,12 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.e")
 	public static int field7859 = -1;
+
+	@ObfuscatedName("xu.n")
+	public static EnvironmentSampler field7832;
+
+	@ObfuscatedName("xu.m")
+	public static SkyBox field7846;
 
 	@ObfuscatedName("xu.k")
 	public static int field7835 = 5047;
@@ -102,9 +107,9 @@ public class EnvironmentManager {
 		this.field7845 = arg1;
 		this.field7836 = new Environment[arg2][arg3];
 		if (field7859 != -1) {
-			Statics.field7832 = this.method9985(field7859);
+			field7832 = this.method9985(field7859);
 		}
-		Statics.field7846 = null;
+		field7846 = null;
 		this.field7856 = new Environment();
 		this.field7841 = new Environment();
 		this.field7843 = new Environment();
@@ -429,6 +434,6 @@ public class EnvironmentManager {
 		this.field7833.method2222(((float) Client.field688.brightness.method18408() * 0.1F + 0.7F + Client.world.method7732()) * 1.1523438F);
 		this.field7833.method2223(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
 		this.field7833.method2572(13156520, -1, 0);
-		this.field7833.method2516(Statics.field7832);
+		this.field7833.method2516(field7832);
 	}
 }

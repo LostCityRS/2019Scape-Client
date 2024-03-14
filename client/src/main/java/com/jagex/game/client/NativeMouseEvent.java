@@ -2,7 +2,6 @@ package com.jagex.game.client;
 
 import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.awt.*;
 
@@ -14,6 +13,12 @@ public class NativeMouseEvent extends MouseEvent {
 
 	@ObfuscatedName("asp.av")
 	public static NativeMouseEvent[] field12413 = new NativeMouseEvent[0];
+
+	@ObfuscatedName("hr.ao")
+	public static int field2364;
+
+	@ObfuscatedName("wm.aj")
+	public static int field7658;
 
 	@ObfuscatedName("asp.ay")
 	public int field12420;
@@ -27,15 +32,22 @@ public class NativeMouseEvent extends MouseEvent {
 	@ObfuscatedName("asp.aa")
 	public int field12419;
 
+	@ObfuscatedName("alj.t(II)V")
+	public static void method18259(int arg0) {
+		field2364 = arg0;
+		field12413 = new NativeMouseEvent[arg0];
+		field7658 = 0;
+	}
+
 	@ObfuscatedName("ajq.ae(IIIIB)Lasp;")
 	public static NativeMouseEvent method17446(int arg0, int arg1, int arg2, int arg3) {
 		NativeMouseEvent[] var4 = field12413;
 		synchronized (field12413) {
 			NativeMouseEvent var5;
-			if (Statics.field7658 == 0) {
+			if (field7658 == 0) {
 				var5 = new NativeMouseEvent();
 			} else {
-				var5 = field12413[--Statics.field7658];
+				var5 = field12413[--field7658];
 			}
 			var5.field12419 = arg0;
 			var5.field12424 = arg1;
@@ -50,8 +62,8 @@ public class NativeMouseEvent extends MouseEvent {
 	public void method17835() {
 		NativeMouseEvent[] var1 = field12413;
 		synchronized (field12413) {
-			if (Statics.field7658 < Statics.field2364 - 1) {
-				field12413[++Statics.field7658 - 1] = this;
+			if (field7658 < field2364 - 1) {
+				field12413[++field7658 - 1] = this;
 			}
 		}
 	}

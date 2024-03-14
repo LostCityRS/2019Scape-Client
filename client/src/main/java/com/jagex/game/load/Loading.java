@@ -49,11 +49,12 @@ import com.jagex.game.config.vartype.player.VarPlayerTypeListClient;
 import com.jagex.game.script.ClientVariableManager;
 import com.jagex.game.world.WorldMap;
 import com.jagex.game.world.entity.PlayerGameState;
+import com.jagex.game.world.entity.PlayerModel;
 import com.jagex.graphics.*;
 import com.jagex.graphics.particles.ParticleSystemRenderer;
+import com.jagex.js5.Js5;
 import com.jagex.js5.network.Js5Client;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.login.LoginManager;
 
@@ -68,14 +69,41 @@ public class Loading {
 	@ObfuscatedName("ji.m")
 	public static int field2946 = -1;
 
+	@ObfuscatedName("jl.k")
+	public static LoadingRelated3 field2841;
+
+	@ObfuscatedName("aao.f")
+	public static Js5 field8522;
+
+	@ObfuscatedName("aae.w")
+	public static Js5 field8532;
+
+	@ObfuscatedName("x.l")
+	public static LoadingScreenRenderer field593;
+
 	@ObfuscatedName("ji.u")
 	public static Thread field2940;
+
+	@ObfuscatedName("xj.z")
+	public static long field7966;
+
+	@ObfuscatedName("rk.p")
+	public static String field4964;
 
 	@ObfuscatedName("ji.d")
 	public static String field2942;
 
+	@ObfuscatedName("mt.r")
+	public static LoadingStage field3419;
+
 	@ObfuscatedName("ji.o")
 	public static boolean field2944 = false;
+
+	@ObfuscatedName("aae.s")
+	public static String field8535;
+
+	@ObfuscatedName("pr.y")
+	public static String field4407;
 
 	@ObfuscatedName("ji.q")
 	public static int field2945 = -1;
@@ -90,8 +118,8 @@ public class Loading {
 	@ObfuscatedName("jb.e(I)V")
 	public static void method4883() {
 		field2944 = true;
-		Statics.field8535 = LoginManager.username;
-		Statics.field4407 = LoginManager.password;
+		field8535 = LoginManager.username;
+		field4407 = LoginManager.password;
 		Client.logout(false);
 		LoadableResourceManager.method3670();
 		field2938 = null;
@@ -108,60 +136,60 @@ public class Loading {
 	public static void method15243() {
 		if (field2938 == null) {
 			field2938 = LoadingStage.method4920();
-			Statics.field3419 = field2938[0];
-			Statics.field7966 = MonotonicTime.method3655();
+			field3419 = field2938[0];
+			field7966 = MonotonicTime.method3655();
 		}
-		if (Statics.field593 == null) {
+		if (field593 == null) {
 			method254();
 		}
-		LoadingStage var0 = Statics.field3419;
+		LoadingStage var0 = field3419;
 		int var1 = method7622();
-		if (Statics.field3419 == var0) {
-			field2942 = Statics.field3419.field2908.method15021(Client.language);
-			Statics.field4964 = field2942;
-			if (Statics.field3419.field2926) {
-				Statics.field9130 = (Statics.field3419.field2924 - Statics.field3419.field2923) * var1 / 100 + Statics.field3419.field2923;
+		if (field3419 == var0) {
+			field2942 = field3419.field2908.method15021(Client.language);
+			field4964 = field2942;
+			if (field3419.field2926) {
+				NoiseGeneratorRelated.field9130 = (field3419.field2924 - field3419.field2923) * var1 / 100 + field3419.field2923;
 			}
-			if (Statics.field3419.field2925) {
-				Statics.field4964 = Statics.field4964 + " - " + Statics.field9130 + "%";
+			if (field3419.field2925) {
+				field4964 = field4964 + " - " + NoiseGeneratorRelated.field9130 + "%";
 			}
-		} else if (Statics.field3419 == LoadingStage.field2919) {
-			Statics.field593 = null;
+		} else if (field3419 == LoadingStage.field2919) {
+			field593 = null;
 			Client.setState(4);
 			if (field2944) {
 				field2944 = false;
-				LoginManager.method665(Statics.field8535, Statics.field4407, "", false);
+				LoginManager.method665(field8535, field4407, "", false);
 			}
 		} else {
 			field2942 = var0.field2922.method15021(Client.language);
-			Statics.field4964 = field2942;
-			if (Statics.field3419.field2925) {
-				Statics.field4964 = Statics.field4964 + " - " + var0.field2924 + "%";
+			field4964 = field2942;
+			if (field3419.field2925) {
+				field4964 = field4964 + " - " + var0.field2924 + "%";
 			}
-			Statics.field9130 = var0.field2924;
-			if (Statics.field3419.field2926 || var0.field2926) {
-				Statics.field7966 = MonotonicTime.method3655();
+			NoiseGeneratorRelated.field9130 = var0.field2924;
+			if (field3419.field2926 || var0.field2926) {
+				field7966 = MonotonicTime.method3655();
 			}
 		}
-		if (Statics.field593 == null) {
+		if (field593 == null) {
 			return;
 		}
-		Statics.field593.method4849(Statics.field7966, field2942, Statics.field4964, Statics.field9130, Statics.field3419);
+		field593.method4849(field7966, field2942, field4964, NoiseGeneratorRelated.field9130, field3419);
 		if (field2939 == null) {
 			return;
 		}
 		for (int var2 = field2946 + 1; var2 < field2939.length; var2++) {
-			if (field2939[var2].method4912() >= 100 && field2946 == var2 - 1 && Client.state != 5 && Statics.field593.method4857()) {
+			if (field2939[var2].method4912() >= 100 && field2946 == var2 - 1 && Client.state != 5 && field593.method4857()) {
 				try {
 					field2939[var2].method4916();
 				} catch (Exception var4) {
 					field2939 = null;
 					break;
 				}
-				Statics.field593.method4879(field2939[var2]);
+				field593.method4879(field2939[var2]);
 				field2946++;
 				if (field2946 >= field2939.length - 1 && field2939.length > 1) {
-					field2946 = Statics.field2841.method15223() ? 0 : -1;
+					field2946 = field2841.method15223() ? 0 : -1;
 				}
 			}
 		}
@@ -169,27 +197,27 @@ public class Loading {
 
 	@ObfuscatedName("l.k(B)V")
 	public static void method254() {
-		if (Statics.field3419 != null) {
-			Statics.field593 = new LoadingScreenRenderer();
-			Statics.field593.method4849(Statics.field7966, Statics.field3419.field2908.method15021(Client.language), Statics.field3419.field2908.method15021(Client.language), Statics.field3419.field2923, Statics.field3419);
-			field2940 = new Thread(Statics.field593, "");
+		if (field3419 != null) {
+			field593 = new LoadingScreenRenderer();
+			field593.method4849(field7966, field3419.field2908.method15021(Client.language), field3419.field2908.method15021(Client.language), field3419.field2923, field3419);
+			field2940 = new Thread(field593, "");
 			field2940.start();
 		}
 	}
 
 	@ObfuscatedName("dk.f(ZI)V")
 	public static void method2010(boolean arg0) {
-		if (Statics.field593 == null) {
+		if (field593 == null) {
 			method254();
 		}
 		if (arg0) {
-			Statics.field593.method4845();
+			field593.method4845();
 		}
 	}
 
 	@ObfuscatedName("gt.w(I)I")
 	public static int method3583() {
-		return Statics.field593.method4846();
+		return field593.method4846();
 	}
 
 	@ObfuscatedName("apb.l(I)V")
@@ -206,9 +234,9 @@ public class Loading {
 
 	@ObfuscatedName("gt.u(I)I")
 	public static int method3584() {
-		int var0 = Statics.field3419.field2920;
+		int var0 = field3419.field2920;
 		if (var0 < field2938.length - 1) {
-			Statics.field3419 = field2938[var0 + 1];
+			field3419 = field2938[var0 + 1];
 		}
 		return 100;
 	}
@@ -225,7 +253,7 @@ public class Loading {
 				}
 			}
 		}
-		if (Statics.field3419 == LoadingStage.field2913) {
+		if (field3419 == LoadingStage.field2913) {
 			if (Client.field1833 == null) {
 				Client.field1833 = new Js5Client(Client.field4489, Client.field4436, Client.field4479, PublicKeys.field623, PublicKeys.field625);
 			}
@@ -234,19 +262,19 @@ public class Loading {
 			}
 			Client.method3596(0, null, true);
 			field2941 = !MainLoadingScreen.method4062();
-			Statics.field8522 = Client.method5156(field2941 ? Js5Archive.LOADING_SPRITES_RAW : Js5Archive.LOADING_SPRITES, false, 1, true, true);
-			Statics.field8532 = Client.method5156(Js5Archive.LOADING_SCREENS, false, 1, true, true);
+			field8522 = Client.method5156(field2941 ? Js5Archive.LOADING_SPRITES_RAW : Js5Archive.LOADING_SPRITES, false, 1, true, true);
+			field8532 = Client.method5156(Js5Archive.LOADING_SCREENS, false, 1, true, true);
 			Client.field7672 = Client.method5156(Js5Archive.FONTMETRICS, false, 1, true, true);
 			Client.field1587 = Client.method5156(Js5Archive.DEFAULTS, true, 1, true, true);
 		}
-		if (Statics.field3419 == LoadingStage.field2911) {
-			boolean var1 = Statics.field8532.method6896();
+		if (field3419 == LoadingStage.field2911) {
+			boolean var1 = field8532.method6896();
 			boolean var2 = Client.field1587.method6896();
 			int var3 = Client.field6888[Js5Archive.LOADING_SCREENS.getArchiveId()].method16823();
 			int var4 = var3 + Client.field6888[field2941 ? Js5Archive.LOADING_SPRITES_RAW.getArchiveId() : Js5Archive.LOADING_SPRITES.getArchiveId()].method16823();
 			int var5 = var4 + Client.field6888[Js5Archive.FONTMETRICS.getArchiveId()].method16823();
 			int var6 = var5 + (var2 ? 100 : Client.field1587.method6893());
-			int var7 = var6 + (var1 ? 100 : Statics.field8532.method6893());
+			int var7 = var6 + (var1 ? 100 : field8532.method6893());
 			if (var7 != 500) {
 				return var7 / 5;
 			}
@@ -254,35 +282,35 @@ public class Loading {
 			Client.field7921 = new TitleDefaults(Client.field1587);
 			DefaultSprites.method3470(Client.field11389);
 			int var8 = Client.field688.unknown5.method18714();
-			Statics.field2841 = new LoadingRelated3(Client.modegame, Client.language, Statics.field8532);
-			LoadingRelated1[] var9 = Statics.field2841.method15218(var8);
+			field2841 = new LoadingRelated3(Client.modegame, Client.language, field8532);
+			LoadingRelated1[] var9 = field2841.method15218(var8);
 			if (var9.length == 0) {
-				var9 = Statics.field2841.method15218(0);
+				var9 = field2841.method15218(0);
 			}
-			LoadingScreenElementFactory var10 = new LoadingScreenElementFactory(Statics.field8522, Client.field7672);
+			LoadingScreenElementFactory var10 = new LoadingScreenElementFactory(field8522, Client.field7672);
 			if (var9.length > 0) {
 				field2939 = new LoadingScreen[var9.length];
 				for (int var11 = 0; var11 < field2939.length; var11++) {
-					field2939[var11] = new MainLoadingScreen(Statics.field2841.method15217(var9[var11].field9217), var9[var11].field9215, var9[var11].field9216, var10);
+					field2939[var11] = new MainLoadingScreen(field2841.method15217(var9[var11].field9217), var9[var11].field9215, var9[var11].field9216, var10);
 				}
 			}
 		}
-		if (Statics.field3419 == LoadingStage.field2904) {
-			Client.field7538 = new FontProvider(Client.field8198, Statics.field8522, Client.field7672, DefaultSprites.method845());
+		if (field3419 == LoadingStage.field2904) {
+			Client.field7538 = new FontProvider(Client.field8198, field8522, Client.field7672, DefaultSprites.method845());
 		}
-		if (Statics.field3419 == LoadingStage.field2905) {
+		if (field3419 == LoadingStage.field2905) {
 			int var12 = Client.field7538.method6179();
 			int var13 = Client.field7538.method6161();
 			if (var12 < var13) {
 				return var12 * 100 / var13;
 			}
 		}
-		if (Statics.field3419 == LoadingStage.field2906) {
+		if (field3419 == LoadingStage.field2906) {
 			if (field2939 != null && field2939.length > 0) {
 				if (field2939[0].method4912() < 100) {
 					return 0;
 				}
-				if (field2939.length > 1 && Statics.field2841.method15223() && field2939[1].method4912() < 100) {
+				if (field2939.length > 1 && field2841.method15223() && field2939[1].method4912() < 100) {
 					return 0;
 				}
 			}
@@ -290,7 +318,7 @@ public class Loading {
 			DefaultSprites.method7114(Client.field8198);
 			Client.setState(11);
 		}
-		if (Statics.field3419 == LoadingStage.OPEN_JS5_ARCHIVES) {
+		if (field3419 == LoadingStage.OPEN_JS5_ARCHIVES) {
 			Client.field10317 = Client.method5156(Js5Archive.SPRITES, false, 1, false, true);
 			Client.field7420 = Client.method5156(Js5Archive.ANIMS, false, 1, false, true);
 			Client.field10287 = Client.method5156(Js5Archive.ANIMS_KEYFRAMES, false, 1, false, true);
@@ -323,7 +351,7 @@ public class Loading {
 			Client.field7060 = Client.method5156(Js5Archive.DLLS, true, 1, false, true);
 			Client.field2900 = Client.method5156(Js5Archive.SHADERS, true, 1, true, true);
 		}
-		if (Statics.field3419 == LoadingStage.GET_JS5_INDEXES) {
+		if (field3419 == LoadingStage.GET_JS5_INDEXES) {
 			int var14 = 0;
 			int var15 = 0;
 			for (int var16 = 0; var16 < Client.field6888.length; var16++) {
@@ -344,7 +372,7 @@ public class Loading {
 			DefaultSprites.method16430(Client.field11389);
 			Client.field7538 = new FontProvider(Client.field8198, Client.field10317, Client.field7672, DefaultSprites.method845());
 		}
-		if (Statics.field3419 == LoadingStage.field2909) {
+		if (field3419 == LoadingStage.field2909) {
 			byte[] var17 = Client.field1587.method6894(DefaultsGroup.field7705.field7708);
 			if (var17 == null) {
 				return 0;
@@ -354,20 +382,20 @@ public class Loading {
 			method714(var17);
 			Client.setState(1);
 		}
-		if (Statics.field3419 == LoadingStage.field2910 && Client.field10577 == null) {
+		if (field3419 == LoadingStage.field2910 && Client.field10577 == null) {
 			Client.field10577 = new HardwarePlatformLoader(Client.field7060);
 			NativeLibraries.method14694(Client.field10577);
 		}
-		if (Statics.field3419 == LoadingStage.DOWNLOAD_STUFF) {
+		if (field3419 == LoadingStage.DOWNLOAD_STUFF) {
 			int var18 = LoadableResourceManager.method5140();
 			if (var18 < 100) {
 				return var18;
 			}
-			Statics.method987(Client.field1587.method6894(DefaultsGroup.field7701.field7708));
-			Statics.field7577 = Client.field11389.field7731;
-			Statics.field1434 = Client.field11389.field7729;
-			Statics.field10766 = Client.field11389.field7714;
-			Statics.field9259 = Client.field11389.field7734;
+			method987(Client.field1587.method6894(DefaultsGroup.field7701.field7708));
+			PlayerModel.field7577 = Client.field11389.field7731;
+			PlayerModel.field1434 = Client.field11389.field7729;
+			PlayerModel.field10766 = Client.field11389.field7714;
+			PlayerModel.field9259 = Client.field11389.field7734;
 			if (Client.field11389.field7739 != -1 && Client.field11389.field7740 != -1) {
 				Client.field10941 = Client.field11389.field7739;
 				Client.field10942 = Client.field11389.field7740;
@@ -378,7 +406,7 @@ public class Loading {
 			Client.field2775 = new CutsceneDefaults(Client.field1587);
 			WorldMap.field6792 = new WorldMapDefaults(Client.field1587);
 		}
-		if (Statics.field3419 == LoadingStage.SETUP_CONFIG_DECODERS) {
+		if (field3419 == LoadingStage.SETUP_CONFIG_DECODERS) {
 			if (Client.field11389.field7738 != -1 && !Client.field9213.requestdownload(Client.field11389.field7738, 0)) {
 				return 99;
 			}
@@ -437,17 +465,17 @@ public class Loading {
 			GameShell.field6594 = Timer.method6109();
 			Client.field10581 = new HardwarePlatform(true);
 		}
-		if (Statics.field3419 == LoadingStage.SETUP_STATIC_SPRITES) {
+		if (field3419 == LoadingStage.SETUP_STATIC_SPRITES) {
 			int var20 = DefaultSprites.method15381(Client.field10317) + Client.field7538.method6191(true);
-			int var21 = Statics.method14611() + Client.field7538.method6161();
+			int var21 = DefaultSprites.method14611() + Client.field7538.method6161();
 			if (var20 < var21) {
 				return var20 * 100 / var21;
 			}
 		}
-		if (Statics.field3419 == LoadingStage.field2914) {
+		if (field3419 == LoadingStage.field2914) {
 			WorldMap.method8506(Client.field10752, Client.field8332, Client.field8168, Client.field8145, Client.world.method7750(), Client.field5011, Client.field4241, Client.field7410, Client.field7410);
 		}
-		if (Statics.field3419 == LoadingStage.SETUP_VARC_SYSTEM) {
+		if (field3419 == LoadingStage.SETUP_VARC_SYSTEM) {
 			Client.field7228 = new ClientVariableManager(Client.field8911);
 			method9212();
 			Client.field1895 = TotpPreferences.method18618();
@@ -457,7 +485,7 @@ public class Loading {
 			Client.field8741.method6900(true, true);
 			Client.field10807 = true;
 		}
-		if (Statics.field3419 == LoadingStage.field2916 && Client.field11389.field7724 != -1) {
+		if (field3419 == LoadingStage.field2916 && Client.field11389.field7724 != -1) {
 			if (!Component.method5364(Client.field11389.field7724, null)) {
 				return 0;
 			}
@@ -472,25 +500,25 @@ public class Loading {
 				return 0;
 			}
 		}
-		if (Statics.field3419 == LoadingStage.field2917) {
+		if (field3419 == LoadingStage.field2917) {
 			Client.method7227(true);
 		}
-		if (Statics.field3419 == LoadingStage.field2903) {
-			Statics.field593.method4856();
+		if (field3419 == LoadingStage.field2903) {
+			field593.method4856();
 			try {
 				field2940.join();
 			} catch (InterruptedException var26) {
 				return 0;
 			}
-			Statics.field593 = null;
+			field593 = null;
 			field2940 = null;
-			Statics.field8522 = null;
-			Statics.field8532 = null;
-			Statics.field2841 = null;
+			field8522 = null;
+			field8532 = null;
+			field2841 = null;
 			field2939 = null;
-			Statics.field8540.remove(Js5Archive.LOADING_SCREENS);
-			Statics.field8540.remove(Js5Archive.LOADING_SPRITES);
-			Statics.field8540.remove(Js5Archive.LOADING_SPRITES_RAW);
+			Client.field8540.remove(Js5Archive.LOADING_SCREENS);
+			Client.field8540.remove(Js5Archive.LOADING_SPRITES);
+			Client.field8540.remove(Js5Archive.LOADING_SPRITES_RAW);
 			MainLoadingScreen.method271();
 			Client.field10779 = Client.field688.unknown6.method18740() == 1;
 			Client.field688.method18157(Client.field688.unknown6, 1);
@@ -519,6 +547,22 @@ public class Loading {
 		return method3584();
 	}
 
+	@ObfuscatedName("ab.p([BB)V")
+	public static void method987(byte[] arg0) {
+		Packet var1 = new Packet(arg0);
+		while (true) {
+			int var2 = var1.g1();
+			if (var2 == 0) {
+				return;
+			}
+			if (var2 == 1) {
+				EnvironmentManager.field7859 = var1.g2();
+			} else if (var2 == 10) {
+				var1.g2();
+			}
+		}
+	}
+
 	@ObfuscatedName("al.d([BB)V")
 	public static void method714(byte[] arg0) {
 		Packet var1 = new Packet(arg0);
@@ -542,8 +586,8 @@ public class Loading {
 
 	@ObfuscatedName("ss.r(B)V")
 	public static void method8005() {
-		if (Statics.field593 != null) {
-			Statics.field593.method4856();
+		if (field593 != null) {
+			field593.method4856();
 		}
 		if (field2940 == null) {
 			return;

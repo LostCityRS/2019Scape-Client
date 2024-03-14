@@ -41,7 +41,7 @@ public class ClientWatch {
 
 	@ObfuscatedName("cr.e(I)V")
 	public static void method1427() {
-		if (method5216()) {
+		if (NativeMouse.method5216()) {
 			NativeMouse.method17426(new NativeMouseLoggerNativeMouseListener());
 		}
 	}
@@ -102,23 +102,18 @@ public class ClientWatch {
 		}
 	}
 
-	@ObfuscatedName("ka.w(I)Z")
-	public static boolean method5216() {
-		try {
-			if (!NativeMouse.available()) {
-				return false;
+	@ObfuscatedName("wc.w(B)V")
+	public static void method9835() {
+		Queue var0 = field7946;
+		synchronized (field7946) {
+			while (true) {
+				NativeMouseEvent var1 = (NativeMouseEvent) field7946.poll();
+				if (var1 == null) {
+					return;
+				}
+				var1.method17835();
 			}
-		} catch (Throwable var2) {
-			return false;
 		}
-		if (NativeMouse.field11719 != null) {
-			throw new IllegalStateException("");
-		}
-		NativeMouse.field11719 = new NativeMouse();
-		Thread var1 = new Thread(new NativeMouseTask());
-		var1.setDaemon(true);
-		var1.start();
-		return true;
 	}
 
 	@ObfuscatedName("gd.l(I)V")

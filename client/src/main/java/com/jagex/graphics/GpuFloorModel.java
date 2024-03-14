@@ -4,13 +4,13 @@ import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.Algorithms;
+import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.HardShadow;
 import com.jagex.math.IntMath;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.nio.ByteBuffer;
 import java.util.Iterator;
@@ -568,7 +568,7 @@ public class GpuFloorModel extends FloorModel {
 				} else if (var64 > 126) {
 					var64 = 126;
 				}
-				var48 = Statics.field8150[var40 & 0xFF80 | var64];
+				var48 = ColourUtils.field8150[var40 & 0xFF80 | var64];
 				if ((this.field9491 & 0x7) == 0) {
 					float var65 = this.field9516.field10114[2] * var52 + this.field9516.field10114[0] * var50 + this.field9516.field10114[1] * var51;
 					var49 = this.field9516.field10122 + var65 * (var65 > 0.0F ? this.field9516.field10123 : this.field9516.field10124);
@@ -590,7 +590,7 @@ public class GpuFloorModel extends FloorModel {
 					} else if (var67 > 126) {
 						var67 = 126;
 					}
-					var68 = Statics.field8150[var41 & 0xFF80 | var67];
+					var68 = ColourUtils.field8150[var41 & 0xFF80 | var67];
 					if ((this.field9491 & 0x7) == 0) {
 						float var69 = this.field9516.field10114[2] * var52 + this.field9516.field10114[0] * var50 + this.field9516.field10114[1] * var51;
 						float var70 = this.field9516.field10122 + var49 * (var49 > 0.0F ? this.field9516.field10123 : this.field9516.field10124);

@@ -29,7 +29,6 @@ import com.jagex.graphics.Sprite;
 import com.jagex.js5.Js5;
 import com.jagex.js5.Js5WorldMapGroup;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -387,9 +386,9 @@ public class WorldMap {
 				var8 = 127;
 			}
 			int var9 = (arg3 + var7 & 0xFC00) + (var7 & 0x380) + var8;
-			var10 = Statics.field8149[ColourUtils.method4937(ColourUtils.method10223(var9, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method10223(var9, 96)) & 0xFFFF] | 0xFF000000;
 		} else if (var6 >= 0) {
-			var10 = Statics.field8149[ColourUtils.method4937(ColourUtils.method10223(arg1.method2043(var6).field1366, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method10223(arg1.method2043(var6).field1366, 96)) & 0xFFFF] | 0xFF000000;
 		} else if (var5.rgb == -1) {
 			var10 = 0;
 		} else {
@@ -401,7 +400,7 @@ public class WorldMap {
 				var12 = 127;
 			}
 			int var13 = (arg3 + var11 & 0xFC00) + (var11 & 0x380) + var12;
-			var10 = Statics.field8149[ColourUtils.method4937(ColourUtils.method10223(var13, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method10223(var13, 96)) & 0xFFFF] | 0xFF000000;
 		}
 		return var10;
 	}
@@ -756,7 +755,7 @@ public class WorldMap {
 							}
 							int var29 = (arg3 + var27 & 0xFC00) + (var27 & 0x380) + var28;
 							int var30 = field6812 * var23 + var10;
-							int var31 = Statics.field8149[ColourUtils.method4937(ColourUtils.method1625(var29, 96)) & 0xFFFF];
+							int var31 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method1625(var29, 96)) & 0xFFFF];
 							arg1[var30] = (byte) (var31 >> 16 & 0xFF);
 							arg2[var30] = (short) (var31 & 0xFFFF);
 						}
@@ -1079,7 +1078,7 @@ public class WorldMap {
 					}
 				} else {
 					int var14 = arg12 ? 0 : 1;
-					int var15 = Statics.method16462(arg9 >> 6 & 0x3, var13);
+					int var15 = WorldMapTileShapes.method16462(arg9 >> 6 & 0x3, var13);
 					int var16 = WorldMapTileShapes.method9049(var13);
 					method8585(arg0, arg1, arg2, arg3, arg4, arg5, arg5, arg7, field6854[arg8], field6799[var16 - 1][var15], field6840, var14);
 				}

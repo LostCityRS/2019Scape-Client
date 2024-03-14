@@ -6,7 +6,6 @@ import com.jagex.graphics.FontMetrics;
 import com.jagex.graphics.SpriteDataProvider;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("kz")
@@ -42,9 +41,9 @@ public abstract class LoadingScreenProgressDisplay implements LoadingScreenEleme
 		int var3 = this.field3027.field3159.method5375(this.field3027.field3160, Client.field10942) + this.field3027.field3162;
 		this.method5121(arg0, var2, var3);
 		this.method5122(arg0, var2, var3);
-		String var4 = Statics.field593.method4852();
+		String var4 = Loading.field593.method4852();
 		if (MonotonicTime.method3655() - this.field3031 > 10000L) {
-			var4 = var4 + " (" + Statics.field593.method4855().field2920 + ")";
+			var4 = var4 + " (" + Loading.field593.method4855().field2920 + ")";
 		}
 		this.field3029.method2683(var4, this.field3027.field3163 / 2 + var2, this.field3027.field3165 + this.field3027.field3160 / 2 + var3 + 4, this.field3027.field3164, -1);
 	}
@@ -69,12 +68,12 @@ public abstract class LoadingScreenProgressDisplay implements LoadingScreenEleme
 
 	@ObfuscatedName("kz.d(B)I")
 	public int method5123() {
-		int var1 = Statics.field593.method4851();
+		int var1 = Loading.field593.method4851();
 		int var2 = var1 * 100;
 		if (this.field3030 == var1 && var1 != 0) {
-			int var3 = Statics.field593.method4874();
+			int var3 = Loading.field593.method4874();
 			if (var3 > var1) {
-				long var4 = this.field3031 - Statics.field593.method4872();
+				long var4 = this.field3031 - Loading.field593.method4872();
 				if (var4 > 0L) {
 					long var6 = var4 * 10000L / (long) var1 * (long) (var3 - var1);
 					long var8 = (MonotonicTime.method3655() - this.field3031) * 10000L;

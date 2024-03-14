@@ -1,7 +1,6 @@
 package com.jagex.math;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.Random;
 
@@ -123,6 +122,12 @@ public class IntMath {
 		return var2;
 	}
 
+	@ObfuscatedName("ts.p(IIB)I")
+	public static int method8658(int arg0, int arg1) {
+		int var2 = arg0 >> 31 & arg1 - 1;
+		return ((arg0 >>> 31) + arg0) % arg1 + var2;
+	}
+
 	@ObfuscatedName("ach.d(Ljava/util/Random;II)I")
 	public static int method14985(Random arg0, int arg1) {
 		if (arg0 == null) {
@@ -147,7 +152,7 @@ public class IntMath {
 			do {
 				var5 = arg0.nextInt();
 			} while (var5 >= var4);
-			return Statics.method8658(var5, arg1);
+			return method8658(var5, arg1);
 		}
 	}
 }

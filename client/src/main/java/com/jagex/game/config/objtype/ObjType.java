@@ -20,7 +20,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.util.Arrays;
 
@@ -709,17 +708,17 @@ public class ObjType implements ConfigType {
 							if (var22 >= 10) {
 								break label133;
 							}
-							for (int var23 = 0; var23 < Statics.field10766[var22].length; var23++) {
-								if (arg3.field7895[var22] < Statics.field9259[var22][var23].length) {
-									var14.method1744(Statics.field10766[var22][var23], Statics.field9259[var22][var23][arg3.field7895[var22]]);
+							for (int var23 = 0; var23 < PlayerModel.field10766[var22].length; var23++) {
+								if (arg3.field7895[var22] < PlayerModel.field9259[var22][var23].length) {
+									var14.method1744(PlayerModel.field10766[var22][var23], PlayerModel.field9259[var22][var23][arg3.field7895[var22]]);
 								}
 							}
 							var22++;
 						}
 					}
-					for (int var21 = 0; var21 < Statics.field7577[var20].length; var21++) {
-						if (arg3.field7894[var20] < Statics.field1434[var20][var21].length) {
-							var14.method1859(Statics.field7577[var20][var21], Statics.field1434[var20][var21][arg3.field7894[var20]]);
+					for (int var21 = 0; var21 < PlayerModel.field7577[var20].length; var21++) {
+						if (arg3.field7894[var20] < PlayerModel.field1434[var20][var21].length) {
+							var14.method1859(PlayerModel.field7577[var20][var21], PlayerModel.field1434[var20][var21][arg3.field7894[var20]]);
 						}
 					}
 					var20++;
@@ -785,16 +784,16 @@ public class ObjType implements ConfigType {
 		}
 		if (arg8 != null) {
 			for (int var14 = 0; var14 < 10; var14++) {
-				for (int var15 = 0; var15 < Statics.field7577[var14].length; var15++) {
-					if (arg8.field7894[var14] < Statics.field1434[var14][var15].length) {
-						var11.method1943(Statics.field7577[var14][var15], Statics.field1434[var14][var15][arg8.field7894[var14]]);
+				for (int var15 = 0; var15 < PlayerModel.field7577[var14].length; var15++) {
+					if (arg8.field7894[var14] < PlayerModel.field1434[var14][var15].length) {
+						var11.method1943(PlayerModel.field7577[var14][var15], PlayerModel.field1434[var14][var15][arg8.field7894[var14]]);
 					}
 				}
 			}
 			for (int var16 = 0; var16 < 10; var16++) {
-				for (int var17 = 0; var17 < Statics.field10766[var16].length; var17++) {
-					if (arg8.field7895[var16] < Statics.field9259[var16][var17].length) {
-						var11.method1937(Statics.field10766[var16][var17], Statics.field9259[var16][var17][arg8.field7895[var16]]);
+				for (int var17 = 0; var17 < PlayerModel.field10766[var16].length; var17++) {
+					if (arg8.field7895[var16] < PlayerModel.field9259[var16][var17].length) {
+						var11.method1937(PlayerModel.field10766[var16][var17], PlayerModel.field9259[var16][var17][arg8.field7895[var16]]);
 					}
 				}
 			}
@@ -937,12 +936,17 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("jf.x(ILzt;Lws;I)Ljava/lang/String;")
 	public static String method4655(int arg0, Language arg1, GraphicsDefaults arg2) {
 		if (arg0 < 100000) {
-			return Statics.method5153(arg2.field7742) + arg0 + field8699;
+			return method5153(arg2.field7742) + arg0 + field8699;
 		} else if (arg0 < 10000000) {
-			return Statics.method5153(arg2.field7743) + arg0 / 1000 + LocalisedText.THOUSAND_SHORT.method15021(arg1) + field8699;
+			return method5153(arg2.field7743) + arg0 / 1000 + LocalisedText.THOUSAND_SHORT.method15021(arg1) + field8699;
 		} else {
-			return Statics.method5153(arg2.field7744) + arg0 / 1000000 + LocalisedText.MILLION_SHORT.method15021(arg1) + field8699;
+			return method5153(arg2.field7744) + arg0 / 1000000 + LocalisedText.MILLION_SHORT.method15021(arg1) + field8699;
 		}
+	}
+
+	@ObfuscatedName("ku.b(IB)Ljava/lang/String;")
+	public static String method5153(int arg0) {
+		return "<col=" + Integer.toHexString(arg0) + ">";
 	}
 
 	@ObfuscatedName("abv.h(ZLabw;I)Z")

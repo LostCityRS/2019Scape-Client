@@ -4,7 +4,6 @@ import com.jagex.game.client.JavaGraphicsRelated3;
 import com.jagex.graphics.GraphicsDeletable;
 import com.jagex.graphics.GraphicsRelated;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("apo")
 public class PureJavaSprite_Sub1 extends PureJavaSprite {
@@ -1334,14 +1333,14 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 		if (var3 == null) {
 			return;
 		}
-		if (Statics.field9357 == 0) {
-			if (Statics.field9375 == 0) {
-				int var4 = Statics.field9369;
+		if (PureJavaSprite.field9357 == 0) {
+			if (PureJavaSprite.field9375 == 0) {
+				int var4 = PureJavaSprite.field9369;
 				while (var4 < 0) {
-					int var5 = Statics.field9371;
-					int var6 = Statics.field9378;
-					int var7 = Statics.field9389;
-					int var8 = Statics.field9367;
+					int var5 = PureJavaSprite.field9371;
+					int var6 = PureJavaSprite.field9378;
+					int var7 = PureJavaSprite.field9389;
+					int var8 = PureJavaSprite.field9367;
 					if (var6 >= 0 && var7 >= 0 && var6 - (this.field9356 << 12) < 0 && var7 - (this.field9372 << 12) < 0) {
 						while (var8 < 0) {
 							this.method18947((var6 >> 12) + (var7 >> 12) * this.field9356, var5++, var3, arg0, arg1);
@@ -1349,285 +1348,285 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 						}
 					}
 					var4++;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
-			} else if (Statics.field9375 < 0) {
-				int var9 = Statics.field9369;
+			} else if (PureJavaSprite.field9375 < 0) {
+				int var9 = PureJavaSprite.field9369;
 				while (var9 < 0) {
-					int var10 = Statics.field9371;
-					int var11 = Statics.field9378;
-					int var12 = Statics.field9389 + Statics.field9381;
-					int var13 = Statics.field9367;
+					int var10 = PureJavaSprite.field9371;
+					int var11 = PureJavaSprite.field9378;
+					int var12 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+					int var13 = PureJavaSprite.field9367;
 					if (var11 >= 0 && var11 - (this.field9356 << 12) < 0) {
 						int var14;
 						if ((var14 = var12 - (this.field9372 << 12)) >= 0) {
-							int var15 = (Statics.field9375 - var14) / Statics.field9375;
+							int var15 = (PureJavaSprite.field9375 - var14) / PureJavaSprite.field9375;
 							var13 += var15;
-							var12 += Statics.field9375 * var15;
+							var12 += PureJavaSprite.field9375 * var15;
 							var10 += var15;
 						}
 						int var16;
-						if ((var16 = (var12 - Statics.field9375) / Statics.field9375) > var13) {
+						if ((var16 = (var12 - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var13) {
 							var13 = var16;
 						}
 						while (var13 < 0) {
 							this.method18947((var11 >> 12) + (var12 >> 12) * this.field9356, var10++, var3, arg0, arg1);
-							var12 += Statics.field9375;
+							var12 += PureJavaSprite.field9375;
 							var13++;
 						}
 					}
 					var9++;
-					Statics.field9378 += Statics.field9374;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9378 += PureJavaSprite.field9374;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
 			} else {
-				int var17 = Statics.field9369;
+				int var17 = PureJavaSprite.field9369;
 				while (var17 < 0) {
-					int var18 = Statics.field9371;
-					int var19 = Statics.field9378;
-					int var20 = Statics.field9389 + Statics.field9381;
-					int var21 = Statics.field9367;
+					int var18 = PureJavaSprite.field9371;
+					int var19 = PureJavaSprite.field9378;
+					int var20 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+					int var21 = PureJavaSprite.field9367;
 					if (var19 >= 0 && var19 - (this.field9356 << 12) < 0) {
 						if (var20 < 0) {
-							int var22 = (Statics.field9375 - 1 - var20) / Statics.field9375;
+							int var22 = (PureJavaSprite.field9375 - 1 - var20) / PureJavaSprite.field9375;
 							var21 += var22;
-							var20 += Statics.field9375 * var22;
+							var20 += PureJavaSprite.field9375 * var22;
 							var18 += var22;
 						}
 						int var23;
-						if ((var23 = (var20 + 1 - (this.field9372 << 12) - Statics.field9375) / Statics.field9375) > var21) {
+						if ((var23 = (var20 + 1 - (this.field9372 << 12) - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var21) {
 							var21 = var23;
 						}
 						while (var21 < 0) {
 							this.method18947((var19 >> 12) + (var20 >> 12) * this.field9356, var18++, var3, arg0, arg1);
-							var20 += Statics.field9375;
+							var20 += PureJavaSprite.field9375;
 							var21++;
 						}
 					}
 					var17++;
-					Statics.field9378 += Statics.field9374;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9378 += PureJavaSprite.field9374;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
 			}
-		} else if (Statics.field9357 < 0) {
-			if (Statics.field9375 == 0) {
-				int var24 = Statics.field9369;
+		} else if (PureJavaSprite.field9357 < 0) {
+			if (PureJavaSprite.field9375 == 0) {
+				int var24 = PureJavaSprite.field9369;
 				while (var24 < 0) {
-					int var25 = Statics.field9371;
-					int var26 = Statics.field9380 + Statics.field9378;
-					int var27 = Statics.field9389;
-					int var28 = Statics.field9367;
+					int var25 = PureJavaSprite.field9371;
+					int var26 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+					int var27 = PureJavaSprite.field9389;
+					int var28 = PureJavaSprite.field9367;
 					if (var27 >= 0 && var27 - (this.field9372 << 12) < 0) {
 						int var29;
 						if ((var29 = var26 - (this.field9356 << 12)) >= 0) {
-							int var30 = (Statics.field9357 - var29) / Statics.field9357;
+							int var30 = (PureJavaSprite.field9357 - var29) / PureJavaSprite.field9357;
 							var28 += var30;
-							var26 += Statics.field9357 * var30;
+							var26 += PureJavaSprite.field9357 * var30;
 							var25 += var30;
 						}
 						int var31;
-						if ((var31 = (var26 - Statics.field9357) / Statics.field9357) > var28) {
+						if ((var31 = (var26 - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var28) {
 							var28 = var31;
 						}
 						while (var28 < 0) {
 							this.method18947((var26 >> 12) + (var27 >> 12) * this.field9356, var25++, var3, arg0, arg1);
-							var26 += Statics.field9357;
+							var26 += PureJavaSprite.field9357;
 							var28++;
 						}
 					}
 					var24++;
-					Statics.field9389 += Statics.field9384;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9389 += PureJavaSprite.field9384;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
-			} else if (Statics.field9375 < 0) {
-				int var32 = Statics.field9369;
+			} else if (PureJavaSprite.field9375 < 0) {
+				int var32 = PureJavaSprite.field9369;
 				while (var32 < 0) {
-					int var33 = Statics.field9371;
-					int var34 = Statics.field9380 + Statics.field9378;
-					int var35 = Statics.field9389 + Statics.field9381;
-					int var36 = Statics.field9367;
+					int var33 = PureJavaSprite.field9371;
+					int var34 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+					int var35 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+					int var36 = PureJavaSprite.field9367;
 					int var37;
 					if ((var37 = var34 - (this.field9356 << 12)) >= 0) {
-						int var38 = (Statics.field9357 - var37) / Statics.field9357;
+						int var38 = (PureJavaSprite.field9357 - var37) / PureJavaSprite.field9357;
 						var36 += var38;
-						var34 += Statics.field9357 * var38;
-						var35 += Statics.field9375 * var38;
+						var34 += PureJavaSprite.field9357 * var38;
+						var35 += PureJavaSprite.field9375 * var38;
 						var33 += var38;
 					}
 					int var39;
-					if ((var39 = (var34 - Statics.field9357) / Statics.field9357) > var36) {
+					if ((var39 = (var34 - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var36) {
 						var36 = var39;
 					}
 					int var40;
 					if ((var40 = var35 - (this.field9372 << 12)) >= 0) {
-						int var41 = (Statics.field9375 - var40) / Statics.field9375;
+						int var41 = (PureJavaSprite.field9375 - var40) / PureJavaSprite.field9375;
 						var36 += var41;
-						var34 += Statics.field9357 * var41;
-						var35 += Statics.field9375 * var41;
+						var34 += PureJavaSprite.field9357 * var41;
+						var35 += PureJavaSprite.field9375 * var41;
 						var33 += var41;
 					}
 					int var42;
-					if ((var42 = (var35 - Statics.field9375) / Statics.field9375) > var36) {
+					if ((var42 = (var35 - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var36) {
 						var36 = var42;
 					}
 					while (var36 < 0) {
 						this.method18947((var34 >> 12) + (var35 >> 12) * this.field9356, var33++, var3, arg0, arg1);
-						var34 += Statics.field9357;
-						var35 += Statics.field9375;
+						var34 += PureJavaSprite.field9357;
+						var35 += PureJavaSprite.field9375;
 						var36++;
 					}
 					var32++;
-					Statics.field9378 += Statics.field9374;
-					Statics.field9389 += Statics.field9384;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9378 += PureJavaSprite.field9374;
+					PureJavaSprite.field9389 += PureJavaSprite.field9384;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
 			} else {
-				int var43 = Statics.field9369;
+				int var43 = PureJavaSprite.field9369;
 				while (var43 < 0) {
-					int var44 = Statics.field9371;
-					int var45 = Statics.field9380 + Statics.field9378;
-					int var46 = Statics.field9389 + Statics.field9381;
-					int var47 = Statics.field9367;
+					int var44 = PureJavaSprite.field9371;
+					int var45 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+					int var46 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+					int var47 = PureJavaSprite.field9367;
 					int var48;
 					if ((var48 = var45 - (this.field9356 << 12)) >= 0) {
-						int var49 = (Statics.field9357 - var48) / Statics.field9357;
+						int var49 = (PureJavaSprite.field9357 - var48) / PureJavaSprite.field9357;
 						var47 += var49;
-						var45 += Statics.field9357 * var49;
-						var46 += Statics.field9375 * var49;
+						var45 += PureJavaSprite.field9357 * var49;
+						var46 += PureJavaSprite.field9375 * var49;
 						var44 += var49;
 					}
 					int var50;
-					if ((var50 = (var45 - Statics.field9357) / Statics.field9357) > var47) {
+					if ((var50 = (var45 - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var47) {
 						var47 = var50;
 					}
 					if (var46 < 0) {
-						int var51 = (Statics.field9375 - 1 - var46) / Statics.field9375;
+						int var51 = (PureJavaSprite.field9375 - 1 - var46) / PureJavaSprite.field9375;
 						var47 += var51;
-						var45 += Statics.field9357 * var51;
-						var46 += Statics.field9375 * var51;
+						var45 += PureJavaSprite.field9357 * var51;
+						var46 += PureJavaSprite.field9375 * var51;
 						var44 += var51;
 					}
 					int var52;
-					if ((var52 = (var46 + 1 - (this.field9372 << 12) - Statics.field9375) / Statics.field9375) > var47) {
+					if ((var52 = (var46 + 1 - (this.field9372 << 12) - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var47) {
 						var47 = var52;
 					}
 					while (var47 < 0) {
 						this.method18947((var45 >> 12) + (var46 >> 12) * this.field9356, var44++, var3, arg0, arg1);
-						var45 += Statics.field9357;
-						var46 += Statics.field9375;
+						var45 += PureJavaSprite.field9357;
+						var46 += PureJavaSprite.field9375;
 						var47++;
 					}
 					var43++;
-					Statics.field9378 += Statics.field9374;
-					Statics.field9389 += Statics.field9384;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9378 += PureJavaSprite.field9374;
+					PureJavaSprite.field9389 += PureJavaSprite.field9384;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
 			}
-		} else if (Statics.field9375 == 0) {
-			int var53 = Statics.field9369;
+		} else if (PureJavaSprite.field9375 == 0) {
+			int var53 = PureJavaSprite.field9369;
 			while (var53 < 0) {
-				int var54 = Statics.field9371;
-				int var55 = Statics.field9380 + Statics.field9378;
-				int var56 = Statics.field9389;
-				int var57 = Statics.field9367;
+				int var54 = PureJavaSprite.field9371;
+				int var55 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+				int var56 = PureJavaSprite.field9389;
+				int var57 = PureJavaSprite.field9367;
 				if (var56 >= 0 && var56 - (this.field9372 << 12) < 0) {
 					if (var55 < 0) {
-						int var58 = (Statics.field9357 - 1 - var55) / Statics.field9357;
+						int var58 = (PureJavaSprite.field9357 - 1 - var55) / PureJavaSprite.field9357;
 						var57 += var58;
-						var55 += Statics.field9357 * var58;
+						var55 += PureJavaSprite.field9357 * var58;
 						var54 += var58;
 					}
 					int var59;
-					if ((var59 = (var55 + 1 - (this.field9356 << 12) - Statics.field9357) / Statics.field9357) > var57) {
+					if ((var59 = (var55 + 1 - (this.field9356 << 12) - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var57) {
 						var57 = var59;
 					}
 					while (var57 < 0) {
 						this.method18947((var55 >> 12) + (var56 >> 12) * this.field9356, var54++, var3, arg0, arg1);
-						var55 += Statics.field9357;
+						var55 += PureJavaSprite.field9357;
 						var57++;
 					}
 				}
 				var53++;
-				Statics.field9378 += Statics.field9374;
-				Statics.field9389 += Statics.field9384;
-				Statics.field9371 += Statics.field9370;
+				PureJavaSprite.field9378 += PureJavaSprite.field9374;
+				PureJavaSprite.field9389 += PureJavaSprite.field9384;
+				PureJavaSprite.field9371 += PureJavaSprite.field9370;
 			}
-		} else if (Statics.field9375 < 0) {
-			for (int var60 = Statics.field9369; var60 < 0; var60++) {
-				int var61 = Statics.field9371;
-				int var62 = Statics.field9380 + Statics.field9378;
-				int var63 = Statics.field9389 + Statics.field9381;
-				int var64 = Statics.field9367;
+		} else if (PureJavaSprite.field9375 < 0) {
+			for (int var60 = PureJavaSprite.field9369; var60 < 0; var60++) {
+				int var61 = PureJavaSprite.field9371;
+				int var62 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+				int var63 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+				int var64 = PureJavaSprite.field9367;
 				if (var62 < 0) {
-					int var65 = (Statics.field9357 - 1 - var62) / Statics.field9357;
+					int var65 = (PureJavaSprite.field9357 - 1 - var62) / PureJavaSprite.field9357;
 					var64 += var65;
-					var62 += Statics.field9357 * var65;
-					var63 += Statics.field9375 * var65;
+					var62 += PureJavaSprite.field9357 * var65;
+					var63 += PureJavaSprite.field9375 * var65;
 					var61 += var65;
 				}
 				int var66;
-				if ((var66 = (var62 + 1 - (this.field9356 << 12) - Statics.field9357) / Statics.field9357) > var64) {
+				if ((var66 = (var62 + 1 - (this.field9356 << 12) - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var64) {
 					var64 = var66;
 				}
 				int var67;
 				if ((var67 = var63 - (this.field9372 << 12)) >= 0) {
-					int var68 = (Statics.field9375 - var67) / Statics.field9375;
+					int var68 = (PureJavaSprite.field9375 - var67) / PureJavaSprite.field9375;
 					var64 += var68;
-					var62 += Statics.field9357 * var68;
-					var63 += Statics.field9375 * var68;
+					var62 += PureJavaSprite.field9357 * var68;
+					var63 += PureJavaSprite.field9375 * var68;
 					var61 += var68;
 				}
 				int var69;
-				if ((var69 = (var63 - Statics.field9375) / Statics.field9375) > var64) {
+				if ((var69 = (var63 - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var64) {
 					var64 = var69;
 				}
 				while (var64 < 0) {
 					this.method18947((var62 >> 12) + (var63 >> 12) * this.field9356, var61++, var3, arg0, arg1);
-					var62 += Statics.field9357;
-					var63 += Statics.field9375;
+					var62 += PureJavaSprite.field9357;
+					var63 += PureJavaSprite.field9375;
 					var64++;
 				}
-				Statics.field9378 += Statics.field9374;
-				Statics.field9389 += Statics.field9384;
-				Statics.field9371 += Statics.field9370;
+				PureJavaSprite.field9378 += PureJavaSprite.field9374;
+				PureJavaSprite.field9389 += PureJavaSprite.field9384;
+				PureJavaSprite.field9371 += PureJavaSprite.field9370;
 			}
 		} else {
-			for (int var70 = Statics.field9369; var70 < 0; var70++) {
-				int var71 = Statics.field9371;
-				int var72 = Statics.field9380 + Statics.field9378;
-				int var73 = Statics.field9389 + Statics.field9381;
-				int var74 = Statics.field9367;
+			for (int var70 = PureJavaSprite.field9369; var70 < 0; var70++) {
+				int var71 = PureJavaSprite.field9371;
+				int var72 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+				int var73 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+				int var74 = PureJavaSprite.field9367;
 				if (var72 < 0) {
-					int var75 = (Statics.field9357 - 1 - var72) / Statics.field9357;
+					int var75 = (PureJavaSprite.field9357 - 1 - var72) / PureJavaSprite.field9357;
 					var74 += var75;
-					var72 += Statics.field9357 * var75;
-					var73 += Statics.field9375 * var75;
+					var72 += PureJavaSprite.field9357 * var75;
+					var73 += PureJavaSprite.field9375 * var75;
 					var71 += var75;
 				}
 				int var76;
-				if ((var76 = (var72 + 1 - (this.field9356 << 12) - Statics.field9357) / Statics.field9357) > var74) {
+				if ((var76 = (var72 + 1 - (this.field9356 << 12) - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var74) {
 					var74 = var76;
 				}
 				if (var73 < 0) {
-					int var77 = (Statics.field9375 - 1 - var73) / Statics.field9375;
+					int var77 = (PureJavaSprite.field9375 - 1 - var73) / PureJavaSprite.field9375;
 					var74 += var77;
-					var72 += Statics.field9357 * var77;
-					var73 += Statics.field9375 * var77;
+					var72 += PureJavaSprite.field9357 * var77;
+					var73 += PureJavaSprite.field9375 * var77;
 					var71 += var77;
 				}
 				int var78;
-				if ((var78 = (var73 + 1 - (this.field9372 << 12) - Statics.field9375) / Statics.field9375) > var74) {
+				if ((var78 = (var73 + 1 - (this.field9372 << 12) - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var74) {
 					var74 = var78;
 				}
 				while (var74 < 0) {
 					this.method18947((var72 >> 12) + (var73 >> 12) * this.field9356, var71++, var3, arg0, arg1);
-					var72 += Statics.field9357;
-					var73 += Statics.field9375;
+					var72 += PureJavaSprite.field9357;
+					var73 += PureJavaSprite.field9375;
 					var74++;
 				}
-				Statics.field9378 += Statics.field9374;
-				Statics.field9389 += Statics.field9384;
-				Statics.field9371 += Statics.field9370;
+				PureJavaSprite.field9378 += PureJavaSprite.field9374;
+				PureJavaSprite.field9389 += PureJavaSprite.field9384;
+				PureJavaSprite.field9371 += PureJavaSprite.field9370;
 			}
 		}
 	}
@@ -1638,28 +1637,28 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 		if (var5 == null) {
 			return;
 		}
-		if (Statics.field9357 == 0) {
-			if (Statics.field9375 == 0) {
-				int var6 = Statics.field9369;
+		if (PureJavaSprite.field9357 == 0) {
+			if (PureJavaSprite.field9375 == 0) {
+				int var6 = PureJavaSprite.field9369;
 				while (var6 < 0) {
 					int var7 = arg3 + var6;
 					if (var7 >= 0) {
 						if (var7 >= arg0.length) {
 							return;
 						}
-						int var8 = Statics.field9371;
-						int var9 = Statics.field9378;
-						int var10 = Statics.field9389;
-						int var11 = Statics.field9367;
+						int var8 = PureJavaSprite.field9371;
+						int var9 = PureJavaSprite.field9378;
+						int var10 = PureJavaSprite.field9389;
+						int var11 = PureJavaSprite.field9367;
 						if (var9 >= 0 && var10 >= 0 && var9 - (this.field9356 << 12) < 0 && var10 - (this.field9372 << 12) < 0) {
 							int var12 = arg0[var7] - arg2;
 							int var13 = -arg1[var7];
-							int var14 = var12 - (var8 - Statics.field9371);
+							int var14 = var12 - (var8 - PureJavaSprite.field9371);
 							if (var14 > 0) {
 								var8 += var14;
 								var11 += var14;
-								var9 += Statics.field9357 * var14;
-								var10 += Statics.field9375 * var14;
+								var9 += PureJavaSprite.field9357 * var14;
+								var10 += PureJavaSprite.field9375 * var14;
 							} else {
 								var13 -= var14;
 							}
@@ -1678,40 +1677,40 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 						}
 					}
 					var6++;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
-			} else if (Statics.field9375 < 0) {
-				int var16 = Statics.field9369;
+			} else if (PureJavaSprite.field9375 < 0) {
+				int var16 = PureJavaSprite.field9369;
 				while (var16 < 0) {
 					int var17 = arg3 + var16;
 					if (var17 >= 0) {
 						if (var17 >= arg0.length) {
 							return;
 						}
-						int var18 = Statics.field9371;
-						int var19 = Statics.field9378;
-						int var20 = Statics.field9389 + Statics.field9381;
-						int var21 = Statics.field9367;
+						int var18 = PureJavaSprite.field9371;
+						int var19 = PureJavaSprite.field9378;
+						int var20 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+						int var21 = PureJavaSprite.field9367;
 						if (var19 >= 0 && var19 - (this.field9356 << 12) < 0) {
 							int var22;
 							if ((var22 = var20 - (this.field9372 << 12)) >= 0) {
-								int var23 = (Statics.field9375 - var22) / Statics.field9375;
+								int var23 = (PureJavaSprite.field9375 - var22) / PureJavaSprite.field9375;
 								var21 += var23;
-								var20 += Statics.field9375 * var23;
+								var20 += PureJavaSprite.field9375 * var23;
 								var18 += var23;
 							}
 							int var24;
-							if ((var24 = (var20 - Statics.field9375) / Statics.field9375) > var21) {
+							if ((var24 = (var20 - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var21) {
 								var21 = var24;
 							}
 							int var25 = arg0[var17] - arg2;
 							int var26 = -arg1[var17];
-							int var27 = var25 - (var18 - Statics.field9371);
+							int var27 = var25 - (var18 - PureJavaSprite.field9371);
 							if (var27 > 0) {
 								var18 += var27;
 								var21 += var27;
-								var19 += Statics.field9357 * var27;
-								var20 += Statics.field9375 * var27;
+								var19 += PureJavaSprite.field9357 * var27;
+								var20 += PureJavaSprite.field9375 * var27;
 							} else {
 								var26 -= var27;
 							}
@@ -1725,46 +1724,46 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 								} else {
 									var5[var18++] = var28;
 								}
-								var20 += Statics.field9375;
+								var20 += PureJavaSprite.field9375;
 								var21++;
 							}
 						}
 					}
 					var16++;
-					Statics.field9378 += Statics.field9374;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9378 += PureJavaSprite.field9374;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
 			} else {
-				int var29 = Statics.field9369;
+				int var29 = PureJavaSprite.field9369;
 				while (var29 < 0) {
 					int var30 = arg3 + var29;
 					if (var30 >= 0) {
 						if (var30 >= arg0.length) {
 							return;
 						}
-						int var31 = Statics.field9371;
-						int var32 = Statics.field9378;
-						int var33 = Statics.field9389 + Statics.field9381;
-						int var34 = Statics.field9367;
+						int var31 = PureJavaSprite.field9371;
+						int var32 = PureJavaSprite.field9378;
+						int var33 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+						int var34 = PureJavaSprite.field9367;
 						if (var32 >= 0 && var32 - (this.field9356 << 12) < 0) {
 							if (var33 < 0) {
-								int var35 = (Statics.field9375 - 1 - var33) / Statics.field9375;
+								int var35 = (PureJavaSprite.field9375 - 1 - var33) / PureJavaSprite.field9375;
 								var34 += var35;
-								var33 += Statics.field9375 * var35;
+								var33 += PureJavaSprite.field9375 * var35;
 								var31 += var35;
 							}
 							int var36;
-							if ((var36 = (var33 + 1 - (this.field9372 << 12) - Statics.field9375) / Statics.field9375) > var34) {
+							if ((var36 = (var33 + 1 - (this.field9372 << 12) - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var34) {
 								var34 = var36;
 							}
 							int var37 = arg0[var30] - arg2;
 							int var38 = -arg1[var30];
-							int var39 = var37 - (var31 - Statics.field9371);
+							int var39 = var37 - (var31 - PureJavaSprite.field9371);
 							if (var39 > 0) {
 								var31 += var39;
 								var34 += var39;
-								var32 += Statics.field9357 * var39;
-								var33 += Statics.field9375 * var39;
+								var32 += PureJavaSprite.field9357 * var39;
+								var33 += PureJavaSprite.field9375 * var39;
 							} else {
 								var38 -= var39;
 							}
@@ -1778,49 +1777,49 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 								} else {
 									var5[var31++] = var40;
 								}
-								var33 += Statics.field9375;
+								var33 += PureJavaSprite.field9375;
 								var34++;
 							}
 						}
 					}
 					var29++;
-					Statics.field9378 += Statics.field9374;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9378 += PureJavaSprite.field9374;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
 			}
-		} else if (Statics.field9357 < 0) {
-			if (Statics.field9375 == 0) {
-				int var41 = Statics.field9369;
+		} else if (PureJavaSprite.field9357 < 0) {
+			if (PureJavaSprite.field9375 == 0) {
+				int var41 = PureJavaSprite.field9369;
 				while (var41 < 0) {
 					int var42 = arg3 + var41;
 					if (var42 >= 0) {
 						if (var42 >= arg0.length) {
 							return;
 						}
-						int var43 = Statics.field9371;
-						int var44 = Statics.field9380 + Statics.field9378;
-						int var45 = Statics.field9389;
-						int var46 = Statics.field9367;
+						int var43 = PureJavaSprite.field9371;
+						int var44 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+						int var45 = PureJavaSprite.field9389;
+						int var46 = PureJavaSprite.field9367;
 						if (var45 >= 0 && var45 - (this.field9372 << 12) < 0) {
 							int var47;
 							if ((var47 = var44 - (this.field9356 << 12)) >= 0) {
-								int var48 = (Statics.field9357 - var47) / Statics.field9357;
+								int var48 = (PureJavaSprite.field9357 - var47) / PureJavaSprite.field9357;
 								var46 += var48;
-								var44 += Statics.field9357 * var48;
+								var44 += PureJavaSprite.field9357 * var48;
 								var43 += var48;
 							}
 							int var49;
-							if ((var49 = (var44 - Statics.field9357) / Statics.field9357) > var46) {
+							if ((var49 = (var44 - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var46) {
 								var46 = var49;
 							}
 							int var50 = arg0[var42] - arg2;
 							int var51 = -arg1[var42];
-							int var52 = var50 - (var43 - Statics.field9371);
+							int var52 = var50 - (var43 - PureJavaSprite.field9371);
 							if (var52 > 0) {
 								var43 += var52;
 								var46 += var52;
-								var44 += Statics.field9357 * var52;
-								var45 += Statics.field9375 * var52;
+								var44 += PureJavaSprite.field9357 * var52;
+								var45 += PureJavaSprite.field9375 * var52;
 							} else {
 								var51 -= var52;
 							}
@@ -1834,59 +1833,59 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 								} else {
 									var5[var43++] = var53;
 								}
-								var44 += Statics.field9357;
+								var44 += PureJavaSprite.field9357;
 								var46++;
 							}
 						}
 					}
 					var41++;
-					Statics.field9389 += Statics.field9384;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9389 += PureJavaSprite.field9384;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
-			} else if (Statics.field9375 < 0) {
-				int var54 = Statics.field9369;
+			} else if (PureJavaSprite.field9375 < 0) {
+				int var54 = PureJavaSprite.field9369;
 				while (var54 < 0) {
 					int var55 = arg3 + var54;
 					if (var55 >= 0) {
 						if (var55 >= arg0.length) {
 							return;
 						}
-						int var56 = Statics.field9371;
-						int var57 = Statics.field9380 + Statics.field9378;
-						int var58 = Statics.field9389 + Statics.field9381;
-						int var59 = Statics.field9367;
+						int var56 = PureJavaSprite.field9371;
+						int var57 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+						int var58 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+						int var59 = PureJavaSprite.field9367;
 						int var60;
 						if ((var60 = var57 - (this.field9356 << 12)) >= 0) {
-							int var61 = (Statics.field9357 - var60) / Statics.field9357;
+							int var61 = (PureJavaSprite.field9357 - var60) / PureJavaSprite.field9357;
 							var59 += var61;
-							var57 += Statics.field9357 * var61;
-							var58 += Statics.field9375 * var61;
+							var57 += PureJavaSprite.field9357 * var61;
+							var58 += PureJavaSprite.field9375 * var61;
 							var56 += var61;
 						}
 						int var62;
-						if ((var62 = (var57 - Statics.field9357) / Statics.field9357) > var59) {
+						if ((var62 = (var57 - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var59) {
 							var59 = var62;
 						}
 						int var63;
 						if ((var63 = var58 - (this.field9372 << 12)) >= 0) {
-							int var64 = (Statics.field9375 - var63) / Statics.field9375;
+							int var64 = (PureJavaSprite.field9375 - var63) / PureJavaSprite.field9375;
 							var59 += var64;
-							var57 += Statics.field9357 * var64;
-							var58 += Statics.field9375 * var64;
+							var57 += PureJavaSprite.field9357 * var64;
+							var58 += PureJavaSprite.field9375 * var64;
 							var56 += var64;
 						}
 						int var65;
-						if ((var65 = (var58 - Statics.field9375) / Statics.field9375) > var59) {
+						if ((var65 = (var58 - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var59) {
 							var59 = var65;
 						}
 						int var66 = arg0[var55] - arg2;
 						int var67 = -arg1[var55];
-						int var68 = var66 - (var56 - Statics.field9371);
+						int var68 = var66 - (var56 - PureJavaSprite.field9371);
 						if (var68 > 0) {
 							var56 += var68;
 							var59 += var68;
-							var57 += Statics.field9357 * var68;
-							var58 += Statics.field9375 * var68;
+							var57 += PureJavaSprite.field9357 * var68;
+							var58 += PureJavaSprite.field9375 * var68;
 						} else {
 							var67 -= var68;
 						}
@@ -1900,59 +1899,59 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 							} else {
 								var5[var56++] = var69;
 							}
-							var57 += Statics.field9357;
-							var58 += Statics.field9375;
+							var57 += PureJavaSprite.field9357;
+							var58 += PureJavaSprite.field9375;
 							var59++;
 						}
 					}
 					var54++;
-					Statics.field9378 += Statics.field9374;
-					Statics.field9389 += Statics.field9384;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9378 += PureJavaSprite.field9374;
+					PureJavaSprite.field9389 += PureJavaSprite.field9384;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
 			} else {
-				int var70 = Statics.field9369;
+				int var70 = PureJavaSprite.field9369;
 				while (var70 < 0) {
 					int var71 = arg3 + var70;
 					if (var71 >= 0) {
 						if (var71 >= arg0.length) {
 							return;
 						}
-						int var72 = Statics.field9371;
-						int var73 = Statics.field9380 + Statics.field9378;
-						int var74 = Statics.field9389 + Statics.field9381;
-						int var75 = Statics.field9367;
+						int var72 = PureJavaSprite.field9371;
+						int var73 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+						int var74 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+						int var75 = PureJavaSprite.field9367;
 						int var76;
 						if ((var76 = var73 - (this.field9356 << 12)) >= 0) {
-							int var77 = (Statics.field9357 - var76) / Statics.field9357;
+							int var77 = (PureJavaSprite.field9357 - var76) / PureJavaSprite.field9357;
 							var75 += var77;
-							var73 += Statics.field9357 * var77;
-							var74 += Statics.field9375 * var77;
+							var73 += PureJavaSprite.field9357 * var77;
+							var74 += PureJavaSprite.field9375 * var77;
 							var72 += var77;
 						}
 						int var78;
-						if ((var78 = (var73 - Statics.field9357) / Statics.field9357) > var75) {
+						if ((var78 = (var73 - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var75) {
 							var75 = var78;
 						}
 						if (var74 < 0) {
-							int var79 = (Statics.field9375 - 1 - var74) / Statics.field9375;
+							int var79 = (PureJavaSprite.field9375 - 1 - var74) / PureJavaSprite.field9375;
 							var75 += var79;
-							var73 += Statics.field9357 * var79;
-							var74 += Statics.field9375 * var79;
+							var73 += PureJavaSprite.field9357 * var79;
+							var74 += PureJavaSprite.field9375 * var79;
 							var72 += var79;
 						}
 						int var80;
-						if ((var80 = (var74 + 1 - (this.field9372 << 12) - Statics.field9375) / Statics.field9375) > var75) {
+						if ((var80 = (var74 + 1 - (this.field9372 << 12) - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var75) {
 							var75 = var80;
 						}
 						int var81 = arg0[var71] - arg2;
 						int var82 = -arg1[var71];
-						int var83 = var81 - (var72 - Statics.field9371);
+						int var83 = var81 - (var72 - PureJavaSprite.field9371);
 						if (var83 > 0) {
 							var72 += var83;
 							var75 += var83;
-							var73 += Statics.field9357 * var83;
-							var74 += Statics.field9375 * var83;
+							var73 += PureJavaSprite.field9357 * var83;
+							var74 += PureJavaSprite.field9375 * var83;
 						} else {
 							var82 -= var83;
 						}
@@ -1966,48 +1965,48 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 							} else {
 								var5[var72++] = var84;
 							}
-							var73 += Statics.field9357;
-							var74 += Statics.field9375;
+							var73 += PureJavaSprite.field9357;
+							var74 += PureJavaSprite.field9375;
 							var75++;
 						}
 					}
 					var70++;
-					Statics.field9378 += Statics.field9374;
-					Statics.field9389 += Statics.field9384;
-					Statics.field9371 += Statics.field9370;
+					PureJavaSprite.field9378 += PureJavaSprite.field9374;
+					PureJavaSprite.field9389 += PureJavaSprite.field9384;
+					PureJavaSprite.field9371 += PureJavaSprite.field9370;
 				}
 			}
-		} else if (Statics.field9375 == 0) {
-			int var85 = Statics.field9369;
+		} else if (PureJavaSprite.field9375 == 0) {
+			int var85 = PureJavaSprite.field9369;
 			while (var85 < 0) {
 				int var86 = arg3 + var85;
 				if (var86 >= 0) {
 					if (var86 >= arg0.length) {
 						return;
 					}
-					int var87 = Statics.field9371;
-					int var88 = Statics.field9380 + Statics.field9378;
-					int var89 = Statics.field9389;
-					int var90 = Statics.field9367;
+					int var87 = PureJavaSprite.field9371;
+					int var88 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+					int var89 = PureJavaSprite.field9389;
+					int var90 = PureJavaSprite.field9367;
 					if (var89 >= 0 && var89 - (this.field9372 << 12) < 0) {
 						if (var88 < 0) {
-							int var91 = (Statics.field9357 - 1 - var88) / Statics.field9357;
+							int var91 = (PureJavaSprite.field9357 - 1 - var88) / PureJavaSprite.field9357;
 							var90 += var91;
-							var88 += Statics.field9357 * var91;
+							var88 += PureJavaSprite.field9357 * var91;
 							var87 += var91;
 						}
 						int var92;
-						if ((var92 = (var88 + 1 - (this.field9356 << 12) - Statics.field9357) / Statics.field9357) > var90) {
+						if ((var92 = (var88 + 1 - (this.field9356 << 12) - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var90) {
 							var90 = var92;
 						}
 						int var93 = arg0[var86] - arg2;
 						int var94 = -arg1[var86];
-						int var95 = var93 - (var87 - Statics.field9371);
+						int var95 = var93 - (var87 - PureJavaSprite.field9371);
 						if (var95 > 0) {
 							var87 += var95;
 							var90 += var95;
-							var88 += Statics.field9357 * var95;
-							var89 += Statics.field9375 * var95;
+							var88 += PureJavaSprite.field9357 * var95;
+							var89 += PureJavaSprite.field9375 * var95;
 						} else {
 							var94 -= var95;
 						}
@@ -2021,59 +2020,59 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 							} else {
 								var5[var87++] = var96;
 							}
-							var88 += Statics.field9357;
+							var88 += PureJavaSprite.field9357;
 							var90++;
 						}
 					}
 				}
 				var85++;
-				Statics.field9378 += Statics.field9374;
-				Statics.field9389 += Statics.field9384;
-				Statics.field9371 += Statics.field9370;
+				PureJavaSprite.field9378 += PureJavaSprite.field9374;
+				PureJavaSprite.field9389 += PureJavaSprite.field9384;
+				PureJavaSprite.field9371 += PureJavaSprite.field9370;
 			}
-		} else if (Statics.field9375 < 0) {
-			int var97 = Statics.field9369;
+		} else if (PureJavaSprite.field9375 < 0) {
+			int var97 = PureJavaSprite.field9369;
 			while (var97 < 0) {
 				int var98 = arg3 + var97;
 				if (var98 >= 0) {
 					if (var98 >= arg0.length) {
 						return;
 					}
-					int var99 = Statics.field9371;
-					int var100 = Statics.field9380 + Statics.field9378;
-					int var101 = Statics.field9389 + Statics.field9381;
-					int var102 = Statics.field9367;
+					int var99 = PureJavaSprite.field9371;
+					int var100 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+					int var101 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+					int var102 = PureJavaSprite.field9367;
 					if (var100 < 0) {
-						int var103 = (Statics.field9357 - 1 - var100) / Statics.field9357;
+						int var103 = (PureJavaSprite.field9357 - 1 - var100) / PureJavaSprite.field9357;
 						var102 += var103;
-						var100 += Statics.field9357 * var103;
-						var101 += Statics.field9375 * var103;
+						var100 += PureJavaSprite.field9357 * var103;
+						var101 += PureJavaSprite.field9375 * var103;
 						var99 += var103;
 					}
 					int var104;
-					if ((var104 = (var100 + 1 - (this.field9356 << 12) - Statics.field9357) / Statics.field9357) > var102) {
+					if ((var104 = (var100 + 1 - (this.field9356 << 12) - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var102) {
 						var102 = var104;
 					}
 					int var105;
 					if ((var105 = var101 - (this.field9372 << 12)) >= 0) {
-						int var106 = (Statics.field9375 - var105) / Statics.field9375;
+						int var106 = (PureJavaSprite.field9375 - var105) / PureJavaSprite.field9375;
 						var102 += var106;
-						var100 += Statics.field9357 * var106;
-						var101 += Statics.field9375 * var106;
+						var100 += PureJavaSprite.field9357 * var106;
+						var101 += PureJavaSprite.field9375 * var106;
 						var99 += var106;
 					}
 					int var107;
-					if ((var107 = (var101 - Statics.field9375) / Statics.field9375) > var102) {
+					if ((var107 = (var101 - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var102) {
 						var102 = var107;
 					}
 					int var108 = arg0[var98] - arg2;
 					int var109 = -arg1[var98];
-					int var110 = var108 - (var99 - Statics.field9371);
+					int var110 = var108 - (var99 - PureJavaSprite.field9371);
 					if (var110 > 0) {
 						var99 += var110;
 						var102 += var110;
-						var100 += Statics.field9357 * var110;
-						var101 += Statics.field9375 * var110;
+						var100 += PureJavaSprite.field9357 * var110;
+						var101 += PureJavaSprite.field9375 * var110;
 					} else {
 						var109 -= var110;
 					}
@@ -2087,58 +2086,58 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 						} else {
 							var5[var99++] = var111;
 						}
-						var100 += Statics.field9357;
-						var101 += Statics.field9375;
+						var100 += PureJavaSprite.field9357;
+						var101 += PureJavaSprite.field9375;
 						var102++;
 					}
 				}
 				var97++;
-				Statics.field9378 += Statics.field9374;
-				Statics.field9389 += Statics.field9384;
-				Statics.field9371 += Statics.field9370;
+				PureJavaSprite.field9378 += PureJavaSprite.field9374;
+				PureJavaSprite.field9389 += PureJavaSprite.field9384;
+				PureJavaSprite.field9371 += PureJavaSprite.field9370;
 			}
 		} else {
-			int var112 = Statics.field9369;
+			int var112 = PureJavaSprite.field9369;
 			while (var112 < 0) {
 				int var113 = arg3 + var112;
 				if (var113 >= 0) {
 					if (var113 >= arg0.length) {
 						return;
 					}
-					int var114 = Statics.field9371;
-					int var115 = Statics.field9380 + Statics.field9378;
-					int var116 = Statics.field9389 + Statics.field9381;
-					int var117 = Statics.field9367;
+					int var114 = PureJavaSprite.field9371;
+					int var115 = PureJavaSprite.field9380 + PureJavaSprite.field9378;
+					int var116 = PureJavaSprite.field9389 + PureJavaSprite.field9381;
+					int var117 = PureJavaSprite.field9367;
 					if (var115 < 0) {
-						int var118 = (Statics.field9357 - 1 - var115) / Statics.field9357;
+						int var118 = (PureJavaSprite.field9357 - 1 - var115) / PureJavaSprite.field9357;
 						var117 += var118;
-						var115 += Statics.field9357 * var118;
-						var116 += Statics.field9375 * var118;
+						var115 += PureJavaSprite.field9357 * var118;
+						var116 += PureJavaSprite.field9375 * var118;
 						var114 += var118;
 					}
 					int var119;
-					if ((var119 = (var115 + 1 - (this.field9356 << 12) - Statics.field9357) / Statics.field9357) > var117) {
+					if ((var119 = (var115 + 1 - (this.field9356 << 12) - PureJavaSprite.field9357) / PureJavaSprite.field9357) > var117) {
 						var117 = var119;
 					}
 					if (var116 < 0) {
-						int var120 = (Statics.field9375 - 1 - var116) / Statics.field9375;
+						int var120 = (PureJavaSprite.field9375 - 1 - var116) / PureJavaSprite.field9375;
 						var117 += var120;
-						var115 += Statics.field9357 * var120;
-						var116 += Statics.field9375 * var120;
+						var115 += PureJavaSprite.field9357 * var120;
+						var116 += PureJavaSprite.field9375 * var120;
 						var114 += var120;
 					}
 					int var121;
-					if ((var121 = (var116 + 1 - (this.field9372 << 12) - Statics.field9375) / Statics.field9375) > var117) {
+					if ((var121 = (var116 + 1 - (this.field9372 << 12) - PureJavaSprite.field9375) / PureJavaSprite.field9375) > var117) {
 						var117 = var121;
 					}
 					int var122 = arg0[var113] - arg2;
 					int var123 = -arg1[var113];
-					int var124 = var122 - (var114 - Statics.field9371);
+					int var124 = var122 - (var114 - PureJavaSprite.field9371);
 					if (var124 > 0) {
 						var114 += var124;
 						var117 += var124;
-						var115 += Statics.field9357 * var124;
-						var116 += Statics.field9375 * var124;
+						var115 += PureJavaSprite.field9357 * var124;
+						var116 += PureJavaSprite.field9375 * var124;
 					} else {
 						var123 -= var124;
 					}
@@ -2152,15 +2151,15 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 						} else {
 							var5[var114++] = var125;
 						}
-						var115 += Statics.field9357;
-						var116 += Statics.field9375;
+						var115 += PureJavaSprite.field9357;
+						var116 += PureJavaSprite.field9375;
 						var117++;
 					}
 				}
 				var112++;
-				Statics.field9378 += Statics.field9374;
-				Statics.field9389 += Statics.field9384;
-				Statics.field9371 += Statics.field9370;
+				PureJavaSprite.field9378 += PureJavaSprite.field9374;
+				PureJavaSprite.field9389 += PureJavaSprite.field9384;
+				PureJavaSprite.field9371 += PureJavaSprite.field9370;
 			}
 		}
 	}
@@ -2185,7 +2184,7 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 					var10001 = arg0;
 					var74 = arg0 + 1;
 					int var10 = this.field11904[var10001];
-					int var11 = Statics.field9361;
+					int var11 = PureJavaSprite.field9361;
 					int var12 = var10 + var11;
 					int var13 = (var10 & 0xFF00FF) + (var11 & 0xFF00FF);
 					int var14 = (var12 - var13 & 0x10000) + (var13 & 0x1000100);
@@ -2227,7 +2226,7 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 				}
 			} else if (arg3 == 3) {
 				int var56 = this.field11904[arg0];
-				int var57 = Statics.field9361;
+				int var57 = PureJavaSprite.field9361;
 				int var58 = var56 + var57;
 				int var59 = (var56 & 0xFF00FF) + (var57 & 0xFF00FF);
 				int var60 = (var58 - var59 & 0x10000) + (var59 & 0x1000100);
@@ -2258,8 +2257,8 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 		} else if (arg3 == 0) {
 			int var19 = this.field11904[arg0];
 			if (var19 != 0) {
-				if ((Statics.field9361 & 0xFFFFFF) == 16777215) {
-					int var20 = Statics.field9361 >>> 24;
+				if ((PureJavaSprite.field9361 & 0xFFFFFF) == 16777215) {
+					int var20 = PureJavaSprite.field9361 >>> 24;
 					int var21 = 256 - var20;
 					int var22 = arg2[arg1];
 					arg2[arg1] = ((var19 & 0xFF00FF) * var20 + (var22 & 0xFF00FF) * var21 & 0xFF00FF00) + ((var19 & 0xFF00) * var20 + (var22 & 0xFF00) * var21 & 0xFF0000) >> 8;
@@ -2279,7 +2278,7 @@ public class PureJavaSprite_Sub1 extends PureJavaSprite {
 			}
 		} else if (arg3 == 3) {
 			int var31 = this.field11904[arg0];
-			int var32 = Statics.field9361;
+			int var32 = PureJavaSprite.field9361;
 			int var33 = var31 + var32;
 			int var34 = (var31 & 0xFF00FF) + (var32 & 0xFF00FF);
 			int var35 = (var33 - var34 & 0x10000) + (var34 & 0x1000100);

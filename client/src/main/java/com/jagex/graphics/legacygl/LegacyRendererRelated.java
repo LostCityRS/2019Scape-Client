@@ -6,7 +6,6 @@ import com.jagex.graphics.Particle;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaggl.OpenGL;
 
 @ObfuscatedName("cu")
@@ -62,6 +61,9 @@ public class LegacyRendererRelated {
 
 	@ObfuscatedName("cu.y")
 	public int field1133 = 0;
+
+	@ObfuscatedName("cu.q")
+	public static float field1137;
 
 	@ObfuscatedName("cu.e(Lafa;)V")
 	public void method1323(LegacyOpenGLRenderer arg0) {
@@ -153,8 +155,8 @@ public class LegacyRendererRelated {
 				} else {
 					arg0.method15774(-1);
 				}
-				if (var19 && Statics.field1137 != arg0.field9946) {
-					arg0.method2222(Statics.field1137);
+				if (var19 && field1137 != arg0.field9946) {
+					arg0.method2222(field1137);
 				} else if (arg0.field9946 != 1.0F) {
 					arg0.method2222(1.0F);
 				}
@@ -579,7 +581,7 @@ public class LegacyRendererRelated {
 
 	@ObfuscatedName("cu.k(Lafa;)V")
 	public void method1326(LegacyOpenGLRenderer arg0) {
-		Statics.field1137 = arg0.field9946;
+		field1137 = arg0.field9946;
 		arg0.method15773();
 		OpenGL.glDisable(16384);
 		OpenGL.glDisable(16385);
@@ -592,8 +594,8 @@ public class LegacyRendererRelated {
 		arg0.method15789(true);
 		OpenGL.glEnable(16384);
 		OpenGL.glEnable(16385);
-		if (Statics.field1137 != arg0.field9946) {
-			arg0.method2222(Statics.field1137);
+		if (field1137 != arg0.field9946) {
+			arg0.method2222(field1137);
 		}
 	}
 }

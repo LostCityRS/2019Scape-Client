@@ -36,6 +36,17 @@ public class DualIterableQueue implements Iterable {
 		arg0.field11439.field11438 = arg0;
 	}
 
+	@ObfuscatedName("vj.m(Laky;Laky;I)V")
+	public static void method9574(SecondaryNode arg0, SecondaryNode arg1) {
+		if (arg0.field11438 != null) {
+			arg0.method17806();
+		}
+		arg0.field11438 = arg1.field11438;
+		arg0.field11439 = arg1;
+		arg0.field11438.field11439 = arg0;
+		arg0.field11439.field11438 = arg0;
+	}
+
 	@ObfuscatedName("xg.k(Laky;Laky;I)V")
 	public static void method10144(SecondaryNode arg0, SecondaryNode arg1) {
 		if (arg0.field11438 != null) {

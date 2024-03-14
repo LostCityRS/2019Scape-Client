@@ -2,7 +2,6 @@ package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("agf")
 public class LocCreateCutsceneAction extends CutsceneAction {
@@ -34,6 +33,6 @@ public class LocCreateCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agf.n(I)V")
 	public void method2890() {
-		Statics.field7317[this.field10306].method2847(this.field10309, this.field10307, this.field10308, this.field10310);
+		CutsceneManager.field7317[this.field10306].method2847(this.field10309, this.field10307, this.field10308, this.field10310);
 	}
 }

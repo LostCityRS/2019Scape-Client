@@ -5,7 +5,6 @@ import com.jagex.game.world.entity.Scene;
 import com.jagex.game.world.entity.Tile;
 import com.jagex.graphics.scenegraph.WallLayerEntity;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("um")
 public class OcclusionManager {
@@ -75,6 +74,9 @@ public class OcclusionManager {
 
 	@ObfuscatedName("um.j")
 	public int[] field7032;
+
+	@ObfuscatedName("um.t")
+	public static Renderer field7041;
 
 	@ObfuscatedName("um.ae")
 	public final float[] field7037 = new float[3];
@@ -275,7 +277,7 @@ public class OcclusionManager {
 
 	@ObfuscatedName("um.w(Ldh;I)V")
 	public void method8923(Renderer arg0, int arg1) {
-		Statics.field7041 = arg0;
+		field7041 = arg0;
 		if (!this.field7031 || !this.field7017) {
 			this.field7033 = 0;
 			return;
@@ -283,7 +285,7 @@ public class OcclusionManager {
 		if (this.field7046) {
 			this.field7038.field6912.method14971();
 		}
-		Statics.field7041.method2134(this.field7043);
+		field7041.method2134(this.field7043);
 		if ((int) ((float) this.field7043[0] / 3.0F) != this.field7044 || (int) ((float) this.field7043[1] / 3.0F) != this.field7045) {
 			this.field7044 = (int) ((float) this.field7043[0] / 3.0F);
 			this.field7045 = (int) ((float) this.field7043[1] / 3.0F);
@@ -291,13 +293,13 @@ public class OcclusionManager {
 		}
 		this.field7033 = 0;
 		for (int var3 = 0; var3 < this.field7028; var3++) {
-			this.method8918(Statics.field7041, this.field7022[var3], arg1);
+			this.method8918(field7041, this.field7022[var3], arg1);
 		}
 		for (int var4 = 0; var4 < this.field7029; var4++) {
-			this.method8918(Statics.field7041, this.field7030[var4], arg1);
+			this.method8918(field7041, this.field7030[var4], arg1);
 		}
 		for (int var5 = 0; var5 < this.field7023; var5++) {
-			this.method8918(Statics.field7041, this.field7021[var5], arg1);
+			this.method8918(field7041, this.field7021[var5], arg1);
 		}
 		this.field7024.field6896 = 0;
 		if (this.field7033 > 0) {
@@ -332,7 +334,7 @@ public class OcclusionManager {
 
 	@ObfuscatedName("um.l(Ldh;Lui;I)V")
 	public void method8918(Renderer arg0, Occluder arg1, int arg2) {
-		Statics.field7041 = arg0;
+		field7041 = arg0;
 		if (this.field7035 != null && arg1.field7067 >= arg2) {
 			for (int var4 = 0; var4 < this.field7035.length; var4++) {
 				if (this.field7035[var4] != -1000000 && (arg1.field7073[0] <= this.field7035[var4] || arg1.field7073[1] <= this.field7035[var4] || arg1.field7073[2] <= this.field7035[var4] || arg1.field7073[3] <= this.field7035[var4]) && (arg1.field7072[0] <= this.field7027[var4] || arg1.field7072[1] <= this.field7027[var4] || arg1.field7072[2] <= this.field7027[var4] || arg1.field7072[3] <= this.field7027[var4]) && (arg1.field7072[0] >= this.field7036[var4] || arg1.field7072[1] >= this.field7036[var4] || arg1.field7072[2] >= this.field7036[var4] || arg1.field7072[3] >= this.field7036[var4]) && (arg1.field7062[0] <= this.field7042[var4] || arg1.field7062[1] <= this.field7042[var4] || arg1.field7062[2] <= this.field7042[var4] || arg1.field7062[3] <= this.field7042[var4]) && (arg1.field7062[0] >= this.field7039[var4] || arg1.field7062[1] >= this.field7039[var4] || arg1.field7062[2] >= this.field7039[var4] || arg1.field7062[3] >= this.field7039[var4])) {
@@ -479,7 +481,7 @@ public class OcclusionManager {
 
 	@ObfuscatedName("um.z(III)Z")
 	public final boolean method8926(int arg0, int arg1, int arg2) {
-		Statics.field7041.method2525((float) arg0, (float) arg1, (float) arg2, this.field7037);
+		field7041.method2525((float) arg0, (float) arg1, (float) arg2, this.field7037);
 		if (this.field7037[2] < 50.0F) {
 			return false;
 		} else {

@@ -4,11 +4,11 @@ import com.jagex.core.io.BZip2;
 import com.jagex.core.io.GZip;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ByteArrayCopier;
+import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.StringTools;
 import com.jagex.js5.index.Js5Index;
 import com.jagex.js5.network.Js5GroupHeader;
 import deob.ObfuscatedName;
-import deob.Statics;
 import lzma.sdk.lzma.LZMA;
 
 import java.io.IOException;
@@ -366,7 +366,7 @@ public final class Js5 {
 			try {
 				var15 = method7275(var10);
 			} catch (RuntimeException var51) {
-				throw Statics.method19636(var51, (arg2 != null) + " " + arg0 + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.field4416.field4393[arg0] + " " + this.field4416.crc);
+				throw JagException.method19636(var51, (arg2 != null) + " " + arg0 + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.field4416.field4393[arg0] + " " + this.field4416.crc);
 			}
 			if (this.field4412) {
 				this.field4418[arg0] = null;

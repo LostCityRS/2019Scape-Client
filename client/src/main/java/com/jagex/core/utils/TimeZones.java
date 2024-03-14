@@ -2,13 +2,9 @@ package com.jagex.core.utils;
 
 import com.jagex.core.constants.Language;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.TimeZone;
+import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 @ObfuscatedName("gd")
@@ -19,6 +15,9 @@ public final class TimeZones {
 
 	@ObfuscatedName("gd.w")
 	public static final Calendar field2009 = Calendar.getInstance(method3626("Europe/London"));
+
+    @ObfuscatedName("gd.l")
+    public static Map field2010;
 
 	public TimeZones() throws Throwable {
 		throw new Error();
@@ -31,15 +30,15 @@ public final class TimeZones {
 
 	@ObfuscatedName("gd.n(Ljava/util/Date;Ljava/lang/String;Ljava/util/TimeZone;Lzt;I)Ljava/lang/String;")
 	public static String method3624(Date arg0, String arg1, TimeZone arg2, Language arg3) {
-		if (Statics.field2010 == null) {
-			Statics.field2010 = new HashMap(7);
+		if (field2010 == null) {
+			field2010 = new HashMap(7);
 			Language[] var4 = Language.method13871();
 			for (int var5 = 0; var5 < var4.length; var5++) {
 				Language var6 = var4[var5];
-				Statics.field2010.put(var6, new ConcurrentLinkedQueue());
+				field2010.put(var6, new ConcurrentLinkedQueue());
 			}
 		}
-		ConcurrentLinkedQueue var7 = (ConcurrentLinkedQueue) Statics.field2010.get(arg3);
+		ConcurrentLinkedQueue var7 = (ConcurrentLinkedQueue) field2010.get(arg3);
 		SimpleDateFormat var8 = (SimpleDateFormat) var7.poll();
 		if (var8 == null) {
 			var8 = new SimpleDateFormat(arg1, arg3.method13874());

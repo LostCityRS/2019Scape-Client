@@ -2,7 +2,6 @@ package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 @ObfuscatedName("age")
@@ -38,8 +37,8 @@ public class CamMoveAlongCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("age.n(I)V")
 	public void method2890() {
-		Statics.field1714[this.field10292].method2840(0);
-		Statics.field1714[this.field10295].method2840(1);
+		CutsceneManager.field1714[this.field10292].method2840(0);
+		CutsceneManager.field1714[this.field10295].method2840(1);
 		Client.field10904 = 0;
 		Client.field10909 = this.field10293 * 2;
 		Client.field10976 = 0;

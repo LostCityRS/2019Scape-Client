@@ -7,13 +7,15 @@ import com.jagex.graphics.ModelUnlit;
 import com.jagex.graphics.Renderer;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("i")
 public class SpotShadowFactory {
 
 	@ObfuscatedName("i.e")
 	public static WeightedCache field617 = new WeightedCache(32);
+
+	@ObfuscatedName("i.n")
+	public static int field616;
 
 	public SpotShadowFactory() throws Throwable {
 		throw new Error();
@@ -69,7 +71,7 @@ public class SpotShadowFactory {
 					}
 				}
 			}
-			var17 = arg0.method2211(var22, var12, Statics.field616, 64, 768);
+			var17 = arg0.method2211(var22, var12, field616, 64, 768);
 			WeightedCache var38 = field617;
 			synchronized (field617) {
 				field617.method2921(var17, var14);
@@ -129,7 +131,7 @@ public class SpotShadowFactory {
 			var16.method1966(0, 2, 3, (byte) 1, (byte) 0, (short) 0, arg7, arg6);
 			var16.method1938((short) 1, (short) 2, (short) 0);
 			var16.method1938((short) 2, (short) 3, (short) 0);
-			var14 = arg0.method2211(var16, var9, Statics.field616, 64, 768);
+			var14 = arg0.method2211(var16, var9, field616, 64, 768);
 			WeightedCache var19 = field617;
 			synchronized (field617) {
 				field617.method2921(var14, var11);
@@ -164,7 +166,7 @@ public class SpotShadowFactory {
 
 	@ObfuscatedName("ajb.m(II)V")
 	public static void method17441(int arg0) {
-		Statics.field616 = arg0;
+		field616 = arg0;
 		WeightedCache var1 = field617;
 		synchronized (field617) {
 			field617.method2924();

@@ -12,8 +12,8 @@ import com.jagex.game.script.CommunityPartnerType;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.PlayerEntity;
 import com.jagex.game.world.entity.PositionMode;
+import com.jagex.game.world.entity.PositionedSound;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 import rs2.client.logic.chat.ChatHistory;
 
@@ -270,7 +270,7 @@ public class ReceivePlayerPositions {
 				var6.field525 = var5.field12070;
 				var6.field526 = var5.field12048;
 				if (var5.field12067 > 0) {
-					Statics.method5142(var5);
+					PositionedSound.method5142(var5);
 				}
 				Client.field10944[arg1] = null;
 				if (arg0.gBit(1) != 0) {

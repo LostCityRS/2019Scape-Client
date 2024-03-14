@@ -1,6 +1,7 @@
 package com.jagex.graphics;
 
 import com.jagex.core.constants.SerializableEnum;
+import com.jagex.core.datastruct.SerializableEnums;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("db")
@@ -40,5 +41,14 @@ public class TransformInfinityType implements SerializableEnum {
 	@ObfuscatedName("db.n()I")
 	public int getId() {
 		return this.field1586;
+	}
+
+	@ObfuscatedName("al.m(IB)Ldb;")
+	public static TransformInfinityType method713(int arg0) {
+		TransformInfinityType var1 = (TransformInfinityType) SerializableEnums.decode(method9164(), arg0);
+		if (var1 == null) {
+			var1 = field1581;
+		}
+		return var1;
 	}
 }

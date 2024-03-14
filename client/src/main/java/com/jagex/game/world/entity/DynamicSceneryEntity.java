@@ -10,7 +10,6 @@ import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("ajy")
 public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location {
@@ -31,11 +30,20 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	public final boolean field11130;
 
 	public DynamicSceneryEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, int arg16, int arg17, boolean arg18, ScaleRotTrans arg19) {
-		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, Statics.method6824(arg14, arg15), arg19);
+		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, method6824(arg14, arg15), arg19);
 		this.field11131 = new DynamicLoc(arg1, arg2, arg3, arg14, arg15, arg5, this, arg9, arg16, arg17);
 		this.field11128 = arg3.field7470 != 0 && !arg9;
 		this.field11130 = arg18;
 		this.method18363(1);
+	}
+
+	@ObfuscatedName("pd.bz(III)B")
+	public static byte method6824(int arg0, int arg1) {
+		if (LocShape.field7547.field7562 == arg0) {
+			return (byte) ((arg1 & 0x1) == 0 ? 1 : 2);
+		} else {
+			return 0;
+		}
 	}
 
 	@ObfuscatedName("ajy.bu(B)Z")

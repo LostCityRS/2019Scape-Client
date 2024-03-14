@@ -8,7 +8,6 @@ import com.jagex.graphics.ModelParticleEmitter;
 import com.jagex.graphics.Renderer;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("xm")
 public class ParticleEmitter {
@@ -259,7 +258,7 @@ public class ParticleEmitter {
 					if (ParticleSystemRenderer.field7797 == ParticleSystemRenderer.field7791) {
 						var51 = new MovingParticle(this, var39, var40, var41, var24, var25, var26, var42, var43, var49, var44, var45, var46, var50, this.field7772.field3499, this.field7772.field3496);
 					} else {
-						var51 = Statics.field7794[ParticleSystemRenderer.field7791];
+						var51 = ParticleSystemRenderer.field7794[ParticleSystemRenderer.field7791];
 						ParticleSystemRenderer.field7791 = ParticleSystemRenderer.field7791 + 1 & 0x3FF;
 						var51.method19665(this, var39, var40, var41, var24, var25, var26, var42, var43, var49, var44, var45, var46, var50, this.field7772.field3499, this.field7772.field3496);
 					}

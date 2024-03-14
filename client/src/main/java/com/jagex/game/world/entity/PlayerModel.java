@@ -22,7 +22,6 @@ import com.jagex.graphics.Renderer;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("xg")
 public class PlayerModel {
@@ -54,6 +53,18 @@ public class PlayerModel {
 	@ObfuscatedName("xg.s")
 	public long field7899;
 
+	@ObfuscatedName("vn.y")
+	public static short[][] field7577;
+
+	@ObfuscatedName("dk.q")
+	public static short[][][] field1434;
+
+	@ObfuscatedName("aip.x")
+	public static short[][] field10766;
+
+	@ObfuscatedName("adm.b")
+	public static short[][][] field9259;
+
 	@ObfuscatedName("xg.h")
 	public static final int[] field7900 = new int[] { 8, 11, 4, 6, 9, 7, 10, 0 };
 
@@ -62,6 +73,9 @@ public class PlayerModel {
 
 	@ObfuscatedName("xg.g")
 	public static WeightedCache field7902 = new WeightedCache(5);
+
+	@ObfuscatedName("ns.i")
+	public static int field4037;
 
 	@ObfuscatedName("xg.e(I[I[Labw;[I[IZII)V")
 	public void method10113(int arg0, int[] arg1, ObjTypeCustomisation[] arg2, int[] arg3, int[] arg4, boolean arg5, int arg6) {
@@ -328,18 +342,18 @@ public class PlayerModel {
 						}
 						ModelUnlit var61 = new ModelUnlit(var47, var47.length);
 						int var62 = var16 | 0x4000;
-						var34 = arg0.method2211(var61, var62, Statics.field4037, 64, 850);
+						var34 = arg0.method2211(var61, var62, field4037, 64, 850);
 						for (int var63 = 0; var63 < 10; var63++) {
-							for (int var64 = 0; var64 < Statics.field7577[var63].length; var64++) {
-								if (this.field7894[var63] < Statics.field1434[var63][var64].length) {
-									var34.method1859(Statics.field7577[var63][var64], Statics.field1434[var63][var64][this.field7894[var63]]);
+							for (int var64 = 0; var64 < field7577[var63].length; var64++) {
+								if (this.field7894[var63] < field1434[var63][var64].length) {
+									var34.method1859(field7577[var63][var64], field1434[var63][var64][this.field7894[var63]]);
 								}
 							}
 						}
 						for (int var65 = 0; var65 < 10; var65++) {
-							for (int var66 = 0; var66 < Statics.field10766[var65].length; var66++) {
-								if (this.field7895[var65] < Statics.field9259[var65][var66].length) {
-									var34.method1744(Statics.field10766[var65][var66], Statics.field9259[var65][var66][this.field7895[var65]]);
+							for (int var66 = 0; var66 < field10766[var65].length; var66++) {
+								if (this.field7895[var65] < field9259[var65][var66].length) {
+									var34.method1744(field10766[var65][var66], field9259[var65][var66][this.field7895[var65]]);
 								}
 							}
 						}
@@ -502,18 +516,18 @@ public class PlayerModel {
 			}
 			ModelUnlit var25 = new ModelUnlit(var18, var19);
 			int var26 = var9 | 0x4000;
-			var11 = arg0.method2211(var25, var26, Statics.field4037, 64, 768);
+			var11 = arg0.method2211(var25, var26, field4037, 64, 768);
 			for (int var27 = 0; var27 < 10; var27++) {
-				for (int var28 = 0; var28 < Statics.field7577[var27].length; var28++) {
-					if (this.field7894[var27] < Statics.field1434[var27][var28].length) {
-						var11.method1859(Statics.field7577[var27][var28], Statics.field1434[var27][var28][this.field7894[var27]]);
+				for (int var28 = 0; var28 < field7577[var27].length; var28++) {
+					if (this.field7894[var27] < field1434[var27][var28].length) {
+						var11.method1859(field7577[var27][var28], field1434[var27][var28][this.field7894[var27]]);
 					}
 				}
 			}
 			for (int var29 = 0; var29 < 10; var29++) {
-				for (int var30 = 0; var30 < Statics.field10766[var29].length; var30++) {
-					if (this.field7895[var29] < Statics.field9259[var29][var30].length) {
-						var11.method1744(Statics.field10766[var29][var30], Statics.field9259[var29][var30][this.field7895[var29]]);
+				for (int var30 = 0; var30 < field10766[var29].length; var30++) {
+					if (this.field7895[var29] < field9259[var29][var30].length) {
+						var11.method1744(field10766[var29][var30], field9259[var29][var30][this.field7895[var29]]);
 					}
 				}
 			}
@@ -564,18 +578,18 @@ public class PlayerModel {
 			}
 			ModelUnlit var21 = new ModelUnlit(var16, var17);
 			int var22 = var9 | 0x4000;
-			var13 = arg0.method2211(var21, var22, Statics.field4037, 64, 768);
+			var13 = arg0.method2211(var21, var22, field4037, 64, 768);
 			for (int var23 = 0; var23 < 10; var23++) {
-				for (int var24 = 0; var24 < Statics.field7577[var23].length; var24++) {
-					if (this.field7894[var23] < Statics.field1434[var23][var24].length) {
-						var13.method1859(Statics.field7577[var23][var24], Statics.field1434[var23][var24][this.field7894[var23]]);
+				for (int var24 = 0; var24 < field7577[var23].length; var24++) {
+					if (this.field7894[var23] < field1434[var23][var24].length) {
+						var13.method1859(field7577[var23][var24], field1434[var23][var24][this.field7894[var23]]);
 					}
 				}
 			}
 			for (int var25 = 0; var25 < 10; var25++) {
-				for (int var26 = 0; var26 < Statics.field10766[var25].length; var26++) {
-					if (this.field7895[var25] < Statics.field9259[var25][var26].length) {
-						var13.method1744(Statics.field10766[var25][var26], Statics.field9259[var25][var26][this.field7895[var25]]);
+				for (int var26 = 0; var26 < field10766[var25].length; var26++) {
+					if (this.field7895[var25] < field9259[var25][var26].length) {
+						var13.method1744(field10766[var25][var26], field9259[var25][var26][this.field7895[var25]]);
 					}
 				}
 			}
@@ -594,9 +608,17 @@ public class PlayerModel {
 		}
 	}
 
+	@ObfuscatedName("alb.d(I)I")
+	public static int method18304() {
+		WeightedCache var0 = field7901;
+		synchronized (field7901) {
+			return field7901.method2927();
+		}
+	}
+
 	@ObfuscatedName("eg.c(IS)V")
 	public static void method2837(int arg0) {
-		Statics.field4037 = arg0;
+		field4037 = arg0;
 		WeightedCache var1 = field7902;
 		synchronized (field7902) {
 			field7902.method2924();
@@ -616,6 +638,18 @@ public class PlayerModel {
 		WeightedCache var2 = field7902;
 		synchronized (field7902) {
 			field7902.method2924();
+		}
+	}
+
+	@ObfuscatedName("xw.v(IB)V")
+	public static void method9976(int arg0) {
+		WeightedCache var1 = field7901;
+		synchronized (field7901) {
+			field7901.method2923(arg0);
+		}
+		WeightedCache var3 = field7902;
+		synchronized (field7902) {
+			field7902.method2923(arg0);
 		}
 	}
 

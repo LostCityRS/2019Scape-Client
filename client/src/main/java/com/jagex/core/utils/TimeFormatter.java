@@ -85,6 +85,11 @@ public class TimeFormatter {
 		return Integer.toString(var3 / 10) + var3 % 10 + ":" + var4 / 10 + var4 % 10 + ":" + var5 / 10 + var5 % 10;
 	}
 
+	@ObfuscatedName("zi.w(J)I")
+	public static int method13899(long arg0) {
+		return (int) (arg0 / 86400000L) - 11745;
+	}
+
 	@ObfuscatedName("s.l(J)V")
 	public static void method485(long arg0) {
 		field9163.setTime(new Date(arg0));

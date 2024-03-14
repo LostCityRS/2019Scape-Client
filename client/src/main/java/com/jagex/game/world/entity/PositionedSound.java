@@ -314,6 +314,20 @@ public class PositionedSound extends Node {
 		}
 	}
 
+	@ObfuscatedName("kg.l(Laqk;I)V")
+	public static void method5142(PlayerEntity arg0) {
+		PositionedSound var1 = (PositionedSound) field11366.method14495((long) arg0.field10406);
+		if (var1 == null) {
+			return;
+		}
+		if (var1.field11371 != null) {
+			var1.field11371.method7380(100);
+			Client.field1798.method3185(var1.field11371);
+			var1.field11371 = null;
+		}
+		var1.method8440();
+	}
+
 	@ObfuscatedName("xj.u(Laqk;I)V")
 	public static void method10310(PlayerEntity arg0) {
 		PositionedSound var1 = (PositionedSound) field11366.method14495((long) arg0.field10406);

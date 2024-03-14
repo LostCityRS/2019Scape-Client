@@ -5,7 +5,6 @@ import com.jagex.graphics.MaterialAlphaMode;
 import com.jagex.graphics.safe.PureJavaRenderer;
 import com.jagex.graphics.safe.PureJavaRendererContext;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("bd")
 public class Rasteriser {
@@ -156,9 +155,9 @@ public class Rasteriser {
 		if (!arg0) {
 			this.method1032(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 		} else if (this.field940) {
-			this.field947.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, Statics.field8149[(int) arg12 & 0xFFFF]);
-			this.field947.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, Statics.field8149[(int) arg12 & 0xFFFF]);
-			this.field947.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, Statics.field8149[(int) arg12 & 0xFFFF]);
+			this.field947.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
+			this.field947.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
+			this.field947.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
 		} else {
 			float var16 = arg7 - arg6;
 			float var17 = arg4 - arg3;
@@ -602,7 +601,7 @@ public class Rasteriser {
 				if (this.field935 == 0) {
 					if (var16 > 0) {
 						do {
-							int var18 = Statics.field8149[(int) var14 & 0xFFFF];
+							int var18 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 							var14 += var17;
 							var13++;
 							if (!arg0 || var15 < this.field951[var13]) {
@@ -641,7 +640,7 @@ public class Rasteriser {
 					}
 					int var22 = arg7 - arg6 & 0x3;
 					if (var22 > 0) {
-						int var23 = Statics.field8149[(int) var14 & 0xFFFF];
+						int var23 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 						do {
 							var13++;
 							if (!arg0 || var15 < this.field951[var13]) {
@@ -659,7 +658,7 @@ public class Rasteriser {
 					int var25 = 256 - this.field935;
 					if (var16 > 0) {
 						do {
-							int var26 = Statics.field8149[(int) var14 & 0xFFFF];
+							int var26 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 							var14 += var17;
 							int var27 = ((var26 & 0xFF00FF) * var25 >> 8 & 0xFF00FF) + ((var26 & 0xFF00) * var25 >> 8 & 0xFF00);
 							var13++;
@@ -719,7 +718,7 @@ public class Rasteriser {
 					}
 					int var35 = arg7 - arg6 & 0x3;
 					if (var35 > 0) {
-						int var36 = Statics.field8149[(int) var14 & 0xFFFF];
+						int var36 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 						int var37 = ((var36 & 0xFF00FF) * var25 >> 8 & 0xFF00FF) + ((var36 & 0xFF00) * var25 >> 8 & 0xFF00);
 						do {
 							var13++;
@@ -745,7 +744,7 @@ public class Rasteriser {
 					do {
 						var13++;
 						if (!arg0 || var15 < this.field951[var13]) {
-							arg2[var13] = Statics.field8149[(int) var14 & 0xFFFF];
+							arg2[var13] = ColourUtils.field8149[(int) var14 & 0xFFFF];
 							if (arg0) {
 								this.field951[var13] = var15;
 							}
@@ -760,7 +759,7 @@ public class Rasteriser {
 					do {
 						var13++;
 						if (!arg0 || var15 < this.field951[var13]) {
-							int var42 = Statics.field8149[(int) var14 & 0xFFFF];
+							int var42 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 							int var43 = ((var42 & 0xFF00FF) * var41 >> 8 & 0xFF00FF) + ((var42 & 0xFF00) * var41 >> 8 & 0xFF00);
 							int var44 = arg2[var13];
 							if (arg1) {
@@ -784,7 +783,7 @@ public class Rasteriser {
 			if (this.field935 == 0) {
 				if (var45 > 0) {
 					do {
-						int var47 = Statics.field8149[(int) var14 & 0xFFFF];
+						int var47 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 						var14 += var46;
 						var13++;
 						if (!arg0 || var15 < this.field951[var13]) {
@@ -811,7 +810,7 @@ public class Rasteriser {
 				}
 				int var51 = arg7 - arg6 & 0x3;
 				if (var51 > 0) {
-					int var52 = Statics.field8149[(int) var14 & 0xFFFF];
+					int var52 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 					do {
 						var13++;
 						if (!arg0 || var15 < this.field951[var13]) {
@@ -826,7 +825,7 @@ public class Rasteriser {
 				int var54 = 256 - this.field935;
 				if (var45 > 0) {
 					do {
-						int var55 = Statics.field8149[(int) var14 & 0xFFFF];
+						int var55 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 						var14 += var46;
 						int var56 = ((var55 & 0xFF00FF) * var54 >> 8 & 0xFF00FF) + ((var55 & 0xFF00) * var54 >> 8 & 0xFF00);
 						var13++;
@@ -874,7 +873,7 @@ public class Rasteriser {
 				}
 				int var64 = arg7 - arg6 & 0x3;
 				if (var64 > 0) {
-					int var65 = Statics.field8149[(int) var14 & 0xFFFF];
+					int var65 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 					int var66 = ((var65 & 0xFF00FF) * var54 >> 8 & 0xFF00FF) + ((var65 & 0xFF00) * var54 >> 8 & 0xFF00);
 					do {
 						var13++;
@@ -897,7 +896,7 @@ public class Rasteriser {
 				do {
 					var13++;
 					if (!arg0 || var15 < this.field951[var13]) {
-						arg2[var13] = Statics.field8149[(int) var14 & 0xFFFF];
+						arg2[var13] = ColourUtils.field8149[(int) var14 & 0xFFFF];
 					}
 					var15 += arg11;
 					var14 += arg9;
@@ -909,7 +908,7 @@ public class Rasteriser {
 				do {
 					var13++;
 					if (!arg0 || var15 < this.field951[var13]) {
-						int var71 = Statics.field8149[(int) var14 & 0xFFFF];
+						int var71 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 						int var72 = ((var71 & 0xFF00FF) * var70 >> 8 & 0xFF00FF) + ((var71 & 0xFF00) * var70 >> 8 & 0xFF00);
 						int var73 = arg2[var13];
 						if (arg1) {
@@ -2897,7 +2896,7 @@ public class Rasteriser {
 				this.field953 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
 				this.field959 = 0;
-				int var31 = Statics.field8149[ColourUtils.method4937(this.field947.method15695(arg28)) & 0xFFFF];
+				int var31 = ColourUtils.field8149[ColourUtils.method4937(this.field947.method15695(arg28)) & 0xFFFF];
 				int var32 = ((arg21 >> 16 & 0xFF) * (var31 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var31 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var31 & 0xFF) >> 8;
 				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var32, arg24, arg25), ColourUtils.method19201(var32, arg24, arg26), ColourUtils.method19201(var32, arg24, arg27));
 				return;
@@ -3577,7 +3576,7 @@ public class Rasteriser {
 			if (this.field954 == null) {
 				this.field953 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var58 = Statics.field8149[ColourUtils.method4937(this.field947.method15695(arg28)) & 0xFFFF];
+				int var58 = ColourUtils.field8149[ColourUtils.method4937(this.field947.method15695(arg28)) & 0xFFFF];
 				int var59 = ((arg21 >> 16 & 0xFF) * (var58 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var58 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var58 & 0xFF) >> 8;
 				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var59, arg24, arg25), ColourUtils.method19201(var59, arg24, arg26), ColourUtils.method19201(var59, arg24, arg27));
 				return;
@@ -3593,7 +3592,7 @@ public class Rasteriser {
 			if (this.field962 == null) {
 				this.field961 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var60 = Statics.field8149[ColourUtils.method4937(this.field947.method15695(arg30)) & 0xFFFF];
+				int var60 = ColourUtils.field8149[ColourUtils.method4937(this.field947.method15695(arg30)) & 0xFFFF];
 				int var61 = ((arg21 >> 16 & 0xFF) * (var60 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var60 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var60 & 0xFF) >> 8;
 				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var61, arg24, arg25), ColourUtils.method19201(var61, arg24, arg26), ColourUtils.method19201(var61, arg24, arg27));
 				return;
@@ -3608,7 +3607,7 @@ public class Rasteriser {
 			if (this.field967 == null) {
 				this.field955 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var62 = Statics.field8149[ColourUtils.method4937(this.field947.method15695(arg32)) & 0xFFFF];
+				int var62 = ColourUtils.field8149[ColourUtils.method4937(this.field947.method15695(arg32)) & 0xFFFF];
 				int var63 = ((arg21 >> 16 & 0xFF) * (var62 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var62 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var62 & 0xFF) >> 8;
 				this.method1030(true, arg1, arg2, (float) arg3, (float) arg4, (float) arg5, (float) arg6, (float) arg7, (float) arg8, (float) arg9, (float) arg10, (float) arg11, ColourUtils.method19201(var63, arg24, arg25), ColourUtils.method19201(var63, arg24, arg26), ColourUtils.method19201(var63, arg24, arg27));
 				return;

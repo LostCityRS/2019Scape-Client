@@ -5,13 +5,15 @@ import com.jagex.core.datastruct.Serializable;
 import com.jagex.core.io.Packet;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("akt")
 public class CoordFine extends Node implements Serializable {
 
 	@ObfuscatedName("akt.k")
 	public static CoordFine[] field11476 = new CoordFine[0];
+
+	@ObfuscatedName("ql.f")
+	public static int field4608;
 
 	@ObfuscatedName("akt.w")
 	public int field11477;
@@ -29,11 +31,11 @@ public class CoordFine extends Node implements Serializable {
 	public static CoordFine method258(int arg0, int arg1, int arg2, int arg3) {
 		CoordFine[] var4 = field11476;
 		synchronized (field11476) {
-			if (Statics.field4608 == 0) {
+			if (field4608 == 0) {
 				return new CoordFine(arg0, arg1, arg2, arg3);
 			} else {
-				field11476[--Statics.field4608].method17851(arg0, arg1, arg2, arg3);
-				return field11476[Statics.field4608];
+				field11476[--field4608].method17851(arg0, arg1, arg2, arg3);
+				return field11476[field4608];
 			}
 		}
 	}
@@ -42,11 +44,11 @@ public class CoordFine extends Node implements Serializable {
 	public static CoordFine method7078(CoordFine arg0) {
 		CoordFine[] var1 = field11476;
 		synchronized (field11476) {
-			if (Statics.field4608 == 0) {
+			if (field4608 == 0) {
 				return new CoordFine(arg0);
 			} else {
-				field11476[--Statics.field4608].method17868(arg0);
-				return field11476[Statics.field4608];
+				field11476[--field4608].method17868(arg0);
+				return field11476[field4608];
 			}
 		}
 	}
@@ -55,11 +57,11 @@ public class CoordFine extends Node implements Serializable {
 	public static CoordFine method849(int arg0, boolean arg1) {
 		CoordFine[] var2 = field11476;
 		synchronized (field11476) {
-			if (Statics.field4608 == 0) {
+			if (field4608 == 0) {
 				return new CoordFine(arg0, arg1);
 			} else {
-				field11476[--Statics.field4608].method17870(arg0, arg1);
-				return field11476[Statics.field4608];
+				field11476[--field4608].method17870(arg0, arg1);
+				return field11476[field4608];
 			}
 		}
 	}
@@ -146,13 +148,18 @@ public class CoordFine extends Node implements Serializable {
 		arg0.p4(this.field11480);
 	}
 
+	@ObfuscatedName("gs.x(S)I")
+	public static int method3582() {
+		return 13;
+	}
+
 	public String toString() {
 		return "Level: " + this.field11477 + " Coord: " + this.field11478 + "," + this.field11479 + "," + this.field11480 + " Coord Split: " + (this.field11478 >> 15) + "," + (this.field11480 >> 15) + "," + (this.field11478 >> 9 & 0x3F) + "," + (this.field11480 >> 9 & 0x3F) + "," + (this.field11478 & 0x1FF) + "," + (this.field11480 & 0x1FF);
 	}
 
 	@ObfuscatedName("akt.e(B)I")
 	public int method15118() {
-		return Statics.method3582();
+		return method3582();
 	}
 
 	@ObfuscatedName("akt.n(Lalw;S)V")

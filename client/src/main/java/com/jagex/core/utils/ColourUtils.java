@@ -1,7 +1,6 @@
 package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
-import deob.Statics;
 
 @ObfuscatedName("yk")
 public class ColourUtils {
@@ -11,6 +10,15 @@ public class ColourUtils {
 
 	@ObfuscatedName("yk.n")
 	public static int field8148 = 0;
+
+	@ObfuscatedName("yk.m")
+	public static int[] field8149;
+
+	@ObfuscatedName("yk.k")
+	public static int[] field8151;
+
+	@ObfuscatedName("yk.f")
+	public static int[] field8150;
 
 	public ColourUtils() throws Throwable {
 		throw new Error();
@@ -33,23 +41,23 @@ public class ColourUtils {
 		if (arg0) {
 			field8147--;
 			if (field8147 == 0) {
-				Statics.field8149 = null;
+				field8149 = null;
 			}
 		}
 		if (arg1) {
 			field8148--;
 			if (field8148 == 0) {
-				Statics.field8151 = null;
+				field8151 = null;
 			}
 		}
 	}
 
 	@ObfuscatedName("ke.m(I)V")
 	public static void method5131() {
-		if (Statics.field8149 != null) {
+		if (field8149 != null) {
 			return;
 		}
-		Statics.field8149 = new int[65536];
+		field8149 = new int[65536];
 		double var0 = 0.7D;
 		int var2 = 0;
 		for (int var3 = 0; var3 < 512; var3++) {
@@ -99,18 +107,18 @@ public class ColourUtils {
 				int var22 = (int) (var19 * 256.0F);
 				int var23 = (int) (var20 * 256.0F);
 				int var24 = (var22 << 8) + (var21 << 16) + -16777216 + var23;
-				Statics.field8149[var2++] = var24;
+				field8149[var2++] = var24;
 			}
 		}
 	}
 
 	@ObfuscatedName("ff.k(S)V")
 	public static void method3129() {
-		if (Statics.field8151 != null) {
+		if (field8151 != null) {
 			return;
 		}
-		Statics.field8151 = new int[65536];
-		Statics.field8150 = new int[65536];
+		field8151 = new int[65536];
+		field8150 = new int[65536];
 		double var0 = 0.7D;
 		for (int var2 = 0; var2 < 65536; var2++) {
 			double var3 = (double) (var2 >> 10 & 0x3F) / 64.0D + 0.0078125D;
@@ -170,9 +178,9 @@ public class ColourUtils {
 			int var32 = (int) (var27 * 256.0D);
 			int var33 = (int) (var29 * 256.0D);
 			int var34 = (var31 << 16) + (var32 << 8) + var33;
-			Statics.field8151[var2] = var34 & 0xFFFFFF;
+			field8151[var2] = var34 & 0xFFFFFF;
 			int var35 = (var32 << 8) + (var33 << 16) + var31;
-			Statics.field8150[var2] = var35;
+			field8150[var2] = var35;
 		}
 	}
 

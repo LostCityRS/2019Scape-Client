@@ -9,7 +9,6 @@ import com.jagex.game.client.GameShell;
 import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.graphics.RendererInfo;
 import deob.ObfuscatedName;
-import deob.Statics;
 import rs2.client.Client;
 
 import java.io.IOException;
@@ -25,6 +24,9 @@ public class Preferences {
 
 	@ObfuscatedName("aq.c")
 	public static boolean field777 = false;
+
+	@ObfuscatedName("aml.r")
+	public static int field11775;
 
 	public Preferences() throws Throwable {
 		throw new Error();
@@ -271,7 +273,7 @@ public class Preferences {
 		}
 		Client.field688.method18157(Client.field688.skyboxes, 1);
 		Client.field688.method18157(Client.field688.unknown, 1);
-		Statics.method5326();
+		method5326();
 		Client.field688.method18157(Client.field688.screenSize, 0);
 		Client.field688.method18157(Client.field688.preset, 4);
 		Client.method9516();
@@ -303,7 +305,7 @@ public class Preferences {
 		}
 		Client.field688.method18157(Client.field688.skyboxes, 1);
 		Client.field688.method18157(Client.field688.unknown, 1);
-		Statics.method5326();
+		method5326();
 		Client.field688.method18157(Client.field688.screenSize, 1);
 		Client.field688.method18157(Client.field688.preset, 3);
 		Client.method9516();
@@ -335,7 +337,7 @@ public class Preferences {
 		}
 		Client.field688.method18157(Client.field688.skyboxes, 0);
 		Client.field688.method18157(Client.field688.unknown, 0);
-		Statics.method5326();
+		method5326();
 		Client.field688.method18157(Client.field688.screenSize, 2);
 		Client.field688.method18157(Client.field688.preset, 2);
 		Client.method9516();
@@ -367,11 +369,20 @@ public class Preferences {
 		}
 		Client.field688.method18157(Client.field688.skyboxes, 0);
 		Client.field688.method18157(Client.field688.unknown, 0);
-		Statics.method5326();
+		method5326();
 		Client.field688.method18157(Client.field688.screenSize, 2);
 		Client.field688.method18157(Client.field688.preset, 1);
 		Client.method9516();
 		Client.world.method7816().method10019();
 		Client.field10836 = true;
+	}
+
+	@ObfuscatedName("kr.d(B)V")
+	public static void method5326() {
+		if (GameShell.cpucount > 1) {
+			Client.field688.method18157(Client.field688.cpuUsage, 4);
+		} else {
+			Client.field688.method18157(Client.field688.cpuUsage, 2);
+		}
 	}
 }
