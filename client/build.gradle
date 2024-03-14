@@ -31,4 +31,5 @@ tasks.withType(JavaCompile) {
 
 tasks.withType(JavaExec) {
     workingDir = project.rootDir
+    jvmArgs = ['-Xms1G', '-Xmx1G', '-Xss2m', '-Dsun.java2d.noddraw=true', '-XX:CompileThreshold=1500']
 }

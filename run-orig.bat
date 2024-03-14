@@ -1,2 +1,2 @@
 @echo off
-java -Xmx1G -Xss2m -cp ref/innerpack.patched.jar AppletViewer
+java -Xmx384m -Xss2m -Dsun.java2d.noddraw=true -XX:CompileThreshold=1500 -Xincgc -XX:+UseConcMarkSweepGC -XX:+UseParNewGC -cp ref/innerpack.patched.jar AppletViewer
