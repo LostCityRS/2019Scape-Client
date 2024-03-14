@@ -18,7 +18,7 @@ public class Js5MapFile {
 	public static final Js5MapFile LAND = new Js5MapFile(3);
 
 	@ObfuscatedName("qz.f")
-	public static final Js5MapFile UNDERWATER_MAP = new Js5MapFile(4);
+	public static final Js5MapFile UNDERWATER_LAND = new Js5MapFile(4);
 
 	@ObfuscatedName("qz.w")
 	public static final Js5MapFile NXT_LOC = new Js5MapFile(5);

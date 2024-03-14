@@ -976,7 +976,7 @@ public class World {
 				this.field5053[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.LOC.id);
 			}
 			if (this.field5055[var2] == null) {
-				this.field5055[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.UNDERWATER_MAP.id);
+				this.field5055[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.UNDERWATER_LAND.id);
 			}
 			if (this.field5031[var2] == null) {
 				this.field5031[var2] = Client.mapsJs5.getfile(this.field5051[var2], Js5MapFile.UNDERWATER_LOC.id);
