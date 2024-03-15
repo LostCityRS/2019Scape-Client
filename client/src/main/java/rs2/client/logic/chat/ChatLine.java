@@ -6,7 +6,7 @@ import com.jagex.game.shared.framework.chat.ChatCrownType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("asg")
-public class EntityChatLine extends SecondaryNode {
+public class ChatLine extends SecondaryNode {
 
 	@ObfuscatedName("asg.l")
 	public int uid = ChatHistory.method8480();
@@ -41,7 +41,7 @@ public class EntityChatLine extends SecondaryNode {
 	@ObfuscatedName("asg.y")
 	public ChatCrownType crown;
 
-	public EntityChatLine(int arg0, int arg1, String arg2, String arg3, String arg4, String arg5, int arg6, String arg7, ChatCrownType arg8) {
+	public ChatLine(int arg0, int arg1, String arg2, String arg3, String arg4, String arg5, int arg6, String arg7, ChatCrownType arg8) {
 		this.type = arg0;
 		this.flags = arg1;
 		this.name = arg2;

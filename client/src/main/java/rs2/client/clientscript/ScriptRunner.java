@@ -81,7 +81,7 @@ import rs2.client.Client;
 import rs2.client.clientscript.emoji.EmojiList;
 import rs2.client.logic.DelayedStateChange;
 import rs2.client.logic.chat.ChatHistory;
-import rs2.client.logic.chat.EntityChatLine;
+import rs2.client.logic.chat.ChatLine;
 import rs2.client.logic.clans.ClanSettings;
 import rs2.client.logic.friendchat.Friend;
 import rs2.client.logic.friendchat.Ignore;
@@ -12277,7 +12277,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		EntityChatLine var3 = ChatHistory.method7310(var1, var2);
+		ChatLine var3 = ChatHistory.method7310(var1, var2);
 		if (var3 != null) {
 			arg0.field8216[++arg0.field8226 - 1] = var3.uid;
 			arg0.field8218[++arg0.field8211 - 1] = TimeFormatter.method16609(var3.time, Client.language.field8298);
@@ -12307,7 +12307,7 @@ public final class ScriptRunner {
 	public static final void chat_gethistory_byuid(ClientScriptState arg0) {
 		arg0.field8226--;
 		int var1 = arg0.field8216[arg0.field8226];
-		EntityChatLine var2 = ChatHistory.method304(var1);
+		ChatLine var2 = ChatHistory.method304(var1);
 		if (var2 != null) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.type;
 			arg0.field8218[++arg0.field8211 - 1] = TimeFormatter.method16609(var2.time, Client.language.field8298);
