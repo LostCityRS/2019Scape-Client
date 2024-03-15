@@ -10,7 +10,7 @@ import com.jagex.game.client.GroupUserKind;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.idktype.IDKTypeList;
 import com.jagex.game.config.iftype.componentproperties.ServerKeyProperties;
-import com.jagex.game.config.npctype.NPCHeadIconCustomisation;
+import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.npctype.NPCTypeList;
 import com.jagex.game.config.objtype.ObjType;
@@ -657,7 +657,7 @@ public class Component {
 	public ParticleSystem field2254;
 
 	@ObfuscatedName("hf.hg")
-	public NPCHeadIconCustomisation field2363;
+	public NPCTypeCustomisation field2363;
 
 	@ObfuscatedName("gb.e(Lpy;Lpy;Lpy;Lpy;I)V")
 	public static void method3669(Js5 arg0, Js5 arg1, Js5 arg2, Js5 arg3) {

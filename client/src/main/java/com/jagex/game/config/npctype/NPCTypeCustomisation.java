@@ -3,7 +3,7 @@ package com.jagex.game.config.npctype;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ia")
-public class NPCHeadIconCustomisation {
+public class NPCTypeCustomisation {
 
 	@ObfuscatedName("ia.e")
 	public long field2688;
@@ -26,7 +26,7 @@ public class NPCHeadIconCustomisation {
 	@ObfuscatedName("ia.l")
 	public short[] field2685;
 
-	public NPCHeadIconCustomisation(long arg0, int[] arg1, float[] arg2, int[][] arg3, int[][] arg4, short[] arg5, short[] arg6) {
+	public NPCTypeCustomisation(long arg0, int[] arg1, float[] arg2, int[][] arg3, int[][] arg4, short[] arg5, short[] arg6) {
 		this.field2688 = arg0;
 		this.field2689 = arg1;
 		this.field2683 = arg2;
@@ -36,7 +36,7 @@ public class NPCHeadIconCustomisation {
 		this.field2685 = arg6;
 	}
 
-	public NPCHeadIconCustomisation(NPCType arg0, boolean arg1) {
+	public NPCTypeCustomisation(NPCType arg0, boolean arg1) {
 		if (arg1) {
 			this.field2689 = new int[arg0.models.length];
 			this.field2683 = new float[arg0.models.length];

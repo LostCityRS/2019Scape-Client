@@ -549,12 +549,12 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.z(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;I)Ldo;")
-	public final Model method4542(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCHeadIconCustomisation arg10) {
+	public final Model method4542(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10) {
 		return this.getSequencedModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, this.field2762, true);
 	}
 
 	@ObfuscatedName("if.p(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;IZB)Ldo;")
-	public final Model getSequencedModel(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCHeadIconCustomisation arg10, int arg11, boolean arg12) {
+	public final Model getSequencedModel(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10, int arg11, boolean arg12) {
 		if (this.field2735 != null) {
 			NPCType var14 = this.method4547(arg3, arg4);
 			return var14 == null ? null : var14.getSequencedModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
@@ -790,7 +790,7 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.d(Ldh;ILem;Lep;Laaq;Lia;S)Ldo;")
-	public final Model getHeadModel(Renderer arg0, int arg1, VariableTypeProvider arg2, VarIntDomain arg3, AnimationWrapper arg4, NPCHeadIconCustomisation arg5) {
+	public final Model getHeadModel(Renderer arg0, int arg1, VariableTypeProvider arg2, VarIntDomain arg3, AnimationWrapper arg4, NPCTypeCustomisation arg5) {
 		if (this.field2735 != null) {
 			NPCType var7 = this.method4547(arg2, arg3);
 			return var7 == null ? null : var7.getHeadModel(arg0, arg1, arg2, arg3, arg4, arg5);

@@ -41,7 +41,7 @@ import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.config.meltype.MapElementTypeList;
 import com.jagex.game.config.msitype.MSITypeList;
-import com.jagex.game.config.npctype.NPCHeadIconCustomisation;
+import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.npctype.NPCTypeList;
 import com.jagex.game.config.objtype.ObjType;
@@ -10505,7 +10505,7 @@ public final class Client extends GameShell {
 			if (var683 != null) {
 				NpcEntity var684 = (NpcEntity) var683.field11436;
 				if (var684.field12080 == null) {
-					var684.field12080 = new NpcTypeHeadIconSet(var684.field12083);
+					var684.field12080 = new NPCHeadIconCustomisation(var684.field12083);
 				}
 				var684.field12080.field2682[var681] = var679;
 				var684.field12080.field2681[var681] = (short) var680;
@@ -11413,7 +11413,7 @@ public final class Client extends GameShell {
 						}
 					}
 					long var39 = (long) (++NpcEntity.field12078 - 1);
-					new NPCHeadIconCustomisation(var39, var32, null, null, null, var35, var37);
+					new NPCTypeCustomisation(var39, var32, null, null, null, var35, var37);
 				}
 			}
 			if ((var4 & 0x2000000) != 0) {
@@ -11562,7 +11562,7 @@ public final class Client extends GameShell {
 						var77[var78] = (short) var0.gSmart1or2null();
 					}
 				}
-				var3.field12080 = new NpcTypeHeadIconSet(var76, var77);
+				var3.field12080 = new NPCHeadIconCustomisation(var76, var77);
 			}
 			if ((var4 & 0x800) != 0) {
 				var3.field12079 = var0.g2_alt3();
@@ -11642,7 +11642,7 @@ public final class Client extends GameShell {
 						}
 					}
 					long var100 = (long) (++NpcEntity.field12077 - 1);
-					var3.field12076 = new NPCHeadIconCustomisation(var100, var88, var89, var90, var91, var96, var98);
+					var3.field12076 = new NPCTypeCustomisation(var100, var88, var89, var90, var91, var96, var98);
 				}
 			}
 			if ((var4 & 0x10000) != 0) {

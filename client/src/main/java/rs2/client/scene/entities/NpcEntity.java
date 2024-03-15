@@ -4,7 +4,7 @@ import com.jagex.game.client.GameShell;
 import com.jagex.game.client.MoveSpeed;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.effectanimtype.EffectAnimType;
-import com.jagex.game.config.npctype.NPCHeadIconCustomisation;
+import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.npctype.NPCType;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.shared.movement.CoordFine;
@@ -31,7 +31,7 @@ public class NpcEntity extends PathingEntity {
 	public int field12075 = -1;
 
 	@ObfuscatedName("aqc.ca")
-	public NPCHeadIconCustomisation field12076;
+	public NPCTypeCustomisation field12076;
 
 	@ObfuscatedName("aqc.cx")
 	public static int field12077 = 1;
@@ -43,7 +43,7 @@ public class NpcEntity extends PathingEntity {
 	public int field12079 = -1;
 
 	@ObfuscatedName("aqc.cf")
-	public NpcTypeHeadIconSet field12080;
+	public NPCHeadIconCustomisation field12080;
 
 	@ObfuscatedName("aqc.co")
 	public int field12081;

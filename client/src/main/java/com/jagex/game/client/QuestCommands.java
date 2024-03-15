@@ -14,7 +14,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("nt.e(Lyf;I)V")
-	public static void method6038(ClientScriptState arg0) {
+	public static void quest_getname(ClientScriptState arg0) {
 		arg0.field8218[++arg0.field8211 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[--arg0.field8226])).field2633;
 	}
 
@@ -34,7 +34,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("kd.f(Lyf;I)V")
-	public static void method5341(ClientScriptState arg0) {
+	public static void quest_getmembers(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 1])).field2636 ? 1 : 0;
 	}
 
@@ -44,7 +44,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("g.l(Lyf;I)V")
-	public static void method616(ClientScriptState arg0) {
+	public static void quest_questreq_count(ClientScriptState arg0) {
 		QuestType var1 = (QuestType) Client.field1972.list(arg0.field8216[--arg0.field8226]);
 		arg0.field8216[++arg0.field8226 - 1] = var1.field2635 == null ? 0 : var1.field2635.length;
 	}
@@ -56,7 +56,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("anr.z(Lyf;I)V")
-	public static void method18726(ClientScriptState arg0) {
+	public static void quest_questreq_met(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 2] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 2])).method4453(Client.field7410, arg0.field8216[arg0.field8226 - 1]) ? 1 : 0;
 		arg0.field8226--;
 	}
@@ -78,7 +78,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("ec.r(Lyf;I)V")
-	public static void method2794(ClientScriptState arg0) {
+	public static void quest_statreq_stat(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 2] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 2])).field2640[arg0.field8216[arg0.field8226 - 1]][0];
 		arg0.field8226--;
 	}
@@ -90,25 +90,25 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("e.o(Lyf;I)V")
-	public static void method132(ClientScriptState arg0) {
+	public static void quest_statreq_met(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 2] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 2])).method4433(Client.field7410, arg0.field8216[arg0.field8226 - 1]) ? 1 : 0;
 		arg0.field8226--;
 	}
 
 	@ObfuscatedName("ez.s(Lyf;I)V")
-	public static void method2843(ClientScriptState arg0) {
+	public static void quest_varpreq_count(ClientScriptState arg0) {
 		QuestType var1 = (QuestType) Client.field1972.list(arg0.field8216[--arg0.field8226]);
 		arg0.field8216[++arg0.field8226 - 1] = var1.field2642 == null ? 0 : var1.field2642.length;
 	}
 
 	@ObfuscatedName("et.y(Lyf;I)V")
-	public static void method2861(ClientScriptState arg0) {
+	public static void quest_varpreq_desc(ClientScriptState arg0) {
 		arg0.field8218[++arg0.field8211 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 2])).field2644[arg0.field8216[arg0.field8226 - 1]];
 		arg0.field8226 -= 2;
 	}
 
 	@ObfuscatedName("ab.q(Lyf;B)V")
-	public static void method988(ClientScriptState arg0) {
+	public static void quest_varpreq_met(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 2] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 2])).method4435(Client.field7410, arg0.field8216[arg0.field8226 - 1]) ? 1 : 0;
 		arg0.field8226--;
 	}
@@ -142,7 +142,7 @@ public final class QuestCommands {
 	}
 
 	@ObfuscatedName("tx.i(Lyf;B)V")
-	public static void method8883(ClientScriptState arg0) {
+	public static void quest_finished(ClientScriptState arg0) {
 		arg0.field8216[arg0.field8226 - 1] = ((QuestType) Client.field1972.list(arg0.field8216[arg0.field8226 - 1])).method4430(Client.field7410) ? 1 : 0;
 	}
 

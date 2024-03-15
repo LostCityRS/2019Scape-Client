@@ -4,7 +4,7 @@ import com.jagex.game.config.npctype.NPCType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("id")
-public class NpcTypeHeadIconSet {
+public class NPCHeadIconCustomisation {
 
 	@ObfuscatedName("id.e")
 	public int[] field2682;
@@ -12,12 +12,12 @@ public class NpcTypeHeadIconSet {
 	@ObfuscatedName("id.n")
 	public short[] field2681;
 
-	public NpcTypeHeadIconSet(int[] arg0, short[] arg1) {
+	public NPCHeadIconCustomisation(int[] arg0, short[] arg1) {
 		this.field2682 = arg0;
 		this.field2681 = arg1;
 	}
 
-	public NpcTypeHeadIconSet(NPCType arg0) {
+	public NPCHeadIconCustomisation(NPCType arg0) {
 		this.field2682 = new int[8];
 		this.field2681 = new short[8];
 		int var2 = 0;

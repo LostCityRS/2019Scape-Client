@@ -40,12 +40,12 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("mt.f(Lyf;I)V")
-	public static void method5894(ClientScriptState arg0) {
+	public static void ttv_login_getstate(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method2107();
 	}
 
 	@ObfuscatedName("qv.w(Lyf;I)V")
-	public static void method7360(ClientScriptState arg0) {
+	public static void ttv_stream_getstate(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method321();
 	}
 
@@ -65,29 +65,29 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("yo.z(Lyf;S)V")
-	public static void method10369(ClientScriptState arg0) {
+	public static void ttv_stream_setsmoothresize(ClientScriptState arg0) {
 		boolean var1 = arg0.field8216[--arg0.field8226] != 0;
 		TwitchHardwarePlatform.method4501(var1);
 	}
 
 	@ObfuscatedName("io.p(Lyf;B)V")
-	public static void method4368(ClientScriptState arg0) {
+	public static void ttv_stream_getviewers(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method5950();
 	}
 
 	@ObfuscatedName("sq.d(Lyf;I)V")
-	public static void method8190(ClientScriptState arg0) {
+	public static void ttv_stream_settitle(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method6056(var1);
 	}
 
 	@ObfuscatedName("fb.c(Lyf;B)V")
-	public static void method3257(ClientScriptState arg0) {
+	public static void ttv_stream_getquality(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method10324();
 	}
 
 	@ObfuscatedName("anu.r(Lyf;I)V")
-	public static void method18699(ClientScriptState arg0) {
+	public static void ttv_chat_getstate(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.method9008();
 	}
 
@@ -179,7 +179,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("tr.a(Lyf;I)V")
-	public static void method8427(ClientScriptState arg0) {
+	public static void ttv_webcam_getcap_byuniqueid(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
@@ -204,7 +204,7 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("sj.g(Lyf;B)V")
-	public static void method8356(ClientScriptState arg0) {
+	public static void ttv_webcam_start(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
 		arg0.field8216[arg0.field8226] = TwitchHardwarePlatform.method4596(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1]);
 		arg0.field8226++;
@@ -230,13 +230,13 @@ public final class TwitchCommands {
 	}
 
 	@ObfuscatedName("iw.ae(Lyf;I)V")
-	public static void method4519(ClientScriptState arg0) {
+	public static void ttv_livestreams_getstream_start(ClientScriptState arg0) {
 		TwitchHardwarePlatform.method14297();
-		method2012(arg0);
+		ttv_livestreams_getstream_next(arg0);
 	}
 
 	@ObfuscatedName("dk.ag(Lyf;I)V")
-	public static void method2012(ClientScriptState arg0) {
+	public static void ttv_livestreams_getstream_next(ClientScriptState arg0) {
 		int var1 = TwitchHardwarePlatform.method9275();
 		if (var1 >= 0) {
 			arg0.field8216[++arg0.field8226 - 1] = TwitchHardwarePlatform.field4501.viewerCounts[var1];
