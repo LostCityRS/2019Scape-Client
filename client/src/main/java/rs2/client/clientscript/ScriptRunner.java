@@ -5292,18 +5292,18 @@ public final class ScriptRunner {
 	public static final void if_resume_pausebutton(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method8666(var2, arg0);
+		cc_if_resume_pausebutton(var2, arg0);
 	}
 
 	@ObfuscatedName("nl.bu(Lyf;I)V")
 	public static final void cc_resume_pausebutton(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method8666(var2, arg0);
+		cc_if_resume_pausebutton(var2, arg0);
 	}
 
 	@ObfuscatedName("tp.bw(Lhf;Lyf;I)V")
-	public static final void method8666(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_resume_pausebutton(Component arg0, ClientScriptState arg1) {
 		if (Client.method17197(arg0).method17689() && Client.field11056 == null) {
 			Client.method612(arg0.field2158, arg0.field2183);
 			Client.field11056 = Component.method16682(arg0.field2158, arg0.field2183);
@@ -5372,7 +5372,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("kw.ba(Lhf;Lhq;Lyf;I)V")
-	public static final void method5119(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setposition(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 4;
 		arg0.field2190 = arg2.field8216[arg2.field8226];
 		arg0.field2191 = arg2.field8216[arg2.field8226 + 1];
@@ -5405,7 +5405,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method5119(var2, var3, arg0);
+		cc_if_setposition(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("sh.bj(Lyf;I)V")
@@ -5413,11 +5413,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method5119(var2, var3, arg0);
+		cc_if_setposition(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ge.bs(Lhf;Lhq;Lyf;I)V")
-	public static final void method3562(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setsize(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 4;
 		arg0.field2192 = arg2.field8216[arg2.field8226];
 		arg0.field2193 = arg2.field8216[arg2.field8226 + 1];
@@ -5449,7 +5449,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method3562(var2, var3, arg0);
+		cc_if_setsize(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("hp.cg(Lyf;I)V")
@@ -5457,11 +5457,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method3562(var2, var3, arg0);
+		cc_if_setsize(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ju.ce(Lhf;Lhq;Lyf;I)V")
-	public static final void method4660(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_sethide(Component arg0, Interface arg1, ClientScriptState arg2) {
 		boolean var3 = arg2.field8216[--arg2.field8226] == 1;
 		if (arg0.field2201 != var3) {
 			arg0.field2201 = var3;
@@ -5477,7 +5477,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4660(var2, var3, arg0);
+		cc_if_sethide(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ea.ci(Lyf;I)V")
@@ -5485,11 +5485,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4660(var2, var3, arg0);
+		cc_if_sethide(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("rz.cn(Lhf;Lhq;Lyf;I)V")
-	public static final void method7711(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setaspect(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 2;
 		arg0.field2198 = arg2.field8216[arg2.field8226];
 		arg0.field2199 = arg2.field8216[arg2.field8226 + 1];
@@ -5505,7 +5505,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method7711(var2, var3, arg0);
+		cc_if_setaspect(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("xt.cp(Lyf;I)V")
@@ -5513,11 +5513,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method7711(var2, var3, arg0);
+		cc_if_setaspect(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("z.ca(Lhf;Lhq;Lyf;I)V")
-	public static final void method273(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setnoclickthrough(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2205 = arg2.field8216[--arg2.field8226] == 1;
 	}
 
@@ -5526,7 +5526,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method273(var2, var3, arg0);
+		cc_if_setnoclickthrough(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("qf.cw(Lyf;I)V")
@@ -5534,11 +5534,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method273(var2, var3, arg0);
+		cc_if_setnoclickthrough(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("any.ct(Lhf;Lhq;Lyf;I)V")
-	public static final void method18660(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setscrollpos(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 2;
 		arg0.field2206 = arg2.field8216[arg2.field8226];
 		if (arg0.field2206 > arg0.field2208 - arg0.field2196) {
@@ -5565,7 +5565,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method18660(var2, var3, arg0);
+		cc_if_setscrollpos(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("dg.co(Lyf;I)V")
@@ -5573,11 +5573,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method18660(var2, var3, arg0);
+		cc_if_setscrollpos(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("mj.cr(Lhf;Lhq;Lyf;I)V")
-	public static final void method5919(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setcolour(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2210 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 		if (arg0.field2183 == -1 && !arg1.field2150) {
@@ -5590,7 +5590,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method5919(var2, var3, arg0);
+		cc_if_setcolour(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ir.cq(Lyf;I)V")
@@ -5598,11 +5598,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method5919(var2, var3, arg0);
+		cc_if_setcolour(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ch.ch(Lhf;Lhq;Lyf;I)V")
-	public static final void method1517(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setfill(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2263 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 	}
@@ -5612,7 +5612,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method1517(var2, var3, arg0);
+		cc_if_setfill(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ajd.cs(Lyf;I)V")
@@ -5620,11 +5620,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method1517(var2, var3, arg0);
+		cc_if_setfill(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("hx.cy(Lhf;Lhq;Lyf;B)V")
-	public static final void method3921(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settrans(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2212 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 	}
@@ -5634,7 +5634,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method3921(var2, var3, arg0);
+		cc_if_settrans(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ky.cz(Lyf;I)V")
@@ -5642,11 +5642,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method3921(var2, var3, arg0);
+		cc_if_settrans(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("sv.ck(Lhf;Lhq;Lyf;B)V")
-	public static final void method7972(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setlinewid(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2156 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 	}
@@ -5656,7 +5656,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method7972(var2, var3, arg0);
+		cc_if_setlinewid(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("iw.cd(Lyf;I)V")
@@ -5664,11 +5664,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method7972(var2, var3, arg0);
+		cc_if_setlinewid(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jx.dd(Lhf;Lhq;Lyf;I)V")
-	public static final void method5066(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setgraphic(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.field8216[--arg2.field8226];
 		arg0.field2334 = -1;
 		if (arg0.field2215 != var3) {
@@ -5685,7 +5685,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method5066(var2, var3, arg0);
+		cc_if_setgraphic(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("qk.da(Lyf;B)V")
@@ -5693,11 +5693,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method5066(var2, var3, arg0);
+		cc_if_setgraphic(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("dd.dt(Lhf;Lhq;Lyf;I)V")
-	public static final void method1620(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_set2dangle(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2216 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 	}
@@ -5707,7 +5707,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method1620(var2, var3, arg0);
+		cc_if_set2dangle(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("nv.dz(Lyf;I)V")
@@ -5715,11 +5715,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method1620(var2, var3, arg0);
+		cc_if_set2dangle(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("wq.dv(Lhf;Lhq;Lyf;I)V")
-	public static final void method9790(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settiling(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2217 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 	}
@@ -5729,7 +5729,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9790(var2, var3, arg0);
+		cc_if_settiling(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("dy.dq(Lyf;I)V")
@@ -5737,11 +5737,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9790(var2, var3, arg0);
+		cc_if_settiling(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("l.dc(Lhf;Lhq;Lyf;B)V")
-	public static final void method255(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmodel(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2224 = 1;
 		arg0.field2294 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
@@ -5755,7 +5755,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method255(var2, var3, arg0);
+		cc_if_setmodel(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ui.dk(Lyf;I)V")
@@ -5763,11 +5763,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method255(var2, var3, arg0);
+		cc_if_setmodel(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("sd.dn(Lhf;Lhq;Lyf;I)V")
-	public static final void method8299(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmodelangle(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 6;
 		arg0.field2228 = arg2.field8216[arg2.field8226];
 		arg0.field2316 = arg2.field8216[arg2.field8226 + 1];
@@ -5787,7 +5787,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method8299(var2, var3, arg0);
+		cc_if_setmodelangle(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("anv.dw(Lyf;I)V")
@@ -5795,11 +5795,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method8299(var2, var3, arg0);
+		cc_if_setmodelangle(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("yl.ds(Lhf;Lhq;Lyf;I)V")
-	public static final void method10678(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmodelanim(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.field8216[--arg2.field8226];
 		if (arg0.field2262 != var3) {
 			if (var3 == -1) {
@@ -5823,7 +5823,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method10678(var2, var3, arg0);
+		cc_if_setmodelanim(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("adn.dl(Lyf;I)V")
@@ -5831,11 +5831,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method10678(var2, var3, arg0);
+		cc_if_setmodelanim(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("db.dp(Lhf;Lhq;Lyf;S)V")
-	public static final void method2108(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmodelorthog(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2239 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 	}
@@ -5845,7 +5845,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method2108(var2, var3, arg0);
+		cc_if_setmodelorthog(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ru.db(Lyf;I)V")
@@ -5853,11 +5853,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method2108(var2, var3, arg0);
+		cc_if_setmodelorthog(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("dy.dh(Lhf;Lhq;Lyf;S)V")
-	public static final void method2098(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmodeltint(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 4;
 		arg0.field2240 = arg2.field8216[arg2.field8226];
 		arg0.field2256 = arg2.field8216[arg2.field8226 + 1];
@@ -5871,7 +5871,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method2098(var2, var3, arg0);
+		cc_if_setmodeltint(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("gq.dg(Lyf;I)V")
@@ -5879,11 +5879,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method2098(var2, var3, arg0);
+		cc_if_setmodeltint(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("adg.de(Lhf;Lhq;Lyf;I)V")
-	public static final void method15227(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmodellighting(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 10;
 		arg0.field2250 = true;
 		arg0.field2248 = Math.max(Math.min(arg2.field8216[arg2.field8226], 2816), 0);
@@ -5905,7 +5905,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method15227(var2, var3, arg0);
+		cc_if_setmodellighting(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("iq.eo(Lyf;I)V")
@@ -5913,11 +5913,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method15227(var2, var3, arg0);
+		cc_if_setmodellighting(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("gz.ey(Lhf;Lhq;Lyf;I)V")
-	public static final void method3658(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_resetmodellighting(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2250 = false;
 		Client.method4616(arg0);
 	}
@@ -5927,7 +5927,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method3658(var2, var3, arg0);
+		cc_if_resetmodellighting(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("kj.ed(Lyf;I)V")
@@ -5935,11 +5935,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method3658(var2, var3, arg0);
+		cc_if_resetmodellighting(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("fb.ee(Lhf;Lhq;Lyf;I)V")
-	public static final void method3258(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settext(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (!var3.equals(arg0.field2261)) {
 			arg0.field2261 = var3;
@@ -5955,7 +5955,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method3258(var2, var3, arg0);
+		cc_if_settext(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ef.ei(Lyf;B)V")
@@ -5963,11 +5963,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method3258(var2, var3, arg0);
+		cc_if_settext(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ft.el(Lhf;Lhq;Lyf;I)V")
-	public static final void method3077(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settextfont(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2287 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 		if (arg0.field2183 == -1 && !arg1.field2150) {
@@ -5980,7 +5980,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method3077(var2, var3, arg0);
+		cc_if_settextfont(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ana.ep(Lyf;B)V")
@@ -5988,11 +5988,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method3077(var2, var3, arg0);
+		cc_if_settextfont(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("hn.ev(Lhf;Lhq;Lyf;I)V")
-	public static final void method4079(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settextalign(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 3;
 		arg0.field2223 = arg2.field8216[arg2.field8226];
 		arg0.field2264 = arg2.field8216[arg2.field8226 + 1];
@@ -6005,7 +6005,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4079(var2, var3, arg0);
+		cc_if_settextalign(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("dm.ek(Lyf;I)V")
@@ -6013,11 +6013,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4079(var2, var3, arg0);
+		cc_if_settextalign(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("yu.em(Lhf;Lhq;Lyf;I)V")
-	public static final void method13846(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settextshadow(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2265 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 	}
@@ -6027,7 +6027,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method13846(var2, var3, arg0);
+		cc_if_settextshadow(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("xh.eq(Lyf;S)V")
@@ -6035,11 +6035,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method13846(var2, var3, arg0);
+		cc_if_settextshadow(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("if.eg(Lhf;Lhq;Lyf;S)V")
-	public static final void method4573(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settextantimacro(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2267 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 		if (arg0.field2183 == -1 && !arg1.field2150) {
@@ -6052,7 +6052,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4573(var2, var3, arg0);
+		cc_if_settextantimacro(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("sx.ef(Lyf;I)V")
@@ -6060,11 +6060,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4573(var2, var3, arg0);
+		cc_if_settextantimacro(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jq.et(Lhf;Lhq;Lyf;B)V")
-	public static final void method4992(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setoutline(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2218 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 	}
@@ -6074,7 +6074,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4992(var2, var3, arg0);
+		cc_if_setoutline(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ax.ew(Lyf;I)V")
@@ -6082,11 +6082,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4992(var2, var3, arg0);
+		cc_if_setoutline(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("wq.er(Lhf;Lhq;Lyf;B)V")
-	public static final void method9791(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setgraphicshadow(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2219 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 	}
@@ -6096,7 +6096,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9791(var2, var3, arg0);
+		cc_if_setgraphicshadow(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ka.eb(Lyf;I)V")
@@ -6104,11 +6104,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9791(var2, var3, arg0);
+		cc_if_setgraphicshadow(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("uf.ex(Lhf;Lhq;Lyf;I)V")
-	public static final void method9019(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setvflip(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2220 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 	}
@@ -6118,7 +6118,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9019(var2, var3, arg0);
+		cc_if_setvflip(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ys.fm(Lyf;I)V")
@@ -6126,11 +6126,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9019(var2, var3, arg0);
+		cc_if_setvflip(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("dh.fu(Lhf;Lhq;Lyf;B)V")
-	public static final void method2579(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_sethflip(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2213 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 	}
@@ -6140,7 +6140,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method2579(var2, var3, arg0);
+		cc_if_sethflip(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("hs.fz(Lyf;I)V")
@@ -6148,11 +6148,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method2579(var2, var3, arg0);
+		cc_if_sethflip(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("tv.fj(Lhf;Lhq;Lyf;I)V")
-	public static final void method8675(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setscrollsize(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 2;
 		arg0.field2208 = arg2.field8216[arg2.field8226];
 		arg0.field2319 = arg2.field8216[arg2.field8226 + 1];
@@ -6167,7 +6167,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method8675(var2, var3, arg0);
+		cc_if_setscrollsize(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ry.fn(Lyf;I)V")
@@ -6175,11 +6175,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method8675(var2, var3, arg0);
+		cc_if_setscrollsize(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("rm.fi(Lhf;Lhq;Lyf;B)V")
-	public static final void method7620(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setalpha(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2222 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 	}
@@ -6189,7 +6189,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method7620(var2, var3, arg0);
+		cc_if_setalpha(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ff.fx(Lyf;I)V")
@@ -6197,11 +6197,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method7620(var2, var3, arg0);
+		cc_if_setalpha(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("fa.fv(Lhf;Lhq;Lyf;B)V")
-	public static final void method3100(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmodelzoom(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2272 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 		if (arg0.field2183 == -1 && !arg1.field2150) {
@@ -6214,7 +6214,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method3100(var2, var3, arg0);
+		cc_if_setmodelzoom(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ip.fw(Lyf;B)V")
@@ -6222,11 +6222,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method3100(var2, var3, arg0);
+		cc_if_setmodelzoom(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("nz.fa(Lhf;Lhq;Lyf;S)V")
-	public static final void method6085(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setlinedirection(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.field8216[--arg2.field8226];
 		arg0.field2214 = var3 == 1;
 		Client.method4616(arg0);
@@ -6237,7 +6237,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method6085(var2, var3, arg0);
+		cc_if_setlinedirection(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("xn.fq(Lyf;I)V")
@@ -6245,11 +6245,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method6085(var2, var3, arg0);
+		cc_if_setlinedirection(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("il.ff(Lhf;Lhq;Lyf;I)V")
-	public static final void method4506(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmodelorigin(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 2;
 		arg0.field2305 = arg2.field8216[arg2.field8226];
 		arg0.field2209 = arg2.field8216[arg2.field8226 + 1];
@@ -6261,7 +6261,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4506(var2, var3, arg0);
+		cc_if_setmodelorigin(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ip.fb(Lyf;I)V")
@@ -6269,11 +6269,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4506(var2, var3, arg0);
+		cc_if_setmodelorigin(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("d.fo(Lhf;Lhq;Lyf;B)V")
-	public static final void method310(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmaxlines(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2236 = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 	}
@@ -6283,7 +6283,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method310(var2, var3, arg0);
+		cc_if_setmaxlines(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aq.fe(Lyf;I)V")
@@ -6291,11 +6291,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method310(var2, var3, arg0);
+		cc_if_setmaxlines(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("vx.fk(Lhf;Lhq;Lyf;I)V")
-	public static final void method9246(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setparam_int(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 2;
 		int var3 = arg2.field8216[arg2.field8226];
 		int var4 = arg2.field8216[arg2.field8226 + 1];
@@ -6312,7 +6312,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9246(var2, var3, arg0);
+		cc_if_setparam_int(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jd.fr(Lyf;I)V")
@@ -6320,11 +6320,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9246(var2, var3, arg0);
+		cc_if_setparam_int(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("abh.gu(Lhf;Lhq;Lyf;I)V")
-	public static final void method14700(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setparam_string(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.field8216[--arg2.field8226];
 		String var4 = (String) arg2.field8218[--arg2.field8211];
 		ParamType var5 = (ParamType) Client.field3086.list(var3);
@@ -6340,7 +6340,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14700(var2, var3, arg0);
+		cc_if_setparam_string(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ts.gl(Lyf;B)V")
@@ -6348,11 +6348,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14700(var2, var3, arg0);
+		cc_if_setparam_string(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("abc.go(Lhf;Lhq;Lyf;I)V")
-	public static final void method14717(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setrecol(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 3;
 		int var3 = arg2.field8216[arg2.field8226];
 		short var4 = (short) arg2.field8216[arg2.field8226 + 1];
@@ -6372,7 +6372,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14717(var2, var3, arg0);
+		cc_if_setrecol(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aag.gp(Lyf;B)V")
@@ -6380,11 +6380,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14717(var2, var3, arg0);
+		cc_if_setrecol(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aiu.gy(Lhf;Lhq;Lyf;I)V")
-	public static final void method16905(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void if_setretex(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 3;
 		int var3 = arg2.field8216[arg2.field8226];
 		short var4 = (short) arg2.field8216[arg2.field8226 + 1];
@@ -6404,7 +6404,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method16905(var2, var3, arg0);
+		if_setretex(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jq.gn(Lyf;I)V")
@@ -6412,11 +6412,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method16905(var2, var3, arg0);
+		if_setretex(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("v.gc(Lhf;Lhq;Lyf;B)V")
-	public static final void method331(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setfontmono(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2275 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 		if (arg0.field2183 == -1 && !arg1.field2150) {
@@ -6429,7 +6429,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method331(var2, var3, arg0);
+		cc_if_setfontmono(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("w.gx(Lyf;S)V")
@@ -6437,7 +6437,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method331(var2, var3, arg0);
+		cc_if_setfontmono(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ae.ge(Lyf;I)V")
@@ -6456,7 +6456,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("abv.gg(Lhf;Lhq;Lyf;I)V")
-	public static final void method14690(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setclickmask(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2253 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 		if (arg0.field2183 == -1 && !arg1.field2150) {
@@ -6469,7 +6469,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14690(var2, var3, arg0);
+		cc_if_setclickmask(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("tp.gs(Lyf;I)V")
@@ -6477,11 +6477,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14690(var2, var3, arg0);
+		cc_if_setclickmask(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jp.gt(Lhf;Lhq;Lyf;I)V")
-	public static final void method5097(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setheld(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2360 = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 	}
@@ -6491,7 +6491,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method5097(var2, var3, arg0);
+		cc_if_setheld(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("iq.gm(Lyf;I)V")
@@ -6499,11 +6499,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method5097(var2, var3, arg0);
+		cc_if_setheld(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ws.gv(Lhf;Lhq;Lyf;I)V")
-	public static final void method9878(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setnpchead(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2224 = 2;
 		arg0.field2363 = null;
 		arg0.field2294 = arg2.field8216[--arg2.field8226];
@@ -6517,7 +6517,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9878(var2, var3, arg0);
+		cc_if_setnpchead(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("pb.gw(Lyf;B)V")
@@ -6525,11 +6525,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9878(var2, var3, arg0);
+		cc_if_setnpchead(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ge.gd(Lhf;Lhq;Lyf;B)V")
-	public static final void method3573(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setplayerhead_self(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2224 = 3;
 		arg0.field2294 = Client.field10945;
 		arg0.field2298 = 0;
@@ -6543,7 +6543,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method3573(var2, var3, arg0);
+		cc_if_setplayerhead_self(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("uf.gb(Lyf;I)V")
@@ -6551,11 +6551,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method3573(var2, var3, arg0);
+		cc_if_setplayerhead_self(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aaj.gi(Lhf;Lhq;ZILyf;I)V")
-	public static final void method14455(Component arg0, Interface arg1, boolean arg2, int arg3, ClientScriptState arg4) {
+	public static final void cc_if_setobject_data(Component arg0, Interface arg1, boolean arg2, int arg3, ClientScriptState arg4) {
 		arg4.field8226 -= 2;
 		int var5 = arg4.field8216[arg4.field8226];
 		int var6 = arg4.field8216[arg4.field8226 + 1];
@@ -6593,7 +6593,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14455(var2, var3, false, 2, arg0);
+		cc_if_setobject_data(var2, var3, false, 2, arg0);
 	}
 
 	@ObfuscatedName("nd.ha(Lyf;I)V")
@@ -6601,7 +6601,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14455(var2, var3, false, 2, arg0);
+		cc_if_setobject_data(var2, var3, false, 2, arg0);
 	}
 
 	@ObfuscatedName("po.hk(Lyf;I)V")
@@ -6609,7 +6609,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14455(var2, var3, false, 0, arg0);
+		cc_if_setobject_data(var2, var3, false, 0, arg0);
 	}
 
 	@ObfuscatedName("vi.hu(Lyf;I)V")
@@ -6617,7 +6617,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14455(var2, var3, false, 0, arg0);
+		cc_if_setobject_data(var2, var3, false, 0, arg0);
 	}
 
 	@ObfuscatedName("qm.hb(Lyf;B)V")
@@ -6625,7 +6625,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14455(var2, var3, true, 2, arg0);
+		cc_if_setobject_data(var2, var3, true, 2, arg0);
 	}
 
 	@ObfuscatedName("abt.hg(Lyf;B)V")
@@ -6633,7 +6633,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14455(var2, var3, true, 2, arg0);
+		cc_if_setobject_data(var2, var3, true, 2, arg0);
 	}
 
 	@ObfuscatedName("tg.hd(Lyf;I)V")
@@ -6641,7 +6641,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14455(var2, var3, true, 0, arg0);
+		cc_if_setobject_data(var2, var3, true, 0, arg0);
 	}
 
 	@ObfuscatedName("agg.hx(Lyf;B)V")
@@ -6649,7 +6649,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14455(var2, var3, true, 0, arg0);
+		cc_if_setobject_data(var2, var3, true, 0, arg0);
 	}
 
 	@ObfuscatedName("je.hq(Lyf;I)V")
@@ -6657,7 +6657,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14455(var2, var3, false, 1, arg0);
+		cc_if_setobject_data(var2, var3, false, 1, arg0);
 	}
 
 	@ObfuscatedName("kc.hf(Lyf;I)V")
@@ -6665,7 +6665,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14455(var2, var3, false, 1, arg0);
+		cc_if_setobject_data(var2, var3, false, 1, arg0);
 	}
 
 	@ObfuscatedName("agf.hr(Lyf;I)V")
@@ -6673,7 +6673,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14455(var2, var3, true, 1, arg0);
+		cc_if_setobject_data(var2, var3, true, 1, arg0);
 	}
 
 	@ObfuscatedName("xk.hs(Lyf;B)V")
@@ -6681,11 +6681,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14455(var2, var3, true, 1, arg0);
+		cc_if_setobject_data(var2, var3, true, 1, arg0);
 	}
 
 	@ObfuscatedName("tx.hh(Lhf;Lhq;Lyf;I)V")
-	public static final void method8884(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setnpcmodel(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2224 = 6;
 		arg0.field2363 = null;
 		arg0.field2294 = arg2.field8216[--arg2.field8226];
@@ -6699,7 +6699,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method8884(var2, var3, arg0);
+		cc_if_setnpcmodel(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("qz.hy(Lyf;B)V")
@@ -6707,11 +6707,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method8884(var2, var3, arg0);
+		cc_if_setnpcmodel(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ty.he(Lhf;Lhq;Lyf;B)V")
-	public static final void method8473(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setplayermodel(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2224 = 5;
 		arg0.field2294 = arg2.field8216[--arg2.field8226];
 		if (arg0.field2183 == -1 && !arg1.field2150) {
@@ -6724,7 +6724,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method8473(var2, var3, arg0);
+		cc_if_setplayermodel(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("vs.hi(Lyf;I)V")
@@ -6732,11 +6732,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method8473(var2, var3, arg0);
+		cc_if_setplayermodel(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("nz.hw(Lhf;Lhq;Lyf;Lhd;B)V")
-	public static final void method6082(Component arg0, Interface arg1, ClientScriptState arg2, GroupUserKind arg3) {
+	public static final void cc_if_setlink(Component arg0, Interface arg1, ClientScriptState arg2, GroupUserKind arg3) {
 		int var4 = arg2.field8216[--arg2.field8226];
 		switch(arg3.field2141) {
 			case 0:
@@ -6771,7 +6771,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method6082(var2, var3, arg0, GroupUserKind.field2136);
+		cc_if_setlink(var2, var3, arg0, GroupUserKind.field2136);
 	}
 
 	@ObfuscatedName("ve.hc(Lyf;B)V")
@@ -6779,7 +6779,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method6082(var2, var3, arg0, GroupUserKind.field2136);
+		cc_if_setlink(var2, var3, arg0, GroupUserKind.field2136);
 	}
 
 	@ObfuscatedName("pr.ho(Lyf;I)V")
@@ -6787,7 +6787,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method6082(var2, var3, arg0, GroupUserKind.field2140);
+		cc_if_setlink(var2, var3, arg0, GroupUserKind.field2140);
 	}
 
 	@ObfuscatedName("aq.hj(Lyf;I)V")
@@ -6795,7 +6795,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method6082(var2, var3, arg0, GroupUserKind.field2140);
+		cc_if_setlink(var2, var3, arg0, GroupUserKind.field2140);
 	}
 
 	@ObfuscatedName("ga.hv(Lyf;I)V")
@@ -6805,7 +6805,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		Component var3 = Component.method10202(var2);
 		Interface var4 = Component.field11725[var2 >> 16];
-		method6082(var3, var4, arg0, var1 ? GroupUserKind.field2138 : GroupUserKind.field2137);
+		cc_if_setlink(var3, var4, arg0, var1 ? GroupUserKind.field2138 : GroupUserKind.field2137);
 	}
 
 	@ObfuscatedName("uy.hz(Lyf;I)V")
@@ -6814,7 +6814,7 @@ public final class ScriptRunner {
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
 		boolean var4 = arg0.field8216[--arg0.field8226] == 1;
-		method6082(var2, var3, arg0, var4 ? GroupUserKind.field2138 : GroupUserKind.field2137);
+		cc_if_setlink(var2, var3, arg0, var4 ? GroupUserKind.field2138 : GroupUserKind.field2137);
 	}
 
 	@ObfuscatedName("akr.ij(Lyf;I)V")
@@ -6822,7 +6822,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method6082(var2, var3, arg0, Client.field3022 == arg0.field8228 ? GroupUserKind.field2139 : GroupUserKind.field2135);
+		cc_if_setlink(var2, var3, arg0, Client.field3022 == arg0.field8228 ? GroupUserKind.field2139 : GroupUserKind.field2135);
 	}
 
 	@ObfuscatedName("tv.io(Lyf;I)V")
@@ -6830,11 +6830,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method6082(var2, var3, arg0, Client.field3022 == arg0.field8228 ? GroupUserKind.field2139 : GroupUserKind.field2135);
+		cc_if_setlink(var2, var3, arg0, Client.field3022 == arg0.field8228 ? GroupUserKind.field2139 : GroupUserKind.field2135);
 	}
 
 	@ObfuscatedName("bf.iq(Lhf;Lhq;Lyf;I)V")
-	public static final void method1020(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_resetlinkplayer(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2336 = null;
 		arg0.field2337 = null;
 	}
@@ -6844,7 +6844,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method1020(var2, var3, arg0);
+		cc_if_resetlinkplayer(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("nu.iv(Lyf;I)V")
@@ -6852,11 +6852,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method1020(var2, var3, arg0);
+		cc_if_resetlinkplayer(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("age.ie(Lhf;Lhq;Lyf;S)V")
-	public static final void method16442(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setplayermodel_self(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2224 = 5;
 		arg0.field2294 = Client.field10945;
 		arg0.field2298 = 0;
@@ -6870,7 +6870,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method16442(var2, var3, arg0);
+		cc_if_setplayermodel_self(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("w.in(Lyf;I)V")
@@ -6878,11 +6878,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method16442(var2, var3, arg0);
+		cc_if_setplayermodel_self(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("n.ir(Lhf;Lhq;Lyf;I)V")
-	public static final void method143(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setop(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.field8216[--arg2.field8226] - 1;
 		if (var3 >= 0 && var3 <= 9) {
 			arg0.method3947(var3, (String) arg2.field8218[--arg2.field8211]);
@@ -6896,7 +6896,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method143(var2, var3, arg0);
+		cc_if_setop(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("abr.ix(Lyf;I)V")
@@ -6904,11 +6904,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method143(var2, var3, arg0);
+		cc_if_setop(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("g.is(Lhf;Lhq;Lyf;I)V")
-	public static final void method617(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setdraggable(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 2;
 		int var3 = arg2.field8216[arg2.field8226];
 		int var4 = arg2.field8216[arg2.field8226 + 1];
@@ -6924,7 +6924,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method617(var2, var3, arg0);
+		cc_if_setdraggable(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jd.il(Lyf;B)V")
@@ -6932,11 +6932,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method617(var2, var3, arg0);
+		cc_if_setdraggable(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("gm.iw(Lhf;Lhq;Lyf;I)V")
-	public static final void method3600(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setdragrenderbehaviour(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.field8216[--arg2.field8226];
 		if (Component.field2234 == var3 || Component.field2301 == var3 || Component.field2157 == var3 || Component.field2266 == var3) {
 			arg0.field2271 = var3;
@@ -6948,7 +6948,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method3600(var2, var3, arg0);
+		cc_if_setdragrenderbehaviour(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("pv.id(Lyf;I)V")
@@ -6956,11 +6956,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method3600(var2, var3, arg0);
+		cc_if_setdragrenderbehaviour(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("vm.ia(Lhf;Lhq;Lyf;I)V")
-	public static final void method9456(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setdragdeadzone(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2285 = arg2.field8216[--arg2.field8226];
 	}
 
@@ -6969,7 +6969,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9456(var2, var3, arg0);
+		cc_if_setdragdeadzone(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("hi.ih(Lyf;I)V")
@@ -6977,11 +6977,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9456(var2, var3, arg0);
+		cc_if_setdragdeadzone(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("db.iy(Lhf;Lhq;Lyf;I)V")
-	public static final void method2109(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setdragdeadtime(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2286 = arg2.field8216[--arg2.field8226];
 	}
 
@@ -6990,7 +6990,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method2109(var2, var3, arg0);
+		cc_if_setdragdeadtime(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("fb.iz(Lyf;B)V")
@@ -6998,7 +6998,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method2109(var2, var3, arg0);
+		cc_if_setdragdeadtime(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ev.ik(Lyf;I)V")
@@ -7122,7 +7122,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("hz.jg(Lhf;Lhq;Lyf;I)V")
-	public static final void method4318(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setopbase(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2279 = (String) arg2.field8218[--arg2.field8211];
 	}
 
@@ -7131,7 +7131,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4318(var2, var3, arg0);
+		cc_if_setopbase(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("db.jh(Lyf;I)V")
@@ -7139,11 +7139,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4318(var2, var3, arg0);
+		cc_if_setopbase(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ahd.jp(Lhf;Lhq;Lyf;I)V")
-	public static final void method16715(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settargetverb(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2288 = (String) arg2.field8218[--arg2.field8211];
 	}
 
@@ -7152,7 +7152,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method16715(var2, var3, arg0);
+		cc_if_settargetverb(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("hy.kw(Lyf;I)V")
@@ -7160,11 +7160,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method16715(var2, var3, arg0);
+		cc_if_settargetverb(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("mj.kz(Lhf;Lhq;Lyf;B)V")
-	public static final void method5920(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_clearops(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2321 = null;
 	}
 
@@ -7173,7 +7173,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method5920(var2, var3, arg0);
+		cc_if_clearops(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ig.kq(Lyf;I)V")
@@ -7181,11 +7181,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method5920(var2, var3, arg0);
+		cc_if_clearops(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("fr.kg(Lhf;Lhq;Lyf;I)V")
-	public static final void method3376(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settargetcursors(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2269 = arg2.field8216[--arg2.field8226];
 		arg0.field2202 = arg2.field8216[--arg2.field8226];
 	}
@@ -7195,7 +7195,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method3376(var2, var3, arg0);
+		cc_if_settargetcursors(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("pk.ko(Lyf;B)V")
@@ -7203,11 +7203,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method3376(var2, var3, arg0);
+		cc_if_settargetcursors(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aj.kf(Lhf;Lhq;Lyf;B)V")
-	public static final void method969(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setopcursor(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.field8216[--arg2.field8226];
 		int var4 = arg2.field8216[--arg2.field8226];
 		if (var4 >= 1 && var4 <= 10) {
@@ -7220,7 +7220,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method969(var2, var3, arg0);
+		cc_if_setopcursor(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("af.ki(Lyf;I)V")
@@ -7228,11 +7228,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method969(var2, var3, arg0);
+		cc_if_setopcursor(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aba.ks(Lhf;Lhq;Lyf;B)V")
-	public static final void method14767(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setpausetext(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2180 = (String) arg2.field8218[--arg2.field8211];
 	}
 
@@ -7241,7 +7241,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14767(var2, var3, arg0);
+		cc_if_setpausetext(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("vv.ka(Lyf;B)V")
@@ -7249,11 +7249,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14767(var2, var3, arg0);
+		cc_if_setpausetext(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("abh.kl(Lhf;Lhq;Lyf;S)V")
-	public static final void method14702(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_settargetopcursor(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2283 = arg2.field8216[--arg2.field8226];
 	}
 
@@ -7262,7 +7262,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14702(var2, var3, arg0);
+		cc_if_settargetopcursor(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ake.kr(Lyf;I)V")
@@ -7270,7 +7270,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14702(var2, var3, arg0);
+		cc_if_settargetopcursor(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("su.kd(Lhf;IILyf;I)V")
@@ -7300,7 +7300,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("fk.kc(Lhf;Lyf;B)V")
-	public static final void method3373(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_setopchar(Component arg0, ClientScriptState arg1) {
 		arg1.field8226 -= 2;
 		int var2 = arg1.field8216[arg1.field8226] - 1;
 		int var3 = arg1.field8216[arg1.field8226 + 1];
@@ -7314,18 +7314,18 @@ public final class ScriptRunner {
 	public static final void if_setopchar(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method3373(var2, arg0);
+		cc_if_setopchar(var2, arg0);
 	}
 
 	@ObfuscatedName("xb.kn(Lyf;S)V")
 	public static final void cc_setopchar(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method3373(var2, arg0);
+		cc_if_setopchar(var2, arg0);
 	}
 
 	@ObfuscatedName("ag.kp(Lhf;Lyf;I)V")
-	public static final void method666(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_setoptchar(Component arg0, ClientScriptState arg1) {
 		byte var2 = 10;
 		int var3 = arg1.field8216[--arg1.field8226];
 		method8295(arg0, var2, var3, arg1);
@@ -7335,18 +7335,18 @@ public final class ScriptRunner {
 	public static final void if_setoptchar(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method666(var2, arg0);
+		cc_if_setoptchar(var2, arg0);
 	}
 
 	@ObfuscatedName("gk.ky(Lyf;B)V")
 	public static final void cc_setoptchar(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method666(var2, arg0);
+		cc_if_setoptchar(var2, arg0);
 	}
 
 	@ObfuscatedName("vm.kk(Lhf;I[B[BLyf;I)V")
-	public static final void method9457(Component arg0, int arg1, byte[] arg2, byte[] arg3, ClientScriptState arg4) {
+	public static final void cc_if_setopkey(Component arg0, int arg1, byte[] arg2, byte[] arg3, ClientScriptState arg4) {
 		if (arg0.field2270 == null) {
 			if (arg2 == null) {
 				return;
@@ -7378,7 +7378,7 @@ public final class ScriptRunner {
 		if (var4 < 0 || var4 > 9) {
 			throw new RuntimeException();
 		}
-		method9457(arg0, var4, arg1, arg2, arg3);
+		cc_if_setopkey(arg0, var4, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("b.kt(Lyf;I)V")
@@ -7413,12 +7413,12 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("cq.lv(Lhf;Lhq;Lyf;I)V")
-	public static final void method1515(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setoptkey(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 2;
 		byte var3 = 10;
 		byte[] var4 = new byte[] { (byte) arg2.field8216[arg2.field8226] };
 		byte[] var5 = new byte[] { (byte) arg2.field8216[arg2.field8226 + 1] };
-		method9457(arg0, var3, var4, var5, arg2);
+		cc_if_setopkey(arg0, var3, var4, var5, arg2);
 	}
 
 	@ObfuscatedName("yx.la(Lyf;I)V")
@@ -7426,7 +7426,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method1515(var2, var3, arg0);
+		cc_if_setoptkey(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("gm.lp(Lyf;I)V")
@@ -7434,7 +7434,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method1515(var2, var3, arg0);
+		cc_if_setoptkey(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("qp.lc(Lhf;IIILyf;S)V")
@@ -7447,7 +7447,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("n.lf(Lhf;Lyf;I)V")
-	public static final void method144(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_setopkeyrate(Component arg0, ClientScriptState arg1) {
 		arg1.field8226 -= 3;
 		int var2 = arg1.field8216[arg1.field8226] - 1;
 		int var3 = arg1.field8216[arg1.field8226 + 1];
@@ -7462,18 +7462,18 @@ public final class ScriptRunner {
 	public static final void if_setopkeyrate(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method144(var2, arg0);
+		cc_if_setopkeyrate(var2, arg0);
 	}
 
 	@ObfuscatedName("ua.ll(Lyf;I)V")
 	public static final void cc_setopkeyrate(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method144(var2, arg0);
+		cc_if_setopkeyrate(var2, arg0);
 	}
 
 	@ObfuscatedName("fz.lb(Lhf;Lyf;I)V")
-	public static final void method3040(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_setoptkeyrate(Component arg0, ClientScriptState arg1) {
 		byte var2 = 10;
 		int var3 = arg1.field8216[--arg1.field8226];
 		int var4 = arg1.field8216[--arg1.field8226];
@@ -7484,14 +7484,14 @@ public final class ScriptRunner {
 	public static final void if_setoptkeyrate(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method3040(var2, arg0);
+		cc_if_setoptkeyrate(var2, arg0);
 	}
 
 	@ObfuscatedName("fj.lr(Lyf;I)V")
 	public static final void cc_setoptkeyrate(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method3040(var2, arg0);
+		cc_if_setoptkeyrate(var2, arg0);
 	}
 
 	@ObfuscatedName("is.lq(Lhf;ILyf;I)V")
@@ -7506,7 +7506,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("if.lo(Lhf;Lyf;I)V")
-	public static final void method4568(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_setopkeyignoreheld(Component arg0, ClientScriptState arg1) {
 		arg1.field8226--;
 		int var2 = arg1.field8216[arg1.field8226] - 1;
 		if (var2 < 0 || var2 > 9) {
@@ -7519,18 +7519,18 @@ public final class ScriptRunner {
 	public static final void if_setopkeyignoreheld(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method4568(var2, arg0);
+		cc_if_setopkeyignoreheld(var2, arg0);
 	}
 
 	@ObfuscatedName("pp.ls(Lyf;I)V")
 	public static final void cc_setopkeyignoreheld(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method4568(var2, arg0);
+		cc_if_setopkeyignoreheld(var2, arg0);
 	}
 
 	@ObfuscatedName("hj.lu(Lhf;Lyf;I)V")
-	public static final void method4283(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_setoptkeyignoreheld(Component arg0, ClientScriptState arg1) {
 		byte var2 = 10;
 		method4490(arg0, var2, arg1);
 	}
@@ -7539,18 +7539,18 @@ public final class ScriptRunner {
 	public static final void if_setoptkeyignoreheld(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method4283(var2, arg0);
+		cc_if_setoptkeyignoreheld(var2, arg0);
 	}
 
 	@ObfuscatedName("gl.lg(Lyf;I)V")
 	public static final void cc_setoptkeyignoreheld(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method4283(var2, arg0);
+		cc_if_setoptkeyignoreheld(var2, arg0);
 	}
 
 	@ObfuscatedName("xz.lx(Lhf;Lhq;Lyf;I)V")
-	public static final void method10189(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setmouseovercursor(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2204 = arg2.field8216[--arg2.field8226];
 	}
 
@@ -7559,7 +7559,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method10189(var2, var3, arg0);
+		cc_if_setmouseovercursor(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("u.lw(Lyf;I)V")
@@ -7567,11 +7567,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method10189(var2, var3, arg0);
+		cc_if_setmouseovercursor(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("el.lz(Lhf;Lhq;Lyf;I)V")
-	public static final void method2762(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_clearscripthooks(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.method3976();
 	}
 
@@ -7580,7 +7580,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method2762(var2, var3, arg0);
+		cc_if_clearscripthooks(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("uo.lt(Lyf;B)V")
@@ -7588,7 +7588,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method2762(var2, var3, arg0);
+		cc_if_clearscripthooks(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("rl.ld(Ljava/lang/String;Lyf;I)[I")
@@ -7628,7 +7628,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("vs.mf(Lhf;Lhq;Lyf;I)V")
-	public static final void method9424(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonclick(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7642,7 +7642,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9424(var2, var3, arg0);
+		cc_if_setonclick(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("gk.mx(Lyf;S)V")
@@ -7650,11 +7650,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9424(var2, var3, arg0);
+		cc_if_setonclick(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("hf.mg(Lhf;Lhq;Lyf;I)V")
-	public static final void method4015(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonhold(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7668,7 +7668,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4015(var2, var3, arg0);
+		cc_if_setonhold(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("a.mn(Lyf;B)V")
@@ -7676,11 +7676,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4015(var2, var3, arg0);
+		cc_if_setonhold(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("uf.mv(Lhf;Lhq;Lyf;S)V")
-	public static final void method9021(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonrelease(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7694,7 +7694,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9021(var2, var3, arg0);
+		cc_if_setonrelease(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("zl.md(Lyf;B)V")
@@ -7702,11 +7702,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9021(var2, var3, arg0);
+		cc_if_setonrelease(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("uz.mk(Lhf;Lhq;Lyf;I)V")
-	public static final void method9050(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonmouseover(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7720,7 +7720,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9050(var2, var3, arg0);
+		cc_if_setonmouseover(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ap.ms(Lyf;I)V")
@@ -7728,11 +7728,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9050(var2, var3, arg0);
+		cc_if_setonmouseover(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ad.mp(Lhf;Lhq;Lyf;B)V")
-	public static final void method814(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonmouseleave(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7746,7 +7746,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method814(var2, var3, arg0);
+		cc_if_setonmouseleave(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("zo.ml(Lyf;I)V")
@@ -7754,11 +7754,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method814(var2, var3, arg0);
+		cc_if_setonmouseleave(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("yv.mi(Lhf;Lhq;Lyf;I)V")
-	public static final void method10768(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setondrag(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7772,7 +7772,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method10768(var2, var3, arg0);
+		cc_if_setondrag(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("xg.mz(Lyf;B)V")
@@ -7780,11 +7780,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method10768(var2, var3, arg0);
+		cc_if_setondrag(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("nd.mb(Lhf;Lhq;Lyf;B)V")
-	public static final void method5934(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setontargetleave(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7798,7 +7798,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method5934(var2, var3, arg0);
+		cc_if_setontargetleave(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("gr.mt(Lyf;I)V")
@@ -7806,11 +7806,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method5934(var2, var3, arg0);
+		cc_if_setontargetleave(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ahc.mc(Lhf;Lhq;Lyf;B)V")
-	public static final void method16608(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonvartransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		int[] var4 = method7881(var3, arg2);
 		if (var4 != null) {
@@ -7826,7 +7826,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method16608(var2, var3, arg0);
+		cc_if_setonvartransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("hw.mj(Lyf;B)V")
@@ -7834,11 +7834,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method16608(var2, var3, arg0);
+		cc_if_setonvartransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("d.mw(Lhf;Lhq;Lyf;I)V")
-	public static final void method307(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setontimer(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7852,7 +7852,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method307(var2, var3, arg0);
+		cc_if_setontimer(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("yp.nd(Lyf;B)V")
@@ -7860,11 +7860,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method307(var2, var3, arg0);
+		cc_if_setontimer(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jq.ne(Lhf;Lhq;Lyf;B)V")
-	public static final void method4996(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonop(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7878,7 +7878,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4996(var2, var3, arg0);
+		cc_if_setonop(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("vd.nm(Lyf;B)V")
@@ -7886,11 +7886,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4996(var2, var3, arg0);
+		cc_if_setonop(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jw.nj(Lhf;Lhq;Lyf;B)V")
-	public static final void method4926(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setondragcomplete(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7904,7 +7904,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4926(var2, var3, arg0);
+		cc_if_setondragcomplete(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ie.np(Lyf;B)V")
@@ -7912,11 +7912,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4926(var2, var3, arg0);
+		cc_if_setondragcomplete(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("afp.na(Lhf;Lhq;Lyf;I)V")
-	public static final void method16434(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonverticalswipe(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7929,7 +7929,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method16434(var2, var3, arg0);
+		cc_if_setonverticalswipe(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("vz.nb(Lyf;B)V")
@@ -7937,11 +7937,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method16434(var2, var3, arg0);
+		cc_if_setonverticalswipe(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("kh.nw(Lhf;Lhq;Lyf;B)V")
-	public static final void method5206(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonhorizontalswipe(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -7954,7 +7954,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method5206(var2, var3, arg0);
+		cc_if_setonhorizontalswipe(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("xu.nl(Lyf;I)V")
@@ -7962,7 +7962,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method5206(var2, var3, arg0);
+		cc_if_setonhorizontalswipe(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("vh.ng(Lhf;Lhq;Lyf;I)V")
@@ -7992,7 +7992,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("ji.nk(Lhf;Lhq;Lyf;I)V")
-	public static final void method4983(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonverticalpinch(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8005,7 +8005,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4983(var2, var3, arg0);
+		cc_if_setonverticalpinch(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("tz.nr(Lyf;B)V")
@@ -8013,11 +8013,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4983(var2, var3, arg0);
+		cc_if_setonverticalpinch(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ar.nu(Lhf;Lhq;Lyf;B)V")
-	public static final void method852(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonhorizontalpinch(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8030,7 +8030,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method852(var2, var3, arg0);
+		cc_if_setonhorizontalpinch(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("cs.nz(Lyf;B)V")
@@ -8038,7 +8038,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method852(var2, var3, arg0);
+		cc_if_setonhorizontalpinch(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("xj.ns(Lhf;Lhq;Lyf;I)V")
@@ -8075,7 +8075,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("yx.oh(Lhf;Lhq;Lyf;I)V")
-	public static final void method10614(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonclickrepeat(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8089,7 +8089,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method10614(var2, var3, arg0);
+		cc_if_setonclickrepeat(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ge.ol(Lyf;B)V")
@@ -8097,11 +8097,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method10614(var2, var3, arg0);
+		cc_if_setonclickrepeat(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("zq.oq(Lhf;Lhq;Lyf;B)V")
-	public static final void method13925(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonmouserepeat(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8115,7 +8115,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method13925(var2, var3, arg0);
+		cc_if_setonmouserepeat(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("xz.ot(Lyf;I)V")
@@ -8123,11 +8123,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method13925(var2, var3, arg0);
+		cc_if_setonmouserepeat(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("pz.ow(Lhf;Lhq;Lyf;B)V")
-	public static final void method6817(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setoninvtransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		int[] var4 = method7881(var3, arg2);
 		if (var4 != null) {
@@ -8143,7 +8143,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method6817(var2, var3, arg0);
+		cc_if_setoninvtransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aax.oz(Lyf;B)V")
@@ -8151,11 +8151,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method6817(var2, var3, arg0);
+		cc_if_setoninvtransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("re.ob(Lhf;Lhq;Lyf;B)V")
-	public static final void method7719(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonstattransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		int[] var4 = method7881(var3, arg2);
 		if (var4 != null) {
@@ -8171,7 +8171,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method7719(var2, var3, arg0);
+		cc_if_setonstattransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("cz.om(Lyf;B)V")
@@ -8179,11 +8179,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method7719(var2, var3, arg0);
+		cc_if_setonstattransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("wo.of(Lhf;Lhq;Lyf;I)V")
-	public static final void method9616(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setontargetenter(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8197,7 +8197,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9616(var2, var3, arg0);
+		cc_if_setontargetenter(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("l.od(Lyf;I)V")
@@ -8205,11 +8205,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9616(var2, var3, arg0);
+		cc_if_setontargetenter(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("amq.on(Lhf;Lhq;Lyf;I)V")
-	public static final void method18463(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonscrollwheel(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8223,7 +8223,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method18463(var2, var3, arg0);
+		cc_if_setonscrollwheel(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("vf.og(Lyf;I)V")
@@ -8231,11 +8231,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method18463(var2, var3, arg0);
+		cc_if_setonscrollwheel(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ji.oj(Lhf;Lhq;Lyf;I)V")
-	public static final void method4978(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonchattransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8249,7 +8249,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4978(var2, var3, arg0);
+		cc_if_setonchattransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("kp.ou(Lyf;I)V")
@@ -8257,11 +8257,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4978(var2, var3, arg0);
+		cc_if_setonchattransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("pp.oe(Lhf;Lhq;Lyf;I)V")
-	public static final void method7046(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonkey(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8275,7 +8275,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method7046(var2, var3, arg0);
+		cc_if_setonkey(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("qh.oc(Lyf;I)V")
@@ -8283,7 +8283,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method7046(var2, var3, arg0);
+		cc_if_setonkey(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("iy.ox(Lyf;I)V")
@@ -8360,7 +8360,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("et.pm(Lhf;Lhq;Lyf;I)V")
-	public static final void method2862(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonfriendtransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8374,7 +8374,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method2862(var2, var3, arg0);
+		cc_if_setonfriendtransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("yo.pz(Lyf;B)V")
@@ -8382,11 +8382,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method2862(var2, var3, arg0);
+		cc_if_setonfriendtransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ur.pd(Lhf;Lhq;Lyf;I)V")
-	public static final void method9213(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonclantransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8400,7 +8400,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9213(var2, var3, arg0);
+		cc_if_setonclantransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("qs.px(Lyf;I)V")
@@ -8408,11 +8408,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9213(var2, var3, arg0);
+		cc_if_setonclantransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ib.ps(Lhf;Lhq;Lyf;B)V")
-	public static final void method4497(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonmisctransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8426,7 +8426,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4497(var2, var3, arg0);
+		cc_if_setonmisctransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("hw.po(Lyf;B)V")
@@ -8434,11 +8434,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4497(var2, var3, arg0);
+		cc_if_setonmisctransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("wu.pr(Lhf;Lhq;Lyf;I)V")
-	public static final void method9630(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setondialogabort(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8452,7 +8452,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method9630(var2, var3, arg0);
+		cc_if_setondialogabort(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("nf.pg(Lyf;B)V")
@@ -8460,11 +8460,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method9630(var2, var3, arg0);
+		cc_if_setondialogabort(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aov.pv(Lhf;Lhq;Lyf;I)V")
-	public static final void method18885(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonsubchange(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8478,7 +8478,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method18885(var2, var3, arg0);
+		cc_if_setonsubchange(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("d.pf(Lyf;I)V")
@@ -8486,11 +8486,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method18885(var2, var3, arg0);
+		cc_if_setonsubchange(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aba.pp(Lhf;Lhq;Lyf;B)V")
-	public static final void method14768(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonstocktransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8504,7 +8504,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method14768(var2, var3, arg0);
+		cc_if_setonstocktransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("uk.pc(Lyf;B)V")
@@ -8512,11 +8512,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method14768(var2, var3, arg0);
+		cc_if_setonstocktransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jr.qp(Lhf;Lhq;Lyf;B)V")
-	public static final void method4939(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setoncamfinished(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8530,7 +8530,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method4939(var2, var3, arg0);
+		cc_if_setoncamfinished(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("qz.qt(Lyf;I)V")
@@ -8538,11 +8538,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method4939(var2, var3, arg0);
+		cc_if_setoncamfinished(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("xn.qz(Lhf;Lhq;Lyf;I)V")
-	public static final void method10108(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonresize(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8556,7 +8556,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method10108(var2, var3, arg0);
+		cc_if_setonresize(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("wy.qe(Lyf;I)V")
@@ -8564,11 +8564,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method10108(var2, var3, arg0);
+		cc_if_setonresize(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("zj.ql(Lhf;Lhq;Lyf;I)V")
-	public static final void method13903(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonvarctransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		int[] var4 = method7881(var3, arg2);
 		if (var4 != null) {
@@ -8584,7 +8584,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method13903(var2, var3, arg0);
+		cc_if_setonvarctransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("jm.qr(Lyf;B)V")
@@ -8592,11 +8592,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method13903(var2, var3, arg0);
+		cc_if_setonvarctransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("tj.qc(Lhf;Lhq;Lyf;I)V")
-	public static final void method8443(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonvarcstrtransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		int[] var4 = method7881(var3, arg2);
 		if (var4 != null) {
@@ -8612,7 +8612,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method8443(var2, var3, arg0);
+		cc_if_setonvarcstrtransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("anb.qi(Lyf;I)V")
@@ -8620,11 +8620,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method8443(var2, var3, arg0);
+		cc_if_setonvarcstrtransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ajk.qy(Lhf;Lhq;Lyf;B)V")
-	public static final void method17418(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonopt(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8638,7 +8638,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method17418(var2, var3, arg0);
+		cc_if_setonopt(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("amb.qo(Lyf;B)V")
@@ -8646,11 +8646,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method17418(var2, var3, arg0);
+		cc_if_setonopt(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ku.qm(Lhf;Lhq;Lyf;I)V")
-	public static final void method5151(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonclansettingstransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8664,7 +8664,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method5151(var2, var3, arg0);
+		cc_if_setonclansettingstransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("qd.qf(Lyf;I)V")
@@ -8672,11 +8672,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method5151(var2, var3, arg0);
+		cc_if_setonclansettingstransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("xt.qu(Lhf;Lhq;Lyf;I)V")
-	public static final void method10359(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonclanchanneltransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8690,7 +8690,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method10359(var2, var3, arg0);
+		cc_if_setonclanchanneltransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("yx.qa(Lyf;I)V")
@@ -8698,11 +8698,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method10359(var2, var3, arg0);
+		cc_if_setonclanchanneltransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("acg.qh(Lhf;Lhq;Lyf;I)V")
-	public static final void method15017(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonvarclantransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8716,7 +8716,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method15017(var2, var3, arg0);
+		cc_if_setonvarclantransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("su.qk(Lyf;I)V")
@@ -8724,11 +8724,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method15017(var2, var3, arg0);
+		cc_if_setonvarclantransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("ap.qn(Lhf;Lhq;Lyf;B)V")
-	public static final void method894(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonplayergrouptransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8742,7 +8742,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method894(var2, var3, arg0);
+		cc_if_setonplayergrouptransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("io.rw(Lyf;I)V")
@@ -8750,11 +8750,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method894(var2, var3, arg0);
+		cc_if_setonplayergrouptransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("yo.rf(Lhf;Lhq;Lyf;I)V")
-	public static final void method10372(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setonplayergroupvarptransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8768,7 +8768,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method10372(var2, var3, arg0);
+		cc_if_setonplayergroupvarptransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("at.rh(Lyf;I)V")
@@ -8776,11 +8776,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method10372(var2, var3, arg0);
+		cc_if_setonplayergroupvarptransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("kd.ra(Lhf;Lhq;Lyf;B)V")
-	public static final void method5340(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setoncameraupdatetransmit(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8794,7 +8794,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method5340(var2, var3, arg0);
+		cc_if_setoncameraupdatetransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("gd.ry(Lyf;B)V")
@@ -8802,7 +8802,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method5340(var2, var3, arg0);
+		cc_if_setoncameraupdatetransmit(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("fl.rg(Lyf;I)V")
@@ -9067,7 +9067,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("agy.sj(Lhf;Lyf;I)V")
-	public static final void method16484(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_callonresize(Component arg0, ClientScriptState arg1) {
 		if (arg1.field8229 >= 10) {
 			throw new RuntimeException();
 		} else if (arg0.field2329 != null) {
@@ -9083,18 +9083,18 @@ public final class ScriptRunner {
 	public static final void if_callonresize(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method16484(var2, arg0);
+		cc_if_callonresize(var2, arg0);
 	}
 
 	@ObfuscatedName("sn.sc(Lyf;I)V")
 	public static final void cc_callonresize(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method16484(var2, arg0);
+		cc_if_callonresize(var2, arg0);
 	}
 
 	@ObfuscatedName("pu.sg(Lhf;Lyf;I)V")
-	public static final void method7071(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_getcharindexatpos(Component arg0, ClientScriptState arg1) {
 		FontMetrics var2 = arg0.method3943(Client.field7538, Client.field10833);
 		int var3 = arg1.field8216[--arg1.field8226];
 		int var4 = arg1.field8216[--arg1.field8226];
@@ -9106,18 +9106,18 @@ public final class ScriptRunner {
 	public static final void if_getcharindexatpos(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method7071(var2, arg0);
+		cc_if_getcharindexatpos(var2, arg0);
 	}
 
 	@ObfuscatedName("ge.ta(Lyf;S)V")
 	public static final void cc_getcharindexatpos(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method7071(var2, arg0);
+		cc_if_getcharindexatpos(var2, arg0);
 	}
 
 	@ObfuscatedName("dm.tr(Lhf;Lyf;B)V")
-	public static final void method1923(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_getcharposatindex(Component arg0, ClientScriptState arg1) {
 		FontMetrics var2 = arg0.method3943(Client.field7538, Client.field10833);
 		int var3 = arg1.field8216[--arg1.field8226];
 		Point var4 = var2.method14541(arg0.field2261, arg0.field2196, arg0.field2229, var3, DefaultSprites.field10302);
@@ -9129,14 +9129,14 @@ public final class ScriptRunner {
 	public static final void if_getcharposatindex(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method1923(var2, arg0);
+		cc_if_getcharposatindex(var2, arg0);
 	}
 
 	@ObfuscatedName("pp.tj(Lyf;I)V")
 	public static final void cc_getcharposatindex(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method1923(var2, arg0);
+		cc_if_getcharposatindex(var2, arg0);
 	}
 
 	@ObfuscatedName("kt.te(B)J")
@@ -9165,7 +9165,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("cc.ty(Lhf;Lyf;I)V")
-	public static final void method1586(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_npc_setcustombodymodel(Component arg0, ClientScriptState arg1) {
 		int var2 = arg1.field8216[--arg1.field8226];
 		int var3 = arg1.field8216[--arg1.field8226] - 1;
 		if (arg0.field2224 != 6) {
@@ -9182,18 +9182,18 @@ public final class ScriptRunner {
 	public static final void if_npc_setcustombodymodel(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method1586(var2, arg0);
+		cc_if_npc_setcustombodymodel(var2, arg0);
 	}
 
 	@ObfuscatedName("i.tn(Lyf;I)V")
 	public static final void cc_npc_setcustombodymodel(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method1586(var2, arg0);
+		cc_if_npc_setcustombodymodel(var2, arg0);
 	}
 
 	@ObfuscatedName("wi.tw(Lhf;Lyf;B)V")
-	public static final void method9886(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_npc_setcustombodymodel_transformed(Component arg0, ClientScriptState arg1) {
 		arg1.field8226 -= 10;
 		int var2 = arg1.field8216[arg1.field8226] - 1;
 		int var3 = arg1.field8216[arg1.field8226 + 1];
@@ -9220,18 +9220,18 @@ public final class ScriptRunner {
 	public static final void if_npc_setcustombodymodel_transformed(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method9886(var2, arg0);
+		cc_if_npc_setcustombodymodel_transformed(var2, arg0);
 	}
 
 	@ObfuscatedName("vc.tf(Lyf;I)V")
 	public static final void cc_npc_setcustombodymodel_transformed(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method9886(var2, arg0);
+		cc_if_npc_setcustombodymodel_transformed(var2, arg0);
 	}
 
 	@ObfuscatedName("dm.th(Lhf;Lyf;B)V")
-	public static final void method1924(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_npc_setcustomheadmodel(Component arg0, ClientScriptState arg1) {
 		int var2 = arg1.field8216[--arg1.field8226];
 		int var3 = arg1.field8216[--arg1.field8226] - 1;
 		if (arg0.field2224 != 2) {
@@ -9248,18 +9248,18 @@ public final class ScriptRunner {
 	public static final void if_npc_setcustomheadmodel(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method1924(var2, arg0);
+		cc_if_npc_setcustomheadmodel(var2, arg0);
 	}
 
 	@ObfuscatedName("hq.ts(Lyf;I)V")
 	public static final void cc_npc_setcustomheadmodel(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method1924(var2, arg0);
+		cc_if_npc_setcustomheadmodel(var2, arg0);
 	}
 
 	@ObfuscatedName("aov.tp(Lhf;Lyf;S)V")
-	public static final void method18884(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_npc_setcustomrecol(Component arg0, ClientScriptState arg1) {
 		int var2 = arg1.field8216[--arg1.field8226];
 		int var3 = arg1.field8216[--arg1.field8226] - 1;
 		int var4 = var3;
@@ -9288,18 +9288,18 @@ public final class ScriptRunner {
 	public static final void if_npc_setcustomrecol(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method18884(var2, arg0);
+		cc_if_npc_setcustomrecol(var2, arg0);
 	}
 
 	@ObfuscatedName("kn.to(Lyf;I)V")
 	public static final void cc_npc_setcustomrecol(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method18884(var2, arg0);
+		cc_if_npc_setcustomrecol(var2, arg0);
 	}
 
 	@ObfuscatedName("ajf.tg(Lhf;Lyf;I)V")
-	public static final void method17523(Component arg0, ClientScriptState arg1) {
+	public static final void cc_if_npc_setcustomretex(Component arg0, ClientScriptState arg1) {
 		int var2 = arg1.field8216[--arg1.field8226];
 		int var3 = arg1.field8216[--arg1.field8226] - 1;
 		int var4 = var3;
@@ -9328,14 +9328,14 @@ public final class ScriptRunner {
 	public static final void if_npc_setcustomretex(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		method17523(var2, arg0);
+		cc_if_npc_setcustomretex(var2, arg0);
 	}
 
 	@ObfuscatedName("f.tx(Lyf;S)V")
 	public static final void cc_npc_setcustomretex(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		method17523(var2, arg0);
+		cc_if_npc_setcustomretex(var2, arg0);
 	}
 
 	@ObfuscatedName("sy.tk(Lyf;I)V")
@@ -13937,7 +13937,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("go.ano(Lyf;Lahm;I)V")
-	public static final void method3474(ClientScriptState arg0, PathingEntity arg1) {
+	public static final void cam2_setpositionentity(ClientScriptState arg0, PathingEntity arg1) {
 		arg0.field8226 -= 7;
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
@@ -13969,12 +13969,12 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("bf.ani(Lyf;B)V")
 	public static final void cam2_setpositionentity_player(ClientScriptState arg0) {
-		method3474(arg0, Client.field4490);
+		cam2_setpositionentity(arg0, Client.field4490);
 	}
 
 	@ObfuscatedName("pv.aou(Lyf;B)V")
 	public static final void cam2_setpositionentity_npc(ClientScriptState arg0) {
-		method3474(arg0, arg0.field8221);
+		cam2_setpositionentity(arg0, arg0.field8221);
 	}
 
 	@ObfuscatedName("tv.aoy(Lyf;B)V")
@@ -15773,7 +15773,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("fk.axx(ILhf;Lyf;B)V")
-	public static final void method3375(int arg0, Component arg1, ClientScriptState arg2) {
+	public static final void cc_if_triggerop(int arg0, Component arg1, ClientScriptState arg2) {
 		if (arg0 < 1 || arg0 > 10) {
 			throw new RuntimeException();
 		}
@@ -15786,7 +15786,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
-		method3375(var3, Component.method16682(var1, var2), arg0);
+		cc_if_triggerop(var3, Component.method16682(var1, var2), arg0);
 	}
 
 	@ObfuscatedName("ux.axv(Lyf;B)V")
@@ -15794,7 +15794,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
 		int var3 = arg0.field8216[--arg0.field8226];
-		method3375(var3, var2, arg0);
+		cc_if_triggerop(var3, var2, arg0);
 	}
 
 	@ObfuscatedName("ik.axq(Lyf;B)V")
@@ -16466,7 +16466,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("xc.bbe(Lyf;I)V")
 	public static final void get_entity_say(ClientScriptState arg0) {
-		com.jagex.game.world.entity.EntityChatLine var1 = arg0.field8221.method16513();
+		EntityChatLine var1 = arg0.field8221.method16513();
 		if (var1 == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
@@ -16601,7 +16601,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("yn.bcb(Lalh;Lyf;I)V")
-	public static final void method10489(GraphEntity arg0, ClientScriptState arg1) {
+	public static final void get_bounding_box(GraphEntity arg0, ClientScriptState arg1) {
 		boolean var2 = false;
 		int var3 = 0;
 		int var4 = 0;
@@ -16654,17 +16654,17 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("vo.bcp(Lyf;B)V")
 	public static final void get_loc_bounding_box(ClientScriptState arg0) {
-		method10489((GraphEntity) arg0.field8230, arg0);
+		get_bounding_box((GraphEntity) arg0.field8230, arg0);
 	}
 
 	@ObfuscatedName("ta.bcl(Lyf;B)V")
 	public static final void get_obj_bounding_box(ClientScriptState arg0) {
-		method10489(arg0.field8232, arg0);
+		get_bounding_box(arg0.field8232, arg0);
 	}
 
 	@ObfuscatedName("vy.bcm(Lyf;I)V")
 	public static final void get_entity_bounding_box(ClientScriptState arg0) {
-		method10489(arg0.field8221, arg0);
+		get_bounding_box(arg0.field8221, arg0);
 	}
 
 	@ObfuscatedName("ab.bcv(Lkr;I)Leh;")
