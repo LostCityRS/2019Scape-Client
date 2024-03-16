@@ -80,13 +80,13 @@ public class GraphicsDefaults {
 	public boolean field7749;
 
 	@ObfuscatedName("ws.ah")
-	public int YELLOW = 0xFFFF00;
+	public int yellow = 0xFFFF00;
 
 	@ObfuscatedName("ws.al")
-	public int WHITE = 0xFFFFFF;
+	public int white = 0xFFFFFF;
 
 	@ObfuscatedName("ws.ac")
-	public int GREEN = 65408;
+	public int green = 0x00FF80;
 
 	@ObfuscatedName("ws.ai")
 	public int field7733 = -1;
@@ -222,11 +222,11 @@ public class GraphicsDefaults {
 				} else if (var3 == 16) {
 					this.field7749 = true;
 				} else if (var3 == 17) {
-					this.YELLOW = arg0.g4s();
+					this.yellow = arg0.g4s();
 				} else if (var3 == 18) {
-					this.WHITE = arg0.g4s();
+					this.white = arg0.g4s();
 				} else if (var3 == 19) {
-					this.GREEN = arg0.g4s();
+					this.green = arg0.g4s();
 				} else if (var3 == 20) {
 					this.field7728 = (short) arg0.g2();
 					this.field7757 = (byte) arg0.g1();
