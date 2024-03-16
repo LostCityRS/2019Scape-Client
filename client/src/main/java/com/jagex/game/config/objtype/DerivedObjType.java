@@ -9,7 +9,7 @@ public class DerivedObjType {
 	public static final DerivedObjType CERT = new DerivedObjType();
 
 	@ObfuscatedName("abq.n")
-	public static final DerivedObjType LEND = new DerivedObjType();
+	public static final DerivedObjType LENT = new DerivedObjType();
 
 	@ObfuscatedName("abq.m")
 	public static final DerivedObjType BOUGHT = new DerivedObjType();

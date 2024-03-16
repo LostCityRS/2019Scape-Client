@@ -14456,7 +14456,7 @@ public final class Client extends GameShell {
 		LinkedList var4 = new LinkedList();
 		for (int var5 = 0; var5 < field1842.length; var5++) {
 			ObjType var6 = (ObjType) field1842.list(var5);
-			if ((!arg1 || var6.field8645) && var6.certtemplate == -1 && var6.field8675 == -1 && var6.field8694 == -1 && var6.field8689 == 0 && var6.name.toLowerCase().indexOf(var2) != -1) {
+			if ((!arg1 || var6.field8645) && var6.certtemplate == -1 && var6.lenttemplate == -1 && var6.boughttemplate == -1 && var6.field8689 == 0 && var6.name.toLowerCase().indexOf(var2) != -1) {
 				if (var3.size() >= 250) {
 					return -1;
 				}

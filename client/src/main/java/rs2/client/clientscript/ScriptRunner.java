@@ -12001,8 +12001,8 @@ public final class ScriptRunner {
 	public static final void oc_shard(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		ObjType var2 = (ObjType) Client.field1842.list(var1);
-		if (var2.field8677 == -1 && var2.field8676 >= 0) {
-			arg0.field8216[++arg0.field8226 - 1] = var2.field8676;
+		if (var2.shardtemplate == -1 && var2.shardlink >= 0) {
+			arg0.field8216[++arg0.field8226 - 1] = var2.shardlink;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = var1;
 		}
@@ -12012,8 +12012,8 @@ public final class ScriptRunner {
 	public static final void oc_unshard(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		ObjType var2 = (ObjType) Client.field1842.list(var1);
-		if (var2.field8677 >= 0 && var2.field8676 >= 0) {
-			arg0.field8216[++arg0.field8226 - 1] = var2.field8676;
+		if (var2.shardtemplate >= 0 && var2.shardlink >= 0) {
+			arg0.field8216[++arg0.field8226 - 1] = var2.shardlink;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = var1;
 		}

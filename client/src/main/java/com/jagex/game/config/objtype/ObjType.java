@@ -30,7 +30,7 @@ public class ObjType implements ConfigType {
 	public static short[] clientpalette = new short[256];
 
 	@ObfuscatedName("abv.l")
-	public ConfigTypeList list;
+	public ConfigTypeList objs;
 
 	@ObfuscatedName("abv.u")
 	public ObjTypeFactory factory;
@@ -177,16 +177,16 @@ public class ObjType implements ConfigType {
 	public int certlink = -1;
 
 	@ObfuscatedName("abv.bh")
-	public int field8674 = -1;
+	public int lentlink = -1;
 
 	@ObfuscatedName("abv.bx")
-	public int field8675 = -1;
+	public int lenttemplate = -1;
 
 	@ObfuscatedName("abv.bd")
-	public int field8676 = -1;
+	public int shardlink = -1;
 
 	@ObfuscatedName("abv.bc")
-	public int field8677 = -1;
+	public int shardtemplate = -1;
 
 	@ObfuscatedName("abv.bi")
 	public String field8678 = "null";
@@ -234,10 +234,10 @@ public class ObjType implements ConfigType {
 	public int field8692 = 0;
 
 	@ObfuscatedName("abv.ba")
-	public int field8693 = -1;
+	public int boughtlink = -1;
 
 	@ObfuscatedName("abv.bp")
-	public int field8694 = -1;
+	public int boughttemplate = -1;
 
 	@ObfuscatedName("abv.bj")
 	public boolean field8680 = false;
@@ -252,11 +252,11 @@ public class ObjType implements ConfigType {
 	public boolean field8698 = true;
 
 	@ObfuscatedName("abv.ce")
-	public static String field8699 = "</col>";
+	public static String COL_TAG_END = "</col>";
 
-	public ObjType(int id, ConfigTypeList list, ObjTypeFactory factory) {
+	public ObjType(int id, ConfigTypeList objs, ObjTypeFactory factory) {
 		this.id = id;
-		this.list = list;
+		this.objs = objs;
 		this.factory = factory;
 		this.ops = (String[]) this.factory.defaultops.clone();
 		this.iops = (String[]) this.factory.defaultiops.clone();
@@ -265,13 +265,13 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("abv.n(I)V")
 	public void postDecode() {
 		if (this.certtemplate != -1) {
-			this.toCertTemplate((ObjType) this.list.list(this.certtemplate), (ObjType) this.list.list(this.certlink), this.factory.languageId);
-		} else if (this.field8675 != -1) {
-			this.toLendTemplate((ObjType) this.list.list(this.field8675), (ObjType) this.list.list(this.field8674), this.factory.languageId);
-		} else if (this.field8694 != -1) {
-			this.toBoughtTemplate((ObjType) this.list.list(this.field8694), (ObjType) this.list.list(this.field8693), this.factory.languageId);
-		} else if (this.field8677 != -1) {
-			this.toShardTemplate((ObjType) this.list.list(this.field8677), (ObjType) this.list.list(this.field8676), this.factory.languageId);
+			this.genCert((ObjType) this.objs.list(this.certtemplate), (ObjType) this.objs.list(this.certlink), this.factory.languageId);
+		} else if (this.lenttemplate != -1) {
+			this.genLent((ObjType) this.objs.list(this.lenttemplate), (ObjType) this.objs.list(this.lentlink), this.factory.languageId);
+		} else if (this.boughttemplate != -1) {
+			this.genBought((ObjType) this.objs.list(this.boughttemplate), (ObjType) this.objs.list(this.boughtlink), this.factory.languageId);
+		} else if (this.shardtemplate != -1) {
+			this.genShard((ObjType) this.objs.list(this.shardtemplate), (ObjType) this.objs.list(this.shardlink), this.factory.languageId);
 		}
 		if (this.field8689 != 0) {
 			this.field8687 = false;
@@ -461,9 +461,9 @@ public class ObjType implements ConfigType {
 		} else if (code == 115) {
 			this.field8685 = buf.g1();
 		} else if (code == 121) {
-			this.field8674 = buf.g2();
+			this.lentlink = buf.g2();
 		} else if (code == 122) {
-			this.field8675 = buf.g2();
+			this.lenttemplate = buf.g2();
 		} else if (code == 125) {
 			this.field8632 = buf.g1b() << 2;
 			this.field8660 = buf.g1b() << 2;
@@ -484,9 +484,9 @@ public class ObjType implements ConfigType {
 		} else if (code == 134) {
 			this.field8692 = buf.g1();
 		} else if (code == 139) {
-			this.field8693 = buf.g2();
+			this.boughtlink = buf.g2();
 		} else if (code == 140) {
-			this.field8694 = buf.g2();
+			this.boughttemplate = buf.g2();
 		} else if (code >= 142 && code < 147) {
 			if (this.field8649 == null) {
 				this.field8649 = new int[6];
@@ -503,9 +503,9 @@ public class ObjType implements ConfigType {
 			if (code == 157) {
 				this.field8697 = true;
 			} else if (code == 161) {
-				this.field8676 = buf.g2();
+				this.shardlink = buf.g2();
 			} else if (code == 162) {
-				this.field8677 = buf.g2();
+				this.shardtemplate = buf.g2();
 			} else if (code == 163) {
 				this.field8679 = buf.g2();
 			} else if (code == 164) {
@@ -538,73 +538,73 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.z(Labq;Labv;Labv;Lacz;Lzt;I)V")
-	public void toTemplate(DerivedObjType arg0, ObjType arg1, ObjType arg2, LocalisedText arg3, Language arg4) {
-		this.model = arg1.model;
-		this.zoom2d = arg1.zoom2d;
-		this.xan2d = arg1.xan2d;
-		this.yan2d = arg1.yan2d;
-		this.field8641 = arg1.field8641;
-		this.xof2d = arg1.xof2d;
-		this.yof2d = arg1.yof2d;
-		ObjType var6 = DerivedObjType.CERT == arg0 ? arg1 : arg2;
-		this.recol_s = var6.recol_s;
-		this.recol_d = var6.recol_d;
-		this.field8633 = var6.field8633;
-		this.field8634 = var6.field8634;
-		this.field8635 = var6.field8635;
-		this.name = arg2.name;
-		this.members = arg2.members;
-		if (DerivedObjType.CERT == arg0) {
-			this.cost = arg2.cost;
+	public void gen(DerivedObjType derived, ObjType from, ObjType to, LocalisedText arg3, Language arg4) {
+		this.model = from.model;
+		this.zoom2d = from.zoom2d;
+		this.xan2d = from.xan2d;
+		this.yan2d = from.yan2d;
+		this.field8641 = from.field8641;
+		this.xof2d = from.xof2d;
+		this.yof2d = from.yof2d;
+		ObjType objType = DerivedObjType.CERT == derived ? from : to;
+		this.recol_s = objType.recol_s;
+		this.recol_d = objType.recol_d;
+		this.field8633 = objType.field8633;
+		this.field8634 = objType.field8634;
+		this.field8635 = objType.field8635;
+		this.name = to.name;
+		this.members = to.members;
+		if (DerivedObjType.CERT == derived) {
+			this.cost = to.cost;
 			this.stackable = 1;
-			if (arg2.field8688) {
+			if (to.field8688) {
 				this.field8687 = false;
 			} else {
-				this.field8687 = arg2.field8687;
+				this.field8687 = to.field8687;
 			}
-		} else if (DerivedObjType.SHARD == arg0) {
-			this.name = arg2.field8678;
-			this.cost = (int) Math.floor((double) (arg2.cost / arg2.field8679));
+		} else if (DerivedObjType.SHARD == derived) {
+			this.name = to.field8678;
+			this.cost = (int) Math.floor((double) (to.cost / to.field8679));
 			this.stackable = 1;
-			this.field8645 = arg2.field8645;
-			this.field8687 = arg2.field8687;
-			this.field8628 = arg1.field8628;
-			this.field8649 = arg1.field8649;
-			this.field8619 = arg1.field8619;
+			this.field8645 = to.field8645;
+			this.field8687 = to.field8687;
+			this.field8628 = from.field8628;
+			this.field8649 = from.field8649;
+			this.field8619 = from.field8619;
 			this.iops = new String[5];
 			this.iops[0] = LocalisedText.field8958.method15021(arg4);
 			this.iops[4] = arg3.method15021(arg4);
 		} else {
 			this.cost = 0;
-			this.stackable = arg2.stackable;
+			this.stackable = to.stackable;
 			this.field8687 = false;
-			this.field8651 = arg2.field8651;
-			this.field8652 = arg2.field8652;
-			this.field8653 = arg2.field8653;
-			this.manwear = arg2.manwear;
-			this.manwear2 = arg2.manwear2;
-			this.manwear3 = arg2.manwear3;
-			this.womanwear = arg2.womanwear;
-			this.womanwear2 = arg2.womanwear2;
-			this.womanwear3 = arg2.womanwear3;
-			this.field8632 = arg2.field8632;
-			this.field8640 = arg2.field8640;
-			this.field8660 = arg2.field8660;
-			this.field8670 = arg2.field8670;
-			this.field8664 = arg2.field8664;
-			this.field8665 = arg2.field8665;
-			this.manhead = arg2.manhead;
-			this.manhead2 = arg2.manhead2;
-			this.womanhead = arg2.womanhead;
-			this.womanhead2 = arg2.womanhead2;
-			this.field8628 = arg2.field8628;
-			this.field8685 = arg2.field8685;
-			this.ops = arg2.ops;
-			this.params = arg2.params;
+			this.field8651 = to.field8651;
+			this.field8652 = to.field8652;
+			this.field8653 = to.field8653;
+			this.manwear = to.manwear;
+			this.manwear2 = to.manwear2;
+			this.manwear3 = to.manwear3;
+			this.womanwear = to.womanwear;
+			this.womanwear2 = to.womanwear2;
+			this.womanwear3 = to.womanwear3;
+			this.field8632 = to.field8632;
+			this.field8640 = to.field8640;
+			this.field8660 = to.field8660;
+			this.field8670 = to.field8670;
+			this.field8664 = to.field8664;
+			this.field8665 = to.field8665;
+			this.manhead = to.manhead;
+			this.manhead2 = to.manhead2;
+			this.womanhead = to.womanhead;
+			this.womanhead2 = to.womanhead2;
+			this.field8628 = to.field8628;
+			this.field8685 = to.field8685;
+			this.ops = to.ops;
+			this.params = to.params;
 			this.iops = new String[5];
-			if (arg2.iops != null) {
+			if (to.iops != null) {
 				for (int var7 = 0; var7 < 4; var7++) {
-					this.iops[var7] = arg2.iops[var7];
+					this.iops[var7] = to.iops[var7];
 				}
 			}
 			this.iops[4] = arg3.method15021(arg4);
@@ -613,23 +613,23 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.p(Labv;Labv;Lzt;S)V")
-	public void toCertTemplate(ObjType from, ObjType to, Language language) {
-		this.toTemplate(DerivedObjType.CERT, from, to, null, language);
+	public void genCert(ObjType from, ObjType to, Language language) {
+		this.gen(DerivedObjType.CERT, from, to, null, language);
 	}
 
 	@ObfuscatedName("abv.d(Labv;Labv;Lzt;I)V")
-	public void toLendTemplate(ObjType from, ObjType to, Language language) {
-		this.toTemplate(DerivedObjType.LEND, from, to, LocalisedText.LENT_ITEM_RETURN, language);
+	public void genLent(ObjType from, ObjType to, Language language) {
+		this.gen(DerivedObjType.LENT, from, to, LocalisedText.LENT_ITEM_RETURN, language);
 	}
 
 	@ObfuscatedName("abv.c(Labv;Labv;Lzt;I)V")
-	public void toBoughtTemplate(ObjType from, ObjType to, Language language) {
-		this.toTemplate(DerivedObjType.BOUGHT, from, to, LocalisedText.BOUGHT_ITEM_DISCARD, language);
+	public void genBought(ObjType from, ObjType to, Language language) {
+		this.gen(DerivedObjType.BOUGHT, from, to, LocalisedText.BOUGHT_ITEM_DISCARD, language);
 	}
 
 	@ObfuscatedName("abv.r(Labv;Labv;Lzt;I)V")
-	public void toShardTemplate(ObjType from, ObjType to, Language language) {
-		this.toTemplate(DerivedObjType.SHARD, from, to, LocalisedText.DROP, language);
+	public void genShard(ObjType from, ObjType to, Language language) {
+		this.gen(DerivedObjType.SHARD, from, to, LocalisedText.DROP, language);
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
@@ -642,7 +642,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var10 != -1) {
-				return ((ObjType) this.list.list(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
+				return ((ObjType) this.objs.list(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
 			}
 		}
 		int var12 = arg1;
@@ -753,7 +753,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var2 != -1) {
-				return (ObjType) this.list.list(var2);
+				return (ObjType) this.objs.list(var2);
 			}
 		}
 		return this;
@@ -813,22 +813,22 @@ public class ObjType implements ConfigType {
 		}
 		Sprite var21 = null;
 		if (this.certtemplate != -1) {
-			var21 = this.factory.method14617(arg0, arg1, this.certlink, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.list);
+			var21 = this.factory.method14617(arg0, arg1, this.certlink, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.objs);
 			if (var21 == null) {
 				return null;
 			}
-		} else if (this.field8675 != -1) {
-			var21 = this.factory.method14617(arg0, arg1, this.field8674, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.list);
+		} else if (this.lenttemplate != -1) {
+			var21 = this.factory.method14617(arg0, arg1, this.lentlink, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.objs);
 			if (var21 == null) {
 				return null;
 			}
-		} else if (this.field8694 != -1) {
-			var21 = this.factory.method14617(arg0, arg1, this.field8693, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.list);
+		} else if (this.boughttemplate != -1) {
+			var21 = this.factory.method14617(arg0, arg1, this.boughtlink, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.objs);
 			if (var21 == null) {
 				return null;
 			}
-		} else if (this.field8677 != -1) {
-			var21 = this.factory.method14617(arg0, arg1, this.field8676, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.list);
+		} else if (this.shardtemplate != -1) {
+			var21 = this.factory.method14617(arg0, arg1, this.shardlink, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.objs);
 			if (var21 == null) {
 				return null;
 			}
@@ -871,20 +871,20 @@ public class ObjType implements ConfigType {
 		if (arg4 != 0) {
 			this.method14648(var27, arg4);
 		}
-		if (this.field8675 != -1) {
+		if (this.lenttemplate != -1) {
 			var21.method1439(0, 0);
-		} else if (this.field8694 != -1) {
+		} else if (this.boughttemplate != -1) {
 			var21.method1439(0, 0);
 		}
 		arg0.method2199(var27, 0, 36, 36, 32).method1439(0, 0);
 		if (this.certtemplate != -1) {
 			var21.method1439(0, 0);
 		}
-		if (this.field8677 != -1) {
+		if (this.shardtemplate != -1) {
 			var21.method1439(0, 0);
 		}
 		if (arg6 == 1 || arg6 == 2 && (this.stackable == 1 || arg2 != 1) && arg2 != -1) {
-			arg7.method2681(method4655(arg2, this.factory.languageId, arg9), 0, 9, -256, -16777215);
+			arg7.method2681(formatObjCount(arg2, this.factory.languageId, arg9), 0, 9, -256, -16777215);
 		}
 		int[] var28 = arg0.method2149(0, 0, 36, 32);
 		for (int var29 = 0; var29 < var28.length; var29++) {
@@ -934,19 +934,19 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("jf.x(ILzt;Lws;I)Ljava/lang/String;")
-	public static String method4655(int arg0, Language arg1, GraphicsDefaults arg2) {
-		if (arg0 < 100000) {
-			return method5153(arg2.field7742) + arg0 + field8699;
-		} else if (arg0 < 10000000) {
-			return method5153(arg2.field7743) + arg0 / 1000 + LocalisedText.THOUSAND_SHORT.method15021(arg1) + field8699;
+	public static String formatObjCount(int amount, Language language, GraphicsDefaults graphics) {
+		if (amount < 100000) {
+			return formatObjCountTagged(graphics.YELLOW) + amount + COL_TAG_END;
+		} else if (amount < 10000000) {
+			return formatObjCountTagged(graphics.WHITE) + amount / 1000 + LocalisedText.THOUSAND_SHORT.method15021(language) + COL_TAG_END;
 		} else {
-			return method5153(arg2.field7744) + arg0 / 1000000 + LocalisedText.MILLION_SHORT.method15021(arg1) + field8699;
+			return formatObjCountTagged(graphics.GREEN) + amount / 1000000 + LocalisedText.MILLION_SHORT.method15021(language) + COL_TAG_END;
 		}
 	}
 
 	@ObfuscatedName("ku.b(IB)Ljava/lang/String;")
-	public static String method5153(int arg0) {
-		return "<col=" + Integer.toHexString(arg0) + ">";
+	public static String formatObjCountTagged(int rgb) {
+		return "<col=" + Integer.toHexString(rgb) + ">";
 	}
 
 	@ObfuscatedName("abv.h(ZLabw;I)Z")
