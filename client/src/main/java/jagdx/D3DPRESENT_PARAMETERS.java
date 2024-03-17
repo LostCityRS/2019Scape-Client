@@ -1,5 +1,6 @@
 package jagdx;
 
+import java.awt.Component;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -50,10 +51,10 @@ public class D3DPRESENT_PARAMETERS {
 	public int PresentationInterval = Integer.MIN_VALUE;
 
 	@OriginalMember(owner = "client!jagdx/D3DPRESENT_PARAMETERS", name = "DeviceWindow", descriptor = "Ljava/awt/Component;")
-	public java.awt.Component DeviceWindow;
+	public Component DeviceWindow;
 
 	@OriginalMember(owner = "client!jagdx/D3DPRESENT_PARAMETERS", name = "<init>", descriptor = "(Ljava/awt/Component;)V", line = 56)
-	public D3DPRESENT_PARAMETERS(@OriginalArg(0) java.awt.Component arg0) {
+	public D3DPRESENT_PARAMETERS(@OriginalArg(0) Component arg0) {
 		this.DeviceWindow = arg0;
 	}
 }

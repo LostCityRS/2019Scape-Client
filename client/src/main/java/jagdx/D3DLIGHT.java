@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public class D3DLIGHT {
 
 	@OriginalMember(owner = "client!jagdx/D3DLIGHT", name = "<init>", descriptor = "()V", line = 8)
-	private D3DLIGHT() throws Throwable {
+	public D3DLIGHT() throws Throwable {
 		throw new Error();
 	}
 

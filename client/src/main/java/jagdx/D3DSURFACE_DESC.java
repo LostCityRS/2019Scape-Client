@@ -31,7 +31,7 @@ public class D3DSURFACE_DESC {
 	public int Height;
 
 	@OriginalMember(owner = "client!jagdx/D3DSURFACE_DESC", name = "<init>", descriptor = "()V", line = 32)
-	private D3DSURFACE_DESC() throws Throwable {
+	public D3DSURFACE_DESC() throws Throwable {
 		throw new Error();
 	}
 }

@@ -19,6 +19,6 @@ public class D3DVSHADERCAPS2_0 {
 	public int StaticFlowControlDepth;
 
 	@OriginalMember(owner = "client!jagdx/D3DVSHADERCAPS2_0", name = "<init>", descriptor = "()V", line = 20)
-	D3DVSHADERCAPS2_0() {
+	public D3DVSHADERCAPS2_0() {
 	}
 }

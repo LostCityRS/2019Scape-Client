@@ -22,6 +22,6 @@ public class D3DPSHADERCAPS2_0 {
 	public int NumInstructionSlots;
 
 	@OriginalMember(owner = "client!jagdx/D3DPSHADERCAPS2_0", name = "<init>", descriptor = "()V", line = 23)
-	D3DPSHADERCAPS2_0() {
+	public D3DPSHADERCAPS2_0() {
 	}
 }
