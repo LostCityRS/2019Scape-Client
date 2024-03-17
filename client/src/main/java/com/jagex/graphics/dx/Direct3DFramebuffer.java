@@ -39,12 +39,12 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 	}
 
 	@ObfuscatedName("ath.e()I")
-	public int method1627() {
+	public int getWidth() {
 		return this.field12500;
 	}
 
 	@ObfuscatedName("ath.n()I")
-	public int method1628() {
+	public int getHeight() {
 		return this.field12501;
 	}
 

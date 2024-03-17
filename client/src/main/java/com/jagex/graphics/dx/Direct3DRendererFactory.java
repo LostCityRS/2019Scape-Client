@@ -21,16 +21,16 @@ public class Direct3DRendererFactory {
 	}
 
 	@ObfuscatedName("oa.e(Ljava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;I)Ldh;")
-	public static Renderer method6218(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, Js5 arg6, int arg7) {
+	public static Renderer create(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, Js5 arg6, int arg7) {
 		try {
 			GpuRenderer.method15968();
-			NativeLibraries.method5134().method7902("jagdx");
+			NativeLibraries.getLoader().load("jagdx");
 			return Direct3DRenderer.method19043(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		} catch (RuntimeException var10) {
-			var10.printStackTrace();
-			throw var10;
-		} catch (Throwable var11) {
-			var11.printStackTrace();
+		} catch (RuntimeException ex) {
+			ex.printStackTrace();
+			throw ex;
+		} catch (Throwable ex) {
+			ex.printStackTrace();
 			throw new RuntimeException("");
 		}
 	}

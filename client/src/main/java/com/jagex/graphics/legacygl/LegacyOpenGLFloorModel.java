@@ -695,7 +695,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 
 	@ObfuscatedName("aek.w(IIIIIII[[Z)V")
 	public void method1526(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7) {
-		RenderTarget var9 = this.field9453.method2135();
+		RenderTarget var9 = this.field9453.getRenderTarget();
 		if (this.field9477 <= 0 || var9 == null) {
 			return;
 		}
@@ -707,20 +707,20 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 		this.field9453.method15791(0);
 		this.field9453.method15774(-2);
 		this.field9453.method15777(null);
-		field9484[0] = (float) arg2 / ((float) this.field1233 * 128.0F * (float) var9.method1627());
+		field9484[0] = (float) arg2 / ((float) this.field1233 * 128.0F * (float) var9.getWidth());
 		field9484[1] = 0.0F;
 		field9484[2] = 0.0F;
 		field9484[3] = 0.0F;
 		field9484[4] = 0.0F;
-		field9484[5] = (float) arg2 / ((float) this.field1233 * 128.0F * (float) var9.method1628());
+		field9484[5] = (float) arg2 / ((float) this.field1233 * 128.0F * (float) var9.getHeight());
 		field9484[6] = 0.0F;
 		field9484[7] = 0.0F;
 		field9484[8] = 0.0F;
 		field9484[9] = 0.0F;
 		field9484[10] = 0.0F;
 		field9484[11] = 0.0F;
-		field9484[12] = -1.0F - ((float) (arg2 * arg3) / 128.0F - (float) (arg0 * 2)) / (float) var9.method1627();
-		field9484[13] = 1.0F - ((float) (arg2 * arg6) / 128.0F + (float) (arg1 * 2)) / (float) var9.method1628();
+		field9484[12] = -1.0F - ((float) (arg2 * arg3) / 128.0F - (float) (arg0 * 2)) / (float) var9.getWidth();
+		field9484[13] = 1.0F - ((float) (arg2 * arg6) / 128.0F + (float) (arg1 * 2)) / (float) var9.getHeight();
 		field9484[14] = 0.0F;
 		field9484[15] = 1.0F;
 		OpenGL.glMatrixMode(5889);

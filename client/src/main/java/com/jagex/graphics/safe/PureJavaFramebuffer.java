@@ -28,12 +28,12 @@ public class PureJavaFramebuffer extends Framebuffer {
 	}
 
 	@ObfuscatedName("apn.e()I")
-	public int method1627() {
+	public int getWidth() {
 		return this.field11911;
 	}
 
 	@ObfuscatedName("apn.n()I")
-	public int method1628() {
+	public int getHeight() {
 		return this.field11908;
 	}
 
@@ -54,7 +54,7 @@ public class PureJavaFramebuffer extends Framebuffer {
 			this.field11911 = 0;
 			this.field11908 = 0;
 		}
-		if (this.field11909.method2135() == this) {
+		if (this.field11909.getRenderTarget() == this) {
 			this.method1630();
 		}
 	}
@@ -73,7 +73,7 @@ public class PureJavaFramebuffer extends Framebuffer {
 			this.field11911 = 0;
 			this.field11908 = 0;
 		}
-		if (this.field11909.method2135() == this) {
+		if (this.field11909.getRenderTarget() == this) {
 			this.method1630();
 		}
 	}

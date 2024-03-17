@@ -53,7 +53,7 @@ public class ObjIconFactory {
 		if (field630 == null) {
 			Canvas var2 = new Canvas();
 			var2.setSize(36, 32);
-			field630 = Renderer.method14575(0, var2, Client.field7366, Client.field7669, Client.field9211, Client.field7282, Client.field2013, Client.shadersJs5, 0);
+			field630 = Renderer.create(0, var2, Client.field7366, Client.field7669, Client.field9211, Client.field7282, Client.field2013, Client.shadersJs5, 0);
 			field629 = field630.method2207(FontMetrics.method1593(Client.fontmetricsJs5, DefaultSprites.field506, 0), SpriteDataProvider.method1609(Client.spritesJs5, DefaultSprites.field506, 0), true);
 		}
 		for (ObjIconRequest var3 = (ObjIconRequest) field631.method14191(); var3 != null; var3 = (ObjIconRequest) field631.method14161()) {
@@ -65,7 +65,7 @@ public class ObjIconFactory {
 	@ObfuscatedName("akf.m(I)V")
 	public static void method17658() {
 		if (field630 != null) {
-			field630.method2578();
+			field630.dispose();
 			field630 = null;
 			field629 = null;
 		}

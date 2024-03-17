@@ -552,8 +552,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 			} catch (Exception var34) {
 			}
 			this.field9967 = arg6;
-			NativeLibraries.method5134().method7902("jaclib");
-			NativeLibraries.method5134().method7902("jaggl");
+			NativeLibraries.getLoader().load("jaclib");
+			NativeLibraries.getLoader().load("jaggl");
 			this.field10022 = new OpenGL();
 			long var10 = this.field10022.init(arg0, 8, 8, 8, 24, 0, this.field9967);
 			if (var10 == 0L) {
@@ -699,7 +699,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			}
 		} catch (Throwable var36) {
 			var36.printStackTrace();
-			this.method2578();
+			this.dispose();
 			if (var36 instanceof OutOfMemoryError) {
 				throw (OutOfMemoryError) var36;
 			} else if (var36 instanceof LegacyOpenGLException) {
@@ -894,7 +894,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.l(II)V")
 	public void method2116(int arg0, int arg1) throws RendererException {
 		try {
-			this.field1612.method15451();
+			this.surface.method15451();
 		} catch (Exception var4) {
 		}
 		if (this.field1596 != null) {
@@ -1036,8 +1036,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.rz()V")
 	public void method15757() {
-		int var1 = this.field1614.method1627();
-		int var2 = this.field1614.method1628();
+		int var1 = this.renderTarget.getWidth();
+		int var2 = this.renderTarget.getHeight();
 		this.field9906.method6617(0.0F, (float) var1, 0.0F, (float) var2, -1.0F, 1.0F);
 		this.method2263();
 		this.method15748();
@@ -1046,11 +1046,11 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.aq(IIII)[I")
 	public int[] method2149(int arg0, int arg1, int arg2, int arg3) {
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			return null;
 		}
 		int[] var5 = new int[arg2 * arg3];
-		int var6 = this.field1614.method1628();
+		int var6 = this.renderTarget.getHeight();
 		for (int var7 = 0; var7 < arg3; var7++) {
 			OpenGL.glReadPixelsi(arg0, var6 - arg1 - var7 - 1, arg2, 1, 32993, this.field9862, var5, arg2 * var7);
 		}
@@ -1059,7 +1059,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.ax()V")
 	public void method2150() {
-		if (!this.field10003 || this.field1614 == null) {
+		if (!this.field10003 || this.renderTarget == null) {
 			return;
 		}
 		int var1 = this.field9927;
@@ -1089,7 +1089,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		OpenGL.glMatrixMode(5888);
 		OpenGL.glLoadIdentity();
 		OpenGL.glRasterPos2i(0, 0);
-		OpenGL.glCopyPixels(0, 0, this.field1614.method1627(), this.field1614.method1628(), 6144);
+		OpenGL.glCopyPixels(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), 6144);
 		OpenGL.glFlush();
 		OpenGL.glReadBuffer(1029);
 		OpenGL.glDrawBuffer(1029);
@@ -1143,9 +1143,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 			this.method15735(arg1, arg2);
 		}
 		if (this.field9854 == null) {
-			this.field9854 = this.method2314(0, 0, this.field1614.method1627(), this.field1614.method1628(), true);
+			this.field9854 = this.method2314(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), true);
 		} else {
-			((LegacyOpenGLSprite) this.field9854).method15372(0, 0, this.field1614.method1627(), this.field1614.method1628(), 0, 0, true);
+			((LegacyOpenGLSprite) this.field9854).method15372(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), 0, 0, true);
 		}
 		this.method2142(this.field10024);
 		this.method2475(1, -16777216);
@@ -1191,9 +1191,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 				this.method15735(arg0, arg1);
 			}
 			if (this.field9854 == null) {
-				this.field9854 = this.method2314(0, 0, this.field1614.method1627(), this.field1614.method1628(), true);
+				this.field9854 = this.method2314(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), true);
 			} else {
-				((LegacyOpenGLSprite) this.field9854).method15372(0, 0, this.field1614.method1627(), this.field1614.method1628(), 0, 0, true);
+				((LegacyOpenGLSprite) this.field9854).method15372(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), 0, 0, true);
 			}
 			this.method2142(this.field10024);
 			this.method2475(1, -16777216);
@@ -1852,7 +1852,12 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.cj(Ldq;IIII)Ldo;")
 	public Model method2211(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4) {
-		return new LegacyOpenGLModel(this, arg0, arg1, arg3, arg4, arg2);
+		try {
+			return new LegacyOpenGLModel(this, arg0, arg1, arg3, arg4, arg2);
+		} catch (Exception ex) {
+			// todo: note - come back here if no models appear
+			return null;
+		}
 	}
 
 	@ObfuscatedName("afa.cd(II)I")
@@ -1914,8 +1919,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public void method2263() {
 		this.field9897 = 0;
 		this.field9932 = 0;
-		this.field9931 = this.field1614.method1627();
-		this.field9934 = this.field1614.method1628();
+		this.field9931 = this.renderTarget.getWidth();
+		this.field9934 = this.renderTarget.getHeight();
 		this.method15937();
 	}
 
@@ -1953,32 +1958,32 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.bc()V")
 	public final void method2167() {
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			return;
 		}
 		this.field9927 = 0;
 		this.field9925 = 0;
-		this.field9928 = this.field1614.method1627();
-		this.field9926 = this.field1614.method1628();
+		this.field9928 = this.renderTarget.getWidth();
+		this.field9926 = this.renderTarget.getHeight();
 		OpenGL.glDisable(3089);
 	}
 
 	@ObfuscatedName("afa.bi(IIII)V")
 	public final void method2168(int arg0, int arg1, int arg2, int arg3) {
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			return;
 		}
 		if (arg0 < 0) {
 			arg0 = 0;
 		}
-		if (arg2 > this.field1614.method1627()) {
-			arg2 = this.field1614.method1627();
+		if (arg2 > this.renderTarget.getWidth()) {
+			arg2 = this.renderTarget.getWidth();
 		}
 		if (arg1 < 0) {
 			arg1 = 0;
 		}
-		if (arg3 > this.field1614.method1628()) {
-			arg3 = this.field1614.method1628();
+		if (arg3 > this.renderTarget.getHeight()) {
+			arg3 = this.renderTarget.getHeight();
 		}
 		this.field9927 = arg0;
 		this.field9925 = arg1;
@@ -2016,7 +2021,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.rc()V")
 	public final void method15937() {
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			return;
 		}
 		int var1;
@@ -2031,8 +2036,8 @@ public class LegacyOpenGLRenderer extends Renderer {
 		} else {
 			var1 = 0;
 			var2 = 0;
-			var3 = this.field1614.method1627();
-			var4 = this.field1614.method1628();
+			var3 = this.renderTarget.getWidth();
+			var4 = this.renderTarget.getHeight();
 		}
 		if (var3 < 1) {
 			var3 = 1;
@@ -2040,7 +2045,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		if (var4 < 1) {
 			var4 = 1;
 		}
-		OpenGL.glViewport(this.field9869 + var1, this.field9930 + this.field1614.method1628() - var2 - var4, var3, var4);
+		OpenGL.glViewport(this.field9869 + var1, this.field9930 + this.renderTarget.getHeight() - var2 - var4, var3, var4);
 		this.field9867 = (float) this.field9931 / 2.0F;
 		this.field9882 = (float) this.field9934 / 2.0F;
 		this.field9910 = (float) this.field9897 + this.field9867;
@@ -2058,10 +2063,10 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.rd()V")
 	public final void method15743() {
-		if (this.field1614 == null || this.field9927 >= this.field9928 || this.field9925 >= this.field9926) {
+		if (this.renderTarget == null || this.field9927 >= this.field9928 || this.field9925 >= this.field9926) {
 			OpenGL.glScissor(0, 0, 0, 0);
 		} else {
-			OpenGL.glScissor(this.field9927 + this.field9869, this.field9930 + this.field1614.method1628() - this.field9926, this.field9928 - this.field9927, this.field9926 - this.field9925);
+			OpenGL.glScissor(this.field9927 + this.field9869, this.field9930 + this.renderTarget.getHeight() - this.field9926, this.field9928 - this.field9927, this.field9926 - this.field9925);
 		}
 	}
 

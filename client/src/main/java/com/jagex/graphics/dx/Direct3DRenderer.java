@@ -233,7 +233,7 @@ public class Direct3DRenderer extends GpuRenderer {
 					var8.method2138(arg0, new Direct3DSurface(var8, arg0, arg0.getWidth(), arg0.getHeight(), true));
 				}
 				var8.method2140(arg0);
-				var8.method15969();
+				var8.init();
 				return var8;
 			}
 		} catch (RuntimeException var24) {
@@ -290,7 +290,7 @@ public class Direct3DRenderer extends GpuRenderer {
 			IDirect3DDevice.BeginScene(this.device);
 		} catch (Throwable ex) {
 			ex.printStackTrace();
-			this.method2578();
+			this.dispose();
 			throw new RuntimeException("");
 		}
 	}
@@ -300,7 +300,7 @@ public class Direct3DRenderer extends GpuRenderer {
 		for (ObjectWrapper var1 = (ObjectWrapper) this.field11959.method14191(); var1 != null; var1 = (ObjectWrapper) this.field11959.method14161()) {
 			Direct3DInterface1 var2 = (Direct3DInterface1) var1.field11436;
 			var2.method6220();
-			if (this.field1614 == var2) {
+			if (this.renderTarget == var2) {
 				var2.method1630();
 			}
 		}
@@ -369,14 +369,14 @@ public class Direct3DRenderer extends GpuRenderer {
 		IDirect3DDevice.SetRenderState(this.device, 23, 4);
 		IDirect3DDevice.SetRenderState(this.device, 25, 5);
 		IDirect3DDevice.SetRenderState(this.device, 24, 0);
-		IDirect3DDevice.method43(this.device, 206, this.field10074);
+		IDirect3DDevice.SetRenderState(this.device, 206, this.field10074);
 		IDirect3DDevice.SetRenderState(this.device, 181, 0);
 		this.method19007();
 		IDirect3DDevice.SetRenderState(this.device, 147, 1);
 		IDirect3DDevice.SetRenderState(this.device, 145, 1);
-		IDirect3DDevice.method42(this.device, 38, 0.95F);
+		IDirect3DDevice.SetRenderState(this.device, 38, 0.95F);
 		IDirect3DDevice.SetRenderState(this.device, 35, 3);
-		IDirect3DDevice.method42(this.device, 154, 1.0F);
+		IDirect3DDevice.SetRenderState(this.device, 154, 1.0F);
 		D3DLIGHT.SetType(this.field11961, 3);
 		D3DLIGHT.SetType(this.field11988, 3);
 		D3DLIGHT.SetType(this.field11970, 1);
@@ -394,17 +394,17 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.l(II)V")
 	public void method2116(int arg0, int arg1) throws RendererException {
 		if (this.field11960) {
-			if (!this.method19019(this.field1612.method1627(), this.field1612.method1628())) {
+			if (!this.method19019(this.surface.getWidth(), this.surface.getHeight())) {
 				return;
 			}
-			((Direct3DSurface) this.field1612).method6220();
+			((Direct3DSurface) this.surface).method6220();
 		} else {
 			IDirect3DDevice.EndScene(this.device);
 		}
-		int var3 = this.field1612.method15451();
+		int var3 = this.surface.method15451();
 		if (class0.method34(var3)) {
 			this.field11960 = true;
-			this.field1612.method1629();
+			this.surface.method1629();
 		} else {
 			IDirect3DDevice.BeginScene(this.device);
 			if (this.field1596 != null) {
@@ -576,7 +576,7 @@ public class Direct3DRenderer extends GpuRenderer {
 			this.method19024(arg1, arg2);
 		}
 		long var4 = IDirect3DDevice.GetRenderTarget(this.device, 0);
-		if (class0.method34(IDirect3DDevice.StretchRect(this.device, var4, 0, 0, this.field1614.method1627(), this.field1614.method1628(), this.field11990, this.field1611, this.field1618, this.field1619, this.field1610, 2))) {
+		if (class0.method34(IDirect3DDevice.StretchRect(this.device, var4, 0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), this.field11990, this.field1611, this.field1618, this.field1619, this.field1610, 2))) {
 		}
 		IUnknown.Release(var4);
 		IDirect3DDevice.GetRenderTargetData(this.device, this.field11990, this.field11994[this.field11995]);
@@ -678,7 +678,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.sa()V")
 	public void method15997() {
-		if (this.field1614 != null) {
+		if (this.renderTarget != null) {
 			IDirect3DDevice.SetViewport(this.device, this.field10105 + this.field10101, this.field10132 + this.field10102, this.field10103, this.field10104, this.field10087, this.field10088);
 		}
 	}
@@ -690,7 +690,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.sj()V")
 	public void method15999() {
-		IDirect3DDevice.method43(this.device, 174, this.field10182);
+		IDirect3DDevice.SetRenderState(this.device, 174, this.field10182);
 	}
 
 	@ObfuscatedName("aqd.ahh(J)V")
@@ -718,18 +718,18 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.tp()V")
 	public void method16016() {
-		IDirect3DDevice.method43(this.device, 7, this.field10109 && this.field10044);
+		IDirect3DDevice.SetRenderState(this.device, 7, this.field10109 && this.field10044);
 	}
 
 	@ObfuscatedName("aqd.tv()V")
 	public void method16017() {
-		IDirect3DDevice.method43(this.device, 14, this.field10107 && this.field10108);
+		IDirect3DDevice.SetRenderState(this.device, 14, this.field10107 && this.field10108);
 	}
 
 	@ObfuscatedName("aqd.tg()V")
 	public void method16233() {
 		if (this.field10099) {
-			IDirect3DDevice.method43(this.device, 137, this.field10111 && !this.field10113);
+			IDirect3DDevice.SetRenderState(this.device, 137, this.field10111 && !this.field10113);
 		}
 	}
 
@@ -1050,7 +1050,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.ve()V")
 	public void method16058() {
-		IDirect3DDevice.method43(this.device, 15, this.field10091);
+		IDirect3DDevice.SetRenderState(this.device, 15, this.field10091);
 		IDirect3DDevice.SetRenderState(this.device, 24, this.field10178 & 0xFF);
 		if (this.field11957.MultiSampleType <= 0) {
 			return;
@@ -1066,7 +1066,7 @@ public class Direct3DRenderer extends GpuRenderer {
 		} else if (this.field11971 || this.field11979) {
 			IDirect3DDevice.SetRenderState(this.device, 181, 0);
 		} else if (this.field11980) {
-			IDirect3DDevice.method42(this.device, 154, 1.0F);
+			IDirect3DDevice.SetRenderState(this.device, 154, 1.0F);
 		}
 	}
 
@@ -1110,7 +1110,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.vg()V")
 	public void method16175() {
-		IDirect3DDevice.method43(this.device, 27, this.field10176);
+		IDirect3DDevice.SetRenderState(this.device, 27, this.field10176);
 	}
 
 	@ObfuscatedName("aqd.ahy()V")
@@ -1121,7 +1121,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.vz()V")
 	public void method15978() {
 		if (this.field10099) {
-			IDirect3DDevice.method43(this.device, 28, this.field10167 && this.field10166 && this.field10169 >= 0);
+			IDirect3DDevice.SetRenderState(this.device, 28, this.field10167 && this.field10166 && this.field10169 >= 0);
 		}
 	}
 
@@ -1133,15 +1133,15 @@ public class Direct3DRenderer extends GpuRenderer {
 			this.field10171 = this.field10170;
 		}
 		if (this.field10099) {
-			IDirect3DDevice.method42(this.device, 36, this.field10171);
-			IDirect3DDevice.method42(this.device, 37, this.field10119);
+			IDirect3DDevice.SetRenderState(this.device, 36, this.field10171);
+			IDirect3DDevice.SetRenderState(this.device, 37, this.field10119);
 			IDirect3DDevice.SetRenderState(this.device, 34, this.field10191);
 		}
 	}
 
 	@ObfuscatedName("aqd.vj(Z)V")
 	public void method16294(boolean arg0) {
-		IDirect3DDevice.method43(this.device, 161, arg0);
+		IDirect3DDevice.SetRenderState(this.device, 161, arg0);
 	}
 
 	@ObfuscatedName("aqd.vc(Z)Lml;")

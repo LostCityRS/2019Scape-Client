@@ -208,9 +208,9 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 	@ObfuscatedName("aig.r(IIIIII)V")
 	public void method5719(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		this.field4980.method16092(this);
-		RenderTarget var7 = this.field4980.method2135();
+		RenderTarget var7 = this.field4980.getRenderTarget();
 		if (var7 != null) {
-			int var8 = var7.method1628() - (arg3 + arg5);
+			int var8 = var7.getHeight() - (arg3 + arg5);
 			int var9 = OpenGLRenderer.method19077(this.field4973, this.field4977);
 			OpenGL.glCopyTexImage2D(this.field4979, 0, var9, arg4, var8, arg2, arg3, 0);
 		}

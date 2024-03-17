@@ -41,12 +41,12 @@ public class OpenGLSurface extends GpuSurface {
 	}
 
 	@ObfuscatedName("atx.e()I")
-	public int method1627() {
+	public int getWidth() {
 		return this.field12517;
 	}
 
 	@ObfuscatedName("atx.n()I")
-	public int method1628() {
+	public int getHeight() {
 		return this.field12520;
 	}
 

@@ -240,7 +240,7 @@ public class SkyboxRelated {
 		int var19 = this.field5123 * 1024 / var18;
 		Matrix4x4 var20 = arg0.method2355();
 		Matrix4x4 var21 = arg0.method2208();
-		var21.method6622((float) (this.field5123 / 2), (float) (this.field5123 / 2), (float) var19, (float) var19, 50.0F, 50000.0F, (float) arg0.method2135().method1627(), (float) arg0.method2135().method1628(), 1024.0F);
+		var21.method6622((float) (this.field5123 / 2), (float) (this.field5123 / 2), (float) var19, (float) var19, 50.0F, 50000.0F, (float) arg0.getRenderTarget().getWidth(), (float) arg0.getRenderTarget().getHeight(), 1024.0F);
 		arg0.method2220(var21);
 		Matrix4x3 var22 = new Matrix4x3();
 		arg0.method2217(var22);
@@ -299,7 +299,7 @@ public class SkyboxRelated {
 		}
 		Matrix4x4 var14 = arg0.method2355();
 		Matrix4x4 var15 = arg0.method2208();
-		var15.method6622((float) (this.field5123 / 2), (float) (this.field5123 / 2), (float) var13, (float) var13, 50.0F, 50000.0F, (float) arg0.method2135().method1627(), (float) arg0.method2135().method1628(), 1024.0F);
+		var15.method6622((float) (this.field5123 / 2), (float) (this.field5123 / 2), (float) var13, (float) var13, 50.0F, 50000.0F, (float) arg0.getRenderTarget().getWidth(), (float) arg0.getRenderTarget().getHeight(), 1024.0F);
 		arg0.method2220(var15);
 		arg0.method2217(new Matrix4x3());
 		Matrix4x3 var16 = new Matrix4x3();

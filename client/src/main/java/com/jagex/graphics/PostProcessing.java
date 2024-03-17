@@ -236,7 +236,7 @@ public class PostProcessing {
 		this.field1165 = arg0;
 		this.field1166 = arg1;
 		this.field1180 = true;
-		this.field1169.method15925(-this.field1165, this.field1167 + this.field1166 - this.field1169.method2135().method1628());
+		this.field1169.method15925(-this.field1165, this.field1167 + this.field1166 - this.field1169.getRenderTarget().getHeight());
 		this.field1169.method2142(this.field1164);
 		this.field1164.method18966(0);
 		this.field1169.method2475(3, 0);

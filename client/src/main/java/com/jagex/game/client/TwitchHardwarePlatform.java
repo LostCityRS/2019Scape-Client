@@ -215,7 +215,7 @@ public class TwitchHardwarePlatform {
 		try {
 			for (int var0 = 0; var0 < field7390.length; var0++) {
 				if (field7390[var0] != null && field7371[var0]) {
-					NativeLibraries.method5134().method7902(field7390[var0]);
+					NativeLibraries.getLoader().load(field7390[var0]);
 				}
 			}
 		} catch (NativeLibraryException var3) {

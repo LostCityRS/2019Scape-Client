@@ -139,8 +139,8 @@ public class GpuFont extends Font {
 		SpriteShader var9 = this.field10244.field10149;
 		var9.field2997 = this.field10247;
 		var9.method5050(0, arg3);
-		float var10 = (float) this.field10244.method2135().method1627();
-		float var11 = (float) this.field10244.method2135().method1628();
+		float var10 = (float) this.field10244.getRenderTarget().getWidth();
+		float var11 = (float) this.field10244.getRenderTarget().getHeight();
 		var9.field2995.method6612(2.0F / var10, 2.0F / var11, 1.0F, 1.0F);
 		var9.field2995.field4315[12] = ((float) arg1 + this.field10244.method15954()) * 2.0F / var10 - 1.0F;
 		var9.field2995.field4315[13] = ((float) arg2 + this.field10244.method15954()) * 2.0F / var11 - 1.0F;

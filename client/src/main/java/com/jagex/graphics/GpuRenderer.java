@@ -605,7 +605,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.rb()V")
 	public static void method15968() throws NativeLibraryException {
-		NativeLibraries.method5134().method7902("jaclib");
+		NativeLibraries.getLoader().load("jaclib");
 	}
 
 	public GpuRenderer(MaterialList arg0, TextureList arg1, BillboardTypeList arg2, ParticleEmitterTypeList arg3, ParticleEffectorTypeList arg4, Js5 arg5, int arg6, int arg7) {
@@ -639,7 +639,7 @@ public abstract class GpuRenderer extends Renderer {
 			this.method15961(4194304);
 		} catch (Throwable var13) {
 			var13.printStackTrace();
-			this.method2578();
+			this.dispose();
 			if (var13 instanceof OutOfMemoryError) {
 				throw (OutOfMemoryError) var13;
 			}
@@ -649,7 +649,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.ru()V")
-	public final void method15969() {
+	public final void init() {
 		this.field10093 = new BaseTexture[this.field10186];
 		this.field10162 = new Matrix4x4[this.field10186];
 		this.field10135 = new GpuRendererRelated4[this.field10186];
@@ -711,12 +711,12 @@ public abstract class GpuRenderer extends Renderer {
 		if (!this.field10099) {
 			int var2;
 			int var3;
-			if (this.field1614 == null) {
+			if (this.renderTarget == null) {
 				var3 = 0;
 				var2 = 0;
 			} else {
-				var2 = this.field1614.method1627();
-				var3 = this.field1614.method1628();
+				var2 = this.renderTarget.getWidth();
+				var3 = this.renderTarget.getHeight();
 			}
 			this.field10155 = new PostProcessManager(this, var2, var3);
 			this.field10080[3] = new ColourGradingBloomEffect(this);
@@ -1318,8 +1318,8 @@ public abstract class GpuRenderer extends Renderer {
 	public void method2263() {
 		this.field10097 = 0;
 		this.field10098 = 0;
-		this.field10139 = this.field1614.method1627();
-		this.field10082 = this.field1614.method1628();
+		this.field10139 = this.renderTarget.getWidth();
+		this.field10082 = this.renderTarget.getHeight();
 		this.method16063();
 	}
 
@@ -1352,8 +1352,8 @@ public abstract class GpuRenderer extends Renderer {
 		} else {
 			this.field10101 = 0;
 			this.field10102 = 0;
-			this.field10103 = this.field1614.method1627();
-			this.field10104 = this.field1614.method1628();
+			this.field10103 = this.renderTarget.getWidth();
+			this.field10104 = this.renderTarget.getHeight();
 			this.field10087 = 0.0F;
 			this.field10088 = 1.0F;
 		}
@@ -1381,7 +1381,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.bc()V")
 	public final void method2167() {
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			this.field10106 = 0;
 			this.field10193 = 0;
 			this.field10138 = 0;
@@ -1389,8 +1389,8 @@ public abstract class GpuRenderer extends Renderer {
 		} else {
 			this.field10138 = 0;
 			this.field10095 = 0;
-			this.field10193 = this.field1614.method1627();
-			this.field10106 = this.field1614.method1628();
+			this.field10193 = this.renderTarget.getWidth();
+			this.field10106 = this.renderTarget.getHeight();
 		}
 		if (this.field10182) {
 			this.field10182 = false;
@@ -1402,12 +1402,12 @@ public abstract class GpuRenderer extends Renderer {
 	public final void method2168(int arg0, int arg1, int arg2, int arg3) {
 		int var5;
 		int var6;
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			var6 = 0;
 			var5 = 0;
 		} else {
-			var5 = this.field1614.method1627();
-			var6 = this.field1614.method1628();
+			var5 = this.renderTarget.getWidth();
+			var6 = this.renderTarget.getHeight();
 		}
 		if (arg0 <= 0 && arg2 >= var5 - 1 && arg1 <= 0 && arg3 >= var6 - 1) {
 			this.method2167();
@@ -1430,12 +1430,12 @@ public abstract class GpuRenderer extends Renderer {
 	public final void method2161(int arg0, int arg1, int arg2, int arg3) {
 		int var5;
 		int var6;
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			var6 = 0;
 			var5 = 0;
 		} else {
-			var5 = this.field1614.method1627();
-			var6 = this.field1614.method1628();
+			var5 = this.renderTarget.getWidth();
+			var6 = this.renderTarget.getHeight();
 		}
 		int var7 = arg0 >= 0 ? arg0 : 0;
 		int var8 = arg2 <= var5 ? arg2 : var5;
@@ -1665,12 +1665,12 @@ public abstract class GpuRenderer extends Renderer {
 		}
 		int var1;
 		int var2;
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			var2 = 0;
 			var1 = 0;
 		} else {
-			var1 = this.field1614.method1627();
-			var2 = this.field1614.method1628();
+			var1 = this.renderTarget.getWidth();
+			var2 = this.renderTarget.getHeight();
 		}
 		Matrix4x4 var3 = this.field10073;
 		if (var1 == 0 || var2 == 0) {
@@ -2164,7 +2164,7 @@ public abstract class GpuRenderer extends Renderer {
 	@ObfuscatedName("afc.cs(ILch;II)V")
 	public final void method2206(int arg0, GraphicsRelated arg1, int arg2, int arg3) {
 		this.method2219(false);
-		this.field10143.method1454(0.0F, 0.0F, (float) this.method2135().method1627(), 0.0F, 0.0F, (float) this.method2135().method1628(), 0, arg1, arg2, arg3);
+		this.field10143.method1454(0.0F, 0.0F, (float) this.getRenderTarget().getWidth(), 0.0F, 0.0F, (float) this.getRenderTarget().getHeight(), 0, arg1, arg2, arg3);
 		this.method2219(true);
 	}
 

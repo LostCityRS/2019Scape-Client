@@ -314,13 +314,13 @@ public class GpuRendererRelated6 {
 
 	@ObfuscatedName("md.w(F)F")
 	public float method5799(float arg0) {
-		int var2 = this.field3389.method2135().method1627();
+		int var2 = this.field3389.getRenderTarget().getWidth();
 		return (arg0 + this.field3389.method15954()) / (float) var2 * 2.0F - 1.0F;
 	}
 
 	@ObfuscatedName("md.l(F)F")
 	public float method5800(float arg0) {
-		int var2 = this.field3389.method2135().method1628();
+		int var2 = this.field3389.getRenderTarget().getHeight();
 		return (1.0F - (arg0 + this.field3389.method15954()) / (float) var2) * 2.0F - 1.0F;
 	}
 

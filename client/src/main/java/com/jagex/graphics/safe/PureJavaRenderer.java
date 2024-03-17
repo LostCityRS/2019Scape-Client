@@ -152,7 +152,7 @@ public class PureJavaRenderer extends Renderer {
 			this.method2140(arg0);
 		} catch (Throwable var10) {
 			var10.printStackTrace();
-			this.method2578();
+			this.dispose();
 			throw new RuntimeException("");
 		}
 	}
@@ -186,7 +186,7 @@ public class PureJavaRenderer extends Renderer {
 			this.field9776 = (int) MonotonicTime.method3655();
 		} catch (Throwable var7) {
 			var7.printStackTrace();
-			this.method2578();
+			this.dispose();
 			throw new RuntimeException("");
 		}
 	}
@@ -198,7 +198,7 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.l(II)V")
 	public void method2116(int arg0, int arg1) throws RendererException {
-		this.field1612.method15450(arg0, arg1);
+		this.surface.method15450(arg0, arg1);
 		if (this.field1596 != null) {
 			this.field1596.method1982();
 		}

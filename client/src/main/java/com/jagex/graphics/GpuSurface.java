@@ -20,7 +20,7 @@ public abstract class GpuSurface extends Surface {
 
 	@ObfuscatedName("apa.i(II)V")
 	public void method15453(int arg0, int arg1) {
-		if (this.field11940.method2135() == this) {
+		if (this.field11940.getRenderTarget() == this) {
 			this.field11940.method15982();
 		}
 	}

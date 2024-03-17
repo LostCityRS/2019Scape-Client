@@ -45,12 +45,12 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 	}
 
 	@ObfuscatedName("ata.e()I")
-	public int method1627() {
+	public int getWidth() {
 		return this.field12509;
 	}
 
 	@ObfuscatedName("ata.n()I")
-	public int method1628() {
+	public int getHeight() {
 		return this.field12510;
 	}
 
@@ -76,7 +76,7 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 			this.field12511 |= var3;
 			this.field12514[arg0] = var4;
 		}
-		if (this.field12507.method2135() == this) {
+		if (this.field12507.getRenderTarget() == this) {
 			this.method19653(arg0);
 		} else {
 			this.field12512 |= var3;
@@ -104,7 +104,7 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 			this.field12511 |= 0x10;
 			this.field12513 = var2;
 		}
-		if (this.field12507.method2135() == this) {
+		if (this.field12507.getRenderTarget() == this) {
 			this.method19654();
 		} else {
 			this.field12512 |= 0x10;
@@ -163,7 +163,7 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 			return;
 		}
 		int var9 = this.field12510;
-		int var10 = this.field12507.method2135().method1628();
+		int var10 = this.field12507.getRenderTarget().getHeight();
 		int var11 = 0;
 		if (arg7) {
 			var11 |= 0x100;

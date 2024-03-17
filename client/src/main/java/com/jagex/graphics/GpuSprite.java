@@ -221,8 +221,8 @@ public class GpuSprite extends Sprite {
 		var8.method5050(arg2, arg3);
 		int var9 = this.field9408 + arg0;
 		int var10 = this.field9410 + arg1;
-		float var11 = (float) this.field9403.method2135().method1627();
-		float var12 = (float) this.field9403.method2135().method1628();
+		float var11 = (float) this.field9403.getRenderTarget().getWidth();
+		float var12 = (float) this.field9403.getRenderTarget().getHeight();
 		var8.field2995.method6612((float) this.field9407 * 2.0F / var11, (float) this.field9404 * 2.0F / var12, 1.0F, 1.0F);
 		var8.field2995.field4315[12] = ((float) var9 + this.field9403.method15954()) * 2.0F / var11 - 1.0F;
 		var8.field2995.field4315[13] = ((float) var10 + this.field9403.method15954()) * 2.0F / var12 - 1.0F;
@@ -242,8 +242,8 @@ public class GpuSprite extends Sprite {
 		var6.method5050(1, -1);
 		int var7 = this.field9408 + arg0;
 		int var8 = this.field9410 + arg1;
-		float var9 = (float) this.field9403.method2135().method1627();
-		float var10 = (float) this.field9403.method2135().method1628();
+		float var9 = (float) this.field9403.getRenderTarget().getWidth();
+		float var10 = (float) this.field9403.getRenderTarget().getHeight();
 		var6.field2995.method6612((float) this.field9407 * 2.0F / var9, (float) this.field9404 * 2.0F / var10, 1.0F, 1.0F);
 		var6.field2995.field4315[12] = ((float) var7 + this.field9403.method15954()) * 2.0F / var9 - 1.0F;
 		var6.field2995.field4315[13] = ((float) var8 + this.field9403.method15954()) * 2.0F / var10 - 1.0F;
@@ -283,8 +283,8 @@ public class GpuSprite extends Sprite {
 			arg0 += this.field9408 * arg2 / this.field9407;
 			arg1 += this.field9410 * arg3 / this.field9404;
 		}
-		float var10 = (float) this.field9403.method2135().method1627();
-		float var11 = (float) this.field9403.method2135().method1628();
+		float var10 = (float) this.field9403.getRenderTarget().getWidth();
+		float var11 = (float) this.field9403.getRenderTarget().getHeight();
 		var9.field2995.method6612((float) arg2 * 2.0F / var10, (float) arg3 * 2.0F / var11, 1.0F, 1.0F);
 		var9.field2995.field4315[12] = ((float) arg0 + this.field9403.method15954()) * 2.0F / var10 - 1.0F;
 		var9.field2995.field4315[13] = ((float) arg1 + this.field9403.method15954()) * 2.0F / var11 - 1.0F;
@@ -336,8 +336,8 @@ public class GpuSprite extends Sprite {
 		SpriteShader var22 = this.field9403.field10149;
 		var22.field2997 = this.field9401;
 		var22.method5050(arg4, arg5);
-		float var23 = (float) this.field9403.method2135().method1627();
-		float var24 = (float) this.field9403.method2135().method1628();
+		float var23 = (float) this.field9403.getRenderTarget().getWidth();
+		float var24 = (float) this.field9403.getRenderTarget().getHeight();
 		var22.field3000 = this.field9403.field10197;
 		var22.field3001 = 0;
 		var22.field2994 = this.field9403.field10055;
@@ -480,8 +480,8 @@ public class GpuSprite extends Sprite {
 		SpriteShader var25 = this.field9403.field10149;
 		var25.field2997 = this.field9401;
 		var25.method5050(arg6, arg7);
-		float var26 = (float) this.field9403.method2135().method1627();
-		float var27 = (float) this.field9403.method2135().method1628();
+		float var26 = (float) this.field9403.getRenderTarget().getWidth();
+		float var27 = (float) this.field9403.getRenderTarget().getHeight();
 		var25.field2995.method6603();
 		var25.field2995.field4315[0] = (arg2 - arg0) * 2.0F / var26;
 		var25.field2995.field4315[1] = (arg3 - arg1) * 2.0F / var27;
@@ -503,8 +503,8 @@ public class GpuSprite extends Sprite {
 		SpriteShader var11 = this.field9403.field10149;
 		var11.field2997 = this.field9401;
 		var11.method5050(1, -1);
-		float var12 = (float) this.field9403.method2135().method1627();
-		float var13 = (float) this.field9403.method2135().method1628();
+		float var12 = (float) this.field9403.getRenderTarget().getWidth();
+		float var13 = (float) this.field9403.getRenderTarget().getHeight();
 		var11.field2995.method6603();
 		if (this.field9405) {
 			float var14 = (float) this.field9407 / (float) this.method1434();

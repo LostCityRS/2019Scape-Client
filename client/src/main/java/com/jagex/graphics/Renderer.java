@@ -47,10 +47,10 @@ public abstract class Renderer {
 	public int field1616 = -1;
 
 	@ObfuscatedName("dh.i")
-	public RenderTarget field1614;
+	public RenderTarget renderTarget;
 
 	@ObfuscatedName("dh.j")
-	public Surface field1612;
+	public Surface surface;
 
 	@ObfuscatedName("dh.t")
 	public Hashtable field1613 = new Hashtable();
@@ -80,7 +80,7 @@ public abstract class Renderer {
 	public float field1602 = 0.0F;
 
 	@ObfuscatedName("aac.e(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;II)Ldh;")
-	public static Renderer method14575(int arg0, Canvas arg1, MaterialList arg2, TextureList arg3, BillboardTypeList arg4, ParticleEmitterTypeList arg5, ParticleEffectorTypeList arg6, Js5 arg7, int arg8) {
+	public static Renderer create(int arg0, Canvas arg1, MaterialList arg2, TextureList arg3, BillboardTypeList arg4, ParticleEmitterTypeList arg5, ParticleEffectorTypeList arg6, Js5 arg7, int arg8) {
 		int var9 = 0;
 		int var10 = 0;
 		if (arg1 != null) {
@@ -88,19 +88,19 @@ public abstract class Renderer {
 			var9 = var11.width;
 			var10 = var11.height;
 		}
-		return method2180(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, var9, var10);
+		return create(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, var9, var10);
 	}
 
 	@ObfuscatedName("dh.n(ILjava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;IIII)Ldh;")
-	public static synchronized Renderer method2180(int arg0, Canvas arg1, MaterialList arg2, TextureList arg3, BillboardTypeList arg4, ParticleEmitterTypeList arg5, ParticleEffectorTypeList arg6, Js5 arg7, int arg8, int arg9, int arg10) {
+	public static synchronized Renderer create(int arg0, Canvas arg1, MaterialList arg2, TextureList arg3, BillboardTypeList arg4, ParticleEmitterTypeList arg5, ParticleEffectorTypeList arg6, Js5 arg7, int arg8, int arg9, int arg10) {
 		if (arg0 == 0) {
-			return PureJavaRendererFactory.method3367(arg1, arg2, arg3, arg4, arg5, arg6, arg9, arg10);
+			return PureJavaRendererFactory.create(arg1, arg2, arg3, arg4, arg5, arg6, arg9, arg10);
 		} else if (arg0 == 1) {
-			return LegacyOpenGLRendererFactory.method1417(arg1, arg2, arg3, arg4, arg5, arg6, arg8);
+			return LegacyOpenGLRendererFactory.create(arg1, arg2, arg3, arg4, arg5, arg6, arg8);
 		} else if (arg0 == 5) {
-			return OpenGLRendererFactory.method7664(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+			return OpenGLRendererFactory.create(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		} else if (arg0 == 3) {
-			return Direct3DRendererFactory.method6218(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
+			return Direct3DRendererFactory.create(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		} else {
 			throw new IllegalArgumentException("");
 		}
@@ -141,7 +141,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.z(I)V")
-	public void method2578() {
+	public void dispose() {
 		field1594[this.field1595] = false;
 		Enumeration var1 = this.field1613.keys();
 		while (var1.hasMoreElements()) {
@@ -153,7 +153,7 @@ public abstract class Renderer {
 	}
 
 	public void finalize() {
-		this.method2578();
+		this.dispose();
 	}
 
 	@ObfuscatedName("nw.j(Ljava/awt/Canvas;I)V")
@@ -168,23 +168,23 @@ public abstract class Renderer {
 
 	@ObfuscatedName("dh.t([I)V")
 	public void method2134(int[] arg0) {
-		if (this.field1612 == null) {
+		if (this.surface == null) {
 			arg0[1] = 0;
 			arg0[0] = 0;
 		} else {
-			arg0[0] = this.field1612.method1627();
-			arg0[1] = this.field1612.method1628();
+			arg0[0] = this.surface.getWidth();
+			arg0[1] = this.surface.getHeight();
 		}
 	}
 
 	@ObfuscatedName("dh.ae(B)Ldr;")
-	public final RenderTarget method2135() {
-		return this.field1614;
+	public final RenderTarget getRenderTarget() {
+		return this.renderTarget;
 	}
 
 	@ObfuscatedName("dh.ag(I)Lafy;")
-	public final Surface method2136() {
-		return this.field1612;
+	public final Surface getSurface() {
+		return this.surface;
 	}
 
 	@ObfuscatedName("dh.ah(Ljava/awt/Canvas;III)V")
@@ -217,14 +217,14 @@ public abstract class Renderer {
 		Surface var2 = (Surface) this.field1613.get(arg0);
 		if (var2 == null) {
 			throw new RuntimeException();
-		} else if (this.field1616 <= 0 && this.field1612 == this.field1614) {
-			if (this.field1614 != null) {
-				this.field1614.method1631();
+		} else if (this.field1616 <= 0 && this.surface == this.renderTarget) {
+			if (this.renderTarget != null) {
+				this.renderTarget.method1631();
 			}
 			if (this.field1616 < 0) {
-				this.field1614 = var2;
+				this.renderTarget = var2;
 			}
-			this.field1612 = var2;
+			this.surface = var2;
 			var2.method1630();
 		} else {
 			throw new RuntimeException();
@@ -248,9 +248,9 @@ public abstract class Renderer {
 		if (this.field1616 >= 0) {
 			this.field1620[this.field1616].method1631();
 		} else {
-			this.field1612.method1631();
+			this.surface.method1631();
 		}
-		this.field1614 = this.field1620[++this.field1616] = arg0;
+		this.renderTarget = this.field1620[++this.field1616] = arg0;
 		arg0.method1630();
 	}
 
@@ -262,11 +262,11 @@ public abstract class Renderer {
 		this.field1620[--this.field1616 + 1] = null;
 		arg0.method1631();
 		if (this.field1616 >= 0) {
-			this.field1614 = this.field1620[this.field1616];
+			this.renderTarget = this.field1620[this.field1616];
 			this.field1620[this.field1616].method1630();
 		} else {
-			this.field1614 = this.field1612;
-			this.field1612.method1630();
+			this.renderTarget = this.surface;
+			this.surface.method1630();
 		}
 	}
 
@@ -274,7 +274,7 @@ public abstract class Renderer {
 	public void method2419(int arg0, int arg1) {
 		this.field1615 = arg0;
 		this.field1588 = arg1;
-		float var3 = (float) this.field1614.method1627() / (float) this.field1614.method1628();
+		float var3 = (float) this.renderTarget.getWidth() / (float) this.renderTarget.getHeight();
 		float var4 = (float) this.field1615 / (float) this.field1588;
 		if (var3 < var4) {
 			this.field1619 = (int) ((float) this.field1588 * var3);
@@ -283,7 +283,7 @@ public abstract class Renderer {
 			this.field1619 = this.field1615;
 			this.field1610 = (int) ((float) this.field1615 / var3);
 		}
-		this.field1602 = (float) this.field1619 / (float) this.field1614.method1627();
+		this.field1602 = (float) this.field1619 / (float) this.renderTarget.getWidth();
 		this.field1611 = (this.field1615 - this.field1619) / 2;
 		this.field1618 = (this.field1588 - this.field1610) / 2;
 	}

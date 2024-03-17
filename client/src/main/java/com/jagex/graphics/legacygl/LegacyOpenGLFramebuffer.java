@@ -44,12 +44,12 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 	}
 
 	@ObfuscatedName("app.e()I")
-	public int method1627() {
+	public int getWidth() {
 		return this.field11918;
 	}
 
 	@ObfuscatedName("app.n()I")
-	public int method1628() {
+	public int getHeight() {
 		return this.field11914;
 	}
 
@@ -68,7 +68,7 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 			if ((this.field11919 | var3) == var3) {
 				this.field11914 = var4.method1009();
 				this.field11918 = var4.method1015();
-				if (this.field11915.method2135() == this) {
+				if (this.field11915.getRenderTarget() == this) {
 					this.field11915.method15757();
 				}
 			} else if (this.field11918 != var4.method1015() || this.field11914 != var4.method1009()) {
@@ -77,7 +77,7 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 			this.field11919 |= var3;
 			this.field11922[arg0] = var4;
 		}
-		if (this.field11915.method2135() == this) {
+		if (this.field11915.getRenderTarget() == this) {
 			this.method18962(arg0);
 		} else {
 			this.field11917 |= var3;
@@ -98,7 +98,7 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 			if ((this.field11919 | 0x10) == 16) {
 				this.field11914 = var2.method1009();
 				this.field11918 = var2.method1015();
-				if (this.field11915.method2135() == this) {
+				if (this.field11915.getRenderTarget() == this) {
 					this.field11915.method15757();
 				}
 			} else if (this.field11918 != var2.method1015() || this.field11914 != var2.method1009()) {
@@ -107,7 +107,7 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 			this.field11919 |= 0x10;
 			this.field11920 = var2;
 		}
-		if (this.field11915.method2135() == this) {
+		if (this.field11915.getRenderTarget() == this) {
 			this.method18965();
 		} else {
 			this.field11917 |= 0x10;
@@ -172,7 +172,7 @@ public class LegacyOpenGLFramebuffer extends Framebuffer {
 			return;
 		}
 		int var9 = this.field11914;
-		int var10 = this.field11915.method2135().method1628();
+		int var10 = this.field11915.getRenderTarget().getHeight();
 		int var11 = 0;
 		if (arg7) {
 			var11 |= 0x100;

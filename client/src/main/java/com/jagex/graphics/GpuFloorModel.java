@@ -915,8 +915,8 @@ public class GpuFloorModel extends FloorModel {
 		this.field9516.method16177(this.field9493);
 		this.field9516.method16102(var9);
 		this.field9516.method2217(Matrix4x3.field4282);
-		float var21 = (float) this.field9516.method2135().method1627();
-		float var22 = (float) this.field9516.method2135().method1628();
+		float var21 = (float) this.field9516.getRenderTarget().getWidth();
+		float var22 = (float) this.field9516.getRenderTarget().getHeight();
 		Matrix4x3 var23 = new Matrix4x3();
 		Matrix4x3 var24 = new Matrix4x3();
 		var23.method6298(1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 0.0F);

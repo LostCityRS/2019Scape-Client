@@ -41,7 +41,7 @@ public class PreferencesDisplayMode extends Preference {
 
 	@ObfuscatedName("amd.n(II)I")
 	public int canSetValue(int value) {
-		return value == 3 && !NativeLibraries.method5134().method7900("jagdx") ? 3 : 2;
+		return value == 3 && !NativeLibraries.getLoader().method7900("jagdx") ? 3 : 2;
 	}
 
 	@ObfuscatedName("amd.k(II)V")

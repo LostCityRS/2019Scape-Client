@@ -9,7 +9,7 @@ public interface NativeLibraryLoader {
 	boolean method7900(String arg0);
 
 	@ObfuscatedName("rn.e(Ljava/lang/String;B)V")
-	void method7902(String arg0) throws NativeLibraryException;
+	void load(String arg0) throws NativeLibraryException;
 
 	@ObfuscatedName("rn.m(I)Z")
 	boolean method7909();

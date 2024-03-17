@@ -314,7 +314,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 			this.method15987(32768, false);
 		} catch (Throwable var32) {
 			var32.printStackTrace();
-			this.method2578();
+			this.dispose();
 			if (var32 instanceof OutOfMemoryError) {
 				throw (OutOfMemoryError) var32;
 			}
@@ -376,7 +376,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.l(II)V")
 	public void method2116(int arg0, int arg1) throws RendererException {
-		this.field1612.method15451();
+		this.surface.method15451();
 		if (this.field1596 != null) {
 			this.field1596.method1982();
 		}
@@ -430,7 +430,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.aq(IIII)[I")
 	public int[] method2149(int arg0, int arg1, int arg2, int arg3) {
 		int[] var5 = new int[arg2 * arg3];
-		int var6 = this.field1614.method1628();
+		int var6 = this.renderTarget.getHeight();
 		for (int var7 = 0; var7 < arg3; var7++) {
 			OpenGL.glReadPixelsi(arg0, var6 - arg1 - var7 - 1, arg2, 1, 32993, this.field12027, var5, arg2 * var7);
 		}
@@ -439,11 +439,11 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.ax()V")
 	public void method2150() {
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			return;
 		}
-		int var1 = this.field1614.method1627();
-		int var2 = this.field1614.method1628();
+		int var1 = this.renderTarget.getWidth();
+		int var2 = this.renderTarget.getHeight();
 		if (var1 <= 0 && var2 <= 0) {
 			return;
 		}
@@ -529,9 +529,9 @@ public final class OpenGLRenderer extends GpuRenderer {
 			this.method19069(arg1, arg2);
 		}
 		if (this.field12033 == null) {
-			this.field12033 = this.method2314(0, 0, this.field1614.method1627(), this.field1614.method1628(), false);
+			this.field12033 = this.method2314(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), false);
 		} else {
-			this.field12033.method1440(0, 0, this.field1614.method1627(), this.field1614.method1628(), 0, 0);
+			this.field12033.method1440(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), 0, 0);
 		}
 		this.method2142(this.field12018);
 		this.method2475(1, -16777216);
@@ -577,9 +577,9 @@ public final class OpenGLRenderer extends GpuRenderer {
 				this.method19069(arg0, arg1);
 			}
 			if (this.field12033 == null) {
-				this.field12033 = this.method2314(0, 0, this.field1614.method1627(), this.field1614.method1628(), false);
+				this.field12033 = this.method2314(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), false);
 			} else {
-				this.field12033.method1440(0, 0, this.field1614.method1627(), this.field1614.method1628(), 0, 0);
+				this.field12033.method1440(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), 0, 0);
 			}
 			this.method2142(this.field12018);
 			this.method2475(1, -16777216);
@@ -688,19 +688,19 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.sa()V")
 	public void method15997() {
-		if (this.field1614 != null) {
-			OpenGL.glViewport(this.field10105 + this.field10101, this.field10132 + this.field1614.method1628() - this.field10102 - this.field10104, this.field10103, this.field10104);
+		if (this.renderTarget != null) {
+			OpenGL.glViewport(this.field10105 + this.field10101, this.field10132 + this.renderTarget.getHeight() - this.field10102 - this.field10104, this.field10103, this.field10104);
 		}
 		OpenGL.glDepthRange(this.field10087, this.field10088);
 	}
 
 	@ObfuscatedName("aqv.sb()V")
 	public void method15955() {
-		if (this.field1614 == null) {
+		if (this.renderTarget == null) {
 			return;
 		}
 		int var1 = this.field10105 + this.field10095;
-		int var2 = this.field10132 + this.field1614.method1628() - this.field10106;
+		int var2 = this.field10132 + this.renderTarget.getHeight() - this.field10106;
 		int var3 = this.field10193 - this.field10095;
 		int var4 = this.field10106 - this.field10138;
 		if (var3 < 0) {

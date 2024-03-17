@@ -791,7 +791,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 		}
 		if (NativeLibraries.method14526()) {
-			NativeLibraries.method5134().method7909();
+			NativeLibraries.getLoader().method7909();
 		}
 		if (canvas != null) {
 			try {
@@ -1010,7 +1010,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		if (this.field6601) {
 			return;
 		}
-		NativeLibraries.method5134().method7902("jaclib");
+		NativeLibraries.getLoader().load("jaclib");
 		try {
 			QueryPerformanceCounter.init();
 		} catch (Throwable var2) {

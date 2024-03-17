@@ -130,16 +130,16 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 	@ObfuscatedName("aii.l(ILafq;Llz;Ldw;Llz;Z)V")
 	public void method5564(int arg0, Framebuffer arg1, GpuTexture arg2, EffectInterface arg3, GpuTexture arg4, boolean arg5) {
 		float var7 = this.field3242.method15954();
-		float var8 = (float) arg1.method1627();
-		float var9 = (float) arg1.method1628();
+		float var8 = (float) arg1.getWidth();
+		float var9 = (float) arg1.getHeight();
 		GpuTexture var10 = arg2;
 		float var11 = var7 * 2.0F / var8;
 		float var12 = -var7 * 2.0F / var9;
 		float[] var13 = new float[] { var11 + -1.0F, var12 + 1.0F, 0.0F, 0.0F, var11 + -1.0F, var12 + -3.0F, 0.0F, 2.0F, var11 + 3.0F, var12 + 1.0F, 2.0F, 0.0F };
 		int var14 = (int) var8;
 		int var15 = (int) var9;
-		int var16 = arg5 ? this.field3242.method2136().method1627() : var14;
-		int var17 = arg5 ? this.field3242.method2136().method1628() : var15;
+		int var16 = arg5 ? this.field3242.getSurface().getWidth() : var14;
+		int var17 = arg5 ? this.field3242.getSurface().getHeight() : var15;
 		if (arg0 == 0) {
 			var14 = 256;
 			var15 = 256;

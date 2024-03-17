@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public abstract class RenderTarget {
 
 	@ObfuscatedName("dr.e()I")
-	public abstract int method1627();
+	public abstract int getWidth();
 
 	@ObfuscatedName("dr.n()I")
-	public abstract int method1628();
+	public abstract int getHeight();
 
 	@ObfuscatedName("dr.m()V")
 	public abstract void method1629();

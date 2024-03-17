@@ -843,9 +843,9 @@ public class ObjType implements ConfigType {
 		}
 		Matrix4x4 var23 = arg0.method2355();
 		Matrix4x4 var24 = arg0.method2208();
-		var24.method6703(16.0F, 16.0F, 512.0F, 512.0F, 50.0F, 2.14748365E9F, (float) arg0.method2135().method1627(), (float) arg0.method2135().method1628());
+		var24.method6703(16.0F, 16.0F, 512.0F, 512.0F, 50.0F, 2.14748365E9F, (float) arg0.getRenderTarget().getWidth(), (float) arg0.getRenderTarget().getHeight());
 		arg0.method2220(var24);
-		arg0.method2164(0, 0, arg0.method2135().method1627(), arg0.method2135().method1628());
+		arg0.method2164(0, 0, arg0.getRenderTarget().getWidth(), arg0.getRenderTarget().getHeight());
 		Matrix4x3 var25 = new Matrix4x3();
 		arg0.method2217(var25);
 		arg0.method2222((float) (Math.random() / 10.0D) + 0.95F);

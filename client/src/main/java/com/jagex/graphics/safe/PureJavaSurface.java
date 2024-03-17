@@ -61,12 +61,12 @@ public abstract class PureJavaSurface extends Surface {
 	}
 
 	@ObfuscatedName("aph.e()I")
-	public int method1627() {
+	public int getWidth() {
 		return this.field11925;
 	}
 
 	@ObfuscatedName("aph.n()I")
-	public int method1628() {
+	public int getHeight() {
 		return this.field11927;
 	}
 

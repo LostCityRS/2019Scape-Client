@@ -104,15 +104,15 @@ public class LevelsFilterEffect extends PostProcessEffect {
 	@ObfuscatedName("aia.l(ILafq;Llz;Ldw;Llz;Z)V")
 	public void method5564(int arg0, Framebuffer arg1, GpuTexture arg2, EffectInterface arg3, GpuTexture arg4, boolean arg5) {
 		float var7 = this.field3242.method15954();
-		float var8 = (float) arg1.method1627();
-		float var9 = (float) arg1.method1628();
+		float var8 = (float) arg1.getWidth();
+		float var9 = (float) arg1.getHeight();
 		float var10 = var7 * 2.0F / var8;
 		float var11 = -var7 * 2.0F / var9;
 		float[] var12 = new float[] { var10 + -1.0F, var11 + 1.0F, 0.0F, 0.0F, var10 + -1.0F, var11 + -3.0F, 0.0F, 2.0F, var10 + 3.0F, var11 + 1.0F, 2.0F, 0.0F };
 		int var13 = (int) var8;
 		int var14 = (int) var9;
-		int var15 = arg5 ? this.field3242.method2136().method1627() : var13;
-		int var16 = arg5 ? this.field3242.method2136().method1628() : var14;
+		int var15 = arg5 ? this.field3242.getSurface().getWidth() : var13;
+		int var16 = arg5 ? this.field3242.getSurface().getHeight() : var14;
 		this.field10645.method4162(this.field10641);
 		this.field10645.method4244();
 		float var17 = (float) var13 / var8;

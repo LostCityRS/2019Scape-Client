@@ -20,7 +20,7 @@ public abstract class GpuFramebuffer extends Framebuffer {
 
 	@ObfuscatedName("apz.ac()V")
 	public void method18969() {
-		if (this.field11923.method2135() == this) {
+		if (this.field11923.getRenderTarget() == this) {
 			this.field11923.method15982();
 		}
 	}

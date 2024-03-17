@@ -13,12 +13,12 @@ public final class IDirect3DDevice extends IUnknown {
 	}
 
 	@OriginalMember(owner = "client!jagdx/IDirect3DDevice", name = "e", descriptor = "(JIF)I", line = 139)
-	public static int method42(@OriginalArg(0) long arg0, @OriginalArg(1) int arg1, @OriginalArg(2) float arg2) {
+	public static int SetRenderState(@OriginalArg(0) long arg0, @OriginalArg(1) int arg1, @OriginalArg(2) float arg2) {
 		return SetRenderStatef(arg0, arg1, arg2);
 	}
 
 	@OriginalMember(owner = "client!jagdx/IDirect3DDevice", name = "n", descriptor = "(JIZ)I", line = 143)
-	public static int method43(@OriginalArg(0) long arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
+	public static int SetRenderState(@OriginalArg(0) long arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
 		return SetRenderStateb(arg0, arg1, arg2);
 	}
 

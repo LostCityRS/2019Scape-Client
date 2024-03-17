@@ -21,7 +21,7 @@ public class NativeLibraries {
 	}
 
 	@ObfuscatedName("ke.n(I)Lrn;")
-	public static NativeLibraryLoader method5134() {
+	public static NativeLibraryLoader getLoader() {
 		if (field5077 == null) {
 			throw new IllegalStateException("");
 		}

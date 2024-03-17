@@ -2461,7 +2461,7 @@ public final class Client extends GameShell {
 		Loading.method8005();
 		TwitchHardwarePlatform.method9128();
 		if (renderer != null) {
-			renderer.method2578();
+			renderer.dispose();
 		}
 		if (Fullscreen.allowed && GameShell.fsframe != null) {
 			Fullscreen.method4277(GameShell.fsimp14, GameShell.fsframe);
@@ -2884,7 +2884,7 @@ public final class Client extends GameShell {
 	@ObfuscatedName("gm.ew(ILjava/lang/String;ZI)V")
 	public static void method3596(int arg0, String arg1, boolean arg2) {
 		if (arg0 == 0) {
-			renderer = Renderer.method14575(0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, shadersJs5, preferences.antiAliasing2.getValue() * 2);
+			renderer = Renderer.create(0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, shadersJs5, preferences.antiAliasing2.getValue() * 2);
 			if (arg1 != null) {
 				renderer.method2475(1, 0);
 				FontMetrics var3 = FontMetrics.method6068(fontmetricsJs5, DefaultSprites.field505, 0, field7538);
@@ -2896,14 +2896,14 @@ public final class Client extends GameShell {
 			label245: {
 				Renderer var5 = null;
 				if (arg1 != null) {
-					var5 = Renderer.method14575(0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, shadersJs5, 0);
+					var5 = Renderer.create(0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, shadersJs5, 0);
 					var5.method2475(1, 0);
 					FontMetrics var6 = FontMetrics.method1593(fontmetricsJs5, DefaultSprites.field505, 0);
 					Font var7 = var5.method2207(var6, SpriteDataProvider.method1609(spritesJs5, DefaultSprites.field505, 0), true);
 					method8024();
 					MessageBox.method649(arg1, true, var5, var7, var6);
 					try {
-						var5.method2578();
+						var5.dispose();
 						var5 = null;
 					} catch (Throwable var30) {
 					}
@@ -2912,7 +2912,7 @@ public final class Client extends GameShell {
 					try {
 						method7239();
 						System.gc();
-						renderer = Renderer.method14575(arg0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, shadersJs5, preferences.antiAliasing2.getValue() * 2);
+						renderer = Renderer.create(arg0, GameShell.canvas, field7366, field7669, field9211, field7282, field2013, shadersJs5, preferences.antiAliasing2.getValue() * 2);
 						field7538 = new FontProvider(renderer, spritesJs5, fontmetricsJs5, DefaultSprites.method845());
 						if (renderer.method2194()) {
 							boolean var9 = true;
@@ -2946,7 +2946,7 @@ public final class Client extends GameShell {
 						preferences.method18157(preferences.displayMode2, 0);
 						if (var5 != null) {
 							try {
-								var5.method2578();
+								var5.dispose();
 								var5 = null;
 							} catch (Throwable var28) {
 							}
@@ -2958,7 +2958,7 @@ public final class Client extends GameShell {
 				} finally {
 					if (var5 != null) {
 						try {
-							var5.method2578();
+							var5.dispose();
 						} catch (Throwable var27) {
 						}
 					}
@@ -3036,7 +3036,7 @@ public final class Client extends GameShell {
 			}
 		}
 		field10966.method14499();
-		renderer.method2578();
+		renderer.dispose();
 		renderer = null;
 	}
 

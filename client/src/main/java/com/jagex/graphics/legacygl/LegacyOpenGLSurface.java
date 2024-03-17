@@ -48,12 +48,12 @@ public class LegacyOpenGLSurface extends Surface {
 	}
 
 	@ObfuscatedName("apt.e()I")
-	public int method1627() {
+	public int getWidth() {
 		return this.field11936;
 	}
 
 	@ObfuscatedName("apt.n()I")
-	public int method1628() {
+	public int getHeight() {
 		return this.field11937;
 	}
 
@@ -64,7 +64,7 @@ public class LegacyOpenGLSurface extends Surface {
 		}
 		this.field11933.surfaceResized(this.field11935);
 		this.method18976();
-		if (this.field11934.method2135() == this) {
+		if (this.field11934.getRenderTarget() == this) {
 			this.field11934.method15757();
 		}
 	}

@@ -140,7 +140,7 @@ public class HardwarePlatformLoader implements NativeLibraryLoader {
 	}
 
 	@ObfuscatedName("ty.e(Ljava/lang/String;B)V")
-	public void method7902(String arg0) throws NativeLibraryException {
+	public void load(String arg0) throws NativeLibraryException {
 		this.method8467(arg0, HardwarePlatformLoaderRelated.class);
 	}
 

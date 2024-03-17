@@ -22,10 +22,10 @@ public class OpenGLRendererFactory {
 	}
 
 	@ObfuscatedName("ra.e(Ljava/awt/Canvas;Ldf;Les;Lnx;Lnb;Lnp;Lpy;I)Ldh;")
-	public static Renderer method7664(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, Js5 arg6, int arg7) {
+	public static Renderer create(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, Js5 arg6, int arg7) {
 		try {
 			GpuRenderer.method15968();
-			NativeLibraries.method5134().method7902("jaggl");
+			NativeLibraries.getLoader().load("jaggl");
 			Renderer.method6020(arg0);
 			OpenGL var8 = new OpenGL();
 			long var9 = var8.init(arg0, 8, 8, 8, 24, 0, arg7);
@@ -33,11 +33,13 @@ public class OpenGLRendererFactory {
 				throw new RuntimeException("");
 			}
 			OpenGLRenderer var11 = new OpenGLRenderer(var8, arg0, var9, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-			var11.method15969();
+			var11.init();
 			return var11;
-		} catch (RuntimeException var14) {
-			throw var14;
-		} catch (Throwable var15) {
+		} catch (RuntimeException ex) {
+			ex.printStackTrace();
+			throw ex;
+		} catch (Throwable ex) {
+			ex.printStackTrace();
 			throw new RuntimeException("");
 		}
 	}
