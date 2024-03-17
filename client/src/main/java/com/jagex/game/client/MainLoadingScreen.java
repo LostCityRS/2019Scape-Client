@@ -11,8 +11,9 @@ import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 
-import java.awt.*;
-import java.awt.image.PixelGrabber;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 
 @ObfuscatedName("jr")
 public class MainLoadingScreen implements LoadingScreen {
@@ -134,28 +135,20 @@ public class MainLoadingScreen implements LoadingScreen {
 	}
 
 	@ObfuscatedName("gh.f([BI)Lcm;")
-	public static Sprite method3594(byte[] arg0) {
-		if (arg0 == null) {
+	public static Sprite method3594(byte[] src) {
+		if (src == null) {
 			throw new RuntimeException("");
 		}
-		while (true) {
-			try {
-				Image var1 = Toolkit.getDefaultToolkit().createImage(arg0);
-				Container var2 = GameShell.getTopContainer();
-				MediaTracker var3 = new MediaTracker(var2);
-				var3.addImage(var1, 0);
-				var3.waitForAll();
-				int var4 = var1.getWidth(var2);
-				int var5 = var1.getHeight(var2);
-				if (!var3.isErrorAny() && var4 >= 0 && var5 >= 0) {
-					int[] var6 = new int[var4 * var5];
-					PixelGrabber var7 = new PixelGrabber(var1, 0, 0, var4, var5, var6, 0, var4);
-					var7.grabPixels();
-					return Client.renderer.method2199(var6, 0, var4, var4, var5);
-				}
-				throw new RuntimeException("");
-			} catch (InterruptedException var9) {
-			}
+
+		try {
+			BufferedImage img = ImageIO.read(new ByteArrayInputStream(src));
+			int width = img.getWidth();
+			int height = img.getHeight();
+			int[] pixels = new int[width * height];
+			img.getRGB(0, 0, width, height, pixels, 0, width);
+			return Client.renderer.method2199(pixels, 0, width, width, height);
+		} catch (Exception ex) {
+			return null;
 		}
 	}
 

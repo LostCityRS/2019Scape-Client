@@ -6,6 +6,7 @@ plugins {
 dependencies {
     compileOnly project(':deob-annotations')
     compileOnly 'lib:stub'
+    implementation 'com.twelvemonkeys.imageio:imageio-jpeg:3.10.1'
 }
 
 java {
