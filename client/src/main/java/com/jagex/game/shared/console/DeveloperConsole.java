@@ -108,7 +108,7 @@ public class DeveloperConsole {
 		for (int var0 = 0; var0 < field4845.length; var0++) {
 			field4845[var0] = "";
 		}
-		addline(LocalisedText.DEBUG_CONSOLE_INFO.method15021(Client.language));
+		addline(LocalisedText.DEBUG_CONSOLE_INFO.localisedText(Client.language));
 	}
 
 	@ObfuscatedName("amd.k(B)V")
@@ -454,7 +454,7 @@ public class DeveloperConsole {
 				return;
 			}
 		} catch (Exception var37) {
-			addline(LocalisedText.DEBUG_CONSOLE_ERROR.method15021(Client.language));
+			addline(LocalisedText.DEBUG_CONSOLE_ERROR.localisedText(Client.language));
 			return;
 		}
 		if (Client.modewhere != ModeWhere.LIVE || Client.field10949 >= 2 || Client.ALLOW_COMMANDS_ANYWHERE) {
@@ -662,12 +662,12 @@ public class DeveloperConsole {
 				}
 			} catch (Exception ex) {
 				ex.printStackTrace();
-				addline(LocalisedText.DEBUG_CONSOLE_ERROR.method15021(Client.language));
+				addline(LocalisedText.DEBUG_CONSOLE_ERROR.localisedText(Client.language));
 				return;
 			}
 		}
 		if (Client.state != 18 && Client.state != 13 && !Client.ALLOW_COMMANDS_ANYWHERE) {
-			addline(LocalisedText.DEBUG_CONSOLE_UNKNOWNCOMMAND.method15021(Client.language) + arg0);
+			addline(LocalisedText.DEBUG_CONSOLE_UNKNOWNCOMMAND.localisedText(Client.language) + arg0);
 		}
 	}
 
@@ -760,7 +760,7 @@ public class DeveloperConsole {
 					Client.world.method7753();
 				}
 			} catch (Exception var13) {
-				addline(LocalisedText.DEBUG_CONSOLE_ERROR.method15021(Client.language));
+				addline(LocalisedText.DEBUG_CONSOLE_ERROR.localisedText(Client.language));
 			}
 		}
 	}

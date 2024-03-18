@@ -30,7 +30,7 @@ public class ObjType implements ConfigType {
 	public static short[] clientpalette = new short[256];
 
 	@ObfuscatedName("abv.l")
-	public ConfigTypeList objs;
+	public ConfigTypeList myList;
 
 	@ObfuscatedName("abv.u")
 	public ObjTypeFactory factory;
@@ -54,13 +54,13 @@ public class ObjType implements ConfigType {
 	public short[] recol_d;
 
 	@ObfuscatedName("abv.o")
-	public byte[] field8633;
+	public byte[] recol_d_palette;
 
 	@ObfuscatedName("abv.s")
-	public short[] field8634;
+	public short[] retex_s;
 
 	@ObfuscatedName("abv.y")
-	public short[] field8635;
+	public short[] retex_d;
 
 	@ObfuscatedName("abv.q")
 	public byte[] field8661;
@@ -78,7 +78,7 @@ public class ObjType implements ConfigType {
 	public int yan2d = 0;
 
 	@ObfuscatedName("abv.g")
-	public int field8641 = 0;
+	public int zan2d = 0;
 
 	@ObfuscatedName("abv.i")
 	public int xof2d = 0;
@@ -96,10 +96,10 @@ public class ObjType implements ConfigType {
 	public boolean members = false;
 
 	@ObfuscatedName("abv.ah")
-	public String[] ops;
+	public String[] op;
 
 	@ObfuscatedName("abv.al")
-	public String[] iops;
+	public String[] iop;
 
 	@ObfuscatedName("abv.ac")
 	public int[] field8649;
@@ -135,22 +135,22 @@ public class ObjType implements ConfigType {
 	public int womanwear3 = -1;
 
 	@ObfuscatedName("abv.ax")
-	public int field8632 = 0;
+	public int manwearxoff = 0;
 
 	@ObfuscatedName("abv.av")
-	public int field8640 = 0;
+	public int womanwearxoff = 0;
 
 	@ObfuscatedName("abv.ao")
-	public int field8660 = 0;
+	public int manwearyoff = 0;
 
 	@ObfuscatedName("abv.aj")
-	public int field8670 = 0;
+	public int womanwearyoff = 0;
 
 	@ObfuscatedName("abv.ay")
-	public int field8664 = 0;
+	public int manwearzoff = 0;
 
 	@ObfuscatedName("abv.ab")
-	public int field8665 = 0;
+	public int womanwearzoff = 0;
 
 	@ObfuscatedName("abv.az")
 	public int manhead = -1;
@@ -195,25 +195,25 @@ public class ObjType implements ConfigType {
 	public int field8679 = 0;
 
 	@ObfuscatedName("abv.bt")
-	public int field8686 = 128;
+	public int resizex = 128;
 
 	@ObfuscatedName("abv.bq")
-	public int field8681 = 128;
+	public int resizey = 128;
 
 	@ObfuscatedName("abv.bm")
-	public int field8682 = 128;
+	public int resizez = 128;
 
 	@ObfuscatedName("abv.bb")
-	public int field8683 = 0;
+	public int ambient = 0;
 
 	@ObfuscatedName("abv.be")
-	public int field8624 = 0;
+	public int contrast = 0;
 
 	@ObfuscatedName("abv.by")
-	public int field8685 = 0;
+	public int team = 0;
 
 	@ObfuscatedName("abv.bu")
-	public boolean field8645 = false;
+	public boolean stockmarket = false;
 
 	@ObfuscatedName("abv.bw")
 	public boolean field8687 = false;
@@ -222,7 +222,7 @@ public class ObjType implements ConfigType {
 	public boolean field8688 = false;
 
 	@ObfuscatedName("abv.bz")
-	public int field8689 = 0;
+	public int dummyitem = 0;
 
 	@ObfuscatedName("abv.bv")
 	public IterableMap params;
@@ -231,7 +231,7 @@ public class ObjType implements ConfigType {
 	public int[] field8691;
 
 	@ObfuscatedName("abv.bg")
-	public int field8692 = 0;
+	public int picksizeshift = 0;
 
 	@ObfuscatedName("abv.ba")
 	public int boughtlink = -1;
@@ -256,33 +256,33 @@ public class ObjType implements ConfigType {
 
 	public ObjType(int id, ConfigTypeList objs, ObjTypeFactory factory) {
 		this.id = id;
-		this.objs = objs;
+		this.myList = objs;
 		this.factory = factory;
-		this.ops = (String[]) this.factory.defaultops.clone();
-		this.iops = (String[]) this.factory.defaultiops.clone();
+		this.op = (String[]) this.factory.defaultOps.clone();
+		this.iop = (String[]) this.factory.defaultIOps.clone();
 	}
 
 	@ObfuscatedName("abv.n(I)V")
 	public void postDecode() {
 		if (this.certtemplate != -1) {
-			this.genCert((ObjType) this.objs.list(this.certtemplate), (ObjType) this.objs.list(this.certlink), this.factory.languageId);
+			this.genCert((ObjType) this.myList.list(this.certtemplate), (ObjType) this.myList.list(this.certlink), this.factory.languageId);
 		} else if (this.lenttemplate != -1) {
-			this.genLent((ObjType) this.objs.list(this.lenttemplate), (ObjType) this.objs.list(this.lentlink), this.factory.languageId);
+			this.genLent((ObjType) this.myList.list(this.lenttemplate), (ObjType) this.myList.list(this.lentlink), this.factory.languageId);
 		} else if (this.boughttemplate != -1) {
-			this.genBought((ObjType) this.objs.list(this.boughttemplate), (ObjType) this.objs.list(this.boughtlink), this.factory.languageId);
+			this.genBought((ObjType) this.myList.list(this.boughttemplate), (ObjType) this.myList.list(this.boughtlink), this.factory.languageId);
 		} else if (this.shardtemplate != -1) {
-			this.genShard((ObjType) this.objs.list(this.shardtemplate), (ObjType) this.objs.list(this.shardlink), this.factory.languageId);
+			this.genShard((ObjType) this.myList.list(this.shardtemplate), (ObjType) this.myList.list(this.shardlink), this.factory.languageId);
 		}
-		if (this.field8689 != 0) {
+		if (this.dummyitem != 0) {
 			this.field8687 = false;
 		}
 		if (this.factory.allowMembers || !this.members) {
 			return;
 		}
-		this.field8685 = 0;
-		this.ops = this.factory.defaultops;
-		this.iops = this.factory.defaultiops;
-		this.field8645 = false;
+		this.team = 0;
+		this.op = this.factory.defaultOps;
+		this.iop = this.factory.defaultIOps;
+		this.stockmarket = false;
 		this.field8691 = null;
 		this.field8687 = false;
 		if (this.params == null) {
@@ -359,30 +359,30 @@ public class ObjType implements ConfigType {
 		} else if (code == 27) {
 			this.field8653 = buf.g1();
 		} else if (code >= 30 && code < 35) {
-			this.ops[code - 30] = buf.gjstr();
+			this.op[code - 30] = buf.gjstr();
 		} else if (code >= 35 && code < 40) {
-			this.iops[code - 35] = buf.gjstr();
+			this.iop[code - 35] = buf.gjstr();
 		} else if (code == 40) {
-			int var3 = buf.g1();
-			this.recol_s = new short[var3];
-			this.recol_d = new short[var3];
-			for (int var4 = 0; var4 < var3; var4++) {
-				this.recol_s[var4] = (short) buf.g2();
-				this.recol_d[var4] = (short) buf.g2();
+			int length = buf.g1();
+			this.recol_s = new short[length];
+			this.recol_d = new short[length];
+			for (int index = 0; index < length; index++) {
+				this.recol_s[index] = (short) buf.g2();
+				this.recol_d[index] = (short) buf.g2();
 			}
 		} else if (code == 41) {
-			int var5 = buf.g1();
-			this.field8634 = new short[var5];
-			this.field8635 = new short[var5];
-			for (int var6 = 0; var6 < var5; var6++) {
-				this.field8634[var6] = (short) buf.g2();
-				this.field8635[var6] = (short) buf.g2();
+			int length = buf.g1();
+			this.retex_s = new short[length];
+			this.retex_d = new short[length];
+			for (int index = 0; index < length; index++) {
+				this.retex_s[index] = (short) buf.g2();
+				this.retex_d[index] = (short) buf.g2();
 			}
 		} else if (code == 42) {
-			int var7 = buf.g1();
-			this.field8633 = new byte[var7];
-			for (int var8 = 0; var8 < var7; var8++) {
-				this.field8633[var8] = buf.g1b();
+			int length = buf.g1();
+			this.recol_d_palette = new byte[length];
+			for (int index = 0; index < length; index++) {
+				this.recol_d_palette[index] = buf.g1b();
 			}
 		} else if (code == 43) {
 			this.field8696 = buf.g4s();
@@ -418,7 +418,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 		} else if (code == 65) {
-			this.field8645 = true;
+			this.stockmarket = true;
 		} else if (code == 78) {
 			this.manwear3 = buf.gSmart2or4null();
 		} else if (code == 79) {
@@ -434,9 +434,9 @@ public class ObjType implements ConfigType {
 		} else if (code == 94) {
 			this.field8628 = buf.g2();
 		} else if (code == 95) {
-			this.field8641 = buf.g2();
+			this.zan2d = buf.g2();
 		} else if (code == 96) {
-			this.field8689 = buf.g1();
+			this.dummyitem = buf.g1();
 		} else if (code == 97) {
 			this.certlink = buf.g2();
 		} else if (code == 98) {
@@ -449,40 +449,40 @@ public class ObjType implements ConfigType {
 			this.countobj[code - 100] = buf.g2();
 			this.countco[code - 100] = buf.g2();
 		} else if (code == 110) {
-			this.field8686 = buf.g2();
+			this.resizex = buf.g2();
 		} else if (code == 111) {
-			this.field8681 = buf.g2();
+			this.resizey = buf.g2();
 		} else if (code == 112) {
-			this.field8682 = buf.g2();
+			this.resizez = buf.g2();
 		} else if (code == 113) {
-			this.field8683 = buf.g1b();
+			this.ambient = buf.g1b();
 		} else if (code == 114) {
-			this.field8624 = buf.g1b() * 5;
+			this.contrast = buf.g1b() * 5;
 		} else if (code == 115) {
-			this.field8685 = buf.g1();
+			this.team = buf.g1();
 		} else if (code == 121) {
 			this.lentlink = buf.g2();
 		} else if (code == 122) {
 			this.lenttemplate = buf.g2();
 		} else if (code == 125) {
-			this.field8632 = buf.g1b() << 2;
-			this.field8660 = buf.g1b() << 2;
-			this.field8664 = buf.g1b() << 2;
+			this.manwearxoff = buf.g1b() << 2;
+			this.manwearyoff = buf.g1b() << 2;
+			this.manwearzoff = buf.g1b() << 2;
 		} else if (code == 126) {
-			this.field8640 = buf.g1b() << 2;
-			this.field8670 = buf.g1b() << 2;
-			this.field8665 = buf.g1b() << 2;
+			this.womanwearxoff = buf.g1b() << 2;
+			this.womanwearyoff = buf.g1b() << 2;
+			this.womanwearzoff = buf.g1b() << 2;
 		} else if (code == 127 || code == 128 || code == 129 || code == 130) {
-			buf.g1();
-			buf.g2();
+			buf.g1(); // cursor1op, cursor2op, cursor1iop, cursor2iop
+			buf.g2(); // cursor1, cursor2, icursor1, icursor2
 		} else if (code == 132) {
-			int var19 = buf.g1();
-			this.field8691 = new int[var19];
-			for (int var20 = 0; var20 < var19; var20++) {
-				this.field8691[var20] = buf.g2();
+			int length = buf.g1();
+			this.field8691 = new int[length];
+			for (int index = 0; index < length; index++) {
+				this.field8691[index] = buf.g2();
 			}
 		} else if (code == 134) {
-			this.field8692 = buf.g1();
+			this.picksizeshift = buf.g1();
 		} else if (code == 139) {
 			this.boughtlink = buf.g2();
 		} else if (code == 140) {
@@ -517,16 +517,16 @@ public class ObjType implements ConfigType {
 			} else if (code == 168) {
 				this.field8698 = false;
 			} else if (code == 249) {
-				int var21 = buf.g1();
+				int length = buf.g1();
 				if (this.params == null) {
-					int var22 = IntMath.bitceil(var21);
+					int var22 = IntMath.bitceil(length);
 					this.params = new IterableMap(var22);
 				}
-				for (int var23 = 0; var23 < var21; var23++) {
-					boolean var24 = buf.g1() == 1;
+				for (int index = 0; index < length; index++) {
+					boolean isString = buf.g1() == 1;
 					int var25 = buf.g3();
 					Node var26;
-					if (var24) {
+					if (isString) {
 						var26 = new ObjectWrapper(buf.gjstr());
 					} else {
 						var26 = new IntWrapper(buf.g4s());
@@ -538,20 +538,20 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.z(Labq;Labv;Labv;Lacz;Lzt;I)V")
-	public void gen(DerivedObjType derived, ObjType from, ObjType to, LocalisedText arg3, Language arg4) {
+	public void gen(DerivedObjType derived, ObjType from, ObjType to, LocalisedText localisedText, Language language) {
 		this.model = from.model;
 		this.zoom2d = from.zoom2d;
 		this.xan2d = from.xan2d;
 		this.yan2d = from.yan2d;
-		this.field8641 = from.field8641;
+		this.zan2d = from.zan2d;
 		this.xof2d = from.xof2d;
 		this.yof2d = from.yof2d;
 		ObjType objType = DerivedObjType.CERT == derived ? from : to;
 		this.recol_s = objType.recol_s;
 		this.recol_d = objType.recol_d;
-		this.field8633 = objType.field8633;
-		this.field8634 = objType.field8634;
-		this.field8635 = objType.field8635;
+		this.recol_d_palette = objType.recol_d_palette;
+		this.retex_s = objType.retex_s;
+		this.retex_d = objType.retex_d;
 		this.name = to.name;
 		this.members = to.members;
 		if (DerivedObjType.CERT == derived) {
@@ -566,14 +566,14 @@ public class ObjType implements ConfigType {
 			this.name = to.field8678;
 			this.cost = (int) Math.floor((double) (to.cost / to.field8679));
 			this.stackable = 1;
-			this.field8645 = to.field8645;
+			this.stockmarket = to.stockmarket;
 			this.field8687 = to.field8687;
 			this.field8628 = from.field8628;
 			this.field8649 = from.field8649;
 			this.field8619 = from.field8619;
-			this.iops = new String[5];
-			this.iops[0] = LocalisedText.field8958.method15021(arg4);
-			this.iops[4] = arg3.method15021(arg4);
+			this.iop = new String[5];
+			this.iop[0] = LocalisedText.field8958.localisedText(language);
+			this.iop[4] = localisedText.localisedText(language);
 		} else {
 			this.cost = 0;
 			this.stackable = to.stackable;
@@ -587,27 +587,27 @@ public class ObjType implements ConfigType {
 			this.womanwear = to.womanwear;
 			this.womanwear2 = to.womanwear2;
 			this.womanwear3 = to.womanwear3;
-			this.field8632 = to.field8632;
-			this.field8640 = to.field8640;
-			this.field8660 = to.field8660;
-			this.field8670 = to.field8670;
-			this.field8664 = to.field8664;
-			this.field8665 = to.field8665;
+			this.manwearxoff = to.manwearxoff;
+			this.womanwearxoff = to.womanwearxoff;
+			this.manwearyoff = to.manwearyoff;
+			this.womanwearyoff = to.womanwearyoff;
+			this.manwearzoff = to.manwearzoff;
+			this.womanwearzoff = to.womanwearzoff;
 			this.manhead = to.manhead;
 			this.manhead2 = to.manhead2;
 			this.womanhead = to.womanhead;
 			this.womanhead2 = to.womanhead2;
 			this.field8628 = to.field8628;
-			this.field8685 = to.field8685;
-			this.ops = to.ops;
+			this.team = to.team;
+			this.op = to.op;
 			this.params = to.params;
-			this.iops = new String[5];
-			if (to.iops != null) {
-				for (int var7 = 0; var7 < 4; var7++) {
-					this.iops[var7] = to.iops[var7];
+			this.iop = new String[5];
+			if (to.iop != null) {
+				for (int index = 0; index < 4; index++) {
+					this.iop[index] = to.iop[index];
 				}
 			}
-			this.iops[4] = arg3.method15021(arg4);
+			this.iop[4] = localisedText.localisedText(language);
 			this.field8698 = false;
 		}
 	}
@@ -642,7 +642,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			if (var10 != -1) {
-				return ((ObjType) this.objs.list(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
+				return ((ObjType) this.myList.list(var10)).method14644(arg0, arg1, 1, arg3, arg4, arg5, arg6, arg7, arg8);
 			}
 		}
 		int var12 = arg1;
@@ -659,44 +659,44 @@ public class ObjType implements ConfigType {
 				var12 = arg0.method2213(var12, var14.method1691());
 			}
 			int var16 = var12;
-			if (this.field8634 != null) {
+			if (this.retex_s != null) {
 				var16 = var12 | 0x8000;
 			}
 			if (this.recol_s != null || arg3 != null) {
 				var16 |= 0x4000;
 			}
-			if (this.field8686 != 128) {
+			if (this.resizex != 128) {
 				var16 |= 0x1;
 			}
-			if (this.field8681 != 128) {
+			if (this.resizey != 128) {
 				var16 |= 0x2;
 			}
-			if (this.field8682 != 128) {
+			if (this.resizez != 128) {
 				var16 |= 0x4;
 			}
-			ModelUnlit var17 = ModelUnlit.method1931(this.factory.js5, this.model, 0);
+			ModelUnlit var17 = ModelUnlit.method1931(this.factory.configClient, this.model, 0);
 			if (var17 == null) {
 				return null;
 			}
 			if (var17.field1372 < 13) {
 				var17.method1947(2);
 			}
-			var14 = arg0.method2211(var17, var16, this.factory.field8611, this.field8683 + 64, this.field8624 + 850);
-			if (this.field8686 != 128 || this.field8681 != 128 || this.field8682 != 128) {
-				var14.method1699(this.field8686, this.field8681, this.field8682);
+			var14 = arg0.method2211(var17, var16, this.factory.field8611, this.ambient + 64, this.contrast + 850);
+			if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
+				var14.method1699(this.resizex, this.resizey, this.resizez);
 			}
 			if (this.recol_s != null) {
 				for (int var18 = 0; var18 < this.recol_s.length; var18++) {
-					if (this.field8633 == null || var18 >= this.field8633.length) {
+					if (this.recol_d_palette == null || var18 >= this.recol_d_palette.length) {
 						var14.method1859(this.recol_s[var18], this.recol_d[var18]);
 					} else {
-						var14.method1859(this.recol_s[var18], clientpalette[this.field8633[var18] & 0xFF]);
+						var14.method1859(this.recol_s[var18], clientpalette[this.recol_d_palette[var18] & 0xFF]);
 					}
 				}
 			}
-			if (this.field8634 != null) {
-				for (int var19 = 0; var19 < this.field8634.length; var19++) {
-					var14.method1744(this.field8634[var19], this.field8635[var19]);
+			if (this.retex_s != null) {
+				for (int var19 = 0; var19 < this.retex_s.length; var19++) {
+					var14.method1744(this.retex_s[var19], this.retex_d[var19]);
 				}
 			}
 			if (arg3 != null) {
@@ -744,16 +744,16 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.o(II)Labv;")
-	public ObjType method14645(int arg0) {
-		if (this.countobj != null && arg0 > 1) {
-			int var2 = -1;
-			for (int var3 = 0; var3 < 10; var3++) {
-				if (arg0 >= this.countco[var3] && this.countco[var3] != 0) {
-					var2 = this.countobj[var3];
+	public ObjType getMeshAddress(int n) {
+		if (this.countobj != null && n > 1) {
+			int id = -1;
+			for (int index = 0; index < 10; index++) {
+				if (n >= this.countco[index] && this.countco[index] != 0) {
+					id = this.countobj[index];
 				}
 			}
-			if (var2 != -1) {
-				return (ObjType) this.objs.list(var2);
+			if (id != -1) {
+				return (ObjType) this.myList.list(id);
 			}
 		}
 		return this;
@@ -761,7 +761,7 @@ public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.s(Ldh;Ldh;IIIZILeu;Lxg;Lws;B)[I")
 	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, Font arg7, PlayerModel arg8, GraphicsDefaults arg9) {
-		ModelUnlit var11 = ModelUnlit.method1931(this.factory.js5, this.model, 0);
+		ModelUnlit var11 = ModelUnlit.method1931(this.factory.configClient, this.model, 0);
 		if (var11 == null) {
 			return null;
 		}
@@ -770,16 +770,16 @@ public class ObjType implements ConfigType {
 		}
 		if (this.recol_s != null) {
 			for (int var12 = 0; var12 < this.recol_s.length; var12++) {
-				if (this.field8633 == null || var12 >= this.field8633.length) {
+				if (this.recol_d_palette == null || var12 >= this.recol_d_palette.length) {
 					var11.method1943(this.recol_s[var12], this.recol_d[var12]);
 				} else {
-					var11.method1943(this.recol_s[var12], clientpalette[this.field8633[var12] & 0xFF]);
+					var11.method1943(this.recol_s[var12], clientpalette[this.recol_d_palette[var12] & 0xFF]);
 				}
 			}
 		}
-		if (this.field8634 != null) {
-			for (int var13 = 0; var13 < this.field8634.length; var13++) {
-				var11.method1937(this.field8634[var13], this.field8635[var13]);
+		if (this.retex_s != null) {
+			for (int var13 = 0; var13 < this.retex_s.length; var13++) {
+				var11.method1937(this.retex_s[var13], this.retex_d[var13]);
 			}
 		}
 		if (arg8 != null) {
@@ -800,35 +800,35 @@ public class ObjType implements ConfigType {
 		}
 		int var18 = 2048;
 		boolean var19 = false;
-		if (this.field8686 != 128 || this.field8681 != 128 || this.field8682 != 128) {
+		if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
 			var19 = true;
 			var18 |= 0x7;
 		}
-		Model var20 = arg0.method2211(var11, var18, 64, this.field8683 + 64, this.field8624 + 768);
+		Model var20 = arg0.method2211(var11, var18, 64, this.ambient + 64, this.contrast + 768);
 		if (!var20.method1746()) {
 			return null;
 		}
 		if (var19) {
-			var20.method1699(this.field8686, this.field8681, this.field8682);
+			var20.method1699(this.resizex, this.resizey, this.resizez);
 		}
 		Sprite var21 = null;
 		if (this.certtemplate != -1) {
-			var21 = this.factory.method14617(arg0, arg1, this.certlink, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.objs);
+			var21 = this.factory.method14617(arg0, arg1, this.certlink, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.myList);
 			if (var21 == null) {
 				return null;
 			}
 		} else if (this.lenttemplate != -1) {
-			var21 = this.factory.method14617(arg0, arg1, this.lentlink, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.objs);
+			var21 = this.factory.method14617(arg0, arg1, this.lentlink, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.myList);
 			if (var21 == null) {
 				return null;
 			}
 		} else if (this.boughttemplate != -1) {
-			var21 = this.factory.method14617(arg0, arg1, this.boughtlink, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.objs);
+			var21 = this.factory.method14617(arg0, arg1, this.boughtlink, arg2, arg3, arg4, false, true, 0, arg7, arg8, arg9, this.myList);
 			if (var21 == null) {
 				return null;
 			}
 		} else if (this.shardtemplate != -1) {
-			var21 = this.factory.method14617(arg0, arg1, this.shardlink, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.objs);
+			var21 = this.factory.method14617(arg0, arg1, this.shardlink, 10, 1, 0, true, true, 0, arg7, arg8, arg9, this.myList);
 			if (var21 == null) {
 				return null;
 			}
@@ -851,7 +851,7 @@ public class ObjType implements ConfigType {
 		arg0.method2222((float) (Math.random() / 10.0D) + 0.95F);
 		arg0.method2223(16777215, (float) (Math.random() / 10.0D) + 0.95F, (float) (Math.random() / 10.0D) + 0.95F, -50.0F, -10.0F, -50.0F);
 		Matrix4x3 var26 = arg0.method2209();
-		var26.method6372(0.0F, 0.0F, 1.0F, Trig1.method6277(-this.field8641 << 3));
+		var26.method6372(0.0F, 0.0F, 1.0F, Trig1.method6277(-this.zan2d << 3));
 		var26.method6307(0.0F, 1.0F, 0.0F, Trig1.method6277(this.yan2d << 3));
 		var26.method6315((float) (this.xof2d << 2), (float) ((Trig1.field4270[this.xan2d << 3] * var22 >> 14) - var20.method1748() / 2 + (this.yof2d << 2)), (float) ((this.yof2d << 2) + (Trig1.field4272[this.xan2d << 3] * var22 >> 14)));
 		var26.method6307(1.0F, 0.0F, 0.0F, Trig1.method6277(this.xan2d << 3));
@@ -938,9 +938,9 @@ public class ObjType implements ConfigType {
 		if (amount < 100000) {
 			return formatObjCountTagged(graphics.invHundredColor) + amount + COL_TAG_END;
 		} else if (amount < 10000000) {
-			return formatObjCountTagged(graphics.invThousandColor) + amount / 1000 + LocalisedText.THOUSAND_SHORT.method15021(language) + COL_TAG_END;
+			return formatObjCountTagged(graphics.invThousandColor) + amount / 1000 + LocalisedText.THOUSAND_SHORT.localisedText(language) + COL_TAG_END;
 		} else {
-			return formatObjCountTagged(graphics.invMillionColor) + amount / 1000000 + LocalisedText.MILLION_SHORT.method15021(language) + COL_TAG_END;
+			return formatObjCountTagged(graphics.invMillionColor) + amount / 1000000 + LocalisedText.MILLION_SHORT.localisedText(language) + COL_TAG_END;
 		}
 	}
 
@@ -977,13 +977,13 @@ public class ObjType implements ConfigType {
 			return true;
 		}
 		boolean var6 = true;
-		if (!this.factory.js5.requestdownload(var3, 0)) {
+		if (!this.factory.configClient.requestdownload(var3, 0)) {
 			var6 = false;
 		}
-		if (var4 != -1 && !this.factory.js5.requestdownload(var4, 0)) {
+		if (var4 != -1 && !this.factory.configClient.requestdownload(var4, 0)) {
 			var6 = false;
 		}
-		if (var5 != -1 && !this.factory.js5.requestdownload(var5, 0)) {
+		if (var5 != -1 && !this.factory.configClient.requestdownload(var5, 0)) {
 			var6 = false;
 		}
 		return var6;
@@ -1016,7 +1016,7 @@ public class ObjType implements ConfigType {
 		if (var3 == -1) {
 			return null;
 		}
-		ModelUnlit var6 = ModelUnlit.method1931(this.factory.js5, var3, 0);
+		ModelUnlit var6 = ModelUnlit.method1931(this.factory.configClient, var3, 0);
 		if (var6 == null) {
 			return null;
 		}
@@ -1024,7 +1024,7 @@ public class ObjType implements ConfigType {
 			var6.method1947(2);
 		}
 		if (var4 != -1) {
-			ModelUnlit var7 = ModelUnlit.method1931(this.factory.js5, var4, 0);
+			ModelUnlit var7 = ModelUnlit.method1931(this.factory.configClient, var4, 0);
 			if (var7.field1372 < 13) {
 				var7.method1947(2);
 			}
@@ -1032,7 +1032,7 @@ public class ObjType implements ConfigType {
 				ModelUnlit[] var10 = new ModelUnlit[] { var6, var7 };
 				var6 = new ModelUnlit(var10, 2);
 			} else {
-				ModelUnlit var8 = ModelUnlit.method1931(this.factory.js5, var5, 0);
+				ModelUnlit var8 = ModelUnlit.method1931(this.factory.configClient, var5, 0);
 				if (var8.field1372 < 13) {
 					var8.method1947(2);
 				}
@@ -1040,11 +1040,11 @@ public class ObjType implements ConfigType {
 				var6 = new ModelUnlit(var9, 3);
 			}
 		}
-		if (!arg0 && (this.field8632 != 0 || this.field8660 != 0 || this.field8664 != 0)) {
-			var6.method1945(this.field8632, this.field8660, this.field8664);
+		if (!arg0 && (this.manwearxoff != 0 || this.manwearyoff != 0 || this.manwearzoff != 0)) {
+			var6.method1945(this.manwearxoff, this.manwearyoff, this.manwearzoff);
 		}
-		if (arg0 && (this.field8640 != 0 || this.field8670 != 0 || this.field8665 != 0)) {
-			var6.method1945(this.field8640, this.field8670, this.field8665);
+		if (arg0 && (this.womanwearxoff != 0 || this.womanwearyoff != 0 || this.womanwearzoff != 0)) {
+			var6.method1945(this.womanwearxoff, this.womanwearyoff, this.womanwearzoff);
 		}
 		if (this.recol_s != null) {
 			short[] var11;
@@ -1057,15 +1057,15 @@ public class ObjType implements ConfigType {
 				var6.method1943(this.recol_s[var12], var11[var12]);
 			}
 		}
-		if (this.field8634 != null) {
+		if (this.retex_s != null) {
 			short[] var13;
 			if (arg1 == null || arg1.field8715 == null) {
-				var13 = this.field8635;
+				var13 = this.retex_d;
 			} else {
 				var13 = arg1.field8715;
 			}
-			for (int var14 = 0; var14 < this.field8634.length; var14++) {
-				var6.method1937(this.field8634[var14], var13[var14]);
+			for (int var14 = 0; var14 < this.retex_s.length; var14++) {
+				var6.method1937(this.retex_s[var14], var13[var14]);
 			}
 		}
 		return var6;
@@ -1094,10 +1094,10 @@ public class ObjType implements ConfigType {
 			return true;
 		}
 		boolean var5 = true;
-		if (!this.factory.js5.requestdownload(var3, 0)) {
+		if (!this.factory.configClient.requestdownload(var3, 0)) {
 			var5 = false;
 		}
-		if (var4 != -1 && !this.factory.js5.requestdownload(var4, 0)) {
+		if (var4 != -1 && !this.factory.configClient.requestdownload(var4, 0)) {
 			var5 = false;
 		}
 		return var5;
@@ -1125,12 +1125,12 @@ public class ObjType implements ConfigType {
 		if (var3 == -1) {
 			return null;
 		}
-		ModelUnlit var5 = ModelUnlit.method1931(this.factory.js5, var3, 0);
+		ModelUnlit var5 = ModelUnlit.method1931(this.factory.configClient, var3, 0);
 		if (var5.field1372 < 13) {
 			var5.method1947(2);
 		}
 		if (var4 != -1) {
-			ModelUnlit var6 = ModelUnlit.method1931(this.factory.js5, var4, 0);
+			ModelUnlit var6 = ModelUnlit.method1931(this.factory.configClient, var4, 0);
 			if (var6.field1372 < 13) {
 				var6.method1947(2);
 			}
@@ -1148,22 +1148,22 @@ public class ObjType implements ConfigType {
 				var5.method1943(this.recol_s[var9], var8[var9]);
 			}
 		}
-		if (this.field8634 != null) {
+		if (this.retex_s != null) {
 			short[] var10;
 			if (arg1 == null || arg1.field8715 == null) {
-				var10 = this.field8635;
+				var10 = this.retex_d;
 			} else {
 				var10 = arg1.field8715;
 			}
-			for (int var11 = 0; var11 < this.field8634.length; var11++) {
-				var5.method1937(this.field8634[var11], var10[var11]);
+			for (int var11 = 0; var11 < this.retex_s.length; var11++) {
+				var5.method1937(this.retex_s[var11], var10[var11]);
 			}
 		}
 		return var5;
 	}
 
 	@ObfuscatedName("abv.j(III)I")
-	public int method14677(int arg0, int arg1) {
+	public int getParam(int arg0, int arg1) {
 		if (this.params == null) {
 			return arg1;
 		} else {
@@ -1173,7 +1173,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.t(ILjava/lang/String;B)Ljava/lang/String;")
-	public String method14654(int arg0, String arg1) {
+	public String getParam(int arg0, String arg1) {
 		if (this.params == null) {
 			return arg1;
 		} else {

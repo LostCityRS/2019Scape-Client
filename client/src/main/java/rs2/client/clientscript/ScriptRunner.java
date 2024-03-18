@@ -6576,7 +6576,7 @@ public final class ScriptRunner {
 		ObjType var7 = (ObjType) Client.field1842.list(var5);
 		arg0.field2230 = var7.xan2d;
 		arg0.field2231 = var7.yan2d;
-		arg0.field2331 = var7.field8641;
+		arg0.field2331 = var7.zan2d;
 		arg0.field2228 = var7.xof2d;
 		arg0.field2316 = var7.yof2d;
 		arg0.field2272 = var7.zoom2d;
@@ -11943,10 +11943,10 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ObjType var3 = (ObjType) Client.field1842.list(var1);
-		if (var2 < 1 || var2 > 5 || var3.ops[var2 - 1] == null) {
+		if (var2 < 1 || var2 > 5 || var3.op[var2 - 1] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
-			arg0.field8218[++arg0.field8211 - 1] = var3.ops[var2 - 1];
+			arg0.field8218[++arg0.field8211 - 1] = var3.op[var2 - 1];
 		}
 	}
 
@@ -11956,10 +11956,10 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ObjType var3 = (ObjType) Client.field1842.list(var1);
-		if (var2 < 1 || var2 > 5 || var3.iops[var2 - 1] == null) {
+		if (var2 < 1 || var2 > 5 || var3.iop[var2 - 1] == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
-			arg0.field8218[++arg0.field8211 - 1] = var3.iops[var2 - 1];
+			arg0.field8218[++arg0.field8211 - 1] = var3.iop[var2 - 1];
 		}
 	}
 
@@ -12057,9 +12057,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.field3086.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Client.field1842.list(var1)).method14654(var2, var3.defaultString);
+			arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Client.field1842.list(var1)).getParam(var2, var3.defaultString);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Client.field1842.list(var1)).method14677(var2, var3.defaultInt);
+			arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Client.field1842.list(var1)).getParam(var2, var3.defaultInt);
 		}
 	}
 
@@ -12369,114 +12369,114 @@ public final class ScriptRunner {
 		}
 		String var2 = var1.toLowerCase();
 		byte var3 = 0;
-		if (var2.startsWith(LocalisedText.CHATCOL0.method15021(Language.EN))) {
+		if (var2.startsWith(LocalisedText.CHATCOL0.localisedText(Language.EN))) {
 			var3 = 0;
-			var1 = var1.substring(LocalisedText.CHATCOL0.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL1.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL0.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL1.localisedText(Language.EN))) {
 			var3 = 1;
-			var1 = var1.substring(LocalisedText.CHATCOL1.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL2.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL1.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL2.localisedText(Language.EN))) {
 			var3 = 2;
-			var1 = var1.substring(LocalisedText.CHATCOL2.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL3.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL2.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL3.localisedText(Language.EN))) {
 			var3 = 3;
-			var1 = var1.substring(LocalisedText.CHATCOL3.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL4.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL3.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL4.localisedText(Language.EN))) {
 			var3 = 4;
-			var1 = var1.substring(LocalisedText.CHATCOL4.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL5.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL4.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL5.localisedText(Language.EN))) {
 			var3 = 5;
-			var1 = var1.substring(LocalisedText.CHATCOL5.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL6.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL5.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL6.localisedText(Language.EN))) {
 			var3 = 6;
-			var1 = var1.substring(LocalisedText.CHATCOL6.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL7.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL6.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL7.localisedText(Language.EN))) {
 			var3 = 7;
-			var1 = var1.substring(LocalisedText.CHATCOL7.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL8.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL7.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL8.localisedText(Language.EN))) {
 			var3 = 8;
-			var1 = var1.substring(LocalisedText.CHATCOL8.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL9.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL8.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL9.localisedText(Language.EN))) {
 			var3 = 9;
-			var1 = var1.substring(LocalisedText.CHATCOL9.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL10.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL9.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL10.localisedText(Language.EN))) {
 			var3 = 10;
-			var1 = var1.substring(LocalisedText.CHATCOL10.method15021(Language.EN).length());
-		} else if (var2.startsWith(LocalisedText.CHATCOL11.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATCOL10.localisedText(Language.EN).length());
+		} else if (var2.startsWith(LocalisedText.CHATCOL11.localisedText(Language.EN))) {
 			var3 = 11;
-			var1 = var1.substring(LocalisedText.CHATCOL11.method15021(Language.EN).length());
+			var1 = var1.substring(LocalisedText.CHATCOL11.localisedText(Language.EN).length());
 		} else if (Client.language != Language.EN) {
-			if (var2.startsWith(LocalisedText.CHATCOL0.method15021(Client.language))) {
+			if (var2.startsWith(LocalisedText.CHATCOL0.localisedText(Client.language))) {
 				var3 = 0;
-				var1 = var1.substring(LocalisedText.CHATCOL0.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL1.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL0.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL1.localisedText(Client.language))) {
 				var3 = 1;
-				var1 = var1.substring(LocalisedText.CHATCOL1.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL2.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL1.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL2.localisedText(Client.language))) {
 				var3 = 2;
-				var1 = var1.substring(LocalisedText.CHATCOL2.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL3.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL2.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL3.localisedText(Client.language))) {
 				var3 = 3;
-				var1 = var1.substring(LocalisedText.CHATCOL3.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL4.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL3.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL4.localisedText(Client.language))) {
 				var3 = 4;
-				var1 = var1.substring(LocalisedText.CHATCOL4.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL5.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL4.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL5.localisedText(Client.language))) {
 				var3 = 5;
-				var1 = var1.substring(LocalisedText.CHATCOL5.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL6.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL5.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL6.localisedText(Client.language))) {
 				var3 = 6;
-				var1 = var1.substring(LocalisedText.CHATCOL6.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL7.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL6.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL7.localisedText(Client.language))) {
 				var3 = 7;
-				var1 = var1.substring(LocalisedText.CHATCOL7.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL8.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL7.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL8.localisedText(Client.language))) {
 				var3 = 8;
-				var1 = var1.substring(LocalisedText.CHATCOL8.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL9.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL8.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL9.localisedText(Client.language))) {
 				var3 = 9;
-				var1 = var1.substring(LocalisedText.CHATCOL9.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL10.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL9.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL10.localisedText(Client.language))) {
 				var3 = 10;
-				var1 = var1.substring(LocalisedText.CHATCOL10.method15021(Client.language).length());
-			} else if (var2.startsWith(LocalisedText.CHATCOL11.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATCOL10.localisedText(Client.language).length());
+			} else if (var2.startsWith(LocalisedText.CHATCOL11.localisedText(Client.language))) {
 				var3 = 11;
-				var1 = var1.substring(LocalisedText.CHATCOL11.method15021(Client.language).length());
+				var1 = var1.substring(LocalisedText.CHATCOL11.localisedText(Client.language).length());
 			}
 		}
 		String var4 = var1.toLowerCase();
 		byte var5 = 0;
-		if (var4.startsWith(LocalisedText.CHATEFFECT1.method15021(Language.EN))) {
+		if (var4.startsWith(LocalisedText.CHATEFFECT1.localisedText(Language.EN))) {
 			var5 = 1;
-			var1 = var1.substring(LocalisedText.CHATEFFECT1.method15021(Language.EN).length());
-		} else if (var4.startsWith(LocalisedText.CHATEFFECT2.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATEFFECT1.localisedText(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.CHATEFFECT2.localisedText(Language.EN))) {
 			var5 = 2;
-			var1 = var1.substring(LocalisedText.CHATEFFECT2.method15021(Language.EN).length());
-		} else if (var4.startsWith(LocalisedText.CHATEFFECT3.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATEFFECT2.localisedText(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.CHATEFFECT3.localisedText(Language.EN))) {
 			var5 = 3;
-			var1 = var1.substring(LocalisedText.CHATEFFECT3.method15021(Language.EN).length());
-		} else if (var4.startsWith(LocalisedText.CHATEFFECT4.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATEFFECT3.localisedText(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.CHATEFFECT4.localisedText(Language.EN))) {
 			var5 = 4;
-			var1 = var1.substring(LocalisedText.CHATEFFECT4.method15021(Language.EN).length());
-		} else if (var4.startsWith(LocalisedText.CHATEFFECT5.method15021(Language.EN))) {
+			var1 = var1.substring(LocalisedText.CHATEFFECT4.localisedText(Language.EN).length());
+		} else if (var4.startsWith(LocalisedText.CHATEFFECT5.localisedText(Language.EN))) {
 			var5 = 5;
-			var1 = var1.substring(LocalisedText.CHATEFFECT5.method15021(Language.EN).length());
+			var1 = var1.substring(LocalisedText.CHATEFFECT5.localisedText(Language.EN).length());
 		} else if (Client.language != Language.EN) {
-			if (var4.startsWith(LocalisedText.CHATEFFECT1.method15021(Client.language))) {
+			if (var4.startsWith(LocalisedText.CHATEFFECT1.localisedText(Client.language))) {
 				var5 = 1;
-				var1 = var1.substring(LocalisedText.CHATEFFECT1.method15021(Client.language).length());
-			} else if (var4.startsWith(LocalisedText.CHATEFFECT2.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATEFFECT1.localisedText(Client.language).length());
+			} else if (var4.startsWith(LocalisedText.CHATEFFECT2.localisedText(Client.language))) {
 				var5 = 2;
-				var1 = var1.substring(LocalisedText.CHATEFFECT2.method15021(Client.language).length());
-			} else if (var4.startsWith(LocalisedText.CHATEFFECT3.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATEFFECT2.localisedText(Client.language).length());
+			} else if (var4.startsWith(LocalisedText.CHATEFFECT3.localisedText(Client.language))) {
 				var5 = 3;
-				var1 = var1.substring(LocalisedText.CHATEFFECT3.method15021(Client.language).length());
-			} else if (var4.startsWith(LocalisedText.CHATEFFECT4.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATEFFECT3.localisedText(Client.language).length());
+			} else if (var4.startsWith(LocalisedText.CHATEFFECT4.localisedText(Client.language))) {
 				var5 = 4;
-				var1 = var1.substring(LocalisedText.CHATEFFECT4.method15021(Client.language).length());
-			} else if (var4.startsWith(LocalisedText.CHATEFFECT5.method15021(Client.language))) {
+				var1 = var1.substring(LocalisedText.CHATEFFECT4.localisedText(Client.language).length());
+			} else if (var4.startsWith(LocalisedText.CHATEFFECT5.localisedText(Client.language))) {
 				var5 = 5;
-				var1 = var1.substring(LocalisedText.CHATEFFECT5.method15021(Client.language).length());
+				var1 = var1.substring(LocalisedText.CHATEFFECT5.localisedText(Client.language).length());
 			}
 		}
 		ServerConnection var6 = Client.method640();

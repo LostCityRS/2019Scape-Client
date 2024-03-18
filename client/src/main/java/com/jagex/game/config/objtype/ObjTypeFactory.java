@@ -26,7 +26,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public boolean allowMembers;
 
 	@ObfuscatedName("abr.m")
-	public final Js5 js5;
+	public final Js5 configClient;
 
 	@ObfuscatedName("abr.k")
 	public final WeightedCache modelCache = new WeightedCache(50);
@@ -44,22 +44,22 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public int field8611;
 
 	@ObfuscatedName("abr.z")
-	public final String[] defaultops;
+	public final String[] defaultOps;
 
 	@ObfuscatedName("abr.p")
-	public final String[] defaultiops;
+	public final String[] defaultIOps;
 
 	public ObjTypeFactory(ModeGame modeGame, Language language, boolean allowMembers, Js5 js5, ConfigTypeList list) {
 		this.languageId = language;
 		this.allowMembers = allowMembers;
-		this.js5 = js5;
+		this.configClient = js5;
 		this.paramTL = list;
 		if (ModeGame.RUNESCAPE == modeGame) {
-			this.defaultops = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, LocalisedText.EXAMINE.method15021(this.languageId) };
+			this.defaultOps = new String[] { null, null, LocalisedText.TAKE.localisedText(this.languageId), null, null, LocalisedText.EXAMINE.localisedText(this.languageId) };
 		} else {
-			this.defaultops = new String[] { null, null, LocalisedText.TAKE.method15021(this.languageId), null, null, null };
+			this.defaultOps = new String[] { null, null, LocalisedText.TAKE.localisedText(this.languageId), null, null, null };
 		}
-		this.defaultiops = new String[] { null, null, null, null, LocalisedText.DROP.method15021(this.languageId) };
+		this.defaultIOps = new String[] { null, null, null, null, LocalisedText.DROP.localisedText(this.languageId) };
 	}
 
 	@ObfuscatedName("abr.e(Ldh;IIIIILxg;I)Lcm;")

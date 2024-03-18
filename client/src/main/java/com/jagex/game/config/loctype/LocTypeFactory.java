@@ -38,7 +38,7 @@ public abstract class LocTypeFactory {
 	public LocTypeFactory(boolean allowMembers, Language language, ModeGame modeGame) {
 		this.allowMembers = allowMembers;
 		if (ModeGame.RUNESCAPE == modeGame) {
-			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.method15021(language) };
+			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.localisedText(language) };
 		} else {
 			this.defaultops = new String[] { null, null, null, null, null, null };
 		}

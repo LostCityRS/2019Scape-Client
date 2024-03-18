@@ -37,7 +37,7 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 		this.js5 = js5;
 		this.field2772 = modeGame;
 		if (ModeGame.RUNESCAPE == this.field2772) {
-			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.method15021(language) };
+			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.localisedText(language) };
 		} else {
 			this.defaultops = new String[] { null, null, null, null, null, null };
 		}

@@ -239,17 +239,17 @@ public class ObjStackEntity extends ObjLayerEntity {
 	@ObfuscatedName("aut.gp(I)I")
 	public int method18371() {
 		ObjType var1 = (ObjType) Client.field1842.list(this.field12580);
-		int var2 = var1.field8692;
+		int var2 = var1.picksizeshift;
 		if (this.field12569 != -1) {
 			ObjType var3 = (ObjType) Client.field1842.list(this.field12569);
-			if (var3.field8692 > var2) {
-				var2 = var3.field8692;
+			if (var3.picksizeshift > var2) {
+				var2 = var3.picksizeshift;
 			}
 		}
 		if (this.field12573 != -1) {
 			ObjType var4 = (ObjType) Client.field1842.list(this.field12573);
-			if (var4.field8692 > var2) {
-				var2 = var4.field8692;
+			if (var4.picksizeshift > var2) {
+				var2 = var4.picksizeshift;
 			}
 		}
 		return var2;

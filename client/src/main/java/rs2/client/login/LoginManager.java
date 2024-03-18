@@ -1248,7 +1248,7 @@ public class LoginManager {
 		Client.world.method7816().method10019();
 		Client.field10902 = true;
 		LocType.clientpalette = NPCType.clientpalette = ObjType.clientpalette = new short[256];
-		Client.field4868 = LocalisedText.WALKHERE.method15021(Client.language);
+		Client.field4868 = LocalisedText.WALKHERE.localisedText(Client.language);
 		Client.preferences.method18157(Client.preferences.removeRoofs2, Client.preferences.removeRoofs.getValue());
 		Client.field10842 = 0;
 		MiniMenu.method5175();

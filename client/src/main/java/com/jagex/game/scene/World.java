@@ -735,7 +735,7 @@ public class World {
 		this.field5059 = arg1;
 		if (!this.asyncRebuilding) {
 			Client.setState(arg2);
-			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language), true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.method649(LocalisedText.LOADING.localisedText(Client.language), true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
 		if (this.field5018 == null) {
 			this.field5025 = new CoordGrid(0, 0, 0);
@@ -1031,7 +1031,7 @@ public class World {
 			return false;
 		}
 		if (!this.asyncRebuilding && RebuildStage.field5007 != this.rebuildStage) {
-			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.method649(LocalisedText.LOADING.localisedText(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
 		this.rebuildStage = RebuildStage.field5008;
 		if (!this.asyncRebuilding && Client.field1798 != null) {

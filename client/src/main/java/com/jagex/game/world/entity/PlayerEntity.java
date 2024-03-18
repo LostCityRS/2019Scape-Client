@@ -141,7 +141,7 @@ public class PlayerEntity extends PathingEntity {
 						int var11 = var10 - 2048;
 						var4[var7] = var11 | 0x40000000;
 						var6[var7] = (ObjType) Client.field1842.list(var11);
-						int var12 = var6[var7].field8685;
+						int var12 = var6[var7].team;
 						if (var12 != 0) {
 							this.field12060 = var12;
 						}

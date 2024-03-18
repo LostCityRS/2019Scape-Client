@@ -2173,7 +2173,7 @@ public final class Client extends GameShell {
 		if (modewhere != ModeWhere.LIVE && modewhere != ModeWhere.field8276) {
 			field10794 = true;
 		}
-		field6598 = LocalisedText.LOADING.method15021(language);
+		field6598 = LocalisedText.LOADING.localisedText(language);
 		field3183 = new AsyncRebuild();
 		(new Thread(field3183)).start();
 		field7957 = new HttpClient();
@@ -2247,7 +2247,7 @@ public final class Client extends GameShell {
 					} else if (preferences.unknown8.getValue() == 0 || field11931.method9080(86)) {
 						DeveloperConsole.method638();
 					} else {
-						ChatHistory.method4943(LocalisedText.field8948.method15021(language));
+						ChatHistory.method4943(LocalisedText.field8948.localisedText(language));
 					}
 				}
 				if (field10822 < 75) {
@@ -2379,19 +2379,19 @@ public final class Client extends GameShell {
 		} else if (method9273(state)) {
 			if (world.method7724() == RebuildStage.field5006) {
 				int var4 = world.method7725() / 2;
-				MessageBox.method649(LocalisedText.LOADING.method15021(language) + TextUtil.BR + "(" + var4 + "%)", true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+				MessageBox.method649(LocalisedText.LOADING.localisedText(language) + TextUtil.BR + "(" + var4 + "%)", true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 			} else if (world.method7724() == RebuildStage.field5005) {
 				int var5 = world.method7726() / 2 + 50;
-				MessageBox.method649(LocalisedText.LOADING.method15021(language) + TextUtil.BR + "(" + var5 + "%)", true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+				MessageBox.method649(LocalisedText.LOADING.localisedText(language) + TextUtil.BR + "(" + var5 + "%)", true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 			} else {
-				MessageBox.method649(LocalisedText.LOADING.method15021(language), true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+				MessageBox.method649(LocalisedText.LOADING.localisedText(language), true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 			}
 		} else if (state == 18) {
 			method18329(var1);
 		} else if (state == 14) {
-			MessageBox.method649(LocalisedText.CONLOST.method15021(language) + TextUtil.BR + LocalisedText.ATTEMPT_TO_REESTABLISH.method15021(language), false, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.method649(LocalisedText.CONLOST.localisedText(language) + TextUtil.BR + LocalisedText.ATTEMPT_TO_REESTABLISH.localisedText(language), false, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 		} else if (state == 19) {
-			MessageBox.method649(LocalisedText.PLEASEWAIT.method15021(language), false, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.method649(LocalisedText.PLEASEWAIT.localisedText(language), false, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
 		if (field10997 == 3) {
 			for (int var6 = 0; var6 < field11051; var6++) {
@@ -2847,7 +2847,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("s.et(IZI)V")
 	public static void method486(int arg0, boolean arg1) {
-		method14060(arg0, LocalisedText.LOADING.method15021(language), arg1);
+		method14060(arg0, LocalisedText.LOADING.localisedText(language), arg1);
 	}
 
 	@ObfuscatedName("zg.ea(ILjava/lang/String;ZB)V")
@@ -3071,14 +3071,14 @@ public final class Client extends GameShell {
 			return 1;
 		}
 		if (arg0 != preferences.displayMode2.getValue()) {
-			method14060(arg0, LocalisedText.PROFILING.method15021(language), true);
+			method14060(arg0, LocalisedText.PROFILING.localisedText(language), true);
 			if (preferences.displayMode2.getValue() != arg0) {
 				return -1;
 			}
 		}
 		try {
 			Dimension var2 = GameShell.canvas.getSize();
-			MessageBox.method649(LocalisedText.PROFILING.method15021(language), true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.method649(LocalisedText.PROFILING.localisedText(language), true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 			ModelUnlit var3 = ModelUnlit.method1931(modelsJs5, field11389.field7738, 0);
 			long var4 = MonotonicTime.method3655();
 			renderer.method2167();
@@ -3797,10 +3797,10 @@ public final class Client extends GameShell {
 											for (Link_Sub1 var25 = (Link_Sub1) field10910.method14254(); var25 != null; var25 = (Link_Sub1) field10910.method14241()) {
 												if ((long) var25.field11211 < MonotonicTime.method3655() / 1000L - 5L) {
 													if (var25.field11209 > 0) {
-														ChatHistory.method2664(5, 0, "", "", "", var25.field11210 + LocalisedText.FRIENDLOGIN.method15021(language), null);
+														ChatHistory.method2664(5, 0, "", "", "", var25.field11210 + LocalisedText.FRIENDLOGIN.localisedText(language), null);
 													}
 													if (var25.field11209 == 0) {
-														ChatHistory.method2664(5, 0, "", "", "", var25.field11210 + LocalisedText.FRIENDLOGOUT.method15021(language), null);
+														ChatHistory.method2664(5, 0, "", "", "", var25.field11210 + LocalisedText.FRIENDLOGOUT.localisedText(language), null);
 													}
 													var25.method8433();
 												}
@@ -4101,10 +4101,10 @@ public final class Client extends GameShell {
 											for (Link_Sub1 var42 = (Link_Sub1) field10910.method14254(); var42 != null; var42 = (Link_Sub1) field10910.method14241()) {
 												if ((long) var42.field11211 < MonotonicTime.method3655() / 1000L - 5L) {
 													if (var42.field11209 > 0) {
-														ChatHistory.method2664(5, 0, "", "", "", var42.field11210 + LocalisedText.FRIENDLOGIN.method15021(language), null);
+														ChatHistory.method2664(5, 0, "", "", "", var42.field11210 + LocalisedText.FRIENDLOGIN.localisedText(language), null);
 													}
 													if (var42.field11209 == 0) {
-														ChatHistory.method2664(5, 0, "", "", "", var42.field11210 + LocalisedText.FRIENDLOGOUT.method15021(language), null);
+														ChatHistory.method2664(5, 0, "", "", "", var42.field11210 + LocalisedText.FRIENDLOGOUT.localisedText(language), null);
 													}
 													var42.method8433();
 												}
@@ -5846,7 +5846,7 @@ public final class Client extends GameShell {
 		}
 		if (field11023) {
 			renderer.method2301(var8, var9, var10, var11, -16777216);
-			MessageBox.method649(LocalisedText.LOADING.method15021(language), false, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.method649(LocalisedText.LOADING.localisedText(language), false, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
 		method15141(field10792, false, (float) (var10 / 2 + var8), (float) (var11 / 2 + var9), (float) (field11078 << 1), (float) (field11078 << 1), var10, var11);
 		renderer.method2220(field10792);
@@ -8083,7 +8083,7 @@ public final class Client extends GameShell {
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.SET_MOVEACTION == connection.packetType) {
-			field4868 = connection.packetSize > 2 ? in.gjstr() : LocalisedText.WALKHERE.method15021(language);
+			field4868 = connection.packetSize > 2 ? in.gjstr() : LocalisedText.WALKHERE.localisedText(language);
 			field10963 = connection.packetSize > 0 ? in.g2() : -1;
 			if (field10963 == 65535) {
 				field10963 = -1;
@@ -9993,7 +9993,7 @@ public final class Client extends GameShell {
 			DelayedStateChange.method5369(var528, var527, var529);
 			ObjType var530 = (ObjType) field1842.list(var527);
 			DelayedStateChange.method16746(var528, var530.xan2d, var530.yan2d, var530.zoom2d);
-			DelayedStateChange.method9085(var528, var530.xof2d, var530.yof2d, var530.field8641);
+			DelayedStateChange.method9085(var528, var530.xof2d, var530.yof2d, var530.zan2d);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.TELEMETRY_GRID_SET_ROW_PINNED == connection.packetType) {
@@ -11846,7 +11846,7 @@ public final class Client extends GameShell {
 			}
 		}
 		if (!var4) {
-			ChatHistory.method1006(4, LocalisedText.UNABLETOFIND.method15021(language) + arg1);
+			ChatHistory.method1006(4, LocalisedText.UNABLETOFIND.localisedText(language) + arg1);
 		}
 	}
 
@@ -11874,7 +11874,7 @@ public final class Client extends GameShell {
 			}
 		}
 		if (!var1) {
-			ChatHistory.method1006(4, LocalisedText.UNABLETOFIND.method15021(language) + arg0);
+			ChatHistory.method1006(4, LocalisedText.UNABLETOFIND.localisedText(language) + arg0);
 		}
 		if (field10973) {
 			method9403();
@@ -12324,7 +12324,7 @@ public final class Client extends GameShell {
 											}
 										}
 										if (field11056 == var11) {
-											var44 = LocalisedText.PLEASEWAIT.method15021(language);
+											var44 = LocalisedText.PLEASEWAIT.localisedText(language);
 											var43 = var11.field2210;
 										}
 										if (field10988) {
@@ -12430,7 +12430,7 @@ public final class Client extends GameShell {
 								if (var11.field2334 != -1) {
 									ObjType var63 = (ObjType) field1842.list(var11.field2334);
 									if (var63 != null) {
-										ObjType var64 = var63.method14645(var11.field2335);
+										ObjType var64 = var63.getMeshAddress(var11.field2335);
 										var60 = var64.method14644(renderer, var61, 1, var11.field2246 ? field4490.field12061 : null, var11.field2170, 0, 0, 0, 0);
 										if (var60 == null) {
 											method4616(var11);
@@ -12675,9 +12675,9 @@ public final class Client extends GameShell {
 			var1 = var1.substring(0, var2) + TextUtil.COMMA + var1.substring(var2);
 		}
 		if (var1.length() > 9) {
-			return " " + TextUtil.method596(65408) + var1.substring(0, var1.length() - 8) + LocalisedText.MILLION.method15021(language) + " (" + var1 + ")" + TextUtil.ENDCOL;
+			return " " + TextUtil.method596(65408) + var1.substring(0, var1.length() - 8) + LocalisedText.MILLION.localisedText(language) + " (" + var1 + ")" + TextUtil.ENDCOL;
 		} else if (var1.length() > 6) {
-			return " " + TextUtil.method596(16777215) + var1.substring(0, var1.length() - 4) + LocalisedText.THOUSAND.method15021(language) + " (" + var1 + ")" + TextUtil.ENDCOL;
+			return " " + TextUtil.method596(16777215) + var1.substring(0, var1.length() - 4) + LocalisedText.THOUSAND.localisedText(language) + " (" + var1 + ")" + TextUtil.ENDCOL;
 		} else {
 			return " " + TextUtil.method596(16776960) + var1 + TextUtil.ENDCOL;
 		}
@@ -13224,7 +13224,7 @@ public final class Client extends GameShell {
 											continue;
 										}
 										if (modegame == ModeGame.STELLARDAWN) {
-											MiniMenu.method3042(LocalisedText.FACEHERE.method15021(language), "", -1, 60, -1, 1L, var56, var57, true, false, 0L, true);
+											MiniMenu.method3042(LocalisedText.FACEHERE.localisedText(language), "", -1, 60, -1, 1L, var56, var57, true, false, 0L, true);
 										}
 										MiniMenu.method3042(field4868, "", field10963, 23, -1, 1L, var56, var57, true, false, 0L, true);
 										continue;
@@ -14197,7 +14197,7 @@ public final class Client extends GameShell {
 			return;
 		}
 		if (field10811 >= var1) {
-			ChatHistory.method1006(4, field11006 ? LocalisedText.FRIENDLIST_FULL_MEMBERS.method15021(language) : LocalisedText.FRIENDLIST_FULL.method15021(language));
+			ChatHistory.method1006(4, field11006 ? LocalisedText.FRIENDLIST_FULL_MEMBERS.localisedText(language) : LocalisedText.FRIENDLIST_FULL.localisedText(language));
 			return;
 		}
 		String var2 = NamespaceUtil.method15191(arg0, field10782);
@@ -14208,13 +14208,13 @@ public final class Client extends GameShell {
 			Friend var4 = field11065[var3];
 			String var5 = NamespaceUtil.method15191(var4.field606, field10782);
 			if (var5 != null && var5.equals(var2)) {
-				ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.method15021(language));
+				ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.localisedText(language));
 				return;
 			}
 			if (var4.field607 != null) {
 				String var6 = NamespaceUtil.method15191(var4.field607, field10782);
 				if (var6 != null && var6.equals(var2)) {
-					ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.method15021(language));
+					ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.localisedText(language));
 					return;
 				}
 			}
@@ -14223,19 +14223,19 @@ public final class Client extends GameShell {
 			Ignore var8 = field11086[var7];
 			String var9 = NamespaceUtil.method15191(var8.field598, field10782);
 			if (var9 != null && var9.equals(var2)) {
-				ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.method15021(language) + arg0 + LocalisedText.REMOVEIGNORE2.method15021(language));
+				ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.localisedText(language) + arg0 + LocalisedText.REMOVEIGNORE2.localisedText(language));
 				return;
 			}
 			if (var8.field596 != null) {
 				String var10 = NamespaceUtil.method15191(var8.field596, field10782);
 				if (var10 != null && var10.equals(var2)) {
-					ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.method15021(language) + arg0 + LocalisedText.REMOVEIGNORE2.method15021(language));
+					ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.localisedText(language) + arg0 + LocalisedText.REMOVEIGNORE2.localisedText(language));
 					return;
 				}
 			}
 		}
 		if (NamespaceUtil.method15191(field4490.field12062, field10782).equals(var2)) {
-			ChatHistory.method1006(4, LocalisedText.FRIENDCANTADDSELF.method15021(language));
+			ChatHistory.method1006(4, LocalisedText.FRIENDCANTADDSELF.localisedText(language));
 			return;
 		}
 		ServerConnection var11 = method640();
@@ -14252,7 +14252,7 @@ public final class Client extends GameShell {
 			return;
 		}
 		if (field11084 >= var2) {
-			ChatHistory.method1006(4, field11006 ? LocalisedText.IGNORELISTFULL_MEMBERS.method15021(language) : LocalisedText.IGNORELISTFULL.method15021(language));
+			ChatHistory.method1006(4, field11006 ? LocalisedText.IGNORELISTFULL_MEMBERS.localisedText(language) : LocalisedText.IGNORELISTFULL.localisedText(language));
 			return;
 		}
 		String var3 = NamespaceUtil.method15191(arg0, field10782);
@@ -14263,13 +14263,13 @@ public final class Client extends GameShell {
 			Ignore var5 = field11086[var4];
 			String var6 = NamespaceUtil.method15191(var5.field598, field10782);
 			if (var6 != null && var6.equals(var3)) {
-				ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.method15021(language));
+				ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.localisedText(language));
 				return;
 			}
 			if (var5.field596 != null) {
 				String var7 = NamespaceUtil.method15191(var5.field596, field10782);
 				if (var7 != null && var7.equals(var3)) {
-					ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.method15021(language));
+					ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.localisedText(language));
 					return;
 				}
 			}
@@ -14278,19 +14278,19 @@ public final class Client extends GameShell {
 			Friend var9 = field11065[var8];
 			String var10 = NamespaceUtil.method15191(var9.field606, field10782);
 			if (var10 != null && var10.equals(var3)) {
-				ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.method15021(language) + arg0 + LocalisedText.REMOVEFRIEND2.method15021(language));
+				ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.localisedText(language) + arg0 + LocalisedText.REMOVEFRIEND2.localisedText(language));
 				return;
 			}
 			if (var9.field607 != null) {
 				String var11 = NamespaceUtil.method15191(var9.field607, field10782);
 				if (var11 != null && var11.equals(var3)) {
-					ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.method15021(language) + arg0 + LocalisedText.REMOVEFRIEND2.method15021(language));
+					ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.localisedText(language) + arg0 + LocalisedText.REMOVEFRIEND2.localisedText(language));
 					return;
 				}
 			}
 		}
 		if (NamespaceUtil.method15191(field4490.field12062, field10782).equals(var3)) {
-			ChatHistory.method1006(4, LocalisedText.IGNORECANTADDSELF.method15021(language));
+			ChatHistory.method1006(4, LocalisedText.IGNORECANTADDSELF.localisedText(language));
 			return;
 		}
 		ServerConnection var12 = method640();
@@ -14456,7 +14456,7 @@ public final class Client extends GameShell {
 		LinkedList var4 = new LinkedList();
 		for (int var5 = 0; var5 < field1842.num; var5++) {
 			ObjType var6 = (ObjType) field1842.list(var5);
-			if ((!arg1 || var6.field8645) && var6.certtemplate == -1 && var6.lenttemplate == -1 && var6.boughttemplate == -1 && var6.field8689 == 0 && var6.name.toLowerCase().indexOf(var2) != -1) {
+			if ((!arg1 || var6.stockmarket) && var6.certtemplate == -1 && var6.lenttemplate == -1 && var6.boughttemplate == -1 && var6.dummyitem == 0 && var6.name.toLowerCase().indexOf(var2) != -1) {
 				if (var3.size() >= 250) {
 					return -1;
 				}

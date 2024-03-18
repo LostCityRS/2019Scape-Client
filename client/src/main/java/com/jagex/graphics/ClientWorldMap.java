@@ -394,7 +394,7 @@ public class ClientWorldMap extends WorldMap {
 			arg0.method2354(arg1, arg2, arg3, arg4, -16777216, 0);
 			arg0.method2179(var6 - 152, var7, 304, 34, Client.field10825[Client.field10773].getRGB(), 0);
 			arg0.method2354(var6 - 150, var7 + 2, field11651 * 3, 30, Client.field10824[Client.field10773].getRGB(), 0);
-			DefaultSprites.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.method15021(Client.language), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
+			DefaultSprites.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.localisedText(Client.language), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
 			return;
 		}
 		int var8 = field11443 - (int) ((float) arg3 / WorldMap.field6803);

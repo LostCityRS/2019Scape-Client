@@ -145,7 +145,7 @@ public class Loading {
 		LoadingStage var0 = field3419;
 		int var1 = method7622();
 		if (field3419 == var0) {
-			field2942 = field3419.field2908.method15021(Client.language);
+			field2942 = field3419.field2908.localisedText(Client.language);
 			field4964 = field2942;
 			if (field3419.field2926) {
 				NoiseGeneratorRelated.field9130 = (field3419.field2924 - field3419.field2923) * var1 / 100 + field3419.field2923;
@@ -161,7 +161,7 @@ public class Loading {
 				LoginManager.method665(field8535, field4407, "", false);
 			}
 		} else {
-			field2942 = var0.field2922.method15021(Client.language);
+			field2942 = var0.field2922.localisedText(Client.language);
 			field4964 = field2942;
 			if (field3419.field2925) {
 				field4964 = field4964 + " - " + var0.field2924 + "%";
@@ -199,7 +199,7 @@ public class Loading {
 	public static void method254() {
 		if (field3419 != null) {
 			field593 = new LoadingScreenRenderer();
-			field593.method4849(field7966, field3419.field2908.method15021(Client.language), field3419.field2908.method15021(Client.language), field3419.field2923, field3419);
+			field593.method4849(field7966, field3419.field2908.localisedText(Client.language), field3419.field2908.localisedText(Client.language), field3419.field2923, field3419);
 			field2940 = new Thread(field593, "");
 			field2940.start();
 		}
