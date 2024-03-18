@@ -14,54 +14,54 @@ import java.util.Iterator;
 public class CachingConfigTypeList implements ConfigTypeList {
 
 	@ObfuscatedName("abe.e")
-	public final Js5 js5;
+	public final Js5 configClient;
 
 	@ObfuscatedName("abe.n")
-	public final Js5ConfigGroup group;
+	public final Js5ConfigGroup configGroup;
 
 	@ObfuscatedName("abe.m")
-	public int length;
+	public int num;
 
 	@ObfuscatedName("abe.k")
-	public WeightedCache cache;
+	public WeightedCache recentUse;
 
 	@ObfuscatedName("abe.f")
 	public final ConfigTypeFactory factory;
 
 	// line 20
-	public CachingConfigTypeList(ModeGame arg0, Language arg1, Js5 js5, Js5ConfigGroup group, int cacheSize, ConfigTypeFactory factory) {
-		this.js5 = js5;
-		this.group = group;
+	public CachingConfigTypeList(ModeGame modeGame, Language language, Js5 configClient, Js5ConfigGroup configGroup, int cacheSize, ConfigTypeFactory factory) {
+		this.configClient = configClient;
+		this.configGroup = configGroup;
 		this.factory = factory;
-		this.length = ArchiveUtil.getArchiveSize(this.js5, this.group);
-		this.cache = new WeightedCache(cacheSize);
+		this.num = ArchiveUtil.getArchiveSize(this.configClient, this.configGroup);
+		this.recentUse = new WeightedCache(cacheSize);
 	}
 
 	// line 30
 	@ObfuscatedName("abe.e(II)Lay;")
 	public ConfigType list(int id) {
-		WeightedCache var2 = this.cache;
+		WeightedCache var2 = this.recentUse;
 		ConfigType cachedConfigType;
-		synchronized (this.cache) {
-			cachedConfigType = (ConfigType) this.cache.method2930((long) id);
+		synchronized (this.recentUse) {
+			cachedConfigType = (ConfigType) this.recentUse.method2930((long) id);
 		}
 		if (cachedConfigType != null) {
 			return cachedConfigType;
 		}
 		ConfigType configType = this.list_uncached(id);
-		WeightedCache var6 = this.cache;
-		synchronized (this.cache) {
-			this.cache.method2921(configType, (long) id);
+		WeightedCache var6 = this.recentUse;
+		synchronized (this.recentUse) {
+			this.recentUse.method2921(configType, (long) id);
 			return configType;
 		}
 	}
 
 	@ObfuscatedName("abe.u(II)Lay;")
 	public ConfigType list_uncached(int id) {
-		Js5 var2 = this.js5;
+		Js5 var2 = this.configClient;
 		byte[] file;
-		synchronized (this.js5) {
-			file = ArchiveUtil.getFile(this.js5, this.group, id);
+		synchronized (this.configClient) {
+			file = ArchiveUtil.getFile(this.configClient, this.configGroup, id);
 		}
 		ConfigType type = this.factory.create(id, this);
 		if (file != null) {
@@ -73,39 +73,39 @@ public class CachingConfigTypeList implements ConfigTypeList {
 
 	@ObfuscatedName("abe.n(I)I")
 	public int length() {
-		return this.length;
+		return this.num;
 	}
 
 	@ObfuscatedName("abe.z(II)V")
 	public void method14910(int arg0) {
-		WeightedCache var2 = this.cache;
-		synchronized (this.cache) {
-			this.cache.method2924();
-			this.cache = new WeightedCache(arg0);
+		WeightedCache var2 = this.recentUse;
+		synchronized (this.recentUse) {
+			this.recentUse.method2924();
+			this.recentUse = new WeightedCache(arg0);
 		}
 	}
 
 	@ObfuscatedName("abe.r(I)V")
 	public void method14895() {
-		WeightedCache var1 = this.cache;
-		synchronized (this.cache) {
-			this.cache.method2924();
+		WeightedCache var1 = this.recentUse;
+		synchronized (this.recentUse) {
+			this.recentUse.method2924();
 		}
 	}
 
 	@ObfuscatedName("abe.v(II)V")
 	public void method14896(int arg0) {
-		WeightedCache var2 = this.cache;
-		synchronized (this.cache) {
-			this.cache.method2923(arg0);
+		WeightedCache var2 = this.recentUse;
+		synchronized (this.recentUse) {
+			this.recentUse.method2923(arg0);
 		}
 	}
 
 	@ObfuscatedName("abe.o(I)V")
 	public void method14899() {
-		WeightedCache var1 = this.cache;
-		synchronized (this.cache) {
-			this.cache.method2928();
+		WeightedCache var1 = this.recentUse;
+		synchronized (this.recentUse) {
+			this.recentUse.method2928();
 		}
 	}
 
@@ -128,15 +128,15 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		}
 
 		public boolean hasNext() {
-			return this.field8852 < this.this$0.length;
+			return this.field8852 < this.this$0.num;
 		}
 
 		// line 90
 		public Object next() {
 			int var1 = ++this.field8852 - 1;
-			WeightedCache var2 = this.this$0.cache;
-			synchronized (this.this$0.cache) {
-				ConfigType var3 = (ConfigType) this.this$0.cache.method2930((long) var1);
+			WeightedCache var2 = this.this$0.recentUse;
+			synchronized (this.this$0.recentUse) {
+				ConfigType var3 = (ConfigType) this.this$0.recentUse.method2930((long) var1);
 				if (var3 != null) {
 					return var3;
 				}
