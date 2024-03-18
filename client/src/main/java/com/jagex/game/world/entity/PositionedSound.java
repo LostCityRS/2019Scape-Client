@@ -408,8 +408,8 @@ public class PositionedSound extends Node {
 					if (var5.field11371 == null) {
 						var11 = true;
 					} else {
-						var5.field11359 = var5.field11359 * 262144 - 512;
-						if (var5.field11359 * 262144 <= 0) {
+						var5.field11359 -= 512;
+						if (var5.field11359 <= 0) {
 							var5.field11371.method7380(100);
 							Client.field1798.method3185(var5.field11371);
 							var5.field11371 = null;
@@ -452,8 +452,8 @@ public class PositionedSound extends Node {
 					if (var13.field11371 == null) {
 						var18 = true;
 					} else {
-						var13.field11359 = var13.field11359 * 262144 - 512;
-						if (var13.field11359 * 262144 <= 0) {
+						var13.field11359 -= 512;
+						if (var13.field11359 <= 0) {
 							var13.field11371.method7380(100);
 							Client.field1798.method3185(var13.field11371);
 							var13.field11371 = null;
@@ -482,7 +482,7 @@ public class PositionedSound extends Node {
 		if (arg0.field11370 == -1 && arg0.field11375 == null) {
 			return;
 		}
-		int var5 = arg0.field11359 * 262144;
+		int var5 = arg0.field11359;
 		if (arg0.field11357 != 0 && Client.preferences.backgroundSoundVolume.getValue() != 0 && arg0.field11349 == arg1) {
 			if (arg0.field11371 != null && (arg0.field11371.method7385() == SoundVolume.field4953 || arg0.field11371.method7385() == SoundVolume.field4947)) {
 				Client.field1798.method3185(arg0.field11371);

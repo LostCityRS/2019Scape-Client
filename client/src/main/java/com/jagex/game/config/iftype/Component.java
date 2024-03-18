@@ -1138,6 +1138,9 @@ public class Component {
 				}
 				field2297.put(var32, var30);
 			}
+			if (var32 == null) {
+				return null;
+			}
 			if (arg9 != null) {
 				var32 = var32.method1773((byte) 1, arg1, true);
 				arg9.method14359(var32, 0);
