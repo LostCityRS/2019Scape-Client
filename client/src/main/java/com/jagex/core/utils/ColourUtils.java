@@ -232,7 +232,7 @@ public class ColourUtils {
 	}
 
 	@ObfuscatedName("yg.p(II)I")
-	public static int method10521(int arg0) {
+	public static int hslToRgb(int arg0) {
 		double var1 = (double) (arg0 >> 16 & 0xFF) / 256.0D;
 		double var3 = (double) (arg0 >> 8 & 0xFF) / 256.0D;
 		double var5 = (double) (arg0 & 0xFF) / 256.0D;

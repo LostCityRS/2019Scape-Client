@@ -200,6 +200,6 @@ public class EnumType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("abm.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 }

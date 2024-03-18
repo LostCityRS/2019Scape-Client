@@ -59,6 +59,6 @@ public class DBTableType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("adb.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 }

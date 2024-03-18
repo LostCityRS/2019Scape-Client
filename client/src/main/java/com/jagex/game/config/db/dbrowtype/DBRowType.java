@@ -63,6 +63,6 @@ public class DBRowType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("abc.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 }

@@ -377,8 +377,8 @@ public class WorldMap {
 			var6 = -1;
 		}
 		int var10;
-		if (var5.field8156 >= 0) {
-			int var7 = var5.field8156;
+		if (var5.averagecolour >= 0) {
+			int var7 = var5.averagecolour;
 			int var8 = (var7 & 0x7F) + arg4;
 			if (var8 < 0) {
 				var8 = 0;
@@ -698,10 +698,10 @@ public class WorldMap {
 					short var14 = arg0[field6812 * var13 + var11];
 					if (var14 > 0) {
 						FloorUnderlayType var15 = (FloorUnderlayType) field6849.list(var14 - 1);
-						var5[var13] += var15.field8546;
-						var6[var13] += var15.field8541;
-						var7[var13] += var15.field8545;
-						var8[var13] += var15.field8549;
+						var5[var13] += var15.hue;
+						var6[var13] += var15.saturation;
+						var7[var13] += var15.lightness;
+						var8[var13] += var15.chroma;
 						var10002 = var9[var13]++;
 					}
 				}
@@ -709,10 +709,10 @@ public class WorldMap {
 					short var16 = arg0[field6812 * var13 + var12];
 					if (var16 > 0) {
 						FloorUnderlayType var17 = (FloorUnderlayType) field6849.list(var16 - 1);
-						var5[var13] -= var17.field8546;
-						var6[var13] -= var17.field8541;
-						var7[var13] -= var17.field8545;
-						var8[var13] -= var17.field8549;
+						var5[var13] -= var17.hue;
+						var6[var13] -= var17.saturation;
+						var7[var13] -= var17.lightness;
+						var8[var13] -= var17.chroma;
 						var10002 = var9[var13]--;
 					}
 				}

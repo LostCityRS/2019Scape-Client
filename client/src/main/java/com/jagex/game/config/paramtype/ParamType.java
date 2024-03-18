@@ -60,6 +60,6 @@ public class ParamType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("adp.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 }

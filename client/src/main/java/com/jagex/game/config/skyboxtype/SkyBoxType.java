@@ -61,7 +61,7 @@ public class SkyBoxType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("uv.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 
 	@ObfuscatedName("uv.n(I)V")

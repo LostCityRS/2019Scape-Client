@@ -45,6 +45,6 @@ public class SeqGroupType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("fm.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 }

@@ -10,7 +10,7 @@ import deob.ObfuscatedName;
 public class FloorOverlayType implements ConfigType, ConfigRelated {
 
 	@ObfuscatedName("yn.n")
-	public int field8152;
+	public int id;
 
 	@ObfuscatedName("yn.m")
 	public int rgb = 0;
@@ -22,28 +22,28 @@ public class FloorOverlayType implements ConfigType, ConfigRelated {
 	public boolean occlude = true;
 
 	@ObfuscatedName("yn.w")
-	public int field8156 = 0;
+	public int averagecolour = 0;
 
 	@ObfuscatedName("yn.l")
-	public int field8163 = 512;
+	public int materialscale = 512;
 
 	@ObfuscatedName("yn.u")
-	public boolean field8162 = true;
+	public boolean hardshadow = true;
 
 	@ObfuscatedName("yn.z")
-	public int field8160 = 0;
+	public int priority = 0;
 
 	@ObfuscatedName("yn.p")
-	public boolean field8161 = false;
+	public boolean blend = false;
 
 	@ObfuscatedName("yn.d")
-	public int field8158 = 1190656;
+	public int waterfogcolour = 1190912; // or 1190656?
 
 	@ObfuscatedName("yn.c")
-	public int field8159 = 921050624;
+	public int waterfogscale = 512;
 
 	@ObfuscatedName("yn.r")
-	public int field8164 = 256;
+	public int waterfogoffset = 256;
 
 	@ObfuscatedName("yn.v")
 	public int field8165 = 64;
@@ -61,6 +61,7 @@ public class FloorOverlayType implements ConfigType, ConfigRelated {
 			if (code == 0) {
 				return;
 			}
+
 			this.decode(buf, code);
 		}
 	}
@@ -68,55 +69,56 @@ public class FloorOverlayType implements ConfigType, ConfigRelated {
 	@ObfuscatedName("yn.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			this.rgb = method9160(buf.g3());
+			this.rgb = convertColour(buf.g3());
 		} else if (code == 2) {
 			this.texture = buf.g1();
 		} else if (code == 3) {
 			this.texture = buf.g2();
+
 			if (this.texture == 65535) {
 				this.texture = -1;
 			}
 		} else if (code == 5) {
 			this.occlude = false;
 		} else if (code == 7) {
-			this.field8156 = method9160(buf.g3());
-		} else if (code != 8) {
-			if (code == 9) {
-				this.field8163 = buf.g2() << 2;
-			} else if (code == 10) {
-				this.field8162 = false;
-			} else if (code == 11) {
-				this.field8160 = buf.g1();
-			} else if (code == 12) {
-				this.field8161 = true;
-			} else if (code == 13) {
-				this.field8158 = buf.g3();
-			} else if (code == 14) {
-				this.field8159 = buf.g1() << 2;
-			} else if (code == 16) {
-				this.field8164 = buf.g1();
-			} else if (code == 20) {
-				this.field8165 = buf.g2();
-			} else if (code == 21) {
-				this.field8166 = buf.g1();
-			} else if (code == 22) {
-				this.field8167 = buf.g2();
-			}
+			this.averagecolour = convertColour(buf.g3());
+		} else if (code == 8) {
+			// empty
+		} else if (code == 9) {
+			this.materialscale = buf.g2() << 2;
+		} else if (code == 10) {
+			this.hardshadow = false;
+		} else if (code == 11) {
+			this.priority = buf.g1();
+		} else if (code == 12) {
+			this.blend = true;
+		} else if (code == 13) {
+			this.waterfogcolour = buf.g3();
+		} else if (code == 14) {
+			this.waterfogscale = buf.g1() << 2;
+		} else if (code == 16) {
+			this.waterfogoffset = buf.g1();
+		} else if (code == 20) {
+			this.field8165 = buf.g2();
+		} else if (code == 21) {
+			this.field8166 = buf.g1();
+		} else if (code == 22) {
+			this.field8167 = buf.g2();
 		}
 	}
 
 	@ObfuscatedName("yn.n(I)V")
 	public void postDecode() {
-		this.field8160 = this.field8160 << 8 | this.field8152;
+		this.priority = this.priority << 8 | this.id;
 	}
 
 	@ObfuscatedName("uk.p(II)I")
-	public static int method9160(int arg0) {
-		return arg0 == 16711935 ? -1 : ColourUtils.method10521(arg0);
+	public static int convertColour(int color) {
+		return color == 0xFF00FF ? -1 : ColourUtils.hslToRgb(color);
 	}
 
 	@ObfuscatedName("yn.z(IB)V")
-	public void method2998(int arg0) {
-		this.field8152 = arg0;
+	public void setId(int id) {
+		this.id = id;
 	}
 }

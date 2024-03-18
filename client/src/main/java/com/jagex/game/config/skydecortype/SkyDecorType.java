@@ -76,7 +76,7 @@ public class SkyDecorType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("iy.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 
 	@ObfuscatedName("iy.n(I)V")

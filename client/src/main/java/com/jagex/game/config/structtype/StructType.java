@@ -72,7 +72,7 @@ public class StructType extends SecondaryNode implements ConfigType, ConfigRelat
 	}
 
 	@ObfuscatedName("adx.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 
 	@ObfuscatedName("adx.n(I)V")

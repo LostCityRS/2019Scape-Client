@@ -45,7 +45,7 @@ public class LightType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("adl.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 
 	@ObfuscatedName("adl.n(I)V")

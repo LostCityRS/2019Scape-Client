@@ -52,6 +52,6 @@ public class InvType extends SecondaryNode implements ConfigType, ConfigRelated 
 	}
 
 	@ObfuscatedName("ady.z(IB)V")
-	public void method2998(int arg0) {
+	public void setId(int arg0) {
 	}
 }

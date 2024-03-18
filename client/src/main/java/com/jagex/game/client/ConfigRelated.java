@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface ConfigRelated {
 
 	@ObfuscatedName("aby.z(IB)V")
-	void method2998(int arg0);
+	void setId(int arg0);
 }
