@@ -134,7 +134,7 @@ public class GraphicsDefaults {
 	public int field7741 = -1;
 
 	public GraphicsDefaults(Js5 arg0) {
-		byte[] var2 = arg0.method6894(DefaultsGroup.field7703.field7708);
+		byte[] var2 = arg0.method6894(DefaultsGroup.GRAPHICS.js5GroupId);
 		this.method9876(new Packet(var2));
 	}
 

@@ -19,7 +19,7 @@ public class SkillDefaults implements Iterable {
 	public PlayerSkillXPTable[] tables;
 
 	public SkillDefaults(Js5 arg0) {
-		this.decode(arg0.method6894(DefaultsGroup.field7709.field7708));
+		this.decode(arg0.method6894(DefaultsGroup.SKILL.js5GroupId));
 	}
 
 	@ObfuscatedName("wq.e(S)V")

@@ -373,7 +373,7 @@ public class Loading {
 			Client.field7538 = new FontProvider(Client.renderer, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
 		}
 		if (field3419 == LoadingStage.field2909) {
-			byte[] var17 = Client.defaultsJs5.method6894(DefaultsGroup.field7705.field7708);
+			byte[] var17 = Client.defaultsJs5.method6894(DefaultsGroup.AUDIO.js5GroupId);
 			if (var17 == null) {
 				return 0;
 			}
@@ -391,7 +391,7 @@ public class Loading {
 			if (var18 < 100) {
 				return var18;
 			}
-			method987(Client.defaultsJs5.method6894(DefaultsGroup.field7701.field7708));
+			method987(Client.defaultsJs5.method6894(DefaultsGroup.MAP.js5GroupId));
 			PlayerModel.field7577 = Client.field11389.field7731;
 			PlayerModel.field1434 = Client.field11389.field7729;
 			PlayerModel.field10766 = Client.field11389.field7714;
