@@ -41,10 +41,10 @@ public class DelayedStateChange extends SecondaryNode {
 	@ObfuscatedName("jx.e(IJ)Lars;")
 	public static DelayedStateChange method5072(int arg0, long arg1) {
 		field12295 = false;
-		DelayedStateChange var3 = (DelayedStateChange) field12291.method14495((long) arg0 << 56 | arg1);
+		DelayedStateChange var3 = (DelayedStateChange) field12291.getNode((long) arg0 << 56 | arg1);
 		if (var3 == null) {
 			var3 = new DelayedStateChange(arg0, arg1);
-			field12291.method14501(var3, var3.field6760);
+			field12291.pushNode(var3, var3.nodeId);
 			field12295 = true;
 		}
 		return var3;
@@ -52,31 +52,31 @@ public class DelayedStateChange extends SecondaryNode {
 
 	@ObfuscatedName("al.n(I)V")
 	public static void method716() {
-		field12291.method14499();
-		field12290.method14316();
-		field12289.method14316();
+		field12291.clear();
+		field12290.clearAll();
+		field12289.clearAll();
 	}
 
 	@ObfuscatedName("kh.m(B)Lars;")
 	public static DelayedStateChange method5207() {
-		DelayedStateChange var0 = (DelayedStateChange) field12289.method14317();
+		DelayedStateChange var0 = (DelayedStateChange) field12289.peekFront();
 		if (var0 != null) {
-			var0.method8440();
-			var0.method17806();
+			var0.remove();
+			var0.secondaryRemove();
 			return var0;
 		}
 		DelayedStateChange var1;
 		do {
-			var1 = (DelayedStateChange) field12290.method14317();
+			var1 = (DelayedStateChange) field12290.peekFront();
 			if (var1 == null) {
 				return null;
 			}
 			if (var1.method19345() > MonotonicTime.get()) {
 				return null;
 			}
-			var1.method8440();
-			var1.method17806();
-		} while ((var1.field11440 & Long.MIN_VALUE) == 0L);
+			var1.remove();
+			var1.secondaryRemove();
+		} while ((var1.secondaryNodeId & Long.MIN_VALUE) == 0L);
 		return var1;
 	}
 
@@ -360,35 +360,35 @@ public class DelayedStateChange extends SecondaryNode {
 	}
 
 	public DelayedStateChange(int arg0, long arg1) {
-		this.field6760 = (long) arg0 << 56 | arg1;
+		this.nodeId = (long) arg0 << 56 | arg1;
 	}
 
 	@ObfuscatedName("ars.aa(I)V")
 	public void method19333() {
-		this.field11440 = this.field11440 & Long.MIN_VALUE | MonotonicTime.get() + 500L;
-		field12290.method14339(this);
+		this.secondaryNodeId = this.secondaryNodeId & Long.MIN_VALUE | MonotonicTime.get() + 500L;
+		field12290.pushBack(this);
 	}
 
 	@ObfuscatedName("ars.af(I)V")
 	public void method19269() {
-		this.field11440 |= Long.MIN_VALUE;
+		this.secondaryNodeId |= Long.MIN_VALUE;
 		if (this.method19345() == 0L) {
-			field12289.method14339(this);
+			field12289.pushBack(this);
 		}
 	}
 
 	@ObfuscatedName("ars.ak(I)I")
 	public int method19276() {
-		return (int) (this.field6760 >>> 56 & 0xFFL);
+		return (int) (this.nodeId >>> 56 & 0xFFL);
 	}
 
 	@ObfuscatedName("ars.an(I)J")
 	public long method19271() {
-		return this.field6760 & 0xFFFFFFFFFFFFFFL;
+		return this.nodeId & 0xFFFFFFFFFFFFFFL;
 	}
 
 	@ObfuscatedName("ars.bf(B)J")
 	public long method19345() {
-		return this.field11440 & Long.MAX_VALUE;
+		return this.secondaryNodeId & Long.MAX_VALUE;
 	}
 }

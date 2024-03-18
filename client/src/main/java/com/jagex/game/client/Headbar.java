@@ -23,7 +23,7 @@ public class Headbar extends Link {
 	public void method17456(int arg0, int arg1, int arg2, int arg3) {
 		HeadbarUpdate var5 = null;
 		int var6 = 0;
-		for (HeadbarUpdate var7 = (HeadbarUpdate) this.field11214.method14254(); var7 != null; var7 = (HeadbarUpdate) this.field11214.method14241()) {
+		for (HeadbarUpdate var7 = (HeadbarUpdate) this.field11214.peekFront(); var7 != null; var7 = (HeadbarUpdate) this.field11214.prev()) {
 			var6++;
 			if (var7.field11219 == arg0) {
 				var7.method17464(arg0, arg1, arg2, arg3);
@@ -34,35 +34,35 @@ public class Headbar extends Link {
 			}
 		}
 		if (var5 != null) {
-			LinkQueue.method15212(new HeadbarUpdate(arg0, arg1, arg2, arg3), var5);
+			LinkQueue.pushNode(new HeadbarUpdate(arg0, arg1, arg2, arg3), var5);
 			if (var6 >= Client.graphicsDefaults.field7719) {
-				this.field11214.method14254().method8433();
+				this.field11214.peekFront().unlink();
 			}
 		} else if (var6 < Client.graphicsDefaults.field7719) {
-			this.field11214.method14244(new HeadbarUpdate(arg0, arg1, arg2, arg3));
+			this.field11214.pushFront(new HeadbarUpdate(arg0, arg1, arg2, arg3));
 		}
 	}
 
 	@ObfuscatedName("aji.m(II)Lajc;")
 	public HeadbarUpdate method17457(int arg0) {
-		HeadbarUpdate var2 = (HeadbarUpdate) this.field11214.method14254();
+		HeadbarUpdate var2 = (HeadbarUpdate) this.field11214.peekFront();
 		if (var2 == null || var2.field11219 > arg0) {
 			return null;
 		}
-		for (HeadbarUpdate var3 = (HeadbarUpdate) this.field11214.method14241(); var3 != null && var3.field11219 <= arg0; var3 = (HeadbarUpdate) this.field11214.method14241()) {
-			var2.method8433();
+		for (HeadbarUpdate var3 = (HeadbarUpdate) this.field11214.prev(); var3 != null && var3.field11219 <= arg0; var3 = (HeadbarUpdate) this.field11214.prev()) {
+			var2.unlink();
 			var2 = var3;
 		}
 		if (this.field11215.field7227 + var2.field11219 + var2.field11217 > arg0) {
 			return var2;
 		} else {
-			var2.method8433();
+			var2.unlink();
 			return null;
 		}
 	}
 
 	@ObfuscatedName("aji.k(I)Z")
 	public boolean method17461() {
-		return this.field11214.method14248();
+		return this.field11214.isEmpty();
 	}
 }

@@ -26,11 +26,11 @@ public class SetVarbitCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agx.n(I)V")
 	public void method2890() {
-		IntWrapper var1 = (IntWrapper) CutsceneManager.field1718.method14495(this.field10288);
+		IntWrapper var1 = (IntWrapper) CutsceneManager.field1718.getNode(this.field10288);
 		if (var1 == null) {
-			CutsceneManager.field1718.method14501(new IntWrapper(this.field10289), this.field10288);
+			CutsceneManager.field1718.pushNode(new IntWrapper(this.field10289), this.field10288);
 		} else {
-			var1.field11442 = this.field10289;
+			var1.intValue = this.field10289;
 		}
 	}
 }

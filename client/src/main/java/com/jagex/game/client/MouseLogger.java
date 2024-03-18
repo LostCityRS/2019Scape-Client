@@ -42,7 +42,7 @@ public abstract class MouseLogger {
 					if (var1 != null && var1.buf.pos - var2 >= 252 - (this.method10263() + 6)) {
 						break label102;
 					}
-					var6.method8440();
+					var6.remove();
 					int var7 = var6.method17832();
 					if (var7 < -1) {
 						var7 = -1;
@@ -127,7 +127,7 @@ public abstract class MouseLogger {
 
 	@ObfuscatedName("xb.n(I)V")
 	public void method10260() {
-		this.field7955.method14152();
+		this.field7955.clearAll();
 		this.field7952 = -1L;
 		this.field7953 = -1L;
 		this.field7954 = -1;
@@ -136,7 +136,7 @@ public abstract class MouseLogger {
 
 	@ObfuscatedName("xb.m(Lakm;I)V")
 	public void method10261(MouseEvent arg0) {
-		this.field7955.method14153(arg0);
+		this.field7955.pushBack(arg0);
 	}
 
 	@ObfuscatedName("xb.k(Lakm;II)I")

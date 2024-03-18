@@ -380,9 +380,9 @@ public final class ScriptRunner {
 	@ObfuscatedName("jh.o(Lyf;Lss;Ljava/lang/Exception;Ljava/lang/String;I)V")
 	public static void method5077(ClientScriptState arg0, ClientScriptCommand arg1, Exception arg2, String arg3) {
 		StringBuilder var4 = new StringBuilder(30);
-		var4.append(arg3 + " ").append(arg0.field8239.field6760).append(" ");
+		var4.append(arg3 + " ").append(arg0.field8239.nodeId).append(" ");
 		for (int var5 = arg0.field8222 - 1; var5 >= 0; var5--) {
-			var4.append("").append(arg0.field8223[var5].field8190.field6760).append(" ");
+			var4.append("").append(arg0.field8223[var5].field8190.nodeId).append(" ");
 		}
 		var4.append("").append(arg1.field5953);
 		JagException.report(var4.toString(), arg2);
@@ -5118,9 +5118,9 @@ public final class ScriptRunner {
 	@ObfuscatedName("agj.ab(Lyf;I)V")
 	public static final void _switch(ClientScriptState arg0) {
 		IterableMap var1 = arg0.field8239.field12375[arg0.field8236[arg0.field8220]];
-		IntWrapper var2 = (IntWrapper) var1.method14495((long) arg0.field8216[--arg0.field8226]);
+		IntWrapper var2 = (IntWrapper) var1.getNode((long) arg0.field8216[--arg0.field8226]);
 		if (var2 != null) {
-			arg0.field8220 += var2.field11442;
+			arg0.field8220 += var2.intValue;
 		}
 	}
 
@@ -9075,7 +9075,7 @@ public final class ScriptRunner {
 			var2.field11491 = arg0;
 			var2.field11493 = arg0.field2329;
 			var2.field11499 = arg1.field8229 + 1;
-			Client.field11031.method14153(var2);
+			Client.field11031.pushBack(var2);
 		}
 	}
 
@@ -9549,7 +9549,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("gz.ue(Lyf;B)V")
 	public static final void if_hassub(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		SubInterface var2 = (SubInterface) Client.field10979.method14495((long) var1);
+		SubInterface var2 = (SubInterface) Client.field10979.getNode((long) var1);
 		if (var2 == null) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
@@ -9579,7 +9579,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		SubInterface var3 = (SubInterface) Client.field10979.method14495((long) var1);
+		SubInterface var3 = (SubInterface) Client.field10979.getNode((long) var1);
 		if (var3 != null && var3.field11571 == var2) {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
@@ -9721,7 +9721,7 @@ public final class ScriptRunner {
 	public static final void if_closesubclient(ClientScriptState arg0) {
 		arg0.field8226--;
 		int var1 = arg0.field8216[arg0.field8226];
-		SubInterface var2 = (SubInterface) Client.field10979.method14495((long) var1);
+		SubInterface var2 = (SubInterface) Client.field10979.getNode((long) var1);
 		if (var2 != null && var2.field11570 == 3) {
 			Client.method214(var2, true, true);
 		}
@@ -10317,7 +10317,7 @@ public final class ScriptRunner {
 	public static final void npc_find_active_minimenu_entry(ClientScriptState arg0) {
 		MinimenuEntry var1 = MiniMenu.method4924();
 		if (MiniMenu.method18429(var1) == 4) {
-			ObjectWrapper var2 = (ObjectWrapper) Client.field10838.method14495(var1.method19370());
+			ObjectWrapper var2 = (ObjectWrapper) Client.field10838.getNode(var1.method19370());
 			if (var2 != null) {
 				arg0.currentEntity = (PathingEntity) var2.field11436;
 				arg0.field8216[++arg0.field8226 - 1] = 1;
@@ -13018,7 +13018,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		DualIterableQueue var3 = WorldMap.method8513(var1 >> 14 & 0x3FFF, var1 & 0x3FFF);
 		boolean var4 = false;
-		for (WorldMapAreaMetadata var5 = (WorldMapAreaMetadata) var3.method14317(); var5 != null; var5 = (WorldMapAreaMetadata) var3.method14324()) {
+		for (WorldMapAreaMetadata var5 = (WorldMapAreaMetadata) var3.peekFront(); var5 != null; var5 = (WorldMapAreaMetadata) var3.prev()) {
 			if (var5.id == var2) {
 				var4 = true;
 				break;
@@ -13160,12 +13160,12 @@ public final class ScriptRunner {
 		if (ClientWorldMap.field11668 == null) {
 			return;
 		}
-		Node var3 = ClientWorldMap.field11668.method14495((long) var1);
+		Node var3 = ClientWorldMap.field11668.getNode((long) var1);
 		if (var3 != null && !var2) {
-			var3.method8440();
+			var3.remove();
 		} else if (var3 == null && var2) {
 			Node var4 = new Node();
-			ClientWorldMap.field11668.method14501(var4, (long) var1);
+			ClientWorldMap.field11668.pushNode(var4, (long) var1);
 		}
 	}
 
@@ -13175,7 +13175,7 @@ public final class ScriptRunner {
 		if (ClientWorldMap.field11668 == null) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
-			Node var2 = ClientWorldMap.field11668.method14495((long) var1);
+			Node var2 = ClientWorldMap.field11668.getNode((long) var1);
 			arg0.field8216[++arg0.field8226 - 1] = var2 == null ? 0 : 1;
 		}
 	}
@@ -13188,12 +13188,12 @@ public final class ScriptRunner {
 		if (ClientWorldMap.field11667 == null) {
 			return;
 		}
-		Node var3 = ClientWorldMap.field11667.method14495((long) var1);
+		Node var3 = ClientWorldMap.field11667.getNode((long) var1);
 		if (var3 != null && !var2) {
-			var3.method8440();
+			var3.remove();
 		} else if (var3 == null && var2) {
 			Node var4 = new Node();
-			ClientWorldMap.field11667.method14501(var4, (long) var1);
+			ClientWorldMap.field11667.pushNode(var4, (long) var1);
 		}
 	}
 
@@ -13203,7 +13203,7 @@ public final class ScriptRunner {
 		if (ClientWorldMap.field11667 == null) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
-			Node var2 = ClientWorldMap.field11667.method14495((long) var1);
+			Node var2 = ClientWorldMap.field11667.getNode((long) var1);
 			arg0.field8216[++arg0.field8226 - 1] = var2 == null ? 0 : 1;
 		}
 	}
@@ -15616,7 +15616,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("rp.awi(Lyf;I)V")
 	public static final void if_debug_getopenifcount(ClientScriptState arg0) {
-		int var1 = Client.field10979.method14498();
+		int var1 = Client.field10979.length();
 		if (Client.field10978 != -1) {
 			var1++;
 		}
@@ -15633,9 +15633,9 @@ public final class ScriptRunner {
 			}
 			var1--;
 		}
-		SubInterface var2 = (SubInterface) Client.field10979.method14500();
+		SubInterface var2 = (SubInterface) Client.field10979.peekFront();
 		while (var1-- > 0) {
-			var2 = (SubInterface) Client.field10979.method14502();
+			var2 = (SubInterface) Client.field10979.prev();
 		}
 		arg0.field8216[++arg0.field8226 - 1] = var2.field11571;
 	}

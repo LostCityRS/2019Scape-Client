@@ -79,7 +79,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	@ObfuscatedName("alb.ay(IIIIB)V")
 	public void method18303(int arg0, int arg1, int arg2, int arg3) {
 		BasicMouseEvent var5 = BasicMouseEvent.method8438(arg0, arg1, arg2, MonotonicTime.get(), arg3);
-		this.field11696.method14153(var5);
+        this.field11696.pushBack(var5);
 	}
 
 	@ObfuscatedName("alb.ab(III)V")
@@ -93,7 +93,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 
 	@ObfuscatedName("alb.p(I)Lakm;")
 	public MouseEvent method9093() {
-		return (MouseEvent) this.field11695.method14154();
+		return (MouseEvent) this.field11695.pollFront();
 	}
 
 	@ObfuscatedName("alb.m(I)V")
@@ -104,7 +104,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 		IterableQueue var1 = this.field11695;
 		this.field11695 = this.field11696;
 		this.field11696 = var1;
-		this.field11696.method14152();
+		this.field11696.clearAll();
 	}
 
 	@ObfuscatedName("alb.k(B)Z")

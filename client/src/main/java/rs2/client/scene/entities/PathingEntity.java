@@ -659,7 +659,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		Headbar var9 = null;
 		int var10 = var7.field7218;
 		int var11 = 0;
-		for (Headbar var12 = (Headbar) this.field10416.method14254(); var12 != null; var12 = (Headbar) this.field10416.method14241()) {
+		for (Headbar var12 = (Headbar) this.field10416.peekFront(); var12 != null; var12 = (Headbar) this.field10416.prev()) {
 			var11++;
 			if (var12.field11215 == var7) {
 				var12.method17456(arg1 + arg3, arg4, arg5, arg2);
@@ -678,22 +678,22 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		}
 		Headbar var13 = new Headbar(var7);
 		if (var8 == null) {
-			this.field10416.method14244(var13);
+			this.field10416.pushFront(var13);
 		} else {
-			LinkQueue.method15212(var13, var8);
+			LinkQueue.pushNode(var13, var8);
 		}
 		var13.method17456(arg1 + arg3, arg4, arg5, arg2);
 		if (var11 >= Client.graphicsDefaults.field7745) {
-			var9.method8433();
+			var9.unlink();
 		}
 	}
 
 	@ObfuscatedName("ahm.j(II)V")
 	public final void method16500(int arg0) {
 		HeadbarType var2 = (HeadbarType) Client.headbarTypeList.list(arg0);
-		for (Headbar var3 = (Headbar) this.field10416.method14254(); var3 != null; var3 = (Headbar) this.field10416.method14241()) {
+		for (Headbar var3 = (Headbar) this.field10416.peekFront(); var3 != null; var3 = (Headbar) this.field10416.prev()) {
 			if (var3.field11215 == var2) {
-				var3.method8433();
+				var3.unlink();
 				return;
 			}
 		}

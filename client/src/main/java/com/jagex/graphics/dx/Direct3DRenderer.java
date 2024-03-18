@@ -297,7 +297,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.sm()V")
 	public void method16105() {
-		for (ObjectWrapper var1 = (ObjectWrapper) this.field11959.method14191(); var1 != null; var1 = (ObjectWrapper) this.field11959.method14161()) {
+		for (ObjectWrapper var1 = (ObjectWrapper) this.field11959.peekFront(); var1 != null; var1 = (ObjectWrapper) this.field11959.prev()) {
 			Direct3DInterface1 var2 = (Direct3DInterface1) var1.field11436;
 			var2.method6220();
 			if (this.renderTarget == var2) {
@@ -310,7 +310,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.sx()V")
 	public void method15973() {
 		this.method2126();
-		for (ObjectWrapper var1 = (ObjectWrapper) this.field11959.method14191(); var1 != null; var1 = (ObjectWrapper) this.field11959.method14161()) {
+		for (ObjectWrapper var1 = (ObjectWrapper) this.field11959.peekFront(); var1 != null; var1 = (ObjectWrapper) this.field11959.prev()) {
 			Direct3DInterface1 var2 = (Direct3DInterface1) var1.field11436;
 			var2.method1629();
 		}
@@ -489,7 +489,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.aha(Loz;)Lake;")
 	public ObjectWrapper method19005(Direct3DInterface1 arg0) {
-		for (ObjectWrapper var2 = (ObjectWrapper) this.field11959.method14191(); var2 != null; var2 = (ObjectWrapper) this.field11959.method14161()) {
+		for (ObjectWrapper var2 = (ObjectWrapper) this.field11959.peekFront(); var2 != null; var2 = (ObjectWrapper) this.field11959.prev()) {
 			if (var2.field11436 == arg0) {
 				return var2;
 			}
@@ -500,7 +500,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.ahx(Loz;)V")
 	public void method18995(Direct3DInterface1 arg0) {
 		if (this.method19005(arg0) == null) {
-			this.field11959.method14153(new ObjectWrapper(arg0));
+			this.field11959.pushBack(new ObjectWrapper(arg0));
 		}
 	}
 
@@ -508,7 +508,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	public void method19000(Direct3DInterface1 arg0) {
 		ObjectWrapper var2 = this.method19005(arg0);
 		if (var2 != null) {
-			var2.method8440();
+			var2.remove();
 		}
 	}
 

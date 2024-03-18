@@ -6,33 +6,33 @@ import deob.ObfuscatedName;
 public class HashMap {
 
 	@ObfuscatedName("ix.e")
-	public IterableMap field2653;
+	public IterableMap map;
 
 	@ObfuscatedName("ix.n")
-	public HashMapValue[] field2652;
+	public HashMapValue[] nodes;
 
 	@ObfuscatedName("ix.m")
-	public final HashMapKey field2654;
+	public final HashMapKey key;
 
-	public HashMap(int arg0, HashMapKey arg1) {
+	public HashMap(int size, HashMapKey key) {
 		int var3;
-		for (var3 = 1; var3 < arg0; var3 += var3) {
+		for (var3 = 1; var3 < size; var3 += var3) {
 		}
-		this.field2653 = new IterableMap(var3);
-		this.field2652 = new HashMapValue[var3];
-		this.field2654 = arg1;
+		this.map = new IterableMap(var3);
+		this.nodes = new HashMapValue[var3];
+		this.key = key;
 	}
 
 	@ObfuscatedName("ix.e(II)Lakw;")
-	public HashMapValue method4470(int arg0) {
-		return arg0 >= this.field2652.length ? null : this.field2652[arg0];
+	public HashMapValue get(int index) {
+		return index >= this.nodes.length ? null : this.nodes[index];
 	}
 
 	@ObfuscatedName("ix.n(Ljava/lang/String;B)Lakw;")
-	public HashMapValue method4464(String arg0) {
-		long var2 = this.field2654.method4074(arg0);
-		for (HashMapValue var4 = (HashMapValue) this.field2653.method14495(var2); var4 != null; var4 = (HashMapValue) this.field2653.method14496()) {
-			if (var4.field11387.equals(arg0)) {
+	public HashMapValue get(String value) {
+		long key = this.key.hash(value);
+		for (HashMapValue var4 = (HashMapValue) this.map.getNode(key); var4 != null; var4 = (HashMapValue) this.map.next()) {
+			if (var4.valuestr.equals(value)) {
 				return var4;
 			}
 		}
@@ -40,41 +40,41 @@ public class HashMap {
 	}
 
 	@ObfuscatedName("ix.m(II)V")
-	public void method4468(int arg0) {
-		HashMapValue var2 = this.method4470(arg0);
-		if (var2 != null) {
-			var2.method8440();
-			this.field2652[var2.field11388] = null;
+	public void removeEntry(int index) {
+		HashMapValue entry = this.get(index);
+		if (entry != null) {
+			entry.remove();
+			this.nodes[entry.valueint] = null;
 		}
 	}
 
 	@ObfuscatedName("ix.k(ILjava/lang/String;Lakw;B)V")
-	public void method4475(int arg0, String arg1, HashMapValue arg2) {
-		HashMapValue var4 = this.method4464(arg1);
-		if (var4 != null && var4.field11388 != arg0) {
-			throw new IllegalArgumentException(arg1);
+	public void put(int valueint, String valuestr, HashMapValue value) {
+		HashMapValue current = this.get(valuestr);
+		if (current != null && current.valueint != valueint) {
+			throw new IllegalArgumentException(valuestr);
 		}
-		this.method4468(arg0);
-		if (arg0 >= this.field2652.length) {
-			int var5;
-			for (var5 = this.field2652.length; var5 <= arg0; var5 += var5) {
+		this.removeEntry(valueint);
+		if (valueint >= this.nodes.length) {
+			int size;
+			for (size = this.nodes.length; size <= valueint; size += size) {
 			}
-			this.field2653 = new IterableMap(var5);
-			for (int var6 = 0; var6 < this.field2652.length; var6++) {
-				HashMapValue var7 = this.field2652[var6];
+			this.map = new IterableMap(size);
+			for (int index = 0; index < this.nodes.length; index++) {
+				HashMapValue var7 = this.nodes[index];
 				if (var7 != null) {
-					this.field2653.method14501(var7, var7.field6760);
+					this.map.pushNode(var7, var7.nodeId);
 				}
 			}
-			HashMapValue[] var8 = new HashMapValue[var5];
-			for (int var9 = 0; var9 < this.field2652.length; var9++) {
-				var8[var9] = this.field2652[var9];
+			HashMapValue[] entries = new HashMapValue[size];
+			for (int index = 0; index < this.nodes.length; index++) {
+				entries[index] = this.nodes[index];
 			}
-			this.field2652 = var8;
+			this.nodes = entries;
 		}
-		arg2.field11388 = arg0;
-		arg2.field11387 = arg1;
-		this.field2653.method14501(arg2, this.field2654.method4074(arg1));
-		this.field2652[arg0] = arg2;
+		value.valueint = valueint;
+		value.valuestr = valuestr;
+		this.map.pushNode(value, this.key.hash(valuestr));
+		this.nodes[valueint] = value;
 	}
 }

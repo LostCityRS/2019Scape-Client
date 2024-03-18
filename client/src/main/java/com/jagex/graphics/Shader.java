@@ -39,12 +39,12 @@ public abstract class Shader {
 		this.field2567 = arg1.field2580.length;
 		this.field2574 = new HashMap(this.field2567, field2571);
 		for (int var3 = 0; var3 < this.field2567; var3++) {
-			this.field2574.method4475(var3, arg1.field2580[var3].field2586, this.method4165(arg1.field2580[var3]));
+			this.field2574.put(var3, arg1.field2580[var3].field2586, this.method4165(arg1.field2580[var3]));
 		}
 		this.field2572 = arg1.field2581.length;
 		this.field2569 = new HashMap(this.field2572, field2571);
 		for (int var4 = 0; var4 < this.field2572; var4++) {
-			this.field2569.method4475(var4, arg1.field2581[var4].field2586, this.method4165(arg1.field2581[var4]));
+			this.field2569.put(var4, arg1.field2581[var4].field2586, this.method4165(arg1.field2581[var4]));
 		}
 		this.field2568 = new Program[arg1.field2582.length];
 		for (int var5 = 0; var5 < arg1.field2582.length; var5++) {
@@ -216,7 +216,7 @@ public abstract class Shader {
 
 	@ObfuscatedName("ho.as(Ljava/lang/String;B)Laql;")
 	public ProgramUniform method4157(String arg0) throws UniformNotFoundException {
-		ProgramUniform var2 = (ProgramUniform) this.field2574.method4464(arg0);
+		ProgramUniform var2 = (ProgramUniform) this.field2574.get(arg0);
 		if (var2 == null) {
 			throw new UniformNotFoundException(arg0);
 		}
@@ -230,12 +230,12 @@ public abstract class Shader {
 
 	@ObfuscatedName("ho.ad(IB)Laql;")
 	public ProgramUniform method4187(int arg0) {
-		return (ProgramUniform) this.field2569.method4470(arg0);
+		return (ProgramUniform) this.field2569.get(arg0);
 	}
 
 	@ObfuscatedName("ho.am(Ljava/lang/String;S)Laql;")
 	public ProgramUniform method4188(String arg0) {
-		return (ProgramUniform) this.field2569.method4464(arg0);
+		return (ProgramUniform) this.field2569.get(arg0);
 	}
 
 	@ObfuscatedName("ho.au(I)I")
@@ -245,7 +245,7 @@ public abstract class Shader {
 
 	@ObfuscatedName("ho.ar(II)Laql;")
 	public ProgramUniform method4160(int arg0) {
-		return (ProgramUniform) this.field2574.method4470(arg0);
+		return (ProgramUniform) this.field2574.get(arg0);
 	}
 
 	@ObfuscatedName("ho.ap()V")

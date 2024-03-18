@@ -87,8 +87,8 @@ public class LegacyRendererRelated {
 			int var7 = 0;
 			int var8 = Integer.MAX_VALUE;
 			int var9 = 0;
-			DualLink var10 = arg1.list.field8487;
-			for (DualLink var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
+			DualLink var10 = arg1.list.head;
+			for (DualLink var11 = var10.dualPrev; var11 != var10; var11 = var11.dualPrev) {
 				Particle var12 = (Particle) var11;
 				int var13 = (int) ((float) (var12.z >> 12) * var5 + (float) (var12.y >> 12) * var4 + (float) (var12.x >> 12) * var3 + var6);
 				if (var13 > var9) {
@@ -108,7 +108,7 @@ public class LegacyRendererRelated {
 				var15 = 0;
 				var14 += 2;
 			}
-			DualLink var16 = var10.field11213;
+			DualLink var16 = var10.dualPrev;
 			int var17 = 0;
 			int var18 = -2;
 			boolean var19 = true;
@@ -148,7 +148,7 @@ public class LegacyRendererRelated {
 							}
 						}
 					}
-					var16 = var16.field11213;
+					var16 = var16.dualPrev;
 				}
 				if (var18 >= 0) {
 					arg0.method15774(var18);

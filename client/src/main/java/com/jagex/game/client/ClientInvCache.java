@@ -153,16 +153,16 @@ public class ClientInvCache extends Node {
 	@ObfuscatedName("so.u(IZS)Lajo;")
 	public static ClientInvCache getCachedInvs(int arg0, boolean arg1) {
 		long var2 = (long) (arg0 | (arg1 ? Integer.MIN_VALUE : 0));
-		return (ClientInvCache) recentUse.method14495(var2);
+		return (ClientInvCache) recentUse.getNode(var2);
 	}
 
 	@ObfuscatedName("hg.z(IIIILabn;ZI)V")
 	public static void update(int arg0, int arg1, int arg2, int arg3, VarContainerSparse arg4, boolean arg5) {
 		long var6 = (long) (arg0 | (arg5 ? Integer.MIN_VALUE : 0));
-		ClientInvCache var8 = (ClientInvCache) recentUse.method14495(var6);
+		ClientInvCache var8 = (ClientInvCache) recentUse.getNode(var6);
 		if (var8 == null) {
 			var8 = new ClientInvCache();
-			recentUse.method14501(var8, var6);
+			recentUse.pushNode(var8, var6);
 		}
 		if (var8.slotObjs.length <= arg1) {
 			int[] var9 = new int[arg1 + 1];
@@ -215,13 +215,13 @@ public class ClientInvCache extends Node {
 	public static void method10309(int arg0, boolean arg1) {
 		ClientInvCache var2 = getCachedInvs(arg0, arg1);
 		if (var2 != null) {
-			var2.method8440();
+			var2.remove();
 		}
 	}
 
 	@ObfuscatedName("ei.c(B)V")
 	public static void method2752() {
-		recentUse.method14499();
+		recentUse.clear();
 	}
 
 	@ObfuscatedName("ajo.r([II[IZI)J")

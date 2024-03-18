@@ -1,6 +1,6 @@
 package com.jagex.game.camera;
 
-import com.jagex.core.datastruct.LinkMap;
+import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.io.Packet;
 import com.jagex.game.camera.position.Position;
 import com.jagex.game.client.GameShell;
@@ -59,7 +59,7 @@ public abstract class PositionSpline extends Position {
 	}
 
 	@ObfuscatedName("ahn.e(F[[[ILqx;IIB)V")
-	public void method5238(float arg0, int[][][] arg1, LinkMap arg2, int arg3, int arg4) {
+	public void method5238(float arg0, int[][][] arg1, SceneLevelTileFlags arg2, int arg3, int arg4) {
 		Spline var6 = this.field10565[this.field10564];
 		if (this.field10562[this.field10564] > 0.0F) {
 			if (this.field10562[this.field10564] >= arg0) {

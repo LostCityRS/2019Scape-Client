@@ -112,7 +112,7 @@ public class ClanChannel extends Node {
 		if ((var2 & 0x4) != 0) {
 			var3 = arg0.g1();
 		}
-		this.field6760 = arg0.g8();
+		this.nodeId = arg0.g8();
 		this.field11395 = arg0.g8();
 		this.clanName = arg0.gjstr();
 		arg0.g1();

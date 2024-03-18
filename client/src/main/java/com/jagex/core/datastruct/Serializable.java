@@ -7,10 +7,10 @@ import deob.ObfuscatedName;
 public interface Serializable {
 
 	@ObfuscatedName("acf.n(Lalw;S)V")
-	void method15114(Packet arg0);
+	void encode(Packet buf);
 
 	@ObfuscatedName("acf.m(Lalw;I)V")
-	void method15115(Packet arg0);
+	void decode(Packet buf);
 
 	@ObfuscatedName("acf.e(B)I")
 	int method15118();

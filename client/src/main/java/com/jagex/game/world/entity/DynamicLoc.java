@@ -196,9 +196,9 @@ public class DynamicLoc {
 				this.field6669 = null;
 				this.field6674 = 0;
 			} else {
-				this.field6669 = var10 = (Model) var11.field8737;
+				this.field6669 = var10 = (Model) var11.first;
 				if (arg3) {
-					this.field6677 = (HardShadow) var11.field8738;
+					this.field6677 = (HardShadow) var11.second;
 					this.field6679 = null;
 					var7.method8750(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, null);
 					this.field6670 = true;

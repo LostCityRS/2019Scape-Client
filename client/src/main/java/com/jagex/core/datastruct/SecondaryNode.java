@@ -6,21 +6,21 @@ import deob.ObfuscatedName;
 public class SecondaryNode extends Node {
 
 	@ObfuscatedName("aky.k")
-	public long field11440;
+	public long secondaryNodeId;
 
 	@ObfuscatedName("aky.f")
-	public SecondaryNode field11439;
+	public SecondaryNode secondaryPrev;
 
 	@ObfuscatedName("aky.w")
-	public SecondaryNode field11438;
+	public SecondaryNode secondaryNext;
 
 	@ObfuscatedName("aky.t(S)V")
-	public void method17806() {
-		if (this.field11438 != null) {
-			this.field11438.field11439 = this.field11439;
-			this.field11439.field11438 = this.field11438;
-			this.field11439 = null;
-			this.field11438 = null;
+	public void secondaryRemove() {
+		if (this.secondaryNext != null) {
+			this.secondaryNext.secondaryPrev = this.secondaryPrev;
+			this.secondaryPrev.secondaryNext = this.secondaryNext;
+			this.secondaryPrev = null;
+			this.secondaryNext = null;
 		}
 	}
 }

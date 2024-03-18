@@ -1320,10 +1320,10 @@ public final class OpenGLRenderer extends GpuRenderer {
 		}
 		int var3 = 0;
 		int var4 = arg0 & Integer.MAX_VALUE;
-		while (!this.field12000.method14164()) {
-			IntWrapper var5 = (IntWrapper) this.field12000.method14154();
-			this.field12007[var3++] = (int) var5.field6760;
-			this.field10053 -= var5.field11442;
+		while (!this.field12000._isEmpty()) {
+			IntWrapper var5 = (IntWrapper) this.field12000.pollFront();
+			this.field12007[var3++] = (int) var5.nodeId;
+			this.field10053 -= var5.intValue;
 			if (var3 == 1000) {
 				OpenGL.glDeleteBuffersARB(var3, this.field12007, 0);
 				var3 = 0;
@@ -1333,10 +1333,10 @@ public final class OpenGLRenderer extends GpuRenderer {
 			OpenGL.glDeleteBuffersARB(var3, this.field12007, 0);
 			var3 = 0;
 		}
-		while (!this.field12023.method14164()) {
-			IntWrapper var6 = (IntWrapper) this.field12023.method14154();
-			this.field12007[var3++] = (int) var6.field6760;
-			this.field10052 -= var6.field11442;
+		while (!this.field12023._isEmpty()) {
+			IntWrapper var6 = (IntWrapper) this.field12023.pollFront();
+			this.field12007[var3++] = (int) var6.nodeId;
+			this.field10052 -= var6.intValue;
 			if (var3 == 1000) {
 				OpenGL.glDeleteTextures(var3, this.field12007, 0);
 				var3 = 0;
@@ -1346,9 +1346,9 @@ public final class OpenGLRenderer extends GpuRenderer {
 			OpenGL.glDeleteTextures(var3, this.field12007, 0);
 			var3 = 0;
 		}
-		while (!this.field12035.method14164()) {
-			IntWrapper var7 = (IntWrapper) this.field12035.method14154();
-			this.field12007[var3++] = var7.field11442;
+		while (!this.field12035._isEmpty()) {
+			IntWrapper var7 = (IntWrapper) this.field12035.pollFront();
+			this.field12007[var3++] = var7.intValue;
 			if (var3 == 1000) {
 				OpenGL.glDeleteFramebuffersEXT(var3, this.field12007, 0);
 				var3 = 0;
@@ -1358,10 +1358,10 @@ public final class OpenGLRenderer extends GpuRenderer {
 			OpenGL.glDeleteFramebuffersEXT(var3, this.field12007, 0);
 			var3 = 0;
 		}
-		while (!this.field12003.method14164()) {
-			IntWrapper var8 = (IntWrapper) this.field12003.method14154();
-			this.field12007[var3++] = (int) var8.field6760;
-			this.field10117 -= var8.field11442;
+		while (!this.field12003._isEmpty()) {
+			IntWrapper var8 = (IntWrapper) this.field12003.pollFront();
+			this.field12007[var3++] = (int) var8.nodeId;
+			this.field10117 -= var8.intValue;
 			if (var3 == 1000) {
 				OpenGL.glDeleteRenderbuffersEXT(var3, this.field12007, 0);
 				var3 = 0;
@@ -1371,21 +1371,21 @@ public final class OpenGLRenderer extends GpuRenderer {
 			OpenGL.glDeleteRenderbuffersEXT(var3, this.field12007, 0);
 			boolean var9 = false;
 		}
-		while (!this.field12011.method14164()) {
-			IntWrapper var10 = (IntWrapper) this.field12011.method14154();
-			OpenGL.glDeleteLists((int) var10.field6760, var10.field11442);
+		while (!this.field12011._isEmpty()) {
+			IntWrapper var10 = (IntWrapper) this.field12011.pollFront();
+			OpenGL.glDeleteLists((int) var10.nodeId, var10.intValue);
 		}
-		while (!this.field12004.method14164()) {
-			Node var11 = this.field12004.method14154();
-			OpenGL.glDeleteProgram((int) var11.field6760);
+		while (!this.field12004._isEmpty()) {
+			Node var11 = this.field12004.pollFront();
+			OpenGL.glDeleteProgram((int) var11.nodeId);
 		}
-		while (!this.field12005.method14164()) {
-			Node var12 = this.field12005.method14154();
-			OpenGL.glDeleteShader((int) var12.field6760);
+		while (!this.field12005._isEmpty()) {
+			Node var12 = this.field12005.pollFront();
+			OpenGL.glDeleteShader((int) var12.nodeId);
 		}
-		while (!this.field12011.method14164()) {
-			IntWrapper var13 = (IntWrapper) this.field12011.method14154();
-			OpenGL.glDeleteLists((int) var13.field6760, var13.field11442);
+		while (!this.field12011._isEmpty()) {
+			IntWrapper var13 = (IntWrapper) this.field12011.pollFront();
+			OpenGL.glDeleteLists((int) var13.nodeId, var13.intValue);
 		}
 		if (this.method2520() > 100663296 && MonotonicTime.get() > this.field12006 + 60000L) {
 			System.gc();
@@ -1397,42 +1397,42 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.ahg(II)V")
 	public final synchronized void method19072(int arg0, int arg1) {
 		IntWrapper var3 = new IntWrapper(arg1);
-		var3.field6760 = arg0;
-		this.field12000.method14153(var3);
+		var3.nodeId = arg0;
+		this.field12000.pushBack(var3);
 	}
 
 	@ObfuscatedName("aqv.ahh(II)V")
 	public final synchronized void method19073(int arg0, int arg1) {
 		IntWrapper var3 = new IntWrapper(arg1);
-		var3.field6760 = arg0;
-		this.field12023.method14153(var3);
+		var3.nodeId = arg0;
+		this.field12023.pushBack(var3);
 	}
 
 	@ObfuscatedName("aqv.ahd(I)V")
 	public final synchronized void method19074(int arg0) {
 		IntWrapper var2 = new IntWrapper(arg0);
-		this.field12035.method14153(var2);
+		this.field12035.pushBack(var2);
 	}
 
 	@ObfuscatedName("aqv.ahn(II)V")
 	public final synchronized void method19071(int arg0, int arg1) {
 		IntWrapper var3 = new IntWrapper(arg1);
-		var3.field6760 = arg0;
-		this.field12003.method14153(var3);
+		var3.nodeId = arg0;
+		this.field12003.pushBack(var3);
 	}
 
 	@ObfuscatedName("aqv.ahp(J)V")
 	public final synchronized void method19075(long arg0) {
 		Node var3 = new Node();
-		var3.field6760 = arg0;
-		this.field12005.method14153(var3);
+		var3.nodeId = arg0;
+		this.field12005.pushBack(var3);
 	}
 
 	@ObfuscatedName("aqv.ahe(I)V")
 	public final synchronized void method19087(int arg0) {
 		Node var2 = new Node();
-		var2.field6760 = arg0;
-		this.field12004.method14153(var2);
+		var2.nodeId = arg0;
+		this.field12004.pushBack(var2);
 	}
 
 	@ObfuscatedName("aqv.ahs(Ldg;)I")

@@ -78,7 +78,7 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 		} else if (arg1.field4239 instanceof String) {
 			arg0.pjstr2((String) arg1.field4239);
 		} else if (arg1.field4239 instanceof Serializable) {
-			((Serializable) arg1.field4239).method15114(arg0);
+			((Serializable) arg1.field4239).encode(arg0);
 		} else {
 			throw new IllegalStateException();
 		}
@@ -102,7 +102,7 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 		} else if (Serializable.class.isAssignableFrom(var5)) {
 			try {
 				Serializable var6 = (Serializable) var5.getDeclaredConstructor().newInstance();
-				var6.method15115(arg0);
+				var6.decode(arg0);
 				var4.field4239 = var6;
 			} catch (InstantiationException var9) {
 			} catch (IllegalAccessException var10) {
@@ -129,7 +129,7 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 		} else if (Serializable.class.isAssignableFrom(var5)) {
 			try {
 				Serializable var6 = (Serializable) var5.getDeclaredConstructor().newInstance();
-				var6.method15115(arg0);
+				var6.decode(arg0);
 				var4.field4239 = var6;
 			} catch (InstantiationException var10) {
 			} catch (IllegalAccessException var11) {

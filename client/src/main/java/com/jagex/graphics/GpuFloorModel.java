@@ -222,7 +222,7 @@ public class GpuFloorModel extends FloorModel {
 			}
 			long var18 = (long) arg10.field1577 << 48 | (long) arg10.field1573 << 42 | (long) arg10.field1575 << 28 | (long) (var17 << 14) | (long) var16;
 			Node var20;
-			for (var20 = this.field9513.method14495(var18); var20 != null; var20 = this.field9513.method14496()) {
+			for (var20 = this.field9513.getNode(var18); var20 != null; var20 = this.field9513.next()) {
 				GpuFloorModelRelated1 var21 = (GpuFloorModelRelated1) var20;
 				if (var21.field11402 == var16 && (float) var17 == var21.field11403 && var21.field11404.method2096(arg10)) {
 					break;
@@ -230,7 +230,7 @@ public class GpuFloorModel extends FloorModel {
 			}
 			if (var20 == null) {
 				var14[var15] = new GpuFloorModelRelated1(this, var16, var17, arg10);
-				this.field9513.method14501(var14[var15], var18);
+				this.field9513.pushNode(var14[var15], var18);
 			} else {
 				var14[var15] = (GpuFloorModelRelated1) var20;
 			}
@@ -316,8 +316,8 @@ public class GpuFloorModel extends FloorModel {
 				var1[var2][var3] = (byte) ((this.field9514[var2][var3] >> 1) + (this.field9514[var2][var3 + 1] >> 3) + (this.field9514[var2][var3 - 1] >> 2) + (this.field9514[var2 - 1][var3] >> 2) + (this.field9514[var2 + 1][var3] >> 3));
 			}
 		}
-		this.field9497 = new Node[this.field9513.method14498()];
-		this.field9513.method14497(this.field9497);
+		this.field9497 = new Node[this.field9513.length()];
+		this.field9513.addNodes(this.field9497);
 		for (int var4 = 0; var4 < this.field9497.length; var4++) {
 			((GpuFloorModelRelated1) this.field9497[var4]).method17761(this.field9511);
 		}
@@ -368,13 +368,13 @@ public class GpuFloorModel extends FloorModel {
 						}
 						if (var22 != null) {
 							var22.method17764(var13, var14, var16);
-							if (var24 == null || var22.field6760 < var24.field6760) {
+							if (var24 == null || var22.nodeId < var24.nodeId) {
 								var24 = var22;
 							}
 						}
 						if (var23 != null) {
 							var23.method17764(var13, var14, var16);
-							if (var24 == null || var23.field6760 < var24.field6760) {
+							if (var24 == null || var23.nodeId < var24.nodeId) {
 								var24 = var23;
 							}
 						}
@@ -406,7 +406,7 @@ public class GpuFloorModel extends FloorModel {
 		long[] var27 = new long[this.field9519];
 		for (int var28 = 0; var28 < this.field9519; var28++) {
 			GpuFloorModelRelated1 var29 = (GpuFloorModelRelated1) this.field9497[var28];
-			var27[var28] = var29.field6760;
+			var27[var28] = var29.nodeId;
 			this.field9496[var28] = var29;
 		}
 		Algorithms.method10210(var27, this.field9496);
@@ -576,7 +576,7 @@ public class GpuFloorModel extends FloorModel {
 			}
 			Node var66 = null;
 			if ((var36 & this.field9489 - 1) == 0 && (var37 & this.field9489 - 1) == 0) {
-				var66 = arg4.method14495(var43);
+				var66 = arg4.getNode(var43);
 			}
 			int var80;
 			if (var66 == null) {
@@ -643,11 +643,11 @@ public class GpuFloorModel extends FloorModel {
 				if (var40 != -1) {
 					arg5[var80] = var7[var35];
 				}
-				arg4.method14501(new FloorModelNode(var34[var35]), var43);
+				arg4.pushNode(new FloorModelNode(var34[var35]), var43);
 			} else {
 				var34[var35] = ((FloorModelNode) var66).field11437;
 				var80 = var34[var35] & 0xFFFF;
-				if (var40 != -1 && var7[var35].field6760 < arg5[var80].field6760) {
+				if (var40 != -1 && var7[var35].nodeId < arg5[var80].nodeId) {
 					arg5[var80] = var7[var35];
 				}
 			}
@@ -845,7 +845,7 @@ public class GpuFloorModel extends FloorModel {
 				}
 			}
 		}
-		if (!this.field9485.method14164()) {
+		if (!this.field9485._isEmpty()) {
 			this.field9516.method16054(128);
 			this.field9516.method16361(false);
 			Vector3 var37 = new Vector3(var22.field2975);
@@ -1024,6 +1024,6 @@ public class GpuFloorModel extends FloorModel {
 
 	@ObfuscatedName("aem.o(Lakf;[I)V")
 	public void method1549(Light arg0, int[] arg1) {
-		this.field9485.method14153(new GpuFloorModelRelated(this.field9516, this, arg0, arg1));
+		this.field9485.pushBack(new GpuFloorModelRelated(this.field9516, this, arg0, arg1));
 	}
 }

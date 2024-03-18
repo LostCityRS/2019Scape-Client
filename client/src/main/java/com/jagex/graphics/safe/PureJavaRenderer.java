@@ -2112,7 +2112,7 @@ public class PureJavaRenderer extends Renderer {
 	@ObfuscatedName("afg.sv(ZZZLdm;)V")
 	public void drawParticles(boolean arg0, boolean arg1, boolean arg2, ParticleList arg3) {
 		PureJavaRendererContext var5 = this.getContext(Thread.currentThread());
-		for (Particle var6 = (Particle) arg3.list.method14271(); var6 != null; var6 = (Particle) arg3.list.method14272()) {
+		for (Particle var6 = (Particle) arg3.list.peekFront(); var6 != null; var6 = (Particle) arg3.list.prev()) {
 			int var7 = var6.x >> 12;
 			int var8 = var6.y >> 12;
 			int var9 = var6.z >> 12;

@@ -31,7 +31,7 @@ public class CoverMarkerClickbox extends Link {
 
 	@ObfuscatedName("aaq.n(I)Lajq;")
 	public static CoverMarkerClickbox method14429() {
-		CoverMarkerClickbox var0 = (CoverMarkerClickbox) field11198.method14245();
+		CoverMarkerClickbox var0 = (CoverMarkerClickbox) field11198.pollFront();
 		if (var0 == null) {
 			return new CoverMarkerClickbox();
 		} else {
@@ -44,7 +44,7 @@ public class CoverMarkerClickbox extends Link {
 	public static void method3032(CoverMarkerClickbox arg0) {
 		arg0.field11197 = null;
 		if (field11196 < 20) {
-			field11198.method14243(arg0);
+			field11198.pushBack(arg0);
 			field11196++;
 		}
 	}

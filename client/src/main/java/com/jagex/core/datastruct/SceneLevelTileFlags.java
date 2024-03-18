@@ -3,12 +3,12 @@ package com.jagex.core.datastruct;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qx")
-public class LinkMap {
+public class SceneLevelTileFlags {
 
 	@ObfuscatedName("qx.l")
 	public byte[][][] levelTileFlags;
 
-	public LinkMap(int arg0, int arg1, int arg2) {
+	public SceneLevelTileFlags(int arg0, int arg1, int arg2) {
 		this.levelTileFlags = new byte[arg0][arg1][arg2];
 	}
 

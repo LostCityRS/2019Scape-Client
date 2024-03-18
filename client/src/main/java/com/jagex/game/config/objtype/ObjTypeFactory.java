@@ -2,7 +2,7 @@ package com.jagex.game.config.objtype;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.core.datastruct.Cache2;
+import com.jagex.core.datastruct.IconCache;
 import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.game.client.IconCacheKey;
 import com.jagex.game.client.LocalisedText;
@@ -32,7 +32,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public final WeightedCache modelCache = new WeightedCache(50);
 
 	@ObfuscatedName("abr.f")
-	public final Cache2 iconCache = new Cache2(250);
+	public final IconCache iconCache = new IconCache(250);
 
 	@ObfuscatedName("abr.w")
 	public final IconCacheKey field8609 = new IconCacheKey();
@@ -141,7 +141,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		synchronized (this.modelCache) {
 			this.modelCache.method2924();
 		}
-		Cache2 var3 = this.iconCache;
+		IconCache var3 = this.iconCache;
 		synchronized (this.iconCache) {
 			this.iconCache.method9652();
 		}
@@ -149,7 +149,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("abr.w(I)V")
 	public void method14621() {
-		Cache2 var1 = this.iconCache;
+		IconCache var1 = this.iconCache;
 		synchronized (this.iconCache) {
 			this.iconCache.method9652();
 		}
@@ -161,7 +161,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		synchronized (this.modelCache) {
 			this.modelCache.update(arg0);
 		}
-		Cache2 var4 = this.iconCache;
+		IconCache var4 = this.iconCache;
 		synchronized (this.iconCache) {
 			this.iconCache.method9651(arg0);
 		}
@@ -173,7 +173,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		synchronized (this.modelCache) {
 			this.modelCache.method2928();
 		}
-		Cache2 var3 = this.iconCache;
+		IconCache var3 = this.iconCache;
 		synchronized (this.iconCache) {
 			this.iconCache.method9653();
 		}

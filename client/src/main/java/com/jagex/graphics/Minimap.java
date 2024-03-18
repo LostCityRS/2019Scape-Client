@@ -2,7 +2,7 @@ package com.jagex.graphics;
 
 import com.jagex.core.datastruct.IntWrapper;
 import com.jagex.core.datastruct.IterableQueue;
-import com.jagex.core.datastruct.LinkMap;
+import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
 import com.jagex.game.client.Graphic;
@@ -135,7 +135,7 @@ public class Minimap {
 		}
 		int var2 = Client.world.method7728();
 		int var3 = Client.world.method7758();
-		LinkMap var4 = Client.world.method7793();
+		SceneLevelTileFlags var4 = Client.world.method7793();
 		Scene var5 = Client.world.getScene();
 		int var6 = arg1;
 		if (Client.localPlayerEntity != null) {
@@ -282,7 +282,7 @@ public class Minimap {
 		arg0.method2475(1, 1);
 		Client.method9734();
 		field723 = 0;
-		field727.method14152();
+		field727.clearAll();
 		if (!field732) {
 			method16444(arg1);
 			WorldMapRelated var47 = Client.world.method7871();
@@ -295,11 +295,11 @@ public class Minimap {
 						int var51 = (var50 >> 14 & 0x3FFF) - var48.x;
 						int var52 = (var50 & 0x3FFF) - var48.z;
 						if (var51 >= 0 && var51 < var2 && var52 >= 0 && var52 < var3) {
-							field727.method14153(new IntWrapper(var49));
+							field727.pushBack(new IntWrapper(var49));
 						} else {
 							MapElementType var53 = (MapElementType) Client.mapElementTypeList.list(var47.field6775[var49]);
 							if (var53.field2393 != null && var53.field2396 + var51 >= 0 && var53.field2373 + var51 < var2 && var53.field2397 + var52 >= 0 && var53.field2395 + var52 < var3) {
-								field727.method14153(new IntWrapper(var49));
+								field727.pushBack(new IntWrapper(var49));
 							}
 						}
 					}
@@ -315,7 +315,7 @@ public class Minimap {
 		field723 = 0;
 		int var1 = Client.world.method7728();
 		int var2 = Client.world.method7758();
-		LinkMap var3 = Client.world.method7793();
+		SceneLevelTileFlags var3 = Client.world.method7793();
 		Scene var4 = Client.world.getScene();
 		LocTypeList var5 = Client.world.method7750();
 		int var6 = arg0;
@@ -569,8 +569,8 @@ public class Minimap {
 			field734.method1456((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, var5, arg2, arg3);
 		}
 		WorldMapRelated var14 = Client.world.method7871();
-		for (IntWrapper var15 = (IntWrapper) field727.method14191(); var15 != null; var15 = (IntWrapper) field727.method14161()) {
-			int var16 = var15.field11442;
+		for (IntWrapper var15 = (IntWrapper) field727.peekFront(); var15 != null; var15 = (IntWrapper) field727.prev()) {
+			int var16 = var15.intValue;
 			int var17 = (var14.field6776[var16] >> 14 & 0x3FFF) - var6.x;
 			int var18 = (var14.field6776[var16] & 0x3FFF) - var6.z;
 			int var19 = var17 * 4 + 2 - var7 / 128;
@@ -589,11 +589,11 @@ public class Minimap {
 			}
 			method15085(arg0, var5, arg1, arg2, arg3, var22, var23, var24.field7485);
 		}
-		for (ObjStackList var25 = (ObjStackList) Client.field10964.method14500(); var25 != null; var25 = (ObjStackList) Client.field10964.method14502()) {
-			int var26 = (int) (var25.field6760 >> 28 & 0x3L);
+		for (ObjStackList var25 = (ObjStackList) Client.field10964.peekFront(); var25 != null; var25 = (ObjStackList) Client.field10964.prev()) {
+			int var26 = (int) (var25.nodeId >> 28 & 0x3L);
 			if (field722 == var26) {
-				int var27 = (int) (var25.field6760 & 0x3FFFL) - var6.x;
-				int var28 = (int) (var25.field6760 >> 14 & 0x3FFFL) - var6.z;
+				int var27 = (int) (var25.nodeId & 0x3FFFL) - var6.x;
+				int var28 = (int) (var25.nodeId >> 14 & 0x3FFFL) - var6.z;
 				int var29 = var27 * 4 + 2 - var7 / 128;
 				int var30 = var28 * 4 + 2 - var8 / 128;
 				method715(arg1, var5, arg2, arg3, var29, var30, DefaultSprites.field510[0]);
@@ -618,7 +618,7 @@ public class Minimap {
 	@ObfuscatedName("je.o(Ldh;IILhf;Lch;IIB)V")
 	public static void method4838(Renderer arg0, int arg1, int arg2, Component arg3, GraphicsRelated arg4, int arg5, int arg6) {
 		for (int var7 = 0; var7 < Client.field11011; var7++) {
-			ObjectWrapper var8 = (ObjectWrapper) Client.field10838.method14495((long) Client.field11036[var7]);
+			ObjectWrapper var8 = (ObjectWrapper) Client.field10838.getNode((long) Client.field11036[var7]);
 			if (var8 != null) {
 				NpcEntity var9 = (NpcEntity) var8.field11436;
 				if (var9.method19160() && Client.localPlayerEntity.field11717 == var9.field11717) {
@@ -698,7 +698,7 @@ public class Minimap {
 			HintArrow var8 = var6[var7];
 			if (var8 != null && var8.field745 != 0 && Client.currentclock % 20 < 10) {
 				if (var8.field745 == 1) {
-					ObjectWrapper var9 = (ObjectWrapper) Client.field10838.method14495((long) var8.field744);
+					ObjectWrapper var9 = (ObjectWrapper) Client.field10838.getNode((long) var8.field744);
 					if (var9 != null) {
 						NpcEntity var10 = (NpcEntity) var9.field11436;
 						Vector3 var11 = var10.method10536().field4298;

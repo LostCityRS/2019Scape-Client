@@ -117,8 +117,8 @@ public class GpuParticleRenderer {
 		int var7 = 0;
 		int var8 = Integer.MAX_VALUE;
 		int var9 = 0;
-		DualLink var10 = arg1.list.field8487;
-		for (DualLink var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
+		DualLink var10 = arg1.list.head;
+		for (DualLink var11 = var10.dualPrev; var11 != var10; var11 = var11.dualPrev) {
 			Particle var12 = (Particle) var11;
 			int var13 = (int) ((float) (var12.z >> 12) * var5 + (float) (var12.y >> 12) * var4 + (float) (var12.x >> 12) * var3 + var6);
 			if (var13 > var9) {
@@ -162,7 +162,7 @@ public class GpuParticleRenderer {
 
 	@ObfuscatedName("ld.k(Lafc;Lajn;IIILjo;Z)V")
 	public void method5766(GpuRenderer arg0, DualLink arg1, int arg2, int arg3, int arg4, ParticleShader arg5, boolean arg6) {
-		DualLink var8 = arg1.field11213;
+		DualLink var8 = arg1.dualPrev;
 		int var9 = 0;
 		int var10 = -2;
 		boolean var11 = true;
@@ -187,7 +187,7 @@ public class GpuParticleRenderer {
 					break;
 				}
 				this.method5764(this.field3339[var9++] - arg3 >> arg4, var15);
-				var8 = var8.field11213;
+				var8 = var8.dualPrev;
 			}
 			arg5.field2991 = null;
 			if (var10 >= 0) {

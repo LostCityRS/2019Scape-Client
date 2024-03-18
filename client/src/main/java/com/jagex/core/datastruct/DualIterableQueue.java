@@ -8,108 +8,108 @@ import java.util.Iterator;
 public class DualIterableQueue implements Iterable {
 
 	@ObfuscatedName("aap.e")
-	public SecondaryNode field8497 = new SecondaryNode();
+	public SecondaryNode head = new SecondaryNode();
 
 	@ObfuscatedName("aap.n")
-	public SecondaryNode field8496;
+	public SecondaryNode peeked;
 
 	public DualIterableQueue() {
-		this.field8497.field11439 = this.field8497;
-		this.field8497.field11438 = this.field8497;
+		this.head.secondaryPrev = this.head;
+		this.head.secondaryNext = this.head;
 	}
 
 	@ObfuscatedName("aap.e(I)V")
-	public void method14316() {
-		while (this.field8497.field11439 != this.field8497) {
-			this.field8497.field11439.method17806();
+	public void clearAll() {
+		while (this.head.secondaryPrev != this.head) {
+			this.head.secondaryPrev.secondaryRemove();
 		}
 	}
 
 	@ObfuscatedName("aap.n(Laky;I)V")
-	public void method14339(SecondaryNode arg0) {
-		if (arg0.field11438 != null) {
-			arg0.method17806();
+	public void pushBack(SecondaryNode node) {
+		if (node.secondaryNext != null) {
+			node.secondaryRemove();
 		}
-		arg0.field11438 = this.field8497.field11438;
-		arg0.field11439 = this.field8497;
-		arg0.field11438.field11439 = arg0;
-		arg0.field11439.field11438 = arg0;
+		node.secondaryNext = this.head.secondaryNext;
+		node.secondaryPrev = this.head;
+		node.secondaryNext.secondaryPrev = node;
+		node.secondaryPrev.secondaryNext = node;
 	}
 
 	@ObfuscatedName("vj.m(Laky;Laky;I)V")
-	public static void method9574(SecondaryNode arg0, SecondaryNode arg1) {
-		if (arg0.field11438 != null) {
-			arg0.method17806();
+	public static void pushNodeBack(SecondaryNode node, SecondaryNode head) {
+		if (node.secondaryNext != null) {
+			node.secondaryRemove();
 		}
-		arg0.field11438 = arg1.field11438;
-		arg0.field11439 = arg1;
-		arg0.field11438.field11439 = arg0;
-		arg0.field11439.field11438 = arg0;
+		node.secondaryNext = head.secondaryNext;
+		node.secondaryPrev = head;
+		node.secondaryNext.secondaryPrev = node;
+		node.secondaryPrev.secondaryNext = node;
 	}
 
 	@ObfuscatedName("xg.k(Laky;Laky;I)V")
 	public static void method10144(SecondaryNode arg0, SecondaryNode arg1) {
-		if (arg0.field11438 != null) {
-			arg0.method17806();
+		if (arg0.secondaryNext != null) {
+			arg0.secondaryRemove();
 		}
-		arg0.field11438 = arg1;
-		arg0.field11439 = arg1.field11439;
-		arg0.field11438.field11439 = arg0;
-		arg0.field11439.field11438 = arg0;
+		arg0.secondaryNext = arg1;
+		arg0.secondaryPrev = arg1.secondaryPrev;
+		arg0.secondaryNext.secondaryPrev = arg0;
+		arg0.secondaryPrev.secondaryNext = arg0;
 	}
 
 	@ObfuscatedName("aap.f(B)Laky;")
-	public SecondaryNode method14315() {
-		SecondaryNode var1 = this.field8497.field11439;
-		if (this.field8497 == var1) {
+	public SecondaryNode pollFront() {
+		SecondaryNode node = this.head.secondaryPrev;
+		if (this.head == node) {
 			return null;
 		} else {
-			var1.method17806();
-			return var1;
+			node.secondaryRemove();
+			return node;
 		}
 	}
 
 	@ObfuscatedName("aap.w(I)Laky;")
-	public SecondaryNode method14317() {
-		return this.method14318(null);
+	public SecondaryNode peekFront() {
+		return this.peekFrontNode(null);
 	}
 
 	@ObfuscatedName("aap.l(Laky;I)Laky;")
-	public SecondaryNode method14318(SecondaryNode arg0) {
+	public SecondaryNode peekFrontNode(SecondaryNode arg0) {
 		SecondaryNode var2;
 		if (arg0 == null) {
-			var2 = this.field8497.field11439;
+			var2 = this.head.secondaryPrev;
 		} else {
 			var2 = arg0;
 		}
-		if (this.field8497 == var2) {
-			this.field8496 = null;
+		if (this.head == var2) {
+			this.peeked = null;
 			return null;
 		} else {
-			this.field8496 = var2.field11439;
+			this.peeked = var2.secondaryPrev;
 			return var2;
 		}
 	}
 
 	@ObfuscatedName("aap.u(I)Laky;")
-	public SecondaryNode method14324() {
-		SecondaryNode var1 = this.field8496;
-		if (this.field8497 == var1) {
-			this.field8496 = null;
+	public SecondaryNode prev() {
+		SecondaryNode var1 = this.peeked;
+		if (this.head == var1) {
+			this.peeked = null;
 			return null;
 		} else {
-			this.field8496 = var1.field11439;
+			this.peeked = var1.secondaryPrev;
 			return var1;
 		}
 	}
 
 	@ObfuscatedName("aap.z(I)I")
-	public int method14320() {
-		int var1 = 0;
-		for (SecondaryNode var2 = this.field8497.field11439; var2 != this.field8497; var2 = var2.field11439) {
-			var1++;
+	public int length() {
+		int length = 0;
+		for (SecondaryNode var2 = this.head.secondaryPrev; var2 != this.head; var2 = var2.secondaryPrev) {
+			length++;
 		}
-		return var1;
+		return length;
 	}
 
 	public Iterator iterator() {

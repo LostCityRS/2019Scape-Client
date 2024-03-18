@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.core.datastruct.LinkMap;
+import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.config.flotype.FloorOverlayType;
@@ -25,7 +25,7 @@ public class MapLoader {
 	public FloorUnderlayTypeList underlays;
 
 	@ObfuscatedName("qg.m")
-	public LinkMap field4522;
+	public SceneLevelTileFlags field4522;
 
 	@ObfuscatedName("qg.k")
 	public Scene scene;
@@ -237,7 +237,7 @@ public class MapLoader {
 	@ObfuscatedName("qg.cx")
 	public int[] field4589 = null;
 
-	public MapLoader(Scene scene, int levels, int maxTileX, int maxTileZ, boolean underwater, FloorOverlayTypeList overlays, FloorUnderlayTypeList underlays, LinkMap arg7) {
+	public MapLoader(Scene scene, int levels, int maxTileX, int maxTileZ, boolean underwater, FloorOverlayTypeList overlays, FloorUnderlayTypeList underlays, SceneLevelTileFlags arg7) {
 		this.scene = scene;
 		this.levels = levels;
 		this.maxTileX = maxTileX;

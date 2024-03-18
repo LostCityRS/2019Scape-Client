@@ -27,13 +27,13 @@ public class ClassCheck {
 
 	@ObfuscatedName("abf.n(I)Z")
 	public static boolean method14703() {
-		ClassCheckNode var0 = (ClassCheckNode) field9148.method14191();
+		ClassCheckNode var0 = (ClassCheckNode) field9148.peekFront();
 		return var0 != null;
 	}
 
 	@ObfuscatedName("jf.m(Lase;I)V")
 	public static void method4651(PacketBit arg0) {
-		ClassCheckNode var1 = (ClassCheckNode) field9148.method14191();
+		ClassCheckNode var1 = (ClassCheckNode) field9148.peekFront();
 		if (var1 == null) {
 			return;
 		}
@@ -114,7 +114,7 @@ public class ClassCheck {
 			}
 		}
 		arg0.addcrc(var2);
-		var1.method8440();
+		var1.remove();
 	}
 
 	@ObfuscatedName("yl.k(Lalw;IB)V")
@@ -204,7 +204,7 @@ public class ClassCheck {
 				var2.field11637[var3] = -5;
 			}
 		}
-		field9148.method14153(var2);
+		field9148.pushBack(var2);
 	}
 
 	@ObfuscatedName("abm.f(Ljava/lang/String;I)Ljava/lang/Class;")

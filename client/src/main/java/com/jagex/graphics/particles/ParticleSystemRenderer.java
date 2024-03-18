@@ -72,17 +72,17 @@ public class ParticleSystemRenderer {
 
 	@ObfuscatedName("vh.e(II)I")
 	public static int method9543(int arg0) {
-		IntWrapper var1 = (IntWrapper) field7799.method14495((long) arg0);
+		IntWrapper var1 = (IntWrapper) field7799.getNode((long) arg0);
 		if (var1 == null) {
 			ParticleEffectorType var2 = field12041.method5973(arg0);
 			if (var2 == null || var2.field3549 != 2) {
 				return -1;
 			}
 			var1 = new IntWrapper(field7798);
-			field7799.method14501(var1, (long) arg0);
+			field7799.pushNode(var1, (long) arg0);
 			field7795[++field7798 - 1] = var2;
 		}
-		return var1.field11442;
+		return var1.intValue;
 	}
 
 	@ObfuscatedName("ah.n(Lnb;Lnp;I)V")

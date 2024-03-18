@@ -218,16 +218,16 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			return null;
 		} else {
 			byte[] var3 = var2.method19444();
-			var2.method8440();
+			var2.remove();
 			return var3;
 		}
 	}
 
 	@ObfuscatedName("aij.q(IIB)Lask;")
 	public Js5Request fetchgroup_inner(int arg0, int arg1) {
-		Js5Request var3 = (Js5Request) this.field10731.method14495((long) arg0);
+		Js5Request var3 = (Js5Request) this.field10731.getNode((long) arg0);
 		if (var3 != null && arg1 == 0 && !var3.field12342 && var3.field12344) {
-			var3.method8440();
+			var3.remove();
 			var3 = null;
 		}
 		if (var3 == null) {
@@ -267,7 +267,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			} else {
 				throw new RuntimeException();
 			}
-			this.field10731.method14501(var3, (long) arg0);
+			this.field10731.pushNode(var3, (long) arg0);
 		}
 		if (var3.field12344) {
 			return null;
@@ -277,7 +277,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			try {
 				if (var4 == null || var4.length <= 2) {
 					if (this.field10721 != null) {
-						var3.method8440();
+						var3.remove();
 						return null;
 					}
 					throw new RuntimeException();
@@ -303,17 +303,17 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 			} catch (RuntimeException var21) {
 				this.field10720.method7015(this.field10733, arg0);
-				var3.method8440();
+				var3.remove();
 				if (var3.field12342) {
 					if (this.field10721 == null) {
 						if (!this.field10720.method7012()) {
 							Js5NetRequest var19 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
-							this.field10731.method14501(var19, (long) arg0);
+							this.field10731.pushNode(var19, (long) arg0);
 						}
 					} else if (!this.field10721.method7048()) {
 						Js5HttpRequest var18 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.index.field4393[arg0], this.index.groupVersions[arg0]);
 						if (var18 != null) {
-							this.field10731.method14501(var18, (long) arg0);
+							this.field10731.pushNode(var18, (long) arg0);
 						}
 					}
 				}
@@ -329,7 +329,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 			}
 			if (!var3.field12342) {
-				var3.method8440();
+				var3.remove();
 			}
 			return var3;
 		}
@@ -363,22 +363,22 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				this.field10745[arg0] = 1;
 			}
 			if (!var3.field12342) {
-				var3.method8440();
+				var3.remove();
 			}
 			return var3;
 		} catch (Exception var20) {
 			this.field10745[arg0] = -1;
-			var3.method8440();
+			var3.remove();
 			if (var3.field12342) {
 				if (this.field10721 == null) {
 					if (!this.field10720.method7012()) {
 						Js5NetRequest var12 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
-						this.field10731.method14501(var12, (long) arg0);
+						this.field10731.pushNode(var12, (long) arg0);
 					}
 				} else if (!this.field10721.method7048()) {
 					Js5HttpRequest var11 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.index.field4393[arg0], this.index.groupVersions[arg0]);
 					if (var11 != null) {
-						this.field10731.method14501(var11, (long) arg0);
+						this.field10731.pushNode(var11, (long) arg0);
 					}
 				}
 			}
@@ -391,10 +391,10 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.field10735 == null || this.fetchindex() == null) {
 			return;
 		}
-		for (Node var1 = this.field10741.method14191(); var1 != null; var1 = this.field10741.method14161()) {
-			int var2 = (int) var1.field6760;
+		for (Node var1 = this.field10741.peekFront(); var1 != null; var1 = this.field10741.prev()) {
+			int var2 = (int) var1.nodeId;
 			if (var2 < 0 || var2 >= this.index.capacity || this.index.groupSizes[var2] == 0) {
-				var1.method8440();
+				var1.remove();
 			} else {
 				if (this.field10745[var2] == 0) {
 					this.fetchgroup_inner(var2, 1);
@@ -403,7 +403,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 					this.fetchgroup_inner(var2, 2);
 				}
 				if (this.field10745[var2] == 1) {
-					var1.method8440();
+					var1.remove();
 				}
 			}
 		}
@@ -417,15 +417,15 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 			if (this.field10738) {
 				boolean var1 = true;
-				for (Node var2 = this.field10735.method14191(); var2 != null; var2 = this.field10735.method14161()) {
-					int var3 = (int) var2.field6760;
+				for (Node var2 = this.field10735.peekFront(); var2 != null; var2 = this.field10735.prev()) {
+					int var3 = (int) var2.nodeId;
 					if (this.field10745[var3] == 0) {
 						this.fetchgroup_inner(var3, 1);
 					}
 					if (this.field10745[var3] == 0) {
 						var1 = false;
 					} else {
-						var2.method8440();
+						var2.remove();
 					}
 				}
 				while (this.field10739 < this.index.groupSizes.length) {
@@ -441,8 +441,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						}
 						if (this.field10745[this.field10739] == 0) {
 							Node var4 = new Node();
-							var4.field6760 = (long) (this.field10739);
-							this.field10735.method14153(var4);
+							var4.nodeId = (long) (this.field10739);
+							this.field10735.pushBack(var4);
 							var1 = false;
 						}
 						this.field10739++;
@@ -454,13 +454,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 			} else if (this.field10725) {
 				boolean var5 = true;
-				for (Node var6 = this.field10735.method14191(); var6 != null; var6 = this.field10735.method14161()) {
-					int var7 = (int) var6.field6760;
+				for (Node var6 = this.field10735.peekFront(); var6 != null; var6 = this.field10735.prev()) {
+					int var7 = (int) var6.nodeId;
 					if (this.field10745[var7] != 1) {
 						this.fetchgroup_inner(var7, 2);
 					}
 					if (this.field10745[var7] == 1) {
-						var6.method8440();
+						var6.remove();
 					} else {
 						var5 = false;
 					}
@@ -478,8 +478,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						}
 						if (this.field10745[this.field10739] != 1) {
 							Node var8 = new Node();
-							var8.field6760 = (long) (this.field10739);
-							this.field10735.method14153(var8);
+							var8.nodeId = (long) (this.field10739);
+							this.field10735.pushBack(var8);
 							var5 = false;
 						}
 						this.field10739++;
@@ -494,13 +494,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 		}
         if (this.field10748 && MonotonicTime.get() >= this.field10734) {
-            for (Js5Request var9 = (Js5Request) this.field10731.method14500(); var9 != null; var9 = (Js5Request) this.field10731.method14502()) {
+            for (Js5Request var9 = (Js5Request) this.field10731.peekFront(); var9 != null; var9 = (Js5Request) this.field10731.prev()) {
                 if (!var9.field12344) {
                     if (var9.field12343) {
                         if (!var9.field12342) {
                             throw new RuntimeException();
                         }
-                        var9.method8440();
+                        var9.remove();
                     } else {
                         var9.field12343 = true;
                     }
@@ -527,8 +527,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.index == null) {
 			return 0;
 		} else if (this.field10738) {
-			Node var1 = this.field10735.method14191();
-			return var1 == null ? 0 : (int) var1.field6760;
+			Node var1 = this.field10735.peekFront();
+			return var1 == null ? 0 : (int) var1.nodeId;
 		} else {
 			return this.index.field4387;
 		}
@@ -551,19 +551,19 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.field10723 == null) {
 			return;
 		}
-		for (Node var2 = this.field10741.method14191(); var2 != null; var2 = this.field10741.method14161()) {
-			if (var2.field6760 == (long) arg0) {
+		for (Node var2 = this.field10741.peekFront(); var2 != null; var2 = this.field10741.prev()) {
+			if (var2.nodeId == (long) arg0) {
 				return;
 			}
 		}
 		Node var3 = new Node();
-		var3.field6760 = arg0;
-		this.field10741.method14153(var3);
+		var3.nodeId = arg0;
+		this.field10741.pushBack(var3);
 	}
 
 	@ObfuscatedName("aij.k(II)I")
 	public int getPercentageComplete(int arg0) {
-		Js5Request var2 = (Js5Request) this.field10731.method14495((long) arg0);
+		Js5Request var2 = (Js5Request) this.field10731.getNode((long) arg0);
 		return var2 == null ? 0 : var2.method19446();
 	}
 

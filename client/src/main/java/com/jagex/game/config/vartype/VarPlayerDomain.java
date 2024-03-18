@@ -24,15 +24,15 @@ public final class VarPlayerDomain implements VarDomain {
 	@ObfuscatedName("wu.i(ZI)I")
 	public int method9623(boolean arg0) {
 		long var2 = MonotonicTime.get();
-		for (LongNode var4 = (LongNode) (arg0 ? this.field7610.method14500() : this.field7610.method14502()); var4 != null; var4 = (LongNode) this.field7610.method14502()) {
+        for (LongNode var4 = (LongNode) (arg0 ? this.field7610.peekFront() : this.field7610.prev()); var4 != null; var4 = (LongNode) this.field7610.prev()) {
 			if ((var4.field11441 & 0x3FFFFFFFFFFFFFFFL) < var2) {
 				if ((var4.field11441 & 0x4000000000000000L) != 0L) {
-					int var5 = (int) var4.field6760;
+					int var5 = (int) var4.nodeId;
 					this.field7609[var5] = this.field7604[var5];
-					var4.method8440();
+					var4.remove();
 					return var5;
 				}
-				var4.method8440();
+				var4.remove();
 			}
 		}
 		return -1;
@@ -58,10 +58,10 @@ public final class VarPlayerDomain implements VarDomain {
 	@ObfuscatedName("wu.e(Lec;II)V")
 	public void setVarValueInt(VarType arg0, int arg1) {
 		this.field7609[arg0.id] = arg1;
-		LongNode var3 = (LongNode) this.field7610.method14495((long) arg0.id);
+		LongNode var3 = (LongNode) this.field7610.getNode((long) arg0.id);
 		if (var3 == null) {
 			LongNode var4 = new LongNode(MonotonicTime.get() + 500L);
-			this.field7610.method14501(var4, (long) arg0.id);
+            this.field7610.pushNode(var4, (long) arg0.id);
 		} else {
 			var3.field11441 = MonotonicTime.get() + 500L;
 		}
@@ -70,10 +70,10 @@ public final class VarPlayerDomain implements VarDomain {
 	@ObfuscatedName("wu.t(Lec;IB)V")
 	public void setVarValueIntFromServer(VarType arg0, int arg1) {
 		this.field7604[arg0.id] = arg1;
-		LongNode var3 = (LongNode) this.field7610.method14495((long) arg0.id);
+		LongNode var3 = (LongNode) this.field7610.getNode((long) arg0.id);
 		if (var3 == null) {
 			LongNode var4 = new LongNode(4611686018427387905L);
-			this.field7610.method14501(var4, (long) arg0.id);
+			this.field7610.pushNode(var4, (long) arg0.id);
 		} else if (var3.field11441 != 4611686018427387905L) {
 			var3.field11441 = MonotonicTime.get() + 500L | 0x4000000000000000L;
 		}

@@ -6,50 +6,50 @@ import deob.ObfuscatedName;
 public class Pair {
 
 	@ObfuscatedName("abg.e")
-	public Object field8737;
+	public Object first;
 
 	@ObfuscatedName("abg.n")
-	public Object field8738;
+	public Object second;
 
-	public Pair(Object arg0, Object arg1) {
-		this.field8737 = arg0;
-		this.field8738 = arg1;
+	public Pair(Object first, Object second) {
+		this.first = first;
+		this.second = second;
 	}
 
 	public String toString() {
-		return this.field8737 + ", " + this.field8738;
+		return this.first + ", " + this.second;
 	}
 
-	public boolean equals(Object arg0) {
-		if (arg0 == null || !(arg0 instanceof Pair)) {
+	public boolean equals(Object other) {
+		if (other == null || !(other instanceof Pair)) {
 			return false;
 		}
-		Pair var2 = (Pair) arg0;
-		if (this.field8737 == null) {
-			if (var2.field8737 != null) {
+		Pair pair = (Pair) other;
+		if (this.first == null) {
+			if (pair.first != null) {
 				return false;
 			}
-		} else if (!this.field8737.equals(var2.field8737)) {
+		} else if (!this.first.equals(pair.first)) {
 			return false;
 		}
-		if (this.field8738 == null) {
-			if (var2.field8738 != null) {
+		if (this.second == null) {
+			if (pair.second != null) {
 				return false;
 			}
-		} else if (!this.field8738.equals(var2.field8738)) {
+		} else if (!this.second.equals(pair.second)) {
 			return false;
 		}
 		return true;
 	}
 
 	public int hashCode() {
-		int var1 = 0;
-		if (this.field8737 != null) {
-			var1 += this.field8737.hashCode();
+		int hashCode = 0;
+		if (this.first != null) {
+			hashCode += this.first.hashCode();
 		}
-		if (this.field8738 != null) {
-			var1 += this.field8738.hashCode() * 31;
+		if (this.second != null) {
+			hashCode += this.second.hashCode() * 31;
 		}
-		return var1;
+		return hashCode;
 	}
 }

@@ -6,18 +6,18 @@ import deob.ObfuscatedName;
 public class Link {
 
 	@ObfuscatedName("tc.e")
-	public Link field6759;
+	public Link prev;
 
 	@ObfuscatedName("tc.n")
-	public Link field6758;
+	public Link next;
 
 	@ObfuscatedName("tc.e(I)V")
-	public void method8433() {
-		if (this.field6758 != null) {
-			this.field6758.field6759 = this.field6759;
-			this.field6759.field6758 = this.field6758;
-			this.field6759 = null;
-			this.field6758 = null;
+	public void unlink() {
+		if (this.next != null) {
+			this.next.prev = this.prev;
+			this.prev.next = this.next;
+			this.prev = null;
+			this.next = null;
 		}
 	}
 }

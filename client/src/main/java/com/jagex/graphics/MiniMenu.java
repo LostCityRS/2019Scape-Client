@@ -269,30 +269,30 @@ public class MiniMenu {
 		if (!field562) {
 			field540 = minLength != -1 && field546 >= minLength || (field564 ? 26 : 22) + field546 * field536 > GameShell.canvasHei;
 		}
-		field538.method14152();
-		field552.method14152();
-		for (MinimenuEntry var1 = (MinimenuEntry) field542.method14191(); var1 != null; var1 = (MinimenuEntry) field542.method14161()) {
+		field538.clearAll();
+		field552.clearAll();
+		for (MinimenuEntry var1 = (MinimenuEntry) field542.peekFront(); var1 != null; var1 = (MinimenuEntry) field542.prev()) {
 			int var2 = var1.field12307;
 			if (var2 < 1000) {
-				var1.method8440();
+				var1.remove();
 				if (var2 == 59 || var2 == 2 || var2 == 8 || var2 == 17 || var2 == 15 || var2 == 16 || var2 == 58) {
-					field552.method14153(var1);
+					field552.pushBack(var1);
 				} else {
-					field538.method14153(var1);
+					field538.pushBack(var1);
 				}
 			}
 		}
-		field538.method14207(field542);
-		field552.method14207(field542);
+		field538.merge(field542);
+		field552.merge(field542);
 		if (field546 > 1) {
 			if (method7893() && field546 > 2) {
-				field11913 = (MinimenuEntry) field542.field8482.field6762.field6762;
+				field11913 = (MinimenuEntry) field542.head.next.next;
 			} else {
-				field11913 = (MinimenuEntry) field542.field8482.field6762;
+				field11913 = (MinimenuEntry) field542.head.next;
 			}
-			field7100 = (MinimenuEntry) field542.field8482.field6762;
+			field7100 = (MinimenuEntry) field542.head.next;
 			if (field546 > 2) {
-				field1846 = (MinimenuEntry) field7100.field6762;
+				field1846 = (MinimenuEntry) field7100.next;
 			} else {
 				field1846 = null;
 			}
@@ -301,7 +301,7 @@ public class MiniMenu {
 			field7100 = null;
 			field1846 = null;
 		}
-		MouseEvent var3 = (MouseEvent) Client.field10816.method14191();
+		MouseEvent var3 = (MouseEvent) Client.field10816.peekFront();
 		int var4;
 		int var5;
 		if (var3 == null) {
@@ -380,7 +380,7 @@ public class MiniMenu {
 					if (var28 != -1) {
 						int var33 = 0;
 						DualIterableQueueIterator var34 = new DualIterableQueueIterator(field550);
-						for (MinimenuSubmenu var35 = (MinimenuSubmenu) var34.method14301(); var35 != null; var35 = (MinimenuSubmenu) var34.next()) {
+						for (MinimenuSubmenu var35 = (MinimenuSubmenu) var34.nextNode(); var35 != null; var35 = (MinimenuSubmenu) var34.next()) {
 							if (var28 == var33) {
 								if (var35.field12310 > 1) {
 									method4629(var35, var29);
@@ -410,7 +410,7 @@ public class MiniMenu {
 			if (var6 != -1) {
 				int var10 = 0;
 				DualIterableQueueIterator var11 = new DualIterableQueueIterator(field541.field12312);
-				for (MinimenuEntry var12 = (MinimenuEntry) var11.method14301(); var12 != null; var12 = (MinimenuEntry) var11.next()) {
+				for (MinimenuEntry var12 = (MinimenuEntry) var11.nextNode(); var12 != null; var12 = (MinimenuEntry) var11.next()) {
 					if (var6 == var10) {
 						method923(var12, var4, var5, true);
 						break;
@@ -440,9 +440,9 @@ public class MiniMenu {
 				if (var20 != -1) {
 					int var24 = 0;
 					DualIterableQueueIterator var25 = new DualIterableQueueIterator(field550);
-					for (MinimenuSubmenu var26 = (MinimenuSubmenu) var25.method14301(); var26 != null; var26 = (MinimenuSubmenu) var25.next()) {
+					for (MinimenuSubmenu var26 = (MinimenuSubmenu) var25.nextNode(); var26 != null; var26 = (MinimenuSubmenu) var25.next()) {
 						if (var20 == var24) {
-							method923((MinimenuEntry) var26.field12312.field8497.field11439, var4, var5, true);
+							method923((MinimenuEntry) var26.field12312.head.secondaryPrev, var4, var5, true);
 							method6031();
 							break;
 						}
@@ -467,7 +467,7 @@ public class MiniMenu {
 				if (var13 != -1) {
 					int var17 = 0;
 					IterableQueueIterator var18 = new IterableQueueIterator(field542);
-					for (MinimenuEntry var19 = (MinimenuEntry) var18.method14294(); var19 != null; var19 = (MinimenuEntry) var18.next()) {
+					for (MinimenuEntry var19 = (MinimenuEntry) var18.nextNode(); var19 != null; var19 = (MinimenuEntry) var18.next()) {
 						if (var13 == var17) {
 							method923(var19, var4, var5, true);
 							break;
@@ -517,10 +517,10 @@ public class MiniMenu {
 		int var3 = var2.method14532(LocalisedText.CHOOSEOPTION.forLang(Client.language));
 		int var6;
 		if (field540) {
-			for (MinimenuSubmenu var7 = (MinimenuSubmenu) field550.method14317(); var7 != null; var7 = (MinimenuSubmenu) field550.method14324()) {
+			for (MinimenuSubmenu var7 = (MinimenuSubmenu) field550.peekFront(); var7 != null; var7 = (MinimenuSubmenu) field550.prev()) {
 				int var8;
 				if (var7.field12310 == 1) {
-					var8 = method4610((MinimenuEntry) var7.field12312.field8497.field11439, var2);
+					var8 = method4610((MinimenuEntry) var7.field12312.head.secondaryPrev, var2);
 				} else {
 					var8 = method16910(var7, var2);
 				}
@@ -532,7 +532,7 @@ public class MiniMenu {
 			var6 = field543 * field536 + 21;
 			field2576 = (field564 ? 26 : 22) + field543 * field536;
 		} else {
-			for (MinimenuEntry var4 = (MinimenuEntry) field542.method14191(); var4 != null; var4 = (MinimenuEntry) field542.method14161()) {
+			for (MinimenuEntry var4 = (MinimenuEntry) field542.peekFront(); var4 != null; var4 = (MinimenuEntry) field542.prev()) {
 				int var5 = method4610(var4, var2);
 				if (var5 > var3) {
 					var3 = var5;
@@ -571,7 +571,7 @@ public class MiniMenu {
 		}
 		FontMetrics var2 = method16902();
 		int var3 = 0;
-		for (MinimenuEntry var4 = (MinimenuEntry) arg0.field12312.method14317(); var4 != null; var4 = (MinimenuEntry) arg0.field12312.method14324()) {
+		for (MinimenuEntry var4 = (MinimenuEntry) arg0.field12312.peekFront(); var4 != null; var4 = (MinimenuEntry) arg0.field12312.prev()) {
 			int var5 = method4610(var4, var2);
 			if (var5 > var3) {
 				var3 = var5;
@@ -646,7 +646,7 @@ public class MiniMenu {
 		if (arg0 == null) {
 			return;
 		}
-		field542.method14153(arg0);
+		field542.pushBack(arg0);
 		field546++;
 		Object var1 = null;
 		MinimenuSubmenu var4;
@@ -655,7 +655,7 @@ public class MiniMenu {
 			field543++;
 		} else {
 			long var2 = arg0.field12305;
-			for (var4 = (MinimenuSubmenu) field549.method14495(var2); var4 != null && !var4.field12311.equals(arg0.field12301); var4 = (MinimenuSubmenu) field549.method14496()) {
+			for (var4 = (MinimenuSubmenu) field549.getNode(var2); var4 != null && !var4.field12311.equals(arg0.field12301); var4 = (MinimenuSubmenu) field549.next()) {
 			}
 			if (var4 == null) {
 				var4 = (MinimenuSubmenu) field534.get(var2);
@@ -665,7 +665,7 @@ public class MiniMenu {
 				if (var4 == null) {
 					var4 = new MinimenuSubmenu(arg0.field12301);
 				}
-				field549.method14501(var4, var2);
+				field549.pushNode(var4, var2);
 				field543++;
 			}
 		}
@@ -677,8 +677,8 @@ public class MiniMenu {
 	@ObfuscatedName("mj.y(Larn;I)V")
 	public static void method5924(MinimenuSubmenu arg0) {
 		boolean var1 = false;
-		arg0.method17806();
-		for (MinimenuSubmenu var2 = (MinimenuSubmenu) field550.method14317(); var2 != null; var2 = (MinimenuSubmenu) field550.method14324()) {
+		arg0.secondaryRemove();
+		for (MinimenuSubmenu var2 = (MinimenuSubmenu) field550.peekFront(); var2 != null; var2 = (MinimenuSubmenu) field550.prev()) {
 			if (method18853(arg0.method19375(), var2.method19375())) {
 				DualIterableQueue.method10144(arg0, var2);
 				var1 = true;
@@ -686,7 +686,7 @@ public class MiniMenu {
 			}
 		}
 		if (!var1) {
-			field550.method14339(arg0);
+			field550.pushBack(arg0);
 		}
 	}
 
@@ -851,7 +851,7 @@ public class MiniMenu {
 										int var38 = (int) var37.field4308 - (var35.method16546() - 1 << 8);
 										int var39 = (int) var37.field4313 - (var35.method16546() - 1 << 8);
 										for (int var40 = 0; var40 < Client.field11011; var40++) {
-											ObjectWrapper var41 = (ObjectWrapper) Client.field10838.method14495((long) Client.field11036[var40]);
+											ObjectWrapper var41 = (ObjectWrapper) Client.field10838.getNode((long) Client.field11036[var40]);
 											if (var41 != null) {
 												NpcEntity var42 = (NpcEntity) var41.field11436;
 												if (var42.field10403 != Client.currentclock && var42.field10452) {
@@ -898,7 +898,7 @@ public class MiniMenu {
 									int var55 = (int) var54.field4308 - (var53.npcType.size - 1 << 8);
 									int var56 = (int) var54.field4313 - (var53.npcType.size - 1 << 8);
 									for (int var57 = 0; var57 < Client.field11011; var57++) {
-										ObjectWrapper var58 = (ObjectWrapper) Client.field10838.method14495((long) Client.field11036[var57]);
+										ObjectWrapper var58 = (ObjectWrapper) Client.field10838.getNode((long) Client.field11036[var57]);
 										if (var58 != null) {
 											NpcEntity var59 = (NpcEntity) var58.field11436;
 											if (var59.field10403 != Client.currentclock && var53 != var59 && var59.field10452) {
@@ -936,10 +936,10 @@ public class MiniMenu {
 							if (var29.field6978 instanceof ObjStackEntity) {
 								int var70 = var3.x + var32;
 								int var71 = var3.z + var33;
-								ObjStackList var72 = (ObjStackList) Client.field10964.method14495((long) (var29.field6978.field11717 << 28 | var71 << 14 | var70));
+								ObjStackList var72 = (ObjStackList) Client.field10964.getNode((long) (var29.field6978.field11717 << 28 | var71 << 14 | var70));
 								if (var72 != null) {
 									int var73 = 0;
-									Obj var74 = (Obj) var72.field11263.method14159();
+									Obj var74 = (Obj) var72.field11263.peekBack();
 									while (var74 != null) {
 										ObjType var75 = (ObjType) Client.objTypeList.list(var74.field11261);
 										int var76;
@@ -988,7 +988,7 @@ public class MiniMenu {
 												}
 											}
 										}
-										var74 = (Obj) var72.field11263.method14170();
+										var74 = (Obj) var72.field11263.next();
 										var73++;
 									}
 								}
@@ -1061,22 +1061,22 @@ public class MiniMenu {
 		if (field562) {
 			return;
 		}
-		arg0.method8440();
+		arg0.remove();
 		field546--;
 		if (!arg0.field12306) {
 			long var1 = arg0.field12305;
 			MinimenuSubmenu var3;
-			for (var3 = (MinimenuSubmenu) field549.method14495(var1); var3 != null && !var3.field12311.equals(arg0.field12301); var3 = (MinimenuSubmenu) field549.method14496()) {
+			for (var3 = (MinimenuSubmenu) field549.getNode(var1); var3 != null && !var3.field12311.equals(arg0.field12301); var3 = (MinimenuSubmenu) field549.next()) {
 			}
 			if (var3 != null && var3.method19374(arg0)) {
 				method5924(var3);
 			}
 			return;
 		}
-		for (MinimenuSubmenu var4 = (MinimenuSubmenu) field550.method14317(); var4 != null; var4 = (MinimenuSubmenu) field550.method14324()) {
+		for (MinimenuSubmenu var4 = (MinimenuSubmenu) field550.peekFront(); var4 != null; var4 = (MinimenuSubmenu) field550.prev()) {
 			if (var4.field12311.equals(arg0.field12301)) {
 				boolean var5 = false;
-				for (MinimenuEntry var6 = (MinimenuEntry) var4.field12312.method14317(); var6 != null; var6 = (MinimenuEntry) var4.field12312.method14324()) {
+				for (MinimenuEntry var6 = (MinimenuEntry) var4.field12312.peekFront(); var6 != null; var6 = (MinimenuEntry) var4.field12312.prev()) {
 					if (arg0 == var6) {
 						if (var4.method19374(arg0)) {
 							method5924(var4);
@@ -1094,7 +1094,7 @@ public class MiniMenu {
 
 	@ObfuscatedName("acz.i(IB)V")
 	public static void method15023(int arg0) {
-		for (MinimenuEntry var1 = (MinimenuEntry) field542.method14191(); var1 != null; var1 = (MinimenuEntry) field542.method14161()) {
+		for (MinimenuEntry var1 = (MinimenuEntry) field542.peekFront(); var1 != null; var1 = (MinimenuEntry) field542.prev()) {
 			if (method13985(var1.field12307) && var1.field12302 >> 16 == arg0) {
 				method9773(var1);
 			}
@@ -1103,7 +1103,7 @@ public class MiniMenu {
 
 	@ObfuscatedName("tb.j(IB)Z")
 	public static boolean method8494(int arg0) {
-		for (MinimenuEntry var1 = (MinimenuEntry) field542.method14191(); var1 != null; var1 = (MinimenuEntry) field542.method14161()) {
+		for (MinimenuEntry var1 = (MinimenuEntry) field542.peekFront(); var1 != null; var1 = (MinimenuEntry) field542.prev()) {
 			if (method16450(var1.field12307) && var1.field12300 == (long) arg0) {
 				return true;
 			}
@@ -1127,35 +1127,35 @@ public class MiniMenu {
 
 	@ObfuscatedName("fi.ag(B)V")
 	public static void method3074() {
-		for (MinimenuSubmenu var0 = (MinimenuSubmenu) field550.method14317(); var0 != null; var0 = (MinimenuSubmenu) field550.method14324()) {
+		for (MinimenuSubmenu var0 = (MinimenuSubmenu) field550.peekFront(); var0 != null; var0 = (MinimenuSubmenu) field550.prev()) {
 			if (var0.field12310 > 1) {
 				var0.field12310 = 0;
-				field534.put(var0, ((MinimenuEntry) var0.field12312.field8497.field11439).field12305);
-				var0.field12312.method14316();
+				field534.put(var0, ((MinimenuEntry) var0.field12312.head.secondaryPrev).field12305);
+				var0.field12312.clearAll();
 			}
 		}
 		field543 = 0;
 		field546 = 0;
-		field542.method14152();
-		field549.method14499();
-		field550.method14316();
+		field542.clearAll();
+		field549.clear();
+		field550.clearAll();
 		method2771(field8348);
 	}
 
 	@ObfuscatedName("ki.ah(B)V")
 	public static void method5175() {
-		for (MinimenuSubmenu var0 = (MinimenuSubmenu) field550.method14317(); var0 != null; var0 = (MinimenuSubmenu) field550.method14324()) {
+		for (MinimenuSubmenu var0 = (MinimenuSubmenu) field550.peekFront(); var0 != null; var0 = (MinimenuSubmenu) field550.prev()) {
 			if (var0.field12310 > 1) {
 				var0.field12310 = 0;
-				field534.put(var0, ((MinimenuEntry) var0.field12312.field8497.field11439).field12305);
-				var0.field12312.method14316();
+				field534.put(var0, ((MinimenuEntry) var0.field12312.head.secondaryPrev).field12305);
+				var0.field12312.clearAll();
 			}
 		}
 		field543 = 0;
 		field546 = 0;
-		field542.method14152();
-		field549.method14499();
-		field550.method14316();
+		field542.clearAll();
+		field549.clear();
+		field550.clearAll();
 		field562 = false;
 	}
 
@@ -1217,9 +1217,9 @@ public class MiniMenu {
 						if (var10 != -1) {
 							int var14 = 0;
 							DualIterableQueueIterator var15 = new DualIterableQueueIterator(field550);
-							for (MinimenuSubmenu var16 = (MinimenuSubmenu) var15.method14301(); var16 != null; var16 = (MinimenuSubmenu) var15.next()) {
+							for (MinimenuSubmenu var16 = (MinimenuSubmenu) var15.nextNode(); var16 != null; var16 = (MinimenuSubmenu) var15.next()) {
 								if (var14++ == var10) {
-									return ((MinimenuEntry) var16.field12312.field8497.field11439).field12298;
+									return ((MinimenuEntry) var16.field12312.head.secondaryPrev).field12298;
 								}
 							}
 						}
@@ -1241,7 +1241,7 @@ public class MiniMenu {
 						if (var17 != -1) {
 							int var21 = 0;
 							DualIterableQueueIterator var22 = new DualIterableQueueIterator(field541.field12312);
-							for (MinimenuEntry var23 = (MinimenuEntry) var22.method14301(); var23 != null; var23 = (MinimenuEntry) var22.next()) {
+							for (MinimenuEntry var23 = (MinimenuEntry) var22.nextNode(); var23 != null; var23 = (MinimenuEntry) var22.next()) {
 								if (var21++ == var17) {
 									return var23.field12298;
 								}
@@ -1266,7 +1266,7 @@ public class MiniMenu {
 					if (var3 != -1) {
 						int var7 = 0;
 						IterableQueueIterator var8 = new IterableQueueIterator(field542);
-						for (MinimenuEntry var9 = (MinimenuEntry) var8.method14294(); var9 != null; var9 = (MinimenuEntry) var8.next()) {
+						for (MinimenuEntry var9 = (MinimenuEntry) var8.nextNode(); var9 != null; var9 = (MinimenuEntry) var8.next()) {
 							if (var7++ == var3) {
 								return var9.field12298;
 							}
@@ -1296,7 +1296,7 @@ public class MiniMenu {
 		}
 		Component var4 = Component.field11725[var2].field2151[var3];
 		if (arg1 == -1 && var4.field2184 == 0) {
-			for (MinimenuEntry var5 = (MinimenuEntry) field542.method14191(); var5 != null; var5 = (MinimenuEntry) field542.method14161()) {
+			for (MinimenuEntry var5 = (MinimenuEntry) field542.peekFront(); var5 != null; var5 = (MinimenuEntry) field542.prev()) {
 				if (var5.field12307 == 58 || var5.field12307 == 1007 || var5.field12307 == 25 || var5.field12307 == 57 || var5.field12307 == 30) {
 					for (Component var6 = Component.method10202(var5.field12302); var6 != null; var6 = Client.method6000(Component.field11725[var6.field2158 >> 16], var6)) {
 						if (var4.field2158 == var6.field2158) {
@@ -1306,7 +1306,7 @@ public class MiniMenu {
 				}
 			}
 		} else {
-			for (MinimenuEntry var7 = (MinimenuEntry) field542.method14191(); var7 != null; var7 = (MinimenuEntry) field542.method14161()) {
+			for (MinimenuEntry var7 = (MinimenuEntry) field542.peekFront(); var7 != null; var7 = (MinimenuEntry) field542.prev()) {
 				if (var7.field12304 == arg1 && var4.field2158 == var7.field12302 && (var7.field12307 == 58 || var7.field12307 == 1007 || var7.field12307 == 25 || var7.field12307 == 57 || var7.field12307 == 30)) {
 					return true;
 				}
@@ -1453,7 +1453,7 @@ public class MiniMenu {
 		} else if (arg0.field12303 != -1) {
 			var1 = ((ObjType) Client.objTypeList.list(arg0.field12303)).field8691;
 		} else if (method16450(arg0.field12307)) {
-			ObjectWrapper var2 = (ObjectWrapper) Client.field10838.method14495((long) arg0.field12300);
+			ObjectWrapper var2 = (ObjectWrapper) Client.field10838.getNode((long) arg0.field12300);
 			if (var2 != null) {
 				NpcEntity var3 = (NpcEntity) var2.field11436;
 				NPCType var4 = var3.npcType;
@@ -1510,7 +1510,7 @@ public class MiniMenu {
 		int var3 = Client.field9182.method9092();
 		if (!field540) {
 			int var4 = 0;
-			for (MinimenuEntry var5 = (MinimenuEntry) field542.method14191(); var5 != null; var5 = (MinimenuEntry) field542.method14161()) {
+			for (MinimenuEntry var5 = (MinimenuEntry) field542.peekFront(); var5 != null; var5 = (MinimenuEntry) field542.prev()) {
 				int var6 = field536 * (field546 - 1 - var4) + field2960 + 31;
 				method9284(var2, var3, field11738, field2960, field1289, field2576, var6, var5, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 				var4++;
@@ -1518,10 +1518,10 @@ public class MiniMenu {
 			return;
 		}
 		int var7 = 0;
-		for (MinimenuSubmenu var8 = (MinimenuSubmenu) field550.method14317(); var8 != null; var8 = (MinimenuSubmenu) field550.method14324()) {
+		for (MinimenuSubmenu var8 = (MinimenuSubmenu) field550.peekFront(); var8 != null; var8 = (MinimenuSubmenu) field550.prev()) {
 			int var9 = field536 * var7 + field2960 + 31;
 			if (var8.field12310 == 1) {
-				method9284(var2, var3, field11738, field2960, field1289, field2576, var9, (MinimenuEntry) var8.field12312.field8497.field11439, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
+				method9284(var2, var3, field11738, field2960, field1289, field2576, var9, (MinimenuEntry) var8.field12312.head.secondaryPrev, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 			} else {
 				method16748(var2, var3, field11738, field2960, field1289, field2576, var9, var8, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 			}
@@ -1533,7 +1533,7 @@ public class MiniMenu {
 		method4064(arg0, field1981, field2433, field554, field3005, var1, -16777216);
 		DefaultSprites.field10355.method2681(field541.field12311, field1981 + 3, field2433 + 14, var1, -1);
 		int var10 = 0;
-		for (MinimenuEntry var11 = (MinimenuEntry) field541.field12312.method14317(); var11 != null; var11 = (MinimenuEntry) field541.field12312.method14324()) {
+		for (MinimenuEntry var11 = (MinimenuEntry) field541.field12312.peekFront(); var11 != null; var11 = (MinimenuEntry) field541.field12312.prev()) {
 			int var12 = field536 * var10 + field2433 + 31;
 			method9284(var2, var3, field1981, field2433, field554, field3005, var12, var11, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
 			var10++;
@@ -1637,9 +1637,9 @@ public class MiniMenu {
 		int var11 = Client.field9182.method9092();
 		if (field540) {
 			int var15 = 0;
-			for (MinimenuSubmenu var16 = (MinimenuSubmenu) field550.method14317(); var16 != null; var16 = (MinimenuSubmenu) field550.method14324()) {
+			for (MinimenuSubmenu var16 = (MinimenuSubmenu) field550.peekFront(); var16 != null; var16 = (MinimenuSubmenu) field550.prev()) {
 				int var17 = field536 * var15 + var8.field8562 + var2 + var5 + 1;
-				if (var10 > field11738 && var10 < field1289 + field11738 && var11 > var17 - var8.field8562 - 1 && var11 < var8.field8569 + var17 && (var16.field12310 > 1 || ((MinimenuEntry) var16.field12312.field8497.field11439).field12308)) {
+				if (var10 > field11738 && var10 < field1289 + field11738 && var11 > var17 - var8.field8562 - 1 && var11 < var8.field8569 + var17 && (var16.field12310 > 1 || ((MinimenuEntry) var16.field12312.head.secondaryPrev).field12308)) {
 					arg0.fillRectangle(field11738, var17 - var8.field8562, field1289, field536, var9 << 24 | field6708, 1);
 				}
 				var15++;
@@ -1647,7 +1647,7 @@ public class MiniMenu {
 			if (field541 != null) {
 				method3469(arg0, field1981, field2433, field554, field3005, var5, var7, var8, field541.field12311);
 				int var18 = 0;
-				for (MinimenuEntry var19 = (MinimenuEntry) field541.field12312.method14317(); var19 != null; var19 = (MinimenuEntry) field541.field12312.method14324()) {
+				for (MinimenuEntry var19 = (MinimenuEntry) field541.field12312.peekFront(); var19 != null; var19 = (MinimenuEntry) field541.field12312.prev()) {
 					int var20 = field536 * var18 + var8.field8562 + field2433 + var5 + 1;
 					if (var10 > field1981 && var10 < field554 + field1981 && var11 > var20 - var8.field8562 - 1 && var11 < var8.field8569 + var20 && var19.field12308) {
 						arg0.fillRectangle(field1981, var20 - var8.field8562, field554, field536, var9 << 24 | field6708, 1);
@@ -1658,7 +1658,7 @@ public class MiniMenu {
 			}
 		} else {
 			int var12 = 0;
-			for (MinimenuEntry var13 = (MinimenuEntry) field542.method14191(); var13 != null; var13 = (MinimenuEntry) field542.method14161()) {
+			for (MinimenuEntry var13 = (MinimenuEntry) field542.peekFront(); var13 != null; var13 = (MinimenuEntry) field542.prev()) {
 				int var14 = field536 * (field546 - 1 - var12) + var8.field8562 + var2 + var5 + 1;
 				if (var10 > field11738 && var10 < field1289 + field11738 && var11 > var14 - var8.field8562 - 1 && var11 < var8.field8569 + var14 && var13.field12308) {
 					arg0.fillRectangle(field11738, var14 - var8.field8562, field1289, field536, var9 << 24 | field6708, 1);
@@ -1669,7 +1669,7 @@ public class MiniMenu {
 		method8462(arg0, field11738, field2960, field1289, field2576, var5);
 		if (!field540) {
 			int var21 = 0;
-			for (MinimenuEntry var22 = (MinimenuEntry) field542.method14191(); var22 != null; var22 = (MinimenuEntry) field542.method14161()) {
+			for (MinimenuEntry var22 = (MinimenuEntry) field542.peekFront(); var22 != null; var22 = (MinimenuEntry) field542.prev()) {
 				int var23 = field536 * (field546 - 1 - var21) + var8.field8562 + var2 + var5 + 1;
 				method9284(var10, var11, var1, var2, var3, var4, var23, var22, var7, var8, field1266 | 0xFF000000, field2901 | 0xFF000000);
 				var21++;
@@ -1677,10 +1677,10 @@ public class MiniMenu {
 			return;
 		}
 		int var24 = 0;
-		for (MinimenuSubmenu var25 = (MinimenuSubmenu) field550.method14317(); var25 != null; var25 = (MinimenuSubmenu) field550.method14324()) {
+		for (MinimenuSubmenu var25 = (MinimenuSubmenu) field550.peekFront(); var25 != null; var25 = (MinimenuSubmenu) field550.prev()) {
 			int var26 = field536 * var24 + var8.field8562 + field2960 + var5 + 1;
 			if (var25.field12310 == 1) {
-				method9284(var10, var11, field11738, field2960, field1289, field2576, var26, (MinimenuEntry) var25.field12312.field8497.field11439, var7, var8, field1266 | 0xFF000000, field2901 | 0xFF000000);
+				method9284(var10, var11, field11738, field2960, field1289, field2576, var26, (MinimenuEntry) var25.field12312.head.secondaryPrev, var7, var8, field1266 | 0xFF000000, field2901 | 0xFF000000);
 			} else {
 				method16748(var10, var11, field11738, field2960, field1289, field2576, var26, var25, var7, var8, field1266 | 0xFF000000, field2901 | 0xFF000000);
 			}
@@ -1690,7 +1690,7 @@ public class MiniMenu {
 			return;
 		}
 		int var27 = 0;
-		for (MinimenuEntry var28 = (MinimenuEntry) field541.field12312.method14317(); var28 != null; var28 = (MinimenuEntry) field541.field12312.method14324()) {
+		for (MinimenuEntry var28 = (MinimenuEntry) field541.field12312.peekFront(); var28 != null; var28 = (MinimenuEntry) field541.field12312.prev()) {
 			int var29 = field536 * var27 + var8.field8562 + field2433 + var5 + 1;
 			method9284(var10, var11, field1981, field2433, field554, field3005, var29, var28, var7, var8, field1266 | 0xFF000000, field2901 | 0xFF000000);
 			var27++;
@@ -1964,7 +1964,7 @@ public class MiniMenu {
 				method3042(TextUtil.method596(13421772) + var6, "", -1, -1, 0, 0L, 0, 0, false, true, (long) arg0.field10406, false);
 			}
 			if (!arg1 && !var7) {
-				for (MinimenuEntry var15 = (MinimenuEntry) field542.method14191(); var15 != null; var15 = (MinimenuEntry) field542.method14161()) {
+				for (MinimenuEntry var15 = (MinimenuEntry) field542.peekFront(); var15 != null; var15 = (MinimenuEntry) field542.prev()) {
 					if (var15.field12307 == 23) {
 						var15.field12296 = TextUtil.method596(16777215) + var6;
 						break;
@@ -2013,7 +2013,7 @@ public class MiniMenu {
 
 	@ObfuscatedName("aq.bu(Larm;IIZI)V")
 	public static void method923(MinimenuEntry arg0, int arg1, int arg2, boolean arg3) {
-		if (arg0 == null || field542.field8482 == arg0) {
+		if (arg0 == null || field542.head == arg0) {
 			return;
 		}
 		int var4 = arg0.field12304;
@@ -2156,7 +2156,7 @@ public class MiniMenu {
 			var21 = ClientProt.OPNPC6;
 		}
 		if (var21 != null) {
-			ObjectWrapper var22 = (ObjectWrapper) Client.field10838.method14495((long) var7);
+			ObjectWrapper var22 = (ObjectWrapper) Client.field10838.getNode((long) var7);
 			if (var22 != null) {
 				NpcEntity var23 = (NpcEntity) var22.field11436;
 				Client.field10866 = arg1;
@@ -2187,7 +2187,7 @@ public class MiniMenu {
 			Client.method6820(var4, var5);
 		}
 		if (var6 == 8) {
-			ObjectWrapper var26 = (ObjectWrapper) Client.field10838.method14495((long) var7);
+			ObjectWrapper var26 = (ObjectWrapper) Client.field10838.getNode((long) var7);
 			if (var26 != null) {
 				NpcEntity var27 = (NpcEntity) var26.field11436;
 				Client.field10866 = arg1;

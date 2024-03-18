@@ -98,7 +98,7 @@ public class MovingParticle extends Particle {
 		this.field12526.field7785.field7805[var1] = this;
 		this.field12523 = (short) this.field12526.field7785.field7806;
 		this.field12526.field7785.field7806 = var1 + 1 & 0x1FFF;
-		this.field12526.field7775.method14243(this);
+		this.field12526.field7775.pushBack(this);
 	}
 
 	@ObfuscatedName("atz.w(JI)V")
@@ -247,7 +247,7 @@ public class MovingParticle extends Particle {
 		}
 		if (var8.field3487 != null) {
 			label207: for (int var57 = 0; var57 < var8.field3487.length; var57++) {
-				ParticleEffector var58 = (ParticleEffector) ParticleSystemRenderer.field7800.method14495((long) var8.field3487[var57]);
+				ParticleEffector var58 = (ParticleEffector) ParticleSystemRenderer.field7800.getNode((long) var8.field3487[var57]);
 				while (true) {
 					while (true) {
 						if (var58 == null) {
@@ -259,7 +259,7 @@ public class MovingParticle extends Particle {
 						double var64 = (double) (var6 - var58.field11482);
 						double var66 = var64 * var64 + var60 * var60 + var62 * var62;
 						if (var66 > (double) var59.field3560) {
-							var58 = (ParticleEffector) ParticleSystemRenderer.field7800.method14496();
+							var58 = (ParticleEffector) ParticleSystemRenderer.field7800.next();
 						} else {
 							double var68 = Math.sqrt(var66);
 							if (var68 == 0.0D) {
@@ -268,7 +268,7 @@ public class MovingParticle extends Particle {
 							if (var59.field3555 > 0 && var59.field3555 < 2047) {
 								double var70 = ((double) var58.field11487 * var64 + (double) var58.field11486 * var60 + (double) var59.field3552 * var62) * 16384.0D / ((double) var59.field3559 * var68);
 								if (var70 < (double) var59.field3554) {
-									var58 = (ParticleEffector) ParticleSystemRenderer.field7800.method14496();
+									var58 = (ParticleEffector) ParticleSystemRenderer.field7800.next();
 									continue;
 								}
 							}
@@ -302,7 +302,7 @@ public class MovingParticle extends Particle {
 								this.y = (int) ((double) this.y + ((double) var59.field3552 - var72) * (double) arg1);
 								this.z = (int) ((double) this.z + ((double) var58.field11487 - var72) * (double) arg1);
 							}
-							var58 = (ParticleEffector) ParticleSystemRenderer.field7800.method14496();
+							var58 = (ParticleEffector) ParticleSystemRenderer.field7800.next();
 						}
 					}
 				}
@@ -452,7 +452,7 @@ public class MovingParticle extends Particle {
 					}
 				}
 			}
-			var8.field7816.list.method14270(this);
+			var8.field7816.list.pushBack(this);
 		}
 	}
 
@@ -461,7 +461,7 @@ public class MovingParticle extends Particle {
 		this.field12526.field7785.field7805[this.field12523] = null;
 		ParticleSystemRenderer.field7794[ParticleSystemRenderer.field7797] = this;
 		ParticleSystemRenderer.field7797 = ParticleSystemRenderer.field7797 + 1 & 0x3FF;
-		this.method8433();
-		this.method17453();
+		this.unlink();
+		this.dualUnlink();
 	}
 }

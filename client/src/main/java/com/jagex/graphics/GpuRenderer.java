@@ -923,7 +923,7 @@ public abstract class GpuRenderer extends Renderer {
 		}
 		this.method15973();
 		this.field10188.method5644();
-		for (Node var1 = this.field10051.method14191(); var1 != null; var1 = this.field10051.method14161()) {
+		for (Node var1 = this.field10051.peekFront(); var1 != null; var1 = this.field10051.prev()) {
 			((GpuHeap) var1).method19240();
 		}
 		ColourUtils.method14805(false, true);
@@ -1198,7 +1198,7 @@ public abstract class GpuRenderer extends Renderer {
 	@ObfuscatedName("afc.cp(I)Lakz;")
 	public final Heap createHeap(int arg0) {
 		GpuHeap var2 = new GpuHeap(arg0);
-		this.field10051.method14153(var2);
+		this.field10051.pushBack(var2);
 		return var2;
 	}
 

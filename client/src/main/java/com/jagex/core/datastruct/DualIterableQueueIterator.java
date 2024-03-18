@@ -8,53 +8,53 @@ import java.util.Iterator;
 public class DualIterableQueueIterator implements Iterator {
 
 	@ObfuscatedName("aai.e")
-	public DualIterableQueue field8495;
+	public DualIterableQueue queue;
 
 	@ObfuscatedName("aai.n")
-	public SecondaryNode field8494;
+	public SecondaryNode next;
 
 	@ObfuscatedName("aai.m")
-	public SecondaryNode field8493 = null;
+	public SecondaryNode prev = null;
 
-	public DualIterableQueueIterator(DualIterableQueue arg0) {
-		this.field8495 = arg0;
-		this.field8494 = this.field8495.field8497.field11439;
-		this.field8493 = null;
+	public DualIterableQueueIterator(DualIterableQueue queue) {
+		this.queue = queue;
+		this.next = this.queue.head.secondaryPrev;
+		this.prev = null;
 	}
 
 	@ObfuscatedName("aai.l(B)V")
-	public void method14300() {
-		this.field8494 = this.field8495.field8497.field11439;
-		this.field8493 = null;
+	public void advance() {
+		this.next = this.queue.head.secondaryPrev;
+		this.prev = null;
 	}
 
 	@ObfuscatedName("aai.u(I)Laky;")
-	public SecondaryNode method14301() {
-		this.method14300();
+	public SecondaryNode nextNode() {
+		this.advance();
 		return (SecondaryNode) this.next();
 	}
 
 	public Object next() {
-		SecondaryNode var1 = this.field8494;
-		if (this.field8495.field8497 == var1) {
-			var1 = null;
-			this.field8494 = null;
+		SecondaryNode node = this.next;
+		if (this.queue.head == node) {
+			node = null;
+			this.next = null;
 		} else {
-			this.field8494 = var1.field11439;
+			this.next = node.secondaryPrev;
 		}
-		this.field8493 = var1;
-		return var1;
+		this.prev = node;
+		return node;
 	}
 
 	public boolean hasNext() {
-		return this.field8495.field8497 != this.field8494;
+		return this.queue.head != this.next;
 	}
 
 	public void remove() {
-		if (this.field8493 == null) {
+		if (this.prev == null) {
 			throw new IllegalStateException();
 		}
-		this.field8493.method17806();
-		this.field8493 = null;
+		this.prev.secondaryRemove();
+		this.prev = null;
 	}
 }

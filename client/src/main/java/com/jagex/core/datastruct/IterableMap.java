@@ -8,140 +8,140 @@ import java.util.Iterator;
 public final class IterableMap implements Iterable {
 
 	@ObfuscatedName("aan.e")
-	public int field8556;
+	public int size;
 
 	@ObfuscatedName("aan.n")
-	public Node[] field8552;
+	public Node[] nodes;
 
 	@ObfuscatedName("aan.m")
-	public long field8551;
+	public long currentNodeId;
 
 	@ObfuscatedName("aan.k")
-	public Node field8554;
+	public Node next;
 
 	@ObfuscatedName("aan.f")
-	public Node field8553;
+	public Node prev;
 
 	@ObfuscatedName("aan.w")
-	public int field8555 = 0;
+	public int currentNodeIndex = 0;
 
-	public IterableMap(int arg0) {
-		this.field8556 = arg0;
-		this.field8552 = new Node[arg0];
-		for (int var2 = 0; var2 < arg0; var2++) {
-			Node var3 = this.field8552[var2] = new Node();
-			var3.field6761 = var3;
-			var3.field6762 = var3;
+	public IterableMap(int size) {
+		this.size = size;
+		this.nodes = new Node[size];
+		for (int index = 0; index < size; index++) {
+			Node node = this.nodes[index] = new Node();
+			node.prev = node;
+			node.next = node;
 		}
 	}
 
 	@ObfuscatedName("aan.e(J)Ltj;")
-	public Node method14495(long arg0) {
-		this.field8551 = arg0;
-		Node var3 = this.field8552[(int) (arg0 & (long) (this.field8556 - 1))];
-		for (this.field8554 = var3.field6761; this.field8554 != var3; this.field8554 = this.field8554.field6761) {
-			if (this.field8554.field6760 == arg0) {
-				Node var4 = this.field8554;
-				this.field8554 = this.field8554.field6761;
+	public Node getNode(long id) {
+		this.currentNodeId = id;
+		Node node = this.nodes[(int) (id & (long) (this.size - 1))];
+		for (this.next = node.prev; this.next != node; this.next = this.next.prev) {
+			if (this.next.nodeId == id) {
+				Node var4 = this.next;
+				this.next = this.next.prev;
 				return var4;
 			}
 		}
-		this.field8554 = null;
+		this.next = null;
 		return null;
 	}
 
 	@ObfuscatedName("aan.n(I)Ltj;")
-	public Node method14496() {
-		if (this.field8554 == null) {
+	public Node next() {
+		if (this.next == null) {
 			return null;
 		}
-		Node var1 = this.field8552[(int) (this.field8551 & (long) (this.field8556 - 1))];
-		while (this.field8554 != var1) {
-			if (this.field8554.field6760 == this.field8551) {
-				Node var2 = this.field8554;
-				this.field8554 = this.field8554.field6761;
+		Node node = this.nodes[(int) (this.currentNodeId & (long) (this.size - 1))];
+		while (this.next != node) {
+			if (this.next.nodeId == this.currentNodeId) {
+				Node var2 = this.next;
+				this.next = this.next.prev;
 				return var2;
 			}
-			this.field8554 = this.field8554.field6761;
+			this.next = this.next.prev;
 		}
-		this.field8554 = null;
+		this.next = null;
 		return null;
 	}
 
 	@ObfuscatedName("aan.m([Ltj;B)I")
-	public int method14497(Node[] arg0) {
+	public int addNodes(Node[] nodes) {
 		int var2 = 0;
-		for (int var3 = 0; var3 < this.field8556; var3++) {
-			Node var4 = this.field8552[var3];
-			for (Node var5 = var4.field6761; var5 != var4; var5 = var5.field6761) {
-				arg0[var2++] = var5;
+		for (int index = 0; index < this.size; index++) {
+			Node node = this.nodes[index];
+			for (Node var5 = node.prev; var5 != node; var5 = var5.prev) {
+				nodes[var2++] = var5;
 			}
 		}
 		return var2;
 	}
 
 	@ObfuscatedName("aan.k(I)I")
-	public int method14498() {
-		int var1 = 0;
-		for (int var2 = 0; var2 < this.field8556; var2++) {
-			Node var3 = this.field8552[var2];
-			for (Node var4 = var3.field6761; var4 != var3; var4 = var4.field6761) {
-				var1++;
+	public int length() {
+		int count = 0;
+		for (int index = 0; index < this.size; index++) {
+			Node var3 = this.nodes[index];
+			for (Node var4 = var3.prev; var4 != var3; var4 = var4.prev) {
+				count++;
 			}
 		}
-		return var1;
+		return count;
 	}
 
 	@ObfuscatedName("aan.f(Ltj;J)V")
-	public void method14501(Node arg0, long arg1) {
-		if (arg0.field6762 != null) {
-			arg0.method8440();
+	public void pushNode(Node node, long id) {
+		if (node.next != null) {
+			node.remove();
 		}
-		Node var4 = this.field8552[(int) (arg1 & (long) (this.field8556 - 1))];
-		arg0.field6762 = var4.field6762;
-		arg0.field6761 = var4;
-		arg0.field6762.field6761 = arg0;
-		arg0.field6761.field6762 = arg0;
-		arg0.field6760 = arg1;
+		Node var4 = this.nodes[(int) (id & (long) (this.size - 1))];
+		node.next = var4.next;
+		node.prev = var4;
+		node.next.prev = node;
+		node.prev.next = node;
+		node.nodeId = id;
 	}
 
 	@ObfuscatedName("aan.w(B)V")
-	public void method14499() {
-		for (int var1 = 0; var1 < this.field8556; var1++) {
-			Node var2 = this.field8552[var1];
+	public void clear() {
+		for (int index = 0; index < this.size; index++) {
+			Node node = this.nodes[index];
 			while (true) {
-				Node var3 = var2.field6761;
-				if (var2 == var3) {
+				Node next = node.prev;
+				if (node == next) {
 					break;
 				}
-				var3.method8440();
+				next.remove();
 			}
 		}
-		this.field8554 = null;
-		this.field8553 = null;
+		this.next = null;
+		this.prev = null;
 	}
 
 	@ObfuscatedName("aan.l(B)Ltj;")
-	public Node method14500() {
-		this.field8555 = 0;
-		return this.method14502();
+	public Node peekFront() {
+		this.currentNodeIndex = 0;
+		return this.prev();
 	}
 
 	@ObfuscatedName("aan.u(I)Ltj;")
-	public Node method14502() {
-		if (this.field8555 > 0 && this.field8552[this.field8555 - 1] != this.field8553) {
-			Node var1 = this.field8553;
-			this.field8553 = var1.field6761;
+	public Node prev() {
+		if (this.currentNodeIndex > 0 && this.nodes[this.currentNodeIndex - 1] != this.prev) {
+			Node var1 = this.prev;
+			this.prev = var1.prev;
 			return var1;
 		}
 		Node var2;
 		do {
-			if (this.field8555 >= this.field8556) {
+			if (this.currentNodeIndex >= this.size) {
 				return null;
 			}
-			var2 = this.field8552[++this.field8555 - 1].field6761;
-		} while (this.field8552[this.field8555 - 1] == var2);
-		this.field8553 = var2.field6761;
+			var2 = this.nodes[++this.currentNodeIndex - 1].prev;
+		} while (this.nodes[this.currentNodeIndex - 1] == var2);
+		this.prev = var2.prev;
 		return var2;
 	}
 

@@ -80,8 +80,8 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		}
 		Pair var21 = this.method17400(arg1, var20, this.field11141);
 		if (var21 != null) {
-			this.field11136 = (Model) var21.field8737;
-			this.field11146 = (HardShadow) var21.field8738;
+			this.field11136 = (Model) var21.first;
+			this.field11146 = (HardShadow) var21.second;
 			if (this.field11139 || arg3.field7525) {
 				this.field11136 = this.field11136.method1773((byte) 0, var20, false);
 				if (arg3.field7525) {
@@ -127,7 +127,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 			return this.field11136;
 		} else {
 			Pair var3 = this.method17400(arg0, arg1, false);
-			return var3 == null ? null : (Model) var3.field8737;
+			return var3 == null ? null : (Model) var3.first;
 		}
 	}
 
@@ -262,7 +262,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		HardShadow var4;
 		if (this.field11146 == null && this.field11141) {
 			Pair var3 = this.method17400(arg0, 262144, true);
-			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
 			var4 = this.field11146;
 			this.field11146 = null;
@@ -279,7 +279,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		HardShadow var4;
 		if (this.field11146 == null && this.field11141) {
 			Pair var3 = this.method17400(arg0, 262144, true);
-			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
 			var4 = this.field11146;
 			this.field11146 = null;

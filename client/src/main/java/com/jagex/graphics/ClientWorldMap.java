@@ -330,7 +330,7 @@ public class ClientWorldMap extends WorldMap {
 		field6793 = 0;
 		field3044 = null;
 		method8508();
-		field6806.method14152();
+		field6806.clearAll();
 		WorldMap.field6805 = null;
 		field6831.method2924();
 		field6832.method2924();
@@ -374,8 +374,8 @@ public class ClientWorldMap extends WorldMap {
 		method14689();
 		WorldMap.currentWorldMap = null;
 		field7280 = null;
-		field11667.method14499();
-		field11668.method14499();
+		field11667.clear();
+		field11668.clear();
 		for (int var0 = 0; var0 < 3; var0++) {
 			for (int var1 = 0; var1 < 5; var1++) {
 				field11659[var0][var1] = null;
@@ -429,11 +429,11 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("aq.dx(Ldh;Laat;IIB)V")
 	public static void method928(Renderer arg0, IterableQueue arg1, int arg2, int arg3) {
-		field11253.method14152();
+		field11253.clearAll();
 		if (disableElements) {
 			return;
 		}
-		for (WorldMapElement var4 = (WorldMapElement) arg1.method14191(); var4 != null; var4 = (WorldMapElement) arg1.method14161()) {
+		for (WorldMapElement var4 = (WorldMapElement) arg1.peekFront(); var4 != null; var4 = (WorldMapElement) arg1.prev()) {
 			MapElementType var5 = (MapElementType) WorldMap.field6788.list(var4.field11446);
 			if (method18887(var5)) {
 				boolean var6 = method3589(arg0, var4, var5, arg2, arg3);
@@ -459,9 +459,9 @@ public class ClientWorldMap extends WorldMap {
 			return false;
 		} else if (!arg0.method4030(field6791, field6790)) {
 			return false;
-		} else if (field11667.method14495((long) arg0.field2367) != null) {
+		} else if (field11667.getNode((long) arg0.field2367) != null) {
 			return false;
-		} else if (field11668.method14495((long) arg0.category) == null) {
+		} else if (field11668.getNode((long) arg0.category) == null) {
 			if (arg0.text != null) {
 				if (arg0.textSize == 0 && field11670) {
 					return false;
@@ -703,7 +703,7 @@ public class ClientWorldMap extends WorldMap {
 			var37.field11247 = var19;
 			var37.field11250 = var20;
 			var37.field11245 = var21;
-			field11253.method14153(var37);
+			field11253.pushBack(var37);
 		}
 		return false;
 	}
@@ -774,7 +774,7 @@ public class ClientWorldMap extends WorldMap {
 		var17.field11247 = var15;
 		var17.field11250 = var14;
 		var17.field11245 = var16;
-		field11253.method14153(var17);
+		field11253.pushBack(var17);
 	}
 
 	@ObfuscatedName("ey.eo(II)V")
@@ -859,7 +859,7 @@ public class ClientWorldMap extends WorldMap {
 		}
 		arg0.fillRectangle(var12, var13, var10, var11, var14, 1);
 		arg0.drawRectangle(var12, var13, var10, var11, var14, 0);
-		for (WorldMapElement var15 = (WorldMapElement) field6806.method14191(); var15 != null; var15 = (WorldMapElement) field6806.method14161()) {
+		for (WorldMapElement var15 = (WorldMapElement) field6806.peekFront(); var15 != null; var15 = (WorldMapElement) field6806.prev()) {
 			MapElementType var16 = (MapElementType) field6788.list(var15.field11446);
 			if (method18887(var16)) {
 				WorldMapFlash var17 = (WorldMapFlash) field11661.get(var15.field11446);
@@ -931,7 +931,7 @@ public class ClientWorldMap extends WorldMap {
 								do {
 									if (!var6.hasNext()) {
 										if (field11663 && field11253 != null) {
-											for (MapElementContainer var8 = (MapElementContainer) field11253.method14191(); var8 != null; var8 = (MapElementContainer) field11253.method14161()) {
+											for (MapElementContainer var8 = (MapElementContainer) field11253.peekFront(); var8 != null; var8 = (MapElementContainer) field11253.prev()) {
 												MapElementType var9 = (MapElementType) WorldMap.field6788.list(var8.field11252.field11446);
 												if (var8.method17518(arg0, arg1)) {
 													if (var9.field2381 != null) {
@@ -1178,7 +1178,7 @@ public class ClientWorldMap extends WorldMap {
 		int var4 = Integer.MAX_VALUE;
 		int var5 = arg1 - WorldMap.field6786;
 		int var6 = arg2 - WorldMap.field6808;
-		for (WorldMapElement var7 = (WorldMapElement) field6806.method14191(); var7 != null; var7 = (WorldMapElement) field6806.method14161()) {
+		for (WorldMapElement var7 = (WorldMapElement) field6806.peekFront(); var7 != null; var7 = (WorldMapElement) field6806.prev()) {
 			if (var7.field11446 == arg0) {
 				int var8 = var7.field11448;
 				int var9 = var7.field11452;
@@ -1198,8 +1198,8 @@ public class ClientWorldMap extends WorldMap {
 		if (field6806 == null || field11669 == null) {
 			return null;
 		}
-		field11669.method14283(field6806);
-		WorldMapElement var0 = (WorldMapElement) field11669.method14294();
+		field11669.set(field6806);
+		WorldMapElement var0 = (WorldMapElement) field11669.nextNode();
 		if (var0 == null) {
 			return null;
 		} else {

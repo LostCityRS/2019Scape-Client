@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.core.datastruct.LinkMap;
+import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.io.Packet;
 import com.jagex.game.camera.position.Position;
 import com.jagex.game.shared.movement.CoordFine;
@@ -44,7 +44,7 @@ public class PositionPoint extends Position {
 	}
 
 	@ObfuscatedName("ahh.e(F[[[ILqx;IIB)V")
-	public void method5238(float arg0, int[][][] arg1, LinkMap arg2, int arg3, int arg4) {
+	public void method5238(float arg0, int[][][] arg1, SceneLevelTileFlags arg2, int arg3, int arg4) {
 		if (this.field10550) {
 			this.method16681(arg1, arg2, arg3, arg4);
 		}
@@ -99,7 +99,7 @@ public class PositionPoint extends Position {
 	}
 
 	@ObfuscatedName("ahh.ag([[[ILqx;III)V")
-	public void method16681(int[][][] arg0, LinkMap arg1, int arg2, int arg3) {
+	public void method16681(int[][][] arg0, SceneLevelTileFlags arg1, int arg2, int arg3) {
 		if (!this.method5218() || !this.field3084.method4730() && !this.field3084.method4731() || !this.field3084.method4731() || arg0 == null) {
 			return;
 		}

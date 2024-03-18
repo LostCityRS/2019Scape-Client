@@ -1,6 +1,6 @@
 package com.jagex.game.camera.position;
 
-import com.jagex.core.datastruct.LinkMap;
+import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.io.Packet;
 import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.graphics.camera.Camera;
@@ -50,7 +50,7 @@ public class PositionEntity extends Position {
 	}
 
 	@ObfuscatedName("ahd.t(Ljn;Lox;Lov;ZI[[[ILqx;III)V")
-	public void method16683(CameraTrackable arg0, Vector3 arg1, Quaternion arg2, boolean arg3, int arg4, int[][][] arg5, LinkMap arg6, int arg7, int arg8) {
+	public void method16683(CameraTrackable arg0, Vector3 arg1, Quaternion arg2, boolean arg3, int arg4, int[][][] arg5, SceneLevelTileFlags arg6, int arg7, int arg8) {
 		this.field10552 = arg0;
 		this.field10553.setTo(arg1);
 		this.field10554.method6412(arg2);
@@ -68,7 +68,7 @@ public class PositionEntity extends Position {
 	}
 
 	@ObfuscatedName("ahd.e(F[[[ILqx;IIB)V")
-	public void method5238(float arg0, int[][][] arg1, LinkMap arg2, int arg3, int arg4) {
+	public void method5238(float arg0, int[][][] arg1, SceneLevelTileFlags arg2, int arg3, int arg4) {
 		if (this.field10552 == null) {
 			return;
 		}
@@ -104,7 +104,7 @@ public class PositionEntity extends Position {
 	}
 
 	@ObfuscatedName("ahd.ah([[[ILqx;IIB)V")
-	public void method16686(int[][][] arg0, LinkMap arg1, int arg2, int arg3) {
+	public void method16686(int[][][] arg0, SceneLevelTileFlags arg1, int arg2, int arg3) {
 		if (!this.method5218() || !this.field3084.method4730() && !this.field3084.method4731()) {
 			return;
 		}
@@ -161,7 +161,7 @@ public class PositionEntity extends Position {
 	}
 
 	@ObfuscatedName("ahd.al([[[ILqx;IIIZI)F")
-	public float method16687(int[][][] arg0, LinkMap arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public float method16687(int[][][] arg0, SceneLevelTileFlags arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		Quaternion var7 = this.method16685();
 		Vector3 var8 = this.method16696(var7);
 		var7.method6407();

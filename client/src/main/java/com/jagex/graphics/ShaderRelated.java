@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public final class ShaderRelated implements HashMapKey {
 
 	@ObfuscatedName("he.e(Ljava/lang/String;I)J")
-	public long method4074(String arg0) {
-		return StringTools.method15380(arg0);
+	public long hash(String value) {
+		return StringTools.method15380(value);
 	}
 }

@@ -99,7 +99,7 @@ public class PositionedSound extends Node {
 
 	@ObfuscatedName("zj.e(ZB)V")
 	public static void method13908(boolean arg0) {
-		for (PositionedSound var1 = (PositionedSound) field11346.method14191(); var1 != null; var1 = (PositionedSound) field11346.method14161()) {
+		for (PositionedSound var1 = (PositionedSound) field11346.peekFront(); var1 != null; var1 = (PositionedSound) field11346.prev()) {
 			if (var1.field11371 != null) {
 				var1.field11371.method7380(150);
 				Client.field1798.method3185(var1.field11371);
@@ -110,37 +110,37 @@ public class PositionedSound extends Node {
 				Client.field1798.method3185(var1.field11372);
 				var1.field11372 = null;
 			}
-			var1.method8440();
+			var1.remove();
 		}
 		if (!arg0) {
 			return;
 		}
-		for (PositionedSound var2 = (PositionedSound) field11347.method14191(); var2 != null; var2 = (PositionedSound) field11347.method14161()) {
+		for (PositionedSound var2 = (PositionedSound) field11347.peekFront(); var2 != null; var2 = (PositionedSound) field11347.prev()) {
 			if (var2.field11371 != null) {
 				var2.field11371.method7380(150);
 				Client.field1798.method3185(var2.field11371);
 				var2.field11371 = null;
 			}
-			var2.method8440();
+			var2.remove();
 		}
-		for (PositionedSound var3 = (PositionedSound) field11366.method14500(); var3 != null; var3 = (PositionedSound) field11366.method14502()) {
+		for (PositionedSound var3 = (PositionedSound) field11366.peekFront(); var3 != null; var3 = (PositionedSound) field11366.prev()) {
 			if (var3.field11371 != null) {
 				var3.field11371.method7380(150);
 				Client.field1798.method3185(var3.field11371);
 				var3.field11371 = null;
 			}
-			var3.method8440();
+			var3.remove();
 		}
 	}
 
 	@ObfuscatedName("ada.n(I)V")
 	public static void method15185() {
-		for (PositionedSound var0 = (PositionedSound) field11346.method14191(); var0 != null; var0 = (PositionedSound) field11346.method14161()) {
+		for (PositionedSound var0 = (PositionedSound) field11346.peekFront(); var0 != null; var0 = (PositionedSound) field11346.prev()) {
 			if (var0.field11367) {
 				var0.method17660();
 			}
 		}
-		for (PositionedSound var1 = (PositionedSound) field11347.method14191(); var1 != null; var1 = (PositionedSound) field11347.method14161()) {
+		for (PositionedSound var1 = (PositionedSound) field11347.peekFront(); var1 != null; var1 = (PositionedSound) field11347.prev()) {
 			if (var1.field11367) {
 				var1.method17660();
 			}
@@ -241,7 +241,7 @@ public class PositionedSound extends Node {
 			if (var7.field11375 != null) {
 				var7.field11354 = var7.field11373 + (int) (Math.random() * (double) (var7.field11374 - var7.field11373));
 			}
-			field11346.method14153(var7);
+			field11346.pushBack(var7);
 			Client.field1798.method3200(var7.field11370);
 			Client.field1798.method3160(var7.field11375);
 		} else if (arg5 != null) {
@@ -265,7 +265,7 @@ public class PositionedSound extends Node {
 				Client.field1798.method3200(var10.field2748);
 				Client.field1798.method3200(var10.field2749);
 			}
-			field11347.method14153(var7);
+			field11347.pushBack(var7);
 		} else if (arg6 != null) {
 			var7.field11361 = arg6;
 			var7.field11352 = arg1 + arg6.method16546() << 9;
@@ -276,7 +276,7 @@ public class PositionedSound extends Node {
 			var7.field11369 = 256;
 			var7.field11368 = 256;
 			var7.field11356 = 0;
-			field11366.method14501(var7, (long) arg6.field10406);
+			field11366.pushNode(var7, (long) arg6.field10406);
 			Client.field1798.method3200(arg6.field12063);
 			Client.field1798.method3200(arg6.field12049);
 			Client.field1798.method3200(arg6.field12065);
@@ -286,14 +286,14 @@ public class PositionedSound extends Node {
 
 	@ObfuscatedName("oi.f(IIILvd;B)V")
 	public static void method6206(int arg0, int arg1, int arg2, LocType arg3) {
-		for (PositionedSound var4 = (PositionedSound) field11346.method14191(); var4 != null; var4 = (PositionedSound) field11346.method14161()) {
+		for (PositionedSound var4 = (PositionedSound) field11346.peekFront(); var4 != null; var4 = (PositionedSound) field11346.prev()) {
 			if (var4.field11349 == arg0 && arg1 << 9 == var4.field11358 && arg2 << 9 == var4.field11351 && var4.field11348.id == arg3.id) {
 				if (var4.field11371 != null) {
 					var4.field11371.method7380(100);
 					Client.field1798.method3185(var4.field11371);
 					var4.field11371 = null;
 				}
-				var4.method8440();
+				var4.remove();
 				return;
 			}
 		}
@@ -301,14 +301,14 @@ public class PositionedSound extends Node {
 
 	@ObfuscatedName("xn.w(Laqc;I)V")
 	public static void method10111(NpcEntity arg0) {
-		for (PositionedSound var1 = (PositionedSound) field11347.method14191(); var1 != null; var1 = (PositionedSound) field11347.method14161()) {
+		for (PositionedSound var1 = (PositionedSound) field11347.peekFront(); var1 != null; var1 = (PositionedSound) field11347.prev()) {
 			if (var1.field11345 == arg0) {
 				if (var1.field11371 != null) {
 					var1.field11371.method7380(100);
 					Client.field1798.method3185(var1.field11371);
 					var1.field11371 = null;
 				}
-				var1.method8440();
+				var1.remove();
 				return;
 			}
 		}
@@ -316,7 +316,7 @@ public class PositionedSound extends Node {
 
 	@ObfuscatedName("kg.l(Laqk;I)V")
 	public static void method5142(PlayerEntity arg0) {
-		PositionedSound var1 = (PositionedSound) field11366.method14495((long) arg0.field10406);
+		PositionedSound var1 = (PositionedSound) field11366.getNode((long) arg0.field10406);
 		if (var1 == null) {
 			return;
 		}
@@ -325,12 +325,12 @@ public class PositionedSound extends Node {
 			Client.field1798.method3185(var1.field11371);
 			var1.field11371 = null;
 		}
-		var1.method8440();
+		var1.remove();
 	}
 
 	@ObfuscatedName("xj.u(Laqk;I)V")
 	public static void method10310(PlayerEntity arg0) {
-		PositionedSound var1 = (PositionedSound) field11366.method14495((long) arg0.field10406);
+		PositionedSound var1 = (PositionedSound) field11366.getNode((long) arg0.field10406);
 		if (var1 == null) {
 			method9739(arg0.field11717, arg0.field10450[0], arg0.field10448[0], 0, null, null, arg0);
 		} else {
@@ -377,10 +377,10 @@ public class PositionedSound extends Node {
 
 	@ObfuscatedName("agz.d(IIIII)V")
 	public static void method16460(int arg0, int arg1, int arg2, int arg3) {
-		for (PositionedSound var4 = (PositionedSound) field11346.method14191(); var4 != null; var4 = (PositionedSound) field11346.method14161()) {
+		for (PositionedSound var4 = (PositionedSound) field11346.peekFront(); var4 != null; var4 = (PositionedSound) field11346.prev()) {
 			method7896(var4, arg0, arg1, arg2, arg3);
 		}
-		for (PositionedSound var5 = (PositionedSound) field11347.method14191(); var5 != null; var5 = (PositionedSound) field11347.method14161()) {
+		for (PositionedSound var5 = (PositionedSound) field11347.peekFront(); var5 != null; var5 = (PositionedSound) field11347.prev()) {
 			byte var6 = 1;
 			BASType var7 = var5.field11345.method16508();
 			int var8 = var5.field11345.field10432.method14348();
@@ -431,7 +431,7 @@ public class PositionedSound extends Node {
 			var5.field11349 = var5.field11345.field11717;
 			method7896(var5, arg0, arg1, arg2, arg3);
 		}
-		for (PositionedSound var13 = (PositionedSound) field11366.method14500(); var13 != null; var13 = (PositionedSound) field11366.method14502()) {
+		for (PositionedSound var13 = (PositionedSound) field11366.peekFront(); var13 != null; var13 = (PositionedSound) field11366.prev()) {
 			byte var14 = 1;
 			BASType var15 = var13.field11361.method16508();
 			int var16 = var13.field11361.field10432.method14348();

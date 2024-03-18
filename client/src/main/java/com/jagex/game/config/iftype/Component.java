@@ -956,13 +956,13 @@ public class Component {
 			for (int var23 = 0; var23 < var22; var23++) {
 				int var24 = arg0.g3();
 				int var25 = arg0.g4s();
-				this.field2333.method14501(new IntWrapper(var25), (long) var24);
+				this.field2333.pushNode(new IntWrapper(var25), (long) var24);
 			}
 			int var26 = arg0.g1();
 			for (int var27 = 0; var27 < var26; var27++) {
 				int var28 = arg0.g3();
 				String var29 = arg0.gjstr2();
-				this.field2333.method14501(new ObjectWrapper(var29), (long) var28);
+				this.field2333.pushNode(new ObjectWrapper(var29), (long) var28);
 			}
 		}
 		this.field2290 = this.method3939(arg0);
@@ -1400,8 +1400,8 @@ public class Component {
 		if (this.field2333 == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.field2333.method14495((long) arg0);
-			return var3 == null ? arg1 : var3.field11442;
+			IntWrapper var3 = (IntWrapper) this.field2333.getNode((long) arg0);
+			return var3 == null ? arg1 : var3.intValue;
 		}
 	}
 
@@ -1410,7 +1410,7 @@ public class Component {
 		if (this.field2333 == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.field2333.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.field2333.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}
@@ -1419,14 +1419,14 @@ public class Component {
 	public void method3952(int arg0, int arg1) {
 		if (this.field2333 == null) {
 			this.field2333 = new IterableMap(16);
-			this.field2333.method14501(new IntWrapper(arg1), (long) arg0);
+			this.field2333.pushNode(new IntWrapper(arg1), (long) arg0);
 			return;
 		}
-		IntWrapper var3 = (IntWrapper) this.field2333.method14495((long) arg0);
+		IntWrapper var3 = (IntWrapper) this.field2333.getNode((long) arg0);
 		if (var3 == null) {
-			this.field2333.method14501(new IntWrapper(arg1), (long) arg0);
+			this.field2333.pushNode(new IntWrapper(arg1), (long) arg0);
 		} else {
-			var3.field11442 = arg1;
+			var3.intValue = arg1;
 		}
 	}
 
@@ -1434,22 +1434,22 @@ public class Component {
 	public void method4003(int arg0, String arg1) {
 		if (this.field2333 == null) {
 			this.field2333 = new IterableMap(16);
-			this.field2333.method14501(new ObjectWrapper(arg1), (long) arg0);
+			this.field2333.pushNode(new ObjectWrapper(arg1), (long) arg0);
 			return;
 		}
-		ObjectWrapper var3 = (ObjectWrapper) this.field2333.method14495((long) arg0);
+		ObjectWrapper var3 = (ObjectWrapper) this.field2333.getNode((long) arg0);
 		if (var3 != null) {
-			var3.method8440();
+			var3.remove();
 		}
-		this.field2333.method14501(new ObjectWrapper(arg1), (long) arg0);
+		this.field2333.pushNode(new ObjectWrapper(arg1), (long) arg0);
 	}
 
 	@ObfuscatedName("hf.ac(II)V")
 	public void method3954(int arg0) {
 		if (this.field2333 != null) {
-			Node var2 = this.field2333.method14495((long) arg0);
+			Node var2 = this.field2333.getNode((long) arg0);
 			if (var2 != null) {
-				var2.method8440();
+				var2.remove();
 			}
 		}
 	}

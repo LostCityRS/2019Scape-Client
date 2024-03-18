@@ -571,7 +571,7 @@ public class LocType implements ConfigType {
 								} else {
 									var37 = new IntWrapper(buf.g4s());
 								}
-								this.params.method14501(var37, (long) var36);
+								this.params.pushNode(var37, (long) var36);
 							}
 						}
 					}
@@ -633,7 +633,7 @@ public class LocType implements ConfigType {
 				boolean var5 = this.factory.method9525(this.models[var3][var4]);
 				var2 &= var5;
 				if (!var5) {
-					arg0.field7958 = this.models[var3][var4];
+					arg0.intValue = this.models[var3][var4];
 				}
 			}
 		}
@@ -674,12 +674,12 @@ public class LocType implements ConfigType {
 		synchronized (this.factory.modelCacheDynamic) {
 			var20 = (Pair) this.factory.modelCacheDynamic.get(var14);
 		}
-		Model var22 = (Model) (var20 == null ? null : var20.field8737);
+		Model var22 = (Model) (var20 == null ? null : var20.first);
 		HardShadow var23 = null;
 		if (var22 != null && arg0.method2394(var22.method1691(), var16) == 0) {
-			var23 = (HardShadow) var20.field8738;
+			var23 = (HardShadow) var20.second;
 			if (arg9 && var23 == null && !var17 && !var18) {
-				var23 = (HardShadow) (var20.field8738 = var22.method1726(null));
+				var23 = (HardShadow) (var20.second = var22.method1726(null));
 			}
 		} else {
 			if (var22 != null) {
@@ -722,8 +722,8 @@ public class LocType implements ConfigType {
 		} else {
 			var28 = var22.method1773((byte) 0, arg1, true);
 		}
-		this.factory.field7529.field8737 = var28;
-		this.factory.field7529.field8738 = var23;
+		this.factory.field7529.first = var28;
+		this.factory.field7529.second = var23;
 		return this.factory.field7529;
 	}
 
@@ -999,8 +999,8 @@ public class LocType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.method14495((long) arg0);
-			return var3 == null ? arg1 : var3.field11442;
+			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			return var3 == null ? arg1 : var3.intValue;
 		}
 	}
 
@@ -1009,7 +1009,7 @@ public class LocType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

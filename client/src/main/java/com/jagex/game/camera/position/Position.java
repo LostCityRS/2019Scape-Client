@@ -1,6 +1,6 @@
 package com.jagex.game.camera.position;
 
-import com.jagex.core.datastruct.LinkMap;
+import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.io.Packet;
 import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.graphics.camera.Camera;
@@ -40,5 +40,5 @@ public abstract class Position {
 	public abstract double[] method5230();
 
 	@ObfuscatedName("kl.e(F[[[ILqx;IIB)V")
-	public abstract void method5238(float arg0, int[][][] arg1, LinkMap arg2, int arg3, int arg4);
+	public abstract void method5238(float arg0, int[][][] arg1, SceneLevelTileFlags arg2, int arg3, int arg4);
 }

@@ -99,7 +99,7 @@ public class FontProvider implements FontIconProvider {
 		if (this.field4204 != null) {
 			for (int var5 = 0; var5 < this.field4204.length; var5++) {
 				if (this.field4204[var5] == arg1) {
-					return ((Pair) this.field4207.get(var5)).field8737;
+					return ((Pair) this.field4207.get(var5)).first;
 				}
 			}
 		}
@@ -134,7 +134,7 @@ public class FontProvider implements FontIconProvider {
 		if (this.field4204 != null) {
 			for (int var5 = 0; var5 < this.field4204.length; var5++) {
 				if (this.field4204[var5] == arg1) {
-					return (FontMetrics) ((Pair) this.field4207.get(var5)).field8738;
+					return (FontMetrics) ((Pair) this.field4207.get(var5)).second;
 				}
 			}
 		}

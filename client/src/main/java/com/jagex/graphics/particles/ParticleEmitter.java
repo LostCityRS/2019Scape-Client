@@ -143,7 +143,7 @@ public class ParticleEmitter {
 			}
 		}
 		this.field7776 = 0;
-		for (MovingParticle var7 = (MovingParticle) this.field7775.method14254(); var7 != null; var7 = (MovingParticle) this.field7775.method14241()) {
+		for (MovingParticle var7 = (MovingParticle) this.field7775.peekFront(); var7 != null; var7 = (MovingParticle) this.field7775.prev()) {
 			var7.method19667(arg1, arg2);
 			this.field7776++;
 		}
@@ -293,7 +293,7 @@ public class ParticleEmitter {
 
 	@ObfuscatedName("xm.m(Ltx;Ldh;J)V")
 	public void method9898(Scene arg0, Renderer arg1, long arg2) {
-		for (MovingParticle var5 = (MovingParticle) this.field7775.method14254(); var5 != null; var5 = (MovingParticle) this.field7775.method14241()) {
+		for (MovingParticle var5 = (MovingParticle) this.field7775.peekFront(); var5 != null; var5 = (MovingParticle) this.field7775.prev()) {
 			var5.method19668(arg0, arg1, arg2);
 		}
 	}

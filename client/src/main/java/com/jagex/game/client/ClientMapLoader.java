@@ -1,7 +1,7 @@
 package com.jagex.game.client;
 
 import com.jagex.core.datastruct.IntegerBox;
-import com.jagex.core.datastruct.LinkMap;
+import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.lighttype.LightType;
 import com.jagex.game.config.loctype.LocType;
@@ -46,7 +46,7 @@ public class ClientMapLoader extends MapLoader {
 	@ObfuscatedName("aih.cz")
 	public LocTypeList locs;
 
-	public ClientMapLoader(Scene scene, LocTypeList locs, int levels, int maxTileX, int maxTileZ, boolean underwater, LinkMap arg6, EnvironmentManager arg7) {
+	public ClientMapLoader(Scene scene, LocTypeList locs, int levels, int maxTileX, int maxTileZ, boolean underwater, SceneLevelTileFlags arg6, EnvironmentManager arg7) {
 		super(scene, levels, maxTileX, maxTileZ, underwater, Client.overlayTypeList, Client.underlayTypeList, arg6);
 		this.locs = locs;
 		this.field10764 = arg7;
@@ -441,7 +441,7 @@ public class ClientMapLoader extends MapLoader {
 					} while (var19 + var22 < 0);
 				} while (LocShape.GROUND_DECOR.id == var15.shape && Client.preferences.groundDecoration.getValue() == 0 && var20.active2 == 0 && var20.blockwalk != 1 && !var20.forcedecor);
 				if (!var20.method9489(arg7)) {
-					arg6.field7958 = locId;
+					arg6.intValue = locId;
 					var8++;
 				}
 				var13 = true;

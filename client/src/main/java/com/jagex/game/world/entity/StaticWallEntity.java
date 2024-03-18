@@ -81,8 +81,8 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		}
 		Pair var16 = this.method17420(arg1, var15, this.field11172);
 		if (var16 != null) {
-			this.field11173 = (Model) var16.field8737;
-			this.field11163 = (HardShadow) var16.field8738;
+			this.field11173 = (Model) var16.first;
+			this.field11163 = (HardShadow) var16.second;
 			if (this.field11171 || arg3.field7525) {
 				this.field11173 = this.field11173.method1773((byte) 0, var15, false);
 				if (arg3.field7525) {
@@ -124,7 +124,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 			return this.field11173;
 		} else {
 			Pair var3 = this.method17420(arg0, arg1, false);
-			return var3 == null ? null : (Model) var3.field8737;
+			return var3 == null ? null : (Model) var3.first;
 		}
 	}
 
@@ -259,7 +259,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		HardShadow var4;
 		if (this.field11163 == null && this.field11172) {
 			Pair var3 = this.method17420(arg0, 262144, true);
-			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
 			var4 = this.field11163;
 			this.field11163 = null;
@@ -276,7 +276,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		HardShadow var4;
 		if (this.field11163 == null && this.field11172) {
 			Pair var3 = this.method17420(arg0, 262144, true);
-			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
 			var4 = this.field11163;
 			this.field11163 = null;

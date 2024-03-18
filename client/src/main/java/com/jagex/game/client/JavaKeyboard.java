@@ -69,8 +69,8 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 		for (int var1 = 0; var1 < 112; var1++) {
 			this.field11683[var1] = false;
 		}
-		this.field11681.method14152();
-		this.field11682.method14152();
+		this.field11681.clearAll();
+		this.field11682.clearAll();
 	}
 
 	@ObfuscatedName("alg.x(ICII)V")
@@ -80,12 +80,12 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 		var4.field11464 = arg1;
 		var4.field11465 = arg2;
 		var4.field11462 = MonotonicTime.get();
-		this.field11682.method14153(var4);
+		this.field11682.pushBack(var4);
 	}
 
 	@ObfuscatedName("alg.k(I)Lut;")
 	public KeyboardEvent method9075() {
-		return (KeyboardEvent) this.field11681.method14154();
+		return (KeyboardEvent) this.field11681.pollFront();
 	}
 
 	@ObfuscatedName("alg.m(II)Z")
@@ -95,8 +95,8 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 
 	@ObfuscatedName("alg.n(I)V")
 	public synchronized void method9069() {
-		this.field11681.method14152();
-		for (BasicKeyboardEvent var1 = (BasicKeyboardEvent) this.field11682.method14154(); var1 != null; var1 = (BasicKeyboardEvent) this.field11682.method14154()) {
+		this.field11681.clearAll();
+		for (BasicKeyboardEvent var1 = (BasicKeyboardEvent) this.field11682.pollFront(); var1 != null; var1 = (BasicKeyboardEvent) this.field11682.pollFront()) {
 			var1.field11467 = this.method18266();
 			if (var1.field11466 == 0) {
 				if (!this.field11683[var1.field11465]) {
@@ -106,14 +106,14 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 					var2.field11465 = var1.field11465;
 					var2.field11462 = var1.field11462;
 					var2.field11467 = var1.field11467;
-					this.field11681.method14153(var2);
+					this.field11681.pushBack(var2);
 					this.field11683[var1.field11465] = true;
 				}
 				var1.field11466 = 2;
-				this.field11681.method14153(var1);
+				this.field11681.pushBack(var1);
 			} else if (var1.field11466 == 1) {
 				if (this.field11683[var1.field11465]) {
-					this.field11681.method14153(var1);
+					this.field11681.pushBack(var1);
 					this.field11683[var1.field11465] = false;
 				}
 			} else if (var1.field11466 == -1) {
@@ -125,12 +125,12 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 						var4.field11465 = var3;
 						var4.field11462 = var1.field11462;
 						var4.field11467 = var1.field11467;
-						this.field11681.method14153(var4);
+						this.field11681.pushBack(var4);
 						this.field11683[var3] = false;
 					}
 				}
 			} else if (var1.field11466 == 3) {
-				this.field11681.method14153(var1);
+				this.field11681.pushBack(var1);
 			}
 		}
 	}

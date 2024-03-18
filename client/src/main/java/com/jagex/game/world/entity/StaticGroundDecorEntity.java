@@ -71,8 +71,8 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		}
 		Pair var15 = this.method17436(arg1, var14, this.field11193);
 		if (var15 != null) {
-			this.field11192 = (Model) var15.field8737;
-			this.field11186 = (HardShadow) var15.field8738;
+			this.field11192 = (Model) var15.first;
+			this.field11186 = (HardShadow) var15.second;
 			if (this.field11184 || arg3.field7525) {
 				this.field11192 = this.field11192.method1773((byte) 0, var14, false);
 				if (arg3.field7525) {
@@ -109,7 +109,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 			return this.field11192;
 		} else {
 			Pair var3 = this.method17436(arg0, arg1, false);
-			return var3 == null ? null : (Model) var3.field8737;
+			return var3 == null ? null : (Model) var3.first;
 		}
 	}
 
@@ -239,7 +239,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		HardShadow var4;
 		if (this.field11186 == null && this.field11193) {
 			Pair var3 = this.method17436(arg0, 262144, true);
-			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
 			var4 = this.field11186;
 			this.field11186 = null;
@@ -256,7 +256,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		HardShadow var4;
 		if (this.field11186 == null && this.field11193) {
 			Pair var3 = this.method17436(arg0, 262144, true);
-			var4 = (HardShadow) (var3 == null ? null : var3.field8738);
+			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
 			var4 = this.field11186;
 			this.field11186 = null;

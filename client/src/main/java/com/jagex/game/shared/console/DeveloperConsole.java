@@ -691,7 +691,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 21) {
 					Client.field10794 = false;
 				} else if (arg0 == 10) {
-					Client.field10864.method14242();
+					Client.field10864.clear();
 				} else if (arg0 == 5) {
 					Client.method10444();
 					for (int var2 = 0; var2 < 10; var2++) {

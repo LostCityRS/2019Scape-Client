@@ -9,163 +9,163 @@ import java.util.Iterator;
 public class IterableQueue implements Iterable, Collection {
 
 	@ObfuscatedName("aat.e")
-	public Node field8482 = new Node();
+	public Node head = new Node();
 
 	@ObfuscatedName("aat.n")
-	public Node field8481;
+	public Node peeked;
 
 	public IterableQueue() {
-		this.field8482.field6761 = this.field8482;
-		this.field8482.field6762 = this.field8482;
+		this.head.prev = this.head;
+		this.head.next = this.head;
 	}
 
 	@ObfuscatedName("aat.e(I)V")
-	public void method14152() {
-		while (this.field8482.field6761 != this.field8482) {
-			this.field8482.field6761.method8440();
+	public void clearAll() {
+		while (this.head.prev != this.head) {
+			this.head.prev.remove();
 		}
 	}
 
 	@ObfuscatedName("aat.n(Ltj;I)V")
-	public void method14153(Node arg0) {
-		if (arg0.field6762 != null) {
-			arg0.method8440();
+	public void pushBack(Node node) {
+		if (node.next != null) {
+			node.remove();
 		}
-		arg0.field6762 = this.field8482.field6762;
-		arg0.field6761 = this.field8482;
-		arg0.field6762.field6761 = arg0;
-		arg0.field6761.field6762 = arg0;
+		node.next = this.head.next;
+		node.prev = this.head;
+		node.next.prev = node;
+		node.prev.next = node;
 	}
 
 	@ObfuscatedName("aq.m(Ltj;Ltj;B)V")
-	public static void method926(Node arg0, Node arg1) {
-		if (arg0.field6762 != null) {
-			arg0.method8440();
+	public static void pushNodeBack(Node node, Node head) {
+		if (node.next != null) {
+			node.remove();
 		}
-		arg0.field6762 = arg1.field6762;
-		arg0.field6761 = arg1;
-		arg0.field6762.field6761 = arg0;
-		arg0.field6761.field6762 = arg0;
+		node.next = head.next;
+		node.prev = head;
+		node.next.prev = node;
+		node.prev.next = node;
 	}
 
 	@ObfuscatedName("aat.k(I)Ltj;")
-	public Node method14154() {
-		Node var1 = this.field8482.field6761;
-		if (this.field8482 == var1) {
+	public Node pollFront() {
+		Node node = this.head.prev;
+		if (this.head == node) {
 			return null;
 		} else {
-			var1.method8440();
-			return var1;
+			node.remove();
+			return node;
 		}
 	}
 
 	@ObfuscatedName("aat.f(Laat;Ltj;I)V")
-	public void method14155(IterableQueue arg0, Node arg1) {
-		Node var3 = this.field8482.field6762;
-		this.field8482.field6762 = arg1.field6762;
-		arg1.field6762.field6761 = this.field8482;
-		if (this.field8482 != arg1) {
-			arg1.field6762 = arg0.field8482.field6762;
-			arg1.field6762.field6761 = arg1;
-			var3.field6761 = arg0.field8482;
-			arg0.field8482.field6762 = var3;
+	public void moveToFront(IterableQueue queue, Node nextNode) {
+		Node node = this.head.next;
+		this.head.next = nextNode.next;
+		nextNode.next.prev = this.head;
+		if (this.head != nextNode) {
+			nextNode.next = queue.head.next;
+			nextNode.next.prev = nextNode;
+			node.prev = queue.head;
+			queue.head.next = node;
 		}
 	}
 
 	@ObfuscatedName("aat.w(Laat;I)V")
-	public void method14207(IterableQueue arg0) {
-		if (this.field8482.field6761 != this.field8482) {
-			this.method14155(arg0, this.field8482.field6761);
+	public void merge(IterableQueue queue) {
+		if (this.head.prev != this.head) {
+			this.moveToFront(queue, this.head.prev);
 		}
 	}
 
 	@ObfuscatedName("aat.l(B)Ltj;")
-	public Node method14191() {
-		return this.method14158(null);
+	public Node peekFront() {
+		return this.peekFrontNode(null);
 	}
 
 	@ObfuscatedName("aat.u(Ltj;B)Ltj;")
-	public Node method14158(Node arg0) {
+	public Node peekFrontNode(Node arg0) {
 		Node var2;
 		if (arg0 == null) {
-			var2 = this.field8482.field6761;
+			var2 = this.head.prev;
 		} else {
 			var2 = arg0;
 		}
-		if (this.field8482 == var2) {
-			this.field8481 = null;
+		if (this.head == var2) {
+			this.peeked = null;
 			return null;
 		} else {
-			this.field8481 = var2.field6761;
+			this.peeked = var2.prev;
 			return var2;
 		}
 	}
 
 	@ObfuscatedName("aat.z(I)Ltj;")
-	public Node method14159() {
-		return this.method14189(null);
+	public Node peekBack() {
+		return this.peekBackNode(null);
 	}
 
 	@ObfuscatedName("aat.r(Ltj;I)Ltj;")
-	public Node method14189(Node arg0) {
-		Node var2;
-		if (arg0 == null) {
-			var2 = this.field8482.field6762;
+	public Node peekBackNode(Node node) {
+		Node peek;
+		if (node == null) {
+			peek = this.head.next;
 		} else {
-			var2 = arg0;
+			peek = node;
 		}
-		if (this.field8482 == var2) {
-			this.field8481 = null;
+		if (this.head == peek) {
+			this.peeked = null;
 			return null;
 		} else {
-			this.field8481 = var2.field6762;
-			return var2;
+			this.peeked = peek.next;
+			return peek;
 		}
 	}
 
 	@ObfuscatedName("aat.v(I)Ltj;")
-	public Node method14161() {
-		Node var1 = this.field8481;
-		if (this.field8482 == var1) {
-			this.field8481 = null;
+	public Node prev() {
+		Node node = this.peeked;
+		if (this.head == node) {
+			this.peeked = null;
 			return null;
 		} else {
-			this.field8481 = var1.field6761;
-			return var1;
+			this.peeked = node.prev;
+			return node;
 		}
 	}
 
 	@ObfuscatedName("aat.o(I)Ltj;")
-	public Node method14170() {
-		Node var1 = this.field8481;
-		if (this.field8482 == var1) {
-			this.field8481 = null;
+	public Node next() {
+		Node node = this.peeked;
+		if (this.head == node) {
+			this.peeked = null;
 			return null;
 		} else {
-			this.field8481 = var1.field6762;
-			return var1;
+			this.peeked = node.next;
+			return node;
 		}
 	}
 
 	@ObfuscatedName("aat.s(I)I")
-	public int method14157() {
-		int var1 = 0;
-		for (Node var2 = this.field8482.field6761; var2 != this.field8482; var2 = var2.field6761) {
-			var1++;
+	public int length() {
+		int length = 0;
+		for (Node var2 = this.head.prev; var2 != this.head; var2 = var2.prev) {
+			length++;
 		}
-		return var1;
+		return length;
 	}
 
 	@ObfuscatedName("aat.y(I)Z")
-	public boolean method14164() {
-		return this.field8482.field6761 == this.field8482;
+	public boolean _isEmpty() {
+		return this.head.prev == this.head;
 	}
 
 	@ObfuscatedName("aat.q(I)[Ltj;")
-	public Node[] method14165() {
-		Node[] var1 = new Node[this.method14157()];
+	public Node[] getNodes() {
+		Node[] var1 = new Node[this.length()];
 		int var2 = 0;
-		for (Node var3 = this.field8482.field6761; var3 != this.field8482; var3 = var3.field6761) {
+		for (Node var3 = this.head.prev; var3 != this.head; var3 = var3.prev) {
 			var1[var2++] = var3;
 		}
 		return var1;
@@ -176,11 +176,11 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	public int size() {
-		return this.method14157();
+		return this.length();
 	}
 
 	public boolean isEmpty() {
-		return this.method14164();
+		return this._isEmpty();
 	}
 
 	public boolean contains(Object arg0) {
@@ -188,12 +188,12 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	public Object[] toArray() {
-		return this.method14165();
+		return this.getNodes();
 	}
 
 	public Object[] toArray(Object[] arg0) {
 		int var2 = 0;
-		for (Node var3 = this.field8482.field6761; var3 != this.field8482; var3 = var3.field6761) {
+		for (Node var3 = this.head.prev; var3 != this.head; var3 = var3.prev) {
 			arg0[var2++] = var3;
 		}
 		return arg0;
@@ -201,7 +201,7 @@ public class IterableQueue implements Iterable, Collection {
 
 	@ObfuscatedName("aat.x(Ltj;I)Z")
 	public boolean method14168(Node arg0) {
-		this.method14153(arg0);
+		this.pushBack(arg0);
 		return true;
 	}
 
@@ -226,7 +226,7 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	public void clear() {
-		this.method14152();
+		this.clearAll();
 	}
 
 	public boolean add(Object arg0) {

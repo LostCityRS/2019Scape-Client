@@ -88,7 +88,7 @@ public class ServerConnection {
 
 	@ObfuscatedName("ax.e(I)V")
 	public final void method952() {
-		this.writeQueue.method14152();
+		this.writeQueue.clearAll();
 		this.writePos = 0;
 	}
 
@@ -99,7 +99,7 @@ public class ServerConnection {
 		}
 		this.field792.pos = 0;
 		while (true) {
-			ClientMessage message = (ClientMessage) this.writeQueue.method14191();
+			ClientMessage message = (ClientMessage) this.writeQueue.peekFront();
 			if (message == null || message.pos > this.field792.data.length - this.field792.pos) {
 				this.stream.write(this.field792.data, 0, this.field792.pos);
 				this.field801 += this.field792.pos;
@@ -108,7 +108,7 @@ public class ServerConnection {
 			}
 			this.field792.pdata(message.buf.data, 0, message.pos);
 			this.writePos -= message.pos;
-			message.method8440();
+			message.remove();
 			message.buf.release();
 			message.method17793();
 		}
@@ -116,7 +116,7 @@ public class ServerConnection {
 
 	@ObfuscatedName("ax.m(Lakl;I)V")
 	public final void queue(ClientMessage message) {
-		this.writeQueue.method14153(message);
+		this.writeQueue.pushBack(message);
 		message.pos = message.buf.pos;
 		message.buf.pos = 0;
 		this.writePos += message.pos;

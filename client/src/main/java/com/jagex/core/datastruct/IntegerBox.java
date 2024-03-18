@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class IntegerBox {
 
 	@ObfuscatedName("xe.e")
-	public int field7958;
+	public int intValue;
 
-	public IntegerBox(int arg0) {
-		this.field7958 = arg0;
+	public IntegerBox(int intValue) {
+		this.intValue = intValue;
 	}
 }

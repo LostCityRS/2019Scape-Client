@@ -70,7 +70,7 @@ public final class ChangeLocationRequest extends Node {
 	@ObfuscatedName("jf.e(IIIIIIILoe;B)V")
 	public static void method4653(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
 		ChangeLocationRequest var8 = null;
-		for (ChangeLocationRequest var9 = (ChangeLocationRequest) field11237.method14191(); var9 != null; var9 = (ChangeLocationRequest) field11237.method14161()) {
+		for (ChangeLocationRequest var9 = (ChangeLocationRequest) field11237.peekFront(); var9 != null; var9 = (ChangeLocationRequest) field11237.prev()) {
 			if (var9.field11238 == arg0 && var9.field11226 == arg1 && var9.field11228 == arg2 && var9.field11229 == arg3) {
 				var8 = var9;
 				break;
@@ -85,7 +85,7 @@ public final class ChangeLocationRequest extends Node {
 			if (arg1 >= 0 && arg2 >= 0 && arg1 < Client.world.method7728() && arg2 < Client.world.method7758()) {
 				method9023(var8);
 			}
-			field11237.method14153(var8);
+			field11237.pushBack(var8);
 		}
 		var8.field11234 = arg4;
 		var8.field11236 = arg5;
@@ -100,7 +100,7 @@ public final class ChangeLocationRequest extends Node {
 	@ObfuscatedName("pa.n(IIIIIILvp;B)V")
 	public static void method6816(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, LocTypeCustomisation arg6) {
 		ChangeLocationRequest var7 = null;
-		for (ChangeLocationRequest var8 = (ChangeLocationRequest) field11242.method14191(); var8 != null; var8 = (ChangeLocationRequest) field11242.method14161()) {
+		for (ChangeLocationRequest var8 = (ChangeLocationRequest) field11242.peekFront(); var8 != null; var8 = (ChangeLocationRequest) field11242.prev()) {
 			if (var8.field11238 == arg0 && var8.field11226 == arg1 && var8.field11228 == arg2 && var8.field11229 == arg3) {
 				var7 = var8;
 				break;
@@ -112,7 +112,7 @@ public final class ChangeLocationRequest extends Node {
 			var7.field11229 = arg3;
 			var7.field11226 = arg1;
 			var7.field11228 = arg2;
-			field11242.method14153(var7);
+			field11242.pushBack(var7);
 		}
 		var7.field11234 = arg4;
 		var7.field11236 = arg5;
@@ -123,9 +123,9 @@ public final class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("jx.m(B)V")
 	public static final void method5070() {
-		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.method14191(); var0 != null; var0 = (ChangeLocationRequest) field11237.method14161()) {
+		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.peekFront(); var0 != null; var0 = (ChangeLocationRequest) field11237.prev()) {
 			if (var0.field11240) {
-				var0.method8440();
+				var0.remove();
 			} else {
 				var0.field11239 = true;
 				if (var0.field11226 >= 0 && var0.field11228 >= 0 && var0.field11226 < Client.world.method7728() && var0.field11228 < Client.world.method7758()) {
@@ -133,9 +133,9 @@ public final class ChangeLocationRequest extends Node {
 				}
 			}
 		}
-		for (ChangeLocationRequest var1 = (ChangeLocationRequest) field11242.method14191(); var1 != null; var1 = (ChangeLocationRequest) field11242.method14161()) {
+		for (ChangeLocationRequest var1 = (ChangeLocationRequest) field11242.peekFront(); var1 != null; var1 = (ChangeLocationRequest) field11242.prev()) {
 			if (var1.field11240) {
-				var1.method8440();
+				var1.remove();
 			} else {
 				var1.field11239 = true;
 			}
@@ -178,10 +178,10 @@ public final class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("gp.f(B)V")
 	public static final void method3486() {
-		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.method14191(); var0 != null; var0 = (ChangeLocationRequest) field11237.method14161()) {
+		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.peekFront(); var0 != null; var0 = (ChangeLocationRequest) field11237.prev()) {
 			method2834(var0, false);
 		}
-		for (ChangeLocationRequest var1 = (ChangeLocationRequest) field11242.method14191(); var1 != null; var1 = (ChangeLocationRequest) field11242.method14161()) {
+		for (ChangeLocationRequest var1 = (ChangeLocationRequest) field11242.peekFront(); var1 != null; var1 = (ChangeLocationRequest) field11242.prev()) {
 			method2834(var1, true);
 		}
 	}
@@ -195,7 +195,7 @@ public final class ChangeLocationRequest extends Node {
 				} else {
 					method15005(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, arg0.field11227, arg0.field11231, arg0.field11232, arg0.field11233, -1, 0);
 				}
-				arg0.method8440();
+				arg0.remove();
 			}
 		} else if (arg0.field11239 && arg0.field11226 >= 1 && arg0.field11228 >= 1 && arg0.field11226 <= Client.world.method7728() - 2 && arg0.field11228 <= Client.world.method7758() - 2 && (arg0.field11234 < 0 || ClientMapLoader.method14705(Client.world.method7750(), arg0.field11234, arg0.field11236))) {
 			if (arg1) {
@@ -205,9 +205,9 @@ public final class ChangeLocationRequest extends Node {
 			}
 			arg0.field11239 = false;
 			if (!arg1 && arg0.field11234 == arg0.field11227 && arg0.field11227 == -1) {
-				arg0.method8440();
+				arg0.remove();
 			} else if (!arg1 && arg0.field11234 == arg0.field11227 && arg0.field11235 == arg0.field11231 && arg0.field11236 == arg0.field11232) {
-				arg0.method8440();
+				arg0.remove();
 			}
 		}
 	}

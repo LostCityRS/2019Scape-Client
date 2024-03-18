@@ -6,60 +6,60 @@ import deob.ObfuscatedName;
 public final class DualLinkQueue {
 
 	@ObfuscatedName("aaf.e")
-	public DualLink field8487 = new DualLink();
+	public DualLink head = new DualLink();
 
 	@ObfuscatedName("aaf.n")
-	public DualLink field8486;
+	public DualLink peeked;
 
 	public DualLinkQueue() {
-		this.field8487.field11213 = this.field8487;
-		this.field8487.field11212 = this.field8487;
+		this.head.dualPrev = this.head;
+		this.head.dualNext = this.head;
 	}
 
 	@ObfuscatedName("aaf.e(Lajn;B)V")
-	public void method14270(DualLink arg0) {
-		if (arg0.field11212 != null) {
-			arg0.method17453();
+	public void pushBack(DualLink node) {
+		if (node.dualNext != null) {
+			node.dualUnlink();
 		}
-		arg0.field11212 = this.field8487.field11212;
-		arg0.field11213 = this.field8487;
-		arg0.field11212.field11213 = arg0;
-		arg0.field11213.field11212 = arg0;
+		node.dualNext = this.head.dualNext;
+		node.dualPrev = this.head;
+		node.dualNext.dualPrev = node;
+		node.dualPrev.dualNext = node;
 	}
 
 	@ObfuscatedName("aaf.n(I)Lajn;")
-	public DualLink method14271() {
-		DualLink var1 = this.field8487.field11213;
-		if (this.field8487 == var1) {
-			this.field8486 = null;
+	public DualLink peekFront() {
+		DualLink node = this.head.dualPrev;
+		if (this.head == node) {
+			this.peeked = null;
 			return null;
 		} else {
-			this.field8486 = var1.field11213;
-			return var1;
+			this.peeked = node.dualPrev;
+			return node;
 		}
 	}
 
 	@ObfuscatedName("aaf.m(I)Lajn;")
-	public DualLink method14272() {
-		DualLink var1 = this.field8486;
-		if (this.field8487 == var1) {
-			this.field8486 = null;
+	public DualLink prev() {
+		DualLink var1 = this.peeked;
+		if (this.head == var1) {
+			this.peeked = null;
 			return null;
 		} else {
-			this.field8486 = var1.field11213;
+			this.peeked = var1.dualPrev;
 			return var1;
 		}
 	}
 
 	@ObfuscatedName("aaf.k(I)V")
-	public void method14279() {
+	public void clear() {
 		while (true) {
-			DualLink var1 = this.field8487.field11213;
-			if (this.field8487 == var1) {
-				this.field8486 = null;
+			DualLink node = this.head.dualPrev;
+			if (this.head == node) {
+				this.peeked = null;
 				return;
 			}
-			var1.method17453();
+			node.dualUnlink();
 		}
 	}
 }

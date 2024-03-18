@@ -47,7 +47,7 @@ public class StructType extends SecondaryNode implements ConfigType, ConfigRelat
 			} else {
 				var8 = new IntWrapper(buf.g4s());
 			}
-			this.params.method14501(var8, (long) var7);
+			this.params.pushNode(var8, (long) var7);
 		}
 	}
 
@@ -56,8 +56,8 @@ public class StructType extends SecondaryNode implements ConfigType, ConfigRelat
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.method14495((long) arg0);
-			return var3 == null ? arg1 : var3.field11442;
+			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			return var3 == null ? arg1 : var3.intValue;
 		}
 	}
 
@@ -66,7 +66,7 @@ public class StructType extends SecondaryNode implements ConfigType, ConfigRelat
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

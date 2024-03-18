@@ -3,7 +3,7 @@ package com.jagex.core.datastruct;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ex")
-public final class Cache {
+public final class ClientScriptCache {
 
 	@ObfuscatedName("ex.e")
 	public SecondaryNode field1760 = new SecondaryNode();
@@ -20,7 +20,7 @@ public final class Cache {
 	@ObfuscatedName("ex.f")
 	public DualIterableQueue field1763 = new DualIterableQueue();
 
-	public Cache(int arg0) {
+	public ClientScriptCache(int arg0) {
 		this.field1761 = arg0;
 		this.field1762 = arg0;
 		int var2;
@@ -31,9 +31,9 @@ public final class Cache {
 
 	@ObfuscatedName("ex.e(J)Laky;")
 	public SecondaryNode method2966(long arg0) {
-		SecondaryNode var3 = (SecondaryNode) this.field1764.method14495(arg0);
+		SecondaryNode var3 = (SecondaryNode) this.field1764.getNode(arg0);
 		if (var3 != null) {
-			this.field1763.method14339(var3);
+			this.field1763.pushBack(var3);
 		}
 		return var3;
 	}
@@ -41,25 +41,25 @@ public final class Cache {
 	@ObfuscatedName("ex.n(Laky;J)V")
 	public void method2968(SecondaryNode arg0, long arg1) {
 		if (this.field1762 == 0) {
-			SecondaryNode var4 = this.field1763.method14315();
-			var4.method8440();
-			var4.method17806();
+			SecondaryNode var4 = this.field1763.pollFront();
+			var4.remove();
+			var4.secondaryRemove();
 			if (this.field1760 == var4) {
-				SecondaryNode var5 = this.field1763.method14315();
-				var5.method8440();
-				var5.method17806();
+				SecondaryNode var5 = this.field1763.pollFront();
+				var5.remove();
+				var5.secondaryRemove();
 			}
 		} else {
 			this.field1762--;
 		}
-		this.field1764.method14501(arg0, arg1);
-		this.field1763.method14339(arg0);
+		this.field1764.pushNode(arg0, arg1);
+		this.field1763.pushBack(arg0);
 	}
 
 	@ObfuscatedName("ex.m(I)V")
 	public void method2969() {
-		this.field1763.method14316();
-		this.field1764.method14499();
+		this.field1763.clearAll();
+		this.field1764.clear();
 		this.field1760 = new SecondaryNode();
 		this.field1762 = this.field1761;
 	}

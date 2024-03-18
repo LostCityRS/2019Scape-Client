@@ -32,20 +32,20 @@ public class ObjIconFactory {
 	public static void method539(Renderer arg0, Component arg1) {
 		boolean var2 = Client.objTypeList.method18900(arg0, arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246 ? Client.localPlayerEntity.model : null) == null;
 		if (var2) {
-			field631.method14153(new ObjIconRequest(arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246));
+			field631.pushBack(new ObjIconRequest(arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246));
 			Client.method4616(arg1);
 		}
 	}
 
 	@ObfuscatedName("xk.n(Ldh;S)V")
 	public static void method10323(Renderer arg0) {
-		if (field631.method14157() == 0) {
+		if (field631.length() == 0) {
 			return;
 		}
 		if (Client.preferences.displayMode.getValue() == 0) {
-			for (ObjIconRequest var1 = (ObjIconRequest) field631.method14191(); var1 != null; var1 = (ObjIconRequest) field631.method14161()) {
+			for (ObjIconRequest var1 = (ObjIconRequest) field631.peekFront(); var1 != null; var1 = (ObjIconRequest) field631.prev()) {
 				Client.objTypeList.method18905(arg0, arg0, var1.field11256, var1.field11255, var1.field11258, var1.field11257, false, false, var1.field11254, DefaultSprites.field8321, var1.field11259 ? Client.localPlayerEntity.model : null, Client.graphicsDefaults);
-				var1.method8440();
+				var1.remove();
 			}
 			Client.method9734();
 			return;
@@ -56,9 +56,9 @@ public class ObjIconFactory {
 			field630 = Renderer.create(0, var2, Client.field7366, Client.field7669, Client.field9211, Client.field7282, Client.field2013, Client.shadersJs5, 0);
 			field629 = field630.createFont(FontMetrics.method1593(Client.fontmetricsJs5, DefaultSprites.field506, 0), SpriteDataProvider.method1609(Client.spritesJs5, DefaultSprites.field506, 0), true);
 		}
-		for (ObjIconRequest var3 = (ObjIconRequest) field631.method14191(); var3 != null; var3 = (ObjIconRequest) field631.method14161()) {
+		for (ObjIconRequest var3 = (ObjIconRequest) field631.peekFront(); var3 != null; var3 = (ObjIconRequest) field631.prev()) {
 			Client.objTypeList.method18905(field630, arg0, var3.field11256, var3.field11255, var3.field11258, var3.field11257, false, false, var3.field11254, field629, var3.field11259 ? Client.localPlayerEntity.model : null, Client.graphicsDefaults);
-			var3.method8440();
+			var3.remove();
 		}
 	}
 

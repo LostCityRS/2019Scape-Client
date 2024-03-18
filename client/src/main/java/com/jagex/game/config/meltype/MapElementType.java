@@ -308,7 +308,7 @@ public class MapElementType implements ConfigType {
 				} else {
 					var14 = new IntWrapper(arg0.g4s());
 				}
-				this.params.method14501(var14, (long) var13);
+				this.params.pushNode(var14, (long) var13);
 			}
 		}
 	}
@@ -438,8 +438,8 @@ public class MapElementType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.method14495((long) arg0);
-			return var3 == null ? arg1 : var3.field11442;
+			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			return var3 == null ? arg1 : var3.intValue;
 		}
 	}
 
@@ -448,7 +448,7 @@ public class MapElementType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

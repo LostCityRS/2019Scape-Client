@@ -289,10 +289,10 @@ public class ObjType implements ConfigType {
 			return;
 		}
 		boolean var1 = false;
-		for (Node var2 = this.params.method14500(); var2 != null; var2 = this.params.method14502()) {
-			ParamType var3 = (ParamType) this.factory.paramTL.list((int) var2.field6760);
+		for (Node var2 = this.params.peekFront(); var2 != null; var2 = this.params.prev()) {
+			ParamType var3 = (ParamType) this.factory.paramTL.list((int) var2.nodeId);
 			if (var3.autodisable) {
-				var2.method8440();
+				var2.remove();
 			} else {
 				var1 = true;
 			}
@@ -531,7 +531,7 @@ public class ObjType implements ConfigType {
 					} else {
 						var26 = new IntWrapper(buf.g4s());
 					}
-					this.params.method14501(var26, (long) var25);
+					this.params.pushNode(var26, (long) var25);
 				}
 			}
 		}
@@ -1167,8 +1167,8 @@ public class ObjType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.method14495((long) arg0);
-			return var3 == null ? arg1 : var3.field11442;
+			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			return var3 == null ? arg1 : var3.intValue;
 		}
 	}
 
@@ -1177,7 +1177,7 @@ public class ObjType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}

@@ -91,7 +91,7 @@ public class CutsceneManager {
 			method6121(var2);
 			int var3 = var2.g1();
 			for (int var4 = 0; var4 < var3; var4++) {
-				field1712.method14153(new CutsceneTemplate(var2));
+				field1712.pushBack(new CutsceneTemplate(var2));
 			}
 			int var5 = var2.gSmart1or2();
 			field1714 = new CutsceneSpline[var5];
@@ -168,8 +168,8 @@ public class CutsceneManager {
 
 	@ObfuscatedName("gf.m(I)V")
 	public static void method3551() {
-		field1718.method14499();
-		field1712.method14152();
+		field1718.clear();
+		field1712.clearAll();
 		field1714 = null;
 		field1721 = null;
 		field7317 = null;

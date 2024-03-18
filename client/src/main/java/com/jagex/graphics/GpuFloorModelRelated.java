@@ -212,7 +212,7 @@ public class GpuFloorModelRelated extends Node {
 		int var11 = this.field11414.method1527(var9, var10);
 		if ((arg4 & 0x7F) == 0 || (arg5 & 0x7F) == 0) {
 			var7 = ((long) var10 & 0xFFFFL) << 16 | (long) var9 & 0xFFFFL;
-			Node var12 = this.field11428.method14495(var7);
+			Node var12 = this.field11428.getNode(var7);
 			if (var12 != null) {
 				Unsafe var13 = this.field11416.field10110;
 				var13.putShort((long) (this.field11416.field10048 >> 1) + this.field11416.field10046 + (long) (this.field11413 * 2), ((FloorModelNode) var12).field11437);
@@ -222,7 +222,7 @@ public class GpuFloorModelRelated extends Node {
 		}
 		short var14 = (short) this.field11420;
 		if (var7 != -1L) {
-			this.field11428.method14501(new FloorModelNode(var14), var7);
+			this.field11428.pushNode(new FloorModelNode(var14), var7);
 		}
 		float var15;
 		float var16;

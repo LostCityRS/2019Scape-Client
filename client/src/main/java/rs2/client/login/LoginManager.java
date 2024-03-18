@@ -1197,11 +1197,11 @@ public class LoginManager {
 		Client.localPlayerEntity = null;
 		Client.field11011 = 0;
 		Client.field10906 = 0;
-		Client.field10838.method14499();
-		Client.field10965.method14152();
-		Client.field10966.method14499();
-		Client.field10864.method14242();
-		Client.field10964.method14499();
+		Client.field10838.clear();
+		Client.field10965.clearAll();
+		Client.field10966.clear();
+		Client.field10864.clear();
+		Client.field10964.clear();
 		ChangeLocationRequest.field11237 = new IterableQueue();
 		ChangeLocationRequest.field11242 = new IterableQueue();
 		Client.field8550 = 0;
@@ -1217,9 +1217,9 @@ public class LoginManager {
 		if (Client.field10978 != -1) {
 			Component.method7602(Client.field10978);
 		}
-		for (SubInterface var2 = (SubInterface) Client.field10979.method14500(); var2 != null; var2 = (SubInterface) Client.field10979.method14502()) {
-			if (!var2.method8441()) {
-				var2 = (SubInterface) Client.field10979.method14500();
+		for (SubInterface var2 = (SubInterface) Client.field10979.peekFront(); var2 != null; var2 = (SubInterface) Client.field10979.prev()) {
+			if (!var2.hasNext()) {
+				var2 = (SubInterface) Client.field10979.peekFront();
 				if (var2 == null) {
 					break;
 				}

@@ -40,17 +40,17 @@ public class ClanChannelDelta {
 				throw new RuntimeException("");
 			}
 			var3.method17757(arg0);
-			this.field3141.method14153(var3);
+			this.field3141.pushBack(var3);
 		}
 	}
 
 	// line 40
 	@ObfuscatedName("kc.n(Lakr;B)V")
 	public void method5342(ClanChannel arg0) {
-		if (this.field3140 != arg0.field6760 || this.field3146 != arg0.field11395) {
+		if (this.field3140 != arg0.nodeId || this.field3146 != arg0.field11395) {
 			throw new RuntimeException("");
 		}
-		for (ClanChannelDeltaEntry var2 = (ClanChannelDeltaEntry) this.field3141.method14191(); var2 != null; var2 = (ClanChannelDeltaEntry) this.field3141.method14161()) {
+		for (ClanChannelDeltaEntry var2 = (ClanChannelDeltaEntry) this.field3141.peekFront(); var2 != null; var2 = (ClanChannelDeltaEntry) this.field3141.prev()) {
 			var2.method17753(arg0);
 		}
 		arg0.field11395++;

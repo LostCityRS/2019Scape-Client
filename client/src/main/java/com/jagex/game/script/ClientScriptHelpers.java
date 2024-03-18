@@ -1,6 +1,6 @@
 package com.jagex.game.script;
 
-import com.jagex.core.datastruct.Cache;
+import com.jagex.core.datastruct.ClientScriptCache;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import rs2.client.Client;
@@ -9,7 +9,7 @@ import rs2.client.Client;
 public class ClientScriptHelpers {
 
 	@ObfuscatedName("yw.e")
-	public static Cache field8187 = new Cache(128);
+	public static ClientScriptCache field8187 = new ClientScriptCache(128);
 
 	public ClientScriptHelpers() throws Throwable {
 		throw new Error();

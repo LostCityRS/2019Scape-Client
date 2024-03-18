@@ -59,16 +59,16 @@ public abstract class Js5TcpClient {
 	public Js5NetRequest method7011(int arg0, int arg1, byte arg2, boolean arg3) {
 		long var5 = ((long) arg0 << 32) + (long) arg1;
 		Js5NetRequest var7 = new Js5NetRequest();
-		var7.field11440 = var5;
+		var7.secondaryNodeId = var5;
 		var7.field12565 = arg2;
 		var7.field12342 = arg3;
 		if (arg3) {
 			if (this.method7021() >= 500) {
 				throw new RuntimeException();
 			}
-			this.urgent.method14339(var7);
+			this.urgent.pushBack(var7);
 		} else if (this.method7013() < 500) {
-			this.prefetch.method14339(var7);
+			this.prefetch.pushBack(var7);
 		} else {
 			throw new RuntimeException();
 		}
@@ -87,12 +87,12 @@ public abstract class Js5TcpClient {
 
 	@ObfuscatedName("pp.k(I)I")
 	public int method7013() {
-		return this.prefetch.method14320() + this.field4443.method14320();
+		return this.prefetch.length() + this.field4443.length();
 	}
 
 	@ObfuscatedName("pp.f(I)I")
 	public int method7021() {
-		return this.urgent.method14320() + this.field4451.method14320();
+		return this.urgent.length() + this.field4451.length();
 	}
 
 	@ObfuscatedName("pp.z(ZI)V")

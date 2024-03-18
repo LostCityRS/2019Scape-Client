@@ -923,7 +923,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.p()V")
 	public void method2369() {
-		for (Node var1 = this.field9964.method14191(); var1 != null; var1 = this.field9964.method14161()) {
+		for (Node var1 = this.field9964.peekFront(); var1 != null; var1 = this.field9964.prev()) {
 			((LegacyOpenGLHeap) var1).method19237();
 		}
 		if (this.field9986 != null) {
@@ -1742,7 +1742,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.cp(I)Lakz;")
 	public Heap createHeap(int arg0) {
 		LegacyOpenGLHeap var2 = new LegacyOpenGLHeap(arg0);
-		this.field9964.method14153(var2);
+		this.field9964.pushBack(var2);
 		return var2;
 	}
 
@@ -3154,10 +3154,10 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public final synchronized void cycle(int arg0) {
 		int var2 = 0;
 		int var3 = arg0 & Integer.MAX_VALUE;
-		while (!this.field9883.method14164()) {
-			IntWrapper var4 = (IntWrapper) this.field9883.method14154();
-			field9890[var2++] = (int) var4.field6760;
-			this.field9880 -= var4.field11442;
+		while (!this.field9883._isEmpty()) {
+			IntWrapper var4 = (IntWrapper) this.field9883.pollFront();
+			field9890[var2++] = (int) var4.nodeId;
+			this.field9880 -= var4.intValue;
 			if (var2 == 1000) {
 				OpenGL.glDeleteBuffersARB(var2, field9890, 0);
 				var2 = 0;
@@ -3167,10 +3167,10 @@ public class LegacyOpenGLRenderer extends Renderer {
 			OpenGL.glDeleteBuffersARB(var2, field9890, 0);
 			var2 = 0;
 		}
-		while (!this.field9884.method14164()) {
-			IntWrapper var5 = (IntWrapper) this.field9884.method14154();
-			field9890[var2++] = (int) var5.field6760;
-			this.field9879 -= var5.field11442;
+		while (!this.field9884._isEmpty()) {
+			IntWrapper var5 = (IntWrapper) this.field9884.pollFront();
+			field9890[var2++] = (int) var5.nodeId;
+			this.field9879 -= var5.intValue;
 			if (var2 == 1000) {
 				OpenGL.glDeleteTextures(var2, field9890, 0);
 				var2 = 0;
@@ -3180,9 +3180,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 			OpenGL.glDeleteTextures(var2, field9890, 0);
 			var2 = 0;
 		}
-		while (!this.field9885.method14164()) {
-			IntWrapper var6 = (IntWrapper) this.field9885.method14154();
-			field9890[var2++] = var6.field11442;
+		while (!this.field9885._isEmpty()) {
+			IntWrapper var6 = (IntWrapper) this.field9885.pollFront();
+			field9890[var2++] = var6.intValue;
 			if (var2 == 1000) {
 				OpenGL.glDeleteFramebuffersEXT(var2, field9890, 0);
 				var2 = 0;
@@ -3192,10 +3192,10 @@ public class LegacyOpenGLRenderer extends Renderer {
 			OpenGL.glDeleteFramebuffersEXT(var2, field9890, 0);
 			var2 = 0;
 		}
-		while (!this.field9886.method14164()) {
-			IntWrapper var7 = (IntWrapper) this.field9886.method14154();
-			field9890[var2++] = (int) var7.field6760;
-			this.field9881 -= var7.field11442;
+		while (!this.field9886._isEmpty()) {
+			IntWrapper var7 = (IntWrapper) this.field9886.pollFront();
+			field9890[var2++] = (int) var7.nodeId;
+			this.field9881 -= var7.intValue;
 			if (var2 == 1000) {
 				OpenGL.glDeleteRenderbuffersEXT(var2, field9890, 0);
 				var2 = 0;
@@ -3205,21 +3205,21 @@ public class LegacyOpenGLRenderer extends Renderer {
 			OpenGL.glDeleteRenderbuffersEXT(var2, field9890, 0);
 			boolean var8 = false;
 		}
-		while (!this.field9938.method14164()) {
-			IntWrapper var9 = (IntWrapper) this.field9938.method14154();
-			OpenGL.glDeleteLists((int) var9.field6760, var9.field11442);
+		while (!this.field9938._isEmpty()) {
+			IntWrapper var9 = (IntWrapper) this.field9938.pollFront();
+			OpenGL.glDeleteLists((int) var9.nodeId, var9.intValue);
 		}
-		while (!this.field9838.method14164()) {
-			Node var10 = this.field9838.method14154();
-			OpenGL.glDeleteProgramARB((int) var10.field6760);
+		while (!this.field9838._isEmpty()) {
+			Node var10 = this.field9838.pollFront();
+			OpenGL.glDeleteProgramARB((int) var10.nodeId);
 		}
-		while (!this.field9888.method14164()) {
-			Node var11 = this.field9888.method14154();
-			OpenGL.glDeleteShader((int) var11.field6760);
+		while (!this.field9888._isEmpty()) {
+			Node var11 = this.field9888.pollFront();
+			OpenGL.glDeleteShader((int) var11.nodeId);
 		}
-		while (!this.field9938.method14164()) {
-			IntWrapper var12 = (IntWrapper) this.field9938.method14154();
-			OpenGL.glDeleteLists((int) var12.field6760, var12.field11442);
+		while (!this.field9938._isEmpty()) {
+			IntWrapper var12 = (IntWrapper) this.field9938.pollFront();
+			OpenGL.glDeleteLists((int) var12.nodeId, var12.intValue);
 		}
 		this.field10026.method1402();
 		if (this.method2520() > 100663296 && MonotonicTime.get() > this.field9823 + 60000L) {
@@ -3232,42 +3232,42 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.uf(II)V")
 	public final synchronized void method15870(int arg0, int arg1) {
 		IntWrapper var3 = new IntWrapper(arg1);
-		var3.field6760 = arg0;
-		this.field9883.method14153(var3);
+		var3.nodeId = arg0;
+		this.field9883.pushBack(var3);
 	}
 
 	@ObfuscatedName("afa.uz(II)V")
 	public final synchronized void method15822(int arg0, int arg1) {
 		IntWrapper var3 = new IntWrapper(arg1);
-		var3.field6760 = arg0;
-		this.field9884.method14153(var3);
+		var3.nodeId = arg0;
+		this.field9884.pushBack(var3);
 	}
 
 	@ObfuscatedName("afa.ug(I)V")
 	public final synchronized void method15802(int arg0) {
 		IntWrapper var2 = new IntWrapper(arg0);
-		this.field9885.method14153(var2);
+		this.field9885.pushBack(var2);
 	}
 
 	@ObfuscatedName("afa.ub(II)V")
 	public final synchronized void method15796(int arg0, int arg1) {
 		IntWrapper var3 = new IntWrapper(arg1);
-		var3.field6760 = arg0;
-		this.field9886.method14153(var3);
+		var3.nodeId = arg0;
+		this.field9886.pushBack(var3);
 	}
 
 	@ObfuscatedName("afa.uj(J)V")
 	public final synchronized void method15816(long arg0) {
 		Node var3 = new Node();
-		var3.field6760 = arg0;
-		this.field9888.method14153(var3);
+		var3.nodeId = arg0;
+		this.field9888.pushBack(var3);
 	}
 
 	@ObfuscatedName("afa.ut(I)V")
 	public final synchronized void method15797(int arg0) {
 		Node var2 = new Node();
-		var2.field6760 = arg0;
-		this.field9838.method14153(var2);
+		var2.nodeId = arg0;
+		this.field9838.pushBack(var2);
 	}
 
 	@ObfuscatedName("afa.uk(I)V")

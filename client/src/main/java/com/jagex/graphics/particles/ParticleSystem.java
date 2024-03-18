@@ -99,7 +99,7 @@ public class ParticleSystem {
 		while (var1.hasNext()) {
 			ParticleEffector var2 = (ParticleEffector) var1.next();
 			if (var2.field11483.field3549 == 1) {
-				var2.method8440();
+				var2.remove();
 			}
 		}
 		for (int var3 = 0; var3 < this.field7805.length; var3++) {
@@ -231,10 +231,10 @@ public class ParticleSystem {
 					}
 				}
 				if (!arg1) {
-					var5.method8440();
+					var5.remove();
 					this.field7812--;
-					if (var5.method8441()) {
-						var5.method8440();
+					if (var5.hasNext()) {
+						var5.remove();
 						ParticleSystemRenderer.field7796--;
 					}
 				}
@@ -245,7 +245,7 @@ public class ParticleSystem {
 						ParticleEffector var8 = null;
 						if (arg0[var7].method1509(ParticleSystemRenderer.field12041).field3549 == 1 && ParticleSystemRenderer.field7796 < 32) {
 							var8 = new ParticleEffector(arg0[var7], this);
-							ParticleSystemRenderer.field7800.method14501(var8, (long) arg0[var7].field1228);
+							ParticleSystemRenderer.field7800.pushNode(var8, (long) arg0[var7].field1228);
 							ParticleSystemRenderer.field7796++;
 						}
 						if (var8 == null) {
@@ -263,10 +263,10 @@ public class ParticleSystem {
 
 	@ObfuscatedName("xy.c()Ldm;")
 	public ParticleList method9939() {
-		this.field7816.list.method14279();
+		this.field7816.list.clear();
 		for (int var1 = 0; var1 < this.field7805.length; var1++) {
 			if (this.field7805[var1] != null && this.field7805[var1].field12526 != null) {
-				this.field7816.list.method14270(this.field7805[var1]);
+				this.field7816.list.pushBack(this.field7805[var1]);
 			}
 		}
 		return this.field7816;
@@ -279,7 +279,7 @@ public class ParticleSystem {
 
 	@ObfuscatedName("xy.v(Ltx;Ldh;)V")
 	public void method9941(Scene arg0, Renderer arg1) {
-		this.field7816.list.method14279();
+		this.field7816.list.clear();
 		Iterator var3 = this.field7809.iterator();
 		while (var3.hasNext()) {
 			ParticleEmitter var4 = (ParticleEmitter) var3.next();

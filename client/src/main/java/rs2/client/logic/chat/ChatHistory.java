@@ -61,8 +61,8 @@ public class ChatHistory {
 			field2594.put(arg0, var9);
 		}
 		ChatLine var10 = var9.method4323(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		field2597.method14501(var10, (long) var10.uid);
-		field2596.method14339(var10);
+		field2597.pushNode(var10, (long) var10.uid);
+		field2596.pushBack(var10);
 		Client.field11021 = Client.field11058;
 	}
 
@@ -74,7 +74,7 @@ public class ChatHistory {
 
 	@ObfuscatedName("d.u(II)Lasg;")
 	public static ChatLine method304(int arg0) {
-		return (ChatLine) field2597.method14495((long) arg0);
+		return (ChatLine) field2597.getNode((long) arg0);
 	}
 
 	@ObfuscatedName("pg.z(II)I")
@@ -86,32 +86,32 @@ public class ChatHistory {
 	@ObfuscatedName("v.p(I)V")
 	public static void method329() {
 		field2594.clear();
-		field2597.method14499();
-		field2596.method14316();
+		field2597.clear();
+		field2596.clearAll();
 		field2595 = 0;
 	}
 
 	@ObfuscatedName("agj.d(II)I")
 	public static int previousUid(int arg0) {
-		ChatLine var1 = (ChatLine) field2597.method14495((long) arg0);
+		ChatLine var1 = (ChatLine) field2597.getNode((long) arg0);
 		if (var1 == null) {
 			return -1;
-		} else if (field2596.field8497 == var1.field11438) {
+		} else if (field2596.head == var1.secondaryNext) {
 			return -1;
 		} else {
-			return ((ChatLine) var1.field11438).uid;
+			return ((ChatLine) var1.secondaryNext).uid;
 		}
 	}
 
 	@ObfuscatedName("ko.c(II)I")
 	public static int nextUid(int arg0) {
-		ChatLine var1 = (ChatLine) field2597.method14495((long) arg0);
+		ChatLine var1 = (ChatLine) field2597.getNode((long) arg0);
 		if (var1 == null) {
 			return -1;
-		} else if (field2596.field8497 == var1.field11439) {
+		} else if (field2596.head == var1.secondaryPrev) {
 			return -1;
 		} else {
-			return ((ChatLine) var1.field11439).uid;
+			return ((ChatLine) var1.secondaryPrev).uid;
 		}
 	}
 }

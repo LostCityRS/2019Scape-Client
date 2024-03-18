@@ -33,17 +33,17 @@ public class Js5DiskCache implements Runnable {
 		var3.field12559 = 1;
 		DualIterableQueue var4 = this.field4438;
 		synchronized (this.field4438) {
-			Js5WorkerRequest var5 = (Js5WorkerRequest) this.field4438.method14317();
+			Js5WorkerRequest var5 = (Js5WorkerRequest) this.field4438.peekFront();
 			while (true) {
 				if (var5 == null) {
 					break;
 				}
-				if (var5.field11440 == (long) arg0 && var5.field12556 == arg1 && var5.field12559 == 2) {
+				if (var5.secondaryNodeId == (long) arg0 && var5.field12556 == arg1 && var5.field12559 == 2) {
 					var3.field12557 = var5.field12557;
 					var3.field12344 = false;
 					return var3;
 				}
-				var5 = (Js5WorkerRequest) this.field4438.method14324();
+				var5 = (Js5WorkerRequest) this.field4438.prev();
 			}
 		}
 		var3.field12557 = arg1.method9010(arg0);
@@ -56,7 +56,7 @@ public class Js5DiskCache implements Runnable {
 	public Js5WorkerRequest method6988(int arg0, byte[] arg1, DiskStore arg2) {
 		Js5WorkerRequest var4 = new Js5WorkerRequest();
 		var4.field12559 = 2;
-		var4.field11440 = arg0;
+		var4.secondaryNodeId = arg0;
 		var4.field12557 = arg1;
 		var4.field12556 = arg2;
 		var4.field12342 = false;
@@ -68,7 +68,7 @@ public class Js5DiskCache implements Runnable {
 	public Js5WorkerRequest method6996(int arg0, DiskStore arg1) {
 		Js5WorkerRequest var3 = new Js5WorkerRequest();
 		var3.field12559 = 3;
-		var3.field11440 = arg0;
+		var3.secondaryNodeId = arg0;
 		var3.field12556 = arg1;
 		var3.field12342 = false;
 		this.method6987(var3);
@@ -79,7 +79,7 @@ public class Js5DiskCache implements Runnable {
 	public void method6987(Js5WorkerRequest arg0) {
 		DualIterableQueue var2 = this.field4438;
 		synchronized (this.field4438) {
-			this.field4438.method14339(arg0);
+			this.field4438.pushBack(arg0);
 			this.field4437++;
 			this.field4438.notifyAll();
 		}
@@ -90,7 +90,7 @@ public class Js5DiskCache implements Runnable {
 			DualIterableQueue var1 = this.field4438;
 			Js5WorkerRequest var2;
 			synchronized (this.field4438) {
-				var2 = (Js5WorkerRequest) this.field4438.method14315();
+				var2 = (Js5WorkerRequest) this.field4438.pollFront();
 				if (var2 == null) {
 					try {
 						this.field4438.wait();
@@ -102,9 +102,9 @@ public class Js5DiskCache implements Runnable {
 			}
 			try {
 				if (var2.field12559 == 2) {
-					var2.field12556.method9011((int) var2.field11440, var2.field12557, var2.field12557.length);
+					var2.field12556.method9011((int) var2.secondaryNodeId, var2.field12557, var2.field12557.length);
 				} else if (var2.field12559 == 3) {
-					var2.field12557 = var2.field12556.method9010((int) var2.field11440);
+					var2.field12557 = var2.field12556.method9010((int) var2.secondaryNodeId);
 				}
 			} catch (Exception var6) {
 				JagException.report(null, var6);

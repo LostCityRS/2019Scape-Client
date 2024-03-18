@@ -1,7 +1,7 @@
 package com.jagex.graphics.camera;
 
 import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.datastruct.LinkMap;
+import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.game.camera.*;
 import com.jagex.game.camera.position.Position;
 import com.jagex.game.camera.position.PositionEntity;
@@ -155,11 +155,11 @@ public abstract class Camera {
 		this.field2875 = true;
 		this.field2876 = 0;
 		this.field2877 = 1.0F;
-		this.field2878.method14499();
+		this.field2878.clear();
 	}
 
 	@ObfuscatedName("je.n(F[[[ILqx;III)V")
-	public void method4681(float arg0, int[][][] arg1, LinkMap arg2, int arg3, int arg4) {
+	public void method4681(float arg0, int[][][] arg1, SceneLevelTileFlags arg2, int arg3, int arg4) {
 		if (this.field2846 != null) {
 			this.field2846.method14131(arg0);
 		}
@@ -393,25 +393,25 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.i(Laso;I)V")
 	public void method4702(CameraEffect arg0) {
-		this.field2878.method14501(arg0, (long) arg0.field12341);
+		this.field2878.pushNode(arg0, (long) arg0.field12341);
 	}
 
 	@ObfuscatedName("je.j(II)V")
 	public void method4703(int arg0) {
-		CameraEffect var2 = (CameraEffect) this.field2878.method14495((long) arg0);
+		CameraEffect var2 = (CameraEffect) this.field2878.getNode((long) arg0);
 		if (var2 != null) {
-			var2.method8440();
+			var2.remove();
 		}
 	}
 
 	@ObfuscatedName("je.t(II)Laso;")
 	public CameraEffect method4704(int arg0) {
-		return (CameraEffect) this.field2878.method14495((long) arg0);
+		return (CameraEffect) this.field2878.getNode((long) arg0);
 	}
 
 	@ObfuscatedName("je.ae(B)V")
 	public void method4705() {
-		this.field2878.method14499();
+		this.field2878.clear();
 	}
 
 	@ObfuscatedName("je.ag(B)Z")

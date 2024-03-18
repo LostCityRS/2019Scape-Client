@@ -479,20 +479,20 @@ public class BASType implements ConfigRelated, ConfigType {
 		method6205(this.field7339, var1);
 		method6205(this.field7320, var1);
 		method6205(this.field7341, var1);
-		int[] var5 = new int[var1.method14498()];
+		int[] var5 = new int[var1.length()];
 		int var6 = 0;
 		Iterator var7 = var1.iterator();
 		while (var7.hasNext()) {
 			Node var8 = (Node) var7.next();
-			var5[var6++] = (int) var8.field6760;
+			var5[var6++] = (int) var8.nodeId;
 		}
 		return var5;
 	}
 
 	@ObfuscatedName("oi.s(ILaan;I)V")
 	public static final void method6205(int arg0, IterableMap arg1) {
-		if (arg0 != -1 && arg1.method14495((long) arg0) == null) {
-			arg1.method14501(new Node(), (long) arg0);
+		if (arg0 != -1 && arg1.getNode((long) arg0) == null) {
+			arg1.pushNode(new Node(), (long) arg0);
 		}
 	}
 

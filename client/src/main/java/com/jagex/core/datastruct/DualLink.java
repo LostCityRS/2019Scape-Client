@@ -6,18 +6,18 @@ import deob.ObfuscatedName;
 public class DualLink extends Link {
 
 	@ObfuscatedName("ajn.m")
-	public DualLink field11213;
+	public DualLink dualPrev;
 
 	@ObfuscatedName("ajn.k")
-	public DualLink field11212;
+	public DualLink dualNext;
 
 	@ObfuscatedName("ajn.n(I)V")
-	public void method17453() {
-		if (this.field11212 != null) {
-			this.field11212.field11213 = this.field11213;
-			this.field11213.field11212 = this.field11212;
-			this.field11213 = null;
-			this.field11212 = null;
+	public void dualUnlink() {
+		if (this.dualNext != null) {
+			this.dualNext.dualPrev = this.dualPrev;
+			this.dualPrev.dualNext = this.dualNext;
+			this.dualPrev = null;
+			this.dualNext = null;
 		}
 	}
 }
