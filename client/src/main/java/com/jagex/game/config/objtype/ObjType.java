@@ -337,7 +337,7 @@ public class ObjType implements ConfigType {
 				this.yof2d -= 65536;
 			}
 		} else if (code == 11) {
-			this.stackable = 1;
+			this.stackable = 1; // always
 		} else if (code == 12) {
 			this.cost = buf.g4s();
 		} else if (code == 13) {
@@ -511,7 +511,7 @@ public class ObjType implements ConfigType {
 			} else if (code == 164) {
 				this.field8678 = buf.gjstr();
 			} else if (code == 165) {
-				this.stackable = 2;
+				this.stackable = 2; // never
 			} else if (code == 167) {
 				this.field8688 = true;
 			} else if (code == 168) {
