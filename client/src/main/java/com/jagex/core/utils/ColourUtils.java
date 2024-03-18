@@ -227,7 +227,7 @@ public class ColourUtils {
 	}
 
 	@ObfuscatedName("aqy.z(IIFI)I")
-	public static int method19201(int arg0, int arg1, float arg2) {
+	public static int interpolateColours(int arg0, int arg1, float arg2) {
 		return method3057(arg0, arg1, (int) arg2);
 	}
 

@@ -1093,7 +1093,7 @@ public class PureJavaFloorModel extends FloorModel {
 								arg4.drawTriangle(true, true, false, var135, var136, var137, var132, var133, var134, arg7[var129], arg7[var130], arg7[var131], arg3.fadeColour);
 							} else if (var138 > 0.0F) {
 								if ((var99.field921[var129] & 0xFFFFFF) != 0) {
-									arg4.drawTriangle(true, true, false, var135, var136, var137, var132, var133, var134, arg7[var129], arg7[var130], arg7[var131], ColourUtils.method19201(var99.field921[var129], arg3.fadeColour, arg9[var129] * 255.0F), ColourUtils.method19201(var99.field921[var130], arg3.fadeColour, arg9[var130] * 255.0F), ColourUtils.method19201(var99.field921[var131], arg3.fadeColour, arg9[var131] * 255.0F));
+									arg4.drawTriangle(true, true, false, var135, var136, var137, var132, var133, var134, arg7[var129], arg7[var130], arg7[var131], ColourUtils.interpolateColours(var99.field921[var129], arg3.fadeColour, arg9[var129] * 255.0F), ColourUtils.interpolateColours(var99.field921[var130], arg3.fadeColour, arg9[var130] * 255.0F), ColourUtils.interpolateColours(var99.field921[var131], arg3.fadeColour, arg9[var131] * 255.0F));
 								}
 							} else if ((var99.field921[var129] & 0xFFFFFF) != 0) {
 								arg4.drawTriangle(true, true, false, var135, var136, var137, var132, var133, var134, arg7[var129], arg7[var130], arg7[var131], var99.field921[var129], var99.field921[var130], var99.field921[var131]);
@@ -1527,7 +1527,7 @@ public class PureJavaFloorModel extends FloorModel {
 					if ((var12.field982[var27] & 0xFFFFFF) != 0) {
 						if (var12.field980[var27] == -1 || var12.field980[var28] == -1 || var12.field980[var29] == -1) {
 							if (arg9[var27] + arg9[var28] + arg9[var29] > 0.0F) {
-								arg4.drawTriangle(true, true, false, var33, var34, var35, var30, var31, var32, arg7[var27], arg7[var28], arg7[var29], ColourUtils.method19201(var12.field982[var27], arg3.fadeColour, arg9[var27] * 255.0F), ColourUtils.method19201(var12.field982[var28], arg3.fadeColour, arg9[var28] * 255.0F), ColourUtils.method19201(var12.field982[var29], arg3.fadeColour, arg9[var29] * 255.0F));
+								arg4.drawTriangle(true, true, false, var33, var34, var35, var30, var31, var32, arg7[var27], arg7[var28], arg7[var29], ColourUtils.interpolateColours(var12.field982[var27], arg3.fadeColour, arg9[var27] * 255.0F), ColourUtils.interpolateColours(var12.field982[var28], arg3.fadeColour, arg9[var28] * 255.0F), ColourUtils.interpolateColours(var12.field982[var29], arg3.fadeColour, arg9[var29] * 255.0F));
 							} else {
 								arg4.drawTriangle(true, true, false, var33, var34, var35, var30, var31, var32, arg7[var27], arg7[var28], arg7[var29], var12.field982[var27], var12.field982[var28], var12.field982[var29]);
 							}

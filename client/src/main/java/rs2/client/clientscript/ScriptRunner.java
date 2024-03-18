@@ -9743,7 +9743,7 @@ public final class ScriptRunner {
 		} else if (var1 == 98) {
 			DeveloperConsole.method722(var3);
 		} else {
-			ChatHistory.method2664(var1, var2, "", "", "", var3, null);
+			ChatHistory.addMessage(var1, var2, "", "", "", var3, null);
 		}
 	}
 
@@ -13810,7 +13810,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		Vector3 var3 = Vector3.method6483((float) var1, (float) var1, (float) var1);
+		Vector3 var3 = Vector3.create((float) var1, (float) var1, (float) var1);
 		if (var3.field4308 == -1.0F) {
 			var3.field4308 = Float.POSITIVE_INFINITY;
 		}
@@ -13830,7 +13830,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		Vector3 var3 = Vector3.method6483((float) var1, (float) var1, (float) var1);
+		Vector3 var3 = Vector3.create((float) var1, (float) var1, (float) var1);
 		if (var3.field4308 == -1.0F) {
 			var3.field4308 = Float.POSITIVE_INFINITY;
 		}
@@ -13849,7 +13849,7 @@ public final class ScriptRunner {
 	public static final void cam2_setlookatmaxspeed(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
-		Vector3 var2 = Vector3.method6483((float) var1, (float) var1, (float) var1);
+		Vector3 var2 = Vector3.create((float) var1, (float) var1, (float) var1);
 		Client.field9155.method4832(var2);
 		var2.method6486();
 	}
@@ -13858,7 +13858,7 @@ public final class ScriptRunner {
 	public static final void cam2_setpositionmaxspeed(ClientScriptState arg0) throws CameraException {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
-		Vector3 var2 = Vector3.method6483((float) var1, (float) var1, (float) var1);
+		Vector3 var2 = Vector3.create((float) var1, (float) var1, (float) var1);
 		Client.field9155.method4695(var2);
 		var2.method6486();
 	}
@@ -14067,7 +14067,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
-		Vector3 var5 = Vector3.method6483((float) var1, (float) var2, (float) var3);
+		Vector3 var5 = Vector3.create((float) var1, (float) var2, (float) var3);
 		if (var5.field4308 == -1.0F) {
 			var5.field4308 = Float.POSITIVE_INFINITY;
 		}
@@ -14089,7 +14089,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
-		Vector3 var5 = Vector3.method6483((float) var1, (float) var2, (float) var3);
+		Vector3 var5 = Vector3.create((float) var1, (float) var2, (float) var3);
 		if (var5.field4308 == -1.0F) {
 			var5.field4308 = Float.POSITIVE_INFINITY;
 		}
@@ -14110,7 +14110,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
-		Vector3 var4 = Vector3.method6483((float) var1, (float) var2, (float) var3);
+		Vector3 var4 = Vector3.create((float) var1, (float) var2, (float) var3);
 		Client.field9155.method4832(var4);
 		var4.method6486();
 	}
@@ -14121,7 +14121,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
-		Vector3 var4 = Vector3.method6483((float) var1, (float) var2, (float) var3);
+		Vector3 var4 = Vector3.create((float) var1, (float) var2, (float) var3);
 		Client.field9155.method4695(var4);
 		var4.method6486();
 	}
@@ -14247,7 +14247,7 @@ public final class ScriptRunner {
 		float var2 = (float) arg0.field8216[arg0.field8226 + 1];
 		float var3 = (float) arg0.field8216[arg0.field8226 + 2];
 		float var4 = (float) arg0.field8216[arg0.field8226 + 3] / 1000.0F;
-		Client.field9155.method4696(Vector3.method6483(var1, var2, var3), var4);
+		Client.field9155.method4696(Vector3.create(var1, var2, var3), var4);
 	}
 
 	@ObfuscatedName("qd.aoz(Lyf;I)V")
@@ -14267,7 +14267,7 @@ public final class ScriptRunner {
 		float var2 = (float) arg0.field8216[arg0.field8226 + 1];
 		float var3 = (float) arg0.field8216[arg0.field8226 + 2];
 		float var4 = (float) arg0.field8216[arg0.field8226 + 3] / 1000.0F;
-		Client.field9155.method4699(Vector3.method6483(var1, var2, var3), var4);
+		Client.field9155.method4699(Vector3.create(var1, var2, var3), var4);
 	}
 
 	@ObfuscatedName("ajd.ape(Lyf;I)V")
@@ -14277,7 +14277,7 @@ public final class ScriptRunner {
 		float var2 = (float) arg0.field8216[arg0.field8226 + 1];
 		float var3 = (float) arg0.field8216[arg0.field8226 + 2];
 		float var4 = (float) arg0.field8216[arg0.field8226 + 3] / 1000.0F;
-		Client.field9155.method4725(Vector3.method6483(var1, var2, var3), var4);
+		Client.field9155.method4725(Vector3.create(var1, var2, var3), var4);
 	}
 
 	@ObfuscatedName("rt.apq(Lyf;S)V")

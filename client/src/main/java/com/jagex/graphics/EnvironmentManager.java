@@ -16,10 +16,10 @@ public class EnvironmentManager {
 	public static int field7859 = -1;
 
 	@ObfuscatedName("xu.n")
-	public static EnvironmentSampler field7832;
+	public static EnvironmentSampler sampler;
 
 	@ObfuscatedName("xu.m")
-	public static SkyBox field7846;
+	public static SkyBox skybox;
 
 	@ObfuscatedName("xu.k")
 	public static int field7835 = 5047;
@@ -107,9 +107,9 @@ public class EnvironmentManager {
 		this.field7845 = arg1;
 		this.field7836 = new Environment[arg2][arg3];
 		if (field7859 != -1) {
-			field7832 = this.method9985(field7859);
+			sampler = this.createEnvironmentSampler(field7859);
 		}
-		field7846 = null;
+		skybox = null;
 		this.field7856 = new Environment();
 		this.field7841 = new Environment();
 		this.field7843 = new Environment();
@@ -125,7 +125,7 @@ public class EnvironmentManager {
 		if (this.field7831 == null) {
 			this.method10007(var2, field7835);
 		} else {
-			this.field7854.method10083(var2);
+			this.field7854.setTo(var2);
 			this.field7854.method10063(this, this.field7831);
 			this.method10007(this.field7854, this.field7831.method10380());
 		}
@@ -140,7 +140,7 @@ public class EnvironmentManager {
 		if (this.field7831 == null) {
 			this.method10007(var2, field7835);
 		} else {
-			this.field7854.method10083(var2);
+			this.field7854.setTo(var2);
 			this.field7854.method10063(this, this.field7831);
 			this.method10007(this.field7854, this.field7831.method10380());
 		}
@@ -162,7 +162,7 @@ public class EnvironmentManager {
 		if (this.field7854 == null) {
 			this.field7854 = new Environment();
 		}
-		this.field7854.method10083(var4);
+		this.field7854.setTo(var4);
 		this.field7854.method10063(this, this.field7831);
 		this.method10007(this.field7854, arg2);
 	}
@@ -179,9 +179,9 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.w(Lxu;I)V")
 	public void method9992(EnvironmentManager arg0) {
-		this.field7841.method10083(arg0.field7841);
-		this.field7843.method10083(arg0.field7843);
-		this.field7844.method10083(arg0.field7844);
+		this.field7841.setTo(arg0.field7841);
+		this.field7843.setTo(arg0.field7843);
+		this.field7844.setTo(arg0.field7844);
 		this.field7839 = arg0.field7839;
 		this.field7837 = arg0.field7837;
 		this.field7838 = arg0.field7838;
@@ -195,7 +195,7 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.u(II)Ldz;")
-	public EnvironmentSampler method9985(int arg0) {
+	public EnvironmentSampler createEnvironmentSampler(int arg0) {
 		EnvironmentSampler var2 = (EnvironmentSampler) this.field7848.get((long) arg0);
 		if (var2 == null) {
 			EnvironmentSampler var3 = this.field7833.createEnvironmentSampler(arg0);
@@ -207,7 +207,7 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.z(IIIII)Lsv;")
-	public SkyBox method9986(int arg0, int arg1, int arg2, int arg3) {
+	public SkyBox createSkybox(int arg0, int arg1, int arg2, int arg3) {
 		long var5 = ((long) arg1 & 0xFFFFL) << 48 | ((long) arg2 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16 | (long) arg0 & 0xFFFFL;
 		SkyBox var7 = (SkyBox) this.field7849.get(var5);
 		if (var7 == null) {
@@ -252,7 +252,7 @@ public class EnvironmentManager {
 	public void method9991(int arg0, int arg1) {
 		Environment var3 = this.field7836[arg0][arg1];
 		if (var3 != null) {
-			this.field7847.method6492(var3.field7865);
+			this.field7847.setTo(var3.sunDirection);
 		}
 		this.method10008();
 	}
@@ -291,21 +291,21 @@ public class EnvironmentManager {
 		if (this.field7844.method10071(arg0)) {
 			return;
 		}
-		this.field7844.method10083(arg0);
+		this.field7844.setTo(arg0);
 		this.field7839 = MonotonicTime.method3655();
 		this.field7837 = this.field7838 = arg1;
 		if (this.field7837 == 0) {
 			return;
 		}
-		this.field7843.method10083(this.field7841);
-		if (this.field7841.field7863 == null) {
+		this.field7843.setTo(this.field7841);
+		if (this.field7841.skybox == null) {
 			return;
 		}
-		if (this.field7841.field7863.method7960()) {
-			this.field7841.field7863 = this.field7843.field7863 = this.field7841.field7863.method7942();
+		if (this.field7841.skybox.method7960()) {
+			this.field7841.skybox = this.field7843.skybox = this.field7841.skybox.method7942();
 		}
-		if (this.field7841.field7863 != null && this.field7844.field7863 != this.field7841.field7863) {
-			this.field7841.field7863.method7962(this.field7844.field7863);
+		if (this.field7841.skybox != null && this.field7844.skybox != this.field7841.skybox) {
+			this.field7841.skybox.method7962(this.field7844.skybox);
 		}
 	}
 
@@ -317,11 +317,11 @@ public class EnvironmentManager {
 		long var1 = MonotonicTime.method3655();
 		this.field7838 = (int) ((long) (this.field7838) - (var1 - this.field7839));
 		if (this.field7838 > 0) {
-			this.field7841.method10094(this.field7833, this.field7843, this.field7844, (float) (this.field7837 - this.field7838) / (float) this.field7837);
+			this.field7841.setToInterpolation(this.field7833, this.field7843, this.field7844, (float) (this.field7837 - this.field7838) / (float) this.field7837);
 		} else {
-			this.field7841.method10083(this.field7844);
-			if (this.field7841.field7863 != null) {
-				this.field7841.field7863.method7958();
+			this.field7841.setTo(this.field7844);
+			if (this.field7841.skybox != null) {
+				this.field7841.skybox.method7958();
 			}
 			this.field7838 = -1;
 		}
@@ -335,28 +335,28 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.q(I)V")
 	public void method10008() {
-		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * this.field7841.field7871);
-		this.field7833.setSun(this.field7841.field7877, this.field7841.field7861, this.field7841.field7864, (float) ((int) this.field7847.field4308 << 2), (float) ((int) this.field7847.field4311 << 2), (float) ((int) this.field7847.field4313 << 2));
-		this.field7833.setEnvironmentSampler(this.field7841.field7868);
+		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * this.field7841.sunAmbientIntensity);
+		this.field7833.setSun(this.field7841.sunColour, this.field7841.sunDiffuseIntensity, this.field7841.sunShadowIntensity, (float) ((int) this.field7847.field4308 << 2), (float) ((int) this.field7847.field4311 << 2), (float) ((int) this.field7847.field4313 << 2));
+		this.field7833.setEnvironmentSampler(this.field7841.sampler);
 	}
 
 	@ObfuscatedName("xu.x(FFFIIIIII)V")
 	public void method9996(float arg0, float arg1, float arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * arg0);
 		this.field7833.setSun(arg3, arg1, arg2, (float) (arg4 << 2), (float) (arg5 << 2), (float) (arg6 << 2));
-		this.field7833.setEnvironmentSampler(this.method9985(arg7));
+		this.field7833.setEnvironmentSampler(this.createEnvironmentSampler(arg7));
 	}
 
 	@ObfuscatedName("xu.b(I)V")
 	public void method9997() {
 		byte var1 = 0;
-		int var2 = (this.field7841.field7867 + 256 << 2) + var1;
-		this.field7833.setFog(this.field7841.field7866, Client.preferences.fog.getValue() == 1 ? var2 : -1, 0);
+		int var2 = (this.field7841.fogDepth + 256 << 2) + var1;
+		this.field7833.setFog(this.field7841.fogColour, Client.preferences.fog.getValue() == 1 ? var2 : -1, 0);
 	}
 
 	@ObfuscatedName("xu.h(I)V")
 	public void method10054() {
-		this.field7833.method2243(this.field7841.field7874, this.field7841.field7862, this.field7841.field7870);
+		this.field7833.method2243(this.field7841.bloomThreshold, this.field7841.bloomWhitePointSq, this.field7841.bloomIntensity);
 	}
 
 	@ObfuscatedName("xu.a(I)V")
@@ -367,7 +367,7 @@ public class EnvironmentManager {
 		if (this.field7855) {
 			this.field7833.setLevels(this.field7853, this.field7857, this.field7858, this.field7842, this.field7860);
 		} else {
-			this.field7833.setLevels(this.field7841.field7873, this.field7841.field7869, this.field7841.field7875, this.field7841.field7876, this.field7841.field7872);
+			this.field7833.setLevels(this.field7841.levelsGamma, this.field7841.levelsInputMin, this.field7841.levelsInputMax, this.field7841.levelsOutputMin, this.field7841.levelsOutputMax);
 		}
 	}
 
@@ -390,16 +390,16 @@ public class EnvironmentManager {
 		ColourRemapper var2 = null;
 		ColourRemapper var3 = null;
 		if (!this.field7852) {
-			if (this.field7841.field7878[0] > -1) {
-				var1 = this.method9987(this.field7841.field7878[0]);
+			if (this.field7841.colourRemappingMap[0] > -1) {
+				var1 = this.method9987(this.field7841.colourRemappingMap[0]);
 			}
-			if (this.field7841.field7878[1] > -1) {
-				var2 = this.method9987(this.field7841.field7878[1]);
+			if (this.field7841.colourRemappingMap[1] > -1) {
+				var2 = this.method9987(this.field7841.colourRemappingMap[1]);
 			}
-			if (this.field7841.field7878[2] > -1) {
-				var3 = this.method9987(this.field7841.field7878[2]);
+			if (this.field7841.colourRemappingMap[2] > -1) {
+				var3 = this.method9987(this.field7841.colourRemappingMap[2]);
 			}
-			this.field7833.setColourRemapping(var1, this.field7841.field7879[0], var2, this.field7841.field7879[1], var3, this.field7841.field7879[2]);
+			this.field7833.setColourRemapping(var1, this.field7841.colourRemappingWeight[0], var2, this.field7841.colourRemappingWeight[1], var3, this.field7841.colourRemappingWeight[2]);
 			return;
 		}
 		if (this.field7851[0] > -1) {
@@ -434,6 +434,6 @@ public class EnvironmentManager {
 		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * 1.1523438F);
 		this.field7833.setSun(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
 		this.field7833.setFog(13156520, -1, 0);
-		this.field7833.setEnvironmentSampler(field7832);
+		this.field7833.setEnvironmentSampler(sampler);
 	}
 }

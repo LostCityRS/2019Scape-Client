@@ -68,7 +68,7 @@ public class ClientMapLoader extends MapLoader {
 					if (var6 == null) {
 						var6 = new Environment(arg1, this.field10764);
 					} else {
-						var6.method10065(arg1, this.field10764);
+						var6.decode(arg1, this.field10764);
 					}
 				} else if (var8 == 1) {
 					int var9 = arg1.g1();
@@ -96,17 +96,17 @@ public class ClientMapLoader extends MapLoader {
 					if (var6 == null) {
 						var6 = new Environment();
 					}
-					var6.method10067(arg1);
+					var6.decodeBloom(arg1);
 				} else if (var8 == 3) {
 					if (var6 == null) {
 						var6 = new Environment();
 					}
-					var6.method10068(arg1);
+					var6.decodeColourRemapping(arg1);
 				} else if (var8 == 128) {
 					if (var6 == null) {
 						var6 = new Environment();
 					}
-					var6.method10070(arg1, this.field10764);
+					var6.decodeSkybox(arg1, this.field10764);
 				} else if (var8 == 129) {
 					if (this.field4517 == null) {
 						this.field4517 = new byte[4][][];
@@ -256,7 +256,7 @@ public class ClientMapLoader extends MapLoader {
 					if (var11 == null) {
 						var11 = new Environment(arg1, this.field10764);
 					} else {
-						var11.method10065(arg1, this.field10764);
+						var11.decode(arg1, this.field10764);
 					}
 				} else if (var15 == 1) {
 					int var16 = arg1.g1();
@@ -289,17 +289,17 @@ public class ClientMapLoader extends MapLoader {
 					if (var11 == null) {
 						var11 = new Environment();
 					}
-					var11.method10067(arg1);
+					var11.decodeBloom(arg1);
 				} else if (var15 == 3) {
 					if (var11 == null) {
 						var11 = new Environment();
 					}
-					var11.method10068(arg1);
+					var11.decodeColourRemapping(arg1);
 				} else if (var15 == 128) {
 					if (var11 == null) {
 						var11 = new Environment();
 					}
-					var11.method10070(arg1, this.field10764);
+					var11.decodeSkybox(arg1, this.field10764);
 				} else if (var15 == 129) {
 					if (this.field4517 == null) {
 						this.field4517 = new byte[4][][];

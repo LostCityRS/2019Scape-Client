@@ -3457,7 +3457,7 @@ public class GpuModel extends Model {
 					for (int var15 = 0; var15 < var13; var15++) {
 						Light var16 = this.field9730.field10045[var15];
 						int var17 = var16.method17624();
-						var14.method6492(var16.field11331);
+						var14.setTo(var16.field11331);
 						var14.method6567(var12);
 						var2.field2965[var15 * 4] = var14.field4308;
 						var2.field2965[var15 * 4 + 1] = var14.field4311;

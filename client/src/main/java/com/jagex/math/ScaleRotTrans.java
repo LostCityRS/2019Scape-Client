@@ -93,8 +93,8 @@ public class ScaleRotTrans {
 	@ObfuscatedName("oe.m(Loe;)V")
 	public void method6386(ScaleRotTrans arg0) {
 		this.field4297.method6412(arg0.field4297);
-		this.field4298.method6492(arg0.field4298);
-		this.field4299.method6492(arg0.field4299);
+		this.field4298.setTo(arg0.field4298);
+		this.field4299.setTo(arg0.field4299);
 	}
 
 	@ObfuscatedName("oe.k()V")

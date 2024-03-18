@@ -29,7 +29,7 @@ public class SplineRelated {
 
 	@ObfuscatedName("ph.n(ILox;)V")
 	public void method6740(int arg0, Vector3 arg1) {
-		this.field4323[arg0].method6492(arg1);
+		this.field4323[arg0].setTo(arg1);
 		this.method6739();
 	}
 

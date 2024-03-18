@@ -106,7 +106,7 @@ public class GraphNode {
 
 	@ObfuscatedName("yq.aw(Lox;)V")
 	public final void method10531(Vector3 arg0) {
-		this.field8173.field4298.method6492(arg0);
+		this.field8173.field4298.setTo(arg0);
 		this.method10535();
 		if (this.field8178 != null) {
 			this.field8178.method10549();

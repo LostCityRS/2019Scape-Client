@@ -816,9 +816,9 @@ public class GpuFloorModel extends FloorModel {
 									var35.field12120 = var29;
 									var35.field12148 = var31.field11408 / 3;
 									var35.field12138.method6248(var22.field2979);
-									var35.field12140.method6492(var22.field2973);
+									var35.field12140.setTo(var22.field2973);
 									var35.field12124.method6248(var22.field2984);
-									var35.field12144.method6492(var22.field2975);
+									var35.field12144.setTo(var22.field2975);
 									var35.method19210();
 								}
 								break;
@@ -855,7 +855,7 @@ public class GpuFloorModel extends FloorModel {
 				GpuFloorModelRelated var39 = (GpuFloorModelRelated) var38.next();
 				var39.method17783(var22, arg0, arg1, arg2, arg3, arg4);
 			}
-			var22.field2975.method6492(var37);
+			var22.field2975.setTo(var37);
 		}
 		if (this.field9505 == null) {
 			return;

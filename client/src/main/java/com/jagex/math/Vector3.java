@@ -51,7 +51,7 @@ public class Vector3 {
 	}
 
 	@ObfuscatedName("ox.m(FFF)Lox;")
-	public static Vector3 method6483(float arg0, float arg1, float arg2) {
+	public static Vector3 create(float arg0, float arg1, float arg2) {
 		Vector3[] var3 = field4309;
 		synchronized (field4309) {
 			if (field4310 == 0) {
@@ -70,7 +70,7 @@ public class Vector3 {
 			if (field4310 == 0) {
 				return new Vector3(arg0);
 			} else {
-				field4309[--field4310].method6492(arg0);
+				field4309[--field4310].setTo(arg0);
 				return field4309[field4310];
 			}
 		}
@@ -135,7 +135,7 @@ public class Vector3 {
 	}
 
 	@ObfuscatedName("ox.z(Lox;)V")
-	public void method6492(Vector3 arg0) {
+	public void setTo(Vector3 arg0) {
 		this.method6491(arg0.field4308, arg0.field4311, arg0.field4313);
 	}
 

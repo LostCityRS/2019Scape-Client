@@ -247,57 +247,57 @@ public class EnvironmentOverride {
 	}
 
 	@ObfuscatedName("yj.m(I)I")
-	public int method10429() {
+	public int getSunColour() {
 		return this.field8133;
 	}
 
 	@ObfuscatedName("yj.k(I)F")
-	public float method10381() {
+	public float getSunAmbientIntensity() {
 		return this.field8124;
 	}
 
 	@ObfuscatedName("yj.f(I)F")
-	public float method10392() {
+	public float getSunDiffiseIntensity() {
 		return this.field8118;
 	}
 
 	@ObfuscatedName("yj.w(I)F")
-	public float method10395() {
+	public float getSunShadowIntensity() {
 		return this.field8117;
 	}
 
 	@ObfuscatedName("yj.l(I)Lox;")
-	public Vector3 method10383() {
+	public Vector3 getSunDirection() {
 		return this.field8120;
 	}
 
 	@ObfuscatedName("yj.u(I)I")
-	public int method10422() {
+	public int getFogColour() {
 		return this.field8121;
 	}
 
 	@ObfuscatedName("yj.z(I)I")
-	public int method10385() {
+	public int getFogDepth() {
 		return this.field8119;
 	}
 
 	@ObfuscatedName("yj.p(I)F")
-	public float method10386() {
+	public float getBloomItensity() {
 		return this.field8123;
 	}
 
 	@ObfuscatedName("yj.d(I)F")
-	public float method10387() {
+	public float getBloomThreshold() {
 		return this.field8125;
 	}
 
 	@ObfuscatedName("yj.c(I)F")
-	public float method10388() {
+	public float getBloomWhitePointSq() {
 		return this.field8134;
 	}
 
 	@ObfuscatedName("yj.r(B)I")
-	public int method10414() {
+	public int getSampler() {
 		return this.field8126;
 	}
 
@@ -327,7 +327,7 @@ public class EnvironmentOverride {
 	}
 
 	@ObfuscatedName("yj.x(II)I")
-	public int method10420(int arg0) {
+	public int getColourRemappingMap(int arg0) {
 		return this.field8132[arg0];
 	}
 

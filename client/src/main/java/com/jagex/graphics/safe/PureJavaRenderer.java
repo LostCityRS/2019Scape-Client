@@ -2438,7 +2438,7 @@ public class PureJavaRenderer extends Renderer {
 	public void setSun(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
 		this.field9783 = (int) (arg1 * 65535.0F);
 		this.field9790 = (int) (arg2 * 65535.0F);
-		float var7 = (float) Math.sqrt((double) (arg5 * arg5 + arg3 * arg3 + arg4 * arg4));
+		float var7 = (float) Math.sqrt(arg5 * arg5 + arg3 * arg3 + arg4 * arg4);
 		this.field9804 = (int) (arg3 * 65535.0F / var7);
 		this.field9787 = (int) (arg4 * 65535.0F / var7);
 		this.field9788 = (int) (arg5 * 65535.0F / var7);

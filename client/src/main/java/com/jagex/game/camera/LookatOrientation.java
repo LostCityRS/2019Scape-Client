@@ -116,7 +116,7 @@ public class LookatOrientation extends Lookat {
 			Quaternion var3 = Quaternion.method6469();
 			var3.method6414(1.0F, 0.0F, 0.0F, (float) ((double) field11860 * 3.141592653589793D * 2.0D) / 16384.0F);
 			var2.method6424(var3);
-			Vector3 var4 = Vector3.method6483(0.0F, 1.0F, 0.0F);
+			Vector3 var4 = Vector3.create(0.0F, 1.0F, 0.0F);
 			var4.method6526(var2);
 			Quaternion var5 = Quaternion.method6469();
 			var4.method6513();
@@ -133,11 +133,11 @@ public class LookatOrientation extends Lookat {
 		PositionPoint var6 = (PositionPoint) this.field8479.method4709();
 		CoordFine var7 = var6.method5221();
 		Vector3 var8 = var7.method17853();
-		Vector3 var9 = Vector3.method6483(0.0F, 0.0F, (float) field11855);
+		Vector3 var9 = Vector3.create(0.0F, 0.0F, (float) field11855);
 		var9.method6526(var2);
 		var9.field4311 *= -1.0F;
 		var8.method6497(var9);
-		Vector3 var10 = Vector3.method6483((float) field11852, 0.0F, 0.0F);
+		Vector3 var10 = Vector3.create((float) field11852, 0.0F, 0.0F);
 		var10.method6526(var2);
 		var10.field4311 *= -1.0F;
 		var8.method6497(var10);

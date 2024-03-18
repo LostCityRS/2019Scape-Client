@@ -176,7 +176,7 @@ public class Light extends Node {
 			long var3 = var1 - this.field11328;
 			this.field11327 = (int) ((long) (this.field11327) - var3);
 			if (this.field11327 > 0) {
-				this.field11326 = ColourUtils.method19201(this.field11334, this.field11332, (float) (this.field11335 - this.field11327) / (float) this.field11335 * 255.0F);
+				this.field11326 = ColourUtils.interpolateColours(this.field11334, this.field11332, (float) (this.field11335 - this.field11327) / (float) this.field11335 * 255.0F);
 			} else {
 				this.field11326 = this.field11332;
 			}

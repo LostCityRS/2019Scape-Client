@@ -37,7 +37,7 @@ public class PositionPoint extends Position {
 		this.field10549.field4311 = arg0.y;
 		this.field10549.field4313 = arg0.z;
 		if (Float.isNaN(this.field10548.field4308)) {
-			this.field10548.method6492(this.field10549);
+			this.field10548.setTo(this.field10549);
 			this.field10547.method6493();
 		}
 		this.field10551 = arg0.level;

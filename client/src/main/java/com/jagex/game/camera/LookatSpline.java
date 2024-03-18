@@ -142,7 +142,7 @@ public abstract class LookatSpline extends Lookat {
 		var8.method6513();
 		Quaternion var9 = new Quaternion();
 		var9.method6413(var8, arg4);
-		Vector3 var10 = Vector3.method6483(0.0F, 1.0F, 0.0F);
+		Vector3 var10 = Vector3.create(0.0F, 1.0F, 0.0F);
 		Vector3 var11 = Vector3.method6587(var8, var10);
 		Vector3 var12 = Vector3.method6587(var11, var8);
 		var12.method6526(var9);

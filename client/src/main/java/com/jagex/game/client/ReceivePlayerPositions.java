@@ -722,7 +722,7 @@ public class ReceivePlayerPositions {
 		if ((arg3 & 0x200) != 0) {
 			String var67 = arg0.gjstr();
 			if (Client.localPlayerEntity == arg2) {
-				ChatHistory.method2664(2, 0, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var67, null);
+				ChatHistory.addMessage(2, 0, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var67, null);
 			}
 			arg2.method19124(var67, 0, 0);
 		}
@@ -785,7 +785,7 @@ public class ReceivePlayerPositions {
 			String var75 = arg0.gjstr();
 			int var76 = arg0.g1();
 			if ((var76 & 0x1) != 0) {
-				ChatHistory.method2664(2, var76, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var75, null);
+				ChatHistory.addMessage(2, var76, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var75, null);
 			}
 			arg2.method19124(var75, 0, 0);
 		}

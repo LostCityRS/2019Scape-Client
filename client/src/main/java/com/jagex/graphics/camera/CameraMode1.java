@@ -22,7 +22,7 @@ public class CameraMode1 {
 			arg4.method6496(var11 / arg6 * arg7);
 		}
 		if (arg4.field4308 == Float.POSITIVE_INFINITY || Float.isNaN(arg1.field4308) || var11 > arg8) {
-			arg1.method6492(arg2);
+			arg1.setTo(arg2);
 			arg3.method6493();
 			return;
 		}
@@ -111,7 +111,7 @@ public class CameraMode1 {
 		}
 		arg3.method6562(var15, 0.8F);
 		if (var11 < arg9 && arg3.method6519() < arg9) {
-			arg1.method6492(arg2);
+			arg1.setTo(arg2);
 			arg3.method6493();
 		} else {
 			arg1.method6497(Vector3.method6512(arg3, arg0));

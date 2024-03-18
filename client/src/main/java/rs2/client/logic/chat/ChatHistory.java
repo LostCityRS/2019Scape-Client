@@ -40,16 +40,16 @@ public class ChatHistory {
 
 	@ObfuscatedName("js.m(Ljava/lang/String;B)V")
 	public static void method4943(String arg0) {
-		method2664(0, 0, "", "", "", arg0, null);
+		addMessage(0, 0, "", "", "", arg0, null);
 	}
 
 	@ObfuscatedName("af.k(ILjava/lang/String;I)V")
 	public static void method1006(int arg0, String arg1) {
-		method2664(arg0, 0, "", "", "", arg1, null);
+		addMessage(arg0, 0, "", "", "", arg1, null);
 	}
 
 	@ObfuscatedName("dj.f(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnn;I)V")
-	public static void method2664(int arg0, int arg1, String arg2, String arg3, String arg4, String arg5, ChatCrownType arg6) {
+	public static void addMessage(int arg0, int arg1, String arg2, String arg3, String arg4, String arg5, ChatCrownType arg6) {
 		method15054(arg0, arg1, arg2, arg3, arg4, arg5, null, -1, arg6);
 	}
 

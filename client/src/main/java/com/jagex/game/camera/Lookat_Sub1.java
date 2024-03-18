@@ -30,7 +30,7 @@ public class Lookat_Sub1 extends Lookat {
 		this.field11848.field4311 = arg0.y;
 		this.field11848.field4313 = arg0.z;
 		if (Float.isNaN(this.field11847.field4308)) {
-			this.field11847.method6492(this.field11848);
+			this.field11847.setTo(this.field11848);
 			this.field11849.method6493();
 		}
 	}

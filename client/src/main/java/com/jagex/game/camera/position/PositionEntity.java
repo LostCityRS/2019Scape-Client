@@ -52,7 +52,7 @@ public class PositionEntity extends Position {
 	@ObfuscatedName("ahd.t(Ljn;Lox;Lov;ZI[[[ILqx;III)V")
 	public void method16683(CameraTrackable arg0, Vector3 arg1, Quaternion arg2, boolean arg3, int arg4, int[][][] arg5, LinkMap arg6, int arg7, int arg8) {
 		this.field10552 = arg0;
-		this.field10553.method6492(arg1);
+		this.field10553.setTo(arg1);
 		this.field10554.method6412(arg2);
 		this.field10556 = arg3;
 		this.field10561 = arg4;
@@ -79,7 +79,7 @@ public class PositionEntity extends Position {
 			this.field10555.method6412(var6);
 		}
 		var6.method6407();
-		this.field10559.method6492(this.field10552.method4667().method17853());
+		this.field10559.setTo(this.field10552.method4667().method17853());
 		this.field3084.method4807(true, arg0, this.field10558, this.field3084.method4721(), this.field10559, this.field10560);
 	}
 
@@ -89,7 +89,7 @@ public class PositionEntity extends Position {
 		if (this.field10556) {
 			Vector3 var2 = this.field10552.method4666();
 			if (var2.method6519() < (float) this.field10561) {
-				var2 = Vector3.method6483(0.0F, 0.0F, 1.0F);
+				var2 = Vector3.create(0.0F, 0.0F, 1.0F);
 				Quaternion var3 = this.field10552.method4668();
 				var2.method6526(var3);
 			}
@@ -129,9 +129,9 @@ public class PositionEntity extends Position {
 			return;
 		}
 		float var9 = 3.1415927F;
-		Vector3 var10 = Vector3.method6483(0.0F, 0.0F, 1.0F);
+		Vector3 var10 = Vector3.create(0.0F, 0.0F, 1.0F);
 		var10.method6526(this.field10554);
-		Vector3 var11 = Vector3.method6483(var10.field4308, 0.0F, var10.field4313);
+		Vector3 var11 = Vector3.create(var10.field4308, 0.0F, var10.field4313);
 		var11.method6513();
 		float var12 = Vector3.method6503(var10, var11);
 		for (int var13 = 0; var13 < 10; var13++) {
@@ -140,7 +140,7 @@ public class PositionEntity extends Position {
 			if (var8 > 0.0F) {
 				var15 = var14 * -1.0F;
 			}
-			Vector3 var16 = Vector3.method6483(1.0F, 0.0F, 0.0F);
+			Vector3 var16 = Vector3.create(1.0F, 0.0F, 0.0F);
 			var16.method6526(this.field10554);
 			Quaternion var17 = Quaternion.method6469();
 			var17.method6413(var16, var15);

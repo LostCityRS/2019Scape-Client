@@ -270,7 +270,7 @@ public abstract class Camera {
 		if (!this.method4686() || !this.field2842.field2821) {
 			throw new CameraException();
 		}
-		this.field2856.method6492(arg0);
+		this.field2856.setTo(arg0);
 	}
 
 	@ObfuscatedName("je.c(Lox;I)V")
@@ -278,7 +278,7 @@ public abstract class Camera {
 		if (!this.method4686() || !this.field2842.field2821) {
 			throw new CameraException();
 		}
-		this.field2867.method6492(arg0);
+		this.field2867.setTo(arg0);
 	}
 
 	@ObfuscatedName("je.r(FFFB)V")
@@ -306,7 +306,7 @@ public abstract class Camera {
 		if (!this.method4686() || !this.field2842.field2821) {
 			throw new CameraException();
 		}
-		this.field2853.method6492(arg0);
+		this.field2853.setTo(arg0);
 	}
 
 	@ObfuscatedName("je.s(Lox;I)V")
@@ -314,7 +314,7 @@ public abstract class Camera {
 		if (!this.method4686() || !this.field2842.field2821) {
 			throw new CameraException();
 		}
-		this.field2854.method6492(arg0);
+		this.field2854.setTo(arg0);
 	}
 
 	@ObfuscatedName("je.y(Lox;FI)V")
@@ -322,8 +322,8 @@ public abstract class Camera {
 		if (!this.method4686() || this.field2842.field2821) {
 			throw new CameraException();
 		}
-		this.field2864.method6492(arg0);
-		this.field2865.method6492(arg0);
+		this.field2864.setTo(arg0);
+		this.field2865.setTo(arg0);
 		this.field2866 = arg1;
 		this.field2843 = arg1;
 	}
@@ -333,7 +333,7 @@ public abstract class Camera {
 		if (!this.method4686() || this.field2842.field2821) {
 			throw new CameraException();
 		}
-		this.field2864.method6492(arg0);
+		this.field2864.setTo(arg0);
 		this.field2866 = arg1;
 	}
 
@@ -342,7 +342,7 @@ public abstract class Camera {
 		if (!this.method4686() || this.field2842.field2821) {
 			throw new CameraException();
 		}
-		this.field2865.method6492(arg0);
+		this.field2865.setTo(arg0);
 		this.field2843 = arg1;
 	}
 

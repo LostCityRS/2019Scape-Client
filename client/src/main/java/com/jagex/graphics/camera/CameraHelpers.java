@@ -13,7 +13,7 @@ public class CameraHelpers {
 
 	@ObfuscatedName("agm.e(Lov;B)F")
 	public static float method16445(Quaternion arg0) {
-		Vector3 var1 = Vector3.method6483(0.0F, 0.0F, 1.0F);
+		Vector3 var1 = Vector3.create(0.0F, 0.0F, 1.0F);
 		var1.method6526(arg0);
 		double var2 = 1.5707963267948966D - Math.acos((double) var1.field4311);
 		var1.method6486();
@@ -22,7 +22,7 @@ public class CameraHelpers {
 
 	@ObfuscatedName("uh.n(Lov;I)I")
 	public static int method9198(Quaternion arg0) {
-		Vector3 var1 = Vector3.method6483(0.0F, 0.0F, 1.0F);
+		Vector3 var1 = Vector3.create(0.0F, 0.0F, 1.0F);
 		var1.method6526(arg0);
 		double var2 = 1.5707963267948966D - Math.acos((double) var1.field4311);
 		var1.method6486();
@@ -43,7 +43,7 @@ public class CameraHelpers {
 
 	@ObfuscatedName("ib.k(Lov;I)F")
 	public static float method4498(Quaternion arg0) {
-		Vector3 var1 = Vector3.method6483(0.0F, 0.0F, 1.0F);
+		Vector3 var1 = Vector3.create(0.0F, 0.0F, 1.0F);
 		var1.method6526(arg0);
 		double var2 = Math.atan2((double) var1.field4308, (double) var1.field4313);
 		var1.method6486();
@@ -55,7 +55,7 @@ public class CameraHelpers {
 
 	@ObfuscatedName("dn.f(Lov;I)I")
 	public static int method2041(Quaternion arg0) {
-		Vector3 var1 = Vector3.method6483(0.0F, 0.0F, 1.0F);
+		Vector3 var1 = Vector3.create(0.0F, 0.0F, 1.0F);
 		var1.method6526(arg0);
 		double var2 = Math.atan2((double) var1.field4308, (double) var1.field4313);
 		var1.method6486();
