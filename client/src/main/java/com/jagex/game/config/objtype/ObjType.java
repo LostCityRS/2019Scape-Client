@@ -243,7 +243,7 @@ public class ObjType implements ConfigType {
 	public boolean minimenu_colour_overridden = false;
 
 	@ObfuscatedName("abv.bs")
-	public int field8696;
+	public int minimenu_colour;
 
 	@ObfuscatedName("abv.cl")
 	public boolean field8697 = false;
@@ -385,7 +385,7 @@ public class ObjType implements ConfigType {
 				this.recol_d_palette[index] = buf.g1b();
 			}
 		} else if (code == 43) {
-			this.field8696 = buf.g4s();
+			this.minimenu_colour = buf.g4s();
 			this.minimenu_colour_overridden = true;
 		} else if (code == 44) {
 			int var9 = buf.g2();
