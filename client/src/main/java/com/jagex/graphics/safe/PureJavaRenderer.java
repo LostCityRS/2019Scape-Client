@@ -184,7 +184,7 @@ public class PureJavaRenderer extends Renderer {
 			this.method15722(0);
 			ColourUtils.method10156(true, true);
 			this.field9777 = true;
-			this.field9776 = (int) MonotonicTime.method3655();
+			this.field9776 = (int) MonotonicTime.get();
 		} catch (Throwable var7) {
 			var7.printStackTrace();
 			this.dispose();
@@ -385,7 +385,7 @@ public class PureJavaRenderer extends Renderer {
 		for (int var5 = 0; var5 < this.threadLocalsCount; var5++) {
 			this.context[var5].method999();
 		}
-		this.method2167();
+		this.resetClip();
 		this.method2263();
 	}
 
@@ -620,7 +620,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bc()V")
-	public void method2167() {
+	public void resetClip() {
 		this.clipMinX = 0;
 		this.clipMinY = 0;
 		this.clipMaxX = this.sizeX;

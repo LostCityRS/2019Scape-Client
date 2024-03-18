@@ -154,7 +154,7 @@ public class Light extends Node {
 			this.field11332 = this.field11322;
 		}
 		this.field11327 = arg1;
-		this.field11328 = MonotonicTime.method3655();
+		this.field11328 = MonotonicTime.get();
 	}
 
 	@ObfuscatedName("akf.h(FIB)V")
@@ -166,13 +166,13 @@ public class Light extends Node {
 			this.field11330 = 1.0F;
 		}
 		this.field11333 = arg1;
-		this.field11324 = MonotonicTime.method3655();
+		this.field11324 = MonotonicTime.get();
 	}
 
 	@ObfuscatedName("akf.a(I)V")
 	public void method17622() {
 		if (this.field11332 != this.field11326) {
-			long var1 = MonotonicTime.method3655();
+			long var1 = MonotonicTime.get();
 			long var3 = var1 - this.field11328;
 			this.field11327 = (int) ((long) (this.field11327) - var3);
 			if (this.field11327 > 0) {
@@ -185,7 +185,7 @@ public class Light extends Node {
 		if (this.field11330 == this.field11329) {
 			return;
 		}
-		long var5 = MonotonicTime.method3655();
+		long var5 = MonotonicTime.get();
 		long var7 = var5 - this.field11324;
 		this.field11333 = (int) ((long) (this.field11333) - var7);
 		if (this.field11333 > 0) {

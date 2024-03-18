@@ -12,7 +12,7 @@ public class ChatLine extends SecondaryNode {
 	public int uid = ChatHistory.method8480();
 
 	@ObfuscatedName("asg.u")
-	public long time = MonotonicTime.method3655();
+	public long time = MonotonicTime.get();
 
 	@ObfuscatedName("asg.z")
 	public int type;
@@ -56,7 +56,7 @@ public class ChatLine extends SecondaryNode {
 	@ObfuscatedName("asg.e(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Lnn;I)V")
 	public void method19429(int arg0, int arg1, String arg2, String arg3, String arg4, String arg5, int arg6, String arg7, ChatCrownType arg8) {
 		this.uid = ChatHistory.method8480();
-		this.time = MonotonicTime.method3655();
+		this.time = MonotonicTime.get();
 		this.type = arg0;
 		this.flags = arg1;
 		this.name = arg2;

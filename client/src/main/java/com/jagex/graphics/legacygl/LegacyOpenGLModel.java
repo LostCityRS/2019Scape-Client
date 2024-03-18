@@ -3193,7 +3193,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.ax(Lou;Led;I)V")
-	public void method1813(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2) {
+	public void draw(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2) {
 		if ((arg2 & 0x2) != 0) {
 			OpenGL.glPolygonMode(1032, 6913);
 		}

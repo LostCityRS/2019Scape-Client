@@ -674,7 +674,7 @@ public class ObjType implements ConfigType {
 			if (this.resizez != 128) {
 				var16 |= 0x4;
 			}
-			ModelUnlit var17 = ModelUnlit.method1931(this.factory.configClient, this.model, 0);
+			ModelUnlit var17 = ModelUnlit.get(this.factory.configClient, this.model, 0);
 			if (var17 == null) {
 				return null;
 			}
@@ -761,7 +761,7 @@ public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.s(Ldh;Ldh;IIIZILeu;Lxg;Lws;B)[I")
 	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, Font arg7, PlayerModel arg8, GraphicsDefaults arg9) {
-		ModelUnlit var11 = ModelUnlit.method1931(this.factory.configClient, this.model, 0);
+		ModelUnlit var11 = ModelUnlit.get(this.factory.configClient, this.model, 0);
 		if (var11 == null) {
 			return null;
 		}
@@ -859,7 +859,7 @@ public class ObjType implements ConfigType {
 		arg0.method2475(2, 0);
 		arg0.fillRectangle(0, 0, 36, 32, 0, 0);
 		arg0.setFog(0, -1, 0);
-		var20.method1813(var26, null, 1);
+		var20.draw(var26, null, 1);
 		arg0.method2220(var23);
 		int[] var27 = arg0.method2149(0, 0, 36, 32);
 		if (arg3 >= 1) {
@@ -1016,7 +1016,7 @@ public class ObjType implements ConfigType {
 		if (var3 == -1) {
 			return null;
 		}
-		ModelUnlit var6 = ModelUnlit.method1931(this.factory.configClient, var3, 0);
+		ModelUnlit var6 = ModelUnlit.get(this.factory.configClient, var3, 0);
 		if (var6 == null) {
 			return null;
 		}
@@ -1024,7 +1024,7 @@ public class ObjType implements ConfigType {
 			var6.method1947(2);
 		}
 		if (var4 != -1) {
-			ModelUnlit var7 = ModelUnlit.method1931(this.factory.configClient, var4, 0);
+			ModelUnlit var7 = ModelUnlit.get(this.factory.configClient, var4, 0);
 			if (var7.field1372 < 13) {
 				var7.method1947(2);
 			}
@@ -1032,7 +1032,7 @@ public class ObjType implements ConfigType {
 				ModelUnlit[] var10 = new ModelUnlit[] { var6, var7 };
 				var6 = new ModelUnlit(var10, 2);
 			} else {
-				ModelUnlit var8 = ModelUnlit.method1931(this.factory.configClient, var5, 0);
+				ModelUnlit var8 = ModelUnlit.get(this.factory.configClient, var5, 0);
 				if (var8.field1372 < 13) {
 					var8.method1947(2);
 				}
@@ -1125,12 +1125,12 @@ public class ObjType implements ConfigType {
 		if (var3 == -1) {
 			return null;
 		}
-		ModelUnlit var5 = ModelUnlit.method1931(this.factory.configClient, var3, 0);
+		ModelUnlit var5 = ModelUnlit.get(this.factory.configClient, var3, 0);
 		if (var5.field1372 < 13) {
 			var5.method1947(2);
 		}
 		if (var4 != -1) {
-			ModelUnlit var6 = ModelUnlit.method1931(this.factory.configClient, var4, 0);
+			ModelUnlit var6 = ModelUnlit.get(this.factory.configClient, var4, 0);
 			if (var6.field1372 < 13) {
 				var6.method1947(2);
 			}

@@ -493,7 +493,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				this.field10735 = null;
 			}
 		}
-        if (this.field10748 && MonotonicTime.method3655() >= this.field10734) {
+        if (this.field10748 && MonotonicTime.get() >= this.field10734) {
             for (Js5Request var9 = (Js5Request) this.field10731.method14500(); var9 != null; var9 = (Js5Request) this.field10731.method14502()) {
                 if (!var9.field12344) {
                     if (var9.field12343) {
@@ -506,7 +506,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
                     }
                 }
             }
-            this.field10734 = MonotonicTime.method3655() + 1000L;
+            this.field10734 = MonotonicTime.get() + 1000L;
         } else {
             return;
         }

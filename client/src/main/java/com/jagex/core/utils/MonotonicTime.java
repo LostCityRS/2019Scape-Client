@@ -16,7 +16,7 @@ public final class MonotonicTime {
 	}
 
 	@ObfuscatedName("gz.e(I)J")
-	public static final synchronized long method3655() {
+	public static final synchronized long get() {
 		long var0 = System.currentTimeMillis();
 		if (var0 < field2012) {
 			field2011 += field2012 - var0;

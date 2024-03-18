@@ -43,7 +43,7 @@ public abstract class OpenGLBuffer implements GpuBuffer {
 		if (this.field4987 >= 0) {
 			return;
 		}
-		if (this.field4988.field12013) {
+		if (this.field4988.hasVertexBufferObject) {
 			OpenGL.glGenBuffersARB(1, field4995, 0);
 			this.field4987 = field4995[0];
 			OpenGL.glBindBufferARB(this.field4989, this.field4987);
@@ -64,7 +64,7 @@ public abstract class OpenGLBuffer implements GpuBuffer {
 
 	@ObfuscatedName("rv.ae()V")
 	public void method7658() {
-		if (this.field4988.field12013) {
+		if (this.field4988.hasVertexBufferObject) {
 			OpenGL.glBindBufferARB(this.field4989, this.field4987);
 		}
 	}
@@ -78,7 +78,7 @@ public abstract class OpenGLBuffer implements GpuBuffer {
 				OpenGL.glBufferDataARBub(this.field4989, arg0, null, 0, this.field4990 ? 35040 : 35044);
 				this.field4988.field10053 += arg0 - this.field4991;
 			} else {
-				this.field4986 = this.field4988.method15987(arg0, false);
+				this.field4986 = this.field4988.createHeapBuffer(arg0, false);
 			}
 			this.field4991 = arg0;
 		}

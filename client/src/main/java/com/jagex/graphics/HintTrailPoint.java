@@ -59,7 +59,7 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 		if (var5 != null && var5.groundDecoration != null) {
 			var2.method6315(0.0F, (float) -var5.groundDecoration.field12448, 0.0F);
 		}
-		this.field12614.field6754.method1813(var2, null, 0);
+		this.field12614.field6754.draw(var2, null, 0);
 		return null;
 	}
 

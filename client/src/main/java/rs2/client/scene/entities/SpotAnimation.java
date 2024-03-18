@@ -114,7 +114,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		Matrix4x3 var3 = this.method10533();
 		this.method19750(arg0, var2, var3);
 		PickableEntity var4 = PickableEntity.method16749(false);
-		var2.method1813(var3, this.field11713[0], 0);
+		var2.draw(var3, this.field11713[0], 0);
 		if (this.field12612 != null) {
 			ParticleList var5 = this.field12612.method9965();
 			arg0.drawParticles(var5);

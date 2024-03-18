@@ -2875,7 +2875,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.ax(Lou;Led;I)V")
-	public void method1813(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2) {
+	public void draw(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2) {
 		this.method15478(arg0, arg1, arg2);
 	}
 

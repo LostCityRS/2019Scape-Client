@@ -101,7 +101,7 @@ public class ParticleSystemRenderer {
 	public static void method6866(Renderer arg0, long arg1) {
 		field7801 = field7790;
 		field7790 = 0;
-		MonotonicTime.method3655();
+		MonotonicTime.get();
 		Iterator var3 = field8349.iterator();
 		while (var3.hasNext()) {
 			ParticleSystem var4 = (ParticleSystem) var3.next();

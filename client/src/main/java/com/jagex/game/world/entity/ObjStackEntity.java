@@ -184,7 +184,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 					field12584.method6292(this.field12577);
 				}
 				field12584.method6316(var6);
-				var35.method1813(field12584, this.field11713[2], 0);
+				var35.draw(field12584, this.field11713[2], 0);
 				this.field12576 |= var35.method1731();
 				this.field12579 = var35.method1728();
 			}
@@ -198,7 +198,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 					field12584.method6292(this.field12568);
 				}
 				field12584.method6316(var6);
-				var36.method1813(field12584, this.field11713[1], 0);
+				var36.draw(field12584, this.field11713[1], 0);
 				this.field12576 |= var36.method1731();
 				if (var36.method1728() > this.field12579) {
 					this.field12579 = var36.method1728();
@@ -213,7 +213,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 				field12584.method6292(this.field12571);
 			}
 			field12584.method6316(var6);
-			var37.method1813(field12584, this.field11713[0], 0);
+			var37.draw(field12584, this.field11713[0], 0);
 			this.field12576 |= var37.method1731();
 			if (var37.method1728() > this.field12579) {
 				this.field12579 = var37.method1728();

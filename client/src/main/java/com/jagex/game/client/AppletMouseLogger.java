@@ -40,7 +40,7 @@ public class AppletMouseLogger extends MouseLogger {
 
 	@ObfuscatedName("alt.u(I)Z")
 	public boolean method10272() {
-		return this.method18354() != null || this.field7953 < MonotonicTime.method3655() - 2000L;
+		return this.method18354() != null || this.field7953 < MonotonicTime.get() - 2000L;
 	}
 
 	@ObfuscatedName("alt.i(I)Lakm;")

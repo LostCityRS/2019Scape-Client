@@ -65,13 +65,13 @@ public class Js5HttpClient {
 			boolean var7 = arg0 == 255 && arg1 == 255;
 			if (!this.field4468 && !var7) {
 				return null;
-			} else if (this.field4470 + 10000L >= MonotonicTime.method3655()) {
+			} else if (this.field4470 + 10000L >= MonotonicTime.get()) {
 				return null;
 			} else {
 				Object var8 = null;
 				String var9;
 				if (var7) {
-					var9 = "&cb=" + MonotonicTime.method3655();
+					var9 = "&cb=" + MonotonicTime.get();
 				} else {
 					var9 = "&c=" + arg4 + "&v=" + arg5;
 				}
@@ -134,7 +134,7 @@ public class Js5HttpClient {
 			try {
 				var1.connect();
 			} catch (IOException var4) {
-				this.this$0.field4470 = MonotonicTime.method3655();
+				this.this$0.field4470 = MonotonicTime.get();
 				var2 = false;
 			}
 			return new Js5HTTPClientResponse(this.this$0, var2 ? var1.getInputStream() : null, this.field4428, this.field4429);

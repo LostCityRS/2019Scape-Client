@@ -154,7 +154,7 @@ public class IDKType implements ConfigType {
 				if (var3 >= this.models.length) {
 					break;
 				}
-				var1[var3] = ModelUnlit.method1931(this.configClient, this.models[var3], 0);
+				var1[var3] = ModelUnlit.get(this.configClient, this.models[var3], 0);
 				var3++;
 			}
 		}
@@ -211,7 +211,7 @@ public class IDKType implements ConfigType {
 					break;
 				}
 				if (this.heads[var4] != -1) {
-					var1[var2++] = ModelUnlit.method1931(this.configClient, this.heads[var4], 0);
+					var1[var2++] = ModelUnlit.get(this.configClient, this.heads[var4], 0);
 				}
 				var4++;
 			}

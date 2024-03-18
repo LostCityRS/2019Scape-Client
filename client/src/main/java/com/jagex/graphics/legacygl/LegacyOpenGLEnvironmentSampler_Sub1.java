@@ -40,7 +40,7 @@ public class LegacyOpenGLEnvironmentSampler_Sub1 extends LegacyOpenGLEnvironment
 		boolean var4 = true;
 		LegacyOpenGLFramebuffer var5 = this.field11944.field9877;
 		this.field11944.method2171(field11943);
-		this.field11944.method2167();
+		this.field11944.resetClip();
 		this.field11944.method2326(field11942);
 		this.field11944.method15748();
 		OpenGL.glMatrixMode(5889);
@@ -167,7 +167,7 @@ public class LegacyOpenGLEnvironmentSampler_Sub1 extends LegacyOpenGLEnvironment
 		this.field11944.method15777(null);
 		this.field11944.method2168(field11943[0], field11943[1], field11943[2], field11943[3]);
 		this.field11944.method2164(field11942[0], field11942[1], field11942[2], field11942[3]);
-		if (var4 && !this.field11944.field10027) {
+		if (var4 && !this.field11944.isAmd) {
 			this.field11941.method1084();
 		}
 		return var4;

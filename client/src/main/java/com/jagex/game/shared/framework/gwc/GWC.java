@@ -119,7 +119,7 @@ public class GWC {
 			}
 		}
 		WorldSwitcher.field8754 = false;
-		WorldSwitcher.field2826 = MonotonicTime.method3655();
+		WorldSwitcher.field2826 = MonotonicTime.get();
 		field7415 = null;
 	}
 }

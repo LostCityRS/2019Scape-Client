@@ -629,7 +629,7 @@ public class NPCType implements ConfigType {
 				if (var26[var32] != -1) {
 					Js5 var33 = this.factory.configClient;
 					synchronized (this.factory.configClient) {
-						var31[var32] = ModelUnlit.method1931(this.factory.configClient, var26[var32], 0);
+						var31[var32] = ModelUnlit.get(this.factory.configClient, var26[var32], 0);
 					}
 					if (var31[var32] != null) {
 						if (var31[var32].field1372 < 13) {
@@ -846,7 +846,7 @@ public class NPCType implements ConfigType {
 				Js5 var21 = this.factory.configClient;
 				synchronized (this.factory.configClient) {
 					for (int var22 = 0; var22 < var15.length; var22++) {
-						var20[var22] = ModelUnlit.method1931(this.factory.configClient, var15[var22], 0);
+						var20[var22] = ModelUnlit.get(this.factory.configClient, var15[var22], 0);
 					}
 				}
 				for (int var24 = 0; var24 < var15.length; var24++) {

@@ -93,7 +93,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	public final int field11999;
 
 	@ObfuscatedName("aqv.iv")
-	public boolean field12013;
+	public boolean hasVertexBufferObject;
 
 	@ObfuscatedName("aqv.ie")
 	public boolean field12002;
@@ -207,13 +207,13 @@ public final class OpenGLRenderer extends GpuRenderer {
 				throw new RuntimeException("");
 			}
 			String var13 = OpenGL.glGetString(7938);
-			String[] var14 = StringTools.method17361(var13.replace('.', ' '), ' ');
+			String[] var14 = StringTools.split(var13.replace('.', ' '), ' ');
 			if (var14.length < 2) {
 				throw new RuntimeException("");
 			}
 			try {
-				int var15 = StringTools.method9595(var14[0]);
-				int var16 = StringTools.method9595(var14[1]);
+				int var15 = StringTools.parseInt(var14[0]);
+				int var16 = StringTools.parseInt(var14[1]);
 				this.field11999 = var15 * 10 + var16;
 			} catch (NumberFormatException var30) {
 				throw new RuntimeException("");
@@ -227,7 +227,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 				throw new RuntimeException("");
 			}
 			this.field10094 = 8;
-			this.field12013 = this.field12020.method0("GL_ARB_vertex_buffer_object");
+			this.hasVertexBufferObject = this.field12020.method0("GL_ARB_vertex_buffer_object");
 			this.field10172 = this.field12020.method0("GL_ARB_multisample");
 			this.field10074 = this.field12020.method0("GL_EXT_blend_func_separate");
 			this.field12002 = this.field12020.method0("GL_ARB_texture_rectangle");
@@ -238,8 +238,8 @@ public final class OpenGLRenderer extends GpuRenderer {
 			this.field12024 = this.field12020.method0("GL_ARB_vertex_program");
 			this.field12025 = this.field12020.method0("GL_ARB_fragment_shader");
 			this.field12026 = this.field12020.method0("GL_ARB_fragment_program");
-			this.field10159 = this.field12020.method0("GL_EXT_framebuffer_object");
-			this.field10116 = this.field10159;
+			this.hasFramebufferObject = this.field12020.method0("GL_EXT_framebuffer_object");
+			this.field10116 = this.hasFramebufferObject;
 			this.field10134 = this.field12020.method0("GL_EXT_framebuffer_blit");
 			this.field10199 = this.field12020.method0("GL_EXT_framebuffer_multisample");
 			this.field12028 = this.field10110 != null && (this.field11999 >= 32 || this.field12020.method0("GL_ARB_sync"));
@@ -252,56 +252,70 @@ public final class OpenGLRenderer extends GpuRenderer {
 					throw new RuntimeException("");
 				}
 			}
-			NativeLibraryConfig.field5074.startsWith("mac");
+
+			NativeLibraryConfig.osName.startsWith("mac");
 			this.field12027 = Stream.method61() ? 33639 : 5121;
+
 			if (this.field12001.indexOf("radeon") != -1 || this.field12037.indexOf("intel") != -1) {
-				int var18 = 0;
-				boolean var19 = this.field12037.indexOf("intel") != -1;
+				int model = 0;
+
+				boolean isIntel = this.field12037.indexOf("intel") != -1;
 				boolean var20 = false;
 				boolean var21 = false;
-				String[] var22 = StringTools.method17361(this.field12001.replace('/', ' '), ' ');
-				for (int var23 = 0; var23 < var22.length; var23++) {
-					String var24 = var22[var23];
+
+				String[] parts = StringTools.split(this.field12001.replace('/', ' '), ' ');
+				for (int i = 0; i < parts.length; i++) {
+					String part = parts[i];
 					try {
-						if (var24.length() > 0) {
-							if (var24.charAt(0) == 'x' && var24.length() >= 3 && StringTools.method9836(var24.substring(1, 3))) {
-								var24 = var24.substring(1);
+						if (part.length() > 0) {
+							if (part.charAt(0) == 'x' && part.length() >= 3 && StringTools.method9836(part.substring(1, 3))) {
+								part = part.substring(1);
 								var21 = true;
 							}
-							if (var24.equals("hd")) {
+
+							if (part.equals("hd")) {
+								var20 = true;
+							} else if (part.equals("xe")) {
+								// modern intel graphics
 								var20 = true;
 							} else {
-								if (var24.startsWith("hd")) {
-									var24 = var24.substring(2);
+								if (part.startsWith("hd")) {
+									part = part.substring(2);
 									var20 = true;
 								}
-								if (var24.length() >= 4 && StringTools.method9836(var24.substring(0, 4))) {
-									var18 = StringTools.method9595(var24.substring(0, 4));
+
+								if (part.length() >= 4 && StringTools.method9836(part.substring(0, 4))) {
+									model = StringTools.parseInt(part.substring(0, 4));
 									break;
 								}
 							}
 						}
-					} catch (Exception var31) {
+					} catch (Exception ignored) {
 					}
 				}
-				if (!var19) {
+
+				if (!isIntel) {
 					if (!var21 && !var20) {
-						if (var18 >= 7000 && var18 <= 7999) {
-							this.field12013 = false;
+						if (model >= 7000 && model <= 7999) {
+							this.hasVertexBufferObject = false;
 						}
-						if (var18 >= 7000 && var18 <= 9250) {
+
+						if (model >= 7000 && model <= 9250) {
 							this.field10125 = false;
 						}
 					}
+
 					this.field12002 &= this.field12020.method0("GL_ARB_half_float_pixel");
 					this.field12016 = true;
 				} else if (!var20) {
-					this.field10159 = false;
+					 this.hasFramebufferObject = false;
 				}
 			}
-			if (!this.field12013) {
+
+			if (!this.hasVertexBufferObject) {
 				throw new RuntimeException("");
 			}
+
 			try {
 				int[] var26 = new int[1];
 				OpenGL.glGenBuffersARB(1, var26, 0);
@@ -310,8 +324,8 @@ public final class OpenGLRenderer extends GpuRenderer {
 			}
 			this.method2138(arg1, new OpenGLSurface(this, arg1, arg2));
 			this.method2140(arg1);
-			this.method15987(32768, false);
-			this.method15987(32768, false);
+			this.createHeapBuffer(32768, false);
+			this.createHeapBuffer(32768, false);
 		} catch (Throwable var32) {
 			var32.printStackTrace();
 			this.dispose();
@@ -456,7 +470,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		int var8 = this.field10193;
 		int var9 = this.field10138;
 		int var10 = this.field10106;
-		this.method2167();
+		this.resetClip();
 		OpenGL.glReadBuffer(1028);
 		OpenGL.glDrawBuffer(1029);
 		this.method16084();
@@ -1373,9 +1387,9 @@ public final class OpenGLRenderer extends GpuRenderer {
 			IntWrapper var13 = (IntWrapper) this.field12011.method14154();
 			OpenGL.glDeleteLists((int) var13.field6760, var13.field11442);
 		}
-		if (this.method2520() > 100663296 && MonotonicTime.method3655() > this.field12006 + 60000L) {
+		if (this.method2520() > 100663296 && MonotonicTime.get() > this.field12006 + 60000L) {
 			System.gc();
-			this.field12006 = MonotonicTime.method3655();
+			this.field12006 = MonotonicTime.get();
 		}
 		super.cycle(var4);
 	}
@@ -1590,7 +1604,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		String var4 = var3 + this.field12027 + var2;
 		String var5 = var4 + this.field10186 + var2;
 		String var6 = var5 + this.field10094 + var2;
-		String var7 = var6 + (this.field12013 ? 1 : 0) + var2;
+		String var7 = var6 + (this.hasVertexBufferObject ? 1 : 0) + var2;
 		String var8 = var7 + (this.field10172 ? 1 : 0) + var2;
 		String var9 = var8 + (this.field12024 ? 1 : 0) + var2;
 		String var10 = var9 + (this.field12026 ? 1 : 0) + var2;
@@ -1600,7 +1614,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		String var14 = var13 + (this.field12002 ? 1 : 0) + var2;
 		String var15 = var14 + (this.field10192 ? 1 : 0) + var2;
 		String var16 = var15 + (this.field12022 ? 1 : 0) + var2;
-		String var17 = var16 + (this.field10159 ? 1 : 0) + var2;
+		String var17 = var16 + (this.hasFramebufferObject ? 1 : 0) + var2;
 		String var18 = var17 + (this.field10134 ? 1 : 0) + var2;
 		String var19 = var18 + (this.field10199 ? 1 : 0) + var2;
 		String var20 = var19 + (this.field10074 ? 1 : 0) + var2;

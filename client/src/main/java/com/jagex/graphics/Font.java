@@ -358,7 +358,7 @@ public abstract class Font {
 						if (!var15.equals("reg")) {
 							if (var15.startsWith("img=")) {
 								try {
-									int var16 = StringTools.method9595(var15.substring(4));
+									int var16 = StringTools.parseInt(var15.substring(4));
 									Sprite var17 = arg3[var16];
 									int var18 = arg4 == null ? var17.method1436() : arg4[var16];
 									if ((field1674 & -16777216) == -16777216) {
@@ -379,10 +379,10 @@ public abstract class Font {
 									int var22 = var15.indexOf(44);
 									int var23;
 									if (var22 == -1) {
-										var23 = StringTools.method9595(var15.substring(7));
+										var23 = StringTools.parseInt(var15.substring(7));
 									} else {
-										var23 = StringTools.method9595(var15.substring(7, var22));
-										var21 = StringTools.method9595(var15.substring(var22 + 1));
+										var23 = StringTools.parseInt(var15.substring(7, var22));
+										var21 = StringTools.parseInt(var15.substring(var22 + 1));
 									}
 									Sprite[] var24 = this.field1667.field8575.method6185(this.field1666, var23);
 									if (var24 != null) {
@@ -484,7 +484,7 @@ public abstract class Font {
 										var17 = arg6[var11];
 									}
 									var11++;
-									int var18 = StringTools.method9595(var15.substring(4));
+									int var18 = StringTools.parseInt(var15.substring(4));
 									Sprite var19 = arg3[var18];
 									int var20 = arg4 == null ? var19.method1436() : arg4[var18];
 									var19.method1443(arg1 + var16, this.field1667.field8566 + var8 - var20 + var17, 1, -1, 1);
@@ -501,10 +501,10 @@ public abstract class Font {
 									int var24 = var15.indexOf(44);
 									int var25;
 									if (var24 == -1) {
-										var25 = StringTools.method9595(var15.substring(7));
+										var25 = StringTools.parseInt(var15.substring(7));
 									} else {
-										var25 = StringTools.method9595(var15.substring(7, var24));
-										var23 = StringTools.method9595(var15.substring(var24 + 1));
+										var25 = StringTools.parseInt(var15.substring(7, var24));
+										var23 = StringTools.parseInt(var15.substring(var24 + 1));
 									}
 									int var26;
 									if (arg5 == null) {

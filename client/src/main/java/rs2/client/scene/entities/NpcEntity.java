@@ -178,12 +178,12 @@ public class NpcEntity extends PathingEntity {
 				this.field10458 = true;
 				arg0.method2219(false);
 				if (var10) {
-					var16.method1813(var4, null, 0);
+					var16.draw(var4, null, 0);
 				} else {
 					if (this.field11713 == null || this.field11713.length < this.field10459.length + 1) {
 						this.method18363(this.field10459.length + 1);
 					}
-					var16.method1813(var4, this.field11713[this.field10459.length], 0);
+					var16.draw(var4, this.field11713[this.field10459.length], 0);
 				}
 				arg0.method2219(true);
 			}
@@ -206,9 +206,9 @@ public class NpcEntity extends PathingEntity {
 					this.field10459[var17].method1745(this.field12073, this.field12086, this.field12088, this.field12089);
 				}
 				if (var10) {
-					this.field10459[var17].method1813(var4, null, 0);
+					this.field10459[var17].draw(var4, null, 0);
 				} else {
-					this.field10459[var17].method1813(var4, this.field11713[var17], 0);
+					this.field10459[var17].draw(var4, this.field11713[var17], 0);
 				}
 			} else if (!var10) {
 				this.field11713[var17].field1686 = false;

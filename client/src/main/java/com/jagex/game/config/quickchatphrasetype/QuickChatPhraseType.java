@@ -41,7 +41,7 @@ public class QuickChatPhraseType extends SecondaryNode {
 	@ObfuscatedName("asq.n(Lalw;IB)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			this.field12379 = StringTools.method17361(buf.gjstr(), '<');
+			this.field12379 = StringTools.split(buf.gjstr(), '<');
 		} else if (code == 2) {
 			int length = buf.g1();
 			this.autoResponses = new int[length];

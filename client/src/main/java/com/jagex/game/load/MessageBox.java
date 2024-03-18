@@ -124,7 +124,7 @@ public class MessageBox {
 	}
 
 	@ObfuscatedName("ae.m(Ljava/lang/String;ZLdh;Leu;Laac;B)V")
-	public static void method649(String arg0, boolean arg1, Renderer arg2, Font arg3, FontMetrics arg4) {
+	public static void draw(String arg0, boolean arg1, Renderer arg2, Font arg3, FontMetrics arg4) {
 		boolean var5 = !field9262 || method16459();
 		if (!var5) {
 			return;

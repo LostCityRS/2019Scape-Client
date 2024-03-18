@@ -551,7 +551,7 @@ public abstract class Renderer {
 	public abstract void method2164(int arg0, int arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.bc()V")
-	public abstract void method2167();
+	public abstract void resetClip();
 
 	@ObfuscatedName("dh.bi(IIII)V")
 	public abstract void method2168(int arg0, int arg1, int arg2, int arg3);

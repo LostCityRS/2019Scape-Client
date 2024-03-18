@@ -142,7 +142,7 @@ public class ModelUnlit {
 	public ModelBillboard[] billboard;
 
 	@ObfuscatedName("dq.e(Lpy;II)Ldq;")
-	public static ModelUnlit method1931(Js5 arg0, int arg1, int arg2) {
+	public static ModelUnlit get(Js5 arg0, int arg1, int arg2) {
 		byte[] var3 = arg0.getfile(arg1, arg2);
 		return var3 == null ? null : new ModelUnlit(var3);
 	}

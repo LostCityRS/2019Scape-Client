@@ -257,7 +257,7 @@ public class PostProcessing {
 		this.field1169.method15772();
 		this.field1169.method15791(0);
 		this.field1169.method15778(1);
-		this.field1169.method2167();
+		this.field1169.resetClip();
 		int var3 = 0;
 		int var4 = 1;
 		int var5 = 0;

@@ -1117,7 +1117,7 @@ public class Component {
 				if (var32 != null) {
 					arg1 = arg0.method2213(arg1, var32.method1691());
 				}
-				ModelUnlit var33 = ModelUnlit.method1931(field1707, this.field2294, 0);
+				ModelUnlit var33 = ModelUnlit.get(field1707, this.field2294, 0);
 				if (var33 == null) {
 					field2338 = true;
 					return null;

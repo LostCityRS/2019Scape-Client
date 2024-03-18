@@ -1057,7 +1057,7 @@ public abstract class Model {
 	public abstract boolean method1812();
 
 	@ObfuscatedName("do.ax(Lou;Led;I)V")
-	public abstract void method1813(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2);
+	public abstract void draw(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2);
 
 	@ObfuscatedName("do.p()V")
 	public abstract void method1816();

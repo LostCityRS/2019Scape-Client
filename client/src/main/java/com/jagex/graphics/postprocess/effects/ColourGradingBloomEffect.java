@@ -63,7 +63,7 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 
 	@ObfuscatedName("aii.e()Z")
 	public boolean method5558() {
-		return this.field3242.field10159 && this.field3242.method15958() && this.field3242.method15959(true);
+		return this.field3242.hasFramebufferObject && this.field3242.method15958() && this.field3242.method15959(true);
 	}
 
 	@ObfuscatedName("aii.n()Z")

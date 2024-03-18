@@ -610,7 +610,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		canvas.setFocusTraversalKeysEnabled(false);
 		fullredraw = true;
 		canvasReplaceRecommended = false;
-		lastCanvasReplace = MonotonicTime.method3655();
+		lastCanvasReplace = MonotonicTime.get();
 	}
 
 	@ObfuscatedName("sk.x(I)V")
@@ -678,7 +678,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 					for (var3 = 6; var3 < var2.length() && StringTools.charIsNumeric(var2.charAt(var3)); var3++) {
 					}
 					String var4 = var2.substring(6, var3);
-					if (StringTools.method9836(var4) && StringTools.method9595(var4) < 10) {
+					if (StringTools.method9836(var4) && StringTools.parseInt(var4) < 10) {
 						this.error("wrongjava");
 						return;
 					}
@@ -691,7 +691,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		this.addcanvas();
 		this.maininit();
 		field6594 = Timer.method6109();
-		while (killtime == 0L || MonotonicTime.method3655() < killtime) {
+		while (killtime == 0L || MonotonicTime.get() < killtime) {
 			field6624 = field6594.method8158(logicUpdateInterval);
 			for (int var5 = 0; var5 < field6624; var5++) {
 				this.mainloopwrapper();
@@ -719,7 +719,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.g(B)V")
 	public void mainloopwrapper() {
-		long var1 = MonotonicTime.method3655();
+		long var1 = MonotonicTime.get();
 		long var3 = field6591[field6587];
 		field6591[field6587] = var1;
 		field6587 = field6587 + 1 & 0x1F;
@@ -733,7 +733,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.i(I)V")
 	public void mainredrawwrapper() {
-		long var1 = MonotonicTime.method3655();
+		long var1 = MonotonicTime.get();
 		long var3 = field6589[field6590 - 1 & 0x1F];
 		long var5 = field6589[field6590];
 		field6589[field6590] = var1;
@@ -837,13 +837,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	public void stop() {
 		if (!shutdown) {
-			killtime = MonotonicTime.method3655() + 4000L;
+			killtime = MonotonicTime.get() + 4000L;
 		}
 	}
 
 	public void destroy() {
 		if (!shutdown) {
-			killtime = MonotonicTime.method3655();
+			killtime = MonotonicTime.get();
 			PreciseSleep.sleep(5000L);
 			this.shutdown(false);
 		}
@@ -858,7 +858,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			return;
 		}
 		fullredraw = true;
-		if (MonotonicTime.method3655() - lastCanvasReplace > 1000L) {
+		if (MonotonicTime.get() - lastCanvasReplace > 1000L) {
 			Rectangle var2 = arg0.getClipBounds();
 			if (var2 == null || var2.width >= frameWid && var2.height >= frameHei) {
 				canvasReplaceRecommended = true;

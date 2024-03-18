@@ -137,7 +137,7 @@ public class Loading {
 		if (field2938 == null) {
 			field2938 = LoadingStage.method4920();
 			field3419 = field2938[0];
-			field7966 = MonotonicTime.method3655();
+			field7966 = MonotonicTime.get();
 		}
 		if (field593 == null) {
 			method254();
@@ -168,7 +168,7 @@ public class Loading {
 			}
 			NoiseGeneratorRelated.field9130 = var0.field2924;
 			if (field3419.field2926 || var0.field2926) {
-				field7966 = MonotonicTime.method3655();
+				field7966 = MonotonicTime.get();
 			}
 		}
 		if (field593 == null) {
@@ -407,7 +407,7 @@ public class Loading {
 			WorldMap.field6792 = new WorldMapDefaults(Client.defaultsJs5);
 		}
 		if (field3419 == LoadingStage.SETUP_CONFIG_DECODERS) {
-			if (Client.graphicsDefaults.field7738 != -1 && !Client.modelsJs5.requestdownload(Client.graphicsDefaults.field7738, 0)) {
+			if (Client.graphicsDefaults.performancemetricsmodel != -1 && !Client.modelsJs5.requestdownload(Client.graphicsDefaults.performancemetricsmodel, 0)) {
 				return 99;
 			}
 			Client.field7366 = new MaterialList(Client.materialsJs5);

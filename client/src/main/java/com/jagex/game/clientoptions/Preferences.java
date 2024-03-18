@@ -121,7 +121,7 @@ public class Preferences {
 			try {
 				Client.preferences.method18157(Client.preferences.unknown6, 3);
 				method16391();
-				var7 = Client.method15172(3, 1000);
+				var7 = Client.getPerformanceMetric(3, 1000);
 				if (Client.preferences.displayMode.getValue() == 3) {
 					var0.method18313(4);
 					RendererInfo var9 = Client.renderer.getRendererInfo();
@@ -150,7 +150,7 @@ public class Preferences {
 			try {
 				Client.preferences.method18157(Client.preferences.unknown6, 5);
 				method16391();
-				var8 = Client.method15172(5, 1000);
+				var8 = Client.getPerformanceMetric(5, 1000);
 				if (Client.preferences.displayMode.getValue() == 5) {
 					var0.method18313(8192);
 				}
@@ -162,7 +162,7 @@ public class Preferences {
 			try {
 				Client.preferences.method18157(Client.preferences.unknown6, 4);
 				method16391();
-				var6 = Client.method15172(1, 1000);
+				var6 = Client.getPerformanceMetric(1, 1000);
 				if (Client.preferences.displayMode.getValue() == 1) {
 					var0.method18313(2);
 				}

@@ -57,10 +57,10 @@ public class LoginRelated1 implements LoadingScreenElement {
 		}
 		int var5 = Loading.field593.method4851();
 		if (this.field3040 < 0L || var5 == 0 || this.field3038 != var5) {
-			this.field3040 = MonotonicTime.method3655();
+			this.field3040 = MonotonicTime.get();
 			this.field3038 = var5;
 		}
-		if (this.field3039.field3168 != 1 && MonotonicTime.method3655() - this.field3040 > 10000L) {
+		if (this.field3039.field3168 != 1 && MonotonicTime.get() - this.field3040 > 10000L) {
 			var4 = var4 + " (" + Loading.field593.method4855().field2920 + ")";
 		}
 		this.field3041.method2683(var4, var2, var3, this.field3039.field3176, -1);

@@ -53,7 +53,7 @@ public class HintTrail {
 
 	@ObfuscatedName("ta.e(Ldh;S)Ldo;")
 	public Model method8402(Renderer arg0) {
-		ModelUnlit var2 = ModelUnlit.method1931(Client.modelsJs5, this.field6749, 0);
+		ModelUnlit var2 = ModelUnlit.get(Client.modelsJs5, this.field6749, 0);
 		if (var2 == null) {
 			return null;
 		} else {

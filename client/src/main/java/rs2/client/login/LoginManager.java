@@ -832,7 +832,7 @@ public class LoginManager {
 					Client.lobbyDOB = var36.g3s();
 					Client.loggedInMembers = var36.g1() == 1;
 					Client.field10250 = var36.gjstr();
-					Client.field1238 = var36.g6() - MonotonicTime.method3655();
+					Client.field1238 = var36.g6() - MonotonicTime.get();
 					Client.world.method7750().method18890(Client.loggedInMembers);
 					Client.field3183.method7677().method7750().method18890(Client.loggedInMembers);
 					Client.objTypeList.setAllowMembers(Client.loggedInMembers);
@@ -849,7 +849,7 @@ public class LoginManager {
 					Client.field11081 = var36.g1() == 1;
 					Client.field10953 = var36.g1() == 1;
 					Client.field8322 = var36.g8();
-					Client.field1238 = Client.field8322 - MonotonicTime.method3655() - var36.g5();
+					Client.field1238 = Client.field8322 - MonotonicTime.get() - var36.g5();
 					int var37 = var36.g1();
 					Client.playerIsMembers = (var37 & 0x1) != 0;
 					Client.field11709 = (var37 & 0x2) != 0;

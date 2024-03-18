@@ -286,7 +286,7 @@ public class GpuRendererRelated6 {
 		}
 		if (var31 != 0) {
 			this.field3389.method2170(false);
-			this.field3389.method2167();
+			this.field3389.resetClip();
 			this.field3389.method2168(var19, var20, var21, var22);
 		}
 	}

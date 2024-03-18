@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 public class Link_Sub1 extends Link {
 
 	@ObfuscatedName("ajd.m")
-	public int field11211 = (int) (MonotonicTime.method3655() / 1000L);
+	public int field11211 = (int) (MonotonicTime.get() / 1000L);
 
 	@ObfuscatedName("ajd.k")
 	public String field11210;

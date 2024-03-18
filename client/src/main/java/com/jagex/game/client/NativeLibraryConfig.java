@@ -11,7 +11,7 @@ public class NativeLibraryConfig {
 	public static final String field5075;
 
 	@ObfuscatedName("rd.n")
-	public static final String field5074;
+	public static final String osName;
 
 	@ObfuscatedName("rd.m")
 	public static final String field5076;
@@ -37,7 +37,7 @@ public class NativeLibraryConfig {
 			var4 = System.getProperty("os.name").toLowerCase();
 		} catch (Exception var15) {
 		}
-		field5074 = var4.toLowerCase();
+		osName = var4.toLowerCase();
 		String var6 = "Unknown";
 		try {
 			var6 = System.getProperty("os.arch").toLowerCase();
@@ -50,7 +50,7 @@ public class NativeLibraryConfig {
 		} catch (Exception var13) {
 		}
 		field5073 = var8.toLowerCase();
-		field5075 = String.format("%s (%s) [%s]", field5074, field5076, field5073);
+		field5075 = String.format("%s (%s) [%s]", osName, field5076, field5073);
 		String var10 = "~/";
 		try {
 			var10 = System.getProperty("user.home").toLowerCase();

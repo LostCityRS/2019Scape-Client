@@ -79,7 +79,7 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 		var4.field11466 = arg0;
 		var4.field11464 = arg1;
 		var4.field11465 = arg2;
-		var4.field11462 = MonotonicTime.method3655();
+		var4.field11462 = MonotonicTime.get();
 		this.field11682.method14153(var4);
 	}
 

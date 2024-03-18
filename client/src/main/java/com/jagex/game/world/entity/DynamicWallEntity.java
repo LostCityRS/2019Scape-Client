@@ -88,9 +88,9 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 		this.field11179.method8239(arg0, var2, var3, var6, var6, var7, var7, true);
 		LocType var8 = this.field11179.method8237();
 		if (var8.field7468 == null) {
-			var2.method1813(var3, this.field11713[0], 0);
+			var2.draw(var3, this.field11713[0], 0);
 		} else {
-			var2.method1813(var3, null, 0);
+			var2.draw(var3, null, 0);
 			arg0.method2193(var3, this.field11713[0], var8.field7468);
 		}
 		if (this.field11179.field6680 != null) {

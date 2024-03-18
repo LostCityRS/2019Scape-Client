@@ -26,7 +26,7 @@ public class GraphicsDefaults {
 	public int field7723 = 7;
 
 	@ObfuscatedName("ws.d")
-	public int field7738 = -1;
+	public int performancemetricsmodel = -1;
 
 	@ObfuscatedName("ws.c")
 	public int login_interface = -1;
@@ -170,7 +170,7 @@ public class GraphicsDefaults {
 					}
 					var2 = true;
 				} else if (var3 == 2) {
-					this.field7738 = buf.gSmart2or4null();
+					this.performancemetricsmodel = buf.gSmart2or4null();
 				} else if (var3 == 3) {
 					this.maxhitmarks = buf.g1();
 					this.hitmarkpos_x = new int[this.maxhitmarks];

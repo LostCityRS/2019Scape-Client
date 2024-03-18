@@ -3259,7 +3259,7 @@ public class GpuModel extends Model {
 	}
 
 	@ObfuscatedName("afo.ax(Lou;Led;I)V")
-	public void method1813(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2) {
+	public void draw(Matrix4x3 arg0, ScreenBoundingBox arg1, int arg2) {
 		if (field9772 != null) {
 			field9772.method5554();
 		}

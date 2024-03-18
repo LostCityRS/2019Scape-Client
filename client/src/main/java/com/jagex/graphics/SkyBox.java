@@ -212,7 +212,7 @@ public class SkyBox {
 			boolean var2 = field1810.method6927(this.field5093);
 			if (var2) {
 				arg0.setSun(16777215, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
-				ModelUnlit var3 = ModelUnlit.method1931(field1810, this.field5093, 0);
+				ModelUnlit var3 = ModelUnlit.get(field1810, this.field5093, 0);
 				this.field5103 = arg0.createModel(var3, 1099776, 0, 255, 1);
 				byte[] var4 = this.field5103.method1741();
 				if (var4 == null) {
@@ -337,7 +337,7 @@ public class SkyBox {
 	public void method7948(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		Matrix4x3 var6 = arg0.method2218();
 		Matrix4x3 var7 = new Matrix4x3();
-		var7.method6313(0.0F, 0.0F, 0.0F);
+		var7.setToTranslation(0.0F, 0.0F, 0.0F);
 		var7.method6307(0.0F, -1.0F, 0.0F, Trig1.method6277(-arg2 & 0x3FFF));
 		var7.method6307(-1.0F, 0.0F, 0.0F, Trig1.method6277(-arg1 & 0x3FFF));
 		var7.method6307(0.0F, 0.0F, -1.0F, Trig1.method6277(-arg3 & 0x3FFF));
@@ -347,7 +347,7 @@ public class SkyBox {
 			this.field5103.method1747((byte) arg4, this.field5101);
 			this.field5105 = arg4;
 		}
-		this.field5103.method1813(var8, null, 0);
+		this.field5103.draw(var8, null, 0);
 		arg0.method2217(var6);
 	}
 }

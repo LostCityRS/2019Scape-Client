@@ -192,7 +192,7 @@ public class SkyboxRelated {
 
 	@ObfuscatedName("sw.w(Ldh;Lsw;)V")
 	public void method7983(Renderer arg0, SkyboxRelated arg1) {
-		ModelUnlit var3 = ModelUnlit.method1931(SkyBox.field1810, this.field5135, 0);
+		ModelUnlit var3 = ModelUnlit.get(SkyBox.field1810, this.field5135, 0);
 		if (var3 == null) {
 			return;
 		}
@@ -245,8 +245,8 @@ public class SkyboxRelated {
 		Matrix4x3 var22 = new Matrix4x3();
 		arg0.method2217(var22);
 		Matrix4x3 var23 = arg0.method2209();
-		var23.method6313(0.0F, 0.0F, (float) (50 - var15.method1733()));
-		var15.method1813(var23, null, 1);
+		var23.setToTranslation(0.0F, 0.0F, (float) (50 - var15.method1733()));
+		var15.draw(var23, null, 1);
 		this.field5128 = arg0.method2314(0, 0, this.field5123, this.field5123, true);
 		this.field5128.method1441(0, 0, 3);
 		arg0.method2220(var20);
@@ -303,8 +303,8 @@ public class SkyboxRelated {
 		arg0.method2220(var15);
 		arg0.method2217(new Matrix4x3());
 		Matrix4x3 var16 = new Matrix4x3();
-		var16.method6313(0.0F, 0.0F, (float) (50 - var12.method1733()));
-		var12.method1813(var16, null, 1);
+		var16.setToTranslation(0.0F, 0.0F, (float) (50 - var12.method1733()));
+		var12.draw(var16, null, 1);
 		int var17 = this.field5123 * 13 / 16;
 		int var18 = (this.field5123 - var17) / 2;
 		field5118.method1446(var18, var18, var17, var17, 0, this.field5111 | 0xFF000000, 1);

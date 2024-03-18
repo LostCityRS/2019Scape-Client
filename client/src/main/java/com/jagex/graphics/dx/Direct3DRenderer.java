@@ -265,8 +265,8 @@ public class Direct3DRenderer extends GpuRenderer {
 			this.field11963 = (this.field11974.TextureCaps & 0x8000) != 0;
 			this.field11967 = (this.field11974.TextureCaps & 0x10000) != 0;
 			this.field11976 = (this.field11974.TextureCaps & 0x4000) != 0;
-			this.field10159 = this.field11974.NumSimultaneousRTs > 0;
-			this.field10116 = this.field10159;
+			this.hasFramebufferObject = this.field11974.NumSimultaneousRTs > 0;
+			this.field10116 = this.hasFramebufferObject;
 			this.field10134 = this.field11974.NumSimultaneousRTs > 0;
 			this.field10172 = this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, this.field11957.BackBufferFormat, true, 2) == 0;
 			this.field10199 = this.field11974.NumSimultaneousRTs > 0 && this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, 113, true, 2) == 0;
@@ -1374,7 +1374,7 @@ public class Direct3DRenderer extends GpuRenderer {
 		String var12 = var11 + (this.field11963 ? 1 : 0) + var2;
 		String var13 = var12 + (this.field11967 ? 1 : 0) + var2;
 		String var14 = var13 + (this.field11976 ? 1 : 0) + var2;
-		String var15 = var14 + (this.field10159 ? 1 : 0) + var2;
+		String var15 = var14 + (this.hasFramebufferObject ? 1 : 0) + var2;
 		String var16 = var15 + (this.field10134 ? 1 : 0) + var2;
 		String var17 = var16 + (this.field10199 ? 1 : 0) + var2;
 		String var18 = var17 + (this.field11979 ? 1 : 0) + var2;

@@ -150,9 +150,9 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		PickableEntity var3 = PickableEntity.method16749(this.field11157);
 		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).field7468;
 		if (var4 == null) {
-			this.field11150.method1813(var2, this.field11713[0], 0);
+			this.field11150.draw(var2, this.field11713[0], 0);
 		} else {
-			this.field11150.method1813(var2, null, 0);
+			this.field11150.draw(var2, null, 0);
 			arg0.method2193(var2, this.field11713[0], var4);
 		}
 		return var3;

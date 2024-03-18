@@ -360,7 +360,7 @@ public class PlayerEntity extends PathingEntity {
 					var8 = PickableEntity.method16749(true);
 					this.field10458 = true;
 					arg0.method2219(false);
-					var15.method1813(var2, this.field11713[this.field10459.length], 0);
+					var15.draw(var2, this.field11713[this.field10459.length], 0);
 					arg0.method2219(true);
 				}
 			}
@@ -412,7 +412,7 @@ public class PlayerEntity extends PathingEntity {
 			if (this.field10459[var36] == null) {
 				this.field11713[var36].field1686 = false;
 			} else {
-				this.field10459[var36].method1813(var2, this.field11713[var36], Client.localPlayerEntity == this ? 1 : 0);
+				this.field10459[var36].draw(var2, this.field11713[var36], Client.localPlayerEntity == this ? 1 : 0);
 			}
 		}
 		if (this.field10393 != null) {
@@ -453,7 +453,7 @@ public class PlayerEntity extends PathingEntity {
 		Model var14 = HintArrow.method5210(arg0, var13, this.field10405, this.field12466, this.field10407, arg5);
 		if (var14 != null) {
 			arg0.method2219(false);
-			var14.method1813(arg1, null, 0);
+			var14.draw(arg1, null, 0);
 			arg0.method2219(true);
 		}
 	}

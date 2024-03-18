@@ -103,7 +103,7 @@ public class DeveloperConsole {
 	@ObfuscatedName("sm.m(S)V")
 	public static void method8025() {
 		field768 = DefaultSprites.field10268.field8569 + DefaultSprites.field10268.field8562 + 2;
-		field763 = DefaultSprites.field2657.field8569 + DefaultSprites.field2657.field8562 + 2;
+		field763 = DefaultSprites.fontP12FullMetrics.field8569 + DefaultSprites.fontP12FullMetrics.field8562 + 2;
 		field4845 = new String[500];
 		for (int var0 = 0; var0 < field4845.length; var0++) {
 			field4845[var0] = "";
@@ -150,7 +150,7 @@ public class DeveloperConsole {
 				addline("Pausing for " + var2 + " seconds...");
 				field2615 = arg0;
 				field772 = var1 + 1;
-				field765 = MonotonicTime.method3655() + (long) (var2 * 1000);
+				field765 = MonotonicTime.get() + (long) (var2 * 1000);
 				return;
 			}
 			currententry = arg0[var1];
@@ -163,7 +163,7 @@ public class DeveloperConsole {
 		if (field776 * 36 < 102) {
 			field776 = field776 * 36 + 6;
 		}
-		if (field772 != -1 && field765 < MonotonicTime.method3655()) {
+		if (field772 != -1 && field765 < MonotonicTime.get()) {
 			for (int var0 = field772; var0 < field2615.length; var0++) {
 				if (field2615[var0].startsWith("pause")) {
 					int var1 = 5;
@@ -173,7 +173,7 @@ public class DeveloperConsole {
 					}
 					addline("Pausing for " + var1 + " seconds...");
 					field772 = var0 + 1;
-					field765 = MonotonicTime.method3655() + (long) (var1 * 1000);
+					field765 = MonotonicTime.get() + (long) (var1 * 1000);
 					return;
 				}
 				currententry = field2615[var0];
@@ -218,7 +218,7 @@ public class DeveloperConsole {
 						if (var10 != null) {
 							String var11 = (String) var10.getTransferData(DataFlavor.stringFlavor);
 							if (var11 != null) {
-								String[] var12 = StringTools.method17361(var11, '\n');
+								String[] var12 = StringTools.split(var11, '\n');
 								method15383(var12);
 							}
 						}
@@ -303,12 +303,12 @@ public class DeveloperConsole {
 		if (field4845 == null) {
 			method8025();
 		}
-		Client.field11088.setTime(new Date(MonotonicTime.method3655()));
+		Client.field11088.setTime(new Date(MonotonicTime.get()));
 		int var1 = Client.field11088.get(11);
 		int var2 = Client.field11088.get(12);
 		int var3 = Client.field11088.get(13);
 		String var4 = Integer.toString(var1 / 10) + var1 % 10 + ":" + var2 / 10 + var2 % 10 + ":" + var3 / 10 + var3 % 10;
-		String[] var5 = StringTools.method17361(arg0, '\n');
+		String[] var5 = StringTools.split(arg0, '\n');
 		for (int var6 = 0; var6 < var5.length; var6++) {
 			for (int var7 = field764; var7 > 0; var7--) {
 				field4845[var7] = field4845[var7 - 1];
@@ -346,12 +346,12 @@ public class DeveloperConsole {
 			}
 			arg0.fillRectangle(GameShell.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
 			for (int var5 = field771; var5 < field771 + var1 && var5 < field764; var5++) {
-				String[] var6 = StringTools.method17361(field4845[var5], '\b');
+				String[] var6 = StringTools.split(field4845[var5], '\b');
 				int var7 = (GameShell.canvasWid - 8 - 16) / var6.length;
 				for (int var8 = 0; var8 < var6.length; var8++) {
 					int var9 = var7 * var8 + 8;
 					arg0.method2168(var9, 0, var7 + var9 - 8, 350);
-					DefaultSprites.field9184.method2681(method14312(var6[var8]), var9, 350 - field768 - 2 - DefaultSprites.field2657.field8569 - field763 * (var5 - field771), -1, -16777216);
+					DefaultSprites.fontP12Full.method2681(method14312(var6[var8]), var9, 350 - field768 - 2 - DefaultSprites.fontP12FullMetrics.field8569 - field763 * (var5 - field771), -1, -16777216);
 				}
 			}
 		}
@@ -366,7 +366,7 @@ public class DeveloperConsole {
 			}
 			arg0.method2177(DefaultSprites.field10268.method14532("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - DefaultSprites.field10268.field8569 - 11, 12, var10);
 		}
-		arg0.method2167();
+		arg0.resetClip();
 		method16858();
 	}
 
@@ -590,7 +590,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.startsWith("directlogin")) {
-					String[] var20 = StringTools.method17361(arg0.substring(12), ' ');
+					String[] var20 = StringTools.split(arg0.substring(12), ' ');
 					if (var20.length == 2 || var20.length == 3) {
 						if (LoginManager.isInProgress()) {
 							LoginManager.cancelLogin();
@@ -600,7 +600,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.startsWith("snlogin ")) {
-					String[] var21 = StringTools.method17361(arg0.substring(8), ' ');
+					String[] var21 = StringTools.split(arg0.substring(8), ' ');
 					int var22 = Integer.parseInt(var21[0]);
 					String var23 = var21.length > 1 ? var21[1] : "";
 					LoginManager.requestSocialNetwork(var22, var23, true);
@@ -609,7 +609,7 @@ public class DeveloperConsole {
 				if (arg0.startsWith("setoutput ")) {
 					File var24 = new File(arg0.substring(10));
 					if (var24.exists()) {
-						var24 = new File(arg0.substring(10) + "." + MonotonicTime.method3655() + ".log");
+						var24 = new File(arg0.substring(10) + "." + MonotonicTime.get() + ".log");
 						if (var24.exists()) {
 							addline("file already exists!");
 							return;
@@ -648,7 +648,7 @@ public class DeveloperConsole {
 						addline("Failed to read file");
 						return;
 					}
-					String[] var29 = StringTools.method17361(StringTools.method17687(Cp1252.method667(var28), '\r', ""), '\n');
+					String[] var29 = StringTools.split(StringTools.method17687(Cp1252.method667(var28), '\r', ""), '\n');
 					method15383(var29);
 				}
 				if (Client.state == 18 || Client.state == 13) {
@@ -730,7 +730,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 4) {
 					method10153();
 				} else if (arg0 == 17) {
-					Client.world.field5056 = MonotonicTime.method3655();
+					Client.world.field5056 = MonotonicTime.get();
 					Client.world.field5037 = true;
 					method10153();
 				} else if (arg0 == 19) {

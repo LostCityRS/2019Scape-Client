@@ -104,7 +104,7 @@ public final class StringTools {
 	}
 
 	@ObfuscatedName("vk.f(Ljava/lang/CharSequence;B)I")
-	public static int method9595(CharSequence arg0) {
+	public static int parseInt(CharSequence arg0) {
 		return method9587(arg0, 10, true);
 	}
 
@@ -302,7 +302,7 @@ public final class StringTools {
 	}
 
 	@ObfuscatedName("client.q(Ljava/lang/String;CI)[Ljava/lang/String;")
-	public static String[] method17361(String arg0, char arg1) {
+	public static String[] split(String arg0, char arg1) {
 		int var2 = method4423(arg0, arg1);
 		String[] var3 = new String[var2 + 1];
 		int var4 = 0;

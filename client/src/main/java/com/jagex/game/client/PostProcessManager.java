@@ -259,7 +259,7 @@ public class PostProcessManager {
 		this.field3247.method16080();
 		this.field3247.method16054(0);
 		this.field3247.method15991(1);
-		this.field3247.method2167();
+		this.field3247.resetClip();
 		this.field3265.method15441(null);
 		this.field3247.method15996(0, 0);
 		int var3 = this.field3257.size();
@@ -313,7 +313,7 @@ public class PostProcessManager {
 		this.field3247.method16054(1);
 		this.field3247.method15991(0);
 		this.field3247.method2170(false);
-		this.field3247.method2167();
+		this.field3247.resetClip();
 		Object var16 = null;
 	}
 

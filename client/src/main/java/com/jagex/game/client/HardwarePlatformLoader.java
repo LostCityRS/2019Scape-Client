@@ -31,11 +31,11 @@ public class HardwarePlatformLoader implements NativeLibraryLoader {
 	public HardwarePlatformLoader(Js5 arg0) {
 		this.field6764 = arg0;
 		String var2 = "";
-		if (NativeLibraryConfig.field5074.startsWith("win") || NativeLibraryConfig.field5074.startsWith("windows 7")) {
+		if (NativeLibraryConfig.osName.startsWith("win") || NativeLibraryConfig.osName.startsWith("windows 7")) {
 			var2 = var2 + "windows/";
-		} else if (NativeLibraryConfig.field5074.startsWith("linux")) {
+		} else if (NativeLibraryConfig.osName.startsWith("linux")) {
 			var2 = var2 + "linux/";
-		} else if (NativeLibraryConfig.field5074.startsWith("mac")) {
+		} else if (NativeLibraryConfig.osName.startsWith("mac")) {
 			var2 = var2 + "macos/";
 		}
 		String var3;
@@ -53,11 +53,11 @@ public class HardwarePlatformLoader implements NativeLibraryLoader {
 
 	@ObfuscatedName("nn.c(Ljava/lang/String;I)Ljava/lang/String;")
 	public static String method6049(String arg0) {
-		if (NativeLibraryConfig.field5074.startsWith("win")) {
+		if (NativeLibraryConfig.osName.startsWith("win")) {
 			return arg0 + ".dll";
-		} else if (NativeLibraryConfig.field5074.startsWith("linux")) {
+		} else if (NativeLibraryConfig.osName.startsWith("linux")) {
 			return "lib" + arg0 + ".so";
-		} else if (NativeLibraryConfig.field5074.startsWith("mac")) {
+		} else if (NativeLibraryConfig.osName.startsWith("mac")) {
 			return "lib" + arg0 + ".dylib";
 		} else {
 			return null;

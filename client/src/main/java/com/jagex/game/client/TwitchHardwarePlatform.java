@@ -157,7 +157,7 @@ public class TwitchHardwarePlatform {
 			return -1;
 		} else if (field7388 == 0) {
 			if (field7390 == null) {
-				if (NativeLibraryConfig.field5074.startsWith("mac ")) {
+				if (NativeLibraryConfig.osName.startsWith("mac ")) {
 					if (NativeLibraryConfig.field5076.startsWith("ppc")) {
 						field7388 = 3;
 						return -1;
@@ -170,7 +170,7 @@ public class TwitchHardwarePlatform {
 					field7371[0] = false;
 					field7371[1] = false;
 					field7371[2] = true;
-				} else if (NativeLibraryConfig.field5074.startsWith("win")) {
+				} else if (NativeLibraryConfig.osName.startsWith("win")) {
 					field7390 = new String[6];
 					field7390[0] = "avutil-ttv-51";
 					field7390[1] = "libmp3lame-ttv";
@@ -280,7 +280,7 @@ public class TwitchHardwarePlatform {
 		if (arg1 != 0 && (arg1 < 50 || arg1 > 100)) {
 			arg1 = 0;
 		}
-		boolean var4 = NativeLibraryConfig.field5074.startsWith("mac");
+		boolean var4 = NativeLibraryConfig.osName.startsWith("mac");
 		int[] var5 = field11755.GetRecommendedSettings(GameShell.canvasWid, GameShell.canvasHei, arg0, 2000, arg2, field7375, var4);
 		if (var5[0] != 0) {
 			return var5[0];
@@ -346,7 +346,7 @@ public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("iy.g(B)Z")
 	public static boolean method4595() {
-		return NativeLibraryConfig.field5074.startsWith("win");
+		return NativeLibraryConfig.osName.startsWith("win");
 	}
 
 	@ObfuscatedName("y.i(I)I")
@@ -667,7 +667,7 @@ public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("lv.aj(I)Z")
 	public static boolean method5399() {
-		if (NativeLibraryConfig.field5074.startsWith("win")) {
+		if (NativeLibraryConfig.osName.startsWith("win")) {
 			String var0 = "msvcr110.dll";
 			String var1 = "msvcp110.dll";
 			String[] var2 = new String[] { var0, var1 };
@@ -682,7 +682,7 @@ public class TwitchHardwarePlatform {
 				}
 			}
 			return true;
-		} else if (NativeLibraryConfig.field5074.startsWith("mac")) {
+		} else if (NativeLibraryConfig.osName.startsWith("mac")) {
 			try {
 				Process var6 = Runtime.getRuntime().exec("ps -few");
 				BufferedReader var7 = new BufferedReader(new InputStreamReader(var6.getInputStream()));

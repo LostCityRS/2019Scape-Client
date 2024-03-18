@@ -10,16 +10,16 @@ import jaggl.OpenGL;
 public class OpenGLFramebuffer extends GpuFramebuffer {
 
 	@ObfuscatedName("ata.k")
-	public final OpenGLRenderer field12507;
+	public final OpenGLRenderer renderer;
 
 	@ObfuscatedName("ata.f")
-	public int field12506;
+	public int framebuffer;
 
 	@ObfuscatedName("ata.w")
-	public int field12509;
+	public int width;
 
 	@ObfuscatedName("ata.l")
-	public int field12510;
+	public int height;
 
 	@ObfuscatedName("ata.u")
 	public int field12511;
@@ -35,23 +35,23 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 
 	public OpenGLFramebuffer(OpenGLRenderer arg0) {
 		super(arg0);
-		this.field12507 = arg0;
+		this.renderer = arg0;
 		int[] var2 = new int[1];
-		if (!this.field12507.field10159) {
+		if (!this.renderer.hasFramebufferObject) {
 			throw new RuntimeException("");
 		}
 		OpenGL.glGenFramebuffersEXT(1, var2, 0);
-		this.field12506 = var2[0];
+		this.framebuffer = var2[0];
 	}
 
 	@ObfuscatedName("ata.e()I")
 	public int getWidth() {
-		return this.field12509;
+		return this.width;
 	}
 
 	@ObfuscatedName("ata.n()I")
 	public int getHeight() {
-		return this.field12510;
+		return this.height;
 	}
 
 	@ObfuscatedName("ata.b(ILdp;)V")
@@ -62,22 +62,22 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 			this.field12511 &= ~var3;
 			this.field12514[arg0] = null;
 			if (this.field12511 == 0) {
-				this.field12510 = 0;
-				this.field12509 = 0;
+				this.height = 0;
+				this.width = 0;
 			}
 		} else {
 			if (this.field12511 == 0) {
-				this.field12510 = var4.method1009();
-				this.field12509 = var4.method1015();
+				this.height = var4.method1009();
+				this.width = var4.method1015();
 				this.method18969();
-			} else if (this.field12509 != var4.method1015() || this.field12510 != var4.method1009()) {
+			} else if (this.width != var4.method1015() || this.height != var4.method1009()) {
 				throw new RuntimeException();
 			}
 			this.field12511 |= var3;
 			this.field12514[arg0] = var4;
 		}
-		if (this.field12507.getRenderTarget() == this) {
-			this.method19653(arg0);
+		if (this.renderer.getRenderTarget() == this) {
+			this.attachColor(arg0);
 		} else {
 			this.field12512 |= var3;
 		}
@@ -90,29 +90,29 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 			this.field12511 &= 0xFFFFFFEF;
 			this.field12513 = null;
 			if (this.field12511 == 0) {
-				this.field12510 = 0;
-				this.field12509 = 0;
+				this.height = 0;
+				this.width = 0;
 			}
 		} else {
 			if (this.field12511 == 0) {
-				this.field12510 = var2.method1009();
-				this.field12509 = var2.method1015();
+				this.height = var2.method1009();
+				this.width = var2.method1015();
 				this.method18969();
-			} else if (this.field12509 != var2.method1015() || this.field12510 != var2.method1009()) {
+			} else if (this.width != var2.method1015() || this.height != var2.method1009()) {
 				throw new RuntimeException();
 			}
 			this.field12511 |= 0x10;
 			this.field12513 = var2;
 		}
-		if (this.field12507.getRenderTarget() == this) {
-			this.method19654();
+		if (this.renderer.getRenderTarget() == this) {
+			this.attachDepth();
 		} else {
 			this.field12512 |= 0x10;
 		}
 	}
 
 	@ObfuscatedName("ata.as(I)V")
-	public void method19653(int arg0) {
+	public void attachColor(int arg0) {
 		OpenGLRelated5 var2 = this.field12514[arg0];
 		if (var2 == null) {
 			OpenGL.glFramebufferRenderbufferEXT(36160, arg0 + 36064, 36161, 0);
@@ -122,7 +122,7 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 	}
 
 	@ObfuscatedName("ata.at()V")
-	public void method19654() {
+	public void attachDepth() {
 		if (this.field12513 == null) {
 			OpenGL.glFramebufferRenderbufferEXT(36160, 36096, 36161, 0);
 		} else {
@@ -138,14 +138,14 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 
 	@ObfuscatedName("ata.k()Z")
 	public boolean method1630() {
-		OpenGL.glBindFramebufferEXT(36160, this.field12506);
+		OpenGL.glBindFramebufferEXT(36160, this.framebuffer);
 		for (int var1 = 0; var1 < 4; var1++) {
 			if ((this.field12512 & 0x1 << var1) != 0) {
-				this.method19653(var1);
+				this.attachColor(var1);
 			}
 		}
 		if ((this.field12512 & 0x10) != 0) {
-			this.method19654();
+			this.attachDepth();
 		}
 		this.field12512 = 0;
 		return super.method1630();
@@ -162,8 +162,8 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 		if (!(arg6 | arg7)) {
 			return;
 		}
-		int var9 = this.field12510;
-		int var10 = this.field12507.getRenderTarget().getHeight();
+		int var9 = this.height;
+		int var10 = this.renderer.getRenderTarget().getHeight();
 		int var11 = 0;
 		if (arg7) {
 			var11 |= 0x100;
@@ -171,16 +171,16 @@ public class OpenGLFramebuffer extends GpuFramebuffer {
 		if (arg6) {
 			var11 |= 0x4000;
 		}
-		OpenGL.glBindFramebufferEXT(36008, this.field12506);
+		OpenGL.glBindFramebufferEXT(36008, this.framebuffer);
 		OpenGL.glBlitFramebufferEXT(arg0, var9 - arg1 - arg3, arg0 + arg2, var9 - arg1, arg4, var10 - arg5 - arg3, arg2 + arg4, var10 - arg5, var11, 9728);
 		OpenGL.glBindFramebufferEXT(36008, 0);
 	}
 
 	@ObfuscatedName("ata.m()V")
 	public void method1629() {
-		if (this.field12506 != 0) {
-			this.field12507.method19074(this.field12506);
-			this.field12506 = 0;
+		if (this.framebuffer != 0) {
+			this.renderer.method19074(this.framebuffer);
+			this.framebuffer = 0;
 		}
 	}
 

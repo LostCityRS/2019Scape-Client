@@ -169,9 +169,9 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		PickableEntity var3 = PickableEntity.method16749(this.field11144);
 		Cuboid var4 = ((LocType) this.field11145.list(this.field11715)).field7468;
 		if (var4 == null) {
-			this.field11136.method1813(var2, this.field11713[0], 0);
+			this.field11136.draw(var2, this.field11713[0], 0);
 		} else {
-			this.field11136.method1813(var2, null, 0);
+			this.field11136.draw(var2, null, 0);
 			arg0.method2193(var2, this.field11713[0], var4);
 		}
 		return var3;

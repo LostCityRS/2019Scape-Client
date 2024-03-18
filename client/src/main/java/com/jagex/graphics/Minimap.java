@@ -119,7 +119,7 @@ public class Minimap {
 	@ObfuscatedName("aih.w(Ldh;B)V")
 	public static void method16903(Renderer arg0) {
 		if (field722 != Client.localPlayerEntity.field11717 && Client.world.getScene() != null) {
-			MonotonicTime.method3655();
+			MonotonicTime.get();
 			if (method14493(arg0, Client.localPlayerEntity.field11717)) {
 				field722 = Client.localPlayerEntity.field11717;
 			}
@@ -129,7 +129,7 @@ public class Minimap {
 	@ObfuscatedName("aaz.l(Ldh;IB)Z")
 	public static boolean method14493(Renderer arg0, int arg1) {
 		arg0.method2202();
-		MonotonicTime.method3655();
+		MonotonicTime.get();
 		if (!arg0.method2215()) {
 			return false;
 		}
@@ -219,7 +219,7 @@ public class Minimap {
 					var31 = var22 + 4;
 				}
 				if (field728) {
-					arg0.method2167();
+					arg0.resetClip();
 				} else {
 					arg0.method2168(0, 0, var9 * 4 + var30, var9 * 4 + var31);
 				}
@@ -277,7 +277,7 @@ public class Minimap {
 				}
 			}
 		}
-		arg0.method2167();
+		arg0.resetClip();
 		arg0.method2164(field721[0], field721[1], field721[2], field721[3]);
 		arg0.method2475(1, 1);
 		Client.method9734();
@@ -835,8 +835,8 @@ public class Minimap {
 		Font var35 = DefaultSprites.field8321;
 		FontMetrics var36 = DefaultSprites.field6778;
 		if (var8.textSize == 1) {
-			var35 = DefaultSprites.field9184;
-			var36 = DefaultSprites.field2657;
+			var35 = DefaultSprites.fontP12Full;
+			var36 = DefaultSprites.fontP12FullMetrics;
 		}
 		if (var8.textSize == 2) {
 			var35 = DefaultSprites.field10355;

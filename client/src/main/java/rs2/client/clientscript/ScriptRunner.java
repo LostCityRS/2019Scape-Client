@@ -9644,7 +9644,7 @@ public final class ScriptRunner {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		int var2 = 0;
 		if (StringTools.method9836(var1)) {
-			var2 = StringTools.method9595(var1);
+			var2 = StringTools.parseInt(var1);
 		}
 		ClientMessage var3 = ClientMessage.method1604(ClientProt.RESUME_P_COUNTDIALOG, Client.gameConnection.field794);
 		var3.buf.p4(var2);
@@ -11074,7 +11074,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("nj.aca(Lyf;B)V")
 	public static final void player_group_get_create_seconds_to_now(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = (int) ((MonotonicTime.method3655() - Client.currentPlayerGroup.getCreationTime() - Client.field1238) / 1000L);
+		arg0.field8216[++arg0.field8226 - 1] = (int) ((MonotonicTime.get() - Client.currentPlayerGroup.getCreationTime() - Client.field1238) / 1000L);
 	}
 
 	@ObfuscatedName("sv.acd(Lyf;B)V")
@@ -15201,7 +15201,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("kf.aul(Lyf;B)V")
 	public static final void detailget_performance_metric(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.method15172(Client.preferences.displayMode.getValue(), 200);
+		arg0.field8216[++arg0.field8226 - 1] = Client.getPerformanceMetric(Client.preferences.displayMode.getValue(), 200);
 	}
 
 	@ObfuscatedName("fd.aui(Lyf;I)V")
@@ -15416,13 +15416,13 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("fj.avi(Lyf;B)V")
 	public static final void date_minutes(ClientScriptState arg0) {
-		long var1 = MonotonicTime.method3655();
+		long var1 = MonotonicTime.get();
 		arg0.field8216[++arg0.field8226 - 1] = (int) (var1 / 60000L);
 	}
 
 	@ObfuscatedName("ahp.awu(Lyf;I)V")
 	public static final void date_runeday(ClientScriptState arg0) {
-		long var1 = MonotonicTime.method3655();
+		long var1 = MonotonicTime.get();
 		arg0.field8216[++arg0.field8226 - 1] = (int) (var1 / 86400000L) - 11745;
 	}
 
@@ -15442,7 +15442,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("aqc.awk(Lyf;I)V")
 	public static final void date_year(ClientScriptState arg0) {
-		long var1 = MonotonicTime.method3655();
+		long var1 = MonotonicTime.get();
 		arg0.field8216[++arg0.field8226 - 1] = TimeFormatter.method16390(var1);
 	}
 
@@ -15485,7 +15485,7 @@ public final class ScriptRunner {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else if (WorldSwitcher.field8754) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
-		} else if (WorldSwitcher.field2826 > MonotonicTime.method3655() - 1000L) {
+		} else if (WorldSwitcher.field2826 > MonotonicTime.get() - 1000L) {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
 			WorldSwitcher.field8754 = true;
@@ -15901,7 +15901,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ii.axi(Lyf;B)V")
 	public static final void userdetail_lobby_membership(ClientScriptState arg0) {
 		arg0.field8216[++arg0.field8226 - 1] = (int) (Client.field8322 / 60000L);
-		arg0.field8216[++arg0.field8226 - 1] = (int) ((Client.field8322 - MonotonicTime.method3655() - Client.field1238) / 60000L);
+		arg0.field8216[++arg0.field8226 - 1] = (int) ((Client.field8322 - MonotonicTime.get() - Client.field1238) / 60000L);
 		arg0.field8216[++arg0.field8226 - 1] = Client.field11709 ? 1 : 0;
 	}
 
@@ -16835,17 +16835,17 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("kn.bdi(Lyf;I)V")
 	public static final void os_ismac(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = NativeLibraryConfig.field5074.startsWith("mac") ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = NativeLibraryConfig.osName.startsWith("mac") ? 1 : 0;
 	}
 
 	@ObfuscatedName("ic.bdb(Lyf;I)V")
 	public static final void os_iswindows(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = NativeLibraryConfig.field5074.startsWith("win") ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = NativeLibraryConfig.osName.startsWith("win") ? 1 : 0;
 	}
 
 	@ObfuscatedName("sa.bdp(Lyf;I)V")
 	public static final void os_islinux(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = NativeLibraryConfig.field5074.startsWith("linux") ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = NativeLibraryConfig.osName.startsWith("linux") ? 1 : 0;
 	}
 
 	@ObfuscatedName("fi.bdx(Lyf;I)V")

@@ -468,7 +468,7 @@ public abstract class GpuRenderer extends Renderer {
 	public int field10094;
 
 	@ObfuscatedName("afc.gf")
-	public boolean field10159;
+	public boolean hasFramebufferObject;
 
 	@ObfuscatedName("afc.gx")
 	public boolean field10134;
@@ -678,7 +678,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.method15970();
 		this.field10077 = this.method16067(true);
 		this.method16232();
-		this.method2167();
+		this.resetClip();
 		this.method2150();
 		this.field10057 = new GpuSprite(this, this.field10140);
 		this.field10143 = new GpuSprite(this, this.field10141);
@@ -821,7 +821,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.method15976();
 		this.field10100 = new PrimitiveVertexBuffer(this, 1024);
 		this.field10198.method5755(this);
-		if (this.field10159) {
+		if (this.hasFramebufferObject) {
 			this.field10146 = new GpuRendererRelated6(this, 1024);
 		}
 	}
@@ -1044,7 +1044,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.method16011();
 		this.method16084();
 		this.method2263();
-		this.method2167();
+		this.resetClip();
 	}
 
 	@ObfuscatedName("afc.dy(IIII)V")
@@ -1208,7 +1208,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.su(IZ)Ljaclib/memory/heap/NativeHeapBuffer;")
-	public final NativeHeapBuffer method15987(int arg0, boolean arg1) {
+	public final NativeHeapBuffer createHeapBuffer(int arg0, boolean arg1) {
 		return this.field10154.method92(arg0, arg1);
 	}
 
@@ -1380,7 +1380,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.bc()V")
-	public final void method2167() {
+	public final void resetClip() {
 		if (this.renderTarget == null) {
 			this.field10106 = 0;
 			this.field10193 = 0;
@@ -1410,7 +1410,7 @@ public abstract class GpuRenderer extends Renderer {
 			var6 = this.renderTarget.getHeight();
 		}
 		if (arg0 <= 0 && arg2 >= var5 - 1 && arg1 <= 0 && arg3 >= var6 - 1) {
-			this.method2167();
+			this.resetClip();
 			return;
 		}
 		this.field10095 = arg0 >= 0 ? arg0 : 0;

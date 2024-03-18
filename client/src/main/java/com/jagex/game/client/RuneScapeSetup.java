@@ -23,7 +23,7 @@ public class RuneScapeSetup {
 
 	@ObfuscatedName("ih.e(I)V")
 	public static void method4589() throws RuntimeException {
-		if (!NativeLibraryConfig.field5074.startsWith("win")) {
+		if (!NativeLibraryConfig.osName.startsWith("win")) {
 			return;
 		}
 		method18310();

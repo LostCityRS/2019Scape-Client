@@ -35,7 +35,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 	@ObfuscatedName("aik.l(I)Z")
 	public boolean method7016() {
 		if (this.field10751 != null) {
-			long var1 = MonotonicTime.method3655();
+			long var1 = MonotonicTime.get();
 			int var3 = (int) (var1 - this.field4452);
 			this.field4452 = var1;
 			if (var3 > 200) {
@@ -229,7 +229,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 							}
 						}
 						this.field4441 = 0;
-						this.field4452 = MonotonicTime.method3655();
+						this.field4452 = MonotonicTime.get();
 						return;
 					}
 					var5.field12564 = null;

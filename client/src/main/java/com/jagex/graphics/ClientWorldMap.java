@@ -158,8 +158,8 @@ public class ClientWorldMap extends WorldMap {
 		if (loading == 100 || WorldMap.currentWorldMap == null) {
 			return;
 		}
-		MonotonicTime.method3655();
-		MonotonicTime.method3655();
+		MonotonicTime.get();
+		MonotonicTime.get();
 		if (loading < 10) {
 			for (int var2 = 0; var2 < field11659.length; var2++) {
 				for (int var3 = 0; var3 < field11659[var2].length; var3++) {
@@ -413,7 +413,7 @@ public class ClientWorldMap extends WorldMap {
 		if (Client.field10794) {
 			int var13 = arg1 + arg3 - 5;
 			int var14 = arg2 + arg4 - 8;
-			DefaultSprites.field9184.method2682("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
+			DefaultSprites.fontP12Full.method2682("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
 			int var18 = var14 - 15;
 			Runtime var15 = Runtime.getRuntime();
 			int var16 = (int) ((var15.totalMemory() - var15.freeMemory()) / 1024L);
@@ -421,7 +421,7 @@ public class ClientWorldMap extends WorldMap {
 			if (var16 > 65536) {
 				var17 = 16711680;
 			}
-			DefaultSprites.field9184.method2682("Mem:" + var16 + "k", var13, var18, var17, -1);
+			DefaultSprites.fontP12Full.method2682("Mem:" + var16 + "k", var13, var18, var17, -1);
 			var14 = var18 - 15;
 		}
 		field6831.update(5);

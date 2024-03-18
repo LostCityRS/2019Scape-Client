@@ -51,7 +51,7 @@ public class LevelsFilterEffect extends PostProcessEffect {
 
 	@ObfuscatedName("aia.e()Z")
 	public boolean method5558() {
-		return this.field3242.field10159 && this.field3242.method15958();
+		return this.field3242.hasFramebufferObject && this.field3242.method15958();
 	}
 
 	@ObfuscatedName("aia.n()Z")

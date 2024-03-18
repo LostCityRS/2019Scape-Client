@@ -390,7 +390,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	public String field9977;
 
 	@ObfuscatedName("afa.gs")
-	public boolean field10027;
+	public boolean isAmd;
 
 	@ObfuscatedName("afa.gt")
 	public int field9979;
@@ -590,55 +590,67 @@ public class LegacyOpenGLRenderer extends Renderer {
 					this.field9989 = false;
 				}
 			}
+
 			this.field9862 = this.field10017 ? 33639 : 5121;
-			this.field10027 = this.field9977.indexOf("radeon") != -1;
-			boolean var19 = this.field9996.indexOf("intel") != -1;
+			this.isAmd = this.field9977.indexOf("radeon") != -1;
+			boolean isIntel = this.field9996.indexOf("intel") != -1;
 			boolean var20 = false;
 			boolean var21 = false;
-			int var22 = 0;
-			if (this.field10027 || var19) {
-				String[] var23 = StringTools.method17361(this.field9977.replace('/', ' '), ' ');
-				for (int var24 = 0; var24 < var23.length; var24++) {
-					String var25 = var23[var24];
+
+			int model = 0;
+			if (this.isAmd || isIntel) {
+				String[] parts = StringTools.split(this.field9977.replace('/', ' '), ' ');
+				for (int i = 0; i < parts.length; i++) {
+					String part = parts[i];
 					try {
-						if (var25.length() > 0) {
-							if (var25.charAt(0) == 'x' && var25.length() >= 3 && StringTools.method9836(var25.substring(1, 3))) {
-								var25 = var25.substring(1);
+						if (part.length() > 0) {
+							if (part.charAt(0) == 'x' && part.length() >= 3 && StringTools.method9836(part.substring(1, 3))) {
+								part = part.substring(1);
 								var21 = true;
 							}
-							if (var25.equals("hd")) {
+
+							if (part.equals("hd")) {
+								var20 = true;
+							} else if (part.equals("xe")) {
+								// modern intel graphics
 								var20 = true;
 							} else {
-								if (var25.startsWith("hd")) {
-									var25 = var25.substring(2);
+								if (part.startsWith("hd")) {
+									part = part.substring(2);
 									var20 = true;
 								}
-								if (var25.length() >= 4 && StringTools.method9836(var25.substring(0, 4))) {
-									var22 = StringTools.method9595(var25.substring(0, 4));
+
+								if (part.length() >= 4 && StringTools.method9836(part.substring(0, 4))) {
+									model = StringTools.parseInt(part.substring(0, 4));
 									break;
 								}
 							}
 						}
-					} catch (Exception var35) {
+					} catch (Exception ignored) {
 					}
 				}
 			}
-			if (this.field9967 != 0 && var19 && !var20) {
+
+			if (this.field9967 != 0 && isIntel && !var20) {
 				throw new LegacyOpenGLException("");
 			}
-			if (this.field10027 || var19) {
-				if (!var19) {
+
+			if (this.isAmd || isIntel) {
+				if (!isIntel) {
 					if (!var21 && !var20) {
-						if (var22 >= 7000 && var22 <= 7999) {
+						if (model >= 7000 && model <= 7999) {
 							this.field9990 = false;
 						}
-						if (var22 >= 7000 && var22 <= 9250) {
+
+						if (model >= 7000 && model <= 9250) {
 							this.field9889 = false;
 						}
 					}
-					if (!var20 || var22 < 4000) {
+
+					if (!var20 || model < 4000) {
 						this.field9997 = false;
 					}
+
 					this.field9965 &= this.field10022.method0("GL_ARB_half_float_pixel");
 					this.field9991 = this.field9990;
 				} else if (!var20) {
@@ -647,6 +659,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 					this.field9989 = false;
 				}
 			}
+
 			this.field10003 = !this.field9996.equals("s3 graphics");
 			if (this.field9990) {
 				try {
@@ -656,6 +669,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 					throw new RuntimeException("");
 				}
 			}
+
 			ColourUtils.method10156(false, true);
 			this.field9875 = true;
 			this.field10026 = new LegacyOpenGLRelated2(this, this.field1596);
@@ -733,11 +747,11 @@ public class LegacyOpenGLRenderer extends Renderer {
 			var1 |= 0x1;
 		}
 		String var2 = OpenGL.glGetString(7938);
-		String[] var3 = StringTools.method17361(var2.replace('.', ' '), ' ');
+		String[] var3 = StringTools.split(var2.replace('.', ' '), ' ');
 		if (var3.length >= 2) {
 			try {
-				int var4 = StringTools.method9595(var3[0]);
-				int var5 = StringTools.method9595(var3[1]);
+				int var4 = StringTools.parseInt(var3[0]);
+				int var5 = StringTools.parseInt(var3[1]);
 				this.field9979 = var4 * 10 + var5;
 			} catch (NumberFormatException var8) {
 				var1 |= 0x4;
@@ -783,7 +797,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		this.field9989 = this.field9901 & this.field9987;
 		this.field10004 = this.field10022.method0("GL_EXT_blend_func_separate");
 		this.field9992 = this.field9878 != null && (this.field9979 >= 32 || this.field10022.method0("GL_ARB_sync"));
-		this.field9981 = NativeLibraryConfig.field5074.startsWith("mac");
+		this.field9981 = NativeLibraryConfig.osName.startsWith("mac");
 		OpenGL.glGetFloatv(2834, field10014, 0);
 		this.field10007 = field10014[0];
 		this.field9983 = field10014[1];
@@ -875,7 +889,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		this.field9955 = -1;
 		this.field9942 = -1;
 		this.method2263();
-		this.method2167();
+		this.resetClip();
 	}
 
 	@ObfuscatedName("afa.f()Lcz;")
@@ -988,7 +1002,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		String var8 = var7 + this.field10007 + var2;
 		String var9 = var8 + this.field9983 + var2;
 		String var10 = var9 + (this.field10017 ? 1 : 0) + var2;
-		String var11 = var10 + (this.field10027 ? 1 : 0) + var2;
+		String var11 = var10 + (this.isAmd ? 1 : 0) + var2;
 		String var12 = var11 + (this.field9981 ? 1 : 0) + var2;
 		String var13 = var12 + (this.field9990 ? 1 : 0) + var2;
 		String var14 = var13 + (this.field9991 ? 1 : 0) + var2;
@@ -1041,7 +1055,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		this.field9906.method6617(0.0F, (float) var1, 0.0F, (float) var2, -1.0F, 1.0F);
 		this.method2263();
 		this.method15748();
-		this.method2167();
+		this.resetClip();
 	}
 
 	@ObfuscatedName("afa.aq(IIII)[I")
@@ -1066,7 +1080,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		int var2 = this.field9928;
 		int var3 = this.field9925;
 		int var4 = this.field9926;
-		this.method2167();
+		this.resetClip();
 		int var5 = this.field9897;
 		int var6 = this.field9932;
 		int var7 = this.field9931;
@@ -1957,7 +1971,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.bc()V")
-	public final void method2167() {
+	public final void resetClip() {
 		if (this.renderTarget == null) {
 			return;
 		}
@@ -3208,9 +3222,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 			OpenGL.glDeleteLists((int) var12.field6760, var12.field11442);
 		}
 		this.field10026.method1402();
-		if (this.method2520() > 100663296 && MonotonicTime.method3655() > this.field9823 + 60000L) {
+		if (this.method2520() > 100663296 && MonotonicTime.get() > this.field9823 + 60000L) {
 			System.gc();
-			this.field9823 = MonotonicTime.method3655();
+			this.field9823 = MonotonicTime.get();
 		}
 		this.field9872 = var3;
 	}

@@ -429,7 +429,7 @@ public class Matrix4x3 {
 	}
 
 	@ObfuscatedName("ou.a(FFF)V")
-	public void method6313(float arg0, float arg1, float arg2) {
+	public void setToTranslation(float arg0, float arg1, float arg2) {
 		this.field4283 = 0.0F;
 		this.field4275 = 0.0F;
 		this.field4281 = 0.0F;

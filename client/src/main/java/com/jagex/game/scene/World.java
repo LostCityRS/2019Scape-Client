@@ -735,7 +735,7 @@ public class World {
 		this.field5059 = arg1;
 		if (!this.asyncRebuilding) {
 			Client.setState(arg2);
-			MessageBox.method649(LocalisedText.LOADING.forLang(Client.language), true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.draw(LocalisedText.LOADING.forLang(Client.language), true, Client.renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
 		}
 		if (this.field5018 == null) {
 			this.field5025 = new CoordGrid(0, 0, 0);
@@ -944,7 +944,7 @@ public class World {
 			MapLogicRelated.method6969(false);
 		}
 		if (this.field5060 == -1L) {
-			this.field5060 = MonotonicTime.method3655();
+			this.field5060 = MonotonicTime.get();
 		}
 		this.field5044 = 0;
 		for (int var1 = 0; var1 < this.rebuildMapSquaresCount; var1++) {
@@ -1031,7 +1031,7 @@ public class World {
 			return false;
 		}
 		if (!this.asyncRebuilding && RebuildStage.field5007 != this.rebuildStage) {
-			MessageBox.method649(LocalisedText.LOADING.forLang(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.draw(LocalisedText.LOADING.forLang(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
 		}
 		this.rebuildStage = RebuildStage.field5008;
 		if (!this.asyncRebuilding && Client.field1798 != null) {
@@ -1182,7 +1182,7 @@ public class World {
 		}
 		this.scene.reset();
 		if (this.asyncRebuilding) {
-			MonotonicTime.method3655();
+			MonotonicTime.get();
 			while (!Client.renderer.method2215()) {
 				this.sleep(1);
 			}
@@ -1193,7 +1193,7 @@ public class World {
 			this.method7752(var23);
 			Client.field3183.method7678(var23);
 			var22 = true;
-			MonotonicTime.method3655();
+			MonotonicTime.get();
 			Object var24 = Client.field10858;
 			synchronized (Client.field10858) {
 				Client.field10856 = true;
@@ -1243,7 +1243,7 @@ public class World {
 				}
 			}
 		}
-		long var38 = MonotonicTime.method3655() - this.field5060;
+		long var38 = MonotonicTime.get() - this.field5060;
 		if (Client.state == 10) {
 			Client.setState(4);
 		} else if (Client.state == 6) {
@@ -1261,7 +1261,7 @@ public class World {
 			}
 		}
 		if (this.field5037) {
-			DeveloperConsole.addline(Long.toString(MonotonicTime.method3655() - this.field5056));
+			DeveloperConsole.addline(Long.toString(MonotonicTime.get() - this.field5056));
 			this.field5037 = false;
 		}
 		if (var22) {

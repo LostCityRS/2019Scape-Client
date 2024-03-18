@@ -191,13 +191,13 @@ public final class ClientVariableManager extends SparseVarDomain {
 			} catch (Exception var19) {
 			}
 		}
-		this.field10253 = MonotonicTime.method3655();
+		this.field10253 = MonotonicTime.get();
 		this.field10252 = false;
 	}
 
 	@ObfuscatedName("afu.ag(I)V")
 	public void method16414() {
-		if (MonotonicTime.method3655() < this.field10259) {
+		if (MonotonicTime.get() < this.field10259) {
 			return;
 		}
 		if (this.field10257 == null) {
@@ -241,7 +241,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 			var5.buf.data[var6] = 0;
 		}
 		var4.queue(var5);
-		this.field10259 = MonotonicTime.method3655() + 1000L;
+		this.field10259 = MonotonicTime.get() + 1000L;
 	}
 
 	@ObfuscatedName("afu.ad(I)V")

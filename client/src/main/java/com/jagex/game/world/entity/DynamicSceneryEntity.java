@@ -82,9 +82,9 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 		this.field11131.method8239(arg0, var2, var3, this.field12471, this.field12472, this.field12468, this.field12467, true);
 		LocType var5 = this.field11131.method8237();
 		if (var5.field7468 == null) {
-			var2.method1813(var3, this.field11713[0], 0);
+			var2.draw(var3, this.field11713[0], 0);
 		} else {
-			var2.method1813(var3, null, 0);
+			var2.draw(var3, null, 0);
 			arg0.method2193(var3, this.field11713[0], var5.field7468);
 		}
 		if (this.field11131.field6680 != null) {

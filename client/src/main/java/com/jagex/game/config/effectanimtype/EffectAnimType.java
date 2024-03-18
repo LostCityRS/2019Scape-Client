@@ -203,7 +203,7 @@ public class EffectAnimType implements ConfigType {
 			if (this.retex_s != null) {
 				var20 |= 0x8000;
 			}
-			ModelUnlit var21 = ModelUnlit.method1931(this.factory.configClient, this.model, 0);
+			ModelUnlit var21 = ModelUnlit.get(this.factory.configClient, this.model, 0);
 			if (var21 == null) {
 				return null;
 			}

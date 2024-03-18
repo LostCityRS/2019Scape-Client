@@ -2208,7 +2208,7 @@ public final class Client extends GameShell {
 			field1681 = var6.get(11) * 600 + var6.get(12) * 10 + var6.get(13) / 6;
 			field10890.setSeed((long) field1681);
 		}
-		long var7 = MonotonicTime.method3655();
+		long var7 = MonotonicTime.get();
 		gameConnection.method946();
 		lobbyConnection.method946();
 		this.method16917();
@@ -2347,7 +2347,7 @@ public final class Client extends GameShell {
 		long var1 = GameShell.method8660() / 1000000L - field10795;
 		field10795 = GameShell.method8660() / 1000000L;
 		if (method16436(state)) {
-			if (field10937 != 0L && MonotonicTime.method3655() > field10937) {
+			if (field10937 != 0L && MonotonicTime.get() > field10937) {
 				setWindowMode(getWindowMode(), -1, -1, false);
 			} else if (!renderer.method2123() && canvasReplaceRecommended) {
 				method15024();
@@ -2379,19 +2379,19 @@ public final class Client extends GameShell {
 		} else if (method9273(state)) {
 			if (world.method7724() == RebuildStage.field5006) {
 				int var4 = world.method7725() / 2;
-				MessageBox.method649(LocalisedText.LOADING.forLang(language) + TextUtil.BR + "(" + var4 + "%)", true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+				MessageBox.draw(LocalisedText.LOADING.forLang(language) + TextUtil.BR + "(" + var4 + "%)", true, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
 			} else if (world.method7724() == RebuildStage.field5005) {
 				int var5 = world.method7726() / 2 + 50;
-				MessageBox.method649(LocalisedText.LOADING.forLang(language) + TextUtil.BR + "(" + var5 + "%)", true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+				MessageBox.draw(LocalisedText.LOADING.forLang(language) + TextUtil.BR + "(" + var5 + "%)", true, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
 			} else {
-				MessageBox.method649(LocalisedText.LOADING.forLang(language), true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+				MessageBox.draw(LocalisedText.LOADING.forLang(language), true, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
 			}
 		} else if (state == 18) {
 			method18329(var1);
 		} else if (state == 14) {
-			MessageBox.method649(LocalisedText.CONLOST.forLang(language) + TextUtil.BR + LocalisedText.ATTEMPT_TO_REESTABLISH.forLang(language), false, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.draw(LocalisedText.CONLOST.forLang(language) + TextUtil.BR + LocalisedText.ATTEMPT_TO_REESTABLISH.forLang(language), false, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
 		} else if (state == 19) {
-			MessageBox.method649(LocalisedText.PLEASEWAIT.forLang(language), false, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.draw(LocalisedText.PLEASEWAIT.forLang(language), false, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
 		}
 		if (field10997 == 3) {
 			for (int var6 = 0; var6 < field11051; var6++) {
@@ -2409,7 +2409,7 @@ public final class Client extends GameShell {
 		if (!method2092(state) && !method9273(state) && field10978 != -1) {
 			try {
 				renderer.method2202();
-				TwitchHardwarePlatform.method593(renderer, MonotonicTime.method3655(), GameShell.canvasWid, GameShell.canvasHei);
+				TwitchHardwarePlatform.method593(renderer, MonotonicTime.get(), GameShell.canvasWid, GameShell.canvasHei);
 				renderer.method2115();
 			} catch (RendererException var10) {
 				JagException.report(var10.getMessage() + " " + this.method8038(), var10);
@@ -2699,7 +2699,7 @@ public final class Client extends GameShell {
 				var2.p1(language.field8298);
 				field7571.write(var2.data, 0, var1 + 2);
 				field10827++;
-				field10353 = MonotonicTime.method3655();
+				field10353 = MonotonicTime.get();
 			}
 			if (field10827 == 2) {
 				if (field7571.hasAvailable(1)) {
@@ -2710,7 +2710,7 @@ public final class Client extends GameShell {
 						return;
 					}
 					field10827++;
-				} else if (MonotonicTime.method3655() - field10353 > 30000L) {
+				} else if (MonotonicTime.get() - field10353 > 30000L) {
 					this.method16986(1001);
 					return;
 				}
@@ -2847,11 +2847,11 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("s.et(IZI)V")
 	public static void method486(int arg0, boolean arg1) {
-		method14060(arg0, LocalisedText.LOADING.forLang(language), arg1);
+		changeToolkit(arg0, LocalisedText.LOADING.forLang(language), arg1);
 	}
 
 	@ObfuscatedName("zg.ea(ILjava/lang/String;ZB)V")
-	public static void method14060(int arg0, String arg1, boolean arg2) {
+	public static void changeToolkit(int arg0, String arg1, boolean arg2) {
 		Loading.method8005();
 		method7239();
 		method15235();
@@ -2890,7 +2890,7 @@ public final class Client extends GameShell {
 				FontMetrics var3 = FontMetrics.method6068(fontmetricsJs5, DefaultSprites.field505, 0, field7538);
 				Font var4 = renderer.createFont(var3, SpriteDataProvider.method1609(spritesJs5, DefaultSprites.field505, 0), true);
 				method8024();
-				MessageBox.method649(arg1, true, renderer, var4, var3);
+				MessageBox.draw(arg1, true, renderer, var4, var3);
 			}
 		} else {
 			label245: {
@@ -2901,7 +2901,7 @@ public final class Client extends GameShell {
 					FontMetrics var6 = FontMetrics.method1593(fontmetricsJs5, DefaultSprites.field505, 0);
 					Font var7 = var5.createFont(var6, SpriteDataProvider.method1609(spritesJs5, DefaultSprites.field505, 0), true);
 					method8024();
-					MessageBox.method649(arg1, true, var5, var7, var6);
+					MessageBox.draw(arg1, true, var5, var7, var6);
 					try {
 						var5.dispose();
 						var5 = null;
@@ -3066,50 +3066,63 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("adc.fg(III)I")
-	public static int method15172(int arg0, int arg1) {
-		if (graphicsDefaults.field7738 == -1) {
+	public static int getPerformanceMetric(int displayMode, int threshold) {
+		if (graphicsDefaults.performancemetricsmodel == -1) {
 			return 1;
 		}
-		if (arg0 != preferences.displayMode.getValue()) {
-			method14060(arg0, LocalisedText.PROFILING.forLang(language), true);
-			if (preferences.displayMode.getValue() != arg0) {
+
+		if (displayMode != preferences.displayMode.getValue()) {
+			changeToolkit(displayMode, LocalisedText.PROFILING.forLang(language), true);
+			if (preferences.displayMode.getValue() != displayMode) {
 				return -1;
 			}
 		}
+
 		try {
-			Dimension var2 = GameShell.canvas.getSize();
-			MessageBox.method649(LocalisedText.PROFILING.forLang(language), true, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
-			ModelUnlit var3 = ModelUnlit.method1931(modelsJs5, graphicsDefaults.field7738, 0);
-			long var4 = MonotonicTime.method3655();
-			renderer.method2167();
-			field10793.method6313(0.0F, 256.0F, 0.0F);
+			Dimension canvasSize = GameShell.canvas.getSize();
+			MessageBox.draw(LocalisedText.PROFILING.forLang(language), true, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+
+			ModelUnlit baseModelTest = ModelUnlit.get(modelsJs5, graphicsDefaults.performancemetricsmodel, 0);
+
+			long var4 = MonotonicTime.get();
+			renderer.resetClip();
+			field10793.setToTranslation(0.0F, 256.0F, 0.0F);
 			renderer.method2217(field10793);
 			Matrix4x4 var6 = renderer.method2208();
-			var6.method6703((float) (var2.width / 2), (float) (var2.height / 2), 512.0F, 512.0F, (float) world.method7760(), (float) world.method7734(), (float) var2.width, (float) var2.height);
+			var6.method6703((float) (canvasSize.width / 2), (float) (canvasSize.height / 2), 512.0F, 512.0F, (float) world.method7760(), (float) world.method7734(), (float) canvasSize.width, (float) canvasSize.height);
 			renderer.method2220(var6);
 			renderer.setSunAmbientIntensity(1.0F);
 			renderer.setSun(16777215, 0.5F, 0.5F, 20.0F, -50.0F, 30.0F);
-			Model var7 = renderer.createModel(var3, 2048, 64, 64, 768);
+			Model modelTest = renderer.createModel(baseModelTest, 2048, 64, 64, 768);
+
+			if (modelTest == null) {
+				System.out.println("Exception prevented: modelTest == null");
+				return -1;
+			}
+
 			int var8 = 0;
 			label42: for (int var9 = 0; var9 < 500; var9++) {
 				renderer.method2475(3, 0);
 				for (int var10 = 15; var10 >= 0; var10--) {
 					for (int var11 = 0; var11 <= var10; var11++) {
-						field10875.method6313((float) (((float) var11 - (float) var10 / 2.0F) * 512.0F), 0.0F, (float) ((var10 + 1) * 512));
-						var7.method1813(field10875, null, 0);
+						field10875.setToTranslation((float) ((int) (((float) var11 - (float) var10 / 2.0F) * 512.0F)), 0.0F, (float) ((var10 + 1) * 512));
+
+						modelTest.draw(field10875, null, 0);
 						var8++;
-						if (MonotonicTime.method3655() - var4 >= (long) arg1) {
+
+						if (MonotonicTime.get() - var4 >= (long) threshold) {
 							break label42;
 						}
 					}
 				}
 			}
+
 			renderer.method2117();
-			long var12 = (long) (var8 * 1000) / (MonotonicTime.method3655() - var4);
+			long var12 = (long) (var8 * 1000) / (MonotonicTime.get() - var4);
 			renderer.method2475(3, 0);
 			return (int) var12;
-		} catch (Throwable var15) {
-			var15.printStackTrace();
+		} catch (Throwable ex) {
+			ex.printStackTrace();
 			return -1;
 		}
 	}
@@ -3245,7 +3258,7 @@ public final class Client extends GameShell {
 			GameShell.frameWid = var1;
 			GameShell.frameHei = var2;
 		}
-		field10937 = MonotonicTime.method3655() + 500L;
+		field10937 = MonotonicTime.get() + 500L;
 		field10836 = false;
 	}
 
@@ -3282,7 +3295,7 @@ public final class Client extends GameShell {
 					GameShell.canvas.setSize(GameShell.canvasWid, GameShell.canvasHei);
 					if (renderer != null) {
 						renderer.method2216(GameShell.canvas, GameShell.canvasWid, GameShell.canvasHei);
-						TwitchHardwarePlatform.method7259(renderer, MonotonicTime.method3655());
+						TwitchHardwarePlatform.method7259(renderer, MonotonicTime.get());
 					}
 					if (GameShell.frame == var1) {
 						Insets var3 = GameShell.frame.getInsets();
@@ -3791,11 +3804,11 @@ public final class Client extends GameShell {
 												method15198();
 												field11082 = false;
 											}
-											if (field7228.field10252 && field7228.field10253 < MonotonicTime.method3655() - 60000L) {
+											if (field7228.field10252 && field7228.field10253 < MonotonicTime.get() - 60000L) {
 												method14147();
 											}
 											for (Link_Sub1 var25 = (Link_Sub1) field10910.method14254(); var25 != null; var25 = (Link_Sub1) field10910.method14241()) {
-												if ((long) var25.field11211 < MonotonicTime.method3655() / 1000L - 5L) {
+												if ((long) var25.field11211 < MonotonicTime.get() / 1000L - 5L) {
 													if (var25.field11209 > 0) {
 														ChatHistory.addMessage(5, 0, "", "", "", var25.field11210 + LocalisedText.FRIENDLOGIN.forLang(language), null);
 													}
@@ -3886,7 +3899,7 @@ public final class Client extends GameShell {
 			gameConnection.queue(var1);
 		}
 		if (field594 == null) {
-			if (MonotonicTime.method3655() >= field3457) {
+			if (MonotonicTime.get() >= field3457) {
 				field594 = field10994.method10589(WorldSwitcher.currentWorld.host);
 			}
 		} else if (field594.field8180 != -1) {
@@ -3905,7 +3918,7 @@ public final class Client extends GameShell {
 				} catch (Throwable var48) {
 				}
 			}
-			long var7 = MonotonicTime.method3655();
+			long var7 = MonotonicTime.get();
 			int var9 = -1;
 			if (field11399 != null) {
 				long var10 = field11399.getCollectionTime();
@@ -3953,9 +3966,9 @@ public final class Client extends GameShell {
 			int var18 = var17.x << 9;
 			int var19 = var17.z << 9;
 			if (field637 <= 0L) {
-				field637 = MonotonicTime.method3655();
+				field637 = MonotonicTime.get();
 			}
-			float var20 = (float) (MonotonicTime.method3655() - field637);
+			float var20 = (float) (MonotonicTime.get() - field637);
 			int var21 = 1000 / GameShell.method6016();
 			int var22 = (int) ((double) var21 * 1.25D);
 			while (var20 > 0.0F) {
@@ -3963,7 +3976,7 @@ public final class Client extends GameShell {
 				field9155.method4681(var23 / 1000.0F, world.method7744().levelHeightmap, world.method7793(), var18, var19);
 				var20 -= var22;
 			}
-			field637 = MonotonicTime.method3655();
+			field637 = MonotonicTime.get();
 		}
 		method1680();
 		if (state != 18) {
@@ -4094,12 +4107,12 @@ public final class Client extends GameShell {
 											for (int var41 = 0; var41 < 5; var41++) {
 												int var10002 = field10996[var41]++;
 											}
-											if (field7228.field10252 && field7228.field10253 < MonotonicTime.method3655() - 60000L) {
+											if (field7228.field10252 && field7228.field10253 < MonotonicTime.get() - 60000L) {
 												method14147();
 											}
 											field7228.method16414();
 											for (Link_Sub1 var42 = (Link_Sub1) field10910.method14254(); var42 != null; var42 = (Link_Sub1) field10910.method14241()) {
-												if ((long) var42.field11211 < MonotonicTime.method3655() / 1000L - 5L) {
+												if ((long) var42.field11211 < MonotonicTime.get() / 1000L - 5L) {
 													if (var42.field11209 > 0) {
 														ChatHistory.addMessage(5, 0, "", "", "", var42.field11210 + LocalisedText.FRIENDLOGIN.forLang(language), null);
 													}
@@ -5614,7 +5627,7 @@ public final class Client extends GameShell {
 			field11051 = 0;
 			method15281();
 		}
-		renderer.method2167();
+		renderer.resetClip();
 		MiniMenu.method7316(renderer);
 		int var1 = MiniMenu.method895();
 		if (var1 == -1) {
@@ -5650,7 +5663,7 @@ public final class Client extends GameShell {
 			field11051 = 0;
 			method15281();
 		}
-		renderer.method2167();
+		renderer.resetClip();
 		MiniMenu.method7316(renderer);
 		int var3 = MiniMenu.method895();
 		if (var3 == -1) {
@@ -5792,7 +5805,7 @@ public final class Client extends GameShell {
 		} else if (Client.field3416 == 3) {
 			field9155.method4707(var25, field10793, field10792, var26.x << 9, var26.z << 9);
 		} else {
-			field10793.method6313((float) -field7956, (float) -field10518, (float) -field1881);
+			field10793.setToTranslation((float) -field7956, (float) -field10518, (float) -field1881);
 			field10793.method6307(0.0F, -1.0F, 0.0F, Trig1.method6277(-field8586 & 0x3FFF));
 			field10793.method6307(-1.0F, 0.0F, 0.0F, Trig1.method6277(-field7447 & 0x3FFF));
 			field10793.method6307(0.0F, 0.0F, -1.0F, Trig1.method6277(-field2656 & 0x3FFF));
@@ -5846,7 +5859,7 @@ public final class Client extends GameShell {
 		}
 		if (field11023) {
 			renderer.method2301(var8, var9, var10, var11, -16777216);
-			MessageBox.method649(LocalisedText.LOADING.forLang(language), false, renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.draw(LocalisedText.LOADING.forLang(language), false, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
 		}
 		method15141(field10792, false, (float) (var10 / 2 + var8), (float) (var11 / 2 + var9), (float) (field11078 << 1), (float) (field11078 << 1), var10, var11);
 		renderer.method2220(field10792);
@@ -5877,7 +5890,7 @@ public final class Client extends GameShell {
 				int var9 = arg3 * var6 * 512 / (var8 * 334);
 				int var10 = (arg2 - var9) / 2;
 				if (arg4) {
-					renderer.method2167();
+					renderer.resetClip();
 					renderer.method2301(arg0, arg1, var10, arg3, -16777216);
 					renderer.method2301(arg0 + arg2 - var10, arg1, var10, arg3, -16777216);
 				}
@@ -5892,7 +5905,7 @@ public final class Client extends GameShell {
 				int var12 = arg2 * var11 * 334 / (var6 * 512);
 				int var13 = (arg3 - var12) / 2;
 				if (arg4) {
-					renderer.method2167();
+					renderer.resetClip();
 					renderer.method2301(arg0, arg1, arg2, var13, -16777216);
 					renderer.method2301(arg0, arg1 + arg3 - var13, arg2, var13, -16777216);
 				}
@@ -12357,7 +12370,7 @@ public final class Client extends GameShell {
 										var48 = (Sprite) field11013.get((long) var11.field2188);
 										if (var48 == null && !field11093.containsKey(var11.field2188)) {
 											try {
-												field11093.put(var11.field2188, field7957.method563(new URL(field10947 + "/img/image_" + var11.field2188 + ".png?a=" + MonotonicTime.method3655())));
+												field11093.put(var11.field2188, field7957.method563(new URL(field10947 + "/img/image_" + var11.field2188 + ".png?a=" + MonotonicTime.get())));
 											} catch (MalformedURLException var86) {
 												JagException.report(null, var86);
 											}
@@ -12560,7 +12573,7 @@ public final class Client extends GameShell {
 									} else {
 										world.method7816().method9983();
 									}
-									var60.method1813(field10875, null, 1);
+									var60.draw(field10875, null, 1);
 									if (!var11.field2239 && var11.field2254 != null) {
 										renderer.drawParticles(var11.field2254.method9939());
 									}
@@ -12568,7 +12581,7 @@ public final class Client extends GameShell {
 										renderer.method2168(arg2, arg3, arg4, arg5);
 									}
 									renderer.method2170(false);
-									renderer.method2167();
+									renderer.resetClip();
 									renderer.method2168(arg2, arg3, arg4, arg5);
 									if (var11.field2250) {
 										world.method7816().method9983();
@@ -12617,7 +12630,7 @@ public final class Client extends GameShell {
 		if (fps < 20) {
 			var5 = -65536;
 		}
-		DefaultSprites.field9184.method2682("Fps:" + fps + " (" + fpsAverage + " ms)", var3, var4, var5, -1);
+		DefaultSprites.fontP12Full.method2682("Fps:" + fps + " (" + fpsAverage + " ms)", var3, var4, var5, -1);
 		var4 += 15;
 		Runtime var6 = Runtime.getRuntime();
 		long var7 = var6.totalMemory() / 1024L;
@@ -12626,7 +12639,7 @@ public final class Client extends GameShell {
 		if (var9 > 262144L) {
 			var11 = -65536;
 		}
-		DefaultSprites.field9184.method2682("Mem:" + var9 + "/" + var7 + "k", var3, var4, var11, -1);
+		DefaultSprites.fontP12Full.method2682("Mem:" + var9 + "/" + var7 + "k", var3, var4, var11, -1);
 		var4 += 15;
 		long var12 = gameConnection.pingProvider.getPingedAddress();
 		String var14 = "N/A";
@@ -12636,7 +12649,7 @@ public final class Client extends GameShell {
 				var14 = TextUtil.method596(16711680) + var14 + TextUtil.method596(16776960);
 			}
 		}
-		DefaultSprites.field9184.method2682("Game: In:" + gameConnection.field804 + "B/s " + "Out:" + gameConnection.field798 + "B/s " + "Ping:" + var14, var3, var4, -256, -1);
+		DefaultSprites.fontP12Full.method2682("Game: In:" + gameConnection.field804 + "B/s " + "Out:" + gameConnection.field798 + "B/s " + "Ping:" + var14, var3, var4, -256, -1);
 		var4 += 15;
 		long var15 = lobbyConnection.pingProvider.getPingedAddress();
 		String var17 = "N/A";
@@ -12646,10 +12659,10 @@ public final class Client extends GameShell {
 				var17 = TextUtil.method596(16711680) + var17 + TextUtil.method596(16776960);
 			}
 		}
-		DefaultSprites.field9184.method2682("Lobby: In:" + lobbyConnection.field804 + "B/s " + "Out:" + lobbyConnection.field798 + "B/s " + "Ping:" + var17, var3, var4, -256, -1);
+		DefaultSprites.fontP12Full.method2682("Lobby: In:" + lobbyConnection.field804 + "B/s " + "Out:" + lobbyConnection.field798 + "B/s " + "Ping:" + var17, var3, var4, -256, -1);
 		var4 += 15;
 		int var18 = renderer.method2520() / 1024;
-		DefaultSprites.field9184.method2682("Offheap:" + var18 + "k", var3, var4, var18 > 65536 ? -65536 : -256, -1);
+		DefaultSprites.fontP12Full.method2682("Offheap:" + var18 + "k", var3, var4, var18 > 65536 ? -65536 : -256, -1);
 		var4 += 15;
 		int var19 = 0;
 		int var20 = 0;
@@ -14545,7 +14558,7 @@ public final class Client extends GameShell {
 			if (arg0.length() == 0) {
 				var4 = var3 + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
 			} else {
-				var4 = var3 + "; Expires=" + method14989(MonotonicTime.method3655() + 94608000000L) + "; Max-Age=" + 94608000L;
+				var4 = var3 + "; Expires=" + method14989(MonotonicTime.get() + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
 			BrowserControl.eval(GameShell.field11885, "document.cookie=\"" + var4 + "\"");
 		} catch (Throwable var6) {
@@ -14559,7 +14572,7 @@ public final class Client extends GameShell {
 		}
 		try {
 			String var0 = GameShell.field11885.getParameter(JavConfigParameter.field4132.field4162);
-			int var1 = (int) (MonotonicTime.method3655() / 86400000L) - 11745;
+			int var1 = (int) (MonotonicTime.get() / 86400000L) - 11745;
 			String var2 = "usrdob=" + var1 + "; version=1; path=/; domain=" + var0;
 			BrowserControl.eval(GameShell.field11885, "document.cookie=\"" + var2 + "\"");
 		} catch (Throwable var4) {

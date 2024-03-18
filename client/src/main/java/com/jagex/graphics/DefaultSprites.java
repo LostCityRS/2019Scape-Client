@@ -51,7 +51,7 @@ public class DefaultSprites {
 	public static FontMetrics field6778;
 
 	@ObfuscatedName("is.o")
-	public static FontMetrics field2657;
+	public static FontMetrics fontP12FullMetrics;
 
 	@ObfuscatedName("afp.s")
 	public static FontMetrics field10268;
@@ -60,7 +60,7 @@ public class DefaultSprites {
 	public static Font field8321;
 
 	@ObfuscatedName("adh.q")
-	public static Font field9184;
+	public static Font fontP12Full;
 
 	@ObfuscatedName("agr.x")
 	public static Font field10355;
@@ -135,8 +135,8 @@ public class DefaultSprites {
 	public static void method7114(Renderer arg0) {
 		field8321 = (Font) Client.field7538.method6188(Client.field10833, field506, true, true);
 		field6778 = Client.field7538.method6163(Client.field10833, field506);
-		field9184 = (Font) Client.field7538.method6188(Client.field10833, field505, true, true);
-		field2657 = Client.field7538.method6163(Client.field10833, field505);
+		fontP12Full = (Font) Client.field7538.method6188(Client.field10833, field505, true, true);
+		fontP12FullMetrics = Client.field7538.method6163(Client.field10833, field505);
 		field10355 = (Font) Client.field7538.method6188(Client.field10833, field509, true, true);
 		field10268 = Client.field7538.method6163(Client.field10833, field509);
 	}
@@ -232,7 +232,7 @@ public class DefaultSprites {
 	@ObfuscatedName("ge.u(I)V")
 	public static void method3568() {
 		field8321 = null;
-		field9184 = null;
+		fontP12Full = null;
 		field10355 = null;
 		field8323 = null;
 		field513 = null;

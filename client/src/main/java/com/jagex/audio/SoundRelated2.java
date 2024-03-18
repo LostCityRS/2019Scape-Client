@@ -239,7 +239,7 @@ public class SoundRelated2 {
 		} else {
 			this.field4940 = this.field4897;
 			this.field4937 = arg0;
-			this.field4939 = MonotonicTime.method3655();
+			this.field4939 = MonotonicTime.get();
 			this.field4938 = this.field4939 + (long) arg1;
 		}
 	}
@@ -433,7 +433,7 @@ public class SoundRelated2 {
 		}
 		this.method7563();
 		if (this.field4937 != this.field4897) {
-			long var1 = MonotonicTime.method3655();
+			long var1 = MonotonicTime.get();
 			if (var1 > this.field4938) {
 				this.field4897 = this.field4937;
 			} else {

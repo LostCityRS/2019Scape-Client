@@ -39,7 +39,7 @@ public class NativeMouseLogger extends MouseLogger {
 
 	@ObfuscatedName("alp.u(I)Z")
 	public boolean method10272() {
-		return !this.field11710.isEmpty() || this.field7953 < MonotonicTime.method3655() - 2000L;
+		return !this.field11710.isEmpty() || this.field7953 < MonotonicTime.get() - 2000L;
 	}
 
 	@ObfuscatedName("alp.z(S)Lakl;")
