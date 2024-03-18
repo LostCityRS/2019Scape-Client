@@ -675,7 +675,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				}
 				if (var2.startsWith("1.6.0_")) {
 					int var3;
-					for (var3 = 6; var3 < var2.length() && StringTools.method6819(var2.charAt(var3)); var3++) {
+					for (var3 = 6; var3 < var2.length() && StringTools.charIsNumeric(var2.charAt(var3)); var3++) {
 					}
 					String var4 = var2.substring(6, var3);
 					if (StringTools.method9836(var4) && StringTools.method9595(var4) < 10) {

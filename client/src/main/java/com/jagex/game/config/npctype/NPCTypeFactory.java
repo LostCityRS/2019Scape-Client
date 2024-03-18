@@ -12,13 +12,13 @@ import deob.ObfuscatedName;
 public abstract class NPCTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("ih.e")
-	public final ModeGame field2772;
+	public final ModeGame modeGame;
 
 	@ObfuscatedName("ih.n")
 	public boolean allowMembers;
 
 	@ObfuscatedName("ih.m")
-	public final Js5 js5;
+	public final Js5 configClient;
 
 	@ObfuscatedName("ih.k")
 	public final WeightedCache modelCache = new WeightedCache(50);
@@ -30,16 +30,16 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 	public int field2773;
 
 	@ObfuscatedName("ih.l")
-	public final String[] defaultops;
+	public final String[] defaultOps;
 
-	public NPCTypeFactory(boolean allowMembers, Js5 js5, Language language, ModeGame modeGame) {
+	public NPCTypeFactory(boolean allowMembers, Js5 configClient, Language language, ModeGame modeGame) {
 		this.allowMembers = allowMembers;
-		this.js5 = js5;
-		this.field2772 = modeGame;
-		if (ModeGame.RUNESCAPE == this.field2772) {
-			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.localisedText(language) };
+		this.configClient = configClient;
+		this.modeGame = modeGame;
+		if (ModeGame.RUNESCAPE == this.modeGame) {
+			this.defaultOps = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.forLang(language) };
 		} else {
-			this.defaultops = new String[] { null, null, null, null, null, null };
+			this.defaultOps = new String[] { null, null, null, null, null, null };
 		}
 	}
 

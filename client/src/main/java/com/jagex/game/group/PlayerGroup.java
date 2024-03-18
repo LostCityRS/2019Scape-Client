@@ -17,28 +17,28 @@ import java.util.List;
 public class PlayerGroup {
 
 	@ObfuscatedName("gq.f")
-	public final long field1902;
+	public final long hashcode;
 
 	@ObfuscatedName("gq.w")
-	public final long field1903;
+	public final long creationTime;
 
 	@ObfuscatedName("gq.l")
-	public final String field1904;
+	public final String displayName;
 
 	@ObfuscatedName("gq.u")
-	public final boolean field1905;
+	public final boolean membersOnly;
 
 	@ObfuscatedName("gq.z")
-	public final int field1906;
+	public final int maxSize;
 
 	@ObfuscatedName("gq.p")
 	public final VarContainerSparse field1899;
 
 	@ObfuscatedName("gq.d")
-	public final ArrayList field1908;
+	public final ArrayList members;
 
 	@ObfuscatedName("gq.c")
-	public final ArrayList field1912;
+	public final ArrayList banned;
 
 	@ObfuscatedName("gq.r")
 	public boolean field1910;
@@ -47,36 +47,36 @@ public class PlayerGroup {
 	public boolean field1911;
 
 	@ObfuscatedName("gq.o")
-	public int field1909 = -1;
+	public int ownerSlot = -1;
 
 	@ObfuscatedName("gq.s")
 	public int field1913;
 
 	public PlayerGroup(long arg0, Packet arg1, boolean arg2, PlayerGroupResourceProvider arg3) {
-		this.field1902 = arg0;
+		this.hashcode = arg0;
 		int var6 = arg1.g1();
 		if (var6 <= 0 || var6 > 1) {
 			throw new IllegalStateException("");
 		}
 		int var7 = arg1.g1();
-		this.field1905 = (var7 & 0x1) != 0;
+		this.membersOnly = (var7 & 0x1) != 0;
 		this.field1910 = (var7 & 0x2) != 0;
 		this.field1911 = (var7 & 0x4) != 0;
 		this.field1913 = arg1.g4s();
-		this.field1903 = arg1.g8();
-		this.field1904 = arg1.gjstr();
-		this.field1906 = arg1.g2s();
+		this.creationTime = arg1.g8();
+		this.displayName = arg1.gjstr();
+		this.maxSize = arg1.g2s();
 		arg1.g4s();
 		arg1.g8();
 		int var8 = arg1.g2();
-		this.field1908 = new ArrayList(var8);
+		this.members = new ArrayList(var8);
 		for (int var9 = 0; var9 < var8; var9++) {
-			this.field1908.add(new PlayerGroupMember(arg1, this.field1910, this.field1911, arg3));
+			this.members.add(new PlayerGroupMember(arg1, this.field1910, this.field1911, arg3));
 		}
 		int var10 = arg1.g2();
-		this.field1912 = new ArrayList(var10);
+		this.banned = new ArrayList(var10);
 		for (int var11 = 0; var11 < var10; var11++) {
-			this.field1912.add(new PlayerGroupBanned(arg1, this.field1910, this.field1911));
+			this.banned.add(new PlayerGroupBanned(arg1, this.field1910, this.field1911));
 		}
 		this.field1899 = new VarContainerSparse(arg3.method291());
 		int var12 = arg1.g2();
@@ -95,13 +95,13 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.e(B)Ljava/util/List;")
-	public List method3397() {
-		return Collections.unmodifiableList(this.field1908);
+	public List getMembers() {
+		return Collections.unmodifiableList(this.members);
 	}
 
 	@ObfuscatedName("gq.n(B)Ljava/util/List;")
-	public List method3429() {
-		return Collections.unmodifiableList(this.field1912);
+	public List getBanned() {
+		return Collections.unmodifiableList(this.banned);
 	}
 
 	@ObfuscatedName("gq.m(I)I")
@@ -115,75 +115,75 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.f(I)Z")
-	public boolean method3441() {
-		return this.field1905;
+	public boolean isMembersOnly() {
+		return this.membersOnly;
 	}
 
 	@ObfuscatedName("gq.w(I)I")
-	public int method3387() {
-		return this.field1906;
+	public int getMaxSize() {
+		return this.maxSize;
 	}
 
 	@ObfuscatedName("gq.l(I)J")
-	public long method3388() {
-		return this.field1903;
+	public long getCreationTime() {
+		return this.creationTime;
 	}
 
 	public int hashCode() {
-		return (int) this.field1902;
+		return (int) this.hashcode;
 	}
 
 	@ObfuscatedName("gq.u(I)V")
 	public void method3383() {
 		int var1 = -1;
 		int var2 = -1;
-		for (int var3 = 0; var3 < this.field1908.size(); var3++) {
-			PlayerGroupMember var4 = (PlayerGroupMember) this.field1908.get(var3);
-			int var5 = var4.method3493();
+		for (int var3 = 0; var3 < this.members.size(); var3++) {
+			PlayerGroupMember var4 = (PlayerGroupMember) this.members.get(var3);
+			int var5 = var4.getRank();
 			if (var5 > var1) {
 				var1 = var5;
 				var2 = var3;
 			}
 		}
-		this.field1909 = var2;
+		this.ownerSlot = var2;
 	}
 
 	@ObfuscatedName("gq.z(B)I")
-	public int method3390() {
-		return this.field1909;
+	public int getOwnerSlot() {
+		return this.ownerSlot;
 	}
 
 	@ObfuscatedName("gq.p(B)Lgv;")
-	public PlayerGroupMemberStatus method3444() {
-		if (this.field1908.isEmpty()) {
+	public PlayerGroupMemberStatus overallStatus() {
+		if (this.members.isEmpty()) {
 			return PlayerGroupMemberStatus.field1977;
 		}
-		PlayerGroupMemberStatus var1 = ((PlayerGroupMember) this.field1908.get(0)).method3495();
+		PlayerGroupMemberStatus var1 = ((PlayerGroupMember) this.members.get(0)).getStatus();
 		switch(var1.field1979) {
 			case 1:
 			case 2:
 				return var1;
 			default:
-				Iterator var2 = this.field1908.iterator();
+				Iterator var2 = this.members.iterator();
 				PlayerGroupMember var3;
 				do {
 					if (!var2.hasNext()) {
 						return PlayerGroupMemberStatus.field1976;
 					}
 					var3 = (PlayerGroupMember) var2.next();
-				} while (var3.method3495() != PlayerGroupMemberStatus.field1977);
+				} while (var3.getStatus() != PlayerGroupMemberStatus.field1977);
 				return PlayerGroupMemberStatus.field1977;
 		}
 	}
 
 	@ObfuscatedName("gq.d(II)Lgy;")
-	public PlayerGroupMember method3392(int arg0) {
-		return arg0 == -1 ? null : (PlayerGroupMember) this.field1908.get(arg0);
+	public PlayerGroupMember getMember(int arg0) {
+		return arg0 == -1 ? null : (PlayerGroupMember) this.members.get(arg0);
 	}
 
 	@ObfuscatedName("gq.c(I)Ljava/lang/String;")
-	public String method3386() {
-		return this.field1904;
+	public String getDisplayName() {
+		return this.displayName;
 	}
 
 	@ObfuscatedName("gq.r(I)Leh;")
@@ -193,77 +193,77 @@ public class PlayerGroup {
 
 	@ObfuscatedName("gq.v(Lgy;B)V")
 	public void method3395(PlayerGroupMember arg0) {
-		this.field1908.add(arg0);
+		this.members.add(arg0);
 		this.method3383();
 	}
 
 	@ObfuscatedName("gq.o(II)V")
 	public void method3430(int arg0) {
-		this.field1908.remove(arg0);
+		this.members.remove(arg0);
 		this.method3383();
 	}
 
 	@ObfuscatedName("gq.s(Lga;S)V")
 	public void method3451(PlayerGroupBanned arg0) {
-		this.field1912.add(arg0);
+		this.banned.add(arg0);
 	}
 
 	@ObfuscatedName("gq.y(II)V")
 	public void method3398(int arg0) {
-		this.field1912.remove(arg0);
+		this.banned.remove(arg0);
 	}
 
 	@ObfuscatedName("gq.q(III)V")
 	public void method3399(int arg0, int arg1) {
-		((PlayerGroupMember) this.field1908.get(arg0)).method3489(arg1);
+		((PlayerGroupMember) this.members.get(arg0)).setRank(arg1);
 		this.method3383();
 	}
 
 	@ObfuscatedName("gq.x(III)V")
 	public void method3400(int arg0, int arg1) {
-		PlayerGroupMember var3 = (PlayerGroupMember) this.field1908.get(arg0);
-		var3.method3535(arg1);
-		var3.method3507(true);
+		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
+		var3.setNodeId(arg1);
+		var3.setOnline(true);
 	}
 
 	@ObfuscatedName("gq.b(II)V")
 	public void method3401(int arg0) {
-		PlayerGroupMember var2 = (PlayerGroupMember) this.field1908.get(arg0);
-		var2.method3507(false);
+		PlayerGroupMember var2 = (PlayerGroupMember) this.members.get(arg0);
+		var2.setOnline(false);
 	}
 
 	@ObfuscatedName("gq.h(IZS)V")
 	public void method3402(int arg0, boolean arg1) {
-		PlayerGroupMember var3 = (PlayerGroupMember) this.field1908.get(arg0);
-		var3.method3496(arg1 ? PlayerGroupMemberStatus.field1976 : PlayerGroupMemberStatus.field1977);
+		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
+		var3.setStatus(arg1 ? PlayerGroupMemberStatus.field1976 : PlayerGroupMemberStatus.field1977);
 	}
 
 	@ObfuscatedName("gq.a(IIB)V")
 	public void method3381(int arg0, int arg1) {
-		((PlayerGroupMember) this.field1908.get(arg0)).method3498(arg1);
+		((PlayerGroupMember) this.members.get(arg0)).setTeam(arg1);
 	}
 
 	@ObfuscatedName("gq.g(I)V")
 	public void method3463() {
-		Iterator var1 = this.field1908.iterator();
+		Iterator var1 = this.members.iterator();
 		while (var1.hasNext()) {
 			PlayerGroupMember var2 = (PlayerGroupMember) var1.next();
-			var2.method3496(PlayerGroupMemberStatus.field1978);
+			var2.setStatus(PlayerGroupMemberStatus.field1978);
 		}
 	}
 
 	@ObfuscatedName("gq.i(B)V")
 	public void method3405() {
-		Iterator var1 = this.field1908.iterator();
+		Iterator var1 = this.members.iterator();
 		while (var1.hasNext()) {
 			PlayerGroupMember var2 = (PlayerGroupMember) var1.next();
-			var2.method3496(PlayerGroupMemberStatus.field1975);
+			var2.setStatus(PlayerGroupMemberStatus.field1975);
 		}
 	}
 
 	@ObfuscatedName("gq.j(ILgy;I)V")
 	public void method3403(int arg0, PlayerGroupMember arg1) {
-		PlayerGroupMember var3 = (PlayerGroupMember) this.field1908.get(arg0);
+		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
 		var3.method3502(arg1);
 	}
 }

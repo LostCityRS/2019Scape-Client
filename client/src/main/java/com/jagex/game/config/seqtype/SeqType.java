@@ -32,7 +32,7 @@ public class SeqType implements ConfigType {
 	public int[] frames;
 
 	@ObfuscatedName("fg.l")
-	public int field1776 = 0;
+	public int length = 0;
 
 	@ObfuscatedName("fg.u")
 	public int field1784 = -1;
@@ -250,9 +250,9 @@ public class SeqType implements ConfigType {
 			}
 		}
 		if (this.frames != null) {
-			this.field1776 = 0;
+			this.length = 0;
 			for (int var1 = 0; var1 < this.frames.length; var1++) {
-				this.field1776 += this.frames[var1];
+				this.length += this.frames[var1];
 			}
 		}
 	}

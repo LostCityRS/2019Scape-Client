@@ -42,7 +42,7 @@ public class QuickChatPhraseTypeList {
 	}
 
 	@ObfuscatedName("ach.e(II)Lasq;")
-	public QuickChatPhraseType method14982(int arg0) {
+	public QuickChatPhraseType getPhrase(int arg0) {
 		QuickChatPhraseType var2 = (QuickChatPhraseType) this.field8855.method2930((long) arg0);
 		if (var2 != null) {
 			return var2;

@@ -85,8 +85,8 @@ public abstract class GraphEntity extends GraphNode {
 	}
 
 	@ObfuscatedName("alh.bo(I)I")
-	public int method16501() {
-		return -this.method16523();
+	public int height() {
+		return -this.overlayHeight();
 	}
 
 	@ObfuscatedName("alh.gg(II)V")
@@ -128,7 +128,7 @@ public abstract class GraphEntity extends GraphNode {
 	public abstract boolean method18361();
 
 	@ObfuscatedName("alh.by(B)I")
-	public abstract int method16523();
+	public abstract int overlayHeight();
 
 	@ObfuscatedName("alh.fv(Ldh;B)Luq;")
 	public abstract EntityBounds method17371(Renderer arg0);

@@ -549,7 +549,7 @@ public class LocalisedText {
 	}
 
 	@ObfuscatedName("acz.e(Lzt;B)Ljava/lang/String;")
-	public String localisedText(Language language) {
+	public String forLang(Language language) {
 		return (String) this.texts.get(language);
 	}
 }

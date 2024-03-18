@@ -529,7 +529,7 @@ public class OcclusionManager {
 			int var5 = arg2 << this.field7038.field6900;
 			int var6 = arg3 << this.field7038.field6900;
 			int var7 = this.field7038.field6913[arg1].method1529(arg2, arg3) - 1;
-			int var8 = var7 + arg0.method16523();
+			int var8 = var7 + arg0.overlayHeight();
 			if (arg0.field12463 == 1) {
 				if (this.method8933(var5, var7, var6, var5, var8, var6, var5, var8, this.field7038.field6901 + var6)) {
 					return this.method8933(var5, var7, var6, var5, var8, this.field7038.field6901 + var6, var5, var7, this.field7038.field6901 + var6);

@@ -34,7 +34,7 @@ public class NPCType implements ConfigType {
 	public NPCTypeFactory factory;
 
 	@ObfuscatedName("if.l")
-	public ConfigTypeList list;
+	public ConfigTypeList myList;
 
 	@ObfuscatedName("if.u")
 	public int id;
@@ -64,13 +64,13 @@ public class NPCType implements ConfigType {
 	public short[] recol_d;
 
 	@ObfuscatedName("if.y")
-	public byte[] field2733;
+	public byte[] recol_d_palette;
 
 	@ObfuscatedName("if.q")
-	public short[] field2707;
+	public short[] retex_s;
 
 	@ObfuscatedName("if.x")
-	public short[] field2708;
+	public short[] retex_d;
 
 	@ObfuscatedName("if.b")
 	public byte[] field2760;
@@ -91,7 +91,7 @@ public class NPCType implements ConfigType {
 	public byte field2714 = 0;
 
 	@ObfuscatedName("if.t")
-	public String[] ops;
+	public String[] op;
 
 	@ObfuscatedName("if.ae")
 	public int[] field2716;
@@ -148,7 +148,7 @@ public class NPCType implements ConfigType {
 	public int field2755 = -1;
 
 	@ObfuscatedName("if.aj")
-	public boolean field2734 = true;
+	public boolean active = true;
 
 	@ObfuscatedName("if.ay")
 	public boolean field2736 = true;
@@ -240,11 +240,11 @@ public class NPCType implements ConfigType {
 	@ObfuscatedName("if.bj")
 	public boolean field2690 = false;
 
-	public NPCType(int id, NPCTypeFactory factory, ConfigTypeList list) {
+	public NPCType(int id, NPCTypeFactory factory, ConfigTypeList npcs) {
 		this.id = id;
 		this.factory = factory;
-		this.list = list;
-		this.ops = (String[]) this.factory.defaultops.clone();
+		this.myList = npcs;
+		this.op = (String[]) this.factory.defaultOps.clone();
 	}
 
 	@ObfuscatedName("if.e(Lalw;B)V")
@@ -261,38 +261,38 @@ public class NPCType implements ConfigType {
 	@ObfuscatedName("if.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			int var3 = buf.g1();
-			this.models = new int[var3];
-			for (int var4 = 0; var4 < var3; var4++) {
-				this.models[var4] = buf.gSmart2or4null();
+			int length = buf.g1();
+			this.models = new int[length];
+			for (int index = 0; index < length; index++) {
+				this.models[index] = buf.gSmart2or4null();
 			}
 		} else if (code == 2) {
 			this.name = buf.gjstr();
 		} else if (code == 12) {
 			this.size = buf.g1();
 		} else if (code >= 30 && code < 35) {
-			this.ops[code - 30] = buf.gjstr();
+			this.op[code - 30] = buf.gjstr();
 		} else if (code == 40) {
-			int var5 = buf.g1();
-			this.recol_s = new short[var5];
-			this.recol_d = new short[var5];
-			for (int var6 = 0; var6 < var5; var6++) {
-				this.recol_s[var6] = (short) buf.g2();
-				this.recol_d[var6] = (short) buf.g2();
+			int length = buf.g1();
+			this.recol_s = new short[length];
+			this.recol_d = new short[length];
+			for (int index = 0; index < length; index++) {
+				this.recol_s[index] = (short) buf.g2();
+				this.recol_d[index] = (short) buf.g2();
 			}
 		} else if (code == 41) {
-			int var7 = buf.g1();
-			this.field2707 = new short[var7];
-			this.field2708 = new short[var7];
-			for (int var8 = 0; var8 < var7; var8++) {
-				this.field2707[var8] = (short) buf.g2();
-				this.field2708[var8] = (short) buf.g2();
+			int length = buf.g1();
+			this.retex_s = new short[length];
+			this.retex_d = new short[length];
+			for (int var8 = 0; var8 < length; var8++) {
+				this.retex_s[var8] = (short) buf.g2();
+				this.retex_d[var8] = (short) buf.g2();
 			}
 		} else if (code == 42) {
 			int var9 = buf.g1();
-			this.field2733 = new byte[var9];
+			this.recol_d_palette = new byte[var9];
 			for (int var10 = 0; var10 < var9; var10++) {
-				this.field2733[var10] = buf.g1b();
+				this.recol_d_palette[var10] = buf.g1b();
 			}
 		} else if (code == 44) {
 			int var11 = buf.g2();
@@ -389,7 +389,7 @@ public class NPCType implements ConfigType {
 			}
 			this.field2735[var41 + 1] = var40;
 		} else if (code == 107) {
-			this.field2734 = false;
+			this.active = false;
 		} else if (code == 109) {
 			this.field2736 = false;
 		} else if (code == 111) {
@@ -454,9 +454,9 @@ public class NPCType implements ConfigType {
 		} else if (code == 143) {
 			this.field2723 = true;
 		} else if (code >= 150 && code < 155) {
-			this.ops[code - 150] = buf.gjstr();
+			this.op[code - 150] = buf.gjstr();
 			if (!this.factory.allowMembers) {
-				this.ops[code - 150] = null;
+				this.op[code - 150] = null;
 			}
 		} else if (code == 155) {
 			this.field2711 = buf.g1b();
@@ -541,7 +541,7 @@ public class NPCType implements ConfigType {
 		if (this.field2758 != -1) {
 			return;
 		}
-		if (this.factory == null || ModeGame.RUNESCAPE == this.factory.field2772) {
+		if (this.factory == null || ModeGame.RUNESCAPE == this.factory.modeGame) {
 			this.field2758 = 1;
 		} else {
 			this.field2758 = 0;
@@ -556,7 +556,7 @@ public class NPCType implements ConfigType {
 	@ObfuscatedName("if.p(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;IZB)Ldo;")
 	public final Model getSequencedModel(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10, int arg11, boolean arg12) {
 		if (this.field2735 != null) {
-			NPCType var14 = this.method4547(arg3, arg4);
+			NPCType var14 = this.getVisible(arg3, arg4);
 			return var14 == null ? null : var14.getSequencedModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
 		}
 		int var15 = arg1;
@@ -605,7 +605,7 @@ public class NPCType implements ConfigType {
 			if (this.recol_s != null) {
 				var25 = var15 | 0x4000;
 			}
-			if (this.field2707 != null) {
+			if (this.retex_s != null) {
 				var25 |= 0x8000;
 			}
 			if (this.field2714 != 0) {
@@ -613,10 +613,10 @@ public class NPCType implements ConfigType {
 			}
 			int[] var26 = arg10 == null || arg10.field2689 == null ? this.models : arg10.field2689;
 			boolean var27 = false;
-			Js5 var28 = this.factory.js5;
-			synchronized (this.factory.js5) {
+			Js5 var28 = this.factory.configClient;
+			synchronized (this.factory.configClient) {
 				for (int var29 = 0; var29 < var26.length; var29++) {
-					if (var26[var29] != -1 && !this.factory.js5.requestdownload(var26[var29], 0)) {
+					if (var26[var29] != -1 && !this.factory.configClient.requestdownload(var26[var29], 0)) {
 						var27 = true;
 					}
 				}
@@ -627,9 +627,9 @@ public class NPCType implements ConfigType {
 			ModelUnlit[] var31 = new ModelUnlit[var26.length];
 			for (int var32 = 0; var32 < var26.length; var32++) {
 				if (var26[var32] != -1) {
-					Js5 var33 = this.factory.js5;
-					synchronized (this.factory.js5) {
-						var31[var32] = ModelUnlit.method1931(this.factory.js5, var26[var32], 0);
+					Js5 var33 = this.factory.configClient;
+					synchronized (this.factory.configClient) {
+						var31[var32] = ModelUnlit.method1931(this.factory.configClient, var26[var32], 0);
 					}
 					if (var31[var32] != null) {
 						if (var31[var32].field1372 < 13) {
@@ -697,22 +697,22 @@ public class NPCType implements ConfigType {
 					var44 = arg10.field2684;
 				}
 				for (int var45 = 0; var45 < this.recol_s.length; var45++) {
-					if (this.field2733 == null || var45 >= this.field2733.length) {
+					if (this.recol_d_palette == null || var45 >= this.recol_d_palette.length) {
 						var22.method1859(this.recol_s[var45], var44[var45]);
 					} else {
-						var22.method1859(this.recol_s[var45], clientpalette[this.field2733[var45] & 0xFF]);
+						var22.method1859(this.recol_s[var45], clientpalette[this.recol_d_palette[var45] & 0xFF]);
 					}
 				}
 			}
-			if (this.field2707 != null) {
+			if (this.retex_s != null) {
 				short[] var46;
 				if (arg10 == null || arg10.field2685 == null) {
-					var46 = this.field2708;
+					var46 = this.retex_d;
 				} else {
 					var46 = arg10.field2685;
 				}
-				for (int var47 = 0; var47 < this.field2707.length; var47++) {
-					var22.method1744(this.field2707[var47], var46[var47]);
+				for (int var47 = 0; var47 < this.retex_s.length; var47++) {
+					var22.method1744(this.retex_s[var47], var46[var47]);
 				}
 			}
 			if (this.field2714 != 0) {
@@ -792,7 +792,7 @@ public class NPCType implements ConfigType {
 	@ObfuscatedName("if.d(Ldh;ILem;Lep;Laaq;Lia;S)Ldo;")
 	public final Model getHeadModel(Renderer arg0, int arg1, VariableTypeProvider arg2, VarIntDomain arg3, AnimationWrapper arg4, NPCTypeCustomisation arg5) {
 		if (this.field2735 != null) {
-			NPCType var7 = this.method4547(arg2, arg3);
+			NPCType var7 = this.getVisible(arg2, arg3);
 			return var7 == null ? null : var7.getHeadModel(arg0, arg1, arg2, arg3, arg4, arg5);
 		} else if (this.heads == null && (arg5 == null || arg5.field2689 == null)) {
 			return null;
@@ -818,7 +818,7 @@ public class NPCType implements ConfigType {
 				if (this.recol_s != null) {
 					var14 = var8 | 0x4000;
 				}
-				if (this.field2707 != null) {
+				if (this.retex_s != null) {
 					var14 |= 0x8000;
 				}
 				if (this.field2714 != 0) {
@@ -826,14 +826,14 @@ public class NPCType implements ConfigType {
 				}
 				int[] var15 = arg5 == null || arg5.field2689 == null ? this.heads : arg5.field2689;
 				boolean var16 = false;
-				Js5 var17 = this.factory.js5;
-				synchronized (this.factory.js5) {
+				Js5 var17 = this.factory.configClient;
+				synchronized (this.factory.configClient) {
 					int var18 = 0;
 					while (true) {
 						if (var18 >= var15.length) {
 							break;
 						}
-						if (!this.factory.js5.requestdownload(var15[var18], 0)) {
+						if (!this.factory.configClient.requestdownload(var15[var18], 0)) {
 							var16 = true;
 						}
 						var18++;
@@ -843,10 +843,10 @@ public class NPCType implements ConfigType {
 					return null;
 				}
 				ModelUnlit[] var20 = new ModelUnlit[var15.length];
-				Js5 var21 = this.factory.js5;
-				synchronized (this.factory.js5) {
+				Js5 var21 = this.factory.configClient;
+				synchronized (this.factory.configClient) {
 					for (int var22 = 0; var22 < var15.length; var22++) {
-						var20[var22] = ModelUnlit.method1931(this.factory.js5, var15[var22], 0);
+						var20[var22] = ModelUnlit.method1931(this.factory.configClient, var15[var22], 0);
 					}
 				}
 				for (int var24 = 0; var24 < var15.length; var24++) {
@@ -869,22 +869,22 @@ public class NPCType implements ConfigType {
 						var26 = arg5.field2684;
 					}
 					for (int var27 = 0; var27 < this.recol_s.length; var27++) {
-						if (this.field2733 == null || var27 >= this.field2733.length) {
+						if (this.recol_d_palette == null || var27 >= this.recol_d_palette.length) {
 							var12.method1859(this.recol_s[var27], var26[var27]);
 						} else {
-							var12.method1859(this.recol_s[var27], clientpalette[this.field2733[var27] & 0xFF]);
+							var12.method1859(this.recol_s[var27], clientpalette[this.recol_d_palette[var27] & 0xFF]);
 						}
 					}
 				}
-				if (this.field2707 != null) {
+				if (this.retex_s != null) {
 					short[] var28;
 					if (arg5 == null || arg5.field2685 == null) {
-						var28 = this.field2708;
+						var28 = this.retex_d;
 					} else {
 						var28 = arg5.field2685;
 					}
-					for (int var29 = 0; var29 < this.field2707.length; var29++) {
-						var12.method1744(this.field2707[var29], var28[var29]);
+					for (int var29 = 0; var29 < this.retex_s.length; var29++) {
+						var12.method1744(this.retex_s[var29], var28[var29]);
 					}
 				}
 				if (this.field2714 != 0) {
@@ -914,7 +914,7 @@ public class NPCType implements ConfigType {
 		int[] var2 = this.models;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			int var4 = var2[var3];
-			if (!this.factory.js5.requestdownload(var4, 0)) {
+			if (!this.factory.configClient.requestdownload(var4, 0)) {
 				var1 = false;
 			}
 		}
@@ -942,24 +942,24 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.o(Lem;Lep;S)Lif;")
-	public final NPCType method4547(VariableTypeProvider arg0, VarIntDomain arg1) {
+	public final NPCType getVisible(VariableTypeProvider arg0, VarIntDomain arg1) {
 		int var3 = -1;
 		if (this.field2730 != -1) {
-			VarBitType var4 = arg0.method694(this.field2730);
+			VarBitType var4 = arg0.getVarBitType(this.field2730);
 			if (var4 != null) {
 				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.field2755 != -1) {
-			VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field2755);
+			VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.field2755);
 			if (var5 != null) {
 				var3 = arg1.getVarValueInt(var5);
 			}
 		}
 		if (var3 >= 0 && var3 < this.field2735.length - 1) {
-			return this.field2735[var3] == -1 ? null : (NPCType) this.list.list(this.field2735[var3]);
+			return this.field2735[var3] == -1 ? null : (NPCType) this.myList.list(this.field2735[var3]);
 		} else {
 			int var6 = this.field2735[this.field2735.length - 1];
-			return var6 == -1 ? null : (NPCType) this.list.list(var6);
+			return var6 == -1 ? null : (NPCType) this.myList.list(var6);
 		}
 	}
 
@@ -970,12 +970,12 @@ public class NPCType implements ConfigType {
 		}
 		int var3 = -1;
 		if (this.field2730 != -1) {
-			VarBitType var4 = arg0.method694(this.field2730);
+			VarBitType var4 = arg0.getVarBitType(this.field2730);
 			if (var4 != null) {
 				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.field2755 != -1) {
-			VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field2755);
+			VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.field2755);
 			if (var5 != null) {
 				var3 = arg1.getVarValueInt(var5);
 			}
@@ -995,7 +995,7 @@ public class NPCType implements ConfigType {
 		}
 		for (int var1 = 0; var1 < this.field2735.length; var1++) {
 			if (this.field2735[var1] != -1) {
-				NPCType var2 = (NPCType) this.list.list(this.field2735[var1]);
+				NPCType var2 = (NPCType) this.myList.list(this.field2735[var1]);
 				if (var2.field2746 != -1 || var2.field2748 != -1 || var2.field2749 != -1) {
 					return true;
 				}

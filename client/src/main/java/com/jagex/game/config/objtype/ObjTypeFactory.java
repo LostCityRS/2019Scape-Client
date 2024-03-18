@@ -49,17 +49,17 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("abr.p")
 	public final String[] defaultIOps;
 
-	public ObjTypeFactory(ModeGame modeGame, Language language, boolean allowMembers, Js5 js5, ConfigTypeList list) {
+	public ObjTypeFactory(ModeGame modeGame, Language language, boolean allowMembers, Js5 configClient, ConfigTypeList list) {
 		this.languageId = language;
 		this.allowMembers = allowMembers;
-		this.configClient = js5;
+		this.configClient = configClient;
 		this.paramTL = list;
 		if (ModeGame.RUNESCAPE == modeGame) {
-			this.defaultOps = new String[] { null, null, LocalisedText.TAKE.localisedText(this.languageId), null, null, LocalisedText.EXAMINE.localisedText(this.languageId) };
+			this.defaultOps = new String[] { null, null, LocalisedText.TAKE.forLang(this.languageId), null, null, LocalisedText.EXAMINE.forLang(this.languageId) };
 		} else {
-			this.defaultOps = new String[] { null, null, LocalisedText.TAKE.localisedText(this.languageId), null, null, null };
+			this.defaultOps = new String[] { null, null, LocalisedText.TAKE.forLang(this.languageId), null, null, null };
 		}
-		this.defaultIOps = new String[] { null, null, null, null, LocalisedText.DROP.localisedText(this.languageId) };
+		this.defaultIOps = new String[] { null, null, null, null, LocalisedText.DROP.forLang(this.languageId) };
 	}
 
 	@ObfuscatedName("abr.e(Ldh;IIIIILxg;I)Lcm;")

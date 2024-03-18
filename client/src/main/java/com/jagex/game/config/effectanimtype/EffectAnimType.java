@@ -22,16 +22,16 @@ public class EffectAnimType implements ConfigType {
 	public int anim = -1;
 
 	@ObfuscatedName("yy.w")
-	public short[] field8246;
+	public short[] recol_s;
 
 	@ObfuscatedName("yy.l")
-	public short[] field8251;
+	public short[] recol_d;
 
 	@ObfuscatedName("yy.u")
-	public short[] field8253;
+	public short[] retex_s;
 
 	@ObfuscatedName("yy.z")
-	public short[] field8245;
+	public short[] retex_d;
 
 	@ObfuscatedName("yy.p")
 	public byte[] field8254;
@@ -107,20 +107,20 @@ public class EffectAnimType implements ConfigType {
 			this.field8262 = 3;
 			this.field8263 = buf.g4s();
 		} else if (code == 40) {
-			int var3 = buf.g1();
-			this.field8246 = new short[var3];
-			this.field8251 = new short[var3];
-			for (int var4 = 0; var4 < var3; var4++) {
-				this.field8246[var4] = (short) buf.g2();
-				this.field8251[var4] = (short) buf.g2();
+			int length = buf.g1();
+			this.recol_s = new short[length];
+			this.recol_d = new short[length];
+			for (int index = 0; index < length; index++) {
+				this.recol_s[index] = (short) buf.g2();
+				this.recol_d[index] = (short) buf.g2();
 			}
 		} else if (code == 41) {
-			int var5 = buf.g1();
-			this.field8253 = new short[var5];
-			this.field8245 = new short[var5];
-			for (int var6 = 0; var6 < var5; var6++) {
-				this.field8253[var6] = (short) buf.g2();
-				this.field8245[var6] = (short) buf.g2();
+			int length = buf.g1();
+			this.retex_s = new short[length];
+			this.retex_d = new short[length];
+			for (int index = 0; index < length; index++) {
+				this.retex_s[index] = (short) buf.g2();
+				this.retex_d[index] = (short) buf.g2();
 			}
 		} else if (code == 44) {
 			int var7 = buf.g2();
@@ -197,13 +197,13 @@ public class EffectAnimType implements ConfigType {
 				var15 = arg0.method2213(var15, var18.method1691());
 			}
 			int var20 = var15;
-			if (this.field8246 != null) {
+			if (this.recol_s != null) {
 				var20 = var15 | 0x4000;
 			}
-			if (this.field8253 != null) {
+			if (this.retex_s != null) {
 				var20 |= 0x8000;
 			}
-			ModelUnlit var21 = ModelUnlit.method1931(this.factory.js5, this.model, 0);
+			ModelUnlit var21 = ModelUnlit.method1931(this.factory.configClient, this.model, 0);
 			if (var21 == null) {
 				return null;
 			}
@@ -211,14 +211,14 @@ public class EffectAnimType implements ConfigType {
 				var21.method1947(2);
 			}
 			var18 = arg0.method2211(var21, var20, this.factory.field8264, this.ambient + 64, this.contrast + 850);
-			if (this.field8246 != null) {
-				for (int var22 = 0; var22 < this.field8246.length; var22++) {
-					var18.method1859(this.field8246[var22], this.field8251[var22]);
+			if (this.recol_s != null) {
+				for (int var22 = 0; var22 < this.recol_s.length; var22++) {
+					var18.method1859(this.recol_s[var22], this.recol_d[var22]);
 				}
 			}
-			if (this.field8253 != null) {
-				for (int var23 = 0; var23 < this.field8253.length; var23++) {
-					var18.method1744(this.field8253[var23], this.field8245[var23]);
+			if (this.retex_s != null) {
+				for (int var23 = 0; var23 < this.retex_s.length; var23++) {
+					var18.method1744(this.retex_s[var23], this.retex_d[var23]);
 				}
 			}
 			var18.method1690(var15);
@@ -270,7 +270,7 @@ public class EffectAnimType implements ConfigType {
 
 	@ObfuscatedName("yy.r(B)Z")
 	public final boolean method13803() {
-		return this.model == -1 ? true : this.factory.js5.requestdownload(this.model, 0);
+		return this.model == -1 ? true : this.factory.configClient.requestdownload(this.model, 0);
 	}
 
 	@ObfuscatedName("yy.n(I)V")

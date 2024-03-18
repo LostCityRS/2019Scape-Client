@@ -6,11 +6,11 @@ import deob.ObfuscatedName;
 public class ClanChannelUser {
 
 	@ObfuscatedName("kb.e")
-	public byte field3089;
+	public byte rank;
 
 	@ObfuscatedName("kb.n")
-	public int field3088;
+	public int world;
 
 	@ObfuscatedName("kb.m")
-	public String field3087;
+	public String displayName;
 }

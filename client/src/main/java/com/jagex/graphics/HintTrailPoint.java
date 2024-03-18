@@ -73,7 +73,7 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("auu.by(B)I")
-	public int method16523() {
+	public int overlayHeight() {
 		return this.field12614.field6754 == null ? 0 : this.field12614.field6754.method1748();
 	}
 }

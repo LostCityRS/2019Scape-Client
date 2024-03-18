@@ -353,7 +353,7 @@ public class ClanSettingsDelta {
 
 		@ObfuscatedName("arl.n(Lkr;I)V")
 		public void method17727(ClanSettings arg0) {
-			arg0.field3093 = this.field12232;
+			arg0.clanName = this.field12232;
 		}
 	}
 
@@ -394,11 +394,11 @@ public class ClanSettingsDelta {
 
 		@ObfuscatedName("arj.n(Lkr;I)V")
 		public void method17727(ClanSettings arg0) {
-			arg0.field3097 = this.field12237;
-			arg0.field3098 = this.field12235;
-			arg0.field3090 = this.field12234;
-			arg0.field3100 = this.field12233;
-			arg0.field3117 = this.field12236;
+			arg0.allowUnaffined = this.field12237;
+			arg0.rankTalk = this.field12235;
+			arg0.rankKick = this.field12234;
+			arg0.rankLootshare = this.field12233;
+			arg0.coinshare = this.field12236;
 		}
 	}
 

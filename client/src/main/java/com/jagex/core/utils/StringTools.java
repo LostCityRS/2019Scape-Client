@@ -227,7 +227,7 @@ public final class StringTools {
 	}
 
 	@ObfuscatedName("yc.r(Ljava/lang/CharSequence;Ljava/lang/CharSequence;I)I")
-	public static int method13835(CharSequence arg0, CharSequence arg1) {
+	public static int distance(CharSequence arg0, CharSequence arg1) {
 		int var2 = arg0.length();
 		int var3 = arg1.length();
 		if (var2 == 0) {
@@ -256,17 +256,17 @@ public final class StringTools {
 	}
 
 	@ObfuscatedName("abi.v(CI)Z")
-	public static boolean method14704(char arg0) {
+	public static boolean charIsAlpha(char arg0) {
 		return arg0 >= 'A' && arg0 <= 'Z' || arg0 >= 'a' && arg0 <= 'z';
 	}
 
 	@ObfuscatedName("pz.o(CB)Z")
-	public static boolean method6819(char arg0) {
+	public static boolean charIsNumeric(char arg0) {
 		return arg0 >= '0' && arg0 <= '9';
 	}
 
 	@ObfuscatedName("ea.s(CI)Z")
-	public static boolean method2883(char arg0) {
+	public static boolean charIsAlphaNumeric(char arg0) {
 		return arg0 >= '0' && arg0 <= '9' || arg0 >= 'A' && arg0 <= 'Z' || arg0 >= 'a' && arg0 <= 'z';
 	}
 
@@ -319,7 +319,7 @@ public final class StringTools {
 	}
 
 	@ObfuscatedName("akv.x(CI)Z")
-	public static boolean method17828(char arg0) {
+	public static boolean charIsPrintable(char arg0) {
 		if (arg0 >= ' ' && arg0 <= '~') {
 			return true;
 		} else if (arg0 >= 160 && arg0 <= 255) {

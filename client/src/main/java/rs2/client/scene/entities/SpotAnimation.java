@@ -41,7 +41,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		this.field12613 = arg1;
 		this.field12608 = arg12;
 		this.field12607 = arg14;
-		EffectAnimType var16 = (EffectAnimType) Client.field4874.list(this.field12613);
+		EffectAnimType var16 = (EffectAnimType) Client.effectAnimTypeList.list(this.field12613);
 		int var17 = var16.anim;
 		if (var17 != -1) {
 			this.field12609 = new EntityAnimationWrapper(this, false);
@@ -65,7 +65,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.by(B)I")
-	public int method16523() {
+	public int overlayHeight() {
 		return this.field12610;
 	}
 
@@ -98,7 +98,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 
 	@ObfuscatedName("aur.f(Ldh;IIB)Ldo;")
 	public Model method19748(Renderer arg0, int arg1, int arg2) {
-		EffectAnimType var4 = (EffectAnimType) Client.field4874.list(arg2);
+		EffectAnimType var4 = (EffectAnimType) Client.effectAnimTypeList.list(arg2);
 		FloorModel var5 = this.field11716.field6915[this.field11717];
 		FloorModel var6 = this.field11714 < 3 ? this.field11716.field6915[this.field11714 + 1] : null;
 		Vector3 var7 = this.method10536().field4298;
@@ -139,10 +139,10 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		ModelParticleEmitter[] var4 = arg1.method1750();
 		ModelParticleEffector[] var5 = arg1.method1765();
 		if ((this.field12612 == null || this.field12612.field7804) && (var4 != null || var5 != null)) {
-			this.field12612 = ParticleSystem.method9962(Client.field10903, true);
+			this.field12612 = ParticleSystem.method9962(Client.currentclock, true);
 		}
 		if (this.field12612 != null) {
-			this.field12612.method9936(arg0, (long) Client.field10903, var4, var5, false);
+			this.field12612.method9936(arg0, (long) Client.currentclock, var4, var5, false);
 			this.field12612.method9963(this.field11717, this.field12471, this.field12472, this.field12468, this.field12467);
 		}
 	}

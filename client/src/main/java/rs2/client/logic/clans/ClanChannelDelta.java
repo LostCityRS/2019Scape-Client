@@ -92,9 +92,9 @@ public class ClanChannelDelta {
 		@ObfuscatedName("arz.n(Lakr;S)V")
 		public void method17753(ClanChannel arg0) {
 			ClanChannelUser var2 = new ClanChannelUser();
-			var2.field3087 = this.field12258;
-			var2.field3088 = this.field12257;
-			var2.field3089 = this.field12259;
+			var2.displayName = this.field12258;
+			var2.world = this.field12257;
+			var2.rank = this.field12259;
 			arg0.method17734(var2);
 		}
 	}
@@ -165,10 +165,10 @@ public class ClanChannelDelta {
 
 		@ObfuscatedName("arh.n(Lakr;S)V")
 		public void method17753(ClanChannel arg0) {
-			ClanChannelUser var2 = arg0.field11392[this.field12252];
-			var2.field3089 = this.field12250;
-			var2.field3088 = this.field12249;
-			var2.field3087 = this.field12251;
+			ClanChannelUser var2 = arg0.channelUsers[this.field12252];
+			var2.rank = this.field12250;
+			var2.world = this.field12249;
+			var2.displayName = this.field12251;
 		}
 	}
 
@@ -209,10 +209,10 @@ public class ClanChannelDelta {
 
 		@ObfuscatedName("arv.n(Lakr;S)V")
 		public void method17753(ClanChannel arg0) {
-			ClanChannelUser var2 = arg0.field11392[this.field12263];
-			var2.field3089 = this.field12261;
-			var2.field3088 = this.field12262;
-			var2.field3087 = this.field12260;
+			ClanChannelUser var2 = arg0.channelUsers[this.field12263];
+			var2.rank = this.field12261;
+			var2.world = this.field12262;
+			var2.displayName = this.field12260;
 		}
 	}
 
@@ -248,10 +248,10 @@ public class ClanChannelDelta {
 
 		@ObfuscatedName("arf.n(Lakr;S)V")
 		public void method17753(ClanChannel arg0) {
-			arg0.field11396 = this.field12255;
+			arg0.clanName = this.field12255;
 			if (this.field12255 != null) {
-				arg0.field11391 = this.field12254;
-				arg0.field11398 = this.field12256;
+				arg0.rankTalk = this.field12254;
+				arg0.rankKick = this.field12256;
 			}
 		}
 	}

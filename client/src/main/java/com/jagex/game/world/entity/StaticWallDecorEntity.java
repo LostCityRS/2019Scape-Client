@@ -59,7 +59,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		this.field11156 = arg9;
 		this.field11155 = (byte) arg13;
 		this.field11152 = (byte) arg12;
-		this.field11157 = arg3.field7470 != 0 && !arg9;
+		this.field11157 = arg3.active2 != 0 && !arg9;
 		this.field11158 = arg1.method2125() && arg3.field7453 && !this.field11156 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field11151 = arg7;
 		int var16 = 2048;
@@ -96,7 +96,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	}
 
 	@ObfuscatedName("ajk.by(B)I")
-	public int method16523() {
+	public int overlayHeight() {
 		return this.field11150 == null ? 0 : this.field11150.method1748();
 	}
 

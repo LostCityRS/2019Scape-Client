@@ -27,7 +27,7 @@ public class PreferencesOrthographic extends Preference {
 	}
 
 	@ObfuscatedName("amz.s(S)Z")
-	public boolean method18503() {
+	public boolean canMod() {
 		return true;
 	}
 

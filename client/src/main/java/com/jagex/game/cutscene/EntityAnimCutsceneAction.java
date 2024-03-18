@@ -44,7 +44,7 @@ public class EntityAnimCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agk.k(I)Z")
 	public boolean method2891() {
-		SeqType var1 = (SeqType) Client.field8797.list(this.field10299);
+		SeqType var1 = (SeqType) Client.seqTypeList.list(this.field10299);
 		return var1.method2991();
 	}
 }

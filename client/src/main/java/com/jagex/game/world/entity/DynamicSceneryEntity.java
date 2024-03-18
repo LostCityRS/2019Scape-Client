@@ -32,7 +32,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	public DynamicSceneryEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, int arg16, int arg17, boolean arg18, ScaleRotTrans arg19) {
 		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, method6824(arg14, arg15), arg19);
 		this.field11131 = new DynamicLoc(arg1, arg2, arg3, arg14, arg15, arg5, this, arg9, arg16, arg17);
-		this.field11128 = arg3.field7470 != 0 && !arg9;
+		this.field11128 = arg3.active2 != 0 && !arg9;
 		this.field11130 = arg18;
 		this.method18363(1);
 	}
@@ -57,7 +57,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.by(B)I")
-	public int method16523() {
+	public int overlayHeight() {
 		return this.field11131.method8262();
 	}
 
@@ -67,7 +67,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.bo(I)I")
-	public int method16501() {
+	public int height() {
 		return this.field11131.method8236();
 	}
 

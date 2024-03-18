@@ -35,7 +35,7 @@ public class PreferencesTextures extends Preference {
 	}
 
 	@ObfuscatedName("amn.s(B)Z")
-	public boolean method18425() {
+	public boolean canMod() {
 		return this.options.modeGame() == ModeGame.RUNESCAPE;
 	}
 

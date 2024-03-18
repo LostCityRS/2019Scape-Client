@@ -39,7 +39,7 @@ public class PreferencesBuildArea extends Preference {
 	}
 
 	@ObfuscatedName("aml.s(I)Z")
-	public boolean method18569() {
+	public boolean canMod() {
 		if (this.options.hardwareInfo().unused()) {
 			return false;
 		} else {

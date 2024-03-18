@@ -27,7 +27,7 @@ public class PreferencesCharacterShadows extends Preference {
 	}
 
 	@ObfuscatedName("amu.s(I)Z")
-	public boolean method18445() {
+	public boolean canMod() {
 		return true;
 	}
 

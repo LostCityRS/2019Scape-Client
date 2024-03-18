@@ -21,8 +21,8 @@ public class FadeCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("ags.n(I)V")
 	public void method2890() {
-		Client.field10868 = Client.field10903;
-		Client.field10869 = this.field10329 + Client.field10903;
+		Client.field10868 = Client.currentclock;
+		Client.field10869 = this.field10329 + Client.currentclock;
 		Client.field7950 = Client.field11002;
 		Client.field10297 = Client.field10871;
 		Client.field8521 = Client.field10872;

@@ -461,8 +461,8 @@ public class TwitchHardwarePlatform {
 			field894 = new int[field7399 ? arg2 * arg3 : field8526 * field2585];
 		}
 		if (arg0.method2360()) {
-			arg0.method2163(Client.field10903, field2585, field8526);
-			field7380.add(new TwitchRelated2(Client.field10903, field7392, arg0.field1611, arg0.field1618, arg0.field1602));
+			arg0.method2163(Client.currentclock, field2585, field8526);
+			field7380.add(new TwitchRelated2(Client.currentclock, field7392, arg0.field1611, arg0.field1618, arg0.field1602));
 			field7392 = new LinkedList();
 		} else {
 			arg0.method2203();

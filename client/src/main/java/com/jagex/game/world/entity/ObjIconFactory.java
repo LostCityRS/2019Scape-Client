@@ -30,7 +30,7 @@ public class ObjIconFactory {
 
 	@ObfuscatedName("y.e(Ldh;Lhf;I)V")
 	public static void method539(Renderer arg0, Component arg1) {
-		boolean var2 = Client.field1842.method18900(arg0, arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246 ? Client.field4490.field12061 : null) == null;
+		boolean var2 = Client.objTypeList.method18900(arg0, arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246 ? Client.localPlayerEntity.model : null) == null;
 		if (var2) {
 			field631.method14153(new ObjIconRequest(arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246));
 			Client.method4616(arg1);
@@ -42,9 +42,9 @@ public class ObjIconFactory {
 		if (field631.method14157() == 0) {
 			return;
 		}
-		if (Client.preferences.displayMode2.getValue() == 0) {
+		if (Client.preferences.displayMode.getValue() == 0) {
 			for (ObjIconRequest var1 = (ObjIconRequest) field631.method14191(); var1 != null; var1 = (ObjIconRequest) field631.method14161()) {
-				Client.field1842.method18905(arg0, arg0, var1.field11256, var1.field11255, var1.field11258, var1.field11257, false, false, var1.field11254, DefaultSprites.field8321, var1.field11259 ? Client.field4490.field12061 : null, Client.field11389);
+				Client.objTypeList.method18905(arg0, arg0, var1.field11256, var1.field11255, var1.field11258, var1.field11257, false, false, var1.field11254, DefaultSprites.field8321, var1.field11259 ? Client.localPlayerEntity.model : null, Client.graphicsDefaults);
 				var1.method8440();
 			}
 			Client.method9734();
@@ -57,7 +57,7 @@ public class ObjIconFactory {
 			field629 = field630.method2207(FontMetrics.method1593(Client.fontmetricsJs5, DefaultSprites.field506, 0), SpriteDataProvider.method1609(Client.spritesJs5, DefaultSprites.field506, 0), true);
 		}
 		for (ObjIconRequest var3 = (ObjIconRequest) field631.method14191(); var3 != null; var3 = (ObjIconRequest) field631.method14161()) {
-			Client.field1842.method18905(field630, arg0, var3.field11256, var3.field11255, var3.field11258, var3.field11257, false, false, var3.field11254, field629, var3.field11259 ? Client.field4490.field12061 : null, Client.field11389);
+			Client.objTypeList.method18905(field630, arg0, var3.field11256, var3.field11255, var3.field11258, var3.field11257, false, false, var3.field11254, field629, var3.field11259 ? Client.localPlayerEntity.model : null, Client.graphicsDefaults);
 			var3.method8440();
 		}
 	}

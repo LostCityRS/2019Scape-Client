@@ -16,67 +16,67 @@ import rs2.client.Client;
 public class PlayerGameState implements VarIntDomain, VariableTypeProvider, PlayerStatProvider {
 
 	@ObfuscatedName("ah.e")
-	public final VarPlayerDomain field632;
+	public final VarPlayerDomain varps;
 
 	@ObfuscatedName("ah.n")
-	public final VarPlayerTypeListClient field633;
+	public final VarPlayerTypeListClient varPlayerTypeList;
 
 	@ObfuscatedName("ah.m")
-	public final VarBitTypeList field634;
+	public final VarBitTypeList varBitTypeList;
 
 	@ObfuscatedName("ah.k")
-	public final PlayerStat[] field635;
+	public final PlayerStat[] stats;
 
-	public PlayerGameState(VarPlayerTypeListClient arg0, VarBitTypeList arg1, int arg2) {
-		this.field635 = new PlayerStat[arg2];
-		this.field632 = new VarPlayerDomain();
-		this.field633 = arg0;
-		this.field634 = arg1;
+	public PlayerGameState(VarPlayerTypeListClient varPlayerTypeList, VarBitTypeList varBitTypeList, int numStats) {
+		this.stats = new PlayerStat[numStats];
+		this.varps = new VarPlayerDomain();
+		this.varPlayerTypeList = varPlayerTypeList;
+		this.varBitTypeList = varBitTypeList;
 	}
 
 	@ObfuscatedName("ah.e(IB)I")
-	public int method671(int arg0) {
-		return this.field635[arg0].method10163(Client.field10948 ? ModeAccountType.field8343 : ModeAccountType.field8344);
+	public int getStatVisibleXP(int stat) {
+		return this.stats[stat].getVisibleXP(Client.loggedInMembers ? ModeAccountType.MEMBERS : ModeAccountType.FREE);
 	}
 
 	@ObfuscatedName("ah.n(II)I")
-	public int method700(int arg0) {
-		return this.field635[arg0].getLevel();
+	public int getStatLevel(int stat) {
+		return this.stats[stat].getLevel();
 	}
 
 	@ObfuscatedName("ah.m(II)I")
-	public int method674(int arg0) {
-		return this.field635[arg0].getBaseLevel(Client.field10948 ? ModeAccountType.field8343 : ModeAccountType.field8344);
+	public int getStatBaseLevel(int stat) {
+		return this.stats[stat].getBaseLevel(Client.loggedInMembers ? ModeAccountType.MEMBERS : ModeAccountType.FREE);
 	}
 
 	@ObfuscatedName("ah.k(II)I")
-	public int method675(int arg0) {
-		return this.field635[arg0].getXP();
+	public int getStatXP(int stat) {
+		return this.stats[stat].getXP();
 	}
 
 	@ObfuscatedName("ah.f(IB)I")
-	public int method687(int arg0) {
-		return this.field635[arg0].getBaseLevel();
+	public int getStatBaseLevelActual(int stat) {
+		return this.stats[stat].getBaseLevel();
 	}
 
 	@ObfuscatedName("ah.w(Lqe;II)Lec;")
-	public VarType method695(VarDomainType arg0, int arg1) {
-		return VarDomainType.PLAYER == arg0 ? (VarType) this.field633.list(arg1) : null;
+	public VarType getVarType(VarDomainType domainType, int id) {
+		return VarDomainType.PLAYER == domainType ? (VarType) this.varPlayerTypeList.list(id) : null;
 	}
 
 	@ObfuscatedName("ah.l(IB)Lkh;")
-	public VarBitType method694(int arg0) {
-		VarBitType var2 = (VarBitType) this.field634.list(arg0);
-		return VarDomainType.PLAYER == var2.baseVar.domain ? var2 : null;
+	public VarBitType getVarBitType(int id) {
+		VarBitType varBitType = (VarBitType) this.varBitTypeList.list(id);
+		return VarDomainType.PLAYER == varBitType.baseVar.domain ? varBitType : null;
 	}
 
 	@ObfuscatedName("ah.u(Lec;I)I")
 	public int getVarValueInt(VarType arg0) {
-		return this.field632.getVarValueInt(arg0);
+		return this.varps.getVarValueInt(arg0);
 	}
 
 	@ObfuscatedName("ah.z(Lkh;I)I")
 	public int getVarBitValue(VarBitType arg0) {
-		return this.field632.getVarBitValue(arg0);
+		return this.varps.getVarBitValue(arg0);
 	}
 }

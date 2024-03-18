@@ -14,13 +14,13 @@ public class QuickChatPhrase {
 	public QuickChatPhraseType field3447;
 
 	@ObfuscatedName("ne.m")
-	public int[] field3446;
+	public int[] dynamics;
 
 	@ObfuscatedName("aac.e(Lalw;B)Lne;")
 	public static QuickChatPhrase method14572(Packet arg0) {
 		QuickChatPhrase var1 = new QuickChatPhrase();
 		var1.field3448 = arg0.g2();
-		var1.field3447 = Client.field489.method14982(var1.field3448);
+		var1.field3447 = Client.quickChatPhraseTypeList.getPhrase(var1.field3448);
 		return var1;
 	}
 }

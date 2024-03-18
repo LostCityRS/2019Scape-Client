@@ -34,7 +34,7 @@ public class NamespaceUtil {
 	public static final boolean method13783(char arg0) {
 		if (Character.isISOControl(arg0)) {
 			return false;
-		} else if (StringTools.method2883(arg0)) {
+		} else if (StringTools.charIsAlphaNumeric(arg0)) {
 			return true;
 		} else {
 			char[] var1 = field9203;

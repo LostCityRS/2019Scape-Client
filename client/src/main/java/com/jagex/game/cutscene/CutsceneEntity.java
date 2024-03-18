@@ -54,16 +54,16 @@ public final class CutsceneEntity {
 			if (this.field1743 >= 0) {
 				this.field1745 = new NpcEntity(Client.world.getScene(), 25);
 				this.field1745.field10406 = this.field1741;
-				this.field1745.field10440 = Client.field10903;
-				this.field1745.method19156((NPCType) Client.field7961.list(this.field1743));
-				this.field1745.method16502(this.field1745.field12083.size);
-				this.field1745.field10444 = this.field1745.field12083.field2731 << 3;
+				this.field1745.field10440 = Client.currentclock;
+				this.field1745.method19156((NPCType) Client.npcTypeList.list(this.field1743));
+				this.field1745.method16502(this.field1745.npcType.size);
+				this.field1745.field10444 = this.field1745.npcType.field2731 << 3;
 				this.field1745.field10404 = ++CutsceneManager.field1715 - 1;
 			} else {
 				this.field1742 = new PlayerEntity(Client.world.getScene(), 25);
 				this.field1742.method19129(Client.field8729);
 				this.field1742.field10406 = this.field1741;
-				this.field1742.field10440 = Client.field10903;
+				this.field1742.field10440 = Client.currentclock;
 				this.field1742.field10404 = ++CutsceneManager.field1715 - 1;
 			}
 		}
@@ -104,16 +104,16 @@ public final class CutsceneEntity {
 		if (this.field1743 < 0) {
 			return true;
 		}
-		NPCType var1 = (NPCType) Client.field7961.list(this.field1743);
+		NPCType var1 = (NPCType) Client.npcTypeList.list(this.field1743);
 		boolean var2 = var1.method4545();
 		if (this.field1747 == null) {
-			BASType var3 = (BASType) Client.field11742.list(var1.field2762);
+			BASType var3 = (BASType) Client.basTypeList.list(var1.field2762);
 			this.field1747 = var3.method9293();
 		}
 		int[] var4 = this.field1747;
 		for (int var5 = 0; var5 < var4.length; var5++) {
 			int var6 = var4[var5];
-			var2 &= ((SeqType) Client.field8797.list(var6)).method2991();
+			var2 &= ((SeqType) Client.seqTypeList.list(var6)).method2991();
 		}
 		return var2;
 	}

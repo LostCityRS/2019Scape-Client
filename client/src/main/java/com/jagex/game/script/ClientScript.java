@@ -116,7 +116,7 @@ public class ClientScript extends SecondaryNode {
 			if (this.field12366 == null) {
 				this.field12366 = new Object[var4];
 			}
-			this.field12366[arg1] = this.field12376.method695(var7, var8);
+			this.field12366[arg1] = this.field12376.getVarType(var7, var8);
 			if (this.field12367 == null) {
 				this.field12367 = new int[var4];
 			}
@@ -152,7 +152,7 @@ public class ClientScript extends SecondaryNode {
 			if (this.field12366 == null) {
 				this.field12366 = new Object[var4];
 			}
-			this.field12366[arg1] = this.field12376.method694(var6);
+			this.field12366[arg1] = this.field12376.getVarBitType(var6);
 			if (this.field12367 == null) {
 				this.field12367 = new int[var4];
 			}

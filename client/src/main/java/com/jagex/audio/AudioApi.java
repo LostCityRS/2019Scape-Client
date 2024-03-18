@@ -414,13 +414,13 @@ public class AudioApi {
 			return;
 		}
 		AudioMixer.method306();
-		if (Client.field4490 != null && Client.field4490.method10536() != null) {
+		if (Client.localPlayerEntity != null && Client.localPlayerEntity.method10536() != null) {
 			if (this.field1873 == null) {
 				this.field1873 = new Vector3();
 			}
-			this.field1873.field4308 = Client.field4490.method10536().field4298.field4308;
+			this.field1873.field4308 = Client.localPlayerEntity.method10536().field4298.field4308;
 			this.field1873.field4311 = 0.0F;
-			this.field1873.field4313 = Client.field4490.method10536().field4298.field4313;
+			this.field1873.field4313 = Client.localPlayerEntity.method10536().field4298.field4313;
 		}
 		Iterator var1 = this.field1858.values().iterator();
 		while (var1.hasNext()) {
@@ -1122,7 +1122,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.au(Lfg;ILalh;B)V")
 	public void method3180(SeqType arg0, int arg1, GraphEntity arg2) {
-		if (arg0 == null || arg0.field1777 == null || arg1 >= arg0.field1777.length || arg0.field1777[arg1] == null || (Client.field4490.field11717 != arg2.field11717 || !arg2.method18359())) {
+		if (arg0 == null || arg0.field1777 == null || arg1 >= arg0.field1777.length || arg0.field1777[arg1] == null || (Client.localPlayerEntity.field11717 != arg2.field11717 || !arg2.method18359())) {
 			return;
 		}
 		int var4 = arg0.field1777[arg1][0];
@@ -1141,7 +1141,7 @@ public class AudioApi {
 		}
 		int var10 = arg0.field1788 == null ? 255 : arg0.field1788[arg1];
 		if (var7 != 0) {
-			if (Client.field4490 == arg2) {
+			if (Client.localPlayerEntity == arg2) {
 				if (Client.preferences.soundVolume.getValue() == 0) {
 					return;
 				}
@@ -1151,13 +1151,13 @@ public class AudioApi {
 			if (arg0.field1783 != -1) {
 				int var11 = 0;
 				if (arg2 instanceof PathingEntity) {
-					var11 = ((PathingEntity) arg2).method16578();
+					var11 = ((PathingEntity) arg2).targeted();
 				} else if (arg2 instanceof SpotAnimation) {
 					var11 = ((SpotAnimation) arg2).method19745();
 				} else if (arg2 instanceof ProjectileAnimation) {
 					var11 = ((ProjectileAnimation) arg2).method19724();
 				}
-				if (var11 != 0 && var11 != Client.field4490.method16578() && Client.field10787 != var11) {
+				if (var11 != 0 && var11 != Client.localPlayerEntity.targeted() && Client.field10787 != var11) {
 					var10 = arg0.field1783 * var10 / 100;
 					if (var10 < 0) {
 						var10 = 0;
@@ -1171,8 +1171,8 @@ public class AudioApi {
 			int var14 = (int) var12.field4313 - 256 >> 9;
 			Vector3 var15 = new Vector3((float) (var13 << 9), 0.0F, (float) (var14 << 9));
 			int var16 = arg2.field11717 << 24;
-			this.method3191(SoundType.field1820, var5, var6, var10, SubBussType.field1803.method3034(), Client.field4490 == arg2 ? SoundShape.field1835 : SoundShape.field1838, 0.0F, (float) (var7 << 9), var15, var16, var9, 0);
-		} else if (Client.field4490 == arg2) {
+			this.method3191(SoundType.field1820, var5, var6, var10, SubBussType.field1803.method3034(), Client.localPlayerEntity == arg2 ? SoundShape.field1835 : SoundShape.field1838, 0.0F, (float) (var7 << 9), var15, var16, var9, 0);
+		} else if (Client.localPlayerEntity == arg2) {
 			this.method3191(SoundType.field1825, var5, var6, var10, SubBussType.field1802.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, arg2.field11717, var9, 0);
 		}
 	}

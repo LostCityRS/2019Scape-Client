@@ -177,7 +177,7 @@ public class ClientWatch {
 			Client.gameConnection.queue(var11);
 			Client.field10800 = true;
 		}
-		if (Client.field10801 || Client.preferences.displayMode.getValue() != 1) {
+		if (Client.field10801 || Client.preferences.toolkit.getValue() != 1) {
 			return;
 		}
 		int[] var14 = Client.renderer.method2413();

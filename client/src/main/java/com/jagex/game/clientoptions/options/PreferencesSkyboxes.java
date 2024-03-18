@@ -28,13 +28,13 @@ public class PreferencesSkyboxes extends Preference {
 	}
 
 	@ObfuscatedName("ane.s(I)Z")
-	public boolean method18606() {
-		return Renderer.method723(this.options.displayMode2.getValue());
+	public boolean canMod() {
+		return Renderer.method723(this.options.displayMode.getValue());
 	}
 
 	@ObfuscatedName("ane.n(II)I")
 	public int canSetValue(int value) {
-		return Renderer.method723(this.options.displayMode2.getValue()) ? 1 : 3;
+		return Renderer.method723(this.options.displayMode.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("ane.k(II)V")

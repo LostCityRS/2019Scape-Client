@@ -11,7 +11,7 @@ import deob.ObfuscatedName;
 public class WorldMapAreaMetadata extends SecondaryNode {
 
 	@ObfuscatedName("asy.l")
-	public int field12359;
+	public int id;
 
 	@ObfuscatedName("asy.u")
 	public String field12351;
@@ -23,13 +23,13 @@ public class WorldMapAreaMetadata extends SecondaryNode {
 	public IterableQueue field12353;
 
 	@ObfuscatedName("asy.d")
-	public int field12354;
+	public int configOrigin;
 
 	@ObfuscatedName("asy.c")
 	public int field12355 = -1;
 
 	@ObfuscatedName("asy.r")
-	public int field12356 = -1;
+	public int configZoom = -1;
 
 	@ObfuscatedName("asy.v")
 	public int field12357 = 16384;
@@ -47,15 +47,15 @@ public class WorldMapAreaMetadata extends SecondaryNode {
 	public boolean field12350 = true;
 
 	public WorldMapAreaMetadata(int arg0, String arg1, String arg2, int arg3, int arg4, boolean arg5, int arg6, int arg7) {
-		this.field12359 = arg0;
+		this.id = arg0;
 		this.field12351 = arg1;
 		this.field12352 = arg2;
-		this.field12354 = arg3;
+		this.configOrigin = arg3;
 		this.field12355 = arg4;
 		this.field12350 = arg5;
-		this.field12356 = arg6;
-		if (this.field12356 == 255) {
-			this.field12356 = 0;
+		this.configZoom = arg6;
+		if (this.configZoom == 255) {
+			this.configZoom = 0;
 		}
 		BuildAreaSize.buildAreaSizeForId(arg7);
 		this.field12353 = new IterableQueue();

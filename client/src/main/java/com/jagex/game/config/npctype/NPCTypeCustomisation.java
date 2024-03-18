@@ -54,9 +54,9 @@ public class NPCTypeCustomisation {
 			this.field2684 = new short[arg0.recol_d.length];
 			System.arraycopy(arg0.recol_d, 0, this.field2684, 0, this.field2684.length);
 		}
-		if (arg0.field2708 != null) {
-			this.field2685 = new short[arg0.field2708.length];
-			System.arraycopy(arg0.field2708, 0, this.field2685, 0, this.field2685.length);
+		if (arg0.retex_d != null) {
+			this.field2685 = new short[arg0.retex_d.length];
+			System.arraycopy(arg0.retex_d, 0, this.field2685, 0, this.field2685.length);
 		}
 	}
 

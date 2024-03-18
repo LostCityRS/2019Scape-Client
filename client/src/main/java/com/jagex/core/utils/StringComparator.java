@@ -181,7 +181,7 @@ public class StringComparator {
 	}
 
 	@ObfuscatedName("cy.f(JIZLzt;I)Ljava/lang/String;")
-	public static String method1582(long arg0, int arg1, boolean arg2, Language arg3) {
+	public static String localised(long arg0, int arg1, boolean arg2, Language arg3) {
 		char var5 = ',';
 		char var6 = '.';
 		if (Language.EN == arg3) {

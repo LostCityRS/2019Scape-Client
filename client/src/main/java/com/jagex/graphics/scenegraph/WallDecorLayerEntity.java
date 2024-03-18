@@ -3,7 +3,6 @@ package com.jagex.graphics.scenegraph;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.Light;
 import com.jagex.graphics.Renderer;
-import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
@@ -54,7 +53,7 @@ public abstract class WallDecorLayerEntity extends GraphEntity {
 	@ObfuscatedName("asm.ga(Ldh;S)Z")
 	public boolean method18360(Renderer arg0) {
 		Vector3 var2 = this.method10536().field4298;
-		return this.field11716.field6930.method8950(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, this.method16523());
+		return this.field11716.field6930.method8950(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, this.overlayHeight());
 	}
 
 	@ObfuscatedName("asm.gn(I)Z")

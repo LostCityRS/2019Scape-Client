@@ -68,7 +68,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		this.field11169 = arg9;
 		this.field11167 = (byte) arg10;
 		this.field11161 = (byte) arg11;
-		this.field11170 = arg3.field7470 != 0 && !arg9;
+		this.field11170 = arg3.active2 != 0 && !arg9;
 		this.field11171 = arg12;
 		this.field11172 = arg1.method2125() && arg3.field7453 && !this.field11169 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field12460 = arg7;
@@ -109,7 +109,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.by(B)I")
-	public int method16523() {
+	public int overlayHeight() {
 		return this.field11173 == null ? 0 : this.field11173.method1748();
 	}
 

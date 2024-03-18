@@ -47,7 +47,7 @@ public class ClientMapLoader extends MapLoader {
 	public LocTypeList locs;
 
 	public ClientMapLoader(Scene scene, LocTypeList locs, int levels, int maxTileX, int maxTileZ, boolean underwater, LinkMap arg6, EnvironmentManager arg7) {
-		super(scene, levels, maxTileX, maxTileZ, underwater, Client.field8168, Client.field8145, arg6);
+		super(scene, levels, maxTileX, maxTileZ, underwater, Client.overlayTypeList, Client.underlayTypeList, arg6);
 		this.locs = locs;
 		this.field10764 = arg7;
 	}
@@ -76,7 +76,7 @@ public class ClientMapLoader extends MapLoader {
 						for (int var10 = 0; var10 < var9; var10++) {
 							StaticPointLight var11 = new StaticPointLight(arg0, this.scene.field6900, arg1, 2);
 							if (var11.field7014 == 31) {
-								LightType var12 = (LightType) Client.field7943.list(arg1.g2());
+								LightType var12 = (LightType) Client.lightTypeList.list(arg1.g2());
 								var11.method8899(var12.field9168, var12.field9170, var12.field9167, var12.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -264,7 +264,7 @@ public class ClientMapLoader extends MapLoader {
 						for (int var17 = 0; var17 < var16; var17++) {
 							StaticPointLight var18 = new StaticPointLight(arg0, this.scene.field6900, arg1, 2);
 							if (var18.field7014 == 31) {
-								LightType var19 = (LightType) Client.field7943.list(arg1.g2());
+								LightType var19 = (LightType) Client.lightTypeList.list(arg1.g2());
 								var18.method8899(var19.field9168, var19.field9170, var19.field9167, var19.field9169);
 							}
 							if (arg0.method2114() > 0) {
@@ -439,7 +439,7 @@ public class ClientMapLoader extends MapLoader {
 							} while (var19 >= arg5);
 						} while (var18 + var21 < 0);
 					} while (var19 + var22 < 0);
-				} while (LocShape.GROUND_DECOR.id == var15.shape && Client.preferences.groundDecoration.getValue() == 0 && var20.field7470 == 0 && var20.blockwalk != 1 && !var20.forcedecor);
+				} while (LocShape.GROUND_DECOR.id == var15.shape && Client.preferences.groundDecoration.getValue() == 0 && var20.active2 == 0 && var20.blockwalk != 1 && !var20.forcedecor);
 				if (!var20.method9489(arg7)) {
 					arg6.field7958 = locId;
 					var8++;
@@ -639,7 +639,7 @@ public class ClientMapLoader extends MapLoader {
 			return;
 		}
 		if (LocShape.GROUND_DECOR.id == arg7) {
-			if (Client.preferences.groundDecoration.getValue() != 0 || var12.field7470 != 0 || var12.blockwalk == 1 || var12.forcedecor) {
+			if (Client.preferences.groundDecoration.getValue() != 0 || var12.active2 != 0 || var12.blockwalk == 1 || var12.forcedecor) {
 				GroundDecorLayerEntity var26;
 				if (var24) {
 					StaticGroundDecorEntity var25 = new StaticGroundDecorEntity(this.scene, arg0, this.locs, var12, arg2, arg1, var21, var20, var22, this.underwater, arg6, var23, arg10);

@@ -27,7 +27,7 @@ public class PreferencesShadowQuality extends Preference {
 	}
 
 	@ObfuscatedName("amq.s(I)Z")
-	public boolean method18456() {
+	public boolean canMod() {
 		return true;
 	}
 

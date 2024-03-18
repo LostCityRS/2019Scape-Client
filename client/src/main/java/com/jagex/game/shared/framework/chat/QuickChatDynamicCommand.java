@@ -51,7 +51,7 @@ public class QuickChatDynamicCommand {
 	public static final QuickChatDynamicCommand field7925 = new QuickChatDynamicCommand(16, 0, 4, 2);
 
 	@ObfuscatedName("xs.s")
-	public int field7938;
+	public int id;
 
 	@ObfuscatedName("xs.y")
 	public int field7939;
@@ -68,7 +68,7 @@ public class QuickChatDynamicCommand {
 	}
 
 	public QuickChatDynamicCommand(int arg0, int arg1, int arg2, int arg3) {
-		this.field7938 = arg0;
+		this.id = arg0;
 		this.field7939 = arg1;
 		this.field7940 = arg2;
 		this.field7923 = arg3;
@@ -78,7 +78,7 @@ public class QuickChatDynamicCommand {
 	public static QuickChatDynamicCommand method8897(int arg0) {
 		QuickChatDynamicCommand[] var1 = method9288();
 		for (int var2 = 0; var2 < var1.length; var2++) {
-			if (var1[var2].field7938 == arg0) {
+			if (var1[var2].id == arg0) {
 				return var1[var2];
 			}
 		}

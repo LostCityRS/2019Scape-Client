@@ -16,7 +16,7 @@ public class PreferencesUnknown7 extends Preference {
 
 	@ObfuscatedName("anz.o(I)V")
 	public void clampValue() {
-		int var1 = this.options.displayMode.getValue();
+		int var1 = this.options.toolkit.getValue();
 		if (var1 != 3 && var1 != 5) {
 			this.currentValue = 0;
 		}
@@ -30,7 +30,7 @@ public class PreferencesUnknown7 extends Preference {
 
 	@ObfuscatedName("anz.e(B)I")
 	public int defaultValue() {
-		int var1 = this.options.displayMode.getValue();
+		int var1 = this.options.toolkit.getValue();
 		return var1 == 3 || var1 == 5 ? 0 : 0;
 	}
 
@@ -41,7 +41,7 @@ public class PreferencesUnknown7 extends Preference {
 		} else if (this.options.hardwareInfo().cpucount() < 2) {
 			return 3;
 		} else {
-			int var2 = this.options.displayMode.getValue();
+			int var2 = this.options.toolkit.getValue();
 			return var2 == 3 || var2 == 5 ? 1 : 3;
 		}
 	}

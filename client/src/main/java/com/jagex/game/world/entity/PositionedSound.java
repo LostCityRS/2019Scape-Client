@@ -151,7 +151,7 @@ public class PositionedSound extends Node {
 	public void method17660() {
 		int var1 = this.field11370;
 		if (this.field11348 != null) {
-			LocType var2 = this.field11348.method9477(Client.field7410, Client.field10863 == 0 ? CutsceneManager.field1723 : Client.field7410);
+			LocType var2 = this.field11348.method9477(Client.localPlayerGameState, Client.field10863 == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 			if (var2 == null) {
 				this.field11370 = -1;
 				this.field11357 = 0;
@@ -176,9 +176,9 @@ public class PositionedSound extends Node {
 			int var3 = method647(this.field11345);
 			if (var1 != var3) {
 				this.field11370 = var3;
-				NPCType var4 = this.field11345.field12083;
+				NPCType var4 = this.field11345.npcType;
 				if (var4.field2735 != null) {
-					var4 = var4.method4547(Client.field7410, Client.field7410);
+					var4 = var4.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var4 == null) {
 					this.field11356 = 0;
@@ -246,10 +246,10 @@ public class PositionedSound extends Node {
 			Client.field1798.method3160(var7.field11375);
 		} else if (arg5 != null) {
 			var7.field11345 = arg5;
-			NPCType var10 = arg5.field12083;
+			NPCType var10 = arg5.npcType;
 			if (var10.field2735 != null) {
 				var7.field11367 = true;
-				var10 = var10.method4547(Client.field7410, Client.field7410);
+				var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			}
 			if (var10 != null) {
 				var7.field11352 = var10.size + arg1 << 9;
@@ -340,9 +340,9 @@ public class PositionedSound extends Node {
 
 	@ObfuscatedName("t.z(Laqc;I)I")
 	public static int method647(NpcEntity arg0) {
-		NPCType var1 = arg0.field12083;
+		NPCType var1 = arg0.npcType;
 		if (var1.field2735 != null) {
-			var1 = var1.method4547(Client.field7410, Client.field7410);
+			var1 = var1.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var1 == null) {
 				return -1;
 			}
@@ -393,9 +393,9 @@ public class PositionedSound extends Node {
 			}
 			if (var5.field11360 != var6) {
 				int var9 = method647(var5.field11345);
-				NPCType var10 = var5.field11345.field12083;
+				NPCType var10 = var5.field11345.npcType;
 				if (var10.field2735 != null) {
-					var10 = var10.method4547(Client.field7410, Client.field7410);
+					var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var10 == null || var9 == -1) {
 					var5.field11370 = -1;

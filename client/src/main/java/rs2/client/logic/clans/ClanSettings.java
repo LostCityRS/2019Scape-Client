@@ -25,34 +25,34 @@ public class ClanSettings {
 	public int field3094 = 0;
 
 	@ObfuscatedName("kr.w")
-	public String field3093 = null;
+	public String clanName = null;
 
 	@ObfuscatedName("kr.l")
 	public int field3096 = 0;
 
 	@ObfuscatedName("kr.u")
-	public boolean field3097;
+	public boolean allowUnaffined;
 
 	@ObfuscatedName("kr.z")
-	public byte field3098;
+	public byte rankTalk;
 
 	@ObfuscatedName("kr.p")
-	public byte field3090;
+	public byte rankKick;
 
 	@ObfuscatedName("kr.d")
-	public byte field3100;
+	public byte rankLootshare;
 
 	@ObfuscatedName("kr.c")
-	public byte field3117;
+	public byte coinshare;
 
 	@ObfuscatedName("kr.r")
-	public int field3095;
+	public int affinedCount;
 
 	@ObfuscatedName("kr.v")
 	public long[] field3103;
 
 	@ObfuscatedName("kr.o")
-	public byte[] field3104;
+	public byte[] affinedRanks;
 
 	@ObfuscatedName("kr.s")
 	public int[] field3118;
@@ -61,28 +61,28 @@ public class ClanSettings {
 	public int[] field3106;
 
 	@ObfuscatedName("kr.q")
-	public int[] field3107;
+	public int[] affinedJoinedRunedays;
 
 	@ObfuscatedName("kr.x")
-	public boolean[] field3108;
+	public boolean[] affinedMutes;
 
 	@ObfuscatedName("kr.b")
-	public int field3101 = -1;
+	public int currentOwnerSlot = -1;
 
 	@ObfuscatedName("kr.h")
-	public int field3110 = -1;
+	public int replacementOwnerSlot = -1;
 
 	@ObfuscatedName("kr.a")
-	public int field3111;
+	public int bannedCount;
 
 	@ObfuscatedName("kr.g")
 	public long[] field3112;
 
 	@ObfuscatedName("kr.i")
-	public String[] field3120;
+	public String[] affinedDisplayNames;
 
 	@ObfuscatedName("kr.j")
-	public String[] field3114;
+	public String[] bannedDisplayNames;
 
 	@ObfuscatedName("kr.t")
 	public IterableMap field3115;
@@ -97,35 +97,35 @@ public class ClanSettings {
 			if (this.field3103 == null) {
 				this.field3103 = new long[arg0];
 			} else {
-				System.arraycopy(this.field3103, 0, this.field3103 = new long[arg0], 0, this.field3095);
+				System.arraycopy(this.field3103, 0, this.field3103 = new long[arg0], 0, this.affinedCount);
 			}
 		}
 		if (this.field3092) {
-			if (this.field3120 == null) {
-				this.field3120 = new String[arg0];
+			if (this.affinedDisplayNames == null) {
+				this.affinedDisplayNames = new String[arg0];
 			} else {
-				System.arraycopy(this.field3120, 0, this.field3120 = new String[arg0], 0, this.field3095);
+				System.arraycopy(this.affinedDisplayNames, 0, this.affinedDisplayNames = new String[arg0], 0, this.affinedCount);
 			}
 		}
-		if (this.field3104 == null) {
-			this.field3104 = new byte[arg0];
+		if (this.affinedRanks == null) {
+			this.affinedRanks = new byte[arg0];
 		} else {
-			System.arraycopy(this.field3104, 0, this.field3104 = new byte[arg0], 0, this.field3095);
+			System.arraycopy(this.affinedRanks, 0, this.affinedRanks = new byte[arg0], 0, this.affinedCount);
 		}
 		if (this.field3106 == null) {
 			this.field3106 = new int[arg0];
 		} else {
-			System.arraycopy(this.field3106, 0, this.field3106 = new int[arg0], 0, this.field3095);
+			System.arraycopy(this.field3106, 0, this.field3106 = new int[arg0], 0, this.affinedCount);
 		}
-		if (this.field3107 == null) {
-			this.field3107 = new int[arg0];
+		if (this.affinedJoinedRunedays == null) {
+			this.affinedJoinedRunedays = new int[arg0];
 		} else {
-			System.arraycopy(this.field3107, 0, this.field3107 = new int[arg0], 0, this.field3095);
+			System.arraycopy(this.affinedJoinedRunedays, 0, this.affinedJoinedRunedays = new int[arg0], 0, this.affinedCount);
 		}
-		if (this.field3108 == null) {
-			this.field3108 = new boolean[arg0];
+		if (this.affinedMutes == null) {
+			this.affinedMutes = new boolean[arg0];
 		} else {
-			System.arraycopy(this.field3108, 0, this.field3108 = new boolean[arg0], 0, this.field3095);
+			System.arraycopy(this.affinedMutes, 0, this.affinedMutes = new boolean[arg0], 0, this.affinedCount);
 		}
 	}
 
@@ -135,26 +135,26 @@ public class ClanSettings {
 			if (this.field3112 == null) {
 				this.field3112 = new long[arg0];
 			} else {
-				System.arraycopy(this.field3112, 0, this.field3112 = new long[arg0], 0, this.field3111);
+				System.arraycopy(this.field3112, 0, this.field3112 = new long[arg0], 0, this.bannedCount);
 			}
 		}
 		if (!this.field3092) {
 			return;
 		}
-		if (this.field3114 == null) {
-			this.field3114 = new String[arg0];
+		if (this.bannedDisplayNames == null) {
+			this.bannedDisplayNames = new String[arg0];
 		} else {
-			System.arraycopy(this.field3114, 0, this.field3114 = new String[arg0], 0, this.field3111);
+			System.arraycopy(this.bannedDisplayNames, 0, this.bannedDisplayNames = new String[arg0], 0, this.bannedCount);
 		}
 	}
 
 	@ObfuscatedName("kr.m(Ljava/lang/String;B)I")
-	public int method5256(String arg0) {
+	public int getAffinedSlot(String arg0) {
 		if (arg0 == null || arg0.length() == 0) {
 			return -1;
 		}
-		for (int var2 = 0; var2 < this.field3095; var2++) {
-			if (this.field3120[var2].equals(arg0)) {
+		for (int var2 = 0; var2 < this.affinedCount; var2++) {
+			if (this.affinedDisplayNames[var2].equals(arg0)) {
 				return var2;
 			}
 		}
@@ -162,7 +162,7 @@ public class ClanSettings {
 	}
 
 	@ObfuscatedName("kr.k(IIII)I")
-	public int method5257(int arg0, int arg1, int arg2) {
+	public int getExtraInfo(int arg0, int arg1, int arg2) {
 		int var4 = arg2 == 31 ? -1 : (0x1 << arg2 + 1) - 1;
 		return (this.field3106[arg0] & var4) >>> arg1;
 	}
@@ -198,13 +198,13 @@ public class ClanSettings {
 	}
 
 	@ObfuscatedName("kr.u(B)[I")
-	public int[] method5261() {
+	public int[] getSortedAffinedSlot() {
 		if (this.field3118 == null) {
-			String[] var1 = new String[this.field3095];
-			this.field3118 = new int[this.field3095];
+			String[] var1 = new String[this.affinedCount];
+			this.field3118 = new int[this.affinedCount];
 			int var2 = 0;
-			while (var2 < this.field3095) {
-				var1[var2] = this.field3120[var2];
+			while (var2 < this.affinedCount) {
+				var1[var2] = this.affinedDisplayNames[var2];
 				if (var1[var2] != null) {
 					var1[var2] = var1[var2].toLowerCase();
 				}
@@ -223,25 +223,25 @@ public class ClanSettings {
 		if (this.field3091 != arg0 > 0L) {
 			throw new RuntimeException("");
 		} else if ((arg1 != null) == this.field3092) {
-			if (arg0 > 0L && (this.field3103 == null || this.field3095 >= this.field3103.length) || arg1 != null && (this.field3120 == null || this.field3095 >= this.field3120.length)) {
-				this.method5315(this.field3095 + 5);
+			if (arg0 > 0L && (this.field3103 == null || this.affinedCount >= this.field3103.length) || arg1 != null && (this.affinedDisplayNames == null || this.affinedCount >= this.affinedDisplayNames.length)) {
+				this.method5315(this.affinedCount + 5);
 			}
 			if (this.field3103 != null) {
-				this.field3103[this.field3095] = arg0;
+				this.field3103[this.affinedCount] = arg0;
 			}
-			if (this.field3120 != null) {
-				this.field3120[this.field3095] = arg1;
+			if (this.affinedDisplayNames != null) {
+				this.affinedDisplayNames[this.affinedCount] = arg1;
 			}
-			if (this.field3101 == -1) {
-				this.field3101 = this.field3095;
-				this.field3104[this.field3095] = 126;
+			if (this.currentOwnerSlot == -1) {
+				this.currentOwnerSlot = this.affinedCount;
+				this.affinedRanks[this.affinedCount] = 126;
 			} else {
-				this.field3104[this.field3095] = 0;
+				this.affinedRanks[this.affinedCount] = 0;
 			}
-			this.field3106[this.field3095] = 0;
-			this.field3107[this.field3095] = arg2;
-			this.field3108[this.field3095] = false;
-			this.field3095++;
+			this.field3106[this.affinedCount] = 0;
+			this.affinedJoinedRunedays[this.affinedCount] = arg2;
+			this.affinedMutes[this.affinedCount] = false;
+			this.affinedCount++;
 			this.field3118 = null;
 		} else {
 			throw new RuntimeException("");
@@ -250,60 +250,60 @@ public class ClanSettings {
 
 	@ObfuscatedName("kr.p(II)V")
 	public void method5263(int arg0) {
-		if (arg0 < 0 || arg0 >= this.field3095) {
+		if (arg0 < 0 || arg0 >= this.affinedCount) {
 			throw new RuntimeException("");
 		}
-		this.field3095--;
+		this.affinedCount--;
 		this.field3118 = null;
-		if (this.field3095 == 0) {
+		if (this.affinedCount == 0) {
 			this.field3103 = null;
-			this.field3120 = null;
-			this.field3104 = null;
+			this.affinedDisplayNames = null;
+			this.affinedRanks = null;
 			this.field3106 = null;
-			this.field3107 = null;
-			this.field3108 = null;
-			this.field3101 = -1;
-			this.field3110 = -1;
+			this.affinedJoinedRunedays = null;
+			this.affinedMutes = null;
+			this.currentOwnerSlot = -1;
+			this.replacementOwnerSlot = -1;
 			return;
 		}
-		System.arraycopy(this.field3104, arg0 + 1, this.field3104, arg0, this.field3095 - arg0);
-		System.arraycopy(this.field3106, arg0 + 1, this.field3106, arg0, this.field3095 - arg0);
-		System.arraycopy(this.field3107, arg0 + 1, this.field3107, arg0, this.field3095 - arg0);
-		System.arraycopy(this.field3108, arg0 + 1, this.field3108, arg0, this.field3095 - arg0);
+		System.arraycopy(this.affinedRanks, arg0 + 1, this.affinedRanks, arg0, this.affinedCount - arg0);
+		System.arraycopy(this.field3106, arg0 + 1, this.field3106, arg0, this.affinedCount - arg0);
+		System.arraycopy(this.affinedJoinedRunedays, arg0 + 1, this.affinedJoinedRunedays, arg0, this.affinedCount - arg0);
+		System.arraycopy(this.affinedMutes, arg0 + 1, this.affinedMutes, arg0, this.affinedCount - arg0);
 		if (this.field3103 != null) {
-			System.arraycopy(this.field3103, arg0 + 1, this.field3103, arg0, this.field3095 - arg0);
+			System.arraycopy(this.field3103, arg0 + 1, this.field3103, arg0, this.affinedCount - arg0);
 		}
-		if (this.field3120 != null) {
-			System.arraycopy(this.field3120, arg0 + 1, this.field3120, arg0, this.field3095 - arg0);
+		if (this.affinedDisplayNames != null) {
+			System.arraycopy(this.affinedDisplayNames, arg0 + 1, this.affinedDisplayNames, arg0, this.affinedCount - arg0);
 		}
 		this.method5299();
 	}
 
 	@ObfuscatedName("kr.d(I)V")
 	public void method5299() {
-		if (this.field3095 == 0) {
-			this.field3101 = -1;
-			this.field3110 = -1;
+		if (this.affinedCount == 0) {
+			this.currentOwnerSlot = -1;
+			this.replacementOwnerSlot = -1;
 			return;
 		}
-		this.field3101 = -1;
-		this.field3110 = -1;
+		this.currentOwnerSlot = -1;
+		this.replacementOwnerSlot = -1;
 		int var1 = 0;
-		byte var2 = this.field3104[0];
-		for (int var3 = 1; var3 < this.field3095; var3++) {
-			if (this.field3104[var3] > var2) {
+		byte var2 = this.affinedRanks[0];
+		for (int var3 = 1; var3 < this.affinedCount; var3++) {
+			if (this.affinedRanks[var3] > var2) {
 				if (var2 == 125) {
-					this.field3110 = var1;
+					this.replacementOwnerSlot = var1;
 				}
 				var1 = var3;
-				var2 = this.field3104[var3];
-			} else if (this.field3110 == -1 && this.field3104[var3] == 125) {
-				this.field3110 = var3;
+				var2 = this.affinedRanks[var3];
+			} else if (this.replacementOwnerSlot == -1 && this.affinedRanks[var3] == 125) {
+				this.replacementOwnerSlot = var3;
 			}
 		}
-		this.field3101 = var1;
-		if (this.field3101 != -1) {
-			this.field3104[this.field3101] = 126;
+		this.currentOwnerSlot = var1;
+		if (this.currentOwnerSlot != -1) {
+			this.affinedRanks[this.currentOwnerSlot] = 126;
 		}
 	}
 
@@ -315,16 +315,16 @@ public class ClanSettings {
 		if (this.field3091 != arg0 > 0L) {
 			throw new RuntimeException("");
 		} else if ((arg1 != null) == this.field3092) {
-			if (arg0 > 0L && (this.field3112 == null || this.field3111 >= this.field3112.length) || arg1 != null && (this.field3114 == null || this.field3111 >= this.field3114.length)) {
-				this.method5255(this.field3111 + 5);
+			if (arg0 > 0L && (this.field3112 == null || this.bannedCount >= this.field3112.length) || arg1 != null && (this.bannedDisplayNames == null || this.bannedCount >= this.bannedDisplayNames.length)) {
+				this.method5255(this.bannedCount + 5);
 			}
 			if (this.field3112 != null) {
-				this.field3112[this.field3111] = arg0;
+				this.field3112[this.bannedCount] = arg0;
 			}
-			if (this.field3114 != null) {
-				this.field3114[this.field3111] = arg1;
+			if (this.bannedDisplayNames != null) {
+				this.bannedDisplayNames[this.bannedCount] = arg1;
 			}
-			this.field3111++;
+			this.bannedCount++;
 		} else {
 			throw new RuntimeException("");
 		}
@@ -332,17 +332,17 @@ public class ClanSettings {
 
 	@ObfuscatedName("kr.r(II)V")
 	public void method5266(int arg0) {
-		this.field3111--;
-		if (this.field3111 == 0) {
+		this.bannedCount--;
+		if (this.bannedCount == 0) {
 			this.field3112 = null;
-			this.field3114 = null;
+			this.bannedDisplayNames = null;
 			return;
 		}
 		if (this.field3112 != null) {
-			System.arraycopy(this.field3112, arg0 + 1, this.field3112, arg0, this.field3111 - arg0);
+			System.arraycopy(this.field3112, arg0 + 1, this.field3112, arg0, this.bannedCount - arg0);
 		}
-		if (this.field3114 != null) {
-			System.arraycopy(this.field3114, arg0 + 1, this.field3114, arg0, this.field3111 - arg0);
+		if (this.bannedDisplayNames != null) {
+			System.arraycopy(this.bannedDisplayNames, arg0 + 1, this.bannedDisplayNames, arg0, this.bannedCount - arg0);
 		}
 	}
 
@@ -350,12 +350,12 @@ public class ClanSettings {
 	public int method5267(int arg0, byte arg1) {
 		if (arg1 == 126 || arg1 == 127) {
 			return -1;
-		} else if (this.field3101 == arg0 && (this.field3110 == -1 || this.field3104[this.field3110] < 125)) {
+		} else if (this.currentOwnerSlot == arg0 && (this.replacementOwnerSlot == -1 || this.affinedRanks[this.replacementOwnerSlot] < 125)) {
 			return -1;
-		} else if (this.field3104[arg0] == arg1) {
+		} else if (this.affinedRanks[arg0] == arg1) {
 			return -1;
 		} else {
-			this.field3104[arg0] = arg1;
+			this.affinedRanks[arg0] = arg1;
 			this.method5299();
 			return arg0;
 		}
@@ -363,10 +363,10 @@ public class ClanSettings {
 
 	@ObfuscatedName("kr.o(IZB)I")
 	public int method5303(int arg0, boolean arg1) {
-		if (this.field3108[arg0] == arg1) {
+		if (this.affinedMutes[arg0] == arg1) {
 			return -1;
 		} else {
-			this.field3108[arg0] = arg1;
+			this.affinedMutes[arg0] = arg1;
 			return arg0;
 		}
 	}
@@ -508,81 +508,81 @@ public class ClanSettings {
 			this.field3112 = null;
 		}
 		if (!this.field3092) {
-			this.field3120 = null;
-			this.field3114 = null;
+			this.affinedDisplayNames = null;
+			this.bannedDisplayNames = null;
 		}
 		this.field3094 = arg0.g4s();
 		this.field3096 = arg0.g4s();
 		if (var2 <= 3 && this.field3096 != 0) {
 			this.field3096 += 16912800;
 		}
-		this.field3095 = arg0.g2();
-		this.field3111 = arg0.g1();
-		this.field3093 = arg0.gjstr();
+		this.affinedCount = arg0.g2();
+		this.bannedCount = arg0.g1();
+		this.clanName = arg0.gjstr();
 		if (var2 >= 4) {
 			arg0.g4s();
 		}
-		this.field3097 = arg0.g1() == 1;
-		this.field3098 = arg0.g1b();
-		this.field3090 = arg0.g1b();
-		this.field3100 = arg0.g1b();
-		this.field3117 = arg0.g1b();
-		if (this.field3095 > 0) {
-			if (this.field3091 && (this.field3103 == null || this.field3103.length < this.field3095)) {
-				this.field3103 = new long[this.field3095];
+		this.allowUnaffined = arg0.g1() == 1;
+		this.rankTalk = arg0.g1b();
+		this.rankKick = arg0.g1b();
+		this.rankLootshare = arg0.g1b();
+		this.coinshare = arg0.g1b();
+		if (this.affinedCount > 0) {
+			if (this.field3091 && (this.field3103 == null || this.field3103.length < this.affinedCount)) {
+				this.field3103 = new long[this.affinedCount];
 			}
-			if (this.field3092 && (this.field3120 == null || this.field3120.length < this.field3095)) {
-				this.field3120 = new String[this.field3095];
+			if (this.field3092 && (this.affinedDisplayNames == null || this.affinedDisplayNames.length < this.affinedCount)) {
+				this.affinedDisplayNames = new String[this.affinedCount];
 			}
-			if (this.field3104 == null || this.field3104.length < this.field3095) {
-				this.field3104 = new byte[this.field3095];
+			if (this.affinedRanks == null || this.affinedRanks.length < this.affinedCount) {
+				this.affinedRanks = new byte[this.affinedCount];
 			}
-			if (this.field3106 == null || this.field3106.length < this.field3095) {
-				this.field3106 = new int[this.field3095];
+			if (this.field3106 == null || this.field3106.length < this.affinedCount) {
+				this.field3106 = new int[this.affinedCount];
 			}
-			if (this.field3107 == null || this.field3107.length < this.field3095) {
-				this.field3107 = new int[this.field3095];
+			if (this.affinedJoinedRunedays == null || this.affinedJoinedRunedays.length < this.affinedCount) {
+				this.affinedJoinedRunedays = new int[this.affinedCount];
 			}
-			if (this.field3108 == null || this.field3108.length < this.field3095) {
-				this.field3108 = new boolean[this.field3095];
+			if (this.affinedMutes == null || this.affinedMutes.length < this.affinedCount) {
+				this.affinedMutes = new boolean[this.affinedCount];
 			}
-			for (int var4 = 0; var4 < this.field3095; var4++) {
+			for (int var4 = 0; var4 < this.affinedCount; var4++) {
 				if (this.field3091) {
 					this.field3103[var4] = arg0.g8();
 				}
 				if (this.field3092) {
-					this.field3120[var4] = arg0.fastgstr();
+					this.affinedDisplayNames[var4] = arg0.fastgstr();
 				}
-				this.field3104[var4] = arg0.g1b();
+				this.affinedRanks[var4] = arg0.g1b();
 				if (var2 >= 2) {
 					this.field3106[var4] = arg0.g4s();
 				}
 				if (var2 >= 5) {
-					this.field3107[var4] = arg0.g2();
+					this.affinedJoinedRunedays[var4] = arg0.g2();
 				} else {
-					this.field3107[var4] = 0;
+					this.affinedJoinedRunedays[var4] = 0;
 				}
 				if (var2 >= 6) {
-					this.field3108[var4] = arg0.g1() == 1;
+					this.affinedMutes[var4] = arg0.g1() == 1;
 				} else {
-					this.field3108[var4] = false;
+					this.affinedMutes[var4] = false;
 				}
 			}
 			this.method5299();
 		}
-		if (this.field3111 > 0) {
-			if (this.field3091 && (this.field3112 == null || this.field3112.length < this.field3111)) {
-				this.field3112 = new long[this.field3111];
+		if (this.bannedCount > 0) {
+			if (this.field3091 && (this.field3112 == null || this.field3112.length < this.bannedCount)) {
+				this.field3112 = new long[this.bannedCount];
 			}
-			if (this.field3092 && (this.field3114 == null || this.field3114.length < this.field3111)) {
-				this.field3114 = new String[this.field3111];
+			if (this.field3092 && (this.bannedDisplayNames == null || this.bannedDisplayNames.length < this.bannedCount)) {
+				this.bannedDisplayNames = new String[this.bannedCount];
 			}
-			for (int var5 = 0; var5 < this.field3111; var5++) {
+			for (int var5 = 0; var5 < this.bannedCount; var5++) {
 				if (this.field3091) {
 					this.field3112[var5] = arg0.g8();
 				}
 				if (this.field3092) {
-					this.field3114[var5] = arg0.fastgstr();
+					this.bannedDisplayNames[var5] = arg0.fastgstr();
 				}
 			}
 		}

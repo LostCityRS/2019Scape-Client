@@ -42,7 +42,7 @@ public class PlayerModel {
 	public int[] field7895;
 
 	@ObfuscatedName("xg.r")
-	public boolean field7897;
+	public boolean isFemale;
 
 	@ObfuscatedName("xg.v")
 	public int field7892 = -1;
@@ -86,7 +86,7 @@ public class PlayerModel {
 		this.field7887 = arg2;
 		this.field7894 = arg3;
 		this.field7895 = arg4;
-		this.field7897 = arg5;
+		this.isFemale = arg5;
 		this.field7892 = arg6;
 		this.method10118();
 	}
@@ -114,7 +114,7 @@ public class PlayerModel {
 
 	@ObfuscatedName("xg.f(ZB)V")
 	public void method10141(boolean arg0) {
-		this.field7897 = arg0;
+		this.isFemale = arg0;
 		this.method10118();
 	}
 
@@ -147,7 +147,7 @@ public class PlayerModel {
 				if (this.field7887[var3] != null) {
 					int[] var4;
 					int[] var5;
-					if (this.field7897) {
+					if (this.isFemale) {
 						var4 = this.field7887[var3].field8708;
 						var5 = this.field7887[var3].field8713;
 					} else {
@@ -187,7 +187,7 @@ public class PlayerModel {
 		for (int var11 = 0; var11 < 10; var11++) {
 			this.field7888 = this.field7888 >>> 8 ^ var1[(int) ((this.field7888 ^ (long) this.field7895[var11]) & 0xFFL)];
 		}
-		this.field7888 = this.field7888 >>> 8 ^ var1[(int) ((this.field7888 ^ (long) (this.field7897 ? 1 : 0)) & 0xFFL)];
+		this.field7888 = this.field7888 >>> 8 ^ var1[(int) ((this.field7888 ^ (long) (this.isFemale ? 1 : 0)) & 0xFFL)];
 	}
 
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
@@ -303,7 +303,7 @@ public class PlayerModel {
 								if (!var51 && this.field7887 != null && this.field7887[var48] != null) {
 									var50 = this.field7887[var48];
 								}
-								ModelUnlit var52 = ((ObjType) arg5.list(var49 & 0x3FFFFFFF)).method14650(this.field7897, var50);
+								ModelUnlit var52 = ((ObjType) arg5.list(var49 & 0x3FFFFFFF)).method14650(this.isFemale, var50);
 								if (var52 != null) {
 									var47[var48] = var52;
 								}
@@ -400,7 +400,7 @@ public class PlayerModel {
 					if (!var42 && this.field7887 != null && this.field7887[var39] != null) {
 						var41 = this.field7887[var39];
 					}
-					if (!((ObjType) arg5.list(var40 & 0x3FFFFFFF)).method14649(this.field7897, var41)) {
+					if (!((ObjType) arg5.list(var40 & 0x3FFFFFFF)).method14649(this.isFemale, var41)) {
 						var38 = true;
 					}
 				} else if ((var40 & Integer.MIN_VALUE) != 0 && !((IDKType) arg3.list(var40 & 0x3FFFFFFF)).method4999()) {
@@ -484,7 +484,7 @@ public class PlayerModel {
 					if (this.field7887 != null && this.field7887[var15] != null) {
 						var17 = this.field7887[var15];
 					}
-					if (!((ObjType) arg4.list(var16 & 0x3FFFFFFF)).method14651(this.field7897, var17)) {
+					if (!((ObjType) arg4.list(var16 & 0x3FFFFFFF)).method14651(this.isFemale, var17)) {
 						var14 = true;
 					}
 				} else if ((var16 & Integer.MIN_VALUE) != 0 && !((IDKType) arg2.list(var16 & 0x3FFFFFFF)).method5001()) {
@@ -503,7 +503,7 @@ public class PlayerModel {
 					if (this.field7887 != null && this.field7887[var20] != null) {
 						var22 = this.field7887[var20];
 					}
-					ModelUnlit var23 = ((ObjType) arg4.list(var21 & 0x3FFFFFFF)).method14652(this.field7897, var22);
+					ModelUnlit var23 = ((ObjType) arg4.list(var21 & 0x3FFFFFFF)).method14652(this.isFemale, var22);
 					if (var23 != null) {
 						var18[var19++] = var23;
 					}

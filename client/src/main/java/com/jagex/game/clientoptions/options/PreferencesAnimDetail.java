@@ -27,7 +27,7 @@ public class PreferencesAnimDetail extends Preference {
 	}
 
 	@ObfuscatedName("ang.s(I)Z")
-	public boolean method18666() {
+	public boolean canMod() {
 		return true;
 	}
 

@@ -10,15 +10,15 @@ import deob.ObfuscatedName;
 public class IDKTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("ja.e")
-	public final Js5 js5;
+	public final Js5 configClient;
 
-	public IDKTypeFactory(Js5 js5) {
-		this.js5 = js5;
+	public IDKTypeFactory(Js5 configClient) {
+		this.configClient = configClient;
 	}
 
 	@ObfuscatedName("ja.v(ILao;I)Lay;")
 	public ConfigType create(int id, ConfigTypeList configTypeList) {
-		return new IDKType(id, this.js5);
+		return new IDKType(id, this.configClient);
 	}
 
 	@ObfuscatedName("ja.o(B)Ljava/lang/Class;")

@@ -30,7 +30,7 @@ public class PreferencesSceneryShadows extends Preference {
 	}
 
 	@ObfuscatedName("amh.s(I)Z")
-	public boolean method18514() {
+	public boolean canMod() {
 		return this.options.textures.getValue() != 0;
 	}
 

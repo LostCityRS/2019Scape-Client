@@ -60,8 +60,8 @@ public class ReceivePlayerPositions {
 	@ObfuscatedName("aga.e(Lase;I)V")
 	public static final void method16435(PacketBit arg0) {
 		arg0.accessBits();
-		int var1 = Client.field10945;
-		PlayerEntity var2 = Client.field4490 = Client.field10944[var1] = new PlayerEntity(Client.world.getScene());
+		int var1 = Client.currentPlayerUid;
+		PlayerEntity var2 = Client.localPlayerEntity = Client.field10944[var1] = new PlayerEntity(Client.world.getScene());
 		var2.field10406 = var1;
 		int var3 = arg0.gBit(30);
 		byte var4 = (byte) (var3 >> 28);
@@ -255,7 +255,7 @@ public class ReceivePlayerPositions {
 		PlayerEntity var5 = Client.field10944[arg1];
 		if (var4 == 0) {
 			if (!var3) {
-				if (Client.field10945 == arg1) {
+				if (Client.currentPlayerUid == arg1) {
 					throw new RuntimeException();
 				}
 				LowResPlayerInfo var6 = field704[arg1] = new LowResPlayerInfo();
@@ -397,7 +397,7 @@ public class ReceivePlayerPositions {
 				if (Client.world.method7793().method7105(var21, var22)) {
 					var5.field11714++;
 				}
-				if (Client.field10945 == arg1 && Client.field4826 != var5.field11717) {
+				if (Client.currentPlayerUid == arg1 && Client.field4826 != var5.field11717) {
 					Client.field4826 = var5.field11717;
 				}
 			} else {
@@ -418,7 +418,7 @@ public class ReceivePlayerPositions {
 				if (Client.world.method7793().method7105(var28, var29)) {
 					var5.field11714++;
 				}
-				if (Client.field10945 == arg1) {
+				if (Client.currentPlayerUid == arg1) {
 					Client.field4826 = var5.field11717;
 				}
 			}
@@ -565,7 +565,7 @@ public class ReceivePlayerPositions {
 			for (int var8 = 0; var8 < var7; var8++) {
 				int var9 = arg0.g1_alt3();
 				BaseVarType var10 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), var9);
-				VarValue var11 = Client.field8485.decodeVarValue(arg0, var10);
+				VarValue var11 = Client.varPlayerTypeList.decodeVarValue(arg0, var10);
 				arg2.field10460.method14735(var11.field4240, var11.field4239);
 			}
 		}
@@ -600,7 +600,7 @@ public class ReceivePlayerPositions {
 						var18 = arg0.gSmart1or2();
 					}
 					int var19 = arg0.gSmart1or2();
-					arg2.method16498(var17, var18, var14, var16, Client.field10903, var19);
+					arg2.method16498(var17, var18, var14, var16, Client.currentclock, var19);
 				}
 			}
 			int var20 = arg0.g1_alt3();
@@ -614,7 +614,7 @@ public class ReceivePlayerPositions {
 						int var24 = arg0.gSmart1or2();
 						int var25 = arg0.g1_alt3();
 						int var26 = var23 > 0 ? arg0.g1_alt2() : var25;
-						arg2.method16499(var22, Client.field10903, var23, var24, var25, var26);
+						arg2.method16499(var22, Client.currentclock, var23, var24, var25, var26);
 					}
 				}
 			}
@@ -715,13 +715,13 @@ public class ReceivePlayerPositions {
 			for (int var63 = 0; var63 < var62; var63++) {
 				int var64 = arg0.g1_alt3();
 				BaseVarType var65 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), var64);
-				VarValue var66 = Client.field8485.decodeVarValue(arg0, var65);
+				VarValue var66 = Client.varPlayerTypeList.decodeVarValue(arg0, var65);
 				arg2.field10460.method14735(var66.field4240, var66.field4239);
 			}
 		}
 		if ((arg3 & 0x200) != 0) {
 			String var67 = arg0.gjstr();
-			if (Client.field4490 == arg2) {
+			if (Client.localPlayerEntity == arg2) {
 				ChatHistory.method2664(2, 0, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var67, null);
 			}
 			arg2.method19124(var67, 0, 0);
@@ -733,8 +733,8 @@ public class ReceivePlayerPositions {
 			arg2.field10426 = arg0.g1b_alt1() * 262144;
 			arg2.field10419 = arg0.g1b_alt1();
 			arg2.field10428 = arg0.g1b();
-			arg2.field10429 = arg0.g2_alt3() + Client.field10903;
-			arg2.field10399 = arg0.g2_alt1() + Client.field10903;
+			arg2.field10429 = arg0.g2_alt3() + Client.currentclock;
+			arg2.field10399 = arg0.g2_alt1() + Client.currentclock;
 			arg2.field10431 = arg0.g2_alt1();
 			arg2.field10400 = 1;
 			arg2.field10396 = 0;
@@ -757,8 +757,8 @@ public class ReceivePlayerPositions {
 			arg2.field10435 = arg0.g1b_alt3();
 			arg2.field10436 = arg0.g1b_alt2();
 			arg2.field10437 = (byte) arg0.g1_alt1();
-			arg2.field10446 = Client.field10903 + arg0.g2();
-			arg2.field10464 = Client.field10903 + arg0.g2();
+			arg2.field10446 = Client.currentclock + arg0.g2();
+			arg2.field10464 = Client.currentclock + arg0.g2();
 		}
 		if ((arg3 & 0x400) != 0) {
 			arg2.field12070 = (CommunityPartnerType) SerializableEnums.decode(CommunityPartnerType.method3559(), arg0.g1_alt2());

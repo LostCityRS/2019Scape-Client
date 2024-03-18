@@ -15,30 +15,30 @@ public class StockmarketSlot {
 	public byte field4957;
 
 	@ObfuscatedName("rk.n")
-	public int field4959;
+	public int obj;
 
 	@ObfuscatedName("rk.m")
-	public int field4961;
+	public int price;
 
 	@ObfuscatedName("rk.k")
-	public int field4960;
+	public int count;
 
 	@ObfuscatedName("rk.f")
-	public int field4958;
+	public int completedCount;
 
 	@ObfuscatedName("rk.w")
-	public int field4962;
+	public int completedGold;
 
 	public StockmarketSlot() {
 	}
 
 	public StockmarketSlot(Packet arg0, VarTypeList arg1) {
 		this.field4957 = arg0.g1b();
-		this.field4959 = arg0.g2();
-		this.field4961 = arg0.g4s();
-		this.field4960 = arg0.g4s();
-		this.field4958 = arg0.g4s();
-		this.field4962 = arg0.g4s();
+		this.obj = arg0.g2();
+		this.price = arg0.g4s();
+		this.count = arg0.g4s();
+		this.completedCount = arg0.g4s();
+		this.completedGold = arg0.g4s();
 		if (arg1 != null) {
 			method972(arg0, arg1);
 		}
@@ -73,7 +73,7 @@ public class StockmarketSlot {
 	}
 
 	@ObfuscatedName("rk.m(B)I")
-	public int method7611() {
+	public int getOfferType() {
 		return (this.field4957 & 0x8) == 8 ? 1 : 0;
 	}
 }

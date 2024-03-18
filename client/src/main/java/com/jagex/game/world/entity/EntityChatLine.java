@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class EntityChatLine {
 
 	@ObfuscatedName("su.e")
-	public String field6682;
+	public String text;
 
 	@ObfuscatedName("su.n")
 	public int field6686;
@@ -22,7 +22,7 @@ public class EntityChatLine {
 
 	@ObfuscatedName("su.e(I)Ljava/lang/String;")
 	public String method8281() {
-		return this.field6682;
+		return this.text;
 	}
 
 	@ObfuscatedName("su.n(B)I")

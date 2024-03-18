@@ -39,7 +39,7 @@ public class ObjType implements ConfigType {
 	public int id;
 
 	@ObfuscatedName("abv.p")
-	public int field8628 = -1;
+	public int category = -1;
 
 	@ObfuscatedName("abv.d")
 	public int model;
@@ -102,19 +102,19 @@ public class ObjType implements ConfigType {
 	public String[] iop;
 
 	@ObfuscatedName("abv.ac")
-	public int[] field8649;
+	public int[] cursor;
 
 	@ObfuscatedName("abv.ai")
-	public int[] field8619;
+	public int[] icursor;
 
 	@ObfuscatedName("abv.aw")
-	public int field8651 = -1;
+	public int wearpos = -1;
 
 	@ObfuscatedName("abv.as")
-	public int field8652 = -1;
+	public int wearpos2 = -1;
 
 	@ObfuscatedName("abv.at")
-	public int field8653 = -1;
+	public int wearpos3 = -1;
 
 	@ObfuscatedName("abv.ad")
 	public int manwear = -1;
@@ -192,7 +192,7 @@ public class ObjType implements ConfigType {
 	public String field8678 = "null";
 
 	@ObfuscatedName("abv.bn")
-	public int field8679 = 0;
+	public int shardcount = 0;
 
 	@ObfuscatedName("abv.bt")
 	public int resizex = 128;
@@ -216,7 +216,7 @@ public class ObjType implements ConfigType {
 	public boolean stockmarket = false;
 
 	@ObfuscatedName("abv.bw")
-	public boolean field8687 = false;
+	public boolean tradeable = false;
 
 	@ObfuscatedName("abv.bo")
 	public boolean field8688 = false;
@@ -240,7 +240,7 @@ public class ObjType implements ConfigType {
 	public int boughttemplate = -1;
 
 	@ObfuscatedName("abv.bj")
-	public boolean field8680 = false;
+	public boolean minimenu_colour_overridden = false;
 
 	@ObfuscatedName("abv.bs")
 	public int field8696;
@@ -249,7 +249,7 @@ public class ObjType implements ConfigType {
 	public boolean field8697 = false;
 
 	@ObfuscatedName("abv.cg")
-	public boolean field8698 = true;
+	public boolean placeholder = true;
 
 	@ObfuscatedName("abv.ce")
 	public static String COL_TAG_END = "</col>";
@@ -274,7 +274,7 @@ public class ObjType implements ConfigType {
 			this.genShard((ObjType) this.myList.list(this.shardtemplate), (ObjType) this.myList.list(this.shardlink), this.factory.languageId);
 		}
 		if (this.dummyitem != 0) {
-			this.field8687 = false;
+			this.tradeable = false;
 		}
 		if (this.factory.allowMembers || !this.members) {
 			return;
@@ -284,7 +284,7 @@ public class ObjType implements ConfigType {
 		this.iop = this.factory.defaultIOps;
 		this.stockmarket = false;
 		this.field8691 = null;
-		this.field8687 = false;
+		this.tradeable = false;
 		if (this.params == null) {
 			return;
 		}
@@ -304,7 +304,7 @@ public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.e(Lalw;B)V")
 	public void decode(Packet buf) {
-		this.field8687 = true;
+		this.tradeable = true;
 		while (true) {
 			int code = buf.g1();
 			if (code == 0) {
@@ -341,11 +341,11 @@ public class ObjType implements ConfigType {
 		} else if (code == 12) {
 			this.cost = buf.g4s();
 		} else if (code == 13) {
-			this.field8651 = buf.g1();
+			this.wearpos = buf.g1();
 		} else if (code == 14) {
-			this.field8652 = buf.g1();
+			this.wearpos2 = buf.g1();
 		} else if (code == 15) {
-			this.field8687 = false;
+			this.tradeable = false;
 		} else if (code == 16) {
 			this.members = true;
 		} else if (code == 23) {
@@ -357,7 +357,7 @@ public class ObjType implements ConfigType {
 		} else if (code == 26) {
 			this.womanwear2 = buf.gSmart2or4null();
 		} else if (code == 27) {
-			this.field8653 = buf.g1();
+			this.wearpos3 = buf.g1();
 		} else if (code >= 30 && code < 35) {
 			this.op[code - 30] = buf.gjstr();
 		} else if (code >= 35 && code < 40) {
@@ -386,7 +386,7 @@ public class ObjType implements ConfigType {
 			}
 		} else if (code == 43) {
 			this.field8696 = buf.g4s();
-			this.field8680 = true;
+			this.minimenu_colour_overridden = true;
 		} else if (code == 44) {
 			int var9 = buf.g2();
 			int var10 = 0;
@@ -432,7 +432,7 @@ public class ObjType implements ConfigType {
 		} else if (code == 93) {
 			this.womanhead2 = buf.gSmart2or4null();
 		} else if (code == 94) {
-			this.field8628 = buf.g2();
+			this.category = buf.g2();
 		} else if (code == 95) {
 			this.zan2d = buf.g2();
 		} else if (code == 96) {
@@ -473,8 +473,8 @@ public class ObjType implements ConfigType {
 			this.womanwearyoff = buf.g1b() << 2;
 			this.womanwearzoff = buf.g1b() << 2;
 		} else if (code == 127 || code == 128 || code == 129 || code == 130) {
-			buf.g1(); // cursor1op, cursor2op, cursor1iop, cursor2iop
-			buf.g2(); // cursor1, cursor2, icursor1, icursor2
+			buf.g1();
+			buf.g2();
 		} else if (code == 132) {
 			int length = buf.g1();
 			this.field8691 = new int[length];
@@ -488,17 +488,17 @@ public class ObjType implements ConfigType {
 		} else if (code == 140) {
 			this.boughttemplate = buf.g2();
 		} else if (code >= 142 && code < 147) {
-			if (this.field8649 == null) {
-				this.field8649 = new int[6];
-				Arrays.fill(this.field8649, -1);
+			if (this.cursor == null) {
+				this.cursor = new int[6];
+				Arrays.fill(this.cursor, -1);
 			}
-			this.field8649[code - 142] = buf.g2();
+			this.cursor[code - 142] = buf.g2();
 		} else if (code >= 150 && code < 155) {
-			if (this.field8619 == null) {
-				this.field8619 = new int[5];
-				Arrays.fill(this.field8619, -1);
+			if (this.icursor == null) {
+				this.icursor = new int[5];
+				Arrays.fill(this.icursor, -1);
 			}
-			this.field8619[code - 150] = buf.g2();
+			this.icursor[code - 150] = buf.g2();
 		} else if (code != 156) {
 			if (code == 157) {
 				this.field8697 = true;
@@ -507,7 +507,7 @@ public class ObjType implements ConfigType {
 			} else if (code == 162) {
 				this.shardtemplate = buf.g2();
 			} else if (code == 163) {
-				this.field8679 = buf.g2();
+				this.shardcount = buf.g2();
 			} else if (code == 164) {
 				this.field8678 = buf.gjstr();
 			} else if (code == 165) {
@@ -515,7 +515,7 @@ public class ObjType implements ConfigType {
 			} else if (code == 167) {
 				this.field8688 = true;
 			} else if (code == 168) {
-				this.field8698 = false;
+				this.placeholder = false;
 			} else if (code == 249) {
 				int length = buf.g1();
 				if (this.params == null) {
@@ -558,29 +558,29 @@ public class ObjType implements ConfigType {
 			this.cost = to.cost;
 			this.stackable = 1;
 			if (to.field8688) {
-				this.field8687 = false;
+				this.tradeable = false;
 			} else {
-				this.field8687 = to.field8687;
+				this.tradeable = to.tradeable;
 			}
 		} else if (DerivedObjType.SHARD == derived) {
 			this.name = to.field8678;
-			this.cost = (int) Math.floor((double) (to.cost / to.field8679));
+			this.cost = (int) Math.floor((double) (to.cost / to.shardcount));
 			this.stackable = 1;
 			this.stockmarket = to.stockmarket;
-			this.field8687 = to.field8687;
-			this.field8628 = from.field8628;
-			this.field8649 = from.field8649;
-			this.field8619 = from.field8619;
+			this.tradeable = to.tradeable;
+			this.category = from.category;
+			this.cursor = from.cursor;
+			this.icursor = from.icursor;
 			this.iop = new String[5];
-			this.iop[0] = LocalisedText.field8958.localisedText(language);
-			this.iop[4] = localisedText.localisedText(language);
+			this.iop[0] = LocalisedText.field8958.forLang(language);
+			this.iop[4] = localisedText.forLang(language);
 		} else {
 			this.cost = 0;
 			this.stackable = to.stackable;
-			this.field8687 = false;
-			this.field8651 = to.field8651;
-			this.field8652 = to.field8652;
-			this.field8653 = to.field8653;
+			this.tradeable = false;
+			this.wearpos = to.wearpos;
+			this.wearpos2 = to.wearpos2;
+			this.wearpos3 = to.wearpos3;
 			this.manwear = to.manwear;
 			this.manwear2 = to.manwear2;
 			this.manwear3 = to.manwear3;
@@ -597,7 +597,7 @@ public class ObjType implements ConfigType {
 			this.manhead2 = to.manhead2;
 			this.womanhead = to.womanhead;
 			this.womanhead2 = to.womanhead2;
-			this.field8628 = to.field8628;
+			this.category = to.category;
 			this.team = to.team;
 			this.op = to.op;
 			this.params = to.params;
@@ -607,8 +607,8 @@ public class ObjType implements ConfigType {
 					this.iop[index] = to.iop[index];
 				}
 			}
-			this.iop[4] = localisedText.localisedText(language);
-			this.field8698 = false;
+			this.iop[4] = localisedText.forLang(language);
+			this.placeholder = false;
 		}
 	}
 
@@ -938,9 +938,9 @@ public class ObjType implements ConfigType {
 		if (amount < 100000) {
 			return formatObjCountTagged(graphics.invHundredColor) + amount + COL_TAG_END;
 		} else if (amount < 10000000) {
-			return formatObjCountTagged(graphics.invThousandColor) + amount / 1000 + LocalisedText.THOUSAND_SHORT.localisedText(language) + COL_TAG_END;
+			return formatObjCountTagged(graphics.invThousandColor) + amount / 1000 + LocalisedText.THOUSAND_SHORT.forLang(language) + COL_TAG_END;
 		} else {
-			return formatObjCountTagged(graphics.invMillionColor) + amount / 1000000 + LocalisedText.MILLION_SHORT.localisedText(language) + COL_TAG_END;
+			return formatObjCountTagged(graphics.invMillionColor) + amount / 1000000 + LocalisedText.MILLION_SHORT.forLang(language) + COL_TAG_END;
 		}
 	}
 
@@ -1183,12 +1183,12 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.ae(II)I")
-	public int method14642(int arg0) {
-		return this.field8649 == null ? -1 : this.field8649[arg0];
+	public int getCursor(int arg0) {
+		return this.cursor == null ? -1 : this.cursor[arg0];
 	}
 
 	@ObfuscatedName("abv.ag(II)I")
-	public int method14684(int arg0) {
-		return this.field8619 == null ? -1 : this.field8619[arg0];
+	public int getICursor(int arg0) {
+		return this.icursor == null ? -1 : this.icursor[arg0];
 	}
 }
