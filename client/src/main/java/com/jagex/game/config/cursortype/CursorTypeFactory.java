@@ -8,36 +8,36 @@ import deob.ObfuscatedName;
 public abstract class CursorTypeFactory {
 
 	@ObfuscatedName("xd.e")
-	public Js5 field7960;
+	public Js5 js5;
 
 	@ObfuscatedName("xd.n")
-	public final WeightedCache field7959 = new WeightedCache(2);
+	public final WeightedCache cursorCache = new WeightedCache(2);
 
-	public CursorTypeFactory(Js5 arg0) {
-		this.field7960 = arg0;
+	public CursorTypeFactory(Js5 js5) {
+		this.js5 = js5;
 	}
 
 	@ObfuscatedName("xd.e(I)V")
 	public void method10287() {
-		WeightedCache var1 = this.field7959;
-		synchronized (this.field7959) {
-			this.field7959.method2924();
+		WeightedCache var1 = this.cursorCache;
+		synchronized (this.cursorCache) {
+			this.cursorCache.method2924();
 		}
 	}
 
 	@ObfuscatedName("xd.n(II)V")
 	public void method10291(int arg0) {
-		WeightedCache var2 = this.field7959;
-		synchronized (this.field7959) {
-			this.field7959.method2923(arg0);
+		WeightedCache var2 = this.cursorCache;
+		synchronized (this.cursorCache) {
+			this.cursorCache.method2923(arg0);
 		}
 	}
 
 	@ObfuscatedName("xd.m(I)V")
 	public void method10289() {
-		WeightedCache var1 = this.field7959;
-		synchronized (this.field7959) {
-			this.field7959.method2928();
+		WeightedCache var1 = this.cursorCache;
+		synchronized (this.cursorCache) {
+			this.cursorCache.method2928();
 		}
 	}
 }

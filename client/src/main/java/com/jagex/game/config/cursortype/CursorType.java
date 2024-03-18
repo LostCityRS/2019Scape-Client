@@ -10,53 +10,53 @@ import deob.ObfuscatedName;
 public class CursorType implements ConfigType {
 
 	@ObfuscatedName("xj.e")
-	public final CursorTypeFactory field7962;
+	public final CursorTypeFactory myList;
 
 	@ObfuscatedName("xj.n")
-	public int field7963;
+	public int graphic;
 
 	@ObfuscatedName("xj.m")
-	public int field7964;
+	public int hotspotx;
 
 	@ObfuscatedName("xj.k")
-	public int field7965;
+	public int hotspoty;
 
-	public CursorType(int arg0, CursorTypeFactory arg1) {
-		this.field7962 = arg1;
+	public CursorType(int id, CursorTypeFactory factory) {
+		this.myList = factory;
 	}
 
 	@ObfuscatedName("xj.e(Lalw;B)V")
 	public void decode(Packet buf) {
 		while (true) {
-			int var2 = buf.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method10303(buf, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("xj.u(Lalw;II)V")
-	public void method10303(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			this.field7963 = arg0.gSmart2or4null();
-		} else if (arg1 == 2) {
-			this.field7964 = arg0.g1();
-			this.field7965 = arg0.g1();
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			this.graphic = buf.gSmart2or4null();
+		} else if (code == 2) {
+			this.hotspotx = buf.g1();
+			this.hotspoty = buf.g1();
 		}
 	}
 
 	@ObfuscatedName("xj.z(I)Lde;")
-	public synchronized SpriteData method10302() {
-		SpriteData var1 = (SpriteData) this.field7962.field7959.method2930((long) this.field7963);
-		if (var1 != null) {
-			return var1;
+	public synchronized SpriteData getCursor() {
+		SpriteData cached = (SpriteData) this.myList.cursorCache.method2930((long) this.graphic);
+		if (cached != null) {
+			return cached;
 		}
-		SpriteData var2 = SpriteDataProvider.method1609(this.field7962.field7960, this.field7963, 0);
-		if (var2 != null) {
-			this.field7962.field7959.method2921(var2, (long) this.field7963);
+		SpriteData sprite = SpriteDataProvider.method1609(this.myList.js5, this.graphic, 0);
+		if (sprite != null) {
+			this.myList.cursorCache.method2921(sprite, (long) this.graphic);
 		}
-		return var2;
+		return sprite;
 	}
 
 	@ObfuscatedName("xj.n(I)V")

@@ -3415,11 +3415,11 @@ public final class Client extends GameShell {
 		}
 		if (arg0 != -1) {
 			CursorType var1 = (CursorType) field2427.list(arg0);
-			SpriteData var2 = var1.method10302();
+			SpriteData var2 = var1.getCursor();
 			if (var2 == null) {
 				arg0 = -1;
 			} else {
-				GameShell.mouseImp.setcustomcursor(GameShell.canvas, var2.method2604(true), var2.method2596(), var2.method2597(), new Point(var1.field7964, var1.field7965));
+				GameShell.mouseImp.setcustomcursor(GameShell.canvas, var2.method2604(true), var2.method2596(), var2.method2597(), new Point(var1.hotspotx, var1.hotspoty));
 				field10972 = arg0;
 			}
 		}
