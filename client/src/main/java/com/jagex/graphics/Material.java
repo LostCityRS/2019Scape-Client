@@ -32,10 +32,10 @@ public class Material {
 	public int size;
 
 	@ObfuscatedName("dv.ad")
-	public float field1317 = 0.0F;
+	public float speedU = 0.0F;
 
 	@ObfuscatedName("dv.am")
-	public float field1338 = 0.0F;
+	public float speedV = 0.0F;
 
 	@ObfuscatedName("dv.au")
 	public boolean field1336 = false;
@@ -53,10 +53,10 @@ public class Material {
 	public byte repeatT = 0;
 
 	@ObfuscatedName("dv.bh")
-	public byte field1308 = 0;
+	public byte effect = 0;
 
 	@ObfuscatedName("dv.bx")
-	public byte field1305 = 0;
+	public byte effectArg1 = 0;
 
 	@ObfuscatedName("dv.bd")
 	public int field1359 = 0;
@@ -159,16 +159,16 @@ public class Material {
 		}
 		int var7 = arg0.g1();
 		if ((var7 & 0x1) != 0) {
-			this.field1317 = (float) arg0.g2s() * 127.0F / 32767.0F / 64.0F;
+			this.speedU = (float) arg0.g2s() * 127.0F / 32767.0F / 64.0F;
 		}
 		if ((var7 & 0x2) != 0) {
-			this.field1338 = (float) arg0.g2s() * 127.0F / 32767.0F / 64.0F;
+			this.speedV = (float) arg0.g2s() * 127.0F / 32767.0F / 64.0F;
 		}
 		if (arg0.g1() != 1) {
 			return;
 		}
-		this.field1308 = (byte) arg0.g1();
-		this.field1305 = (byte) arg0.g1();
+		this.effect = (byte) arg0.g1();
+		this.effectArg1 = (byte) arg0.g1();
 		this.field1359 = arg0.g4s();
 		this.field1311 = (byte) arg0.g1();
 		arg0.g1();
@@ -224,10 +224,10 @@ public class Material {
 			arg0.gFloat();
 		}
 		if ((var2 & 0x100) != 0) {
-			this.field1317 = (float) arg0.g2s() * 127.0F / 32767.0F / 64.0F;
+			this.speedU = (float) arg0.g2s() * 127.0F / 32767.0F / 64.0F;
 		}
 		if ((var2 & 0x200) != 0) {
-			this.field1338 = (float) arg0.g2s() * 127.0F / 32767.0F / 64.0F;
+			this.speedV = (float) arg0.g2s() * 127.0F / 32767.0F / 64.0F;
 		}
 		byte var4 = (byte) arg0.g1();
 		this.repeatS = (byte) (var4 & 0x7);

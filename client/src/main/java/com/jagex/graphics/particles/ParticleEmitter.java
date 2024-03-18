@@ -73,9 +73,9 @@ public class ParticleEmitter {
 		this.field7788 = arg1;
 		this.field7785 = arg2;
 		this.field7774 = arg3;
-		this.field7772 = this.field7788.method2079(arg0.field1599);
+		this.field7772 = this.field7788.method2079(arg0.emitterTypeList);
 		if (!arg0.method2129() && this.field7772.field3460 != -1) {
-			this.field7772 = arg0.field1599.method6004(this.field7772.field3460);
+			this.field7772 = arg0.emitterTypeList.get(this.field7772.field3460);
 		}
 		this.field7775 = new LinkQueue();
 		this.field7786 = (int) ((double) this.field7786 + Math.random() * 64.0D);

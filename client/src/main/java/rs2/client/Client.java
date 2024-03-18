@@ -3088,7 +3088,7 @@ public final class Client extends GameShell {
 			var6.method6703((float) (var2.width / 2), (float) (var2.height / 2), 512.0F, 512.0F, (float) world.method7760(), (float) world.method7734(), (float) var2.width, (float) var2.height);
 			renderer.method2220(var6);
 			renderer.setSunAmbientIntensity(1.0F);
-			renderer.method2223(16777215, 0.5F, 0.5F, 20.0F, -50.0F, 30.0F);
+			renderer.setSun(16777215, 0.5F, 0.5F, 20.0F, -50.0F, 30.0F);
 			Model var7 = renderer.createModel(var3, 2048, 64, 64, 768);
 			int var8 = 0;
 			label42: for (int var9 = 0; var9 < 500; var9++) {
@@ -5804,7 +5804,7 @@ public final class Client extends GameShell {
 			renderer.method2475(3, var24);
 		} else {
 			renderer.setSunAmbientIntensity(1.0F);
-			renderer.method2223(16777215, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
+			renderer.setSun(16777215, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
 			if (Client.field3416 == 3) {
 				int var27 = (int) ((double) field9155.method4718() * 2607.5945876176133D);
 				int var28 = (int) ((double) field9155.method4719() * 2607.5945876176133D);

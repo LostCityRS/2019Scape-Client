@@ -231,7 +231,7 @@ public class SkyboxRelated {
 			var4 = var14;
 		}
 		arg0.setSunAmbientIntensity(1.0F);
-		arg0.method2223(this.field5111, 1.0F, 1.0F, (float) var4, (float) var5, (float) var6);
+		arg0.setSun(this.field5111, 1.0F, 1.0F, (float) var4, (float) var5, (float) var6);
 		var3.method1946(this.field5126 & 0x3FFF, this.field5127 & 0x3FFF, this.field5124 & 0x3FFF);
 		Model var15 = arg0.createModel(var3, 2048, 0, 64, 768);
 		int var16 = var15.method1730() - var15.method1729();
@@ -292,7 +292,7 @@ public class SkyboxRelated {
 		Model var12 = field5129.method1773((byte) 0, 51200, true);
 		var12.method1744((short) 0, (short) this.field5135);
 		arg0.setSunAmbientIntensity(1.0F);
-		arg0.method2223(16777215, 1.0F, 1.0F, (float) var3, (float) var4, (float) var5);
+		arg0.setSun(16777215, 1.0F, 1.0F, (float) var3, (float) var4, (float) var5);
 		int var13 = this.field5123 * 1024 / (var12.method1730() - var12.method1729());
 		if (this.field5111 != 0) {
 			var13 = var13 * 13 / 16;
@@ -352,10 +352,10 @@ public class SkyboxRelated {
 				var1.method1966(var11, var12, 1, (byte) 0, (byte) 0, (short) 127, (byte) 0, (short) 0);
 			}
 		}
-		var1.field1374 = var1.field1373;
-		var1.field1397 = null;
-		var1.field1379 = null;
-		var1.field1392 = null;
+		var1.field1374 = var1.vertexCount;
+		var1.faceLabel = null;
+		var1.vertexLabel = null;
+		var1.facePriority = null;
 		field5129 = arg0.createModel(var1, 51200, 33, 64, 768);
 	}
 

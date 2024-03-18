@@ -19,7 +19,7 @@ public class BasicBillboardTypeList implements BillboardTypeList {
 	}
 
 	@ObfuscatedName("nw.e(II)Lnm;")
-	public BillboardType method6015(int arg0) {
+	public BillboardType get(int arg0) {
 		BillboardType var2 = (BillboardType) this.field3565.get((long) arg0);
 		if (var2 != null) {
 			return var2;

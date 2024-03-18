@@ -258,13 +258,13 @@ public class LegacyOpenGLModel extends Model {
 			this.field9663 = new LegacyModelBindingRelated();
 		}
 		MaterialList var7 = arg0.materialList;
-		BillboardTypeList var8 = arg0.field1598;
-		int[] var9 = new int[arg1.field1384];
+		BillboardTypeList var8 = arg0.billboardList;
+		int[] var9 = new int[arg1.faceCount];
 		this.field9679 = new int[arg1.field1374 + 1];
-		for (int var10 = 0; var10 < arg1.field1384; var10++) {
-			if (arg1.field1391 == null || arg1.field1391[var10] != 2) {
-				if (arg1.field1396 != null && arg1.field1396[var10] != -1) {
-					Material var11 = var7.get(arg1.field1396[var10] & 0xFFFF);
+		for (int var10 = 0; var10 < arg1.faceCount; var10++) {
+			if (arg1.faceType == null || arg1.faceType[var10] != 2) {
+				if (arg1.faceMaterial != null && arg1.faceMaterial[var10] != -1) {
+					Material var11 = var7.get(arg1.faceMaterial[var10] & 0xFFFF);
 					if (((this.field9628 & 0x40) == 0 || !var11.highDetail) && var11.field1361) {
 						continue;
 					}
@@ -273,9 +273,9 @@ public class LegacyOpenGLModel extends Model {
 				int var10001 = this.field9670;
 				this.field9670 = (var10003 + 1) * 3;
 				var9[var10001] = var10;
-				this.field9679[arg1.field1415[var10]]++;
-				this.field9679[arg1.field1386[var10]]++;
-				this.field9679[arg1.field1400[var10]]++;
+				this.field9679[arg1.faceVertex1[var10]]++;
+				this.field9679[arg1.faceVertex2[var10]]++;
+				this.field9679[arg1.faceVertex3[var10]]++;
 			}
 		}
 		this.field9650 = this.field9670;
@@ -288,18 +288,18 @@ public class LegacyOpenGLModel extends Model {
 			byte var18 = 0;
 			byte var19 = 0;
 			byte var20 = 0;
-			if (arg1.field1412 != null) {
+			if (arg1.billboard != null) {
 				boolean var21 = false;
-				for (int var22 = 0; var22 < arg1.field1412.length; var22++) {
-					ModelBillboard var23 = arg1.field1412[var22];
+				for (int var22 = 0; var22 < arg1.billboard.length; var22++) {
+					ModelBillboard var23 = arg1.billboard[var22];
 					if (var23.field1654 == var15) {
-						BillboardType var24 = var8.method6015(var23.field1653);
+						BillboardType var24 = var8.get(var23.field1653);
 						if (var24.field3456) {
 							var21 = true;
 						}
 						if (var24.field3455 != -1) {
 							Material var25 = var7.get(var24.field3455);
-							if (MaterialAlphaMode.field7573 == var25.alphaMode) {
+							if (MaterialAlphaMode.MULTIPLY == var25.alphaMode) {
 								this.field9632 = true;
 							}
 						}
@@ -311,12 +311,12 @@ public class LegacyOpenGLModel extends Model {
 					continue;
 				}
 			}
-			if (arg1.field1403 != null) {
+			if (arg1.emitters != null) {
 				boolean var26 = false;
-				for (int var27 = 0; var27 < arg1.field1403.length; var27++) {
-					ModelParticleEmitter var28 = arg1.field1403[var27];
+				for (int var27 = 0; var27 < arg1.emitters.length; var27++) {
+					ModelParticleEmitter var28 = arg1.emitters[var27];
 					if (var28.field1463 == var15) {
-						ParticleEmitterType var29 = this.field9626.field1599.method6004(var28.field1477);
+						ParticleEmitterType var29 = this.field9626.emitterTypeList.get(var28.particle);
 						if (var29.field3510) {
 							var26 = true;
 						}
@@ -329,25 +329,25 @@ public class LegacyOpenGLModel extends Model {
 				}
 			}
 			short var30 = -1;
-			if (arg1.field1396 != null) {
-				var30 = arg1.field1396[var15];
+			if (arg1.faceMaterial != null) {
+				var30 = arg1.faceMaterial[var15];
 				if (var30 != -1) {
 					var16 = var7.get(var30 & 0xFFFF);
 					if ((this.field9628 & 0x40) != 0 && var16.highDetail) {
 						var30 = -1;
 						var16 = null;
 					} else {
-						var19 = var16.field1308;
-						var20 = var16.field1305;
-						if (var16.field1317 != 0.0F || var16.field1338 != 0.0F) {
+						var19 = var16.effect;
+						var20 = var16.effectArg1;
+						if (var16.speedU != 0.0F || var16.speedV != 0.0F) {
 							this.field9633 = true;
 						}
 					}
 				}
 			}
-			boolean var31 = arg1.field1393 != null && arg1.field1393[var15] != 0 || var16 != null && MaterialAlphaMode.NONE != var16.alphaMode;
-			if ((var13 || var31) && arg1.field1392 != null) {
-				var17 += arg1.field1392[var15] << 17;
+			boolean var31 = arg1.faceTrans != null && arg1.faceTrans[var15] != 0 || var16 != null && MaterialAlphaMode.NONE != var16.alphaMode;
+			if ((var13 || var31) && arg1.facePriority != null) {
+				var17 += arg1.facePriority[var15] << 17;
 			}
 			if (var31) {
 				var17 += 65536;
@@ -358,25 +358,25 @@ public class LegacyOpenGLModel extends Model {
 			int var35 = (var14 & 0xFFFF) + var34;
 			var12[var14] = ((long) var33 << 32) + (long) var35;
 			this.field9632 |= var31;
-			this.field9633 |= var16 != null && (var16.field1317 != 0.0F || var16.field1338 != 0.0F);
+			this.field9633 |= var16 != null && (var16.speedU != 0.0F || var16.speedV != 0.0F);
 		}
-		Algorithms.method5114(var12, var9);
-		this.field9634 = arg1.field1373;
+		Algorithms.quicksortParallel(var12, var9);
+		this.field9634 = arg1.vertexCount;
 		this.field9635 = arg1.field1374;
-		this.field9636 = arg1.field1375;
-		this.field9637 = arg1.field1382;
-		this.field9619 = arg1.field1411;
-		this.field9640 = arg1.field1417;
+		this.field9636 = arg1.vertexX;
+		this.field9637 = arg1.vertexY;
+		this.field9619 = arg1.vertexZ;
+		this.field9640 = arg1.vertexSourceModels;
 		LegacyVertexNormal[] var36 = new LegacyVertexNormal[this.field9635];
-		this.field9687 = arg1.field1403;
-		this.field9641 = arg1.field1416;
-		if (arg1.field1412 != null) {
-			this.field9660 = arg1.field1412.length;
+		this.field9687 = arg1.emitters;
+		this.field9641 = arg1.effectors;
+		if (arg1.billboard != null) {
+			this.field9660 = arg1.billboard.length;
 			this.field9656 = new LegacyModelRelated5[this.field9660];
 			this.field9639 = new LegacyModelRelated[this.field9660];
 			for (int var37 = 0; var37 < this.field9660; var37++) {
-				ModelBillboard var38 = arg1.field1412[var37];
-				BillboardType var39 = var8.method6015(var38.field1653);
+				ModelBillboard var38 = arg1.billboard[var37];
+				BillboardType var39 = var8.get(var38.field1653);
 				int var40 = -1;
 				for (int var41 = 0; var41 < this.field9670; var41++) {
 					if (var38.field1654 == var9[var41]) {
@@ -387,9 +387,9 @@ public class LegacyOpenGLModel extends Model {
 				if (var40 == -1) {
 					throw new RuntimeException();
 				}
-				int var42 = ColourUtils.field8151[arg1.field1395[var38.field1654] & 0xFFFF] & 0xFFFFFF;
-				int var43 = var42 | 255 - (arg1.field1393 == null ? 0 : arg1.field1393[var38.field1654]) << 24;
-				this.field9656[var37] = new LegacyModelRelated5(var40, arg1.field1415[var38.field1654], arg1.field1386[var38.field1654], arg1.field1400[var38.field1654], var39.field3451, var39.field3452, var39.field3455, var39.field3450, var39.field3453, var39.field3456, var39.field3449, var38.field1656);
+				int var42 = ColourUtils.field8151[arg1.faceColour[var38.field1654] & 0xFFFF] & 0xFFFFFF;
+				int var43 = var42 | 255 - (arg1.faceTrans == null ? 0 : arg1.faceTrans[var38.field1654]) << 24;
+				this.field9656[var37] = new LegacyModelRelated5(var40, arg1.faceVertex1[var38.field1654], arg1.faceVertex2[var38.field1654], arg1.faceVertex3[var38.field1654], var39.field3451, var39.field3452, var39.field3455, var39.field3450, var39.field3453, var39.field3456, var39.field3449, var38.field1656);
 				this.field9639[var37] = new LegacyModelRelated(var43);
 			}
 		}
@@ -422,11 +422,11 @@ public class LegacyOpenGLModel extends Model {
 		}
 		this.field9679[arg1.field1374] = var45;
 		ModelRelated1 var48 = this.method1687(arg1, var9, this.field9670);
-		TriangleNormal[] var49 = new TriangleNormal[arg1.field1384];
-		for (int var50 = 0; var50 < arg1.field1384; var50++) {
-			short var51 = arg1.field1415[var50];
-			short var52 = arg1.field1386[var50];
-			short var53 = arg1.field1400[var50];
+		TriangleNormal[] var49 = new TriangleNormal[arg1.faceCount];
+		for (int var50 = 0; var50 < arg1.faceCount; var50++) {
+			short var51 = arg1.faceVertex1[var50];
+			short var52 = arg1.faceVertex2[var50];
+			short var53 = arg1.faceVertex3[var50];
 			int var54 = this.field9636[var52] - this.field9636[var51];
 			int var55 = this.field9637[var52] - this.field9637[var51];
 			int var56 = this.field9619[var52] - this.field9619[var51];
@@ -447,7 +447,7 @@ public class LegacyOpenGLModel extends Model {
 			int var64 = var60 * 256 / var63;
 			int var65 = var61 * 256 / var63;
 			int var66 = var62 * 256 / var63;
-			byte var67 = arg1.field1391 == null ? 0 : arg1.field1391[var50];
+			byte var67 = arg1.faceType == null ? 0 : arg1.faceType[var50];
 			if (var67 == 0) {
 				LegacyVertexNormal var68 = var36[var51];
 				var68.field1115 += var64;
@@ -473,9 +473,9 @@ public class LegacyOpenGLModel extends Model {
 		}
 		for (int var72 = 0; var72 < this.field9670; var72++) {
 			int var73 = var9[var72];
-			int var74 = arg1.field1395[var73] & 0xFFFF;
-			int var75 = arg1.field1393 == null ? 0 : arg1.field1393[var73] & 0xFF;
-			short var76 = arg1.field1396 == null ? -1 : arg1.field1396[var73];
+			int var74 = arg1.faceColour[var73] & 0xFFFF;
+			int var75 = arg1.faceTrans == null ? 0 : arg1.faceTrans[var73] & 0xFF;
+			short var76 = arg1.faceMaterial == null ? -1 : arg1.faceMaterial[var73];
 			if (var76 != -1 && (this.field9628 & 0x40) != 0 && var7.get(var76).highDetail) {
 				var76 = -1;
 			}
@@ -493,23 +493,23 @@ public class LegacyOpenGLModel extends Model {
 				var91 = 0L;
 				var88 = 0L;
 			} else {
-				short var83 = arg1.field1413 == null ? -1 : arg1.field1413[var73];
+				short var83 = arg1.faceMapping == null ? -1 : arg1.faceMapping[var73];
 				if (var83 == 32766) {
-					int var84 = arg1.field1388[var73] & 0xFF;
-					int var85 = arg1.field1389[var73] & 0xFF;
-					int var86 = arg1.field1390[var73] & 0xFF;
-					int var87 = arg1.field1380[arg1.field1415[var73]] + var84;
+					int var84 = arg1.faceTextureVertexOffset1[var73] & 0xFF;
+					int var85 = arg1.faceTextureVertexOffset2[var73] & 0xFF;
+					int var86 = arg1.faceTextureVertexOffset3[var73] & 0xFF;
+					int var87 = arg1.vertexTextureVertex[arg1.faceVertex1[var73]] + var84;
 					var88 = var87;
-					int var90 = arg1.field1380[arg1.field1386[var73]] + var85;
+					int var90 = arg1.vertexTextureVertex[arg1.faceVertex2[var73]] + var85;
 					var91 = var87;
-					int var93 = arg1.field1380[arg1.field1400[var73]] + var86;
+					int var93 = arg1.vertexTextureVertex[arg1.faceVertex3[var73]] + var86;
 					var94 = var87;
-					var77 = arg1.field1385[var87];
-					var78 = arg1.field1383[var87];
-					var79 = arg1.field1385[var90];
-					var80 = arg1.field1383[var90];
-					var81 = arg1.field1385[var93];
-					var82 = arg1.field1383[var93];
+					var77 = arg1.textureVertexU[var87];
+					var78 = arg1.textureVertexV[var87];
+					var79 = arg1.textureVertexU[var90];
+					var80 = arg1.textureVertexV[var90];
+					var81 = arg1.textureVertexU[var93];
+					var82 = arg1.textureVertexV[var93];
 				} else if (var83 == -1) {
 					var77 = 0.0F;
 					var78 = 1.0F;
@@ -525,32 +525,32 @@ public class LegacyOpenGLModel extends Model {
 					int var97 = 0;
 					byte var98 = 0;
 					byte var99 = 0;
-					byte var100 = arg1.field1377[var96];
+					byte var100 = arg1.textureTriangleType[var96];
 					if (var100 == 0) {
-						short var101 = arg1.field1415[var73];
-						short var102 = arg1.field1386[var73];
-						short var103 = arg1.field1400[var73];
-						short var104 = arg1.field1404[var96];
-						short var105 = arg1.field1405[var96];
-						short var106 = arg1.field1406[var96];
-						float var107 = (float) arg1.field1375[var104];
-						float var108 = (float) arg1.field1382[var104];
-						float var109 = (float) arg1.field1411[var104];
-						float var110 = (float) arg1.field1375[var105] - var107;
-						float var111 = (float) arg1.field1382[var105] - var108;
-						float var112 = (float) arg1.field1411[var105] - var109;
-						float var113 = (float) arg1.field1375[var106] - var107;
-						float var114 = (float) arg1.field1382[var106] - var108;
-						float var115 = (float) arg1.field1411[var106] - var109;
-						float var116 = (float) arg1.field1375[var101] - var107;
-						float var117 = (float) arg1.field1382[var101] - var108;
-						float var118 = (float) arg1.field1411[var101] - var109;
-						float var119 = (float) arg1.field1375[var102] - var107;
-						float var120 = (float) arg1.field1382[var102] - var108;
-						float var121 = (float) arg1.field1411[var102] - var109;
-						float var122 = (float) arg1.field1375[var103] - var107;
-						float var123 = (float) arg1.field1382[var103] - var108;
-						float var124 = (float) arg1.field1411[var103] - var109;
+						short var101 = arg1.faceVertex1[var73];
+						short var102 = arg1.faceVertex2[var73];
+						short var103 = arg1.faceVertex3[var73];
+						short var104 = arg1.textureTriangleVertex1[var96];
+						short var105 = arg1.textureTriangleVertex2[var96];
+						short var106 = arg1.textureTriangleVertex3[var96];
+						float var107 = (float) arg1.vertexX[var104];
+						float var108 = (float) arg1.vertexY[var104];
+						float var109 = (float) arg1.vertexZ[var104];
+						float var110 = (float) arg1.vertexX[var105] - var107;
+						float var111 = (float) arg1.vertexY[var105] - var108;
+						float var112 = (float) arg1.vertexZ[var105] - var109;
+						float var113 = (float) arg1.vertexX[var106] - var107;
+						float var114 = (float) arg1.vertexY[var106] - var108;
+						float var115 = (float) arg1.vertexZ[var106] - var109;
+						float var116 = (float) arg1.vertexX[var101] - var107;
+						float var117 = (float) arg1.vertexY[var101] - var108;
+						float var118 = (float) arg1.vertexZ[var101] - var109;
+						float var119 = (float) arg1.vertexX[var102] - var107;
+						float var120 = (float) arg1.vertexY[var102] - var108;
+						float var121 = (float) arg1.vertexZ[var102] - var109;
+						float var122 = (float) arg1.vertexX[var103] - var107;
+						float var123 = (float) arg1.vertexY[var103] - var108;
+						float var124 = (float) arg1.vertexZ[var103] - var109;
 						float var125 = var111 * var115 - var112 * var114;
 						float var126 = var112 * var113 - var110 * var115;
 						float var127 = var110 * var114 - var111 * var113;
@@ -569,24 +569,24 @@ public class LegacyOpenGLModel extends Model {
 						var80 = (var121 * var134 + var119 * var132 + var120 * var133) * var135;
 						var82 = (var124 * var134 + var122 * var132 + var123 * var133) * var135;
 					} else {
-						short var136 = arg1.field1415[var73];
-						short var137 = arg1.field1386[var73];
-						short var138 = arg1.field1400[var73];
+						short var136 = arg1.faceVertex1[var73];
+						short var137 = arg1.faceVertex2[var73];
+						short var138 = arg1.faceVertex3[var73];
 						int var139 = var48.field1688[var96];
 						int var140 = var48.field1690[var96];
 						int var141 = var48.field1689[var96];
 						float[] var142 = var48.field1691[var96];
-						byte var143 = arg1.field1414[var96];
-						float var144 = (float) arg1.field1410[var96] / 256.0F;
+						byte var143 = arg1.textureTriangleDirection[var96];
+						float var144 = (float) arg1.textureTriangleSpeed[var96] / 256.0F;
 						if (var100 == 1) {
-							float var145 = (float) arg1.field1409[var96] / 1024.0F;
-							method1684(arg1.field1375[var136], arg1.field1382[var136], arg1.field1411[var136], var139, var140, var141, var142, var145, var143, var144, field9688);
+							float var145 = (float) arg1.textureTriangleScaleZ[var96] / 1024.0F;
+							method1684(arg1.vertexX[var136], arg1.vertexY[var136], arg1.vertexZ[var136], var139, var140, var141, var142, var145, var143, var144, field9688);
 							var77 = field9688[0];
 							var78 = field9688[1];
-							method1684(arg1.field1375[var137], arg1.field1382[var137], arg1.field1411[var137], var139, var140, var141, var142, var145, var143, var144, field9688);
+							method1684(arg1.vertexX[var137], arg1.vertexY[var137], arg1.vertexZ[var137], var139, var140, var141, var142, var145, var143, var144, field9688);
 							var79 = field9688[0];
 							var80 = field9688[1];
-							method1684(arg1.field1375[var138], arg1.field1382[var138], arg1.field1411[var138], var139, var140, var141, var142, var145, var143, var144, field9688);
+							method1684(arg1.vertexX[var138], arg1.vertexY[var138], arg1.vertexZ[var138], var139, var140, var141, var142, var145, var143, var144, field9688);
 							var81 = field9688[0];
 							var82 = field9688[1];
 							float var146 = var145 / 2.0F;
@@ -622,41 +622,41 @@ public class LegacyOpenGLModel extends Model {
 								}
 							}
 						} else if (var100 == 2) {
-							float var147 = (float) arg1.field1398[var96] / 256.0F;
-							float var148 = (float) arg1.field1369[var96] / 256.0F;
-							int var149 = arg1.field1375[var137] - arg1.field1375[var136];
-							int var150 = arg1.field1382[var137] - arg1.field1382[var136];
-							int var151 = arg1.field1411[var137] - arg1.field1411[var136];
-							int var152 = arg1.field1375[var138] - arg1.field1375[var136];
-							int var153 = arg1.field1382[var138] - arg1.field1382[var136];
-							int var154 = arg1.field1411[var138] - arg1.field1411[var136];
+							float var147 = (float) arg1.textureTriangleTranslationU[var96] / 256.0F;
+							float var148 = (float) arg1.textureTriangleTranslationV[var96] / 256.0F;
+							int var149 = arg1.vertexX[var137] - arg1.vertexX[var136];
+							int var150 = arg1.vertexY[var137] - arg1.vertexY[var136];
+							int var151 = arg1.vertexZ[var137] - arg1.vertexZ[var136];
+							int var152 = arg1.vertexX[var138] - arg1.vertexX[var136];
+							int var153 = arg1.vertexY[var138] - arg1.vertexY[var136];
+							int var154 = arg1.vertexZ[var138] - arg1.vertexZ[var136];
 							int var155 = var150 * var154 - var151 * var153;
 							int var156 = var151 * var152 - var149 * var154;
 							int var157 = var149 * var153 - var150 * var152;
-							float var158 = 64.0F / (float) arg1.field1407[var96];
-							float var159 = 64.0F / (float) arg1.field1408[var96];
-							float var160 = 64.0F / (float) arg1.field1409[var96];
+							float var158 = 64.0F / (float) arg1.textureTriangleScaleX[var96];
+							float var159 = 64.0F / (float) arg1.textureTriangleScaleY[var96];
+							float var160 = 64.0F / (float) arg1.textureTriangleScaleZ[var96];
 							float var161 = (var142[2] * (float) var157 + var142[0] * (float) var155 + var142[1] * (float) var156) / var158;
 							float var162 = (var142[5] * (float) var157 + var142[3] * (float) var155 + var142[4] * (float) var156) / var159;
 							float var163 = (var142[8] * (float) var157 + var142[6] * (float) var155 + var142[7] * (float) var156) / var160;
 							var97 = method1685(var161, var162, var163);
-							method1708(arg1.field1375[var136], arg1.field1382[var136], arg1.field1411[var136], var139, var140, var141, var97, var142, var143, var144, var147, var148, field9688);
+							method1708(arg1.vertexX[var136], arg1.vertexY[var136], arg1.vertexZ[var136], var139, var140, var141, var97, var142, var143, var144, var147, var148, field9688);
 							var77 = field9688[0];
 							var78 = field9688[1];
-							method1708(arg1.field1375[var137], arg1.field1382[var137], arg1.field1411[var137], var139, var140, var141, var97, var142, var143, var144, var147, var148, field9688);
+							method1708(arg1.vertexX[var137], arg1.vertexY[var137], arg1.vertexZ[var137], var139, var140, var141, var97, var142, var143, var144, var147, var148, field9688);
 							var79 = field9688[0];
 							var80 = field9688[1];
-							method1708(arg1.field1375[var138], arg1.field1382[var138], arg1.field1411[var138], var139, var140, var141, var97, var142, var143, var144, var147, var148, field9688);
+							method1708(arg1.vertexX[var138], arg1.vertexY[var138], arg1.vertexZ[var138], var139, var140, var141, var97, var142, var143, var144, var147, var148, field9688);
 							var81 = field9688[0];
 							var82 = field9688[1];
 						} else if (var100 == 3) {
-							method1753(arg1.field1375[var136], arg1.field1382[var136], arg1.field1411[var136], var139, var140, var141, var142, var143, var144, field9688);
+							method1753(arg1.vertexX[var136], arg1.vertexY[var136], arg1.vertexZ[var136], var139, var140, var141, var142, var143, var144, field9688);
 							var77 = field9688[0];
 							var78 = field9688[1];
-							method1753(arg1.field1375[var137], arg1.field1382[var137], arg1.field1411[var137], var139, var140, var141, var142, var143, var144, field9688);
+							method1753(arg1.vertexX[var137], arg1.vertexY[var137], arg1.vertexZ[var137], var139, var140, var141, var142, var143, var144, field9688);
 							var79 = field9688[0];
 							var80 = field9688[1];
-							method1753(arg1.field1375[var138], arg1.field1382[var138], arg1.field1411[var138], var139, var140, var141, var142, var143, var144, field9688);
+							method1753(arg1.vertexX[var138], arg1.vertexY[var138], arg1.vertexZ[var138], var139, var140, var141, var142, var143, var144, field9688);
 							var81 = field9688[0];
 							var82 = field9688[1];
 							if ((var143 & 0x1) == 0) {
@@ -697,12 +697,12 @@ public class LegacyOpenGLModel extends Model {
 					var94 = (long) (var99 << 19) | var88;
 				}
 			}
-			byte var164 = arg1.field1391 == null ? 0 : arg1.field1391[var73];
+			byte var164 = arg1.faceType == null ? 0 : arg1.faceType[var73];
 			if (var164 == 0) {
 				long var165 = (long) ((var74 << 8) + var75);
-				short var167 = arg1.field1415[var73];
-				short var168 = arg1.field1386[var73];
-				short var169 = arg1.field1400[var73];
+				short var167 = arg1.faceVertex1[var73];
+				short var168 = arg1.faceVertex2[var73];
+				short var169 = arg1.faceVertex3[var73];
 				LegacyVertexNormal var170 = var36[var167];
 				this.field9653[var72] = this.method15568(arg1, var167, var165 | var88 << 24, var170.field1115, var170.field1114, var170.field1116, var170.field1117, var77, var78);
 				LegacyVertexNormal var171 = var36[var168];
@@ -712,17 +712,17 @@ public class LegacyOpenGLModel extends Model {
 			} else if (var164 == 1) {
 				TriangleNormal var173 = var49[var73];
 				long var174 = ((long) (var173.field1034 + 256) << 24) + ((long) (var173.field1035 & Integer.MIN_VALUE) << 9) + ((long) (var173.field1033 + 256) << 32) + (long) (var74 << 8) + (long) var75;
-				this.field9653[var72] = this.method15568(arg1, arg1.field1415[var73], var174 | var88 << 41, var173.field1035, var173.field1033, var173.field1034, 0, var77, var78);
-				this.field9652[var72] = this.method15568(arg1, arg1.field1386[var73], var174 | var88 << 41, var173.field1035, var173.field1033, var173.field1034, 0, var79, var80);
-				this.field9646[var72] = this.method15568(arg1, arg1.field1400[var73], var174 | var88 << 41, var173.field1035, var173.field1033, var173.field1034, 0, var81, var82);
+				this.field9653[var72] = this.method15568(arg1, arg1.faceVertex1[var73], var174 | var88 << 41, var173.field1035, var173.field1033, var173.field1034, 0, var77, var78);
+				this.field9652[var72] = this.method15568(arg1, arg1.faceVertex2[var73], var174 | var88 << 41, var173.field1035, var173.field1033, var173.field1034, 0, var79, var80);
+				this.field9646[var72] = this.method15568(arg1, arg1.faceVertex3[var73], var174 | var88 << 41, var173.field1035, var173.field1033, var173.field1034, 0, var81, var82);
 			}
-			if (arg1.field1393 != null) {
-				this.field9683[var72] = arg1.field1393[var73];
+			if (arg1.faceTrans != null) {
+				this.field9683[var72] = arg1.faceTrans[var73];
 			}
 			if (arg1.field1399 != null) {
 				this.field9662[var72] = arg1.field1399[var73];
 			}
-			this.field9651[var72] = arg1.field1395[var73];
+			this.field9651[var72] = arg1.faceColour[var73];
 			this.field9685[var72] = var76;
 		}
 		int var176 = 0;
@@ -752,17 +752,17 @@ public class LegacyOpenGLModel extends Model {
 		this.field9690 = method15565(this.field9690, this.field9658);
 		this.field9647 = method15571(this.field9647, this.field9658);
 		this.field9648 = method15571(this.field9648, this.field9658);
-		if (arg1.field1379 != null && LegacyModelFlagsRelated.method1153(arg2, this.field9628)) {
+		if (arg1.vertexLabel != null && LegacyModelFlagsRelated.method1153(arg2, this.field9628)) {
 			this.field9638 = arg1.method1940(false);
 		}
-		if (arg1.field1412 != null && LegacyModelFlagsRelated.method1154(arg2, this.field9628)) {
+		if (arg1.billboard != null && LegacyModelFlagsRelated.method1154(arg2, this.field9628)) {
 			this.field9686 = arg1.method1963();
 		}
-		if (arg1.field1397 != null && LegacyModelFlagsRelated.method1152(arg2, this.field9628)) {
+		if (arg1.faceLabel != null && LegacyModelFlagsRelated.method1152(arg2, this.field9628)) {
 			int var184 = 0;
 			int[] var185 = new int[256];
 			for (int var186 = 0; var186 < this.field9670; var186++) {
-				int var187 = arg1.field1397[var9[var186]];
+				int var187 = arg1.faceLabel[var9[var186]];
 				if (var187 >= 0) {
 					int var10002 = var185[var187]++;
 					if (var187 > var184) {
@@ -776,7 +776,7 @@ public class LegacyOpenGLModel extends Model {
 				var185[var188] = 0;
 			}
 			for (int var189 = 0; var189 < this.field9670; var189++) {
-				int var190 = arg1.field1397[var9[var189]];
+				int var190 = arg1.faceLabel[var9[var189]];
 				if (var190 >= 0) {
 					this.field9649[var190][var185[var190]++] = var189;
 				}
@@ -1884,7 +1884,7 @@ public class LegacyOpenGLModel extends Model {
 			Material var10 = var3.get(arg1 & 0xFFFF);
 			var8 = var10.field1364;
 			var9 = var10.field1363;
-			if (var10.field1317 != 0.0F || var10.field1338 != 0.0F) {
+			if (var10.speedU != 0.0F || var10.speedV != 0.0F) {
 				this.field9633 = true;
 			}
 		}

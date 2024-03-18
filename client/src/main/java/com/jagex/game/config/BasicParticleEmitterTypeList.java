@@ -19,7 +19,7 @@ public class BasicParticleEmitterTypeList implements ParticleEmitterTypeList {
 	}
 
 	@ObfuscatedName("ni.e(II)Lnj;")
-	public synchronized ParticleEmitterType method6004(int arg0) {
+	public synchronized ParticleEmitterType get(int arg0) {
 		ParticleEmitterType var2 = (ParticleEmitterType) this.field3562.get((long) arg0);
 		if (var2 != null) {
 			return var2;

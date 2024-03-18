@@ -1,6 +1,7 @@
-package com.jagex.graphics;
+package com.jagex.graphics.safe;
 
 import com.jagex.game.client.JavaGraphicsRelated3;
+import com.jagex.graphics.*;
 import com.jagex.graphics.safe.PureJavaRenderer;
 import deob.ObfuscatedName;
 

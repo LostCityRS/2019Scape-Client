@@ -165,8 +165,8 @@ public class PureJavaRenderer extends Renderer {
 		this.clipMaxX = 0;
 		this.clipMinY = 0;
 		this.clipMaxY = 0;
-		this.field9783 = 35192064;
-		this.field9790 = 60397056;
+		this.field9783 = 45823;
+		this.field9790 = 78642;
 		this.field9791 = 75518;
 		this.field9796 = new float[6][4];
 		this.field9813 = 1.0F;
@@ -228,7 +228,7 @@ public class PureJavaRenderer extends Renderer {
 				if (var4 > 0) {
 					Material var5 = this.materialList.get(var3.field11267);
 					float var6 = (float) var5.size;
-					var3.method17527((int) ((float) var2 / 1000.0F * var5.field1317 * var6), (int) ((float) var2 / 1000.0F * var5.field1338 * var6));
+					var3.method17527((int) ((float) var2 / 1000.0F * var5.speedU * var6), (int) ((float) var2 / 1000.0F * var5.speedV * var6));
 					var3.field11266 -= var4 * 50;
 				}
 				var3.field11265 = false;
@@ -1993,24 +1993,33 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cy(Laac;Lde;Z)Leu;")
-	public Font createFont(FontMetrics arg0, SpriteData arg1, boolean arg2) {
-		boolean var4 = arg1.isTranslucent();
-		boolean var5 = arg1.isPaletted();
-		if (arg2) {
-			if (var5) {
-				return var4 ? new TranslucentFont(this, arg0, (PalettedSpriteData) arg1) : new OpaqueFont(this, arg0, (PalettedSpriteData) arg1);
-			} else if (var4) {
-				return new TranslucentFont(this, arg0, (FullSpriteData) arg1);
-			} else {
-				return new OpaqueFont(this, arg0, (FullSpriteData) arg1);
+	public Font createFont(FontMetrics metrics, SpriteData sprite, boolean font) {
+		boolean translucent = sprite.isTranslucent();
+		boolean paletted = sprite.isPaletted();
+
+		if (font) {
+			if (paletted) {
+				if (translucent) {
+					return new TranslucentFont(this, metrics, (PalettedSpriteData) sprite);
+				} else {
+					return new OpaqueFont(this, metrics, (PalettedSpriteData) sprite);
+				}
 			}
-		} else if (!var5) {
-			return new PureJavaFontRelated(this, arg0, (FullSpriteData) arg1);
-		} else if (var4) {
-			throw new IllegalArgumentException("");
-		} else {
-			return new PureJavaSpriteRelated(this, arg0, (PalettedSpriteData) arg1);
+
+			if (translucent) {
+				return new TranslucentFont(this, metrics, (FullSpriteData) sprite);
+			} else {
+				return new OpaqueFont(this, metrics, (FullSpriteData) sprite);
+			}
 		}
+
+		if (!paletted) {
+			return new FontRelated1(this, metrics, (FullSpriteData) sprite);
+		} else if (!translucent) {
+			return new FontRelated2(this, metrics, (PalettedSpriteData) sprite);
+		}
+
+		throw new IllegalArgumentException("");
 	}
 
 	@ObfuscatedName("afg.ck(I)V")
@@ -2183,7 +2192,7 @@ public class PureJavaRenderer extends Renderer {
 					this.cachedBillboardMaterial = arg8;
 					this.cachedBillboardSprite = var14;
 				}
-				((PureJavaSprite) this.cachedBillboardSprite).drawAsBillboard(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, MaterialAlphaMode.field7573 != var13.alphaMode);
+				((PureJavaSprite) this.cachedBillboardSprite).drawAsBillboard(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, MaterialAlphaMode.MULTIPLY != var13.alphaMode);
 				return;
 			}
 		}
@@ -2426,9 +2435,9 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.di(IFFFFF)V")
-	public void method2223(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
-		this.field9783 = (int) (arg1 * 65535.0F) * 768;
-		this.field9790 = (int) (arg2 * 65535.0F) * 768;
+	public void setSun(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
+		this.field9783 = (int) (arg1 * 65535.0F);
+		this.field9790 = (int) (arg2 * 65535.0F);
 		float var7 = (float) Math.sqrt((double) (arg5 * arg5 + arg3 * arg3 + arg4 * arg4));
 		this.field9804 = (int) (arg3 * 65535.0F / var7);
 		this.field9787 = (int) (arg4 * 65535.0F / var7);

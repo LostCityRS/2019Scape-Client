@@ -4,7 +4,7 @@ import com.jagex.graphics.*;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afh")
-public class PureJavaFontRelated extends Font {
+public class FontRelated1 extends Font {
 
 	@ObfuscatedName("afh.o")
 	public PureJavaRenderer field10229;
@@ -15,7 +15,7 @@ public class PureJavaFontRelated extends Font {
 	@ObfuscatedName("afh.y")
 	public Sprite[] field10231;
 
-	public PureJavaFontRelated(PureJavaRenderer arg0, FontMetrics arg1, FullSpriteData arg2) {
+	public FontRelated1(PureJavaRenderer arg0, FontMetrics arg1, FullSpriteData arg2) {
 		super(arg0, arg1);
 		this.field10229 = arg0;
 		this.field10229 = arg0;

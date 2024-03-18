@@ -3437,7 +3437,7 @@ public class Rasteriser {
 				int var43 = this.field954[this.field948 * var42 + var41];
 				boolean var44 = true;
 				int var45;
-				if (MaterialAlphaMode.field7573 == this.field960) {
+				if (MaterialAlphaMode.MULTIPLY == this.field960) {
 					var45 = (int) ((float) (var43 >> 24 & 0xFF) * arg17 / 255.0F);
 				} else if (MaterialAlphaMode.TEST != this.field960) {
 					var45 = (int) arg17;

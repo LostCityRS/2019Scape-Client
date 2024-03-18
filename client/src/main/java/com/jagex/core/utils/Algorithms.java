@@ -78,7 +78,7 @@ public class Algorithms {
 	}
 
 	@ObfuscatedName("jk.k([J[IB)V")
-	public static void method5114(long[] arg0, int[] arg1) {
+	public static void quicksortParallel(long[] arg0, int[] arg1) {
 		method8194(arg0, arg1, 0, arg0.length - 1);
 	}
 

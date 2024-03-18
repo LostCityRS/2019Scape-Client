@@ -13,79 +13,79 @@ public class ModelUnlit {
 	public int field1372 = 12;
 
 	@ObfuscatedName("dq.f")
-	public int field1373 = 0;
+	public int vertexCount = 0;
 
 	@ObfuscatedName("dq.w")
 	public int field1374 = 0;
 
 	@ObfuscatedName("dq.l")
-	public int[] field1375;
+	public int[] vertexX;
 
 	@ObfuscatedName("dq.u")
-	public float[] field1383;
+	public float[] textureVertexV;
 
 	@ObfuscatedName("dq.z")
-	public int[] field1382;
+	public int[] vertexY;
 
 	@ObfuscatedName("dq.p")
-	public int[] field1411;
+	public int[] vertexZ;
 
 	@ObfuscatedName("dq.d")
-	public int[] field1380;
+	public int[] vertexTextureVertex;
 
 	@ObfuscatedName("dq.c")
-	public int[] field1379;
+	public int[] vertexLabel;
 
 	@ObfuscatedName("dq.r")
-	public short[] field1417;
+	public short[] vertexSourceModels;
 
 	@ObfuscatedName("dq.v")
-	public int field1384 = 0;
+	public int faceCount = 0;
 
 	@ObfuscatedName("dq.o")
 	public int field1381;
 
 	@ObfuscatedName("dq.s")
-	public float[] field1385;
+	public float[] textureVertexU;
 
 	@ObfuscatedName("dq.y")
-	public short[] field1415;
+	public short[] faceVertex1;
 
 	@ObfuscatedName("dq.q")
-	public short[] field1386;
+	public short[] faceVertex2;
 
 	@ObfuscatedName("dq.x")
-	public short[] field1400;
+	public short[] faceVertex3;
 
 	@ObfuscatedName("dq.b")
-	public byte[] field1388;
+	public byte[] faceTextureVertexOffset1;
 
 	@ObfuscatedName("dq.h")
-	public byte[] field1389;
+	public byte[] faceTextureVertexOffset2;
 
 	@ObfuscatedName("dq.a")
-	public byte[] field1390;
+	public byte[] faceTextureVertexOffset3;
 
 	@ObfuscatedName("dq.g")
-	public byte[] field1391;
+	public byte[] faceType;
 
 	@ObfuscatedName("dq.i")
-	public byte[] field1392;
+	public byte[] facePriority;
 
 	@ObfuscatedName("dq.j")
-	public byte[] field1393;
+	public byte[] faceTrans;
 
 	@ObfuscatedName("dq.t")
-	public short[] field1413;
+	public short[] faceMapping;
 
 	@ObfuscatedName("dq.ae")
-	public short[] field1395;
+	public short[] faceColour;
 
 	@ObfuscatedName("dq.ag")
-	public short[] field1396;
+	public short[] faceMaterial;
 
 	@ObfuscatedName("dq.ah")
-	public int[] field1397;
+	public int[] faceLabel;
 
 	@ObfuscatedName("dq.al")
 	public byte field1394 = 0;
@@ -97,49 +97,49 @@ public class ModelUnlit {
 	public int field1387 = 0;
 
 	@ObfuscatedName("dq.at")
-	public byte[] field1377;
+	public byte[] textureTriangleType;
 
 	@ObfuscatedName("dq.ad")
-	public short[] field1404;
+	public short[] textureTriangleVertex1;
 
 	@ObfuscatedName("dq.am")
-	public short[] field1405;
+	public short[] textureTriangleVertex2;
 
 	@ObfuscatedName("dq.au")
-	public short[] field1406;
+	public short[] textureTriangleVertex3;
 
 	@ObfuscatedName("dq.ar")
-	public int[] field1407;
+	public int[] textureTriangleScaleX;
 
 	@ObfuscatedName("dq.ap")
-	public int[] field1408;
+	public int[] textureTriangleScaleY;
 
 	@ObfuscatedName("dq.aq")
-	public int[] field1409;
+	public int[] textureTriangleScaleZ;
 
 	@ObfuscatedName("dq.ax")
-	public int[] field1410;
+	public int[] textureTriangleSpeed;
 
 	@ObfuscatedName("dq.av")
-	public int[] field1398;
+	public int[] textureTriangleTranslationU;
 
 	@ObfuscatedName("dq.ao")
-	public int[] field1369;
+	public int[] textureTriangleTranslationV;
 
 	@ObfuscatedName("dq.aj")
 	public byte[] field1402;
 
 	@ObfuscatedName("dq.ay")
-	public byte[] field1414;
+	public byte[] textureTriangleDirection;
 
 	@ObfuscatedName("dq.ab")
-	public ModelParticleEmitter[] field1403;
+	public ModelParticleEmitter[] emitters;
 
 	@ObfuscatedName("dq.az")
-	public ModelParticleEffector[] field1416;
+	public ModelParticleEffector[] effectors;
 
 	@ObfuscatedName("dq.aa")
-	public ModelBillboard[] field1412;
+	public ModelBillboard[] billboard;
 
 	@ObfuscatedName("dq.e(Lpy;II)Ldq;")
 	public static ModelUnlit method1931(Js5 arg0, int arg1, int arg2) {
@@ -160,8 +160,8 @@ public class ModelUnlit {
 			var2.g1();
 			this.field1372 = var2.g1();
 			var2.pos = (arg0.length - 26);
-			this.field1373 = var2.g2();
-			this.field1384 = var2.g2();
+			this.vertexCount = var2.g2();
+			this.faceCount = var2.g2();
 			this.field1387 = var2.g2();
 			int var10 = var2.g1();
 			boolean var11 = (var10 & 0x1) == 1;
@@ -185,14 +185,14 @@ public class ModelUnlit {
 			int var29 = var2.g2();
 			if (!var14) {
 				if (var22 == 1) {
-					var28 = this.field1373;
+					var28 = this.vertexCount;
 				} else {
 					var28 = 0;
 				}
 			}
 			if (!var15) {
 				if (var20 == 1) {
-					var29 = this.field1384;
+					var29 = this.faceCount;
 				} else {
 					var29 = 0;
 				}
@@ -201,10 +201,10 @@ public class ModelUnlit {
 			int var31 = 0;
 			int var32 = 0;
 			if (this.field1387 > 0) {
-				this.field1377 = new byte[this.field1387];
+				this.textureTriangleType = new byte[this.field1387];
 				var2.pos = 3;
 				for (int var33 = 0; var33 < this.field1387; var33++) {
-					byte var34 = this.field1377[var33] = var2.g1b();
+					byte var34 = this.textureTriangleType[var33] = var2.g1b();
 					if (var34 == 0) {
 						var30++;
 					}
@@ -217,29 +217,29 @@ public class ModelUnlit {
 				}
 			}
 			int var35 = this.field1387 + 3;
-			int var37 = this.field1373 + var35;
+			int var37 = this.vertexCount + var35;
 			int var38 = var37;
 			if (var11) {
-				var37 += this.field1384;
+				var37 += this.faceCount;
 			}
-			int var40 = this.field1384 + var37;
+			int var40 = this.faceCount + var37;
 			int var41 = var40;
 			if (var18 == 255) {
-				var40 += this.field1384;
+				var40 += this.faceCount;
 			}
 			int var43 = var29 + var40;
 			int var45 = var28 + var43;
 			int var46 = var45;
 			if (var19 == 1) {
-				var45 += this.field1384;
+				var45 += this.faceCount;
 			}
 			int var48 = var26 + var45;
 			int var49 = var48;
 			if (var21 == 1) {
-				var48 += this.field1384 * 2;
+				var48 += this.faceCount * 2;
 			}
 			int var51 = var27 + var48;
-			int var53 = this.field1384 * 2 + var51;
+			int var53 = this.faceCount * 2 + var51;
 			int var55 = var23 + var53;
 			int var57 = var24 + var55;
 			int var59 = var25 + var57;
@@ -268,54 +268,54 @@ public class ModelUnlit {
 				int var80 = var78.g2();
 				var74 = var72 + var79;
 				var75 = var74 + var80;
-				var76 = this.field1373 + var75;
+				var76 = this.vertexCount + var75;
 				var77 = this.field1381 * 2 + var76;
 			}
-			this.field1375 = new int[this.field1373];
-			this.field1382 = new int[this.field1373];
-			this.field1411 = new int[this.field1373];
-			this.field1415 = new short[this.field1384];
-			this.field1386 = new short[this.field1384];
-			this.field1400 = new short[this.field1384];
+			this.vertexX = new int[this.vertexCount];
+			this.vertexY = new int[this.vertexCount];
+			this.vertexZ = new int[this.vertexCount];
+			this.faceVertex1 = new short[this.faceCount];
+			this.faceVertex2 = new short[this.faceCount];
+			this.faceVertex3 = new short[this.faceCount];
 			if (var22 == 1) {
-				this.field1379 = new int[this.field1373];
+				this.vertexLabel = new int[this.vertexCount];
 			}
 			if (var11) {
-				this.field1391 = new byte[this.field1384];
+				this.faceType = new byte[this.faceCount];
 			}
 			if (var18 == 255) {
-				this.field1392 = new byte[this.field1384];
+				this.facePriority = new byte[this.faceCount];
 			} else {
 				this.field1394 = (byte) var18;
 			}
 			if (var19 == 1) {
-				this.field1393 = new byte[this.field1384];
+				this.faceTrans = new byte[this.faceCount];
 			}
 			if (var20 == 1) {
-				this.field1397 = new int[this.field1384];
+				this.faceLabel = new int[this.faceCount];
 			}
 			if (var21 == 1) {
-				this.field1396 = new short[this.field1384];
+				this.faceMaterial = new short[this.faceCount];
 			}
 			if (var21 == 1 && (this.field1387 > 0 || this.field1381 > 0)) {
-				this.field1413 = new short[this.field1384];
+				this.faceMapping = new short[this.faceCount];
 			}
-			this.field1395 = new short[this.field1384];
+			this.faceColour = new short[this.faceCount];
 			if (this.field1387 > 0) {
-				this.field1404 = new short[this.field1387];
-				this.field1405 = new short[this.field1387];
-				this.field1406 = new short[this.field1387];
+				this.textureTriangleVertex1 = new short[this.field1387];
+				this.textureTriangleVertex2 = new short[this.field1387];
+				this.textureTriangleVertex3 = new short[this.field1387];
 				if (var31 > 0) {
-					this.field1407 = new int[var31];
-					this.field1408 = new int[var31];
-					this.field1409 = new int[var31];
+					this.textureTriangleScaleX = new int[var31];
+					this.textureTriangleScaleY = new int[var31];
+					this.textureTriangleScaleZ = new int[var31];
 					this.field1402 = new byte[var31];
-					this.field1414 = new byte[var31];
-					this.field1410 = new int[var31];
+					this.textureTriangleDirection = new byte[var31];
+					this.textureTriangleSpeed = new int[var31];
 				}
 				if (var32 > 0) {
-					this.field1398 = new int[var32];
-					this.field1369 = new int[var32];
+					this.textureTriangleTranslationU = new int[var32];
+					this.textureTriangleTranslationV = new int[var32];
 				}
 			}
 			var2.pos = var35;
@@ -326,7 +326,7 @@ public class ModelUnlit {
 			int var81 = 0;
 			int var82 = 0;
 			int var83 = 0;
-			for (int var84 = 0; var84 < this.field1373; var84++) {
+			for (int var84 = 0; var84 < this.vertexCount; var84++) {
 				int var85 = var2.g1();
 				int var86 = 0;
 				if ((var85 & 0x1) != 0) {
@@ -340,19 +340,19 @@ public class ModelUnlit {
 				if ((var85 & 0x4) != 0) {
 					var88 = var5.gSmart1or2s();
 				}
-				this.field1375[var84] = var81 + var86;
-				this.field1382[var84] = var82 + var87;
-				this.field1411[var84] = var83 + var88;
-				var81 = this.field1375[var84];
-				var82 = this.field1382[var84];
-				var83 = this.field1411[var84];
+				this.vertexX[var84] = var81 + var86;
+				this.vertexY[var84] = var82 + var87;
+				this.vertexZ[var84] = var83 + var88;
+				var81 = this.vertexX[var84];
+				var82 = this.vertexY[var84];
+				var83 = this.vertexZ[var84];
 				if (var22 == 1) {
 					if (var14) {
-						this.field1379[var84] = var6.gSmart1or2null();
+						this.vertexLabel[var84] = var6.gSmart1or2null();
 					} else {
-						this.field1379[var84] = var6.g1();
-						if (this.field1379[var84] == 255) {
-							this.field1379[var84] = -1;
+						this.vertexLabel[var84] = var6.g1();
+						if (this.vertexLabel[var84] == 255) {
+							this.vertexLabel[var84] = -1;
 						}
 					}
 				}
@@ -361,22 +361,22 @@ public class ModelUnlit {
 				var2.pos = var75;
 				var3.pos = var76;
 				var4.pos = var77;
-				this.field1380 = new int[this.field1373];
+				this.vertexTextureVertex = new int[this.vertexCount];
 				int var89 = 0;
 				int var90 = 0;
-				while (var89 < this.field1373) {
-					this.field1380[var89] = var90;
+				while (var89 < this.vertexCount) {
+					this.vertexTextureVertex[var89] = var90;
 					var90 += var2.g1();
 					var89++;
 				}
-				this.field1388 = new byte[this.field1384];
-				this.field1389 = new byte[this.field1384];
-				this.field1390 = new byte[this.field1384];
-				this.field1385 = new float[this.field1381];
-				this.field1383 = new float[this.field1381];
+				this.faceTextureVertexOffset1 = new byte[this.faceCount];
+				this.faceTextureVertexOffset2 = new byte[this.faceCount];
+				this.faceTextureVertexOffset3 = new byte[this.faceCount];
+				this.textureVertexU = new float[this.field1381];
+				this.textureVertexV = new float[this.field1381];
 				for (int var91 = 0; var91 < this.field1381; var91++) {
-					this.field1385[var91] = (float) var3.g2s() / 4096.0F;
-					this.field1383[var91] = (float) var4.g2s() / 4096.0F;
+					this.textureVertexU[var91] = (float) var3.g2s() / 4096.0F;
+					this.textureVertexV[var91] = (float) var4.g2s() / 4096.0F;
 				}
 			}
 			var2.pos = var51;
@@ -386,37 +386,37 @@ public class ModelUnlit {
 			var6.pos = var40;
 			var7.pos = var49;
 			var8.pos = var48;
-			for (int var92 = 0; var92 < this.field1384; var92++) {
-				this.field1395[var92] = (short) var2.g2();
+			for (int var92 = 0; var92 < this.faceCount; var92++) {
+				this.faceColour[var92] = (short) var2.g2();
 				if (var11) {
-					this.field1391[var92] = var3.g1b();
+					this.faceType[var92] = var3.g1b();
 				}
 				if (var18 == 255) {
-					this.field1392[var92] = var4.g1b();
+					this.facePriority[var92] = var4.g1b();
 				}
 				if (var19 == 1) {
-					this.field1393[var92] = var5.g1b();
+					this.faceTrans[var92] = var5.g1b();
 				}
 				if (var20 == 1) {
 					if (var15) {
-						this.field1397[var92] = var6.gSmart1or2null();
+						this.faceLabel[var92] = var6.gSmart1or2null();
 					} else {
-						this.field1397[var92] = var6.g1();
-						if (this.field1397[var92] == 255) {
-							this.field1397[var92] = -1;
+						this.faceLabel[var92] = var6.g1();
+						if (this.faceLabel[var92] == 255) {
+							this.faceLabel[var92] = -1;
 						}
 					}
 				}
 				if (var21 == 1) {
-					this.field1396[var92] = (short) (var7.g2() - 1);
+					this.faceMaterial[var92] = (short) (var7.g2() - 1);
 				}
-				if (this.field1413 != null) {
-					if (this.field1396[var92] == -1) {
-						this.field1413[var92] = -1;
+				if (this.faceMapping != null) {
+					if (this.faceMaterial[var92] == -1) {
+						this.faceMapping[var92] = -1;
 					} else if (this.field1372 >= 16) {
-						this.field1413[var92] = (short) (var8.gSmart1or2() - 1);
+						this.faceMapping[var92] = (short) (var8.gSmart1or2() - 1);
 					} else {
-						this.field1413[var92] = (short) (var8.g1() - 1);
+						this.faceMapping[var92] = (short) (var8.g1() - 1);
 					}
 				}
 			}
@@ -436,33 +436,33 @@ public class ModelUnlit {
 			if (var12) {
 				int var93 = var2.g1();
 				if (var93 > 0) {
-					this.field1403 = new ModelParticleEmitter[var93];
+					this.emitters = new ModelParticleEmitter[var93];
 					for (int var94 = 0; var94 < var93; var94++) {
 						int var95 = var2.g2();
 						int var96 = var2.g2();
 						byte var97;
 						if (var18 == 255) {
-							var97 = this.field1392[var96];
+							var97 = this.facePriority[var96];
 						} else {
 							var97 = (byte) var18;
 						}
-						this.field1403[var94] = new ModelParticleEmitter(var95, var96, this.field1415[var96], this.field1386[var96], this.field1400[var96], var97);
+						this.emitters[var94] = new ModelParticleEmitter(var95, var96, this.faceVertex1[var96], this.faceVertex2[var96], this.faceVertex3[var96], var97);
 					}
 				}
 				int var98 = var2.g1();
 				if (var98 > 0) {
-					this.field1416 = new ModelParticleEffector[var98];
+					this.effectors = new ModelParticleEffector[var98];
 					for (int var99 = 0; var99 < var98; var99++) {
 						int var100 = var2.g2();
 						int var101 = var2.g2();
-						this.field1416[var99] = new ModelParticleEffector(var100, var101);
+						this.effectors[var99] = new ModelParticleEffector(var100, var101);
 					}
 				}
 			}
 			if (var13) {
 				int var102 = var2.g1();
 				if (var102 > 0) {
-					this.field1412 = new ModelBillboard[var102];
+					this.billboard = new ModelBillboard[var102];
 					for (int var103 = 0; var103 < var102; var103++) {
 						int var104 = var2.g2();
 						int var105 = var2.g2();
@@ -476,7 +476,7 @@ public class ModelUnlit {
 							}
 						}
 						byte var107 = var2.g1b();
-						this.field1412[var103] = new ModelBillboard(var104, var105, var106, var107);
+						this.billboard[var103] = new ModelBillboard(var104, var105, var106, var107);
 					}
 				}
 			}
@@ -486,39 +486,39 @@ public class ModelUnlit {
 	}
 
 	public ModelUnlit(int arg0, int arg1, int arg2) {
-		this.field1375 = new int[arg0];
-		this.field1382 = new int[arg0];
-		this.field1411 = new int[arg0];
-		this.field1379 = new int[arg0];
-		this.field1415 = new short[arg1];
-		this.field1386 = new short[arg1];
-		this.field1400 = new short[arg1];
-		this.field1391 = new byte[arg1];
-		this.field1392 = new byte[arg1];
-		this.field1393 = new byte[arg1];
-		this.field1413 = new short[arg1];
-		this.field1395 = new short[arg1];
-		this.field1396 = new short[arg1];
-		this.field1397 = new int[arg1];
+		this.vertexX = new int[arg0];
+		this.vertexY = new int[arg0];
+		this.vertexZ = new int[arg0];
+		this.vertexLabel = new int[arg0];
+		this.faceVertex1 = new short[arg1];
+		this.faceVertex2 = new short[arg1];
+		this.faceVertex3 = new short[arg1];
+		this.faceType = new byte[arg1];
+		this.facePriority = new byte[arg1];
+		this.faceTrans = new byte[arg1];
+		this.faceMapping = new short[arg1];
+		this.faceColour = new short[arg1];
+		this.faceMaterial = new short[arg1];
+		this.faceLabel = new int[arg1];
 		if (arg2 > 0) {
-			this.field1377 = new byte[arg2];
-			this.field1404 = new short[arg2];
-			this.field1405 = new short[arg2];
-			this.field1406 = new short[arg2];
-			this.field1407 = new int[arg2];
-			this.field1408 = new int[arg2];
-			this.field1409 = new int[arg2];
+			this.textureTriangleType = new byte[arg2];
+			this.textureTriangleVertex1 = new short[arg2];
+			this.textureTriangleVertex2 = new short[arg2];
+			this.textureTriangleVertex3 = new short[arg2];
+			this.textureTriangleScaleX = new int[arg2];
+			this.textureTriangleScaleY = new int[arg2];
+			this.textureTriangleScaleZ = new int[arg2];
 			this.field1402 = new byte[arg2];
-			this.field1414 = new byte[arg2];
-			this.field1410 = new int[arg2];
-			this.field1398 = new int[arg2];
-			this.field1369 = new int[arg2];
+			this.textureTriangleDirection = new byte[arg2];
+			this.textureTriangleSpeed = new int[arg2];
+			this.textureTriangleTranslationU = new int[arg2];
+			this.textureTriangleTranslationV = new int[arg2];
 		}
 	}
 
 	public ModelUnlit(ModelUnlit[] arg0, int arg1) {
-		this.field1373 = 0;
-		this.field1384 = 0;
+		this.vertexCount = 0;
+		this.faceCount = 0;
 		this.field1387 = 0;
 		this.field1381 = 0;
 		int var3 = 0;
@@ -534,21 +534,21 @@ public class ModelUnlit {
 		for (int var12 = 0; var12 < arg1; var12++) {
 			ModelUnlit var13 = arg0[var12];
 			if (var13 != null) {
-				this.field1373 += var13.field1373;
-				this.field1384 += var13.field1384;
+				this.vertexCount += var13.vertexCount;
+				this.faceCount += var13.faceCount;
 				this.field1387 += var13.field1387;
 				this.field1381 += var13.field1381;
-				if (var13.field1403 != null) {
-					var3 += var13.field1403.length;
+				if (var13.emitters != null) {
+					var3 += var13.emitters.length;
 				}
-				if (var13.field1416 != null) {
-					var4 += var13.field1416.length;
+				if (var13.effectors != null) {
+					var4 += var13.effectors.length;
 				}
-				if (var13.field1412 != null) {
-					var5 += var13.field1412.length;
+				if (var13.billboard != null) {
+					var5 += var13.billboard.length;
 				}
-				var6 |= var13.field1391 != null;
-				if (var13.field1392 == null) {
+				var6 |= var13.faceType != null;
+				if (var13.facePriority == null) {
 					if (this.field1394 == -1) {
 						this.field1394 = var13.field1394;
 					}
@@ -558,78 +558,78 @@ public class ModelUnlit {
 				} else {
 					var7 = true;
 				}
-				var8 |= var13.field1393 != null;
-				var9 |= var13.field1413 != null;
-				var10 |= var13.field1396 != null;
-				var11 |= var13.field1397 != null;
+				var8 |= var13.faceTrans != null;
+				var9 |= var13.faceMapping != null;
+				var10 |= var13.faceMaterial != null;
+				var11 |= var13.faceLabel != null;
 			}
 		}
-		this.field1375 = new int[this.field1373];
-		this.field1382 = new int[this.field1373];
-		this.field1411 = new int[this.field1373];
-		this.field1379 = new int[this.field1373];
-		this.field1417 = new short[this.field1373];
-		this.field1415 = new short[this.field1384];
-		this.field1386 = new short[this.field1384];
-		this.field1400 = new short[this.field1384];
+		this.vertexX = new int[this.vertexCount];
+		this.vertexY = new int[this.vertexCount];
+		this.vertexZ = new int[this.vertexCount];
+		this.vertexLabel = new int[this.vertexCount];
+		this.vertexSourceModels = new short[this.vertexCount];
+		this.faceVertex1 = new short[this.faceCount];
+		this.faceVertex2 = new short[this.faceCount];
+		this.faceVertex3 = new short[this.faceCount];
 		if (var6) {
-			this.field1391 = new byte[this.field1384];
+			this.faceType = new byte[this.faceCount];
 		}
 		if (var7) {
-			this.field1392 = new byte[this.field1384];
+			this.facePriority = new byte[this.faceCount];
 		}
 		if (var8) {
-			this.field1393 = new byte[this.field1384];
+			this.faceTrans = new byte[this.faceCount];
 		}
 		if (var9) {
-			this.field1413 = new short[this.field1384];
+			this.faceMapping = new short[this.faceCount];
 		}
-		this.field1395 = new short[this.field1384];
+		this.faceColour = new short[this.faceCount];
 		if (var10) {
-			this.field1396 = new short[this.field1384];
+			this.faceMaterial = new short[this.faceCount];
 		}
 		if (var11) {
-			this.field1397 = new int[this.field1384];
+			this.faceLabel = new int[this.faceCount];
 		}
-		this.field1399 = new short[this.field1384];
+		this.field1399 = new short[this.faceCount];
 		if (this.field1387 > 0) {
-			this.field1377 = new byte[this.field1387];
-			this.field1404 = new short[this.field1387];
-			this.field1405 = new short[this.field1387];
-			this.field1406 = new short[this.field1387];
-			this.field1407 = new int[this.field1387];
-			this.field1408 = new int[this.field1387];
-			this.field1409 = new int[this.field1387];
+			this.textureTriangleType = new byte[this.field1387];
+			this.textureTriangleVertex1 = new short[this.field1387];
+			this.textureTriangleVertex2 = new short[this.field1387];
+			this.textureTriangleVertex3 = new short[this.field1387];
+			this.textureTriangleScaleX = new int[this.field1387];
+			this.textureTriangleScaleY = new int[this.field1387];
+			this.textureTriangleScaleZ = new int[this.field1387];
 			this.field1402 = new byte[this.field1387];
-			this.field1414 = new byte[this.field1387];
-			this.field1410 = new int[this.field1387];
-			this.field1398 = new int[this.field1387];
-			this.field1369 = new int[this.field1387];
+			this.textureTriangleDirection = new byte[this.field1387];
+			this.textureTriangleSpeed = new int[this.field1387];
+			this.textureTriangleTranslationU = new int[this.field1387];
+			this.textureTriangleTranslationV = new int[this.field1387];
 		}
 		if (var5 > 0) {
-			this.field1412 = new ModelBillboard[var5];
+			this.billboard = new ModelBillboard[var5];
 		}
 		if (var3 > 0) {
-			this.field1403 = new ModelParticleEmitter[var3];
+			this.emitters = new ModelParticleEmitter[var3];
 		}
 		if (var4 > 0) {
-			this.field1416 = new ModelParticleEffector[var4];
+			this.effectors = new ModelParticleEffector[var4];
 		}
 		if (this.field1381 > 0) {
-			this.field1385 = new float[this.field1381];
-			this.field1383 = new float[this.field1381];
-			this.field1380 = new int[this.field1373];
-			this.field1388 = new byte[this.field1384];
-			this.field1389 = new byte[this.field1384];
-			this.field1390 = new byte[this.field1384];
+			this.textureVertexU = new float[this.field1381];
+			this.textureVertexV = new float[this.field1381];
+			this.vertexTextureVertex = new int[this.vertexCount];
+			this.faceTextureVertexOffset1 = new byte[this.faceCount];
+			this.faceTextureVertexOffset2 = new byte[this.faceCount];
+			this.faceTextureVertexOffset3 = new byte[this.faceCount];
 		}
-		int[] var14 = new int[this.field1373];
+		int[] var14 = new int[this.vertexCount];
 		int[] var15 = new int[this.field1381];
-		int[] var16 = new int[this.field1373];
-		int[] var17 = new int[this.field1373];
+		int[] var16 = new int[this.vertexCount];
+		int[] var17 = new int[this.vertexCount];
 		int[] var18 = new int[3];
-		this.field1373 = 0;
-		this.field1384 = 0;
+		this.vertexCount = 0;
+		this.faceCount = 0;
 		this.field1387 = 0;
 		this.field1381 = 0;
 		int var19 = 0;
@@ -638,37 +638,37 @@ public class ModelUnlit {
 		for (int var22 = 0; var22 < arg1; var22++) {
 			short var23 = (short) (0x1 << var22);
 			ModelUnlit var24 = arg0[var22];
-			int var25 = this.field1384;
+			int var25 = this.faceCount;
 			if (var24 != null) {
-				boolean[] var26 = new boolean[var24.field1373];
-				if (var24.field1412 != null) {
-					for (int var27 = 0; var27 < var24.field1412.length; var27++) {
-						ModelBillboard var28 = var24.field1412[var27];
-						this.field1412[var21++] = var28.method2659(var28.field1654 + this.field1384);
+				boolean[] var26 = new boolean[var24.vertexCount];
+				if (var24.billboard != null) {
+					for (int var27 = 0; var27 < var24.billboard.length; var27++) {
+						ModelBillboard var28 = var24.billboard[var27];
+						this.billboard[var21++] = var28.method2659(var28.field1654 + this.faceCount);
 					}
 				}
-				for (int var29 = 0; var29 < var24.field1384; var29++) {
-					var18[0] = var24.field1415[var29];
-					var18[1] = var24.field1386[var29];
-					var18[2] = var24.field1400[var29];
+				for (int var29 = 0; var29 < var24.faceCount; var29++) {
+					var18[0] = var24.faceVertex1[var29];
+					var18[1] = var24.faceVertex2[var29];
+					var18[2] = var24.faceVertex3[var29];
 					for (int var30 = 0; var30 < 3; var30++) {
 						int var31 = var18[var30];
-						int var32 = var24.field1375[var31];
-						int var33 = var24.field1382[var31];
-						int var34 = var24.field1411[var31];
+						int var32 = var24.vertexX[var31];
+						int var33 = var24.vertexY[var31];
+						int var34 = var24.vertexZ[var31];
 						int var35;
-						for (var35 = 0; var35 < this.field1373; var35++) {
-							if (this.field1375[var35] == var32 && this.field1382[var35] == var33 && this.field1411[var35] == var34) {
-								this.field1417[var35] |= var23;
+						for (var35 = 0; var35 < this.vertexCount; var35++) {
+							if (this.vertexX[var35] == var32 && this.vertexY[var35] == var33 && this.vertexZ[var35] == var34) {
+								this.vertexSourceModels[var35] |= var23;
 								var16[var31] = var35;
 								break;
 							}
 						}
 						if (var24.field1381 > 0 && !var26[var31]) {
-							int var36 = (var31 < var24.field1373 - 1 ? var24.field1380[var31 + 1] : var24.field1381) - var24.field1380[var31];
+							int var36 = (var31 < var24.vertexCount - 1 ? var24.vertexTextureVertex[var31 + 1] : var24.field1381) - var24.vertexTextureVertex[var31];
 							for (int var37 = 0; var37 < var36; var37++) {
-								this.field1385[this.field1381] = var24.field1385[var24.field1380[var31] + var37];
-								this.field1383[this.field1381] = var24.field1383[var24.field1380[var31] + var37];
+								this.textureVertexU[this.field1381] = var24.textureVertexU[var24.vertexTextureVertex[var31] + var37];
+								this.textureVertexV[this.field1381] = var24.textureVertexV[var24.vertexTextureVertex[var31] + var37];
 								var15[this.field1381] = var35 << 16 | var14[var35] + var37;
 								this.field1381++;
 							}
@@ -676,81 +676,81 @@ public class ModelUnlit {
 							var14[var35] += var36;
 							var26[var31] = true;
 						}
-						if (var35 >= this.field1373) {
-							this.field1375[this.field1373] = var32;
-							this.field1382[this.field1373] = var33;
-							this.field1411[this.field1373] = var34;
-							this.field1417[this.field1373] = var23;
-							this.field1379[this.field1373] = var24.field1379 == null ? -1 : var24.field1379[var31];
-							var16[var31] = this.field1373++;
+						if (var35 >= this.vertexCount) {
+							this.vertexX[this.vertexCount] = var32;
+							this.vertexY[this.vertexCount] = var33;
+							this.vertexZ[this.vertexCount] = var34;
+							this.vertexSourceModels[this.vertexCount] = var23;
+							this.vertexLabel[this.vertexCount] = var24.vertexLabel == null ? -1 : var24.vertexLabel[var31];
+							var16[var31] = this.vertexCount++;
 						}
 					}
 				}
-				for (int var38 = 0; var38 < var24.field1384; var38++) {
-					if (var6 && var24.field1391 != null) {
-						this.field1391[this.field1384] = var24.field1391[var38];
+				for (int var38 = 0; var38 < var24.faceCount; var38++) {
+					if (var6 && var24.faceType != null) {
+						this.faceType[this.faceCount] = var24.faceType[var38];
 					}
 					if (var7) {
-						if (var24.field1392 == null) {
-							this.field1392[this.field1384] = var24.field1394;
+						if (var24.facePriority == null) {
+							this.facePriority[this.faceCount] = var24.field1394;
 						} else {
-							this.field1392[this.field1384] = var24.field1392[var38];
+							this.facePriority[this.faceCount] = var24.facePriority[var38];
 						}
 					}
-					if (var8 && var24.field1393 != null) {
-						this.field1393[this.field1384] = var24.field1393[var38];
+					if (var8 && var24.faceTrans != null) {
+						this.faceTrans[this.faceCount] = var24.faceTrans[var38];
 					}
 					if (var10) {
-						if (var24.field1396 == null) {
-							this.field1396[this.field1384] = -1;
+						if (var24.faceMaterial == null) {
+							this.faceMaterial[this.faceCount] = -1;
 						} else {
-							this.field1396[this.field1384] = var24.field1396[var38];
+							this.faceMaterial[this.faceCount] = var24.faceMaterial[var38];
 						}
 					}
 					if (var11) {
-						if (var24.field1397 == null) {
-							this.field1397[this.field1384] = -1;
+						if (var24.faceLabel == null) {
+							this.faceLabel[this.faceCount] = -1;
 						} else {
-							this.field1397[this.field1384] = var24.field1397[var38];
+							this.faceLabel[this.faceCount] = var24.faceLabel[var38];
 						}
 					}
 					if (var24.field1381 > 0) {
-						this.field1388[this.field1384] = (byte) (var17[var24.field1415[var38]] + var24.field1388[var38]);
-						this.field1389[this.field1384] = (byte) (var17[var24.field1386[var38]] + var24.field1389[var38]);
-						this.field1390[this.field1384] = (byte) (var17[var24.field1400[var38]] + var24.field1390[var38]);
+						this.faceTextureVertexOffset1[this.faceCount] = (byte) (var17[var24.faceVertex1[var38]] + var24.faceTextureVertexOffset1[var38]);
+						this.faceTextureVertexOffset2[this.faceCount] = (byte) (var17[var24.faceVertex2[var38]] + var24.faceTextureVertexOffset2[var38]);
+						this.faceTextureVertexOffset3[this.faceCount] = (byte) (var17[var24.faceVertex3[var38]] + var24.faceTextureVertexOffset3[var38]);
 					}
-					this.field1415[this.field1384] = (short) var16[var24.field1415[var38]];
-					this.field1386[this.field1384] = (short) var16[var24.field1386[var38]];
-					this.field1400[this.field1384] = (short) var16[var24.field1400[var38]];
-					this.field1399[this.field1384] = var23;
-					this.field1395[this.field1384] = var24.field1395[var38];
-					this.field1384++;
+					this.faceVertex1[this.faceCount] = (short) var16[var24.faceVertex1[var38]];
+					this.faceVertex2[this.faceCount] = (short) var16[var24.faceVertex2[var38]];
+					this.faceVertex3[this.faceCount] = (short) var16[var24.faceVertex3[var38]];
+					this.field1399[this.faceCount] = var23;
+					this.faceColour[this.faceCount] = var24.faceColour[var38];
+					this.faceCount++;
 				}
-				if (var24.field1403 != null) {
-					for (int var39 = 0; var39 < var24.field1403.length; var39++) {
-						int var40 = var16[var24.field1403[var39].field1476];
-						int var41 = var16[var24.field1403[var39].field1467];
-						int var42 = var16[var24.field1403[var39].field1468];
-						this.field1403[var19] = var24.field1403[var39].method2080(var24.field1403[var39].field1463 + var25, var40, var41, var42);
+				if (var24.emitters != null) {
+					for (int var39 = 0; var39 < var24.emitters.length; var39++) {
+						int var40 = var16[var24.emitters[var39].field1476];
+						int var41 = var16[var24.emitters[var39].field1467];
+						int var42 = var16[var24.emitters[var39].field1468];
+						this.emitters[var19] = var24.emitters[var39].method2080(var24.emitters[var39].field1463 + var25, var40, var41, var42);
 						var19++;
 					}
 				}
-				if (var24.field1416 != null) {
-					for (int var43 = 0; var43 < var24.field1416.length; var43++) {
-						int var44 = var16[var24.field1416[var43].field1225];
-						this.field1416[var20] = var24.field1416[var43].method1508(var44);
+				if (var24.effectors != null) {
+					for (int var43 = 0; var43 < var24.effectors.length; var43++) {
+						int var44 = var16[var24.effectors[var43].field1225];
+						this.effectors[var20] = var24.effectors[var43].method1508(var44);
 						var20++;
 					}
 				}
 			}
 		}
-		this.field1374 = this.field1373;
+		this.field1374 = this.vertexCount;
 		if (this.field1381 > 0) {
-			Algorithms.method14525(var15, this.field1385, this.field1383);
+			Algorithms.method14525(var15, this.textureVertexU, this.textureVertexV);
 			int var45 = 0;
 			int var46 = 0;
-			while (var45 < this.field1373) {
-				this.field1380[var45] = var46;
+			while (var45 < this.vertexCount) {
+				this.vertexTextureVertex[var45] = var46;
 				var46 += var14[var45];
 				var45++;
 			}
@@ -763,34 +763,34 @@ public class ModelUnlit {
 			if (var50 != null) {
 				if (var9) {
 					int var51 = 0;
-					while (var51 < var50.field1384) {
-						this.field1413[var48] = var50.field1413 == null ? -1 : var50.field1413[var51];
-						if (this.field1413[var48] > -1 && this.field1413[var48] < 32766) {
-							this.field1413[var48] = (short) (this.field1413[var48] + this.field1387);
+					while (var51 < var50.faceCount) {
+						this.faceMapping[var48] = var50.faceMapping == null ? -1 : var50.faceMapping[var51];
+						if (this.faceMapping[var48] > -1 && this.faceMapping[var48] < 32766) {
+							this.faceMapping[var48] = (short) (this.faceMapping[var48] + this.field1387);
 						}
 						var51++;
 						var48++;
 					}
 				}
 				for (int var52 = 0; var52 < var50.field1387; var52++) {
-					byte var53 = this.field1377[this.field1387] = var50.field1377[var52];
+					byte var53 = this.textureTriangleType[this.field1387] = var50.textureTriangleType[var52];
 					if (var53 == 0) {
-						this.field1404[this.field1387] = (short) this.method1933(var50, var50.field1404[var52], var49);
-						this.field1405[this.field1387] = (short) this.method1933(var50, var50.field1405[var52], var49);
-						this.field1406[this.field1387] = (short) this.method1933(var50, var50.field1406[var52], var49);
+						this.textureTriangleVertex1[this.field1387] = (short) this.method1933(var50, var50.textureTriangleVertex1[var52], var49);
+						this.textureTriangleVertex2[this.field1387] = (short) this.method1933(var50, var50.textureTriangleVertex2[var52], var49);
+						this.textureTriangleVertex3[this.field1387] = (short) this.method1933(var50, var50.textureTriangleVertex3[var52], var49);
 					} else if (var53 >= 1 && var53 <= 3) {
-						this.field1404[this.field1387] = var50.field1404[var52];
-						this.field1405[this.field1387] = var50.field1405[var52];
-						this.field1406[this.field1387] = var50.field1406[var52];
-						this.field1407[this.field1387] = var50.field1407[var52];
-						this.field1408[this.field1387] = var50.field1408[var52];
-						this.field1409[this.field1387] = var50.field1409[var52];
+						this.textureTriangleVertex1[this.field1387] = var50.textureTriangleVertex1[var52];
+						this.textureTriangleVertex2[this.field1387] = var50.textureTriangleVertex2[var52];
+						this.textureTriangleVertex3[this.field1387] = var50.textureTriangleVertex3[var52];
+						this.textureTriangleScaleX[this.field1387] = var50.textureTriangleScaleX[var52];
+						this.textureTriangleScaleY[this.field1387] = var50.textureTriangleScaleY[var52];
+						this.textureTriangleScaleZ[this.field1387] = var50.textureTriangleScaleZ[var52];
 						this.field1402[this.field1387] = var50.field1402[var52];
-						this.field1414[this.field1387] = var50.field1414[var52];
-						this.field1410[this.field1387] = var50.field1410[var52];
+						this.textureTriangleDirection[this.field1387] = var50.textureTriangleDirection[var52];
+						this.textureTriangleSpeed[this.field1387] = var50.textureTriangleSpeed[var52];
 					} else if (var53 == 2) {
-						this.field1398[this.field1387] = var50.field1398[var52];
-						this.field1369[this.field1387] = var50.field1369[var52];
+						this.textureTriangleTranslationU[this.field1387] = var50.textureTriangleTranslationU[var52];
+						this.textureTriangleTranslationV[this.field1387] = var50.textureTriangleTranslationV[var52];
 					}
 					this.field1387++;
 				}
@@ -801,21 +801,21 @@ public class ModelUnlit {
 
 	@ObfuscatedName("dq.n(Ldq;IS)I")
 	public final int method1933(ModelUnlit arg0, int arg1, short arg2) {
-		int var4 = arg0.field1375[arg1];
-		int var5 = arg0.field1382[arg1];
-		int var6 = arg0.field1411[arg1];
-		for (int var7 = 0; var7 < this.field1373; var7++) {
-			if (this.field1375[var7] == var4 && this.field1382[var7] == var5 && this.field1411[var7] == var6) {
-				this.field1417[var7] |= arg2;
+		int var4 = arg0.vertexX[arg1];
+		int var5 = arg0.vertexY[arg1];
+		int var6 = arg0.vertexZ[arg1];
+		for (int var7 = 0; var7 < this.vertexCount; var7++) {
+			if (this.vertexX[var7] == var4 && this.vertexY[var7] == var5 && this.vertexZ[var7] == var6) {
+				this.vertexSourceModels[var7] |= arg2;
 				return var7;
 			}
 		}
-		this.field1375[this.field1373] = var4;
-		this.field1382[this.field1373] = var5;
-		this.field1411[this.field1373] = var6;
-		this.field1417[this.field1373] = arg2;
-		this.field1379[this.field1373] = arg0.field1379 == null ? -1 : arg0.field1379[arg1];
-		return this.field1373++;
+		this.vertexX[this.vertexCount] = var4;
+		this.vertexY[this.vertexCount] = var5;
+		this.vertexZ[this.vertexCount] = var6;
+		this.vertexSourceModels[this.vertexCount] = arg2;
+		this.vertexLabel[this.vertexCount] = arg0.vertexLabel == null ? -1 : arg0.vertexLabel[arg1];
+		return this.vertexCount++;
 	}
 
 	@ObfuscatedName("dq.m(Lalw;Lalw;Lalw;)V")
@@ -824,13 +824,13 @@ public class ModelUnlit {
 		short var5 = 0;
 		short var6 = 0;
 		short var7 = 0;
-		for (int var8 = 0; var8 < this.field1384; var8++) {
+		for (int var8 = 0; var8 < this.faceCount; var8++) {
 			int var9 = arg1.g1();
 			int var10 = var9 & 0x7;
 			if (var10 == 1) {
-				this.field1415[var8] = var4 = (short) (arg0.gSmart1or2s() + var7);
-				this.field1386[var8] = var5 = (short) (arg0.gSmart1or2s() + var4);
-				this.field1400[var8] = var6 = (short) (arg0.gSmart1or2s() + var5);
+				this.faceVertex1[var8] = var4 = (short) (arg0.gSmart1or2s() + var7);
+				this.faceVertex2[var8] = var5 = (short) (arg0.gSmart1or2s() + var4);
+				this.faceVertex3[var8] = var6 = (short) (arg0.gSmart1or2s() + var5);
 				var7 = var6;
 				if (var4 > this.field1374) {
 					this.field1374 = var4;
@@ -846,9 +846,9 @@ public class ModelUnlit {
 				var5 = var6;
 				var6 = (short) (arg0.gSmart1or2s() + var7);
 				var7 = var6;
-				this.field1415[var8] = var4;
-				this.field1386[var8] = var5;
-				this.field1400[var8] = var6;
+				this.faceVertex1[var8] = var4;
+				this.faceVertex2[var8] = var5;
+				this.faceVertex3[var8] = var6;
 				if (var6 > this.field1374) {
 					this.field1374 = var6;
 				}
@@ -857,9 +857,9 @@ public class ModelUnlit {
 				var4 = var6;
 				var6 = (short) (arg0.gSmart1or2s() + var7);
 				var7 = var6;
-				this.field1415[var8] = var4;
-				this.field1386[var8] = var5;
-				this.field1400[var8] = var6;
+				this.faceVertex1[var8] = var4;
+				this.faceVertex2[var8] = var5;
+				this.faceVertex3[var8] = var6;
 				if (var6 > this.field1374) {
 					this.field1374 = var6;
 				}
@@ -870,17 +870,17 @@ public class ModelUnlit {
 				var5 = var13;
 				var6 = (short) (arg0.gSmart1or2s() + var7);
 				var7 = var6;
-				this.field1415[var8] = var4;
-				this.field1386[var8] = var13;
-				this.field1400[var8] = var6;
+				this.faceVertex1[var8] = var4;
+				this.faceVertex2[var8] = var13;
+				this.faceVertex3[var8] = var6;
 				if (var6 > this.field1374) {
 					this.field1374 = var6;
 				}
 			}
 			if (this.field1381 > 0 && (var9 & 0x8) != 0) {
-				this.field1388[var8] = (byte) arg2.g1();
-				this.field1389[var8] = (byte) arg2.g1();
-				this.field1390[var8] = (byte) arg2.g1();
+				this.faceTextureVertexOffset1[var8] = (byte) arg2.g1();
+				this.faceTextureVertexOffset2[var8] = (byte) arg2.g1();
+				this.faceTextureVertexOffset3[var8] = (byte) arg2.g1();
 			}
 		}
 		this.field1374++;
@@ -889,105 +889,105 @@ public class ModelUnlit {
 	@ObfuscatedName("dq.k(Lalw;Lalw;Lalw;Lalw;Lalw;Lalw;)V")
 	public void method1939(Packet arg0, Packet arg1, Packet arg2, Packet arg3, Packet arg4, Packet arg5) {
 		for (int var7 = 0; var7 < this.field1387; var7++) {
-			int var8 = this.field1377[var7] & 0xFF;
+			int var8 = this.textureTriangleType[var7] & 0xFF;
 			if (var8 == 0) {
-				this.field1404[var7] = (short) arg0.g2();
-				this.field1405[var7] = (short) arg0.g2();
-				this.field1406[var7] = (short) arg0.g2();
+				this.textureTriangleVertex1[var7] = (short) arg0.g2();
+				this.textureTriangleVertex2[var7] = (short) arg0.g2();
+				this.textureTriangleVertex3[var7] = (short) arg0.g2();
 			}
 			if (var8 == 1) {
-				this.field1404[var7] = (short) arg1.g2();
-				this.field1405[var7] = (short) arg1.g2();
-				this.field1406[var7] = (short) arg1.g2();
+				this.textureTriangleVertex1[var7] = (short) arg1.g2();
+				this.textureTriangleVertex2[var7] = (short) arg1.g2();
+				this.textureTriangleVertex3[var7] = (short) arg1.g2();
 				if (this.field1372 < 15) {
-					this.field1407[var7] = arg2.g2();
+					this.textureTriangleScaleX[var7] = arg2.g2();
 					if (this.field1372 < 14) {
-						this.field1408[var7] = arg2.g2();
+						this.textureTriangleScaleY[var7] = arg2.g2();
 					} else {
-						this.field1408[var7] = arg2.g3();
+						this.textureTriangleScaleY[var7] = arg2.g3();
 					}
-					this.field1409[var7] = arg2.g2();
+					this.textureTriangleScaleZ[var7] = arg2.g2();
 				} else {
-					this.field1407[var7] = arg2.g3();
-					this.field1408[var7] = arg2.g3();
-					this.field1409[var7] = arg2.g3();
+					this.textureTriangleScaleX[var7] = arg2.g3();
+					this.textureTriangleScaleY[var7] = arg2.g3();
+					this.textureTriangleScaleZ[var7] = arg2.g3();
 				}
 				this.field1402[var7] = arg3.g1b();
-				this.field1414[var7] = arg4.g1b();
-				this.field1410[var7] = arg5.g1b();
+				this.textureTriangleDirection[var7] = arg4.g1b();
+				this.textureTriangleSpeed[var7] = arg5.g1b();
 			}
 			if (var8 == 2) {
-				this.field1404[var7] = (short) arg1.g2();
-				this.field1405[var7] = (short) arg1.g2();
-				this.field1406[var7] = (short) arg1.g2();
+				this.textureTriangleVertex1[var7] = (short) arg1.g2();
+				this.textureTriangleVertex2[var7] = (short) arg1.g2();
+				this.textureTriangleVertex3[var7] = (short) arg1.g2();
 				if (this.field1372 < 15) {
-					this.field1407[var7] = arg2.g2();
+					this.textureTriangleScaleX[var7] = arg2.g2();
 					if (this.field1372 < 14) {
-						this.field1408[var7] = arg2.g2();
+						this.textureTriangleScaleY[var7] = arg2.g2();
 					} else {
-						this.field1408[var7] = arg2.g3();
+						this.textureTriangleScaleY[var7] = arg2.g3();
 					}
-					this.field1409[var7] = arg2.g2();
+					this.textureTriangleScaleZ[var7] = arg2.g2();
 				} else {
-					this.field1407[var7] = arg2.g3();
-					this.field1408[var7] = arg2.g3();
-					this.field1409[var7] = arg2.g3();
+					this.textureTriangleScaleX[var7] = arg2.g3();
+					this.textureTriangleScaleY[var7] = arg2.g3();
+					this.textureTriangleScaleZ[var7] = arg2.g3();
 				}
 				this.field1402[var7] = arg3.g1b();
-				this.field1414[var7] = arg4.g1b();
-				this.field1410[var7] = arg5.g1b();
-				this.field1398[var7] = arg5.g1b();
-				this.field1369[var7] = arg5.g1b();
+				this.textureTriangleDirection[var7] = arg4.g1b();
+				this.textureTriangleSpeed[var7] = arg5.g1b();
+				this.textureTriangleTranslationU[var7] = arg5.g1b();
+				this.textureTriangleTranslationV[var7] = arg5.g1b();
 			}
 			if (var8 == 3) {
-				this.field1404[var7] = (short) arg1.g2();
-				this.field1405[var7] = (short) arg1.g2();
-				this.field1406[var7] = (short) arg1.g2();
+				this.textureTriangleVertex1[var7] = (short) arg1.g2();
+				this.textureTriangleVertex2[var7] = (short) arg1.g2();
+				this.textureTriangleVertex3[var7] = (short) arg1.g2();
 				if (this.field1372 < 15) {
-					this.field1407[var7] = arg2.g2();
+					this.textureTriangleScaleX[var7] = arg2.g2();
 					if (this.field1372 < 14) {
-						this.field1408[var7] = arg2.g2();
+						this.textureTriangleScaleY[var7] = arg2.g2();
 					} else {
-						this.field1408[var7] = arg2.g3();
+						this.textureTriangleScaleY[var7] = arg2.g3();
 					}
-					this.field1409[var7] = arg2.g2();
+					this.textureTriangleScaleZ[var7] = arg2.g2();
 				} else {
-					this.field1407[var7] = arg2.g3();
-					this.field1408[var7] = arg2.g3();
-					this.field1409[var7] = arg2.g3();
+					this.textureTriangleScaleX[var7] = arg2.g3();
+					this.textureTriangleScaleY[var7] = arg2.g3();
+					this.textureTriangleScaleZ[var7] = arg2.g3();
 				}
 				this.field1402[var7] = arg3.g1b();
-				this.field1414[var7] = arg4.g1b();
-				this.field1410[var7] = arg5.g1b();
+				this.textureTriangleDirection[var7] = arg4.g1b();
+				this.textureTriangleSpeed[var7] = arg5.g1b();
 			}
 		}
 	}
 
 	@ObfuscatedName("dq.f(III)I")
 	public int method1936(int arg0, int arg1, int arg2) {
-		for (int var4 = 0; var4 < this.field1373; var4++) {
-			if (this.field1375[var4] == arg0 && this.field1382[var4] == arg1 && this.field1411[var4] == arg2) {
+		for (int var4 = 0; var4 < this.vertexCount; var4++) {
+			if (this.vertexX[var4] == arg0 && this.vertexY[var4] == arg1 && this.vertexZ[var4] == arg2) {
 				return var4;
 			}
 		}
-		this.field1375[this.field1373] = arg0;
-		this.field1382[this.field1373] = arg1;
-		this.field1411[this.field1373] = arg2;
-		this.field1374 = this.field1373 + 1;
-		return this.field1373++;
+		this.vertexX[this.vertexCount] = arg0;
+		this.vertexY[this.vertexCount] = arg1;
+		this.vertexZ[this.vertexCount] = arg2;
+		this.field1374 = this.vertexCount + 1;
+		return this.vertexCount++;
 	}
 
 	@ObfuscatedName("dq.w(IIIBBSBS)I")
 	public int method1966(int arg0, int arg1, int arg2, byte arg3, byte arg4, short arg5, byte arg6, short arg7) {
-		this.field1415[this.field1384] = (short) arg0;
-		this.field1386[this.field1384] = (short) arg1;
-		this.field1400[this.field1384] = (short) arg2;
-		this.field1391[this.field1384] = arg3;
-		this.field1413[this.field1384] = arg4;
-		this.field1395[this.field1384] = arg5;
-		this.field1393[this.field1384] = arg6;
-		this.field1396[this.field1384] = arg7;
-		return this.field1384++;
+		this.faceVertex1[this.faceCount] = (short) arg0;
+		this.faceVertex2[this.faceCount] = (short) arg1;
+		this.faceVertex3[this.faceCount] = (short) arg2;
+		this.faceType[this.faceCount] = arg3;
+		this.faceMapping[this.faceCount] = arg4;
+		this.faceColour[this.faceCount] = arg5;
+		this.faceTrans[this.faceCount] = arg6;
+		this.faceMaterial[this.faceCount] = arg7;
+		return this.faceCount++;
 	}
 
 	@ObfuscatedName("dq.l(SSS)B")
@@ -995,10 +995,10 @@ public class ModelUnlit {
 		if (this.field1387 >= 255) {
 			throw new IllegalStateException();
 		}
-		this.field1377[this.field1387] = 0;
-		this.field1404[this.field1387] = arg0;
-		this.field1405[this.field1387] = arg1;
-		this.field1406[this.field1387] = arg2;
+		this.textureTriangleType[this.field1387] = 0;
+		this.textureTriangleVertex1[this.field1387] = arg0;
+		this.textureTriangleVertex2[this.field1387] = arg1;
+		this.textureTriangleVertex3[this.field1387] = arg2;
 		return (byte) this.field1387++;
 	}
 
@@ -1007,16 +1007,16 @@ public class ModelUnlit {
 		if (this.field1387 >= 255) {
 			throw new IllegalStateException();
 		}
-		this.field1377[this.field1387] = 3;
-		this.field1404[this.field1387] = arg0;
-		this.field1405[this.field1387] = arg1;
-		this.field1406[this.field1387] = arg2;
-		this.field1407[this.field1387] = arg3;
-		this.field1408[this.field1387] = arg4;
-		this.field1409[this.field1387] = arg5;
+		this.textureTriangleType[this.field1387] = 3;
+		this.textureTriangleVertex1[this.field1387] = arg0;
+		this.textureTriangleVertex2[this.field1387] = arg1;
+		this.textureTriangleVertex3[this.field1387] = arg2;
+		this.textureTriangleScaleX[this.field1387] = arg3;
+		this.textureTriangleScaleY[this.field1387] = arg4;
+		this.textureTriangleScaleZ[this.field1387] = arg5;
 		this.field1402[this.field1387] = arg6;
-		this.field1414[this.field1387] = arg7;
-		this.field1410[this.field1387] = arg8;
+		this.textureTriangleDirection[this.field1387] = arg7;
+		this.textureTriangleSpeed[this.field1387] = arg8;
 		return (byte) this.field1387++;
 	}
 
@@ -1024,9 +1024,9 @@ public class ModelUnlit {
 	public int[][] method1940(boolean arg0) {
 		int[] var2 = new int[800];
 		int var3 = 0;
-		int var4 = arg0 ? this.field1373 : this.field1374;
+		int var4 = arg0 ? this.vertexCount : this.field1374;
 		for (int var5 = 0; var5 < var4; var5++) {
-			int var6 = this.field1379[var5];
+			int var6 = this.vertexLabel[var5];
 			if (var6 >= 0) {
 				int var10002 = var2[var6]++;
 				if (var6 > var3) {
@@ -1040,7 +1040,7 @@ public class ModelUnlit {
 			var2[var8] = 0;
 		}
 		for (int var9 = 0; var9 < var4; var9++) {
-			int var10 = this.field1379[var9];
+			int var10 = this.vertexLabel[var9];
 			if (var10 >= 0) {
 				var7[var10][var2[var10]++] = var9;
 			}
@@ -1052,8 +1052,8 @@ public class ModelUnlit {
 	public int[][] method1941() {
 		int[] var1 = new int[256];
 		int var2 = 0;
-		for (int var3 = 0; var3 < this.field1384; var3++) {
-			int var4 = this.field1397[var3];
+		for (int var3 = 0; var3 < this.faceCount; var3++) {
+			int var4 = this.faceLabel[var3];
 			if (var4 >= 0) {
 				int var10002 = var1[var4]++;
 				if (var4 > var2) {
@@ -1066,8 +1066,8 @@ public class ModelUnlit {
 			var5[var6] = new int[var1[var6]];
 			var1[var6] = 0;
 		}
-		for (int var7 = 0; var7 < this.field1384; var7++) {
-			int var8 = this.field1397[var7];
+		for (int var7 = 0; var7 < this.faceCount; var7++) {
+			int var8 = this.faceLabel[var7];
 			if (var8 >= 0) {
 				var5[var8][var1[var8]++] = var7;
 			}
@@ -1079,8 +1079,8 @@ public class ModelUnlit {
 	public int[][] method1963() {
 		int[] var1 = new int[256];
 		int var2 = 0;
-		for (int var3 = 0; var3 < this.field1412.length; var3++) {
-			int var4 = this.field1412[var3].field1655;
+		for (int var3 = 0; var3 < this.billboard.length; var3++) {
+			int var4 = this.billboard[var3].field1655;
 			if (var4 >= 0) {
 				int var10002 = var1[var4]++;
 				if (var4 > var2) {
@@ -1093,8 +1093,8 @@ public class ModelUnlit {
 			var5[var6] = new int[var1[var6]];
 			var1[var6] = 0;
 		}
-		for (int var7 = 0; var7 < this.field1412.length; var7++) {
-			int var8 = this.field1412[var7].field1655;
+		for (int var7 = 0; var7 < this.billboard.length; var7++) {
+			int var8 = this.billboard[var7].field1655;
 			if (var8 >= 0) {
 				var5[var8][var1[var8]++] = var7;
 			}
@@ -1104,31 +1104,31 @@ public class ModelUnlit {
 
 	@ObfuscatedName("dq.c(SS)V")
 	public void method1943(short arg0, short arg1) {
-		for (int var3 = 0; var3 < this.field1384; var3++) {
-			if (this.field1395[var3] == arg0) {
-				this.field1395[var3] = arg1;
+		for (int var3 = 0; var3 < this.faceCount; var3++) {
+			if (this.faceColour[var3] == arg0) {
+				this.faceColour[var3] = arg1;
 			}
 		}
 	}
 
 	@ObfuscatedName("dq.r(SS)V")
 	public void method1937(short arg0, short arg1) {
-		if (this.field1396 == null) {
+		if (this.faceMaterial == null) {
 			return;
 		}
-		for (int var3 = 0; var3 < this.field1384; var3++) {
-			if (this.field1396[var3] == arg0) {
-				this.field1396[var3] = arg1;
+		for (int var3 = 0; var3 < this.faceCount; var3++) {
+			if (this.faceMaterial[var3] == arg0) {
+				this.faceMaterial[var3] = arg1;
 			}
 		}
 	}
 
 	@ObfuscatedName("dq.v(III)V")
 	public void method1945(int arg0, int arg1, int arg2) {
-		for (int var4 = 0; var4 < this.field1373; var4++) {
-			this.field1375[var4] += arg0;
-			this.field1382[var4] += arg1;
-			this.field1411[var4] += arg2;
+		for (int var4 = 0; var4 < this.vertexCount; var4++) {
+			this.vertexX[var4] += arg0;
+			this.vertexY[var4] += arg1;
+			this.vertexZ[var4] += arg2;
 		}
 	}
 
@@ -1137,19 +1137,19 @@ public class ModelUnlit {
 		if (arg2 != 0) {
 			int var4 = Trig1.field4270[arg2];
 			int var5 = Trig1.field4272[arg2];
-			for (int var6 = 0; var6 < this.field1373; var6++) {
-				int var7 = this.field1382[var6] * var4 + this.field1375[var6] * var5 >> 14;
-				this.field1382[var6] = this.field1382[var6] * var5 - this.field1375[var6] * var4 >> 14;
-				this.field1375[var6] = var7;
+			for (int var6 = 0; var6 < this.vertexCount; var6++) {
+				int var7 = this.vertexY[var6] * var4 + this.vertexX[var6] * var5 >> 14;
+				this.vertexY[var6] = this.vertexY[var6] * var5 - this.vertexX[var6] * var4 >> 14;
+				this.vertexX[var6] = var7;
 			}
 		}
 		if (arg0 != 0) {
 			int var8 = Trig1.field4270[arg0];
 			int var9 = Trig1.field4272[arg0];
-			for (int var10 = 0; var10 < this.field1373; var10++) {
-				int var11 = this.field1382[var10] * var9 - this.field1411[var10] * var8 >> 14;
-				this.field1411[var10] = this.field1411[var10] * var9 + this.field1382[var10] * var8 >> 14;
-				this.field1382[var10] = var11;
+			for (int var10 = 0; var10 < this.vertexCount; var10++) {
+				int var11 = this.vertexY[var10] * var9 - this.vertexZ[var10] * var8 >> 14;
+				this.vertexZ[var10] = this.vertexZ[var10] * var9 + this.vertexY[var10] * var8 >> 14;
+				this.vertexY[var10] = var11;
 			}
 		}
 		if (arg1 == 0) {
@@ -1157,47 +1157,47 @@ public class ModelUnlit {
 		}
 		int var12 = Trig1.field4270[arg1];
 		int var13 = Trig1.field4272[arg1];
-		for (int var14 = 0; var14 < this.field1373; var14++) {
-			int var15 = this.field1411[var14] * var12 + this.field1375[var14] * var13 >> 14;
-			this.field1411[var14] = this.field1411[var14] * var13 - this.field1375[var14] * var12 >> 14;
-			this.field1375[var14] = var15;
+		for (int var14 = 0; var14 < this.vertexCount; var14++) {
+			int var15 = this.vertexZ[var14] * var12 + this.vertexX[var14] * var13 >> 14;
+			this.vertexZ[var14] = this.vertexZ[var14] * var13 - this.vertexX[var14] * var12 >> 14;
+			this.vertexX[var14] = var15;
 		}
 	}
 
 	@ObfuscatedName("dq.s(I)V")
 	public void method1947(int arg0) {
-		for (int var2 = 0; var2 < this.field1373; var2++) {
-			this.field1375[var2] <<= arg0;
-			this.field1382[var2] <<= arg0;
-			this.field1411[var2] <<= arg0;
+		for (int var2 = 0; var2 < this.vertexCount; var2++) {
+			this.vertexX[var2] <<= arg0;
+			this.vertexY[var2] <<= arg0;
+			this.vertexZ[var2] <<= arg0;
 		}
-		if (this.field1387 <= 0 || this.field1407 == null) {
+		if (this.field1387 <= 0 || this.textureTriangleScaleX == null) {
 			return;
 		}
-		for (int var3 = 0; var3 < this.field1407.length; var3++) {
-			this.field1407[var3] <<= arg0;
-			this.field1408[var3] <<= arg0;
-			if (this.field1377[var3] != 1) {
-				this.field1409[var3] <<= arg0;
+		for (int var3 = 0; var3 < this.textureTriangleScaleX.length; var3++) {
+			this.textureTriangleScaleX[var3] <<= arg0;
+			this.textureTriangleScaleY[var3] <<= arg0;
+			if (this.textureTriangleType[var3] != 1) {
+				this.textureTriangleScaleZ[var3] <<= arg0;
 			}
 		}
 	}
 
 	@ObfuscatedName("dq.y(F)V")
 	public void method1948(float arg0) {
-		for (int var2 = 0; var2 < this.field1373; var2++) {
-			this.field1375[var2] = (int) ((float) this.field1375[var2] * arg0);
-			this.field1382[var2] = (int) ((float) this.field1382[var2] * arg0);
-			this.field1411[var2] = (int) ((float) this.field1411[var2] * arg0);
+		for (int var2 = 0; var2 < this.vertexCount; var2++) {
+			this.vertexX[var2] = (int) ((float) this.vertexX[var2] * arg0);
+			this.vertexY[var2] = (int) ((float) this.vertexY[var2] * arg0);
+			this.vertexZ[var2] = (int) ((float) this.vertexZ[var2] * arg0);
 		}
-		if (this.field1387 <= 0 || this.field1407 == null) {
+		if (this.field1387 <= 0 || this.textureTriangleScaleX == null) {
 			return;
 		}
-		for (int var3 = 0; var3 < this.field1407.length; var3++) {
-			this.field1407[var3] = (int) ((float) this.field1407[var3] * arg0);
-			this.field1408[var3] = (int) ((float) this.field1408[var3] * arg0);
-			if (this.field1377[var3] != 1) {
-				this.field1409[var3] = (int) ((float) this.field1409[var3] * arg0);
+		for (int var3 = 0; var3 < this.textureTriangleScaleX.length; var3++) {
+			this.textureTriangleScaleX[var3] = (int) ((float) this.textureTriangleScaleX[var3] * arg0);
+			this.textureTriangleScaleY[var3] = (int) ((float) this.textureTriangleScaleY[var3] * arg0);
+			if (this.textureTriangleType[var3] != 1) {
+				this.textureTriangleScaleZ[var3] = (int) ((float) this.textureTriangleScaleZ[var3] * arg0);
 			}
 		}
 	}

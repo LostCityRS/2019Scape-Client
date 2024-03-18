@@ -38,10 +38,10 @@ public abstract class Renderer {
 	public final MaterialList materialList;
 
 	@ObfuscatedName("dh.d")
-	public final BillboardTypeList field1598;
+	public final BillboardTypeList billboardList;
 
 	@ObfuscatedName("dh.c")
-	public final ParticleEmitterTypeList field1599;
+	public final ParticleEmitterTypeList emitterTypeList;
 
 	@ObfuscatedName("dh.g")
 	public int field1616 = -1;
@@ -119,8 +119,8 @@ public abstract class Renderer {
 	public Renderer(MaterialList arg0, TextureList arg1, BillboardTypeList arg2, ParticleEmitterTypeList arg3, ParticleEffectorTypeList arg4) {
 		this.materialList = arg0;
 		this.field1596 = arg1;
-		this.field1598 = arg2;
-		this.field1599 = arg3;
+		this.billboardList = arg2;
+		this.emitterTypeList = arg3;
 		int var6 = -1;
 		for (int var7 = 0; var7 < 8; var7++) {
 			if (!field1594[var7]) {
@@ -647,7 +647,7 @@ public abstract class Renderer {
 	public abstract void setSunAmbientIntensity(float arg0);
 
 	@ObfuscatedName("dh.di(IFFFFF)V")
-	public abstract void method2223(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5);
+	public abstract void setSun(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5);
 
 	@ObfuscatedName("dh.dk(I)V")
 	public abstract void method2224(int arg0);

@@ -293,13 +293,13 @@ public class GpuModel extends Model {
 	public GpuModel(GpuRenderer arg0, ModelUnlit arg1, int arg2, int arg3, int arg4, int arg5) {
 		this(arg0, arg2, arg5, true, false);
 		MaterialList var7 = arg0.materialList;
-		BillboardTypeList var8 = arg0.field1598;
-		int[] var9 = new int[arg1.field1384];
+		BillboardTypeList var8 = arg0.billboardList;
+		int[] var9 = new int[arg1.faceCount];
 		this.field9753 = new int[arg1.field1374 + 1];
-		for (int var10 = 0; var10 < arg1.field1384; var10++) {
-			if (arg1.field1391 == null || arg1.field1391[var10] != 2) {
-				if (arg1.field1396 != null && arg1.field1396[var10] != -1) {
-					Material var11 = var7.get(arg1.field1396[var10] & 0xFFFF);
+		for (int var10 = 0; var10 < arg1.faceCount; var10++) {
+			if (arg1.faceType == null || arg1.faceType[var10] != 2) {
+				if (arg1.faceMaterial != null && arg1.faceMaterial[var10] != -1) {
+					Material var11 = var7.get(arg1.faceMaterial[var10] & 0xFFFF);
 					if (((this.field9700 & 0x40) == 0 || !var11.highDetail) && var11.field1361) {
 						continue;
 					}
@@ -308,9 +308,9 @@ public class GpuModel extends Model {
 				int var10001 = this.field9716;
 				this.field9716 = (var10003 + 1);
 				var9[var10001] = var10;
-				this.field9753[arg1.field1415[var10]]++;
-				this.field9753[arg1.field1386[var10]]++;
-				this.field9753[arg1.field1400[var10]]++;
+				this.field9753[arg1.faceVertex1[var10]]++;
+				this.field9753[arg1.faceVertex2[var10]]++;
+				this.field9753[arg1.faceVertex3[var10]]++;
 			}
 		}
 		this.field9721 = this.field9716;
@@ -323,18 +323,18 @@ public class GpuModel extends Model {
 			byte var18 = 0;
 			byte var19 = 0;
 			byte var20 = 0;
-			if (arg1.field1412 != null) {
+			if (arg1.billboard != null) {
 				boolean var21 = false;
-				for (int var22 = 0; var22 < arg1.field1412.length; var22++) {
-					ModelBillboard var23 = arg1.field1412[var22];
+				for (int var22 = 0; var22 < arg1.billboard.length; var22++) {
+					ModelBillboard var23 = arg1.billboard[var22];
 					if (var23.field1654 == var15) {
-						BillboardType var24 = var8.method6015(var23.field1653);
+						BillboardType var24 = var8.get(var23.field1653);
 						if (var24.field3456) {
 							var21 = true;
 						}
 						if (var24.field3455 != -1) {
 							Material var25 = var7.get(var24.field3455);
-							if (MaterialAlphaMode.field7573 == var25.alphaMode) {
+							if (MaterialAlphaMode.MULTIPLY == var25.alphaMode) {
 								this.field9737 = true;
 							}
 						}
@@ -346,12 +346,12 @@ public class GpuModel extends Model {
 					continue;
 				}
 			}
-			if (arg1.field1403 != null) {
+			if (arg1.emitters != null) {
 				boolean var26 = false;
-				for (int var27 = 0; var27 < arg1.field1403.length; var27++) {
-					ModelParticleEmitter var28 = arg1.field1403[var27];
+				for (int var27 = 0; var27 < arg1.emitters.length; var27++) {
+					ModelParticleEmitter var28 = arg1.emitters[var27];
 					if (var28.field1463 == var15) {
-						ParticleEmitterType var29 = this.field9730.field1599.method6004(var28.field1477);
+						ParticleEmitterType var29 = this.field9730.emitterTypeList.get(var28.particle);
 						if (var29.field3510) {
 							var26 = true;
 						}
@@ -364,22 +364,22 @@ public class GpuModel extends Model {
 				}
 			}
 			short var30 = -1;
-			if (arg1.field1396 != null) {
-				var30 = arg1.field1396[var15];
+			if (arg1.faceMaterial != null) {
+				var30 = arg1.faceMaterial[var15];
 				if (var30 != -1) {
 					var16 = var7.get(var30 & 0xFFFF);
 					if ((this.field9700 & 0x40) != 0 && var16.highDetail) {
 						var30 = -1;
 						var16 = null;
 					} else {
-						var19 = var16.field1308;
-						var20 = var16.field1305;
+						var19 = var16.effect;
+						var20 = var16.effectArg1;
 					}
 				}
 			}
-			boolean var31 = arg1.field1393 != null && arg1.field1393[var15] != 0 || var16 != null && MaterialAlphaMode.NONE != var16.alphaMode;
-			if ((var13 || var31) && arg1.field1392 != null) {
-				var17 += arg1.field1392[var15] << 17;
+			boolean var31 = arg1.faceTrans != null && arg1.faceTrans[var15] != 0 || var16 != null && MaterialAlphaMode.NONE != var16.alphaMode;
+			if ((var13 || var31) && arg1.facePriority != null) {
+				var17 += arg1.facePriority[var15] << 17;
 			}
 			if (var31) {
 				var17 += 65536;
@@ -390,25 +390,25 @@ public class GpuModel extends Model {
 			int var35 = (var14 & 0xFFFF) + var34;
 			var12[var14] = ((long) var33 << 32) + (long) var35;
 			this.field9737 |= var31;
-			this.field9699 |= var16 != null && (var16.field1317 != 0.0F || var16.field1338 != 0.0F);
+			this.field9699 |= var16 != null && (var16.speedU != 0.0F || var16.speedV != 0.0F);
 		}
-		Algorithms.method5114(var12, var9);
-		this.field9703 = arg1.field1373;
+		Algorithms.quicksortParallel(var12, var9);
+		this.field9703 = arg1.vertexCount;
 		this.field9704 = arg1.field1374;
-		this.field9705 = arg1.field1375;
-		this.field9767 = arg1.field1382;
-		this.field9712 = arg1.field1411;
-		this.field9709 = arg1.field1417;
+		this.field9705 = arg1.vertexX;
+		this.field9767 = arg1.vertexY;
+		this.field9712 = arg1.vertexZ;
+		this.field9709 = arg1.vertexSourceModels;
 		GpuModelNormal[] var36 = new GpuModelNormal[this.field9704];
-		this.field9755 = arg1.field1403;
-		this.field9738 = arg1.field1416;
-		if (arg1.field1412 != null) {
-			this.field9746 = arg1.field1412.length;
+		this.field9755 = arg1.emitters;
+		this.field9738 = arg1.effectors;
+		if (arg1.billboard != null) {
+			this.field9746 = arg1.billboard.length;
 			this.field9758 = new GpuModelRelated2[this.field9746];
 			this.field9757 = new GpuModelRelated5[this.field9746];
 			for (int var37 = 0; var37 < this.field9746; var37++) {
-				ModelBillboard var38 = arg1.field1412[var37];
-				BillboardType var39 = var8.method6015(var38.field1653);
+				ModelBillboard var38 = arg1.billboard[var37];
+				BillboardType var39 = var8.get(var38.field1653);
 				int var40 = -1;
 				for (int var41 = 0; var41 < this.field9716; var41++) {
 					if (var38.field1654 == var9[var41]) {
@@ -419,9 +419,9 @@ public class GpuModel extends Model {
 				if (var40 == -1) {
 					throw new RuntimeException();
 				}
-				int var42 = ColourUtils.field8151[arg1.field1395[var38.field1654] & 0xFFFF] & 0xFFFFFF;
-				int var43 = var42 | 255 - (arg1.field1393 == null ? 0 : arg1.field1393[var38.field1654]) << 24;
-				this.field9758[var37] = new GpuModelRelated2(var40, arg1.field1415[var38.field1654], arg1.field1386[var38.field1654], arg1.field1400[var38.field1654], var39.field3451, var39.field3452, var39.field3455, var39.field3450, var39.field3453, var39.field3456, var39.field3449, var38.field1656);
+				int var42 = ColourUtils.field8151[arg1.faceColour[var38.field1654] & 0xFFFF] & 0xFFFFFF;
+				int var43 = var42 | 255 - (arg1.faceTrans == null ? 0 : arg1.faceTrans[var38.field1654]) << 24;
+				this.field9758[var37] = new GpuModelRelated2(var40, arg1.faceVertex1[var38.field1654], arg1.faceVertex2[var38.field1654], arg1.faceVertex3[var38.field1654], var39.field3451, var39.field3452, var39.field3455, var39.field3450, var39.field3453, var39.field3456, var39.field3449, var38.field1656);
 				this.field9757[var37] = new GpuModelRelated5(var43);
 			}
 		}
@@ -456,11 +456,11 @@ public class GpuModel extends Model {
 		}
 		this.field9753[arg1.field1374] = var45;
 		ModelRelated1 var48 = this.method1687(arg1, var9, this.field9716);
-		GpuFaceNormal[] var49 = new GpuFaceNormal[arg1.field1384];
-		for (int var50 = 0; var50 < arg1.field1384; var50++) {
-			short var51 = arg1.field1415[var50];
-			short var52 = arg1.field1386[var50];
-			short var53 = arg1.field1400[var50];
+		GpuFaceNormal[] var49 = new GpuFaceNormal[arg1.faceCount];
+		for (int var50 = 0; var50 < arg1.faceCount; var50++) {
+			short var51 = arg1.faceVertex1[var50];
+			short var52 = arg1.faceVertex2[var50];
+			short var53 = arg1.faceVertex3[var50];
 			int var54 = this.field9705[var52] - this.field9705[var51];
 			int var55 = this.field9767[var52] - this.field9767[var51];
 			int var56 = this.field9712[var52] - this.field9712[var51];
@@ -481,7 +481,7 @@ public class GpuModel extends Model {
 			int var64 = var60 * 256 / var63;
 			int var65 = var61 * 256 / var63;
 			int var66 = var62 * 256 / var63;
-			byte var67 = arg1.field1391 == null ? 0 : arg1.field1391[var50];
+			byte var67 = arg1.faceType == null ? 0 : arg1.faceType[var50];
 			if (var67 == 0) {
 				GpuModelNormal var68 = var36[var51];
 				var68.field3379 += var64;
@@ -507,9 +507,9 @@ public class GpuModel extends Model {
 		}
 		for (int var72 = 0; var72 < this.field9716; var72++) {
 			int var73 = var9[var72];
-			int var74 = arg1.field1395[var73] & 0xFFFF;
-			int var75 = arg1.field1393 == null ? 0 : arg1.field1393[var73] & 0xFF;
-			short var76 = arg1.field1396 == null ? -1 : arg1.field1396[var73];
+			int var74 = arg1.faceColour[var73] & 0xFFFF;
+			int var75 = arg1.faceTrans == null ? 0 : arg1.faceTrans[var73] & 0xFF;
+			short var76 = arg1.faceMaterial == null ? -1 : arg1.faceMaterial[var73];
 			if (var76 != -1 && (this.field9700 & 0x40) != 0 && var7.get(var76).highDetail) {
 				var76 = -1;
 			}
@@ -527,23 +527,23 @@ public class GpuModel extends Model {
 				var91 = 0L;
 				var88 = 0L;
 			} else {
-				short var83 = arg1.field1413 == null ? -1 : arg1.field1413[var73];
+				short var83 = arg1.faceMapping == null ? -1 : arg1.faceMapping[var73];
 				if (var83 == 32766) {
-					int var84 = arg1.field1388[var73] & 0xFF;
-					int var85 = arg1.field1389[var73] & 0xFF;
-					int var86 = arg1.field1390[var73] & 0xFF;
-					int var87 = arg1.field1380[arg1.field1415[var73]] + var84;
+					int var84 = arg1.faceTextureVertexOffset1[var73] & 0xFF;
+					int var85 = arg1.faceTextureVertexOffset2[var73] & 0xFF;
+					int var86 = arg1.faceTextureVertexOffset3[var73] & 0xFF;
+					int var87 = arg1.vertexTextureVertex[arg1.faceVertex1[var73]] + var84;
 					var88 = var87;
-					int var90 = arg1.field1380[arg1.field1386[var73]] + var85;
+					int var90 = arg1.vertexTextureVertex[arg1.faceVertex2[var73]] + var85;
 					var91 = var87;
-					int var93 = arg1.field1380[arg1.field1400[var73]] + var86;
+					int var93 = arg1.vertexTextureVertex[arg1.faceVertex3[var73]] + var86;
 					var94 = var87;
-					var77 = arg1.field1385[var87];
-					var78 = arg1.field1383[var87];
-					var79 = arg1.field1385[var90];
-					var80 = arg1.field1383[var90];
-					var81 = arg1.field1385[var93];
-					var82 = arg1.field1383[var93];
+					var77 = arg1.textureVertexU[var87];
+					var78 = arg1.textureVertexV[var87];
+					var79 = arg1.textureVertexU[var90];
+					var80 = arg1.textureVertexV[var90];
+					var81 = arg1.textureVertexU[var93];
+					var82 = arg1.textureVertexV[var93];
 				} else if (var83 == -1) {
 					var77 = 0.0F;
 					var78 = 1.0F;
@@ -559,32 +559,32 @@ public class GpuModel extends Model {
 					int var97 = 0;
 					byte var98 = 0;
 					byte var99 = 0;
-					byte var100 = arg1.field1377[var96];
+					byte var100 = arg1.textureTriangleType[var96];
 					if (var100 == 0) {
-						short var101 = arg1.field1415[var73];
-						short var102 = arg1.field1386[var73];
-						short var103 = arg1.field1400[var73];
-						short var104 = arg1.field1404[var96];
-						short var105 = arg1.field1405[var96];
-						short var106 = arg1.field1406[var96];
-						float var107 = (float) arg1.field1375[var104];
-						float var108 = (float) arg1.field1382[var104];
-						float var109 = (float) arg1.field1411[var104];
-						float var110 = (float) arg1.field1375[var105] - var107;
-						float var111 = (float) arg1.field1382[var105] - var108;
-						float var112 = (float) arg1.field1411[var105] - var109;
-						float var113 = (float) arg1.field1375[var106] - var107;
-						float var114 = (float) arg1.field1382[var106] - var108;
-						float var115 = (float) arg1.field1411[var106] - var109;
-						float var116 = (float) arg1.field1375[var101] - var107;
-						float var117 = (float) arg1.field1382[var101] - var108;
-						float var118 = (float) arg1.field1411[var101] - var109;
-						float var119 = (float) arg1.field1375[var102] - var107;
-						float var120 = (float) arg1.field1382[var102] - var108;
-						float var121 = (float) arg1.field1411[var102] - var109;
-						float var122 = (float) arg1.field1375[var103] - var107;
-						float var123 = (float) arg1.field1382[var103] - var108;
-						float var124 = (float) arg1.field1411[var103] - var109;
+						short var101 = arg1.faceVertex1[var73];
+						short var102 = arg1.faceVertex2[var73];
+						short var103 = arg1.faceVertex3[var73];
+						short var104 = arg1.textureTriangleVertex1[var96];
+						short var105 = arg1.textureTriangleVertex2[var96];
+						short var106 = arg1.textureTriangleVertex3[var96];
+						float var107 = (float) arg1.vertexX[var104];
+						float var108 = (float) arg1.vertexY[var104];
+						float var109 = (float) arg1.vertexZ[var104];
+						float var110 = (float) arg1.vertexX[var105] - var107;
+						float var111 = (float) arg1.vertexY[var105] - var108;
+						float var112 = (float) arg1.vertexZ[var105] - var109;
+						float var113 = (float) arg1.vertexX[var106] - var107;
+						float var114 = (float) arg1.vertexY[var106] - var108;
+						float var115 = (float) arg1.vertexZ[var106] - var109;
+						float var116 = (float) arg1.vertexX[var101] - var107;
+						float var117 = (float) arg1.vertexY[var101] - var108;
+						float var118 = (float) arg1.vertexZ[var101] - var109;
+						float var119 = (float) arg1.vertexX[var102] - var107;
+						float var120 = (float) arg1.vertexY[var102] - var108;
+						float var121 = (float) arg1.vertexZ[var102] - var109;
+						float var122 = (float) arg1.vertexX[var103] - var107;
+						float var123 = (float) arg1.vertexY[var103] - var108;
+						float var124 = (float) arg1.vertexZ[var103] - var109;
 						float var125 = var111 * var115 - var112 * var114;
 						float var126 = var112 * var113 - var110 * var115;
 						float var127 = var110 * var114 - var111 * var113;
@@ -603,24 +603,24 @@ public class GpuModel extends Model {
 						var80 = (var121 * var134 + var119 * var132 + var120 * var133) * var135;
 						var82 = (var124 * var134 + var122 * var132 + var123 * var133) * var135;
 					} else {
-						short var136 = arg1.field1415[var73];
-						short var137 = arg1.field1386[var73];
-						short var138 = arg1.field1400[var73];
+						short var136 = arg1.faceVertex1[var73];
+						short var137 = arg1.faceVertex2[var73];
+						short var138 = arg1.faceVertex3[var73];
 						int var139 = var48.field1688[var96];
 						int var140 = var48.field1690[var96];
 						int var141 = var48.field1689[var96];
 						float[] var142 = var48.field1691[var96];
-						byte var143 = arg1.field1414[var96];
-						float var144 = (float) arg1.field1410[var96] / 256.0F;
+						byte var143 = arg1.textureTriangleDirection[var96];
+						float var144 = (float) arg1.textureTriangleSpeed[var96] / 256.0F;
 						if (var100 == 1) {
-							float var145 = (float) arg1.field1409[var96] / 1024.0F;
-							method1684(arg1.field1375[var136], arg1.field1382[var136], arg1.field1411[var136], var139, var140, var141, var142, var145, var143, var144, this.field9720);
+							float var145 = (float) arg1.textureTriangleScaleZ[var96] / 1024.0F;
+							method1684(arg1.vertexX[var136], arg1.vertexY[var136], arg1.vertexZ[var136], var139, var140, var141, var142, var145, var143, var144, this.field9720);
 							var77 = this.field9720[0];
 							var78 = this.field9720[1];
-							method1684(arg1.field1375[var137], arg1.field1382[var137], arg1.field1411[var137], var139, var140, var141, var142, var145, var143, var144, this.field9720);
+							method1684(arg1.vertexX[var137], arg1.vertexY[var137], arg1.vertexZ[var137], var139, var140, var141, var142, var145, var143, var144, this.field9720);
 							var79 = this.field9720[0];
 							var80 = this.field9720[1];
-							method1684(arg1.field1375[var138], arg1.field1382[var138], arg1.field1411[var138], var139, var140, var141, var142, var145, var143, var144, this.field9720);
+							method1684(arg1.vertexX[var138], arg1.vertexY[var138], arg1.vertexZ[var138], var139, var140, var141, var142, var145, var143, var144, this.field9720);
 							var81 = this.field9720[0];
 							var82 = this.field9720[1];
 							float var146 = var145 / 2.0F;
@@ -656,41 +656,41 @@ public class GpuModel extends Model {
 								}
 							}
 						} else if (var100 == 2) {
-							float var147 = (float) arg1.field1398[var96] / 256.0F;
-							float var148 = (float) arg1.field1369[var96] / 256.0F;
-							int var149 = arg1.field1375[var137] - arg1.field1375[var136];
-							int var150 = arg1.field1382[var137] - arg1.field1382[var136];
-							int var151 = arg1.field1411[var137] - arg1.field1411[var136];
-							int var152 = arg1.field1375[var138] - arg1.field1375[var136];
-							int var153 = arg1.field1382[var138] - arg1.field1382[var136];
-							int var154 = arg1.field1411[var138] - arg1.field1411[var136];
+							float var147 = (float) arg1.textureTriangleTranslationU[var96] / 256.0F;
+							float var148 = (float) arg1.textureTriangleTranslationV[var96] / 256.0F;
+							int var149 = arg1.vertexX[var137] - arg1.vertexX[var136];
+							int var150 = arg1.vertexY[var137] - arg1.vertexY[var136];
+							int var151 = arg1.vertexZ[var137] - arg1.vertexZ[var136];
+							int var152 = arg1.vertexX[var138] - arg1.vertexX[var136];
+							int var153 = arg1.vertexY[var138] - arg1.vertexY[var136];
+							int var154 = arg1.vertexZ[var138] - arg1.vertexZ[var136];
 							int var155 = var150 * var154 - var151 * var153;
 							int var156 = var151 * var152 - var149 * var154;
 							int var157 = var149 * var153 - var150 * var152;
-							float var158 = 64.0F / (float) arg1.field1407[var96];
-							float var159 = 64.0F / (float) arg1.field1408[var96];
-							float var160 = 64.0F / (float) arg1.field1409[var96];
+							float var158 = 64.0F / (float) arg1.textureTriangleScaleX[var96];
+							float var159 = 64.0F / (float) arg1.textureTriangleScaleY[var96];
+							float var160 = 64.0F / (float) arg1.textureTriangleScaleZ[var96];
 							float var161 = (var142[2] * (float) var157 + var142[0] * (float) var155 + var142[1] * (float) var156) / var158;
 							float var162 = (var142[5] * (float) var157 + var142[3] * (float) var155 + var142[4] * (float) var156) / var159;
 							float var163 = (var142[8] * (float) var157 + var142[6] * (float) var155 + var142[7] * (float) var156) / var160;
 							var97 = method1685(var161, var162, var163);
-							method1708(arg1.field1375[var136], arg1.field1382[var136], arg1.field1411[var136], var139, var140, var141, var97, var142, var143, var144, var147, var148, this.field9720);
+							method1708(arg1.vertexX[var136], arg1.vertexY[var136], arg1.vertexZ[var136], var139, var140, var141, var97, var142, var143, var144, var147, var148, this.field9720);
 							var77 = this.field9720[0];
 							var78 = this.field9720[1];
-							method1708(arg1.field1375[var137], arg1.field1382[var137], arg1.field1411[var137], var139, var140, var141, var97, var142, var143, var144, var147, var148, this.field9720);
+							method1708(arg1.vertexX[var137], arg1.vertexY[var137], arg1.vertexZ[var137], var139, var140, var141, var97, var142, var143, var144, var147, var148, this.field9720);
 							var79 = this.field9720[0];
 							var80 = this.field9720[1];
-							method1708(arg1.field1375[var138], arg1.field1382[var138], arg1.field1411[var138], var139, var140, var141, var97, var142, var143, var144, var147, var148, this.field9720);
+							method1708(arg1.vertexX[var138], arg1.vertexY[var138], arg1.vertexZ[var138], var139, var140, var141, var97, var142, var143, var144, var147, var148, this.field9720);
 							var81 = this.field9720[0];
 							var82 = this.field9720[1];
 						} else if (var100 == 3) {
-							method1753(arg1.field1375[var136], arg1.field1382[var136], arg1.field1411[var136], var139, var140, var141, var142, var143, var144, this.field9720);
+							method1753(arg1.vertexX[var136], arg1.vertexY[var136], arg1.vertexZ[var136], var139, var140, var141, var142, var143, var144, this.field9720);
 							var77 = this.field9720[0];
 							var78 = this.field9720[1];
-							method1753(arg1.field1375[var137], arg1.field1382[var137], arg1.field1411[var137], var139, var140, var141, var142, var143, var144, this.field9720);
+							method1753(arg1.vertexX[var137], arg1.vertexY[var137], arg1.vertexZ[var137], var139, var140, var141, var142, var143, var144, this.field9720);
 							var79 = this.field9720[0];
 							var80 = this.field9720[1];
-							method1753(arg1.field1375[var138], arg1.field1382[var138], arg1.field1411[var138], var139, var140, var141, var142, var143, var144, this.field9720);
+							method1753(arg1.vertexX[var138], arg1.vertexY[var138], arg1.vertexZ[var138], var139, var140, var141, var142, var143, var144, this.field9720);
 							var81 = this.field9720[0];
 							var82 = this.field9720[1];
 							if ((var143 & 0x1) == 0) {
@@ -731,12 +731,12 @@ public class GpuModel extends Model {
 					var94 = (long) (var99 << 19) | var88;
 				}
 			}
-			byte var164 = arg1.field1391 == null ? 0 : arg1.field1391[var73];
+			byte var164 = arg1.faceType == null ? 0 : arg1.faceType[var73];
 			if (var164 == 0) {
 				long var165 = (long) ((var74 << 8) + var75);
-				short var167 = arg1.field1415[var73];
-				short var168 = arg1.field1386[var73];
-				short var169 = arg1.field1400[var73];
+				short var167 = arg1.faceVertex1[var73];
+				short var168 = arg1.faceVertex2[var73];
+				short var169 = arg1.faceVertex3[var73];
 				GpuModelNormal var170 = var36[var167];
 				this.field9713[var72] = this.method15592(arg1, var167, var72, var165 | var88 << 24, var170.field3379, var170.field3377, var170.field3378, var170.field3380, var77, var78);
 				GpuModelNormal var171 = var36[var168];
@@ -746,17 +746,17 @@ public class GpuModel extends Model {
 			} else if (var164 == 1) {
 				GpuFaceNormal var173 = var49[var73];
 				long var174 = ((long) (var173.field3353 + 256) << 24) + ((long) (var173.field3351 & Integer.MIN_VALUE) << 9) + ((long) (var173.field3352 + 256) << 32) + (long) (var74 << 8) + (long) var75;
-				this.field9713[var72] = this.method15592(arg1, arg1.field1415[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var77, var78);
-				this.field9762[var72] = this.method15592(arg1, arg1.field1386[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var79, var80);
-				this.field9726[var72] = this.method15592(arg1, arg1.field1400[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var81, var82);
+				this.field9713[var72] = this.method15592(arg1, arg1.faceVertex1[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var77, var78);
+				this.field9762[var72] = this.method15592(arg1, arg1.faceVertex2[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var79, var80);
+				this.field9726[var72] = this.method15592(arg1, arg1.faceVertex3[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var81, var82);
 			}
-			if (arg1.field1393 != null) {
-				this.field9745[var72] = arg1.field1393[var73];
+			if (arg1.faceTrans != null) {
+				this.field9745[var72] = arg1.faceTrans[var73];
 			}
 			if (arg1.field1399 != null) {
 				this.field9759[var72] = arg1.field1399[var73];
 			}
-			this.field9722[var72] = arg1.field1395[var73];
+			this.field9722[var72] = arg1.faceColour[var73];
 			this.field9717[var72] = var76;
 		}
 		if (this.field9721 > 0) {
@@ -824,17 +824,17 @@ public class GpuModel extends Model {
 		this.field9747 = method15591(this.field9747, this.field9710);
 		this.field9707 = method15633(this.field9707, this.field9710);
 		this.field9724 = method15633(this.field9724, this.field9710);
-		if (arg1.field1379 != null && GpuFlagsUnknown.method5465(arg2, this.field9700)) {
+		if (arg1.vertexLabel != null && GpuFlagsUnknown.method5465(arg2, this.field9700)) {
 			this.field9702 = arg1.method1940(false);
 		}
-		if (arg1.field1412 != null && GpuFlagsUnknown.method5466(arg2, this.field9700)) {
+		if (arg1.billboard != null && GpuFlagsUnknown.method5466(arg2, this.field9700)) {
 			this.field9751 = arg1.method1963();
 		}
-		if (arg1.field1397 != null && GpuFlagsUnknown.method5496(arg2, this.field9700)) {
+		if (arg1.faceLabel != null && GpuFlagsUnknown.method5496(arg2, this.field9700)) {
 			int var189 = 0;
 			int[] var190 = new int[256];
 			for (int var191 = 0; var191 < this.field9716; var191++) {
-				int var192 = arg1.field1397[var9[var191]];
+				int var192 = arg1.faceLabel[var9[var191]];
 				if (var192 >= 0) {
 					int var10002 = var190[var192]++;
 					if (var192 > var189) {
@@ -848,7 +848,7 @@ public class GpuModel extends Model {
 				var190[var193] = 0;
 			}
 			for (int var194 = 0; var194 < this.field9716; var194++) {
-				int var195 = arg1.field1397[var9[var194]];
+				int var195 = arg1.faceLabel[var9[var194]];
 				if (var195 >= 0) {
 					this.field9728[var195][var190[var195]++] = var194;
 				}
@@ -1962,7 +1962,7 @@ public class GpuModel extends Model {
 			Material var10 = var3.get(arg1 & 0xFFFF);
 			var8 = var10.field1364;
 			var9 = var10.field1363;
-			if (var10.field1317 != 0.0F || var10.field1338 != 0.0F) {
+			if (var10.speedU != 0.0F || var10.speedV != 0.0F) {
 				this.field9699 = true;
 			}
 		}
@@ -3422,9 +3422,9 @@ public class GpuModel extends Model {
 				} else {
 					Material var10 = this.field9730.materialList.get(var7 & 0xFFFF);
 					var2.field2966 = this.field9730.field10188.method5639(var10);
-					var8 = !Material.method261(var10.field1308);
-					var2.field2982.entries[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.field1317 / 64.0F % 1.0F;
-					var2.field2982.entries[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.field1338 / 64.0F % 1.0F;
+					var8 = !Material.method261(var10.effect);
+					var2.field2982.entries[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.speedU / 64.0F % 1.0F;
+					var2.field2982.entries[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.speedV / 64.0F % 1.0F;
 					if (MaterialAlphaMode.TEST == var10.alphaMode) {
 						var9 = var10.alphaThreshold;
 					}
@@ -3486,10 +3486,10 @@ public class GpuModel extends Model {
 				} else {
 					var24 = this.field9730.materialList.get(var22 & 0xFFFF);
 					var2.field2966 = this.field9730.field10188.method5639(var24);
-					var23 = var24.field1308;
-					var2.method5036(var24.field1305);
-					var2.field2982.entries[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.field1317 % 1.0F;
-					var2.field2982.entries[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.field1338 % 1.0F;
+					var23 = var24.effect;
+					var2.method5036(var24.effectArg1);
+					var2.field2982.entries[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.speedU % 1.0F;
+					var2.field2982.entries[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.speedV % 1.0F;
 					if (MaterialAlphaMode.TEST == var24.alphaMode) {
 						var25 = var24.alphaThreshold;
 					}
@@ -3516,7 +3516,7 @@ public class GpuModel extends Model {
 							var2.method5020(var13);
 						} else {
 							WaterfallShader var27 = this.field9730.field10175;
-							var27.method19204(var24.field1305, var24.field1359);
+							var27.method19204(var24.effectArg1, var24.field1359);
 							var27.field12106.setToMatrix4x3(arg0);
 							var27.field12108.setToMatrix4x3(arg0);
 							var27.field12108.multiply(this.field9730.field10081);

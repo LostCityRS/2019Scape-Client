@@ -211,7 +211,7 @@ public class SkyBox {
 		try {
 			boolean var2 = field1810.method6927(this.field5093);
 			if (var2) {
-				arg0.method2223(16777215, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
+				arg0.setSun(16777215, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
 				ModelUnlit var3 = ModelUnlit.method1931(field1810, this.field5093, 0);
 				this.field5103 = arg0.createModel(var3, 1099776, 0, 255, 1);
 				byte[] var4 = this.field5103.method1741();
@@ -267,13 +267,13 @@ public class SkyBox {
 				arg0.fillRectangle(arg2, arg3, arg4, arg5, var14 << 24 | arg9, arg10 ? 0 : 1);
 			} else {
 				Material var15 = field3199.get(this.field5084);
-				if (this.field5095 == null && field2421.loadTexture(TextureRelated2.field7586, var15.diffuseTexture, -1, MaterialAlphaMode.field7573 == var15.alphaMode ? TextureRelated1.field7569 : TextureRelated1.field7568, 0.7F, this.field5085, this.field5085, false)) {
-					int[] var16 = MaterialAlphaMode.field7573 == var15.alphaMode ? field2421.getSpecialTexture(TextureRelated2.field7586, var15.diffuseTexture, 0.7F, this.field5085, this.field5085, false) : field2421.getTexture(TextureRelated2.field7586, var15.diffuseTexture, 0.7F, this.field5085, this.field5085, false);
+				if (this.field5095 == null && field2421.loadTexture(TextureRelated2.field7586, var15.diffuseTexture, -1, MaterialAlphaMode.MULTIPLY == var15.alphaMode ? TextureRelated1.field7569 : TextureRelated1.field7568, 0.7F, this.field5085, this.field5085, false)) {
+					int[] var16 = MaterialAlphaMode.MULTIPLY == var15.alphaMode ? field2421.getSpecialTexture(TextureRelated2.field7586, var15.diffuseTexture, 0.7F, this.field5085, this.field5085, false) : field2421.getTexture(TextureRelated2.field7586, var15.diffuseTexture, 0.7F, this.field5085, this.field5085, false);
 					this.field5096 = var16[0];
 					this.field5097 = var16[var16.length - 1];
 					this.field5095 = arg0.createSprite(var16, 0, var15.size, var15.size, var15.size);
 				}
-				int var17 = var14 == 255 ? (MaterialAlphaMode.field7573 == var15.alphaMode ? 1 : 0) : 1;
+				int var17 = var14 == 255 ? (MaterialAlphaMode.MULTIPLY == var15.alphaMode ? 1 : 0) : 1;
 				if (var17 == 1 && arg10) {
 					arg0.fillRectangle(arg2, arg3, arg4, arg5, arg9, 0);
 				}

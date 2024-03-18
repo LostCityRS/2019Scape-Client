@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface BillboardTypeList {
 
 	@ObfuscatedName("nx.e(II)Lnm;")
-	BillboardType method6015(int arg0);
+	BillboardType get(int arg0);
 }

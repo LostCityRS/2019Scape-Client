@@ -8,7 +8,7 @@ import com.jagex.graphics.PalettedSpriteData;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afd")
-public class PureJavaSpriteRelated extends Font {
+public class FontRelated2 extends Font {
 
 	@ObfuscatedName("afd.o")
 	public PureJavaRenderer field10236;
@@ -19,7 +19,7 @@ public class PureJavaSpriteRelated extends Font {
 	@ObfuscatedName("afd.y")
 	public int[] field10235;
 
-	public PureJavaSpriteRelated(PureJavaRenderer arg0, FontMetrics arg1, PalettedSpriteData arg2) {
+	public FontRelated2(PureJavaRenderer arg0, FontMetrics arg1, PalettedSpriteData arg2) {
 		super(arg0, arg1);
 		this.field10236 = arg0;
 		this.field10237 = new byte[256][];

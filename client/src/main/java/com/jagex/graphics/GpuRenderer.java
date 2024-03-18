@@ -1843,7 +1843,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.di(IFFFFF)V")
-	public final void method2223(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
+	public final void setSun(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
 		boolean var7 = this.field10118 * 16777215 != arg0;
 		float var8 = arg1 * 0.5F;
 		float var9 = arg2 * 0.5F;

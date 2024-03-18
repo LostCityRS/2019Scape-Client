@@ -2264,7 +2264,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.di(IFFFFF)V")
-	public final void method2223(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
+	public final void setSun(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
 		boolean var7 = this.field9942 != arg0;
 		if (var7 || this.field9947 != arg1 || this.field9948 != arg2) {
 			this.field9942 = arg0;
@@ -2753,15 +2753,15 @@ public class LegacyOpenGLRenderer extends Renderer {
 				Material var10 = this.materialList.get(arg0);
 				if (var10.field1330) {
 					var4 = this.field10026.method1404(var10);
-					if (var10.field1317 == 0.0F && var10.field1338 == 0.0F) {
+					if (var10.speedU == 0.0F && var10.speedV == 0.0F) {
 						this.method15785();
 					} else {
-						this.method15784((float) (this.field9872 % 128000) / 1000.0F * var10.field1317 % 1.0F, (float) (this.field9872 % 128000) / 1000.0F * var10.field1338 % 1.0F, 0.0F);
+						this.method15784((float) (this.field9872 % 128000) / 1000.0F * var10.speedU % 1.0F, (float) (this.field9872 % 128000) / 1000.0F * var10.speedV % 1.0F, 0.0F);
 					}
 					if (!this.field9840) {
-						var6 = var10.field1305;
+						var6 = var10.effectArg1;
 						var7 = var10.field1359;
-						var8 = var10.field1308;
+						var8 = var10.effect;
 					}
 					var5 = var10.field1311;
 				} else {

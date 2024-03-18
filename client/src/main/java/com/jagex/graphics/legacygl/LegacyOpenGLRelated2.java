@@ -42,7 +42,7 @@ public class LegacyOpenGLRelated2 {
 				var5 = new LegacyOpenGLRelated(this.field1187, 3553, TextureFormat.field1273, DataType.FLOAT_16, arg1, arg1, arg0.field1332 != 0, var4, TextureFormat.field1273);
 			} else {
 				int[] var6;
-				if (MaterialAlphaMode.NONE == arg0.alphaMode && Material.method261(arg0.field1308)) {
+				if (MaterialAlphaMode.NONE == arg0.alphaMode && Material.method261(arg0.effect)) {
 					var6 = this.field1186.getTexture(TextureRelated2.field7586, arg0.diffuseTexture, 0.7F, arg1, arg1, true);
 				} else {
 					var6 = this.field1186.getSpecialTexture(TextureRelated2.field7586, arg0.diffuseTexture, 0.7F, arg1, arg1, false);
@@ -64,7 +64,7 @@ public class LegacyOpenGLRelated2 {
 		}
 		if (arg1.field1336 && this.field1187.isBloomEnabled()) {
 			return this.field1186.loadTexture(arg0, arg1.diffuseTexture, arg1.field1302, TextureRelated1.field7570, 0.7F, arg2, arg2, false);
-		} else if (MaterialAlphaMode.NONE == arg1.alphaMode && Material.method261(arg1.field1308)) {
+		} else if (MaterialAlphaMode.NONE == arg1.alphaMode && Material.method261(arg1.effect)) {
 			return this.field1186.loadTexture(arg0, arg1.diffuseTexture, -1, TextureRelated1.field7568, 0.7F, arg2, arg2, true);
 		} else {
 			return this.field1186.loadTexture(arg0, arg1.diffuseTexture, -1, TextureRelated1.field7569, 0.7F, arg2, arg2, false);

@@ -139,7 +139,7 @@ public abstract class Model {
 		int[] var5 = null;
 		int[] var6 = null;
 		float[][] var7 = null;
-		if (arg0.field1413 != null) {
+		if (arg0.faceMapping != null) {
 			int var8 = arg0.field1387;
 			int[] var9 = new int[var8];
 			int[] var10 = new int[var8];
@@ -157,20 +157,20 @@ public abstract class Model {
 			}
 			for (int var16 = 0; var16 < arg2; var16++) {
 				int var17 = arg1[var16];
-				short var18 = arg0.field1413[var17];
+				short var18 = arg0.faceMapping[var17];
 				if (var18 > -1 && var18 < 32766) {
 					for (int var19 = 0; var19 < 3; var19++) {
 						short var20;
 						if (var19 == 0) {
-							var20 = arg0.field1415[var17];
+							var20 = arg0.faceVertex1[var17];
 						} else if (var19 == 1) {
-							var20 = arg0.field1386[var17];
+							var20 = arg0.faceVertex2[var17];
 						} else {
-							var20 = arg0.field1400[var17];
+							var20 = arg0.faceVertex3[var17];
 						}
-						int var21 = arg0.field1375[var20];
-						int var22 = arg0.field1382[var20];
-						int var23 = arg0.field1411[var20];
+						int var21 = arg0.vertexX[var20];
+						int var22 = arg0.vertexY[var20];
+						int var23 = arg0.vertexZ[var20];
 						if (var21 < var9[var18]) {
 							var9[var18] = var21;
 						}
@@ -197,7 +197,7 @@ public abstract class Model {
 			var6 = new int[var8];
 			var7 = new float[var8][];
 			for (int var24 = 0; var24 < var8; var24++) {
-				byte var25 = arg0.field1377[var24];
+				byte var25 = arg0.textureTriangleType[var24];
 				if (var25 > 0) {
 					var4[var24] = (var9[var24] + var10[var24]) / 2;
 					var5[var24] = (var11[var24] + var12[var24]) / 2;
@@ -206,7 +206,7 @@ public abstract class Model {
 					float var28;
 					float var29;
 					if (var25 == 1) {
-						int var26 = arg0.field1407[var24];
+						int var26 = arg0.textureTriangleScaleX[var24];
 						if (var26 == 0) {
 							var27 = 1.0F;
 							var28 = 1.0F;
@@ -217,17 +217,17 @@ public abstract class Model {
 							var28 = 1.0F;
 							var27 = (float) -var26 / 1024.0F;
 						}
-						var29 = 64.0F / (float) arg0.field1408[var24];
+						var29 = 64.0F / (float) arg0.textureTriangleScaleY[var24];
 					} else if (var25 == 2) {
-						var27 = 64.0F / (float) arg0.field1407[var24];
-						var29 = 64.0F / (float) arg0.field1408[var24];
-						var28 = 64.0F / (float) arg0.field1409[var24];
+						var27 = 64.0F / (float) arg0.textureTriangleScaleX[var24];
+						var29 = 64.0F / (float) arg0.textureTriangleScaleY[var24];
+						var28 = 64.0F / (float) arg0.textureTriangleScaleZ[var24];
 					} else {
-						var27 = (float) arg0.field1407[var24] / 1024.0F;
-						var29 = (float) arg0.field1408[var24] / 1024.0F;
-						var28 = (float) arg0.field1409[var24] / 1024.0F;
+						var27 = (float) arg0.textureTriangleScaleX[var24] / 1024.0F;
+						var29 = (float) arg0.textureTriangleScaleY[var24] / 1024.0F;
+						var28 = (float) arg0.textureTriangleScaleZ[var24] / 1024.0F;
 					}
-					var7[var24] = method1688(arg0.field1404[var24], arg0.field1405[var24], arg0.field1406[var24], arg0.field1402[var24] & 0xFF, var27, var29, var28);
+					var7[var24] = method1688(arg0.textureTriangleVertex1[var24], arg0.textureTriangleVertex2[var24], arg0.textureTriangleVertex3[var24], arg0.field1402[var24] & 0xFF, var27, var29, var28);
 				}
 			}
 		}

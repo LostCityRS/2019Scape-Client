@@ -13,7 +13,7 @@ public class MaterialAlphaMode implements SerializableEnum {
 	public static final MaterialAlphaMode TEST = new MaterialAlphaMode(1);
 
 	@ObfuscatedName("vn.m")
-	public static final MaterialAlphaMode field7573 = new MaterialAlphaMode(2);
+	public static final MaterialAlphaMode MULTIPLY = new MaterialAlphaMode(2);
 
 	@ObfuscatedName("vn.k")
 	public final int field7576;
@@ -24,7 +24,7 @@ public class MaterialAlphaMode implements SerializableEnum {
 
     @ObfuscatedName("tz.e(I)[Lvn;")
     public static MaterialAlphaMode[] method8501() {
-        return new MaterialAlphaMode[] {field7573, NONE, TEST};
+        return new MaterialAlphaMode[] { MULTIPLY, NONE, TEST};
     }
 
     @ObfuscatedName("vn.n()I")

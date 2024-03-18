@@ -74,7 +74,7 @@ public class LegacyFloorModelRelated extends Node {
 		if (this.field11296 != -1) {
 			Material var5 = this.field11291.materialList.get(this.field11296);
 			int var6 = var5.field1364 & 0xFF;
-			if (var6 != 0 && var5.field1308 != 4) {
+			if (var6 != 0 && var5.effect != 4) {
 				int var7;
 				if (arg2 < 0) {
 					var7 = 0;

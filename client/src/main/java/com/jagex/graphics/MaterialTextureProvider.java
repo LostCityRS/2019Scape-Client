@@ -41,7 +41,7 @@ public class MaterialTextureProvider {
 				var7 = this.field3269.method15992(TextureFormat.field1273, arg1, arg1, true, var6);
 			} else {
 				int[] var8;
-				if (MaterialAlphaMode.NONE == arg0.alphaMode && Material.method261(arg0.field1308)) {
+				if (MaterialAlphaMode.NONE == arg0.alphaMode && Material.method261(arg0.effect)) {
 					var8 = this.field3268.getTexture(TextureRelated2.field7586, arg0.diffuseTexture, 0.7F, arg1, arg1, true);
 				} else {
 					var8 = this.field3268.getSpecialTexture(TextureRelated2.field7586, arg0.diffuseTexture, 0.7F, arg1, arg1, false);
@@ -66,7 +66,7 @@ public class MaterialTextureProvider {
 		}
 		if (arg0.field1336 && this.field3269.isBloomEnabled()) {
 			return this.field3268.loadTexture(TextureRelated2.field7586, arg0.diffuseTexture, arg0.field1302, TextureRelated1.field7570, 0.7F, arg1, arg1, false);
-		} else if (MaterialAlphaMode.NONE == arg0.alphaMode && Material.method261(arg0.field1308)) {
+		} else if (MaterialAlphaMode.NONE == arg0.alphaMode && Material.method261(arg0.effect)) {
 			return this.field3268.loadTexture(TextureRelated2.field7586, arg0.diffuseTexture, -1, TextureRelated1.field7568, 0.7F, arg1, arg1, true);
 		} else {
 			return this.field3268.loadTexture(TextureRelated2.field7586, arg0.diffuseTexture, -1, TextureRelated1.field7569, 0.7F, arg1, arg1, false);

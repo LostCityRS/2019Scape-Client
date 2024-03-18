@@ -186,7 +186,7 @@ public class PureJavaFloorModel extends FloorModel {
 					Material var34 = this.field9423.materialList.get(var33);
 					if (!var34.highDetail) {
 						var30 = true;
-						if (this.method15396(var34.field1308) || var34.field1317 != 0.0F || var34.field1338 != 0.0F) {
+						if (this.method15396(var34.effect) || var34.speedU != 0.0F || var34.speedV != 0.0F) {
 							var20.field879 = (byte) (var20.field879 | 0x4);
 						}
 					}
@@ -262,7 +262,7 @@ public class PureJavaFloorModel extends FloorModel {
 				var36.field928 = (short) (this.field9437[arg0 + 1][arg1 + 1] - this.field9447[arg0 + 1][arg1 + 1]);
 				var36.field929 = (short) (this.field9437[arg0][arg1 + 1] - this.field9447[arg0][arg1 + 1]);
 				var36.field926 = (short) var38;
-				if (this.method15396(var39.field1308) || var39.field1317 != 0.0F || var39.field1338 != 0.0F) {
+				if (this.method15396(var39.effect) || var39.speedU != 0.0F || var39.speedV != 0.0F) {
 					var36.field925 = (byte) (var36.field925 | 0x4);
 				}
 			}
@@ -361,7 +361,7 @@ public class PureJavaFloorModel extends FloorModel {
 					int var28 = -16777216;
 					if (arg8[var17] != -1) {
 						Material var29 = this.field9423.materialList.get(arg8[var17]);
-						if (var29.field1330 && this.method15396(var29.field1308)) {
+						if (var29.field1330 && this.method15396(var29.effect)) {
 							var28 = -1694498816;
 						}
 					}
@@ -1125,7 +1125,7 @@ public class PureJavaFloorModel extends FloorModel {
 							} else if (var123 > 0.0F) {
 								if (var125) {
 									int var126 = -16777216;
-									if (this.method15396(var124.field1308)) {
+									if (this.method15396(var124.effect)) {
 										var126 = -1694498816;
 									}
 									arg4.method1033(true, true, false, var120, var121, var122, var117, var118, var119, arg7[var114], arg7[var115], arg7[var116], arg8[var114], arg8[var115], arg8[var116], (float) var99.field917[var114] / (float) this.field1233, (float) var99.field917[var115] / (float) this.field1233, (float) var99.field917[var116] / (float) this.field1233, (float) var99.field916[var114] / (float) this.field1233, (float) var99.field916[var115] / (float) this.field1233, (float) var99.field916[var116] / (float) this.field1233, var126 | var99.field921[var114] & 0xFFFFFF, var126 | var99.field921[var115] & 0xFFFFFF, var126 | var99.field921[var116] & 0xFFFFFF, arg3.fadeColour, arg9[var114] * 255.0F, arg9[var115] * 255.0F, arg9[var116] * 255.0F, var99.field924[var113] & 0xFFFF);
@@ -1135,7 +1135,7 @@ public class PureJavaFloorModel extends FloorModel {
 								}
 							} else if (var125) {
 								int var127 = -16777216;
-								if (this.method15396(var124.field1308)) {
+								if (this.method15396(var124.effect)) {
 									var127 = -1694498816;
 								}
 								arg4.method1033(true, true, false, var120, var121, var122, var117, var118, var119, arg7[var114], arg7[var115], arg7[var116], arg8[var114], arg8[var115], arg8[var116], (float) var99.field917[var114] / (float) this.field1233, (float) var99.field917[var115] / (float) this.field1233, (float) var99.field917[var116] / (float) this.field1233, (float) var99.field916[var114] / (float) this.field1233, (float) var99.field916[var115] / (float) this.field1233, (float) var99.field916[var116] / (float) this.field1233, var127 | var99.field921[var114] & 0xFFFFFF, var127 | var99.field921[var115] & 0xFFFFFF, var127 | var99.field921[var116] & 0xFFFFFF, 0, 0.0F, 0.0F, 0.0F, var99.field924[var113] & 0xFFFF);
@@ -1388,7 +1388,7 @@ public class PureJavaFloorModel extends FloorModel {
 				var90 = this.field9423.materialList.get(var12.field913 & 0xFFFF);
 				var91 = var90.field1330;
 			}
-			boolean var92 = var90 != null && this.method15396(var90.field1308);
+			boolean var92 = var90 != null && this.method15396(var90.effect);
 			float var93 = var18 + var19 + var20;
 			if ((var49 - var57) * (var51 - var55) - (var47 - var55) * (var53 - var57) > 0.0F) {
 				arg4.field936 = var51 < 0.0F || var55 < 0.0F || var47 < 0.0F || var51 > (float) arg4.field945 || var55 > (float) arg4.field945 || var47 > (float) arg4.field945;

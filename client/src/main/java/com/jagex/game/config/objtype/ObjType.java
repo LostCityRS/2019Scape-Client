@@ -849,7 +849,7 @@ public class ObjType implements ConfigType {
 		Matrix4x3 var25 = new Matrix4x3();
 		arg0.method2217(var25);
 		arg0.setSunAmbientIntensity((float) (Math.random() / 10.0D) + 0.95F);
-		arg0.method2223(16777215, (float) (Math.random() / 10.0D) + 0.95F, (float) (Math.random() / 10.0D) + 0.95F, -50.0F, -10.0F, -50.0F);
+		arg0.setSun(16777215, (float) (Math.random() / 10.0D) + 0.95F, (float) (Math.random() / 10.0D) + 0.95F, -50.0F, -10.0F, -50.0F);
 		Matrix4x3 var26 = arg0.method2209();
 		var26.method6372(0.0F, 0.0F, 1.0F, Trig1.method6277(-this.zan2d << 3));
 		var26.method6307(0.0F, 1.0F, 0.0F, Trig1.method6277(this.yan2d << 3));
