@@ -12182,9 +12182,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.paramTypeList.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((StructType) Client.structTypeList.list(var1)).method15297(var2, var3.defaultstr);
+			arg0.field8218[++arg0.field8211 - 1] = ((StructType) Client.structTypeList.list(var1)).getParam(var2, var3.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((StructType) Client.structTypeList.list(var1)).method15296(var2, var3.defaultint);
+			arg0.field8216[++arg0.field8226 - 1] = ((StructType) Client.structTypeList.list(var1)).getParam(var2, var3.defaultint);
 		}
 	}
 
@@ -12605,13 +12605,13 @@ public final class ScriptRunner {
 	@ObfuscatedName("ho.aid(Lyf;S)V")
 	public static final void chatphrase_gettext(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8218[++arg0.field8211 - 1] = Client.quickChatPhraseTypeList.getPhrase(var1).getText();
+		arg0.field8218[++arg0.field8211 - 1] = Client.quickChatPhraseTypeList.list(var1).getText();
 	}
 
 	@ObfuscatedName("sv.aif(Lyf;B)V")
 	public static final void chatphrase_getautoresponsecount(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		QuickChatPhraseType var2 = Client.quickChatPhraseTypeList.getPhrase(var1);
+		QuickChatPhraseType var2 = Client.quickChatPhraseTypeList.list(var1);
 		if (var2.autoResponses == null) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
@@ -12624,15 +12624,15 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		arg0.field8216[++arg0.field8226 - 1] = Client.quickChatPhraseTypeList.getPhrase(var1).autoResponses[var2];
+		arg0.field8216[++arg0.field8226 - 1] = Client.quickChatPhraseTypeList.list(var1).autoResponses[var2];
 	}
 
 	@ObfuscatedName("fi.aiw(Lyf;I)V")
 	public static final void activechatphrase_prepare(ClientScriptState arg0) {
 		arg0.activeChatPhrase = new QuickChatPhrase();
-		arg0.activeChatPhrase.field3448 = arg0.field8216[--arg0.field8226];
-		arg0.activeChatPhrase.field3447 = Client.quickChatPhraseTypeList.getPhrase(arg0.activeChatPhrase.field3448);
-		arg0.activeChatPhrase.dynamics = new int[arg0.activeChatPhrase.field3447.length()];
+		arg0.activeChatPhrase.id = arg0.field8216[--arg0.field8226];
+		arg0.activeChatPhrase.quickChatPhraseType = Client.quickChatPhraseTypeList.list(arg0.activeChatPhrase.id);
+		arg0.activeChatPhrase.dynamics = new int[arg0.activeChatPhrase.quickChatPhraseType.length()];
 	}
 
 	@ObfuscatedName("jr.aiz(Lyf;I)V")
@@ -12643,8 +12643,8 @@ public final class ScriptRunner {
 		var3.buf.p1(0);
 		int var4 = var3.buf.pos;
 		var3.buf.p1(var1);
-		var3.buf.p2(arg0.activeChatPhrase.field3448);
-		arg0.activeChatPhrase.field3447.method19508(var3.buf, arg0.activeChatPhrase.dynamics);
+		var3.buf.p2(arg0.activeChatPhrase.id);
+		arg0.activeChatPhrase.quickChatPhraseType.putDynamics(var3.buf, arg0.activeChatPhrase.dynamics);
 		var3.buf.psize1(var3.buf.pos - var4);
 		var2.queue(var3);
 	}
@@ -12657,8 +12657,8 @@ public final class ScriptRunner {
 		var3.buf.p1(0);
 		int var4 = var3.buf.pos;
 		var3.buf.pjstr(var1);
-		var3.buf.p2(arg0.activeChatPhrase.field3448);
-		arg0.activeChatPhrase.field3447.method19508(var3.buf, arg0.activeChatPhrase.dynamics);
+		var3.buf.p2(arg0.activeChatPhrase.id);
+		arg0.activeChatPhrase.quickChatPhraseType.putDynamics(var3.buf, arg0.activeChatPhrase.dynamics);
 		var3.buf.psize1(var3.buf.pos - var4);
 		var2.queue(var3);
 	}
@@ -12706,7 +12706,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("hi.aih(Lyf;I)V")
 	public static final void chatphrase_getdynamiccommandcount(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.quickChatPhraseTypeList.getPhrase(var1).length();
+		arg0.field8216[++arg0.field8226 - 1] = Client.quickChatPhraseTypeList.list(var1).length();
 	}
 
 	@ObfuscatedName("rc.aip(Lyf;I)V")
@@ -12714,7 +12714,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		int var3 = Client.quickChatPhraseTypeList.getPhrase(var1).getDynamicCommand(var2).id;
+		int var3 = Client.quickChatPhraseTypeList.list(var1).getDynamicCommand(var2).id;
 		arg0.field8216[++arg0.field8226 - 1] = var3;
 	}
 
@@ -12740,7 +12740,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
-		QuickChatPhraseType var4 = Client.quickChatPhraseTypeList.getPhrase(var1);
+		QuickChatPhraseType var4 = Client.quickChatPhraseTypeList.list(var1);
 		if (var4.getDynamicCommand(var2).id != 0) {
 			throw new RuntimeException("");
 		}
@@ -15221,7 +15221,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("j.aua(Lyf;B)V")
 	public static final void detailget_safemode(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10779 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.isSafeMode ? 1 : 0;
 	}
 
 	@ObfuscatedName("dy.aub(Lyf;B)V")
@@ -15236,7 +15236,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ec.auy(Lyf;I)V")
 	public static final void detailget_canchoosesafemode(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.hardwarePlatform.cpuInfoRam < 512 || Client.field10779 || Client.field10796 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.hardwarePlatform.cpuInfoRam < 512 || Client.isSafeMode || Client.field10796 ? 1 : 0;
 	}
 
 	@ObfuscatedName("wp.aug(Lyf;I)V")

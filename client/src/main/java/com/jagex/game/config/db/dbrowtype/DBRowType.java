@@ -48,7 +48,7 @@ public class DBRowType implements ConfigType, ConfigRelated {
 				int columnsLength = buf.g1();
 				ScriptVarType[] columnTypes = new ScriptVarType[columnsLength];
 				for (int var7 = 0; var7 < columnsLength; var7++) {
-					columnTypes[var7] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
+					columnTypes[var7] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
 				}
 				this.columnValues[var4] = DBUtils.decodeValues(buf, columnTypes);
 				this.types[var4] = columnTypes;

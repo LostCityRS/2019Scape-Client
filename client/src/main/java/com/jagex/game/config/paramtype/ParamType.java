@@ -46,7 +46,7 @@ public class ParamType implements ConfigType, ConfigRelated {
 		} else if (code == 5) {
 			this.defaultstr = buf.gjstr();
 		} else if (code == 101) {
-			this.type = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
+			this.type = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
 		}
 	}
 

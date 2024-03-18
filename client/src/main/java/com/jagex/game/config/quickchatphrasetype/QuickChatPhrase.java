@@ -8,19 +8,19 @@ import rs2.client.Client;
 public class QuickChatPhrase {
 
 	@ObfuscatedName("ne.e")
-	public int field3448;
+	public int id;
 
 	@ObfuscatedName("ne.n")
-	public QuickChatPhraseType field3447;
+	public QuickChatPhraseType quickChatPhraseType;
 
 	@ObfuscatedName("ne.m")
 	public int[] dynamics;
 
 	@ObfuscatedName("aac.e(Lalw;B)Lne;")
-	public static QuickChatPhrase method14572(Packet arg0) {
-		QuickChatPhrase var1 = new QuickChatPhrase();
-		var1.field3448 = arg0.g2();
-		var1.field3447 = Client.quickChatPhraseTypeList.getPhrase(var1.field3448);
-		return var1;
+	public static QuickChatPhrase createQuickChatPhrase(Packet buf) {
+		QuickChatPhrase quickChatPhrase = new QuickChatPhrase();
+		quickChatPhrase.id = buf.g2();
+		quickChatPhrase.quickChatPhraseType = Client.quickChatPhraseTypeList.list(quickChatPhrase.id);
+		return quickChatPhrase;
 	}
 }

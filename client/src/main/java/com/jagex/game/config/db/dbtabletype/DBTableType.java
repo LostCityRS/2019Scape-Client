@@ -42,7 +42,7 @@ public class DBTableType implements ConfigType, ConfigRelated {
 			boolean var6 = (setting & 0x80) != 0;
 			ScriptVarType[] scriptVarTypes = new ScriptVarType[buf.g1()];
 			for (int var8 = 0; var8 < scriptVarTypes.length; var8++) {
-				scriptVarTypes[var8] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
+				scriptVarTypes[var8] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
 			}
 			this.types[column] = scriptVarTypes;
 			if (var6) {

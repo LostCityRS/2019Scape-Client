@@ -520,15 +520,15 @@ public class Loading {
 			Client.field8540.remove(Js5Archive.LOADING_SPRITES);
 			Client.field8540.remove(Js5Archive.LOADING_SPRITES_RAW);
 			MainLoadingScreen.method271();
-			Client.field10779 = Client.preferences.unknown6.getValue() == 1;
+			Client.isSafeMode = Client.preferences.unknown6.getValue() == 1;
 			Client.preferences.method18157(Client.preferences.unknown6, 1);
-			if (Client.field10779) {
+			if (Client.isSafeMode) {
 				Client.preferences.method18157(Client.preferences.toolkit, 0);
 			} else if (Client.preferences.toolkit.defaulted && Client.hardwarePlatform.cpuInfoRam < 512 && Client.hardwarePlatform.cpuInfoRam != 0) {
 				Client.preferences.method18157(Client.preferences.toolkit, 0);
 			}
 			Preferences.method16391();
-			if (Client.field10779) {
+			if (Client.isSafeMode) {
 				Client.method486(0, false);
 				if (!Client.field10812) {
 					GraphicsPacketQueue.method6971(ToolkitType.field8881);

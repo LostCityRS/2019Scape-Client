@@ -20,13 +20,13 @@ import deob.ObfuscatedName;
 public class QuestType implements ConfigType {
 
 	@ObfuscatedName("ir.e")
-	public ConfigTypeList field2649;
+	public ConfigTypeList configTypeList;
 
 	@ObfuscatedName("ir.n")
-	public String field2633;
+	public String name;
 
 	@ObfuscatedName("ir.m")
-	public String field2631;
+	public String sortname;
 
 	@ObfuscatedName("ir.k")
 	public int[][] field2632;
@@ -35,31 +35,31 @@ public class QuestType implements ConfigType {
 	public int[][] field2630;
 
 	@ObfuscatedName("ir.w")
-	public int field2645 = 0;
+	public int type = 0;
 
 	@ObfuscatedName("ir.l")
-	public int field2639 = 0;
+	public int difficulty = 0;
 
 	@ObfuscatedName("ir.u")
-	public boolean field2636 = false;
+	public boolean members = false;
 
 	@ObfuscatedName("ir.z")
-	public int field2637;
+	public int points;
 
 	@ObfuscatedName("ir.p")
 	public int[] field2638;
 
 	@ObfuscatedName("ir.d")
-	public int[] field2635;
+	public int[] questrequirements;
 
 	@ObfuscatedName("ir.c")
-	public int[][] field2640;
+	public int[][] statRequirements;
 
 	@ObfuscatedName("ir.r")
-	public int field2641;
+	public int pointsrequirement;
 
 	@ObfuscatedName("ir.v")
-	public int[] field2642;
+	public int[] varpsRequirement;
 
 	@ObfuscatedName("ir.o")
 	public int[] field2643;
@@ -68,10 +68,10 @@ public class QuestType implements ConfigType {
 	public int[] field2629;
 
 	@ObfuscatedName("ir.y")
-	public String[] field2644;
+	public String[] varpsDescriptions;
 
 	@ObfuscatedName("ir.q")
-	public int[] field2646;
+	public int[] varbitsRequirement;
 
 	@ObfuscatedName("ir.x")
 	public int[] field2647;
@@ -80,159 +80,159 @@ public class QuestType implements ConfigType {
 	public int[] field2648;
 
 	@ObfuscatedName("ir.h")
-	public String[] field2634;
+	public String[] varbitsDescriptions;
 
 	@ObfuscatedName("ir.a")
-	public IterableMap field2650;
+	public IterableMap params;
 
 	@ObfuscatedName("ir.g")
 	public int field2651 = -1;
 
-	public QuestType(int arg0, ConfigTypeList arg1) {
-		this.field2649 = arg1;
+	public QuestType(int arg0, ConfigTypeList configTypeList) {
+		this.configTypeList = configTypeList;
 	}
 
 	@ObfuscatedName("ir.e(Lalw;B)V")
 	public void decode(Packet buf) {
 		while (true) {
-			int var2 = buf.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method4426(buf, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("ir.u(Lalw;II)V")
-	public void method4426(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			this.field2633 = arg0.gjstr2();
-		} else if (arg1 == 2) {
-			this.field2631 = arg0.gjstr2();
-		} else if (arg1 == 3) {
-			int var3 = arg0.g1();
-			this.field2632 = new int[var3][3];
-			for (int var4 = 0; var4 < var3; var4++) {
-				this.field2632[var4][0] = arg0.g2();
-				this.field2632[var4][1] = arg0.g4s();
-				this.field2632[var4][2] = arg0.g4s();
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			this.name = buf.gjstr2();
+		} else if (code == 2) {
+			this.sortname = buf.gjstr2();
+		} else if (code == 3) {
+			int length = buf.g1();
+			this.field2632 = new int[length][3];
+			for (int index = 0; index < length; index++) {
+				this.field2632[index][0] = buf.g2();
+				this.field2632[index][1] = buf.g4s();
+				this.field2632[index][2] = buf.g4s();
 			}
-		} else if (arg1 == 4) {
-			int var5 = arg0.g1();
-			this.field2630 = new int[var5][3];
-			for (int var6 = 0; var6 < var5; var6++) {
-				this.field2630[var6][0] = arg0.g2();
-				this.field2630[var6][1] = arg0.g4s();
-				this.field2630[var6][2] = arg0.g4s();
+		} else if (code == 4) {
+			int length = buf.g1();
+			this.field2630 = new int[length][3];
+			for (int index = 0; index < length; index++) {
+				this.field2630[index][0] = buf.g2();
+				this.field2630[index][1] = buf.g4s();
+				this.field2630[index][2] = buf.g4s();
 			}
-		} else if (arg1 == 5) {
-			arg0.g2();
-		} else if (arg1 == 6) {
-			this.field2645 = arg0.g1();
-		} else if (arg1 == 7) {
-			this.field2639 = arg0.g1();
-		} else if (arg1 == 8) {
-			this.field2636 = true;
-		} else if (arg1 == 9) {
-			this.field2637 = arg0.g1();
-		} else if (arg1 == 10) {
-			int var7 = arg0.g1();
-			this.field2638 = new int[var7];
-			for (int var8 = 0; var8 < var7; var8++) {
-				this.field2638[var8] = arg0.g4s();
+		} else if (code == 5) {
+			buf.g2();
+		} else if (code == 6) {
+			this.type = buf.g1();
+		} else if (code == 7) {
+			this.difficulty = buf.g1();
+		} else if (code == 8) {
+			this.members = true;
+		} else if (code == 9) {
+			this.points = buf.g1();
+		} else if (code == 10) {
+			int length = buf.g1();
+			this.field2638 = new int[length];
+			for (int index = 0; index < length; index++) {
+				this.field2638[index] = buf.g4s();
 			}
-		} else if (arg1 == 12) {
-			arg0.g4s();
-		} else if (arg1 == 13) {
-			int var9 = arg0.g1();
-			this.field2635 = new int[var9];
-			for (int var10 = 0; var10 < var9; var10++) {
-				this.field2635[var10] = arg0.g2();
+		} else if (code == 12) {
+			buf.g4s();
+		} else if (code == 13) {
+			int length = buf.g1();
+			this.questrequirements = new int[length];
+			for (int index = 0; index < length; index++) {
+				this.questrequirements[index] = buf.g2();
 			}
-		} else if (arg1 == 14) {
-			int var11 = arg0.g1();
-			this.field2640 = new int[var11][2];
-			for (int var12 = 0; var12 < var11; var12++) {
-				this.field2640[var12][0] = arg0.g1();
-				this.field2640[var12][1] = arg0.g1();
+		} else if (code == 14) {
+			int length = buf.g1();
+			this.statRequirements = new int[length][2];
+			for (int index = 0; index < length; index++) {
+				this.statRequirements[index][0] = buf.g1();
+				this.statRequirements[index][1] = buf.g1();
 			}
-		} else if (arg1 == 15) {
-			this.field2641 = arg0.g2();
-		} else if (arg1 == 17) {
-			this.field2651 = arg0.gSmart2or4null();
-		} else if (arg1 == 18) {
-			int var13 = arg0.g1();
-			this.field2642 = new int[var13];
-			this.field2643 = new int[var13];
-			this.field2629 = new int[var13];
-			this.field2644 = new String[var13];
-			for (int var14 = 0; var14 < var13; var14++) {
-				this.field2642[var14] = arg0.g4s();
-				this.field2643[var14] = arg0.g4s();
-				this.field2629[var14] = arg0.g4s();
-				this.field2644[var14] = arg0.gjstr();
+		} else if (code == 15) {
+			this.pointsrequirement = buf.g2();
+		} else if (code == 17) {
+			this.field2651 = buf.gSmart2or4null();
+		} else if (code == 18) {
+			int length = buf.g1();
+			this.varpsRequirement = new int[length];
+			this.field2643 = new int[length];
+			this.field2629 = new int[length];
+			this.varpsDescriptions = new String[length];
+			for (int index = 0; index < length; index++) {
+				this.varpsRequirement[index] = buf.g4s();
+				this.field2643[index] = buf.g4s();
+				this.field2629[index] = buf.g4s();
+				this.varpsDescriptions[index] = buf.gjstr();
 			}
-		} else if (arg1 == 19) {
-			int var15 = arg0.g1();
-			this.field2646 = new int[var15];
-			this.field2647 = new int[var15];
-			this.field2648 = new int[var15];
-			this.field2634 = new String[var15];
-			for (int var16 = 0; var16 < var15; var16++) {
-				this.field2646[var16] = arg0.g4s();
-				this.field2647[var16] = arg0.g4s();
-				this.field2648[var16] = arg0.g4s();
-				this.field2634[var16] = arg0.gjstr();
+		} else if (code == 19) {
+			int length = buf.g1();
+			this.varbitsRequirement = new int[length];
+			this.field2647 = new int[length];
+			this.field2648 = new int[length];
+			this.varbitsDescriptions = new String[length];
+			for (int index = 0; index < length; index++) {
+				this.varbitsRequirement[index] = buf.g4s();
+				this.field2647[index] = buf.g4s();
+				this.field2648[index] = buf.g4s();
+				this.varbitsDescriptions[index] = buf.gjstr();
 			}
-		} else if (arg1 == 249) {
-			int var17 = arg0.g1();
-			if (this.field2650 == null) {
+		} else if (code == 249) {
+			int var17 = buf.g1();
+			if (this.params == null) {
 				int var18 = IntMath.bitceil(var17);
-				this.field2650 = new IterableMap(var18);
+				this.params = new IterableMap(var18);
 			}
 			for (int var19 = 0; var19 < var17; var19++) {
-				boolean var20 = arg0.g1() == 1;
-				int var21 = arg0.g3();
+				boolean var20 = buf.g1() == 1;
+				int var21 = buf.g3();
 				Node var22;
 				if (var20) {
-					var22 = new ObjectWrapper(arg0.gjstr());
+					var22 = new ObjectWrapper(buf.gjstr());
 				} else {
-					var22 = new IntWrapper(arg0.g4s());
+					var22 = new IntWrapper(buf.g4s());
 				}
-				this.field2650.method14501(var22, (long) var21);
+				this.params.method14501(var22, (long) var21);
 			}
 		}
 	}
 
 	@ObfuscatedName("ir.n(I)V")
 	public void postDecode() {
-		if (this.field2631 == null) {
-			this.field2631 = this.field2633;
+		if (this.sortname == null) {
+			this.sortname = this.name;
 		}
 	}
 
 	@ObfuscatedName("ir.z(IIB)I")
-	public int method4428(int arg0, int arg1) {
-		if (this.field2650 == null) {
+	public int getParam(int arg0, int arg1) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.field2650.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.params.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}
 
 	@ObfuscatedName("ir.p(ILjava/lang/String;I)Ljava/lang/String;")
-	public String method4437(int arg0, String arg1) {
-		if (this.field2650 == null) {
+	public String getParam(int arg0, String arg1) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.field2650.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.params.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}
 
 	@ObfuscatedName("ir.d(Lep;I)Z")
-	public boolean method4429(VarIntDomain arg0) {
+	public boolean started(VarIntDomain arg0) {
 		if (this.field2632 != null) {
 			for (int var2 = 0; var2 < this.field2632.length; var2++) {
 				VarType var3 = ((VariableTypeProvider) arg0).getVarType(VarDomainType.PLAYER, this.field2632[var2][0]);
@@ -253,7 +253,7 @@ public class QuestType implements ConfigType {
 	}
 
 	@ObfuscatedName("ir.c(Lep;I)Z")
-	public boolean method4430(VarIntDomain arg0) {
+	public boolean finished(VarIntDomain arg0) {
 		if (this.field2632 != null) {
 			for (int var2 = 0; var2 < this.field2632.length; var2++) {
 				VarType var3 = ((VariableTypeProvider) arg0).getVarType(VarDomainType.PLAYER, this.field2632[var2][0]);
@@ -274,36 +274,36 @@ public class QuestType implements ConfigType {
 	}
 
 	@ObfuscatedName("ir.r(Lep;I)Z")
-	public boolean method4431(VarIntDomain arg0) {
-		if (method5179(arg0, this.field2649) < this.field2641) {
+	public boolean allRequirementsMet(VarIntDomain arg0) {
+		if (method5179(arg0, this.configTypeList) < this.pointsrequirement) {
 			return false;
 		}
-		if (this.field2640 != null) {
-			for (int var2 = 0; var2 < this.field2640.length; var2++) {
-				if (((PlayerStatProvider) arg0).getStatBaseLevel(this.field2640[var2][0]) < this.field2640[var2][1]) {
+		if (this.statRequirements != null) {
+			for (int var2 = 0; var2 < this.statRequirements.length; var2++) {
+				if (((PlayerStatProvider) arg0).getStatBaseLevel(this.statRequirements[var2][0]) < this.statRequirements[var2][1]) {
 					return false;
 				}
 			}
 		}
-		if (this.field2635 != null) {
-			for (int var3 = 0; var3 < this.field2635.length; var3++) {
-				if (!((QuestType) this.field2649.list(this.field2635[var3])).method4430(arg0)) {
+		if (this.questrequirements != null) {
+			for (int var3 = 0; var3 < this.questrequirements.length; var3++) {
+				if (!((QuestType) this.configTypeList.list(this.questrequirements[var3])).finished(arg0)) {
 					return false;
 				}
 			}
 		}
-		if (this.field2642 != null) {
-			for (int var4 = 0; var4 < this.field2642.length; var4++) {
-				VarType var5 = ((VariableTypeProvider) arg0).getVarType(VarDomainType.PLAYER, this.field2642[var4]);
+		if (this.varpsRequirement != null) {
+			for (int var4 = 0; var4 < this.varpsRequirement.length; var4++) {
+				VarType var5 = ((VariableTypeProvider) arg0).getVarType(VarDomainType.PLAYER, this.varpsRequirement[var4]);
 				int var6 = arg0.getVarValueInt(var5);
 				if (var6 < this.field2643[var4] || var6 > this.field2629[var4]) {
 					return false;
 				}
 			}
 		}
-		if (this.field2646 != null) {
-			for (int var7 = 0; var7 < this.field2646.length; var7++) {
-				VarBitType var8 = ((VariableTypeProvider) arg0).getVarBitType(this.field2646[var7]);
+		if (this.varbitsRequirement != null) {
+			for (int var7 = 0; var7 < this.varbitsRequirement.length; var7++) {
+				VarBitType var8 = ((VariableTypeProvider) arg0).getVarBitType(this.varbitsRequirement[var7]);
 				int var9 = arg0.getVarBitValue(var8);
 				if (var9 < this.field2647[var7] || var9 > this.field2648[var7]) {
 					return false;
@@ -314,45 +314,45 @@ public class QuestType implements ConfigType {
 	}
 
 	@ObfuscatedName("ir.v(Lep;I)Z")
-	public boolean method4440(VarIntDomain arg0) {
-		return method5179(arg0, this.field2649) >= this.field2641;
+	public boolean pointsRequirementMet(VarIntDomain arg0) {
+		return method5179(arg0, this.configTypeList) >= this.pointsrequirement;
 	}
 
 	@ObfuscatedName("ir.o(Lep;IB)Z")
-	public boolean method4433(VarIntDomain arg0, int arg1) {
-		if (this.field2640 == null || arg1 < 0 || arg1 >= this.field2640.length) {
+	public boolean statRequirementMet(VarIntDomain arg0, int arg1) {
+		if (this.statRequirements == null || arg1 < 0 || arg1 >= this.statRequirements.length) {
 			return false;
 		} else {
-			return ((PlayerStatProvider) arg0).getStatBaseLevel(this.field2640[arg1][0]) >= this.field2640[arg1][1];
+			return ((PlayerStatProvider) arg0).getStatBaseLevel(this.statRequirements[arg1][0]) >= this.statRequirements[arg1][1];
 		}
 	}
 
 	@ObfuscatedName("ir.s(Lep;IB)Z")
-	public boolean method4453(VarIntDomain arg0, int arg1) {
-		if (this.field2635 == null || arg1 < 0 || arg1 >= this.field2635.length) {
+	public boolean questRequirementMet(VarIntDomain arg0, int arg1) {
+		if (this.questrequirements == null || arg1 < 0 || arg1 >= this.questrequirements.length) {
 			return false;
 		} else {
-			return ((QuestType) this.field2649.list(this.field2635[arg1])).method4430(arg0);
+			return ((QuestType) this.configTypeList.list(this.questrequirements[arg1])).finished(arg0);
 		}
 	}
 
 	@ObfuscatedName("ir.y(Lep;II)Z")
-	public boolean method4435(VarIntDomain arg0, int arg1) {
-		if (this.field2642 == null || arg1 < 0 || arg1 >= this.field2642.length) {
+	public boolean varpsRequirementMet(VarIntDomain arg0, int arg1) {
+		if (this.varpsRequirement == null || arg1 < 0 || arg1 >= this.varpsRequirement.length) {
 			return false;
 		} else {
-			VarType var3 = ((VariableTypeProvider) arg0).getVarType(VarDomainType.PLAYER, this.field2642[arg1]);
+			VarType var3 = ((VariableTypeProvider) arg0).getVarType(VarDomainType.PLAYER, this.varpsRequirement[arg1]);
 			int var4 = arg0.getVarValueInt(var3);
 			return var4 >= this.field2643[arg1] && var4 <= this.field2629[arg1];
 		}
 	}
 
 	@ObfuscatedName("ir.q(Lep;II)Z")
-	public boolean method4436(VarIntDomain arg0, int arg1) {
-		if (this.field2646 == null || arg1 < 0 || arg1 >= this.field2646.length) {
+	public boolean varbitsRequirementMet(VarIntDomain arg0, int arg1) {
+		if (this.varbitsRequirement == null || arg1 < 0 || arg1 >= this.varbitsRequirement.length) {
 			return false;
 		} else {
-			VarBitType var3 = ((VariableTypeProvider) arg0).getVarBitType(this.field2646[arg1]);
+			VarBitType var3 = ((VariableTypeProvider) arg0).getVarBitType(this.varbitsRequirement[arg1]);
 			int var4 = arg0.getVarBitValue(var3);
 			return var4 >= this.field2647[arg1] && var4 <= this.field2648[arg1];
 		}
@@ -363,8 +363,8 @@ public class QuestType implements ConfigType {
 		int var2 = 0;
 		for (int var3 = 0; var3 < arg1.length(); var3++) {
 			QuestType var4 = (QuestType) arg1.list(var3);
-			if (var4.method4430(arg0)) {
-				var2 += var4.field2637;
+			if (var4.finished(arg0)) {
+				var2 += var4.points;
 			}
 		}
 		return var2;

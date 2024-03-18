@@ -75,7 +75,7 @@ public class QuickChatDynamicCommand {
 	}
 
 	@ObfuscatedName("tl.n(II)Lxs;")
-	public static QuickChatDynamicCommand method8897(int arg0) {
+	public static QuickChatDynamicCommand getDynamicCommand(int arg0) {
 		QuickChatDynamicCommand[] var1 = method9288();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			if (var1[var2].id == arg0) {

@@ -87,9 +87,9 @@ public class EnumType implements ConfigType, ConfigRelated {
 				}
 			}
 		} else if (code == 101) {
-			this.inputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
+			this.inputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
 		} else if (code == 102) {
-			this.outputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
+			this.outputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
 		}
 	}
 

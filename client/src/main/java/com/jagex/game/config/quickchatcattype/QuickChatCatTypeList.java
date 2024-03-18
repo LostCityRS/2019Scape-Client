@@ -10,45 +10,45 @@ import deob.ObfuscatedName;
 public class QuickChatCatTypeList {
 
 	@ObfuscatedName("qr.e")
-	public final Js5 field4616;
+	public final Js5 configClientSmall;
 
 	@ObfuscatedName("qr.n")
-	public final Js5 field4614;
+	public final Js5 configClientLarge;
 
 	@ObfuscatedName("qr.m")
-	public final WeightedCache field4615 = new WeightedCache(64);
+	public final WeightedCache recentUse = new WeightedCache(64);
 
 	public QuickChatCatTypeList(Language arg0, Js5 arg1, Js5 arg2) {
-		this.field4616 = arg1;
-		this.field4614 = arg2;
-		if (this.field4616 != null) {
-			this.field4616.getGroupCapacity(0);
+		this.configClientSmall = arg1;
+		this.configClientLarge = arg2;
+		if (this.configClientSmall != null) {
+			this.configClientSmall.getGroupCapacity(0);
 		}
-		if (this.field4614 != null) {
-			this.field4614.getGroupCapacity(0);
+		if (this.configClientLarge != null) {
+			this.configClientLarge.getGroupCapacity(0);
 		}
 	}
 
 	@ObfuscatedName("qr.e(IB)Lasd;")
-	public QuickChatCatType list(int arg0) {
-		QuickChatCatType var2 = (QuickChatCatType) this.field4615.method2930((long) arg0);
-		if (var2 != null) {
-			return var2;
+	public QuickChatCatType list(int id) {
+		QuickChatCatType cached = (QuickChatCatType) this.recentUse.method2930((long) id);
+		if (cached != null) {
+			return cached;
 		}
-		byte[] var3;
-		if (arg0 >= 32768) {
-			var3 = this.field4614.getfile(0, arg0 & 0x7FFF);
+		byte[] bytes;
+		if (id >= 32768) {
+			bytes = this.configClientLarge.getfile(0, id & 0x7FFF);
 		} else {
-			var3 = this.field4616.getfile(0, arg0);
+			bytes = this.configClientSmall.getfile(0, id);
 		}
-		QuickChatCatType var4 = new QuickChatCatType();
-		if (var3 != null) {
-			var4.method19449(new Packet(var3));
+		QuickChatCatType quickChatCatType = new QuickChatCatType();
+		if (bytes != null) {
+			quickChatCatType.decode(new Packet(bytes));
 		}
-		if (arg0 >= 32768) {
-			var4.method19452();
+		if (id >= 32768) {
+			quickChatCatType.postDecode();
 		}
-		this.field4615.method2921(var4, (long) arg0);
-		return var4;
+		this.recentUse.method2921(quickChatCatType, (long) id);
+		return quickChatCatType;
 	}
 }

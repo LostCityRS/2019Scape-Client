@@ -17,32 +17,32 @@ import java.util.Iterator;
 public class ConfigTypeListPreload implements ConfigTypeList {
 
 	@ObfuscatedName("acd.e")
-	public final ConfigTypeFactory field8846;
+	public final ConfigTypeFactory factory;
 
 	@ObfuscatedName("acd.n")
-	public final Js5ConfigGroup field8845;
+	public final Js5ConfigGroup configGroup;
 
 	@ObfuscatedName("acd.m")
-	public final Js5 field8847;
+	public final Js5 configClient;
 
 	@ObfuscatedName("acd.k")
-	public int field8848;
+	public int num;
 
 	@ObfuscatedName("acd.f")
 	public ConfigType field8844;
 
 	@ObfuscatedName("acd.w")
-	public ConfigType[] field8849;
+	public ConfigType[] preloaded;
 
-	public ConfigTypeListPreload(ModeGame arg0, Language arg1, Js5ConfigGroup arg2, Js5 arg3, ConfigTypeFactory arg4, boolean arg5) {
-		this.field8846 = arg4;
-		this.field8845 = arg2;
-		this.field8847 = arg3;
-		this.field8848 = ArchiveUtil.getArchiveSize(this.field8847, this.field8845);
-		this.field8849 = (ConfigType[]) Array.newInstance(this.field8846.type(), this.field8848);
-		if (arg5) {
-			for (int var7 = 0; var7 < this.field8848; var7++) {
-				this.method14936(var7);
+	public ConfigTypeListPreload(ModeGame arg0, Language arg1, Js5ConfigGroup configGroup, Js5 configClient, ConfigTypeFactory factory, boolean preload) {
+		this.factory = factory;
+		this.configGroup = configGroup;
+		this.configClient = configClient;
+		this.num = ArchiveUtil.getArchiveSize(this.configClient, this.configGroup);
+		this.preloaded = (ConfigType[]) Array.newInstance(this.factory.type(), this.num);
+		if (preload) {
+			for (int index = 0; index < this.num; index++) {
+				this.list_uncached(index);
 			}
 		}
 	}
@@ -51,40 +51,40 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 	public ConfigType list(int id) {
 		if (id < 0) {
 			if (this.field8844 == null) {
-				this.field8844 = this.field8846.create(-1, this);
+				this.field8844 = this.factory.create(-1, this);
 			}
 			return this.field8844;
 		} else {
-			if (this.field8849[id] == null) {
-				this.method14936(id);
+			if (this.preloaded[id] == null) {
+				this.list_uncached(id);
 			}
-			return this.field8849[id];
+			return this.preloaded[id];
 		}
 	}
 
 	@ObfuscatedName("acd.u(II)V")
-	public void method14936(int arg0) {
-		if (this.field8849[arg0] != null) {
+	public void list_uncached(int id) {
+		if (this.preloaded[id] != null) {
 			return;
 		}
 		try {
-			this.field8849[arg0] = this.field8846.create(arg0, this);
+			this.preloaded[id] = this.factory.create(id, this);
 		} catch (Exception var5) {
 			var5.printStackTrace();
 			return;
 		}
 		Object var3 = null;
-		byte[] var4 = ArchiveUtil.getFile(this.field8847, this.field8845, arg0);
-		if (var4 != null) {
-			this.field8849[arg0].decode(new Packet(var4));
+		byte[] bytes = ArchiveUtil.getFile(this.configClient, this.configGroup, id);
+		if (bytes != null) {
+			this.preloaded[id].decode(new Packet(bytes));
 		}
-		this.field8849[arg0].postDecode();
+		this.preloaded[id].postDecode();
 	}
 
 	// line 59
 	@ObfuscatedName("acd.n(I)I")
 	public int length() {
-		return this.field8849.length;
+		return this.preloaded.length;
 	}
 
 	// line 63
@@ -107,11 +107,11 @@ public class ConfigTypeListPreload implements ConfigTypeList {
 		}
 
 		public boolean hasNext() {
-			return this.field8850 < this.this$0.field8849.length;
+			return this.field8850 < this.this$0.preloaded.length;
 		}
 
 		public Object next() {
-			return this.this$0.field8849[++this.field8850 - 1];
+			return this.this$0.preloaded[++this.field8850 - 1];
 		}
 
 		public void remove() {

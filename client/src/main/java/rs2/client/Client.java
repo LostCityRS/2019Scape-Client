@@ -215,7 +215,7 @@ public final class Client extends GameShell {
 	public static String field579;
 
 	@ObfuscatedName("client.ca")
-	public static boolean field10779 = false;
+	public static boolean isSafeMode = false;
 
 	@ObfuscatedName("client.cx")
 	public static boolean field10812 = false;
@@ -8688,7 +8688,7 @@ public final class Client extends GameShell {
 			if (!var189) {
 				field11053[field11054] = var187;
 				field11054 = (field11054 + 1) % 100;
-				String var191 = quickChatPhraseTypeList.getPhrase(var186).method19507(in);
+				String var191 = quickChatPhraseTypeList.list(var186).method19507(in);
 				if (var185.field3602 == -1) {
 					ChatHistory.method15054(18, 0, var179, var180, var179, var191, null, var186, var185);
 				} else {
@@ -8854,9 +8854,9 @@ public final class Client extends GameShell {
 					String var227;
 					if (var223) {
 						var221 &= 0x7FFF;
-						QuickChatPhrase var226 = QuickChatPhrase.method14572(in);
-						var225 = var226.field3448;
-						var227 = var226.field3447.method19507(in);
+						QuickChatPhrase var226 = QuickChatPhrase.createQuickChatPhrase(in);
+						var225 = var226.id;
+						var227 = var226.quickChatPhraseType.method19507(in);
 					} else {
 						var227 = StringHelper.escape(WordPack.method5939(in));
 					}
@@ -8926,7 +8926,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.MESSAGE_QUICKCHAT_PRIVATE_ECHO == connection.packetType) {
 			String var236 = in.gjstr();
 			int var237 = in.g2();
-			String var238 = quickChatPhraseTypeList.getPhrase(var237).method19507(in);
+			String var238 = quickChatPhraseTypeList.list(var237).method19507(in);
 			ChatHistory.method15054(19, 0, var236, var236, var236, var238, null, var237, null);
 			connection.packetType = null;
 			return true;
@@ -9204,7 +9204,7 @@ public final class Client extends GameShell {
 			if (!var302) {
 				field11053[field11054] = var300;
 				field11054 = (field11054 + 1) % 100;
-				String var306 = quickChatPhraseTypeList.getPhrase(var299).method19507(in);
+				String var306 = quickChatPhraseTypeList.list(var299).method19507(in);
 				int var307 = var292 ? 42 : 45;
 				if (var298.field3602 == -1) {
 					ChatHistory.method15054(var307, 0, var293, var293, var293, var306, var304.clanName, var299, var298);
@@ -9791,7 +9791,7 @@ public final class Client extends GameShell {
 			if (!var468) {
 				field11053[field11054] = var466;
 				field11054 = (field11054 + 1) % 100;
-				String var470 = quickChatPhraseTypeList.getPhrase(var465).method19507(in);
+				String var470 = quickChatPhraseTypeList.list(var465).method19507(in);
 				if (var464.field3602 == -1) {
 					ChatHistory.method15054(20, 0, var457, var458, var457, var470, var459, var465, var464);
 				} else {
@@ -9843,7 +9843,7 @@ public final class Client extends GameShell {
 			if (!var489) {
 				field11053[field11054] = var487;
 				field11054 = (field11054 + 1) % 100;
-				String var491 = quickChatPhraseTypeList.getPhrase(var486).method19507(in);
+				String var491 = quickChatPhraseTypeList.list(var486).method19507(in);
 				int var492 = var485 ? 23 : 25;
 				if (var484.field3602 == -1) {
 					ChatHistory.method15054(var492, 0, var479, var479, var479, var491, currentPlayerGroup.getDisplayName(), var486, var484);
@@ -14484,9 +14484,9 @@ public final class Client extends GameShell {
 		LinkedList var3 = new LinkedList();
 		LinkedList var4 = new LinkedList();
 		int var5 = arg1 ? 32768 : 0;
-		int var6 = var5 + (arg1 ? quickChatPhraseTypeList.field8857 : quickChatPhraseTypeList.field8856);
+		int var6 = var5 + (arg1 ? quickChatPhraseTypeList.configClientLargeNum : quickChatPhraseTypeList.configClientSmallNum);
 		for (int var7 = var5; var7 < var6; var7++) {
-			QuickChatPhraseType var8 = quickChatPhraseTypeList.getPhrase(var7);
+			QuickChatPhraseType var8 = quickChatPhraseTypeList.list(var7);
 			if (var8.field12382 && var8.getText().toLowerCase().indexOf(var2) != -1) {
 				if (var3.size() >= 50) {
 					return -1;

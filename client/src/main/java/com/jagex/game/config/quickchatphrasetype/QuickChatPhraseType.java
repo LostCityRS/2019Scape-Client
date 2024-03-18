@@ -10,7 +10,7 @@ import deob.ObfuscatedName;
 public class QuickChatPhraseType extends SecondaryNode {
 
 	@ObfuscatedName("asq.l")
-	public QuickChatPhraseTypeList field12380;
+	public QuickChatPhraseTypeList phrases;
 
 	@ObfuscatedName("asq.u")
 	public String[] field12379;
@@ -28,55 +28,55 @@ public class QuickChatPhraseType extends SecondaryNode {
 	public boolean field12382 = true;
 
 	@ObfuscatedName("asq.e(Lalw;I)V")
-	public void method19526(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method19521(arg0, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("asq.n(Lalw;IB)V")
-	public void method19521(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			this.field12379 = StringTools.method17361(arg0.gjstr(), '<');
-		} else if (arg1 == 2) {
-			int var3 = arg0.g1();
-			this.autoResponses = new int[var3];
-			for (int var4 = 0; var4 < var3; var4++) {
-				this.autoResponses[var4] = arg0.g2();
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			this.field12379 = StringTools.method17361(buf.gjstr(), '<');
+		} else if (code == 2) {
+			int length = buf.g1();
+			this.autoResponses = new int[length];
+			for (int index = 0; index < length; index++) {
+				this.autoResponses[index] = buf.g2();
 			}
-		} else if (arg1 == 3) {
-			int var5 = arg0.g1();
-			this.commands = new int[var5];
-			this.field12378 = new int[var5][];
-			for (int var6 = 0; var6 < var5; var6++) {
-				int var7 = arg0.g2();
-				QuickChatDynamicCommand var8 = QuickChatDynamicCommand.method8897(var7);
-				if (var8 != null) {
-					this.commands[var6] = var7;
-					this.field12378[var6] = new int[var8.field7923];
-					for (int var9 = 0; var9 < var8.field7923; var9++) {
-						this.field12378[var6][var9] = arg0.g2();
+		} else if (code == 3) {
+			int length = buf.g1();
+			this.commands = new int[length];
+			this.field12378 = new int[length][];
+			for (int index = 0; index < length; index++) {
+				int var7 = buf.g2();
+				QuickChatDynamicCommand dynamicCommand = QuickChatDynamicCommand.getDynamicCommand(var7);
+				if (dynamicCommand != null) {
+					this.commands[index] = var7;
+					this.field12378[index] = new int[dynamicCommand.field7923];
+					for (int var9 = 0; var9 < dynamicCommand.field7923; var9++) {
+						this.field12378[index][var9] = buf.g2();
 					}
 				}
 			}
-		} else if (arg1 == 4) {
+		} else if (code == 4) {
 			this.field12382 = false;
 		}
 	}
 
 	@ObfuscatedName("asq.m(Lalw;[II)V")
-	public void method19508(Packet arg0, int[] arg1) {
+	public void putDynamics(Packet buf, int[] dynamics) {
 		if (this.commands == null) {
 			return;
 		}
-		for (int var3 = 0; var3 < this.commands.length && var3 < arg1.length; var3++) {
-			int var4 = this.getDynamicCommand(var3).field7939;
+		for (int index = 0; index < this.commands.length && index < dynamics.length; index++) {
+			int var4 = this.getDynamicCommand(index).field7939;
 			if (var4 > 0) {
-				arg0.pVarLong((long) arg1[var3], var4);
+				buf.pVarLong((long) dynamics[index], var4);
 			}
 		}
 	}
@@ -87,7 +87,7 @@ public class QuickChatPhraseType extends SecondaryNode {
 		if (this.commands != null) {
 			for (int var3 = 0; var3 < this.commands.length; var3++) {
 				var2.append(this.field12379[var3]);
-				var2.append(this.field12380.method14978(this.getDynamicCommand(var3), this.field12378[var3], arg0.gVarLong(QuickChatDynamicCommand.method8897(this.commands[var3]).field7940)));
+				var2.append(this.phrases.method14978(this.getDynamicCommand(var3), this.field12378[var3], arg0.gVarLong(QuickChatDynamicCommand.getDynamicCommand(this.commands[var3]).field7940)));
 			}
 		}
 		var2.append(this.field12379[this.field12379.length - 1]);
@@ -117,7 +117,7 @@ public class QuickChatPhraseType extends SecondaryNode {
 
 	@ObfuscatedName("asq.l(IB)Lxs;")
 	public QuickChatDynamicCommand getDynamicCommand(int arg0) {
-		return this.commands == null || arg0 < 0 || arg0 > this.commands.length ? null : QuickChatDynamicCommand.method8897(this.commands[arg0]);
+		return this.commands == null || arg0 < 0 || arg0 > this.commands.length ? null : QuickChatDynamicCommand.getDynamicCommand(this.commands[arg0]);
 	}
 
 	@ObfuscatedName("asq.u(III)I")
@@ -132,7 +132,7 @@ public class QuickChatPhraseType extends SecondaryNode {
 	}
 
 	@ObfuscatedName("asq.z(B)V")
-	public void method19511() {
+	public void postDecode() {
 		if (this.autoResponses != null) {
 			for (int var1 = 0; var1 < this.autoResponses.length; var1++) {
 				this.autoResponses[var1] |= 0x8000;

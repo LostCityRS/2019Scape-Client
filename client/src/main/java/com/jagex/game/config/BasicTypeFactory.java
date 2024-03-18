@@ -7,16 +7,16 @@ import deob.ObfuscatedName;
 public class BasicTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("aca.e")
-	public final Class field8843;
+	public final Class type;
 
-	public BasicTypeFactory(Class arg0) {
-		this.field8843 = arg0;
+	public BasicTypeFactory(Class type) {
+		this.type = type;
 	}
 
 	@ObfuscatedName("aca.v(ILao;I)Lay;")
 	public ConfigType create(int id, ConfigTypeList configTypeList) {
 		try {
-			ConfigType var3 = (ConfigType) this.field8843.getDeclaredConstructor().newInstance();
+			ConfigType var3 = (ConfigType) this.type.getDeclaredConstructor().newInstance();
 			((ConfigRelated) var3).method2998(id);
 			return var3;
 		} catch (Exception var5) {
@@ -27,6 +27,6 @@ public class BasicTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("aca.o(B)Ljava/lang/Class;")
 	public Class type() {
-		return this.field8843;
+		return this.type;
 	}
 }
