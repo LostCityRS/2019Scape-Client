@@ -91,7 +91,7 @@ public class PlayerGroup {
 			arg1.g2();
 			arg1.g2();
 		}
-		this.method3383();
+		this.setOwnerSlot();
 	}
 
 	@ObfuscatedName("gq.e(B)Ljava/util/List;")
@@ -134,18 +134,18 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.u(I)V")
-	public void method3383() {
-		int var1 = -1;
-		int var2 = -1;
-		for (int var3 = 0; var3 < this.members.size(); var3++) {
-			PlayerGroupMember var4 = (PlayerGroupMember) this.members.get(var3);
-			int var5 = var4.getRank();
-			if (var5 > var1) {
-				var1 = var5;
-				var2 = var3;
+	public void setOwnerSlot() {
+		int previous = -1;
+		int highest = -1;
+		for (int index = 0; index < this.members.size(); index++) {
+			PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
+			int rank = member.getRank();
+			if (rank > previous) {
+				previous = rank;
+				highest = index;
 			}
 		}
-		this.ownerSlot = var2;
+		this.ownerSlot = highest;
 	}
 
 	@ObfuscatedName("gq.z(B)I")
@@ -156,23 +156,23 @@ public class PlayerGroup {
 	@ObfuscatedName("gq.p(B)Lgv;")
 	public PlayerGroupMemberStatus overallStatus() {
 		if (this.members.isEmpty()) {
-			return PlayerGroupMemberStatus.field1977;
+			return PlayerGroupMemberStatus.TELEPORTED;
 		}
-		PlayerGroupMemberStatus var1 = ((PlayerGroupMember) this.members.get(0)).getStatus();
-		switch(var1.index) {
+		PlayerGroupMemberStatus status = ((PlayerGroupMember) this.members.get(0)).getStatus();
+		switch(status.index) {
 			case 1:
 			case 2:
-				return var1;
+				return status;
 			default:
-				Iterator var2 = this.members.iterator();
+				Iterator iterator = this.members.iterator();
 				PlayerGroupMember var3;
 				do {
-					if (!var2.hasNext()) {
-						return PlayerGroupMemberStatus.field1976;
+					if (!iterator.hasNext()) {
+						return PlayerGroupMemberStatus.NOT_READY;
 					}
-					var3 = (PlayerGroupMember) var2.next();
-				} while (var3.getStatus() != PlayerGroupMemberStatus.field1977);
-				return PlayerGroupMemberStatus.field1977;
+					var3 = (PlayerGroupMember) iterator.next();
+				} while (var3.getStatus() != PlayerGroupMemberStatus.TELEPORTED);
+				return PlayerGroupMemberStatus.TELEPORTED;
 		}
 	}
 
@@ -194,35 +194,35 @@ public class PlayerGroup {
 	@ObfuscatedName("gq.v(Lgy;B)V")
 	public void addMember(PlayerGroupMember arg0) {
 		this.members.add(arg0);
-		this.method3383();
+		this.setOwnerSlot();
 	}
 
 	@ObfuscatedName("gq.o(II)V")
-	public void deleteMember(int arg0) {
-		this.members.remove(arg0);
-		this.method3383();
+	public void deleteMember(int index) {
+		this.members.remove(index);
+		this.setOwnerSlot();
 	}
 
 	@ObfuscatedName("gq.s(Lga;S)V")
-	public void addBanned(PlayerGroupBanned arg0) {
-		this.banned.add(arg0);
+	public void addBanned(PlayerGroupBanned index) {
+		this.banned.add(index);
 	}
 
 	@ObfuscatedName("gq.y(II)V")
-	public void deleteBanned(int arg0) {
-		this.banned.remove(arg0);
+	public void deleteBanned(int index) {
+		this.banned.remove(index);
 	}
 
 	@ObfuscatedName("gq.q(III)V")
-	public void setMemberRank(int arg0, int arg1) {
-		((PlayerGroupMember) this.members.get(arg0)).setRank(arg1);
-		this.method3383();
+	public void setMemberRank(int index, int rank) {
+		((PlayerGroupMember) this.members.get(index)).setRank(rank);
+		this.setOwnerSlot();
 	}
 
 	@ObfuscatedName("gq.x(III)V")
-	public void setMemberOnline(int arg0, int arg1) {
-		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
-		var3.setNodeId(arg1);
+	public void setMemberOnline(int index, int nodeId) {
+		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(index);
+		var3.setNodeId(nodeId);
 		var3.setOnline(true);
 	}
 
@@ -235,7 +235,7 @@ public class PlayerGroup {
 	@ObfuscatedName("gq.h(IZS)V")
 	public void setMemberReady(int index, boolean arg1) {
 		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
-		member.setStatus(arg1 ? PlayerGroupMemberStatus.field1976 : PlayerGroupMemberStatus.field1977);
+		member.setStatus(arg1 ? PlayerGroupMemberStatus.NOT_READY : PlayerGroupMemberStatus.TELEPORTED);
 	}
 
 	@ObfuscatedName("gq.a(IIB)V")
@@ -244,16 +244,16 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.g(I)V")
-	public void setAllMembersOnline() {
+	public void setMembersGameLoading() {
 		Iterator iterator = this.members.iterator();
 		while (iterator.hasNext()) {
 			PlayerGroupMember member = (PlayerGroupMember) iterator.next();
-			member.setStatus(PlayerGroupMemberStatus.ONLINE);
+			member.setStatus(PlayerGroupMemberStatus.GAME_LOADING);
 		}
 	}
 
 	@ObfuscatedName("gq.i(B)V")
-	public void setAllMembersReady() {
+	public void setMembersReady() {
 		Iterator iterator = this.members.iterator();
 		while (iterator.hasNext()) {
 			PlayerGroupMember member = (PlayerGroupMember) iterator.next();
@@ -264,6 +264,6 @@ public class PlayerGroup {
 	@ObfuscatedName("gq.j(ILgy;I)V")
 	public void updateMember(int index, PlayerGroupMember arg1) {
 		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
-		member.syncMember(arg1);
+		member.update(arg1);
 	}
 }

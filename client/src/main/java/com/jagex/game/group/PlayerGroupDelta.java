@@ -35,46 +35,46 @@ public class PlayerGroupDelta {
 			Object var5;
 			switch(var4.index) {
 				case 0:
-					var5 = new AddMember(this, arg0);
-					break;
-				case 1:
-					var5 = new SetVarBitValue(this, arg0);
-					break;
-				case 2:
-					var5 = new SetMemberTeam(this, arg0);
-					break;
-				case 3:
-					var5 = new SetVarValue(this, arg0);
-					break;
-				case 4:
-					var5 = new AddBanned(this, arg0);
-					break;
-				case 5:
-					var5 = new SetMemberReady(this);
-					break;
-				case 6:
-					var5 = new SetMemberOffline(this, arg0);
-					break;
-				case 7:
-					var5 = new SetGameLoading(this, arg0);
-					break;
-				case 8:
-					var5 = new DeleteMember(this, arg0);
-					break;
-				case 9:
-					var5 = new SetMemberRank(this, arg0);
-					break;
-				case 10:
-					var5 = new StartGame(this, arg0);
-					break;
-				case 11:
-					var5 = new DeleteBanned(this, arg0);
-					break;
-				case 12:
 					var5 = new UpdateMemberBase(this, arg0);
 					break;
+				case 1:
+					var5 = new AddMember(this, arg0);
+					break;
+				case 2:
+					var5 = new SetMemberOnline(this, arg0);
+					break;
+				case 3:
+					var5 = new SetVarbitValue(this, arg0);
+					break;
+				case 4:
+					var5 = new SetMemberReady(this, arg0);
+					break;
+				case 5:
+					var5 = new StartGame(this);
+					break;
+				case 6:
+					var5 = new AddBanned(this, arg0);
+					break;
+				case 7:
+					var5 = new SetMemberRank(this, arg0);
+					break;
+				case 8:
+					var5 = new SetVarValue(this, arg0);
+					break;
+				case 9:
+					var5 = new DeleteMember(this, arg0);
+					break;
+				case 10:
+					var5 = new DeleteBanned(this, arg0);
+					break;
+				case 11:
+					var5 = new SetMemberOffline(this, arg0);
+					break;
+				case 12:
+					var5 = new SetMemberTeam(this, arg0);
+					break;
 				case 13:
-					var5 = new SetMemberOnline(this);
+					var5 = new SetGameLoading(this);
 					break;
 				default:
 					throw new IllegalStateException("");
@@ -98,7 +98,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("gt")
-	public static class SetVarBitValue implements PlayerGroupDeltaEntry2 {
+	public static class AddMember implements PlayerGroupDeltaEntry2 {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -107,7 +107,7 @@ public class PlayerGroupDelta {
 		public final PlayerGroupMember field1967;
 
 		// line 131
-		public SetVarBitValue(PlayerGroupDelta arg0, Packet arg1) {
+		public AddMember(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			boolean var3 = arg1.g1() != 255;
 			if (var3) {
@@ -123,7 +123,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("fk")
-	public static class SetMemberRank implements PlayerGroupDeltaEntry {
+	public static class DeleteMember implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -132,7 +132,7 @@ public class PlayerGroupDelta {
 		public final int field1894;
 
 		// line 145
-		public SetMemberRank(PlayerGroupDelta arg0, Packet arg1) {
+		public DeleteMember(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			this.field1894 = arg1.g2();
 		}
@@ -147,7 +147,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("go")
-	public static class SetMemberOffline implements PlayerGroupDeltaEntry2 {
+	public static class AddBanned implements PlayerGroupDeltaEntry2 {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -156,7 +156,7 @@ public class PlayerGroupDelta {
 		public final PlayerGroupBanned field1917;
 
 		// line 160
-		public SetMemberOffline(PlayerGroupDelta arg0, Packet arg1) {
+		public AddBanned(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			boolean var3 = arg1.g1() != 255;
 			if (var3) {
@@ -172,7 +172,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("fr")
-	public static class StartGame implements PlayerGroupDeltaEntry {
+	public static class DeleteBanned implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -181,7 +181,7 @@ public class PlayerGroupDelta {
 		public final int field1896;
 
 		// line 174
-		public StartGame(PlayerGroupDelta arg0, Packet arg1) {
+		public DeleteBanned(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			this.field1896 = arg1.g2();
 		}
@@ -195,7 +195,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("gn")
-	public static class SetGameLoading implements PlayerGroupDeltaEntry {
+	public static class SetMemberRank implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -207,7 +207,7 @@ public class PlayerGroupDelta {
 		public final int field1938;
 
 		// line 189
-		public SetGameLoading(PlayerGroupDelta arg0, Packet arg1) {
+		public SetMemberRank(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			this.field1937 = arg1.g2();
 			this.field1938 = arg1.g1();
@@ -221,7 +221,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("gh")
-	public static class SetMemberTeam implements PlayerGroupDeltaEntry {
+	public static class SetMemberOnline implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -233,7 +233,7 @@ public class PlayerGroupDelta {
 		public final int field1968;
 
 		// line 204
-		public SetMemberTeam(PlayerGroupDelta arg0, Packet arg1) {
+		public SetMemberOnline(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			this.field1969 = arg1.g2();
 			this.field1968 = arg1.g2();
@@ -247,7 +247,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("gf")
-	public static class DeleteBanned implements PlayerGroupDeltaEntry {
+	public static class SetMemberOffline implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -256,7 +256,7 @@ public class PlayerGroupDelta {
 		public final int field1941;
 
 		// line 218
-		public DeleteBanned(PlayerGroupDelta arg0, Packet arg1) {
+		public SetMemberOffline(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			this.field1941 = arg1.g2();
 		}
@@ -269,7 +269,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("fe")
-	public static class AddBanned implements PlayerGroupDeltaEntry {
+	public static class SetMemberReady implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -281,7 +281,7 @@ public class PlayerGroupDelta {
 		public final boolean field1892;
 
 		// line 232
-		public AddBanned(PlayerGroupDelta arg0, Packet arg1) {
+		public SetMemberReady(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			this.field1893 = arg1.g2();
 			this.field1892 = arg1.g1() == 1;
@@ -295,7 +295,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("gm")
-	public static class UpdateMemberBase implements PlayerGroupDeltaEntry {
+	public static class SetMemberTeam implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -307,7 +307,7 @@ public class PlayerGroupDelta {
 		public final int field1973;
 
 		// line 247
-		public UpdateMemberBase(PlayerGroupDelta arg0, Packet arg1) {
+		public SetMemberTeam(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			this.field1974 = arg1.g2();
 			this.field1973 = arg1.g1();
@@ -321,41 +321,41 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("gr")
-	public static class SetMemberOnline implements PlayerGroupDeltaEntry {
+	public static class SetGameLoading implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
 
 		// line 259
-		public SetMemberOnline(PlayerGroupDelta arg0) {
+		public SetGameLoading(PlayerGroupDelta arg0) {
 			this.this$0 = arg0;
 		}
 
 		@ObfuscatedName("gr.e(Lgq;B)V")
 		public void apply(PlayerGroup arg0) {
-			arg0.setAllMembersOnline();
+			arg0.setMembersGameLoading();
 		}
 	}
 
 	@ObfuscatedName("gk")
-	public static class SetMemberReady implements PlayerGroupDeltaEntry {
+	public static class StartGame implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
 
 		// line 267
-		public SetMemberReady(PlayerGroupDelta arg0) {
+		public StartGame(PlayerGroupDelta arg0) {
 			this.this$0 = arg0;
 		}
 
 		@ObfuscatedName("gk.e(Lgq;B)V")
 		public void apply(PlayerGroup arg0) {
-			arg0.setAllMembersReady();
+			arg0.setMembersReady();
 		}
 	}
 
 	@ObfuscatedName("gp")
-	public static class AddMember implements PlayerGroupDeltaEntry {
+	public static class UpdateMemberBase implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -367,7 +367,7 @@ public class PlayerGroupDelta {
 		public final PlayerGroupMember field1919;
 
 		// line 278
-		public AddMember(PlayerGroupDelta arg0, Packet arg1) {
+		public UpdateMemberBase(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			this.field1918 = arg1.g2();
 			this.field1919 = new PlayerGroupMember(arg1, false, false, arg0.field1943);
@@ -380,7 +380,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("gc")
-	public static class DeleteMember implements PlayerGroupDeltaEntry {
+	public static class SetVarValue implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -389,7 +389,7 @@ public class PlayerGroupDelta {
 		public final VarValue field1939;
 
 		// line 291
-		public DeleteMember(PlayerGroupDelta arg0, Packet arg1) {
+		public SetVarValue(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			if (arg1.g2() == 65535) {
 				this.field1939 = null;
@@ -408,7 +408,7 @@ public class PlayerGroupDelta {
 	}
 
 	@ObfuscatedName("gl")
-	public static class SetVarValue implements PlayerGroupDeltaEntry {
+	public static class SetVarbitValue implements PlayerGroupDeltaEntry {
 
 		// $FF: synthetic field
 		public final PlayerGroupDelta this$0;
@@ -420,7 +420,7 @@ public class PlayerGroupDelta {
 		public final int field1915;
 
 		// line 309
-		public SetVarValue(PlayerGroupDelta arg0, Packet arg1) {
+		public SetVarbitValue(PlayerGroupDelta arg0, Packet arg1) {
 			this.this$0 = arg0;
 			int var3 = arg1.g2();
 			if (var3 == 65535) {

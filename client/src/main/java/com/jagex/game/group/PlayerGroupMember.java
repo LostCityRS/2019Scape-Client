@@ -157,7 +157,7 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.o(Lgy;I)V")
-	public void syncMember(PlayerGroupMember arg0) {
+	public void update(PlayerGroupMember arg0) {
 		for (int var2 = 0; var2 < this.stats.length; var2++) {
 			this.stats[var2].setXP(arg0.stats[var2].getXP());
 			this.stats[var2].setLevel(this.stats[var2].getBaseLevel());

@@ -7,13 +7,13 @@ import deob.ObfuscatedName;
 public class PlayerGroupMemberStatus implements SerializableEnum {
 
 	@ObfuscatedName("gv.e")
-	public static final PlayerGroupMemberStatus field1977 = new PlayerGroupMemberStatus(3, 0);
+	public static final PlayerGroupMemberStatus TELEPORTED = new PlayerGroupMemberStatus(3, 0);
 
 	@ObfuscatedName("gv.n")
-	public static final PlayerGroupMemberStatus field1976 = new PlayerGroupMemberStatus(0, 1);
+	public static final PlayerGroupMemberStatus NOT_READY = new PlayerGroupMemberStatus(0, 1);
 
 	@ObfuscatedName("gv.m")
-	public static final PlayerGroupMemberStatus ONLINE = new PlayerGroupMemberStatus(2, 2);
+	public static final PlayerGroupMemberStatus GAME_LOADING = new PlayerGroupMemberStatus(2, 2);
 
 	@ObfuscatedName("gv.k")
 	public static final PlayerGroupMemberStatus READY = new PlayerGroupMemberStatus(1, 3);
@@ -26,7 +26,7 @@ public class PlayerGroupMemberStatus implements SerializableEnum {
 
 	@ObfuscatedName("gv.e(I)[Lgv;")
 	public static PlayerGroupMemberStatus[] values() {
-		return new PlayerGroupMemberStatus[] {field1976, READY, ONLINE, field1977};
+		return new PlayerGroupMemberStatus[] {NOT_READY, READY, GAME_LOADING, TELEPORTED};
 	}
 
 	public PlayerGroupMemberStatus(int index, int serialID) {
