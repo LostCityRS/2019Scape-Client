@@ -944,7 +944,7 @@ public class MiniMenu {
 										ObjType var75 = (ObjType) Client.objTypeList.list(var74.field11261);
 										int var76;
 										if (var75.minimenu_colour_overridden) {
-											var76 = var75.field8696;
+											var76 = var75.minimenu_colour;
 										} else if (var75.members) {
 											var76 = field1971.field7665;
 										} else {

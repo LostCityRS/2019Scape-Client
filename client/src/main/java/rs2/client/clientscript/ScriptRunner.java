@@ -12106,7 +12106,7 @@ public final class ScriptRunner {
 		ObjType var2 = (ObjType) Client.objTypeList.list(var1);
 		int var3;
 		if (var2.minimenu_colour_overridden) {
-			var3 = var2.field8696;
+			var3 = var2.minimenu_colour;
 		} else if (var2.members) {
 			var3 = MiniMenu.field1971.field7665;
 		} else {
