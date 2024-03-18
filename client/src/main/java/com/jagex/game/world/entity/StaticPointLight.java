@@ -90,7 +90,7 @@ public class StaticPointLight {
 
 	@ObfuscatedName("ul.e(Ldh;IIIIII)V")
 	public void method8900(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		this.field7003 = arg0.method2227(arg1, arg2, arg3, arg4, arg5, 1.0F);
+		this.field7003 = arg0.createLight(arg1, arg2, arg3, arg4, arg5, 1.0F);
 	}
 
 	@ObfuscatedName("ul.n(IIIII)V")

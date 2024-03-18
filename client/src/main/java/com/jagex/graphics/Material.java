@@ -23,13 +23,13 @@ public class Material {
 	public boolean field1333 = false;
 
 	@ObfuscatedName("dv.aw")
-	public int field1334 = -1;
+	public int diffuseTexture = -1;
 
 	@ObfuscatedName("dv.as")
 	public int field1302 = -1;
 
 	@ObfuscatedName("dv.at")
-	public int field1357;
+	public int size;
 
 	@ObfuscatedName("dv.ad")
 	public float field1317 = 0.0F;
@@ -41,16 +41,16 @@ public class Material {
 	public boolean field1336 = false;
 
 	@ObfuscatedName("dv.ar")
-	public MaterialAlphaMode field1340 = MaterialAlphaMode.field7575;
+	public MaterialAlphaMode alphaMode = MaterialAlphaMode.NONE;
 
 	@ObfuscatedName("dv.ap")
-	public byte field1358 = -1;
+	public byte alphaThreshold = -1;
 
 	@ObfuscatedName("dv.aq")
-	public byte field1307 = 0;
+	public byte repeatS = 0;
 
 	@ObfuscatedName("dv.ax")
-	public byte field1343 = 0;
+	public byte repeatT = 0;
 
 	@ObfuscatedName("dv.bh")
 	public byte field1308 = 0;
@@ -68,7 +68,7 @@ public class Material {
 	public boolean field1361 = false;
 
 	@ObfuscatedName("dv.bn")
-	public boolean field1342 = false;
+	public boolean highDetail = false;
 
 	@ObfuscatedName("dv.bt")
 	public byte field1363 = 0;
@@ -80,7 +80,7 @@ public class Material {
 	public byte field1311 = 0;
 
 	@ObfuscatedName("dv.bb")
-	public short field1366 = 0;
+	public short averageColour = 0;
 
 	@ObfuscatedName("rk.e(IB)I")
 	public static int method7618(int arg0) {
@@ -120,8 +120,8 @@ public class Material {
 	public void method1904(Packet arg0) {
 		arg0.g1();
 		int var2 = arg0.g1();
-		this.field1357 = method7618(var2);
-		if (this.field1357 == -1) {
+		this.size = method7618(var2);
+		if (this.size == -1) {
 		}
 		int var3 = arg0.g4s();
 		this.field1330 = (var3 & 0x1) != 0;
@@ -129,14 +129,14 @@ public class Material {
 		this.field1321 = (var3 & 0x8) != 0;
 		this.field1333 = (var3 & 0x10) != 0;
 		if (this.field1330 || this.field1333) {
-			this.field1334 = arg0.g4s();
+			this.diffuseTexture = arg0.g4s();
 		}
 		if (this.field1321 || this.field1331) {
 			this.field1302 = arg0.g4s();
 		}
 		byte var4 = (byte) arg0.g1();
-		this.field1307 = (byte) (var4 & 0x7);
-		this.field1343 = (byte) (var4 >> 3 & 0x7);
+		this.repeatS = (byte) (var4 & 0x7);
+		this.repeatT = (byte) (var4 >> 3 & 0x7);
 		int var5 = arg0.g4s();
 		boolean var6 = (var5 & 0x800) != 0;
 		if ((var5 & 0x10) != 0) {
@@ -148,9 +148,9 @@ public class Material {
 		}
 		this.field1336 = arg0.g1() == 1;
 		SerializableEnums.decode(FacetMode.method4590(), arg0.g1());
-		this.field1340 = (MaterialAlphaMode) SerializableEnums.decode(MaterialAlphaMode.method8501(), arg0.g1());
-		if (MaterialAlphaMode.TEST == this.field1340) {
-			this.field1358 = (byte) arg0.g1();
+		this.alphaMode = (MaterialAlphaMode) SerializableEnums.decode(MaterialAlphaMode.method8501(), arg0.g1());
+		if (MaterialAlphaMode.TEST == this.alphaMode) {
+			this.alphaThreshold = (byte) arg0.g1();
 		}
 		if (var6) {
 			arg0.gFloat();
@@ -174,10 +174,10 @@ public class Material {
 		arg0.g1();
 		this.field1332 = (byte) arg0.g1();
 		this.field1361 = arg0.g1() == 1;
-		this.field1342 = arg0.g1() == 1;
+		this.highDetail = arg0.g1() == 1;
 		this.field1363 = (byte) arg0.g1();
 		this.field1364 = (byte) arg0.g1();
-		this.field1366 = (short) arg0.g2();
+		this.averageColour = (short) arg0.g2();
 	}
 
 	@ObfuscatedName("dv.f(Lalw;I)V")
@@ -187,7 +187,7 @@ public class Material {
 		if ((var2 & 0x20) != 0) {
 			this.field1330 = true;
 			arg0.g1();
-			this.field1334 = arg0.g4s();
+			this.diffuseTexture = arg0.g4s();
 		}
 		if ((var2 & 0x40) != 0) {
 			arg0.g1();
@@ -230,23 +230,23 @@ public class Material {
 			this.field1338 = (float) arg0.g2s() * 127.0F / 32767.0F / 64.0F;
 		}
 		byte var4 = (byte) arg0.g1();
-		this.field1307 = (byte) (var4 & 0x7);
-		this.field1343 = (byte) (var4 >> 3 & 0x7);
+		this.repeatS = (byte) (var4 & 0x7);
+		this.repeatT = (byte) (var4 >> 3 & 0x7);
 		SerializableEnums.decode(FacetMode.method4590(), arg0.g1());
 		MaterialQualityMode var5 = (MaterialQualityMode) SerializableEnums.decode(MaterialQualityMode.method745(), arg0.g1());
 		if (MaterialQualityMode.HD == var5) {
-			this.field1342 = true;
+			this.highDetail = true;
 		} else if (MaterialQualityMode.LD == var5) {
 			this.field1361 = true;
 		}
-		this.field1340 = (MaterialAlphaMode) SerializableEnums.decode(MaterialAlphaMode.method8501(), arg0.g1());
-		if (MaterialAlphaMode.TEST == this.field1340) {
-			this.field1358 = (byte) arg0.g1();
+		this.alphaMode = (MaterialAlphaMode) SerializableEnums.decode(MaterialAlphaMode.method8501(), arg0.g1());
+		if (MaterialAlphaMode.TEST == this.alphaMode) {
+			this.alphaThreshold = (byte) arg0.g1();
 		}
-		this.field1366 = (short) arg0.g2();
+		this.averageColour = (short) arg0.g2();
 		int var6 = arg0.g1();
-		this.field1357 = method7618(var6);
-		if (this.field1357 == -1) {
+		this.size = method7618(var6);
+		if (this.size == -1) {
 		}
 	}
 }

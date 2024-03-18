@@ -80,11 +80,11 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 	public void method4578(int arg0) {
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.method2923(arg0);
+			this.modelCache.update(arg0);
 		}
 		WeightedCache var4 = this.field2768;
 		synchronized (this.field2768) {
-			this.field2768.method2923(arg0);
+			this.field2768.update(arg0);
 		}
 	}
 

@@ -31,10 +31,10 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	public ConfigType list(int id) {
 		WeightedCache var2 = this.field9254;
 		synchronized (this.field9254) {
-			VarPlayerType var3 = (VarPlayerType) this.field9254.method2930((long) id);
+			VarPlayerType var3 = (VarPlayerType) this.field9254.get((long) id);
 			if (var3 == null) {
 				var3 = this.method15255(id);
-				this.field9254.method2921(var3, (long) id);
+				this.field9254.put(var3, (long) id);
 			}
 			return var3;
 		}
@@ -62,7 +62,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	public void method15259(int arg0) {
 		WeightedCache var2 = this.field9254;
 		synchronized (this.field9254) {
-			this.field9254.method2923(arg0);
+			this.field9254.update(arg0);
 		}
 	}
 
@@ -100,7 +100,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 		// line 68
 		public Object next() {
 			int var1 = ++this.field1982 - 1;
-			VarPlayerType var2 = (VarPlayerType) this.this$0.field9254.method2930((long) var1);
+			VarPlayerType var2 = (VarPlayerType) this.this$0.field9254.get((long) var1);
 			return var2 == null ? this.this$0.method15255(var1) : var2;
 		}
 

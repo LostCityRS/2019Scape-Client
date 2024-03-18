@@ -1069,7 +1069,7 @@ public class World {
 		}
 		this.method7820();
 		this.method7763();
-		this.scene = new Scene(Client.renderer, 9, 4, this.mapSizeX, this.mapSizeZ, var21, underwater, Client.renderer.method2114() > 0);
+		this.scene = new Scene(Client.renderer, 9, 4, this.mapSizeX, this.mapSizeZ, var21, underwater, Client.renderer.getMaxLights() > 0);
 		this.scene.method8703(false);
 		this.scene.method8701(Client.field11005);
 		this.scene.method8759(this.field5061);

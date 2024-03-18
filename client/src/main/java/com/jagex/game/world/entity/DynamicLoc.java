@@ -85,7 +85,7 @@ public class DynamicLoc {
 		this.field6675 = arg8 != -1;
 		this.field6663 = (byte) arg5;
 		this.field6668 = arg7;
-		this.field6676 = arg0.method2125() && arg2.field7453 && !this.field6668;
+		this.field6676 = arg0.supportsHardShadows() && arg2.field7453 && !this.field6668;
 		this.field6664 = new EntityAnimationWrapper(arg6, false);
 		this.method8244(false, arg8, 1, this.field6675 ? arg9 : 0);
 	}

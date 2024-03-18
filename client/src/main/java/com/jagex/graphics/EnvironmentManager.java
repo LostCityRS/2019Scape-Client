@@ -196,10 +196,10 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.u(II)Ldz;")
 	public EnvironmentSampler method9985(int arg0) {
-		EnvironmentSampler var2 = (EnvironmentSampler) this.field7848.method2930((long) arg0);
+		EnvironmentSampler var2 = (EnvironmentSampler) this.field7848.get((long) arg0);
 		if (var2 == null) {
-			EnvironmentSampler var3 = this.field7833.method2229(arg0);
-			this.field7848.method2921(var3, (long) arg0);
+			EnvironmentSampler var3 = this.field7833.createEnvironmentSampler(arg0);
+			this.field7848.put(var3, (long) arg0);
 			return var3;
 		} else {
 			return var2;
@@ -209,26 +209,26 @@ public class EnvironmentManager {
 	@ObfuscatedName("xu.z(IIIII)Lsv;")
 	public SkyBox method9986(int arg0, int arg1, int arg2, int arg3) {
 		long var5 = ((long) arg1 & 0xFFFFL) << 48 | ((long) arg2 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16 | (long) arg0 & 0xFFFFL;
-		SkyBox var7 = (SkyBox) this.field7849.method2930(var5);
+		SkyBox var7 = (SkyBox) this.field7849.get(var5);
 		if (var7 == null) {
 			var7 = SkyBoxType.method305(arg0, arg1, arg2, arg3, Client.skyBoxTypeList, Client.skyDecorTypeList);
-			this.field7849.method2921(var7, var5);
+			this.field7849.put(var7, var5);
 		}
 		return var7;
 	}
 
 	@ObfuscatedName("xu.p(IB)Lcj;")
 	public ColourRemapper method9987(int arg0) {
-		ColourRemapper var2 = (ColourRemapper) this.field7850.method2930((long) arg0);
+		ColourRemapper var2 = (ColourRemapper) this.field7850.get((long) arg0);
 		if (var2 != null) {
 			return var2;
 		}
 		SpriteData var3 = SpriteDataProvider.method1607(this.field7845, arg0);
-		if (var3 != null && var3.method2639() == 256 && var3.method2631() == 16) {
+		if (var3 != null && var3.getWidth() == 256 && var3.getHeight() == 16) {
 			int[] var4 = var3.method2604(false);
-			var2 = this.field7833.method2237(var4);
+			var2 = this.field7833.createColourRemapper(var4);
 			if (var2 != null) {
-				this.field7850.method2921(var2, (long) arg0);
+				this.field7850.put(var2, (long) arg0);
 			}
 		}
 		return var2;
@@ -335,23 +335,23 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.q(I)V")
 	public void method10008() {
-		this.field7833.method2222(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * this.field7841.field7871);
+		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * this.field7841.field7871);
 		this.field7833.method2223(this.field7841.field7877, this.field7841.field7861, this.field7841.field7864, (float) ((int) this.field7847.field4308 << 2), (float) ((int) this.field7847.field4311 << 2), (float) ((int) this.field7847.field4313 << 2));
-		this.field7833.method2516(this.field7841.field7868);
+		this.field7833.setEnvironmentSampler(this.field7841.field7868);
 	}
 
 	@ObfuscatedName("xu.x(FFFIIIIII)V")
 	public void method9996(float arg0, float arg1, float arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		this.field7833.method2222(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * arg0);
+		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * arg0);
 		this.field7833.method2223(arg3, arg1, arg2, (float) (arg4 << 2), (float) (arg5 << 2), (float) (arg6 << 2));
-		this.field7833.method2516(this.method9985(arg7));
+		this.field7833.setEnvironmentSampler(this.method9985(arg7));
 	}
 
 	@ObfuscatedName("xu.b(I)V")
 	public void method9997() {
 		byte var1 = 0;
 		int var2 = (this.field7841.field7867 + 256 << 2) + var1;
-		this.field7833.method2572(this.field7841.field7866, Client.preferences.fog.getValue() == 1 ? var2 : -1, 0);
+		this.field7833.setFog(this.field7841.field7866, Client.preferences.fog.getValue() == 1 ? var2 : -1, 0);
 	}
 
 	@ObfuscatedName("xu.h(I)V")
@@ -361,13 +361,13 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.a(I)V")
 	public void method10037() {
-		if (!this.field7833.method2152()) {
+		if (!this.field7833.isLevelsEnabled()) {
 			return;
 		}
 		if (this.field7855) {
-			this.field7833.method2236(this.field7853, this.field7857, this.field7858, this.field7842, this.field7860);
+			this.field7833.setLevels(this.field7853, this.field7857, this.field7858, this.field7842, this.field7860);
 		} else {
-			this.field7833.method2236(this.field7841.field7873, this.field7841.field7869, this.field7841.field7875, this.field7841.field7876, this.field7841.field7872);
+			this.field7833.setLevels(this.field7841.field7873, this.field7841.field7869, this.field7841.field7875, this.field7841.field7876, this.field7841.field7872);
 		}
 	}
 
@@ -399,7 +399,7 @@ public class EnvironmentManager {
 			if (this.field7841.field7878[2] > -1) {
 				var3 = this.method9987(this.field7841.field7878[2]);
 			}
-			this.field7833.method2239(var1, this.field7841.field7879[0], var2, this.field7841.field7879[1], var3, this.field7841.field7879[2]);
+			this.field7833.setColourRemapping(var1, this.field7841.field7879[0], var2, this.field7841.field7879[1], var3, this.field7841.field7879[2]);
 			return;
 		}
 		if (this.field7851[0] > -1) {
@@ -411,7 +411,7 @@ public class EnvironmentManager {
 		if (this.field7851[2] > -1) {
 			var3 = this.method9987(this.field7851[2]);
 		}
-		this.field7833.method2239(var1, this.field7834[0], var2, this.field7834[1], var3, this.field7834[2]);
+		this.field7833.setColourRemapping(var1, this.field7834[0], var2, this.field7834[1], var3, this.field7834[2]);
 	}
 
 	@ObfuscatedName("xu.j(I)V")
@@ -431,9 +431,9 @@ public class EnvironmentManager {
 
 	@ObfuscatedName("xu.t(I)V")
 	public void method9983() {
-		this.field7833.method2222(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * 1.1523438F);
+		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * 1.1523438F);
 		this.field7833.method2223(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
-		this.field7833.method2572(13156520, -1, 0);
-		this.field7833.method2516(field7832);
+		this.field7833.setFog(13156520, -1, 0);
+		this.field7833.setEnvironmentSampler(field7832);
 	}
 }

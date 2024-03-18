@@ -110,14 +110,14 @@ public class MainLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("cz.n(Lpy;IB)Lcm;")
 	public static Sprite method1589(Js5 arg0, int arg1) {
-		Sprite var2 = (Sprite) field2930.method2930((long) arg1);
+		Sprite var2 = (Sprite) field2930.get((long) arg1);
 		if (var2 == null) {
 			if (Loading.field2941) {
-				var2 = Client.renderer.method2200(SpriteDataProvider.method1607(arg0, arg1), true);
+				var2 = Client.renderer.createSprite(SpriteDataProvider.method1607(arg0, arg1), true);
 			} else {
 				var2 = method3594(arg0.method6894(arg1));
 			}
-			field2930.method2921(var2, (long) arg1);
+			field2930.put(var2, (long) arg1);
 		}
 		return var2;
 	}
@@ -146,7 +146,7 @@ public class MainLoadingScreen implements LoadingScreen {
 			int height = img.getHeight();
 			int[] pixels = new int[width * height];
 			img.getRGB(0, 0, width, height, pixels, 0, width);
-			return Client.renderer.method2199(pixels, 0, width, width, height);
+			return Client.renderer.createSprite(pixels, 0, width, width, height);
 		} catch (Exception ex) {
 			return null;
 		}

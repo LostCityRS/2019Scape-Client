@@ -117,7 +117,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		var2.method1813(var3, this.field11713[0], 0);
 		if (this.field12612 != null) {
 			ParticleList var5 = this.field12612.method9965();
-			arg0.method2198(var5);
+			arg0.drawParticles(var5);
 		}
 		this.field12611 = var2.method1731();
 		this.field12610 = var2.method1748();

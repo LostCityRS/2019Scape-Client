@@ -31,7 +31,7 @@ public class QuickChatCatTypeList {
 
 	@ObfuscatedName("qr.e(IB)Lasd;")
 	public QuickChatCatType list(int id) {
-		QuickChatCatType cached = (QuickChatCatType) this.recentUse.method2930((long) id);
+		QuickChatCatType cached = (QuickChatCatType) this.recentUse.get((long) id);
 		if (cached != null) {
 			return cached;
 		}
@@ -48,7 +48,7 @@ public class QuickChatCatTypeList {
 		if (id >= 32768) {
 			quickChatCatType.postDecode();
 		}
-		this.recentUse.method2921(quickChatCatType, (long) id);
+		this.recentUse.put(quickChatCatType, (long) id);
 		return quickChatCatType;
 	}
 }

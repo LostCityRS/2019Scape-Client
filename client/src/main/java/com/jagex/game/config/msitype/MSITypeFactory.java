@@ -36,7 +36,7 @@ public abstract class MSITypeFactory implements ConfigTypeFactory {
 	public void method15074(int arg0) {
 		WeightedCache var2 = this.field9156;
 		synchronized (this.field9156) {
-			this.field9156.method2923(arg0);
+			this.field9156.update(arg0);
 		}
 	}
 

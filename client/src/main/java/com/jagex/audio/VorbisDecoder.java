@@ -421,7 +421,7 @@ public class VorbisDecoder implements VorbisInterface {
 				int var7 = 0;
 				boolean var8 = false;
 				while (!var8 && var7 < 1000) {
-					if (field2067.method2930((long) var7) == null) {
+					if (field2067.get((long) var7) == null) {
 						var8 = true;
 					} else {
 						var7++;
@@ -434,7 +434,7 @@ public class VorbisDecoder implements VorbisInterface {
 				var4.field2122 = arg0;
 				if (field2067.method2926() < arg0 * 4) {
 				}
-				field2067.method2922(var4, (long) var4.field2124, var9.length * 4);
+				field2067.put(var4, (long) var4.field2124, var9.length * 4);
 			} else {
 				for (int var10 = 0; var10 < var4.field2123.length; var10++) {
 					var4.field2123[var10] = 0.0F;

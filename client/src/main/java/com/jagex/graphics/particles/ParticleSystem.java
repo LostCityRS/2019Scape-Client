@@ -263,10 +263,10 @@ public class ParticleSystem {
 
 	@ObfuscatedName("xy.c()Ldm;")
 	public ParticleList method9939() {
-		this.field7816.field1367.method14279();
+		this.field7816.list.method14279();
 		for (int var1 = 0; var1 < this.field7805.length; var1++) {
 			if (this.field7805[var1] != null && this.field7805[var1].field12526 != null) {
-				this.field7816.field1367.method14270(this.field7805[var1]);
+				this.field7816.list.method14270(this.field7805[var1]);
 			}
 		}
 		return this.field7816;
@@ -279,7 +279,7 @@ public class ParticleSystem {
 
 	@ObfuscatedName("xy.v(Ltx;Ldh;)V")
 	public void method9941(Scene arg0, Renderer arg1) {
-		this.field7816.field1367.method14279();
+		this.field7816.list.method14279();
 		Iterator var3 = this.field7809.iterator();
 		while (var3.hasNext()) {
 			ParticleEmitter var4 = (ParticleEmitter) var3.next();

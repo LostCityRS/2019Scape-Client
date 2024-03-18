@@ -12,12 +12,12 @@ public abstract class Sprite implements FontGlyph {
 
 	@ObfuscatedName("cm.o(IIII)V")
 	public final void method1474(int arg0, int arg1, int arg2, int arg3) {
-		this.method1447(arg0, arg1, arg2, arg3, 1, -1, 1, 1);
+		this.drawTintedScaled(arg0, arg1, arg2, arg3, 1, -1, 1, 1);
 	}
 
 	@ObfuscatedName("cm.s(IIIIIII)V")
 	public final void method1446(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		this.method1447(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 1);
+		this.drawTintedScaled(arg0, arg1, arg2, arg3, arg4, arg5, arg6, 1);
 	}
 
 	@ObfuscatedName("cm.q(IIII)V")
@@ -109,7 +109,7 @@ public abstract class Sprite implements FontGlyph {
 	}
 
 	@ObfuscatedName("cm.e(IIII)V")
-	public abstract void method1431(int arg0, int arg1, int arg2, int arg3);
+	public abstract void setPadding(int arg0, int arg1, int arg2, int arg3);
 
 	@ObfuscatedName("cm.n([I)V")
 	public abstract void method1432(int[] arg0);
@@ -121,7 +121,7 @@ public abstract class Sprite implements FontGlyph {
 	public abstract int method1434();
 
 	@ObfuscatedName("cm.f()I")
-	public abstract int method1435();
+	public abstract int getHeight();
 
 	@ObfuscatedName("cm.w()I")
 	public abstract int method1436();
@@ -142,7 +142,7 @@ public abstract class Sprite implements FontGlyph {
 	public abstract void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4);
 
 	@ObfuscatedName("cm.y(IIIIIIII)V")
-	public abstract void method1447(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7);
+	public abstract void drawTintedScaled(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7);
 
 	@ObfuscatedName("cm.x(IIIIIII)V")
 	public abstract void method1449(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
@@ -151,11 +151,11 @@ public abstract class Sprite implements FontGlyph {
 	public abstract void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9);
 
 	@ObfuscatedName("cm.m()I")
-	public abstract int method1459();
+	public abstract int getWidth();
 
 	@ObfuscatedName("cm.u(IIII[III)V")
 	public abstract void method1469(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5, int arg6);
 
 	@ObfuscatedName("cm.z(IIII[I[III)V")
-	public abstract void method1476(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6, int arg7);
+	public abstract void download(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6, int arg7);
 }

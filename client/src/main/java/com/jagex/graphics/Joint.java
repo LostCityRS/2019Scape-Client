@@ -58,9 +58,9 @@ public class Joint {
 		if (this.field1240[arg0] == null) {
 			this.field1240[arg0] = new Matrix4x4(this.method1570(arg0));
 			if (this.field1239 == null) {
-				this.field1240[arg0].method6720(Matrix4x4.field4317);
+				this.field1240[arg0].multiply(Matrix4x4.field4317);
 			} else {
-				this.field1240[arg0].method6720(this.field1239.method1565(arg0));
+				this.field1240[arg0].multiply(this.field1239.method1565(arg0));
 			}
 		}
 		return this.field1240[arg0];

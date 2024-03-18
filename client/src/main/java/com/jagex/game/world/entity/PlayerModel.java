@@ -269,7 +269,7 @@ public class PlayerModel {
 		WeightedCache var33 = field7901;
 		Model var34;
 		synchronized (field7901) {
-			var34 = (Model) field7901.method2930(var17);
+			var34 = (Model) field7901.get(var17);
 		}
 		BASType var36 = null;
 		if (this.field7891 != -1) {
@@ -287,7 +287,7 @@ public class PlayerModel {
 						if (this.field7899 != -1L) {
 							WeightedCache var45 = field7901;
 							synchronized (field7901) {
-								var34 = (Model) field7901.method2930(this.field7899);
+								var34 = (Model) field7901.get(this.field7899);
 							}
 						}
 						if (var34 == null || arg0.method2394(var34.method1691(), var16) != 0) {
@@ -342,7 +342,7 @@ public class PlayerModel {
 						}
 						ModelUnlit var61 = new ModelUnlit(var47, var47.length);
 						int var62 = var16 | 0x4000;
-						var34 = arg0.method2211(var61, var62, field4037, 64, 850);
+						var34 = arg0.createModel(var61, var62, field4037, 64, 850);
 						for (int var63 = 0; var63 < 10; var63++) {
 							for (int var64 = 0; var64 < field7577[var63].length; var64++) {
 								if (this.field7894[var63] < field1434[var63][var64].length) {
@@ -362,7 +362,7 @@ public class PlayerModel {
 							var34.method1690(var16);
 							WeightedCache var67 = field7901;
 							synchronized (field7901) {
-								field7901.method2921(var34, var17);
+								field7901.put(var34, var17);
 							}
 							this.field7899 = var17;
 						}
@@ -470,7 +470,7 @@ public class PlayerModel {
 		WeightedCache var10 = field7902;
 		Model var11;
 		synchronized (field7902) {
-			var11 = (Model) field7902.method2930(this.field7888);
+			var11 = (Model) field7902.get(this.field7888);
 		}
 		if (var11 == null || arg0.method2394(var11.method1691(), var9) != 0) {
 			if (var11 != null) {
@@ -516,7 +516,7 @@ public class PlayerModel {
 			}
 			ModelUnlit var25 = new ModelUnlit(var18, var19);
 			int var26 = var9 | 0x4000;
-			var11 = arg0.method2211(var25, var26, field4037, 64, 768);
+			var11 = arg0.createModel(var25, var26, field4037, 64, 768);
 			for (int var27 = 0; var27 < 10; var27++) {
 				for (int var28 = 0; var28 < field7577[var27].length; var28++) {
 					if (this.field7894[var27] < field1434[var27][var28].length) {
@@ -534,7 +534,7 @@ public class PlayerModel {
 			var11.method1690(var9);
 			WeightedCache var31 = field7902;
 			synchronized (field7902) {
-				field7902.method2921(var11, this.field7888);
+				field7902.put(var11, this.field7888);
 			}
 		}
 		if (arg7 == null) {
@@ -553,7 +553,7 @@ public class PlayerModel {
 		WeightedCache var12 = field7902;
 		Model var13;
 		synchronized (field7902) {
-			var13 = (Model) field7902.method2930(var10);
+			var13 = (Model) field7902.get(var10);
 		}
 		if (var13 == null || arg0.method2394(var13.method1691(), var9) != 0) {
 			if (var13 != null) {
@@ -578,7 +578,7 @@ public class PlayerModel {
 			}
 			ModelUnlit var21 = new ModelUnlit(var16, var17);
 			int var22 = var9 | 0x4000;
-			var13 = arg0.method2211(var21, var22, field4037, 64, 768);
+			var13 = arg0.createModel(var21, var22, field4037, 64, 768);
 			for (int var23 = 0; var23 < 10; var23++) {
 				for (int var24 = 0; var24 < field7577[var23].length; var24++) {
 					if (this.field7894[var23] < field1434[var23][var24].length) {
@@ -596,7 +596,7 @@ public class PlayerModel {
 			var13.method1690(var9);
 			WeightedCache var27 = field7902;
 			synchronized (field7902) {
-				field7902.method2921(var13, var10);
+				field7902.put(var13, var10);
 			}
 		}
 		if (arg4 == null) {
@@ -645,11 +645,11 @@ public class PlayerModel {
 	public static void method9976(int arg0) {
 		WeightedCache var1 = field7901;
 		synchronized (field7901) {
-			field7901.method2923(arg0);
+			field7901.update(arg0);
 		}
 		WeightedCache var3 = field7902;
 		synchronized (field7902) {
-			field7902.method2923(arg0);
+			field7902.update(arg0);
 		}
 	}
 

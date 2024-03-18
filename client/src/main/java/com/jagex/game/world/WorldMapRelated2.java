@@ -76,7 +76,7 @@ public class WorldMapRelated2 {
 					var9 = arg5[var11] + arg6[var11] + var7[0];
 				}
 			} while (var9 - var8 <= 0);
-			arg0.method2433(var8, var10, var9 - var8, arg4, 1);
+			arg0.drawHorizontalLine(var8, var10, var9 - var8, arg4, 1);
 		}
 	}
 

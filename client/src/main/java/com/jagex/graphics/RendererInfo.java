@@ -6,25 +6,25 @@ import deob.ObfuscatedName;
 public class RendererInfo {
 
 	@ObfuscatedName("cz.w")
-	public final int field1261;
+	public final int toolkitId;
 
 	@ObfuscatedName("cz.l")
-	public final String field1257;
+	public final String name;
 
 	@ObfuscatedName("cz.u")
-	public final int field1263;
+	public final int version;
 
 	@ObfuscatedName("cz.z")
-	public final String field1256;
+	public final String device;
 
 	@ObfuscatedName("cz.p")
 	public final long field1265;
 
-	public RendererInfo(int arg0, String arg1, int arg2, String arg3, long arg4, boolean arg5) {
-		this.field1261 = arg0;
-		this.field1257 = arg1;
-		this.field1263 = arg2;
-		this.field1256 = arg3;
+	public RendererInfo(int toolkitId, String name, int version, String device, long arg4, boolean arg5) {
+		this.toolkitId = toolkitId;
+		this.name = name;
+		this.version = version;
+		this.device = device;
 		this.field1265 = arg4;
 	}
 }

@@ -129,10 +129,10 @@ public class Rasteriser {
 	public Rasteriser(PureJavaRenderer arg0, PureJavaRendererContext arg1) {
 		this.field947 = arg0;
 		this.field966 = arg1;
-		this.field949 = this.field947.field9779;
-		this.field950 = this.field947.field9778;
-		this.field951 = this.field947.field9781;
-		this.field960 = MaterialAlphaMode.field7575;
+		this.field949 = this.field947.sizeX;
+		this.field950 = this.field947.colour;
+		this.field951 = this.field947.depth;
+		this.field960 = MaterialAlphaMode.NONE;
 	}
 
 	@ObfuscatedName("bd.e()I")
@@ -153,7 +153,7 @@ public class Rasteriser {
 	@ObfuscatedName("bd.k(ZZZFFFFFFFFFFFF)V")
 	public final void method1028(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14) {
 		if (!arg0) {
-			this.method1032(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
+			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 		} else if (this.field940) {
 			this.field947.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
 			this.field947.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
@@ -926,9 +926,9 @@ public class Rasteriser {
 	}
 
 	@ObfuscatedName("bd.w(ZZZFFFFFFFFFIII)V")
-	public final void method1030(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, int arg12, int arg13, int arg14) {
+	public final void drawTriangle(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, int arg12, int arg13, int arg14) {
 		if (!arg0) {
-			this.method1032(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
+			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 		} else if (this.field940) {
 			this.field947.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12 | 0xFF000000);
 			this.field947.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12 | 0xFF000000);
@@ -2143,7 +2143,7 @@ public class Rasteriser {
 	}
 
 	@ObfuscatedName("bd.u(ZZZFFFFFFFFFI)V")
-	public final void method1032(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, int arg12) {
+	public final void drawTriangle(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, int arg12) {
 		if (this.field940) {
 			this.field947.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12);
 			this.field947.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12);
@@ -2886,27 +2886,27 @@ public class Rasteriser {
 	@ObfuscatedName("bd.p(ZZZFFFFFFFFFFFFFFFFFFIIIIFFFI)V")
 	public final void method1033(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, int arg21, int arg22, int arg23, int arg24, float arg25, float arg26, float arg27, int arg28) {
 		if (!arg0) {
-			this.method1032(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
+			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 			return;
 		}
 		int var30 = arg28 & 0xFFFF;
 		if (this.field953 != var30) {
-			this.field954 = this.field947.method15655(var30);
+			this.field954 = this.field947.getMaterialTexture(var30);
 			if (this.field954 == null) {
 				this.field953 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
 				this.field959 = 0;
-				int var31 = ColourUtils.field8149[ColourUtils.method4937(this.field947.method15695(arg28)) & 0xFFFF];
+				int var31 = ColourUtils.field8149[ColourUtils.method4937(this.field947.getMaterialAverageColour(arg28)) & 0xFFFF];
 				int var32 = ((arg21 >> 16 & 0xFF) * (var31 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var31 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var31 & 0xFF) >> 8;
-				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var32, arg24, arg25), ColourUtils.method19201(var32, arg24, arg26), ColourUtils.method19201(var32, arg24, arg27));
+				this.drawTriangle(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var32, arg24, arg25), ColourUtils.method19201(var32, arg24, arg26), ColourUtils.method19201(var32, arg24, arg27));
 				return;
 			}
 			this.field953 = var30;
-			this.field948 = this.field947.method15657(arg28);
+			this.field948 = this.field947.getMaterialSize(arg28);
 			this.field956 = this.field948 - 1;
-			this.field960 = this.field947.method15658(arg28);
-			this.field939 = this.field947.method15660(arg28);
-			this.field959 = this.field947.method15659(arg28) & 0xFF;
+			this.field960 = this.field947.getMaterialAlphaMode(arg28);
+			this.field939 = this.field947.getMaterialRepeat(arg28);
+			this.field959 = this.field947.getMaterialAlphaThreshold(arg28) & 0xFF;
 		}
 		this.field952 = arg24;
 		if (!(arg3 <= arg4) || !(arg3 <= arg5)) {
@@ -3499,7 +3499,7 @@ public class Rasteriser {
 	@ObfuscatedName("bd.c(ZZZFFFFFFFFFFFFFFFFFFIIIIFFFIFIFIF)V")
 	public final void method1042(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, int arg21, int arg22, int arg23, int arg24, float arg25, float arg26, float arg27, int arg28, float arg29, int arg30, float arg31, int arg32, float arg33) {
 		if (!arg0) {
-			this.method1032(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
+			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 			return;
 		}
 		this.field952 = arg24;
@@ -3572,48 +3572,48 @@ public class Rasteriser {
 		int var56 = arg30 & 0xFFFF;
 		int var57 = arg32 & 0xFFFF;
 		if (this.field953 != var55) {
-			this.field954 = this.field947.method15655(var55);
+			this.field954 = this.field947.getMaterialTexture(var55);
 			if (this.field954 == null) {
 				this.field953 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var58 = ColourUtils.field8149[ColourUtils.method4937(this.field947.method15695(arg28)) & 0xFFFF];
+				int var58 = ColourUtils.field8149[ColourUtils.method4937(this.field947.getMaterialAverageColour(arg28)) & 0xFFFF];
 				int var59 = ((arg21 >> 16 & 0xFF) * (var58 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var58 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var58 & 0xFF) >> 8;
-				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var59, arg24, arg25), ColourUtils.method19201(var59, arg24, arg26), ColourUtils.method19201(var59, arg24, arg27));
+				this.drawTriangle(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var59, arg24, arg25), ColourUtils.method19201(var59, arg24, arg26), ColourUtils.method19201(var59, arg24, arg27));
 				return;
 			}
 			this.field953 = var55;
-			this.field948 = this.field947.method15657(arg28);
+			this.field948 = this.field947.getMaterialSize(arg28);
 			this.field956 = this.field948 - 1;
-			this.field960 = this.field947.method15658(arg28);
+			this.field960 = this.field947.getMaterialAlphaMode(arg28);
 		}
 		this.field957 = arg29;
 		if (this.field961 != var56) {
-			this.field962 = this.field947.method15655(var56);
+			this.field962 = this.field947.getMaterialTexture(var56);
 			if (this.field962 == null) {
 				this.field961 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var60 = ColourUtils.field8149[ColourUtils.method4937(this.field947.method15695(arg30)) & 0xFFFF];
+				int var60 = ColourUtils.field8149[ColourUtils.method4937(this.field947.getMaterialAverageColour(arg30)) & 0xFFFF];
 				int var61 = ((arg21 >> 16 & 0xFF) * (var60 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var60 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var60 & 0xFF) >> 8;
-				this.method1030(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var61, arg24, arg25), ColourUtils.method19201(var61, arg24, arg26), ColourUtils.method19201(var61, arg24, arg27));
+				this.drawTriangle(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.method19201(var61, arg24, arg25), ColourUtils.method19201(var61, arg24, arg26), ColourUtils.method19201(var61, arg24, arg27));
 				return;
 			}
 			this.field961 = var56;
-			this.field944 = this.field947.method15657(arg30);
+			this.field944 = this.field947.getMaterialSize(arg30);
 			this.field963 = this.field944 - 1;
 		}
 		this.field965 = arg31;
 		if (this.field955 != var57) {
-			this.field967 = this.field947.method15655(var57);
+			this.field967 = this.field947.getMaterialTexture(var57);
 			if (this.field967 == null) {
 				this.field955 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var62 = ColourUtils.field8149[ColourUtils.method4937(this.field947.method15695(arg32)) & 0xFFFF];
+				int var62 = ColourUtils.field8149[ColourUtils.method4937(this.field947.getMaterialAverageColour(arg32)) & 0xFFFF];
 				int var63 = ((arg21 >> 16 & 0xFF) * (var62 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var62 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var62 & 0xFF) >> 8;
-				this.method1030(true, arg1, arg2, (float) arg3, (float) arg4, (float) arg5, (float) arg6, (float) arg7, (float) arg8, (float) arg9, (float) arg10, (float) arg11, ColourUtils.method19201(var63, arg24, arg25), ColourUtils.method19201(var63, arg24, arg26), ColourUtils.method19201(var63, arg24, arg27));
+				this.drawTriangle(true, arg1, arg2, (float) arg3, (float) arg4, (float) arg5, (float) arg6, (float) arg7, (float) arg8, (float) arg9, (float) arg10, (float) arg11, ColourUtils.method19201(var63, arg24, arg25), ColourUtils.method19201(var63, arg24, arg26), ColourUtils.method19201(var63, arg24, arg27));
 				return;
 			}
 			this.field955 = var57;
-			this.field943 = this.field947.method15657(arg32);
+			this.field943 = this.field947.getMaterialSize(arg32);
 			this.field969 = this.field943 - 1;
 		}
 		this.field970 = arg33;

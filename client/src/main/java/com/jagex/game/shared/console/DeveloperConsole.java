@@ -335,7 +335,7 @@ public class DeveloperConsole {
 			TwitchHardwarePlatform.method5389(0, 0, GameShell.canvasWid, 350);
 		}
 		arg0.method2168(0, 0, GameShell.canvasWid, 350);
-		arg0.method2354(0, 0, GameShell.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);
+		arg0.fillRectangle(0, 0, GameShell.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);
 		int var1 = 350 / field763;
 		if (field764 > 0) {
 			int var2 = 346 - field763 - 4;
@@ -344,7 +344,7 @@ public class DeveloperConsole {
 			if (field764 > 1) {
 				var4 += (field764 - 1 - field771) * (var2 - var3) / (field764 - 1);
 			}
-			arg0.method2354(GameShell.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
+			arg0.fillRectangle(GameShell.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
 			for (int var5 = field771; var5 < field771 + var1 && var5 < field764; var5++) {
 				String[] var6 = StringTools.method17361(field4845[var5], '\b');
 				int var7 = (GameShell.canvasWid - 8 - 16) / var6.length;
@@ -423,12 +423,12 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equals("renderer")) {
-				RendererInfo var3 = Client.renderer.method2272();
+				RendererInfo var3 = Client.renderer.getRendererInfo();
 				addline("Toolkit ID: " + Client.preferences.displayMode.getValue());
-				addline("Vendor: " + var3.field1261);
-				addline("Name: " + var3.field1257);
-				addline("Version: " + var3.field1263);
-				addline("Device: " + var3.field1256);
+				addline("Vendor: " + var3.toolkitId);
+				addline("Name: " + var3.name);
+				addline("Version: " + var3.version);
+				addline("Device: " + var3.device);
 				addline("Driver Version: " + var3.field1265);
 				String var4 = Client.renderer.method2132();
 				if (var4.length() > 0) {

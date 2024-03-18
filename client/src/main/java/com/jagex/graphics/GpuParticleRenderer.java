@@ -110,17 +110,17 @@ public class GpuParticleRenderer {
 	public void method5770(GpuRenderer arg0, ParticleList arg1) {
 		arg0.method2219(false);
 		field3325 = arg0.field10122;
-		float var3 = arg0.field10059.field4315[2];
-		float var4 = arg0.field10059.field4315[6];
-		float var5 = arg0.field10059.field4315[10];
-		float var6 = arg0.field10059.field4315[14];
+		float var3 = arg0.field10059.entries[2];
+		float var4 = arg0.field10059.entries[6];
+		float var5 = arg0.field10059.entries[10];
+		float var6 = arg0.field10059.entries[14];
 		int var7 = 0;
 		int var8 = Integer.MAX_VALUE;
 		int var9 = 0;
-		DualLink var10 = arg1.field1367.field8487;
+		DualLink var10 = arg1.list.field8487;
 		for (DualLink var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
 			Particle var12 = (Particle) var11;
-			int var13 = (int) ((float) (var12.field12161 >> 12) * var5 + (float) (var12.field12163 >> 12) * var4 + (float) (var12.field12159 >> 12) * var3 + var6);
+			int var13 = (int) ((float) (var12.z >> 12) * var5 + (float) (var12.y >> 12) * var4 + (float) (var12.x >> 12) * var3 + var6);
 			if (var13 > var9) {
 				var9 = var13;
 			}
@@ -155,7 +155,7 @@ public class GpuParticleRenderer {
 		}
 		this.method5766(arg0, var10, var14, var8, var15, var16, var17);
 		if (field3325 != arg0.field10122) {
-			arg0.method2222(field3325);
+			arg0.setSunAmbientIntensity(field3325);
 		}
 		arg0.method2219(true);
 	}
@@ -191,20 +191,20 @@ public class GpuParticleRenderer {
 			}
 			arg5.field2991 = null;
 			if (var10 >= 0) {
-				Material var16 = arg0.field1597.method2043(var10);
+				Material var16 = arg0.materialList.get(var10);
 				if (var16.field1330) {
 					arg5.field2991 = arg0.field10188.method5639(var16);
 				}
 				byte var17 = 0;
-				if (MaterialAlphaMode.TEST == var16.field1340) {
-					var17 = var16.field1358;
+				if (MaterialAlphaMode.TEST == var16.alphaMode) {
+					var17 = var16.alphaThreshold;
 				}
 				arg0.method16056(var17);
 			}
 			if (var11 && field3325 != arg0.field10122) {
-				arg0.method2222(field3325);
+				arg0.setSunAmbientIntensity(field3325);
 			} else if (arg0.field10122 != 1.0F) {
-				arg0.method2222(1.0F);
+				arg0.setSunAmbientIntensity(1.0F);
 			}
 			this.method5759(arg0, arg2, arg6);
 		}
@@ -232,12 +232,12 @@ public class GpuParticleRenderer {
 	public void method5759(GpuRenderer arg0, int arg1, boolean arg2) {
 		int var4 = 0;
 		Matrix4x4 var5 = arg0.field10059;
-		float var6 = var5.field4315[0];
-		float var7 = var5.field4315[4];
-		float var8 = var5.field4315[8];
-		float var9 = var5.field4315[1];
-		float var10 = var5.field4315[5];
-		float var11 = var5.field4315[9];
+		float var6 = var5.entries[0];
+		float var7 = var5.entries[4];
+		float var8 = var5.entries[8];
+		float var9 = var5.entries[1];
+		float var10 = var5.entries[5];
+		float var11 = var5.entries[9];
 		float var12 = var6 + var9;
 		float var13 = var7 + var10;
 		float var14 = var8 + var11;
@@ -267,9 +267,9 @@ public class GpuParticleRenderer {
 						var29 = var31;
 						var31 = var33;
 					}
-					float var34 = (float) (var27.field12159 >> 12);
-					float var35 = (float) (var27.field12163 >> 12);
-					float var36 = (float) (var27.field12161 >> 12);
+					float var34 = (float) (var27.x >> 12);
+					float var35 = (float) (var27.y >> 12);
+					float var36 = (float) (var27.z >> 12);
 					int var37 = var27.field12162 >> 12;
 					if (var27.field12156 == 0) {
 						var23.putFloat((float) -var37 * var12 + var34);
@@ -310,7 +310,7 @@ public class GpuParticleRenderer {
 						var23.putFloat(0.0F);
 					} else {
 						arg0.field10039.method6687(var27.field12156, var37, var37, 0.0F, 0.0F, 0.0F);
-						arg0.field10039.method6720(arg0.field10066);
+						arg0.field10039.multiply(arg0.field10066);
 						arg0.field10039.method6614(1.0F, 0.0F, 0.0F, var21);
 						arg0.field10039.method6614(0.0F, 1.0F, 0.0F, var22);
 						var23.putFloat(var34 - var21[0] - var22[0]);
@@ -361,9 +361,9 @@ public class GpuParticleRenderer {
 						byte var43 = (byte) (var41 >> 8);
 						byte var44 = (byte) var41;
 						byte var45 = (byte) (var41 >>> 24);
-						float var46 = (float) (var40.field12159 >> 12);
-						float var47 = (float) (var40.field12163 >> 12);
-						float var48 = (float) (var40.field12161 >> 12);
+						float var46 = (float) (var40.x >> 12);
+						float var47 = (float) (var40.y >> 12);
+						float var48 = (float) (var40.z >> 12);
 						int var49 = var40.field12162 >> 12;
 						if (arg0.field10185 == 0) {
 							byte var50 = var42;
@@ -409,7 +409,7 @@ public class GpuParticleRenderer {
 							var23.putFloat(0.0F);
 						} else {
 							arg0.field10039.method6687(var40.field12156, var49, var49, 0.0F, 0.0F, 0.0F);
-							arg0.field10039.method6720(arg0.field10066);
+							arg0.field10039.multiply(arg0.field10066);
 							arg0.field10039.method6614(1.0F, 0.0F, 0.0F, var21);
 							arg0.field10039.method6614(0.0F, 1.0F, 0.0F, var22);
 							var23.putFloat(var46 - var21[0] - var22[0]);

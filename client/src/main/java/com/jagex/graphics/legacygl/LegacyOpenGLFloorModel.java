@@ -158,7 +158,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 
 	@ObfuscatedName("aek.n(II[I[I[I[I[I[I[I[ILdy;Z)V")
 	public void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, WaterFogData arg10, boolean arg11) {
-		MaterialList var13 = this.field9453.field1597;
+		MaterialList var13 = this.field9453.materialList;
 		if (arg5 != null && this.field9467 == null) {
 			this.field9467 = new int[this.field1235][this.field1234][];
 		}
@@ -179,7 +179,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 		for (int var15 = 0; var15 < arg6.length; var15++) {
 			int var16 = arg8[var15];
 			int var17 = arg9[var15];
-			if ((this.field9457 & 0x20) != 0 && var16 != -1 && var13.method2043(var16).field1342) {
+			if ((this.field9457 & 0x20) != 0 && var16 != -1 && var13.get(var16).highDetail) {
 				var17 = 128;
 				var16 = -1;
 			}
@@ -665,7 +665,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 		if (!this.field9470.method14164()) {
 			int var21 = this.field9453.field9955;
 			int var22 = this.field9453.field9956;
-			this.field9453.method2572(0, var22, this.field9453.field9957);
+			this.field9453.setFog(0, var22, this.field9453.field9957);
 			this.field9453.method15764(false);
 			this.field9453.method15789(false);
 			this.field9453.method15791(128);
@@ -681,7 +681,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 			this.field9453.method15780(0, 5890, 768);
 			this.field9453.method15781(0, 5890, 770);
 			this.field9453.method15777(null);
-			this.field9453.method2572(var21, var22, this.field9453.field9957);
+			this.field9453.setFog(var21, var22, this.field9453.field9957);
 		}
 		if (this.field9465 == null) {
 			return;

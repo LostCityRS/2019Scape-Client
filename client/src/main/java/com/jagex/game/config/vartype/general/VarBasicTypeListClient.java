@@ -31,10 +31,10 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	public ConfigType list(int id) {
 		WeightedCache var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			VarBasicType var3 = (VarBasicType) this.recentUse.method2930((long) id);
+			VarBasicType var3 = (VarBasicType) this.recentUse.get((long) id);
 			if (var3 == null) {
 				var3 = this.method15266(id);
-				this.recentUse.method2921(var3, (long) id);
+				this.recentUse.put(var3, (long) id);
 			}
 			return var3;
 		}
@@ -62,7 +62,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	public void method15274(int arg0) {
 		WeightedCache var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.method2923(arg0);
+			this.recentUse.update(arg0);
 		}
 	}
 
@@ -98,7 +98,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 		// line 68
 		public Object next() {
 			int var1 = ++this.field7882 - 1;
-			VarBasicType var2 = (VarBasicType) this.this$0.recentUse.method2930((long) var1);
+			VarBasicType var2 = (VarBasicType) this.this$0.recentUse.get((long) var1);
 			return var2 == null ? this.this$0.method15266(var1) : var2;
 		}
 

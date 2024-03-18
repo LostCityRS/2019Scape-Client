@@ -46,7 +46,7 @@ public class HintArrow {
 	@ObfuscatedName("ka.e(Ldh;IIIIIB)Ldo;")
 	public static Model method5210(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		long var6 = (long) arg5;
-		Model var8 = (Model) field752.method2930(var6);
+		Model var8 = (Model) field752.get(var6);
 		short var9 = 2055;
 		if (var8 == null) {
 			ModelUnlit var10 = ModelUnlit.method1931(Client.modelsJs5, arg5, 0);
@@ -56,8 +56,8 @@ public class HintArrow {
 			if (var10.field1372 < 13) {
 				var10.method1947(2);
 			}
-			var8 = arg0.method2211(var10, var9, field753, 64, 768);
-			field752.method2921(var8, var6);
+			var8 = arg0.createModel(var10, var9, field753, 64, 768);
+			field752.put(var8, var6);
 		}
 		Model var11 = var8.method1773((byte) 6, var9, true);
 		if (arg1 != 0) {
@@ -88,7 +88,7 @@ public class HintArrow {
 
 	@ObfuscatedName("xe.k(II)V")
 	public static void method10284(int arg0) {
-		field752.method2923(arg0);
+		field752.update(arg0);
 	}
 
 	@ObfuscatedName("ahd.f(B)V")

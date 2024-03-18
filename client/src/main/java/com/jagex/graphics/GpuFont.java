@@ -26,10 +26,10 @@ public class GpuFont extends Font {
 		if (arg3) {
 			Object var6 = null;
 			byte[] var8;
-			if (arg2.method2587()) {
+			if (arg2.isPaletted()) {
 				PalettedSpriteData var7 = (PalettedSpriteData) arg2;
-				var8 = var7.method2644() ? var7.field10228 : var7.field10227;
-				if (!var7.method2644()) {
+				var8 = var7.isTranslucent() ? var7.field10228 : var7.colour;
+				if (!var7.isTranslucent()) {
 					for (int var9 = 0; var9 < var8.length; var9++) {
 						var8[var9] = (byte) (var8[var9] == 0 ? 0 : -1);
 					}
@@ -38,7 +38,7 @@ public class GpuFont extends Font {
 				FullSpriteData var10 = (FullSpriteData) arg2;
 				int[] var11 = var10.method2604(false);
 				var8 = new byte[var11.length];
-				if (var10.method2644()) {
+				if (var10.isTranslucent()) {
 					for (int var15 = 0; var15 < var8.length; var15++) {
 						var8[var15] = (byte) (var5[var15] >> 24 & 0xFF);
 					}
@@ -53,11 +53,11 @@ public class GpuFont extends Font {
 			for (int var16 = 0; var16 < var8.length; var16++) {
 				var5[var16] = var8[var16] << 24 | 0xFFFFFF;
 			}
-		} else if (arg2.method2587()) {
+		} else if (arg2.isPaletted()) {
 			PalettedSpriteData var17 = (PalettedSpriteData) arg2;
-			int[] var18 = var17.field10226;
+			int[] var18 = var17.palette;
 			byte[] var19 = var17.field10228;
-			byte[] var20 = var17.field10227;
+			byte[] var20 = var17.colour;
 			if (var19 == null) {
 				for (int var22 = 0; var22 < var20.length; var22++) {
 					byte var23;
@@ -73,7 +73,7 @@ public class GpuFont extends Font {
 		} else {
 			FullSpriteData var24 = (FullSpriteData) arg2;
 			int[] var25 = var24.method2604(false);
-			if (var24.method2644()) {
+			if (var24.isTranslucent()) {
 				for (int var28 = 0; var28 < var5.length; var28++) {
 					var5[var28] = var25[var28];
 				}
@@ -142,9 +142,9 @@ public class GpuFont extends Font {
 		float var10 = (float) this.field10244.getRenderTarget().getWidth();
 		float var11 = (float) this.field10244.getRenderTarget().getHeight();
 		var9.field2995.method6612(2.0F / var10, 2.0F / var11, 1.0F, 1.0F);
-		var9.field2995.field4315[12] = ((float) arg1 + this.field10244.method15954()) * 2.0F / var10 - 1.0F;
-		var9.field2995.field4315[13] = ((float) arg2 + this.field10244.method15954()) * 2.0F / var11 - 1.0F;
-		var9.field2995.field4315[14] = -1.0F;
+		var9.field2995.entries[12] = ((float) arg1 + this.field10244.method15954()) * 2.0F / var10 - 1.0F;
+		var9.field2995.entries[13] = ((float) arg2 + this.field10244.method15954()) * 2.0F / var11 - 1.0F;
+		var9.field2995.entries[14] = -1.0F;
 		var9.field2998.method6603();
 		var9.field3000 = this.field10246;
 		var9.field3001 = arg0 * 4;

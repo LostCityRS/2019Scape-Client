@@ -417,7 +417,7 @@ public class PlayerEntity extends PathingEntity {
 		}
 		if (this.field10393 != null) {
 			ParticleList var37 = this.field10393.method9965();
-			arg0.method2198(var37);
+			arg0.drawParticles(var37);
 		}
 		for (int var38 = 0; var38 < this.field10459.length; var38++) {
 			if (this.field10459[var38] != null) {

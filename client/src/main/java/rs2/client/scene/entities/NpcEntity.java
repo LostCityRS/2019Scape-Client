@@ -216,7 +216,7 @@ public class NpcEntity extends PathingEntity {
 		}
 		if (this.field10393 != null) {
 			ParticleList var18 = this.field10393.method9965();
-			arg0.method2198(var18);
+			arg0.drawParticles(var18);
 		}
 		for (int var19 = 0; var19 < this.field10459.length; var19++) {
 			if (this.field10459[var19] != null) {

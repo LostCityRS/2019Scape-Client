@@ -30,7 +30,7 @@ public class MapElementTypeList extends CachingConfigTypeList {
 	@ObfuscatedName("aoc.v(II)V")
 	public void method14896(int arg0) {
 		super.method14896(arg0);
-		((MapElementTypeFactory) this.factory).field2414.method2923(arg0);
+		((MapElementTypeFactory) this.factory).field2414.update(arg0);
 	}
 
 	@ObfuscatedName("aoc.o(I)V")

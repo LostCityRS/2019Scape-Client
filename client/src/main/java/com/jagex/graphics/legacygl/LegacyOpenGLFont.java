@@ -27,10 +27,10 @@ public class LegacyOpenGLFont extends Font {
 		if (arg3) {
 			Object var6 = null;
 			byte[] var8;
-			if (arg2.method2587()) {
+			if (arg2.isPaletted()) {
 				PalettedSpriteData var7 = (PalettedSpriteData) arg2;
-				var8 = var7.method2644() ? var7.field10228 : var7.field10227;
-				if (!var7.method2644()) {
+				var8 = var7.isTranslucent() ? var7.field10228 : var7.colour;
+				if (!var7.isTranslucent()) {
 					for (int var9 = 0; var9 < var8.length; var9++) {
 						var8[var9] = (byte) (var8[var9] == 0 ? 0 : -1);
 					}
@@ -39,7 +39,7 @@ public class LegacyOpenGLFont extends Font {
 				FullSpriteData var10 = (FullSpriteData) arg2;
 				int[] var11 = var10.method2604(false);
 				var8 = new byte[var11.length];
-				if (var10.method2644()) {
+				if (var10.isTranslucent()) {
 					for (int var15 = 0; var15 < var8.length; var15++) {
 						var8[var15] = (byte) (var5[var15] >> 24 & 0xFF);
 					}
@@ -54,11 +54,11 @@ public class LegacyOpenGLFont extends Font {
 			this.field10241 = LegacyGraphicRelated.method18932(arg0, TextureFormat.ALPHA, DataType.UNSIGNED_INT_8, this.field1667.field8571, this.field1667.field8572, false, var8, TextureFormat.ALPHA);
 			this.field10240 = true;
 		} else {
-			if (arg2.method2587()) {
+			if (arg2.isPaletted()) {
 				PalettedSpriteData var16 = (PalettedSpriteData) arg2;
-				int[] var17 = var16.field10226;
+				int[] var17 = var16.palette;
 				byte[] var18 = var16.field10228;
-				byte[] var19 = var16.field10227;
+				byte[] var19 = var16.colour;
 				if (var18 == null) {
 					for (int var21 = 0; var21 < var19.length; var21++) {
 						byte var22;
@@ -74,7 +74,7 @@ public class LegacyOpenGLFont extends Font {
 			} else {
 				FullSpriteData var23 = (FullSpriteData) arg2;
 				int[] var24 = var23.method2604(false);
-				if (var23.method2644()) {
+				if (var23.isTranslucent()) {
 					for (int var27 = 0; var27 < var5.length; var27++) {
 						var5[var27] = var24[var27];
 					}

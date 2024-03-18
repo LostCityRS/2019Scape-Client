@@ -362,7 +362,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.f()Lcz;")
-	public RendererInfo method2272() {
+	public RendererInfo getRendererInfo() {
 		int var1 = -1;
 		if (this.field12037.indexOf("nvidia") != -1) {
 			var1 = 4318;
@@ -408,7 +408,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.am()Lafq;")
-	public Framebuffer method2145() {
+	public Framebuffer createFramebuffer() {
 		return new OpenGLFramebuffer(this);
 	}
 
@@ -584,7 +584,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 			this.method2142(this.field12018);
 			this.method2475(1, -16777216);
 			this.field12033.method1474(this.field1611, this.field1618, this.field1619, this.field1610);
-			this.field12034.method1476(0, 0, arg0, arg1, arg2, arg3, 0, arg0);
+			this.field12034.download(0, 0, arg0, arg1, arg2, arg3, 0, arg0);
 			this.method2143(this.field12018);
 			return 0L;
 		}
@@ -648,13 +648,13 @@ public final class OpenGLRenderer extends GpuRenderer {
 		this.method2126();
 		this.method2419(arg0, arg1);
 		if (!this.field12028) {
-			this.field12034 = this.method2197(arg0, arg1, false, true);
-			this.field12018 = this.method2145();
+			this.field12034 = this.createSprite(arg0, arg1, false, true);
+			this.field12018 = this.createFramebuffer();
 			this.field12018.method15439(0, this.field12034.method1437());
 			return;
 		}
-		this.field12034 = this.method2197(arg0, arg1, false, true);
-		this.field12018 = this.method2145();
+		this.field12034 = this.createSprite(arg0, arg1, false, true);
+		this.field12018 = this.createFramebuffer();
 		this.field12018.method15439(0, this.field12034.method1437());
 		OpenGL.glGenBuffersARB(3, this.field12017, 0);
 		for (int var3 = 0; var3 < 3; var3++) {
@@ -725,14 +725,14 @@ public final class OpenGLRenderer extends GpuRenderer {
 	public void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2) {
 		OpenGL.glMatrixMode(5888);
 		this.field10066.method6606(arg0, arg1);
-		OpenGL.glLoadMatrixf(this.field10066.field4315, 0);
+		OpenGL.glLoadMatrixf(this.field10066.entries, 0);
 		OpenGL.glMatrixMode(5889);
-		OpenGL.glLoadMatrixf(arg2.field4315, 0);
+		OpenGL.glLoadMatrixf(arg2.entries, 0);
 	}
 
 	@ObfuscatedName("aqv.ti(Lpq;)V")
 	public void method16006(Matrix4x4 arg0) {
-		float[] var2 = arg0.field4315;
+		float[] var2 = arg0.entries;
 		var2[1] = -var2[1];
 		var2[5] = -var2[5];
 		var2[9] = -var2[9];
@@ -788,7 +788,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.tk()V")
 	public void method16307() {
 		OpenGL.glMatrixMode(5888);
-		OpenGL.glLoadMatrixf(this.field10059.field4315, 0);
+		OpenGL.glLoadMatrixf(this.field10059.entries, 0);
 		OpenGL.glLightfv(16384, 4611, this.field10114, 0);
 		OpenGL.glLightfv(16385, 4611, this.field10072, 0);
 	}
@@ -811,7 +811,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.um()V")
 	public void method16025() {
 		OpenGL.glMatrixMode(5888);
-		OpenGL.glLoadMatrixf(this.field10059.field4315, 0);
+		OpenGL.glLoadMatrixf(this.field10059.entries, 0);
 		int var1;
 		for (var1 = 0; var1 < this.field10127; var1++) {
 			Light var2 = this.field10045[var1];
@@ -1298,7 +1298,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.d(I)V")
-	public final synchronized void method2120(int arg0) {
+	public final synchronized void cycle(int arg0) {
 		try {
 			this.method19078();
 		} catch (Exception var14) {
@@ -1377,7 +1377,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 			System.gc();
 			this.field12006 = MonotonicTime.method3655();
 		}
-		super.method2120(var4);
+		super.cycle(var4);
 	}
 
 	@ObfuscatedName("aqv.ahg(II)V")

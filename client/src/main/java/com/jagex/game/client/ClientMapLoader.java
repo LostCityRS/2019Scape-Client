@@ -79,7 +79,7 @@ public class ClientMapLoader extends MapLoader {
 								LightType var12 = (LightType) Client.lightTypeList.list(arg1.g2());
 								var11.method8899(var12.field9168, var12.field9170, var12.field9167, var12.field9169);
 							}
-							if (arg0.method2114() > 0) {
+							if (arg0.getMaxLights() > 0) {
 								Light var13 = var11.field7003;
 								int var14 = var13.method17605() + (arg2 << 9);
 								int var15 = var13.method17607() + (arg3 << 9);
@@ -267,7 +267,7 @@ public class ClientMapLoader extends MapLoader {
 								LightType var19 = (LightType) Client.lightTypeList.list(arg1.g2());
 								var18.method8899(var19.field9168, var19.field9170, var19.field9167, var19.field9169);
 							}
-							if (arg0.method2114() > 0) {
+							if (arg0.getMaxLights() > 0) {
 								Light var20 = var18.field7003;
 								int var21 = var20.method17605() >> 9;
 								int var22 = var20.method17607() >> 9;

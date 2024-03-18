@@ -72,7 +72,7 @@ public class LegacyFloorModelRelated extends Node {
 	@ObfuscatedName("akn.k(IIIF)V")
 	public void method17582(int arg0, int arg1, int arg2, float arg3) {
 		if (this.field11296 != -1) {
-			Material var5 = this.field11291.field1597.method2043(this.field11296);
+			Material var5 = this.field11291.materialList.get(this.field11296);
 			int var6 = var5.field1364 & 0xFF;
 			if (var6 != 0 && var5.field1308 != 4) {
 				int var7;
@@ -207,7 +207,7 @@ public class LegacyFloorModelRelated extends Node {
 		this.field11291.method15809(this.field11300.field9456, this.field11300.field9480, this.field11298, this.field11300.field9476);
 		this.field11291.method15795(this.field11296, (this.field11300.field9457 & 0x7) != 0, (this.field11300.field9457 & 0x8) != 0);
 		if (this.field11291.field9840) {
-			this.field11291.method2246(Integer.MAX_VALUE, this.field11295);
+			this.field11291.setWaterFog(Integer.MAX_VALUE, this.field11295);
 		}
 		OpenGL.glMatrixMode(5890);
 		OpenGL.glPushMatrix();

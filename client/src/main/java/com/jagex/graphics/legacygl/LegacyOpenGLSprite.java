@@ -54,7 +54,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.e(IIII)V")
-	public void method1431(int arg0, int arg1, int arg2, int arg3) {
+	public void setPadding(int arg0, int arg1, int arg2, int arg3) {
 		this.field9391 = arg0;
 		this.field9392 = arg1;
 		this.field9397 = arg2;
@@ -71,7 +71,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.m()I")
-	public int method1459() {
+	public int getWidth() {
 		return this.field9396.field11900;
 	}
 
@@ -81,7 +81,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.f()I")
-	public int method1435() {
+	public int getHeight() {
 		return this.field9396.field11902;
 	}
 
@@ -139,7 +139,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.z(IIII[I[III)V")
-	public void method1476(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6, int arg7) {
+	public void download(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6, int arg7) {
 		this.field9396.method15314(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
@@ -263,7 +263,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.y(IIIIIIII)V")
-	public void method1447(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public void drawTintedScaled(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		this.field9396.method1082((arg7 & 0x1) != 0);
 		this.field9399.method15772();
 		this.field9399.method15791(arg6);

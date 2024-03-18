@@ -373,7 +373,7 @@ public class WorldMap {
 			return 0;
 		}
 		int var6 = var5.texture;
-		if (var6 >= 0 && arg1.method2043(var6).field1342) {
+		if (var6 >= 0 && arg1.get(var6).highDetail) {
 			var6 = -1;
 		}
 		int var10;
@@ -388,7 +388,7 @@ public class WorldMap {
 			int var9 = (arg3 + var7 & 0xFC00) + (var7 & 0x380) + var8;
 			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method10223(var9, 96)) & 0xFFFF] | 0xFF000000;
 		} else if (var6 >= 0) {
-			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method10223(arg1.method2043(var6).field1366, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method10223(arg1.get(var6).averageColour, 96)) & 0xFFFF] | 0xFF000000;
 		} else if (var5.rgb == -1) {
 			var10 = 0;
 		} else {
@@ -872,11 +872,11 @@ public class WorldMap {
 					var37 = var38 - var39;
 				}
 				int var40 = var38 - var37;
-				Sprite var41 = (Sprite) field6833.method2930((long) var36);
+				Sprite var41 = (Sprite) field6833.get((long) var36);
 				if (var41 == null) {
 					throw new RuntimeException();
 				}
-				if (var41.method1459() == var30 && var41.method1435() == var37) {
+				if (var41.getWidth() == var30 && var41.getHeight() == var37) {
 					var41.method1439(var31, var40);
 				} else {
 					var41.method1474(var31, var40, var30, var37);
@@ -887,8 +887,8 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.b(Ldh;IIII)V")
 	public static void method8536(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
-		Sprite var5 = (Sprite) field6833.method2930(-1L);
-		if (var5 == null || var5.method1459() != arg3) {
+		Sprite var5 = (Sprite) field6833.get(-1L);
+		if (var5 == null || var5.getWidth() != arg3) {
 			int var6;
 			if (currentWorldMap.field12355 == -1) {
 				var6 = -16777216;
@@ -899,10 +899,10 @@ public class WorldMap {
 				field6838 = new int[arg3 * arg3];
 			}
 			Arrays.fill(field6838, var6);
-			var5 = arg0.method2188(field6838, 0, arg3, arg3, arg3, true);
-			field6833.method2921(var5, -1L);
+			var5 = arg0.createSprite(field6838, 0, arg3, arg3, arg3, true);
+			field6833.put(var5, -1L);
 		}
-		field6833.method2921(var5, (long) arg4);
+		field6833.put(var5, (long) arg4);
 	}
 
 	@ObfuscatedName("tf.h(IIIIZZZLdh;)V")
@@ -1061,7 +1061,7 @@ public class WorldMap {
 				}
 			}
 		}
-		field6833.method2921(arg7.method2188(field6838, 0, arg2, arg2, arg2, true), (long) arg3);
+		field6833.put(arg7.createSprite(field6838, 0, arg2, arg2, arg2, true), (long) arg3);
 	}
 
 	@ObfuscatedName("tf.a([IIIIIIZIII[I[BZ)V")
@@ -1321,8 +1321,8 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.ac(J)I")
 	public static int method8588(long arg0) {
-		Sprite var2 = (Sprite) field6833.method2930(arg0);
-		return var2 == null ? -1 : var2.method1459();
+		Sprite var2 = (Sprite) field6833.get(arg0);
+		return var2 == null ? -1 : var2.getWidth();
 	}
 
 	@ObfuscatedName("tf.ai([IIIIIIII)V")

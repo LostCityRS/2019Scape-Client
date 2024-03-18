@@ -95,7 +95,7 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 		}
 		if (this.field11179.field6680 != null) {
 			ParticleList var9 = this.field11179.field6680.method9965();
-			arg0.method2198(var9);
+			arg0.drawParticles(var9);
 		}
 		this.field11183 = var2.method1731() || this.field11179.field6680 != null;
 		if (this.field11181 == null) {

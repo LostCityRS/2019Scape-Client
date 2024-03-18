@@ -154,7 +154,7 @@ public class LoadingScreenRenderer implements Runnable {
 							Client.method8024();
 							Client.renderer.method2475(1, 0);
 							Sprite var10 = Client.renderer.method2365(GameShell.canvasWid, GameShell.canvasHei, true);
-							Framebuffer var11 = Client.renderer.method2145();
+							Framebuffer var11 = Client.renderer.createFramebuffer();
 							var11.method15439(0, var10.method1437());
 							Client.renderer.method2142(var11);
 							this.field2880.method4888(true);

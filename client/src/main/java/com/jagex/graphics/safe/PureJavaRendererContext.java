@@ -24,7 +24,7 @@ public class PureJavaRendererContext {
 	public float field855 = 1.0F - this.field865;
 
 	@ObfuscatedName("az.l")
-	public int field858 = 0;
+	public int fadeColour = 0;
 
 	@ObfuscatedName("az.u")
 	public int field823 = 0;
@@ -48,7 +48,7 @@ public class PureJavaRendererContext {
 	public Matrix4x3 field836 = new Matrix4x3();
 
 	@ObfuscatedName("az.o")
-	public Rasteriser field837;
+	public Rasteriser rasteriser;
 
 	@ObfuscatedName("az.s")
 	public Matrix4x3 field838 = new Matrix4x3();
@@ -145,7 +145,7 @@ public class PureJavaRendererContext {
 
 	public PureJavaRendererContext(PureJavaRenderer arg0) {
 		this.field833 = arg0;
-		this.field837 = new Rasteriser(arg0, this);
+		this.rasteriser = new Rasteriser(arg0, this);
 		for (int var2 = 0; var2 < 8; var2++) {
 			this.field830[var2] = new PureJavaModel(this.field833);
 			this.field862[var2] = new PureJavaModel(this.field833);
@@ -158,11 +158,11 @@ public class PureJavaRendererContext {
 
 	@ObfuscatedName("az.e(I)V")
 	public void method999() {
-		this.field837 = new Rasteriser(this.field833, this);
+		this.rasteriser = new Rasteriser(this.field833, this);
 	}
 
 	@ObfuscatedName("az.n(Ljava/lang/Runnable;I)V")
-	public void method996(Runnable arg0) {
+	public void setThread(Runnable arg0) {
 		this.field824 = arg0;
 	}
 }

@@ -20,7 +20,7 @@ public class BasicParticleEmitterTypeList implements ParticleEmitterTypeList {
 
 	@ObfuscatedName("ni.e(II)Lnj;")
 	public synchronized ParticleEmitterType method6004(int arg0) {
-		ParticleEmitterType var2 = (ParticleEmitterType) this.field3562.method2930((long) arg0);
+		ParticleEmitterType var2 = (ParticleEmitterType) this.field3562.get((long) arg0);
 		if (var2 != null) {
 			return var2;
 		}
@@ -30,7 +30,7 @@ public class BasicParticleEmitterTypeList implements ParticleEmitterTypeList {
 			var4.method5960(new Packet(var3));
 		}
 		var4.method5965();
-		this.field3562.method2921(var4, (long) arg0);
+		this.field3562.put(var4, (long) arg0);
 		return var4;
 	}
 

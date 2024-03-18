@@ -269,7 +269,7 @@ public class ClientInvCache extends Node {
 		}
 		long var13 = this.method17471(var10, arg3, arg5 == null ? null : arg5.field7894, arg4);
 		if (modelCache != null) {
-			var7 = (Model) modelCache.method2930(var13);
+			var7 = (Model) modelCache.get(var13);
 		}
 		if (var7 == null || arg0.method2394(var7.method1691(), var8) != 0) {
 			if (var7 != null) {
@@ -313,7 +313,7 @@ public class ClientInvCache extends Node {
 			if (arg5 != null) {
 				var15 = var8 | 0x4000;
 			}
-			var7 = arg0.method2211(var27, var15, field11222, 65, 852);
+			var7 = arg0.createModel(var27, var15, field11222, 65, 852);
 			if (arg5 != null) {
 				int var28 = 0;
 				label123: while (true) {
@@ -341,7 +341,7 @@ public class ClientInvCache extends Node {
 			}
 			if (modelCache != null) {
 				var7.method1690(var8);
-				modelCache.method2921(var7, var13);
+				modelCache.put(var7, var13);
 			}
 		}
 		if (arg2 == null) {

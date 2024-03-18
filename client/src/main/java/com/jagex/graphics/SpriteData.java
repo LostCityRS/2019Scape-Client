@@ -6,16 +6,16 @@ import deob.ObfuscatedName;
 public abstract class SpriteData {
 
 	@ObfuscatedName("de.e()Z")
-	public abstract boolean method2587();
+	public abstract boolean isPaletted();
 
 	@ObfuscatedName("de.y()V")
 	public abstract void method2588();
 
 	@ObfuscatedName("de.f()I")
-	public abstract int method2591();
+	public abstract int getPaddingLeft();
 
 	@ObfuscatedName("de.l()I")
-	public abstract int method2593();
+	public abstract int getPaddingTop();
 
 	@ObfuscatedName("de.z()V")
 	public abstract void method2595();
@@ -39,7 +39,7 @@ public abstract class SpriteData {
 	public abstract void method2602();
 
 	@ObfuscatedName("de.w()I")
-	public abstract int method2603();
+	public abstract int getPaddingRight();
 
 	@ObfuscatedName("de.q(Z)[I")
 	public abstract int[] method2604(boolean arg0);
@@ -51,17 +51,17 @@ public abstract class SpriteData {
 	public abstract int method2617(int arg0, int arg1);
 
 	@ObfuscatedName("de.k()I")
-	public abstract int method2631();
+	public abstract int getHeight();
 
 	@ObfuscatedName("de.m()I")
-	public abstract int method2639();
+	public abstract int getWidth();
 
 	@ObfuscatedName("de.n()Z")
-	public abstract boolean method2644();
+	public abstract boolean isTranslucent();
 
 	@ObfuscatedName("de.c(I)V")
 	public abstract void method2646(int arg0);
 
 	@ObfuscatedName("de.u()I")
-	public abstract int method2651();
+	public abstract int getPaddingBottom();
 }

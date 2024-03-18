@@ -20,7 +20,7 @@ public class BasicBillboardTypeList implements BillboardTypeList {
 
 	@ObfuscatedName("nw.e(II)Lnm;")
 	public BillboardType method6015(int arg0) {
-		BillboardType var2 = (BillboardType) this.field3565.method2930((long) arg0);
+		BillboardType var2 = (BillboardType) this.field3565.get((long) arg0);
 		if (var2 != null) {
 			return var2;
 		}
@@ -29,7 +29,7 @@ public class BasicBillboardTypeList implements BillboardTypeList {
 		if (var3 != null) {
 			var4.method5954(new Packet(var3), arg0);
 		}
-		this.field3565.method2921(var4, (long) arg0);
+		this.field3565.put(var4, (long) arg0);
 		return var4;
 	}
 }

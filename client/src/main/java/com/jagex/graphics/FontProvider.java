@@ -103,7 +103,7 @@ public class FontProvider implements FontIconProvider {
 				}
 			}
 		}
-		Object var6 = this.field4202.method2930((long) (arg1 << 1 | (arg3 ? 1 : 0)));
+		Object var6 = this.field4202.get((long) (arg1 << 1 | (arg3 ? 1 : 0)));
 		if (var6 != null) {
 			return var6;
 		}
@@ -116,7 +116,7 @@ public class FontProvider implements FontIconProvider {
 			return null;
 		} else {
 			Object var9 = arg0.method210(var7, var8, arg3);
-			this.field4202.method2921(var9, (long) (arg1 << 1 | (arg3 ? 1 : 0)));
+			this.field4202.put(var9, (long) (arg1 << 1 | (arg3 ? 1 : 0)));
 			return var9;
 		}
 	}
@@ -141,7 +141,7 @@ public class FontProvider implements FontIconProvider {
 		if (arg3) {
 			this.field4200.method6889(arg1);
 		}
-		FontMetrics var6 = (FontMetrics) this.field4203.method2930((long) arg1);
+		FontMetrics var6 = (FontMetrics) this.field4203.get((long) arg1);
 		if (var6 != null) {
 			return var6;
 		}
@@ -150,7 +150,7 @@ public class FontProvider implements FontIconProvider {
 			return null;
 		} else {
 			if (arg2) {
-				this.field4203.method2921(var7, (long) arg1);
+				this.field4203.put(var7, (long) arg1);
 			}
 			return var7;
 		}
@@ -167,10 +167,10 @@ public class FontProvider implements FontIconProvider {
 
 	@ObfuscatedName("oi.p(II)V")
 	public void method6166(int arg0) {
-		this.field4203.method2923(arg0);
-		this.field4202.method2923(arg0);
+		this.field4203.update(arg0);
+		this.field4202.update(arg0);
 		if (this.field4205 != null) {
-			this.field4205.method2923(arg0);
+			this.field4205.update(arg0);
 		}
 	}
 
@@ -199,15 +199,15 @@ public class FontProvider implements FontIconProvider {
 		if (arg0 == null) {
 			return null;
 		}
-		Sprite[] var3 = (Sprite[]) this.field4205.method2930((long) arg1);
+		Sprite[] var3 = (Sprite[]) this.field4205.get((long) arg1);
 		if (var3 == null) {
 			SpriteData[] var4 = SpriteDataProvider.method1608(this.field4200, arg1, 0);
 			if (var4 != null && var4.length > 0) {
 				var3 = new Sprite[var4.length];
 				for (int var5 = 0; var5 < var4.length; var5++) {
-					var3[var5] = arg0.method2200(var4[var5], true);
+					var3[var5] = arg0.createSprite(var4[var5], true);
 				}
-				this.field4205.method2921(var3, (long) arg1);
+				this.field4205.put(var3, (long) arg1);
 			}
 		}
 		return var3;

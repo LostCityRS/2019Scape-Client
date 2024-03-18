@@ -100,9 +100,9 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		}
 		Sprite var19;
 		if (arg7) {
-			var19 = arg0.method2199(var18, 0, 36, 36, 32);
+			var19 = arg0.createSprite(var18, 0, 36, 36, 32);
 		} else {
-			var19 = arg1.method2199(var18, 0, 36, 36, 32);
+			var19 = arg1.createSprite(var18, 0, 36, 36, 32);
 		}
 		if (!arg7) {
 			IconCacheKey var20 = new IconCacheKey();
@@ -159,7 +159,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public void method14624(int arg0) {
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.method2923(arg0);
+			this.modelCache.update(arg0);
 		}
 		Cache2 var4 = this.iconCache;
 		synchronized (this.iconCache) {

@@ -114,7 +114,7 @@ public abstract class PureJavaSprite extends Sprite {
 	}
 
 	@ObfuscatedName("ael.e(IIII)V")
-	public void method1431(int arg0, int arg1, int arg2, int arg3) {
+	public void setPadding(int arg0, int arg1, int arg2, int arg3) {
 		this.field9358 = arg0;
 		this.field9359 = arg1;
 		this.field9355 = arg2;
@@ -130,12 +130,12 @@ public abstract class PureJavaSprite extends Sprite {
 	}
 
 	@ObfuscatedName("ael.m()I")
-	public int method1459() {
+	public int getWidth() {
 		return this.field9356;
 	}
 
 	@ObfuscatedName("ael.f()I")
-	public int method1435() {
+	public int getHeight() {
 		return this.field9372;
 	}
 
@@ -158,7 +158,7 @@ public abstract class PureJavaSprite extends Sprite {
 			this.field9362 = new int[4];
 		}
 		this.field9373.method2171(this.field9362);
-		this.field9373.method2161(this.field9373.field9805, this.field9373.field9784, arg0 + arg2, arg1 + arg3);
+		this.field9373.method2161(this.field9373.clipMinX, this.field9373.clipMinY, arg0 + arg2, arg1 + arg3);
 		int var8 = this.method1434();
 		int var9 = this.method1436();
 		int var10 = (arg2 + var8 - 1) / var8;
@@ -240,17 +240,17 @@ public abstract class PureJavaSprite extends Sprite {
 		if (var22 > var26) {
 			var26 = var22;
 		}
-		if (var23 < (float) this.field9373.field9805) {
-			var23 = this.field9373.field9805;
+		if (var23 < (float) this.field9373.clipMinX) {
+			var23 = this.field9373.clipMinX;
 		}
-		if (var24 > (float) this.field9373.field9801) {
-			var24 = this.field9373.field9801;
+		if (var24 > (float) this.field9373.clipMaxX) {
+			var24 = this.field9373.clipMaxX;
 		}
-		if (var25 < (float) this.field9373.field9784) {
-			var25 = this.field9373.field9784;
+		if (var25 < (float) this.field9373.clipMinY) {
+			var25 = this.field9373.clipMinY;
 		}
-		if (var26 > (float) this.field9373.field9785) {
-			var26 = this.field9373.field9785;
+		if (var26 > (float) this.field9373.clipMaxY) {
+			var26 = this.field9373.clipMaxY;
 		}
 		float var27 = var23 - var24;
 		if (var27 >= 0.0F) {
@@ -260,7 +260,7 @@ public abstract class PureJavaSprite extends Sprite {
 		if (var28 >= 0.0F) {
 			return false;
 		}
-		field9370 = this.field9373.field9779;
+		field9370 = this.field9373.sizeX;
 		field9371 = (int) ((float) ((int) var25 * field9370) + var23);
 		float var29 = (arg2 - arg0) * (arg5 - arg1) - (arg4 - arg0) * (arg3 - arg1);
 		float var30 = (arg4 - arg0) * (arg3 - arg1) - (arg2 - arg0) * (arg5 - arg1);
@@ -323,7 +323,7 @@ public abstract class PureJavaSprite extends Sprite {
 	public abstract void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4);
 
 	@ObfuscatedName("ael.y(IIIIIIII)V")
-	public abstract void method1447(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7);
+	public abstract void drawTintedScaled(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7);
 
 	@ObfuscatedName("ael.u(IIII[III)V")
 	public abstract void method1469(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5, int arg6);
@@ -332,7 +332,7 @@ public abstract class PureJavaSprite extends Sprite {
 	public abstract void method15356(int[] arg0, int[] arg1, int arg2, int arg3);
 
 	@ObfuscatedName("ael.cl(ZZZIIFIIIIIIZ)V")
-	public abstract void method15358(boolean arg0, boolean arg1, boolean arg2, int arg3, int arg4, float arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, boolean arg12);
+	public abstract void drawAsBillboard(boolean arg0, boolean arg1, boolean arg2, int arg3, int arg4, float arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, boolean arg12);
 
 	@ObfuscatedName("ael.r(IIIII)V")
 	public abstract void method1443(int arg0, int arg1, int arg2, int arg3, int arg4);

@@ -95,7 +95,7 @@ public class GLWaterEffect extends GlEffect {
 		this.field9284.method1246('\u0000');
 		this.field1021.method15776(1);
 		OpenGL.glMatrixMode(5890);
-		OpenGL.glLoadMatrixf(this.field1021.field9904.field4315, 0);
+		OpenGL.glLoadMatrixf(this.field1021.field9904.entries, 0);
 		OpenGL.glMatrixMode(5888);
 		this.field1021.method15776(0);
 		if (this.field1021.field9872 == this.field9285) {

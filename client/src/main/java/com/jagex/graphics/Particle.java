@@ -10,13 +10,13 @@ public class Particle extends DualLink {
 	public int field12158;
 
 	@ObfuscatedName("aqb.u")
-	public int field12159;
+	public int x;
 
 	@ObfuscatedName("aqb.z")
-	public int field12163;
+	public int y;
 
 	@ObfuscatedName("aqb.p")
-	public int field12161;
+	public int z;
 
 	@ObfuscatedName("aqb.d")
 	public int field12162;

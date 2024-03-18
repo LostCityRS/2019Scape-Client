@@ -42,22 +42,22 @@ public class FullSpriteData extends SpriteData {
 	}
 
 	@ObfuscatedName("afb.e()Z")
-	public boolean method2587() {
+	public boolean isPaletted() {
 		return false;
 	}
 
 	@ObfuscatedName("afb.n()Z")
-	public boolean method2644() {
+	public boolean isTranslucent() {
 		return this.field10219;
 	}
 
 	@ObfuscatedName("afb.m()I")
-	public int method2639() {
+	public int getWidth() {
 		return this.field10213;
 	}
 
 	@ObfuscatedName("afb.k()I")
-	public int method2631() {
+	public int getHeight() {
 		return this.field10218;
 	}
 
@@ -72,22 +72,22 @@ public class FullSpriteData extends SpriteData {
 	}
 
 	@ObfuscatedName("afb.f()I")
-	public int method2591() {
+	public int getPaddingLeft() {
 		return this.field10214;
 	}
 
 	@ObfuscatedName("afb.w()I")
-	public int method2603() {
+	public int getPaddingRight() {
 		return this.field10215;
 	}
 
 	@ObfuscatedName("afb.l()I")
-	public int method2593() {
+	public int getPaddingTop() {
 		return this.field10212;
 	}
 
 	@ObfuscatedName("afb.u()I")
-	public int method2651() {
+	public int getPaddingBottom() {
 		return this.field10217;
 	}
 

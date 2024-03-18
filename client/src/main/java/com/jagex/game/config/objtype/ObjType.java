@@ -652,7 +652,7 @@ public class ObjType implements ConfigType {
 		WeightedCache var13 = this.factory.modelCache;
 		Model var14;
 		synchronized (this.factory.modelCache) {
-			var14 = (Model) this.factory.modelCache.method2930((long) (this.id | arg0.field1595 << 29));
+			var14 = (Model) this.factory.modelCache.get((long) (this.id | arg0.field1595 << 29));
 		}
 		if (var14 == null || arg0.method2394(var14.method1691(), var12) != 0) {
 			if (var14 != null) {
@@ -681,7 +681,7 @@ public class ObjType implements ConfigType {
 			if (var17.field1372 < 13) {
 				var17.method1947(2);
 			}
-			var14 = arg0.method2211(var17, var16, this.factory.field8611, this.ambient + 64, this.contrast + 850);
+			var14 = arg0.createModel(var17, var16, this.factory.field8611, this.ambient + 64, this.contrast + 850);
 			if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
 				var14.method1699(this.resizex, this.resizey, this.resizez);
 			}
@@ -727,7 +727,7 @@ public class ObjType implements ConfigType {
 			var14.method1690(var12);
 			WeightedCache var24 = this.factory.modelCache;
 			synchronized (this.factory.modelCache) {
-				this.factory.modelCache.method2921(var14, (long) (this.id | arg0.field1595 << 29));
+				this.factory.modelCache.put(var14, (long) (this.id | arg0.field1595 << 29));
 			}
 		}
 		if (arg4 != null || arg8 != 0) {
@@ -804,7 +804,7 @@ public class ObjType implements ConfigType {
 			var19 = true;
 			var18 |= 0x7;
 		}
-		Model var20 = arg0.method2211(var11, var18, 64, this.ambient + 64, this.contrast + 768);
+		Model var20 = arg0.createModel(var11, var18, 64, this.ambient + 64, this.contrast + 768);
 		if (!var20.method1746()) {
 			return null;
 		}
@@ -848,7 +848,7 @@ public class ObjType implements ConfigType {
 		arg0.method2164(0, 0, arg0.getRenderTarget().getWidth(), arg0.getRenderTarget().getHeight());
 		Matrix4x3 var25 = new Matrix4x3();
 		arg0.method2217(var25);
-		arg0.method2222((float) (Math.random() / 10.0D) + 0.95F);
+		arg0.setSunAmbientIntensity((float) (Math.random() / 10.0D) + 0.95F);
 		arg0.method2223(16777215, (float) (Math.random() / 10.0D) + 0.95F, (float) (Math.random() / 10.0D) + 0.95F, -50.0F, -10.0F, -50.0F);
 		Matrix4x3 var26 = arg0.method2209();
 		var26.method6372(0.0F, 0.0F, 1.0F, Trig1.method6277(-this.zan2d << 3));
@@ -857,8 +857,8 @@ public class ObjType implements ConfigType {
 		var26.method6307(1.0F, 0.0F, 0.0F, Trig1.method6277(this.xan2d << 3));
 		arg0.method2168(0, 0, 36, 32);
 		arg0.method2475(2, 0);
-		arg0.method2354(0, 0, 36, 32, 0, 0);
-		arg0.method2572(0, -1, 0);
+		arg0.fillRectangle(0, 0, 36, 32, 0, 0);
+		arg0.setFog(0, -1, 0);
 		var20.method1813(var26, null, 1);
 		arg0.method2220(var23);
 		int[] var27 = arg0.method2149(0, 0, 36, 32);
@@ -876,7 +876,7 @@ public class ObjType implements ConfigType {
 		} else if (this.boughttemplate != -1) {
 			var21.method1439(0, 0);
 		}
-		arg0.method2199(var27, 0, 36, 36, 32).method1439(0, 0);
+		arg0.createSprite(var27, 0, 36, 36, 32).method1439(0, 0);
 		if (this.certtemplate != -1) {
 			var21.method1439(0, 0);
 		}

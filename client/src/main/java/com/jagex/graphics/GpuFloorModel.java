@@ -195,7 +195,7 @@ public class GpuFloorModel extends FloorModel {
 
 	@ObfuscatedName("aem.n(II[I[I[I[I[I[I[I[ILdy;Z)V")
 	public void method1557(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, WaterFogData arg10, boolean arg11) {
-		MaterialList var13 = this.field9516.field1597;
+		MaterialList var13 = this.field9516.materialList;
 		if (arg5 != null && this.field9503 == null) {
 			this.field9503 = new int[this.field1235][this.field1234][];
 		}
@@ -216,7 +216,7 @@ public class GpuFloorModel extends FloorModel {
 		for (int var15 = 0; var15 < arg6.length; var15++) {
 			int var16 = arg8[var15];
 			int var17 = arg9[var15];
-			if ((this.field9491 & 0x20) != 0 && var16 != -1 && var13.method2043(var16).field1342) {
+			if ((this.field9491 & 0x20) != 0 && var16 != -1 && var13.get(var16).highDetail) {
 				var17 = 128;
 				var16 = -1;
 			}
@@ -725,7 +725,7 @@ public class GpuFloorModel extends FloorModel {
 					GpuFloorModelRelated1 var26 = (GpuFloorModelRelated1) this.field9496[var25];
 					if (var26.field11408 != 0) {
 						if (this.field9516.field10133) {
-							this.field9516.method2246(0, var26.field11404);
+							this.field9516.setWaterFog(0, var26.field11404);
 							var22.field2979.method6247(0.0F, 1.0F, 0.0F, (float) var26.field11404.field1577 / 255.0F * (float) var26.field11404.field1573 + (float) this.field9516.field10164);
 							var22.field2979.method6252(1.0F / (float) var26.field11404.field1573);
 							var22.field2973.method6491((float) (var26.field11404.field1575 >> 16 & 0xFF) / 255.0F, (float) (var26.field11404.field1575 >> 8 & 0xFF) / 255.0F, (float) (var26.field11404.field1575 >> 0 & 0xFF) / 255.0F);
@@ -737,7 +737,7 @@ public class GpuFloorModel extends FloorModel {
 						if (var26.field11402 == -1) {
 							var22.field2966 = this.field9516.field10140;
 						} else {
-							Material var28 = this.field9516.field1597.method2043(var26.field11402);
+							Material var28 = this.field9516.materialList.get(var26.field11402);
 							var22.field2966 = this.field9516.field10188.method5639(var28);
 							var27 = !Material.method261(var28.field1308);
 						}
@@ -762,7 +762,7 @@ public class GpuFloorModel extends FloorModel {
 					GpuFloorModelRelated1 var31 = (GpuFloorModelRelated1) this.field9496[var30];
 					if (var31.field11408 > 0) {
 						if (this.field9516.field10133) {
-							this.field9516.method2246(0, var31.field11404);
+							this.field9516.setWaterFog(0, var31.field11404);
 							float var32 = 0.15F;
 							var22.field2979.method6247(0.0F, 1.0F / ((float) var31.field11404.field1573 * var32), 0.0F, 256.0F / ((float) var31.field11404.field1573 * var32));
 							var22.field2973.method6491((float) (var31.field11404.field1575 >> 16 & 0xFF) / 255.0F, (float) (var31.field11404.field1575 >> 8 & 0xFF) / 255.0F, (float) (var31.field11404.field1575 >> 0 & 0xFF) / 255.0F);
@@ -774,7 +774,7 @@ public class GpuFloorModel extends FloorModel {
 						if (var31.field11402 == -1) {
 							var22.field2966 = this.field9516.field10140;
 						} else {
-							Material var34 = this.field9516.field1597.method2043(var31.field11402);
+							Material var34 = this.field9516.materialList.get(var31.field11402);
 							var33 = var34.field1308;
 							var22.field2966 = this.field9516.field10188.method5639(var34);
 							var22.method5036(var34.field1305);
@@ -788,7 +788,7 @@ public class GpuFloorModel extends FloorModel {
 						var22.field2962 = var31.field11408 / 3;
 						switch(var33) {
 							case 1:
-								var22.field2969.method6491(this.field9516.field10035.field4315[12], this.field9516.field10035.field4315[13], this.field9516.field10035.field4315[14]);
+								var22.field2969.method6491(this.field9516.field10035.entries[12], this.field9516.field10035.entries[13], this.field9516.field10035.entries[14]);
 								if (this.field9516.field10133) {
 									var22.method5024();
 								} else {
@@ -808,8 +808,8 @@ public class GpuFloorModel extends FloorModel {
 									}
 									var35.field12143.method6604(this.field9516.field10081);
 									var35.field12127.method6612(1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F, 1.0F);
-									var35.field12129.method6491(this.field9516.field10035.field4315[12], this.field9516.field10035.field4315[13], this.field9516.field10035.field4315[14]);
-									Material var36 = this.field9516.field1597.method2043(var31.field11402);
+									var35.field12129.method6491(this.field9516.field10035.entries[12], this.field9516.field10035.entries[13], this.field9516.field10035.entries[14]);
+									Material var36 = this.field9516.materialList.get(var31.field11402);
 									var35.field12147 = var36.field1305;
 									var35.field12145 = var31.field11400;
 									var35.field12146 = var31.field11407 - var31.field11400 + 1;
@@ -835,7 +835,7 @@ public class GpuFloorModel extends FloorModel {
 								var22.method5019(!Material.method261(var33));
 								break;
 							case 7:
-								var22.field2969.method6491(this.field9516.field10035.field4315[12], this.field9516.field10035.field4315[13], this.field9516.field10035.field4315[14]);
+								var22.field2969.method6491(this.field9516.field10035.entries[12], this.field9516.field10035.entries[13], this.field9516.field10035.entries[14]);
 								var22.field2980.method6603();
 								var22.field2967 = this.field9516.method15994();
 								var22.method5026(0);
@@ -866,7 +866,7 @@ public class GpuFloorModel extends FloorModel {
 		this.field9516.method16177(this.field9493);
 		Matrix4x4 var40 = this.field9516.field10066;
 		var40.method6603();
-		var40.field4315[13] = -1.0F;
+		var40.entries[13] = -1.0F;
 		var22.method5018(var40);
 		this.field9505.method5670(var22, arg0, arg1, arg2, arg3, arg4);
 	}
@@ -925,7 +925,7 @@ public class GpuFloorModel extends FloorModel {
 		var24.method6312(2.0F / var21, 2.0F / var22, 1.0F);
 		var24.method6315(-1.0F, -1.0F, 0.0F);
 		this.field9516.field10065.method6317(var23, var24);
-		this.field9516.field10066.method6609(this.field9516.field10065);
+		this.field9516.field10066.setToMatrix4x3(this.field9516.field10065);
 		this.field9516.method2220(this.field9516.field10066);
 		var20.method5018(Matrix4x4.field4317);
 		var20.field2984.method6247(0.0F, 0.0F, 0.0F, 0.0F);

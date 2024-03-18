@@ -35,28 +35,28 @@ public class PureJavaRenderer extends Renderer {
 	public boolean field9777;
 
 	@ObfuscatedName("afg.au")
-	public int[] field9778;
+	public int[] colour;
 
 	@ObfuscatedName("afg.ar")
-	public int field9779;
+	public int sizeX;
 
 	@ObfuscatedName("afg.ap")
-	public int field9780;
+	public int sizeY;
 
 	@ObfuscatedName("afg.aq")
-	public float[] field9781;
+	public float[] depth;
 
 	@ObfuscatedName("afg.ax")
-	public int field9805;
+	public int clipMinX;
 
 	@ObfuscatedName("afg.av")
-	public int field9801;
+	public int clipMaxX;
 
 	@ObfuscatedName("afg.ao")
-	public int field9784;
+	public int clipMinY;
 
 	@ObfuscatedName("afg.aj")
-	public int field9785;
+	public int clipMaxY;
 
 	@ObfuscatedName("afg.ay")
 	public int field9804;
@@ -122,22 +122,22 @@ public class PureJavaRenderer extends Renderer {
 	public float field9799;
 
 	@ObfuscatedName("afg.by")
-	public int field9807;
+	public int threadLocalsCount;
 
 	@ObfuscatedName("afg.bu")
-	public PureJavaRendererContext[] field9808;
+	public PureJavaRendererContext[] context;
 
 	@ObfuscatedName("afg.bw")
-	public WeightedCache field9809;
+	public WeightedCache materialTextureCache;
 
 	@ObfuscatedName("afg.bo")
-	public WeightedCache field9810;
+	public WeightedCache billboardMaterialSprites;
 
 	@ObfuscatedName("afg.bz")
-	public Sprite field9811;
+	public Sprite cachedBillboardSprite;
 
 	@ObfuscatedName("afg.bv")
-	public int field9812;
+	public int cachedBillboardMaterial;
 
 	@ObfuscatedName("afg.br")
 	public Sprite field9786;
@@ -161,20 +161,21 @@ public class PureJavaRenderer extends Renderer {
 		super(arg0, arg1, arg2, arg3, arg4);
 		this.field9794 = false;
 		this.field9777 = false;
-		this.field9805 = 0;
-		this.field9801 = 0;
-		this.field9784 = 0;
-		this.field9785 = 0;
+		this.clipMinX = 0;
+		this.clipMaxX = 0;
+		this.clipMinY = 0;
+		this.clipMaxY = 0;
 		this.field9783 = 35192064;
 		this.field9790 = 60397056;
 		this.field9791 = 75518;
 		this.field9796 = new float[6][4];
 		this.field9813 = 1.0F;
 		this.field9799 = 0.0F;
-		this.field9810 = new WeightedCache(16);
-		this.field9812 = -1;
+		this.billboardMaterialSprites = new WeightedCache(16);
+		this.cachedBillboardMaterial = -1;
+
 		try {
-			this.field9809 = new WeightedCache(10485760, 256);
+			this.materialTextureCache = new WeightedCache(10485760, 256);
 			this.field9792 = new Matrix4x3();
 			this.field9793 = new Matrix4x4();
 			this.field9795 = new Matrix4x4();
@@ -192,7 +193,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.f()Lcz;")
-	public RendererInfo method2272() {
+	public RendererInfo getRendererInfo() {
 		return new RendererInfo(0, "Pure Java", 1, "CPU", 0L, false);
 	}
 
@@ -218,15 +219,15 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.d(I)V")
-	public void method2120(int arg0) {
+	public void cycle(int arg0) {
 		int var2 = arg0 - this.field9776;
-		for (PureJavaTexture var3 = (PureJavaTexture) this.field9809.method2950(); var3 != null; var3 = (PureJavaTexture) this.field9809.method2937()) {
+		for (PureJavaTexture var3 = (PureJavaTexture) this.materialTextureCache.method2950(); var3 != null; var3 = (PureJavaTexture) this.materialTextureCache.method2937()) {
 			if (var3.field11265) {
 				var3.field11266 += var2;
 				int var4 = var3.field11266 / 50;
 				if (var4 > 0) {
-					Material var5 = this.field1597.method2043(var3.field11267);
-					float var6 = (float) var5.field1357;
+					Material var5 = this.materialList.get(var3.field11267);
+					float var6 = (float) var5.size;
 					var3.method17527((int) ((float) var2 / 1000.0F * var5.field1317 * var6), (int) ((float) var2 / 1000.0F * var5.field1338 * var6));
 					var3.field11266 -= var4 * 50;
 				}
@@ -234,8 +235,8 @@ public class PureJavaRenderer extends Renderer {
 			}
 		}
 		this.field9776 = arg0;
-		this.field9810.method2923(5);
-		this.field9809.method2923(5);
+		this.billboardMaterialSprites.update(5);
+		this.materialTextureCache.update(5);
 	}
 
 	@ObfuscatedName("afg.c()I")
@@ -249,61 +250,61 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.rh(I)[I")
-	public int[] method15655(int arg0) {
-		WeightedCache var2 = this.field9809;
+	public int[] getMaterialTexture(int arg0) {
+		WeightedCache var2 = this.materialTextureCache;
 		PureJavaTexture var4;
-		synchronized (this.field9809) {
-			Material var3 = this.field1597.method2043(arg0);
-			var4 = (PureJavaTexture) this.field9809.method2930((long) (var3.field1334 & 0xFFFF) | Long.MIN_VALUE);
+		synchronized (var2) {
+			Material var3 = this.materialList.get(arg0);
+			var4 = (PureJavaTexture) this.materialTextureCache.get((long) (var3.diffuseTexture & 0xFFFF) | Long.MIN_VALUE);
 			if (var4 == null) {
-				int var5 = var3.field1357;
-				if (!this.field1596.method1977(TextureRelated2.field7586, var3.field1334, -1, TextureRelated1.field7569, 0.7F, var5, var5, true)) {
+				int var5 = var3.size;
+				if (!this.field1596.loadTexture(TextureRelated2.field7586, var3.diffuseTexture, -1, TextureRelated1.field7569, 0.7F, var5, var5, true)) {
 					return null;
 				}
 				int[] var6;
-				if (MaterialAlphaMode.field7575 == var3.field1340) {
-					var6 = this.field1596.method1986(TextureRelated2.field7586, var3.field1334, 0.7F, var5, var5, true);
+				if (MaterialAlphaMode.NONE == var3.alphaMode) {
+					var6 = this.field1596.getTexture(TextureRelated2.field7586, var3.diffuseTexture, 0.7F, var5, var5, true);
 				} else {
-					var6 = this.field1596.method1983(TextureRelated2.field7586, var3.field1334, 0.7F, var5, var5, true);
+					var6 = this.field1596.getSpecialTexture(TextureRelated2.field7586, var3.diffuseTexture, 0.7F, var5, var5, true);
 				}
-				var4 = new PureJavaTexture(var3.field1334, var3.field1329, var5, var6, MaterialAlphaMode.TEST != var3.field1340);
-				this.field9809.method2922(var4, (long) (var3.field1334 & 0xFFFF) | Long.MIN_VALUE, var5 * var5);
+				var4 = new PureJavaTexture(var3.diffuseTexture, var3.field1329, var5, var6, MaterialAlphaMode.TEST != var3.alphaMode);
+				this.materialTextureCache.put(var4, (long) (var3.diffuseTexture & 0xFFFF) | Long.MIN_VALUE, var5 * var5);
 			}
 		}
 		var4.field11265 = true;
-		return var4.method17526();
+		return var4.getPixels();
 	}
 
 	@ObfuscatedName("afg.ra(I)Z")
-	public boolean method15656(int arg0) {
-		Material var2 = this.field1597.method2043(arg0);
-		return this.field1596.method1977(TextureRelated2.field7586, var2.field1334, -1, TextureRelated1.field7569, 0.7F, var2.field1357, var2.field1357, true);
+	public boolean loadMaterialTexture(int arg0) {
+		Material var2 = this.materialList.get(arg0);
+		return this.field1596.loadTexture(TextureRelated2.field7586, var2.diffuseTexture, -1, TextureRelated1.field7569, 0.7F, var2.size, var2.size, true);
 	}
 
 	@ObfuscatedName("afg.rx(I)I")
-	public int method15657(int arg0) {
-		return this.field1597.method2043(arg0).field1357;
+	public int getMaterialSize(int arg0) {
+		return this.materialList.get(arg0).size;
 	}
 
 	@ObfuscatedName("afg.ry(I)Lvn;")
-	public MaterialAlphaMode method15658(int arg0) {
-		return this.field1597.method2043(arg0).field1340;
+	public MaterialAlphaMode getMaterialAlphaMode(int arg0) {
+		return this.materialList.get(arg0).alphaMode;
 	}
 
 	@ObfuscatedName("afg.rg(I)B")
-	public byte method15659(int arg0) {
-		return this.field1597.method2043(arg0).field1358;
+	public byte getMaterialAlphaThreshold(int arg0) {
+		return this.materialList.get(arg0).alphaThreshold;
 	}
 
 	@ObfuscatedName("afg.rz(I)I")
-	public int method15695(int arg0) {
-		return this.field1597.method2043(arg0).field1366 & 0xFFFF;
+	public int getMaterialAverageColour(int arg0) {
+		return this.materialList.get(arg0).averageColour & 0xFFFF;
 	}
 
 	@ObfuscatedName("afg.re(I)Z")
-	public boolean method15660(int arg0) {
-		Material var2 = this.field1597.method2043(arg0);
-		return var2.field1307 != 0 || var2.field1343 != 0;
+	public boolean getMaterialRepeat(int arg0) {
+		Material var2 = this.materialList.get(arg0);
+		return var2.repeatS != 0 || var2.repeatT != 0;
 	}
 
 	@ObfuscatedName("afg.r()Z")
@@ -322,7 +323,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.y()Z")
-	public boolean method2266() {
+	public boolean isBloomSupported() {
 		return false;
 	}
 
@@ -332,7 +333,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.s()Z")
-	public boolean method2125() {
+	public boolean supportsHardShadows() {
 		return false;
 	}
 
@@ -377,12 +378,12 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.rt(II[I[F)V")
 	public void method15662(int arg0, int arg1, int[] arg2, float[] arg3) {
-		this.field9779 = arg0;
-		this.field9780 = arg1;
-		this.field9778 = arg2;
-		this.field9781 = arg3;
-		for (int var5 = 0; var5 < this.field9807; var5++) {
-			this.field9808[var5].method999();
+		this.sizeX = arg0;
+		this.sizeY = arg1;
+		this.colour = arg2;
+		this.depth = arg3;
+		for (int var5 = 0; var5 < this.threadLocalsCount; var5++) {
+			this.context[var5].method999();
 		}
 		this.method2167();
 		this.method2263();
@@ -390,15 +391,15 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.aq(IIII)[I")
 	public int[] method2149(int arg0, int arg1, int arg2, int arg3) {
-		if (this.field9778 == null) {
+		if (this.colour == null) {
 			throw new IllegalStateException("");
 		}
 		int[] var5 = new int[arg2 * arg3];
 		int var6 = 0;
 		for (int var7 = 0; var7 < arg3; var7++) {
-			int var8 = this.field9779 * (arg1 + var7) + arg0;
+			int var8 = this.sizeX * (arg1 + var7) + arg0;
 			for (int var9 = 0; var9 < arg2; var9++) {
-				var5[var6++] = this.field9778[var8 + var9];
+				var5[var6++] = this.colour[var8 + var9];
 			}
 		}
 		return var5;
@@ -410,8 +411,8 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.t([I)V")
 	public void method2134(int[] arg0) {
-		arg0[0] = this.field9779;
-		arg0[1] = this.field9780;
+		arg0[0] = this.sizeX;
+		arg0[1] = this.sizeY;
 	}
 
 	@ObfuscatedName("afg.av()Z")
@@ -459,19 +460,19 @@ public class PureJavaRenderer extends Renderer {
 	@ObfuscatedName("afg.an(II[I[I)V")
 	public void method2160(int arg0, int arg1, int[] arg2, int[] arg3) {
 		this.method2419(arg0, arg1);
-		if (this.field9786 == null || this.field9786.method1459() != arg0 || this.field9786.method1435() != arg1) {
-			this.field9786 = this.method2197(arg0, arg1, true, true);
+		if (this.field9786 == null || this.field9786.getWidth() != arg0 || this.field9786.getHeight() != arg1) {
+			this.field9786 = this.createSprite(arg0, arg1, true, true);
 			this.field9775 = null;
 		}
 		if (this.field9775 == null) {
-			this.field9775 = this.method2145();
+			this.field9775 = this.createFramebuffer();
 			this.field9775.method15439(0, this.field9786.method1437());
 		}
-		PureJavaSprite_Sub2 var5 = new PureJavaSprite_Sub2(this, this.field9778, this.field9779, this.field9780);
+		PureJavaSpriteAlpha var5 = new PureJavaSpriteAlpha(this, this.colour, this.sizeX, this.sizeY);
 		this.method2142(this.field9775);
 		this.method2475(1, -16777216);
-		var5.method1447(this.field1611, this.field1618, this.field1619, this.field1610, 1, 0, 0, 0);
-		this.field9786.method1476(0, 0, arg0, arg1, arg2, arg3, 0, arg0);
+		var5.drawTintedScaled(this.field1611, this.field1618, this.field1619, this.field1610, 1, 0, 0, 0);
+		this.field9786.download(0, 0, arg0, arg1, arg2, arg3, 0, arg0);
 		this.method2143(this.field9775);
 	}
 
@@ -483,32 +484,32 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.rl()V")
 	public void method15687() {
-		if (this.field9781 == null) {
+		if (this.depth == null) {
 			return;
 		}
-		if (this.field9805 == 0 && this.field9801 == this.field9779 && this.field9784 == 0 && this.field9785 == this.field9780) {
-			int var1 = this.field9781.length;
+		if (this.clipMinX == 0 && this.clipMaxX == this.sizeX && this.clipMinY == 0 && this.clipMaxY == this.sizeY) {
+			int var1 = this.depth.length;
 			int var2 = var1 - (var1 & 0x7);
 			int var3 = 0;
 			while (var3 < var2) {
-				this.field9781[var3++] = 2.14748365E9F;
-				this.field9781[var3++] = 2.14748365E9F;
-				this.field9781[var3++] = 2.14748365E9F;
-				this.field9781[var3++] = 2.14748365E9F;
-				this.field9781[var3++] = 2.14748365E9F;
-				this.field9781[var3++] = 2.14748365E9F;
-				this.field9781[var3++] = 2.14748365E9F;
-				this.field9781[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.14748365E9F;
 			}
 			while (var3 < var1) {
-				this.field9781[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.14748365E9F;
 			}
 			return;
 		}
-		int var4 = this.field9801 - this.field9805;
-		int var5 = this.field9785 - this.field9784;
-		int var6 = this.field9779 - var4;
-		int var7 = this.field9784 * this.field9779 + this.field9805;
+		int var4 = this.clipMaxX - this.clipMinX;
+		int var5 = this.clipMaxY - this.clipMinY;
+		int var6 = this.sizeX - var4;
+		int var7 = this.clipMinY * this.sizeX + this.clipMinX;
 		int var8 = var4 >> 3;
 		int var9 = var4 & 0x7;
 		int var10 = var7 - 1;
@@ -517,21 +518,21 @@ public class PureJavaRenderer extends Renderer {
 				int var12 = var8;
 				do {
 					var10++;
-					this.field9781[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.14748365E9F;
 					var10++;
-					this.field9781[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.14748365E9F;
 					var10++;
-					this.field9781[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.14748365E9F;
 					var10++;
-					this.field9781[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.14748365E9F;
 					var10++;
-					this.field9781[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.14748365E9F;
 					var10++;
-					this.field9781[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.14748365E9F;
 					var10++;
-					this.field9781[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.14748365E9F;
 					var10++;
-					this.field9781[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.14748365E9F;
 					var12--;
 				} while (var12 > 0);
 			}
@@ -539,7 +540,7 @@ public class PureJavaRenderer extends Renderer {
 				int var13 = var9;
 				do {
 					var10++;
-					this.field9781[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.14748365E9F;
 					var13--;
 				} while (var13 > 0);
 			}
@@ -549,7 +550,7 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.dv(Z)V")
 	public void method2219(boolean arg0) {
-		PureJavaRendererContext var2 = this.method15674(Thread.currentThread());
+		PureJavaRendererContext var2 = this.getContext(Thread.currentThread());
 		var2.field834 = arg0;
 	}
 
@@ -557,8 +558,8 @@ public class PureJavaRenderer extends Renderer {
 	public void method2263() {
 		this.field9797 = 0;
 		this.field9798 = 0;
-		this.field9782 = this.field9779;
-		this.field9800 = this.field9780;
+		this.field9782 = this.sizeX;
+		this.field9800 = this.sizeY;
 		this.method15664();
 	}
 
@@ -583,9 +584,9 @@ public class PureJavaRenderer extends Renderer {
 	public void method2339(float arg0, float arg1) {
 		this.field9813 = arg1 - arg0;
 		this.field9799 = arg0 + arg1 - 1.0F;
-		for (int var3 = 0; var3 < this.field9807; var3++) {
-			PureJavaRendererContext var4 = this.field9808[var3];
-			Rasteriser var5 = var4.field837;
+		for (int var3 = 0; var3 < this.threadLocalsCount; var3++) {
+			PureJavaRendererContext var4 = this.context[var3];
+			Rasteriser var5 = var4.rasteriser;
 			var5.field932 = this.field9813;
 			var5.field958 = this.field9799;
 		}
@@ -593,37 +594,37 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.rc()V")
 	public void method15664() {
-		int var1 = this.field9801 - this.field9805;
-		int var2 = this.field9785 - this.field9784;
+		int var1 = this.clipMaxX - this.clipMinX;
+		int var2 = this.clipMaxY - this.clipMinY;
 		float var3 = this.field9789 = (float) this.field9782 / 2.0F;
 		float var4 = this.field9802 = (float) this.field9800 / 2.0F;
 		this.field9814 = (float) this.field9797 + var3;
 		this.field9806 = (float) this.field9798 + var4;
-		for (int var5 = 0; var5 < this.field9807; var5++) {
-			PureJavaRendererContext var6 = this.field9808[var5];
-			Rasteriser var7 = var6.field837;
+		for (int var5 = 0; var5 < this.threadLocalsCount; var5++) {
+			PureJavaRendererContext var6 = this.context[var5];
+			Rasteriser var7 = var6.rasteriser;
 			var7.field964 = var3;
 			var7.field942 = var4;
-			var7.field934 = this.field9814 - (float) this.field9805;
-			var7.field941 = this.field9806 - (float) this.field9784;
+			var7.field934 = this.field9814 - (float) this.clipMinX;
+			var7.field941 = this.field9806 - (float) this.clipMinY;
 			var7.field945 = var1;
 			var7.field946 = var2;
 		}
-		int var8 = this.field9784 * this.field9779 + this.field9805;
-		for (int var9 = this.field9784; var9 < this.field9785; var9++) {
-			for (int var10 = 0; var10 < this.field9807; var10++) {
-				this.field9808[var10].field837.field938[var9 - this.field9784] = var8;
+		int var8 = this.clipMinY * this.sizeX + this.clipMinX;
+		for (int var9 = this.clipMinY; var9 < this.clipMaxY; var9++) {
+			for (int var10 = 0; var10 < this.threadLocalsCount; var10++) {
+				this.context[var10].rasteriser.field938[var9 - this.clipMinY] = var8;
 			}
-			var8 += this.field9779;
+			var8 += this.sizeX;
 		}
 	}
 
 	@ObfuscatedName("afg.bc()V")
 	public void method2167() {
-		this.field9805 = 0;
-		this.field9784 = 0;
-		this.field9801 = this.field9779;
-		this.field9785 = this.field9780;
+		this.clipMinX = 0;
+		this.clipMinY = 0;
+		this.clipMaxX = this.sizeX;
+		this.clipMaxY = this.sizeY;
 		this.method15664();
 	}
 
@@ -635,48 +636,48 @@ public class PureJavaRenderer extends Renderer {
 		if (arg1 < 0) {
 			arg1 = 0;
 		}
-		if (arg2 > this.field9779) {
-			arg2 = this.field9779;
+		if (arg2 > this.sizeX) {
+			arg2 = this.sizeX;
 		}
-		if (arg3 > this.field9780) {
-			arg3 = this.field9780;
+		if (arg3 > this.sizeY) {
+			arg3 = this.sizeY;
 		}
-		this.field9805 = arg0;
-		this.field9801 = arg2;
-		this.field9784 = arg1;
-		this.field9785 = arg3;
+		this.clipMinX = arg0;
+		this.clipMaxX = arg2;
+		this.clipMinY = arg1;
+		this.clipMaxY = arg3;
 		this.method15664();
 	}
 
 	@ObfuscatedName("afg.bn(IIII)V")
 	public void method2161(int arg0, int arg1, int arg2, int arg3) {
-		if (this.field9805 < arg0) {
-			this.field9805 = arg0;
+		if (this.clipMinX < arg0) {
+			this.clipMinX = arg0;
 		}
-		if (this.field9784 < arg1) {
-			this.field9784 = arg1;
+		if (this.clipMinY < arg1) {
+			this.clipMinY = arg1;
 		}
-		if (this.field9801 > arg2) {
-			this.field9801 = arg2;
+		if (this.clipMaxX > arg2) {
+			this.clipMaxX = arg2;
 		}
-		if (this.field9785 > arg3) {
-			this.field9785 = arg3;
+		if (this.clipMaxY > arg3) {
+			this.clipMaxY = arg3;
 		}
 		this.method15664();
 	}
 
 	@ObfuscatedName("afg.bq([I)V")
 	public void method2171(int[] arg0) {
-		arg0[0] = this.field9805;
-		arg0[1] = this.field9784;
-		arg0[2] = this.field9801;
-		arg0[3] = this.field9785;
+		arg0[0] = this.clipMinX;
+		arg0[1] = this.clipMinY;
+		arg0[2] = this.clipMaxX;
+		arg0[3] = this.clipMaxY;
 	}
 
 	@ObfuscatedName("afg.bm(II)V")
 	public void method2475(int arg0, int arg1) {
 		if ((arg0 & 0x1) != 0) {
-			this.method2354(0, 0, this.field9779, this.field9780, arg1, 0);
+			this.fillRectangle(0, 0, this.sizeX, this.sizeY, arg1, 0);
 		}
 		if ((arg0 & 0x2) != 0) {
 			this.method15687();
@@ -684,37 +685,37 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bz(IIIIII)V")
-	public void method2179(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		this.method2433(arg0, arg1, arg2, arg4, arg5);
-		this.method2433(arg0, arg1 + arg3 - 1, arg2, arg4, arg5);
-		this.method2139(arg0, arg1 + 1, arg3 - 2, arg4, arg5);
-		this.method2139(arg0 + arg2 - 1, arg1 + 1, arg3 - 2, arg4, arg5);
+	public void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		this.drawHorizontalLine(arg0, arg1, arg2, arg4, arg5);
+		this.drawHorizontalLine(arg0, arg1 + arg3 - 1, arg2, arg4, arg5);
+		this.drawVerticalLine(arg0, arg1 + 1, arg3 - 2, arg4, arg5);
+		this.drawVerticalLine(arg0 + arg2 - 1, arg1 + 1, arg3 - 2, arg4, arg5);
 	}
 
 	@ObfuscatedName("afg.bv(IIIIII)V")
-	public void method2354(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		if (this.field9778 == null) {
+	public void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		if (this.colour == null) {
 			return;
 		}
-		if (arg0 < this.field9805) {
-			arg2 -= this.field9805 - arg0;
-			arg0 = this.field9805;
+		if (arg0 < this.clipMinX) {
+			arg2 -= this.clipMinX - arg0;
+			arg0 = this.clipMinX;
 		}
-		if (arg1 < this.field9784) {
-			arg3 -= this.field9784 - arg1;
-			arg1 = this.field9784;
+		if (arg1 < this.clipMinY) {
+			arg3 -= this.clipMinY - arg1;
+			arg1 = this.clipMinY;
 		}
-		if (arg0 + arg2 > this.field9801) {
-			arg2 = this.field9801 - arg0;
+		if (arg0 + arg2 > this.clipMaxX) {
+			arg2 = this.clipMaxX - arg0;
 		}
-		if (arg1 + arg3 > this.field9785) {
-			arg3 = this.field9785 - arg1;
+		if (arg1 + arg3 > this.clipMaxY) {
+			arg3 = this.clipMaxY - arg1;
 		}
-		if (arg2 <= 0 || arg3 <= 0 || arg0 > this.field9801 || arg1 > this.field9785) {
+		if (arg2 <= 0 || arg3 <= 0 || arg0 > this.clipMaxX || arg1 > this.clipMaxY) {
 			return;
 		}
-		int var7 = this.field9779 - arg2;
-		int var8 = this.field9779 * arg1 + arg0;
+		int var7 = this.sizeX - arg2;
+		int var8 = this.sizeX * arg1 + arg0;
 		int var9 = arg4 >>> 24;
 		if (arg5 == 0 || arg5 == 1 && var9 == 255) {
 			int var22 = arg2 >> 3;
@@ -725,21 +726,21 @@ public class PureJavaRenderer extends Renderer {
 					int var26 = var22;
 					do {
 						var24++;
-						this.field9778[var24] = arg4;
+						this.colour[var24] = arg4;
 						var24++;
-						this.field9778[var24] = arg4;
+						this.colour[var24] = arg4;
 						var24++;
-						this.field9778[var24] = arg4;
+						this.colour[var24] = arg4;
 						var24++;
-						this.field9778[var24] = arg4;
+						this.colour[var24] = arg4;
 						var24++;
-						this.field9778[var24] = arg4;
+						this.colour[var24] = arg4;
 						var24++;
-						this.field9778[var24] = arg4;
+						this.colour[var24] = arg4;
 						var24++;
-						this.field9778[var24] = arg4;
+						this.colour[var24] = arg4;
 						var24++;
-						this.field9778[var24] = arg4;
+						this.colour[var24] = arg4;
 						var26--;
 					} while (var26 > 0);
 				}
@@ -747,7 +748,7 @@ public class PureJavaRenderer extends Renderer {
 					int var27 = var23;
 					do {
 						var24++;
-						this.field9778[var24] = arg4;
+						this.colour[var24] = arg4;
 						var27--;
 					} while (var27 > 0);
 				}
@@ -758,20 +759,20 @@ public class PureJavaRenderer extends Renderer {
 			int var11 = 256 - var9;
 			for (int var12 = 0; var12 < arg3; var12++) {
 				for (int var13 = -arg2; var13 < 0; var13++) {
-					int var14 = this.field9778[var8];
+					int var14 = this.colour[var8];
 					int var15 = ((var14 & 0xFF00FF) * var11 >> 8 & 0xFF00FF) + (((var14 & 0xFF00FF00) >>> 8) * var11 & 0xFF00FF00);
-					this.field9778[var8++] = var10 + var15;
+					this.colour[var8++] = var10 + var15;
 				}
 				var8 += var7;
 			}
 		} else if (arg5 == 2) {
 			for (int var16 = 0; var16 < arg3; var16++) {
 				for (int var17 = -arg2; var17 < 0; var17++) {
-					int var18 = this.field9778[var8];
+					int var18 = this.colour[var8];
 					int var19 = arg4 + var18;
 					int var20 = (arg4 & 0xFF00FF) + (var18 & 0xFF00FF);
 					int var21 = (var19 - var20 & 0x10000) + (var20 & 0x1000100);
-					this.field9778[var8++] = var19 - var21 | var21 - (var21 >>> 8);
+					this.colour[var8++] = var19 - var21 | var21 - (var21 >>> 8);
 				}
 				var8 += var7;
 			}
@@ -782,19 +783,19 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.bg(IIIII)V")
 	public void method2182(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (this.field9778 == null) {
+		if (this.colour == null) {
 			return;
 		}
 		if (arg2 < 0) {
 			arg2 = -arg2;
 		}
 		int var6 = arg1 - arg2;
-		if (var6 < this.field9784) {
-			var6 = this.field9784;
+		if (var6 < this.clipMinY) {
+			var6 = this.clipMinY;
 		}
 		int var7 = arg1 + arg2 + 1;
-		if (var7 > this.field9785) {
-			var7 = this.field9785;
+		if (var7 > this.clipMaxY) {
+			var7 = this.clipMaxY;
 		}
 		int var8 = var6;
 		int var9 = arg2 * arg2;
@@ -813,16 +814,16 @@ public class PureJavaRenderer extends Renderer {
 					var13 += var10++ + var10;
 				}
 				int var55 = arg0 - var10 + 1;
-				if (var55 < this.field9805) {
-					var55 = this.field9805;
+				if (var55 < this.clipMinX) {
+					var55 = this.clipMinX;
 				}
 				int var56 = arg0 + var10;
-				if (var56 > this.field9801) {
-					var56 = this.field9801;
+				if (var56 > this.clipMaxX) {
+					var56 = this.clipMaxX;
 				}
-				int var57 = this.field9779 * var8 + var55;
+				int var57 = this.sizeX * var8 + var55;
 				for (int var58 = var55; var58 < var56; var58++) {
-					this.field9778[var57++] = arg3;
+					this.colour[var57++] = arg3;
 				}
 				var8++;
 				var12 -= var11-- + var11;
@@ -839,16 +840,16 @@ public class PureJavaRenderer extends Renderer {
 					var62 -= var59 + var59;
 				}
 				int var64 = arg0 - var59;
-				if (var64 < this.field9805) {
-					var64 = this.field9805;
+				if (var64 < this.clipMinX) {
+					var64 = this.clipMinX;
 				}
 				int var65 = arg0 + var59;
-				if (var65 > this.field9801 - 1) {
-					var65 = this.field9801 - 1;
+				if (var65 > this.clipMaxX - 1) {
+					var65 = this.clipMaxX - 1;
 				}
-				int var66 = this.field9779 * var8 + var64;
+				int var66 = this.sizeX * var8 + var64;
 				for (int var67 = var64; var67 <= var65; var67++) {
-					this.field9778[var66++] = arg3;
+					this.colour[var66++] = arg3;
 				}
 				var8++;
 				var63 += var60 + var60;
@@ -864,18 +865,18 @@ public class PureJavaRenderer extends Renderer {
 					var13 += var10++ + var10;
 				}
 				int var17 = arg0 - var10 + 1;
-				if (var17 < this.field9805) {
-					var17 = this.field9805;
+				if (var17 < this.clipMinX) {
+					var17 = this.clipMinX;
 				}
 				int var18 = arg0 + var10;
-				if (var18 > this.field9801) {
-					var18 = this.field9801;
+				if (var18 > this.clipMaxX) {
+					var18 = this.clipMaxX;
 				}
-				int var19 = this.field9779 * var8 + var17;
+				int var19 = this.sizeX * var8 + var17;
 				for (int var20 = var17; var20 < var18; var20++) {
-					int var21 = this.field9778[var19];
+					int var21 = this.colour[var19];
 					int var22 = ((var21 & 0xFF00) * var16 >> 8 & 0xFF00) + ((var21 & 0xFF00FF) * var16 >> 8 & 0xFF00FF);
-					this.field9778[var19++] = var15 + var22;
+					this.colour[var19++] = var15 + var22;
 				}
 				var8++;
 				var12 -= var11-- + var11;
@@ -892,18 +893,18 @@ public class PureJavaRenderer extends Renderer {
 					var26 -= var23 + var23;
 				}
 				int var28 = arg0 - var23;
-				if (var28 < this.field9805) {
-					var28 = this.field9805;
+				if (var28 < this.clipMinX) {
+					var28 = this.clipMinX;
 				}
 				int var29 = arg0 + var23;
-				if (var29 > this.field9801 - 1) {
-					var29 = this.field9801 - 1;
+				if (var29 > this.clipMaxX - 1) {
+					var29 = this.clipMaxX - 1;
 				}
-				int var30 = this.field9779 * var8 + var28;
+				int var30 = this.sizeX * var8 + var28;
 				for (int var31 = var28; var31 <= var29; var31++) {
-					int var32 = this.field9778[var30];
+					int var32 = this.colour[var30];
 					int var33 = ((var32 & 0xFF00) * var16 >> 8 & 0xFF00) + ((var32 & 0xFF00FF) * var16 >> 8 & 0xFF00FF);
-					this.field9778[var30++] = var15 + var33;
+					this.colour[var30++] = var15 + var33;
 				}
 				var8++;
 				var27 += var24 + var24;
@@ -916,20 +917,20 @@ public class PureJavaRenderer extends Renderer {
 					var13 += var10++ + var10;
 				}
 				int var34 = arg0 - var10 + 1;
-				if (var34 < this.field9805) {
-					var34 = this.field9805;
+				if (var34 < this.clipMinX) {
+					var34 = this.clipMinX;
 				}
 				int var35 = arg0 + var10;
-				if (var35 > this.field9801) {
-					var35 = this.field9801;
+				if (var35 > this.clipMaxX) {
+					var35 = this.clipMaxX;
 				}
-				int var36 = this.field9779 * var8 + var34;
+				int var36 = this.sizeX * var8 + var34;
 				for (int var37 = var34; var37 < var35; var37++) {
-					int var38 = this.field9778[var36];
+					int var38 = this.colour[var36];
 					int var39 = arg3 + var38;
 					int var40 = (arg3 & 0xFF00FF) + (var38 & 0xFF00FF);
 					int var41 = (var39 - var40 & 0x10000) + (var40 & 0x1000100);
-					this.field9778[var36++] = var39 - var41 | var41 - (var41 >>> 8);
+					this.colour[var36++] = var39 - var41 | var41 - (var41 >>> 8);
 				}
 				var8++;
 				var12 -= var11-- + var11;
@@ -946,20 +947,20 @@ public class PureJavaRenderer extends Renderer {
 					var45 -= var42 + var42;
 				}
 				int var47 = arg0 - var42;
-				if (var47 < this.field9805) {
-					var47 = this.field9805;
+				if (var47 < this.clipMinX) {
+					var47 = this.clipMinX;
 				}
 				int var48 = arg0 + var42;
-				if (var48 > this.field9801 - 1) {
-					var48 = this.field9801 - 1;
+				if (var48 > this.clipMaxX - 1) {
+					var48 = this.clipMaxX - 1;
 				}
-				int var49 = this.field9779 * var8 + var47;
+				int var49 = this.sizeX * var8 + var47;
 				for (int var50 = var47; var50 <= var48; var50++) {
-					int var51 = this.field9778[var49];
+					int var51 = this.colour[var49];
 					int var52 = arg3 + var51;
 					int var53 = (arg3 & 0xFF00FF) + (var51 & 0xFF00FF);
 					int var54 = (var52 - var53 & 0x10000) + (var53 & 0x1000100);
-					this.field9778[var49++] = var52 - var54 | var54 - (var54 >>> 8);
+					this.colour[var49++] = var52 - var54 | var54 - (var54 >>> 8);
 				}
 				var8++;
 				var46 += var43 + var43;
@@ -971,38 +972,38 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.ba(IIIII)V")
-	public void method2433(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (this.field9778 == null || (arg1 < this.field9784 || arg1 >= this.field9785)) {
+	public void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
+		if (this.colour == null || (arg1 < this.clipMinY || arg1 >= this.clipMaxY)) {
 			return;
 		}
-		if (arg0 < this.field9805) {
-			arg2 -= this.field9805 - arg0;
-			arg0 = this.field9805;
+		if (arg0 < this.clipMinX) {
+			arg2 -= this.clipMinX - arg0;
+			arg0 = this.clipMinX;
 		}
-		if (arg0 + arg2 > this.field9801) {
-			arg2 = this.field9801 - arg0;
+		if (arg0 + arg2 > this.clipMaxX) {
+			arg2 = this.clipMaxX - arg0;
 		}
-		int var6 = this.field9779 * arg1 + arg0;
+		int var6 = this.sizeX * arg1 + arg0;
 		int var7 = arg3 >>> 24;
 		if (arg4 == 0 || arg4 == 1 && var7 == 255) {
 			for (int var18 = 0; var18 < arg2; var18++) {
-				this.field9778[var6 + var18] = arg3;
+				this.colour[var6 + var18] = arg3;
 			}
 		} else if (arg4 == 1) {
 			int var8 = (var7 << 24) + ((arg3 & 0xFF00FF) * var7 >> 8 & 0xFF00FF) + ((arg3 & 0xFF00) * var7 >> 8 & 0xFF00);
 			int var9 = 256 - var7;
 			for (int var10 = 0; var10 < arg2; var10++) {
-				int var11 = this.field9778[var6 + var10];
+				int var11 = this.colour[var6 + var10];
 				int var12 = ((var11 & 0xFF00) * var9 >> 8 & 0xFF00) + ((var11 & 0xFF00FF) * var9 >> 8 & 0xFF00FF);
-				this.field9778[var6 + var10] = var8 + var12;
+				this.colour[var6 + var10] = var8 + var12;
 			}
 		} else if (arg4 == 2) {
 			for (int var13 = 0; var13 < arg2; var13++) {
-				int var14 = this.field9778[var6 + var13];
+				int var14 = this.colour[var6 + var13];
 				int var15 = arg3 + var14;
 				int var16 = (arg3 & 0xFF00FF) + (var14 & 0xFF00FF);
 				int var17 = (var15 - var16 & 0x10000) + (var16 & 0x1000100);
-				this.field9778[var6 + var13] = var15 - var17 | var17 - (var17 >>> 8);
+				this.colour[var6 + var13] = var15 - var17 | var17 - (var17 >>> 8);
 			}
 		} else {
 			throw new IllegalArgumentException();
@@ -1011,18 +1012,18 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.rr(IIIIIIII)V")
 	public void method15666(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		if (this.field9778 == null || (arg1 < this.field9784 || arg1 >= this.field9785)) {
+		if (this.colour == null || (arg1 < this.clipMinY || arg1 >= this.clipMaxY)) {
 			return;
 		}
-		int var9 = this.field9779 * arg1 + arg0;
+		int var9 = this.sizeX * arg1 + arg0;
 		int var10 = arg3 >>> 24;
 		int var11 = arg5 + arg6;
 		int var12 = arg7 % var11;
 		if (arg4 == 0 || arg4 == 1 && var10 == 255) {
 			int var23 = 0;
 			while (var23 < arg2) {
-				if (arg0 + var23 >= this.field9805 && arg0 + var23 < this.field9801 && var12 < arg5) {
-					this.field9778[var9 + var23] = arg3;
+				if (arg0 + var23 >= this.clipMinX && arg0 + var23 < this.clipMaxX && var12 < arg5) {
+					this.colour[var9 + var23] = arg3;
 				}
 				var23++;
 				var12++;
@@ -1033,10 +1034,10 @@ public class PureJavaRenderer extends Renderer {
 			int var14 = 256 - var10;
 			int var15 = 0;
 			while (var15 < arg2) {
-				if (arg0 + var15 >= this.field9805 && arg0 + var15 < this.field9801 && var12 < arg5) {
-					int var16 = this.field9778[var9 + var15];
+				if (arg0 + var15 >= this.clipMinX && arg0 + var15 < this.clipMaxX && var12 < arg5) {
+					int var16 = this.colour[var9 + var15];
 					int var17 = ((var16 & 0xFF00) * var14 >> 8 & 0xFF00) + ((var16 & 0xFF00FF) * var14 >> 8 & 0xFF00FF);
-					this.field9778[var9 + var15] = var13 + var17;
+					this.colour[var9 + var15] = var13 + var17;
 				}
 				var15++;
 				var12++;
@@ -1045,12 +1046,12 @@ public class PureJavaRenderer extends Renderer {
 		} else if (arg4 == 2) {
 			int var18 = 0;
 			while (var18 < arg2) {
-				if (arg0 + var18 >= this.field9805 && arg0 + var18 < this.field9801 && var12 < arg5) {
-					int var19 = this.field9778[var9 + var18];
+				if (arg0 + var18 >= this.clipMinX && arg0 + var18 < this.clipMaxX && var12 < arg5) {
+					int var19 = this.colour[var9 + var18];
 					int var20 = arg3 + var19;
 					int var21 = (arg3 & 0xFF00FF) + (var19 & 0xFF00FF);
 					int var22 = (var20 - var21 & 0x10000) + (var21 & 0x1000100);
-					this.field9778[var9 + var18] = var20 - var22 | var22 - (var22 >>> 8);
+					this.colour[var9 + var18] = var20 - var22 | var22 - (var22 >>> 8);
 				}
 				var18++;
 				var12++;
@@ -1062,40 +1063,40 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bp(IIIII)V")
-	public void method2139(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (this.field9778 == null || (arg0 < this.field9805 || arg0 >= this.field9801)) {
+	public void drawVerticalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
+		if (this.colour == null || (arg0 < this.clipMinX || arg0 >= this.clipMaxX)) {
 			return;
 		}
-		if (arg1 < this.field9784) {
-			arg2 -= this.field9784 - arg1;
-			arg1 = this.field9784;
+		if (arg1 < this.clipMinY) {
+			arg2 -= this.clipMinY - arg1;
+			arg1 = this.clipMinY;
 		}
-		if (arg1 + arg2 > this.field9785) {
-			arg2 = this.field9785 - arg1;
+		if (arg1 + arg2 > this.clipMaxY) {
+			arg2 = this.clipMaxY - arg1;
 		}
-		int var6 = this.field9779 * arg1 + arg0;
+		int var6 = this.sizeX * arg1 + arg0;
 		int var7 = arg3 >>> 24;
 		if (arg4 == 0 || arg4 == 1 && var7 == 255) {
 			for (int var20 = 0; var20 < arg2; var20++) {
-				this.field9778[this.field9779 * var20 + var6] = arg3;
+				this.colour[this.sizeX * var20 + var6] = arg3;
 			}
 		} else if (arg4 == 1) {
 			int var8 = (var7 << 24) + ((arg3 & 0xFF00) * var7 >> 8 & 0xFF00) + ((arg3 & 0xFF00FF) * var7 >> 8 & 0xFF00FF);
 			int var9 = 256 - var7;
 			for (int var10 = 0; var10 < arg2; var10++) {
-				int var11 = this.field9779 * var10 + var6;
-				int var12 = this.field9778[var11];
+				int var11 = this.sizeX * var10 + var6;
+				int var12 = this.colour[var11];
 				int var13 = ((var12 & 0xFF00) * var9 >> 8 & 0xFF00) + ((var12 & 0xFF00FF) * var9 >> 8 & 0xFF00FF);
-				this.field9778[var11] = var8 + var13;
+				this.colour[var11] = var8 + var13;
 			}
 		} else if (arg4 == 2) {
 			for (int var14 = 0; var14 < arg2; var14++) {
-				int var15 = this.field9779 * var14 + var6;
-				int var16 = this.field9778[var15];
+				int var15 = this.sizeX * var14 + var6;
+				int var16 = this.colour[var15];
 				int var17 = arg3 + var16;
 				int var18 = (arg3 & 0xFF00FF) + (var16 & 0xFF00FF);
 				int var19 = (var17 - var18 & 0x10000) + (var18 & 0x1000100);
-				this.field9778[var15] = var17 - var19 | var19 - (var19 >>> 8);
+				this.colour[var15] = var17 - var19 | var19 - (var19 >>> 8);
 			}
 		} else {
 			throw new IllegalArgumentException();
@@ -1104,18 +1105,18 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.rd(IIIIIIII)V")
 	public void method15667(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		if (this.field9778 == null || (arg0 < this.field9805 || arg0 >= this.field9801)) {
+		if (this.colour == null || (arg0 < this.clipMinX || arg0 >= this.clipMaxX)) {
 			return;
 		}
-		int var9 = this.field9779 * arg1 + arg0;
+		int var9 = this.sizeX * arg1 + arg0;
 		int var10 = arg3 >>> 24;
 		int var11 = arg5 + arg6;
 		int var12 = arg7 % var11;
 		if (arg4 == 0 || arg4 == 1 && var10 == 255) {
 			int var25 = 0;
 			while (var25 < arg2) {
-				if (arg1 + var25 >= this.field9784 && arg1 + var25 < this.field9785 && var12 < arg5) {
-					this.field9778[this.field9779 * var25 + var9] = arg3;
+				if (arg1 + var25 >= this.clipMinY && arg1 + var25 < this.clipMaxY && var12 < arg5) {
+					this.colour[this.sizeX * var25 + var9] = arg3;
 				}
 				var25++;
 				var12++;
@@ -1126,11 +1127,11 @@ public class PureJavaRenderer extends Renderer {
 			int var14 = 256 - var10;
 			int var15 = 0;
 			while (var15 < arg2) {
-				if (arg1 + var15 >= this.field9784 && arg1 + var15 < this.field9785 && var12 < arg5) {
-					int var16 = this.field9779 * var15 + var9;
-					int var17 = this.field9778[var16];
+				if (arg1 + var15 >= this.clipMinY && arg1 + var15 < this.clipMaxY && var12 < arg5) {
+					int var16 = this.sizeX * var15 + var9;
+					int var17 = this.colour[var16];
 					int var18 = ((var17 & 0xFF00FF) * var14 >> 8 & 0xFF00FF) + ((var17 & 0xFF00) * var14 >> 8 & 0xFF00);
-					this.field9778[var16] = var13 + var18;
+					this.colour[var16] = var13 + var18;
 				}
 				var15++;
 				var12++;
@@ -1139,13 +1140,13 @@ public class PureJavaRenderer extends Renderer {
 		} else if (arg4 == 2) {
 			int var19 = 0;
 			while (var19 < arg2) {
-				if (arg1 + var19 >= this.field9784 && arg1 + var19 < this.field9785 && var12 < arg5) {
-					int var20 = this.field9779 * var19 + var9;
-					int var21 = this.field9778[var20];
+				if (arg1 + var19 >= this.clipMinY && arg1 + var19 < this.clipMaxY && var12 < arg5) {
+					int var20 = this.sizeX * var19 + var9;
+					int var21 = this.colour[var20];
 					int var22 = arg3 + var21;
 					int var23 = (arg3 & 0xFF00FF) + (var21 & 0xFF00FF);
 					int var24 = (var22 - var23 & 0x10000) + (var23 & 0x1000100);
-					this.field9778[var20] = var22 - var24 | var24 - (var24 >>> 8);
+					this.colour[var20] = var22 - var24 | var24 - (var24 >>> 8);
 				}
 				var19++;
 				var12++;
@@ -1157,17 +1158,17 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bj(IIIIII)V")
-	public void method2185(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		if (this.field9778 == null) {
+	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		if (this.colour == null) {
 			return;
 		}
 		int var7 = arg2 - arg0;
 		int var8 = arg3 - arg1;
 		if (var8 == 0) {
 			if (var7 >= 0) {
-				this.method2433(arg0, arg1, var7 + 1, arg4, arg5);
+				this.drawHorizontalLine(arg0, arg1, var7 + 1, arg4, arg5);
 			} else {
-				this.method2433(arg0 + var7, arg1, -var7 + 1, arg4, arg5);
+				this.drawHorizontalLine(arg0 + var7, arg1, -var7 + 1, arg4, arg5);
 			}
 		} else if (var7 != 0) {
 			if (var7 + var8 < 0) {
@@ -1182,19 +1183,19 @@ public class PureJavaRenderer extends Renderer {
 				int var11 = var8 << 16;
 				int var12 = (int) Math.floor((double) var11 / (double) var7 + 0.5D);
 				int var13 = arg0 + var7;
-				if (arg0 < this.field9805) {
-					var10 += (this.field9805 - arg0) * var12;
-					arg0 = this.field9805;
+				if (arg0 < this.clipMinX) {
+					var10 += (this.clipMinX - arg0) * var12;
+					arg0 = this.clipMinX;
 				}
-				if (var13 >= this.field9801) {
-					var13 = this.field9801 - 1;
+				if (var13 >= this.clipMaxX) {
+					var13 = this.clipMaxX - 1;
 				}
 				int var14 = arg4 >>> 24;
 				if (arg5 == 0 || arg5 == 1 && var14 == 255) {
 					while (arg0 <= var13) {
 						int var27 = var10 >> 16;
-						if (var27 >= this.field9784 && var27 < this.field9785) {
-							this.field9778[this.field9779 * var27 + arg0] = arg4;
+						if (var27 >= this.clipMinY && var27 < this.clipMaxY) {
+							this.colour[this.sizeX * var27 + arg0] = arg4;
 						}
 						var10 += var12;
 						arg0++;
@@ -1204,11 +1205,11 @@ public class PureJavaRenderer extends Renderer {
 					int var16 = 256 - var14;
 					while (arg0 <= var13) {
 						int var17 = var10 >> 16;
-						if (var17 >= this.field9784 && var17 < this.field9785) {
-							int var18 = this.field9779 * var17 + arg0;
-							int var19 = this.field9778[var18];
+						if (var17 >= this.clipMinY && var17 < this.clipMaxY) {
+							int var18 = this.sizeX * var17 + arg0;
+							int var19 = this.colour[var18];
 							int var20 = ((var19 & 0xFF00) * var16 >> 8 & 0xFF00) + ((var19 & 0xFF00FF) * var16 >> 8 & 0xFF00FF);
-							this.field9778[var18] = var15 + var20;
+							this.colour[var18] = var15 + var20;
 						}
 						var10 += var12;
 						arg0++;
@@ -1216,13 +1217,13 @@ public class PureJavaRenderer extends Renderer {
 				} else if (arg5 == 2) {
 					while (arg0 <= var13) {
 						int var21 = var10 >> 16;
-						if (var21 >= this.field9784 && var21 < this.field9785) {
-							int var22 = this.field9779 * var21 + arg0;
-							int var23 = this.field9778[var22];
+						if (var21 >= this.clipMinY && var21 < this.clipMaxY) {
+							int var22 = this.sizeX * var21 + arg0;
+							int var23 = this.colour[var22];
 							int var24 = arg4 + var23;
 							int var25 = (arg4 & 0xFF00FF) + (var23 & 0xFF00FF);
 							int var26 = (var24 - var25 & 0x10000) + (var25 & 0x1000100);
-							this.field9778[var22] = var24 - var26 | var26 - (var26 >>> 8);
+							this.colour[var22] = var24 - var26 | var26 - (var26 >>> 8);
 						}
 						var10 += var12;
 						arg0++;
@@ -1236,19 +1237,19 @@ public class PureJavaRenderer extends Renderer {
 				int var30 = var7 << 16;
 				int var31 = (int) Math.floor((double) var30 / (double) var8 + 0.5D);
 				int var32 = arg1 + var8;
-				if (arg1 < this.field9784) {
-					var29 += (this.field9784 - arg1) * var31;
-					arg1 = this.field9784;
+				if (arg1 < this.clipMinY) {
+					var29 += (this.clipMinY - arg1) * var31;
+					arg1 = this.clipMinY;
 				}
-				if (var32 >= this.field9785) {
-					var32 = this.field9785 - 1;
+				if (var32 >= this.clipMaxY) {
+					var32 = this.clipMaxY - 1;
 				}
 				int var33 = arg4 >>> 24;
 				if (arg5 == 0 || arg5 == 1 && var33 == 255) {
 					while (arg1 <= var32) {
 						int var46 = var29 >> 16;
-						if (var46 >= this.field9805 && var46 < this.field9801) {
-							this.field9778[this.field9779 * arg1 + var46] = arg4;
+						if (var46 >= this.clipMinX && var46 < this.clipMaxX) {
+							this.colour[this.sizeX * arg1 + var46] = arg4;
 						}
 						var29 += var31;
 						arg1++;
@@ -1258,11 +1259,11 @@ public class PureJavaRenderer extends Renderer {
 					int var35 = 256 - var33;
 					while (arg1 <= var32) {
 						int var36 = var29 >> 16;
-						if (var36 >= this.field9805 && var36 < this.field9801) {
-							int var37 = this.field9779 * arg1 + var36;
-							int var38 = this.field9778[var37];
+						if (var36 >= this.clipMinX && var36 < this.clipMaxX) {
+							int var37 = this.sizeX * arg1 + var36;
+							int var38 = this.colour[var37];
 							int var39 = ((var38 & 0xFF00FF) * var35 >> 8 & 0xFF00FF) + ((var38 & 0xFF00) * var35 >> 8 & 0xFF00);
-							this.field9778[this.field9779 * arg1 + var36] = var34 + var39;
+							this.colour[this.sizeX * arg1 + var36] = var34 + var39;
 						}
 						var29 += var31;
 						arg1++;
@@ -1270,13 +1271,13 @@ public class PureJavaRenderer extends Renderer {
 				} else if (arg5 == 2) {
 					while (arg1 <= var32) {
 						int var40 = var29 >> 16;
-						if (var40 >= this.field9805 && var40 < this.field9801) {
-							int var41 = this.field9779 * arg1 + var40;
-							int var42 = this.field9778[var41];
+						if (var40 >= this.clipMinX && var40 < this.clipMaxX) {
+							int var41 = this.sizeX * arg1 + var40;
+							int var42 = this.colour[var41];
 							int var43 = arg4 + var42;
 							int var44 = (arg4 & 0xFF00FF) + (var42 & 0xFF00FF);
 							int var45 = (var43 - var44 & 0x10000) + (var44 & 0x1000100);
-							this.field9778[var41] = var43 - var45 | var45 - (var45 >>> 8);
+							this.colour[var41] = var43 - var45 | var45 - (var45 >>> 8);
 						}
 						var29 += var31;
 						arg1++;
@@ -1286,15 +1287,15 @@ public class PureJavaRenderer extends Renderer {
 				}
 			}
 		} else if (var8 >= 0) {
-			this.method2139(arg0, arg1, var8 + 1, arg4, arg5);
+			this.drawVerticalLine(arg0, arg1, var8 + 1, arg4, arg5);
 		} else {
-			this.method2139(arg0, arg1 + var8, -var8 + 1, arg4, arg5);
+			this.drawVerticalLine(arg0, arg1 + var8, -var8 + 1, arg4, arg5);
 		}
 	}
 
 	@ObfuscatedName("afg.cl(IIIIIIIII)V")
 	public void method2187(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
-		if (this.field9778 == null) {
+		if (this.colour == null) {
 			return;
 		}
 		int var10 = arg2 - arg0;
@@ -1342,8 +1343,8 @@ public class PureJavaRenderer extends Renderer {
 				if (arg5 == 0 || arg5 == 1 && var33 == 255) {
 					while (arg0 <= var32) {
 						int var49 = var29 >> 16;
-						if (arg0 >= this.field9805 && arg0 < this.field9801 && var49 >= this.field9784 && var49 < this.field9785 && var24 < var21) {
-							this.field9778[this.field9779 * var49 + arg0] = arg4;
+						if (arg0 >= this.clipMinX && arg0 < this.clipMaxX && var49 >= this.clipMinY && var49 < this.clipMaxY && var24 < var21) {
+							this.colour[this.sizeX * var49 + arg0] = arg4;
 						}
 						var29 += var31;
 						arg0++;
@@ -1355,11 +1356,11 @@ public class PureJavaRenderer extends Renderer {
 					int var36 = 256 - var33;
 					while (arg0 <= var32) {
 						int var37 = var29 >> 16;
-						if (arg0 >= this.field9805 && arg0 < this.field9801 && var37 >= this.field9784 && var37 < this.field9785 && var24 < var21) {
-							int var38 = this.field9779 * var37 + arg0;
-							int var39 = this.field9778[var38];
+						if (arg0 >= this.clipMinX && arg0 < this.clipMaxX && var37 >= this.clipMinY && var37 < this.clipMaxY && var24 < var21) {
+							int var38 = this.sizeX * var37 + arg0;
+							int var39 = this.colour[var38];
 							int var40 = ((var39 & 0xFF00) * var36 >> 8 & 0xFF00) + ((var39 & 0xFF00FF) * var36 >> 8 & 0xFF00FF);
-							this.field9778[var38] = var35 + var40;
+							this.colour[var38] = var35 + var40;
 						}
 						var29 += var31;
 						arg0++;
@@ -1369,13 +1370,13 @@ public class PureJavaRenderer extends Renderer {
 				} else if (arg5 == 2) {
 					while (arg0 <= var32) {
 						int var42 = var29 >> 16;
-						if (arg0 >= this.field9805 && arg0 < this.field9801 && var42 >= this.field9784 && var42 < this.field9785 && var24 < var21) {
-							int var43 = this.field9779 * var42 + arg0;
-							int var44 = this.field9778[var43];
+						if (arg0 >= this.clipMinX && arg0 < this.clipMaxX && var42 >= this.clipMinY && var42 < this.clipMaxY && var24 < var21) {
+							int var43 = this.sizeX * var42 + arg0;
+							int var44 = this.colour[var43];
 							int var45 = arg4 + var44;
 							int var46 = (arg4 & 0xFF00FF) + (var44 & 0xFF00FF);
 							int var47 = (var45 - var46 & 0x10000) + (var46 & 0x1000100);
-							this.field9778[var43] = var45 - var47 | var47 - (var47 >>> 8);
+							this.colour[var43] = var45 - var47 | var47 - (var47 >>> 8);
 						}
 						var29 += var31;
 						arg0++;
@@ -1396,8 +1397,8 @@ public class PureJavaRenderer extends Renderer {
 				if (arg5 == 0 || arg5 == 1 && var56 == 255) {
 					while (arg1 <= var55) {
 						int var72 = var52 >> 16;
-						if (arg1 >= this.field9784 && arg1 < this.field9785 && var72 >= this.field9805 && var72 < this.field9801 && var24 < var21) {
-							this.field9778[this.field9779 * arg1 + var72] = arg4;
+						if (arg1 >= this.clipMinY && arg1 < this.clipMaxY && var72 >= this.clipMinX && var72 < this.clipMaxX && var24 < var21) {
+							this.colour[this.sizeX * arg1 + var72] = arg4;
 						}
 						var52 += var54;
 						arg1++;
@@ -1409,11 +1410,11 @@ public class PureJavaRenderer extends Renderer {
 					int var59 = 256 - var56;
 					while (arg1 <= var55) {
 						int var60 = var52 >> 16;
-						if (arg1 >= this.field9784 && arg1 < this.field9785 && var60 >= this.field9805 && var60 < this.field9801 && var24 < var21) {
-							int var61 = this.field9779 * arg1 + var60;
-							int var62 = this.field9778[var61];
+						if (arg1 >= this.clipMinY && arg1 < this.clipMaxY && var60 >= this.clipMinX && var60 < this.clipMaxX && var24 < var21) {
+							int var61 = this.sizeX * arg1 + var60;
+							int var62 = this.colour[var61];
 							int var63 = ((var62 & 0xFF00FF) * var59 >> 8 & 0xFF00FF) + ((var62 & 0xFF00) * var59 >> 8 & 0xFF00);
-							this.field9778[this.field9779 * arg1 + var60] = var58 + var63;
+							this.colour[this.sizeX * arg1 + var60] = var58 + var63;
 						}
 						var52 += var54;
 						arg1++;
@@ -1423,13 +1424,13 @@ public class PureJavaRenderer extends Renderer {
 				} else if (arg5 == 2) {
 					while (arg1 <= var55) {
 						int var65 = var52 >> 16;
-						if (arg1 >= this.field9784 && arg1 < this.field9785 && var65 >= this.field9805 && var65 < this.field9801 && var24 < var21) {
-							int var66 = this.field9779 * arg1 + var65;
-							int var67 = this.field9778[var66];
+						if (arg1 >= this.clipMinY && arg1 < this.clipMaxY && var65 >= this.clipMinX && var65 < this.clipMaxX && var24 < var21) {
+							int var66 = this.sizeX * arg1 + var65;
+							int var67 = this.colour[var66];
 							int var68 = arg4 + var67;
 							int var69 = (arg4 & 0xFF00FF) + (var67 & 0xFF00FF);
 							int var70 = (var68 - var69 & 0x10000) + (var69 & 0x1000100);
-							this.field9778[var66] = var68 - var70 | var70 - (var70 >>> 8);
+							this.colour[var66] = var68 - var70 | var70 - (var70 >>> 8);
 						}
 						var52 += var54;
 						arg1++;
@@ -1456,14 +1457,14 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.bs(IIIIIILch;II)V")
 	public void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8) {
-		if (this.field9778 == null) {
+		if (this.colour == null) {
 			return;
 		}
 		JavaGraphicsRelated3 var10 = (JavaGraphicsRelated3) arg6;
 		int[] var11 = var10.field9414;
 		int[] var12 = var10.field9415;
-		int var13 = this.field9784 > arg8 ? this.field9784 : arg8;
-		int var14 = this.field9785 < var11.length + arg8 ? this.field9785 : var11.length + arg8;
+		int var13 = this.clipMinY > arg8 ? this.clipMinY : arg8;
+		int var14 = this.clipMaxY < var11.length + arg8 ? this.clipMaxY : var11.length + arg8;
 		int var15 = arg2 - arg0;
 		int var16 = arg3 - arg1;
 		if (var15 + var16 < 0) {
@@ -1491,8 +1492,8 @@ public class PureJavaRenderer extends Renderer {
 					int var64 = var43 >> 16;
 					int var65 = arg1 - arg8;
 					int var66 = var11[var65] + arg7;
-					if (var64 >= this.field9805 && var64 < this.field9801 && var64 >= var66 && var64 < var12[var65] + var66) {
-						this.field9778[this.field9779 * arg1 + var64] = arg4;
+					if (var64 >= this.clipMinX && var64 < this.clipMaxX && var64 >= var66 && var64 < var12[var65] + var66) {
+						this.colour[this.sizeX * arg1 + var64] = arg4;
 					}
 					var43 += var45;
 					arg1++;
@@ -1504,11 +1505,11 @@ public class PureJavaRenderer extends Renderer {
 					int var50 = var43 >> 16;
 					int var51 = arg1 - arg8;
 					int var52 = var11[var51] + arg7;
-					if (var50 >= this.field9805 && var50 < this.field9801 && var50 >= var52 && var50 < var12[var51] + var52) {
-						int var53 = this.field9779 * arg1 + var50;
-						int var54 = this.field9778[var53];
+					if (var50 >= this.clipMinX && var50 < this.clipMaxX && var50 >= var52 && var50 < var12[var51] + var52) {
+						int var53 = this.sizeX * arg1 + var50;
+						int var54 = this.colour[var53];
 						int var55 = ((var54 & 0xFF00) * var49 >> 8 & 0xFF00) + ((var54 & 0xFF00FF) * var49 >> 8 & 0xFF00FF);
-						this.field9778[this.field9779 * arg1 + var50] = var48 + var55;
+						this.colour[this.sizeX * arg1 + var50] = var48 + var55;
 					}
 					var43 += var45;
 					arg1++;
@@ -1518,13 +1519,13 @@ public class PureJavaRenderer extends Renderer {
 					int var56 = var43 >> 16;
 					int var57 = arg1 - arg8;
 					int var58 = var11[var57] + arg7;
-					if (var56 >= this.field9805 && var56 < this.field9801 && var56 >= var58 && var56 < var12[var57] + var58) {
-						int var59 = this.field9779 * arg1 + var56;
-						int var60 = this.field9778[var59];
+					if (var56 >= this.clipMinX && var56 < this.clipMaxX && var56 >= var58 && var56 < var12[var57] + var58) {
+						int var59 = this.sizeX * arg1 + var56;
+						int var60 = this.colour[var59];
 						int var61 = arg4 + var60;
 						int var62 = (arg4 & 0xFF00FF) + (var60 & 0xFF00FF);
 						int var63 = (var61 - var62 & 0x10000) + (var62 & 0x1000100);
-						this.field9778[var59] = var61 - var63 | var63 - (var63 >>> 8);
+						this.colour[var59] = var61 - var63 | var63 - (var63 >>> 8);
 					}
 					var43 += var45;
 					arg1++;
@@ -1539,12 +1540,12 @@ public class PureJavaRenderer extends Renderer {
 		int var19 = var16 << 16;
 		int var20 = (int) Math.floor((double) var19 / (double) var15 + 0.5D);
 		int var21 = arg0 + var15;
-		if (arg0 < this.field9805) {
-			var18 += (this.field9805 - arg0) * var20;
-			arg0 = this.field9805;
+		if (arg0 < this.clipMinX) {
+			var18 += (this.clipMinX - arg0) * var20;
+			arg0 = this.clipMinX;
 		}
-		if (var21 >= this.field9801) {
-			var21 = this.field9801 - 1;
+		if (var21 >= this.clipMaxX) {
+			var21 = this.clipMaxX - 1;
 		}
 		int var22 = arg4 >>> 24;
 		if (arg5 == 0 || arg5 == 1 && var22 == 255) {
@@ -1554,7 +1555,7 @@ public class PureJavaRenderer extends Renderer {
 				if (var39 >= var13 && var39 < var14) {
 					int var41 = var11[var40] + arg7;
 					if (arg0 >= var41 && arg0 < var12[var40] + var41) {
-						this.field9778[this.field9779 * var39 + arg0] = arg4;
+						this.colour[this.sizeX * var39 + arg0] = arg4;
 					}
 				}
 				var18 += var20;
@@ -1569,10 +1570,10 @@ public class PureJavaRenderer extends Renderer {
 				if (var25 >= var13 && var25 < var14) {
 					int var27 = var11[var26] + arg7;
 					if (arg0 >= var27 && arg0 < var12[var26] + var27) {
-						int var28 = this.field9779 * var25 + arg0;
-						int var29 = this.field9778[var28];
+						int var28 = this.sizeX * var25 + arg0;
+						int var29 = this.colour[var28];
 						int var30 = ((var29 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + ((var29 & 0xFF00) * var24 >> 8 & 0xFF00);
-						this.field9778[var28] = var23 + var30;
+						this.colour[var28] = var23 + var30;
 					}
 				}
 				var18 += var20;
@@ -1585,12 +1586,12 @@ public class PureJavaRenderer extends Renderer {
 				if (var31 >= var13 && var31 < var14) {
 					int var33 = var11[var32] + arg7;
 					if (arg0 >= var33 && arg0 < var12[var32] + var33) {
-						int var34 = this.field9779 * var31 + arg0;
-						int var35 = this.field9778[var34];
+						int var34 = this.sizeX * var31 + arg0;
+						int var35 = this.colour[var34];
 						int var36 = arg4 + var35;
 						int var37 = (arg4 & 0xFF00FF) + (var35 & 0xFF00FF);
 						int var38 = (var36 - var37 & 0x10000) + (var37 & 0x1000100);
-						this.field9778[var34] = var36 - var38 | var38 - (var38 >>> 8);
+						this.colour[var34] = var36 - var38 | var38 - (var38 >>> 8);
 					}
 				}
 				var18 += var20;
@@ -1603,14 +1604,14 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.cg(IIIIIILch;IIIII)V")
 	public void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8, int arg9, int arg10, int arg11) {
-		if (this.field9778 == null) {
+		if (this.colour == null) {
 			return;
 		}
 		JavaGraphicsRelated3 var13 = (JavaGraphicsRelated3) arg6;
 		int[] var14 = var13.field9414;
 		int[] var15 = var13.field9415;
-		int var16 = this.field9784 > arg8 ? this.field9784 : arg8;
-		int var17 = this.field9785 < var14.length + arg8 ? this.field9785 : var14.length + arg8;
+		int var16 = this.clipMinY > arg8 ? this.clipMinY : arg8;
+		int var17 = this.clipMaxY < var14.length + arg8 ? this.clipMaxY : var14.length + arg8;
 		int var18 = arg11 << 8;
 		int var19 = arg9 << 8;
 		int var20 = arg10 << 8;
@@ -1643,8 +1644,8 @@ public class PureJavaRenderer extends Renderer {
 				while (arg1 <= var62) {
 					int var80 = var58 >> 16;
 					int var81 = arg1 - arg8;
-					if (arg1 >= var16 && arg1 < var17 && var80 >= this.field9805 && var80 < this.field9801 && var22 < var19 && var80 >= var14[var81] + arg7 && var80 < var14[var81] + arg7 + var15[var81]) {
-						this.field9778[this.field9779 * arg1 + var80] = arg4;
+					if (arg1 >= var16 && arg1 < var17 && var80 >= this.clipMinX && var80 < this.clipMaxX && var22 < var19 && var80 >= var14[var81] + arg7 && var80 < var14[var81] + arg7 + var15[var81]) {
+						this.colour[this.sizeX * arg1 + var80] = arg4;
 					}
 					var58 += var60;
 					arg1++;
@@ -1657,11 +1658,11 @@ public class PureJavaRenderer extends Renderer {
 				while (arg1 <= var62) {
 					int var66 = var58 >> 16;
 					int var67 = arg1 - arg8;
-					if (arg1 >= var16 && arg1 < var17 && var66 >= this.field9805 && var66 < this.field9801 && var22 < var19 && var66 >= var14[var67] + arg7 && var66 < var14[var67] + arg7 + var15[var67]) {
-						int var68 = this.field9779 * arg1 + var66;
-						int var69 = this.field9778[var68];
+					if (arg1 >= var16 && arg1 < var17 && var66 >= this.clipMinX && var66 < this.clipMaxX && var22 < var19 && var66 >= var14[var67] + arg7 && var66 < var14[var67] + arg7 + var15[var67]) {
+						int var68 = this.sizeX * arg1 + var66;
+						int var69 = this.colour[var68];
 						int var70 = ((var69 & 0xFF00) * var65 >> 8 & 0xFF00) + ((var69 & 0xFF00FF) * var65 >> 8 & 0xFF00FF);
-						this.field9778[this.field9779 * arg1 + var66] = var64 + var70;
+						this.colour[this.sizeX * arg1 + var66] = var64 + var70;
 					}
 					var58 += var60;
 					arg1++;
@@ -1672,13 +1673,13 @@ public class PureJavaRenderer extends Renderer {
 				while (arg1 <= var62) {
 					int var72 = var58 >> 16;
 					int var73 = arg1 - arg8;
-					if (arg1 >= var16 && arg1 < var17 && var72 >= this.field9805 && var72 < this.field9801 && var22 < var19 && var72 >= var14[var73] + arg7 && var72 < var14[var73] + arg7 + var15[var73]) {
-						int var74 = this.field9779 * arg1 + var72;
-						int var75 = this.field9778[var74];
+					if (arg1 >= var16 && arg1 < var17 && var72 >= this.clipMinX && var72 < this.clipMaxX && var22 < var19 && var72 >= var14[var73] + arg7 && var72 < var14[var73] + arg7 + var15[var73]) {
+						int var74 = this.sizeX * arg1 + var72;
+						int var75 = this.colour[var74];
 						int var76 = arg4 + var75;
 						int var77 = (arg4 & 0xFF00FF) + (var75 & 0xFF00FF);
 						int var78 = (var76 - var77 & 0x10000) + (var77 & 0x1000100);
-						this.field9778[var74] = var76 - var78 | var78 - (var78 >>> 8);
+						this.colour[var74] = var76 - var78 | var78 - (var78 >>> 8);
 					}
 					var58 += var60;
 					arg1++;
@@ -1701,10 +1702,10 @@ public class PureJavaRenderer extends Renderer {
 			while (arg0 <= var32) {
 				int var53 = var29 >> 16;
 				int var54 = var53 - arg8;
-				if (arg0 >= this.field9805 && arg0 < this.field9801 && var53 >= var16 && var53 < var17 && var22 < var19) {
+				if (arg0 >= this.clipMinX && arg0 < this.clipMaxX && var53 >= var16 && var53 < var17 && var22 < var19) {
 					int var55 = var14[var54] + arg7;
 					if (arg0 >= var55 && arg0 < var15[var54] + var55) {
-						this.field9778[this.field9779 * var53 + arg0] = arg4;
+						this.colour[this.sizeX * var53 + arg0] = arg4;
 					}
 				}
 				var29 += var31;
@@ -1718,13 +1719,13 @@ public class PureJavaRenderer extends Renderer {
 			while (arg0 <= var32) {
 				int var37 = var29 >> 16;
 				int var38 = var37 - arg8;
-				if (arg0 >= this.field9805 && arg0 < this.field9801 && var37 >= var16 && var37 < var17 && var22 < var19) {
+				if (arg0 >= this.clipMinX && arg0 < this.clipMaxX && var37 >= var16 && var37 < var17 && var22 < var19) {
 					int var39 = var14[var38] + arg7;
 					if (arg0 >= var39 && arg0 < var15[var38] + var39) {
-						int var40 = this.field9779 * var37 + arg0;
-						int var41 = this.field9778[var40];
+						int var40 = this.sizeX * var37 + arg0;
+						int var41 = this.colour[var40];
 						int var42 = ((var41 & 0xFF00) * var36 >> 8 & 0xFF00) + ((var41 & 0xFF00FF) * var36 >> 8 & 0xFF00FF);
-						this.field9778[var40] = var35 + var42;
+						this.colour[var40] = var35 + var42;
 					}
 				}
 				var29 += var31;
@@ -1736,15 +1737,15 @@ public class PureJavaRenderer extends Renderer {
 			while (arg0 <= var32) {
 				int var44 = var29 >> 16;
 				int var45 = var44 - arg8;
-				if (arg0 >= this.field9805 && arg0 < this.field9801 && var44 >= var16 && var44 < var17 && var22 < var19) {
+				if (arg0 >= this.clipMinX && arg0 < this.clipMaxX && var44 >= var16 && var44 < var17 && var22 < var19) {
 					int var46 = var14[var45] + arg7;
 					if (arg0 >= var46 && arg0 < var15[var45] + var46) {
-						int var47 = this.field9779 * var44 + arg0;
-						int var48 = this.field9778[var47];
+						int var47 = this.sizeX * var44 + arg0;
+						int var48 = this.colour[var47];
 						int var49 = arg4 + var48;
 						int var50 = (arg4 & 0xFF00FF) + (var48 & 0xFF00FF);
 						int var51 = (var49 - var50 & 0x10000) + (var50 & 0x1000100);
-						this.field9778[var47] = var49 - var51 | var51 - (var51 >>> 8);
+						this.colour[var47] = var49 - var51 | var51 - (var51 >>> 8);
 					}
 				}
 				var29 += var31;
@@ -1758,12 +1759,12 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.ce(IIIIIII)V")
-	public void method2189(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		if (this.field9778 == null) {
+	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+		if (this.colour == null) {
 			return;
 		}
-		PureJavaRendererContext var8 = this.method15674(Thread.currentThread());
-		Rasteriser var9 = var8.field837;
+		PureJavaRendererContext var8 = this.getContext(Thread.currentThread());
+		Rasteriser var9 = var8.rasteriser;
 		int var10 = arg2 - arg0;
 		int var11 = arg3 - arg1;
 		int var12 = var10 >= 0 ? var10 : -var10;
@@ -1807,34 +1808,34 @@ public class PureJavaRenderer extends Renderer {
 		}
 		this.method2219(false);
 		var9.field936 = var25 < 0 || var25 > var9.field945 || var26 < 0 || var26 > var9.field945 || var27 < 0 || var27 > var9.field945;
-		var9.method1032(true, false, false, (float) var29, (float) var30, (float) var31, (float) var25, (float) var26, (float) var27, 100.0F, 100.0F, 100.0F, arg4);
+		var9.drawTriangle(true, false, false, (float) var29, (float) var30, (float) var31, (float) var25, (float) var26, (float) var27, 100.0F, 100.0F, 100.0F, arg4);
 		var9.field936 = var25 < 0 || var25 > var9.field945 || var27 < 0 || var27 > var9.field945 || var28 < 0 || var28 > var9.field945;
-		var9.method1032(true, false, false, (float) var29, (float) var31, (float) var32, (float) var25, (float) var27, (float) var28, 100.0F, 100.0F, 100.0F, arg4);
+		var9.drawTriangle(true, false, false, (float) var29, (float) var31, (float) var32, (float) var25, (float) var27, (float) var28, 100.0F, 100.0F, 100.0F, arg4);
 		this.method2219(true);
 	}
 
 	@ObfuscatedName("afg.cu(IIIIII)I")
 	public int method2348(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		int var7 = 0;
-		float var8 = this.field9803.field4315[10] * (float) arg2 + this.field9803.field4315[6] * (float) arg1 + this.field9803.field4315[2] * (float) arg0 + this.field9803.field4315[14];
-		float var9 = this.field9803.field4315[10] * (float) arg5 + this.field9803.field4315[6] * (float) arg4 + this.field9803.field4315[2] * (float) arg3 + this.field9803.field4315[14];
-		float var10 = this.field9803.field4315[11] * (float) arg2 + this.field9803.field4315[7] * (float) arg1 + this.field9803.field4315[3] * (float) arg0 + this.field9803.field4315[15];
-		float var11 = this.field9803.field4315[11] * (float) arg5 + this.field9803.field4315[7] * (float) arg4 + this.field9803.field4315[3] * (float) arg3 + this.field9803.field4315[15];
+		float var8 = this.field9803.entries[10] * (float) arg2 + this.field9803.entries[6] * (float) arg1 + this.field9803.entries[2] * (float) arg0 + this.field9803.entries[14];
+		float var9 = this.field9803.entries[10] * (float) arg5 + this.field9803.entries[6] * (float) arg4 + this.field9803.entries[2] * (float) arg3 + this.field9803.entries[14];
+		float var10 = this.field9803.entries[11] * (float) arg2 + this.field9803.entries[7] * (float) arg1 + this.field9803.entries[3] * (float) arg0 + this.field9803.entries[15];
+		float var11 = this.field9803.entries[11] * (float) arg5 + this.field9803.entries[7] * (float) arg4 + this.field9803.entries[3] * (float) arg3 + this.field9803.entries[15];
 		if (var8 < -var10 && var9 < -var11) {
 			var7 |= 0x10;
 		} else if (var8 > var10 && var9 > var11) {
 			var7 |= 0x20;
 		}
-		float var12 = this.field9803.field4315[8] * (float) arg2 + this.field9803.field4315[4] * (float) arg1 + this.field9803.field4315[0] * (float) arg0 + this.field9803.field4315[12];
-		float var13 = this.field9803.field4315[8] * (float) arg5 + this.field9803.field4315[4] * (float) arg4 + this.field9803.field4315[0] * (float) arg3 + this.field9803.field4315[12];
+		float var12 = this.field9803.entries[8] * (float) arg2 + this.field9803.entries[4] * (float) arg1 + this.field9803.entries[0] * (float) arg0 + this.field9803.entries[12];
+		float var13 = this.field9803.entries[8] * (float) arg5 + this.field9803.entries[4] * (float) arg4 + this.field9803.entries[0] * (float) arg3 + this.field9803.entries[12];
 		if (var12 < -var10 && var13 < -var11) {
 			var7 |= 0x1;
 		}
 		if (var12 > var10 && var13 > var11) {
 			var7 |= 0x2;
 		}
-		float var14 = this.field9803.field4315[9] * (float) arg2 + this.field9803.field4315[5] * (float) arg1 + this.field9803.field4315[1] * (float) arg0 + this.field9803.field4315[13];
-		float var15 = this.field9803.field4315[9] * (float) arg5 + this.field9803.field4315[5] * (float) arg4 + this.field9803.field4315[1] * (float) arg3 + this.field9803.field4315[13];
+		float var14 = this.field9803.entries[9] * (float) arg2 + this.field9803.entries[5] * (float) arg1 + this.field9803.entries[1] * (float) arg0 + this.field9803.entries[13];
+		float var15 = this.field9803.entries[9] * (float) arg5 + this.field9803.entries[5] * (float) arg4 + this.field9803.entries[1] * (float) arg3 + this.field9803.entries[13];
 		if (var14 < -var10 && var15 < -var11) {
 			var7 |= 0x4;
 		}
@@ -1845,37 +1846,37 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.cn(IIIILou;Loj;)Z")
-	public boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, Cuboid arg5) {
+	public boolean pick(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, Cuboid arg5) {
 		Matrix4x4 var7 = this.method2208();
-		var7.method6609(arg4);
-		var7.method6720(this.field9803);
-		return arg5.method6275(arg0, arg1, arg2, arg3, var7, this.field9814, this.field9806, this.field9789, this.field9802);
+		var7.setToMatrix4x3(arg4);
+		var7.multiply(this.field9803);
+		return arg5.pick(arg0, arg1, arg2, arg3, var7, this.field9814, this.field9806, this.field9789, this.field9802);
 	}
 
 	@ObfuscatedName("afg.cv(Lou;Led;Loj;)V")
 	public void method2193(Matrix4x3 arg0, ScreenBoundingBox arg1, Cuboid arg2) {
 		Matrix4x4 var4 = this.method2208();
-		var4.method6609(arg0);
-		var4.method6720(this.field9803);
+		var4.setToMatrix4x3(arg0);
+		var4.multiply(this.field9803);
 		arg1.method2746(arg2, this.field9795, var4, this.field9814, this.field9806, this.field9789, this.field9802);
 	}
 
 	@ObfuscatedName("afg.cp(I)Lakz;")
-	public Heap method2221(int arg0) {
+	public Heap createHeap(int arg0) {
 		return null;
 	}
 
 	@ObfuscatedName("afg.ca(Lakz;)V")
-	public void method2195(Heap arg0) {
+	public void setBufferHeap(Heap arg0) {
 	}
 
 	@ObfuscatedName("afg.cw(IIZZ)Lcm;")
-	public Sprite method2197(int arg0, int arg1, boolean arg2, boolean arg3) {
-		return arg2 ? new PureJavaSprite_Sub2(this, arg0, arg1) : new PureJavaSprite_Sub1(this, arg0, arg1);
+	public Sprite createSprite(int arg0, int arg1, boolean arg2, boolean arg3) {
+		return arg2 ? new PureJavaSpriteAlpha(this, arg0, arg1) : new PureJavaSpriteNormal(this, arg0, arg1);
 	}
 
 	@ObfuscatedName("afg.ct([IIIIIZ)Lcm;")
-	public Sprite method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public Sprite createSprite(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		boolean var7 = false;
 		int var8 = arg1;
 		for (int var9 = 0; var9 < arg4; var9++) {
@@ -1883,63 +1884,63 @@ public class PureJavaRenderer extends Renderer {
 				int var11 = arg0[var8++] >>> 24;
 				if (var11 != 0 && var11 != 255) {
 					var7 = true;
-					return var7 ? new PureJavaSprite_Sub2(this, arg0, arg1, arg2, arg3, arg4, arg5) : new PureJavaSprite_Sub1(this, arg0, arg1, arg2, arg3, arg4, arg5);
+					return var7 ? new PureJavaSpriteAlpha(this, arg0, arg1, arg2, arg3, arg4, arg5) : new PureJavaSpriteNormal(this, arg0, arg1, arg2, arg3, arg4, arg5);
 				}
 			}
 		}
-		return var7 ? new PureJavaSprite_Sub2(this, arg0, arg1, arg2, arg3, arg4, arg5) : new PureJavaSprite_Sub1(this, arg0, arg1, arg2, arg3, arg4, arg5);
+		return var7 ? new PureJavaSpriteAlpha(this, arg0, arg1, arg2, arg3, arg4, arg5) : new PureJavaSpriteNormal(this, arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("afg.co(Lde;Z)Lcm;")
-	public Sprite method2200(SpriteData arg0, boolean arg1) {
-		int var3 = arg0.method2639();
-		int var4 = arg0.method2631();
+	public Sprite createSprite(SpriteData arg0, boolean arg1) {
+		int var3 = arg0.getWidth();
+		int var4 = arg0.getHeight();
 		PureJavaSprite var12;
-		if (arg1 && !arg0.method2644() && arg0.method2587()) {
+		if (arg1 && !arg0.isTranslucent() && arg0.isPaletted()) {
 			PalettedSpriteData var5 = (PalettedSpriteData) arg0;
-			int[] var6 = new int[var5.field10226.length];
+			int[] var6 = new int[var5.palette.length];
 			byte[] var7 = new byte[var3 * var4];
 			for (int var8 = 0; var8 < var4; var8++) {
 				int var9 = var3 * var8;
 				for (int var10 = 0; var10 < var3; var10++) {
-					var7[var9 + var10] = var5.field10227[var9 + var10];
+					var7[var9 + var10] = var5.colour[var9 + var10];
 				}
 			}
-			for (int var11 = 0; var11 < var5.field10226.length; var11++) {
-				var6[var11] = var5.field10226[var11];
+			for (int var11 = 0; var11 < var5.palette.length; var11++) {
+				var6[var11] = var5.palette[var11];
 			}
-			var12 = new PureJavaSprite_Sub3(this, var7, var6, var3, var4);
+			var12 = new PureJavaSpritePaletted(this, var7, var6, var3, var4);
 		} else {
 			int[] var13 = arg0.method2604(false);
-			if (arg0.method2644()) {
-				var12 = new PureJavaSprite_Sub2(this, var13, var3, var4);
+			if (arg0.isTranslucent()) {
+				var12 = new PureJavaSpriteAlpha(this, var13, var3, var4);
 			} else {
-				var12 = new PureJavaSprite_Sub1(this, var13, var3, var4);
+				var12 = new PureJavaSpriteNormal(this, var13, var3, var4);
 			}
 		}
-		var12.method1431(arg0.method2591(), arg0.method2593(), arg0.method2603(), arg0.method2651());
+		var12.setPadding(arg0.getPaddingLeft(), arg0.getPaddingTop(), arg0.getPaddingRight(), arg0.getPaddingBottom());
 		return var12;
 	}
 
 	@ObfuscatedName("afg.cr(IIIIZ)Lcm;")
 	public Sprite method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		if (this.field9778 == null) {
+		if (this.colour == null) {
 			throw new IllegalStateException("");
 		}
 		int[] var6 = new int[arg2 * arg3];
-		int var7 = this.field9779 * arg1 + arg0;
-		int var8 = this.field9779 - arg2;
+		int var7 = this.sizeX * arg1 + arg0;
+		int var8 = this.sizeX - arg2;
 		for (int var9 = 0; var9 < arg3; var9++) {
 			int var10 = arg2 * var9;
 			for (int var11 = 0; var11 < arg2; var11++) {
-				var6[var10 + var11] = this.field9778[var7++];
+				var6[var10 + var11] = this.colour[var7++];
 			}
 			var7 += var8;
 		}
 		if (arg4) {
-			return new PureJavaSprite_Sub2(this, var6, arg2, arg3);
+			return new PureJavaSpriteAlpha(this, var6, arg2, arg3);
 		} else {
-			return new PureJavaSprite_Sub1(this, var6, arg2, arg3);
+			return new PureJavaSpriteNormal(this, var6, arg2, arg3);
 		}
 	}
 
@@ -1950,51 +1951,51 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.cs(ILch;II)V")
 	public void method2206(int arg0, GraphicsRelated arg1, int arg2, int arg3) {
-		if (this.field9778 == null) {
+		if (this.colour == null) {
 			return;
 		}
 		JavaGraphicsRelated3 var5 = (JavaGraphicsRelated3) arg1;
 		int[] var6 = var5.field9414;
 		int[] var7 = var5.field9415;
 		int var8;
-		if (this.field9785 < var6.length + arg3) {
-			var8 = this.field9785 - arg3;
+		if (this.clipMaxY < var6.length + arg3) {
+			var8 = this.clipMaxY - arg3;
 		} else {
 			var8 = var6.length;
 		}
 		int var9;
-		if (this.field9784 > arg3) {
-			var9 = this.field9784 - arg3;
-			arg3 = this.field9784;
+		if (this.clipMinY > arg3) {
+			var9 = this.clipMinY - arg3;
+			arg3 = this.clipMinY;
 		} else {
 			var9 = 0;
 		}
 		if (var8 - var9 <= 0) {
 			return;
 		}
-		int var10 = this.field9779 * arg3;
+		int var10 = this.sizeX * arg3;
 		for (int var11 = var9; var11 < var8; var11++) {
 			int var12 = var6[var11] + arg2;
 			int var13 = var7[var11];
-			if (this.field9805 > var12) {
-				var13 -= this.field9805 - var12;
-				var12 = this.field9805;
+			if (this.clipMinX > var12) {
+				var13 -= this.clipMinX - var12;
+				var12 = this.clipMinX;
 			}
-			if (this.field9801 < var12 + var13) {
-				var13 = this.field9801 - var12;
+			if (this.clipMaxX < var12 + var13) {
+				var13 = this.clipMaxX - var12;
 			}
 			int var14 = var10 + var12;
 			for (int var15 = -var13; var15 < 0; var15++) {
-				this.field9778[var14++] = arg0;
+				this.colour[var14++] = arg0;
 			}
-			var10 += this.field9779;
+			var10 += this.sizeX;
 		}
 	}
 
 	@ObfuscatedName("afg.cy(Laac;Lde;Z)Leu;")
-	public Font method2207(FontMetrics arg0, SpriteData arg1, boolean arg2) {
-		boolean var4 = arg1.method2644();
-		boolean var5 = arg1.method2587();
+	public Font createFont(FontMetrics arg0, SpriteData arg1, boolean arg2) {
+		boolean var4 = arg1.isTranslucent();
+		boolean var5 = arg1.isPaletted();
 		if (arg2) {
 			if (var5) {
 				return var4 ? new TranslucentFont(this, arg0, (PalettedSpriteData) arg1) : new OpaqueFont(this, arg0, (PalettedSpriteData) arg1);
@@ -2013,18 +2014,18 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.ck(I)V")
-	public void method2532(int arg0) {
+	public void setVertexCapacity(int arg0) {
 		PureJavaModel.field9547 = arg0;
 		PureJavaModel.field9564 = arg0;
-		if (this.field9807 > 1) {
+		if (this.threadLocalsCount > 1) {
 			throw new IllegalStateException();
 		}
-		this.method15670(this.field9807);
+		this.method15670(this.threadLocalsCount);
 		this.method15722(0);
 	}
 
 	@ObfuscatedName("afg.cj(Ldq;IIII)Ldo;")
-	public Model method2211(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4) {
+	public Model createModel(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4) {
 		return new PureJavaModel(this, arg0, arg1, arg3, arg4, arg2);
 	}
 
@@ -2040,118 +2041,124 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.dr(II[[I[[IIII)Lcb;")
-	public FloorModel method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6) {
+	public FloorModel createFloor(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6) {
 		return new PureJavaFloorModel(this, arg5, arg6, arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("afg.cc()Lpq;")
 	public Matrix4x4 method2208() {
-		PureJavaRendererContext var1 = this.method15674(Thread.currentThread());
+		PureJavaRendererContext var1 = this.getContext(Thread.currentThread());
 		return var1.field829;
 	}
 
 	@ObfuscatedName("afg.cz()Lou;")
 	public Matrix4x3 method2209() {
-		PureJavaRendererContext var1 = this.method15674(Thread.currentThread());
+		PureJavaRendererContext var1 = this.getContext(Thread.currentThread());
 		return var1.field836;
 	}
 
 	@ObfuscatedName("afg.df()I")
-	public int method2114() {
+	public int getMaxLights() {
 		return 0;
 	}
 
 	@ObfuscatedName("afg.dw(IIIIIF)Lakf;")
-	public Light method2227(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
+	public Light createLight(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
 		return null;
 	}
 
 	@ObfuscatedName("afg.ds(I[Lakf;)V")
-	public void method2491(int arg0, Light[] arg1) {
+	public void setActiveLights(int arg0, Light[] arg1) {
 	}
 
 	@ObfuscatedName("afg.rn(I)V")
 	public void method15722(int arg0) {
-		this.field9808[arg0].method996(Thread.currentThread());
+		this.context[arg0].setThread(Thread.currentThread());
 	}
 
 	@ObfuscatedName("afg.rb(I)V")
 	public void method15670(int arg0) {
-		this.field9807 = arg0;
-		this.field9808 = new PureJavaRendererContext[this.field9807];
-		for (int var2 = 0; var2 < this.field9807; var2++) {
-			this.field9808[var2] = new PureJavaRendererContext(this);
+		this.threadLocalsCount = arg0;
+		this.context = new PureJavaRendererContext[this.threadLocalsCount];
+		for (int var2 = 0; var2 < this.threadLocalsCount; var2++) {
+			this.context[var2] = new PureJavaRendererContext(this);
 		}
 	}
 
 	@ObfuscatedName("afg.ru(Ljava/lang/Runnable;)Laz;")
-	public PureJavaRendererContext method15674(Runnable arg0) {
-		for (int var2 = 0; var2 < this.field9807; var2++) {
-			if (this.field9808[var2].field824 == arg0) {
-				return this.field9808[var2];
+	public PureJavaRendererContext getContext(Runnable arg0) {
+		for (int var2 = 0; var2 < this.threadLocalsCount; var2++) {
+			if (this.context[var2].field824 == arg0) {
+				return this.context[var2];
 			}
 		}
 		return null;
 	}
 
 	@ObfuscatedName("afg.dt(Ldm;)V")
-	public void method2198(ParticleList arg0) {
-		this.method15671(this.field9778 != null, this.field9781 != null, false, arg0);
+	public void drawParticles(ParticleList arg0) {
+		this.drawParticles(this.colour != null, this.depth != null, false, arg0);
 	}
 
 	@ObfuscatedName("afg.sv(ZZZLdm;)V")
-	public void method15671(boolean arg0, boolean arg1, boolean arg2, ParticleList arg3) {
-		PureJavaRendererContext var5 = this.method15674(Thread.currentThread());
-		for (Particle var6 = (Particle) arg3.field1367.method14271(); var6 != null; var6 = (Particle) arg3.field1367.method14272()) {
-			int var7 = var6.field12159 >> 12;
-			int var8 = var6.field12163 >> 12;
-			int var9 = var6.field12161 >> 12;
-			float var10 = this.field9803.field4315[10] * (float) var9 + this.field9803.field4315[2] * (float) var7 + this.field9803.field4315[6] * (float) var8 + this.field9803.field4315[14];
-			float var11 = this.field9803.field4315[11] * (float) var9 + this.field9803.field4315[7] * (float) var8 + this.field9803.field4315[3] * (float) var7 + this.field9803.field4315[15];
-			if (!(var10 < -var11)) {
-				float var12 = this.field9813 * var10 / var11 + this.field9799;
-				if (!(var10 > var5.field865)) {
-					float var13 = this.field9803.field4315[8] * (float) var9 + this.field9803.field4315[4] * (float) var8 + this.field9803.field4315[0] * (float) var7 + this.field9803.field4315[12];
-					float var14 = this.field9803.field4315[9] * (float) var9 + this.field9803.field4315[5] * (float) var8 + this.field9803.field4315[1] * (float) var7 + this.field9803.field4315[13];
-					if (!(var13 < -var11) && !(var13 > var11) && !(var14 < -var11) && !(var14 > var11)) {
-						float var15 = (float) var6.field12162 / 4096.0F;
-						float var16 = this.field9795.field4315[0] * var15 + var13;
-						float var17 = this.field9795.field4315[3] * var15 + var11;
-						float var18 = this.field9789 * var13 / var11 + this.field9814;
-						float var19 = this.field9802 * var14 / var11 + this.field9806;
-						float var20 = this.field9789 * var16 / var17 + this.field9814;
-						this.method15672(arg0, arg1, arg2, var6, (int) var18, (int) var19, var12, (int) (var20 < var18 ? var18 - var20 : var20 - var18));
-					}
-				}
+	public void drawParticles(boolean arg0, boolean arg1, boolean arg2, ParticleList arg3) {
+		PureJavaRendererContext var5 = this.getContext(Thread.currentThread());
+		for (Particle var6 = (Particle) arg3.list.method14271(); var6 != null; var6 = (Particle) arg3.list.method14272()) {
+			int var7 = var6.x >> 12;
+			int var8 = var6.y >> 12;
+			int var9 = var6.z >> 12;
+			float var10 = this.field9803.entries[10] * (float) var9 + this.field9803.entries[2] * (float) var7 + this.field9803.entries[6] * (float) var8 + this.field9803.entries[14];
+			float var11 = this.field9803.entries[11] * (float) var9 + this.field9803.entries[7] * (float) var8 + this.field9803.entries[3] * (float) var7 + this.field9803.entries[15];
+			if (var10 < -var11) {
+				continue;
 			}
+
+			float var12 = this.field9813 * var10 / var11 + this.field9799;
+			if (var10 > var5.field865) {
+				continue;
+			}
+
+			float var13 = this.field9803.entries[8] * (float) var9 + this.field9803.entries[4] * (float) var8 + this.field9803.entries[0] * (float) var7 + this.field9803.entries[12];
+			float var14 = this.field9803.entries[9] * (float) var9 + this.field9803.entries[5] * (float) var8 + this.field9803.entries[1] * (float) var7 + this.field9803.entries[13];
+			if (var13 < -var11 || var13 > var11 || var14 < -var11 || var14 > var11) {
+				continue;
+			}
+
+			float var15 = (float) var6.field12162 / 4096.0F;
+			float var16 = this.field9795.entries[0] * var15 + var13;
+			float var17 = this.field9795.entries[3] * var15 + var11;
+			float var18 = this.field9789 * var13 / var11 + this.field9814;
+			float var19 = this.field9802 * var14 / var11 + this.field9806;
+			float var20 = this.field9789 * var16 / var17 + this.field9814;
+			this.drawParticle(arg0, arg1, arg2, var6, (int) var18, (int) var19, var12, (int) (var20 < var18 ? var18 - var20 : var20 - var18));
 		}
 	}
 
 	@ObfuscatedName("afg.sw(ZZZLaqb;IIFI)V")
-	public void method15672(boolean arg0, boolean arg1, boolean arg2, Particle arg3, int arg4, int arg5, float arg6, int arg7) {
+	public void drawParticle(boolean arg0, boolean arg1, boolean arg2, Particle arg3, int arg4, int arg5, float arg6, int arg7) {
 		int var9 = arg3.field12160;
 		int var11 = arg7 << 1;
 		if (var9 == -1) {
-			this.method15669(arg1, arg4, arg5, arg6, arg7, arg3.field12158, 1);
+			this.drawBillboard(arg1, arg4, arg5, arg6, arg7, arg3.field12158, 1);
 			return;
 		}
-		if (this.field9812 != var9) {
-			Sprite var12 = (Sprite) this.field9810.method2930((long) var9);
+		if (this.cachedBillboardMaterial != var9) {
+			Sprite var12 = (Sprite) this.billboardMaterialSprites.get((long) var9);
 			if (var12 == null) {
-				Material var13 = this.field1597.method2043(var9);
-				int[] var14 = this.method15655(var9);
+				Material var13 = this.materialList.get(var9);
+				int[] var14 = this.getMaterialTexture(var9);
 				if (var14 == null) {
 					return;
 				}
-				int var15 = var13.field1357;
-				var12 = this.method2199(var14, 0, var15, var15, var15);
-				this.field9810.method2921(var12, (long) var9);
+				int var15 = var13.size;
+				var12 = this.createSprite(var14, 0, var15, var15, var15);
+				this.billboardMaterialSprites.put(var12, (long) var9);
 			}
-			this.field9812 = var9;
-			this.field9811 = var12;
+			this.cachedBillboardMaterial = var9;
+			this.cachedBillboardSprite = var12;
 		}
 		var11++;
-		((PureJavaSprite) this.field9811).method15358(arg0, arg1, arg2, arg4 - arg7, arg5 - arg7, arg6, var11, var11, 0, arg3.field12158, 1, 1, false);
+		((PureJavaSprite) this.cachedBillboardSprite).drawAsBillboard(arg0, arg1, arg2, arg4 - arg7, arg5 - arg7, arg6, var11, var11, 0, arg3.field12158, 1, 1, false);
 	}
 
 	@ObfuscatedName("afg.ss(ZZZIIFIISIII)V")
@@ -2160,44 +2167,44 @@ public class PureJavaRenderer extends Renderer {
 			return;
 		}
 		if (arg8 != -1) {
-			Material var13 = this.field1597.method2043(arg8);
-			if (!var13.field1342) {
-				if (this.field9812 != arg8) {
-					Sprite var14 = (Sprite) this.field9810.method2930((long) arg8);
+			Material var13 = this.materialList.get(arg8);
+			if (!var13.highDetail) {
+				if (this.cachedBillboardMaterial != arg8) {
+					Sprite var14 = (Sprite) this.billboardMaterialSprites.get((long) arg8);
 					if (var14 == null) {
-						int[] var15 = this.method15655(arg8);
+						int[] var15 = this.getMaterialTexture(arg8);
 						if (var15 == null) {
 							return;
 						}
-						int var16 = var13.field1357;
-						var14 = this.method2199(var15, 0, var16, var16, var16);
-						this.field9810.method2921(var14, (long) arg8);
+						int var16 = var13.size;
+						var14 = this.createSprite(var15, 0, var16, var16, var16);
+						this.billboardMaterialSprites.put(var14, (long) arg8);
 					}
-					this.field9812 = arg8;
-					this.field9811 = var14;
+					this.cachedBillboardMaterial = arg8;
+					this.cachedBillboardSprite = var14;
 				}
-				((PureJavaSprite) this.field9811).method15358(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, MaterialAlphaMode.field7573 != var13.field1340);
+				((PureJavaSprite) this.cachedBillboardSprite).drawAsBillboard(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, MaterialAlphaMode.field7573 != var13.alphaMode);
 				return;
 			}
 		}
-		this.method15669(arg1, arg3, arg4, arg5, arg6, arg9, arg11);
+		this.drawBillboard(arg1, arg3, arg4, arg5, arg6, arg9, arg11);
 	}
 
 	@ObfuscatedName("afg.sx(ZIIFIII)V")
-	public void method15669(boolean arg0, int arg1, int arg2, float arg3, int arg4, int arg5, int arg6) {
-		if (this.field9778 == null) {
+	public void drawBillboard(boolean arg0, int arg1, int arg2, float arg3, int arg4, int arg5, int arg6) {
+		if (this.colour == null) {
 			return;
 		}
 		if (arg4 < 0) {
 			arg4 = -arg4;
 		}
 		int var8 = arg2 - arg4;
-		if (var8 < this.field9784) {
-			var8 = this.field9784;
+		if (var8 < this.clipMinY) {
+			var8 = this.clipMinY;
 		}
 		int var9 = arg2 + arg4 + 1;
-		if (var9 > this.field9785) {
-			var9 = this.field9785;
+		if (var9 > this.clipMaxY) {
+			var9 = this.clipMaxY;
 		}
 		int var10 = var8;
 		int var11 = arg4 * arg4;
@@ -2216,17 +2223,17 @@ public class PureJavaRenderer extends Renderer {
 					var15 += var12++ + var12;
 				}
 				int var57 = arg1 - var12 + 1;
-				if (var57 < this.field9805) {
-					var57 = this.field9805;
+				if (var57 < this.clipMinX) {
+					var57 = this.clipMinX;
 				}
 				int var58 = arg1 + var12;
-				if (var58 > this.field9801) {
-					var58 = this.field9801;
+				if (var58 > this.clipMaxX) {
+					var58 = this.clipMaxX;
 				}
-				int var59 = this.field9779 * var10 + var57;
+				int var59 = this.sizeX * var10 + var57;
 				for (int var60 = var57; var60 < var58; var60++) {
-					if (!arg0 || arg3 < this.field9781[var59]) {
-						this.field9778[var59] = arg5;
+					if (!arg0 || arg3 < this.depth[var59]) {
+						this.colour[var59] = arg5;
 					}
 					var59++;
 				}
@@ -2245,17 +2252,17 @@ public class PureJavaRenderer extends Renderer {
 					var64 -= var61 + var61;
 				}
 				int var66 = arg1 - var61;
-				if (var66 < this.field9805) {
-					var66 = this.field9805;
+				if (var66 < this.clipMinX) {
+					var66 = this.clipMinX;
 				}
 				int var67 = arg1 + var61;
-				if (var67 > this.field9801 - 1) {
-					var67 = this.field9801 - 1;
+				if (var67 > this.clipMaxX - 1) {
+					var67 = this.clipMaxX - 1;
 				}
-				int var68 = this.field9779 * var10 + var66;
+				int var68 = this.sizeX * var10 + var66;
 				for (int var69 = var66; var69 <= var67; var69++) {
-					if (!arg0 || arg3 < this.field9781[var68]) {
-						this.field9778[var68] = arg5;
+					if (!arg0 || arg3 < this.depth[var68]) {
+						this.colour[var68] = arg5;
 					}
 					var68++;
 				}
@@ -2273,19 +2280,19 @@ public class PureJavaRenderer extends Renderer {
 					var15 += var12++ + var12;
 				}
 				int var19 = arg1 - var12 + 1;
-				if (var19 < this.field9805) {
-					var19 = this.field9805;
+				if (var19 < this.clipMinX) {
+					var19 = this.clipMinX;
 				}
 				int var20 = arg1 + var12;
-				if (var20 > this.field9801) {
-					var20 = this.field9801;
+				if (var20 > this.clipMaxX) {
+					var20 = this.clipMaxX;
 				}
-				int var21 = this.field9779 * var10 + var19;
+				int var21 = this.sizeX * var10 + var19;
 				for (int var22 = var19; var22 < var20; var22++) {
-					if (!arg0 || arg3 < this.field9781[var21]) {
-						int var23 = this.field9778[var21];
+					if (!arg0 || arg3 < this.depth[var21]) {
+						int var23 = this.colour[var21];
 						int var24 = ((var23 & 0xFF00FF) * var18 >> 8 & 0xFF00FF) + ((var23 & 0xFF00) * var18 >> 8 & 0xFF00);
-						this.field9778[var21] = var17 + var24;
+						this.colour[var21] = var17 + var24;
 					}
 					var21++;
 				}
@@ -2304,19 +2311,19 @@ public class PureJavaRenderer extends Renderer {
 					var28 -= var25 + var25;
 				}
 				int var30 = arg1 - var25;
-				if (var30 < this.field9805) {
-					var30 = this.field9805;
+				if (var30 < this.clipMinX) {
+					var30 = this.clipMinX;
 				}
 				int var31 = arg1 + var25;
-				if (var31 > this.field9801 - 1) {
-					var31 = this.field9801 - 1;
+				if (var31 > this.clipMaxX - 1) {
+					var31 = this.clipMaxX - 1;
 				}
-				int var32 = this.field9779 * var10 + var30;
+				int var32 = this.sizeX * var10 + var30;
 				for (int var33 = var30; var33 <= var31; var33++) {
-					if (!arg0 || arg3 < this.field9781[var32]) {
-						int var34 = this.field9778[var32];
+					if (!arg0 || arg3 < this.depth[var32]) {
+						int var34 = this.colour[var32];
 						int var35 = ((var34 & 0xFF00) * var18 >> 8 & 0xFF00) + ((var34 & 0xFF00FF) * var18 >> 8 & 0xFF00FF);
-						this.field9778[var32] = var17 + var35;
+						this.colour[var32] = var17 + var35;
 					}
 					var32++;
 				}
@@ -2331,21 +2338,21 @@ public class PureJavaRenderer extends Renderer {
 					var15 += var12++ + var12;
 				}
 				int var36 = arg1 - var12 + 1;
-				if (var36 < this.field9805) {
-					var36 = this.field9805;
+				if (var36 < this.clipMinX) {
+					var36 = this.clipMinX;
 				}
 				int var37 = arg1 + var12;
-				if (var37 > this.field9801) {
-					var37 = this.field9801;
+				if (var37 > this.clipMaxX) {
+					var37 = this.clipMaxX;
 				}
-				int var38 = this.field9779 * var10 + var36;
+				int var38 = this.sizeX * var10 + var36;
 				for (int var39 = var36; var39 < var37; var39++) {
-					if (!arg0 || arg3 < this.field9781[var38]) {
-						int var40 = this.field9778[var38];
+					if (!arg0 || arg3 < this.depth[var38]) {
+						int var40 = this.colour[var38];
 						int var41 = arg5 + var40;
 						int var42 = (arg5 & 0xFF00FF) + (var40 & 0xFF00FF);
 						int var43 = (var41 - var42 & 0x10000) + (var42 & 0x1000100);
-						this.field9778[var38] = var41 - var43 | var43 - (var43 >>> 8);
+						this.colour[var38] = var41 - var43 | var43 - (var43 >>> 8);
 					}
 					var38++;
 				}
@@ -2364,21 +2371,21 @@ public class PureJavaRenderer extends Renderer {
 					var47 -= var44 + var44;
 				}
 				int var49 = arg1 - var44;
-				if (var49 < this.field9805) {
-					var49 = this.field9805;
+				if (var49 < this.clipMinX) {
+					var49 = this.clipMinX;
 				}
 				int var50 = arg1 + var44;
-				if (var50 > this.field9801 - 1) {
-					var50 = this.field9801 - 1;
+				if (var50 > this.clipMaxX - 1) {
+					var50 = this.clipMaxX - 1;
 				}
-				int var51 = this.field9779 * var10 + var49;
+				int var51 = this.sizeX * var10 + var49;
 				for (int var52 = var49; var52 <= var50; var52++) {
-					if (!arg0 || arg3 < this.field9781[var51]) {
-						int var53 = this.field9778[var51];
+					if (!arg0 || arg3 < this.depth[var51]) {
+						int var53 = this.colour[var51];
 						int var54 = arg5 + var53;
 						int var55 = (arg5 & 0xFF00FF) + (var53 & 0xFF00FF);
 						int var56 = (var54 - var55 & 0x10000) + (var55 & 0x1000100);
-						this.field9778[var51] = var54 - var56 | var56 - (var56 >>> 8);
+						this.colour[var51] = var54 - var56 | var56 - (var56 >>> 8);
 					}
 					var51++;
 				}
@@ -2414,7 +2421,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.dc(F)V")
-	public void method2222(float arg0) {
+	public void setSunAmbientIntensity(float arg0) {
 		this.field9791 = (int) (arg0 * 65535.0F);
 	}
 
@@ -2433,23 +2440,23 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.dn(III)V")
-	public void method2572(int arg0, int arg1, int arg2) {
-		for (int var4 = 0; var4 < this.field9808.length; var4++) {
-			PureJavaRendererContext var5 = this.field9808[var4];
-			var5.field858 = arg0 & 0xFFFFFF;
-			int var6 = var5.field858 >>> 16 & 0xFF;
+	public void setFog(int arg0, int arg1, int arg2) {
+		for (int var4 = 0; var4 < this.context.length; var4++) {
+			PureJavaRendererContext var5 = this.context[var4];
+			var5.fadeColour = arg0 & 0xFFFFFF;
+			int var6 = var5.fadeColour >>> 16 & 0xFF;
 			if (var6 < 2) {
 				var6 = 2;
 			}
-			int var7 = var5.field858 >> 8 & 0xFF;
+			int var7 = var5.fadeColour >> 8 & 0xFF;
 			if (var7 < 2) {
 				var7 = 2;
 			}
-			int var8 = var5.field858 & 0xFF;
+			int var8 = var5.fadeColour & 0xFF;
 			if (var8 < 2) {
 				var8 = 2;
 			}
-			var5.field858 = var6 << 16 | var7 << 8 | var8;
+			var5.fadeColour = var6 << 16 | var7 << 8 | var8;
 			if (arg1 < 0) {
 				var5.field826 = false;
 			} else {
@@ -2460,9 +2467,9 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.sm()V")
 	public void method15683() {
-		this.field9793.method6609(this.field9792);
+		this.field9793.setToMatrix4x3(this.field9792);
 		this.field9803.method6604(this.field9793);
-		this.field9803.method6720(this.field9795);
+		this.field9803.multiply(this.field9795);
 		this.field9803.method6607(this.field9796[0]);
 		this.field9803.method6643(this.field9796[1]);
 		this.field9803.method6625(this.field9796[2]);
@@ -2470,18 +2477,18 @@ public class PureJavaRenderer extends Renderer {
 		this.field9803.method6627(this.field9796[4]);
 		this.field9803.method6628(this.field9796[5]);
 		float var1 = this.field9795.method6632();
-		float var2 = (var1 - 255.0F) * this.field9795.field4315[10] + this.field9795.field4315[14];
-		float var3 = this.field9795.field4315[10] * var1 + this.field9795.field4315[14];
+		float var2 = (var1 - 255.0F) * this.field9795.entries[10] + this.field9795.entries[14];
+		float var3 = this.field9795.entries[10] * var1 + this.field9795.entries[14];
 		float var4 = var3 - var2;
-		for (int var5 = 0; var5 < this.field9807; var5++) {
-			PureJavaRendererContext var6 = this.field9808[var5];
+		for (int var5 = 0; var5 < this.threadLocalsCount; var5++) {
+			PureJavaRendererContext var6 = this.context[var5];
 			var6.field865 = var2;
 			var6.field855 = var4;
 		}
 	}
 
 	@ObfuscatedName("afg.du(I)Ldz;")
-	public EnvironmentSampler method2229(int arg0) {
+	public EnvironmentSampler createEnvironmentSampler(int arg0) {
 		return null;
 	}
 
@@ -2491,7 +2498,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.dp(Ldz;)V")
-	public void method2516(EnvironmentSampler arg0) {
+	public void setEnvironmentSampler(EnvironmentSampler arg0) {
 	}
 
 	@ObfuscatedName("afg.dy(IIII)V")
@@ -2508,16 +2515,16 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.dx()Z")
-	public boolean method2152() {
+	public boolean isLevelsEnabled() {
 		return false;
 	}
 
 	@ObfuscatedName("afg.dg(FFFFF)V")
-	public void method2236(float arg0, float arg1, float arg2, float arg3, float arg4) {
+	public void setLevels(float arg0, float arg1, float arg2, float arg3, float arg4) {
 	}
 
 	@ObfuscatedName("afg.de([I)Lcj;")
-	public ColourRemapper method2237(int[] arg0) {
+	public ColourRemapper createColourRemapper(int[] arg0) {
 		return null;
 	}
 
@@ -2527,84 +2534,84 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.eo(Lcj;FLcj;FLcj;F)V")
-	public void method2239(ColourRemapper arg0, float arg1, ColourRemapper arg2, float arg3, ColourRemapper arg4, float arg5) {
+	public void setColourRemapping(ColourRemapper arg0, float arg1, ColourRemapper arg2, float arg3, ColourRemapper arg4, float arg5) {
 	}
 
 	@ObfuscatedName("afg.ey()Z")
-	public boolean method2274() {
+	public boolean enableBloom() {
 		return false;
 	}
 
 	@ObfuscatedName("afg.eu()V")
-	public void method2273() {
+	public void disableBloom() {
 	}
 
 	@ObfuscatedName("afg.ed()Z")
-	public boolean method2242() {
+	public boolean isBloomEnabled() {
 		return false;
 	}
 
 	@ObfuscatedName("afg.es(FFFFFF)V")
-	public void method2244(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
+	public void setBloom(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
 	}
 
 	@ObfuscatedName("afg.ei(ILdy;)V")
 	public void method2245(int arg0, WaterFogData arg1) {
-		for (int var3 = 0; var3 < this.field9808.length; var3++) {
-			this.field9808[var3].field823 = this.field9808[var3].field858;
-			this.field9808[var3].field832 = arg0;
-			this.field9808[var3].field858 = arg1.field1575;
-			this.field9808[var3].field861 = arg1.field1573;
-			this.field9808[var3].field867 = true;
+		for (int var3 = 0; var3 < this.context.length; var3++) {
+			this.context[var3].field823 = this.context[var3].fadeColour;
+			this.context[var3].field832 = arg0;
+			this.context[var3].fadeColour = arg1.field1575;
+			this.context[var3].field861 = arg1.field1573;
+			this.context[var3].field867 = true;
 		}
 	}
 
 	@ObfuscatedName("afg.el(ILdy;)V")
-	public void method2246(int arg0, WaterFogData arg1) {
-		PureJavaRendererContext var3 = this.method15674(Thread.currentThread());
+	public void setWaterFog(int arg0, WaterFogData arg1) {
+		PureJavaRendererContext var3 = this.getContext(Thread.currentThread());
 		var3.field832 = arg0;
-		var3.field858 = arg1.field1575;
+		var3.fadeColour = arg1.field1575;
 		var3.field861 = arg1.field1573;
 	}
 
 	@ObfuscatedName("afg.ej()V")
 	public void method2247() {
-		for (int var1 = 0; var1 < this.field9808.length; var1++) {
-			this.field9808[var1].field858 = this.field9808[var1].field823;
-			this.field9808[var1].field867 = false;
+		for (int var1 = 0; var1 < this.context.length; var1++) {
+			this.context[var1].fadeColour = this.context[var1].field823;
+			this.context[var1].field867 = false;
 		}
 	}
 
 	@ObfuscatedName("afg.br(IIFIIFIIFIIII)V")
 	public void method2552(int arg0, int arg1, float arg2, int arg3, int arg4, float arg5, int arg6, int arg7, float arg8, int arg9, int arg10, int arg11, int arg12) {
-		boolean var14 = this.field9778 != null;
-		boolean var15 = this.field9781 != null;
+		boolean var14 = this.colour != null;
+		boolean var15 = this.depth != null;
 		if (!var14 && !var15) {
 			return;
 		}
-		PureJavaRendererContext var16 = this.method15674(Thread.currentThread());
-		Rasteriser var17 = var16.field837;
+		PureJavaRendererContext var16 = this.getContext(Thread.currentThread());
+		Rasteriser var17 = var16.rasteriser;
 		var17.field933 = false;
-		int var18 = arg0 - this.field9805;
-		int var19 = arg3 - this.field9805;
-		int var20 = arg6 - this.field9805;
-		int var21 = arg1 - this.field9784;
-		int var22 = arg4 - this.field9784;
-		int var23 = arg7 - this.field9784;
+		int var18 = arg0 - this.clipMinX;
+		int var19 = arg3 - this.clipMinX;
+		int var20 = arg6 - this.clipMinX;
+		int var21 = arg1 - this.clipMinY;
+		int var22 = arg4 - this.clipMinY;
+		int var23 = arg7 - this.clipMinY;
 		var17.field936 = var18 < 0 || var18 > var17.field945 || var19 < 0 || var19 > var17.field945 || var20 < 0 || var20 > var17.field945;
 		int var24 = arg9 >>> 24;
 		if (arg12 == 0 || arg12 == 1 && var24 == 255) {
 			var17.field935 = 0;
 			var17.field968 = false;
-			var17.method1030(var14, var15, false, (float) var21, (float) var22, (float) var23, (float) var18, (float) var19, (float) var20, arg2, arg5, arg8, arg9, arg10, arg11);
+			var17.drawTriangle(var14, var15, false, (float) var21, (float) var22, (float) var23, (float) var18, (float) var19, (float) var20, arg2, arg5, arg8, arg9, arg10, arg11);
 		} else if (arg12 == 1) {
 			var17.field935 = 255 - var24;
 			var17.field968 = false;
-			var17.method1030(var14, var15, false, (float) var21, (float) var22, (float) var23, (float) var18, (float) var19, (float) var20, arg2, arg5, arg8, arg9, arg10, arg11);
+			var17.drawTriangle(var14, var15, false, (float) var21, (float) var22, (float) var23, (float) var18, (float) var19, (float) var20, arg2, arg5, arg8, arg9, arg10, arg11);
 		} else if (arg12 == 2) {
 			var17.field935 = 128;
 			var17.field968 = true;
-			var17.method1030(var14, var15, false, (float) var21, (float) var22, (float) var23, (float) var18, (float) var19, (float) var20, arg2, arg5, arg8, arg9, arg10, arg11);
+			var17.drawTriangle(var14, var15, false, (float) var21, (float) var22, (float) var23, (float) var18, (float) var19, (float) var20, arg2, arg5, arg8, arg9, arg10, arg11);
 		} else {
 			throw new IllegalArgumentException();
 		}
@@ -2613,10 +2620,10 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.ev(FFF[F)V")
 	public void method2525(float arg0, float arg1, float arg2, float[] arg3) {
-		float var5 = this.field9803.field4315[11] * arg2 + this.field9803.field4315[7] * arg1 + this.field9803.field4315[3] * arg0 + this.field9803.field4315[15];
-		float var6 = this.field9803.field4315[8] * arg2 + this.field9803.field4315[4] * arg1 + this.field9803.field4315[0] * arg0 + this.field9803.field4315[12];
-		float var7 = this.field9803.field4315[9] * arg2 + this.field9803.field4315[5] * arg1 + this.field9803.field4315[1] * arg0 + this.field9803.field4315[13];
-		float var8 = this.field9793.field4315[10] * arg2 + this.field9793.field4315[6] * arg1 + this.field9793.field4315[2] * arg0 + this.field9793.field4315[14];
+		float var5 = this.field9803.entries[11] * arg2 + this.field9803.entries[7] * arg1 + this.field9803.entries[3] * arg0 + this.field9803.entries[15];
+		float var6 = this.field9803.entries[8] * arg2 + this.field9803.entries[4] * arg1 + this.field9803.entries[0] * arg0 + this.field9803.entries[12];
+		float var7 = this.field9803.entries[9] * arg2 + this.field9803.entries[5] * arg1 + this.field9803.entries[1] * arg0 + this.field9803.entries[13];
+		float var8 = this.field9793.entries[10] * arg2 + this.field9793.entries[6] * arg1 + this.field9793.entries[2] * arg0 + this.field9793.entries[14];
 		arg3[0] = this.field9789 * var6 / var5 + this.field9814;
 		arg3[1] = this.field9802 * var7 / var5 + this.field9806;
 		arg3[2] = var8;
@@ -2624,28 +2631,28 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.ep(FFF[F)V")
 	public void method2507(float arg0, float arg1, float arg2, float[] arg3) {
-		float var5 = this.field9803.field4315[10] * arg2 + this.field9803.field4315[6] * arg1 + this.field9803.field4315[2] * arg0 + this.field9803.field4315[14];
-		float var6 = this.field9803.field4315[11] * arg2 + this.field9803.field4315[7] * arg1 + this.field9803.field4315[3] * arg0 + this.field9803.field4315[15];
+		float var5 = this.field9803.entries[10] * arg2 + this.field9803.entries[6] * arg1 + this.field9803.entries[2] * arg0 + this.field9803.entries[14];
+		float var6 = this.field9803.entries[11] * arg2 + this.field9803.entries[7] * arg1 + this.field9803.entries[3] * arg0 + this.field9803.entries[15];
 		if (var5 < -var6 || var5 > var6) {
 			arg3[2] = Float.NaN;
 			arg3[1] = Float.NaN;
 			arg3[0] = Float.NaN;
 			return;
 		}
-		float var7 = this.field9803.field4315[8] * arg2 + this.field9803.field4315[4] * arg1 + this.field9803.field4315[0] * arg0 + this.field9803.field4315[12];
+		float var7 = this.field9803.entries[8] * arg2 + this.field9803.entries[4] * arg1 + this.field9803.entries[0] * arg0 + this.field9803.entries[12];
 		if (var7 < -var6 || var7 > var6) {
 			arg3[2] = Float.NaN;
 			arg3[1] = Float.NaN;
 			arg3[0] = Float.NaN;
 			return;
 		}
-		float var8 = this.field9803.field4315[9] * arg2 + this.field9803.field4315[5] * arg1 + this.field9803.field4315[1] * arg0 + this.field9803.field4315[13];
+		float var8 = this.field9803.entries[9] * arg2 + this.field9803.entries[5] * arg1 + this.field9803.entries[1] * arg0 + this.field9803.entries[13];
 		if (var8 < -var6 || var8 > var6) {
 			arg3[2] = Float.NaN;
 			arg3[1] = Float.NaN;
 			arg3[0] = Float.NaN;
 		} else {
-			float var9 = this.field9793.field4315[10] * arg2 + this.field9793.field4315[6] * arg1 + this.field9793.field4315[2] * arg0 + this.field9793.field4315[14];
+			float var9 = this.field9793.entries[10] * arg2 + this.field9793.entries[6] * arg1 + this.field9793.entries[2] * arg0 + this.field9793.entries[14];
 			arg3[0] = this.field9789 * var7 / var6 + this.field9814;
 			arg3[1] = this.field9802 * var8 / var6 + this.field9806;
 			arg3[2] = var9;
@@ -2653,7 +2660,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.am()Lafq;")
-	public Framebuffer method2145() {
+	public Framebuffer createFramebuffer() {
 		return new PureJavaFramebuffer(this);
 	}
 

@@ -33,7 +33,7 @@ public class Cuboid {
 	public static final float[] field4254 = new float[8];
 
 	@ObfuscatedName("oj.e(IIIILpq;FFFF)Z")
-	public boolean method6275(int arg0, int arg1, int arg2, int arg3, Matrix4x4 arg4, float arg5, float arg6, float arg7, float arg8) {
+	public boolean pick(int arg0, int arg1, int arg2, int arg3, Matrix4x4 arg4, float arg5, float arg6, float arg7, float arg8) {
 		boolean var10 = false;
 		float var11 = Float.MAX_VALUE;
 		float var12 = -3.4028235E38F;
@@ -67,11 +67,11 @@ public class Cuboid {
 			float var16 = field4247[var15];
 			float var17 = field4246[var15];
 			float var18 = field4254[var15];
-			float var19 = arg4.field4315[10] * var18 + arg4.field4315[2] * var16 + arg4.field4315[6] * var17 + arg4.field4315[14];
-			float var20 = arg4.field4315[11] * var18 + arg4.field4315[3] * var16 + arg4.field4315[7] * var17 + arg4.field4315[15];
+			float var19 = arg4.entries[10] * var18 + arg4.entries[2] * var16 + arg4.entries[6] * var17 + arg4.entries[14];
+			float var20 = arg4.entries[11] * var18 + arg4.entries[3] * var16 + arg4.entries[7] * var17 + arg4.entries[15];
 			if (var19 >= -var20) {
-				float var21 = arg4.field4315[8] * var18 + arg4.field4315[0] * var16 + arg4.field4315[4] * var17 + arg4.field4315[12];
-				float var22 = arg4.field4315[9] * var18 + arg4.field4315[1] * var16 + arg4.field4315[5] * var17 + arg4.field4315[13];
+				float var21 = arg4.entries[8] * var18 + arg4.entries[0] * var16 + arg4.entries[4] * var17 + arg4.entries[12];
+				float var22 = arg4.entries[9] * var18 + arg4.entries[1] * var16 + arg4.entries[5] * var17 + arg4.entries[13];
 				float var23 = arg7 * var21 / var20 + arg5;
 				float var24 = arg8 * var22 / var20 + arg6;
 				if (var23 < var11) {

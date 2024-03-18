@@ -263,7 +263,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		var2.method1813(var3, this.field11713[0], 0);
 		if (this.field12585 != null) {
 			ParticleList var5 = this.field12585.method9965();
-			arg0.method2198(var5);
+			arg0.drawParticles(var5);
 		}
 		this.field12604 = var2.method1731();
 		var2.method1728();

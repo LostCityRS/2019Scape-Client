@@ -531,7 +531,7 @@ public class MapLoader {
 				var5 |= 0x20;
 			}
 			int[][] var6 = arg1 == null || var3 >= arg1.length ? this.levelHeightmap[var3] : arg1[var3];
-			this.scene.method8709(var3, arg0.method2214(this.maxTileX, this.maxTileZ, this.levelHeightmap[var3], var6, 512, var4, var5));
+			this.scene.method8709(var3, arg0.createFloor(this.maxTileX, this.maxTileZ, this.levelHeightmap[var3], var6, 512, var4, var5));
 		}
 	}
 
@@ -1574,9 +1574,9 @@ public class MapLoader {
 			return arg1.field8156;
 		}
 		if (arg1.texture != -1) {
-			Material var2 = arg0.field1597.method2043(arg1.texture);
-			if (!var2.field1342) {
-				return var2.field1366;
+			Material var2 = arg0.materialList.get(arg1.texture);
+			if (!var2.highDetail) {
+				return var2.averageColour;
 			}
 		}
 		return arg1.rgb;

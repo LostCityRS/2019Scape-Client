@@ -71,20 +71,20 @@ public class SpriteDataProvider {
 				}
 			}
 			for (int var18 = 0; var18 < var4; var18++) {
-				var5[var18].field10226 = var16;
+				var5[var18].palette = var16;
 			}
 			var1.pos = 0;
 			for (int var19 = 0; var19 < var4; var19++) {
 				PalettedSpriteData var20 = var5[var19];
 				int var21 = var20.field10221 * var20.field10220;
-				var20.field10227 = new byte[var21];
+				var20.colour = new byte[var21];
 				int var22 = var1.g1();
 				if ((var22 & 0x2) != 0) {
 					boolean var26 = false;
 					var20.field10228 = new byte[var21];
 					if ((var22 & 0x1) == 0) {
 						for (int var27 = 0; var27 < var21; var27++) {
-							var20.field10227[var27] = var1.g1b();
+							var20.colour[var27] = var1.g1b();
 						}
 						for (int var28 = 0; var28 < var21; var28++) {
 							byte var29 = var20.field10228[var28] = var1.g1b();
@@ -93,7 +93,7 @@ public class SpriteDataProvider {
 					} else {
 						for (int var30 = 0; var30 < var20.field10220; var30++) {
 							for (int var31 = 0; var31 < var20.field10221; var31++) {
-								var20.field10227[var20.field10220 * var31 + var30] = var1.g1b();
+								var20.colour[var20.field10220 * var31 + var30] = var1.g1b();
 							}
 						}
 						for (int var32 = 0; var32 < var20.field10220; var32++) {
@@ -108,12 +108,12 @@ public class SpriteDataProvider {
 					}
 				} else if ((var22 & 0x1) == 0) {
 					for (int var23 = 0; var23 < var21; var23++) {
-						var20.field10227[var23] = var1.g1b();
+						var20.colour[var23] = var1.g1b();
 					}
 				} else {
 					for (int var24 = 0; var24 < var20.field10220; var24++) {
 						for (int var25 = 0; var25 < var20.field10221; var25++) {
-							var20.field10227[var20.field10220 * var25 + var24] = var1.g1b();
+							var20.colour[var20.field10220 * var25 + var24] = var1.g1b();
 						}
 					}
 				}

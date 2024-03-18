@@ -102,13 +102,13 @@ public class PureJavaFramebuffer extends Framebuffer {
 		float[] var12 = null;
 		if (arg6 && this.field11910 != null) {
 			var9 = this.field11910.field891;
-			var10 = this.field11909.field9778;
+			var10 = this.field11909.colour;
 		}
 		if (arg7 && this.field11912 != null) {
 			var11 = this.field11912.field973;
-			var12 = this.field11909.field9781;
+			var12 = this.field11909.depth;
 		}
-		method6069(this.field11911, this.field11909.field9779, var9, var10, var11, var12, arg0, arg1, arg4, arg5, arg2, arg3);
+		method6069(this.field11911, this.field11909.sizeX, var9, var10, var11, var12, arg0, arg1, arg4, arg5, arg2, arg3);
 	}
 
 	@ObfuscatedName("nr.ac(II[I[I[F[FIIIIIII)V")

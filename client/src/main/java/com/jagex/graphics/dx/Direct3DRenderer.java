@@ -286,7 +286,7 @@ public class Direct3DRenderer extends GpuRenderer {
 			var17.method6348(1.0F, -1.0F, 0.5F);
 			var17.method6315(0.0F, 0.0F, 0.5F);
 			this.field11968 = new Matrix4x4();
-			this.field11968.method6609(var17);
+			this.field11968.setToMatrix4x3(var17);
 			IDirect3DDevice.BeginScene(this.device);
 		} catch (Throwable ex) {
 			ex.printStackTrace();
@@ -385,7 +385,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.f()Lcz;")
-	public RendererInfo method2272() {
+	public RendererInfo getRendererInfo() {
 		D3DADAPTER_IDENTIFIER var1 = new D3DADAPTER_IDENTIFIER();
 		IDirect3D.GetAdapterIdentifier(this.field11955, this.field11956, 0, var1);
 		return new RendererInfo(var1.VendorID, this.method16279() ? "Direct3D FF" : "Direct3D", 9, var1.Description, var1.DriverVersion, this.method16279());
@@ -463,7 +463,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.am()Lafq;")
-	public Framebuffer method2145() {
+	public Framebuffer createFramebuffer() {
 		return new Direct3DFramebuffer(this);
 	}
 
@@ -706,14 +706,14 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.rn(Lpq;Lpq;Lpq;)V")
 	public void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2) {
-		IDirect3DDevice.SetTransform(this.device, 256, arg0.field4315);
-		IDirect3DDevice.SetTransform(this.device, 2, arg1.field4315);
-		IDirect3DDevice.SetTransform(this.device, 3, arg2.field4315);
+		IDirect3DDevice.SetTransform(this.device, 256, arg0.entries);
+		IDirect3DDevice.SetTransform(this.device, 2, arg1.entries);
+		IDirect3DDevice.SetTransform(this.device, 3, arg2.entries);
 	}
 
 	@ObfuscatedName("aqd.ti(Lpq;)V")
 	public void method16006(Matrix4x4 arg0) {
-		arg0.method6720(this.field11968);
+		arg0.multiply(this.field11968);
 	}
 
 	@ObfuscatedName("aqd.tp()V")
@@ -1217,12 +1217,12 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.d(I)V")
-	public final synchronized void method2120(int arg0) {
+	public final synchronized void cycle(int arg0) {
 		for (int var2 = 0; var2 < this.field11982; var2++) {
 			IUnknown.Release(this.field11992[var2]);
 		}
 		this.field11982 = 0;
-		super.method2120(arg0);
+		super.cycle(arg0);
 	}
 
 	@ObfuscatedName("aqd.aix(Lck;Ldg;)I")

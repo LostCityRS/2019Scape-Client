@@ -112,12 +112,12 @@ public class LegacyGlEffectRelated2 extends GlEffect {
 			OpenGL.glBindProgramARB(34336, this.field1021.field10028 == Integer.MAX_VALUE ? this.field9324.field1024 : this.field9322.field1024);
 		}
 		float var2 = (float) this.field1021.field10028;
-		float var3 = var1.field4315[4] * var2 + var1.field4315[12];
-		float var4 = var1.field4315[5] * var2 + var1.field4315[13];
-		float var5 = var1.field4315[6] * var2 + var1.field4315[14];
-		field9325[0] = -var1.field4315[4];
-		field9325[1] = -var1.field4315[5];
-		field9325[2] = -var1.field4315[6];
+		float var3 = var1.entries[4] * var2 + var1.entries[12];
+		float var4 = var1.entries[5] * var2 + var1.entries[13];
+		float var5 = var1.entries[6] * var2 + var1.entries[14];
+		field9325[0] = -var1.entries[4];
+		field9325[1] = -var1.entries[5];
+		field9325[2] = -var1.entries[6];
 		field9325[3] = -(field9325[2] * var5 + field9325[0] * var3 + field9325[1] * var4);
 		OpenGL.glProgramLocalParameter4fARB(34336, 1, field9325[0], field9325[1], field9325[2], field9325[3]);
 		OpenGL.glEnable(34336);

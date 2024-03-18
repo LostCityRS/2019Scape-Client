@@ -672,7 +672,7 @@ public class LocType implements ConfigType {
 		WeightedCache var19 = this.factory.modelCacheDynamic;
 		Pair var20;
 		synchronized (this.factory.modelCacheDynamic) {
-			var20 = (Pair) this.factory.modelCacheDynamic.method2930(var14);
+			var20 = (Pair) this.factory.modelCacheDynamic.get(var14);
 		}
 		Model var22 = (Model) (var20 == null ? null : var20.field8737);
 		HardShadow var23 = null;
@@ -703,7 +703,7 @@ public class LocType implements ConfigType {
 			Pair var25 = new Pair(var22, var23);
 			WeightedCache var26 = this.factory.modelCacheDynamic;
 			synchronized (this.factory.modelCacheDynamic) {
-				this.factory.modelCacheDynamic.method2921(var25, var14);
+				this.factory.modelCacheDynamic.put(var25, var14);
 			}
 		}
 		Model var28;
@@ -760,7 +760,7 @@ public class LocType implements ConfigType {
 		WeightedCache var17 = this.factory.field7532;
 		Model var18;
 		synchronized (this.factory.field7532) {
-			var18 = (Model) this.factory.field7532.method2930(var15);
+			var18 = (Model) this.factory.field7532.get(var15);
 		}
 		if (var18 == null || arg0.method2394(var18.method1691(), arg1) != 0) {
 			if (var18 != null) {
@@ -772,7 +772,7 @@ public class LocType implements ConfigType {
 			}
 			WeightedCache var20 = this.factory.field7532;
 			synchronized (this.factory.field7532) {
-				this.factory.field7532.method2921(var18, var15);
+				this.factory.field7532.put(var18, var15);
 			}
 		}
 		boolean var22 = false;
@@ -860,7 +860,7 @@ public class LocType implements ConfigType {
 				}
 				WeightedCache var18 = this.factory.modelCacheStatic;
 				synchronized (this.factory.modelCacheStatic) {
-					var10 = (Model) this.factory.modelCacheStatic.method2930(var15);
+					var10 = (Model) this.factory.modelCacheStatic.get(var15);
 				}
 				if (var10 != null) {
 					if (var6 != var10.method1862()) {
@@ -900,10 +900,10 @@ public class LocType implements ConfigType {
 							var23++;
 						}
 					}
-					var10 = arg0.method2211(var21, var20, this.factory.field7536, var6, var7);
+					var10 = arg0.createModel(var21, var20, this.factory.field7536, var6, var7);
 					WeightedCache var26 = this.factory.modelCacheStatic;
 					synchronized (this.factory.modelCacheStatic) {
-						this.factory.modelCacheStatic.method2921(var10, var15);
+						this.factory.modelCacheStatic.put(var10, var15);
 					}
 				}
 			}

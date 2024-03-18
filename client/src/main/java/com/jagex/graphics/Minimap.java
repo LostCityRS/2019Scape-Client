@@ -176,8 +176,8 @@ public class Minimap {
 		byte var21 = 0;
 		byte var22 = 0;
 		if (field720) {
-			field734 = arg0.method2197(var17, var17, false, true);
-			var20 = arg0.method2145();
+			field734 = arg0.createSprite(var17, var17, false, true);
+			var20 = arg0.createFramebuffer();
 			var20.method15439(0, field734.method1437());
 			EffectInterface var23 = arg0.method2121(var17, var17);
 			var20.method15441(var23);
@@ -187,7 +187,7 @@ public class Minimap {
 			var22 = 48;
 			arg0.method2475(1, 0);
 		} else {
-			field734 = arg0.method2199(var18, 0, var17, var17, var17);
+			field734 = arg0.createSprite(var18, 0, var17, var17, var17);
 		}
 		Client.world.method7816().method9983();
 		int var24 = ((int) (Math.random() * 20.0D) + 238 - 10 << 16) + ((int) (Math.random() * 20.0D) + 238 - 10 << 8) + ((int) (Math.random() * 20.0D) + 238 - 10) | 0xFF000000;
@@ -251,7 +251,7 @@ public class Minimap {
 						}
 					}
 				}
-				arg0.method2354(var30, var31, var9 * 4, var9 * 4, var26, 2);
+				arg0.fillRectangle(var30, var31, var9 * 4, var9 * 4, var26, 2);
 				arg0.method2202();
 				if (!field720) {
 					field734.method1440((var28 - var10) * 4 + 48, var3 * 4 + 48 - (var29 - var11) * 4 - var9 * 4, var9 * 4, var9 * 4, var30, var31);
@@ -807,9 +807,9 @@ public class Minimap {
 				}
 			} else if (arg1 == null) {
 				for (int var31 = 0; var31 < var9.length / 2 - 1; var31++) {
-					arg0.method2185(var9[var31 * 2], var9[var31 * 2 + 1], var9[(var31 + 1) * 2], var9[(var31 + 1) * 2 + 1], var8.field2406[var8.field2407[var31] & 0xFF], 1);
+					arg0.drawLine(var9[var31 * 2], var9[var31 * 2 + 1], var9[(var31 + 1) * 2], var9[(var31 + 1) * 2 + 1], var8.field2406[var8.field2407[var31] & 0xFF], 1);
 				}
-				arg0.method2185(var9[var9.length - 2], var9[var9.length - 1], var9[0], var9[1], var8.field2406[var8.field2407[var8.field2407.length - 1] & 0xFF], 1);
+				arg0.drawLine(var9[var9.length - 2], var9[var9.length - 1], var9[0], var9[1], var8.field2406[var8.field2407[var8.field2407.length - 1] & 0xFF], 1);
 			} else {
 				for (int var30 = 0; var30 < var9.length / 2 - 1; var30++) {
 					arg0.method2183(var9[var30 * 2], var9[var30 * 2 + 1], var9[(var30 + 1) * 2], var9[(var30 + 1) * 2 + 1], var8.field2406[var8.field2407[var30] & 0xFF], 1, arg1, arg3, arg4);
@@ -830,7 +830,7 @@ public class Minimap {
 		}
 		int var34 = 0;
 		if (var32 != null) {
-			var34 = var32.method1435();
+			var34 = var32.getHeight();
 		}
 		Font var35 = DefaultSprites.field8321;
 		FontMetrics var36 = DefaultSprites.field6778;
@@ -868,8 +868,8 @@ public class Minimap {
 		int var13 = arg4 * var12 + arg5 * var11 >> 14;
 		int var14 = arg5 * var12 - arg4 * var11 >> 14;
 		Sprite var15 = DefaultSprites.field513[arg6];
-		int var16 = var15.method1459();
-		int var17 = var15.method1435();
+		int var16 = var15.getWidth();
+		int var17 = var15.getHeight();
 		int var18 = arg0.field2196 / 2 + var13 - var16 / 2;
 		int var19 = var16 + var18;
 		int var20 = arg0.field2197 / 2 + -var14 - var17;

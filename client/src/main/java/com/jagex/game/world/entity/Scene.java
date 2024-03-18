@@ -210,7 +210,7 @@ public class Scene {
 
 	public Scene(Renderer renderer, int arg1, int maxLevel, int maxTileX, int maxTileZ, int arg5, boolean underwater, boolean arg7) {
 		this.renderer = renderer;
-		this.field6906 = this.renderer.method2114() > 0;
+		this.field6906 = this.renderer.getMaxLights() > 0;
 		this.field6900 = arg1;
 		this.field6901 = 0x1 << this.field6900;
 		this.field6924 = this.field6901 >> 1;
@@ -1131,7 +1131,7 @@ public class Scene {
 			}
 		}
 		if (this.field6906) {
-			this.renderer.method2491(0, null);
+			this.renderer.setActiveLights(0, null);
 		}
 		if ((arg4 & 0x2) == 0) {
 			for (int var12 = 0; var12 < this.maxLevel; var12++) {
@@ -1300,7 +1300,7 @@ public class Scene {
 	public void method8749(GraphEntity arg0, Light[] arg1) {
 		if (this.field6906) {
 			int var3 = arg0.method18375(arg1);
-			this.renderer.method2491(var3, arg1);
+			this.renderer.setActiveLights(var3, arg1);
 		}
 		if (this.field6917 == this.field6913) {
 			boolean var4 = false;
@@ -1324,7 +1324,7 @@ public class Scene {
 			var11.field1576 = this.method8713(var9, var10);
 			var11.field1578 = this.method8760(var9, var10);
 			var11.field1579 = this.method8715(var9, var10);
-			this.renderer.method2246(this.field6915[0].method1527((int) var6.field4308, (int) var6.field4313), var11);
+			this.renderer.setWaterFog(this.field6915[0].method1527((int) var6.field4308, (int) var6.field4313), var11);
 		}
 		PickableEntity var12 = arg0.method17372(this.renderer);
 		if (var12 == null) {

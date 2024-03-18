@@ -190,7 +190,7 @@ public class EffectAnimType implements ConfigType {
 		WeightedCache var17 = this.factory.modelCache;
 		Model var18;
 		synchronized (this.factory.modelCache) {
-			var18 = (Model) this.factory.modelCache.method2930((long) (this.id | arg0.field1595 << 29));
+			var18 = (Model) this.factory.modelCache.get((long) (this.id | arg0.field1595 << 29));
 		}
 		if (var18 == null || arg0.method2394(var18.method1691(), var15) != 0) {
 			if (var18 != null) {
@@ -210,7 +210,7 @@ public class EffectAnimType implements ConfigType {
 			if (var21.field1372 < 13) {
 				var21.method1947(2);
 			}
-			var18 = arg0.method2211(var21, var20, this.factory.field8264, this.ambient + 64, this.contrast + 850);
+			var18 = arg0.createModel(var21, var20, this.factory.field8264, this.ambient + 64, this.contrast + 850);
 			if (this.recol_s != null) {
 				for (int var22 = 0; var22 < this.recol_s.length; var22++) {
 					var18.method1859(this.recol_s[var22], this.recol_d[var22]);
@@ -224,7 +224,7 @@ public class EffectAnimType implements ConfigType {
 			var18.method1690(var15);
 			WeightedCache var24 = this.factory.modelCache;
 			synchronized (this.factory.modelCache) {
-				this.factory.modelCache.method2921(var18, (long) (this.id | arg0.field1595 << 29));
+				this.factory.modelCache.put(var18, (long) (this.id | arg0.field1595 << 29));
 			}
 		}
 		Model var26 = var18.method1773(arg13, var15, true);

@@ -1031,7 +1031,7 @@ public class Component {
 	public Sprite method3941(Renderer arg0) {
 		field2338 = false;
 		long var2 = ((long) this.field2219 << 40) + ((long) this.field2218 << 36) + (long) this.field2215 + ((this.field2222 ? 1L : 0L) << 35) + ((this.field2220 ? 1L : 0L) << 38) + ((this.field2213 ? 1L : 0L) << 39);
-		Sprite var4 = (Sprite) field2175.method2930(var2);
+		Sprite var4 = (Sprite) field2175.get(var2);
 		if (var4 != null) {
 			return var4;
 		}
@@ -1060,8 +1060,8 @@ public class Component {
 		if (this.field2219 != 0) {
 			var5.method2600(this.field2219 | 0xFF000000);
 		}
-		Sprite var6 = arg0.method2200(var5, true);
-		field2175.method2922(var6, var2, var6.method1459() * var6.method1435() * 4);
+		Sprite var6 = arg0.createSprite(var5, true);
+		field2175.put(var6, var2, var6.getWidth() * var6.getHeight() * 4);
 		return var6;
 	}
 
@@ -1112,7 +1112,7 @@ public class Component {
 				arg1 |= 0x8000;
 			}
 			long var30 = (long) arg0.field1595 << 59 | (long) this.field2224 << 55 | (long) this.field2294 << 38 | var13 & 0x3FFFFFFFFFL;
-			Model var32 = (Model) field2297.method2930(var30);
+			Model var32 = (Model) field2297.get(var30);
 			if (var32 == null || arg0.method2394(var32.method1691(), arg1) != 0) {
 				if (var32 != null) {
 					arg1 = arg0.method2213(arg1, var32.method1691());
@@ -1125,7 +1125,7 @@ public class Component {
 				if (var33.field1372 < 13) {
 					var33.method1947(2);
 				}
-				var32 = arg0.method2211(var33, arg1, field11802, 64, 768);
+				var32 = arg0.createModel(var33, arg1, field11802, 64, 768);
 				if (this.field2242 != null) {
 					for (int var34 = 0; var34 < this.field2242.length; var34++) {
 						var32.method1859(this.field2242[var34], this.field2243[var34]);
@@ -1136,7 +1136,7 @@ public class Component {
 						var32.method1744(this.field2346[var35], this.field2245[var35]);
 					}
 				}
-				field2297.method2921(var32, var30);
+				field2297.put(var32, var30);
 			}
 			if (arg9 != null) {
 				var32 = var32.method1773((byte) 1, arg1, true);
@@ -1217,10 +1217,10 @@ public class Component {
 			return null;
 		}
 		long var3 = ((long) this.field2342 & 0xFFFFL) << 48 | ((long) this.field2343 & 0xFFFFL) << 32 | ((long) this.field2344 & 0xFFFFL) << 16 | (long) this.field2339 & 0xFFFFL;
-		SkyBox var5 = (SkyBox) field2177.method2930(var3);
+		SkyBox var5 = (SkyBox) field2177.get(var3);
 		if (var5 == null) {
 			var5 = SkyBoxType.method305(this.field2339, this.field2342, this.field2343, this.field2344, arg0, arg1);
-			field2177.method2921(var5, var3);
+			field2177.put(var5, var3);
 		}
 		return var5;
 	}
@@ -1241,10 +1241,10 @@ public class Component {
 
 	@ObfuscatedName("sp.b(II)V")
 	public static void method8274(int arg0) {
-		field2175.method2923(arg0);
-		field2297.method2923(arg0);
-		field2176.method2923(arg0);
-		field2177.method2923(arg0);
+		field2175.update(arg0);
+		field2297.update(arg0);
+		field2176.update(arg0);
+		field2177.update(arg0);
 	}
 
 	@ObfuscatedName("kh.h(I)V")
@@ -1349,7 +1349,7 @@ public class Component {
 	@ObfuscatedName("hf.t(Ldh;B)Lhx;")
 	public Graphic method3970(Renderer arg0) {
 		long var2 = (long) this.field2158 << 32 | (long) this.field2183 & 0xFFFFFFFFL;
-		Graphic var4 = (Graphic) field2176.method2930(var2);
+		Graphic var4 = (Graphic) field2176.get(var2);
 		if (var4 != null) {
 			if (this.field2215 != var4.field2148) {
 				field2176.method2957(var2);
@@ -1367,30 +1367,30 @@ public class Component {
 		int var7 = var5.method2597();
 		int[] var8 = new int[var7];
 		int[] var9 = new int[var7];
-		for (int var10 = 0; var10 < var5.method2631(); var10++) {
+		for (int var10 = 0; var10 < var5.getHeight(); var10++) {
 			int var11 = 0;
-			int var12 = var5.method2639();
-			for (int var13 = 0; var13 < var5.method2639(); var13++) {
+			int var12 = var5.getWidth();
+			for (int var13 = 0; var13 < var5.getWidth(); var13++) {
 				if (var5.method2617(var13, var10) != 0) {
 					var11 = var13;
 					break;
 				}
 			}
-			for (int var14 = var5.method2639() - 1; var14 >= var11; var14--) {
+			for (int var14 = var5.getWidth() - 1; var14 >= var11; var14--) {
 				if (var5.method2617(var14, var10) != 0) {
 					var12 = var14 + 1;
 					break;
 				}
 			}
-			var8[var10 + var5.method2593()] = var11 + var5.method2591();
-			var9[var10 + var5.method2593()] = var12 - var11;
+			var8[var10 + var5.getPaddingTop()] = var11 + var5.getPaddingLeft();
+			var9[var10 + var5.getPaddingTop()] = var12 - var11;
 		}
 		GraphicsRelated var15 = arg0.method2205(var6, var7, var8, var9);
 		if (var15 == null) {
 			return null;
 		} else {
 			Graphic var16 = new Graphic(var6, var7, var9, var8, var15, this.field2215);
-			field2176.method2921(var16, var2);
+			field2176.put(var16, var2);
 			return var16;
 		}
 	}

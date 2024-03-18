@@ -26,7 +26,7 @@ public class MaterialList {
 	}
 
 	@ObfuscatedName("df.e(II)Ldv;")
-	public Material method2043(int arg0) {
+	public Material get(int arg0) {
 		this.method2045();
 		return this.field1453[arg0];
 	}

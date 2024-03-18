@@ -60,7 +60,7 @@ public class HintTrail {
 			if (var2.field1372 < 13) {
 				var2.method1947(2);
 			}
-			return arg0.method2211(var2, 2048, field6755, 64, 768);
+			return arg0.createModel(var2, 2048, field6755, 64, 768);
 		}
 	}
 

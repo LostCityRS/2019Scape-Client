@@ -60,7 +60,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		this.field11155 = (byte) arg13;
 		this.field11152 = (byte) arg12;
 		this.field11157 = arg3.active2 != 0 && !arg9;
-		this.field11158 = arg1.method2125() && arg3.field7453 && !this.field11156 && Client.preferences.sceneryShadows.getValue() != 0;
+		this.field11158 = arg1.supportsHardShadows() && arg3.field7453 && !this.field11156 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field11151 = arg7;
 		int var16 = 2048;
 		if (arg3.field7525) {

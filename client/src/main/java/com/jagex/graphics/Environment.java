@@ -249,7 +249,7 @@ public class Environment {
 	@ObfuscatedName("xv.k(Lalw;Lxu;B)V")
 	public void method10065(Packet arg0, EnvironmentManager arg1) {
 		int var3 = arg0.g1();
-		if (Client.preferences.lightingDetail.getValue() == 1 && Client.renderer.method2114() > 0) {
+		if (Client.preferences.lightingDetail.getValue() == 1 && Client.renderer.getMaxLights() > 0) {
 			if ((var3 & EnvironmentProperty.field8143.field8144) == 0) {
 				this.field7877 = 16777215;
 			} else {
@@ -347,7 +347,7 @@ public class Environment {
 
 	@ObfuscatedName("xv.p(Lxu;Lyj;I)V")
 	public void method10063(EnvironmentManager arg0, EnvironmentOverride arg1) {
-		if (Client.preferences.lightingDetail.getValue() == 1 && Client.renderer.method2114() > 0) {
+		if (Client.preferences.lightingDetail.getValue() == 1 && Client.renderer.getMaxLights() > 0) {
 			if (arg1.method10429() != -1) {
 				this.field7877 = arg1.method10429();
 			}

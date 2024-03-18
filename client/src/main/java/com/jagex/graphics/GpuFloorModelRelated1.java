@@ -79,7 +79,7 @@ public class GpuFloorModelRelated1 extends Node {
 	@ObfuscatedName("akh.k(IIIF)V")
 	public void method17762(int arg0, int arg1, int arg2, float arg3) {
 		if (this.field11402 != -1) {
-			Material var5 = this.field11409.field1597.method2043(this.field11402);
+			Material var5 = this.field11409.materialList.get(this.field11402);
 			int var6 = var5.field1364 & 0xFF;
 			if (var6 != 0 && var5.field1308 != 4) {
 				int var7;

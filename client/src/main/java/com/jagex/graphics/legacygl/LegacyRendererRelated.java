@@ -79,18 +79,18 @@ public class LegacyRendererRelated {
 			return;
 		}
 		this.method1326(arg0);
-		float var3 = arg0.field9903.field4315[2];
-		float var4 = arg0.field9903.field4315[6];
-		float var5 = arg0.field9903.field4315[10];
-		float var6 = arg0.field9903.field4315[14];
+		float var3 = arg0.field9903.entries[2];
+		float var4 = arg0.field9903.entries[6];
+		float var5 = arg0.field9903.entries[10];
+		float var6 = arg0.field9903.entries[14];
 		try {
 			int var7 = 0;
 			int var8 = Integer.MAX_VALUE;
 			int var9 = 0;
-			DualLink var10 = arg1.field1367.field8487;
+			DualLink var10 = arg1.list.field8487;
 			for (DualLink var11 = var10.field11213; var11 != var10; var11 = var11.field11213) {
 				Particle var12 = (Particle) var11;
-				int var13 = (int) ((float) (var12.field12161 >> 12) * var5 + (float) (var12.field12163 >> 12) * var4 + (float) (var12.field12159 >> 12) * var3 + var6);
+				int var13 = (int) ((float) (var12.z >> 12) * var5 + (float) (var12.y >> 12) * var4 + (float) (var12.x >> 12) * var3 + var6);
 				if (var13 > var9) {
 					var9 = var13;
 				}
@@ -156,9 +156,9 @@ public class LegacyRendererRelated {
 					arg0.method15774(-1);
 				}
 				if (var19 && field1137 != arg0.field9946) {
-					arg0.method2222(field1137);
+					arg0.setSunAmbientIntensity(field1137);
 				} else if (arg0.field9946 != 1.0F) {
-					arg0.method2222(1.0F);
+					arg0.setSunAmbientIntensity(1.0F);
 				}
 				this.method1325(arg0, var14);
 			}
@@ -200,9 +200,9 @@ public class LegacyRendererRelated {
 						byte var26 = (byte) (var24 >> 8);
 						byte var27 = (byte) var24;
 						byte var28 = (byte) (var24 >>> 24);
-						float var29 = (float) (var23.field12159 >> 12);
-						float var30 = (float) (var23.field12163 >> 12);
-						float var31 = (float) (var23.field12161 >> 12);
+						float var29 = (float) (var23.x >> 12);
+						float var30 = (float) (var23.y >> 12);
+						float var31 = (float) (var23.z >> 12);
 						int var32 = var23.field12162 >> 12;
 						if (var23.field12156 == 0) {
 							this.field1145.method19550(0.0F);
@@ -243,7 +243,7 @@ public class LegacyRendererRelated {
 							this.field1145.p1(var28);
 						} else {
 							arg0.field9920.method6687(var23.field12156, var32, var32, 0.0F, 0.0F, 0.0F);
-							arg0.field9920.method6720(arg0.field9919);
+							arg0.field9920.multiply(arg0.field9919);
 							arg0.field9920.method6614(1.0F, 0.0F, 0.0F, var18);
 							arg0.field9920.method6614(0.0F, 1.0F, 0.0F, var19);
 							this.field1145.method19550(0.0F);
@@ -293,9 +293,9 @@ public class LegacyRendererRelated {
 							byte var38 = (byte) (var36 >> 8);
 							byte var39 = (byte) var36;
 							byte var40 = (byte) (var36 >>> 24);
-							float var41 = (float) (var35.field12159 >> 12);
-							float var42 = (float) (var35.field12163 >> 12);
-							float var43 = (float) (var35.field12161 >> 12);
+							float var41 = (float) (var35.x >> 12);
+							float var42 = (float) (var35.y >> 12);
+							float var43 = (float) (var35.z >> 12);
 							int var44 = var35.field12162 >> 12;
 							if (var35.field12156 == 0) {
 								this.field1145.method19550(0.0F);
@@ -336,7 +336,7 @@ public class LegacyRendererRelated {
 								this.field1145.p1(var40);
 							} else {
 								arg0.field9920.method6687(var35.field12156, var44, var44, 0.0F, 0.0F, 0.0F);
-								arg0.field9920.method6720(arg0.field9919);
+								arg0.field9920.multiply(arg0.field9919);
 								arg0.field9920.method6614(1.0F, 0.0F, 0.0F, var18);
 								arg0.field9920.method6614(0.0F, 1.0F, 0.0F, var19);
 								this.field1145.method19550(0.0F);
@@ -391,9 +391,9 @@ public class LegacyRendererRelated {
 						byte var51 = (byte) (var49 >> 8);
 						byte var52 = (byte) var49;
 						byte var53 = (byte) (var49 >>> 24);
-						float var54 = (float) (var48.field12159 >> 12);
-						float var55 = (float) (var48.field12163 >> 12);
-						float var56 = (float) (var48.field12161 >> 12);
+						float var54 = (float) (var48.x >> 12);
+						float var55 = (float) (var48.y >> 12);
+						float var56 = (float) (var48.z >> 12);
 						int var57 = var48.field12162 >> 12;
 						if (var48.field12156 == 0) {
 							this.field1145.method19553(0.0F);
@@ -434,7 +434,7 @@ public class LegacyRendererRelated {
 							this.field1145.p1(var53);
 						} else {
 							arg0.field9920.method6687(var48.field12156, var57, var57, 0.0F, 0.0F, 0.0F);
-							arg0.field9920.method6720(arg0.field9919);
+							arg0.field9920.multiply(arg0.field9919);
 							arg0.field9920.method6614(1.0F, 0.0F, 0.0F, var18);
 							arg0.field9920.method6614(0.0F, 1.0F, 0.0F, var19);
 							this.field1145.method19553(0.0F);
@@ -484,9 +484,9 @@ public class LegacyRendererRelated {
 							byte var63 = (byte) (var61 >> 8);
 							byte var64 = (byte) var61;
 							byte var65 = (byte) (var61 >>> 24);
-							float var66 = (float) (var60.field12159 >> 12);
-							float var67 = (float) (var60.field12163 >> 12);
-							float var68 = (float) (var60.field12161 >> 12);
+							float var66 = (float) (var60.x >> 12);
+							float var67 = (float) (var60.y >> 12);
+							float var68 = (float) (var60.z >> 12);
 							int var69 = var60.field12162 >> 12;
 							if (var60.field12156 == 0) {
 								this.field1145.method19553(0.0F);
@@ -527,7 +527,7 @@ public class LegacyRendererRelated {
 								this.field1145.p1(var65);
 							} else {
 								arg0.field9920.method6687(var60.field12156, var69, var69, 0.0F, 0.0F, 0.0F);
-								arg0.field9920.method6720(arg0.field9919);
+								arg0.field9920.multiply(arg0.field9919);
 								arg0.field9920.method6614(1.0F, 0.0F, 0.0F, var18);
 								arg0.field9920.method6614(0.0F, 1.0F, 0.0F, var19);
 								this.field1145.method19553(0.0F);
@@ -595,7 +595,7 @@ public class LegacyRendererRelated {
 		OpenGL.glEnable(16384);
 		OpenGL.glEnable(16385);
 		if (field1137 != arg0.field9946) {
-			arg0.method2222(field1137);
+			arg0.setSunAmbientIntensity(field1137);
 		}
 	}
 }

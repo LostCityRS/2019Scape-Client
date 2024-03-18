@@ -152,12 +152,12 @@ public abstract class BasicTextureListInner implements TextureList {
 	}
 
 	@ObfuscatedName("dk.u(Lvk;IFIIZI)[I")
-	public int[] method1986(TextureRelated2 arg0, int arg1, float arg2, int arg3, int arg4, boolean arg5) {
+	public int[] getTexture(TextureRelated2 arg0, int arg1, float arg2, int arg3, int arg4, boolean arg5) {
 		return this.method1992(arg0, arg1, (double) arg2);
 	}
 
 	@ObfuscatedName("dk.z(Lvk;IFIIZB)[I")
-	public int[] method1983(TextureRelated2 arg0, int arg1, float arg2, int arg3, int arg4, boolean arg5) {
+	public int[] getSpecialTexture(TextureRelated2 arg0, int arg1, float arg2, int arg3, int arg4, boolean arg5) {
 		return this.method1979(arg0, arg1, (double) arg2);
 	}
 
@@ -211,7 +211,7 @@ public abstract class BasicTextureListInner implements TextureList {
 	}
 
 	@ObfuscatedName("dk.m(Lvk;IILvc;FIIZI)Z")
-	public abstract boolean method1977(TextureRelated2 arg0, int arg1, int arg2, TextureRelated1 arg3, float arg4, int arg5, int arg6, boolean arg7);
+	public abstract boolean loadTexture(TextureRelated2 arg0, int arg1, int arg2, TextureRelated1 arg3, float arg4, int arg5, int arg6, boolean arg7);
 
 	@ObfuscatedName("dk.n(Lvk;IB)[B")
 	public abstract byte[] method2002(TextureRelated2 arg0, int arg1);

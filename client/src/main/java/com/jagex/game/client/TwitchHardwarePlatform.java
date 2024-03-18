@@ -556,10 +556,10 @@ public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("ps.ai(B)V")
 	public static void method6846() {
-		if (field7397 != null && field7397.method1459() == field7391.width && field7397.method1435() == field7391.height) {
+		if (field7397 != null && field7397.getWidth() == field7391.width && field7397.getHeight() == field7391.height) {
 			field7397.method1469(0, 0, field7391.width, field7391.height, field7391.buffer, 0, field7391.width);
 		} else {
-			field7397 = Client.renderer.method2188(field7391.buffer, 0, field7391.width, field7391.width, field7391.height, false);
+			field7397 = Client.renderer.createSprite(field7391.buffer, 0, field7391.width, field7391.width, field7391.height, false);
 		}
 	}
 

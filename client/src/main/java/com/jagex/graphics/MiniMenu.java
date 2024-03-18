@@ -658,7 +658,7 @@ public class MiniMenu {
 			for (var4 = (MinimenuSubmenu) field549.method14495(var2); var4 != null && !var4.field12311.equals(arg0.field12301); var4 = (MinimenuSubmenu) field549.method14496()) {
 			}
 			if (var4 == null) {
-				var4 = (MinimenuSubmenu) field534.method2930(var2);
+				var4 = (MinimenuSubmenu) field534.get(var2);
 				if (var4 != null && !var4.field12311.equals(arg0.field12301)) {
 					var4 = null;
 				}
@@ -755,8 +755,8 @@ public class MiniMenu {
 		CoordGrid var3 = Client.world.method7727();
 		Matrix4x4 var4 = arg0.method2208();
 		method6036(arg0);
-		var4.method6609(field572);
-		var4.method6720(field553);
+		var4.setToMatrix4x3(field572);
+		var4.multiply(field553);
 		var4.method6611();
 		int var5 = arg1 - field563;
 		int var6 = arg2 - field559;
@@ -1130,7 +1130,7 @@ public class MiniMenu {
 		for (MinimenuSubmenu var0 = (MinimenuSubmenu) field550.method14317(); var0 != null; var0 = (MinimenuSubmenu) field550.method14324()) {
 			if (var0.field12310 > 1) {
 				var0.field12310 = 0;
-				field534.method2921(var0, ((MinimenuEntry) var0.field12312.field8497.field11439).field12305);
+				field534.put(var0, ((MinimenuEntry) var0.field12312.field8497.field11439).field12305);
 				var0.field12312.method14316();
 			}
 		}
@@ -1147,7 +1147,7 @@ public class MiniMenu {
 		for (MinimenuSubmenu var0 = (MinimenuSubmenu) field550.method14317(); var0 != null; var0 = (MinimenuSubmenu) field550.method14324()) {
 			if (var0.field12310 > 1) {
 				var0.field12310 = 0;
-				field534.method2921(var0, ((MinimenuEntry) var0.field12312.field8497.field11439).field12305);
+				field534.put(var0, ((MinimenuEntry) var0.field12312.field8497.field11439).field12305);
 				var0.field12312.method14316();
 			}
 		}
@@ -1548,54 +1548,54 @@ public class MiniMenu {
 		}
 		if (field9253 == null || field8480 == null) {
 			if (Client.spritesJs5.method6889(field12340) && Client.spritesJs5.method6889(field740)) {
-				field9253 = arg0.method2200(SpriteDataProvider.method1609(Client.spritesJs5, field12340, 0), true);
+				field9253 = arg0.createSprite(SpriteDataProvider.method1609(Client.spritesJs5, field12340, 0), true);
 				SpriteData var10 = SpriteDataProvider.method1609(Client.spritesJs5, field740, 0);
-				field8480 = arg0.method2200(var10, true);
+				field8480 = arg0.createSprite(var10, true);
 				var10.method2601();
-				field3568 = arg0.method2200(var10, true);
+				field3568 = arg0.createSprite(var10, true);
 			} else {
-				arg0.method2354(arg1, arg2, arg3, arg5, var9 << 24 | field7676, 1);
+				arg0.fillRectangle(arg1, arg2, arg3, arg5, var9 << 24 | field7676, 1);
 			}
 		}
 		if (field9253 != null && field8480 != null) {
-			int var11 = (arg3 - field8480.method1459() * 2) / field9253.method1459();
+			int var11 = (arg3 - field8480.getWidth() * 2) / field9253.getWidth();
 			for (int var12 = 0; var12 < var11; var12++) {
-				field9253.method1439(arg1 + field8480.method1459() + var12 * field9253.method1459(), arg2);
+				field9253.method1439(arg1 + field8480.getWidth() + var12 * field9253.getWidth(), arg2);
 			}
 			field8480.method1439(arg1, arg2);
-			field3568.method1439(arg1 + arg3 - field3568.method1459(), arg2);
+			field3568.method1439(arg1 + arg3 - field3568.getWidth(), arg2);
 		}
 		arg6.method2681(arg8, arg1 + 3, (20 - arg7.field8562) / 2 + arg7.field8562 + arg2, field1266 | 0xFF000000, -1);
-		arg0.method2354(arg1, arg2 + arg5, arg3, arg4 - arg5, var9 << 24 | field7676, 1);
+		arg0.fillRectangle(arg1, arg2 + arg5, arg3, arg4 - arg5, var9 << 24 | field7676, 1);
 	}
 
 	@ObfuscatedName("tm.an(Ldh;IIIIII)V")
 	public static void method8462(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		if ((field1224 == null || field10568 == null || field11699 == null) && Client.spritesJs5.method6889(field11642) && Client.spritesJs5.method6889(field1748) && Client.spritesJs5.method6889(field1847)) {
 			SpriteData var6 = SpriteDataProvider.method1609(Client.spritesJs5, field1748, 0);
-			field10568 = arg0.method2200(var6, true);
+			field10568 = arg0.createSprite(var6, true);
 			var6.method2601();
-			field566 = arg0.method2200(var6, true);
-			field1224 = arg0.method2200(SpriteDataProvider.method1609(Client.spritesJs5, field11642, 0), true);
+			field566 = arg0.createSprite(var6, true);
+			field1224 = arg0.createSprite(SpriteDataProvider.method1609(Client.spritesJs5, field11642, 0), true);
 			SpriteData var7 = SpriteDataProvider.method1609(Client.spritesJs5, field1847, 0);
-			field11699 = arg0.method2200(var7, true);
+			field11699 = arg0.createSprite(var7, true);
 			var7.method2601();
-			field11831 = arg0.method2200(var7, true);
+			field11831 = arg0.createSprite(var7, true);
 		}
 		if (field1224 == null || field10568 == null || field11699 == null) {
 			return;
 		}
-		int var8 = (arg3 - field11699.method1459() * 2) / field1224.method1459();
+		int var8 = (arg3 - field11699.getWidth() * 2) / field1224.getWidth();
 		for (int var9 = 0; var9 < var8; var9++) {
-			field1224.method1439(arg1 + field11699.method1459() + var9 * field1224.method1459(), arg2 + arg4 - field1224.method1435());
+			field1224.method1439(arg1 + field11699.getWidth() + var9 * field1224.getWidth(), arg2 + arg4 - field1224.getHeight());
 		}
-		int var10 = (arg4 - arg5 - field11699.method1435()) / field10568.method1435();
+		int var10 = (arg4 - arg5 - field11699.getHeight()) / field10568.getHeight();
 		for (int var11 = 0; var11 < var10; var11++) {
-			field10568.method1439(arg1, arg2 + arg5 + var11 * field10568.method1435());
-			field566.method1439(arg1 + arg3 - field566.method1459(), arg2 + arg5 + var11 * field10568.method1435());
+			field10568.method1439(arg1, arg2 + arg5 + var11 * field10568.getHeight());
+			field566.method1439(arg1 + arg3 - field566.getWidth(), arg2 + arg5 + var11 * field10568.getHeight());
 		}
-		field11699.method1439(arg1, arg2 + arg4 - field11699.method1435());
-		field11831.method1439(arg1 + arg3 - field11699.method1459(), arg2 + arg4 - field11699.method1435());
+		field11699.method1439(arg1, arg2 + arg4 - field11699.getHeight());
+		field11831.method1439(arg1 + arg3 - field11699.getWidth(), arg2 + arg4 - field11699.getHeight());
 	}
 
 	@ObfuscatedName("aky.bf(Ldh;I)V")
@@ -1640,7 +1640,7 @@ public class MiniMenu {
 			for (MinimenuSubmenu var16 = (MinimenuSubmenu) field550.method14317(); var16 != null; var16 = (MinimenuSubmenu) field550.method14324()) {
 				int var17 = field536 * var15 + var8.field8562 + var2 + var5 + 1;
 				if (var10 > field11738 && var10 < field1289 + field11738 && var11 > var17 - var8.field8562 - 1 && var11 < var8.field8569 + var17 && (var16.field12310 > 1 || ((MinimenuEntry) var16.field12312.field8497.field11439).field12308)) {
-					arg0.method2354(field11738, var17 - var8.field8562, field1289, field536, var9 << 24 | field6708, 1);
+					arg0.fillRectangle(field11738, var17 - var8.field8562, field1289, field536, var9 << 24 | field6708, 1);
 				}
 				var15++;
 			}
@@ -1650,7 +1650,7 @@ public class MiniMenu {
 				for (MinimenuEntry var19 = (MinimenuEntry) field541.field12312.method14317(); var19 != null; var19 = (MinimenuEntry) field541.field12312.method14324()) {
 					int var20 = field536 * var18 + var8.field8562 + field2433 + var5 + 1;
 					if (var10 > field1981 && var10 < field554 + field1981 && var11 > var20 - var8.field8562 - 1 && var11 < var8.field8569 + var20 && var19.field12308) {
-						arg0.method2354(field1981, var20 - var8.field8562, field554, field536, var9 << 24 | field6708, 1);
+						arg0.fillRectangle(field1981, var20 - var8.field8562, field554, field536, var9 << 24 | field6708, 1);
 					}
 					var18++;
 				}
@@ -1661,7 +1661,7 @@ public class MiniMenu {
 			for (MinimenuEntry var13 = (MinimenuEntry) field542.method14191(); var13 != null; var13 = (MinimenuEntry) field542.method14161()) {
 				int var14 = field536 * (field546 - 1 - var12) + var8.field8562 + var2 + var5 + 1;
 				if (var10 > field11738 && var10 < field1289 + field11738 && var11 > var14 - var8.field8562 - 1 && var11 < var8.field8569 + var14 && var13.field12308) {
-					arg0.method2354(field11738, var14 - var8.field8562, field1289, field536, var9 << 24 | field6708, 1);
+					arg0.fillRectangle(field11738, var14 - var8.field8562, field1289, field536, var9 << 24 | field6708, 1);
 				}
 				var12++;
 			}
@@ -1728,7 +1728,7 @@ public class MiniMenu {
 		}
 		int var4 = arg1.method14533(var2, DefaultSprites.field10302);
 		if (arg0.field12299) {
-			var4 += DefaultSprites.field1940.method1459() + 4;
+			var4 += DefaultSprites.field1940.getWidth() + 4;
 		}
 		return var4;
 	}

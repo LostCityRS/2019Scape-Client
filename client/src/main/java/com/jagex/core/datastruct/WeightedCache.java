@@ -40,7 +40,7 @@ public final class WeightedCache {
 	}
 
 	@ObfuscatedName("eb.n(J)Ljava/lang/Object;")
-	public Object method2930(long arg0) {
+	public Object get(long arg0) {
 		WeightedWrapper var3 = (WeightedWrapper) this.field1757.method14495(arg0);
 		if (var3 == null) {
 			return null;
@@ -82,12 +82,12 @@ public final class WeightedCache {
 	}
 
 	@ObfuscatedName("eb.f(Ljava/lang/Object;J)V")
-	public void method2921(Object arg0, long arg1) {
-		this.method2922(arg0, arg1, 1);
+	public void put(Object arg0, long arg1) {
+		this.put(arg0, arg1, 1);
 	}
 
 	@ObfuscatedName("eb.w(Ljava/lang/Object;JII)V")
-	public void method2922(Object arg0, long arg1, int arg2) {
+	public void put(Object arg0, long arg1, int arg2) {
 		if (arg2 > this.field1758) {
 			throw new IllegalStateException();
 		}
@@ -112,7 +112,7 @@ public final class WeightedCache {
 	}
 
 	@ObfuscatedName("eb.l(IB)V")
-	public void method2923(int arg0) {
+	public void update(int arg0) {
 		for (WeightedWrapper var2 = (WeightedWrapper) this.field1755.method14317(); var2 != null; var2 = (WeightedWrapper) this.field1755.method14324()) {
 			if (var2.method19424()) {
 				if (var2.method19423() == null) {

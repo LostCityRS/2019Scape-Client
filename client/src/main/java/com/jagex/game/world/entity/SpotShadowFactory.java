@@ -35,7 +35,7 @@ public class SpotShadowFactory {
 		WeightedCache var16 = field617;
 		Model var17;
 		synchronized (field617) {
-			var17 = (Model) field617.method2930(var14);
+			var17 = (Model) field617.get(var14);
 		}
 		if (var17 == null || arg0.method2394(var17.method1691(), var12) != 0) {
 			if (var17 != null) {
@@ -71,10 +71,10 @@ public class SpotShadowFactory {
 					}
 				}
 			}
-			var17 = arg0.method2211(var22, var12, field616, 64, 768);
+			var17 = arg0.createModel(var22, var12, field616, 64, 768);
 			WeightedCache var38 = field617;
 			synchronized (field617) {
-				field617.method2921(var17, var14);
+				field617.put(var17, var14);
 			}
 		}
 		int var40 = arg6.method1729();
@@ -118,7 +118,7 @@ public class SpotShadowFactory {
 		WeightedCache var13 = field617;
 		Model var14;
 		synchronized (field617) {
-			var14 = (Model) field617.method2930(var11);
+			var14 = (Model) field617.get(var11);
 		}
 		if (var14 == null || arg0.method2394(var14.method1691(), var9) != 0) {
 			if (var14 != null) {
@@ -131,10 +131,10 @@ public class SpotShadowFactory {
 			var16.method1966(0, 2, 3, (byte) 1, (byte) 0, (short) 0, arg7, arg6);
 			var16.method1938((short) 1, (short) 2, (short) 0);
 			var16.method1938((short) 2, (short) 3, (short) 0);
-			var14 = arg0.method2211(var16, var9, field616, 64, 768);
+			var14 = arg0.createModel(var16, var9, field616, 64, 768);
 			WeightedCache var19 = field617;
 			synchronized (field617) {
-				field617.method2921(var14, var11);
+				field617.put(var14, var11);
 			}
 		}
 		int var21 = arg5.method1729();
@@ -185,7 +185,7 @@ public class SpotShadowFactory {
 	public static void method9467(int arg0) {
 		WeightedCache var1 = field617;
 		synchronized (field617) {
-			field617.method2923(arg0);
+			field617.update(arg0);
 		}
 	}
 

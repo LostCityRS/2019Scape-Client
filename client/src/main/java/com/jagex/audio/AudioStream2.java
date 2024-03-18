@@ -219,7 +219,7 @@ public class AudioStream2 implements AudioApiRelated2 {
 		synchronized (this.field7623) {
 			this.field7623.method2957((long) this.field7615);
 			if (arg1 <= this.field7623.method2925()) {
-				this.field7623.method2922(arg0, (long) this.field7615, arg1);
+				this.field7623.put(arg0, (long) this.field7615, arg1);
 			} else {
 				this.field7624 = false;
 				this.field7618 = false;
@@ -236,10 +236,10 @@ public class AudioStream2 implements AudioApiRelated2 {
 		Object var1 = null;
 		WeightedCache var2 = this.field7623;
 		synchronized (this.field7623) {
-			List var3 = (List) this.field7623.method2930((long) this.field7615);
+			List var3 = (List) this.field7623.get((long) this.field7615);
 			if (var3 == null && this.field7624) {
 				var3 = new ArrayList();
-				this.field7623.method2922(var3, (long) this.field7615, 0);
+				this.field7623.put(var3, (long) this.field7615, 0);
 			}
 			return var3;
 		}

@@ -42,7 +42,7 @@ public abstract class EffectAnimTypeFactory implements ConfigTypeFactory {
 	public void method13821(int arg0) {
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.method2923(arg0);
+			this.modelCache.update(arg0);
 		}
 	}
 

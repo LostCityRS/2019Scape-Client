@@ -70,7 +70,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		this.field11161 = (byte) arg11;
 		this.field11170 = arg3.active2 != 0 && !arg9;
 		this.field11171 = arg12;
-		this.field11172 = arg1.method2125() && arg3.field7453 && !this.field11169 && Client.preferences.sceneryShadows.getValue() != 0;
+		this.field11172 = arg1.supportsHardShadows() && arg3.field7453 && !this.field11169 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field12460 = arg7;
 		int var15 = 2048;
 		if (this.field11171) {

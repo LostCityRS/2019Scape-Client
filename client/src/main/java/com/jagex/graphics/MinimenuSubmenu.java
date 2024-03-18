@@ -56,7 +56,7 @@ public class MinimenuSubmenu extends SecondaryNode {
 		this.method8440();
 		this.method17806();
 		MiniMenu.field543--;
-		MiniMenu.field534.method2921(this, arg0.field12305);
+		MiniMenu.field534.put(this, arg0.field12305);
 		return false;
 	}
 }

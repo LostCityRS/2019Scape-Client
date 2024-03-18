@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 public class MaterialAlphaMode implements SerializableEnum {
 
 	@ObfuscatedName("vn.e")
-	public static final MaterialAlphaMode field7575 = new MaterialAlphaMode(0);
+	public static final MaterialAlphaMode NONE = new MaterialAlphaMode(0);
 
 	@ObfuscatedName("vn.n")
 	public static final MaterialAlphaMode TEST = new MaterialAlphaMode(1);
@@ -24,7 +24,7 @@ public class MaterialAlphaMode implements SerializableEnum {
 
     @ObfuscatedName("tz.e(I)[Lvn;")
     public static MaterialAlphaMode[] method8501() {
-        return new MaterialAlphaMode[] {field7573, field7575, TEST};
+        return new MaterialAlphaMode[] {field7573, NONE, TEST};
     }
 
     @ObfuscatedName("vn.n()I")

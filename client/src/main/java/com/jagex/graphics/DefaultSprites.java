@@ -187,45 +187,45 @@ public class DefaultSprites {
 		SpriteData[] var2 = SpriteDataProvider.method1608(arg1, field507, 0);
 		field8323 = new Sprite[var2.length];
 		for (int var3 = 0; var3 < var2.length; var3++) {
-			field8323[var3] = arg0.method2200(var2[var3], true);
+			field8323[var3] = arg0.createSprite(var2[var3], true);
 		}
 		SpriteData[] var4 = SpriteDataProvider.method1608(arg1, field514, 0);
 		field513 = new Sprite[var4.length];
 		for (int var5 = 0; var5 < var4.length; var5++) {
-			field513[var5] = arg0.method2200(var4[var5], true);
+			field513[var5] = arg0.createSprite(var4[var5], true);
 		}
 		SpriteData[] var6 = SpriteDataProvider.method1608(arg1, field508, 0);
 		field9149 = new Sprite[var6.length];
 		byte var7 = 25;
 		for (int var8 = 0; var8 < var6.length; var8++) {
 			var6[var8].method2605(-var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D));
-			field9149[var8] = arg0.method2200(var6[var8], true);
+			field9149[var8] = arg0.createSprite(var6[var8], true);
 		}
 		SpriteData[] var9 = SpriteDataProvider.method1608(arg1, field9210, 0);
 		field11793 = new Sprite[var9.length];
 		for (int var10 = 0; var10 < var9.length; var10++) {
-			field11793[var10] = arg0.method2200(var9[var10], true);
+			field11793[var10] = arg0.createSprite(var9[var10], true);
 		}
 		SpriteData[] var11 = SpriteDataProvider.method1608(arg1, field504, 0);
 		field510 = new Sprite[var11.length];
 		byte var12 = 12;
 		for (int var13 = 0; var13 < var11.length; var13++) {
 			var11[var13].method2605(-var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D));
-			field510[var13] = arg0.method2200(var11[var13], true);
+			field510[var13] = arg0.createSprite(var11[var13], true);
 		}
 		SpriteData[] var14 = SpriteDataProvider.method1608(arg1, field511, 0);
 		field10302 = new Sprite[var14.length];
 		byte var15 = 12;
 		for (int var16 = 0; var16 < var14.length; var16++) {
 			var14[var16].method2605(-var15 + (int) (Math.random() * (double) var15 * 2.0D), -var15 + (int) (Math.random() * (double) var15 * 2.0D), -var15 + (int) (Math.random() * (double) var15 * 2.0D));
-			field10302[var16] = arg0.method2200(var14[var16], true);
+			field10302[var16] = arg0.createSprite(var14[var16], true);
 		}
-		field7207 = arg0.method2200(SpriteDataProvider.method1609(arg1, field11891, 0), true);
-		field1940 = arg0.method2200(SpriteDataProvider.method1609(arg1, field512, 0), true);
+		field7207 = arg0.createSprite(SpriteDataProvider.method1609(arg1, field11891, 0), true);
+		field1940 = arg0.createSprite(SpriteDataProvider.method1609(arg1, field512, 0), true);
 		SpriteData[] var17 = SpriteDataProvider.method1608(arg1, field12241, 0);
 		field6719 = new Sprite[var17.length];
 		for (int var18 = 0; var18 < var17.length; var18++) {
-			field6719[var18] = arg0.method2200(var17[var18], true);
+			field6719[var18] = arg0.createSprite(var17[var18], true);
 		}
 	}
 

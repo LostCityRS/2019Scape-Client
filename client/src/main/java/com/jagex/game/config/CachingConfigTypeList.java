@@ -43,7 +43,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		WeightedCache var2 = this.recentUse;
 		ConfigType cachedConfigType;
 		synchronized (this.recentUse) {
-			cachedConfigType = (ConfigType) this.recentUse.method2930((long) id);
+			cachedConfigType = (ConfigType) this.recentUse.get((long) id);
 		}
 		if (cachedConfigType != null) {
 			return cachedConfigType;
@@ -51,7 +51,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		ConfigType configType = this.list_uncached(id);
 		WeightedCache var6 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.method2921(configType, (long) id);
+			this.recentUse.put(configType, (long) id);
 			return configType;
 		}
 	}
@@ -97,7 +97,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	public void method14896(int arg0) {
 		WeightedCache var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.method2923(arg0);
+			this.recentUse.update(arg0);
 		}
 	}
 
@@ -136,7 +136,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 			int var1 = ++this.field8852 - 1;
 			WeightedCache var2 = this.this$0.recentUse;
 			synchronized (this.this$0.recentUse) {
-				ConfigType var3 = (ConfigType) this.this$0.recentUse.method2930((long) var1);
+				ConfigType var3 = (ConfigType) this.this$0.recentUse.get((long) var1);
 				if (var3 != null) {
 					return var3;
 				}

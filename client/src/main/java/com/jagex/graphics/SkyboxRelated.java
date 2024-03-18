@@ -177,9 +177,9 @@ public class SkyboxRelated {
 	public boolean method7999(Renderer arg0, SkyboxRelated arg1) {
 		if (this.field5128 == null) {
 			if (this.field5112 == 0) {
-				if (SkyBox.field2421.method1977(TextureRelated2.field7586, this.field5135, -1, TextureRelated1.field7569, 0.7F, this.field5123, this.field5123, false)) {
-					int[] var3 = SkyBox.field2421.method1983(TextureRelated2.field7586, this.field5135, 0.7F, this.field5123, this.field5123, false);
-					this.field5128 = arg0.method2199(var3, 0, this.field5123, this.field5123, this.field5123);
+				if (SkyBox.field2421.loadTexture(TextureRelated2.field7586, this.field5135, -1, TextureRelated1.field7569, 0.7F, this.field5123, this.field5123, false)) {
+					int[] var3 = SkyBox.field2421.getSpecialTexture(TextureRelated2.field7586, this.field5135, 0.7F, this.field5123, this.field5123, false);
+					this.field5128 = arg0.createSprite(var3, 0, this.field5123, this.field5123, this.field5123);
 				}
 			} else if (this.field5112 == 2) {
 				this.method7983(arg0, arg1);
@@ -199,7 +199,7 @@ public class SkyboxRelated {
 		arg0.method2171(field5138);
 		arg0.method2168(0, 0, this.field5123, this.field5123);
 		arg0.method2475(2, 0);
-		arg0.method2354(0, 0, this.field5123, this.field5123, 0, 0);
+		arg0.fillRectangle(0, 0, this.field5123, this.field5123, 0, 0);
 		int var4 = 0;
 		int var5 = 0;
 		int var6 = 256;
@@ -230,10 +230,10 @@ public class SkyboxRelated {
 			var6 = var6 * var13 - var4 * var12 >> 14;
 			var4 = var14;
 		}
-		arg0.method2222(1.0F);
+		arg0.setSunAmbientIntensity(1.0F);
 		arg0.method2223(this.field5111, 1.0F, 1.0F, (float) var4, (float) var5, (float) var6);
 		var3.method1946(this.field5126 & 0x3FFF, this.field5127 & 0x3FFF, this.field5124 & 0x3FFF);
-		Model var15 = arg0.method2211(var3, 2048, 0, 64, 768);
+		Model var15 = arg0.createModel(var3, 2048, 0, 64, 768);
 		int var16 = var15.method1730() - var15.method1729();
 		int var17 = var15.method1695() - var15.method1748();
 		int var18 = var16 > var17 ? var16 : var17;
@@ -260,7 +260,7 @@ public class SkyboxRelated {
 		arg0.method2171(field5138);
 		arg0.method2168(0, 0, this.field5123, this.field5123);
 		arg0.method2475(2, 0);
-		arg0.method2354(0, 0, this.field5123, this.field5123, this.field5111 | 0xFF000000, 0);
+		arg0.fillRectangle(0, 0, this.field5123, this.field5123, this.field5111 | 0xFF000000, 0);
 		int var3 = 0;
 		int var4 = 0;
 		int var5 = 256;
@@ -291,7 +291,7 @@ public class SkyboxRelated {
 		}
 		Model var12 = field5129.method1773((byte) 0, 51200, true);
 		var12.method1744((short) 0, (short) this.field5135);
-		arg0.method2222(1.0F);
+		arg0.setSunAmbientIntensity(1.0F);
 		arg0.method2223(16777215, 1.0F, 1.0F, (float) var3, (float) var4, (float) var5);
 		int var13 = this.field5123 * 1024 / (var12.method1730() - var12.method1729());
 		if (this.field5111 != 0) {
@@ -310,7 +310,7 @@ public class SkyboxRelated {
 		field5118.method1446(var18, var18, var17, var17, 0, this.field5111 | 0xFF000000, 1);
 		this.field5128 = arg0.method2314(0, 0, this.field5123, this.field5123, true);
 		arg0.method2475(2, 0);
-		arg0.method2354(0, 0, this.field5123, this.field5123, 0, 0);
+		arg0.fillRectangle(0, 0, this.field5123, this.field5123, 0, 0);
 		field5137.method1446(0, 0, this.field5123, this.field5123, 1, 0, 0);
 		this.field5128.method1441(0, 0, 3);
 		arg0.method2220(var14);
@@ -356,7 +356,7 @@ public class SkyboxRelated {
 		var1.field1397 = null;
 		var1.field1379 = null;
 		var1.field1392 = null;
-		field5129 = arg0.method2211(var1, 51200, 33, 64, 768);
+		field5129 = arg0.createModel(var1, 51200, 33, 64, 768);
 	}
 
 	@ObfuscatedName("sw.z(Ldh;)V")
@@ -388,7 +388,7 @@ public class SkyboxRelated {
 				var1[var7 + var9] = var1[var7 + var12] = var1[var8 + var9] = var1[var8 + var12] = 127 - var15 << 24 | 0xFFFFFF;
 			}
 		}
-		field5137 = arg0.method2199(var2, 0, 128, 128, 128);
-		field5118 = arg0.method2199(var1, 0, 128, 128, 128);
+		field5137 = arg0.createSprite(var2, 0, 128, 128, 128);
+		field5118 = arg0.createSprite(var1, 0, 128, 128, 128);
 	}
 }

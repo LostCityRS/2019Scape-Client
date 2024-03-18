@@ -46,14 +46,14 @@ public class PureJavaFontRelated extends Font {
 					var18[var10 * var19 + var20] = var5[this.field1667.field8570 * var20 + this.field1667.field8571 * (this.field1667.field8570 * var19 + var14) + var13];
 				}
 			}
-			this.field10230[var9] = this.field10229.method2188(var15, 0, var10, var10, var11, false);
-			this.field10231[var9] = this.field10229.method2188(var18, 0, var10, var10, var11, false);
+			this.field10230[var9] = this.field10229.createSprite(var15, 0, var10, var10, var11, false);
+			this.field10231[var9] = this.field10229.createSprite(var18, 0, var10, var10, var11, false);
 		}
 	}
 
 	@ObfuscatedName("afh.s(CIIIZ)V")
 	public void method2690(char arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		if (this.field10229.field9778 == null) {
+		if (this.field10229.colour == null) {
 			return;
 		}
 		int var6 = arg2 + this.field1667.method14560(arg0);

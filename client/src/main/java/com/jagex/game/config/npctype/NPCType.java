@@ -589,7 +589,7 @@ public class NPCType implements ConfigType {
 		WeightedCache var21 = this.factory.modelCache;
 		Model var22;
 		synchronized (this.factory.modelCache) {
-			var22 = (Model) this.factory.modelCache.method2930(var19);
+			var22 = (Model) this.factory.modelCache.get(var19);
 		}
 		BASType var24 = null;
 		if (!arg12 && arg11 != -1) {
@@ -688,7 +688,7 @@ public class NPCType implements ConfigType {
 			} else {
 				var43 = new ModelUnlit(var31, var31.length);
 			}
-			var22 = arg0.method2211(var43, var25, this.factory.field2773, this.field2725 + 64, this.field2726 + 850);
+			var22 = arg0.createModel(var43, var25, this.factory.field2773, this.field2725 + 64, this.field2726 + 850);
 			if (this.recol_s != null) {
 				short[] var44;
 				if (arg10 == null || arg10.field2684 == null) {
@@ -722,7 +722,7 @@ public class NPCType implements ConfigType {
 			var22.method1690(var15);
 			WeightedCache var48 = this.factory.modelCache;
 			synchronized (this.factory.modelCache) {
-				this.factory.modelCache.method2921(var22, var19);
+				this.factory.modelCache.put(var22, var19);
 			}
 		}
 		Model var50 = var22.method1773((byte) 4, var15, true);
@@ -808,7 +808,7 @@ public class NPCType implements ConfigType {
 			WeightedCache var11 = this.factory.field2768;
 			Model var12;
 			synchronized (this.factory.field2768) {
-				var12 = (Model) this.factory.field2768.method2930(var9);
+				var12 = (Model) this.factory.field2768.get(var9);
 			}
 			if (var12 == null || (var12.method1691() & var8) != var8) {
 				if (var12 != null) {
@@ -860,7 +860,7 @@ public class NPCType implements ConfigType {
 				} else {
 					var25 = new ModelUnlit(var20, var20.length);
 				}
-				var12 = arg0.method2211(var25, var14, this.factory.field2773, 64, 768);
+				var12 = arg0.createModel(var25, var14, this.factory.field2773, 64, 768);
 				if (this.recol_s != null) {
 					short[] var26;
 					if (arg5 == null || arg5.field2684 == null) {
@@ -893,7 +893,7 @@ public class NPCType implements ConfigType {
 				var12.method1690(var8);
 				WeightedCache var30 = this.factory.field2768;
 				synchronized (this.factory.field2768) {
-					this.factory.field2768.method2921(var12, var9);
+					this.factory.field2768.put(var12, var9);
 				}
 			}
 			if (arg4 != null) {

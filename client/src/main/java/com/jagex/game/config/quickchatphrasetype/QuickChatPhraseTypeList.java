@@ -43,7 +43,7 @@ public class QuickChatPhraseTypeList {
 
 	@ObfuscatedName("ach.e(II)Lasq;")
 	public QuickChatPhraseType list(int id) {
-		QuickChatPhraseType cached = (QuickChatPhraseType) this.recentUse.method2930((long) id);
+		QuickChatPhraseType cached = (QuickChatPhraseType) this.recentUse.get((long) id);
 		if (cached != null) {
 			return cached;
 		}
@@ -61,7 +61,7 @@ public class QuickChatPhraseTypeList {
 		if (id >= 32768) {
 			quickChatPhraseType.postDecode();
 		}
-		this.recentUse.method2921(quickChatPhraseType, (long) id);
+		this.recentUse.put(quickChatPhraseType, (long) id);
 		return quickChatPhraseType;
 	}
 

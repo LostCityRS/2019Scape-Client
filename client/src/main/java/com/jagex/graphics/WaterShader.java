@@ -221,7 +221,7 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 			return;
 		}
 		Matrix4x4 var3 = this.field3233.method16035();
-		float[] var4 = new float[] { var3.field4315[12], var3.field4315[13], var3.field4315[14] };
+		float[] var4 = new float[] { var3.entries[12], var3.entries[13], var3.entries[14] };
 		float[] var5 = new float[] { 0.0F, 0.0F, 0.0F };
 		var3.method6670(var5);
 		float[] var6 = new float[] { 0.0F, 0.0F, 0.0F };
@@ -275,7 +275,7 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 	@ObfuscatedName("ahi.al(Lou;)V")
 	public void method16771(Matrix4x3 arg0) {
 		Matrix4x4 var2 = this.field3233.field10066;
-		var2.method6609(arg0);
+		var2.setToMatrix4x3(arg0);
 		int var3 = this.field10587.method4212();
 		if (this.field10607 != null) {
 			this.field10587.method4166(this.field10607, var2);

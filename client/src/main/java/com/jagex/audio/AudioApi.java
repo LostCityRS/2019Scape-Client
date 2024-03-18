@@ -779,7 +779,7 @@ public class AudioApi {
 		if (!this.field1860) {
 			return null;
 		}
-		AudioApiRelated2 var3 = (AudioApiRelated2) (arg1 ? this.field1862.method2930((long) arg0) : this.field1856.method2930((long) arg0));
+		AudioApiRelated2 var3 = (AudioApiRelated2) (arg1 ? this.field1862.get((long) arg0) : this.field1856.get((long) arg0));
 		if (var3 == null) {
 			if (arg1) {
 				var3 = (AudioApiRelated2) this.field1865.get(arg0);
@@ -824,16 +824,16 @@ public class AudioApi {
 		public void method3130(AudioApiRelated2 arg0, int arg1, int arg2, boolean arg3) {
 			this.this$0.method3233().add(arg0);
 			if (arg3) {
-				this.this$0.method3146().method2921(arg0, (long) arg2);
+				this.this$0.method3146().put(arg0, (long) arg2);
 			} else {
-				this.this$0.method3145().method2922(arg0, (long) arg2, arg0.method9678());
+				this.this$0.method3145().put(arg0, (long) arg2, arg0.method9678());
 			}
 		}
 
 		@ObfuscatedName("fl.n(Lwr;I)V")
 		public void method3131(AudioApiRelated2 arg0) {
 			if (arg0 != null) {
-				this.this$0.method3145().method2930((long) arg0.method9680());
+				this.this$0.method3145().get((long) arg0.method9680());
 			}
 		}
 	}

@@ -213,7 +213,7 @@ public class SkyBox {
 			if (var2) {
 				arg0.method2223(16777215, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
 				ModelUnlit var3 = ModelUnlit.method1931(field1810, this.field5093, 0);
-				this.field5103 = arg0.method2211(var3, 1099776, 0, 255, 1);
+				this.field5103 = arg0.createModel(var3, 1099776, 0, 255, 1);
 				byte[] var4 = this.field5103.method1741();
 				if (var4 == null) {
 					this.field5101 = null;
@@ -239,7 +239,7 @@ public class SkyBox {
 		}
 		if (this.field5092 == null) {
 			if (this.field5084 == -1) {
-				arg0.method2354(arg2, arg3, arg4, arg5, arg9 | 0xFF000000, 0);
+				arg0.fillRectangle(arg2, arg3, arg4, arg5, arg9 | 0xFF000000, 0);
 			}
 			this.method7947(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, var13);
 			return;
@@ -264,18 +264,18 @@ public class SkyBox {
 			arg0.method2475(2, 0);
 			arg7 = arg1 + arg7 & 0x3FFF;
 			if (this.field5084 == -1 || this.field5085 == 0) {
-				arg0.method2354(arg2, arg3, arg4, arg5, var14 << 24 | arg9, arg10 ? 0 : 1);
+				arg0.fillRectangle(arg2, arg3, arg4, arg5, var14 << 24 | arg9, arg10 ? 0 : 1);
 			} else {
-				Material var15 = field3199.method2043(this.field5084);
-				if (this.field5095 == null && field2421.method1977(TextureRelated2.field7586, var15.field1334, -1, MaterialAlphaMode.field7573 == var15.field1340 ? TextureRelated1.field7569 : TextureRelated1.field7568, 0.7F, this.field5085, this.field5085, false)) {
-					int[] var16 = MaterialAlphaMode.field7573 == var15.field1340 ? field2421.method1983(TextureRelated2.field7586, var15.field1334, 0.7F, this.field5085, this.field5085, false) : field2421.method1986(TextureRelated2.field7586, var15.field1334, 0.7F, this.field5085, this.field5085, false);
+				Material var15 = field3199.get(this.field5084);
+				if (this.field5095 == null && field2421.loadTexture(TextureRelated2.field7586, var15.diffuseTexture, -1, MaterialAlphaMode.field7573 == var15.alphaMode ? TextureRelated1.field7569 : TextureRelated1.field7568, 0.7F, this.field5085, this.field5085, false)) {
+					int[] var16 = MaterialAlphaMode.field7573 == var15.alphaMode ? field2421.getSpecialTexture(TextureRelated2.field7586, var15.diffuseTexture, 0.7F, this.field5085, this.field5085, false) : field2421.getTexture(TextureRelated2.field7586, var15.diffuseTexture, 0.7F, this.field5085, this.field5085, false);
 					this.field5096 = var16[0];
 					this.field5097 = var16[var16.length - 1];
-					this.field5095 = arg0.method2199(var16, 0, var15.field1357, var15.field1357, var15.field1357);
+					this.field5095 = arg0.createSprite(var16, 0, var15.size, var15.size, var15.size);
 				}
-				int var17 = var14 == 255 ? (MaterialAlphaMode.field7573 == var15.field1340 ? 1 : 0) : 1;
+				int var17 = var14 == 255 ? (MaterialAlphaMode.field7573 == var15.alphaMode ? 1 : 0) : 1;
 				if (var17 == 1 && arg10) {
-					arg0.method2354(arg2, arg3, arg4, arg5, arg9, 0);
+					arg0.fillRectangle(arg2, arg3, arg4, arg5, arg9, 0);
 				}
 				if (this.field5095 != null) {
 					int var18 = arg5 * arg6 / -4096;
@@ -313,10 +313,10 @@ public class SkyBox {
 		} else if (arg11) {
 			Matrix4x4 var23 = arg0.method2355();
 			Matrix4x4 var24 = arg0.method2355();
-			var23.field4315[2] = var23.field4315[3];
-			var23.field4315[6] = var23.field4315[7];
-			var23.field4315[10] = var23.field4315[11];
-			var23.field4315[14] = var23.field4315[15];
+			var23.entries[2] = var23.entries[3];
+			var23.entries[6] = var23.entries[7];
+			var23.entries[10] = var23.entries[11];
+			var23.entries[14] = var23.entries[15];
 			arg0.method2220(var23);
 			this.method7948(arg0, arg6, arg7, arg8, arg12);
 			arg0.method2220(var24);

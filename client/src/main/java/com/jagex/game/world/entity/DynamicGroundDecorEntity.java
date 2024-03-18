@@ -80,7 +80,7 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 		}
 		if (this.field11133.field6680 != null) {
 			ParticleList var9 = this.field11133.field6680.method9965();
-			arg0.method2198(var9);
+			arg0.drawParticles(var9);
 		}
 		this.field11135 = var2.method1731() || this.field11133.field6680 != null;
 		if (this.field11134 == null) {

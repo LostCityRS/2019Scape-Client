@@ -91,15 +91,15 @@ public abstract class LocTypeFactory {
 	public void method9522(int arg0) {
 		WeightedCache var2 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
-			this.modelCacheStatic.method2923(arg0);
+			this.modelCacheStatic.update(arg0);
 		}
 		WeightedCache var4 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
-			this.modelCacheDynamic.method2923(arg0);
+			this.modelCacheDynamic.update(arg0);
 		}
 		WeightedCache var6 = this.field7532;
 		synchronized (this.field7532) {
-			this.field7532.method2923(arg0);
+			this.field7532.update(arg0);
 		}
 	}
 

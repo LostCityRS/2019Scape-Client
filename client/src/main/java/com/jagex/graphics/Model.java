@@ -729,7 +729,7 @@ public abstract class Model {
 						var19 = new float[] { 0.0F, 0.0F, 0.0F };
 						var20 = new float[] { 0.0F, 0.0F, 0.0F };
 					} else {
-						var19 = new float[] { var10.method1570(arg1.method19381()).field4315[12], var10.method1570(arg1.method19381()).field4315[13], var10.method1570(arg1.method19381()).field4315[14] };
+						var19 = new float[] { var10.method1570(arg1.method19381()).entries[12], var10.method1570(arg1.method19381()).entries[13], var10.method1570(arg1.method19381()).entries[14] };
 						var20 = var10.method1564(arg1.method19381()).method6602();
 					}
 					if (arg0.field11314[var12] == 1) {
@@ -836,9 +836,9 @@ public abstract class Model {
 			if (arg1 == null) {
 				return;
 			}
-			var12 = (int) arg1.method1565(arg2).field4315[12];
-			var13 = (int) -arg1.method1565(arg2).field4315[13];
-			var14 = (int) -arg1.method1565(arg2).field4315[14];
+			var12 = (int) arg1.method1565(arg2).entries[12];
+			var13 = (int) -arg1.method1565(arg2).entries[13];
+			var14 = (int) -arg1.method1565(arg2).entries[14];
 		} else if (arg0 == 1) {
 			if (arg1 == null) {
 				return;
@@ -859,10 +859,10 @@ public abstract class Model {
 			Matrix4x4 var19 = Matrix4x4.method6641();
 			var19.method6608(arg5, arg4, arg6);
 			if (arg1.field1239 != null) {
-				var19.method6720(arg1.field1239.method1565(arg2));
+				var19.multiply(arg1.field1239.method1565(arg2));
 			}
 			var19.method6611();
-			var19.method6720(arg1.method1565(arg2));
+			var19.multiply(arg1.method1565(arg2));
 			float[] var20 = var19.method6602();
 			var12 = (int) (var20[0] * 2607.5945F) & 0x3FFF;
 			var13 = (int) (-var20[1] * 2607.5945F) & 0x3FFF;

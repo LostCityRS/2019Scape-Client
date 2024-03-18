@@ -26,7 +26,7 @@ public class OpaqueFont extends Font {
 			byte[] var10 = new byte[var5 * var6];
 			for (int var11 = 0; var11 < var6; var11++) {
 				for (int var12 = 0; var12 < var5; var12++) {
-					var10[var5 * var11 + var12] = arg2.field10227[this.field1667.field8570 * var12 + this.field1667.field8571 * (this.field1667.field8570 * var11 + var9) + var8];
+					var10[var5 * var11 + var12] = arg2.colour[this.field1667.field8570 * var12 + this.field1667.field8571 * (this.field1667.field8570 * var11 + var9) + var8];
 				}
 			}
 			this.field10239[var4] = var10;
@@ -58,38 +58,38 @@ public class OpaqueFont extends Font {
 
 	@ObfuscatedName("afl.s(CIIIZ)V")
 	public void method2690(char arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		if (this.field10238.field9778 == null) {
+		if (this.field10238.colour == null) {
 			return;
 		}
 		int var6 = arg2 + this.field1667.method14560(arg0);
 		int var7 = this.field1667.method14558(arg0);
 		int var8 = this.field1667.method14529(arg0);
-		int var9 = this.field10238.field9779;
+		int var9 = this.field10238.sizeX;
 		int var10 = var6 * var9 + arg1;
 		int var11 = var9 - var7;
 		int var12 = 0;
 		int var13 = 0;
-		if (var6 < this.field10238.field9784) {
-			int var14 = this.field10238.field9784 - var6;
+		if (var6 < this.field10238.clipMinY) {
+			int var14 = this.field10238.clipMinY - var6;
 			var8 -= var14;
-			var6 = this.field10238.field9784;
+			var6 = this.field10238.clipMinY;
 			var13 += var7 * var14;
 			var10 += var9 * var14;
 		}
-		if (var6 + var8 > this.field10238.field9785) {
-			var8 -= var6 + var8 - this.field10238.field9785;
+		if (var6 + var8 > this.field10238.clipMaxY) {
+			var8 -= var6 + var8 - this.field10238.clipMaxY;
 		}
-		if (arg1 < this.field10238.field9805) {
-			int var15 = this.field10238.field9805 - arg1;
+		if (arg1 < this.field10238.clipMinX) {
+			int var15 = this.field10238.clipMinX - arg1;
 			var7 -= var15;
-			arg1 = this.field10238.field9805;
+			arg1 = this.field10238.clipMinX;
 			var13 += var15;
 			var10 += var15;
 			var12 += var15;
 			var11 += var15;
 		}
-		if (arg1 + var7 > this.field10238.field9801) {
-			int var16 = arg1 + var7 - this.field10238.field9801;
+		if (arg1 + var7 > this.field10238.clipMaxX) {
+			int var16 = arg1 + var7 - this.field10238.clipMaxX;
 			var7 -= var16;
 			var12 += var16;
 			var11 += var16;
@@ -98,9 +98,9 @@ public class OpaqueFont extends Font {
 			return;
 		}
 		if ((arg3 & -16777216) == -16777216) {
-			this.method16394(this.field10239[arg0], this.field10238.field9778, arg3, var13, var10, var7, var8, var11, var12);
+			this.method16394(this.field10239[arg0], this.field10238.colour, arg3, var13, var10, var7, var8, var11, var12);
 		} else if ((arg3 & 0xFF000000) != 0) {
-			this.method16400(this.field10239[arg0], this.field10238.field9778, arg3, var13, var10, var7, var8, var11, var12);
+			this.method16400(this.field10239[arg0], this.field10238.colour, arg3, var13, var10, var7, var8, var11, var12);
 		}
 	}
 
@@ -164,7 +164,7 @@ public class OpaqueFont extends Font {
 
 	@ObfuscatedName("afl.y(CIIIZLch;II)V")
 	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
-		if (this.field10238.field9778 == null) {
+		if (this.field10238.colour == null) {
 			return;
 		}
 		if (arg5 == null) {
@@ -174,32 +174,32 @@ public class OpaqueFont extends Font {
 		int var9 = arg2 + this.field1667.method14560(arg0);
 		int var10 = this.field1667.method14558(arg0);
 		int var11 = this.field1667.method14529(arg0);
-		int var12 = this.field10238.field9779;
+		int var12 = this.field10238.sizeX;
 		int var13 = var9 * var12 + arg1;
 		int var14 = var12 - var10;
 		int var15 = 0;
 		int var16 = 0;
-		if (var9 < this.field10238.field9784) {
-			int var17 = this.field10238.field9784 - var9;
+		if (var9 < this.field10238.clipMinY) {
+			int var17 = this.field10238.clipMinY - var9;
 			var11 -= var17;
-			var9 = this.field10238.field9784;
+			var9 = this.field10238.clipMinY;
 			var16 += var10 * var17;
 			var13 += var12 * var17;
 		}
-		if (var9 + var11 > this.field10238.field9785) {
-			var11 -= var9 + var11 - this.field10238.field9785;
+		if (var9 + var11 > this.field10238.clipMaxY) {
+			var11 -= var9 + var11 - this.field10238.clipMaxY;
 		}
-		if (arg1 < this.field10238.field9805) {
-			int var18 = this.field10238.field9805 - arg1;
+		if (arg1 < this.field10238.clipMinX) {
+			int var18 = this.field10238.clipMinX - arg1;
 			var10 -= var18;
-			arg1 = this.field10238.field9805;
+			arg1 = this.field10238.clipMinX;
 			var16 += var18;
 			var13 += var18;
 			var15 += var18;
 			var14 += var18;
 		}
-		if (arg1 + var10 > this.field10238.field9801) {
-			int var19 = arg1 + var10 - this.field10238.field9801;
+		if (arg1 + var10 > this.field10238.clipMaxX) {
+			int var19 = arg1 + var10 - this.field10238.clipMaxX;
 			var10 -= var19;
 			var15 += var19;
 			var14 += var19;
@@ -208,9 +208,9 @@ public class OpaqueFont extends Font {
 			return;
 		}
 		if ((arg3 & -16777216) == -16777216) {
-			this.method16396(this.field10239[arg0], this.field10238.field9778, arg3, var16, var13, var10, var11, var14, var15, arg1, var9, this.field1667.method14558(arg0), arg5, arg6, arg7);
+			this.method16396(this.field10239[arg0], this.field10238.colour, arg3, var16, var13, var10, var11, var14, var15, arg1, var9, this.field1667.method14558(arg0), arg5, arg6, arg7);
 		} else {
-			this.method16397(this.field10239[arg0], this.field10238.field9778, arg3, var16, var13, var10, var11, var14, var15, arg1, var9, this.field1667.method14558(arg0), arg5, arg6, arg7);
+			this.method16397(this.field10239[arg0], this.field10238.colour, arg3, var16, var13, var10, var11, var14, var15, arg1, var9, this.field1667.method14558(arg0), arg5, arg6, arg7);
 		}
 	}
 
@@ -222,7 +222,7 @@ public class OpaqueFont extends Font {
 		int var19 = arg10;
 		if (arg14 > arg10) {
 			var19 = arg14;
-			arg4 += this.field10238.field9779 * (arg14 - arg10);
+			arg4 += this.field10238.sizeX * (arg14 - arg10);
 			arg3 += (arg14 - arg10) * arg11;
 		}
 		int var20 = var17.length + arg14 < arg6 + arg10 ? var17.length + arg14 : arg6 + arg10;
@@ -272,11 +272,11 @@ public class OpaqueFont extends Font {
 		JavaGraphicsRelated3 var16 = (JavaGraphicsRelated3) arg12;
 		int[] var17 = var16.field9414;
 		int[] var18 = var16.field9415;
-		int var19 = arg9 - this.field10238.field9805;
+		int var19 = arg9 - this.field10238.clipMinX;
 		int var20 = arg10;
 		if (arg14 > arg10) {
 			var20 = arg14;
-			arg4 += this.field10238.field9779 * (arg14 - arg10);
+			arg4 += this.field10238.sizeX * (arg14 - arg10);
 			arg3 += (arg14 - arg10) * arg11;
 		}
 		int var21 = var17.length + arg14 < arg6 + arg10 ? var17.length + arg14 : arg6 + arg10;

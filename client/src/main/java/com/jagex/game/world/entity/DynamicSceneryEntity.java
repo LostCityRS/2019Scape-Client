@@ -89,7 +89,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 		}
 		if (this.field11131.field6680 != null) {
 			ParticleList var6 = this.field11131.field6680.method9965();
-			arg0.method2198(var6);
+			arg0.drawParticles(var6);
 		}
 		this.field11127 = var2.method1731() || this.field11131.field6680 != null;
 		ScaleRotTrans var7 = this.method10536();

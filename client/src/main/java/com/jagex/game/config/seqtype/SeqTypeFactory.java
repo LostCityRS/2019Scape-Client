@@ -30,10 +30,10 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 	public FrameSet method3020(int arg0) {
 		WeightedCache var2 = this.frameCache;
 		synchronized (this.frameCache) {
-			FrameSet var3 = (FrameSet) this.frameCache.method2930((long) arg0);
+			FrameSet var3 = (FrameSet) this.frameCache.get((long) arg0);
 			if (var3 == null) {
 				var3 = new FrameSet(arg0);
-				this.frameCache.method2921(var3, (long) arg0);
+				this.frameCache.put(var3, (long) arg0);
 			}
 			return var3.method19410() ? var3 : null;
 		}
@@ -43,10 +43,10 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 	public KeyFrameSet method3010(int arg0) {
 		WeightedCache var2 = this.keyFrameCache;
 		synchronized (this.keyFrameCache) {
-			KeyFrameSet var3 = (KeyFrameSet) this.keyFrameCache.method2930((long) arg0);
+			KeyFrameSet var3 = (KeyFrameSet) this.keyFrameCache.get((long) arg0);
 			if (var3 == null) {
 				var3 = new KeyFrameSet(arg0);
-				this.keyFrameCache.method2921(var3, (long) arg0);
+				this.keyFrameCache.put(var3, (long) arg0);
 			}
 			return var3.method19395() ? var3 : null;
 		}
@@ -64,7 +64,7 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 	public void method3012(int arg0) {
 		WeightedCache var2 = this.frameCache;
 		synchronized (this.frameCache) {
-			this.frameCache.method2923(arg0);
+			this.frameCache.update(arg0);
 		}
 	}
 

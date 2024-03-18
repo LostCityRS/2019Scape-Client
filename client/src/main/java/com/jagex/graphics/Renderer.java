@@ -35,7 +35,7 @@ public abstract class Renderer {
 	public final TextureList field1596;
 
 	@ObfuscatedName("dh.p")
-	public final MaterialList field1597;
+	public final MaterialList materialList;
 
 	@ObfuscatedName("dh.d")
 	public final BillboardTypeList field1598;
@@ -117,7 +117,7 @@ public abstract class Renderer {
 	}
 
 	public Renderer(MaterialList arg0, TextureList arg1, BillboardTypeList arg2, ParticleEmitterTypeList arg3, ParticleEffectorTypeList arg4) {
-		this.field1597 = arg0;
+		this.materialList = arg0;
 		this.field1596 = arg1;
 		this.field1598 = arg2;
 		this.field1599 = arg3;
@@ -294,12 +294,12 @@ public abstract class Renderer {
 
 	@ObfuscatedName("dh.bb(IIIIII)V")
 	public final void method2173(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		this.method2179(arg0, arg1, arg2, arg3, arg4, 1);
+		this.drawRectangle(arg0, arg1, arg2, arg3, arg4, 1);
 	}
 
 	@ObfuscatedName("dh.be(IIIIIB)V")
 	public final void method2301(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		this.method2354(arg0, arg1, arg2, arg3, arg4, 1);
+		this.fillRectangle(arg0, arg1, arg2, arg3, arg4, 1);
 	}
 
 	@ObfuscatedName("dh.by(IIIII)V")
@@ -309,32 +309,32 @@ public abstract class Renderer {
 
 	@ObfuscatedName("dh.bu(IIIIB)V")
 	public final void method2176(int arg0, int arg1, int arg2, int arg3) {
-		this.method2433(arg0, arg1, arg2, arg3, 1);
+		this.drawHorizontalLine(arg0, arg1, arg2, arg3, 1);
 	}
 
 	@ObfuscatedName("dh.bw(IIIII)V")
 	public final void method2177(int arg0, int arg1, int arg2, int arg3) {
-		this.method2139(arg0, arg1, arg2, arg3, 1);
+		this.drawVerticalLine(arg0, arg1, arg2, arg3, 1);
 	}
 
 	@ObfuscatedName("dh.bo(IIIIII)V")
 	public final void method2374(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		this.method2185(arg0, arg1, arg2, arg3, arg4, 1);
+		this.drawLine(arg0, arg1, arg2, arg3, arg4, 1);
 	}
 
 	@ObfuscatedName("dh.ci(IILou;Loj;I)Z")
 	public boolean method2191(int arg0, int arg1, Matrix4x3 arg2, Cuboid arg3) {
-		return this.method2128(arg0, arg1, 0, 0, arg2, arg3);
+		return this.pick(arg0, arg1, 0, 0, arg2, arg3);
 	}
 
 	@ObfuscatedName("dh.cx(IIZI)Lcm;")
 	public Sprite method2365(int arg0, int arg1, boolean arg2) {
-		return this.method2197(arg0, arg1, arg2, false);
+		return this.createSprite(arg0, arg1, arg2, false);
 	}
 
 	@ObfuscatedName("dh.cf([IIIIII)Lcm;")
-	public Sprite method2199(int[] arg0, int arg1, int arg2, int arg3, int arg4) {
-		return this.method2188(arg0, arg1, arg2, arg3, arg4, true);
+	public Sprite createSprite(int[] arg0, int arg1, int arg2, int arg3, int arg4) {
+		return this.createSprite(arg0, arg1, arg2, arg3, arg4, true);
 	}
 
 	@ObfuscatedName("dh.cm()V")
@@ -355,13 +355,13 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.dw(IIIIIF)Lakf;")
-	public Light method2227(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
+	public Light createLight(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
 		return new Light(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("dh.ee(FFFI)V")
 	public void method2243(float arg0, float arg1, float arg2) {
-		this.method2244(arg0, arg1, arg2, 0.0F, 1.0F, 1.0F);
+		this.setBloom(arg0, arg1, arg2, 0.0F, 1.0F, 1.0F);
 	}
 
 	@ObfuscatedName("dh.ec(IIII[IIII)[I")
@@ -461,7 +461,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.df()I")
-	public abstract int method2114();
+	public abstract int getMaxLights();
 
 	@ObfuscatedName("dh.l(II)V")
 	public abstract void method2116(int arg0, int arg1) throws RendererException;
@@ -470,7 +470,7 @@ public abstract class Renderer {
 	public abstract void method2117();
 
 	@ObfuscatedName("dh.d(I)V")
-	public abstract void method2120(int arg0);
+	public abstract void cycle(int arg0);
 
 	@ObfuscatedName("dh.ar(II)Ldw;")
 	public abstract EffectInterface method2121(int arg0, int arg1);
@@ -482,7 +482,7 @@ public abstract class Renderer {
 	public abstract boolean method2124();
 
 	@ObfuscatedName("dh.s()Z")
-	public abstract boolean method2125();
+	public abstract boolean supportsHardShadows();
 
 	@ObfuscatedName("dh.bl()V")
 	public abstract void method2126();
@@ -491,7 +491,7 @@ public abstract class Renderer {
 	public abstract boolean method2127();
 
 	@ObfuscatedName("dh.cn(IIIILou;Loj;)Z")
-	public abstract boolean method2128(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, Cuboid arg5);
+	public abstract boolean pick(int arg0, int arg1, int arg2, int arg3, Matrix4x3 arg4, Cuboid arg5);
 
 	@ObfuscatedName("dh.b()Z")
 	public abstract boolean method2129();
@@ -503,7 +503,7 @@ public abstract class Renderer {
 	public abstract String method2132();
 
 	@ObfuscatedName("dh.bp(IIIII)V")
-	public abstract void method2139(int arg0, int arg1, int arg2, int arg3, int arg4);
+	public abstract void drawVerticalLine(int arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("dh.x()Z")
 	public abstract boolean method2141();
@@ -512,7 +512,7 @@ public abstract class Renderer {
 	public abstract Surface method2144(Canvas arg0, int arg1, int arg2);
 
 	@ObfuscatedName("dh.am()Lafq;")
-	public abstract Framebuffer method2145();
+	public abstract Framebuffer createFramebuffer();
 
 	@ObfuscatedName("dh.au(IILck;Ldg;I)Ldp;")
 	public abstract GraphicsDeletable method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4);
@@ -524,7 +524,7 @@ public abstract class Renderer {
 	public abstract void method2150();
 
 	@ObfuscatedName("dh.dx()Z")
-	public abstract boolean method2152();
+	public abstract boolean isLevelsEnabled();
 
 	@ObfuscatedName("dh.aj()Z")
 	public abstract boolean method2153();
@@ -563,7 +563,7 @@ public abstract class Renderer {
 	public abstract void method2172(int arg0, int arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.bz(IIIIII)V")
-	public abstract void method2179(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
+	public abstract void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("dh.bg(IIIII)V")
 	public abstract void method2182(int arg0, int arg1, int arg2, int arg3, int arg4);
@@ -572,16 +572,16 @@ public abstract class Renderer {
 	public abstract void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8);
 
 	@ObfuscatedName("dh.bj(IIIIII)V")
-	public abstract void method2185(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
+	public abstract void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("dh.cl(IIIIIIIII)V")
 	public abstract void method2187(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8);
 
 	@ObfuscatedName("dh.ct([IIIIIZ)Lcm;")
-	public abstract Sprite method2188(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract Sprite createSprite(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("dh.ce(IIIIIII)V")
-	public abstract void method2189(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
+	public abstract void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("dh.cv(Lou;Led;Loj;)V")
 	public abstract void method2193(Matrix4x3 arg0, ScreenBoundingBox arg1, Cuboid arg2);
@@ -590,19 +590,19 @@ public abstract class Renderer {
 	public abstract boolean method2194();
 
 	@ObfuscatedName("dh.ca(Lakz;)V")
-	public abstract void method2195(Heap arg0);
+	public abstract void setBufferHeap(Heap arg0);
 
 	@ObfuscatedName("dh.ao()Z")
 	public abstract boolean method2196();
 
 	@ObfuscatedName("dh.cw(IIZZ)Lcm;")
-	public abstract Sprite method2197(int arg0, int arg1, boolean arg2, boolean arg3);
+	public abstract Sprite createSprite(int arg0, int arg1, boolean arg2, boolean arg3);
 
 	@ObfuscatedName("dh.dt(Ldm;)V")
-	public abstract void method2198(ParticleList arg0);
+	public abstract void drawParticles(ParticleList arg0);
 
 	@ObfuscatedName("dh.co(Lde;Z)Lcm;")
-	public abstract Sprite method2200(SpriteData arg0, boolean arg1);
+	public abstract Sprite createSprite(SpriteData arg0, boolean arg1);
 
 	@ObfuscatedName("dh.cb(II[I[I)Lch;")
 	public abstract GraphicsRelated method2205(int arg0, int arg1, int[] arg2, int[] arg3);
@@ -611,7 +611,7 @@ public abstract class Renderer {
 	public abstract void method2206(int arg0, GraphicsRelated arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.cy(Laac;Lde;Z)Leu;")
-	public abstract Font method2207(FontMetrics arg0, SpriteData arg1, boolean arg2);
+	public abstract Font createFont(FontMetrics arg0, SpriteData arg1, boolean arg2);
 
 	@ObfuscatedName("dh.cc()Lpq;")
 	public abstract Matrix4x4 method2208();
@@ -620,13 +620,13 @@ public abstract class Renderer {
 	public abstract Matrix4x3 method2209();
 
 	@ObfuscatedName("dh.cj(Ldq;IIII)Ldo;")
-	public abstract Model method2211(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4);
+	public abstract Model createModel(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("dh.dd(II)I")
 	public abstract int method2213(int arg0, int arg1);
 
 	@ObfuscatedName("dh.dr(II[[I[[IIII)Lcb;")
-	public abstract FloorModel method2214(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6);
+	public abstract FloorModel createFloor(int arg0, int arg1, int[][] arg2, int[][] arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("dh.do(Lou;)V")
 	public abstract void method2217(Matrix4x3 arg0);
@@ -641,10 +641,10 @@ public abstract class Renderer {
 	public abstract void method2220(Matrix4x4 arg0);
 
 	@ObfuscatedName("dh.cp(I)Lakz;")
-	public abstract Heap method2221(int arg0);
+	public abstract Heap createHeap(int arg0);
 
 	@ObfuscatedName("dh.dc(F)V")
-	public abstract void method2222(float arg0);
+	public abstract void setSunAmbientIntensity(float arg0);
 
 	@ObfuscatedName("dh.di(IFFFFF)V")
 	public abstract void method2223(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5);
@@ -653,7 +653,7 @@ public abstract class Renderer {
 	public abstract void method2224(int arg0);
 
 	@ObfuscatedName("dh.du(I)Ldz;")
-	public abstract EnvironmentSampler method2229(int arg0);
+	public abstract EnvironmentSampler createEnvironmentSampler(int arg0);
 
 	@ObfuscatedName("dh.db(II)V")
 	public abstract void method2233(int arg0, int arg1);
@@ -662,31 +662,31 @@ public abstract class Renderer {
 	public abstract boolean method2234();
 
 	@ObfuscatedName("dh.dg(FFFFF)V")
-	public abstract void method2236(float arg0, float arg1, float arg2, float arg3, float arg4);
+	public abstract void setLevels(float arg0, float arg1, float arg2, float arg3, float arg4);
 
 	@ObfuscatedName("dh.de([I)Lcj;")
-	public abstract ColourRemapper method2237(int[] arg0);
+	public abstract ColourRemapper createColourRemapper(int[] arg0);
 
 	@ObfuscatedName("dh.dj()Z")
 	public abstract boolean method2238();
 
 	@ObfuscatedName("dh.eo(Lcj;FLcj;FLcj;F)V")
-	public abstract void method2239(ColourRemapper arg0, float arg1, ColourRemapper arg2, float arg3, ColourRemapper arg4, float arg5);
+	public abstract void setColourRemapping(ColourRemapper arg0, float arg1, ColourRemapper arg2, float arg3, ColourRemapper arg4, float arg5);
 
 	@ObfuscatedName("dh.a()Z")
 	public abstract boolean method2240();
 
 	@ObfuscatedName("dh.ed()Z")
-	public abstract boolean method2242();
+	public abstract boolean isBloomEnabled();
 
 	@ObfuscatedName("dh.es(FFFFFF)V")
-	public abstract void method2244(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5);
+	public abstract void setBloom(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5);
 
 	@ObfuscatedName("dh.ei(ILdy;)V")
 	public abstract void method2245(int arg0, WaterFogData arg1);
 
 	@ObfuscatedName("dh.el(ILdy;)V")
-	public abstract void method2246(int arg0, WaterFogData arg1);
+	public abstract void setWaterFog(int arg0, WaterFogData arg1);
 
 	@ObfuscatedName("dh.ej()V")
 	public abstract void method2247();
@@ -698,16 +698,16 @@ public abstract class Renderer {
 	public abstract void method2263();
 
 	@ObfuscatedName("dh.y()Z")
-	public abstract boolean method2266();
+	public abstract boolean isBloomSupported();
 
 	@ObfuscatedName("dh.f()Lcz;")
-	public abstract RendererInfo method2272();
+	public abstract RendererInfo getRendererInfo();
 
 	@ObfuscatedName("dh.eu()V")
-	public abstract void method2273();
+	public abstract void disableBloom();
 
 	@ObfuscatedName("dh.ey()Z")
-	public abstract boolean method2274();
+	public abstract boolean enableBloom();
 
 	@ObfuscatedName("dh.ay()Z")
 	public abstract boolean method2304();
@@ -725,7 +725,7 @@ public abstract class Renderer {
 	public abstract int method2348(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("dh.bv(IIIIII)V")
-	public abstract void method2354(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
+	public abstract void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("dh.dq()Lpq;")
 	public abstract Matrix4x4 method2355();
@@ -746,7 +746,7 @@ public abstract class Renderer {
 	public abstract int[] method2413();
 
 	@ObfuscatedName("dh.ba(IIIII)V")
-	public abstract void method2433(int arg0, int arg1, int arg2, int arg3, int arg4);
+	public abstract void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("dh.dl(Ldz;Ldz;FLdz;)Ldz;")
 	public abstract EnvironmentSampler method2435(EnvironmentSampler arg0, EnvironmentSampler arg1, float arg2, EnvironmentSampler arg3);
@@ -755,7 +755,7 @@ public abstract class Renderer {
 	public abstract void method2475(int arg0, int arg1);
 
 	@ObfuscatedName("dh.ds(I[Lakf;)V")
-	public abstract void method2491(int arg0, Light[] arg1);
+	public abstract void setActiveLights(int arg0, Light[] arg1);
 
 	@ObfuscatedName("dh.ab()I")
 	public abstract int method2502();
@@ -764,7 +764,7 @@ public abstract class Renderer {
 	public abstract void method2507(float arg0, float arg1, float arg2, float[] arg3);
 
 	@ObfuscatedName("dh.dp(Ldz;)V")
-	public abstract void method2516(EnvironmentSampler arg0);
+	public abstract void setEnvironmentSampler(EnvironmentSampler arg0);
 
 	@ObfuscatedName("dh.c()I")
 	public abstract int method2520();
@@ -773,7 +773,7 @@ public abstract class Renderer {
 	public abstract void method2525(float arg0, float arg1, float arg2, float[] arg3);
 
 	@ObfuscatedName("dh.ck(I)V")
-	public abstract void method2532(int arg0);
+	public abstract void setVertexCapacity(int arg0);
 
 	@ObfuscatedName("dh.cg(IIIIIILch;IIIII)V")
 	public abstract void method2537(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8, int arg9, int arg10, int arg11);
@@ -782,5 +782,5 @@ public abstract class Renderer {
 	public abstract void method2552(int arg0, int arg1, float arg2, int arg3, int arg4, float arg5, int arg6, int arg7, float arg8, int arg9, int arg10, int arg11, int arg12);
 
 	@ObfuscatedName("dh.dn(III)V")
-	public abstract void method2572(int arg0, int arg1, int arg2);
+	public abstract void setFog(int arg0, int arg1, int arg2);
 }

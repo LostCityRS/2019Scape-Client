@@ -6,7 +6,7 @@ import com.jagex.graphics.GraphicsRelated;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("apd")
-public class PureJavaSprite_Sub3 extends PureJavaSprite {
+public class PureJavaSpritePaletted extends PureJavaSprite {
 
 	@ObfuscatedName("apd.am")
 	public byte[] field11907;
@@ -14,7 +14,7 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 	@ObfuscatedName("apd.au")
 	public int[] field11906;
 
-	public PureJavaSprite_Sub3(PureJavaRenderer arg0, byte[] arg1, int[] arg2, int arg3, int arg4) {
+	public PureJavaSpritePaletted(PureJavaRenderer arg0, byte[] arg1, int[] arg2, int arg3, int arg4) {
 		super(arg0, arg3, arg4);
 		this.field11907 = arg1;
 		this.field11906 = arg2;
@@ -26,7 +26,7 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apd.z(IIII[I[III)V")
-	public void method1476(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6, int arg7) {
+	public void download(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6, int arg7) {
 		throw new IllegalStateException();
 	}
 
@@ -50,11 +50,11 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		}
-		int[] var6 = this.field9373.field9778;
+		int[] var6 = this.field9373.colour;
 		if (var6 == null) {
 			return;
 		}
-		int var7 = this.field9373.field9779;
+		int var7 = this.field9373.sizeX;
 		int var8 = this.field9358 + arg0;
 		int var9 = this.field9359 + arg1;
 		int var10 = var7 * var9 + var8;
@@ -63,27 +63,27 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 		int var13 = this.field9356;
 		int var14 = var7 - var13;
 		int var15 = 0;
-		if (var9 < this.field9373.field9784) {
-			int var16 = this.field9373.field9784 - var9;
+		if (var9 < this.field9373.clipMinY) {
+			int var16 = this.field9373.clipMinY - var9;
 			var12 -= var16;
-			var9 = this.field9373.field9784;
+			var9 = this.field9373.clipMinY;
 			var11 += var13 * var16;
 			var10 += var7 * var16;
 		}
-		if (var9 + var12 > this.field9373.field9785) {
-			var12 -= var9 + var12 - this.field9373.field9785;
+		if (var9 + var12 > this.field9373.clipMaxY) {
+			var12 -= var9 + var12 - this.field9373.clipMaxY;
 		}
-		if (var8 < this.field9373.field9805) {
-			int var17 = this.field9373.field9805 - var8;
+		if (var8 < this.field9373.clipMinX) {
+			int var17 = this.field9373.clipMinX - var8;
 			var13 -= var17;
-			var8 = this.field9373.field9805;
+			var8 = this.field9373.clipMinX;
 			var11 += var17;
 			var10 += var17;
 			var15 += var17;
 			var14 += var17;
 		}
-		if (var8 + var13 > this.field9373.field9801) {
-			int var18 = var8 + var13 - this.field9373.field9801;
+		if (var8 + var13 > this.field9373.clipMaxX) {
+			int var18 = var8 + var13 - this.field9373.clipMaxX;
 			var13 -= var18;
 			var15 += var18;
 			var14 += var18;
@@ -366,40 +366,40 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		}
-		int[] var6 = this.field9373.field9778;
+		int[] var6 = this.field9373.colour;
 		if (var6 == null) {
 			return;
 		}
 		int var7 = this.field9358 + arg0;
 		int var8 = this.field9359 + arg1;
 		int var9 = 0;
-		int var10 = this.field9373.field9779;
+		int var10 = this.field9373.sizeX;
 		int var11 = this.field9356;
 		int var12 = this.field9372;
 		int var13 = var10 - var11;
 		int var14 = 0;
 		int var15 = var8 * var10 + var7;
-		if (var8 < this.field9373.field9784) {
-			int var16 = this.field9373.field9784 - var8;
+		if (var8 < this.field9373.clipMinY) {
+			int var16 = this.field9373.clipMinY - var8;
 			var12 -= var16;
-			var8 = this.field9373.field9784;
+			var8 = this.field9373.clipMinY;
 			var9 += var11 * var16;
 			var15 += var10 * var16;
 		}
-		if (var8 + var12 > this.field9373.field9785) {
-			var12 -= var8 + var12 - this.field9373.field9785;
+		if (var8 + var12 > this.field9373.clipMaxY) {
+			var12 -= var8 + var12 - this.field9373.clipMaxY;
 		}
-		if (var7 < this.field9373.field9805) {
-			int var17 = this.field9373.field9805 - var7;
+		if (var7 < this.field9373.clipMinX) {
+			int var17 = this.field9373.clipMinX - var7;
 			var11 -= var17;
-			var7 = this.field9373.field9805;
+			var7 = this.field9373.clipMinX;
 			var9 += var17;
 			var15 += var17;
 			var14 += var17;
 			var13 += var17;
 		}
-		if (var7 + var11 > this.field9373.field9801) {
-			int var18 = var7 + var11 - this.field9373.field9801;
+		if (var7 + var11 > this.field9373.clipMaxX) {
+			int var18 = var7 + var11 - this.field9373.clipMaxX;
 			var11 -= var18;
 			var14 += var18;
 			var13 += var18;
@@ -460,7 +460,7 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apd.cl(ZZZIIFIIIIIIZ)V")
-	public void method15358(boolean arg0, boolean arg1, boolean arg2, int arg3, int arg4, float arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, boolean arg12) {
+	public void drawAsBillboard(boolean arg0, boolean arg1, boolean arg2, int arg3, int arg4, float arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, boolean arg12) {
 		if (arg6 <= 0 || arg7 <= 0 || !arg0 && !arg1) {
 			return;
 		}
@@ -486,31 +486,31 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 		if (this.field9372 < var17) {
 			arg7 = ((this.field9372 << 16) - var15 + var19 - 1) / var19;
 		}
-		int var22 = this.field9373.field9779 * arg4 + arg3;
-		int var23 = this.field9373.field9779 - arg6;
-		if (arg4 + arg7 > this.field9373.field9785) {
-			arg7 -= arg4 + arg7 - this.field9373.field9785;
+		int var22 = this.field9373.sizeX * arg4 + arg3;
+		int var23 = this.field9373.sizeX - arg6;
+		if (arg4 + arg7 > this.field9373.clipMaxY) {
+			arg7 -= arg4 + arg7 - this.field9373.clipMaxY;
 		}
-		if (arg4 < this.field9373.field9784) {
-			int var24 = this.field9373.field9784 - arg4;
+		if (arg4 < this.field9373.clipMinY) {
+			int var24 = this.field9373.clipMinY - arg4;
 			arg7 -= var24;
-			var22 += this.field9373.field9779 * var24;
+			var22 += this.field9373.sizeX * var24;
 			var15 += var19 * var24;
 		}
-		if (arg3 + arg6 > this.field9373.field9801) {
-			int var25 = arg3 + arg6 - this.field9373.field9801;
+		if (arg3 + arg6 > this.field9373.clipMaxX) {
+			int var25 = arg3 + arg6 - this.field9373.clipMaxX;
 			arg6 -= var25;
 			var23 += var25;
 		}
-		if (arg3 < this.field9373.field9805) {
-			int var26 = this.field9373.field9805 - arg3;
+		if (arg3 < this.field9373.clipMinX) {
+			int var26 = this.field9373.clipMinX - arg3;
 			arg6 -= var26;
 			var22 += var26;
 			var14 += var18 * var26;
 			var23 += var26;
 		}
-		float[] var27 = this.field9373.field9781;
-		int[] var28 = this.field9373.field9778;
+		float[] var27 = this.field9373.depth;
+		int[] var28 = this.field9373.colour;
 		if (arg10 == 0) {
 			if (arg8 == 1) {
 				int var29 = var14;
@@ -917,15 +917,15 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apd.y(IIIIIIII)V")
-	public void method1447(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public void drawTintedScaled(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		} else if (arg2 > 0 && arg3 > 0) {
-			int[] var9 = this.field9373.field9778;
+			int[] var9 = this.field9373.colour;
 			if (var9 != null) {
 				int var10 = 0;
 				int var11 = 0;
-				int var12 = this.field9373.field9779;
+				int var12 = this.field9373.sizeX;
 				int var13 = this.field9358 + this.field9356 + this.field9355;
 				int var14 = this.field9372 + this.field9359 + this.field9360;
 				int var15 = (var13 << 16) / arg2;
@@ -948,22 +948,22 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 				}
 				int var19 = arg1 * var12 + arg0;
 				int var20 = var12 - arg2;
-				if (arg1 + arg3 > this.field9373.field9785) {
-					arg3 -= arg1 + arg3 - this.field9373.field9785;
+				if (arg1 + arg3 > this.field9373.clipMaxY) {
+					arg3 -= arg1 + arg3 - this.field9373.clipMaxY;
 				}
-				if (arg1 < this.field9373.field9784) {
-					int var21 = this.field9373.field9784 - arg1;
+				if (arg1 < this.field9373.clipMinY) {
+					int var21 = this.field9373.clipMinY - arg1;
 					arg3 -= var21;
 					var19 += var12 * var21;
 					var11 += var16 * var21;
 				}
-				if (arg0 + arg2 > this.field9373.field9801) {
-					int var22 = arg0 + arg2 - this.field9373.field9801;
+				if (arg0 + arg2 > this.field9373.clipMaxX) {
+					int var22 = arg0 + arg2 - this.field9373.clipMaxX;
 					arg2 -= var22;
 					var20 += var22;
 				}
-				if (arg0 < this.field9373.field9805) {
-					int var23 = this.field9373.field9805 - arg0;
+				if (arg0 < this.field9373.clipMinX) {
+					int var23 = this.field9373.clipMinX - arg0;
 					arg2 -= var23;
 					var19 += var23;
 					var10 += var15 * var23;
@@ -1283,7 +1283,7 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 
 	@ObfuscatedName("apd.ce(II)V")
 	public void method15354(int arg0, int arg1) {
-		int[] var3 = this.field9373.field9778;
+		int[] var3 = this.field9373.colour;
 		if (var3 == null) {
 			return;
 		}
@@ -2775,7 +2775,7 @@ public class PureJavaSprite_Sub3 extends PureJavaSprite {
 
 	@ObfuscatedName("apd.cu([I[III)V")
 	public void method15356(int[] arg0, int[] arg1, int arg2, int arg3) {
-		int[] var5 = this.field9373.field9778;
+		int[] var5 = this.field9373.colour;
 		if (var5 == null) {
 			return;
 		}

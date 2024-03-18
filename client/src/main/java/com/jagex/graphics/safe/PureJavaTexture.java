@@ -118,7 +118,7 @@ public class PureJavaTexture extends Node {
 	}
 
 	@ObfuscatedName("aje.e()[I")
-	public int[] method17526() {
+	public int[] getPixels() {
 		return this.field11268;
 	}
 

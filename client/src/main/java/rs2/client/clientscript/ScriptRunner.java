@@ -16145,7 +16145,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ik.azw(Lyf;I)V")
 	public static final void detailcanmod_bloom(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.bloom.canMod() && Client.renderer.method2266() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.bloom.canMod() && Client.renderer.isBloomSupported() ? 1 : 0;
 	}
 
 	@ObfuscatedName("ip.azs(Lyf;I)V")
@@ -16308,7 +16308,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("xc.bar(Lyf;B)V")
 	public static final void detailcanset_bloom(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.renderer.method2266()) {
+		if (Client.renderer.isBloomSupported()) {
 			arg0.field8216[++arg0.field8226 - 1] = Client.preferences.bloom.canSetValue(var1);
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 3;

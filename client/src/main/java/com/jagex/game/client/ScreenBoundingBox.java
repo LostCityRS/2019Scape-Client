@@ -61,10 +61,10 @@ public class ScreenBoundingBox {
 		int var9 = (int) (arg0.field4252 + arg0.field4249) >> 1;
 		int var10 = (int) (arg0.field4251 + arg0.field4248) >> 1;
 		int var12 = (int) arg0.field4253;
-		float var14 = arg2.field4315[8] * (float) var10 + arg2.field4315[0] * (float) var9 + arg2.field4315[4] * (float) var12 + arg2.field4315[12];
-		float var15 = arg2.field4315[9] * (float) var10 + arg2.field4315[1] * (float) var9 + arg2.field4315[5] * (float) var12 + arg2.field4315[13];
-		float var16 = arg2.field4315[10] * (float) var10 + arg2.field4315[2] * (float) var9 + arg2.field4315[6] * (float) var12 + arg2.field4315[14];
-		float var17 = arg2.field4315[11] * (float) var10 + arg2.field4315[3] * (float) var9 + arg2.field4315[7] * (float) var12 + arg2.field4315[15];
+		float var14 = arg2.entries[8] * (float) var10 + arg2.entries[0] * (float) var9 + arg2.entries[4] * (float) var12 + arg2.entries[12];
+		float var15 = arg2.entries[9] * (float) var10 + arg2.entries[1] * (float) var9 + arg2.entries[5] * (float) var12 + arg2.entries[13];
+		float var16 = arg2.entries[10] * (float) var10 + arg2.entries[2] * (float) var9 + arg2.entries[6] * (float) var12 + arg2.entries[14];
+		float var17 = arg2.entries[11] * (float) var10 + arg2.entries[3] * (float) var9 + arg2.entries[7] * (float) var12 + arg2.entries[15];
 		if (var16 >= -var17) {
 			this.field1683 = (int) (arg5 * var14 / var17 + arg3);
 			this.field1684 = (int) (arg6 * var15 / var17 + arg4);
@@ -72,10 +72,10 @@ public class ScreenBoundingBox {
 			var8 = true;
 		}
 		int var19 = (int) arg0.field4250;
-		float var21 = arg2.field4315[8] * (float) var10 + arg2.field4315[0] * (float) var9 + arg2.field4315[4] * (float) var19 + arg2.field4315[12];
-		float var22 = arg2.field4315[9] * (float) var10 + arg2.field4315[1] * (float) var9 + arg2.field4315[5] * (float) var19 + arg2.field4315[13];
-		float var23 = arg2.field4315[10] * (float) var10 + arg2.field4315[2] * (float) var9 + arg2.field4315[6] * (float) var19 + arg2.field4315[14];
-		float var24 = arg2.field4315[11] * (float) var10 + arg2.field4315[3] * (float) var9 + arg2.field4315[7] * (float) var19 + arg2.field4315[15];
+		float var21 = arg2.entries[8] * (float) var10 + arg2.entries[0] * (float) var9 + arg2.entries[4] * (float) var19 + arg2.entries[12];
+		float var22 = arg2.entries[9] * (float) var10 + arg2.entries[1] * (float) var9 + arg2.entries[5] * (float) var19 + arg2.entries[13];
+		float var23 = arg2.entries[10] * (float) var10 + arg2.entries[2] * (float) var9 + arg2.entries[6] * (float) var19 + arg2.entries[14];
+		float var24 = arg2.entries[11] * (float) var10 + arg2.entries[3] * (float) var9 + arg2.entries[7] * (float) var19 + arg2.entries[15];
 		if (var23 >= -var24) {
 			this.field1682 = (int) (arg5 * var21 / var24 + arg3);
 			this.field1685 = (int) (arg6 * var22 / var24 + arg4);
@@ -106,12 +106,12 @@ public class ScreenBoundingBox {
 		}
 		float var33 = (float) Math.sqrt(Math.pow((double) (arg0.field4249 - arg0.field4252), 2.0D) + Math.pow((double) (arg0.field4251 - arg0.field4248), 2.0D)) / 2.0F;
 		if (var16 / var17 > var23 / var24) {
-			float var34 = arg1.field4315[0] * var33 + var14 + arg1.field4315[12];
-			float var35 = arg1.field4315[3] * var33 + var17 + arg1.field4315[15];
+			float var34 = arg1.entries[0] * var33 + var14 + arg1.entries[12];
+			float var35 = arg1.entries[3] * var33 + var17 + arg1.entries[15];
 			this.field1687 = (int) (arg5 * var34 / var35 + (arg3 - (float) this.field1683));
 		} else {
-			float var36 = arg1.field4315[0] * var33 + var21 + arg1.field4315[12];
-			float var37 = arg1.field4315[3] * var33 + var24 + arg1.field4315[15];
+			float var36 = arg1.entries[0] * var33 + var21 + arg1.entries[12];
+			float var37 = arg1.entries[3] * var33 + var24 + arg1.entries[15];
 			this.field1687 = (int) (arg5 * var36 / var37 + (arg3 - (float) this.field1682));
 		}
 		this.field1686 = true;

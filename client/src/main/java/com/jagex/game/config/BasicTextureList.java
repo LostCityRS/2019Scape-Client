@@ -16,7 +16,7 @@ public class BasicTextureList extends BasicTextureListInner {
 	}
 
 	@ObfuscatedName("afm.m(Lvk;IILvc;FIIZI)Z")
-	public boolean method1977(TextureRelated2 arg0, int arg1, int arg2, TextureRelated1 arg3, float arg4, int arg5, int arg6, boolean arg7) {
+	public boolean loadTexture(TextureRelated2 arg0, int arg1, int arg2, TextureRelated1 arg3, float arg4, int arg5, int arg6, boolean arg7) {
 		boolean var9 = true;
 		if (TextureRelated2.field7586 == arg0) {
 			if (arg2 > -1 && this.field9773.method6929(arg2)) {

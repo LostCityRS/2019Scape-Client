@@ -48,13 +48,13 @@ public class CursorType implements ConfigType {
 
 	@ObfuscatedName("xj.z(I)Lde;")
 	public synchronized SpriteData getCursor() {
-		SpriteData cached = (SpriteData) this.myList.cursorCache.method2930((long) this.graphic);
+		SpriteData cached = (SpriteData) this.myList.cursorCache.get((long) this.graphic);
 		if (cached != null) {
 			return cached;
 		}
 		SpriteData sprite = SpriteDataProvider.method1609(this.myList.js5, this.graphic, 0);
 		if (sprite != null) {
-			this.myList.cursorCache.method2921(sprite, (long) this.graphic);
+			this.myList.cursorCache.put(sprite, (long) this.graphic);
 		}
 		return sprite;
 	}
