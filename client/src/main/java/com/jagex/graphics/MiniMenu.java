@@ -694,7 +694,7 @@ public class MiniMenu {
 	public static void method7624(Component arg0, int arg1, int arg2) {
 		if (Client.field10973) {
 			ParamType var3 = (ParamType) (Client.field7677 == -1 ? null : Client.field3086.list(Client.field7677));
-			if (Client.method17197(arg0).method17708() && (Client.field1765 & 0x20) != 0 && (var3 == null || arg0.method3950(Client.field7677, var3.defaultInt) != var3.defaultInt)) {
+			if (Client.method17197(arg0).method17708() && (Client.field1765 & 0x20) != 0 && (var3 == null || arg0.method3950(Client.field7677, var3.defaultint) != var3.defaultint)) {
 				method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + arg0.field2279, Client.field1844, 58, arg0.field2334, 0L, arg0.field2183, arg0.field2158, true, false, (long) (arg0.field2183 << 32 | arg0.field2158), false);
 			}
 		}
@@ -952,7 +952,7 @@ public class MiniMenu {
 										}
 										if (Client.field10973 && Client.field4490.field11717 == var29.field6978.field11717) {
 											ParamType var77 = (ParamType) (Client.field7677 == -1 ? null : Client.field3086.list(Client.field7677));
-											if ((Client.field1765 & 0x1) != 0 && (var77 == null || var75.getParam(Client.field7677, var77.defaultInt) != var77.defaultInt)) {
+											if ((Client.field1765 & 0x1) != 0 && (var77 == null || var75.getParam(Client.field7677, var77.defaultint) != var77.defaultint)) {
 												method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(var76) + var75.name, Client.field1844, 17, -1, (long) var74.field11261, var32, var33, true, false, (long) var73, false);
 											}
 										}
@@ -1002,7 +1002,7 @@ public class MiniMenu {
 					} while (var84 == null);
 					if (Client.field10973 && Client.field4490.field11717 == var29.field6978.field11717) {
 						ParamType var85 = (ParamType) (Client.field7677 == -1 ? null : Client.field3086.list(Client.field7677));
-						if ((Client.field1765 & 0x4) != 0 && (var85 == null || var84.method9481(Client.field7677, var85.defaultInt) != var85.defaultInt)) {
+						if ((Client.field1765 & 0x4) != 0 && (var85 == null || var84.method9481(Client.field7677, var85.defaultint) != var85.defaultint)) {
 							method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(65535) + var84.name, Client.field1844, 2, -1, method6964(var83, var32, var33), var32, var33, true, false, (long) var83.hashCode(), false);
 						}
 					}
@@ -1805,7 +1805,7 @@ public class MiniMenu {
 		}
 		if (Client.field10973 && !arg1) {
 			ParamType var5 = (ParamType) (Client.field7677 == -1 ? null : Client.field3086.list(Client.field7677));
-			if ((Client.field1765 & 0x2) != 0 && (var5 == null || var2.method4551(Client.field7677, var5.defaultInt) != var5.defaultInt)) {
+			if ((Client.field1765 & 0x2) != 0 && (var5 == null || var2.method4551(Client.field7677, var5.defaultint) != var5.defaultint)) {
 				method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(16776960) + var3, Client.field1844, 8, -1, (long) arg0.field10406, 0, 0, true, false, (long) arg0.field10406, false);
 			}
 		}

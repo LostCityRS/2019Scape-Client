@@ -153,7 +153,7 @@ public final class QuestCommands {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.field3086.list(var2);
 		if (!var3.isStringType()) {
-			int var5 = var3.defaultInt;
+			int var5 = var3.defaultint;
 			if (var1 == -1) {
 				arg0.field8216[++arg0.field8226 - 1] = var5;
 			} else {
@@ -161,7 +161,7 @@ public final class QuestCommands {
 			}
 			return;
 		}
-		String var4 = var3.defaultString;
+		String var4 = var3.defaultstr;
 		if (var1 == -1) {
 			arg0.field8218[++arg0.field8211 - 1] = var4;
 		} else {

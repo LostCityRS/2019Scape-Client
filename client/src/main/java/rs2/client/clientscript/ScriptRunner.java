@@ -6300,7 +6300,7 @@ public final class ScriptRunner {
 		int var3 = arg2.field8216[arg2.field8226];
 		int var4 = arg2.field8216[arg2.field8226 + 1];
 		ParamType var5 = (ParamType) Client.field3086.list(var3);
-		if (var5.defaultInt == var4) {
+		if (var5.defaultint == var4) {
 			arg0.method3954(var3);
 		} else {
 			arg0.method3952(var3, var4);
@@ -6328,7 +6328,7 @@ public final class ScriptRunner {
 		int var3 = arg2.field8216[--arg2.field8226];
 		String var4 = (String) arg2.field8218[--arg2.field8211];
 		ParamType var5 = (ParamType) Client.field3086.list(var3);
-		if (var5.defaultString.equals(var4)) {
+		if (var5.defaultstr.equals(var4)) {
 			arg0.method3954(var3);
 		} else {
 			arg0.method4003(var3, var4);
@@ -6448,7 +6448,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226];
 		int var4 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var5 = (ParamType) Client.field3086.list(var3);
-		if (var5.defaultInt == var4) {
+		if (var5.defaultint == var4) {
 			var2.method3954(var3);
 		} else {
 			var2.method3952(var3, var4);
@@ -8961,9 +8961,9 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[--arg0.field8226];
 		ParamType var4 = (ParamType) Client.field3086.list(var3);
 		if (var4.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = var2.method3975(var3, var4.defaultString);
+			arg0.field8218[++arg0.field8211 - 1] = var2.method3975(var3, var4.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = var2.method3950(var3, var4.defaultInt);
+			arg0.field8216[++arg0.field8226 - 1] = var2.method3950(var3, var4.defaultint);
 		}
 	}
 
@@ -12057,9 +12057,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.field3086.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Client.field1842.list(var1)).getParam(var2, var3.defaultString);
+			arg0.field8218[++arg0.field8211 - 1] = ((ObjType) Client.field1842.list(var1)).getParam(var2, var3.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Client.field1842.list(var1)).getParam(var2, var3.defaultInt);
+			arg0.field8216[++arg0.field8226 - 1] = ((ObjType) Client.field1842.list(var1)).getParam(var2, var3.defaultint);
 		}
 	}
 
@@ -12156,9 +12156,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.field3086.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((NPCType) Client.field7961.list(var1)).method4548(var2, var3.defaultString);
+			arg0.field8218[++arg0.field8211 - 1] = ((NPCType) Client.field7961.list(var1)).method4548(var2, var3.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((NPCType) Client.field7961.list(var1)).method4551(var2, var3.defaultInt);
+			arg0.field8216[++arg0.field8226 - 1] = ((NPCType) Client.field7961.list(var1)).method4551(var2, var3.defaultint);
 		}
 	}
 
@@ -12169,9 +12169,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.field3086.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((LocType) Client.world.method7750().list(var1)).method9479(var2, var3.defaultString);
+			arg0.field8218[++arg0.field8211 - 1] = ((LocType) Client.world.method7750().list(var1)).method9479(var2, var3.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((LocType) Client.world.method7750().list(var1)).method9481(var2, var3.defaultInt);
+			arg0.field8216[++arg0.field8226 - 1] = ((LocType) Client.world.method7750().list(var1)).method9481(var2, var3.defaultint);
 		}
 	}
 
@@ -12182,9 +12182,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.field3086.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((StructType) Client.field7713.list(var1)).method15297(var2, var3.defaultString);
+			arg0.field8218[++arg0.field8211 - 1] = ((StructType) Client.field7713.list(var1)).method15297(var2, var3.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((StructType) Client.field7713.list(var1)).method15296(var2, var3.defaultInt);
+			arg0.field8216[++arg0.field8226 - 1] = ((StructType) Client.field7713.list(var1)).method15296(var2, var3.defaultint);
 		}
 	}
 
@@ -12195,9 +12195,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.field3086.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((SeqType) Client.field8797.list(var1)).method2989(var2, var3.defaultString);
+			arg0.field8218[++arg0.field8211 - 1] = ((SeqType) Client.field8797.list(var1)).method2989(var2, var3.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((SeqType) Client.field8797.list(var1)).method2981(var2, var3.defaultInt);
+			arg0.field8216[++arg0.field8226 - 1] = ((SeqType) Client.field8797.list(var1)).method2981(var2, var3.defaultint);
 		}
 	}
 
@@ -15887,9 +15887,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.field3086.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((MapElementType) Client.field5011.list(var1)).method4029(var2, var3.defaultString);
+			arg0.field8218[++arg0.field8211 - 1] = ((MapElementType) Client.field5011.list(var1)).method4029(var2, var3.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((MapElementType) Client.field5011.list(var1)).method4028(var2, var3.defaultInt);
+			arg0.field8216[++arg0.field8226 - 1] = ((MapElementType) Client.field5011.list(var1)).method4028(var2, var3.defaultint);
 		}
 	}
 

@@ -121,7 +121,7 @@ public class ClientInvCache extends Node {
 		for (int var6 = 0; var6 < var4.field11223.length; var6++) {
 			if (var4.field11223[var6] >= 0 && var4.field11223[var6] < Client.field1842.num) {
 				ObjType var7 = (ObjType) Client.field1842.list(var4.field11223[var6]);
-				int var8 = var7.getParam(arg1, ((ParamType) Client.field3086.list(arg1)).defaultInt);
+				int var8 = var7.getParam(arg1, ((ParamType) Client.field3086.list(arg1)).defaultint);
 				if (arg2) {
 					var5 += var4.field11224[var6] * var8;
 				} else if (var4.field11224[var6] > 0) {
