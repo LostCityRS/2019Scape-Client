@@ -255,11 +255,11 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		this.field10404 = 0;
 		this.field10408 = 0;
 		this.field10410 = 0;
-		this.field10411 = new int[Client.field11389.field7758];
-		this.field10412 = new int[Client.field11389.field7758];
-		this.field10421 = new int[Client.field11389.field7758];
-		this.field10456 = new int[Client.field11389.field7758];
-		this.field10445 = new int[Client.field11389.field7758];
+		this.field10411 = new int[Client.field11389.maxhitmarks];
+		this.field10412 = new int[Client.field11389.maxhitmarks];
+		this.field10421 = new int[Client.field11389.maxhitmarks];
+		this.field10456 = new int[Client.field11389.maxhitmarks];
+		this.field10445 = new int[Client.field11389.maxhitmarks];
 		this.field10416 = new LinkQueue();
 		this.field10417 = -1;
 		this.field10427 = null;
@@ -589,7 +589,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public final void method16498(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		boolean var7 = true;
 		boolean var8 = true;
-		for (int var9 = 0; var9 < Client.field11389.field7758; var9++) {
+		for (int var9 = 0; var9 < Client.field11389.maxhitmarks; var9++) {
 			if (this.field10421[var9] > arg4) {
 				var7 = false;
 			} else {
@@ -615,7 +615,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 			} else if (var11 == 1) {
 				var14 = this.field10412[0];
 			}
-			for (int var15 = 1; var15 < Client.field11389.field7758; var15++) {
+			for (int var15 = 1; var15 < Client.field11389.maxhitmarks; var15++) {
 				if (var11 == 0) {
 					if (this.field10421[var15] < var14) {
 						var10 = var15;
@@ -633,9 +633,9 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 			if (var7) {
 				this.field10410 = 0;
 			}
-			for (int var16 = 0; var16 < Client.field11389.field7758; var16++) {
+			for (int var16 = 0; var16 < Client.field11389.maxhitmarks; var16++) {
 				byte var17 = this.field10410;
-				this.field10410 = (byte) ((this.field10410 + 1) % Client.field11389.field7758);
+				this.field10410 = (byte) ((this.field10410 + 1) % Client.field11389.maxhitmarks);
 				if (this.field10421[var17] <= arg4) {
 					var10 = var17;
 					break;

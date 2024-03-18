@@ -543,7 +543,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.cg(I)Z")
 	public boolean method16512() {
-		return Client.field11389.field7735;
+		return Client.field11389.npcShouldDisplayChat;
 	}
 
 	@ObfuscatedName("aqc.ce(I)Lsu;")
@@ -553,7 +553,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.hc(Ljava/lang/String;III)V")
 	public void method19166(String arg0, int arg1, int arg2) {
-		int var4 = GameShell.method6016() * Client.field11389.field7754;
+		int var4 = GameShell.method6016() * Client.field11389.npcChatTimeout;
 		this.method16510(arg0, arg1, arg2, var4);
 	}
 

@@ -936,11 +936,11 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("jf.x(ILzt;Lws;I)Ljava/lang/String;")
 	public static String formatObjCount(int amount, Language language, GraphicsDefaults graphics) {
 		if (amount < 100000) {
-			return formatObjCountTagged(graphics.yellow) + amount + COL_TAG_END;
+			return formatObjCountTagged(graphics.invHundredColor) + amount + COL_TAG_END;
 		} else if (amount < 10000000) {
-			return formatObjCountTagged(graphics.white) + amount / 1000 + LocalisedText.THOUSAND_SHORT.method15021(language) + COL_TAG_END;
+			return formatObjCountTagged(graphics.invThousandColor) + amount / 1000 + LocalisedText.THOUSAND_SHORT.method15021(language) + COL_TAG_END;
 		} else {
-			return formatObjCountTagged(graphics.green) + amount / 1000000 + LocalisedText.MILLION_SHORT.method15021(language) + COL_TAG_END;
+			return formatObjCountTagged(graphics.invMillionColor) + amount / 1000000 + LocalisedText.MILLION_SHORT.method15021(language) + COL_TAG_END;
 		}
 	}
 

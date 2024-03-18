@@ -2591,15 +2591,15 @@ public final class Client extends GameShell {
 			field11764 = null;
 		}
 		if (arg0 == 4) {
-			method7227(state == 0 || state == 12 || field10978 != field11389.field7724);
+			method7227(state == 0 || state == 12 || field10978 != field11389.login_interface);
 			ChatHistory.method329();
 		}
 		if (arg0 == 13) {
 			boolean var1;
-			if (field11389.field7726 == -1) {
+			if (field11389.lobby_interface == -1) {
 				var1 = state == 17 || state == 9;
 			} else {
-				var1 = field10978 != field11389.field7726;
+				var1 = field10978 != field11389.lobby_interface;
 			}
 			method9287(var1);
 		}
@@ -2763,7 +2763,7 @@ public final class Client extends GameShell {
 			field10978 = -1;
 			field10979 = new IterableMap(8);
 			Component.method5075();
-			field10978 = field11389.field7724;
+			field10978 = field11389.login_interface;
 			if (field10978 != -1) {
 				method9585(false);
 				method9734();
@@ -2810,7 +2810,7 @@ public final class Client extends GameShell {
 			field10978 = -1;
 			field10979 = new IterableMap(8);
 			Component.method5075();
-			field10978 = field11389.field7726;
+			field10978 = field11389.lobby_interface;
 			if (field10978 != -1) {
 				method9585(false);
 				method9734();
@@ -7292,7 +7292,7 @@ public final class Client extends GameShell {
 						var10000 = var16 - (var54 + 2);
 					}
 				}
-				for (int var68 = 0; var68 < field11389.field7758; var68++) {
+				for (int var68 = 0; var68 < field11389.maxhitmarks; var68++) {
 					int var69 = var12.field10421[var68];
 					int var70 = var12.field10411[var68];
 					HitmarkType var71 = null;
@@ -7328,8 +7328,8 @@ public final class Client extends GameShell {
 							int var75 = var12.method16501() / 2;
 							method16483(var12, var75, false);
 							if (field10922[0] > -1.0F) {
-								field10922[0] += field11389.field7716[var68];
-								field10922[1] += field11389.field7717[var68];
+								field10922[0] += field11389.hitmarkpos_x[var68];
+								field10922[1] += field11389.hitmarkpos_y[var68];
 								Object var76 = null;
 								Object var77 = null;
 								Object var78 = null;

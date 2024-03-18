@@ -651,7 +651,7 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.cg(I)Z")
 	public boolean method16512() {
-		return Client.field11389.field7737;
+		return Client.field11389.playerShouldDisplayChat;
 	}
 
 	@ObfuscatedName("aqk.ce(I)Lsu;")
@@ -669,7 +669,7 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.hc(Ljava/lang/String;III)V")
 	public void method19124(String arg0, int arg1, int arg2) {
-		this.method16510(arg0, arg1, arg2, GameShell.method6016() * Client.field11389.field7759);
+		this.method16510(arg0, arg1, arg2, GameShell.method6016() * Client.field11389.playerChatTimeout);
 	}
 
 	@ObfuscatedName("aqk.e(I)Ljl;")
