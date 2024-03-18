@@ -320,7 +320,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.ahz(II)Z")
 	public boolean method19019(int arg0, int arg1) {
 		int var3 = IDirect3DDevice.TestCooperativeLevel(this.device);
-		if (var3 == 0 || var3 == -2005530519) {
+		if (var3 == 0 || var3 == 0x88760869) {
 			IDirect3DDevice.SetDepthStencilSurface(this.device, 0L);
 			for (int var4 = 1; var4 < 4; var4++) {
 				IDirect3DDevice.SetRenderTarget(this.device, var4, 0L);

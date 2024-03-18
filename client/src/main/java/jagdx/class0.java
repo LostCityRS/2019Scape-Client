@@ -14,7 +14,7 @@ public class class0 {
 	public static final int anInt4221 = 0;
 
 	@OriginalMember(owner = "client!jagdx/e", name = "m", descriptor = "I")
-	public static final int anInt4222 = -2005530519;
+	public static final int anInt4222 = 0x88760869;
 
 	@OriginalMember(owner = "client!jagdx/e", name = "k", descriptor = "I")
 	public static final int anInt4223 = 1;

@@ -55,19 +55,19 @@ public class Rasteriser {
 	public int field946;
 
 	@ObfuscatedName("bd.s")
-	public PureJavaRenderer field947;
+	public PureJavaRenderer renderer;
 
 	@ObfuscatedName("bd.y")
-	public PureJavaRendererContext field966;
+	public PureJavaRendererContext context;
 
 	@ObfuscatedName("bd.q")
-	public int field949;
+	public int sizeX;
 
 	@ObfuscatedName("bd.x")
-	public int[] field950;
+	public int[] pixels;
 
 	@ObfuscatedName("bd.b")
-	public float[] field951;
+	public float[] depth;
 
 	@ObfuscatedName("bd.h")
 	public int field952;
@@ -88,7 +88,7 @@ public class Rasteriser {
 	public float field957 = 0.0F;
 
 	@ObfuscatedName("bd.ae")
-	public MaterialAlphaMode field960;
+	public MaterialAlphaMode alphaMode;
 
 	@ObfuscatedName("bd.ag")
 	public int field959 = 0;
@@ -126,23 +126,23 @@ public class Rasteriser {
 	@ObfuscatedName("bd.ar")
 	public float field970 = 0.0F;
 
-	public Rasteriser(PureJavaRenderer arg0, PureJavaRendererContext arg1) {
-		this.field947 = arg0;
-		this.field966 = arg1;
-		this.field949 = this.field947.sizeX;
-		this.field950 = this.field947.colour;
-		this.field951 = this.field947.depth;
-		this.field960 = MaterialAlphaMode.NONE;
+	public Rasteriser(PureJavaRenderer renderer, PureJavaRendererContext context) {
+		this.renderer = renderer;
+		this.context = context;
+		this.sizeX = this.renderer.sizeX;
+		this.pixels = this.renderer.colour;
+		this.depth = this.renderer.depth;
+		this.alphaMode = MaterialAlphaMode.NONE;
 	}
 
 	@ObfuscatedName("bd.e()I")
 	public int method1025() {
-		return this.field938[0] % this.field949;
+		return this.field938[0] % this.sizeX;
 	}
 
 	@ObfuscatedName("bd.n()I")
 	public int method1026() {
-		return this.field938[0] / this.field949;
+		return this.field938[0] / this.sizeX;
 	}
 
 	@ObfuscatedName("bd.m(Z)V")
@@ -151,13 +151,13 @@ public class Rasteriser {
 	}
 
 	@ObfuscatedName("bd.k(ZZZFFFFFFFFFFFF)V")
-	public final void method1028(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14) {
+	public final void drawTriangle(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14) {
 		if (!arg0) {
 			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 		} else if (this.field940) {
-			this.field947.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
-			this.field947.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
-			this.field947.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
+			this.renderer.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
+			this.renderer.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
+			this.renderer.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
 		} else {
 			float var16 = arg7 - arg6;
 			float var17 = arg4 - arg3;
@@ -215,48 +215,48 @@ public class Rasteriser {
 								arg4 = 0.0F;
 							}
 							if (arg3 != arg4 && var26 < var25 || arg3 == arg4 && var26 > var24) {
-								float var35 = (float) (arg3 + 0.5F);
-								float var36 = (float) (arg4 + 0.5F);
-								float var37 = (float) (arg5 + 0.5F) - var36;
+								float var35 = (float) ((int) (arg3 + 0.5F));
+								float var36 = (float) ((int) (arg4 + 0.5F));
+								float var37 = (float) ((int) (arg5 + 0.5F)) - var36;
 								float var38 = var36 - var35;
 								float var39 = (float) this.field938[(int) var35];
 								while (--var38 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var39, 0, 0, (int) var34, (int) arg6, var32, var28, var33, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var39, 0, 0, (int) var34, (int) arg6, var32, var28, var33, var30);
 									var34 += var26;
 									arg6 += var25;
 									var32 += var29;
 									var33 += var31;
-									var39 += this.field949;
+									var39 += this.sizeX;
 								}
 								while (--var37 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var39, 0, 0, (int) var34, (int) arg7, var32, var28, var33, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var39, 0, 0, (int) var34, (int) arg7, var32, var28, var33, var30);
 									var34 += var26;
 									arg7 += var24;
 									var32 += var29;
 									var33 += var31;
-									var39 += this.field949;
+									var39 += this.sizeX;
 								}
 							} else {
-								float var40 = (float) (arg3 + 0.5F);
-								float var41 = (float) (arg4 + 0.5F);
-								float var42 = (float) (arg5 + 0.5F) - var41;
+								float var40 = (float) ((int) (arg3 + 0.5F));
+								float var41 = (float) ((int) (arg4 + 0.5F));
+								float var42 = (float) ((int) (arg5 + 0.5F)) - var41;
 								float var43 = var41 - var40;
 								float var44 = (float) this.field938[(int) var40];
 								while (--var43 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var44, 0, 0, (int) arg6, (int) var34, var32, var28, var33, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var44, 0, 0, (int) arg6, (int) var34, var32, var28, var33, var30);
 									var34 += var26;
 									arg6 += var25;
 									var32 += var29;
 									var33 += var31;
-									var44 += this.field949;
+									var44 += this.sizeX;
 								}
 								while (--var42 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var44, 0, 0, (int) arg7, (int) var34, var32, var28, var33, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var44, 0, 0, (int) arg7, (int) var34, var32, var28, var33, var30);
 									var34 += var26;
 									arg7 += var24;
 									var32 += var29;
 									var33 += var31;
-									var44 += this.field949;
+									var44 += this.sizeX;
 								}
 							}
 						} else {
@@ -273,48 +273,48 @@ public class Rasteriser {
 								arg5 = 0.0F;
 							}
 							if (arg3 != arg5 && var26 < var25 || arg3 == arg5 && var24 > var25) {
-								float var46 = (float) (arg3 + 0.5F);
-								float var47 = (float) (arg5 + 0.5F);
-								float var48 = (float) (arg4 + 0.5F) - var47;
+								float var46 = (float) ((int) (arg3 + 0.5F));
+								float var47 = (float) ((int) (arg5 + 0.5F));
+								float var48 = (float) ((int) (arg4 + 0.5F)) - var47;
 								float var49 = var47 - var46;
 								float var50 = (float) this.field938[(int) var46];
 								while (--var49 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var50, 0, 0, (int) var45, (int) arg6, var32, var28, var33, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var50, 0, 0, (int) var45, (int) arg6, var32, var28, var33, var30);
 									var45 += var26;
 									arg6 += var25;
 									var32 += var29;
 									var33 += var31;
-									var50 += this.field949;
+									var50 += this.sizeX;
 								}
 								while (--var48 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var50, 0, 0, (int) arg8, (int) arg6, var32, var28, var33, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var50, 0, 0, (int) arg8, (int) arg6, var32, var28, var33, var30);
 									arg8 += var24;
 									arg6 += var25;
 									var32 += var29;
 									var33 += var31;
-									var50 += this.field949;
+									var50 += this.sizeX;
 								}
 							} else {
-								float var51 = (float) (arg3 + 0.5F);
-								float var52 = (float) (arg5 + 0.5F);
-								float var53 = (float) (arg4 + 0.5F) - var52;
+								float var51 = (float) ((int) (arg3 + 0.5F));
+								float var52 = (float) ((int) (arg5 + 0.5F));
+								float var53 = (float) ((int) (arg4 + 0.5F)) - var52;
 								float var54 = var52 - var51;
 								float var55 = (float) this.field938[(int) var51];
 								while (--var54 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var55, 0, 0, (int) arg6, (int) var45, var32, var28, var33, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var55, 0, 0, (int) arg6, (int) var45, var32, var28, var33, var30);
 									var45 += var26;
 									arg6 += var25;
 									var32 += var29;
 									var33 += var31;
-									var55 += this.field949;
+									var55 += this.sizeX;
 								}
 								while (--var53 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var55, 0, 0, (int) arg6, (int) arg8, var32, var28, var33, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var55, 0, 0, (int) arg6, (int) arg8, var32, var28, var33, var30);
 									arg8 += var24;
 									arg6 += var25;
 									var32 += var29;
 									var33 += var31;
-									var55 += this.field949;
+									var55 += this.sizeX;
 								}
 							}
 						}
@@ -343,48 +343,48 @@ public class Rasteriser {
 								arg5 = 0.0F;
 							}
 							if (arg4 != arg5 && var25 < var24 || arg4 == arg5 && var25 > var26) {
-								float var59 = (float) (arg4 + 0.5F);
-								float var60 = (float) (arg5 + 0.5F);
-								float var61 = (float) (arg3 + 0.5F) - var60;
+								float var59 = (float) ((int) (arg4 + 0.5F));
+								float var60 = (float) ((int) (arg5 + 0.5F));
+								float var61 = (float) ((int) (arg3 + 0.5F)) - var60;
 								float var62 = var60 - var59;
 								float var63 = (float) this.field938[(int) var59];
 								while (--var62 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var63, 0, 0, (int) var58, (int) arg7, var56, var28, var57, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var63, 0, 0, (int) var58, (int) arg7, var56, var28, var57, var30);
 									var58 += var25;
 									arg7 += var24;
 									var56 += var29;
 									var57 += var31;
-									var63 += this.field949;
+									var63 += this.sizeX;
 								}
 								while (--var61 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var63, 0, 0, (int) var58, (int) arg8, var56, var28, var57, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var63, 0, 0, (int) var58, (int) arg8, var56, var28, var57, var30);
 									var58 += var25;
 									arg8 += var26;
 									var56 += var29;
 									var57 += var31;
-									var63 += this.field949;
+									var63 += this.sizeX;
 								}
 							} else {
-								float var64 = (float) (arg4 + 0.5F);
-								float var65 = (float) (arg5 + 0.5F);
-								float var66 = (float) (arg3 + 0.5F) - var65;
+								float var64 = (float) ((int) (arg4 + 0.5F));
+								float var65 = (float) ((int) (arg5 + 0.5F));
+								float var66 = (float) ((int) (arg3 + 0.5F)) - var65;
 								float var67 = var65 - var64;
 								float var68 = (float) this.field938[(int) var64];
 								while (--var67 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var68, 0, 0, (int) arg7, (int) var58, var56, var28, var57, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var68, 0, 0, (int) arg7, (int) var58, var56, var28, var57, var30);
 									var58 += var25;
 									arg7 += var24;
 									var56 += var29;
 									var57 += var31;
-									var68 += this.field949;
+									var68 += this.sizeX;
 								}
 								while (--var66 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var68, 0, 0, (int) arg8, (int) var58, var56, var28, var57, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var68, 0, 0, (int) arg8, (int) var58, var56, var28, var57, var30);
 									var58 += var25;
 									arg8 += var26;
 									var56 += var29;
 									var57 += var31;
-									var68 += this.field949;
+									var68 += this.sizeX;
 								}
 							}
 						} else {
@@ -401,48 +401,48 @@ public class Rasteriser {
 								arg3 = 0.0F;
 							}
 							if (var25 < var24) {
-								float var70 = (float) (arg4 + 0.5F);
-								float var71 = (float) (arg3 + 0.5F);
-								float var72 = (float) (arg5 + 0.5F) - var71;
+								float var70 = (float) ((int) (arg4 + 0.5F));
+								float var71 = (float) ((int) (arg3 + 0.5F));
+								float var72 = (float) ((int) (arg5 + 0.5F)) - var71;
 								float var73 = var71 - var70;
 								float var74 = (float) this.field938[(int) var70];
 								while (--var73 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var74, 0, 0, (int) var69, (int) arg7, var56, var28, var57, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var74, 0, 0, (int) var69, (int) arg7, var56, var28, var57, var30);
 									var69 += var25;
 									arg7 += var24;
 									var56 += var29;
 									var57 += var31;
-									var74 += this.field949;
+									var74 += this.sizeX;
 								}
 								while (--var72 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var74, 0, 0, (int) arg6, (int) arg7, var56, var28, var57, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var74, 0, 0, (int) arg6, (int) arg7, var56, var28, var57, var30);
 									arg6 += var26;
 									arg7 += var24;
 									var56 += var29;
 									var57 += var31;
-									var74 += this.field949;
+									var74 += this.sizeX;
 								}
 							} else {
-								float var75 = (float) (arg4 + 0.5F);
-								float var76 = (float) (arg3 + 0.5F);
-								float var77 = (float) (arg5 + 0.5F) - var76;
+								float var75 = (float) ((int) (arg4 + 0.5F));
+								float var76 = (float) ((int) (arg3 + 0.5F));
+								float var77 = (float) ((int) (arg5 + 0.5F)) - var76;
 								float var78 = var76 - var75;
 								float var79 = (float) this.field938[(int) var75];
 								while (--var78 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var79, 0, 0, (int) arg7, (int) var69, var56, var28, var57, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var79, 0, 0, (int) arg7, (int) var69, var56, var28, var57, var30);
 									var69 += var25;
 									arg7 += var24;
 									var56 += var29;
 									var57 += var31;
-									var79 += this.field949;
+									var79 += this.sizeX;
 								}
 								while (--var77 >= 0.0F) {
-									this.method1056(arg1, arg2, this.field950, (int) var79, 0, 0, (int) arg7, (int) arg6, var56, var28, var57, var30);
+									this.method1056(arg1, arg2, this.pixels, (int) var79, 0, 0, (int) arg7, (int) arg6, var56, var28, var57, var30);
 									arg6 += var26;
 									arg7 += var24;
 									var56 += var29;
 									var57 += var31;
-									var79 += this.field949;
+									var79 += this.sizeX;
 								}
 							}
 						}
@@ -470,48 +470,48 @@ public class Rasteriser {
 							arg3 = 0.0F;
 						}
 						if (var24 < var26) {
-							float var83 = (float) (arg5 + 0.5F);
-							float var84 = (float) (arg3 + 0.5F);
-							float var85 = (float) (arg4 + 0.5F) - var84;
+							float var83 = (float) ((int) (arg5 + 0.5F));
+							float var84 = (float) ((int) (arg3 + 0.5F));
+							float var85 = (float) ((int) (arg4 + 0.5F)) - var84;
 							float var86 = var84 - var83;
 							float var87 = (float) this.field938[(int) var83];
 							while (--var86 >= 0.0F) {
-								this.method1056(arg1, arg2, this.field950, (int) var87, 0, 0, (int) var82, (int) arg8, var80, var28, var81, var30);
+								this.method1056(arg1, arg2, this.pixels, (int) var87, 0, 0, (int) var82, (int) arg8, var80, var28, var81, var30);
 								var82 += var24;
 								arg8 += var26;
 								var80 += var29;
 								var81 += var31;
-								var87 += this.field949;
+								var87 += this.sizeX;
 							}
 							while (--var85 >= 0.0F) {
-								this.method1056(arg1, arg2, this.field950, (int) var87, 0, 0, (int) var82, (int) arg6, var80, var28, var81, var30);
+								this.method1056(arg1, arg2, this.pixels, (int) var87, 0, 0, (int) var82, (int) arg6, var80, var28, var81, var30);
 								var82 += var24;
 								arg6 += var25;
 								var80 += var29;
 								var81 += var31;
-								var87 += this.field949;
+								var87 += this.sizeX;
 							}
 						} else {
-							float var88 = (float) (arg5 + 0.5F);
-							float var89 = (float) (arg3 + 0.5F);
-							float var90 = (float) (arg4 + 0.5F) - var89;
+							float var88 = (float) ((int) (arg5 + 0.5F));
+							float var89 = (float) ((int) (arg3 + 0.5F));
+							float var90 = (float) ((int) (arg4 + 0.5F)) - var89;
 							float var91 = var89 - var88;
 							float var92 = (float) this.field938[(int) var88];
 							while (--var91 >= 0.0F) {
-								this.method1056(arg1, arg2, this.field950, (int) var92, 0, 0, (int) arg8, (int) var82, var80, var28, var81, var30);
+								this.method1056(arg1, arg2, this.pixels, (int) var92, 0, 0, (int) arg8, (int) var82, var80, var28, var81, var30);
 								var82 += var24;
 								arg8 += var26;
 								var80 += var29;
 								var81 += var31;
-								var92 += this.field949;
+								var92 += this.sizeX;
 							}
 							while (--var90 >= 0.0F) {
-								this.method1056(arg1, arg2, this.field950, (int) var92, 0, 0, (int) arg6, (int) var82, var80, var28, var81, var30);
+								this.method1056(arg1, arg2, this.pixels, (int) var92, 0, 0, (int) arg6, (int) var82, var80, var28, var81, var30);
 								var82 += var24;
 								arg6 += var25;
 								var80 += var29;
 								var81 += var31;
-								var92 += this.field949;
+								var92 += this.sizeX;
 							}
 						}
 					} else {
@@ -528,48 +528,48 @@ public class Rasteriser {
 							arg4 = 0.0F;
 						}
 						if (var24 < var26) {
-							float var94 = (float) (arg5 + 0.5F);
-							float var95 = (float) (arg4 + 0.5F);
-							float var96 = (float) (arg3 + 0.5F) - var95;
+							float var94 = (float) ((int) (arg5 + 0.5F));
+							float var95 = (float) ((int) (arg4 + 0.5F));
+							float var96 = (float) ((int) (arg3 + 0.5F)) - var95;
 							float var97 = var95 - var94;
 							float var98 = (float) this.field938[(int) var94];
 							while (--var97 >= 0.0F) {
-								this.method1056(arg1, arg2, this.field950, (int) var98, 0, 0, (int) var93, (int) arg8, var80, var28, var81, var30);
+								this.method1056(arg1, arg2, this.pixels, (int) var98, 0, 0, (int) var93, (int) arg8, var80, var28, var81, var30);
 								var93 += var24;
 								arg8 += var26;
 								var80 += var29;
 								var81 += var31;
-								var98 += this.field949;
+								var98 += this.sizeX;
 							}
 							while (--var96 >= 0.0F) {
-								this.method1056(arg1, arg2, this.field950, (int) var98, 0, 0, (int) arg7, (int) arg8, var80, var28, var81, var30);
+								this.method1056(arg1, arg2, this.pixels, (int) var98, 0, 0, (int) arg7, (int) arg8, var80, var28, var81, var30);
 								arg7 += var25;
 								arg8 += var26;
 								var80 += var29;
 								var81 += var31;
-								var98 += this.field949;
+								var98 += this.sizeX;
 							}
 						} else {
-							float var99 = (float) (arg5 + 0.5F);
-							float var100 = (float) (arg4 + 0.5F);
-							float var101 = (float) (arg3 + 0.5F) - var100;
+							float var99 = (float) ((int) (arg5 + 0.5F));
+							float var100 = (float) ((int) (arg4 + 0.5F));
+							float var101 = (float) ((int) (arg3 + 0.5F)) - var100;
 							float var102 = var100 - var99;
 							float var103 = (float) this.field938[(int) var99];
 							while (--var102 >= 0.0F) {
-								this.method1056(arg1, arg2, this.field950, (int) var103, 0, 0, (int) arg8, (int) var93, var80, var28, var81, var30);
+								this.method1056(arg1, arg2, this.pixels, (int) var103, 0, 0, (int) arg8, (int) var93, var80, var28, var81, var30);
 								var93 += var24;
 								arg8 += var26;
 								var80 += var29;
 								var81 += var31;
-								var103 += this.field949;
+								var103 += this.sizeX;
 							}
 							while (--var101 >= 0.0F) {
-								this.method1056(arg1, arg2, this.field950, (int) var103, 0, 0, (int) arg8, (int) arg7, var80, var28, var81, var30);
+								this.method1056(arg1, arg2, this.pixels, (int) var103, 0, 0, (int) arg8, (int) arg7, var80, var28, var81, var30);
 								arg7 += var25;
 								arg8 += var26;
 								var80 += var29;
 								var81 += var31;
-								var103 += this.field949;
+								var103 += this.sizeX;
 							}
 						}
 					}
@@ -594,7 +594,7 @@ public class Rasteriser {
 		int var13 = arg6 - 1 + arg3;
 		float var14 = (float) arg6 * arg9 + arg8;
 		float var15 = (float) arg6 * arg11 + arg10;
-		if (this.field966.field834) {
+		if (this.context.field834) {
 			if (this.field933) {
 				int var16 = arg7 - arg6 >> 2;
 				float var17 = arg9 * 4.0F;
@@ -604,34 +604,34 @@ public class Rasteriser {
 							int var18 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 							var14 += var17;
 							var13++;
-							if (!arg0 || var15 < this.field951[var13]) {
+							if (!arg0 || var15 < this.depth[var13]) {
 								arg2[var13] = var18;
 								if (arg0) {
-									this.field951[var13] = var15;
+									this.depth[var13] = var15;
 								}
 							}
 							float var19 = arg11 + var15;
 							var13++;
-							if (!arg0 || var19 < this.field951[var13]) {
+							if (!arg0 || var19 < this.depth[var13]) {
 								arg2[var13] = var18;
 								if (arg0) {
-									this.field951[var13] = var19;
+									this.depth[var13] = var19;
 								}
 							}
 							float var20 = arg11 + var19;
 							var13++;
-							if (!arg0 || var20 < this.field951[var13]) {
+							if (!arg0 || var20 < this.depth[var13]) {
 								arg2[var13] = var18;
 								if (arg0) {
-									this.field951[var13] = var20;
+									this.depth[var13] = var20;
 								}
 							}
 							float var21 = arg11 + var20;
 							var13++;
-							if (!arg0 || var21 < this.field951[var13]) {
+							if (!arg0 || var21 < this.depth[var13]) {
 								arg2[var13] = var18;
 								if (arg0) {
-									this.field951[var13] = var21;
+									this.depth[var13] = var21;
 								}
 							}
 							var15 = arg11 + var21;
@@ -643,10 +643,10 @@ public class Rasteriser {
 						int var23 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 						do {
 							var13++;
-							if (!arg0 || var15 < this.field951[var13]) {
+							if (!arg0 || var15 < this.depth[var13]) {
 								arg2[var13] = var23;
 								if (arg0) {
-									this.field951[var13] = var15;
+									this.depth[var13] = var15;
 								}
 							}
 							var15 += arg11;
@@ -662,7 +662,7 @@ public class Rasteriser {
 							var14 += var17;
 							int var27 = ((var26 & 0xFF00FF) * var25 >> 8 & 0xFF00FF) + ((var26 & 0xFF00) * var25 >> 8 & 0xFF00);
 							var13++;
-							if (!arg0 || var15 < this.field951[var13]) {
+							if (!arg0 || var15 < this.depth[var13]) {
 								int var28 = arg2[var13];
 								if (arg1) {
 									arg2[var13] = (var25 | var28 >> 24) << 24 | ((var28 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var28 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var27;
@@ -670,12 +670,12 @@ public class Rasteriser {
 									arg2[var13] = ((var28 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var28 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var27;
 								}
 								if (arg0) {
-									this.field951[var13] = var15;
+									this.depth[var13] = var15;
 								}
 							}
 							float var29 = arg11 + var15;
 							var13++;
-							if (!arg0 || var29 < this.field951[var13]) {
+							if (!arg0 || var29 < this.depth[var13]) {
 								int var30 = arg2[var13];
 								if (arg1) {
 									arg2[var13] = (var25 | var30 >> 24) << 24 | ((var30 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var30 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var27;
@@ -683,12 +683,12 @@ public class Rasteriser {
 									arg2[var13] = ((var30 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var30 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var27;
 								}
 								if (arg0) {
-									this.field951[var13] = var29;
+									this.depth[var13] = var29;
 								}
 							}
 							float var31 = arg11 + var29;
 							var13++;
-							if (!arg0 || var31 < this.field951[var13]) {
+							if (!arg0 || var31 < this.depth[var13]) {
 								int var32 = arg2[var13];
 								if (arg1) {
 									arg2[var13] = (var25 | var32 >> 24) << 24 | ((var32 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var32 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var27;
@@ -696,12 +696,12 @@ public class Rasteriser {
 									arg2[var13] = ((var32 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var32 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var27;
 								}
 								if (arg0) {
-									this.field951[var13] = var31;
+									this.depth[var13] = var31;
 								}
 							}
 							float var33 = arg11 + var31;
 							var13++;
-							if (!arg0 || var33 < this.field951[var13]) {
+							if (!arg0 || var33 < this.depth[var13]) {
 								int var34 = arg2[var13];
 								if (arg1) {
 									arg2[var13] = (var25 | var34 >> 24) << 24 | ((var34 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var34 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var27;
@@ -709,7 +709,7 @@ public class Rasteriser {
 									arg2[var13] = ((var34 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var34 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var27;
 								}
 								if (arg0) {
-									this.field951[var13] = var33;
+									this.depth[var13] = var33;
 								}
 							}
 							var15 = arg11 + var33;
@@ -722,7 +722,7 @@ public class Rasteriser {
 						int var37 = ((var36 & 0xFF00FF) * var25 >> 8 & 0xFF00FF) + ((var36 & 0xFF00) * var25 >> 8 & 0xFF00);
 						do {
 							var13++;
-							if (!arg0 || var15 < this.field951[var13]) {
+							if (!arg0 || var15 < this.depth[var13]) {
 								int var38 = arg2[var13];
 								if (arg1) {
 									arg2[var13] = (var25 | var38 >> 24) << 24 | ((var38 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var38 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var37;
@@ -730,7 +730,7 @@ public class Rasteriser {
 									arg2[var13] = ((var38 & 0xFF00) * var24 >> 8 & 0xFF00) + ((var38 & 0xFF00FF) * var24 >> 8 & 0xFF00FF) + var37;
 								}
 								if (arg0) {
-									this.field951[var13] = var15;
+									this.depth[var13] = var15;
 								}
 							}
 							var15 += arg11;
@@ -743,10 +743,10 @@ public class Rasteriser {
 				if (this.field935 == 0) {
 					do {
 						var13++;
-						if (!arg0 || var15 < this.field951[var13]) {
+						if (!arg0 || var15 < this.depth[var13]) {
 							arg2[var13] = ColourUtils.field8149[(int) var14 & 0xFFFF];
 							if (arg0) {
-								this.field951[var13] = var15;
+								this.depth[var13] = var15;
 							}
 						}
 						var15 += arg11;
@@ -758,7 +758,7 @@ public class Rasteriser {
 					int var41 = 256 - this.field935;
 					do {
 						var13++;
-						if (!arg0 || var15 < this.field951[var13]) {
+						if (!arg0 || var15 < this.depth[var13]) {
 							int var42 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 							int var43 = ((var42 & 0xFF00FF) * var41 >> 8 & 0xFF00FF) + ((var42 & 0xFF00) * var41 >> 8 & 0xFF00);
 							int var44 = arg2[var13];
@@ -768,7 +768,7 @@ public class Rasteriser {
 								arg2[var13] = ((var44 & 0xFF00) * var40 >> 8 & 0xFF00) + ((var44 & 0xFF00FF) * var40 >> 8 & 0xFF00FF) + var43;
 							}
 							if (arg0) {
-								this.field951[var13] = var15;
+								this.depth[var13] = var15;
 							}
 						}
 						var14 += arg9;
@@ -786,22 +786,22 @@ public class Rasteriser {
 						int var47 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 						var14 += var46;
 						var13++;
-						if (!arg0 || var15 < this.field951[var13]) {
+						if (!arg0 || var15 < this.depth[var13]) {
 							arg2[var13] = var47;
 						}
 						float var48 = arg11 + var15;
 						var13++;
-						if (!arg0 || var48 < this.field951[var13]) {
+						if (!arg0 || var48 < this.depth[var13]) {
 							arg2[var13] = var47;
 						}
 						float var49 = arg11 + var48;
 						var13++;
-						if (!arg0 || var49 < this.field951[var13]) {
+						if (!arg0 || var49 < this.depth[var13]) {
 							arg2[var13] = var47;
 						}
 						float var50 = arg11 + var49;
 						var13++;
-						if (!arg0 || var50 < this.field951[var13]) {
+						if (!arg0 || var50 < this.depth[var13]) {
 							arg2[var13] = var47;
 						}
 						var15 = arg11 + var50;
@@ -813,7 +813,7 @@ public class Rasteriser {
 					int var52 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 					do {
 						var13++;
-						if (!arg0 || var15 < this.field951[var13]) {
+						if (!arg0 || var15 < this.depth[var13]) {
 							arg2[var13] = var52;
 						}
 						var15 += arg11;
@@ -829,7 +829,7 @@ public class Rasteriser {
 						var14 += var46;
 						int var56 = ((var55 & 0xFF00FF) * var54 >> 8 & 0xFF00FF) + ((var55 & 0xFF00) * var54 >> 8 & 0xFF00);
 						var13++;
-						if (!arg0 || var15 < this.field951[var13]) {
+						if (!arg0 || var15 < this.depth[var13]) {
 							int var57 = arg2[var13];
 							if (arg1) {
 								arg2[var13] = (var54 | var57 >> 24) << 24 | ((var57 & 0xFF00) * var53 >> 8 & 0xFF00) + ((var57 & 0xFF00FF) * var53 >> 8 & 0xFF00FF) + var56;
@@ -839,7 +839,7 @@ public class Rasteriser {
 						}
 						float var58 = arg11 + var15;
 						var13++;
-						if (!arg0 || var58 < this.field951[var13]) {
+						if (!arg0 || var58 < this.depth[var13]) {
 							int var59 = arg2[var13];
 							if (arg1) {
 								arg2[var13] = (var54 | var59 >> 24) << 24 | ((var59 & 0xFF00) * var53 >> 8 & 0xFF00) + ((var59 & 0xFF00FF) * var53 >> 8 & 0xFF00FF) + var56;
@@ -849,7 +849,7 @@ public class Rasteriser {
 						}
 						float var60 = arg11 + var58;
 						var13++;
-						if (!arg0 || var60 < this.field951[var13]) {
+						if (!arg0 || var60 < this.depth[var13]) {
 							int var61 = arg2[var13];
 							if (arg1) {
 								arg2[var13] = (var54 | var61 >> 24) << 24 | ((var61 & 0xFF00) * var53 >> 8 & 0xFF00) + ((var61 & 0xFF00FF) * var53 >> 8 & 0xFF00FF) + var56;
@@ -859,7 +859,7 @@ public class Rasteriser {
 						}
 						float var62 = arg11 + var60;
 						var13++;
-						if (!arg0 || var62 < this.field951[var13]) {
+						if (!arg0 || var62 < this.depth[var13]) {
 							int var63 = arg2[var13];
 							if (arg1) {
 								arg2[var13] = (var54 | var63 >> 24) << 24 | ((var63 & 0xFF00) * var53 >> 8 & 0xFF00) + ((var63 & 0xFF00FF) * var53 >> 8 & 0xFF00FF) + var56;
@@ -877,7 +877,7 @@ public class Rasteriser {
 					int var66 = ((var65 & 0xFF00FF) * var54 >> 8 & 0xFF00FF) + ((var65 & 0xFF00) * var54 >> 8 & 0xFF00);
 					do {
 						var13++;
-						if (!arg0 || var15 < this.field951[var13]) {
+						if (!arg0 || var15 < this.depth[var13]) {
 							int var67 = arg2[var13];
 							if (arg1) {
 								arg2[var13] = (var54 | var67 >> 24) << 24 | ((var67 & 0xFF00) * var53 >> 8 & 0xFF00) + ((var67 & 0xFF00FF) * var53 >> 8 & 0xFF00FF) + var66;
@@ -895,7 +895,7 @@ public class Rasteriser {
 			if (this.field935 == 0) {
 				do {
 					var13++;
-					if (!arg0 || var15 < this.field951[var13]) {
+					if (!arg0 || var15 < this.depth[var13]) {
 						arg2[var13] = ColourUtils.field8149[(int) var14 & 0xFFFF];
 					}
 					var15 += arg11;
@@ -907,7 +907,7 @@ public class Rasteriser {
 				int var70 = 256 - this.field935;
 				do {
 					var13++;
-					if (!arg0 || var15 < this.field951[var13]) {
+					if (!arg0 || var15 < this.depth[var13]) {
 						int var71 = ColourUtils.field8149[(int) var14 & 0xFFFF];
 						int var72 = ((var71 & 0xFF00FF) * var70 >> 8 & 0xFF00FF) + ((var71 & 0xFF00) * var70 >> 8 & 0xFF00);
 						int var73 = arg2[var13];
@@ -930,9 +930,9 @@ public class Rasteriser {
 		if (!arg0) {
 			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 		} else if (this.field940) {
-			this.field947.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12 | 0xFF000000);
-			this.field947.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12 | 0xFF000000);
-			this.field947.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, arg12 | 0xFF000000);
+			this.renderer.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12 | 0xFF000000);
+			this.renderer.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12 | 0xFF000000);
+			this.renderer.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, arg12 | 0xFF000000);
 		} else {
 			float var16 = arg7 - arg6;
 			float var17 = arg4 - arg3;
@@ -1002,56 +1002,56 @@ public class Rasteriser {
 								arg4 = 0.0F;
 							}
 							if (arg3 != arg4 && var30 < var29 || arg3 == arg4 && var30 > var28) {
-								float var45 = (float) (arg3 + 0.5F);
-								float var46 = (float) (arg4 + 0.5F);
-								float var47 = (float) (arg5 + 0.5F) - var46;
+								float var45 = (float) ((int) (arg3 + 0.5F));
+								float var46 = (float) ((int) (arg4 + 0.5F));
+								float var47 = (float) ((int) (arg5 + 0.5F)) - var46;
 								float var48 = var46 - var45;
 								float var49 = (float) this.field938[(int) var45];
 								while (--var48 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var49, 0, 0, (int) var44, (int) arg6, var40, var32, var41, var34, var42, var36, var43, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var49, 0, 0, (int) var44, (int) arg6, var40, var32, var41, var34, var42, var36, var43, var38);
 									var44 += var30;
 									arg6 += var29;
 									var40 += var33;
 									var41 += var35;
 									var42 += var37;
 									var43 += var39;
-									var49 += this.field949;
+									var49 += this.sizeX;
 								}
 								while (--var47 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var49, 0, 0, (int) var44, (int) arg7, var40, var32, var41, var34, var42, var36, var43, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var49, 0, 0, (int) var44, (int) arg7, var40, var32, var41, var34, var42, var36, var43, var38);
 									var44 += var30;
 									arg7 += var28;
 									var40 += var33;
 									var41 += var35;
 									var42 += var37;
 									var43 += var39;
-									var49 += this.field949;
+									var49 += this.sizeX;
 								}
 							} else {
-								float var50 = (float) (arg3 + 0.5F);
-								float var51 = (float) (arg4 + 0.5F);
-								float var52 = (float) (arg5 + 0.5F) - var51;
+								float var50 = (float) ((int) (arg3 + 0.5F));
+								float var51 = (float) ((int) (arg4 + 0.5F));
+								float var52 = (float) ((int) (arg5 + 0.5F)) - var51;
 								float var53 = var51 - var50;
 								float var54 = (float) this.field938[(int) var50];
 								while (--var53 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var54, 0, 0, (int) arg6, (int) var44, var40, var32, var41, var34, var42, var36, var43, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var54, 0, 0, (int) arg6, (int) var44, var40, var32, var41, var34, var42, var36, var43, var38);
 									var44 += var30;
 									arg6 += var29;
 									var40 += var33;
 									var41 += var35;
 									var42 += var37;
 									var43 += var39;
-									var54 += this.field949;
+									var54 += this.sizeX;
 								}
 								while (--var52 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var54, 0, 0, (int) arg7, (int) var44, var40, var32, var41, var34, var42, var36, var43, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var54, 0, 0, (int) arg7, (int) var44, var40, var32, var41, var34, var42, var36, var43, var38);
 									var44 += var30;
 									arg7 += var28;
 									var40 += var33;
 									var41 += var35;
 									var42 += var37;
 									var43 += var39;
-									var54 += this.field949;
+									var54 += this.sizeX;
 								}
 							}
 						} else {
@@ -1070,56 +1070,56 @@ public class Rasteriser {
 								arg5 = 0.0F;
 							}
 							if (arg3 != arg5 && var30 < var29 || arg3 == arg5 && var28 > var29) {
-								float var56 = (float) (arg3 + 0.5F);
-								float var57 = (float) (arg5 + 0.5F);
-								float var58 = (float) (arg4 + 0.5F) - var57;
+								float var56 = (float) ((int) (arg3 + 0.5F));
+								float var57 = (float) ((int) (arg5 + 0.5F));
+								float var58 = (float) ((int) (arg4 + 0.5F)) - var57;
 								float var59 = var57 - var56;
 								float var60 = (float) this.field938[(int) var56];
 								while (--var59 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var60, 0, 0, (int) var55, (int) arg6, var40, var32, var41, var34, var42, var36, var43, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var60, 0, 0, (int) var55, (int) arg6, var40, var32, var41, var34, var42, var36, var43, var38);
 									var55 += var30;
 									arg6 += var29;
 									var40 += var33;
 									var41 += var35;
 									var42 += var37;
 									var43 += var39;
-									var60 += this.field949;
+									var60 += this.sizeX;
 								}
 								while (--var58 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var60, 0, 0, (int) arg8, (int) arg6, var40, var32, var41, var34, var42, var36, var43, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var60, 0, 0, (int) arg8, (int) arg6, var40, var32, var41, var34, var42, var36, var43, var38);
 									arg8 += var28;
 									arg6 += var29;
 									var40 += var33;
 									var41 += var35;
 									var42 += var37;
 									var43 += var39;
-									var60 += this.field949;
+									var60 += this.sizeX;
 								}
 							} else {
-								float var61 = (float) (arg3 + 0.5F);
-								float var62 = (float) (arg5 + 0.5F);
-								float var63 = (float) (arg4 + 0.5F) - var62;
+								float var61 = (float) ((int) (arg3 + 0.5F));
+								float var62 = (float) ((int) (arg5 + 0.5F));
+								float var63 = (float) ((int) (arg4 + 0.5F)) - var62;
 								float var64 = var62 - var61;
 								float var65 = (float) this.field938[(int) var61];
 								while (--var64 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var65, 0, 0, (int) arg6, (int) var55, var40, var32, var41, var34, var42, var36, var43, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var65, 0, 0, (int) arg6, (int) var55, var40, var32, var41, var34, var42, var36, var43, var38);
 									var55 += var30;
 									arg6 += var29;
 									var40 += var33;
 									var41 += var35;
 									var42 += var37;
 									var43 += var39;
-									var65 += this.field949;
+									var65 += this.sizeX;
 								}
 								while (--var63 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var65, 0, 0, (int) arg6, (int) arg8, var40, var32, var41, var34, var42, var36, var43, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var65, 0, 0, (int) arg6, (int) arg8, var40, var32, var41, var34, var42, var36, var43, var38);
 									arg8 += var28;
 									arg6 += var29;
 									var40 += var33;
 									var41 += var35;
 									var42 += var37;
 									var43 += var39;
-									var65 += this.field949;
+									var65 += this.sizeX;
 								}
 							}
 						}
@@ -1152,56 +1152,56 @@ public class Rasteriser {
 								arg5 = 0.0F;
 							}
 							if (arg4 != arg5 && var29 < var28 || arg4 == arg5 && var29 > var30) {
-								float var71 = (float) (arg4 + 0.5F);
-								float var72 = (float) (arg5 + 0.5F);
-								float var73 = (float) (arg3 + 0.5F) - var72;
+								float var71 = (float) ((int) (arg4 + 0.5F));
+								float var72 = (float) ((int) (arg5 + 0.5F));
+								float var73 = (float) ((int) (arg3 + 0.5F)) - var72;
 								float var74 = var72 - var71;
 								float var75 = (float) this.field938[(int) var71];
 								while (--var74 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var75, 0, 0, (int) var70, (int) arg7, var66, var32, var67, var34, var68, var36, var69, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var75, 0, 0, (int) var70, (int) arg7, var66, var32, var67, var34, var68, var36, var69, var38);
 									var70 += var29;
 									arg7 += var28;
 									var66 += var33;
 									var67 += var35;
 									var68 += var37;
 									var69 += var39;
-									var75 += this.field949;
+									var75 += this.sizeX;
 								}
 								while (--var73 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var75, 0, 0, (int) var70, (int) arg8, var66, var32, var67, var34, var68, var36, var69, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var75, 0, 0, (int) var70, (int) arg8, var66, var32, var67, var34, var68, var36, var69, var38);
 									var70 += var29;
 									arg8 += var30;
 									var66 += var33;
 									var67 += var35;
 									var68 += var37;
 									var69 += var39;
-									var75 += this.field949;
+									var75 += this.sizeX;
 								}
 							} else {
-								float var76 = (float) (arg4 + 0.5F);
-								float var77 = (float) (arg5 + 0.5F);
-								float var78 = (float) (arg3 + 0.5F) - var77;
+								float var76 = (float) ((int) (arg4 + 0.5F));
+								float var77 = (float) ((int) (arg5 + 0.5F));
+								float var78 = (float) ((int) (arg3 + 0.5F)) - var77;
 								float var79 = var77 - var76;
 								float var80 = (float) this.field938[(int) var76];
 								while (--var79 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var80, 0, 0, (int) arg7, (int) var70, var66, var32, var67, var34, var68, var36, var69, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var80, 0, 0, (int) arg7, (int) var70, var66, var32, var67, var34, var68, var36, var69, var38);
 									var70 += var29;
 									arg7 += var28;
 									var66 += var33;
 									var67 += var35;
 									var68 += var37;
 									var69 += var39;
-									var80 += this.field949;
+									var80 += this.sizeX;
 								}
 								while (--var78 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var80, 0, 0, (int) arg8, (int) var70, var66, var32, var67, var34, var68, var36, var69, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var80, 0, 0, (int) arg8, (int) var70, var66, var32, var67, var34, var68, var36, var69, var38);
 									var70 += var29;
 									arg8 += var30;
 									var66 += var33;
 									var67 += var35;
 									var68 += var37;
 									var69 += var39;
-									var80 += this.field949;
+									var80 += this.sizeX;
 								}
 							}
 						} else {
@@ -1220,56 +1220,56 @@ public class Rasteriser {
 								arg3 = 0.0F;
 							}
 							if (var29 < var28) {
-								float var82 = (float) (arg4 + 0.5F);
-								float var83 = (float) (arg3 + 0.5F);
-								float var84 = (float) (arg5 + 0.5F) - var83;
+								float var82 = (float) ((int) (arg4 + 0.5F));
+								float var83 = (float) ((int) (arg3 + 0.5F));
+								float var84 = (float) ((int) (arg5 + 0.5F)) - var83;
 								float var85 = var83 - var82;
 								float var86 = (float) this.field938[(int) var82];
 								while (--var85 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var86, 0, 0, (int) var81, (int) arg7, var66, var32, var67, var34, var68, var36, var69, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var86, 0, 0, (int) var81, (int) arg7, var66, var32, var67, var34, var68, var36, var69, var38);
 									var81 += var29;
 									arg7 += var28;
 									var66 += var33;
 									var67 += var35;
 									var68 += var37;
 									var69 += var39;
-									var86 += this.field949;
+									var86 += this.sizeX;
 								}
 								while (--var84 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var86, 0, 0, (int) arg6, (int) arg7, var66, var32, var67, var34, var68, var36, var69, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var86, 0, 0, (int) arg6, (int) arg7, var66, var32, var67, var34, var68, var36, var69, var38);
 									arg6 += var30;
 									arg7 += var28;
 									var66 += var33;
 									var67 += var35;
 									var68 += var37;
 									var69 += var39;
-									var86 += this.field949;
+									var86 += this.sizeX;
 								}
 							} else {
-								float var87 = (float) (arg4 + 0.5F);
-								float var88 = (float) (arg3 + 0.5F);
-								float var89 = (float) (arg5 + 0.5F) - var88;
+								float var87 = (float) ((int) (arg4 + 0.5F));
+								float var88 = (float) ((int) (arg3 + 0.5F));
+								float var89 = (float) ((int) (arg5 + 0.5F)) - var88;
 								float var90 = var88 - var87;
 								float var91 = (float) this.field938[(int) var87];
 								while (--var90 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var91, 0, 0, (int) arg7, (int) var81, var66, var32, var67, var34, var68, var36, var69, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var91, 0, 0, (int) arg7, (int) var81, var66, var32, var67, var34, var68, var36, var69, var38);
 									var81 += var29;
 									arg7 += var28;
 									var66 += var33;
 									var67 += var35;
 									var68 += var37;
 									var69 += var39;
-									var91 += this.field949;
+									var91 += this.sizeX;
 								}
 								while (--var89 >= 0.0F) {
-									this.method1031(arg1, arg2, this.field950, (int) var91, 0, 0, (int) arg7, (int) arg6, var66, var32, var67, var34, var68, var36, var69, var38);
+									this.method1031(arg1, arg2, this.pixels, (int) var91, 0, 0, (int) arg7, (int) arg6, var66, var32, var67, var34, var68, var36, var69, var38);
 									arg6 += var30;
 									arg7 += var28;
 									var66 += var33;
 									var67 += var35;
 									var68 += var37;
 									var69 += var39;
-									var91 += this.field949;
+									var91 += this.sizeX;
 								}
 							}
 						}
@@ -1301,56 +1301,56 @@ public class Rasteriser {
 							arg3 = 0.0F;
 						}
 						if (var28 < var30) {
-							float var97 = (float) (arg5 + 0.5F);
-							float var98 = (float) (arg3 + 0.5F);
-							float var99 = (float) (arg4 + 0.5F) - var98;
+							float var97 = (float) ((int) (arg5 + 0.5F));
+							float var98 = (float) ((int) (arg3 + 0.5F));
+							float var99 = (float) ((int) (arg4 + 0.5F)) - var98;
 							float var100 = var98 - var97;
 							float var101 = (float) this.field938[(int) var97];
 							while (--var100 >= 0.0F) {
-								this.method1031(arg1, arg2, this.field950, (int) var101, 0, 0, (int) var96, (int) arg8, var92, var32, var93, var34, var94, var36, var95, var38);
+								this.method1031(arg1, arg2, this.pixels, (int) var101, 0, 0, (int) var96, (int) arg8, var92, var32, var93, var34, var94, var36, var95, var38);
 								var96 += var28;
 								arg8 += var30;
 								var92 += var33;
 								var93 += var35;
 								var94 += var37;
 								var95 += var39;
-								var101 += this.field949;
+								var101 += this.sizeX;
 							}
 							while (--var99 >= 0.0F) {
-								this.method1031(arg1, arg2, this.field950, (int) var101, 0, 0, (int) var96, (int) arg6, var92, var32, var93, var34, var94, var36, var95, var38);
+								this.method1031(arg1, arg2, this.pixels, (int) var101, 0, 0, (int) var96, (int) arg6, var92, var32, var93, var34, var94, var36, var95, var38);
 								var96 += var28;
 								arg6 += var29;
 								var92 += var33;
 								var93 += var35;
 								var94 += var37;
 								var95 += var39;
-								var101 += this.field949;
+								var101 += this.sizeX;
 							}
 						} else {
-							float var102 = (float) (arg5 + 0.5F);
-							float var103 = (float) (arg3 + 0.5F);
-							float var104 = (float) (arg4 + 0.5F) - var103;
+							float var102 = (float) ((int) (arg5 + 0.5F));
+							float var103 = (float) ((int) (arg3 + 0.5F));
+							float var104 = (float) ((int) (arg4 + 0.5F)) - var103;
 							float var105 = var103 - var102;
 							float var106 = (float) this.field938[(int) var102];
 							while (--var105 >= 0.0F) {
-								this.method1031(arg1, arg2, this.field950, (int) var106, 0, 0, (int) arg8, (int) var96, var92, var32, var93, var34, var94, var36, var95, var38);
+								this.method1031(arg1, arg2, this.pixels, (int) var106, 0, 0, (int) arg8, (int) var96, var92, var32, var93, var34, var94, var36, var95, var38);
 								var96 += var28;
 								arg8 += var30;
 								var92 += var33;
 								var93 += var35;
 								var94 += var37;
 								var95 += var39;
-								var106 += this.field949;
+								var106 += this.sizeX;
 							}
 							while (--var104 >= 0.0F) {
-								this.method1031(arg1, arg2, this.field950, (int) var106, 0, 0, (int) arg6, (int) var96, var92, var32, var93, var34, var94, var36, var95, var38);
+								this.method1031(arg1, arg2, this.pixels, (int) var106, 0, 0, (int) arg6, (int) var96, var92, var32, var93, var34, var94, var36, var95, var38);
 								var96 += var28;
 								arg6 += var29;
 								var92 += var33;
 								var93 += var35;
 								var94 += var37;
 								var95 += var39;
-								var106 += this.field949;
+								var106 += this.sizeX;
 							}
 						}
 					} else {
@@ -1369,56 +1369,56 @@ public class Rasteriser {
 							arg4 = 0.0F;
 						}
 						if (var28 < var30) {
-							float var108 = (float) (arg5 + 0.5F);
-							float var109 = (float) (arg4 + 0.5F);
-							float var110 = (float) (arg3 + 0.5F) - var109;
+							float var108 = (float) ((int) (arg5 + 0.5F));
+							float var109 = (float) ((int) (arg4 + 0.5F));
+							float var110 = (float) ((int) (arg3 + 0.5F)) - var109;
 							float var111 = var109 - var108;
 							float var112 = (float) this.field938[(int) var108];
 							while (--var111 >= 0.0F) {
-								this.method1031(arg1, arg2, this.field950, (int) var112, 0, 0, (int) var107, (int) arg8, var92, var32, var93, var34, var94, var36, var95, var38);
+								this.method1031(arg1, arg2, this.pixels, (int) var112, 0, 0, (int) var107, (int) arg8, var92, var32, var93, var34, var94, var36, var95, var38);
 								var107 += var28;
 								arg8 += var30;
 								var92 += var33;
 								var93 += var35;
 								var94 += var37;
 								var95 += var39;
-								var112 += this.field949;
+								var112 += this.sizeX;
 							}
 							while (--var110 >= 0.0F) {
-								this.method1031(arg1, arg2, this.field950, (int) var112, 0, 0, (int) arg7, (int) arg8, var92, var32, var93, var34, var94, var36, var95, var38);
+								this.method1031(arg1, arg2, this.pixels, (int) var112, 0, 0, (int) arg7, (int) arg8, var92, var32, var93, var34, var94, var36, var95, var38);
 								arg7 += var29;
 								arg8 += var30;
 								var92 += var33;
 								var93 += var35;
 								var94 += var37;
 								var95 += var39;
-								var112 += this.field949;
+								var112 += this.sizeX;
 							}
 						} else {
-							float var113 = (float) (arg5 + 0.5F);
-							float var114 = (float) (arg4 + 0.5F);
-							float var115 = (float) (arg3 + 0.5F) - var114;
+							float var113 = (float) ((int) (arg5 + 0.5F));
+							float var114 = (float) ((int) (arg4 + 0.5F));
+							float var115 = (float) ((int) (arg3 + 0.5F)) - var114;
 							float var116 = var114 - var113;
 							float var117 = (float) this.field938[(int) var113];
 							while (--var116 >= 0.0F) {
-								this.method1031(arg1, arg2, this.field950, (int) var117, 0, 0, (int) arg8, (int) var107, var92, var32, var93, var34, var94, var36, var95, var38);
+								this.method1031(arg1, arg2, this.pixels, (int) var117, 0, 0, (int) arg8, (int) var107, var92, var32, var93, var34, var94, var36, var95, var38);
 								var107 += var28;
 								arg8 += var30;
 								var92 += var33;
 								var93 += var35;
 								var94 += var37;
 								var95 += var39;
-								var117 += this.field949;
+								var117 += this.sizeX;
 							}
 							while (--var115 >= 0.0F) {
-								this.method1031(arg1, arg2, this.field950, (int) var117, 0, 0, (int) arg8, (int) arg7, var92, var32, var93, var34, var94, var36, var95, var38);
+								this.method1031(arg1, arg2, this.pixels, (int) var117, 0, 0, (int) arg8, (int) arg7, var92, var32, var93, var34, var94, var36, var95, var38);
 								arg7 += var29;
 								arg8 += var30;
 								var92 += var33;
 								var93 += var35;
 								var94 += var37;
 								var95 += var39;
-								var117 += this.field949;
+								var117 += this.sizeX;
 							}
 						}
 					}
@@ -1615,7 +1615,7 @@ public class Rasteriser {
 		float var96 = (float) arg6 * arg11 + arg10;
 		float var97 = (float) arg6 * arg13 + arg12;
 		float var98 = (float) arg6 * arg15 + arg14;
-		if (this.field966.field834) {
+		if (this.context.field834) {
 			if (this.field933) {
 				int var99 = arg7 - arg6 >> 2;
 				float var100 = arg11 * 4.0F;
@@ -1629,34 +1629,34 @@ public class Rasteriser {
 							var97 += var101;
 							var98 += var102;
 							var94++;
-							if (!arg0 || var95 < this.field951[var94]) {
+							if (!arg0 || var95 < this.depth[var94]) {
 								arg2[var94] = var103;
 								if (arg0) {
-									this.field951[var94] = var95;
+									this.depth[var94] = var95;
 								}
 							}
 							float var104 = arg9 + var95;
 							var94++;
-							if (!arg0 || var104 < this.field951[var94]) {
+							if (!arg0 || var104 < this.depth[var94]) {
 								arg2[var94] = var103;
 								if (arg0) {
-									this.field951[var94] = var104;
+									this.depth[var94] = var104;
 								}
 							}
 							float var105 = arg9 + var104;
 							var94++;
-							if (!arg0 || var105 < this.field951[var94]) {
+							if (!arg0 || var105 < this.depth[var94]) {
 								arg2[var94] = var103;
 								if (arg0) {
-									this.field951[var94] = var105;
+									this.depth[var94] = var105;
 								}
 							}
 							float var106 = arg9 + var105;
 							var94++;
-							if (!arg0 || var106 < this.field951[var94]) {
+							if (!arg0 || var106 < this.depth[var94]) {
 								arg2[var94] = var103;
 								if (arg0) {
-									this.field951[var94] = var106;
+									this.depth[var94] = var106;
 								}
 							}
 							var95 = arg9 + var106;
@@ -1668,10 +1668,10 @@ public class Rasteriser {
 						int var108 = (int) var96 & 0xFF0000 | 0xFF000000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 						do {
 							var94++;
-							if (!arg0 || var95 < this.field951[var94]) {
+							if (!arg0 || var95 < this.depth[var94]) {
 								arg2[var94] = var108;
 								if (arg0) {
-									this.field951[var94] = var95;
+									this.depth[var94] = var95;
 								}
 							}
 							var95 += arg9;
@@ -1686,50 +1686,50 @@ public class Rasteriser {
 							var97 += var101;
 							var98 += var102;
 							var94++;
-							if (!arg0 || var95 < this.field951[var94]) {
+							if (!arg0 || var95 < this.depth[var94]) {
 								int var128 = arg2[var94];
 								int var129 = var124 + var128;
 								int var130 = (var124 & 0xFF00FF) + (var128 & 0xFF00FF);
 								int var131 = (var129 - var130 & 0x10000) + (var130 & 0x1000100);
 								arg2[var94] = var129 - var131 | 0xFF000000 | var131 - (var131 >>> 8);
 								if (arg0) {
-									this.field951[var94] = var95;
+									this.depth[var94] = var95;
 								}
 							}
 							float var132 = arg9 + var95;
 							var94++;
-							if (!arg0 || var132 < this.field951[var94]) {
+							if (!arg0 || var132 < this.depth[var94]) {
 								int var136 = arg2[var94];
 								int var137 = var124 + var136;
 								int var138 = (var124 & 0xFF00FF) + (var136 & 0xFF00FF);
 								int var139 = (var137 - var138 & 0x10000) + (var138 & 0x1000100);
 								arg2[var94] = var137 - var139 | 0xFF000000 | var139 - (var139 >>> 8);
 								if (arg0) {
-									this.field951[var94] = var132;
+									this.depth[var94] = var132;
 								}
 							}
 							float var140 = arg9 + var132;
 							var94++;
-							if (!arg0 || var140 < this.field951[var94]) {
+							if (!arg0 || var140 < this.depth[var94]) {
 								int var144 = arg2[var94];
 								int var145 = var124 + var144;
 								int var146 = (var124 & 0xFF00FF) + (var144 & 0xFF00FF);
 								int var147 = (var145 - var146 & 0x10000) + (var146 & 0x1000100);
 								arg2[var94] = var145 - var147 | 0xFF000000 | var147 - (var147 >>> 8);
 								if (arg0) {
-									this.field951[var94] = var140;
+									this.depth[var94] = var140;
 								}
 							}
 							float var148 = arg9 + var140;
 							var94++;
-							if (!arg0 || var148 < this.field951[var94]) {
+							if (!arg0 || var148 < this.depth[var94]) {
 								int var152 = arg2[var94];
 								int var153 = var124 + var152;
 								int var154 = (var124 & 0xFF00FF) + (var152 & 0xFF00FF);
 								int var155 = (var153 - var154 & 0x10000) + (var154 & 0x1000100);
 								arg2[var94] = var153 - var155 | 0xFF000000 | var155 - (var155 >>> 8);
 								if (arg0) {
-									this.field951[var94] = var148;
+									this.depth[var94] = var148;
 								}
 							}
 							var95 = arg9 + var148;
@@ -1741,14 +1741,14 @@ public class Rasteriser {
 						int var157 = (int) var96 & 0xFF0000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 						do {
 							var94++;
-							if (!arg0 || var95 < this.field951[var94]) {
+							if (!arg0 || var95 < this.depth[var94]) {
 								int var161 = arg2[var94];
 								int var162 = var157 + var161;
 								int var163 = (var157 & 0xFF00FF) + (var161 & 0xFF00FF);
 								int var164 = (var162 - var163 & 0x10000) + (var163 & 0x1000100);
 								arg2[var94] = var162 - var164 | 0xFF000000 | var164 - (var164 >>> 8);
 								if (arg0) {
-									this.field951[var94] = var95;
+									this.depth[var94] = var95;
 								}
 							}
 							var95 += arg9;
@@ -1766,7 +1766,7 @@ public class Rasteriser {
 							var98 += var102;
 							int var112 = ((var111 & 0xFF00FF) * var110 >> 8 & 0xFF00FF) + ((var111 & 0xFF00) * var110 >> 8 & 0xFF00);
 							var94++;
-							if (!arg0 || var95 < this.field951[var94]) {
+							if (!arg0 || var95 < this.depth[var94]) {
 								int var113 = arg2[var94];
 								if (arg1) {
 									arg2[var94] = (var110 | var113 >> 24) << 24 | ((var113 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var113 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var112;
@@ -1774,12 +1774,12 @@ public class Rasteriser {
 									arg2[var94] = ((var113 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var113 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var112;
 								}
 								if (arg0) {
-									this.field951[var94] = var95;
+									this.depth[var94] = var95;
 								}
 							}
 							float var114 = arg9 + var95;
 							var94++;
-							if (!arg0 || var114 < this.field951[var94]) {
+							if (!arg0 || var114 < this.depth[var94]) {
 								int var115 = arg2[var94];
 								if (arg1) {
 									arg2[var94] = (var110 | var115 >> 24) << 24 | ((var115 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var115 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var112;
@@ -1787,12 +1787,12 @@ public class Rasteriser {
 									arg2[var94] = ((var115 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var115 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var112;
 								}
 								if (arg0) {
-									this.field951[var94] = var114;
+									this.depth[var94] = var114;
 								}
 							}
 							float var116 = arg9 + var114;
 							var94++;
-							if (!arg0 || var116 < this.field951[var94]) {
+							if (!arg0 || var116 < this.depth[var94]) {
 								int var117 = arg2[var94];
 								if (arg1) {
 									arg2[var94] = (var110 | var117 >> 24) << 24 | ((var117 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var117 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var112;
@@ -1800,12 +1800,12 @@ public class Rasteriser {
 									arg2[var94] = ((var117 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var117 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var112;
 								}
 								if (arg0) {
-									this.field951[var94] = var116;
+									this.depth[var94] = var116;
 								}
 							}
 							float var118 = arg9 + var116;
 							var94++;
-							if (!arg0 || var118 < this.field951[var94]) {
+							if (!arg0 || var118 < this.depth[var94]) {
 								int var119 = arg2[var94];
 								if (arg1) {
 									arg2[var94] = (var110 | var119 >> 24) << 24 | ((var119 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var119 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var112;
@@ -1813,7 +1813,7 @@ public class Rasteriser {
 									arg2[var94] = ((var119 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var119 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var112;
 								}
 								if (arg0) {
-									this.field951[var94] = var118;
+									this.depth[var94] = var118;
 								}
 							}
 							var95 = arg9 + var118;
@@ -1826,7 +1826,7 @@ public class Rasteriser {
 						int var122 = ((var121 & 0xFF00FF) * var110 >> 8 & 0xFF00FF) + ((var121 & 0xFF00) * var110 >> 8 & 0xFF00);
 						do {
 							var94++;
-							if (!arg0 || var95 < this.field951[var94]) {
+							if (!arg0 || var95 < this.depth[var94]) {
 								int var123 = arg2[var94];
 								if (arg1) {
 									arg2[var94] = (var110 | var123 >> 24) << 24 | ((var123 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var123 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var122;
@@ -1834,7 +1834,7 @@ public class Rasteriser {
 									arg2[var94] = ((var123 & 0xFF00) * var109 >> 8 & 0xFF00) + ((var123 & 0xFF00FF) * var109 >> 8 & 0xFF00FF) + var122;
 								}
 								if (arg0) {
-									this.field951[var94] = var95;
+									this.depth[var94] = var95;
 								}
 							}
 							var95 += arg9;
@@ -1847,10 +1847,10 @@ public class Rasteriser {
 				if (this.field935 == 0) {
 					do {
 						var94++;
-						if (!arg0 || var95 < this.field951[var94]) {
+						if (!arg0 || var95 < this.depth[var94]) {
 							arg2[var94] = (int) var96 & 0xFF0000 | 0xFF000000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 							if (arg0) {
-								this.field951[var94] = var95;
+								this.depth[var94] = var95;
 							}
 						}
 						var95 += arg9;
@@ -1862,7 +1862,7 @@ public class Rasteriser {
 				} else if (this.field968) {
 					do {
 						var94++;
-						if (!arg0 || var95 < this.field951[var94]) {
+						if (!arg0 || var95 < this.depth[var94]) {
 							int var173 = (int) var96 & 0xFF0000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 							int var174 = arg2[var94];
 							int var175 = var173 + var174;
@@ -1870,7 +1870,7 @@ public class Rasteriser {
 							int var177 = (var175 - var176 & 0x10000) + (var176 & 0x1000100);
 							arg2[var94] = var175 - var177 | 0xFF000000 | var177 - (var177 >>> 8);
 							if (arg0) {
-								this.field951[var94] = var95;
+								this.depth[var94] = var95;
 							}
 						}
 						var95 += arg9;
@@ -1884,7 +1884,7 @@ public class Rasteriser {
 					int var167 = 256 - this.field935;
 					do {
 						var94++;
-						if (!arg0 || var95 < this.field951[var94]) {
+						if (!arg0 || var95 < this.depth[var94]) {
 							int var168 = (int) var96 & 0xFF0000 | 0xFF000000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 							int var169 = ((var168 & 0xFF00FF) * var167 >> 8 & 0xFF00FF) + ((var168 & 0xFF00) * var167 >> 8 & 0xFF00);
 							int var170 = arg2[var94];
@@ -1894,7 +1894,7 @@ public class Rasteriser {
 								arg2[var94] = ((var170 & 0xFF00) * var166 >> 8 & 0xFF00) + ((var170 & 0xFF00FF) * var166 >> 8 & 0xFF00FF) + var169;
 							}
 							if (arg0) {
-								this.field951[var94] = var95;
+								this.depth[var94] = var95;
 							}
 						}
 						var95 += arg9;
@@ -1918,22 +1918,22 @@ public class Rasteriser {
 						var97 += var180;
 						var98 += var181;
 						var94++;
-						if (!arg0 || var95 < this.field951[var94]) {
+						if (!arg0 || var95 < this.depth[var94]) {
 							arg2[var94] = var182;
 						}
 						float var183 = arg9 + var95;
 						var94++;
-						if (!arg0 || var183 < this.field951[var94]) {
+						if (!arg0 || var183 < this.depth[var94]) {
 							arg2[var94] = var182;
 						}
 						float var184 = arg9 + var183;
 						var94++;
-						if (!arg0 || var184 < this.field951[var94]) {
+						if (!arg0 || var184 < this.depth[var94]) {
 							arg2[var94] = var182;
 						}
 						float var185 = arg9 + var184;
 						var94++;
-						if (!arg0 || var185 < this.field951[var94]) {
+						if (!arg0 || var185 < this.depth[var94]) {
 							arg2[var94] = var182;
 						}
 						var95 = arg9 + var185;
@@ -1945,7 +1945,7 @@ public class Rasteriser {
 					int var187 = (int) var96 & 0xFF0000 | 0xFF000000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 					do {
 						var94++;
-						if (!arg0 || var95 < this.field951[var94]) {
+						if (!arg0 || var95 < this.depth[var94]) {
 							arg2[var94] = var187;
 						}
 						var95 += arg9;
@@ -1960,7 +1960,7 @@ public class Rasteriser {
 						var97 += var180;
 						var98 += var181;
 						var94++;
-						if (!arg0 || var95 < this.field951[var94]) {
+						if (!arg0 || var95 < this.depth[var94]) {
 							int var207 = arg2[var94];
 							int var208 = var203 + var207;
 							int var209 = (var203 & 0xFF00FF) + (var207 & 0xFF00FF);
@@ -1969,7 +1969,7 @@ public class Rasteriser {
 						}
 						float var211 = arg9 + var95;
 						var94++;
-						if (!arg0 || var211 < this.field951[var94]) {
+						if (!arg0 || var211 < this.depth[var94]) {
 							int var215 = arg2[var94];
 							int var216 = var203 + var215;
 							int var217 = (var203 & 0xFF00FF) + (var215 & 0xFF00FF);
@@ -1978,7 +1978,7 @@ public class Rasteriser {
 						}
 						float var219 = arg9 + var211;
 						var94++;
-						if (!arg0 || var219 < this.field951[var94]) {
+						if (!arg0 || var219 < this.depth[var94]) {
 							int var223 = arg2[var94];
 							int var224 = var203 + var223;
 							int var225 = (var203 & 0xFF00FF) + (var223 & 0xFF00FF);
@@ -1987,7 +1987,7 @@ public class Rasteriser {
 						}
 						float var227 = arg9 + var219;
 						var94++;
-						if (!arg0 || var227 < this.field951[var94]) {
+						if (!arg0 || var227 < this.depth[var94]) {
 							int var231 = arg2[var94];
 							int var232 = var203 + var231;
 							int var233 = (var203 & 0xFF00FF) + (var231 & 0xFF00FF);
@@ -2003,7 +2003,7 @@ public class Rasteriser {
 					int var236 = (int) var96 & 0xFF0000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 					do {
 						var94++;
-						if (!arg0 || var95 < this.field951[var94]) {
+						if (!arg0 || var95 < this.depth[var94]) {
 							int var240 = arg2[var94];
 							int var241 = var236 + var240;
 							int var242 = (var236 & 0xFF00FF) + (var240 & 0xFF00FF);
@@ -2025,7 +2025,7 @@ public class Rasteriser {
 						var98 += var181;
 						int var191 = ((var190 & 0xFF00FF) * var189 >> 8 & 0xFF00FF) + ((var190 & 0xFF00) * var189 >> 8 & 0xFF00);
 						var94++;
-						if (!arg0 || var95 < this.field951[var94]) {
+						if (!arg0 || var95 < this.depth[var94]) {
 							int var192 = arg2[var94];
 							if (arg1) {
 								arg2[var94] = (var189 | var192 >> 24) << 24 | ((var192 & 0xFF00) * var188 >> 8 & 0xFF00) + ((var192 & 0xFF00FF) * var188 >> 8 & 0xFF00FF) + var191;
@@ -2035,7 +2035,7 @@ public class Rasteriser {
 						}
 						float var193 = arg9 + var95;
 						var94++;
-						if (!arg0 || var193 < this.field951[var94]) {
+						if (!arg0 || var193 < this.depth[var94]) {
 							int var194 = arg2[var94];
 							if (arg1) {
 								arg2[var94] = (var189 | var194 >> 24) << 24 | ((var194 & 0xFF00) * var188 >> 8 & 0xFF00) + ((var194 & 0xFF00FF) * var188 >> 8 & 0xFF00FF) + var191;
@@ -2045,7 +2045,7 @@ public class Rasteriser {
 						}
 						float var195 = arg9 + var193;
 						var94++;
-						if (!arg0 || var195 < this.field951[var94]) {
+						if (!arg0 || var195 < this.depth[var94]) {
 							int var196 = arg2[var94];
 							if (arg1) {
 								arg2[var94] = (var189 | var196 >> 24) << 24 | ((var196 & 0xFF00) * var188 >> 8 & 0xFF00) + ((var196 & 0xFF00FF) * var188 >> 8 & 0xFF00FF) + var191;
@@ -2055,7 +2055,7 @@ public class Rasteriser {
 						}
 						float var197 = arg9 + var195;
 						var94++;
-						if (!arg0 || var197 < this.field951[var94]) {
+						if (!arg0 || var197 < this.depth[var94]) {
 							int var198 = arg2[var94];
 							if (arg1) {
 								arg2[var94] = (var189 | var198 >> 24) << 24 | ((var198 & 0xFF00) * var188 >> 8 & 0xFF00) + ((var198 & 0xFF00FF) * var188 >> 8 & 0xFF00FF) + var191;
@@ -2073,7 +2073,7 @@ public class Rasteriser {
 					int var201 = ((var200 & 0xFF00FF) * var189 >> 8 & 0xFF00FF) + ((var200 & 0xFF00) * var189 >> 8 & 0xFF00);
 					do {
 						var94++;
-						if (!arg0 || var95 < this.field951[var94]) {
+						if (!arg0 || var95 < this.depth[var94]) {
 							int var202 = arg2[var94];
 							if (arg1) {
 								arg2[var94] = (var189 | var202 >> 24) << 24 | ((var202 & 0xFF00) * var188 >> 8 & 0xFF00) + ((var202 & 0xFF00FF) * var188 >> 8 & 0xFF00FF) + var201;
@@ -2091,7 +2091,7 @@ public class Rasteriser {
 			if (this.field935 == 0) {
 				do {
 					var94++;
-					if (!arg0 || var95 < this.field951[var94]) {
+					if (!arg0 || var95 < this.depth[var94]) {
 						arg2[var94] = (int) var96 & 0xFF0000 | 0xFF000000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 					}
 					var95 += arg9;
@@ -2103,7 +2103,7 @@ public class Rasteriser {
 			} else if (this.field968) {
 				do {
 					var94++;
-					if (!arg0 || var95 < this.field951[var94]) {
+					if (!arg0 || var95 < this.depth[var94]) {
 						int var252 = (int) var96 & 0xFF0000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 						int var253 = arg2[var94];
 						int var254 = var252 + var253;
@@ -2122,7 +2122,7 @@ public class Rasteriser {
 				int var246 = 256 - this.field935;
 				do {
 					var94++;
-					if (!arg0 || var95 < this.field951[var94]) {
+					if (!arg0 || var95 < this.depth[var94]) {
 						int var247 = (int) var96 & 0xFF0000 | 0xFF000000 | (int) var97 & 0xFF00 | (int) var98 & 0xFF;
 						int var248 = ((var247 & 0xFF00FF) * var246 >> 8 & 0xFF00FF) + ((var247 & 0xFF00) * var246 >> 8 & 0xFF00);
 						int var249 = arg2[var94];
@@ -2145,9 +2145,9 @@ public class Rasteriser {
 	@ObfuscatedName("bd.u(ZZZFFFFFFFFFI)V")
 	public final void drawTriangle(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, int arg12) {
 		if (this.field940) {
-			this.field947.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12);
-			this.field947.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12);
-			this.field947.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, arg12);
+			this.renderer.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12);
+			this.renderer.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12);
+			this.renderer.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, arg12);
 			return;
 		}
 		float var14 = arg7 - arg6;
@@ -2196,44 +2196,44 @@ public class Rasteriser {
 						arg4 = 0.0F;
 					}
 					if (arg3 != arg4 && var22 < var20 || arg3 == arg4 && var22 > var21) {
-						float var28 = (float) (arg3 + 0.5F);
-						float var29 = (float) (arg4 + 0.5F);
-						float var30 = (float) (arg5 + 0.5F) - var29;
+						float var28 = (float) ((int) (arg3 + 0.5F));
+						float var29 = (float) ((int) (arg4 + 0.5F));
+						float var30 = (float) ((int) (arg5 + 0.5F)) - var29;
 						float var31 = var29 - var28;
 						float var32 = (float) this.field938[(int) var28];
 						while (--var31 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var32, arg12, 0, (int) var27, (int) arg6, var26, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var32, arg12, 0, (int) var27, (int) arg6, var26, var24);
 							var27 += var22;
 							arg6 += var20;
 							var26 += var25;
-							var32 += this.field949;
+							var32 += this.sizeX;
 						}
 						while (--var30 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var32, arg12, 0, (int) var27, (int) arg7, var26, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var32, arg12, 0, (int) var27, (int) arg7, var26, var24);
 							var27 += var22;
 							arg7 += var21;
 							var26 += var25;
-							var32 += this.field949;
+							var32 += this.sizeX;
 						}
 					} else {
-						float var33 = (float) (arg3 + 0.5F);
-						float var34 = (float) (arg4 + 0.5F);
-						float var35 = (float) (arg5 + 0.5F) - var34;
+						float var33 = (float) ((int) (arg3 + 0.5F));
+						float var34 = (float) ((int) (arg4 + 0.5F));
+						float var35 = (float) ((int) (arg5 + 0.5F)) - var34;
 						float var36 = var34 - var33;
 						float var37 = (float) this.field938[(int) var33];
 						while (--var36 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var37, arg12, 0, (int) arg6, (int) var27, var26, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var37, arg12, 0, (int) arg6, (int) var27, var26, var24);
 							var27 += var22;
 							arg6 += var20;
 							var26 += var25;
-							var37 += this.field949;
+							var37 += this.sizeX;
 						}
 						while (--var35 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var37, arg12, 0, (int) arg7, (int) var27, var26, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var37, arg12, 0, (int) arg7, (int) var27, var26, var24);
 							var27 += var22;
 							arg7 += var21;
 							var26 += var25;
-							var37 += this.field949;
+							var37 += this.sizeX;
 						}
 					}
 				} else {
@@ -2249,44 +2249,44 @@ public class Rasteriser {
 						arg5 = 0.0F;
 					}
 					if ((arg3 == arg5 || !(var22 < var20)) && (arg3 != arg5 || !(var21 > var20))) {
-						float var44 = (float) (arg3 + 0.5F);
-						float var45 = (float) (arg5 + 0.5F);
-						float var46 = (float) (arg4 + 0.5F) - var45;
+						float var44 = (float) ((int) (arg3 + 0.5F));
+						float var45 = (float) ((int) (arg5 + 0.5F));
+						float var46 = (float) ((int) (arg4 + 0.5F)) - var45;
 						float var47 = var45 - var44;
 						float var48 = (float) this.field938[(int) var44];
 						while (--var47 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var48, arg12, 0, (int) arg6, (int) var38, var26, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var48, arg12, 0, (int) arg6, (int) var38, var26, var24);
 							var38 += var22;
 							arg6 += var20;
 							var26 += var25;
-							var48 += this.field949;
+							var48 += this.sizeX;
 						}
 						while (--var46 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var48, arg12, 0, (int) arg6, (int) arg8, var26, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var48, arg12, 0, (int) arg6, (int) arg8, var26, var24);
 							arg8 += var21;
 							arg6 += var20;
 							var26 += var25;
-							var48 += this.field949;
+							var48 += this.sizeX;
 						}
 					} else {
-						float var39 = (float) (arg3 + 0.5F);
-						float var40 = (float) (arg5 + 0.5F);
-						float var41 = (float) (arg4 + 0.5F) - var40;
+						float var39 = (float) ((int) (arg3 + 0.5F));
+						float var40 = (float) ((int) (arg5 + 0.5F));
+						float var41 = (float) ((int) (arg4 + 0.5F)) - var40;
 						float var42 = var40 - var39;
 						float var43 = (float) this.field938[(int) var39];
 						while (--var42 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var43, arg12, 0, (int) var38, (int) arg6, var26, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var43, arg12, 0, (int) var38, (int) arg6, var26, var24);
 							var38 += var22;
 							arg6 += var20;
 							var26 += var25;
-							var43 += this.field949;
+							var43 += this.sizeX;
 						}
 						while (--var41 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var43, arg12, 0, (int) arg8, (int) arg6, var26, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var43, arg12, 0, (int) arg8, (int) arg6, var26, var24);
 							arg8 += var21;
 							arg6 += var20;
 							var26 += var25;
-							var43 += this.field949;
+							var43 += this.sizeX;
 						}
 					}
 				}
@@ -2313,44 +2313,44 @@ public class Rasteriser {
 						arg5 = 0.0F;
 					}
 					if (arg4 != arg5 && var20 < var21 || arg4 == arg5 && var20 > var22) {
-						float var51 = (float) (arg4 + 0.5F);
-						float var52 = (float) (arg5 + 0.5F);
-						float var53 = (float) (arg3 + 0.5F) - var52;
+						float var51 = (float) ((int) (arg4 + 0.5F));
+						float var52 = (float) ((int) (arg5 + 0.5F));
+						float var53 = (float) ((int) (arg3 + 0.5F)) - var52;
 						float var54 = var52 - var51;
 						float var55 = (float) this.field938[(int) var51];
 						while (--var54 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var55, arg12, 0, (int) var50, (int) arg7, var49, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var55, arg12, 0, (int) var50, (int) arg7, var49, var24);
 							var50 += var20;
 							arg7 += var21;
 							var49 += var25;
-							var55 += this.field949;
+							var55 += this.sizeX;
 						}
 						while (--var53 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var55, arg12, 0, (int) var50, (int) arg8, var49, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var55, arg12, 0, (int) var50, (int) arg8, var49, var24);
 							var50 += var20;
 							arg8 += var22;
 							var49 += var25;
-							var55 += this.field949;
+							var55 += this.sizeX;
 						}
 					} else {
-						float var56 = (float) (arg4 + 0.5F);
-						float var57 = (float) (arg5 + 0.5F);
-						float var58 = (float) (arg3 + 0.5F) - var57;
+						float var56 = (float) ((int) (arg4 + 0.5F));
+						float var57 = (float) ((int) (arg5 + 0.5F));
+						float var58 = (float) ((int) (arg3 + 0.5F)) - var57;
 						float var59 = var57 - var56;
 						float var60 = (float) this.field938[(int) var56];
 						while (--var59 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var60, arg12, 0, (int) arg7, (int) var50, var49, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var60, arg12, 0, (int) arg7, (int) var50, var49, var24);
 							var50 += var20;
 							arg7 += var21;
 							var49 += var25;
-							var60 += this.field949;
+							var60 += this.sizeX;
 						}
 						while (--var58 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var60, arg12, 0, (int) arg8, (int) var50, var49, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var60, arg12, 0, (int) arg8, (int) var50, var49, var24);
 							var50 += var20;
 							arg8 += var22;
 							var49 += var25;
-							var60 += this.field949;
+							var60 += this.sizeX;
 						}
 					}
 				} else {
@@ -2366,44 +2366,44 @@ public class Rasteriser {
 						arg3 = 0.0F;
 					}
 					if (var20 < var21) {
-						float var62 = (float) (arg4 + 0.5F);
-						float var63 = (float) (arg3 + 0.5F);
-						float var64 = (float) (arg5 + 0.5F) - var63;
+						float var62 = (float) ((int) (arg4 + 0.5F));
+						float var63 = (float) ((int) (arg3 + 0.5F));
+						float var64 = (float) ((int) (arg5 + 0.5F)) - var63;
 						float var65 = var63 - var62;
 						float var66 = (float) this.field938[(int) var62];
 						while (--var65 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var66, arg12, 0, (int) var61, (int) arg7, var49, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var66, arg12, 0, (int) var61, (int) arg7, var49, var24);
 							var61 += var20;
 							arg7 += var21;
 							var49 += var25;
-							var66 += this.field949;
+							var66 += this.sizeX;
 						}
 						while (--var64 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var66, arg12, 0, (int) arg6, (int) arg7, var49, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var66, arg12, 0, (int) arg6, (int) arg7, var49, var24);
 							arg6 += var22;
 							arg7 += var21;
 							var49 += var25;
-							var66 += this.field949;
+							var66 += this.sizeX;
 						}
 					} else {
-						float var67 = (float) (arg4 + 0.5F);
-						float var68 = (float) (arg3 + 0.5F);
-						float var69 = (float) (arg5 + 0.5F) - var68;
+						float var67 = (float) ((int) (arg4 + 0.5F));
+						float var68 = (float) ((int) (arg3 + 0.5F));
+						float var69 = (float) ((int) (arg5 + 0.5F)) - var68;
 						float var70 = var68 - var67;
 						float var71 = (float) this.field938[(int) var67];
 						while (--var70 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var71, arg12, 0, (int) arg7, (int) var61, var49, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var71, arg12, 0, (int) arg7, (int) var61, var49, var24);
 							var61 += var20;
 							arg7 += var21;
 							var49 += var25;
-							var71 += this.field949;
+							var71 += this.sizeX;
 						}
 						while (--var69 >= 0.0F) {
-							this.method1039(arg0, arg1, arg2, this.field950, (int) var71, arg12, 0, (int) arg7, (int) arg6, var49, var24);
+							this.method1039(arg0, arg1, arg2, this.pixels, (int) var71, arg12, 0, (int) arg7, (int) arg6, var49, var24);
 							arg6 += var22;
 							arg7 += var21;
 							var49 += var25;
-							var71 += this.field949;
+							var71 += this.sizeX;
 						}
 					}
 				}
@@ -2429,44 +2429,44 @@ public class Rasteriser {
 					arg3 = 0.0F;
 				}
 				if (var21 < var22) {
-					float var74 = (float) (arg5 + 0.5F);
-					float var75 = (float) (arg3 + 0.5F);
-					float var76 = (float) (arg4 + 0.5F) - var75;
+					float var74 = (float) ((int) (arg5 + 0.5F));
+					float var75 = (float) ((int) (arg3 + 0.5F));
+					float var76 = (float) ((int) (arg4 + 0.5F)) - var75;
 					float var77 = var75 - var74;
 					float var78 = (float) this.field938[(int) var74];
 					while (--var77 >= 0.0F) {
-						this.method1039(arg0, arg1, arg2, this.field950, (int) var78, arg12, 0, (int) var73, (int) arg8, var72, var24);
+						this.method1039(arg0, arg1, arg2, this.pixels, (int) var78, arg12, 0, (int) var73, (int) arg8, var72, var24);
 						var73 += var21;
 						arg8 += var22;
 						var72 += var25;
-						var78 += this.field949;
+						var78 += this.sizeX;
 					}
 					while (--var76 >= 0.0F) {
-						this.method1039(arg0, arg1, arg2, this.field950, (int) var78, arg12, 0, (int) var73, (int) arg6, var72, var24);
+						this.method1039(arg0, arg1, arg2, this.pixels, (int) var78, arg12, 0, (int) var73, (int) arg6, var72, var24);
 						var73 += var21;
 						arg6 += var20;
 						var72 += var25;
-						var78 += this.field949;
+						var78 += this.sizeX;
 					}
 				} else {
-					float var79 = (float) (arg5 + 0.5F);
-					float var80 = (float) (arg3 + 0.5F);
-					float var81 = (float) (arg4 + 0.5F) - var80;
+					float var79 = (float) ((int) (arg5 + 0.5F));
+					float var80 = (float) ((int) (arg3 + 0.5F));
+					float var81 = (float) ((int) (arg4 + 0.5F)) - var80;
 					float var82 = var80 - var79;
 					float var83 = (float) this.field938[(int) var79];
 					while (--var82 >= 0.0F) {
-						this.method1039(arg0, arg1, arg2, this.field950, (int) var83, arg12, 0, (int) arg8, (int) var73, var72, var24);
+						this.method1039(arg0, arg1, arg2, this.pixels, (int) var83, arg12, 0, (int) arg8, (int) var73, var72, var24);
 						var73 += var21;
 						arg8 += var22;
 						var72 += var25;
-						var83 += this.field949;
+						var83 += this.sizeX;
 					}
 					while (--var81 >= 0.0F) {
-						this.method1039(arg0, arg1, arg2, this.field950, (int) var83, arg12, 0, (int) arg6, (int) var73, var72, var24);
+						this.method1039(arg0, arg1, arg2, this.pixels, (int) var83, arg12, 0, (int) arg6, (int) var73, var72, var24);
 						var73 += var21;
 						arg6 += var20;
 						var72 += var25;
-						var83 += this.field949;
+						var83 += this.sizeX;
 					}
 				}
 			} else {
@@ -2482,44 +2482,44 @@ public class Rasteriser {
 					arg4 = 0.0F;
 				}
 				if (var21 < var22) {
-					float var85 = (float) (arg5 + 0.5F);
-					float var86 = (float) (arg4 + 0.5F);
-					float var87 = (float) (arg3 + 0.5F) - var86;
+					float var85 = (float) ((int) (arg5 + 0.5F));
+					float var86 = (float) ((int) (arg4 + 0.5F));
+					float var87 = (float) ((int) (arg3 + 0.5F)) - var86;
 					float var88 = var86 - var85;
 					float var89 = (float) this.field938[(int) var85];
 					while (--var88 >= 0.0F) {
-						this.method1039(arg0, arg1, arg2, this.field950, (int) var89, arg12, 0, (int) var84, (int) arg8, var72, var24);
+						this.method1039(arg0, arg1, arg2, this.pixels, (int) var89, arg12, 0, (int) var84, (int) arg8, var72, var24);
 						var84 += var21;
 						arg8 += var22;
 						var72 += var25;
-						var89 += this.field949;
+						var89 += this.sizeX;
 					}
 					while (--var87 >= 0.0F) {
-						this.method1039(arg0, arg1, arg2, this.field950, (int) var89, arg12, 0, (int) arg7, (int) arg8, var72, var24);
+						this.method1039(arg0, arg1, arg2, this.pixels, (int) var89, arg12, 0, (int) arg7, (int) arg8, var72, var24);
 						arg7 += var20;
 						arg8 += var22;
 						var72 += var25;
-						var89 += this.field949;
+						var89 += this.sizeX;
 					}
 				} else {
-					float var90 = (float) (arg5 + 0.5F);
-					float var91 = (float) (arg4 + 0.5F);
-					float var92 = (float) (arg3 + 0.5F) - var91;
+					float var90 = (float) ((int) (arg5 + 0.5F));
+					float var91 = (float) ((int) (arg4 + 0.5F));
+					float var92 = (float) ((int) (arg3 + 0.5F)) - var91;
 					float var93 = var91 - var90;
 					float var94 = (float) this.field938[(int) var90];
 					while (--var93 >= 0.0F) {
-						this.method1039(arg0, arg1, arg2, this.field950, (int) var94, arg12, 0, (int) arg8, (int) var84, var72, var24);
+						this.method1039(arg0, arg1, arg2, this.pixels, (int) var94, arg12, 0, (int) arg8, (int) var84, var72, var24);
 						var84 += var21;
 						arg8 += var22;
 						var72 += var25;
-						var94 += this.field949;
+						var94 += this.sizeX;
 					}
 					while (--var92 >= 0.0F) {
-						this.method1039(arg0, arg1, arg2, this.field950, (int) var94, arg12, 0, (int) arg8, (int) arg7, var72, var24);
+						this.method1039(arg0, arg1, arg2, this.pixels, (int) var94, arg12, 0, (int) arg8, (int) arg7, var72, var24);
 						arg7 += var20;
 						arg8 += var22;
 						var72 += var25;
-						var94 += this.field949;
+						var94 += this.sizeX;
 					}
 				}
 			}
@@ -2542,7 +2542,7 @@ public class Rasteriser {
 		int var12 = arg7 - 1 + arg4;
 		int var13 = arg8 - arg7 >> 2;
 		float var14 = (float) arg7 * arg10 + arg9;
-		if (this.field966.field834) {
+		if (this.context.field834) {
 			if (this.field935 == 0) {
 				while (true) {
 					var13--;
@@ -2554,54 +2554,54 @@ public class Rasteriser {
 								return;
 							}
 							var12++;
-							if (!arg1 || var14 < this.field951[var12]) {
+							if (!arg1 || var14 < this.depth[var12]) {
 								if (arg0) {
 									arg3[var12] = arg5;
 								}
 								if (arg1) {
-									this.field951[var12] = var14;
+									this.depth[var12] = var14;
 								}
 							}
 							var14 += arg10;
 						}
 					}
 					var12++;
-					if (!arg1 || var14 < this.field951[var12]) {
+					if (!arg1 || var14 < this.depth[var12]) {
 						if (arg0) {
 							arg3[var12] = arg5;
 						}
 						if (arg1) {
-							this.field951[var12] = var14;
+							this.depth[var12] = var14;
 						}
 					}
 					float var15 = arg10 + var14;
 					var12++;
-					if (!arg1 || var15 < this.field951[var12]) {
+					if (!arg1 || var15 < this.depth[var12]) {
 						if (arg0) {
 							arg3[var12] = arg5;
 						}
 						if (arg1) {
-							this.field951[var12] = var15;
+							this.depth[var12] = var15;
 						}
 					}
 					float var16 = arg10 + var15;
 					var12++;
-					if (!arg1 || var16 < this.field951[var12]) {
+					if (!arg1 || var16 < this.depth[var12]) {
 						if (arg0) {
 							arg3[var12] = arg5;
 						}
 						if (arg1) {
-							this.field951[var12] = var16;
+							this.depth[var12] = var16;
 						}
 					}
 					float var17 = arg10 + var16;
 					var12++;
-					if (!arg1 || var17 < this.field951[var12]) {
+					if (!arg1 || var17 < this.depth[var12]) {
 						if (arg0) {
 							arg3[var12] = arg5;
 						}
 						if (arg1) {
-							this.field951[var12] = var17;
+							this.depth[var12] = var17;
 						}
 					}
 					var14 = arg10 + var17;
@@ -2620,7 +2620,7 @@ public class Rasteriser {
 								return;
 							}
 							var12++;
-							if (!arg1 || var14 < this.field951[var12]) {
+							if (!arg1 || var14 < this.depth[var12]) {
 								if (arg0) {
 									int var34 = arg3[var12];
 									if (arg2) {
@@ -2630,14 +2630,14 @@ public class Rasteriser {
 									}
 								}
 								if (arg1) {
-									this.field951[var12] = var14;
+									this.depth[var12] = var14;
 								}
 							}
 							var14 += arg10;
 						}
 					}
 					var12++;
-					if (!arg1 || var14 < this.field951[var12]) {
+					if (!arg1 || var14 < this.depth[var12]) {
 						if (arg0) {
 							int var26 = arg3[var12];
 							if (arg2) {
@@ -2647,12 +2647,12 @@ public class Rasteriser {
 							}
 						}
 						if (arg1) {
-							this.field951[var12] = var14;
+							this.depth[var12] = var14;
 						}
 					}
 					float var27 = arg10 + var14;
 					var12++;
-					if (!arg1 || var27 < this.field951[var12]) {
+					if (!arg1 || var27 < this.depth[var12]) {
 						if (arg0) {
 							int var28 = arg3[var12];
 							if (arg2) {
@@ -2662,12 +2662,12 @@ public class Rasteriser {
 							}
 						}
 						if (arg1) {
-							this.field951[var12] = var27;
+							this.depth[var12] = var27;
 						}
 					}
 					float var29 = arg10 + var27;
 					var12++;
-					if (!arg1 || var29 < this.field951[var12]) {
+					if (!arg1 || var29 < this.depth[var12]) {
 						if (arg0) {
 							int var30 = arg3[var12];
 							if (arg2) {
@@ -2677,12 +2677,12 @@ public class Rasteriser {
 							}
 						}
 						if (arg1) {
-							this.field951[var12] = var29;
+							this.depth[var12] = var29;
 						}
 					}
 					float var31 = arg10 + var29;
 					var12++;
-					if (!arg1 || var31 < this.field951[var12]) {
+					if (!arg1 || var31 < this.depth[var12]) {
 						if (arg0) {
 							int var32 = arg3[var12];
 							if (arg2) {
@@ -2692,7 +2692,7 @@ public class Rasteriser {
 							}
 						}
 						if (arg1) {
-							this.field951[var12] = var31;
+							this.depth[var12] = var31;
 						}
 					}
 					var14 = arg10 + var31;
@@ -2708,29 +2708,29 @@ public class Rasteriser {
 								return;
 							}
 							var12++;
-							if ((!arg1 || var14 < this.field951[var12]) && arg0) {
+							if ((!arg1 || var14 < this.depth[var12]) && arg0) {
 								arg3[var12 - 1] = arg3[var12];
 							}
 							var14 += arg10;
 						}
 					}
 					var12++;
-					if ((!arg1 || var14 < this.field951[var12]) && arg0) {
+					if ((!arg1 || var14 < this.depth[var12]) && arg0) {
 						arg3[var12 - 1] = arg3[var12];
 					}
 					float var19 = arg10 + var14;
 					var12++;
-					if ((!arg1 || var19 < this.field951[var12]) && arg0) {
+					if ((!arg1 || var19 < this.depth[var12]) && arg0) {
 						arg3[var12 - 1] = arg3[var12];
 					}
 					float var20 = arg10 + var19;
 					var12++;
-					if ((!arg1 || var20 < this.field951[var12]) && arg0) {
+					if ((!arg1 || var20 < this.depth[var12]) && arg0) {
 						arg3[var12 - 1] = arg3[var12];
 					}
 					float var21 = arg10 + var20;
 					var12++;
-					if ((!arg1 || var21 < this.field951[var12]) && arg0) {
+					if ((!arg1 || var21 < this.depth[var12]) && arg0) {
 						arg3[var12 - 1] = arg3[var12];
 					}
 					var14 = arg10 + var21;
@@ -2748,29 +2748,29 @@ public class Rasteriser {
 								return;
 							}
 							var12++;
-							if (!arg1 || var14 < this.field951[var12]) {
+							if (!arg1 || var14 < this.depth[var12]) {
 								arg3[var12] = arg5;
 							}
 							var14 += arg10;
 						}
 					}
 					var12++;
-					if (!arg1 || var14 < this.field951[var12]) {
+					if (!arg1 || var14 < this.depth[var12]) {
 						arg3[var12] = arg5;
 					}
 					float var35 = arg10 + var14;
 					var12++;
-					if (!arg1 || var35 < this.field951[var12]) {
+					if (!arg1 || var35 < this.depth[var12]) {
 						arg3[var12] = arg5;
 					}
 					float var36 = arg10 + var35;
 					var12++;
-					if (!arg1 || var36 < this.field951[var12]) {
+					if (!arg1 || var36 < this.depth[var12]) {
 						arg3[var12] = arg5;
 					}
 					float var37 = arg10 + var36;
 					var12++;
-					if (!arg1 || var37 < this.field951[var12]) {
+					if (!arg1 || var37 < this.depth[var12]) {
 						arg3[var12] = arg5;
 					}
 					var14 = arg10 + var37;
@@ -2789,7 +2789,7 @@ public class Rasteriser {
 								return;
 							}
 							var12++;
-							if (!arg1 || var14 < this.field951[var12]) {
+							if (!arg1 || var14 < this.depth[var12]) {
 								int var54 = arg3[var12];
 								if (arg2) {
 									arg3[var12] = (var44 | var54 >> 24) << 24 | ((var54 & 0xFF00) * var43 >> 8 & 0xFF00) + ((var54 & 0xFF00FF) * var43 >> 8 & 0xFF00FF) + var45;
@@ -2801,7 +2801,7 @@ public class Rasteriser {
 						}
 					}
 					var12++;
-					if (!arg1 || var14 < this.field951[var12]) {
+					if (!arg1 || var14 < this.depth[var12]) {
 						int var46 = arg3[var12];
 						if (arg2) {
 							arg3[var12] = (var44 | var46 >> 24) << 24 | ((var46 & 0xFF00) * var43 >> 8 & 0xFF00) + ((var46 & 0xFF00FF) * var43 >> 8 & 0xFF00FF) + var45;
@@ -2811,7 +2811,7 @@ public class Rasteriser {
 					}
 					float var47 = arg10 + var14;
 					var12++;
-					if (!arg1 || var47 < this.field951[var12]) {
+					if (!arg1 || var47 < this.depth[var12]) {
 						int var48 = arg3[var12];
 						if (arg2) {
 							arg3[var12] = (var44 | var48 >> 24) << 24 | ((var48 & 0xFF00) * var43 >> 8 & 0xFF00) + ((var48 & 0xFF00FF) * var43 >> 8 & 0xFF00FF) + var45;
@@ -2821,7 +2821,7 @@ public class Rasteriser {
 					}
 					float var49 = arg10 + var47;
 					var12++;
-					if (!arg1 || var49 < this.field951[var12]) {
+					if (!arg1 || var49 < this.depth[var12]) {
 						int var50 = arg3[var12];
 						if (arg2) {
 							arg3[var12] = (var44 | var50 >> 24) << 24 | ((var50 & 0xFF00) * var43 >> 8 & 0xFF00) + ((var50 & 0xFF00FF) * var43 >> 8 & 0xFF00FF) + var45;
@@ -2831,7 +2831,7 @@ public class Rasteriser {
 					}
 					float var51 = arg10 + var49;
 					var12++;
-					if (!arg1 || var51 < this.field951[var12]) {
+					if (!arg1 || var51 < this.depth[var12]) {
 						int var52 = arg3[var12];
 						if (arg2) {
 							arg3[var12] = (var44 | var52 >> 24) << 24 | ((var52 & 0xFF00) * var43 >> 8 & 0xFF00) + ((var52 & 0xFF00FF) * var43 >> 8 & 0xFF00FF) + var45;
@@ -2852,29 +2852,29 @@ public class Rasteriser {
 								return;
 							}
 							var12++;
-							if (!arg1 || var14 < this.field951[var12]) {
+							if (!arg1 || var14 < this.depth[var12]) {
 								arg3[var12 - 1] = arg3[var12];
 							}
 							var14 += arg10;
 						}
 					}
 					var12++;
-					if (!arg1 || var14 < this.field951[var12]) {
+					if (!arg1 || var14 < this.depth[var12]) {
 						arg3[var12 - 1] = arg3[var12];
 					}
 					float var39 = arg10 + var14;
 					var12++;
-					if (!arg1 || var39 < this.field951[var12]) {
+					if (!arg1 || var39 < this.depth[var12]) {
 						arg3[var12 - 1] = arg3[var12];
 					}
 					float var40 = arg10 + var39;
 					var12++;
-					if (!arg1 || var40 < this.field951[var12]) {
+					if (!arg1 || var40 < this.depth[var12]) {
 						arg3[var12 - 1] = arg3[var12];
 					}
 					float var41 = arg10 + var40;
 					var12++;
-					if (!arg1 || var41 < this.field951[var12]) {
+					if (!arg1 || var41 < this.depth[var12]) {
 						arg3[var12 - 1] = arg3[var12];
 					}
 					var14 = arg10 + var41;
@@ -2884,29 +2884,29 @@ public class Rasteriser {
 	}
 
 	@ObfuscatedName("bd.p(ZZZFFFFFFFFFFFFFFFFFFIIIIFFFI)V")
-	public final void method1033(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, int arg21, int arg22, int arg23, int arg24, float arg25, float arg26, float arg27, int arg28) {
+	public final void drawTriangle(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, int arg21, int arg22, int arg23, int arg24, float arg25, float arg26, float arg27, int arg28) {
 		if (!arg0) {
 			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 			return;
 		}
 		int var30 = arg28 & 0xFFFF;
 		if (this.field953 != var30) {
-			this.field954 = this.field947.getMaterialTexture(var30);
+			this.field954 = this.renderer.getMaterialTexture(var30);
 			if (this.field954 == null) {
 				this.field953 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
 				this.field959 = 0;
-				int var31 = ColourUtils.field8149[ColourUtils.method4937(this.field947.getMaterialAverageColour(arg28)) & 0xFFFF];
+				int var31 = ColourUtils.field8149[ColourUtils.method4937(this.renderer.getMaterialAverageColour(arg28)) & 0xFFFF];
 				int var32 = ((arg21 >> 16 & 0xFF) * (var31 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var31 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var31 & 0xFF) >> 8;
 				this.drawTriangle(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.interpolateColours(var32, arg24, arg25), ColourUtils.interpolateColours(var32, arg24, arg26), ColourUtils.interpolateColours(var32, arg24, arg27));
 				return;
 			}
 			this.field953 = var30;
-			this.field948 = this.field947.getMaterialSize(arg28);
+			this.field948 = this.renderer.getMaterialSize(arg28);
 			this.field956 = this.field948 - 1;
-			this.field960 = this.field947.getMaterialAlphaMode(arg28);
-			this.field939 = this.field947.getMaterialRepeat(arg28);
-			this.field959 = this.field947.getMaterialAlphaThreshold(arg28) & 0xFF;
+			this.alphaMode = this.renderer.getMaterialAlphaMode(arg28);
+			this.field939 = this.renderer.getMaterialRepeat(arg28);
+			this.field959 = this.renderer.getMaterialAlphaThreshold(arg28) & 0xFF;
 		}
 		this.field952 = arg24;
 		if (!(arg3 <= arg4) || !(arg3 <= arg5)) {
@@ -3112,13 +3112,13 @@ public class Rasteriser {
 				arg5 = 0.0F;
 			}
 			if (arg3 != arg5 && var95 < var73 || arg3 == arg5 && var84 > var73) {
-				float var136 = (float) (arg3 + 0.5F);
-				float var137 = (float) (arg5 + 0.5F);
-				float var138 = (float) (arg4 + 0.5F) - var137;
+				float var136 = (float) ((int) (arg3 + 0.5F));
+				float var137 = (float) ((int) (arg5 + 0.5F));
+				float var138 = (float) ((int) (arg4 + 0.5F)) - var137;
 				float var139 = var137 - var136;
 				float var140 = (float) this.field938[(int) var136];
 				while (--var139 >= 0.0F) {
-					this.method1034(arg1, arg2, this.field950, this.field954, (int) var140, (int) var126, (int) arg6, var127, var55, var128, var58, var129, var49, var130, var52, var131, arg25, var132, var61, var133, var64, var134, var67, var135, var70);
+					this.drawLine(arg1, arg2, this.pixels, this.field954, (int) var140, (int) var126, (int) arg6, var127, var55, var128, var58, var129, var49, var130, var52, var131, arg25, var132, var61, var133, var64, var134, var67, var135, var70);
 					arg6 += var73;
 					var126 += var95;
 					var55 += var74;
@@ -3139,10 +3139,10 @@ public class Rasteriser {
 					var134 += var103;
 					var70 += var82;
 					var135 += var104;
-					var140 += this.field949;
+					var140 += this.sizeX;
 				}
 				while (--var138 >= 0.0F) {
-					this.method1034(arg1, arg2, this.field950, this.field954, (int) var140, (int) arg8, (int) arg6, var57, var55, var60, var58, var51, var49, var54, var52, arg27, arg25, var63, var61, var66, var64, var69, var67, var72, var70);
+					this.drawLine(arg1, arg2, this.pixels, this.field954, (int) var140, (int) arg8, (int) arg6, var57, var55, var60, var58, var51, var49, var54, var52, arg27, arg25, var63, var61, var66, var64, var69, var67, var72, var70);
 					arg8 += var84;
 					arg6 += var73;
 					var57 += var85;
@@ -3163,16 +3163,16 @@ public class Rasteriser {
 					var67 += var81;
 					var72 += var93;
 					var70 += var82;
-					var140 += this.field949;
+					var140 += this.sizeX;
 				}
 			} else {
-				float var141 = (float) (arg3 + 0.5F);
-				float var142 = (float) (arg5 + 0.5F);
-				float var143 = (float) (arg4 + 0.5F) - var142;
+				float var141 = (float) ((int) (arg3 + 0.5F));
+				float var142 = (float) ((int) (arg5 + 0.5F));
+				float var143 = (float) ((int) (arg4 + 0.5F)) - var142;
 				float var144 = var142 - var141;
 				float var145 = (float) this.field938[(int) var141];
 				while (--var144 >= 0.0F) {
-					this.method1034(arg1, arg2, this.field950, this.field954, (int) var145, (int) arg6, (int) var126, var55, var127, var58, var128, var49, var129, var52, var130, arg25, var131, var61, var132, var64, var133, var67, var134, var70, var135);
+					this.drawLine(arg1, arg2, this.pixels, this.field954, (int) var145, (int) arg6, (int) var126, var55, var127, var58, var128, var49, var129, var52, var130, arg25, var131, var61, var132, var64, var133, var67, var134, var70, var135);
 					var126 += var95;
 					arg6 += var73;
 					var127 += var96;
@@ -3193,10 +3193,10 @@ public class Rasteriser {
 					var67 += var81;
 					var135 += var104;
 					var70 += var82;
-					var145 += this.field949;
+					var145 += this.sizeX;
 				}
 				while (--var143 >= 0.0F) {
-					this.method1034(arg1, arg2, this.field950, this.field954, (int) var145, (int) arg6, (int) arg8, var55, var57, var58, var60, var49, var51, var52, var54, arg25, arg27, var61, var63, var64, var66, var67, var69, var70, var72);
+					this.drawLine(arg1, arg2, this.pixels, this.field954, (int) var145, (int) arg6, (int) arg8, var55, var57, var58, var60, var49, var51, var52, var54, arg25, arg27, var61, var63, var64, var66, var67, var69, var70, var72);
 					arg6 += var73;
 					arg8 += var84;
 					var55 += var74;
@@ -3217,7 +3217,7 @@ public class Rasteriser {
 					var69 += var92;
 					var70 += var82;
 					var72 += var93;
-					var145 += this.field949;
+					var145 += this.sizeX;
 				}
 			}
 			return;
@@ -3269,13 +3269,13 @@ public class Rasteriser {
 			arg4 = 0.0F;
 		}
 		if (arg3 != arg4 && var95 < var73 || !(arg3 != arg4 || !(var95 > var84))) {
-			float var116 = (float) (arg3 + 0.5F);
-			float var117 = (float) (arg4 + 0.5F);
-			float var118 = (float) (arg5 + 0.5F) - var117;
+			float var116 = (float) ((int) (arg3 + 0.5F));
+			float var117 = (float) ((int) (arg4 + 0.5F));
+			float var118 = (float) ((int) (arg5 + 0.5F)) - var117;
 			float var119 = var117 - var116;
 			float var120 = (float) this.field938[(int) var116];
 			while (--var119 >= 0.0F) {
-				this.method1034(arg1, arg2, this.field950, this.field954, (int) var120, (int) var106, (int) arg6, var107, var55, var108, var58, var109, var49, var110, var52, var111, arg25, var112, var61, var113, var64, var114, var67, var115, var70);
+				this.drawLine(arg1, arg2, this.pixels, this.field954, (int) var120, (int) var106, (int) arg6, var107, var55, var108, var58, var109, var49, var110, var52, var111, arg25, var112, var61, var113, var64, var114, var67, var115, var70);
 				arg6 += var73;
 				var106 += var95;
 				var55 += var74;
@@ -3296,10 +3296,10 @@ public class Rasteriser {
 				var114 += var103;
 				var70 += var82;
 				var115 += var104;
-				var120 += this.field949;
+				var120 += this.sizeX;
 			}
 			while (--var118 >= 0.0F) {
-				this.method1034(arg1, arg2, this.field950, this.field954, (int) var120, (int) var106, (int) arg7, var107, var56, var108, var59, var109, var50, var110, var53, var111, arg26, var112, var62, var113, var65, var114, var68, var115, var71);
+				this.drawLine(arg1, arg2, this.pixels, this.field954, (int) var120, (int) var106, (int) arg7, var107, var56, var108, var59, var109, var50, var110, var53, var111, arg26, var112, var62, var113, var65, var114, var68, var115, var71);
 				arg7 += var84;
 				var106 += var95;
 				var56 += var85;
@@ -3320,17 +3320,17 @@ public class Rasteriser {
 				var114 += var103;
 				var71 += var93;
 				var115 += var104;
-				var120 += this.field949;
+				var120 += this.sizeX;
 			}
 			return;
 		}
-		float var121 = (float) (arg3 + 0.5F);
-		float var122 = (float) (arg4 + 0.5F);
-		float var123 = (float) (arg5 + 0.5F) - var122;
+		float var121 = (float) ((int) (arg3 + 0.5F));
+		float var122 = (float) ((int) (arg4 + 0.5F));
+		float var123 = (float) ((int) (arg5 + 0.5F)) - var122;
 		float var124 = var122 - var121;
 		float var125 = (float) this.field938[(int) var121];
 		while (--var124 >= 0.0F) {
-			this.method1034(arg1, arg2, this.field950, this.field954, (int) var125, (int) arg6, (int) var106, var55, var107, var58, var108, var49, var109, var52, var110, arg25, var111, var61, var112, var64, var113, var67, var114, var70, var115);
+			this.drawLine(arg1, arg2, this.pixels, this.field954, (int) var125, (int) arg6, (int) var106, var55, var107, var58, var108, var49, var109, var52, var110, arg25, var111, var61, var112, var64, var113, var67, var114, var70, var115);
 			arg6 += var73;
 			var106 += var95;
 			var55 += var74;
@@ -3351,10 +3351,10 @@ public class Rasteriser {
 			var114 += var103;
 			var70 += var82;
 			var115 += var104;
-			var125 += this.field949;
+			var125 += this.sizeX;
 		}
 		while (--var123 >= 0.0F) {
-			this.method1034(arg1, arg2, this.field950, this.field954, (int) var125, (int) arg7, (int) var106, var56, var107, var59, var108, var50, var109, var53, var110, arg26, var111, var62, var112, var65, var113, var68, var114, var71, var115);
+			this.drawLine(arg1, arg2, this.pixels, this.field954, (int) var125, (int) arg7, (int) var106, var56, var107, var59, var108, var50, var109, var53, var110, arg26, var111, var62, var112, var65, var113, var68, var114, var71, var115);
 			arg7 += var84;
 			var106 += var95;
 			var56 += var85;
@@ -3375,12 +3375,12 @@ public class Rasteriser {
 			var114 += var103;
 			var71 += var93;
 			var115 += var104;
-			var125 += this.field949;
+			var125 += this.sizeX;
 		}
 	}
 
 	@ObfuscatedName("bd.d(ZZ[I[IIIIFFFFFFFFFFFFFFFFFF)V")
-	public final void method1034(boolean arg0, boolean arg1, int[] arg2, int[] arg3, int arg4, int arg5, int arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, float arg21, float arg22, float arg23, float arg24) {
+	public final void drawLine(boolean arg0, boolean arg1, int[] arg2, int[] arg3, int arg4, int arg5, int arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, float arg21, float arg22, float arg23, float arg24) {
 		int var26 = arg6 - arg5;
 		float var27 = 1.0F / (float) var26;
 		float var28 = (arg8 - arg7) * var27;
@@ -3417,7 +3417,7 @@ public class Rasteriser {
 		while (var37-- > 0) {
 			float var39 = 1.0F / arg7;
 			float var40 = 1.0F / arg9;
-			if (!arg0 || var39 < this.field951[var38]) {
+			if (!arg0 || var39 < this.depth[var38]) {
 				int var41 = (int) (arg11 * var40 * (float) this.field948);
 				if (this.field939) {
 					var41 &= this.field956;
@@ -3437,9 +3437,9 @@ public class Rasteriser {
 				int var43 = this.field954[this.field948 * var42 + var41];
 				boolean var44 = true;
 				int var45;
-				if (MaterialAlphaMode.MULTIPLY == this.field960) {
+				if (MaterialAlphaMode.MULTIPLY == this.alphaMode) {
 					var45 = (int) ((float) (var43 >> 24 & 0xFF) * arg17 / 255.0F);
-				} else if (MaterialAlphaMode.TEST != this.field960) {
+				} else if (MaterialAlphaMode.TEST != this.alphaMode) {
 					var45 = (int) arg17;
 				} else if ((var43 >> 24 & 0xFF) > this.field959) {
 					var45 = 255;
@@ -3460,7 +3460,7 @@ public class Rasteriser {
 							arg2[var38] = var52;
 						}
 						if (arg0) {
-							this.field951[var38] = var39;
+							this.depth[var38] = var39;
 						}
 					} else {
 						int var46 = ((int) ((float) (var43 >> 16 & 0xFF) * arg19) & 0xFF00 | 0xFF0000) << 8 | (int) ((float) (var43 >> 8 & 0xFF) * arg21) & 0xFF00 | (int) ((float) (var43 & 0xFF) * arg23) >> 8;
@@ -3478,7 +3478,7 @@ public class Rasteriser {
 							arg2[var38] = var51;
 						}
 						if (arg0) {
-							this.field951[var38] = var39;
+							this.depth[var38] = var39;
 						}
 					}
 				}
@@ -3497,7 +3497,7 @@ public class Rasteriser {
 	}
 
 	@ObfuscatedName("bd.c(ZZZFFFFFFFFFFFFFFFFFFIIIIFFFIFIFIF)V")
-	public final void method1042(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, int arg21, int arg22, int arg23, int arg24, float arg25, float arg26, float arg27, int arg28, float arg29, int arg30, float arg31, int arg32, float arg33) {
+	public final void drawTriangle(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, int arg21, int arg22, int arg23, int arg24, float arg25, float arg26, float arg27, int arg28, float arg29, int arg30, float arg31, int arg32, float arg33) {
 		if (!arg0) {
 			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 			return;
@@ -3572,48 +3572,48 @@ public class Rasteriser {
 		int var56 = arg30 & 0xFFFF;
 		int var57 = arg32 & 0xFFFF;
 		if (this.field953 != var55) {
-			this.field954 = this.field947.getMaterialTexture(var55);
+			this.field954 = this.renderer.getMaterialTexture(var55);
 			if (this.field954 == null) {
 				this.field953 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var58 = ColourUtils.field8149[ColourUtils.method4937(this.field947.getMaterialAverageColour(arg28)) & 0xFFFF];
+				int var58 = ColourUtils.field8149[ColourUtils.method4937(this.renderer.getMaterialAverageColour(arg28)) & 0xFFFF];
 				int var59 = ((arg21 >> 16 & 0xFF) * (var58 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var58 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var58 & 0xFF) >> 8;
 				this.drawTriangle(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.interpolateColours(var59, arg24, arg25), ColourUtils.interpolateColours(var59, arg24, arg26), ColourUtils.interpolateColours(var59, arg24, arg27));
 				return;
 			}
 			this.field953 = var55;
-			this.field948 = this.field947.getMaterialSize(arg28);
+			this.field948 = this.renderer.getMaterialSize(arg28);
 			this.field956 = this.field948 - 1;
-			this.field960 = this.field947.getMaterialAlphaMode(arg28);
+			this.alphaMode = this.renderer.getMaterialAlphaMode(arg28);
 		}
 		this.field957 = arg29;
 		if (this.field961 != var56) {
-			this.field962 = this.field947.getMaterialTexture(var56);
+			this.field962 = this.renderer.getMaterialTexture(var56);
 			if (this.field962 == null) {
 				this.field961 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var60 = ColourUtils.field8149[ColourUtils.method4937(this.field947.getMaterialAverageColour(arg30)) & 0xFFFF];
+				int var60 = ColourUtils.field8149[ColourUtils.method4937(this.renderer.getMaterialAverageColour(arg30)) & 0xFFFF];
 				int var61 = ((arg21 >> 16 & 0xFF) * (var60 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var60 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var60 & 0xFF) >> 8;
 				this.drawTriangle(true, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, ColourUtils.interpolateColours(var61, arg24, arg25), ColourUtils.interpolateColours(var61, arg24, arg26), ColourUtils.interpolateColours(var61, arg24, arg27));
 				return;
 			}
 			this.field961 = var56;
-			this.field944 = this.field947.getMaterialSize(arg30);
+			this.field944 = this.renderer.getMaterialSize(arg30);
 			this.field963 = this.field944 - 1;
 		}
 		this.field965 = arg31;
 		if (this.field955 != var57) {
-			this.field967 = this.field947.getMaterialTexture(var57);
+			this.field967 = this.renderer.getMaterialTexture(var57);
 			if (this.field967 == null) {
 				this.field955 = -1;
 				this.field935 = 255 - (arg21 >> 24 & 0xFF);
-				int var62 = ColourUtils.field8149[ColourUtils.method4937(this.field947.getMaterialAverageColour(arg32)) & 0xFFFF];
+				int var62 = ColourUtils.field8149[ColourUtils.method4937(this.renderer.getMaterialAverageColour(arg32)) & 0xFFFF];
 				int var63 = ((arg21 >> 16 & 0xFF) * (var62 >> 16 & 0xFF) & 0xFF00 | 0xFF0000) << 8 | (arg21 >> 8 & 0xFF) * (var62 >> 8 & 0xFF) & 0xFF00 | (arg21 & 0xFF) * (var62 & 0xFF) >> 8;
 				this.drawTriangle(true, arg1, arg2, (float) arg3, (float) arg4, (float) arg5, (float) arg6, (float) arg7, (float) arg8, (float) arg9, (float) arg10, (float) arg11, ColourUtils.interpolateColours(var63, arg24, arg25), ColourUtils.interpolateColours(var63, arg24, arg26), ColourUtils.interpolateColours(var63, arg24, arg27));
 				return;
 			}
 			this.field955 = var57;
-			this.field943 = this.field947.getMaterialSize(arg32);
+			this.field943 = this.renderer.getMaterialSize(arg32);
 			this.field969 = this.field943 - 1;
 		}
 		this.field970 = arg33;
@@ -3793,13 +3793,13 @@ public class Rasteriser {
 				arg5 = 0.0F;
 			}
 			if (arg3 != arg5 && var120 < var94 || arg3 == arg5 && var107 > var94) {
-				float var167 = (float) (arg3 + 0.5F);
-				float var168 = (float) (arg5 + 0.5F);
-				float var169 = (float) (arg4 + 0.5F) - var168;
+				float var167 = (float) ((int) (arg3 + 0.5F));
+				float var168 = (float) ((int) (arg5 + 0.5F));
+				float var169 = (float) ((int) (arg4 + 0.5F)) - var168;
 				float var170 = var168 - var167;
 				float var171 = (float) this.field938[(int) var167];
 				while (--var170 >= 0.0F) {
-					this.method1036(arg1, arg2, this.field950, (int) var171, (int) var155, (int) arg6, var156, var70, var157, var73, var158, var64, var159, var67, var160, arg25, var161, var76, var162, var79, var163, var82, var164, var85, var165, var88, var166, var91);
+					this.drawLine(arg1, arg2, this.pixels, (int) var171, (int) var155, (int) arg6, var156, var70, var157, var73, var158, var64, var159, var67, var160, arg25, var161, var76, var162, var79, var163, var82, var164, var85, var165, var88, var166, var91);
 					arg6 += var94;
 					var155 += var120;
 					var70 += var95;
@@ -3824,10 +3824,10 @@ public class Rasteriser {
 					var165 += var130;
 					var91 += var105;
 					var166 += var131;
-					var171 += this.field949;
+					var171 += this.sizeX;
 				}
 				while (--var169 >= 0.0F) {
-					this.method1036(arg1, arg2, this.field950, (int) var171, (int) arg8, (int) arg6, var72, var70, var75, var73, var66, var64, var69, var67, arg27, arg25, var78, var76, var81, var79, var84, var82, var87, var85, var90, var88, var93, var91);
+					this.drawLine(arg1, arg2, this.pixels, (int) var171, (int) arg8, (int) arg6, var72, var70, var75, var73, var66, var64, var69, var67, arg27, arg25, var78, var76, var81, var79, var84, var82, var87, var85, var90, var88, var93, var91);
 					arg8 += var107;
 					arg6 += var94;
 					var72 += var108;
@@ -3852,16 +3852,16 @@ public class Rasteriser {
 					var88 += var104;
 					var93 += var118;
 					var91 += var105;
-					var171 += this.field949;
+					var171 += this.sizeX;
 				}
 			} else {
-				float var172 = (float) (arg3 + 0.5F);
-				float var173 = (float) (arg5 + 0.5F);
-				float var174 = (float) (arg4 + 0.5F) - var173;
+				float var172 = (float) ((int) (arg3 + 0.5F));
+				float var173 = (float) ((int) (arg5 + 0.5F));
+				float var174 = (float) ((int) (arg4 + 0.5F)) - var173;
 				float var175 = var173 - var172;
 				float var176 = (float) this.field938[(int) var172];
 				while (--var175 >= 0.0F) {
-					this.method1036(arg1, arg2, this.field950, (int) var176, (int) arg6, (int) var155, var70, var156, var73, var157, var64, var158, var67, var159, arg25, var160, var76, var161, var79, var162, var82, var163, var85, var164, var88, var165, var91, var166);
+					this.drawLine(arg1, arg2, this.pixels, (int) var176, (int) arg6, (int) var155, var70, var156, var73, var157, var64, var158, var67, var159, arg25, var160, var76, var161, var79, var162, var82, var163, var85, var164, var88, var165, var91, var166);
 					var155 += var120;
 					arg6 += var94;
 					var156 += var121;
@@ -3886,10 +3886,10 @@ public class Rasteriser {
 					var88 += var104;
 					var166 += var131;
 					var91 += var105;
-					var176 += this.field949;
+					var176 += this.sizeX;
 				}
 				while (--var174 >= 0.0F) {
-					this.method1036(arg1, arg2, this.field950, (int) var176, (int) arg6, (int) arg8, var70, var72, var73, var75, var64, var66, var67, var69, arg25, arg27, var76, var78, var79, var81, var82, var84, var85, var87, var88, var90, var91, var93);
+					this.drawLine(arg1, arg2, this.pixels, (int) var176, (int) arg6, (int) arg8, var70, var72, var73, var75, var64, var66, var67, var69, arg25, arg27, var76, var78, var79, var81, var82, var84, var85, var87, var88, var90, var91, var93);
 					arg6 += var94;
 					arg8 += var107;
 					var70 += var95;
@@ -3914,7 +3914,7 @@ public class Rasteriser {
 					var90 += var117;
 					var91 += var105;
 					var93 += var118;
-					var176 += this.field949;
+					var176 += this.sizeX;
 				}
 			}
 			return;
@@ -3974,13 +3974,13 @@ public class Rasteriser {
 			arg4 = 0.0F;
 		}
 		if ((arg3 == arg4 || var120 >= var94) && (arg3 != arg4 || var120 <= var107)) {
-			float var150 = (float) (arg3 + 0.5F);
-			float var151 = (float) (arg4 + 0.5F);
-			float var152 = (float) (arg5 + 0.5F) - var151;
+			float var150 = (float) ((int) (arg3 + 0.5F));
+			float var151 = (float) ((int) (arg4 + 0.5F));
+			float var152 = (float) ((int) (arg5 + 0.5F)) - var151;
 			float var153 = var151 - var150;
 			float var154 = (float) this.field938[(int) var150];
 			while (--var153 >= 0.0F) {
-				this.method1036(arg1, arg2, this.field950, (int) var154, (int) arg6, (int) var133, var70, var134, var73, var135, var64, var136, var67, var137, arg25, var138, var76, var139, var79, var140, var82, var141, var85, var142, var88, var143, var91, var144);
+				this.drawLine(arg1, arg2, this.pixels, (int) var154, (int) arg6, (int) var133, var70, var134, var73, var135, var64, var136, var67, var137, arg25, var138, var76, var139, var79, var140, var82, var141, var85, var142, var88, var143, var91, var144);
 				arg6 += var94;
 				var133 += var120;
 				var70 += var95;
@@ -4005,10 +4005,10 @@ public class Rasteriser {
 				var143 += var130;
 				var91 += var105;
 				var144 += var131;
-				var154 += this.field949;
+				var154 += this.sizeX;
 			}
 			while (--var152 >= 0.0F) {
-				this.method1036(arg1, arg2, this.field950, (int) var154, (int) arg7, (int) var133, var71, var134, var74, var135, var65, var136, var68, var137, arg26, var138, var77, var139, var80, var140, var83, var141, var86, var142, var89, var143, var92, var144);
+				this.drawLine(arg1, arg2, this.pixels, (int) var154, (int) arg7, (int) var133, var71, var134, var74, var135, var65, var136, var68, var137, arg26, var138, var77, var139, var80, var140, var83, var141, var86, var142, var89, var143, var92, var144);
 				arg7 += var107;
 				var133 += var120;
 				var71 += var108;
@@ -4033,17 +4033,17 @@ public class Rasteriser {
 				var143 += var130;
 				var92 += var118;
 				var144 += var131;
-				var154 += this.field949;
+				var154 += this.sizeX;
 			}
 			return;
 		}
-		float var145 = (float) (arg3 + 0.5F);
-		float var146 = (float) (arg4 + 0.5F);
-		float var147 = (float) (arg5 + 0.5F) - var146;
+		float var145 = (float) ((int) (arg3 + 0.5F));
+		float var146 = (float) ((int) (arg4 + 0.5F));
+		float var147 = (float) ((int) (arg5 + 0.5F)) - var146;
 		float var148 = var146 - var145;
 		float var149 = (float) this.field938[(int) var145];
 		while (--var148 >= 0.0F) {
-			this.method1036(arg1, arg2, this.field950, (int) var149, (int) var133, (int) arg6, var134, var70, var135, var73, var136, var64, var137, var67, var138, arg25, var139, var76, var140, var79, var141, var82, var142, var85, var143, var88, var144, var91);
+			this.drawLine(arg1, arg2, this.pixels, (int) var149, (int) var133, (int) arg6, var134, var70, var135, var73, var136, var64, var137, var67, var138, arg25, var139, var76, var140, var79, var141, var82, var142, var85, var143, var88, var144, var91);
 			arg6 += var94;
 			var133 += var120;
 			var70 += var95;
@@ -4068,10 +4068,10 @@ public class Rasteriser {
 			var143 += var130;
 			var91 += var105;
 			var144 += var131;
-			var149 += this.field949;
+			var149 += this.sizeX;
 		}
 		while (--var147 >= 0.0F) {
-			this.method1036(arg1, arg2, this.field950, (int) var149, (int) var133, (int) arg7, var134, var71, var135, var74, var136, var65, var137, var68, var138, arg26, var139, var77, var140, var80, var141, var83, var142, var86, var143, var89, var144, var92);
+			this.drawLine(arg1, arg2, this.pixels, (int) var149, (int) var133, (int) arg7, var134, var71, var135, var74, var136, var65, var137, var68, var138, arg26, var139, var77, var140, var80, var141, var83, var142, var86, var143, var89, var144, var92);
 			arg7 += var107;
 			var133 += var120;
 			var71 += var108;
@@ -4096,12 +4096,12 @@ public class Rasteriser {
 			var143 += var130;
 			var92 += var118;
 			var144 += var131;
-			var149 += this.field949;
+			var149 += this.sizeX;
 		}
 	}
 
 	@ObfuscatedName("bd.r(ZZ[IIIIFFFFFFFFFFFFFFFFFFFFFF)V")
-	public final void method1036(boolean arg0, boolean arg1, int[] arg2, int arg3, int arg4, int arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, float arg21, float arg22, float arg23, float arg24, float arg25, float arg26, float arg27) {
+	public final void drawLine(boolean arg0, boolean arg1, int[] arg2, int arg3, int arg4, int arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, float arg12, float arg13, float arg14, float arg15, float arg16, float arg17, float arg18, float arg19, float arg20, float arg21, float arg22, float arg23, float arg24, float arg25, float arg26, float arg27) {
 		int var29 = arg5 - arg4;
 		float var30 = 1.0F / (float) var29;
 		float var31 = (arg7 - arg6) * var30;
@@ -4142,7 +4142,7 @@ public class Rasteriser {
 		while (var42-- > 0) {
 			float var44 = 1.0F / arg6;
 			float var45 = 1.0F / arg8;
-			if (!arg0 || var44 < this.field951[var43]) {
+			if (!arg0 || var44 < this.depth[var43]) {
 				float var46 = arg10 * var45;
 				float var47 = arg12 * var45;
 				int var48 = (int) ((float) this.field948 * var46 * this.field957) & this.field956;
@@ -4171,7 +4171,7 @@ public class Rasteriser {
 					arg2[var43] = var62;
 				}
 				if (arg0) {
-					this.field951[var43] = var44;
+					this.depth[var43] = var44;
 				}
 			}
 			var43++;

@@ -840,7 +840,7 @@ public class PureJavaFloorModel extends FloorModel {
 							int var98 = var66.field889[var88];
 							if (var98 != -1) {
 								arg2.field936 = var92 < 0.0F || var93 < 0.0F || var94 < 0.0F || var92 > (float) arg2.field945 || var93 > (float) arg2.field945 || var94 > (float) arg2.field945;
-								arg2.method1028(true, true, false, var95, var96, var97, var92, var93, var94, arg5[var89], arg5[var90], arg5[var91], (float) ColourUtils.method6807(var98, var66.field883[var89]), (float) ColourUtils.method6807(var98, var66.field883[var90]), (float) ColourUtils.method6807(var98, var66.field883[var91]));
+								arg2.drawTriangle(true, true, false, var95, var96, var97, var92, var93, var94, arg5[var89], arg5[var90], arg5[var91], (float) ColourUtils.method6807(var98, var66.field883[var89]), (float) ColourUtils.method6807(var98, var66.field883[var90]), (float) ColourUtils.method6807(var98, var66.field883[var91]));
 							}
 						}
 					}
@@ -863,11 +863,11 @@ public class PureJavaFloorModel extends FloorModel {
 								var85 = var86.field1330;
 							}
 							if (var85) {
-								arg2.method1033(true, true, false, var82, var83, var84, var79, var80, var81, arg5[var76], arg5[var77], arg5[var78], arg6[var76], arg6[var77], arg6[var78], (float) var66.field884[var76] / (float) this.field1233, (float) var66.field884[var77] / (float) this.field1233, (float) var66.field884[var78] / (float) this.field1233, (float) var66.field882[var76] / (float) this.field1233, (float) var66.field882[var77] / (float) this.field1233, (float) var66.field882[var78] / (float) this.field1233, ColourUtils.field8149[var66.field883[var76] & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var66.field883[var77] & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var66.field883[var78] & 0xFFFF] & 0xFFFFFF | 0xFF000000, 0, 0.0F, 0.0F, 0.0F, var66.field880[var75] & 0xFFFF);
+								arg2.drawTriangle(true, true, false, var82, var83, var84, var79, var80, var81, arg5[var76], arg5[var77], arg5[var78], arg6[var76], arg6[var77], arg6[var78], (float) var66.field884[var76] / (float) this.field1233, (float) var66.field884[var77] / (float) this.field1233, (float) var66.field884[var78] / (float) this.field1233, (float) var66.field882[var76] / (float) this.field1233, (float) var66.field882[var77] / (float) this.field1233, (float) var66.field882[var78] / (float) this.field1233, ColourUtils.field8149[var66.field883[var76] & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var66.field883[var77] & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var66.field883[var78] & 0xFFFF] & 0xFFFFFF | 0xFF000000, 0, 0.0F, 0.0F, 0.0F, var66.field880[var75] & 0xFFFF);
 							} else {
 								int var87 = var66.field889[var75];
 								if (var87 != -1) {
-									arg2.method1028(true, true, false, var82, var83, var84, var79, var80, var81, arg5[var76], arg5[var77], arg5[var78], (float) ColourUtils.method6807(var87, var66.field883[var76]), (float) ColourUtils.method6807(var87, var66.field883[var77]), (float) ColourUtils.method6807(var87, var66.field883[var78]));
+									arg2.drawTriangle(true, true, false, var82, var83, var84, var79, var80, var81, arg5[var76], arg5[var77], arg5[var78], (float) ColourUtils.method6807(var87, var66.field883[var76]), (float) ColourUtils.method6807(var87, var66.field883[var77]), (float) ColourUtils.method6807(var87, var66.field883[var78]));
 								}
 							}
 						}
@@ -1004,17 +1004,17 @@ public class PureJavaFloorModel extends FloorModel {
 			if ((var36 - var46) * (var39 - var44) - (var34 - var44) * (var41 - var46) > 0.0F) {
 				arg2.field936 = var39 < 0.0F || var44 < 0.0F || var34 < 0.0F || var39 > (float) arg2.field945 || var44 > (float) arg2.field945 || var34 > (float) arg2.field945;
 				if (var64) {
-					arg2.method1033(true, true, false, var41, var46, var36, var39, var44, var34, var42, var47, var37, var23, var25, var21, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, ColourUtils.field8149[var10.field928 & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var10.field929 & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var10.field927 & 0xFFFF] & 0xFFFFFF | 0xFF000000, 0, 0.0F, 0.0F, 0.0F, var10.field926 & 0xFFFF);
+					arg2.drawTriangle(true, true, false, var41, var46, var36, var39, var44, var34, var42, var47, var37, var23, var25, var21, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, ColourUtils.field8149[var10.field928 & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var10.field929 & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var10.field927 & 0xFFFF] & 0xFFFFFF | 0xFF000000, 0, 0.0F, 0.0F, 0.0F, var10.field926 & 0xFFFF);
 				} else {
-					arg2.method1028(true, true, false, var41, var46, var36, var39, var44, var34, var42, var47, var37, (float) (var10.field928 & 0xFFFF), (float) (var10.field929 & 0xFFFF), (float) (var10.field927 & 0xFFFF));
+					arg2.drawTriangle(true, true, false, var41, var46, var36, var39, var44, var34, var42, var47, var37, (float) (var10.field928 & 0xFFFF), (float) (var10.field929 & 0xFFFF), (float) (var10.field927 & 0xFFFF));
 				}
 			}
 			if ((var29 - var34) * (var46 - var36) - (var31 - var36) * (var44 - var34) > 0.0F) {
 				arg2.field936 = var29 < 0.0F || var34 < 0.0F || var44 < 0.0F || var29 > (float) arg2.field945 || var34 > (float) arg2.field945 || var44 > (float) arg2.field945;
 				if (var64) {
-					arg2.method1033(true, true, false, var31, var36, var46, var29, var34, var44, var32, var37, var47, var19, var21, var25, 0.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F, ColourUtils.field8149[var10.field931 & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var10.field927 & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var10.field929 & 0xFFFF] & 0xFFFFFF | 0xFF000000, 0, 0.0F, 0.0F, 0.0F, var10.field926 & 0xFFFF);
+					arg2.drawTriangle(true, true, false, var31, var36, var46, var29, var34, var44, var32, var37, var47, var19, var21, var25, 0.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F, ColourUtils.field8149[var10.field931 & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var10.field927 & 0xFFFF] & 0xFFFFFF | 0xFF000000, ColourUtils.field8149[var10.field929 & 0xFFFF] & 0xFFFFFF | 0xFF000000, 0, 0.0F, 0.0F, 0.0F, var10.field926 & 0xFFFF);
 				} else {
-					arg2.method1028(true, true, false, var31, var36, var46, var29, var34, var44, var32, var37, var47, (float) (var10.field931 & 0xFFFF), (float) (var10.field927 & 0xFFFF), (float) (var10.field929 & 0xFFFF));
+					arg2.drawTriangle(true, true, false, var31, var36, var46, var29, var34, var44, var32, var37, var47, (float) (var10.field931 & 0xFFFF), (float) (var10.field927 & 0xFFFF), (float) (var10.field929 & 0xFFFF));
 				}
 			}
 		}
@@ -1128,7 +1128,7 @@ public class PureJavaFloorModel extends FloorModel {
 									if (this.method15396(var124.effect)) {
 										var126 = -1694498816;
 									}
-									arg4.method1033(true, true, false, var120, var121, var122, var117, var118, var119, arg7[var114], arg7[var115], arg7[var116], arg8[var114], arg8[var115], arg8[var116], (float) var99.field917[var114] / (float) this.field1233, (float) var99.field917[var115] / (float) this.field1233, (float) var99.field917[var116] / (float) this.field1233, (float) var99.field916[var114] / (float) this.field1233, (float) var99.field916[var115] / (float) this.field1233, (float) var99.field916[var116] / (float) this.field1233, var126 | var99.field921[var114] & 0xFFFFFF, var126 | var99.field921[var115] & 0xFFFFFF, var126 | var99.field921[var116] & 0xFFFFFF, arg3.fadeColour, arg9[var114] * 255.0F, arg9[var115] * 255.0F, arg9[var116] * 255.0F, var99.field924[var113] & 0xFFFF);
+									arg4.drawTriangle(true, true, false, var120, var121, var122, var117, var118, var119, arg7[var114], arg7[var115], arg7[var116], arg8[var114], arg8[var115], arg8[var116], (float) var99.field917[var114] / (float) this.field1233, (float) var99.field917[var115] / (float) this.field1233, (float) var99.field917[var116] / (float) this.field1233, (float) var99.field916[var114] / (float) this.field1233, (float) var99.field916[var115] / (float) this.field1233, (float) var99.field916[var116] / (float) this.field1233, var126 | var99.field921[var114] & 0xFFFFFF, var126 | var99.field921[var115] & 0xFFFFFF, var126 | var99.field921[var116] & 0xFFFFFF, arg3.fadeColour, arg9[var114] * 255.0F, arg9[var115] * 255.0F, arg9[var116] * 255.0F, var99.field924[var113] & 0xFFFF);
 								} else if ((var99.field921[var114] & 0xFFFFFF) != 0) {
 									arg4.drawTriangle(true, true, false, var120, var121, var122, var117, var118, var119, arg7[var114], arg7[var115], arg7[var116], ColourUtils.method5859(var99.field921[var114], (int) (arg9[var114] * 255.0F) << 24 | arg3.fadeColour), ColourUtils.method5859(var99.field921[var115], (int) (arg9[var115] * 255.0F) << 24 | arg3.fadeColour), ColourUtils.method5859(var99.field921[var116], (int) (arg9[var116] * 255.0F) << 24 | arg3.fadeColour));
 									arg4.field935 = 0;
@@ -1138,7 +1138,7 @@ public class PureJavaFloorModel extends FloorModel {
 								if (this.method15396(var124.effect)) {
 									var127 = -1694498816;
 								}
-								arg4.method1033(true, true, false, var120, var121, var122, var117, var118, var119, arg7[var114], arg7[var115], arg7[var116], arg8[var114], arg8[var115], arg8[var116], (float) var99.field917[var114] / (float) this.field1233, (float) var99.field917[var115] / (float) this.field1233, (float) var99.field917[var116] / (float) this.field1233, (float) var99.field916[var114] / (float) this.field1233, (float) var99.field916[var115] / (float) this.field1233, (float) var99.field916[var116] / (float) this.field1233, var127 | var99.field921[var114] & 0xFFFFFF, var127 | var99.field921[var115] & 0xFFFFFF, var127 | var99.field921[var116] & 0xFFFFFF, 0, 0.0F, 0.0F, 0.0F, var99.field924[var113] & 0xFFFF);
+								arg4.drawTriangle(true, true, false, var120, var121, var122, var117, var118, var119, arg7[var114], arg7[var115], arg7[var116], arg8[var114], arg8[var115], arg8[var116], (float) var99.field917[var114] / (float) this.field1233, (float) var99.field917[var115] / (float) this.field1233, (float) var99.field917[var116] / (float) this.field1233, (float) var99.field916[var114] / (float) this.field1233, (float) var99.field916[var115] / (float) this.field1233, (float) var99.field916[var116] / (float) this.field1233, var127 | var99.field921[var114] & 0xFFFFFF, var127 | var99.field921[var115] & 0xFFFFFF, var127 | var99.field921[var116] & 0xFFFFFF, 0, 0.0F, 0.0F, 0.0F, var99.field924[var113] & 0xFFFF);
 							} else if ((var99.field921[var114] & 0xFFFFFF) != 0) {
 								arg4.drawTriangle(true, true, false, var120, var121, var122, var117, var118, var119, arg7[var114], arg7[var115], arg7[var116], var99.field921[var114], var99.field921[var115], var99.field921[var116]);
 								arg4.field935 = 0;
@@ -1400,7 +1400,7 @@ public class PureJavaFloorModel extends FloorModel {
 						if (var92) {
 							var94 = -1694498816;
 						}
-						arg4.method1033(true, true, false, var53, var57, var49, var51, var55, var47, var34, var35, var33, var29, var31, var27, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, var94 | var12.field906 & 0xFFFFFF, var94 | var12.field907 & 0xFFFFFF, var94 | var12.field904 & 0xFFFFFF, arg3.fadeColour, var19 * 255.0F, var20 * 255.0F, var18 * 255.0F, var12.field913 & 0xFFFF);
+						arg4.drawTriangle(true, true, false, var53, var57, var49, var51, var55, var47, var34, var35, var33, var29, var31, var27, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, var94 | var12.field906 & 0xFFFFFF, var94 | var12.field907 & 0xFFFFFF, var94 | var12.field904 & 0xFFFFFF, arg3.fadeColour, var19 * 255.0F, var20 * 255.0F, var18 * 255.0F, var12.field913 & 0xFFFF);
 					} else {
 						if (var92) {
 							arg4.field935 = 100;
@@ -1413,7 +1413,7 @@ public class PureJavaFloorModel extends FloorModel {
 					if (var92) {
 						var95 = -1694498816;
 					}
-					arg4.method1033(true, true, false, var53, var57, var49, var51, var55, var47, var34, var35, var33, var29, var31, var27, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, var95 | var12.field906 & 0xFFFFFF, var95 | var12.field907 & 0xFFFFFF, var95 | var12.field904 & 0xFFFFFF, 0, 0.0F, 0.0F, 0.0F, var12.field913 & 0xFFFF);
+					arg4.drawTriangle(true, true, false, var53, var57, var49, var51, var55, var47, var34, var35, var33, var29, var31, var27, 1.0F, 0.0F, 1.0F, 1.0F, 1.0F, 0.0F, var95 | var12.field906 & 0xFFFFFF, var95 | var12.field907 & 0xFFFFFF, var95 | var12.field904 & 0xFFFFFF, 0, 0.0F, 0.0F, 0.0F, var12.field913 & 0xFFFF);
 				} else {
 					if (var92) {
 						arg4.field935 = 100;
@@ -1435,7 +1435,7 @@ public class PureJavaFloorModel extends FloorModel {
 							if (var92) {
 								var97 = -1694498816;
 							}
-							arg4.method1033(true, true, false, var45, var49, var57, var43, var47, var55, var32, var33, var35, var25, var27, var31, 0.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F, var97 | var12.field912 & 0xFFFFFF, var97 | var12.field904 & 0xFFFFFF, var97 | var12.field907 & 0xFFFFFF, arg3.fadeColour, var17 * 255.0F, var18 * 255.0F, var20 * 255.0F, var12.field913 & 0xFFFF);
+							arg4.drawTriangle(true, true, false, var45, var49, var57, var43, var47, var55, var32, var33, var35, var25, var27, var31, 0.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F, var97 | var12.field912 & 0xFFFFFF, var97 | var12.field904 & 0xFFFFFF, var97 | var12.field907 & 0xFFFFFF, arg3.fadeColour, var17 * 255.0F, var18 * 255.0F, var20 * 255.0F, var12.field913 & 0xFFFF);
 						} else {
 							if (var92) {
 								arg4.field935 = 100;
@@ -1448,7 +1448,7 @@ public class PureJavaFloorModel extends FloorModel {
 						if (var92) {
 							var98 = -1694498816;
 						}
-						arg4.method1033(true, true, false, var45, var49, var57, var43, var47, var55, var32, var33, var35, var25, var27, var31, 0.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F, var98 | var12.field912 & 0xFFFFFF, var98 | var12.field904 & 0xFFFFFF, var98 | var12.field907 & 0xFFFFFF, 0, 0.0F, 0.0F, 0.0F, var12.field913 & 0xFFFF);
+						arg4.drawTriangle(true, true, false, var45, var49, var57, var43, var47, var55, var32, var33, var35, var25, var27, var31, 0.0F, 1.0F, 1.0F, 0.0F, 0.0F, 1.0F, var98 | var12.field912 & 0xFFFFFF, var98 | var12.field904 & 0xFFFFFF, var98 | var12.field907 & 0xFFFFFF, 0, 0.0F, 0.0F, 0.0F, var12.field913 & 0xFFFF);
 					} else {
 						if (var92) {
 							arg4.field935 = 100;
@@ -1532,9 +1532,9 @@ public class PureJavaFloorModel extends FloorModel {
 								arg4.drawTriangle(true, true, false, var33, var34, var35, var30, var31, var32, arg7[var27], arg7[var28], arg7[var29], var12.field982[var27], var12.field982[var28], var12.field982[var29]);
 							}
 						} else if (var12.field980[var27] == var12.field980[var28] && var12.field980[var27] == var12.field980[var29] && var12.field974[var27] == var12.field974[var28] && var12.field974[var27] == var12.field974[var29]) {
-							arg4.method1033(true, true, false, var33, var34, var35, var30, var31, var32, arg7[var27], arg7[var28], arg7[var29], arg8[var27], arg8[var28], arg8[var29], (float) (var12.field975[var27] + var36) / (float) var12.field974[var27], (float) (var12.field975[var28] + var36) / (float) var12.field974[var28], (float) (var12.field975[var29] + var36) / (float) var12.field974[var29], (float) (var12.field978[var27] + var37) / (float) var12.field974[var27], (float) (var12.field978[var28] + var37) / (float) var12.field974[var28], (float) (var12.field978[var29] + var37) / (float) var12.field974[var29], var12.field982[var27], var12.field982[var28], var12.field982[var29], arg3.fadeColour, arg9[var27] * 255.0F, arg9[var28] * 255.0F, arg9[var29] * 255.0F, var12.field980[var27] & 0xFFFF);
+							arg4.drawTriangle(true, true, false, var33, var34, var35, var30, var31, var32, arg7[var27], arg7[var28], arg7[var29], arg8[var27], arg8[var28], arg8[var29], (float) (var12.field975[var27] + var36) / (float) var12.field974[var27], (float) (var12.field975[var28] + var36) / (float) var12.field974[var28], (float) (var12.field975[var29] + var36) / (float) var12.field974[var29], (float) (var12.field978[var27] + var37) / (float) var12.field974[var27], (float) (var12.field978[var28] + var37) / (float) var12.field974[var28], (float) (var12.field978[var29] + var37) / (float) var12.field974[var29], var12.field982[var27], var12.field982[var28], var12.field982[var29], arg3.fadeColour, arg9[var27] * 255.0F, arg9[var28] * 255.0F, arg9[var29] * 255.0F, var12.field980[var27] & 0xFFFF);
 						} else {
-							arg4.method1042(true, true, false, var33, var34, var35, var30, var31, var32, arg7[var27], arg7[var28], arg7[var29], arg8[var27], arg8[var28], arg8[var29], (float) (var12.field975[var27] + var36) / var25, (float) (var12.field975[var28] + var36) / var25, (float) (var12.field975[var29] + var36) / var25, (float) (var12.field978[var27] + var37) / var25, (float) (var12.field978[var28] + var37) / var25, (float) (var12.field978[var29] + var37) / var25, var12.field982[var27], var12.field982[var28], var12.field982[var29], arg3.fadeColour, arg9[var27] * 255.0F, arg9[var28] * 255.0F, arg9[var29] * 255.0F, var12.field980[var27] & 0xFFFF, var25 / (float) var12.field974[var27], var12.field980[var28] & 0xFFFF, var25 / (float) var12.field974[var28], var12.field980[var29] & 0xFFFF, var25 / (float) var12.field974[var29]);
+							arg4.drawTriangle(true, true, false, var33, var34, var35, var30, var31, var32, arg7[var27], arg7[var28], arg7[var29], arg8[var27], arg8[var28], arg8[var29], (float) (var12.field975[var27] + var36) / var25, (float) (var12.field975[var28] + var36) / var25, (float) (var12.field975[var29] + var36) / var25, (float) (var12.field978[var27] + var37) / var25, (float) (var12.field978[var28] + var37) / var25, (float) (var12.field978[var29] + var37) / var25, var12.field982[var27], var12.field982[var28], var12.field982[var29], arg3.fadeColour, arg9[var27] * 255.0F, arg9[var28] * 255.0F, arg9[var29] * 255.0F, var12.field980[var27] & 0xFFFF, var25 / (float) var12.field974[var27], var12.field980[var28] & 0xFFFF, var25 / (float) var12.field974[var28], var12.field980[var29] & 0xFFFF, var25 / (float) var12.field974[var29]);
 						}
 					}
 				} else {
@@ -1588,15 +1588,15 @@ public class PureJavaFloorModel extends FloorModel {
 						UnblendedTileData1 var20 = this.field9425[var18][var19];
 						if (var20.field926 != -1 && (var20.field925 & 0x2) == 0 && var20.field930 == -1) {
 							int var21 = this.field9423.getMaterialAverageColour(var20.field926 & 0xFFFF);
-							arg9.method1028(true, true, false, (float) (var17 - var14), (float) (var17 - var14), (float) var17, (float) (var14 + var16), (float) var16, (float) (var14 + var16), 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var21, var20.field928 & 0xFFFF), (float) ColourUtils.method6807(var21, var20.field929 & 0xFFFF), (float) ColourUtils.method6807(var21, var20.field927 & 0xFFFF));
-							arg9.method1028(true, true, false, (float) var17, (float) var17, (float) (var17 - var14), (float) var16, (float) (var14 + var16), (float) var16, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var21, var20.field931 & 0xFFFF), (float) ColourUtils.method6807(var21, var20.field927 & 0xFFFF), (float) ColourUtils.method6807(var21, var20.field929 & 0xFFFF));
+							arg9.drawTriangle(true, true, false, (float) (var17 - var14), (float) (var17 - var14), (float) var17, (float) (var14 + var16), (float) var16, (float) (var14 + var16), 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var21, var20.field928 & 0xFFFF), (float) ColourUtils.method6807(var21, var20.field929 & 0xFFFF), (float) ColourUtils.method6807(var21, var20.field927 & 0xFFFF));
+							arg9.drawTriangle(true, true, false, (float) var17, (float) var17, (float) (var17 - var14), (float) var16, (float) (var14 + var16), (float) var16, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var21, var20.field931 & 0xFFFF), (float) ColourUtils.method6807(var21, var20.field927 & 0xFFFF), (float) ColourUtils.method6807(var21, var20.field929 & 0xFFFF));
 						} else if (var20.field930 == -1) {
-							arg9.method1028(true, true, false, (float) (var17 - var14), (float) (var17 - var14), (float) var17, (float) (var14 + var16), (float) var16, (float) (var14 + var16), 100.0F, 100.0F, 100.0F, (float) (var20.field928 & 0xFFFF), (float) (var20.field929 & 0xFFFF), (float) (var20.field927 & 0xFFFF));
-							arg9.method1028(true, true, false, (float) var17, (float) var17, (float) (var17 - var14), (float) var16, (float) (var14 + var16), (float) var16, 100.0F, 100.0F, 100.0F, (float) (var20.field931 & 0xFFFF), (float) (var20.field927 & 0xFFFF), (float) (var20.field929 & 0xFFFF));
+							arg9.drawTriangle(true, true, false, (float) (var17 - var14), (float) (var17 - var14), (float) var17, (float) (var14 + var16), (float) var16, (float) (var14 + var16), 100.0F, 100.0F, 100.0F, (float) (var20.field928 & 0xFFFF), (float) (var20.field929 & 0xFFFF), (float) (var20.field927 & 0xFFFF));
+							arg9.drawTriangle(true, true, false, (float) var17, (float) var17, (float) (var17 - var14), (float) var16, (float) (var14 + var16), (float) var16, 100.0F, 100.0F, 100.0F, (float) (var20.field931 & 0xFFFF), (float) (var20.field927 & 0xFFFF), (float) (var20.field929 & 0xFFFF));
 						} else {
 							int var22 = var20.field930;
-							arg9.method1028(true, true, false, (float) (var17 - var14), (float) (var17 - var14), (float) var17, (float) (var14 + var16), (float) var16, (float) (var14 + var16), 100.0F, 100.0F, 100.0F, (float) var22, (float) var22, (float) var22);
-							arg9.method1028(true, true, false, (float) var17, (float) var17, (float) (var17 - var14), (float) var16, (float) (var14 + var16), (float) var16, 100.0F, 100.0F, 100.0F, (float) var22, (float) var22, (float) var22);
+							arg9.drawTriangle(true, true, false, (float) (var17 - var14), (float) (var17 - var14), (float) var17, (float) (var14 + var16), (float) var16, (float) (var14 + var16), 100.0F, 100.0F, 100.0F, (float) var22, (float) var22, (float) var22);
+							arg9.drawTriangle(true, true, false, (float) var17, (float) var17, (float) (var17 - var14), (float) var16, (float) (var14 + var16), (float) var16, 100.0F, 100.0F, 100.0F, (float) var22, (float) var22, (float) var22);
 						}
 					} else if (this.field9443[var18][var19] != null) {
 						UnblendedTileData2 var23 = this.field9443[var18][var19];
@@ -1616,13 +1616,13 @@ public class PureJavaFloorModel extends FloorModel {
 							float var34 = arg11[var28];
 							if (var23.field890 != null && var23.field890[var25] != -1) {
 								int var35 = var23.field890[var25];
-								arg9.method1028(true, true, false, var32, var33, var34, var29, var30, var31, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var35, var23.field883[var26]), (float) ColourUtils.method6807(var35, var23.field883[var27]), (float) ColourUtils.method6807(var35, var23.field883[var28]));
+								arg9.drawTriangle(true, true, false, var32, var33, var34, var29, var30, var31, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var35, var23.field883[var26]), (float) ColourUtils.method6807(var35, var23.field883[var27]), (float) ColourUtils.method6807(var35, var23.field883[var28]));
 							} else if (var23.field880 == null || var23.field880[var25] == -1) {
 								int var37 = var23.field889[var25];
-								arg9.method1028(true, true, false, var32, var33, var34, var29, var30, var31, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var37, var23.field883[var26]), (float) ColourUtils.method6807(var37, var23.field883[var27]), (float) ColourUtils.method6807(var37, var23.field883[var28]));
+								arg9.drawTriangle(true, true, false, var32, var33, var34, var29, var30, var31, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var37, var23.field883[var26]), (float) ColourUtils.method6807(var37, var23.field883[var27]), (float) ColourUtils.method6807(var37, var23.field883[var28]));
 							} else {
 								int var36 = this.field9423.getMaterialAverageColour(var23.field880[var25] & 0xFFFF);
-								arg9.method1028(true, true, false, var32, var33, var34, var29, var30, var31, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var36, var23.field883[var26]), (float) ColourUtils.method6807(var36, var23.field883[var27]), (float) ColourUtils.method6807(var36, var23.field883[var28]));
+								arg9.drawTriangle(true, true, false, var32, var33, var34, var29, var30, var31, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var36, var23.field883[var26]), (float) ColourUtils.method6807(var36, var23.field883[var27]), (float) ColourUtils.method6807(var36, var23.field883[var28]));
 							}
 						}
 					}
@@ -1678,8 +1678,8 @@ public class PureJavaFloorModel extends FloorModel {
 						BlendedUntexturedTileData1 var20 = this.field9438[var18][var19];
 						if (var20.field913 != -1 && (var20.field911 & 0x2) == 0 && var20.field903 == 0) {
 							int var21 = this.field9423.getMaterialAverageColour(var20.field913 & 0xFFFF);
-							arg9.method1028(true, true, false, (float) (var17 - var14), (float) (var17 - var14), (float) var17, (float) (var14 + var16), (float) var16, (float) (var14 + var16), 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var21, var20.field906), (float) ColourUtils.method6807(var21, var20.field907), (float) ColourUtils.method6807(var21, var20.field904));
-							arg9.method1028(true, true, false, (float) var17, (float) var17, (float) (var17 - var14), (float) var16, (float) (var14 + var16), (float) var16, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var21, var20.field912), (float) ColourUtils.method6807(var21, var20.field904), (float) ColourUtils.method6807(var21, var20.field907));
+							arg9.drawTriangle(true, true, false, (float) (var17 - var14), (float) (var17 - var14), (float) var17, (float) (var14 + var16), (float) var16, (float) (var14 + var16), 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var21, var20.field906), (float) ColourUtils.method6807(var21, var20.field907), (float) ColourUtils.method6807(var21, var20.field904));
+							arg9.drawTriangle(true, true, false, (float) var17, (float) var17, (float) (var17 - var14), (float) var16, (float) (var14 + var16), (float) var16, 100.0F, 100.0F, 100.0F, (float) ColourUtils.method6807(var21, var20.field912), (float) ColourUtils.method6807(var21, var20.field904), (float) ColourUtils.method6807(var21, var20.field907));
 						} else if (var20.field903 == 0) {
 							arg9.drawTriangle(true, true, false, (float) (var17 - var14), (float) (var17 - var14), (float) var17, (float) (var14 + var16), (float) var16, (float) (var14 + var16), 100.0F, 100.0F, 100.0F, var20.field906, var20.field907, var20.field904);
 							arg9.drawTriangle(true, true, false, (float) var17, (float) var17, (float) (var17 - var14), (float) var16, (float) (var14 + var16), (float) var16, 100.0F, 100.0F, 100.0F, var20.field912, var20.field904, var20.field907);
@@ -1711,7 +1711,7 @@ public class PureJavaFloorModel extends FloorModel {
 								arg9.drawTriangle(true, true, false, var32, var33, var34, var29, var30, var31, 100.0F, 100.0F, 100.0F, var23.field921[var26], var23.field921[var27], var23.field921[var28]);
 							} else {
 								int var36 = this.field9423.getMaterialAverageColour(var23.field924[var25] & 0xFFFF);
-								arg9.method1028(true, true, false, var32, var33, var34, var29, var30, var31, 100.0F, 100.0F, 100.0F, (float) var36, (float) var36, (float) var36);
+								arg9.drawTriangle(true, true, false, var32, var33, var34, var29, var30, var31, 100.0F, 100.0F, 100.0F, (float) var36, (float) var36, (float) var36);
 							}
 						}
 					}
