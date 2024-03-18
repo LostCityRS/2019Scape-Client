@@ -13,29 +13,29 @@ public class PlayerGroupMemberStatus implements SerializableEnum {
 	public static final PlayerGroupMemberStatus field1976 = new PlayerGroupMemberStatus(0, 1);
 
 	@ObfuscatedName("gv.m")
-	public static final PlayerGroupMemberStatus field1978 = new PlayerGroupMemberStatus(2, 2);
+	public static final PlayerGroupMemberStatus ONLINE = new PlayerGroupMemberStatus(2, 2);
 
 	@ObfuscatedName("gv.k")
-	public static final PlayerGroupMemberStatus field1975 = new PlayerGroupMemberStatus(1, 3);
+	public static final PlayerGroupMemberStatus READY = new PlayerGroupMemberStatus(1, 3);
 
 	@ObfuscatedName("gv.f")
-	public final int field1979;
+	public final int index;
 
 	@ObfuscatedName("gv.w")
-	public final int field1980;
+	public final int serialID;
 
 	@ObfuscatedName("gv.e(I)[Lgv;")
-	public static PlayerGroupMemberStatus[] method3603() {
-		return new PlayerGroupMemberStatus[] { field1976, field1975, field1978, field1977 };
+	public static PlayerGroupMemberStatus[] values() {
+		return new PlayerGroupMemberStatus[] {field1976, READY, ONLINE, field1977};
 	}
 
-	public PlayerGroupMemberStatus(int arg0, int arg1) {
-		this.field1979 = arg0;
-		this.field1980 = arg1;
+	public PlayerGroupMemberStatus(int index, int serialID) {
+		this.index = index;
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("gv.n()I")
 	public int getId() {
-		return this.field1980;
+		return this.serialID;
 	}
 }

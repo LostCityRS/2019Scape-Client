@@ -937,7 +937,7 @@ public class Minimap {
 		int var16 = arg4 * var15 + arg5 * var14 >> 14;
 		int var17 = arg5 * var15 - arg4 * var14 >> 14;
 		double var18 = arg7 / 100.0D;
-		switch(arg8.field2419) {
+		switch(arg8.index) {
 			case 0:
 				arg2 = arg0.field2196 / 2 + arg2 + var16 - (int) ((double) arg6.method1434() * var18);
 				break;
@@ -947,7 +947,7 @@ public class Minimap {
 			case 2:
 				arg2 = arg0.field2196 / 2 + arg2 + var16 - (int) ((double) (arg6.method1434() / 2) * var18);
 		}
-		switch(arg9.field2425) {
+		switch(arg9.index) {
 			case 0:
 				arg3 = arg0.field2197 / 2 + arg3 - var17 - (int) ((double) arg6.method1436() * var18);
 				break;

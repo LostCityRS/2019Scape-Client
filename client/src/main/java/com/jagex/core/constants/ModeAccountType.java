@@ -12,14 +12,14 @@ public class ModeAccountType implements SerializableEnum {
 	public static final ModeAccountType MEMBERS = new ModeAccountType(1, "");
 
 	@ObfuscatedName("zu.m")
-	public final int field8342;
+	public final int serialID;
 
-	public ModeAccountType(int arg0, String arg1) {
-		this.field8342 = arg0;
+	public ModeAccountType(int serialID, String arg1) {
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("zu.n()I")
 	public int getId() {
-		return this.field8342;
+		return this.serialID;
 	}
 }

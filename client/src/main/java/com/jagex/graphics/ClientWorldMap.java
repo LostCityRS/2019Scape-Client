@@ -512,7 +512,7 @@ public class ClientWorldMap extends WorldMap {
 				var9 = arg2.method4025(arg0, false);
 			}
 			if (var9 != null) {
-				switch(arg2.field2365.field2419) {
+				switch(arg2.field2365.index) {
 					case 0:
 						var10 = arg1.field11449 - var9.method1434();
 						var11 = arg1.field11449;
@@ -525,7 +525,7 @@ public class ClientWorldMap extends WorldMap {
 						var10 = arg1.field11449 - (var9.method1434() + 1 >> 1);
 						var11 = arg1.field11449 + (var9.method1434() + 1 >> 1);
 				}
-				switch(arg2.field2405.field2425) {
+				switch(arg2.field2405.index) {
 					case 0:
 						var12 = arg1.field11451 - var9.method1436();
 						var13 = arg1.field11451;
@@ -605,7 +605,7 @@ public class ClientWorldMap extends WorldMap {
 			int var27 = 0;
 			int var28 = 0;
 			int var29 = 0;
-			switch(arg2.field2365.field2419) {
+			switch(arg2.field2365.index) {
 				case 0:
 					var24 = var9.getWidth();
 					var25 = (var9.getWidth() + 1) / 2;
@@ -618,7 +618,7 @@ public class ClientWorldMap extends WorldMap {
 					var24 = var9.getWidth() / 2;
 					var26 = var9.method1434() >> 1;
 			}
-			switch(arg2.field2405.field2425) {
+			switch(arg2.field2405.index) {
 				case 0:
 					var27 = var9.getWidth();
 					var28 = (var9.getWidth() + 1) / 2;
@@ -661,7 +661,7 @@ public class ClientWorldMap extends WorldMap {
 			int var33 = 0;
 			int var34 = 0;
 			if (var30 != null && var14 != null) {
-				switch(arg2.field2365.field2419) {
+				switch(arg2.field2365.index) {
 					case 0:
 					default:
 						break;
@@ -671,7 +671,7 @@ public class ClientWorldMap extends WorldMap {
 					case 2:
 						var33 = var14.method1434() >> 1;
 				}
-				switch(arg2.field2405.field2425) {
+				switch(arg2.field2405.index) {
 					case 0:
 						var34 = (var14.method1436() + var9.method1436()) / 2;
 					case 1:

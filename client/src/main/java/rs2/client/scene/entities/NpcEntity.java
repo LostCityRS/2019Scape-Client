@@ -395,7 +395,7 @@ public class NpcEntity extends PathingEntity {
 				}
 				this.field10450[0] = arg1;
 				this.field10448[0] = arg2;
-				this.field10441[0] = MoveSpeed.WALK.id;
+				this.field10441[0] = MoveSpeed.WALK.serialID;
 				return;
 			}
 		}

@@ -7,30 +7,30 @@ import deob.ObfuscatedName;
 public class TotpType implements SerializableEnum {
 
 	@ObfuscatedName("abi.e")
-	public static final TotpType field8722 = new TotpType(0, 0);
+	public static final TotpType AUTH_FOUND = new TotpType(0, 0);
 
 	@ObfuscatedName("abi.n")
-	public static final TotpType field8723 = new TotpType(3, 1);
+	public static final TotpType AUTH_DONT_TRUST = new TotpType(3, 1);
 
 	@ObfuscatedName("abi.m")
-	public static final TotpType field8724 = new TotpType(2, 2);
+	public static final TotpType AUTH_NOT_FOUND = new TotpType(2, 2);
 
 	@ObfuscatedName("abi.k")
-	public static final TotpType field8726 = new TotpType(1, 3);
+	public static final TotpType AUTH_TRUST = new TotpType(1, 3);
 
 	@ObfuscatedName("abi.f")
-	public final int field8725;
+	public final int index;
 
 	@ObfuscatedName("abi.w")
-	public final int field8727;
+	public final int serialID;
 
-	public TotpType(int arg0, int arg1) {
-		this.field8725 = arg0;
-		this.field8727 = arg1;
+	public TotpType(int index, int serialID) {
+		this.index = index;
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("abi.n()I")
 	public int getId() {
-		return this.field8727;
+		return this.serialID;
 	}
 }

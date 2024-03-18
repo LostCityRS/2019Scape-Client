@@ -35,6 +35,6 @@ public class TwitchEventChatMessage extends TwitchEvent {
 
 	@ObfuscatedName("com/jagex/twitchtv/TwitchEventChatMessage.n()Lud;")
 	public TwitchVarType method11() {
-		return TwitchVarType.field7247;
+		return TwitchVarType.CHAT_MESSAGE;
 	}
 }

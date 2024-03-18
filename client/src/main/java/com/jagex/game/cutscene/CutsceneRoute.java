@@ -38,11 +38,11 @@ public class CutsceneRoute {
 			int var7 = this.field1754[var5];
 			var4.field10450[var4.field10400] = var7 >> 16;
 			var4.field10448[var4.field10400] = var7 & 0xFFFF;
-			byte var8 = MoveSpeed.WALK.id;
+			byte var8 = MoveSpeed.WALK.serialID;
 			if (var6 == 0) {
-				var8 = MoveSpeed.CRAWL.id;
+				var8 = MoveSpeed.CRAWL.serialID;
 			} else if (var6 == 2) {
-				var8 = MoveSpeed.RUN.id;
+				var8 = MoveSpeed.RUN.serialID;
 			}
 			var4.field10441[var4.field10400] = var8;
 			var4.field10400++;

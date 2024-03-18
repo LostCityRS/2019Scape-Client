@@ -33,29 +33,29 @@ public class Namespace implements SerializableEnum {
 	public static final Namespace LEGACY = new Namespace(1, -1, "", "", true, new Namespace[] {RUNESCAPE, FUNORB, WAR_OF_LEGENDS, EIGHT_REALMS, STELLAR_DAWN});
 
 	@ObfuscatedName("adi.p")
-	public final int field9196;
+	public final int index;
 
 	@ObfuscatedName("adi.d")
-	public final int field9188;
+	public final int serialID;
 
 	@ObfuscatedName("adi.c")
 	public final String field9198;
 
-	public Namespace(int arg0, int arg1, String arg2, String arg3) {
-		this.field9196 = arg0;
-		this.field9188 = arg1;
+	public Namespace(int index, int serialID, String arg2, String arg3) {
+		this.index = index;
+		this.serialID = serialID;
 		this.field9198 = arg3;
 	}
 
-	public Namespace(int arg0, int arg1, String arg2, String arg3, boolean arg4, Namespace[] arg5) {
-		this.field9196 = arg0;
-		this.field9188 = arg1;
+	public Namespace(int index, int serialID, String arg2, String arg3, boolean arg4, Namespace[] arg5) {
+		this.index = index;
+		this.serialID = serialID;
 		this.field9198 = arg3;
 	}
 
 	@ObfuscatedName("adi.n()I")
 	public int getId() {
-		return this.field9188;
+		return this.serialID;
 	}
 
 	public String toString() {

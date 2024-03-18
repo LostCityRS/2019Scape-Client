@@ -7,65 +7,65 @@ import deob.ObfuscatedName;
 public class PlayerGroupDeltaEncodingKey implements SerializableEnum {
 
 	@ObfuscatedName("gs.e")
-	public static final PlayerGroupDeltaEncodingKey field1964 = new PlayerGroupDeltaEncodingKey(1, 1);
+	public static final PlayerGroupDeltaEncodingKey SET_VARBIT_VALUE = new PlayerGroupDeltaEncodingKey(1, 1);
 
 	@ObfuscatedName("gs.n")
-	public static final PlayerGroupDeltaEncodingKey field1952 = new PlayerGroupDeltaEncodingKey(9, 2);
+	public static final PlayerGroupDeltaEncodingKey SET_MEMBER_RANK = new PlayerGroupDeltaEncodingKey(9, 2);
 
 	@ObfuscatedName("gs.m")
-	public static final PlayerGroupDeltaEncodingKey field1962 = new PlayerGroupDeltaEncodingKey(6, 3);
+	public static final PlayerGroupDeltaEncodingKey SET_MEMBER_OFFLINE = new PlayerGroupDeltaEncodingKey(6, 3);
 
 	@ObfuscatedName("gs.k")
-	public static final PlayerGroupDeltaEncodingKey field1954 = new PlayerGroupDeltaEncodingKey(10, 4);
+	public static final PlayerGroupDeltaEncodingKey START_GAME = new PlayerGroupDeltaEncodingKey(10, 4);
 
 	@ObfuscatedName("gs.f")
-	public static final PlayerGroupDeltaEncodingKey field1958 = new PlayerGroupDeltaEncodingKey(7, 5);
+	public static final PlayerGroupDeltaEncodingKey SET_GAME_LOADING = new PlayerGroupDeltaEncodingKey(7, 5);
 
 	@ObfuscatedName("gs.w")
-	public static final PlayerGroupDeltaEncodingKey field1956 = new PlayerGroupDeltaEncodingKey(2, 6);
+	public static final PlayerGroupDeltaEncodingKey SET_TEAM_MEMBER = new PlayerGroupDeltaEncodingKey(2, 6);
 
 	@ObfuscatedName("gs.l")
-	public static final PlayerGroupDeltaEncodingKey field1957 = new PlayerGroupDeltaEncodingKey(11, 7);
+	public static final PlayerGroupDeltaEncodingKey DELETE_BANNED = new PlayerGroupDeltaEncodingKey(11, 7);
 
 	@ObfuscatedName("gs.u")
-	public static final PlayerGroupDeltaEncodingKey field1953 = new PlayerGroupDeltaEncodingKey(4, 8);
+	public static final PlayerGroupDeltaEncodingKey ADD_BANNED = new PlayerGroupDeltaEncodingKey(4, 8);
 
 	@ObfuscatedName("gs.z")
-	public static final PlayerGroupDeltaEncodingKey field1959 = new PlayerGroupDeltaEncodingKey(13, 9);
+	public static final PlayerGroupDeltaEncodingKey SET_MEMBER_ONLINE = new PlayerGroupDeltaEncodingKey(13, 9);
 
 	@ObfuscatedName("gs.p")
-	public static final PlayerGroupDeltaEncodingKey field1960 = new PlayerGroupDeltaEncodingKey(5, 10);
+	public static final PlayerGroupDeltaEncodingKey SET_MEMBER_READY = new PlayerGroupDeltaEncodingKey(5, 10);
 
 	@ObfuscatedName("gs.d")
-	public static final PlayerGroupDeltaEncodingKey field1961 = new PlayerGroupDeltaEncodingKey(0, 11);
+	public static final PlayerGroupDeltaEncodingKey ADD_MEMBER = new PlayerGroupDeltaEncodingKey(0, 11);
 
 	@ObfuscatedName("gs.c")
-	public static final PlayerGroupDeltaEncodingKey field1965 = new PlayerGroupDeltaEncodingKey(8, 12);
+	public static final PlayerGroupDeltaEncodingKey DELETE_MEMBER = new PlayerGroupDeltaEncodingKey(8, 12);
 
 	@ObfuscatedName("gs.r")
-	public static final PlayerGroupDeltaEncodingKey field1963 = new PlayerGroupDeltaEncodingKey(3, 13);
+	public static final PlayerGroupDeltaEncodingKey SET_VAR_VALUE = new PlayerGroupDeltaEncodingKey(3, 13);
 
 	@ObfuscatedName("gs.v")
-	public static final PlayerGroupDeltaEncodingKey field1951 = new PlayerGroupDeltaEncodingKey(12, 14);
+	public static final PlayerGroupDeltaEncodingKey UPDATE_MEMBER_BASE = new PlayerGroupDeltaEncodingKey(12, 14);
 
 	@ObfuscatedName("gs.o")
-	public final int field1955;
+	public final int index;
 
 	@ObfuscatedName("gs.s")
-	public final int field1966;
+	public final int serialID;
 
 	@ObfuscatedName("gs.e(B)[Lgs;")
-	public static PlayerGroupDeltaEncodingKey[] method3580() {
-		return new PlayerGroupDeltaEncodingKey[] { field1961, field1964, field1956, field1963, field1953, field1960, field1962, field1958, field1965, field1952, field1954, field1957, field1951, field1959 };
+	public static PlayerGroupDeltaEncodingKey[] values() {
+		return new PlayerGroupDeltaEncodingKey[] {ADD_MEMBER, SET_VARBIT_VALUE, SET_TEAM_MEMBER, SET_VAR_VALUE, ADD_BANNED, SET_MEMBER_READY, SET_MEMBER_OFFLINE, SET_GAME_LOADING, DELETE_MEMBER, SET_MEMBER_RANK, START_GAME, DELETE_BANNED, UPDATE_MEMBER_BASE, SET_MEMBER_ONLINE};
 	}
 
-	public PlayerGroupDeltaEncodingKey(int arg0, int arg1) {
-		this.field1955 = arg0;
-		this.field1966 = arg1;
+	public PlayerGroupDeltaEncodingKey(int index, int serialID) {
+		this.index = index;
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("gs.n()I")
 	public int getId() {
-		return this.field1966;
+		return this.serialID;
 	}
 }

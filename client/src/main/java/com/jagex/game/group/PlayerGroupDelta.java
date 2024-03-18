@@ -31,9 +31,9 @@ public class PlayerGroupDelta {
 		this.field1945 = arg0.g8();
 		this.field1944 = arg0.g4s();
 		for (int var3 = arg0.g1(); var3 != 0; var3 = arg0.g1()) {
-			PlayerGroupDeltaEncodingKey var4 = (PlayerGroupDeltaEncodingKey) SerializableEnums.decode(PlayerGroupDeltaEncodingKey.method3580(), var3);
+			PlayerGroupDeltaEncodingKey var4 = (PlayerGroupDeltaEncodingKey) SerializableEnums.decode(PlayerGroupDeltaEncodingKey.values(), var3);
 			Object var5;
-			switch(var4.field1955) {
+			switch(var4.index) {
 				case 0:
 					var5 = new AddMember(this, arg0);
 					break;
@@ -118,7 +118,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gt.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			arg0.method3395(this.field1967);
+			arg0.addMember(this.field1967);
 		}
 	}
 
@@ -142,7 +142,7 @@ public class PlayerGroupDelta {
 			PlayerGroupMember var2 = arg0.getMember(this.field1894);
 			var2.method3499();
 			var2.getDisplayName();
-			arg0.method3430(this.field1894);
+			arg0.deleteMember(this.field1894);
 		}
 	}
 
@@ -167,7 +167,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("go.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			arg0.method3451(this.field1917);
+			arg0.addBanned(this.field1917);
 		}
 	}
 
@@ -189,7 +189,7 @@ public class PlayerGroupDelta {
 		@ObfuscatedName("fr.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
 			PlayerGroupBanned var2 = (PlayerGroupBanned) arg0.getBanned().get(this.field1896);
-			arg0.method3398(this.field1896);
+			arg0.deleteBanned(this.field1896);
 			var2.getDisplayName();
 		}
 	}
@@ -215,7 +215,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gn.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			arg0.method3399(this.field1937, this.field1938);
+			arg0.setMemberRank(this.field1937, this.field1938);
 			arg0.getMember(this.field1937).method3499();
 		}
 	}
@@ -241,7 +241,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gh.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			arg0.method3400(this.field1969, this.field1968);
+			arg0.setMemberOnline(this.field1969, this.field1968);
 			arg0.getMember(this.field1969).method3499();
 		}
 	}
@@ -263,7 +263,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gf.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			arg0.method3401(this.field1941);
+			arg0.setMemberOffline(this.field1941);
 			arg0.getMember(this.field1941);
 		}
 	}
@@ -315,7 +315,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gm.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			arg0.method3381(this.field1974, this.field1973);
+			arg0.setMemberTeam(this.field1974, this.field1973);
 			arg0.getMember(this.field1974).method3499();
 		}
 	}
@@ -333,7 +333,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gr.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			arg0.method3463();
+			arg0.setAllMembersOnline();
 		}
 	}
 
@@ -350,7 +350,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gk.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			arg0.method3405();
+			arg0.setAllMembersReady();
 		}
 	}
 

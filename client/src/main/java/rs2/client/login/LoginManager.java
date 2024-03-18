@@ -1049,17 +1049,17 @@ public class LoginManager {
 		TotpType var3;
 		if (field429 != null && field429.length() == 6) {
 			if (field473) {
-				var3 = TotpType.field8723;
+				var3 = TotpType.AUTH_DONT_TRUST;
 			} else {
-				var3 = TotpType.field8726;
+				var3 = TotpType.AUTH_TRUST;
 			}
 		} else if (Client.field1895.method589(arg1)) {
-			var3 = TotpType.field8722;
+			var3 = TotpType.AUTH_FOUND;
 		} else {
-			var3 = TotpType.field8724;
+			var3 = TotpType.AUTH_NOT_FOUND;
 		}
 		arg0.p1(var3.getId());
-		switch(var3.field8725) {
+		switch(var3.index) {
 			case 0:
 				arg0.p4(Client.field1895.method577(arg1));
 				break;

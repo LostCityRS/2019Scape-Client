@@ -6738,7 +6738,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("nz.hw(Lhf;Lhq;Lyf;Lhd;B)V")
 	public static final void cc_if_setlink(Component arg0, Interface arg1, ClientScriptState arg2, GroupUserKind arg3) {
 		int var4 = arg2.field8216[--arg2.field8226];
-		switch(arg3.field2141) {
+		switch(arg3.index) {
 			case 0:
 				arg0.field2336 = Client.currentPlayerGroup.getMember(var4).getDisplayName();
 				break;
@@ -10976,7 +10976,7 @@ public final class ScriptRunner {
 			return;
 		}
 		VarPlayerType var5 = (VarPlayerType) Client.varPlayerTypeList.list(var3);
-		switch(var5.dataType.baseType.key) {
+		switch(var5.dataType.baseType.index) {
 			case 2:
 				arg0.field8216[++arg0.field8226 - 1] = var4.method3504().method14728(var5.id);
 				break;
@@ -12280,7 +12280,7 @@ public final class ScriptRunner {
 		ChatLine var3 = ChatHistory.method7310(var1, var2);
 		if (var3 != null) {
 			arg0.field8216[++arg0.field8226 - 1] = var3.uid;
-			arg0.field8218[++arg0.field8211 - 1] = TimeFormatter.method16609(var3.time, Client.language.field8298);
+			arg0.field8218[++arg0.field8211 - 1] = TimeFormatter.method16609(var3.time, Client.language.serialID);
 			arg0.field8216[++arg0.field8226 - 1] = var3.flags;
 			arg0.field8218[++arg0.field8211 - 1] = var3.name == null ? "" : var3.name;
 			arg0.field8218[++arg0.field8211 - 1] = var3.nameUnfiltered == null ? "" : var3.nameUnfiltered;
@@ -12310,7 +12310,7 @@ public final class ScriptRunner {
 		ChatLine var2 = ChatHistory.method304(var1);
 		if (var2 != null) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.type;
-			arg0.field8218[++arg0.field8211 - 1] = TimeFormatter.method16609(var2.time, Client.language.field8298);
+			arg0.field8218[++arg0.field8211 - 1] = TimeFormatter.method16609(var2.time, Client.language.serialID);
 			arg0.field8216[++arg0.field8226 - 1] = var2.flags;
 			arg0.field8218[++arg0.field8211 - 1] = var2.name == null ? "" : var2.name;
 			arg0.field8218[++arg0.field8211 - 1] = var2.nameUnfiltered == null ? "" : var2.nameUnfiltered;

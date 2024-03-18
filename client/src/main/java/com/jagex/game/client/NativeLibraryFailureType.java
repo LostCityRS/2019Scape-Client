@@ -13,14 +13,14 @@ public class NativeLibraryFailureType implements SerializableEnum {
 	public static final NativeLibraryFailureType field8908 = new NativeLibraryFailureType(1);
 
 	@ObfuscatedName("acw.m")
-	public final int field8909;
+	public final int serialID;
 
-	public NativeLibraryFailureType(int arg0) {
-		this.field8909 = arg0;
+	public NativeLibraryFailureType(int serialID) {
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("acw.n()I")
 	public int getId() {
-		return this.field8909;
+		return this.serialID;
 	}
 }

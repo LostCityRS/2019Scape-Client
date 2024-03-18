@@ -38,11 +38,11 @@ public abstract class VarType implements VarConfigType {
 			if (var2 == 0) {
 				return;
 			}
-			VarTypeEncodingKey var3 = (VarTypeEncodingKey) SerializableEnums.decode(VarTypeEncodingKey.method15457(), var2);
+			VarTypeEncodingKey var3 = (VarTypeEncodingKey) SerializableEnums.decode(VarTypeEncodingKey.values(), var2);
 			if (var3 == null) {
 				this.decode(buf, var2);
 			} else {
-				switch(var3.field1694) {
+				switch(var3.index) {
 					case 0:
 						this.field1703 = false;
 						break;
@@ -57,7 +57,7 @@ public abstract class VarType implements VarConfigType {
 						buf.gjstr2();
 						break;
 					case 3:
-						SerializableEnums.decode(VarTransmitLevel.method5925(), buf.g1());
+						SerializableEnums.decode(VarTransmitLevel.values(), buf.g1());
 						break;
 					case 4:
 					default:
@@ -65,7 +65,7 @@ public abstract class VarType implements VarConfigType {
 					case 5:
 						break;
 					case 6:
-						this.lifeTime = (VarLifetime) SerializableEnums.decode(VarLifetime.method748(), buf.g1());
+						this.lifeTime = (VarLifetime) SerializableEnums.decode(VarLifetime.values(), buf.g1());
 				}
 			}
 		}

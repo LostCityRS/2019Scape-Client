@@ -28,23 +28,23 @@ public class VarTypeEncodingKey implements SerializableEnum {
 	public static final VarTypeEncodingKey field1698 = new VarTypeEncodingKey(0, 7);
 
 	@ObfuscatedName("ev.u")
-	public final int field1694;
+	public final int index;
 
 	@ObfuscatedName("ev.z")
-	public final int field1700;
+	public final int serialID;
 
 	@ObfuscatedName("afy.e(I)[Lev;")
-	public static VarTypeEncodingKey[] method15457() {
+	public static VarTypeEncodingKey[] values() {
 		return new VarTypeEncodingKey[] {LIFETIME, DOMAIN, TRANSMITLEVEL, VARNAME_HASH32, field1698, DEBUGNAME, TYPE};
 	}
 
-	public VarTypeEncodingKey(int arg0, int arg1) {
-		this.field1694 = arg0;
-		this.field1700 = arg1;
+	public VarTypeEncodingKey(int index, int serialID) {
+		this.index = index;
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("ev.n()I")
 	public int getId() {
-		return this.field1700;
+		return this.serialID;
 	}
 }

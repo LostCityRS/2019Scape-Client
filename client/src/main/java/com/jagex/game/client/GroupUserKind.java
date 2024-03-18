@@ -25,18 +25,18 @@ public class GroupUserKind implements SerializableEnum {
 	public static final GroupUserKind field2140 = new GroupUserKind(5, 5);
 
 	@ObfuscatedName("hd.l")
-	public final int field2141;
+	public final int index;
 
 	@ObfuscatedName("hd.u")
-	public final int field2142;
+	public final int serialID;
 
-	public GroupUserKind(int arg0, int arg1) {
-		this.field2141 = arg0;
-		this.field2142 = arg1;
+	public GroupUserKind(int index, int serialID) {
+		this.index = index;
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("hd.n()I")
 	public int getId() {
-		return this.field2142;
+		return this.serialID;
 	}
 }

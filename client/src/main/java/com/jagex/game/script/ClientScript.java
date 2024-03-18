@@ -111,7 +111,7 @@ public class ClientScript extends SecondaryNode {
 	public void method19495(Packet arg0, int arg1, ClientScriptCommand arg2) {
 		int var4 = this.field12369.length;
 		if (ClientScriptCommand.field5937 == arg2 || ClientScriptCommand.field5651 == arg2) {
-			VarDomainType var7 = (VarDomainType) SerializableEnums.decode(VarDomainType.method7216(), arg0.g1());
+			VarDomainType var7 = (VarDomainType) SerializableEnums.decode(VarDomainType.values(), arg0.g1());
 			int var8 = arg0.g2();
 			if (this.field12366 == null) {
 				this.field12366 = new Object[var4];
@@ -122,8 +122,8 @@ public class ClientScript extends SecondaryNode {
 			}
 			this.field12367[arg1] = arg0.g1();
 		} else if (ClientScriptCommand.field5144 == arg2) {
-			BaseVarType var5 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), arg0.g1());
-			switch(var5.key) {
+			BaseVarType var5 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), arg0.g1());
+			switch(var5.index) {
 				case 1:
 					if (this.field12366 == null) {
 						this.field12366 = new Object[var4];

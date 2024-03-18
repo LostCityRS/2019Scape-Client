@@ -52,18 +52,18 @@ public class VarBitTypeEncodingKey implements SerializableEnum {
 	public static final VarBitTypeEncodingKey field3071 = new VarBitTypeEncodingKey(0, 15);
 
 	@ObfuscatedName("ks.s")
-	public final int key;
+	public final int index;
 
 	@ObfuscatedName("ks.y")
 	public final int serialID;
 
-	public VarBitTypeEncodingKey(int arg0, int arg1) {
-		this.key = arg0;
-		this.serialID = arg1;
+	public VarBitTypeEncodingKey(int index, int serialID) {
+		this.index = index;
+		this.serialID = serialID;
 	}
 
     @ObfuscatedName("dd.e(I)[Lks;")
-    public static VarBitTypeEncodingKey[] method1624() {
+    public static VarBitTypeEncodingKey[] values() {
         return new VarBitTypeEncodingKey[] {IGNOREOVERLAP, DEBUGNAME, VARBITNAME_HASH32, TRANSMITLEVELOTHER, field3071, QUESTPOINTS, BITS, WEALTHEQUIVALENT, WARNONDECREASE, TRANSMITLEVEL, BASEVAR, MASTERQUEST, SETVARALLOWED, field3061, SENDTOGAMELOGWORLD};
     }
 

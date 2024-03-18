@@ -26,10 +26,10 @@ public class BaseVarType implements SerializableEnum {
 	public static final BaseVarType CCHOOK = new BaseVarType(3, 4, ComponentHook.class, new BaseVarTypeComponentHook());
 
 	@ObfuscatedName("qa.w")
-	public final int key;
+	public final int index;
 
 	@ObfuscatedName("qa.l")
-	public final int id;
+	public final int serialID;
 
 	@ObfuscatedName("qa.u")
 	public final Class javaClass;
@@ -37,26 +37,26 @@ public class BaseVarType implements SerializableEnum {
 	@ObfuscatedName("qa.z")
 	public final BaseVarTypeCodec codec;
 
-	public BaseVarType(int arg0, int arg1, Class arg2, BaseVarTypeCodec arg3) {
-		this.key = arg0;
-		this.id = arg1;
-		this.javaClass = arg2;
-		this.codec = arg3;
+	public BaseVarType(int index, int serialID, Class javaClass, BaseVarTypeCodec codec) {
+		this.index = index;
+		this.serialID = serialID;
+		this.javaClass = javaClass;
+		this.codec = codec;
 	}
 
 	@ObfuscatedName("qa.e(I)[Lqa;")
-	public static BaseVarType[] method7338() {
+	public static BaseVarType[] values() {
 		return new BaseVarType[] {COORDFINE, CCHOOK, STRING, INTEGER, LONG};
 	}
 
 	@ObfuscatedName("qa.n()I")
 	public int getId() {
-		return this.id;
+		return this.serialID;
 	}
 
 	@ObfuscatedName("qa.m(Ljava/lang/Class;I)Lqa;")
 	public static BaseVarType getType(Class arg0) {
-		BaseVarType[] var1 = method7338();
+		BaseVarType[] var1 = values();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			BaseVarType var3 = var1[var2];
 			if (var3.javaClass == arg0) {

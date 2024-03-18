@@ -159,7 +159,7 @@ public class PlayerGroup {
 			return PlayerGroupMemberStatus.field1977;
 		}
 		PlayerGroupMemberStatus var1 = ((PlayerGroupMember) this.members.get(0)).getStatus();
-		switch(var1.field1979) {
+		switch(var1.index) {
 			case 1:
 			case 2:
 				return var1;
@@ -192,78 +192,78 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.v(Lgy;B)V")
-	public void method3395(PlayerGroupMember arg0) {
+	public void addMember(PlayerGroupMember arg0) {
 		this.members.add(arg0);
 		this.method3383();
 	}
 
 	@ObfuscatedName("gq.o(II)V")
-	public void method3430(int arg0) {
+	public void deleteMember(int arg0) {
 		this.members.remove(arg0);
 		this.method3383();
 	}
 
 	@ObfuscatedName("gq.s(Lga;S)V")
-	public void method3451(PlayerGroupBanned arg0) {
+	public void addBanned(PlayerGroupBanned arg0) {
 		this.banned.add(arg0);
 	}
 
 	@ObfuscatedName("gq.y(II)V")
-	public void method3398(int arg0) {
+	public void deleteBanned(int arg0) {
 		this.banned.remove(arg0);
 	}
 
 	@ObfuscatedName("gq.q(III)V")
-	public void method3399(int arg0, int arg1) {
+	public void setMemberRank(int arg0, int arg1) {
 		((PlayerGroupMember) this.members.get(arg0)).setRank(arg1);
 		this.method3383();
 	}
 
 	@ObfuscatedName("gq.x(III)V")
-	public void method3400(int arg0, int arg1) {
+	public void setMemberOnline(int arg0, int arg1) {
 		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
 		var3.setNodeId(arg1);
 		var3.setOnline(true);
 	}
 
 	@ObfuscatedName("gq.b(II)V")
-	public void method3401(int arg0) {
-		PlayerGroupMember var2 = (PlayerGroupMember) this.members.get(arg0);
-		var2.setOnline(false);
+	public void setMemberOffline(int index) {
+		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
+		member.setOnline(false);
 	}
 
 	@ObfuscatedName("gq.h(IZS)V")
-	public void method3402(int arg0, boolean arg1) {
-		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
-		var3.setStatus(arg1 ? PlayerGroupMemberStatus.field1976 : PlayerGroupMemberStatus.field1977);
+	public void method3402(int index, boolean arg1) {
+		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
+		member.setStatus(arg1 ? PlayerGroupMemberStatus.field1976 : PlayerGroupMemberStatus.field1977);
 	}
 
 	@ObfuscatedName("gq.a(IIB)V")
-	public void method3381(int arg0, int arg1) {
-		((PlayerGroupMember) this.members.get(arg0)).setTeam(arg1);
+	public void setMemberTeam(int index, int team) {
+		((PlayerGroupMember) this.members.get(index)).setTeam(team);
 	}
 
 	@ObfuscatedName("gq.g(I)V")
-	public void method3463() {
-		Iterator var1 = this.members.iterator();
-		while (var1.hasNext()) {
-			PlayerGroupMember var2 = (PlayerGroupMember) var1.next();
-			var2.setStatus(PlayerGroupMemberStatus.field1978);
+	public void setAllMembersOnline() {
+		Iterator iterator = this.members.iterator();
+		while (iterator.hasNext()) {
+			PlayerGroupMember member = (PlayerGroupMember) iterator.next();
+			member.setStatus(PlayerGroupMemberStatus.ONLINE);
 		}
 	}
 
 	@ObfuscatedName("gq.i(B)V")
-	public void method3405() {
-		Iterator var1 = this.members.iterator();
-		while (var1.hasNext()) {
-			PlayerGroupMember var2 = (PlayerGroupMember) var1.next();
-			var2.setStatus(PlayerGroupMemberStatus.field1975);
+	public void setAllMembersReady() {
+		Iterator iterator = this.members.iterator();
+		while (iterator.hasNext()) {
+			PlayerGroupMember member = (PlayerGroupMember) iterator.next();
+			member.setStatus(PlayerGroupMemberStatus.READY);
 		}
 	}
 
 	@ObfuscatedName("gq.j(ILgy;I)V")
-	public void method3403(int arg0, PlayerGroupMember arg1) {
-		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
-		var3.method3502(arg1);
+	public void method3403(int index, PlayerGroupMember arg1) {
+		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
+		member.syncMember(arg1);
 	}
 }

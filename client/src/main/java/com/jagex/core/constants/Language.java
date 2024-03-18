@@ -35,40 +35,40 @@ public class Language implements SerializableEnum {
 	public final String field8293;
 
 	@ObfuscatedName("zt.d")
-	public final int field8298;
+	public final int serialID;
 
 	@ObfuscatedName("zt.c")
-	public final Locale field8299;
+	public final Locale locale;
 
 	@ObfuscatedName("zt.r")
-	public static final Language[] field8300;
+	public static final Language[] LANGUAGES;
 
 	static {
-		Language[] var0 = method13871();
-		field8300 = new Language[var0.length];
-		Language[] var1 = var0;
-		for (int var2 = 0; var2 < var1.length; var2++) {
-			Language var3 = var1[var2];
-			if (field8300[var3.field8298] != null) {
+		Language[] languages = values();
+		LANGUAGES = new Language[languages.length];
+		Language[] var1 = languages;
+		for (int index = 0; index < var1.length; index++) {
+			Language language = var1[index];
+			if (LANGUAGES[language.serialID] != null) {
 				throw new IllegalStateException();
 			}
-			field8300[var3.field8298] = var3;
+			LANGUAGES[language.serialID] = language;
 		}
 	}
 
 	@ObfuscatedName("zt.e(I)[Lzt;")
-	public static Language[] method13871() {
+	public static Language[] values() {
 		return new Language[] {PT, NL, EN, DE, ES, ES_MX, FR};
 	}
 
-	public Language(String arg0, String arg1, String arg2, ModeWhere arg3, int arg4, String arg5) {
+	public Language(String arg0, String arg1, String arg2, ModeWhere arg3, int serialID, String arg5) {
 		this.field8295 = arg0;
 		this.field8293 = arg1;
-		this.field8298 = arg4;
+		this.serialID = serialID;
 		if (arg5 == null) {
-			this.field8299 = new Locale(arg1.substring(0, 2));
+			this.locale = new Locale(arg1.substring(0, 2));
 		} else {
-			this.field8299 = new Locale(arg1.substring(0, 2), arg5);
+			this.locale = new Locale(arg1.substring(0, 2), arg5);
 		}
 	}
 
@@ -79,17 +79,17 @@ public class Language implements SerializableEnum {
 
 	@ObfuscatedName("zt.n()I")
 	public int getId() {
-		return this.field8298;
+		return this.serialID;
 	}
 
 	@ObfuscatedName("zt.f(I)Ljava/util/Locale;")
-	public Locale method13874() {
-		return this.field8299;
+	public Locale getLocale() {
+		return this.locale;
 	}
 
 	@ObfuscatedName("zt.w(II)Lzt;")
-	public static Language method13875(int arg0) {
-		return arg0 >= 0 && arg0 < field8300.length ? field8300[arg0] : null;
+	public static Language getLanguage(int index) {
+		return index >= 0 && index < LANGUAGES.length ? LANGUAGES[index] : null;
 	}
 
 	public String toString() {

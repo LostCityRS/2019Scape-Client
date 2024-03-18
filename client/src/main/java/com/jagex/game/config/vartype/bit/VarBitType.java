@@ -73,8 +73,8 @@ public class VarBitType implements VarConfigType {
 
 	@ObfuscatedName("kh.z(Lalw;IZI)V")
 	public void method5184(Packet arg0, int arg1, boolean arg2) {
-		VarBitTypeEncodingKey var4 = (VarBitTypeEncodingKey) SerializableEnums.decode(VarBitTypeEncodingKey.method1624(), arg1);
-		switch(var4.key) {
+		VarBitTypeEncodingKey var4 = (VarBitTypeEncodingKey) SerializableEnums.decode(VarBitTypeEncodingKey.values(), arg1);
+		switch(var4.index) {
 			case 7:
 				this.startBit = arg0.g1();
 				this.endBit = arg0.g1();
@@ -83,7 +83,7 @@ public class VarBitType implements VarConfigType {
 				break;
 			case 14:
 				int var5 = arg0.g1();
-				this.field3080 = (VarDomainType) SerializableEnums.decode(VarDomainType.method7216(), var5);
+				this.field3080 = (VarDomainType) SerializableEnums.decode(VarDomainType.values(), var5);
 				if (this.field3080 == null) {
 					throw new IllegalStateException("");
 				}

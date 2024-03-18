@@ -25,25 +25,25 @@ public class MoveSpeed implements SerializableEnum {
 	public final int index;
 
 	@ObfuscatedName("zj.u")
-	public byte id;
+	public byte serialID;
 
 	@ObfuscatedName("zj.e(I)[Lzj;")
 	public static MoveSpeed[] values() {
 		return new MoveSpeed[] {STATIONARY, CRAWL, WALK, RUN, INSTANT};
 	}
 
-	public MoveSpeed(int index, byte id) {
+	public MoveSpeed(int index, byte serialID) {
 		this.index = index;
-		this.id = id;
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("zj.n()I")
 	public int getId() {
-		return this.id;
+		return this.serialID;
 	}
 
 	@ObfuscatedName("zj.m(B)I")
 	public int method13906() {
-		return this.id + 1;
+		return this.serialID + 1;
 	}
 }

@@ -290,9 +290,9 @@ public class MapElementType implements ConfigType {
 		} else if (arg1 == 28) {
 			this.field2408 = arg0.g1();
 		} else if (arg1 == 29) {
-			this.field2365 = (MapAlignmentX) SerializableEnums.decode(MapAlignmentX.method13997(), arg0.g1());
+			this.field2365 = (MapAlignmentX) SerializableEnums.decode(MapAlignmentX.values(), arg0.g1());
 		} else if (arg1 == 30) {
-			this.field2405 = (MapAlignmentY) SerializableEnums.decode(MapAlignmentY.method15088(), arg0.g1());
+			this.field2405 = (MapAlignmentY) SerializableEnums.decode(MapAlignmentY.values(), arg0.g1());
 		} else if (arg1 == 249) {
 			int var9 = arg0.g1();
 			if (this.params == null) {

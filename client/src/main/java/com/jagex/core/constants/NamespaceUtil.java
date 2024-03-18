@@ -21,7 +21,7 @@ public class NamespaceUtil {
 		if (arg0 == null) {
 			return 12;
 		} else {
-			switch(arg0.field9196) {
+			switch(arg0.index) {
 				case 2:
 					return 20;
 				default:

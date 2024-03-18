@@ -61,18 +61,18 @@ public class VarPlayerTypeEncodingKey implements SerializableEnum {
 	public static final VarPlayerTypeEncodingKey field1993 = new VarPlayerTypeEncodingKey(9, 117);
 
 	@ObfuscatedName("gw.x")
-	public final int unused;
+	public final int index;
 
 	@ObfuscatedName("gw.b")
 	public final int serialID;
 
 	@ObfuscatedName("rw.e(I)[Lgw;")
-	public static VarPlayerTypeEncodingKey[] method7471() {
+	public static VarPlayerTypeEncodingKey[] values() {
 		return new VarPlayerTypeEncodingKey[] { field1999, WARNONDECREASE, field1984, LEGACYID, field1993, SETVARALLOWED, CLIENTCODE, HISCOREDATA, SENDTOGAMELOGWORLD, field1990, TRANSMITLEVELOTHER, CLANDATA, WEALTHEQUIVALENT, QUESTPOINTS, PLOGDATA, MASTERQUEST, PROTECTEDACCESSREQUIRED, GENERALPURPOSE};
 	}
 
-	public VarPlayerTypeEncodingKey(int arg0, int serialID) {
-		this.unused = arg0;
+	public VarPlayerTypeEncodingKey(int index, int serialID) {
+		this.index = index;
 		this.serialID = serialID;
 	}
 

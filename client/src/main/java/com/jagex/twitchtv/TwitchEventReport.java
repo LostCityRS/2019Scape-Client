@@ -20,6 +20,6 @@ public class TwitchEventReport extends TwitchEvent {
 
 	@ObfuscatedName("com/jagex/twitchtv/TwitchEventReport.n()Lud;")
 	public TwitchVarType method11() {
-		return TwitchVarType.field7244;
+		return TwitchVarType.REPORT;
 	}
 }

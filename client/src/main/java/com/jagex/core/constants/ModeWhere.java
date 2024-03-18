@@ -48,40 +48,39 @@ public class ModeWhere implements SerializableEnum {
 	public static final ModeWhere field8271 = new ModeWhere("", 13, new ModeWhereProperty[] { ModeWhereProperty.OFFICE});
 
 	@ObfuscatedName("yu.v")
-	public final int field8280;
+	public final int serialID;
 
 	@ObfuscatedName("yu.o")
-	public final Set field8281 = new HashSet();
+	public final Set modes = new HashSet();
 
 	static {
-		method13843();
+		values();
 	}
 
 	@ObfuscatedName("yu.e(B)[Lyu;")
-	public static ModeWhere[] method13843() {
+	public static ModeWhere[] values() {
 		return new ModeWhere[] {WTRC, field8271, WTQA2, LOCAL, INTBETA, WTQA, field8276, LIVE, field8267, WTI, field8278, WTWIP, WTITU};
 	}
 
-	public ModeWhere(String arg0, int arg1) {
-		this.field8280 = arg1;
+	public ModeWhere(String arg0, int serialID) {
+		this.serialID = serialID;
 	}
 
-	public ModeWhere(String arg0, int arg1, ModeWhereProperty[] arg2) {
-		this.field8280 = arg1;
-		ModeWhereProperty[] var4 = arg2;
-		for (int var5 = 0; var5 < var4.length; var5++) {
-			ModeWhereProperty var6 = var4[var5];
-			this.field8281.add(var6);
+	public ModeWhere(String arg0, int serialID, ModeWhereProperty[] modes) {
+		this.serialID = serialID;
+        for (int index = 0; index < modes.length; index++) {
+			ModeWhereProperty var6 = modes[index];
+			this.modes.add(var6);
 		}
 	}
 
 	@ObfuscatedName("yu.n()I")
 	public int getId() {
-		return this.field8280;
+		return this.serialID;
 	}
 
 	@ObfuscatedName("yu.m(Lzh;I)Z")
-	public boolean method13838(ModeWhereProperty arg0) {
-		return this.field8281.contains(arg0);
+	public boolean hasMode(ModeWhereProperty mode) {
+		return this.modes.contains(mode);
 	}
 }

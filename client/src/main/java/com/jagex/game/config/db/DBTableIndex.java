@@ -32,7 +32,7 @@ public class DBTableIndex {
 
 	@ObfuscatedName("adh.e(Lalw;B)V")
 	public void method15188(Packet arg0) {
-		this.field9181 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), arg0.g1());
+		this.field9181 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), arg0.g1());
 		int var2 = arg0.gVarInt2();
 		this.field9180 = new HashMap(var2);
 		while (var2-- > 0) {

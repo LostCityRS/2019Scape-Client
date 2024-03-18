@@ -16,23 +16,23 @@ public class MapAlignmentX implements SerializableEnum {
 	public static final MapAlignmentX field2418 = new MapAlignmentX(0, 2);
 
 	@ObfuscatedName("hp.k")
-	public final int field2419;
+	public final int index;
 
 	@ObfuscatedName("hp.f")
-	public final int field2416;
+	public final int serialID;
 
 	@ObfuscatedName("zv.e(B)[Lhp;")
-	public static MapAlignmentX[] method13997() {
+	public static MapAlignmentX[] values() {
 		return new MapAlignmentX[] { field2418, field2420, field2417 };
 	}
 
-	public MapAlignmentX(int arg0, int arg1) {
-		this.field2419 = arg0;
-		this.field2416 = arg1;
+	public MapAlignmentX(int index, int serialID) {
+		this.index = index;
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("hp.n()I")
 	public int getId() {
-		return this.field2416;
+		return this.serialID;
 	}
 }

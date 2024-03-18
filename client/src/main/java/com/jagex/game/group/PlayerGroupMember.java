@@ -82,7 +82,7 @@ public class PlayerGroupMember {
 			this.nodeId = -1;
 		}
 		this.rank = buf.g1();
-		this.status = (PlayerGroupMemberStatus) SerializableEnums.decode(PlayerGroupMemberStatus.method3603(), buf.g1());
+		this.status = (PlayerGroupMemberStatus) SerializableEnums.decode(PlayerGroupMemberStatus.values(), buf.g1());
 		this.team = buf.g1();
 	}
 
@@ -157,7 +157,7 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.o(Lgy;I)V")
-	public void method3502(PlayerGroupMember arg0) {
+	public void syncMember(PlayerGroupMember arg0) {
 		for (int var2 = 0; var2 < this.stats.length; var2++) {
 			this.stats[var2].setXP(arg0.stats[var2].getXP());
 			this.stats[var2].setLevel(this.stats[var2].getBaseLevel());

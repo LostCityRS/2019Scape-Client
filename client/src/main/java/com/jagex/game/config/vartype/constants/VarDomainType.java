@@ -48,18 +48,18 @@ public class VarDomainType implements SerializableEnum {
 	public final int serialID;
 
 	// $FF: synthetic method
-	public VarDomainType(Js5ConfigGroup arg0, int arg1, boolean arg2, boolean arg3, VarDomainTypePlayer arg4) {
-		this(arg0, arg1, arg2, arg3);
+	public VarDomainType(Js5ConfigGroup js5GroupID, int serialID, boolean arg2, boolean arg3, VarDomainTypePlayer arg4) {
+		this(js5GroupID, serialID, arg2, arg3);
 	}
 
 	@ObfuscatedName("qe.e(I)[Lqe;")
-	public static VarDomainType[] method7216() {
+	public static VarDomainType[] values() {
 		return new VarDomainType[] {PLAYER_GROUP, CLAN_SETTING, CONTROLLER, GLOBAL, PLAYER, CLIENT, REGION, OBJECT, WORLD, NPC, CLAN};
 	}
 
-	public VarDomainType(Js5ConfigGroup arg0, int arg1, boolean arg2, boolean arg3) {
-		this.js5GroupID = arg0;
-		this.serialID = arg1;
+	public VarDomainType(Js5ConfigGroup js5GroupID, int serialID, boolean arg2, boolean arg3) {
+		this.js5GroupID = js5GroupID;
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("qe.m(B)Lxq;")

@@ -19,12 +19,12 @@ public class VarTransmitLevel implements SerializableEnum {
 	public final int serialID;
 
 	@ObfuscatedName("mj.e(I)[Lql;")
-	public static VarTransmitLevel[] method5925() {
+	public static VarTransmitLevel[] values() {
 		return new VarTransmitLevel[] {ON_SET_ALWAYS, NEVER, ON_SET_DIFFERENT};
 	}
 
-	public VarTransmitLevel(int arg0) {
-		this.serialID = arg0;
+	public VarTransmitLevel(int serialID) {
+		this.serialID = serialID;
 	}
 
 	@ObfuscatedName("ql.n()I")

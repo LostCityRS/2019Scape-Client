@@ -16,23 +16,23 @@ public class MapAlignmentY implements SerializableEnum {
 	public static final MapAlignmentY field2422 = new MapAlignmentY(0, 2);
 
 	@ObfuscatedName("hy.k")
-	public final int field2425;
+	public final int index;
 
 	@ObfuscatedName("hy.f")
-	public final int field2423;
+	public final int serialID;
 
-	public MapAlignmentY(int arg0, int arg1) {
-		this.field2425 = arg0;
-		this.field2423 = arg1;
+	public MapAlignmentY(int index, int serialID) {
+		this.index = index;
+		this.serialID = serialID;
 	}
 
     @ObfuscatedName("ace.e(I)[Lhy;")
-    public static MapAlignmentY[] method15088() {
+    public static MapAlignmentY[] values() {
         return new MapAlignmentY[] {field2422, field2426, field2424};
     }
 
     @ObfuscatedName("hy.n()I")
 	public int getId() {
-		return this.field2423;
+		return this.serialID;
 	}
 }

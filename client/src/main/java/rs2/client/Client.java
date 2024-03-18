@@ -1939,13 +1939,13 @@ public final class Client extends GameShell {
 						field10775 = Integer.parseInt(var5);
 						break;
 					case 26:
-						language = Language.method13875(Integer.parseInt(var5));
+						language = Language.getLanguage(Integer.parseInt(var5));
 						break;
 					case 27:
-						modewhere = (ModeWhere) SerializableEnums.decode(ModeWhere.method13843(), Integer.parseInt(var5));
+						modewhere = (ModeWhere) SerializableEnums.decode(ModeWhere.values(), Integer.parseInt(var5));
 						if (modewhere == ModeWhere.LOCAL) {
 							modewhere = ModeWhere.WTWIP;
-						} else if (!modewhere.method13838(ModeWhereProperty.OFFICE) && modewhere != ModeWhere.LIVE) {
+						} else if (!modewhere.hasMode(ModeWhereProperty.OFFICE) && modewhere != ModeWhere.LIVE) {
 							modewhere = ModeWhere.LIVE;
 						}
 						break;
@@ -2696,7 +2696,7 @@ public final class Client extends GameShell {
 				var2.p4(910);
 				var2.p4(1);
 				var2.pjstr(field10789);
-				var2.p1(language.field8298);
+				var2.p1(language.serialID);
 				field7571.write(var2.data, 0, var1 + 2);
 				field10827++;
 				field10353 = MonotonicTime.get();
@@ -5008,7 +5008,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("dt.gj(Lahm;ZB)V")
 	public static final void method1679(PathingEntity arg0, boolean arg1) {
-		int var2 = MoveSpeed.STATIONARY.id;
+		int var2 = MoveSpeed.STATIONARY.serialID;
 		int var3 = 0;
 		if (arg0.field10429 > currentclock) {
 			method14296(arg0);
@@ -5029,7 +5029,7 @@ public final class Client extends GameShell {
 			arg0.field10427 = null;
 			arg0.field10429 = 0;
 			arg0.field10399 = 0;
-			var2 = MoveSpeed.STATIONARY.id;
+			var2 = MoveSpeed.STATIONARY.serialID;
 			var3 = 0;
 			arg0.method10538((float) (arg0.field10450[0] * 512 + arg0.method16546() * 256), var4.field4311, (float) (arg0.field10448[0] * 512 + arg0.method16546() * 256));
 			arg0.method16517();
@@ -5043,7 +5043,7 @@ public final class Client extends GameShell {
 			arg0.field10427 = null;
 			arg0.field10429 = 0;
 			arg0.field10399 = 0;
-			var2 = MoveSpeed.STATIONARY.id;
+			var2 = MoveSpeed.STATIONARY.serialID;
 			var3 = 0;
 			arg0.method10538((float) (arg0.field10450[0] * 512 + arg0.method16546() * 256), var4.field4311, (float) (arg0.field10448[0] * 512 + arg0.method16546() * 256));
 			arg0.method16517();
@@ -5097,7 +5097,7 @@ public final class Client extends GameShell {
 		BASType var2 = arg0.method16508();
 		if (arg0.field10400 == 0) {
 			arg0.field10453 = 0;
-			field1891 = MoveSpeed.STATIONARY.id;
+			field1891 = MoveSpeed.STATIONARY.serialID;
 			field1797 = 0;
 			return;
 		}
@@ -5105,13 +5105,13 @@ public final class Client extends GameShell {
 			SeqType var3 = arg0.field10454.method14347();
 			if (arg0.field10396 > 0 && var3.field1767 == 0) {
 				arg0.field10453++;
-				field1891 = MoveSpeed.STATIONARY.id;
+				field1891 = MoveSpeed.STATIONARY.serialID;
 				field1797 = 0;
 				return;
 			}
 			if (arg0.field10396 <= 0 && var3.field1782 == 0) {
 				arg0.field10453++;
-				field1891 = MoveSpeed.STATIONARY.id;
+				field1891 = MoveSpeed.STATIONARY.serialID;
 				field1797 = 0;
 				return;
 			}
@@ -5123,13 +5123,13 @@ public final class Client extends GameShell {
 					SeqType var6 = (SeqType) seqTypeList.list(var5.anim);
 					if (arg0.field10396 > 0 && var6.field1767 == 0) {
 						arg0.field10453++;
-						field1891 = MoveSpeed.STATIONARY.id;
+						field1891 = MoveSpeed.STATIONARY.serialID;
 						field1797 = 0;
 						return;
 					}
 					if (arg0.field10396 <= 0 && var6.field1782 == 0) {
 						arg0.field10453++;
-						field1891 = MoveSpeed.STATIONARY.id;
+						field1891 = MoveSpeed.STATIONARY.serialID;
 						field1797 = 0;
 						return;
 					}
@@ -5170,7 +5170,7 @@ public final class Client extends GameShell {
 			if (arg0.field10396 > 0) {
 				arg0.field10396--;
 			}
-			field1891 = MoveSpeed.STATIONARY.id;
+			field1891 = MoveSpeed.STATIONARY.serialID;
 			field1797 = 0;
 			var7.method6486();
 			return;
@@ -5203,9 +5203,9 @@ public final class Client extends GameShell {
 			var13 = 32;
 			arg0.field10453--;
 		}
-		if (MoveSpeed.RUN.id == var12) {
+		if (MoveSpeed.RUN.serialID == var12) {
 			var13 <<= 0x1;
-		} else if (MoveSpeed.CRAWL.id == var12) {
+		} else if (MoveSpeed.CRAWL.serialID == var12) {
 			var13 >>= 0x1;
 		}
 		if (var2.field7359 != -1) {
@@ -5247,7 +5247,7 @@ public final class Client extends GameShell {
 		}
 		field1797 = 0;
 		if (var8 == var10 && var9 == var11) {
-			field1891 = MoveSpeed.STATIONARY.id;
+			field1891 = MoveSpeed.STATIONARY.serialID;
 		} else {
 			if (var8 < var10) {
 				var7.field4308 += var13;
@@ -5277,7 +5277,7 @@ public final class Client extends GameShell {
 			}
 			arg0.method10531(var7);
 			if (var13 >= 32) {
-				field1891 = MoveSpeed.RUN.id;
+				field1891 = MoveSpeed.RUN.serialID;
 			} else {
 				field1891 = var12;
 			}
@@ -5414,7 +5414,7 @@ public final class Client extends GameShell {
 		BASType var4 = arg0.method16508();
 		EntityWalkAnimationWrapper var5 = arg0.field10432;
 		int var6 = arg0.field10414 - arg0.field10395.field528 & 0x3FFF;
-		if (MoveSpeed.STATIONARY.id == arg1) {
+		if (MoveSpeed.STATIONARY.serialID == arg1) {
 			if (var6 == 0 && arg0.field10443 <= 25) {
 				if (!var5.field11877 || !var4.method9290(var5.method14348())) {
 					var5.method14352(var4.method9295(), false, true);
@@ -5432,7 +5432,7 @@ public final class Client extends GameShell {
 			}
 		} else if (arg0.field10417 != -1 && (var6 >= 10240 || var6 <= 2048)) {
 			int var7 = field10823[arg2] - arg0.field10395.field528 & 0x3FFF;
-			if (MoveSpeed.RUN.id == arg1 && var4.field7361 != -1) {
+			if (MoveSpeed.RUN.serialID == arg1 && var4.field7361 != -1) {
 				if (var7 > 2048 && var7 <= 6144 && var4.field7331 != -1) {
 					var5.method14352(var4.field7331, false, true);
 				} else if (var7 >= 10240 && var7 < 14336 && var4.field7330 != -1) {
@@ -5442,7 +5442,7 @@ public final class Client extends GameShell {
 				} else {
 					var5.method14352(var4.field7329, false, true);
 				}
-			} else if (MoveSpeed.CRAWL.id == arg1 && var4.field7332 != -1) {
+			} else if (MoveSpeed.CRAWL.serialID == arg1 && var4.field7332 != -1) {
 				if (var7 > 2048 && var7 <= 6144 && var4.field7319 != -1) {
 					var5.method14352(var4.field7319, false, true);
 				} else if (var7 >= 10240 && var7 < 14336 && var4.field7328 != -1) {
@@ -5463,16 +5463,16 @@ public final class Client extends GameShell {
 			}
 			var5.field11877 = false;
 		} else if (var6 == 0 && arg0.field10443 <= 25) {
-			if (MoveSpeed.RUN.id == arg1 && var4.field7361 != -1) {
+			if (MoveSpeed.RUN.serialID == arg1 && var4.field7361 != -1) {
 				var5.method14352(var4.field7361, false, true);
-			} else if (MoveSpeed.CRAWL.id == arg1 && var4.field7332 != -1) {
+			} else if (MoveSpeed.CRAWL.serialID == arg1 && var4.field7332 != -1) {
 				var5.method14352(var4.field7332, false, true);
 			} else {
 				var5.method14352(var4.field7350, false, true);
 			}
 			var5.field11877 = false;
 		} else {
-			if (MoveSpeed.RUN.id == arg1 && var4.field7361 != -1) {
+			if (MoveSpeed.RUN.serialID == arg1 && var4.field7361 != -1) {
 				if (arg3 < 0 && var4.field7338 != -1) {
 					var5.method14352(var4.field7338, false, true);
 				} else if (arg3 <= 0 || var4.field7339 == -1) {
@@ -5480,7 +5480,7 @@ public final class Client extends GameShell {
 				} else {
 					var5.method14352(var4.field7339, false, true);
 				}
-			} else if (MoveSpeed.CRAWL.id == arg1 && var4.field7332 != -1) {
+			} else if (MoveSpeed.CRAWL.serialID == arg1 && var4.field7332 != -1) {
 				if (arg3 < 0 && var4.field7352 != -1) {
 					var5.method14352(var4.field7352, false, true);
 				} else if (arg3 <= 0 || var4.field7337 == -1) {
@@ -11224,7 +11224,7 @@ public final class Client extends GameShell {
 					field11036[++field11011 - 1] = var4;
 					var5.field10440 = field10815;
 					CompassPoint var8 = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), var0.gBit(3));
-					var5.method19168(var8, MoveSpeed.WALK.id);
+					var5.method19168(var8, MoveSpeed.WALK.serialID);
 					int var9 = var0.gBit(1);
 					if (var9 == 1) {
 						field10844[++field10876 - 1] = var4;
@@ -11234,12 +11234,12 @@ public final class Client extends GameShell {
 					var5.field10440 = field10815;
 					if (var0.gBit(1) == 1) {
 						CompassPoint var10 = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), var0.gBit(3));
-						var5.method19168(var10, MoveSpeed.RUN.id);
+						var5.method19168(var10, MoveSpeed.RUN.serialID);
 						CompassPoint var11 = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), var0.gBit(3));
-						var5.method19168(var11, MoveSpeed.RUN.id);
+						var5.method19168(var11, MoveSpeed.RUN.serialID);
 					} else {
 						CompassPoint var12 = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), var0.gBit(3));
-						var5.method19168(var12, MoveSpeed.CRAWL.id);
+						var5.method19168(var12, MoveSpeed.CRAWL.serialID);
 					}
 					int var13 = var0.gBit(1);
 					if (var13 == 1) {
@@ -11557,7 +11557,7 @@ public final class Client extends GameShell {
 				int var70 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var71 = 0; var71 < var70; var71++) {
 					int var72 = var0.g1_alt2();
-					BaseVarType var73 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), var72);
+					BaseVarType var73 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var72);
 					VarValue var74 = varNpcTypeList.decodeVarValue(var0, var73);
 					var3.field10460.method14735(var74.field4240, var74.field4239);
 				}
@@ -11687,7 +11687,7 @@ public final class Client extends GameShell {
 				int var108 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var109 = 0; var109 < var108; var109++) {
 					int var110 = var0.g1_alt3();
-					BaseVarType var111 = (BaseVarType) SerializableEnums.decode(BaseVarType.method7338(), var110);
+					BaseVarType var111 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var110);
 					VarValue var112 = varNpcTypeList.decodeVarValue(var0, var111);
 					var3.field10460.method14735(var112.field4240, var112.field4239);
 				}
@@ -14605,7 +14605,7 @@ public final class Client extends GameShell {
 			var3 = "/p=" + field10990;
 		}
 		String var4 = modegame.field8333 + ".com";
-		return var2 + arg0 + "." + var4 + "/l=" + language.field8298 + "/a=" + playerIsAffiliate + var3 + "/";
+		return var2 + arg0 + "." + var4 + "/l=" + language.serialID + "/a=" + playerIsAffiliate + var3 + "/";
 	}
 
 	@ObfuscatedName("ty.my(IIIIIILjava/lang/String;I)V")
