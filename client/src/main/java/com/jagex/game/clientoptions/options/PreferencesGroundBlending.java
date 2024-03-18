@@ -31,7 +31,7 @@ public class PreferencesGroundBlending extends Preference {
 	}
 
 	@ObfuscatedName("any.s(I)Z")
-	public boolean method18650() {
+	public boolean canMod() {
 		return this.options.modeGame() == ModeGame.RUNESCAPE;
 	}
 

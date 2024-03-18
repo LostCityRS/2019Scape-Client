@@ -15,7 +15,7 @@ public class PrivateChatFilter {
 	public static final PrivateChatFilter field8529 = new PrivateChatFilter(2);
 
 	@ObfuscatedName("aaj.k")
-	public final int field8530;
+	public final int value;
 
 	@ObfuscatedName("ix.e(I)[Laaj;")
 	public static PrivateChatFilter[] method4481() {
@@ -23,7 +23,7 @@ public class PrivateChatFilter {
 	}
 
 	public PrivateChatFilter(int arg0) {
-		this.field8530 = arg0;
+		this.value = arg0;
 	}
 
 	@ObfuscatedName("fk.n(IB)Laaj;")
@@ -31,7 +31,7 @@ public class PrivateChatFilter {
 		PrivateChatFilter[] var1 = method4481();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			PrivateChatFilter var3 = var1[var2];
-			if (var3.field8530 == arg0) {
+			if (var3.value == arg0) {
 				return var3;
 			}
 		}

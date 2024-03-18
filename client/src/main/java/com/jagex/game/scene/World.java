@@ -429,9 +429,9 @@ public class World {
 		int var2 = this.field5018.z;
 		int var3 = (Client.field7956 >> 12) + (var1 >> 3);
 		int var4 = (Client.field1881 >> 12) + (var2 >> 3);
-		Client.field4490.field11717 = 0;
+		Client.localPlayerEntity.field11717 = 0;
 		Client.field4826 = 0;
-		Client.field4490.method19118(8, 8);
+		Client.localPlayerEntity.method19118(8, 8);
 		byte var5 = 18;
 		this.rebuildMapSquares = new int[var5];
 		this.rebuildMapSquaresGroupIds = new int[var5];
@@ -735,7 +735,7 @@ public class World {
 		this.field5059 = arg1;
 		if (!this.asyncRebuilding) {
 			Client.setState(arg2);
-			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language), true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.method649(LocalisedText.LOADING.forLang(Client.language), true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
 		if (this.field5018 == null) {
 			this.field5025 = new CoordGrid(0, 0, 0);
@@ -743,7 +743,7 @@ public class World {
 			this.field5025 = this.field5018;
 		}
 		this.field5018 = new CoordGrid(0, (this.field5022 - (this.mapSizeX >> 4)) * 8, (this.field5059 - (this.mapSizeZ >> 4)) * 8);
-		this.field5035 = WorldMap.method8511(this.mapSizeX / 2 + this.field5018.x, this.mapSizeX / 2 + this.field5018.z);
+		this.field5035 = WorldMap.getMap(this.mapSizeX / 2 + this.field5018.x, this.mapSizeX / 2 + this.field5018.z);
 		this.field5058 = null;
 		this.field5060 = -1L;
 		if (!this.asyncRebuilding) {
@@ -956,7 +956,7 @@ public class World {
 			if (this.field5035 == null || !Client.worldmapAreaDataJs5.method6904(this.field5035.field12351)) {
 				this.field5058 = new WorldMapRelated(0);
 			} else if (Client.worldmapAreaDataJs5.method6886(this.field5035.field12351)) {
-				this.field5058 = WorldMapRelated.method6046(Client.worldmapAreaDataJs5, this.field5035.field12351, Client.field10948);
+				this.field5058 = WorldMapRelated.method6046(Client.worldmapAreaDataJs5, this.field5035.field12351, Client.loggedInMembers);
 			} else {
 				this.field5044++;
 			}
@@ -1019,8 +1019,8 @@ public class World {
 		}
 		if (this.rebuildLocsCount > 0) {
 			if (this.rebuildLocsCount != var3) {
-				this.field5048 = Client.field10903;
-			} else if (this.field5048 != 0 && Client.field10903 - this.field5048 == 1000) {
+				this.field5048 = Client.currentclock;
+			} else if (this.field5048 != 0 && Client.currentclock - this.field5048 == 1000) {
 				GraphicsPacketQueue.method5144(var5.field7958, var4.field7958, this.rebuildLocsCount);
 				GraphicsPacketQueue.method9189();
 			}
@@ -1031,7 +1031,7 @@ public class World {
 			return false;
 		}
 		if (!this.asyncRebuilding && RebuildStage.field5007 != this.rebuildStage) {
-			MessageBox.method649(LocalisedText.LOADING.method15021(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
+			MessageBox.method649(LocalisedText.LOADING.forLang(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.field9184, DefaultSprites.field2657);
 		}
 		this.rebuildStage = RebuildStage.field5008;
 		if (!this.asyncRebuilding && Client.field1798 != null) {
@@ -1432,7 +1432,7 @@ public class World {
 					int var11 = var8 & 0x3F;
 					int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x + var10;
 					int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z + var11;
-					NPCType var14 = (NPCType) Client.field7961.list(buf.g2());
+					NPCType var14 = (NPCType) Client.npcTypeList.list(buf.g2());
 					ObjectWrapper var15 = (ObjectWrapper) Client.field10838.method14495((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {
 						NpcEntity npc = new NpcEntity(this.scene);
@@ -1441,11 +1441,11 @@ public class World {
 						Client.field10838.method14501(var17, (long) var7);
 						Client.field10839[++Client.field10906 - 1] = var17;
 						Client.field11036[++Client.field11011 - 1] = var7;
-						npc.field10440 = Client.field10903;
+						npc.field10440 = Client.currentclock;
 						npc.method19156(var14);
-						npc.method16502(npc.field12083.size);
-						npc.field10444 = npc.field12083.field2731 << 3;
-						npc.method16491(npc.field12083.field2727.method13895().getId() << 11 & 0x3FFF, true);
+						npc.method16502(npc.npcType.size);
+						npc.field10444 = npc.npcType.field2731 << 3;
+						npc.method16491(npc.npcType.field2727.method13895().getId() << 11 & 0x3FFF, true);
 						npc.method19159(var9, var12, var13, true, npc.method16546());
 					}
 				}

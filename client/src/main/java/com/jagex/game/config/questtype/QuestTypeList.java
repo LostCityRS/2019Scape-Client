@@ -10,12 +10,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("apw")
 public class QuestTypeList extends ConfigTypeListPreload {
 
-	public QuestTypeList(ModeGame arg0, Language arg1, Js5 arg2, boolean arg3) {
-		super(arg0, arg1, Js5ConfigGroup.QUESTTYPE, arg2, new QuestTypeFactory(), arg3);
+	public QuestTypeList(ModeGame modeGame, Language language, Js5 configClient, boolean preload) {
+		super(modeGame, language, Js5ConfigGroup.QUESTTYPE, configClient, new QuestTypeFactory(), preload);
 	}
 
 	@ObfuscatedName("apw.n(I)I")
 	public int length() {
-		return this.field8848;
+		return this.num;
 	}
 }

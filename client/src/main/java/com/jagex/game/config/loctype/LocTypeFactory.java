@@ -27,7 +27,7 @@ public abstract class LocTypeFactory {
 	public int field7536;
 
 	@ObfuscatedName("vh.w")
-	public final String[] defaultops;
+	public final String[] defaultOps;
 
 	@ObfuscatedName("vh.l")
 	public ModelUnlit[] field7535 = new ModelUnlit[4];
@@ -38,9 +38,9 @@ public abstract class LocTypeFactory {
 	public LocTypeFactory(boolean allowMembers, Language language, ModeGame modeGame) {
 		this.allowMembers = allowMembers;
 		if (ModeGame.RUNESCAPE == modeGame) {
-			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.method15021(language) };
+			this.defaultOps = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.forLang(language) };
 		} else {
-			this.defaultops = new String[] { null, null, null, null, null, null };
+			this.defaultOps = new String[] { null, null, null, null, null, null };
 		}
 	}
 

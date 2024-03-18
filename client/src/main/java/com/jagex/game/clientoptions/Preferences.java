@@ -122,7 +122,7 @@ public class Preferences {
 				Client.preferences.method18157(Client.preferences.unknown6, 3);
 				method16391();
 				var7 = Client.method15172(3, 1000);
-				if (Client.preferences.displayMode2.getValue() == 3) {
+				if (Client.preferences.displayMode.getValue() == 3) {
 					var0.method18313(4);
 					RendererInfo var9 = Client.renderer.method2272();
 					long var10 = var9.field1265 & 0xFFFFFFFFFFFFL;
@@ -151,7 +151,7 @@ public class Preferences {
 				Client.preferences.method18157(Client.preferences.unknown6, 5);
 				method16391();
 				var8 = Client.method15172(5, 1000);
-				if (Client.preferences.displayMode2.getValue() == 5) {
+				if (Client.preferences.displayMode.getValue() == 5) {
 					var0.method18313(8192);
 				}
 			} catch (Exception var19) {
@@ -163,7 +163,7 @@ public class Preferences {
 				Client.preferences.method18157(Client.preferences.unknown6, 4);
 				method16391();
 				var6 = Client.method15172(1, 1000);
-				if (Client.preferences.displayMode2.getValue() == 1) {
+				if (Client.preferences.displayMode.getValue() == 1) {
 					var0.method18313(2);
 				}
 			} catch (Exception var18) {
@@ -212,10 +212,10 @@ public class Preferences {
 			var2 = 1;
 			arg0.method18313(64);
 		}
-		if (Client.preferences.displayMode2.getValue() == 0) {
-			Client.preferences.method18177(Client.preferences.displayMode2, true);
+		if (Client.preferences.displayMode.getValue() == 0) {
+			Client.preferences.method18177(Client.preferences.displayMode, true);
 		} else {
-			Client.preferences.method18157(Client.preferences.displayMode, 0);
+			Client.preferences.method18157(Client.preferences.toolkit, 0);
 			Client.method486(0, false);
 		}
 		method16391();
@@ -239,10 +239,10 @@ public class Preferences {
 			method131(true);
 			var3 = 1;
 		}
-		if (Client.preferences.displayMode2.getValue() == arg1) {
-			Client.preferences.method18177(Client.preferences.displayMode2, true);
+		if (Client.preferences.displayMode.getValue() == arg1) {
+			Client.preferences.method18177(Client.preferences.displayMode, true);
 		} else {
-			Client.preferences.method18157(Client.preferences.displayMode, arg1);
+			Client.preferences.method18157(Client.preferences.toolkit, arg1);
 			Client.method486(arg1, false);
 		}
 		method16391();

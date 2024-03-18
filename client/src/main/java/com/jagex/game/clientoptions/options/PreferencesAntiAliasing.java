@@ -17,7 +17,7 @@ public class PreferencesAntiAliasing extends Preference {
 
 	@ObfuscatedName("anq.o(B)V")
 	public void clampValue() {
-		if (this.options.displayMode2.method18546() && !Renderer.method723(this.options.displayMode2.getValue())) {
+		if (this.options.displayMode.method18546() && !Renderer.method723(this.options.displayMode.getValue())) {
 			this.currentValue = 0;
 		}
 		if (this.currentValue < 0 || this.currentValue > 2) {
@@ -31,13 +31,13 @@ public class PreferencesAntiAliasing extends Preference {
 	}
 
 	@ObfuscatedName("anq.s(I)Z")
-	public boolean method18638() {
-		return Renderer.method723(this.options.displayMode2.getValue());
+	public boolean canMod() {
+		return Renderer.method723(this.options.displayMode.getValue());
 	}
 
 	@ObfuscatedName("anq.n(II)I")
 	public int canSetValue(int value) {
-		return Renderer.method723(this.options.displayMode2.getValue()) ? 1 : 3;
+		return Renderer.method723(this.options.displayMode.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("anq.k(II)V")

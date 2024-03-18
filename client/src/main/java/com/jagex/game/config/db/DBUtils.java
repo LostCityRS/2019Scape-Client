@@ -28,7 +28,7 @@ public class DBUtils {
 		for (int fieldId = 0; fieldId < fieldCount; fieldId++) {
 			for (int typeId = 0; typeId < types.length; typeId++) {
 				int index = types.length * fieldId + typeId;
-				values[index] = types[typeId].baseType.method7335(buf);
+				values[index] = types[typeId].baseType.dbDecode(buf);
 			}
 		}
 		return values;

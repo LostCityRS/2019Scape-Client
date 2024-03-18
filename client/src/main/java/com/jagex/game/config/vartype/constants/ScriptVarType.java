@@ -116,10 +116,10 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 	public static final ScriptVarType PLAYER_UID = new ScriptVarType(34, 'p', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4830, ScriptVarProperty.field4833 });
 
 	@ObfuscatedName("qw.ad")
-	public static final ScriptVarType field4760 = new ScriptVarType(35, 'r', BaseVarType.field4837, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4834 });
+	public static final ScriptVarType field4760 = new ScriptVarType(35, 'r', BaseVarType.LONG, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4834 });
 
 	@ObfuscatedName("qw.am")
-	public static final ScriptVarType STRING = new ScriptVarType(36, 's', BaseVarType.field4836, "", new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4828, ScriptVarProperty.field4833 });
+	public static final ScriptVarType STRING = new ScriptVarType(36, 's', BaseVarType.STRING, "", new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4828, ScriptVarProperty.field4833 });
 
 	@ObfuscatedName("qw.au")
 	public static final ScriptVarType SPOTANIM = new ScriptVarType(37, 't', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
@@ -158,10 +158,10 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 	public static final ScriptVarType PHYSICS_CONTROL_MODIFIER = new ScriptVarType(48, 'Š', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
 
 	@ObfuscatedName("qw.af")
-	public static final ScriptVarType CLANHASH = new ScriptVarType(49, 'Œ', BaseVarType.field4837, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4828, ScriptVarProperty.field4833, ScriptVarProperty.field4834 });
+	public static final ScriptVarType CLANHASH = new ScriptVarType(49, 'Œ', BaseVarType.LONG, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4828, ScriptVarProperty.field4833, ScriptVarProperty.field4834 });
 
 	@ObfuscatedName("qw.ak")
-	public static final ScriptVarType COORDFINE = new ScriptVarType(50, 'Ž', BaseVarType.field4839, new CoordFine(), new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4828, ScriptVarProperty.field4833 });
+	public static final ScriptVarType COORDFINE = new ScriptVarType(50, 'Ž', BaseVarType.COORDFINE, new CoordFine(), new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4828, ScriptVarProperty.field4833 });
 
 	@ObfuscatedName("qw.an")
 	public static final ScriptVarType CUTSCENE = new ScriptVarType(51, 'š', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
@@ -176,7 +176,7 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 	public static final ScriptVarType MAPSCENEICON = new ScriptVarType(55, '£', BaseVarType.INTEGER, -1, "", new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
 
 	@ObfuscatedName("qw.bh")
-	public static final ScriptVarType CLANFORUMQFC = new ScriptVarType(56, '§', BaseVarType.field4837, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
+	public static final ScriptVarType CLANFORUMQFC = new ScriptVarType(56, '§', BaseVarType.LONG, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
 
 	@ObfuscatedName("qw.bx")
 	public static final ScriptVarType VORBIS = new ScriptVarType(57, '«', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
@@ -221,7 +221,7 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 	public static final ScriptVarType SKYDECOR = new ScriptVarType(70, 'ú', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
 
 	@ObfuscatedName("qw.bz")
-	public static final ScriptVarType HASH64 = new ScriptVarType(71, 'û', BaseVarType.field4837, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4828, ScriptVarProperty.field4830, ScriptVarProperty.field4833, ScriptVarProperty.field4834 });
+	public static final ScriptVarType HASH64 = new ScriptVarType(71, 'û', BaseVarType.LONG, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4828, ScriptVarProperty.field4830, ScriptVarProperty.field4833, ScriptVarProperty.field4834 });
 
 	@ObfuscatedName("qw.bv")
 	public static final ScriptVarType INPUTTYPE = new ScriptVarType(72, 'Î', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
@@ -335,7 +335,7 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 	public static final ScriptVarType AUDIOMIXBUSS = new ScriptVarType(109, 'Ò', BaseVarType.INTEGER, -1, "", new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
 
 	@ObfuscatedName("qw.do")
-	public static final ScriptVarType LONG = new ScriptVarType(110, 'Ï', BaseVarType.field4837, 0L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4828, ScriptVarProperty.field4833, ScriptVarProperty.field4834 });
+	public static final ScriptVarType LONG = new ScriptVarType(110, 'Ï', BaseVarType.LONG, 0L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4828, ScriptVarProperty.field4833, ScriptVarProperty.field4834 });
 
 	@ObfuscatedName("qw.dz")
 	public static final ScriptVarType CRM_CHANNEL = new ScriptVarType(111, 'Ì', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4834, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
@@ -350,16 +350,16 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 	public static final ScriptVarType POLL = new ScriptVarType(114, '÷', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4830, ScriptVarProperty.field4832, ScriptVarProperty.field4828, ScriptVarProperty.field4833, ScriptVarProperty.field4834 });
 
 	@ObfuscatedName("qw.dc")
-	public static final ScriptVarType field4648 = new ScriptVarType(115, '¼', BaseVarType.field4837, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832 });
+	public static final ScriptVarType field4648 = new ScriptVarType(115, '¼', BaseVarType.LONG, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832 });
 
 	@ObfuscatedName("qw.di")
-	public static final ScriptVarType field4687 = new ScriptVarType(116, '½', BaseVarType.field4837, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832 });
+	public static final ScriptVarType field4687 = new ScriptVarType(116, '½', BaseVarType.LONG, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4832 });
 
 	@ObfuscatedName("qw.dk")
 	public static final ScriptVarType POINTLIGHT = new ScriptVarType(117, '•', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
 
 	@ObfuscatedName("qw.dn")
-	public static final ScriptVarType PLAYER_GROUP = new ScriptVarType(118, 'Â', BaseVarType.field4837, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4828, ScriptVarProperty.field4833, ScriptVarProperty.field4834 });
+	public static final ScriptVarType PLAYER_GROUP = new ScriptVarType(118, 'Â', BaseVarType.LONG, -1L, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4830, ScriptVarProperty.field4828, ScriptVarProperty.field4833, ScriptVarProperty.field4834 });
 
 	@ObfuscatedName("qw.df")
 	public static final ScriptVarType PLAYER_GROUP_STATUS = new ScriptVarType(119, 'Ã', BaseVarType.INTEGER, -1, new ScriptVarProperty[] { ScriptVarProperty.field4831, ScriptVarProperty.field4829, ScriptVarProperty.field4830, ScriptVarProperty.field4834, ScriptVarProperty.field4832, ScriptVarProperty.field4833 });
@@ -587,7 +587,7 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 	public static ScriptVarType[] varByLegacyChar;
 
 	@ObfuscatedName("qw.e(I)[Lqw;")
-	public static ScriptVarType[] method7293() {
+	public static ScriptVarType[] values() {
 		return new ScriptVarType[] { field4812, field4720, field4771, BILLING_AUTH_FLAG, PLAYER_GROUP_STATUS, MODEL, field4795, field4713, field4762, field4747, VORBIS, field4809, MAPAREA, field4654, CHATPHRASE, field4779, field4687, field4799, field4798, CLANFORUMQFC, SEQGROUP, field4736, PACKAGE, SPOTANIM, field4820, CRM_CHANNEL, field4803, field4774, field4752, field4804, GWC_PLATFORM, field4789, IDKIT, field4691, MAPELEMENT, STRUCT, BAS, NPC, field4784, PLAEYR_GROUP_AFFINITY_MODIFY_RESULT, field4817, MAPSCENEICON, POP_UP_DISPLAY_BEHAVIOUR, field4745, QUEST, field4778, field4698, TELEMETRY_INTERVAL, PLAYER_GROUP, field4800, field4761, LOC_SHAPE, CATEGORYTYPE, INTERFACE, field4646, CHATCAT, PARTICLE_EFFECTOR, field4648, field4718, field4724, field4772, field4719, HASH64, field4763, CLIENTINTERFACE, CLANHASH, field4733, field4679, POLL, QUESTHELP, CATEGORY, field4793, field4716, TOPLEVELINTERFACE, COMPONENT, field4783, TEMP_HISCORE_CONTRIBUTE_RESULT, STAT, field4807, PHYSICS_CONTROL_MODIFIER, POINTLIGHT, WRITEINV, field4805, field4777, TEMP_HISCORE_DISPLAY_TYPE, field4776, field4791, field4773, field4658, field4766, CHAR, field4723, GRAPHIC, PHYSICS_MODEL, field4768, field4775, field4636, PLOGTYPE, SEQ, field4750, field4785, field4760, NPC_MODE, UNSIGNED_INT, field4769, field4726, SOCIAL_NETWORK, field4714, field4797, TEMP_HISCORE_LENGTH_TYPE, field4819, field4676, FONTMETRICS, field4759, COLOUR, CURSOR, field4815, field4818, field4722, field4802, AUDIOGROUP, field4703, TEMP_HISCORE, HTTP_IMAGE, OBJ, field4706, field4664, field4764, field4685, HITMARK, INPUTTYPE, PLAYER_GROUP_JOIN_OR_CREATE_RESULT, PLAYER_GROUP_MODIFY_RESULT, COLLISION_GEOMETRY, SKYDECOR, SYNTH, field4765, NPC_UID, field4748, COORDFINE, field4790, field4787, PLAYER_GROUP_DELTA_TYPE, field4649, PLAYER_UID, AREA, CUTSCENE, MOVESPEED, field4780, field4811, field4712, INV, ACCOUNT_FEATURE_FLAG, field4661, field4814, NPC_STAT, ITEMCODE, VERIFY_OBJECT, STRING, LOC, field4711, NAMEDOBJ, field4786, PARTICLE_EMITTER, SKYBOX, LASER, MIDI, MESH, INT, AUDIOMIXBUSS, field4639, field4806, DBROW, CLIENT_TYPE, JINGLE, BUG_TEMPLATE, BOOLEAN, PLAYER_GROUP_INVITE_RESULT, MATERIAL, field4782, field4770, COORDGRID, ENUM, LONG, TEXTURE, OVERLAYINTERFACE, field4796 };
 	}
 

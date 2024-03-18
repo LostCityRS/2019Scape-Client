@@ -11,7 +11,7 @@ public class CutsceneDefaults {
 	public Binding field7675;
 
 	public CutsceneDefaults(Js5 arg0) {
-		byte[] var2 = arg0.method6894(DefaultsGroup.field7706.field7708);
+		byte[] var2 = arg0.method6894(DefaultsGroup.CUTSCENE.js5GroupId);
 		if (var2 != null) {
 			this.method9847(new Packet(var2));
 		}

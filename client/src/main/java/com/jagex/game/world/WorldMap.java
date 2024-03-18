@@ -63,7 +63,7 @@ public class WorldMap {
 	public static WorldMapDefaults field6792;
 
 	@ObfuscatedName("tf.z")
-	public static WorldMapAreaMetadata field6811;
+	public static WorldMapAreaMetadata currentWorldMap;
 
 	@ObfuscatedName("tf.p")
 	public static Js5 field6794;
@@ -276,7 +276,7 @@ public class WorldMap {
 		if (var9 != null) {
 			for (int var10 = 0; var10 < var9.length; var10++) {
 				WorldMapAreaMetadata var11 = WorldMapAreaMetadata.method3468(field6794, var9[var10]);
-				field6796.method14501(var11, (long) var11.field12359);
+				field6796.method14501(var11, (long) var11.id);
 			}
 		}
 		ColourUtils.method10156(true, false);
@@ -311,25 +311,25 @@ public class WorldMap {
 	@ObfuscatedName("tf.k(I)V")
 	public static void method8521(int arg0) {
 		WorldMapAreaMetadata var1 = (WorldMapAreaMetadata) field6796.method14495((long) arg0);
-		if (var1 != null && field6811 != var1) {
-			field6811 = var1;
-			field6819 = field6792.field7690 == field6811.field12359;
+		if (var1 != null && currentWorldMap != var1) {
+			currentWorldMap = var1;
+			field6819 = field6792.field7690 == currentWorldMap.id;
 		}
 	}
 
 	@ObfuscatedName("tf.f(Lasy;)Z")
 	public static boolean method8510(WorldMapAreaMetadata arg0) {
-		if (arg0 == null || field6811 == arg0) {
+		if (arg0 == null || currentWorldMap == arg0) {
 			return false;
 		} else {
-			field6811 = arg0;
-			field6819 = field6792.field7690 == field6811.field12359;
+			currentWorldMap = arg0;
+			field6819 = field6792.field7690 == currentWorldMap.id;
 			return true;
 		}
 	}
 
 	@ObfuscatedName("tf.w(II)Lasy;")
-	public static WorldMapAreaMetadata method8511(int arg0, int arg1) {
+	public static WorldMapAreaMetadata getMap(int arg0, int arg1) {
 		for (WorldMapAreaMetadata var2 = (WorldMapAreaMetadata) field6796.method14500(); var2 != null; var2 = (WorldMapAreaMetadata) field6796.method14502()) {
 			if (var2.field12350 && var2.method19469(arg0, arg1)) {
 				return var2;
@@ -339,7 +339,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.l(I)Lasy;")
-	public static WorldMapAreaMetadata method8512(int arg0) {
+	public static WorldMapAreaMetadata getMapByName(int arg0) {
 		return (WorldMapAreaMetadata) field6796.method14495((long) arg0);
 	}
 
@@ -409,15 +409,15 @@ public class WorldMap {
 	public static boolean method8542(Renderer arg0, int arg1, int arg2, boolean arg3) {
 		long var4 = MonotonicTime.method3655();
 		if (field6793 == 0) {
-			if (field6792.field7695 == field6811.field12359) {
-				int var6 = field6795.getgroupid(field6811.field12351);
+			if (field6792.field7695 == currentWorldMap.id) {
+				int var6 = field6795.getgroupid(currentWorldMap.field12351);
 				if (field6841 == null) {
 					field6841 = new Packet(field6795.getfile(var6, 0));
 				}
 				field6821 = field6841;
 				field6821.pos = 0;
 			} else {
-				int var7 = field6795.getgroupid(field6811.field12351);
+				int var7 = field6795.getgroupid(currentWorldMap.field12351);
 				field6821 = new Packet(field6795.getfile(var7, 0));
 			}
 			int var8 = field6821.g1();
@@ -769,7 +769,7 @@ public class WorldMap {
 	public static void method8505() {
 		int[] var0 = new int[3];
 		for (int var1 = 0; var1 < field6805.field6777; var1++) {
-			boolean var2 = field6811.method19471(field6805.field6776[var1] >> 28 & 0x3, field6805.field6776[var1] >> 14 & 0x3FFF, field6805.field6776[var1] & 0x3FFF, var0);
+			boolean var2 = currentWorldMap.method19471(field6805.field6776[var1] >> 28 & 0x3, field6805.field6776[var1] >> 14 & 0x3FFF, field6805.field6776[var1] & 0x3FFF, var0);
 			if (var2) {
 				WorldMapElement var3 = new WorldMapElement(field6805.field6775[var1]);
 				var3.field11448 = var0[1] - field6786;
@@ -890,10 +890,10 @@ public class WorldMap {
 		Sprite var5 = (Sprite) field6833.method2930(-1L);
 		if (var5 == null || var5.method1459() != arg3) {
 			int var6;
-			if (field6811.field12355 == -1) {
+			if (currentWorldMap.field12355 == -1) {
 				var6 = -16777216;
 			} else {
-				var6 = field6811.field12355 | 0xFF000000;
+				var6 = currentWorldMap.field12355 | 0xFF000000;
 			}
 			if (field6838 == null || arg3 * arg3 != field6838.length) {
 				field6838 = new int[arg3 * arg3];
@@ -913,7 +913,7 @@ public class WorldMap {
 			field6838 = new int[arg2 * arg2];
 		}
 		boolean var10 = field6819 && !arg6;
-		int var11 = field6811.field12355 | 0xFF000000;
+		int var11 = currentWorldMap.field12355 | 0xFF000000;
 		for (int var12 = 0; var12 < 64; var12++) {
 			int var13 = var8 + var12;
 			int var14 = arg2 * var12 / 64;
@@ -1095,7 +1095,7 @@ public class WorldMap {
 				LocType var22 = (LocType) field6785.list(arg10[var20]);
 				if (var22.field7486 == -1) {
 					int var23 = -3355444;
-					if (var22.field7470 == 1) {
+					if (var22.active2 == 1) {
 						var23 = -3407872;
 					}
 					int var24 = arg11[var20] >> 6 & 0x3;

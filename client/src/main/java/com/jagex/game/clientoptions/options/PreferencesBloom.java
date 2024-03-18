@@ -17,7 +17,7 @@ public class PreferencesBloom extends Preference {
 
 	@ObfuscatedName("and.o(I)V")
 	public void clampValue() {
-		if (this.options.displayMode2.method18546() && !Renderer.method723(this.options.displayMode2.getValue())) {
+		if (this.options.displayMode.method18546() && !Renderer.method723(this.options.displayMode.getValue())) {
 			this.currentValue = 0;
 		}
 		if (this.options.hardwareInfo().unused()) {
@@ -35,13 +35,13 @@ public class PreferencesBloom extends Preference {
 	}
 
 	@ObfuscatedName("and.s(I)Z")
-	public boolean method18624() {
-		return Renderer.method723(this.options.displayMode2.getValue());
+	public boolean canMod() {
+		return Renderer.method723(this.options.displayMode.getValue());
 	}
 
 	@ObfuscatedName("and.n(II)I")
 	public int canSetValue(int value) {
-		return Renderer.method723(this.options.displayMode2.getValue()) ? 1 : 3;
+		return Renderer.method723(this.options.displayMode.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("and.k(II)V")

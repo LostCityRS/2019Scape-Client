@@ -211,7 +211,7 @@ public class EnvironmentManager {
 		long var5 = ((long) arg1 & 0xFFFFL) << 48 | ((long) arg2 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16 | (long) arg0 & 0xFFFFL;
 		SkyBox var7 = (SkyBox) this.field7849.method2930(var5);
 		if (var7 == null) {
-			var7 = SkyBoxType.method305(arg0, arg1, arg2, arg3, Client.field2879, Client.field687);
+			var7 = SkyBoxType.method305(arg0, arg1, arg2, arg3, Client.skyBoxTypeList, Client.skyDecorTypeList);
 			this.field7849.method2921(var7, var5);
 		}
 		return var7;
@@ -266,9 +266,9 @@ public class EnvironmentManager {
 			var3 = Client.field7956 >> 12;
 			var4 = Client.field1881 >> 12;
 		} else {
-			if (Client.field4490 != null) {
-				var3 = Client.field4490.field10450[0] >> 3;
-				var4 = Client.field4490.field10448[0] >> 3;
+			if (Client.localPlayerEntity != null) {
+				var3 = Client.localPlayerEntity.field10450[0] >> 3;
+				var4 = Client.localPlayerEntity.field10448[0] >> 3;
 			}
 			if (var3 < 0 || var3 >= arg0.method7728() >> 3 || var4 < 0 || var4 >= arg0.method7758() >> 3) {
 				var3 = arg0.method7728() >> 4;

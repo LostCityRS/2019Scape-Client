@@ -27,7 +27,7 @@ public class PreferencesWaterDetail extends Preference {
 	}
 
 	@ObfuscatedName("amt.s(B)Z")
-	public boolean method18521() {
+	public boolean canMod() {
 		return true;
 	}
 

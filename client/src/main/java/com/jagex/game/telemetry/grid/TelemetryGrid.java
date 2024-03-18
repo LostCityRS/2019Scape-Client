@@ -12,14 +12,14 @@ public class TelemetryGrid {
 	public final List field1879 = new ArrayList();
 
 	@ObfuscatedName("fo.e(I)I")
-	public int method3261() {
+	public int getGroupCount() {
 		return this.field1879.size();
 	}
 
 	@ObfuscatedName("fo.n(II)I")
-	public int method3262(int arg0) {
+	public int getGroupIndex(int arg0) {
 		for (int var2 = 0; var2 < this.field1879.size(); var2++) {
-			if (((TelemetryGroup) this.field1879.get(var2)).field1888 == arg0) {
+			if (((TelemetryGroup) this.field1879.get(var2)).id == arg0) {
 				return var2;
 			}
 		}
@@ -27,7 +27,7 @@ public class TelemetryGrid {
 	}
 
 	@ObfuscatedName("fo.m(II)Lfy;")
-	public TelemetryGroup method3263(int arg0) {
+	public TelemetryGroup getGroup(int arg0) {
 		return (TelemetryGroup) this.field1879.get(arg0);
 	}
 
@@ -40,7 +40,7 @@ public class TelemetryGrid {
 	public int method3265(TelemetryGroup arg0, int arg1) {
 		if (this.field1879.size() == 5) {
 			throw new RuntimeException("");
-		} else if (this.method3262(arg0.field1888) == -1) {
+		} else if (this.getGroupIndex(arg0.id) == -1) {
 			if (arg1 == -1) {
 				arg1 = this.field1879.size();
 			}

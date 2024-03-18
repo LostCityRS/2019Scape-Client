@@ -30,7 +30,7 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	public DynamicGroundDecorEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, ScaleRotTrans arg13) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg13);
 		this.field11133 = new DynamicLoc(arg1, arg2, arg3, LocShape.GROUND_DECOR.id, arg10, arg5, this, arg9, arg11, arg12);
-		this.field11132 = arg3.field7470 != 0 && !arg9;
+		this.field11132 = arg3.active2 != 0 && !arg9;
 		this.method18363(1);
 	}
 
@@ -50,12 +50,12 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	}
 
 	@ObfuscatedName("ajs.by(B)I")
-	public int method16523() {
+	public int overlayHeight() {
 		return this.field11133.method8262();
 	}
 
 	@ObfuscatedName("ajs.bo(I)I")
-	public int method16501() {
+	public int height() {
 		return this.field11133.method8236();
 	}
 

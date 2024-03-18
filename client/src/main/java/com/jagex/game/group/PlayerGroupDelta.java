@@ -86,7 +86,7 @@ public class PlayerGroupDelta {
 	// line 76
 	@ObfuscatedName("gx.e(Lgq;I)V")
 	public void method3555(PlayerGroup arg0) {
-		if (this.field1945 != arg0.field1902 || arg0.method3384() != this.field1944) {
+		if (this.field1945 != arg0.hashcode || arg0.method3384() != this.field1944) {
 			throw new IllegalStateException("");
 		}
 		Iterator var2 = this.field1942.iterator();
@@ -139,9 +139,9 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("fk.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			PlayerGroupMember var2 = arg0.method3392(this.field1894);
+			PlayerGroupMember var2 = arg0.getMember(this.field1894);
 			var2.method3499();
-			var2.method3488();
+			var2.getDisplayName();
 			arg0.method3430(this.field1894);
 		}
 	}
@@ -188,9 +188,9 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("fr.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
-			PlayerGroupBanned var2 = (PlayerGroupBanned) arg0.method3429().get(this.field1896);
+			PlayerGroupBanned var2 = (PlayerGroupBanned) arg0.getBanned().get(this.field1896);
 			arg0.method3398(this.field1896);
-			var2.method3540();
+			var2.getDisplayName();
 		}
 	}
 
@@ -216,7 +216,7 @@ public class PlayerGroupDelta {
 		@ObfuscatedName("gn.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
 			arg0.method3399(this.field1937, this.field1938);
-			arg0.method3392(this.field1937).method3499();
+			arg0.getMember(this.field1937).method3499();
 		}
 	}
 
@@ -242,7 +242,7 @@ public class PlayerGroupDelta {
 		@ObfuscatedName("gh.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
 			arg0.method3400(this.field1969, this.field1968);
-			arg0.method3392(this.field1969).method3499();
+			arg0.getMember(this.field1969).method3499();
 		}
 	}
 
@@ -264,7 +264,7 @@ public class PlayerGroupDelta {
 		@ObfuscatedName("gf.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
 			arg0.method3401(this.field1941);
-			arg0.method3392(this.field1941);
+			arg0.getMember(this.field1941);
 		}
 	}
 
@@ -290,7 +290,7 @@ public class PlayerGroupDelta {
 		@ObfuscatedName("fe.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
 			arg0.method3402(this.field1893, this.field1892);
-			arg0.method3392(this.field1893).method3499();
+			arg0.getMember(this.field1893).method3499();
 		}
 	}
 
@@ -316,7 +316,7 @@ public class PlayerGroupDelta {
 		@ObfuscatedName("gm.e(Lgq;B)V")
 		public void method3371(PlayerGroup arg0) {
 			arg0.method3381(this.field1974, this.field1973);
-			arg0.method3392(this.field1974).method3499();
+			arg0.getMember(this.field1974).method3499();
 		}
 	}
 

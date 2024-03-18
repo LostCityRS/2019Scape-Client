@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public class ModeAccountType implements SerializableEnum {
 
 	@ObfuscatedName("zu.e")
-	public static final ModeAccountType field8344 = new ModeAccountType(0, "");
+	public static final ModeAccountType FREE = new ModeAccountType(0, "");
 
 	@ObfuscatedName("zu.n")
-	public static final ModeAccountType field8343 = new ModeAccountType(1, "");
+	public static final ModeAccountType MEMBERS = new ModeAccountType(1, "");
 
 	@ObfuscatedName("zu.m")
 	public final int field8342;

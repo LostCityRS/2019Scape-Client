@@ -124,7 +124,7 @@ public class ServerConnection {
 
 	@ObfuscatedName("ax.k(I)V")
 	public void method946() {
-		if (Client.field10903 % 50 == 0) {
+		if (Client.currentclock % 50 == 0) {
 			this.field798 = this.field801;
 			this.field801 = 0;
 			this.field804 = this.readPos;

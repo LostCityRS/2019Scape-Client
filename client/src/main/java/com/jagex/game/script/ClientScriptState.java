@@ -64,22 +64,22 @@ public class ClientScriptState {
 	public boolean field8235;
 
 	@ObfuscatedName("yf.y")
-	public QuickChatPhrase field8240;
+	public QuickChatPhrase activeChatPhrase;
 
 	@ObfuscatedName("yf.q")
-	public ClanSettings field8227;
+	public ClanSettings activeClanSettings;
 
 	@ObfuscatedName("yf.x")
-	public ClanChannel field8228;
+	public ClanChannel activeClanChannel;
 
 	@ObfuscatedName("yf.b")
-	public PathingEntity field8221;
+	public PathingEntity currentEntity;
 
 	@ObfuscatedName("yf.h")
-	public Location field8230;
+	public Location currentLoc;
 
 	@ObfuscatedName("yf.a")
-	public ObjStackEntity field8232;
+	public ObjStackEntity currentObj;
 
 	@ObfuscatedName("yf.g")
 	public Map field8234 = new HashMap();

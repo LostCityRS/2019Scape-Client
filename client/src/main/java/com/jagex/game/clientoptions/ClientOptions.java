@@ -92,10 +92,10 @@ public class ClientOptions extends Node {
 	public PreferencesTextures textures;
 
 	@ObfuscatedName("ali.at")
-	public PreferencesDisplayMode displayMode;
+	public PreferencesDisplayMode toolkit;
 
 	@ObfuscatedName("ali.ad")
-	public PreferencesDisplayMode displayMode2;
+	public PreferencesDisplayMode displayMode;
 
 	@ObfuscatedName("ali.am")
 	public PreferencesWaterDetail waterDetail;
@@ -184,14 +184,14 @@ public class ClientOptions extends Node {
 	public ClientOptions(ModeGame arg0, int displayModeValue) {
 		this.modeGame = arg0;
 		this.hardwareInfo = new PreferencesHardwareInfo(GameShell.maxmemory, GameShell.cpucount, GameShell.osArchRaw.toLowerCase().indexOf("arm") != -1, GameShell.osName.startsWith("win"), false);
-		this.displayMode2 = new PreferencesDisplayMode(displayModeValue, this);
+		this.displayMode = new PreferencesDisplayMode(displayModeValue, this);
 		this.setDefaultPreferences(true, true);
 	}
 
 	public ClientOptions(Packet buf, ModeGame modeGame, int displayModeValue) {
 		this.modeGame = modeGame;
 		this.hardwareInfo = new PreferencesHardwareInfo(GameShell.maxmemory, GameShell.cpucount, GameShell.osArchRaw.indexOf("arm") != -1, GameShell.osName.startsWith("win"), false);
-		this.displayMode2 = new PreferencesDisplayMode(displayModeValue, this);
+		this.displayMode = new PreferencesDisplayMode(displayModeValue, this);
 		this.readPreferences(buf);
 	}
 
@@ -253,8 +253,8 @@ public class ClientOptions extends Node {
 					buf.pos++;
 				}
 				this.textures = new PreferencesTextures(buf.g1(), this);
-				this.displayMode = new PreferencesDisplayMode(buf.g1(), this);
-				this.displayMode2 = new PreferencesDisplayMode(this.displayMode.getValue(), this);
+				this.toolkit = new PreferencesDisplayMode(buf.g1(), this);
+				this.displayMode = new PreferencesDisplayMode(this.toolkit.getValue(), this);
 				buf.g1();
 				this.waterDetail = new PreferencesWaterDetail(buf.g1(), this);
 				this.maxScreenSize = new PreferencesMaxScreenSize(buf.g1(), this);
@@ -379,11 +379,11 @@ public class ClientOptions extends Node {
 		if (preferences || this.textures == null) {
 			this.textures = new PreferencesTextures(this);
 		}
-		if (preferences || this.displayMode == null) {
-			this.displayMode = new PreferencesDisplayMode(this);
+		if (preferences || this.toolkit == null) {
+			this.toolkit = new PreferencesDisplayMode(this);
 		}
-		if (preferences || this.displayMode2 == null) {
-			this.displayMode2 = new PreferencesDisplayMode(this.displayMode.getValue(), this);
+		if (preferences || this.displayMode == null) {
+			this.displayMode = new PreferencesDisplayMode(this.toolkit.getValue(), this);
 		}
 		if (preferences || this.waterDetail == null) {
 			this.waterDetail = new PreferencesWaterDetail(this);
@@ -557,7 +557,7 @@ public class ClientOptions extends Node {
 			this.groundBlending = new PreferencesGroundBlending(buf.g1(), this);
 		}
 		if (version >= 14) {
-			this.displayMode = new PreferencesDisplayMode(buf.g1(), this);
+			this.toolkit = new PreferencesDisplayMode(buf.g1(), this);
 		}
 		if (version >= 15) {
 			this.cpuUsage = new PreferencesCpuUsage(buf.g1(), this);
@@ -603,7 +603,7 @@ public class ClientOptions extends Node {
 		buf.p1(this.skyboxes.getValue());
 		buf.p1(this.characterShadows.getValue());
 		buf.p1(this.textures.getValue());
-		buf.p1(this.displayMode.getValue());
+		buf.p1(this.toolkit.getValue());
 		buf.p1(0);
 		buf.p1(this.waterDetail.getValue());
 		buf.p1(this.maxScreenSize.getValue());
@@ -674,8 +674,8 @@ public class ClientOptions extends Node {
 		this.skyboxes.clampValue();
 		this.characterShadows.clampValue();
 		this.textures.clampValue();
+		this.toolkit.clampValue();
 		this.displayMode.clampValue();
-		this.displayMode2.clampValue();
 		this.waterDetail.clampValue();
 		this.maxScreenSize.clampValue();
 		this.maxScreenSize2.clampValue();

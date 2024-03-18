@@ -95,7 +95,7 @@ public class Cp1252 {
 	}
 
 	@ObfuscatedName("xf.m(CI)Z")
-	public static boolean method10348(char arg0) {
+	public static boolean charIsValid(char arg0) {
 		if (arg0 > ' ' && arg0 < 127 || !(arg0 <= 127 || arg0 >= 160) || arg0 > 160 && arg0 <= 255) {
 			return true;
 		}

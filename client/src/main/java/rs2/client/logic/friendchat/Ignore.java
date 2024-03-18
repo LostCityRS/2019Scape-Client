@@ -6,14 +6,14 @@ import deob.ObfuscatedName;
 public class Ignore {
 
 	@ObfuscatedName("b.e")
-	public String field598;
+	public String nameUnfiltered;
 
 	@ObfuscatedName("b.n")
 	public String field596;
 
 	@ObfuscatedName("b.m")
-	public String field597;
+	public String notes;
 
 	@ObfuscatedName("b.k")
-	public boolean field595;
+	public boolean temporary;
 }

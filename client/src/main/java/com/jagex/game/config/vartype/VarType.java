@@ -48,7 +48,7 @@ public abstract class VarType implements VarConfigType {
 						break;
 					case 1:
 						int var4 = buf.g1();
-						this.dataType = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), var4);
+						this.dataType = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), var4);
 						if (this.dataType != null) {
 							break;
 						}

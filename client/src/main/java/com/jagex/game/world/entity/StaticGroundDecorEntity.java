@@ -58,7 +58,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		this.field11715 = arg3.id;
 		this.field11190 = arg9;
 		this.field11189 = (byte) arg10;
-		this.field11191 = arg3.field7470 != 0 && !arg9;
+		this.field11191 = arg3.active2 != 0 && !arg9;
 		this.field11184 = arg11;
 		this.field11193 = arg1.method2125() && arg3.field7453 && !this.field11190 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field11194 = arg7;
@@ -99,7 +99,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.by(B)I")
-	public int method16523() {
+	public int overlayHeight() {
 		return this.field11192 == null ? 0 : this.field11192.method1748();
 	}
 

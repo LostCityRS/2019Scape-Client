@@ -27,7 +27,7 @@ public abstract class ObjLayerEntity extends GraphEntity {
 	public boolean method18360(Renderer arg0) {
 		Vector3 var2 = this.method10536().field4298;
 		PrimaryLayerEntityList var3 = this.field11716.getEntities(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900);
-		return var3 != null && var3.field7057.field12470 ? this.field11716.field6930.method8950(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, var3.field7057.method16523() + this.method16523()) : this.field11716.field6930.method8927(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900);
+		return var3 != null && var3.field7057.field12470 ? this.field11716.field6930.method8950(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, var3.field7057.overlayHeight() + this.overlayHeight()) : this.field11716.field6930.method8927(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900);
 	}
 
 	@ObfuscatedName("ast.gn(I)Z")

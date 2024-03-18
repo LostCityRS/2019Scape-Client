@@ -12,25 +12,25 @@ public class JavascriptFunction {
 	public static final JavascriptFunction field4024 = new JavascriptFunction(7);
 
 	@ObfuscatedName("ns.m")
-	public static final JavascriptFunction field4023 = new JavascriptFunction(9);
+	public static final JavascriptFunction ACCOUNT_CREATED = new JavascriptFunction(9);
 
 	@ObfuscatedName("ns.k")
-	public static final JavascriptFunction field4028 = new JavascriptFunction(11);
+	public static final JavascriptFunction ACCOUNT_CREATE_STARTED = new JavascriptFunction(11);
 
 	@ObfuscatedName("ns.f")
 	public static final JavascriptFunction field4027 = new JavascriptFunction(1);
 
 	@ObfuscatedName("ns.w")
-	public static final JavascriptFunction field4026 = new JavascriptFunction(6);
+	public static final JavascriptFunction ADVERT_PLAY = new JavascriptFunction(6);
 
 	@ObfuscatedName("ns.l")
-	public static final JavascriptFunction field4029 = new JavascriptFunction(5);
+	public static final JavascriptFunction ADVERT_FORCE_REMOVE = new JavascriptFunction(5);
 
 	@ObfuscatedName("ns.u")
-	public static final JavascriptFunction field4030 = new JavascriptFunction(2);
+	public static final JavascriptFunction ADVERT_ALLOW_SKIP = new JavascriptFunction(2);
 
 	@ObfuscatedName("ns.z")
-	public static final JavascriptFunction field4031 = new JavascriptFunction(4);
+	public static final JavascriptFunction ADVERT_FINISHED = new JavascriptFunction(4);
 
 	@ObfuscatedName("ns.p")
 	public static final JavascriptFunction field4032 = new JavascriptFunction(8);

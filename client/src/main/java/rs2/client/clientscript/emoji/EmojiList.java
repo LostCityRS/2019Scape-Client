@@ -9,7 +9,7 @@ import java.util.LinkedList;
 public class EmojiList {
 
 	@ObfuscatedName("io.n")
-	public boolean field2603 = false;
+	public boolean autochat = false;
 
 	@ObfuscatedName("io.m")
 	public LinkedList field2604 = new LinkedList();
@@ -18,13 +18,13 @@ public class EmojiList {
 	public String field2602;
 
 	@ObfuscatedName("io.e(I)Z")
-	public boolean method4340() {
-		return this.field2603;
+	public boolean isAutochat() {
+		return this.autochat;
 	}
 
 	@ObfuscatedName("io.n(ZS)V")
-	public void method4341(boolean arg0) {
-		this.field2603 = arg0;
+	public void setAutochat(boolean autochat) {
+		this.autochat = autochat;
 	}
 
 	@ObfuscatedName("io.m(I)I")
@@ -33,13 +33,13 @@ public class EmojiList {
 	}
 
 	@ObfuscatedName("alv.k(CB)Z")
-	public static final boolean method18307(char arg0) {
+	public static final boolean isValidChar(char arg0) {
 		return arg0 >= '!' && arg0 < '0' || arg0 >= ':' && arg0 <= '@' && arg0 != '<' || arg0 >= '[' && arg0 <= '_' || arg0 >= '{';
 	}
 
 	@ObfuscatedName("io.f(Ljava/lang/String;III)Z")
-	public final boolean method4342(String arg0, int arg1, int arg2) {
-		if (arg0.isEmpty() || arg0.length() > 10 || !method18307(arg0.charAt(0))) {
+	public final boolean add(String arg0, int arg1, int arg2) {
+		if (arg0.isEmpty() || arg0.length() > 10 || !isValidChar(arg0.charAt(0))) {
 			return false;
 		}
 		Emoji var4 = this.method4361(arg0);
@@ -65,7 +65,7 @@ public class EmojiList {
 	}
 
 	@ObfuscatedName("io.l(Ljava/lang/String;I)V")
-	public final void method4344(String arg0) {
+	public final void remove(String arg0) {
 		Iterator var2 = this.field2604.iterator();
 		while (var2.hasNext()) {
 			Emoji var3 = (Emoji) var2.next();
@@ -77,13 +77,13 @@ public class EmojiList {
 	}
 
 	@ObfuscatedName("io.u(I)V")
-	public final void method4345() {
+	public final void removeAll() {
 		this.field2604.clear();
 		this.field2602 = "";
 	}
 
 	@ObfuscatedName("io.z(Ljava/lang/String;I)Ljava/lang/String;")
-	public final String method4339(String arg0) {
+	public final String substitute(String arg0) {
 		if (this.field2604.isEmpty()) {
 			return arg0;
 		}

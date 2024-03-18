@@ -32,7 +32,7 @@ public class WorldMapDefaults {
 	public int[][] field7697 = new int[3][5];
 
 	public WorldMapDefaults(Js5 arg0) {
-		byte[] var2 = arg0.method6894(DefaultsGroup.field7710.field7708);
+		byte[] var2 = arg0.method6894(DefaultsGroup.WORLDMAP.js5GroupId);
 		if (var2 == null) {
 		}
 		this.method9854(new Packet(var2));

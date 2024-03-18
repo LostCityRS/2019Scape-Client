@@ -31,7 +31,7 @@ public class PreferencesGroundDecoration extends Preference {
 	}
 
 	@ObfuscatedName("amc.s(B)Z")
-	public boolean method18488() {
+	public boolean canMod() {
 		return this.options.modeGame() == ModeGame.RUNESCAPE;
 	}
 

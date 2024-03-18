@@ -24,11 +24,11 @@ public class PreferencesScreenSize extends Preference {
 
 	@ObfuscatedName("amx.e(B)I")
 	public int defaultValue() {
-		return this.options.displayMode2.method18546() && Renderer.method551(this.options.displayMode2.getValue()) ? 1 : 0;
+		return this.options.displayMode.method18546() && Renderer.method551(this.options.displayMode.getValue()) ? 1 : 0;
 	}
 
 	@ObfuscatedName("amx.s(B)Z")
-	public boolean method18578() {
+	public boolean canMod() {
 		return true;
 	}
 

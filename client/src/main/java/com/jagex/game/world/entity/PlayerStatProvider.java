@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface PlayerStatProvider {
 
 	@ObfuscatedName("xp.m(II)I")
-	int method674(int arg0);
+	int getStatBaseLevel(int arg0);
 }

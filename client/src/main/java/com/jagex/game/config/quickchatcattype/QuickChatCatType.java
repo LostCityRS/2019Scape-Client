@@ -9,93 +9,93 @@ import deob.ObfuscatedName;
 public class QuickChatCatType extends SecondaryNode {
 
 	@ObfuscatedName("asd.l")
-	public String field12348;
+	public String description;
 
 	@ObfuscatedName("asd.u")
-	public int[] field12346;
+	public int[] subCategories;
 
 	@ObfuscatedName("asd.z")
-	public char[] field12345;
+	public char[] subCategoriesShortcuts;
 
 	@ObfuscatedName("asd.p")
-	public int[] field12349;
+	public int[] phrases;
 
 	@ObfuscatedName("asd.d")
-	public char[] field12347;
+	public char[] phrasesShortcuts;
 
 	@ObfuscatedName("asd.e(Lalw;I)V")
-	public void method19449(Packet arg0) {
+	public void decode(Packet buf) {
 		while (true) {
-			int var2 = arg0.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method19467(arg0, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("asd.n(Lalw;II)V")
-	public void method19467(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			this.field12348 = arg0.gjstr();
-		} else if (arg1 == 2) {
-			int var3 = arg0.g1();
-			this.field12346 = new int[var3];
-			this.field12345 = new char[var3];
-			for (int var4 = 0; var4 < var3; var4++) {
-				this.field12346[var4] = arg0.g2();
-				byte var5 = arg0.g1b();
-				this.field12345[var4] = var5 == 0 ? 0 : Cp1252.byteToCp1252Char(var5);
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			this.description = buf.gjstr();
+		} else if (code == 2) {
+			int length = buf.g1();
+			this.subCategories = new int[length];
+			this.subCategoriesShortcuts = new char[length];
+			for (int index = 0; index < length; index++) {
+				this.subCategories[index] = buf.g2();
+				byte var5 = buf.g1b();
+				this.subCategoriesShortcuts[index] = var5 == 0 ? 0 : Cp1252.byteToCp1252Char(var5);
 			}
-		} else if (arg1 == 3) {
-			int var6 = arg0.g1();
-			this.field12349 = new int[var6];
-			this.field12347 = new char[var6];
-			for (int var7 = 0; var7 < var6; var7++) {
-				this.field12349[var7] = arg0.g2();
-				byte var8 = arg0.g1b();
-				this.field12347[var7] = var8 == 0 ? 0 : Cp1252.byteToCp1252Char(var8);
+		} else if (code == 3) {
+			int length = buf.g1();
+			this.phrases = new int[length];
+			this.phrasesShortcuts = new char[length];
+			for (int index = 0; index < length; index++) {
+				this.phrases[index] = buf.g2();
+				byte var8 = buf.g1b();
+				this.phrasesShortcuts[index] = var8 == 0 ? 0 : Cp1252.byteToCp1252Char(var8);
 			}
-		} else if (arg1 == 4) {
+		} else if (code == 4) {
 		}
 	}
 
 	@ObfuscatedName("asd.m(CI)I")
-	public int method19460(char arg0) {
-		if (this.field12346 == null) {
+	public int getSubCategoryByShortcut(char shortcut) {
+		if (this.subCategories == null) {
 			return -1;
 		}
-		for (int var2 = 0; var2 < this.field12346.length; var2++) {
-			if (this.field12345[var2] == arg0) {
-				return this.field12346[var2];
+		for (int index = 0; index < this.subCategories.length; index++) {
+			if (this.subCategoriesShortcuts[index] == shortcut) {
+				return this.subCategories[index];
 			}
 		}
 		return -1;
 	}
 
 	@ObfuscatedName("asd.k(CI)I")
-	public int method19451(char arg0) {
-		if (this.field12349 == null) {
+	public int getPhraseByShortcut(char shortcut) {
+		if (this.phrases == null) {
 			return -1;
 		}
-		for (int var2 = 0; var2 < this.field12349.length; var2++) {
-			if (this.field12347[var2] == arg0) {
-				return this.field12349[var2];
+		for (int index = 0; index < this.phrases.length; index++) {
+			if (this.phrasesShortcuts[index] == shortcut) {
+				return this.phrases[index];
 			}
 		}
 		return -1;
 	}
 
 	@ObfuscatedName("asd.f(I)V")
-	public void method19452() {
-		if (this.field12349 != null) {
-			for (int var1 = 0; var1 < this.field12349.length; var1++) {
-				this.field12349[var1] |= 0x8000;
+	public void postDecode() {
+		if (this.phrases != null) {
+			for (int index = 0; index < this.phrases.length; index++) {
+				this.phrases[index] |= 0x8000;
 			}
 		}
-		if (this.field12346 != null) {
-			for (int var2 = 0; var2 < this.field12346.length; var2++) {
-				this.field12346[var2] |= 0x8000;
+		if (this.subCategories != null) {
+			for (int index = 0; index < this.subCategories.length; index++) {
+				this.subCategories[index] |= 0x8000;
 			}
 		}
 	}

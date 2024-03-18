@@ -12,26 +12,26 @@ public class Friend {
 	public String field607;
 
 	@ObfuscatedName("g.m")
-	public int field608;
+	public int worldId;
 
 	@ObfuscatedName("g.k")
-	public String field612;
+	public String worldName;
 
 	@ObfuscatedName("g.f")
-	public int field610;
+	public int rank;
 
 	@ObfuscatedName("g.w")
-	public int field611;
+	public int platform;
 
 	@ObfuscatedName("g.l")
-	public boolean field609;
+	public boolean referrer;
 
 	@ObfuscatedName("g.u")
-	public boolean field613;
+	public boolean referred;
 
 	@ObfuscatedName("g.z")
-	public String field614;
+	public String notes;
 
 	@ObfuscatedName("g.p")
-	public int field615;
+	public int worldFlags;
 }

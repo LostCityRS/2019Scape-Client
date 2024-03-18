@@ -35,7 +35,7 @@ public class PreferencesDisplayMode extends Preference {
 	}
 
 	@ObfuscatedName("amd.s(B)Z")
-	public boolean method18547() {
+	public boolean canMod() {
 		return true;
 	}
 

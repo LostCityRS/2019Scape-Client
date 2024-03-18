@@ -87,20 +87,20 @@ public class EnumType implements ConfigType, ConfigRelated {
 				}
 			}
 		} else if (code == 101) {
-			this.inputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
+			this.inputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
 		} else if (code == 102) {
-			this.outputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.method7293(), buf.gSmart1or2());
+			this.outputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
 		}
 	}
 
 	@ObfuscatedName("abm.p(II)I")
-	public int method14848(int arg0) {
+	public int getValueInt(int arg0) {
 		Object var2 = this.method14850(arg0);
 		return var2 == null ? this.defaultInt : (Integer) var2;
 	}
 
 	@ObfuscatedName("abm.d(II)Ljava/lang/String;")
-	public String method14849(int arg0) {
+	public String getValueString(int arg0) {
 		Object var2 = this.method14850(arg0);
 		return var2 == null ? this.defaultString : (String) var2;
 	}
@@ -117,7 +117,7 @@ public class EnumType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("abm.o(Ljava/lang/Object;B)Z")
-	public boolean method14851(Object arg0) {
+	public boolean hasOutputString(Object arg0) {
 		if (this.valuesCount == 0) {
 			return false;
 		} else {
@@ -141,7 +141,7 @@ public class EnumType implements ConfigType, ConfigRelated {
 	}
 
 	@ObfuscatedName("abm.y(I)I")
-	public int method14847() {
+	public int getOutputCount() {
 		return this.valuesCount;
 	}
 

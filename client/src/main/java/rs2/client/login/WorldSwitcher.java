@@ -23,7 +23,7 @@ public class WorldSwitcher {
 	public static ServerAddress httpContent;
 
 	@ObfuscatedName("abz.k")
-	public static ServerAddress field8755;
+	public static ServerAddress currentWorld;
 
 	@ObfuscatedName("abz.f")
 	public static ServerAddress world;
@@ -94,11 +94,11 @@ public class WorldSwitcher {
 
 	@ObfuscatedName("vu.n(ILjava/lang/String;III)Z")
 	public static boolean method9401(int arg0, String arg1, int arg2, int arg3) {
-		field8755 = new ServerAddress();
-		field8755.node = arg0;
-		field8755.host = arg1;
-		field8755.port = arg2;
-		field8755.port2 = arg3;
+		currentWorld = new ServerAddress();
+		currentWorld.node = arg0;
+		currentWorld.host = arg1;
+		currentWorld.port = arg2;
+		currentWorld.port2 = arg3;
 		return true;
 	}
 
@@ -133,7 +133,7 @@ public class WorldSwitcher {
 
 	@ObfuscatedName("o.u(I)Lalc;")
 	public static GWCWorld method477() {
-		return GWC.method4944(field8755.node);
+		return GWC.method4944(currentWorld.node);
 	}
 
 	@ObfuscatedName("kt.z(IZIZB)V")

@@ -10,22 +10,22 @@ import deob.ObfuscatedName;
 public class IDKType implements ConfigType {
 
 	@ObfuscatedName("jv.e")
-	public final Js5 js5;
+	public final Js5 configClient;
 
 	@ObfuscatedName("jv.n")
 	public int[] models;
 
 	@ObfuscatedName("jv.m")
-	public short[] field2949;
+	public short[] recol_s;
 
 	@ObfuscatedName("jv.k")
-	public short[] field2954;
+	public short[] recol_d;
 
 	@ObfuscatedName("jv.f")
-	public short[] field2958;
+	public short[] retex_s;
 
 	@ObfuscatedName("jv.w")
-	public short[] field2953;
+	public short[] retex_d;
 
 	@ObfuscatedName("jv.l")
 	public byte[] field2952;
@@ -42,8 +42,8 @@ public class IDKType implements ConfigType {
 	@ObfuscatedName("jv.d")
 	public static final int[] field2959 = new int[] { 7, 8, 9, 10, 11, 12, 13, 15 };
 
-	public IDKType(int id, Js5 js5) {
-		this.js5 = js5;
+	public IDKType(int id, Js5 configClient) {
+		this.configClient = configClient;
 	}
 
 	@ObfuscatedName("jv.e(Lalw;B)V")
@@ -69,20 +69,20 @@ public class IDKType implements ConfigType {
 			}
 		} else if (code != 3) {
 			if (code == 40) {
-				int var5 = buf.g1();
-				this.field2949 = new short[var5];
-				this.field2954 = new short[var5];
-				for (int var6 = 0; var6 < var5; var6++) {
-					this.field2949[var6] = (short) buf.g2();
-					this.field2954[var6] = (short) buf.g2();
+				int length = buf.g1();
+				this.recol_s = new short[length];
+				this.recol_d = new short[length];
+				for (int index = 0; index < length; index++) {
+					this.recol_s[index] = (short) buf.g2();
+					this.recol_d[index] = (short) buf.g2();
 				}
 			} else if (code == 41) {
-				int var7 = buf.g1();
-				this.field2958 = new short[var7];
-				this.field2953 = new short[var7];
-				for (int var8 = 0; var8 < var7; var8++) {
-					this.field2958[var8] = (short) buf.g2();
-					this.field2953[var8] = (short) buf.g2();
+				int length = buf.g1();
+				this.retex_s = new short[length];
+				this.retex_d = new short[length];
+				for (int index = 0; index < length; index++) {
+					this.retex_s[index] = (short) buf.g2();
+					this.retex_d[index] = (short) buf.g2();
 				}
 			} else if (code == 44) {
 				int var9 = buf.g2();
@@ -130,10 +130,10 @@ public class IDKType implements ConfigType {
 			return true;
 		}
 		boolean var1 = true;
-		Js5 var2 = this.js5;
-		synchronized (this.js5) {
+		Js5 var2 = this.configClient;
+		synchronized (this.configClient) {
 			for (int var3 = 0; var3 < this.models.length; var3++) {
-				if (!this.js5.requestdownload(this.models[var3], 0)) {
+				if (!this.configClient.requestdownload(this.models[var3], 0)) {
 					var1 = false;
 				}
 			}
@@ -147,14 +147,14 @@ public class IDKType implements ConfigType {
 			return null;
 		}
 		ModelUnlit[] var1 = new ModelUnlit[this.models.length];
-		Js5 var2 = this.js5;
-		synchronized (this.js5) {
+		Js5 var2 = this.configClient;
+		synchronized (this.configClient) {
 			int var3 = 0;
 			while (true) {
 				if (var3 >= this.models.length) {
 					break;
 				}
-				var1[var3] = ModelUnlit.method1931(this.js5, this.models[var3], 0);
+				var1[var3] = ModelUnlit.method1931(this.configClient, this.models[var3], 0);
 				var3++;
 			}
 		}
@@ -172,14 +172,14 @@ public class IDKType implements ConfigType {
 		if (var6 == null) {
 			return null;
 		}
-		if (this.field2949 != null) {
-			for (int var7 = 0; var7 < this.field2949.length; var7++) {
-				var6.method1943(this.field2949[var7], this.field2954[var7]);
+		if (this.recol_s != null) {
+			for (int var7 = 0; var7 < this.recol_s.length; var7++) {
+				var6.method1943(this.recol_s[var7], this.recol_d[var7]);
 			}
 		}
-		if (this.field2958 != null) {
-			for (int var8 = 0; var8 < this.field2958.length; var8++) {
-				var6.method1937(this.field2958[var8], this.field2953[var8]);
+		if (this.retex_s != null) {
+			for (int var8 = 0; var8 < this.retex_s.length; var8++) {
+				var6.method1937(this.retex_s[var8], this.retex_d[var8]);
 			}
 		}
 		return var6;
@@ -188,10 +188,10 @@ public class IDKType implements ConfigType {
 	@ObfuscatedName("jv.d(I)Z")
 	public boolean method5001() {
 		boolean var1 = true;
-		Js5 var2 = this.js5;
-		synchronized (this.js5) {
+		Js5 var2 = this.configClient;
+		synchronized (this.configClient) {
 			for (int var3 = 0; var3 < 5; var3++) {
-				if (this.heads[var3] != -1 && !this.js5.requestdownload(this.heads[var3], 0)) {
+				if (this.heads[var3] != -1 && !this.configClient.requestdownload(this.heads[var3], 0)) {
 					var1 = false;
 				}
 			}
@@ -203,15 +203,15 @@ public class IDKType implements ConfigType {
 	public ModelUnlit getHeadModel() {
 		ModelUnlit[] var1 = new ModelUnlit[5];
 		int var2 = 0;
-		Js5 var3 = this.js5;
-		synchronized (this.js5) {
+		Js5 var3 = this.configClient;
+		synchronized (this.configClient) {
 			int var4 = 0;
 			while (true) {
 				if (var4 >= 5) {
 					break;
 				}
 				if (this.heads[var4] != -1) {
-					var1[var2++] = ModelUnlit.method1931(this.js5, this.heads[var4], 0);
+					var1[var2++] = ModelUnlit.method1931(this.configClient, this.heads[var4], 0);
 				}
 				var4++;
 			}
@@ -222,14 +222,14 @@ public class IDKType implements ConfigType {
 			}
 		}
 		ModelUnlit var7 = new ModelUnlit(var1, var2);
-		if (this.field2949 != null) {
-			for (int var8 = 0; var8 < this.field2949.length; var8++) {
-				var7.method1943(this.field2949[var8], this.field2954[var8]);
+		if (this.recol_s != null) {
+			for (int var8 = 0; var8 < this.recol_s.length; var8++) {
+				var7.method1943(this.recol_s[var8], this.recol_d[var8]);
 			}
 		}
-		if (this.field2958 != null) {
-			for (int var9 = 0; var9 < this.field2958.length; var9++) {
-				var7.method1937(this.field2958[var9], this.field2953[var9]);
+		if (this.retex_s != null) {
+			for (int var9 = 0; var9 < this.retex_s.length; var9++) {
+				var7.method1937(this.retex_s[var9], this.retex_d[var9]);
 			}
 		}
 		return var7;

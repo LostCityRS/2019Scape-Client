@@ -54,7 +54,7 @@ public class AccountCreationManager {
 
 	@ObfuscatedName("dk.e(I)V")
 	public static void method2009() {
-		if (Client.state == 4 && (!LoginManager.method2865() && !method9610())) {
+		if (Client.state == 4 && (!LoginManager.isInProgress() && !method9610())) {
 			Client.setState(12);
 		}
 	}
@@ -135,7 +135,7 @@ public class AccountCreationManager {
 		var5.buf.psize2(var5.buf.pos - var6);
 		Client.lobbyConnection.queue(var5);
 		if (arg2 < 13) {
-			Client.field10814 = true;
+			Client.isUnder13 = true;
 			Client.method3094();
 		}
 		field4406 = CreateAccountReply.field8388;
@@ -151,27 +151,27 @@ public class AccountCreationManager {
 	}
 
 	@ObfuscatedName("et.z(I)Lzl;")
-	public static ConnectReply method2858() {
+	public static ConnectReply getConnectReply() {
 		return field584 == null ? ConnectReply.field8361 : field584;
 	}
 
 	@ObfuscatedName("amf.p(I)Lzb;")
-	public static CreateAccountReply method18475() {
+	public static CreateAccountReply getReply() {
 		return field4406 == null ? CreateAccountReply.field8390 : field4406;
 	}
 
 	@ObfuscatedName("vn.d(B)Lzx;")
-	public static CheckEmailReply method9583() {
+	public static CheckEmailReply getEmailValidateReply() {
 		return field872 == null ? CheckEmailReply.field8397 : field872;
 	}
 
 	@ObfuscatedName("ahj.c(B)Lzr;")
-	public static CheckNameReply method16613() {
+	public static CheckNameReply getNameValidateReply() {
 		return field2589 == null ? CheckNameReply.field8407 : field2589;
 	}
 
 	@ObfuscatedName("ahn.r(B)Lzg;")
-	public static SuggestNameReply method16742() {
+	public static SuggestNameReply getSuggestNameReply() {
 		return field585 == null ? SuggestNameReply.field8394 : field585;
 	}
 
@@ -235,7 +235,7 @@ public class AccountCreationManager {
 				field581 = method4942(var1);
 				int var3 = var1.buf.pos;
 				var1.buf.pjstr(Client.field10789);
-				var1.buf.p2(Client.field10772);
+				var1.buf.p2(Client.playerIsAffiliate);
 				var1.buf.p4(Client.field10776);
 				var1.buf.p4(Client.field10775);
 				var1.buf.pjstr(Client.field579);
@@ -281,7 +281,7 @@ public class AccountCreationManager {
 					Client.lobbyConnection.lastPacketType1 = null;
 					Client.lobbyConnection.lastPacketType2 = null;
 					Client.lobbyConnection.idleNetCycles = 0;
-					Client.field7410.field632.method9624();
+					Client.localPlayerGameState.varps.method9624();
 					DelayedStateChange.method716();
 				} else {
 					Client.lobbyConnection.closeGracefully();

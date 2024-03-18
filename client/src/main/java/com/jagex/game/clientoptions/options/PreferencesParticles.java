@@ -33,7 +33,7 @@ public class PreferencesParticles extends Preference {
 	}
 
 	@ObfuscatedName("amf.s(S)Z")
-	public boolean method18466() {
+	public boolean canMod() {
 		return this.options.hardwareInfo().maxmemory() >= 245;
 	}
 

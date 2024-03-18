@@ -36,7 +36,7 @@ public class DBTableIndex {
 		int var2 = arg0.gVarInt2();
 		this.field9180 = new HashMap(var2);
 		while (var2-- > 0) {
-			Object var3 = this.field9181.method7335(arg0);
+			Object var3 = this.field9181.dbDecode(arg0);
 			int var4 = arg0.gVarInt2();
 			ArrayList var5 = new ArrayList();
 			while (var4-- > 0) {

@@ -40,9 +40,9 @@ public class ObjTypeCustomisation {
 			this.field8714 = new short[arg0.recol_d.length];
 			System.arraycopy(arg0.recol_d, 0, this.field8714, 0, this.field8714.length);
 		}
-		if (arg0.field8635 != null) {
-			this.field8715 = new short[arg0.field8635.length];
-			System.arraycopy(arg0.field8635, 0, this.field8715, 0, this.field8715.length);
+		if (arg0.retex_d != null) {
+			this.field8715 = new short[arg0.retex_d.length];
+			System.arraycopy(arg0.retex_d, 0, this.field8715, 0, this.field8715.length);
 		}
 	}
 

@@ -16,129 +16,129 @@ public class PlayerGroupMember {
 	public final long field1924;
 
 	@ObfuscatedName("gy.k")
-	public final PlayerStat[] field1927;
+	public final PlayerStat[] stats;
 
 	@ObfuscatedName("gy.f")
-	public final VarContainerSparse field1926;
+	public final VarContainerSparse vars;
 
 	@ObfuscatedName("gy.w")
-	public boolean field1930;
+	public boolean members;
 
 	@ObfuscatedName("gy.l")
-	public String field1928;
+	public String displayName;
 
 	@ObfuscatedName("gy.u")
-	public int field1922;
+	public int nodeId;
 
 	@ObfuscatedName("gy.z")
-	public boolean field1929;
+	public boolean online;
 
 	@ObfuscatedName("gy.p")
-	public int field1925;
+	public int rank;
 
 	@ObfuscatedName("gy.d")
-	public PlayerGroupMemberStatus field1932;
+	public PlayerGroupMemberStatus status;
 
 	@ObfuscatedName("gy.c")
-	public int field1933;
+	public int team;
 
 	@ObfuscatedName("gy.r")
 	public VarContainerSparse field1934;
 
-	public PlayerGroupMember(Packet arg0, boolean arg1, boolean arg2, PlayerGroupResourceProvider arg3) {
+	public PlayerGroupMember(Packet buf, boolean arg1, boolean arg2, PlayerGroupResourceProvider arg3) {
 		if (arg1) {
-			this.field1924 = arg0.g8();
+			this.field1924 = buf.g8();
 		} else {
 			this.field1924 = -1L;
 		}
 		if (arg2) {
-			this.field1928 = arg0.fastgstr();
+			this.displayName = buf.fastgstr();
 		}
-		int var5 = arg0.g1();
-		this.field1930 = (var5 & 0x1) != 0;
-		this.field1929 = (var5 & 0x2) != 0;
-		this.field1927 = new PlayerStat[arg3.method295().getSkillCount()];
-		int var6 = arg0.g1();
-		if (var6 > this.field1927.length) {
+		int var5 = buf.g1();
+		this.members = (var5 & 0x1) != 0;
+		this.online = (var5 & 0x2) != 0;
+		this.stats = new PlayerStat[arg3.method295().getSkillCount()];
+		int var6 = buf.g1();
+		if (var6 > this.stats.length) {
 			throw new IllegalStateException("");
 		}
-		for (int var7 = 0; var7 < this.field1927.length; var7++) {
-			PlayerStat var8 = this.field1927[var7] = new PlayerStat(arg3.method295().getSkill(var7), true);
+		for (int var7 = 0; var7 < this.stats.length; var7++) {
+			PlayerStat var8 = this.stats[var7] = new PlayerStat(arg3.method295().getSkill(var7), true);
 			if (var7 < var6) {
-				var8.setXP(arg0.g4s());
+				var8.setXP(buf.g4s());
 			} else {
 				var8.setXP(0);
 			}
 			var8.setLevel(var8.getBaseLevel());
 		}
-		int var9 = arg0.g2();
-		this.field1926 = new VarContainerSparse(arg3.method293());
+		int var9 = buf.g2();
+		this.vars = new VarContainerSparse(arg3.method293());
 		for (int var10 = 0; var10 < var9; var10++) {
-			VarValue var11 = arg3.method293().decodeVarValue(arg0);
-			this.field1926.method14735(var11.field4240, var11.field4239);
+			VarValue var11 = arg3.method293().decodeVarValue(buf);
+			this.vars.method14735(var11.field4240, var11.field4239);
 		}
-		this.field1922 = arg0.g2();
-		if (this.field1922 == 65535) {
-			this.field1922 = -1;
+		this.nodeId = buf.g2();
+		if (this.nodeId == 65535) {
+			this.nodeId = -1;
 		}
-		this.field1925 = arg0.g1();
-		this.field1932 = (PlayerGroupMemberStatus) SerializableEnums.decode(PlayerGroupMemberStatus.method3603(), arg0.g1());
-		this.field1933 = arg0.g1();
+		this.rank = buf.g1();
+		this.status = (PlayerGroupMemberStatus) SerializableEnums.decode(PlayerGroupMemberStatus.method3603(), buf.g1());
+		this.team = buf.g1();
 	}
 
 	@ObfuscatedName("gy.e(I)Ljava/lang/String;")
-	public String method3488() {
-		return this.field1928;
+	public String getDisplayName() {
+		return this.displayName;
 	}
 
 	@ObfuscatedName("gy.n(S)I")
-	public int method3493() {
-		return this.field1925;
+	public int getRank() {
+		return this.rank;
 	}
 
 	@ObfuscatedName("gy.m(IB)V")
-	public void method3489(int arg0) {
-		this.field1925 = arg0;
+	public void setRank(int rank) {
+		this.rank = rank;
 	}
 
 	@ObfuscatedName("gy.k(B)I")
-	public int method3491() {
-		return this.field1922;
+	public int getNodeId() {
+		return this.nodeId;
 	}
 
 	@ObfuscatedName("gy.f(II)V")
-	public void method3535(int arg0) {
-		this.field1922 = arg0;
+	public void setNodeId(int nodeId) {
+		this.nodeId = nodeId;
 	}
 
 	@ObfuscatedName("gy.w(B)Z")
-	public boolean method3529() {
-		return this.field1929;
+	public boolean isOnline() {
+		return this.online;
 	}
 
 	@ObfuscatedName("gy.l(ZB)V")
-	public void method3507(boolean arg0) {
-		this.field1929 = arg0;
+	public void setOnline(boolean online) {
+		this.online = online;
 	}
 
 	@ObfuscatedName("gy.u(S)Lgv;")
-	public PlayerGroupMemberStatus method3495() {
-		return this.field1932;
+	public PlayerGroupMemberStatus getStatus() {
+		return this.status;
 	}
 
 	@ObfuscatedName("gy.z(Lgv;I)V")
-	public void method3496(PlayerGroupMemberStatus arg0) {
-		this.field1932 = arg0;
+	public void setStatus(PlayerGroupMemberStatus status) {
+		this.status = status;
 	}
 
 	@ObfuscatedName("gy.p(B)I")
-	public int method3497() {
-		return this.field1933;
+	public int getTeam() {
+		return this.team;
 	}
 
 	@ObfuscatedName("gy.d(II)V")
-	public void method3498(int arg0) {
-		this.field1933 = arg0;
+	public void setTeam(int team) {
+		this.team = team;
 	}
 
 	@ObfuscatedName("gy.c(I)J")
@@ -147,28 +147,28 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.r(I)Z")
-	public boolean method3500() {
-		return this.field1930;
+	public boolean isMembers() {
+		return this.members;
 	}
 
 	@ObfuscatedName("gy.v(IB)Lxz;")
-	public PlayerStat method3501(int arg0) {
-		return this.field1927[arg0];
+	public PlayerStat getStat(int stat) {
+		return this.stats[stat];
 	}
 
 	@ObfuscatedName("gy.o(Lgy;I)V")
 	public void method3502(PlayerGroupMember arg0) {
-		for (int var2 = 0; var2 < this.field1927.length; var2++) {
-			this.field1927[var2].setXP(arg0.field1927[var2].getXP());
-			this.field1927[var2].setLevel(this.field1927[var2].getBaseLevel());
+		for (int var2 = 0; var2 < this.stats.length; var2++) {
+			this.stats[var2].setXP(arg0.stats[var2].getXP());
+			this.stats[var2].setLevel(this.stats[var2].getBaseLevel());
 		}
-		this.field1926.method14749();
-		Iterator var3 = arg0.field1926.iterator();
+		this.vars.method14749();
+		Iterator var3 = arg0.vars.iterator();
 		while (var3.hasNext()) {
 			VarValue var4 = (VarValue) var3.next();
-			this.field1926.method14735(var4.field4240, var4.field4239);
+			this.vars.method14735(var4.field4240, var4.field4239);
 		}
-		this.field1930 = arg0.field1930;
+		this.members = arg0.members;
 	}
 
 	@ObfuscatedName("gy.s(Lgu;B)V")

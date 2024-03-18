@@ -16,7 +16,7 @@ public class VarLifetime implements SerializableEnum {
 	public static final VarLifetime SERVER_PERMANENT = new VarLifetime(2);
 
 	@ObfuscatedName("qj.k")
-	public final int field4612;
+	public final int serialID;
 
 	@ObfuscatedName("aw.e(B)[Lqj;")
 	public static VarLifetime[] method748() {
@@ -24,11 +24,11 @@ public class VarLifetime implements SerializableEnum {
 	}
 
 	public VarLifetime(int arg0) {
-		this.field4612 = arg0;
+		this.serialID = arg0;
 	}
 
 	@ObfuscatedName("qj.n()I")
 	public int getId() {
-		return this.field4612;
+		return this.serialID;
 	}
 }

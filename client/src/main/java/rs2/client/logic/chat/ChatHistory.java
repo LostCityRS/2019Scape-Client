@@ -34,7 +34,7 @@ public class ChatHistory {
 	}
 
 	@ObfuscatedName("amx.n(I)I")
-	public static int method18587() {
+	public static int lastUid() {
 		return field2595 - 1;
 	}
 
@@ -78,7 +78,7 @@ public class ChatHistory {
 	}
 
 	@ObfuscatedName("pg.z(II)I")
-	public static int method6970(int arg0) {
+	public static int length(int arg0) {
 		TypeChatLines var1 = (TypeChatLines) field2594.get(arg0);
 		return var1 == null ? 0 : var1.method4331();
 	}
@@ -92,7 +92,7 @@ public class ChatHistory {
 	}
 
 	@ObfuscatedName("agj.d(II)I")
-	public static int method16440(int arg0) {
+	public static int previousUid(int arg0) {
 		ChatLine var1 = (ChatLine) field2597.method14495((long) arg0);
 		if (var1 == null) {
 			return -1;
@@ -104,7 +104,7 @@ public class ChatHistory {
 	}
 
 	@ObfuscatedName("ko.c(II)I")
-	public static int method5157(int arg0) {
+	public static int nextUid(int arg0) {
 		ChatLine var1 = (ChatLine) field2597.method14495((long) arg0);
 		if (var1 == null) {
 			return -1;

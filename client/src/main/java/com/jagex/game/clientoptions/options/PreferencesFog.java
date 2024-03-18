@@ -33,7 +33,7 @@ public class PreferencesFog extends Preference {
 	}
 
 	@ObfuscatedName("amb.s(B)Z")
-	public boolean method18431() {
+	public boolean canMod() {
 		return true;
 	}
 

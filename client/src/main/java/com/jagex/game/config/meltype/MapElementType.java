@@ -35,13 +35,13 @@ public class MapElementType implements ConfigType {
 	public final int field2367;
 
 	@ObfuscatedName("hs.k")
-	public int field2400 = -1;
+	public int sprite = -1;
 
 	@ObfuscatedName("hs.f")
 	public int field2403 = -1;
 
 	@ObfuscatedName("hs.w")
-	public String field2370;
+	public String text;
 
 	@ObfuscatedName("hs.l")
 	public int field2366;
@@ -50,7 +50,7 @@ public class MapElementType implements ConfigType {
 	public int field2372 = -1;
 
 	@ObfuscatedName("hs.z")
-	public int field2388 = 0;
+	public int textSize = 0;
 
 	@ObfuscatedName("hs.r")
 	public int field2377;
@@ -152,10 +152,10 @@ public class MapElementType implements ConfigType {
 	public boolean field2409 = true;
 
 	@ObfuscatedName("hs.ay")
-	public int field2374 = -1;
+	public int category = -1;
 
 	@ObfuscatedName("hs.ab")
-	public IterableMap field2411;
+	public IterableMap params;
 
 	@ObfuscatedName("hs.az")
 	public int field2384 = -1;
@@ -180,17 +180,17 @@ public class MapElementType implements ConfigType {
 	@ObfuscatedName("hs.u(Lalw;II)V")
 	public void method4038(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field2400 = arg0.gSmart2or4null();
+			this.sprite = arg0.gSmart2or4null();
 		} else if (arg1 == 2) {
 			this.field2403 = arg0.gSmart2or4null();
 		} else if (arg1 == 3) {
-			this.field2370 = arg0.gjstr();
+			this.text = arg0.gjstr();
 		} else if (arg1 == 4) {
 			this.field2366 = arg0.g3();
 		} else if (arg1 == 5) {
 			this.field2372 = arg0.g3();
 		} else if (arg1 == 6) {
-			this.field2388 = arg0.g1();
+			this.textSize = arg0.g1();
 		} else if (arg1 == 7) {
 			int var3 = arg0.g1();
 			if ((var3 & 0x1) == 0) {
@@ -237,7 +237,7 @@ public class MapElementType implements ConfigType {
 		} else if (arg1 == 18) {
 			this.field2383 = arg0.gSmart2or4null();
 		} else if (arg1 == 19) {
-			this.field2374 = arg0.g2();
+			this.category = arg0.g2();
 		} else if (arg1 == 20) {
 			this.field2390 = arg0.g2();
 			if (this.field2390 == 65535) {
@@ -295,9 +295,9 @@ public class MapElementType implements ConfigType {
 			this.field2405 = (MapAlignmentY) SerializableEnums.decode(MapAlignmentY.method15088(), arg0.g1());
 		} else if (arg1 == 249) {
 			int var9 = arg0.g1();
-			if (this.field2411 == null) {
+			if (this.params == null) {
 				int var10 = IntMath.bitceil(var9);
-				this.field2411 = new IterableMap(var10);
+				this.params = new IterableMap(var10);
 			}
 			for (int var11 = 0; var11 < var9; var11++) {
 				boolean var12 = arg0.g1() == 1;
@@ -308,7 +308,7 @@ public class MapElementType implements ConfigType {
 				} else {
 					var14 = new IntWrapper(arg0.g4s());
 				}
-				this.field2411.method14501(var14, (long) var13);
+				this.params.method14501(var14, (long) var13);
 			}
 		}
 	}
@@ -340,10 +340,10 @@ public class MapElementType implements ConfigType {
 			if (this.field2371 == -1) {
 				return true;
 			}
-			VarBitType var6 = arg0.method694(this.field2371);
+			VarBitType var6 = arg0.getVarBitType(this.field2371);
 			var5 = arg1.getVarBitValue(var6);
 		} else {
-			VarType var4 = arg0.method695(VarDomainType.PLAYER, this.field2387);
+			VarType var4 = arg0.getVarType(VarDomainType.PLAYER, this.field2387);
 			var5 = arg1.getVarValueInt(var4);
 		}
 		if (this.field2392 != null) {
@@ -368,10 +368,10 @@ public class MapElementType implements ConfigType {
 			if (this.field2390 == -1) {
 				return true;
 			}
-			VarBitType var11 = arg0.method694(this.field2390);
+			VarBitType var11 = arg0.getVarBitType(this.field2390);
 			var10 = arg1.getVarBitValue(var11);
 		} else {
-			VarType var9 = arg0.method695(VarDomainType.PLAYER, this.field2391);
+			VarType var9 = arg0.getVarType(VarDomainType.PLAYER, this.field2391);
 			var10 = arg1.getVarValueInt(var9);
 		}
 		if (var10 >= this.field2380 && var10 <= this.field2389) {
@@ -383,7 +383,7 @@ public class MapElementType implements ConfigType {
 
 	@ObfuscatedName("hs.p(Ldh;ZI)Lcm;")
 	public Sprite method4025(Renderer arg0, boolean arg1) {
-		int var3 = arg1 ? this.field2403 : this.field2400;
+		int var3 = arg1 ? this.field2403 : this.sprite;
 		int var4 = var3 | arg0.field1595 << 29;
 		Sprite var5 = (Sprite) this.field2368.field2414.method2930((long) var4);
 		if (var5 != null) {
@@ -435,20 +435,20 @@ public class MapElementType implements ConfigType {
 
 	@ObfuscatedName("hs.r(III)I")
 	public int method4028(int arg0, int arg1) {
-		if (this.field2411 == null) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.field2411.method14495((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.params.method14495((long) arg0);
 			return var3 == null ? arg1 : var3.field11442;
 		}
 	}
 
 	@ObfuscatedName("hs.v(ILjava/lang/String;I)Ljava/lang/String;")
 	public String method4029(int arg0, String arg1) {
-		if (this.field2411 == null) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.field2411.method14495((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.params.method14495((long) arg0);
 			return var3 == null ? arg1 : (String) var3.field11436;
 		}
 	}
@@ -457,12 +457,12 @@ public class MapElementType implements ConfigType {
 	public final MapElementType method4024(VariableTypeProvider arg0, VarIntDomain arg1) {
 		int var3 = -1;
 		if (this.field2371 != -1) {
-			VarBitType var4 = arg0.method694(this.field2371);
+			VarBitType var4 = arg0.getVarBitType(this.field2371);
 			if (var4 != null) {
 				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.field2387 != -1) {
-			VarType var5 = arg0.method695(VarDomainType.PLAYER, this.field2387);
+			VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.field2387);
 			if (var5 != null) {
 				var3 = arg1.getVarValueInt(var5);
 			}

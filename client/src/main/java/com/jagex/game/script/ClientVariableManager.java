@@ -141,8 +141,8 @@ public final class ClientVariableManager extends SparseVarDomain {
 						return;
 					}
 					for (int var12 = 0; var12 < var10; var12++) {
-						VarValue var13 = Client.field8911.decodeVarValue(var5);
-						if (this.field10251[var13.field4240] == VarLifetime.PERMANENT && ((VarType) Client.field8911.list(var13.field4240)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.field4239.getClass())) {
+						VarValue var13 = Client.varBasicTypeList.decodeVarValue(var5);
+						if (this.field10251[var13.field4240] == VarLifetime.PERMANENT && ((VarType) Client.varBasicTypeList.list(var13.field4240)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.field4239.getClass())) {
 							this.field1708.method14735(var13.field4240, var13.field4239);
 						}
 					}
@@ -169,7 +169,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 			while (var4.hasNext()) {
 				VarValue var5 = (VarValue) var4.next();
 				if (this.field10251[var5.field4240] == VarLifetime.PERMANENT) {
-					var2 += Client.field8911.getValueEncodingLength(var5);
+					var2 += Client.varBasicTypeList.getValueEncodingLength(var5);
 					var3++;
 				}
 			}
@@ -180,7 +180,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 			while (var7.hasNext()) {
 				VarValue var8 = (VarValue) var7.next();
 				if (this.field10251[var8.field4240] == VarLifetime.PERMANENT) {
-					Client.field8911.encodeVarValue(var6, var8);
+					Client.varBasicTypeList.encodeVarValue(var6, var8);
 				}
 			}
 			arg0.method14808(var6.data, 0, var6.pos);
@@ -228,10 +228,10 @@ public final class ClientVariableManager extends SparseVarDomain {
 		var5.buf.pos++;
 		while (this.field10258 < this.field10257.length) {
 			VarValue var7 = this.field10257[this.field10258];
-			if (var5.buf.pos + var4.writePos + Client.field8911.getValueEncodingLength(var7) > 1500) {
+			if (var5.buf.pos + var4.writePos + Client.varBasicTypeList.getValueEncodingLength(var7) > 1500) {
 				break;
 			}
-			Client.field8911.encodeVarValue(var5.buf, var7);
+			Client.varBasicTypeList.encodeVarValue(var5.buf, var7);
 			this.field10258++;
 		}
 		var5.buf.psize2(var5.buf.pos - var6);

@@ -12,17 +12,17 @@ public final class ClientPlayerGroupResourceProvider implements PlayerGroupResou
 
 	@ObfuscatedName("d.e(B)Ladd;")
 	public VarTypeList method293() {
-		return Client.field8485;
+		return Client.varPlayerTypeList;
 	}
 
 	@ObfuscatedName("d.n(B)Ladd;")
 	public VarTypeList method291() {
-		return Client.field3415;
+		return Client.varPlayerGroupTypeList;
 	}
 
 	@ObfuscatedName("d.m(I)Laor;")
 	public VarBitTypeList method294() {
-		return Client.field8736;
+		return Client.varBitTypeList;
 	}
 
 	@ObfuscatedName("d.k(B)Lwq;")

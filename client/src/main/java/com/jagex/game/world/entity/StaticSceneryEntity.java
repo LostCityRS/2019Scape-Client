@@ -66,7 +66,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		this.field11143 = arg9;
 		this.field11137 = (byte) arg14;
 		this.field11142 = (byte) arg15;
-		this.field11144 = arg3.field7470 != 0 && !arg9;
+		this.field11144 = arg3.active2 != 0 && !arg9;
 		this.field11139 = arg16;
 		this.field11141 = arg1.method2125() && arg3.field7453 && !this.field11143 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field12470 = arg17;
@@ -117,7 +117,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.by(B)I")
-	public int method16523() {
+	public int overlayHeight() {
 		return this.field11136 == null ? 0 : this.field11136.method1748();
 	}
 

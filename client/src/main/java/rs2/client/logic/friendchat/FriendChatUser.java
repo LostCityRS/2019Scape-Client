@@ -6,20 +6,20 @@ import deob.ObfuscatedName;
 public class FriendChatUser {
 
 	@ObfuscatedName("ar.e")
-	public String field756;
+	public String name;
 
 	@ObfuscatedName("ar.n")
-	public String field757;
+	public String nameUnfiltered;
 
 	@ObfuscatedName("ar.m")
 	public String field755;
 
 	@ObfuscatedName("ar.k")
-	public int field758;
+	public int world;
 
 	@ObfuscatedName("ar.f")
-	public String field759;
+	public String worldName;
 
 	@ObfuscatedName("ar.w")
-	public byte field760;
+	public byte rank;
 }

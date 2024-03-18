@@ -9,8 +9,8 @@ import deob.ObfuscatedName;
 @ObfuscatedName("alo")
 public class BasicCursorTypeFactory extends CursorTypeFactory implements ConfigTypeFactory {
 
-	public BasicCursorTypeFactory(Js5 arg0) {
-		super(arg0);
+	public BasicCursorTypeFactory(Js5 js5) {
+		super(js5);
 	}
 
 	@ObfuscatedName("alo.v(ILao;I)Lay;")

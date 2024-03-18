@@ -9,7 +9,7 @@ import deob.ObfuscatedName;
 public abstract class EffectAnimTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("yc.e")
-	public final Js5 js5;
+	public final Js5 configClient;
 
 	@ObfuscatedName("yc.n")
 	public final WeightedCache modelCache = new WeightedCache(60);
@@ -17,8 +17,8 @@ public abstract class EffectAnimTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("yc.m")
 	public int field8264;
 
-	public EffectAnimTypeFactory(Js5 js5) {
-		this.js5 = js5;
+	public EffectAnimTypeFactory(Js5 configClient) {
+		this.configClient = configClient;
 	}
 
 	@ObfuscatedName("yc.e(II)V")

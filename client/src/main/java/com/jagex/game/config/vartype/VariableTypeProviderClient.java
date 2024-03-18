@@ -10,12 +10,12 @@ import rs2.client.Client;
 public final class VariableTypeProviderClient implements VariableTypeProvider {
 
 	@ObfuscatedName("js.w(Lqe;II)Lec;")
-	public VarType method695(VarDomainType arg0, int arg1) {
-		return (VarType) ((ConfigTypeList) Client.field1232.get(arg0)).list(arg1);
+	public VarType getVarType(VarDomainType domainType, int id) {
+		return (VarType) ((ConfigTypeList) Client.field1232.get(domainType)).list(id);
 	}
 
 	@ObfuscatedName("js.l(IB)Lkh;")
-	public VarBitType method694(int arg0) {
-		return (VarBitType) Client.field8736.list(arg0);
+	public VarBitType getVarBitType(int id) {
+		return (VarBitType) Client.varBitTypeList.list(id);
 	}
 }

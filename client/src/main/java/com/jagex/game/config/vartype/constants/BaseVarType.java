@@ -14,48 +14,48 @@ public class BaseVarType implements SerializableEnum {
 	public static final BaseVarType INTEGER = new BaseVarType(2, 0, Integer.class, new BaseVarTypeInteger());
 
 	@ObfuscatedName("qa.n")
-	public static final BaseVarType field4837 = new BaseVarType(4, 1, Long.class, new BaseVarTypeLong());
+	public static final BaseVarType LONG = new BaseVarType(4, 1, Long.class, new BaseVarTypeLong());
 
 	@ObfuscatedName("qa.m")
-	public static final BaseVarType field4836 = new BaseVarType(1, 2, String.class, new BaseVarTypeString());
+	public static final BaseVarType STRING = new BaseVarType(1, 2, String.class, new BaseVarTypeString());
 
 	@ObfuscatedName("qa.k")
-	public static final BaseVarType field4839 = new BaseVarType(0, 3, CoordFine.class, new BaseVarTypeCoordFine());
+	public static final BaseVarType COORDFINE = new BaseVarType(0, 3, CoordFine.class, new BaseVarTypeCoordFine());
 
 	@ObfuscatedName("qa.f")
-	public static final BaseVarType field4838 = new BaseVarType(3, 4, ComponentHook.class, new BaseVarTypeComponentHook());
+	public static final BaseVarType CCHOOK = new BaseVarType(3, 4, ComponentHook.class, new BaseVarTypeComponentHook());
 
 	@ObfuscatedName("qa.w")
-	public final int id;
+	public final int key;
 
 	@ObfuscatedName("qa.l")
-	public final int field4842;
+	public final int id;
 
 	@ObfuscatedName("qa.u")
 	public final Class javaClass;
 
 	@ObfuscatedName("qa.z")
-	public final BaseVarTypeCodec field4844;
+	public final BaseVarTypeCodec codec;
 
 	public BaseVarType(int arg0, int arg1, Class arg2, BaseVarTypeCodec arg3) {
-		this.id = arg0;
-		this.field4842 = arg1;
+		this.key = arg0;
+		this.id = arg1;
 		this.javaClass = arg2;
-		this.field4844 = arg3;
+		this.codec = arg3;
 	}
 
 	@ObfuscatedName("qa.e(I)[Lqa;")
 	public static BaseVarType[] method7338() {
-		return new BaseVarType[] {field4839, field4838, field4836, INTEGER, field4837};
+		return new BaseVarType[] {COORDFINE, CCHOOK, STRING, INTEGER, LONG};
 	}
 
 	@ObfuscatedName("qa.n()I")
 	public int getId() {
-		return this.field4842;
+		return this.id;
 	}
 
 	@ObfuscatedName("qa.m(Ljava/lang/Class;I)Lqa;")
-	public static BaseVarType method7337(Class arg0) {
+	public static BaseVarType getType(Class arg0) {
 		BaseVarType[] var1 = method7338();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			BaseVarType var3 = var1[var2];
@@ -67,16 +67,16 @@ public class BaseVarType implements SerializableEnum {
 	}
 
 	@ObfuscatedName("qa.f(Ljava/lang/Class;I)Lade;")
-	public static BaseVarTypeCodec method7336(Class arg0) {
-		BaseVarType var1 = method7337(arg0);
+	public static BaseVarTypeCodec getCodec(Class arg0) {
+		BaseVarType var1 = getType(arg0);
 		if (var1 == null) {
 			throw new IllegalArgumentException();
 		}
-		return var1.field4844;
+		return var1.codec;
 	}
 
 	@ObfuscatedName("qa.w(Lalw;B)Ljava/lang/Object;")
-	public Object method7335(Packet arg0) {
-		return this.field4844.decode(arg0);
+	public Object dbDecode(Packet buf) {
+		return this.codec.decode(buf);
 	}
 }

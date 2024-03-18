@@ -33,8 +33,8 @@ public class PlayerStat {
 	}
 
 	@ObfuscatedName("xz.n(Lzu;B)I")
-	public int method10163(ModeAccountType arg0) {
-		if (ModeAccountType.field8344 == arg0 && this.skill.isMembers() && this.skill.method9813()) {
+	public int getVisibleXP(ModeAccountType arg0) {
+		if (ModeAccountType.FREE == arg0 && this.skill.isMembers() && this.skill.method9813()) {
 			int var2 = this.skill.method9797();
 			if (!this.raw) {
 				var2 /= 10;
@@ -66,7 +66,7 @@ public class PlayerStat {
 
 	@ObfuscatedName("xz.f(Lzu;B)I")
 	public int getBaseLevel(ModeAccountType arg0) {
-		if (ModeAccountType.field8344 == arg0 && this.skill.isMembers() && this.skill.method9813()) {
+		if (ModeAccountType.FREE == arg0 && this.skill.isMembers() && this.skill.method9813()) {
 			int var2 = this.skill.method9798();
 			if (this.base > var2) {
 				return var2;

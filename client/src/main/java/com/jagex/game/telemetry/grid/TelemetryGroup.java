@@ -13,7 +13,7 @@ public class TelemetryGroup {
 	public static final Integer field1889 = -1;
 
 	@ObfuscatedName("fy.k")
-	public final int field1888;
+	public final int id;
 
 	@ObfuscatedName("fy.f")
 	public final List field1886;
@@ -28,7 +28,7 @@ public class TelemetryGroup {
 	public final List field1887;
 
 	public TelemetryGroup(int arg0) {
-		this.field1888 = arg0;
+		this.id = arg0;
 		this.field1886 = new ArrayList();
 		this.field1882 = new ArrayList();
 		this.field1884 = new ArrayList();
@@ -36,32 +36,32 @@ public class TelemetryGroup {
 	}
 
 	@ObfuscatedName("fy.e(B)I")
-	public int method3286() {
+	public int getColumnCount() {
 		return this.field1886.size();
 	}
 
 	@ObfuscatedName("fy.n(I)I")
-	public int method3311() {
+	public int getRowCount() {
 		return this.field1882.size();
 	}
 
 	@ObfuscatedName("fy.m(II)I")
-	public int method3358(int arg0) {
+	public int getRowIndex(int arg0) {
 		return this.field1882.indexOf(arg0);
 	}
 
 	@ObfuscatedName("fy.k(IB)I")
-	public int method3285(int arg0) {
+	public int getRowId(int arg0) {
 		return (Integer) this.field1882.get(arg0);
 	}
 
 	@ObfuscatedName("fy.f(II)I")
-	public int method3290(int arg0) {
+	public int getColumnIndex(int arg0) {
 		return this.field1886.indexOf(arg0);
 	}
 
 	@ObfuscatedName("fy.w(II)I")
-	public int method3291(int arg0) {
+	public int getColumnId(int arg0) {
 		return (Integer) this.field1886.get(arg0);
 	}
 
@@ -81,7 +81,7 @@ public class TelemetryGroup {
 	}
 
 	@ObfuscatedName("fy.p(II)Z")
-	public boolean method3295(int arg0) {
+	public boolean isRowPinned(int arg0) {
 		return !((Integer) this.field1884.get(arg0)).equals(field1889);
 	}
 
@@ -89,7 +89,7 @@ public class TelemetryGroup {
 	public int method3296(int arg0, int arg1) {
 		if (this.field1886.size() == 8) {
 			throw new RuntimeException("");
-		} else if (this.method3290(arg0) == -1) {
+		} else if (this.getColumnIndex(arg0) == -1) {
 			if (arg1 == -1) {
 				arg1 = this.field1886.size();
 			}
@@ -145,7 +145,7 @@ public class TelemetryGroup {
 	public int method3301(int arg0, int arg1) {
 		if (this.field1882.size() == 40) {
 			throw new RuntimeException("");
-		} else if (this.method3358(arg0) == -1) {
+		} else if (this.getRowIndex(arg0) == -1) {
 			if (arg1 == -1) {
 				arg1 = this.field1882.size();
 			}
@@ -156,7 +156,7 @@ public class TelemetryGroup {
 					this.method3300(var3, var3 - 1);
 				}
 			}
-			return this.method3358(arg0);
+			return this.getRowIndex(arg0);
 		} else {
 			throw new RuntimeException("");
 		}
@@ -178,7 +178,7 @@ public class TelemetryGroup {
 		this.method3304(arg0);
 		int var2 = arg0;
 		for (int var3 = arg0; var3 < this.field1882.size(); var3++) {
-			if (!this.method3295(var3)) {
+			if (!this.isRowPinned(var3)) {
 				if (var2 != var3) {
 					this.method3300(var3, var2);
 				}
@@ -205,7 +205,7 @@ public class TelemetryGroup {
 	}
 
 	@ObfuscatedName("fy.h(IIB)Ljava/lang/Object;")
-	public Object method3306(int arg0, int arg1) {
+	public Object getGridValue(int arg0, int arg1) {
 		return ((List) this.field1887.get(arg0)).get(arg1);
 	}
 

@@ -74,7 +74,7 @@ public class VarBitType implements VarConfigType {
 	@ObfuscatedName("kh.z(Lalw;IZI)V")
 	public void method5184(Packet arg0, int arg1, boolean arg2) {
 		VarBitTypeEncodingKey var4 = (VarBitTypeEncodingKey) SerializableEnums.decode(VarBitTypeEncodingKey.method1624(), arg1);
-		switch(var4.field3072) {
+		switch(var4.key) {
 			case 7:
 				this.startBit = arg0.g1();
 				this.endBit = arg0.g1();

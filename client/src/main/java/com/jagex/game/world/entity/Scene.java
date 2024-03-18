@@ -1204,7 +1204,7 @@ public class Scene {
 	@ObfuscatedName("tx.aj(Lalh;I)V")
 	public void method8745(GraphEntity arg0) {
 		Vector3 var2 = arg0.method10536().field4298;
-		this.renderer.method2525((float) var2.field4308, (float) ((int) var2.field4311 + (arg0.method16523() >> 1)), (float) var2.field4313, this.field6927);
+		this.renderer.method2525((float) var2.field4308, (float) ((int) var2.field4311 + (arg0.overlayHeight() >> 1)), (float) var2.field4313, this.field6927);
 		arg0.field11715 = (int) this.field6927[2];
 	}
 

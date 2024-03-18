@@ -538,18 +538,18 @@ public class LocalisedText {
 	public static final LocalisedText UNKNOWN_FRIEND_DISPLAYNAME_PLACEHOLDER = new LocalisedText("Friend", "Freund", "Ami", "Amigo", "Amigo");
 
 	@ObfuscatedName("acz.fo")
-	public final Map field9070 = new HashMap(7);
+	public final Map texts = new HashMap(7);
 
 	public LocalisedText(String english, String german, String french, String portuguese, String spanish) {
-		this.field9070.put(Language.EN, english);
-		this.field9070.put(Language.DE, german);
-		this.field9070.put(Language.FR, french);
-		this.field9070.put(Language.PT, portuguese);
-		this.field9070.put(Language.ES_MX, spanish);
+		this.texts.put(Language.EN, english);
+		this.texts.put(Language.DE, german);
+		this.texts.put(Language.FR, french);
+		this.texts.put(Language.PT, portuguese);
+		this.texts.put(Language.ES_MX, spanish);
 	}
 
 	@ObfuscatedName("acz.e(Lzt;B)Ljava/lang/String;")
-	public String method15021(Language arg0) {
-		return (String) this.field9070.get(arg0);
+	public String forLang(Language language) {
+		return (String) this.texts.get(language);
 	}
 }

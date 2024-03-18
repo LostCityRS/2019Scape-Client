@@ -23,7 +23,7 @@ public class WearposDefaults {
 	public int[] field7767;
 
 	public WearposDefaults(Js5 arg0) {
-		byte[] var2 = arg0.method6894(DefaultsGroup.field7712.field7708);
+		byte[] var2 = arg0.method6894(DefaultsGroup.WEARPOS.js5GroupId);
 		this.method9890(new Packet(var2));
 	}
 
