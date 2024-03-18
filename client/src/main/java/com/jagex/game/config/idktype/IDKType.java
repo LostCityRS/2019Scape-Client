@@ -28,10 +28,10 @@ public class IDKType implements ConfigType {
 	public short[] retex_d;
 
 	@ObfuscatedName("jv.l")
-	public byte[] field2952;
+	public byte[] recolindices;
 
 	@ObfuscatedName("jv.u")
-	public byte[] field2956;
+	public byte[] retexindices;
 
 	@ObfuscatedName("jv.z")
 	public int[] heads = new int[] { -1, -1, -1, -1, -1 };
@@ -86,32 +86,32 @@ public class IDKType implements ConfigType {
 				}
 			} else if (code == 44) {
 				int var9 = buf.g2();
-				int var10 = 0;
+				int length = 0;
 				for (int var11 = var9; var11 > 0; var11 >>= 0x1) {
-					var10++;
+					length++;
 				}
-				this.field2952 = new byte[var10];
+				this.recolindices = new byte[length];
 				byte var12 = 0;
-				for (int var13 = 0; var13 < var10; var13++) {
-					if ((var9 & 0x1 << var13) > 0) {
-						this.field2952[var13] = var12++;
+				for (int index = 0; index < length; index++) {
+					if ((var9 & 0x1 << index) > 0) {
+						this.recolindices[index] = var12++;
 					} else {
-						this.field2952[var13] = -1;
+						this.recolindices[index] = -1;
 					}
 				}
 			} else if (code == 45) {
 				int var14 = buf.g2();
-				int var15 = 0;
+				int length = 0;
 				for (int var16 = var14; var16 > 0; var16 >>= 0x1) {
-					var15++;
+					length++;
 				}
-				this.field2956 = new byte[var15];
+				this.retexindices = new byte[length];
 				byte var17 = 0;
-				for (int var18 = 0; var18 < var15; var18++) {
-					if ((var14 & 0x1 << var18) > 0) {
-						this.field2956[var18] = var17++;
+				for (int index = 0; index < length; index++) {
+					if ((var14 & 0x1 << index) > 0) {
+						this.retexindices[index] = var17++;
 					} else {
-						this.field2956[var18] = -1;
+						this.retexindices[index] = -1;
 					}
 				}
 			} else if (code >= 60 && code < 70) {

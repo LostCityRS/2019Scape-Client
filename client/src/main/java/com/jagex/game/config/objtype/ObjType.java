@@ -63,10 +63,10 @@ public class ObjType implements ConfigType {
 	public short[] retex_d;
 
 	@ObfuscatedName("abv.q")
-	public byte[] field8661;
+	public byte[] recolindices;
 
 	@ObfuscatedName("abv.x")
-	public byte[] field8637;
+	public byte[] retexindices;
 
 	@ObfuscatedName("abv.b")
 	public int zoom2d = 2000;
@@ -389,32 +389,32 @@ public class ObjType implements ConfigType {
 			this.minimenu_colour_overridden = true;
 		} else if (code == 44) {
 			int var9 = buf.g2();
-			int var10 = 0;
+			int length = 0;
 			for (int var11 = var9; var11 > 0; var11 >>= 0x1) {
-				var10++;
+				length++;
 			}
-			this.field8661 = new byte[var10];
+			this.recolindices = new byte[length];
 			byte var12 = 0;
-			for (int var13 = 0; var13 < var10; var13++) {
-				if ((var9 & 0x1 << var13) > 0) {
-					this.field8661[var13] = var12++;
+			for (int index = 0; index < length; index++) {
+				if ((var9 & 0x1 << index) > 0) {
+					this.recolindices[index] = var12++;
 				} else {
-					this.field8661[var13] = -1;
+					this.recolindices[index] = -1;
 				}
 			}
 		} else if (code == 45) {
 			int var14 = buf.g2();
-			int var15 = 0;
+			int length = 0;
 			for (int var16 = var14; var16 > 0; var16 >>= 0x1) {
-				var15++;
+				length++;
 			}
-			this.field8637 = new byte[var15];
+			this.retexindices = new byte[length];
 			byte var17 = 0;
-			for (int var18 = 0; var18 < var15; var18++) {
-				if ((var14 & 0x1 << var18) > 0) {
-					this.field8637[var18] = var17++;
+			for (int index = 0; index < length; index++) {
+				if ((var14 & 0x1 << index) > 0) {
+					this.retexindices[index] = var17++;
 				} else {
-					this.field8637[var18] = -1;
+					this.retexindices[index] = -1;
 				}
 			}
 		} else if (code == 65) {

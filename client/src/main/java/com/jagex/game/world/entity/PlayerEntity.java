@@ -337,7 +337,7 @@ public class PlayerEntity extends PathingEntity {
 		this.field10458 = false;
 		if (Client.preferences.characterShadows.getValue() == 1) {
 			BASType var9 = this.method16508();
-			if (var9.field7346 && (this.model.field7892 == -1 || ((NPCType) Client.npcTypeList.list(this.model.field7892)).field2710)) {
+			if (var9.field7346 && (this.model.field7892 == -1 || ((NPCType) Client.npcTypeList.list(this.model.field7892)).spotshadow)) {
 				AnimationWrapper var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
 				EntityWalkAnimationWrapper var11 = this.field10432.method14346() && (!this.field10432.field11877 || var10 == null) ? this.field10432 : null;
 				short var12 = Client.graphicsDefaults.field7728;

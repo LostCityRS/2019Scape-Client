@@ -9271,11 +9271,11 @@ public final class ScriptRunner {
 			arg0.field2363 = new NPCTypeCustomisation(var5, arg0.field2224 == 6);
 		}
 		arg0.field2363.field2688 = method5390();
-		if (var5.field2760 != null) {
-			if (var3 < 0 || var3 >= var5.field2760.length) {
+		if (var5.recolindices != null) {
+			if (var3 < 0 || var3 >= var5.recolindices.length) {
 				throw new RuntimeException("");
 			}
-			var4 = var5.field2760[var3];
+			var4 = var5.recolindices[var3];
 		}
 		if (var5.recol_d == null || var4 < 0 || var4 >= var5.recol_d.length) {
 			throw new RuntimeException("");
@@ -9311,11 +9311,11 @@ public final class ScriptRunner {
 			arg0.field2363 = new NPCTypeCustomisation(var5, arg0.field2224 == 6);
 		}
 		arg0.field2363.field2688 = method5390();
-		if (var5.field2715 != null) {
-			if (var3 < 0 || var3 >= var5.field2715.length) {
+		if (var5.retexindices != null) {
+			if (var3 < 0 || var3 >= var5.retexindices.length) {
 				throw new RuntimeException("");
 			}
-			var4 = var5.field2715[var3];
+			var4 = var5.retexindices[var3];
 		}
 		if (var5.retex_d == null || var4 < 0 || var4 >= var5.retex_d.length) {
 			throw new RuntimeException("");
@@ -16882,11 +16882,11 @@ public final class ScriptRunner {
 	@ObfuscatedName("dj.bdu(Lyf;I)V")
 	public static final void movescripted(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
-		MoveSpeed var1 = (MoveSpeed) SerializableEnums.decode(MoveSpeed.method13901(), arg0.field8216[arg0.field8226]);
+		MoveSpeed var1 = (MoveSpeed) SerializableEnums.decode(MoveSpeed.values(), arg0.field8216[arg0.field8226]);
 		CoordGrid var2 = new CoordGrid(arg0.field8216[arg0.field8226 + 1]);
 		if (var2.level == -1) {
 			throw new RuntimeException("");
-		} else if (MoveSpeed.field8314 != var1 && MoveSpeed.field8315 != var1 && MoveSpeed.field8316 != var1) {
+		} else if (MoveSpeed.CRAWL != var1 && MoveSpeed.WALK != var1 && MoveSpeed.RUN != var1) {
 			throw new RuntimeException("");
 		} else if (Client.gameConnection != null) {
 			ClientMessage var3 = ClientMessage.method1604(ClientProt.MOVE_SCRIPTED, Client.gameConnection.field794);

@@ -4995,7 +4995,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("dt.gj(Lahm;ZB)V")
 	public static final void method1679(PathingEntity arg0, boolean arg1) {
-		int var2 = MoveSpeed.field8318.field8313;
+		int var2 = MoveSpeed.STATIONARY.id;
 		int var3 = 0;
 		if (arg0.field10429 > currentclock) {
 			method14296(arg0);
@@ -5016,7 +5016,7 @@ public final class Client extends GameShell {
 			arg0.field10427 = null;
 			arg0.field10429 = 0;
 			arg0.field10399 = 0;
-			var2 = MoveSpeed.field8318.field8313;
+			var2 = MoveSpeed.STATIONARY.id;
 			var3 = 0;
 			arg0.method10538((float) (arg0.field10450[0] * 512 + arg0.method16546() * 256), var4.field4311, (float) (arg0.field10448[0] * 512 + arg0.method16546() * 256));
 			arg0.method16517();
@@ -5030,7 +5030,7 @@ public final class Client extends GameShell {
 			arg0.field10427 = null;
 			arg0.field10429 = 0;
 			arg0.field10399 = 0;
-			var2 = MoveSpeed.field8318.field8313;
+			var2 = MoveSpeed.STATIONARY.id;
 			var3 = 0;
 			arg0.method10538((float) (arg0.field10450[0] * 512 + arg0.method16546() * 256), var4.field4311, (float) (arg0.field10448[0] * 512 + arg0.method16546() * 256));
 			arg0.method16517();
@@ -5084,7 +5084,7 @@ public final class Client extends GameShell {
 		BASType var2 = arg0.method16508();
 		if (arg0.field10400 == 0) {
 			arg0.field10453 = 0;
-			field1891 = MoveSpeed.field8318.field8313;
+			field1891 = MoveSpeed.STATIONARY.id;
 			field1797 = 0;
 			return;
 		}
@@ -5092,13 +5092,13 @@ public final class Client extends GameShell {
 			SeqType var3 = arg0.field10454.method14347();
 			if (arg0.field10396 > 0 && var3.field1767 == 0) {
 				arg0.field10453++;
-				field1891 = MoveSpeed.field8318.field8313;
+				field1891 = MoveSpeed.STATIONARY.id;
 				field1797 = 0;
 				return;
 			}
 			if (arg0.field10396 <= 0 && var3.field1782 == 0) {
 				arg0.field10453++;
-				field1891 = MoveSpeed.field8318.field8313;
+				field1891 = MoveSpeed.STATIONARY.id;
 				field1797 = 0;
 				return;
 			}
@@ -5110,13 +5110,13 @@ public final class Client extends GameShell {
 					SeqType var6 = (SeqType) seqTypeList.list(var5.anim);
 					if (arg0.field10396 > 0 && var6.field1767 == 0) {
 						arg0.field10453++;
-						field1891 = MoveSpeed.field8318.field8313;
+						field1891 = MoveSpeed.STATIONARY.id;
 						field1797 = 0;
 						return;
 					}
 					if (arg0.field10396 <= 0 && var6.field1782 == 0) {
 						arg0.field10453++;
-						field1891 = MoveSpeed.field8318.field8313;
+						field1891 = MoveSpeed.STATIONARY.id;
 						field1797 = 0;
 						return;
 					}
@@ -5157,7 +5157,7 @@ public final class Client extends GameShell {
 			if (arg0.field10396 > 0) {
 				arg0.field10396--;
 			}
-			field1891 = MoveSpeed.field8318.field8313;
+			field1891 = MoveSpeed.STATIONARY.id;
 			field1797 = 0;
 			var7.method6486();
 			return;
@@ -5165,7 +5165,7 @@ public final class Client extends GameShell {
 		int var13 = 16;
 		boolean var14 = true;
 		if (arg0 instanceof NpcEntity) {
-			var14 = ((NpcEntity) arg0).npcType.field2736;
+			var14 = ((NpcEntity) arg0).npcType.walksmoothing;
 		}
 		if (var14) {
 			int var15 = arg0.field10414 - arg0.field10395.field528;
@@ -5190,9 +5190,9 @@ public final class Client extends GameShell {
 			var13 = 32;
 			arg0.field10453--;
 		}
-		if (MoveSpeed.field8316.field8313 == var12) {
+		if (MoveSpeed.RUN.id == var12) {
 			var13 <<= 0x1;
-		} else if (MoveSpeed.field8314.field8313 == var12) {
+		} else if (MoveSpeed.CRAWL.id == var12) {
 			var13 >>= 0x1;
 		}
 		if (var2.field7359 != -1) {
@@ -5234,7 +5234,7 @@ public final class Client extends GameShell {
 		}
 		field1797 = 0;
 		if (var8 == var10 && var9 == var11) {
-			field1891 = MoveSpeed.field8318.field8313;
+			field1891 = MoveSpeed.STATIONARY.id;
 		} else {
 			if (var8 < var10) {
 				var7.field4308 += var13;
@@ -5264,7 +5264,7 @@ public final class Client extends GameShell {
 			}
 			arg0.method10531(var7);
 			if (var13 >= 32) {
-				field1891 = MoveSpeed.field8316.field8313;
+				field1891 = MoveSpeed.RUN.id;
 			} else {
 				field1891 = var12;
 			}
@@ -5388,7 +5388,7 @@ public final class Client extends GameShell {
 		if (arg0.field10427 == null) {
 			return;
 		}
-		MoveSpeed var2 = (MoveSpeed) SerializableEnums.decode(MoveSpeed.method13901(), arg1);
+		MoveSpeed var2 = (MoveSpeed) SerializableEnums.decode(MoveSpeed.values(), arg1);
 		int var3 = arg0.field10427[var2.method13906()];
 		if (var3 != arg0.field10454.method14348()) {
 			arg0.field10454.method14350(var3, arg0.field10454.method14398());
@@ -5401,7 +5401,7 @@ public final class Client extends GameShell {
 		BASType var4 = arg0.method16508();
 		EntityWalkAnimationWrapper var5 = arg0.field10432;
 		int var6 = arg0.field10414 - arg0.field10395.field528 & 0x3FFF;
-		if (MoveSpeed.field8318.field8313 == arg1) {
+		if (MoveSpeed.STATIONARY.id == arg1) {
 			if (var6 == 0 && arg0.field10443 <= 25) {
 				if (!var5.field11877 || !var4.method9290(var5.method14348())) {
 					var5.method14352(var4.method9295(), false, true);
@@ -5419,7 +5419,7 @@ public final class Client extends GameShell {
 			}
 		} else if (arg0.field10417 != -1 && (var6 >= 10240 || var6 <= 2048)) {
 			int var7 = field10823[arg2] - arg0.field10395.field528 & 0x3FFF;
-			if (MoveSpeed.field8316.field8313 == arg1 && var4.field7361 != -1) {
+			if (MoveSpeed.RUN.id == arg1 && var4.field7361 != -1) {
 				if (var7 > 2048 && var7 <= 6144 && var4.field7331 != -1) {
 					var5.method14352(var4.field7331, false, true);
 				} else if (var7 >= 10240 && var7 < 14336 && var4.field7330 != -1) {
@@ -5429,7 +5429,7 @@ public final class Client extends GameShell {
 				} else {
 					var5.method14352(var4.field7329, false, true);
 				}
-			} else if (MoveSpeed.field8314.field8313 == arg1 && var4.field7332 != -1) {
+			} else if (MoveSpeed.CRAWL.id == arg1 && var4.field7332 != -1) {
 				if (var7 > 2048 && var7 <= 6144 && var4.field7319 != -1) {
 					var5.method14352(var4.field7319, false, true);
 				} else if (var7 >= 10240 && var7 < 14336 && var4.field7328 != -1) {
@@ -5450,16 +5450,16 @@ public final class Client extends GameShell {
 			}
 			var5.field11877 = false;
 		} else if (var6 == 0 && arg0.field10443 <= 25) {
-			if (MoveSpeed.field8316.field8313 == arg1 && var4.field7361 != -1) {
+			if (MoveSpeed.RUN.id == arg1 && var4.field7361 != -1) {
 				var5.method14352(var4.field7361, false, true);
-			} else if (MoveSpeed.field8314.field8313 == arg1 && var4.field7332 != -1) {
+			} else if (MoveSpeed.CRAWL.id == arg1 && var4.field7332 != -1) {
 				var5.method14352(var4.field7332, false, true);
 			} else {
 				var5.method14352(var4.field7350, false, true);
 			}
 			var5.field11877 = false;
 		} else {
-			if (MoveSpeed.field8316.field8313 == arg1 && var4.field7361 != -1) {
+			if (MoveSpeed.RUN.id == arg1 && var4.field7361 != -1) {
 				if (arg3 < 0 && var4.field7338 != -1) {
 					var5.method14352(var4.field7338, false, true);
 				} else if (arg3 <= 0 || var4.field7339 == -1) {
@@ -5467,7 +5467,7 @@ public final class Client extends GameShell {
 				} else {
 					var5.method14352(var4.field7339, false, true);
 				}
-			} else if (MoveSpeed.field8314.field8313 == arg1 && var4.field7332 != -1) {
+			} else if (MoveSpeed.CRAWL.id == arg1 && var4.field7332 != -1) {
 				if (arg3 < 0 && var4.field7352 != -1) {
 					var5.method14352(var4.field7352, false, true);
 				} else if (arg3 <= 0 || var4.field7337 == -1) {
@@ -6614,21 +6614,21 @@ public final class Client extends GameShell {
 						var10 += 5 - var9.method16546() << 2;
 					}
 					if (field10921 == 0) {
-						if (var9.npcType.field2756) {
+						if (var9.npcType.follower) {
 							var10 += 64;
 						} else {
 							var10 += 128;
 						}
 					} else if (field10921 == 1) {
-						if (var9.npcType.field2756) {
+						if (var9.npcType.follower) {
 							var10 += 32;
 						} else {
 							var10 += 64;
 						}
 					}
-					if (var9.npcType.field2722) {
+					if (var9.npcType.drawabove) {
 						var10 += 1024;
-					} else if (!var9.npcType.field2723) {
+					} else if (!var9.npcType.drawbelow) {
 						var10 += 256;
 					}
 					if (var9.targeted() == field10787) {
@@ -11210,8 +11210,8 @@ public final class Client extends GameShell {
 				} else if (var7 == 1) {
 					field11036[++field11011 - 1] = var4;
 					var5.field10440 = field10815;
-					CompassPoint var8 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), var0.gBit(3));
-					var5.method19168(var8, MoveSpeed.field8315.field8313);
+					CompassPoint var8 = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), var0.gBit(3));
+					var5.method19168(var8, MoveSpeed.WALK.id);
 					int var9 = var0.gBit(1);
 					if (var9 == 1) {
 						field10844[++field10876 - 1] = var4;
@@ -11220,13 +11220,13 @@ public final class Client extends GameShell {
 					field11036[++field11011 - 1] = var4;
 					var5.field10440 = field10815;
 					if (var0.gBit(1) == 1) {
-						CompassPoint var10 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), var0.gBit(3));
-						var5.method19168(var10, MoveSpeed.field8316.field8313);
-						CompassPoint var11 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), var0.gBit(3));
-						var5.method19168(var11, MoveSpeed.field8316.field8313);
+						CompassPoint var10 = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), var0.gBit(3));
+						var5.method19168(var10, MoveSpeed.RUN.id);
+						CompassPoint var11 = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), var0.gBit(3));
+						var5.method19168(var11, MoveSpeed.RUN.id);
 					} else {
-						CompassPoint var12 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), var0.gBit(3));
-						var5.method19168(var12, MoveSpeed.field8314.field8313);
+						CompassPoint var12 = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), var0.gBit(3));
+						var5.method19168(var12, MoveSpeed.CRAWL.id);
 					}
 					int var13 = var0.gBit(1);
 					if (var13 == 1) {
@@ -11280,7 +11280,7 @@ public final class Client extends GameShell {
 				var12 -= 0x1 << arg0;
 			}
 			var6.method16502(var6.npcType.size);
-			var6.field10444 = var6.npcType.field2731 << 3;
+			var6.field10444 = var6.npcType.turnspeed << 3;
 			if (var3) {
 				var6.method16491(var11, true);
 			}
@@ -11451,7 +11451,7 @@ public final class Client extends GameShell {
 				}
 				var3.method19157((NPCType) npcTypeList.list(var0.gSmart2or4null()), (var4 & 0x10000) == 0, (var4 & 0x800000) == 0, true);
 				var3.method16502(var3.npcType.size);
-				var3.field10444 = var3.npcType.field2731 << 3;
+				var3.field10444 = var3.npcType.turnspeed << 3;
 				if (var3.npcType.method4556()) {
 					PositionedSound.method9739(var3.field11717, var3.field10450[0], var3.field10448[0], 0, null, var3, null);
 				}

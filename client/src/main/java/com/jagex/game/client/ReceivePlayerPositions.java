@@ -259,7 +259,7 @@ public class ReceivePlayerPositions {
 					throw new RuntimeException();
 				}
 				LowResPlayerInfo var6 = field704[arg1] = new LowResPlayerInfo();
-				MoveSpeed.method13901();
+				MoveSpeed.values();
 				var6.field524 = (var2.z + var5.field10448[0] >> 6) + (var2.x + var5.field10450[0] >> 6 << 14) + (var5.field11717 << 28);
 				if (var5.field12056 == -1) {
 					var6.field523 = var5.field10395.method316();
@@ -283,7 +283,7 @@ public class ReceivePlayerPositions {
 			int var9 = var5.field10450[0];
 			int var10 = var5.field10448[0];
 			if (var8 == 1) {
-				field697[arg1] = MoveSpeed.field8316.field8313;
+				field697[arg1] = MoveSpeed.RUN.id;
 				int var11 = arg0.gBit(2);
 				switch(var11) {
 					case 0:
@@ -387,7 +387,7 @@ public class ReceivePlayerPositions {
 				}
 				int var21 = var5.field10450[0] + var19;
 				int var22 = var5.field10448[0] + var20;
-				if (MoveSpeed.field8317.field8320 == var17) {
+				if (MoveSpeed.INSTANT.index == var17) {
 					var5.method19118(var21, var22);
 				} else {
 					field697[arg1] = (byte) (var17 - 1);
@@ -408,7 +408,7 @@ public class ReceivePlayerPositions {
 				int var27 = var24 & 0x3FFF;
 				int var28 = (var2.x + var5.field10450[0] + var26 & 0x3FFF) - var2.x;
 				int var29 = (var2.z + var5.field10448[0] + var27 & 0x3FFF) - var2.z;
-				if (MoveSpeed.field8317.field8320 == var23) {
+				if (MoveSpeed.INSTANT.index == var23) {
 					var5.method19118(var28, var29);
 				} else {
 					field697[arg1] = (byte) (var23 - 1);
@@ -511,7 +511,7 @@ public class ReceivePlayerPositions {
 				var22++;
 				var23++;
 			}
-			SerializableEnums.decode(MoveSpeed.method13901(), field697[arg1]);
+			SerializableEnums.decode(MoveSpeed.values(), field697[arg1]);
 			field704[arg1].field524 = (var21 << 28) + (var22 << 14) + var23;
 			return false;
 		} else {
@@ -526,7 +526,7 @@ public class ReceivePlayerPositions {
 			int var30 = (var29 >> 28) + var26 & 0x3;
 			int var31 = (var29 >> 14) + var27 & 0xFF;
 			int var32 = var28 + var29 & 0xFF;
-			SerializableEnums.decode(MoveSpeed.method13901(), var25 - 1);
+			SerializableEnums.decode(MoveSpeed.values(), var25 - 1);
 			field704[arg1].field524 = (var30 << 28) + (var31 << 14) + var32;
 			return false;
 		}
@@ -813,7 +813,7 @@ public class ReceivePlayerPositions {
 		for (int var0 = 0; var0 < 2048; var0++) {
 			field706[var0] = null;
 			field699[var0] = null;
-			field697[var0] = MoveSpeed.field8315.field8313;
+			field697[var0] = MoveSpeed.WALK.id;
 			field704[var0] = null;
 		}
 	}

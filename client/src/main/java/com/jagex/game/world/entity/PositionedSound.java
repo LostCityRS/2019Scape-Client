@@ -188,8 +188,8 @@ public class PositionedSound extends Node {
 					this.field11368 = 256;
 				} else {
 					this.field11357 = var4.field2750 << 9;
-					this.field11356 = var4.field2751 << 9;
-					this.field11359 = var4.field2742;
+					this.field11356 = var4.bgsoundsize << 9;
+					this.field11359 = var4.bgsoundvolume;
 					this.field11369 = var4.field2700;
 					this.field11368 = var4.field2761;
 				}
@@ -256,10 +256,10 @@ public class PositionedSound extends Node {
 				var7.field11353 = var10.size + arg2 << 9;
 				var7.field11370 = method647(arg5);
 				var7.field11357 = var10.field2750 << 9;
-				var7.field11359 = var10.field2742;
+				var7.field11359 = var10.bgsoundvolume;
 				var7.field11369 = var10.field2700;
 				var7.field11368 = var10.field2761;
-				var7.field11356 = var10.field2751 << 9;
+				var7.field11356 = var10.bgsoundsize << 9;
 				Client.field1798.method3200(var10.field2746);
 				Client.field1798.method3200(var10.field2747);
 				Client.field1798.method3200(var10.field2748);
@@ -402,7 +402,7 @@ public class PositionedSound extends Node {
 					var5.field11360 = var6;
 				} else if (var5.field11370 == var9) {
 					var5.field11360 = var6;
-					var5.field11359 = var10.field2742;
+					var5.field11359 = var10.bgsoundvolume;
 				} else {
 					boolean var11 = false;
 					if (var5.field11371 == null) {
@@ -417,7 +417,7 @@ public class PositionedSound extends Node {
 						}
 					}
 					if (var11) {
-						var5.field11359 = var10.field2742;
+						var5.field11359 = var10.bgsoundvolume;
 						var5.field11370 = var9;
 						var5.field11360 = var6;
 					}

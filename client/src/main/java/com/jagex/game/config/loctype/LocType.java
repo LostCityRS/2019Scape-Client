@@ -58,10 +58,10 @@ public class LocType implements ConfigType {
 	public short[] retex_d;
 
 	@ObfuscatedName("vd.v")
-	public byte[] field7461;
+	public byte[] recolindices;
 
 	@ObfuscatedName("vd.o")
-	public byte[] field7462;
+	public byte[] retexindices;
 
 	@ObfuscatedName("vd.s")
 	public byte field7469;
@@ -358,32 +358,32 @@ public class LocType implements ConfigType {
 				}
 			} else if (code == 44) {
 				int var14 = buf.g2();
-				int var15 = 0;
+				int length = 0;
 				for (int var16 = var14; var16 > 0; var16 >>= 0x1) {
-					var15++;
+					length++;
 				}
-				this.field7461 = new byte[var15];
+				this.recolindices = new byte[length];
 				byte var17 = 0;
-				for (int var18 = 0; var18 < var15; var18++) {
-					if ((var14 & 0x1 << var18) > 0) {
-						this.field7461[var18] = var17++;
+				for (int index = 0; index < length; index++) {
+					if ((var14 & 0x1 << index) > 0) {
+						this.recolindices[index] = var17++;
 					} else {
-						this.field7461[var18] = -1;
+						this.recolindices[index] = -1;
 					}
 				}
 			} else if (code == 45) {
 				int var19 = buf.g2();
-				int var20 = 0;
+				int length = 0;
 				for (int var21 = var19; var21 > 0; var21 >>= 0x1) {
-					var20++;
+					length++;
 				}
-				this.field7462 = new byte[var20];
+				this.retexindices = new byte[length];
 				byte var22 = 0;
-				for (int var23 = 0; var23 < var20; var23++) {
-					if ((var19 & 0x1 << var23) > 0) {
-						this.field7462[var23] = var22++;
+				for (int index = 0; index < length; index++) {
+					if ((var19 & 0x1 << index) > 0) {
+						this.retexindices[index] = var22++;
 					} else {
-						this.field7462[var23] = -1;
+						this.retexindices[index] = -1;
 					}
 				}
 			} else if (code == 62) {

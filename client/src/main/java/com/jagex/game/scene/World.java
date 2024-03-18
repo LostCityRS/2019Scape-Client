@@ -1444,8 +1444,8 @@ public class World {
 						npc.field10440 = Client.currentclock;
 						npc.method19156(var14);
 						npc.method16502(npc.npcType.size);
-						npc.field10444 = npc.npcType.field2731 << 3;
-						npc.method16491(npc.npcType.field2727.method13895().getId() << 11 & 0x3FFF, true);
+						npc.field10444 = npc.npcType.turnspeed << 3;
+						npc.method16491(npc.npcType.respawndir.method13895().getId() << 11 & 0x3FFF, true);
 						npc.method19159(var9, var12, var13, true, npc.method16546());
 					}
 				}

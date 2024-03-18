@@ -52,10 +52,10 @@ public class NPCType implements ConfigType {
 	public int[] heads;
 
 	@ObfuscatedName("if.r")
-	public int[][] field2709;
+	public int[][] modeloffset;
 
 	@ObfuscatedName("if.v")
-	public int field2762 = -1;
+	public int bas = -1;
 
 	@ObfuscatedName("if.o")
 	public short[] recol_s;
@@ -73,10 +73,10 @@ public class NPCType implements ConfigType {
 	public short[] retex_d;
 
 	@ObfuscatedName("if.b")
-	public byte[] field2760;
+	public byte[] recolindices;
 
 	@ObfuscatedName("if.h")
-	public byte[] field2715;
+	public byte[] retexindices;
 
 	@ObfuscatedName("if.a")
 	public byte field2711;
@@ -94,10 +94,10 @@ public class NPCType implements ConfigType {
 	public String[] op;
 
 	@ObfuscatedName("if.ae")
-	public int[] field2716;
+	public int[] cursor;
 
 	@ObfuscatedName("if.ag")
-	public int field2717 = -1;
+	public int cursorattack = -1;
 
 	@ObfuscatedName("if.ah")
 	public boolean minimap = true;
@@ -112,19 +112,19 @@ public class NPCType implements ConfigType {
 	public int resizev = 128;
 
 	@ObfuscatedName("if.aw")
-	public boolean field2722 = false;
+	public boolean drawabove = false;
 
 	@ObfuscatedName("if.as")
-	public boolean field2723 = false;
+	public boolean drawbelow = false;
 
 	@ObfuscatedName("if.at")
-	public boolean field2756 = false;
+	public boolean follower = false;
 
 	@ObfuscatedName("if.ad")
-	public int field2725 = 0;
+	public int ambient = 0;
 
 	@ObfuscatedName("if.am")
-	public int field2726 = 0;
+	public int contrast = 0;
 
 	@ObfuscatedName("if.au")
 	public int[] field2738 = null;
@@ -133,10 +133,10 @@ public class NPCType implements ConfigType {
 	public short[] field2728 = null;
 
 	@ObfuscatedName("if.ap")
-	public int field2706 = -1;
+	public int covermarker = -1;
 
 	@ObfuscatedName("if.aq")
-	public int field2731 = 32;
+	public int turnspeed = 32;
 
 	@ObfuscatedName("if.ax")
 	public int[] field2735;
@@ -151,10 +151,10 @@ public class NPCType implements ConfigType {
 	public boolean active = true;
 
 	@ObfuscatedName("if.ay")
-	public boolean field2736 = true;
+	public boolean walksmoothing = true;
 
 	@ObfuscatedName("if.ab")
-	public boolean field2710 = true;
+	public boolean spotshadow = true;
 
 	@ObfuscatedName("if.az")
 	public short field2737 = 0;
@@ -193,34 +193,34 @@ public class NPCType implements ConfigType {
 	public int field2750 = 0;
 
 	@ObfuscatedName("if.bt")
-	public int field2751 = 0;
+	public int bgsoundsize = 0;
 
 	@ObfuscatedName("if.bq")
-	public int field2742 = 255;
+	public int bgsoundvolume = 255;
 
 	@ObfuscatedName("if.bm")
 	public IterableMap params;
 
 	@ObfuscatedName("if.bb")
-	public int field2754 = -1;
+	public int overlayheight = -1;
 
 	@ObfuscatedName("if.be")
-	public CompassPoint field2727 = CompassPoint.field8307;
+	public CompassPoint respawndir = CompassPoint.field8307;
 
 	@ObfuscatedName("if.by")
-	public int field2763 = -1;
+	public int mapelement = -1;
 
 	@ObfuscatedName("if.bu")
 	public int[] field2757;
 
 	@ObfuscatedName("if.bw")
-	public byte field2758 = -1;
+	public byte reprioritiseattackop = -1;
 
 	@ObfuscatedName("if.bo")
-	public int field2759 = -1;
+	public int picksize = -1;
 
 	@ObfuscatedName("if.bz")
-	public Cuboid field2724;
+	public Cuboid clickbox;
 
 	@ObfuscatedName("if.bv")
 	public int field2761 = 256;
@@ -229,16 +229,16 @@ public class NPCType implements ConfigType {
 	public int field2700 = 256;
 
 	@ObfuscatedName("if.bg")
-	public int field2713 = 0;
+	public int picksizeshift = 0;
 
 	@ObfuscatedName("if.ba")
-	public boolean field2766 = true;
+	public boolean antimacro = true;
 
 	@ObfuscatedName("if.bp")
 	public int field2765 = 0;
 
 	@ObfuscatedName("if.bj")
-	public boolean field2690 = false;
+	public boolean transmogfakenpc = false;
 
 	public NPCType(int id, NPCTypeFactory factory, ConfigTypeList npcs) {
 		this.id = id;
@@ -289,45 +289,45 @@ public class NPCType implements ConfigType {
 				this.retex_d[var8] = (short) buf.g2();
 			}
 		} else if (code == 42) {
-			int var9 = buf.g1();
-			this.recol_d_palette = new byte[var9];
-			for (int var10 = 0; var10 < var9; var10++) {
-				this.recol_d_palette[var10] = buf.g1b();
+			int length = buf.g1();
+			this.recol_d_palette = new byte[length];
+			for (int index = 0; index < length; index++) {
+				this.recol_d_palette[index] = buf.g1b();
 			}
 		} else if (code == 44) {
 			int var11 = buf.g2();
-			int var12 = 0;
+			int length = 0;
 			for (int var13 = var11; var13 > 0; var13 >>= 0x1) {
-				var12++;
+				length++;
 			}
-			this.field2760 = new byte[var12];
+			this.recolindices = new byte[length];
 			byte var14 = 0;
-			for (int var15 = 0; var15 < var12; var15++) {
-				if ((var11 & 0x1 << var15) > 0) {
-					this.field2760[var15] = var14++;
+			for (int index = 0; index < length; index++) {
+				if ((var11 & 0x1 << index) > 0) {
+					this.recolindices[index] = var14++;
 				} else {
-					this.field2760[var15] = -1;
+					this.recolindices[index] = -1;
 				}
 			}
 		} else if (code == 45) {
 			int var16 = buf.g2();
-			int var17 = 0;
+			int length = 0;
 			for (int var18 = var16; var18 > 0; var18 >>= 0x1) {
-				var17++;
+				length++;
 			}
-			this.field2715 = new byte[var17];
+			this.retexindices = new byte[length];
 			byte var19 = 0;
-			for (int var20 = 0; var20 < var17; var20++) {
-				if ((var16 & 0x1 << var20) > 0) {
-					this.field2715[var20] = var19++;
+			for (int index = 0; index < length; index++) {
+				if ((var16 & 0x1 << index) > 0) {
+					this.retexindices[index] = var19++;
 				} else {
-					this.field2715[var20] = -1;
+					this.retexindices[index] = -1;
 				}
 			}
 		} else if (code == 60) {
-			int var21 = buf.g1();
-			this.heads = new int[var21];
-			for (int var22 = 0; var22 < var21; var22++) {
+			int length = buf.g1();
+			this.heads = new int[length];
+			for (int var22 = 0; var22 < length; var22++) {
 				this.heads[var22] = buf.gSmart2or4null();
 			}
 		} else if (code == 93) {
@@ -339,11 +339,11 @@ public class NPCType implements ConfigType {
 		} else if (code == 98) {
 			this.resizev = buf.g2();
 		} else if (code == 99) {
-			this.field2722 = true;
+			this.drawabove = true;
 		} else if (code == 100) {
-			this.field2725 = buf.g1b();
+			this.ambient = buf.g1b();
 		} else if (code == 101) {
-			this.field2726 = buf.g1b() * 5;
+			this.contrast = buf.g1b() * 5;
 		} else if (code == 102) {
 			int var23 = buf.g1();
 			int var24 = 0;
@@ -362,7 +362,7 @@ public class NPCType implements ConfigType {
 				}
 			}
 		} else if (code == 103) {
-			this.field2731 = buf.g2();
+			this.turnspeed = buf.g2();
 		} else if (code == 106 || code == 118) {
 			this.field2730 = buf.g2();
 			if (this.field2730 == 65535) {
@@ -391,9 +391,9 @@ public class NPCType implements ConfigType {
 		} else if (code == 107) {
 			this.active = false;
 		} else if (code == 109) {
-			this.field2736 = false;
+			this.walksmoothing = false;
 		} else if (code == 111) {
-			this.field2710 = false;
+			this.spotshadow = false;
 		} else if (code == 113) {
 			this.field2737 = (short) buf.g2();
 			this.field2729 = (short) buf.g2();
@@ -403,23 +403,23 @@ public class NPCType implements ConfigType {
 		} else if (code == 119) {
 			this.field2743 = buf.g1b();
 		} else if (code == 121) {
-			this.field2709 = new int[this.models.length][];
-			int var27 = buf.g1();
-			for (int var28 = 0; var28 < var27; var28++) {
+			this.modeloffset = new int[this.models.length][];
+			int length = buf.g1();
+			for (int index = 0; index < length; index++) {
 				int var29 = buf.g1();
-				int[] var30 = this.field2709[var29] = new int[3];
+				int[] var30 = this.modeloffset[var29] = new int[3];
 				var30[0] = buf.g1b();
 				var30[1] = buf.g1b();
 				var30[2] = buf.g1b();
 			}
 		} else if (code == 123) {
-			this.field2754 = buf.g2();
+			this.overlayheight = buf.g2();
 		} else if (code == 125) {
-			this.field2727 = (CompassPoint) SerializableEnums.decode(CompassPoint.method9573(), buf.g1b());
+			this.respawndir = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), buf.g1b());
 		} else if (code == 127) {
-			this.field2762 = buf.g2();
+			this.bas = buf.g2();
 		} else if (code == 128) {
-			SerializableEnums.decode(MoveSpeed.method13901(), buf.g1());
+			SerializableEnums.decode(MoveSpeed.values(), buf.g1());
 		} else if (code == 134) {
 			this.field2746 = buf.g2();
 			if (this.field2746 == 65535) {
@@ -442,17 +442,17 @@ public class NPCType implements ConfigType {
 			buf.g1();
 			buf.g2();
 		} else if (code == 137) {
-			this.field2717 = buf.g2();
+			this.cursorattack = buf.g2();
 		} else if (code == 138) {
-			this.field2706 = buf.gSmart2or4null();
+			this.covermarker = buf.gSmart2or4null();
 		} else if (code == 140) {
-			this.field2742 = buf.g1();
+			this.bgsoundvolume = buf.g1();
 		} else if (code == 141) {
-			this.field2756 = true;
+			this.follower = true;
 		} else if (code == 142) {
-			this.field2763 = buf.g2();
+			this.mapelement = buf.g2();
 		} else if (code == 143) {
-			this.field2723 = true;
+			this.drawbelow = true;
 		} else if (code >= 150 && code < 155) {
 			this.op[code - 150] = buf.gjstr();
 			if (!this.factory.allowMembers) {
@@ -464,9 +464,9 @@ public class NPCType implements ConfigType {
 			this.field2698 = buf.g1b();
 			this.field2714 = buf.g1b();
 		} else if (code == 158) {
-			this.field2758 = 1;
+			this.reprioritiseattackop = 1;
 		} else if (code == 159) {
-			this.field2758 = 0;
+			this.reprioritiseattackop = 0;
 		} else if (code == 160) {
 			int var31 = buf.g1();
 			this.field2757 = new int[var31];
@@ -475,42 +475,42 @@ public class NPCType implements ConfigType {
 			}
 		} else if (code != 162) {
 			if (code == 163) {
-				this.field2759 = buf.g1();
+				this.picksize = buf.g1();
 			} else if (code == 164) {
 				this.field2761 = buf.g2();
 				this.field2700 = buf.g2();
 			} else if (code == 165) {
-				this.field2713 = buf.g1();
+				this.picksizeshift = buf.g1();
 			} else if (code == 168) {
-				this.field2751 = buf.g1();
+				this.bgsoundsize = buf.g1();
 			} else if (code == 169) {
-				this.field2766 = false;
+				this.antimacro = false;
 			} else if (code >= 170 && code < 176) {
-				if (this.field2716 == null) {
-					this.field2716 = new int[6];
-					Arrays.fill(this.field2716, -1);
+				if (this.cursor == null) {
+					this.cursor = new int[6];
+					Arrays.fill(this.cursor, -1);
 				}
-				int var33 = buf.g2();
-				if (var33 == 65535) {
-					var33 = -1;
+				int cursor = buf.g2();
+				if (cursor == 65535) {
+					cursor = -1;
 				}
-				this.field2716[code - 170] = var33;
+				this.cursor[code - 170] = cursor;
 			} else if (code != 178) {
 				if (code == 179) {
-					this.field2724 = new Cuboid();
-					this.field2724.field4252 = buf.gSmart1or2s();
-					this.field2724.field4253 = buf.gSmart1or2s();
-					this.field2724.field4248 = buf.gSmart1or2s();
-					this.field2724.field4249 = buf.gSmart1or2s();
-					this.field2724.field4250 = buf.gSmart1or2s();
-					this.field2724.field4251 = buf.gSmart1or2s();
+					this.clickbox = new Cuboid();
+					this.clickbox.field4252 = buf.gSmart1or2s();
+					this.clickbox.field4253 = buf.gSmart1or2s();
+					this.clickbox.field4248 = buf.gSmart1or2s();
+					this.clickbox.field4249 = buf.gSmart1or2s();
+					this.clickbox.field4250 = buf.gSmart1or2s();
+					this.clickbox.field4251 = buf.gSmart1or2s();
 				} else if (code == 180) {
 					this.field2765 = buf.g1() & 0xFF;
 				} else if (code == 181) {
 					this.field2741 = (short) buf.g2();
 					this.field2702 = (byte) buf.g1();
 				} else if (code == 182) {
-					this.field2690 = true;
+					this.transmogfakenpc = true;
 				} else if (code == 249) {
 					int var34 = buf.g1();
 					if (this.params == null) {
@@ -538,19 +538,19 @@ public class NPCType implements ConfigType {
 		if (this.models == null) {
 			this.models = new int[0];
 		}
-		if (this.field2758 != -1) {
+		if (this.reprioritiseattackop != -1) {
 			return;
 		}
 		if (this.factory == null || ModeGame.RUNESCAPE == this.factory.modeGame) {
-			this.field2758 = 1;
+			this.reprioritiseattackop = 1;
 		} else {
-			this.field2758 = 0;
+			this.reprioritiseattackop = 0;
 		}
 	}
 
 	@ObfuscatedName("if.z(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;I)Ldo;")
 	public final Model method4542(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10) {
-		return this.getSequencedModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, this.field2762, true);
+		return this.getSequencedModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, this.bas, true);
 	}
 
 	@ObfuscatedName("if.p(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;IZB)Ldo;")
@@ -594,8 +594,8 @@ public class NPCType implements ConfigType {
 		BASType var24 = null;
 		if (!arg12 && arg11 != -1) {
 			var24 = (BASType) arg2.list(arg11);
-		} else if (this.field2762 != -1) {
-			var24 = (BASType) arg2.list(this.field2762);
+		} else if (this.bas != -1) {
+			var24 = (BASType) arg2.list(this.bas);
 		}
 		if (var22 == null || (var22.method1691() & var15) != var15) {
 			if (var22 != null) {
@@ -635,8 +635,8 @@ public class NPCType implements ConfigType {
 						if (var31[var32].field1372 < 13) {
 							var31[var32].method1947(2);
 						}
-						if (this.field2709 != null && this.field2709[var32] != null) {
-							var31[var32].method1945(this.field2709[var32][0], this.field2709[var32][1], this.field2709[var32][2]);
+						if (this.modeloffset != null && this.modeloffset[var32] != null) {
+							var31[var32].method1945(this.modeloffset[var32][0], this.modeloffset[var32][1], this.modeloffset[var32][2]);
 						}
 					}
 				}
@@ -688,7 +688,7 @@ public class NPCType implements ConfigType {
 			} else {
 				var43 = new ModelUnlit(var31, var31.length);
 			}
-			var22 = arg0.createModel(var43, var25, this.factory.field2773, this.field2725 + 64, this.field2726 + 850);
+			var22 = arg0.createModel(var43, var25, this.factory.field2773, this.ambient + 64, this.contrast + 850);
 			if (this.recol_s != null) {
 				short[] var44;
 				if (arg10 == null || arg10.field2684 == null) {
@@ -1006,6 +1006,6 @@ public class NPCType implements ConfigType {
 
 	@ObfuscatedName("if.q(II)I")
 	public int method4563(int arg0) {
-		return this.field2716 == null ? -1 : this.field2716[arg0];
+		return this.cursor == null ? -1 : this.cursor[arg0];
 	}
 }

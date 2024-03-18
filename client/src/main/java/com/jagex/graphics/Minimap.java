@@ -630,10 +630,10 @@ public class Minimap {
 						Vector3 var11 = var9.method10536().field4298;
 						int var12 = (int) var11.field4308 / 128 - arg1 / 128;
 						int var13 = (int) var11.field4313 / 128 - arg2 / 128;
-						if (var10.field2763 == -1) {
+						if (var10.mapelement == -1) {
 							method715(arg3, arg4, arg5, arg6, var12, var13, DefaultSprites.field510[1]);
 						} else {
-							method15085(arg0, arg4, arg3, arg5, arg6, var12, var13, var10.field2763);
+							method15085(arg0, arg4, arg3, arg5, arg6, var12, var13, var10.mapelement);
 						}
 					}
 				}
@@ -670,7 +670,7 @@ public class Minimap {
 				if (Client.localPlayerEntity.field12060 != 0 && var9.field12060 != 0 && Client.localPlayerEntity.field12060 == var9.field12060) {
 					var18 = true;
 				}
-				if (var9.model != null && var9.model.field7892 != -1 && ((NPCType) Client.npcTypeList.list(var9.model.field7892)).field2690) {
+				if (var9.model != null && var9.model.field7892 != -1 && ((NPCType) Client.npcTypeList.list(var9.model.field7892)).transmogfakenpc) {
 					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[1]);
 				} else if (CommunityPartnerType.field1947 == var9.field12070) {
 					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[8]);

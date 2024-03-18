@@ -155,10 +155,10 @@ public class NpcEntity extends PathingEntity {
 		var4.method6315(0.0F, (float) (-20 - this.field10408), 0.0F);
 		BASType var8 = this.method16508();
 		NPCType var9 = this.npcType.field2735 == null ? this.npcType : this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
-		boolean var10 = var9.field2724 != null;
+		boolean var10 = var9.clickbox != null;
 		this.field10458 = false;
 		PickableEntity var11 = null;
-		if (Client.preferences.characterShadows.getValue() == 1 && var9.field2710 && var8.field7346) {
+		if (Client.preferences.characterShadows.getValue() == 1 && var9.spotshadow && var8.field7346) {
 			AnimationWrapper var12 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
 			EntityWalkAnimationWrapper var13 = this.field10432.method14346() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
 			short var14 = Client.graphicsDefaults.field7728;
@@ -192,7 +192,7 @@ public class NpcEntity extends PathingEntity {
 			if (this.field11713 == null || this.field11713.length > 1) {
 				this.method18363(1);
 			}
-			arg0.method2193(var4, this.field11713[0], var9.field2724);
+			arg0.method2193(var4, this.field11713[0], var9.clickbox);
 		} else if (this.field11713 == null || this.field11713.length < this.field10459.length) {
 			this.method18363(this.field10459.length);
 		}
@@ -202,7 +202,7 @@ public class NpcEntity extends PathingEntity {
 		this.method16576(arg0, this.field10459, var4, false);
 		for (int var17 = 0; var17 < this.field10459.length; var17++) {
 			if (this.field10459[var17] != null) {
-				if (this.npcType.field2766) {
+				if (this.npcType.antimacro) {
 					this.field10459[var17].method1745(this.field12073, this.field12086, this.field12088, this.field12089);
 				}
 				if (var10) {
@@ -307,7 +307,7 @@ public class NpcEntity extends PathingEntity {
 	public final void method19168(CompassPoint arg0, int arg1) {
 		int var3 = this.field10450[0];
 		int var4 = this.field10448[0];
-		switch(arg0.field8304) {
+		switch(arg0.index) {
 			case 0:
 				var4--;
 				break;
@@ -395,7 +395,7 @@ public class NpcEntity extends PathingEntity {
 				}
 				this.field10450[0] = arg1;
 				this.field10448[0] = arg2;
-				this.field10441[0] = MoveSpeed.field8315.field8313;
+				this.field10441[0] = MoveSpeed.WALK.id;
 				return;
 			}
 		}
@@ -426,33 +426,33 @@ public class NpcEntity extends PathingEntity {
 		}
 		if (this.npcType.field2735 != null) {
 			NPCType var1 = this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
-			if (var1 != null && var1.field2762 != -1) {
-				return var1.field2762;
+			if (var1 != null && var1.bas != -1) {
+				return var1.bas;
 			}
 		}
-		return this.npcType.field2762;
+		return this.npcType.bas;
 	}
 
 	@ObfuscatedName("aqc.bs(B)I")
 	public int method16486() {
 		if (this.npcType.field2735 != null) {
 			NPCType var1 = this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
-			if (var1 != null && var1.field2706 != -1) {
-				return var1.field2706;
+			if (var1 != null && var1.covermarker != -1) {
+				return var1.covermarker;
 			}
 		}
-		return this.npcType.field2706;
+		return this.npcType.covermarker;
 	}
 
 	@ObfuscatedName("aqc.bo(I)I")
 	public int height() {
 		if (this.npcType.field2735 != null) {
 			NPCType var1 = this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
-			if (var1 != null && var1.field2754 != -1) {
-				return var1.field2754;
+			if (var1 != null && var1.overlayheight != -1) {
+				return var1.overlayheight;
 			}
 		}
-		return this.npcType.field2754 == -1 ? super.height() : this.npcType.field2754;
+		return this.npcType.overlayheight == -1 ? super.height() : this.npcType.overlayheight;
 	}
 
 	@ObfuscatedName("aqc.hn(I)Z")
@@ -462,15 +462,15 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.gp(I)I")
 	public int method18371() {
-		return this.npcType == null ? 0 : this.npcType.field2713;
+		return this.npcType == null ? 0 : this.npcType.picksizeshift;
 	}
 
 	@ObfuscatedName("aqc.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		if (this.npcType == null) {
 			return false;
-		} else if (this.npcType.field2724 != null) {
-			return arg0.method2191(arg1, arg2, this.method10533(), this.npcType.field2724);
+		} else if (this.npcType.clickbox != null) {
+			return arg0.method2191(arg1, arg2, this.method10533(), this.npcType.clickbox);
 		} else if (this.method19167(arg0, 131072)) {
 			Matrix4x3 var4 = this.method10533();
 			boolean var5 = false;
@@ -479,12 +479,12 @@ public class NpcEntity extends PathingEntity {
 					boolean var10000;
 					label52: {
 						label51: {
-							if (this.npcType.field2713 <= 0) {
-								if (this.npcType.field2759 == -1) {
+							if (this.npcType.picksizeshift <= 0) {
+								if (this.npcType.picksize == -1) {
 									if (this.npcType.size != 1) {
 										break label51;
 									}
-								} else if (this.npcType.field2759 != 1) {
+								} else if (this.npcType.picksize != 1) {
 									break label51;
 								}
 							}
@@ -494,7 +494,7 @@ public class NpcEntity extends PathingEntity {
 						var10000 = false;
 					}
 					boolean var7 = var10000;
-					boolean var8 = this.field10459[var6].method1725(arg1, arg2, var4, var7, this.npcType.field2713);
+					boolean var8 = this.field10459[var6].method1725(arg1, arg2, var4, var7, this.npcType.picksizeshift);
 					if (var8) {
 						var5 = true;
 						break;

@@ -1842,7 +1842,7 @@ public class MiniMenu {
 							break;
 						case 1:
 						case 2:
-							if (var2.field2758 == 1) {
+							if (var2.reprioritiseattackop == 1) {
 								var7 = true;
 								continue;
 							}
@@ -1852,7 +1852,7 @@ public class MiniMenu {
 							continue;
 					}
 					if (var12) {
-						var10 = var2.field2717;
+						var10 = var2.cursorattack;
 					}
 				}
 				method3042(var6[var8], TextUtil.method596(16776960) + var3, var10, var9, -1, (long) arg0.field10406, 0, 0, true, false, (long) arg0.field10406, false);
@@ -1876,7 +1876,7 @@ public class MiniMenu {
 						var17 = (short) (var17 + 2000);
 					}
 					if (var15) {
-						var18 = var2.field2717;
+						var18 = var2.cursorattack;
 					}
 					method3042(var6[var14], TextUtil.method596(16776960) + var3, var18, var17, -1, (long) arg0.field10406, 0, 0, true, false, (long) arg0.field10406, false);
 				}
@@ -1917,7 +1917,7 @@ public class MiniMenu {
 			boolean var7 = false;
 			if (arg0.model != null && arg0.model.field7892 != -1) {
 				NPCType var8 = (NPCType) Client.npcTypeList.list(arg0.model.field7892);
-				if (var8.field2690) {
+				if (var8.transmogfakenpc) {
 					var7 = true;
 					var6 = ((NPCType) Client.npcTypeList.list(arg0.model.field7892)).name;
 					if (var8.vislevel != 0) {

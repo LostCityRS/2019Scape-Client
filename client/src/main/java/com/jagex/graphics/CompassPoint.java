@@ -31,29 +31,29 @@ public class CompassPoint implements SerializableEnum {
 	public static final CompassPoint field8310 = new CompassPoint(2, 7);
 
 	@ObfuscatedName("zi.z")
-	public final int field8304;
+	public final int index;
 
 	@ObfuscatedName("zi.p")
-	public final int field8312;
+	public final int id;
 
 	@ObfuscatedName("vj.e(I)[Lzi;")
-	public static CompassPoint[] method9573() {
+	public static CompassPoint[] values() {
 		return new CompassPoint[] { field8305, field8307, field8303, field8311, field8310, field8309, field8306, field8308 };
 	}
 
 	public CompassPoint(int arg0, int arg1) {
-		this.field8304 = arg0;
-		this.field8312 = arg1;
+		this.index = arg0;
+		this.id = arg1;
 	}
 
 	@ObfuscatedName("zi.n()I")
 	public int getId() {
-		return this.field8312;
+		return this.id;
 	}
 
 	@ObfuscatedName("zi.m(I)Lzi;")
 	public CompassPoint method13895() {
-		switch(this.field8304) {
+		switch(this.index) {
 			case 0:
 				return field8311;
 			case 1:

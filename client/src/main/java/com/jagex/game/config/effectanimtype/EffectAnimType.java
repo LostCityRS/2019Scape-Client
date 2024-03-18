@@ -34,10 +34,10 @@ public class EffectAnimType implements ConfigType {
 	public short[] retex_d;
 
 	@ObfuscatedName("yy.p")
-	public byte[] field8254;
+	public byte[] recolindices;
 
 	@ObfuscatedName("yy.d")
-	public byte[] field8255;
+	public byte[] retexindices;
 
 	@ObfuscatedName("yy.c")
 	public int resizeh = 128;
@@ -124,32 +124,32 @@ public class EffectAnimType implements ConfigType {
 			}
 		} else if (code == 44) {
 			int var7 = buf.g2();
-			int var8 = 0;
+			int length = 0;
 			for (int var9 = var7; var9 > 0; var9 >>= 0x1) {
-				var8++;
+				length++;
 			}
-			this.field8254 = new byte[var8];
+			this.recolindices = new byte[length];
 			byte var10 = 0;
-			for (int var11 = 0; var11 < var8; var11++) {
-				if ((var7 & 0x1 << var11) > 0) {
-					this.field8254[var11] = var10++;
+			for (int index = 0; index < length; index++) {
+				if ((var7 & 0x1 << index) > 0) {
+					this.recolindices[index] = var10++;
 				} else {
-					this.field8254[var11] = -1;
+					this.recolindices[index] = -1;
 				}
 			}
 		} else if (code == 45) {
 			int var12 = buf.g2();
-			int var13 = 0;
+			int length = 0;
 			for (int var14 = var12; var14 > 0; var14 >>= 0x1) {
-				var13++;
+				length++;
 			}
-			this.field8255 = new byte[var13];
+			this.retexindices = new byte[length];
 			byte var15 = 0;
-			for (int var16 = 0; var16 < var13; var16++) {
-				if ((var12 & 0x1 << var16) > 0) {
-					this.field8255[var16] = var15++;
+			for (int index = 0; index < length; index++) {
+				if ((var12 & 0x1 << index) > 0) {
+					this.retexindices[index] = var15++;
 				} else {
-					this.field8255[var16] = -1;
+					this.retexindices[index] = -1;
 				}
 			}
 		} else if (code == 46) {
