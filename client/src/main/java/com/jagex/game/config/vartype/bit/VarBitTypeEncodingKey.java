@@ -52,13 +52,13 @@ public class VarBitTypeEncodingKey implements SerializableEnum {
 	public static final VarBitTypeEncodingKey field3071 = new VarBitTypeEncodingKey(0, 15);
 
 	@ObfuscatedName("ks.s")
-	public final int field3072;
+	public final int key;
 
 	@ObfuscatedName("ks.y")
 	public final int serialID;
 
 	public VarBitTypeEncodingKey(int arg0, int arg1) {
-		this.field3072 = arg0;
+		this.key = arg0;
 		this.serialID = arg1;
 	}
 

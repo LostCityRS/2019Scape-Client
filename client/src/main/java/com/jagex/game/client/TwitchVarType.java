@@ -32,7 +32,7 @@ public class TwitchVarType implements SerializableEnum, TwitchVar {
 		int var5 = 0;
 		while (var5 < var4.length) {
 			ScriptVarType var6 = var4[var5];
-			switch(var6.baseType.id) {
+			switch(var6.baseType.key) {
 				case 1:
 				case 2:
 				case 3:

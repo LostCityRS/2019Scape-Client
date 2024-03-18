@@ -7,28 +7,28 @@ import deob.ObfuscatedName;
 public class VarTransmitLevel implements SerializableEnum {
 
 	@ObfuscatedName("ql.e")
-	public static final VarTransmitLevel field4607 = new VarTransmitLevel(0);
+	public static final VarTransmitLevel NEVER = new VarTransmitLevel(0);
 
 	@ObfuscatedName("ql.n")
-	public static final VarTransmitLevel field4605 = new VarTransmitLevel(1);
+	public static final VarTransmitLevel ON_SET_DIFFERENT = new VarTransmitLevel(1);
 
 	@ObfuscatedName("ql.m")
-	public static final VarTransmitLevel field4604 = new VarTransmitLevel(2);
+	public static final VarTransmitLevel ON_SET_ALWAYS = new VarTransmitLevel(2);
 
 	@ObfuscatedName("ql.k")
-	public final int field4606;
+	public final int serialID;
 
 	@ObfuscatedName("mj.e(I)[Lql;")
 	public static VarTransmitLevel[] method5925() {
-		return new VarTransmitLevel[] { field4604, field4607, field4605 };
+		return new VarTransmitLevel[] {ON_SET_ALWAYS, NEVER, ON_SET_DIFFERENT};
 	}
 
 	public VarTransmitLevel(int arg0) {
-		this.field4606 = arg0;
+		this.serialID = arg0;
 	}
 
 	@ObfuscatedName("ql.n()I")
 	public int getId() {
-		return this.field4606;
+		return this.serialID;
 	}
 }

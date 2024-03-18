@@ -4852,9 +4852,9 @@ public final class ScriptRunner {
 		BaseVarType var3 = var1.dataType.getVarBaseType();
 		if (BaseVarType.INTEGER == var3) {
 			arg0.field8216[++arg0.field8226 - 1] = var2.getVarValueInt(var1);
-		} else if (BaseVarType.field4837 == var3) {
+		} else if (BaseVarType.LONG == var3) {
 			arg0.field8224[++arg0.field8238 - 1] = var2.getVarValueLong(var1);
-		} else if (BaseVarType.field4836 == var3) {
+		} else if (BaseVarType.STRING == var3) {
 			try {
 				String var4 = (String) var2.getVarValue(var1);
 				if (var4 == null) {
@@ -4880,9 +4880,9 @@ public final class ScriptRunner {
 				DelayedStateChange.method3607(var1);
 			}
 			var2.setVarValueInt(var1, arg0.field8216[--arg0.field8226]);
-		} else if (BaseVarType.field4837 == var3) {
+		} else if (BaseVarType.LONG == var3) {
 			var2.setVarValueLong(var1, arg0.field8224[--arg0.field8238]);
-		} else if (BaseVarType.field4836 == var3) {
+		} else if (BaseVarType.STRING == var3) {
 			if (VarDomainType.CLIENT == var1.domain) {
 				DelayedStateChange.method14066(var1);
 			}
@@ -10976,7 +10976,7 @@ public final class ScriptRunner {
 			return;
 		}
 		VarPlayerType var5 = (VarPlayerType) Client.field8485.list(var3);
-		switch(var5.dataType.baseType.id) {
+		switch(var5.dataType.baseType.key) {
 			case 2:
 				arg0.field8216[++arg0.field8226 - 1] = var4.method3504().method14728(var5.id);
 				break;

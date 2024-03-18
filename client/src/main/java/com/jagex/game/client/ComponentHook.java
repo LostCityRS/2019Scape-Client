@@ -23,9 +23,9 @@ public class ComponentHook {
 		for (int var4 = 0; var4 < var1; var4++) {
 			int var5 = arg0.g1();
 			if (var5 == 0) {
-				var3[var4] = BaseVarType.method7336(Integer.class).decode(arg0);
+				var3[var4] = BaseVarType.getCodec(Integer.class).decode(arg0);
 			} else if (var5 == 1) {
-				var3[var4] = BaseVarType.method7336(String.class).decode(arg0);
+				var3[var4] = BaseVarType.getCodec(String.class).decode(arg0);
 			} else {
 				throw new IllegalStateException("Unrecognised type ID in deserialise: " + var5);
 			}
