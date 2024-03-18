@@ -32,7 +32,7 @@ public class PlayerGroup {
 	public final int maxSize;
 
 	@ObfuscatedName("gq.p")
-	public final VarContainerSparse field1899;
+	public final VarContainerSparse vars;
 
 	@ObfuscatedName("gq.d")
 	public final ArrayList members;
@@ -78,11 +78,11 @@ public class PlayerGroup {
 		for (int var11 = 0; var11 < var10; var11++) {
 			this.banned.add(new PlayerGroupBanned(arg1, this.field1910, this.field1911));
 		}
-		this.field1899 = new VarContainerSparse(arg3.method291());
+		this.vars = new VarContainerSparse(arg3.getVarPlayerGroupTypeList());
 		int var12 = arg1.g2();
 		for (int var13 = 0; var13 < var12; var13++) {
-			VarValue var14 = arg3.method291().decodeVarValue(arg1);
-			this.field1899.method14735(var14.field4240, var14.field4239);
+			VarValue var14 = arg3.getVarPlayerGroupTypeList().decodeVarValue(arg1);
+			this.vars.setVarObject(var14.var, var14.value);
 		}
 		if (!arg2) {
 			arg1.g2();
@@ -187,8 +187,8 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.r(I)Leh;")
-	public VarDomain method3394() {
-		return new SparseVarDomain(VarDomainType.PLAYER_GROUP, this.field1899);
+	public VarDomain getVarDomain() {
+		return new SparseVarDomain(VarDomainType.PLAYER_GROUP, this.vars);
 	}
 
 	@ObfuscatedName("gq.v(Lgy;B)V")
@@ -233,7 +233,7 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.h(IZS)V")
-	public void method3402(int index, boolean arg1) {
+	public void setMemberReady(int index, boolean arg1) {
 		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
 		member.setStatus(arg1 ? PlayerGroupMemberStatus.field1976 : PlayerGroupMemberStatus.field1977);
 	}
@@ -262,7 +262,7 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.j(ILgy;I)V")
-	public void method3403(int index, PlayerGroupMember arg1) {
+	public void updateMember(int index, PlayerGroupMember arg1) {
 		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
 		member.syncMember(arg1);
 	}

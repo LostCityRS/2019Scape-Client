@@ -346,7 +346,7 @@ public final class ScriptRunner {
 			arg2.field8233.put(VarDomainType.PLAYER, arg2.currentEntity.field10415);
 		}
 		if (Client.currentPlayerGroup != null) {
-			arg2.field8234.put(VarDomainType.PLAYER_GROUP, Client.currentPlayerGroup.method3394());
+			arg2.field8234.put(VarDomainType.PLAYER_GROUP, Client.currentPlayerGroup.getVarDomain());
 		}
 		try {
 			field8202 = 0;
@@ -10967,24 +10967,24 @@ public final class ScriptRunner {
 		boolean var2 = arg0.field8216[arg0.field8226 + 1] == 1;
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		PlayerGroupMember var4 = Client.currentPlayerGroup.getMember(var1);
-		if (var4.method3504() == null) {
-			var4.method3503(Client.field10837);
+		if (var4.clearVariables() == null) {
+			var4.resetVariables(Client.field10837);
 		}
 		if (!var2) {
 			VarBitType var6 = (VarBitType) Client.varBitTypeList.list(var3);
-			arg0.field8216[++arg0.field8226 - 1] = var6.getVarbitValue(var4.method3504().method14728(var6.baseVar.id));
+			arg0.field8216[++arg0.field8226 - 1] = var6.getVarbitValue(var4.clearVariables().method14728(var6.baseVar.id));
 			return;
 		}
 		VarPlayerType var5 = (VarPlayerType) Client.varPlayerTypeList.list(var3);
 		switch(var5.dataType.baseType.index) {
 			case 2:
-				arg0.field8216[++arg0.field8226 - 1] = var4.method3504().method14728(var5.id);
+				arg0.field8216[++arg0.field8226 - 1] = var4.clearVariables().method14728(var5.id);
 				break;
 			case 4:
-				arg0.field8224[++arg0.field8238 - 1] = var4.method3504().method14730(var5.id);
+				arg0.field8224[++arg0.field8238 - 1] = var4.clearVariables().method14730(var5.id);
 				break;
 			default:
-				arg0.field8218[++arg0.field8211 - 1] = var4.method3504().method14738(var5.id);
+				arg0.field8218[++arg0.field8211 - 1] = var4.clearVariables().method14738(var5.id);
 		}
 	}
 

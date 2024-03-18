@@ -8175,7 +8175,7 @@ public final class Client extends GameShell {
 							var36 = new VarContainerSparse(varObjTypeList);
 							while (var37-- > 0) {
 								VarValue var38 = varObjTypeList.decodeVarValue(in);
-								var36.method14735(var38.field4240, var38.field4239);
+								var36.setVarObject(var38.var, var38.value);
 							}
 						}
 					}
@@ -9284,14 +9284,14 @@ public final class Client extends GameShell {
 			int var321 = in.g2();
 			boolean var322 = in.g1() == 1;
 			PlayerGroupMember var323 = currentPlayerGroup.getMember(var321);
-			VarContainerSparse var324 = var323.method3504();
+			VarContainerSparse var324 = var323.clearVariables();
 			if (var324 == null || var322) {
-				var323.method3503(field10837);
-				var324 = var323.method3504();
+				var323.resetVariables(field10837);
+				var324 = var323.clearVariables();
 			}
 			while (connection.packetSize - (in.pos - var320) > 0) {
 				VarValue var325 = varPlayerTypeList.decodeVarValue(in);
-				var324.method14735(var325.field4240, var325.field4239);
+				var324.setVarObject(var325.var, var325.value);
 			}
 			connection.packetType = null;
 			return true;
@@ -9378,8 +9378,8 @@ public final class Client extends GameShell {
 				field7698 = new SparseVarDomain(varClanTypeList);
 			}
 			VarValue var352 = varClanTypeList.decodeVarValue(in);
-			field7698.field1708.method14735(var352.field4240, var352.field4239);
-			field10841[++field11020 - 1 & 0x3F] = var352.field4240;
+			field7698.field1708.setVarObject(var352.var, var352.value);
+			field10841[++field11020 - 1 & 0x3F] = var352.var;
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.VORBIS_SOUND_GROUP == connection.packetType) {
@@ -10050,7 +10050,7 @@ public final class Client extends GameShell {
 						var546 = new VarContainerSparse(varObjTypeList);
 						while (var547-- > 0) {
 							VarValue var548 = varObjTypeList.decodeVarValue(in);
-							var546.method14735(var548.field4240, var548.field4239);
+							var546.setVarObject(var548.var, var548.value);
 						}
 					}
 				}
@@ -11552,14 +11552,14 @@ public final class Client extends GameShell {
 				}
 			}
 			if ((var4 & 0x200000) != 0) {
-				var3.field10460.method14749();
+				var3.field10460.clear();
 				var0.pos += 2;
 				int var70 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var71 = 0; var71 < var70; var71++) {
 					int var72 = var0.g1_alt2();
 					BaseVarType var73 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var72);
 					VarValue var74 = varNpcTypeList.decodeVarValue(var0, var73);
-					var3.field10460.method14735(var74.field4240, var74.field4239);
+					var3.field10460.setVarObject(var74.var, var74.value);
 				}
 			}
 			if ((var4 & 0x20000) != 0) {
@@ -11689,7 +11689,7 @@ public final class Client extends GameShell {
 					int var110 = var0.g1_alt3();
 					BaseVarType var111 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var110);
 					VarValue var112 = varNpcTypeList.decodeVarValue(var0, var111);
-					var3.field10460.method14735(var112.field4240, var112.field4239);
+					var3.field10460.setVarObject(var112.var, var112.value);
 				}
 			}
 		}

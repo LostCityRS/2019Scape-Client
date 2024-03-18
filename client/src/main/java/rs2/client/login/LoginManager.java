@@ -777,7 +777,7 @@ public class LoginManager {
 						break;
 					}
 					VarValue var32 = Client.varBasicTypeList.decodeVarValue(field432.in);
-					Client.field7228.field1708.method14735(var32.field4240, var32.field4239);
+					Client.field7228.field1708.setVarObject(var32.var, var32.value);
 				}
 			}
 			if (field445 == 138) {

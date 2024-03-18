@@ -49,7 +49,7 @@ public class PathingEntityVarDomain implements VarDomain {
 
 	@ObfuscatedName("sd.f(Lec;Ljava/lang/Object;I)V")
 	public void setVarValue(VarType arg0, Object arg1) {
-		this.field6687.field10460.method14735(arg0.id, arg1);
+		this.field6687.field10460.setVarObject(arg0.id, arg1);
 	}
 
 	@ObfuscatedName("sd.w(Lkh;II)V")

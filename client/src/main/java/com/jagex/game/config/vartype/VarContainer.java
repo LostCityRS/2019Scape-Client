@@ -12,10 +12,10 @@ public interface VarContainer extends Iterable {
 	Object method14738(int arg0);
 
 	@ObfuscatedName("abj.w(ILjava/lang/Object;B)V")
-	void method14735(int arg0, Object arg1);
+	void setVarObject(int arg0, Object arg1);
 
 	@ObfuscatedName("abj.l(I)V")
-	void method14749();
+	void clear();
 
 	@ObfuscatedName("abj.u(IB)V")
 	void method14734(int arg0);

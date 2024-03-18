@@ -9,14 +9,14 @@ import deob.ObfuscatedName;
 public interface PlayerGroupResourceProvider {
 
 	@ObfuscatedName("gu.n(B)Ladd;")
-	VarTypeList method291();
+	VarTypeList getVarPlayerGroupTypeList();
 
 	@ObfuscatedName("gu.m(I)Laor;")
-	VarBitTypeList method294();
+	VarBitTypeList getVarBitTypeList();
 
 	@ObfuscatedName("gu.k(B)Lwq;")
-	SkillDefaults method295();
+	SkillDefaults getSkillDefaults();
 
 	@ObfuscatedName("gu.e(B)Ladd;")
-    VarTypeList method293();
+    VarTypeList getVarPlayerTypeList();
 }

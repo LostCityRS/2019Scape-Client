@@ -1,2 +1,2 @@
 @echo off
-java -Xmx384m -Xss2m -Dsun.java2d.noddraw=true -XX:CompileThreshold=1500 -cp ref/innerpack.patched.jar AppletViewer
+java -Xmx384m -Xss2m -Dsun.java2d.noddraw=true -XX:CompileThreshold=1500 --add-opens=java.base/java.time=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED -cp ref/innerpack.patched.jar AppletViewer

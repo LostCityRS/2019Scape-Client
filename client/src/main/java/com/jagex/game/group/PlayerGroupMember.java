@@ -43,7 +43,7 @@ public class PlayerGroupMember {
 	public int team;
 
 	@ObfuscatedName("gy.r")
-	public VarContainerSparse field1934;
+	public VarContainerSparse variables;
 
 	public PlayerGroupMember(Packet buf, boolean arg1, boolean arg2, PlayerGroupResourceProvider arg3) {
 		if (arg1) {
@@ -57,13 +57,13 @@ public class PlayerGroupMember {
 		int var5 = buf.g1();
 		this.members = (var5 & 0x1) != 0;
 		this.online = (var5 & 0x2) != 0;
-		this.stats = new PlayerStat[arg3.method295().getSkillCount()];
+		this.stats = new PlayerStat[arg3.getSkillDefaults().getSkillCount()];
 		int var6 = buf.g1();
 		if (var6 > this.stats.length) {
 			throw new IllegalStateException("");
 		}
 		for (int var7 = 0; var7 < this.stats.length; var7++) {
-			PlayerStat var8 = this.stats[var7] = new PlayerStat(arg3.method295().getSkill(var7), true);
+			PlayerStat var8 = this.stats[var7] = new PlayerStat(arg3.getSkillDefaults().getSkill(var7), true);
 			if (var7 < var6) {
 				var8.setXP(buf.g4s());
 			} else {
@@ -72,10 +72,10 @@ public class PlayerGroupMember {
 			var8.setLevel(var8.getBaseLevel());
 		}
 		int var9 = buf.g2();
-		this.vars = new VarContainerSparse(arg3.method293());
+		this.vars = new VarContainerSparse(arg3.getVarPlayerTypeList());
 		for (int var10 = 0; var10 < var9; var10++) {
-			VarValue var11 = arg3.method293().decodeVarValue(buf);
-			this.vars.method14735(var11.field4240, var11.field4239);
+			VarValue var11 = arg3.getVarPlayerTypeList().decodeVarValue(buf);
+			this.vars.setVarObject(var11.var, var11.value);
 		}
 		this.nodeId = buf.g2();
 		if (this.nodeId == 65535) {
@@ -162,26 +162,26 @@ public class PlayerGroupMember {
 			this.stats[var2].setXP(arg0.stats[var2].getXP());
 			this.stats[var2].setLevel(this.stats[var2].getBaseLevel());
 		}
-		this.vars.method14749();
+		this.vars.clear();
 		Iterator var3 = arg0.vars.iterator();
 		while (var3.hasNext()) {
 			VarValue var4 = (VarValue) var3.next();
-			this.vars.method14735(var4.field4240, var4.field4239);
+			this.vars.setVarObject(var4.var, var4.value);
 		}
 		this.members = arg0.members;
 	}
 
 	@ObfuscatedName("gy.s(Lgu;B)V")
-	public void method3503(PlayerGroupResourceProvider arg0) {
-		if (this.field1934 == null) {
-			this.field1934 = new VarContainerSparse(arg0.method293());
+	public void resetVariables(PlayerGroupResourceProvider arg0) {
+		if (this.variables == null) {
+			this.variables = new VarContainerSparse(arg0.getVarPlayerTypeList());
 		} else {
-			this.field1934.method14749();
+			this.variables.clear();
 		}
 	}
 
 	@ObfuscatedName("gy.y(I)Labn;")
-	public VarContainerSparse method3504() {
-		return this.field1934;
+	public VarContainerSparse clearVariables() {
+		return this.variables;
 	}
 }

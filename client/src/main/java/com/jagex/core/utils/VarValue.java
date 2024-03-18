@@ -6,18 +6,18 @@ import deob.ObfuscatedName;
 public class VarValue {
 
 	@ObfuscatedName("on.e")
-	public final int field4240;
+	public final int var;
 
 	@ObfuscatedName("on.n")
-	public Object field4239;
+	public Object value;
 
 	public VarValue(int arg0) {
-		this.field4240 = arg0;
+		this.var = arg0;
 	}
 
 	public VarValue(int arg0, Object arg1) {
-		this.field4240 = arg0;
-		this.field4239 = arg1;
+		this.var = arg0;
+		this.value = arg1;
 	}
 
 	public boolean equals(Object arg0) {
@@ -25,12 +25,12 @@ public class VarValue {
 			return false;
 		}
 		VarValue var2 = (VarValue) arg0;
-		if (var2.field4239 == null && this.field4239 != null) {
+		if (var2.value == null && this.value != null) {
 			return false;
-		} else if (this.field4239 == null && var2.field4239 != null) {
+		} else if (this.value == null && var2.value != null) {
 			return false;
 		} else {
-			return this.field4240 == var2.field4240 && var2.field4239.equals(this.field4239);
+			return this.var == var2.var && var2.value.equals(this.value);
 		}
 	}
 }

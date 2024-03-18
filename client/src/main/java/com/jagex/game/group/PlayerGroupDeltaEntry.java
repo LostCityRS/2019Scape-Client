@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface PlayerGroupDeltaEntry {
 
 	@ObfuscatedName("gg.e(Lgq;B)V")
-	void method3371(PlayerGroup arg0);
+	void apply(PlayerGroup arg0);
 }

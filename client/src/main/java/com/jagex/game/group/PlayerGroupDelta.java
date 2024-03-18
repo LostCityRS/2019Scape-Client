@@ -92,7 +92,7 @@ public class PlayerGroupDelta {
 		Iterator var2 = this.field1942.iterator();
 		while (var2.hasNext()) {
 			PlayerGroupDeltaEntry var3 = (PlayerGroupDeltaEntry) var2.next();
-			var3.method3371(arg0);
+			var3.apply(arg0);
 		}
 		arg0.method3413();
 	}
@@ -117,7 +117,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gt.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			arg0.addMember(this.field1967);
 		}
 	}
@@ -138,7 +138,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("fk.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			PlayerGroupMember var2 = arg0.getMember(this.field1894);
 			var2.method3499();
 			var2.getDisplayName();
@@ -166,7 +166,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("go.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			arg0.addBanned(this.field1917);
 		}
 	}
@@ -187,7 +187,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("fr.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			PlayerGroupBanned var2 = (PlayerGroupBanned) arg0.getBanned().get(this.field1896);
 			arg0.deleteBanned(this.field1896);
 			var2.getDisplayName();
@@ -214,7 +214,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gn.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			arg0.setMemberRank(this.field1937, this.field1938);
 			arg0.getMember(this.field1937).method3499();
 		}
@@ -240,7 +240,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gh.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			arg0.setMemberOnline(this.field1969, this.field1968);
 			arg0.getMember(this.field1969).method3499();
 		}
@@ -262,7 +262,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gf.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			arg0.setMemberOffline(this.field1941);
 			arg0.getMember(this.field1941);
 		}
@@ -288,8 +288,8 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("fe.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
-			arg0.method3402(this.field1893, this.field1892);
+		public void apply(PlayerGroup arg0) {
+			arg0.setMemberReady(this.field1893, this.field1892);
 			arg0.getMember(this.field1893).method3499();
 		}
 	}
@@ -314,7 +314,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gm.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			arg0.setMemberTeam(this.field1974, this.field1973);
 			arg0.getMember(this.field1974).method3499();
 		}
@@ -332,7 +332,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gr.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			arg0.setAllMembersOnline();
 		}
 	}
@@ -349,7 +349,7 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gk.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			arg0.setAllMembersReady();
 		}
 	}
@@ -374,8 +374,8 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gp.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
-			arg0.method3403(this.field1918, this.field1919);
+		public void apply(PlayerGroup arg0) {
+			arg0.updateMember(this.field1918, this.field1919);
 		}
 	}
 
@@ -395,14 +395,14 @@ public class PlayerGroupDelta {
 				this.field1939 = null;
 			} else {
 				arg1.pos -= 2;
-				this.field1939 = arg0.field1943.method291().decodeVarValue(arg1);
+				this.field1939 = arg0.field1943.getVarPlayerGroupTypeList().decodeVarValue(arg1);
 			}
 		}
 
 		@ObfuscatedName("gc.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			if (this.field1939 != null) {
-				arg0.method3394().setVarValue((VarType) this.this$0.field1943.method291().list(this.field1939.field4240), this.field1939.field4239);
+				arg0.getVarDomain().setVarValue((VarType) this.this$0.field1943.getVarPlayerGroupTypeList().list(this.field1939.var), this.field1939.value);
 			}
 		}
 	}
@@ -433,10 +433,10 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gl.e(Lgq;B)V")
-		public void method3371(PlayerGroup arg0) {
+		public void apply(PlayerGroup arg0) {
 			if (this.field1916 != -1) {
 				try {
-					arg0.method3394().setVarbitValue((VarBitType) this.this$0.field1943.method294().list(this.field1916), this.field1915);
+					arg0.getVarDomain().setVarbitValue((VarBitType) this.this$0.field1943.getVarBitTypeList().list(this.field1916), this.field1915);
 				} catch (VarBitOverflowException var3) {
 				}
 			}

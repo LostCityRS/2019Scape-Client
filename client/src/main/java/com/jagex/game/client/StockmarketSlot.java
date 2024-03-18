@@ -61,7 +61,7 @@ public class StockmarketSlot {
 				arg0.pos -= 1;
 				VarValue var6 = arg1.decodeVarValue(arg0, var4);
 				if (var6 != null) {
-					var2.method14735(var6.field4240, var6.field4239);
+					var2.setVarObject(var6.var, var6.value);
 				}
 			}
 		}

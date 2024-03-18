@@ -27,7 +27,7 @@ public class VarContainerSparse implements VarContainer {
 		if (this.field8740 != null) {
 			VarValue var2 = (VarValue) this.field8740.get(arg0);
 			if (var2 != null) {
-				return (Integer) var2.field4239;
+				return (Integer) var2.value;
 			}
 		}
 		return (Integer) this.field8739.getDefaultValue(arg0);
@@ -44,7 +44,7 @@ public class VarContainerSparse implements VarContainer {
 		if (var3 == null) {
 			this.field8740.put(arg0, new VarValue(arg0, arg1));
 		} else {
-			var3.field4239 = arg1;
+			var3.value = arg1;
 		}
 	}
 
@@ -53,7 +53,7 @@ public class VarContainerSparse implements VarContainer {
 		if (this.field8740 != null) {
 			VarValue var2 = (VarValue) this.field8740.get(arg0);
 			if (var2 != null) {
-				return (Long) var2.field4239;
+				return (Long) var2.value;
 			}
 		}
 		return (Long) this.field8739.getDefaultValue(arg0);
@@ -70,7 +70,7 @@ public class VarContainerSparse implements VarContainer {
 		if (var4 == null) {
 			this.field8740.put(arg0, new VarValue(arg0, arg1));
 		} else {
-			var4.field4239 = arg1;
+			var4.value = arg1;
 		}
 	}
 
@@ -79,14 +79,14 @@ public class VarContainerSparse implements VarContainer {
 		if (this.field8740 != null) {
 			VarValue var2 = (VarValue) this.field8740.get(arg0);
 			if (var2 != null) {
-				return var2.field4239;
+				return var2.value;
 			}
 		}
 		return this.field8739.getDefaultValue(arg0);
 	}
 
 	@ObfuscatedName("abn.w(ILjava/lang/Object;B)V")
-	public void method14735(int arg0, Object arg1) {
+	public void setVarObject(int arg0, Object arg1) {
 		if (this.field8740 == null) {
 			this.field8740 = new HashMap();
 			this.field8740.put(arg0, new VarValue(arg0, arg1));
@@ -96,12 +96,12 @@ public class VarContainerSparse implements VarContainer {
 		if (var3 == null) {
 			this.field8740.put(arg0, new VarValue(arg0, arg1));
 		} else {
-			var3.field4239 = arg1;
+			var3.value = arg1;
 		}
 	}
 
 	@ObfuscatedName("abn.l(I)V")
-	public void method14749() {
+	public void clear() {
 		if (this.field8740 != null) {
 			this.field8740.clear();
 		}

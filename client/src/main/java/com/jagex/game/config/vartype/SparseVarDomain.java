@@ -50,7 +50,7 @@ public class SparseVarDomain implements VarDomain {
 
 	@ObfuscatedName("ek.f(Lec;Ljava/lang/Object;I)V")
 	public void setVarValue(VarType arg0, Object arg1) {
-		this.field1708.method14735(arg0.id, arg1);
+		this.field1708.setVarObject(arg0.id, arg1);
 	}
 
 	@ObfuscatedName("ek.z(Lkh;I)I")

@@ -11,22 +11,22 @@ import rs2.client.Client;
 public final class ClientPlayerGroupResourceProvider implements PlayerGroupResourceProvider {
 
 	@ObfuscatedName("d.e(B)Ladd;")
-	public VarTypeList method293() {
+	public VarTypeList getVarPlayerTypeList() {
 		return Client.varPlayerTypeList;
 	}
 
 	@ObfuscatedName("d.n(B)Ladd;")
-	public VarTypeList method291() {
+	public VarTypeList getVarPlayerGroupTypeList() {
 		return Client.varPlayerGroupTypeList;
 	}
 
 	@ObfuscatedName("d.m(I)Laor;")
-	public VarBitTypeList method294() {
+	public VarBitTypeList getVarBitTypeList() {
 		return Client.varBitTypeList;
 	}
 
 	@ObfuscatedName("d.k(B)Lwq;")
-	public SkillDefaults method295() {
+	public SkillDefaults getSkillDefaults() {
 		return Client.skillDefaults;
 	}
 }

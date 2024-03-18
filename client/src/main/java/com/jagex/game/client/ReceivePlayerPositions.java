@@ -566,7 +566,7 @@ public class ReceivePlayerPositions {
 				int var9 = arg0.g1_alt3();
 				BaseVarType var10 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var9);
 				VarValue var11 = Client.varPlayerTypeList.decodeVarValue(arg0, var10);
-				arg2.field10460.method14735(var11.field4240, var11.field4239);
+				arg2.field10460.setVarObject(var11.var, var11.value);
 			}
 		}
 		if ((arg3 & 0x10) != 0) {
@@ -709,14 +709,14 @@ public class ReceivePlayerPositions {
 			arg2.method19111(var61);
 		}
 		if ((arg3 & 0x20000) != 0) {
-			arg2.field10460.method14749();
+			arg2.field10460.clear();
 			arg0.pos += 2;
 			int var62 = arg0.data[(++arg0.pos) - 1] & 0xFF;
 			for (int var63 = 0; var63 < var62; var63++) {
 				int var64 = arg0.g1_alt3();
 				BaseVarType var65 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var64);
 				VarValue var66 = Client.varPlayerTypeList.decodeVarValue(arg0, var65);
-				arg2.field10460.method14735(var66.field4240, var66.field4239);
+				arg2.field10460.setVarObject(var66.var, var66.value);
 			}
 		}
 		if ((arg3 & 0x200) != 0) {

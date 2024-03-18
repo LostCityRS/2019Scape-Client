@@ -54,14 +54,14 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 	public int getValueEncodingLength(VarValue arg0) {
 		byte var2 = 2;
 		int var3;
-		if (arg0.field4239 instanceof Integer) {
+		if (arg0.value instanceof Integer) {
 			var3 = var2 + 4;
-		} else if (arg0.field4239 instanceof Long) {
+		} else if (arg0.value instanceof Long) {
 			var3 = var2 + 8;
-		} else if (arg0.field4239 instanceof String) {
-			var3 = var2 + Packet.method8398((String) arg0.field4239);
-		} else if (arg0.field4239 instanceof Serializable) {
-			var3 = var2 + ((Serializable) arg0.field4239).method15118();
+		} else if (arg0.value instanceof String) {
+			var3 = var2 + Packet.method8398((String) arg0.value);
+		} else if (arg0.value instanceof Serializable) {
+			var3 = var2 + ((Serializable) arg0.value).method15118();
 		} else {
 			throw new IllegalStateException();
 		}
@@ -70,15 +70,15 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 
 	@ObfuscatedName("add.ae(Lalw;Lon;I)V")
 	public void encodeVarValue(Packet arg0, VarValue arg1) {
-		arg0.p2(arg1.field4240);
-		if (arg1.field4239 instanceof Integer) {
-			arg0.p4((Integer) arg1.field4239);
-		} else if (arg1.field4239 instanceof Long) {
-			arg0.p8((Long) arg1.field4239);
-		} else if (arg1.field4239 instanceof String) {
-			arg0.pjstr2((String) arg1.field4239);
-		} else if (arg1.field4239 instanceof Serializable) {
-			((Serializable) arg1.field4239).encode(arg0);
+		arg0.p2(arg1.var);
+		if (arg1.value instanceof Integer) {
+			arg0.p4((Integer) arg1.value);
+		} else if (arg1.value instanceof Long) {
+			arg0.p8((Long) arg1.value);
+		} else if (arg1.value instanceof String) {
+			arg0.pjstr2((String) arg1.value);
+		} else if (arg1.value instanceof Serializable) {
+			((Serializable) arg1.value).encode(arg0);
 		} else {
 			throw new IllegalStateException();
 		}
@@ -94,16 +94,16 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 		VarValue var4 = new VarValue(var2);
 		Class var5 = var3.dataType.getVarBaseType().javaClass;
 		if (var5 == Integer.class) {
-			var4.field4239 = arg0.g4s();
+			var4.value = arg0.g4s();
 		} else if (var5 == Long.class) {
-			var4.field4239 = arg0.g8();
+			var4.value = arg0.g8();
 		} else if (var5 == String.class) {
-			var4.field4239 = arg0.gjstr2();
+			var4.value = arg0.gjstr2();
 		} else if (Serializable.class.isAssignableFrom(var5)) {
 			try {
 				Serializable var6 = (Serializable) var5.getDeclaredConstructor().newInstance();
 				var6.decode(arg0);
-				var4.field4239 = var6;
+				var4.value = var6;
 			} catch (InstantiationException var9) {
 			} catch (IllegalAccessException var10) {
 			} catch (java.lang.reflect.InvocationTargetException var11) {
@@ -121,16 +121,16 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 		VarValue var4 = new VarValue(var3);
 		Class var5 = arg1.javaClass;
 		if (var5 == Integer.class) {
-			var4.field4239 = arg0.g4s();
+			var4.value = arg0.g4s();
 		} else if (var5 == Long.class) {
-			var4.field4239 = arg0.g8();
+			var4.value = arg0.g8();
 		} else if (var5 == String.class) {
-			var4.field4239 = arg0.gjstr2();
+			var4.value = arg0.gjstr2();
 		} else if (Serializable.class.isAssignableFrom(var5)) {
 			try {
 				Serializable var6 = (Serializable) var5.getDeclaredConstructor().newInstance();
 				var6.decode(arg0);
-				var4.field4239 = var6;
+				var4.value = var6;
 			} catch (InstantiationException var10) {
 			} catch (IllegalAccessException var11) {
 			} catch (java.lang.reflect.InvocationTargetException var12) {
