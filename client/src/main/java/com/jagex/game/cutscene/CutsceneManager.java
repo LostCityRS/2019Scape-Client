@@ -198,7 +198,7 @@ public class CutsceneManager {
 		field11700 = Client.field11070;
 		field1720 = Client.field11071;
 		field1711 = true;
-		field1717 = Client.field1798.method3170();
+		field1717 = Client.audioApi.method3170();
 		if (field1710 != 0 && field1716 != 0) {
 			Client.field11070 = 334;
 			Client.field11071 = 334;
@@ -220,7 +220,7 @@ public class CutsceneManager {
 				}
 			}
 			if (field1717 != -1) {
-				Client.field1798.method3235(field1717, 255);
+				Client.audioApi.method3235(field1717, 255);
 			}
 		}
 		Client.field10863 = 4;
@@ -230,7 +230,7 @@ public class CutsceneManager {
 			ScriptRunner.method830(ClientTriggerType.field7266, field1722, -1);
 		}
 		method3551();
-		ClientMessage var4 = ClientMessage.method1604(ClientProt.CUTSCENE_FINISHED, Client.gameConnection.field794);
+		ClientMessage var4 = ClientMessage.createMessage(ClientProt.CUTSCENE_FINISHED, Client.gameConnection.randomOut);
 		var4.buf.p1(arg0 ? 1 : 0);
 		Client.gameConnection.queue(var4);
 	}

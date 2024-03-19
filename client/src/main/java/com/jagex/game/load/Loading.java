@@ -377,8 +377,8 @@ public class Loading {
 			if (var17 == null) {
 				return 0;
 			}
-			Client.field1798 = new AudioApi();
-			Client.field1798.method3148(50, 7340032);
+			Client.audioApi = new AudioApi();
+			Client.audioApi.method3148(50, 7340032);
 			method714(var17);
 			Client.setState(1);
 		}
@@ -573,7 +573,7 @@ public class Loading {
 			}
 			if (var2 == 1) {
 				int var3 = var1.g2();
-				Client.field1798.method3171(var3);
+				Client.audioApi.method3171(var3);
 			}
 		}
 	}

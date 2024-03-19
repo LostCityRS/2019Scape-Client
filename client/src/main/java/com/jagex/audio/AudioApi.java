@@ -442,8 +442,8 @@ public class AudioApi {
 			}
 		}
 		this.field1867.clear();
-		if (this.field1869 != null && this.field1869.method7385() == SoundVolume.field4949 && !this.field1870 && Client.gameConnection.field794 != null && Client.isStateGame(Client.state)) {
-			ClientMessage var7 = ClientMessage.method1604(ClientProt.SOUND_SONGPRELOADED, Client.gameConnection.field794);
+		if (this.field1869 != null && this.field1869.method7385() == SoundVolume.field4949 && !this.field1870 && Client.gameConnection.randomOut != null && Client.isStateGame(Client.state)) {
+			ClientMessage var7 = ClientMessage.createMessage(ClientProt.SOUND_SONGPRELOADED, Client.gameConnection.randomOut);
 			var7.buf.p4(this.field1869.method7386().method9680());
 			Client.gameConnection.queue(var7);
 			this.field1870 = true;
@@ -975,8 +975,8 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.ac(II)V")
 	public void method3144(int arg0) {
-		if (Client.gameConnection.field794 != null && Client.isStateGame(Client.state)) {
-			ClientMessage var2 = ClientMessage.method1604(ClientProt.SOUND_SONGEND, Client.gameConnection.field794);
+		if (Client.gameConnection.randomOut != null && Client.isStateGame(Client.state)) {
+			ClientMessage var2 = ClientMessage.createMessage(ClientProt.SOUND_SONGEND, Client.gameConnection.randomOut);
 			var2.buf.p4(arg0);
 			Client.gameConnection.queue(var2);
 		}
@@ -1051,8 +1051,8 @@ public class AudioApi {
 		if (this.field1857) {
 			this.field1868.method7381();
 		}
-		if (Client.gameConnection.field794 != null && Client.isStateGame(Client.state)) {
-			ClientMessage var18 = ClientMessage.method1604(ClientProt.SOUND_SONGPRELOADED, Client.gameConnection.field794);
+		if (Client.gameConnection.randomOut != null && Client.isStateGame(Client.state)) {
+			ClientMessage var18 = ClientMessage.createMessage(ClientProt.SOUND_SONGPRELOADED, Client.gameConnection.randomOut);
 			var18.buf.p4(this.field1875);
 			Client.gameConnection.queue(var18);
 		}

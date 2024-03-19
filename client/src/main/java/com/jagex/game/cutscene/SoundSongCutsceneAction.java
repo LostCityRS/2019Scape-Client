@@ -1,7 +1,6 @@
 package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
-import com.jagex.game.cutscene.CutsceneAction;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 
@@ -22,12 +21,12 @@ public class SoundSongCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agb.n(I)V")
 	public void method2890() {
-		Client.field1798.method3174(this.field10318);
+		Client.audioApi.method3174(this.field10318);
 	}
 
 	@ObfuscatedName("agb.k(I)Z")
 	public boolean method2891() {
-		Client.field1798.method3239(this.field10318, this.field10319);
+		Client.audioApi.method3239(this.field10318, this.field10319);
 		return true;
 	}
 }

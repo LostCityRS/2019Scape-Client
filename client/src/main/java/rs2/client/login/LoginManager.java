@@ -40,7 +40,7 @@ public class LoginManager {
 	public static int field431;
 
 	@ObfuscatedName("m.k")
-	public static ServerConnection field432;
+	public static ServerConnection connection;
 
 	@ObfuscatedName("m.f")
 	public static boolean field456 = false;
@@ -166,7 +166,7 @@ public class LoginManager {
 	@ObfuscatedName("aaa.f(B)V")
 	public static final void cancelLogin() {
 		if (field445 != 7) {
-			field432.closeGracefully();
+			connection.closeGracefully();
 			method9067();
 			method10367();
 		}
@@ -260,28 +260,28 @@ public class LoginManager {
 	@ObfuscatedName("ajf.v(Ljava/lang/String;Ljava/lang/String;B)Z")
 	public static boolean method17521(String arg0, String arg1) {
 		field431 = 132;
-		field432 = Client.lobbyConnection;
+		connection = Client.lobbyConnection;
 		return method7238(false, false, arg0, arg1, -1L);
 	}
 
 	@ObfuscatedName("xo.o(Ljava/lang/String;Ljava/lang/String;I)Z")
 	public static boolean method10320(String arg0, String arg1) {
 		field431 = 211;
-		field432 = Client.gameConnection;
+		connection = Client.gameConnection;
 		return method7238(false, false, arg0, arg1, -1L);
 	}
 
 	@ObfuscatedName("rg.s(I)Z")
 	public static boolean method7703() {
 		field431 = 211;
-		field432 = Client.gameConnection;
+		connection = Client.gameConnection;
 		return method7238(field439 == -1L, true, "", "", field439);
 	}
 
 	@ObfuscatedName("cz.y(I)Z")
 	public static boolean method1592() {
 		field431 = 132;
-		field432 = Client.lobbyConnection;
+		connection = Client.lobbyConnection;
 		return method7238(field439 == -1L, true, "", "", field439);
 	}
 
@@ -305,7 +305,7 @@ public class LoginManager {
 			disallowResult = -1;
 			disallowTrigger = -1;
 		}
-		field432.field808 = false;
+		connection.disconnected = false;
 		method669(-3);
 		field445 = 14;
 		field478 = 0;
@@ -332,7 +332,7 @@ public class LoginManager {
 				field478++;
 			}
 			if (field478 > var0) {
-				field432.closeGracefully();
+				connection.closeGracefully();
 				if (field475 >= 3) {
 					field445 = 7;
 					method669(-5);
@@ -342,7 +342,7 @@ public class LoginManager {
 				if (field431 == 211) {
 					WorldSwitcher.currentWorld.configureSocketType();
 				} else {
-					WorldSwitcher.lobby.configureSocketType();
+					WorldSwitcher.currentLobby.configureSocketType();
 				}
 				field478 = 0;
 				field475++;
@@ -350,39 +350,39 @@ public class LoginManager {
 			}
 			if (field445 == 14) {
 				if (field431 == 211) {
-					field432.setStream(Stream.createStream(WorldSwitcher.currentWorld.getSocket(), 40000), WorldSwitcher.currentWorld.host);
+					connection.setStream(Stream.createStream(WorldSwitcher.currentWorld.getSocket(), 40000), WorldSwitcher.currentWorld.host);
 				} else {
-					field432.setStream(Stream.createStream(WorldSwitcher.lobby.getSocket(), 40000), WorldSwitcher.lobby.host);
+					connection.setStream(Stream.createStream(WorldSwitcher.currentLobby.getSocket(), 40000), WorldSwitcher.currentLobby.host);
 				}
 				if (Client.field10311 == null) {
 					Client.field10311 = Client.field10967.method709();
 					Client.field10967.method710();
 					Client.field10967 = null;
 				}
-				field432.method952();
-				ClientMessage var1 = ClientMessage.method13920();
+				connection.clearWriteQueue();
+				ClientMessage var1 = ClientMessage.createMessage();
 				var1.buf.p1(LoginProt.INIT_GAME_CONNECTION.id);
-				field432.queue(var1);
-				field432.method933();
+				connection.queue(var1);
+				connection.flush();
 				field445 = 35;
 			}
 			if (field445 == 35) {
-				if (!field432.getStream().hasAvailable(9)) {
+				if (!connection.getStream().hasAvailable(9)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 9);
-				field432.in.pos = 0;
-				int var2 = field432.in.g1();
+				connection.getStream().read(connection.in.data, 0, 9);
+				connection.in.pos = 0;
+				int var2 = connection.in.g1();
 				if (var2 != 0) {
 					field445 = 7;
 					method481(var2);
 					method669(var2);
-					field432.closeGracefully();
+					connection.closeGracefully();
 					method10367();
 					return;
 				}
-				field434 = field432.in.g8();
-				field432.in.pos = 0;
+				field434 = connection.in.g8();
+				connection.in.pos = 0;
 				if (field438) {
 					field445 = 276;
 				} else {
@@ -390,7 +390,7 @@ public class LoginManager {
 				}
 			}
 			if (field445 == 276) {
-				ClientMessage var3 = ClientMessage.method13920();
+				ClientMessage var3 = ClientMessage.createMessage();
 				var3.buf.p1(LoginProt.INIT_SOCIAL_NETWORK_CONNECTION.id);
 				var3.buf.p2(0);
 				int var4 = var3.buf.pos;
@@ -414,57 +414,57 @@ public class LoginManager {
 				var5.rsaenc(PublicKeys.field624, PublicKeys.field626);
 				var3.buf.pdata(var5.data, 0, var5.pos);
 				var3.buf.psize2(var3.buf.pos - var4);
-				field432.queue(var3);
-				field432.method933();
+				connection.queue(var3);
+				connection.flush();
 				field445 = 40;
 			}
 			if (field445 == 40) {
-				if (!field432.getStream().hasAvailable(2)) {
+				if (!connection.getStream().hasAvailable(2)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 2);
-				field432.in.pos = 0;
-				field432.in.pos = field432.in.g2();
+				connection.getStream().read(connection.in.data, 0, 2);
+				connection.in.pos = 0;
+				connection.in.pos = connection.in.g2();
 				field445 = 58;
 			}
 			if (field445 == 58) {
-				if (!field432.getStream().hasAvailable(field432.in.pos)) {
+				if (!connection.getStream().hasAvailable(connection.in.pos)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, field432.in.pos);
-				field432.in.tinydec(field435);
-				field432.in.pos = 0;
-				String var7 = field432.in.gjstr2();
-				field432.in.pos = 0;
+				connection.getStream().read(connection.in.data, 0, connection.in.pos);
+				connection.in.tinydec(field435);
+				connection.in.pos = 0;
+				String var7 = connection.in.gjstr2();
+				connection.in.pos = 0;
 				String var8 = JavascriptFunction.field4032.method6087();
 				Browser.method6081(var7, true, var8, Client.field10784);
 				field445 = 64;
 			}
 			if (field445 == 64) {
-				if (!field432.getStream().hasAvailable(1)) {
+				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 1);
-				if ((field432.in.data[0] & 0xFF) == 1) {
+				connection.getStream().read(connection.in.data, 0, 1);
+				if ((connection.in.data[0] & 0xFF) == 1) {
 					field445 = 70;
 				}
 			}
 			if (field445 == 70) {
-				if (!field432.getStream().hasAvailable(16)) {
+				if (!connection.getStream().hasAvailable(16)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 16);
-				field432.in.pos = 16;
-				field432.in.tinydec(field435);
-				field432.in.pos = 0;
-				field439 = field432.in.g8();
-				field437 = field432.in.g8();
+				connection.getStream().read(connection.in.data, 0, 16);
+				connection.in.pos = 16;
+				connection.in.tinydec(field435);
+				connection.in.pos = 0;
+				field439 = connection.in.g8();
+				field437 = connection.in.g8();
 				field445 = 84;
 			}
 			if (field445 == 84) {
-				field432.in.pos = 0;
-				field432.method952();
-				ClientMessage var9 = ClientMessage.method13920();
+				connection.in.pos = 0;
+				connection.clearWriteQueue();
+				ClientMessage var9 = ClientMessage.createMessage();
 				PacketBit var10 = var9.buf;
 				if (field431 == 211) {
 					LoginProt var11;
@@ -503,8 +503,8 @@ public class LoginManager {
 					var10.p1(var16.pos);
 					var10.pdata(var16.data, 0, var16.pos);
 					Client.field10800 = true;
-					Packet var17 = new Packet(Client.hardwarePlatform.method18189());
-					Client.hardwarePlatform.method18188(var17);
+					Packet var17 = new Packet(Client.hardwarePlatform.calculateHardwarePlatformSize());
+					Client.hardwarePlatform.createHardwareBlock(var17);
 					var10.pdata(var17.data, 0, var17.data.length);
 					var10.p4(Client.field10842);
 					var10.p4(Client.field10776);
@@ -522,7 +522,7 @@ public class LoginManager {
 					var10.p4(Client.field10788);
 					var10.pjstr(Client.field10789);
 					var10.p1(WorldSwitcher.field9200 != null && WorldSwitcher.field9200.node == WorldSwitcher.currentWorld.node ? 0 : 1);
-					var10.p2(WorldSwitcher.lobby.node);
+					var10.p2(WorldSwitcher.currentLobby.node);
 					method14463(var10);
                     var10.tinyenc(field435, var13, var10.pos);
 					var10.psize2(var10.pos - var12);
@@ -561,8 +561,8 @@ public class LoginManager {
 					Packet var22 = Client.preferences.createPreferencesBlock();
 					var10.p1(var22.pos);
 					var10.pdata(var22.data, 0, var22.pos);
-					Packet var23 = new Packet(Client.hardwarePlatform.method18189());
-					Client.hardwarePlatform.method18188(var23);
+					Packet var23 = new Packet(Client.hardwarePlatform.calculateHardwarePlatformSize());
+					Client.hardwarePlatform.createHardwareBlock(var23);
 					var10.pdata(var23.data, 0, var23.data.length);
 					var10.p4(Client.field10842);
 					var10.pjstr(Client.field579);
@@ -575,26 +575,26 @@ public class LoginManager {
                     var10.tinyenc(field435, var20, var10.pos);
 					var10.psize2(var10.pos - var19);
 				}
-				field432.queue(var9);
-				field432.method933();
-				field432.field794 = new Isaac(field435);
+				connection.queue(var9);
+				connection.flush();
+				connection.randomOut = new Isaac(field435);
 				int[] var24 = new int[4];
 				for (int var25 = 0; var25 < 4; var25++) {
 					var24[var25] = field435[var25] + 50;
 				}
-				field432.field809 = new Isaac(var24);
+				connection.randomIn = new Isaac(var24);
 				new Isaac(var24);
-				field432.in.setIsaac(field432.field809);
+				connection.in.setIsaac(connection.randomIn);
 				field435 = null;
 				field445 = 98;
 			}
 			if (field445 == 98) {
-				if (!field432.getStream().hasAvailable(1)) {
+				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 1);
-				int var26 = field432.in.g1();
-				field432.in.pos = 0;
+				connection.getStream().read(connection.in.data, 0, 1);
+				int var26 = connection.in.g1();
+				connection.in.pos = 0;
 				if (var26 == 21) {
 					field445 = 126;
 				} else if (var26 == 1) {
@@ -617,13 +617,13 @@ public class LoginManager {
 						field445 = 141;
 					}
 				} else if (var26 == 15) {
-					field432.packetSize = -2;
+					connection.packetSize = -2;
 					field445 = 204;
 				} else if (var26 == 23 && field475 < 3) {
 					field478 = 0;
 					field475++;
 					field445 = 14;
-					field432.closeGracefully();
+					connection.closeGracefully();
 					return;
 				} else if (var26 == 42) {
 					field445 = 215;
@@ -638,7 +638,7 @@ public class LoginManager {
 					if (var26 != 53) {
 						field445 = 7;
 						method669(var26);
-						field432.closeGracefully();
+						connection.closeGracefully();
 						method10367();
 						return;
 					}
@@ -647,65 +647,65 @@ public class LoginManager {
 					field438 = true;
 					field478 = 0;
 					field445 = 14;
-					field432.closeGracefully();
+					connection.closeGracefully();
 					return;
 				}
 			}
 			if (field445 == 126) {
-				if (!field432.getStream().hasAvailable(1)) {
+				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 1);
-				int var27 = field432.in.data[0] & 0xFF;
+				connection.getStream().read(connection.in.data, 0, 1);
+				int var27 = connection.in.data[0] & 0xFF;
 				hoptime = var27 * 50;
 				field445 = 7;
 				method669(21);
-				field432.closeGracefully();
+				connection.closeGracefully();
 				method10367();
 				return;
 			}
 			if (field445 == 215) {
-				if (!field432.getStream().hasAvailable(2)) {
+				if (!connection.getStream().hasAvailable(2)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 2);
-				queuePosition = ((field432.in.data[0] & 0xFF) << 8) + (field432.in.data[1] & 0xFF);
+				connection.getStream().read(connection.in.data, 0, 2);
+				queuePosition = ((connection.in.data[0] & 0xFF) << 8) + (connection.in.data[1] & 0xFF);
 				field445 = 98;
 				return;
 			}
 			if (field445 == 245) {
-				if (!field432.getStream().hasAvailable(4)) {
+				if (!connection.getStream().hasAvailable(4)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 4);
-				banDuration = field432.in.g4s();
-				field432.in.pos = 0;
+				connection.getStream().read(connection.in.data, 0, 4);
+				banDuration = connection.in.g4s();
+				connection.in.pos = 0;
 				field445 = 7;
 				method669(53);
-				field432.closeGracefully();
+				connection.closeGracefully();
 				method10367();
 				return;
 			}
 			if (field445 == 194) {
 				if (field11819 == 29) {
-					if (!field432.getStream().hasAvailable(1)) {
+					if (!connection.getStream().hasAvailable(1)) {
 						return;
 					}
-					field432.getStream().read(field432.in.data, 0, 1);
-					disallowResult = field432.in.data[0] & 0xFF;
+					connection.getStream().read(connection.in.data, 0, 1);
+					disallowResult = connection.in.data[0] & 0xFF;
 				} else if (field11819 == 45) {
-					if (!field432.getStream().hasAvailable(3)) {
+					if (!connection.getStream().hasAvailable(3)) {
 						return;
 					}
-					field432.getStream().read(field432.in.data, 0, 3);
-					disallowResult = field432.in.data[0] & 0xFF;
-					disallowTrigger = ((field432.in.data[1] & 0xFF) << 8) + (field432.in.data[2] & 0xFF);
+					connection.getStream().read(connection.in.data, 0, 3);
+					disallowResult = connection.in.data[0] & 0xFF;
+					disallowTrigger = ((connection.in.data[1] & 0xFF) << 8) + (connection.in.data[2] & 0xFF);
 				} else {
 					throw new IllegalStateException();
 				}
 				field445 = 7;
 				method669(field11819);
-				field432.closeGracefully();
+				connection.closeGracefully();
 				method10367();
 				if (Client.method15084(Client.state)) {
 					Client.logout(true);
@@ -714,25 +714,25 @@ public class LoginManager {
 				return;
 			}
 			if (field445 == 225) {
-				if (!field432.getStream().hasAvailable(2)) {
+				if (!connection.getStream().hasAvailable(2)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 2);
-				field432.in.pos = 0;
-				field7542 = field432.in.g2();
-				field432.in.pos = 0;
+				connection.getStream().read(connection.in.data, 0, 2);
+				connection.in.pos = 0;
+				field7542 = connection.in.g2();
+				connection.in.pos = 0;
 				field445 = 235;
 				return;
 			}
 			if (field445 == 235) {
-				if (!field432.getStream().hasAvailable(field7542)) {
+				if (!connection.getStream().hasAvailable(field7542)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, field7542);
-				field432.in.pos = 0;
+				connection.getStream().read(connection.in.data, 0, field7542);
+				connection.in.pos = 0;
 				byte[] var28 = new byte[field7542 + 1];
-				field432.in.gIsaacArrayBuffer(var28, 0, field7542);
-				field432.in.pos = 0;
+				connection.in.gIsaacArrayBuffer(var28, 0, field7542);
+				connection.in.pos = 0;
 				Packet var29 = new Packet(var28);
 				String var30 = var29.gjstr();
 				Browser.method4607(var30, true, Client.field10784);
@@ -741,56 +741,56 @@ public class LoginManager {
 					field445 = 98;
 				} else {
 					field445 = 7;
-					field432.closeGracefully();
+					connection.closeGracefully();
 					method10367();
 				}
 				return;
 			}
 			if (field445 == 256) {
-				if (!field432.getStream().hasAvailable(2)) {
+				if (!connection.getStream().hasAvailable(2)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 2);
-				field432.in.pos = 0;
-				field432.packetSize = field432.in.g2();
+				connection.getStream().read(connection.in.data, 0, 2);
+				connection.in.pos = 0;
+				connection.packetSize = connection.in.g2();
 				field445 = 268;
 			}
 			if (field445 == 268) {
-				if (!field432.getStream().hasAvailable(field432.packetSize)) {
+				if (!connection.getStream().hasAvailable(connection.packetSize)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, field432.packetSize);
-				field432.in.pos = 0;
-				boolean var31 = field432.in.g1() == 1;
+				connection.getStream().read(connection.in.data, 0, connection.packetSize);
+				connection.in.pos = 0;
+				boolean var31 = connection.in.g1() == 1;
 				while (true) {
-					if (field432.in.pos >= field432.packetSize) {
+					if (connection.in.pos >= connection.packetSize) {
 						if (var31) {
-							ClientMessage var33 = ClientMessage.method13920();
+							ClientMessage var33 = ClientMessage.createMessage();
 							PacketBit var34 = var33.buf;
 							var34.p1(LoginProt.GAMELOGIN_CONTINUE.id);
-							field432.queue(var33);
-							field432.method933();
+							connection.queue(var33);
+							connection.flush();
 							field445 = 138;
 						} else {
 							field445 = 256;
 						}
 						break;
 					}
-					VarValue var32 = Client.varBasicTypeList.decodeVarValue(field432.in);
+					VarValue var32 = Client.varBasicTypeList.decodeVarValue(connection.in);
 					Client.field7228.field1708.setVarObject(var32.var, var32.value);
 				}
 			}
 			if (field445 == 138) {
-				if (!field432.getStream().hasAvailable(1)) {
+				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 1);
-				int var35 = field432.in.data[0] & 0xFF;
+				connection.getStream().read(connection.in.data, 0, 1);
+				int var35 = connection.in.data[0] & 0xFF;
 				if (var35 != 2) {
 					if (var35 != 29 && var35 != 45) {
 						field445 = 7;
 						method669(var35);
-						field432.closeGracefully();
+						connection.closeGracefully();
 						method10367();
 						if (Client.method15084(Client.state)) {
 							Client.logout(true);
@@ -805,20 +805,20 @@ public class LoginManager {
 				field445 = 141;
 			}
 			if (field445 == 141) {
-				if (!field432.getStream().hasAvailable(1)) {
+				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 1);
-				field622 = field432.in.data[0] & 0xFF;
+				connection.getStream().read(connection.in.data, 0, 1);
+				field622 = connection.in.data[0] & 0xFF;
 				field445 = 157;
 			}
 			if (field445 == 157) {
-				PacketBit var36 = field432.in;
+				PacketBit var36 = connection.in;
 				if (field431 == 211) {
-					if (!field432.getStream().hasAvailable(field622)) {
+					if (!connection.getStream().hasAvailable(field622)) {
 						return;
 					}
-					field432.getStream().read(var36.data, 0, field622);
+					connection.getStream().read(var36.data, 0, field622);
 					var36.pos = 0;
 					method5247(var36);
 					Client.staffModLevel = var36.g1();
@@ -837,8 +837,8 @@ public class LoginManager {
 					Client.field3183.method7677().method7750().method18890(Client.loggedInMembers);
 					Client.objTypeList.setAllowMembers(Client.loggedInMembers);
 					Client.npcTypeList.setAllowMembers(Client.loggedInMembers);
-				} else if (field432.getStream().hasAvailable(field622)) {
-					field432.getStream().read(var36.data, 0, field622);
+				} else if (connection.getStream().hasAvailable(field622)) {
+					connection.getStream().read(var36.data, 0, field622);
 					var36.pos = 0;
 					method5247(var36);
 					Client.staffModLevel = var36.g1();
@@ -907,89 +907,89 @@ public class LoginManager {
 					method669(2);
 					method10282();
 					Client.setState(13);
-					field432.packetType = null;
+					connection.packetType = null;
 					return;
 				}
 				field445 = 170;
 			}
 			if (field445 == 170) {
-				if (!field432.getStream().hasAvailable(3)) {
+				if (!connection.getStream().hasAvailable(3)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, 3);
+				connection.getStream().read(connection.in.data, 0, 3);
 				field445 = 188;
 			}
 			if (field445 == 188) {
-				PacketBit var41 = field432.in;
+				PacketBit var41 = connection.in;
 				var41.pos = 0;
 				if (var41.isIsaac2()) {
-					if (!field432.getStream().hasAvailable(1)) {
+					if (!connection.getStream().hasAvailable(1)) {
 						return;
 					}
-					field432.getStream().read(var41.data, 3, 1);
+					connection.getStream().read(var41.data, 3, 1);
 				}
-				field432.packetType = ServerProt.values()[var41.gIsaac1or2()];
-				field432.packetSize = var41.g2();
+				connection.packetType = ServerProt.values()[var41.gIsaac1or2()];
+				connection.packetSize = var41.g2();
 				field445 = 160;
 			}
 			if (field445 == 160) {
-				if (!field432.getStream().hasAvailable(field432.packetSize)) {
+				if (!connection.getStream().hasAvailable(connection.packetSize)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, field432.packetSize);
-				field432.in.pos = 0;
-				int var42 = field432.packetSize;
+				connection.getStream().read(connection.in.data, 0, connection.packetSize);
+				connection.in.pos = 0;
+				int var42 = connection.packetSize;
 				field445 = 7;
 				method669(2);
 				method4320();
-				ReceivePlayerPositions.method16435(field432.in);
-				int var43 = var42 - field432.in.pos;
+				ReceivePlayerPositions.method16435(connection.in);
+				int var43 = var42 - connection.in.pos;
 				PacketBit var44 = new PacketBit(var43);
-				System.arraycopy(field432.in.data, field432.in.pos, var44.data, 0, var43);
-				field432.in.pos += var43;
-				if (ServerProt.REBUILD_REGION == field432.packetType) {
+				System.arraycopy(connection.in.data, connection.in.pos, var44.data, 0, var43);
+				connection.in.pos += var43;
+				if (ServerProt.REBUILD_REGION == connection.packetType) {
 					Client.world.rebuildMap(new RebuildRequest(RebuildType.REBUILD_REGION, var44));
 				} else {
 					Client.world.rebuildMap(new RebuildRequest(RebuildType.REBUILD_NORMAL, var44));
 				}
-				if (field432.in.pos != var42) {
-					throw new RuntimeException(field432.in.pos + " " + var42);
+				if (connection.in.pos != var42) {
+					throw new RuntimeException(connection.in.pos + " " + var42);
 				}
-				field432.packetType = null;
+				connection.packetType = null;
 				return;
 			}
 			if (field445 == 204) {
-				if (field432.packetSize == -2) {
-					if (!field432.getStream().hasAvailable(2)) {
+				if (connection.packetSize == -2) {
+					if (!connection.getStream().hasAvailable(2)) {
 						return;
 					}
-					field432.getStream().read(field432.in.data, 0, 2);
-					field432.in.pos = 0;
-					field432.packetSize = field432.in.g2();
+					connection.getStream().read(connection.in.data, 0, 2);
+					connection.in.pos = 0;
+					connection.packetSize = connection.in.g2();
 				}
-				if (!field432.getStream().hasAvailable(field432.packetSize)) {
+				if (!connection.getStream().hasAvailable(connection.packetSize)) {
 					return;
 				}
-				field432.getStream().read(field432.in.data, 0, field432.packetSize);
-				field432.in.pos = 0;
-				int var45 = field432.packetSize;
+				connection.getStream().read(connection.in.data, 0, connection.packetSize);
+				connection.in.pos = 0;
+				int var45 = connection.packetSize;
 				field445 = 7;
 				method669(15);
 				method6877();
-				ReceivePlayerPositions.method16435(field432.in);
-				if (field432.in.pos != var45) {
-					throw new RuntimeException(field432.in.pos + " " + var45);
+				ReceivePlayerPositions.method16435(connection.in);
+				if (connection.in.pos != var45) {
+					throw new RuntimeException(connection.in.pos + " " + var45);
 				}
-				field432.packetType = null;
+				connection.packetType = null;
 				return;
 			}
 		} catch (IOException var50) {
-			field432.closeGracefully();
+			connection.closeGracefully();
 			if (field475 < 3) {
 				if (field431 == 211) {
 					WorldSwitcher.currentWorld.configureSocketType();
 				} else {
-					WorldSwitcher.lobby.configureSocketType();
+					WorldSwitcher.currentLobby.configureSocketType();
 				}
 				field478 = 0;
 				field475++;
@@ -1138,12 +1138,12 @@ public class LoginManager {
 
 	@ObfuscatedName("acm.ag(B)V")
 	public static void method14959() {
-		field432.method952();
-		field432.in.pos = 0;
-		field432.lastPacketType0 = null;
-		field432.lastPacketType1 = null;
-		field432.lastPacketType2 = null;
-		field432.idleNetCycles = 0;
+		connection.clearWriteQueue();
+		connection.in.pos = 0;
+		connection.lastPacketType0 = null;
+		connection.lastPacketType1 = null;
+		connection.lastPacketType2 = null;
+		connection.idleNetCycles = 0;
 		Client.rebootTimer = 0;
 		Client.field11080 = 0;
 		Client.friendsCount = 0;
@@ -1163,7 +1163,7 @@ public class LoginManager {
 		}
 		Client.localPlayerGameState.varps.method9624();
 		DelayedStateChange.method716();
-		Client.method4336(field432);
+		Client.method4336(connection);
 	}
 
 	@ObfuscatedName("xb.ah(I)V")
@@ -1258,14 +1258,14 @@ public class LoginManager {
 
 	@ObfuscatedName("pr.ac(B)V")
 	public static void method6877() {
-		field432.method952();
-		field432.in.pos = 0;
-		field432.packetType = null;
-		field432.lastPacketType0 = null;
-		field432.lastPacketType1 = null;
-		field432.lastPacketType2 = null;
-		field432.packetSize = 0;
-		field432.idleNetCycles = 0;
+		connection.clearWriteQueue();
+		connection.in.pos = 0;
+		connection.packetType = null;
+		connection.lastPacketType0 = null;
+		connection.lastPacketType1 = null;
+		connection.lastPacketType2 = null;
+		connection.packetSize = 0;
+		connection.idleNetCycles = 0;
 		Client.rebootTimer = 0;
 		MiniMenu.method5175();
 		Minimap.method3552();
@@ -1285,7 +1285,7 @@ public class LoginManager {
 		for (int var3 = 0; var3 < 114; var3++) {
 			Client.field11072[var3] = true;
 		}
-		Client.method4336(field432);
+		Client.method4336(connection);
 		Client.field594 = null;
 		Client.field3457 = 0L;
 		Client.method3652();

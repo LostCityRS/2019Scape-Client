@@ -32,7 +32,7 @@ public class AppletMouseLogger extends MouseLogger {
 		if (var1.method17848() == 2) {
 			var5 = 1;
 		}
-		ClientMessage var6 = ClientMessage.method1604(ClientProt.EVENT_MOUSE_CLICK, Client.gameConnection.field794);
+		ClientMessage var6 = ClientMessage.createMessage(ClientProt.EVENT_MOUSE_CLICK, Client.gameConnection.randomOut);
 		var6.buf.p4(var4 | var3 << 16);
 		var6.buf.p2_alt3(var2 | var5 << 15);
 		Client.gameConnection.queue(var6);
@@ -50,7 +50,7 @@ public class AppletMouseLogger extends MouseLogger {
 
 	@ObfuscatedName("alt.z(S)Lakl;")
 	public ClientMessage method10267() {
-		return ClientMessage.method1604(ClientProt.EVENT_MOUSE_MOVE, Client.gameConnection.field794);
+		return ClientMessage.createMessage(ClientProt.EVENT_MOUSE_MOVE, Client.gameConnection.randomOut);
 	}
 
 	@ObfuscatedName("alt.w(Lalw;Lakm;I)V")

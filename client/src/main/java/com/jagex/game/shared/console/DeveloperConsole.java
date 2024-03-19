@@ -562,9 +562,9 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("clientdrop")) {
 					if (Client.state == 18) {
-						Client.method8321();
+						Client.closeConnection();
 					} else if (Client.state == 3) {
-						Client.gameConnection.field808 = true;
+						Client.gameConnection.disconnected = true;
 					}
 					return;
 				}
@@ -653,7 +653,7 @@ public class DeveloperConsole {
 				}
 				if (Client.state == 18 || Client.state == 13) {
 					ServerConnection var30 = Client.method640();
-					ClientMessage var31 = ClientMessage.method1604(ClientProt.CLIENT_CHEAT, var30.field794);
+					ClientMessage var31 = ClientMessage.createMessage(ClientProt.CLIENT_CHEAT, var30.randomOut);
 					var31.buf.p1(arg0.length() + 3);
 					var31.buf.p1(arg1 ? 1 : 0);
 					var31.buf.p1(arg2 ? 1 : 0);

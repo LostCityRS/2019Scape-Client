@@ -14,7 +14,7 @@ import rs2.client.Client;
 public class WorldSwitcher {
 
 	@ObfuscatedName("abz.e")
-	public static ServerAddress lobby;
+	public static ServerAddress currentLobby;
 
 	@ObfuscatedName("abz.n")
 	public static ServerAddress content;
@@ -104,13 +104,13 @@ public class WorldSwitcher {
 
 	@ObfuscatedName("dy.m(Ljava/lang/String;II)V")
 	public static void method2105(String arg0, int arg1) {
-		if (lobby == null) {
-			lobby = new ServerAddress();
+		if (currentLobby == null) {
+			currentLobby = new ServerAddress();
 		}
-		lobby.host = arg0;
-		lobby.node = arg1 + 1099;
-		lobby.port = ServerPorts.method2912(Client.modewhere, ServerType.field8346, lobby.node);
-		lobby.port2 = ServerPorts.method10147(Client.modewhere, ServerType.field8346, lobby.node);
+		currentLobby.host = arg0;
+		currentLobby.node = arg1 + 1099;
+		currentLobby.port = ServerPorts.method2912(Client.modewhere, ServerType.field8346, currentLobby.node);
+		currentLobby.port2 = ServerPorts.method10147(Client.modewhere, ServerType.field8346, currentLobby.node);
 	}
 
 	@ObfuscatedName("xq.k(I)V")

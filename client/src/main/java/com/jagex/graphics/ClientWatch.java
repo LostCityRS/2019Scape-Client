@@ -122,7 +122,7 @@ public class ClientWatch {
 		field7949.method10280();
 		field7948.method10280();
 		if (Client.field10822 > 0) {
-			ClientMessage var0 = ClientMessage.method1604(ClientProt.EVENT_KEYBOARD, Client.gameConnection.field794);
+			ClientMessage var0 = ClientMessage.createMessage(ClientProt.EVENT_KEYBOARD, Client.gameConnection.randomOut);
 			var0.buf.p2(Client.field10822 * 4);
 			for (int var1 = 0; var1 < Client.field10822; var1++) {
 				KeyboardEvent var2 = Client.field11024[var1];
@@ -156,19 +156,19 @@ public class ClientWatch {
 				var6 = 0;
 				var8 = 0;
 			}
-			ClientMessage var9 = ClientMessage.method1604(ClientProt.EVENT_CAMERA_POSITION, Client.gameConnection.field794);
+			ClientMessage var9 = ClientMessage.createMessage(ClientProt.EVENT_CAMERA_POSITION, Client.gameConnection.randomOut);
 			var9.buf.p2_alt3(var8);
 			var9.buf.p2(var6);
 			Client.gameConnection.queue(var9);
 		}
 		if (GameShell.focus != field7944) {
 			field7944 = GameShell.focus;
-			ClientMessage var10 = ClientMessage.method1604(ClientProt.EVENT_APPLET_FOCUS, Client.gameConnection.field794);
+			ClientMessage var10 = ClientMessage.createMessage(ClientProt.EVENT_APPLET_FOCUS, Client.gameConnection.randomOut);
 			var10.buf.p1(GameShell.focus ? 1 : 0);
 			Client.gameConnection.queue(var10);
 		}
 		if (!Client.field10800) {
-			ClientMessage var11 = ClientMessage.method1604(ClientProt.CLIENT_DETAILOPTIONS_STATUS, Client.gameConnection.field794);
+			ClientMessage var11 = ClientMessage.createMessage(ClientProt.CLIENT_DETAILOPTIONS_STATUS, Client.gameConnection.randomOut);
 			var11.buf.p1(0);
 			int var12 = var11.buf.pos;
 			Packet var13 = Client.preferences.createPreferencesBlock();
@@ -181,7 +181,7 @@ public class ClientWatch {
 			return;
 		}
 		int[] var14 = Client.renderer.method2413();
-		ClientMessage var15 = ClientMessage.method1604(ClientProt.CLIENT_COMPRESSEDTEXTUREFORMAT_SUPPORT, Client.gameConnection.field794);
+		ClientMessage var15 = ClientMessage.createMessage(ClientProt.CLIENT_COMPRESSEDTEXTUREFORMAT_SUPPORT, Client.gameConnection.randomOut);
 		var15.buf.p2(0);
 		int var16 = var15.buf.pos;
 		if (var14 == null || var14.length == 0) {

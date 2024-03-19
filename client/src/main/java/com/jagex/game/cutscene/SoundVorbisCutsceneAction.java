@@ -5,7 +5,6 @@ import com.jagex.audio.SoundShape;
 import com.jagex.audio.SoundType;
 import com.jagex.audio.SubBussType;
 import com.jagex.core.io.Packet;
-import com.jagex.game.cutscene.CutsceneAction;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 
@@ -33,7 +32,7 @@ public class SoundVorbisCutsceneAction extends CutsceneAction {
 		this.field10324 = arg0.g1();
 		this.field10325 = arg0.g1();
 		this.field10326 = arg0.g1();
-		this.field10327 = Client.field1798.method3236(SoundType.field1828, this, this.field10323, this.field10326, this.field10324, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, this.field10325, false);
+		this.field10327 = Client.audioApi.method3236(SoundType.field1828, this, this.field10323, this.field10326, this.field10324, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, this.field10325, false);
 		if (this.field10327 != null) {
 			this.field10327.method7392();
 		}
@@ -50,7 +49,7 @@ public class SoundVorbisCutsceneAction extends CutsceneAction {
 	public void method2896() {
 		if (this.field10327 != null) {
 			this.field10327.method7380(50);
-			Client.field1798.method3185(this.field10327);
+			Client.audioApi.method3185(this.field10327);
 			this.field10327 = null;
 		}
 	}

@@ -941,7 +941,7 @@ public class World {
 	@ObfuscatedName("rl.av(B)Z")
 	public boolean rebuildScene() {
 		if (!this.asyncRebuilding) {
-			MapLogicRelated.method6969(false);
+			MapLogicRelated.noTimeoutConnections(false);
 		}
 		if (this.field5060 == -1L) {
 			this.field5060 = MonotonicTime.get();
@@ -1034,8 +1034,8 @@ public class World {
 			MessageBox.draw(LocalisedText.LOADING.forLang(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
 		}
 		this.rebuildStage = RebuildStage.field5008;
-		if (!this.asyncRebuilding && Client.field1798 != null) {
-			Client.field1798.method3149();
+		if (!this.asyncRebuilding && Client.audioApi != null) {
+			Client.audioApi.method3149();
 		}
 		if (!this.asyncRebuilding) {
 			for (int var15 = 0; var15 < 2048; var15++) {
@@ -1109,12 +1109,12 @@ public class World {
 			if (this.rebuildType.isRegionType()) {
 				this.readRegionLandscape(this.underwaterMapLoader, this.rebuildMapSquaresUnderwaterLands);
 				if (!this.asyncRebuilding) {
-					MapLogicRelated.method6969(true);
+					MapLogicRelated.noTimeoutConnections(true);
 				}
 			} else {
 				this.readNormalLandscape(this.underwaterMapLoader, this.rebuildMapSquaresUnderwaterLands);
 				if (!this.asyncRebuilding) {
-					MapLogicRelated.method6969(true);
+					MapLogicRelated.noTimeoutConnections(true);
 				}
 			}
 			this.underwaterMapLoader.method7143(0, this.mapLoader.levelHeightmap[0]);
@@ -1127,12 +1127,12 @@ public class World {
 		this.mapLoader.method7144(Client.renderer, underwater ? this.underwaterMapLoader.levelHeightmap : (int[][][]) null);
 		if (this.rebuildType.isRegionType()) {
 			if (!this.asyncRebuilding) {
-				MapLogicRelated.method6969(true);
+				MapLogicRelated.noTimeoutConnections(true);
 			}
 			this.readRegionLocs(this.mapLoader, this.rebuildMapSquaresLocs);
 		} else {
 			if (!this.asyncRebuilding) {
-				MapLogicRelated.method6969(true);
+				MapLogicRelated.noTimeoutConnections(true);
 			}
 			this.readNormalLocs(this.mapLoader, this.rebuildMapSquaresLocs);
 			if (this.rebuildMapSquaresNpcs != null) {
@@ -1140,7 +1140,7 @@ public class World {
 			}
 		}
 		if (!this.asyncRebuilding) {
-			MapLogicRelated.method6969(true);
+			MapLogicRelated.noTimeoutConnections(true);
 		}
 		this.mapLoader.method7200(Client.renderer, underwater ? this.scene.field6917[0] : null, null);
 		if (this.asyncRebuilding) {
@@ -1151,12 +1151,12 @@ public class World {
 			this.sleep(75);
 		}
 		if (!this.asyncRebuilding) {
-			MapLogicRelated.method6969(true);
+			MapLogicRelated.noTimeoutConnections(true);
 		}
 		if (underwater) {
 			this.scene.method8703(true);
 			if (!this.asyncRebuilding) {
-				MapLogicRelated.method6969(true);
+				MapLogicRelated.noTimeoutConnections(true);
 			}
 			if (this.rebuildType.isRegionType()) {
 				this.readRegionLocs(this.underwaterMapLoader, this.rebuildMapSquaresUnderwaterLocs);
@@ -1164,12 +1164,12 @@ public class World {
 				this.readNormalLocs(this.underwaterMapLoader, this.rebuildMapSquaresUnderwaterLocs);
 			}
 			if (!this.asyncRebuilding) {
-				MapLogicRelated.method6969(true);
+				MapLogicRelated.noTimeoutConnections(true);
 			}
 			this.underwaterMapLoader.method7200(Client.renderer, null, this.scene.field6915[0]);
 			this.underwaterMapLoader.method16877(Client.renderer, true);
 			if (!this.asyncRebuilding) {
-				MapLogicRelated.method6969(true);
+				MapLogicRelated.noTimeoutConnections(true);
 			}
 			this.scene.method8703(false);
 			if (this.asyncRebuilding) {
@@ -1207,7 +1207,7 @@ public class World {
 			this.method7762(3);
 			this.method7854();
 		} else {
-			Client.field1798.method3149();
+			Client.audioApi.method3149();
 			this.field5062.method9997();
 			GameShell.method135();
 		}
@@ -1226,7 +1226,7 @@ public class World {
 		Client.method3128();
 		ChangeLocationRequest.method5070();
 		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION && Client.gameConnection.getStream() != null && Client.state == 3) {
-			ClientMessage var31 = ClientMessage.method1604(ClientProt.DETECT_MODIFIED_CLIENT, Client.gameConnection.field794);
+			ClientMessage var31 = ClientMessage.createMessage(ClientProt.DETECT_MODIFIED_CLIENT, Client.gameConnection.randomOut);
 			var31.buf.p4(1057001181);
 			Client.gameConnection.queue(var31);
 		}
@@ -1255,7 +1255,7 @@ public class World {
 		} else {
 			Client.setState(18);
 			if (Client.gameConnection.getStream() != null) {
-				ClientMessage var40 = ClientMessage.method1604(ClientProt.MAP_BUILD_COMPLETE, Client.gameConnection.field794);
+				ClientMessage var40 = ClientMessage.createMessage(ClientProt.MAP_BUILD_COMPLETE, Client.gameConnection.randomOut);
 				var40.buf.p4((int) var38);
 				Client.gameConnection.queue(var40);
 			}
@@ -1292,8 +1292,8 @@ public class World {
 				int var8 = this.rebuildMapSquares[index] & 0xFF;
 				int var9 = var7 * 64 - this.field5018.x;
 				int var10 = var8 * 64 - this.field5018.z;
-				if (!this.asyncRebuilding && Client.field1798 != null) {
-					Client.field1798.method3149();
+				if (!this.asyncRebuilding && Client.audioApi != null) {
+					Client.audioApi.method3149();
 				}
 				mapLoader.readNormalLandscape(buf, var9, var10, this.field5018.x, this.field5018.z);
 				mapLoader.readNormalEnvironment(Client.renderer, buf, var9, var10);
@@ -1304,8 +1304,8 @@ public class World {
 			int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
 			byte[] lands = mapSquareLands[index];
 			if (lands == null && this.field5059 < 800) {
-				if (!this.asyncRebuilding && Client.field1798 != null) {
-					Client.field1798.method3149();
+				if (!this.asyncRebuilding && Client.audioApi != null) {
+					Client.audioApi.method3149();
 				}
 				mapLoader.method7167(var12, var13, 64, 64);
 			}
@@ -1316,7 +1316,7 @@ public class World {
 	public void readRegionLandscape(ClientMapLoader mapLoader, byte[][] mapSquareLands) {
 		for (int level = 0; level < mapLoader.levels; level++) {
 			if (!this.asyncRebuilding) {
-				Client.field1798.method3149();
+				Client.audioApi.method3149();
 			}
 			for (int x = 0; x < this.mapSizeX >> 3; x++) {
 				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
@@ -1343,7 +1343,7 @@ public class World {
 		}
 		for (int level = 0; level < mapLoader.levels; level++) {
 			if (!this.asyncRebuilding) {
-				Client.field1798.method3149();
+				Client.audioApi.method3149();
 			}
 			for (int x = 0; x < this.mapSizeX >> 3; x++) {
 				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
@@ -1364,7 +1364,7 @@ public class World {
 				int var5 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
 				int var6 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
 				if (!this.asyncRebuilding) {
-					Client.field1798.method3149();
+					Client.audioApi.method3149();
 				}
 				mapLoader.readNormalLocs(Client.renderer, locs, var5, var6);
 				if (this.asyncRebuilding) {
@@ -1378,7 +1378,7 @@ public class World {
 	public void readRegionLocs(ClientMapLoader mapLoader, byte[][] mapSquareLocs) {
 		for (int level = 0; level < mapLoader.levels; level++) {
 			if (!this.asyncRebuilding) {
-				Client.field1798.method3149();
+				Client.audioApi.method3149();
 			}
 			for (int x = 0; x < this.mapSizeX >> 3; x++) {
 				for (int z = 0; z < this.mapSizeZ >> 3; z++) {

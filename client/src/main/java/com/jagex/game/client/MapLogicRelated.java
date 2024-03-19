@@ -15,29 +15,29 @@ public class MapLogicRelated {
 	}
 
 	@ObfuscatedName("pg.e(ZB)V")
-	public static void method6969(boolean arg0) {
-		Client.field1798.method3149();
+	public static void noTimeoutConnections(boolean force) {
+		Client.audioApi.method3149();
 		if (!Client.isStateGame(Client.state)) {
 			return;
 		}
-		ServerConnection[] var1 = Client.connections;
-		for (int var2 = 0; var2 < var1.length; var2++) {
-			ServerConnection var3 = var1[var2];
-			var3.field793++;
-			if (var3.field793 < 50 && !arg0) {
+		ServerConnection[] connections = Client.connections;
+		for (int index = 0; index < connections.length; index++) {
+			ServerConnection connection = connections[index];
+			connection.numConnections++;
+			if (connection.numConnections < 50 && !force) {
 				return;
 			}
-			var3.field793 = 0;
-			if (!var3.field808 && var3.getStream() != null) {
-				ClientMessage var4 = ClientMessage.method1604(ClientProt.NO_TIMEOUT, var3.field794);
-				var3.queue(var4);
+			connection.numConnections = 0;
+			if (!connection.disconnected && connection.getStream() != null) {
+				ClientMessage message = ClientMessage.createMessage(ClientProt.NO_TIMEOUT, connection.randomOut);
+				connection.queue(message);
 				try {
-					var3.method933();
-				} catch (IOException var6) {
-					var3.field808 = true;
+					connection.flush();
+				} catch (IOException ioException) {
+					connection.disconnected = true;
 				}
 			}
 		}
-		Client.field1798.method3149();
+		Client.audioApi.method3149();
 	}
 }

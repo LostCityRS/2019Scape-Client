@@ -10,10 +10,10 @@ import deob.ObfuscatedName;
 public class ClientMessage extends Node {
 
 	@ObfuscatedName("akl.k")
-	public ClientProt field11435;
+	public ClientProt prot;
 
 	@ObfuscatedName("akl.f")
-	public int field11431;
+	public int size;
 
 	@ObfuscatedName("akl.w")
 	public PacketBit buf;
@@ -22,51 +22,51 @@ public class ClientMessage extends Node {
 	public int pos;
 
 	@ObfuscatedName("akl.u")
-	public static ClientMessage[] field11434 = new ClientMessage[300];
+	public static ClientMessage[] messages = new ClientMessage[300];
 
 	@ObfuscatedName("akl.z")
-	public static int field11433 = 0;
+	public static int messageIndex = 0;
 
 	@ObfuscatedName("rd.e(I)Lakl;")
-	public static ClientMessage method7898() {
-		return field11433 == 0 ? new ClientMessage() : field11434[--field11433];
+	public static ClientMessage popMessage() {
+		return messageIndex == 0 ? new ClientMessage() : messages[--messageIndex];
 	}
 
 	@ObfuscatedName("cj.n(Lnr;Laav;B)Lakl;")
-	public static ClientMessage method1604(ClientProt arg0, Isaac arg1) {
-		ClientMessage var2 = method7898();
-		var2.field11435 = arg0;
-		var2.field11431 = arg0.size;
-		if (var2.field11431 == -1) {
-			var2.buf = new PacketBit(260);
-		} else if (var2.field11431 == -2) {
-			var2.buf = new PacketBit(10000);
-		} else if (var2.field11431 <= 18) {
-			var2.buf = new PacketBit(20);
-		} else if (var2.field11431 <= 98) {
-			var2.buf = new PacketBit(100);
+	public static ClientMessage createMessage(ClientProt prot, Isaac isaac) {
+		ClientMessage message = popMessage();
+		message.prot = prot;
+		message.size = prot.size;
+		if (message.size == -1) {
+			message.buf = new PacketBit(260);
+		} else if (message.size == -2) {
+			message.buf = new PacketBit(10000);
+		} else if (message.size <= 18) {
+			message.buf = new PacketBit(20);
+		} else if (message.size <= 98) {
+			message.buf = new PacketBit(100);
 		} else {
-			var2.buf = new PacketBit(260);
+			message.buf = new PacketBit(260);
 		}
-		var2.buf.setIsaac(arg1);
-		var2.buf.pIsaac1(var2.field11435.id);
-		var2.pos = 0;
-		return var2;
+		message.buf.setIsaac(isaac);
+		message.buf.pIsaac1(message.prot.id);
+		message.pos = 0;
+		return message;
 	}
 
 	@ObfuscatedName("zw.m(B)Lakl;")
-	public static ClientMessage method13920() {
-		ClientMessage var0 = method7898();
-		var0.field11435 = null;
-		var0.field11431 = 0;
-		var0.buf = new PacketBit(5000);
-		return var0;
+	public static ClientMessage createMessage() {
+		ClientMessage message = popMessage();
+		message.prot = null;
+		message.size = 0;
+		message.buf = new PacketBit(5000);
+		return message;
 	}
 
 	@ObfuscatedName("akl.k(I)V")
-	public void method17793() {
-		if (field11433 < field11434.length) {
-			field11434[++field11433 - 1] = this;
+	public void pushMessage() {
+		if (messageIndex < messages.length) {
+			messages[++messageIndex - 1] = this;
 		}
 	}
 }

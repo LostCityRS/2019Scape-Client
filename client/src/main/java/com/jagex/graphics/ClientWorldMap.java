@@ -255,10 +255,10 @@ public class ClientWorldMap extends WorldMap {
 			loading = 20;
 		} else if (loading == 20) {
 			if (!field6842) {
-				MapLogicRelated.method6969(true);
+				MapLogicRelated.noTimeoutConnections(true);
 				method8542(arg0, field6797, field6798, field6842);
 				loading = 60;
-				MapLogicRelated.method6969(true);
+				MapLogicRelated.noTimeoutConnections(true);
 				GameShell.method135();
 			} else if (method8542(arg0, field6797, field6798, field6842)) {
 				loading = 60;
@@ -274,7 +274,7 @@ public class ClientWorldMap extends WorldMap {
 			}
 			method8505();
 			loading = 70;
-			MapLogicRelated.method6969(true);
+			MapLogicRelated.noTimeoutConnections(true);
 			GameShell.method135();
 		} else if (loading >= 70) {
 			int var11 = 0;

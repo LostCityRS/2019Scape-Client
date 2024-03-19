@@ -2080,7 +2080,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var16 = ClientMessage.method1604(var14, Client.gameConnection.field794);
+				ClientMessage var16 = ClientMessage.createMessage(var14, Client.gameConnection.randomOut);
 				var16.buf.p2(var7);
 				var16.buf.p1_alt1(method14766() ? 1 : 0);
 				Client.gameConnection.queue(var16);
@@ -2106,7 +2106,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var18 = ClientMessage.method1604(var17, Client.gameConnection.field794);
+			ClientMessage var18 = ClientMessage.createMessage(var17, Client.gameConnection.randomOut);
 			var18.buf.p1_alt2(method14766() ? 1 : 0);
 			var18.buf.p2(var10.z + var5);
 			var18.buf.p4((int) (var8 >>> 32) & Integer.MAX_VALUE);
@@ -2163,7 +2163,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var24 = ClientMessage.method1604(var21, Client.gameConnection.field794);
+				ClientMessage var24 = ClientMessage.createMessage(var21, Client.gameConnection.randomOut);
 				var24.buf.p1_alt3(method14766() ? 1 : 0);
 				var24.buf.p2_alt2(var7);
 				Client.gameConnection.queue(var24);
@@ -2175,7 +2175,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var25 = ClientMessage.method1604(ClientProt.OPOBJT, Client.gameConnection.field794);
+			ClientMessage var25 = ClientMessage.createMessage(ClientProt.OPOBJT, Client.gameConnection.randomOut);
 			var25.buf.p2_alt1(var7);
 			var25.buf.p1_alt1(method14766() ? 1 : 0);
 			var25.buf.p2_alt1(Client.field10975);
@@ -2194,7 +2194,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var28 = ClientMessage.method1604(ClientProt.OPNPCT, Client.gameConnection.field794);
+				ClientMessage var28 = ClientMessage.createMessage(ClientProt.OPNPCT, Client.gameConnection.randomOut);
 				var28.buf.p4(Client.field6707);
 				var28.buf.p2(var7);
 				var28.buf.p1_alt1(method14766() ? 1 : 0);
@@ -2209,7 +2209,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var29 = ClientMessage.method1604(ClientProt.OPLOCT, Client.gameConnection.field794);
+			ClientMessage var29 = ClientMessage.createMessage(ClientProt.OPLOCT, Client.gameConnection.randomOut);
 			var29.buf.p1_alt1(method14766() ? 1 : 0);
 			var29.buf.p2_alt1(var10.x + var4);
 			var29.buf.p2_alt1(Client.field10975);
@@ -2228,7 +2228,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 1;
 				Client.field10925 = 0;
-				ClientMessage var30 = ClientMessage.method1604(ClientProt.FACE_SQUARE, Client.gameConnection.field794);
+				ClientMessage var30 = ClientMessage.createMessage(ClientProt.FACE_SQUARE, Client.gameConnection.randomOut);
 				var30.buf.p2_alt2(var10.z + var5);
 				var30.buf.p2_alt3(var10.x + var4);
 				Client.gameConnection.queue(var30);
@@ -2239,7 +2239,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var31 = ClientMessage.method1604(ClientProt.OPPLAYERT, Client.gameConnection.field794);
+			ClientMessage var31 = ClientMessage.createMessage(ClientProt.OPPLAYERT, Client.gameConnection.randomOut);
 			var31.buf.p2(Client.field10974);
 			var31.buf.p1_alt1(method14766() ? 1 : 0);
 			var31.buf.p2_alt1(Client.field10975);
@@ -2266,7 +2266,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 2;
 			Client.field10925 = 0;
-			ClientMessage var33 = ClientMessage.method1604(var32, Client.gameConnection.field794);
+			ClientMessage var33 = ClientMessage.createMessage(var32, Client.gameConnection.randomOut);
 			var33.buf.p2_alt1(var7);
 			var33.buf.p2_alt1(var10.x + var4);
 			var33.buf.p2(var10.z + var5);
@@ -2281,7 +2281,7 @@ public class MiniMenu {
 				Client.field10924 = arg2;
 				Client.field10926 = 2;
 				Client.field10925 = 0;
-				ClientMessage var35 = ClientMessage.method1604(ClientProt.OPPLAYERT, Client.gameConnection.field794);
+				ClientMessage var35 = ClientMessage.createMessage(ClientProt.OPPLAYERT, Client.gameConnection.randomOut);
 				var35.buf.p2(Client.field10974);
 				var35.buf.p1_alt1(method14766() ? 1 : 0);
 				var35.buf.p2_alt1(Client.field10975);
@@ -2296,7 +2296,7 @@ public class MiniMenu {
 			Client.field10924 = arg2;
 			Client.field10926 = 1;
 			Client.field10925 = 0;
-			ClientMessage var36 = ClientMessage.method1604(ClientProt.APCOORDT, Client.gameConnection.field794);
+			ClientMessage var36 = ClientMessage.createMessage(ClientProt.APCOORDT, Client.gameConnection.randomOut);
 			var36.buf.p2_alt2(var10.x + var4);
 			var36.buf.p4_alt1(Client.field6707);
 			var36.buf.p2(Client.field10975);
@@ -2324,10 +2324,10 @@ public class MiniMenu {
 	public static ClientMessage method9839(int arg0, int arg1, int arg2) {
 		ClientMessage var3 = null;
 		if (arg2 == 0) {
-			var3 = ClientMessage.method1604(ClientProt.MOVE_GAMECLICK, Client.gameConnection.field794);
+			var3 = ClientMessage.createMessage(ClientProt.MOVE_GAMECLICK, Client.gameConnection.randomOut);
 		}
 		if (arg2 == 1) {
-			var3 = ClientMessage.method1604(ClientProt.MOVE_MINIMAPCLICK, Client.gameConnection.field794);
+			var3 = ClientMessage.createMessage(ClientProt.MOVE_MINIMAPCLICK, Client.gameConnection.randomOut);
 		}
 		CoordGrid var4 = Client.world.method7727();
 		var3.buf.p2(var4.z + arg1);

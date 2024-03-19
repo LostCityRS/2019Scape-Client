@@ -26,16 +26,16 @@ public class ServerConnection {
 	public int writePos = 0;
 
 	@ObfuscatedName("ax.k")
-	public Packet field792 = new Packet(1700);
+	public Packet out = new Packet(1700);
 
 	@ObfuscatedName("ax.f")
-	public Isaac field794;
+	public Isaac randomOut;
 
 	@ObfuscatedName("ax.w")
 	public PacketBit in = new PacketBit(40000);
 
 	@ObfuscatedName("ax.l")
-	public Isaac field809;
+	public Isaac randomIn;
 
 	@ObfuscatedName("ax.u")
 	public ServerProt packetType = null;
@@ -50,19 +50,19 @@ public class ServerConnection {
 	public int idleNetCycles = 0;
 
 	@ObfuscatedName("ax.c")
-	public int field793 = 0;
+	public int numConnections = 0;
 
 	@ObfuscatedName("ax.r")
-	public int field801;
+	public int totalBytesSent;
 
 	@ObfuscatedName("ax.v")
 	public int readPos;
 
 	@ObfuscatedName("ax.o")
-	public int field798;
+	public int outBytesPerSecond;
 
 	@ObfuscatedName("ax.s")
-	public int field804;
+	public int inBytesPerSecond;
 
 	@ObfuscatedName("ax.y")
 	public ServerProt lastPacketType0;
@@ -74,7 +74,7 @@ public class ServerConnection {
 	public ServerProt lastPacketType2;
 
 	@ObfuscatedName("ax.b")
-	public boolean field808 = false;
+	public boolean disconnected = false;
 
 	@ObfuscatedName("ax.h")
 	public PingProvider pingProvider = new PingProvider();
@@ -87,30 +87,30 @@ public class ServerConnection {
 	}
 
 	@ObfuscatedName("ax.e(I)V")
-	public final void method952() {
+	public final void clearWriteQueue() {
 		this.writeQueue.clearAll();
 		this.writePos = 0;
 	}
 
 	@ObfuscatedName("ax.n(B)V")
-	public final void method933() throws IOException {
+	public final void flush() throws IOException {
 		if (this.stream == null || this.writePos <= 0) {
 			return;
 		}
-		this.field792.pos = 0;
+		this.out.pos = 0;
 		while (true) {
 			ClientMessage message = (ClientMessage) this.writeQueue.peekFront();
-			if (message == null || message.pos > this.field792.data.length - this.field792.pos) {
-				this.stream.write(this.field792.data, 0, this.field792.pos);
-				this.field801 += this.field792.pos;
-				this.field793 = 0;
+			if (message == null || message.pos > this.out.data.length - this.out.pos) {
+				this.stream.write(this.out.data, 0, this.out.pos);
+				this.totalBytesSent += this.out.pos;
+				this.numConnections = 0;
 				break;
 			}
-			this.field792.pdata(message.buf.data, 0, message.pos);
+			this.out.pdata(message.buf.data, 0, message.pos);
 			this.writePos -= message.pos;
 			message.remove();
 			message.buf.release();
-			message.method17793();
+			message.pushMessage();
 		}
 	}
 
@@ -123,11 +123,11 @@ public class ServerConnection {
 	}
 
 	@ObfuscatedName("ax.k(I)V")
-	public void method946() {
+	public void refreshNetStats() {
 		if (Client.currentclock % 50 == 0) {
-			this.field798 = this.field801;
-			this.field801 = 0;
-			this.field804 = this.readPos;
+			this.outBytesPerSecond = this.totalBytesSent;
+			this.totalBytesSent = 0;
+			this.inBytesPerSecond = this.readPos;
 			this.readPos = 0;
 		}
 	}

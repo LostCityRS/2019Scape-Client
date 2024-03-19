@@ -10,7 +10,7 @@ public class ClientAutoSetupResult extends AutoSetupResult implements SendablePa
 
 	@ObfuscatedName("alq.e(I)V")
 	public void method9201() {
-		ClientMessage var1 = ClientMessage.method1604(ClientProt.AUTO_SETUP_RESULT, Client.gameConnection.field794);
+		ClientMessage var1 = ClientMessage.createMessage(ClientProt.AUTO_SETUP_RESULT, Client.gameConnection.randomOut);
 		var1.buf.p2(this.field8904);
 		var1.buf.p1_alt1(this.field8905);
 		var1.buf.p3_alt3(this.field8900);

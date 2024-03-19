@@ -17,7 +17,7 @@ public class ClientDirectXFailure implements SendablePacket {
 
 	@ObfuscatedName("ux.e(I)V")
 	public void method9201() {
-		ClientMessage var1 = ClientMessage.method1604(ClientProt.DIRECTX_FAILURE, Client.gameConnection.field794);
+		ClientMessage var1 = ClientMessage.createMessage(ClientProt.DIRECTX_FAILURE, Client.gameConnection.randomOut);
 		var1.buf.p2(this.field7274);
 		Client.gameConnection.queue(var1);
 	}

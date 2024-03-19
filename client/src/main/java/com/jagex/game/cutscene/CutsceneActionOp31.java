@@ -32,7 +32,7 @@ public class CutsceneActionOp31 extends CutsceneAction {
 		this.field10334 = arg0.g1();
 		this.field10333 = arg0.g1();
 		this.field10336 = arg0.g1();
-		this.field10335 = Client.field1798.method3236(SoundType.field1828, this, this.field10337, this.field10336, this.field10334, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, this.field10333, false);
+		this.field10335 = Client.audioApi.method3236(SoundType.field1828, this, this.field10337, this.field10336, this.field10334, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, this.field10333, false);
 		if (this.field10335 != null) {
 			this.field10335.method7392();
 		}
@@ -49,7 +49,7 @@ public class CutsceneActionOp31 extends CutsceneAction {
 	public void method2896() {
 		if (this.field10335 != null) {
 			this.field10335.method7380(50);
-			Client.field1798.method3185(this.field10335);
+			Client.audioApi.method3185(this.field10335);
 			this.field10335 = null;
 		}
 	}

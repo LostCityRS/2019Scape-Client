@@ -222,7 +222,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 		if (var4.writePos > 1200) {
 			return;
 		}
-		ClientMessage var5 = ClientMessage.method1604(ClientProt.STORE_SERVERPERM_VARCS, var4.field794);
+		ClientMessage var5 = ClientMessage.createMessage(ClientProt.STORE_SERVERPERM_VARCS, var4.randomOut);
 		var5.buf.p2(0);
 		int var6 = var5.buf.pos;
 		var5.buf.pos++;

@@ -80,7 +80,7 @@ public class AccountCreationManager {
 		if (Client.state != 0) {
 			return;
 		}
-		ClientMessage var1 = ClientMessage.method1604(ClientProt.CREATE_CHECK_EMAIL, Client.lobbyConnection.field794);
+		ClientMessage var1 = ClientMessage.createMessage(ClientProt.CREATE_CHECK_EMAIL, Client.lobbyConnection.randomOut);
 		var1.buf.p2(0);
 		int var2 = var1.buf.pos;
 		var1.buf.pjstr(arg0);
@@ -96,7 +96,7 @@ public class AccountCreationManager {
 		if (Client.state != 0) {
 			return;
 		}
-		ClientMessage var1 = ClientMessage.method1604(ClientProt.CREATE_CHECK_NAME, Client.lobbyConnection.field794);
+		ClientMessage var1 = ClientMessage.createMessage(ClientProt.CREATE_CHECK_NAME, Client.lobbyConnection.randomOut);
 		var1.buf.p1(0);
 		int var2 = var1.buf.pos;
 		var1.buf.pjstr(arg0);
@@ -110,7 +110,7 @@ public class AccountCreationManager {
 	@ObfuscatedName("ae.w(I)V")
 	public static void method648() {
 		if (Client.state == 0) {
-			ClientMessage var0 = ClientMessage.method1604(ClientProt.CREATE_SUGGEST_NAMES, Client.lobbyConnection.field794);
+			ClientMessage var0 = ClientMessage.createMessage(ClientProt.CREATE_SUGGEST_NAMES, Client.lobbyConnection.randomOut);
 			Client.lobbyConnection.queue(var0);
 			field585 = SuggestNameReply.field8392;
 			field618 = null;
@@ -122,7 +122,7 @@ public class AccountCreationManager {
 		if (Client.state != 0) {
 			return;
 		}
-		ClientMessage var5 = ClientMessage.method1604(ClientProt.CREATE_ACCOUNT, Client.lobbyConnection.field794);
+		ClientMessage var5 = ClientMessage.createMessage(ClientProt.CREATE_ACCOUNT, Client.lobbyConnection.randomOut);
 		var5.buf.p2(0);
 		int var6 = var5.buf.pos;
 		var5.buf.pjstr(arg0);
@@ -144,7 +144,7 @@ public class AccountCreationManager {
 	@ObfuscatedName("afu.u(II)V")
 	public static void method16428(int arg0) {
 		if (Client.state == 0) {
-			ClientMessage var1 = ClientMessage.method1604(ClientProt.CREATE_LOG_PROGRESS, Client.lobbyConnection.field794);
+			ClientMessage var1 = ClientMessage.createMessage(ClientProt.CREATE_LOG_PROGRESS, Client.lobbyConnection.randomOut);
 			var1.buf.p1(arg0);
 			Client.lobbyConnection.queue(var1);
 		}
@@ -224,9 +224,9 @@ public class AccountCreationManager {
 				method17428();
 			}
 			if (field517 == CreateConnectStage.field515) {
-				Client.lobbyConnection.setStream(Stream.createStream(WorldSwitcher.lobby.getSocket(), 40000), WorldSwitcher.lobby.host);
-				Client.lobbyConnection.method952();
-				ClientMessage var1 = ClientMessage.method13920();
+				Client.lobbyConnection.setStream(Stream.createStream(WorldSwitcher.currentLobby.getSocket(), 40000), WorldSwitcher.currentLobby.host);
+				Client.lobbyConnection.clearWriteQueue();
+				ClientMessage var1 = ClientMessage.createMessage();
 				var1.buf.p1(LoginProt.CREATE_ACCOUNT_CONNECT.id);
 				var1.buf.p2(0);
 				int var2 = var1.buf.pos;
@@ -247,12 +247,12 @@ public class AccountCreationManager {
 				if (var4 != null) {
 					var1.buf.pjstr(var4);
 				}
-				Client.hardwarePlatform.method18188(var1.buf);
+				Client.hardwarePlatform.createHardwareBlock(var1.buf);
 				var1.buf.pos += 7;
                 var1.buf.tinyenc(field581, var3, var1.buf.pos);
 				var1.buf.psize2(var1.buf.pos - var2);
 				Client.lobbyConnection.queue(var1);
-				Client.lobbyConnection.method933();
+				Client.lobbyConnection.flush();
 				field517 = CreateConnectStage.field516;
 			}
 			if (field517 == CreateConnectStage.field516) {
@@ -266,16 +266,16 @@ public class AccountCreationManager {
 				Client.lobbyConnection.getStream().read(Client.lobbyConnection.in.data, 0, 1);
 				field584 = (ConnectReply) SerializableEnums.decode(ConnectReply.method16743(), Client.lobbyConnection.in.data[0] & 0xFF);
 				if (field584 == ConnectReply.field8364) {
-					Client.lobbyConnection.field794 = new Isaac(field581);
+					Client.lobbyConnection.randomOut = new Isaac(field581);
 					int[] var5 = new int[4];
 					for (int var6 = 0; var6 < 4; var6++) {
 						var5[var6] = field581[var6] + 50;
 					}
-					Client.lobbyConnection.field809 = new Isaac(var5);
+					Client.lobbyConnection.randomIn = new Isaac(var5);
 					new Isaac(var5);
-					Client.lobbyConnection.in.setIsaac(Client.lobbyConnection.field809);
+					Client.lobbyConnection.in.setIsaac(Client.lobbyConnection.randomIn);
 					Client.setState(0);
-					Client.lobbyConnection.method952();
+					Client.lobbyConnection.clearWriteQueue();
 					Client.lobbyConnection.in.pos = 0;
 					Client.lobbyConnection.lastPacketType0 = null;
 					Client.lobbyConnection.lastPacketType1 = null;
@@ -319,7 +319,7 @@ public class AccountCreationManager {
 	public static void method17428() {
 		Client.lobbyConnection.closeGracefully();
 		if (field580 < 2) {
-			WorldSwitcher.lobby.configureSocketType();
+			WorldSwitcher.currentLobby.configureSocketType();
 			field583 = 0;
 			field580++;
 			field517 = CreateConnectStage.field515;

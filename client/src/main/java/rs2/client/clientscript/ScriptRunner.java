@@ -524,7 +524,7 @@ public final class ScriptRunner {
 		if (var5.getStream() == null) {
 			return;
 		}
-		ClientMessage var6 = ClientMessage.method1604(ClientProt.URL_REQUEST, var5.field794);
+		ClientMessage var6 = ClientMessage.createMessage(ClientProt.URL_REQUEST, var5.randomOut);
 		var6.buf.p2(Packet.pjstrlen(arg0) + Packet.pjstrlen(arg1) + Packet.pjstrlen(arg2) + 1);
 		var6.buf.pjstr(arg0);
 		var6.buf.pjstr(arg1);
@@ -9646,7 +9646,7 @@ public final class ScriptRunner {
 		if (StringTools.method9836(var1)) {
 			var2 = StringTools.parseInt(var1);
 		}
-		ClientMessage var3 = ClientMessage.method1604(ClientProt.RESUME_P_COUNTDIALOG, Client.gameConnection.field794);
+		ClientMessage var3 = ClientMessage.createMessage(ClientProt.RESUME_P_COUNTDIALOG, Client.gameConnection.randomOut);
 		var3.buf.p4(var2);
 		Client.gameConnection.queue(var3);
 	}
@@ -9654,7 +9654,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("yj.vi(Lyf;I)V")
 	public static final void resume_namedialog(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		ClientMessage var2 = ClientMessage.method1604(ClientProt.RESUME_P_NAMEDIALOG, Client.gameConnection.field794);
+		ClientMessage var2 = ClientMessage.createMessage(ClientProt.RESUME_P_NAMEDIALOG, Client.gameConnection.randomOut);
 		var2.buf.p1(var1.length() + 1);
 		var2.buf.pjstr(var1);
 		Client.gameConnection.queue(var2);
@@ -9663,7 +9663,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("qh.va(Lyf;I)V")
 	public static final void resume_stringdialog(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		ClientMessage var2 = ClientMessage.method1604(ClientProt.RESUME_P_STRINGDIALOG, Client.gameConnection.field794);
+		ClientMessage var2 = ClientMessage.createMessage(ClientProt.RESUME_P_STRINGDIALOG, Client.gameConnection.randomOut);
 		var2.buf.p1(var1.length() + 1);
 		var2.buf.pjstr(var1);
 		Client.gameConnection.queue(var2);
@@ -9671,7 +9671,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("sq.vs(Lyf;I)V")
 	public static final void abort_dialog(ClientScriptState arg0) {
-		ClientMessage var1 = ClientMessage.method1604(ClientProt.ABORT_P_DIALOG, Client.gameConnection.field794);
+		ClientMessage var1 = ClientMessage.createMessage(ClientProt.ABORT_P_DIALOG, Client.gameConnection.randomOut);
 		Client.gameConnection.queue(var1);
 	}
 
@@ -9704,7 +9704,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("na.vg(Lyf;B)V")
 	public static final void resume_objdialog(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ClientMessage var2 = ClientMessage.method1604(ClientProt.RESUME_P_OBJDIALOG, Client.gameConnection.field794);
+		ClientMessage var2 = ClientMessage.createMessage(ClientProt.RESUME_P_OBJDIALOG, Client.gameConnection.randomOut);
 		var2.buf.p2(var1);
 		Client.gameConnection.queue(var2);
 	}
@@ -9758,7 +9758,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("uv.vc(Lyf;I)V")
 	public static final void resume_hsldialog(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ClientMessage var2 = ClientMessage.method1604(ClientProt.RESUME_P_HSLDIALOG, Client.gameConnection.field794);
+		ClientMessage var2 = ClientMessage.createMessage(ClientProt.RESUME_P_HSLDIALOG, Client.gameConnection.randomOut);
 		var2.buf.p2(var1);
 		Client.gameConnection.queue(var2);
 	}
@@ -9766,7 +9766,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("qa.vn(Lyf;S)V")
 	public static final void resume_clanforumqfcdialog(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		ClientMessage var2 = ClientMessage.method1604(ClientProt.RESUME_P_CLANFORUMQFCDIALOG, Client.gameConnection.field794);
+		ClientMessage var2 = ClientMessage.createMessage(ClientProt.RESUME_P_CLANFORUMQFCDIALOG, Client.gameConnection.randomOut);
 		var2.buf.p1(var1.length() + 1);
 		var2.buf.pjstr(var1);
 		Client.gameConnection.queue(var2);
@@ -9780,18 +9780,18 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		short var4 = 255;
 		short var5 = 256;
-		Client.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("jf.vk(Lyf;I)V")
 	public static final void sound_song(ClientScriptState arg0) {
-		Client.field1798.method3174(arg0.field8216[--arg0.field8226]);
+		Client.audioApi.method3174(arg0.field8216[--arg0.field8226]);
 	}
 
 	@ObfuscatedName("o.wn(Lyf;I)V")
 	public static final void sound_jingle(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
-		Client.field1798.method3235(arg0.field8216[arg0.field8226], 255);
+		Client.audioApi.method3235(arg0.field8216[arg0.field8226], 255);
 	}
 
 	@ObfuscatedName("e.wa(Lyf;I)V")
@@ -9802,19 +9802,19 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		short var5 = 256;
-		Client.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("ahb.wo(Lyf;I)V")
 	public static final void sound_song_volume(ClientScriptState arg0) {
 		arg0.field8226 -= 3;
-		Client.field1798.method3235(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1]);
+		Client.audioApi.method3235(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1]);
 	}
 
 	@ObfuscatedName("aj.wu(Lyf;I)V")
 	public static final void sound_jingle_volume(ClientScriptState arg0) {
 		arg0.field8226 -= 3;
-		Client.field1798.method3235(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 2]);
+		Client.audioApi.method3235(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 2]);
 	}
 
 	@ObfuscatedName("ev.wk(Lyf;I)V")
@@ -9825,7 +9825,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		short var5 = 256;
-		Client.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("tg.wz(Lyf;B)V")
@@ -9836,7 +9836,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		short var5 = 256;
-		Client.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("iq.wj(Lyf;I)V")
@@ -9847,7 +9847,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		int var5 = arg0.field8216[arg0.field8226 + 4];
-		Client.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("ahp.we(Lyf;I)V")
@@ -9858,12 +9858,12 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		int var5 = arg0.field8216[arg0.field8226 + 4];
-		Client.field1798.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("pw.wr(Lyf;I)V")
 	public static final void sound_song_stop(ClientScriptState arg0) {
-		Client.field1798.method3178();
+		Client.audioApi.method3178();
 	}
 
 	@ObfuscatedName("sk.wl(Lyf;I)V")
@@ -9875,9 +9875,9 @@ public final class ScriptRunner {
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		int var5 = arg0.field8216[arg0.field8226 + 4];
 		int var6 = arg0.field8216[arg0.field8226 + 5];
-		Sound var7 = Client.field1798.method3236(SoundType.field1832, Client.field1798, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, false);
+		Sound var7 = Client.audioApi.method3236(SoundType.field1832, Client.audioApi, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, false);
 		if (var7 != null) {
-			Client.field1798.method3251(var7, var6, var3);
+			Client.audioApi.method3251(var7, var6, var3);
 		}
 	}
 
@@ -9885,14 +9885,14 @@ public final class ScriptRunner {
 	public static final void sound_group_start(ClientScriptState arg0) {
 		arg0.field8226--;
 		int var1 = arg0.field8216[arg0.field8226];
-		Client.field1798.method3208(var1);
+		Client.audioApi.method3208(var1);
 	}
 
 	@ObfuscatedName("hx.wv(Lyf;S)V")
 	public static final void sound_group_stop(ClientScriptState arg0) {
 		arg0.field8226--;
 		int var1 = arg0.field8216[arg0.field8226];
-		Client.field1798.method3153(var1);
+		Client.audioApi.method3153(var1);
 	}
 
 	@ObfuscatedName("a.wg(Lyf;B)V")
@@ -9901,7 +9901,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
-		Client.field1798.method3156(var1, var2, var3);
+		Client.audioApi.method3156(var1, var2, var3);
 	}
 
 	@ObfuscatedName("ge.wb(Lyf;I)V")
@@ -9909,7 +9909,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		Client.field1798.method3157(var1, var2);
+		Client.audioApi.method3157(var1, var2);
 	}
 
 	@ObfuscatedName("nv.wq(Lyf;B)V")
@@ -10540,7 +10540,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("va.zv(Lyf;I)V")
 	public static final void email_validation_submit_code(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		ClientMessage var2 = ClientMessage.method1604(ClientProt.SEND_EMAIL_VALIDATION_CODE, Client.lobbyConnection.field794);
+		ClientMessage var2 = ClientMessage.createMessage(ClientProt.SEND_EMAIL_VALIDATION_CODE, Client.lobbyConnection.randomOut);
 		var2.buf.p1(Packet.pjstrlen(var1));
 		var2.buf.pjstr(var1);
 		Client.lobbyConnection.queue(var2);
@@ -10550,7 +10550,7 @@ public final class ScriptRunner {
 	public static final void email_validation_change_address(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		String var2 = (String) arg0.field8218[--arg0.field8211];
-		ClientMessage var3 = ClientMessage.method1604(ClientProt.CHANGE_EMAIL_ADDRESS, Client.lobbyConnection.field794);
+		ClientMessage var3 = ClientMessage.createMessage(ClientProt.CHANGE_EMAIL_ADDRESS, Client.lobbyConnection.randomOut);
 		var3.buf.p2(Packet.pjstrlen(var1) + Packet.pjstrlen(var2));
 		var3.buf.pjstr(var1);
 		var3.buf.pjstr(var2);
@@ -10565,7 +10565,7 @@ public final class ScriptRunner {
 		boolean var2 = arg0.field8216[arg0.field8226] == 1;
 		boolean var3 = arg0.field8216[arg0.field8226 + 1] == 1;
 		boolean var4 = arg0.field8216[arg0.field8226 + 2] == 1;
-		ClientMessage var5 = ClientMessage.method1604(ClientProt.ADD_NEW_EMAIL_ADDRESS, Client.lobbyConnection.field794);
+		ClientMessage var5 = ClientMessage.createMessage(ClientProt.ADD_NEW_EMAIL_ADDRESS, Client.lobbyConnection.randomOut);
 		var5.buf.p2(Packet.pjstrlen(var1) + 1);
 		var5.buf.pjstr(var1);
 		int var6 = 0;
@@ -12241,7 +12241,7 @@ public final class ScriptRunner {
 		}
 		Client.tradeChatFilter = arg0.field8216[arg0.field8226 + 2];
 		ServerConnection var1 = Client.method640();
-		ClientMessage var2 = ClientMessage.method1604(ClientProt.SET_CHATFILTERSETTINGS, var1.field794);
+		ClientMessage var2 = ClientMessage.createMessage(ClientProt.SET_CHATFILTERSETTINGS, var1.randomOut);
 		var2.buf.p1(Client.publicChatFilter);
 		var2.buf.p1(Client.privateChatFilter.value);
 		var2.buf.p1(Client.tradeChatFilter);
@@ -12263,7 +12263,7 @@ public final class ScriptRunner {
 			var2 = var2.substring(0, 80);
 		}
 		ServerConnection var5 = Client.method640();
-		ClientMessage var6 = ClientMessage.method1604(ClientProt.SEND_SNAPSHOT, var5.field794);
+		ClientMessage var6 = ClientMessage.createMessage(ClientProt.SEND_SNAPSHOT, var5.randomOut);
 		var6.buf.p1(Packet.pjstrlen(var1) + 2 + Packet.pjstrlen(var2));
 		var6.buf.pjstr(var1);
 		var6.buf.p1(var3 - 1);
@@ -12356,7 +12356,7 @@ public final class ScriptRunner {
 	public static final void chat_setmode(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		ServerConnection var2 = Client.method640();
-		ClientMessage var3 = ClientMessage.method1604(ClientProt.CHAT_SETMODE, var2.field794);
+		ClientMessage var3 = ClientMessage.createMessage(ClientProt.CHAT_SETMODE, var2.randomOut);
 		var3.buf.p1(var1);
 		var2.queue(var3);
 	}
@@ -12480,7 +12480,7 @@ public final class ScriptRunner {
 			}
 		}
 		ServerConnection var6 = Client.method640();
-		ClientMessage var7 = ClientMessage.method1604(ClientProt.MESSAGE_PUBLIC, var6.field794);
+		ClientMessage var7 = ClientMessage.createMessage(ClientProt.MESSAGE_PUBLIC, var6.randomOut);
 		var7.buf.p1(0);
 		int var8 = var7.buf.pos;
 		var7.buf.p1(var3);
@@ -12499,7 +12499,7 @@ public final class ScriptRunner {
 			return;
 		}
 		ServerConnection var3 = Client.method640();
-		ClientMessage var4 = ClientMessage.method1604(ClientProt.MESSAGE_PRIVATE, var3.field794);
+		ClientMessage var4 = ClientMessage.createMessage(ClientProt.MESSAGE_PRIVATE, var3.randomOut);
 		var4.buf.p2(0);
 		int var5 = var4.buf.pos;
 		var4.buf.pjstr(var1);
@@ -12639,7 +12639,7 @@ public final class ScriptRunner {
 	public static final void activechatphrase_send(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		ServerConnection var2 = Client.method640();
-		ClientMessage var3 = ClientMessage.method1604(ClientProt.MESSAGE_QUICKCHAT_PUBLIC, var2.field794);
+		ClientMessage var3 = ClientMessage.createMessage(ClientProt.MESSAGE_QUICKCHAT_PUBLIC, var2.randomOut);
 		var3.buf.p1(0);
 		int var4 = var3.buf.pos;
 		var3.buf.p1(var1);
@@ -12653,7 +12653,7 @@ public final class ScriptRunner {
 	public static final void activechatphrase_sendprivate(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		ServerConnection var2 = Client.method640();
-		ClientMessage var3 = ClientMessage.method1604(ClientProt.MESSAGE_QUICKCHAT_PRIVATE, var2.field794);
+		ClientMessage var3 = ClientMessage.createMessage(ClientProt.MESSAGE_QUICKCHAT_PRIVATE, var2.randomOut);
 		var3.buf.p1(0);
 		int var4 = var3.buf.pos;
 		var3.buf.pjstr(var1);
@@ -14607,7 +14607,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("qw.ari(Lyf;B)V")
 	public static final void resend_uid_passport_request(ClientScriptState arg0) {
 		if (Client.state == 17) {
-			ClientMessage var1 = ClientMessage.method1604(ClientProt.UID_PASSPORT_RESEND_REQUEST, Client.lobbyConnection.field794);
+			ClientMessage var1 = ClientMessage.createMessage(ClientProt.UID_PASSPORT_RESEND_REQUEST, Client.lobbyConnection.randomOut);
 			Client.lobbyConnection.queue(var1);
 		}
 	}
@@ -15490,7 +15490,7 @@ public final class ScriptRunner {
 		} else {
 			WorldSwitcher.field8754 = true;
 			ServerConnection var1 = Client.method640();
-			ClientMessage var2 = ClientMessage.method1604(ClientProt.WORLDLIST_FETCH, var1.field794);
+			ClientMessage var2 = ClientMessage.createMessage(ClientProt.WORLDLIST_FETCH, var1.randomOut);
 			var2.buf.p4(GWC.field7642);
 			var1.queue(var2);
 			arg0.field8216[++arg0.field8226 - 1] = 0;
@@ -16688,7 +16688,7 @@ public final class ScriptRunner {
 		if (Client.gameConnection == null) {
 			return;
 		}
-		ClientMessage var3 = ClientMessage.method1604(ClientProt.BUG_REPORT, Client.gameConnection.field794);
+		ClientMessage var3 = ClientMessage.createMessage(ClientProt.BUG_REPORT, Client.gameConnection.randomOut);
 		var3.buf.p2(Packet.method8398(arg1) + 1 + Packet.method8398(arg2));
 		var3.buf.pjstr2(arg1);
 		var3.buf.p1_alt2(arg0);
@@ -16889,7 +16889,7 @@ public final class ScriptRunner {
 		} else if (MoveSpeed.CRAWL != var1 && MoveSpeed.WALK != var1 && MoveSpeed.RUN != var1) {
 			throw new RuntimeException("");
 		} else if (Client.gameConnection != null) {
-			ClientMessage var3 = ClientMessage.method1604(ClientProt.MOVE_SCRIPTED, Client.gameConnection.field794);
+			ClientMessage var3 = ClientMessage.createMessage(ClientProt.MOVE_SCRIPTED, Client.gameConnection.randomOut);
 			var3.buf.p1_alt1(var1.getId());
 			var3.buf.p2_alt2(var2.z);
 			var3.buf.p2_alt1(var2.x);
