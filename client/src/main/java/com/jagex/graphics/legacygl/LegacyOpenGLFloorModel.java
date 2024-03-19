@@ -183,7 +183,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 				var17 = 128;
 				var16 = -1;
 			}
-			long var18 = (long) arg10.field1577 << 48 | (long) arg10.field1573 << 42 | (long) arg10.field1575 << 28 | (long) (var17 << 14) | (long) var16;
+			long var18 = (long) arg10.offset << 48 | (long) arg10.scale << 42 | (long) arg10.colour << 28 | (long) (var17 << 14) | (long) var16;
 			Node var20;
 			for (var20 = this.field9483.getNode(var18); var20 != null; var20 = this.field9483.next()) {
 				LegacyFloorModelRelated var21 = (LegacyFloorModelRelated) var20;
@@ -208,7 +208,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aek.m(II[I[I[I[I[I[I[I[I[I[I[ILdy;Z)V")
-	public void method1525(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14) {
+	public void addTileUnblended(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14) {
 		int var16 = arg9.length;
 		int[] var17 = new int[var16 * 3];
 		int[] var18 = new int[var16 * 3];
@@ -455,7 +455,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 								}
 								if (this.field9453.field10017) {
 									var7.method58((float) var43);
-									var7.method58((float) (this.method1527(var43, var44) + var49));
+									var7.method58((float) (this.getFineHeight(var43, var44) + var49));
 									var7.method58((float) var44);
 									var7.method57((byte) (var75 >> 16));
 									var7.method57((byte) (var75 >> 8));
@@ -473,7 +473,7 @@ public class LegacyOpenGLFloorModel extends FloorModel {
 									}
 								} else {
 									var7.method59((float) var43);
-									var7.method59((float) (this.method1527(var43, var44) + var49));
+									var7.method59((float) (this.getFineHeight(var43, var44) + var49));
 									var7.method59((float) var44);
 									var7.method57((byte) (var75 >> 16));
 									var7.method57((byte) (var75 >> 8));

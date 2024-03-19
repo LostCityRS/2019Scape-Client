@@ -218,7 +218,7 @@ public final class ChangeLocationRequest extends Node {
 			return;
 		}
 		int var10 = arg0;
-		if (arg0 < 3 && Client.world.method7793().method7105(arg2, arg3)) {
+		if (arg0 < 3 && Client.world.method7793().isLinkBelow(arg2, arg3)) {
 			var10 = arg0 + 1;
 		}
 		if (Client.world.getScene() == null) {

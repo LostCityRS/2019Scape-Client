@@ -74,13 +74,13 @@ public class Scene {
 	public FloorModel[] field6917;
 
 	@ObfuscatedName("tx.b")
-	public int[][] field6923;
+	public int[][] waterFogColour;
 
 	@ObfuscatedName("tx.h")
-	public short[][] field6919;
+	public short[][] waterFogScale;
 
 	@ObfuscatedName("tx.a")
-	public byte[][] field6936;
+	public byte[][] waterFogOffset;
 
 	@ObfuscatedName("tx.g")
 	public byte[][] field6921;
@@ -223,9 +223,9 @@ public class Scene {
 		this.field6904 = new Tile[maxLevel][this.maxTileX][this.maxTileZ];
 		this.field6915 = new FloorModel[maxLevel];
 		if (underwater) {
-			this.field6923 = new int[this.maxTileX][this.maxTileZ];
-			this.field6936 = new byte[this.maxTileX][this.maxTileZ];
-			this.field6919 = new short[this.maxTileX][this.maxTileZ];
+			this.waterFogColour = new int[this.maxTileX][this.maxTileZ];
+			this.waterFogOffset = new byte[this.maxTileX][this.maxTileZ];
+			this.waterFogScale = new short[this.maxTileX][this.maxTileZ];
 			this.field6921 = new byte[this.maxTileX][this.maxTileZ];
 			this.field6963 = new byte[this.maxTileX][this.maxTileZ];
 			this.field6905 = new byte[this.maxTileX][this.maxTileZ];
@@ -358,18 +358,18 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.p(III)I")
-	public int method8710(int arg0, int arg1) {
-		return this.field6919 == null ? 0 : this.field6919[arg0][arg1] & 0xFFFF;
+	public int getWaterFogScale(int arg0, int arg1) {
+		return this.waterFogScale == null ? 0 : this.waterFogScale[arg0][arg1] & 0xFFFF;
 	}
 
 	@ObfuscatedName("tx.d(IIB)I")
-	public int method8729(int arg0, int arg1) {
-		return this.field6923 == null ? 0 : this.field6923[arg0][arg1] & 0xFFFFFF;
+	public int getWaterFogColour(int arg0, int arg1) {
+		return this.waterFogColour == null ? 0 : this.waterFogColour[arg0][arg1] & 0xFFFFFF;
 	}
 
 	@ObfuscatedName("tx.c(III)I")
-	public int method8790(int arg0, int arg1) {
-		return this.field6936 == null ? 0 : this.field6936[arg0][arg1] & 0xFF;
+	public int getWaterFogOffset(int arg0, int arg1) {
+		return this.waterFogOffset == null ? 0 : this.waterFogOffset[arg0][arg1] & 0xFF;
 	}
 
 	@ObfuscatedName("tx.r(IIS)I")
@@ -388,15 +388,15 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.s(IIIIIIIII)V")
-	public void method8716(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		if (this.field6923 != null) {
-			this.field6923[arg0][arg1] = arg2 | 0xFF000000;
+	public void setWaterFog(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+		if (this.waterFogColour != null) {
+			this.waterFogColour[arg0][arg1] = arg2 | 0xFF000000;
 		}
-		if (this.field6919 != null) {
-			this.field6919[arg0][arg1] = (short) arg3;
+		if (this.waterFogScale != null) {
+			this.waterFogScale[arg0][arg1] = (short) arg3;
 		}
-		if (this.field6936 != null) {
-			this.field6936[arg0][arg1] = (byte) arg4;
+		if (this.waterFogOffset != null) {
+			this.waterFogOffset[arg0][arg1] = (byte) arg4;
 		}
 		if (this.field6921 != null) {
 			this.field6921[arg0][arg1] = (byte) arg5;
@@ -544,10 +544,10 @@ public class Scene {
 						}
 						var16.field7058 = var15;
 					}
-					if (var3 && (this.field6923[var12][var13] & 0xFF000000) != 0) {
-						var4 = this.field6923[var12][var13];
-						var5 = this.field6919[var12][var13];
-						var6 = this.field6936[var12][var13];
+					if (var3 && (this.waterFogColour[var12][var13] & 0xFF000000) != 0) {
+						var4 = this.waterFogColour[var12][var13];
+						var5 = this.waterFogScale[var12][var13];
+						var6 = this.waterFogOffset[var12][var13];
 					}
 					if (!arg1 && var14.groundDecoration != null && var14.groundDecoration.field12448 > var7) {
 						var7 = var14.groundDecoration.field12448;
@@ -558,10 +558,10 @@ public class Scene {
 		if (var3 && (var4 & 0xFF000000) != 0) {
 			for (int var17 = var8; var17 <= var9; var17++) {
 				for (int var18 = var10; var18 <= var11; var18++) {
-					if ((this.field6923[var17][var18] & 0xFF000000) == 0) {
-						this.field6923[var17][var18] = var4;
-						this.field6919[var17][var18] = var5;
-						this.field6936[var17][var18] = var6;
+					if ((this.waterFogColour[var17][var18] & 0xFF000000) == 0) {
+						this.waterFogColour[var17][var18] = var4;
+						this.waterFogScale[var17][var18] = var5;
+						this.waterFogOffset[var17][var18] = var6;
 					}
 				}
 			}
@@ -891,21 +891,21 @@ public class Scene {
 		if (x < this.maxTileX) {
 			Tile tile = this.levelTiles[level][x + 1][z];
 			if (tile != null && tile.groundDecoration != null && tile.groundDecoration.method17379()) {
-				int var6 = (this.field6913[level].method1529(x + 1, z) + this.field6913[level].method1529(x + 1 + 1, z) + this.field6913[level].method1529(x + 1, z + 1) + this.field6913[level].method1529(x + 1 + 1, z + 1)) / 4 - (this.field6913[level].method1529(x, z) + this.field6913[level].method1529(x + 1, z) + this.field6913[level].method1529(x, z + 1) + this.field6913[level].method1529(x + 1, z + 1)) / 4;
+				int var6 = (this.field6913[level].getTileHeight(x + 1, z) + this.field6913[level].getTileHeight(x + 1 + 1, z) + this.field6913[level].getTileHeight(x + 1, z + 1) + this.field6913[level].getTileHeight(x + 1 + 1, z + 1)) / 4 - (this.field6913[level].getTileHeight(x, z) + this.field6913[level].getTileHeight(x + 1, z) + this.field6913[level].getTileHeight(x, z + 1) + this.field6913[level].getTileHeight(x + 1, z + 1)) / 4;
 				entity.mergeNormals(this.renderer, tile.groundDecoration, this.field6901, var6, 0, true);
 			}
 		}
 		if (z < this.maxTileX) {
 			Tile tile = this.levelTiles[level][x][z + 1];
 			if (tile != null && tile.groundDecoration != null && tile.groundDecoration.method17379()) {
-				int var8 = (this.field6913[level].method1529(x, z) + this.field6913[level].method1529(x + 1, z + 1) + this.field6913[level].method1529(x, z + 1 + 1) + this.field6913[level].method1529(x + 1, z + 1 + 1)) / 4 - (this.field6913[level].method1529(x, z) + this.field6913[level].method1529(x + 1, z) + this.field6913[level].method1529(x, z + 1) + this.field6913[level].method1529(x + 1, z + 1)) / 4;
+				int var8 = (this.field6913[level].getTileHeight(x, z) + this.field6913[level].getTileHeight(x + 1, z + 1) + this.field6913[level].getTileHeight(x, z + 1 + 1) + this.field6913[level].getTileHeight(x + 1, z + 1 + 1)) / 4 - (this.field6913[level].getTileHeight(x, z) + this.field6913[level].getTileHeight(x + 1, z) + this.field6913[level].getTileHeight(x, z + 1) + this.field6913[level].getTileHeight(x + 1, z + 1)) / 4;
 				entity.mergeNormals(this.renderer, tile.groundDecoration, 0, var8, this.field6901, true);
 			}
 		}
 		if (x < this.maxTileX && z < this.maxTileZ) {
 			Tile tile = this.levelTiles[level][x + 1][z + 1];
 			if (tile != null && tile.groundDecoration != null && tile.groundDecoration.method17379()) {
-				int var10 = (this.field6913[level].method1529(x + 1, z + 1) + this.field6913[level].method1529(x + 1 + 1, z + 1) + this.field6913[level].method1529(x + 1, z + 1 + 1) + this.field6913[level].method1529(x + 1 + 1, z + 1 + 1)) / 4 - (this.field6913[level].method1529(x, z) + this.field6913[level].method1529(x + 1, z) + this.field6913[level].method1529(x, z + 1) + this.field6913[level].method1529(x + 1, z + 1)) / 4;
+				int var10 = (this.field6913[level].getTileHeight(x + 1, z + 1) + this.field6913[level].getTileHeight(x + 1 + 1, z + 1) + this.field6913[level].getTileHeight(x + 1, z + 1 + 1) + this.field6913[level].getTileHeight(x + 1 + 1, z + 1 + 1)) / 4 - (this.field6913[level].getTileHeight(x, z) + this.field6913[level].getTileHeight(x + 1, z) + this.field6913[level].getTileHeight(x, z + 1) + this.field6913[level].getTileHeight(x + 1, z + 1)) / 4;
 				entity.mergeNormals(this.renderer, tile.groundDecoration, this.field6901, var10, this.field6901, true);
 			}
 		}
@@ -914,7 +914,7 @@ public class Scene {
 		}
 		Tile tile = this.levelTiles[level][x + 1][z - 1];
 		if (tile != null && tile.groundDecoration != null && tile.groundDecoration.method17379()) {
-			int var12 = (this.field6913[level].method1529(x + 1, z - 1) + this.field6913[level].method1529(x + 1 + 1, z - 1) + this.field6913[level].method1529(x + 1, z + 1 - 1) + this.field6913[level].method1529(x + 1 + 1, z + 1 - 1)) / 4 - (this.field6913[level].method1529(x, z) + this.field6913[level].method1529(x + 1, z) + this.field6913[level].method1529(x, z + 1) + this.field6913[level].method1529(x + 1, z + 1)) / 4;
+			int var12 = (this.field6913[level].getTileHeight(x + 1, z - 1) + this.field6913[level].getTileHeight(x + 1 + 1, z - 1) + this.field6913[level].getTileHeight(x + 1, z + 1 - 1) + this.field6913[level].getTileHeight(x + 1 + 1, z + 1 - 1)) / 4 - (this.field6913[level].getTileHeight(x, z) + this.field6913[level].getTileHeight(x + 1, z) + this.field6913[level].getTileHeight(x, z + 1) + this.field6913[level].getTileHeight(x + 1, z + 1)) / 4;
 			entity.mergeNormals(this.renderer, tile.groundDecoration, this.field6901, var12, -this.field6901, true);
 		}
 	}
@@ -934,7 +934,7 @@ public class Scene {
 							if (z >= 0 && z < this.maxTileZ && (!allowFaceRemoval || x >= maxTileX || z >= maxTileZ || z < tileZ && tileX != x)) {
 								Tile tile = this.levelTiles[l][x][z];
 								if (tile != null) {
-									int var16 = (this.field6913[l].method1529(x, z) + this.field6913[l].method1529(x + 1, z) + this.field6913[l].method1529(x, z + 1) + this.field6913[l].method1529(x + 1, z + 1)) / 4 - (this.field6913[level].method1529(tileX, tileZ) + this.field6913[level].method1529(tileX + 1, tileZ) + this.field6913[level].method1529(tileX, tileZ + 1) + this.field6913[level].method1529(tileX + 1, tileZ + 1)) / 4;
+									int var16 = (this.field6913[l].getTileHeight(x, z) + this.field6913[l].getTileHeight(x + 1, z) + this.field6913[l].getTileHeight(x, z + 1) + this.field6913[l].getTileHeight(x + 1, z + 1)) / 4 - (this.field6913[level].getTileHeight(tileX, tileZ) + this.field6913[level].getTileHeight(tileX + 1, tileZ) + this.field6913[level].getTileHeight(tileX, tileZ + 1) + this.field6913[level].getTileHeight(tileX + 1, tileZ + 1)) / 4;
 									WallLayerEntity wall = tile.wall;
 									WallLayerEntity dynamicWall = tile.dynamicWall;
 									if (wall != null && wall.method17379()) {
@@ -1009,8 +1009,8 @@ public class Scene {
 					if (var25 >= 0 && var26 >= 0 && var25 < this.maxTileX && var26 < this.maxTileZ) {
 						int var27 = var25 << this.field6900;
 						int var28 = var26 << this.field6900;
-						int var29 = this.field6915[this.field6915.length - 1].method1529(var25, var26) - (0x3E8 << this.field6900 - 7);
-						int var30 = (this.field6917 == null ? this.field6915[0].method1529(var25, var26) + this.field6901 : this.field6917[0].method1529(var25, var26) + this.field6901) + (0x3E8 << this.field6900 - 7);
+						int var29 = this.field6915[this.field6915.length - 1].getTileHeight(var25, var26) - (0x3E8 << this.field6900 - 7);
+						int var30 = (this.field6917 == null ? this.field6915[0].getTileHeight(var25, var26) + this.field6901 : this.field6917[0].getTileHeight(var25, var26) + this.field6901) + (0x3E8 << this.field6900 - 7);
 						var23 = this.renderer.method2348(var27, var29, var28, var27, var30, var28);
 						this.field6960[var21][var24] = var23 == 0;
 					} else {
@@ -1318,13 +1318,13 @@ public class Scene {
 			int var9 = Math.min(this.maxTileX - 1, Math.max(0, var7));
 			int var10 = Math.min(this.maxTileZ - 1, Math.max(0, var8));
 			WaterFogData var11 = new WaterFogData();
-			var11.field1575 = this.method8729(var9, var10);
-			var11.field1573 = this.method8710(var9, var10);
-			var11.field1577 = this.method8790(var9, var10);
+			var11.colour = this.getWaterFogColour(var9, var10);
+			var11.scale = this.getWaterFogScale(var9, var10);
+			var11.offset = this.getWaterFogOffset(var9, var10);
 			var11.field1576 = this.method8713(var9, var10);
 			var11.field1578 = this.method8760(var9, var10);
 			var11.field1579 = this.method8715(var9, var10);
-			this.renderer.setWaterFog(this.field6915[0].method1527((int) var6.field4308, (int) var6.field4313), var11);
+			this.renderer.setWaterFog(this.field6915[0].getFineHeight((int) var6.field4308, (int) var6.field4313), var11);
 		}
 		PickableEntity var12 = arg0.method17372(this.renderer);
 		if (var12 == null) {
@@ -1342,11 +1342,11 @@ public class Scene {
 	public boolean method8750(HardShadow arg0, int arg1, int arg2, int arg3, boolean[] arg4) {
 		boolean var6 = false;
 		if (this.field6917 != this.field6913) {
-			int var7 = this.field6915[arg1].method1527(arg2, arg3);
+			int var7 = this.field6915[arg1].getFineHeight(arg2, arg3);
 			for (int var8 = 0; var8 <= arg1; var8++) {
 				FloorModel var9 = this.field6915[var8];
 				if (var9 != null) {
-					int var10 = var7 - var9.method1527(arg2, arg3);
+					int var10 = var7 - var9.getFineHeight(arg2, arg3);
 					if (arg4 != null) {
 						arg4[var8] = var9.method1535(arg0, arg2, var10, arg3, 0, false);
 						if (!arg4[var8]) {
@@ -1366,12 +1366,12 @@ public class Scene {
 		if (this.field6917 == this.field6913) {
 			return;
 		}
-		int var6 = this.field6915[arg1].method1527(arg2, arg3);
+		int var6 = this.field6915[arg1].getFineHeight(arg2, arg3);
 		for (int var7 = 0; var7 <= arg1; var7++) {
 			if (arg4 == null || arg4[var7]) {
 				FloorModel var8 = this.field6915[var7];
 				if (var8 != null) {
-					var8.method1543(arg0, arg2, var6 - var8.method1527(arg2, arg3), arg3, 0, false);
+					var8.method1543(arg0, arg2, var6 - var8.getFineHeight(arg2, arg3), arg3, 0, false);
 				}
 			}
 		}
@@ -1392,10 +1392,10 @@ public class Scene {
 							for (int var10 = var4 - 1; var10 >= 0; var10--) {
 								FloorModel var11 = this.field6915[var10];
 								if (var11 != null) {
-									int var12 = var5.method1529(var7, var6) - var11.method1529(var7, var6);
-									int var13 = var5.method1529(var7 + 1, var6) - var11.method1529(var7 + 1, var6);
-									int var14 = var5.method1529(var7 + 1, var6 + 1) - var11.method1529(var7 + 1, var6 + 1);
-									int var15 = var5.method1529(var7, var6 + 1) - var11.method1529(var7, var6 + 1);
+									int var12 = var5.getTileHeight(var7, var6) - var11.getTileHeight(var7, var6);
+									int var13 = var5.getTileHeight(var7 + 1, var6) - var11.getTileHeight(var7 + 1, var6);
+									int var14 = var5.getTileHeight(var7 + 1, var6 + 1) - var11.getTileHeight(var7 + 1, var6 + 1);
+									int var15 = var5.getTileHeight(var7, var6 + 1) - var11.getTileHeight(var7, var6 + 1);
 									var11.method1532(var3, var8, (var12 + var13 + var14 + var15) / 4, var9, 0, false);
 								}
 							}

@@ -1454,7 +1454,7 @@ public class LegacyOpenGLModel extends Model {
 			int var13 = arg2.field1233 - 1 + var9 >> arg2.field1236;
 			int var14 = var10 >> arg2.field1236;
 			int var15 = arg2.field1233 - 1 + var11 >> arg2.field1236;
-			if (arg2.method1529(var12, var14) == arg5 && arg2.method1529(var13, var14) == arg5 && arg2.method1529(var12, var15) == arg5 && arg2.method1529(var13, var15) == arg5) {
+			if (arg2.getTileHeight(var12, var14) == arg5 && arg2.getTileHeight(var13, var14) == arg5 && arg2.getTileHeight(var12, var15) == arg5 && arg2.getTileHeight(var13, var15) == arg5) {
 				return;
 			}
 		}

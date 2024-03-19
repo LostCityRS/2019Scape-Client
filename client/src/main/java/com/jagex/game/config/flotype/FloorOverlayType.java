@@ -16,7 +16,7 @@ public class FloorOverlayType implements ConfigType, ConfigRelated {
 	public int rgb = 0;
 
 	@ObfuscatedName("yn.k")
-	public int material = 0;
+	public int material = -1;
 
 	@ObfuscatedName("yn.f")
 	public boolean occlude = true;
@@ -37,7 +37,7 @@ public class FloorOverlayType implements ConfigType, ConfigRelated {
 	public boolean blend = false;
 
 	@ObfuscatedName("yn.d")
-	public int waterfogcolour = 1190656;
+	public int waterfogcolour = 0x122b3d;
 
 	@ObfuscatedName("yn.c")
 	public int waterfogscale = 512;
@@ -52,7 +52,7 @@ public class FloorOverlayType implements ConfigType, ConfigRelated {
 	public int field8166 = 0;
 
 	@ObfuscatedName("yn.s")
-	public int field8167 = 0;
+	public int field8167 = 64;
 
 	@ObfuscatedName("yn.e(Lalw;B)V")
 	public void decode(Packet buf) {

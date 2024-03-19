@@ -114,7 +114,7 @@ public class PositionEntity extends Position {
 		boolean var7 = true;
 		if (this.field10557 == 3) {
 			var7 = false;
-		} else if (arg1 != null && arg1.method7105(var5.x - arg2 >> 9, var5.z - arg3 >> 9)) {
+		} else if (arg1 != null && arg1.isLinkBelow(var5.x - arg2 >> 9, var5.z - arg3 >> 9)) {
 			var6 = this.field10557 + 1;
 			var7 = false;
 		}
@@ -172,7 +172,7 @@ public class PositionEntity extends Position {
 			return Float.NaN;
 		}
 		int var11 = arg4;
-		if (arg5 && arg1.method7105(var9, var10)) {
+		if (arg5 && arg1.isLinkBelow(var9, var10)) {
 			var11 = arg4 + 1;
 		}
 		long var12 = (long) var8.field4308 % 512L;

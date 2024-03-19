@@ -220,7 +220,7 @@ public class GpuFloorModel extends FloorModel {
 				var17 = 128;
 				var16 = -1;
 			}
-			long var18 = (long) arg10.field1577 << 48 | (long) arg10.field1573 << 42 | (long) arg10.field1575 << 28 | (long) (var17 << 14) | (long) var16;
+			long var18 = (long) arg10.offset << 48 | (long) arg10.scale << 42 | (long) arg10.colour << 28 | (long) (var17 << 14) | (long) var16;
 			Node var20;
 			for (var20 = this.field9513.getNode(var18); var20 != null; var20 = this.field9513.next()) {
 				GpuFloorModelRelated1 var21 = (GpuFloorModelRelated1) var20;
@@ -245,7 +245,7 @@ public class GpuFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aem.m(II[I[I[I[I[I[I[I[I[I[I[ILdy;Z)V")
-	public void method1525(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14) {
+	public void addTileUnblended(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14) {
 		int var16 = arg9.length;
 		int[] var17 = new int[var16 * 3];
 		int[] var18 = new int[var16 * 3];
@@ -619,7 +619,7 @@ public class GpuFloorModel extends FloorModel {
 					}
 				}
 				this.field9521.putFloat((float) var36);
-				this.field9521.putFloat((float) (this.method1527(var36, var37) + var42));
+				this.field9521.putFloat((float) (this.getFineHeight(var36, var37) + var42));
 				this.field9521.putFloat((float) var37);
 				this.field9521.putFloat((float) var36);
 				this.field9521.putFloat((float) var37);
@@ -726,9 +726,9 @@ public class GpuFloorModel extends FloorModel {
 					if (var26.field11408 != 0) {
 						if (this.field9516.field10133) {
 							this.field9516.setWaterFog(0, var26.field11404);
-							var22.field2979.method6247(0.0F, 1.0F, 0.0F, (float) var26.field11404.field1577 / 255.0F * (float) var26.field11404.field1573 + (float) this.field9516.field10164);
-							var22.field2979.method6252(1.0F / (float) var26.field11404.field1573);
-							var22.field2973.method6491((float) (var26.field11404.field1575 >> 16 & 0xFF) / 255.0F, (float) (var26.field11404.field1575 >> 8 & 0xFF) / 255.0F, (float) (var26.field11404.field1575 >> 0 & 0xFF) / 255.0F);
+							var22.field2979.method6247(0.0F, 1.0F, 0.0F, (float) var26.field11404.offset / 255.0F * (float) var26.field11404.scale + (float) this.field9516.field10164);
+							var22.field2979.method6252(1.0F / (float) var26.field11404.scale);
+							var22.field2973.method6491((float) (var26.field11404.colour >> 16 & 0xFF) / 255.0F, (float) (var26.field11404.colour >> 8 & 0xFF) / 255.0F, (float) (var26.field11404.colour >> 0 & 0xFF) / 255.0F);
 						} else {
 							var22.field2979.method6247(0.0F, 0.0F, 0.0F, 0.0F);
 							var22.field2973.method6491(0.0F, 0.0F, 0.0F);
@@ -764,8 +764,8 @@ public class GpuFloorModel extends FloorModel {
 						if (this.field9516.field10133) {
 							this.field9516.setWaterFog(0, var31.field11404);
 							float var32 = 0.15F;
-							var22.field2979.method6247(0.0F, 1.0F / ((float) var31.field11404.field1573 * var32), 0.0F, 256.0F / ((float) var31.field11404.field1573 * var32));
-							var22.field2973.method6491((float) (var31.field11404.field1575 >> 16 & 0xFF) / 255.0F, (float) (var31.field11404.field1575 >> 8 & 0xFF) / 255.0F, (float) (var31.field11404.field1575 >> 0 & 0xFF) / 255.0F);
+							var22.field2979.method6247(0.0F, 1.0F / ((float) var31.field11404.scale * var32), 0.0F, 256.0F / ((float) var31.field11404.scale * var32));
+							var22.field2973.method6491((float) (var31.field11404.colour >> 16 & 0xFF) / 255.0F, (float) (var31.field11404.colour >> 8 & 0xFF) / 255.0F, (float) (var31.field11404.colour >> 0 & 0xFF) / 255.0F);
 						} else {
 							var22.field2979.method6247(0.0F, 0.0F, 0.0F, 0.0F);
 							var22.field2973.method6491(0.0F, 0.0F, 0.0F);

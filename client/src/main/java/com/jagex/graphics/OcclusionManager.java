@@ -135,16 +135,16 @@ public class OcclusionManager {
 			int var9 = this.field7038.field6901 + var8;
 			int var10 = arg3 << this.field7038.field6900;
 			int var11 = this.field7038.field6901 + var10;
-			int var12 = this.field7038.field6915[arg1].method1529(arg2, arg3);
-			int var13 = this.field7038.field6915[arg1].method1529(arg2 + 1, arg3 + 1);
+			int var12 = this.field7038.field6915[arg1].getTileHeight(arg2, arg3);
+			int var13 = this.field7038.field6915[arg1].getTileHeight(arg2 + 1, arg3 + 1);
 			this.field7021[this.field7023++] = new Occluder(this.field7038, arg0, arg1, var8, var9, var9, var8, var12, var13, var13 - arg4, var12 - arg4, var10, var11, var11, var10);
 		} else {
 			int var14 = (arg2 << this.field7038.field6900) + this.field7038.field6901;
 			int var15 = var14 - this.field7038.field6901;
 			int var16 = arg3 << this.field7038.field6900;
 			int var17 = this.field7038.field6901 + var16;
-			int var18 = this.field7038.field6915[arg1].method1529(arg2 + 1, arg3);
-			int var19 = this.field7038.field6915[arg1].method1529(arg2, arg3 + 1);
+			int var18 = this.field7038.field6915[arg1].getTileHeight(arg2 + 1, arg3);
+			int var19 = this.field7038.field6915[arg1].getTileHeight(arg2, arg3 + 1);
 			this.field7021[this.field7023++] = new Occluder(this.field7038, arg0, arg1, var14, var15, var15, var14, var18, var19, var19 - arg4, var18 - arg4, var16, var17, var17, var16);
 		}
 	}
@@ -212,18 +212,18 @@ public class OcclusionManager {
 							int var12 = var7;
 							int var14 = var6;
 							Tile var15 = this.field7038.levelTiles[var6][var8][var7 - 1];
-							int var16 = this.field7038.field6915[var6].method1529(var8, var7);
-							while (var11 > 0 && var15 != null && var15.field6973 < 0 && var9.field6973 == var15.field6973 && var9.field6969 == var15.field6969 && var16 == this.field7038.field6915[var6].method1529(var8, var11 - 1) && (var11 - 1 <= 0 || var16 == this.field7038.field6915[var6].method1529(var8, var11 - 2)) && var12 - var11 <= 10) {
+							int var16 = this.field7038.field6915[var6].getTileHeight(var8, var7);
+							while (var11 > 0 && var15 != null && var15.field6973 < 0 && var9.field6973 == var15.field6973 && var9.field6969 == var15.field6969 && var16 == this.field7038.field6915[var6].getTileHeight(var8, var11 - 1) && (var11 - 1 <= 0 || var16 == this.field7038.field6915[var6].getTileHeight(var8, var11 - 2)) && var12 - var11 <= 10) {
 								var11--;
 								var15 = this.field7038.levelTiles[var6][var8][var11 - 1];
 							}
-							for (Tile var17 = this.field7038.levelTiles[var6][var8][var12 + 1]; var12 < this.field7038.maxTileZ && var17 != null && var17.field6973 < 0 && var9.field6973 == var17.field6973 && var9.field6969 == var17.field6969 && var16 == this.field7038.field6915[var6].method1529(var8, var12 + 1) && (var12 + 1 >= this.field7038.maxTileZ || var16 == this.field7038.field6915[var6].method1529(var8, var12 + 2)) && var12 - var11 <= 10; var17 = this.field7038.levelTiles[var6][var8][var12 + 1]) {
+							for (Tile var17 = this.field7038.levelTiles[var6][var8][var12 + 1]; var12 < this.field7038.maxTileZ && var17 != null && var17.field6973 < 0 && var9.field6973 == var17.field6973 && var9.field6969 == var17.field6969 && var16 == this.field7038.field6915[var6].getTileHeight(var8, var12 + 1) && (var12 + 1 >= this.field7038.maxTileZ || var16 == this.field7038.field6915[var6].getTileHeight(var8, var12 + 2)) && var12 - var11 <= 10; var17 = this.field7038.levelTiles[var6][var8][var12 + 1]) {
 								var12++;
 							}
 							int var18 = var6 - var6 + 1;
-							int var19 = this.field7038.field6915[var10 ? var6 + 1 : var6].method1529(var8, var11);
+							int var19 = this.field7038.field6915[var10 ? var6 + 1 : var6].getTileHeight(var8, var11);
 							int var20 = var9.field6973 * var18 + var19;
-							int var21 = this.field7038.field6915[var10 ? var6 + 1 : var6].method1529(var8, var12 + 1);
+							int var21 = this.field7038.field6915[var10 ? var6 + 1 : var6].getTileHeight(var8, var12 + 1);
 							int var22 = var9.field6973 * var18 + var21;
 							int var23 = var8 << this.field7038.field6900;
 							int var24 = var11 << this.field7038.field6900;
@@ -240,18 +240,18 @@ public class OcclusionManager {
 							int var29 = var8;
 							int var31 = var6;
 							Tile var32 = this.field7038.levelTiles[var6][var8 - 1][var7];
-							int var33 = this.field7038.field6915[var6].method1529(var8, var7);
-							while (var28 > 0 && var32 != null && var32.field6975 < 0 && var9.field6975 == var32.field6975 && var9.field6972 == var32.field6972 && var33 == this.field7038.field6915[var6].method1529(var28 - 1, var7) && (var28 - 1 <= 0 || var33 == this.field7038.field6915[var6].method1529(var28 - 2, var7)) && var29 - var28 <= 10) {
+							int var33 = this.field7038.field6915[var6].getTileHeight(var8, var7);
+							while (var28 > 0 && var32 != null && var32.field6975 < 0 && var9.field6975 == var32.field6975 && var9.field6972 == var32.field6972 && var33 == this.field7038.field6915[var6].getTileHeight(var28 - 1, var7) && (var28 - 1 <= 0 || var33 == this.field7038.field6915[var6].getTileHeight(var28 - 2, var7)) && var29 - var28 <= 10) {
 								var28--;
 								var32 = this.field7038.levelTiles[var6][var28 - 1][var7];
 							}
-							for (Tile var34 = this.field7038.levelTiles[var6][var29 + 1][var7]; var29 < this.field7038.maxTileX && var34 != null && var34.field6975 < 0 && var9.field6975 == var34.field6975 && var9.field6972 == var34.field6972 && var33 == this.field7038.field6915[var6].method1529(var29 + 1, var7) && (var29 + 1 >= this.field7038.maxTileX || var33 == this.field7038.field6915[var6].method1529(var29 + 2, var7)) && var29 - var28 <= 10; var34 = this.field7038.levelTiles[var6][var29 + 1][var7]) {
+							for (Tile var34 = this.field7038.levelTiles[var6][var29 + 1][var7]; var29 < this.field7038.maxTileX && var34 != null && var34.field6975 < 0 && var9.field6975 == var34.field6975 && var9.field6972 == var34.field6972 && var33 == this.field7038.field6915[var6].getTileHeight(var29 + 1, var7) && (var29 + 1 >= this.field7038.maxTileX || var33 == this.field7038.field6915[var6].getTileHeight(var29 + 2, var7)) && var29 - var28 <= 10; var34 = this.field7038.levelTiles[var6][var29 + 1][var7]) {
 								var29++;
 							}
 							int var35 = var6 - var6 + 1;
-							int var36 = this.field7038.field6915[var10 ? var6 + 1 : var6].method1529(var28, var7);
+							int var36 = this.field7038.field6915[var10 ? var6 + 1 : var6].getTileHeight(var28, var7);
 							int var37 = var9.field6975 * var35 + var36;
-							int var38 = this.field7038.field6915[var10 ? var6 + 1 : var6].method1529(var29 + 1, var7);
+							int var38 = this.field7038.field6915[var10 ? var6 + 1 : var6].getTileHeight(var29 + 1, var7);
 							int var39 = var9.field6975 * var35 + var38;
 							int var40 = var28 << this.field7038.field6900;
 							int var41 = (var29 << this.field7038.field6900) + this.field7038.field6901;
@@ -508,7 +508,7 @@ public class OcclusionManager {
 			} else {
 				int var5 = arg1 << this.field7038.field6900;
 				int var6 = arg2 << this.field7038.field6900;
-				if (this.method8933(var5 + 1, this.field7038.field6913[arg0].method1529(arg1, arg2), var6 + 1, this.field7038.field6901 + var5 - 1, this.field7038.field6913[arg0].method1529(arg1 + 1, arg2 + 1), this.field7038.field6901 + var6 - 1, var5 + 1, this.field7038.field6913[arg0].method1529(arg1, arg2 + 1), this.field7038.field6901 + var6 - 1) && this.method8933(var5 + 1, this.field7038.field6913[arg0].method1529(arg1, arg2), var6 + 1, this.field7038.field6901 + var5 - 1, this.field7038.field6913[arg0].method1529(arg1 + 1, arg2), var6 + 1, this.field7038.field6901 + var5 - 1, this.field7038.field6913[arg0].method1529(arg1 + 1, arg2 + 1), this.field7038.field6901 + var6 - 1)) {
+				if (this.method8933(var5 + 1, this.field7038.field6913[arg0].getTileHeight(arg1, arg2), var6 + 1, this.field7038.field6901 + var5 - 1, this.field7038.field6913[arg0].getTileHeight(arg1 + 1, arg2 + 1), this.field7038.field6901 + var6 - 1, var5 + 1, this.field7038.field6913[arg0].getTileHeight(arg1, arg2 + 1), this.field7038.field6901 + var6 - 1) && this.method8933(var5 + 1, this.field7038.field6913[arg0].getTileHeight(arg1, arg2), var6 + 1, this.field7038.field6901 + var5 - 1, this.field7038.field6913[arg0].getTileHeight(arg1 + 1, arg2), var6 + 1, this.field7038.field6901 + var5 - 1, this.field7038.field6913[arg0].getTileHeight(arg1 + 1, arg2 + 1), this.field7038.field6901 + var6 - 1)) {
 					this.field7026[arg0][arg1][arg2] = this.field7038.field6941;
 					return true;
 				} else {
@@ -528,7 +528,7 @@ public class OcclusionManager {
 		} else if (this.method8927(arg1, arg2, arg3)) {
 			int var5 = arg2 << this.field7038.field6900;
 			int var6 = arg3 << this.field7038.field6900;
-			int var7 = this.field7038.field6913[arg1].method1529(arg2, arg3) - 1;
+			int var7 = this.field7038.field6913[arg1].getTileHeight(arg2, arg3) - 1;
 			int var8 = var7 + arg0.overlayHeight();
 			if (arg0.field12463 == 1) {
 				if (this.method8933(var5, var7, var6, var5, var8, var6, var5, var8, this.field7038.field6901 + var6)) {
@@ -579,7 +579,7 @@ public class OcclusionManager {
 		} else if (this.method8927(arg0, arg1, arg2)) {
 			int var5 = arg1 << this.field7038.field6900;
 			int var6 = arg2 << this.field7038.field6900;
-			return this.method8936(var5, this.field7038.field6913[arg0].method1529(arg1, arg2), var6, this.field7038.field6901, arg3, this.field7038.field6901);
+			return this.method8936(var5, this.field7038.field6913[arg0].getTileHeight(arg1, arg2), var6, this.field7038.field6901, arg3, this.field7038.field6901);
 		} else {
 			return false;
 		}

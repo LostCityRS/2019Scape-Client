@@ -72,7 +72,7 @@ public class ReceivePlayerPositions {
 		var2.routeWaypointZ[0] = var6 - var7.z;
 		var2.method10538((float) ((var2.routeWaypointX[0] << 9) + (var2.method16546() << 8)), var2.method10525().field4298.field4311, (float) ((var2.routeWaypointZ[0] << 9) + (var2.method16546() << 8)));
 		Client.field4826 = var2.field11717 = var2.field11714 = var4;
-		if (Client.world.method7793().method7105(var2.routeWaypointX[0], var2.routeWaypointZ[0])) {
+		if (Client.world.method7793().isLinkBelow(var2.routeWaypointX[0], var2.routeWaypointZ[0])) {
 			var2.field11714++;
 		}
 		if (field706[var1] != null) {
@@ -394,7 +394,7 @@ public class ReceivePlayerPositions {
 					var5.method19117(var21, var22, field697[arg1]);
 				}
 				var5.field11717 = var5.field11714 = (byte) (var5.field11717 + var18 & 0x3);
-				if (Client.world.method7793().method7105(var21, var22)) {
+				if (Client.world.method7793().isLinkBelow(var21, var22)) {
 					var5.field11714++;
 				}
 				if (Client.currentPlayerUid == arg1 && Client.field4826 != var5.field11717) {
@@ -415,7 +415,7 @@ public class ReceivePlayerPositions {
 					var5.method19117(var28, var29, field697[arg1]);
 				}
 				var5.field11717 = var5.field11714 = (byte) (var5.field11717 + var25 & 0x3);
-				if (Client.world.method7793().method7105(var28, var29)) {
+				if (Client.world.method7793().isLinkBelow(var28, var29)) {
 					var5.field11714++;
 				}
 				if (Client.currentPlayerUid == arg1) {
@@ -463,7 +463,7 @@ public class ReceivePlayerPositions {
 			var7.field12048 = var6.field526;
 			var7.field10441[0] = field697[arg1];
 			var7.field11717 = var7.field11714 = (byte) var9;
-			if (Client.world.method7793().method7105(var13, var14)) {
+			if (Client.world.method7793().isLinkBelow(var13, var14)) {
 				var7.field11714++;
 			}
 			var7.method19118(var13, var14);

@@ -366,10 +366,10 @@ public class MovingParticle extends Particle {
 		if (var12 != null) {
 			var11 = var12.level;
 		}
-		int var13 = var10[var11].method1529(var5, var6);
+		int var13 = var10[var11].getTileHeight(var5, var6);
 		int var14;
 		if (var11 < arg0.maxLevel - 1) {
-			var14 = var10[var11 + 1].method1529(var5, var6);
+			var14 = var10[var11 + 1].getTileHeight(var5, var6);
 		} else {
 			var14 = var13 - (0x8 << arg0.field6900);
 		}
@@ -378,7 +378,7 @@ public class MovingParticle extends Particle {
 				this.method19669();
 				return;
 			}
-			if (var9.field3491 >= 0 && var7 > var10[var9.field3491].method1529(var5, var6)) {
+			if (var9.field3491 >= 0 && var7 > var10[var9.field3491].getTileHeight(var5, var6)) {
 				this.method19669();
 				return;
 			}
@@ -386,17 +386,17 @@ public class MovingParticle extends Particle {
 				this.method19669();
 				return;
 			}
-			if (var9.field3493 >= 0 && var7 < var10[var9.field3493 + 1].method1529(var5, var6)) {
+			if (var9.field3493 >= 0 && var7 < var10[var9.field3493 + 1].getTileHeight(var5, var6)) {
 				this.method19669();
 				return;
 			}
 		}
 		int var15;
-		for (var15 = arg0.maxLevel - 1; var15 > 0 && var7 > var10[var15].method1529(var5, var6); var15--) {
+		for (var15 = arg0.maxLevel - 1; var15 > 0 && var7 > var10[var15].getTileHeight(var5, var6); var15--) {
 		}
-		if (var9.field3526 && var15 == 0 && var7 > var10[0].method1529(var5, var6)) {
+		if (var9.field3526 && var15 == 0 && var7 > var10[0].getTileHeight(var5, var6)) {
 			this.method19669();
-		} else if (arg0.maxLevel - 1 == var15 && var10[var15].method1529(var5, var6) - var7 > 0x8 << arg0.field6900) {
+		} else if (arg0.maxLevel - 1 == var15 && var10[var15].getTileHeight(var5, var6) - var7 > 0x8 << arg0.field6900) {
 			this.method19669();
 		} else {
 			Tile var16 = arg0.levelTiles[var15][var5][var6];

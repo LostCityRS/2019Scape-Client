@@ -626,7 +626,7 @@ public class ClientMapLoader extends MapLoader {
 		if (LocShape.CENTREPIECE_STRAIGHT.id == arg7 || LocShape.CENTREPIECE_DIAGONAL.id == arg7) {
 			var20 = var19.method1530(var15, var17) + var19.method1530(var16, var17) + var19.method1530(var15, var18) + var19.method1530(var16, var18) >> 2;
 		} else {
-			var20 = var19.method1529(var15, var17) + var19.method1529(var16, var17) + var19.method1529(var15, var18) + var19.method1529(var16, var18) >> 2;
+			var20 = var19.getTileHeight(var15, var17) + var19.getTileHeight(var16, var17) + var19.getTileHeight(var15, var18) + var19.getTileHeight(var16, var18) >> 2;
 		}
 		int var21 = (arg3 << 9) + (var13 << 8);
 		int var22 = (arg4 << 9) + (var14 << 8);

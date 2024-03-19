@@ -1844,7 +1844,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.di(IFFFFF)V")
 	public final void setSun(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
-		boolean var7 = this.field10118 * 16777215 != arg0;
+		boolean var7 = this.field10118 != arg0;
 		float var8 = arg1 * 0.5F;
 		float var9 = arg2 * 0.5F;
 		if (var7 || this.field10123 != var8 || this.field10124 != var9) {
@@ -1852,9 +1852,9 @@ public abstract class GpuRenderer extends Renderer {
 			this.field10123 = var8;
 			this.field10124 = var9;
 			if (var7) {
-				this.field10142 = (float) (this.field10118 * 16777215 & 0xFF0000) / 1.671168E7F;
-				this.field10120 = (float) (this.field10118 * 16777215 & 0xFF00) / 65280.0F;
-				this.field10210 = (float) (this.field10118 * 16777215 & 0xFF) / 255.0F;
+				this.field10142 = (float) (this.field10118 & 0xFF0000) / 1.671168E7F;
+				this.field10120 = (float) (this.field10118 & 0xFF00) / 65280.0F;
+				this.field10210 = (float) (this.field10118 & 0xFF) / 255.0F;
 				this.method15990();
 			}
 			this.method16021();

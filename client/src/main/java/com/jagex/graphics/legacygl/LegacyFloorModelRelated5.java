@@ -89,8 +89,8 @@ public class LegacyFloorModelRelated5 extends Node {
 				for (int var10 = 0; var10 <= var6; var10++) {
 					int var11 = this.field11275 + var10;
 					if (var11 > 0 && var11 < this.field11273.field1235 - 1) {
-						int var12 = arg1.method1529(var11 + 1, var9) - arg1.method1529(var11 - 1, var9);
-						int var13 = arg1.method1529(var11, var9 + 1) - arg1.method1529(var11, var9 - 1);
+						int var12 = arg1.getTileHeight(var11 + 1, var9) - arg1.getTileHeight(var11 - 1, var9);
+						int var13 = arg1.getTileHeight(var11, var9 + 1) - arg1.getTileHeight(var11, var9 - 1);
 						float var14 = (float) (1.0D / Math.sqrt((double) (var13 * var13 + var12 * var12 + 65536)));
 						this.field11285[var10][var8] = (float) var12 * var14;
 						this.field11287[var10][var8] = var14 * -256.0F;
@@ -218,7 +218,7 @@ public class LegacyFloorModelRelated5 extends Node {
 		long var7 = -1L;
 		int var9 = (arg2 << this.field11273.field1236) + arg4;
 		int var10 = (arg3 << this.field11273.field1236) + arg5;
-		int var11 = this.field11273.method1527(var9, var10);
+		int var11 = this.field11273.getFineHeight(var9, var10);
 		if ((arg4 & 0x7F) == 0 || (arg5 & 0x7F) == 0) {
 			var7 = ((long) var10 & 0xFFFFL) << 16 | (long) var9 & 0xFFFFL;
 			FloorModelNode var12 = (FloorModelNode) this.field11290.getNode(var7);

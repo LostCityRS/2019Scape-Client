@@ -432,8 +432,8 @@ public class EnvironmentManager {
 	@ObfuscatedName("xu.t(I)V")
 	public void setLightingInterface() {
 		this.renderer.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.getAntiMacroBrightnessAdjustment()) * 1.1523438F);
-		this.renderer.setSun(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
-		this.renderer.setFog(13156520, -1, 0);
+		this.renderer.setSun(0xffffff, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
+		this.renderer.setFog(0xc8c0a8, -1, 0);
 		this.renderer.setEnvironmentSampler(sampler);
 	}
 }

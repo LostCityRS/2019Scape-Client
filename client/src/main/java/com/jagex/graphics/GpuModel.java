@@ -1554,7 +1554,7 @@ public class GpuModel extends Model {
 			int var13 = arg2.field1233 - 1 + var9 >> arg2.field1236;
 			int var14 = var10 >> arg2.field1236;
 			int var15 = arg2.field1233 - 1 + var11 >> arg2.field1236;
-			if (arg2.method1529(var12, var14) == arg5 && arg2.method1529(var13, var14) == arg5 && arg2.method1529(var12, var15) == arg5 && arg2.method1529(var13, var15) == arg5) {
+			if (arg2.getTileHeight(var12, var14) == arg5 && arg2.getTileHeight(var13, var14) == arg5 && arg2.getTileHeight(var12, var15) == arg5 && arg2.getTileHeight(var13, var15) == arg5) {
 				return;
 			}
 		}
@@ -3382,8 +3382,8 @@ public class GpuModel extends Model {
 		if (this.field9730.field10133) {
 			WaterFogData var3 = this.field9730.method16053();
 			var2.field2979.method6247(0.0F, 1.0F, 0.0F, (float) -this.field9730.field10164);
-			var2.field2979.method6252(3.0F / (float) var3.field1573);
-			var2.field2973.method6491((float) (var3.field1575 >> 16 & 0xFF) / 255.0F, (float) (var3.field1575 >> 8 & 0xFF) / 255.0F, (float) (var3.field1575 >> 0 & 0xFF) / 255.0F);
+			var2.field2979.method6252(3.0F / (float) var3.scale);
+			var2.field2973.method6491((float) (var3.colour >> 16 & 0xFF) / 255.0F, (float) (var3.colour >> 8 & 0xFF) / 255.0F, (float) (var3.colour >> 0 & 0xFF) / 255.0F);
 		} else {
 			var2.field2979.method6247(0.0F, 0.0F, 0.0F, 0.0F);
 			var2.field2973.method6491(0.0F, 0.0F, 0.0F);

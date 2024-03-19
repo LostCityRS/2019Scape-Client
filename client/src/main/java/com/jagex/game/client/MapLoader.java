@@ -61,7 +61,7 @@ public class MapLoader {
 	public final boolean underwater;
 
 	@ObfuscatedName("qg.s")
-	public int field4574;
+	public int angle;
 
 	@ObfuscatedName("qg.y")
 	public int[][][] levelHeightmap;
@@ -121,10 +121,10 @@ public class MapLoader {
 	public static final int[] field4566 = new int[] { 0, 4, 3, 3, 1, 1, 3, 5, 1, 5, 3, 6, 4 };
 
 	@ObfuscatedName("qg.af")
-	public static final int[] field4580 = new int[] { 0, 256, 512, 512, 512, 256, 0, 0, 128, 256, 128, 384, 256 };
+	public static final int[] TILE_POINT_X = new int[] { 0, 256, 512, 512, 512, 256, 0, 0, 128, 256, 128, 384, 256 };
 
 	@ObfuscatedName("qg.ak")
-	public static final int[] field4550 = new int[] { 0, 0, 0, 256, 512, 512, 512, 256, 256, 384, 128, 128, 256 };
+	public static final int[] TILE_POINT_Z = new int[] { 0, 0, 0, 256, 512, 512, 512, 256, 256, 384, 128, 128, 256 };
 
 	@ObfuscatedName("qg.an")
 	public static final boolean[][] field4521 = new boolean[][] { { true, true, true, true, true, true, true, true, true, true, true, true, true }, { true, true, true, false, false, false, true, true, false, false, false, false, true }, { true, false, false, false, false, true, true, true, false, false, false, false, false }, { false, false, true, true, true, true, false, false, false, false, false, false, false }, { true, true, true, true, true, true, false, false, false, false, false, false, false }, { true, true, true, false, false, true, true, true, false, false, false, false, false }, { true, true, false, false, false, true, true, true, false, false, false, false, true }, { true, true, false, false, false, false, false, true, false, false, false, false, false }, { false, true, true, true, true, true, true, true, false, false, false, false, false }, { true, false, false, false, true, true, true, true, true, true, false, false, false }, { true, true, true, true, true, false, false, false, true, true, false, false, false }, { true, true, true, false, false, false, false, false, false, false, true, true, false }, { false, false, false, false, false, false, false, false, false, false, false, false, false }, { true, true, true, true, true, true, true, true, true, true, true, true, true }, { false, false, false, false, false, false, false, false, false, false, false, false, false } };
@@ -133,13 +133,13 @@ public class MapLoader {
 	public static final boolean[][] field4552 = new boolean[][] { { false, false, false, false, false, false, false, false, false, false, false, false, false }, { false, false, true, true, true, true, true, false, false, false, false, false, true }, { true, true, true, true, true, true, false, false, false, false, false, false, false }, { true, true, true, false, false, true, true, true, false, false, false, false, false }, { true, false, false, false, false, true, true, true, false, false, false, false, false }, { false, false, true, true, true, true, false, false, false, false, false, false, false }, { false, true, true, true, true, true, false, false, false, false, false, false, true }, { false, true, true, true, true, true, true, true, false, false, false, false, true }, { true, true, false, false, false, false, false, true, false, false, false, false, false }, { true, true, true, true, true, false, false, false, true, true, false, false, false }, { true, false, false, false, true, true, true, true, true, true, false, false, false }, { true, false, true, true, true, true, true, true, false, false, true, true, false }, { true, true, true, true, true, true, true, true, true, true, true, true, true }, { false, false, false, false, false, false, false, false, false, false, false, false, false }, { true, true, true, true, true, true, true, true, true, true, true, true, true } };
 
 	@ObfuscatedName("qg.bl")
-	public static final int[][] field4553 = new int[][] { { 0, 2 }, { 0, 2 }, { 0, 0, 2 }, { 2, 0, 0 }, { 0, 2, 0 }, { 0, 0, 2 }, { 0, 5, 1, 4 }, { 0, 4, 4, 4 }, { 4, 4, 4, 0 }, { 6, 6, 6, 2, 2, 2 }, { 2, 2, 2, 6, 6, 6 }, { 0, 11, 6, 6, 6, 4 }, { 0, 2 }, { 0, 4, 4, 4 }, { 0, 4, 4, 4 } };
+	public static final int[][] TILE_SHAPE_TRIANGLES_A1 = new int[][] { { 0, 2 }, { 0, 2 }, { 0, 0, 2 }, { 2, 0, 0 }, { 0, 2, 0 }, { 0, 0, 2 }, { 0, 5, 1, 4 }, { 0, 4, 4, 4 }, { 4, 4, 4, 0 }, { 6, 6, 6, 2, 2, 2 }, { 2, 2, 2, 6, 6, 6 }, { 0, 11, 6, 6, 6, 4 }, { 0, 2 }, { 0, 4, 4, 4 }, { 0, 4, 4, 4 } };
 
 	@ObfuscatedName("qg.bk")
-	public static final int[][] field4554 = new int[][] { { 2, 4 }, { 2, 4 }, { 5, 2, 4 }, { 4, 5, 2 }, { 2, 4, 5 }, { 5, 2, 4 }, { 1, 6, 2, 5 }, { 1, 6, 7, 1 }, { 6, 7, 1, 1 }, { 0, 8, 9, 8, 9, 4 }, { 8, 9, 4, 0, 8, 9 }, { 2, 10, 0, 10, 11, 11 }, { 2, 4 }, { 1, 6, 7, 1 }, { 1, 6, 7, 1 } };
+	public static final int[][] TILE_SHAPE_TRIANGLES_A2 = new int[][] { { 2, 4 }, { 2, 4 }, { 5, 2, 4 }, { 4, 5, 2 }, { 2, 4, 5 }, { 5, 2, 4 }, { 1, 6, 2, 5 }, { 1, 6, 7, 1 }, { 6, 7, 1, 1 }, { 0, 8, 9, 8, 9, 4 }, { 8, 9, 4, 0, 8, 9 }, { 2, 10, 0, 10, 11, 11 }, { 2, 4 }, { 1, 6, 7, 1 }, { 1, 6, 7, 1 } };
 
 	@ObfuscatedName("qg.bh")
-	public static final int[][] field4532 = new int[][] { { 6, 6 }, { 6, 6 }, { 6, 5, 5 }, { 5, 6, 5 }, { 5, 5, 6 }, { 6, 5, 5 }, { 5, 0, 4, 1 }, { 7, 7, 1, 2 }, { 7, 1, 2, 7 }, { 8, 9, 4, 0, 8, 9 }, { 0, 8, 9, 8, 9, 4 }, { 11, 0, 10, 11, 4, 2 }, { 6, 6 }, { 7, 7, 1, 2 }, { 7, 7, 1, 2 } };
+	public static final int[][] TILE_SHAPE_TRIANGLES_A3 = new int[][] { { 6, 6 }, { 6, 6 }, { 6, 5, 5 }, { 5, 6, 5 }, { 5, 5, 6 }, { 6, 5, 5 }, { 5, 0, 4, 1 }, { 7, 7, 1, 2 }, { 7, 1, 2, 7 }, { 8, 9, 4, 0, 8, 9 }, { 0, 8, 9, 8, 9, 4 }, { 11, 0, 10, 11, 4, 2 }, { 6, 6 }, { 7, 7, 1, 2 }, { 7, 7, 1, 2 } };
 
 	@ObfuscatedName("qg.bx")
 	public static final boolean[][] field4556 = new boolean[][] { { false, false, false, false }, { false, false, false, false }, { false, false, true, false }, { false, false, true, false }, { false, false, true, false }, { false, false, true, false }, { true, false, true, false }, { true, false, false, true }, { true, false, false, true }, { false, false, false, false }, { false, false, false, false }, { false, false, false, false }, { false, false, false, false } };
@@ -199,7 +199,7 @@ public class MapLoader {
 	public int field4576 = 0;
 
 	@ObfuscatedName("qg.bp")
-	public int field4508;
+	public int tileMaterial;
 
 	@ObfuscatedName("qg.bj")
 	public int field4578;
@@ -656,8 +656,8 @@ public class MapLoader {
 					this.field4585 = field4524[var9];
 					int var16 = (var13 == null ? 0 : this.field4585) + (var14 == null ? 0 : this.field4584);
 					int var17 = 0;
-					this.field4574 = 0;
-					this.field4508 = var13 == null ? -1 : var13.material;
+					this.angle = 0;
+					this.tileMaterial = var13 == null ? -1 : var13.material;
 					int var18 = var14 == null ? -1 : var14.material;
 					int[] var19 = new int[var16];
 					int[] var20 = new int[var16];
@@ -667,30 +667,30 @@ public class MapLoader {
 					int[] var24 = new int[var16];
 					int[] var25 = var13 == null || var13.averagecolour == -1 ? null : new int[var16];
 					if (var13 == null) {
-						this.field4574 += this.field4585;
+						this.angle += this.field4585;
 					} else {
 						for (int var26 = 0; var26 < this.field4585; var26++) {
-							var19[var17] = field4553[var9][this.field4574];
-							var20[var17] = field4554[var9][this.field4574];
-							var21[var17] = field4532[var9][this.field4574];
-							var23[var17] = this.field4508;
+							var19[var17] = TILE_SHAPE_TRIANGLES_A1[var9][this.angle];
+							var20[var17] = TILE_SHAPE_TRIANGLES_A2[var9][this.angle];
+							var21[var17] = TILE_SHAPE_TRIANGLES_A3[var9][this.angle];
+							var23[var17] = this.tileMaterial;
 							var24[var17] = var13.materialscale;
 							var22[var17] = var13.rgb;
 							if (var25 != null) {
 								var25[var17] = var13.averagecolour;
 							}
 							var17++;
-							this.field4574++;
+							this.angle++;
 						}
 						if (!this.underwater && arg2 == 0) {
-							this.scene.method8716(var7, var8, var13.waterfogcolour, var13.waterfogscale, var13.waterfogoffset, var13.field8165, var13.field8166, var13.field8167);
+							this.scene.setWaterFog(var7, var8, var13.waterfogcolour, var13.waterfogscale, var13.waterfogoffset, var13.field8165, var13.field8166, var13.field8167);
 						}
 					}
 					if (var14 != null) {
 						for (int var27 = 0; var27 < this.field4584; var27++) {
-							var19[var17] = field4553[var9][this.field4574];
-							var20[var17] = field4554[var9][this.field4574];
-							var21[var17] = field4532[var9][this.field4574];
+							var19[var17] = TILE_SHAPE_TRIANGLES_A1[var9][this.angle];
+							var20[var17] = TILE_SHAPE_TRIANGLES_A2[var9][this.angle];
+							var21[var17] = TILE_SHAPE_TRIANGLES_A3[var9][this.angle];
 							var23[var17] = var18;
 							var24[var17] = var14.materialscale;
 							var22[var17] = arg3[var7][var8];
@@ -698,17 +698,17 @@ public class MapLoader {
 								var25[var17] = var22[var17];
 							}
 							var17++;
-							this.field4574++;
+							this.angle++;
 						}
 					}
-					int var28 = field4580.length;
+					int var28 = TILE_POINT_X.length;
 					int[] var29 = new int[var28];
 					int[] var30 = new int[var28];
 					int[] var31 = arg5 == null ? null : new int[var28];
 					int[] var32 = arg5 == null && arg4 == null ? null : new int[var28];
 					for (int var33 = 0; var33 < var28; var33++) {
-						int var34 = field4580[var33];
-						int var35 = field4550[var33];
+						int var34 = TILE_POINT_X[var33];
+						int var35 = TILE_POINT_Z[var33];
 						if (var10 == 0) {
 							var29[var33] = var34;
 							var30[var33] = var35;
@@ -725,25 +725,25 @@ public class MapLoader {
 						if (var31 != null && field4521[var9][var33]) {
 							int var38 = (var7 << 9) + var29[var33];
 							int var39 = (var8 << 9) + var30[var33];
-							var31[var33] = arg5.method1527(var38, var39) - arg1.method1527(var38, var39);
+							var31[var33] = arg5.getFineHeight(var38, var39) - arg1.getFineHeight(var38, var39);
 						}
 						if (var32 != null) {
 							if (arg5 != null && !field4521[var9][var33]) {
 								int var40 = (var7 << 9) + var29[var33];
 								int var41 = (var8 << 9) + var30[var33];
-								var32[var33] = arg1.method1527(var40, var41) - arg5.method1527(var40, var41);
+								var32[var33] = arg1.getFineHeight(var40, var41) - arg5.getFineHeight(var40, var41);
 							} else if (arg4 != null && !field4552[var9][var33]) {
 								int var42 = (var7 << 9) + var29[var33];
 								int var43 = (var8 << 9) + var30[var33];
-								var32[var33] = arg4.method1527(var42, var43) - arg1.method1527(var42, var43);
+								var32[var33] = arg4.getFineHeight(var42, var43) - arg1.getFineHeight(var42, var43);
 							}
 						}
 					}
-					int var44 = arg1.method1529(var7, var8);
-					int var45 = arg1.method1529(var7 + 1, var8);
-					int var46 = arg1.method1529(var7 + 1, var8 + 1);
-					int var47 = arg1.method1529(var7, var8 + 1);
-					boolean var48 = this.field4522.method7105(var7, var8);
+					int var44 = arg1.getTileHeight(var7, var8);
+					int var45 = arg1.getTileHeight(var7 + 1, var8);
+					int var46 = arg1.getTileHeight(var7 + 1, var8 + 1);
+					int var47 = arg1.getTileHeight(var7, var8 + 1);
+					boolean var48 = this.field4522.isLinkBelow(var7, var8);
 					if (var48 && arg2 > 1 || !var48 && arg2 > 0) {
 						boolean var49 = true;
 						if (var14 != null && !var14.occlude) {
@@ -759,14 +759,14 @@ public class MapLoader {
 					}
 					WaterFogData var50 = new WaterFogData();
 					if (this.underwater) {
-						var50.field1575 = this.scene.method8729(var7, var8);
-						var50.field1573 = this.scene.method8710(var7, var8);
-						var50.field1577 = this.scene.method8790(var7, var8);
+						var50.colour = this.scene.getWaterFogColour(var7, var8);
+						var50.scale = this.scene.getWaterFogScale(var7, var8);
+						var50.offset = this.scene.getWaterFogOffset(var7, var8);
 						var50.field1576 = this.scene.method8713(var7, var8);
 						var50.field1578 = this.scene.method8760(var7, var8);
 						var50.field1579 = this.scene.method8715(var7, var8);
 					}
-					arg1.method1525(var7, var8, var29, var31, var30, var32, var19, var20, var21, var22, var25, var23, var24, var50, false);
+					arg1.addTileUnblended(var7, var8, var29, var31, var30, var32, var19, var20, var21, var22, var25, var23, var24, var50, false);
 					this.scene.method8851(arg2, var7, var8);
 				}
 			}
@@ -785,7 +785,7 @@ public class MapLoader {
 			for (int var14 = 0; var14 < this.maxTileZ; var14++) {
 				int var15 = var14 < this.maxTileZ - 1 ? var14 + 1 : var14;
 				this.field4573 = var7[var12][var14];
-				this.field4574 = var8[var12][var14];
+				this.angle = var8[var12][var14];
 				int var16 = var10[var12][var14] & 0x7FFF;
 				int var17 = var9[var12][var14] & 0x7FFF;
 				if (var16 != 0 || var17 != 0) {
@@ -809,7 +809,7 @@ public class MapLoader {
 							this.field4519 = var18.blend;
 						}
 					}
-					this.field4574 = this.method7145(var17, var12, var14, var13, var15, arg1, var9);
+					this.angle = this.method7145(var17, var12, var14, var13, var15, arg1, var9);
 					for (int var24 = 0; var24 < 13; var24++) {
 						this.field4551[var24] = -1;
 						this.field4572[var24] = 1;
@@ -855,9 +855,9 @@ public class MapLoader {
 						this.method7153(arg1, var19, var23, arg2, var12, var14, var13, var15, var17, var16);
 						WaterFogData var39 = new WaterFogData();
 						if (this.underwater) {
-							var39.field1575 = this.scene.method8729(var12, var14);
-							var39.field1573 = this.scene.method8710(var12, var14);
-							var39.field1577 = this.scene.method8790(var12, var14);
+							var39.colour = this.scene.getWaterFogColour(var12, var14);
+							var39.scale = this.scene.getWaterFogScale(var12, var14);
+							var39.offset = this.scene.getWaterFogOffset(var12, var14);
 							var39.field1576 = this.scene.method8713(var12, var14);
 							var39.field1578 = this.scene.method8760(var12, var14);
 							var39.field1579 = this.scene.method8715(var12, var14);
@@ -873,7 +873,7 @@ public class MapLoader {
 	@ObfuscatedName("qg.r(IIIIILcb;[[SB)I")
 	public int method7145(int arg0, int arg1, int arg2, int arg3, int arg4, FloorModel arg5, short[][] arg6) {
 		if (this.field4573 != 0 && this.field4573 != 12 || arg1 <= 0 || arg2 <= 0 || arg1 >= this.maxTileX || arg2 >= this.maxTileZ) {
-			return this.field4574;
+			return this.angle;
 		}
 		byte var8 = 0;
 		byte var9 = 0;
@@ -920,11 +920,11 @@ public class MapLoader {
 			var17 = -var17;
 		}
 		if (var16 == var17) {
-			var16 = arg5.method1529(arg1, arg2) - arg5.method1529(arg3, arg4);
+			var16 = arg5.getTileHeight(arg1, arg2) - arg5.getTileHeight(arg3, arg4);
 			if (var16 < 0) {
 				var16 = -var16;
 			}
-			var17 = arg5.method1529(arg3, arg2) - arg5.method1529(arg1, arg4);
+			var17 = arg5.getTileHeight(arg3, arg2) - arg5.getTileHeight(arg1, arg4);
 			if (var17 < 0) {
 				var17 = -var17;
 			}
@@ -945,16 +945,16 @@ public class MapLoader {
 				}
 			}
 		}
-		if (!var10[this.field4574 + 1 & 0x3]) {
+		if (!var10[this.angle + 1 & 0x3]) {
 			arg8[1] |= (this.field4572[2] & this.field4572[4]) == 0;
 		}
-		if (!var10[this.field4574 + 3 & 0x3]) {
+		if (!var10[this.angle + 3 & 0x3]) {
 			arg8[3] |= (this.field4572[6] & this.field4572[0]) == 0;
 		}
-		if (!var10[this.field4574 & 0x3]) {
+		if (!var10[this.angle & 0x3]) {
 			arg8[0] |= (this.field4572[0] & this.field4572[2]) == 0;
 		}
-		if (!var10[this.field4574 + 2 & 0x3]) {
+		if (!var10[this.angle + 2 & 0x3]) {
 			arg8[2] |= (this.field4572[4] & this.field4572[6]) == 0;
 		}
 		if (this.field4519 || this.field4573 != 0 && this.field4573 != 12) {
@@ -964,31 +964,31 @@ public class MapLoader {
 			arg8[3] = false;
 			arg8[0] = false;
 			this.field4573 = this.field4573 == 0 ? 13 : 14;
-			this.field4574 = 0;
+			this.angle = 0;
 		} else if (arg8[0] && arg8[1] && !arg8[2] && !arg8[3]) {
 			arg8[1] = false;
 			arg8[0] = false;
 			this.field4573 = this.field4573 == 0 ? 13 : 14;
-			this.field4574 = 3;
+			this.angle = 3;
 		} else if (!arg8[0] && arg8[1] && arg8[2] && !arg8[3]) {
 			arg8[2] = false;
 			arg8[1] = false;
 			this.field4573 = this.field4573 == 0 ? 13 : 14;
-			this.field4574 = 2;
+			this.angle = 2;
 		} else if (!arg8[0] && !arg8[1] && arg8[2] && arg8[3]) {
 			arg8[3] = false;
 			arg8[2] = false;
 			this.field4573 = this.field4573 == 0 ? 13 : 14;
-			this.field4574 = 1;
+			this.angle = 1;
 		}
 	}
 
 	@ObfuscatedName("qg.o(Lyn;Laaz;B)V")
 	public void method7150(FloorOverlayType arg0, FloorUnderlayType arg1) {
 		if (this.field4582) {
-			this.field4586 = field4553[this.field4573];
-			this.field4587 = field4554[this.field4573];
-			this.field4588 = field4532[this.field4573];
+			this.field4586 = TILE_SHAPE_TRIANGLES_A1[this.field4573];
+			this.field4587 = TILE_SHAPE_TRIANGLES_A2[this.field4573];
+			this.field4588 = TILE_SHAPE_TRIANGLES_A3[this.field4573];
 			this.field4585 = arg0 == null ? 0 : field4524[this.field4573];
 			this.field4584 = arg1 == null ? 0 : field4568[this.field4573];
 		} else if (this.field4519) {
@@ -1011,17 +1011,17 @@ public class MapLoader {
 	@ObfuscatedName("qg.s(Ldh;IIILyn;[Z[I[I[I[I[I[I[I[ILcb;Lcb;Lcb;I)V")
 	public void method7151(Renderer arg0, int arg1, int arg2, int arg3, FloorOverlayType arg4, boolean[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, int[] arg13, FloorModel arg14, FloorModel arg15, FloorModel arg16) {
 		this.field4502 = -1;
-		this.field4508 = -1;
+		this.tileMaterial = -1;
 		this.field4578 = 256;
 		if (arg4 != null) {
 			this.field4502 = arg4.rgb;
-			this.field4508 = arg4.material;
+			this.tileMaterial = arg4.material;
 			this.field4578 = arg4.materialscale;
 			int var18 = method6823(arg0, arg4);
 			for (int var19 = 0; var19 < this.field4585; var19++) {
 				boolean var20 = false;
 				byte var21;
-				if (arg5[-this.field4574 & 0x3] && this.field4575 == this.field4589[0]) {
+				if (arg5[-this.angle & 0x3] && this.field4575 == this.field4589[0]) {
 					this.field4541[0] = this.field4586[this.field4575];
 					this.field4541[1] = 1;
 					this.field4541[2] = this.field4588[this.field4575];
@@ -1029,7 +1029,7 @@ public class MapLoader {
 					this.field4541[4] = this.field4587[this.field4575];
 					this.field4541[5] = this.field4588[this.field4575];
 					var21 = 6;
-				} else if (arg5[2 - this.field4574 & 0x3] && this.field4575 == this.field4589[2]) {
+				} else if (arg5[2 - this.angle & 0x3] && this.field4575 == this.field4589[2]) {
 					this.field4541[0] = this.field4586[this.field4575];
 					this.field4541[1] = 5;
 					this.field4541[2] = this.field4588[this.field4575];
@@ -1037,7 +1037,7 @@ public class MapLoader {
 					this.field4541[4] = this.field4587[this.field4575];
 					this.field4541[5] = this.field4588[this.field4575];
 					var21 = 6;
-				} else if (arg5[1 - this.field4574 & 0x3] && this.field4575 == this.field4589[1]) {
+				} else if (arg5[1 - this.angle & 0x3] && this.field4575 == this.field4589[1]) {
 					this.field4541[0] = this.field4586[this.field4575];
 					this.field4541[1] = 3;
 					this.field4541[2] = this.field4588[this.field4575];
@@ -1045,7 +1045,7 @@ public class MapLoader {
 					this.field4541[4] = this.field4587[this.field4575];
 					this.field4541[5] = this.field4588[this.field4575];
 					var21 = 6;
-				} else if (arg5[3 - this.field4574 & 0x3] && this.field4575 == this.field4589[3]) {
+				} else if (arg5[3 - this.angle & 0x3] && this.field4575 == this.field4589[3]) {
 					this.field4541[0] = this.field4586[this.field4575];
 					this.field4541[1] = 7;
 					this.field4541[2] = this.field4588[this.field4575];
@@ -1061,18 +1061,18 @@ public class MapLoader {
 				}
 				for (int var22 = 0; var22 < var21; var22++) {
 					int var23 = this.field4541[var22];
-					int var24 = var23 - this.field4574 * 2 & 0x7;
-					int var25 = field4580[var23];
-					int var26 = field4550[var23];
+					int var24 = var23 - this.angle * 2 & 0x7;
+					int var25 = TILE_POINT_X[var23];
+					int var26 = TILE_POINT_Z[var23];
 					int var27;
 					int var28;
-					if (this.field4574 == 1) {
+					if (this.angle == 1) {
 						var27 = var26;
 						var28 = 512 - var25;
-					} else if (this.field4574 == 2) {
+					} else if (this.angle == 2) {
 						var27 = 512 - var25;
 						var28 = 512 - var26;
-					} else if (this.field4574 == 3) {
+					} else if (this.angle == 3) {
 						var27 = 512 - var26;
 						var28 = var25;
 					} else {
@@ -1084,17 +1084,17 @@ public class MapLoader {
 					if (arg12 != null && field4521[this.field4573][var23]) {
 						int var29 = (arg2 << 9) + var27;
 						int var30 = (arg3 << 9) + var28;
-						arg12[this.field4576] = arg15.method1527(var29, var30) - arg14.method1527(var29, var30);
+						arg12[this.field4576] = arg15.getFineHeight(var29, var30) - arg14.getFineHeight(var29, var30);
 					}
 					if (arg13 != null) {
 						if (arg15 != null && !field4521[this.field4573][var23]) {
 							int var31 = (arg2 << 9) + var27;
 							int var32 = (arg3 << 9) + var28;
-							arg13[this.field4576] = arg14.method1527(var31, var32) - arg15.method1527(var31, var32);
+							arg13[this.field4576] = arg14.getFineHeight(var31, var32) - arg15.getFineHeight(var31, var32);
 						} else if (arg16 != null && !field4552[this.field4573][var23]) {
 							int var33 = (arg2 << 9) + var27;
 							int var34 = (arg3 << 9) + var28;
-							arg13[this.field4576] = arg16.method1527(var33, var34) - arg14.method1527(var33, var34);
+							arg13[this.field4576] = arg16.getFineHeight(var33, var34) - arg14.getFineHeight(var33, var34);
 						}
 					}
 					if (var23 < 8 && this.field4551[var24] > arg4.priority) {
@@ -1117,7 +1117,7 @@ public class MapLoader {
 				this.field4575++;
 			}
 			if (!this.underwater && arg1 == 0) {
-				this.scene.method8716(arg2, arg3, arg4.waterfogcolour, arg4.waterfogscale, arg4.waterfogoffset, arg4.field8165, arg4.field8166, arg4.field8167);
+				this.scene.setWaterFog(arg2, arg3, arg4.waterfogcolour, arg4.waterfogscale, arg4.waterfogoffset, arg4.field8165, arg4.field8166, arg4.field8167);
 			}
 			if (this.field4573 != 12 && arg4.rgb != -1 && arg4.hardshadow) {
 				this.field4507 = true;
@@ -1152,7 +1152,7 @@ public class MapLoader {
 		for (int var29 = 0; var29 < this.field4584; var29++) {
 			boolean var30 = false;
 			byte var31;
-			if (arg11[-this.field4574 & 0x3] && this.field4575 == this.field4589[0]) {
+			if (arg11[-this.angle & 0x3] && this.field4575 == this.field4589[0]) {
 				this.field4541[0] = this.field4586[this.field4575];
 				this.field4541[1] = 1;
 				this.field4541[2] = this.field4588[this.field4575];
@@ -1160,7 +1160,7 @@ public class MapLoader {
 				this.field4541[4] = this.field4587[this.field4575];
 				this.field4541[5] = this.field4588[this.field4575];
 				var31 = 6;
-			} else if (arg11[2 - this.field4574 & 0x3] && this.field4575 == this.field4589[2]) {
+			} else if (arg11[2 - this.angle & 0x3] && this.field4575 == this.field4589[2]) {
 				this.field4541[0] = this.field4586[this.field4575];
 				this.field4541[1] = 5;
 				this.field4541[2] = this.field4588[this.field4575];
@@ -1168,7 +1168,7 @@ public class MapLoader {
 				this.field4541[4] = this.field4587[this.field4575];
 				this.field4541[5] = this.field4588[this.field4575];
 				var31 = 6;
-			} else if (arg11[1 - this.field4574 & 0x3] && this.field4575 == this.field4589[1]) {
+			} else if (arg11[1 - this.angle & 0x3] && this.field4575 == this.field4589[1]) {
 				this.field4541[0] = this.field4586[this.field4575];
 				this.field4541[1] = 3;
 				this.field4541[2] = this.field4588[this.field4575];
@@ -1176,7 +1176,7 @@ public class MapLoader {
 				this.field4541[4] = this.field4587[this.field4575];
 				this.field4541[5] = this.field4588[this.field4575];
 				var31 = 6;
-			} else if (arg11[3 - this.field4574 & 0x3] && this.field4575 == this.field4589[3]) {
+			} else if (arg11[3 - this.angle & 0x3] && this.field4575 == this.field4589[3]) {
 				this.field4541[0] = this.field4586[this.field4575];
 				this.field4541[1] = 7;
 				this.field4541[2] = this.field4588[this.field4575];
@@ -1192,18 +1192,18 @@ public class MapLoader {
 			}
 			for (int var32 = 0; var32 < var31; var32++) {
 				int var33 = this.field4541[var32];
-				int var34 = var33 - this.field4574 * 2 & 0x7;
-				int var35 = field4580[var33];
-				int var36 = field4550[var33];
+				int var34 = var33 - this.angle * 2 & 0x7;
+				int var35 = TILE_POINT_X[var33];
+				int var36 = TILE_POINT_Z[var33];
 				int var37;
 				int var38;
-				if (this.field4574 == 1) {
+				if (this.angle == 1) {
 					var37 = var36;
 					var38 = 512 - var35;
-				} else if (this.field4574 == 2) {
+				} else if (this.angle == 2) {
 					var37 = 512 - var35;
 					var38 = 512 - var36;
-				} else if (this.field4574 == 3) {
+				} else if (this.angle == 3) {
 					var37 = 512 - var36;
 					var38 = var35;
 				} else {
@@ -1215,17 +1215,17 @@ public class MapLoader {
 				if (arg18 != null && field4521[this.field4573][var33]) {
 					int var39 = (arg2 << 9) + var37;
 					int var40 = (arg3 << 9) + var38;
-					arg18[this.field4576] = arg22.method1527(var39, var40) - arg21.method1527(var39, var40);
+					arg18[this.field4576] = arg22.getFineHeight(var39, var40) - arg21.getFineHeight(var39, var40);
 				}
 				if (arg19 != null) {
 					if (arg22 != null && !field4521[this.field4573][var33]) {
 						int var41 = (arg2 << 9) + var37;
 						int var42 = (arg3 << 9) + var38;
-						arg19[this.field4576] = arg21.method1527(var41, var42) - arg22.method1527(var41, var42);
+						arg19[this.field4576] = arg21.getFineHeight(var41, var42) - arg22.getFineHeight(var41, var42);
 					} else if (arg23 != null && !field4552[this.field4573][var33]) {
 						int var43 = (arg2 << 9) + var37;
 						int var44 = (arg3 << 9) + var38;
-						arg19[this.field4576] = arg23.method1527(var43, var44) - arg21.method1527(var43, var44);
+						arg19[this.field4576] = arg23.getFineHeight(var43, var44) - arg21.getFineHeight(var43, var44);
 					}
 				}
 				if (var33 < 8 && this.field4551[var34] >= 0) {
@@ -1237,7 +1237,7 @@ public class MapLoader {
 					arg15[this.field4576] = this.field4567[var34];
 				} else {
 					if (this.field4519 && field4521[this.field4573][var33]) {
-						arg16[this.field4576] = this.field4508;
+						arg16[this.field4576] = this.tileMaterial;
 						arg17[this.field4576] = this.field4578;
 						arg15[this.field4576] = this.field4502;
 					} else if (var37 == 0 && var38 == 0) {
@@ -1291,11 +1291,11 @@ public class MapLoader {
 
 	@ObfuscatedName("qg.q(Lcb;Laaz;Lyn;IIIIIIII)V")
 	public void method7153(FloorModel arg0, FloorUnderlayType arg1, FloorOverlayType arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
-		int var11 = arg0.method1529(arg4, arg5);
-		int var12 = arg0.method1529(arg6, arg5);
-		int var13 = arg0.method1529(arg6, arg7);
-		int var14 = arg0.method1529(arg4, arg7);
-		boolean var15 = this.field4522.method7105(arg4, arg5);
+		int var11 = arg0.getTileHeight(arg4, arg5);
+		int var12 = arg0.getTileHeight(arg6, arg5);
+		int var13 = arg0.getTileHeight(arg6, arg7);
+		int var14 = arg0.getTileHeight(arg4, arg7);
+		boolean var15 = this.field4522.isLinkBelow(arg4, arg5);
 		if ((!var15 || arg3 <= 1) && (var15 || arg3 <= 0)) {
 			return;
 		}
@@ -1424,10 +1424,10 @@ public class MapLoader {
 							var38++;
 							var37--;
 						}
-						if (!var12[this.field4574 & 0x3]) {
+						if (!var12[this.angle & 0x3]) {
 							arg10[0] = field4527[var35][var36 + 2 & 0x3];
 						}
-					} else if (!var12[this.field4574 & 0x3]) {
+					} else if (!var12[this.angle & 0x3]) {
 						arg10[0] = field4556[var35][var36 + 2 & 0x3];
 					}
 				}
@@ -1462,10 +1462,10 @@ public class MapLoader {
 							var46--;
 							var45++;
 						}
-						if (!var12[this.field4574 + 2 & 0x3]) {
+						if (!var12[this.angle + 2 & 0x3]) {
 							arg10[2] = field4527[var43][var44 & 0x3];
 						}
-					} else if (!var12[this.field4574 + 2 & 0x3]) {
+					} else if (!var12[this.angle + 2 & 0x3]) {
 						arg10[2] = field4556[var43][var44 & 0x3];
 					}
 				}
@@ -1500,10 +1500,10 @@ public class MapLoader {
 							var54--;
 							var53++;
 						}
-						if (!var12[this.field4574 + 3 & 0x3]) {
+						if (!var12[this.angle + 3 & 0x3]) {
 							arg10[3] = field4527[var51][var52 + 1 & 0x3];
 						}
-					} else if (!var12[this.field4574 + 3 & 0x3]) {
+					} else if (!var12[this.angle + 3 & 0x3]) {
 						arg10[3] = field4556[var51][var52 + 1 & 0x3];
 					}
 				}
@@ -1538,10 +1538,10 @@ public class MapLoader {
 							var62++;
 							var61--;
 						}
-						if (!var12[this.field4574 + 1 & 0x3]) {
+						if (!var12[this.angle + 1 & 0x3]) {
 							arg10[1] = field4527[var59][var60 + 3 & 0x3];
 						}
-					} else if (!var12[this.field4574 + 1 & 0x3]) {
+					} else if (!var12[this.angle + 1 & 0x3]) {
 						arg10[1] = field4556[var59][var60 + 3 & 0x3];
 					}
 				}
@@ -1552,7 +1552,7 @@ public class MapLoader {
 		}
 		int var65 = method6823(arg0, arg1);
 		for (int var66 = 0; var66 < 8; var66++) {
-			int var67 = var66 - this.field4574 * 2 & 0x7;
+			int var67 = var66 - this.angle * 2 & 0x7;
 			if (field4521[this.field4573][var66] && this.field4551[var67] <= arg1.priority) {
 				this.field4567[var67] = arg1.rgb;
 				this.field4581[var67] = var65;

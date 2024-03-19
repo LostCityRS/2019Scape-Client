@@ -154,7 +154,7 @@ public class Minimap {
 				for (int var15 = var6; var15 <= 3; var15++) {
 					if (var15 < arg1 || var4.method7104(arg1, var15, var13, var14)) {
 						int var16 = var15;
-						if (var4.method7105(var13, var14)) {
+						if (var4.isLinkBelow(var13, var14)) {
 							var16 = var15 - 1;
 						}
 						if (var16 >= 0) {
@@ -241,7 +241,7 @@ public class Minimap {
 							int var43 = var29 + var41;
 							if (var42 >= var10 && var43 >= var11 && (var37 < arg1 || var4.method7104(arg1, var37, var42, var43))) {
 								int var44 = var37;
-								if (var4.method7105(var42, var43)) {
+								if (var4.isLinkBelow(var42, var43)) {
 									var44 = var37 - 1;
 								}
 								if (var44 >= 0) {

@@ -4841,7 +4841,7 @@ public final class Client extends GameShell {
 			for (int var6 = var2 - 4; var6 <= var2 + 4; var6++) {
 				for (int var7 = var3 - 4; var7 <= var3 + 4; var7++) {
 					int var8 = field4826;
-					if (var8 < 3 && var0.method7105(var6, var7)) {
+					if (var8 < 3 && var0.isLinkBelow(var6, var7)) {
 						var8++;
 					}
 					int var9 = 0;
@@ -4850,7 +4850,7 @@ public final class Client extends GameShell {
 						var9 = (var10[var6][var7] & 0xFF) * 8 << 2;
 					}
 					if (var1.field6913 != null && var1.field6913[var8] != null) {
-						int var11 = var4 - (var1.field6913[var8].method1529(var6, var7) - var9);
+						int var11 = var4 - (var1.field6913[var8].getTileHeight(var6, var7) - var9);
 						if (var11 > var5) {
 							var5 = var11;
 						}
@@ -6421,7 +6421,7 @@ public final class Client extends GameShell {
 				}
 			}
 			if (var16) {
-				int var39 = world.getScene().field6913[field4826 + 1].method1529(var10, var13);
+				int var39 = world.getScene().field6913[field4826 + 1].getTileHeight(var10, var13);
 				if (field11061[arg1] < var39) {
 					field11061[arg1] = var39;
 				}
@@ -7863,7 +7863,7 @@ public final class Client extends GameShell {
 		if (arg2 < 3 && (world.method7793().levelTileFlags[1][var3][var4] & 0x2) != 0) {
 			var5 = arg2 + 1;
 		}
-		return world.getScene().field6913[var5].method1527(arg0, arg1);
+		return world.getScene().field6913[var5].getFineHeight(arg0, arg1);
 	}
 
 	@ObfuscatedName("adi.ip(IIIIII)I")
@@ -7900,7 +7900,7 @@ public final class Client extends GameShell {
 				arg4++;
 			}
 		}
-		return world.getScene().field6913[arg4].method1527(arg0, arg1);
+		return world.getScene().field6913[arg4].getFineHeight(arg0, arg1);
 	}
 
 	@ObfuscatedName("zs.id(IIIIIIIB)V")
@@ -9543,7 +9543,7 @@ public final class Client extends GameShell {
 						int var393 = var390 * 512 + 256;
 						int var394 = var391 * 512 + 256;
 						int var395 = var389;
-						if (var389 < 3 && world.method7793().method7105(var390, var391)) {
+						if (var389 < 3 && world.method7793().isLinkBelow(var390, var391)) {
 							var395 = var389 + 1;
 						}
 						SpotAnimation var396 = new SpotAnimation(world.getScene(), var382, var383, var389, var395, var393, method3660(var393, var394, var389) - var380, var394, var390, var390, var391, var391, var385, var387, 0);
@@ -10960,7 +10960,7 @@ public final class Client extends GameShell {
 					int var166 = var158 * 512 + 256;
 					int var167 = var159 * 512 + 256;
 					int var168 = field10260;
-					if (var168 < 3 && world.method7793().method7105(var158, var159)) {
+					if (var168 < 3 && world.method7793().isLinkBelow(var158, var159)) {
 						var168++;
 					}
 					SpotAnimation var169 = new SpotAnimation(world.getScene(), var160, var162, field10260, var168, var166, method3660(var166, var167, field10260) - var161, var167, var158, var158, var159, var159, var163, false, var164);
@@ -11045,7 +11045,7 @@ public final class Client extends GameShell {
 		Matrix4x3 var15 = null;
 		ObjStackEntity var16 = (ObjStackEntity) world.getScene().removeObjStack(arg0, arg1, arg2);
 		if (var16 == null) {
-			var16 = new ObjStackEntity(world.getScene(), arg1 << 265, world.getScene().field6913[arg0].method1529(arg1, arg2), arg2 << 265, arg0, arg0);
+			var16 = new ObjStackEntity(world.getScene(), arg1 << 265, world.getScene().field6913[arg0].getTileHeight(arg1, arg2), arg2 << 265, arg0, arg0);
 		} else {
 			var10 = var16.field12580;
 			var11 = var16.field12569;
@@ -11121,7 +11121,7 @@ public final class Client extends GameShell {
 		var16.field12578 = 0;
 		var16.field11717 = (byte) arg0;
 		var16.field11714 = (byte) arg0;
-		if (world.method7793().method7105(arg1, arg2)) {
+		if (world.method7793().isLinkBelow(arg1, arg2)) {
 			var16.field11714++;
 		}
 		world.getScene().method8718(arg0, arg1, arg2, var20, var16);
