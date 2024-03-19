@@ -657,7 +657,7 @@ public class MapLoader {
 					int var16 = (var13 == null ? 0 : this.field4585) + (var14 == null ? 0 : this.field4584);
 					int var17 = 0;
 					this.field4574 = 0;
-					this.field4508 = var13 == null ? -1 : var13.texture;
+					this.field4508 = var13 == null ? -1 : var13.material;
 					int var18 = var14 == null ? -1 : var14.material;
 					int[] var19 = new int[var16];
 					int[] var20 = new int[var16];
@@ -1015,7 +1015,7 @@ public class MapLoader {
 		this.field4578 = 256;
 		if (arg4 != null) {
 			this.field4502 = arg4.rgb;
-			this.field4508 = arg4.texture;
+			this.field4508 = arg4.material;
 			this.field4578 = arg4.materialscale;
 			int var18 = method6823(arg0, arg4);
 			for (int var19 = 0; var19 < this.field4585; var19++) {
@@ -1108,7 +1108,7 @@ public class MapLoader {
 						if (arg6 != null) {
 							arg6[this.field4576] = var18;
 						}
-						arg10[this.field4576] = arg4.texture;
+						arg10[this.field4576] = arg4.material;
 						arg11[this.field4576] = arg4.materialscale;
 						arg9[this.field4576] = this.field4502;
 					}
@@ -1327,7 +1327,7 @@ public class MapLoader {
 						if (field4521[var15][var16]) {
 							this.field4567[0] = var14.rgb;
 							this.field4581[0] = var17;
-							this.field4543[0] = var14.texture;
+							this.field4543[0] = var14.material;
 							this.field4570[0] = var14.materialscale;
 							this.field4551[0] = var14.priority;
 							this.field4572[0] = 256;
@@ -1346,7 +1346,7 @@ public class MapLoader {
 						if (field4521[var20][var21]) {
 							this.field4567[2] = var19.rgb;
 							this.field4581[2] = var22;
-							this.field4543[2] = var19.texture;
+							this.field4543[2] = var19.material;
 							this.field4570[2] = var19.materialscale;
 							this.field4551[2] = var19.priority;
 							this.field4572[2] = 512;
@@ -1367,7 +1367,7 @@ public class MapLoader {
 						if (field4521[var25][var26]) {
 							this.field4567[6] = var24.rgb;
 							this.field4581[6] = var27;
-							this.field4543[6] = var24.texture;
+							this.field4543[6] = var24.material;
 							this.field4570[6] = var24.materialscale;
 							this.field4551[6] = var24.priority;
 							this.field4572[6] = 64;
@@ -1386,7 +1386,7 @@ public class MapLoader {
 						if (field4521[var30][var31]) {
 							this.field4567[4] = var29.rgb;
 							this.field4581[4] = var32;
-							this.field4543[4] = var29.texture;
+							this.field4543[4] = var29.material;
 							this.field4570[4] = var29.materialscale;
 							this.field4551[4] = var29.priority;
 							this.field4572[4] = 128;
@@ -1412,7 +1412,7 @@ public class MapLoader {
 							if (field4521[var35][var38] && this.field4551[var37] <= var34.priority) {
 								this.field4567[var37] = var34.rgb;
 								this.field4581[var37] = var39;
-								this.field4543[var37] = var34.texture;
+								this.field4543[var37] = var34.material;
 								this.field4570[var37] = var34.materialscale;
 								if (var34.priority == this.field4551[var37]) {
 									this.field4572[var37] |= 0x20;
@@ -1450,7 +1450,7 @@ public class MapLoader {
 							if (field4521[var43][var46] && this.field4551[var45] <= var42.priority) {
 								this.field4567[var45] = var42.rgb;
 								this.field4581[var45] = var47;
-								this.field4543[var45] = var42.texture;
+								this.field4543[var45] = var42.material;
 								this.field4570[var45] = var42.materialscale;
 								if (var42.priority == this.field4551[var45]) {
 									this.field4572[var45] |= 0x10;
@@ -1488,7 +1488,7 @@ public class MapLoader {
 							if (field4521[var51][var54] && this.field4551[var53] <= var50.priority) {
 								this.field4567[var53] = var50.rgb;
 								this.field4581[var53] = var55;
-								this.field4543[var53] = var50.texture;
+								this.field4543[var53] = var50.material;
 								this.field4570[var53] = var50.materialscale;
 								if (var50.priority == this.field4551[var53]) {
 									this.field4572[var53] |= 0x8;
@@ -1526,7 +1526,7 @@ public class MapLoader {
 							if (field4521[var59][var62] && this.field4551[var61] <= var58.priority) {
 								this.field4567[var61] = var58.rgb;
 								this.field4581[var61] = var63;
-								this.field4543[var61] = var58.texture;
+								this.field4543[var61] = var58.material;
 								this.field4570[var61] = var58.materialscale;
 								if (var58.priority == this.field4551[var61]) {
 									this.field4572[var61] |= 0x4;
@@ -1556,7 +1556,7 @@ public class MapLoader {
 			if (field4521[this.field4573][var66] && this.field4551[var67] <= arg1.priority) {
 				this.field4567[var67] = arg1.rgb;
 				this.field4581[var67] = var65;
-				this.field4543[var67] = arg1.texture;
+				this.field4543[var67] = arg1.material;
 				this.field4570[var67] = arg1.materialscale;
 				if (arg1.priority == this.field4551[var67]) {
 					this.field4572[var67] |= 0x2;
@@ -1569,17 +1569,17 @@ public class MapLoader {
 	}
 
 	@ObfuscatedName("pd.b(Ldh;Lyn;I)I")
-	public static final int method6823(Renderer arg0, FloorOverlayType arg1) {
-		if (arg1.averagecolour != -1) {
-			return arg1.averagecolour;
+	public static final int method6823(Renderer renderer, FloorOverlayType floType) {
+		if (floType.averagecolour != -1) {
+			return floType.averagecolour;
 		}
-		if (arg1.texture != -1) {
-			Material var2 = arg0.materialList.get(arg1.texture);
+		if (floType.material != -1) {
+			Material var2 = renderer.materialList.get(floType.material);
 			if (!var2.highDetail) {
 				return var2.averageColour;
 			}
 		}
-		return arg1.rgb;
+		return floType.rgb;
 	}
 
 	@ObfuscatedName("vp.h(IIII)I")

@@ -16,13 +16,13 @@ public class FloorOverlayType implements ConfigType, ConfigRelated {
 	public int rgb = 0;
 
 	@ObfuscatedName("yn.k")
-	public int texture = 0;
+	public int material = 0;
 
 	@ObfuscatedName("yn.f")
 	public boolean occlude = true;
 
 	@ObfuscatedName("yn.w")
-	public int averagecolour = 0;
+	public int averagecolour = -1;
 
 	@ObfuscatedName("yn.l")
 	public int materialscale = 512;
@@ -71,12 +71,12 @@ public class FloorOverlayType implements ConfigType, ConfigRelated {
 		if (code == 1) {
 			this.rgb = convertColour(buf.g3());
 		} else if (code == 2) {
-			this.texture = buf.g1();
+			this.material = buf.g1();
 		} else if (code == 3) {
-			this.texture = buf.g2();
+			this.material = buf.g2();
 
-			if (this.texture == 65535) {
-				this.texture = -1;
+			if (this.material == 65535) {
+				this.material = -1;
 			}
 		} else if (code == 5) {
 			this.occlude = false;
