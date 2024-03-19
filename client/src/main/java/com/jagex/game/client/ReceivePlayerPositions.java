@@ -727,10 +727,10 @@ public class ReceivePlayerPositions {
 			arg2.method19124(var67, 0, 0);
 		}
 		if ((arg3 & 0x8) != 0) {
-			arg2.field10423 = arg0.g1b_alt2() * 262144;
-			arg2.field10425 = arg0.g1b() * 262144;
-			arg2.field10457 = arg0.g1b_alt2() * 262144;
-			arg2.field10426 = arg0.g1b_alt1() * 262144;
+			arg2.field10423 = arg0.g1b_alt2();
+			arg2.field10425 = arg0.g1b();
+			arg2.field10457 = arg0.g1b_alt2();
+			arg2.field10426 = arg0.g1b_alt1();
 			arg2.field10419 = arg0.g1b_alt1();
 			arg2.field10428 = arg0.g1b();
 			arg2.field10429 = arg0.g2_alt3() + Client.currentclock;
@@ -738,10 +738,10 @@ public class ReceivePlayerPositions {
 			arg2.field10431 = arg0.g2_alt1();
 			arg2.field10400 = 1;
 			arg2.field10396 = 0;
-			arg2.field10423 = arg2.field10423 * 262144 + arg2.routeWaypointX[0] * 262144;
-			arg2.field10425 = arg2.field10425 * 262144 + arg2.routeWaypointZ[0] * 262144;
-			arg2.field10457 = arg2.field10457 * 262144 + arg2.routeWaypointX[0] * 262144;
-			arg2.field10426 = arg2.field10426 * 262144 + arg2.routeWaypointZ[0] * 262144;
+			arg2.field10423 += arg2.routeWaypointX[0];
+			arg2.field10425 += arg2.routeWaypointZ[0];
+			arg2.field10457 += arg2.routeWaypointX[0];
+			arg2.field10426 += arg2.routeWaypointZ[0];
 			arg2.field10419 += arg2.field11717;
 			arg2.field10428 += arg2.field11717;
 		}

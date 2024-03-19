@@ -381,8 +381,8 @@ public class PlayerEntity extends PathingEntity {
 					}
 					if (var17.field745 == 2) {
 						Vector3 var23 = Client.localPlayerEntity.method10536().field4298;
-						long var24 = (long) (var17.field746 * 262144 - (int) var23.field4308);
-						long var26 = (long) (var17.field747 * 512 - (int) var23.field4313);
+						long var24 = (long) (var17.field746 - (int) var23.field4308);
+						long var26 = (long) (var17.field747 - (int) var23.field4313);
 						long var28 = (long) (var17.field748 << 9);
 						long var30 = var28 * var28;
 						this.method19113(arg0, var2, this.field10459[0], var24, var26, var17.field750, var30);

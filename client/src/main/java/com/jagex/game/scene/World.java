@@ -836,8 +836,8 @@ public class World {
 		for (int var26 = 0; var26 < var25.length; var26++) {
 			HintArrow var27 = var25[var26];
 			if (var27 != null) {
-				var27.field746 = var27.field746 * 262144 - var2 * 512;
-				var27.field747 = var27.field747 * 262144 - var3 * 262144;
+				var27.field746 -= var2 * 512;
+				var27.field747 -= var3 * 512;
 			}
 		}
 		for (ChangeLocationRequest var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.peekFront(); var28 != null; var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.prev()) {
@@ -904,10 +904,10 @@ public class World {
 				Client.method4046(Client.method14298());
 			}
 		} else {
-			Client.field8550 = Client.field8550 * 262144 - var2 * 262144;
-			Client.field8492 = Client.field8492 * 262144 - var3 * 262144;
-			Client.field6714 -= var2;
-			Client.field2626 -= var3;
+			Client.cameraMoveX -= var2;
+			Client.cameraMoveZ -= var3;
+			Client.cameraLookX -= var2;
+			Client.cameraLookZ -= var3;
 			Client.cameraMouseX -= var2 * 512;
 			Client.cameraMouseZ -= var3 * 512;
 			if (Math.abs(var2) > this.mapSizeX || Math.abs(var3) > this.mapSizeZ) {
