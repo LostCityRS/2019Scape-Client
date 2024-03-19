@@ -66,12 +66,12 @@ public class ProjAnimCutsceneAction extends CutsceneAction {
 		}
 		if (arg2 == 0) {
 			int var5 = arg0.g4s();
-			this.field10346 = (var5 >>> 16) * 262144;
-			this.field10338 = (var5 & 0xFFFF) * 262144;
+			this.field10346 = var5 >>> 16;
+			this.field10338 = var5 & 0xFFFF;
 			this.field10345 = -1;
 		} else {
-			this.field10346 = -262144;
-			this.field10338 = -262144;
+			this.field10346 = -1;
+			this.field10338 = -1;
 			this.field10345 = arg0.g2();
 		}
 		if (arg1 == 0 && arg2 == 0) {

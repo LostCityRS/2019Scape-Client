@@ -115,7 +115,7 @@ public class HintTrail {
 				if (var8 >= 0 && var8 < arg0.maxTileX && var9 >= 0 && var9 < arg0.maxTileZ) {
 					int var10 = (var8 << 9) + 256;
 					int var11 = (var9 << 9) + 256;
-					if (var2.method7105(var8, var9)) {
+					if (var2.isLinkBelow(var8, var9)) {
 						var7++;
 					}
 					this.field6752.add(new HintTrailPoint(arg0, this, Client.field4826, var7, var10, Client.method3660(var10, var11, Client.field4826), var11));

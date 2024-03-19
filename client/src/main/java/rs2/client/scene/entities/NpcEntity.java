@@ -365,7 +365,7 @@ public class NpcEntity extends PathingEntity {
 	@ObfuscatedName("aqc.hy(IIIZIB)V")
 	public void method19159(int arg0, int arg1, int arg2, boolean arg3, int arg4) {
 		this.field11717 = this.field11714 = (byte) arg0;
-		if (Client.world.method7793().method7105(arg1, arg2)) {
+		if (Client.world.method7793().isLinkBelow(arg1, arg2)) {
 			this.field11714++;
 		}
 		if (this.field10454.method14346() && this.field10454.method14347().field1782 == 1) {

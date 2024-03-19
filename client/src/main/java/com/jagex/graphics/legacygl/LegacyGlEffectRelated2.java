@@ -134,9 +134,9 @@ public class LegacyGlEffectRelated2 extends GlEffect {
 		float var2 = this.field1021.field9916;
 		float var3 = var1 - (var1 - var2) * 0.125F;
 		float var4 = var1 - (var1 - var2) * 0.25F;
-		OpenGL.glProgramLocalParameter4fARB(34336, 0, var4, var3, 256.0F / (float) this.field1021.field9892.field1573, (float) this.field1021.field9892.field1577 / 255.0F);
+		OpenGL.glProgramLocalParameter4fARB(34336, 0, var4, var3, 256.0F / (float) this.field1021.field9892.scale, (float) this.field1021.field9892.offset / 255.0F);
 		this.field1021.method15776(1);
-		this.field1021.method15765(this.field1021.field9892.field1575);
+		this.field1021.method15765(this.field1021.field9892.colour);
 		this.field1021.method15776(0);
 	}
 

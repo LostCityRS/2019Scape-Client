@@ -2379,7 +2379,7 @@ public class MiniMenu {
 				if (var20 < 3 && (Client.world.method7793().levelTileFlags[1][var18][var19] & 0x2) != 0) {
 					var20++;
 				}
-				int var21 = var14.field6915[var20].method1527((int) var15, (int) var17);
+				int var21 = var14.field6915[var20].getFineHeight((int) var15, (int) var17);
 				if ((float) var21 < var16) {
 					if (arg6 >= 2) {
 						return var7 - 0.1F + method7009(var11, var12, var13, var15, var16, var17, arg6 - 1) * 0.1F;

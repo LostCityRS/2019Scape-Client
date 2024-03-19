@@ -31,7 +31,7 @@ public class MapAnimCutsceneAction extends CutsceneActionUnused {
 		int var1 = this.field12043 * 512 + 256;
 		int var2 = this.field12042 * 512 + 256;
 		int var3 = this.field12044;
-		if (var3 < 3 && Client.world.method7793().method7105(this.field12043, this.field12042)) {
+		if (var3 < 3 && Client.world.method7793().isLinkBelow(this.field12043, this.field12042)) {
 			var3++;
 		}
 		SpotAnimation var4 = new SpotAnimation(Client.world.getScene(), this.field10303, 0, this.field12044, var3, var1, Client.method3660(var1, var2, this.field12044) - this.field10305, var2, this.field12043, this.field12043, this.field12042, this.field12042, this.field10304, false, 0);

@@ -2569,8 +2569,8 @@ public class PureJavaRenderer extends Renderer {
 		for (int var3 = 0; var3 < this.context.length; var3++) {
 			this.context[var3].field823 = this.context[var3].fadeColour;
 			this.context[var3].field832 = arg0;
-			this.context[var3].fadeColour = arg1.field1575;
-			this.context[var3].field861 = arg1.field1573;
+			this.context[var3].fadeColour = arg1.colour;
+			this.context[var3].field861 = arg1.scale;
 			this.context[var3].field867 = true;
 		}
 	}
@@ -2579,8 +2579,8 @@ public class PureJavaRenderer extends Renderer {
 	public void setWaterFog(int arg0, WaterFogData arg1) {
 		PureJavaRendererContext var3 = this.getContext(Thread.currentThread());
 		var3.field832 = arg0;
-		var3.fadeColour = arg1.field1575;
-		var3.field861 = arg1.field1573;
+		var3.fadeColour = arg1.colour;
+		var3.field861 = arg1.scale;
 	}
 
 	@ObfuscatedName("afg.ej()V")

@@ -1204,13 +1204,13 @@ public class LoginManager {
 		Client.field10964.clear();
 		ChangeLocationRequest.field11237 = new IterableQueue();
 		ChangeLocationRequest.field11242 = new IterableQueue();
-		Client.field8550 = 0;
-		Client.field8492 = 0;
+		Client.cameraMoveX = 0;
+		Client.cameraMoveZ = 0;
 		Client.field741 = 0;
 		Client.field2937 = 0;
 		Client.field490 = 0;
-		Client.field6714 = 0;
-		Client.field2626 = 0;
+		Client.cameraLookX = 0;
+		Client.cameraLookZ = 0;
 		Client.field1983 = 0;
 		Client.field8576 = 0;
 		Client.field708 = 0;

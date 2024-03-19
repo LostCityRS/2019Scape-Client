@@ -1547,10 +1547,10 @@ public final class Client extends GameShell {
 	public static int field3416;
 
 	@ObfuscatedName("aaz.tl")
-	public static int field8550;
+	public static int cameraMoveX;
 
 	@ObfuscatedName("aar.td")
-	public static int field8492;
+	public static int cameraMoveZ;
 
 	@ObfuscatedName("am.ul")
 	public static int field741;
@@ -1562,10 +1562,10 @@ public final class Client extends GameShell {
 	public static int field490;
 
 	@ObfuscatedName("sb.uc")
-	public static int field6714;
+	public static int cameraLookX;
 
 	@ObfuscatedName("iu.ui")
-	public static int field2626;
+	public static int cameraLookZ;
 
 	@ObfuscatedName("gj.ua")
 	public static int field1983;
@@ -2784,8 +2784,8 @@ public final class Client extends GameShell {
 		cameraMouseZ = 0;
 		cameraMouseX = 0;
 		if (Client.field3416 == 5) {
-			cameraMouseX = field8550 << 9;
-			cameraMouseZ = field8492 << 9;
+			cameraMouseX = cameraMoveX << 9;
+			cameraMouseZ = cameraMoveZ << 9;
 		} else {
 			method9611();
 		}
@@ -4510,12 +4510,12 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("amf.go(B)V")
 	public static final void method18478() {
-		int var0 = field8550 * 512 + 256;
-		int var1 = field8492 * 512 + 256;
+		int var0 = cameraMoveX * 512 + 256;
+		int var1 = cameraMoveZ * 512 + 256;
 		int var2 = method3660(var0, var1, field4826) - field741;
 		if (field490 >= 100) {
-			cameraMouseX = field8550 * 512 + 256;
-			cameraMouseZ = field8492 * 512 + 256;
+			cameraMouseX = cameraMoveX * 512 + 256;
+			cameraMouseZ = cameraMoveZ * 512 + 256;
 			field10518 = method3660(cameraMouseX, cameraMouseZ, field4826) - field741;
 		} else {
 			if (cameraMouseX < var0) {
@@ -4555,8 +4555,8 @@ public final class Client extends GameShell {
 				}
 			}
 		}
-		int var3 = field6714 * 512 + 256;
-		int var4 = field2626 * 512 + 256;
+		int var3 = cameraLookX * 512 + 256;
+		int var4 = cameraLookZ * 512 + 256;
 		int var5 = method3660(var3, var4, field4826) - field1983;
 		int var6 = var3 - cameraMouseX;
 		int var7 = var5 - field10518;
@@ -4841,7 +4841,7 @@ public final class Client extends GameShell {
 			for (int var6 = var2 - 4; var6 <= var2 + 4; var6++) {
 				for (int var7 = var3 - 4; var7 <= var3 + 4; var7++) {
 					int var8 = field4826;
-					if (var8 < 3 && var0.method7105(var6, var7)) {
+					if (var8 < 3 && var0.isLinkBelow(var6, var7)) {
 						var8++;
 					}
 					int var9 = 0;
@@ -4850,7 +4850,7 @@ public final class Client extends GameShell {
 						var9 = (var10[var6][var7] & 0xFF) * 8 << 2;
 					}
 					if (var1.field6913 != null && var1.field6913[var8] != null) {
-						int var11 = var4 - (var1.field6913[var8].method1529(var6, var7) - var9);
+						int var11 = var4 - (var1.field6913[var8].getTileHeight(var6, var7) - var9);
 						if (var11 > var5) {
 							var5 = var11;
 						}
@@ -4874,8 +4874,8 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("afg.gg(IIIIIZI)V")
 	public static final void method15723(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5) {
-		field8550 = arg0 * 262144;
-		field8492 = arg1 * 262144;
+		cameraMoveX = arg0;
+		cameraMoveZ = arg1;
 		field741 = arg2;
 		field2937 = arg3;
 		field490 = arg4;
@@ -4883,8 +4883,8 @@ public final class Client extends GameShell {
 			method9025();
 		}
 		if (arg5 && field490 >= 100) {
-			cameraMouseX = field8550 * 512 + 256;
-			cameraMouseZ = field8492 * 512 + 256;
+			cameraMouseX = cameraMoveX * 512 + 256;
+			cameraMouseZ = cameraMoveZ * 512 + 256;
 			field10518 = method3660(cameraMouseX, cameraMouseZ, field4826) - field741;
 		}
 		Client.field3416 = 5;
@@ -4894,8 +4894,8 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("abb.gr(IIIIIB)V")
 	public static final void method14706(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		field6714 = arg0;
-		field2626 = arg1;
+		cameraLookX = arg0;
+		cameraLookZ = arg1;
 		field1983 = arg2;
 		field8576 = arg3;
 		field708 = arg4;
@@ -4903,8 +4903,8 @@ public final class Client extends GameShell {
 			method9025();
 		}
 		if (field708 >= 100) {
-			int var5 = field6714 * 512 + 256;
-			int var6 = field2626 * 512 + 256;
+			int var5 = cameraLookX * 512 + 256;
+			int var6 = cameraLookZ * 512 + 256;
 			int var7 = method3660(var5, var6, field4826) - field1983;
 			int var8 = var5 - cameraMouseX;
 			int var9 = var7 - field10518;
@@ -6421,7 +6421,7 @@ public final class Client extends GameShell {
 				}
 			}
 			if (var16) {
-				int var39 = world.getScene().field6913[field4826 + 1].method1529(var10, var13);
+				int var39 = world.getScene().field6913[field4826 + 1].getTileHeight(var10, var13);
 				if (field11061[arg1] < var39) {
 					field11061[arg1] = var39;
 				}
@@ -7066,7 +7066,7 @@ public final class Client extends GameShell {
 		for (int var7 = 0; var7 < var6.length; var7++) {
 			HintArrow var8 = var6[var7];
 			if (var8 != null && var8.field745 == 2) {
-				method18486(var8.field749, var8.field746 * 262144, var8.field747 * 512, 0, var8.field742 * 2, false, false);
+				method18486(var8.field749, var8.field746, var8.field747, 0, var8.field742 * 2, false, false);
 				if (field10922[0] > -1.0F && currentclock % 20 < 10) {
 					Sprite var9 = DefaultSprites.field8323[var8.field751];
 					int var10 = (int) (field10922[0] + (float) arg0 - 12.0F);
@@ -7863,7 +7863,7 @@ public final class Client extends GameShell {
 		if (arg2 < 3 && (world.method7793().levelTileFlags[1][var3][var4] & 0x2) != 0) {
 			var5 = arg2 + 1;
 		}
-		return world.getScene().field6913[var5].method1527(arg0, arg1);
+		return world.getScene().field6913[var5].getFineHeight(arg0, arg1);
 	}
 
 	@ObfuscatedName("adi.ip(IIIIII)I")
@@ -7900,7 +7900,7 @@ public final class Client extends GameShell {
 				arg4++;
 			}
 		}
-		return world.getScene().field6913[arg4].method1527(arg0, arg1);
+		return world.getScene().field6913[arg4].getFineHeight(arg0, arg1);
 	}
 
 	@ObfuscatedName("zs.id(IIIIIIIB)V")
@@ -9480,15 +9480,15 @@ public final class Client extends GameShell {
 				} else if (var377.field745 >= 2 && var377.field745 <= 6) {
 					if (var377.field745 == 2) {
 						var377.field746 = 256;
-						var377.field747 = 131072;
+						var377.field747 = 256;
 					}
 					if (var377.field745 == 3) {
 						var377.field746 = 0;
-						var377.field747 = 131072;
+						var377.field747 = 256;
 					}
 					if (var377.field745 == 4) {
 						var377.field746 = 512;
-						var377.field747 = 131072;
+						var377.field747 = 256;
 					}
 					if (var377.field745 == 5) {
 						var377.field746 = 256;
@@ -9496,14 +9496,14 @@ public final class Client extends GameShell {
 					}
 					if (var377.field745 == 6) {
 						var377.field746 = 256;
-						var377.field747 = 262144;
+						var377.field747 = 512;
 					}
 					var377.field745 = 2;
 					var377.field749 = in.g1();
 					CoordGrid var378 = world.method7727();
-					var377.field746 = var377.field746 * 262144 + (in.g2() - var378.x << 9);
-					var377.field747 = var377.field747 * 262144 + (in.g2() - var378.z << 9) * 512;
-					var377.field742 = (in.g1() << 2) * 4;
+					var377.field746 += in.g2() - var378.x << 9;
+					var377.field747 += in.g2() - var378.z << 9;
+					var377.field742 = in.g1() << 2;
 					var377.field748 = in.g2();
 				}
 				var377.field750 = in.g4s();
@@ -9543,7 +9543,7 @@ public final class Client extends GameShell {
 						int var393 = var390 * 512 + 256;
 						int var394 = var391 * 512 + 256;
 						int var395 = var389;
-						if (var389 < 3 && world.method7793().method7105(var390, var391)) {
+						if (var389 < 3 && world.method7793().isLinkBelow(var390, var391)) {
 							var395 = var389 + 1;
 						}
 						SpotAnimation var396 = new SpotAnimation(world.getScene(), var382, var383, var389, var395, var393, method3660(var393, var394, var389) - var380, var394, var390, var390, var391, var391, var385, var387, 0);
@@ -10960,7 +10960,7 @@ public final class Client extends GameShell {
 					int var166 = var158 * 512 + 256;
 					int var167 = var159 * 512 + 256;
 					int var168 = field10260;
-					if (var168 < 3 && world.method7793().method7105(var158, var159)) {
+					if (var168 < 3 && world.method7793().isLinkBelow(var158, var159)) {
 						var168++;
 					}
 					SpotAnimation var169 = new SpotAnimation(world.getScene(), var160, var162, field10260, var168, var166, method3660(var166, var167, field10260) - var161, var167, var158, var158, var159, var159, var163, false, var164);
@@ -11045,7 +11045,7 @@ public final class Client extends GameShell {
 		Matrix4x3 var15 = null;
 		ObjStackEntity var16 = (ObjStackEntity) world.getScene().removeObjStack(arg0, arg1, arg2);
 		if (var16 == null) {
-			var16 = new ObjStackEntity(world.getScene(), arg1 << 265, world.getScene().field6913[arg0].method1529(arg1, arg2), arg2 << 265, arg0, arg0);
+			var16 = new ObjStackEntity(world.getScene(), arg1 << 265, world.getScene().field6913[arg0].getTileHeight(arg1, arg2), arg2 << 265, arg0, arg0);
 		} else {
 			var10 = var16.field12580;
 			var11 = var16.field12569;
@@ -11121,7 +11121,7 @@ public final class Client extends GameShell {
 		var16.field12578 = 0;
 		var16.field11717 = (byte) arg0;
 		var16.field11714 = (byte) arg0;
-		if (world.method7793().method7105(arg1, arg2)) {
+		if (world.method7793().isLinkBelow(arg1, arg2)) {
 			var16.field11714++;
 		}
 		world.getScene().method8718(arg0, arg1, arg2, var20, var16);
@@ -11470,10 +11470,10 @@ public final class Client extends GameShell {
 				}
 			}
 			if ((var4 & 0x8000) != 0) {
-				var3.field10423 = var0.g1b_alt2() * 262144;
-				var3.field10425 = var0.g1b_alt1() * 262144;
-				var3.field10457 = var0.g1b_alt1() * 262144;
-				var3.field10426 = var0.g1b_alt2() * 262144;
+				var3.field10423 = var0.g1b_alt2();
+				var3.field10425 = var0.g1b_alt1();
+				var3.field10457 = var0.g1b_alt1();
+				var3.field10426 = var0.g1b_alt2();
 				var3.field10419 = var0.g1b_alt3();
 				var3.field10428 = var0.g1b_alt3();
 				var3.field10429 = var0.g2() + currentclock;
@@ -11481,10 +11481,10 @@ public final class Client extends GameShell {
 				var3.field10431 = var0.g2_alt1();
 				var3.field10400 = 1;
 				var3.field10396 = 0;
-				var3.field10423 = var3.field10423 * 262144 + var3.routeWaypointX[0] * 262144;
-				var3.field10425 = var3.field10425 * 262144 + var3.routeWaypointZ[0] * 262144;
-				var3.field10457 = var3.field10457 * 262144 + var3.routeWaypointX[0] * 262144;
-				var3.field10426 = var3.field10426 * 262144 + var3.routeWaypointZ[0] * 262144;
+				var3.field10423 += var3.routeWaypointX[0];
+				var3.field10425 += var3.routeWaypointZ[0];
+				var3.field10457 += var3.routeWaypointX[0];
+				var3.field10426 += var3.routeWaypointZ[0];
 				var3.field10419 += var3.field11717;
 				var3.field10428 += var3.field11717;
 			}

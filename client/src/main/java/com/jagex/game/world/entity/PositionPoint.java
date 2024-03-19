@@ -109,7 +109,7 @@ public class PositionPoint extends Position {
 			return;
 		}
 		int var7 = this.field10551;
-		if (arg1.method7105(var5, var6)) {
+		if (arg1.isLinkBelow(var5, var6)) {
 			var7 = this.field10551 + 1;
 		}
 		long var8 = (long) this.field10549.field4308 % 512L;

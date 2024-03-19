@@ -33,7 +33,7 @@ public class SceneLevelTileFlags {
 	}
 
 	@ObfuscatedName("qx.m(III)Z")
-	public boolean method7105(int arg0, int arg1) {
+	public boolean isLinkBelow(int arg0, int arg1) {
 		if (arg0 >= 0 && arg1 >= 0 && arg0 < this.levelTileFlags[1].length && arg1 < this.levelTileFlags[1][arg0].length) {
 			return (this.levelTileFlags[1][arg0][arg1] & 0x2) != 0;
 		} else {

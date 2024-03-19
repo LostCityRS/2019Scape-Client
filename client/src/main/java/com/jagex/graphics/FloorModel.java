@@ -35,7 +35,7 @@ public abstract class FloorModel {
 	}
 
 	@ObfuscatedName("cb.l(III)I")
-	public final int method1527(int arg0, int arg1) {
+	public final int getFineHeight(int arg0, int arg1) {
 		int var3 = arg0 >> this.field1236;
 		int var4 = arg1 >> this.field1236;
 		if (var3 < 0 || var4 < 0 || var3 > this.field1235 - 1 || var4 > this.field1234 - 1) {
@@ -64,7 +64,7 @@ public abstract class FloorModel {
 	}
 
 	@ObfuscatedName("cb.z(III)I")
-	public final int method1529(int arg0, int arg1) {
+	public final int getTileHeight(int arg0, int arg1) {
 		return this.field1237[arg0][arg1];
 	}
 
@@ -77,7 +77,7 @@ public abstract class FloorModel {
 	public abstract void method1521(int arg0, int arg1, int arg2);
 
 	@ObfuscatedName("cb.m(II[I[I[I[I[I[I[I[I[I[I[ILdy;Z)V")
-	public abstract void method1525(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14);
+	public abstract void addTileUnblended(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14);
 
 	@ObfuscatedName("cb.w(IIIIIII[[Z)V")
 	public abstract void method1526(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7);

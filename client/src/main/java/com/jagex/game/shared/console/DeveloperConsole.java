@@ -449,7 +449,7 @@ public class DeveloperConsole {
 					addline("Look: " + (new CoordGrid(Client.localPlayerEntity.field11717, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (Client.method3660((int) var7.field4308 - (var5.x << 9), (int) var6.field4313 - (var5.z << 9), Client.localPlayerEntity.field11717) + (int) var6.field4311));
 				} else {
 					addline("Pos: " + Client.localPlayerEntity.field11717 + "," + ((Client.cameraMouseX >> 9) + var5.x >> 6) + "," + ((Client.cameraMouseZ >> 9) + var5.z >> 6) + "," + ((Client.cameraMouseX >> 9) + var5.x & 0x3F) + "," + ((Client.cameraMouseZ >> 9) + var5.z & 0x3F) + " Height: " + (Client.method3660(Client.cameraMouseX, Client.cameraMouseZ, Client.localPlayerEntity.field11717) - Client.field10518));
-					addline("Look: " + Client.localPlayerEntity.field11717 + "," + (Client.field6714 + var5.x >> 6) + "," + (Client.field2626 + var5.z >> 6) + "," + (Client.field6714 + var5.x & 0x3F) + "," + (Client.field2626 + var5.z & 0x3F) + " Height: " + (Client.method3660(Client.field6714, Client.field2626, Client.localPlayerEntity.field11717) - Client.field1983));
+					addline("Look: " + Client.localPlayerEntity.field11717 + "," + (Client.cameraLookX + var5.x >> 6) + "," + (Client.cameraLookZ + var5.z >> 6) + "," + (Client.cameraLookX + var5.x & 0x3F) + "," + (Client.cameraLookZ + var5.z & 0x3F) + " Height: " + (Client.method3660(Client.cameraLookX, Client.cameraLookZ, Client.localPlayerEntity.field11717) - Client.field1983));
 				}
 				return;
 			}
@@ -738,7 +738,7 @@ public class DeveloperConsole {
 					addline(((int) var10.field4308 >> 9) + " " + ((int) var10.field4313 >> 9));
 				} else if (arg0 == 16) {
 					Vector3 var11 = Client.localPlayerEntity.method10536().field4298;
-					addline("" + Client.world.getScene().field6913[Client.localPlayerEntity.field11717].method1529((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
+					addline("" + Client.world.getScene().field6913[Client.localPlayerEntity.field11717].getTileHeight((int) var11.field4308 >> 9, (int) var11.field4313 >> 9));
 				} else if (arg0 == 27) {
 					addline(Component.field2175.method2926() + " " + Component.field2175.method2925());
 					addline(Component.field2297.method2926() + " " + Component.field2297.method2925());
