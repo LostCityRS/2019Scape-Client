@@ -719,12 +719,12 @@ public class ReceivePlayerPositions {
 				player.field10460.setVarObject(var66.var, var66.value);
 			}
 		}
-		if ((mask & 0x200) != 0) {
-			String var67 = buf.gjstr();
+		if ((mask & 0x200) != 0) { // forced chat
+			String message = buf.gjstr();
 			if (Client.localPlayerEntity == player) {
-				ChatHistory.addMessage(2, 0, player.method19115(true), player.method19116(false), player.field12057, var67, null);
+				ChatHistory.addMessage(2, 0, player.method19115(true), player.method19116(false), player.field12057, message, null);
 			}
-			player.addForcedChatMessage(var67, 0, 0);
+			player.addMessage(message, 0, 0);
 		}
 		if ((mask & 0x8) != 0) { // force move
 			player.field10423 = buf.g1b_alt2();
@@ -781,13 +781,13 @@ public class ReceivePlayerPositions {
 			boolean var74 = (var71 >> 7 & 0x1) == 1;
 			player.addSpotAnimation(id, var70, var72, var73, var74, 1);
 		}
-		if ((mask & 0x200000) != 0) { // force chat
+		if ((mask & 0x200000) != 0) { // new forced chat
 			String message = buf.gjstr();
 			int var76 = buf.g1();
 			if ((var76 & 0x1) != 0) {
 				ChatHistory.addMessage(2, var76, player.method19115(true), player.method19116(false), player.field12057, message, null);
 			}
-			player.addForcedChatMessage(message, 0, 0);
+			player.addMessage(message, 0, 0);
 		}
 		if ((mask & 0x400000) == 0) { // spotanim3
 			return;

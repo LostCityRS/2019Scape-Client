@@ -8873,7 +8873,7 @@ public final class Client extends GameShell {
 					} else {
 						var227 = StringHelper.escape(WordPack.method5939(in));
 					}
-					var220.addForcedChatMessage(var227.trim(), var221 >> 8, var221 & 0xFF);
+					var220.addMessage(var227.trim(), var221 >> 8, var221 & 0xFF);
 					int var228;
 					if (var222.field3609) {
 						var228 = var223 ? 17 : 1;

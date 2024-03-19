@@ -668,7 +668,7 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.hc(Ljava/lang/String;III)V")
-	public void addForcedChatMessage(String arg0, int arg1, int arg2) {
+	public void addMessage(String arg0, int arg1, int arg2) {
 		this.method16510(arg0, arg1, arg2, GameShell.method6016() * Client.graphicsDefaults.playerChatTimeout);
 	}
 
