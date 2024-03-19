@@ -177,7 +177,7 @@ public final class ChangeLocationRequest extends Node {
 	}
 
 	@ObfuscatedName("gp.f(B)V")
-	public static final void method3486() {
+	public static final void updateLocs() {
 		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.peekFront(); var0 != null; var0 = (ChangeLocationRequest) field11237.prev()) {
 			method2834(var0, false);
 		}

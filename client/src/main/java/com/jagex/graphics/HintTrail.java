@@ -118,7 +118,7 @@ public class HintTrail {
 					if (var2.isLinkBelow(var8, var9)) {
 						var7++;
 					}
-					this.field6752.add(new HintTrailPoint(arg0, this, Client.currentPlayerLevel, var7, var10, Client.method3660(var10, var11, Client.currentPlayerLevel), var11));
+					this.field6752.add(new HintTrailPoint(arg0, this, Client.currentPlayerLevel, var7, var10, Client.getHeightmapY(var10, var11, Client.currentPlayerLevel), var11));
 				}
 			}
 			var4 = var6;

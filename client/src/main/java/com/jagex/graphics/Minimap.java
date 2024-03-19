@@ -545,7 +545,7 @@ public class Minimap {
 		int var8;
 		int var9;
 		int var10;
-		if (Client.field3416 == 4) {
+		if (Client.cameraState == 4) {
 			var7 = Client.field10892;
 			var8 = Client.field10893;
 			var9 = (int) -Client.orbitCameraYaw & 0x3FFF;
@@ -554,7 +554,7 @@ public class Minimap {
 			Vector3 var11 = Client.localPlayerEntity.method10536().field4298;
 			var7 = (int) var11.field4308;
 			var8 = (int) var11.field4313;
-			if (Client.field3416 == 3) {
+			if (Client.cameraState == 3) {
 				var9 = (int) -((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 			} else {
 				var9 = Client.minimapAnticheatAngle + (int) -Client.orbitCameraYaw & 0x3FFF;
@@ -602,7 +602,7 @@ public class Minimap {
 		method4838(arg0, var7, var8, arg1, var5, arg2, arg3);
 		method16411(var7, var8, arg1, var5, arg2, arg3);
 		method4538(var7, var8, arg1, var4, arg2, arg3);
-		if (Client.field3416 != 4) {
+		if (Client.cameraState != 4) {
 			if (field731 != -1) {
 				int var31 = field731 * 4 + 2 - var7 / 128 + (Client.localPlayerEntity.size() - 1) * 2;
 				int var32 = field718 * 4 + 2 - var8 / 128 + (Client.localPlayerEntity.size() - 1) * 2;
@@ -696,7 +696,7 @@ public class Minimap {
 		HintArrow[] var6 = Client.hintArrows;
 		for (int var7 = 0; var7 < var6.length; var7++) {
 			HintArrow var8 = var6[var7];
-			if (var8 != null && var8.field745 != 0 && Client.currentclock % 20 < 10) {
+			if (var8 != null && var8.field745 != 0 && Client.loopCycle % 20 < 10) {
 				if (var8.field745 == 1) {
 					ObjectWrapper var9 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var8.field744);
 					if (var9 != null) {
@@ -740,16 +740,16 @@ public class Minimap {
 			int[] var9 = new int[var8.field2393.length];
 			for (int var10 = 0; var10 < var9.length / 2; var10++) {
 				int var11;
-				if (Client.field3416 == 3) {
+				if (Client.cameraState == 3) {
 					var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
-				} else if (Client.field3416 == 4) {
+				} else if (Client.cameraState == 4) {
 					var11 = (int) Client.orbitCameraYaw & 0x3FFF;
 				} else {
 					var11 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 				}
 				int var12 = Trig1.field4270[var11];
 				int var13 = Trig1.field4272[var11];
-				if (Client.field3416 != 4) {
+				if (Client.cameraState != 4) {
 					var12 = var12 * 256 / (Client.minimapZoom + 256);
 					var13 = var13 * 256 / (Client.minimapZoom + 256);
 				}
@@ -852,16 +852,16 @@ public class Minimap {
 			return;
 		}
 		int var10;
-		if (Client.field3416 == 3) {
+		if (Client.cameraState == 3) {
 			var10 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
-		} else if (Client.field3416 == 4) {
+		} else if (Client.cameraState == 4) {
 			var10 = (int) Client.orbitCameraYaw & 0x3FFF;
 		} else {
 			var10 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 		}
 		int var11 = Trig1.field4270[var10];
 		int var12 = Trig1.field4272[var10];
-		if (Client.field3416 != 4) {
+		if (Client.cameraState != 4) {
 			var11 = var11 * 256 / (Client.minimapZoom + 256);
 			var12 = var12 * 256 / (Client.minimapZoom + 256);
 		}
@@ -916,9 +916,9 @@ public class Minimap {
 			return;
 		}
 		int var11;
-		if (Client.field3416 == 3) {
+		if (Client.cameraState == 3) {
 			var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
-		} else if (Client.field3416 == 4) {
+		} else if (Client.cameraState == 4) {
 			var11 = (int) Client.orbitCameraYaw & 0x3FFF;
 		} else {
 			var11 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
@@ -930,7 +930,7 @@ public class Minimap {
 		}
 		int var14 = Trig1.field4270[var11];
 		int var15 = Trig1.field4272[var11];
-		if (Client.field3416 != 4) {
+		if (Client.cameraState != 4) {
 			var14 = var14 * 256 / (Client.minimapZoom + 256);
 			var15 = var15 * 256 / (Client.minimapZoom + 256);
 		}
@@ -972,9 +972,9 @@ public class Minimap {
 	@ObfuscatedName("gd.a(Lhf;Lch;IIIIILjava/lang/String;Leu;Laac;II)V")
 	public static void method3654(Component arg0, GraphicsRelated arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, Font arg8, FontMetrics arg9, int arg10) {
 		int var11;
-		if (Client.field3416 == 3) {
+		if (Client.cameraState == 3) {
 			var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
-		} else if (Client.field3416 == 4) {
+		} else if (Client.cameraState == 4) {
 			var11 = (int) Client.orbitCameraYaw & 0x3FFF;
 		} else {
 			var11 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
@@ -986,7 +986,7 @@ public class Minimap {
 		}
 		int var14 = Trig1.field4270[var11];
 		int var15 = Trig1.field4272[var11];
-		if (Client.field3416 != 4) {
+		if (Client.cameraState != 4) {
 			var14 = var14 * 256 / (Client.minimapZoom + 256);
 			var15 = var15 * 256 / (Client.minimapZoom + 256);
 		}

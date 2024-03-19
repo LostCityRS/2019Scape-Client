@@ -208,7 +208,7 @@ public class CutsceneManager {
 
 	@ObfuscatedName("qb.f(ZI)V")
 	public static void method7372(boolean arg0) {
-		if (Client.field10863 == 4 || Client.field10863 == 3) {
+		if (Client.sceneState == 4 || Client.sceneState == 3) {
 			return;
 		}
 		if (!arg0) {
@@ -223,7 +223,7 @@ public class CutsceneManager {
 				Client.audioApi.method3235(field1717, 255);
 			}
 		}
-		Client.field10863 = 4;
+		Client.sceneState = 4;
 		Client.field8729 = null;
 		Client.field10877 = false;
 		if (field1722 > 0) {

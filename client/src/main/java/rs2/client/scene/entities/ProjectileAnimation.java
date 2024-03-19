@@ -83,7 +83,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	public int field12606 = 0;
 
 	public ProjectileAnimation(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, boolean arg14, int arg15, int arg16) {
-		super(arg0, arg2, arg3, arg4, Client.method3660(arg4, arg5, arg2) - arg6, arg5, arg4 >> 9, arg4 >> 9, arg5 >> 9, arg5 >> 9, false, (byte) 0);
+		super(arg0, arg2, arg3, arg4, Client.getHeightmapY(arg4, arg5, arg2) - arg6, arg5, arg4 >> 9, arg4 >> 9, arg5 >> 9, arg5 >> 9, false, (byte) 0);
 		this.field12603 = arg1;
 		this.field12588 = arg7;
 		this.field12589 = arg8;
@@ -140,7 +140,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 				var5.field4313 += (float) this.field12591 * var7 / var8;
 			}
 			if (this.field12595) {
-				var5.field4311 = Client.method3660((int) var5.field4308, (int) var5.field4313, this.level) - this.field12599;
+				var5.field4311 = Client.getHeightmapY((int) var5.field4308, (int) var5.field4313, this.level) - this.field12599;
 			}
 			this.method10531(var5);
 		}
@@ -165,7 +165,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 			return;
 		}
 		PathingEntity var1 = null;
-		if (Client.field10863 == 0) {
+		if (Client.sceneState == 0) {
 			var1 = CutsceneManager.field1721[this.field12605 - 1].method2870();
 		} else if (this.field12605 < 0) {
 			int var2 = -this.field12605 - 1;
@@ -185,7 +185,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 			return;
 		}
 		Vector3 var5 = var1.method10536().field4298;
-		this.method10538(var5.field4308, (float) (Client.method3660((int) var5.field4308, (int) var5.field4313, this.level) - this.field12599), var5.field4313);
+		this.method10538(var5.field4308, (float) (Client.getHeightmapY((int) var5.field4308, (int) var5.field4313, this.level) - this.field12599), var5.field4313);
 		if (this.field12594 < 0) {
 			return;
 		}
@@ -227,7 +227,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		var2.field4298.field4308 = (float) ((double) var2.field4298.field4308 + (double) arg0 * this.field12597);
 		var2.field4298.field4313 = (float) ((double) var2.field4298.field4313 + (double) arg0 * this.field12592);
 		if (this.field12595) {
-			var2.field4298.field4311 = Client.method3660((int) var2.field4298.field4308, (int) var2.field4298.field4313, this.level) - this.field12599;
+			var2.field4298.field4311 = Client.getHeightmapY((int) var2.field4298.field4308, (int) var2.field4298.field4313, this.level) - this.field12599;
 		} else if (this.field12590 == -1) {
 			var2.field4298.field4311 = (float) ((double) var2.field4298.field4311 + (double) arg0 * this.field12600);
 		} else {
@@ -295,10 +295,10 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		ModelParticleEmitter[] var4 = arg1.method1750();
 		ModelParticleEffector[] var5 = arg1.method1765();
 		if ((this.field12585 == null || this.field12585.field7804) && (var4 != null || var5 != null)) {
-			this.field12585 = ParticleSystem.method9962(Client.currentclock, true);
+			this.field12585 = ParticleSystem.method9962(Client.loopCycle, true);
 		}
 		if (this.field12585 != null) {
-			this.field12585.method9936(arg0, (long) Client.currentclock, var4, var5, false);
+			this.field12585.method9936(arg0, (long) Client.loopCycle, var4, var5, false);
 			this.field12585.method9963(this.level, this.field12471, this.field12472, this.field12468, this.field12467);
 		}
 	}

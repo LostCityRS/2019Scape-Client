@@ -246,7 +246,7 @@ public class TwitchHardwarePlatform {
 	@ObfuscatedName("ff.d(Ljava/lang/String;Ljava/lang/String;B)I")
 	public static int method3124(String arg0, String arg1) {
 		if (field7384) {
-			return Client.method640() == Client.gameConnection ? field11755.Login(arg0, arg1) : 42;
+			return Client.getCurrentConnection() == Client.gameConnection ? field11755.Login(arg0, arg1) : 42;
 		} else {
 			return 12;
 		}
@@ -461,8 +461,8 @@ public class TwitchHardwarePlatform {
 			field894 = new int[field7399 ? arg2 * arg3 : field8526 * field2585];
 		}
 		if (arg0.method2360()) {
-			arg0.method2163(Client.currentclock, field2585, field8526);
-			field7380.add(new TwitchRelated2(Client.currentclock, field7392, arg0.field1611, arg0.field1618, arg0.field1602));
+			arg0.method2163(Client.loopCycle, field2585, field8526);
+			field7380.add(new TwitchRelated2(Client.loopCycle, field7392, arg0.field1611, arg0.field1618, arg0.field1602));
 			field7392 = new LinkedList();
 		} else {
 			arg0.method2203();

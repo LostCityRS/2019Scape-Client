@@ -721,11 +721,11 @@ public class World {
 
 	@ObfuscatedName("rl.ap(IIIZB)V")
 	public void method7829(int arg0, int arg1, int arg2, boolean forceRebuild) {
-		if (Client.field10863 == 4) {
+		if (Client.sceneState == 4) {
 			if (this.asyncRebuilding) {
 				throw new IllegalStateException();
 			}
-			Client.field10863 = 3;
+			Client.sceneState = 3;
 			Client.field10862 = -1;
 		}
 		if (!forceRebuild && this.field5022 == arg0 && this.field5059 == arg1) {
@@ -900,7 +900,7 @@ public class World {
 			Client.field10893 -= var3 * 512;
 			Client.field8910 -= var2 * 512;
 			Client.field3569 -= var3 * 512;
-			if (Client.field3416 != 4 && Client.field3416 != 3) {
+			if (Client.cameraState != 4 && Client.cameraState != 3) {
 				Client.method4046(Client.method14298());
 			}
 		} else {
@@ -1019,8 +1019,8 @@ public class World {
 		}
 		if (this.rebuildLocsCount > 0) {
 			if (this.rebuildLocsCount != var3) {
-				this.field5048 = Client.currentclock;
-			} else if (this.field5048 != 0 && Client.currentclock - this.field5048 == 1000) {
+				this.field5048 = Client.loopCycle;
+			} else if (this.field5048 != 0 && Client.loopCycle - this.field5048 == 1000) {
 				GraphicsPacketQueue.method5144(var5.intValue, var4.intValue, this.rebuildLocsCount);
 				GraphicsPacketQueue.method9189();
 			}
@@ -1441,7 +1441,7 @@ public class World {
 						Client.miniMenuEntries.pushNode(var17, (long) var7);
 						Client.field10839[++Client.field10906 - 1] = var17;
 						Client.field11036[++Client.field11011 - 1] = var7;
-						npc.field10440 = Client.currentclock;
+						npc.field10440 = Client.loopCycle;
 						npc.method19156(var14);
 						npc.method16502(npc.npcType.size);
 						npc.field10444 = npc.npcType.turnspeed << 3;

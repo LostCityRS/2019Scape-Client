@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 public final class PingRequest {
 
 	@ObfuscatedName("yb.e")
-	public volatile String field8181;
+	public volatile String host;
 
 	@ObfuscatedName("yb.n")
-	public volatile int field8180 = -1;
+	public volatile int hostpacked = -1;
 
 	public PingRequest(String arg0) {
-		this.field8181 = arg0;
+		this.host = arg0;
 	}
 }

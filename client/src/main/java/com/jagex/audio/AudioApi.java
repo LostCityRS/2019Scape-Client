@@ -126,7 +126,7 @@ public class AudioApi {
 			int var14 = 8192;
 			float var15 = 0.0F;
 			float var19;
-			if (Client.field3416 == 3) {
+			if (Client.cameraState == 3) {
 				float var16 = Client.field9155.method4719();
 				if (var8.field4308 != 0.0F || var8.field4313 != 0.0F) {
 					int var17 = (int) ((double) (var16 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var8.field4308, (double) var8.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
@@ -146,7 +146,7 @@ public class AudioApi {
 				var19 = (float) var14 * 6.1035156E-5F;
 			} else {
 				if (var8.field4308 != 0.0F || var8.field4313 != 0.0F) {
-					int var20 = -Client.field8586 - (int) (Math.atan2((double) var8.field4308, (double) var8.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
+					int var20 = -Client.cameraYaw - (int) (Math.atan2((double) var8.field4308, (double) var8.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
 					if (var20 > 8192) {
 						var20 = 16384 - var20;
 					}
@@ -210,7 +210,7 @@ public class AudioApi {
 					var10 = Math.min(var25, var26);
 				}
 				if (var9.field4308 != 0.0F || var9.field4313 != 0.0F) {
-					if (Client.field3416 == 3) {
+					if (Client.cameraState == 3) {
 						float var27 = Client.field9155.method4719();
 						if (var9.field4308 != 0.0F || var9.field4313 != 0.0F) {
 							int var28 = (int) ((double) (var27 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var9.field4308, (double) var9.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
@@ -229,7 +229,7 @@ public class AudioApi {
 						}
 						var13 = (float) var11 * 6.1035156E-5F;
 					} else {
-						int var30 = -Client.field8586 - (int) (Math.atan2((double) var9.field4308, (double) var9.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
+						int var30 = -Client.cameraYaw - (int) (Math.atan2((double) var9.field4308, (double) var9.field4313) * 2607.5945876176133D) - 4096 & 0x3FFF;
 						if (var30 > 8192) {
 							var30 = 16384 - var30;
 						}

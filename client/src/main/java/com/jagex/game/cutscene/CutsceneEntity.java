@@ -54,7 +54,7 @@ public final class CutsceneEntity {
 			if (this.field1743 >= 0) {
 				this.field1745 = new NpcEntity(Client.world.getScene(), 25);
 				this.field1745.localPlayerIndex = this.field1741;
-				this.field1745.field10440 = Client.currentclock;
+				this.field1745.field10440 = Client.loopCycle;
 				this.field1745.method19156((NPCType) Client.npcTypeList.list(this.field1743));
 				this.field1745.method16502(this.field1745.npcType.size);
 				this.field1745.field10444 = this.field1745.npcType.turnspeed << 3;
@@ -63,7 +63,7 @@ public final class CutsceneEntity {
 				this.field1742 = new PlayerEntity(Client.world.getScene(), 25);
 				this.field1742.getAppearance(Client.field8729);
 				this.field1742.localPlayerIndex = this.field1741;
-				this.field1742.field10440 = Client.currentclock;
+				this.field1742.field10440 = Client.loopCycle;
 				this.field1742.field10404 = ++CutsceneManager.field1715 - 1;
 			}
 		}

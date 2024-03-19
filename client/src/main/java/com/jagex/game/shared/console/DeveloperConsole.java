@@ -361,7 +361,7 @@ public class DeveloperConsole {
 		DefaultSprites.field10355.method2681("--> " + method14312(currententry), 10, 350 - DefaultSprites.field10268.field8569 - 1, -1, -16777216);
 		if (GameShell.focus) {
 			int var10 = -1;
-			if (Client.currentclock % 30 > 15) {
+			if (Client.loopCycle % 30 > 15) {
 				var10 = 16777215;
 			}
 			arg0.method2177(DefaultSprites.field10268.method14532("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - DefaultSprites.field10268.field8569 - 11, 12, var10);
@@ -442,14 +442,14 @@ public class DeveloperConsole {
 			}
 			if (arg0.equalsIgnoreCase("getcamerapos")) {
 				CoordGrid var5 = Client.world.method7727();
-				if (Client.field3416 == 3) {
+				if (Client.cameraState == 3) {
 					Vector3 var6 = Client.field9155.method4714();
 					Vector3 var7 = Client.field9155.method4711();
-					addline("Pos: " + (new CoordGrid(Client.localPlayerEntity.level, (int) var6.field4308 >> 9, (int) var6.field4313 >> 9)).toString() + " Height: " + (Client.method3660((int) var6.field4308 - (var5.x << 9), (int) var6.field4313 - (var5.z << 9), Client.localPlayerEntity.level) + (int) var6.field4311));
-					addline("Look: " + (new CoordGrid(Client.localPlayerEntity.level, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (Client.method3660((int) var7.field4308 - (var5.x << 9), (int) var6.field4313 - (var5.z << 9), Client.localPlayerEntity.level) + (int) var6.field4311));
+					addline("Pos: " + (new CoordGrid(Client.localPlayerEntity.level, (int) var6.field4308 >> 9, (int) var6.field4313 >> 9)).toString() + " Height: " + (Client.getHeightmapY((int) var6.field4308 - (var5.x << 9), (int) var6.field4313 - (var5.z << 9), Client.localPlayerEntity.level) + (int) var6.field4311));
+					addline("Look: " + (new CoordGrid(Client.localPlayerEntity.level, (int) var7.field4308 >> 9, (int) var7.field4313 >> 9)).toString() + " Height: " + (Client.getHeightmapY((int) var7.field4308 - (var5.x << 9), (int) var6.field4313 - (var5.z << 9), Client.localPlayerEntity.level) + (int) var6.field4311));
 				} else {
-					addline("Pos: " + Client.localPlayerEntity.level + "," + ((Client.cameraMouseX >> 9) + var5.x >> 6) + "," + ((Client.cameraMouseZ >> 9) + var5.z >> 6) + "," + ((Client.cameraMouseX >> 9) + var5.x & 0x3F) + "," + ((Client.cameraMouseZ >> 9) + var5.z & 0x3F) + " Height: " + (Client.method3660(Client.cameraMouseX, Client.cameraMouseZ, Client.localPlayerEntity.level) - Client.field10518));
-					addline("Look: " + Client.localPlayerEntity.level + "," + (Client.cameraLookX + var5.x >> 6) + "," + (Client.cameraLookZ + var5.z >> 6) + "," + (Client.cameraLookX + var5.x & 0x3F) + "," + (Client.cameraLookZ + var5.z & 0x3F) + " Height: " + (Client.method3660(Client.cameraLookX, Client.cameraLookZ, Client.localPlayerEntity.level) - Client.field1983));
+					addline("Pos: " + Client.localPlayerEntity.level + "," + ((Client.cameraMouseX >> 9) + var5.x >> 6) + "," + ((Client.cameraMouseZ >> 9) + var5.z >> 6) + "," + ((Client.cameraMouseX >> 9) + var5.x & 0x3F) + "," + ((Client.cameraMouseZ >> 9) + var5.z & 0x3F) + " Height: " + (Client.getHeightmapY(Client.cameraMouseX, Client.cameraMouseZ, Client.localPlayerEntity.level) - Client.cameraMouseY));
+					addline("Look: " + Client.localPlayerEntity.level + "," + (Client.cameraLookX + var5.x >> 6) + "," + (Client.cameraLookZ + var5.z >> 6) + "," + (Client.cameraLookX + var5.x & 0x3F) + "," + (Client.cameraLookZ + var5.z & 0x3F) + " Height: " + (Client.getHeightmapY(Client.cameraLookX, Client.cameraLookZ, Client.localPlayerEntity.level) - Client.field1983));
 				}
 				return;
 			}
@@ -562,7 +562,7 @@ public class DeveloperConsole {
 				}
 				if (arg0.equalsIgnoreCase("clientdrop")) {
 					if (Client.state == 18) {
-						Client.closeConnection();
+						Client.tryReconnect();
 					} else if (Client.state == 3) {
 						Client.gameConnection.disconnected = true;
 					}
@@ -652,7 +652,7 @@ public class DeveloperConsole {
 					method15383(var29);
 				}
 				if (Client.state == 18 || Client.state == 13) {
-					ServerConnection var30 = Client.method640();
+					ServerConnection var30 = Client.getCurrentConnection();
 					ClientMessage var31 = ClientMessage.createMessage(ClientProt.CLIENT_CHEAT, var30.randomOut);
 					var31.buf.p1(arg0.length() + 3);
 					var31.buf.p1(arg1 ? 1 : 0);

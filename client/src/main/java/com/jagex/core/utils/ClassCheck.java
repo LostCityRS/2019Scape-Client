@@ -26,13 +26,13 @@ public class ClassCheck {
 	}
 
 	@ObfuscatedName("abf.n(I)Z")
-	public static boolean method14703() {
+	public static boolean hasNext() {
 		ClassCheckNode var0 = (ClassCheckNode) field9148.peekFront();
 		return var0 != null;
 	}
 
 	@ObfuscatedName("jf.m(Lase;I)V")
-	public static void method4651(PacketBit arg0) {
+	public static void createReflectionCheck(PacketBit arg0) {
 		ClassCheckNode var1 = (ClassCheckNode) field9148.peekFront();
 		if (var1 == null) {
 			return;

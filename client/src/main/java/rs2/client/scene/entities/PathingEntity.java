@@ -118,16 +118,16 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public EntitySpotAnim[] spotAnims;
 
 	@ObfuscatedName("ahm.ax")
-	public int field10423;
+	public int forceMoveStartSceneTileX;
 
 	@ObfuscatedName("ahm.av")
-	public int field10457;
+	public int forceMoveEndSceneTileX;
 
 	@ObfuscatedName("ahm.ao")
-	public int field10425;
+	public int forceMoveStartSceneTileZ;
 
 	@ObfuscatedName("ahm.aj")
-	public int field10426;
+	public int forceMoveEndSceneTileZ;
 
 	@ObfuscatedName("ahm.ay")
 	public int field10419;
@@ -136,10 +136,10 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public int field10428;
 
 	@ObfuscatedName("ahm.az")
-	public int field10429;
+	public int forceMoveEndCycle;
 
 	@ObfuscatedName("ahm.aa")
-	public int field10399;
+	public int forceMoveStartCycle;
 
 	@ObfuscatedName("ahm.af")
 	public int field10431;
@@ -208,7 +208,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public byte[] routeSpeeds;
 
 	@ObfuscatedName("ahm.bv")
-	public int field10453;
+	public int seqTrigger;
 
 	@ObfuscatedName("ahm.br")
 	public int field10396;
@@ -277,7 +277,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		this.field10447 = new EasedAngle();
 		this.field10413 = new EasedAngle();
 		this.routeLength = 0;
-		this.field10453 = 0;
+		this.seqTrigger = 0;
 		this.field10396 = 0;
 		this.field10455 = 0;
 		this.field10449 = false;
@@ -493,7 +493,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 				}
 			}
 			if ((this.field10393 == null || this.field10393.field7804) && (var6 > 0 || var8 > 0)) {
-				this.field10393 = ParticleSystem.method9962(Client.currentclock, true);
+				this.field10393 = ParticleSystem.method9962(Client.loopCycle, true);
 			}
 			if (this.field10393 != null) {
 				Object var14 = null;
@@ -524,11 +524,11 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 						}
 					}
 				}
-				this.field10393.method9936(arg0, (long) Client.currentclock, var15, var19, false);
+				this.field10393.method9936(arg0, (long) Client.loopCycle, var15, var19, false);
 				this.field10449 = true;
 			}
 		} else if (this.field10393 != null) {
-			this.field10393.method9935((long) Client.currentclock);
+			this.field10393.method9935((long) Client.loopCycle);
 		}
 		if (this.field10393 != null) {
 			this.field10393.method9963(this.level, this.field12471, this.field12472, this.field12468, this.field12467);

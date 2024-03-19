@@ -144,7 +144,7 @@ public class ClientWatch {
 			Client.field10902 = false;
 			int var6;
 			int var8;
-			if (Client.field3416 != 3) {
+			if (Client.cameraState != 3) {
 				var6 = (int) Client.field11004 >> 3;
 				var8 = (int) Client.orbitCameraYaw >> 3;
 			} else if (Client.field9155.method4780() == PositionMode.field2815) {

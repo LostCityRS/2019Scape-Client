@@ -46,8 +46,8 @@ public class CamMoveAlongCutsceneAction extends CutsceneAction {
 		Client.field10913 = this.field10296;
 		Client.field10908 = 1;
 		Client.field10932 = this.field10294 * 4;
-		Client.field3416 = 6;
-		Client.method9611();
+		Client.cameraState = 6;
+		Client.applyCameraMoveAlong();
 		Client.field10877 = true;
 	}
 }

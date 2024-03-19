@@ -854,13 +854,13 @@ public class MiniMenu {
 											ObjectWrapper var41 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var40]);
 											if (var41 != null) {
 												NpcEntity var42 = (NpcEntity) var41.field11436;
-												if (var42.field10403 != Client.currentclock && var42.field10452) {
+												if (var42.field10403 != Client.loopCycle && var42.field10452) {
 													Vector3 var43 = var42.method10536().field4298;
 													int var44 = (int) var43.field4308 - (var42.npcType.size - 1 << 8);
 													int var45 = (int) var43.field4313 - (var42.npcType.size - 1 << 8);
 													if (var44 >= var38 && var42.npcType.size <= var35.size() - (var44 - var38 >> 9) && var45 >= var39 && var42.npcType.size <= var35.size() - (var45 - var39 >> 9)) {
 														method10152(var42, Client.localPlayerEntity.level != var29.field6978.level);
-														var42.field10403 = Client.currentclock;
+														var42.field10403 = Client.loopCycle;
 													}
 												}
 											}
@@ -869,20 +869,20 @@ public class MiniMenu {
 										int[] var47 = ReceivePlayerPositions.highResolutionsIndices;
 										for (int var48 = 0; var48 < var46; var48++) {
 											PlayerEntity var49 = Client.players[var47[var48]];
-											if (var49 != null && var49.field10403 != Client.currentclock && var35 != var49 && var49.field10452) {
+											if (var49 != null && var49.field10403 != Client.loopCycle && var35 != var49 && var49.field10452) {
 												Vector3 var50 = var49.method10536().field4298;
 												int var51 = (int) var50.field4308 - (var49.size() - 1 << 8);
 												int var52 = (int) var50.field4313 - (var49.size() - 1 << 8);
 												if (var51 >= var38 && var49.size() <= var35.size() - (var51 - var38 >> 9) && var52 >= var39 && var49.size() <= var35.size() - (var52 - var39 >> 9)) {
 													method3542(var49, Client.localPlayerEntity.level != var29.field6978.level);
-													var49.field10403 = Client.currentclock;
+													var49.field10403 = Client.loopCycle;
 												}
 											}
 										}
 									}
-									if (var35.field10403 != Client.currentclock) {
+									if (var35.field10403 != Client.loopCycle) {
 										method3542(var35, Client.localPlayerEntity.level != var29.field6978.level);
-										var35.field10403 = Client.currentclock;
+										var35.field10403 = Client.loopCycle;
 										break;
 									}
 								}
@@ -901,13 +901,13 @@ public class MiniMenu {
 										ObjectWrapper var58 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var57]);
 										if (var58 != null) {
 											NpcEntity var59 = (NpcEntity) var58.field11436;
-											if (var59.field10403 != Client.currentclock && var53 != var59 && var59.field10452) {
+											if (var59.field10403 != Client.loopCycle && var53 != var59 && var59.field10452) {
 												Vector3 var60 = var59.method10536().field4298;
 												int var61 = (int) var60.field4308 - (var59.npcType.size - 1 << 8);
 												int var62 = (int) var60.field4313 - (var59.npcType.size - 1 << 8);
 												if (var61 >= var55 && var59.npcType.size <= var53.npcType.size - (var61 - var55 >> 9) && var62 >= var56 && var59.npcType.size <= var53.npcType.size - (var62 - var56 >> 9)) {
 													method10152(var59, Client.localPlayerEntity.level != var29.field6978.level);
-													var59.field10403 = Client.currentclock;
+													var59.field10403 = Client.loopCycle;
 												}
 											}
 										}
@@ -916,20 +916,20 @@ public class MiniMenu {
 									int[] var64 = ReceivePlayerPositions.highResolutionsIndices;
 									for (int var65 = 0; var65 < var63; var65++) {
 										PlayerEntity var66 = Client.players[var64[var65]];
-										if (var66 != null && var66.field10403 != Client.currentclock && var66.field10452) {
+										if (var66 != null && var66.field10403 != Client.loopCycle && var66.field10452) {
 											Vector3 var67 = var66.method10536().field4298;
 											int var68 = (int) var67.field4308 - (var66.size() - 1 << 8);
 											int var69 = (int) var67.field4313 - (var66.size() - 1 << 8);
 											if (var68 >= var55 && var66.size() <= var53.npcType.size - (var68 - var55 >> 9) && var69 >= var56 && var66.size() <= var53.npcType.size - (var69 - var56 >> 9)) {
 												method3542(var66, Client.localPlayerEntity.level != var29.field6978.level);
-												var66.field10403 = Client.currentclock;
+												var66.field10403 = Client.loopCycle;
 											}
 										}
 									}
 								}
-								if (var53.field10403 != Client.currentclock) {
+								if (var53.field10403 != Client.loopCycle) {
 									method10152(var53, Client.localPlayerEntity.level != var29.field6978.level);
-									var53.field10403 = Client.currentclock;
+									var53.field10403 = Client.loopCycle;
 									break;
 								}
 							}
@@ -2078,8 +2078,8 @@ public class MiniMenu {
 			if (var15 != null) {
 				Client.field10866 = arg1;
 				Client.field10924 = arg2;
-				Client.field10926 = 2;
-				Client.field10925 = 0;
+				Client.crossMode = 2;
+				Client.crossCycle = 0;
 				ClientMessage var16 = ClientMessage.createMessage(var14, Client.gameConnection.randomOut);
 				var16.buf.p2(var7);
 				var16.buf.p1_alt1(method14766() ? 1 : 0);
@@ -2104,8 +2104,8 @@ public class MiniMenu {
 		if (var17 != null) {
 			Client.field10866 = arg1;
 			Client.field10924 = arg2;
-			Client.field10926 = 2;
-			Client.field10925 = 0;
+			Client.crossMode = 2;
+			Client.crossCycle = 0;
 			ClientMessage var18 = ClientMessage.createMessage(var17, Client.gameConnection.randomOut);
 			var18.buf.p1_alt2(method14766() ? 1 : 0);
 			var18.buf.p2(var10.z + var5);
@@ -2116,7 +2116,7 @@ public class MiniMenu {
 		}
 		if (var6 == 23) {
 			if (Client.staffModLevel > 0 && method6035()) {
-				Client.method10445(Client.localPlayerEntity.level, var10.x + var4, var10.z + var5);
+				Client.jtele(Client.localPlayerEntity.level, var10.x + var4, var10.z + var5);
 			} else {
 				ClientMessage var19 = method9839(var4, var5, var7);
 				if (var7 == 1) {
@@ -2134,8 +2134,8 @@ public class MiniMenu {
 				} else {
 					Client.field10866 = arg1;
 					Client.field10924 = arg2;
-					Client.field10926 = 1;
-					Client.field10925 = 0;
+					Client.crossMode = 1;
+					Client.crossCycle = 0;
 				}
 				Client.gameConnection.queue(var19);
 				Client.method6820(var4, var5);
@@ -2161,8 +2161,8 @@ public class MiniMenu {
 				NpcEntity var23 = (NpcEntity) var22.field11436;
 				Client.field10866 = arg1;
 				Client.field10924 = arg2;
-				Client.field10926 = 2;
-				Client.field10925 = 0;
+				Client.crossMode = 2;
+				Client.crossCycle = 0;
 				ClientMessage var24 = ClientMessage.createMessage(var21, Client.gameConnection.randomOut);
 				var24.buf.p1_alt3(method14766() ? 1 : 0);
 				var24.buf.p2_alt2(var7);
@@ -2173,8 +2173,8 @@ public class MiniMenu {
 		if (var6 == 17) {
 			Client.field10866 = arg1;
 			Client.field10924 = arg2;
-			Client.field10926 = 2;
-			Client.field10925 = 0;
+			Client.crossMode = 2;
+			Client.crossCycle = 0;
 			ClientMessage var25 = ClientMessage.createMessage(ClientProt.OPOBJT, Client.gameConnection.randomOut);
 			var25.buf.p2_alt1(var7);
 			var25.buf.p1_alt1(method14766() ? 1 : 0);
@@ -2192,8 +2192,8 @@ public class MiniMenu {
 				NpcEntity var27 = (NpcEntity) var26.field11436;
 				Client.field10866 = arg1;
 				Client.field10924 = arg2;
-				Client.field10926 = 2;
-				Client.field10925 = 0;
+				Client.crossMode = 2;
+				Client.crossCycle = 0;
 				ClientMessage var28 = ClientMessage.createMessage(ClientProt.OPNPCT, Client.gameConnection.randomOut);
 				var28.buf.p4(Client.field6707);
 				var28.buf.p2(var7);
@@ -2207,8 +2207,8 @@ public class MiniMenu {
 		if (var6 == 2) {
 			Client.field10866 = arg1;
 			Client.field10924 = arg2;
-			Client.field10926 = 2;
-			Client.field10925 = 0;
+			Client.crossMode = 2;
+			Client.crossCycle = 0;
 			ClientMessage var29 = ClientMessage.createMessage(ClientProt.OPLOCT, Client.gameConnection.randomOut);
 			var29.buf.p1_alt1(method14766() ? 1 : 0);
 			var29.buf.p2_alt1(var10.x + var4);
@@ -2222,12 +2222,12 @@ public class MiniMenu {
 		}
 		if (var6 == 60) {
 			if (Client.staffModLevel > 0 && method6035()) {
-				Client.method10445(Client.localPlayerEntity.level, var10.x + var4, var10.z + var5);
+				Client.jtele(Client.localPlayerEntity.level, var10.x + var4, var10.z + var5);
 			} else {
 				Client.field10866 = arg1;
 				Client.field10924 = arg2;
-				Client.field10926 = 1;
-				Client.field10925 = 0;
+				Client.crossMode = 1;
+				Client.crossCycle = 0;
 				ClientMessage var30 = ClientMessage.createMessage(ClientProt.FACE_SQUARE, Client.gameConnection.randomOut);
 				var30.buf.p2_alt2(var10.z + var5);
 				var30.buf.p2_alt3(var10.x + var4);
@@ -2237,8 +2237,8 @@ public class MiniMenu {
 		if (var6 == 16) {
 			Client.field10866 = arg1;
 			Client.field10924 = arg2;
-			Client.field10926 = 2;
-			Client.field10925 = 0;
+			Client.crossMode = 2;
+			Client.crossCycle = 0;
 			ClientMessage var31 = ClientMessage.createMessage(ClientProt.OPPLAYERT, Client.gameConnection.randomOut);
 			var31.buf.p2(Client.field10974);
 			var31.buf.p1_alt1(method14766() ? 1 : 0);
@@ -2264,8 +2264,8 @@ public class MiniMenu {
 		if (var32 != null) {
 			Client.field10866 = arg1;
 			Client.field10924 = arg2;
-			Client.field10926 = 2;
-			Client.field10925 = 0;
+			Client.crossMode = 2;
+			Client.crossCycle = 0;
 			ClientMessage var33 = ClientMessage.createMessage(var32, Client.gameConnection.randomOut);
 			var33.buf.p2_alt1(var7);
 			var33.buf.p2_alt1(var10.x + var4);
@@ -2279,8 +2279,8 @@ public class MiniMenu {
 			if (var34 != null) {
 				Client.field10866 = arg1;
 				Client.field10924 = arg2;
-				Client.field10926 = 2;
-				Client.field10925 = 0;
+				Client.crossMode = 2;
+				Client.crossCycle = 0;
 				ClientMessage var35 = ClientMessage.createMessage(ClientProt.OPPLAYERT, Client.gameConnection.randomOut);
 				var35.buf.p2(Client.field10974);
 				var35.buf.p1_alt1(method14766() ? 1 : 0);
@@ -2294,8 +2294,8 @@ public class MiniMenu {
 		if (var6 == 59) {
 			Client.field10866 = arg1;
 			Client.field10924 = arg2;
-			Client.field10926 = 1;
-			Client.field10925 = 0;
+			Client.crossMode = 1;
+			Client.crossCycle = 0;
 			ClientMessage var36 = ClientMessage.createMessage(ClientProt.APCOORDT, Client.gameConnection.randomOut);
 			var36.buf.p2_alt2(var10.x + var4);
 			var36.buf.p4_alt1(Client.field6707);
@@ -2315,8 +2315,8 @@ public class MiniMenu {
 		if (Client.targetModeActive) {
 			Client.method9403();
 		}
-		if (Client.field7285 != null && Client.field10927 == 0) {
-			Client.method4616(Client.field7285);
+		if (Client.selectedArea != null && Client.selectedCycle == 0) {
+			Client.method4616(Client.selectedArea);
 		}
 	}
 

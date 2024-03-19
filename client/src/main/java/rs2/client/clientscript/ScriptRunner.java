@@ -520,7 +520,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("pf.x(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZI)V")
 	public static void method7005(String arg0, String arg1, String arg2, boolean arg3, boolean arg4) {
-		ServerConnection var5 = Client.method640();
+		ServerConnection var5 = Client.getCurrentConnection();
 		if (var5.getStream() == null) {
 			return;
 		}
@@ -9919,7 +9919,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ey.wm(Lyf;I)V")
 	public static final void clientclock(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.currentclock;
+		arg0.field8216[++arg0.field8226 - 1] = Client.loopCycle;
 	}
 
 	@ObfuscatedName("ru.wf(Lyf;S)V")
@@ -12240,7 +12240,7 @@ public final class ScriptRunner {
 			Client.privateChatFilter = PrivateChatFilter.field8527;
 		}
 		Client.tradeChatFilter = arg0.field8216[arg0.field8226 + 2];
-		ServerConnection var1 = Client.method640();
+		ServerConnection var1 = Client.getCurrentConnection();
 		ClientMessage var2 = ClientMessage.createMessage(ClientProt.SET_CHATFILTERSETTINGS, var1.randomOut);
 		var2.buf.p1(Client.publicChatFilter);
 		var2.buf.p1(Client.privateChatFilter.value);
@@ -12262,7 +12262,7 @@ public final class ScriptRunner {
 		if (var2.length() > 80) {
 			var2 = var2.substring(0, 80);
 		}
-		ServerConnection var5 = Client.method640();
+		ServerConnection var5 = Client.getCurrentConnection();
 		ClientMessage var6 = ClientMessage.createMessage(ClientProt.SEND_SNAPSHOT, var5.randomOut);
 		var6.buf.p1(Packet.pjstrlen(var1) + 2 + Packet.pjstrlen(var2));
 		var6.buf.pjstr(var1);
@@ -12355,7 +12355,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("mj.ahs(Lyf;I)V")
 	public static final void chat_setmode(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ServerConnection var2 = Client.method640();
+		ServerConnection var2 = Client.getCurrentConnection();
 		ClientMessage var3 = ClientMessage.createMessage(ClientProt.CHAT_SETMODE, var2.randomOut);
 		var3.buf.p1(var1);
 		var2.queue(var3);
@@ -12479,7 +12479,7 @@ public final class ScriptRunner {
 				var1 = var1.substring(LocalisedText.CHATEFFECT5.forLang(Client.language).length());
 			}
 		}
-		ServerConnection var6 = Client.method640();
+		ServerConnection var6 = Client.getCurrentConnection();
 		ClientMessage var7 = ClientMessage.createMessage(ClientProt.MESSAGE_PUBLIC, var6.randomOut);
 		var7.buf.p1(0);
 		int var8 = var7.buf.pos;
@@ -12498,7 +12498,7 @@ public final class ScriptRunner {
 		if (Client.staffModLevel == 0 && (Client.field10951 && !Client.playerIsQuickChat || Client.loggedInQuickChat)) {
 			return;
 		}
-		ServerConnection var3 = Client.method640();
+		ServerConnection var3 = Client.getCurrentConnection();
 		ClientMessage var4 = ClientMessage.createMessage(ClientProt.MESSAGE_PRIVATE, var3.randomOut);
 		var4.buf.p2(0);
 		int var5 = var4.buf.pos;
@@ -12638,7 +12638,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("jr.aiz(Lyf;I)V")
 	public static final void activechatphrase_send(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		ServerConnection var2 = Client.method640();
+		ServerConnection var2 = Client.getCurrentConnection();
 		ClientMessage var3 = ClientMessage.createMessage(ClientProt.MESSAGE_QUICKCHAT_PUBLIC, var2.randomOut);
 		var3.buf.p1(0);
 		int var4 = var3.buf.pos;
@@ -12652,7 +12652,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("qh.aim(Lyf;B)V")
 	public static final void activechatphrase_sendprivate(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		ServerConnection var2 = Client.method640();
+		ServerConnection var2 = Client.getCurrentConnection();
 		ClientMessage var3 = ClientMessage.createMessage(ClientProt.MESSAGE_QUICKCHAT_PRIVATE, var2.randomOut);
 		var3.buf.p1(0);
 		int var4 = var3.buf.pos;
@@ -13649,7 +13649,7 @@ public final class ScriptRunner {
 			throw new RuntimeException();
 		}
 		Client.field10932 = var4 * 4;
-		Client.field3416 = 6;
+		Client.cameraState = 6;
 		Client.field3538 = -1;
 		Client.field810 = -1;
 	}
@@ -13672,7 +13672,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("cs.ami(Lyf;B)V")
 	public static final void cam_getangle_ya(ClientScriptState arg0) {
-		if (Client.field3416 == 3) {
+		if (Client.cameraState == 3) {
 			arg0.field8216[++arg0.field8226 - 1] = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) >> 3;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = (int) Client.orbitCameraYaw >> 3;
@@ -13733,7 +13733,7 @@ public final class ScriptRunner {
 		}
 		Client.field10892 = (var5 << 9) + 256;
 		Client.field10893 = (var6 << 9) + 256;
-		Client.field3416 = 4;
+		Client.cameraState = 4;
 		Client.field3538 = -1;
 		Client.field810 = -1;
 		Client.field10902 = true;
@@ -13773,7 +13773,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("fo.ang(Lyf;I)V")
 	public static final void cam_modeisfollowplayer(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field3416 == 2 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.cameraState == 2 ? 1 : 0;
 	}
 
 	@ObfuscatedName("sr.ana(Lyf;I)V")
@@ -14292,7 +14292,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ua.apm(Lyf;I)V")
 	public static final void cam2_isenabled(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field3416 == 3 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.cameraState == 3 ? 1 : 0;
 	}
 
 	@ObfuscatedName("ho.apy(Lyf;I)V")
@@ -15489,7 +15489,7 @@ public final class ScriptRunner {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
 			WorldSwitcher.field8754 = true;
-			ServerConnection var1 = Client.method640();
+			ServerConnection var1 = Client.getCurrentConnection();
 			ClientMessage var2 = ClientMessage.createMessage(ClientProt.WORLDLIST_FETCH, var1.randomOut);
 			var2.buf.p4(GWC.field7642);
 			var1.queue(var2);

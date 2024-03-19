@@ -77,7 +77,7 @@ public class WorldSwitcher {
 					if (field8750 == null) {
 						field8750 = Client.inetAddressLookupRequest.method10589(var0.field11703);
 					}
-					int var1 = field8750.field8180;
+					int var1 = field8750.hostpacked;
 					if (var1 == -1) {
 						return;
 					}

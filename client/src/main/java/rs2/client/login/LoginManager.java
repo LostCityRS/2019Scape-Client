@@ -1206,14 +1206,14 @@ public class LoginManager {
 		ChangeLocationRequest.field11242 = new IterableQueue();
 		Client.cameraMoveX = 0;
 		Client.cameraMoveZ = 0;
-		Client.field741 = 0;
-		Client.field2937 = 0;
-		Client.field490 = 0;
+		Client.cameraSrcHeight = 0;
+		Client.cameraMoveAcceleration = 0;
+		Client.cameraMoveSpeed = 0;
 		Client.cameraLookX = 0;
 		Client.cameraLookZ = 0;
 		Client.field1983 = 0;
-		Client.field8576 = 0;
-		Client.field708 = 0;
+		Client.cameraRotateAcceleration = 0;
+		Client.cameraRotateSpeed = 0;
 		if (Client.openedTopInterface != -1) {
 			Component.method7602(Client.openedTopInterface);
 		}

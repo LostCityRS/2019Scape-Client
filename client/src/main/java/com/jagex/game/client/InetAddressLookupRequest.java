@@ -79,12 +79,12 @@ public class InetAddressLookupRequest implements Runnable {
 			}
 			int var7;
 			try {
-				byte[] var6 = InetAddress.getByName(var4.field8181).getAddress();
+				byte[] var6 = InetAddress.getByName(var4.host).getAddress();
 				var7 = Ping.method110(var6[0], var6[1], var6[2], var6[3], 1000L);
 			} catch (Throwable var9) {
 				var7 = 1000;
 			}
-			var4.field8180 = var7;
+			var4.hostpacked = var7;
 		}
 	}
 }

@@ -600,7 +600,7 @@ public class ReceivePlayerPositions {
 						var18 = buf.gSmart1or2();
 					}
 					int var19 = buf.gSmart1or2();
-					player.addHitmark(id, var18, var14, var16, Client.currentclock, var19);
+					player.addHitmark(id, var18, var14, var16, Client.loopCycle, var19);
 				}
 			}
 			int numBars = buf.g1_alt3();
@@ -614,7 +614,7 @@ public class ReceivePlayerPositions {
 						int var24 = buf.gSmart1or2();
 						int var25 = buf.g1_alt3();
 						int var26 = var23 > 0 ? buf.g1_alt2() : var25;
-						player.addHeadbar(id, Client.currentclock, var23, var24, var25, var26);
+						player.addHeadbar(id, Client.loopCycle, var23, var24, var25, var26);
 					}
 				}
 			}
@@ -727,21 +727,21 @@ public class ReceivePlayerPositions {
 			player.addMessage(message, 0, 0);
 		}
 		if ((mask & 0x8) != 0) { // force move
-			player.field10423 = buf.g1b_alt2();
-			player.field10425 = buf.g1b();
-			player.field10457 = buf.g1b_alt2();
-			player.field10426 = buf.g1b_alt1();
+			player.forceMoveStartSceneTileX = buf.g1b_alt2();
+			player.forceMoveStartSceneTileZ = buf.g1b();
+			player.forceMoveEndSceneTileX = buf.g1b_alt2();
+			player.forceMoveEndSceneTileZ = buf.g1b_alt1();
 			player.field10419 = buf.g1b_alt1();
 			player.field10428 = buf.g1b();
-			player.field10429 = buf.g2_alt3() + Client.currentclock;
-			player.field10399 = buf.g2_alt1() + Client.currentclock;
+			player.forceMoveEndCycle = buf.g2_alt3() + Client.loopCycle;
+			player.forceMoveStartCycle = buf.g2_alt1() + Client.loopCycle;
 			player.field10431 = buf.g2_alt1();
 			player.routeLength = 1;
 			player.field10396 = 0;
-			player.field10423 += player.routeWaypointX[0];
-			player.field10425 += player.routeWaypointZ[0];
-			player.field10457 += player.routeWaypointX[0];
-			player.field10426 += player.routeWaypointZ[0];
+			player.forceMoveStartSceneTileX += player.routeWaypointX[0];
+			player.forceMoveStartSceneTileZ += player.routeWaypointZ[0];
+			player.forceMoveEndSceneTileX += player.routeWaypointX[0];
+			player.forceMoveEndSceneTileZ += player.routeWaypointZ[0];
 			player.field10419 += player.level;
 			player.field10428 += player.level;
 		}
@@ -757,8 +757,8 @@ public class ReceivePlayerPositions {
 			player.field10435 = buf.g1b_alt3();
 			player.field10436 = buf.g1b_alt2();
 			player.field10437 = (byte) buf.g1_alt1();
-			player.field10446 = Client.currentclock + buf.g2();
-			player.field10464 = Client.currentclock + buf.g2();
+			player.field10446 = Client.loopCycle + buf.g2();
+			player.field10464 = Client.loopCycle + buf.g2();
 		}
 		if ((mask & 0x400) != 0) {
 			player.field12070 = (CommunityPartnerType) SerializableEnums.decode(CommunityPartnerType.method3559(), buf.g1_alt2());

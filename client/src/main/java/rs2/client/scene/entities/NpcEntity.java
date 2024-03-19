@@ -88,7 +88,7 @@ public class NpcEntity extends PathingEntity {
 	@ObfuscatedName("aqc.hq(B)V")
 	public void method19155() {
 		this.field10433 = 255;
-		this.field10438 = Client.currentclock;
+		this.field10438 = Client.loopCycle;
 	}
 
 	@ObfuscatedName("aqc.hf(I)V")
@@ -239,17 +239,17 @@ public class NpcEntity extends PathingEntity {
 		if (var7 != 0 || var8 != 0 || var4.field7355 != 0 || var4.field7358 != 0) {
 			arg1 |= 0x7;
 		}
-		boolean var9 = this.field10437 != 0 && Client.currentclock >= this.field10446 && Client.currentclock < this.field10464;
+		boolean var9 = this.field10437 != 0 && Client.loopCycle >= this.field10446 && Client.loopCycle < this.field10464;
 		if (var9) {
 			arg1 |= 0x80000;
 		}
 		boolean var10 = false;
 		if (this.field10433 != 0) {
 			NPCType var11 = this.npcType.field2735 == null ? this.npcType : this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
-			if (var11 == null || Client.currentclock >= this.field10438 + var11.field2765) {
+			if (var11 == null || Client.loopCycle >= this.field10438 + var11.field2765) {
 				this.field10433 = 0;
 			} else {
-				this.field10433 = 255 - (Client.currentclock - this.field10438) * 255 / var11.field2765;
+				this.field10433 = 255 - (Client.loopCycle - this.field10438) * 255 / var11.field2765;
 				var10 = true;
 			}
 		}
@@ -401,7 +401,7 @@ public class NpcEntity extends PathingEntity {
 		}
 		this.routeLength = 0;
 		this.field10396 = 0;
-		this.field10453 = 0;
+		this.seqTrigger = 0;
 		this.routeWaypointX[0] = arg1;
 		this.routeWaypointZ[0] = arg2;
 		Vector3 var11 = Vector3.method6484(this.method10536().field4298);

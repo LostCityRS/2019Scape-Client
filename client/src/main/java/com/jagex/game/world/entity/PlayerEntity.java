@@ -470,7 +470,7 @@ public class PlayerEntity extends PathingEntity {
 			arg1 |= 0x7;
 		}
 		int var9 = this.field10395.method316();
-		boolean var10 = this.field10437 != 0 && Client.currentclock >= this.field10446 && Client.currentclock < this.field10464;
+		boolean var10 = this.field10437 != 0 && Client.loopCycle >= this.field10446 && Client.loopCycle < this.field10464;
 		if (var10) {
 			arg1 |= 0x80000;
 		}
@@ -563,7 +563,7 @@ public class PlayerEntity extends PathingEntity {
 	public void tele(int x, int z) {
 		this.routeLength = 0;
 		this.field10396 = 0;
-		this.field10453 = 0;
+		this.seqTrigger = 0;
 		this.routeWaypointX[0] = x;
 		this.routeWaypointZ[0] = z;
 		int size = this.size();

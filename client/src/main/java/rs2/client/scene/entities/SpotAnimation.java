@@ -139,10 +139,10 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		ModelParticleEmitter[] var4 = arg1.method1750();
 		ModelParticleEffector[] var5 = arg1.method1765();
 		if ((this.field12612 == null || this.field12612.field7804) && (var4 != null || var5 != null)) {
-			this.field12612 = ParticleSystem.method9962(Client.currentclock, true);
+			this.field12612 = ParticleSystem.method9962(Client.loopCycle, true);
 		}
 		if (this.field12612 != null) {
-			this.field12612.method9936(arg0, (long) Client.currentclock, var4, var5, false);
+			this.field12612.method9936(arg0, (long) Client.loopCycle, var4, var5, false);
 			this.field12612.method9963(this.level, this.field12471, this.field12472, this.field12468, this.field12467);
 		}
 	}

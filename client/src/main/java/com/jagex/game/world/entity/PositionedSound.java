@@ -151,7 +151,7 @@ public class PositionedSound extends Node {
 	public void method17660() {
 		int var1 = this.field11370;
 		if (this.field11348 != null) {
-			LocType var2 = this.field11348.method9477(Client.localPlayerGameState, Client.field10863 == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+			LocType var2 = this.field11348.method9477(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 			if (var2 == null) {
 				this.field11370 = -1;
 				this.field11357 = 0;

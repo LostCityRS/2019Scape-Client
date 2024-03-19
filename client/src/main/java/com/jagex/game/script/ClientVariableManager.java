@@ -218,7 +218,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 		if (this.field10257 == null || this.field10258 >= this.field10257.length) {
 			return;
 		}
-		ServerConnection var4 = Client.method640();
+		ServerConnection var4 = Client.getCurrentConnection();
 		if (var4.writePos > 1200) {
 			return;
 		}

@@ -124,7 +124,7 @@ public class ServerConnection {
 
 	@ObfuscatedName("ax.k(I)V")
 	public void refreshNetStats() {
-		if (Client.currentclock % 50 == 0) {
+		if (Client.loopCycle % 50 == 0) {
 			this.outBytesPerSecond = this.totalBytesSent;
 			this.totalBytesSent = 0;
 			this.inBytesPerSecond = this.readPos;
