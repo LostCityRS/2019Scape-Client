@@ -372,7 +372,7 @@ public class WorldMap {
 		if (var5 == null) {
 			return 0;
 		}
-		int var6 = var5.texture;
+		int var6 = var5.material;
 		if (var6 >= 0 && arg1.get(var6).highDetail) {
 			var6 = -1;
 		}
