@@ -41,10 +41,10 @@ public class PlayerGroup {
 	public final ArrayList banned;
 
 	@ObfuscatedName("gq.r")
-	public boolean field1910;
+	public boolean hasUid;
 
 	@ObfuscatedName("gq.v")
-	public boolean field1911;
+	public boolean hasDisplayName;
 
 	@ObfuscatedName("gq.o")
 	public int ownerSlot = -1;
@@ -52,44 +52,44 @@ public class PlayerGroup {
 	@ObfuscatedName("gq.s")
 	public int field1913;
 
-	public PlayerGroup(long arg0, Packet arg1, boolean arg2, PlayerGroupResourceProvider arg3) {
-		this.hashcode = arg0;
-		int var6 = arg1.g1();
+	public PlayerGroup(long hashcode, Packet buf, boolean arg2, PlayerGroupResourceProvider groupResourceProvider) {
+		this.hashcode = hashcode;
+		int var6 = buf.g1();
 		if (var6 <= 0 || var6 > 1) {
 			throw new IllegalStateException("");
 		}
-		int var7 = arg1.g1();
-		this.membersOnly = (var7 & 0x1) != 0;
-		this.field1910 = (var7 & 0x2) != 0;
-		this.field1911 = (var7 & 0x4) != 0;
-		this.field1913 = arg1.g4s();
-		this.creationTime = arg1.g8();
-		this.displayName = arg1.gjstr();
-		this.maxSize = arg1.g2s();
-		arg1.g4s();
-		arg1.g8();
-		int var8 = arg1.g2();
-		this.members = new ArrayList(var8);
-		for (int var9 = 0; var9 < var8; var9++) {
-			this.members.add(new PlayerGroupMember(arg1, this.field1910, this.field1911, arg3));
+		int info = buf.g1();
+		this.membersOnly = (info & 0x1) != 0;
+		this.hasUid = (info & 0x2) != 0;
+		this.hasDisplayName = (info & 0x4) != 0;
+		this.field1913 = buf.g4s();
+		this.creationTime = buf.g8();
+		this.displayName = buf.gjstr();
+		this.maxSize = buf.g2s();
+		buf.g4s();
+		buf.g8();
+		int membersCount = buf.g2();
+		this.members = new ArrayList(membersCount);
+		for (int index = 0; index < membersCount; index++) {
+			this.members.add(new PlayerGroupMember(buf, this.hasUid, this.hasDisplayName, groupResourceProvider));
 		}
-		int var10 = arg1.g2();
-		this.banned = new ArrayList(var10);
-		for (int var11 = 0; var11 < var10; var11++) {
-			this.banned.add(new PlayerGroupBanned(arg1, this.field1910, this.field1911));
+		int bannedCount = buf.g2();
+		this.banned = new ArrayList(bannedCount);
+		for (int index = 0; index < bannedCount; index++) {
+			this.banned.add(new PlayerGroupBanned(buf, this.hasUid, this.hasDisplayName));
 		}
-		this.vars = new VarContainerSparse(arg3.getVarPlayerGroupTypeList());
-		int var12 = arg1.g2();
-		for (int var13 = 0; var13 < var12; var13++) {
-			VarValue var14 = arg3.getVarPlayerGroupTypeList().decodeVarValue(arg1);
+		this.vars = new VarContainerSparse(groupResourceProvider.getVarPlayerGroupTypeList());
+		int varsCount = buf.g2();
+		for (int index = 0; index < varsCount; index++) {
+			VarValue var14 = groupResourceProvider.getVarPlayerGroupTypeList().decodeVarValue(buf);
 			this.vars.setVarObject(var14.var, var14.value);
 		}
 		if (!arg2) {
-			arg1.g2();
-			arg1.g2();
-			arg1.g2();
-			arg1.g2();
-			arg1.g2();
+			buf.g2();
+			buf.g2();
+			buf.g2();
+			buf.g2();
+			buf.g2();
 		}
 		this.setOwnerSlot();
 	}
@@ -177,8 +177,8 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.d(II)Lgy;")
-	public PlayerGroupMember getMember(int arg0) {
-		return arg0 == -1 ? null : (PlayerGroupMember) this.members.get(arg0);
+	public PlayerGroupMember getMember(int index) {
+		return index == -1 ? null : (PlayerGroupMember) this.members.get(index);
 	}
 
 	@ObfuscatedName("gq.c(I)Ljava/lang/String;")
@@ -192,8 +192,8 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.v(Lgy;B)V")
-	public void addMember(PlayerGroupMember arg0) {
-		this.members.add(arg0);
+	public void addMember(PlayerGroupMember member) {
+		this.members.add(member);
 		this.setOwnerSlot();
 	}
 
@@ -204,8 +204,8 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.s(Lga;S)V")
-	public void addBanned(PlayerGroupBanned index) {
-		this.banned.add(index);
+	public void addBanned(PlayerGroupBanned banned) {
+		this.banned.add(banned);
 	}
 
 	@ObfuscatedName("gq.y(II)V")
@@ -233,9 +233,9 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.h(IZS)V")
-	public void setMemberReady(int index, boolean arg1) {
+	public void setMemberReady(int index, boolean loading) {
 		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
-		member.setStatus(arg1 ? PlayerGroupMemberStatus.NOT_READY : PlayerGroupMemberStatus.TELEPORTED);
+		member.setStatus(loading ? PlayerGroupMemberStatus.NOT_READY : PlayerGroupMemberStatus.TELEPORTED);
 	}
 
 	@ObfuscatedName("gq.a(IIB)V")

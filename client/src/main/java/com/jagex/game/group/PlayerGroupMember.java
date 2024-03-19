@@ -13,7 +13,7 @@ import java.util.Iterator;
 public class PlayerGroupMember {
 
 	@ObfuscatedName("gy.m")
-	public final long field1924;
+	public final long groupUid;
 
 	@ObfuscatedName("gy.k")
 	public final PlayerStat[] stats;
@@ -45,37 +45,37 @@ public class PlayerGroupMember {
 	@ObfuscatedName("gy.r")
 	public VarContainerSparse variables;
 
-	public PlayerGroupMember(Packet buf, boolean arg1, boolean arg2, PlayerGroupResourceProvider arg3) {
-		if (arg1) {
-			this.field1924 = buf.g8();
+	public PlayerGroupMember(Packet buf, boolean hasUid, boolean hasDisplayName, PlayerGroupResourceProvider groupResourceProvider) {
+		if (hasUid) {
+			this.groupUid = buf.g8();
 		} else {
-			this.field1924 = -1L;
+			this.groupUid = -1L;
 		}
-		if (arg2) {
+		if (hasDisplayName) {
 			this.displayName = buf.fastgstr();
 		}
-		int var5 = buf.g1();
-		this.members = (var5 & 0x1) != 0;
-		this.online = (var5 & 0x2) != 0;
-		this.stats = new PlayerStat[arg3.getSkillDefaults().getSkillCount()];
+		int info = buf.g1();
+		this.members = (info & 0x1) != 0;
+		this.online = (info & 0x2) != 0;
+		this.stats = new PlayerStat[groupResourceProvider.getSkillDefaults().getSkillCount()];
 		int var6 = buf.g1();
 		if (var6 > this.stats.length) {
 			throw new IllegalStateException("");
 		}
-		for (int var7 = 0; var7 < this.stats.length; var7++) {
-			PlayerStat var8 = this.stats[var7] = new PlayerStat(arg3.getSkillDefaults().getSkill(var7), true);
-			if (var7 < var6) {
-				var8.setXP(buf.g4s());
+		for (int index = 0; index < this.stats.length; index++) {
+			PlayerStat stat = this.stats[index] = new PlayerStat(groupResourceProvider.getSkillDefaults().getSkill(index), true);
+			if (index < var6) {
+				stat.setXP(buf.g4s());
 			} else {
-				var8.setXP(0);
+				stat.setXP(0);
 			}
-			var8.setLevel(var8.getBaseLevel());
+			stat.setLevel(stat.getBaseLevel());
 		}
-		int var9 = buf.g2();
-		this.vars = new VarContainerSparse(arg3.getVarPlayerTypeList());
-		for (int var10 = 0; var10 < var9; var10++) {
-			VarValue var11 = arg3.getVarPlayerTypeList().decodeVarValue(buf);
-			this.vars.setVarObject(var11.var, var11.value);
+		int varsCount = buf.g2();
+		this.vars = new VarContainerSparse(groupResourceProvider.getVarPlayerTypeList());
+		for (int index = 0; index < varsCount; index++) {
+			VarValue varValue = groupResourceProvider.getVarPlayerTypeList().decodeVarValue(buf);
+			this.vars.setVarObject(varValue.var, varValue.value);
 		}
 		this.nodeId = buf.g2();
 		if (this.nodeId == 65535) {
@@ -142,8 +142,8 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.c(I)J")
-	public long method3499() {
-		return this.field1924;
+	public long uid() {
+		return this.groupUid;
 	}
 
 	@ObfuscatedName("gy.r(I)Z")
