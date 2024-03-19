@@ -318,7 +318,7 @@ public class TwitchHardwarePlatform {
 
 	@ObfuscatedName("nk.q(Ljava/lang/String;I)I")
 	public static int method6056(String arg0) {
-		return field11755.SetStreamTitle(arg0, Client.modegame.field8341);
+		return field11755.SetStreamTitle(arg0, Client.modegame.title);
 	}
 
 	@ObfuscatedName("xk.x(I)I")
@@ -626,7 +626,7 @@ public class TwitchHardwarePlatform {
 	@ObfuscatedName("fn.aq(I)I")
 	public static int method3065() {
 		field4501 = null;
-		return field11755.RequestLiveStreams(Client.modegame.field8341);
+		return field11755.RequestLiveStreams(Client.modegame.title);
 	}
 
 	@ObfuscatedName("ny.ax(B)I")

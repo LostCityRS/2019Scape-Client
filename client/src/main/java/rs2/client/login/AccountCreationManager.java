@@ -28,7 +28,7 @@ public class AccountCreationManager {
 	public static int field580 = 0;
 
 	@ObfuscatedName("u.f")
-	public static CreateConnectStage field517;
+	public static CreateConnectStage createStage;
 
 	@ObfuscatedName("y.w")
 	public static ConnectReply field584;
@@ -54,14 +54,14 @@ public class AccountCreationManager {
 
 	@ObfuscatedName("dk.e(I)V")
 	public static void method2009() {
-		if (Client.state == 4 && (!LoginManager.isInProgress() && !method9610())) {
+		if (Client.state == 4 && (!LoginManager.isInProgress() && !isInProgress())) {
 			Client.setState(12);
 		}
 	}
 
 	@ObfuscatedName("amf.n(B)V")
 	public static void method18476() {
-		field517 = CreateConnectStage.field515;
+		createStage = CreateConnectStage.field515;
 		field584 = ConnectReply.field8368;
 		field4406 = CreateAccountReply.field8390;
 		field872 = CheckEmailReply.field8397;
@@ -71,8 +71,8 @@ public class AccountCreationManager {
 	}
 
 	@ObfuscatedName("wa.m(I)Z")
-	public static boolean method9610() {
-		return field517 != null;
+	public static boolean isInProgress() {
+		return createStage != null;
 	}
 
 	@ObfuscatedName("w.k(Ljava/lang/String;B)V")
@@ -209,7 +209,7 @@ public class AccountCreationManager {
 
 	@ObfuscatedName("ack.b(I)V")
 	public static void method14952() {
-		if (field517 == null) {
+		if (createStage == null) {
 			return;
 		}
 		try {
@@ -223,7 +223,7 @@ public class AccountCreationManager {
 			if (field583 > var0) {
 				method17428();
 			}
-			if (field517 == CreateConnectStage.field515) {
+			if (createStage == CreateConnectStage.field515) {
 				Client.lobbyConnection.setStream(Stream.createStream(WorldSwitcher.currentLobby.getSocket(), 40000), WorldSwitcher.currentLobby.host);
 				Client.lobbyConnection.clearWriteQueue();
 				ClientMessage var1 = ClientMessage.createMessage();
@@ -234,15 +234,15 @@ public class AccountCreationManager {
 				var1.buf.p2(1);
 				field581 = method4942(var1);
 				int var3 = var1.buf.pos;
-				var1.buf.pjstr(Client.field10789);
+				var1.buf.pjstr(Client.gamepack);
 				var1.buf.p2(Client.playerIsAffiliate);
-				var1.buf.p4(Client.field10776);
-				var1.buf.p4(Client.field10775);
+				var1.buf.p4(Client.userFlow2);
+				var1.buf.p4(Client.userFlow1);
 				var1.buf.pjstr(Client.field579);
 				var1.buf.p1(Client.language.getId());
 				var1.buf.p1(Client.modegame.field8339);
 				GameShell.pushUID192(var1.buf);
-				String var4 = Client.field10781;
+				String var4 = Client.createAdditionalInfo;
 				var1.buf.p1(var4 == null ? 0 : 1);
 				if (var4 != null) {
 					var1.buf.pjstr(var4);
@@ -253,9 +253,9 @@ public class AccountCreationManager {
 				var1.buf.psize2(var1.buf.pos - var2);
 				Client.lobbyConnection.queue(var1);
 				Client.lobbyConnection.flush();
-				field517 = CreateConnectStage.field516;
+				createStage = CreateConnectStage.field516;
 			}
-			if (field517 == CreateConnectStage.field516) {
+			if (createStage == CreateConnectStage.field516) {
 				if (Client.lobbyConnection.getStream() == null) {
 					method17428();
 					return;
@@ -287,7 +287,7 @@ public class AccountCreationManager {
 					Client.lobbyConnection.closeGracefully();
 				}
 				Client.lobbyConnection.packetType = null;
-				field517 = null;
+				createStage = null;
 			}
 		} catch (IOException var8) {
 			method17428();
@@ -322,9 +322,9 @@ public class AccountCreationManager {
 			WorldSwitcher.currentLobby.configureSocketType();
 			field583 = 0;
 			field580++;
-			field517 = CreateConnectStage.field515;
+			createStage = CreateConnectStage.field515;
 		} else {
-			field517 = null;
+			createStage = null;
 			field584 = ConnectReply.field8363;
 			Client.setState(4);
 		}

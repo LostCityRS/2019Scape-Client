@@ -44,7 +44,7 @@ public class PlayerEntity extends PathingEntity {
 	public String field12051;
 
 	@ObfuscatedName("aqk.cx")
-	public byte field12052 = 0;
+	public byte index = 0;
 
 	@ObfuscatedName("aqk.cw")
 	public PlayerModel model;
@@ -118,7 +118,7 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.hq(Lalw;BI)V")
 	public void method19121(Packet arg0, byte arg1) {
-		this.field12052 = arg1;
+		this.index = arg1;
 		int var3 = -1;
 		this.field12060 = 0;
 		int[] var4 = new int[Client.wearposDefaults.field7766.length];
@@ -185,7 +185,7 @@ public class PlayerEntity extends PathingEntity {
 		}
 		int var22 = this.model.field7892;
 		int[] var23 = this.model.field7894;
-		this.model.method10113(this.method16509(), var4, var5, var16, var19, this.field12052 == 1, var3);
+		this.model.method10113(this.method16509(), var4, var5, var16, var19, this.index == 1, var3);
 		if (var3 != var22) {
 			Vector3 var24 = Vector3.method6484(this.method10536().field4298);
 			var24.field4308 = (this.routeWaypointX[0] << 9) + (this.method16546() << 8);

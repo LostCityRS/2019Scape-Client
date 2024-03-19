@@ -27,7 +27,7 @@ public class JavConfigParameter {
 	public static final JavConfigParameter COUNTRY = new JavConfigParameter("20", "20");
 
 	@ObfuscatedName("oh.u")
-	public static final JavConfigParameter field4114 = new JavConfigParameter("38", "38");
+	public static final JavConfigParameter WORLD_HOST = new JavConfigParameter("38", "38");
 
 	@ObfuscatedName("oh.z")
 	public static final JavConfigParameter field4128 = new JavConfigParameter("47", "47");
@@ -84,7 +84,7 @@ public class JavConfigParameter {
 	public static final JavConfigParameter field4132 = new JavConfigParameter("10", "10");
 
 	@ObfuscatedName("oh.ae")
-	public static final JavConfigParameter field4133 = new JavConfigParameter("55", "55");
+	public static final JavConfigParameter FROM_BILLING = new JavConfigParameter("55", "55");
 
 	@ObfuscatedName("oh.ag")
 	public static final JavConfigParameter USER_FLOW1 = new JavConfigParameter("25", "25");
@@ -111,10 +111,10 @@ public class JavConfigParameter {
 	public static final JavConfigParameter field4131 = new JavConfigParameter("11", "11");
 
 	@ObfuscatedName("oh.ad")
-	public static final JavConfigParameter field4142 = new JavConfigParameter("6", "6");
+	public static final JavConfigParameter GAMEPACK = new JavConfigParameter("6", "6");
 
 	@ObfuscatedName("oh.am")
-	public static final JavConfigParameter field4118 = new JavConfigParameter("21", "21");
+	public static final JavConfigParameter CREATE_EMAIL = new JavConfigParameter("21", "21");
 
 	@ObfuscatedName("oh.au")
 	public static final JavConfigParameter CLIENTTYPE = new JavConfigParameter("17", "17");
@@ -123,7 +123,7 @@ public class JavConfigParameter {
 	public static final JavConfigParameter field4157 = new JavConfigParameter("1", "1");
 
 	@ObfuscatedName("oh.ap")
-	public static final JavConfigParameter field4146 = new JavConfigParameter("37", "37");
+	public static final JavConfigParameter CLIENT_STATS = new JavConfigParameter("37", "37");
 
 	@ObfuscatedName("oh.aq")
 	public static final JavConfigParameter CONTENT_HOST = new JavConfigParameter("23", "23");
@@ -153,7 +153,7 @@ public class JavConfigParameter {
 	public static final JavConfigParameter field4155 = new JavConfigParameter("7", "7");
 
 	@ObfuscatedName("oh.af")
-	public static final JavConfigParameter field4156 = new JavConfigParameter("28", "28");
+	public static final JavConfigParameter PNG_HOST = new JavConfigParameter("28", "28");
 
 	@ObfuscatedName("oh.ak")
 	public static final JavConfigParameter field4145 = new JavConfigParameter("39", "39");
@@ -162,23 +162,23 @@ public class JavConfigParameter {
 	public static final JavConfigParameter field4158 = new JavConfigParameter("3", "3");
 
 	@ObfuscatedName("oh.bf")
-	public static final JavConfigParameter field4159 = new JavConfigParameter("22", "22");
+	public static final JavConfigParameter AUTH_HOST = new JavConfigParameter("22", "22");
 
 	@ObfuscatedName("oh.bl")
-	public static final JavConfigParameter field4160 = new JavConfigParameter("18", "18");
+	public static final JavConfigParameter PAYMENTS_URL = new JavConfigParameter("18", "18");
 
 	@ObfuscatedName("oh.bk")
-	public static final JavConfigParameter field4111 = new JavConfigParameter("48", "48");
+	public static final JavConfigParameter GOOGLE_ADSENSE = new JavConfigParameter("48", "48");
 
 	@ObfuscatedName("oh.bh")
-	public final String field4162;
+	public final String key;
 
 	@ObfuscatedName("aci.e(B)[Loh;")
-	public static JavConfigParameter[] method14975() {
-		return new JavConfigParameter[] {HTTP_CONTENT_PORT, field4159, OWNER, HTTP_CONTENT_ID, LOBBY_PORT2, ADVERT, field4132, CONTENT_ID, LOBBY_HOST, field4128, CONTENT_PORT2, field4131, field4145, SITE_SETTINGS_MEMBER, CONTENT_MODE, JAVASCRIPT, field4119, field4130, SITE_SETTINGS, AFFILIATE_ID, WORLD_ID, HTTP_CONTENT_HOST, CREATE_ADDITIONAL_INFO, field4111, field4122, field4142, field4134, field4158, field4146, field4110, USER_FLOW1, MODE_GAME, CONTENT_HOST, HAVE_CHROME, field4160, field4133, CLIENTTYPE, MODE_WHERE, COUNTRY, WORLD_PORT, RUN_INFRAME, field4118, field4155, field4157, USER_FLOW2, LANG, LOBBY_PORT, WORLD_PORT2, field4129, LOADING_BAR_CONFIG, LOBBY_ID, field4114, CONTENT_PORT, field4156, HTTP_CONTENT_PORT2};
+	public static JavConfigParameter[] values() {
+		return new JavConfigParameter[] {HTTP_CONTENT_PORT, AUTH_HOST, OWNER, HTTP_CONTENT_ID, LOBBY_PORT2, ADVERT, field4132, CONTENT_ID, LOBBY_HOST, field4128, CONTENT_PORT2, field4131, field4145, SITE_SETTINGS_MEMBER, CONTENT_MODE, JAVASCRIPT, field4119, field4130, SITE_SETTINGS, AFFILIATE_ID, WORLD_ID, HTTP_CONTENT_HOST, CREATE_ADDITIONAL_INFO, GOOGLE_ADSENSE, field4122, GAMEPACK, field4134, field4158, CLIENT_STATS, field4110, USER_FLOW1, MODE_GAME, CONTENT_HOST, HAVE_CHROME, PAYMENTS_URL, FROM_BILLING, CLIENTTYPE, MODE_WHERE, COUNTRY, WORLD_PORT, RUN_INFRAME, CREATE_EMAIL, field4155, field4157, USER_FLOW2, LANG, LOBBY_PORT, WORLD_PORT2, field4129, LOADING_BAR_CONFIG, LOBBY_ID, WORLD_HOST, CONTENT_PORT, PNG_HOST, HTTP_CONTENT_PORT2};
 	}
 
-	public JavConfigParameter(String arg0, String arg1) {
-		this.field4162 = arg1;
+	public JavConfigParameter(String arg0, String key) {
+		this.key = key;
 	}
 }

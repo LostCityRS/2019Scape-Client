@@ -60,13 +60,13 @@ public class TotpPreferences {
 	}
 
 	@ObfuscatedName("h.m(J)Z")
-	public boolean method589(long arg0) {
+	public boolean containsKey(long arg0) {
 		return this.field600.containsKey(arg0);
 	}
 
 	@ObfuscatedName("h.k(J)I")
-	public int method577(long arg0) {
-		return (Integer) this.field600.get(arg0);
+	public int getValue(long key) {
+		return (Integer) this.field600.get(key);
 	}
 
 	@ObfuscatedName("ane.f(I)Lh;")

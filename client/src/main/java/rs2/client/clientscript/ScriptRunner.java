@@ -10284,7 +10284,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ach.ym(Lyf;B)V")
 	public static final void frombilling(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10774 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.fromBilling ? 1 : 0;
 	}
 
 	@ObfuscatedName("ank.yf(Lyf;B)V")
@@ -10357,7 +10357,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ve.zn(Lyf;S)V")
 	public static final void map_isowner(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		if (Client.field10250 != null && Client.field10250.equalsIgnoreCase(var1)) {
+		if (Client.owner != null && Client.owner.equalsIgnoreCase(var1)) {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
@@ -14405,7 +14405,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("xn.apt(Lyf;I)V")
 	public static final void login_reply(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = LoginManager.reply;
+		arg0.field8216[++arg0.field8226 - 1] = LoginManager.enterGameReply;
 	}
 
 	@ObfuscatedName("yu.apa(Lyf;I)V")
@@ -14461,7 +14461,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("et.aqc(Lyf;I)V")
 	public static final void lobby_entergamereply(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = LoginManager.reply;
+		arg0.field8216[++arg0.field8226 - 1] = LoginManager.enterGameReply;
 	}
 
 	@ObfuscatedName("vo.aqz(Lyf;I)V")
@@ -14614,8 +14614,8 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("wu.ary(Lyf;B)V")
 	public static final void userflowflags(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10776;
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10775;
+		arg0.field8216[++arg0.field8226 - 1] = Client.userFlow2;
+		arg0.field8216[++arg0.field8226 - 1] = Client.userFlow1;
 	}
 
 	@ObfuscatedName("er.aro(Lyf;B)V")
@@ -16062,9 +16062,9 @@ public final class ScriptRunner {
 	@ObfuscatedName("aih.ayi(Lyf;I)V")
 	public static final void video_advert_play(ClientScriptState arg0) {
 		boolean var1 = false;
-		if (Client.field11079) {
+		if (Client.javascriptEnabled) {
 			try {
-				Object var2 = JavascriptFunction.ADVERT_PLAY.method6097(new Object[] { Client.lobbyDOB, Client.localPlayerEntity.field12052 == 1, arg0.field8216[--arg0.field8226] });
+				Object var2 = JavascriptFunction.ADVERT_PLAY.method6097(new Object[] { Client.lobbyDOB, Client.localPlayerEntity.index == 1, arg0.field8216[--arg0.field8226] });
 				if (var2 != null) {
 					var1 = (Boolean) var2;
 				}
@@ -16076,14 +16076,14 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("jp.ayj(Lyf;I)V")
 	public static final void video_advert_force_remove(ClientScriptState arg0) {
-		if (Client.field11079) {
+		if (Client.javascriptEnabled) {
 			JavascriptFunction.ADVERT_FORCE_REMOVE.method6090();
 		}
 	}
 
 	@ObfuscatedName("sb.ayw(Lyf;I)V")
 	public static final void video_advert_allow_skip(ClientScriptState arg0) {
-		if (Client.field11079) {
+		if (Client.javascriptEnabled) {
 			JavascriptFunction.ADVERT_ALLOW_SKIP.method6090();
 		}
 	}
@@ -16091,7 +16091,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ul.aze(Lyf;I)V")
 	public static final void video_advert_has_finished(ClientScriptState arg0) {
 		boolean var1 = true;
-		if (Client.field11079) {
+		if (Client.javascriptEnabled) {
 			try {
 				Object var2 = JavascriptFunction.ADVERT_FINISHED.method6088();
 				if (var2 != null) {
@@ -16722,10 +16722,10 @@ public final class ScriptRunner {
 	public static final void preload_percent(ClientScriptState arg0) {
 		int var1 = 0;
 		int var2 = 0;
-		for (int var3 = 0; var3 < Client.field6888.length; var3++) {
-			if (Client.field6888[var3] != null && Client.field6888[var3].method16837()) {
-				var1 += Client.field6888[var3].method16826();
-				var2 += Client.field6888[var3].method16828();
+		for (int var3 = 0; var3 < Client.js5Providers.length; var3++) {
+			if (Client.js5Providers[var3] != null && Client.js5Providers[var3].method16837()) {
+				var1 += Client.js5Providers[var3].method16826();
+				var2 += Client.js5Providers[var3].method16828();
 			}
 		}
 		arg0.field8216[++arg0.field8226 - 1] = var1 == 0 ? 0 : var2 * 100 / var1;
@@ -16735,10 +16735,10 @@ public final class ScriptRunner {
 	public static final void preload_progress(ClientScriptState arg0) {
 		int var1 = 0;
 		int var2 = 0;
-		for (int var3 = 0; var3 < Client.field6888.length; var3++) {
-			if (Client.field6888[var3] != null && Client.field6888[var3].method16837()) {
-				var1 += Client.field6888[var3].method16826();
-				var2 += Client.field6888[var3].method16828();
+		for (int var3 = 0; var3 < Client.js5Providers.length; var3++) {
+			if (Client.js5Providers[var3] != null && Client.js5Providers[var3].method16837()) {
+				var1 += Client.js5Providers[var3].method16826();
+				var2 += Client.js5Providers[var3].method16828();
 			}
 		}
 		arg0.field8216[++arg0.field8226 - 1] = var1 == 0 ? 0 : var2 * 100 / var1;

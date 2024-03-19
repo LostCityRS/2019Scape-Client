@@ -161,7 +161,7 @@ public final class Client extends GameShell {
 	public static final boolean ALLOW_COMMANDS_ANYWHERE = true;
 
 	@ObfuscatedName("client.bw")
-	public static Namespace field10782;
+	public static Namespace namespace;
 
 	@ObfuscatedName("nv.bo")
 	public static ModeWhat modewhat;
@@ -176,13 +176,13 @@ public final class Client extends GameShell {
 	public static Language language;
 
 	@ObfuscatedName("client.bg")
-	public static boolean field11079 = false;
+	public static boolean javascriptEnabled = false;
 
 	@ObfuscatedName("client.ba")
-	public static boolean field10770 = false;
+	public static boolean showAdvertisement = false;
 
 	@ObfuscatedName("client.bp")
-	public static String field10990 = null;
+	public static String siteSettings = null;
 
 	@ObfuscatedName("ys.bj")
 	public static int currentPlayerCountry;
@@ -197,13 +197,13 @@ public final class Client extends GameShell {
 	public static int field10773 = 0;
 
 	@ObfuscatedName("client.ce")
-	public static boolean field10774 = false;
+	public static boolean fromBilling = false;
 
 	@ObfuscatedName("client.cu")
-	public static int field10775 = 0;
+	public static int userFlow1 = 0;
 
 	@ObfuscatedName("client.ci")
-	public static int field10776 = 0;
+	public static int userFlow2 = 0;
 
 	@ObfuscatedName("client.cn")
 	public static int field10777 = 0;
@@ -221,22 +221,22 @@ public final class Client extends GameShell {
 	public static boolean field10812 = false;
 
 	@ObfuscatedName("client.cw")
-	public static String field10781 = null;
+	public static String createAdditionalInfo = null;
 
 	@ObfuscatedName("client.ct")
-	public static String field11073 = null;
+	public static String loadingBarConfig = null;
 
 	@ObfuscatedName("client.cf")
-	public static String field10947 = null;
+	public static String pngHost = null;
 
 	@ObfuscatedName("client.co")
 	public static boolean field10784 = false;
 
 	@ObfuscatedName("client.cr")
-	public static boolean field10785 = false;
+	public static boolean haveChrome = false;
 
 	@ObfuscatedName("client.cm")
-	public static boolean field10786 = false;
+	public static boolean runInFrame = false;
 
 	@ObfuscatedName("client.cq")
 	public static int field10787 = 0;
@@ -245,7 +245,7 @@ public final class Client extends GameShell {
 	public static int field10788 = -1;
 
 	@ObfuscatedName("client.cb")
-	public static String field10789 = null;
+	public static String gamepack = null;
 
 	@ObfuscatedName("client.cs")
 	public static String createEmail = null;
@@ -320,7 +320,7 @@ public final class Client extends GameShell {
 	public static boolean field10848 = false;
 
 	@ObfuscatedName("afv.dl")
-	public static String field10250;
+	public static String owner;
 
 	@ObfuscatedName("client.dp")
 	public static int rebootTimer = 0;
@@ -434,7 +434,7 @@ public final class Client extends GameShell {
 	public static long field10353;
 
 	@ObfuscatedName("tg.fj")
-	public static Js5NetResourceProvider[] field6888;
+	public static Js5NetResourceProvider[] js5Providers;
 
 	@ObfuscatedName("vs.fd")
 	public static Js5 animsJs5;
@@ -536,7 +536,7 @@ public final class Client extends GameShell {
 	public static Js5 worldmapAreaDataJs5;
 
 	@ObfuscatedName("aal.gg")
-	public static Map field8540;
+	public static Map js5Archives;
 
 	@ObfuscatedName("client.gr")
 	public static int field10829 = 0;
@@ -743,7 +743,7 @@ public final class Client extends GameShell {
 	public static final ServerConnection[] connections = new ServerConnection[] {gameConnection, lobbyConnection};
 
 	@ObfuscatedName("client.jl")
-	public static int field10842 = 0;
+	public static int currentIncrementVerifyId = 0;
 
 	@ObfuscatedName("client.jn")
 	public static boolean field11082 = false;
@@ -758,10 +758,10 @@ public final class Client extends GameShell {
 	public static PingRequest field594;
 
 	@ObfuscatedName("client.jw")
-	public static SecureRandomProvider field10967 = new SecureRandomProvider();
+	public static SecureRandomProvider secureRandomProvider = new SecureRandomProvider();
 
 	@ObfuscatedName("agf.jr")
-	public static SecureRandom field10311;
+	public static SecureRandom secureRandom;
 
 	@ObfuscatedName("client.js")
 	public static World world = new World(false);
@@ -1067,16 +1067,16 @@ public final class Client extends GameShell {
 	public static boolean field10960 = true;
 
 	@ObfuscatedName("client.nt")
-	public static int field10939 = 32;
+	public static int frameXMargin = 32;
 
 	@ObfuscatedName("client.nn")
-	public static int field10940 = 16;
+	public static int frameYMargin = 16;
 
 	@ObfuscatedName("client.nk")
-	public static int field10941 = 765;
+	public static int frameWidth = 765;
 
 	@ObfuscatedName("client.nq")
-	public static int field10942 = 553;
+	public static int frameHeight = 553;
 
 	@ObfuscatedName("client.nu")
 	public static PlayerEntity[] field10944 = new PlayerEntity[2048];
@@ -1733,7 +1733,7 @@ public final class Client extends GameShell {
 	public static Map field11093;
 
 	@ObfuscatedName("fk.wv")
-	public static TotpPreferences field1895;
+	public static TotpPreferences authPreferences;
 
 	@ObfuscatedName("client.wg")
 	public static TelemetryGrid telemetry;
@@ -1837,34 +1837,34 @@ public final class Client extends GameShell {
 			return;
 		}
 		String var1 = "";
-		JavConfigParameter[] var2 = JavConfigParameter.method14975();
-		for (int var3 = 0; var3 < var2.length; var3++) {
-			JavConfigParameter var4 = var2[var3];
-			String var5 = GameShell.field11885.getParameter(var4.field4162);
-			if (var5 != null) {
-				switch(Integer.parseInt(var4.field4162)) {
+		JavConfigParameter[] javConfigParameters = JavConfigParameter.values();
+		for (int index = 0; index < javConfigParameters.length; index++) {
+			JavConfigParameter parameter = javConfigParameters[index];
+			String value = GameShell.field11885.getParameter(parameter.key);
+			if (value != null) {
+				switch(Integer.parseInt(parameter.key)) {
 					case 1:
-						field579 = var5;
+						field579 = value;
 						break;
 					case 2:
-						if (var5.equalsIgnoreCase(TextUtil.TRUE)) {
-							field10770 = true;
+						if (value.equalsIgnoreCase(TextUtil.TRUE)) {
+							showAdvertisement = true;
 						} else {
-							field10770 = false;
+							showAdvertisement = false;
 						}
 						break;
 					case 3:
-						field10778 = Integer.parseInt(var5);
+						field10778 = Integer.parseInt(value);
 						break;
 					case 4:
-						field8327 = var5;
+						field8327 = value;
 						break;
 					case 5:
-						if (var5.equalsIgnoreCase(TextUtil.TRUE)) {
+						if (value.equalsIgnoreCase(TextUtil.TRUE)) {
 						}
 						break;
 					case 6:
-						field10789 = var5;
+						gamepack = value;
 						break;
 					case 7:
 					default:
@@ -1874,10 +1874,10 @@ public final class Client extends GameShell {
 						if (WorldSwitcher.world == null) {
 							WorldSwitcher.world = new ServerAddress();
 						}
-						WorldSwitcher.world.port = Integer.parseInt(var5);
+						WorldSwitcher.world.port = Integer.parseInt(value);
 						break;
 					case 9:
-						field10776 = Integer.parseInt(var5);
+						userFlow2 = Integer.parseInt(value);
 					case 10:
 					case 13:
 					case 18:
@@ -1887,62 +1887,62 @@ public final class Client extends GameShell {
 					case 48:
 						break;
 					case 11:
-						field10788 = Integer.parseInt(var5);
+						field10788 = Integer.parseInt(value);
 						break;
 					case 12:
 						if (WorldSwitcher.content == null) {
 							WorldSwitcher.content = new ServerAddress();
 						}
-						WorldSwitcher.content.port = Integer.parseInt(var5);
+						WorldSwitcher.content.port = Integer.parseInt(value);
 						break;
 					case 14:
 						if (WorldSwitcher.httpContent == null) {
 							WorldSwitcher.httpContent = new ServerAddress();
 						}
-						WorldSwitcher.httpContent.host = var5;
+						WorldSwitcher.httpContent.host = value;
 						break;
 					case 15:
-						if (var5.equalsIgnoreCase(TextUtil.TRUE)) {
+						if (value.equalsIgnoreCase(TextUtil.TRUE)) {
 							field10784 = true;
 						} else {
 							field10784 = false;
 						}
 						break;
 					case 16:
-						field10250 = var5;
+						owner = value;
 						break;
 					case 17:
-						clientType = Integer.parseInt(var5);
+						clientType = Integer.parseInt(value);
 						break;
 					case 19:
 						if (WorldSwitcher.world == null) {
 							WorldSwitcher.world = new ServerAddress();
 						}
-						WorldSwitcher.world.port2 = Integer.parseInt(var5);
+						WorldSwitcher.world.port2 = Integer.parseInt(value);
 						break;
 					case 20:
-						currentPlayerCountry = Integer.parseInt(var5);
+						currentPlayerCountry = Integer.parseInt(value);
 						break;
 					case 21:
-						createEmail = var5;
+						createEmail = value;
 						break;
 					case 23:
 						if (WorldSwitcher.content == null) {
 							WorldSwitcher.content = new ServerAddress();
 						}
-						WorldSwitcher.content.host = var5;
+						WorldSwitcher.content.host = value;
 						break;
 					case 24:
-						playerIsAffiliate = Integer.parseInt(var5);
+						playerIsAffiliate = Integer.parseInt(value);
 						break;
 					case 25:
-						field10775 = Integer.parseInt(var5);
+						userFlow1 = Integer.parseInt(value);
 						break;
 					case 26:
-						language = Language.getLanguage(Integer.parseInt(var5));
+						language = Language.getLanguage(Integer.parseInt(value));
 						break;
 					case 27:
-						modewhere = (ModeWhere) SerializableEnums.decode(ModeWhere.values(), Integer.parseInt(var5));
+						modewhere = (ModeWhere) SerializableEnums.decode(ModeWhere.values(), Integer.parseInt(value));
 						if (modewhere == ModeWhere.LOCAL) {
 							modewhere = ModeWhere.WTWIP;
 						} else if (!modewhere.hasMode(ModeWhereProperty.OFFICE) && modewhere != ModeWhere.LIVE) {
@@ -1950,105 +1950,105 @@ public final class Client extends GameShell {
 						}
 						break;
 					case 28:
-						field10947 = var5;
+						pngHost = value;
 						break;
 					case 29:
 						if (WorldSwitcher.currentLobby == null) {
 							WorldSwitcher.currentLobby = new ServerAddress();
 						}
-						WorldSwitcher.currentLobby.port = Integer.parseInt(var5);
+						WorldSwitcher.currentLobby.port = Integer.parseInt(value);
 						break;
 					case 30:
 						if (WorldSwitcher.content == null) {
 							WorldSwitcher.content = new ServerAddress();
 						}
-						WorldSwitcher.content.port2 = Integer.parseInt(var5);
+						WorldSwitcher.content.port2 = Integer.parseInt(value);
 						break;
 					case 31:
-						if (var5.equalsIgnoreCase(TextUtil.TRUE)) {
-							field11079 = true;
+						if (value.equalsIgnoreCase(TextUtil.TRUE)) {
+							javascriptEnabled = true;
 						} else {
-							field11079 = false;
+							javascriptEnabled = false;
 						}
 						break;
 					case 32:
 						if (WorldSwitcher.content == null) {
 							WorldSwitcher.content = new ServerAddress();
 						}
-						WorldSwitcher.content.node = Integer.parseInt(var5);
+						WorldSwitcher.content.node = Integer.parseInt(value);
 						break;
 					case 33:
-						if (var5.equalsIgnoreCase(TextUtil.TRUE)) {
-							field10786 = true;
+						if (value.equalsIgnoreCase(TextUtil.TRUE)) {
+							runInFrame = true;
 						} else {
-							field10786 = false;
+							runInFrame = false;
 						}
 						break;
 					case 34:
-						field10773 = Integer.parseInt(var5);
+						field10773 = Integer.parseInt(value);
 						if (field10773 < 0 || field10773 >= field10824.length) {
 							field10773 = 0;
 						}
 						break;
 					case 35:
-						field10990 = var5;
+						siteSettings = value;
 						break;
 					case 36:
-						modewhat = ModeWhat.method8146(Integer.parseInt(var5));
+						modewhat = ModeWhat.method8146(Integer.parseInt(value));
 						if (modewhat != ModeWhat.WIP && modewhat != ModeWhat.RC && modewhat != ModeWhat.BUILDLIVE && modewhat != ModeWhat.LIVE) {
 							modewhat = ModeWhat.LIVE;
 						}
 						break;
 					case 39:
-						field10777 = Integer.parseInt(var5);
+						field10777 = Integer.parseInt(value);
 						break;
 					case 40:
-						field11073 = var5;
+						loadingBarConfig = value;
 						break;
 					case 41:
 						if (WorldSwitcher.currentLobby == null) {
 							WorldSwitcher.currentLobby = new ServerAddress();
 						}
-						WorldSwitcher.currentLobby.port2 = Integer.parseInt(var5);
+						WorldSwitcher.currentLobby.port2 = Integer.parseInt(value);
 						break;
 					case 42:
-						if (var5.equalsIgnoreCase(TextUtil.TRUE)) {
-							field10785 = true;
+						if (value.equalsIgnoreCase(TextUtil.TRUE)) {
+							haveChrome = true;
 						} else {
-							field10785 = false;
+							haveChrome = false;
 						}
 						break;
 					case 43:
 						if (WorldSwitcher.currentLobby == null) {
 							WorldSwitcher.currentLobby = new ServerAddress();
 						}
-						WorldSwitcher.currentLobby.host = var5;
+						WorldSwitcher.currentLobby.host = value;
 						break;
 					case 44:
 						if (WorldSwitcher.httpContent == null) {
 							WorldSwitcher.httpContent = new ServerAddress();
 						}
-						WorldSwitcher.httpContent.port = Integer.parseInt(var5);
+						WorldSwitcher.httpContent.port = Integer.parseInt(value);
 						break;
 					case 45:
 						if (WorldSwitcher.httpContent == null) {
 							WorldSwitcher.httpContent = new ServerAddress();
 						}
-						WorldSwitcher.httpContent.node = Integer.parseInt(var5);
+						WorldSwitcher.httpContent.node = Integer.parseInt(value);
 						break;
 					case 46:
-						modegame = ModeGame.method7704(Integer.parseInt(var5));
+						modegame = ModeGame.method7704(Integer.parseInt(value));
 						if (modegame == ModeGame.RUNESCAPE) {
-							field10782 = Namespace.RUNESCAPE;
+							namespace = Namespace.RUNESCAPE;
 						} else {
-							field10782 = Namespace.LEGACY;
+							namespace = Namespace.LEGACY;
 						}
 						break;
 					case 47:
-						var1 = var5;
+						var1 = value;
 						break;
 					case 49:
-						if (var5.equals(TextUtil.TRUE)) {
+						if (value.equals(TextUtil.TRUE)) {
 							isUnder13 = true;
 						} else {
 							isUnder13 = false;
@@ -2058,16 +2058,16 @@ public final class Client extends GameShell {
 						if (WorldSwitcher.world == null) {
 							WorldSwitcher.world = new ServerAddress();
 						}
-						WorldSwitcher.world.node = Integer.parseInt(var5);
+						WorldSwitcher.world.node = Integer.parseInt(value);
 						break;
 					case 51:
-						field10781 = var5;
-						if (field10781.length() > 100) {
-							field10781 = null;
+						createAdditionalInfo = value;
+						if (createAdditionalInfo.length() > 100) {
+							createAdditionalInfo = null;
 						}
 						break;
 					case 52:
-						if (var5.equalsIgnoreCase(TextUtil.TRUE)) {
+						if (value.equalsIgnoreCase(TextUtil.TRUE)) {
 							playerIsMembers = true;
 						}
 						break;
@@ -2075,27 +2075,27 @@ public final class Client extends GameShell {
 						if (WorldSwitcher.httpContent == null) {
 							WorldSwitcher.httpContent = new ServerAddress();
 						}
-						WorldSwitcher.httpContent.port2 = Integer.parseInt(var5);
+						WorldSwitcher.httpContent.port2 = Integer.parseInt(value);
 						break;
 					case 54:
 						if (WorldSwitcher.currentLobby == null) {
 							WorldSwitcher.currentLobby = new ServerAddress();
 						}
-						WorldSwitcher.currentLobby.node = Integer.parseInt(var5);
+						WorldSwitcher.currentLobby.node = Integer.parseInt(value);
 						break;
 					case 55:
-						if (var5.equals(TextUtil.TRUE)) {
-							field10774 = true;
+						if (value.equals(TextUtil.TRUE)) {
+							fromBilling = true;
 						} else {
-							field10774 = false;
+							fromBilling = false;
 						}
 				}
 			}
 		}
-		if (field10990 == null) {
-			field10990 = "";
+		if (siteSettings == null) {
+			siteSettings = "";
 		}
-		GameShell3$FrameParameters var6 = new GameShell3$FrameParameters(field10941, field10942, field10939, field10940, modegame.field8341);
+		GameShell3$FrameParameters var6 = new GameShell3$FrameParameters(frameWidth, frameHeight, frameXMargin, frameYMargin, modegame.title);
 		field8301 = this;
 		String var7 = modewhat.field8478;
 		int var8 = modewhat.field8477 + 32;
@@ -2103,7 +2103,7 @@ public final class Client extends GameShell {
 			var7 = var7 + "_" + var1;
 			var8 = 0;
 		}
-		this.startApplet(var6, modegame.field8333, var7, var8, Js5Archive.getRequiredArrayLength(), 910, 1, field10786);
+		this.startApplet(var6, modegame.field8333, var7, var8, Js5Archive.getRequiredArrayLength(), 910, 1, runInFrame);
 	}
 
 	@ObfuscatedName("client.al(I)V")
@@ -2296,11 +2296,11 @@ public final class Client extends GameShell {
 			method3006();
 		} else if (state == 14 || state == 19) {
 			LoginManager.method3048();
-			if (LoginManager.reply != -3 && LoginManager.reply != 2 && LoginManager.reply != 15) {
+			if (LoginManager.enterGameReply != -3 && LoginManager.enterGameReply != 2 && LoginManager.enterGameReply != 15) {
 				if (state == 19) {
 					LoginManager.field444 = LoginManager.disallowResult;
 					LoginManager.field479 = LoginManager.disallowTrigger;
-					LoginManager.field469 = LoginManager.reply;
+					LoginManager.field469 = LoginManager.enterGameReply;
 					if (WorldSwitcher.field488) {
 						WorldSwitcher.method9401(WorldSwitcher.field8753.node, WorldSwitcher.field8753.host, WorldSwitcher.field8753.port, WorldSwitcher.field8753.port2);
 						gameConnection.closeForcefully();
@@ -2524,10 +2524,10 @@ public final class Client extends GameShell {
 				var1 = var1 + hardwarePlatform.cpuInfoRam;
 			}
 			var1 = var1 + " ";
-			if (field10789 == null) {
+			if (gamepack == null) {
 				var1 = var1 + TextUtil.COMMA;
 			} else {
-				var1 = var1 + field10789;
+				var1 = var1 + gamepack;
 			}
 		} catch (Throwable var4) {
 		}
@@ -2689,13 +2689,13 @@ public final class Client extends GameShell {
 			}
 			if (field10827 == 1) {
 				field7571 = Stream.createStream(field9774, 131072);
-				int var1 = field10789.length() + 10;
+				int var1 = gamepack.length() + 10;
 				Packet var2 = new Packet(var1 + 2);
 				var2.p1(LoginProt.INIT_JS5REMOTE_CONNECTION.id);
 				var2.p1(var1);
 				var2.p4(910);
 				var2.p4(1);
-				var2.pjstr(field10789);
+				var2.pjstr(gamepack);
 				var2.p1(language.serialID);
 				field7571.write(var2.data, 0, var1 + 2);
 				field10827++;
@@ -2821,23 +2821,23 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("ko.ez(Labd;ZIZZI)Lpy;")
-	public static Js5 createJs5(Js5Archive arg0, boolean arg1, int arg2, boolean arg3, boolean arg4) {
-		if (field6888 == null) {
-			field6888 = new Js5NetResourceProvider[Js5Archive.getRequiredArrayLength()];
-			field8540 = new java.util.HashMap();
+	public static Js5 createJs5(Js5Archive archive, boolean arg1, int arg2, boolean arg3, boolean arg4) {
+		if (js5Providers == null) {
+			js5Providers = new Js5NetResourceProvider[Js5Archive.getRequiredArrayLength()];
+			js5Archives = new java.util.HashMap();
 		}
-		DiskStore var5 = null;
-		int var6 = arg0.getArchiveId();
+		DiskStore diskStore = null;
+		int archiveId = archive.getArchiveId();
 		if (cacheDat != null && !field7880) {
-			var5 = new DiskStore(var6, cacheDat, GameShell.cacheIndex[var6], var6 == Js5Archive.DLLS.getArchiveId() ? 8000000 : 2500000);
+			diskStore = new DiskStore(archiveId, cacheDat, GameShell.cacheIndex[archiveId], archiveId == Js5Archive.DLLS.getArchiveId() ? 8000000 : 2500000);
 		}
-		field6888[var6] = field1833.method6835(var6, var5, field1749, arg0.method14918());
+		js5Providers[archiveId] = field1833.method6835(archiveId, diskStore, field1749, archive.method14918());
 		if (arg4) {
-			field6888[var6].method16829();
+			js5Providers[archiveId].method16829();
 		}
-		Js5 var7 = new Js5(field6888[var6], arg1, arg2);
-		field8540.put(arg0, var7);
-		return var7;
+		Js5 js5 = new Js5(js5Providers[archiveId], arg1, arg2);
+		js5Archives.put(archive, js5);
+		return js5;
 	}
 
 	@ObfuscatedName("i.ef(I)Lax;")
@@ -3190,9 +3190,9 @@ public final class Client extends GameShell {
 			GameShell.frameHei = 1;
 		}
 		if (arg1 == 1) {
-			GameShell.canvasWid = field10941;
-			leftMargin = (GameShell.frameWid - field10941) / 2;
-			GameShell.canvasHei = field10942;
+			GameShell.canvasWid = frameWidth;
+			leftMargin = (GameShell.frameWid - frameWidth) / 2;
+			GameShell.canvasHei = frameHeight;
 			topMargin = 0;
 		} else {
 			method7263();
@@ -3283,9 +3283,9 @@ public final class Client extends GameShell {
 						GameShell.frameHei = 1;
 					}
 					if (getWindowMode() == 1) {
-						GameShell.canvasWid = field10941;
-						leftMargin = (GameShell.frameWid - field10941) / 2;
-						GameShell.canvasHei = field10942;
+						GameShell.canvasWid = frameWidth;
+						leftMargin = (GameShell.frameWid - frameWidth) / 2;
+						GameShell.canvasHei = frameHeight;
 						topMargin = 0;
 					} else {
 						method7263();
@@ -3496,7 +3496,7 @@ public final class Client extends GameShell {
 		field10906 = 0;
 		field10964.clear();
 		method4046(method14298());
-		field10842 = 0;
+		currentIncrementVerifyId = 0;
 		localPlayerGameState.varps.method9624();
 		field6867 = null;
 		field1890 = null;
@@ -3702,7 +3702,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("client.fy(I)V")
 	public final void method16920() {
-		if (state == 13 && !LoginManager.isInProgress() || state == 15 && LoginManager.reply == 42 || state == 17 && (LoginManager.enterLobbyReply == 49 || LoginManager.enterLobbyReply == 52) || state == 0) {
+		if (state == 13 && !LoginManager.isInProgress() || state == 15 && LoginManager.enterGameReply == 42 || state == 17 && (LoginManager.enterLobbyReply == 49 || LoginManager.enterLobbyReply == 52) || state == 0) {
 			if (rebootTimer > 1) {
 				rebootTimer--;
 				field11027 = field11058;
@@ -3759,7 +3759,7 @@ public final class Client extends GameShell {
 				}
 			}
 		}
-		if ((state == 4 || state == 15 || state == 13 || state == 0) && (!LoginManager.isInProgress() || state == 15 && LoginManager.reply == 42 || state == 17 && (LoginManager.enterLobbyReply == 49 || LoginManager.enterLobbyReply == 52)) && !AccountCreationManager.method9610()) {
+		if ((state == 4 || state == 15 || state == 13 || state == 0) && (!LoginManager.isInProgress() || state == 15 && LoginManager.enterGameReply == 42 || state == 17 && (LoginManager.enterLobbyReply == 49 || LoginManager.enterLobbyReply == 52)) && !AccountCreationManager.isInProgress()) {
 			if (Client.field3416 == 5) {
 				method18478();
 			} else {
@@ -3796,7 +3796,7 @@ public final class Client extends GameShell {
 											if (currentclock % 15000 == 0) {
 												method3095();
 											}
-											if (state == 13 && !LoginManager.isInProgress() || state == 15 && LoginManager.reply == 42 || state == 17 && (LoginManager.enterLobbyReply == 49 || LoginManager.enterLobbyReply == 52) || state == 0) {
+											if (state == 13 && !LoginManager.isInProgress() || state == 15 && LoginManager.enterGameReply == 42 || state == 17 && (LoginManager.enterLobbyReply == 49 || LoginManager.enterLobbyReply == 52) || state == 0) {
 												MiniMenu.method9026();
 											}
 											WorldSwitcher.method2778();
@@ -3818,7 +3818,7 @@ public final class Client extends GameShell {
 													var25.unlink();
 												}
 											}
-											if (state == 13 && !LoginManager.isInProgress() || state == 15 && LoginManager.reply == 42 || state == 17 && (LoginManager.enterLobbyReply == 49 || LoginManager.enterLobbyReply == 52) || state == 0) {
+											if (state == 13 && !LoginManager.isInProgress() || state == 15 && LoginManager.enterGameReply == 42 || state == 17 && (LoginManager.enterLobbyReply == 49 || LoginManager.enterLobbyReply == 52) || state == 0) {
 												if (state != 15 && lobbyConnection.getStream() == null) {
 													logoutReason = LogoutReason.field9135;
 													logout(false);
@@ -8134,7 +8134,7 @@ public final class Client extends GameShell {
 				if (var26.length() == 0) {
 					var26 = var25;
 				}
-				if (!field11079 || GameShell.osName.startsWith("mac") || !Browser.method2898(var25, 1, JavascriptFunction.field4033.method6087())) {
+				if (!javascriptEnabled || GameShell.osName.startsWith("mac") || !Browser.method2898(var25, 1, JavascriptFunction.field4033.method6087())) {
 					Browser.method4607(var26, true, field10784);
 				}
 			} else {
@@ -10212,7 +10212,7 @@ public final class Client extends GameShell {
 				} else {
 					var587[var588].nameUnfiltered = var587[var588].name;
 				}
-				var587[var588].field755 = NamespaceUtil.method15191(var587[var588].nameUnfiltered, field10782);
+				var587[var588].field755 = NamespaceUtil.method15191(var587[var588].nameUnfiltered, namespace);
 				var587[var588].world = in.g2();
 				var587[var588].rank = in.g1b();
 				var587[var588].worldName = in.gjstr();
@@ -10383,7 +10383,7 @@ public final class Client extends GameShell {
 				FriendChatUser var654 = new FriendChatUser();
 				var654.name = var645;
 				var654.nameUnfiltered = var647;
-				var654.field755 = NamespaceUtil.method15191(var654.nameUnfiltered, field10782);
+				var654.field755 = NamespaceUtil.method15191(var654.nameUnfiltered, namespace);
 				var654.world = var648;
 				var654.rank = var649;
 				var654.worldName = var653;
@@ -12370,7 +12370,7 @@ public final class Client extends GameShell {
 										var48 = (Sprite) field11013.get((long) var11.field2188);
 										if (var48 == null && !field11093.containsKey(var11.field2188)) {
 											try {
-												field11093.put(var11.field2188, field7957.method563(new URL(field10947 + "/img/image_" + var11.field2188 + ".png?a=" + MonotonicTime.get())));
+												field11093.put(var11.field2188, field7957.method563(new URL(pngHost + "/img/image_" + var11.field2188 + ".png?a=" + MonotonicTime.get())));
 											} catch (MalformedURLException var86) {
 												JagException.report(null, var86);
 											}
@@ -12667,11 +12667,11 @@ public final class Client extends GameShell {
 		int var19 = 0;
 		int var20 = 0;
 		int var21 = 0;
-		for (int var22 = 0; var22 < field6888.length; var22++) {
-			if (field6888[var22] != null && field6888[var22].method16837()) {
-				var19 += field6888[var22].method16826();
-				var20 += field6888[var22].method16827();
-				var21 += field6888[var22].method16828();
+		for (int var22 = 0; var22 < js5Providers.length; var22++) {
+			if (js5Providers[var22] != null && js5Providers[var22].method16837()) {
+				var19 += js5Providers[var22].method16826();
+				var20 += js5Providers[var22].method16827();
+				var21 += js5Providers[var22].method16828();
 			}
 		}
 		long var23 = var19 == 0 ? 0L : (long) var21 * 100L / (long) var19;
@@ -14213,19 +14213,19 @@ public final class Client extends GameShell {
 			ChatHistory.method1006(4, playerIsMembers ? LocalisedText.FRIENDLIST_FULL_MEMBERS.forLang(language) : LocalisedText.FRIENDLIST_FULL.forLang(language));
 			return;
 		}
-		String var2 = NamespaceUtil.method15191(arg0, field10782);
+		String var2 = NamespaceUtil.method15191(arg0, namespace);
 		if (var2 == null) {
 			return;
 		}
 		for (int var3 = 0; var3 < friendsCount; var3++) {
 			Friend var4 = friends[var3];
-			String var5 = NamespaceUtil.method15191(var4.field606, field10782);
+			String var5 = NamespaceUtil.method15191(var4.field606, namespace);
 			if (var5 != null && var5.equals(var2)) {
 				ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.forLang(language));
 				return;
 			}
 			if (var4.field607 != null) {
-				String var6 = NamespaceUtil.method15191(var4.field607, field10782);
+				String var6 = NamespaceUtil.method15191(var4.field607, namespace);
 				if (var6 != null && var6.equals(var2)) {
 					ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.forLang(language));
 					return;
@@ -14234,20 +14234,20 @@ public final class Client extends GameShell {
 		}
 		for (int var7 = 0; var7 < ignoresCount; var7++) {
 			Ignore var8 = ignores[var7];
-			String var9 = NamespaceUtil.method15191(var8.nameUnfiltered, field10782);
+			String var9 = NamespaceUtil.method15191(var8.nameUnfiltered, namespace);
 			if (var9 != null && var9.equals(var2)) {
 				ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.forLang(language) + arg0 + LocalisedText.REMOVEIGNORE2.forLang(language));
 				return;
 			}
 			if (var8.field596 != null) {
-				String var10 = NamespaceUtil.method15191(var8.field596, field10782);
+				String var10 = NamespaceUtil.method15191(var8.field596, namespace);
 				if (var10 != null && var10.equals(var2)) {
 					ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.forLang(language) + arg0 + LocalisedText.REMOVEIGNORE2.forLang(language));
 					return;
 				}
 			}
 		}
-		if (NamespaceUtil.method15191(localPlayerEntity.field12062, field10782).equals(var2)) {
+		if (NamespaceUtil.method15191(localPlayerEntity.field12062, namespace).equals(var2)) {
 			ChatHistory.method1006(4, LocalisedText.FRIENDCANTADDSELF.forLang(language));
 			return;
 		}
@@ -14268,19 +14268,19 @@ public final class Client extends GameShell {
 			ChatHistory.method1006(4, playerIsMembers ? LocalisedText.IGNORELISTFULL_MEMBERS.forLang(language) : LocalisedText.IGNORELISTFULL.forLang(language));
 			return;
 		}
-		String var3 = NamespaceUtil.method15191(arg0, field10782);
+		String var3 = NamespaceUtil.method15191(arg0, namespace);
 		if (var3 == null) {
 			return;
 		}
 		for (int var4 = 0; var4 < ignoresCount; var4++) {
 			Ignore var5 = ignores[var4];
-			String var6 = NamespaceUtil.method15191(var5.nameUnfiltered, field10782);
+			String var6 = NamespaceUtil.method15191(var5.nameUnfiltered, namespace);
 			if (var6 != null && var6.equals(var3)) {
 				ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.forLang(language));
 				return;
 			}
 			if (var5.field596 != null) {
-				String var7 = NamespaceUtil.method15191(var5.field596, field10782);
+				String var7 = NamespaceUtil.method15191(var5.field596, namespace);
 				if (var7 != null && var7.equals(var3)) {
 					ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.forLang(language));
 					return;
@@ -14289,20 +14289,20 @@ public final class Client extends GameShell {
 		}
 		for (int var8 = 0; var8 < friendsCount; var8++) {
 			Friend var9 = friends[var8];
-			String var10 = NamespaceUtil.method15191(var9.field606, field10782);
+			String var10 = NamespaceUtil.method15191(var9.field606, namespace);
 			if (var10 != null && var10.equals(var3)) {
 				ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.forLang(language) + arg0 + LocalisedText.REMOVEFRIEND2.forLang(language));
 				return;
 			}
 			if (var9.field607 != null) {
-				String var11 = NamespaceUtil.method15191(var9.field607, field10782);
+				String var11 = NamespaceUtil.method15191(var9.field607, namespace);
 				if (var11 != null && var11.equals(var3)) {
 					ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.forLang(language) + arg0 + LocalisedText.REMOVEFRIEND2.forLang(language));
 					return;
 				}
 			}
 		}
-		if (NamespaceUtil.method15191(localPlayerEntity.field12062, field10782).equals(var3)) {
+		if (NamespaceUtil.method15191(localPlayerEntity.field12062, namespace).equals(var3)) {
 			ChatHistory.method1006(4, LocalisedText.IGNORECANTADDSELF.forLang(language));
 			return;
 		}
@@ -14319,14 +14319,14 @@ public final class Client extends GameShell {
 		if (arg0 == null) {
 			return;
 		}
-		String var1 = NamespaceUtil.method15191(arg0, field10782);
+		String var1 = NamespaceUtil.method15191(arg0, namespace);
 		if (var1 == null) {
 			return;
 		}
 		for (int var2 = 0; var2 < friendsCount; var2++) {
 			Friend var3 = friends[var2];
 			String var4 = var3.field606;
-			String var5 = NamespaceUtil.method15191(var4, field10782);
+			String var5 = NamespaceUtil.method15191(var4, namespace);
 			if (FriendRelated.method18886(arg0, var1, var4, var5)) {
 				friendsCount--;
 				for (int var6 = var2; var6 < friendsCount; var6++) {
@@ -14348,14 +14348,14 @@ public final class Client extends GameShell {
 		if (arg0 == null) {
 			return;
 		}
-		String var1 = NamespaceUtil.method15191(arg0, field10782);
+		String var1 = NamespaceUtil.method15191(arg0, namespace);
 		if (var1 == null) {
 			return;
 		}
 		for (int var2 = 0; var2 < ignoresCount; var2++) {
 			Ignore var3 = ignores[var2];
 			String var4 = var3.nameUnfiltered;
-			String var5 = NamespaceUtil.method15191(var4, field10782);
+			String var5 = NamespaceUtil.method15191(var4, namespace);
 			if (FriendRelated.method18886(arg0, var1, var4, var5)) {
 				ignoresCount--;
 				for (int var6 = var2; var6 < ignoresCount; var6++) {
@@ -14447,7 +14447,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("zg.ln(S)Z")
 	public static boolean incrementVerifyId() {
-		field10842++;
+		currentIncrementVerifyId++;
 		field11082 = true;
 		return true;
 	}
@@ -14456,7 +14456,7 @@ public final class Client extends GameShell {
 	public static void method15198() {
 		ServerConnection var0 = method640();
 		ClientMessage var1 = ClientMessage.createMessage(ClientProt.TRANSMITVAR_VERIFYID, var0.randomOut);
-		var1.buf.p4(field10842);
+		var1.buf.p4(currentIncrementVerifyId);
 		var0.queue(var1);
 	}
 
@@ -14546,13 +14546,13 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("ke.mg(Ljava/lang/String;B)V")
 	public static void method5135(String arg0) {
-		field10990 = arg0;
+		siteSettings = arg0;
 		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION) {
 			return;
 		}
 		try {
-			String var1 = GameShell.field11885.getParameter(JavConfigParameter.field4122.field4162);
-			String var2 = GameShell.field11885.getParameter(JavConfigParameter.field4132.field4162);
+			String var1 = GameShell.field11885.getParameter(JavConfigParameter.field4122.key);
+			String var2 = GameShell.field11885.getParameter(JavConfigParameter.field4132.key);
 			String var3 = var1 + "settings=" + arg0 + "; version=1; path=/; domain=" + var2;
 			String var4;
 			if (arg0.length() == 0) {
@@ -14571,7 +14571,7 @@ public final class Client extends GameShell {
 			return;
 		}
 		try {
-			String var0 = GameShell.field11885.getParameter(JavConfigParameter.field4132.field4162);
+			String var0 = GameShell.field11885.getParameter(JavConfigParameter.field4132.key);
 			int var1 = (int) (MonotonicTime.get() / 86400000L) - 11745;
 			String var2 = "usrdob=" + var1 + "; version=1; path=/; domain=" + var0;
 			BrowserControl.eval(GameShell.field11885, "document.cookie=\"" + var2 + "\"");
@@ -14601,8 +14601,8 @@ public final class Client extends GameShell {
 			arg0 = "local";
 		}
 		String var3 = "";
-		if (field10990 != null) {
-			var3 = "/p=" + field10990;
+		if (siteSettings != null) {
+			var3 = "/p=" + siteSettings;
 		}
 		String var4 = modegame.field8333 + ".com";
 		return var2 + arg0 + "." + var4 + "/l=" + language.serialID + "/a=" + playerIsAffiliate + var3 + "/";

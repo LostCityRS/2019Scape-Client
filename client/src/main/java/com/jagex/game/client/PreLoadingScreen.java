@@ -56,7 +56,7 @@ public class PreLoadingScreen implements LoadingScreen {
 		if (!this.field2895 && !this.field2891) {
 			this.field2891 = true;
 			try {
-				String[] var2 = StringTools.split(Client.field11073, '|');
+				String[] var2 = StringTools.split(Client.loadingBarConfig, '|');
 				if (var2.length < 3) {
 					this.field2895 = true;
 				} else {

@@ -141,7 +141,7 @@ public class Js5Archive {
 	public static int requiredArrayLength = -1;
 
 	@ObfuscatedName("ge.e(B)[Labd;")
-	public static Js5Archive[] method3566() {
+	public static Js5Archive[] values() {
 		return new Js5Archive[] {ANIMS, BASES, CONFIG, INTERFACES, MAPS, MODELS, SPRITES, BINARY, CLIENTSCRIPTS, FONTMETRICS, VORBIS, CONFIG_LOC, CONFIG_ENUM, CONFIG_NPC, CONFIG_OBJ, CONFIG_SEQ, CONFIG_SPOT, CONFIG_STRUCT, WORLDMAP, QUICKCHAT, QUICKCHAT_GLOBAL, MATERIALS, CONFIG_PARTICLE, DEFAULTS, CONFIG_BILLBOARD, DLLS, SHADERS, LOADING_SPRITES, LOADING_SCREENS, LOADING_SPRITES_RAW, CUTSCENES, AUDIOSTREAMS, WORLDMAPAREADATA, WORLDMAPLABELS, MODELSRT7, ANIMSRT7, DBTABLEINDEX, TEXTURES_DXT, TEXTURES_PNG, TEXTURES_PNG_MIPPED, TEXTURES_ETC, ANIMS_KEYFRAMES};
 	}
 
@@ -163,7 +163,7 @@ public class Js5Archive {
 	@ObfuscatedName("jk.k(I)I")
 	public static int getRequiredArrayLength() {
 		if (requiredArrayLength == -1) {
-			Js5Archive[] var0 = method3566();
+			Js5Archive[] var0 = values();
 			for (int var1 = 0; var1 < var0.length; var1++) {
 				Js5Archive var2 = var0[var1];
 				if (var2.archiveId > requiredArrayLength) {

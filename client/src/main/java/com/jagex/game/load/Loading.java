@@ -270,9 +270,9 @@ public class Loading {
 		if (field3419 == LoadingStage.field2911) {
 			boolean var1 = loadingScreensJs5.fetchAll();
 			boolean var2 = Client.defaultsJs5.fetchAll();
-			int var3 = Client.field6888[Js5Archive.LOADING_SCREENS.getArchiveId()].method16823();
-			int var4 = var3 + Client.field6888[field2941 ? Js5Archive.LOADING_SPRITES_RAW.getArchiveId() : Js5Archive.LOADING_SPRITES.getArchiveId()].method16823();
-			int var5 = var4 + Client.field6888[Js5Archive.FONTMETRICS.getArchiveId()].method16823();
+			int var3 = Client.js5Providers[Js5Archive.LOADING_SCREENS.getArchiveId()].method16823();
+			int var4 = var3 + Client.js5Providers[field2941 ? Js5Archive.LOADING_SPRITES_RAW.getArchiveId() : Js5Archive.LOADING_SPRITES.getArchiveId()].method16823();
+			int var5 = var4 + Client.js5Providers[Js5Archive.FONTMETRICS.getArchiveId()].method16823();
 			int var6 = var5 + (var2 ? 100 : Client.defaultsJs5.getPercentageComplete());
 			int var7 = var6 + (var1 ? 100 : loadingScreensJs5.getPercentageComplete());
 			if (var7 != 500) {
@@ -354,9 +354,9 @@ public class Loading {
 		if (field3419 == LoadingStage.GET_JS5_INDEXES) {
 			int var14 = 0;
 			int var15 = 0;
-			for (int var16 = 0; var16 < Client.field6888.length; var16++) {
-				if (Client.field6888[var16] != null) {
-					var14 += Client.field6888[var16].method16823();
+			for (int var16 = 0; var16 < Client.js5Providers.length; var16++) {
+				if (Client.js5Providers[var16] != null) {
+					var14 += Client.js5Providers[var16].method16823();
 					var15++;
 				}
 			}
@@ -397,8 +397,8 @@ public class Loading {
 			PlayerModel.field10766 = Client.graphicsDefaults.field7714;
 			PlayerModel.field9259 = Client.graphicsDefaults.field7734;
 			if (Client.graphicsDefaults.field7739 != -1 && Client.graphicsDefaults.field7740 != -1) {
-				Client.field10941 = Client.graphicsDefaults.field7739;
-				Client.field10942 = Client.graphicsDefaults.field7740;
+				Client.frameWidth = Client.graphicsDefaults.field7739;
+				Client.frameHeight = Client.graphicsDefaults.field7740;
 			}
 			Client.wearposDefaults = new WearposDefaults(Client.defaultsJs5);
 			Client.skillDefaults = new SkillDefaults(Client.defaultsJs5);
@@ -478,7 +478,7 @@ public class Loading {
 		if (field3419 == LoadingStage.SETUP_VARC_SYSTEM) {
 			Client.field7228 = new ClientVariableManager(Client.varBasicTypeList);
 			method9212();
-			Client.field1895 = TotpPreferences.method18618();
+			Client.authPreferences = TotpPreferences.method18618();
 			Client.mapsJs5.discardNames(false, true);
 			Client.spritesJs5.discardNames(true, true);
 			Client.fontmetricsJs5.discardNames(true, true);
@@ -516,9 +516,9 @@ public class Loading {
 			loadingScreensJs5 = null;
 			field2841 = null;
 			field2939 = null;
-			Client.field8540.remove(Js5Archive.LOADING_SCREENS);
-			Client.field8540.remove(Js5Archive.LOADING_SPRITES);
-			Client.field8540.remove(Js5Archive.LOADING_SPRITES_RAW);
+			Client.js5Archives.remove(Js5Archive.LOADING_SCREENS);
+			Client.js5Archives.remove(Js5Archive.LOADING_SPRITES);
+			Client.js5Archives.remove(Js5Archive.LOADING_SPRITES_RAW);
 			MainLoadingScreen.method271();
 			Client.isSafeMode = Client.preferences.unknown6.getValue() == 1;
 			Client.preferences.method18157(Client.preferences.unknown6, 1);

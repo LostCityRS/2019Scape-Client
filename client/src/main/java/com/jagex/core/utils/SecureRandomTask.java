@@ -9,13 +9,13 @@ import java.util.concurrent.Callable;
 public class SecureRandomTask implements Callable {
 
 	@ObfuscatedName("qu.e(I)Ljava/security/SecureRandom;")
-	public static SecureRandom method7327() {
-		SecureRandom var0 = new SecureRandom();
-		var0.nextInt();
-		return var0;
+	public static SecureRandom createSecureRandom() {
+		SecureRandom secureRandom = new SecureRandom();
+		secureRandom.nextInt();
+		return secureRandom;
 	}
 
 	public Object call() {
-		return method7327();
+		return createSecureRandom();
 	}
 }

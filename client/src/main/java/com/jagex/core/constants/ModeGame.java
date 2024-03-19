@@ -27,14 +27,14 @@ public class ModeGame {
 	public final String field8333;
 
 	@ObfuscatedName("zd.u")
-	public final String field8341;
+	public final String title;
 
 	@ObfuscatedName("zd.z")
 	public final int field8339;
 
 	public ModeGame(String arg0, String arg1, int arg2, Namespace arg3) {
 		this.field8333 = arg0;
-		this.field8341 = arg1;
+		this.title = arg1;
 		this.field8339 = arg2;
 	}
 

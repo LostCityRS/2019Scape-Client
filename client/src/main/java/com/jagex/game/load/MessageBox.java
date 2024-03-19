@@ -144,8 +144,8 @@ public class MessageBox {
 			if (var13 < field592) {
 				var13 = field592;
 			}
-			int var14 = field709.method5382(var12, Client.field10941) + field711;
-			int var15 = field715.method5375(var13, Client.field10942) + field621;
+			int var14 = field709.method5382(var12, Client.frameWidth) + field711;
+			int var15 = field715.method5375(var13, Client.frameHeight) + field621;
 			arg2.createSprite(field4963, false).method1449(var14 + field714.getWidth(), var15 + field714.getHeight(), var12 - field714.getWidth() * 2, var13 - field714.getHeight() * 2, 1, -1, 0);
 			arg2.createSprite(field714, true).method1439(var14, var15);
 			field714.method2601();

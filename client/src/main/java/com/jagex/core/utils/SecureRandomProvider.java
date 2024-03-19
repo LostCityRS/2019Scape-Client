@@ -11,23 +11,23 @@ import java.util.concurrent.Future;
 public class SecureRandomProvider {
 
 	@ObfuscatedName("al.e")
-	public ExecutorService field639 = Executors.newSingleThreadExecutor();
+	public ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
 
 	@ObfuscatedName("al.n")
-	public Future field638 = this.field639.submit(new SecureRandomTask());
+	public Future secureRandomFuture = this.singleThreadExecutor.submit(new SecureRandomTask());
 
 	@ObfuscatedName("al.e(I)V")
-	public void method710() {
-		this.field639.shutdown();
-		this.field639 = null;
+	public void stop() {
+		this.singleThreadExecutor.shutdown();
+		this.singleThreadExecutor = null;
 	}
 
 	@ObfuscatedName("al.n(I)Ljava/security/SecureRandom;")
-	public SecureRandom method709() {
+	public SecureRandom getSecureRandom() {
 		try {
-			return (SecureRandom) this.field638.get();
+			return (SecureRandom) this.secureRandomFuture.get();
 		} catch (Exception var2) {
-			return SecureRandomTask.method7327();
+			return SecureRandomTask.createSecureRandom();
 		}
 	}
 }
