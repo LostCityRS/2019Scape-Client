@@ -8,25 +8,25 @@ import deob.ObfuscatedName;
 public class VertexDeclarationElementComponent {
 
 	@ObfuscatedName("lj.e")
-	public static final VertexDeclarationElementComponent field3310 = new VertexDeclarationElementComponent(4, 0, 3, DataType.FLOAT_32);
+	public static final VertexDeclarationElementComponent VERTEX = new VertexDeclarationElementComponent(4, 0, 3, DataType.FLOAT_32);
 
 	@ObfuscatedName("lj.n")
-	public static final VertexDeclarationElementComponent field3301 = new VertexDeclarationElementComponent(11, 1, 3, DataType.FLOAT_32);
+	public static final VertexDeclarationElementComponent NORMAL = new VertexDeclarationElementComponent(11, 1, 3, DataType.FLOAT_32);
 
 	@ObfuscatedName("lj.m")
-	public static final VertexDeclarationElementComponent field3311 = new VertexDeclarationElementComponent(2, 2, 4, DataType.UNSIGNED_INT_8);
+	public static final VertexDeclarationElementComponent COLOR = new VertexDeclarationElementComponent(2, 2, 4, DataType.UNSIGNED_INT_8);
 
 	@ObfuscatedName("lj.k")
-	public static final VertexDeclarationElementComponent field3303 = new VertexDeclarationElementComponent(7, 3, 1, DataType.FLOAT_32);
+	public static final VertexDeclarationElementComponent TEX_COORD_1 = new VertexDeclarationElementComponent(7, 3, 1, DataType.FLOAT_32);
 
 	@ObfuscatedName("lj.f")
-	public static final VertexDeclarationElementComponent field3300 = new VertexDeclarationElementComponent(5, 4, 2, DataType.FLOAT_32);
+	public static final VertexDeclarationElementComponent TEX_COORD_2 = new VertexDeclarationElementComponent(5, 4, 2, DataType.FLOAT_32);
 
 	@ObfuscatedName("lj.w")
-	public static final VertexDeclarationElementComponent field3305 = new VertexDeclarationElementComponent(3, 5, 3, DataType.FLOAT_32);
+	public static final VertexDeclarationElementComponent TEX_COORD_3 = new VertexDeclarationElementComponent(3, 5, 3, DataType.FLOAT_32);
 
 	@ObfuscatedName("lj.l")
-	public static final VertexDeclarationElementComponent field3306 = new VertexDeclarationElementComponent(9, 6, 4, DataType.FLOAT_32);
+	public static final VertexDeclarationElementComponent TEX_COORD_4 = new VertexDeclarationElementComponent(9, 6, 4, DataType.FLOAT_32);
 
 	@ObfuscatedName("lj.u")
 	public static final VertexDeclarationElementComponent field3307 = new VertexDeclarationElementComponent(10, 7, 4, DataType.FLOAT_32);
@@ -53,7 +53,7 @@ public class VertexDeclarationElementComponent {
 	public final int field3316;
 
 	@ObfuscatedName("lj.y")
-	public final int field3313;
+	public final int size;
 
 	@ObfuscatedName("lj.q")
 	public final int field3317;
@@ -66,7 +66,7 @@ public class VertexDeclarationElementComponent {
 		this.field3316 = arg1;
 		this.field3317 = arg2;
 		this.field3318 = arg3;
-		this.field3313 = this.field3318.field1652 * this.field3317;
+		this.size = this.field3318.field1652 * this.field3317;
 		if (this.field3316 >= 16) {
 			throw new RuntimeException();
 		}
@@ -76,19 +76,19 @@ public class VertexDeclarationElementComponent {
 	public static VertexDeclarationElementComponent method5692(int arg0) {
 		switch(arg0) {
 			case 0:
-				return field3310;
+				return VERTEX;
 			case 1:
-				return field3301;
+				return NORMAL;
 			case 2:
-				return field3311;
+				return COLOR;
 			case 3:
-				return field3303;
+				return TEX_COORD_1;
 			case 4:
-				return field3300;
+				return TEX_COORD_2;
 			case 5:
-				return field3305;
+				return TEX_COORD_3;
 			case 6:
-				return field3306;
+				return TEX_COORD_4;
 			default:
 				return null;
 		}

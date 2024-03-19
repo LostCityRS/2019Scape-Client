@@ -191,7 +191,7 @@ public abstract class Renderer {
 	public final void method2178(Canvas arg0, int arg1, int arg2) {
 		if (!this.field1613.containsKey(arg0)) {
 			method6020(arg0);
-			this.method2138(arg0, this.method2144(arg0, arg1, arg2));
+			this.method2138(arg0, this.createSurface(arg0, arg1, arg2));
 		}
 	}
 
@@ -237,7 +237,7 @@ public abstract class Renderer {
 		if (var4 == null) {
 			throw new RuntimeException("");
 		}
-		var4.method15453(arg1, arg2);
+		var4.onResize(arg1, arg2);
 	}
 
 	@ObfuscatedName("dh.as(Lafq;B)V")
@@ -360,7 +360,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.ee(FFFI)V")
-	public void method2243(float arg0, float arg1, float arg2) {
+	public void setBloom(float arg0, float arg1, float arg2) {
 		this.setBloom(arg0, arg1, arg2, 0.0F, 1.0F, 1.0F);
 	}
 
@@ -509,7 +509,7 @@ public abstract class Renderer {
 	public abstract boolean method2141();
 
 	@ObfuscatedName("dh.ad(Ljava/awt/Canvas;II)Lafy;")
-	public abstract Surface method2144(Canvas arg0, int arg1, int arg2);
+	public abstract Surface createSurface(Canvas arg0, int arg1, int arg2);
 
 	@ObfuscatedName("dh.am()Lafq;")
 	public abstract Framebuffer createFramebuffer();

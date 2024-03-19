@@ -1245,7 +1245,7 @@ public class LoginManager {
 				Client.stockmarketSlots[var5][var6] = new StockmarketSlot();
 			}
 		}
-		Client.world.method7816().method10019();
+		Client.world.method7816().resetFade();
 		Client.field10902 = true;
 		LocType.clientpalette = NPCType.clientpalette = ObjType.clientpalette = new short[256];
 		Client.field4868 = LocalisedText.WALKHERE.forLang(Client.language);

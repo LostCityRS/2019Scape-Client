@@ -9,7 +9,7 @@ public interface BaseTexture {
 	void method5823();
 
 	@ObfuscatedName("mq.m()V")
-	void method1010();
+	void delete();
 
 	@ObfuscatedName("mq.ay(Llt;)V")
 	void method5824(GpuTextureRelated arg0);

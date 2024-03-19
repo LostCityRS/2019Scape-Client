@@ -10,7 +10,7 @@ public interface Direct3DGraphicsDeletable extends GraphicsDeletable {
 	void method6215();
 
 	@ObfuscatedName("od.m()V")
-	void method1010();
+	void delete();
 
 	@ObfuscatedName("od.z()J")
 	long method6216();

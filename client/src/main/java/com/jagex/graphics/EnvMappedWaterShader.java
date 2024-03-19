@@ -122,20 +122,20 @@ public class EnvMappedWaterShader extends WaterShader {
 		if (!this.field12122.method5409()) {
 			return false;
 		}
-		this.field12121 = this.field10587.method4157("NormalSampler");
-		this.field12123 = this.field10587.method4157("EnvMapSampler");
-		this.field12125 = this.field10587.method4157("WVPMatrix");
-		this.field12126 = this.field10587.method4157("TexCoordMatrix");
-		this.field12141 = this.field10587.method4157("EyePosAndTime");
-		this.field12142 = this.field10587.method4157("SunDirectionAndExponent");
-		this.field12133 = this.field10587.method4157("SunColourAndWaveExponent");
-		this.field12135 = this.field10587.method4157("WaveIntensityAndBreakWaterDepthAndOffset");
-		this.field12137 = this.field10587.method4157("HeightFogPlane");
-		this.field12139 = this.field10587.method4157("HeightFogColour");
-		this.field12151 = this.field10587.method4157("DistanceFogPlane");
-		this.field12149 = this.field10587.method4157("DistanceFogColour");
-		this.field12128 = this.field10587.method4227(this.field12150 ? "EnvMappedSea" : "EnvMappedWater");
-		this.field10587.method4162(this.field12128);
+		this.field12121 = this.field10587.getUniform("NormalSampler");
+		this.field12123 = this.field10587.getUniform("EnvMapSampler");
+		this.field12125 = this.field10587.getUniform("WVPMatrix");
+		this.field12126 = this.field10587.getUniform("TexCoordMatrix");
+		this.field12141 = this.field10587.getUniform("EyePosAndTime");
+		this.field12142 = this.field10587.getUniform("SunDirectionAndExponent");
+		this.field12133 = this.field10587.getUniform("SunColourAndWaveExponent");
+		this.field12135 = this.field10587.getUniform("WaveIntensityAndBreakWaterDepthAndOffset");
+		this.field12137 = this.field10587.getUniform("HeightFogPlane");
+		this.field12139 = this.field10587.getUniform("HeightFogColour");
+		this.field12151 = this.field10587.getUniform("DistanceFogPlane");
+		this.field12149 = this.field10587.getUniform("DistanceFogColour");
+		this.field12128 = this.field10587.getProgram(this.field12150 ? "EnvMappedSea" : "EnvMappedWater");
+		this.field10587.setCurrentProgram(this.field12128);
 		return true;
 	}
 
@@ -164,21 +164,21 @@ public class EnvMappedWaterShader extends WaterShader {
 	@ObfuscatedName("aqe.bl(B)V")
 	public void method19210() {
 		this.method19208();
-		this.field10587.method4162(this.field12128);
-		this.field10587.method4244();
-		this.field10587.method4252(this.field12121, 0, this.field12122.field3224);
-		this.field10587.method4252(this.field12123, 1, this.field3233.method15994());
-		this.field10587.method4166(this.field12125, this.field12143);
-		this.field10587.method4201(this.field12126, this.field12127);
+		this.field10587.setCurrentProgram(this.field12128);
+		this.field10587.enable();
+		this.field10587.setUniform(this.field12121, 0, this.field12122.field3224);
+		this.field10587.setUniform(this.field12123, 1, this.field3233.method15994());
+		this.field10587.setUniform4x4(this.field12125, this.field12143);
+		this.field10587.setUniform4x2(this.field12126, this.field12127);
 		int var1 = 0x1 << (this.field12147 & 0x3);
-		this.field10587.method4169(this.field12141, this.field12129.field4308, this.field12129.field4311, this.field12129.field4313, (float) (this.field3233.field10181 * var1 % 40000) / 40000.0F);
-		this.field10587.method4171(this.field12142, this.field12132);
-		this.field10587.method4171(this.field12133, this.field12134);
-		this.field10587.method4171(this.field12135, this.field12136);
-		this.field10587.method4171(this.field12137, this.field12138);
-		this.field10587.method4246(this.field12139, this.field12140);
-		this.field10587.method4171(this.field12151, this.field12124);
-		this.field10587.method4246(this.field12149, this.field12144);
+		this.field10587.setUniform(this.field12141, this.field12129.field4308, this.field12129.field4311, this.field12129.field4313, (float) (this.field3233.field10181 * var1 % 40000) / 40000.0F);
+		this.field10587.setUniform(this.field12142, this.field12132);
+		this.field10587.setUniform(this.field12133, this.field12134);
+		this.field10587.setUniform(this.field12135, this.field12136);
+		this.field10587.setUniform(this.field12137, this.field12138);
+		this.field10587.setUniform(this.field12139, this.field12140);
+		this.field10587.setUniform(this.field12151, this.field12124);
+		this.field10587.setUniform(this.field12149, this.field12144);
 		this.field3233.method16079(PrimitiveType.field3403, this.field12145, this.field12146, this.field12120, this.field12148);
 	}
 

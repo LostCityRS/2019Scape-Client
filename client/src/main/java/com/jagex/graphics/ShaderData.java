@@ -6,16 +6,16 @@ import deob.ObfuscatedName;
 public class ShaderData {
 
 	@ObfuscatedName("hj.e")
-	public String field2577;
+	public String name;
 
 	@ObfuscatedName("hj.k")
-	public ProgramUniformData[] field2580;
+	public ProgramUniformData[] uniforms;
 
 	@ObfuscatedName("hj.f")
-	public ProgramUniformData[] field2581;
+	public ProgramUniformData[] uniforms2;
 
 	@ObfuscatedName("hj.w")
-	public ProgramData[] field2582;
+	public ProgramData[] programs;
 
 	// line 13
 	public ShaderData(byte[] arg0) throws ShaderDataException {
@@ -30,21 +30,21 @@ public class ShaderData {
 		if (var3 != 4) {
 			throw new ShaderDataException(this, var3, 4);
 		}
-		this.field2577 = var2.method4134();
-		this.field2580 = new ProgramUniformData[var2.method4133()];
-		this.field2581 = new ProgramUniformData[var2.method4133()];
-		this.field2582 = new ProgramData[var2.method4133()];
-		for (int var4 = 0; var4 < this.field2580.length; var4++) {
-			this.field2580[var4] = new ProgramUniformData();
-			this.field2580[var4].method4290(var2);
+		this.name = var2.method4134();
+		this.uniforms = new ProgramUniformData[var2.method4133()];
+		this.uniforms2 = new ProgramUniformData[var2.method4133()];
+		this.programs = new ProgramData[var2.method4133()];
+		for (int var4 = 0; var4 < this.uniforms.length; var4++) {
+			this.uniforms[var4] = new ProgramUniformData();
+			this.uniforms[var4].method4290(var2);
 		}
-		for (int var5 = 0; var5 < this.field2581.length; var5++) {
-			this.field2581[var5] = new ProgramUniformData();
-			this.field2581[var5].method4290(var2);
+		for (int var5 = 0; var5 < this.uniforms2.length; var5++) {
+			this.uniforms2[var5] = new ProgramUniformData();
+			this.uniforms2[var5].method4290(var2);
 		}
-		for (int var6 = 0; var6 < this.field2582.length; var6++) {
-			this.field2582[var6] = new ProgramData();
-			this.field2582[var6].method4077(var2);
+		for (int var6 = 0; var6 < this.programs.length; var6++) {
+			this.programs[var6] = new ProgramData();
+			this.programs[var6].method4077(var2);
 		}
 	}
 

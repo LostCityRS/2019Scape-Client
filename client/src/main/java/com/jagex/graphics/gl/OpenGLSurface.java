@@ -51,13 +51,13 @@ public class OpenGLSurface extends GpuSurface {
 	}
 
 	@ObfuscatedName("atx.i(II)V")
-	public void method15453(int arg0, int arg1) {
+	public void onResize(int arg0, int arg1) {
 		if (this.field12516 == 0L) {
 			throw new IllegalStateException("");
 		}
 		this.field12518.surfaceResized(this.field12516);
 		this.method19660();
-		super.method15453(arg0, arg1);
+		super.onResize(arg0, arg1);
 	}
 
 	@ObfuscatedName("atx.x()V")

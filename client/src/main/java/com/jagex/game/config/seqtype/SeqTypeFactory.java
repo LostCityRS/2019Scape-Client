@@ -56,7 +56,7 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 	public void method3011() {
 		WeightedCache var1 = this.frameCache;
 		synchronized (this.frameCache) {
-			this.frameCache.method2924();
+			this.frameCache.clear();
 		}
 	}
 

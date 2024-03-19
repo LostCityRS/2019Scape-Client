@@ -72,18 +72,18 @@ public class WaterfallShader extends WaterShader {
 
 	@ObfuscatedName("aqw.a()Z")
 	public boolean method16762() throws ShaderException {
-		this.field12118 = this.field10587.method4157("WorldMatrix");
-		this.field12107 = this.field10587.method4157("WVPMatrix");
-		this.field12111 = this.field10587.method4157("UGenerationPlane");
-		this.field12113 = this.field10587.method4157("VGenerationPlane");
-		this.field12103 = this.field10587.method4157("Time");
-		this.field12104 = this.field10587.method4157("billowSampler3D");
+		this.field12118 = this.field10587.getUniform("WorldMatrix");
+		this.field12107 = this.field10587.getUniform("WVPMatrix");
+		this.field12111 = this.field10587.getUniform("UGenerationPlane");
+		this.field12113 = this.field10587.getUniform("VGenerationPlane");
+		this.field12103 = this.field10587.getUniform("Time");
+		this.field12104 = this.field10587.getUniform("billowSampler3D");
 		if (this.field12119.field3229) {
-			this.field12105 = this.field10587.method4227("Waterfall3D");
-			this.field10587.method4162(this.field12105);
+			this.field12105 = this.field10587.getProgram("Waterfall3D");
+			this.field10587.setCurrentProgram(this.field12105);
 		} else {
-			this.field12102 = this.field10587.method4227("Waterfall2D");
-			this.field10587.method4162(this.field12102);
+			this.field12102 = this.field10587.getProgram("Waterfall2D");
+			this.field10587.setCurrentProgram(this.field12102);
 		}
 		return true;
 	}
@@ -113,26 +113,26 @@ public class WaterfallShader extends WaterShader {
 			this.field12109 = (float) ((double) var4 * (double) this.field3233.field10181 % 1.0D);
 		} else {
 			int var7 = (int) ((float) this.field3233.field10181 * var4 * 16.0F);
-			this.field3233.method16092(this.field12119.field3227[var7 % 16]);
+			this.field3233.setTexture(this.field12119.field3227[var7 % 16]);
 		}
 	}
 
 	@ObfuscatedName("aqw.bl(I)V")
 	public void method19202() {
 		if (this.field12119.field3229) {
-			this.field10587.method4162(this.field12105);
+			this.field10587.setCurrentProgram(this.field12105);
 		} else {
-			this.field10587.method4162(this.field12102);
+			this.field10587.setCurrentProgram(this.field12102);
 		}
-		this.field10587.method4244();
+		this.field10587.enable();
 		if (this.field12119.field3229) {
-			this.field10587.method4252(this.field12104, 0, this.field12119.field3228);
+			this.field10587.setUniform(this.field12104, 0, this.field12119.field3228);
 		}
-		this.field10587.method4166(this.field12118, this.field12106);
-		this.field10587.method4166(this.field12107, this.field12108);
-		this.field10587.method4171(this.field12111, new Vector4(this.field12112[0], this.field12112[1], this.field12112[2], this.field12112[3]));
-		this.field10587.method4171(this.field12113, new Vector4(this.field12114[0], this.field12114[1], this.field12114[2], this.field12114[3]));
-		this.field10587.method4171(this.field12103, new Vector4(this.field12109, 0.0F, 0.0F, 0.0F));
+		this.field10587.setUniform4x4(this.field12118, this.field12106);
+		this.field10587.setUniform4x4(this.field12107, this.field12108);
+		this.field10587.setUniform(this.field12111, new Vector4(this.field12112[0], this.field12112[1], this.field12112[2], this.field12112[3]));
+		this.field10587.setUniform(this.field12113, new Vector4(this.field12114[0], this.field12114[1], this.field12114[2], this.field12114[3]));
+		this.field10587.setUniform(this.field12103, new Vector4(this.field12109, 0.0F, 0.0F, 0.0F));
 		this.field3233.method16079(PrimitiveType.field3403, this.field12116, this.field12110, this.field12115, this.field12117);
 	}
 }

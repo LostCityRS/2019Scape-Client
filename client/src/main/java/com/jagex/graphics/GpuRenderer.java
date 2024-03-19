@@ -54,10 +54,10 @@ public abstract class GpuRenderer extends Renderer {
 	public Unsafe field10110;
 
 	@ObfuscatedName("afc.af")
-	public ByteBuffer field10071;
+	public ByteBuffer temporaryBuffer;
 
 	@ObfuscatedName("afc.ak")
-	public long field10046;
+	public long temporaryBufferAddress;
 
 	@ObfuscatedName("afc.bf")
 	public int field10048 = 0;
@@ -555,7 +555,7 @@ public abstract class GpuRenderer extends Renderer {
 		Iterator var2 = var1.iterator();
 		while (var2.hasNext()) {
 			DeletableResource var3 = (DeletableResource) var2.next();
-			var3.method1010();
+			var3.delete();
 		}
 	}
 
@@ -565,12 +565,12 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.re(I)V")
-	public void method15961(int arg0) {
+	public void ensureTemporaryBufferCapacity(int arg0) {
 		if (arg0 > this.field10048) {
 			this.field10048 = arg0;
-			this.field10071 = ByteBuffer.allocateDirect(this.field10048);
-			this.field10071.order(ByteOrder.nativeOrder());
-			this.field10046 = DirectBufferHelper.getDirectBufferAddress(this.field10071);
+			this.temporaryBuffer = ByteBuffer.allocateDirect(this.field10048);
+			this.temporaryBuffer.order(ByteOrder.nativeOrder());
+			this.temporaryBufferAddress = DirectBufferHelper.getDirectBufferAddress(this.temporaryBuffer);
 		}
 	}
 
@@ -636,7 +636,7 @@ public abstract class GpuRenderer extends Renderer {
 				this.field10110 = (Unsafe) var9.get(null);
 			} catch (Exception var12) {
 			}
-			this.method15961(4194304);
+			this.ensureTemporaryBufferCapacity(4194304);
 		} catch (Throwable var13) {
 			var13.printStackTrace();
 			this.dispose();
@@ -667,10 +667,10 @@ public abstract class GpuRenderer extends Renderer {
 		var2[0] = -16777216;
 		this.field10141 = this.method16033(1, 1, false, var2, 0, 0);
 		this.setBufferHeap(new GpuHeap(262144));
-		this.field10203 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300 }) });
-		this.field10204 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311 }) });
-		this.field10202 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.field3310), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311), new VertexDeclarationElement(VertexDeclarationElementComponent.field3300), new VertexDeclarationElement(VertexDeclarationElementComponent.field3301) });
-		this.field10184 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.field3310), new VertexDeclarationElement(VertexDeclarationElementComponent.field3311), new VertexDeclarationElement(VertexDeclarationElementComponent.field3300) });
+		this.field10203 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2 }) });
+		this.field10204 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
+		this.field10202 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.VERTEX), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR), new VertexDeclarationElement(VertexDeclarationElementComponent.TEX_COORD_2), new VertexDeclarationElement(VertexDeclarationElementComponent.NORMAL) });
+		this.field10184 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.VERTEX), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR), new VertexDeclarationElement(VertexDeclarationElementComponent.TEX_COORD_2) });
 		for (int var3 = 0; var3 < 8; var3++) {
 			this.field10058[var3] = new GpuModel(this, 0, 0, false, false);
 			this.field10207[var3] = new GpuModel(this, 0, 0, true, true);
@@ -760,7 +760,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.method16059();
 		this.method16058();
 		for (int var1 = this.field10186 - 1; var1 >= 0; var1--) {
-			this.method16038(var1);
+			this.setActiveTexture(var1);
 			this.method16256();
 			this.method16052();
 			this.method16048();
@@ -775,13 +775,13 @@ public abstract class GpuRenderer extends Renderer {
 			this.field10155.method5607();
 		}
 		if (this.field10197 != null) {
-			this.field10197.method1010();
+			this.field10197.delete();
 		}
 		if (this.field10196 != null) {
-			this.field10196.method1010();
+			this.field10196.delete();
 		}
 		if (this.field10195 != null) {
-			this.field10195.method1010();
+			this.field10195.delete();
 		}
 		if (this.field10100 != null) {
 			this.field10100.method5838();
@@ -795,7 +795,7 @@ public abstract class GpuRenderer extends Renderer {
 			this.field10198.method5756();
 		}
 		if (this.field10077 != null) {
-			this.field10077.method1010();
+			this.field10077.delete();
 		}
 		if (this.field10146 != null) {
 			this.field10146.method5795();
@@ -830,90 +830,90 @@ public abstract class GpuRenderer extends Renderer {
 	public final void method15974() {
 		this.field10197 = this.method16085(false);
 		short var1 = 160;
-		this.field10197.method5553(var1, 32);
-		this.field10071.clear();
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putInt(-1);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putInt(-1);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putInt(-1);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putInt(-1);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(1.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putInt(-1);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10197.method5738(0, this.field10071.position(), this.field10046);
-		this.field10055 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311, VertexDeclarationElementComponent.field3300, VertexDeclarationElementComponent.field3300 }) });
+		this.field10197.allocate(var1, 32);
+		this.temporaryBuffer.clear();
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putInt(-1);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putInt(-1);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putInt(-1);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putInt(-1);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(1.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putInt(-1);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.field10197.upload(0, this.temporaryBuffer.position(), this.temporaryBufferAddress);
+		this.field10055 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.TEX_COORD_2 }) });
 	}
 
 	@ObfuscatedName("afc.si()V")
 	public final void method16125() {
 		this.field10196 = this.method16085(true);
 		byte var1 = 24;
-		this.field10196.method5553(var1, 12);
-		this.field10150 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.field3310) });
+		this.field10196.allocate(var1, 12);
+		this.field10150 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.VERTEX) });
 	}
 
 	@ObfuscatedName("afc.se()V")
 	public final void method15976() {
 		this.field10195 = this.method16085(false);
-		this.field10195.method5553(3096, 12);
-		this.field10071.clear();
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
-		this.field10071.putFloat(0.0F);
+		this.field10195.allocate(3096, 12);
+		this.temporaryBuffer.clear();
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
+		this.temporaryBuffer.putFloat(0.0F);
 		for (int var1 = 0; var1 <= 256; var1++) {
 			double var2 = (double) (var1 * 2) * 3.141592653589793D / 256.0D;
 			float var4 = (float) Math.cos(var2);
 			float var5 = (float) Math.sin(var2);
-			this.field10071.putFloat(var5);
-			this.field10071.putFloat(var4);
-			this.field10071.putFloat(0.0F);
+			this.temporaryBuffer.putFloat(var5);
+			this.temporaryBuffer.putFloat(var4);
+			this.temporaryBuffer.putFloat(0.0F);
 		}
-		this.field10195.method5738(0, this.field10071.position(), this.field10046);
+		this.field10195.upload(0, this.temporaryBuffer.position(), this.temporaryBufferAddress);
 	}
 
 	@ObfuscatedName("afc.sn(FFFFFF)Z")
 	public boolean method15977(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
-		this.method15961(24);
-		this.field10071.clear();
-		this.field10071.putFloat(arg0);
-		this.field10071.putFloat(arg1);
-		this.field10071.putFloat(arg2);
-		this.field10071.putFloat(arg3);
-		this.field10071.putFloat(arg4);
-		this.field10071.putFloat(arg5);
-		return this.field10196.method5738(0, this.field10071.position(), this.field10046);
+		this.ensureTemporaryBufferCapacity(24);
+		this.temporaryBuffer.clear();
+		this.temporaryBuffer.putFloat(arg0);
+		this.temporaryBuffer.putFloat(arg1);
+		this.temporaryBuffer.putFloat(arg2);
+		this.temporaryBuffer.putFloat(arg3);
+		this.temporaryBuffer.putFloat(arg4);
+		this.temporaryBuffer.putFloat(arg5);
+		return this.field10196.upload(0, this.temporaryBuffer.position(), this.temporaryBufferAddress);
 	}
 
 	@ObfuscatedName("afc.p()V")
@@ -1919,7 +1919,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.uw(I)V")
-	public final void method16038(int arg0) {
+	public final void setActiveTexture(int arg0) {
 		if (this.field10177 != arg0) {
 			this.field10177 = arg0;
 			this.method16051();
@@ -1934,7 +1934,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.up(Lmq;)V")
-	public final void method16092(BaseTexture arg0) {
+	public final void setTexture(BaseTexture arg0) {
 		if (this.field10093[this.field10177] == arg0) {
 			return;
 		}
@@ -2417,20 +2417,20 @@ public abstract class GpuRenderer extends Renderer {
 		@ObfuscatedName("mi.e()V")
 		public void method5836() {
 			this.field3412 = this.this$0.method16085(true);
-			this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311 }) });
-			this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311 }) });
-			this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311 }) });
+			this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
+			this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
+			this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
 			this.field3411 = 16;
 		}
 
 		@ObfuscatedName("mi.n()V")
 		public void method5838() {
-			this.field3412.method1010();
+			this.field3412.delete();
 		}
 
 		@ObfuscatedName("mi.m(II)V")
 		public void method5840(int arg0, int arg1) {
-			if (!this.field3412.method5553(arg0, arg1)) {
+			if (!this.field3412.allocate(arg0, arg1)) {
 				System.out.println("PrimitiveVertexBuffer:ensureSize: failed vertexBuffer.allocate !");
 			}
 		}

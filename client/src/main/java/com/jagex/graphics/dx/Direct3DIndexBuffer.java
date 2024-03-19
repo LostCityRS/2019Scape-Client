@@ -5,13 +5,13 @@ import com.jagex.graphics.IndexBuffer;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;
-import jagdx.class0;
+import jagdx.HRESULT;
 
 @ObfuscatedName("ot")
 public class Direct3DIndexBuffer implements IndexBuffer {
 
 	@ObfuscatedName("ot.e")
-	public final Direct3DRenderer field4211;
+	public final Direct3DRenderer renderer;
 
 	@ObfuscatedName("ot.n")
 	public int field4208;
@@ -23,16 +23,16 @@ public class Direct3DIndexBuffer implements IndexBuffer {
 	public final boolean field4209;
 
 	@ObfuscatedName("ot.f")
-	public final DataType field4212;
+	public final DataType dataType;
 
 	@ObfuscatedName("ot.w")
 	public long field4213 = 0L;
 
-	public Direct3DIndexBuffer(Direct3DRenderer arg0, DataType arg1, boolean arg2) {
-		this.field4211 = arg0;
-		this.field4212 = arg1;
+	public Direct3DIndexBuffer(Direct3DRenderer renderer, DataType dataType, boolean arg2) {
+		this.renderer = renderer;
+		this.dataType = dataType;
 		this.field4209 = arg2;
-		this.field4211.method15985(this);
+		this.renderer.method15985(this);
 	}
 
 	@ObfuscatedName("ot.k()I")
@@ -41,13 +41,13 @@ public class Direct3DIndexBuffer implements IndexBuffer {
 	}
 
 	@ObfuscatedName("ot.e()Ldg;")
-	public DataType method5832() {
-		return this.field4212;
+	public DataType getDataType() {
+		return this.dataType;
 	}
 
 	@ObfuscatedName("ot.a(I)V")
 	public void method5831(int arg0) {
-		this.field4208 = this.field4212.field1652 * arg0;
+		this.field4208 = this.dataType.field1652 * arg0;
 		if (this.field4208 <= this.field4210) {
 			return;
 		}
@@ -62,40 +62,40 @@ public class Direct3DIndexBuffer implements IndexBuffer {
 		} else {
 			var3 = 1;
 		}
-		this.field4213 = IDirect3DDevice.CreateIndexBuffer(this.field4211.device, this.field4208, var2, DataType.UNSIGNED_INT_16 == this.field4212 ? 101 : 102, var3);
+		this.field4213 = IDirect3DDevice.CreateIndexBuffer(this.renderer.device, this.field4208, var2, DataType.UNSIGNED_INT_16 == this.dataType ? 101 : 102, var3);
 		this.field4210 = this.field4208;
 	}
 
 	@ObfuscatedName("ot.w(II)J")
-	public long method5737(int arg0, int arg1) {
+	public long lock(int arg0, int arg1) {
 		return jagdx.IDirect3DIndexBuffer.Lock(this.field4213, arg0, arg1, this.field4209 ? 8192 : 0);
 	}
 
 	@ObfuscatedName("ot.l()V")
-	public void method5749() {
+	public void unlock() {
 		jagdx.IDirect3DIndexBuffer.Unlock(this.field4213);
 	}
 
 	@ObfuscatedName("ot.f(IIJ)Z")
-	public boolean method5738(int arg0, int arg1, long arg2) {
-		return class0.method35(jagdx.IDirect3DIndexBuffer.Upload(this.field4213, arg0, arg1, this.field4209 ? 8192 : 0, arg2));
+	public boolean upload(int arg0, int arg1, long arg2) {
+		return HRESULT.SUCCEEDED(jagdx.IDirect3DIndexBuffer.Upload(this.field4213, arg0, arg1, this.field4209 ? 8192 : 0, arg2));
 	}
 
 	@ObfuscatedName("ot.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field4213 != 0L) {
 			IUnknown.Release(this.field4213);
 			this.field4213 = 0L;
 		}
 		this.field4210 = 0;
 		this.field4208 = 0;
-		this.field4211.method16198(this);
+		this.renderer.method16198(this);
 	}
 
 	@ObfuscatedName("ot.j()V")
 	public void method6209() {
 		if (this.field4213 != 0L) {
-			this.field4211.method19023(this.field4213);
+			this.renderer.method19023(this.field4213);
 			this.field4213 = 0L;
 		}
 		this.field4210 = 0;

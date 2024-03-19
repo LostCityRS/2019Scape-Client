@@ -5,13 +5,13 @@ import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
 import jagdx.IDirect3DVertexBuffer;
 import jagdx.IUnknown;
-import jagdx.class0;
+import jagdx.HRESULT;
 
 @ObfuscatedName("om")
 public class Direct3DVertexBuffer implements VertexBuffer {
 
 	@ObfuscatedName("om.e")
-	public final Direct3DRenderer field4225;
+	public final Direct3DRenderer renderer;
 
 	@ObfuscatedName("om.n")
 	public int field4223;
@@ -29,9 +29,9 @@ public class Direct3DVertexBuffer implements VertexBuffer {
 	public long field4227 = 0L;
 
 	public Direct3DVertexBuffer(Direct3DRenderer arg0, boolean arg1) {
-		this.field4225 = arg0;
+		this.renderer = arg0;
 		this.field4226 = arg1;
-		this.field4225.method15985(this);
+		this.renderer.method15985(this);
 	}
 
 	@ObfuscatedName("om.k()I")
@@ -45,7 +45,7 @@ public class Direct3DVertexBuffer implements VertexBuffer {
 	}
 
 	@ObfuscatedName("om.e(II)Z")
-	public boolean method5553(int arg0, int arg1) {
+	public boolean allocate(int arg0, int arg1) {
 		this.field4224 = arg0;
 		this.field4222 = (byte) arg1;
 		if (this.field4224 > this.field4223) {
@@ -60,42 +60,42 @@ public class Direct3DVertexBuffer implements VertexBuffer {
 			if (this.field4227 != 0L) {
 				IUnknown.Release(this.field4227);
 			}
-			this.field4227 = IDirect3DDevice.CreateVertexBuffer(this.field4225.device, this.field4224, var3, 0, var4);
+			this.field4227 = IDirect3DDevice.CreateVertexBuffer(this.renderer.device, this.field4224, var3, 0, var4);
 			this.field4223 = this.field4224;
 		}
 		return this.field4227 != 0L;
 	}
 
 	@ObfuscatedName("om.w(II)J")
-	public long method5737(int arg0, int arg1) {
+	public long lock(int arg0, int arg1) {
 		return IDirect3DVertexBuffer.Lock(this.field4227, arg0, arg1, this.field4226 ? 8192 : 0);
 	}
 
 	@ObfuscatedName("om.l()V")
-	public void method5749() {
+	public void unlock() {
 		IDirect3DVertexBuffer.Unlock(this.field4227);
 	}
 
 	@ObfuscatedName("om.f(IIJ)Z")
-	public boolean method5738(int arg0, int arg1, long arg2) {
-		return class0.method35(IDirect3DVertexBuffer.Upload(this.field4227, arg0, arg1, this.field4226 ? 8192 : 0, arg2));
+	public boolean upload(int arg0, int arg1, long arg2) {
+		return HRESULT.SUCCEEDED(IDirect3DVertexBuffer.Upload(this.field4227, arg0, arg1, this.field4226 ? 8192 : 0, arg2));
 	}
 
 	@ObfuscatedName("om.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field4227 != 0L) {
 			IUnknown.Release(this.field4227);
 			this.field4227 = 0L;
 		}
 		this.field4223 = 0;
 		this.field4224 = 0;
-		this.field4225.method16198(this);
+		this.renderer.method16198(this);
 	}
 
 	@ObfuscatedName("om.g()V")
 	public void method6230() {
 		if (this.field4227 != 0L) {
-			this.field4225.method19023(this.field4227);
+			this.renderer.method19023(this.field4227);
 			this.field4227 = 0L;
 			this.field4223 = 0;
 			this.field4224 = 0;

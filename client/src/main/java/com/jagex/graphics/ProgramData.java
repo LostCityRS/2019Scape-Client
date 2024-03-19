@@ -9,10 +9,10 @@ public class ProgramData {
 	public String field2432;
 
 	@ObfuscatedName("hn.n")
-	public String field2428;
+	public String vertexShaderFile;
 
 	@ObfuscatedName("hn.m")
-	public String field2430;
+	public String fragmentShaderFile;
 
 	@ObfuscatedName("hn.k")
 	public ProgramDefineData[] field2429;
@@ -23,8 +23,8 @@ public class ProgramData {
 	@ObfuscatedName("hn.e(Lhw;I)V")
 	public void method4077(ShaderDataReader arg0) {
 		this.field2432 = arg0.method4134();
-		this.field2428 = arg0.method4134();
-		this.field2430 = arg0.method4134();
+		this.vertexShaderFile = arg0.method4134();
+		this.fragmentShaderFile = arg0.method4134();
 		int var2 = arg0.method4133();
 		int var3 = arg0.method4133();
 		this.field2429 = var2 == 0 ? null : new ProgramDefineData[var2];

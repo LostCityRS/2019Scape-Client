@@ -9,32 +9,32 @@ import deob.ObfuscatedName;
 public class PureJavaFramebuffer extends Framebuffer {
 
 	@ObfuscatedName("apn.n")
-	public PureJavaRenderer field11909;
+	public PureJavaRenderer renderer;
 
 	@ObfuscatedName("apn.m")
-	public PureJavaDepthBuffer field11912;
+	public PureJavaDepthBuffer depthBuffer;
 
 	@ObfuscatedName("apn.k")
-	public PureJavaColorBuffer field11910;
+	public PureJavaColorBuffer colorBuffer;
 
 	@ObfuscatedName("apn.f")
-	public int field11911 = 0;
+	public int width = 0;
 
 	@ObfuscatedName("apn.w")
-	public int field11908 = 0;
+	public int height = 0;
 
-	public PureJavaFramebuffer(PureJavaRenderer arg0) {
-		this.field11909 = arg0;
+	public PureJavaFramebuffer(PureJavaRenderer renderer) {
+		this.renderer = renderer;
 	}
 
 	@ObfuscatedName("apn.e()I")
 	public int getWidth() {
-		return this.field11911;
+		return this.width;
 	}
 
 	@ObfuscatedName("apn.n()I")
 	public int getHeight() {
-		return this.field11908;
+		return this.height;
 	}
 
 	@ObfuscatedName("apn.b(ILdp;)V")
@@ -43,18 +43,18 @@ public class PureJavaFramebuffer extends Framebuffer {
 			throw new RuntimeException();
 		}
 		PureJavaColorBuffer var3 = (PureJavaColorBuffer) arg1;
-		if (this.field11912 != null && var3 != null && (this.field11912.field971 != var3.field893 || this.field11912.field972 != var3.field892)) {
+		if (this.depthBuffer != null && var3 != null && (this.depthBuffer.field971 != var3.field893 || this.depthBuffer.field972 != var3.field892)) {
 			throw new RuntimeException();
 		}
-		this.field11910 = var3;
+		this.colorBuffer = var3;
 		if (var3 != null) {
-			this.field11911 = var3.field893;
-			this.field11908 = var3.field892;
-		} else if (this.field11912 == null) {
-			this.field11911 = 0;
-			this.field11908 = 0;
+			this.width = var3.field893;
+			this.height = var3.field892;
+		} else if (this.depthBuffer == null) {
+			this.width = 0;
+			this.height = 0;
 		}
-		if (this.field11909.getRenderTarget() == this) {
+		if (this.renderer.getRenderTarget() == this) {
 			this.method1630();
 		}
 	}
@@ -62,18 +62,18 @@ public class PureJavaFramebuffer extends Framebuffer {
 	@ObfuscatedName("apn.x(Ldw;)V")
 	public void method15441(EffectInterface arg0) {
 		PureJavaDepthBuffer var2 = (PureJavaDepthBuffer) arg0;
-		if (this.field11910 != null && var2 != null && (this.field11910.field893 != var2.field971 || this.field11910.field892 != var2.field972)) {
+		if (this.colorBuffer != null && var2 != null && (this.colorBuffer.field893 != var2.field971 || this.colorBuffer.field892 != var2.field972)) {
 			throw new RuntimeException();
 		}
-		this.field11912 = var2;
+		this.depthBuffer = var2;
 		if (var2 != null) {
-			this.field11911 = var2.field971;
-			this.field11908 = var2.field972;
-		} else if (this.field11910 == null) {
-			this.field11911 = 0;
-			this.field11908 = 0;
+			this.width = var2.field971;
+			this.height = var2.field972;
+		} else if (this.colorBuffer == null) {
+			this.width = 0;
+			this.height = 0;
 		}
-		if (this.field11909.getRenderTarget() == this) {
+		if (this.renderer.getRenderTarget() == this) {
 			this.method1630();
 		}
 	}
@@ -85,7 +85,7 @@ public class PureJavaFramebuffer extends Framebuffer {
 
 	@ObfuscatedName("apn.k()Z")
 	public boolean method1630() {
-		this.field11909.method15662(this.field11911, this.field11908, this.field11910 == null ? null : this.field11910.field891, this.field11912 == null ? null : this.field11912.field973);
+		this.renderer.method15662(this.width, this.height, this.colorBuffer == null ? null : this.colorBuffer.field891, this.depthBuffer == null ? null : this.depthBuffer.field973);
 		return true;
 	}
 
@@ -100,15 +100,15 @@ public class PureJavaFramebuffer extends Framebuffer {
 		int[] var10 = null;
 		float[] var11 = null;
 		float[] var12 = null;
-		if (arg6 && this.field11910 != null) {
-			var9 = this.field11910.field891;
-			var10 = this.field11909.colour;
+		if (arg6 && this.colorBuffer != null) {
+			var9 = this.colorBuffer.field891;
+			var10 = this.renderer.colour;
 		}
-		if (arg7 && this.field11912 != null) {
-			var11 = this.field11912.field973;
-			var12 = this.field11909.depth;
+		if (arg7 && this.depthBuffer != null) {
+			var11 = this.depthBuffer.field973;
+			var12 = this.renderer.depth;
 		}
-		method6069(this.field11911, this.field11909.sizeX, var9, var10, var11, var12, arg0, arg1, arg4, arg5, arg2, arg3);
+		method6069(this.width, this.renderer.sizeX, var9, var10, var11, var12, arg0, arg1, arg4, arg5, arg2, arg3);
 	}
 
 	@ObfuscatedName("nr.ac(II[I[I[F[FIIIIIII)V")

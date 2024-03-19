@@ -111,8 +111,8 @@ public class Minimap {
 
 	@ObfuscatedName("am.f(I)V")
 	public static void method829() {
-		int var0 = Client.world.method7728();
-		int var1 = Client.world.method7758();
+		int var0 = Client.world.getSizeX();
+		int var1 = Client.world.getSizeZ();
 		field8182 = new boolean[var0 >> 3][var1 >> 3];
 	}
 
@@ -133,14 +133,14 @@ public class Minimap {
 		if (!arg0.method2215()) {
 			return false;
 		}
-		int var2 = Client.world.method7728();
-		int var3 = Client.world.method7758();
+		int var2 = Client.world.getSizeX();
+		int var3 = Client.world.getSizeZ();
 		SceneLevelTileFlags var4 = Client.world.method7793();
 		Scene var5 = Client.world.getScene();
 		int var6 = arg1;
 		if (Client.localPlayerEntity != null) {
-			int var7 = Client.localPlayerEntity.field10450[0] >> 3;
-			int var8 = Client.localPlayerEntity.field10448[0] >> 3;
+			int var7 = Client.localPlayerEntity.routeWaypointX[0] >> 3;
+			int var8 = Client.localPlayerEntity.routeWaypointZ[0] >> 3;
 			if (var7 >= 0 && var7 < field8182.length && var8 >= 0 && var8 < field8182[var7].length && field8182[var7][var8]) {
 				var6 = 0;
 			}
@@ -189,7 +189,7 @@ public class Minimap {
 		} else {
 			field734 = arg0.createSprite(var18, 0, var17, var17, var17);
 		}
-		Client.world.method7816().method9983();
+		Client.world.method7816().setLightingInterface();
 		int var24 = ((int) (Math.random() * 20.0D) + 238 - 10 << 16) + ((int) (Math.random() * 20.0D) + 238 - 10 << 8) + ((int) (Math.random() * 20.0D) + 238 - 10) | 0xFF000000;
 		int var25 = ((int) (Math.random() * 20.0D) + 238 - 10 | 0xFF00) << 16;
 		int var26 = (int) (Math.random() * 8.0D) << 16 | (int) (Math.random() * 8.0D) << 8 | (int) (Math.random() * 8.0D);
@@ -313,15 +313,15 @@ public class Minimap {
 	@ObfuscatedName("agm.u(II)V")
 	public static void method16444(int arg0) {
 		field723 = 0;
-		int var1 = Client.world.method7728();
-		int var2 = Client.world.method7758();
+		int var1 = Client.world.getSizeX();
+		int var2 = Client.world.getSizeZ();
 		SceneLevelTileFlags var3 = Client.world.method7793();
 		Scene var4 = Client.world.getScene();
 		LocTypeList var5 = Client.world.method7750();
 		int var6 = arg0;
 		if (Client.localPlayerEntity != null) {
-			int var7 = Client.localPlayerEntity.field10450[0] >> 3;
-			int var8 = Client.localPlayerEntity.field10448[0] >> 3;
+			int var7 = Client.localPlayerEntity.routeWaypointX[0] >> 3;
+			int var8 = Client.localPlayerEntity.routeWaypointZ[0] >> 3;
 			if (var7 >= 0 && var7 < field8182.length && var8 >= 0 && var8 < field8182[var7].length && field8182[var7][var8]) {
 				var6 = 0;
 			}
@@ -562,7 +562,7 @@ public class Minimap {
 			var10 = 4096 - Client.field10887 * 16;
 		}
 		int var12 = var7 / 128 + 48;
-		int var13 = Client.world.method7758() * 4 + 48 - var8 / 128;
+		int var13 = Client.world.getSizeZ() * 4 + 48 - var8 / 128;
 		if (var5 == null) {
 			field734.method1453((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, 1, -1, 1);
 		} else {

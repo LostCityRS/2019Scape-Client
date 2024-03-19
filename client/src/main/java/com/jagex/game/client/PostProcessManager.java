@@ -91,14 +91,14 @@ public class PostProcessManager {
 			return;
 		}
 		this.field3263 = this.field3247.method16085(false);
-		this.field3263.method5553(12, 4);
-		ByteBuffer var1 = this.field3247.field10071;
+		this.field3263.allocate(12, 4);
+		ByteBuffer var1 = this.field3247.temporaryBuffer;
 		var1.clear();
 		var1.putFloat(0.0F);
 		var1.putFloat(1.0F);
 		var1.putFloat(2.0F);
-		this.field3263.method5738(0, var1.position(), this.field3247.field10046);
-		this.field3264 = this.field3247.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.field3303) });
+		this.field3263.upload(0, var1.position(), this.field3247.temporaryBufferAddress);
+		this.field3264 = this.field3247.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.TEX_COORD_1) });
 	}
 
 	@ObfuscatedName("ls.n()V")
@@ -127,16 +127,16 @@ public class PostProcessManager {
 		this.field3265 = this.field3247.createFramebuffer();
 		if (this.field3247.field10180 > 1 && this.field3247.field10134 && this.field3247.field10199) {
 			this.field3245 = this.field3247.createFramebuffer();
-			this.field3253 = this.field3247.method2146(this.field3256, this.field3246, TextureFormat.field1273, this.field3260, this.field3247.field10180);
+			this.field3253 = this.field3247.method2146(this.field3256, this.field3246, TextureFormat.RGBA, this.field3260, this.field3247.field10180);
 			this.field3262 = this.field3247.method2356(this.field3256, this.field3246, this.field3247.field10180);
 		}
-		this.field3244 = this.field3247.method16089(TextureFormat.field1273, this.field3260, this.field3256, this.field3246);
+		this.field3244 = this.field3247.method16089(TextureFormat.RGBA, this.field3260, this.field3256, this.field3246);
 		this.field3250 = this.field3244.method5828(0);
-		this.field3248 = this.field3247.method16089(TextureFormat.field1273, this.field3260, this.field3256, this.field3246);
+		this.field3248 = this.field3247.method16089(TextureFormat.RGBA, this.field3260, this.field3256, this.field3246);
 		this.field3251 = this.field3248.method5828(0);
-		this.field3249 = this.field3247.method16089(TextureFormat.field1273, this.field3260, this.field3256, this.field3246);
+		this.field3249 = this.field3247.method16089(TextureFormat.RGBA, this.field3260, this.field3256, this.field3246);
 		this.field3255 = this.field3249.method5828(0);
-		this.field3254 = this.field3247.method2121(this.field3249.method5718(), this.field3249.method5696());
+		this.field3254 = this.field3247.method2121(this.field3249.getWidth(), this.field3249.getHeight());
 		int var1 = this.field3257.size();
 		for (int var2 = 0; var2 < var1; var2++) {
 			PostProcessEffect var3 = (PostProcessEffect) this.field3257.elementAt(var2);
@@ -324,36 +324,36 @@ public class PostProcessManager {
 			this.field3245 = null;
 		}
 		if (this.field3253 != null) {
-			this.field3253.method1010();
+			this.field3253.delete();
 			this.field3253 = null;
 		}
 		if (this.field3262 != null) {
-			this.field3262.method1010();
+			this.field3262.delete();
 			this.field3262 = null;
 		}
 		if (this.field3265 != null) {
 			this.field3265.method1629();
 		}
 		if (this.field3250 != null) {
-			this.field3250.method1010();
+			this.field3250.delete();
 		}
 		if (this.field3251 != null) {
-			this.field3251.method1010();
+			this.field3251.delete();
 		}
 		if (this.field3255 != null) {
-			this.field3255.method1010();
+			this.field3255.delete();
 		}
 		if (this.field3244 != null) {
-			this.field3244.method1010();
+			this.field3244.delete();
 		}
 		if (this.field3248 != null) {
-			this.field3248.method1010();
+			this.field3248.delete();
 		}
 		if (this.field3249 != null) {
-			this.field3249.method1010();
+			this.field3249.delete();
 		}
 		if (this.field3254 != null) {
-			this.field3254.method1010();
+			this.field3254.delete();
 		}
 		int var1 = this.field3257.size();
 		for (int var2 = 0; var2 < var1; var2++) {

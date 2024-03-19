@@ -372,7 +372,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.ad(Ljava/awt/Canvas;II)Lafy;")
-	public Surface method2144(Canvas arg0, int arg1, int arg2) {
+	public Surface createSurface(Canvas arg0, int arg1, int arg2) {
 		return PureJavaSurface.method18912(this, arg0, arg1, arg2);
 	}
 

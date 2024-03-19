@@ -12,13 +12,13 @@ import jagdx.IUnknown;
 public final class Direct3DProgram extends Program {
 
 	@ObfuscatedName("agt.k")
-	public Direct3DProgramManager field10363;
+	public Direct3DProgramManager programManager;
 
 	@ObfuscatedName("agt.f")
 	public boolean field10357;
 
 	@ObfuscatedName("agt.w")
-	public Direct3DRenderer field10365;
+	public Direct3DRenderer renderer;
 
 	@ObfuscatedName("agt.l")
 	public long field10367;
@@ -30,10 +30,10 @@ public final class Direct3DProgram extends Program {
 	public static final float[] field10361 = new float[16];
 
 	@ObfuscatedName("agt.p")
-	public byte[] field10362;
+	public byte[] vertexShader;
 
 	@ObfuscatedName("agt.d")
-	public byte[] field10358;
+	public byte[] fragmentShader;
 
 	@ObfuscatedName("agt.v")
 	public final float[][] field10366;
@@ -41,67 +41,67 @@ public final class Direct3DProgram extends Program {
 	@ObfuscatedName("agt.o")
 	public final boolean[] field10359;
 
-	public Direct3DProgram(Direct3DRenderer arg0, Direct3DProgramManager arg1, ProgramData arg2) {
-		this(arg0, arg2);
-		this.field10365 = arg0;
-		this.field10363 = arg1;
+	public Direct3DProgram(Direct3DRenderer renderer, Direct3DProgramManager programManager, ProgramData arg2) {
+		this(renderer, arg2);
+		this.renderer = renderer;
+		this.programManager = programManager;
 	}
 
-	public Direct3DProgram(Direct3DRenderer arg0, ProgramData arg1) {
+	public Direct3DProgram(Direct3DRenderer renderer, ProgramData programData) {
 		this.field10357 = false;
 		this.field10366 = new float[2][];
 		this.field10359 = new boolean[2];
-		this.field2435 = arg1.field2432;
-		if (arg1.field2428 != null) {
-			this.field2434 = arg1.field2428;
-			this.field10362 = arg0.method19009(this.field2434);
+		this.field2435 = programData.field2432;
+		if (programData.vertexShaderFile != null) {
+			this.vertexShaderFile = programData.vertexShaderFile;
+			this.vertexShader = renderer.getShader(this.vertexShaderFile);
 		}
-		if (arg1.field2430 != null) {
-			this.field2436 = arg1.field2430;
-			this.field10358 = arg0.method19009(this.field2436);
+		if (programData.fragmentShaderFile != null) {
+			this.fragmentShaderFile = programData.fragmentShaderFile;
+			this.fragmentShader = renderer.getShader(this.fragmentShaderFile);
 		}
-		arg0.method15985(this);
+		renderer.method15985(this);
 	}
 
 	@ObfuscatedName("agt.n()Z")
-	public boolean method4083() {
+	public boolean compile() {
 		if (this.field10357) {
 			return true;
 		}
-		this.field10367 = this.field10362 == null ? 0L : IDirect3DDevice.CreateVertexShader(this.field10365.device, this.field10362);
-		this.field10360 = this.field10358 == null ? 0L : IDirect3DDevice.CreatePixelShader(this.field10365.device, this.field10358);
+		this.field10367 = this.vertexShader == null ? 0L : IDirect3DDevice.CreateVertexShader(this.renderer.device, this.vertexShader);
+		this.field10360 = this.fragmentShader == null ? 0L : IDirect3DDevice.CreatePixelShader(this.renderer.device, this.fragmentShader);
 		if (this.field10367 == 0L && this.field10360 == 0L) {
 			return false;
 		}
 		int var1 = -1;
-		for (int var2 = 0; var2 < this.field10363.method4158(); var2++) {
-			if (this.field10363.method4159(var2) == this) {
+		for (int var2 = 0; var2 < this.programManager.getProgramCount(); var2++) {
+			if (this.programManager.getProgram(var2) == this) {
 				var1 = var2;
 				break;
 			}
 		}
-		int var3 = this.field10363.method4189();
-		int var4 = this.field10363.method4190();
+		int var3 = this.programManager.getUniformCount();
+		int var4 = this.programManager.getUniform2Count();
 		for (int var5 = 0; var5 < var3; var5++) {
-			ProgramUniform var6 = this.field10363.method4160(var5);
+			ProgramUniform var6 = this.programManager.getUniform(var5);
 			var6.method19245(var1);
 		}
 		for (int var7 = 0; var7 < var4; var7++) {
-			ProgramUniform var8 = this.field10363.method4187(var7);
+			ProgramUniform var8 = this.programManager.getUniform2(var7);
 			var8.method19245(var1);
 		}
 		int var9 = 0;
 		int var10 = 0;
-		int var11 = this.field10363.method4200(this);
+		int var11 = this.programManager.getProgramIndex(this);
 		for (int var12 = 0; var12 < var3 + var4; var12++) {
-			Direct3DProgramUniform var13 = (Direct3DProgramUniform) (var12 < var3 ? this.field10363.method4160(var12) : this.field10363.method4187(var12 - var3));
-			UniformType var14 = var13.method19247();
+			Direct3DProgramUniform var13 = (Direct3DProgramUniform) (var12 < var3 ? this.programManager.getUniform(var12) : this.programManager.getUniform2(var12 - var3));
+			UniformType var14 = var13.getType();
 			int var15 = 1;
-			if (UniformType.field2441 == var14) {
-				var14 = var13.method19248();
-				var15 = var13.method19256();
+			if (UniformType.ARRAY == var14) {
+				var14 = var13.getElementType();
+				var15 = var13.getElementCount();
 			}
-			switch(var14.field2512) {
+			switch(var14.ordinal) {
 				case 17:
 				case 35:
 				case 52:
@@ -148,10 +148,10 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.k(Laql;F)V")
-	public void method4084(ProgramUniform arg0, float arg1) {
+	public void setUniform(ProgramUniform arg0, float arg1) {
 		int var3 = ((Direct3DProgramUniform) arg0).method19676();
 		int var4 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != UniformType.field2525 && arg0.method19247() != UniformType.field2509) {
+		if (arg0.getType() != UniformType.FLOAT_1 && arg0.getType() != UniformType.field2509) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var3 >= 0) {
@@ -167,10 +167,10 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.f(Laql;FF)V")
-	public void method4085(ProgramUniform arg0, float arg1, float arg2) {
+	public void setUniform(ProgramUniform arg0, float arg1, float arg2) {
 		int var4 = ((Direct3DProgramUniform) arg0).method19676();
 		int var5 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != UniformType.field2495) {
+		if (arg0.getType() != UniformType.FLOAT_2) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var4 >= 0) {
@@ -188,10 +188,10 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.w(Laql;FFF)V")
-	public void method4108(ProgramUniform arg0, float arg1, float arg2, float arg3) {
+	public void setUniform(ProgramUniform arg0, float arg1, float arg2, float arg3) {
 		int var5 = ((Direct3DProgramUniform) arg0).method19676();
 		int var6 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != UniformType.field2540) {
+		if (arg0.getType() != UniformType.FLOAT_3) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var5 >= 0) {
@@ -212,10 +212,10 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.l(Laql;FFFF)V")
-	public void method4087(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
+	public void setUniform(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
 		int var6 = ((Direct3DProgramUniform) arg0).method19676();
 		int var7 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != UniformType.field2466) {
+		if (arg0.getType() != UniformType.FLOAT_4) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var6 >= 0) {
@@ -238,10 +238,10 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.p(Laql;Lpq;)V")
-	public void method4089(ProgramUniform arg0, Matrix4x4 arg1) {
+	public void setUniform4x2(ProgramUniform arg0, Matrix4x4 arg1) {
 		int var3 = ((Direct3DProgramUniform) arg0).method19676();
 		int var4 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != UniformType.field2480) {
+		if (arg0.getType() != UniformType.MATRIX_4X2) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var3 >= 0) {
@@ -253,10 +253,10 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.d(Laql;Lpq;)V")
-	public void method4101(ProgramUniform arg0, Matrix4x4 arg1) {
+	public void setUniform4x4(ProgramUniform arg0, Matrix4x4 arg1) {
 		int var3 = ((Direct3DProgramUniform) arg0).method19676();
 		int var4 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != UniformType.field2482) {
+		if (arg0.getType() != UniformType.MATRIX_4X4) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var3 >= 0) {
@@ -268,10 +268,10 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.z(Laql;[FI)V")
-	public void method4086(ProgramUniform arg0, float[] arg1, int arg2) {
+	public void setUniform(ProgramUniform arg0, float[] arg1, int arg2) {
 		int var4 = ((Direct3DProgramUniform) arg0).method19676();
 		int var5 = ((Direct3DProgramUniform) arg0).method19677();
-		if (arg0.method19247() != UniformType.field2441) {
+		if (arg0.getType() != UniformType.ARRAY) {
 			throw new OpenGLError(arg0, "");
 		}
 		if (var4 >= 0) {
@@ -283,13 +283,13 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.c(Laql;ILmq;)V")
-	public void method4081(ProgramUniform arg0, int arg1, BaseTexture arg2) {
-		this.field10365.method16038(arg1);
-		this.field10365.method16092(arg2);
+	public void setUniform(ProgramUniform arg0, int arg1, BaseTexture arg2) {
+		this.renderer.setActiveTexture(arg1);
+		this.renderer.setTexture(arg2);
 	}
 
 	@ObfuscatedName("agt.r(IFFF)V")
-	public void method4088(int arg0, float arg1, float arg2, float arg3) {
+	public void setUniform(int arg0, float arg1, float arg2, float arg3) {
 		int var5 = arg0 >> 16;
 		int var6 = (arg0 & 0xFFFF) * 4;
 		this.field10366[var5][var6] = arg1;
@@ -299,7 +299,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.v(IFFFF)V")
-	public void method4123(int arg0, float arg1, float arg2, float arg3, float arg4) {
+	public void setUniform(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		int var6 = arg0 >> 16;
 		int var7 = (arg0 & 0xFFFF) * 4;
 		this.field10366[var6][var7] = arg1;
@@ -310,7 +310,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.s(ILpq;)V")
-	public void method4094(int arg0, Matrix4x4 arg1) {
+	public void setUniform3x3(int arg0, Matrix4x4 arg1) {
 		int var3 = arg0 >> 16;
 		int var4 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1.method6620(field10361), 0, this.field10366[var3], var4, 12);
@@ -318,7 +318,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.y(ILpq;)V")
-	public void method4095(int arg0, Matrix4x4 arg1) {
+	public void setUniform4x2(int arg0, Matrix4x4 arg1) {
 		int var3 = arg0 >> 16;
 		int var4 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1.method6637(field10361), 0, this.field10366[var3], var4, 8);
@@ -326,7 +326,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.q(ILpq;)V")
-	public void method4096(int arg0, Matrix4x4 arg1) {
+	public void setUniform4x4(int arg0, Matrix4x4 arg1) {
 		int var3 = arg0 >> 16;
 		int var4 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1.method6620(field10361), 0, this.field10366[var3], var4, 16);
@@ -334,7 +334,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.o(I[FI)V")
-	public void method4093(int arg0, float[] arg1, int arg2) {
+	public void setUniform(int arg0, float[] arg1, int arg2) {
 		int var4 = arg0 >> 16;
 		int var5 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1, 0, this.field10366[var4], var5, arg2);
@@ -354,29 +354,29 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.x(IILmq;)V")
-	public void method4097(int arg0, int arg1, BaseTexture arg2) {
-		this.field10365.method16038(arg1);
-		this.field10365.method16092(arg2);
+	public void setUniform(int arg0, int arg1, BaseTexture arg2) {
+		this.renderer.setActiveTexture(arg1);
+		this.renderer.setTexture(arg2);
 	}
 
 	@ObfuscatedName("agt.an()V")
 	public void method16476() {
 		if (this.field10359[0]) {
-			this.field10365.field10071.clear();
-			this.field10365.field10071.asFloatBuffer().put(this.field10366[0]);
-			IDirect3DDevice.SetVertexShaderConstantF(this.field10365.device, 0, this.field10365.field10046, this.field10366[0].length / 4);
+			this.renderer.temporaryBuffer.clear();
+			this.renderer.temporaryBuffer.asFloatBuffer().put(this.field10366[0]);
+			IDirect3DDevice.SetVertexShaderConstantF(this.renderer.device, 0, this.renderer.temporaryBufferAddress, this.field10366[0].length / 4);
 			this.field10359[0] = false;
 		}
 		if (this.field10359[1]) {
-			this.field10365.field10071.clear();
-			this.field10365.field10071.asFloatBuffer().put(this.field10366[1]);
-			IDirect3DDevice.SetPixelShaderConstantF(this.field10365.device, 0, this.field10365.field10046, this.field10366[1].length / 4);
+			this.renderer.temporaryBuffer.clear();
+			this.renderer.temporaryBuffer.asFloatBuffer().put(this.field10366[1]);
+			IDirect3DDevice.SetPixelShaderConstantF(this.renderer.device, 0, this.renderer.temporaryBufferAddress, this.field10366[1].length / 4);
 			this.field10359[1] = false;
 		}
 	}
 
 	@ObfuscatedName("agt.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field10367 != 0L) {
 			IUnknown.Release(this.field10367);
 			this.field10367 = 0L;
@@ -385,17 +385,17 @@ public final class Direct3DProgram extends Program {
 			IUnknown.Release(this.field10360);
 			this.field10360 = 0L;
 		}
-		this.field10365.method16198(this);
+		this.renderer.method16198(this);
 	}
 
 	@ObfuscatedName("agt.bf()V")
 	public void method16466() {
 		if (this.field10367 != 0L) {
-			this.field10365.method19023(this.field10367);
+			this.renderer.method19023(this.field10367);
 			this.field10367 = 0L;
 		}
 		if (this.field10360 != 0L) {
-			this.field10365.method19023(this.field10360);
+			this.renderer.method19023(this.field10360);
 			this.field10360 = 0L;
 		}
 	}

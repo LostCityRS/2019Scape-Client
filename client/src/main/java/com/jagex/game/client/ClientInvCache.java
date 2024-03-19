@@ -356,11 +356,11 @@ public class ClientInvCache extends Node {
 	@ObfuscatedName("ku.y(IB)V")
 	public static void method5150(int arg0) {
 		field11222 = arg0;
-		modelCache.method2924();
+		modelCache.clear();
 	}
 
 	@ObfuscatedName("acd.x(I)V")
 	public static void method14941() {
-		modelCache.method2924();
+		modelCache.clear();
 	}
 }

@@ -78,9 +78,9 @@ public class LegacyColourGradingBloomFilter extends PostProcessingFilter {
 			return false;
 		}
 		this.field12194 = new LegacyOpenGLFramebuffer(this.field11270);
-		this.field12196 = new LegacyOpenGLRelated(this.field11270, 3553, TextureFormat.field1273, this.method17542(), 256, 256);
+		this.field12196 = new LegacyOpenGLRelated(this.field11270, 3553, TextureFormat.RGBA, this.method17542(), 256, 256);
 		this.field12196.method15312(false, false);
-		this.field12197 = new LegacyOpenGLRelated(this.field11270, 3553, TextureFormat.field1273, this.method17542(), 256, 256);
+		this.field12197 = new LegacyOpenGLRelated(this.field11270, 3553, TextureFormat.RGBA, this.method17542(), 256, 256);
 		this.field12197.method15312(false, false);
 		this.field11270.method2142(this.field12194);
 		this.field12194.method15439(0, this.field12196.method15317(0));
@@ -132,7 +132,7 @@ public class LegacyColourGradingBloomFilter extends PostProcessingFilter {
 						if (var9 <= 256 && var10 <= 256) {
 							break label61;
 						}
-						this.field12193[var11++] = new LegacyOpenGLRelated(this.field11270, 3553, TextureFormat.field1273, this.method17542(), var9, var10);
+						this.field12193[var11++] = new LegacyOpenGLRelated(this.field11270, 3553, TextureFormat.RGBA, this.method17542(), var9, var10);
 						if (var9 > 256) {
 							var9 >>= 0x1;
 						}

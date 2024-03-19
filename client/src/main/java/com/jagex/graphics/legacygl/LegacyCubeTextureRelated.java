@@ -37,6 +37,6 @@ public class LegacyCubeTextureRelated implements LegacyPostProcessingRelated {
 	}
 
 	@ObfuscatedName("cg.m()V")
-	public void method1010() {
+	public void delete() {
 	}
 }

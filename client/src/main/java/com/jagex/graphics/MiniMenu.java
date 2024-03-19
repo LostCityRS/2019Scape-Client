@@ -2084,7 +2084,7 @@ public class MiniMenu {
 				var16.buf.p2(var7);
 				var16.buf.p1_alt1(method14766() ? 1 : 0);
 				Client.gameConnection.queue(var16);
-				Client.method6820(var15.field10450[0], var15.field10448[0]);
+				Client.method6820(var15.routeWaypointX[0], var15.routeWaypointZ[0]);
 			}
 		}
 		ClientProt var17 = null;
@@ -2167,7 +2167,7 @@ public class MiniMenu {
 				var24.buf.p1_alt3(method14766() ? 1 : 0);
 				var24.buf.p2_alt2(var7);
 				Client.gameConnection.queue(var24);
-				Client.method6820(var23.field10450[0], var23.field10448[0]);
+				Client.method6820(var23.routeWaypointX[0], var23.routeWaypointZ[0]);
 			}
 		}
 		if (var6 == 17) {
@@ -2201,7 +2201,7 @@ public class MiniMenu {
 				var28.buf.p2_alt1(Client.field10975);
 				var28.buf.p2(Client.field10974);
 				Client.gameConnection.queue(var28);
-				Client.method6820(var27.field10450[0], var27.field10448[0]);
+				Client.method6820(var27.routeWaypointX[0], var27.routeWaypointZ[0]);
 			}
 		}
 		if (var6 == 2) {
@@ -2288,7 +2288,7 @@ public class MiniMenu {
 				var35.buf.p2_alt3(var7);
 				var35.buf.p4_alt2(Client.field6707);
 				Client.gameConnection.queue(var35);
-				Client.method6820(var34.field10450[0], var34.field10448[0]);
+				Client.method6820(var34.routeWaypointX[0], var34.routeWaypointZ[0]);
 			}
 		}
 		if (var6 == 59) {
@@ -2374,7 +2374,7 @@ public class MiniMenu {
 			float var17 = var7 * var10 + arg2;
 			int var18 = (int) var15 >> 9;
 			int var19 = (int) var17 >> 9;
-			if (var18 > 0 && var19 > 0 && var18 < Client.world.method7728() && var19 < Client.world.method7758()) {
+			if (var18 > 0 && var19 > 0 && var18 < Client.world.getSizeX() && var19 < Client.world.getSizeZ()) {
 				int var20 = Client.localPlayerEntity.field11717;
 				if (var20 < 3 && (Client.world.method7793().levelTileFlags[1][var18][var19] & 0x2) != 0) {
 					var20++;

@@ -54,7 +54,7 @@ public class GraphicsDeleteableRelated implements Direct3DGraphicsDeletable {
 	}
 
 	@ObfuscatedName("of.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field4233 != 0L) {
 			IUnknown.Release(this.field4233);
 			this.field4233 = 0L;

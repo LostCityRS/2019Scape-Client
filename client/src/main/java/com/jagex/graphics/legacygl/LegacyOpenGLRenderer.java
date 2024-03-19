@@ -807,9 +807,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.ra()V")
 	public void method15728() {
 		this.field9973 = new LegacyOpenGLTexture[this.field9982];
-		this.field9974 = new LegacyOpenGLRelated(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
-		new LegacyOpenGLRelated(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
-		new LegacyOpenGLRelated(this, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 1, 1);
+		this.field9974 = new LegacyOpenGLRelated(this, 3553, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, 1, 1);
+		new LegacyOpenGLRelated(this, 3553, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, 1, 1);
+		new LegacyOpenGLRelated(this, 3553, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, 1, 1);
 		for (int var1 = 0; var1 < 8; var1++) {
 			this.field10008[var1] = new LegacyOpenGLModel(this);
 			this.field10009[var1] = new LegacyOpenGLModel(this);
@@ -1039,7 +1039,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.ad(Ljava/awt/Canvas;II)Lafy;")
-	public Surface method2144(Canvas arg0, int arg1, int arg2) {
+	public Surface createSurface(Canvas arg0, int arg1, int arg2) {
 		return new LegacyOpenGLSurface(this, arg0);
 	}
 

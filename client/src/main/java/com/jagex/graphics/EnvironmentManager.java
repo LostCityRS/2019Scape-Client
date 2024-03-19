@@ -13,7 +13,7 @@ import rs2.client.Client;
 public class EnvironmentManager {
 
 	@ObfuscatedName("xu.e")
-	public static int field7859 = -1;
+	public static int samplerMaterial = -1;
 
 	@ObfuscatedName("xu.n")
 	public static EnvironmentSampler sampler;
@@ -25,10 +25,10 @@ public class EnvironmentManager {
 	public static int field7835 = 5047;
 
 	@ObfuscatedName("xu.f")
-	public final Renderer field7833;
+	public final Renderer renderer;
 
 	@ObfuscatedName("xu.w")
-	public final Environment[][] field7836;
+	public final Environment[][] environmentMap;
 
 	@ObfuscatedName("xu.l")
 	public int field7837 = 0;
@@ -40,166 +40,166 @@ public class EnvironmentManager {
 	public long field7839 = 0L;
 
 	@ObfuscatedName("xu.p")
-	public boolean field7840 = false;
+	public boolean resetFade = false;
 
 	@ObfuscatedName("xu.d")
-	public final Environment field7856;
+	public final Environment defaultEnv;
 
 	@ObfuscatedName("xu.c")
-	public final Environment field7841;
+	public final Environment currentEnv;
 
 	@ObfuscatedName("xu.r")
-	public final Environment field7843;
+	public final Environment fadeEnvA;
 
 	@ObfuscatedName("xu.v")
-	public final Environment field7844;
+	public final Environment fadeEnvB;
 
 	@ObfuscatedName("xu.o")
-	public Environment field7854;
+	public Environment overrideEnv;
 
 	@ObfuscatedName("xu.s")
-	public EnvironmentOverride field7831;
+	public EnvironmentOverride override;
 
 	@ObfuscatedName("xu.y")
-	public final Vector3 field7847 = new Vector3(-50.0F, -60.0F, -50.0F);
+	public final Vector3 sunDirection = new Vector3(-50.0F, -60.0F, -50.0F);
 
 	@ObfuscatedName("xu.q")
-	public final WeightedCache field7848 = new WeightedCache(8);
+	public final WeightedCache samplerCache = new WeightedCache(8);
 
 	@ObfuscatedName("xu.x")
-	public final WeightedCache field7849 = new WeightedCache(8);
+	public final WeightedCache skyboxCache = new WeightedCache(8);
 
 	@ObfuscatedName("xu.b")
-	public final WeightedCache field7850 = new WeightedCache(8);
+	public final WeightedCache colourRemappingCache = new WeightedCache(8);
 
 	@ObfuscatedName("xu.h")
-	public final Js5 field7845;
+	public final Js5 spriteArchive;
 
 	@ObfuscatedName("xu.a")
-	public boolean field7852 = false;
+	public boolean overrideColourRemapping = false;
 
 	@ObfuscatedName("xu.g")
-	public int[] field7851 = new int[] { -1, -1, -1 };
+	public int[] overrideColourRemappingMap = new int[] { -1, -1, -1 };
 
 	@ObfuscatedName("xu.i")
-	public float[] field7834 = new float[] { 0.0F, 0.0F, 0.0F };
+	public float[] overrideColourRemappingWeight = new float[] { 0.0F, 0.0F, 0.0F };
 
 	@ObfuscatedName("xu.j")
-	public boolean field7855 = false;
+	public boolean overrideLevels = false;
 
 	@ObfuscatedName("xu.t")
-	public float field7853;
+	public float overrideLevelsGamma;
 
 	@ObfuscatedName("xu.ae")
-	public float field7857;
+	public float overrideLevelsInputMin;
 
 	@ObfuscatedName("xu.ag")
-	public float field7858;
+	public float overrideLevelsInputMax;
 
 	@ObfuscatedName("xu.ah")
-	public float field7842;
+	public float overrideLevelsOutputMin;
 
 	@ObfuscatedName("xu.al")
 	public float field7860;
 
 	public EnvironmentManager(Renderer arg0, Js5 arg1, int arg2, int arg3) {
-		this.field7833 = arg0;
-		this.field7845 = arg1;
-		this.field7836 = new Environment[arg2][arg3];
-		if (field7859 != -1) {
-			sampler = this.createEnvironmentSampler(field7859);
+		this.renderer = arg0;
+		this.spriteArchive = arg1;
+		this.environmentMap = new Environment[arg2][arg3];
+		if (samplerMaterial != -1) {
+			sampler = this.createEnvironmentSampler(samplerMaterial);
 		}
 		skybox = null;
-		this.field7856 = new Environment();
-		this.field7841 = new Environment();
-		this.field7843 = new Environment();
-		this.field7844 = new Environment();
-		this.method10019();
-		this.method10002();
-		this.method10000();
+		this.defaultEnv = new Environment();
+		this.currentEnv = new Environment();
+		this.fadeEnvA = new Environment();
+		this.fadeEnvB = new Environment();
+		this.resetFade();
+		this.resetOverrideColourRemapping();
+		this.resetOverrideLevels();
 	}
 
 	@ObfuscatedName("xu.e(Lrl;B)V")
-	public void method10003(World arg0) {
-		Environment var2 = this.method10049(arg0);
-		if (this.field7831 == null) {
-			this.method10007(var2, field7835);
+	public void updatePartial(World arg0) {
+		Environment var2 = this.computeTargetEnvironment(arg0);
+		if (this.override == null) {
+			this.fadeEnvironment(var2, field7835);
 		} else {
-			this.field7854.setTo(var2);
-			this.field7854.method10063(this, this.field7831);
-			this.method10007(this.field7854, this.field7831.method10380());
+			this.overrideEnv.setTo(var2);
+			this.overrideEnv.applyOverride(this, this.override);
+			this.fadeEnvironment(this.overrideEnv, this.override.getFadeDuration());
 		}
-		this.method9990();
-		this.method10008();
-		this.method9997();
+		this.updateFade();
+		this.updateSun();
+		this.updateFog();
 	}
 
 	@ObfuscatedName("xu.n(Lrl;B)V")
-	public void method9979(World arg0) {
-		Environment var2 = this.method10049(arg0);
-		if (this.field7831 == null) {
-			this.method10007(var2, field7835);
+	public void updateFull(World arg0) {
+		Environment var2 = this.computeTargetEnvironment(arg0);
+		if (this.override == null) {
+			this.fadeEnvironment(var2, field7835);
 		} else {
-			this.field7854.setTo(var2);
-			this.field7854.method10063(this, this.field7831);
-			this.method10007(this.field7854, this.field7831.method10380());
+			this.overrideEnv.setTo(var2);
+			this.overrideEnv.applyOverride(this, this.override);
+			this.fadeEnvironment(this.overrideEnv, this.override.getFadeDuration());
 		}
-		this.method9990();
-		this.method10054();
-		this.method10037();
-		this.method10001();
+		this.updateFade();
+		this.updateBloom();
+		this.updateLevels();
+		this.updateColourRemapping();
 	}
 
 	@ObfuscatedName("xu.m(Lrl;Lyj;II)V")
-	public void method9980(World arg0, EnvironmentOverride arg1, int arg2) {
-		this.field7831 = arg1;
-		Environment var4 = this.method10049(arg0);
-		if (this.field7831 == null) {
-			this.method10007(var4, arg2);
-			this.field7854 = null;
+	public void setOverride(World arg0, EnvironmentOverride arg1, int arg2) {
+		this.override = arg1;
+		Environment var4 = this.computeTargetEnvironment(arg0);
+		if (this.override == null) {
+			this.fadeEnvironment(var4, arg2);
+			this.overrideEnv = null;
 			return;
 		}
-		if (this.field7854 == null) {
-			this.field7854 = new Environment();
+		if (this.overrideEnv == null) {
+			this.overrideEnv = new Environment();
 		}
-		this.field7854.setTo(var4);
-		this.field7854.method10063(this, this.field7831);
-		this.method10007(this.field7854, arg2);
+		this.overrideEnv.setTo(var4);
+		this.overrideEnv.applyOverride(this, this.override);
+		this.fadeEnvironment(this.overrideEnv, arg2);
 	}
 
 	@ObfuscatedName("xu.k(I)Lyj;")
-	public EnvironmentOverride method9981() {
-		return this.field7831;
+	public EnvironmentOverride getOverride() {
+		return this.override;
 	}
 
 	@ObfuscatedName("xu.f(I)Lxv;")
-	public Environment method9982() {
-		return this.field7841;
+	public Environment getCurrentEnv() {
+		return this.currentEnv;
 	}
 
 	@ObfuscatedName("xu.w(Lxu;I)V")
 	public void method9992(EnvironmentManager arg0) {
-		this.field7841.setTo(arg0.field7841);
-		this.field7843.setTo(arg0.field7843);
-		this.field7844.setTo(arg0.field7844);
+		this.currentEnv.setTo(arg0.currentEnv);
+		this.fadeEnvA.setTo(arg0.fadeEnvA);
+		this.fadeEnvB.setTo(arg0.fadeEnvB);
 		this.field7839 = arg0.field7839;
 		this.field7837 = arg0.field7837;
 		this.field7838 = arg0.field7838;
 	}
 
 	@ObfuscatedName("xu.l(I)V")
-	public void method9984() {
-		this.field7848.method2924();
-		this.field7849.method2924();
-		this.field7850.method2924();
+	public void clearCache() {
+		this.samplerCache.clear();
+		this.skyboxCache.clear();
+		this.colourRemappingCache.clear();
 	}
 
 	@ObfuscatedName("xu.u(II)Ldz;")
 	public EnvironmentSampler createEnvironmentSampler(int arg0) {
-		EnvironmentSampler var2 = (EnvironmentSampler) this.field7848.get((long) arg0);
+		EnvironmentSampler var2 = (EnvironmentSampler) this.samplerCache.get((long) arg0);
 		if (var2 == null) {
-			EnvironmentSampler var3 = this.field7833.createEnvironmentSampler(arg0);
-			this.field7848.put(var3, (long) arg0);
+			EnvironmentSampler var3 = this.renderer.createEnvironmentSampler(arg0);
+			this.samplerCache.put(var3, (long) arg0);
 			return var3;
 		} else {
 			return var2;
@@ -209,119 +209,119 @@ public class EnvironmentManager {
 	@ObfuscatedName("xu.z(IIIII)Lsv;")
 	public SkyBox createSkybox(int arg0, int arg1, int arg2, int arg3) {
 		long var5 = ((long) arg1 & 0xFFFFL) << 48 | ((long) arg2 & 0xFFFFL) << 32 | ((long) arg3 & 0xFFFFL) << 16 | (long) arg0 & 0xFFFFL;
-		SkyBox var7 = (SkyBox) this.field7849.get(var5);
+		SkyBox var7 = (SkyBox) this.skyboxCache.get(var5);
 		if (var7 == null) {
 			var7 = SkyBoxType.method305(arg0, arg1, arg2, arg3, Client.skyBoxTypeList, Client.skyDecorTypeList);
-			this.field7849.put(var7, var5);
+			this.skyboxCache.put(var7, var5);
 		}
 		return var7;
 	}
 
 	@ObfuscatedName("xu.p(IB)Lcj;")
-	public ColourRemapper method9987(int arg0) {
-		ColourRemapper var2 = (ColourRemapper) this.field7850.get((long) arg0);
+	public ColourRemapper createColourRemapper(int arg0) {
+		ColourRemapper var2 = (ColourRemapper) this.colourRemappingCache.get((long) arg0);
 		if (var2 != null) {
 			return var2;
 		}
-		SpriteData var3 = SpriteDataProvider.method1607(this.field7845, arg0);
+		SpriteData var3 = SpriteDataProvider.get(this.spriteArchive, arg0);
 		if (var3 != null && var3.getWidth() == 256 && var3.getHeight() == 16) {
 			int[] var4 = var3.method2604(false);
-			var2 = this.field7833.createColourRemapper(var4);
+			var2 = this.renderer.createColourRemapper(var4);
 			if (var2 != null) {
-				this.field7850.put(var2, (long) arg0);
+				this.colourRemappingCache.put(var2, (long) arg0);
 			}
 		}
 		return var2;
 	}
 
 	@ObfuscatedName("xu.d(IILxv;I)V")
-	public void method9999(int arg0, int arg1, Environment arg2) {
-		this.field7836[arg0][arg1] = arg2;
+	public void setEnvironmentMap(int arg0, int arg1, Environment arg2) {
+		this.environmentMap[arg0][arg1] = arg2;
 	}
 
 	@ObfuscatedName("xu.c(B)V")
-	public void method9998() {
-		for (int var1 = 0; var1 < this.field7836.length; var1++) {
-			for (int var2 = 0; var2 < this.field7836[var1].length; var2++) {
-				this.field7836[var1][var2] = this.field7856;
+	public void clearEnvironmentMap() {
+		for (int var1 = 0; var1 < this.environmentMap.length; var1++) {
+			for (int var2 = 0; var2 < this.environmentMap[var1].length; var2++) {
+				this.environmentMap[var1][var2] = this.defaultEnv;
 			}
 		}
 	}
 
 	@ObfuscatedName("xu.r(III)V")
 	public void method9991(int arg0, int arg1) {
-		Environment var3 = this.field7836[arg0][arg1];
+		Environment var3 = this.environmentMap[arg0][arg1];
 		if (var3 != null) {
-			this.field7847.setTo(var3.sunDirection);
+			this.sunDirection.setTo(var3.sunDirection);
 		}
-		this.method10008();
+		this.updateSun();
 	}
 
 	@ObfuscatedName("xu.v(Lrl;I)Lxv;")
-	public Environment method10049(World arg0) {
+	public Environment computeTargetEnvironment(World arg0) {
 		Object var2 = null;
 		int var3 = -1;
 		int var4 = -1;
-		if (Client.method611(Client.state) || Client.method15084(Client.state)) {
-			var3 = Client.field7956 >> 12;
-			var4 = Client.field1881 >> 12;
+		if (Client.isStateTitle(Client.state) || Client.method15084(Client.state)) {
+			var3 = Client.cameraMouseX >> 12;
+			var4 = Client.cameraMouseZ >> 12;
 		} else {
 			if (Client.localPlayerEntity != null) {
-				var3 = Client.localPlayerEntity.field10450[0] >> 3;
-				var4 = Client.localPlayerEntity.field10448[0] >> 3;
+				var3 = Client.localPlayerEntity.routeWaypointX[0] >> 3;
+				var4 = Client.localPlayerEntity.routeWaypointZ[0] >> 3;
 			}
-			if (var3 < 0 || var3 >= arg0.method7728() >> 3 || var4 < 0 || var4 >= arg0.method7758() >> 3) {
-				var3 = arg0.method7728() >> 4;
-				var4 = arg0.method7758() >> 4;
+			if (var3 < 0 || var3 >= arg0.getSizeX() >> 3 || var4 < 0 || var4 >= arg0.getSizeZ() >> 3) {
+				var3 = arg0.getSizeX() >> 4;
+				var4 = arg0.getSizeZ() >> 4;
 			}
 		}
-		Environment var5 = this.field7836[var3][var4];
+		Environment var5 = this.environmentMap[var3][var4];
 		if (var5 == null) {
-			var5 = this.field7856;
+			var5 = this.defaultEnv;
 		}
 		return var5;
 	}
 
 	@ObfuscatedName("xu.o(Lxv;II)V")
-	public void method10007(Environment arg0, int arg1) {
-		if (this.field7840) {
-			this.field7840 = false;
+	public void fadeEnvironment(Environment arg0, int arg1) {
+		if (this.resetFade) {
+			this.resetFade = false;
 			arg1 = 0;
 		}
-		if (this.field7844.method10071(arg0)) {
+		if (this.fadeEnvB.equal(arg0)) {
 			return;
 		}
-		this.field7844.setTo(arg0);
+		this.fadeEnvB.setTo(arg0);
 		this.field7839 = MonotonicTime.get();
 		this.field7837 = this.field7838 = arg1;
 		if (this.field7837 == 0) {
 			return;
 		}
-		this.field7843.setTo(this.field7841);
-		if (this.field7841.skybox == null) {
+		this.fadeEnvA.setTo(this.currentEnv);
+		if (this.currentEnv.skybox == null) {
 			return;
 		}
-		if (this.field7841.skybox.method7960()) {
-			this.field7841.skybox = this.field7843.skybox = this.field7841.skybox.method7942();
+		if (this.currentEnv.skybox.method7960()) {
+			this.currentEnv.skybox = this.fadeEnvA.skybox = this.currentEnv.skybox.method7942();
 		}
-		if (this.field7841.skybox != null && this.field7844.skybox != this.field7841.skybox) {
-			this.field7841.skybox.method7962(this.field7844.skybox);
+		if (this.currentEnv.skybox != null && this.fadeEnvB.skybox != this.currentEnv.skybox) {
+			this.currentEnv.skybox.method7962(this.fadeEnvB.skybox);
 		}
 	}
 
 	@ObfuscatedName("xu.s(I)V")
-	public void method9990() {
+	public void updateFade() {
 		if (this.field7838 < 0) {
 			return;
 		}
 		long var1 = MonotonicTime.get();
 		this.field7838 = (int) ((long) (this.field7838) - (var1 - this.field7839));
 		if (this.field7838 > 0) {
-			this.field7841.setToInterpolation(this.field7833, this.field7843, this.field7844, (float) (this.field7837 - this.field7838) / (float) this.field7837);
+			this.currentEnv.setToInterpolation(this.renderer, this.fadeEnvA, this.fadeEnvB, (float) (this.field7837 - this.field7838) / (float) this.field7837);
 		} else {
-			this.field7841.setTo(this.field7844);
-			if (this.field7841.skybox != null) {
-				this.field7841.skybox.method7958();
+			this.currentEnv.setTo(this.fadeEnvB);
+			if (this.currentEnv.skybox != null) {
+				this.currentEnv.skybox.method7958();
 			}
 			this.field7838 = -1;
 		}
@@ -329,111 +329,111 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.y(I)V")
-	public void method10019() {
-		this.field7840 = true;
+	public void resetFade() {
+		this.resetFade = true;
 	}
 
 	@ObfuscatedName("xu.q(I)V")
-	public void method10008() {
-		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * this.field7841.sunAmbientIntensity);
-		this.field7833.setSun(this.field7841.sunColour, this.field7841.sunDiffuseIntensity, this.field7841.sunShadowIntensity, (float) ((int) this.field7847.field4308 << 2), (float) ((int) this.field7847.field4311 << 2), (float) ((int) this.field7847.field4313 << 2));
-		this.field7833.setEnvironmentSampler(this.field7841.sampler);
+	public void updateSun() {
+		this.renderer.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.getAntiMacroBrightnessAdjustment()) * this.currentEnv.sunAmbientIntensity);
+		this.renderer.setSun(this.currentEnv.sunColour, this.currentEnv.sunDiffuseIntensity, this.currentEnv.sunShadowIntensity, (float) ((int) this.sunDirection.field4308 << 2), (float) ((int) this.sunDirection.field4311 << 2), (float) ((int) this.sunDirection.field4313 << 2));
+		this.renderer.setEnvironmentSampler(this.currentEnv.sampler);
 	}
 
 	@ObfuscatedName("xu.x(FFFIIIIII)V")
-	public void method9996(float arg0, float arg1, float arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
-		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * arg0);
-		this.field7833.setSun(arg3, arg1, arg2, (float) (arg4 << 2), (float) (arg5 << 2), (float) (arg6 << 2));
-		this.field7833.setEnvironmentSampler(this.createEnvironmentSampler(arg7));
+	public void setLighting(float arg0, float arg1, float arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+		this.renderer.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.getAntiMacroBrightnessAdjustment()) * arg0);
+		this.renderer.setSun(arg3, arg1, arg2, (float) (arg4 << 2), (float) (arg5 << 2), (float) (arg6 << 2));
+		this.renderer.setEnvironmentSampler(this.createEnvironmentSampler(arg7));
 	}
 
 	@ObfuscatedName("xu.b(I)V")
-	public void method9997() {
+	public void updateFog() {
 		byte var1 = 0;
-		int var2 = (this.field7841.fogDepth + 256 << 2) + var1;
-		this.field7833.setFog(this.field7841.fogColour, Client.preferences.fog.getValue() == 1 ? var2 : -1, 0);
+		int var2 = (this.currentEnv.fogDepth + 256 << 2) + var1;
+		this.renderer.setFog(this.currentEnv.fogColour, Client.preferences.fog.getValue() == 1 ? var2 : -1, 0);
 	}
 
 	@ObfuscatedName("xu.h(I)V")
-	public void method10054() {
-		this.field7833.method2243(this.field7841.bloomThreshold, this.field7841.bloomWhitePointSq, this.field7841.bloomIntensity);
+	public void updateBloom() {
+		this.renderer.setBloom(this.currentEnv.bloomThreshold, this.currentEnv.bloomWhitePointSq, this.currentEnv.bloomIntensity);
 	}
 
 	@ObfuscatedName("xu.a(I)V")
-	public void method10037() {
-		if (!this.field7833.isLevelsEnabled()) {
+	public void updateLevels() {
+		if (!this.renderer.isLevelsEnabled()) {
 			return;
 		}
-		if (this.field7855) {
-			this.field7833.setLevels(this.field7853, this.field7857, this.field7858, this.field7842, this.field7860);
+		if (this.overrideLevels) {
+			this.renderer.setLevels(this.overrideLevelsGamma, this.overrideLevelsInputMin, this.overrideLevelsInputMax, this.overrideLevelsOutputMin, this.field7860);
 		} else {
-			this.field7833.setLevels(this.field7841.levelsGamma, this.field7841.levelsInputMin, this.field7841.levelsInputMax, this.field7841.levelsOutputMin, this.field7841.levelsOutputMax);
+			this.renderer.setLevels(this.currentEnv.levelsGamma, this.currentEnv.levelsInputMin, this.currentEnv.levelsInputMax, this.currentEnv.levelsOutputMin, this.currentEnv.levelsOutputMax);
 		}
 	}
 
 	@ObfuscatedName("xu.g(B)V")
-	public void method10000() {
-		this.field7855 = false;
-		this.field7853 = 1.0F;
-		this.field7857 = 0.0F;
-		this.field7858 = 1.0F;
-		this.field7842 = 0.0F;
+	public void resetOverrideLevels() {
+		this.overrideLevels = false;
+		this.overrideLevelsGamma = 1.0F;
+		this.overrideLevelsInputMin = 0.0F;
+		this.overrideLevelsInputMax = 1.0F;
+		this.overrideLevelsOutputMin = 0.0F;
 		this.field7860 = 1.0F;
 	}
 
 	@ObfuscatedName("xu.i(B)V")
-	public void method10001() {
-		if (!this.field7833.method2238()) {
+	public void updateColourRemapping() {
+		if (!this.renderer.method2238()) {
 			return;
 		}
 		ColourRemapper var1 = null;
 		ColourRemapper var2 = null;
 		ColourRemapper var3 = null;
-		if (!this.field7852) {
-			if (this.field7841.colourRemappingMap[0] > -1) {
-				var1 = this.method9987(this.field7841.colourRemappingMap[0]);
+		if (!this.overrideColourRemapping) {
+			if (this.currentEnv.colourRemappingMap[0] > -1) {
+				var1 = this.createColourRemapper(this.currentEnv.colourRemappingMap[0]);
 			}
-			if (this.field7841.colourRemappingMap[1] > -1) {
-				var2 = this.method9987(this.field7841.colourRemappingMap[1]);
+			if (this.currentEnv.colourRemappingMap[1] > -1) {
+				var2 = this.createColourRemapper(this.currentEnv.colourRemappingMap[1]);
 			}
-			if (this.field7841.colourRemappingMap[2] > -1) {
-				var3 = this.method9987(this.field7841.colourRemappingMap[2]);
+			if (this.currentEnv.colourRemappingMap[2] > -1) {
+				var3 = this.createColourRemapper(this.currentEnv.colourRemappingMap[2]);
 			}
-			this.field7833.setColourRemapping(var1, this.field7841.colourRemappingWeight[0], var2, this.field7841.colourRemappingWeight[1], var3, this.field7841.colourRemappingWeight[2]);
+			this.renderer.setColourRemapping(var1, this.currentEnv.colourRemappingWeight[0], var2, this.currentEnv.colourRemappingWeight[1], var3, this.currentEnv.colourRemappingWeight[2]);
 			return;
 		}
-		if (this.field7851[0] > -1) {
-			var1 = this.method9987(this.field7851[0]);
+		if (this.overrideColourRemappingMap[0] > -1) {
+			var1 = this.createColourRemapper(this.overrideColourRemappingMap[0]);
 		}
-		if (this.field7851[1] > -1) {
-			var2 = this.method9987(this.field7851[1]);
+		if (this.overrideColourRemappingMap[1] > -1) {
+			var2 = this.createColourRemapper(this.overrideColourRemappingMap[1]);
 		}
-		if (this.field7851[2] > -1) {
-			var3 = this.method9987(this.field7851[2]);
+		if (this.overrideColourRemappingMap[2] > -1) {
+			var3 = this.createColourRemapper(this.overrideColourRemappingMap[2]);
 		}
-		this.field7833.setColourRemapping(var1, this.field7834[0], var2, this.field7834[1], var3, this.field7834[2]);
+		this.renderer.setColourRemapping(var1, this.overrideColourRemappingWeight[0], var2, this.overrideColourRemappingWeight[1], var3, this.overrideColourRemappingWeight[2]);
 	}
 
 	@ObfuscatedName("xu.j(I)V")
-	public void method10002() {
-		this.field7852 = false;
-		int[] var1 = this.field7851;
-		int[] var2 = this.field7851;
-		this.field7851[2] = -1;
+	public void resetOverrideColourRemapping() {
+		this.overrideColourRemapping = false;
+		int[] var1 = this.overrideColourRemappingMap;
+		int[] var2 = this.overrideColourRemappingMap;
+		this.overrideColourRemappingMap[2] = -1;
 		var2[1] = -1;
 		var1[0] = -1;
-		float[] var3 = this.field7834;
-		float[] var4 = this.field7834;
-		this.field7834[2] = 0.0F;
+		float[] var3 = this.overrideColourRemappingWeight;
+		float[] var4 = this.overrideColourRemappingWeight;
+		this.overrideColourRemappingWeight[2] = 0.0F;
 		var4[1] = 0.0F;
 		var3[0] = 0.0F;
 	}
 
 	@ObfuscatedName("xu.t(I)V")
-	public void method9983() {
-		this.field7833.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.method7732()) * 1.1523438F);
-		this.field7833.setSun(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
-		this.field7833.setFog(13156520, -1, 0);
-		this.field7833.setEnvironmentSampler(sampler);
+	public void setLightingInterface() {
+		this.renderer.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.getAntiMacroBrightnessAdjustment()) * 1.1523438F);
+		this.renderer.setSun(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
+		this.renderer.setFog(13156520, -1, 0);
+		this.renderer.setEnvironmentSampler(sampler);
 	}
 }

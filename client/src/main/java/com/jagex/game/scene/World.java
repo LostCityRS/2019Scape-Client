@@ -203,12 +203,12 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.w(I)I")
-	public int method7728() {
+	public int getSizeX() {
 		return this.mapSizeX;
 	}
 
 	@ObfuscatedName("rl.l(S)I")
-	public int method7758() {
+	public int getSizeZ() {
 		return this.mapSizeZ;
 	}
 
@@ -223,7 +223,7 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.p(I)F")
-	public float method7732() {
+	public float getAntiMacroBrightnessAdjustment() {
 		return this.field5038;
 	}
 
@@ -323,17 +323,17 @@ public class World {
 	public void method7737(boolean arg0) {
 		EnvironmentOverride var2 = null;
 		if (this.field5062 != null && arg0) {
-			var2 = this.field5062.method9981();
+			var2 = this.field5062.getOverride();
 		}
 		this.field5062 = new EnvironmentManager(Client.renderer, Client.spritesJs5, this.mapSizeX >> 3, this.mapSizeZ >> 3);
 		if (var2 != null) {
-			this.field5062.method9980(this, var2, 0);
+			this.field5062.setOverride(this, var2, 0);
 		}
 	}
 
 	@ObfuscatedName("rl.ag(I)V")
 	public void method7730() {
-		this.field5062.method9980(this, null, 0);
+		this.field5062.setOverride(this, null, 0);
 	}
 
 	@ObfuscatedName("rl.ah(B)V")
@@ -427,8 +427,8 @@ public class World {
 		this.setBuildAreaSize(BuildAreaSize.buildAreaSizeForId(Client.preferences.buildArea.getValue()));
 		int var1 = this.field5018.x;
 		int var2 = this.field5018.z;
-		int var3 = (Client.field7956 >> 12) + (var1 >> 3);
-		int var4 = (Client.field1881 >> 12) + (var2 >> 3);
+		int var3 = (Client.cameraMouseX >> 12) + (var1 >> 3);
+		int var4 = (Client.cameraMouseZ >> 12) + (var2 >> 3);
 		Client.localPlayerEntity.field11717 = 0;
 		Client.field4826 = 0;
 		Client.localPlayerEntity.method19118(8, 8);
@@ -760,9 +760,9 @@ public class World {
 				ObjectWrapper var5 = Client.field10839[var4];
 				if (var5 != null) {
 					NpcEntity var6 = (NpcEntity) var5.field11436;
-					for (int var7 = 0; var7 < var6.field10450.length; var7++) {
-						var6.field10450[var7] -= var2;
-						var6.field10448[var7] -= var3;
+					for (int var7 = 0; var7 < var6.routeWaypointX.length; var7++) {
+						var6.routeWaypointX[var7] -= var2;
+						var6.routeWaypointZ[var7] -= var3;
 					}
 					Vector3 var8 = Vector3.method6484(var6.method10536().field4298);
 					var8.field4308 -= var2 * 512;
@@ -786,10 +786,10 @@ public class World {
 					var14.method10531(var15);
 					if ((int) var15.field4308 >= 0 && (int) var15.field4308 <= var10 && (int) var15.field4313 >= 0 && (int) var15.field4313 <= var11) {
 						boolean var16 = true;
-						for (int var17 = 0; var17 < var14.field10450.length; var17++) {
-							var14.field10450[var17] -= var2;
-							var14.field10448[var17] -= var3;
-							if (var14.field10450[var17] < 0 || var14.field10450[var17] >= this.mapSizeX || var14.field10448[var17] < 0 || var14.field10448[var17] >= this.mapSizeZ) {
+						for (int var17 = 0; var17 < var14.routeWaypointX.length; var17++) {
+							var14.routeWaypointX[var17] -= var2;
+							var14.routeWaypointZ[var17] -= var3;
+							if (var14.routeWaypointX[var17] < 0 || var14.routeWaypointX[var17] >= this.mapSizeX || var14.routeWaypointZ[var17] < 0 || var14.routeWaypointZ[var17] >= this.mapSizeZ) {
 								var16 = false;
 							}
 						}
@@ -821,9 +821,9 @@ public class World {
 		for (int var21 = 0; var21 < 2048; var21++) {
 			PlayerEntity var22 = Client.field10944[var21];
 			if (var22 != null) {
-				for (int var23 = 0; var23 < var22.field10450.length; var23++) {
-					var22.field10450[var23] -= var2;
-					var22.field10448[var23] -= var3;
+				for (int var23 = 0; var23 < var22.routeWaypointX.length; var23++) {
+					var22.routeWaypointX[var23] -= var2;
+					var22.routeWaypointZ[var23] -= var3;
 				}
 				Vector3 var24 = Vector3.method6484(var22.method10536().field4298);
 				var24.field4308 -= var2 * 512;
@@ -908,10 +908,10 @@ public class World {
 			Client.field8492 = Client.field8492 * 262144 - var3 * 262144;
 			Client.field6714 -= var2;
 			Client.field2626 -= var3;
-			Client.field7956 -= var2 * 512;
-			Client.field1881 -= var3 * 512;
+			Client.cameraMouseX -= var2 * 512;
+			Client.cameraMouseZ -= var3 * 512;
 			if (Math.abs(var2) > this.mapSizeX || Math.abs(var3) > this.mapSizeZ) {
-				this.field5062.method10019();
+				this.field5062.resetFade();
 			}
 		}
 		MiniMenu.method5175();
@@ -930,7 +930,7 @@ public class World {
 			this.field5032.method7101();
 		}
 		if (this.field5062 != null) {
-			this.field5062.method9998();
+			this.field5062.clearEnvironmentMap();
 		}
 		if (this.scene != null) {
 			this.scene.field6959.method8680();
@@ -1096,7 +1096,7 @@ public class World {
 			this.sleep(50);
 		}
 		this.field5062.method9991(this.mapSizeX >> 4, this.mapSizeZ >> 4);
-		this.field5062.method10003(this);
+		this.field5062.updatePartial(this);
 		if (underwater) {
 			this.scene.method8703(true);
 			this.underwaterMapLoader = new ClientMapLoader(this.scene, this.field5039, 1, this.mapSizeX, this.mapSizeZ, true, this.field5032, this.field5062);
@@ -1208,7 +1208,7 @@ public class World {
 			this.method7854();
 		} else {
 			Client.audioApi.method3149();
-			this.field5062.method9997();
+			this.field5062.updateFog();
 			GameShell.method135();
 		}
 		for (int var27 = 0; var27 < 4; var27++) {

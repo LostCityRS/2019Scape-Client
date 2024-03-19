@@ -21,7 +21,7 @@ public abstract class HitmarkTypeFactory {
 	public void method9277() {
 		WeightedCache var1 = this.field7316;
 		synchronized (this.field7316) {
-			this.field7316.method2924();
+			this.field7316.clear();
 		}
 	}
 

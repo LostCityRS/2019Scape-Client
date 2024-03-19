@@ -158,10 +158,10 @@ public class FontProvider implements FontIconProvider {
 
 	@ObfuscatedName("oi.z(B)V")
 	public void method6165() {
-		this.field4203.method2924();
-		this.field4202.method2924();
+		this.field4203.clear();
+		this.field4202.clear();
 		if (this.field4205 != null) {
-			this.field4205.method2924();
+			this.field4205.clear();
 		}
 	}
 
@@ -192,7 +192,7 @@ public class FontProvider implements FontIconProvider {
 			arg0 = this.field4206;
 		} else {
 			if (this.field4206 != arg0) {
-				this.field4205.method2924();
+				this.field4205.clear();
 			}
 			this.field4206 = arg0;
 		}

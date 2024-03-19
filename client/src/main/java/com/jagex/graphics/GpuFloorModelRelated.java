@@ -119,7 +119,7 @@ public class GpuFloorModelRelated extends Node {
 		}
 		if (this.field11421 > 0) {
 			this.field11428 = new IterableMap(IntMath.bitceil(this.field11421));
-			this.field11429 = this.field11416.field10071;
+			this.field11429 = this.field11416.temporaryBuffer;
 			this.field11429.clear();
 			this.field11429.position(this.field11416.field10048 >> 1);
 			this.field11429.slice();
@@ -199,9 +199,9 @@ public class GpuFloorModelRelated extends Node {
 		this.field11423 = this.field11416.method16067(false);
 		this.field11423.method5831(this.field11413);
 		this.field11424 = this.field11416.method16085(false);
-		this.field11424.method5553(this.field11420 * 16, 16);
-		this.field11424.method5738(0, this.field11420 * 16, this.field11416.field10046);
-		this.field11423.method5738(0, this.field11413 * 2, (long) (this.field11416.field10048 >> 1) + this.field11416.field10046);
+		this.field11424.allocate(this.field11420 * 16, 16);
+		this.field11424.upload(0, this.field11420 * 16, this.field11416.temporaryBufferAddress);
+		this.field11423.upload(0, this.field11413 * 2, (long) (this.field11416.field10048 >> 1) + this.field11416.temporaryBufferAddress);
 	}
 
 	@ObfuscatedName("akx.n(IIIIII)V")
@@ -215,7 +215,7 @@ public class GpuFloorModelRelated extends Node {
 			Node var12 = this.field11428.getNode(var7);
 			if (var12 != null) {
 				Unsafe var13 = this.field11416.field10110;
-				var13.putShort((long) (this.field11416.field10048 >> 1) + this.field11416.field10046 + (long) (this.field11413 * 2), ((FloorModelNode) var12).field11437);
+				var13.putShort((long) (this.field11416.field10048 >> 1) + this.field11416.temporaryBufferAddress + (long) (this.field11413 * 2), ((FloorModelNode) var12).field11437);
 				this.field11413++;
 				return;
 			}
@@ -297,21 +297,21 @@ public class GpuFloorModelRelated extends Node {
 			var47 = 255;
 		}
 		Unsafe var48 = this.field11416.field10110;
-		var48.putFloat((long) (this.field11420 * 16) + this.field11416.field10046, (float) var9);
-		var48.putFloat((long) (this.field11420 * 16) + this.field11416.field10046 + 4L, (float) var11);
-		var48.putFloat((long) (this.field11420 * 16) + this.field11416.field10046 + 8L, (float) var10);
+		var48.putFloat((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress, (float) var9);
+		var48.putFloat((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress + 4L, (float) var11);
+		var48.putFloat((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress + 8L, (float) var10);
 		if (this.field11416.field10185 == 0) {
-			var48.putByte((long) (this.field11420 * 16) + this.field11416.field10046 + 12L, (byte) var47);
-			var48.putByte((long) (this.field11420 * 16) + this.field11416.field10046 + 13L, (byte) var46);
-			var48.putByte((long) (this.field11420 * 16) + this.field11416.field10046 + 14L, (byte) var45);
+			var48.putByte((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress + 12L, (byte) var47);
+			var48.putByte((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress + 13L, (byte) var46);
+			var48.putByte((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress + 14L, (byte) var45);
 		} else {
-			var48.putByte((long) (this.field11420 * 16) + this.field11416.field10046 + 12L, (byte) var45);
-			var48.putByte((long) (this.field11420 * 16) + this.field11416.field10046 + 13L, (byte) var46);
-			var48.putByte((long) (this.field11420 * 16) + this.field11416.field10046 + 14L, (byte) var47);
+			var48.putByte((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress + 12L, (byte) var45);
+			var48.putByte((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress + 13L, (byte) var46);
+			var48.putByte((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress + 14L, (byte) var47);
 		}
-		var48.putByte((long) (this.field11420 * 16) + this.field11416.field10046 + 15L, (byte) -1);
+		var48.putByte((long) (this.field11420 * 16) + this.field11416.temporaryBufferAddress + 15L, (byte) -1);
 		this.field11420++;
-		var48.putShort((long) (this.field11416.field10048 >> 1) + this.field11416.field10046 + (long) (this.field11413 * 2), var14);
+		var48.putShort((long) (this.field11416.field10048 >> 1) + this.field11416.temporaryBufferAddress + (long) (this.field11413 * 2), var14);
 		this.field11413++;
 	}
 
@@ -334,7 +334,7 @@ public class GpuFloorModelRelated extends Node {
 			return;
 		}
 		int var9 = 0;
-		ByteBuffer var10 = this.field11416.field10071;
+		ByteBuffer var10 = this.field11416.temporaryBuffer;
 		var10.clear();
 		int var11 = this.field11427;
 		while (true) {
@@ -342,7 +342,7 @@ public class GpuFloorModelRelated extends Node {
 				if (var10.position() != 0 && var9 != 0) {
 					int var16 = var10.position();
 					IndexBuffer var17 = this.field11416.method15988(var16 / 2);
-					var17.method5738(0, var16, this.field11416.field10046);
+					var17.upload(0, var16, this.field11416.temporaryBufferAddress);
 					this.method17784(arg0, var17, var9 / 3);
 					break;
 				}

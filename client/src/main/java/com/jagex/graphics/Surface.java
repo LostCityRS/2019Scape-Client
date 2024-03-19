@@ -12,5 +12,5 @@ public abstract class Surface extends RenderTarget {
 	public abstract int method15451();
 
 	@ObfuscatedName("afy.i(II)V")
-	public abstract void method15453(int arg0, int arg1);
+	public abstract void onResize(int arg0, int arg1);
 }

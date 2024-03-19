@@ -11,14 +11,14 @@ import jaggl.OpenGL;
 public class OpenGLCubeTexture extends OpenGLBaseTexture implements GpuCubeTexture {
 
 	public OpenGLCubeTexture(OpenGLRenderer arg0, int arg1, boolean arg2, int[][] arg3) {
-		super(arg0, 34067, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg1 * arg1 * 6, arg2);
+		super(arg0, 34067, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, arg1 * arg1 * 6, arg2);
 		for (int var5 = 0; var5 < 6; var5++) {
 			for (int var6 = 0; var6 < arg3[var5].length; var6++) {
 				int var7 = arg3[var5][var6];
 				arg3[var5][var6] = var7 & 0xFF00FF00 | (var7 & 0xFF) << 16 | var7 >> 16 & 0xFF;
 			}
 		}
-		this.field4980.method16092(this);
+		this.field4980.setTexture(this);
 		if (arg2) {
 			for (int var8 = 0; var8 < 6; var8++) {
 				this.method7638(var8 + 34069, arg1, arg1, arg3[var8]);
@@ -41,7 +41,7 @@ public class OpenGLCubeTexture extends OpenGLBaseTexture implements GpuCubeTextu
 	}
 
 	@ObfuscatedName("ail.m()V")
-	public void method1010() {
-		super.method1010();
+	public void delete() {
+		super.delete();
 	}
 }

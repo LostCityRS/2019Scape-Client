@@ -24,29 +24,29 @@ public class OpenGLVertexBuffer extends OpenGLBuffer implements VertexBuffer {
 	}
 
 	@ObfuscatedName("aix.e(II)Z")
-	public boolean method5553(int arg0, int arg1) {
+	public boolean allocate(int arg0, int arg1) {
 		this.field10619 = (byte) arg1;
 		super.method5831(arg0);
 		return true;
 	}
 
 	@ObfuscatedName("aix.m()V")
-	public void method1010() {
-		super.method1010();
+	public void delete() {
+		super.delete();
 	}
 
 	@ObfuscatedName("aix.f(IIJ)Z")
-	public boolean method5738(int arg0, int arg1, long arg2) {
-		return super.method5738(arg0, arg1, arg2);
+	public boolean upload(int arg0, int arg1, long arg2) {
+		return super.upload(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("aix.w(II)J")
-	public long method5737(int arg0, int arg1) {
-		return super.method5737(arg0, arg1);
+	public long lock(int arg0, int arg1) {
+		return super.lock(arg0, arg1);
 	}
 
 	@ObfuscatedName("aix.l()V")
-	public void method5749() {
-		super.method5749();
+	public void unlock() {
+		super.unlock();
 	}
 }

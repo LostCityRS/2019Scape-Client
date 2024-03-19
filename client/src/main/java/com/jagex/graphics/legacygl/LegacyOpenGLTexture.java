@@ -123,7 +123,7 @@ public abstract class LegacyOpenGLTexture {
 
 	@ObfuscatedName("bq.u()I")
 	public int method1099() {
-		int var1 = this.field1010.field1652 * this.field1002.field1279 * this.field1008;
+		int var1 = this.field1010.field1652 * this.field1002.id * this.field1008;
 		return this.field1011 ? var1 * 4 / 3 : var1;
 	}
 
@@ -195,7 +195,7 @@ public abstract class LegacyOpenGLTexture {
 		if (arg2 > 0 && !IntMath.method4918(arg2)) {
 			throw new IllegalArgumentException("");
 		} else if (arg3 <= 0 || IntMath.method4918(arg3)) {
-			int var6 = arg4.field1279;
+			int var6 = arg4.id;
 			int var7 = 0;
 			int var8 = arg2 < arg3 ? arg2 : arg3;
 			int var9 = arg2 >> 1;
@@ -249,7 +249,7 @@ public abstract class LegacyOpenGLTexture {
 		if (arg2 > 0 && !IntMath.method4918(arg2)) {
 			throw new IllegalArgumentException("");
 		} else if (arg3 <= 0 || IntMath.method4918(arg3)) {
-			int var6 = arg4.field1279;
+			int var6 = arg4.id;
 			int var7 = 0;
 			int var8 = arg2 < arg3 ? arg2 : arg3;
 			int var9 = arg2 >> 1;

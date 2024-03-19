@@ -277,7 +277,7 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.screenSize, 0);
 		Client.preferences.method18157(Client.preferences.preset, 4);
 		Client.method9516();
-		Client.world.method7816().method10019();
+		Client.world.method7816().resetFade();
 		Client.field10836 = true;
 	}
 
@@ -309,7 +309,7 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.screenSize, 1);
 		Client.preferences.method18157(Client.preferences.preset, 3);
 		Client.method9516();
-		Client.world.method7816().method10019();
+		Client.world.method7816().resetFade();
 		Client.field10836 = true;
 	}
 
@@ -341,7 +341,7 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.screenSize, 2);
 		Client.preferences.method18157(Client.preferences.preset, 2);
 		Client.method9516();
-		Client.world.method7816().method10019();
+		Client.world.method7816().resetFade();
 		Client.field10836 = true;
 	}
 
@@ -373,7 +373,7 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.screenSize, 2);
 		Client.preferences.method18157(Client.preferences.preset, 1);
 		Client.method9516();
-		Client.world.method7816().method10019();
+		Client.world.method7816().resetFade();
 		Client.field10836 = true;
 	}
 

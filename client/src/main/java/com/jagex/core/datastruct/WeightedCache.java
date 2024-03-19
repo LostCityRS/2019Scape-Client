@@ -131,7 +131,7 @@ public final class WeightedCache {
 	}
 
 	@ObfuscatedName("eb.u(B)V")
-	public void method2924() {
+	public void clear() {
 		this.field1755.clearAll();
 		this.field1757.clear();
 		this.field1756 = this.field1758;

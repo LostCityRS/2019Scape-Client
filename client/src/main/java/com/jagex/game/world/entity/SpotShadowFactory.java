@@ -169,7 +169,7 @@ public class SpotShadowFactory {
 		field616 = arg0;
 		WeightedCache var1 = field617;
 		synchronized (field617) {
-			field617.method2924();
+			field617.clear();
 		}
 	}
 
@@ -177,7 +177,7 @@ public class SpotShadowFactory {
 	public static void method3076() {
 		WeightedCache var0 = field617;
 		synchronized (field617) {
-			field617.method2924();
+			field617.clear();
 		}
 	}
 

@@ -35,6 +35,6 @@ public class OpenGLRelated implements LegacyPostProcessingRelated {
 	}
 
 	@ObfuscatedName("ct.m()V")
-	public void method1010() {
+	public void delete() {
 	}
 }

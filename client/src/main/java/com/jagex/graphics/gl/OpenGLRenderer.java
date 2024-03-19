@@ -417,7 +417,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.ad(Ljava/awt/Canvas;II)Lafy;")
-	public Surface method2144(Canvas arg0, int arg1, int arg2) {
+	public Surface createSurface(Canvas arg0, int arg1, int arg2) {
 		return new OpenGLSurface(this, arg0);
 	}
 
@@ -478,7 +478,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		this.method16118(false);
 		this.method16015(false);
 		this.method16361(false);
-		this.method16092(null);
+		this.setTexture(null);
 		this.method15991(1);
 		this.method16054(0);
 		OpenGL.glMatrixMode(5889);
@@ -1140,7 +1140,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.vk(Llo;)V")
 	public void method16177(VertexDeclaration arg0) {
-		VertexDeclarationElement[] var2 = arg0.field3241;
+		VertexDeclarationElement[] var2 = arg0.elements;
 		int var3 = 0;
 		boolean var4 = false;
 		boolean var5 = false;
@@ -1187,7 +1187,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 						OpenGL.glNormalPointer(5126, var11, (long) var10 + var12);
 						var5 = true;
 				}
-				var10 += var15.field3313;
+				var10 += var15.size;
 			}
 		}
 		if (this.field12010 != var6) {
@@ -1278,7 +1278,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 			var7 = 0;
 			var8 = arg5;
 		}
-		DataType var9 = arg0.method5832();
+		DataType var9 = arg0.getDataType();
 		OpenGLIndexBuffer var10 = (OpenGLIndexBuffer) arg0;
 		var10.method7658();
 		OpenGL.glDrawElements(var7, var8, method19076(var9), var10.getAddress() + (long) (var9.field1652 * arg4));
@@ -1307,7 +1307,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 			var6 = 0;
 			var7 = arg4;
 		}
-		DataType var8 = this.field12036.method5832();
+		DataType var8 = this.field12036.getDataType();
 		OpenGL.glDrawElements(var6, var7, method19076(var8), this.field12036.getAddress() + (long) (var8.field1652 * arg3));
 	}
 

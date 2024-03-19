@@ -88,30 +88,30 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 		if (this.field10587 == null) {
 			throw new ShaderException("");
 		}
-		this.field10604 = this.field10587.method4188("textureMatrix");
-		this.field10607 = this.field10587.method4188("modelMatrix");
-		this.field10586 = this.field10587.method4188("viewMatrix");
-		this.field10605 = this.field10587.method4188("projectionMatrix");
-		this.field10600 = this.field10587.method4188("modelViewMatrix");
-		this.field10590 = this.field10587.method4188("modelViewProjectionMatrix");
-		this.field10591 = this.field10587.method4188("viewProjectionMatrix");
-		this.field10595 = this.field10587.method4188("ambientColour");
-		this.field10589 = this.field10587.method4188("sunDirection");
-		this.field10598 = this.field10587.method4188("sunColour");
-		this.field10597 = this.field10587.method4188("antiSunColour");
-		this.field10585 = this.field10587.method4188("sunExponent");
-		this.field10592 = this.field10587.method4188("eyePosition");
-		this.field10593 = this.field10587.method4188("eyePositionOS");
-		this.field10594 = this.field10587.method4188("sunDirectionOS");
+		this.field10604 = this.field10587.getUniform2("textureMatrix");
+		this.field10607 = this.field10587.getUniform2("modelMatrix");
+		this.field10586 = this.field10587.getUniform2("viewMatrix");
+		this.field10605 = this.field10587.getUniform2("projectionMatrix");
+		this.field10600 = this.field10587.getUniform2("modelViewMatrix");
+		this.field10590 = this.field10587.getUniform2("modelViewProjectionMatrix");
+		this.field10591 = this.field10587.getUniform2("viewProjectionMatrix");
+		this.field10595 = this.field10587.getUniform2("ambientColour");
+		this.field10589 = this.field10587.getUniform2("sunDirection");
+		this.field10598 = this.field10587.getUniform2("sunColour");
+		this.field10597 = this.field10587.getUniform2("antiSunColour");
+		this.field10585 = this.field10587.getUniform2("sunExponent");
+		this.field10592 = this.field10587.getUniform2("eyePosition");
+		this.field10593 = this.field10587.getUniform2("eyePositionOS");
+		this.field10594 = this.field10587.getUniform2("sunDirectionOS");
 		if (this.method16762()) {
-			if (this.field10587.method4163() == null) {
-				Program var2 = this.field10587.method4217();
+			if (this.field10587.getCurrentProgram() == null) {
+				Program var2 = this.field10587.compilePrograms();
 				if (var2 == null) {
-					throw new ShaderException(this.field10587.method4186() + "");
+					throw new ShaderException(this.field10587.getName() + "");
 				}
-				this.field10587.method4162(var2);
+				this.field10587.setCurrentProgram(var2);
 			}
-			this.field10596 = this.field10587.method4158();
+			this.field10596 = this.field10587.getProgramCount();
 			this.field10609 = new int[this.field10596];
 			return true;
 		}
@@ -136,8 +136,8 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 
 	@ObfuscatedName("ahi.e()V")
 	public void method5417() {
-		this.field10587.method4244();
-		this.field10609[this.field10587.method4212()] = -1;
+		this.field10587.enable();
+		this.field10609[this.field10587.getCurrentProgramIndex()] = -1;
 		this.method16773(0);
 		this.method16768();
 	}
@@ -162,9 +162,9 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 		if (this.field10587 == null || !this.field10587.method4184() || this.field3233.method16037() != 0) {
 			return;
 		}
-		int var2 = this.field10587.method4212();
+		int var2 = this.field10587.getCurrentProgramIndex();
 		if ((this.field10609[var2] & 0x80) != 0 && this.field10604 != null) {
-			this.field10587.method4201(this.field10604, arg0);
+			this.field10587.setUniform4x2(this.field10604, arg0);
 			this.field10609[var2] &= 0xFFFFFF7F;
 		}
 	}
@@ -174,42 +174,42 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 		if (this.field10587 == null || !this.field10587.method4184()) {
 			return;
 		}
-		int var1 = this.field10587.method4212();
+		int var1 = this.field10587.getCurrentProgramIndex();
 		int var2 = this.field10609[var1];
 		if ((var2 & 0x1) != 0 && this.field10607 != null) {
-			this.field10587.method4166(this.field10607, this.field3233.method16002());
+			this.field10587.setUniform4x4(this.field10607, this.field3233.method16002());
 		}
 		if ((var2 & 0x2) != 0) {
 			if (this.field10586 != null) {
-				this.field10587.method4166(this.field10586, this.field3233.method16000());
+				this.field10587.setUniform4x4(this.field10586, this.field3233.method16000());
 			}
 			if (this.field10592 != null) {
 				this.field10612[0] = 0.0F;
 				this.field10612[1] = 0.0F;
 				this.field10612[2] = 0.0F;
 				this.field3233.method2218().method6319(this.field10612[0], this.field10612[1], this.field10612[2], this.field10612);
-				this.field10587.method4218(this.field10592, this.field10612[0], this.field10612[1], this.field10612[2]);
+				this.field10587.setUniform(this.field10592, this.field10612[0], this.field10612[1], this.field10612[2]);
 			}
 		}
 		if ((var2 & 0x10) != 0 && this.field10600 != null) {
-			this.field10587.method4166(this.field10600, this.field3233.method16244());
+			this.field10587.setUniform4x4(this.field10600, this.field3233.method16244());
 		}
 		if ((var2 & 0x8) != 0 && this.field10588 != null) {
-			this.field10587.method4166(this.field10588, this.field3233.method16035());
+			this.field10587.setUniform4x4(this.field10588, this.field3233.method16035());
 		}
 		if ((var2 & 0x4) != 0 && this.field10605 != null) {
-			this.field10587.method4166(this.field10605, this.field3233.method16005());
+			this.field10587.setUniform4x4(this.field10605, this.field3233.method16005());
 		}
 		if ((var2 & 0x20) != 0 && this.field10590 != null) {
 			field10610.method6606(this.field3233.method16244(), this.field3233.method16005());
-			this.field10587.method4166(this.field10590, field10610);
+			this.field10587.setUniform4x4(this.field10590, field10610);
 		}
 		if ((var2 & 0x40) != 0 && this.field10591 != null) {
 			field10610.method6606(this.field3233.method16000(), this.field3233.method16005());
-			this.field10587.method4166(this.field10591, field10610);
+			this.field10587.setUniform4x4(this.field10591, field10610);
 		}
 		if (this.field3233.method16037() == 0 && (this.field10609[var1] & 0x80) != 0 && this.field10604 != null) {
-			this.field10587.method4201(this.field10604, this.field3233.method16045());
+			this.field10587.setUniform4x2(this.field10604, this.field3233.method16045());
 			this.field10609[var1] &= 0xFFFFFF7F;
 		}
 		this.field10609[var1] = 0;
@@ -227,7 +227,7 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 		float[] var6 = new float[] { 0.0F, 0.0F, 0.0F };
 		this.field3233.method2218().method6295(0.0F, 0.0F, 0.0F, var6);
 		arg1.method6320(var4);
-		this.field10587.method4218(this.field10593, var4[0], var4[1], var4[2]);
+		this.field10587.setUniform(this.field10593, var4[0], var4[1], var4[2]);
 	}
 
 	@ObfuscatedName("ahi.ae(ILou;)V")
@@ -235,7 +235,7 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 		if (this.field10594 != null) {
 			float[] var3 = new float[] { this.field3233.field10114[0], this.field3233.field10114[1], this.field3233.field10114[2] };
 			arg1.method6321(var3);
-			this.field10587.method4218(this.field10594, var3[0], var3[1], var3[2]);
+			this.field10587.setUniform(this.field10594, var3[0], var3[1], var3[2]);
 		}
 	}
 
@@ -245,19 +245,19 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 			return;
 		}
 		if (this.field10595 != null) {
-			this.field10587.method4218(this.field10595, this.field3233.field10142 * this.field3233.field10122, this.field3233.field10122 * this.field3233.field10120, this.field3233.field10210 * this.field3233.field10122);
+			this.field10587.setUniform(this.field10595, this.field3233.field10142 * this.field3233.field10122, this.field3233.field10122 * this.field3233.field10120, this.field3233.field10210 * this.field3233.field10122);
 		}
 		if (this.field10589 != null) {
-			this.field10587.method4218(this.field10589, this.field3233.field10114[0], this.field3233.field10114[1], this.field3233.field10114[2]);
+			this.field10587.setUniform(this.field10589, this.field3233.field10114[0], this.field3233.field10114[1], this.field3233.field10114[2]);
 		}
 		if (this.field10598 != null) {
-			this.field10587.method4218(this.field10598, this.field3233.field10142 * this.field3233.field10123, this.field3233.field10123 * this.field3233.field10120, this.field3233.field10210 * this.field3233.field10123);
+			this.field10587.setUniform(this.field10598, this.field3233.field10142 * this.field3233.field10123, this.field3233.field10123 * this.field3233.field10120, this.field3233.field10210 * this.field3233.field10123);
 		}
 		if (this.field10597 != null) {
-			this.field10587.method4218(this.field10597, -this.field3233.field10142 * this.field3233.field10124, -this.field3233.field10120 * this.field3233.field10124, -this.field3233.field10210 * this.field3233.field10124);
+			this.field10587.setUniform(this.field10597, -this.field3233.field10142 * this.field3233.field10124, -this.field3233.field10120 * this.field3233.field10124, -this.field3233.field10210 * this.field3233.field10124);
 		}
 		if (this.field10585 != null) {
-			this.field10587.method4268(this.field10585, Math.abs(this.field3233.field10114[1]) * 928.0F + 64.0F);
+			this.field10587.setUniform(this.field10585, Math.abs(this.field3233.field10114[1]) * 928.0F + 64.0F);
 		}
 	}
 
@@ -276,19 +276,19 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 	public void method16771(Matrix4x3 arg0) {
 		Matrix4x4 var2 = this.field3233.field10066;
 		var2.setToMatrix4x3(arg0);
-		int var3 = this.field10587.method4212();
+		int var3 = this.field10587.getCurrentProgramIndex();
 		if (this.field10607 != null) {
-			this.field10587.method4166(this.field10607, var2);
+			this.field10587.setUniform4x4(this.field10607, var2);
 			this.field10609[var3] &= 0xFFFFFFFE;
 		}
 		if (this.field10600 != null) {
 			field10610.method6606(var2, this.field3233.method16000());
-			this.field10587.method4166(this.field10600, field10610);
+			this.field10587.setUniform4x4(this.field10600, field10610);
 			this.field10609[var3] &= 0xFFFFFFEF;
 		}
 		if (this.field10590 != null) {
 			field10610.method6606(var2, this.field3233.method16228());
-			this.field10587.method4166(this.field10590, field10610);
+			this.field10587.setUniform4x4(this.field10590, field10610);
 			this.field10609[var3] &= 0xFFFFFFDF;
 		}
 		this.method16767(var3, arg0);

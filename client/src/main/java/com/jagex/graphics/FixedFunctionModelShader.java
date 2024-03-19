@@ -18,7 +18,7 @@ public class FixedFunctionModelShader extends ModelShader {
 
 	@ObfuscatedName("ahl.m(Z)V")
 	public void method5019(boolean arg0) {
-		this.field2963.method16038(0);
+		this.field2963.setActiveTexture(0);
 		this.field2963.method16041(0, TextureCombiner.field3365);
 		this.field2963.method16042(0, TextureCombiner.field3365);
 		this.field2963.method16041(1, TextureCombiner.field3367);
@@ -29,7 +29,7 @@ public class FixedFunctionModelShader extends ModelShader {
 
 	@ObfuscatedName("ahl.a()V")
 	public void method16615() {
-		this.field2963.method16092(this.field2966);
+		this.field2963.setTexture(this.field2966);
 		this.field2963.method16046().method6604(this.field2982);
 		this.field2963.method16174(GpuRendererRelated4.field3370);
 		this.field2963.method16079(PrimitiveType.field3403, this.field2981, this.field2983, this.field2972, this.field2962);
@@ -37,7 +37,7 @@ public class FixedFunctionModelShader extends ModelShader {
 
 	@ObfuscatedName("ahl.k(I)V")
 	public void method5020(int arg0) {
-		this.field2963.method16038(0);
+		this.field2963.setActiveTexture(0);
 		this.field2963.method16115(TextureCombineMode.field3395, TextureCombineMode.field3395);
 		this.field2963.method16041(0, TextureCombiner.field3365);
 		this.field2963.method16042(0, TextureCombiner.field3365);
@@ -48,7 +48,7 @@ public class FixedFunctionModelShader extends ModelShader {
 
 	@ObfuscatedName("ahl.f(I)V")
 	public void method5031(int arg0) {
-		this.field2963.method16038(0);
+		this.field2963.setActiveTexture(0);
 		this.field2963.method16115(TextureCombineMode.field3395, TextureCombineMode.field3396);
 		this.field2963.method16041(0, TextureCombiner.field3365);
 		this.field2963.method16042(0, TextureCombiner.field3367);
@@ -59,7 +59,7 @@ public class FixedFunctionModelShader extends ModelShader {
 
 	@ObfuscatedName("ahl.w(I)V")
 	public void method5026(int arg0) {
-		this.field2963.method16038(0);
+		this.field2963.setActiveTexture(0);
 		this.field2963.method16115(TextureCombineMode.field3395, TextureCombineMode.field3396);
 		this.field2963.method16041(0, TextureCombiner.field3365);
 		this.field2963.method16042(0, TextureCombiner.field3367);

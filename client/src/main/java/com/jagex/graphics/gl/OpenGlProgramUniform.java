@@ -21,21 +21,21 @@ public class OpenGlProgramUniform extends ProgramUniform {
 
 	@ObfuscatedName("atr.a()I")
 	public final int method19681() {
-		return this.field12536[this.field12535.method4212()];
+		return this.field12536[this.field12535.getCurrentProgramIndex()];
 	}
 
 	@ObfuscatedName("atr.e(I)Z")
 	public boolean method19245(int arg0) {
 		if (this.field12536 == null) {
-			this.field12536 = new int[this.field12535.method4158()];
+			this.field12536 = new int[this.field12535.getProgramCount()];
 		}
-		OpenGLProgram var2 = (OpenGLProgram) this.field12535.method4159(arg0);
+		OpenGLProgram var2 = (OpenGLProgram) this.field12535.getProgram(arg0);
 		this.field12536[arg0] = OpenGL.glGetUniformLocation(var2.field10373, this.method19257());
 		return this.field12536[arg0] != -1;
 	}
 
 	@ObfuscatedName("atr.w(I)I")
-	public final int method19250(int arg0) {
+	public final int getLocation(int arg0) {
 		return this.field12536[arg0];
 	}
 }

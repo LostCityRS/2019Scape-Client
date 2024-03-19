@@ -914,13 +914,13 @@ public final class Client extends GameShell {
 	public static int field10893 = 0;
 
 	@ObfuscatedName("xb.lr")
-	public static int field7956;
+	public static int cameraMouseX;
 
 	@ObfuscatedName("ahq.lq")
 	public static int field10518;
 
 	@ObfuscatedName("fo.lo")
-	public static int field1881;
+	public static int cameraMouseZ;
 
 	@ObfuscatedName("vp.lh")
 	public static int field7447;
@@ -2185,8 +2185,8 @@ public final class Client extends GameShell {
 		if (state == 2) {
 			return;
 		}
-		if ((state == 1 || method611(state) || method15084(state)) && audioApi != null) {
-			audioApi.method3235(audioApi.method3169(), preferences.unknownVolume2.getValue());
+		if ((state == 1 || isStateTitle(state) || method15084(state)) && audioApi != null) {
+            audioApi.method3235(audioApi.method3169(), preferences.unknownVolume2.getValue());
 		}
 		if (field10856) {
 			Object var1 = field10858;
@@ -2283,7 +2283,7 @@ public final class Client extends GameShell {
 		} else if (method9273(state)) {
 			world.rebuildScene();
 		}
-		if (method611(state) && !method9273(state)) {
+		if (isStateTitle(state) && !method9273(state)) {
 			this.method16920();
 			AccountCreationManager.method14952();
 			LoginManager.method3048();
@@ -2503,11 +2503,11 @@ public final class Client extends GameShell {
 		String var1 = " ";
 		try {
 			CoordGrid var2 = world.method7727();
-			var1 = var1 + var2.x + TextUtil.COMMA + var2.z + TextUtil.COMMA + world.method7728() + TextUtil.COMMA + world.method7758() + " ";
+			var1 = var1 + var2.x + TextUtil.COMMA + var2.z + TextUtil.COMMA + world.getSizeX() + TextUtil.COMMA + world.getSizeZ() + " ";
 			if (localPlayerEntity == null) {
 				var1 = var1 + field4826 + TextUtil.COMMA + field4826 + TextUtil.COMMA + field4826 + TextUtil.COMMA + " ";
 			} else {
-				var1 = var1 + field4826 + TextUtil.COMMA + (var2.x + localPlayerEntity.field10450[0]) + TextUtil.COMMA + (var2.z + localPlayerEntity.field10448[0]) + " ";
+				var1 = var1 + field4826 + TextUtil.COMMA + (var2.x + localPlayerEntity.routeWaypointX[0]) + TextUtil.COMMA + (var2.z + localPlayerEntity.routeWaypointZ[0]) + " ";
 			}
 			var1 = var1 + preferences.displayMode.getValue() + " " + preferences.antiAliasing.getValue() + " " + getWindowMode() + " " + GameShell.canvasWid + TextUtil.COMMA + GameShell.canvasHei + " ";
 			var1 = var1 + preferences.lightingDetail.getValue() + " ";
@@ -2550,7 +2550,7 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("a.ei(II)Z")
-	public static boolean method611(int arg0) {
+	public static boolean isStateTitle(int arg0) {
 		return arg0 == 4 || arg0 == 10 || arg0 == 17 || arg0 == 7 || arg0 == 0 || arg0 == 12 || arg0 == 8;
 	}
 
@@ -2621,8 +2621,8 @@ public final class Client extends GameShell {
 		if (arg0 == 3 || arg0 == 4) {
 			method3095();
 		}
-		boolean var2 = arg0 == 1 || method611(arg0) || method15084(arg0);
-		boolean var3 = state == 1 || method611(state) || method15084(state);
+		boolean var2 = arg0 == 1 || isStateTitle(arg0) || method15084(arg0);
+		boolean var3 = state == 1 || isStateTitle(state) || method15084(state);
 		if (var2 != var3) {
 			field4489.method7010(!var2);
 		}
@@ -2724,7 +2724,7 @@ public final class Client extends GameShell {
 					for (int var8 = 0; var8 < var5.length; var8++) {
 						var5[var8].method15009(var7.g4s());
 					}
-					boolean var9 = method2092(state) || method611(state) || method15084(state);
+					boolean var9 = method2092(state) || isStateTitle(state) || method15084(state);
 					field4489.method7017(field7571, !var9);
 					field9774 = null;
 					field7571 = null;
@@ -2778,18 +2778,18 @@ public final class Client extends GameShell {
 		method10615(field11038);
 		localPlayerEntity = new PlayerEntity(null);
 		field10946.clear();
-		localPlayerEntity.method10538((float) (world.method7728() * 512 / 2), 0.0F, (float) (world.method7758() * 512 / 2));
-		localPlayerEntity.field10450[0] = world.method7728() / 2;
-		localPlayerEntity.field10448[0] = world.method7758() / 2;
-		field1881 = 0;
-		field7956 = 0;
+		localPlayerEntity.method10538((float) (world.getSizeX() * 512 / 2), 0.0F, (float) (world.getSizeZ() * 512 / 2));
+		localPlayerEntity.routeWaypointX[0] = world.getSizeX() / 2;
+		localPlayerEntity.routeWaypointZ[0] = world.getSizeZ() / 2;
+		cameraMouseZ = 0;
+		cameraMouseX = 0;
 		if (Client.field3416 == 5) {
-			field7956 = field8550 << 9;
-			field1881 = field8492 << 9;
+			cameraMouseX = field8550 << 9;
+			cameraMouseZ = field8492 << 9;
 		} else {
 			method9611();
 		}
-		world.method7816().method10019();
+		world.method7816().resetFade();
 	}
 
 	@ObfuscatedName("vl.eg(ZI)V")
@@ -2981,7 +2981,7 @@ public final class Client extends GameShell {
 			method9756(preferences.bloom.getValue() == 1);
 		}
 		world.method7737(true);
-		world.method7816().method10019();
+		world.method7816().resetFade();
 		Minimap.method829();
 		field10800 = false;
 		field10801 = false;
@@ -3664,18 +3664,18 @@ public final class Client extends GameShell {
 				}
 				field10798 = 0;
 			}
-			world.method7816().method9984();
+			world.method7816().clearCache();
 			HintArrow.method2086();
 			SpotShadowFactory.method3076();
 			field7282.method6008();
 			field2013.method5974();
-			ScriptRunner.field8204.method2924();
-			field10830.method2924();
-			field10894.method2924();
-			field11013.method2924();
+			ScriptRunner.field8204.clear();
+			field10830.clear();
+			field10894.clear();
+			field11013.clear();
 			field9123.method14895();
 			field1840.method14895();
-			field10834.method2924();
+			field10834.clear();
 		}
 		ClientScriptHelpers.method8004();
 		ObjIconFactory.method17658();
@@ -3683,7 +3683,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("sz.fb(I)V")
 	public static final void closeConnection() {
-		if (method15084(state) || method611(state)) {
+		if (method15084(state) || isStateTitle(state)) {
 			logoutReason = LogoutReason.field9135;
 			logout(false);
 		} else {
@@ -3732,17 +3732,17 @@ public final class Client extends GameShell {
 						int var6 = (int) Math.round(Math.random() * 10.0D - 5.0D);
 						int var7 = (int) Math.round(Math.random() * 10.0D - 5.0D);
 						if (var6 != 0 || var7 != 0) {
-							int var8 = var3.field10450[0] + var6;
-							int var9 = var3.field10448[0] + var7;
+							int var8 = var3.routeWaypointX[0] + var6;
+							int var9 = var3.routeWaypointZ[0] + var7;
 							if (var8 < 0) {
 								boolean var10 = false;
-							} else if (var8 > world.method7728() - var5 - 1) {
-								int var11 = world.method7728() - var5 - 1;
+							} else if (var8 > world.getSizeX() - var5 - 1) {
+								int var11 = world.getSizeX() - var5 - 1;
 							}
 							if (var9 < 0) {
 								boolean var12 = false;
-							} else if (var9 > world.method7758() - var5 - 1) {
-								int var13 = world.method7758() - var5 - 1;
+							} else if (var9 > world.getSizeZ() - var5 - 1) {
+								int var13 = world.getSizeZ() - var5 - 1;
 							}
 						}
 					}
@@ -3765,7 +3765,7 @@ public final class Client extends GameShell {
 			} else {
 				method9611();
 			}
-			if (field7956 >> 9 < 14 || field7956 >> 9 >= world.method7728() - 14 || field1881 >> 9 < 14 || field1881 >> 9 >= world.method7758() - 14) {
+			if (cameraMouseX >> 9 < 14 || cameraMouseX >> 9 >= world.getSizeX() - 14 || cameraMouseZ >> 9 < 14 || cameraMouseZ >> 9 >= world.getSizeZ() - 14) {
 				world.rebuildMap(new RebuildRequest(RebuildType.field5063, null));
 			}
 		}
@@ -3982,7 +3982,7 @@ public final class Client extends GameShell {
 		if (state != 18) {
 			return;
 		}
-		world.method7816().method10003(world);
+		world.method7816().updatePartial(world);
 		ChangeLocationRequest.method3486();
 		if (field10915 > 10) {
 			gameConnection.idleNetCycles++;
@@ -4102,7 +4102,7 @@ public final class Client extends GameShell {
 													var39 = 3;
 												}
 												CoordGrid var40 = world.method7727();
-												method10445(var39, var40.x + localPlayerEntity.field10450[0], var40.z + localPlayerEntity.field10448[0]);
+												method10445(var39, var40.x + localPlayerEntity.routeWaypointX[0], var40.z + localPlayerEntity.routeWaypointZ[0]);
 											}
 											for (int var41 = 0; var41 < 5; var41++) {
 												int var10002 = field10996[var41]++;
@@ -4484,9 +4484,9 @@ public final class Client extends GameShell {
 			var2[var4] = (((float) var11 * var1 + (float) var10) * var1 + (float) var9) * var1 + (float) var8;
 		}
 		CoordGrid var12 = world.method7727();
-		field7956 = (int) var2[0] - var12.x * 512;
+		cameraMouseX = (int) var2[0] - var12.x * 512;
 		field10518 = (int) var2[1] * -1;
-		field1881 = (int) var2[2] - var12.z * 512;
+		cameraMouseZ = (int) var2[2] - var12.z * 512;
 		float[] var13 = new float[3];
 		int var14 = field10932 * 2;
 		for (int var15 = 0; var15 < 3; var15++) {
@@ -4514,20 +4514,20 @@ public final class Client extends GameShell {
 		int var1 = field8492 * 512 + 256;
 		int var2 = method3660(var0, var1, field4826) - field741;
 		if (field490 >= 100) {
-			field7956 = field8550 * 512 + 256;
-			field1881 = field8492 * 512 + 256;
-			field10518 = method3660(field7956, field1881, field4826) - field741;
+			cameraMouseX = field8550 * 512 + 256;
+			cameraMouseZ = field8492 * 512 + 256;
+			field10518 = method3660(cameraMouseX, cameraMouseZ, field4826) - field741;
 		} else {
-			if (field7956 < var0) {
-				field7956 += field490 * (var0 - field7956) / 1000 + field2937;
-				if (field7956 > var0) {
-					field7956 = var0;
+			if (cameraMouseX < var0) {
+				cameraMouseX += field490 * (var0 - cameraMouseX) / 1000 + field2937;
+				if (cameraMouseX > var0) {
+					cameraMouseX = var0;
 				}
 			}
-			if (field7956 > var0) {
-				field7956 -= field490 * (field7956 - var0) / 1000 + field2937;
-				if (field7956 < var0) {
-					field7956 = var0;
+			if (cameraMouseX > var0) {
+				cameraMouseX -= field490 * (cameraMouseX - var0) / 1000 + field2937;
+				if (cameraMouseX < var0) {
+					cameraMouseX = var0;
 				}
 			}
 			if (field10518 < var2) {
@@ -4542,25 +4542,25 @@ public final class Client extends GameShell {
 					field10518 = var2;
 				}
 			}
-			if (field1881 < var1) {
-				field1881 += field490 * (var1 - field1881) / 1000 + field2937;
-				if (field1881 > var1) {
-					field1881 = var1;
+			if (cameraMouseZ < var1) {
+				cameraMouseZ += field490 * (var1 - cameraMouseZ) / 1000 + field2937;
+				if (cameraMouseZ > var1) {
+					cameraMouseZ = var1;
 				}
 			}
-			if (field1881 > var1) {
-				field1881 -= field490 * (field1881 - var1) / 1000 + field2937;
-				if (field1881 < var1) {
-					field1881 = var1;
+			if (cameraMouseZ > var1) {
+				cameraMouseZ -= field490 * (cameraMouseZ - var1) / 1000 + field2937;
+				if (cameraMouseZ < var1) {
+					cameraMouseZ = var1;
 				}
 			}
 		}
 		int var3 = field6714 * 512 + 256;
 		int var4 = field2626 * 512 + 256;
 		int var5 = method3660(var3, var4, field4826) - field1983;
-		int var6 = var3 - field7956;
+		int var6 = var3 - cameraMouseX;
 		int var7 = var5 - field10518;
-		int var8 = var4 - field1881;
+		int var8 = var4 - cameraMouseZ;
 		int var9 = (int) Math.sqrt((double) (var6 * var6 + var8 * var8));
 		int var10 = (int) (Math.atan2((double) var7, (double) var9) * 2607.5945876176133D) & 0x3FFF;
 		int var11 = (int) (Math.atan2((double) var6, (double) var8) * -2607.5945876176133D) & 0x3FFF;
@@ -4629,9 +4629,9 @@ public final class Client extends GameShell {
 			field8586 = (int) ((double) field9155.method4719() * -2607.5945876176133D) & 0x3FFF;
 			field2656 = 0;
 			field11078 = (int) ((float) field7286 + (float) ((int) ((double) field11076 / (Math.tan((double) (field9155.method4784() / 2.0F)) * 4.0D)) - field7286) * var2);
-			field7956 = (int) ((float) (var3.x - var4.x * 512 - field9214) * var2 + (float) field9214);
+			cameraMouseX = (int) ((float) (var3.x - var4.x * 512 - field9214) * var2 + (float) field9214);
 			field10518 = (int) ((float) (-var3.y - field4857) * var2 + (float) field4857);
-			field1881 = (int) ((float) (var3.z - var4.z * 512 - field7231) * var2 + (float) field7231);
+			cameraMouseZ = (int) ((float) (var3.z - var4.z * 512 - field7231) * var2 + (float) field7231);
 			var5 = -field8586 - field8720 & 0x3FFF;
 			if (var5 > 8192) {
 				var5 -= 16384;
@@ -4649,9 +4649,9 @@ public final class Client extends GameShell {
 			int var7 = field10861 + (int) field10895 & 0x3FFF;
 			Vector3 var8 = localPlayerEntity.method10536().field4298;
 			method14042(field8910, method3660((int) var8.field4308, (int) var8.field4313, field4826) - field10901, field3569, var6, var7, (var6 >> 3) * 3 + 600 << 2, arg0);
-			field7956 = (int) ((float) (field7956 - field9214) * var2 + (float) field9214);
+			cameraMouseX = (int) ((float) (cameraMouseX - field9214) * var2 + (float) field9214);
 			field10518 = (int) ((float) (field10518 - field4857) * var2 + (float) field4857);
-			field1881 = (int) ((float) (field1881 - field7231) * var2 + (float) field7231);
+			cameraMouseZ = (int) ((float) (cameraMouseZ - field7231) * var2 + (float) field7231);
 			field7447 = (int) ((float) (field7447 - field1267) * var2 + (float) field1267);
 			var5 = field8586 - field8720;
 			if (var5 > 8192) {
@@ -4837,7 +4837,7 @@ public final class Client extends GameShell {
 		int var3 = field3569 >> 9;
 		int var4 = method3660(field8910, field3569, field4826);
 		int var5 = 0;
-		if (var2 > 3 && var3 > 3 && var2 < world.method7728() - 4 && var3 < world.method7758() - 4) {
+		if (var2 > 3 && var3 > 3 && var2 < world.getSizeX() - 4 && var3 < world.getSizeZ() - 4) {
 			for (int var6 = var2 - 4; var6 <= var2 + 4; var6++) {
 				for (int var7 = var3 - 4; var7 <= var3 + 4; var7++) {
 					int var8 = field4826;
@@ -4883,9 +4883,9 @@ public final class Client extends GameShell {
 			method9025();
 		}
 		if (arg5 && field490 >= 100) {
-			field7956 = field8550 * 512 + 256;
-			field1881 = field8492 * 512 + 256;
-			field10518 = method3660(field7956, field1881, field4826) - field741;
+			cameraMouseX = field8550 * 512 + 256;
+			cameraMouseZ = field8492 * 512 + 256;
+			field10518 = method3660(cameraMouseX, cameraMouseZ, field4826) - field741;
 		}
 		Client.field3416 = 5;
 		field3538 = -1;
@@ -4906,9 +4906,9 @@ public final class Client extends GameShell {
 			int var5 = field6714 * 512 + 256;
 			int var6 = field2626 * 512 + 256;
 			int var7 = method3660(var5, var6, field4826) - field1983;
-			int var8 = var5 - field7956;
+			int var8 = var5 - cameraMouseX;
 			int var9 = var7 - field10518;
-			int var10 = var6 - field1881;
+			int var10 = var6 - cameraMouseZ;
 			int var11 = (int) Math.sqrt((double) (var8 * var8 + var10 * var10));
 			field7447 = (int) (Math.atan2((double) var9, (double) var11) * 2607.5945876176133D) & 0x3FFF;
 			field8586 = (int) (Math.atan2((double) var8, (double) var10) * -2607.5945876176133D) & 0x3FFF;
@@ -4962,9 +4962,9 @@ public final class Client extends GameShell {
 		field3538 = -1;
 		field810 = -1;
 		field10899 = currentclock;
-		field9214 = field7956;
+		field9214 = cameraMouseX;
 		field4857 = field10518;
-		field7231 = field1881;
+		field7231 = cameraMouseZ;
 		field1267 = field7447;
 		field8720 = field8586;
 		field7286 = field11078;
@@ -4974,9 +4974,9 @@ public final class Client extends GameShell {
 	public static final void method9025() {
 		CoordGrid var0 = world.method7727();
 		Vector3 var1 = field9155.method4714();
-		field7956 = (int) var1.field4308 - (var0.x << 9);
+		cameraMouseX = (int) var1.field4308 - (var0.x << 9);
 		field10518 = -((int) var1.field4311);
-		field1881 = (int) var1.field4313 - (var0.z << 9);
+		cameraMouseZ = (int) var1.field4313 - (var0.z << 9);
 		field7447 = (int) ((double) field9155.method4718() * 2607.5945876176133D) & 0x3FFF;
 		field8586 = (int) ((double) field9155.method4719() * 2607.5945876176133D) & 0x3FFF;
 		field2656 = 0;
@@ -5020,7 +5020,7 @@ public final class Client extends GameShell {
 			var3 = field1797;
 		}
 		Vector3 var4 = arg0.method10536().field4298;
-		if ((int) var4.field4308 < 512 || (int) var4.field4313 < 512 || (int) var4.field4308 >= (world.method7728() - 1) * 512 || (int) var4.field4313 >= (world.method7758() - 1) * 512) {
+		if ((int) var4.field4308 < 512 || (int) var4.field4313 < 512 || (int) var4.field4308 >= (world.getSizeX() - 1) * 512 || (int) var4.field4313 >= (world.getSizeZ() - 1) * 512) {
 			arg0.field10454.method14362(-1);
 			for (int var5 = 0; var5 < arg0.field10422.length; var5++) {
 				arg0.field10422[var5].field6657 = -1;
@@ -5031,10 +5031,10 @@ public final class Client extends GameShell {
 			arg0.field10399 = 0;
 			var2 = MoveSpeed.STATIONARY.serialID;
 			var3 = 0;
-			arg0.method10538((float) (arg0.field10450[0] * 512 + arg0.method16546() * 256), var4.field4311, (float) (arg0.field10448[0] * 512 + arg0.method16546() * 256));
+			arg0.method10538((float) (arg0.routeWaypointX[0] * 512 + arg0.method16546() * 256), var4.field4311, (float) (arg0.routeWaypointZ[0] * 512 + arg0.method16546() * 256));
 			arg0.method16517();
 		}
-		if (localPlayerEntity == arg0 && ((int) var4.field4308 < 6144 || (int) var4.field4313 < 6144 || (int) var4.field4308 >= (world.method7728() - 12) * 512 || (int) var4.field4313 >= (world.method7758() - 12) * 512)) {
+		if (localPlayerEntity == arg0 && ((int) var4.field4308 < 6144 || (int) var4.field4313 < 6144 || (int) var4.field4308 >= (world.getSizeX() - 12) * 512 || (int) var4.field4313 >= (world.getSizeZ() - 12) * 512)) {
 			arg0.field10454.method14362(-1);
 			for (int var6 = 0; var6 < arg0.field10422.length; var6++) {
 				arg0.field10422[var6].field6657 = -1;
@@ -5045,7 +5045,7 @@ public final class Client extends GameShell {
 			arg0.field10399 = 0;
 			var2 = MoveSpeed.STATIONARY.serialID;
 			var3 = 0;
-			arg0.method10538((float) (arg0.field10450[0] * 512 + arg0.method16546() * 256), var4.field4311, (float) (arg0.field10448[0] * 512 + arg0.method16546() * 256));
+			arg0.method10538((float) (arg0.routeWaypointX[0] * 512 + arg0.method16546() * 256), var4.field4311, (float) (arg0.routeWaypointZ[0] * 512 + arg0.method16546() * 256));
 			arg0.method16517();
 		}
 		int var7 = method14063(arg0);
@@ -5139,8 +5139,8 @@ public final class Client extends GameShell {
 		Vector3 var7 = Vector3.method6484(arg0.method10536().field4298);
 		int var8 = (int) var7.field4308;
 		int var9 = (int) var7.field4313;
-		int var10 = arg0.field10450[arg0.field10400 - 1] * 512 + arg0.method16546() * 256;
-		int var11 = arg0.field10448[arg0.field10400 - 1] * 512 + arg0.method16546() * 256;
+		int var10 = arg0.routeWaypointX[arg0.field10400 - 1] * 512 + arg0.method16546() * 256;
+		int var11 = arg0.routeWaypointZ[arg0.field10400 - 1] * 512 + arg0.method16546() * 256;
 		if (var8 < var10) {
 			if (var9 < var11) {
 				arg0.method16490(10240);
@@ -5688,7 +5688,7 @@ public final class Client extends GameShell {
 		Vector3 var5 = localPlayerEntity.method10536().field4298;
 		boolean var6 = false;
 		if (field10863 == 3) {
-			if ((int) var5.field4308 < 0 || (int) var5.field4308 >= world.method7728() * 512 || (int) var5.field4313 < 0 || (int) var5.field4313 >= world.method7758() * 512) {
+			if ((int) var5.field4308 < 0 || (int) var5.field4308 >= world.getSizeX() * 512 || (int) var5.field4313 < 0 || (int) var5.field4313 >= world.getSizeZ() * 512) {
 				var6 = true;
 			}
 			if (Client.field3416 == 3 && !field9155.method4744()) {
@@ -5746,22 +5746,22 @@ public final class Client extends GameShell {
 		} else if (Client.field3416 == 1) {
 			method10490(var11);
 		}
-		int var16 = field7956;
+		int var16 = cameraMouseX;
 		int var17 = field10518;
-		int var18 = field1881;
+		int var18 = cameraMouseZ;
 		int var19 = field7447;
 		int var20 = field8586;
 		for (int var21 = 0; var21 < 5; var21++) {
 			if (field10983[var21]) {
 				int var22 = (int) (Math.random() * (double) (field11062[var21] * 2 + 1) - (double) field11062[var21] + Math.sin((double) field11064[var21] / 100.0D * (double) field10996[var21]) * (double) field11063[var21]);
 				if (var21 == 0) {
-					field7956 += var22 << 2;
+					cameraMouseX += var22 << 2;
 				}
 				if (var21 == 1) {
 					field10518 += var22 << 2;
 				}
 				if (var21 == 2) {
-					field1881 += var22 << 2;
+					cameraMouseZ += var22 << 2;
 				}
 				if (var21 == 3) {
 					field8586 = field8586 + var22 & 0x3FFF;
@@ -5776,17 +5776,17 @@ public final class Client extends GameShell {
 				}
 			}
 		}
-		if (field7956 < 0) {
-			field7956 = 0;
+		if (cameraMouseX < 0) {
+			cameraMouseX = 0;
 		}
-		if (field7956 > (world.getScene().maxTileX << 9) - 1) {
-			field7956 = (world.getScene().maxTileX << 9) - 1;
+		if (cameraMouseX > (world.getScene().maxTileX << 9) - 1) {
+			cameraMouseX = (world.getScene().maxTileX << 9) - 1;
 		}
-		if (field1881 < 0) {
-			field1881 = 0;
+		if (cameraMouseZ < 0) {
+			cameraMouseZ = 0;
 		}
-		if (field1881 > (world.getScene().maxTileZ << 9) - 1) {
-			field1881 = (world.getScene().maxTileZ << 9) - 1;
+		if (cameraMouseZ > (world.getScene().maxTileZ << 9) - 1) {
+			cameraMouseZ = (world.getScene().maxTileZ << 9) - 1;
 		}
 		if (preferences.removeRoofs2.getValue() == 2) {
 			method16610();
@@ -5796,7 +5796,7 @@ public final class Client extends GameShell {
 		renderer.method2164(var8, var9, var10, var11);
 		renderer.method2170(true);
 		renderer.method2168(var8, var9, var8 + var10, var9 + var11);
-		Environment var23 = world.method7816().method9982();
+		Environment var23 = world.method7816().getCurrentEnv();
 		int var24 = var23.getFogColour();
 		Vector3i var25 = new Vector3i();
 		CoordGrid var26 = world.method7727();
@@ -5805,7 +5805,7 @@ public final class Client extends GameShell {
 		} else if (Client.field3416 == 3) {
 			field9155.method4707(var25, field10793, field10792, var26.x << 9, var26.z << 9);
 		} else {
-			field10793.setToTranslation((float) -field7956, (float) -field10518, (float) -field1881);
+			field10793.setToTranslation((float) -cameraMouseX, (float) -field10518, (float) -cameraMouseZ);
 			field10793.method6307(0.0F, -1.0F, 0.0F, Trig1.method6277(-field8586 & 0x3FFF));
 			field10793.method6307(-1.0F, 0.0F, 0.0F, Trig1.method6277(-field7447 & 0x3FFF));
 			field10793.method6307(0.0F, 0.0F, -1.0F, Trig1.method6277(-field2656 & 0x3FFF));
@@ -5829,7 +5829,7 @@ public final class Client extends GameShell {
 		}
 		renderer.method2170(false);
 		MiniMenu.method5928(field10793, field10792, var10, var11);
-		world.method7816().method10003(world);
+		world.method7816().updatePartial(world);
 		int var29 = preferences.removeRoofs2.getValue();
 		byte var30;
 		if (var29 == 2) {
@@ -5842,16 +5842,16 @@ public final class Client extends GameShell {
 		if (CameraManager.method2978() || Client.field3416 == 3) {
 			world.getScene().method8845(currentclock, var25.field2835, var25.field2836, var25.field2837, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.field11717 + 1, var30, (int) var5.field4308 >> 9, (int) var5.field4313 >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
 		} else {
-			world.getScene().method8845(currentclock, field7956, field10518, field1881, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.field11717 + 1, var30, (int) var5.field4308 >> 9, (int) var5.field4313 >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
+			world.getScene().method8845(currentclock, cameraMouseX, field10518, cameraMouseZ, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.field11717 + 1, var30, (int) var5.field4308 >> 9, (int) var5.field4313 >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
 		}
 		field10915++;
 		if (!renderer.method2234() && state == 18) {
 			method8275(var8, var9, var10, var11);
 		}
 		world.getScene().clearEntities();
-		field7956 = var16;
+		cameraMouseX = var16;
 		field10518 = var17;
-		field1881 = var18;
+		cameraMouseZ = var18;
 		field7447 = var19;
 		field8586 = var20;
 		if (field11023 && field4489.method7021() == 0) {
@@ -5943,12 +5943,12 @@ public final class Client extends GameShell {
 	public static final void method2835(byte arg0) {
 		byte[][][] var1 = world.method7742();
 		if (var1 == null) {
-			var1 = new byte[4][world.method7728()][world.method7758()];
+			var1 = new byte[4][world.getSizeX()][world.getSizeZ()];
 			world.method7775(var1);
 		}
 		for (int var2 = 0; var2 < 4; var2++) {
-			for (int var3 = 0; var3 < world.method7728(); var3++) {
-				for (int var4 = 0; var4 < world.method7758(); var4++) {
+			for (int var3 = 0; var3 < world.getSizeX(); var3++) {
+				for (int var4 = 0; var4 < world.getSizeZ(); var4++) {
 					var1[var2][var3][var4] = arg0;
 				}
 			}
@@ -5968,8 +5968,8 @@ public final class Client extends GameShell {
 	public static final void method2900() {
 		int var0 = 0;
 		Scene var1 = world.getScene();
-		for (int var2 = 0; var2 < world.method7728(); var2++) {
-			for (int var3 = 0; var3 < world.method7758(); var3++) {
+		for (int var2 = 0; var2 < world.getSizeX(); var2++) {
+			for (int var3 = 0; var3 < world.getSizeZ(); var3++) {
 				if (method7472(var1.levelTiles, var0, var2, var3, true)) {
 					var0++;
 				}
@@ -5989,8 +5989,8 @@ public final class Client extends GameShell {
 		Vector3 var0 = localPlayerEntity.method10536().field4298;
 		SceneLevelTileFlags var1 = world.method7793();
 		if (Client.field3416 != 2 && Client.field3416 != 3 && field810 == -1) {
-			int var2 = method3660(field7956, field1881, field4826);
-			if (var2 - field10518 < 3200 && (var1.levelTileFlags[field4826][field7956 >> 9][field1881 >> 9] & 0x4) != 0) {
+			int var2 = method3660(cameraMouseX, cameraMouseZ, field4826);
+			if (var2 - field10518 < 3200 && (var1.levelTileFlags[field4826][cameraMouseX >> 9][cameraMouseZ >> 9] & 0x4) != 0) {
 				field11096 = true;
 			}
 			return;
@@ -6029,13 +6029,13 @@ public final class Client extends GameShell {
 				return;
 			}
 		} else {
-			var8 = field7956 >> 9;
-			var9 = field1881 >> 9;
+			var8 = cameraMouseX >> 9;
+			var9 = cameraMouseZ >> 9;
 		}
 		int var10 = var5 >> 9;
 		int var11 = var6 >> 9;
 		if (var1.method7102(var8, var9)) {
-			int var12 = method3660(field7956, field1881, 3);
+			int var12 = method3660(cameraMouseX, cameraMouseZ, 3);
 			if (field10518 >= var12) {
 				field11096 = true;
 			}
@@ -6056,7 +6056,7 @@ public final class Client extends GameShell {
 		} else {
 			var14 = var9 - var11;
 		}
-		if (var13 == 0 && var14 == 0 || var13 <= -world.method7728() || var13 >= world.method7728() || var14 <= -world.method7758() || var14 >= world.method7758()) {
+		if (var13 == 0 && var14 == 0 || var13 <= -world.getSizeX() || var13 >= world.getSizeX() || var14 <= -world.getSizeZ() || var14 >= world.getSizeZ()) {
 			if (Client.field3416 != 3) {
 				JagException.report(var8 + TextUtil.COMMA + var9 + " " + var10 + TextUtil.COMMA + var11 + " " + var3.x + TextUtil.COMMA + var3.z, new RuntimeException());
 			}
@@ -6147,9 +6147,9 @@ public final class Client extends GameShell {
 	public static final void method16610() {
 		byte[][][] var0 = world.method7742();
 		byte var1 = (byte) (field10916 - 4 & 0xFF);
-		int var2 = field10916 % world.method7728();
+		int var2 = field10916 % world.getSizeX();
 		for (int var3 = 0; var3 < 4; var3++) {
-			for (int var4 = 0; var4 < world.method7758(); var4++) {
+			for (int var4 = 0; var4 < world.getSizeZ(); var4++) {
 				var0[var3][var2][var4] = var1;
 			}
 		}
@@ -6167,9 +6167,9 @@ public final class Client extends GameShell {
 		SceneLevelTileFlags var7 = world.method7793();
 		Scene var8 = world.getScene();
 		if (Client.field3416 != 2 && Client.field3416 != 3 && field810 == -1) {
-			int var9 = method3660(field7956, field1881, field4826);
-			if (var9 - field10518 < 3200 && (var7.levelTileFlags[field4826][field7956 >> 9][field1881 >> 9] & 0x4) != 0) {
-				method7472(var8.levelTiles, 1, field7956 >> 9, field1881 >> 9, false);
+			int var9 = method3660(cameraMouseX, cameraMouseZ, field4826);
+			if (var9 - field10518 < 3200 && (var7.levelTileFlags[field4826][cameraMouseX >> 9][cameraMouseZ >> 9] & 0x4) != 0) {
+				method7472(var8.levelTiles, 1, cameraMouseX >> 9, cameraMouseZ >> 9, false);
 			}
 			return;
 		}
@@ -6207,13 +6207,13 @@ public final class Client extends GameShell {
 				return;
 			}
 		} else {
-			var15 = field7956 >> 9;
-			var16 = field1881 >> 9;
+			var15 = cameraMouseX >> 9;
+			var16 = cameraMouseZ >> 9;
 		}
 		int var17 = var12 >> 9;
 		int var18 = var13 >> 9;
 		if (var7.method7102(var15, var16)) {
-			int var19 = method3660(field7956, field1881, 3);
+			int var19 = method3660(cameraMouseX, cameraMouseZ, 3);
 			if (field10518 >= var19) {
 				method7472(var8.levelTiles, 1, var15, var16, false);
 			}
@@ -6234,7 +6234,7 @@ public final class Client extends GameShell {
 		} else {
 			var21 = var16 - var18;
 		}
-		if ((var20 != 0 || var21 != 0) && var20 > -world.method7728() && var20 < world.method7728() && var21 > -world.method7758() && var21 < world.method7758()) {
+		if ((var20 != 0 || var21 != 0) && var20 > -world.getSizeX() && var20 < world.getSizeX() && var21 > -world.getSizeZ() && var21 < world.getSizeZ()) {
 			if (var20 <= var21) {
 				int var24 = var20 * 65536 / var21;
 				int var25 = 32768;
@@ -6446,7 +6446,7 @@ public final class Client extends GameShell {
 					var5[field4826][var10 - 1][var13] = var6;
 				}
 				var13++;
-				if (var13 < world.method7758()) {
+				if (var13 < world.getSizeZ()) {
 					if (var10 - 1 >= 0 && var5[field4826][var10 - 1][var13] != var6 && (var7.levelTileFlags[field4826][var10][var13] & 0x4) == 0 && (var7.levelTileFlags[field4826][var10 - 1][var13 - 1] & 0x4) == 0) {
 						field11092[var42] = var10 - 1 | 0x120000 | 0x52000000;
 						field10984[var42] = var13 | 0x130000;
@@ -6459,7 +6459,7 @@ public final class Client extends GameShell {
 						var42 = var42 + 1 & 0xFFF;
 						var5[field4826][var10][var13] = var6;
 					}
-					if (var10 + 1 < world.method7728() && var5[field4826][var10 + 1][var13] != var6 && (var7.levelTileFlags[field4826][var10][var13] & 0x4) == 0 && (var7.levelTileFlags[field4826][var10 + 1][var13 - 1] & 0x4) == 0) {
+					if (var10 + 1 < world.getSizeX() && var5[field4826][var10 + 1][var13] != var6 && (var7.levelTileFlags[field4826][var10][var13] & 0x4) == 0 && (var7.levelTileFlags[field4826][var10 + 1][var13 - 1] & 0x4) == 0) {
 						field11092[var42] = var10 + 1 | 0x520000 | 0x92000000;
 						field10984[var42] = var13 | 0x530000;
 						var42 = var42 + 1 & 0xFFF;
@@ -6467,7 +6467,7 @@ public final class Client extends GameShell {
 					}
 				}
 				var13--;
-				if (var10 + 1 < world.method7728() && var5[field4826][var10 + 1][var13] != var6) {
+				if (var10 + 1 < world.getSizeX() && var5[field4826][var10 + 1][var13] != var6) {
 					field11092[var42] = var10 + 1 | 0x920000 | 0x53000000;
 					field10984[var42] = var13 | 0x930000;
 					var42 = var42 + 1 & 0xFFF;
@@ -6487,7 +6487,7 @@ public final class Client extends GameShell {
 						var42 = var42 + 1 & 0xFFF;
 						var5[field4826][var10][var13] = var6;
 					}
-					if (var10 + 1 < world.method7728() && var5[field4826][var10 + 1][var13] != var6 && (var7.levelTileFlags[field4826][var10][var13] & 0x4) == 0 && (var7.levelTileFlags[field4826][var10 + 1][var13 + 1] & 0x4) == 0) {
+					if (var10 + 1 < world.getSizeX() && var5[field4826][var10 + 1][var13] != var6 && (var7.levelTileFlags[field4826][var10][var13] & 0x4) == 0 && (var7.levelTileFlags[field4826][var10 + 1][var13 + 1] & 0x4) == 0) {
 						field11092[var42] = var10 + 1 | 0x920000 | 0xD2000000;
 						field10984[var42] = var13 | 0x930000;
 						var42 = var42 + 1 & 0xFFF;
@@ -6578,7 +6578,7 @@ public final class Client extends GameShell {
 				var5.field10404 = -1;
 			} else {
 				var5.method16529();
-				if (var5.field12471 >= 0 && var5.field12468 >= 0 && var5.field12472 < world.method7728() && var5.field12467 < world.method7758()) {
+				if (var5.field12471 >= 0 && var5.field12468 >= 0 && var5.field12472 < world.getSizeX() && var5.field12467 < world.getSizeZ()) {
 					var5.field12053 = var5.field10432.field11877 ? var3 : false;
 					if (localPlayerEntity == var5) {
 						var5.field10404 = Integer.MAX_VALUE;
@@ -6615,7 +6615,7 @@ public final class Client extends GameShell {
 			NpcEntity var9 = (NpcEntity) ((ObjectWrapper) field10838.getNode((long) field11036[var8])).field11436;
 			if (var9.method19160() && var9.npcType.method4567(localPlayerGameState, localPlayerGameState)) {
 				var9.method16529();
-				if (var9.field12471 >= 0 && var9.field12468 >= 0 && var9.field12472 < world.method7728() && var9.field12467 < world.method7758()) {
+				if (var9.field12471 >= 0 && var9.field12468 >= 0 && var9.field12472 < world.getSizeX() && var9.field12467 < world.getSizeZ()) {
 					int var10 = 0;
 					if (!var9.field10452) {
 						var10++;
@@ -6679,8 +6679,8 @@ public final class Client extends GameShell {
 	@ObfuscatedName("client.hw()V")
 	public static final void method16922() {
 		int[][] var0 = world.method7740();
-		int var1 = world.method7728();
-		int var2 = world.method7758();
+		int var1 = world.getSizeX();
+		int var2 = world.getSizeZ();
 		for (int var3 = 0; var3 < var1; var3++) {
 			int[] var4 = var0[var3];
 			for (int var5 = 0; var5 < var2; var5++) {
@@ -6977,7 +6977,7 @@ public final class Client extends GameShell {
 						PathingEntity var2 = CutsceneManager.field1721[var1.field12593 - 1].method2870();
 						if (var2 != null) {
 							Vector3 var3 = var2.method10536().field4298;
-							if ((int) var3.field4308 >= 0 && (int) var3.field4308 < world.method7728() * 512 && (int) var3.field4313 >= 0 && (int) var3.field4313 < world.method7758() * 512) {
+							if ((int) var3.field4308 >= 0 && (int) var3.field4308 < world.getSizeX() * 512 && (int) var3.field4313 >= 0 && (int) var3.field4313 < world.getSizeZ() * 512) {
 								var1.method19725((int) var3.field4308, (int) var3.field4313, method3660((int) var3.field4308, (int) var3.field4313, var2.field11717) - var1.field12587, currentclock);
 							}
 						}
@@ -6986,7 +6986,7 @@ public final class Client extends GameShell {
 						if (var4 != null) {
 							NpcEntity var5 = (NpcEntity) var4.field11436;
 							Vector3 var6 = var5.method10536().field4298;
-							if ((int) var6.field4308 >= 0 && (int) var6.field4308 < world.method7728() * 512 && (int) var6.field4313 >= 0 && (int) var6.field4313 < world.method7758() * 512) {
+							if ((int) var6.field4308 >= 0 && (int) var6.field4308 < world.getSizeX() * 512 && (int) var6.field4313 >= 0 && (int) var6.field4313 < world.getSizeZ() * 512) {
 								var1.method19725((int) var6.field4308, (int) var6.field4313, method3660((int) var6.field4308, (int) var6.field4313, var1.field11717) - var1.field12587, currentclock);
 							}
 						}
@@ -7002,7 +7002,7 @@ public final class Client extends GameShell {
 					}
 					if (var8 != null) {
 						Vector3 var9 = var8.method10536().field4298;
-						if ((int) var9.field4308 >= 0 && (int) var9.field4308 < world.method7728() * 512 && (int) var9.field4313 >= 0 && (int) var9.field4313 < world.method7758() * 512) {
+						if ((int) var9.field4308 >= 0 && (int) var9.field4308 < world.getSizeX() * 512 && (int) var9.field4313 >= 0 && (int) var9.field4313 < world.getSizeZ() * 512) {
 							var1.method19725((int) var9.field4308, (int) var9.field4313, method3660((int) var9.field4308, (int) var9.field4313, var1.field11717) - var1.field12587, currentclock);
 						}
 					}
@@ -7826,7 +7826,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("amk.il(IIIIIZZI)V")
 	public static final void method18486(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5, boolean arg6) {
-		if (!arg5 && (arg1 < 512 || arg2 < 512 || arg1 > (world.method7728() - 2) * 512 || arg2 > (world.method7758() - 2) * 512)) {
+		if (!arg5 && (arg1 < 512 || arg2 < 512 || arg1 > (world.getSizeX() - 2) * 512 || arg2 > (world.getSizeZ() - 2) * 512)) {
 			float[] var7 = field10922;
 			field10922[1] = -1.0F;
 			var7[0] = -1.0F;
@@ -7856,7 +7856,7 @@ public final class Client extends GameShell {
 		}
 		int var3 = arg0 >> 9;
 		int var4 = arg1 >> 9;
-		if (var3 < 0 || var4 < 0 || var3 > world.method7728() - 1 || var4 > world.method7758() - 1) {
+		if (var3 < 0 || var4 < 0 || var3 > world.getSizeX() - 1 || var4 > world.getSizeZ() - 1) {
 			return 0;
 		}
 		int var5 = arg2;
@@ -7875,10 +7875,10 @@ public final class Client extends GameShell {
 			SceneLevelTileFlags var5 = world.method7793();
 			int var6 = arg0 >> 9;
 			int var7 = arg1 >> 9;
-			if (arg2 < 0 || arg3 < 0 || arg2 > world.method7728() - 1 || arg3 > world.method7758() - 1) {
+			if (arg2 < 0 || arg3 < 0 || arg2 > world.getSizeX() - 1 || arg3 > world.getSizeZ() - 1) {
 				return 0;
 			}
-			if (var6 < 1 || var7 < 1 || var6 > world.method7728() - 1 || var7 > world.method7758() - 1) {
+			if (var6 < 1 || var7 < 1 || var6 > world.getSizeX() - 1 || var7 > world.getSizeZ() - 1) {
 				return 0;
 			}
 			boolean var8 = (var5.levelTileFlags[1][arg0 >> 9][arg1 >> 9] & 0x2) != 0;
@@ -7926,9 +7926,9 @@ public final class Client extends GameShell {
 			var12 = Trig1.field4270[var11] * var14 >> 14;
 			var14 = Trig1.field4272[var11] * var14 >> 14;
 		}
-		field7956 = arg0 - var12;
+		cameraMouseX = arg0 - var12;
 		field10518 = arg1 - var13;
-		field1881 = arg2 - var14;
+		cameraMouseZ = arg2 - var14;
 		field7447 = arg3;
 		field8586 = arg4;
 		field2656 = 0;
@@ -7956,9 +7956,9 @@ public final class Client extends GameShell {
 			}
 		} catch (Exception exception) {
 			CoordGrid var3 = world.method7727();
-			String exceptionString = (connection.packetType == null ? -1 : connection.packetType.id) + TextUtil.COMMA + (connection.lastPacketType1 == null ? -1 : connection.lastPacketType1.id) + TextUtil.COMMA + (connection.lastPacketType2 == null ? -1 : connection.lastPacketType2.id) + " " + connection.packetSize + TextUtil.COMMA + (var3.x + localPlayerEntity.field10450[0]) + TextUtil.COMMA + (var3.z + localPlayerEntity.field10448[0]) + " ";
+			String exceptionString = (connection.packetType == null ? -1 : connection.packetType.id) + TextUtil.COMMA + (connection.lastPacketType1 == null ? -1 : connection.lastPacketType1.id) + TextUtil.COMMA + (connection.lastPacketType2 == null ? -1 : connection.lastPacketType2.id) + " " + connection.packetSize + TextUtil.COMMA + (var3.x + localPlayerEntity.routeWaypointX[0]) + TextUtil.COMMA + (var3.z + localPlayerEntity.routeWaypointZ[0]) + " ";
 			for (int index = 0; index < connection.packetSize && index < 50; index++) {
-				exceptionString = exceptionString + connection.in.data[index] + TextUtil.COMMA;
+                exceptionString = exceptionString + connection.in.data[index] + TextUtil.COMMA;
 			}
 			JagException.report(exceptionString, exception);
 			logout(false);
@@ -8577,14 +8577,14 @@ public final class Client extends GameShell {
 				int var152 = var150 - var149.x;
 				if (var152 < 0) {
 					var152 = 0;
-				} else if (var152 >= world.method7728()) {
-					var152 = world.method7728();
+				} else if (var152 >= world.getSizeX()) {
+					var152 = world.getSizeX();
 				}
 				int var153 = var151 - var149.z;
 				if (var153 < 0) {
 					var153 = 0;
-				} else if (var153 >= world.method7758()) {
-					var153 = world.method7758();
+				} else if (var153 >= world.getSizeZ()) {
+					var153 = world.getSizeZ();
 				}
 				field810 = (var152 << 9) + 256;
 				field3538 = (var153 << 9) + 256;
@@ -9244,7 +9244,7 @@ public final class Client extends GameShell {
 				int var314 = var313 - var308.z;
 				if (field10260 == var310 && var312 >= field1701 && var312 < field1701 + 8 && var314 >= field10546 && var314 < field10546 + 8) {
 					var309.remove();
-					if (var312 >= 0 && var314 >= 0 && var312 < world.method7728() && var314 < world.method7758()) {
+					if (var312 >= 0 && var314 >= 0 && var312 < world.getSizeX() && var314 < world.getSizeZ()) {
 						method7359(field10260, var312, var314);
 					}
 				}
@@ -9532,7 +9532,7 @@ public final class Client extends GameShell {
 				int var389 = var381 >> 28 & 0x3;
 				int var390 = (var381 >> 14 & 0x3FFF) - var388.x;
 				int var391 = (var381 & 0x3FFF) - var388.z;
-				if (var390 >= 0 && var391 >= 0 && var390 < world.method7728() && var391 < world.method7758()) {
+				if (var390 >= 0 && var391 >= 0 && var390 < world.getSizeX() && var391 < world.getSizeZ()) {
 					if (var382 == -1) {
 						SpotAnimEntityWrapper var392 = (SpotAnimEntityWrapper) field10966.getNode((long) (var390 << 16 | var391));
 						if (var392 != null) {
@@ -10273,7 +10273,7 @@ public final class Client extends GameShell {
 			int var616 = var605 - var614.z * 2;
 			int var617 = var596 + var615;
 			int var618 = var606 + var616;
-			if (var615 >= 0 && var616 >= 0 && var615 < world.method7728() * 2 && var616 < world.method7728() * 2 && var617 >= 0 && var618 >= 0 && var617 < world.method7758() * 2 && var618 < world.method7758() * 2 && var609 != 65535) {
+			if (var615 >= 0 && var616 >= 0 && var615 < world.getSizeX() * 2 && var616 < world.getSizeX() * 2 && var617 >= 0 && var618 >= 0 && var617 < world.getSizeZ() * 2 && var618 < world.getSizeZ() * 2 && var609 != 65535) {
 				int var619 = var615 * 256;
 				int var620 = var616 * 256;
 				int var621 = var617 * 256;
@@ -10480,7 +10480,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.ENVIRONMENT_OVERRIDE == connection.packetType) {
 			EnvironmentOverride var672 = new EnvironmentOverride();
 			boolean var673 = var672.method10382(in);
-			world.method7816().method9980(world, var673 ? var672 : null, var672.method10380());
+			world.method7816().setOverride(world, var673 ? var672 : null, var672.getFadeDuration());
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.RUNCLIENTSCRIPT == connection.packetType) {
@@ -10683,7 +10683,7 @@ public final class Client extends GameShell {
 							break;
 						}
 					}
-					if (var6 >= 0 && var4 >= 0 && var6 < world.method7728() && var4 < world.method7758()) {
+					if (var6 >= 0 && var4 >= 0 && var6 < world.getSizeX() && var4 < world.getSizeZ()) {
 						method7359(field10260, var6, var4);
 					}
 				}
@@ -10695,7 +10695,7 @@ public final class Client extends GameShell {
 			int var16 = (var14 & 0x7) + field10546;
 			LocPositionAdjustment var17 = new LocPositionAdjustment(var1, var13, false);
 			int var18 = locShapeToLayer[var17.shape];
-			if (world.method7828().method7888() || var15 >= 0 && var16 >= 0 && var15 < world.method7728() && var16 < world.method7758()) {
+			if (world.method7828().method7888() || var15 >= 0 && var16 >= 0 && var15 < world.getSizeX() && var16 < world.getSizeZ()) {
 				ChangeLocationRequest.method4653(field10260, var15, var16, var18, -1, var17.shape, var17.rotation, var17.field7539);
 			}
 		} else if (ZoneProt.field3626 == arg0) {
@@ -10712,9 +10712,9 @@ public final class Client extends GameShell {
 			int var26 = var1.g1();
 			int var27 = var1.g1();
 			int var28 = var1.g2();
-			if (world.method7828() != RebuildType.field5064 && (var20 >= 0 && var21 >= 0 && var20 < world.method7728() && var21 < world.method7758())) {
+			if (world.method7828() != RebuildType.field5064 && (var20 >= 0 && var21 >= 0 && var20 < world.getSizeX() && var21 < world.getSizeZ())) {
 				int var29 = var24 + 1;
-				if (localPlayerEntity.field10450[0] >= var20 - var29 && localPlayerEntity.field10450[0] <= var20 + var29 && localPlayerEntity.field10448[0] >= var21 - var29 && localPlayerEntity.field10448[0] <= var21 + var29) {
+				if (localPlayerEntity.routeWaypointX[0] >= var20 - var29 && localPlayerEntity.routeWaypointX[0] <= var20 + var29 && localPlayerEntity.routeWaypointZ[0] >= var21 - var29 && localPlayerEntity.routeWaypointZ[0] <= var21 + var29) {
 					Vector3 var30 = new Vector3((float) (var20 << 9), 0.0F, (float) (var21 << 9));
 					int var31 = field10260;
 					audioApi.method3191(SoundType.field1832, var22, var25, var27, SubBussType.field1805.method3034(), SoundShape.field1838, 0.0F, (float) (var24 << 9), var30, var31, var28, var26);
@@ -10735,9 +10735,9 @@ public final class Client extends GameShell {
 			int var40 = var1.g1();
 			int var41 = var1.g2();
 			boolean var42 = var1.g1() == 1;
-			if (world.method7828() != RebuildType.field5064 && (var33 >= 0 && var34 >= 0 && var33 < world.method7728() && var34 < world.method7758())) {
+			if (world.method7828() != RebuildType.field5064 && (var33 >= 0 && var34 >= 0 && var33 < world.getSizeX() && var34 < world.getSizeZ())) {
 				int var43 = var37 + 1;
-				if (localPlayerEntity.field10450[0] >= var33 - var43 && localPlayerEntity.field10450[0] <= var33 + var43 && localPlayerEntity.field10448[0] >= var34 - var43 && localPlayerEntity.field10448[0] <= var34 + var43) {
+				if (localPlayerEntity.routeWaypointX[0] >= var33 - var43 && localPlayerEntity.routeWaypointX[0] <= var33 + var43 && localPlayerEntity.routeWaypointZ[0] >= var34 - var43 && localPlayerEntity.routeWaypointZ[0] <= var34 + var43) {
 					Vector3 var44 = new Vector3((float) (var33 << 9), 0.0F, (float) (var34 << 9));
 					int var45 = field10260;
 					int var46 = var42 ? SubBussType.field1801.method3034() : SubBussType.field1805.method3034();
@@ -10773,7 +10773,7 @@ public final class Client extends GameShell {
 				var64 = -1;
 			}
 			int var66 = var1.g2s();
-			if (world.method7828() != RebuildType.field5064 && (var48 >= 0 && var49 >= 0 && var48 < world.method7728() * 2 && var49 < world.method7728() * 2 && var54 >= 0 && var55 >= 0 && var54 < world.method7758() * 2 && var55 < world.method7758() * 2 && var58 != 65535)) {
+			if (world.method7828() != RebuildType.field5064 && (var48 >= 0 && var49 >= 0 && var48 < world.getSizeX() * 2 && var49 < world.getSizeX() * 2 && var54 >= 0 && var55 >= 0 && var54 < world.getSizeZ() * 2 && var55 < world.getSizeZ() * 2 && var58 != 65535)) {
 				int var67 = var48 * 256;
 				int var68 = var49 * 256;
 				int var69 = var54 * 256;
@@ -10803,7 +10803,7 @@ public final class Client extends GameShell {
 			int var85 = (var83 & 0x7) + field10546;
 			LocPositionAdjustment var86 = new LocPositionAdjustment(var1, var81, false);
 			int var87 = locShapeToLayer[var86.shape];
-			if (world.method7828().method7888() || var84 >= 0 && var85 >= 0 && var84 < world.method7728() && var85 < world.method7758()) {
+			if (world.method7828().method7888() || var84 >= 0 && var85 >= 0 && var84 < world.getSizeX() && var85 < world.getSizeZ()) {
 				ChangeLocationRequest.method4653(field10260, var84, var85, var87, var82, var86.shape, var86.rotation, var86.field7539);
 			}
 		} else if (ZoneProt.field3619 == arg0) {
@@ -10829,7 +10829,7 @@ public final class Client extends GameShell {
 			if (var102 == 255) {
 				var102 = -1;
 			}
-			if (world.method7828() != RebuildType.field5064 && (var92 >= 0 && var93 >= 0 && var92 < world.method7728() && var93 < world.method7758() && var94 >= 0 && var95 >= 0 && var94 < world.method7728() && var95 < world.method7758() && var97 != 65535)) {
+			if (world.method7828() != RebuildType.field5064 && (var92 >= 0 && var93 >= 0 && var92 < world.getSizeX() && var93 < world.getSizeZ() && var94 >= 0 && var95 >= 0 && var94 < world.getSizeX() && var95 < world.getSizeZ() && var97 != 65535)) {
 				int var105 = var92 * 512 + 256;
 				int var106 = var93 * 512 + 256;
 				int var107 = var94 * 512 + 256;
@@ -10860,7 +10860,7 @@ public final class Client extends GameShell {
 				if (var120.field11263._isEmpty()) {
 					var120.remove();
 				}
-				if (var118 >= 0 && var116 >= 0 && var118 < world.method7728() && var116 < world.method7758()) {
+				if (var118 >= 0 && var116 >= 0 && var118 < world.getSizeX() && var116 < world.getSizeZ()) {
 					method7359(field10260, var118, var116);
 				}
 			}
@@ -10875,7 +10875,7 @@ public final class Client extends GameShell {
 			int var129 = var1.g2_alt2();
 			int var130 = var1.g2();
 			if (currentPlayerUid != var130) {
-				boolean var131 = var127 >= 0 && var125 >= 0 && var127 < world.method7728() && var125 < world.method7758();
+				boolean var131 = var127 >= 0 && var125 >= 0 && var127 < world.getSizeX() && var125 < world.getSizeZ();
 				if (var131 || world.method7828().method7888()) {
 					method540(field10260, var128, var126, new Obj(var129, var122));
 					if (var131) {
@@ -10949,7 +10949,7 @@ public final class Client extends GameShell {
 			int var162 = var1.g2();
 			int var163 = var1.g1();
 			int var164 = var1.g2s();
-			if (world.method7828() != RebuildType.field5064 && (var158 >= 0 && var159 >= 0 && var158 < world.method7728() && var159 < world.method7758())) {
+			if (world.method7828() != RebuildType.field5064 && (var158 >= 0 && var159 >= 0 && var158 < world.getSizeX() && var159 < world.getSizeZ())) {
 				if (var160 == -1) {
 					SpotAnimEntityWrapper var165 = (SpotAnimEntityWrapper) field10966.getNode((long) (var158 << 16 | var159));
 					if (var165 != null) {
@@ -10976,7 +10976,7 @@ public final class Client extends GameShell {
 			int var175 = var171.x + var174;
 			int var176 = var1.g2_alt3();
 			int var177 = var1.g2_alt1();
-			boolean var178 = var174 >= 0 && var172 >= 0 && var174 < world.method7728() && var172 < world.method7758();
+			boolean var178 = var174 >= 0 && var172 >= 0 && var174 < world.getSizeX() && var172 < world.getSizeZ();
 			if (var178 || world.method7828().method7888()) {
 				method540(field10260, var175, var173, new Obj(var176, var177));
 				if (var178) {
@@ -11023,7 +11023,7 @@ public final class Client extends GameShell {
 		CoordGrid var3 = world.method7727();
 		int var4 = var3.x + arg1;
 		int var5 = var3.z + arg2;
-		if (world.getScene() == null || world.method7828() == RebuildType.field5064 || arg1 < 0 || arg2 < 0 || arg1 >= world.method7728() || arg2 >= world.method7758()) {
+		if (world.getScene() == null || world.method7828() == RebuildType.field5064 || arg1 < 0 || arg2 < 0 || arg1 >= world.getSizeX() || arg2 >= world.getSizeZ()) {
 			return;
 		}
 		long var6 = (long) (arg0 << 28 | var5 << 14 | var4);
@@ -11297,9 +11297,9 @@ public final class Client extends GameShell {
 			if (var3) {
 				var6.method16491(var11, true);
 			}
-			var6.method19159(var7, localPlayerEntity.field10450[0] + var12, localPlayerEntity.field10448[0] + var8, var10 == 1, var6.method16546());
+			var6.method19159(var7, localPlayerEntity.routeWaypointX[0] + var12, localPlayerEntity.routeWaypointZ[0] + var8, var10 == 1, var6.method16546());
 			if (var6.npcType.method4556()) {
-				PositionedSound.method9739(var6.field11717, var6.field10450[0], var6.field10448[0], 0, null, var6, null);
+				PositionedSound.method9739(var6.field11717, var6.routeWaypointX[0], var6.routeWaypointZ[0], 0, null, var6, null);
 			}
 			if (var3) {
 				var6.method19155();
@@ -11466,7 +11466,7 @@ public final class Client extends GameShell {
 				var3.method16502(var3.npcType.size);
 				var3.field10444 = var3.npcType.turnspeed << 3;
 				if (var3.npcType.method4556()) {
-					PositionedSound.method9739(var3.field11717, var3.field10450[0], var3.field10448[0], 0, null, var3, null);
+					PositionedSound.method9739(var3.field11717, var3.routeWaypointX[0], var3.routeWaypointZ[0], 0, null, var3, null);
 				}
 			}
 			if ((var4 & 0x8000) != 0) {
@@ -11481,10 +11481,10 @@ public final class Client extends GameShell {
 				var3.field10431 = var0.g2_alt1();
 				var3.field10400 = 1;
 				var3.field10396 = 0;
-				var3.field10423 = var3.field10423 * 262144 + var3.field10450[0] * 262144;
-				var3.field10425 = var3.field10425 * 262144 + var3.field10448[0] * 262144;
-				var3.field10457 = var3.field10457 * 262144 + var3.field10450[0] * 262144;
-				var3.field10426 = var3.field10426 * 262144 + var3.field10448[0] * 262144;
+				var3.field10423 = var3.field10423 * 262144 + var3.routeWaypointX[0] * 262144;
+				var3.field10425 = var3.field10425 * 262144 + var3.routeWaypointZ[0] * 262144;
+				var3.field10457 = var3.field10457 * 262144 + var3.routeWaypointX[0] * 262144;
+				var3.field10426 = var3.field10426 * 262144 + var3.routeWaypointZ[0] * 262144;
 				var3.field10419 += var3.field11717;
 				var3.field10428 += var3.field11717;
 			}
@@ -11742,7 +11742,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("tl.ju(IIIIIILoe;IIB)V")
 	public static void method8895(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, ScaleRotTrans arg6, int arg7, int arg8) {
-		if (arg1 < 0 || arg2 < 0 || arg1 >= world.method7728() - 1 || arg2 >= world.method7758() - 1) {
+		if (arg1 < 0 || arg2 < 0 || arg1 >= world.getSizeX() - 1 || arg2 >= world.getSizeZ() - 1) {
 			return;
 		}
 		if (world.getScene() == null) {
@@ -11881,7 +11881,7 @@ public final class Client extends GameShell {
 				var6.buf.p2_alt3(var3[var4]);
 				var6.buf.p4_alt2(field6707);
 				gameConnection.queue(var6);
-				method6820(var5.field10450[0], var5.field10448[0]);
+				method6820(var5.routeWaypointX[0], var5.routeWaypointZ[0]);
 				var1 = true;
 				break;
 			}
@@ -12269,7 +12269,7 @@ public final class Client extends GameShell {
 						if (var11.field2184 == 0) {
 							if (Component.field2168 == var11.clientcode) {
 								renderer.method2202();
-								world.method7816().method9979(world);
+								world.method7816().updateFull(world);
 								renderer.method2172(var13, var14, GameShell.canvasWid, GameShell.canvasHei);
 							}
 							method6797(arg0, var11.field2158, var20, var21, var22, var23, var13 - var11.field2206, var14 - var11.field2207, var12, arg9);
@@ -12569,9 +12569,9 @@ public final class Client extends GameShell {
 										renderer.method2161(var13, var14, var11.field2196 + var13, var11.field2197 + var14);
 									}
 									if (var11.field2250) {
-										world.method7816().method9996((float) var11.field2248 / 256.0F, (float) var11.field2251 / 256.0F, (float) var11.field2255 / 256.0F, var11.field2257, var11.field2345, var11.field2252, var11.field2302, var11.field2258);
+										world.method7816().setLighting((float) var11.field2248 / 256.0F, (float) var11.field2251 / 256.0F, (float) var11.field2255 / 256.0F, var11.field2257, var11.field2345, var11.field2252, var11.field2302, var11.field2258);
 									} else {
-										world.method7816().method9983();
+										world.method7816().setLightingInterface();
 									}
 									var60.draw(field10875, null, 1);
 									if (!var11.field2239 && var11.field2254 != null) {
@@ -12584,7 +12584,7 @@ public final class Client extends GameShell {
 									renderer.resetClip();
 									renderer.method2168(arg2, arg3, arg4, arg5);
 									if (var11.field2250) {
-										world.method7816().method9983();
+										world.method7816().setLightingInterface();
 									}
 									if (var11.field2260) {
 										renderer.method2219(true);
@@ -13144,7 +13144,7 @@ public final class Client extends GameShell {
 								if (var12.clientcode != 0) {
 									if (Component.field2341 == var12.clientcode || Component.field2161 == var12.clientcode) {
 										field10986 = var12;
-										Environment var67 = world.method7816().method9982();
+										Environment var67 = world.method7816().getCurrentEnv();
 										if (var67.getSkybox() != null && !field3183.method7676()) {
 											var67.getSkybox().method7944(renderer, var12.field2197, preferences.skyboxes.getValue());
 										}

@@ -52,7 +52,7 @@ public abstract class PureJavaSurface extends Surface {
 	}
 
 	@ObfuscatedName("aph.i(II)V")
-	public final void method15453(int arg0, int arg1) {
+	public final void onResize(int arg0, int arg1) {
 		if (this.field11925 != arg0 || this.field11927 != arg1) {
 			this.field11925 = arg0;
 			this.field11927 = arg1;

@@ -51,20 +51,20 @@ public class ProgrammableParticleShader extends ParticleShader {
 	@ObfuscatedName("ahr.p(B)Z")
 	public boolean method16630() throws ShaderException {
 		this.field10505 = this.field2986.method15964("Particle");
-		this.field10507 = this.field10505.method4157("WVPMatrix");
-		this.field10512 = this.field10505.method4157("DiffuseSampler");
-		this.field10504 = this.field10505.method4157("TexCoordMatrix");
-		this.field10508 = this.field10505.method4157("DistanceFogPlane");
-		this.field10509 = this.field10505.method4157("DistanceFogColour");
-		this.field10503 = this.field10505.method4157("DistanceFogAmount");
-		this.field10511 = this.field10505.method4157("DiffuseColour");
-		this.field10514 = this.field10505.method4227("NoFog");
-		this.field10513 = this.field10505.method4227("ParticleFog");
-		this.field10510 = this.field10505.method4227("BillboardFog");
-		if (!this.field10514.method4083()) {
+		this.field10507 = this.field10505.getUniform("WVPMatrix");
+		this.field10512 = this.field10505.getUniform("DiffuseSampler");
+		this.field10504 = this.field10505.getUniform("TexCoordMatrix");
+		this.field10508 = this.field10505.getUniform("DistanceFogPlane");
+		this.field10509 = this.field10505.getUniform("DistanceFogColour");
+		this.field10503 = this.field10505.getUniform("DistanceFogAmount");
+		this.field10511 = this.field10505.getUniform("DiffuseColour");
+		this.field10514 = this.field10505.getProgram("NoFog");
+		this.field10513 = this.field10505.getProgram("ParticleFog");
+		this.field10510 = this.field10505.getProgram("BillboardFog");
+		if (!this.field10514.compile()) {
 			return false;
-		} else if (this.field10513.method4083()) {
-			return this.field10510.method4083();
+		} else if (this.field10513.compile()) {
+			return this.field10510.compile();
 		} else {
 			return false;
 		}
@@ -78,34 +78,34 @@ public class ProgrammableParticleShader extends ParticleShader {
 
 	@ObfuscatedName("ahr.n(IZ)V")
 	public void method5039(int arg0, boolean arg1) {
-		this.field10505.method4162(arg1 ? this.field10513 : this.field10514);
-		this.field10505.method4244();
+		this.field10505.setCurrentProgram(arg1 ? this.field10513 : this.field10514);
+		this.field10505.enable();
 		this.method16629(arg1, true);
 		this.field2986.method16079(PrimitiveType.field3403, 0, arg0 * 4, 0, arg0 * 2);
 	}
 
 	@ObfuscatedName("ahr.m(Z)V")
 	public void method5040(boolean arg0) {
-		this.field10505.method4162(arg0 ? this.field10510 : this.field10514);
-		this.field10505.method4244();
+		this.field10505.setCurrentProgram(arg0 ? this.field10510 : this.field10514);
+		this.field10505.enable();
 		this.method16629(arg0, false);
 		this.field2986.method16075();
 	}
 
 	@ObfuscatedName("ahr.d(ZZB)V")
 	public void method16629(boolean arg0, boolean arg1) {
-		this.field10505.method4252(this.field10512, 0, this.field2991);
-		this.field10505.method4166(this.field10507, this.field10506);
-		this.field10505.method4201(this.field10504, this.field2987);
-		this.field10505.method4173(this.field10511, this.field2988);
+		this.field10505.setUniform(this.field10512, 0, this.field2991);
+		this.field10505.setUniform4x4(this.field10507, this.field10506);
+		this.field10505.setUniform4x2(this.field10504, this.field2987);
+		this.field10505.setUniformColour(this.field10511, this.field2988);
 		if (!arg0) {
 			return;
 		}
 		if (arg1) {
-			this.field10505.method4169(this.field10508, this.field2989.field4244, this.field2989.field4243, this.field2989.field4242, this.field2989.field4245);
+			this.field10505.setUniform(this.field10508, this.field2989.field4244, this.field2989.field4243, this.field2989.field4242, this.field2989.field4245);
 		} else {
-			this.field10505.method4268(this.field10503, Math.min(Math.max(this.field2985, 0.0F), 1.0F));
+			this.field10505.setUniform(this.field10503, Math.min(Math.max(this.field2985, 0.0F), 1.0F));
 		}
-		this.field10505.method4218(this.field10509, this.field2990.field4308, this.field2990.field4311, this.field2990.field4313);
+		this.field10505.setUniform(this.field10509, this.field2990.field4308, this.field2990.field4311, this.field2990.field4313);
 	}
 }

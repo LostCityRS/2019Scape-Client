@@ -153,8 +153,8 @@ public class GpuFloorModelRelated1 extends Node {
 	@ObfuscatedName("akh.f(I)V")
 	public void method17766(int arg0) {
 		this.field11405 = this.field11409.method16085(false);
-		this.field11405.method5553(arg0 * 4, 4);
-		this.field11405.method5738(0, arg0 * 4, this.field11411);
+		this.field11405.allocate(arg0 * 4, 4);
+		this.field11405.upload(0, arg0 * 4, this.field11411);
 		this.field11410.clear();
 		this.field11410 = null;
 		this.field11411 = 0L;
@@ -165,7 +165,7 @@ public class GpuFloorModelRelated1 extends Node {
 		this.field11408 = 0;
 		this.field11400 = 32767;
 		this.field11407 = -32768;
-		ByteBuffer var3 = this.field11409.field10071;
+		ByteBuffer var3 = this.field11409.temporaryBuffer;
 		label49: for (int var4 = 0; var4 < arg1; var4++) {
 			int var5 = arg0[var4];
 			short[] var6 = this.field11401.field9494[var5];

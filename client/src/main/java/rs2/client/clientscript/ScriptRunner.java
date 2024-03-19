@@ -13722,14 +13722,14 @@ public final class ScriptRunner {
 		int var5 = var2 - var4.x;
 		if (var5 < 0) {
 			var5 = 0;
-		} else if (var5 >= Client.world.method7728()) {
-			var5 = Client.world.method7728();
+		} else if (var5 >= Client.world.getSizeX()) {
+			var5 = Client.world.getSizeX();
 		}
 		int var6 = var3 - var4.z;
 		if (var6 < 0) {
 			var6 = 0;
-		} else if (var6 >= Client.world.method7758()) {
-			var6 = Client.world.method7758();
+		} else if (var6 >= Client.world.getSizeZ()) {
+			var6 = Client.world.getSizeZ();
 		}
 		Client.field10892 = (var5 << 9) + 256;
 		Client.field10893 = (var6 << 9) + 256;
@@ -13758,14 +13758,14 @@ public final class ScriptRunner {
 		int var5 = var2 - var4.x;
 		if (var5 < 0) {
 			var5 = 0;
-		} else if (var5 >= Client.world.method7728()) {
-			var5 = Client.world.method7728();
+		} else if (var5 >= Client.world.getSizeX()) {
+			var5 = Client.world.getSizeX();
 		}
 		int var6 = var3 - var4.z;
 		if (var6 < 0) {
 			var6 = 0;
-		} else if (var6 >= Client.world.method7758()) {
-			var6 = Client.world.method7758();
+		} else if (var6 >= Client.world.getSizeZ()) {
+			var6 = Client.world.getSizeZ();
 		}
 		Client.field810 = (var5 << 9) + 256;
 		Client.field3538 = (var6 << 9) + 256;
@@ -14773,7 +14773,7 @@ public final class ScriptRunner {
 	public static final void detail_lightdetail_high(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.lightingDetail, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Client.method9516();
-		Client.world.method7816().method10019();
+		Client.world.method7816().resetFade();
 		Preferences.method16391();
 		Client.field10800 = false;
 	}

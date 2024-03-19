@@ -621,11 +621,11 @@ public class PlayerModel {
 		field4037 = arg0;
 		WeightedCache var1 = field7902;
 		synchronized (field7902) {
-			field7902.method2924();
+			field7902.clear();
 		}
 		WeightedCache var3 = field7901;
 		synchronized (field7901) {
-			field7901.method2924();
+			field7901.clear();
 		}
 	}
 
@@ -633,11 +633,11 @@ public class PlayerModel {
 	public static void method15184() {
 		WeightedCache var0 = field7901;
 		synchronized (field7901) {
-			field7901.method2924();
+			field7901.clear();
 		}
 		WeightedCache var2 = field7902;
 		synchronized (field7902) {
-			field7902.method2924();
+			field7902.clear();
 		}
 	}
 

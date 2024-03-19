@@ -45,7 +45,7 @@ public class LocReference {
 		CoordGrid var2 = Client.world.method7727();
 		int var3 = this.field8196.x - var2.x;
 		int var4 = this.field8196.z - var2.z;
-		if (var3 < 0 || var4 < 0 || var3 >= Client.world.method7728() || var4 >= Client.world.method7758() || Client.world.getScene() == null) {
+		if (var3 < 0 || var4 < 0 || var3 >= Client.world.getSizeX() || var4 >= Client.world.getSizeZ() || Client.world.getScene() == null) {
 			return null;
 		}
 		switch(this.getLocLayer()) {

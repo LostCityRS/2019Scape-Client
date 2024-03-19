@@ -78,12 +78,12 @@ public class HintArrow {
 	@ObfuscatedName("tt.n(II)V")
 	public static void method8643(int arg0) {
 		field753 = arg0;
-		field752.method2924();
+		field752.clear();
 	}
 
 	@ObfuscatedName("du.m(B)V")
 	public static void method2086() {
-		field752.method2924();
+		field752.clear();
 	}
 
 	@ObfuscatedName("xe.k(II)V")

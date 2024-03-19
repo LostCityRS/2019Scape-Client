@@ -19,12 +19,12 @@ public class OpenGLSomethingFramebuffer implements OpenGLRelated5 {
 
 	@ObfuscatedName("ri.e()I")
 	public int method1015() {
-		return this.field4971.method5718();
+		return this.field4971.getWidth();
 	}
 
 	@ObfuscatedName("ri.n()I")
 	public int method1009() {
-		return this.field4971.method5696();
+		return this.field4971.getHeight();
 	}
 
 	@ObfuscatedName("ri.z(I)V")
@@ -33,6 +33,6 @@ public class OpenGLSomethingFramebuffer implements OpenGLRelated5 {
 	}
 
 	@ObfuscatedName("ri.m()V")
-	public void method1010() {
+	public void delete() {
 	}
 }

@@ -30,7 +30,7 @@ public class ProgramUniformData {
 	public void method4290(ShaderDataReader arg0) {
 		int var2 = arg0.method4133();
 		this.field2592 = UniformType.method6075()[var2];
-		if (UniformType.field2441 == this.field2592) {
+		if (UniformType.ARRAY == this.field2592) {
 			int var3 = arg0.method4133();
 			this.field2587 = UniformType.method6075()[var3];
 			this.field2588 = arg0.method4133();

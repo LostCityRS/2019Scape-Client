@@ -188,8 +188,8 @@ public class PlayerEntity extends PathingEntity {
 		this.model.method10113(this.method16509(), var4, var5, var16, var19, this.field12052 == 1, var3);
 		if (var3 != var22) {
 			Vector3 var24 = Vector3.method6484(this.method10536().field4298);
-			var24.field4308 = (this.field10450[0] << 9) + (this.method16546() << 8);
-			var24.field4313 = (this.field10448[0] << 9) + (this.method16546() << 8);
+			var24.field4308 = (this.routeWaypointX[0] << 9) + (this.method16546() << 8);
+			var24.field4313 = (this.routeWaypointZ[0] << 9) + (this.method16546() << 8);
 			this.method10531(var24);
 			var24.method6486();
 		}
@@ -550,9 +550,9 @@ public class PlayerEntity extends PathingEntity {
 			}
 		}
 		this.field12056 = -1;
-		if (arg0 < 0 || arg0 >= Client.world.method7728() || arg1 < 0 || arg1 >= Client.world.method7758()) {
+		if (arg0 < 0 || arg0 >= Client.world.getSizeX() || arg1 < 0 || arg1 >= Client.world.getSizeZ()) {
 			this.method19118(arg0, arg1);
-		} else if (this.field10450[0] >= 0 && this.field10450[0] < Client.world.method7728() && this.field10448[0] >= 0 && this.field10448[0] < Client.world.method7758()) {
+		} else if (this.routeWaypointX[0] >= 0 && this.routeWaypointX[0] < Client.world.getSizeX() && this.routeWaypointZ[0] >= 0 && this.routeWaypointZ[0] < Client.world.getSizeZ()) {
 			this.method19138(arg0, arg1, arg2);
 		} else {
 			this.method19118(arg0, arg1);
@@ -564,16 +564,16 @@ public class PlayerEntity extends PathingEntity {
 		this.field10400 = 0;
 		this.field10396 = 0;
 		this.field10453 = 0;
-		this.field10450[0] = arg0;
-		this.field10448[0] = arg1;
+		this.routeWaypointX[0] = arg0;
+		this.routeWaypointZ[0] = arg1;
 		int var3 = this.method16546();
 		Vector3 var4 = Vector3.method6484(this.method10536().field4298);
-		var4.field4308 = this.field10450[0] * 512 + var3 * 256;
-		var4.field4313 = this.field10448[0] * 512 + var3 * 256;
+		var4.field4308 = this.routeWaypointX[0] * 512 + var3 * 256;
+		var4.field4313 = this.routeWaypointZ[0] * 512 + var3 * 256;
 		this.method10531(var4);
 		var4.method6486();
 		if (Client.localPlayerEntity == this) {
-			Client.world.method7816().method10019();
+			Client.world.method7816().resetFade();
 		}
 		if (this.field10393 != null) {
 			this.field10393.method9930();
@@ -582,16 +582,16 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.hw(IIBI)V")
 	public final void method19138(int arg0, int arg1, byte arg2) {
-		if (this.field10400 < this.field10450.length - 1) {
+		if (this.field10400 < this.routeWaypointX.length - 1) {
 			this.field10400++;
 		}
 		for (int var4 = this.field10400; var4 > 0; var4--) {
-			this.field10450[var4] = this.field10450[var4 - 1];
-			this.field10448[var4] = this.field10448[var4 - 1];
+			this.routeWaypointX[var4] = this.routeWaypointX[var4 - 1];
+			this.routeWaypointZ[var4] = this.routeWaypointZ[var4 - 1];
 			this.field10441[var4] = this.field10441[var4 - 1];
 		}
-		this.field10450[0] = arg0;
-		this.field10448[0] = arg1;
+		this.routeWaypointX[0] = arg0;
+		this.routeWaypointZ[0] = arg1;
 		this.field10441[0] = arg2;
 	}
 

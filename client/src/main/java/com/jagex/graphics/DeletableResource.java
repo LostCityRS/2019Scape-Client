@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface DeletableResource {
 
 	@ObfuscatedName("le.m()V")
-	void method1010();
+	void delete();
 }

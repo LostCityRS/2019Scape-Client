@@ -82,7 +82,7 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 		if (this.field4974 == 0) {
 			throw new IllegalStateException("");
 		}
-		this.field4980.method16092(this);
+		this.field4980.setTexture(this);
 		if (GpuTextureRelated.field3323 == this.field4983) {
 			OpenGL.glTexParameteri(this.field4979, 10241, this.field4982 ? 9987 : 9729);
 			OpenGL.glTexParameteri(this.field4979, 10240, 9729);
@@ -98,7 +98,7 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 			throw new IllegalStateException("");
 		}
 		int var1 = this.method7637();
-		this.field4980.method16092(this);
+		this.field4980.setTexture(this);
 		if (this.field4980.field12016) {
 			OpenGL.glEnable(this.field4979);
 		}
@@ -120,7 +120,7 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 			throw new IllegalArgumentException("");
 		} else if (arg2 > 0 && !IntMath.method4918(arg2)) {
 			throw new IllegalArgumentException("");
-		} else if (TextureFormat.field1273 == this.field4973) {
+		} else if (TextureFormat.RGBA == this.field4973) {
 			int var5 = 0;
 			int var6 = arg1 < arg2 ? arg1 : arg2;
 			int var7 = arg1 >> 1;
@@ -184,7 +184,7 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 		} else if (arg1 > 0 && !IntMath.method4918(arg1)) {
 			throw new IllegalArgumentException("");
 		} else if (arg2 <= 0 || IntMath.method4918(arg2)) {
-			int var5 = this.field4973.field1279;
+			int var5 = this.field4973.id;
 			int var6 = 0;
 			int var7 = arg1 < arg2 ? arg1 : arg2;
 			int var8 = arg1 >> 1;
@@ -240,7 +240,7 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 		} else if (arg1 > 0 && !IntMath.method4918(arg1)) {
 			throw new IllegalArgumentException("");
 		} else if (arg2 <= 0 || IntMath.method4918(arg2)) {
-			int var5 = this.field4973.field1279;
+			int var5 = this.field4973.id;
 			int var6 = 0;
 			int var7 = arg1 < arg2 ? arg1 : arg2;
 			int var8 = arg1 >> 1;
@@ -297,12 +297,12 @@ public abstract class OpenGLBaseTexture implements BaseTexture {
 
 	@ObfuscatedName("rj.bc()I")
 	public int method7637() {
-		int var1 = this.field4977.field1652 * this.field4973.field1279 * this.field4984;
+		int var1 = this.field4977.field1652 * this.field4973.id * this.field4984;
 		return this.field4982 ? var1 * 4 / 3 : var1;
 	}
 
 	@ObfuscatedName("rj.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field4974 != 0) {
 			this.field4980.field10052 -= this.method7637();
 			int[] var1 = new int[] { this.field4974 };

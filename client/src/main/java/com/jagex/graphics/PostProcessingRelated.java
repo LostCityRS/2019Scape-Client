@@ -44,7 +44,7 @@ public class PostProcessingRelated extends SecondaryNode implements LegacyPostPr
 		this.field9353 = field9354[0];
 		OpenGL.glBindRenderbufferEXT(36161, this.field9353);
 		OpenGL.glRenderbufferStorageEXT(36161, LegacyOpenGLRenderer.method15799(this.field9352, this.field9351), this.field9349, this.field9347);
-		this.field9350 = this.field9352.field1279 * this.field9349 * this.field9347 * this.field9351.field1652;
+		this.field9350 = this.field9352.id * this.field9349 * this.field9347 * this.field9351.field1652;
 	}
 
 	public PostProcessingRelated(LegacyOpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
@@ -57,7 +57,7 @@ public class PostProcessingRelated extends SecondaryNode implements LegacyPostPr
 		this.field9353 = field9354[0];
 		OpenGL.glBindRenderbufferEXT(36161, this.field9353);
 		OpenGL.glRenderbufferStorageMultisampleEXT(36161, arg5, LegacyOpenGLRenderer.method15799(this.field9352, this.field9351), this.field9349, this.field9347);
-		this.field9350 = this.field9352.field1279 * this.field9349 * this.field9347 * this.field9351.field1652;
+		this.field9350 = this.field9352.id * this.field9349 * this.field9347 * this.field9351.field1652;
 	}
 
 	@ObfuscatedName("aeg.e()I")
@@ -76,7 +76,7 @@ public class PostProcessingRelated extends SecondaryNode implements LegacyPostPr
 	}
 
 	@ObfuscatedName("aeg.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field9353 != 0) {
 			int[] var1 = new int[] { this.field9353 };
 			OpenGL.glDeleteRenderbuffersEXT(1, var1, 0);

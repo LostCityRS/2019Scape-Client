@@ -86,18 +86,18 @@ public abstract class OpenGLBuffer implements GpuBuffer {
 	}
 
 	@ObfuscatedName("rv.w(II)J")
-	public long method5737(int arg0, int arg1) {
+	public long lock(int arg0, int arg1) {
 		OpenGL.glBindBufferARB(this.field4989, this.field4987);
 		return OpenGL.glMapBufferARB(this.field4989, 35001) + (long) arg0;
 	}
 
 	@ObfuscatedName("rv.l()V")
-	public void method5749() {
+	public void unlock() {
 		OpenGL.glUnmapBufferARB(this.field4989);
 	}
 
 	@ObfuscatedName("rv.f(IIJ)Z")
-	public boolean method5738(int arg0, int arg1, long arg2) {
+	public boolean upload(int arg0, int arg1, long arg2) {
 		this.method7654();
 		if (this.field4987 > 0) {
 			OpenGL.glBindBufferARB(this.field4989, this.field4987);
@@ -109,7 +109,7 @@ public abstract class OpenGLBuffer implements GpuBuffer {
 	}
 
 	@ObfuscatedName("rv.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field4987 > 0) {
 			this.field4988.method19072(this.field4987, this.field4992);
 			this.field4987 = -1;
@@ -117,7 +117,7 @@ public abstract class OpenGLBuffer implements GpuBuffer {
 	}
 
 	public void finalize() throws Throwable {
-		this.method1010();
+		this.delete();
 		super.finalize();
 	}
 }

@@ -10,8 +10,8 @@ public interface IndexBuffer extends GpuBuffer, DeletableResource {
 	void method5831(int arg0);
 
 	@ObfuscatedName("ml.e()Ldg;")
-	DataType method5832();
+	DataType getDataType();
 
 	@ObfuscatedName("ml.m()V")
-	void method1010();
+	void delete();
 }

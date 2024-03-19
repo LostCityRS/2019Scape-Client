@@ -81,32 +81,32 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 			return false;
 		}
 		try {
-			this.field10633 = this.field10627.method4157("sceneTex");
-			this.field10634 = this.field10627.method4157("bloomTex1");
-			this.field10630 = this.field10627.method4157("params");
-			this.field10636 = this.field10627.method4157("sampleSize");
-			this.field10629 = this.field10627.method4157("pixelOffsetAndBloomScale");
-			this.field10635 = this.field10627.method4157("PosAndTexCoords");
-			this.field10627.method4227("test");
-			this.field10628 = this.field10627.method4227("techFullscreenTri");
-			this.field10632 = this.field10627.method4227("brightpass");
-			this.field10622 = this.field10627.method4227("blur");
-			this.field10631 = this.field10627.method4227("composite");
-			this.field10637 = this.field10627.method4227("techDefault");
+			this.field10633 = this.field10627.getUniform("sceneTex");
+			this.field10634 = this.field10627.getUniform("bloomTex1");
+			this.field10630 = this.field10627.getUniform("params");
+			this.field10636 = this.field10627.getUniform("sampleSize");
+			this.field10629 = this.field10627.getUniform("pixelOffsetAndBloomScale");
+			this.field10635 = this.field10627.getUniform("PosAndTexCoords");
+			this.field10627.getProgram("test");
+			this.field10628 = this.field10627.getProgram("techFullscreenTri");
+			this.field10632 = this.field10627.getProgram("brightpass");
+			this.field10622 = this.field10627.getProgram("blur");
+			this.field10631 = this.field10627.getProgram("composite");
+			this.field10637 = this.field10627.getProgram("techDefault");
 		} catch (UniformNotFoundException var3) {
 			return false;
 		} catch (ProgramNotFoundException var4) {
 			return false;
 		}
-		if (!this.field10628.method4083()) {
+		if (!this.field10628.compile()) {
 			return false;
-		} else if (!this.field10632.method4083()) {
+		} else if (!this.field10632.compile()) {
 			return false;
-		} else if (!this.field10622.method4083()) {
+		} else if (!this.field10622.compile()) {
 			return false;
-		} else if (!this.field10631.method4083()) {
+		} else if (!this.field10631.compile()) {
 			return false;
-		} else if (this.field10637.method4083()) {
+		} else if (this.field10637.compile()) {
 			this.field10639 = true;
 			return true;
 		} else {
@@ -143,29 +143,29 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 		if (arg0 == 0) {
 			var14 = 256;
 			var15 = 256;
-			this.field10627.method4162(this.field10632);
-			this.field10627.method4244();
+			this.field10627.setCurrentProgram(this.field10632);
+			this.field10627.enable();
 		} else if (arg0 == 1) {
 			var14 = 256;
 			var15 = 256;
 			var16 = var14;
 			var17 = var15;
-			this.field10627.method4162(this.field10622);
-			this.field10627.method4244();
-			this.field10627.method4167(this.field10636, field10626 / var8, 0.0F);
+			this.field10627.setCurrentProgram(this.field10622);
+			this.field10627.enable();
+			this.field10627.setUniform(this.field10636, field10626 / var8, 0.0F);
 		} else if (arg0 == 2) {
 			var14 = 256;
 			var15 = 256;
 			var16 = var14;
 			var17 = var15;
-			this.field10627.method4162(this.field10622);
-			this.field10627.method4244();
-			this.field10627.method4167(this.field10636, 0.0F, field10626 / var9);
+			this.field10627.setCurrentProgram(this.field10622);
+			this.field10627.enable();
+			this.field10627.setUniform(this.field10636, 0.0F, field10626 / var9);
 		} else if (arg0 == 3) {
-			this.field10627.method4162(this.field10631);
+			this.field10627.setCurrentProgram(this.field10631);
 			var10 = arg4;
-			this.field10627.method4252(this.field10634, 1, arg2);
-			this.field10627.method4244();
+			this.field10627.setUniform(this.field10634, 1, arg2);
+			this.field10627.enable();
 		}
 		float var18 = (float) var14 / var8;
 		float var19 = (float) var15 / var9;
@@ -175,10 +175,10 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 		var13[5] = (var13[5] - 1.0F) * var19 + 1.0F;
 		var13[10] *= var20;
 		var13[7] *= var21;
-		this.field10627.method4172(this.field10635, var13);
-		this.field10627.method4252(this.field10633, 0, var10);
-		this.field10627.method4169(this.field10630, field10625, field10623, field10624, 0.0F);
-		this.field10627.method4169(this.field10629, 0.0F, 0.0F, 256.0F / var8, 256.0F / var9);
+		this.field10627.setUniform(this.field10635, var13);
+		this.field10627.setUniform(this.field10633, 0, var10);
+		this.field10627.setUniform(this.field10630, field10625, field10623, field10624, 0.0F);
+		this.field10627.setUniform(this.field10629, 0.0F, 0.0F, 256.0F / var8, 256.0F / var9);
 		this.field3242.method2164(0, 0, var14, var15);
 	}
 

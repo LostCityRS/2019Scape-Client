@@ -21,7 +21,7 @@ public abstract class CursorTypeFactory {
 	public void method10287() {
 		WeightedCache var1 = this.cursorCache;
 		synchronized (this.cursorCache) {
-			this.cursorCache.method2924();
+			this.cursorCache.clear();
 		}
 	}
 

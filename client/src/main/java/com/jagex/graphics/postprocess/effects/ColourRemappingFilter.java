@@ -66,33 +66,33 @@ public class ColourRemappingFilter extends PostProcessEffect {
 			return false;
 		}
 		try {
-			this.field10658 = this.field10654.method4157("sceneTex");
+			this.field10658 = this.field10654.getUniform("sceneTex");
 			this.field10659 = new Program[3];
 			this.field10660 = new ProgramUniform[3];
 			if (this.field3242.field10125) {
-				this.field10659[0] = this.field10654.method4227("techRemap3D_1");
-				this.field10659[1] = this.field10654.method4227("techRemap3D_2");
-				this.field10659[2] = this.field10654.method4227("techRemap3D_3");
-				this.field10660[0] = this.field10654.method4157("remapTex3D_1");
-				this.field10660[1] = this.field10654.method4157("remapTex3D_2");
-				this.field10660[2] = this.field10654.method4157("remapTex3D_3");
+				this.field10659[0] = this.field10654.getProgram("techRemap3D_1");
+				this.field10659[1] = this.field10654.getProgram("techRemap3D_2");
+				this.field10659[2] = this.field10654.getProgram("techRemap3D_3");
+				this.field10660[0] = this.field10654.getUniform("remapTex3D_1");
+				this.field10660[1] = this.field10654.getUniform("remapTex3D_2");
+				this.field10660[2] = this.field10654.getUniform("remapTex3D_3");
 			} else {
-				this.field10659[0] = this.field10654.method4227("techRemap2D_1");
-				this.field10659[1] = this.field10654.method4227("techRemap2D_2");
-				this.field10659[2] = this.field10654.method4227("techRemap2D_3");
-				this.field10660[0] = this.field10654.method4157("remapTex2D_1");
-				this.field10660[1] = this.field10654.method4157("remapTex2D_2");
-				this.field10660[2] = this.field10654.method4157("remapTex2D_3");
+				this.field10659[0] = this.field10654.getProgram("techRemap2D_1");
+				this.field10659[1] = this.field10654.getProgram("techRemap2D_2");
+				this.field10659[2] = this.field10654.getProgram("techRemap2D_3");
+				this.field10660[0] = this.field10654.getUniform("remapTex2D_1");
+				this.field10660[1] = this.field10654.getUniform("remapTex2D_2");
+				this.field10660[2] = this.field10654.getUniform("remapTex2D_3");
 			}
-			this.field10661 = this.field10654.method4157("paramsWeightings");
-			this.field10662 = this.field10654.method4157("pixelOffset");
-			this.field10657 = this.field10654.method4157("PosAndTexCoords");
+			this.field10661 = this.field10654.getUniform("paramsWeightings");
+			this.field10662 = this.field10654.getUniform("pixelOffset");
+			this.field10657 = this.field10654.getUniform("PosAndTexCoords");
 		} catch (UniformNotFoundException var3) {
 			return false;
 		} catch (ProgramNotFoundException var4) {
 			return false;
 		}
-		if (this.field10659[0].method4083() && this.field10659[1].method4083() && this.field10659[2].method4083()) {
+		if (this.field10659[0].compile() && this.field10659[1].compile() && this.field10659[2].compile()) {
 			this.field10664 = true;
 			return true;
 		} else {
@@ -126,16 +126,16 @@ public class ColourRemappingFilter extends PostProcessEffect {
 		int var16 = arg5 ? this.field3242.getSurface().getWidth() : var14;
 		int var17 = arg5 ? this.field3242.getSurface().getHeight() : var15;
 		Program var18 = this.field10659[field10655 - 1];
-		this.field10654.method4162(var18);
-		this.field10654.method4244();
-		this.field10654.method4169(this.field10661, field10656, field10663[0], field10663[1], field10663[2]);
+		this.field10654.setCurrentProgram(var18);
+		this.field10654.enable();
+		this.field10654.setUniform(this.field10661, field10656, field10663[0], field10663[1], field10663[2]);
 		Object var19 = null;
 		Object var20 = null;
 		for (int var21 = 0; var21 < field10655; var21++) {
 			if (field10653[var21] != null) {
 				ProgramUniform var22 = this.field10660[var21];
 				BaseTexture var23 = field10653[var21].method15431();
-				this.field10654.method4252(var22, var21 + 1, var23);
+				this.field10654.setUniform(var22, var21 + 1, var23);
 			}
 		}
 		float var24 = (float) var14 / var8;
@@ -146,9 +146,9 @@ public class ColourRemappingFilter extends PostProcessEffect {
 		var13[5] = (var13[5] - 1.0F) * var25 + 1.0F;
 		var13[10] *= var26;
 		var13[7] *= var27;
-		this.field10654.method4172(this.field10657, var13);
-		this.field10654.method4252(this.field10658, 0, arg2);
-		this.field10654.method4169(this.field10662, 0.0F, 0.0F, 0.0F, 0.0F);
+		this.field10654.setUniform(this.field10657, var13);
+		this.field10654.setUniform(this.field10658, 0, arg2);
+		this.field10654.setUniform(this.field10662, 0.0F, 0.0F, 0.0F, 0.0F);
 		this.field3242.method2164(0, 0, var14, var15);
 	}
 

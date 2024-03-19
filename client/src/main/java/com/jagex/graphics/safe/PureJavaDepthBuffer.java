@@ -32,6 +32,6 @@ public class PureJavaDepthBuffer implements EffectInterface {
 	}
 
 	@ObfuscatedName("bc.m()V")
-	public void method1010() {
+	public void delete() {
 	}
 }

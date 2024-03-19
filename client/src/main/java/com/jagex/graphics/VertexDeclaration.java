@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public abstract class VertexDeclaration implements DeletableResource {
 
 	@ObfuscatedName("lo.e")
-	public final VertexDeclarationElement[] field3241;
+	public final VertexDeclarationElement[] elements;
 
 	public VertexDeclaration(VertexDeclarationElement[] arg0) {
-		this.field3241 = arg0;
+		this.elements = arg0;
 	}
 }
