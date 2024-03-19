@@ -24,6 +24,6 @@ public class EntitySpotAnimCutsceneAction extends CutsceneActionUnused {
 
 	@ObfuscatedName("aqm.n(I)V")
 	public void method2890() {
-		CutsceneManager.field1721[this.field12045].method2870().method16563(this.field10303, this.field10305 << 16, this.field10304, this.field12047, false, this.field12046);
+		CutsceneManager.field1721[this.field12045].method2870().addSpotAnimation(this.field10303, this.field10305 << 16, this.field10304, this.field12047, false, this.field12046);
 	}
 }

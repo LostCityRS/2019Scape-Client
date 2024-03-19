@@ -729,11 +729,11 @@ public class MiniMenu {
 		if (arg0 instanceof NpcEntity) {
 			NpcEntity var1 = (NpcEntity) arg0;
 			if (var1.npcType != null) {
-				method10152(var1, Client.localPlayerEntity.field11717 != var1.field11717);
+				method10152(var1, Client.localPlayerEntity.level != var1.level);
 			}
 		} else if (arg0 instanceof PlayerEntity) {
 			PlayerEntity var2 = (PlayerEntity) arg0;
-			method3542(var2, Client.localPlayerEntity.field11717 != var2.field11717);
+			method3542(var2, Client.localPlayerEntity.level != var2.level);
 		}
 	}
 
@@ -782,9 +782,9 @@ public class MiniMenu {
 				float var19 = var16 - var13;
 				int var20 = (int) (var17 * var18 + var11);
 				int var21 = (int) (var17 * var19 + var13);
-				var7 = var20 + (Client.localPlayerEntity.method16546() - 1 << 8) >> 9;
-				var8 = var21 + (Client.localPlayerEntity.method16546() - 1 << 8) >> 9;
-				byte var22 = Client.localPlayerEntity.field11717;
+				var7 = var20 + (Client.localPlayerEntity.size() - 1 << 8) >> 9;
+				var8 = var21 + (Client.localPlayerEntity.size() - 1 << 8) >> 9;
+				byte var22 = Client.localPlayerEntity.level;
 				if (var22 < 3 && (Client.world.method7793().levelTileFlags[1][var20 >> 9][var21 >> 9] & 0x2) != 0) {
 					int var91 = var22 + 1;
 				}
@@ -829,7 +829,7 @@ public class MiniMenu {
 												return;
 											}
 											var29 = (PickableEntity) var28.next();
-										} while (!Client.field10809 && Client.localPlayerEntity.field11717 != var29.field6978.field11717);
+										} while (!Client.field10809 && Client.localPlayerEntity.level != var29.field6978.level);
 									} while (!var29.method8889(arg0, var25, var26));
 									boolean var30 = false;
 									boolean var31 = false;
@@ -845,11 +845,11 @@ public class MiniMenu {
 										break;
 									}
 									PlayerEntity var35 = (PlayerEntity) var29.field6978;
-									int var36 = var35.method16546();
+									int var36 = var35.size();
 									Vector3 var37 = var35.method10536().field4298;
 									if ((var36 & 0x1) == 0 && ((int) var37.field4308 & 0x1FF) == 0 && ((int) var37.field4313 & 0x1FF) == 0 || (var36 & 0x1) == 1 && ((int) var37.field4308 & 0x1FF) == 256 && ((int) var37.field4313 & 0x1FF) == 256) {
-										int var38 = (int) var37.field4308 - (var35.method16546() - 1 << 8);
-										int var39 = (int) var37.field4313 - (var35.method16546() - 1 << 8);
+										int var38 = (int) var37.field4308 - (var35.size() - 1 << 8);
+										int var39 = (int) var37.field4313 - (var35.size() - 1 << 8);
 										for (int var40 = 0; var40 < Client.field11011; var40++) {
 											ObjectWrapper var41 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var40]);
 											if (var41 != null) {
@@ -858,30 +858,30 @@ public class MiniMenu {
 													Vector3 var43 = var42.method10536().field4298;
 													int var44 = (int) var43.field4308 - (var42.npcType.size - 1 << 8);
 													int var45 = (int) var43.field4313 - (var42.npcType.size - 1 << 8);
-													if (var44 >= var38 && var42.npcType.size <= var35.method16546() - (var44 - var38 >> 9) && var45 >= var39 && var42.npcType.size <= var35.method16546() - (var45 - var39 >> 9)) {
-														method10152(var42, Client.localPlayerEntity.field11717 != var29.field6978.field11717);
+													if (var44 >= var38 && var42.npcType.size <= var35.size() - (var44 - var38 >> 9) && var45 >= var39 && var42.npcType.size <= var35.size() - (var45 - var39 >> 9)) {
+														method10152(var42, Client.localPlayerEntity.level != var29.field6978.level);
 														var42.field10403 = Client.currentclock;
 													}
 												}
 											}
 										}
-										int var46 = ReceivePlayerPositions.field698;
-										int[] var47 = ReceivePlayerPositions.field703;
+										int var46 = ReceivePlayerPositions.highResolutionsCount;
+										int[] var47 = ReceivePlayerPositions.highResolutionsIndices;
 										for (int var48 = 0; var48 < var46; var48++) {
 											PlayerEntity var49 = Client.players[var47[var48]];
 											if (var49 != null && var49.field10403 != Client.currentclock && var35 != var49 && var49.field10452) {
 												Vector3 var50 = var49.method10536().field4298;
-												int var51 = (int) var50.field4308 - (var49.method16546() - 1 << 8);
-												int var52 = (int) var50.field4313 - (var49.method16546() - 1 << 8);
-												if (var51 >= var38 && var49.method16546() <= var35.method16546() - (var51 - var38 >> 9) && var52 >= var39 && var49.method16546() <= var35.method16546() - (var52 - var39 >> 9)) {
-													method3542(var49, Client.localPlayerEntity.field11717 != var29.field6978.field11717);
+												int var51 = (int) var50.field4308 - (var49.size() - 1 << 8);
+												int var52 = (int) var50.field4313 - (var49.size() - 1 << 8);
+												if (var51 >= var38 && var49.size() <= var35.size() - (var51 - var38 >> 9) && var52 >= var39 && var49.size() <= var35.size() - (var52 - var39 >> 9)) {
+													method3542(var49, Client.localPlayerEntity.level != var29.field6978.level);
 													var49.field10403 = Client.currentclock;
 												}
 											}
 										}
 									}
 									if (var35.field10403 != Client.currentclock) {
-										method3542(var35, Client.localPlayerEntity.field11717 != var29.field6978.field11717);
+										method3542(var35, Client.localPlayerEntity.level != var29.field6978.level);
 										var35.field10403 = Client.currentclock;
 										break;
 									}
@@ -906,29 +906,29 @@ public class MiniMenu {
 												int var61 = (int) var60.field4308 - (var59.npcType.size - 1 << 8);
 												int var62 = (int) var60.field4313 - (var59.npcType.size - 1 << 8);
 												if (var61 >= var55 && var59.npcType.size <= var53.npcType.size - (var61 - var55 >> 9) && var62 >= var56 && var59.npcType.size <= var53.npcType.size - (var62 - var56 >> 9)) {
-													method10152(var59, Client.localPlayerEntity.field11717 != var29.field6978.field11717);
+													method10152(var59, Client.localPlayerEntity.level != var29.field6978.level);
 													var59.field10403 = Client.currentclock;
 												}
 											}
 										}
 									}
-									int var63 = ReceivePlayerPositions.field698;
-									int[] var64 = ReceivePlayerPositions.field703;
+									int var63 = ReceivePlayerPositions.highResolutionsCount;
+									int[] var64 = ReceivePlayerPositions.highResolutionsIndices;
 									for (int var65 = 0; var65 < var63; var65++) {
 										PlayerEntity var66 = Client.players[var64[var65]];
 										if (var66 != null && var66.field10403 != Client.currentclock && var66.field10452) {
 											Vector3 var67 = var66.method10536().field4298;
-											int var68 = (int) var67.field4308 - (var66.method16546() - 1 << 8);
-											int var69 = (int) var67.field4313 - (var66.method16546() - 1 << 8);
-											if (var68 >= var55 && var66.method16546() <= var53.npcType.size - (var68 - var55 >> 9) && var69 >= var56 && var66.method16546() <= var53.npcType.size - (var69 - var56 >> 9)) {
-												method3542(var66, Client.localPlayerEntity.field11717 != var29.field6978.field11717);
+											int var68 = (int) var67.field4308 - (var66.size() - 1 << 8);
+											int var69 = (int) var67.field4313 - (var66.size() - 1 << 8);
+											if (var68 >= var55 && var66.size() <= var53.npcType.size - (var68 - var55 >> 9) && var69 >= var56 && var66.size() <= var53.npcType.size - (var69 - var56 >> 9)) {
+												method3542(var66, Client.localPlayerEntity.level != var29.field6978.level);
 												var66.field10403 = Client.currentclock;
 											}
 										}
 									}
 								}
 								if (var53.field10403 != Client.currentclock) {
-									method10152(var53, Client.localPlayerEntity.field11717 != var29.field6978.field11717);
+									method10152(var53, Client.localPlayerEntity.level != var29.field6978.level);
 									var53.field10403 = Client.currentclock;
 									break;
 								}
@@ -936,7 +936,7 @@ public class MiniMenu {
 							if (var29.field6978 instanceof ObjStackEntity) {
 								int var70 = var3.x + var32;
 								int var71 = var3.z + var33;
-								ObjStackList var72 = (ObjStackList) Client.objStacks.getNode((long) (var29.field6978.field11717 << 28 | var71 << 14 | var70));
+								ObjStackList var72 = (ObjStackList) Client.objStacks.getNode((long) (var29.field6978.level << 28 | var71 << 14 | var70));
 								if (var72 != null) {
 									int var73 = 0;
 									Obj var74 = (Obj) var72.field11263.peekBack();
@@ -950,13 +950,13 @@ public class MiniMenu {
 										} else {
 											var76 = field1971.field7661;
 										}
-										if (Client.targetModeActive && Client.localPlayerEntity.field11717 == var29.field6978.field11717) {
+										if (Client.targetModeActive && Client.localPlayerEntity.level == var29.field6978.level) {
 											ParamType var77 = (ParamType) (Client.field7677 == -1 ? null : Client.paramTypeList.list(Client.field7677));
 											if ((Client.field1765 & 0x1) != 0 && (var77 == null || var75.getParam(Client.field7677, var77.defaultint) != var77.defaultint)) {
 												method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(var76) + var75.name, Client.field1844, 17, -1, (long) var74.field11261, var32, var33, true, false, (long) var73, false);
 											}
 										}
-										if (Client.localPlayerEntity.field11717 == var29.field6978.field11717) {
+										if (Client.localPlayerEntity.level == var29.field6978.level) {
 											String[] var78 = var75.op;
 											for (int var79 = var78.length - 1; var79 >= 0; var79--) {
 												if (var78[var79] != null) {
@@ -1000,13 +1000,13 @@ public class MiniMenu {
 							var84 = var84.method9477(Client.localPlayerGameState, Client.localPlayerGameState);
 						}
 					} while (var84 == null);
-					if (Client.targetModeActive && Client.localPlayerEntity.field11717 == var29.field6978.field11717) {
+					if (Client.targetModeActive && Client.localPlayerEntity.level == var29.field6978.level) {
 						ParamType var85 = (ParamType) (Client.field7677 == -1 ? null : Client.paramTypeList.list(Client.field7677));
 						if ((Client.field1765 & 0x4) != 0 && (var85 == null || var84.method9481(Client.field7677, var85.defaultint) != var85.defaultint)) {
 							method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(65535) + var84.name, Client.field1844, 2, -1, method6964(var83, var32, var33), var32, var33, true, false, (long) var83.hashCode(), false);
 						}
 					}
-				} while (Client.localPlayerEntity.field11717 != var29.field6978.field11717);
+				} while (Client.localPlayerEntity.level != var29.field6978.level);
 				var86 = var84.op;
 			} while (var86 == null);
 			for (int var87 = var86.length - 1; var87 >= 0; var87--) {
@@ -1806,7 +1806,7 @@ public class MiniMenu {
 		if (Client.targetModeActive && !arg1) {
 			ParamType var5 = (ParamType) (Client.field7677 == -1 ? null : Client.paramTypeList.list(Client.field7677));
 			if ((Client.field1765 & 0x2) != 0 && (var5 == null || var2.method4551(Client.field7677, var5.defaultint) != var5.defaultint)) {
-				method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(16776960) + var3, Client.field1844, 8, -1, (long) arg0.field10406, 0, 0, true, false, (long) arg0.field10406, false);
+				method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(16776960) + var3, Client.field1844, 8, -1, (long) arg0.localPlayerIndex, 0, 0, true, false, (long) arg0.localPlayerIndex, false);
 			}
 		}
 		if (arg1) {
@@ -1855,7 +1855,7 @@ public class MiniMenu {
 						var10 = var2.cursorattack;
 					}
 				}
-				method3042(var6[var8], TextUtil.method596(16776960) + var3, var10, var9, -1, (long) arg0.field10406, 0, 0, true, false, (long) arg0.field10406, false);
+				method3042(var6[var8], TextUtil.method596(16776960) + var3, var10, var9, -1, (long) arg0.localPlayerIndex, 0, 0, true, false, (long) arg0.localPlayerIndex, false);
 			}
 		}
 		if (!var7) {
@@ -1878,7 +1878,7 @@ public class MiniMenu {
 					if (var15) {
 						var18 = var2.cursorattack;
 					}
-					method3042(var6[var14], TextUtil.method596(16776960) + var3, var18, var17, -1, (long) arg0.field10406, 0, 0, true, false, (long) arg0.field10406, false);
+					method3042(var6[var14], TextUtil.method596(16776960) + var3, var18, var17, -1, (long) arg0.localPlayerIndex, 0, 0, true, false, (long) arg0.localPlayerIndex, false);
 				}
 			}
 		}
@@ -1927,7 +1927,7 @@ public class MiniMenu {
 				}
 			}
 			if (Client.targetModeActive && !arg1 && (Client.field1765 & 0x8) != 0) {
-				method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(16777215) + var6, Client.field1844, 15, -1, (long) arg0.field10406, 0, 0, true, false, (long) arg0.field10406, false);
+				method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(16777215) + var6, Client.field1844, 15, -1, (long) arg0.localPlayerIndex, 0, 0, true, false, (long) arg0.localPlayerIndex, false);
 			}
 			if (!arg1) {
 				for (int var10 = 7; var10 >= 0; var10--) {
@@ -1957,11 +1957,11 @@ public class MiniMenu {
 						short var12 = (short) (Client.field10958[var10] + var11);
 						int var13 = Client.field10832[var10] == -1 ? Client.field10971 : Client.field10832[var10];
 						int var14 = var7 ? 16776960 : 16777215;
-						method3042(Client.field10961[var10], TextUtil.method596(var14) + var6, var13, var12, -1, (long) arg0.field10406, 0, 0, true, false, (long) arg0.field10406, false);
+						method3042(Client.field10961[var10], TextUtil.method596(var14) + var6, var13, var12, -1, (long) arg0.localPlayerIndex, 0, 0, true, false, (long) arg0.localPlayerIndex, false);
 					}
 				}
 			} else if (!var7) {
-				method3042(TextUtil.method596(13421772) + var6, "", -1, -1, 0, 0L, 0, 0, false, true, (long) arg0.field10406, false);
+				method3042(TextUtil.method596(13421772) + var6, "", -1, -1, 0, 0L, 0, 0, false, true, (long) arg0.localPlayerIndex, false);
 			}
 			if (!arg1 && !var7) {
 				for (MinimenuEntry var15 = (MinimenuEntry) field542.peekFront(); var15 != null; var15 = (MinimenuEntry) field542.prev()) {
@@ -1972,7 +1972,7 @@ public class MiniMenu {
 				}
 			}
 		} else if (Client.targetModeActive && (Client.field1765 & 0x10) != 0) {
-			method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(16777215) + LocalisedText.SELF.forLang(Client.language), Client.field1844, 16, -1, 0L, 0, 0, true, false, (long) arg0.field10406, false);
+			method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + TextUtil.method596(16777215) + LocalisedText.SELF.forLang(Client.language), Client.field1844, 16, -1, 0L, 0, 0, true, false, (long) arg0.localPlayerIndex, false);
 		}
 	}
 
@@ -2116,7 +2116,7 @@ public class MiniMenu {
 		}
 		if (var6 == 23) {
 			if (Client.staffModLevel > 0 && method6035()) {
-				Client.method10445(Client.localPlayerEntity.field11717, var10.x + var4, var10.z + var5);
+				Client.method10445(Client.localPlayerEntity.level, var10.x + var4, var10.z + var5);
 			} else {
 				ClientMessage var19 = method9839(var4, var5, var7);
 				if (var7 == 1) {
@@ -2222,7 +2222,7 @@ public class MiniMenu {
 		}
 		if (var6 == 60) {
 			if (Client.staffModLevel > 0 && method6035()) {
-				Client.method10445(Client.localPlayerEntity.field11717, var10.x + var4, var10.z + var5);
+				Client.method10445(Client.localPlayerEntity.level, var10.x + var4, var10.z + var5);
 			} else {
 				Client.field10866 = arg1;
 				Client.field10924 = arg2;
@@ -2243,7 +2243,7 @@ public class MiniMenu {
 			var31.buf.p2(Client.field10974);
 			var31.buf.p1_alt1(method14766() ? 1 : 0);
 			var31.buf.p2_alt1(Client.field10975);
-			var31.buf.p2_alt3(Client.localPlayerEntity.field10406);
+			var31.buf.p2_alt3(Client.localPlayerEntity.localPlayerIndex);
 			var31.buf.p4_alt2(Client.field6707);
 			Client.gameConnection.queue(var31);
 		}
@@ -2375,7 +2375,7 @@ public class MiniMenu {
 			int var18 = (int) var15 >> 9;
 			int var19 = (int) var17 >> 9;
 			if (var18 > 0 && var19 > 0 && var18 < Client.world.getSizeX() && var19 < Client.world.getSizeZ()) {
-				int var20 = Client.localPlayerEntity.field11717;
+				int var20 = Client.localPlayerEntity.level;
 				if (var20 < 3 && (Client.world.method7793().levelTileFlags[1][var18][var19] & 0x2) != 0) {
 					var20++;
 				}

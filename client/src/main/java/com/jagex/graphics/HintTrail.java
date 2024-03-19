@@ -86,7 +86,7 @@ public class HintTrail {
 		Iterator var2 = this.field6752.iterator();
 		while (var2.hasNext()) {
 			HintTrailPoint var3 = (HintTrailPoint) var2.next();
-			arg0.removeEntity(var3.field11717, var3.field12471, var3.field12468, new HintTrailPointPrimaryLayerEntityPredicate(var3));
+			arg0.removeEntity(var3.level, var3.field12471, var3.field12468, new HintTrailPointPrimaryLayerEntityPredicate(var3));
 		}
 	}
 
@@ -95,9 +95,9 @@ public class HintTrail {
 		this.field6752 = new LinkedList();
 		SceneLevelTileFlags var2 = Client.world.method7793();
 		CoordGrid var3 = Client.world.method7727();
-		CoordGrid var4 = new CoordGrid(Client.field4826, this.field6750[0], this.field6753[0]);
+		CoordGrid var4 = new CoordGrid(Client.currentPlayerLevel, this.field6750[0], this.field6753[0]);
 		for (int var5 = 1; var5 < this.field6751; var5++) {
-			CoordGrid var6 = new CoordGrid(Client.field4826, this.field6750[var5], this.field6753[var5]);
+			CoordGrid var6 = new CoordGrid(Client.currentPlayerLevel, this.field6750[var5], this.field6753[var5]);
 			while (var4.x != var6.x || var4.z != var6.z) {
 				if (var4.x < var6.x) {
 					var4.x++;
@@ -109,7 +109,7 @@ public class HintTrail {
 				} else if (var4.z > var6.z) {
 					var4.z--;
 				}
-				int var7 = Client.field4826;
+				int var7 = Client.currentPlayerLevel;
 				int var8 = var4.x - var3.x;
 				int var9 = var4.z - var3.z;
 				if (var8 >= 0 && var8 < arg0.maxTileX && var9 >= 0 && var9 < arg0.maxTileZ) {
@@ -118,7 +118,7 @@ public class HintTrail {
 					if (var2.isLinkBelow(var8, var9)) {
 						var7++;
 					}
-					this.field6752.add(new HintTrailPoint(arg0, this, Client.field4826, var7, var10, Client.method3660(var10, var11, Client.field4826), var11));
+					this.field6752.add(new HintTrailPoint(arg0, this, Client.currentPlayerLevel, var7, var10, Client.method3660(var10, var11, Client.currentPlayerLevel), var11));
 				}
 			}
 			var4 = var6;

@@ -33,6 +33,6 @@ public class TextCoordCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agd.n(I)V")
 	public void method2890() {
-		Client.method8476(Client.field4826, this.field10315, this.field10313, Client.method3660(this.field10315, this.field10313, Client.field4826), this.field10316, this.field10314, this.field10312);
+		Client.method8476(Client.currentPlayerLevel, this.field10315, this.field10313, Client.method3660(this.field10315, this.field10313, Client.currentPlayerLevel), this.field10316, this.field10314, this.field10312);
 	}
 }

@@ -10332,7 +10332,7 @@ public final class ScriptRunner {
 		MinimenuEntry var1 = MiniMenu.method4924();
 		if (MiniMenu.method18429(var1) == 7) {
 			int var2 = (int) var1.method19368();
-			if (var2 >= 0 && var2 <= ReceivePlayerPositions.field698) {
+			if (var2 >= 0 && var2 <= ReceivePlayerPositions.highResolutionsCount) {
 				PlayerEntity var3 = Client.players[var2];
 				if (var3 != null) {
 					arg0.currentEntity = var3;

@@ -101,7 +101,7 @@ public class ProjAnimCutsceneAction extends CutsceneAction {
 			Vector3 var5 = var4.method10536().field4298;
 			var1 = (int) var5.field4308;
 			var2 = (int) var5.field4313;
-			var3 = var4.field11717;
+			var3 = var4.level;
 		}
 		int var6;
 		int var7;
@@ -114,7 +114,7 @@ public class ProjAnimCutsceneAction extends CutsceneAction {
 			var6 = (int) var9.field4308;
 			var7 = (int) var9.field4313;
 			if (var3 < 0) {
-				var3 = var8.field11717;
+				var3 = var8.level;
 			}
 		}
 		int var10 = this.field10352 << 2;

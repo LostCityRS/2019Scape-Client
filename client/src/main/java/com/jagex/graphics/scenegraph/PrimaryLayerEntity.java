@@ -4,7 +4,6 @@ import com.jagex.game.world.entity.Scene;
 import com.jagex.game.world.entity.StaticPointLight;
 import com.jagex.graphics.Light;
 import com.jagex.graphics.Renderer;
-import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 
@@ -43,7 +42,7 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 		super(arg0, arg12);
 		this.field12466 = 0;
 		this.field12473 = new Light[4];
-		this.field11717 = (byte) arg1;
+		this.level = (byte) arg1;
 		this.field11714 = (byte) arg2;
 		if (arg12 != null) {
 			this.method10529(arg12);
@@ -69,13 +68,13 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 		if (this.field8176) {
 			this.field12466 = 0;
 			int var2 = Math.max(0, this.field12471);
-			int var3 = Math.min(this.field11716.field6954[this.field11717].length - 1, this.field12472);
+			int var3 = Math.min(this.field11716.field6954[this.level].length - 1, this.field12472);
 			int var4 = Math.max(0, this.field12468);
-			int var5 = Math.min(this.field11716.field6954[this.field11717][var2].length - 1, this.field12467);
+			int var5 = Math.min(this.field11716.field6954[this.level][var2].length - 1, this.field12467);
 			int var6 = var4;
 			label129: while (var2 <= var3) {
 				label126: for (int var7 = var6; var7 <= var5; var7++) {
-					long var8 = this.field11716.field6954[this.field11717][var2][var7];
+					long var8 = this.field11716.field6954[this.level][var2][var7];
 					long var10 = 0L;
 					while (true) {
 						label121: while (true) {
@@ -137,7 +136,7 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 					var21 = this.field12468;
 				}
 				label92: for (int var22 = 0; var22 < this.field12466; var22++) {
-					long var23 = this.field11716.field6954[this.field11717][var18][var19];
+					long var23 = this.field11716.field6954[this.level][var18][var19];
 					while (var23 != 0L) {
 						StaticPointLight var25 = this.field11716.field6926[(int) ((var23 & 0xFFFFL) - 1L)];
 						var23 >>>= 0x10;
@@ -145,7 +144,7 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 							continue label92;
 						}
 					}
-					long var26 = this.field11716.field6954[this.field11717][var20][var21];
+					long var26 = this.field11716.field6954[this.level][var20][var21];
 					while (var26 != 0L) {
 						StaticPointLight var28 = this.field11716.field6926[(int) ((var26 & 0xFFFFL) - 1L)];
 						var26 >>>= 0x10;

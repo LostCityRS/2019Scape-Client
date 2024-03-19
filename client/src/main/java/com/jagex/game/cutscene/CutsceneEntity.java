@@ -53,7 +53,7 @@ public final class CutsceneEntity {
 			this.field1744 = true;
 			if (this.field1743 >= 0) {
 				this.field1745 = new NpcEntity(Client.world.getScene(), 25);
-				this.field1745.field10406 = this.field1741;
+				this.field1745.localPlayerIndex = this.field1741;
 				this.field1745.field10440 = Client.currentclock;
 				this.field1745.method19156((NPCType) Client.npcTypeList.list(this.field1743));
 				this.field1745.method16502(this.field1745.npcType.size);
@@ -61,18 +61,18 @@ public final class CutsceneEntity {
 				this.field1745.field10404 = ++CutsceneManager.field1715 - 1;
 			} else {
 				this.field1742 = new PlayerEntity(Client.world.getScene(), 25);
-				this.field1742.method19129(Client.field8729);
-				this.field1742.field10406 = this.field1741;
+				this.field1742.getAppearance(Client.field8729);
+				this.field1742.localPlayerIndex = this.field1741;
 				this.field1742.field10440 = Client.currentclock;
 				this.field1742.field10404 = ++CutsceneManager.field1715 - 1;
 			}
 		}
 		if (this.field1743 >= 0) {
-			this.field1745.method19159(arg2, arg0, arg1, true, this.field1745.method16546());
+			this.field1745.method19159(arg2, arg0, arg1, true, this.field1745.size());
 			this.field1745.method16491(arg3, true);
 		} else {
-			this.field1742.field11717 = this.field1742.field11714 = (byte) arg2;
-			this.field1742.method19118(arg0, arg1);
+			this.field1742.level = this.field1742.field11714 = (byte) arg2;
+			this.field1742.tele(arg0, arg1);
 			this.field1742.method16491(arg3, true);
 		}
 	}
@@ -87,10 +87,10 @@ public final class CutsceneEntity {
 	@ObfuscatedName("ea.m(IIII)V")
 	public void method2866(int arg0, int arg1, int arg2) {
 		if (this.field1745 == null) {
-			this.field1742.field11717 = this.field1742.field11714 = (byte) arg0;
-			this.field1742.method19118(arg1, arg2);
+			this.field1742.level = this.field1742.field11714 = (byte) arg0;
+			this.field1742.tele(arg1, arg2);
 		} else {
-			this.field1745.method19159(arg0, arg1, arg2, true, this.field1745.method16546());
+			this.field1745.method19159(arg0, arg1, arg2, true, this.field1745.size());
 		}
 	}
 

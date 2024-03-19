@@ -268,15 +268,15 @@ public class PositionedSound extends Node {
 			field11347.pushBack(var7);
 		} else if (arg6 != null) {
 			var7.field11361 = arg6;
-			var7.field11352 = arg1 + arg6.method16546() << 9;
-			var7.field11353 = arg2 + arg6.method16546() << 9;
+			var7.field11352 = arg1 + arg6.size() << 9;
+			var7.field11353 = arg2 + arg6.size() << 9;
 			var7.field11370 = method16456(arg6);
 			var7.field11357 = arg6.field12067 << 9;
 			var7.field11359 = arg6.field12068;
 			var7.field11369 = 256;
 			var7.field11368 = 256;
 			var7.field11356 = 0;
-			field11366.pushNode(var7, (long) arg6.field10406);
+			field11366.pushNode(var7, (long) arg6.localPlayerIndex);
 			Client.audioApi.method3200(arg6.field12063);
 			Client.audioApi.method3200(arg6.field12049);
 			Client.audioApi.method3200(arg6.field12065);
@@ -316,7 +316,7 @@ public class PositionedSound extends Node {
 
 	@ObfuscatedName("kg.l(Laqk;I)V")
 	public static void method5142(PlayerEntity arg0) {
-		PositionedSound var1 = (PositionedSound) field11366.getNode((long) arg0.field10406);
+		PositionedSound var1 = (PositionedSound) field11366.getNode((long) arg0.localPlayerIndex);
 		if (var1 == null) {
 			return;
 		}
@@ -330,9 +330,9 @@ public class PositionedSound extends Node {
 
 	@ObfuscatedName("xj.u(Laqk;I)V")
 	public static void method10310(PlayerEntity arg0) {
-		PositionedSound var1 = (PositionedSound) field11366.getNode((long) arg0.field10406);
+		PositionedSound var1 = (PositionedSound) field11366.getNode((long) arg0.localPlayerIndex);
 		if (var1 == null) {
-			method9739(arg0.field11717, arg0.routeWaypointX[0], arg0.routeWaypointZ[0], 0, null, null, arg0);
+			method9739(arg0.level, arg0.routeWaypointX[0], arg0.routeWaypointZ[0], 0, null, null, arg0);
 		} else {
 			var1.method17660();
 		}
@@ -348,7 +348,7 @@ public class PositionedSound extends Node {
 			}
 		}
 		int var2 = var1.field2748;
-		BASType var3 = arg0.method16508();
+		BASType var3 = arg0.getBASType();
 		int var4 = arg0.field10432.method14348();
 		if (var4 == -1 || arg0.field10432.field11877) {
 			var2 = var1.field2746;
@@ -363,7 +363,7 @@ public class PositionedSound extends Node {
 	@ObfuscatedName("ags.p(Laqk;I)I")
 	public static int method16456(PlayerEntity arg0) {
 		int var1 = arg0.field12065;
-		BASType var2 = arg0.method16508();
+		BASType var2 = arg0.getBASType();
 		int var3 = arg0.field10432.method14348();
 		if (var3 == -1 || arg0.field10432.field11877) {
 			var1 = arg0.field12063;
@@ -382,7 +382,7 @@ public class PositionedSound extends Node {
 		}
 		for (PositionedSound var5 = (PositionedSound) field11347.peekFront(); var5 != null; var5 = (PositionedSound) field11347.prev()) {
 			byte var6 = 1;
-			BASType var7 = var5.field11345.method16508();
+			BASType var7 = var5.field11345.getBASType();
 			int var8 = var5.field11345.field10432.method14348();
 			if (var8 == -1 || var5.field11345.field10432.field11877) {
 				var6 = 0;
@@ -425,15 +425,15 @@ public class PositionedSound extends Node {
 			}
 			Vector3 var12 = var5.field11345.method10536().field4298;
 			var5.field11358 = (int) var12.field4308;
-			var5.field11352 = (int) var12.field4308 + (var5.field11345.method16546() << 8);
+			var5.field11352 = (int) var12.field4308 + (var5.field11345.size() << 8);
 			var5.field11351 = (int) var12.field4313;
-			var5.field11353 = (int) var12.field4313 + (var5.field11345.method16546() << 8);
-			var5.field11349 = var5.field11345.field11717;
+			var5.field11353 = (int) var12.field4313 + (var5.field11345.size() << 8);
+			var5.field11349 = var5.field11345.level;
 			method7896(var5, arg0, arg1, arg2, arg3);
 		}
 		for (PositionedSound var13 = (PositionedSound) field11366.peekFront(); var13 != null; var13 = (PositionedSound) field11366.prev()) {
 			byte var14 = 1;
-			BASType var15 = var13.field11361.method16508();
+			BASType var15 = var13.field11361.getBASType();
 			int var16 = var13.field11361.field10432.method14348();
 			if (var16 == -1 || var13.field11361.field10432.field11877) {
 				var14 = 0;
@@ -469,10 +469,10 @@ public class PositionedSound extends Node {
 			}
 			Vector3 var19 = var13.field11361.method10536().field4298;
 			var13.field11358 = (int) var19.field4308;
-			var13.field11352 = (int) var19.field4308 + (var13.field11361.method16546() << 8);
+			var13.field11352 = (int) var19.field4308 + (var13.field11361.size() << 8);
 			var13.field11351 = (int) var19.field4313;
-			var13.field11353 = (int) var19.field4313 + (var13.field11361.method16546() << 8);
-			var13.field11349 = var13.field11361.field11717;
+			var13.field11353 = (int) var19.field4313 + (var13.field11361.size() << 8);
+			var13.field11349 = var13.field11361.level;
 			method7896(var13, arg0, arg1, arg2, arg3);
 		}
 	}

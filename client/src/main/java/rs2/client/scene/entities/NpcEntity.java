@@ -110,7 +110,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.hs(Lif;ZZZS)V")
 	public void method19157(NPCType arg0, boolean arg1, boolean arg2, boolean arg3) {
-		if (this.npcType != arg0 && MiniMenu.field562 && MiniMenu.method8494(this.field10406)) {
+		if (this.npcType != arg0 && MiniMenu.field562 && MiniMenu.method8494(this.localPlayerIndex)) {
 			MiniMenu.method6031();
 		}
 		this.npcType = arg0;
@@ -144,7 +144,7 @@ public class NpcEntity extends PathingEntity {
 		ScaleRotTrans var3 = this.method10536();
 		Matrix4x3 var4 = arg0.method2209();
 		int var5 = this.field10395.method316();
-		Tile var6 = this.field11716.levelTiles[this.field11717][(int) var3.field4298.field4308 >> 9][(int) var3.field4298.field4313 >> 9];
+		Tile var6 = this.field11716.levelTiles[this.level][(int) var3.field4298.field4308 >> 9][(int) var3.field4298.field4313 >> 9];
 		if (var6 == null || var6.groundDecoration == null) {
 			this.field10408 = (int) ((float) this.field10408 - (float) this.field10408 / 10.0F);
 		} else {
@@ -153,7 +153,7 @@ public class NpcEntity extends PathingEntity {
 		}
 		var4.method6292(var2);
 		var4.method6315(0.0F, (float) (-20 - this.field10408), 0.0F);
-		BASType var8 = this.method16508();
+		BASType var8 = this.getBASType();
 		NPCType var9 = this.npcType.field2735 == null ? this.npcType : this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 		boolean var10 = var9.clickbox != null;
 		this.field10458 = false;
@@ -231,7 +231,7 @@ public class NpcEntity extends PathingEntity {
 	@ObfuscatedName("aqc.hh(Ldh;II)Z")
 	public boolean method19167(Renderer arg0, int arg1) {
 		int var3 = arg1;
-		BASType var4 = this.method16508();
+		BASType var4 = this.getBASType();
 		AnimationWrapper var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
 		EntityWalkAnimationWrapper var6 = this.field10432.method14346() && (!this.field10432.field11877 || var5 == null) ? this.field10432 : null;
 		int var7 = var4.field7342;
@@ -257,7 +257,7 @@ public class NpcEntity extends PathingEntity {
 			arg1 |= 0x100;
 		}
 		int var12 = this.field10395.method316();
-		Model var13 = this.field10459[0] = this.npcType.getSequencedModel(arg0, arg1, Client.basTypeList, Client.localPlayerGameState, Client.localPlayerGameState, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.method16509(), false);
+		Model var13 = this.field10459[0] = this.npcType.getSequencedModel(arg0, arg1, Client.basTypeList, Client.localPlayerGameState, Client.localPlayerGameState, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.getBASId(), false);
 		if (var13 == null) {
 			return false;
 		}
@@ -266,7 +266,7 @@ public class NpcEntity extends PathingEntity {
 		var13.method1728();
 		this.method16505(var13);
 		if (var7 == 0 && var8 == 0) {
-			this.method16507(var12, this.method16546() << 9, this.method16546() << 9, 0, 0);
+			this.method16507(var12, this.size() << 9, this.size() << 9, 0, 0);
 		} else {
 			this.method16507(var12, var7, var8, var4.field7344, var4.field7323);
 			if (this.field10405 != 0) {
@@ -340,31 +340,31 @@ public class NpcEntity extends PathingEntity {
 			this.field10427 = null;
 			this.field10454.method14362(-1);
 		}
-		for (int var5 = 0; var5 < this.field10422.length; var5++) {
-			if (this.field10422[var5].field6657 != -1) {
-				EffectAnimType var6 = (EffectAnimType) Client.effectAnimTypeList.list(this.field10422[var5].field6657);
+		for (int var5 = 0; var5 < this.spotAnims.length; var5++) {
+			if (this.spotAnims[var5].field6657 != -1) {
+				EffectAnimType var6 = (EffectAnimType) Client.effectAnimTypeList.list(this.spotAnims[var5].field6657);
 				if (var6.field8261 && var6.anim != -1 && ((SeqType) Client.seqTypeList.list(var6.anim)).field1782 == 1) {
-					this.field10422[var5].field6659.method14362(-1);
-					this.field10422[var5].field6657 = -1;
+					this.spotAnims[var5].field6659.method14362(-1);
+					this.spotAnims[var5].field6657 = -1;
 				}
 			}
 		}
-		if (this.field10400 < this.routeWaypointX.length - 1) {
-			this.field10400++;
+		if (this.routeLength < this.routeWaypointX.length - 1) {
+			this.routeLength++;
 		}
-		for (int var7 = this.field10400; var7 > 0; var7--) {
+		for (int var7 = this.routeLength; var7 > 0; var7--) {
 			this.routeWaypointX[var7] = this.routeWaypointX[var7 - 1];
 			this.routeWaypointZ[var7] = this.routeWaypointZ[var7 - 1];
-			this.field10441[var7] = this.field10441[var7 - 1];
+			this.routeSpeeds[var7] = this.routeSpeeds[var7 - 1];
 		}
 		this.routeWaypointX[0] = var3;
 		this.routeWaypointZ[0] = var4;
-		this.field10441[0] = (byte) arg1;
+		this.routeSpeeds[0] = (byte) arg1;
 	}
 
 	@ObfuscatedName("aqc.hy(IIIZIB)V")
 	public void method19159(int arg0, int arg1, int arg2, boolean arg3, int arg4) {
-		this.field11717 = this.field11714 = (byte) arg0;
+		this.level = this.field11714 = (byte) arg0;
 		if (Client.world.method7793().isLinkBelow(arg1, arg2)) {
 			this.field11714++;
 		}
@@ -372,12 +372,12 @@ public class NpcEntity extends PathingEntity {
 			this.field10427 = null;
 			this.field10454.method14362(-1);
 		}
-		for (int var6 = 0; var6 < this.field10422.length; var6++) {
-			if (this.field10422[var6].field6657 != -1) {
-				EffectAnimType var7 = (EffectAnimType) Client.effectAnimTypeList.list(this.field10422[var6].field6657);
+		for (int var6 = 0; var6 < this.spotAnims.length; var6++) {
+			if (this.spotAnims[var6].field6657 != -1) {
+				EffectAnimType var7 = (EffectAnimType) Client.effectAnimTypeList.list(this.spotAnims[var6].field6657);
 				if (var7.field8261 && var7.anim != -1 && ((SeqType) Client.seqTypeList.list(var7.anim)).field1782 == 1) {
-					this.field10422[var6].field6659.method14362(-1);
-					this.field10422[var6].field6657 = -1;
+					this.spotAnims[var6].field6659.method14362(-1);
+					this.spotAnims[var6].field6657 = -1;
 				}
 			}
 		}
@@ -385,21 +385,21 @@ public class NpcEntity extends PathingEntity {
 			int var8 = arg1 - this.routeWaypointX[0];
 			int var9 = arg2 - this.routeWaypointZ[0];
 			if (var8 >= -8 && var8 <= 8 && var9 >= -8 && var9 <= 8) {
-				if (this.field10400 < this.routeWaypointX.length - 1) {
-					this.field10400++;
+				if (this.routeLength < this.routeWaypointX.length - 1) {
+					this.routeLength++;
 				}
-				for (int var10 = this.field10400; var10 > 0; var10--) {
+				for (int var10 = this.routeLength; var10 > 0; var10--) {
 					this.routeWaypointX[var10] = this.routeWaypointX[var10 - 1];
 					this.routeWaypointZ[var10] = this.routeWaypointZ[var10 - 1];
-					this.field10441[var10] = this.field10441[var10 - 1];
+					this.routeSpeeds[var10] = this.routeSpeeds[var10 - 1];
 				}
 				this.routeWaypointX[0] = arg1;
 				this.routeWaypointZ[0] = arg2;
-				this.field10441[0] = MoveSpeed.WALK.serialID;
+				this.routeSpeeds[0] = MoveSpeed.WALK.serialID;
 				return;
 			}
 		}
-		this.field10400 = 0;
+		this.routeLength = 0;
 		this.field10396 = 0;
 		this.field10453 = 0;
 		this.routeWaypointX[0] = arg1;
@@ -420,7 +420,7 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.bj(S)I")
-	public int method16509() {
+	public int getBASId() {
 		if (this.field12079 != -1) {
 			return this.field12079;
 		}
@@ -559,7 +559,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.cx(I)I")
 	public int targeted() {
-		return this.field10406 + 1;
+		return this.localPlayerIndex + 1;
 	}
 
 	@ObfuscatedName("aqc.e(I)Ljl;")
@@ -569,13 +569,13 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.n(I)I")
 	public int method4670() {
-		return this.field10406;
+		return this.localPlayerIndex;
 	}
 
 	@ObfuscatedName("aqc.m(B)Lakt;")
 	public CoordFine method4667() {
 		CoordGrid var1 = Client.world.method7727();
-		return CoordFine.method258(this.field11717, (int) this.method10536().field4298.field4308 + var1.x * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.z * 512);
+		return CoordFine.method258(this.level, (int) this.method10536().field4298.field4308 + var1.x * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.z * 512);
 	}
 
 	@ObfuscatedName("aqc.k(I)Lov;")

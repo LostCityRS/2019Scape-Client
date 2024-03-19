@@ -183,7 +183,7 @@ public class ClientWorldMap extends WorldMap {
 			int var6 = -1;
 			Vector3 var7 = Client.localPlayerEntity.method10536().field4298;
 			CoordGrid var8 = Client.world.method7727();
-			if (WorldMap.currentWorldMap.method19471(Client.localPlayerEntity.field11717, ((int) var7.field4308 >> 9) + var8.x, ((int) var7.field4313 >> 9) + var8.z, var4)) {
+			if (WorldMap.currentWorldMap.method19471(Client.localPlayerEntity.level, ((int) var7.field4308 >> 9) + var8.x, ((int) var7.field4313 >> 9) + var8.z, var4)) {
 				var5 = var4[1] - WorldMap.field6786;
 				var6 = var4[2] - WorldMap.field6808;
 			}

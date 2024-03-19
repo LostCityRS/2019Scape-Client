@@ -36,9 +36,9 @@ public class EntityAnimCutsceneAction extends CutsceneAction {
 	public void method2890() {
 		PathingEntity var1 = CutsceneManager.field1721[this.field10301].method2870();
 		if (this.field10300 == 0) {
-			Client.method9423(var1, this.field10298, 0, false);
+			Client.addSequences(var1, this.field10298, 0, false);
 		} else {
-			Client.method16758(var1, new int[] { this.field10299 }, new int[] { 0 }, new int[] { this.field10300 });
+			Client.addSequences(var1, new int[] { this.field10299 }, new int[] { 0 }, new int[] { this.field10300 });
 		}
 	}
 

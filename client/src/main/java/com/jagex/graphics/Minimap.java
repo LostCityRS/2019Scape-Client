@@ -118,10 +118,10 @@ public class Minimap {
 
 	@ObfuscatedName("aih.w(Ldh;B)V")
 	public static void method16903(Renderer arg0) {
-		if (field722 != Client.localPlayerEntity.field11717 && Client.world.getScene() != null) {
+		if (field722 != Client.localPlayerEntity.level && Client.world.getScene() != null) {
 			MonotonicTime.get();
-			if (method14493(arg0, Client.localPlayerEntity.field11717)) {
-				field722 = Client.localPlayerEntity.field11717;
+			if (method14493(arg0, Client.localPlayerEntity.level)) {
+				field722 = Client.localPlayerEntity.level;
 			}
 		}
 	}
@@ -291,7 +291,7 @@ public class Minimap {
 				CoordGrid var48 = Client.world.method7727();
 				for (int var49 = 0; var49 < var47.field6777; var49++) {
 					int var50 = var47.field6776[var49];
-					if (var50 >> 28 == Client.localPlayerEntity.field11717) {
+					if (var50 >> 28 == Client.localPlayerEntity.level) {
 						int var51 = (var50 >> 14 & 0x3FFF) - var48.x;
 						int var52 = (var50 & 0x3FFF) - var48.z;
 						if (var51 >= 0 && var51 < var2 && var52 >= 0 && var52 < var3) {
@@ -604,8 +604,8 @@ public class Minimap {
 		method4538(var7, var8, arg1, var4, arg2, arg3);
 		if (Client.field3416 != 4) {
 			if (field731 != -1) {
-				int var31 = field731 * 4 + 2 - var7 / 128 + (Client.localPlayerEntity.method16546() - 1) * 2;
-				int var32 = field718 * 4 + 2 - var8 / 128 + (Client.localPlayerEntity.method16546() - 1) * 2;
+				int var31 = field731 * 4 + 2 - var7 / 128 + (Client.localPlayerEntity.size() - 1) * 2;
+				int var32 = field718 * 4 + 2 - var8 / 128 + (Client.localPlayerEntity.size() - 1) * 2;
 				method4142(arg1, var5, arg2 - DefaultSprites.field11888, arg3 - DefaultSprites.field10232, var31, var32, DefaultSprites.field9149[field730 ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
 			}
 			if (!Client.localPlayerEntity.field12071.method10195()) {
@@ -621,7 +621,7 @@ public class Minimap {
 			ObjectWrapper var8 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var7]);
 			if (var8 != null) {
 				NpcEntity var9 = (NpcEntity) var8.field11436;
-				if (var9.method19160() && Client.localPlayerEntity.field11717 == var9.field11717) {
+				if (var9.method19160() && Client.localPlayerEntity.level == var9.level) {
 					NPCType var10 = var9.npcType;
 					if (var10 != null && var10.field2735 != null) {
 						var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
@@ -643,11 +643,11 @@ public class Minimap {
 
 	@ObfuscatedName("aff.s(IILhf;Lch;III)V")
 	public static void method16411(int arg0, int arg1, Component arg2, GraphicsRelated arg3, int arg4, int arg5) {
-		int var6 = ReceivePlayerPositions.field698;
-		int[] var7 = ReceivePlayerPositions.field703;
+		int var6 = ReceivePlayerPositions.highResolutionsCount;
+		int[] var7 = ReceivePlayerPositions.highResolutionsIndices;
 		for (int var8 = 0; var8 < var6; var8++) {
 			PlayerEntity var9 = Client.players[var7[var8]];
-			if (var9 != null && var9.method19119() && !var9.field12071.method10195() && Client.localPlayerEntity != var9 && Client.localPlayerEntity.field11717 == var9.field11717) {
+			if (var9 != null && var9.method19119() && !var9.field12071.method10195() && Client.localPlayerEntity != var9 && Client.localPlayerEntity.level == var9.level) {
 				Vector3 var10 = var9.method10536().field4298;
 				int var11 = (int) var10.field4308 / 128 - arg0 / 128;
 				int var12 = (int) var10.field4313 / 128 - arg1 / 128;

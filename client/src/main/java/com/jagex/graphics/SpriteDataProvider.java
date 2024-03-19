@@ -24,8 +24,8 @@ public class SpriteDataProvider {
 	}
 
 	@ObfuscatedName("cd.m(Lpy;II)[Lde;")
-	public static SpriteData[] method1608(Js5 arg0, int arg1, int arg2) {
-		byte[] var3 = arg0.getfile(arg1, arg2);
+	public static SpriteData[] method1608(Js5 js5, int group, int file) {
+		byte[] var3 = js5.getfile(group, file);
 		return var3 == null ? null : method1615(var3);
 	}
 

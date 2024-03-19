@@ -21,87 +21,87 @@ import rs2.client.logic.chat.ChatHistory;
 public class ReceivePlayerPositions {
 
 	@ObfuscatedName("aw.m")
-	public static byte[] field696 = new byte[2048];
+	public static byte[] nsn = new byte[2048];
 
 	@ObfuscatedName("aw.k")
-	public static byte[] field697 = new byte[2048];
+	public static byte[] speeds = new byte[2048];
 
 	@ObfuscatedName("aw.f")
-	public static Packet[] field706 = new Packet[2048];
+	public static Packet[] appearances = new Packet[2048];
 
 	@ObfuscatedName("aw.w")
-	public static Packet[] field699 = new Packet[2048];
+	public static Packet[] headIcons = new Packet[2048];
 
 	@ObfuscatedName("aw.l")
-	public static int field698 = 0;
+	public static int highResolutionsCount = 0;
 
 	@ObfuscatedName("aw.u")
-	public static int[] field703 = new int[2048];
+	public static int[] highResolutionsIndices = new int[2048];
 
 	@ObfuscatedName("aw.z")
-	public static int field702 = 0;
+	public static int lowResolutionsCount = 0;
 
 	@ObfuscatedName("aw.p")
-	public static int[] field700 = new int[2048];
+	public static int[] lowResolutionsIndices = new int[2048];
 
 	@ObfuscatedName("aw.d")
-	public static LowResPlayerInfo[] field704 = new LowResPlayerInfo[2048];
+	public static LowResPlayerInfo[] lowResolutions = new LowResPlayerInfo[2048];
 
 	@ObfuscatedName("aw.c")
-	public static int field695 = 0;
+	public static int entityUpdateCount = 0;
 
 	@ObfuscatedName("aw.r")
-	public static int[] field707 = new int[2048];
+	public static int[] entityUpdateIds = new int[2048];
 
 	public ReceivePlayerPositions() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("aga.e(Lase;I)V")
-	public static final void method16435(PacketBit arg0) {
-		arg0.accessBits();
-		int var1 = Client.currentPlayerUid;
-		PlayerEntity var2 = Client.localPlayerEntity = Client.players[var1] = new PlayerEntity(Client.world.getScene());
-		var2.field10406 = var1;
-		int var3 = arg0.gBit(30);
-		byte var4 = (byte) (var3 >> 28);
-		int var5 = var3 >> 14 & 0x3FFF;
-		int var6 = var3 & 0x3FFF;
-		CoordGrid var7 = Client.world.method7727();
-		var2.routeWaypointX[0] = var5 - var7.x;
-		var2.routeWaypointZ[0] = var6 - var7.z;
-		var2.method10538((float) ((var2.routeWaypointX[0] << 9) + (var2.method16546() << 8)), var2.method10525().field4298.field4311, (float) ((var2.routeWaypointZ[0] << 9) + (var2.method16546() << 8)));
-		Client.field4826 = var2.field11717 = var2.field11714 = var4;
-		if (Client.world.method7793().isLinkBelow(var2.routeWaypointX[0], var2.routeWaypointZ[0])) {
-			var2.field11714++;
+	public static final void receivePlayerPositions(PacketBit buf) {
+		buf.accessBits();
+		int localPlayerIndex = Client.currentPlayerUid;
+		PlayerEntity player = Client.localPlayerEntity = Client.players[localPlayerIndex] = new PlayerEntity(Client.world.getScene());
+		player.localPlayerIndex = localPlayerIndex;
+		int highCoord = buf.gBit(30);
+		byte hl = (byte) (highCoord >> 28);
+		int hx = highCoord >> 14 & 0x3FFF;
+		int hz = highCoord & 0x3FFF;
+		CoordGrid coord = Client.world.method7727();
+		player.routeWaypointX[0] = hx - coord.x;
+		player.routeWaypointZ[0] = hz - coord.z;
+		player.method10538((float) ((player.routeWaypointX[0] << 9) + (player.size() << 8)), player.method10525().field4298.field4311, (float) ((player.routeWaypointZ[0] << 9) + (player.size() << 8)));
+		Client.currentPlayerLevel = player.level = player.field11714 = hl;
+		if (Client.world.method7793().isLinkBelow(player.routeWaypointX[0], player.routeWaypointZ[0])) {
+			player.field11714++;
 		}
-		if (field706[var1] != null) {
-			var2.method19129(field706[var1]);
+		if (appearances[localPlayerIndex] != null) {
+			player.getAppearance(appearances[localPlayerIndex]);
 		}
-		if (field699[var1] != null) {
-			var2.method19111(field699[var1]);
+		if (headIcons[localPlayerIndex] != null) {
+			player.getHeadIcons(headIcons[localPlayerIndex]);
 		}
-		field698 = 0;
-		field703[++field698 - 1] = var1;
-		field696[var1] = 0;
-		field702 = 0;
-		for (int var8 = 1; var8 < 2048; var8++) {
-			if (var1 != var8) {
-				int var9 = arg0.gBit(18);
-				int var10 = var9 >> 16 & 0x3;
-				int var11 = var9 >> 8 & 0xFF;
-				int var12 = var9 & 0xFF;
-				LowResPlayerInfo var13 = field704[var8] = new LowResPlayerInfo();
-				var13.field524 = (var10 << 28) + (var11 << 14) + var12;
-				var13.field523 = 0;
-				var13.field522 = -1;
-				var13.field525 = CommunityPartnerType.field1950;
-				var13.field526 = false;
-				field700[++field702 - 1] = var8;
-				field696[var8] = 0;
+		highResolutionsCount = 0;
+		highResolutionsIndices[++highResolutionsCount - 1] = localPlayerIndex;
+		nsn[localPlayerIndex] = 0;
+		lowResolutionsCount = 0;
+		for (int index = 1; index < 2048; index++) {
+			if (localPlayerIndex != index) {
+				int lowCoord = buf.gBit(18);
+				int ll = lowCoord >> 16 & 0x3;
+				int lx = lowCoord >> 8 & 0xFF;
+				int lz = lowCoord & 0xFF;
+				LowResPlayerInfo lowResPlayer = lowResolutions[index] = new LowResPlayerInfo();
+				lowResPlayer.coord = (ll << 28) + (lx << 14) + lz;
+				lowResPlayer.field523 = 0;
+				lowResPlayer.field522 = -1;
+				lowResPlayer.field525 = CommunityPartnerType.field1950;
+				lowResPlayer.field526 = false;
+				lowResolutionsIndices[++lowResolutionsCount - 1] = index;
+				nsn[index] = 0;
 			}
 		}
-		arg0.accessBytes();
+		buf.accessBytes();
 		PositionMode var14 = Client.field9155.method4780();
 		if (PositionMode.field2815 == var14) {
 			PositionEntity var15 = (PositionEntity) Client.field9155.method4709();
@@ -115,706 +115,706 @@ public class ReceivePlayerPositions {
 	}
 
 	@ObfuscatedName("sj.n(Lase;II)V")
-	public static final void method8355(PacketBit arg0, int arg1) {
-		field695 = 0;
-		method5209(arg0);
-		method613(arg0);
-		if (arg0.pos != arg1) {
-			throw new RuntimeException(arg0.pos + " " + arg1);
+	public static final void readPlayerInfo(PacketBit buf, int size) {
+		entityUpdateCount = 0;
+		readPlayers(buf);
+		readPlayerUpdates(buf);
+		if (buf.pos != size) {
+			throw new RuntimeException(buf.pos + " " + size);
 		}
 	}
 
 	@ObfuscatedName("ka.m(Lase;I)V")
-	public static final void method5209(PacketBit arg0) {
-		int var1 = 0;
-		arg0.accessBits();
-		for (int var2 = 0; var2 < field698; var2++) {
-			int var3 = field703[var2];
-			if ((field696[var3] & 0x1) == 0) {
-				if (var1 > 0) {
-					var1--;
-					field696[var3] = (byte) (field696[var3] | 0x2);
+	public static final void readPlayers(PacketBit buf) {
+		int skip = 0;
+		buf.accessBits();
+		for (int index = 0; index < highResolutionsCount; index++) {
+			int highResIndex = highResolutionsIndices[index];
+			if ((nsn[highResIndex] & 0x1) == 0) {
+				if (skip > 0) {
+					skip--;
+					nsn[highResIndex] = (byte) (nsn[highResIndex] | 0x2);
 				} else {
-					int var4 = arg0.gBit(1);
-					if (var4 == 0) {
-						var1 = method1598(arg0);
-						field696[var3] = (byte) (field696[var3] | 0x2);
+					int update = buf.gBit(1);
+					if (update == 0) {
+						skip = skip(buf);
+						nsn[highResIndex] = (byte) (nsn[highResIndex] | 0x2);
 					} else {
-						method17602(arg0, var3);
+						readHighResolution(buf, highResIndex);
 					}
 				}
 			}
 		}
-		arg0.accessBytes();
-		if (var1 != 0) {
+		buf.accessBytes();
+		if (skip != 0) {
 			throw new RuntimeException();
 		}
-		arg0.accessBits();
-		for (int var5 = 0; var5 < field698; var5++) {
-			int var6 = field703[var5];
-			if ((field696[var6] & 0x1) != 0) {
-				if (var1 > 0) {
-					var1--;
-					field696[var6] = (byte) (field696[var6] | 0x2);
+		buf.accessBits();
+		for (int index = 0; index < highResolutionsCount; index++) {
+			int highResIndex = highResolutionsIndices[index];
+			if ((nsn[highResIndex] & 0x1) != 0) {
+				if (skip > 0) {
+					skip--;
+					nsn[highResIndex] = (byte) (nsn[highResIndex] | 0x2);
 				} else {
-					int var7 = arg0.gBit(1);
-					if (var7 == 0) {
-						var1 = method1598(arg0);
-						field696[var6] = (byte) (field696[var6] | 0x2);
+					int update = buf.gBit(1);
+					if (update == 0) {
+						skip = skip(buf);
+						nsn[highResIndex] = (byte) (nsn[highResIndex] | 0x2);
 					} else {
-						method17602(arg0, var6);
+						readHighResolution(buf, highResIndex);
 					}
 				}
 			}
 		}
-		arg0.accessBytes();
-		if (var1 != 0) {
+		buf.accessBytes();
+		if (skip != 0) {
 			throw new RuntimeException();
 		}
-		arg0.accessBits();
-		for (int var8 = 0; var8 < field702; var8++) {
-			int var9 = field700[var8];
-			if ((field696[var9] & 0x1) != 0) {
-				if (var1 > 0) {
-					var1--;
-					field696[var9] = (byte) (field696[var9] | 0x2);
+		buf.accessBits();
+		for (int index = 0; index < lowResolutionsCount; index++) {
+			int lowResIndex = lowResolutionsIndices[index];
+			if ((nsn[lowResIndex] & 0x1) != 0) {
+				if (skip > 0) {
+					skip--;
+					nsn[lowResIndex] = (byte) (nsn[lowResIndex] | 0x2);
 				} else {
-					int var10 = arg0.gBit(1);
-					if (var10 == 0) {
-						var1 = method1598(arg0);
-						field696[var9] = (byte) (field696[var9] | 0x2);
-					} else if (method14343(arg0, var9)) {
-						field696[var9] = (byte) (field696[var9] | 0x2);
+					int update = buf.gBit(1);
+					if (update == 0) {
+						skip = skip(buf);
+						nsn[lowResIndex] = (byte) (nsn[lowResIndex] | 0x2);
+					} else if (readLowResolution(buf, lowResIndex)) {
+						nsn[lowResIndex] = (byte) (nsn[lowResIndex] | 0x2);
 					}
 				}
 			}
 		}
-		arg0.accessBytes();
-		if (var1 != 0) {
+		buf.accessBytes();
+		if (skip != 0) {
 			throw new RuntimeException();
 		}
-		arg0.accessBits();
-		for (int var11 = 0; var11 < field702; var11++) {
-			int var12 = field700[var11];
-			if ((field696[var12] & 0x1) == 0) {
-				if (var1 > 0) {
-					var1--;
-					field696[var12] = (byte) (field696[var12] | 0x2);
+		buf.accessBits();
+		for (int index = 0; index < lowResolutionsCount; index++) {
+			int lowResIndex = lowResolutionsIndices[index];
+			if ((nsn[lowResIndex] & 0x1) == 0) {
+				if (skip > 0) {
+					skip--;
+					nsn[lowResIndex] = (byte) (nsn[lowResIndex] | 0x2);
 				} else {
-					int var13 = arg0.gBit(1);
+					int var13 = buf.gBit(1);
 					if (var13 == 0) {
-						var1 = method1598(arg0);
-						field696[var12] = (byte) (field696[var12] | 0x2);
-					} else if (method14343(arg0, var12)) {
-						field696[var12] = (byte) (field696[var12] | 0x2);
+						skip = skip(buf);
+						nsn[lowResIndex] = (byte) (nsn[lowResIndex] | 0x2);
+					} else if (readLowResolution(buf, lowResIndex)) {
+						nsn[lowResIndex] = (byte) (nsn[lowResIndex] | 0x2);
 					}
 				}
 			}
 		}
-		arg0.accessBytes();
-		if (var1 != 0) {
+		buf.accessBytes();
+		if (skip != 0) {
 			throw new RuntimeException();
 		}
-		field698 = 0;
-		field702 = 0;
-		for (int var14 = 1; var14 < 2048; var14++) {
-			field696[var14] = (byte) (field696[var14] >> 1);
-			PlayerEntity var15 = Client.players[var14];
-			if (var15 == null) {
-				field700[++field702 - 1] = var14;
+		highResolutionsCount = 0;
+		lowResolutionsCount = 0;
+		for (int index = 1; index < 2048; index++) {
+			nsn[index] = (byte) (nsn[index] >> 1);
+			PlayerEntity player = Client.players[index];
+			if (player == null) {
+				lowResolutionsIndices[++lowResolutionsCount - 1] = index;
 			} else {
-				field703[++field698 - 1] = var14;
+				highResolutionsIndices[++highResolutionsCount - 1] = index;
 			}
 		}
 	}
 
 	@ObfuscatedName("ck.k(Lase;I)I")
-	public static int method1598(PacketBit arg0) {
-		int var1 = arg0.gBit(2);
-		int var2;
-		if (var1 == 0) {
-			var2 = 0;
-		} else if (var1 == 1) {
-			var2 = arg0.gBit(5);
-		} else if (var1 == 2) {
-			var2 = arg0.gBit(8);
+	public static int skip(PacketBit buf) {
+		int type = buf.gBit(2);
+		int count;
+		if (type == 0) {
+			count = 0;
+		} else if (type == 1) {
+			count = buf.gBit(5);
+		} else if (type == 2) {
+			count = buf.gBit(8);
 		} else {
-			var2 = arg0.gBit(11);
+			count = buf.gBit(11);
 		}
-		return var2;
+		return count;
 	}
 
 	@ObfuscatedName("akz.f(Lase;IS)V")
-	public static void method17602(PacketBit arg0, int arg1) {
-		CoordGrid var2 = Client.world.method7727();
-		boolean var3 = arg0.gBit(1) == 1;
-		if (var3) {
-			field707[++field695 - 1] = arg1;
+	public static void readHighResolution(PacketBit buf, int highResIndex) {
+		CoordGrid coord = Client.world.method7727();
+		boolean hasUpdate = buf.gBit(1) == 1;
+		if (hasUpdate) {
+			entityUpdateIds[++entityUpdateCount - 1] = highResIndex;
 		}
-		int var4 = arg0.gBit(2);
-		PlayerEntity var5 = Client.players[arg1];
-		if (var4 == 0) {
-			if (!var3) {
-				if (Client.currentPlayerUid == arg1) {
+		int updateType = buf.gBit(2);
+		PlayerEntity player = Client.players[highResIndex];
+		if (updateType == 0) { // removing
+			if (!hasUpdate) {
+				if (Client.currentPlayerUid == highResIndex) {
 					throw new RuntimeException();
 				}
-				LowResPlayerInfo var6 = field704[arg1] = new LowResPlayerInfo();
+				LowResPlayerInfo var6 = lowResolutions[highResIndex] = new LowResPlayerInfo();
 				MoveSpeed.values();
-				var6.field524 = (var2.z + var5.routeWaypointZ[0] >> 6) + (var2.x + var5.routeWaypointX[0] >> 6 << 14) + (var5.field11717 << 28);
-				if (var5.field12056 == -1) {
-					var6.field523 = var5.field10395.method316();
+				var6.coord = (coord.z + player.routeWaypointZ[0] >> 6) + (coord.x + player.routeWaypointX[0] >> 6 << 14) + (player.level << 28);
+				if (player.field12056 == -1) {
+					var6.field523 = player.field10395.method316();
 				} else {
-					var6.field523 = var5.field12056;
+					var6.field523 = player.field12056;
 				}
-				var6.field522 = var5.field10417;
-				var6.field525 = var5.field12070;
-				var6.field526 = var5.field12048;
-				if (var5.field12067 > 0) {
-					PositionedSound.method5142(var5);
+				var6.field522 = player.targetId;
+				var6.field525 = player.field12070;
+				var6.field526 = player.field12048;
+				if (player.field12067 > 0) {
+					PositionedSound.method5142(player);
 				}
-				Client.players[arg1] = null;
-				if (arg0.gBit(1) != 0) {
-					method14343(arg0, arg1);
+				Client.players[highResIndex] = null;
+				if (buf.gBit(1) != 0) {
+					readLowResolution(buf, highResIndex);
 				}
 			}
-		} else if (var4 == 1) {
-			int var7 = arg0.gBit(3);
-			int var8 = arg0.gBit(1);
-			int var9 = var5.routeWaypointX[0];
-			int var10 = var5.routeWaypointZ[0];
+		} else if (updateType == 1) { // walk
+			int direction = buf.gBit(3);
+			int var8 = buf.gBit(1);
+			int nextX = player.routeWaypointX[0];
+			int nextZ = player.routeWaypointZ[0];
 			if (var8 == 1) {
-				field697[arg1] = MoveSpeed.RUN.serialID;
-				int var11 = arg0.gBit(2);
+				speeds[highResIndex] = MoveSpeed.RUN.serialID;
+				int var11 = buf.gBit(2);
 				switch(var11) {
 					case 0:
-						var5.method19117(var9, var10 + 1, field697[arg1]);
+						player.movePlayer(nextX, nextZ + 1, speeds[highResIndex]);
 						break;
 					case 1:
-						var5.method19117(var9 - 1, var10, field697[arg1]);
+						player.movePlayer(nextX - 1, nextZ, speeds[highResIndex]);
 						break;
 					case 2:
-						var5.method19117(var9 + 1, var10, field697[arg1]);
+						player.movePlayer(nextX + 1, nextZ, speeds[highResIndex]);
 						break;
 					case 3:
-						var5.method19117(var9, var10 - 1, field697[arg1]);
+						player.movePlayer(nextX, nextZ - 1, speeds[highResIndex]);
 				}
 			}
-			if (var7 == 0) {
-				var9--;
-				var10--;
-			} else if (var7 == 1) {
-				var10--;
-			} else if (var7 == 2) {
-				var9++;
-				var10--;
-			} else if (var7 == 3) {
-				var9--;
-			} else if (var7 == 4) {
-				var9++;
-			} else if (var7 == 5) {
-				var9--;
-				var10++;
-			} else if (var7 == 6) {
-				var10++;
-			} else if (var7 == 7) {
-				var9++;
-				var10++;
+			if (direction == 0) {
+				nextX--;
+				nextZ--;
+			} else if (direction == 1) {
+				nextZ--;
+			} else if (direction == 2) {
+				nextX++;
+				nextZ--;
+			} else if (direction == 3) {
+				nextX--;
+			} else if (direction == 4) {
+				nextX++;
+			} else if (direction == 5) {
+				nextX--;
+				nextZ++;
+			} else if (direction == 6) {
+				nextZ++;
+			} else if (direction == 7) {
+				nextX++;
+				nextZ++;
 			}
-			var5.method19117(var9, var10, field697[arg1]);
-		} else if (var4 == 2) {
-			int var12 = arg0.gBit(4);
-			int var13 = var5.routeWaypointX[0];
-			int var14 = var5.routeWaypointZ[0];
-			if (var12 == 0) {
-				var13 -= 2;
-				var14 -= 2;
-			} else if (var12 == 1) {
-				var13--;
-				var14 -= 2;
-			} else if (var12 == 2) {
-				var14 -= 2;
-			} else if (var12 == 3) {
-				var13++;
-				var14 -= 2;
-			} else if (var12 == 4) {
-				var13 += 2;
-				var14 -= 2;
-			} else if (var12 == 5) {
-				var13 -= 2;
-				var14--;
-			} else if (var12 == 6) {
-				var13 += 2;
-				var14--;
-			} else if (var12 == 7) {
-				var13 -= 2;
-			} else if (var12 == 8) {
-				var13 += 2;
-			} else if (var12 == 9) {
-				var13 -= 2;
-				var14++;
-			} else if (var12 == 10) {
-				var13 += 2;
-				var14++;
-			} else if (var12 == 11) {
-				var13 -= 2;
-				var14 += 2;
-			} else if (var12 == 12) {
-				var13--;
-				var14 += 2;
-			} else if (var12 == 13) {
-				var14 += 2;
-			} else if (var12 == 14) {
-				var13++;
-				var14 += 2;
-			} else if (var12 == 15) {
-				var13 += 2;
-				var14 += 2;
+			player.movePlayer(nextX, nextZ, speeds[highResIndex]);
+		} else if (updateType == 2) { // run
+			int direction = buf.gBit(4);
+			int nextX = player.routeWaypointX[0];
+			int nextZ = player.routeWaypointZ[0];
+			if (direction == 0) {
+				nextX -= 2;
+				nextZ -= 2;
+			} else if (direction == 1) {
+				nextX--;
+				nextZ -= 2;
+			} else if (direction == 2) {
+				nextZ -= 2;
+			} else if (direction == 3) {
+				nextX++;
+				nextZ -= 2;
+			} else if (direction == 4) {
+				nextX += 2;
+				nextZ -= 2;
+			} else if (direction == 5) {
+				nextX -= 2;
+				nextZ--;
+			} else if (direction == 6) {
+				nextX += 2;
+				nextZ--;
+			} else if (direction == 7) {
+				nextX -= 2;
+			} else if (direction == 8) {
+				nextX += 2;
+			} else if (direction == 9) {
+				nextX -= 2;
+				nextZ++;
+			} else if (direction == 10) {
+				nextX += 2;
+				nextZ++;
+			} else if (direction == 11) {
+				nextX -= 2;
+				nextZ += 2;
+			} else if (direction == 12) {
+				nextX--;
+				nextZ += 2;
+			} else if (direction == 13) {
+				nextZ += 2;
+			} else if (direction == 14) {
+				nextX++;
+				nextZ += 2;
+			} else if (direction == 15) {
+				nextX += 2;
+				nextZ += 2;
 			}
-			var5.method19117(var13, var14, field697[arg1]);
-		} else {
-			int var15 = arg0.gBit(1);
-			if (var15 == 0) {
-				int var16 = arg0.gBit(15);
-				int var17 = var16 >> 12 & 0x7;
-				int var18 = (byte) (var16 >> 10) & 0x3;
-				int var19 = var16 >> 5 & 0x1F;
-				if (var19 > 15) {
-					var19 -= 32;
+			player.movePlayer(nextX, nextZ, speeds[highResIndex]);
+		} else { // teleport
+			int rebuild = buf.gBit(1);
+			if (rebuild == 0) {
+				int info = buf.gBit(15);
+				int speed = info >> 12 & 0x7;
+				int dl = (byte) (info >> 10) & 0x3;
+				int dx = info >> 5 & 0x1F;
+				if (dx > 15) {
+					dx -= 32;
 				}
-				int var20 = var16 & 0x1F;
-				if (var20 > 15) {
-					var20 -= 32;
+				int dz = info & 0x1F;
+				if (dz > 15) {
+					dz -= 32;
 				}
-				int var21 = var5.routeWaypointX[0] + var19;
-				int var22 = var5.routeWaypointZ[0] + var20;
-				if (MoveSpeed.INSTANT.index == var17) {
-					var5.method19118(var21, var22);
+				int nextX = player.routeWaypointX[0] + dx;
+				int nextZ = player.routeWaypointZ[0] + dz;
+				if (MoveSpeed.INSTANT.index == speed) {
+					player.tele(nextX, nextZ);
 				} else {
-					field697[arg1] = (byte) (var17 - 1);
-					var5.method19117(var21, var22, field697[arg1]);
+					speeds[highResIndex] = (byte) (speed - 1);
+					player.movePlayer(nextX, nextZ, speeds[highResIndex]);
 				}
-				var5.field11717 = var5.field11714 = (byte) (var5.field11717 + var18 & 0x3);
-				if (Client.world.method7793().isLinkBelow(var21, var22)) {
-					var5.field11714++;
+				player.level = player.field11714 = (byte) (player.level + dl & 0x3);
+				if (Client.world.method7793().isLinkBelow(nextX, nextZ)) {
+					player.field11714++;
 				}
-				if (Client.currentPlayerUid == arg1 && Client.field4826 != var5.field11717) {
-					Client.field4826 = var5.field11717;
+				if (Client.currentPlayerUid == highResIndex && Client.currentPlayerLevel != player.level) {
+					Client.currentPlayerLevel = player.level;
 				}
 			} else {
-				int var23 = arg0.gBit(3);
-				int var24 = arg0.gBit(30);
-				int var25 = var24 >> 28 & 0x3;
-				int var26 = var24 >> 14 & 0x3FFF;
-				int var27 = var24 & 0x3FFF;
-				int var28 = (var2.x + var5.routeWaypointX[0] + var26 & 0x3FFF) - var2.x;
-				int var29 = (var2.z + var5.routeWaypointZ[0] + var27 & 0x3FFF) - var2.z;
-				if (MoveSpeed.INSTANT.index == var23) {
-					var5.method19118(var28, var29);
+				int speed = buf.gBit(3);
+				int info = buf.gBit(30);
+				int dl = info >> 28 & 0x3;
+				int dx = info >> 14 & 0x3FFF;
+				int dz = info & 0x3FFF;
+				int nextX = (coord.x + player.routeWaypointX[0] + dx & 0x3FFF) - coord.x;
+				int nextZ = (coord.z + player.routeWaypointZ[0] + dz & 0x3FFF) - coord.z;
+				if (MoveSpeed.INSTANT.index == speed) {
+					player.tele(nextX, nextZ);
 				} else {
-					field697[arg1] = (byte) (var23 - 1);
-					var5.method19117(var28, var29, field697[arg1]);
+					speeds[highResIndex] = (byte) (speed - 1);
+					player.movePlayer(nextX, nextZ, speeds[highResIndex]);
 				}
-				var5.field11717 = var5.field11714 = (byte) (var5.field11717 + var25 & 0x3);
-				if (Client.world.method7793().isLinkBelow(var28, var29)) {
-					var5.field11714++;
+				player.level = player.field11714 = (byte) (player.level + dl & 0x3);
+				if (Client.world.method7793().isLinkBelow(nextX, nextZ)) {
+					player.field11714++;
 				}
-				if (Client.currentPlayerUid == arg1) {
-					Client.field4826 = var5.field11717;
+				if (Client.currentPlayerUid == highResIndex) {
+					Client.currentPlayerLevel = player.level;
 				}
 			}
 		}
 	}
 
 	@ObfuscatedName("aap.w(Lase;II)Z")
-	public static boolean method14343(PacketBit arg0, int arg1) {
-		int var2 = arg0.gBit(2);
-		if (var2 == 0) {
-			if (arg0.gBit(1) != 0) {
-				method14343(arg0, arg1);
+	public static boolean readLowResolution(PacketBit buf, int lowResIndex) {
+		int updateType = buf.gBit(2);
+		if (updateType == 0) {
+			if (buf.gBit(1) != 0) {
+				readLowResolution(buf, lowResIndex);
 			}
-			int var3 = arg0.gBit(6);
-			int var4 = arg0.gBit(6);
-			boolean var5 = arg0.gBit(1) == 1;
-			if (var5) {
-				field707[++field695 - 1] = arg1;
+			int dx = buf.gBit(6);
+			int dz = buf.gBit(6);
+			boolean update = buf.gBit(1) == 1;
+			if (update) {
+				entityUpdateIds[++entityUpdateCount - 1] = lowResIndex;
 			}
-			if (Client.players[arg1] != null) {
+			if (Client.players[lowResIndex] != null) {
 				throw new RuntimeException();
 			}
-			LowResPlayerInfo var6 = field704[arg1];
-			PlayerEntity var7 = Client.players[arg1] = new PlayerEntity(Client.world.getScene());
-			var7.field10406 = arg1;
-			if (field706[arg1] != null) {
-				var7.method19129(field706[arg1]);
+			LowResPlayerInfo lowResPlayer = lowResolutions[lowResIndex];
+			PlayerEntity player = Client.players[lowResIndex] = new PlayerEntity(Client.world.getScene());
+			player.localPlayerIndex = lowResIndex;
+			if (appearances[lowResIndex] != null) {
+				player.getAppearance(appearances[lowResIndex]);
 			}
-			if (field699[arg1] != null) {
-				var7.method19111(field699[arg1]);
+			if (headIcons[lowResIndex] != null) {
+				player.getHeadIcons(headIcons[lowResIndex]);
 			}
-			var7.method16491(var6.field523, true);
-			var7.field10417 = var6.field522;
-			int var8 = var6.field524;
-			int var9 = var8 >> 28;
-			int var10 = var8 >> 14 & 0xFF;
-			int var11 = var8 & 0xFF;
+			player.method16491(lowResPlayer.field523, true);
+			player.targetId = lowResPlayer.field522;
+			int coord = lowResPlayer.coord;
+			int level = coord >> 28;
+			int x = coord >> 14 & 0xFF;
+			int z = coord & 0xFF;
 			CoordGrid var12 = Client.world.method7727();
-			int var13 = (var10 << 6) + var3 - var12.x;
-			int var14 = (var11 << 6) + var4 - var12.z;
-			var7.field12070 = var6.field525;
-			var7.field12048 = var6.field526;
-			var7.field10441[0] = field697[arg1];
-			var7.field11717 = var7.field11714 = (byte) var9;
-			if (Client.world.method7793().isLinkBelow(var13, var14)) {
-				var7.field11714++;
+			int nextX = (x << 6) + dx - var12.x;
+			int nextZ = (z << 6) + dz - var12.z;
+			player.field12070 = lowResPlayer.field525;
+			player.field12048 = lowResPlayer.field526;
+			player.routeSpeeds[0] = speeds[lowResIndex];
+			player.level = player.field11714 = (byte) level;
+			if (Client.world.method7793().isLinkBelow(nextX, nextZ)) {
+				player.field11714++;
 			}
-			var7.method19118(var13, var14);
-			field704[arg1] = null;
+			player.tele(nextX, nextZ);
+			lowResolutions[lowResIndex] = null;
 			return true;
-		} else if (var2 == 1) {
-			int var15 = arg0.gBit(2);
-			int var16 = field704[arg1].field524;
-			field704[arg1].field524 = (((var16 >> 28) + var15 & 0x3) << 28) + (var16 & 0xFFFFFFF);
+		} else if (updateType == 1) {
+			int level = buf.gBit(2);
+			int coord = lowResolutions[lowResIndex].coord;
+			lowResolutions[lowResIndex].coord = (((coord >> 28) + level & 0x3) << 28) + (coord & 0xFFFFFFF);
 			return false;
-		} else if (var2 == 2) {
-			int var17 = arg0.gBit(5);
-			int var18 = var17 >> 3 & 0x3;
-			int var19 = var17 & 0x7;
-			int var20 = field704[arg1].field524;
-			assert field697[arg1] >= 0 && field697[arg1] <= 3;
-			int var21 = (var20 >> 28) + var18 & 0x3;
-			int var22 = var20 >> 14 & 0xFF;
-			int var23 = var20 & 0xFF;
-			if (var19 == 0) {
-				var22--;
-				var23--;
+		} else if (updateType == 2) {
+			int info = buf.gBit(5);
+			int level = info >> 3 & 0x3;
+			int direction = info & 0x7;
+			int coord = lowResolutions[lowResIndex].coord;
+			assert speeds[lowResIndex] >= 0 && speeds[lowResIndex] <= 3;
+			int nextLevel = (coord >> 28) + level & 0x3;
+			int nextX = coord >> 14 & 0xFF;
+			int nextZ = coord & 0xFF;
+			if (direction == 0) {
+				nextX--;
+				nextZ--;
 			}
-			if (var19 == 1) {
-				var23--;
+			if (direction == 1) {
+				nextZ--;
 			}
-			if (var19 == 2) {
-				var22++;
-				var23--;
+			if (direction == 2) {
+				nextX++;
+				nextZ--;
 			}
-			if (var19 == 3) {
-				var22--;
+			if (direction == 3) {
+				nextX--;
 			}
-			if (var19 == 4) {
-				var22++;
+			if (direction == 4) {
+				nextX++;
 			}
-			if (var19 == 5) {
-				var22--;
-				var23++;
+			if (direction == 5) {
+				nextX--;
+				nextZ++;
 			}
-			if (var19 == 6) {
-				var23++;
+			if (direction == 6) {
+				nextZ++;
 			}
-			if (var19 == 7) {
-				var22++;
-				var23++;
+			if (direction == 7) {
+				nextX++;
+				nextZ++;
 			}
-			SerializableEnums.decode(MoveSpeed.values(), field697[arg1]);
-			field704[arg1].field524 = (var21 << 28) + (var22 << 14) + var23;
+			SerializableEnums.decode(MoveSpeed.values(), speeds[lowResIndex]);
+			lowResolutions[lowResIndex].coord = (nextLevel << 28) + (nextX << 14) + nextZ;
 			return false;
 		} else {
-			int var24 = arg0.gBit(20);
-			int var25 = var24 >> 18 & 0x3;
-			int var26 = var24 >> 16 & 0x3;
-			int var27 = var24 >> 8 & 0xFF;
-			int var28 = var24 & 0xFF;
-			int var29 = field704[arg1].field524;
-			field697[arg1] = (byte) (var25 - 1);
-			assert field697[arg1] >= 0 && field697[arg1] <= 3;
-			int var30 = (var29 >> 28) + var26 & 0x3;
-			int var31 = (var29 >> 14) + var27 & 0xFF;
-			int var32 = var28 + var29 & 0xFF;
-			SerializableEnums.decode(MoveSpeed.values(), var25 - 1);
-			field704[arg1].field524 = (var30 << 28) + (var31 << 14) + var32;
+			int info = buf.gBit(20);
+			int ds = info >> 18 & 0x3;
+			int dl = info >> 16 & 0x3;
+			int dx = info >> 8 & 0xFF;
+			int dz = info & 0xFF;
+			int coord = lowResolutions[lowResIndex].coord;
+			speeds[lowResIndex] = (byte) (ds - 1);
+			assert speeds[lowResIndex] >= 0 && speeds[lowResIndex] <= 3;
+			int nextLevel = (coord >> 28) + dl & 0x3;
+			int nextX = (coord >> 14) + dx & 0xFF;
+			int nextZ = dz + coord & 0xFF;
+			SerializableEnums.decode(MoveSpeed.values(), ds - 1);
+			lowResolutions[lowResIndex].coord = (nextLevel << 28) + (nextX << 14) + nextZ;
 			return false;
 		}
 	}
 
 	@ObfuscatedName("a.l(Lase;B)V")
-	public static final void method613(PacketBit arg0) {
-		for (int var1 = 0; var1 < field695; var1++) {
-			arg0.g2();
-			int var2 = field707[var1];
-			PlayerEntity var3 = Client.players[var2];
-			int var4 = arg0.g1();
-			if ((var4 & 0x40) != 0) {
-				var4 += arg0.g1() << 8;
+	public static final void readPlayerUpdates(PacketBit buf) {
+		for (int index = 0; index < entityUpdateCount; index++) {
+			buf.g2();
+			int entityIndex = entityUpdateIds[index];
+			PlayerEntity player = Client.players[entityIndex];
+			int mask = buf.g1();
+			if ((mask & 0x40) != 0) {
+				mask += buf.g1() << 8;
 			}
-			if ((var4 & 0x1000) != 0) {
-				var4 += arg0.g1() << 16;
+			if ((mask & 0x1000) != 0) {
+				mask += buf.g1() << 16;
 			}
-			method7474(arg0, var2, var3, var4);
+			readPlayerUpdatesBlocks(buf, entityIndex, player, mask);
 		}
 	}
 
 	@ObfuscatedName("rp.u(Lase;ILaqk;II)V")
-	public static final void method7474(PacketBit arg0, int arg1, PlayerEntity arg2, int arg3) {
-		if ((arg3 & 0x80) != 0) {
-			int[] var4 = new int[4];
+	public static final void readPlayerUpdatesBlocks(PacketBit buf, int index, PlayerEntity player, int mask) {
+		if ((mask & 0x80) != 0) { // sequences
+			int[] seqs = new int[4];
 			for (int var5 = 0; var5 < 4; var5++) {
-				var4[var5] = arg0.gSmart2or4null();
+				seqs[var5] = buf.gSmart2or4null();
 			}
-			int var6 = arg0.g1_alt2();
-			Client.method9423(arg2, var4, var6, false);
+			int var6 = buf.g1_alt2();
+			Client.addSequences(player, seqs, var6, false);
 		}
-		if ((arg3 & 0x40000) != 0) {
-			arg0.pos += 2;
-			int var7 = arg0.data[(++arg0.pos) - 1] & 0xFF;
+		if ((mask & 0x40000) != 0) {
+			buf.pos += 2;
+			int var7 = buf.data[(++buf.pos) - 1] & 0xFF;
 			for (int var8 = 0; var8 < var7; var8++) {
-				int var9 = arg0.g1_alt3();
+				int var9 = buf.g1_alt3();
 				BaseVarType var10 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var9);
-				VarValue var11 = Client.varPlayerTypeList.decodeVarValue(arg0, var10);
-				arg2.field10460.setVarObject(var11.var, var11.value);
+				VarValue var11 = Client.varPlayerTypeList.decodeVarValue(buf, var10);
+				player.field10460.setVarObject(var11.var, var11.value);
 			}
 		}
-		if ((arg3 & 0x10) != 0) {
-			arg2.field12056 = arg0.g2_alt3();
-			if (arg2.field10400 == 0) {
-				arg2.method16490(arg2.field12056);
-				arg2.field12056 = -1;
+		if ((mask & 0x10) != 0) {
+			player.field12056 = buf.g2_alt3();
+			if (player.routeLength == 0) {
+				player.method16490(player.field12056);
+				player.field12056 = -1;
 			}
 		}
-		if ((arg3 & 0x10000) != 0) {
-			arg2.field12048 = arg0.g1_alt3() == 1;
+		if ((mask & 0x10000) != 0) {
+			player.field12048 = buf.g1_alt3() == 1;
 		}
-		if ((arg3 & 0x20) != 0) {
-			int var12 = arg0.g1_alt1();
-			if (var12 > 0) {
-				for (int var13 = 0; var13 < var12; var13++) {
+		if ((mask & 0x20) != 0) { // hits & bars
+			int numHits = buf.g1_alt1();
+			if (numHits > 0) {
+				for (int hit = 0; hit < numHits; hit++) {
 					int var14 = -1;
 					boolean var15 = true;
 					int var16 = -1;
-					int var17 = arg0.gSmart1or2();
+					int id = buf.gSmart1or2();
 					int var18;
-					if (var17 == 32767) {
-						var17 = arg0.gSmart1or2();
-						var18 = arg0.gSmart1or2();
-						var14 = arg0.gSmart1or2();
-						var16 = arg0.gSmart1or2();
-					} else if (var17 == 32766) {
-						var17 = -1;
-						var18 = arg0.g1();
+					if (id == 32767) {
+						id = buf.gSmart1or2();
+						var18 = buf.gSmart1or2();
+						var14 = buf.gSmart1or2();
+						var16 = buf.gSmart1or2();
+					} else if (id == 32766) {
+						id = -1;
+						var18 = buf.g1();
 					} else {
-						var18 = arg0.gSmart1or2();
+						var18 = buf.gSmart1or2();
 					}
-					int var19 = arg0.gSmart1or2();
-					arg2.method16498(var17, var18, var14, var16, Client.currentclock, var19);
+					int var19 = buf.gSmart1or2();
+					player.addHitmark(id, var18, var14, var16, Client.currentclock, var19);
 				}
 			}
-			int var20 = arg0.g1_alt3();
-			if (var20 > 0) {
-				for (int var21 = 0; var21 < var20; var21++) {
-					int var22 = arg0.gSmart1or2();
-					int var23 = arg0.gSmart1or2();
+			int numBars = buf.g1_alt3();
+			if (numBars > 0) {
+				for (int bar = 0; bar < numBars; bar++) {
+					int id = buf.gSmart1or2();
+					int var23 = buf.gSmart1or2();
 					if (var23 == 32767) {
-						arg2.method16500(var22);
+						player.method16500(id);
 					} else {
-						int var24 = arg0.gSmart1or2();
-						int var25 = arg0.g1_alt3();
-						int var26 = var23 > 0 ? arg0.g1_alt2() : var25;
-						arg2.method16499(var22, Client.currentclock, var23, var24, var25, var26);
+						int var24 = buf.gSmart1or2();
+						int var25 = buf.g1_alt3();
+						int var26 = var23 > 0 ? buf.g1_alt2() : var25;
+						player.addHeadbar(id, Client.currentclock, var23, var24, var25, var26);
 					}
 				}
 			}
 		}
-		if ((arg3 & 0x8000) != 0) {
-			int var27 = arg0.g1_alt3();
-			int[] var28 = new int[var27];
+		if ((mask & 0x8000) != 0) { // new sequences
+			int var27 = buf.g1_alt3();
+			int[] seqs = new int[var27];
 			int[] var29 = new int[var27];
 			int[] var30 = new int[var27];
 			for (int var31 = 0; var31 < var27; var31++) {
-				var28[var31] = arg0.gSmart2or4null();
-				var29[var31] = arg0.g1_alt1();
-				var30[var31] = arg0.g2_alt3();
+				seqs[var31] = buf.gSmart2or4null();
+				var29[var31] = buf.g1_alt1();
+				var30[var31] = buf.g2_alt3();
 			}
-			Client.method16758(arg2, var28, var29, var30);
+			Client.addSequences(player, seqs, var29, var30);
 		}
-		if ((arg3 & 0x100000) != 0) {
-			int var32 = arg0.g2_alt3();
-			int var33 = arg0.g4_alt1();
-			if (var32 == 65535) {
-				var32 = -1;
+		if ((mask & 0x100000) != 0) { // spotanim4
+			int id = buf.g2_alt3();
+			int var33 = buf.g4_alt1();
+			if (id == 65535) {
+				id = -1;
 			}
-			int var34 = arg0.g1_alt1();
+			int var34 = buf.g1_alt1();
 			int var35 = var34 & 0x7;
 			int var36 = var34 >> 3 & 0xF;
 			if (var36 == 15) {
 				var36 = -1;
 			}
 			boolean var37 = (var34 >> 7 & 0x1) == 1;
-			arg2.method16563(var32, var33, var35, var36, var37, 4);
+			player.addSpotAnimation(id, var33, var35, var36, var37, 4);
 		}
-		if ((arg3 & 0x4) != 0) {
-			int var38 = arg0.g1_alt1();
-			byte[] var39 = new byte[var38];
-			Packet var40 = new Packet(var39);
-			arg0.gdata_alt2(var39, 0, var38);
-			field706[arg1] = var40;
-			arg2.method19129(var40);
+		if ((mask & 0x4) != 0) { // appearance
+			int length = buf.g1_alt1();
+			byte[] bytes = new byte[length];
+			Packet appearance = new Packet(bytes);
+			buf.gdata_alt2(bytes, 0, length);
+			appearances[index] = appearance;
+			player.getAppearance(appearance);
 		}
-		if ((arg3 & 0x80000) != 0) {
-			int var41 = arg0.g1_alt1();
+		if ((mask & 0x80000) != 0) {
+			int var41 = buf.g1_alt1();
 			int[] var42 = new int[var41];
 			int[] var43 = new int[var41];
 			for (int var44 = 0; var44 < var41; var44++) {
-				int var45 = arg0.g2_alt1();
+				int var45 = buf.g2_alt1();
 				if ((var45 & 0xC000) == 49152) {
-					int var46 = arg0.g2_alt1();
+					int var46 = buf.g2_alt1();
 					var42[var44] = var45 << 16 | var46;
 				} else {
 					var42[var44] = var45;
 				}
-				var43[var44] = arg0.g2_alt2();
+				var43[var44] = buf.g2_alt2();
 			}
-			arg2.method16493(var42, var43);
+			player.method16493(var42, var43);
 		}
-		if ((arg3 & 0x2000) != 0) {
-			int var47 = arg0.g2();
-			int var48 = arg0.g4_alt2();
-			if (var47 == 65535) {
-				var47 = -1;
+		if ((mask & 0x2000) != 0) { // spotanim2
+			int id = buf.g2();
+			int var48 = buf.g4_alt2();
+			if (id == 65535) {
+				id = -1;
 			}
-			int var49 = arg0.g1_alt1();
+			int var49 = buf.g1_alt1();
 			int var50 = var49 & 0x7;
 			int var51 = var49 >> 3 & 0xF;
 			if (var51 == 15) {
 				var51 = -1;
 			}
 			boolean var52 = (var49 >> 7 & 0x1) == 1;
-			arg2.method16563(var47, var48, var50, var51, var52, 2);
+			player.addSpotAnimation(id, var48, var50, var51, var52, 2);
 		}
-		if ((arg3 & 0x2) != 0) {
-			int var53 = arg0.g2_alt3();
-			int var54 = arg0.g4_alt3();
-			if (var53 == 65535) {
-				var53 = -1;
+		if ((mask & 0x2) != 0) { // spotanim0
+			int id = buf.g2_alt3();
+			int var54 = buf.g4_alt3();
+			if (id == 65535) {
+				id = -1;
 			}
-			int var55 = arg0.g1_alt1();
+			int var55 = buf.g1_alt1();
 			int var56 = var55 & 0x7;
 			int var57 = var55 >> 3 & 0xF;
 			if (var57 == 15) {
 				var57 = -1;
 			}
 			boolean var58 = (var55 >> 7 & 0x1) == 1;
-			arg2.method16563(var53, var54, var56, var57, var58, 0);
+			player.addSpotAnimation(id, var54, var56, var57, var58, 0);
 		}
-		if ((arg3 & 0x800) != 0) {
-			int var59 = arg0.g1();
-			byte[] var60 = new byte[var59];
-			Packet var61 = new Packet(var60);
-			arg0.gdata_alt1(var60, 0, var59);
-			field699[arg1] = var61;
-			arg2.method19111(var61);
+		if ((mask & 0x800) != 0) { // headicons
+			int length = buf.g1();
+			byte[] bytes = new byte[length];
+			Packet headicons = new Packet(bytes);
+			buf.gdata_alt1(bytes, 0, length);
+			headIcons[index] = headicons;
+			player.getHeadIcons(headicons);
 		}
-		if ((arg3 & 0x20000) != 0) {
-			arg2.field10460.clear();
-			arg0.pos += 2;
-			int var62 = arg0.data[(++arg0.pos) - 1] & 0xFF;
+		if ((mask & 0x20000) != 0) {
+			player.field10460.clear();
+			buf.pos += 2;
+			int var62 = buf.data[(++buf.pos) - 1] & 0xFF;
 			for (int var63 = 0; var63 < var62; var63++) {
-				int var64 = arg0.g1_alt3();
+				int var64 = buf.g1_alt3();
 				BaseVarType var65 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var64);
-				VarValue var66 = Client.varPlayerTypeList.decodeVarValue(arg0, var65);
-				arg2.field10460.setVarObject(var66.var, var66.value);
+				VarValue var66 = Client.varPlayerTypeList.decodeVarValue(buf, var65);
+				player.field10460.setVarObject(var66.var, var66.value);
 			}
 		}
-		if ((arg3 & 0x200) != 0) {
-			String var67 = arg0.gjstr();
-			if (Client.localPlayerEntity == arg2) {
-				ChatHistory.addMessage(2, 0, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var67, null);
+		if ((mask & 0x200) != 0) {
+			String var67 = buf.gjstr();
+			if (Client.localPlayerEntity == player) {
+				ChatHistory.addMessage(2, 0, player.method19115(true), player.method19116(false), player.field12057, var67, null);
 			}
-			arg2.method19124(var67, 0, 0);
+			player.addForcedChatMessage(var67, 0, 0);
 		}
-		if ((arg3 & 0x8) != 0) {
-			arg2.field10423 = arg0.g1b_alt2();
-			arg2.field10425 = arg0.g1b();
-			arg2.field10457 = arg0.g1b_alt2();
-			arg2.field10426 = arg0.g1b_alt1();
-			arg2.field10419 = arg0.g1b_alt1();
-			arg2.field10428 = arg0.g1b();
-			arg2.field10429 = arg0.g2_alt3() + Client.currentclock;
-			arg2.field10399 = arg0.g2_alt1() + Client.currentclock;
-			arg2.field10431 = arg0.g2_alt1();
-			arg2.field10400 = 1;
-			arg2.field10396 = 0;
-			arg2.field10423 += arg2.routeWaypointX[0];
-			arg2.field10425 += arg2.routeWaypointZ[0];
-			arg2.field10457 += arg2.routeWaypointX[0];
-			arg2.field10426 += arg2.routeWaypointZ[0];
-			arg2.field10419 += arg2.field11717;
-			arg2.field10428 += arg2.field11717;
+		if ((mask & 0x8) != 0) { // force move
+			player.field10423 = buf.g1b_alt2();
+			player.field10425 = buf.g1b();
+			player.field10457 = buf.g1b_alt2();
+			player.field10426 = buf.g1b_alt1();
+			player.field10419 = buf.g1b_alt1();
+			player.field10428 = buf.g1b();
+			player.field10429 = buf.g2_alt3() + Client.currentclock;
+			player.field10399 = buf.g2_alt1() + Client.currentclock;
+			player.field10431 = buf.g2_alt1();
+			player.routeLength = 1;
+			player.field10396 = 0;
+			player.field10423 += player.routeWaypointX[0];
+			player.field10425 += player.routeWaypointZ[0];
+			player.field10457 += player.routeWaypointX[0];
+			player.field10426 += player.routeWaypointZ[0];
+			player.field10419 += player.level;
+			player.field10428 += player.level;
 		}
-		if ((arg3 & 0x1) != 0) {
-			int var68 = arg0.g2();
+		if ((mask & 0x1) != 0) {
+			int var68 = buf.g2();
 			if (var68 == 65535) {
 				var68 = -1;
 			}
-			arg2.field10417 = var68;
+			player.targetId = var68;
 		}
-		if ((arg3 & 0x800000) != 0) {
-			arg2.field10434 = arg0.g1b_alt2();
-			arg2.field10435 = arg0.g1b_alt3();
-			arg2.field10436 = arg0.g1b_alt2();
-			arg2.field10437 = (byte) arg0.g1_alt1();
-			arg2.field10446 = Client.currentclock + arg0.g2();
-			arg2.field10464 = Client.currentclock + arg0.g2();
+		if ((mask & 0x800000) != 0) { // color
+			player.field10434 = buf.g1b_alt2();
+			player.field10435 = buf.g1b_alt3();
+			player.field10436 = buf.g1b_alt2();
+			player.field10437 = (byte) buf.g1_alt1();
+			player.field10446 = Client.currentclock + buf.g2();
+			player.field10464 = Client.currentclock + buf.g2();
 		}
-		if ((arg3 & 0x400) != 0) {
-			arg2.field12070 = (CommunityPartnerType) SerializableEnums.decode(CommunityPartnerType.method3559(), arg0.g1_alt2());
-			if (arg2.field12070 == null) {
-				arg2.field12070 = CommunityPartnerType.field1950;
+		if ((mask & 0x400) != 0) {
+			player.field12070 = (CommunityPartnerType) SerializableEnums.decode(CommunityPartnerType.method3559(), buf.g1_alt2());
+			if (player.field12070 == null) {
+				player.field12070 = CommunityPartnerType.field1950;
 			}
 		}
-		if ((arg3 & 0x100) != 0) {
-			int var69 = arg0.g2_alt3();
-			int var70 = arg0.g4_alt2();
-			if (var69 == 65535) {
-				var69 = -1;
+		if ((mask & 0x100) != 0) { // spotanim1
+			int id = buf.g2_alt3();
+			int var70 = buf.g4_alt2();
+			if (id == 65535) {
+				id = -1;
 			}
-			int var71 = arg0.g1_alt2();
+			int var71 = buf.g1_alt2();
 			int var72 = var71 & 0x7;
 			int var73 = var71 >> 3 & 0xF;
 			if (var73 == 15) {
 				var73 = -1;
 			}
 			boolean var74 = (var71 >> 7 & 0x1) == 1;
-			arg2.method16563(var69, var70, var72, var73, var74, 1);
+			player.addSpotAnimation(id, var70, var72, var73, var74, 1);
 		}
-		if ((arg3 & 0x200000) != 0) {
-			String var75 = arg0.gjstr();
-			int var76 = arg0.g1();
+		if ((mask & 0x200000) != 0) { // force chat
+			String message = buf.gjstr();
+			int var76 = buf.g1();
 			if ((var76 & 0x1) != 0) {
-				ChatHistory.addMessage(2, var76, arg2.method19115(true), arg2.method19116(false), arg2.field12057, var75, null);
+				ChatHistory.addMessage(2, var76, player.method19115(true), player.method19116(false), player.field12057, message, null);
 			}
-			arg2.method19124(var75, 0, 0);
+			player.addForcedChatMessage(message, 0, 0);
 		}
-		if ((arg3 & 0x400000) == 0) {
+		if ((mask & 0x400000) == 0) { // spotanim3
 			return;
 		}
-		int var77 = arg0.g2_alt3();
-		int var78 = arg0.g4s();
-		if (var77 == 65535) {
-			var77 = -1;
+		int id = buf.g2_alt3();
+		int var78 = buf.g4s();
+		if (id == 65535) {
+			id = -1;
 		}
-		int var79 = arg0.g1_alt1();
+		int var79 = buf.g1_alt1();
 		int var80 = var79 & 0x7;
 		int var81 = var79 >> 3 & 0xF;
 		if (var81 == 15) {
 			var81 = -1;
 		}
 		boolean var82 = (var79 >> 7 & 0x1) == 1;
-		arg2.method16563(var77, var78, var80, var81, var82, 3);
+		player.addSpotAnimation(id, var78, var80, var81, var82, 3);
 	}
 
 	@ObfuscatedName("ajt.z(I)V")
 	public static void reset() {
-		field698 = 0;
-		for (int var0 = 0; var0 < 2048; var0++) {
-			field706[var0] = null;
-			field699[var0] = null;
-			field697[var0] = MoveSpeed.WALK.serialID;
-			field704[var0] = null;
+		highResolutionsCount = 0;
+		for (int index = 0; index < 2048; index++) {
+			appearances[index] = null;
+			headIcons[index] = null;
+			speeds[index] = MoveSpeed.WALK.serialID;
+			lowResolutions[index] = null;
 		}
 	}
 }

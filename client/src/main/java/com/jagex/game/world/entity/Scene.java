@@ -294,23 +294,23 @@ public class Scene {
 				for (PrimaryLayerEntityList var6 = tile.entities; var6 != null; var6 = var6.field7058) {
 					PrimaryLayerEntity var7 = var6.field7057;
 					if (var7.field12471 == stx && var7.field12468 == stz) {
-						var7.field11717--;
+						var7.level--;
 					}
 				}
 				if (tile.groundDecoration != null) {
-					tile.groundDecoration.field11717--;
+					tile.groundDecoration.level--;
 				}
 				if (tile.wall != null) {
-					tile.wall.field11717--;
+					tile.wall.level--;
 				}
 				if (tile.dynamicWall != null) {
-					tile.dynamicWall.field11717--;
+					tile.dynamicWall.level--;
 				}
 				if (tile.wallDecoration != null) {
-					tile.wallDecoration.field11717--;
+					tile.wallDecoration.level--;
 				}
 				if (tile.dynamicWallDecoration != null) {
-					tile.dynamicWallDecoration.field11717--;
+					tile.dynamicWallDecoration.level--;
 				}
 			}
 		}
@@ -532,7 +532,7 @@ public class Scene {
 		int var11 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.field12467));
 		for (int var12 = var8; var12 <= var9; var12++) {
 			for (int var13 = var10; var13 <= var11; var13++) {
-				Tile var14 = this.method8707(arg0.field11717, var12, var13);
+				Tile var14 = this.method8707(arg0.level, var12, var13);
 				if (var14 != null) {
 					PrimaryLayerEntityList var15 = PrimaryLayerEntityList.method644(arg0);
 					PrimaryLayerEntityList var16 = var14.entities;
@@ -728,7 +728,7 @@ public class Scene {
 		int var6 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.field12467));
 		for (int var7 = var3; var7 <= var4; var7++) {
 			for (int var8 = var5; var8 <= var6; var8++) {
-				Tile var9 = this.levelTiles[arg0.field11717][var7][var8];
+				Tile var9 = this.levelTiles[arg0.level][var7][var8];
 				if (var9 != null) {
 					PrimaryLayerEntityList var10 = var9.entities;
 					PrimaryLayerEntityList var11 = null;
@@ -1268,7 +1268,7 @@ public class Scene {
 			for (int var10 = var8; var10 <= var6; var10++) {
 				for (int var11 = var9; var11 <= var7; var11++) {
 					if (arg0.field11714 < this.maxLevel && var10 >= this.field6949 && var10 < this.field6946 && var11 >= this.field6920 && var11 < this.field6948) {
-						if ((arg2 == null || arg0.field11717 < arg3 || arg2[arg0.field11717][var10][var11] != arg4) && arg0.method18361() && !arg0.method18360(this.renderer)) {
+						if ((arg2 == null || arg0.level < arg3 || arg2[arg0.level][var10][var11] != arg4) && arg0.method18361() && !arg0.method18360(this.renderer)) {
 							return false;
 						}
 						if (!arg1 && var10 >= this.field6902 - 16 && var10 <= this.field6902 + 16 && var11 >= this.field6947 - 16 && var11 <= this.field6947 + 16) {
@@ -1285,7 +1285,7 @@ public class Scene {
 			int var14 = (int) var12.field4313 >> this.field6900;
 			if (arg0.field11714 >= this.maxLevel || var13 < this.field6949 || var13 >= this.field6946 || var14 < this.field6920 || var14 >= this.field6948) {
 				return true;
-			} else if ((arg2 == null || arg0.field11717 < arg3 || arg2[arg0.field11717][var13][var14] != arg4) && arg0.method18361() && !arg0.method18360(this.renderer)) {
+			} else if ((arg2 == null || arg0.level < arg3 || arg2[arg0.level][var13][var14] != arg4) && arg0.method18361() && !arg0.method18360(this.renderer)) {
 				return false;
 			} else {
 				if (!arg1 && var13 >= this.field6902 - 16 && var13 <= this.field6902 + 16 && var14 >= this.field6947 - 16 && var14 <= this.field6947 + 16) {

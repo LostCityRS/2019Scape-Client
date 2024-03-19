@@ -32,20 +32,20 @@ public class CutsceneRoute {
 		int var3 = this.field1754[0];
 		arg0.method2866(arg1, var3 >>> 16, var3 & 0xFFFF);
 		PathingEntity var4 = arg0.method2870();
-		var4.field10400 = 0;
+		var4.routeLength = 0;
 		for (int var5 = this.field1751.length - 1; var5 >= 0; var5--) {
 			int var6 = this.field1751[var5];
 			int var7 = this.field1754[var5];
-			var4.routeWaypointX[var4.field10400] = var7 >> 16;
-			var4.routeWaypointZ[var4.field10400] = var7 & 0xFFFF;
+			var4.routeWaypointX[var4.routeLength] = var7 >> 16;
+			var4.routeWaypointZ[var4.routeLength] = var7 & 0xFFFF;
 			byte var8 = MoveSpeed.WALK.serialID;
 			if (var6 == 0) {
 				var8 = MoveSpeed.CRAWL.serialID;
 			} else if (var6 == 2) {
 				var8 = MoveSpeed.RUN.serialID;
 			}
-			var4.field10441[var4.field10400] = var8;
-			var4.field10400++;
+			var4.routeSpeeds[var4.routeLength] = var8;
+			var4.routeLength++;
 		}
 	}
 }

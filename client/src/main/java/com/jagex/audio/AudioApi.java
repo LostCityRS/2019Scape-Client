@@ -1122,7 +1122,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.au(Lfg;ILalh;B)V")
 	public void method3180(SeqType arg0, int arg1, GraphEntity arg2) {
-		if (arg0 == null || arg0.field1777 == null || arg1 >= arg0.field1777.length || arg0.field1777[arg1] == null || (Client.localPlayerEntity.field11717 != arg2.field11717 || !arg2.method18359())) {
+		if (arg0 == null || arg0.field1777 == null || arg1 >= arg0.field1777.length || arg0.field1777[arg1] == null || (Client.localPlayerEntity.level != arg2.level || !arg2.method18359())) {
 			return;
 		}
 		int var4 = arg0.field1777[arg1][0];
@@ -1170,10 +1170,10 @@ public class AudioApi {
 			int var13 = (int) var12.field4308 - 256 >> 9;
 			int var14 = (int) var12.field4313 - 256 >> 9;
 			Vector3 var15 = new Vector3((float) (var13 << 9), 0.0F, (float) (var14 << 9));
-			int var16 = arg2.field11717 << 24;
+			int var16 = arg2.level << 24;
 			this.method3191(SoundType.field1820, var5, var6, var10, SubBussType.field1803.method3034(), Client.localPlayerEntity == arg2 ? SoundShape.field1835 : SoundShape.field1838, 0.0F, (float) (var7 << 9), var15, var16, var9, 0);
 		} else if (Client.localPlayerEntity == arg2) {
-			this.method3191(SoundType.field1825, var5, var6, var10, SubBussType.field1802.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, arg2.field11717, var9, 0);
+			this.method3191(SoundType.field1825, var5, var6, var10, SubBussType.field1802.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, arg2.level, var9, 0);
 		}
 	}
 

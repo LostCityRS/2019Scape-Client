@@ -140,7 +140,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 				var5.field4313 += (float) this.field12591 * var7 / var8;
 			}
 			if (this.field12595) {
-				var5.field4311 = Client.method3660((int) var5.field4308, (int) var5.field4313, this.field11717) - this.field12599;
+				var5.field4311 = Client.method3660((int) var5.field4308, (int) var5.field4313, this.level) - this.field12599;
 			}
 			this.method10531(var5);
 		}
@@ -185,11 +185,11 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 			return;
 		}
 		Vector3 var5 = var1.method10536().field4298;
-		this.method10538(var5.field4308, (float) (Client.method3660((int) var5.field4308, (int) var5.field4313, this.field11717) - this.field12599), var5.field4313);
+		this.method10538(var5.field4308, (float) (Client.method3660((int) var5.field4308, (int) var5.field4313, this.level) - this.field12599), var5.field4313);
 		if (this.field12594 < 0) {
 			return;
 		}
-		BASType var6 = var1.method16508();
+		BASType var6 = var1.getBASType();
 		int var7 = 0;
 		int var8 = 0;
 		if (var6.field7357 != null && var6.field7357[this.field12594] != null) {
@@ -227,7 +227,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		var2.field4298.field4308 = (float) ((double) var2.field4298.field4308 + (double) arg0 * this.field12597);
 		var2.field4298.field4313 = (float) ((double) var2.field4298.field4313 + (double) arg0 * this.field12592);
 		if (this.field12595) {
-			var2.field4298.field4311 = Client.method3660((int) var2.field4298.field4308, (int) var2.field4298.field4313, this.field11717) - this.field12599;
+			var2.field4298.field4311 = Client.method3660((int) var2.field4298.field4308, (int) var2.field4298.field4313, this.level) - this.field12599;
 		} else if (this.field12590 == -1) {
 			var2.field4298.field4311 = (float) ((double) var2.field4298.field4311 + (double) arg0 * this.field12600);
 		} else {
@@ -299,7 +299,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		}
 		if (this.field12585 != null) {
 			this.field12585.method9936(arg0, (long) Client.currentclock, var4, var5, false);
-			this.field12585.method9963(this.field11717, this.field12471, this.field12472, this.field12468, this.field12467);
+			this.field12585.method9963(this.level, this.field12471, this.field12472, this.field12468, this.field12467);
 		}
 	}
 

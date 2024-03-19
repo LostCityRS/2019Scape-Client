@@ -429,9 +429,9 @@ public class World {
 		int var2 = this.field5018.z;
 		int var3 = (Client.cameraMouseX >> 12) + (var1 >> 3);
 		int var4 = (Client.cameraMouseZ >> 12) + (var2 >> 3);
-		Client.localPlayerEntity.field11717 = 0;
-		Client.field4826 = 0;
-		Client.localPlayerEntity.method19118(8, 8);
+		Client.localPlayerEntity.level = 0;
+		Client.currentPlayerLevel = 0;
+		Client.localPlayerEntity.tele(8, 8);
 		byte var5 = 18;
 		this.rebuildMapSquares = new int[var5];
 		this.rebuildMapSquaresGroupIds = new int[var5];
@@ -794,7 +794,7 @@ public class World {
 							}
 						}
 						if (var16) {
-							Client.field11036[++Client.field11011 - 1] = var14.field10406;
+							Client.field11036[++Client.field11011 - 1] = var14.localPlayerIndex;
 						} else {
 							var14.method19156(null);
 							var13.remove();
@@ -1436,7 +1436,7 @@ public class World {
 					ObjectWrapper var15 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {
 						NpcEntity npc = new NpcEntity(this.scene);
-						npc.field10406 = var7;
+						npc.localPlayerIndex = var7;
 						ObjectWrapper var17 = new ObjectWrapper(npc);
 						Client.miniMenuEntries.pushNode(var17, (long) var7);
 						Client.field10839[++Client.field10906 - 1] = var17;
@@ -1446,7 +1446,7 @@ public class World {
 						npc.method16502(npc.npcType.size);
 						npc.field10444 = npc.npcType.turnspeed << 3;
 						npc.method16491(npc.npcType.respawndir.method13895().getId() << 11 & 0x3FFF, true);
-						npc.method19159(var9, var12, var13, true, npc.method16546());
+						npc.method19159(var9, var12, var13, true, npc.size());
 					}
 				}
 			}

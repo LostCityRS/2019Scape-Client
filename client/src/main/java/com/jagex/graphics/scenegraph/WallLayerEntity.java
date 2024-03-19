@@ -27,7 +27,7 @@ public abstract class WallLayerEntity extends GraphEntity {
 
 	public WallLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
 		super(arg0, arg7);
-		this.field11717 = (byte) arg4;
+		this.level = (byte) arg4;
 		this.field11714 = (byte) arg5;
 		this.field12463 = (short) arg6;
 		if (arg7 != null) {

@@ -942,7 +942,7 @@ public class LoginManager {
 				loginState = 7;
 				setReply(2);
 				prepareForMap();
-				ReceivePlayerPositions.method16435(connection.in);
+				ReceivePlayerPositions.receivePlayerPositions(connection.in);
 				int offset = packetSize - connection.in.pos;
 				PacketBit in = new PacketBit(offset);
 				System.arraycopy(connection.in.data, connection.in.pos, in.data, 0, offset);
@@ -976,7 +976,7 @@ public class LoginManager {
 				loginState = 7;
 				setReply(15);
 				prepareForPlayers();
-				ReceivePlayerPositions.method16435(connection.in);
+				ReceivePlayerPositions.receivePlayerPositions(connection.in);
 				if (connection.in.pos != packetSize) {
 					throw new RuntimeException(connection.in.pos + " " + packetSize);
 				}
@@ -1276,7 +1276,7 @@ public class LoginManager {
 		for (int var1 = 0; var1 < Client.field10906; var1++) {
 			PathingEntity var2 = (PathingEntity) Client.field10839[var1].field11436;
 			if (var2 != null) {
-				var2.field10417 = -1;
+				var2.targetId = -1;
 			}
 		}
 		ClientInvCache.method2752();

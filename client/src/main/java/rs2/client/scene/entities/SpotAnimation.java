@@ -99,7 +99,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	@ObfuscatedName("aur.f(Ldh;IIB)Ldo;")
 	public Model method19748(Renderer arg0, int arg1, int arg2) {
 		EffectAnimType var4 = (EffectAnimType) Client.effectAnimTypeList.list(arg2);
-		FloorModel var5 = this.field11716.field6915[this.field11717];
+		FloorModel var5 = this.field11716.field6915[this.level];
 		FloorModel var6 = this.field11714 < 3 ? this.field11716.field6915[this.field11714 + 1] : null;
 		Vector3 var7 = this.method10536().field4298;
 		return this.field12609 == null || this.field12609.method14375() ? var4.method13802(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.field4308, (int) var7.field4311, (int) var7.field4313, null, (byte) 2) : var4.method13802(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.field4308, (int) var7.field4311, (int) var7.field4313, this.field12609, (byte) 2);
@@ -143,7 +143,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		}
 		if (this.field12612 != null) {
 			this.field12612.method9936(arg0, (long) Client.currentclock, var4, var5, false);
-			this.field12612.method9963(this.field11717, this.field12471, this.field12472, this.field12468, this.field12467);
+			this.field12612.method9963(this.level, this.field12471, this.field12472, this.field12468, this.field12467);
 		}
 	}
 

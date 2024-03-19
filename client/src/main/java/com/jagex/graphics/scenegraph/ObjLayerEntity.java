@@ -12,7 +12,7 @@ public abstract class ObjLayerEntity extends GraphEntity {
 
 	public ObjLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		super(arg0);
-		this.field11717 = (byte) arg4;
+		this.level = (byte) arg4;
 		this.field11714 = (byte) arg5;
 		this.method10531(new Vector3((float) arg1, (float) arg2, (float) arg3));
 	}

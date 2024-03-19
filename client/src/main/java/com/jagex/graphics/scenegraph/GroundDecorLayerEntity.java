@@ -3,7 +3,6 @@ package com.jagex.graphics.scenegraph;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.Light;
 import com.jagex.graphics.Renderer;
-import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
@@ -22,7 +21,7 @@ public abstract class GroundDecorLayerEntity extends GraphEntity {
 
 	public GroundDecorLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
 		super(arg0, arg7);
-		this.field11717 = (byte) arg4;
+		this.level = (byte) arg4;
 		this.field11714 = (byte) arg5;
 		this.field12448 = (short) arg6;
 		if (arg7 != null) {
