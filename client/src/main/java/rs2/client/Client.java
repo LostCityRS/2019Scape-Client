@@ -8107,7 +8107,7 @@ public final class Client extends GameShell {
 			method5135(in.gjstr());
 			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SETDRAWORDER == connection.packetType) {
+		} else if (ServerProt.SHOW_FACE_HERE == connection.packetType) {
 			boolean var21 = in.g1_alt3() == 1;
 			incrementVerifyId();
 			MiniMenu.field7446 = var21;
@@ -10158,7 +10158,7 @@ public final class Client extends GameShell {
 			method4489(var576, new SubInterface(var579, var577), new int[] { var581, var580, var575, var578 }, false);
 			connection.packetType = null;
 			return true;
-		} else if (ServerProt.SHOW_FACE_HERE == connection.packetType) {
+		} else if (ServerProt.SETDRAWORDER == connection.packetType) {
 			int var582 = in.g1_alt3();
 			incrementVerifyId();
 			field10921 = var582;
