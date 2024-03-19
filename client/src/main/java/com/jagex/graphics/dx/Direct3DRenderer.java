@@ -33,10 +33,10 @@ public class Direct3DRenderer extends GpuRenderer {
 	public long device = 0L;
 
 	@ObfuscatedName("aqd.hs")
-	public final D3DPRESENT_PARAMETERS field11957;
+	public final D3DPRESENT_PARAMETERS present;
 
 	@ObfuscatedName("aqd.hh")
-	public final D3DDISPLAYMODE field11958;
+	public final D3DDISPLAYMODE displayMode;
 
 	@ObfuscatedName("aqd.hp")
 	public IterableQueue field11959 = new IterableQueue();
@@ -78,13 +78,13 @@ public class Direct3DRenderer extends GpuRenderer {
 	public Matrix4x4 field11968;
 
 	@ObfuscatedName("aqd.io")
-	public Direct3DProgram field11972;
+	public Direct3DProgram program;
 
 	@ObfuscatedName("aqd.iq")
 	public long field11973;
 
 	@ObfuscatedName("aqd.ig")
-	public final D3DCAPS field11974;
+	public final D3DCAPS caps;
 
 	@ObfuscatedName("aqd.iv")
 	public final boolean field11975;
@@ -154,12 +154,12 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.rx()Z")
 	public boolean method15957() {
-		return (this.field11974.VertexShaderVersion & 0xFFFF) >= 257;
+		return (this.caps.VertexShaderVersion & 0xFFFF) >= 257;
 	}
 
 	@ObfuscatedName("aqd.ry()Z")
 	public boolean method15958() {
-		return (this.field11974.PixelShaderVersion & 0xFFFF) >= 257;
+		return (this.caps.PixelShaderVersion & 0xFFFF) >= 257;
 	}
 
 	@ObfuscatedName("aqd.rg(Z)Z")
@@ -251,31 +251,31 @@ public class Direct3DRenderer extends GpuRenderer {
 			this.field11954 = arg1;
 			this.field11955 = arg2;
 			this.device = arg3;
-			this.field11958 = arg4;
-			this.field11957 = arg5;
-			this.field11974 = arg6;
+			this.displayMode = arg4;
+			this.present = arg5;
+			this.caps = arg6;
 			this.field11961 = D3DLIGHT.Create();
 			this.field11988 = D3DLIGHT.Create();
 			this.field11970 = D3DLIGHT.Create();
-			this.field10186 = this.field11974.MaxSimultaneousTextures;
-			this.field10094 = this.field11974.MaxActiveLights > 0 ? this.field11974.MaxActiveLights : 8;
-			this.field11975 = (this.field11974.TextureCaps & 0x2) == 0;
-			this.field10192 = (this.field11974.TextureCaps & 0x800) != 0;
-			this.field10125 = (this.field11974.TextureCaps & 0x2000) != 0;
-			this.field11963 = (this.field11974.TextureCaps & 0x8000) != 0;
-			this.field11967 = (this.field11974.TextureCaps & 0x10000) != 0;
-			this.field11976 = (this.field11974.TextureCaps & 0x4000) != 0;
-			this.hasFramebufferObject = this.field11974.NumSimultaneousRTs > 0;
+			this.field10186 = this.caps.MaxSimultaneousTextures;
+			this.field10094 = this.caps.MaxActiveLights > 0 ? this.caps.MaxActiveLights : 8;
+			this.field11975 = (this.caps.TextureCaps & 0x2) == 0;
+			this.field10192 = (this.caps.TextureCaps & 0x800) != 0;
+			this.field10125 = (this.caps.TextureCaps & 0x2000) != 0;
+			this.field11963 = (this.caps.TextureCaps & 0x8000) != 0;
+			this.field11967 = (this.caps.TextureCaps & 0x10000) != 0;
+			this.field11976 = (this.caps.TextureCaps & 0x4000) != 0;
+			this.hasFramebufferObject = this.caps.NumSimultaneousRTs > 0;
 			this.field10116 = this.hasFramebufferObject;
-			this.field10134 = this.field11974.NumSimultaneousRTs > 0;
-			this.field10172 = this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, this.field11957.BackBufferFormat, true, 2) == 0;
-			this.field10199 = this.field11974.NumSimultaneousRTs > 0 && this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, 113, true, 2) == 0;
-			this.field11979 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.field11957.BackBufferFormat, 0, 1, method16082('A', 'T', 'O', 'C')) == 0;
-			this.field11980 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.field11957.BackBufferFormat, 0, 1, method16082('A', '2', 'M', '1')) == 0;
-			this.field11971 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.field11957.BackBufferFormat, 0, 1, method16082('S', 'S', 'A', 'A')) == 0;
-			this.field10074 = (this.field11974.PrimitiveMiscCaps & 0x20000) != 0;
-			this.field11953 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.field11958.Format, 524288, 3, 113) == 0;
-			this.field11983 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.field11958.Format, 524288, 3, 116) == 0;
+			this.field10134 = this.caps.NumSimultaneousRTs > 0;
+			this.field10172 = this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, true, 2) == 0;
+			this.field10199 = this.caps.NumSimultaneousRTs > 0 && this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, 113, true, 2) == 0;
+			this.field11979 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, method16082('A', 'T', 'O', 'C')) == 0;
+			this.field11980 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, method16082('A', '2', 'M', '1')) == 0;
+			this.field11971 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, method16082('S', 'S', 'A', 'A')) == 0;
+			this.field10074 = (this.caps.PrimitiveMiscCaps & 0x20000) != 0;
+			this.field11953 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.displayMode.Format, 524288, 3, 113) == 0;
+			this.field11983 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.displayMode.Format, 524288, 3, 116) == 0;
 			this.field11965 = new boolean[this.field10186];
 			this.field11966 = new boolean[this.field10186];
 			this.field11981 = new boolean[this.field10186];
@@ -333,12 +333,12 @@ public class Direct3DRenderer extends GpuRenderer {
 			}
 			IDirect3DDevice.SetIndices(this.device, 0L);
 			this.method15973();
-			this.field11957.BackBufferWidth = arg0;
-			this.field11957.BackBufferHeight = arg1;
-			this.field11957.BackBufferCount = 1;
-			if (method19016(this.field11956, this.field11954, this.field11955, this.field10180, this.field11958, this.field11957)) {
-				int var7 = IDirect3DDevice.Reset(this.device, this.field11957);
-				if (class0.method35(var7)) {
+			this.present.BackBufferWidth = arg0;
+			this.present.BackBufferHeight = arg1;
+			this.present.BackBufferCount = 1;
+			if (method19016(this.field11956, this.field11954, this.field11955, this.field10180, this.displayMode, this.present)) {
+				int var7 = IDirect3DDevice.Reset(this.device, this.present);
+				if (HRESULT.SUCCEEDED(var7)) {
 					this.field11960 = false;
 					this.method16105();
 					this.method16232();
@@ -402,7 +402,7 @@ public class Direct3DRenderer extends GpuRenderer {
 			IDirect3DDevice.EndScene(this.device);
 		}
 		int var3 = this.surface.method15451();
-		if (class0.method34(var3)) {
+		if (HRESULT.FAILED(var3)) {
 			this.field11960 = true;
 			this.surface.method1629();
 		} else {
@@ -416,7 +416,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.u()V")
 	public void method2117() {
 		long var1 = IDirect3DDevice.CreateEventQuery(this.device);
-		if (class0.method35(IDirect3DEventQuery.Issue(var1))) {
+		if (HRESULT.SUCCEEDED(IDirect3DEventQuery.Issue(var1))) {
 			while (true) {
 				int var3 = IDirect3DEventQuery.IsSignaled(var1);
 				if (var3 != 1) {
@@ -468,7 +468,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.ad(Ljava/awt/Canvas;II)Lafy;")
-	public Surface method2144(Canvas arg0, int arg1, int arg2) {
+	public Surface createSurface(Canvas arg0, int arg1, int arg2) {
 		return new Direct3DSurface(this, arg0, arg1, arg2, false);
 	}
 
@@ -519,12 +519,12 @@ public class Direct3DRenderer extends GpuRenderer {
 		long var6 = IDirect3DDevice.GetRenderTarget(this.device, 0);
 		long var8 = IDirect3DDevice.CreateRenderTarget(this.device, arg2, arg3, 21, 0, 0, true);
 		int var10 = IDirect3DDevice.StretchRect(this.device, var6, arg0, arg1, arg2, arg3, var8, 0, 0, arg2, arg3, 1);
-		this.method15961(arg2 * arg3 * 4);
-		if (class0.method35(var10)) {
+		this.ensureTemporaryBufferCapacity(arg2 * arg3 * 4);
+		if (HRESULT.SUCCEEDED(var10)) {
 			var5 = new int[arg2 * arg3];
-			IDirect3DSurface.Download(var8, 0, 0, arg2, arg3, arg2 * 4, 16, this.field10046);
-			this.field10071.clear();
-			this.field10071.asIntBuffer().get(var5);
+			IDirect3DSurface.Download(var8, 0, 0, arg2, arg3, arg2 * 4, 16, this.temporaryBufferAddress);
+			this.temporaryBuffer.clear();
+			this.temporaryBuffer.asIntBuffer().get(var5);
 		}
 		IUnknown.Release(var6);
 		IUnknown.Release(var8);
@@ -544,11 +544,11 @@ public class Direct3DRenderer extends GpuRenderer {
 	public void method19024(int arg0, int arg1) {
 		this.method2126();
 		this.method2419(arg0, arg1);
-		this.field11990 = IDirect3DDevice.CreateRenderTarget(this.device, arg0, arg1, method19011(TextureFormat.field1273, DataType.UNSIGNED_INT_8), 0, 0, false);
+		this.field11990 = IDirect3DDevice.CreateRenderTarget(this.device, arg0, arg1, method19011(TextureFormat.RGBA, DataType.UNSIGNED_INT_8), 0, 0, false);
 		for (int var3 = 0; var3 < 3; var3++) {
-			this.field11994[var3] = IDirect3DDevice.CreateOffscreenPlainSurface(this.device, arg0, arg1, method19011(TextureFormat.field1273, DataType.UNSIGNED_INT_8), 2);
+			this.field11994[var3] = IDirect3DDevice.CreateOffscreenPlainSurface(this.device, arg0, arg1, method19011(TextureFormat.RGBA, DataType.UNSIGNED_INT_8), 2);
 		}
-		this.method15961(arg0 * arg1 * 4);
+		this.ensureTemporaryBufferCapacity(arg0 * arg1 * 4);
 	}
 
 	@ObfuscatedName("aqd.ao()Z")
@@ -576,12 +576,12 @@ public class Direct3DRenderer extends GpuRenderer {
 			this.method19024(arg1, arg2);
 		}
 		long var4 = IDirect3DDevice.GetRenderTarget(this.device, 0);
-		if (class0.method34(IDirect3DDevice.StretchRect(this.device, var4, 0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), this.field11990, this.field1611, this.field1618, this.field1619, this.field1610, 2))) {
+		if (HRESULT.FAILED(IDirect3DDevice.StretchRect(this.device, var4, 0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), this.field11990, this.field1611, this.field1618, this.field1619, this.field1610, 2))) {
 		}
 		IUnknown.Release(var4);
 		IDirect3DDevice.GetRenderTargetData(this.device, this.field11990, this.field11994[this.field11995]);
 		long var6 = IDirect3DDevice.CreateEventQuery(this.device);
-		if (class0.method35(IDirect3DEventQuery.Issue(var6))) {
+		if (HRESULT.SUCCEEDED(IDirect3DEventQuery.Issue(var6))) {
 			this.field11991[this.field11995] = var6;
 		}
 		this.field11993[this.field11995] = arg0;
@@ -594,7 +594,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	public int method2502() {
 		if (this.field11991[this.field11987] == 0L) {
 			return -1;
-		} else if (class0.method35(IDirect3DEventQuery.IsSignaled(this.field11991[this.field11987]))) {
+		} else if (HRESULT.SUCCEEDED(IDirect3DEventQuery.IsSignaled(this.field11991[this.field11987]))) {
 			return this.field11993[this.field11987];
 		} else {
 			return -1;
@@ -629,15 +629,15 @@ public class Direct3DRenderer extends GpuRenderer {
 			IUnknown.Release(this.field11991[this.field11987]);
 			this.field11991[this.field11987] = 0L;
 		}
-		this.field10071.clear();
-		IDirect3DSurface.Download(this.field11994[this.field11987], 0, 0, arg0, arg1, arg0 * 4, 0, this.field10046);
+		this.temporaryBuffer.clear();
+		IDirect3DSurface.Download(this.field11994[this.field11987], 0, 0, arg0, arg1, arg0 * 4, 0, this.temporaryBufferAddress);
 		if (++this.field11987 >= 3) {
 			this.field11987 = 0;
 		}
 		if (arg2 == null) {
-			return this.field10046;
+			return this.temporaryBufferAddress;
 		} else {
-			this.field10071.asIntBuffer().get(arg2);
+			this.temporaryBuffer.asIntBuffer().get(arg2);
 			return 0L;
 		}
 	}
@@ -806,13 +806,13 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.uq(Lck;Ldg;)Z")
 	public boolean method16026(TextureFormat arg0, DataType arg1) {
 		D3DDISPLAYMODE var3 = new D3DDISPLAYMODE();
-		return class0.method35(IDirect3D.GetAdapterDisplayMode(this.field11955, this.field11956, var3)) && class0.method35(IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, var3.Format, 0, 3, method19011(arg0, arg1)));
+		return HRESULT.SUCCEEDED(IDirect3D.GetAdapterDisplayMode(this.field11955, this.field11956, var3)) && HRESULT.SUCCEEDED(IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, var3.Format, 0, 3, method19011(arg0, arg1)));
 	}
 
 	@ObfuscatedName("aqd.uc(Lck;Ldg;)Z")
 	public boolean method16289(TextureFormat arg0, DataType arg1) {
 		D3DDISPLAYMODE var3 = new D3DDISPLAYMODE();
-		return class0.method35(IDirect3D.GetAdapterDisplayMode(this.field11955, this.field11956, var3)) && class0.method35(IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, var3.Format, 0, 4, method19011(arg0, arg1)));
+		return HRESULT.SUCCEEDED(IDirect3D.GetAdapterDisplayMode(this.field11955, this.field11956, var3)) && HRESULT.SUCCEEDED(IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, var3.Format, 0, 4, method19011(arg0, arg1)));
 	}
 
 	@ObfuscatedName("aqd.uz(Lck;Ldg;II)Llz;")
@@ -1052,7 +1052,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	public void method16058() {
 		IDirect3DDevice.SetRenderState(this.device, 15, this.field10091);
 		IDirect3DDevice.SetRenderState(this.device, 24, this.field10178 & 0xFF);
-		if (this.field11957.MultiSampleType <= 0) {
+		if (this.present.MultiSampleType <= 0) {
 			return;
 		}
 		if (this.field10091 && this.field10178 != 0) {
@@ -1162,7 +1162,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.vk(Llo;)V")
 	public void method16177(VertexDeclaration arg0) {
 		Direct3DVertexDeclaration var2 = (Direct3DVertexDeclaration) arg0;
-		IDirect3DDevice.SetVertexDeclaration(this.device, var2.field10621);
+		IDirect3DDevice.SetVertexDeclaration(this.device, var2.pointer);
 	}
 
 	@ObfuscatedName("aqd.wn(ILlr;)V")
@@ -1178,36 +1178,36 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.wz(Lms;II)V")
 	public final void method16077(PrimitiveType arg0, int arg1, int arg2) {
-		if (this.field11972 != null) {
-			this.field11972.method16476();
+		if (this.program != null) {
+			this.program.method16476();
 		}
 		IDirect3DDevice.DrawPrimitive(this.device, method19029(arg0), arg1, arg2);
 	}
 
 	@ObfuscatedName("aqd.wj(Lml;Lms;IIII)V")
 	public final void method16078(IndexBuffer arg0, PrimitiveType arg1, int arg2, int arg3, int arg4, int arg5) {
-		if (this.field11972 != null) {
-			this.field11972.method16476();
+		if (this.program != null) {
+			this.program.method16476();
 		}
 		IDirect3DDevice.DrawIndexedPrimitiveIB(this.device, ((Direct3DIndexBuffer) arg0).field4213, 4, 0, arg2, arg3, arg4, arg5);
 	}
 
 	@ObfuscatedName("aqd.we(Lms;IIII)V")
 	public final void method16079(PrimitiveType arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (this.field11972 != null) {
-			this.field11972.method16476();
+		if (this.program != null) {
+			this.program.method16476();
 		}
 		IDirect3DDevice.DrawIndexedPrimitive(this.device, method19029(arg0), 0, arg1, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("aqd.air(Ljava/lang/String;)[B")
-	public byte[] method19009(String arg0) {
+	public byte[] getShader(String arg0) {
 		return this.method15965("dx", arg0);
 	}
 
 	@ObfuscatedName("aqd.rc(Ljava/lang/String;)Lho;")
 	public Shader method15964(String arg0) {
-		byte[] var2 = this.method19009(arg0);
+		byte[] var2 = this.getShader(arg0);
 		if (var2 == null) {
 			return null;
 		} else {
@@ -1229,12 +1229,12 @@ public class Direct3DRenderer extends GpuRenderer {
 	public static final int method19011(TextureFormat arg0, DataType arg1) {
 		switch(arg1.field1650) {
 			case 0:
-				if (TextureFormat.field1273 == arg0) {
+				if (TextureFormat.RGBA == arg0) {
 					return 116;
 				}
 				break;
 			case 3:
-				if (TextureFormat.field1273 == arg0) {
+				if (TextureFormat.RGBA == arg0) {
 					return 113;
 				}
 				break;
@@ -1305,7 +1305,7 @@ public class Direct3DRenderer extends GpuRenderer {
 		int var8 = 0;
 		int var9 = 0;
 		try {
-			if (class0.method34(IDirect3D.GetAdapterDisplayMode(arg2, arg0, arg4))) {
+			if (HRESULT.FAILED(IDirect3D.GetAdapterDisplayMode(arg2, arg0, arg4))) {
 				return false;
 			}
 			label76: while (arg3 >= 0) {

@@ -267,19 +267,19 @@ public class HitmarkType implements ConfigType {
 	public void method9256(Renderer arg0) {
 		Js5 var2 = this.field7307.field7315;
 		if (this.field7295 >= 0 && this.field7307.field7316.get((long) this.field7295) == null && var2.method6889(this.field7295)) {
-			SpriteData var3 = SpriteDataProvider.method1607(var2, this.field7295);
+			SpriteData var3 = SpriteDataProvider.get(var2, this.field7295);
 			this.field7307.field7316.put(arg0.createSprite(var3, true), (long) this.field7295);
 		}
 		if (this.field7299 >= 0 && this.field7307.field7316.get((long) this.field7299) == null && var2.method6889(this.field7299)) {
-			SpriteData var4 = SpriteDataProvider.method1607(var2, this.field7299);
+			SpriteData var4 = SpriteDataProvider.get(var2, this.field7299);
 			this.field7307.field7316.put(arg0.createSprite(var4, true), (long) this.field7299);
 		}
 		if (this.field7300 >= 0 && this.field7307.field7316.get((long) this.field7300) == null && var2.method6889(this.field7300)) {
-			SpriteData var5 = SpriteDataProvider.method1607(var2, this.field7300);
+			SpriteData var5 = SpriteDataProvider.get(var2, this.field7300);
 			this.field7307.field7316.put(arg0.createSprite(var5, true), (long) this.field7300);
 		}
 		if (this.field7301 >= 0 && this.field7307.field7316.get((long) this.field7301) == null && var2.method6889(this.field7301)) {
-			SpriteData var6 = SpriteDataProvider.method1607(var2, this.field7301);
+			SpriteData var6 = SpriteDataProvider.get(var2, this.field7301);
 			this.field7307.field7316.put(arg0.createSprite(var6, true), (long) this.field7301);
 		}
 	}

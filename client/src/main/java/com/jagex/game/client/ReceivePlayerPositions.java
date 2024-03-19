@@ -68,11 +68,11 @@ public class ReceivePlayerPositions {
 		int var5 = var3 >> 14 & 0x3FFF;
 		int var6 = var3 & 0x3FFF;
 		CoordGrid var7 = Client.world.method7727();
-		var2.field10450[0] = var5 - var7.x;
-		var2.field10448[0] = var6 - var7.z;
-		var2.method10538((float) ((var2.field10450[0] << 9) + (var2.method16546() << 8)), var2.method10525().field4298.field4311, (float) ((var2.field10448[0] << 9) + (var2.method16546() << 8)));
+		var2.routeWaypointX[0] = var5 - var7.x;
+		var2.routeWaypointZ[0] = var6 - var7.z;
+		var2.method10538((float) ((var2.routeWaypointX[0] << 9) + (var2.method16546() << 8)), var2.method10525().field4298.field4311, (float) ((var2.routeWaypointZ[0] << 9) + (var2.method16546() << 8)));
 		Client.field4826 = var2.field11717 = var2.field11714 = var4;
-		if (Client.world.method7793().method7105(var2.field10450[0], var2.field10448[0])) {
+		if (Client.world.method7793().method7105(var2.routeWaypointX[0], var2.routeWaypointZ[0])) {
 			var2.field11714++;
 		}
 		if (field706[var1] != null) {
@@ -260,7 +260,7 @@ public class ReceivePlayerPositions {
 				}
 				LowResPlayerInfo var6 = field704[arg1] = new LowResPlayerInfo();
 				MoveSpeed.values();
-				var6.field524 = (var2.z + var5.field10448[0] >> 6) + (var2.x + var5.field10450[0] >> 6 << 14) + (var5.field11717 << 28);
+				var6.field524 = (var2.z + var5.routeWaypointZ[0] >> 6) + (var2.x + var5.routeWaypointX[0] >> 6 << 14) + (var5.field11717 << 28);
 				if (var5.field12056 == -1) {
 					var6.field523 = var5.field10395.method316();
 				} else {
@@ -280,8 +280,8 @@ public class ReceivePlayerPositions {
 		} else if (var4 == 1) {
 			int var7 = arg0.gBit(3);
 			int var8 = arg0.gBit(1);
-			int var9 = var5.field10450[0];
-			int var10 = var5.field10448[0];
+			int var9 = var5.routeWaypointX[0];
+			int var10 = var5.routeWaypointZ[0];
 			if (var8 == 1) {
 				field697[arg1] = MoveSpeed.RUN.serialID;
 				int var11 = arg0.gBit(2);
@@ -323,8 +323,8 @@ public class ReceivePlayerPositions {
 			var5.method19117(var9, var10, field697[arg1]);
 		} else if (var4 == 2) {
 			int var12 = arg0.gBit(4);
-			int var13 = var5.field10450[0];
-			int var14 = var5.field10448[0];
+			int var13 = var5.routeWaypointX[0];
+			int var14 = var5.routeWaypointZ[0];
 			if (var12 == 0) {
 				var13 -= 2;
 				var14 -= 2;
@@ -385,8 +385,8 @@ public class ReceivePlayerPositions {
 				if (var20 > 15) {
 					var20 -= 32;
 				}
-				int var21 = var5.field10450[0] + var19;
-				int var22 = var5.field10448[0] + var20;
+				int var21 = var5.routeWaypointX[0] + var19;
+				int var22 = var5.routeWaypointZ[0] + var20;
 				if (MoveSpeed.INSTANT.index == var17) {
 					var5.method19118(var21, var22);
 				} else {
@@ -406,8 +406,8 @@ public class ReceivePlayerPositions {
 				int var25 = var24 >> 28 & 0x3;
 				int var26 = var24 >> 14 & 0x3FFF;
 				int var27 = var24 & 0x3FFF;
-				int var28 = (var2.x + var5.field10450[0] + var26 & 0x3FFF) - var2.x;
-				int var29 = (var2.z + var5.field10448[0] + var27 & 0x3FFF) - var2.z;
+				int var28 = (var2.x + var5.routeWaypointX[0] + var26 & 0x3FFF) - var2.x;
+				int var29 = (var2.z + var5.routeWaypointZ[0] + var27 & 0x3FFF) - var2.z;
 				if (MoveSpeed.INSTANT.index == var23) {
 					var5.method19118(var28, var29);
 				} else {
@@ -738,10 +738,10 @@ public class ReceivePlayerPositions {
 			arg2.field10431 = arg0.g2_alt1();
 			arg2.field10400 = 1;
 			arg2.field10396 = 0;
-			arg2.field10423 = arg2.field10423 * 262144 + arg2.field10450[0] * 262144;
-			arg2.field10425 = arg2.field10425 * 262144 + arg2.field10448[0] * 262144;
-			arg2.field10457 = arg2.field10457 * 262144 + arg2.field10450[0] * 262144;
-			arg2.field10426 = arg2.field10426 * 262144 + arg2.field10448[0] * 262144;
+			arg2.field10423 = arg2.field10423 * 262144 + arg2.routeWaypointX[0] * 262144;
+			arg2.field10425 = arg2.field10425 * 262144 + arg2.routeWaypointZ[0] * 262144;
+			arg2.field10457 = arg2.field10457 * 262144 + arg2.routeWaypointX[0] * 262144;
+			arg2.field10426 = arg2.field10426 * 262144 + arg2.routeWaypointZ[0] * 262144;
 			arg2.field10419 += arg2.field11717;
 			arg2.field10428 += arg2.field11717;
 		}

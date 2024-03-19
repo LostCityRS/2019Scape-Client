@@ -213,7 +213,7 @@ public class ClientMapLoader extends MapLoader {
 					int var36 = (arg3 >> 3) + var34;
 					if (var35 >= 0 && var35 < this.maxTileX >> 3 && var36 >= 0 && var36 < this.maxTileZ >> 3) {
 						if (var6 != null) {
-							this.field10764.method9999(var35, var36, var6);
+							this.field10764.setEnvironmentMap(var35, var36, var6);
 						}
 						Minimap.method14707(var35, var36, var7);
 					}
@@ -373,7 +373,7 @@ public class ClientMapLoader extends MapLoader {
 				}
 			}
 			if (var11 != null) {
-				this.field10764.method9999(arg3 >> 3, arg4 >> 3, var11);
+				this.field10764.setEnvironmentMap(arg3 >> 3, arg4 >> 3, var11);
 			}
 			Minimap.method14707(arg3 >> 3, arg4 >> 3, var12);
 			if (!var10 && this.field4517 != null && this.field4517[arg2] != null) {

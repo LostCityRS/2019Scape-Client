@@ -332,8 +332,8 @@ public class ClientWorldMap extends WorldMap {
 		method8508();
 		field6806.clearAll();
 		WorldMap.field6805 = null;
-		field6831.method2924();
-		field6832.method2924();
+		field6831.clear();
+		field6832.clear();
 		field7241 = null;
 		field11665 = -1;
 		field11653 = -1;

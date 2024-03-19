@@ -10,6 +10,6 @@ public class VertexDeclaration_Sub1 extends VertexDeclaration {
 	}
 
 	@ObfuscatedName("aiq.m()V")
-	public void method1010() {
+	public void delete() {
 	}
 }

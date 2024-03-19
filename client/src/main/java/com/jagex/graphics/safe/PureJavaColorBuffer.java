@@ -36,6 +36,6 @@ public class PureJavaColorBuffer implements GraphicsDeletable {
 	}
 
 	@ObfuscatedName("bf.m()V")
-	public void method1010() {
+	public void delete() {
 	}
 }

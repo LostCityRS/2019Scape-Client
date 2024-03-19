@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public interface FrameBufferInterface extends EffectInterface {
 
 	@ObfuscatedName("ow.m()V")
-	void method1010();
+	void delete();
 
 	@ObfuscatedName("ow.p()V")
 	void method6215();

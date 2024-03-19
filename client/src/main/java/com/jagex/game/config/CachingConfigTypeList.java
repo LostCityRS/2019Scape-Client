@@ -80,7 +80,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	public void method14910(int arg0) {
 		WeightedCache var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.method2924();
+			this.recentUse.clear();
 			this.recentUse = new WeightedCache(arg0);
 		}
 	}
@@ -89,7 +89,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	public void method14895() {
 		WeightedCache var1 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.method2924();
+			this.recentUse.clear();
 		}
 	}
 

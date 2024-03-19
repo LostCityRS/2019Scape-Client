@@ -89,7 +89,7 @@ public class FloorHardShadows {
 			}
 		} else {
 			int[] var16 = new int[this.field3291 * this.field3286];
-			ByteBuffer var17 = this.field3287.field10071;
+			ByteBuffer var17 = this.field3287.temporaryBuffer;
 			var17.clear();
 			int var18 = 0;
 			for (int var19 = 0; var19 < this.field3291; var19++) {
@@ -126,7 +126,7 @@ public class FloorHardShadows {
 			if (var17.position() != 0) {
 				int var32 = var17.position();
 				IndexBuffer var33 = this.field3287.method15988(var32 / 2);
-				var33.method5738(0, var32, this.field3287.field10046);
+				var33.upload(0, var32, this.field3287.temporaryBufferAddress);
 				int var34 = 0;
 				int var35 = 0;
 				for (int var36 = 0; var36 < this.field3291; var36++) {

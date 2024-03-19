@@ -70,7 +70,7 @@ public class FloorHardShadowsBlock {
 			this.field3284 = Integer.MAX_VALUE;
 			this.field3279 = this.field3271.method16067(false);
 			this.field3279.method5831(var10);
-			ByteBuffer var17 = this.field3271.field10071;
+			ByteBuffer var17 = this.field3271.temporaryBuffer;
 			var17.clear();
 			for (int var18 = 0; var18 < var9; var18++) {
 				int var19 = arg2.field1235 * (var12 + var18) + var11;
@@ -90,7 +90,7 @@ public class FloorHardShadowsBlock {
 					}
 				}
 			}
-			this.field3279.method5738(0, var17.position(), this.field3271.field10046);
+			this.field3279.upload(0, var17.position(), this.field3271.temporaryBufferAddress);
 			this.field3278 = var10 / 3;
 		} else {
 			this.field3278 = 0;
@@ -175,9 +175,9 @@ public class FloorHardShadowsBlock {
 			}
 			if (this.field3280 == null) {
 				this.field3280 = this.field3271.method16204(128, 128, false, this.field3283);
-				this.field3280.method5700(false, false);
+				this.field3280.setWarp(false, false);
 			} else {
-				this.field3280.method5701(0, 0, 128, 128, this.field3283, 0, 128);
+				this.field3280.upload(0, 0, 128, 128, this.field3283, 0, 128);
 			}
 			return;
 		}
@@ -211,9 +211,9 @@ public class FloorHardShadowsBlock {
 		}
 		if (this.field3280 == null) {
 			this.field3280 = this.field3271.method16028(TextureFormat.ALPHA, 128, 128, false, this.field3281);
-			this.field3280.method5700(false, false);
+			this.field3280.setWarp(false, false);
 		} else {
-			this.field3280.method5712(0, 0, 128, 128, this.field3281, TextureFormat.ALPHA, 0, 128);
+			this.field3280.upload(0, 0, 128, 128, this.field3281, TextureFormat.ALPHA, 0, 128);
 		}
 	}
 }

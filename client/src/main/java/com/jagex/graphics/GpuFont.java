@@ -87,8 +87,8 @@ public class GpuFont extends Font {
 		this.field10247 = arg0.method16204(this.field1667.field8571, this.field1667.field8572, false, var5);
 		this.field10247.method5824(this.field1667.field8570 == 1 ? GpuTextureRelated.field3322 : GpuTextureRelated.field3323);
 		this.field10246 = arg0.method16085(false);
-		this.field10246.method5553(20480, 20);
-		ByteBuffer var29 = this.field10244.field10071;
+		this.field10246.allocate(20480, 20);
+		ByteBuffer var29 = this.field10244.temporaryBuffer;
 		var29.clear();
 		this.field10245 = new float[256][4];
 		float var30 = 1.0F / (float) this.field1667.field8571;
@@ -122,7 +122,7 @@ public class GpuFont extends Font {
 			var29.putFloat(this.field10245[var32][2]);
 			var29.putFloat(this.field10245[var32][1]);
 		}
-		this.field10246.method5738(0, var29.position(), this.field10244.field10046);
+		this.field10246.upload(0, var29.position(), this.field10244.temporaryBufferAddress);
 	}
 
 	@ObfuscatedName("afx.s(CIIIZ)V")

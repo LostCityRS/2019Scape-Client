@@ -6,8 +6,8 @@ import deob.ObfuscatedName;
 public interface VertexBuffer extends GpuBuffer, DeletableResource {
 
 	@ObfuscatedName("lr.m()V")
-	void method1010();
+	void delete();
 
 	@ObfuscatedName("lr.e(II)Z")
-	boolean method5553(int arg0, int arg1);
+	boolean allocate(int arg0, int arg1);
 }

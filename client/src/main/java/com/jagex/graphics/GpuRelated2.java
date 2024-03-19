@@ -11,12 +11,12 @@ public class GpuRelated2 extends GraphicsRelated {
 
 	public GpuRelated2(GpuRenderer arg0, int arg1, int arg2, byte[] arg3) {
 		this.field9417 = arg0.method16028(TextureFormat.ALPHA, arg1, arg2, false, arg3);
-		this.field9417.method5700(false, false);
+		this.field9417.setWarp(false, false);
 	}
 
 	public GpuRelated2(GpuRenderer arg0, int arg1, int arg2, int[] arg3) {
 		this.field9417 = arg0.method16204(arg1, arg2, false, arg3);
-		this.field9417.method5700(false, false);
+		this.field9417.setWarp(false, false);
 	}
 
 	@ObfuscatedName("aed.e(Lafc;II[I[I)Laed;")

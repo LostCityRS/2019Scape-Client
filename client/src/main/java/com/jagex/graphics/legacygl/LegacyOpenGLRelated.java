@@ -42,7 +42,7 @@ public class LegacyOpenGLRelated extends LegacyOpenGLTexture {
 	}
 
 	public LegacyOpenGLRelated(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, boolean arg4, int[] arg5, int arg6, int arg7, boolean arg8) {
-		super(arg0, arg1, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg2 * arg3, arg4);
+		super(arg0, arg1, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, arg2 * arg3, arg4);
 		this.field9272 = arg2;
 		this.field9271 = arg3;
 		if (arg8) {
@@ -127,7 +127,7 @@ public class LegacyOpenGLRelated extends LegacyOpenGLTexture {
 			arg7 = arg2;
 		}
 		if (arg8) {
-			int var10 = arg5.field1279;
+			int var10 = arg5.id;
 			int var11 = arg2 * var10;
 			int var12 = arg7 * var10;
 			byte[] var13 = new byte[arg3 * var11];

@@ -199,10 +199,10 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public int field10400;
 
 	@ObfuscatedName("ahm.bw")
-	public int[] field10450;
+	public int[] routeWaypointX;
 
 	@ObfuscatedName("ahm.bo")
-	public int[] field10448;
+	public int[] routeWaypointZ;
 
 	@ObfuscatedName("ahm.bz")
 	public byte[] field10441;
@@ -285,8 +285,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		this.field10462 = -1;
 		this.field10439 = -1;
 		this.field10415 = new PathingEntityVarDomain(this);
-		this.field10450 = new int[arg1];
-		this.field10448 = new int[arg1];
+		this.routeWaypointX = new int[arg1];
+		this.routeWaypointZ = new int[arg1];
 		this.field10441 = new byte[arg1];
 		this.field10459 = new Model[6];
 		this.field10422 = new EntitySpotAnim[5];
@@ -713,7 +713,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		ScaleRotTrans var3 = this.method10536();
 		int var4 = (int) var3.field4298.field4308 >> 9;
 		int var5 = (int) var3.field4298.field4313 >> 9;
-		if (this.field11716 != null && var4 >= 1 && var5 >= 1 && var4 <= Client.world.method7728() - 1 && var5 <= Client.world.method7758() - 1) {
+		if (this.field11716 != null && var4 >= 1 && var5 >= 1 && var4 <= Client.world.getSizeX() - 1 && var5 <= Client.world.getSizeZ() - 1) {
 			Tile var6 = this.field11716.levelTiles[this.field11717][var4][var5];
 			if (var6 != null && var6.groundDecoration != null) {
 				return var6.groundDecoration.field12448 + var2;

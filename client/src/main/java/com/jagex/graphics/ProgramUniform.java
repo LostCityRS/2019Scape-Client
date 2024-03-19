@@ -44,18 +44,18 @@ public abstract class ProgramUniform extends HashMapValue {
 	}
 
 	@ObfuscatedName("aql.m(I)Lht;")
-	public UniformType method19247() {
+	public UniformType getType() {
 		return this.field12211;
 	}
 
 	@ObfuscatedName("aql.k(S)Lht;")
-	public UniformType method19248() {
+	public UniformType getElementType() {
 		return this.field12213;
 	}
 
 	@ObfuscatedName("aql.f(I)I")
-	public int method19256() {
-		if (UniformType.field2441 != this.field12211) {
+	public int getElementCount() {
+		if (UniformType.ARRAY != this.field12211) {
 			throw new OpenGLError(this, this.field12211.toString().toLowerCase());
 		}
 		return this.field12212;
@@ -65,5 +65,5 @@ public abstract class ProgramUniform extends HashMapValue {
 	public abstract boolean method19245(int arg0);
 
 	@ObfuscatedName("aql.w(I)I")
-	public abstract int method19250(int arg0);
+	public abstract int getLocation(int arg0);
 }

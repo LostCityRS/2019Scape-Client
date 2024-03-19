@@ -344,12 +344,12 @@ public class Environment {
 	}
 
 	@ObfuscatedName("xv.z(Lxv;I)Z")
-	public boolean method10071(Environment env) {
+	public boolean equal(Environment env) {
 		return this.sunColour == env.sunColour && this.sunAmbientIntensity == env.sunAmbientIntensity && this.sunDiffuseIntensity == env.sunDiffuseIntensity && this.sunShadowIntensity == env.sunShadowIntensity && this.bloomIntensity == env.bloomIntensity && this.bloomWhitePointSq == env.bloomWhitePointSq && this.bloomThreshold == env.bloomThreshold && this.fogColour == env.fogColour && this.fogDepth == env.fogDepth && this.sampler == env.sampler && this.skybox == env.skybox && this.levelsGamma == env.levelsGamma && this.levelsInputMin == env.levelsInputMin && this.levelsInputMax == env.levelsInputMax && this.levelsOutputMin == env.levelsOutputMin && this.levelsOutputMax == env.levelsOutputMax && this.colourRemappingMap[0] == env.colourRemappingMap[0] && this.colourRemappingMap[1] == env.colourRemappingMap[1] && this.colourRemappingMap[2] == env.colourRemappingMap[2] && this.colourRemappingWeight[0] == env.colourRemappingWeight[0] && this.colourRemappingWeight[1] == env.colourRemappingWeight[1] && this.colourRemappingWeight[2] == env.colourRemappingWeight[2];
 	}
 
 	@ObfuscatedName("xv.p(Lxu;Lyj;I)V")
-	public void method10063(EnvironmentManager manager, EnvironmentOverride override) {
+	public void applyOverride(EnvironmentManager manager, EnvironmentOverride override) {
 		if (Client.preferences.lightingDetail.getValue() == 1 && Client.renderer.getMaxLights() > 0) {
 			if (override.getSunColour() != -1) {
 				this.sunColour = override.getSunColour();

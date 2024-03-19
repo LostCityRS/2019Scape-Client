@@ -69,18 +69,18 @@ public class LevelsFilterEffect extends PostProcessEffect {
 			return false;
 		}
 		try {
-			this.field10649 = this.field10645.method4157("sceneTex");
-			this.field10652 = this.field10645.method4157("paramsGamma");
-			this.field10644 = this.field10645.method4157("paramsRanges");
-			this.field10646 = this.field10645.method4157("pixelOffset");
-			this.field10648 = this.field10645.method4157("PosAndTexCoords");
-			this.field10641 = this.field10645.method4227("techAdjust");
+			this.field10649 = this.field10645.getUniform("sceneTex");
+			this.field10652 = this.field10645.getUniform("paramsGamma");
+			this.field10644 = this.field10645.getUniform("paramsRanges");
+			this.field10646 = this.field10645.getUniform("pixelOffset");
+			this.field10648 = this.field10645.getUniform("PosAndTexCoords");
+			this.field10641 = this.field10645.getProgram("techAdjust");
 		} catch (UniformNotFoundException var3) {
 			return false;
 		} catch (ProgramNotFoundException var4) {
 			return false;
 		}
-		if (this.field10641.method4083()) {
+		if (this.field10641.compile()) {
 			this.field10640 = true;
 			return true;
 		} else {
@@ -113,8 +113,8 @@ public class LevelsFilterEffect extends PostProcessEffect {
 		int var14 = (int) var9;
 		int var15 = arg5 ? this.field3242.getSurface().getWidth() : var13;
 		int var16 = arg5 ? this.field3242.getSurface().getHeight() : var14;
-		this.field10645.method4162(this.field10641);
-		this.field10645.method4244();
+		this.field10645.setCurrentProgram(this.field10641);
+		this.field10645.enable();
 		float var17 = (float) var13 / var8;
 		float var18 = (float) var14 / var9;
 		float var19 = (float) var15 / var8;
@@ -123,11 +123,11 @@ public class LevelsFilterEffect extends PostProcessEffect {
 		var12[5] = (var12[5] - 1.0F) * var18 + 1.0F;
 		var12[10] *= var19;
 		var12[7] *= var20;
-		this.field10645.method4172(this.field10648, var12);
-		this.field10645.method4252(this.field10649, 0, arg2);
-		this.field10645.method4268(this.field10652, field10647);
-		this.field10645.method4169(this.field10644, field10642, field10643, field10650, field10651);
-		this.field10645.method4169(this.field10646, 0.0F, 0.0F, 0.0F, 0.0F);
+		this.field10645.setUniform(this.field10648, var12);
+		this.field10645.setUniform(this.field10649, 0, arg2);
+		this.field10645.setUniform(this.field10652, field10647);
+		this.field10645.setUniform(this.field10644, field10642, field10643, field10650, field10651);
+		this.field10645.setUniform(this.field10646, 0.0F, 0.0F, 0.0F, 0.0F);
 		this.field3242.method2164(0, 0, var13, var14);
 	}
 

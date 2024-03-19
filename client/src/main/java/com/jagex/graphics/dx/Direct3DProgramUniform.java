@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public final class Direct3DProgramUniform extends ProgramUniform {
 
 	@ObfuscatedName("atg.d")
-	public Direct3DProgramManager field12533;
+	public Direct3DProgramManager programManager;
 
 	@ObfuscatedName("atg.c")
 	public int[] field12532 = null;
@@ -18,7 +18,7 @@ public final class Direct3DProgramUniform extends ProgramUniform {
 
 	public Direct3DProgramUniform(Direct3DProgramManager arg0, ProgramUniformData arg1) {
 		super(arg1);
-		this.field12533 = arg0;
+		this.programManager = arg0;
 		this.field12532 = arg1.field2591;
 		this.field12534 = arg1.field2593;
 	}
@@ -30,16 +30,16 @@ public final class Direct3DProgramUniform extends ProgramUniform {
 
 	@ObfuscatedName("atg.a()I")
 	public final int method19676() {
-		return this.field12532[this.field12533.method4212()];
+		return this.field12532[this.programManager.getCurrentProgramIndex()];
 	}
 
 	@ObfuscatedName("atg.g()I")
 	public final int method19677() {
-		return this.field12534[this.field12533.method4212()];
+		return this.field12534[this.programManager.getCurrentProgramIndex()];
 	}
 
 	@ObfuscatedName("atg.w(I)I")
-	public final int method19250(int arg0) {
+	public final int getLocation(int arg0) {
 		int var2 = this.field12532[arg0];
 		int var3 = this.field12534[arg0];
 		if (var2 == -1) {

@@ -305,8 +305,8 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.hp(Lzi;II)V")
 	public final void method19168(CompassPoint arg0, int arg1) {
-		int var3 = this.field10450[0];
-		int var4 = this.field10448[0];
+		int var3 = this.routeWaypointX[0];
+		int var4 = this.routeWaypointZ[0];
 		switch(arg0.index) {
 			case 0:
 				var4--;
@@ -349,16 +349,16 @@ public class NpcEntity extends PathingEntity {
 				}
 			}
 		}
-		if (this.field10400 < this.field10450.length - 1) {
+		if (this.field10400 < this.routeWaypointX.length - 1) {
 			this.field10400++;
 		}
 		for (int var7 = this.field10400; var7 > 0; var7--) {
-			this.field10450[var7] = this.field10450[var7 - 1];
-			this.field10448[var7] = this.field10448[var7 - 1];
+			this.routeWaypointX[var7] = this.routeWaypointX[var7 - 1];
+			this.routeWaypointZ[var7] = this.routeWaypointZ[var7 - 1];
 			this.field10441[var7] = this.field10441[var7 - 1];
 		}
-		this.field10450[0] = var3;
-		this.field10448[0] = var4;
+		this.routeWaypointX[0] = var3;
+		this.routeWaypointZ[0] = var4;
 		this.field10441[0] = (byte) arg1;
 	}
 
@@ -382,19 +382,19 @@ public class NpcEntity extends PathingEntity {
 			}
 		}
 		if (!arg3) {
-			int var8 = arg1 - this.field10450[0];
-			int var9 = arg2 - this.field10448[0];
+			int var8 = arg1 - this.routeWaypointX[0];
+			int var9 = arg2 - this.routeWaypointZ[0];
 			if (var8 >= -8 && var8 <= 8 && var9 >= -8 && var9 <= 8) {
-				if (this.field10400 < this.field10450.length - 1) {
+				if (this.field10400 < this.routeWaypointX.length - 1) {
 					this.field10400++;
 				}
 				for (int var10 = this.field10400; var10 > 0; var10--) {
-					this.field10450[var10] = this.field10450[var10 - 1];
-					this.field10448[var10] = this.field10448[var10 - 1];
+					this.routeWaypointX[var10] = this.routeWaypointX[var10 - 1];
+					this.routeWaypointZ[var10] = this.routeWaypointZ[var10 - 1];
 					this.field10441[var10] = this.field10441[var10 - 1];
 				}
-				this.field10450[0] = arg1;
-				this.field10448[0] = arg2;
+				this.routeWaypointX[0] = arg1;
+				this.routeWaypointZ[0] = arg2;
 				this.field10441[0] = MoveSpeed.WALK.serialID;
 				return;
 			}
@@ -402,11 +402,11 @@ public class NpcEntity extends PathingEntity {
 		this.field10400 = 0;
 		this.field10396 = 0;
 		this.field10453 = 0;
-		this.field10450[0] = arg1;
-		this.field10448[0] = arg2;
+		this.routeWaypointX[0] = arg1;
+		this.routeWaypointZ[0] = arg2;
 		Vector3 var11 = Vector3.method6484(this.method10536().field4298);
-		var11.field4308 = (this.field10450[0] << 9) + (arg4 << 8);
-		var11.field4313 = (this.field10448[0] << 9) + (arg4 << 8);
+		var11.field4308 = (this.routeWaypointX[0] << 9) + (arg4 << 8);
+		var11.field4313 = (this.routeWaypointZ[0] << 9) + (arg4 << 8);
 		this.method10531(var11);
 		var11.method6486();
 		if (this.field10393 != null) {

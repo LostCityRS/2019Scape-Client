@@ -9,7 +9,7 @@ public class TextureFormat {
 	public static final TextureFormat field1271 = new TextureFormat(2, 3);
 
 	@ObfuscatedName("ck.n")
-	public static final TextureFormat field1273 = new TextureFormat(4, 4);
+	public static final TextureFormat RGBA = new TextureFormat(4, 4);
 
 	@ObfuscatedName("ck.m")
 	public static final TextureFormat ALPHA = new TextureFormat(6, 1);
@@ -30,19 +30,19 @@ public class TextureFormat {
 	public static final TextureFormat field1269 = new TextureFormat(5, 4);
 
 	@ObfuscatedName("ck.z")
-	public static final TextureFormat field1276 = new TextureFormat(1, 1);
+	public static final TextureFormat COMPRESSED_RGBA_S3TC_DXT1 = new TextureFormat(1, 1);
 
 	@ObfuscatedName("ck.p")
-	public static final TextureFormat field1277 = new TextureFormat(8, 1);
+	public static final TextureFormat COMPRESSED_RGBA_S3TC_DXT5 = new TextureFormat(8, 1);
 
 	@ObfuscatedName("ck.d")
 	public final int field1278;
 
 	@ObfuscatedName("ck.c")
-	public final int field1279;
+	public final int id;
 
 	public TextureFormat(int arg0, int arg1) {
 		this.field1278 = arg0;
-		this.field1279 = arg1;
+		this.id = arg1;
 	}
 }

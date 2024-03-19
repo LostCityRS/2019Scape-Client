@@ -12,7 +12,7 @@ public class UniformType {
 	public static final UniformType field2440 = new UniformType(94);
 
 	@ObfuscatedName("ht.m")
-	public static final UniformType field2441 = new UniformType(97);
+	public static final UniformType ARRAY = new UniformType(97);
 
 	@ObfuscatedName("ht.k")
 	public static final UniformType field2442 = new UniformType(70);
@@ -78,16 +78,16 @@ public class UniformType {
 	public static final UniformType field2448 = new UniformType(61);
 
 	@ObfuscatedName("ht.j")
-	public static final UniformType field2525 = new UniformType(89);
+	public static final UniformType FLOAT_1 = new UniformType(89);
 
 	@ObfuscatedName("ht.t")
-	public static final UniformType field2495 = new UniformType(20);
+	public static final UniformType FLOAT_2 = new UniformType(20);
 
 	@ObfuscatedName("ht.ae")
-	public static final UniformType field2540 = new UniformType(81);
+	public static final UniformType FLOAT_3 = new UniformType(81);
 
 	@ObfuscatedName("ht.ag")
-	public static final UniformType field2466 = new UniformType(104);
+	public static final UniformType FLOAT_4 = new UniformType(104);
 
 	@ObfuscatedName("ht.ah")
 	public static final UniformType field2537 = new UniformType(112);
@@ -129,13 +129,13 @@ public class UniformType {
 	public static final UniformType field2479 = new UniformType(96);
 
 	@ObfuscatedName("ht.ax")
-	public static final UniformType field2480 = new UniformType(55);
+	public static final UniformType MATRIX_4X2 = new UniformType(55);
 
 	@ObfuscatedName("ht.av")
 	public static final UniformType field2518 = new UniformType(87);
 
 	@ObfuscatedName("ht.ao")
-	public static final UniformType field2482 = new UniformType(17);
+	public static final UniformType MATRIX_4X4 = new UniformType(17);
 
 	@ObfuscatedName("ht.aj")
 	public static final UniformType field2483 = new UniformType(39);
@@ -381,14 +381,14 @@ public class UniformType {
 	public static final UniformType field2563 = new UniformType(113);
 
 	@ObfuscatedName("ht.dh")
-	public final int field2512;
+	public final int ordinal;
 
 	@ObfuscatedName("nu.e(I)[Lht;")
 	public static UniformType[] method6075() {
-		return new UniformType[] { field2464, field2440, field2441, field2442, field2443, field2444, field2445, field2446, field2447, field2500, field2449, field2450, field2451, field2458, field2453, field2522, field2455, field2532, field2457, field2452, field2507, field2460, field2461, field2448, field2525, field2495, field2540, field2466, field2537, field2468, field2515, field2488, field2471, field2469, field2473, field2474, field2475, field2476, field2477, field2478, field2479, field2480, field2518, field2482, field2483, field2508, field2539, field2486, field2487, field2484, field2489, field2490, field2544, field2492, field2493, field2545, field2459, field2496, field2497, field2498, field2499, field2503, field2501, field2502, field2542, field2504, field2505, field2506, field2523, field2467, field2509, field2510, field2494, field2538, field2513, field2514, field2511, field2516, field2517, field2454, field2519, field2520, field2521, field2465, field2472, field2524, field2463, field2526, field2527, field2528, field2481, field2530, field2531, field2548, field2533, field2534, field2535, field2541, field2439, field2562, field2462, field2456, field2491, field2529, field2543, field2536, field2470, field2546, field2547, field2485, field2549, field2550, field2551, field2552, field2553, field2554, field2555, field2556, field2557, field2558, field2559, field2560, field2561, field2564, field2563 };
+		return new UniformType[] { field2464, field2440, ARRAY, field2442, field2443, field2444, field2445, field2446, field2447, field2500, field2449, field2450, field2451, field2458, field2453, field2522, field2455, field2532, field2457, field2452, field2507, field2460, field2461, field2448, FLOAT_1, FLOAT_2, FLOAT_3, FLOAT_4, field2537, field2468, field2515, field2488, field2471, field2469, field2473, field2474, field2475, field2476, field2477, field2478, field2479, MATRIX_4X2, field2518, MATRIX_4X4, field2483, field2508, field2539, field2486, field2487, field2484, field2489, field2490, field2544, field2492, field2493, field2545, field2459, field2496, field2497, field2498, field2499, field2503, field2501, field2502, field2542, field2504, field2505, field2506, field2523, field2467, field2509, field2510, field2494, field2538, field2513, field2514, field2511, field2516, field2517, field2454, field2519, field2520, field2521, field2465, field2472, field2524, field2463, field2526, field2527, field2528, field2481, field2530, field2531, field2548, field2533, field2534, field2535, field2541, field2439, field2562, field2462, field2456, field2491, field2529, field2543, field2536, field2470, field2546, field2547, field2485, field2549, field2550, field2551, field2552, field2553, field2554, field2555, field2556, field2557, field2558, field2559, field2560, field2561, field2564, field2563 };
 	}
 
 	public UniformType(int arg0) {
-		this.field2512 = arg0;
+		this.ordinal = arg0;
 	}
 }

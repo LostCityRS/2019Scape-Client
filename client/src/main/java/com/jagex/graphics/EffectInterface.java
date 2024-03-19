@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface EffectInterface extends DeletableResource2 {
 
 	@ObfuscatedName("dw.m()V")
-	void method1010();
+	void delete();
 }

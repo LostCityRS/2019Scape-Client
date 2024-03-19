@@ -58,7 +58,7 @@ public class LegacyOpenGLSurface extends Surface {
 	}
 
 	@ObfuscatedName("apt.i(II)V")
-	public void method15453(int arg0, int arg1) {
+	public void onResize(int arg0, int arg1) {
 		if (this.field11932) {
 			throw new IllegalStateException();
 		}

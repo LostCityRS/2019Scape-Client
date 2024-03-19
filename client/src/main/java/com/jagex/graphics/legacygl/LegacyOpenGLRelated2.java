@@ -39,7 +39,7 @@ public class LegacyOpenGLRelated2 {
 			LegacyOpenGLRelated var5;
 			if (arg0.field1336 && this.field1187.isBloomEnabled()) {
 				float[] var4 = this.field1186.method1984(TextureRelated2.field7586, arg0.diffuseTexture, arg0.field1302, 0.7F, arg1, arg1, false);
-				var5 = new LegacyOpenGLRelated(this.field1187, 3553, TextureFormat.field1273, DataType.FLOAT_16, arg1, arg1, arg0.field1332 != 0, var4, TextureFormat.field1273);
+				var5 = new LegacyOpenGLRelated(this.field1187, 3553, TextureFormat.RGBA, DataType.FLOAT_16, arg1, arg1, arg0.field1332 != 0, var4, TextureFormat.RGBA);
 			} else {
 				int[] var6;
 				if (MaterialAlphaMode.NONE == arg0.alphaMode && Material.method261(arg0.effect)) {
@@ -78,6 +78,6 @@ public class LegacyOpenGLRelated2 {
 
 	@ObfuscatedName("ca.f()V")
 	public void method1399() {
-		this.field1185.method2924();
+		this.field1185.clear();
 	}
 }

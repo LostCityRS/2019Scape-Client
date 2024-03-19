@@ -27,12 +27,12 @@ public class Direct3DVolumeTexture extends Direct3DBaseTexture implements Volume
 		this.field10613 = arg2;
 		this.field10614 = arg3;
 		this.field10615 = arg4;
-		this.field4217 = IDirect3DDevice.CreateVolumeTexture(this.field4219.device, arg2, arg3, arg4, 1, 0, Direct3DRenderer.method19011(arg1, this.field4218), 1);
-		this.field4219.method15961(this.field10614 * this.field10613 * arg1.field1279);
-		ByteBuffer var8 = this.field4219.field10071;
+		this.field4217 = IDirect3DDevice.CreateVolumeTexture(this.renderer.device, arg2, arg3, arg4, 1, 0, Direct3DRenderer.method19011(arg1, this.field4218), 1);
+		this.renderer.ensureTemporaryBufferCapacity(this.field10614 * this.field10613 * arg1.id);
+		ByteBuffer var8 = this.renderer.temporaryBuffer;
 		var8.clear();
 		var8.put(arg6);
-		IDirect3DVolumeTexture.Upload(this.field4217, 0, 0, 0, 0, this.field10613, this.field10614, this.field10615, arg1.field1279 * this.field10613, 0, this.field4219.field10046);
+		IDirect3DVolumeTexture.Upload(this.field4217, 0, 0, 0, 0, this.field10613, this.field10614, this.field10615, arg1.id * this.field10613, 0, this.renderer.temporaryBufferAddress);
 	}
 
 	@ObfuscatedName("ahy.bl()J")
@@ -42,7 +42,7 @@ public class Direct3DVolumeTexture extends Direct3DBaseTexture implements Volume
 
 	@ObfuscatedName("ahy.aj()V")
 	public void method5823() {
-		this.field4219.method19003(this);
+		this.renderer.method19003(this);
 	}
 
 	@ObfuscatedName("ahy.ay(Llt;)V")
@@ -51,7 +51,7 @@ public class Direct3DVolumeTexture extends Direct3DBaseTexture implements Volume
 	}
 
 	@ObfuscatedName("ahy.m()V")
-	public void method1010() {
-		super.method1010();
+	public void delete() {
+		super.delete();
 	}
 }

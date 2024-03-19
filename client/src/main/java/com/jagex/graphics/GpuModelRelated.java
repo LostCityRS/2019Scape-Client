@@ -29,7 +29,7 @@ public class GpuModelRelated {
 	@ObfuscatedName("lb.n()V")
 	public void method5551() {
 		if (this.field3237 != null) {
-			this.field3237.method1010();
+			this.field3237.delete();
 		}
 		this.field3238 = false;
 	}

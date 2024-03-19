@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface GraphicsDeletable extends DeletableResource2 {
 
 	@ObfuscatedName("dp.m()V")
-	void method1010();
+	void delete();
 }

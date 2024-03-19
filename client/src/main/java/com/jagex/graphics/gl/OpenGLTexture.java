@@ -34,12 +34,12 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 			this.field10673 = (float) arg3 / (float) this.field10671;
 			this.field10674 = (float) arg4 / (float) this.field10672;
 		}
-		this.field4980.method16092(this);
+		this.field4980.setTexture(this);
 		OpenGL.glTexImage2Dub(this.field4979, 0, OpenGLRenderer.method19077(this.field4973, this.field4977), arg3, arg4, 0, OpenGLRenderer.method19085(this.field4973), OpenGLRenderer.method19076(this.field4977), null, 0);
 	}
 
 	public OpenGLTexture(OpenGLRenderer arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
-		super(arg0, 3553, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg1 * arg2, arg3);
+		super(arg0, 3553, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, arg1 * arg2, arg3);
 		if (this.field4980.field12022) {
 			this.field10671 = arg1;
 			this.field10672 = arg2;
@@ -56,7 +56,7 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 				arg6 = this.field10671;
 			}
 		}
-		this.field4980.method16092(this);
+		this.field4980.setTexture(this);
 		if (arg3 && arg6 == 0 && arg5 == 0) {
 			this.method7638(this.field4979, arg1, arg2, arg4);
 		} else {
@@ -79,20 +79,20 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 			this.field10673 = (float) arg2 / (float) this.field10671;
 			this.field10674 = (float) arg3 / (float) this.field10672;
 			if (this.field10671 != arg2 || this.field10672 != arg3) {
-				arg5 = this.field4980.method2256(arg2, arg3, this.field10671, this.field10672, arg5, arg6, arg7, arg1.field1279);
+				arg5 = this.field4980.method2256(arg2, arg3, this.field10671, this.field10672, arg5, arg6, arg7, arg1.id);
 				arg6 = 0;
 				arg7 = this.field10671;
 			}
 		}
-		this.field4980.method16092(this);
+		this.field4980.setTexture(this);
 		OpenGL.glPixelStorei(3317, 1);
 		if (arg4 && arg7 == 0 && arg6 == 0) {
 			this.method7634(this.field4979, arg2, arg3, arg5);
 		} else {
 			OpenGL.glPixelStorei(3314, arg7);
-			if (TextureFormat.field1276 == this.field4973) {
+			if (TextureFormat.COMPRESSED_RGBA_S3TC_DXT1 == this.field4973) {
 				OpenGL.glCompressedTexImage2Dub(this.field4979, 0, 33777, arg2, arg3, 0, arg2 * arg3 / 2, arg5, arg6);
-			} else if (TextureFormat.field1277 == this.field4973) {
+			} else if (TextureFormat.COMPRESSED_RGBA_S3TC_DXT5 == this.field4973) {
 				OpenGL.glCompressedTexImage2Dub(this.field4979, 0, 33779, arg2, arg3, 0, arg2 * arg3, arg5, arg6);
 			} else {
 				OpenGL.glTexImage2Dub(this.field4979, 0, OpenGLRenderer.method19077(this.field4973, this.field4977), arg2, arg3, 0, OpenGLRenderer.method19085(this.field4973), 5121, arg5, arg6);
@@ -115,12 +115,12 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 			this.field10673 = (float) arg2 / (float) this.field10671;
 			this.field10674 = (float) arg3 / (float) this.field10672;
 			if (this.field10671 != arg2 || this.field10672 != arg3) {
-				arg5 = this.field4980.method2230(arg2, arg3, this.field10671, this.field10672, arg5, arg6, arg7, arg1.field1279);
+				arg5 = this.field4980.method2230(arg2, arg3, this.field10671, this.field10672, arg5, arg6, arg7, arg1.id);
 				arg6 = 0;
 				arg7 = this.field10671;
 			}
 		}
-		this.field4980.method16092(this);
+		this.field4980.setTexture(this);
 		if (arg4 && arg7 == 0 && arg6 == 0) {
 			this.method7635(this.field4979, arg2, arg3, arg5);
 		} else {
@@ -131,22 +131,22 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 	}
 
 	@ObfuscatedName("aig.e()I")
-	public int method5718() {
+	public int getWidth() {
 		return this.field10671;
 	}
 
 	@ObfuscatedName("aig.n()I")
-	public int method5696() {
+	public int getHeight() {
 		return this.field10672;
 	}
 
 	@ObfuscatedName("aig.k(F)F")
-	public float method5697(float arg0) {
+	public float getU(float arg0) {
 		return arg0 / (float) this.field10671;
 	}
 
 	@ObfuscatedName("aig.f(F)F")
-	public float method5698(float arg0) {
+	public float getV(float arg0) {
 		return arg0 / (float) this.field10672;
 	}
 
@@ -166,23 +166,23 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 	}
 
 	@ObfuscatedName("aig.l(ZZ)V")
-	public void method5700(boolean arg0, boolean arg1) {
-		this.field4980.method16092(this);
+	public void setWarp(boolean arg0, boolean arg1) {
+		this.field4980.setTexture(this);
 		OpenGL.glTexParameteri(this.field4979, 10242, arg0 ? 10497 : 33071);
 		OpenGL.glTexParameteri(this.field4979, 10243, arg1 ? 10497 : 33071);
 	}
 
 	@ObfuscatedName("aig.z(IIII[III)V")
-	public void method5701(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5, int arg6) {
-		this.field4980.method16092(this);
+	public void upload(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5, int arg6) {
+		this.field4980.setTexture(this);
 		OpenGL.glPixelStorei(3314, arg6);
 		OpenGL.glTexSubImage2Di(this.field4979, 0, arg0, arg1, arg2, arg3, 32993, this.field4980.field12027, arg4, arg5);
 		OpenGL.glPixelStorei(3314, 0);
 	}
 
 	@ObfuscatedName("aig.p(IIII[BLck;II)V")
-	public void method5712(int arg0, int arg1, int arg2, int arg3, byte[] arg4, TextureFormat arg5, int arg6, int arg7) {
-		this.field4980.method16092(this);
+	public void upload(int arg0, int arg1, int arg2, int arg3, byte[] arg4, TextureFormat arg5, int arg6, int arg7) {
+		this.field4980.setTexture(this);
 		OpenGL.glPixelStorei(3317, 1);
 		OpenGL.glPixelStorei(3314, arg7);
 		OpenGL.glTexSubImage2Dub(this.field4979, 0, arg0, arg1, arg2, arg3, OpenGLRenderer.method19085(arg5), 5121, arg4, arg6);
@@ -191,14 +191,14 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 	}
 
 	@ObfuscatedName("aig.d(IIII[II)V")
-	public void method5703(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5) {
-		this.method5704(arg0, arg1, arg2, arg3, arg4, null, arg5);
+	public void download(int arg0, int arg1, int arg2, int arg3, int[] arg4, int arg5) {
+		this.download(arg0, arg1, arg2, arg3, arg4, null, arg5);
 	}
 
 	@ObfuscatedName("aig.c(IIII[I[II)V")
-	public void method5704(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6) {
+	public void download(int arg0, int arg1, int arg2, int arg3, int[] arg4, int[] arg5, int arg6) {
 		int[] var8 = arg5 == null ? new int[this.field10672 * this.field10671] : arg5;
-		this.field4980.method16092(this);
+		this.field4980.setTexture(this);
 		OpenGL.glGetTexImagei(this.field4979, 0, 32993, 5121, var8, 0);
 		for (int var9 = 0; var9 < arg3; var9++) {
 			System.arraycopy(var8, this.field10671 * var9, arg4, arg2 * var9 + arg6, arg2);
@@ -206,8 +206,8 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 	}
 
 	@ObfuscatedName("aig.r(IIIIII)V")
-	public void method5719(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		this.field4980.method16092(this);
+	public void upload(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		this.field4980.setTexture(this);
 		RenderTarget var7 = this.field4980.getRenderTarget();
 		if (var7 != null) {
 			int var8 = var7.getHeight() - (arg3 + arg5);
@@ -237,7 +237,7 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 	}
 
 	@ObfuscatedName("aig.m()V")
-	public void method1010() {
-		super.method1010();
+	public void delete() {
+		super.delete();
 	}
 }

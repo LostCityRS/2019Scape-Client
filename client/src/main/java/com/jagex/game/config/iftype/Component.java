@@ -1231,15 +1231,15 @@ public class Component {
 	@ObfuscatedName("ack.q(IB)V")
 	public static void method14950(int arg0) {
 		field11802 = arg0;
-		field2297.method2924();
+		field2297.clear();
 	}
 
 	@ObfuscatedName("lv.x(I)V")
 	public static void method5403() {
-		field2175.method2924();
-		field2297.method2924();
-		field2176.method2924();
-		field2177.method2924();
+		field2175.clear();
+		field2297.clear();
+		field2176.clear();
+		field2177.clear();
 	}
 
 	@ObfuscatedName("sp.b(II)V")

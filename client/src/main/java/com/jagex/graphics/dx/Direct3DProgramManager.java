@@ -22,24 +22,24 @@ public final class Direct3DProgramManager extends Shader {
 	}
 
 	@ObfuscatedName("agc.f(Lafc;Lhn;)Lhi;")
-	public Program method4156(GpuRenderer arg0, ProgramData arg1) {
+	public Program createProgram(GpuRenderer arg0, ProgramData arg1) {
 		return new Direct3DProgram((Direct3DRenderer) arg0, this, arg1);
 	}
 
 	@ObfuscatedName("agc.d(Lhi;)Z")
-	public boolean method4162(Program arg0) {
+	public boolean setCurrentProgram(Program arg0) {
 		if (this.field10389 == arg0) {
 			return true;
-		} else if (arg0.method4083()) {
+		} else if (arg0.compile()) {
 			this.field10389 = (Direct3DProgram) arg0;
-			this.field2573 = this.method4200(arg0);
-			if (this.field2573 == -1) {
+			this.currentProgramIndex = this.getProgramIndex(arg0);
+			if (this.currentProgramIndex == -1) {
 				throw new IllegalArgumentException();
 			}
 			if (this.field10387) {
 				this.field10388.method19032(this.field10389.field10367);
 				this.field10388.method18998(this.field10389.field10360);
-				this.field10388.field11972 = this.field10389;
+				this.field10388.program = this.field10389;
 			}
 			return true;
 		} else {
@@ -53,13 +53,13 @@ public final class Direct3DProgramManager extends Shader {
 	}
 
 	@ObfuscatedName("agc.e()V")
-	public void method4244() {
+	public void enable() {
 		if (this.field10389 == null) {
 			throw new ProgramManagerException();
 		}
 		this.field10388.method19032(this.field10389.field10367);
 		this.field10388.method18998(this.field10389.field10360);
-		this.field10388.field11972 = this.field10389;
+		this.field10388.program = this.field10389;
 		this.field10387 = true;
 	}
 
@@ -68,15 +68,15 @@ public final class Direct3DProgramManager extends Shader {
 		this.field10388.method19032(0L);
 		this.field10388.method18998(0L);
 		this.field10387 = false;
-		this.field10388.field11972 = null;
-		this.field10388.method16038(1);
-		this.field10388.method16092(null);
-		this.field10388.method16038(0);
-		this.field10388.method16092(null);
+		this.field10388.program = null;
+		this.field10388.setActiveTexture(1);
+		this.field10388.setTexture(null);
+		this.field10388.setActiveTexture(0);
+		this.field10388.setTexture(null);
 	}
 
 	@ObfuscatedName("agc.m()Z")
 	public boolean method4184() {
-		return this.field10388.field11972 == this.field10389;
+		return this.field10388.program == this.field10389;
 	}
 }

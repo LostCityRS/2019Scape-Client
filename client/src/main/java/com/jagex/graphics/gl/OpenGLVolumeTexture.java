@@ -24,7 +24,7 @@ public class OpenGLVolumeTexture extends OpenGLBaseTexture implements VolumeText
 		this.field10616 = arg2;
 		this.field10617 = arg3;
 		this.field10618 = arg4;
-		this.field4980.method16092(this);
+		this.field4980.setTexture(this);
 		OpenGL.glPixelStorei(3317, 1);
 		OpenGL.glTexImage3Dub(this.field4979, 0, OpenGLRenderer.method19077(this.field4973, this.field4977), this.field10616, this.field10617, this.field10618, 0, OpenGLRenderer.method19085(this.field4973), 5121, arg6, 0);
 		OpenGL.glPixelStorei(3317, 4);
@@ -44,7 +44,7 @@ public class OpenGLVolumeTexture extends OpenGLBaseTexture implements VolumeText
 	}
 
 	@ObfuscatedName("air.m()V")
-	public void method1010() {
-		super.method1010();
+	public void delete() {
+		super.delete();
 	}
 }

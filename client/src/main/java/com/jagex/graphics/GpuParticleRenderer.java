@@ -60,13 +60,13 @@ public class GpuParticleRenderer {
 	public static float field3325;
 
 	public GpuParticleRenderer(GpuRenderer arg0) {
-		this.field3326 = arg0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3311, VertexDeclarationElementComponent.field3300 }), new VertexDeclarationElement(VertexDeclarationElementComponent.field3301) });
+		this.field3326 = arg0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR, VertexDeclarationElementComponent.TEX_COORD_2 }), new VertexDeclarationElement(VertexDeclarationElementComponent.NORMAL) });
 		this.field3333 = arg0.method16085(true);
 		this.field3329 = arg0.method16085(false);
-		this.field3329.method5553(393168, 12);
+		this.field3329.allocate(393168, 12);
 		this.field3327 = arg0.method16067(false);
 		this.field3327.method5831(49146);
-		ByteBuffer var2 = arg0.field10071;
+		ByteBuffer var2 = arg0.temporaryBuffer;
 		var2.clear();
 		for (int var3 = 0; var3 < 8191; var3++) {
 			int var4 = var3 * 4;
@@ -77,7 +77,7 @@ public class GpuParticleRenderer {
 			var2.putShort((short) (var4 + 3));
 			var2.putShort((short) var4);
 		}
-		this.field3327.method5738(0, var2.position(), arg0.field10046);
+		this.field3327.upload(0, var2.position(), arg0.temporaryBufferAddress);
 		var2.clear();
 		for (int var5 = 0; var5 < 8191; var5++) {
 			var2.putFloat(0.0F);
@@ -93,17 +93,17 @@ public class GpuParticleRenderer {
 			var2.putFloat(-1.0F);
 			var2.putFloat(0.0F);
 		}
-		this.field3329.method5738(0, var2.position(), arg0.field10046);
+		this.field3329.upload(0, var2.position(), arg0.temporaryBufferAddress);
 	}
 
 	@ObfuscatedName("ld.e(Lafc;)V")
 	public void method5755(GpuRenderer arg0) {
-		this.field3333.method5553(786336, 24);
+		this.field3333.allocate(786336, 24);
 	}
 
 	@ObfuscatedName("ld.n()V")
 	public void method5756() {
-		this.field3333.method1010();
+		this.field3333.delete();
 	}
 
 	@ObfuscatedName("ld.m(Lafc;Ldm;)V")
@@ -250,7 +250,7 @@ public class GpuParticleRenderer {
 		float[] var21 = new float[3];
 		float[] var22 = new float[3];
 		arg0.field10066.method6726(arg0.field10035);
-		ByteBuffer var23 = arg0.field10071;
+		ByteBuffer var23 = arg0.temporaryBuffer;
 		var23.clear();
 		for (int var24 = arg1 - 1; var24 >= 0; var24--) {
 			int var25 = this.field3324[var24] > 64 ? 64 : this.field3324[var24];
@@ -454,7 +454,7 @@ public class GpuParticleRenderer {
 				}
 			}
 		}
-		this.field3333.method5738(0, var23.position(), arg0.field10046);
+		this.field3333.upload(0, var23.position(), arg0.temporaryBufferAddress);
 		arg0.method16120(0, this.field3333);
 		arg0.method16120(1, this.field3329);
 		arg0.method16177(this.field3326);

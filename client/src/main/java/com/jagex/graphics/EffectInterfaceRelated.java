@@ -49,7 +49,7 @@ public class EffectInterfaceRelated implements FrameBufferInterface {
 	}
 
 	@ObfuscatedName("oy.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field4237 != 0L) {
 			IUnknown.Release(this.field4237);
 			this.field4237 = 0L;

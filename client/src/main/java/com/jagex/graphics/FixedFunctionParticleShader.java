@@ -35,8 +35,8 @@ public final class FixedFunctionParticleShader extends ParticleShader {
 
 	@ObfuscatedName("ahf.p()V")
 	public void method16626() {
-		this.field2986.method16038(0);
-		this.field2986.method16092(this.field2991);
+		this.field2986.setActiveTexture(0);
+		this.field2986.setTexture(this.field2991);
 		this.field2986.method16041(0, TextureCombiner.field3365);
 		this.field2986.method16042(0, TextureCombiner.field3365);
 		this.field2986.method16115(TextureCombineMode.field3395, TextureCombineMode.field3395);

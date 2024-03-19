@@ -11,212 +11,219 @@ import deob.ObfuscatedName;
 public abstract class Shader {
 
 	@ObfuscatedName("ho.e")
-	public String field2570;
+	public String name;
 
 	@ObfuscatedName("ho.n")
-	public Program[] field2568;
+	public Program[] programs;
 
 	@ObfuscatedName("ho.m")
-	public HashMap field2574;
+	public HashMap uniforms;
 
 	@ObfuscatedName("ho.k")
-	public HashMap field2569;
+	public HashMap uniforms2;
 
 	@ObfuscatedName("ho.f")
-	public int field2567;
+	public int uniformsCount;
 
 	@ObfuscatedName("ho.w")
-	public int field2572;
+	public int uniforms2Count;
 
 	@ObfuscatedName("ho.l")
-	public int field2573 = -1;
+	public int currentProgramIndex = -1;
 
 	@ObfuscatedName("ho.u")
 	public static final HashMapKey field2571 = new ShaderRelated();
 
-	public Shader(GpuRenderer arg0, ShaderData arg1) {
-		this.field2570 = arg1.field2577;
-		this.field2567 = arg1.field2580.length;
-		this.field2574 = new HashMap(this.field2567, field2571);
-		for (int var3 = 0; var3 < this.field2567; var3++) {
-			this.field2574.put(var3, arg1.field2580[var3].field2586, this.method4165(arg1.field2580[var3]));
+	public Shader(GpuRenderer renderer, ShaderData shader) {
+		this.name = shader.name;
+
+		this.uniformsCount = shader.uniforms.length;
+		this.uniforms = new HashMap(this.uniformsCount, field2571);
+		for (int i = 0; i < this.uniformsCount; i++) {
+			this.uniforms.put(i, shader.uniforms[i].field2586, this.method4165(shader.uniforms[i]));
 		}
-		this.field2572 = arg1.field2581.length;
-		this.field2569 = new HashMap(this.field2572, field2571);
-		for (int var4 = 0; var4 < this.field2572; var4++) {
-			this.field2569.put(var4, arg1.field2581[var4].field2586, this.method4165(arg1.field2581[var4]));
+
+		this.uniforms2Count = shader.uniforms2.length;
+		this.uniforms2 = new HashMap(this.uniforms2Count, field2571);
+		for (int i = 0; i < this.uniforms2Count; i++) {
+			this.uniforms2.put(i, shader.uniforms2[i].field2586, this.method4165(shader.uniforms2[i]));
 		}
-		this.field2568 = new Program[arg1.field2582.length];
-		for (int var5 = 0; var5 < arg1.field2582.length; var5++) {
-			this.field2568[var5] = this.method4156(arg0, arg1.field2582[var5]);
+
+		this.programs = new Program[shader.programs.length];
+		for (int i = 0; i < shader.programs.length; i++) {
+			this.programs[i] = this.createProgram(renderer, shader.programs[i]);
 		}
 	}
 
 	@ObfuscatedName("ho.k(I)Ljava/lang/String;")
-	public String method4186() {
-		return this.field2570;
+	public String getName() {
+		return this.name;
 	}
 
 	@ObfuscatedName("ho.w(Ljava/lang/String;I)Lhi;")
-	public Program method4227(String arg0) throws ProgramNotFoundException {
-		Program[] var2 = this.field2568;
-		for (int var3 = 0; var3 < var2.length; var3++) {
-			Program var4 = var2[var3];
-			String var5 = var4.method4082();
-			if (var5 != null && var5.equals(arg0)) {
-				if (!var4.method4083()) {
-					throw new ProgramNotFoundException(arg0);
+	public Program getProgram(String name) throws ProgramNotFoundException {
+		Program[] programs = this.programs;
+
+		for (int i = 0; i < programs.length; i++) {
+			Program prg = programs[i];
+			String prgName = prg.getName();
+			if (prgName != null && prgName.equals(name)) {
+				if (!prg.compile()) {
+					throw new ProgramNotFoundException(name);
 				}
-				return var4;
+
+				return prg;
 			}
 		}
-		throw new ProgramNotFoundException(arg0);
+
+		throw new ProgramNotFoundException(name);
 	}
 
 	@ObfuscatedName("ho.l(B)I")
-	public final int method4158() {
-		return this.field2568.length;
+	public final int getProgramCount() {
+		return this.programs.length;
 	}
 
 	@ObfuscatedName("ho.u(II)Lhi;")
-	public final Program method4159(int arg0) {
-		return this.field2568[arg0];
+	public final Program getProgram(int index) {
+		return this.programs[index];
 	}
 
 	@ObfuscatedName("ho.z(Lhi;I)I")
-	public int method4200(Program arg0) {
-		for (int var2 = 0; var2 < this.field2568.length; var2++) {
-			if (this.field2568[var2] == arg0) {
-				return var2;
+	public int getProgramIndex(Program prg) {
+		for (int i = 0; i < this.programs.length; i++) {
+			if (this.programs[i] == prg) {
+				return i;
 			}
 		}
+
 		return -1;
 	}
 
 	@ObfuscatedName("ho.p(I)Lhi;")
-	public Program method4217() {
-		Program[] var1 = this.field2568;
-		for (int var2 = 0; var2 < var1.length; var2++) {
-			Program var3 = var1[var2];
-			if (var3.method4083()) {
-				return var3;
+	public Program compilePrograms() {
+		Program[] programs = this.programs;
+		for (int i = 0; i < programs.length; i++) {
+			Program prg = programs[i];
+			if (prg.compile()) {
+				return prg;
 			}
 		}
 		return null;
 	}
 
 	@ObfuscatedName("ho.c(B)Lhi;")
-	public final Program method4163() {
-		return this.field2573 >= 0 ? this.field2568[this.field2573] : null;
+	public final Program getCurrentProgram() {
+		return this.currentProgramIndex >= 0 ? this.programs[this.currentProgramIndex] : null;
 	}
 
 	@ObfuscatedName("ho.r(I)I")
-	public final int method4212() {
-		return this.field2573;
+	public final int getCurrentProgramIndex() {
+		return this.currentProgramIndex;
 	}
 
 	@ObfuscatedName("ho.o(Laql;FB)V")
-	public final void method4268(ProgramUniform arg0, float arg1) {
-		this.field2568[this.field2573].method4084(arg0, arg1);
+	public final void setUniform(ProgramUniform arg0, float arg1) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.s(Laql;FFB)V")
-	public final void method4167(ProgramUniform arg0, float arg1, float arg2) {
-		this.field2568[this.field2573].method4085(arg0, arg1, arg2);
+	public final void setUniform(ProgramUniform arg0, float arg1, float arg2) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("ho.y(Laql;FFFI)V")
-	public final void method4218(ProgramUniform arg0, float arg1, float arg2, float arg3) {
-		this.field2568[this.field2573].method4108(arg0, arg1, arg2, arg3);
+	public final void setUniform(ProgramUniform arg0, float arg1, float arg2, float arg3) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("ho.q(Laql;FFFFI)V")
-	public final void method4169(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
-		this.field2568[this.field2573].method4087(arg0, arg1, arg2, arg3, arg4);
+	public final void setUniform(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("ho.x(Laql;Lox;I)V")
-	public final void method4246(ProgramUniform arg0, Vector3 arg1) {
-		this.field2568[this.field2573].method4108(arg0, arg1.field4308, arg1.field4311, arg1.field4313);
+	public final void setUniform(ProgramUniform arg0, Vector3 arg1) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.field4308, arg1.field4311, arg1.field4313);
 	}
 
 	@ObfuscatedName("ho.b(Laql;Log;I)V")
-	public final void method4171(ProgramUniform arg0, Vector4 arg1) {
-		this.field2568[this.field2573].method4087(arg0, arg1.field4244, arg1.field4243, arg1.field4242, arg1.field4245);
+	public final void setUniform(ProgramUniform arg0, Vector4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.field4244, arg1.field4243, arg1.field4242, arg1.field4245);
 	}
 
 	@ObfuscatedName("ho.h(Laql;[FI)V")
-	public final void method4172(ProgramUniform arg0, float[] arg1) {
-		this.field2568[this.field2573].method4086(arg0, arg1, arg1.length);
+	public final void setUniform(ProgramUniform arg0, float[] arg1) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg1.length);
 	}
 
 	@ObfuscatedName("ho.a(Laql;IB)V")
-	public final void method4173(ProgramUniform arg0, int arg1) {
+	public final void setUniformColour(ProgramUniform arg0, int arg1) {
 		float var3 = (float) (arg1 >> 16 & 0xFF) / 255.0F;
 		float var4 = (float) (arg1 >> 8 & 0xFF) / 255.0F;
 		float var5 = (float) (arg1 & 0xFF) / 255.0F;
 		float var6 = (float) (arg1 >> 24 & 0xFF) / 255.0F;
-		this.method4169(arg0, var3, var4, var5, var6);
+		this.setUniform(arg0, var3, var4, var5, var6);
 	}
 
 	@ObfuscatedName("ho.g(Laql;Lpq;I)V")
-	public final void method4201(ProgramUniform arg0, Matrix4x4 arg1) {
-		this.field2568[this.field2573].method4089(arg0, arg1);
+	public final void setUniform4x2(ProgramUniform arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform4x2(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.i(Laql;Lpq;I)V")
-	public final void method4166(ProgramUniform arg0, Matrix4x4 arg1) {
-		this.field2568[this.field2573].method4101(arg0, arg1);
+	public final void setUniform4x4(ProgramUniform arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform4x4(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.j(Laql;ILmq;I)V")
-	public final void method4252(ProgramUniform arg0, int arg1, BaseTexture arg2) {
-		this.field2568[this.field2573].method4081(arg0, arg1, arg2);
+	public final void setUniform(ProgramUniform arg0, int arg1, BaseTexture arg2) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("ho.t(IFFFI)V")
-	public final void method4177(int arg0, float arg1, float arg2, float arg3) {
-		this.field2568[this.field2573].method4088(arg0, arg1, arg2, arg3);
+	public final void setUniform(int arg0, float arg1, float arg2, float arg3) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("ho.ae(IFFFFI)V")
-	public final void method4178(int arg0, float arg1, float arg2, float arg3, float arg4) {
-		this.field2568[this.field2573].method4123(arg0, arg1, arg2, arg3, arg4);
+	public final void setUniform(int arg0, float arg1, float arg2, float arg3, float arg4) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("ho.ag(ILox;B)V")
-	public final void method4179(int arg0, Vector3 arg1) {
-		this.field2568[this.field2573].method4088(arg0, arg1.field4308, arg1.field4311, arg1.field4313);
+	public final void setUniform(int arg0, Vector3 arg1) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.field4308, arg1.field4311, arg1.field4313);
 	}
 
 	@ObfuscatedName("ho.ah(I[FII)V")
-	public final void method4180(int arg0, float[] arg1, int arg2) {
-		this.field2568[this.field2573].method4093(arg0, arg1, arg2);
+	public final void setUniform(int arg0, float[] arg1, int arg2) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("ho.al(ILpq;I)V")
-	public final void method4181(int arg0, Matrix4x4 arg1) {
-		this.field2568[this.field2573].method4094(arg0, arg1);
+	public final void setUniform3x3(int arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform3x3(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.ac(ILpq;I)V")
-	public final void method4182(int arg0, Matrix4x4 arg1) {
-		this.field2568[this.field2573].method4095(arg0, arg1);
+	public final void setUniform4x2(int arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform4x2(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.ai(ILpq;I)V")
-	public final void method4183(int arg0, Matrix4x4 arg1) {
-		this.field2568[this.field2573].method4096(arg0, arg1);
+	public final void setUniform4x4(int arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform4x4(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.aw(IILmq;B)V")
-	public final void method4215(int arg0, int arg1, BaseTexture arg2) {
-		this.field2568[this.field2573].method4097(arg0, arg1, arg2);
+	public final void setUniform(int arg0, int arg1, BaseTexture arg2) {
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("ho.as(Ljava/lang/String;B)Laql;")
-	public ProgramUniform method4157(String arg0) throws UniformNotFoundException {
-		ProgramUniform var2 = (ProgramUniform) this.field2574.get(arg0);
+	public ProgramUniform getUniform(String arg0) throws UniformNotFoundException {
+		ProgramUniform var2 = (ProgramUniform) this.uniforms.get(arg0);
 		if (var2 == null) {
 			throw new UniformNotFoundException(arg0);
 		}
@@ -224,28 +231,28 @@ public abstract class Shader {
 	}
 
 	@ObfuscatedName("ho.at(I)I")
-	public int method4190() {
-		return this.field2572;
+	public int getUniform2Count() {
+		return this.uniforms2Count;
 	}
 
 	@ObfuscatedName("ho.ad(IB)Laql;")
-	public ProgramUniform method4187(int arg0) {
-		return (ProgramUniform) this.field2569.get(arg0);
+	public ProgramUniform getUniform2(int arg0) {
+		return (ProgramUniform) this.uniforms2.get(arg0);
 	}
 
 	@ObfuscatedName("ho.am(Ljava/lang/String;S)Laql;")
-	public ProgramUniform method4188(String arg0) {
-		return (ProgramUniform) this.field2569.get(arg0);
+	public ProgramUniform getUniform2(String arg0) {
+		return (ProgramUniform) this.uniforms2.get(arg0);
 	}
 
 	@ObfuscatedName("ho.au(I)I")
-	public int method4189() {
-		return this.field2567;
+	public int getUniformCount() {
+		return this.uniformsCount;
 	}
 
 	@ObfuscatedName("ho.ar(II)Laql;")
-	public ProgramUniform method4160(int arg0) {
-		return (ProgramUniform) this.field2574.get(arg0);
+	public ProgramUniform getUniform(int arg0) {
+		return (ProgramUniform) this.uniforms.get(arg0);
 	}
 
 	@ObfuscatedName("ho.ap()V")
@@ -253,10 +260,10 @@ public abstract class Shader {
 	}
 
 	@ObfuscatedName("ho.f(Lafc;Lhn;)Lhi;")
-	public abstract Program method4156(GpuRenderer arg0, ProgramData arg1);
+	public abstract Program createProgram(GpuRenderer arg0, ProgramData arg1);
 
 	@ObfuscatedName("ho.d(Lhi;)Z")
-	public abstract boolean method4162(Program arg0);
+	public abstract boolean setCurrentProgram(Program arg0);
 
 	@ObfuscatedName("ho.v(Lhv;)Laql;")
 	public abstract ProgramUniform method4165(ProgramUniformData arg0);
@@ -268,5 +275,5 @@ public abstract class Shader {
 	public abstract void method4214();
 
 	@ObfuscatedName("ho.e()V")
-	public abstract void method4244();
+	public abstract void enable();
 }

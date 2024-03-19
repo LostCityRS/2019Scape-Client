@@ -337,7 +337,7 @@ public class EnvironmentOverride {
 	}
 
 	@ObfuscatedName("yj.h(I)I")
-	public int method10380() {
+	public int getFadeDuration() {
 		return this.field8122;
 	}
 }

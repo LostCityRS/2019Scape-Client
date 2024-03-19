@@ -119,7 +119,7 @@ public class WaterRelated {
 					}
 				}
 			}
-			this.field3224 = this.field3223.method16197(TextureFormat.field1273, 128, 128, 16, true, var3);
+			this.field3224 = this.field3223.method16197(TextureFormat.RGBA, 128, 128, 16, true, var3);
 		}
 		return this.field3224 != null;
 	}

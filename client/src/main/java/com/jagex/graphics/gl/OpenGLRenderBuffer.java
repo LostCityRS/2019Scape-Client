@@ -70,7 +70,7 @@ public class OpenGLRenderBuffer implements GraphicsDeletable, EffectInterface, O
 	}
 
 	@ObfuscatedName("rx.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field4996 != 0) {
 			int[] var1 = new int[] { this.field4996 };
 			OpenGL.glDeleteRenderbuffersEXT(1, var1, 0);
@@ -81,7 +81,7 @@ public class OpenGLRenderBuffer implements GraphicsDeletable, EffectInterface, O
 	@ObfuscatedName("rx.r()V")
 	public void method7670() {
 		if (this.field4996 != 0) {
-			this.field5000.method19071(this.field4996, this.field5001.field1652 * this.field4999 * this.field4998 * this.field4997.field1279);
+			this.field5000.method19071(this.field4996, this.field5001.field1652 * this.field4999 * this.field4998 * this.field4997.id);
 			this.field4996 = 0;
 		}
 	}

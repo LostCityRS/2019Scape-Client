@@ -54,7 +54,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	public void method15256() {
 		WeightedCache var1 = this.field9254;
 		synchronized (this.field9254) {
-			this.field9254.method2924();
+			this.field9254.clear();
 		}
 	}
 

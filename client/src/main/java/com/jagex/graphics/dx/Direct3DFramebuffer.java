@@ -7,7 +7,7 @@ import com.jagex.graphics.GraphicsDeletable;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;
-import jagdx.class0;
+import jagdx.HRESULT;
 
 @ObfuscatedName("ath")
 public class Direct3DFramebuffer extends GpuFramebuffer {
@@ -16,10 +16,10 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 	public final Direct3DRenderer field12499;
 
 	@ObfuscatedName("ath.f")
-	public int field12500;
+	public int width;
 
 	@ObfuscatedName("ath.w")
-	public int field12501;
+	public int height;
 
 	@ObfuscatedName("ath.l")
 	public int field12502;
@@ -40,12 +40,12 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 
 	@ObfuscatedName("ath.e()I")
 	public int getWidth() {
-		return this.field12500;
+		return this.width;
 	}
 
 	@ObfuscatedName("ath.n()I")
 	public int getHeight() {
-		return this.field12501;
+		return this.height;
 	}
 
 	@ObfuscatedName("ath.x(Ldw;)V")
@@ -58,18 +58,20 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 				this.method19645(0L);
 			}
 			if (this.field12502 == 0) {
-				this.field12501 = 0;
-				this.field12500 = 0;
+				this.height = 0;
+				this.width = 0;
 			}
 			return;
 		}
+
 		if (this.field12502 == 0) {
-			this.field12501 = var2.method1009();
-			this.field12500 = var2.method1015();
+			this.height = var2.method1009();
+			this.width = var2.method1015();
 			this.method18969();
-		} else if (this.field12500 != var2.method1015() || this.field12501 != var2.method1009()) {
+		} else if (this.width != var2.method1015() || this.height != var2.method1009()) {
 			throw new RuntimeException();
 		}
+
 		this.field12502 |= 0x10;
 		this.field12498 = var2;
 		if (this.field12504) {
@@ -88,18 +90,20 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 				this.method19644(arg0, 0L);
 			}
 			if (this.field12502 == 0) {
-				this.field12501 = 0;
-				this.field12500 = 0;
+				this.height = 0;
+				this.width = 0;
 			}
 			return;
 		}
+
 		if (this.field12502 == 0) {
-			this.field12501 = var4.method1009();
-			this.field12500 = var4.method1015();
+			this.height = var4.method1009();
+			this.width = var4.method1015();
 			this.method18969();
-		} else if (this.field12500 != var4.method1015() || this.field12501 != var4.method1009()) {
+		} else if (this.width != var4.method1015() || this.height != var4.method1009()) {
 			throw new RuntimeException();
 		}
+
 		this.field12502 |= var3;
 		this.field12505[arg0] = var4;
 		if (this.field12504) {
@@ -109,12 +113,12 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 
 	@ObfuscatedName("ath.as(IJ)Z")
 	public boolean method19644(int arg0, long arg1) {
-		return class0.method35(IDirect3DDevice.SetRenderTarget(this.field12499.device, arg0, arg1));
+		return HRESULT.SUCCEEDED(IDirect3DDevice.SetRenderTarget(this.field12499.device, arg0, arg1));
 	}
 
 	@ObfuscatedName("ath.at(J)Z")
 	public boolean method19645(long arg0) {
-		return class0.method35(IDirect3DDevice.SetDepthStencilSurface(this.field12499.device, arg0));
+		return HRESULT.SUCCEEDED(IDirect3DDevice.SetDepthStencilSurface(this.field12499.device, arg0));
 	}
 
 	@ObfuscatedName("ath.h()Z")
@@ -165,11 +169,11 @@ public class Direct3DFramebuffer extends GpuFramebuffer {
 	@ObfuscatedName("ath.m()V")
 	public void method1629() {
 		if (this.field12498 != null) {
-			this.field12498.method1010();
+			this.field12498.delete();
 		}
 		for (int var1 = 0; var1 < this.field12505.length; var1++) {
 			if (this.field12505[var1] != null) {
-				this.field12505[var1].method1010();
+				this.field12505[var1].delete();
 			}
 		}
 	}

@@ -21,7 +21,7 @@ public abstract class HeadbarTypeFactory {
 	public void method9166() {
 		WeightedCache var1 = this.field7230;
 		synchronized (this.field7230) {
-			this.field7230.method2924();
+			this.field7230.clear();
 		}
 	}
 

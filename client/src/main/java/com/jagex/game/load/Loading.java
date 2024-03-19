@@ -556,7 +556,7 @@ public class Loading {
 				return;
 			}
 			if (var2 == 1) {
-				EnvironmentManager.field7859 = var1.g2();
+				EnvironmentManager.samplerMaterial = var1.g2();
 			} else if (var2 == 10) {
 				var1.g2();
 			}

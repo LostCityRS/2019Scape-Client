@@ -87,21 +87,21 @@ public class MessageBox {
 		boolean var0 = true;
 		if (field714 == null) {
 			if (Client.spritesJs5.method6889(field7091)) {
-				field714 = SpriteDataProvider.method1607(Client.spritesJs5, field7091);
+				field714 = SpriteDataProvider.get(Client.spritesJs5, field7091);
 			} else {
 				var0 = false;
 			}
 		}
 		if (field710 == null) {
 			if (Client.spritesJs5.method6889(field1921)) {
-				field710 = SpriteDataProvider.method1607(Client.spritesJs5, field1921);
+				field710 = SpriteDataProvider.get(Client.spritesJs5, field1921);
 			} else {
 				var0 = false;
 			}
 		}
 		if (field4963 == null) {
 			if (Client.spritesJs5.method6889(field7424)) {
-				field4963 = SpriteDataProvider.method1607(Client.spritesJs5, field7424);
+				field4963 = SpriteDataProvider.get(Client.spritesJs5, field7424);
 			} else {
 				var0 = false;
 			}
@@ -115,7 +115,7 @@ public class MessageBox {
 		}
 		if (field716 == null) {
 			if (Client.spritesJs5.method6889(field713)) {
-				field716 = (PalettedSpriteData) SpriteDataProvider.method1607(Client.spritesJs5, field713);
+				field716 = (PalettedSpriteData) SpriteDataProvider.get(Client.spritesJs5, field713);
 			} else {
 				var0 = false;
 			}

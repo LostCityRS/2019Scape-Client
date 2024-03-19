@@ -38,7 +38,7 @@ public class MaterialTextureProvider {
 			GpuTexture var7;
 			if (arg0.field1336 && this.field3269.isBloomEnabled()) {
 				float[] var6 = this.field3268.method1984(TextureRelated2.field7586, arg0.diffuseTexture, arg0.field1302, 0.7F, arg1, arg1, false);
-				var7 = this.field3269.method15992(TextureFormat.field1273, arg1, arg1, true, var6);
+				var7 = this.field3269.method15992(TextureFormat.RGBA, arg1, arg1, true, var6);
 			} else {
 				int[] var8;
 				if (MaterialAlphaMode.NONE == arg0.alphaMode && Material.method261(arg0.effect)) {
@@ -51,7 +51,7 @@ public class MaterialTextureProvider {
 				}
 				var7 = this.field3269.method16204(arg1, arg1, true, var8);
 			}
-			var7.method5700(arg0.repeatS == 1, arg0.repeatT == 1);
+			var7.setWarp(arg0.repeatS == 1, arg0.repeatT == 1);
 			this.field3267.put(var7, var3, arg1 * arg1);
 			return var7;
 		} else {
@@ -80,6 +80,6 @@ public class MaterialTextureProvider {
 
 	@ObfuscatedName("lu.f()V")
 	public void method5644() {
-		this.field3267.method2924();
+		this.field3267.clear();
 	}
 }

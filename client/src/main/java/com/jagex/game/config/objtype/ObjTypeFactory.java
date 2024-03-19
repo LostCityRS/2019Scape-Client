@@ -131,7 +131,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		this.field8611 = arg0;
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.method2924();
+			this.modelCache.clear();
 		}
 	}
 
@@ -139,7 +139,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public void method14623() {
 		WeightedCache var1 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.method2924();
+			this.modelCache.clear();
 		}
 		IconCache var3 = this.iconCache;
 		synchronized (this.iconCache) {

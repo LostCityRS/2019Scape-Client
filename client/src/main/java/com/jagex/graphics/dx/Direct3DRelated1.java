@@ -20,17 +20,17 @@ public class Direct3DRelated1 implements Direct3DGraphicsDeletable, FrameBufferI
 	public Direct3DRelated1(Direct3DTexture_Sub1 arg0, int arg1) {
 		this.field4216 = arg1;
 		this.field4215 = arg0;
-		this.field4215.field4219.method15985(this);
+		this.field4215.renderer.method15985(this);
 	}
 
 	@ObfuscatedName("ob.e()I")
 	public int method1015() {
-		return this.field4215.method5718();
+		return this.field4215.getWidth();
 	}
 
 	@ObfuscatedName("ob.n()I")
 	public int method1009() {
-		return this.field4215.method5696();
+		return this.field4215.getHeight();
 	}
 
 	@ObfuscatedName("ob.z()J")
@@ -42,18 +42,18 @@ public class Direct3DRelated1 implements Direct3DGraphicsDeletable, FrameBufferI
 	}
 
 	@ObfuscatedName("ob.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field4214 != 0L) {
 			IUnknown.Release(this.field4214);
 			this.field4214 = 0L;
 		}
-		this.field4215.field4219.method16198(this);
+		this.field4215.renderer.method16198(this);
 	}
 
 	@ObfuscatedName("ob.p()V")
 	public void method6215() {
 		if (this.field4214 != 0L) {
-			this.field4215.field4219.method19023(this.field4214);
+			this.field4215.renderer.method19023(this.field4214);
 			this.field4214 = 0L;
 		}
 	}

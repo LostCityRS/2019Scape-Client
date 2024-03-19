@@ -33,27 +33,27 @@ public final class ProgrammableSpriteShader extends SpriteShader {
 	@ObfuscatedName("ahz.u(B)Z")
 	public boolean method16651() throws ShaderException {
 		this.field10532 = this.field3002.method15964("Sprite");
-		ProgramUniform var1 = this.field10532.method4157("WVPMatrix");
-		ProgramUniform var2 = this.field10532.method4157("SpriteSampler");
-		ProgramUniform var3 = this.field10532.method4157("MaskSampler");
-		ProgramUniform var4 = this.field10532.method4157("MulColour");
-		ProgramUniform var5 = this.field10532.method4157("AddColour");
-		ProgramUniform var6 = this.field10532.method4157("SpriteTexCoordMatrix");
-		ProgramUniform var7 = this.field10532.method4157("MaskTexCoordMatrix");
-		this.field10527[0] = this.field10532.method4227("Normal");
-		this.field10527[1] = this.field10532.method4227("Masked");
-		this.field10527[2] = this.field10532.method4227("AlphaTex");
+		ProgramUniform var1 = this.field10532.getUniform("WVPMatrix");
+		ProgramUniform var2 = this.field10532.getUniform("SpriteSampler");
+		ProgramUniform var3 = this.field10532.getUniform("MaskSampler");
+		ProgramUniform var4 = this.field10532.getUniform("MulColour");
+		ProgramUniform var5 = this.field10532.getUniform("AddColour");
+		ProgramUniform var6 = this.field10532.getUniform("SpriteTexCoordMatrix");
+		ProgramUniform var7 = this.field10532.getUniform("MaskTexCoordMatrix");
+		this.field10527[0] = this.field10532.getProgram("Normal");
+		this.field10527[1] = this.field10532.getProgram("Masked");
+		this.field10527[2] = this.field10532.getProgram("AlphaTex");
 		for (int var8 = 0; var8 < 3; var8++) {
-			int var9 = this.field10532.method4200(this.field10527[var8]);
-			this.field10533[var8][0] = var1.method19250(var9);
-			this.field10533[var8][1] = var2.method19250(var9);
-			this.field10533[var8][2] = var3.method19250(var9);
-			this.field10533[var8][5] = var4.method19250(var9);
-			this.field10533[var8][6] = var5.method19250(var9);
-			this.field10533[var8][3] = var6.method19250(var9);
-			this.field10533[var8][4] = var7.method19250(var9);
+			int var9 = this.field10532.getProgramIndex(this.field10527[var8]);
+			this.field10533[var8][0] = var1.getLocation(var9);
+			this.field10533[var8][1] = var2.getLocation(var9);
+			this.field10533[var8][2] = var3.getLocation(var9);
+			this.field10533[var8][5] = var4.getLocation(var9);
+			this.field10533[var8][6] = var5.getLocation(var9);
+			this.field10533[var8][3] = var6.getLocation(var9);
+			this.field10533[var8][4] = var7.getLocation(var9);
 		}
-		this.field10532.method4162(this.field10527[0]);
+		this.field10532.setCurrentProgram(this.field10527[0]);
 		return true;
 	}
 
@@ -85,12 +85,12 @@ public final class ProgrammableSpriteShader extends SpriteShader {
 
 	@ObfuscatedName("ahz.z(I)V")
 	public void method16649() {
-		this.field10532.method4215(this.field10534[1], 0, this.field2997);
+		this.field10532.setUniform(this.field10534[1], 0, this.field2997);
 		this.field3002.method16006(this.field2995);
-		this.field10532.method4183(this.field10534[0], this.field2995);
-		this.field10532.method4182(this.field10534[3], this.field2998);
-		this.field10532.method4178(this.field10534[5], this.field10535.field4244, this.field10535.field4243, this.field10535.field4242, this.field10535.field4245);
-		this.field10532.method4178(this.field10534[6], this.field10536.field4244, this.field10536.field4243, this.field10536.field4242, this.field10536.field4245);
+		this.field10532.setUniform4x4(this.field10534[0], this.field2995);
+		this.field10532.setUniform4x2(this.field10534[3], this.field2998);
+		this.field10532.setUniform(this.field10534[5], this.field10535.field4244, this.field10535.field4243, this.field10535.field4242, this.field10535.field4245);
+		this.field10532.setUniform(this.field10534[6], this.field10536.field4244, this.field10536.field4243, this.field10536.field4242, this.field10536.field4245);
 		this.field3002.method16120(0, this.field3000);
 		this.field3002.method16177(this.field2994);
 		this.field3002.method16077(PrimitiveType.field3404, this.field3001, 2);
@@ -98,19 +98,19 @@ public final class ProgrammableSpriteShader extends SpriteShader {
 
 	@ObfuscatedName("ahz.n()V")
 	public void method5051() {
-		this.field10532.method4162(this.field10527[0]);
-		this.field10532.method4244();
-		this.field10534 = this.field10533[this.field10532.method4212()];
+		this.field10532.setCurrentProgram(this.field10527[0]);
+		this.field10532.enable();
+		this.field10534 = this.field10533[this.field10532.getCurrentProgramIndex()];
 		this.method16649();
 	}
 
 	@ObfuscatedName("ahz.m()V")
 	public void method5054() {
-		this.field10532.method4162(this.field10527[1]);
-		this.field10532.method4244();
-		this.field10534 = this.field10533[this.field10532.method4212()];
-		this.field10532.method4215(this.field10534[2], 1, this.field2996);
-		this.field10532.method4182(this.field10534[4], this.field2999);
+		this.field10532.setCurrentProgram(this.field10527[1]);
+		this.field10532.enable();
+		this.field10534 = this.field10533[this.field10532.getCurrentProgramIndex()];
+		this.field10532.setUniform(this.field10534[2], 1, this.field2996);
+		this.field10532.setUniform4x2(this.field10534[4], this.field2999);
 		this.method16649();
 	}
 }

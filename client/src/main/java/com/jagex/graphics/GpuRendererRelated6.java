@@ -52,14 +52,14 @@ public class GpuRendererRelated6 {
 	public GpuRendererRelated6(GpuRenderer arg0, int arg1) {
 		this.field3389 = arg0;
 		this.field3390 = this.field3389.method16085(true);
-		this.field3390.method5553(arg1 * 96, 24);
-		this.field3381 = this.field3389.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.field3310, VertexDeclarationElementComponent.field3300, VertexDeclarationElementComponent.field3311 }) });
+		this.field3390.allocate(arg1 * 96, 24);
+		this.field3381 = this.field3389.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.COLOR }) });
 		this.field3392 = this.field3389.method16067(false);
 		int var3 = arg1 * 6;
 		this.field3392.method5831(var3);
-		int var4 = var3 * this.field3392.method5832().field1652;
-		ByteBuffer var5 = this.field3389.field10071;
-		this.field3389.method15961(var4);
+		int var4 = var3 * this.field3392.getDataType().field1652;
+		ByteBuffer var5 = this.field3389.temporaryBuffer;
+		this.field3389.ensureTemporaryBufferCapacity(var4);
 		var5.clear();
 		for (int var6 = 0; var6 < arg1; var6++) {
 			var5.putShort((short) (var6 * 4));
@@ -69,15 +69,15 @@ public class GpuRendererRelated6 {
 			var5.putShort((short) (var6 * 4 + 3));
 			var5.putShort((short) (var6 * 4 + 1));
 		}
-		this.field3392.method5738(0, var3 * this.field3392.method5832().field1652, this.field3389.field10046);
+		this.field3392.upload(0, var3 * this.field3392.getDataType().field1652, this.field3389.temporaryBufferAddress);
 		this.field3384 = arg1;
 		this.field3385 = 0;
 	}
 
 	@ObfuscatedName("md.e()V")
 	public void method5795() {
-		this.field3390.method1010();
-		this.field3392.method1010();
+		this.field3390.delete();
+		this.field3392.delete();
 		this.field3390 = null;
 		this.field3392 = null;
 		this.field3381 = null;
@@ -96,7 +96,7 @@ public class GpuRendererRelated6 {
 		this.field3389.method16177(this.field3381);
 		BatchedSpriteShader var1 = this.field3389.field10115;
 		Unsafe var2 = this.field3389.field10110;
-		ByteBuffer var3 = this.field3389.field10071;
+		ByteBuffer var3 = this.field3389.temporaryBuffer;
 		var3.clear();
 		this.field3389.method16046().method6604(Matrix4x4.field4317);
 		this.field3389.method16174(GpuRendererRelated4.field3370);
@@ -105,7 +105,7 @@ public class GpuRendererRelated6 {
 		int var6 = 0;
 		for (int var7 = 0; var7 < var4; var7++) {
 			int var8 = Math.min(this.field3384, this.field3385 - var5);
-			long var9 = this.field3390.method5737(0, var8 * 96);
+			long var9 = this.field3390.lock(0, var8 * 96);
 			int var11 = this.field3384 * var7 + var8;
 			for (int var12 = var5; var12 < var11; var12++) {
 				for (int var13 = 0; var13 < 4; var13++) {
@@ -123,7 +123,7 @@ public class GpuRendererRelated6 {
 					var9 = var22 + 4L;
 				}
 			}
-			this.field3390.method5749();
+			this.field3390.unlock();
 			GpuTexture var24 = this.field3382[var5];
 			int var25 = 1;
 			int var26 = 0;

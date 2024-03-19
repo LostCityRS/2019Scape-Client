@@ -22,19 +22,19 @@ public class OpenGLProgramManager extends Shader {
 	}
 
 	@ObfuscatedName("ago.f(Lafc;Lhn;)Lhi;")
-	public Program method4156(GpuRenderer arg0, ProgramData arg1) {
+	public Program createProgram(GpuRenderer arg0, ProgramData arg1) {
 		return new OpenGLProgram((OpenGLRenderer) arg0, this, arg1);
 	}
 
 	@ObfuscatedName("ago.d(Lhi;)Z")
-	public boolean method4162(Program arg0) {
+	public boolean setCurrentProgram(Program arg0) {
 		if (this.field10391 == arg0) {
 			return true;
-		} else if (arg0.method4083()) {
+		} else if (arg0.compile()) {
 			boolean var2 = this.method4184();
 			this.field10391 = (OpenGLProgram) arg0;
-			this.field2573 = this.method4200(arg0);
-			if (this.field2573 == -1) {
+			this.currentProgramIndex = this.getProgramIndex(arg0);
+			if (this.currentProgramIndex == -1) {
 				throw new IllegalArgumentException();
 			}
 			this.field10392 = this.field10391.field10373;
@@ -54,7 +54,7 @@ public class OpenGLProgramManager extends Shader {
 	}
 
 	@ObfuscatedName("ago.e()V")
-	public void method4244() {
+	public void enable() {
 		if (this.field10390.field12015 == this.field10391) {
 			return;
 		}
@@ -76,8 +76,8 @@ public class OpenGLProgramManager extends Shader {
 
 	@ObfuscatedName("ago.ap()V")
 	public void method4191() {
-		for (int var1 = 0; var1 < this.method4158(); var1++) {
-			((OpenGLProgram) this.method4159(var1)).method1010();
+		for (int var1 = 0; var1 < this.getProgramCount(); var1++) {
+			((OpenGLProgram) this.getProgram(var1)).delete();
 		}
 		super.method4191();
 	}

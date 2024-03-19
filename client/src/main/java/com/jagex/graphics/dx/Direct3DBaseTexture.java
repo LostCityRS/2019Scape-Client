@@ -11,10 +11,10 @@ import jagdx.IUnknown;
 public abstract class Direct3DBaseTexture implements DeletableResource {
 
 	@ObfuscatedName("op.e")
-	public final Direct3DRenderer field4219;
+	public final Direct3DRenderer renderer;
 
 	@ObfuscatedName("op.n")
-	public final TextureFormat field4221;
+	public final TextureFormat format;
 
 	@ObfuscatedName("op.m")
 	public final DataType field4218;
@@ -26,11 +26,11 @@ public abstract class Direct3DBaseTexture implements DeletableResource {
 	public long field4217 = 0L;
 
 	public Direct3DBaseTexture(Direct3DRenderer arg0, TextureFormat arg1, DataType arg2, boolean arg3, int arg4) {
-		this.field4219 = arg0;
-		this.field4221 = arg1;
+		this.renderer = arg0;
+		this.format = arg1;
 		this.field4218 = arg2;
 		this.field4220 = arg3;
-		this.field4219.method15985(this);
+		this.renderer.method15985(this);
 	}
 
 	@ObfuscatedName("op.bl()J")
@@ -43,18 +43,18 @@ public abstract class Direct3DBaseTexture implements DeletableResource {
 	}
 
 	@ObfuscatedName("op.m()V")
-	public void method1010() {
+	public void delete() {
 		if (this.field4217 != 0L) {
 			IUnknown.Release(this.field4217);
 			this.field4217 = 0L;
 		}
-		this.field4219.method16198(this);
+		this.renderer.method16198(this);
 	}
 
 	@ObfuscatedName("op.bk()V")
 	public void method6226() {
 		if (this.field4217 != 0L) {
-			this.field4219.method19023(this.field4217);
+			this.renderer.method19023(this.field4217);
 			this.field4217 = 0L;
 		}
 	}

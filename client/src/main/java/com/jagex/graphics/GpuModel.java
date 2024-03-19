@@ -3599,7 +3599,7 @@ public class GpuModel extends Model {
 		Unsafe var2 = this.field9730.field10110;
 		if (var2 != null) {
 			int var3 = this.field9721 * 6;
-			long var4 = var1.method5737(0, var3);
+			long var4 = var1.lock(0, var3);
 			if (var4 == 0L) {
 				return false;
 			}
@@ -3611,20 +3611,20 @@ public class GpuModel extends Model {
 				var2.putShort(var9, this.field9726[var6]);
 				var4 = var9 + 2L;
 			}
-			var1.method5749();
+			var1.unlock();
 			this.field9756.field3239 = var1;
 			this.field9756.field3238 = true;
 			this.field9736 = true;
 			return true;
 		}
-		ByteBuffer var11 = this.field9730.field10071;
+		ByteBuffer var11 = this.field9730.temporaryBuffer;
 		var11.clear();
 		for (int var12 = 0; var12 < this.field9721; var12++) {
 			var11.putShort(this.field9713[var12]);
 			var11.putShort(this.field9762[var12]);
 			var11.putShort(this.field9726[var12]);
 		}
-		if (var1.method5738(0, var11.position(), this.field9730.field10046)) {
+		if (var1.upload(0, var11.position(), this.field9730.temporaryBufferAddress)) {
 			this.field9756.field3239 = var1;
 			this.field9756.field3238 = true;
 			this.field9736 = true;
@@ -3649,20 +3649,20 @@ public class GpuModel extends Model {
 				this.field9731.field3356 = this.field9730.method16085(this.field9735);
 			}
 			VertexBuffer var6 = this.field9731.field3356;
-			var6.method5553(this.field9710 * 12, 12);
+			var6.allocate(this.field9710 * 12, 12);
 			Unsafe var7 = this.field9730.field10110;
 			if (var7 == null) {
-				ByteBuffer var17 = this.field9730.field10071;
+				ByteBuffer var17 = this.field9730.temporaryBuffer;
 				var17.clear();
 				for (int var18 = 0; var18 < this.field9710; var18++) {
 					var17.putFloat((float) this.field9705[this.field9711[var18]]);
 					var17.putFloat((float) this.field9767[this.field9711[var18]]);
 					var17.putFloat((float) this.field9712[this.field9711[var18]]);
 				}
-				var6.method5738(0, var17.position(), this.field9730.field10046);
+				var6.upload(0, var17.position(), this.field9730.temporaryBufferAddress);
 			} else {
 				int var8 = this.field9710 * 12;
-				long var9 = var6.method5737(0, var8);
+				long var9 = var6.lock(0, var8);
 				for (int var11 = 0; var11 < this.field9710; var11++) {
 					short var12 = this.field9711[var11];
 					var7.putFloat(var9, (float) this.field9705[var12]);
@@ -3672,7 +3672,7 @@ public class GpuModel extends Model {
 					var7.putFloat(var15, (float) this.field9712[var12]);
 					var9 = var15 + 4L;
 				}
-				var6.method5749();
+				var6.unlock();
 			}
 			this.field9731.field3359 = var6;
 			this.field9731.field3358 = true;
@@ -3682,10 +3682,10 @@ public class GpuModel extends Model {
 				this.field9732.field3356 = this.field9730.method16085(this.field9735);
 			}
 			VertexBuffer var19 = this.field9732.field3356;
-			var19.method5553(this.field9710 * 4, 4);
+			var19.allocate(this.field9710 * 4, 4);
 			Unsafe var20 = this.field9730.field10110;
 			if (var20 == null) {
-				ByteBuffer var45 = this.field9730.field10071;
+				ByteBuffer var45 = this.field9730.temporaryBuffer;
 				var45.clear();
 				if ((this.field9700 & 0x37) == 0) {
 					short[] var46;
@@ -3746,10 +3746,10 @@ public class GpuModel extends Model {
 						var45.putInt(var66);
 					}
 				}
-				var19.method5738(0, var45.position(), this.field9730.field10046);
+				var19.upload(0, var45.position(), this.field9730.temporaryBufferAddress);
 			} else {
 				int var21 = this.field9710 * 4;
-				long var22 = var19.method5737(0, var21);
+				long var22 = var19.lock(0, var21);
 				if ((this.field9700 & 0x37) == 0) {
 					short[] var24;
 					short[] var25;
@@ -3811,7 +3811,7 @@ public class GpuModel extends Model {
 						var22 += 4L;
 					}
 				}
-				var19.method5749();
+				var19.unlock();
 			}
 			this.field9732.field3359 = var19;
 			this.field9732.field3358 = true;
@@ -3821,7 +3821,7 @@ public class GpuModel extends Model {
 				this.field9733.field3356 = this.field9730.method16085(this.field9735);
 			}
 			VertexBuffer var67 = this.field9733.field3356;
-			var67.method5553(this.field9710 * 12, 12);
+			var67.allocate(this.field9710 * 12, 12);
 			short[] var68;
 			short[] var69;
 			short[] var70;
@@ -3839,7 +3839,7 @@ public class GpuModel extends Model {
 			}
 			Unsafe var72 = this.field9730.field10110;
 			if (var72 == null) {
-				ByteBuffer var82 = this.field9730.field10071;
+				ByteBuffer var82 = this.field9730.temporaryBuffer;
 				var82.clear();
 				for (int var83 = 0; var83 < this.field9710; var83++) {
 					Vector3 var84 = new Vector3((float) var68[var83], (float) var69[var83], (float) var70[var83]);
@@ -3853,10 +3853,10 @@ public class GpuModel extends Model {
 					var82.putFloat(var84.field4311);
 					var82.putFloat(var84.field4313);
 				}
-				var67.method5738(0, var82.position(), this.field9730.field10046);
+				var67.upload(0, var82.position(), this.field9730.temporaryBufferAddress);
 			} else {
 				int var73 = this.field9710 * 12;
-				long var74 = var67.method5737(0, var73);
+				long var74 = var67.lock(0, var73);
 				for (int var76 = 0; var76 < this.field9710; var76++) {
 					Vector3 var77 = new Vector3((float) var68[var76], (float) var69[var76], (float) var70[var76]);
 					if (var77.method6519() != 0.0F) {
@@ -3872,7 +3872,7 @@ public class GpuModel extends Model {
 					var72.putFloat(var80, var77.field4313);
 					var74 = var80 + 4L;
 				}
-				var67.method5749();
+				var67.unlock();
 			}
 			this.field9733.field3359 = var67;
 			this.field9733.field3358 = true;
@@ -3882,26 +3882,26 @@ public class GpuModel extends Model {
 				this.field9734.field3356 = this.field9730.method16085(this.field9735);
 			}
 			VertexBuffer var85 = this.field9734.field3356;
-			var85.method5553(this.field9710 * 8, 8);
+			var85.allocate(this.field9710 * 8, 8);
 			Unsafe var86 = this.field9730.field10110;
 			if (var86 == null) {
-				ByteBuffer var93 = this.field9730.field10071;
+				ByteBuffer var93 = this.field9730.temporaryBuffer;
 				var93.clear();
 				for (int var94 = 0; var94 < this.field9710; var94++) {
 					var93.putFloat(this.field9707[var94]);
 					var93.putFloat(this.field9724[var94]);
 				}
-				var85.method5738(0, var93.position(), this.field9730.field10046);
+				var85.upload(0, var93.position(), this.field9730.temporaryBufferAddress);
 			} else {
 				int var87 = this.field9710 * 8;
-				long var88 = var85.method5737(0, var87);
+				long var88 = var85.lock(0, var87);
 				for (int var90 = 0; var90 < this.field9710; var90++) {
 					var86.putFloat(var88, this.field9707[var90]);
 					long var91 = var88 + 4L;
 					var86.putFloat(var91, this.field9724[var90]);
 					var88 = var91 + 4L;
 				}
-				var85.method5749();
+				var85.unlock();
 			}
 			this.field9734.field3359 = var85;
 			this.field9734.field3358 = true;

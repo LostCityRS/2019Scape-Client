@@ -54,7 +54,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	public void method15277() {
 		WeightedCache var1 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.method2924();
+			this.recentUse.clear();
 		}
 	}
 

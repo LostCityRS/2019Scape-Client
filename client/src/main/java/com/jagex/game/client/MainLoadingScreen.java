@@ -44,7 +44,7 @@ public class MainLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("z.e(B)V")
 	public static void method271() {
-		field2930.method2924();
+		field2930.clear();
 	}
 
 	public MainLoadingScreen(LoadingScreenType arg0, int arg1, int arg2, LoadingScreenElementFactory arg3) {
@@ -113,7 +113,7 @@ public class MainLoadingScreen implements LoadingScreen {
 		Sprite var2 = (Sprite) field2930.get((long) arg1);
 		if (var2 == null) {
 			if (Loading.field2941) {
-				var2 = Client.renderer.createSprite(SpriteDataProvider.method1607(arg0, arg1), true);
+				var2 = Client.renderer.createSprite(SpriteDataProvider.get(arg0, arg1), true);
 			} else {
 				var2 = method3594(arg0.method6894(arg1));
 			}

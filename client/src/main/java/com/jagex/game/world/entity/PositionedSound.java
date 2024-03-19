@@ -332,7 +332,7 @@ public class PositionedSound extends Node {
 	public static void method10310(PlayerEntity arg0) {
 		PositionedSound var1 = (PositionedSound) field11366.getNode((long) arg0.field10406);
 		if (var1 == null) {
-			method9739(arg0.field11717, arg0.field10450[0], arg0.field10448[0], 0, null, null, arg0);
+			method9739(arg0.field11717, arg0.routeWaypointX[0], arg0.routeWaypointZ[0], 0, null, null, arg0);
 		} else {
 			var1.method17660();
 		}

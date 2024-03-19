@@ -57,15 +57,15 @@ public abstract class LocTypeFactory {
 		this.field7536 = arg0;
 		WeightedCache var2 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
-			this.modelCacheStatic.method2924();
+			this.modelCacheStatic.clear();
 		}
 		WeightedCache var4 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
-			this.modelCacheDynamic.method2924();
+			this.modelCacheDynamic.clear();
 		}
 		WeightedCache var6 = this.field7532;
 		synchronized (this.field7532) {
-			this.field7532.method2924();
+			this.field7532.clear();
 		}
 	}
 
@@ -73,15 +73,15 @@ public abstract class LocTypeFactory {
 	public void method9521() {
 		WeightedCache var1 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
-			this.modelCacheStatic.method2924();
+			this.modelCacheStatic.clear();
 		}
 		WeightedCache var3 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
-			this.modelCacheDynamic.method2924();
+			this.modelCacheDynamic.clear();
 		}
 		WeightedCache var5 = this.field7532;
 		synchronized (this.field7532) {
-			this.field7532.method2924();
+			this.field7532.clear();
 		}
 		this.field7535 = new ModelUnlit[4];
 		this.field7529 = new Pair(null, null);

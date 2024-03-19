@@ -22,7 +22,7 @@ public class LegacyOpenGLEnvironmentSampler_Sub1 extends LegacyOpenGLEnvironment
 
 	public LegacyOpenGLEnvironmentSampler_Sub1(LegacyOpenGLRenderer arg0, int arg1) {
 		this.field11944 = arg0;
-		this.field11941 = new LegacyOpenGLCubeTexture(arg0, TextureFormat.field1273, DataType.UNSIGNED_INT_8, arg1);
+		this.field11941 = new LegacyOpenGLCubeTexture(arg0, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, arg1);
 	}
 
 	@ObfuscatedName("apf.m()I")

@@ -69,7 +69,7 @@ public class LegacyGlEffectRelated {
 			LegacyEffectRelated5 var8 = arg0.field9871;
 			if (var8.method1391()) {
 				byte[] var9 = ByteArrayCopier.method4540(field1048, false);
-				this.field1038 = new LegacyColourRemapperRelated(arg0, TextureFormat.field1273, DataType.UNSIGNED_INT_8, 128, 128, 16);
+				this.field1038 = new LegacyColourRemapperRelated(arg0, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, 128, 128, 16);
 				LegacyColourRemapperRelated var10 = new LegacyColourRemapperRelated(arg0, TextureFormat.field1275, DataType.UNSIGNED_INT_8, 128, 128, 16, var9, TextureFormat.field1275);
 				if (var8.method1390(this.field1038, var10, 2.0F)) {
 					this.field1038.method1084();

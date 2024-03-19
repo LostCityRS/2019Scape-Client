@@ -37,7 +37,7 @@ public class FloorOverlayType implements ConfigType, ConfigRelated {
 	public boolean blend = false;
 
 	@ObfuscatedName("yn.d")
-	public int waterfogcolour = 1190912; // or 1190656?
+	public int waterfogcolour = 1190656;
 
 	@ObfuscatedName("yn.c")
 	public int waterfogscale = 512;
