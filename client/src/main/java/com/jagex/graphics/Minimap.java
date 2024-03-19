@@ -548,18 +548,18 @@ public class Minimap {
 		if (Client.field3416 == 4) {
 			var7 = Client.field10892;
 			var8 = Client.field10893;
-			var9 = (int) -Client.field10895 & 0x3FFF;
+			var9 = (int) -Client.orbitCameraYaw & 0x3FFF;
 			var10 = 4096;
 		} else {
 			Vector3 var11 = Client.localPlayerEntity.method10536().field4298;
 			var7 = (int) var11.field4308;
 			var8 = (int) var11.field4313;
 			if (Client.field3416 == 3) {
-				var9 = (int) -((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.field10885 & 0x3FFF;
+				var9 = (int) -((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 			} else {
-				var9 = Client.field10885 + (int) -Client.field10895 & 0x3FFF;
+				var9 = Client.minimapAnticheatAngle + (int) -Client.orbitCameraYaw & 0x3FFF;
 			}
-			var10 = 4096 - Client.field10887 * 16;
+			var10 = 4096 - Client.minimapZoom * 16;
 		}
 		int var12 = var7 / 128 + 48;
 		int var13 = Client.world.getSizeZ() * 4 + 48 - var8 / 128;
@@ -589,7 +589,7 @@ public class Minimap {
 			}
 			method15085(arg0, var5, arg1, arg2, arg3, var22, var23, var24.field7485);
 		}
-		for (ObjStackList var25 = (ObjStackList) Client.field10964.peekFront(); var25 != null; var25 = (ObjStackList) Client.field10964.prev()) {
+		for (ObjStackList var25 = (ObjStackList) Client.objStacks.peekFront(); var25 != null; var25 = (ObjStackList) Client.objStacks.prev()) {
 			int var26 = (int) (var25.nodeId >> 28 & 0x3L);
 			if (field722 == var26) {
 				int var27 = (int) (var25.nodeId & 0x3FFFL) - var6.x;
@@ -618,7 +618,7 @@ public class Minimap {
 	@ObfuscatedName("je.o(Ldh;IILhf;Lch;IIB)V")
 	public static void method4838(Renderer arg0, int arg1, int arg2, Component arg3, GraphicsRelated arg4, int arg5, int arg6) {
 		for (int var7 = 0; var7 < Client.field11011; var7++) {
-			ObjectWrapper var8 = (ObjectWrapper) Client.field10838.getNode((long) Client.field11036[var7]);
+			ObjectWrapper var8 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var7]);
 			if (var8 != null) {
 				NpcEntity var9 = (NpcEntity) var8.field11436;
 				if (var9.method19160() && Client.localPlayerEntity.field11717 == var9.field11717) {
@@ -646,7 +646,7 @@ public class Minimap {
 		int var6 = ReceivePlayerPositions.field698;
 		int[] var7 = ReceivePlayerPositions.field703;
 		for (int var8 = 0; var8 < var6; var8++) {
-			PlayerEntity var9 = Client.field10944[var7[var8]];
+			PlayerEntity var9 = Client.players[var7[var8]];
 			if (var9 != null && var9.method19119() && !var9.field12071.method10195() && Client.localPlayerEntity != var9 && Client.localPlayerEntity.field11717 == var9.field11717) {
 				Vector3 var10 = var9.method10536().field4298;
 				int var11 = (int) var10.field4308 / 128 - arg0 / 128;
@@ -693,12 +693,12 @@ public class Minimap {
 
 	@ObfuscatedName("ia.y(IILhf;Lhx;IIS)V")
 	public static void method4538(int arg0, int arg1, Component arg2, Graphic arg3, int arg4, int arg5) {
-		HintArrow[] var6 = Client.field10851;
+		HintArrow[] var6 = Client.hintArrows;
 		for (int var7 = 0; var7 < var6.length; var7++) {
 			HintArrow var8 = var6[var7];
 			if (var8 != null && var8.field745 != 0 && Client.currentclock % 20 < 10) {
 				if (var8.field745 == 1) {
-					ObjectWrapper var9 = (ObjectWrapper) Client.field10838.getNode((long) var8.field744);
+					ObjectWrapper var9 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var8.field744);
 					if (var9 != null) {
 						NpcEntity var10 = (NpcEntity) var9.field11436;
 						Vector3 var11 = var10.method10536().field4298;
@@ -714,8 +714,8 @@ public class Minimap {
 					long var18 = var16 * var16;
 					method15035(arg2, arg3, arg4, arg5, var14, var15, var8.field751, var18);
 				}
-				if (var8.field745 == 10 && var8.field744 >= 0 && var8.field744 < Client.field10944.length) {
-					PlayerEntity var20 = Client.field10944[var8.field744];
+				if (var8.field745 == 10 && var8.field744 >= 0 && var8.field744 < Client.players.length) {
+					PlayerEntity var20 = Client.players[var8.field744];
 					if (var20 != null) {
 						Vector3 var21 = var20.method10536().field4298;
 						int var22 = (int) var21.field4308 / 128 - arg0 / 128;
@@ -741,17 +741,17 @@ public class Minimap {
 			for (int var10 = 0; var10 < var9.length / 2; var10++) {
 				int var11;
 				if (Client.field3416 == 3) {
-					var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.field10885 & 0x3FFF;
+					var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 				} else if (Client.field3416 == 4) {
-					var11 = (int) Client.field10895 & 0x3FFF;
+					var11 = (int) Client.orbitCameraYaw & 0x3FFF;
 				} else {
-					var11 = Client.field10885 + (int) Client.field10895 & 0x3FFF;
+					var11 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 				}
 				int var12 = Trig1.field4270[var11];
 				int var13 = Trig1.field4272[var11];
 				if (Client.field3416 != 4) {
-					var12 = var12 * 256 / (Client.field10887 + 256);
-					var13 = var13 * 256 / (Client.field10887 + 256);
+					var12 = var12 * 256 / (Client.minimapZoom + 256);
+					var13 = var13 * 256 / (Client.minimapZoom + 256);
 				}
 				var9[var10 * 2] = ((var8.field2393[var10 * 2] * 4 + arg5) * var13 + (var8.field2393[var10 * 2 + 1] * 4 + arg6) * var12 >> 14) + arg2.field2196 / 2 + arg3;
 				var9[var10 * 2 + 1] = arg2.field2197 / 2 + arg4 - ((var8.field2393[var10 * 2 + 1] * 4 + arg6) * var13 - (var8.field2393[var10 * 2] * 4 + arg5) * var12 >> 14);
@@ -853,17 +853,17 @@ public class Minimap {
 		}
 		int var10;
 		if (Client.field3416 == 3) {
-			var10 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.field10885 & 0x3FFF;
+			var10 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 		} else if (Client.field3416 == 4) {
-			var10 = (int) Client.field10895 & 0x3FFF;
+			var10 = (int) Client.orbitCameraYaw & 0x3FFF;
 		} else {
-			var10 = Client.field10885 + (int) Client.field10895 & 0x3FFF;
+			var10 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 		}
 		int var11 = Trig1.field4270[var10];
 		int var12 = Trig1.field4272[var10];
 		if (Client.field3416 != 4) {
-			var11 = var11 * 256 / (Client.field10887 + 256);
-			var12 = var12 * 256 / (Client.field10887 + 256);
+			var11 = var11 * 256 / (Client.minimapZoom + 256);
+			var12 = var12 * 256 / (Client.minimapZoom + 256);
 		}
 		int var13 = arg4 * var12 + arg5 * var11 >> 14;
 		int var14 = arg5 * var12 - arg4 * var11 >> 14;
@@ -917,11 +917,11 @@ public class Minimap {
 		}
 		int var11;
 		if (Client.field3416 == 3) {
-			var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.field10885 & 0x3FFF;
+			var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 		} else if (Client.field3416 == 4) {
-			var11 = (int) Client.field10895 & 0x3FFF;
+			var11 = (int) Client.orbitCameraYaw & 0x3FFF;
 		} else {
-			var11 = Client.field10885 + (int) Client.field10895 & 0x3FFF;
+			var11 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 		}
 		int var12 = Math.max(arg0.field2196 / 2, arg0.field2197 / 2) + 10;
 		int var13 = arg4 * arg4 + arg5 * arg5;
@@ -931,8 +931,8 @@ public class Minimap {
 		int var14 = Trig1.field4270[var11];
 		int var15 = Trig1.field4272[var11];
 		if (Client.field3416 != 4) {
-			var14 = var14 * 256 / (Client.field10887 + 256);
-			var15 = var15 * 256 / (Client.field10887 + 256);
+			var14 = var14 * 256 / (Client.minimapZoom + 256);
+			var15 = var15 * 256 / (Client.minimapZoom + 256);
 		}
 		int var16 = arg4 * var15 + arg5 * var14 >> 14;
 		int var17 = arg5 * var15 - arg4 * var14 >> 14;
@@ -973,11 +973,11 @@ public class Minimap {
 	public static void method3654(Component arg0, GraphicsRelated arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, Font arg8, FontMetrics arg9, int arg10) {
 		int var11;
 		if (Client.field3416 == 3) {
-			var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.field10885 & 0x3FFF;
+			var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 		} else if (Client.field3416 == 4) {
-			var11 = (int) Client.field10895 & 0x3FFF;
+			var11 = (int) Client.orbitCameraYaw & 0x3FFF;
 		} else {
-			var11 = Client.field10885 + (int) Client.field10895 & 0x3FFF;
+			var11 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 		}
 		int var12 = Math.max(arg0.field2196 / 2, arg0.field2197 / 2) + 10;
 		int var13 = arg4 * arg4 + arg5 * arg5;
@@ -987,8 +987,8 @@ public class Minimap {
 		int var14 = Trig1.field4270[var11];
 		int var15 = Trig1.field4272[var11];
 		if (Client.field3416 != 4) {
-			var14 = var14 * 256 / (Client.field10887 + 256);
-			var15 = var15 * 256 / (Client.field10887 + 256);
+			var14 = var14 * 256 / (Client.minimapZoom + 256);
+			var15 = var15 * 256 / (Client.minimapZoom + 256);
 		}
 		int var16 = arg4 * var15 + arg5 * var14 >> 14;
 		int var17 = arg5 * var15 - arg4 * var14 >> 14;

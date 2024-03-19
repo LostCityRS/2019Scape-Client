@@ -278,8 +278,8 @@ public final class ScriptRunner {
 		arg3.field8212 = new Object[var4.field12368];
 		if (ClientTriggerType.field7263 == var4.field12373 || ClientTriggerType.field7255 == var4.field12373 || ClientTriggerType.field7254 == var4.field12373) {
 			arg3.field8213[0] = arg1;
-			arg3.field8213[1] = Client.field9182.method9086();
-			arg3.field8213[2] = Client.field9182.method9092();
+			arg3.field8213[1] = Client.mouse.method9086();
+			arg3.field8213[2] = Client.mouse.method9092();
 		} else if (ClientTriggerType.field7258 == var4.field12373 || ClientTriggerType.field7249 == var4.field12373 || ClientTriggerType.field7257 == var4.field12373 || ClientTriggerType.field7253 == var4.field12373 || ClientTriggerType.field7252 == var4.field12373) {
 			arg3.field8213[0] = arg1;
 		} else if (ClientTriggerType.field7251 == var4.field12373) {
@@ -9095,7 +9095,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("pu.sg(Lhf;Lyf;I)V")
 	public static final void cc_if_getcharindexatpos(Component arg0, ClientScriptState arg1) {
-		FontMetrics var2 = arg0.method3943(Client.field7538, Client.field10833);
+		FontMetrics var2 = arg0.method3943(Client.fontProvider, Client.fontFactory);
 		int var3 = arg1.field8216[--arg1.field8226];
 		int var4 = arg1.field8216[--arg1.field8226];
 		int var5 = var2.method14542(arg0.field2261, arg0.field2196, arg0.field2229, var4, var3, DefaultSprites.field10302);
@@ -9118,7 +9118,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("dm.tr(Lhf;Lyf;B)V")
 	public static final void cc_if_getcharposatindex(Component arg0, ClientScriptState arg1) {
-		FontMetrics var2 = arg0.method3943(Client.field7538, Client.field10833);
+		FontMetrics var2 = arg0.method3943(Client.fontProvider, Client.fontFactory);
 		int var3 = arg1.field8216[--arg1.field8226];
 		Point var4 = var2.method14541(arg0.field2261, arg0.field2196, arg0.field2229, var3, DefaultSprites.field10302);
 		arg1.field8216[++arg1.field8226 - 1] = var4.x;
@@ -9549,7 +9549,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("gz.ue(Lyf;B)V")
 	public static final void if_hassub(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		SubInterface var2 = (SubInterface) Client.field10979.getNode((long) var1);
+		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.getNode((long) var1);
 		if (var2 == null) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
@@ -9579,7 +9579,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		SubInterface var3 = (SubInterface) Client.field10979.getNode((long) var1);
+		SubInterface var3 = (SubInterface) Client.openedSubInterfaces.getNode((long) var1);
 		if (var3 != null && var3.field11571 == var2) {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
@@ -9721,7 +9721,7 @@ public final class ScriptRunner {
 	public static final void if_closesubclient(ClientScriptState arg0) {
 		arg0.field8226--;
 		int var1 = arg0.field8216[arg0.field8226];
-		SubInterface var2 = (SubInterface) Client.field10979.getNode((long) var1);
+		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.getNode((long) var1);
 		if (var2 != null && var2.field11570 == 3) {
 			Client.method214(var2, true, true);
 		}
@@ -10289,12 +10289,12 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ank.yf(Lyf;B)V")
 	public static final void get_mousex(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field9182.method9086();
+		arg0.field8216[++arg0.field8226 - 1] = Client.mouse.method9086();
 	}
 
 	@ObfuscatedName("dl.ya(Lyf;I)V")
 	public static final void get_mousey(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field9182.method9092();
+		arg0.field8216[++arg0.field8226 - 1] = Client.mouse.method9092();
 	}
 
 	@ObfuscatedName("aks.yd(Lyf;I)V")
@@ -10317,7 +10317,7 @@ public final class ScriptRunner {
 	public static final void npc_find_active_minimenu_entry(ClientScriptState arg0) {
 		MinimenuEntry var1 = MiniMenu.method4924();
 		if (MiniMenu.method18429(var1) == 4) {
-			ObjectWrapper var2 = (ObjectWrapper) Client.field10838.getNode(var1.method19370());
+			ObjectWrapper var2 = (ObjectWrapper) Client.miniMenuEntries.getNode(var1.method19370());
 			if (var2 != null) {
 				arg0.currentEntity = (PathingEntity) var2.field11436;
 				arg0.field8216[++arg0.field8226 - 1] = 1;
@@ -10333,7 +10333,7 @@ public final class ScriptRunner {
 		if (MiniMenu.method18429(var1) == 7) {
 			int var2 = (int) var1.method19368();
 			if (var2 >= 0 && var2 <= ReceivePlayerPositions.field698) {
-				PlayerEntity var3 = Client.field10944[var2];
+				PlayerEntity var3 = Client.players[var2];
 				if (var3 != null) {
 					arg0.currentEntity = var3;
 					arg0.field8216[++arg0.field8226 - 1] = 1;
@@ -10366,9 +10366,9 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("sn.zt(Lyf;B)V")
 	public static final void get_mousebuttons(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field9182.method9101() ? 1 : 0;
-		arg0.field8216[++arg0.field8226 - 1] = Client.field9182.method9121() ? 1 : 0;
-		arg0.field8216[++arg0.field8226 - 1] = Client.field9182.method9125() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.mouse.method9101() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.mouse.method9121() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.mouse.method9125() ? 1 : 0;
 	}
 
 	@ObfuscatedName("qw.zy(Lyf;S)V")
@@ -10378,7 +10378,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("dz.zi(Lyf;B)V")
 	public static final void get_minimenu_target(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10973 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.targetModeActive ? 1 : 0;
 		arg0.field8218[++arg0.field8211 - 1] = Client.field10977 == null ? "" : Client.field10977;
 		arg0.field8218[++arg0.field8211 - 1] = Client.field11039 == null ? "" : Client.field11039;
 	}
@@ -11746,7 +11746,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
-		FontMetrics var4 = Client.field7538.method6163(Client.field10833, var3);
+		FontMetrics var4 = Client.fontProvider.method6163(Client.fontFactory, var3);
 		arg0.field8216[++arg0.field8226 - 1] = var4.method14538(var1, var2, DefaultSprites.field10302);
 	}
 
@@ -11756,7 +11756,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
-		FontMetrics var4 = Client.field7538.method6163(Client.field10833, var3);
+		FontMetrics var4 = Client.fontProvider.method6163(Client.fontFactory, var3);
 		arg0.field8216[++arg0.field8226 - 1] = var4.method14551(var1, var2, DefaultSprites.field10302);
 	}
 
@@ -11767,7 +11767,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		int var4 = arg0.field8216[arg0.field8226 + 2];
-		FontMetrics var5 = Client.field7538.method6163(Client.field10833, var3);
+		FontMetrics var5 = Client.fontProvider.method6163(Client.fontFactory, var3);
 		String var6 = var5.method14539(var1, var2, DefaultSprites.field10302, var4);
 		arg0.field8218[++arg0.field8211 - 1] = var6 == null ? "" : var6;
 	}
@@ -11908,7 +11908,7 @@ public final class ScriptRunner {
 	public static final void stringwidth(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		int var2 = arg0.field8216[--arg0.field8226];
-		FontMetrics var3 = Client.field7538.method6163(Client.field10833, var2);
+		FontMetrics var3 = Client.fontProvider.method6163(Client.fontFactory, var2);
 		arg0.field8216[++arg0.field8226 - 1] = var3.method14533(var1, DefaultSprites.field10302);
 	}
 
@@ -12364,7 +12364,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ki.aht(Lyf;I)V")
 	public static final void chat_sendpublic(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
-		if (Client.staffModLevel == 0 && (Client.field10951 && !Client.field11081 || Client.loggedInQuickChat)) {
+		if (Client.staffModLevel == 0 && (Client.field10951 && !Client.playerIsQuickChat || Client.loggedInQuickChat)) {
 			return;
 		}
 		String var2 = var1.toLowerCase();
@@ -12495,7 +12495,7 @@ public final class ScriptRunner {
 		arg0.field8211 -= 2;
 		String var1 = (String) arg0.field8218[arg0.field8211];
 		String var2 = (String) arg0.field8218[arg0.field8211 + 1];
-		if (Client.staffModLevel == 0 && (Client.field10951 && !Client.field11081 || Client.loggedInQuickChat)) {
+		if (Client.staffModLevel == 0 && (Client.field10951 && !Client.playerIsQuickChat || Client.loggedInQuickChat)) {
 			return;
 		}
 		ServerConnection var3 = Client.method640();
@@ -12770,7 +12770,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("aos.ajy(Lyf;I)V")
 	public static final void keyheld_alt(ClientScriptState arg0) {
-		if (Client.field11931.method9080(86)) {
+		if (Client.keyboard.method9080(86)) {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
@@ -12779,7 +12779,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("er.ajs(Lyf;B)V")
 	public static final void keyheld_ctrl(ClientScriptState arg0) {
-		if (Client.field11931.method9080(82)) {
+		if (Client.keyboard.method9080(82)) {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
@@ -12788,7 +12788,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("amt.ajv(Lyf;B)V")
 	public static final void keyheld_shift(ClientScriptState arg0) {
-		if (Client.field11931.method9080(81)) {
+		if (Client.keyboard.method9080(81)) {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
@@ -13432,8 +13432,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("in.alo(Lyf;I)V")
 	public static final void lastlogin(ClientScriptState arg0) {
 		String var1 = null;
-		if (Client.field636 != null) {
-			var1 = Client.field636.method544();
+		if (Client.hostNameProvider != null) {
+			var1 = Client.hostNameProvider.method544();
 		}
 		if (var1 == null) {
 			var1 = "";
@@ -13675,7 +13675,7 @@ public final class ScriptRunner {
 		if (Client.field3416 == 3) {
 			arg0.field8216[++arg0.field8226 - 1] = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) >> 3;
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = (int) Client.field10895 >> 3;
+			arg0.field8216[++arg0.field8226 - 1] = (int) Client.orbitCameraYaw >> 3;
 		}
 	}
 
@@ -15611,13 +15611,13 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ji.awe(Lyf;B)V")
 	public static final void if_gettop(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10978;
+		arg0.field8216[++arg0.field8226 - 1] = Client.openedTopInterface;
 	}
 
 	@ObfuscatedName("rp.awi(Lyf;I)V")
 	public static final void if_debug_getopenifcount(ClientScriptState arg0) {
-		int var1 = Client.field10979.length();
-		if (Client.field10978 != -1) {
+		int var1 = Client.openedSubInterfaces.length();
+		if (Client.openedTopInterface != -1) {
 			var1++;
 		}
 		arg0.field8216[++arg0.field8226 - 1] = var1;
@@ -15626,16 +15626,16 @@ public final class ScriptRunner {
 	@ObfuscatedName("fo.awy(Lyf;I)V")
 	public static final void if_debug_getopenifid(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.field10978 != -1) {
+		if (Client.openedTopInterface != -1) {
 			if (var1 == 0) {
-				arg0.field8216[++arg0.field8226 - 1] = Client.field10978;
+				arg0.field8216[++arg0.field8226 - 1] = Client.openedTopInterface;
 				return;
 			}
 			var1--;
 		}
-		SubInterface var2 = (SubInterface) Client.field10979.peekFront();
+		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.peekFront();
 		while (var1-- > 0) {
-			var2 = (SubInterface) Client.field10979.prev();
+			var2 = (SubInterface) Client.openedSubInterfaces.prev();
 		}
 		arg0.field8216[++arg0.field8226 - 1] = var2.field11571;
 	}
@@ -15835,7 +15835,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("wn.axm(Lyf;B)V")
 	public static final void targetmode_active(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10973 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.targetModeActive ? 1 : 0;
 	}
 
 	@ObfuscatedName("pp.axt(Lyf;I)V")
@@ -15895,13 +15895,13 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("tg.axl(Lyf;B)V")
 	public static final void userdetail_quickchat(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.field10951 && !Client.field11081 ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.field10951 && !Client.playerIsQuickChat ? 1 : 0;
 	}
 
 	@ObfuscatedName("ii.axi(Lyf;B)V")
 	public static final void userdetail_lobby_membership(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = (int) (Client.field8322 / 60000L);
-		arg0.field8216[++arg0.field8226 - 1] = (int) ((Client.field8322 - MonotonicTime.get() - Client.field1238) / 60000L);
+		arg0.field8216[++arg0.field8226 - 1] = (int) (Client.lobbyMembership / 60000L);
+		arg0.field8216[++arg0.field8226 - 1] = (int) ((Client.lobbyMembership - MonotonicTime.get() - Client.field1238) / 60000L);
 		arg0.field8216[++arg0.field8226 - 1] = Client.field11709 ? 1 : 0;
 	}
 
@@ -15923,8 +15923,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("sc.ayp(Lyf;B)V")
 	public static final void userdetail_lobby_lastloginaddress(ClientScriptState arg0) {
 		String var1 = null;
-		if (Client.field636 != null) {
-			var1 = Client.field636.method544();
+		if (Client.hostNameProvider != null) {
+			var1 = Client.hostNameProvider.method544();
 		}
 		if (var1 == null) {
 			var1 = "";
@@ -17283,7 +17283,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ace.bfr(Lyf;B)V")
 	public static final void method15087(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		FontMetrics var2 = Client.field7538.method6163(Client.field10833, var1);
+		FontMetrics var2 = Client.fontProvider.method6163(Client.fontFactory, var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8566;
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8562;
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8569;

@@ -366,11 +366,11 @@ public class PlayerEntity extends PathingEntity {
 			}
 		}
 		if (Client.localPlayerEntity == this) {
-			for (int var16 = Client.field10851.length - 1; var16 >= 0; var16--) {
-				HintArrow var17 = Client.field10851[var16];
+			for (int var16 = Client.hintArrows.length - 1; var16 >= 0; var16--) {
+				HintArrow var17 = Client.hintArrows[var16];
 				if (var17 != null && var17.field750 != -1) {
 					if (var17.field745 == 1) {
-						ObjectWrapper var18 = (ObjectWrapper) Client.field10838.getNode((long) var17.field744);
+						ObjectWrapper var18 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var17.field744);
 						if (var18 != null) {
 							NpcEntity var19 = (NpcEntity) var18.field11436;
 							Vector3 var20 = Vector3.method6528(var19.method10536().field4298, Client.localPlayerEntity.method10536().field4298);
@@ -387,8 +387,8 @@ public class PlayerEntity extends PathingEntity {
 						long var30 = var28 * var28;
 						this.method19113(arg0, var2, this.field10459[0], var24, var26, var17.field750, var30);
 					}
-					if (var17.field745 == 10 && var17.field744 >= 0 && var17.field744 < Client.field10944.length) {
-						PlayerEntity var32 = Client.field10944[var17.field744];
+					if (var17.field745 == 10 && var17.field744 >= 0 && var17.field744 < Client.players.length) {
+						PlayerEntity var32 = Client.players[var17.field744];
 						if (var32 != null) {
 							Vector3 var33 = Vector3.method6528(var32.method10536().field4298, Client.localPlayerEntity.method10536().field4298);
 							int var34 = (int) var33.field4308;

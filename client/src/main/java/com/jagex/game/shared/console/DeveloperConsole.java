@@ -576,7 +576,7 @@ public class DeveloperConsole {
 							var17.getStream().closeForcefully();
 						}
 					}
-					Client.field4489.method7035();
+					Client.js5TcpClient.method7035();
 					return;
 				}
 				if (arg0.startsWith("getclientvarpbit")) {
@@ -691,7 +691,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 21) {
 					Client.field10794 = false;
 				} else if (arg0 == 10) {
-					Client.field10864.clear();
+					Client.textCoords.clear();
 				} else if (arg0 == 5) {
 					Client.method10444();
 					for (int var2 = 0; var2 < 10; var2++) {
@@ -716,13 +716,13 @@ public class DeveloperConsole {
 					int var9 = (int) ((var6.totalMemory() - var6.freeMemory()) / 1024L);
 					addline("" + var9);
 				} else if (arg0 == 9) {
-					addline(Client.field10577.method7909() ? "Success" : "Failure");
+					addline(Client.hardwarePlatformLoader.method7909() ? "Success" : "Failure");
 				} else if (arg0 == 23) {
 					WorldSwitcher.currentWorld.configureSocketType();
 				} else if (arg0 == 14) {
-					Client.field4489.method7020();
+					Client.js5TcpClient.method7020();
 				} else if (arg0 == 6) {
-					Client.field4489.method7014();
+					Client.js5TcpClient.method7014();
 				} else if (arg0 == 26) {
 					GameShell.canvas.setLocation(50, 50);
 				} else if (arg0 == 22) {

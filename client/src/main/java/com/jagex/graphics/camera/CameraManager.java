@@ -46,8 +46,8 @@ public class CameraManager {
 			field604.method4690(Vector3.create(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
 		} catch (CameraException var4) {
 		}
-		field605 = Client.field9182.method9086();
-		field7284 = Client.field9182.method9092();
+		field605 = Client.mouse.method9086();
+		field7284 = Client.mouse.method9092();
 		field603 = true;
 	}
 
@@ -79,39 +79,39 @@ public class CameraManager {
 			} catch (CameraException var21) {
 			}
 		}
-		if (Client.field9182.method9121()) {
+		if (Client.mouse.method9121()) {
 			Quaternion var10 = Quaternion.method6469();
-			var10.method6414(1.0F, 0.0F, 0.0F, (float) (Client.field9182.method9092() - field7284) / 200.0F);
+			var10.method6414(1.0F, 0.0F, 0.0F, (float) (Client.mouse.method9092() - field7284) / 200.0F);
 			var3.method6424(var10);
 			Vector3 var11 = Vector3.create(0.0F, 1.0F, 0.0F);
 			var11.method6526(var3);
 			Quaternion var12 = Quaternion.method6469();
-			var12.method6413(var11, (float) (field605 - Client.field9182.method9086()) / 200.0F);
+			var12.method6413(var11, (float) (field605 - Client.mouse.method9086()) / 200.0F);
 			var3.method6424(var12);
 			var1.method18781(var3);
 		}
-		field605 = Client.field9182.method9086();
-		field7284 = Client.field9182.method9092();
+		field605 = Client.mouse.method9086();
+		field7284 = Client.mouse.method9092();
 		var3.method6418();
-		if (Client.field11931.method9080(98)) {
+		if (Client.keyboard.method9080(98)) {
 			Vector3 var13 = Vector3.create(0.0F, 0.0F, 25.0F);
 			var13.method6526(var3);
 			var13.field4311 *= -1.0F;
 			var2.method6497(var13);
 		}
-		if (Client.field11931.method9080(99)) {
+		if (Client.keyboard.method9080(99)) {
 			Vector3 var14 = Vector3.create(0.0F, 0.0F, -25.0F);
 			var14.method6526(var3);
 			var14.field4311 *= -1.0F;
 			var2.method6497(var14);
 		}
-		if (Client.field11931.method9080(96)) {
+		if (Client.keyboard.method9080(96)) {
 			Vector3 var15 = Vector3.create(-25.0F, 0.0F, 0.0F);
 			var15.method6526(var3);
 			var15.field4311 *= -1.0F;
 			var2.method6497(var15);
 		}
-		if (Client.field11931.method9080(97)) {
+		if (Client.keyboard.method9080(97)) {
 			Vector3 var16 = Vector3.create(25.0F, 0.0F, 0.0F);
 			var16.method6526(var3);
 			var16.field4311 *= -1.0F;

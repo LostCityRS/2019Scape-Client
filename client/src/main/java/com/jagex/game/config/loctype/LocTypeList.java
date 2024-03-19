@@ -15,7 +15,7 @@ public class LocTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aop.al(ZI)V")
-	public void method18890(boolean arg0) {
+	public void setAllowMembers(boolean arg0) {
 		((LocTypeFactory) this.factory).method9519(arg0);
 	}
 

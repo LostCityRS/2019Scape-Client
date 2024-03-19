@@ -286,8 +286,8 @@ public class ClientWorldMap extends WorldMap {
 				}
 				for (int var12 = 0; var12 < 5; var12++) {
 					if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
-						field11659[var11][var12] = (Font) Client.field7538.method6188(Client.field10833, WorldMap.field6792.field7697[var11][var12], true, true);
-						field11660[var11][var12] = Client.field7538.method6163(Client.field10833, WorldMap.field6792.field7697[var11][var12]);
+						field11659[var11][var12] = (Font) Client.fontProvider.method6188(Client.fontFactory, WorldMap.field6792.field7697[var11][var12], true, true);
+						field11660[var11][var12] = Client.fontProvider.method6163(Client.fontFactory, WorldMap.field6792.field7697[var11][var12]);
 						if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
 							return;
 						}

@@ -296,7 +296,7 @@ public class LoginManager {
 		LoginManager.password = password;
 		field439 = arg4;
 		if (!field456 && (LoginManager.username.equals("") || LoginManager.password.equals(""))) {
-			method669(3);
+			setReply(3);
 			method10367();
 			return false;
 		}
@@ -306,7 +306,7 @@ public class LoginManager {
 			disallowTrigger = -1;
 		}
 		connection.disconnected = false;
-		method669(-3);
+		setReply(-3);
 		loginState = 14;
 		field478 = 0;
 		field475 = 0;
@@ -335,7 +335,7 @@ public class LoginManager {
 				connection.closeGracefully();
 				if (field475 >= 3) {
 					loginState = 7;
-					method669(-5);
+					setReply(-5);
 					method10367();
 					return;
 				}
@@ -376,7 +376,7 @@ public class LoginManager {
 				if (var2 != 0) {
 					loginState = 7;
 					method481(var2);
-					method669(var2);
+					setReply(var2);
 					connection.closeGracefully();
 					method10367();
 					return;
@@ -558,12 +558,12 @@ public class LoginManager {
 					buf.p1(Client.preferences.antiAliasing2.getValue());
 					GameShell.pushUID192(buf);
 					buf.pjstr(Client.siteSettings);
-					Packet var22 = Client.preferences.createPreferencesBlock();
-					buf.p1(var22.pos);
-					buf.pdata(var22.data, 0, var22.pos);
-					Packet var23 = new Packet(Client.hardwarePlatform.calculateHardwarePlatformSize());
-					Client.hardwarePlatform.createHardwareBlock(var23);
-					buf.pdata(var23.data, 0, var23.data.length);
+					Packet preferencesPacket = Client.preferences.createPreferencesBlock();
+					buf.p1(preferencesPacket.pos);
+					buf.pdata(preferencesPacket.data, 0, preferencesPacket.pos);
+					Packet hardwarePacket = new Packet(Client.hardwarePlatform.calculateHardwarePlatformSize());
+					Client.hardwarePlatform.createHardwareBlock(hardwarePacket);
+					buf.pdata(hardwarePacket.data, 0, hardwarePacket.data.length);
 					buf.p4(Client.currentIncrementVerifyId);
 					buf.pjstr(Client.field579);
 					buf.p4(Client.playerIsAffiliate);
@@ -593,18 +593,18 @@ public class LoginManager {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 1);
-				int var26 = connection.in.g1();
+				int reply = connection.in.g1();
 				connection.in.pos = 0;
-				if (var26 == 21) {
+				if (reply == 21) {
 					loginState = 126;
-				} else if (var26 == 1) {
+				} else if (reply == 1) {
 					loginState = 103;
-					method669(var26);
+					setReply(reply);
 					return;
-				} else if (var26 == 52) {
-					field11819 = var26;
+				} else if (reply == 52) {
+					field11819 = reply;
 					loginState = 225;
-				} else if (var26 == 2) {
+				} else if (reply == 2) {
 					if (field487) {
 						field487 = false;
 						loginState = 14;
@@ -616,28 +616,28 @@ public class LoginManager {
 					} else {
 						loginState = 141;
 					}
-				} else if (var26 == 15) {
+				} else if (reply == 15) {
 					connection.packetSize = -2;
 					loginState = 204;
-				} else if (var26 == 23 && field475 < 3) {
+				} else if (reply == 23 && field475 < 3) {
 					field478 = 0;
 					field475++;
 					loginState = 14;
 					connection.closeGracefully();
 					return;
-				} else if (var26 == 42) {
+				} else if (reply == 42) {
 					loginState = 215;
-					method669(var26);
+					setReply(reply);
 					return;
-				} else if (field431 == 132 && var26 == 49 && Client.state != 9) {
+				} else if (field431 == 132 && reply == 49 && Client.state != 9) {
 					if (enterLobbyReply != 52) {
-						method669(var26);
+						setReply(reply);
 					}
 					return;
-				} else if (!field456 || isSocialLogin || field472 == -1 || var26 != 35) {
-					if (var26 != 53) {
+				} else if (!field456 || isSocialLogin || field472 == -1 || reply != 35) {
+					if (reply != 53) {
 						loginState = 7;
-						method669(var26);
+						setReply(reply);
 						connection.closeGracefully();
 						method10367();
 						return;
@@ -659,7 +659,7 @@ public class LoginManager {
 				int var27 = connection.in.data[0] & 0xFF;
 				hoptime = var27 * 50;
 				loginState = 7;
-				method669(21);
+				setReply(21);
 				connection.closeGracefully();
 				method10367();
 				return;
@@ -681,7 +681,7 @@ public class LoginManager {
 				banDuration = connection.in.g4s();
 				connection.in.pos = 0;
 				loginState = 7;
-				method669(53);
+				setReply(53);
 				connection.closeGracefully();
 				method10367();
 				return;
@@ -704,7 +704,7 @@ public class LoginManager {
 					throw new IllegalStateException();
 				}
 				loginState = 7;
-				method669(field11819);
+				setReply(field11819);
 				connection.closeGracefully();
 				method10367();
 				if (Client.method15084(Client.state)) {
@@ -736,7 +736,7 @@ public class LoginManager {
 				Packet var29 = new Packet(var28);
 				String var30 = var29.gjstr();
 				Browser.method4607(var30, true, Client.field10784);
-				method669(field11819);
+				setReply(field11819);
 				if (field431 == 132 && Client.state != 9) {
 					loginState = 98;
 				} else {
@@ -765,10 +765,10 @@ public class LoginManager {
 				while (true) {
 					if (connection.in.pos >= connection.packetSize) {
 						if (var31) {
-							ClientMessage var33 = ClientMessage.createMessage();
-							PacketBit var34 = var33.buf;
-							var34.p1(LoginProt.GAMELOGIN_CONTINUE.id);
-							connection.queue(var33);
+							ClientMessage message = ClientMessage.createMessage();
+							PacketBit buf = message.buf;
+							buf.p1(LoginProt.GAMELOGIN_CONTINUE.id);
+							connection.queue(message);
 							connection.flush();
 							loginState = 138;
 						} else {
@@ -789,7 +789,7 @@ public class LoginManager {
 				if (var35 != 2) {
 					if (var35 != 29 && var35 != 45) {
 						loginState = 7;
-						method669(var35);
+						setReply(var35);
 						connection.closeGracefully();
 						method10367();
 						if (Client.method15084(Client.state)) {
@@ -824,7 +824,7 @@ public class LoginManager {
 					Client.staffModLevel = in.g1();
 					Client.playerModLevel = in.g1();
 					Client.field10951 = in.g1() == 1;
-					Client.field11081 = in.g1() == 1;
+					Client.playerIsQuickChat = in.g1() == 1;
 					Client.field10953 = in.g1() == 1;
 					Client.loggedInQuickChat = in.g1() == 1;
 					Client.currentPlayerUid = in.g2();
@@ -833,8 +833,8 @@ public class LoginManager {
 					Client.loggedInMembers = in.g1() == 1;
 					Client.owner = in.gjstr();
 					Client.field1238 = in.g6() - MonotonicTime.get();
-					Client.world.method7750().method18890(Client.loggedInMembers);
-					Client.field3183.method7677().method7750().method18890(Client.loggedInMembers);
+					Client.world.method7750().setAllowMembers(Client.loggedInMembers);
+					Client.field3183.method7677().method7750().setAllowMembers(Client.loggedInMembers);
 					Client.objTypeList.setAllowMembers(Client.loggedInMembers);
 					Client.npcTypeList.setAllowMembers(Client.loggedInMembers);
 				} else if (connection.getStream().hasAvailable(replyPacketSize)) {
@@ -846,10 +846,10 @@ public class LoginManager {
 					Client.field10951 = in.g1() == 1;
 					Client.lobbyDOB = in.g3s();
 					Client.localPlayerEntity.index = (byte) in.g1();
-					Client.field11081 = in.g1() == 1;
+					Client.playerIsQuickChat = in.g1() == 1;
 					Client.field10953 = in.g1() == 1;
-					Client.field8322 = in.g8();
-					Client.field1238 = Client.field8322 - MonotonicTime.get() - in.g5();
+					Client.lobbyMembership = in.g8();
+					Client.field1238 = Client.lobbyMembership - MonotonicTime.get() - in.g5();
 					int var37 = in.g1();
 					Client.playerIsMembers = (var37 & 0x1) != 0;
 					Client.field11709 = (var37 & 0x2) != 0;
@@ -858,9 +858,9 @@ public class LoginManager {
 					Client.lobbyRecoveryDay = in.g2();
 					Client.lobbyUnreadMessages = in.g2();
 					Client.lobbyLastLoginDay = in.g2();
-					Client.field7942 = in.g4s();
-					Client.field636 = new HostNameProvider(Client.field7942);
-					(new Thread(Client.field636)).start();
+					Client.playerHostName = in.g4s();
+					Client.hostNameProvider = new HostNameProvider(Client.playerHostName);
+					(new Thread(Client.hostNameProvider)).start();
 					Client.lobbyEmailStatus = in.g1();
 					Client.lobbyCCExpiry = in.g2();
 					Client.lobbyGraceExpiry = in.g2();
@@ -904,7 +904,7 @@ public class LoginManager {
 				}
 				if (field431 != 211) {
 					loginState = 7;
-					method669(2);
+					setReply(2);
 					method10282();
 					Client.setState(13);
 					connection.packetType = null;
@@ -940,7 +940,7 @@ public class LoginManager {
 				connection.in.pos = 0;
 				int packetSize = connection.packetSize;
 				loginState = 7;
-				method669(2);
+				setReply(2);
 				prepareForMap();
 				ReceivePlayerPositions.method16435(connection.in);
 				int offset = packetSize - connection.in.pos;
@@ -974,7 +974,7 @@ public class LoginManager {
 				connection.in.pos = 0;
 				int packetSize = connection.packetSize;
 				loginState = 7;
-				method669(15);
+				setReply(15);
 				prepareForPlayers();
 				ReceivePlayerPositions.method16435(connection.in);
 				if (connection.in.pos != packetSize) {
@@ -996,7 +996,7 @@ public class LoginManager {
 				loginState = 14;
 			} else {
 				loginState = 7;
-				method669(-4);
+				setReply(-4);
 				method10367();
 			}
 		}
@@ -1097,7 +1097,7 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("ag.j(II)V")
-	public static void method669(int reply) {
+	public static void setReply(int reply) {
 		if (field431 == 132) {
 			enterLobbyReply = reply;
 		} else if (field431 == 211) {
@@ -1163,7 +1163,7 @@ public class LoginManager {
 		}
 		Client.localPlayerGameState.varps.method9624();
 		DelayedStateChange.method716();
-		Client.method4336(connection);
+		Client.notifyWindowStatus(connection);
 	}
 
 	@ObfuscatedName("xb.ah(I)V")
@@ -1180,28 +1180,28 @@ public class LoginManager {
 		method14959();
 		GameShell.focus = true;
 		ClassCheck.method4052();
-		for (int var0 = 0; var0 < Client.field10851.length; var0++) {
-			Client.field10851[var0] = null;
+		for (int var0 = 0; var0 < Client.hintArrows.length; var0++) {
+			Client.hintArrows[var0] = null;
 		}
-		Client.field10973 = false;
-		Client.field10870 = (int) (Math.random() * 100.0D) - 50;
-		Client.field10880 = (int) (Math.random() * 110.0D) - 55;
-		Client.field10861 = (int) (Math.random() * 80.0D) - 40;
-		Client.field10885 = (int) (Math.random() * 120.0D) - 60;
-		Client.field10887 = (int) (Math.random() * 30.0D) - 20;
-		Client.field10895 = (int) (Math.random() * 160.0D) - 80 & 0x3FFF;
+		Client.targetModeActive = false;
+		Client.cameraAnticheatOffsetX = (int) (Math.random() * 100.0D) - 50;
+		Client.cameraAnticheatOffsetZ = (int) (Math.random() * 110.0D) - 55;
+		Client.cameraAnticheatAngle = (int) (Math.random() * 80.0D) - 40;
+		Client.minimapAnticheatAngle = (int) (Math.random() * 120.0D) - 60;
+		Client.minimapZoom = (int) (Math.random() * 30.0D) - 20;
+		Client.orbitCameraYaw = (int) (Math.random() * 160.0D) - 80 & 0x3FFF;
 		Minimap.method9233();
 		for (int var1 = 0; var1 < 2048; var1++) {
-			Client.field10944[var1] = null;
+			Client.players[var1] = null;
 		}
 		Client.localPlayerEntity = null;
 		Client.field11011 = 0;
 		Client.field10906 = 0;
-		Client.field10838.clear();
-		Client.field10965.clearAll();
-		Client.field10966.clear();
-		Client.field10864.clear();
-		Client.field10964.clear();
+		Client.miniMenuEntries.clear();
+		Client.projectiles.clearAll();
+		Client.spotanims.clear();
+		Client.textCoords.clear();
+		Client.objStacks.clear();
 		ChangeLocationRequest.field11237 = new IterableQueue();
 		ChangeLocationRequest.field11242 = new IterableQueue();
 		Client.cameraMoveX = 0;
@@ -1214,20 +1214,20 @@ public class LoginManager {
 		Client.field1983 = 0;
 		Client.field8576 = 0;
 		Client.field708 = 0;
-		if (Client.field10978 != -1) {
-			Component.method7602(Client.field10978);
+		if (Client.openedTopInterface != -1) {
+			Component.method7602(Client.openedTopInterface);
 		}
-		for (SubInterface var2 = (SubInterface) Client.field10979.peekFront(); var2 != null; var2 = (SubInterface) Client.field10979.prev()) {
+		for (SubInterface var2 = (SubInterface) Client.openedSubInterfaces.peekFront(); var2 != null; var2 = (SubInterface) Client.openedSubInterfaces.prev()) {
 			if (!var2.hasNext()) {
-				var2 = (SubInterface) Client.field10979.peekFront();
+				var2 = (SubInterface) Client.openedSubInterfaces.peekFront();
 				if (var2 == null) {
 					break;
 				}
 			}
 			Client.method214(var2, true, false);
 		}
-		Client.field10978 = -1;
-		Client.field10979 = new IterableMap(8);
+		Client.openedTopInterface = -1;
+		Client.openedSubInterfaces = new IterableMap(8);
 		Component.method5075();
 		Client.field11056 = null;
 		for (int var3 = 0; var3 < 8; var3++) {
@@ -1252,7 +1252,7 @@ public class LoginManager {
 		Client.preferences.method18157(Client.preferences.removeRoofs2, Client.preferences.removeRoofs.getValue());
 		Client.currentIncrementVerifyId = 0;
 		MiniMenu.method5175();
-		Client.field594 = null;
+		Client.pingRequest = null;
 		Client.field3457 = 0L;
 	}
 
@@ -1270,7 +1270,7 @@ public class LoginManager {
 		MiniMenu.method5175();
 		Minimap.method3552();
 		for (int var0 = 0; var0 < 2048; var0++) {
-			Client.field10944[var0] = null;
+			Client.players[var0] = null;
 		}
 		Client.localPlayerEntity = null;
 		for (int var1 = 0; var1 < Client.field10906; var1++) {
@@ -1285,8 +1285,8 @@ public class LoginManager {
 		for (int var3 = 0; var3 < 114; var3++) {
 			Client.field11072[var3] = true;
 		}
-		Client.method4336(connection);
-		Client.field594 = null;
+		Client.notifyWindowStatus(connection);
+		Client.pingRequest = null;
 		Client.field3457 = 0L;
 		Client.method3652();
 		Client.field7228.method16421();

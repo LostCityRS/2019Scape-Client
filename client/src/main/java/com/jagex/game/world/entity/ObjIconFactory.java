@@ -53,7 +53,7 @@ public class ObjIconFactory {
 		if (field630 == null) {
 			Canvas var2 = new Canvas();
 			var2.setSize(36, 32);
-			field630 = Renderer.create(0, var2, Client.field7366, Client.field7669, Client.field9211, Client.field7282, Client.field2013, Client.shadersJs5, 0);
+			field630 = Renderer.create(0, var2, Client.materialList, Client.textureList, Client.basicBillboardTypeList, Client.basicParticleEmitterTypeList, Client.basicParticleEffectorTypeList, Client.shadersJs5, 0);
 			field629 = field630.createFont(FontMetrics.method1593(Client.fontmetricsJs5, DefaultSprites.field506, 0), SpriteDataProvider.method1609(Client.spritesJs5, DefaultSprites.field506, 0), true);
 		}
 		for (ObjIconRequest var3 = (ObjIconRequest) field631.peekFront(); var3 != null; var3 = (ObjIconRequest) field631.prev()) {

@@ -707,14 +707,14 @@ public class World {
 			return;
 		}
 		if (RebuildType.REBUILD_REGION == this.rebuildType || RebuildType.field5068 == this.rebuildType || this.field5020 != this.rebuildType && (RebuildType.REBUILD_NORMAL == this.rebuildType || RebuildType.REBUILD_NORMAL == this.field5020)) {
-			Iterator var1 = Client.field10838.iterator();
+			Iterator var1 = Client.miniMenuEntries.iterator();
 			while (var1.hasNext()) {
 				ObjectWrapper var2 = (ObjectWrapper) var1.next();
 				PositionedSound.method10111((NpcEntity) var2.field11436);
 			}
 			Client.field11011 = 0;
 			Client.field10906 = 0;
-			Client.field10838.clear();
+			Client.miniMenuEntries.clear();
 		}
 		this.field5020 = this.rebuildType;
 	}
@@ -809,9 +809,9 @@ public class World {
 				}
 			}
 			if (var9) {
-				Client.field10906 = Client.field10838.length();
+				Client.field10906 = Client.miniMenuEntries.length();
 				int var18 = 0;
-				Iterator var19 = Client.field10838.iterator();
+				Iterator var19 = Client.miniMenuEntries.iterator();
 				while (var19.hasNext()) {
 					ObjectWrapper var20 = (ObjectWrapper) var19.next();
 					Client.field10839[var18++] = var20;
@@ -819,7 +819,7 @@ public class World {
 			}
 		}
 		for (int var21 = 0; var21 < 2048; var21++) {
-			PlayerEntity var22 = Client.field10944[var21];
+			PlayerEntity var22 = Client.players[var21];
 			if (var22 != null) {
 				for (int var23 = 0; var23 < var22.routeWaypointX.length; var23++) {
 					var22.routeWaypointX[var23] -= var2;
@@ -832,7 +832,7 @@ public class World {
 				var24.method6486();
 			}
 		}
-		HintArrow[] var25 = Client.field10851;
+		HintArrow[] var25 = Client.hintArrows;
 		for (int var26 = 0; var26 < var25.length; var26++) {
 			HintArrow var27 = var25[var26];
 			if (var27 != null) {
@@ -874,7 +874,7 @@ public class World {
 				var32.remove();
 			}
 		}
-		for (ObjStackList var36 = (ObjStackList) Client.field10964.peekFront(); var36 != null; var36 = (ObjStackList) Client.field10964.prev()) {
+		for (ObjStackList var36 = (ObjStackList) Client.objStacks.peekFront(); var36 != null; var36 = (ObjStackList) Client.objStacks.prev()) {
 			int var37 = (int) (var36.nodeId >> 28 & 0x3L);
 			int var38 = (int) (var36.nodeId & 0x3FFFL);
 			int var39 = var38 - this.field5018.x;
@@ -916,9 +916,9 @@ public class World {
 		}
 		MiniMenu.method5175();
 		Minimap.method5065();
-		Client.field10966.clear();
-		Client.field10965.clearAll();
-		Client.field10864.clear();
+		Client.spotanims.clear();
+		Client.projectiles.clearAll();
+		Client.textCoords.clear();
 		ParticleSystemRenderer.method3561();
 	}
 
@@ -1039,7 +1039,7 @@ public class World {
 		}
 		if (!this.asyncRebuilding) {
 			for (int var15 = 0; var15 < 2048; var15++) {
-				PlayerEntity var16 = Client.field10944[var15];
+				PlayerEntity var16 = Client.players[var15];
 				if (var16 != null) {
 					var16.field11716 = null;
 				}
@@ -1218,9 +1218,9 @@ public class World {
 				}
 			}
 		}
-		for (int var30 = 0; var30 < Client.field10931.length; var30++) {
-			if (Client.field10931[var30] != null) {
-				Client.field10931[var30].method8406();
+		for (int var30 = 0; var30 < Client.hintTrails.length; var30++) {
+			if (Client.hintTrails[var30] != null) {
+				Client.hintTrails[var30].method8406();
 			}
 		}
 		Client.method3128();
@@ -1433,12 +1433,12 @@ public class World {
 					int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x + var10;
 					int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z + var11;
 					NPCType var14 = (NPCType) Client.npcTypeList.list(buf.g2());
-					ObjectWrapper var15 = (ObjectWrapper) Client.field10838.getNode((long) var7);
+					ObjectWrapper var15 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var7);
 					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {
 						NpcEntity npc = new NpcEntity(this.scene);
 						npc.field10406 = var7;
 						ObjectWrapper var17 = new ObjectWrapper(npc);
-						Client.field10838.pushNode(var17, (long) var7);
+						Client.miniMenuEntries.pushNode(var17, (long) var7);
 						Client.field10839[++Client.field10906 - 1] = var17;
 						Client.field11036[++Client.field11011 - 1] = var7;
 						npc.field10440 = Client.currentclock;

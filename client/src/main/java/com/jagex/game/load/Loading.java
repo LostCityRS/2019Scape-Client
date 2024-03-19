@@ -123,7 +123,7 @@ public class Loading {
 		Client.logout(false);
 		LoadableResourceManager.method3670();
 		field2938 = null;
-		Client.field1833 = null;
+		Client.js5Client = null;
 		Client.setState(5);
 	}
 
@@ -254,10 +254,10 @@ public class Loading {
 			}
 		}
 		if (field3419 == LoadingStage.field2913) {
-			if (Client.field1833 == null) {
-				Client.field1833 = new Js5Client(Client.field4489, Client.field4436, Client.field4479, PublicKeys.field623, PublicKeys.field625);
+			if (Client.js5Client == null) {
+				Client.js5Client = new Js5Client(Client.js5TcpClient, Client.js5HttpClient, Client.js5DiskCache, PublicKeys.field623, PublicKeys.field625);
 			}
-			if (!Client.field1833.method6834()) {
+			if (!Client.js5Client.method6834()) {
 				return 0;
 			}
 			Client.method3596(0, null, true);
@@ -296,11 +296,11 @@ public class Loading {
 			}
 		}
 		if (field3419 == LoadingStage.field2904) {
-			Client.field7538 = new FontProvider(Client.renderer, loadingSpritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
+			Client.fontProvider = new FontProvider(Client.renderer, loadingSpritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
 		}
 		if (field3419 == LoadingStage.field2905) {
-			int var12 = Client.field7538.method6179();
-			int var13 = Client.field7538.method6161();
+			int var12 = Client.fontProvider.method6179();
+			int var13 = Client.fontProvider.method6161();
 			if (var12 < var13) {
 				return var12 * 100 / var13;
 			}
@@ -314,7 +314,7 @@ public class Loading {
 					return 0;
 				}
 			}
-			Client.field7538.method6157(Client.field10833);
+			Client.fontProvider.method6157(Client.fontFactory);
 			DefaultSprites.method7114(Client.renderer);
 			Client.setState(11);
 		}
@@ -370,7 +370,7 @@ public class Loading {
 				return (var14 - field2945) * 100 / (100 - field2945);
 			}
 			DefaultSprites.method16430(Client.graphicsDefaults);
-			Client.field7538 = new FontProvider(Client.renderer, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
+			Client.fontProvider = new FontProvider(Client.renderer, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
 		}
 		if (field3419 == LoadingStage.field2909) {
 			byte[] var17 = Client.defaultsJs5.method6894(DefaultsGroup.AUDIO.js5GroupId);
@@ -382,9 +382,9 @@ public class Loading {
 			method714(var17);
 			Client.setState(1);
 		}
-		if (field3419 == LoadingStage.field2910 && Client.field10577 == null) {
-			Client.field10577 = new HardwarePlatformLoader(Client.dllsJs5);
-			NativeLibraries.method14694(Client.field10577);
+		if (field3419 == LoadingStage.field2910 && Client.hardwarePlatformLoader == null) {
+			Client.hardwarePlatformLoader = new HardwarePlatformLoader(Client.dllsJs5);
+			NativeLibraries.method14694(Client.hardwarePlatformLoader);
 		}
 		if (field3419 == LoadingStage.DOWNLOAD_STUFF) {
 			int var18 = LoadableResourceManager.method5140();
@@ -410,8 +410,8 @@ public class Loading {
 			if (Client.graphicsDefaults.performancemetricsmodel != -1 && !Client.modelsJs5.requestdownload(Client.graphicsDefaults.performancemetricsmodel, 0)) {
 				return 99;
 			}
-			Client.field7366 = new MaterialList(Client.materialsJs5);
-			Client.field7669 = new BasicTextureList(Client.texturesPngJs5);
+			Client.materialList = new MaterialList(Client.materialsJs5);
+			Client.textureList = new BasicTextureList(Client.texturesPngJs5);
 			Client.paramTypeList = new ParamTypeList(Client.modegame, Client.language, Client.configJs5);
 			Client.basTypeList = new BASTypeList(Client.modegame, Client.language, Client.configJs5);
 			Client.cursorTypeList = new CursorTypeList(Client.modegame, Client.language, Client.configJs5, Client.spritesJs5);
@@ -450,24 +450,24 @@ public class Loading {
 			Client.varBitTypeList = new VarBitTypeList(Client.modegame, Client.language, Client.configJs5, Client.field1232);
 			Client.field4626 = new VariableTypeProviderClient();
 			Component.method3669(Client.interfacesJs5, Client.modelsJs5, Client.spritesJs5, Client.fontmetricsJs5);
-			Client.field9211 = new BasicBillboardTypeList(Client.configBillboardJs5);
-			Client.field2013 = new BasicParticleEffectorTypeList(Client.configParticleJs5);
-			Client.field7282 = new BasicParticleEmitterTypeList(Client.configParticleJs5);
+			Client.basicBillboardTypeList = new BasicBillboardTypeList(Client.configBillboardJs5);
+			Client.basicParticleEffectorTypeList = new BasicParticleEffectorTypeList(Client.configParticleJs5);
+			Client.basicParticleEmitterTypeList = new BasicParticleEmitterTypeList(Client.configParticleJs5);
 			Client.quickChatCatTypeList = new QuickChatCatTypeList(Client.language, Client.quickchatJs5, Client.quickchatGlobalJs5);
 			Client.quickChatPhraseTypeList = new QuickChatPhraseTypeList(Client.language, Client.quickchatJs5, Client.quickchatGlobalJs5, new ClientDynamicProvider());
 			Client.localPlayerGameState = new PlayerGameState(Client.varPlayerTypeList, Client.varBitTypeList, Client.skillDefaults.getSkillCount());
 			Client.method9516();
 			AnimationWrapper.method6114(Client.seqTypeList);
-			ParticleSystemRenderer.method706(Client.field7282, Client.field2013);
-			SkyBox.method13864(Client.modelsJs5, Client.field7366, Client.field7669);
+			ParticleSystemRenderer.method706(Client.basicParticleEmitterTypeList, Client.basicParticleEffectorTypeList);
+			SkyBox.method13864(Client.modelsJs5, Client.materialList, Client.textureList);
 			Huffman var19 = new Huffman(Client.binaryJs5.method6906("huffman", ""));
 			WordPack.setHuffman(var19);
 			GameShell.field6594 = Timer.method6109();
 			Client.hardwarePlatform = new HardwarePlatform(true);
 		}
 		if (field3419 == LoadingStage.SETUP_STATIC_SPRITES) {
-			int var20 = DefaultSprites.method15381(Client.spritesJs5) + Client.field7538.method6191(true);
-			int var21 = DefaultSprites.method14611() + Client.field7538.method6161();
+			int var20 = DefaultSprites.method15381(Client.spritesJs5) + Client.fontProvider.method6191(true);
+			int var21 = DefaultSprites.method14611() + Client.fontProvider.method6161();
 			if (var20 < var21) {
 				return var20 * 100 / var21;
 			}
@@ -540,7 +540,7 @@ public class Loading {
 				}
 			}
 			Client.setWindowMode(Client.preferences.maxScreenSize.getValue(), -1, -1, false);
-			Client.field7538.method6157(Client.field10833);
+			Client.fontProvider.method6157(Client.fontFactory);
 			DefaultSprites.method7114(Client.renderer);
 			DefaultSprites.method5202(Client.renderer, Client.spritesJs5);
 		}

@@ -75,7 +75,7 @@ public class WorldSwitcher {
 				GWCWorld var0 = GWC.method4944(field8757);
 				if (var0 != null && var0.field11707 == -1) {
 					if (field8750 == null) {
-						field8750 = Client.field10994.method10589(var0.field11703);
+						field8750 = Client.inetAddressLookupRequest.method10589(var0.field11703);
 					}
 					int var1 = field8750.field8180;
 					if (var1 == -1) {

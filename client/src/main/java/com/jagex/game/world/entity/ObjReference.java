@@ -21,7 +21,7 @@ public class ObjReference {
 
 	@ObfuscatedName("yd.e(I)Laut;")
 	public ObjStackEntity method13793() {
-		ObjStackList var1 = (ObjStackList) Client.field10964.getNode((long) (this.field8244.level << 28 | this.field8244.z << 14 | this.field8244.x));
+		ObjStackList var1 = (ObjStackList) Client.objStacks.getNode((long) (this.field8244.level << 28 | this.field8244.z << 14 | this.field8244.x));
 		if (var1 == null) {
 			return null;
 		}

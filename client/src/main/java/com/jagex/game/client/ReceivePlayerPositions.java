@@ -61,7 +61,7 @@ public class ReceivePlayerPositions {
 	public static final void method16435(PacketBit arg0) {
 		arg0.accessBits();
 		int var1 = Client.currentPlayerUid;
-		PlayerEntity var2 = Client.localPlayerEntity = Client.field10944[var1] = new PlayerEntity(Client.world.getScene());
+		PlayerEntity var2 = Client.localPlayerEntity = Client.players[var1] = new PlayerEntity(Client.world.getScene());
 		var2.field10406 = var1;
 		int var3 = arg0.gBit(30);
 		byte var4 = (byte) (var3 >> 28);
@@ -219,7 +219,7 @@ public class ReceivePlayerPositions {
 		field702 = 0;
 		for (int var14 = 1; var14 < 2048; var14++) {
 			field696[var14] = (byte) (field696[var14] >> 1);
-			PlayerEntity var15 = Client.field10944[var14];
+			PlayerEntity var15 = Client.players[var14];
 			if (var15 == null) {
 				field700[++field702 - 1] = var14;
 			} else {
@@ -252,7 +252,7 @@ public class ReceivePlayerPositions {
 			field707[++field695 - 1] = arg1;
 		}
 		int var4 = arg0.gBit(2);
-		PlayerEntity var5 = Client.field10944[arg1];
+		PlayerEntity var5 = Client.players[arg1];
 		if (var4 == 0) {
 			if (!var3) {
 				if (Client.currentPlayerUid == arg1) {
@@ -272,7 +272,7 @@ public class ReceivePlayerPositions {
 				if (var5.field12067 > 0) {
 					PositionedSound.method5142(var5);
 				}
-				Client.field10944[arg1] = null;
+				Client.players[arg1] = null;
 				if (arg0.gBit(1) != 0) {
 					method14343(arg0, arg1);
 				}
@@ -438,11 +438,11 @@ public class ReceivePlayerPositions {
 			if (var5) {
 				field707[++field695 - 1] = arg1;
 			}
-			if (Client.field10944[arg1] != null) {
+			if (Client.players[arg1] != null) {
 				throw new RuntimeException();
 			}
 			LowResPlayerInfo var6 = field704[arg1];
-			PlayerEntity var7 = Client.field10944[arg1] = new PlayerEntity(Client.world.getScene());
+			PlayerEntity var7 = Client.players[arg1] = new PlayerEntity(Client.world.getScene());
 			var7.field10406 = arg1;
 			if (field706[arg1] != null) {
 				var7.method19129(field706[arg1]);
@@ -537,7 +537,7 @@ public class ReceivePlayerPositions {
 		for (int var1 = 0; var1 < field695; var1++) {
 			arg0.g2();
 			int var2 = field707[var1];
-			PlayerEntity var3 = Client.field10944[var2];
+			PlayerEntity var3 = Client.players[var2];
 			int var4 = arg0.g1();
 			if ((var4 & 0x40) != 0) {
 				var4 += arg0.g1() << 8;
@@ -808,7 +808,7 @@ public class ReceivePlayerPositions {
 	}
 
 	@ObfuscatedName("ajt.z(I)V")
-	public static void method17516() {
+	public static void reset() {
 		field698 = 0;
 		for (int var0 = 0; var0 < 2048; var0++) {
 			field706[var0] = null;

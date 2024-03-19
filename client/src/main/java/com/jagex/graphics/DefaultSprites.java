@@ -133,12 +133,12 @@ public class DefaultSprites {
 
 	@ObfuscatedName("qx.k(Ldh;I)V")
 	public static void method7114(Renderer arg0) {
-		field8321 = (Font) Client.field7538.method6188(Client.field10833, field506, true, true);
-		field6778 = Client.field7538.method6163(Client.field10833, field506);
-		fontP12Full = (Font) Client.field7538.method6188(Client.field10833, field505, true, true);
-		fontP12FullMetrics = Client.field7538.method6163(Client.field10833, field505);
-		field10355 = (Font) Client.field7538.method6188(Client.field10833, field509, true, true);
-		field10268 = Client.field7538.method6163(Client.field10833, field509);
+		field8321 = (Font) Client.fontProvider.method6188(Client.fontFactory, field506, true, true);
+		field6778 = Client.fontProvider.method6163(Client.fontFactory, field506);
+		fontP12Full = (Font) Client.fontProvider.method6188(Client.fontFactory, field505, true, true);
+		fontP12FullMetrics = Client.fontProvider.method6163(Client.fontFactory, field505);
+		field10355 = (Font) Client.fontProvider.method6188(Client.fontFactory, field509, true, true);
+		field10268 = Client.fontProvider.method6163(Client.fontFactory, field509);
 	}
 
 	@ObfuscatedName("aej.f(Lpy;I)I")

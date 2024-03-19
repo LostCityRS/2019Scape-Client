@@ -34,7 +34,7 @@ public class GraphicsPacketQueue {
 
 	@ObfuscatedName("ku.k(IIII)V")
 	public static void method5144(int arg0, int arg1, int arg2) {
-		method4922(new ClientMapBuildStuck(arg0, arg1, arg2, Client.field10827, Client.field4489.field4455, Client.field4489.field4454, Client.field4489.method7012(), Client.field4489.method7028(), Client.field4479.method6991()));
+		method4922(new ClientMapBuildStuck(arg0, arg1, arg2, Client.field10827, Client.js5TcpClient.field4455, Client.js5TcpClient.field4454, Client.js5TcpClient.method7012(), Client.js5TcpClient.method7028(), Client.js5DiskCache.method6991()));
 	}
 
 	@ObfuscatedName("amf.f(Lacw;Ljava/lang/String;ILjava/lang/Throwable;I)V")

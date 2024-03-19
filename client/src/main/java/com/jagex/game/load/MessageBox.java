@@ -108,7 +108,7 @@ public class MessageBox {
 		}
 		if (field8851 == null) {
 			if (Client.fontmetricsJs5.method6889(field713)) {
-				field8851 = Client.field7538.method6163(Client.field10833, field713);
+				field8851 = Client.fontProvider.method6163(Client.fontFactory, field713);
 			} else {
 				var0 = false;
 			}
