@@ -9480,15 +9480,15 @@ public final class Client extends GameShell {
 				} else if (var377.field745 >= 2 && var377.field745 <= 6) {
 					if (var377.field745 == 2) {
 						var377.field746 = 256;
-						var377.field747 = 131072;
+						var377.field747 = 256;
 					}
 					if (var377.field745 == 3) {
 						var377.field746 = 0;
-						var377.field747 = 131072;
+						var377.field747 = 256;
 					}
 					if (var377.field745 == 4) {
 						var377.field746 = 512;
-						var377.field747 = 131072;
+						var377.field747 = 256;
 					}
 					if (var377.field745 == 5) {
 						var377.field746 = 256;
@@ -9496,7 +9496,7 @@ public final class Client extends GameShell {
 					}
 					if (var377.field745 == 6) {
 						var377.field746 = 256;
-						var377.field747 = 262144;
+						var377.field747 = 512;
 					}
 					var377.field745 = 2;
 					var377.field749 = in.g1();
