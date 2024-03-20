@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 @ObfuscatedName("hk")
-public class VorbisDecoder implements VorbisInterface {
+public class VorbisSound implements VorbisInterface {
 
 	@ObfuscatedName("hk.e")
 	public int field2076;
@@ -56,10 +56,10 @@ public class VorbisDecoder implements VorbisInterface {
 	public final float field2059;
 
 	@ObfuscatedName("hk.o")
-	public int field2058;
+	public int blockSize0;
 
 	@ObfuscatedName("hk.s")
-	public int field2051;
+	public int blockSize1;
 
 	@ObfuscatedName("hk.y")
 	public VorbisCodebook[] book_param;
@@ -95,28 +95,28 @@ public class VorbisDecoder implements VorbisInterface {
 	public WindowFunction[] field2070;
 
 	@ObfuscatedName("hk.ag")
-	public WindowFunction field2071;
+	public WindowFunction trigA0;
 
 	@ObfuscatedName("hk.ah")
-	public WindowFunction field2072;
+	public WindowFunction trigB0;
 
 	@ObfuscatedName("hk.al")
-	public WindowFunction field2073;
+	public WindowFunction trigC0;
 
 	@ObfuscatedName("hk.ac")
-	public WindowFunction field2074;
+	public WindowFunction trigA1;
 
 	@ObfuscatedName("hk.ai")
-	public WindowFunction field2075;
+	public WindowFunction trigB1;
 
 	@ObfuscatedName("hk.aw")
-	public WindowFunction field2069;
+	public WindowFunction trigC1;
 
 	@ObfuscatedName("hk.as")
-	public int[] field2077;
+	public int[] bitReverse0;
 
 	@ObfuscatedName("hk.at")
-	public int[] field2091;
+	public int[] bitReverse1;
 
 	@ObfuscatedName("hk.ad")
 	public boolean field2090;
@@ -223,7 +223,7 @@ public class VorbisDecoder implements VorbisInterface {
 	@ObfuscatedName("hk.bo")
 	public boolean[] field2080 = null;
 
-	public VorbisDecoder(float arg0) {
+	public VorbisSound(float arg0) {
 		this.field2059 = arg0;
 		this.field2052 = AudioFormat.field3441;
 		this.field2053 = AudioEndianness.field3439;
@@ -404,11 +404,11 @@ public class VorbisDecoder implements VorbisInterface {
 			WindowFunction var5 = null;
 			int var6 = arg0;
 			while (var4 != null) {
-				if (var4.field2123.length > arg0 && !var4.field2125 && (var5 == null || var4.field2123.length < var6)) {
+				if (var4.floor.length > arg0 && !var4.field2125 && (var5 == null || var4.floor.length < var6)) {
 					var5 = var4;
-					var6 = var4.field2123.length;
+					var6 = var4.floor.length;
 				}
-				if (var4.field2123.length == arg0 && !var4.field2125) {
+				if (var4.floor.length == arg0 && !var4.field2125) {
 					break;
 				}
 				var4 = (WindowFunction) field2067.method2937();
@@ -429,15 +429,15 @@ public class VorbisDecoder implements VorbisInterface {
 				}
 				var4.field2124 = var7;
 				float[] var9 = new float[arg0];
-				var4.field2123 = var9;
+				var4.floor = var9;
 				var4.field2125 = true;
 				var4.field2122 = arg0;
 				if (field2067.method2926() < arg0 * 4) {
 				}
 				field2067.put(var4, (long) var4.field2124, var9.length * 4);
 			} else {
-				for (int var10 = 0; var10 < var4.field2123.length; var10++) {
-					var4.field2123[var10] = 0.0F;
+				for (int var10 = 0; var10 < var4.floor.length; var10++) {
+					var4.floor[var10] = 0.0F;
 				}
 				var4.field2122 = arg0;
 			}
@@ -468,8 +468,8 @@ public class VorbisDecoder implements VorbisInterface {
 	@ObfuscatedName("hk.j(Z)V")
 	public synchronized void method3744(boolean arg0) {
 		if (!arg0) {
-			this.field2058 = 0;
-			this.field2051 = 0;
+			this.blockSize0 = 0;
+			this.blockSize1 = 0;
 			this.blockflags = null;
 			this.mappings = null;
 			this.method3743(this.field2103);
@@ -481,20 +481,20 @@ public class VorbisDecoder implements VorbisInterface {
 			this.field2089 = null;
 			this.method3743(this.field2070);
 			this.field2070 = null;
-			this.method3742(this.field2071);
-			this.method3742(this.field2072);
-			this.method3742(this.field2073);
-			this.method3742(this.field2074);
-			this.method3742(this.field2075);
-			this.method3742(this.field2069);
-			this.field2071 = null;
-			this.field2072 = null;
-			this.field2073 = null;
-			this.field2074 = null;
-			this.field2075 = null;
-			this.field2069 = null;
-			this.field2077 = null;
-			this.field2091 = null;
+			this.method3742(this.trigA0);
+			this.method3742(this.trigB0);
+			this.method3742(this.trigC0);
+			this.method3742(this.trigA1);
+			this.method3742(this.trigB1);
+			this.method3742(this.trigC1);
+			this.trigA0 = null;
+			this.trigB0 = null;
+			this.trigC0 = null;
+			this.trigA1 = null;
+			this.trigB1 = null;
+			this.trigC1 = null;
+			this.bitReverse0 = null;
+			this.bitReverse1 = null;
 		}
 		this.field2101 = 0;
 		Iterator var2 = this.field2085.iterator();
@@ -598,14 +598,14 @@ public class VorbisDecoder implements VorbisInterface {
 	}
 
 	@ObfuscatedName("hk.ac(I)F")
-	public float method3750(int arg0) {
-		int var2 = arg0 & 0x1FFFFF;
-		int var3 = arg0 & Integer.MIN_VALUE;
-		int var4 = arg0 >> 21 & 0x3FF;
-		if (var3 != 0) {
-			var2 = -var2;
+	public float float32Unpack(int x) {
+		int mantissa = x & 0x1FFFFF;
+		int sign = x & Integer.MIN_VALUE;
+		int exponent = x >> 21 & 0x3FF;
+		if (sign != 0) {
+			mantissa = -mantissa;
 		}
-		return (float) ((double) var2 * Math.pow(2.0D, (double) (var4 - 788)));
+		return (float) ((double) mantissa * Math.pow(2.0D, exponent - 788));
 	}
 
 	@ObfuscatedName("hk.ai()I")
@@ -626,7 +626,7 @@ public class VorbisDecoder implements VorbisInterface {
 	}
 
 	@ObfuscatedName("hk.at()I")
-	public int method3845() {
+	public int readBit() {
 		int var1 = this.field2108[this.field2109] >> this.field2113 & 0x1;
 		this.field2113++;
 		this.field2109 += this.field2113 >> 3;
@@ -726,8 +726,8 @@ public class VorbisDecoder implements VorbisInterface {
 			this.field2046 = this.read(32);
 			this.field2055 = this.read(32);
 			this.field2048 = this.read(32);
-			this.field2058 = 0x1 << this.read(4);
-			this.field2051 = 0x1 << this.read(4);
+			this.blockSize0 = 0x1 << this.read(4);
+			this.blockSize1 = 0x1 << this.read(4);
 
 			int var6 = 0x1 << this.read(1);
 			if (var5 != 0 || var6 == 0) {
@@ -747,47 +747,47 @@ public class VorbisDecoder implements VorbisInterface {
 				this.field2070 = null;
 			}
 
-			this.field2070 = this.method3753(this.field2045, this.field2051);
+			this.field2070 = this.method3753(this.field2045, this.blockSize1);
 			for (int var7 = 0; var7 < 2; var7++) {
-				int var8 = var7 == 0 ? this.field2058 : this.field2051;
+				int var8 = var7 == 0 ? this.blockSize0 : this.blockSize1;
 				int var9 = var8 >> 1;
 				int var10 = var8 >> 2;
 				int var11 = var8 >> 3;
 
 				WindowFunction var12 = this.method3836(var9);
 				for (int var13 = 0; var13 < var10; var13++) {
-					var12.field2123[var13 * 2] = (float) Math.cos((double) (var13 * 4) * 3.141592653589793D / (double) var8);
-					var12.field2123[var13 * 2 + 1] = -((float) Math.sin((double) (var13 * 4) * 3.141592653589793D / (double) var8));
+					var12.floor[var13 * 2] = (float) Math.cos((double) (var13 * 4) * 3.141592653589793D / (double) var8);
+					var12.floor[var13 * 2 + 1] = -((float) Math.sin((double) (var13 * 4) * 3.141592653589793D / (double) var8));
 				}
 
 				WindowFunction var14 = this.method3836(var9);
 				for (int var15 = 0; var15 < var10; var15++) {
-					var14.field2123[var15 * 2] = (float) Math.cos((double) (var15 * 2 + 1) * 3.141592653589793D / (double) (var8 * 2));
-					var14.field2123[var15 * 2 + 1] = (float) Math.sin((double) (var15 * 2 + 1) * 3.141592653589793D / (double) (var8 * 2));
+					var14.floor[var15 * 2] = (float) Math.cos((double) (var15 * 2 + 1) * 3.141592653589793D / (double) (var8 * 2));
+					var14.floor[var15 * 2 + 1] = (float) Math.sin((double) (var15 * 2 + 1) * 3.141592653589793D / (double) (var8 * 2));
 				}
 
 				WindowFunction var16 = this.method3836(var10);
 				for (int var17 = 0; var17 < var11; var17++) {
-					var16.field2123[var17 * 2] = (float) Math.cos((double) (var17 * 4 + 2) * 3.141592653589793D / (double) var8);
-					var16.field2123[var17 * 2 + 1] = -((float) Math.sin((double) (var17 * 4 + 2) * 3.141592653589793D / (double) var8));
+					var16.floor[var17 * 2] = (float) Math.cos((double) (var17 * 4 + 2) * 3.141592653589793D / (double) var8);
+					var16.floor[var17 * 2 + 1] = -((float) Math.sin((double) (var17 * 4 + 2) * 3.141592653589793D / (double) var8));
 				}
 
 				int[] var18 = new int[var11];
 				int var19 = IntMath.ilog(var11 - 1);
 				for (int var20 = 0; var20 < var11; var20++) {
-					var18[var20] = IntMath.method6012(var20, var19);
+					var18[var20] = IntMath.bitReverse(var20, var19);
 				}
 
 				if (var7 == 0) {
-					this.field2071 = var12;
-					this.field2072 = var14;
-					this.field2073 = var16;
-					this.field2077 = var18;
+					this.trigA0 = var12;
+					this.trigB0 = var14;
+					this.trigC0 = var16;
+					this.bitReverse0 = var18;
 				} else {
-					this.field2074 = var12;
-					this.field2075 = var14;
-					this.field2069 = var16;
-					this.field2091 = var18;
+					this.trigA1 = var12;
+					this.trigB1 = var14;
+					this.trigC1 = var16;
+					this.bitReverse1 = var18;
 				}
 			}
 
@@ -842,7 +842,7 @@ public class VorbisDecoder implements VorbisInterface {
 			this.mappings = new int[modes];
 
 			for (int i = 0; i < modes; i++) {
-				this.blockflags[i] = this.method3845() != 0;
+				this.blockflags[i] = this.readBit() != 0;
 				this.read(16); // windowtype
 				this.read(16); // transformtype
 				this.mappings[i] = this.read(8);
@@ -870,28 +870,28 @@ public class VorbisDecoder implements VorbisInterface {
 			return false;
 		} else {
 			this.method3754(arg0, arg1);
-			int var5 = this.method3845();
+			int var5 = this.readBit();
 			if (var5 != 0) {
 				this.unpack(arg0, arg1);
 				return false;
 			} else if (this.method3868()) {
 				int var6 = this.read(this.method3759(this.mappings.length - 1));
 				boolean var7 = this.blockflags[var6];
-				int var8 = var7 ? this.field2051 : this.field2058;
+				int var8 = var7 ? this.blockSize1 : this.blockSize0;
 				boolean var9 = false;
 				boolean var10 = false;
 				if (var7) {
-					var9 = this.method3845() != 0;
-					var10 = this.method3845() != 0;
+					var9 = this.readBit() != 0;
+					var10 = this.readBit() != 0;
 				}
 				int var11 = var8 >> 1;
 				int var12;
 				int var13;
 				int var14;
 				if (var7 && !var9) {
-					var12 = (var8 >> 2) - (this.field2058 >> 2);
-					var13 = (this.field2058 >> 2) + (var8 >> 2);
-					var14 = this.field2058 >> 1;
+					var12 = (var8 >> 2) - (this.blockSize0 >> 2);
+					var13 = (this.blockSize0 >> 2) + (var8 >> 2);
+					var14 = this.blockSize0 >> 1;
 				} else {
 					var12 = 0;
 					var13 = var11;
@@ -901,9 +901,9 @@ public class VorbisDecoder implements VorbisInterface {
 				int var16;
 				int var17;
 				if (var7 && !var10) {
-					var15 = var8 - (var8 >> 2) - (this.field2058 >> 2);
-					var16 = (this.field2058 >> 2) + (var8 - (var8 >> 2));
-					var17 = this.field2058 >> 1;
+					var15 = var8 - (var8 >> 2) - (this.blockSize0 >> 2);
+					var16 = (this.blockSize0 >> 2) + (var8 - (var8 >> 2));
+					var17 = this.blockSize0 >> 1;
 				} else {
 					var15 = var11;
 					var16 = var8;
@@ -915,8 +915,8 @@ public class VorbisDecoder implements VorbisInterface {
 					this.field2047 = new boolean[this.field2045];
 				}
 				for (int var19 = 0; var19 < this.field2045; var19++) {
-					int var20 = var18.field2126 == null ? 0 : var18.field2126[var19];
-					int var22 = var18.field2129[var20];
+					int var20 = var18.mux == null ? 0 : var18.mux[var19];
+					int var22 = var18.submapFloor[var20];
 					this.field2111[var19] = !this.floor_param[var22].method3687(var19);
 					this.field2047[var19] = this.field2111[var19];
 				}
@@ -929,15 +929,15 @@ public class VorbisDecoder implements VorbisInterface {
 				if (this.field2080 == null || this.field2080.length != this.field2045) {
 					this.field2080 = new boolean[this.field2045];
 				}
-				for (int var24 = 0; var24 < var18.field2130; var24++) {
+				for (int var24 = 0; var24 < var18.submaps; var24++) {
 					int var25 = 0;
 					for (int var26 = 0; var26 < this.field2045; var26++) {
-						int var27 = var18.field2126 == null ? var24 : var18.field2126[var26];
+						int var27 = var18.mux == null ? var24 : var18.mux[var26];
 						if (var24 == var27) {
 							this.field2080[var25++] = this.field2111[var26];
 						}
 					}
-					VorbisResidue var28 = this.residue_param[var18.field2128[var24]];
+					VorbisResidue var28 = this.residue_param[var18.submapResidue[var24]];
 					Object var29 = null;
 					WindowFunction[] var35;
 					if (var28.field2019 == 2) {
@@ -950,7 +950,7 @@ public class VorbisDecoder implements VorbisInterface {
 								for (int var36 = 0; var36 < var8; var36++) {
 									for (int var37 = 0; var37 < this.field2045; var37++) {
 										try {
-											var35[var37].field2123[var36] = var34[0].field2123[this.field2045 * var36 + var37];
+											var35[var37].floor[var36] = var34[0].floor[this.field2045 * var36 + var37];
 										} catch (ArrayIndexOutOfBoundsException var133) {
 											var133.printStackTrace();
 										}
@@ -962,7 +962,7 @@ public class VorbisDecoder implements VorbisInterface {
 							}
 							for (int var32 = 0; var32 < this.field2045; var32++) {
 								try {
-									var30[0].field2123[this.field2045 * var31 + var32] = this.field2070[var32].field2123[var31];
+									var30[0].floor[this.field2045 * var31 + var32] = this.field2070[var32].floor[var31];
 								} catch (ArrayIndexOutOfBoundsException var134) {
 									var134.printStackTrace();
 								}
@@ -972,7 +972,7 @@ public class VorbisDecoder implements VorbisInterface {
 					} else {
 						var35 = var28.method3676(this.field2070, var8 >> 1, this.field2080);
 					}
-					if (var18.field2126 == null) {
+					if (var18.mux == null) {
 						if (this.field2070 != var35) {
 							this.method3743(this.field2070);
 						}
@@ -980,7 +980,7 @@ public class VorbisDecoder implements VorbisInterface {
 					} else {
 						int var40 = 0;
 						for (int var41 = 0; var41 < this.field2045; var41++) {
-							int var42 = var18.field2126[var41];
+							int var42 = var18.mux[var41];
 							if (var24 == var42) {
 								this.field2070[var41] = var35[var40++];
 							}
@@ -991,8 +991,8 @@ public class VorbisDecoder implements VorbisInterface {
 					WindowFunction var44 = this.field2070[var18.field2127[var43]];
 					WindowFunction var45 = this.field2070[var18.field2133[var43]];
 					for (int var46 = 0; var46 < var44.field2122; var46++) {
-						float var47 = var44.field2123[var46];
-						float var48 = var45.field2123[var46];
+						float var47 = var44.floor[var46];
+						float var48 = var45.floor[var46];
 						float var51;
 						float var52;
 						if (var47 > 0.0F) {
@@ -1010,8 +1010,8 @@ public class VorbisDecoder implements VorbisInterface {
 							var52 = var47;
 							var51 = var47 - var48;
 						}
-						var44.field2123[var46] = var51;
-						var45.field2123[var46] = var52;
+						var44.floor[var46] = var51;
+						var45.floor[var46] = var52;
 					}
 				}
 				for (int var53 = 0; var53 < this.field2111.length; var53++) {
@@ -1019,8 +1019,8 @@ public class VorbisDecoder implements VorbisInterface {
 				}
 				for (int var54 = 0; var54 < this.field2045; var54++) {
 					if (!this.field2111[var54]) {
-						int var55 = var18.field2126 == null ? 0 : var18.field2126[var54];
-						int var57 = var18.field2129[var55];
+						int var55 = var18.mux == null ? 0 : var18.mux[var54];
+						int var57 = var18.submapFloor[var55];
 						this.floor_param[var57].method3688(var54);
 						this.floor_param[var57].method3689(this.field2070[var54], var8 >> 1, var54);
 					}
@@ -1028,7 +1028,7 @@ public class VorbisDecoder implements VorbisInterface {
 				for (int var58 = 0; var58 < this.field2045; var58++) {
 					if (this.field2111[var58]) {
 						for (int var59 = var8 >> 1; var59 < var8; var59++) {
-							this.field2070[var58].field2123[var59] = 0.0F;
+							this.field2070[var58].floor[var59] = 0.0F;
 						}
 					} else {
 						int var60 = var8 >> 1;
@@ -1036,34 +1036,34 @@ public class VorbisDecoder implements VorbisInterface {
 						int var62 = var8 >> 3;
 						WindowFunction var63 = this.field2070[var58];
 						for (int var64 = 0; var64 < var60; var64++) {
-							var63.field2123[var64] *= 0.5F;
+							var63.floor[var64] *= 0.5F;
 						}
 						for (int var65 = var60; var65 < var8; var65++) {
-							var63.field2123[var65] = -var63.field2123[var8 - var65 - 1];
+							var63.floor[var65] = -var63.floor[var8 - var65 - 1];
 						}
-						WindowFunction var66 = var7 ? this.field2074 : this.field2071;
-						WindowFunction var67 = var7 ? this.field2075 : this.field2072;
-						WindowFunction var68 = var7 ? this.field2069 : this.field2073;
-						int[] var69 = var7 ? this.field2091 : this.field2077;
+						WindowFunction var66 = var7 ? this.trigA1 : this.trigA0;
+						WindowFunction var67 = var7 ? this.trigB1 : this.trigB0;
+						WindowFunction var68 = var7 ? this.trigC1 : this.trigC0;
+						int[] var69 = var7 ? this.bitReverse1 : this.bitReverse0;
 						for (int var70 = 0; var70 < var61; var70++) {
-							float var71 = var63.field2123[var70 * 4] - var63.field2123[var8 - var70 * 4 - 1];
-							float var72 = var63.field2123[var70 * 4 + 2] - var63.field2123[var8 - var70 * 4 - 3];
-							float var73 = var66.field2123[var70 * 2];
-							float var74 = var66.field2123[var70 * 2 + 1];
-							var63.field2123[var8 - var70 * 4 - 1] = var71 * var73 - var72 * var74;
-							var63.field2123[var8 - var70 * 4 - 3] = var71 * var74 + var72 * var73;
+							float var71 = var63.floor[var70 * 4] - var63.floor[var8 - var70 * 4 - 1];
+							float var72 = var63.floor[var70 * 4 + 2] - var63.floor[var8 - var70 * 4 - 3];
+							float var73 = var66.floor[var70 * 2];
+							float var74 = var66.floor[var70 * 2 + 1];
+							var63.floor[var8 - var70 * 4 - 1] = var71 * var73 - var72 * var74;
+							var63.floor[var8 - var70 * 4 - 3] = var71 * var74 + var72 * var73;
 						}
 						for (int var75 = 0; var75 < var62; var75++) {
-							float var76 = var63.field2123[var75 * 4 + var60 + 3];
-							float var77 = var63.field2123[var75 * 4 + var60 + 1];
-							float var78 = var63.field2123[var75 * 4 + 3];
-							float var79 = var63.field2123[var75 * 4 + 1];
-							var63.field2123[var75 * 4 + var60 + 3] = var76 + var78;
-							var63.field2123[var75 * 4 + var60 + 1] = var77 + var79;
-							float var80 = var66.field2123[var60 - 4 - var75 * 4];
-							float var81 = var66.field2123[var60 - 3 - var75 * 4];
-							var63.field2123[var75 * 4 + 3] = (var76 - var78) * var80 - (var77 - var79) * var81;
-							var63.field2123[var75 * 4 + 1] = (var76 - var78) * var81 + (var77 - var79) * var80;
+							float var76 = var63.floor[var75 * 4 + var60 + 3];
+							float var77 = var63.floor[var75 * 4 + var60 + 1];
+							float var78 = var63.floor[var75 * 4 + 3];
+							float var79 = var63.floor[var75 * 4 + 1];
+							var63.floor[var75 * 4 + var60 + 3] = var76 + var78;
+							var63.floor[var75 * 4 + var60 + 1] = var77 + var79;
+							float var80 = var66.floor[var60 - 4 - var75 * 4];
+							float var81 = var66.floor[var60 - 3 - var75 * 4];
+							var63.floor[var75 * 4 + 3] = (var76 - var78) * var80 - (var77 - var79) * var81;
+							var63.floor[var75 * 4 + 1] = (var76 - var78) * var81 + (var77 - var79) * var80;
 						}
 						int var82 = IntMath.ilog(var8 - 1);
 						for (int var83 = 0; var83 < var82 - 3; var83++) {
@@ -1074,16 +1074,16 @@ public class VorbisDecoder implements VorbisInterface {
 								int var88 = var8 - (var86 * 2 + 1) * var84;
 								for (int var89 = 0; var89 < var8 >> var83 + 4; var89++) {
 									int var90 = var89 * 4;
-									float var91 = var63.field2123[var87 - 1 - var90];
-									float var92 = var63.field2123[var87 - 3 - var90];
-									float var93 = var63.field2123[var88 - 1 - var90];
-									float var94 = var63.field2123[var88 - 3 - var90];
-									var63.field2123[var87 - 1 - var90] = var91 + var93;
-									var63.field2123[var87 - 3 - var90] = var92 + var94;
-									float var95 = var66.field2123[var85 * var89];
-									float var96 = var66.field2123[var85 * var89 + 1];
-									var63.field2123[var88 - 1 - var90] = (var91 - var93) * var95 - (var92 - var94) * var96;
-									var63.field2123[var88 - 3 - var90] = (var91 - var93) * var96 + (var92 - var94) * var95;
+									float var91 = var63.floor[var87 - 1 - var90];
+									float var92 = var63.floor[var87 - 3 - var90];
+									float var93 = var63.floor[var88 - 1 - var90];
+									float var94 = var63.floor[var88 - 3 - var90];
+									var63.floor[var87 - 1 - var90] = var91 + var93;
+									var63.floor[var87 - 3 - var90] = var92 + var94;
+									float var95 = var66.floor[var85 * var89];
+									float var96 = var66.floor[var85 * var89 + 1];
+									var63.floor[var88 - 1 - var90] = (var91 - var93) * var95 - (var92 - var94) * var96;
+									var63.floor[var88 - 3 - var90] = (var91 - var93) * var96 + (var92 - var94) * var95;
 								}
 							}
 						}
@@ -1092,66 +1092,66 @@ public class VorbisDecoder implements VorbisInterface {
 							if (var97 < var98) {
 								int var99 = var97 * 8;
 								int var100 = var98 * 8;
-								float var101 = var63.field2123[var99 + 1];
-								var63.field2123[var99 + 1] = var63.field2123[var100 + 1];
-								var63.field2123[var100 + 1] = var101;
-								float var102 = var63.field2123[var99 + 3];
-								var63.field2123[var99 + 3] = var63.field2123[var100 + 3];
-								var63.field2123[var100 + 3] = var102;
-								float var103 = var63.field2123[var99 + 5];
-								var63.field2123[var99 + 5] = var63.field2123[var100 + 5];
-								var63.field2123[var100 + 5] = var103;
-								float var104 = var63.field2123[var99 + 7];
-								var63.field2123[var99 + 7] = var63.field2123[var100 + 7];
-								var63.field2123[var100 + 7] = var104;
+								float var101 = var63.floor[var99 + 1];
+								var63.floor[var99 + 1] = var63.floor[var100 + 1];
+								var63.floor[var100 + 1] = var101;
+								float var102 = var63.floor[var99 + 3];
+								var63.floor[var99 + 3] = var63.floor[var100 + 3];
+								var63.floor[var100 + 3] = var102;
+								float var103 = var63.floor[var99 + 5];
+								var63.floor[var99 + 5] = var63.floor[var100 + 5];
+								var63.floor[var100 + 5] = var103;
+								float var104 = var63.floor[var99 + 7];
+								var63.floor[var99 + 7] = var63.floor[var100 + 7];
+								var63.floor[var100 + 7] = var104;
 							}
 						}
 						for (int var105 = 0; var105 < var60; var105++) {
-							var63.field2123[var105] = var63.field2123[var105 * 2 + 1];
+							var63.floor[var105] = var63.floor[var105 * 2 + 1];
 						}
 						for (int var106 = 0; var106 < var62; var106++) {
-							var63.field2123[var8 - 1 - var106 * 2] = var63.field2123[var106 * 4];
-							var63.field2123[var8 - 2 - var106 * 2] = var63.field2123[var106 * 4 + 1];
-							var63.field2123[var8 - var61 - 1 - var106 * 2] = var63.field2123[var106 * 4 + 2];
-							var63.field2123[var8 - var61 - 2 - var106 * 2] = var63.field2123[var106 * 4 + 3];
+							var63.floor[var8 - 1 - var106 * 2] = var63.floor[var106 * 4];
+							var63.floor[var8 - 2 - var106 * 2] = var63.floor[var106 * 4 + 1];
+							var63.floor[var8 - var61 - 1 - var106 * 2] = var63.floor[var106 * 4 + 2];
+							var63.floor[var8 - var61 - 2 - var106 * 2] = var63.floor[var106 * 4 + 3];
 						}
 						for (int var107 = 0; var107 < var62; var107++) {
-							float var108 = var68.field2123[var107 * 2];
-							float var109 = var68.field2123[var107 * 2 + 1];
-							float var110 = var63.field2123[var107 * 2 + var60];
-							float var111 = var63.field2123[var107 * 2 + var60 + 1];
-							float var112 = var63.field2123[var8 - 2 - var107 * 2];
-							float var113 = var63.field2123[var8 - 1 - var107 * 2];
+							float var108 = var68.floor[var107 * 2];
+							float var109 = var68.floor[var107 * 2 + 1];
+							float var110 = var63.floor[var107 * 2 + var60];
+							float var111 = var63.floor[var107 * 2 + var60 + 1];
+							float var112 = var63.floor[var8 - 2 - var107 * 2];
+							float var113 = var63.floor[var8 - 1 - var107 * 2];
 							float var114 = (var110 - var112) * var109 + (var111 + var113) * var108;
-							var63.field2123[var107 * 2 + var60] = (var110 + var112 + var114) * 0.5F;
-							var63.field2123[var8 - 2 - var107 * 2] = (var110 + var112 - var114) * 0.5F;
+							var63.floor[var107 * 2 + var60] = (var110 + var112 + var114) * 0.5F;
+							var63.floor[var8 - 2 - var107 * 2] = (var110 + var112 - var114) * 0.5F;
 							float var115 = (var111 + var113) * var109 - (var110 - var112) * var108;
-							var63.field2123[var107 * 2 + var60 + 1] = (var111 - var113 + var115) * 0.5F;
-							var63.field2123[var8 - 1 - var107 * 2] = (-var111 + var113 + var115) * 0.5F;
+							var63.floor[var107 * 2 + var60 + 1] = (var111 - var113 + var115) * 0.5F;
+							var63.floor[var8 - 1 - var107 * 2] = (-var111 + var113 + var115) * 0.5F;
 						}
 						for (int var116 = 0; var116 < var61; var116++) {
-							var63.field2123[var116] = var67.field2123[var116 * 2] * var63.field2123[var116 * 2 + var60] + var67.field2123[var116 * 2 + 1] * var63.field2123[var116 * 2 + 1 + var60];
-							var63.field2123[var60 - 1 - var116] = var63.field2123[var116 * 2 + var60] * var67.field2123[var116 * 2 + 1] - var67.field2123[var116 * 2] * var63.field2123[var116 * 2 + 1 + var60];
+							var63.floor[var116] = var67.floor[var116 * 2] * var63.floor[var116 * 2 + var60] + var67.floor[var116 * 2 + 1] * var63.floor[var116 * 2 + 1 + var60];
+							var63.floor[var60 - 1 - var116] = var63.floor[var116 * 2 + var60] * var67.floor[var116 * 2 + 1] - var67.floor[var116 * 2] * var63.floor[var116 * 2 + 1 + var60];
 						}
 						for (int var117 = 0; var117 < var61; var117++) {
-							var63.field2123[var8 - var61 + var117] = -var63.field2123[var117];
+							var63.floor[var8 - var61 + var117] = -var63.floor[var117];
 						}
 						for (int var118 = 0; var118 < var61; var118++) {
-							var63.field2123[var118] = var63.field2123[var61 + var118];
+							var63.floor[var118] = var63.floor[var61 + var118];
 						}
 						for (int var119 = 0; var119 < var61; var119++) {
-							var63.field2123[var61 + var119] = -var63.field2123[var61 - var119 - 1];
+							var63.floor[var61 + var119] = -var63.floor[var61 - var119 - 1];
 						}
 						for (int var120 = 0; var120 < var61; var120++) {
-							var63.field2123[var60 + var120] = var63.field2123[var8 - var120 - 1];
+							var63.floor[var60 + var120] = var63.floor[var8 - var120 - 1];
 						}
 						for (int var121 = var12; var121 < var13; var121++) {
 							float var122 = (float) Math.sin(((double) (var121 - var12) + 0.5D) / (double) var14 * 0.5D * 3.141592653589793D);
-							this.field2070[var58].field2123[var121] *= (float) Math.sin((double) var122 * 1.5707963267948966D * (double) var122);
+							this.field2070[var58].floor[var121] *= (float) Math.sin((double) var122 * 1.5707963267948966D * (double) var122);
 						}
 						for (int var123 = var15; var123 < var16; var123++) {
 							float var124 = (float) Math.sin(((double) (var123 - var15) + 0.5D) / (double) var17 * 0.5D * 3.141592653589793D + 1.5707963267948966D);
-							this.field2070[var58].field2123[var123] *= (float) Math.sin((double) var124 * 1.5707963267948966D * (double) var124);
+							this.field2070[var58].floor[var123] *= (float) Math.sin((double) var124 * 1.5707963267948966D * (double) var124);
 						}
 					}
 				}
@@ -1163,13 +1163,13 @@ public class VorbisDecoder implements VorbisInterface {
 						if (!this.field2089[var127]) {
 							for (int var128 = 0; var128 < this.field2068; var128++) {
 								int var129 = (this.field2054 >> 1) + var128;
-								var125[var127].field2123[var128] += this.field2066[var127].field2123[var129];
+								var125[var127].floor[var128] += this.field2066[var127].floor[var129];
 							}
 						}
 						if (!this.field2111[var127]) {
 							for (int var130 = var12; var130 < var8 >> 1; var130++) {
 								int var131 = var125[var127].field2122 - (var8 >> 1) + var130;
-								var125[var127].field2123[var131] += this.field2070[var127].field2123[var130];
+								var125[var127].floor[var131] += this.field2070[var127].floor[var130];
 							}
 						}
 					}
@@ -1323,11 +1323,11 @@ public class VorbisDecoder implements VorbisInterface {
 									if (!var28 || this.field2092 && this.field2095 < this.field2093 && var22 < this.field2094) {
 										if (this.method3868()) {
 											this.field2054 = 0;
-											if (this.field2066 == null || this.field2066 != null && (this.field2066.length != this.field2045 || this.field2066[0].field2122 != this.field2051)) {
+											if (this.field2066 == null || this.field2066 != null && (this.field2066.length != this.field2045 || this.field2066[0].field2122 != this.blockSize1)) {
 												if (this.field2066 != null) {
 													this.method3743(this.field2066);
 												}
-												this.field2066 = this.method3753(this.field2045, this.field2051);
+												this.field2066 = this.method3753(this.field2045, this.blockSize1);
 											}
 										}
 									} else if (var29 != null) {
@@ -1397,9 +1397,9 @@ public class VorbisDecoder implements VorbisInterface {
 												for (int var41 = 0; var41 < var36; var41++) {
 													float var42;
 													if (var41 < var29.length) {
-														var42 = var29[var41].field2123[var39];
+														var42 = var29[var41].floor[var39];
 													} else {
-														var42 = var29[var41 % this.method3849()].field2123[var39];
+														var42 = var29[var41 % this.method3849()].floor[var39];
 													}
 													if (AudioFormat.field3441 == this.field2052) {
 														int var43 = this.method3879(var42);
@@ -1559,10 +1559,10 @@ public class VorbisDecoder implements VorbisInterface {
 	public static class WindowFunction {
 
 		// $FF: synthetic field
-		public final VorbisDecoder this$0;
+		public final VorbisSound this$0;
 
 		@ObfuscatedName("hb.e")
-		public float[] field2123;
+		public float[] floor;
 
 		@ObfuscatedName("hb.n")
 		public int field2122;
@@ -1574,7 +1574,7 @@ public class VorbisDecoder implements VorbisInterface {
 		public int field2124;
 
 		// line 1346
-		public WindowFunction(VorbisDecoder arg0) {
+		public WindowFunction(VorbisSound arg0) {
 			this.this$0 = arg0;
 		}
 	}

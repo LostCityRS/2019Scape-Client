@@ -6,22 +6,22 @@ import deob.ObfuscatedName;
 public class VorbisMapping {
 
 	@ObfuscatedName("hl.e")
-	public int field2130;
+	public int submaps;
 
 	@ObfuscatedName("hl.n")
 	public int field2132;
 
 	@ObfuscatedName("hl.m")
-	public int[] field2126 = null;
+	public int[] mux = null;
 
 	@ObfuscatedName("hl.k")
-	public int[] field2129;
+	public int[] submapFloor;
 
 	@ObfuscatedName("hl.f")
-	public int[] field2128;
+	public int[] submapResidue;
 
 	@ObfuscatedName("hl.w")
-	public VorbisDecoder field2131;
+	public VorbisSound opb;
 
 	@ObfuscatedName("hl.l")
 	public int[] field2127;
@@ -39,15 +39,15 @@ public class VorbisMapping {
 	}
 
 	@ObfuscatedName("hl.n(Lhk;)V")
-	public void unpack(VorbisDecoder arg0) {
-		this.field2131 = arg0;
-		int var2 = this.field2131.method3849();
-		this.field2131.read(16);
-		this.field2130 = this.field2131.method3845() == 0 ? 1 : this.field2131.read(4) + 1;
-		if (this.field2131.method3845() == 0) {
+	public void unpack(VorbisSound arg0) {
+		this.opb = arg0;
+		int var2 = this.opb.method3849();
+		this.opb.read(16);
+		this.submaps = this.opb.readBit() == 0 ? 1 : this.opb.read(4) + 1;
+		if (this.opb.readBit() == 0) {
 			this.field2132 = 0;
 		} else {
-			this.field2132 = this.field2131.read(8) + 1;
+			this.field2132 = this.opb.read(8) + 1;
 			if (this.field2127 != null && this.field2127.length == this.field2132) {
 				this.method3905(this.field2127);
 			} else {
@@ -59,31 +59,31 @@ public class VorbisMapping {
 				this.field2133 = new int[this.field2132];
 			}
 			for (int var3 = 0; var3 < this.field2132; var3++) {
-				this.field2127[var3] = this.field2131.read(this.method3899(var2 - 1));
-				this.field2133[var3] = this.field2131.read(this.method3899(var2 - 1));
+				this.field2127[var3] = this.opb.read(this.method3899(var2 - 1));
+				this.field2133[var3] = this.opb.read(this.method3899(var2 - 1));
 			}
 		}
-		this.field2131.read(2);
-		if (this.field2130 > 1) {
-			this.field2126 = new int[var2];
+		this.opb.read(2);
+		if (this.submaps > 1) {
+			this.mux = new int[var2];
 			for (int var4 = 0; var4 < var2; var4++) {
-				this.field2126[var4] = this.field2131.read(4);
+				this.mux[var4] = this.opb.read(4);
 			}
 		}
-		if (this.field2129 != null && this.field2129.length == this.field2130) {
-			this.method3905(this.field2129);
+		if (this.submapFloor != null && this.submapFloor.length == this.submaps) {
+			this.method3905(this.submapFloor);
 		} else {
-			this.field2129 = new int[this.field2130];
+			this.submapFloor = new int[this.submaps];
 		}
-		if (this.field2128 != null && this.field2128.length == this.field2130) {
-			this.method3905(this.field2128);
+		if (this.submapResidue != null && this.submapResidue.length == this.submaps) {
+			this.method3905(this.submapResidue);
 		} else {
-			this.field2128 = new int[this.field2130];
+			this.submapResidue = new int[this.submaps];
 		}
-		for (int var5 = 0; var5 < this.field2130; var5++) {
-			this.field2131.read(8);
-			this.field2129[var5] = this.field2131.read(8);
-			this.field2128[var5] = this.field2131.read(8);
+		for (int var5 = 0; var5 < this.submaps; var5++) {
+			this.opb.read(8);
+			this.submapFloor[var5] = this.opb.read(8);
+			this.submapResidue[var5] = this.opb.read(8);
 		}
 	}
 

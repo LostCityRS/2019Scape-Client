@@ -112,7 +112,7 @@ public class IntMath {
 	}
 
 	@ObfuscatedName("ni.z(III)I")
-	public static int method6012(int arg0, int arg1) {
+	public static int bitReverse(int arg0, int arg1) {
 		int var2 = 0;
 		while (arg1 > 0) {
 			var2 = var2 << 1 | arg0 & 0x1;

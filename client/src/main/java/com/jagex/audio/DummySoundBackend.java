@@ -134,7 +134,7 @@ public class DummySoundBackend extends SoundBackend {
 			SoundRelatedType2 var5 = (SoundRelatedType2) var4.next();
 			SoundRelated2[] var6 = (SoundRelated2[]) this.field10679.get(var5);
 			for (int var7 = 0; var7 < var6.length; var7++) {
-				VorbisDecoder var8 = new VorbisDecoder(2.0F);
+				VorbisSound var8 = new VorbisSound(2.0F);
 				var8.method3774(0, AudioFormat.field3441, AudioEndianness.field3439, 2);
 				var6[var7] = new SoundRelated2(var5, 32768, 3, var8, this);
 			}

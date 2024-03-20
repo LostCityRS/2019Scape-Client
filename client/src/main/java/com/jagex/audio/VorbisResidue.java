@@ -30,13 +30,13 @@ public class VorbisResidue {
 	public int[] secondstages;
 
 	@ObfuscatedName("gi.z")
-	public VorbisDecoder opb;
+	public VorbisSound opb;
 
 	@ObfuscatedName("gi.p")
 	public int[][] field2023;
 
 	@ObfuscatedName("gi.e(Lhk;)V")
-	public void unpack(VorbisDecoder opb) {
+	public void unpack(VorbisSound opb) {
 		this.opb = opb;
 		this.field2019 = this.opb.read(16);
 		this.begin = this.opb.read(24);
@@ -52,7 +52,7 @@ public class VorbisResidue {
 		for (int j = 0; j < this.partitions; j++) {
 			int var3 = 0;
 			int cascade = this.opb.read(3);
-			boolean var5 = this.opb.method3845() != 0;
+			boolean var5 = this.opb.readBit() != 0;
 			if (var5) {
 				var3 = this.opb.read(5);
 			}
@@ -78,12 +78,12 @@ public class VorbisResidue {
 	}
 
 	@ObfuscatedName("gi.m([Lhb;I[Z)[Lhb;")
-	public VorbisDecoder.WindowFunction[] method3676(VorbisDecoder.WindowFunction[] arg0, int arg1, boolean[] arg2) {
+	public VorbisSound.WindowFunction[] method3676(VorbisSound.WindowFunction[] arg0, int arg1, boolean[] arg2) {
 		int var4 = arg0.length;
 		for (int var5 = 0; var5 < var4; var5++) {
 			if (!arg2[var5]) {
 				for (int var6 = 0; var6 < arg1; var6++) {
-					arg0[var5].field2123[var6] = 0.0F;
+					arg0[var5].floor[var6] = 0.0F;
 				}
 			}
 		}
@@ -103,7 +103,7 @@ public class VorbisResidue {
 				if (var11 == 0) {
 					for (int var13 = 0; var13 < var4; var13++) {
 						if (!arg2[var13]) {
-							int var14 = this.opb.book_param[this.groupbook].method3884(this.opb);
+							int var14 = this.opb.book_param[this.groupbook].decodeScalar(this.opb);
 							for (int var15 = var7 - 1; var15 >= 0; var15--) {
 								if (var12 + var15 < var9) {
 									this.field2023[var13][var12 + var15] = var14 % this.partitions;
@@ -124,17 +124,17 @@ public class VorbisResidue {
 								if (this.field2019 == 0) {
 									int var22 = this.grouping / var21.dim;
 									for (int var23 = 0; var23 < var22; var23++) {
-										float[] var24 = var21.method3885(this.opb);
+										float[] var24 = var21.decodeVq(this.opb);
 										for (int var25 = 0; var25 < var21.dim; var25++) {
-											arg0[var17].field2123[var22 * var25 + var20 + var23] += var24[var25];
+											arg0[var17].floor[var22 * var25 + var20 + var23] += var24[var25];
 										}
 									}
 								} else if (this.field2019 == 1 || this.field2019 == 2) {
 									int var26 = 0;
 									while (var26 < this.grouping) {
-										float[] var27 = var21.method3885(this.opb);
+										float[] var27 = var21.decodeVq(this.opb);
 										for (int var28 = 0; var28 < var21.dim; var28++) {
-											arg0[var17].field2123[var20 + var26] += var27[var28];
+											arg0[var17].floor[var20 + var26] += var27[var28];
 											var26++;
 										}
 									}

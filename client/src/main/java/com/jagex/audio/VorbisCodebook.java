@@ -13,7 +13,7 @@ public class VorbisCodebook {
 	public int[] lengthlist;
 
 	@ObfuscatedName("hu.m")
-	public int[] field2116;
+	public int[] entryTree;
 
 	@ObfuscatedName("hu.k")
 	public int entries;
@@ -28,11 +28,11 @@ public class VorbisCodebook {
 	public int field2120 = 0;
 
 	@ObfuscatedName("hu.u")
-	public float[][] field2121;
+	public float[][] valueVector;
 
 	@ObfuscatedName("hu.e(II)I")
 	public static int maptype1_quantvals(int arg0, int arg1) {
-		int var2 = (int) Math.pow((double) arg0, 1.0D / (double) arg1) + 1;
+		int var2 = (int) Math.pow(arg0, 1.0D / (double) arg1) + 1;
 		while (true) {
 			int var3 = var2;
 			int var4 = arg1;
@@ -58,12 +58,12 @@ public class VorbisCodebook {
 	}
 
 	@ObfuscatedName("hu.n(Lhk;)V")
-	public void method3880(VorbisDecoder arg0) {
+	public void method3880(VorbisSound arg0) {
 		arg0.read(this.field2114 * 8 + this.field2120);
 	}
 
 	@ObfuscatedName("hu.m(Lhk;)V")
-	public void unpack(VorbisDecoder opb) {
+	public void unpack(VorbisSound opb) {
 		int var2 = opb.method3752();
 		int var3 = opb.method3751();
 
@@ -75,7 +75,7 @@ public class VorbisCodebook {
 			this.lengthlist = new int[this.entries];
 		}
 
-		boolean ordered = opb.method3845() != 0;
+		boolean ordered = opb.readBit() != 0;
 		if (ordered) {
 			int i = 0;
 			int length = opb.read(5) + 1;
@@ -88,9 +88,9 @@ public class VorbisCodebook {
 				length++;
 			}
 		} else {
-			boolean var9 = opb.method3845() != 0;
+			boolean var9 = opb.readBit() != 0;
 			for (int i = 0; i < this.entries; i++) {
-				if (var9 && opb.method3845() == 0) {
+				if (var9 && opb.readBit() == 0) {
 					this.lengthlist[i] = 0;
 				} else {
 					this.lengthlist[i] = opb.read(5) + 1;
@@ -102,10 +102,10 @@ public class VorbisCodebook {
 
 		int maptype = opb.read(4);
 		if (maptype > 0) {
-			float q_min = opb.method3750(opb.read(32));
-			float q_delta = opb.method3750(opb.read(32));
+			float q_min = opb.float32Unpack(opb.read(32));
+			float q_delta = opb.float32Unpack(opb.read(32));
 			int q_quant = opb.read(4) + 1;
-			boolean q_sequencecap = opb.method3845() != 0;
+			boolean q_sequencecap = opb.readBit() != 0;
 
 			int quantvals;
 			if (maptype == 1) {
@@ -119,7 +119,7 @@ public class VorbisCodebook {
 				this.quantlist[i] = opb.read(q_quant);
 			}
 
-			this.field2121 = new float[this.entries][this.dim];
+			this.valueVector = new float[this.entries][this.dim];
 			if (maptype == 1) {
 				for (int var18 = 0; var18 < this.entries; var18++) {
 					float var19 = 0.0F;
@@ -127,7 +127,7 @@ public class VorbisCodebook {
 					for (int var21 = 0; var21 < this.dim; var21++) {
 						int var22 = var18 / var20 % quantvals;
 						float var23 = (float) this.quantlist[var22] * q_delta + q_min + var19;
-						this.field2121[var18][var21] = var23;
+						this.valueVector[var18][var21] = var23;
 						if (q_sequencecap) {
 							var19 = var23;
 						}
@@ -140,7 +140,7 @@ public class VorbisCodebook {
 					int var26 = this.dim * var24;
 					for (int var27 = 0; var27 < this.dim; var27++) {
 						float var28 = (float) this.quantlist[var26] * q_delta + q_min + var25;
-						this.field2121[var24][var27] = var28;
+						this.valueVector[var24][var27] = var28;
 						if (q_sequencecap) {
 							var25 = var28;
 						}
@@ -202,7 +202,7 @@ public class VorbisCodebook {
 		}
 
 		// bitreverse the words
-		this.field2116 = new int[8];
+		this.entryTree = new int[8];
 
 		int var13 = 0;
 		for (int i = 0; i < this.entries; i++) {
@@ -216,22 +216,22 @@ public class VorbisCodebook {
 					if ((var16 & var19) == 0) {
 						var17++;
 					} else {
-						if (this.field2116[var17] == 0) {
-							this.field2116[var17] = var13;
+						if (this.entryTree[var17] == 0) {
+							this.entryTree[var17] = var13;
 						}
-						var17 = this.field2116[var17];
+						var17 = this.entryTree[var17];
 					}
-					if (var17 >= this.field2116.length) {
-						int[] var20 = new int[this.field2116.length * 2];
-						for (int var21 = 0; var21 < this.field2116.length; var21++) {
-							var20[var21] = this.field2116[var21];
+					if (var17 >= this.entryTree.length) {
+						int[] var20 = new int[this.entryTree.length * 2];
+						for (int var21 = 0; var21 < this.entryTree.length; var21++) {
+							var20[var21] = this.entryTree[var21];
 						}
-						this.field2116 = var20;
+						this.entryTree = var20;
 					}
 					int var22 = var19 >>> 1;
 				}
 
-				this.field2116[var17] = ~i;
+				this.entryTree[var17] = ~i;
 
 				if (var17 >= var13) {
 					var13 = var17 + 1;
@@ -241,15 +241,15 @@ public class VorbisCodebook {
 	}
 
 	@ObfuscatedName("hu.f(Lhk;)I")
-	public int method3884(VorbisDecoder arg0) {
+	public int decodeScalar(VorbisSound arg0) {
 		int var2;
-		for (var2 = 0; this.field2116[var2] >= 0; var2 = arg0.method3845() == 0 ? var2 + 1 : this.field2116[var2]) {
+		for (var2 = 0; this.entryTree[var2] >= 0; var2 = arg0.readBit() == 0 ? var2 + 1 : this.entryTree[var2]) {
 		}
-		return ~this.field2116[var2];
+		return ~this.entryTree[var2];
 	}
 
 	@ObfuscatedName("hu.w(Lhk;)[F")
-	public float[] method3885(VorbisDecoder arg0) {
-		return this.field2121[this.method3884(arg0)];
+	public float[] decodeVq(VorbisSound arg0) {
+		return this.valueVector[this.decodeScalar(arg0)];
 	}
 }
