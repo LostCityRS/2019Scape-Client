@@ -42,7 +42,7 @@ public class ObjType implements ConfigType {
 	public int category = -1;
 
 	@ObfuscatedName("abv.d")
-	public int model;
+	public int mesh;
 
 	@ObfuscatedName("abv.c")
 	public String name = "null";
@@ -317,7 +317,7 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("abv.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			this.model = buf.gSmart2or4null();
+			this.mesh = buf.gSmart2or4null();
 		} else if (code == 2) {
 			this.name = buf.gjstr();
 		} else if (code == 4) {
@@ -539,7 +539,7 @@ public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.z(Labq;Labv;Labv;Lacz;Lzt;I)V")
 	public void gen(DerivedObjType derived, ObjType from, ObjType to, LocalisedText localisedText, Language language) {
-		this.model = from.model;
+		this.mesh = from.mesh;
 		this.zoom2d = from.zoom2d;
 		this.xan2d = from.xan2d;
 		this.yan2d = from.yan2d;
@@ -674,7 +674,7 @@ public class ObjType implements ConfigType {
 			if (this.resizez != 128) {
 				var16 |= 0x4;
 			}
-			ModelUnlit var17 = ModelUnlit.get(this.factory.configClient, this.model, 0);
+			ModelUnlit var17 = ModelUnlit.get(this.factory.configClient, this.mesh, 0);
 			if (var17 == null) {
 				return null;
 			}
@@ -761,7 +761,7 @@ public class ObjType implements ConfigType {
 
 	@ObfuscatedName("abv.s(Ldh;Ldh;IIIZILeu;Lxg;Lws;B)[I")
 	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, Font arg7, PlayerModel arg8, GraphicsDefaults arg9) {
-		ModelUnlit var11 = ModelUnlit.get(this.factory.configClient, this.model, 0);
+		ModelUnlit var11 = ModelUnlit.get(this.factory.configClient, this.mesh, 0);
 		if (var11 == null) {
 			return null;
 		}
