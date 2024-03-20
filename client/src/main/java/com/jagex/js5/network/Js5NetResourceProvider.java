@@ -230,6 +230,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			var3.remove();
 			var3 = null;
 		}
+
 		if (var3 == null) {
 			if (arg1 == 0) {
 				if (this.field10723 != null && this.field10745[arg0] != -1) {
@@ -247,31 +248,39 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 			} else if (arg1 == 1) {
 				if (this.field10723 == null) {
-					throw new RuntimeException();
+					throw new RuntimeException("fetchgroup_inner - VERIFY requested but no datafs available!");
 				}
+
 				var3 = this.field10744.method6996(arg0, this.field10723);
 			} else if (arg1 == 2) {
 				if (this.field10723 == null) {
-					throw new RuntimeException();
+					throw new RuntimeException("fetchgroup_inner - PREFETCH requested but no datafs available!");
 				}
+
 				if (this.field10745[arg0] != -1) {
-					throw new RuntimeException();
+					throw new RuntimeException("fetchgroup_inner - PREFETCH requested, but cache isn't known invalid!");
 				}
+
 				if (this.field10721 != null) {
 					return null;
 				}
+
 				if (this.field10720.method7028()) {
 					return null;
 				}
+
 				var3 = this.field10720.method7011(this.field10733, arg0, (byte) 2, false);
 			} else {
-				throw new RuntimeException();
+				throw new RuntimeException("Invalid fetchgroup mode!");
 			}
+
 			this.field10731.pushNode(var3, (long) arg0);
 		}
+
 		if (var3.field12344) {
 			return null;
 		}
+
 		byte[] var4 = var3.method19444();
 		if (!(var3 instanceof Js5WorkerRequest)) {
 			try {
@@ -280,23 +289,29 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						var3.remove();
 						return null;
 					}
-					throw new RuntimeException();
+
+					throw new RuntimeException("Data from server too small - data:" + var4);
 				}
+
 				field10746.reset();
 				field10746.update(var4, 0, var4.length - 2);
+
 				int var13 = (int) field10746.getValue();
 				if (this.index.field4393[arg0] != var13) {
-					throw new RuntimeException();
+					throw new RuntimeException("Net fetch CRC incorrect");
 				}
+
 				if (this.index.field4395 != null && this.index.field4395[arg0] != null) {
 					byte[] var14 = this.index.field4395[arg0];
 					byte[] var15 = Whirlpool.method18308(var4, 0, var4.length - 2);
 					for (int var16 = 0; var16 < 64; var16++) {
 						if (var14[var16] != var15[var16]) {
-							throw new RuntimeException();
+		                    // throw new RuntimeException("Whirlpool for group " + arg0 + " incorrect - got:" + hexString(var14) + " expected:" + hexString(var15));
+							throw new RuntimeException("Whirlpool for group " + arg0 + " incorrect");
 						}
 					}
 				}
+
 				if (this.field10721 != null) {
 					this.field10720.field4455 = 0;
 					this.field10720.field4454 = 0;
@@ -319,8 +334,10 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 				return null;
 			}
+
 			var4[var4.length - 2] = (byte) (this.index.groupVersions[arg0] >>> 8);
 			var4[var4.length - 1] = (byte) this.index.groupVersions[arg0];
+
 			if (this.field10723 != null) {
 				this.field10744.method6988(arg0, var4, this.field10723);
 				if (this.field10745[arg0] != 1) {
@@ -328,47 +345,59 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 					this.field10745[arg0] = 1;
 				}
 			}
+
 			if (!var3.field12342) {
 				var3.remove();
 			}
+
 			return var3;
 		}
+
 		try {
 			if (var4 == null || var4.length <= 2) {
-				throw new RuntimeException();
+				throw new RuntimeException("Data not in cache - data:" + var4);
 			}
+
 			field10746.reset();
 			field10746.update(var4, 0, var4.length - 2);
 			int var5 = (int) field10746.getValue();
 			if (this.index.field4393[arg0] != var5) {
-				throw new RuntimeException();
+				throw new RuntimeException("Net fetch CRC incorrect");
 			}
+
 			if (this.index.field4395 != null && this.index.field4395[arg0] != null) {
 				byte[] var6 = this.index.field4395[arg0];
 				byte[] var7 = Whirlpool.method18308(var4, 0, var4.length - 2);
 				for (int var8 = 0; var8 < 64; var8++) {
 					if (var6[var8] != var7[var8]) {
-						throw new RuntimeException();
+						throw new RuntimeException("Disk fetch Whirlpool incorrect");
 					}
 				}
 			}
+
 			int var9 = ((var4[var4.length - 2] & 0xFF) << 8) + (var4[var4.length - 1] & 0xFF);
 			if ((this.index.groupVersions[arg0] & 0xFFFF) != var9) {
-				throw new RuntimeException();
+				throw new RuntimeException("Version incorrect - wanted:" + this.index.groupVersions[arg0] + " got:" + var9);
 			}
+
 			if (this.field10745[arg0] != 1) {
 				if (this.field10745[arg0] == 0) {
+					// this.x++; // (tfu)
 				}
+
 				this.field10740++;
 				this.field10745[arg0] = 1;
 			}
+
 			if (!var3.field12342) {
 				var3.remove();
 			}
+
 			return var3;
 		} catch (Exception var20) {
 			this.field10745[arg0] = -1;
 			var3.remove();
+
 			if (var3.field12342) {
 				if (this.field10721 == null) {
 					if (!this.field10720.method7012()) {
@@ -382,6 +411,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 					}
 				}
 			}
+
 			return null;
 		}
 	}

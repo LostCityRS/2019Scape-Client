@@ -69,19 +69,23 @@ public class Js5Index {
 	public Js5Index(byte[] arg0, int arg1, byte[] arg2) {
 		this.crc = Packet.getcrc(arg0, arg0.length);
 		if (this.crc != arg1) {
-			throw new RuntimeException();
+			throw new RuntimeException("Invalid CRC - expected:" + arg1 + " got:" + this.crc);
 		}
+
 		if (arg2 != null) {
 			if (arg2.length != 64) {
-				throw new RuntimeException();
+				throw new RuntimeException("Invalid expectedwhirlpool - must be 64 bytes long");
 			}
+
 			this.whirlpool = Whirlpool.method18308(arg0, 0, arg0.length);
 			for (int var4 = 0; var4 < 64; var4++) {
 				if (this.whirlpool[var4] != arg2[var4]) {
-					throw new RuntimeException();
+	                // throw new RuntimeException("Invalid Whirlpool - expected:" + hexString(arg2) + " got:" + hexString(this.whirlpool));
+					throw new RuntimeException("Invalid Whirlpool");
 				}
 			}
 		}
+
 		this.method6849(arg0);
 	}
 
@@ -90,7 +94,7 @@ public class Js5Index {
 		Packet var2 = new Packet(Js5.uncompress(arg0));
 		int var3 = var2.g1();
 		if (var3 < 5 || var3 > 7) {
-			throw new RuntimeException();
+			throw new RuntimeException("Incorrect JS5 protocol number: " + var3);
 		}
 		if (var3 >= 6) {
 			this.indexversion = var2.g4s();

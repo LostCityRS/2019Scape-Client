@@ -63,8 +63,8 @@ public final class Js5 {
 
 			this.packed = new Object[this.index.capacity];
 			this.unpacked = new Object[this.index.capacity][];
-
 		}
+
 		return true;
 	}
 
@@ -193,7 +193,7 @@ public final class Js5 {
 		} else if (this.index.groupCapacities[group] == 1) {
 			return this.requestdownload(group, 0);
 		} else {
-			throw new RuntimeException();
+			throw new RuntimeException("Unable to determine if id is groupid or fileid");
 		}
 	}
 
@@ -274,7 +274,7 @@ public final class Js5 {
 		} else if (this.index.groupCapacities[arg0] == 1) {
 			return this.getfile(arg0, 0);
 		} else {
-			throw new RuntimeException();
+			throw new RuntimeException("Unable to determine if id is groupid or fileid");
 		}
 	}
 
@@ -305,7 +305,7 @@ public final class Js5 {
 		} else if (this.index.groupCapacities[arg0] == 1) {
 			return this.isGroupValid(arg0, 0);
 		} else {
-			throw new RuntimeException();
+			throw new RuntimeException("Unable to determine if id is groupid or fileid");
 		}
 	}
 
@@ -649,7 +649,7 @@ public final class Js5 {
 		int len = header.getPackedLength();
 
 		if (len < 0 || MAX_LENGTH != 0 && len > MAX_LENGTH) {
-			throw new RuntimeException();
+			throw new RuntimeException("ctype=" + type + " clen=" + len + " maxsize=" + MAX_LENGTH);
 		} else if (Js5CompressionType.UNCOMPRESSED == type) {
 			byte[] bytes = new byte[len];
 			buf.gdata(bytes, 0, len);
@@ -657,7 +657,7 @@ public final class Js5 {
 		} else {
 			int unpackedLength = header.getUnpackedLength();
 			if (unpackedLength < 0 || MAX_LENGTH != 0 && unpackedLength > MAX_LENGTH) {
-				throw new RuntimeException();
+				throw new RuntimeException("ctype=" + type + " clen=" + len + " ulen=" + unpackedLength + " maxsize=" + MAX_LENGTH);
 			}
 
 			byte[] bytes;

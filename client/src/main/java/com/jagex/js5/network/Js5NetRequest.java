@@ -16,8 +16,9 @@ public class Js5NetRequest extends Js5Request {
 	@ObfuscatedName("auq.e(I)[B")
 	public byte[] method19444() {
 		if (this.field12344 || this.field12564.pos < this.field12564.data.length - this.field12565) {
-			throw new RuntimeException();
+			throw new RuntimeException("Not ready!");
 		}
+
 		return this.field12564.data;
 	}
 
