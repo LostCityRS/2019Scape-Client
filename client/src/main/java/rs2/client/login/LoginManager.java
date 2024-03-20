@@ -1198,7 +1198,7 @@ public class LoginManager {
 		Client.field11011 = 0;
 		Client.field10906 = 0;
 		Client.miniMenuEntries.removeAll();
-		Client.projectiles.clearAll();
+		Client.projectiles.removeAll();
 		Client.spotanims.removeAll();
 		Client.textCoords.clear();
 		Client.objStacks.removeAll();

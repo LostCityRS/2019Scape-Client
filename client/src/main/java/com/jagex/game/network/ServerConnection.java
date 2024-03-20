@@ -88,7 +88,7 @@ public class ServerConnection {
 
 	@ObfuscatedName("ax.e(I)V")
 	public final void clearWriteQueue() {
-		this.writeQueue.clearAll();
+		this.writeQueue.removeAll();
 		this.writePos = 0;
 	}
 

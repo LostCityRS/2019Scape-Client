@@ -917,7 +917,7 @@ public class World {
 		MiniMenu.method5175();
 		Minimap.method5065();
 		Client.spotanims.removeAll();
-		Client.projectiles.clearAll();
+		Client.projectiles.removeAll();
 		Client.textCoords.clear();
 		ParticleSystemRenderer.method3561();
 	}

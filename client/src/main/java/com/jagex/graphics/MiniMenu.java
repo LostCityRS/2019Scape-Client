@@ -269,8 +269,8 @@ public class MiniMenu {
 		if (!field562) {
 			field540 = minLength != -1 && field546 >= minLength || (field564 ? 26 : 22) + field546 * field536 > GameShell.canvasHei;
 		}
-		field538.clearAll();
-		field552.clearAll();
+		field538.removeAll();
+		field552.removeAll();
 		for (MinimenuEntry var1 = (MinimenuEntry) field542.peekFront(); var1 != null; var1 = (MinimenuEntry) field542.prev()) {
 			int var2 = var1.field12307;
 			if (var2 < 1000) {
@@ -1136,7 +1136,7 @@ public class MiniMenu {
 		}
 		field543 = 0;
 		field546 = 0;
-		field542.clearAll();
+		field542.removeAll();
 		field549.removeAll();
 		field550.removeAll();
 		method2771(field8348);
@@ -1153,7 +1153,7 @@ public class MiniMenu {
 		}
 		field543 = 0;
 		field546 = 0;
-		field542.clearAll();
+		field542.removeAll();
 		field549.removeAll();
 		field550.removeAll();
 		field562 = false;

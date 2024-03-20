@@ -282,7 +282,7 @@ public class Minimap {
 		arg0.method2475(1, 1);
 		Client.method9734();
 		field723 = 0;
-		field727.clearAll();
+		field727.removeAll();
 		if (!field732) {
 			method16444(arg1);
 			WorldMapRelated var47 = Client.world.method7871();

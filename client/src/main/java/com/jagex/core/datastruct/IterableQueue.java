@@ -20,7 +20,7 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.e(I)V")
-	public void clearAll() {
+	public void removeAll() {
 		while (this.head.prev != this.head) {
 			this.head.prev.remove();
 		}
@@ -226,7 +226,7 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	public void clear() {
-		this.clearAll();
+		this.removeAll();
 	}
 
 	public boolean add(Object arg0) {

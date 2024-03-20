@@ -169,7 +169,7 @@ public class CutsceneManager {
 	@ObfuscatedName("gf.m(I)V")
 	public static void method3551() {
 		field1718.removeAll();
-		field1712.clearAll();
+		field1712.removeAll();
 		field1714 = null;
 		field1721 = null;
 		field7317 = null;

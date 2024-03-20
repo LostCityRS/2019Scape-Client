@@ -330,7 +330,7 @@ public class ClientWorldMap extends WorldMap {
 		field6793 = 0;
 		field3044 = null;
 		method8508();
-		field6806.clearAll();
+		field6806.removeAll();
 		WorldMap.field6805 = null;
 		field6831.reset();
 		field6832.reset();
@@ -429,7 +429,7 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("aq.dx(Ldh;Laat;IIB)V")
 	public static void method928(Renderer arg0, IterableQueue arg1, int arg2, int arg3) {
-		field11253.clearAll();
+		field11253.removeAll();
 		if (disableElements) {
 			return;
 		}

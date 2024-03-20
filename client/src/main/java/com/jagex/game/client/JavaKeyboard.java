@@ -69,8 +69,8 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 		for (int var1 = 0; var1 < 112; var1++) {
 			this.field11683[var1] = false;
 		}
-		this.field11681.clearAll();
-		this.field11682.clearAll();
+		this.field11681.removeAll();
+		this.field11682.removeAll();
 	}
 
 	@ObfuscatedName("alg.x(ICII)V")
@@ -95,7 +95,7 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 
 	@ObfuscatedName("alg.n(I)V")
 	public synchronized void method9069() {
-		this.field11681.clearAll();
+		this.field11681.removeAll();
 		for (BasicKeyboardEvent var1 = (BasicKeyboardEvent) this.field11682.pollFront(); var1 != null; var1 = (BasicKeyboardEvent) this.field11682.pollFront()) {
 			var1.field11467 = this.method18266();
 			if (var1.field11466 == 0) {

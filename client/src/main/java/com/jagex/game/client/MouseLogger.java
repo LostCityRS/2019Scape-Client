@@ -127,7 +127,7 @@ public abstract class MouseLogger {
 
 	@ObfuscatedName("xb.n(I)V")
 	public void method10260() {
-		this.field7955.clearAll();
+		this.field7955.removeAll();
 		this.field7952 = -1L;
 		this.field7953 = -1L;
 		this.field7954 = -1;
