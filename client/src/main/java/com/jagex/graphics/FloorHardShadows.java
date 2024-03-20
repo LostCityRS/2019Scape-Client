@@ -75,7 +75,7 @@ public class FloorHardShadows {
 							if (var14 - arg1 >= -arg3 && var14 - arg1 <= arg3) {
 								for (int var15 = var9; var15 < var10; var15++) {
 									if (var15 - arg2 >= -arg3 && var15 - arg2 <= arg3 && arg4[var14 - arg1 + arg3][var15 - arg2 + arg3]) {
-										arg0.field2982.method6612(var7, var7, 1.0F, 1.0F);
+										arg0.field2982.scale(var7, var7, 1.0F, 1.0F);
 										arg0.field2982.entries[12] = -var11;
 										arg0.field2982.entries[13] = -var8;
 										this.field3293[var11][var8].method5657(arg0);
@@ -132,7 +132,7 @@ public class FloorHardShadows {
 				for (int var36 = 0; var36 < this.field3291; var36++) {
 					for (int var37 = 0; var37 < this.field3286; var37++) {
 						if (var16[var35] != 0) {
-							arg0.field2982.method6612(var7, var7, 1.0F, 1.0F);
+							arg0.field2982.scale(var7, var7, 1.0F, 1.0F);
 							arg0.field2982.entries[12] = -var37;
 							arg0.field2982.entries[13] = -var36;
 							this.field3293[var37][var36].method5656(arg0, var33, var34, var16[var35] / 3);

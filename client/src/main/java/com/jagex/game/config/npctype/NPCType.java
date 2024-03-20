@@ -498,12 +498,12 @@ public class NPCType implements ConfigType {
 			} else if (code != 178) {
 				if (code == 179) {
 					this.clickbox = new Cuboid();
-					this.clickbox.field4252 = buf.gSmart1or2s();
-					this.clickbox.field4253 = buf.gSmart1or2s();
-					this.clickbox.field4248 = buf.gSmart1or2s();
-					this.clickbox.field4249 = buf.gSmart1or2s();
-					this.clickbox.field4250 = buf.gSmart1or2s();
-					this.clickbox.field4251 = buf.gSmart1or2s();
+					this.clickbox.minX = buf.gSmart1or2s();
+					this.clickbox.minY = buf.gSmart1or2s();
+					this.clickbox.minZ = buf.gSmart1or2s();
+					this.clickbox.maxX = buf.gSmart1or2s();
+					this.clickbox.maxY = buf.gSmart1or2s();
+					this.clickbox.maxZ = buf.gSmart1or2s();
 				} else if (code == 180) {
 					this.field2765 = buf.g1() & 0xFF;
 				} else if (code == 181) {
@@ -763,7 +763,7 @@ public class NPCType implements ConfigType {
 					int var58 = arg8[var57] - arg9;
 					int var59 = var58 & 0x3FFF;
 					Matrix4x3 var60 = new Matrix4x3();
-					var60.method6372(0.0F, 1.0F, 0.0F, Trig1.method6277(var59));
+					var60.setToRotation(0.0F, 1.0F, 0.0F, Trig1.radians(var59));
 					var50.method1771(var60, 0x1 << var57, false);
 				}
 			}

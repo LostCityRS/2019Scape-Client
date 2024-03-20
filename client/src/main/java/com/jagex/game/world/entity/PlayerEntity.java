@@ -331,8 +331,8 @@ public class PlayerEntity extends PathingEntity {
 			int var7 = this.field10408 - var6.groundDecoration.field12448;
 			this.field10408 = (int) ((float) this.field10408 - (float) var7 / 10.0F);
 		}
-		var2.method6292(var3);
-		var2.method6315(0.0F, (float) (-20 - this.field10408), 0.0F);
+		var2.setTo(var3);
+		var2.translate(0.0F, (float) (-20 - this.field10408), 0.0F);
 		PickableEntity var8 = null;
 		this.field10458 = false;
 		if (Client.preferences.characterShadows.getValue() == 1) {
@@ -399,8 +399,8 @@ public class PlayerEntity extends PathingEntity {
 				}
 			}
 		}
-		var2.method6292(var3);
-		var2.method6315(0.0F, (float) (-5 - this.field10408), 0.0F);
+		var2.setTo(var3);
+		var2.translate(0.0F, (float) (-5 - this.field10408), 0.0F);
 		if (this.field11713 == null || this.field11713.length < this.field10459.length) {
 			this.method18363(this.field10459.length);
 		}
@@ -435,8 +435,8 @@ public class PlayerEntity extends PathingEntity {
 			return;
 		}
 		Matrix4x3 var2 = arg0.method2209();
-		var2.method6293(this.getTransform());
-		var2.method6315(0.0F, -5.0F, 0.0F);
+		var2.setToTransform2(this.getTransform());
+		var2.translate(0.0F, -5.0F, 0.0F);
 		this.method16576(arg0, this.field10459, var2, this.field10449);
 		for (int var3 = 0; var3 < this.field10459.length; var3++) {
 			this.field10459[var3] = null;
@@ -690,8 +690,8 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.k(I)Lov;")
 	public Quaternion method4668() {
-		Quaternion var1 = Quaternion.method6469();
-		var1.method6415(Trig1.method6277(this.field10395.field528), 0.0F, 0.0F);
+		Quaternion var1 = Quaternion.create();
+		var1.setToRotation(Trig1.radians(this.field10395.field528), 0.0F, 0.0F);
 		return var1;
 	}
 

@@ -147,8 +147,8 @@ public class EnvMappedWaterShader extends WaterShader {
 	@ObfuscatedName("aqe.i(Lpq;)V")
 	public void method16765(Matrix4x4 arg0) {
 		Matrix4x4 var2 = new Matrix4x4();
-		var2.method6612(this.field12130, this.field12130, 1.0F, 1.0F);
-		var2.method6606(arg0, var2);
+		var2.scale(this.field12130, this.field12130, 1.0F, 1.0F);
+		var2.setToProduct(arg0, var2);
 		super.method16765(var2);
 	}
 
@@ -190,7 +190,7 @@ public class EnvMappedWaterShader extends WaterShader {
 		float var3 = 0.4F;
 		float var4 = 0.1F;
 		byte var5 = 5;
-		this.field12127.method6612(this.field12130, this.field12130, this.field12130, this.field12130);
+		this.field12127.scale(this.field12130, this.field12130, this.field12130, this.field12130);
 		this.field12132.method6247(-this.field3233.field10114[0], -this.field3233.field10114[1], -this.field3233.field10114[2], 32.0F);
 		this.field12134.method6247(this.field3233.field10142, this.field3233.field10120, this.field3233.field10210, (float) var5);
 		this.field12136.method6247(var4, var3, (float) var1, var2);

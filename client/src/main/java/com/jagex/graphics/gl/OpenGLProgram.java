@@ -270,7 +270,7 @@ public class OpenGLProgram extends Program {
 		assert arg0.getType() == UniformType.MATRIX_4X4;
 		int var3 = ((OpenGlProgramUniform) arg0).method19681();
 		if (var3 != -1) {
-			OpenGL.glUniform4fv(var3, 4, arg1.method6594(field10380), 0);
+			OpenGL.glUniform4fv(var3, 4, arg1.toArray(field10380), 0);
 		}
 	}
 
@@ -323,7 +323,7 @@ public class OpenGLProgram extends Program {
 
 	@ObfuscatedName("agl.q(ILpq;)V")
 	public void setUniform4x4(int arg0, Matrix4x4 arg1) {
-		OpenGL.glUniform4fv(arg0, 4, arg1.method6594(field10380), 0);
+		OpenGL.glUniform4fv(arg0, 4, arg1.toArray(field10380), 0);
 	}
 
 	@ObfuscatedName("agl.x(IILmq;)V")

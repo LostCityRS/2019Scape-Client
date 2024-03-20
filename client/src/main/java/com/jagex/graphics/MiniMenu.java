@@ -1382,16 +1382,16 @@ public class MiniMenu {
 		if (field553 == null) {
 			field553 = new Matrix4x4(arg1);
 		} else {
-			field553.method6604(arg1);
+			field553.setTo(arg1);
 		}
-		field572.method6292(arg0);
+		field572.setTo(arg0);
 		field560 = arg2;
 		field561 = arg3;
 	}
 
 	@ObfuscatedName("xl.av(Lpq;B)V")
 	public static void method9927(Matrix4x4 arg0) {
-		field555.method6604(arg0);
+		field555.setTo(arg0);
 	}
 
 	@ObfuscatedName("kh.ao(Ldh;I)V")

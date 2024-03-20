@@ -7,42 +7,42 @@ import deob.ObfuscatedName;
 public class ScaleRotTrans {
 
 	@ObfuscatedName("oe.p")
-	public Quaternion field4297;
+	public Quaternion rot;
 
 	@ObfuscatedName("oe.d")
 	public Vector3 trans;
 
 	@ObfuscatedName("oe.c")
-	public Vector3 field4299;
+	public Vector3 scale;
 
 	public ScaleRotTrans(Packet arg0, boolean arg1) {
-		this.method6384(arg0, arg1);
+		this.decode(arg0, arg1);
 	}
 
 	public ScaleRotTrans() {
-		this.field4297 = new Quaternion();
+		this.rot = new Quaternion();
 		this.trans = new Vector3();
-		this.field4299 = new Vector3(1.0F, 1.0F, 1.0F);
+		this.scale = new Vector3(1.0F, 1.0F, 1.0F);
 	}
 
 	public ScaleRotTrans(ScaleRotTrans arg0) {
 		this();
-		this.method6386(arg0);
+		this.setTo(arg0);
 	}
 
 	@ObfuscatedName("oe.e(Lalw;Z)V")
-	public void method6384(Packet arg0, boolean arg1) {
+	public void decode(Packet arg0, boolean arg1) {
 		if (arg1) {
-			this.method6391(arg0);
+			this.decode(arg0);
 		} else {
-			this.field4297 = new Quaternion(arg0);
+			this.rot = new Quaternion(arg0);
 			this.trans = new Vector3(arg0);
-			this.field4299 = new Vector3(arg0);
+			this.scale = new Vector3(arg0);
 		}
 	}
 
 	@ObfuscatedName("oe.n(Lalw;)V")
-	public void method6391(Packet arg0) {
+	public void decode(Packet arg0) {
 		int var2 = arg0.g1();
 		float var3 = 0.0F;
 		float var4 = 0.0F;
@@ -54,7 +54,7 @@ public class ScaleRotTrans {
 			var5 = (float) arg0.g2s() / 32768.0F;
 			var6 = (float) arg0.g2s() / 32768.0F;
 		}
-		this.field4297 = new Quaternion(var3, var4, var5, var6);
+		this.rot = new Quaternion(var3, var4, var5, var6);
 		float var7 = 0.0F;
 		float var8 = 0.0F;
 		float var9 = 0.0F;
@@ -87,36 +87,36 @@ public class ScaleRotTrans {
 			var11 = var13;
 			var10 = var13;
 		}
-		this.field4299 = new Vector3(var10, var11, var12);
+		this.scale = new Vector3(var10, var11, var12);
 	}
 
 	@ObfuscatedName("oe.m(Loe;)V")
-	public void method6386(ScaleRotTrans arg0) {
-		this.field4297.method6412(arg0.field4297);
+	public void setTo(ScaleRotTrans arg0) {
+		this.rot.setTo(arg0.rot);
 		this.trans.setTo(arg0.trans);
-		this.field4299.setTo(arg0.field4299);
+		this.scale.setTo(arg0.scale);
 	}
 
 	@ObfuscatedName("oe.k()V")
-	public final void method6387() {
-		this.field4297.method6418();
+	public final void invert() {
+		this.rot.opposite();
 		this.trans.negate();
-		this.trans.rotate(this.field4297);
-		this.field4299.x = 1.0F / this.field4299.x;
-		this.field4299.y = 1.0F / this.field4299.y;
-		this.field4299.z = 1.0F / this.field4299.z;
+		this.trans.rotate(this.rot);
+		this.scale.x = 1.0F / this.scale.x;
+		this.scale.y = 1.0F / this.scale.y;
+		this.scale.z = 1.0F / this.scale.z;
 	}
 
 	@ObfuscatedName("oe.f(Loe;)V")
-	public final void method6398(ScaleRotTrans arg0) {
-		this.field4297.multiply(arg0.field4297);
-		this.trans.rotate(arg0.field4297);
+	public final void multiply(ScaleRotTrans arg0) {
+		this.rot.multiply(arg0.rot);
+		this.trans.rotate(arg0.rot);
 		this.trans.add(arg0.trans);
-		this.field4299.multiply(arg0.field4299);
+		this.scale.multiply(arg0.scale);
 	}
 
 	public String toString() {
-		return "[" + this.field4297.toString() + "|" + this.trans.toString() + "|" + this.field4299.toString() + "]";
+		return "[" + this.rot.toString() + "|" + this.trans.toString() + "|" + this.scale.toString() + "]";
 	}
 
 	public boolean equals(Object arg0) {
@@ -126,7 +126,7 @@ public class ScaleRotTrans {
 			return true;
 		} else if (arg0 instanceof ScaleRotTrans) {
 			ScaleRotTrans var2 = (ScaleRotTrans) arg0;
-			return this.field4297.equals(var2.field4297) && this.trans.isEqualTo(var2.trans) && this.field4299.isEqualTo(var2.field4299);
+			return this.rot.equals(var2.rot) && this.trans.isEqualTo(var2.trans) && this.scale.isEqualTo(var2.scale);
 		} else {
 			return false;
 		}

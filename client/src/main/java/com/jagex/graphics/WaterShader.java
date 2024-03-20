@@ -201,11 +201,11 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 			this.field10587.setUniform4x4(this.field10605, this.field3233.method16005());
 		}
 		if ((var2 & 0x20) != 0 && this.field10590 != null) {
-			field10610.method6606(this.field3233.method16244(), this.field3233.method16005());
+			field10610.setToProduct(this.field3233.method16244(), this.field3233.method16005());
 			this.field10587.setUniform4x4(this.field10590, field10610);
 		}
 		if ((var2 & 0x40) != 0 && this.field10591 != null) {
-			field10610.method6606(this.field3233.method16000(), this.field3233.method16005());
+			field10610.setToProduct(this.field3233.method16000(), this.field3233.method16005());
 			this.field10587.setUniform4x4(this.field10591, field10610);
 		}
 		if (this.field3233.method16037() == 0 && (this.field10609[var1] & 0x80) != 0 && this.field10604 != null) {
@@ -282,12 +282,12 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 			this.field10609[var3] &= 0xFFFFFFFE;
 		}
 		if (this.field10600 != null) {
-			field10610.method6606(var2, this.field3233.method16000());
+			field10610.setToProduct(var2, this.field3233.method16000());
 			this.field10587.setUniform4x4(this.field10600, field10610);
 			this.field10609[var3] &= 0xFFFFFFEF;
 		}
 		if (this.field10590 != null) {
-			field10610.method6606(var2, this.field3233.method16228());
+			field10610.setToProduct(var2, this.field3233.method16228());
 			this.field10587.setUniform4x4(this.field10590, field10610);
 			this.field10609[var3] &= 0xFFFFFFDF;
 		}
@@ -297,12 +297,12 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 
 	@ObfuscatedName("ahi.l()V")
 	public void method5421() {
-		this.method16771(Matrix4x3.field4282);
+		this.method16771(Matrix4x3.IDENTITY);
 	}
 
 	@ObfuscatedName("ahi.ac(I)V")
 	public void method16773(int arg0) {
-		this.field10611[0].method6603();
+		this.field10611[0].setToIdentity();
 		this.method16770(arg0);
 	}
 

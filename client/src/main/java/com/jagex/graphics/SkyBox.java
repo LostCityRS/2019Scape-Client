@@ -338,9 +338,9 @@ public class SkyBox {
 		Matrix4x3 var6 = arg0.method2218();
 		Matrix4x3 var7 = new Matrix4x3();
 		var7.setToTranslation(0.0F, 0.0F, 0.0F);
-		var7.method6307(0.0F, -1.0F, 0.0F, Trig1.method6277(-arg2 & 0x3FFF));
-		var7.method6307(-1.0F, 0.0F, 0.0F, Trig1.method6277(-arg1 & 0x3FFF));
-		var7.method6307(0.0F, 0.0F, -1.0F, Trig1.method6277(-arg3 & 0x3FFF));
+		var7.rotateAroundAxis(0.0F, -1.0F, 0.0F, Trig1.radians(-arg2 & 0x3FFF));
+		var7.rotateAroundAxis(-1.0F, 0.0F, 0.0F, Trig1.radians(-arg1 & 0x3FFF));
+		var7.rotateAroundAxis(0.0F, 0.0F, -1.0F, Trig1.radians(-arg3 & 0x3FFF));
 		arg0.method2217(var7);
 		Matrix4x3 var8 = new Matrix4x3();
 		if (this.field5105 != arg4) {

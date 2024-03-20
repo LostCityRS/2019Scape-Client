@@ -294,9 +294,9 @@ public class Vector3 {
 	public final void rotate(Quaternion arg0) {
 		Quaternion var2 = Quaternion.create(this.x, this.y, this.z, 0.0F);
 		Quaternion var3 = Quaternion.opposite(arg0);
-		Quaternion var4 = Quaternion.method6425(var3, var2);
+		Quaternion var4 = Quaternion.multiply(var3, var2);
 		var4.multiply(arg0);
-		this.setTo(var4.field4301, var4.field4304, var4.field4305);
+		this.setTo(var4.w, var4.x, var4.y);
 		var2.release();
 		var3.release();
 		var4.release();
@@ -306,18 +306,18 @@ public class Vector3 {
 	public final void method6567(Matrix4x3 arg0) {
 		float var2 = this.x;
 		float var3 = this.y;
-		this.x = this.z * arg0.field4275 + arg0.field4279 * var3 + arg0.field4276 * var2 + arg0.field4285;
-		this.y = this.z * arg0.field4283 + arg0.field4287 * var3 + arg0.field4277 * var2 + arg0.field4286;
-		this.z = this.z * arg0.field4284 + arg0.field4281 * var3 + arg0.field4278 * var2 + arg0.field4280;
+		this.x = this.z * arg0.entry20 + arg0.entry10 * var3 + arg0.entry00 * var2 + arg0.entry30;
+		this.y = this.z * arg0.entry21 + arg0.entry11 * var3 + arg0.entry01 * var2 + arg0.entry31;
+		this.z = this.z * arg0.entry22 + arg0.entry12 * var3 + arg0.entry02 * var2 + arg0.entry32;
 	}
 
 	@ObfuscatedName("ox.as(Lou;)V")
 	public final void method6521(Matrix4x3 arg0) {
 		float var2 = this.x;
 		float var3 = this.y;
-		this.x = this.z * arg0.field4275 + arg0.field4279 * var3 + arg0.field4276 * var2;
-		this.y = this.z * arg0.field4283 + arg0.field4287 * var3 + arg0.field4277 * var2;
-		this.z = this.z * arg0.field4284 + arg0.field4281 * var3 + arg0.field4278 * var2;
+		this.x = this.z * arg0.entry20 + arg0.entry10 * var3 + arg0.entry00 * var2;
+		this.y = this.z * arg0.entry21 + arg0.entry11 * var3 + arg0.entry01 * var2;
+		this.z = this.z * arg0.entry22 + arg0.entry12 * var3 + arg0.entry02 * var2;
 	}
 
 	@ObfuscatedName("ox.at(Lox;F)V")

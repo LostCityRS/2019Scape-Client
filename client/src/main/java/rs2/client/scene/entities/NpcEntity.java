@@ -151,8 +151,8 @@ public class NpcEntity extends PathingEntity {
 			int var7 = this.field10408 - var6.groundDecoration.field12448;
 			this.field10408 = (int) ((float) this.field10408 - (float) var7 / 10.0F);
 		}
-		var4.method6292(var2);
-		var4.method6315(0.0F, (float) (-20 - this.field10408), 0.0F);
+		var4.setTo(var2);
+		var4.translate(0.0F, (float) (-20 - this.field10408), 0.0F);
 		BASType var8 = this.getBASType();
 		NPCType var9 = this.npcType.field2735 == null ? this.npcType : this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 		boolean var10 = var9.clickbox != null;
@@ -295,8 +295,8 @@ public class NpcEntity extends PathingEntity {
 			return;
 		}
 		Matrix4x3 var2 = arg0.method2209();
-		var2.method6292(this.method10533());
-		var2.method6315(0.0F, -5.0F, 0.0F);
+		var2.setTo(this.method10533());
+		var2.translate(0.0F, -5.0F, 0.0F);
 		this.method16576(arg0, this.field10459, var2, this.field10449);
 		for (int var3 = 0; var3 < this.field10459.length; var3++) {
 			this.field10459[var3] = null;
@@ -580,8 +580,8 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.k(I)Lov;")
 	public Quaternion method4668() {
-		Quaternion var1 = Quaternion.method6469();
-		var1.method6415(Trig1.method6277(this.field10395.field528), 0.0F, 0.0F);
+		Quaternion var1 = Quaternion.create();
+		var1.setToRotation(Trig1.radians(this.field10395.field528), 0.0F, 0.0F);
 		return var1;
 	}
 

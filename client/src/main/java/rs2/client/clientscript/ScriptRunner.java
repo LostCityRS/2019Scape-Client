@@ -13952,11 +13952,11 @@ public final class ScriptRunner {
 		PositionEntity var9 = (PositionEntity) Client.field9155.method4709();
 		Quaternion var10 = new Quaternion();
 		Quaternion var11 = new Quaternion();
-		var10.method6414(0.0F, 1.0F, 0.0F, (float) ((double) var6 * 3.141592653589793D * 2.0D / 16384.0D));
+		var10.setToRotation(0.0F, 1.0F, 0.0F, (float) ((double) var6 * 3.141592653589793D * 2.0D / 16384.0D));
 		Vector3 var12 = new Vector3(1.0F, 0.0F, 0.0F);
 		var12.rotate(var10);
 		var12.negate();
-		var11.method6413(var12, (float) ((double) var5 * 3.141592653589793D * 2.0D / 16384.0D));
+		var11.setToRotation(var12, (float) ((double) var5 * 3.141592653589793D * 2.0D / 16384.0D));
 		var10.multiply(var11);
 		CoordGrid var13 = Client.world.method7727();
 		int var14 = var13.x << 9;
@@ -14042,7 +14042,7 @@ public final class ScriptRunner {
 		ShakeMode var4 = ShakeMode.method1599(var1);
 		float var5 = (float) var2;
 		if (ShakeMode.field2622 == var4 || ShakeMode.field2623 == var4 || ShakeMode.field2624 == var4) {
-			var5 = Trig1.method6277(var2);
+			var5 = Trig1.radians(var2);
 		}
 		Shake var6 = new Shake(Client.field9155.method16602(), var4, var5, (float) var3 / 1000.0F);
 		Client.field9155.method4702(var6);
@@ -14140,7 +14140,7 @@ public final class ScriptRunner {
 		Vector3 var6 = Vector3.sub(var3.method14133(), var5);
 		var6.normalise();
 		float var7 = var2.method16692().length();
-		RayTracing.method6592(var3.method14133(), var6, var4, var7, field8210);
+		RayTracing.computeSphereIntersections(var3.method14133(), var6, var4, var7, field8210);
 		Object var8 = null;
 		if (field8210[0] == null) {
 			throw new RuntimeException("");
@@ -14201,7 +14201,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("dl.aoe(Lyf;I)V")
 	public static final void cam2_addeffect_ztilt(ClientScriptState arg0) {
-		float var1 = Trig1.method6277(arg0.field8216[--arg0.field8226]);
+		float var1 = Trig1.radians(arg0.field8216[--arg0.field8226]);
 		ZTilt var2 = new ZTilt(Client.field9155.method16602(), var1);
 		Client.field9155.method4702(var2);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field12341;
@@ -14211,7 +14211,7 @@ public final class ScriptRunner {
 	public static final void cam2_updateeffect_ztilt(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
-		float var2 = Trig1.method6277(arg0.field8216[arg0.field8226 + 1]);
+		float var2 = Trig1.radians(arg0.field8216[arg0.field8226 + 1]);
 		CameraEffect var3 = Client.field9155.method4704(var1);
 		if (var3 == null) {
 			throw new RuntimeException("");

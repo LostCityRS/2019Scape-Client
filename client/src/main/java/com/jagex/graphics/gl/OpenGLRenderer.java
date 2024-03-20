@@ -738,7 +738,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.rn(Lpq;Lpq;Lpq;)V")
 	public void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2) {
 		OpenGL.glMatrixMode(5888);
-		this.field10066.method6606(arg0, arg1);
+		this.field10066.setToProduct(arg0, arg1);
 		OpenGL.glLoadMatrixf(this.field10066.entries, 0);
 		OpenGL.glMatrixMode(5889);
 		OpenGL.glLoadMatrixf(arg2.entries, 0);
@@ -912,7 +912,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		if (this.field10135[this.field10177] == GpuRendererRelated4.field3372) {
 			OpenGL.glLoadIdentity();
 		} else {
-			OpenGL.glLoadMatrixf(this.field10162[this.field10177].method6594(this.field12031), 0);
+			OpenGL.glLoadMatrixf(this.field10162[this.field10177].toArray(this.field12031), 0);
 		}
 		OpenGL.glMatrixMode(5888);
 	}

@@ -48,19 +48,19 @@ public class Shake extends CameraEffect {
 		float var5 = this.field12555 * var4;
 		if (ShakeMode.field2625 == this.field12553) {
 			arg0.field2835 = (int) ((float) arg0.field2835 + var5);
-			arg1.method6315(var5, 0.0F, 0.0F);
+			arg1.translate(var5, 0.0F, 0.0F);
 		} else if (ShakeMode.field2620 == this.field12553) {
 			arg0.field2836 = (int) ((float) arg0.field2836 + var5);
-			arg1.method6315(0.0F, var5, 0.0F);
+			arg1.translate(0.0F, var5, 0.0F);
 		} else if (ShakeMode.field2619 == this.field12553) {
 			arg0.field2837 = (int) ((float) arg0.field2837 + var5);
-			arg1.method6315(0.0F, 0.0F, var5);
+			arg1.translate(0.0F, 0.0F, var5);
 		} else if (ShakeMode.field2622 == this.field12553) {
-			arg1.method6307(1.0F, 0.0F, 0.0F, var5);
+			arg1.rotateAroundAxis(1.0F, 0.0F, 0.0F, var5);
 		} else if (ShakeMode.field2623 == this.field12553) {
-			arg1.method6307(0.0F, 1.0F, 0.0F, var5);
+			arg1.rotateAroundAxis(0.0F, 1.0F, 0.0F, var5);
 		} else if (ShakeMode.field2624 == this.field12553) {
-			arg1.method6307(0.0F, 0.0F, 1.0F, var5);
+			arg1.rotateAroundAxis(0.0F, 0.0F, 1.0F, var5);
 		}
 	}
 

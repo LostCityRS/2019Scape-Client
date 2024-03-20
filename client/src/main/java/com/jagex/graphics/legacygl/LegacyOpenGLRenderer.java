@@ -2107,9 +2107,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.do(Lou;)V")
 	public final void method2217(Matrix4x3 arg0) {
-		this.field9911.method6292(arg0);
+		this.field9911.setTo(arg0);
 		this.field9903.setToMatrix4x3(this.field9911);
-		this.field9976.method6292(arg0);
+		this.field9976.setTo(arg0);
 		this.field9976.method6300();
 		this.field9904.setToMatrix4x3(this.field9976);
 		this.method15752();
@@ -2136,7 +2136,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.dm(Lpq;)V")
 	public final void method2220(Matrix4x4 arg0) {
-		this.field9939.method6604(arg0);
+		this.field9939.setTo(arg0);
 		this.method15752();
 		this.method15751();
 	}
@@ -2197,7 +2197,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.si()V")
 	public final void method15752() {
-		this.field10005.method6604(this.field9903);
+		this.field10005.setTo(this.field9903);
 		this.field10005.multiply(this.field9939);
 		this.field10005.method6607(this.field10015[0]);
 		this.field10005.method6643(this.field10015[1]);

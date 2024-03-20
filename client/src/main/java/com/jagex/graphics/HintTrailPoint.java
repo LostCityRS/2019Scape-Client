@@ -54,10 +54,10 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 		Matrix4x3 var2 = arg0.method2209();
 		Matrix4x3 var3 = this.method10533();
 		ScaleRotTrans var4 = this.getTransform();
-		var2.method6292(var3);
+		var2.setTo(var3);
 		Tile var5 = this.field11716.levelTiles[this.level][(int) var4.trans.x >> 9][(int) var4.trans.z >> 9];
 		if (var5 != null && var5.groundDecoration != null) {
-			var2.method6315(0.0F, (float) -var5.groundDecoration.field12448, 0.0F);
+			var2.translate(0.0F, (float) -var5.groundDecoration.field12448, 0.0F);
 		}
 		this.field12614.field6754.draw(var2, null, 0);
 		return null;

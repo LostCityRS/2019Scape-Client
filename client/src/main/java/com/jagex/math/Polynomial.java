@@ -6,23 +6,23 @@ import deob.ObfuscatedName;
 public class Polynomial {
 
 	@ObfuscatedName("eo.e")
-	public float[] field1658;
+	public float[] p;
 
 	@ObfuscatedName("eo.n")
-	public int field1657;
+	public int deg;
 
 	public Polynomial(float[] arg0, int arg1) {
-		this.field1658 = arg0;
-		this.field1657 = arg1;
+		this.p = arg0;
+		this.deg = arg1;
 	}
 
 	@ObfuscatedName("vi.e([FIFZFZ[FB)I")
-	public static int method9407(float[] arg0, int arg1, float arg2, boolean arg3, float arg4, boolean arg5, float[] arg6) {
+	public static int polyZeroes(float[] arg0, int arg1, float arg2, boolean arg3, float arg4, boolean arg5, float[] arg6) {
 		float var7 = 0.0F;
 		for (int var8 = 0; var8 < arg1 + 1; var8++) {
 			var7 += Math.abs(arg0[var8]);
 		}
-		float var9 = (Math.abs(arg2) + Math.abs(arg4)) * (float) (arg1 + 1) * CurveEvaluator.field1287;
+		float var9 = (Math.abs(arg2) + Math.abs(arg4)) * (float) (arg1 + 1) * CurveEvaluator.EPSILON;
 		if (var7 <= var9) {
 			return -1;
 		}
@@ -56,7 +56,7 @@ public class Polynomial {
 				var17[var18 - 1] = var10[var18] * (float) var18;
 			}
 			float[] var19 = new float[arg1 + 1];
-			int var20 = method9407(var17, arg1 - 1, arg2, false, arg4, false, var19);
+			int var20 = polyZeroes(var17, arg1 - 1, arg2, false, arg4, false, var19);
 			if (var20 == -1) {
 				return 0;
 			}
@@ -72,7 +72,7 @@ public class Polynomial {
 				float var27;
 				if (var25 == 0) {
 					var26 = arg2;
-					var27 = method4656(var10, arg1, arg2);
+					var27 = horner1(var10, arg1, arg2);
 					if (Math.abs(var27) <= var9 && arg3) {
 						arg6[var12++] = arg2;
 					}
@@ -86,7 +86,7 @@ public class Polynomial {
 				} else {
 					var24 = var19[var25];
 				}
-				var22 = method4656(var10, arg1, var24);
+				var22 = horner1(var10, arg1, var24);
 				if (var21) {
 					var21 = false;
 				} else if (Math.abs(var22) < var9) {
@@ -95,7 +95,7 @@ public class Polynomial {
 						var21 = true;
 					}
 				} else if (var27 < 0.0F && var22 > 0.0F || var27 > 0.0F && var22 < 0.0F) {
-					arg6[var12++] = method15228(var16, var26, var24, 0.0F);
+					arg6[var12++] = zeroin(var16, var26, var24, 0.0F);
 					if (var12 > 1 && arg6[var12 - 2] >= arg6[var12 - 1] - var9) {
 						arg6[var12 - 2] = (arg6[var12 - 2] + arg6[var12 - 1]) * 0.5F;
 						var12--;
@@ -107,7 +107,7 @@ public class Polynomial {
 	}
 
 	@ObfuscatedName("ju.n([FIFS)F")
-	public static float method4656(float[] arg0, int arg1, float arg2) {
+	public static float horner1(float[] arg0, int arg1, float arg2) {
 		float var3 = arg0[arg1];
 		for (int var4 = arg1 - 1; var4 >= 0; var4--) {
 			var3 = arg2 * var3 + arg0[var4];
@@ -116,13 +116,13 @@ public class Polynomial {
 	}
 
 	@ObfuscatedName("adg.m(Leo;FFFI)F")
-	public static float method15228(Polynomial arg0, float arg1, float arg2, float arg3) {
-		float var4 = method4656(arg0.field1658, arg0.field1657, arg1);
-		if (Math.abs(var4) < CurveEvaluator.field1287) {
+	public static float zeroin(Polynomial arg0, float arg1, float arg2, float arg3) {
+		float var4 = horner1(arg0.p, arg0.deg, arg1);
+		if (Math.abs(var4) < CurveEvaluator.EPSILON) {
 			return arg1;
 		}
-		float var5 = method4656(arg0.field1658, arg0.field1657, arg2);
-		if (Math.abs(var5) < CurveEvaluator.field1287) {
+		float var5 = horner1(arg0.p, arg0.deg, arg2);
+		if (Math.abs(var5) < CurveEvaluator.EPSILON) {
 			return arg2;
 		}
 		float var6 = 0.0F;
@@ -192,7 +192,7 @@ public class Polynomial {
 				} else {
 					arg2 -= var13;
 				}
-				var5 = method4656(arg0.field1658, arg0.field1657, arg2);
+				var5 = horner1(arg0.p, arg0.deg, arg2);
 				if ((double) (var5 * (var9 / Math.abs(var9))) > 0.0D) {
 					var10 = true;
 					var12 = true;

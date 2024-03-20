@@ -718,7 +718,7 @@ public class GpuFloorModel extends FloorModel {
 			var23.upload(0, var21, this.field9516.temporaryBufferAddress);
 			this.field9516.method16120(0, this.field9508);
 			this.field9516.method16102(var23);
-			var22.method5018(Matrix4x4.field4317);
+			var22.method5018(Matrix4x4.IDENTITY);
 			if ((this.field9491 & 0x7) == 0) {
 				int var24 = 0;
 				for (int var25 = 0; var25 < this.field9496.length; var25++) {
@@ -743,7 +743,7 @@ public class GpuFloorModel extends FloorModel {
 						}
 						this.field9516.method16120(1, var26.field11405);
 						this.field9516.method16177(this.field9493);
-						var22.field2982.method6612(1.0F / var26.field11403, 1.0F / var26.field11403, 1.0F, 1.0F);
+						var22.field2982.scale(1.0F / var26.field11403, 1.0F / var26.field11403, 1.0F, 1.0F);
 						var22.field2981 = var26.field11400;
 						var22.field2983 = var26.field11407 - var26.field11400 + 1;
 						var22.field2972 = var24;
@@ -781,7 +781,7 @@ public class GpuFloorModel extends FloorModel {
 						}
 						this.field9516.method16120(1, var31.field11405);
 						this.field9516.method16177(this.field9493);
-						var22.field2982.method6612(1.0F / var31.field11403, 1.0F / var31.field11403, 1.0F, 1.0F);
+						var22.field2982.scale(1.0F / var31.field11403, 1.0F / var31.field11403, 1.0F, 1.0F);
 						var22.field2981 = var31.field11400;
 						var22.field2983 = var31.field11407 - var31.field11400 + 1;
 						var22.field2972 = var29;
@@ -806,8 +806,8 @@ public class GpuFloorModel extends FloorModel {
 									if (var33 == 2) {
 										var35 = this.field9516.field10152;
 									}
-									var35.field12143.method6604(this.field9516.field10081);
-									var35.field12127.method6612(1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F, 1.0F);
+									var35.field12143.setTo(this.field9516.field10081);
+									var35.field12127.scale(1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F, 1.0F);
 									var35.field12129.setTo(this.field9516.field10035.entries[12], this.field9516.field10035.entries[13], this.field9516.field10035.entries[14]);
 									Material var36 = this.field9516.materialList.get(var31.field11402);
 									var35.field12147 = var36.effectArg1;
@@ -836,7 +836,7 @@ public class GpuFloorModel extends FloorModel {
 								break;
 							case 7:
 								var22.field2969.setTo(this.field9516.field10035.entries[12], this.field9516.field10035.entries[13], this.field9516.field10035.entries[14]);
-								var22.field2980.method6603();
+								var22.field2980.setToIdentity();
 								var22.field2967 = this.field9516.method15994();
 								var22.method5026(0);
 						}
@@ -865,7 +865,7 @@ public class GpuFloorModel extends FloorModel {
 		this.field9516.method16120(1, this.field9509);
 		this.field9516.method16177(this.field9493);
 		Matrix4x4 var40 = this.field9516.field10066;
-		var40.method6603();
+		var40.setToIdentity();
 		var40.entries[13] = -1.0F;
 		var22.method5018(var40);
 		this.field9505.method5670(var22, arg0, arg1, arg2, arg3, arg4);
@@ -914,26 +914,26 @@ public class GpuFloorModel extends FloorModel {
 		this.field9516.method16120(1, this.field9509);
 		this.field9516.method16177(this.field9493);
 		this.field9516.method16102(var9);
-		this.field9516.method2217(Matrix4x3.field4282);
+		this.field9516.method2217(Matrix4x3.IDENTITY);
 		float var21 = (float) this.field9516.getRenderTarget().getWidth();
 		float var22 = (float) this.field9516.getRenderTarget().getHeight();
 		Matrix4x3 var23 = new Matrix4x3();
 		Matrix4x3 var24 = new Matrix4x3();
 		var23.method6298(1.0F, 0.0F, 0.0F, 0.0F, 0.0F, 1.0F, 0.0F, 1.0F, 0.0F);
-		var24.method6348((float) arg2 / ((float) this.field1233 * 256.0F), (float) -arg2 / ((float) this.field1233 * 256.0F), 1.0F / (this.field9512 - this.field9495));
-		var24.method6315((float) arg0 - (float) (arg2 * arg3) / 256.0F, (float) (arg2 * arg6) / 256.0F + (float) arg1, -this.field9495 / (this.field9512 - this.field9495));
-		var24.method6312(2.0F / var21, 2.0F / var22, 1.0F);
-		var24.method6315(-1.0F, -1.0F, 0.0F);
+		var24.setToScale((float) arg2 / ((float) this.field1233 * 256.0F), (float) -arg2 / ((float) this.field1233 * 256.0F), 1.0F / (this.field9512 - this.field9495));
+		var24.translate((float) arg0 - (float) (arg2 * arg3) / 256.0F, (float) (arg2 * arg6) / 256.0F + (float) arg1, -this.field9495 / (this.field9512 - this.field9495));
+		var24.scale(2.0F / var21, 2.0F / var22, 1.0F);
+		var24.translate(-1.0F, -1.0F, 0.0F);
 		this.field9516.field10065.method6317(var23, var24);
 		this.field9516.field10066.setToMatrix4x3(this.field9516.field10065);
 		this.field9516.method2220(this.field9516.field10066);
-		var20.method5018(Matrix4x4.field4317);
+		var20.method5018(Matrix4x4.IDENTITY);
 		var20.field2984.method6247(0.0F, 0.0F, 0.0F, 0.0F);
 		var20.field2975.setTo(0.0F, 0.0F, 0.0F);
 		var20.field2979.method6247(0.0F, 0.0F, 0.0F, 0.0F);
 		var20.field2973.setTo(0.0F, 0.0F, 0.0F);
 		var20.field2966 = this.field9516.field10140;
-		var20.field2982.method6603();
+		var20.field2982.setToIdentity();
 		var20.field2981 = var11;
 		var20.field2983 = var12 - var11 + 1;
 		var20.field2972 = 0;

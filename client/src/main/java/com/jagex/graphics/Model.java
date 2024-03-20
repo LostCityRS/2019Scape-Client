@@ -856,7 +856,7 @@ public abstract class Model {
 			if (arg1 == null) {
 				return;
 			}
-			Matrix4x4 var19 = Matrix4x4.method6641();
+			Matrix4x4 var19 = Matrix4x4.create();
 			var19.method6608(arg5, arg4, arg6);
 			if (arg1.field1239 != null) {
 				var19.multiply(arg1.field1239.method1565(arg2));
@@ -867,7 +867,7 @@ public abstract class Model {
 			var12 = (int) (var20[0] * 2607.5945F) & 0x3FFF;
 			var13 = (int) (-var20[1] * 2607.5945F) & 0x3FFF;
 			var14 = (int) (var20[2] * 2607.5945F) & 0x3FFF;
-			var19.method6605();
+			var19.release();
 		} else if (arg0 == 3 || arg0 == 10) {
 			var12 = (int) (arg4 * 128.0F);
 			var13 = (int) (arg5 * 128.0F);

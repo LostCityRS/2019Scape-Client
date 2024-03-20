@@ -80,19 +80,19 @@ public class CameraManager {
 			}
 		}
 		if (Client.mouse.method9121()) {
-			Quaternion var10 = Quaternion.method6469();
-			var10.method6414(1.0F, 0.0F, 0.0F, (float) (Client.mouse.method9092() - field7284) / 200.0F);
+			Quaternion var10 = Quaternion.create();
+			var10.setToRotation(1.0F, 0.0F, 0.0F, (float) (Client.mouse.method9092() - field7284) / 200.0F);
 			var3.multiply(var10);
 			Vector3 var11 = Vector3.create(0.0F, 1.0F, 0.0F);
 			var11.rotate(var3);
-			Quaternion var12 = Quaternion.method6469();
-			var12.method6413(var11, (float) (field605 - Client.mouse.method9086()) / 200.0F);
+			Quaternion var12 = Quaternion.create();
+			var12.setToRotation(var11, (float) (field605 - Client.mouse.method9086()) / 200.0F);
 			var3.multiply(var12);
 			var1.method18781(var3);
 		}
 		field605 = Client.mouse.method9086();
 		field7284 = Client.mouse.method9092();
-		var3.method6418();
+		var3.opposite();
 		if (Client.keyboard.method9080(98)) {
 			Vector3 var13 = Vector3.create(0.0F, 0.0F, 25.0F);
 			var13.rotate(var3);

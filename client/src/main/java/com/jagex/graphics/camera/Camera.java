@@ -433,7 +433,7 @@ public abstract class Camera {
 		this.field2846.method14136(arg0, arg1, arg3, arg4, this.field2863.method5222());
 		this.field2863.method5223(arg0, arg3, arg4);
 		if (CameraProjectionMode.field2831 == this.field2844) {
-			arg2.method6618(this.field2855, this.field2859, this.field2872, this.field2868);
+			arg2.setToPerspectiveProjection(this.field2855, this.field2859, this.field2872, this.field2868);
 		} else {
 			arg2.method6601(this.field2855, this.field2859, (float) this.field2851);
 		}
@@ -531,8 +531,8 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.av(I)Lov;")
 	public Quaternion method4721() {
-		Quaternion var1 = Quaternion.method6469();
-		var1.method6415(this.method4719(), this.method4718(), this.method4720());
+		Quaternion var1 = Quaternion.create();
+		var1.setToRotation(this.method4719(), this.method4718(), this.method4720());
 		return var1;
 	}
 

@@ -70,8 +70,8 @@ public class DynamicWallDecorEntity extends WallDecorLayerEntity implements Loca
 			return null;
 		}
 		Matrix4x3 var3 = arg0.method2209();
-		var3.method6292(this.method10533());
-		var3.method6315((float) this.field12452, 0.0F, (float) this.field12451);
+		var3.setTo(this.method10533());
+		var3.translate((float) this.field12452, 0.0F, (float) this.field12451);
 		ScaleRotTrans var4 = this.getTransform();
 		PickableEntity var5 = PickableEntity.method16749(this.field11175);
 		int var6 = (int) var4.trans.x >> 9;

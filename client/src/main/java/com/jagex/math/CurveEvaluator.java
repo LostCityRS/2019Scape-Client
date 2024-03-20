@@ -8,10 +8,10 @@ import deob.ObfuscatedName;
 public class CurveEvaluator {
 
 	@ObfuscatedName("da.k")
-	public static final float field1287 = Math.ulp(1.0F);
+	public static final float EPSILON = Math.ulp(1.0F);
 
 	@ObfuscatedName("da.f")
-	public static final float field1288 = field1287 * 2.0F;
+	public static final float field1288 = EPSILON * 2.0F;
 
 	public CurveEvaluator() throws Throwable {
 		throw new Error();
@@ -89,7 +89,7 @@ public class CurveEvaluator {
 		} else {
 			float[] var4 = new float[] { arg0.field1449[0] - var2, arg0.field1449[1], arg0.field1449[2], arg0.field1449[3] };
 			float[] var5 = new float[5];
-			int var6 = Polynomial.method9407(var4, 3, 0.0F, true, 1.0F, true, var5);
+			int var6 = Polynomial.polyZeroes(var4, 3, 0.0F, true, 1.0F, true, var5);
 			if (var6 == 1) {
 				var3 = var5[0];
 			} else {
@@ -255,21 +255,21 @@ public class CurveEvaluator {
 
 	@ObfuscatedName("eo.l(Ljava/lang/Float;Ljava/lang/Float;I)V")
 	public static void method2672(Float arg0, Float arg1) {
-		if (arg0 + field1287 >= 1.3333334F) {
-			Float var9 = 1.3333334F - field1287;
-			Float var10 = 0.33333334F - field1287;
+		if (arg0 + EPSILON >= 1.3333334F) {
+			Float var9 = 1.3333334F - EPSILON;
+			Float var10 = 0.33333334F - EPSILON;
 			return;
 		}
 		float var2 = arg0 - 2.0F;
 		float var3 = arg0 - 1.0F;
 		float var4 = (float) Math.sqrt((double) (var2 * var2 - var3 * 4.0F * var3));
 		float var5 = (-var2 + var4) * 0.5F;
-		if (arg1 + field1287 > var5) {
-			Float var6 = var5 - field1287;
+		if (arg1 + EPSILON > var5) {
+			Float var6 = var5 - EPSILON;
 		} else {
 			float var7 = (-var2 - var4) * 0.5F;
-			if (arg1 < field1287 + var7) {
-				Float var8 = field1287 + var7;
+			if (arg1 < EPSILON + var7) {
+				Float var8 = EPSILON + var7;
 			}
 		}
 	}
@@ -285,7 +285,7 @@ public class CurveEvaluator {
 		}
 		if (arg0 > 1.0F || var2 > 1.0F) {
 			float var3 = (float) ((double) (arg0 * (arg0 - 2.0F + var2)) + (double) var2 * ((double) var2 - 2.0D) + 1.0D);
-			if (field1287 + var3 > 0.0F) {
+			if (EPSILON + var3 > 0.0F) {
 				method2672(arg0, var2);
 			}
 		}

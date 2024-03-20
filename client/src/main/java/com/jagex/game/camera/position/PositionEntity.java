@@ -53,7 +53,7 @@ public class PositionEntity extends Position {
 	public void method16683(CameraTrackable arg0, Vector3 arg1, Quaternion arg2, boolean arg3, int arg4, int[][][] arg5, SceneLevelTileFlags arg6, int arg7, int arg8) {
 		this.field10552 = arg0;
 		this.field10553.setTo(arg1);
-		this.field10554.method6412(arg2);
+		this.field10554.setTo(arg2);
 		this.field10556 = arg3;
 		this.field10561 = arg4;
 		this.field10557 = this.field10552.method4667().level;
@@ -75,8 +75,8 @@ public class PositionEntity extends Position {
 		this.method16686(arg1, arg2, arg3, arg4);
 		Quaternion var6 = this.method16685();
 		this.field10555.method6428(var6, this.field3084.method4724());
-		if (Float.isNaN(this.field10555.field4301)) {
-			this.field10555.method6412(var6);
+		if (Float.isNaN(this.field10555.w)) {
+			this.field10555.setTo(var6);
 		}
 		var6.release();
 		this.field10559.setTo(this.field10552.method4667().method17853());
@@ -85,7 +85,7 @@ public class PositionEntity extends Position {
 
 	@ObfuscatedName("ahd.ag(B)Lov;")
 	public Quaternion method16685() {
-		Quaternion var1 = Quaternion.method6443(this.field10554);
+		Quaternion var1 = Quaternion.create(this.field10554);
 		if (this.field10556) {
 			Vector3 var2 = this.field10552.method4666();
 			if (var2.length() < (float) this.field10561) {
@@ -97,7 +97,7 @@ public class PositionEntity extends Position {
 			float var4 = (float) Math.atan2((double) var2.x, (double) var2.z);
 			var2.release();
 			Quaternion var5 = new Quaternion();
-			var5.method6414(0.0F, 1.0F, 0.0F, var4);
+			var5.setToRotation(0.0F, 1.0F, 0.0F, var4);
 			var1.multiply(var5);
 		}
 		return var1;
@@ -142,10 +142,10 @@ public class PositionEntity extends Position {
 			}
 			Vector3 var16 = Vector3.create(1.0F, 0.0F, 0.0F);
 			var16.rotate(this.field10554);
-			Quaternion var17 = Quaternion.method6469();
-			var17.method6413(var16, var15);
+			Quaternion var17 = Quaternion.create();
+			var17.setToRotation(var16, var15);
 			this.field10554.multiply(var17);
-			this.field10554.method6447();
+			this.field10554.inverse();
 			var16.release();
 			var17.release();
 			var8 = this.method16687(arg0, arg1, arg2, arg3, var6, var7);
@@ -268,7 +268,7 @@ public class PositionEntity extends Position {
 		CameraTrackableType var2 = CameraTrackableType.method15213(arg0.g1());
 		int var3 = arg0.g2();
 		this.field10553.decode(arg0);
-		this.field10554.method6410(arg0);
+		this.field10554.decode(arg0);
 		if (arg0.g1() == 1) {
 			this.field10556 = true;
 		} else {

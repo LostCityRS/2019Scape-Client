@@ -140,8 +140,8 @@ public class GpuParticleRenderer {
 		}
 		arg0.method16102(this.field3327);
 		ParticleShader var16 = arg0.field10151;
-		var16.method5038(Matrix4x4.field4317);
-		var16.field2987.method6603();
+		var16.method5038(Matrix4x4.IDENTITY);
+		var16.field2987.setToIdentity();
 		var16.field2988 = -1;
 		boolean var17 = arg0.field10169 > 0;
 		if (var17) {

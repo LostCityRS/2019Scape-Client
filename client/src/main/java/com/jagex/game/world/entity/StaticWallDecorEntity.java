@@ -145,8 +145,8 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 			return null;
 		}
 		Matrix4x3 var2 = arg0.method2209();
-		var2.method6292(this.method10533());
-		var2.method6315((float) this.field12452, 0.0F, (float) this.field12451);
+		var2.setTo(this.method10533());
+		var2.translate((float) this.field12452, 0.0F, (float) this.field12451);
 		PickableEntity var3 = PickableEntity.method16749(this.field11157);
 		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).field7468;
 		if (var4 == null) {

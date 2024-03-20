@@ -24,7 +24,7 @@ public class Trig1 {
 	}
 
 	@ObfuscatedName("ok.e(I)F")
-	public static float method6277(int arg0) {
+	public static float radians(int arg0) {
 		int var1 = arg0 & 0x3FFF;
 		return (float) ((double) ((float) var1 / 16384.0F) * 6.283185307179586D);
 	}

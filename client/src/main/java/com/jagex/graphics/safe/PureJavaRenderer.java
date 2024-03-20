@@ -2420,7 +2420,7 @@ public class PureJavaRenderer extends Renderer {
 
 	@ObfuscatedName("afg.dm(Lpq;)V")
 	public void method2220(Matrix4x4 arg0) {
-		this.field9795.method6604(arg0);
+		this.field9795.setTo(arg0);
 		this.method15683();
 	}
 
@@ -2477,7 +2477,7 @@ public class PureJavaRenderer extends Renderer {
 	@ObfuscatedName("afg.sm()V")
 	public void method15683() {
 		this.field9793.setToMatrix4x3(this.field9792);
-		this.field9803.method6604(this.field9793);
+		this.field9803.setTo(this.field9793);
 		this.field9803.multiply(this.field9795);
 		this.field9803.method6607(this.field9796[0]);
 		this.field9803.method6643(this.field9796[1]);

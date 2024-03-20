@@ -851,10 +851,10 @@ public class ObjType implements ConfigType {
 		arg0.setSunAmbientIntensity((float) (Math.random() / 10.0D) + 0.95F);
 		arg0.setSun(16777215, (float) (Math.random() / 10.0D) + 0.95F, (float) (Math.random() / 10.0D) + 0.95F, -50.0F, -10.0F, -50.0F);
 		Matrix4x3 var26 = arg0.method2209();
-		var26.method6372(0.0F, 0.0F, 1.0F, Trig1.method6277(-this.zan2d << 3));
-		var26.method6307(0.0F, 1.0F, 0.0F, Trig1.method6277(this.yan2d << 3));
-		var26.method6315((float) (this.xof2d << 2), (float) ((Trig1.field4270[this.xan2d << 3] * var22 >> 14) - var20.method1748() / 2 + (this.yof2d << 2)), (float) ((this.yof2d << 2) + (Trig1.field4272[this.xan2d << 3] * var22 >> 14)));
-		var26.method6307(1.0F, 0.0F, 0.0F, Trig1.method6277(this.xan2d << 3));
+		var26.setToRotation(0.0F, 0.0F, 1.0F, Trig1.radians(-this.zan2d << 3));
+		var26.rotateAroundAxis(0.0F, 1.0F, 0.0F, Trig1.radians(this.yan2d << 3));
+		var26.translate((float) (this.xof2d << 2), (float) ((Trig1.field4270[this.xan2d << 3] * var22 >> 14) - var20.method1748() / 2 + (this.yof2d << 2)), (float) ((this.yof2d << 2) + (Trig1.field4272[this.xan2d << 3] * var22 >> 14)));
+		var26.rotateAroundAxis(1.0F, 0.0F, 0.0F, Trig1.radians(this.xan2d << 3));
 		arg0.method2168(0, 0, 36, 32);
 		arg0.method2475(2, 0);
 		arg0.fillRectangle(0, 0, 36, 32, 0, 0);

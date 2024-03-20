@@ -59,9 +59,9 @@ public class GraphNode {
 	public final ScaleRotTrans getTransform() {
 		if (this.field8171) {
 			this.field8171 = false;
-			this.field8170.method6386(this.field8173);
+			this.field8170.setTo(this.field8173);
 			if (this.field8169 != null) {
-				this.field8170.method6398(this.field8169.getTransform());
+				this.field8170.multiply(this.field8169.getTransform());
 			}
 		}
 		return this.field8170;
@@ -71,8 +71,8 @@ public class GraphNode {
 	public final ScaleRotTrans method10527() {
 		if (this.field8177) {
 			this.field8177 = false;
-			this.field8172.method6386(this.getTransform());
-			this.field8172.method6387();
+			this.field8172.setTo(this.getTransform());
+			this.field8172.invert();
 		}
 		return this.field8170;
 	}
@@ -81,14 +81,14 @@ public class GraphNode {
 	public final Matrix4x3 method10533() {
 		if (this.field8175) {
 			this.field8175 = false;
-			this.field8179.method6294(this.getTransform());
+			this.field8179.setToTransform(this.getTransform());
 		}
 		return this.field8179;
 	}
 
 	@ObfuscatedName("yq.ac(Loe;)V")
 	public final void method10529(ScaleRotTrans arg0) {
-		this.field8173.method6386(arg0);
+		this.field8173.setTo(arg0);
 		this.method10535();
 		if (this.field8178 != null) {
 			this.field8178.method10549();
@@ -97,7 +97,7 @@ public class GraphNode {
 
 	@ObfuscatedName("yq.ai(Lov;)V")
 	public final void method10556(Quaternion arg0) {
-		this.field8173.field4297.method6412(arg0);
+		this.field8173.rot.setTo(arg0);
 		this.method10535();
 		if (this.field8178 != null) {
 			this.field8178.method10549();
@@ -133,7 +133,7 @@ public class GraphNode {
 			this.method10529(arg0);
 		} else {
 			ScaleRotTrans var2 = new ScaleRotTrans(arg0);
-			var2.method6398(this.field8169.method10527());
+			var2.multiply(this.field8169.method10527());
 			this.method10529(var2);
 		}
 	}
@@ -175,7 +175,7 @@ public class GraphNode {
 			this.field8178.method10549();
 			GraphNode var2 = this.field8178;
 			while (true) {
-				var2.field8173.method6398(this.field8173);
+				var2.field8173.multiply(this.field8173);
 				var2.field8169 = this.field8169;
 				if (var2.field8174 == null) {
 					var2.field8174 = this.field8169.field8178;

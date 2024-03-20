@@ -98,7 +98,7 @@ public class GpuRendererRelated6 {
 		Unsafe var2 = this.field3389.field10110;
 		ByteBuffer var3 = this.field3389.temporaryBuffer;
 		var3.clear();
-		this.field3389.method16046().method6604(Matrix4x4.field4317);
+		this.field3389.method16046().setTo(Matrix4x4.IDENTITY);
 		this.field3389.method16174(GpuRendererRelated4.field3370);
 		int var4 = (this.field3385 + this.field3384 - 1) / this.field3384;
 		int var5 = 0;

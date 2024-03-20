@@ -439,7 +439,7 @@ public class PlayerModel {
 					int var75 = arg11[var74] - arg12;
 					int var76 = var75 & 0x3FFF;
 					Matrix4x3 var77 = new Matrix4x3();
-					var77.method6372(0.0F, 1.0F, 0.0F, Trig1.method6277(var76));
+					var77.setToRotation(0.0F, 1.0F, 0.0F, Trig1.radians(var76));
 					var69.method1771(var77, 0x1 << var74, false);
 				}
 			}

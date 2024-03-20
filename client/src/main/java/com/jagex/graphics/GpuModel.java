@@ -3037,7 +3037,7 @@ public class GpuModel extends Model {
 			if (var7.field1231 == null) {
 				var7.field1231 = new Matrix4x4(var2);
 			} else {
-				var7.field1231.method6604(var2);
+				var7.field1231.setTo(var2);
 			}
 			var8.field1226 = (int) (var2.entries[8] * (float) this.field9712[var7.field1225] + var2.entries[0] * (float) this.field9705[var7.field1225] + var2.entries[4] * (float) this.field9767[var7.field1225] + var2.entries[12]);
 			var8.field1229 = (int) (var2.entries[9] * (float) this.field9712[var7.field1225] + var2.entries[1] * (float) this.field9705[var7.field1225] + var2.entries[5] * (float) this.field9767[var7.field1225] + var2.entries[13]);
@@ -3273,7 +3273,7 @@ public class GpuModel extends Model {
 		Matrix4x4 var5 = this.field9730.field10066;
 		Matrix4x4 var6 = this.field9730.field10039;
 		var5.setToMatrix4x3(arg0);
-		var6.method6604(var5);
+		var6.setTo(var5);
 		var6.multiply(this.field9730.field10145);
 		if (!this.field9718) {
 			this.method15613();
@@ -3378,7 +3378,7 @@ public class GpuModel extends Model {
 		this.field9730.method16102(this.field9756.field3239);
 		this.field9730.field10066.setToMatrix4x3(arg0);
 		var2.method5018(this.field9730.field10066);
-		var2.field2982.method6603();
+		var2.field2982.setToIdentity();
 		if (this.field9730.field10133) {
 			WaterFogData var3 = this.field9730.method16053();
 			var2.field2979.method6247(0.0F, 1.0F, 0.0F, (float) -this.field9730.field10164);
@@ -3440,7 +3440,7 @@ public class GpuModel extends Model {
 			this.field9730.method16120(3, this.field9733.field3359);
 			this.field9730.method16177(this.field9730.field10202);
 			Matrix4x3 var12 = this.field9730.field10065;
-			var12.method6292(arg0);
+			var12.setTo(arg0);
 			var12.method6300();
 			int var13 = 0;
 			if (this.field9730.field10099) {
@@ -3571,7 +3571,7 @@ public class GpuModel extends Model {
 				var2.method6316(this.field9730.field10042);
 				this.field9730.field10039.setToMatrix4x3(var2);
 				var3.method5038(this.field9730.field10039);
-				var3.field2987.method6603();
+				var3.field2987.setToIdentity();
 				var3.field2988 = var7.field3297;
 				if (var4) {
 					var3.field2985 = 1.0F - (this.field9730.field10119 - var13) / (this.field9730.field10119 - this.field9730.field10171);

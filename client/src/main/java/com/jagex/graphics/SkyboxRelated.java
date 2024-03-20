@@ -158,7 +158,7 @@ public class SkyboxRelated {
 		float var14 = (float) (this.field5115 - arg8 << 15);
 		float var15 = (float) -(this.field5116 - arg9 << 16);
 		float[] var16 = new float[3];
-		arg0.method2218().method6318(var16);
+		arg0.method2218().getTranslation(var16);
 		float var17 = var16[0] + var13;
 		float var18 = var16[1] + var14;
 		float var19 = var16[2] + var15;

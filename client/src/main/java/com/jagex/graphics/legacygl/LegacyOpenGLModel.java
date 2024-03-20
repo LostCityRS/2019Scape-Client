@@ -2974,7 +2974,7 @@ public class LegacyOpenGLModel extends Model {
 			if (var7.field1231 == null) {
 				var7.field1231 = new Matrix4x4(var2);
 			} else {
-				var7.field1231.method6604(var2);
+				var7.field1231.setTo(var2);
 			}
 			var8.field1226 = (int) (var2.entries[8] * (float) this.field9619[var7.field1225] + var2.entries[0] * (float) this.field9636[var7.field1225] + var2.entries[4] * (float) this.field9637[var7.field1225] + var2.entries[12]);
 			var8.field1229 = (int) (var2.entries[9] * (float) this.field9619[var7.field1225] + var2.entries[1] * (float) this.field9636[var7.field1225] + var2.entries[5] * (float) this.field9637[var7.field1225] + var2.entries[13]);
@@ -3204,7 +3204,7 @@ public class LegacyOpenGLModel extends Model {
 		Matrix4x4 var5 = this.field9626.field9919;
 		Matrix4x4 var6 = this.field9626.field9920;
 		var5.setToMatrix4x3(arg0);
-		var6.method6604(var5);
+		var6.setTo(var5);
 		var6.multiply(this.field9626.field10005);
 		if (!this.field9669) {
 			this.method15552();

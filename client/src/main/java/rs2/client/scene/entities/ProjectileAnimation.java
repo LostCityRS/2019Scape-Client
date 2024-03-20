@@ -234,10 +234,10 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 			var2.trans.y = (float) ((double) var2.trans.y + this.field12601 * 0.5D * (double) arg0 * (double) arg0 + (double) arg0 * this.field12600);
 			this.field12600 += (double) arg0 * this.field12601;
 		}
-		var2.field4297.method6414(1.0F, 0.0F, 0.0F, (float) Math.atan2(this.field12600, this.field12598));
-		Quaternion var3 = Quaternion.method6469();
-		var3.method6414(0.0F, 1.0F, 0.0F, (float) Math.atan2(this.field12597, this.field12592) - 3.1415927F);
-		var2.field4297.multiply(var3);
+		var2.rot.setToRotation(1.0F, 0.0F, 0.0F, (float) Math.atan2(this.field12600, this.field12598));
+		Quaternion var3 = Quaternion.create();
+		var3.setToRotation(0.0F, 1.0F, 0.0F, (float) Math.atan2(this.field12597, this.field12592) - 3.1415927F);
+		var2.rot.multiply(var3);
 		var3.release();
 		this.method10534(var2);
 		if (this.field12602.method14367(1) && this.field12602.method14375()) {

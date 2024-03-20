@@ -10,7 +10,7 @@ public class RayTracing {
 	}
 
 	@ObfuscatedName("pt.e(Lox;Lox;Lox;F[Lox;)V")
-	public static void method6592(Vector3 arg0, Vector3 arg1, Vector3 arg2, float arg3, Vector3[] arg4) {
+	public static void computeSphereIntersections(Vector3 arg0, Vector3 arg1, Vector3 arg2, float arg3, Vector3[] arg4) {
 		Vector3 var5 = Vector3.sub(arg0, arg2);
 		float var6 = Vector3.dot(var5, var5) - arg3 * arg3;
 		float var7 = Vector3.dot(arg1, var5);

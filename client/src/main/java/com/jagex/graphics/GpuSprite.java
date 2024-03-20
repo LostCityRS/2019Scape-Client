@@ -223,11 +223,11 @@ public class GpuSprite extends Sprite {
 		int var10 = this.field9410 + arg1;
 		float var11 = (float) this.field9403.getRenderTarget().getWidth();
 		float var12 = (float) this.field9403.getRenderTarget().getHeight();
-		var8.field2995.method6612((float) this.field9407 * 2.0F / var11, (float) this.field9404 * 2.0F / var12, 1.0F, 1.0F);
+		var8.field2995.scale((float) this.field9407 * 2.0F / var11, (float) this.field9404 * 2.0F / var12, 1.0F, 1.0F);
 		var8.field2995.entries[12] = ((float) var9 + this.field9403.method15954()) * 2.0F / var11 - 1.0F;
 		var8.field2995.entries[13] = ((float) var10 + this.field9403.method15954()) * 2.0F / var12 - 1.0F;
 		var8.field2995.entries[14] = -1.0F;
-		var8.field2998.method6612(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
+		var8.field2998.scale(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
 		var8.field3000 = this.field9403.field10197;
 		var8.field3001 = 0;
 		var8.field2994 = this.field9403.field10055;
@@ -244,17 +244,17 @@ public class GpuSprite extends Sprite {
 		int var8 = this.field9410 + arg1;
 		float var9 = (float) this.field9403.getRenderTarget().getWidth();
 		float var10 = (float) this.field9403.getRenderTarget().getHeight();
-		var6.field2995.method6612((float) this.field9407 * 2.0F / var9, (float) this.field9404 * 2.0F / var10, 1.0F, 1.0F);
+		var6.field2995.scale((float) this.field9407 * 2.0F / var9, (float) this.field9404 * 2.0F / var10, 1.0F, 1.0F);
 		var6.field2995.entries[12] = ((float) var7 + this.field9403.method15954()) * 2.0F / var9 - 1.0F;
 		var6.field2995.entries[13] = ((float) var8 + this.field9403.method15954()) * 2.0F / var10 - 1.0F;
 		var6.field2995.entries[14] = -1.0F;
-		var6.field2998.method6612(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
+		var6.field2998.scale(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
 		var6.field3000 = this.field9403.field10197;
 		var6.field3001 = 0;
 		var6.field2994 = this.field9403.field10055;
 		GpuTexture var11 = ((GpuRelated2) arg2).field9417;
 		var6.field2996 = var11;
-		var6.field2999.method6612(var11.getU((float) this.field9407), var11.getV((float) this.field9404), 1.0F, 1.0F);
+		var6.field2999.scale(var11.getU((float) this.field9407), var11.getV((float) this.field9404), 1.0F, 1.0F);
 		var6.field2999.entries[12] = var11.getU((float) (var7 - arg3));
 		var6.field2999.entries[13] = var11.getV((float) (var8 - arg4));
 		var6.method5054();
@@ -285,11 +285,11 @@ public class GpuSprite extends Sprite {
 		}
 		float var10 = (float) this.field9403.getRenderTarget().getWidth();
 		float var11 = (float) this.field9403.getRenderTarget().getHeight();
-		var9.field2995.method6612((float) arg2 * 2.0F / var10, (float) arg3 * 2.0F / var11, 1.0F, 1.0F);
+		var9.field2995.scale((float) arg2 * 2.0F / var10, (float) arg3 * 2.0F / var11, 1.0F, 1.0F);
 		var9.field2995.entries[12] = ((float) arg0 + this.field9403.method15954()) * 2.0F / var10 - 1.0F;
 		var9.field2995.entries[13] = ((float) arg1 + this.field9403.method15954()) * 2.0F / var11 - 1.0F;
 		var9.field2995.entries[14] = -1.0F;
-		var9.field2998.method6612(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
+		var9.field2998.scale(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
 		var9.field3000 = this.field9403.field10197;
 		var9.field3001 = 0;
 		var9.field2994 = this.field9403.field10055;
@@ -344,19 +344,19 @@ public class GpuSprite extends Sprite {
 		boolean var25 = this.field9413 && this.field9410 == 0 && this.field9412 == 0;
 		boolean var26 = this.field9411 && this.field9408 == 0 && this.field9409 == 0;
 		if (var26 & var25) {
-			var22.field2995.method6612((float) arg2 * 2.0F / var23, (float) arg3 * 2.0F / var24, 1.0F, 1.0F);
+			var22.field2995.scale((float) arg2 * 2.0F / var23, (float) arg3 * 2.0F / var24, 1.0F, 1.0F);
 			var22.field2995.entries[12] = ((float) arg0 + this.field9403.method15954()) * 2.0F / var23 - 1.0F;
 			var22.field2995.entries[13] = ((float) arg1 + this.field9403.method15954()) * 2.0F / var24 - 1.0F;
 			var22.field2995.entries[14] = -1.0F;
-			var22.field2998.method6612(this.field9401.getU((float) arg2), this.field9401.getV((float) arg3), 1.0F, 1.0F);
+			var22.field2998.scale(this.field9401.getU((float) arg2), this.field9401.getV((float) arg3), 1.0F, 1.0F);
 			var22.method5051();
 		} else if (var26) {
 			int var27 = arg1 + arg3;
 			int var28 = this.method1436();
-			var22.field2998.method6612(this.field9401.getU((float) arg2), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
+			var22.field2998.scale(this.field9401.getU((float) arg2), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
 			int var29 = this.field9410 + arg1;
 			for (int var30 = this.field9404 + var29; var30 <= var27; var30 += var28) {
-				var22.field2995.method6612((float) arg2 * 2.0F / var23, (float) this.field9404 * 2.0F / var24, 1.0F, 1.0F);
+				var22.field2995.scale((float) arg2 * 2.0F / var23, (float) this.field9404 * 2.0F / var24, 1.0F, 1.0F);
 				var22.field2995.entries[12] = ((float) arg0 + this.field9403.method15954()) * 2.0F / var23 - 1.0F;
 				var22.field2995.entries[13] = ((float) var29 + this.field9403.method15954()) * 2.0F / var24 - 1.0F;
 				var22.field2995.entries[14] = -1.0F;
@@ -365,8 +365,8 @@ public class GpuSprite extends Sprite {
 			}
 			if (var29 < var27) {
 				int var31 = var27 - var29;
-				var22.field2998.method6612(this.field9401.getU((float) arg2), this.field9401.getV((float) var31), 1.0F, 1.0F);
-				var22.field2995.method6612((float) arg2 * 2.0F / var23, (float) var31 * 2.0F / var24, 1.0F, 1.0F);
+				var22.field2998.scale(this.field9401.getU((float) arg2), this.field9401.getV((float) var31), 1.0F, 1.0F);
+				var22.field2995.scale((float) arg2 * 2.0F / var23, (float) var31 * 2.0F / var24, 1.0F, 1.0F);
 				var22.field2995.entries[12] = ((float) arg0 + this.field9403.method15954()) * 2.0F / var23 - 1.0F;
 				var22.field2995.entries[13] = ((float) var29 + this.field9403.method15954()) * 2.0F / var24 - 1.0F;
 				var22.field2995.entries[14] = -1.0F;
@@ -375,10 +375,10 @@ public class GpuSprite extends Sprite {
 		} else if (var25) {
 			int var32 = arg0 + arg2;
 			int var33 = this.method1434();
-			var22.field2998.method6612(this.field9401.getU((float) this.field9407), this.field9401.getV((float) arg3), 1.0F, 1.0F);
+			var22.field2998.scale(this.field9401.getU((float) this.field9407), this.field9401.getV((float) arg3), 1.0F, 1.0F);
 			int var34 = this.field9408 + arg0;
 			for (int var35 = this.field9407 + var34; var35 <= var32; var35 += var33) {
-				var22.field2995.method6612((float) this.field9407 * 2.0F / var23, (float) arg3 * 2.0F / var24, 1.0F, 1.0F);
+				var22.field2995.scale((float) this.field9407 * 2.0F / var23, (float) arg3 * 2.0F / var24, 1.0F, 1.0F);
 				var22.field2995.entries[12] = ((float) var34 + this.field9403.method15954()) * 2.0F / var23 - 1.0F;
 				var22.field2995.entries[13] = ((float) arg1 + this.field9403.method15954()) * 2.0F / var24 - 1.0F;
 				var22.field2995.entries[14] = -1.0F;
@@ -387,8 +387,8 @@ public class GpuSprite extends Sprite {
 			}
 			if (var34 < var32) {
 				int var36 = var32 - var34;
-				var22.field2998.method6612(this.field9401.getU((float) var36), this.field9401.getV((float) arg3), 1.0F, 1.0F);
-				var22.field2995.method6612((float) var36 * 2.0F / var23, (float) arg3 * 2.0F / var24, 1.0F, 1.0F);
+				var22.field2998.scale(this.field9401.getU((float) var36), this.field9401.getV((float) arg3), 1.0F, 1.0F);
+				var22.field2995.scale((float) var36 * 2.0F / var23, (float) arg3 * 2.0F / var24, 1.0F, 1.0F);
 				var22.field2995.entries[12] = ((float) var34 + this.field9403.method15954()) * 2.0F / var23 - 1.0F;
 				var22.field2995.entries[13] = ((float) arg1 + this.field9403.method15954()) * 2.0F / var24 - 1.0F;
 				var22.field2995.entries[14] = -1.0F;
@@ -401,10 +401,10 @@ public class GpuSprite extends Sprite {
 			int var40 = this.method1436();
 			int var41 = this.field9410 + arg1;
 			for (int var42 = this.field9404 + var41; var42 <= var37; var42 += var40) {
-				var22.field2998.method6612(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
+				var22.field2998.scale(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
 				int var43 = this.field9408 + arg0;
 				for (int var44 = this.field9407 + var43; var44 <= var38; var44 += var39) {
-					var22.field2995.method6612((float) this.field9407 * 2.0F / var23, (float) this.field9404 * 2.0F / var24, 1.0F, 1.0F);
+					var22.field2995.scale((float) this.field9407 * 2.0F / var23, (float) this.field9404 * 2.0F / var24, 1.0F, 1.0F);
 					var22.field2995.entries[12] = ((float) var43 + this.field9403.method15954()) * 2.0F / var23 - 1.0F;
 					var22.field2995.entries[13] = ((float) var41 + this.field9403.method15954()) * 2.0F / var24 - 1.0F;
 					var22.field2995.entries[14] = -1.0F;
@@ -413,8 +413,8 @@ public class GpuSprite extends Sprite {
 				}
 				if (var43 < var38) {
 					int var45 = var38 - var43;
-					var22.field2998.method6612(this.field9401.getU((float) var45), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
-					var22.field2995.method6612((float) var45 * 2.0F / var23, (float) this.field9404 * 2.0F / var24, 1.0F, 1.0F);
+					var22.field2998.scale(this.field9401.getU((float) var45), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
+					var22.field2995.scale((float) var45 * 2.0F / var23, (float) this.field9404 * 2.0F / var24, 1.0F, 1.0F);
 					var22.field2995.entries[12] = ((float) var43 + this.field9403.method15954()) * 2.0F / var23 - 1.0F;
 					var22.field2995.entries[13] = ((float) var41 + this.field9403.method15954()) * 2.0F / var24 - 1.0F;
 					var22.field2995.entries[14] = -1.0F;
@@ -424,10 +424,10 @@ public class GpuSprite extends Sprite {
 			}
 			if (var41 < var37) {
 				int var46 = var37 - var41;
-				var22.field2998.method6612(this.field9401.getU((float) this.field9407), this.field9401.getV((float) var46), 1.0F, 1.0F);
+				var22.field2998.scale(this.field9401.getU((float) this.field9407), this.field9401.getV((float) var46), 1.0F, 1.0F);
 				int var47 = this.field9408 + arg0;
 				for (int var48 = this.field9407 + var47; var48 <= var38; var48 += var39) {
-					var22.field2995.method6612((float) this.field9407 * 2.0F / var23, (float) var46 * 2.0F / var24, 1.0F, 1.0F);
+					var22.field2995.scale((float) this.field9407 * 2.0F / var23, (float) var46 * 2.0F / var24, 1.0F, 1.0F);
 					var22.field2995.entries[12] = ((float) var47 + this.field9403.method15954()) * 2.0F / var23 - 1.0F;
 					var22.field2995.entries[13] = ((float) var41 + this.field9403.method15954()) * 2.0F / var24 - 1.0F;
 					var22.field2995.entries[14] = -1.0F;
@@ -436,8 +436,8 @@ public class GpuSprite extends Sprite {
 				}
 				if (var47 < var38) {
 					int var49 = var38 - var47;
-					var22.field2998.method6612(this.field9401.getU((float) var49), this.field9401.getV((float) var46), 1.0F, 1.0F);
-					var22.field2995.method6612((float) var49 * 2.0F / var23, (float) var46 * 2.0F / var24, 1.0F, 1.0F);
+					var22.field2998.scale(this.field9401.getU((float) var49), this.field9401.getV((float) var46), 1.0F, 1.0F);
+					var22.field2995.scale((float) var49 * 2.0F / var23, (float) var46 * 2.0F / var24, 1.0F, 1.0F);
 					var22.field2995.entries[12] = ((float) var47 + this.field9403.method15954()) * 2.0F / var23 - 1.0F;
 					var22.field2995.entries[13] = ((float) var41 + this.field9403.method15954()) * 2.0F / var24 - 1.0F;
 					var22.field2995.entries[14] = -1.0F;
@@ -482,7 +482,7 @@ public class GpuSprite extends Sprite {
 		var25.method5050(arg6, arg7);
 		float var26 = (float) this.field9403.getRenderTarget().getWidth();
 		float var27 = (float) this.field9403.getRenderTarget().getHeight();
-		var25.field2995.method6603();
+		var25.field2995.setToIdentity();
 		var25.field2995.entries[0] = (arg2 - arg0) * 2.0F / var26;
 		var25.field2995.entries[1] = (arg3 - arg1) * 2.0F / var27;
 		var25.field2995.entries[4] = (arg4 - arg0) * 2.0F / var26;
@@ -490,7 +490,7 @@ public class GpuSprite extends Sprite {
 		var25.field2995.entries[12] = (arg0 + this.field9403.method15954()) * 2.0F / var26 - 1.0F;
 		var25.field2995.entries[13] = (arg1 + this.field9403.method15954()) * 2.0F / var27 - 1.0F;
 		var25.field2995.entries[14] = -1.0F;
-		var25.field2998.method6612(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
+		var25.field2998.scale(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
 		var25.field3000 = this.field9403.field10197;
 		var25.field3001 = 0;
 		var25.field2994 = this.field9403.field10055;
@@ -505,7 +505,7 @@ public class GpuSprite extends Sprite {
 		var11.method5050(1, -1);
 		float var12 = (float) this.field9403.getRenderTarget().getWidth();
 		float var13 = (float) this.field9403.getRenderTarget().getHeight();
-		var11.field2995.method6603();
+		var11.field2995.setToIdentity();
 		if (this.field9405) {
 			float var14 = (float) this.field9407 / (float) this.method1434();
 			float var15 = (float) this.field9404 / (float) this.method1436();
@@ -524,20 +524,20 @@ public class GpuSprite extends Sprite {
 			var11.field2995.entries[13] = arg1 + this.field9403.method15954();
 		}
 		Matrix4x4 var16 = this.field9403.field10066;
-		var16.method6603();
+		var16.setToIdentity();
 		var16.entries[0] = 2.0F / var12;
 		var16.entries[5] = 2.0F / var13;
 		var16.entries[12] = -1.0F;
 		var16.entries[13] = -1.0F;
 		var16.entries[14] = -1.0F;
 		var11.field2995.multiply(var16);
-		var11.field2998.method6612(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
+		var11.field2998.scale(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
 		var11.field3000 = this.field9403.field10197;
 		var11.field3001 = 0;
 		var11.field2994 = this.field9403.field10055;
 		GpuTexture var17 = ((GpuRelated2) arg7).field9417;
 		var11.field2996 = var17;
-		var11.field2999.method6603();
+		var11.field2999.setToIdentity();
 		var11.field2999.entries[0] = (arg2 - arg0) * var17.getU(1.0F);
 		var11.field2999.entries[1] = (arg3 - arg1) * var17.getU(1.0F);
 		var11.field2999.entries[4] = (arg4 - arg0) * var17.getV(1.0F);

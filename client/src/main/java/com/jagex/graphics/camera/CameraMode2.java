@@ -30,7 +30,7 @@ public class CameraMode2 {
 			arg4.reset();
 			return;
 		}
-		arg2.method6418();
+		arg2.opposite();
 		Vector3 var15 = Vector3.create(1.0F, 0.0F, 0.0F);
 		Vector3 var16 = Vector3.create(0.0F, 1.0F, 0.0F);
 		Vector3 var17 = Vector3.create(0.0F, 0.0F, 1.0F);

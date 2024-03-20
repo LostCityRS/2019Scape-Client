@@ -9,64 +9,64 @@ import java.util.Arrays;
 public final class Matrix4x4 {
 
 	@ObfuscatedName("pq.n")
-	public static Matrix4x4[] field4316 = new Matrix4x4[0];
+	public static Matrix4x4[] pool = new Matrix4x4[0];
 
 	@ObfuscatedName("pq.m")
-	public static int field4318;
+	public static int poolCapacity;
 
 	@ObfuscatedName("pq.k")
-	public static int field4319;
+	public static int poolSize;
 
 	@ObfuscatedName("pq.f")
-	public static final Matrix4x4 field4317 = new Matrix4x4();
+	public static final Matrix4x4 IDENTITY = new Matrix4x4();
 
 	@ObfuscatedName("pq.w")
 	public float[] entries = new float[16];
 
 	@ObfuscatedName("pq.e(I)V")
-	public static void method6651(int arg0) {
-		field4318 = arg0;
-		field4316 = new Matrix4x4[arg0];
-		field4319 = 0;
+	public static void init(int arg0) {
+		poolCapacity = arg0;
+		pool = new Matrix4x4[arg0];
+		poolSize = 0;
 	}
 
 	@ObfuscatedName("pq.n()Lpq;")
-	public static Matrix4x4 method6641() {
-		Matrix4x4[] var0 = field4316;
-		synchronized (field4316) {
-			if (field4319 == 0) {
+	public static Matrix4x4 create() {
+		Matrix4x4[] var0 = pool;
+		synchronized (pool) {
+			if (poolSize == 0) {
 				return new Matrix4x4();
 			} else {
-				field4316[--field4319].method6603();
-				return field4316[field4319];
+				pool[--poolSize].setToIdentity();
+				return pool[poolSize];
 			}
 		}
 	}
 
 	@ObfuscatedName("pq.m()V")
-	public void method6605() {
-		Matrix4x4[] var1 = field4316;
-		synchronized (field4316) {
-			if (field4319 < field4318 - 1) {
-				field4316[field4319++] = this;
+	public void release() {
+		Matrix4x4[] var1 = pool;
+		synchronized (pool) {
+			if (poolSize < poolCapacity - 1) {
+				pool[poolSize++] = this;
 			}
 		}
 	}
 
 	public Matrix4x4() {
-		this.method6603();
+		this.setToIdentity();
 	}
 
 	public Matrix4x4(Matrix4x4 arg0) {
-		this.method6604(arg0);
+		this.setTo(arg0);
 	}
 
 	public Matrix4x4(Packet arg0, boolean arg1) {
-		this.method6600(arg0, arg1);
+		this.setTo(arg0, arg1);
 	}
 
 	@ObfuscatedName("pq.k(Lalw;Z)V")
-	public void method6600(Packet arg0, boolean arg1) {
+	public void setTo(Packet arg0, boolean arg1) {
 		if (!arg1) {
 			for (int var4 = 0; var4 < 16; var4++) {
 				this.entries[var4] = arg0.gFloat();
@@ -74,10 +74,10 @@ public final class Matrix4x4 {
 			return;
 		}
 		Matrix4x3 var3 = new Matrix4x3();
-		var3.method6304(Trig1.method6277(arg0.g2s()));
-		var3.method6305(Trig1.method6277(arg0.g2s()));
-		var3.method6306(Trig1.method6277(arg0.g2s()));
-		var3.method6315((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
+		var3.method6304(Trig1.radians(arg0.g2s()));
+		var3.method6305(Trig1.radians(arg0.g2s()));
+		var3.method6306(Trig1.radians(arg0.g2s()));
+		var3.translate((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
 		this.setToMatrix4x3(var3);
 	}
 
@@ -118,7 +118,7 @@ public final class Matrix4x4 {
 	}
 
 	@ObfuscatedName("pq.l()V")
-	public void method6603() {
+	public void setToIdentity() {
 		this.entries[0] = 1.0F;
 		this.entries[1] = 0.0F;
 		this.entries[2] = 0.0F;
@@ -138,7 +138,7 @@ public final class Matrix4x4 {
 	}
 
 	@ObfuscatedName("pq.u(Lpq;)V")
-	public void method6604(Matrix4x4 arg0) {
+	public void setTo(Matrix4x4 arg0) {
 		System.arraycopy(arg0.entries, 0, this.entries, 0, 16);
 	}
 
@@ -155,7 +155,7 @@ public final class Matrix4x4 {
 	}
 
 	@ObfuscatedName("pq.p(Lpq;Lpq;)V")
-	public void method6606(Matrix4x4 arg0, Matrix4x4 arg1) {
+	public void setToProduct(Matrix4x4 arg0, Matrix4x4 arg1) {
 		float var3 = arg0.entries[3] * arg1.entries[12] + arg0.entries[2] * arg1.entries[8] + arg0.entries[0] * arg1.entries[0] + arg0.entries[1] * arg1.entries[4];
 		float var4 = arg0.entries[3] * arg1.entries[13] + arg0.entries[2] * arg1.entries[9] + arg0.entries[0] * arg1.entries[1] + arg0.entries[1] * arg1.entries[5];
 		float var5 = arg0.entries[3] * arg1.entries[14] + arg0.entries[2] * arg1.entries[10] + arg0.entries[0] * arg1.entries[2] + arg0.entries[1] * arg1.entries[6];
@@ -261,21 +261,21 @@ public final class Matrix4x4 {
 
 	@ObfuscatedName("pq.r(Lou;)V")
 	public void setToMatrix4x3(Matrix4x3 arg0) {
-		this.entries[0] = arg0.field4276;
-		this.entries[1] = arg0.field4277;
-		this.entries[2] = arg0.field4278;
+		this.entries[0] = arg0.entry00;
+		this.entries[1] = arg0.entry01;
+		this.entries[2] = arg0.entry02;
 		this.entries[3] = 0.0F;
-		this.entries[4] = arg0.field4279;
-		this.entries[5] = arg0.field4287;
-		this.entries[6] = arg0.field4281;
+		this.entries[4] = arg0.entry10;
+		this.entries[5] = arg0.entry11;
+		this.entries[6] = arg0.entry12;
 		this.entries[7] = 0.0F;
-		this.entries[8] = arg0.field4275;
-		this.entries[9] = arg0.field4283;
-		this.entries[10] = arg0.field4284;
+		this.entries[8] = arg0.entry20;
+		this.entries[9] = arg0.entry21;
+		this.entries[10] = arg0.entry22;
 		this.entries[11] = 0.0F;
-		this.entries[12] = arg0.field4285;
-		this.entries[13] = arg0.field4286;
-		this.entries[14] = arg0.field4280;
+		this.entries[12] = arg0.entry30;
+		this.entries[13] = arg0.entry31;
+		this.entries[14] = arg0.entry32;
 		this.entries[15] = 1.0F;
 	}
 
@@ -322,7 +322,7 @@ public final class Matrix4x4 {
 	}
 
 	@ObfuscatedName("pq.s(FFFF)V")
-	public void method6612(float arg0, float arg1, float arg2, float arg3) {
+	public void scale(float arg0, float arg1, float arg2, float arg3) {
 		this.entries[0] = arg0;
 		this.entries[1] = 0.0F;
 		this.entries[2] = 0.0F;
@@ -397,10 +397,10 @@ public final class Matrix4x4 {
 	}
 
 	@ObfuscatedName("pq.a(FFFF)V")
-	public void method6618(float arg0, float arg1, float arg2, float arg3) {
+	public void setToPerspectiveProjection(float arg0, float arg1, float arg2, float arg3) {
 		float var5 = (float) (Math.tan((double) (arg2 / 2.0F)) * (double) arg0);
 		float var6 = (float) (Math.tan((double) (arg3 / 2.0F)) * (double) arg0);
-		this.method6675(-var5, var5, -var6, var6, arg0, arg1);
+		this.setToPerspectiveProjection(-var5, var5, -var6, var6, arg0, arg1);
 	}
 
 	@ObfuscatedName("pq.g(FFF)V")
@@ -409,7 +409,7 @@ public final class Matrix4x4 {
 	}
 
 	@ObfuscatedName("pq.i(FFFFFF)V")
-	public void method6675(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
+	public void setToPerspectiveProjection(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
 		this.entries[0] = arg4 * 2.0F / (arg1 - arg0);
 		this.entries[1] = 0.0F;
 		this.entries[2] = 0.0F;
@@ -578,7 +578,7 @@ public final class Matrix4x4 {
 	}
 
 	@ObfuscatedName("pq.ad([F)[F")
-	public float[] method6594(float[] arg0) {
+	public float[] toArray(float[] arg0) {
 		System.arraycopy(this.entries, 0, arg0, 0, 16);
 		return arg0;
 	}

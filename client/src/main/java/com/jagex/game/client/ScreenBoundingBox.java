@@ -58,9 +58,9 @@ public class ScreenBoundingBox {
 	public void method2746(Cuboid arg0, Matrix4x4 arg1, Matrix4x4 arg2, float arg3, float arg4, float arg5, float arg6) {
 		boolean var8 = false;
 		this.field1686 = true;
-		int var9 = (int) (arg0.field4252 + arg0.field4249) >> 1;
-		int var10 = (int) (arg0.field4251 + arg0.field4248) >> 1;
-		int var12 = (int) arg0.field4253;
+		int var9 = (int) (arg0.minX + arg0.maxX) >> 1;
+		int var10 = (int) (arg0.maxZ + arg0.minZ) >> 1;
+		int var12 = (int) arg0.minY;
 		float var14 = arg2.entries[8] * (float) var10 + arg2.entries[0] * (float) var9 + arg2.entries[4] * (float) var12 + arg2.entries[12];
 		float var15 = arg2.entries[9] * (float) var10 + arg2.entries[1] * (float) var9 + arg2.entries[5] * (float) var12 + arg2.entries[13];
 		float var16 = arg2.entries[10] * (float) var10 + arg2.entries[2] * (float) var9 + arg2.entries[6] * (float) var12 + arg2.entries[14];
@@ -71,7 +71,7 @@ public class ScreenBoundingBox {
 		} else {
 			var8 = true;
 		}
-		int var19 = (int) arg0.field4250;
+		int var19 = (int) arg0.maxY;
 		float var21 = arg2.entries[8] * (float) var10 + arg2.entries[0] * (float) var9 + arg2.entries[4] * (float) var19 + arg2.entries[12];
 		float var22 = arg2.entries[9] * (float) var10 + arg2.entries[1] * (float) var9 + arg2.entries[5] * (float) var19 + arg2.entries[13];
 		float var23 = arg2.entries[10] * (float) var10 + arg2.entries[2] * (float) var9 + arg2.entries[6] * (float) var19 + arg2.entries[14];
@@ -104,7 +104,7 @@ public class ScreenBoundingBox {
 		if (!this.field1686) {
 			return;
 		}
-		float var33 = (float) Math.sqrt(Math.pow((double) (arg0.field4249 - arg0.field4252), 2.0D) + Math.pow((double) (arg0.field4251 - arg0.field4248), 2.0D)) / 2.0F;
+		float var33 = (float) Math.sqrt(Math.pow((double) (arg0.maxX - arg0.minX), 2.0D) + Math.pow((double) (arg0.maxZ - arg0.minZ), 2.0D)) / 2.0F;
 		if (var16 / var17 > var23 / var24) {
 			float var34 = arg1.entries[0] * var33 + var14 + arg1.entries[12];
 			float var35 = arg1.entries[3] * var33 + var17 + arg1.entries[15];

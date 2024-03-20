@@ -72,7 +72,7 @@ public class LookatEntity extends Lookat {
 		var7.x -= arg2;
 		var7.z -= arg3;
 		var7.y *= -1.0F;
-		arg1.method6296((double) var6.x, (double) var6.y, (double) var6.z, (double) var7.x, (double) var7.y, (double) var7.z, 0.0F, 1.0F, 0.0F);
+		arg1.setToCameraTransform((double) var6.x, (double) var6.y, (double) var6.z, (double) var7.x, (double) var7.y, (double) var7.z, 0.0F, 1.0F, 0.0F);
 		var6.release();
 		var7.release();
 	}

@@ -283,8 +283,8 @@ public class Direct3DRenderer extends GpuRenderer {
 			this.field11977 = new boolean[this.field10186];
 			this.field11962 = new int[this.field10186];
 			Matrix4x3 var17 = new Matrix4x3();
-			var17.method6348(1.0F, -1.0F, 0.5F);
-			var17.method6315(0.0F, 0.0F, 0.5F);
+			var17.setToScale(1.0F, -1.0F, 0.5F);
+			var17.translate(0.0F, 0.0F, 0.5F);
 			this.field11968 = new Matrix4x4();
 			this.field11968.setToMatrix4x3(var17);
 			IDirect3DDevice.BeginScene(this.device);
@@ -906,7 +906,7 @@ public class Direct3DRenderer extends GpuRenderer {
 		if (this.field10135[this.field10177] == GpuRendererRelated4.field3370) {
 			IDirect3DDevice.SetTransform(this.device, this.field10177 + 16, this.field10162[this.field10177].method6638(this.field11985));
 		} else {
-			IDirect3DDevice.SetTransform(this.device, this.field10177 + 16, this.field10162[this.field10177].method6594(this.field11985));
+			IDirect3DDevice.SetTransform(this.device, this.field10177 + 16, this.field10162[this.field10177].toArray(this.field11985));
 		}
 		int var1 = method19006(this.field10135[this.field10177]);
 		if (this.field11962[this.field10177] != var1) {

@@ -2119,8 +2119,8 @@ public final class Client extends GameShell {
 		method6793();
 		ByteArrayPool.method4398(new int[] { 20, 260, 2048, 5120, 10240, 75000, 100000, 153600 }, new int[] { 1000, 100, 1000, 250, 500, 100, 100, 10 });
 		Vector3.init(100);
-		Quaternion.method6406(10);
-		Matrix4x4.method6651(20);
+		Quaternion.init(10);
+		Matrix4x4.init(20);
 		Mouse.method7232(100);
 		NativeMouseEvent.method18259(100);
 		if (modewhere != ModeWhere.LIVE) {
@@ -3756,8 +3756,8 @@ public final class Client extends GameShell {
 					method7326(var3, field1891, field1797, var14);
 					method8354(var3, field1891);
 					method14988(var3);
-					Quaternion var15 = Quaternion.method6469();
-					var15.method6415(Trig1.method6277(var3.field10395.method316()), Trig1.method6277(var3.field10413.method316()), Trig1.method6277(var3.field10447.method316()));
+					Quaternion var15 = Quaternion.create();
+					var15.setToRotation(Trig1.radians(var3.field10395.method316()), Trig1.radians(var3.field10413.method316()), Trig1.radians(var3.field10447.method316()));
 					var3.method10556(var15);
 					var15.release();
 				}
@@ -4810,13 +4810,13 @@ public final class Client extends GameShell {
 			PositionEntity var6 = (PositionEntity) field9155.method4709();
 			Quaternion var7 = new Quaternion();
 			Quaternion var8 = new Quaternion();
-			var7.method6414(0.0F, 1.0F, 0.0F, 3.1415927F - (float) ((double) var4 * 3.141592653589793D * 2.0D / 16384.0D));
+			var7.setToRotation(0.0F, 1.0F, 0.0F, 3.1415927F - (float) ((double) var4 * 3.141592653589793D * 2.0D / 16384.0D));
 			Vector3 var9 = new Vector3(1.0F, 0.0F, 0.0F);
 			var9.rotate(var7);
 			var9.negate();
-			var8.method6413(var9, (float) ((double) var3 * 3.141592653589793D * 2.0D) / 16384.0F);
+			var8.setToRotation(var9, (float) ((double) var3 * 3.141592653589793D * 2.0D) / 16384.0F);
 			var7.multiply(var8);
-			var6.field10554.method6412(var7);
+			var6.field10554.setTo(var7);
 		}
 		field10902 = true;
 	}
@@ -5057,8 +5057,8 @@ public final class Client extends GameShell {
 		method7326(entity, var2, var3, var7);
 		method8354(entity, var2);
 		method14988(entity);
-		Quaternion var8 = Quaternion.method6469();
-		var8.method6415(Trig1.method6277(entity.field10395.method316()), Trig1.method6277(entity.field10413.method316()), Trig1.method6277(entity.field10447.method316()));
+		Quaternion var8 = Quaternion.create();
+		var8.setToRotation(Trig1.radians(entity.field10395.method316()), Trig1.radians(entity.field10413.method316()), Trig1.radians(entity.field10447.method316()));
 		entity.method10556(var8);
 		var8.release();
 	}
@@ -5810,9 +5810,9 @@ public final class Client extends GameShell {
 			field9155.method4707(var25, field10793, field10792, var26.x << 9, var26.z << 9);
 		} else {
 			field10793.setToTranslation((float) -cameraMouseX, (float) -cameraMouseY, (float) -cameraMouseZ);
-			field10793.method6307(0.0F, -1.0F, 0.0F, Trig1.method6277(-cameraYaw & 0x3FFF));
-			field10793.method6307(-1.0F, 0.0F, 0.0F, Trig1.method6277(-cameraPitch & 0x3FFF));
-			field10793.method6307(0.0F, 0.0F, -1.0F, Trig1.method6277(-field2656 & 0x3FFF));
+			field10793.rotateAroundAxis(0.0F, -1.0F, 0.0F, Trig1.radians(-cameraYaw & 0x3FFF));
+			field10793.rotateAroundAxis(-1.0F, 0.0F, 0.0F, Trig1.radians(-cameraPitch & 0x3FFF));
+			field10793.rotateAroundAxis(0.0F, 0.0F, -1.0F, Trig1.radians(-field2656 & 0x3FFF));
 			method15141(field10792, true, (float) (var10 / 2), (float) (var11 / 2), (float) (field11078 << 1), (float) (field11078 << 1), var10, var11);
 		}
 		renderer.method2217(field10793);
@@ -7837,15 +7837,15 @@ public final class Client extends GameShell {
 			return;
 		}
 		int var8 = getHeightmapY(arg1, arg2, arg0) - arg4;
-		field10793.method6292(renderer.method2218());
-		field10793.method6315((float) arg3, 0.0F, 0.0F);
+		field10793.setTo(renderer.method2218());
+		field10793.translate((float) arg3, 0.0F, 0.0F);
 		renderer.method2217(field10793);
 		if (arg5) {
 			renderer.method2525((float) arg1, (float) var8, (float) arg2, field10922);
 		} else {
 			renderer.method2507((float) arg1, (float) var8, (float) arg2, field10922);
 		}
-		field10793.method6315((float) -arg3, 0.0F, 0.0F);
+		field10793.translate((float) -arg3, 0.0F, 0.0F);
 		renderer.method2217(field10793);
 		if (!arg6) {
 			field10922[0] -= field10780;
@@ -12524,7 +12524,7 @@ public final class Client extends GameShell {
 										var74 += var11.field2305 * var72 >> 9;
 										var75 += var11.field2209 * var73 >> 9;
 									}
-									field10793.method6376();
+									field10793.setToIdentity();
 									renderer.method2217(field10793);
 									Matrix4x4 var76 = renderer.method2208();
 									int var77 = world.method7760();
@@ -12553,17 +12553,17 @@ public final class Client extends GameShell {
 										renderer.method2219(false);
 									}
 									if (var11.field2274) {
-										field10875.method6372(1.0F, 0.0F, 0.0F, Trig1.method6277(var11.field2230));
-										field10875.method6307(0.0F, 1.0F, 0.0F, Trig1.method6277(var11.field2231));
-										field10875.method6307(0.0F, 0.0F, 1.0F, Trig1.method6277(var11.field2331));
-										field10875.method6315((float) var11.field2305, (float) var11.field2209, (float) var11.field2235);
+										field10875.setToRotation(1.0F, 0.0F, 0.0F, Trig1.radians(var11.field2230));
+										field10875.rotateAroundAxis(0.0F, 1.0F, 0.0F, Trig1.radians(var11.field2231));
+										field10875.rotateAroundAxis(0.0F, 0.0F, 1.0F, Trig1.radians(var11.field2331));
+										field10875.translate((float) var11.field2305, (float) var11.field2209, (float) var11.field2235);
 									} else {
 										int var80 = (var11.field2272 << 2) * Trig1.field4270[var11.field2230 << 3] >> 14;
 										int var81 = (var11.field2272 << 2) * Trig1.field4272[var11.field2230 << 3] >> 14;
-										field10875.method6372(0.0F, 0.0F, 1.0F, Trig1.method6277(-var11.field2331 << 3));
-										field10875.method6307(0.0F, 1.0F, 0.0F, Trig1.method6277(var11.field2231 << 3));
-										field10875.method6315((float) (var11.field2228 << 2), (float) ((var11.field2316 << 2) + var80 + var62), (float) ((var11.field2316 << 2) + var81));
-										field10875.method6307(1.0F, 0.0F, 0.0F, Trig1.method6277(var11.field2230 << 3));
+										field10875.setToRotation(0.0F, 0.0F, 1.0F, Trig1.radians(-var11.field2331 << 3));
+										field10875.rotateAroundAxis(0.0F, 1.0F, 0.0F, Trig1.radians(var11.field2231 << 3));
+										field10875.translate((float) (var11.field2228 << 2), (float) ((var11.field2316 << 2) + var80 + var62), (float) ((var11.field2316 << 2) + var81));
+										field10875.rotateAroundAxis(1.0F, 0.0F, 0.0F, Trig1.radians(var11.field2230 << 3));
 									}
 									var11.method3951(renderer, var60, field10875, loopCycle);
 									renderer.method2263();

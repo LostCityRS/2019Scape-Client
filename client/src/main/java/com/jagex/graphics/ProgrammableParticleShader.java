@@ -72,7 +72,7 @@ public class ProgrammableParticleShader extends ParticleShader {
 
 	@ObfuscatedName("ahr.e(Lpq;)V")
 	public void method5038(Matrix4x4 arg0) {
-		this.field10506.method6604(arg0);
+		this.field10506.setTo(arg0);
 		this.field10506.multiply(this.field2986.field10081);
 	}
 

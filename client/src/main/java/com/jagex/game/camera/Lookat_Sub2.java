@@ -63,12 +63,12 @@ public class Lookat_Sub2 extends Lookat {
 		var8.z = (float) (var7[2] - var6[2]);
 		var8.normalise();
 		Quaternion var9 = new Quaternion();
-		var9.method6413(var8, arg4);
+		var9.setToRotation(var8, arg4);
 		Vector3 var10 = Vector3.create(0.0F, 1.0F, 0.0F);
 		Vector3 var11 = Vector3.cross(var8, var10);
 		Vector3 var12 = Vector3.cross(var11, var8);
 		var12.rotate(var9);
-		arg1.method6296(var6[0], var6[1], var6[2], var7[0], var7[1], var7[2], var12.x, var12.y, var12.z);
+		arg1.setToCameraTransform(var6[0], var6[1], var6[2], var7[0], var7[1], var7[2], var12.x, var12.y, var12.z);
 		var12.release();
 	}
 

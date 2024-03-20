@@ -34,7 +34,7 @@ public class ZTilt extends CameraEffect {
 
 	@ObfuscatedName("atj.m(Lju;Lou;Lpq;I)V")
 	public void method19440(Vector3i arg0, Matrix4x3 arg1, Matrix4x4 arg2) {
-		arg1.method6307(0.0F, 0.0F, 1.0F, this.field12551);
+		arg1.rotateAroundAxis(0.0F, 0.0F, 1.0F, this.field12551);
 	}
 
 	@ObfuscatedName("atj.k(Lalw;I)V")

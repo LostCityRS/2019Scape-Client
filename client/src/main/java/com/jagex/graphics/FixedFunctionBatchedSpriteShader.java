@@ -12,7 +12,7 @@ public class FixedFunctionBatchedSpriteShader extends BatchedSpriteShader {
 
 	@ObfuscatedName("ahk.e()V")
 	public void method5047() {
-		this.field2993.method15967(Matrix4x4.field4317, Matrix4x4.field4317, Matrix4x4.field4317);
+		this.field2993.method15967(Matrix4x4.IDENTITY, Matrix4x4.IDENTITY, Matrix4x4.IDENTITY);
 		this.field2993.setActiveTexture(0);
 		this.field2993.setTexture(this.field2992);
 		this.field2993.method16041(0, TextureCombiner.field3365);

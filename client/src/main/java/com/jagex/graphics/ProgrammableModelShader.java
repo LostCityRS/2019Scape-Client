@@ -82,7 +82,7 @@ public class ProgrammableModelShader extends ModelShader {
 
 	@ObfuscatedName("ahv.n(Lpq;)V")
 	public void method5018(Matrix4x4 arg0) {
-		this.field10499.method6604(arg0);
+		this.field10499.setTo(arg0);
 		this.field10499.multiply(this.field2963.field10081);
 	}
 

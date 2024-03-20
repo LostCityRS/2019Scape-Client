@@ -6,31 +6,31 @@ import deob.ObfuscatedName;
 public class Cuboid {
 
 	@ObfuscatedName("oj.e")
-	public float field4252;
+	public float minX;
 
 	@ObfuscatedName("oj.n")
-	public float field4253;
+	public float minY;
 
 	@ObfuscatedName("oj.m")
-	public float field4248;
+	public float minZ;
 
 	@ObfuscatedName("oj.k")
-	public float field4249;
+	public float maxX;
 
 	@ObfuscatedName("oj.f")
-	public float field4250;
+	public float maxY;
 
 	@ObfuscatedName("oj.w")
-	public float field4251;
+	public float maxZ;
 
 	@ObfuscatedName("oj.l")
-	public static final float[] field4247 = new float[8];
+	public static final float[] VERTEX_X = new float[8];
 
 	@ObfuscatedName("oj.u")
-	public static final float[] field4246 = new float[8];
+	public static final float[] VERTEX_Y = new float[8];
 
 	@ObfuscatedName("oj.z")
-	public static final float[] field4254 = new float[8];
+	public static final float[] VERTEX_Z = new float[8];
 
 	@ObfuscatedName("oj.e(IIIILpq;FFFF)Z")
 	public boolean pick(int arg0, int arg1, int arg2, int arg3, Matrix4x4 arg4, float arg5, float arg6, float arg7, float arg8) {
@@ -39,34 +39,34 @@ public class Cuboid {
 		float var12 = -3.4028235E38F;
 		float var13 = Float.MAX_VALUE;
 		float var14 = -3.4028235E38F;
-		field4247[0] = this.field4252;
-		field4246[0] = this.field4253;
-		field4254[0] = this.field4248;
-		field4247[1] = this.field4249;
-		field4246[1] = this.field4253;
-		field4254[1] = this.field4248;
-		field4247[2] = this.field4252;
-		field4246[2] = this.field4250;
-		field4254[2] = this.field4248;
-		field4247[3] = this.field4249;
-		field4246[3] = this.field4250;
-		field4254[3] = this.field4248;
-		field4247[4] = this.field4252;
-		field4246[4] = this.field4253;
-		field4254[4] = this.field4251;
-		field4247[5] = this.field4249;
-		field4246[5] = this.field4253;
-		field4254[5] = this.field4251;
-		field4247[6] = this.field4252;
-		field4246[6] = this.field4250;
-		field4254[6] = this.field4251;
-		field4247[7] = this.field4249;
-		field4246[7] = this.field4250;
-		field4254[7] = this.field4251;
+		VERTEX_X[0] = this.minX;
+		VERTEX_Y[0] = this.minY;
+		VERTEX_Z[0] = this.minZ;
+		VERTEX_X[1] = this.maxX;
+		VERTEX_Y[1] = this.minY;
+		VERTEX_Z[1] = this.minZ;
+		VERTEX_X[2] = this.minX;
+		VERTEX_Y[2] = this.maxY;
+		VERTEX_Z[2] = this.minZ;
+		VERTEX_X[3] = this.maxX;
+		VERTEX_Y[3] = this.maxY;
+		VERTEX_Z[3] = this.minZ;
+		VERTEX_X[4] = this.minX;
+		VERTEX_Y[4] = this.minY;
+		VERTEX_Z[4] = this.maxZ;
+		VERTEX_X[5] = this.maxX;
+		VERTEX_Y[5] = this.minY;
+		VERTEX_Z[5] = this.maxZ;
+		VERTEX_X[6] = this.minX;
+		VERTEX_Y[6] = this.maxY;
+		VERTEX_Z[6] = this.maxZ;
+		VERTEX_X[7] = this.maxX;
+		VERTEX_Y[7] = this.maxY;
+		VERTEX_Z[7] = this.maxZ;
 		for (int var15 = 0; var15 < 8; var15++) {
-			float var16 = field4247[var15];
-			float var17 = field4246[var15];
-			float var18 = field4254[var15];
+			float var16 = VERTEX_X[var15];
+			float var17 = VERTEX_Y[var15];
+			float var18 = VERTEX_Z[var15];
 			float var19 = arg4.entries[10] * var18 + arg4.entries[2] * var16 + arg4.entries[6] * var17 + arg4.entries[14];
 			float var20 = arg4.entries[11] * var18 + arg4.entries[3] * var16 + arg4.entries[7] * var17 + arg4.entries[15];
 			if (var19 >= -var20) {

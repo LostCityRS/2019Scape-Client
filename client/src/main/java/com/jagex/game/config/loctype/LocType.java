@@ -550,12 +550,12 @@ public class LocType implements ConfigType {
 							this.field7479 = true;
 						} else if (code == 201) {
 							this.field7468 = new Cuboid();
-							this.field7468.field4252 = buf.gSmart1or2s();
-							this.field7468.field4253 = buf.gSmart1or2s();
-							this.field7468.field4248 = buf.gSmart1or2s();
-							this.field7468.field4249 = buf.gSmart1or2s();
-							this.field7468.field4250 = buf.gSmart1or2s();
-							this.field7468.field4251 = buf.gSmart1or2s();
+							this.field7468.minX = buf.gSmart1or2s();
+							this.field7468.minY = buf.gSmart1or2s();
+							this.field7468.minZ = buf.gSmart1or2s();
+							this.field7468.maxX = buf.gSmart1or2s();
+							this.field7468.maxY = buf.gSmart1or2s();
+							this.field7468.maxZ = buf.gSmart1or2s();
 						} else if (code == 249) {
 							int var32 = buf.g1();
 							if (this.params == null) {
