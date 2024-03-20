@@ -187,11 +187,11 @@ public class PlayerEntity extends PathingEntity {
 		int[] var23 = this.model.field7894;
 		this.model.method10113(this.getBASId(), var4, var5, var16, var19, this.index == 1, var3);
 		if (var3 != var22) {
-			Vector3 var24 = Vector3.method6484(this.method10536().field4298);
-			var24.field4308 = (this.routeWaypointX[0] << 9) + (this.size() << 8);
-			var24.field4313 = (this.routeWaypointZ[0] << 9) + (this.size() << 8);
+			Vector3 var24 = Vector3.create(this.getTransform().trans);
+			var24.x = (this.routeWaypointX[0] << 9) + (this.size() << 8);
+			var24.z = (this.routeWaypointZ[0] << 9) + (this.size() << 8);
 			this.method10531(var24);
-			var24.method6486();
+			var24.release();
 		}
 		if (Client.currentPlayerUid == this.localPlayerIndex && var23 != null) {
 			for (int var25 = 0; var25 < var16.length; var25++) {
@@ -223,11 +223,11 @@ public class PlayerEntity extends PathingEntity {
 		int var5 = super.size();
 		this.method16502((var2 >> 3 & 0x7) + 1);
 		boolean var6 = (var2 & 0x40) != 0;
-		Vector3 var7 = Vector3.method6484(this.method10536().field4298);
-		var7.field4308 += this.size() - var5 << 8;
-		var7.field4313 += this.size() - var5 << 8;
+		Vector3 var7 = Vector3.create(this.getTransform().trans);
+		var7.x += this.size() - var5 << 8;
+		var7.z += this.size() - var5 << 8;
 		this.method10531(var7);
-		var7.method6486();
+		var7.release();
 		if (var6) {
 			this.field12050 = arg0.gSmart1or2();
 			int var8 = var3 == 0 ? Client.titleDefaults.field7671 : Client.titleDefaults.field7670;
@@ -322,9 +322,9 @@ public class PlayerEntity extends PathingEntity {
 		}
 		Matrix4x3 var2 = arg0.method2209();
 		Matrix4x3 var3 = this.method10533();
-		ScaleRotTrans var4 = this.method10536();
+		ScaleRotTrans var4 = this.getTransform();
 		int var5 = this.field10395.method316();
-		Tile var6 = this.field11716.levelTiles[this.level][(int) var4.field4298.field4308 >> 9][(int) var4.field4298.field4313 >> 9];
+		Tile var6 = this.field11716.levelTiles[this.level][(int) var4.trans.x >> 9][(int) var4.trans.z >> 9];
 		if (var6 == null || var6.groundDecoration == null) {
 			this.field10408 = (int) ((float) this.field10408 - (float) this.field10408 / 10.0F);
 		} else {
@@ -373,16 +373,16 @@ public class PlayerEntity extends PathingEntity {
 						ObjectWrapper var18 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var17.field744);
 						if (var18 != null) {
 							NpcEntity var19 = (NpcEntity) var18.field11436;
-							Vector3 var20 = Vector3.method6528(var19.method10536().field4298, Client.localPlayerEntity.method10536().field4298);
-							int var21 = (int) var20.field4308;
-							int var22 = (int) var20.field4313;
+							Vector3 var20 = Vector3.sub(var19.getTransform().trans, Client.localPlayerEntity.getTransform().trans);
+							int var21 = (int) var20.x;
+							int var22 = (int) var20.z;
 							this.method19113(arg0, var2, this.field10459[0], (long) var21, (long) var22, var17.field750, 92160000L);
 						}
 					}
 					if (var17.field745 == 2) {
-						Vector3 var23 = Client.localPlayerEntity.method10536().field4298;
-						long var24 = (long) (var17.field746 - (int) var23.field4308);
-						long var26 = (long) (var17.field747 - (int) var23.field4313);
+						Vector3 var23 = Client.localPlayerEntity.getTransform().trans;
+						long var24 = (long) (var17.field746 - (int) var23.x);
+						long var26 = (long) (var17.field747 - (int) var23.z);
 						long var28 = (long) (var17.field748 << 9);
 						long var30 = var28 * var28;
 						this.method19113(arg0, var2, this.field10459[0], var24, var26, var17.field750, var30);
@@ -390,9 +390,9 @@ public class PlayerEntity extends PathingEntity {
 					if (var17.field745 == 10 && var17.field744 >= 0 && var17.field744 < Client.players.length) {
 						PlayerEntity var32 = Client.players[var17.field744];
 						if (var32 != null) {
-							Vector3 var33 = Vector3.method6528(var32.method10536().field4298, Client.localPlayerEntity.method10536().field4298);
-							int var34 = (int) var33.field4308;
-							int var35 = (int) var33.field4313;
+							Vector3 var33 = Vector3.sub(var32.getTransform().trans, Client.localPlayerEntity.getTransform().trans);
+							int var34 = (int) var33.x;
+							int var35 = (int) var33.z;
 							this.method19113(arg0, var2, this.field10459[0], (long) var34, (long) var35, var17.field750, 92160000L);
 						}
 					}
@@ -435,7 +435,7 @@ public class PlayerEntity extends PathingEntity {
 			return;
 		}
 		Matrix4x3 var2 = arg0.method2209();
-		var2.method6293(this.method10536());
+		var2.method6293(this.getTransform());
 		var2.method6315(0.0F, -5.0F, 0.0F);
 		this.method16576(arg0, this.field10459, var2, this.field10449);
 		for (int var3 = 0; var3 < this.field10459.length; var3++) {
@@ -567,11 +567,11 @@ public class PlayerEntity extends PathingEntity {
 		this.routeWaypointX[0] = x;
 		this.routeWaypointZ[0] = z;
 		int size = this.size();
-		Vector3 var4 = Vector3.method6484(this.method10536().field4298);
-		var4.field4308 = this.routeWaypointX[0] * 512 + size * 256;
-		var4.field4313 = this.routeWaypointZ[0] * 512 + size * 256;
+		Vector3 var4 = Vector3.create(this.getTransform().trans);
+		var4.x = this.routeWaypointX[0] * 512 + size * 256;
+		var4.z = this.routeWaypointZ[0] * 512 + size * 256;
 		this.method10531(var4);
-		var4.method6486();
+		var4.release();
 		if (Client.localPlayerEntity == this) {
 			Client.world.method7816().resetFade();
 		}
@@ -685,7 +685,7 @@ public class PlayerEntity extends PathingEntity {
 	@ObfuscatedName("aqk.m(B)Lakt;")
 	public CoordFine method4667() {
 		CoordGrid var1 = Client.world.method7727();
-		return CoordFine.method258(this.level, (int) this.method10536().field4298.field4308 + var1.x * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.z * 512);
+		return CoordFine.method258(this.level, (int) this.getTransform().trans.x + var1.x * 512, -((int) this.getTransform().trans.y), (int) this.getTransform().trans.z + var1.z * 512);
 	}
 
 	@ObfuscatedName("aqk.k(I)Lov;")
@@ -697,7 +697,7 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.f(B)Lox;")
 	public Vector3 method4666() {
-		return Vector3.method6482();
+		return Vector3.create();
 	}
 
 	@ObfuscatedName("aqk.cx(I)I")

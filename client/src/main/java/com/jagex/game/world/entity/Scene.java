@@ -583,10 +583,10 @@ public class Scene {
 			}
 		}
 		if (arg1) {
-			Vector3 var20 = Vector3.method6484(arg0.method10536().field4298);
-			var20.field4311 -= var7;
+			Vector3 var20 = Vector3.create(arg0.getTransform().trans);
+			var20.y -= var7;
 			arg0.method10531(var20);
-			var20.method6486();
+			var20.release();
 		}
 		return true;
 	}
@@ -1203,8 +1203,8 @@ public class Scene {
 
 	@ObfuscatedName("tx.aj(Lalh;I)V")
 	public void method8745(GraphEntity arg0) {
-		Vector3 var2 = arg0.method10536().field4298;
-		this.renderer.method2525((float) var2.field4308, (float) ((int) var2.field4311 + (arg0.overlayHeight() >> 1)), (float) var2.field4313, this.field6927);
+		Vector3 var2 = arg0.getTransform().trans;
+		this.renderer.method2525((float) var2.x, (float) ((int) var2.y + (arg0.overlayHeight() >> 1)), (float) var2.z, this.field6927);
 		arg0.field11715 = (int) this.field6927[2];
 	}
 
@@ -1280,9 +1280,9 @@ public class Scene {
 			}
 			return true;
 		} else {
-			Vector3 var12 = arg0.method10536().field4298;
-			int var13 = (int) var12.field4308 >> this.field6900;
-			int var14 = (int) var12.field4313 >> this.field6900;
+			Vector3 var12 = arg0.getTransform().trans;
+			int var13 = (int) var12.x >> this.field6900;
+			int var14 = (int) var12.z >> this.field6900;
 			if (arg0.field11714 >= this.maxLevel || var13 < this.field6949 || var13 >= this.field6946 || var14 < this.field6920 || var14 >= this.field6948) {
 				return true;
 			} else if ((arg2 == null || arg0.level < arg3 || arg2[arg0.level][var13][var14] != arg4) && arg0.method18361() && !arg0.method18360(this.renderer)) {
@@ -1305,15 +1305,15 @@ public class Scene {
 		if (this.field6917 == this.field6913) {
 			boolean var4 = false;
 			boolean var5 = false;
-			Vector3 var6 = arg0.method10536().field4298;
+			Vector3 var6 = arg0.getTransform().trans;
 			int var7;
 			int var8;
 			if (arg0 instanceof PrimaryLayerEntity) {
 				var7 = ((PrimaryLayerEntity) arg0).field12471;
 				var8 = ((PrimaryLayerEntity) arg0).field12468;
 			} else {
-				var7 = (int) var6.field4308 >> this.field6900;
-				var8 = (int) var6.field4313 >> this.field6900;
+				var7 = (int) var6.x >> this.field6900;
+				var8 = (int) var6.z >> this.field6900;
 			}
 			int var9 = Math.min(this.maxTileX - 1, Math.max(0, var7));
 			int var10 = Math.min(this.maxTileZ - 1, Math.max(0, var8));
@@ -1324,7 +1324,7 @@ public class Scene {
 			var11.field1576 = this.method8713(var9, var10);
 			var11.field1578 = this.method8760(var9, var10);
 			var11.field1579 = this.method8715(var9, var10);
-			this.renderer.setWaterFog(this.field6915[0].getFineHeight((int) var6.field4308, (int) var6.field4313), var11);
+			this.renderer.setWaterFog(this.field6915[0].getFineHeight((int) var6.x, (int) var6.z), var11);
 		}
 		PickableEntity var12 = arg0.method17372(this.renderer);
 		if (var12 == null) {

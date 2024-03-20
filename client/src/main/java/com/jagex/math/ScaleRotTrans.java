@@ -10,7 +10,7 @@ public class ScaleRotTrans {
 	public Quaternion field4297;
 
 	@ObfuscatedName("oe.d")
-	public Vector3 field4298;
+	public Vector3 trans;
 
 	@ObfuscatedName("oe.c")
 	public Vector3 field4299;
@@ -21,7 +21,7 @@ public class ScaleRotTrans {
 
 	public ScaleRotTrans() {
 		this.field4297 = new Quaternion();
-		this.field4298 = new Vector3();
+		this.trans = new Vector3();
 		this.field4299 = new Vector3(1.0F, 1.0F, 1.0F);
 	}
 
@@ -36,7 +36,7 @@ public class ScaleRotTrans {
 			this.method6391(arg0);
 		} else {
 			this.field4297 = new Quaternion(arg0);
-			this.field4298 = new Vector3(arg0);
+			this.trans = new Vector3(arg0);
 			this.field4299 = new Vector3(arg0);
 		}
 	}
@@ -67,7 +67,7 @@ public class ScaleRotTrans {
 		if ((var2 & 0x8) != 0) {
 			var9 = arg0.g2s();
 		}
-		this.field4298 = new Vector3(var7, var8, var9);
+		this.trans = new Vector3(var7, var8, var9);
 		float var10 = 1.0F;
 		float var11 = 1.0F;
 		float var12 = 1.0F;
@@ -93,30 +93,30 @@ public class ScaleRotTrans {
 	@ObfuscatedName("oe.m(Loe;)V")
 	public void method6386(ScaleRotTrans arg0) {
 		this.field4297.method6412(arg0.field4297);
-		this.field4298.setTo(arg0.field4298);
+		this.trans.setTo(arg0.trans);
 		this.field4299.setTo(arg0.field4299);
 	}
 
 	@ObfuscatedName("oe.k()V")
 	public final void method6387() {
 		this.field4297.method6418();
-		this.field4298.method6494();
-		this.field4298.method6526(this.field4297);
-		this.field4299.field4308 = 1.0F / this.field4299.field4308;
-		this.field4299.field4311 = 1.0F / this.field4299.field4311;
-		this.field4299.field4313 = 1.0F / this.field4299.field4313;
+		this.trans.negate();
+		this.trans.rotate(this.field4297);
+		this.field4299.x = 1.0F / this.field4299.x;
+		this.field4299.y = 1.0F / this.field4299.y;
+		this.field4299.z = 1.0F / this.field4299.z;
 	}
 
 	@ObfuscatedName("oe.f(Loe;)V")
 	public final void method6398(ScaleRotTrans arg0) {
-		this.field4297.method6424(arg0.field4297);
-		this.field4298.method6526(arg0.field4297);
-		this.field4298.method6497(arg0.field4298);
-		this.field4299.method6506(arg0.field4299);
+		this.field4297.multiply(arg0.field4297);
+		this.trans.rotate(arg0.field4297);
+		this.trans.add(arg0.trans);
+		this.field4299.multiply(arg0.field4299);
 	}
 
 	public String toString() {
-		return "[" + this.field4297.toString() + "|" + this.field4298.toString() + "|" + this.field4299.toString() + "]";
+		return "[" + this.field4297.toString() + "|" + this.trans.toString() + "|" + this.field4299.toString() + "]";
 	}
 
 	public boolean equals(Object arg0) {
@@ -126,7 +126,7 @@ public class ScaleRotTrans {
 			return true;
 		} else if (arg0 instanceof ScaleRotTrans) {
 			ScaleRotTrans var2 = (ScaleRotTrans) arg0;
-			return this.field4297.equals(var2.field4297) && this.field4298.method6488(var2.field4298) && this.field4299.method6488(var2.field4299);
+			return this.field4297.equals(var2.field4297) && this.trans.isEqualTo(var2.trans) && this.field4299.isEqualTo(var2.field4299);
 		} else {
 			return false;
 		}

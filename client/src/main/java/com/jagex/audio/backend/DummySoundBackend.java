@@ -4,7 +4,7 @@ import com.jagex.audio.api.AudioBuss;
 import com.jagex.audio.api.AudioEndianness;
 import com.jagex.audio.api.AudioFormat;
 import com.jagex.audio.api.SoundBackend;
-import com.jagex.audio.stream.AudioRelated2;
+import com.jagex.audio.stream.BussManager;
 import com.jagex.audio.stream.SoundRelated2;
 import com.jagex.audio.stream.SoundRelatedType1;
 import com.jagex.audio.stream.SoundRelatedType2;
@@ -26,7 +26,7 @@ public class DummySoundBackend extends SoundBackend {
 	public HashMap field10679 = new HashMap();
 
 	@ObfuscatedName("aiw.m")
-	public AudioRelated2 field10680 = new AudioRelated2(this);
+	public BussManager field10680 = new BussManager(this);
 
 	@ObfuscatedName("aiw.k")
 	public volatile boolean field10681 = false;
@@ -144,7 +144,7 @@ public class DummySoundBackend extends SoundBackend {
 			SoundRelated2[] var6 = (SoundRelated2[]) this.field10679.get(var5);
 			for (int var7 = 0; var7 < var6.length; var7++) {
 				VorbisSound var8 = new VorbisSound(2.0F);
-				var8.method3774(0, AudioFormat.field3441, AudioEndianness.field3439, 2);
+				var8.method3774(0, AudioFormat.field3441, AudioEndianness.LITTLE, 2);
 				var6[var7] = new SoundRelated2(var5, 32768, 3, var8, this);
 			}
 		}
@@ -160,7 +160,7 @@ public class DummySoundBackend extends SoundBackend {
 	@ObfuscatedName("aiw.e(I)V")
 	public void method5874() {
 		if (this.field10680 != null) {
-			this.field10680.method5849();
+			this.field10680.update();
 		}
 		Iterator var1 = this.field10679.keySet().iterator();
 		while (true) {
@@ -253,7 +253,7 @@ public class DummySoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiw.n(IILnd;Lmw;IFB)Ljava/lang/Object;")
-	public Object method5861(int arg0, int arg1, AudioFormat arg2, AudioEndianness arg3, int arg4, float arg5) {
+	public Object playSample(int arg0, int arg1, AudioFormat format, AudioEndianness endianness, int arg4, float arg5) {
 		return new Object();
 	}
 
@@ -291,7 +291,7 @@ public class DummySoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiw.u(I)Lmb;")
-	public AudioRelated2 method5880() {
+	public BussManager getBussManager() {
 		return this.field10680;
 	}
 

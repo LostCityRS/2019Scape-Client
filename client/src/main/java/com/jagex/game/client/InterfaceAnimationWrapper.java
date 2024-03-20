@@ -14,6 +14,6 @@ public class InterfaceAnimationWrapper extends AnimationWrapper {
 
 	@ObfuscatedName("aou.ag(Lfg;II)V")
 	public void method14407(SeqType arg0, int arg1) {
-		Client.audioApi.method3181(arg0, arg1);
+		Client.audioApi.playSequenceSound(arg0, arg1);
 	}
 }

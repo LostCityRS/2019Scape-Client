@@ -21,12 +21,12 @@ public class SoundSongCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agb.n(I)V")
 	public void method2890() {
-		Client.audioApi.method3174(this.field10318);
+		Client.audioApi.playSong(this.field10318);
 	}
 
 	@ObfuscatedName("agb.k(I)Z")
 	public boolean method2891() {
-		Client.audioApi.method3239(this.field10318, this.field10319);
+		Client.audioApi.preloadSong(this.field10318, this.field10319);
 		return true;
 	}
 }

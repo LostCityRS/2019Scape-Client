@@ -1,6 +1,6 @@
 package com.jagex.audio.api;
 
-import com.jagex.audio.stream.AudioRelated2;
+import com.jagex.audio.stream.BussManager;
 import com.jagex.audio.stream.SoundRelated2;
 import com.jagex.audio.stream.SoundRelatedType2;
 import deob.ObfuscatedName;
@@ -9,7 +9,7 @@ import deob.ObfuscatedName;
 public abstract class SoundBackend {
 
 	@ObfuscatedName("mt.n(IILnd;Lmw;IFB)Ljava/lang/Object;")
-	public abstract Object method5861(int arg0, int arg1, AudioFormat arg2, AudioEndianness arg3, int arg4, float arg5);
+	public abstract Object playSample(int arg0, int arg1, AudioFormat format, AudioEndianness endianness, int arg4, float arg5);
 
 	@ObfuscatedName("mt.m(Ljava/lang/Object;I)V")
 	public abstract void method5863(Object arg0);
@@ -33,5 +33,5 @@ public abstract class SoundBackend {
 	public abstract void method5875(Object arg0, byte[] arg1, int arg2, int arg3);
 
 	@ObfuscatedName("mt.u(I)Lmb;")
-	public abstract AudioRelated2 method5880();
+	public abstract BussManager getBussManager();
 }

@@ -107,11 +107,11 @@ public abstract class LookatSpline extends Lookat {
 
 	@ObfuscatedName("ano.m(I)Lox;")
 	public Vector3 method14133() {
-		Vector3 var1 = Vector3.method6482();
+		Vector3 var1 = Vector3.create();
 		double[] var2 = this.field11872[this.field11870].method6765(this.field11873);
-		var1.field4308 = (float) var2[0];
-		var1.field4311 = (float) var2[1];
-		var1.field4313 = (float) var2[2];
+		var1.x = (float) var2[0];
+		var1.y = (float) var2[1];
+		var1.z = (float) var2[2];
 		return var1;
 	}
 
@@ -135,19 +135,19 @@ public abstract class LookatSpline extends Lookat {
 		var7[2] -= arg3;
 		var6[1] *= -1.0D;
 		var7[1] *= -1.0D;
-		Vector3 var8 = Vector3.method6482();
-		var8.field4308 = (float) (var7[0] - var6[0]);
-		var8.field4311 = (float) (var7[1] - var6[1]);
-		var8.field4313 = (float) (var7[2] - var6[2]);
-		var8.method6513();
+		Vector3 var8 = Vector3.create();
+		var8.x = (float) (var7[0] - var6[0]);
+		var8.y = (float) (var7[1] - var6[1]);
+		var8.z = (float) (var7[2] - var6[2]);
+		var8.normalise();
 		Quaternion var9 = new Quaternion();
 		var9.method6413(var8, arg4);
 		Vector3 var10 = Vector3.create(0.0F, 1.0F, 0.0F);
-		Vector3 var11 = Vector3.method6587(var8, var10);
-		Vector3 var12 = Vector3.method6587(var11, var8);
-		var12.method6526(var9);
-		arg1.method6296(var6[0], var6[1], var6[2], var7[0], var7[1], var7[2], var12.field4308, var12.field4311, var12.field4313);
-		var12.method6486();
+		Vector3 var11 = Vector3.cross(var8, var10);
+		Vector3 var12 = Vector3.cross(var11, var8);
+		var12.rotate(var9);
+		arg1.method6296(var6[0], var6[1], var6[2], var7[0], var7[1], var7[2], var12.x, var12.y, var12.z);
+		var12.release();
 	}
 
 	@ObfuscatedName("ano.w(Lalw;I)V")

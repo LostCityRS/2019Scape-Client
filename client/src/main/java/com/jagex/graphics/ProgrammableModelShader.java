@@ -99,9 +99,9 @@ public class ProgrammableModelShader extends ModelShader {
 		this.field10479.setUniform4x4(this.field10501[4], this.field10499);
 		this.field10479.setUniform4x2(this.field10501[5], this.field2982);
 		this.field10479.setUniform(this.field10501[7], this.field2979.field4244, this.field2979.field4243, this.field2979.field4242, this.field2979.field4245);
-		this.field10479.setUniform(this.field10501[8], this.field2973.field4308, this.field2973.field4311, this.field2973.field4313);
+		this.field10479.setUniform(this.field10501[8], this.field2973.x, this.field2973.y, this.field2973.z);
 		this.field10479.setUniform(this.field10501[9], this.field2984.field4244, this.field2984.field4243, this.field2984.field4242, this.field2984.field4245);
-		this.field10479.setUniform(this.field10501[10], this.field2975.field4308, this.field2975.field4311, this.field2975.field4313);
+		this.field10479.setUniform(this.field10501[10], this.field2975.x, this.field2975.y, this.field2975.z);
 		this.field2963.method16079(PrimitiveType.field3403, this.field2981, this.field2983, this.field2972, this.field2962);
 	}
 
@@ -118,7 +118,7 @@ public class ProgrammableModelShader extends ModelShader {
 		this.field10479.setCurrentProgram(this.field10500[18]);
 		this.field10501 = this.field10473[this.field10479.getCurrentProgramIndex()];
 		this.field10479.enable();
-		this.field10479.setUniform(this.field10501[6], this.field2969.field4308, this.field2969.field4311, this.field2969.field4313);
+		this.field10479.setUniform(this.field10501[6], this.field2969.x, this.field2969.y, this.field2969.z);
 		this.field10479.setUniform(this.field10501[16], this.field2970, this.field2971, 0.0F, 0.0F);
 		this.method16620(0);
 	}
@@ -129,9 +129,9 @@ public class ProgrammableModelShader extends ModelShader {
 		this.field10479.setUniform4x4(this.field10501[4], this.field10499);
 		this.field10479.setUniform4x2(this.field10501[5], this.field2982);
 		this.field10479.setUniform(this.field10501[7], this.field2979.field4244, this.field2979.field4243, this.field2979.field4242, this.field2979.field4245);
-		this.field10479.setUniform(this.field10501[8], this.field2973.field4308, this.field2973.field4311, this.field2973.field4313);
+		this.field10479.setUniform(this.field10501[8], this.field2973.x, this.field2973.y, this.field2973.z);
 		this.field10479.setUniform(this.field10501[9], this.field2984.field4244, this.field2984.field4243, this.field2984.field4242, this.field2984.field4245);
-		this.field10479.setUniform(this.field10501[10], this.field2975.field4308, this.field2975.field4311, this.field2975.field4313);
+		this.field10479.setUniform(this.field10501[10], this.field2975.x, this.field2975.y, this.field2975.z);
 		this.field10479.setUniform(this.field10501[11], this.field2976);
 		this.field10479.setUniform(this.field10501[12], this.field2977);
 		this.field10479.setUniform(this.field10501[13], this.field2978);
@@ -156,7 +156,7 @@ public class ProgrammableModelShader extends ModelShader {
 		this.field10479.setCurrentProgram(this.field10500[arg0 + 7]);
 		this.field10501 = this.field10473[this.field10479.getCurrentProgramIndex()];
 		this.field10479.enable();
-		this.field10479.setUniform(this.field10501[6], this.field2969.field4308, this.field2969.field4311, this.field2969.field4313);
+		this.field10479.setUniform(this.field10501[6], this.field2969.x, this.field2969.y, this.field2969.z);
 		this.field10479.setUniform(this.field10501[16], this.field2970, this.field2971, 0.0F, 0.0F);
 		this.method16620(arg0);
 	}
@@ -167,7 +167,7 @@ public class ProgrammableModelShader extends ModelShader {
 		this.field10501 = this.field10473[this.field10479.getCurrentProgramIndex()];
 		this.field10479.enable();
 		this.field10479.setUniform3x3(this.field10501[15], this.field2980);
-		this.field10479.setUniform(this.field10501[6], this.field2969.field4308, this.field2969.field4311, this.field2969.field4313);
+		this.field10479.setUniform(this.field10501[6], this.field2969.x, this.field2969.y, this.field2969.z);
 		this.field10479.setUniform(this.field10501[3], 1, this.field2967);
 		this.method16620(arg0);
 	}

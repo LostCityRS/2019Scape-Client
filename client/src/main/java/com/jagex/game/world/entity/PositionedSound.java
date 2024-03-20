@@ -1,5 +1,6 @@
 package com.jagex.game.world.entity;
 
+import com.jagex.audio.api.SubBussType;
 import com.jagex.audio.stream.*;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
@@ -102,12 +103,12 @@ public class PositionedSound extends Node {
 		for (PositionedSound var1 = (PositionedSound) field11346.peekFront(); var1 != null; var1 = (PositionedSound) field11346.prev()) {
 			if (var1.field11371 != null) {
 				var1.field11371.method7380(150);
-				Client.audioApi.method3185(var1.field11371);
+				Client.audioApi.play(var1.field11371);
 				var1.field11371 = null;
 			}
 			if (var1.field11372 != null) {
 				var1.field11372.method7380(150);
-				Client.audioApi.method3185(var1.field11372);
+				Client.audioApi.play(var1.field11372);
 				var1.field11372 = null;
 			}
 			var1.remove();
@@ -118,7 +119,7 @@ public class PositionedSound extends Node {
 		for (PositionedSound var2 = (PositionedSound) field11347.peekFront(); var2 != null; var2 = (PositionedSound) field11347.prev()) {
 			if (var2.field11371 != null) {
 				var2.field11371.method7380(150);
-				Client.audioApi.method3185(var2.field11371);
+				Client.audioApi.play(var2.field11371);
 				var2.field11371 = null;
 			}
 			var2.remove();
@@ -126,7 +127,7 @@ public class PositionedSound extends Node {
 		for (PositionedSound var3 = (PositionedSound) field11366.peekFront(); var3 != null; var3 = (PositionedSound) field11366.prev()) {
 			if (var3.field11371 != null) {
 				var3.field11371.method7380(150);
-				Client.audioApi.method3185(var3.field11371);
+				Client.audioApi.play(var3.field11371);
 				var3.field11371 = null;
 			}
 			var3.remove();
@@ -204,7 +205,7 @@ public class PositionedSound extends Node {
 		}
 		if (this.field11370 != var1 && this.field11371 != null && this.field11371 != null) {
 			this.field11371.method7380(100);
-			Client.audioApi.method3185(this.field11371);
+			Client.audioApi.play(this.field11371);
 			this.field11371 = null;
 		}
 	}
@@ -242,8 +243,8 @@ public class PositionedSound extends Node {
 				var7.field11354 = var7.field11373 + (int) (Math.random() * (double) (var7.field11374 - var7.field11373));
 			}
 			field11346.pushBack(var7);
-			Client.audioApi.method3200(var7.field11370);
-			Client.audioApi.method3160(var7.field11375);
+			Client.audioApi.preloadSounds(var7.field11370);
+			Client.audioApi.loadSounds(var7.field11375);
 		} else if (arg5 != null) {
 			var7.field11345 = arg5;
 			NPCType var10 = arg5.npcType;
@@ -260,10 +261,10 @@ public class PositionedSound extends Node {
 				var7.field11369 = var10.field2700;
 				var7.field11368 = var10.field2761;
 				var7.field11356 = var10.bgsoundsize << 9;
-				Client.audioApi.method3200(var10.field2746);
-				Client.audioApi.method3200(var10.field2747);
-				Client.audioApi.method3200(var10.field2748);
-				Client.audioApi.method3200(var10.field2749);
+				Client.audioApi.preloadSounds(var10.field2746);
+				Client.audioApi.preloadSounds(var10.field2747);
+				Client.audioApi.preloadSounds(var10.field2748);
+				Client.audioApi.preloadSounds(var10.field2749);
 			}
 			field11347.pushBack(var7);
 		} else if (arg6 != null) {
@@ -277,10 +278,10 @@ public class PositionedSound extends Node {
 			var7.field11368 = 256;
 			var7.field11356 = 0;
 			field11366.pushNode(var7, (long) arg6.localPlayerIndex);
-			Client.audioApi.method3200(arg6.field12063);
-			Client.audioApi.method3200(arg6.field12049);
-			Client.audioApi.method3200(arg6.field12065);
-			Client.audioApi.method3200(arg6.field12066);
+			Client.audioApi.preloadSounds(arg6.field12063);
+			Client.audioApi.preloadSounds(arg6.field12049);
+			Client.audioApi.preloadSounds(arg6.field12065);
+			Client.audioApi.preloadSounds(arg6.field12066);
 		}
 	}
 
@@ -290,7 +291,7 @@ public class PositionedSound extends Node {
 			if (var4.field11349 == arg0 && arg1 << 9 == var4.field11358 && arg2 << 9 == var4.field11351 && var4.field11348.id == arg3.id) {
 				if (var4.field11371 != null) {
 					var4.field11371.method7380(100);
-					Client.audioApi.method3185(var4.field11371);
+					Client.audioApi.play(var4.field11371);
 					var4.field11371 = null;
 				}
 				var4.remove();
@@ -305,7 +306,7 @@ public class PositionedSound extends Node {
 			if (var1.field11345 == arg0) {
 				if (var1.field11371 != null) {
 					var1.field11371.method7380(100);
-					Client.audioApi.method3185(var1.field11371);
+					Client.audioApi.play(var1.field11371);
 					var1.field11371 = null;
 				}
 				var1.remove();
@@ -322,7 +323,7 @@ public class PositionedSound extends Node {
 		}
 		if (var1.field11371 != null) {
 			var1.field11371.method7380(100);
-			Client.audioApi.method3185(var1.field11371);
+			Client.audioApi.play(var1.field11371);
 			var1.field11371 = null;
 		}
 		var1.remove();
@@ -411,7 +412,7 @@ public class PositionedSound extends Node {
 						var5.field11359 -= 512;
 						if (var5.field11359 <= 0) {
 							var5.field11371.method7380(100);
-							Client.audioApi.method3185(var5.field11371);
+							Client.audioApi.play(var5.field11371);
 							var5.field11371 = null;
 							var11 = true;
 						}
@@ -423,11 +424,11 @@ public class PositionedSound extends Node {
 					}
 				}
 			}
-			Vector3 var12 = var5.field11345.method10536().field4298;
-			var5.field11358 = (int) var12.field4308;
-			var5.field11352 = (int) var12.field4308 + (var5.field11345.size() << 8);
-			var5.field11351 = (int) var12.field4313;
-			var5.field11353 = (int) var12.field4313 + (var5.field11345.size() << 8);
+			Vector3 var12 = var5.field11345.getTransform().trans;
+			var5.field11358 = (int) var12.x;
+			var5.field11352 = (int) var12.x + (var5.field11345.size() << 8);
+			var5.field11351 = (int) var12.z;
+			var5.field11353 = (int) var12.z + (var5.field11345.size() << 8);
 			var5.field11349 = var5.field11345.level;
 			method7896(var5, arg0, arg1, arg2, arg3);
 		}
@@ -455,7 +456,7 @@ public class PositionedSound extends Node {
 						var13.field11359 -= 512;
 						if (var13.field11359 <= 0) {
 							var13.field11371.method7380(100);
-							Client.audioApi.method3185(var13.field11371);
+							Client.audioApi.play(var13.field11371);
 							var13.field11371 = null;
 							var18 = true;
 						}
@@ -467,11 +468,11 @@ public class PositionedSound extends Node {
 					}
 				}
 			}
-			Vector3 var19 = var13.field11361.method10536().field4298;
-			var13.field11358 = (int) var19.field4308;
-			var13.field11352 = (int) var19.field4308 + (var13.field11361.size() << 8);
-			var13.field11351 = (int) var19.field4313;
-			var13.field11353 = (int) var19.field4313 + (var13.field11361.size() << 8);
+			Vector3 var19 = var13.field11361.getTransform().trans;
+			var13.field11358 = (int) var19.x;
+			var13.field11352 = (int) var19.x + (var13.field11361.size() << 8);
+			var13.field11351 = (int) var19.z;
+			var13.field11353 = (int) var19.z + (var13.field11361.size() << 8);
 			var13.field11349 = var13.field11361.level;
 			method7896(var13, arg0, arg1, arg2, arg3);
 		}
@@ -485,21 +486,21 @@ public class PositionedSound extends Node {
 		int var5 = arg0.field11359;
 		if (arg0.field11357 != 0 && Client.preferences.backgroundSoundVolume.getValue() != 0 && arg0.field11349 == arg1) {
 			if (arg0.field11371 != null && (arg0.field11371.method7385() == SoundVolume.field4953 || arg0.field11371.method7385() == SoundVolume.field4947)) {
-				Client.audioApi.method3185(arg0.field11371);
+				Client.audioApi.play(arg0.field11371);
 				arg0.field11371 = null;
 			}
 			if (arg0.field11371 != null) {
 				int var10 = (int) ((float) (arg0.field11352 - arg0.field11358) * 0.5F + (float) arg0.field11358);
 				int var11 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
-				arg0.field11350.field4308 = var10;
-				arg0.field11350.field4313 = var11;
+				arg0.field11350.x = var10;
+				arg0.field11350.z = var11;
 			} else if (arg0.field11370 >= 0) {
 				short var6 = 256;
 				int var7 = (int) ((float) (arg0.field11352 - arg0.field11358) * 0.5F + (float) arg0.field11358);
 				int var8 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
-				arg0.field11350.field4308 = var7;
-				arg0.field11350.field4313 = var8;
-				arg0.field11371 = Client.audioApi.method3236(SoundType.field1821, arg0, arg0.field11370, -1, 0, SubBussType.field1808.method3034(), SoundShape.field1838, (float) arg0.field11356, (float) arg0.field11357, arg0.field11350, 0, var6, false);
+				arg0.field11350.x = var7;
+				arg0.field11350.z = var8;
+				arg0.field11371 = Client.audioApi.createSound(SoundType.field1821, arg0, arg0.field11370, -1, 0, SubBussType.LOCATION_GENERIC_SUB.getId(), SoundShape.field1838, (float) arg0.field11356, (float) arg0.field11357, arg0.field11350, 0, var6, false);
 				if (arg0.field11371 != null) {
 					float var9 = (float) var5 / 255.0F;
 					arg0.field11371.method7403(var9, 150);
@@ -509,10 +510,10 @@ public class PositionedSound extends Node {
 			if (arg0.field11372 != null) {
 				int var16 = (int) ((float) (arg0.field11352 - arg0.field11358) * 0.5F + (float) arg0.field11358);
 				int var17 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
-				arg0.field11355.field4308 = var16;
-				arg0.field11355.field4313 = var17;
+				arg0.field11355.x = var16;
+				arg0.field11355.z = var17;
 				if (arg0.field11372.method7385() == SoundVolume.field4953 || arg0.field11372.method7385() == SoundVolume.field4947) {
-					Client.audioApi.method3185(arg0.field11372);
+					Client.audioApi.play(arg0.field11372);
 					arg0.field11372 = null;
 				}
 			} else if (arg0.field11375 != null && (arg0.field11354 -= arg4) <= 0) {
@@ -520,9 +521,9 @@ public class PositionedSound extends Node {
 				int var13 = (int) (Math.random() * (double) arg0.field11375.length);
 				int var14 = (int) ((float) (arg0.field11352 - arg0.field11358) * 0.5F + (float) arg0.field11358);
 				int var15 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
-				arg0.field11355.field4308 = var14;
-				arg0.field11355.field4313 = var15;
-				arg0.field11372 = Client.audioApi.method3236(SoundType.field1822, arg0, arg0.field11375[var13], 0, var5, SubBussType.field1799.method3034(), SoundShape.field1838, (float) arg0.field11356, (float) (arg0.field11357 + arg0.field11356), arg0.field11355, 0, var12, false);
+				arg0.field11355.x = var14;
+				arg0.field11355.z = var15;
+				arg0.field11372 = Client.audioApi.createSound(SoundType.field1822, arg0, arg0.field11375[var13], 0, var5, SubBussType.LOCATION_RANDOM_SUB.getId(), SoundShape.field1838, (float) arg0.field11356, (float) (arg0.field11357 + arg0.field11356), arg0.field11355, 0, var12, false);
 				if (arg0.field11372 != null) {
 					arg0.field11372.method7441();
 				}
@@ -530,7 +531,7 @@ public class PositionedSound extends Node {
 			}
 		} else if (arg0.field11371 != null) {
 			arg0.field11371.method7380(100);
-			Client.audioApi.method3185(arg0.field11371);
+			Client.audioApi.play(arg0.field11371);
 			arg0.field11371 = null;
 		}
 	}

@@ -3383,14 +3383,14 @@ public class GpuModel extends Model {
 			WaterFogData var3 = this.field9730.method16053();
 			var2.field2979.method6247(0.0F, 1.0F, 0.0F, (float) -this.field9730.field10164);
 			var2.field2979.method6252(3.0F / (float) var3.scale);
-			var2.field2973.method6491((float) (var3.colour >> 16 & 0xFF) / 255.0F, (float) (var3.colour >> 8 & 0xFF) / 255.0F, (float) (var3.colour >> 0 & 0xFF) / 255.0F);
+			var2.field2973.setTo((float) (var3.colour >> 16 & 0xFF) / 255.0F, (float) (var3.colour >> 8 & 0xFF) / 255.0F, (float) (var3.colour >> 0 & 0xFF) / 255.0F);
 		} else {
 			var2.field2979.method6247(0.0F, 0.0F, 0.0F, 0.0F);
-			var2.field2973.method6491(0.0F, 0.0F, 0.0F);
+			var2.field2973.setTo(0.0F, 0.0F, 0.0F);
 		}
 		if (this.field9730.field10169 > 0) {
 			var2.field2984.method6247(0.0F, 0.0F, 1.0F, -this.field9730.field10171);
-			var2.field2975.method6491((float) (this.field9730.field10191 >> 16 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 8 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 0 & 0xFF) / 255.0F);
+			var2.field2975.setTo((float) (this.field9730.field10191 >> 16 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 8 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 0 & 0xFF) / 255.0F);
 			this.field9730.field10066.setToMatrix4x3(arg0);
 			this.field9730.field10066.method6631();
 			var2.field2979.method6265(this.field9730.field10066);
@@ -3401,7 +3401,7 @@ public class GpuModel extends Model {
 			var2.field2984.method6252(1.0F / (this.field9730.field10119 - this.field9730.field10171));
 		} else {
 			var2.field2984.method6247(0.0F, 0.0F, 0.0F, 0.0F);
-			var2.field2975.method6491(0.0F, 0.0F, 0.0F);
+			var2.field2975.setTo(0.0F, 0.0F, 0.0F);
 		}
 		if ((this.field9700 & 0x37) == 0) {
 			this.field9730.method16177(this.field9730.field10184);
@@ -3446,11 +3446,11 @@ public class GpuModel extends Model {
 			if (this.field9730.field10099) {
 				this.field9730.method16118(true);
 			} else {
-				var2.field2976.method6491(this.field9730.field10114[0], this.field9730.field10114[1], this.field9730.field10114[2]);
+				var2.field2976.setTo(this.field9730.field10114[0], this.field9730.field10114[1], this.field9730.field10114[2]);
 				var2.field2976.method6521(var12);
-				var2.field2977.method6491(this.field9730.field10142 * this.field9730.field10123, this.field9730.field10123 * this.field9730.field10120, this.field9730.field10210 * this.field9730.field10123);
-				var2.field2978.method6491(-this.field9730.field10124 * this.field9730.field10142, -this.field9730.field10124 * this.field9730.field10120, -this.field9730.field10124 * this.field9730.field10210);
-				var2.field2968.method6491(this.field9730.field10142 * this.field9730.field10122, this.field9730.field10122 * this.field9730.field10120, this.field9730.field10210 * this.field9730.field10122);
+				var2.field2977.setTo(this.field9730.field10142 * this.field9730.field10123, this.field9730.field10123 * this.field9730.field10120, this.field9730.field10210 * this.field9730.field10123);
+				var2.field2978.setTo(-this.field9730.field10124 * this.field9730.field10142, -this.field9730.field10124 * this.field9730.field10120, -this.field9730.field10124 * this.field9730.field10210);
+				var2.field2968.setTo(this.field9730.field10142 * this.field9730.field10122, this.field9730.field10122 * this.field9730.field10120, this.field9730.field10210 * this.field9730.field10122);
 				if (this.field9730.field10126 > 0) {
 					var13 = this.field9730.field10126;
 					Vector3 var14 = this.field9730.field10054;
@@ -3459,9 +3459,9 @@ public class GpuModel extends Model {
 						int var17 = var16.method17624();
 						var14.setTo(var16.field11331);
 						var14.method6567(var12);
-						var2.field2965[var15 * 4] = var14.field4308;
-						var2.field2965[var15 * 4 + 1] = var14.field4311;
-						var2.field2965[var15 * 4 + 2] = var14.field4313;
+						var2.field2965[var15 * 4] = var14.x;
+						var2.field2965[var15 * 4 + 1] = var14.y;
+						var2.field2965[var15 * 4 + 2] = var14.z;
 						var2.field2965[var15 * 4 + 3] = 1.0F / (float) (var16.method17608() * var16.method17608());
 						float var18 = var16.method17610() / 255.0F;
 						var2.field2964[var15 * 4] = (float) (var17 >> 16 & 0xFF) * var18;
@@ -3501,7 +3501,7 @@ public class GpuModel extends Model {
 				var2.field2962 = var21 - var20;
 				switch(var23) {
 					case 1:
-						var2.field2969.method6491(this.field9730.field10035.entries[12], this.field9730.field10035.entries[13], this.field9730.field10035.entries[14]);
+						var2.field2969.setTo(this.field9730.field10035.entries[12], this.field9730.field10035.entries[13], this.field9730.field10035.entries[14]);
 						var2.field2969.method6567(var12);
 						var2.method5031(var13);
 						break;
@@ -3531,7 +3531,7 @@ public class GpuModel extends Model {
 						var2.method5019(!Material.method261(var23));
 						break;
 					case 7:
-						var2.field2969.method6491(this.field9730.field10035.entries[12], this.field9730.field10035.entries[13], this.field9730.field10035.entries[14]);
+						var2.field2969.setTo(this.field9730.field10035.entries[12], this.field9730.field10035.entries[13], this.field9730.field10035.entries[14]);
 						var2.field2969.method6567(var12);
 						var2.field2980.setToMatrix4x3(arg0);
 						var2.field2967 = this.field9730.method15994();
@@ -3552,9 +3552,9 @@ public class GpuModel extends Model {
 		ParticleShader var3 = this.field9730.field10151;
 		boolean var4 = this.field9730.field10169 > 0;
 		if (var4) {
-			var3.field2990.method6491((float) (this.field9730.field10191 >> 16 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 8 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 0 & 0xFF) / 255.0F);
+			var3.field2990.setTo((float) (this.field9730.field10191 >> 16 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 8 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 0 & 0xFF) / 255.0F);
 		} else {
-			var3.field2990.method6491(0.0F, 0.0F, 0.0F);
+			var3.field2990.setTo(0.0F, 0.0F, 0.0F);
 		}
 		for (int var5 = 0; var5 < this.field9746; var5++) {
 			GpuModelRelated2 var6 = this.field9758[var5];
@@ -3843,15 +3843,15 @@ public class GpuModel extends Model {
 				var82.clear();
 				for (int var83 = 0; var83 < this.field9710; var83++) {
 					Vector3 var84 = new Vector3((float) var68[var83], (float) var69[var83], (float) var70[var83]);
-					if (var84.method6519() != 0.0F) {
+					if (var84.length() != 0.0F) {
 						if (var71[var83] > 1) {
-							var84.method6511((float) var71[var83]);
+							var84.divide((float) var71[var83]);
 						}
-						var84.method6513();
+						var84.normalise();
 					}
-					var82.putFloat(var84.field4308);
-					var82.putFloat(var84.field4311);
-					var82.putFloat(var84.field4313);
+					var82.putFloat(var84.x);
+					var82.putFloat(var84.y);
+					var82.putFloat(var84.z);
 				}
 				var67.upload(0, var82.position(), this.field9730.temporaryBufferAddress);
 			} else {
@@ -3859,17 +3859,17 @@ public class GpuModel extends Model {
 				long var74 = var67.lock(0, var73);
 				for (int var76 = 0; var76 < this.field9710; var76++) {
 					Vector3 var77 = new Vector3((float) var68[var76], (float) var69[var76], (float) var70[var76]);
-					if (var77.method6519() != 0.0F) {
+					if (var77.length() != 0.0F) {
 						if (var71[var76] > 1) {
-							var77.method6511((float) var71[var76]);
+							var77.divide((float) var71[var76]);
 						}
-						var77.method6513();
+						var77.normalise();
 					}
-					var72.putFloat(var74, var77.field4308);
+					var72.putFloat(var74, var77.x);
 					long var78 = var74 + 4L;
-					var72.putFloat(var78, var77.field4311);
+					var72.putFloat(var78, var77.y);
 					long var80 = var78 + 4L;
-					var72.putFloat(var80, var77.field4313);
+					var72.putFloat(var80, var77.z);
 					var74 = var80 + 4L;
 				}
 				var67.unlock();

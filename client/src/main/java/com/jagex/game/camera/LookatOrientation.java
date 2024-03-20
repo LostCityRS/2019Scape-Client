@@ -83,18 +83,18 @@ public class LookatOrientation extends Lookat {
 	@ObfuscatedName("anb.m(I)Lox;")
 	public Vector3 method14133() {
 		Vector3 var1 = new Vector3(0.0F, 0.0F, 1000.0F);
-		var1.method6526(Quaternion.method6419(this.field11856));
-		var1.field4311 *= -1.0F;
-		var1.method6497(this.field8479.method4714());
+		var1.rotate(Quaternion.opposite(this.field11856));
+		var1.y *= -1.0F;
+		var1.add(this.field8479.method4714());
 		return var1;
 	}
 
 	@ObfuscatedName("anb.k(I)Lox;")
 	public Vector3 method14135() {
 		Vector3 var1 = new Vector3(0.0F, 0.0F, 1000.0F);
-		var1.method6526(Quaternion.method6419(this.field11850));
-		var1.field4311 *= -1.0F;
-		var1.method6497(this.field8479.method4714());
+		var1.rotate(Quaternion.opposite(this.field11850));
+		var1.y *= -1.0F;
+		var1.add(this.field8479.method4714());
 		return var1;
 	}
 
@@ -115,13 +115,13 @@ public class LookatOrientation extends Lookat {
 		if (field11860 != 0 || field11853 != 0) {
 			Quaternion var3 = Quaternion.method6469();
 			var3.method6414(1.0F, 0.0F, 0.0F, (float) ((double) field11860 * 3.141592653589793D * 2.0D) / 16384.0F);
-			var2.method6424(var3);
+			var2.multiply(var3);
 			Vector3 var4 = Vector3.create(0.0F, 1.0F, 0.0F);
-			var4.method6526(var2);
+			var4.rotate(var2);
 			Quaternion var5 = Quaternion.method6469();
-			var4.method6513();
+			var4.normalise();
 			var5.method6413(var4, (float) ((double) field11853 * 3.141592653589793D * 2.0D) / 16384.0F);
-			var2.method6424(var5);
+			var2.multiply(var5);
 			this.method18781(var2);
 			field11860 = 0;
 			field11853 = 0;
@@ -134,49 +134,49 @@ public class LookatOrientation extends Lookat {
 		CoordFine var7 = var6.method5221();
 		Vector3 var8 = var7.method17853();
 		Vector3 var9 = Vector3.create(0.0F, 0.0F, (float) field11855);
-		var9.method6526(var2);
-		var9.field4311 *= -1.0F;
-		var8.method6497(var9);
+		var9.rotate(var2);
+		var9.y *= -1.0F;
+		var8.add(var9);
 		Vector3 var10 = Vector3.create((float) field11852, 0.0F, 0.0F);
-		var10.method6526(var2);
-		var10.field4311 *= -1.0F;
-		var8.method6497(var10);
+		var10.rotate(var2);
+		var10.y *= -1.0F;
+		var8.add(var10);
 		this.method18790(var8);
-		var6.method16671(new CoordFine(var7.level, (int) var8.field4308, (int) var8.field4311, (int) var8.field4313));
+		var6.method16671(new CoordFine(var7.level, (int) var8.x, (int) var8.y, (int) var8.z));
 		field11852 = 0;
 		field11855 = 0;
 	}
 
 	@ObfuscatedName("anb.i(Lox;B)V")
 	public void method18790(Vector3 arg0) {
-		if (field11857 != -1.0F && arg0.field4308 < field11857) {
-			arg0.field4308 = field11857;
+		if (field11857 != -1.0F && arg0.x < field11857) {
+			arg0.x = field11857;
 		}
-		if (field11851 != -1.0F && arg0.field4308 > field11851) {
-			arg0.field4308 = field11851;
+		if (field11851 != -1.0F && arg0.x > field11851) {
+			arg0.x = field11851;
 		}
-		if (field11858 != -1.0F && arg0.field4311 < field11858) {
-			arg0.field4311 = field11858;
+		if (field11858 != -1.0F && arg0.y < field11858) {
+			arg0.y = field11858;
 		}
-		if (field11859 != -1.0F && arg0.field4311 > field11859) {
-			arg0.field4311 = field11859;
+		if (field11859 != -1.0F && arg0.y > field11859) {
+			arg0.y = field11859;
 		}
-		if (field11854 != -1.0F && arg0.field4313 < field11854) {
-			arg0.field4313 = field11854;
+		if (field11854 != -1.0F && arg0.z < field11854) {
+			arg0.z = field11854;
 		}
-		if (field11861 != -1.0F && arg0.field4313 > field11861) {
-			arg0.field4313 = field11861;
+		if (field11861 != -1.0F && arg0.z > field11861) {
+			arg0.z = field11861;
 		}
 	}
 
 	@ObfuscatedName("anb.j(Lox;IIIIIIB)V")
 	public void method18780(Vector3 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		field11857 = arg1 == -1 ? -1.0F : arg0.field4308 - (float) (arg1 * 512);
-		field11851 = arg2 == -1 ? -1.0F : (float) (arg2 * 512) + arg0.field4308;
-		field11858 = arg5 == -1 ? -1.0F : -arg0.field4311 - (float) (arg5 * 512);
-		field11859 = arg6 == -1 ? -1.0F : (float) (arg6 * 512) + -arg0.field4311;
-		field11854 = arg3 == -1 ? -1.0F : arg0.field4313 - (float) (arg3 * 512);
-		field11861 = arg4 == -1 ? -1.0F : (float) (arg4 * 512) + arg0.field4313;
+		field11857 = arg1 == -1 ? -1.0F : arg0.x - (float) (arg1 * 512);
+		field11851 = arg2 == -1 ? -1.0F : (float) (arg2 * 512) + arg0.x;
+		field11858 = arg5 == -1 ? -1.0F : -arg0.y - (float) (arg5 * 512);
+		field11859 = arg6 == -1 ? -1.0F : (float) (arg6 * 512) + -arg0.y;
+		field11854 = arg3 == -1 ? -1.0F : arg0.z - (float) (arg3 * 512);
+		field11861 = arg4 == -1 ? -1.0F : (float) (arg4 * 512) + arg0.z;
 	}
 
 	@ObfuscatedName("anb.n(I)Z")
@@ -191,14 +191,14 @@ public class LookatOrientation extends Lookat {
 
 	@ObfuscatedName("anb.f(Lju;Lou;IIFB)V")
 	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
-		Vector3 var6 = Vector3.method6484(this.field8479.method4714());
-		var6.field4308 -= arg2;
-		var6.field4313 -= arg3;
-		var6.field4311 *= -1.0F;
-		arg1.method6302(Quaternion.method6419(this.field11856));
+		Vector3 var6 = Vector3.create(this.field8479.method4714());
+		var6.x -= arg2;
+		var6.z -= arg3;
+		var6.y *= -1.0F;
+		arg1.method6302(Quaternion.opposite(this.field11856));
 		arg1.method6314(var6);
 		arg1.method6300();
-		var6.method6486();
+		var6.release();
 	}
 
 	@ObfuscatedName("anb.w(Lalw;I)V")

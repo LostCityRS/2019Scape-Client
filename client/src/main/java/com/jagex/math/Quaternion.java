@@ -52,7 +52,7 @@ public final class Quaternion {
 	}
 
 	@ObfuscatedName("ov.m(FFFF)Lov;")
-	public static Quaternion method6411(float arg0, float arg1, float arg2, float arg3) {
+	public static Quaternion create(float arg0, float arg1, float arg2, float arg3) {
 		Quaternion[] var4 = field4303;
 		synchronized (field4303) {
 			if (field4302 == 0) {
@@ -78,7 +78,7 @@ public final class Quaternion {
 	}
 
 	@ObfuscatedName("ov.f()V")
-	public void method6407() {
+	public void release() {
 		Quaternion[] var1 = field4303;
 		synchronized (field4303) {
 			if (field4302 < field4306 - 1) {
@@ -136,7 +136,7 @@ public final class Quaternion {
 
 	@ObfuscatedName("ov.z(Lox;F)V")
 	public void method6413(Vector3 arg0, float arg1) {
-		this.method6414(arg0.field4308, arg0.field4311, arg0.field4313, arg1);
+		this.method6414(arg0.x, arg0.y, arg0.z, arg1);
 	}
 
 	@ObfuscatedName("ov.p(FFFF)V")
@@ -154,10 +154,10 @@ public final class Quaternion {
 		this.method6414(0.0F, 1.0F, 0.0F, arg0);
 		Quaternion var4 = method6469();
 		var4.method6414(1.0F, 0.0F, 0.0F, arg1);
-		this.method6424(var4);
+		this.multiply(var4);
 		var4.method6414(0.0F, 0.0F, 1.0F, arg2);
-		this.method6424(var4);
-		var4.method6407();
+		this.multiply(var4);
+		var4.release();
 	}
 
 	@ObfuscatedName("ov.c()V")
@@ -184,7 +184,7 @@ public final class Quaternion {
 	}
 
 	@ObfuscatedName("ov.o(Lov;)Lov;")
-	public static final Quaternion method6419(Quaternion arg0) {
+	public static final Quaternion opposite(Quaternion arg0) {
 		Quaternion var1 = method6443(arg0);
 		var1.method6418();
 		return var1;
@@ -223,14 +223,14 @@ public final class Quaternion {
 	}
 
 	@ObfuscatedName("ov.h(Lov;)V")
-	public final void method6424(Quaternion arg0) {
+	public final void multiply(Quaternion arg0) {
 		this.method6448(this.field4305 * arg0.field4304 + this.field4301 * arg0.field4300 + this.field4300 * arg0.field4301 - this.field4304 * arg0.field4305, this.field4301 * arg0.field4305 + this.field4300 * arg0.field4304 + (this.field4304 * arg0.field4300 - this.field4305 * arg0.field4301), this.field4300 * arg0.field4305 + (this.field4305 * arg0.field4300 + this.field4304 * arg0.field4301 - this.field4301 * arg0.field4304), this.field4300 * arg0.field4300 - this.field4301 * arg0.field4301 - this.field4304 * arg0.field4304 - this.field4305 * arg0.field4305);
 	}
 
 	@ObfuscatedName("ov.a(Lov;Lov;)Lov;")
 	public static final Quaternion method6425(Quaternion arg0, Quaternion arg1) {
 		Quaternion var2 = method6443(arg0);
-		var2.method6424(arg1);
+		var2.multiply(arg1);
 		return var2;
 	}
 
@@ -257,7 +257,7 @@ public final class Quaternion {
 		this.method6426(1.0F - arg1);
 		Quaternion var3 = method6427(arg0, arg1);
 		this.method6471(var3);
-		var3.method6407();
+		var3.release();
 		this.method6447();
 	}
 

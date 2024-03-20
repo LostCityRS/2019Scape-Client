@@ -19,8 +19,8 @@ public class Spline {
 		SplineRelated var5 = new SplineRelated();
 		SplineRelated var6 = this.field4324[this.field4324.length - 1];
 		var5.method6740(0, var6.method6748(3));
-		Vector3 var7 = Vector3.method6528(var6.method6748(3), var6.method6748(2));
-		var5.method6740(1, Vector3.method6499(var6.method6748(3), var7));
+		Vector3 var7 = Vector3.sub(var6.method6748(3), var6.method6748(2));
+		var5.method6740(1, Vector3.add(var6.method6748(3), var7));
 		var5.method6740(3, arg0);
 		var5.method6740(2, arg1);
 		var4[var4.length - 1] = var5;
@@ -101,23 +101,23 @@ public class Spline {
 	public Spline(Packet arg0) {
 		int var2 = arg0.gSmart1or2();
 		this.field4324[0] = new SplineRelated();
-		this.field4324[0].method6740(0, Vector3.method6485(arg0));
-		this.field4324[0].method6740(1, Vector3.method6485(arg0));
+		this.field4324[0].method6740(0, Vector3.create(arg0));
+		this.field4324[0].method6740(1, Vector3.create(arg0));
 		this.field4325[0] = arg0.gFloat();
-		Vector3 var3 = Vector3.method6485(arg0);
-		Vector3 var4 = Vector3.method6485(arg0);
-		Vector3 var5 = Vector3.method6528(var3, var4);
-		var4.method6486();
-		var5.method6497(var3);
+		Vector3 var3 = Vector3.create(arg0);
+		Vector3 var4 = Vector3.create(arg0);
+		Vector3 var5 = Vector3.sub(var3, var4);
+		var4.release();
+		var5.add(var3);
 		this.field4324[0].method6740(3, var3);
 		this.field4324[0].method6740(2, var5);
 		this.field4325[1] = arg0.gFloat();
 		for (int var7 = 2; var7 < var2; var7++) {
-			Vector3 var8 = Vector3.method6485(arg0);
-			Vector3 var9 = Vector3.method6485(arg0);
-			Vector3 var10 = Vector3.method6528(var8, var9);
-			var9.method6486();
-			var10.method6497(var8);
+			Vector3 var8 = Vector3.create(arg0);
+			Vector3 var9 = Vector3.create(arg0);
+			Vector3 var10 = Vector3.sub(var8, var9);
+			var9.release();
+			var10.add(var8);
 			this.method6774(var8, var10, arg0.gFloat());
 		}
 	}

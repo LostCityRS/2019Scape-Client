@@ -81,10 +81,10 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		ScaleRotTrans var4 = this.method10536();
+		ScaleRotTrans var4 = this.getTransform();
 		PickableEntity var5 = PickableEntity.method16749(this.field11178);
-		int var6 = (int) var4.field4298.field4308 >> 9;
-		int var7 = (int) var4.field4298.field4313 >> 9;
+		int var6 = (int) var4.trans.x >> 9;
+		int var7 = (int) var4.trans.z >> 9;
 		this.field11179.method8239(arg0, var2, var3, var6, var6, var7, var7, true);
 		LocType var8 = this.field11179.method8237();
 		if (var8.field7468 == null) {
@@ -99,9 +99,9 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 		}
 		this.field11183 = var2.method1731() || this.field11179.field6680 != null;
 		if (this.field11181 == null) {
-			this.field11181 = GraphEntity.method15111((int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			this.field11181 = GraphEntity.method15111((int) var4.trans.x, (int) var4.trans.y, (int) var4.trans.z, var2);
 		} else {
-			GraphEntity.method8229(this.field11181, (int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			GraphEntity.method8229(this.field11181, (int) var4.trans.x, (int) var4.trans.y, (int) var4.trans.z, var2);
 		}
 		return var5;
 	}
@@ -113,9 +113,9 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 			return;
 		}
 		Matrix4x3 var3 = this.method10533();
-		ScaleRotTrans var4 = this.method10536();
-		int var5 = (int) var4.field4298.field4308 >> 9;
-		int var6 = (int) var4.field4298.field4313 >> 9;
+		ScaleRotTrans var4 = this.getTransform();
+		int var5 = (int) var4.trans.x >> 9;
+		int var6 = (int) var4.trans.z >> 9;
 		this.field11179.method8239(arg0, var2, var3, var5, var5, var6, var6, false);
 	}
 

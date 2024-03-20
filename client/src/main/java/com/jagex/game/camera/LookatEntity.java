@@ -59,45 +59,45 @@ public class LookatEntity extends Lookat {
 
 	@ObfuscatedName("anw.n(I)Z")
 	public boolean method14145() {
-		return !Float.isNaN(this.field11865.field4308);
+		return !Float.isNaN(this.field11865.x);
 	}
 
 	@ObfuscatedName("anw.f(Lju;Lou;IIFB)V")
 	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
-		Vector3 var6 = Vector3.method6484(this.field8479.method4714());
-		var6.field4308 -= arg2;
-		var6.field4313 -= arg3;
-		var6.field4311 *= -1.0F;
+		Vector3 var6 = Vector3.create(this.field8479.method4714());
+		var6.x -= arg2;
+		var6.z -= arg3;
+		var6.y *= -1.0F;
 		Vector3 var7 = this.method14133();
-		var7.field4308 -= arg2;
-		var7.field4313 -= arg3;
-		var7.field4311 *= -1.0F;
-		arg1.method6296((double) var6.field4308, (double) var6.field4311, (double) var6.field4313, (double) var7.field4308, (double) var7.field4311, (double) var7.field4313, 0.0F, 1.0F, 0.0F);
-		var6.method6486();
-		var7.method6486();
+		var7.x -= arg2;
+		var7.z -= arg3;
+		var7.y *= -1.0F;
+		arg1.method6296((double) var6.x, (double) var6.y, (double) var6.z, (double) var7.x, (double) var7.y, (double) var7.z, 0.0F, 1.0F, 0.0F);
+		var6.release();
+		var7.release();
 	}
 
 	@ObfuscatedName("anw.m(I)Lox;")
 	public Vector3 method14133() {
-		Vector3 var1 = Vector3.method6484(this.field11865);
-		Vector3 var2 = Vector3.method6484(this.field11863);
+		Vector3 var1 = Vector3.create(this.field11865);
+		Vector3 var2 = Vector3.create(this.field11863);
 		if (this.field11864) {
-			var2.method6526(this.field11867.method4668());
+			var2.rotate(this.field11867.method4668());
 		}
-		var1.method6497(var2);
-		var2.method6486();
+		var1.add(var2);
+		var2.release();
 		return var1;
 	}
 
 	@ObfuscatedName("anw.k(I)Lox;")
 	public Vector3 method14135() {
-		Vector3 var1 = Vector3.method6484(this.field11862);
-		Vector3 var2 = Vector3.method6484(this.field11863);
+		Vector3 var1 = Vector3.create(this.field11862);
+		Vector3 var2 = Vector3.create(this.field11863);
 		if (this.field11864) {
-			var2.method6526(this.field11867.method4668());
+			var2.rotate(this.field11867.method4668());
 		}
-		var1.method6497(var2);
-		var2.method6486();
+		var1.add(var2);
+		var2.release();
 		return var1;
 	}
 
@@ -111,7 +111,7 @@ public class LookatEntity extends Lookat {
 		CameraTrackableType var2 = CameraTrackableType.method15213(arg0.g1());
 		int var3 = arg0.g2();
 		this.field11867 = this.field8479.method4697().method268(var2, var3);
-		this.field11863.method6490(arg0);
+		this.field11863.decode(arg0);
 		if (arg0.g1() == 1) {
 			this.field11864 = true;
 		} else {

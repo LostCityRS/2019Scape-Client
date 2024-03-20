@@ -3,7 +3,7 @@ package rs2.client.clientscript;
 import com.jagex.audio.stream.Sound;
 import com.jagex.audio.stream.SoundShape;
 import com.jagex.audio.stream.SoundType;
-import com.jagex.audio.stream.SubBussType;
+import com.jagex.audio.api.SubBussType;
 import com.jagex.core.constants.Language;
 import com.jagex.core.datastruct.*;
 import com.jagex.core.io.Packet;
@@ -9780,18 +9780,18 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		short var4 = 255;
 		short var5 = 256;
-		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.playSound(SoundType.field1828, var1, var2, var4, SubBussType.SFX_SUB.getId(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("jf.vk(Lyf;I)V")
 	public static final void sound_song(ClientScriptState arg0) {
-		Client.audioApi.method3174(arg0.field8216[--arg0.field8226]);
+		Client.audioApi.playSong(arg0.field8216[--arg0.field8226]);
 	}
 
 	@ObfuscatedName("o.wn(Lyf;I)V")
 	public static final void sound_jingle(ClientScriptState arg0) {
 		arg0.field8226 -= 2;
-		Client.audioApi.method3235(arg0.field8216[arg0.field8226], 255);
+		Client.audioApi.playSong(arg0.field8216[arg0.field8226], 255);
 	}
 
 	@ObfuscatedName("e.wa(Lyf;I)V")
@@ -9802,19 +9802,19 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		short var5 = 256;
-		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.playSound(SoundType.field1828, var1, var2, var4, SubBussType.SFX_SUB.getId(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("ahb.wo(Lyf;I)V")
 	public static final void sound_song_volume(ClientScriptState arg0) {
 		arg0.field8226 -= 3;
-		Client.audioApi.method3235(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1]);
+		Client.audioApi.playSong(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 1]);
 	}
 
 	@ObfuscatedName("aj.wu(Lyf;I)V")
 	public static final void sound_jingle_volume(ClientScriptState arg0) {
 		arg0.field8226 -= 3;
-		Client.audioApi.method3235(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 2]);
+		Client.audioApi.playSong(arg0.field8216[arg0.field8226], arg0.field8216[arg0.field8226 + 2]);
 	}
 
 	@ObfuscatedName("ev.wk(Lyf;I)V")
@@ -9825,7 +9825,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		short var5 = 256;
-		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.playSound(SoundType.field1828, var1, var2, var4, SubBussType.SFX_SUB.getId(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("tg.wz(Lyf;B)V")
@@ -9836,7 +9836,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		short var5 = 256;
-		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.playSound(SoundType.field1828, var1, var2, var4, SubBussType.SFX_SUB.getId(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("iq.wj(Lyf;I)V")
@@ -9847,7 +9847,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		int var5 = arg0.field8216[arg0.field8226 + 4];
-		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.playSound(SoundType.field1828, var1, var2, var4, SubBussType.SFX_SUB.getId(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("ahp.we(Lyf;I)V")
@@ -9858,12 +9858,12 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		int var5 = arg0.field8216[arg0.field8226 + 4];
-		Client.audioApi.method3191(SoundType.field1828, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
+		Client.audioApi.playSound(SoundType.field1828, var1, var2, var4, SubBussType.SFX_SUB.getId(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, var3);
 	}
 
 	@ObfuscatedName("pw.wr(Lyf;I)V")
 	public static final void sound_song_stop(ClientScriptState arg0) {
-		Client.audioApi.method3178();
+		Client.audioApi.stopSong();
 	}
 
 	@ObfuscatedName("sk.wl(Lyf;I)V")
@@ -9875,7 +9875,7 @@ public final class ScriptRunner {
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		int var5 = arg0.field8216[arg0.field8226 + 4];
 		int var6 = arg0.field8216[arg0.field8226 + 5];
-		Sound var7 = Client.audioApi.method3236(SoundType.field1832, Client.audioApi, var1, var2, var4, SubBussType.field1805.method3034(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, false);
+		Sound var7 = Client.audioApi.createSound(SoundType.field1832, Client.audioApi, var1, var2, var4, SubBussType.SFX_SUB.getId(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var5, false);
 		if (var7 != null) {
 			Client.audioApi.method3251(var7, var6, var3);
 		}
@@ -9885,14 +9885,14 @@ public final class ScriptRunner {
 	public static final void sound_group_start(ClientScriptState arg0) {
 		arg0.field8226--;
 		int var1 = arg0.field8216[arg0.field8226];
-		Client.audioApi.method3208(var1);
+		Client.audioApi.startGroup(var1);
 	}
 
 	@ObfuscatedName("hx.wv(Lyf;S)V")
 	public static final void sound_group_stop(ClientScriptState arg0) {
 		arg0.field8226--;
 		int var1 = arg0.field8216[arg0.field8226];
-		Client.audioApi.method3153(var1);
+		Client.audioApi.stopGroup(var1);
 	}
 
 	@ObfuscatedName("a.wg(Lyf;B)V")
@@ -9901,7 +9901,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		int var3 = arg0.field8216[arg0.field8226 + 2];
-		Client.audioApi.method3156(var1, var2, var3);
+		Client.audioApi.addBuss(var1, var2, var3);
 	}
 
 	@ObfuscatedName("ge.wb(Lyf;I)V")
@@ -9909,7 +9909,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
-		Client.audioApi.method3157(var1, var2);
+		Client.audioApi.setMixBussLevel(var1, var2);
 	}
 
 	@ObfuscatedName("nv.wq(Lyf;B)V")
@@ -13811,18 +13811,18 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		Vector3 var3 = Vector3.create((float) var1, (float) var1, (float) var1);
-		if (var3.field4308 == -1.0F) {
-			var3.field4308 = Float.POSITIVE_INFINITY;
+		if (var3.x == -1.0F) {
+			var3.x = Float.POSITIVE_INFINITY;
 		}
-		if (var3.field4311 == -1.0F) {
-			var3.field4311 = Float.POSITIVE_INFINITY;
+		if (var3.y == -1.0F) {
+			var3.y = Float.POSITIVE_INFINITY;
 		}
-		if (var3.field4313 == -1.0F) {
-			var3.field4313 = Float.POSITIVE_INFINITY;
+		if (var3.z == -1.0F) {
+			var3.z = Float.POSITIVE_INFINITY;
 		}
 		Client.field9155.method4690(var3);
 		Client.field9155.method4712((float) var2 / 1000.0F);
-		var3.method6486();
+		var3.release();
 	}
 
 	@ObfuscatedName("wu.anp(Lyf;I)V")
@@ -13831,18 +13831,18 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		Vector3 var3 = Vector3.create((float) var1, (float) var1, (float) var1);
-		if (var3.field4308 == -1.0F) {
-			var3.field4308 = Float.POSITIVE_INFINITY;
+		if (var3.x == -1.0F) {
+			var3.x = Float.POSITIVE_INFINITY;
 		}
-		if (var3.field4311 == -1.0F) {
-			var3.field4311 = Float.POSITIVE_INFINITY;
+		if (var3.y == -1.0F) {
+			var3.y = Float.POSITIVE_INFINITY;
 		}
-		if (var3.field4313 == -1.0F) {
-			var3.field4313 = Float.POSITIVE_INFINITY;
+		if (var3.z == -1.0F) {
+			var3.z = Float.POSITIVE_INFINITY;
 		}
 		Client.field9155.method4814(var3);
 		Client.field9155.method4766((float) var2 / 1000.0F);
-		var3.method6486();
+		var3.release();
 	}
 
 	@ObfuscatedName("akb.anr(Lyf;I)V")
@@ -13851,7 +13851,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		Vector3 var2 = Vector3.create((float) var1, (float) var1, (float) var1);
 		Client.field9155.method4832(var2);
-		var2.method6486();
+		var2.release();
 	}
 
 	@ObfuscatedName("uv.ank(Lyf;I)V")
@@ -13860,7 +13860,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		Vector3 var2 = Vector3.create((float) var1, (float) var1, (float) var1);
 		Client.field9155.method4695(var2);
-		var2.method6486();
+		var2.release();
 	}
 
 	@ObfuscatedName("aca.anx(Lyf;I)V")
@@ -13954,10 +13954,10 @@ public final class ScriptRunner {
 		Quaternion var11 = new Quaternion();
 		var10.method6414(0.0F, 1.0F, 0.0F, (float) ((double) var6 * 3.141592653589793D * 2.0D / 16384.0D));
 		Vector3 var12 = new Vector3(1.0F, 0.0F, 0.0F);
-		var12.method6526(var10);
-		var12.method6494();
+		var12.rotate(var10);
+		var12.negate();
 		var11.method6413(var12, (float) ((double) var5 * 3.141592653589793D * 2.0D / 16384.0D));
-		var10.method6424(var11);
+		var10.multiply(var11);
 		CoordGrid var13 = Client.world.method7727();
 		int var14 = var13.x << 9;
 		int var15 = var13.z << 9;
@@ -14068,18 +14068,18 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		Vector3 var5 = Vector3.create((float) var1, (float) var2, (float) var3);
-		if (var5.field4308 == -1.0F) {
-			var5.field4308 = Float.POSITIVE_INFINITY;
+		if (var5.x == -1.0F) {
+			var5.x = Float.POSITIVE_INFINITY;
 		}
-		if (var5.field4311 == -1.0F) {
-			var5.field4311 = Float.POSITIVE_INFINITY;
+		if (var5.y == -1.0F) {
+			var5.y = Float.POSITIVE_INFINITY;
 		}
-		if (var5.field4313 == -1.0F) {
-			var5.field4313 = Float.POSITIVE_INFINITY;
+		if (var5.z == -1.0F) {
+			var5.z = Float.POSITIVE_INFINITY;
 		}
 		Client.field9155.method4690(var5);
 		Client.field9155.method4712((float) var4 / 1000.0F);
-		var5.method6486();
+		var5.release();
 	}
 
 	@ObfuscatedName("qn.aol(Lyf;S)V")
@@ -14090,18 +14090,18 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		int var4 = arg0.field8216[arg0.field8226 + 3];
 		Vector3 var5 = Vector3.create((float) var1, (float) var2, (float) var3);
-		if (var5.field4308 == -1.0F) {
-			var5.field4308 = Float.POSITIVE_INFINITY;
+		if (var5.x == -1.0F) {
+			var5.x = Float.POSITIVE_INFINITY;
 		}
-		if (var5.field4311 == -1.0F) {
-			var5.field4311 = Float.POSITIVE_INFINITY;
+		if (var5.y == -1.0F) {
+			var5.y = Float.POSITIVE_INFINITY;
 		}
-		if (var5.field4313 == -1.0F) {
-			var5.field4313 = Float.POSITIVE_INFINITY;
+		if (var5.z == -1.0F) {
+			var5.z = Float.POSITIVE_INFINITY;
 		}
 		Client.field9155.method4814(var5);
 		Client.field9155.method4766((float) var4 / 1000.0F);
-		var5.method6486();
+		var5.release();
 	}
 
 	@ObfuscatedName("x.aom(Lyf;B)V")
@@ -14112,7 +14112,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		Vector3 var4 = Vector3.create((float) var1, (float) var2, (float) var3);
 		Client.field9155.method4832(var4);
-		var4.method6486();
+		var4.release();
 	}
 
 	@ObfuscatedName("bc.aoj(Lyf;I)V")
@@ -14123,7 +14123,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		Vector3 var4 = Vector3.create((float) var1, (float) var2, (float) var3);
 		Client.field9155.method4695(var4);
-		var4.method6486();
+		var4.release();
 	}
 
 	@ObfuscatedName("aqy.aof(Lyf;B)V")
@@ -14135,11 +14135,11 @@ public final class ScriptRunner {
 		PositionEntity var2 = (PositionEntity) Client.field9155.method4709();
 		LookatEntity var3 = (LookatEntity) Client.field9155.method4797();
 		Vector3 var4 = var2.method16691();
-		Vector3 var5 = Vector3.method6484(var4);
-		var5.field4311 += var1;
-		Vector3 var6 = Vector3.method6528(var3.method14133(), var5);
-		var6.method6513();
-		float var7 = var2.method16692().method6519();
+		Vector3 var5 = Vector3.create(var4);
+		var5.y += var1;
+		Vector3 var6 = Vector3.sub(var3.method14133(), var5);
+		var6.normalise();
+		float var7 = var2.method16692().length();
 		RayTracing.method6592(var3.method14133(), var6, var4, var7, field8210);
 		Object var8 = null;
 		if (field8210[0] == null) {
@@ -14148,12 +14148,12 @@ public final class ScriptRunner {
 		Vector3 var9;
 		if (field8210[1] == null) {
 			var9 = field8210[0];
-		} else if (Vector3.method6528(var3.method14133(), field8210[0]).method6519() < Vector3.method6528(var3.method14133(), field8210[1]).method6519()) {
+		} else if (Vector3.sub(var3.method14133(), field8210[0]).length() < Vector3.sub(var3.method14133(), field8210[1]).length()) {
 			var9 = field8210[1];
 		} else {
 			var9 = field8210[0];
 		}
-		float var10 = CameraHelpers.method9272(var4.field4308 - var9.field4308, var4.field4313 - var9.field4313);
+		float var10 = CameraHelpers.method9272(var4.x - var9.x, var4.z - var9.z);
 		arg0.field8216[++arg0.field8226 - 1] = 0;
 		arg0.field8216[++arg0.field8226 - 1] = (int) ((double) var10 * 2607.5945876176133D) & 0x3FFF;
 	}
@@ -14165,9 +14165,9 @@ public final class ScriptRunner {
 		}
 		Vector3 var1 = ((PositionEntity) Client.field9155.method4709()).method16691();
 		Vector3 var2 = ((LookatEntity) Client.field9155.method4797()).method18819();
-		Vector3 var3 = Vector3.method6484(var1);
-		var3.method6537(var2);
-		float var4 = CameraHelpers.method9272(var3.field4308, var3.field4313);
+		Vector3 var3 = Vector3.create(var1);
+		var3.sub(var2);
+		float var4 = CameraHelpers.method9272(var3.x, var3.z);
 		arg0.field8216[++arg0.field8226 - 1] = (int) ((double) var4 * 2607.5945876176133D) & 0x3FFF;
 	}
 
@@ -14178,9 +14178,9 @@ public final class ScriptRunner {
 		}
 		Vector3 var1 = ((PositionEntity) Client.field9155.method4709()).method16691();
 		Vector3 var2 = ((LookatEntity) Client.field9155.method4797()).method18819();
-		Vector3 var3 = Vector3.method6484(var1);
-		var3.method6537(var2);
-		arg0.field8216[++arg0.field8226 - 1] = (int) var3.method6519();
+		Vector3 var3 = Vector3.create(var1);
+		var3.sub(var2);
+		arg0.field8216[++arg0.field8226 - 1] = (int) var3.length();
 	}
 
 	@ObfuscatedName("qe.aoa(Lyf;I)V")

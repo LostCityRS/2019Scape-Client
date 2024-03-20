@@ -44,7 +44,7 @@ public class SeqType implements ConfigType {
 	public int field1787 = -1;
 
 	@ObfuscatedName("fg.d")
-	public int[][] field1777;
+	public int[][] sound;
 
 	@ObfuscatedName("fg.c")
 	public int replayoff = -1;
@@ -154,14 +154,14 @@ public class SeqType implements ConfigType {
 			}
 		} else if (code == 13) {
 			int var7 = buf.g2();
-			this.field1777 = new int[var7][];
+			this.sound = new int[var7][];
 			for (int var8 = 0; var8 < var7; var8++) {
 				int var9 = buf.g1();
 				if (var9 > 0) {
-					this.field1777[var8] = new int[var9];
-					this.field1777[var8][0] = buf.g3();
+					this.sound[var8] = new int[var9];
+					this.sound[var8][0] = buf.g3();
 					for (int var10 = 1; var10 < var9; var10++) {
-						this.field1777[var8][var10] = buf.g2();
+						this.sound[var8][var10] = buf.g2();
 					}
 				}
 			}
@@ -172,8 +172,8 @@ public class SeqType implements ConfigType {
 		} else if (code != 16 && code != 18) {
 			if (code == 19 || code == 119) {
 				if (this.field1788 == null) {
-					this.field1788 = new int[this.field1777.length];
-					for (int var19 = 0; var19 < this.field1777.length; var19++) {
+					this.field1788 = new int[this.sound.length];
+					for (int var19 = 0; var19 < this.sound.length; var19++) {
 						this.field1788[var19] = 255;
 					}
 				}
@@ -186,9 +186,9 @@ public class SeqType implements ConfigType {
 				this.field1788[var20] = buf.g1();
 			} else if (code == 20 || code == 120) {
 				if (this.field1789 == null || this.field1790 == null) {
-					this.field1789 = new int[this.field1777.length];
-					this.field1790 = new int[this.field1777.length];
-					for (int var17 = 0; var17 < this.field1777.length; var17++) {
+					this.field1789 = new int[this.sound.length];
+					this.field1790 = new int[this.sound.length];
+					for (int var17 = 0; var17 < this.sound.length; var17++) {
 						this.field1789[var17] = 256;
 						this.field1790[var17] = 256;
 					}

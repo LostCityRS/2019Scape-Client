@@ -119,7 +119,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aue.e(I)I")
-	public int method19724() {
+	public int targeted() {
 		return this.field12606;
 	}
 
@@ -130,33 +130,33 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 
 	@ObfuscatedName("aue.n(IIIII)V")
 	public final void method19725(int arg0, int arg1, int arg2, int arg3) {
-		Vector3 var5 = Vector3.method6484(this.method10536().field4298);
+		Vector3 var5 = Vector3.create(this.getTransform().trans);
 		if (!this.field12596) {
-			float var6 = (float) arg0 - var5.field4308;
-			float var7 = (float) arg1 - var5.field4313;
+			float var6 = (float) arg0 - var5.x;
+			float var7 = (float) arg1 - var5.z;
 			float var8 = (float) Math.sqrt((double) (var6 * var6 + var7 * var7));
 			if (var8 != 0.0F) {
-				var5.field4308 += (float) this.field12591 * var6 / var8;
-				var5.field4313 += (float) this.field12591 * var7 / var8;
+				var5.x += (float) this.field12591 * var6 / var8;
+				var5.z += (float) this.field12591 * var7 / var8;
 			}
 			if (this.field12595) {
-				var5.field4311 = Client.getHeightmapY((int) var5.field4308, (int) var5.field4313, this.level) - this.field12599;
+				var5.y = Client.getHeightmapY((int) var5.x, (int) var5.z, this.level) - this.field12599;
 			}
 			this.method10531(var5);
 		}
 		double var9 = (double) (this.field12589 + 1 - arg3);
-		this.field12597 = (double) ((float) arg0 - var5.field4308) / var9;
-		this.field12592 = (double) ((float) arg1 - var5.field4313) / var9;
+		this.field12597 = (double) ((float) arg0 - var5.x) / var9;
+		this.field12592 = (double) ((float) arg1 - var5.z) / var9;
 		this.field12598 = Math.sqrt(this.field12597 * this.field12597 + this.field12592 * this.field12592);
 		if (this.field12590 == -1) {
-			this.field12600 = (double) ((float) arg2 - var5.field4311) / var9;
+			this.field12600 = (double) ((float) arg2 - var5.y) / var9;
 		} else {
 			if (!this.field12596) {
 				this.field12600 = -this.field12598 * Math.tan((double) this.field12590 * 0.02454369D);
 			}
-			this.field12601 = ((double) ((float) arg2 - var5.field4311) - this.field12600 * var9) * 2.0D / (var9 * var9);
+			this.field12601 = ((double) ((float) arg2 - var5.y) - this.field12600 * var9) * 2.0D / (var9 * var9);
 		}
-		var5.method6486();
+		var5.release();
 	}
 
 	@ObfuscatedName("aue.m(I)V")
@@ -184,8 +184,8 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		if (var1 == null) {
 			return;
 		}
-		Vector3 var5 = var1.method10536().field4298;
-		this.method10538(var5.field4308, (float) (Client.getHeightmapY((int) var5.field4308, (int) var5.field4313, this.level) - this.field12599), var5.field4313);
+		Vector3 var5 = var1.getTransform().trans;
+		this.method10538(var5.x, (float) (Client.getHeightmapY((int) var5.x, (int) var5.z, this.level) - this.field12599), var5.z);
 		if (this.field12594 < 0) {
 			return;
 		}
@@ -213,32 +213,32 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		int var13 = Trig1.field4272[var11];
 		int var14 = var7 * var13 + var8 * var12 >> 14;
 		int var15 = var8 * var13 - var7 * var12 >> 14;
-		Vector3 var17 = Vector3.method6484(this.method10536().field4298);
-		var17.field4308 += var14;
-		var17.field4313 += var15;
+		Vector3 var17 = Vector3.create(this.getTransform().trans);
+		var17.x += var14;
+		var17.z += var15;
 		this.method10531(var17);
-		var17.method6486();
+		var17.release();
 	}
 
 	@ObfuscatedName("aue.k(II)V")
 	public final void method19732(int arg0) {
 		this.field12596 = true;
-		ScaleRotTrans var2 = new ScaleRotTrans(this.method10536());
-		var2.field4298.field4308 = (float) ((double) var2.field4298.field4308 + (double) arg0 * this.field12597);
-		var2.field4298.field4313 = (float) ((double) var2.field4298.field4313 + (double) arg0 * this.field12592);
+		ScaleRotTrans var2 = new ScaleRotTrans(this.getTransform());
+		var2.trans.x = (float) ((double) var2.trans.x + (double) arg0 * this.field12597);
+		var2.trans.z = (float) ((double) var2.trans.z + (double) arg0 * this.field12592);
 		if (this.field12595) {
-			var2.field4298.field4311 = Client.getHeightmapY((int) var2.field4298.field4308, (int) var2.field4298.field4313, this.level) - this.field12599;
+			var2.trans.y = Client.getHeightmapY((int) var2.trans.x, (int) var2.trans.z, this.level) - this.field12599;
 		} else if (this.field12590 == -1) {
-			var2.field4298.field4311 = (float) ((double) var2.field4298.field4311 + (double) arg0 * this.field12600);
+			var2.trans.y = (float) ((double) var2.trans.y + (double) arg0 * this.field12600);
 		} else {
-			var2.field4298.field4311 = (float) ((double) var2.field4298.field4311 + this.field12601 * 0.5D * (double) arg0 * (double) arg0 + (double) arg0 * this.field12600);
+			var2.trans.y = (float) ((double) var2.trans.y + this.field12601 * 0.5D * (double) arg0 * (double) arg0 + (double) arg0 * this.field12600);
 			this.field12600 += (double) arg0 * this.field12601;
 		}
 		var2.field4297.method6414(1.0F, 0.0F, 0.0F, (float) Math.atan2(this.field12600, this.field12598));
 		Quaternion var3 = Quaternion.method6469();
 		var3.method6414(0.0F, 1.0F, 0.0F, (float) Math.atan2(this.field12597, this.field12592) - 3.1415927F);
-		var2.field4297.method6424(var3);
-		var3.method6407();
+		var2.field4297.multiply(var3);
+		var3.release();
 		this.method10534(var2);
 		if (this.field12602.method14367(1) && this.field12602.method14375()) {
 			this.field12602.method14364();
@@ -284,9 +284,9 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 
 	@ObfuscatedName("aue.bv(I)V")
 	public void method16529() {
-		Vector3 var1 = this.method10536().field4298;
-		this.field12471 = this.field12472 = (short) (var1.field4308 / 512.0F);
-		this.field12468 = this.field12467 = (short) (var1.field4313 / 512.0F);
+		Vector3 var1 = this.getTransform().trans;
+		this.field12471 = this.field12472 = (short) (var1.x / 512.0F);
+		this.field12468 = this.field12467 = (short) (var1.z / 512.0F);
 	}
 
 	@ObfuscatedName("aue.w(Ldh;Ldo;Lou;B)V")

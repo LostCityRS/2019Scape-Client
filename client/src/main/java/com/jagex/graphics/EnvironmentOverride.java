@@ -113,7 +113,7 @@ public class EnvironmentOverride {
 			this.field8117 = arg0.gFloat();
 		}
 		if ((var2 & EnvironmentOverrideProperty.field8061.field8102) != 0L) {
-			this.field8120 = Vector3.method6485(arg0);
+			this.field8120 = Vector3.create(arg0);
 		}
 		if ((var2 & EnvironmentOverrideProperty.field8069.field8102) != 0L) {
 			arg0.gFloat();

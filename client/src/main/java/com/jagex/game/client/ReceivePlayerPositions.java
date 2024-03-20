@@ -70,7 +70,7 @@ public class ReceivePlayerPositions {
 		CoordGrid coord = Client.world.method7727();
 		player.routeWaypointX[0] = hx - coord.x;
 		player.routeWaypointZ[0] = hz - coord.z;
-		player.method10538((float) ((player.routeWaypointX[0] << 9) + (player.size() << 8)), player.method10525().field4298.field4311, (float) ((player.routeWaypointZ[0] << 9) + (player.size() << 8)));
+		player.method10538((float) ((player.routeWaypointX[0] << 9) + (player.size() << 8)), player.method10525().trans.y, (float) ((player.routeWaypointZ[0] << 9) + (player.size() << 8)));
 		Client.currentPlayerLevel = player.level = player.field11714 = hl;
 		if (Client.world.method7793().isLinkBelow(player.routeWaypointX[0], player.routeWaypointZ[0])) {
 			player.field11714++;

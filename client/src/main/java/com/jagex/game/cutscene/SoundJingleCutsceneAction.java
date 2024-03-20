@@ -21,6 +21,6 @@ public class SoundJingleCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agn.n(I)V")
 	public void method2890() {
-		Client.audioApi.method3179(this.field10321, this.field10322);
+		Client.audioApi.playJingle(this.field10321, this.field10322);
 	}
 }

@@ -23,7 +23,7 @@ public class EntityWalkAnimationWrapper extends AnimationWrapper {
 	@ObfuscatedName("aoy.ag(Lfg;II)V")
 	public void method14407(SeqType arg0, int arg1) {
 		if (!this.field11877 || !this.field11876.field10454.method14346() || this.field11876.field10454.method14355()) {
-			Client.audioApi.method3180(arg0, arg1, this.field11876);
+			Client.audioApi.playSequenceSound(arg0, arg1, this.field11876);
 		}
 	}
 }

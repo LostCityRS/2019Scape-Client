@@ -42,11 +42,11 @@ public class LookatSpline_Sub2 extends LookatSpline {
 
 	@ObfuscatedName("ass.m(I)Lox;")
 	public Vector3 method14133() {
-		Vector3 var1 = Vector3.method6482();
+		Vector3 var1 = Vector3.create();
 		double[] var2 = this.field11872[this.field12476].method6767(this.field11873);
-		var1.field4308 = (float) var2[0];
-		var1.field4311 = (float) var2[1];
-		var1.field4313 = (float) var2[2];
+		var1.x = (float) var2[0];
+		var1.y = (float) var2[1];
+		var1.z = (float) var2[2];
 		return var1;
 	}
 

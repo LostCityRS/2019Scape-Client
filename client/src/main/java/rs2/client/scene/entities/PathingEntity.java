@@ -710,9 +710,9 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		} else {
 			var2 = -this.field10420;
 		}
-		ScaleRotTrans var3 = this.method10536();
-		int var4 = (int) var3.field4298.field4308 >> 9;
-		int var5 = (int) var3.field4298.field4313 >> 9;
+		ScaleRotTrans var3 = this.getTransform();
+		int var4 = (int) var3.trans.x >> 9;
+		int var5 = (int) var3.trans.z >> 9;
 		if (this.field11716 != null && var4 >= 1 && var5 >= 1 && var4 <= Client.world.getSizeX() - 1 && var5 <= Client.world.getSizeZ() - 1) {
 			Tile var6 = this.field11716.levelTiles[this.level][var4][var5];
 			if (var6 != null && var6.groundDecoration != null) {
@@ -735,11 +735,11 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	@ObfuscatedName("ahm.bv(I)V")
 	public void method16529() {
 		int var1 = (this.field10430 - 1 << 8) + 240;
-		Vector3 var2 = this.method10536().field4298;
-		this.field12471 = (short) ((int) var2.field4308 - var1 >> 9);
-		this.field12468 = (short) ((int) var2.field4313 - var1 >> 9);
-		this.field12472 = (short) ((int) var2.field4308 + var1 >> 9);
-		this.field12467 = (short) ((int) var2.field4313 + var1 >> 9);
+		Vector3 var2 = this.getTransform().trans;
+		this.field12471 = (short) ((int) var2.x - var1 >> 9);
+		this.field12468 = (short) ((int) var2.z - var1 >> 9);
+		this.field12472 = (short) ((int) var2.x + var1 >> 9);
+		this.field12467 = (short) ((int) var2.z + var1 >> 9);
 	}
 
 	@ObfuscatedName("ahm.br(Ldo;I)V")
@@ -838,7 +838,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 
 	@ObfuscatedName("ahm.ba(IIIIIB)V")
 	public void method16507(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		Vector3 var6 = this.method10536().field4298;
+		Vector3 var6 = this.getTransform().trans;
 		int var7 = this.field12472 + this.field12471 >> 1;
 		int var8 = this.field12468 + this.field12467 >> 1;
 		int var9 = Trig1.field4270[arg0];
@@ -847,22 +847,22 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		int var12 = -arg2 / 2;
 		int var13 = var9 * var12 + var10 * var11 >> 14;
 		int var14 = var10 * var12 - var9 * var11 >> 14;
-		int var15 = Client.method15200((int) var6.field4308 + var13, (int) var6.field4313 + var14, var7, var8, this.level);
+		int var15 = Client.method15200((int) var6.x + var13, (int) var6.z + var14, var7, var8, this.level);
 		int var16 = arg1 / 2;
 		int var17 = -arg2 / 2;
 		int var18 = var9 * var17 + var10 * var16 >> 14;
 		int var19 = var10 * var17 - var9 * var16 >> 14;
-		int var20 = Client.method15200((int) var6.field4308 + var18, (int) var6.field4313 + var19, var7, var8, this.level);
+		int var20 = Client.method15200((int) var6.x + var18, (int) var6.z + var19, var7, var8, this.level);
 		int var21 = -arg1 / 2;
 		int var22 = arg2 / 2;
 		int var23 = var9 * var22 + var10 * var21 >> 14;
 		int var24 = var10 * var22 - var9 * var21 >> 14;
-		int var25 = Client.method15200((int) var6.field4308 + var23, (int) var6.field4313 + var24, var7, var8, this.level);
+		int var25 = Client.method15200((int) var6.x + var23, (int) var6.z + var24, var7, var8, this.level);
 		int var26 = arg1 / 2;
 		int var27 = arg2 / 2;
 		int var28 = var9 * var27 + var10 * var26 >> 14;
 		int var29 = var10 * var27 - var9 * var26 >> 14;
-		int var30 = Client.method15200((int) var6.field4308 + var28, (int) var6.field4313 + var29, var7, var8, this.level);
+		int var30 = Client.method15200((int) var6.x + var28, (int) var6.z + var29, var7, var8, this.level);
 		int var31 = var15 < var20 ? var15 : var20;
 		int var32 = var25 < var30 ? var25 : var30;
 		int var33 = var20 < var30 ? var20 : var30;
@@ -893,7 +893,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		if (var20 + var25 < this.field10407) {
 			this.field10407 = var20 + var25;
 		}
-		this.field10407 = (this.field10407 >> 1) - (int) var6.field4311;
+		this.field10407 = (this.field10407 >> 1) - (int) var6.y;
 	}
 
 	@ObfuscatedName("ahm.bp(I)Lvr;")
@@ -972,20 +972,20 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 
 	@ObfuscatedName("ahm.cw(I)Lve;")
 	public CoordGrid coord() {
-		Vector3 var1 = this.method10536().field4298;
+		Vector3 var1 = this.getTransform().trans;
 		CoordGrid var2 = Client.world.method7727();
-		int var3 = ((int) var1.field4308 >> 9) + var2.x;
-		int var4 = ((int) var1.field4313 >> 9) + var2.z;
+		int var3 = ((int) var1.x >> 9) + var2.x;
+		int var4 = ((int) var1.z >> 9) + var2.z;
 		return new CoordGrid(this.level, var3, var4);
 	}
 
 	@ObfuscatedName("ahm.ct(I)Lakt;")
 	public CoordFine coordFine() {
-		Vector3 var1 = this.method10536().field4298;
+		Vector3 var1 = this.getTransform().trans;
 		CoordGrid var2 = Client.world.method7727();
-		int var3 = var2.x * 512 + (int) var1.field4308;
-		int var4 = (int) var1.field4311;
-		int var5 = var2.z * 512 + (int) var1.field4313;
+		int var3 = var2.x * 512 + (int) var1.x;
+		int var4 = (int) var1.y;
+		int var5 = var2.z * 512 + (int) var1.z;
 		return new CoordFine(this.level, var3, var4, var5);
 	}
 

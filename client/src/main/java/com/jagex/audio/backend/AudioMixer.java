@@ -22,10 +22,10 @@ public class AudioMixer {
 	}
 
 	@ObfuscatedName("sh.e(Lxf;I)V")
-	public static void method8200(SoundBackendConfig arg0) {
-		if (SoundBackendType.field3413 == arg0.field8052) {
+	public static void createBackend(SoundBackendConfig arg0) {
+		if (SoundBackendType.DUMMY == arg0.field8052) {
 			field8056 = new JavaSoundBackend(arg0);
-		} else if (SoundBackendType.field3414 == arg0.field8052) {
+		} else if (SoundBackendType.JAVA == arg0.field8052) {
 			field8056 = new DummySoundBackend(arg0);
 		} else {
 			throw new RuntimeException();
@@ -57,26 +57,26 @@ public class AudioMixer {
 	}
 
 	@ObfuscatedName("afj.f(IIFLma;I)V")
-	public static void method16432(int arg0, int arg1, float arg2, VolumeProvider arg3) {
+	public static void addBuss(int arg0, int arg1, float arg2, VolumeProvider arg3) {
 		if (field8056 != null) {
-			field8056.method5880().method5848(arg0, arg1, arg2, arg3);
+			field8056.getBussManager().addBuss(arg0, arg1, arg2, arg3);
 		}
 	}
 
 	@ObfuscatedName("lv.w(II)Lmj;")
 	public static AudioBuss method5401(int arg0) {
-		return field8056 == null ? null : field8056.method5880().method5851(arg0);
+		return field8056 == null ? null : field8056.getBussManager().getBuss(arg0);
 	}
 
 	@ObfuscatedName("xq.l(III)Z")
-	public static boolean method10338(int arg0, int arg1) {
-		if (field8056 == null || field8056.method5880() == null) {
+	public static boolean commonParentExists(int arg0, int arg1) {
+		if (field8056 == null || field8056.getBussManager() == null) {
 			return false;
 		} else if (arg0 == arg1) {
 			return true;
 		} else {
-			AudioBuss var2 = field8056.method5880().method5851(arg0);
-			AudioBuss var3 = field8056.method5880().method5851(arg1);
+			AudioBuss var2 = field8056.getBussManager().getBuss(arg0);
+			AudioBuss var3 = field8056.getBussManager().getBuss(arg1);
 			AudioBuss var4 = var2;
 			do {
 				if (var4 == null) {
@@ -85,14 +85,14 @@ public class AudioMixer {
 						if (var5 == null) {
 							return false;
 						}
-						var5 = var5.method5904();
+						var5 = var5.getParent();
 						if (var2 == var5) {
 							return true;
 						}
 					} while (var3 != var5);
 					return false;
 				}
-				var4 = var4.method5904();
+				var4 = var4.getParent();
 				if (var3 == var4) {
 					return true;
 				}

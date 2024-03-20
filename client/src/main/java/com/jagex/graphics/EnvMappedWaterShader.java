@@ -171,7 +171,7 @@ public class EnvMappedWaterShader extends WaterShader {
 		this.field10587.setUniform4x4(this.field12125, this.field12143);
 		this.field10587.setUniform4x2(this.field12126, this.field12127);
 		int var1 = 0x1 << (this.field12147 & 0x3);
-		this.field10587.setUniform(this.field12141, this.field12129.field4308, this.field12129.field4311, this.field12129.field4313, (float) (this.field3233.field10181 * var1 % 40000) / 40000.0F);
+		this.field10587.setUniform(this.field12141, this.field12129.x, this.field12129.y, this.field12129.z, (float) (this.field3233.field10181 * var1 % 40000) / 40000.0F);
 		this.field10587.setUniform(this.field12142, this.field12132);
 		this.field10587.setUniform(this.field12133, this.field12134);
 		this.field10587.setUniform(this.field12135, this.field12136);

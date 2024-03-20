@@ -147,15 +147,15 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 				var6 = null;
 			}
 		}
-		Vector3 var7 = this.method10536().field4298;
-		return var4.method9475(arg0, arg1, LocShape.CENTREPIECE_DIAGONAL.id == this.field11137 ? LocShape.CENTREPIECE_STRAIGHT.id : this.field11137, LocShape.CENTREPIECE_DIAGONAL.id == this.field11137 ? this.field11142 + 4 : this.field11142, var5, var6, (int) var7.field4308, this.field11138, (int) var7.field4313, arg2, null);
+		Vector3 var7 = this.getTransform().trans;
+		return var4.method9475(arg0, arg1, LocShape.CENTREPIECE_DIAGONAL.id == this.field11137 ? LocShape.CENTREPIECE_STRAIGHT.id : this.field11137, LocShape.CENTREPIECE_DIAGONAL.id == this.field11137 ? this.field11142 + 4 : this.field11142, var5, var6, (int) var7.x, this.field11138, (int) var7.z, arg2, null);
 	}
 
 	@ObfuscatedName("ajv.fv(Ldh;B)Luq;")
 	public EntityBounds method17371(Renderer arg0) {
-		Vector3 var2 = this.method10536().field4298;
+		Vector3 var2 = this.getTransform().trans;
 		if (this.field11148 == null) {
-			this.field11148 = GraphEntity.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17399(arg0, 0));
+			this.field11148 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17399(arg0, 0));
 		}
 		return this.field11148;
 	}
@@ -267,9 +267,9 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 			var4 = this.field11146;
 			this.field11146 = null;
 		}
-		Vector3 var5 = this.method10536().field4298;
+		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8750(var4, this.field11714, (int) var5.field4308, (int) var5.field4313, null);
+			this.field11716.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 
@@ -284,9 +284,9 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 			var4 = this.field11146;
 			this.field11146 = null;
 		}
-		Vector3 var5 = this.method10536().field4298;
+		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8814(var4, this.field11714, (int) var5.field4308, (int) var5.field4313, null);
+			this.field11716.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 

@@ -112,11 +112,11 @@ public abstract class PositionSpline extends Position {
 
 	@ObfuscatedName("ahn.m(B)Lox;")
 	public Vector3 method5219() {
-		Vector3 var1 = Vector3.method6482();
+		Vector3 var1 = Vector3.create();
 		double[] var2 = this.field10565[this.field10564].method6765(this.field10563);
-		var1.field4308 = (float) var2[0];
-		var1.field4311 = (float) var2[1];
-		var1.field4313 = (float) var2[2];
+		var1.x = (float) var2[0];
+		var1.y = (float) var2[1];
+		var1.z = (float) var2[2];
 		return var1;
 	}
 
@@ -128,7 +128,7 @@ public abstract class PositionSpline extends Position {
 	@ObfuscatedName("ahn.f(B)Lakt;")
 	public CoordFine method5221() {
 		Vector3 var1 = this.method5219();
-		return new CoordFine(0, (int) var1.field4308, (int) var1.field4311, (int) var1.field4313);
+		return new CoordFine(0, (int) var1.x, (int) var1.y, (int) var1.z);
 	}
 
 	@ObfuscatedName("ahn.al(I)F")
@@ -144,9 +144,9 @@ public abstract class PositionSpline extends Position {
 	@ObfuscatedName("ahn.l(Lju;IIB)V")
 	public void method5223(Vector3i arg0, int arg1, int arg2) {
 		Vector3 var4 = this.method5219();
-		arg0.field2835 = (int) var4.field4308 - arg1;
-		arg0.field2836 = (int) -var4.field4311;
-		arg0.field2837 = (int) var4.field4313 - arg2;
+		arg0.field2835 = (int) var4.x - arg1;
+		arg0.field2836 = (int) -var4.y;
+		arg0.field2837 = (int) var4.z - arg2;
 	}
 
 	@ObfuscatedName("ahn.u(Lalw;I)V")

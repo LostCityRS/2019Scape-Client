@@ -336,7 +336,7 @@ public class EnvironmentManager {
 	@ObfuscatedName("xu.q(I)V")
 	public void updateSun() {
 		this.renderer.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.getAntiMacroBrightnessAdjustment()) * this.currentEnv.sunAmbientIntensity);
-		this.renderer.setSun(this.currentEnv.sunColour, this.currentEnv.sunDiffuseIntensity, this.currentEnv.sunShadowIntensity, (float) ((int) this.sunDirection.field4308 << 2), (float) ((int) this.sunDirection.field4311 << 2), (float) ((int) this.sunDirection.field4313 << 2));
+		this.renderer.setSun(this.currentEnv.sunColour, this.currentEnv.sunDiffuseIntensity, this.currentEnv.sunShadowIntensity, (float) ((int) this.sunDirection.x << 2), (float) ((int) this.sunDirection.y << 2), (float) ((int) this.sunDirection.z << 2));
 		this.renderer.setEnvironmentSampler(this.currentEnv.sampler);
 	}
 

@@ -228,7 +228,7 @@ public class VorbisSound implements VorbisInterface {
 	public VorbisSound(float arg0) {
 		this.field2059 = arg0;
 		this.field2052 = AudioFormat.field3441;
-		this.field2053 = AudioEndianness.field3439;
+		this.field2053 = AudioEndianness.LITTLE;
 		this.method3744(false);
 	}
 
@@ -1405,14 +1405,14 @@ public class VorbisSound implements VorbisInterface {
 													}
 													if (AudioFormat.field3441 == this.field2052) {
 														int var43 = this.method3879(var42);
-														if (AudioEndianness.field3439 == this.field2053) {
+														if (AudioEndianness.LITTLE == this.field2053) {
 															var38.ip2(var43);
 														} else {
 															var38.p2(var43);
 														}
 													} else if (AudioFormat.field3440 == this.field2052) {
 														int var44 = this.method3765(var42);
-														if (AudioEndianness.field3439 == this.field2053) {
+														if (AudioEndianness.LITTLE == this.field2053) {
 															var38.ip2(var44);
 														} else {
 															var38.p2(var44);

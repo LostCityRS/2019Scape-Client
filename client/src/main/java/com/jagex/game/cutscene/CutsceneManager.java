@@ -198,7 +198,7 @@ public class CutsceneManager {
 		field11700 = Client.field11070;
 		field1720 = Client.field11071;
 		field1711 = true;
-		field1717 = Client.audioApi.method3170();
+		field1717 = Client.audioApi.getCurrentSong();
 		if (field1710 != 0 && field1716 != 0) {
 			Client.field11070 = 334;
 			Client.field11071 = 334;
@@ -220,7 +220,7 @@ public class CutsceneManager {
 				}
 			}
 			if (field1717 != -1) {
-				Client.audioApi.method3235(field1717, 255);
+				Client.audioApi.playSong(field1717, 255);
 			}
 		}
 		Client.sceneState = 4;

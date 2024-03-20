@@ -837,27 +837,27 @@ public class MiniMenu {
 										var32 = ((PrimaryLayerEntity) var29.field6978).field12471;
 										var33 = ((PrimaryLayerEntity) var29.field6978).field12468;
 									} else {
-										Vector3 var34 = var29.field6978.method10536().field4298;
-										var32 = (int) var34.field4308 >> 9;
-										var33 = (int) var34.field4313 >> 9;
+										Vector3 var34 = var29.field6978.getTransform().trans;
+										var32 = (int) var34.x >> 9;
+										var33 = (int) var34.z >> 9;
 									}
 									if (!(var29.field6978 instanceof PlayerEntity)) {
 										break;
 									}
 									PlayerEntity var35 = (PlayerEntity) var29.field6978;
 									int var36 = var35.size();
-									Vector3 var37 = var35.method10536().field4298;
-									if ((var36 & 0x1) == 0 && ((int) var37.field4308 & 0x1FF) == 0 && ((int) var37.field4313 & 0x1FF) == 0 || (var36 & 0x1) == 1 && ((int) var37.field4308 & 0x1FF) == 256 && ((int) var37.field4313 & 0x1FF) == 256) {
-										int var38 = (int) var37.field4308 - (var35.size() - 1 << 8);
-										int var39 = (int) var37.field4313 - (var35.size() - 1 << 8);
+									Vector3 var37 = var35.getTransform().trans;
+									if ((var36 & 0x1) == 0 && ((int) var37.x & 0x1FF) == 0 && ((int) var37.z & 0x1FF) == 0 || (var36 & 0x1) == 1 && ((int) var37.x & 0x1FF) == 256 && ((int) var37.z & 0x1FF) == 256) {
+										int var38 = (int) var37.x - (var35.size() - 1 << 8);
+										int var39 = (int) var37.z - (var35.size() - 1 << 8);
 										for (int var40 = 0; var40 < Client.field11011; var40++) {
 											ObjectWrapper var41 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var40]);
 											if (var41 != null) {
 												NpcEntity var42 = (NpcEntity) var41.field11436;
 												if (var42.field10403 != Client.loopCycle && var42.field10452) {
-													Vector3 var43 = var42.method10536().field4298;
-													int var44 = (int) var43.field4308 - (var42.npcType.size - 1 << 8);
-													int var45 = (int) var43.field4313 - (var42.npcType.size - 1 << 8);
+													Vector3 var43 = var42.getTransform().trans;
+													int var44 = (int) var43.x - (var42.npcType.size - 1 << 8);
+													int var45 = (int) var43.z - (var42.npcType.size - 1 << 8);
 													if (var44 >= var38 && var42.npcType.size <= var35.size() - (var44 - var38 >> 9) && var45 >= var39 && var42.npcType.size <= var35.size() - (var45 - var39 >> 9)) {
 														method10152(var42, Client.localPlayerEntity.level != var29.field6978.level);
 														var42.field10403 = Client.loopCycle;
@@ -870,9 +870,9 @@ public class MiniMenu {
 										for (int var48 = 0; var48 < var46; var48++) {
 											PlayerEntity var49 = Client.players[var47[var48]];
 											if (var49 != null && var49.field10403 != Client.loopCycle && var35 != var49 && var49.field10452) {
-												Vector3 var50 = var49.method10536().field4298;
-												int var51 = (int) var50.field4308 - (var49.size() - 1 << 8);
-												int var52 = (int) var50.field4313 - (var49.size() - 1 << 8);
+												Vector3 var50 = var49.getTransform().trans;
+												int var51 = (int) var50.x - (var49.size() - 1 << 8);
+												int var52 = (int) var50.z - (var49.size() - 1 << 8);
 												if (var51 >= var38 && var49.size() <= var35.size() - (var51 - var38 >> 9) && var52 >= var39 && var49.size() <= var35.size() - (var52 - var39 >> 9)) {
 													method3542(var49, Client.localPlayerEntity.level != var29.field6978.level);
 													var49.field10403 = Client.loopCycle;
@@ -893,18 +893,18 @@ public class MiniMenu {
 								if (var53.npcType == null) {
 									break;
 								}
-								Vector3 var54 = var53.method10536().field4298;
-								if ((var53.npcType.size & 0x1) == 0 && ((int) var54.field4308 & 0x1FF) == 0 && ((int) var54.field4313 & 0x1FF) == 0 || (var53.npcType.size & 0x1) == 1 && ((int) var54.field4308 & 0x1FF) == 256 && ((int) var54.field4313 & 0x1FF) == 256) {
-									int var55 = (int) var54.field4308 - (var53.npcType.size - 1 << 8);
-									int var56 = (int) var54.field4313 - (var53.npcType.size - 1 << 8);
+								Vector3 var54 = var53.getTransform().trans;
+								if ((var53.npcType.size & 0x1) == 0 && ((int) var54.x & 0x1FF) == 0 && ((int) var54.z & 0x1FF) == 0 || (var53.npcType.size & 0x1) == 1 && ((int) var54.x & 0x1FF) == 256 && ((int) var54.z & 0x1FF) == 256) {
+									int var55 = (int) var54.x - (var53.npcType.size - 1 << 8);
+									int var56 = (int) var54.z - (var53.npcType.size - 1 << 8);
 									for (int var57 = 0; var57 < Client.field11011; var57++) {
 										ObjectWrapper var58 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var57]);
 										if (var58 != null) {
 											NpcEntity var59 = (NpcEntity) var58.field11436;
 											if (var59.field10403 != Client.loopCycle && var53 != var59 && var59.field10452) {
-												Vector3 var60 = var59.method10536().field4298;
-												int var61 = (int) var60.field4308 - (var59.npcType.size - 1 << 8);
-												int var62 = (int) var60.field4313 - (var59.npcType.size - 1 << 8);
+												Vector3 var60 = var59.getTransform().trans;
+												int var61 = (int) var60.x - (var59.npcType.size - 1 << 8);
+												int var62 = (int) var60.z - (var59.npcType.size - 1 << 8);
 												if (var61 >= var55 && var59.npcType.size <= var53.npcType.size - (var61 - var55 >> 9) && var62 >= var56 && var59.npcType.size <= var53.npcType.size - (var62 - var56 >> 9)) {
 													method10152(var59, Client.localPlayerEntity.level != var29.field6978.level);
 													var59.field10403 = Client.loopCycle;
@@ -917,9 +917,9 @@ public class MiniMenu {
 									for (int var65 = 0; var65 < var63; var65++) {
 										PlayerEntity var66 = Client.players[var64[var65]];
 										if (var66 != null && var66.field10403 != Client.loopCycle && var66.field10452) {
-											Vector3 var67 = var66.method10536().field4298;
-											int var68 = (int) var67.field4308 - (var66.size() - 1 << 8);
-											int var69 = (int) var67.field4313 - (var66.size() - 1 << 8);
+											Vector3 var67 = var66.getTransform().trans;
+											int var68 = (int) var67.x - (var66.size() - 1 << 8);
+											int var69 = (int) var67.z - (var66.size() - 1 << 8);
 											if (var68 >= var55 && var66.size() <= var53.npcType.size - (var68 - var55 >> 9) && var69 >= var56 && var66.size() <= var53.npcType.size - (var69 - var56 >> 9)) {
 												method3542(var66, Client.localPlayerEntity.level != var29.field6978.level);
 												var66.field10403 = Client.loopCycle;
@@ -2127,9 +2127,9 @@ public class MiniMenu {
 					var19.buf.p1(Client.minimapAnticheatAngle);
 					var19.buf.p1(Client.minimapZoom);
 					var19.buf.p1(89);
-					Vector3 var20 = Client.localPlayerEntity.method10536().field4298;
-					var19.buf.p2((int) var20.field4308);
-					var19.buf.p2((int) var20.field4313);
+					Vector3 var20 = Client.localPlayerEntity.getTransform().trans;
+					var19.buf.p2((int) var20.x);
+					var19.buf.p2((int) var20.z);
 					var19.buf.p1(63);
 				} else {
 					Client.field10866 = arg1;

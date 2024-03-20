@@ -106,9 +106,9 @@ public class ObjStackEntity extends ObjLayerEntity {
 
 	@ObfuscatedName("aut.fc(Ldh;I)Ltl;")
 	public PickableEntity method17372(Renderer arg0) {
-		Vector3 var2 = Vector3.method6484(this.method10536().field4298);
-		PrimaryLayerEntityList var3 = this.field11716.getEntities(this.level, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
-		GroundDecorLayerEntity var4 = this.field11716.getGroundDecoration(this.level, (int) var2.field4308 >> 9, (int) var2.field4313 >> 9);
+		Vector3 var2 = Vector3.create(this.getTransform().trans);
+		PrimaryLayerEntityList var3 = this.field11716.getEntities(this.level, (int) var2.x >> 9, (int) var2.z >> 9);
+		GroundDecorLayerEntity var4 = this.field11716.getGroundDecoration(this.level, (int) var2.x >> 9, (int) var2.z >> 9);
 		int var5 = 0;
 		while (var3 != null) {
 			if (var3.field7057.field12470 && var3.field7057.overlayHeight() < var5) {
@@ -120,7 +120,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 			var5 = -var4.field12448;
 		}
 		if (this.field12578 != var5) {
-			var2.field4311 += var5 - this.field12578;
+			var2.y += var5 - this.field12578;
 			this.method10531(var2);
 			this.field12578 = var5;
 		}
@@ -134,16 +134,16 @@ public class ObjStackEntity extends ObjLayerEntity {
 			int var11 = this.field12579 << 1;
 			int var13 = -var11 / 2;
 			int var14 = -var11 / 2;
-			int var15 = var10.getFineHeight((int) var2.field4308 + var13, (int) var2.field4313 + var14);
+			int var15 = var10.getFineHeight((int) var2.x + var13, (int) var2.z + var14);
 			int var16 = var11 / 2;
 			int var17 = -var11 / 2;
-			int var18 = var10.getFineHeight((int) var2.field4308 + var16, (int) var2.field4313 + var17);
+			int var18 = var10.getFineHeight((int) var2.x + var16, (int) var2.z + var17);
 			int var19 = -var11 / 2;
 			int var20 = var11 / 2;
-			int var21 = var10.getFineHeight((int) var2.field4308 + var19, (int) var2.field4313 + var20);
+			int var21 = var10.getFineHeight((int) var2.x + var19, (int) var2.z + var20);
 			int var22 = var11 / 2;
 			int var23 = var11 / 2;
-			int var24 = var10.getFineHeight((int) var2.field4308 + var22, (int) var2.field4313 + var23);
+			int var24 = var10.getFineHeight((int) var2.x + var22, (int) var2.z + var23);
 			int var25 = var15 < var18 ? var15 : var18;
 			int var26 = var21 < var24 ? var21 : var24;
 			int var27 = var18 < var24 ? var18 : var24;
@@ -164,14 +164,14 @@ public class ObjStackEntity extends ObjLayerEntity {
 			if (var18 + var21 < var31) {
 				var31 = var18 + var21;
 			}
-			int var32 = (var31 >> 1) - (int) var2.field4311;
+			int var32 = (var31 >> 1) - (int) var2.y;
 			if (var32 != 0) {
 				var6.method6315(0.0F, (float) var32, 0.0F);
 			}
 		}
-		var2.method6486();
-		Vector3 var33 = this.method10536().field4298;
-		var6.method6315(var33.field4308, var33.field4311 - 10.0F, var33.field4313);
+		var2.release();
+		Vector3 var33 = this.getTransform().trans;
+		var6.method6315(var33.x, var33.y - 10.0F, var33.z);
 		PickableEntity var34 = PickableEntity.method16749(true);
 		this.field12576 = false;
 		this.field12579 = 0;
@@ -258,7 +258,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 	@ObfuscatedName("aut.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		Matrix4x3 var4 = arg0.method2209();
-		var4.method6293(this.method10536());
+		var4.method6293(this.getTransform());
 		var4.method6315(0.0F, -10.0F, 0.0F);
 		Model var5 = ((ObjType) Client.objTypeList.list(this.field12580)).method14644(arg0, 131072, this.field12570, null, null, 0, 0, 0, 0);
 		if (var5 != null) {

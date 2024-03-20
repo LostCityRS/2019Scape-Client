@@ -58,7 +58,7 @@ public class Light extends Node {
 	public int field11320;
 
 	public Light(int arg0, int arg1, int arg2, int arg3, int arg4, float arg5) {
-		this.field11331.method6491((float) arg0, (float) arg1, (float) arg2);
+		this.field11331.setTo((float) arg0, (float) arg1, (float) arg2);
 		this.field11321 = arg3;
 		this.field11322 = arg4;
 		this.field11326 = this.field11322;
@@ -72,17 +72,17 @@ public class Light extends Node {
 
 	@ObfuscatedName("akf.e(I)I")
 	public final int method17605() {
-		return (int) this.field11331.field4308;
+		return (int) this.field11331.x;
 	}
 
 	@ObfuscatedName("akf.n(I)I")
 	public final int method17606() {
-		return (int) this.field11331.field4311;
+		return (int) this.field11331.y;
 	}
 
 	@ObfuscatedName("akf.m(I)I")
 	public final int method17607() {
-		return (int) this.field11331.field4313;
+		return (int) this.field11331.z;
 	}
 
 	@ObfuscatedName("akf.k(B)I")
@@ -112,7 +112,7 @@ public class Light extends Node {
 
 	@ObfuscatedName("akf.z(IIII)V")
 	public void method17628(int arg0, int arg1, int arg2) {
-		this.field11331.method6491((float) arg0, (float) arg1, (float) arg2);
+		this.field11331.setTo((float) arg0, (float) arg1, (float) arg2);
 	}
 
 	@ObfuscatedName("akf.p(I)I")

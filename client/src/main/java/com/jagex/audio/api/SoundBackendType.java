@@ -6,8 +6,8 @@ import deob.ObfuscatedName;
 public class SoundBackendType {
 
 	@ObfuscatedName("mz.e")
-	public static final SoundBackendType field3414 = new SoundBackendType();
+	public static final SoundBackendType JAVA = new SoundBackendType();
 
 	@ObfuscatedName("mz.n")
-	public static final SoundBackendType field3413 = new SoundBackendType();
+	public static final SoundBackendType DUMMY = new SoundBackendType();
 }

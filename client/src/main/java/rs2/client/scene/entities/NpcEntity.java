@@ -141,10 +141,10 @@ public class NpcEntity extends PathingEntity {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
-		ScaleRotTrans var3 = this.method10536();
+		ScaleRotTrans var3 = this.getTransform();
 		Matrix4x3 var4 = arg0.method2209();
 		int var5 = this.field10395.method316();
-		Tile var6 = this.field11716.levelTiles[this.level][(int) var3.field4298.field4308 >> 9][(int) var3.field4298.field4313 >> 9];
+		Tile var6 = this.field11716.levelTiles[this.level][(int) var3.trans.x >> 9][(int) var3.trans.z >> 9];
 		if (var6 == null || var6.groundDecoration == null) {
 			this.field10408 = (int) ((float) this.field10408 - (float) this.field10408 / 10.0F);
 		} else {
@@ -404,11 +404,11 @@ public class NpcEntity extends PathingEntity {
 		this.seqTrigger = 0;
 		this.routeWaypointX[0] = arg1;
 		this.routeWaypointZ[0] = arg2;
-		Vector3 var11 = Vector3.method6484(this.method10536().field4298);
-		var11.field4308 = (this.routeWaypointX[0] << 9) + (arg4 << 8);
-		var11.field4313 = (this.routeWaypointZ[0] << 9) + (arg4 << 8);
+		Vector3 var11 = Vector3.create(this.getTransform().trans);
+		var11.x = (this.routeWaypointX[0] << 9) + (arg4 << 8);
+		var11.z = (this.routeWaypointZ[0] << 9) + (arg4 << 8);
 		this.method10531(var11);
-		var11.method6486();
+		var11.release();
 		if (this.field10393 != null) {
 			this.field10393.method9930();
 		}
@@ -575,7 +575,7 @@ public class NpcEntity extends PathingEntity {
 	@ObfuscatedName("aqc.m(B)Lakt;")
 	public CoordFine method4667() {
 		CoordGrid var1 = Client.world.method7727();
-		return CoordFine.method258(this.level, (int) this.method10536().field4298.field4308 + var1.x * 512, -((int) this.method10536().field4298.field4311), (int) this.method10536().field4298.field4313 + var1.z * 512);
+		return CoordFine.method258(this.level, (int) this.getTransform().trans.x + var1.x * 512, -((int) this.getTransform().trans.y), (int) this.getTransform().trans.z + var1.z * 512);
 	}
 
 	@ObfuscatedName("aqc.k(I)Lov;")
@@ -587,7 +587,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.f(B)Lox;")
 	public Vector3 method4666() {
-		return Vector3.method6482();
+		return Vector3.create();
 	}
 
 	@ObfuscatedName("aqc.gc(I)Z")

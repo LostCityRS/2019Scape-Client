@@ -291,22 +291,22 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.c(Ljava/lang/Object;B)V")
-	public void method7448(Object arg0) {
+	public void setSoundSystem(Object arg0) {
 		this.field4893 = arg0;
 	}
 
 	@ObfuscatedName("rw.r(I)Ljava/lang/Object;")
-	public Object method7387() {
+	public Object getSoundSystem() {
 		return this.field4893;
 	}
 
 	@ObfuscatedName("rw.v(Ljava/lang/Object;I)V")
-	public void method7388(Object arg0) {
+	public void setType(Object arg0) {
 		this.field4891 = arg0;
 	}
 
 	@ObfuscatedName("rw.o(I)Ljava/lang/Object;")
-	public Object method7458() {
+	public Object getType() {
 		return this.field4891;
 	}
 
@@ -330,7 +330,7 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.b(Lox;I)V")
-	public void method7394(Vector3 arg0) {
+	public void setPosition(Vector3 arg0) {
 		this.field4881 = arg0;
 	}
 
@@ -350,12 +350,12 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.i(FB)V")
-	public void method7398(float arg0) {
+	public void setSize(float arg0) {
 		this.field4887 = arg0;
 	}
 
 	@ObfuscatedName("rw.j(FB)V")
-	public void method7464(float arg0) {
+	public void setRange(float arg0) {
 		this.field4875 = arg0;
 	}
 
@@ -408,7 +408,7 @@ public class Sound {
 
 	// line 327
 	@ObfuscatedName("rw.ac(FI)V")
-	public void method7405(float arg0) {
+	public void setRate(float arg0) {
 		if (!(arg0 < 0.0F)) {
 			this.field4888 = arg0;
 		}

@@ -144,7 +144,7 @@ public abstract class Shader {
 
 	@ObfuscatedName("ho.x(Laql;Lox;I)V")
 	public final void setUniform(ProgramUniform arg0, Vector3 arg1) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.field4308, arg1.field4311, arg1.field4313);
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.x, arg1.y, arg1.z);
 	}
 
 	@ObfuscatedName("ho.b(Laql;Log;I)V")
@@ -193,7 +193,7 @@ public abstract class Shader {
 
 	@ObfuscatedName("ho.ag(ILox;B)V")
 	public final void setUniform(int arg0, Vector3 arg1) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.field4308, arg1.field4311, arg1.field4313);
+		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.x, arg1.y, arg1.z);
 	}
 
 	@ObfuscatedName("ho.ah(I[FII)V")

@@ -56,12 +56,12 @@ public class GraphNode {
 	}
 
 	@ObfuscatedName("yq.ag()Loe;")
-	public final ScaleRotTrans method10536() {
+	public final ScaleRotTrans getTransform() {
 		if (this.field8171) {
 			this.field8171 = false;
 			this.field8170.method6386(this.field8173);
 			if (this.field8169 != null) {
-				this.field8170.method6398(this.field8169.method10536());
+				this.field8170.method6398(this.field8169.getTransform());
 			}
 		}
 		return this.field8170;
@@ -71,7 +71,7 @@ public class GraphNode {
 	public final ScaleRotTrans method10527() {
 		if (this.field8177) {
 			this.field8177 = false;
-			this.field8172.method6386(this.method10536());
+			this.field8172.method6386(this.getTransform());
 			this.field8172.method6387();
 		}
 		return this.field8170;
@@ -81,7 +81,7 @@ public class GraphNode {
 	public final Matrix4x3 method10533() {
 		if (this.field8175) {
 			this.field8175 = false;
-			this.field8179.method6294(this.method10536());
+			this.field8179.method6294(this.getTransform());
 		}
 		return this.field8179;
 	}
@@ -106,7 +106,7 @@ public class GraphNode {
 
 	@ObfuscatedName("yq.aw(Lox;)V")
 	public final void method10531(Vector3 arg0) {
-		this.field8173.field4298.setTo(arg0);
+		this.field8173.trans.setTo(arg0);
 		this.method10535();
 		if (this.field8178 != null) {
 			this.field8178.method10549();
@@ -115,12 +115,12 @@ public class GraphNode {
 
 	@ObfuscatedName("yq.as(FFF)V")
 	public final void method10532(float arg0, float arg1, float arg2) {
-		this.method10538(this.field8173.field4298.field4308 + arg0, this.field8173.field4298.field4311 + arg1, this.field8173.field4298.field4313 + arg2);
+		this.method10538(this.field8173.trans.x + arg0, this.field8173.trans.y + arg1, this.field8173.trans.z + arg2);
 	}
 
 	@ObfuscatedName("yq.at(FFF)V")
 	public final void method10538(float arg0, float arg1, float arg2) {
-		this.field8173.field4298.method6491(arg0, arg1, arg2);
+		this.field8173.trans.setTo(arg0, arg1, arg2);
 		this.method10535();
 		if (this.field8178 != null) {
 			this.field8178.method10549();

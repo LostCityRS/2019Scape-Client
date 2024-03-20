@@ -551,9 +551,9 @@ public class Minimap {
 			var9 = (int) -Client.orbitCameraYaw & 0x3FFF;
 			var10 = 4096;
 		} else {
-			Vector3 var11 = Client.localPlayerEntity.method10536().field4298;
-			var7 = (int) var11.field4308;
-			var8 = (int) var11.field4313;
+			Vector3 var11 = Client.localPlayerEntity.getTransform().trans;
+			var7 = (int) var11.x;
+			var8 = (int) var11.z;
 			if (Client.cameraState == 3) {
 				var9 = (int) -((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 			} else {
@@ -627,9 +627,9 @@ public class Minimap {
 						var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 					}
 					if (var10 != null && var10.minimap && var10.active) {
-						Vector3 var11 = var9.method10536().field4298;
-						int var12 = (int) var11.field4308 / 128 - arg1 / 128;
-						int var13 = (int) var11.field4313 / 128 - arg2 / 128;
+						Vector3 var11 = var9.getTransform().trans;
+						int var12 = (int) var11.x / 128 - arg1 / 128;
+						int var13 = (int) var11.z / 128 - arg2 / 128;
 						if (var10.mapelement == -1) {
 							method715(arg3, arg4, arg5, arg6, var12, var13, DefaultSprites.field510[1]);
 						} else {
@@ -648,9 +648,9 @@ public class Minimap {
 		for (int var8 = 0; var8 < var6; var8++) {
 			PlayerEntity var9 = Client.players[var7[var8]];
 			if (var9 != null && var9.method19119() && !var9.field12071.method10195() && Client.localPlayerEntity != var9 && Client.localPlayerEntity.level == var9.level) {
-				Vector3 var10 = var9.method10536().field4298;
-				int var11 = (int) var10.field4308 / 128 - arg0 / 128;
-				int var12 = (int) var10.field4313 / 128 - arg1 / 128;
+				Vector3 var10 = var9.getTransform().trans;
+				int var11 = (int) var10.x / 128 - arg0 / 128;
+				int var12 = (int) var10.z / 128 - arg1 / 128;
 				boolean var13 = false;
 				for (int var14 = 0; var14 < Client.friendsCount; var14++) {
 					Friend var15 = Client.friends[var14];
@@ -701,9 +701,9 @@ public class Minimap {
 					ObjectWrapper var9 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var8.field744);
 					if (var9 != null) {
 						NpcEntity var10 = (NpcEntity) var9.field11436;
-						Vector3 var11 = var10.method10536().field4298;
-						int var12 = (int) var11.field4308 / 128 - arg0 / 128;
-						int var13 = (int) var11.field4313 / 128 - arg1 / 128;
+						Vector3 var11 = var10.getTransform().trans;
+						int var12 = (int) var11.x / 128 - arg0 / 128;
+						int var13 = (int) var11.z / 128 - arg1 / 128;
 						method15035(arg2, arg3, arg4, arg5, var12, var13, var8.field751, 360000L);
 					}
 				}
@@ -717,9 +717,9 @@ public class Minimap {
 				if (var8.field745 == 10 && var8.field744 >= 0 && var8.field744 < Client.players.length) {
 					PlayerEntity var20 = Client.players[var8.field744];
 					if (var20 != null) {
-						Vector3 var21 = var20.method10536().field4298;
-						int var22 = (int) var21.field4308 / 128 - arg0 / 128;
-						int var23 = (int) var21.field4313 / 128 - arg1 / 128;
+						Vector3 var21 = var20.getTransform().trans;
+						int var22 = (int) var21.x / 128 - arg0 / 128;
+						int var23 = (int) var21.z / 128 - arg1 / 128;
 						method15035(arg2, arg3, arg4, arg5, var22, var23, var8.field751, 360000L);
 					}
 				}

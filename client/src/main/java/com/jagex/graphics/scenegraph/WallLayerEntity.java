@@ -42,9 +42,9 @@ public abstract class WallLayerEntity extends GraphEntity {
 	@ObfuscatedName("asw.gy([Lakf;S)I")
 	public int method18375(Light[] arg0) {
 		if (this.field8176) {
-			Vector3 var2 = this.method10536().field4298;
-			int var3 = (int) var2.field4308 >> this.field11716.field6900;
-			int var4 = (int) var2.field4313 >> this.field11716.field6900;
+			Vector3 var2 = this.getTransform().trans;
+			int var3 = (int) var2.x >> this.field11716.field6900;
+			int var4 = (int) var2.z >> this.field11716.field6900;
 			int var5 = 0;
 			if (this.field11716.field6902 == var3) {
 				var5++;
@@ -93,13 +93,13 @@ public abstract class WallLayerEntity extends GraphEntity {
 
 	@ObfuscatedName("asw.ga(Ldh;S)Z")
 	public boolean method18360(Renderer arg0) {
-		Vector3 var2 = this.method10536().field4298;
-		return this.field11716.field6930.method8928(this, this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900);
+		Vector3 var2 = this.getTransform().trans;
+		return this.field11716.field6930.method8928(this, this.field11714, (int) var2.x >> this.field11716.field6900, (int) var2.z >> this.field11716.field6900);
 	}
 
 	@ObfuscatedName("asw.gn(I)Z")
 	public boolean method18361() {
-		Vector3 var1 = this.method10536().field4298;
-		return this.field11716.field6962[this.field11716.field6942 + (((int) var1.field4308 >> this.field11716.field6900) - this.field11716.field6902)][this.field11716.field6942 + (((int) var1.field4313 >> this.field11716.field6900) - this.field11716.field6947)];
+		Vector3 var1 = this.getTransform().trans;
+		return this.field11716.field6962[this.field11716.field6942 + (((int) var1.x >> this.field11716.field6900) - this.field11716.field6902)][this.field11716.field6942 + (((int) var1.z >> this.field11716.field6900) - this.field11716.field6947)];
 	}
 }

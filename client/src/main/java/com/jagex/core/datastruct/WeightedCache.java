@@ -25,7 +25,7 @@ public final class WeightedCache {
 	}
 
 	@ObfuscatedName("eb.e(Len;B)V")
-	public void method2943(CacheRemovalListener arg0) {
+	public void setRemovalListener(CacheRemovalListener arg0) {
 		this.field1759 = arg0;
 	}
 

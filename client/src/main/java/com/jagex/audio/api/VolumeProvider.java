@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface VolumeProvider {
 
 	@ObfuscatedName("ma.e(I)F")
-	float method3084();
+	float getVolume();
 }

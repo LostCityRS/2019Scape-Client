@@ -77,7 +77,7 @@ public class Matrix4x3 {
 	public void method6294(ScaleRotTrans arg0) {
 		this.method6311(arg0.field4299);
 		this.method6308(arg0.field4297);
-		this.method6314(arg0.field4298);
+		this.method6314(arg0.trans);
 	}
 
 	@ObfuscatedName("ou.k()V")
@@ -409,7 +409,7 @@ public class Matrix4x3 {
 
 	@ObfuscatedName("ou.b(Lox;)V")
 	public void method6311(Vector3 arg0) {
-		this.method6348(arg0.field4308, arg0.field4311, arg0.field4313);
+		this.method6348(arg0.x, arg0.y, arg0.z);
 	}
 
 	@ObfuscatedName("ou.h(FFF)V")
@@ -446,7 +446,7 @@ public class Matrix4x3 {
 
 	@ObfuscatedName("ou.g(Lox;)V")
 	public void method6314(Vector3 arg0) {
-		this.method6315(arg0.field4308, arg0.field4311, arg0.field4313);
+		this.method6315(arg0.x, arg0.y, arg0.z);
 	}
 
 	@ObfuscatedName("ou.i(FFF)V")

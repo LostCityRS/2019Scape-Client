@@ -106,6 +106,6 @@ public class ProgrammableParticleShader extends ParticleShader {
 		} else {
 			this.field10505.setUniform(this.field10503, Math.min(Math.max(this.field2985, 0.0F), 1.0F));
 		}
-		this.field10505.setUniform(this.field10509, this.field2990.field4308, this.field2990.field4311, this.field2990.field4313);
+		this.field10505.setUniform(this.field10509, this.field2990.x, this.field2990.y, this.field2990.z);
 	}
 }

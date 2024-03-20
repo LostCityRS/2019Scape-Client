@@ -43,18 +43,18 @@ public class SplineRelated {
 		double[] var2 = new double[3];
 		float var3 = arg0 * arg0;
 		float var4 = arg0 * var3;
-		double var5 = (double) ((this.field4323[1].field4308 - this.field4323[0].field4308) * 3.0F);
-		double var7 = (double) ((this.field4323[2].field4308 - this.field4323[1].field4308) * 3.0F) - var5;
-		double var9 = (double) (this.field4323[3].field4308 - this.field4323[0].field4308) - var5 - var7;
-		var2[0] = (double) arg0 * var5 + (double) var3 * var7 + (double) var4 * var9 + (double) this.field4323[0].field4308;
-		double var11 = (double) ((this.field4323[1].field4311 - this.field4323[0].field4311) * 3.0F);
-		double var13 = (double) ((this.field4323[2].field4311 - this.field4323[1].field4311) * 3.0F) - var11;
-		double var15 = (double) (this.field4323[3].field4311 - this.field4323[0].field4311) - var11 - var13;
-		var2[1] = (double) arg0 * var11 + (double) var3 * var13 + (double) var4 * var15 + (double) this.field4323[0].field4311;
-		double var17 = (double) ((this.field4323[1].field4313 - this.field4323[0].field4313) * 3.0F);
-		double var19 = (double) ((this.field4323[2].field4313 - this.field4323[1].field4313) * 3.0F) - var17;
-		double var21 = (double) (this.field4323[3].field4313 - this.field4323[0].field4313) - var17 - var19;
-		var2[2] = (double) arg0 * var17 + (double) var3 * var19 + (double) var4 * var21 + (double) this.field4323[0].field4313;
+		double var5 = (double) ((this.field4323[1].x - this.field4323[0].x) * 3.0F);
+		double var7 = (double) ((this.field4323[2].x - this.field4323[1].x) * 3.0F) - var5;
+		double var9 = (double) (this.field4323[3].x - this.field4323[0].x) - var5 - var7;
+		var2[0] = (double) arg0 * var5 + (double) var3 * var7 + (double) var4 * var9 + (double) this.field4323[0].x;
+		double var11 = (double) ((this.field4323[1].y - this.field4323[0].y) * 3.0F);
+		double var13 = (double) ((this.field4323[2].y - this.field4323[1].y) * 3.0F) - var11;
+		double var15 = (double) (this.field4323[3].y - this.field4323[0].y) - var11 - var13;
+		var2[1] = (double) arg0 * var11 + (double) var3 * var13 + (double) var4 * var15 + (double) this.field4323[0].y;
+		double var17 = (double) ((this.field4323[1].z - this.field4323[0].z) * 3.0F);
+		double var19 = (double) ((this.field4323[2].z - this.field4323[1].z) * 3.0F) - var17;
+		double var21 = (double) (this.field4323[3].z - this.field4323[0].z) - var17 - var19;
+		var2[2] = (double) arg0 * var17 + (double) var3 * var19 + (double) var4 * var21 + (double) this.field4323[0].z;
 		return var2;
 	}
 
@@ -99,13 +99,13 @@ public class SplineRelated {
 		byte var1 = 20;
 		double[] var2 = this.method6755(0.0F);
 		float var3 = 0.0F;
-		Vector3 var4 = Vector3.method6482();
+		Vector3 var4 = Vector3.create();
 		for (int var5 = 1; var5 <= var1; var5++) {
 			double[] var6 = this.method6755((float) var5 / (float) var1);
-			var4.field4308 = (float) (var6[0] - var2[0]);
-			var4.field4311 = (float) (var6[1] - var2[1]);
-			var4.field4313 = (float) (var6[2] - var2[2]);
-			var3 += var4.method6519();
+			var4.x = (float) (var6[0] - var2[0]);
+			var4.y = (float) (var6[1] - var2[1]);
+			var4.z = (float) (var6[2] - var2[2]);
+			var3 += var4.length();
 			var2 = var6;
 		}
 		int var7 = (int) (var3 / 20.0F);
@@ -117,10 +117,10 @@ public class SplineRelated {
 		float var9 = 0.0F;
 		for (int var10 = 1; var10 <= var7; var10++) {
 			double[] var11 = this.method6755((float) var10 / (float) var7);
-			var4.field4308 = (float) (var11[0] - var8[0]);
-			var4.field4311 = (float) (var11[1] - var8[1]);
-			var4.field4313 = (float) (var11[2] - var8[2]);
-			float var12 = var4.method6519();
+			var4.x = (float) (var11[0] - var8[0]);
+			var4.y = (float) (var11[1] - var8[1]);
+			var4.z = (float) (var11[2] - var8[2]);
+			float var12 = var4.length();
 			var9 += var12;
 			this.field4321[var10 - 1] = var12;
 			var8 = var11;

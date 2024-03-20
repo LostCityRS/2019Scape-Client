@@ -56,16 +56,16 @@ public class BasicCamera extends Camera {
 		if ((var4 >> 7 & 0x1) == 1) {
 			int var9 = arg0.g2();
 			if ((var9 >> CameraSettingType.field2810.field2803 & 0x1) == 1) {
-				this.field2853.method6490(arg0);
+				this.field2853.decode(arg0);
 			}
 			if ((var9 >> CameraSettingType.field2797.field2803 & 0x1) == 1) {
-				this.field2854.method6490(arg0);
+				this.field2854.decode(arg0);
 			}
 			if ((var9 >> CameraSettingType.field2809.field2803 & 0x1) == 1) {
-				this.field2856.method6490(arg0);
+				this.field2856.decode(arg0);
 			}
 			if ((var9 >> CameraSettingType.field2799.field2803 & 0x1) == 1) {
-				this.field2867.method6490(arg0);
+				this.field2867.decode(arg0);
 			}
 			if ((var9 >> CameraSettingType.field2798.field2803 & 0x1) == 1) {
 				this.field2855 = arg0.gFloat();
@@ -120,8 +120,8 @@ public class BasicCamera extends Camera {
 				this.field2842 = CameraLinearMovementMode.method17805(arg0.g1());
 			}
 			if ((var9 >> CameraSettingType.field2808.field2803 & 0x1) == 1) {
-				this.field2864.method6490(arg0);
-				this.field2865.method6490(arg0);
+				this.field2864.decode(arg0);
+				this.field2865.decode(arg0);
 				this.field2866 = arg0.gFloat();
 				this.field2843 = arg0.gFloat();
 			}

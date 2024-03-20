@@ -144,15 +144,15 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 				var6 = null;
 			}
 		}
-		Vector3 var7 = this.method10536().field4298;
-		return var4.method9475(arg0, arg1, this.field11167, this.field11161, var5, var6, (int) var7.field4308, this.field12460, (int) var7.field4313, arg2, null);
+		Vector3 var7 = this.getTransform().trans;
+		return var4.method9475(arg0, arg1, this.field11167, this.field11161, var5, var6, (int) var7.x, this.field12460, (int) var7.z, arg2, null);
 	}
 
 	@ObfuscatedName("ajg.fv(Ldh;B)Luq;")
 	public EntityBounds method17371(Renderer arg0) {
-		Vector3 var2 = this.method10536().field4298;
+		Vector3 var2 = this.getTransform().trans;
 		if (this.field11165 == null) {
-			this.field11165 = GraphEntity.method15111((int) var2.field4308, (int) var2.field4311, (int) var2.field4313, this.method17419(arg0, 0));
+			this.field11165 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17419(arg0, 0));
 		}
 		return this.field11165;
 	}
@@ -264,9 +264,9 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 			var4 = this.field11163;
 			this.field11163 = null;
 		}
-		Vector3 var5 = this.method10536().field4298;
+		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8750(var4, this.field11714, (int) var5.field4308, (int) var5.field4313, null);
+			this.field11716.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 
@@ -281,9 +281,9 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 			var4 = this.field11163;
 			this.field11163 = null;
 		}
-		Vector3 var5 = this.method10536().field4298;
+		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8814(var4, this.field11714, (int) var5.field4308, (int) var5.field4313, null);
+			this.field11716.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 }

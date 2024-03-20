@@ -137,13 +137,13 @@ public abstract class Camera {
 			this.field2857 = CameraControlMode.field2829;
 		}
 		this.field2842 = CameraLinearMovementMode.field2825;
-		this.field2853.method6491(100.0F, 100.0F, 100.0F);
-		this.field2854.method6491(100.0F, 100.0F, 100.0F);
+		this.field2853.setTo(100.0F, 100.0F, 100.0F);
+		this.field2854.setTo(100.0F, 100.0F, 100.0F);
 		this.field2852 = 0.05F;
-		this.field2856.method6491(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY);
-		this.field2867.method6491(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY);
-		this.field2864.method6491(1.0F, 1.0F, 1.0F);
-		this.field2865.method6491(1.0F, 1.0F, 1.0F);
+		this.field2856.setTo(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY);
+		this.field2867.setTo(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY);
+		this.field2864.setTo(1.0F, 1.0F, 1.0F);
+		this.field2865.setTo(1.0F, 1.0F, 1.0F);
 		this.field2866 = 1.1F;
 		this.field2843 = 1.1F;
 		this.field2855 = 50.0F;
@@ -500,11 +500,11 @@ public abstract class Camera {
 		Vector3 var2 = this.method4711();
 		float var3 = 0.0F;
 		if (var1 != null && var2 != null) {
-			Vector3 var4 = Vector3.method6528(var2, var1);
-			float var5 = (float) Math.sqrt((double) (var4.field4313 * var4.field4313 + var4.field4308 * var4.field4308));
-			var3 = (float) Math.atan2((double) -var4.field4311, (double) var5);
-			var1.method6486();
-			var2.method6486();
+			Vector3 var4 = Vector3.sub(var2, var1);
+			float var5 = (float) Math.sqrt((double) (var4.z * var4.z + var4.x * var4.x));
+			var3 = (float) Math.atan2((double) -var4.y, (double) var5);
+			var1.release();
+			var2.release();
 		}
 		return var3;
 	}
@@ -515,11 +515,11 @@ public abstract class Camera {
 		Vector3 var2 = this.method4711();
 		float var3 = 0.0F;
 		if (var1 != null && var2 != null) {
-			Vector3 var4 = Vector3.method6528(var1, var2);
-			var4.field4311 = 0.0F;
-			var3 = (float) Math.atan2((double) var4.field4308, (double) var4.field4313);
-			var1.method6486();
-			var2.method6486();
+			Vector3 var4 = Vector3.sub(var1, var2);
+			var4.y = 0.0F;
+			var3 = (float) Math.atan2((double) var4.x, (double) var4.z);
+			var1.release();
+			var2.release();
 		}
 		return (float) (3.141592653589793D - (double) var3);
 	}

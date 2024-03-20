@@ -375,7 +375,7 @@ public class GpuFloorModelRelated extends Node {
 		arg0.field2962 = this.field11413 / 3;
 		arg0.field2966 = this.field11416.field10140;
 		float var4 = this.field11415.method17610();
-		arg0.field2968.method6491(var4, var4, var4);
+		arg0.field2968.setTo(var4, var4, var4);
 		this.field11416.method16120(0, this.field11424);
 		this.field11416.method16177(this.field11416.field10204);
 		this.field11416.method16102(this.field11423);

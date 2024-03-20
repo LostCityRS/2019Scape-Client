@@ -7,94 +7,94 @@ import deob.ObfuscatedName;
 public class Vector3 {
 
 	@ObfuscatedName("ox.e")
-	public static Vector3[] field4309;
+	public static Vector3[] pool;
 
     @ObfuscatedName("ox.n")
-    public static int field4312;
+    public static int poolCapacity;
 
 	@ObfuscatedName("ox.m")
-	public static int field4310;
+	public static int poolSize;
 
 	@ObfuscatedName("ox.k")
-	public float field4308;
+	public float x;
 
 	@ObfuscatedName("ox.f")
-	public float field4311;
+	public float y;
 
 	@ObfuscatedName("ox.w")
-	public float field4313;
+	public float z;
 
 	static {
 		new Vector3(0.0F, 0.0F, 0.0F);
 		new Vector3(1.0F, 1.0F, 1.0F);
-		field4309 = new Vector3[0];
+		pool = new Vector3[0];
 	}
 
 	@ObfuscatedName("ox.e(I)V")
-	public static void method6481(int arg0) {
-		field4312 = arg0;
-		field4309 = new Vector3[arg0];
-		field4310 = 0;
+	public static void init(int arg0) {
+		poolCapacity = arg0;
+		pool = new Vector3[arg0];
+		poolSize = 0;
 	}
 
 	@ObfuscatedName("ox.n()Lox;")
-	public static Vector3 method6482() {
-		Vector3[] var0 = field4309;
-		synchronized (field4309) {
-			if (field4310 == 0) {
+	public static Vector3 create() {
+		Vector3[] var0 = pool;
+		synchronized (pool) {
+			if (poolSize == 0) {
 				return new Vector3();
 			} else {
-				field4309[--field4310].method6493();
-				return field4309[field4310];
+				pool[--poolSize].reset();
+				return pool[poolSize];
 			}
 		}
 	}
 
 	@ObfuscatedName("ox.m(FFF)Lox;")
 	public static Vector3 create(float arg0, float arg1, float arg2) {
-		Vector3[] var3 = field4309;
-		synchronized (field4309) {
-			if (field4310 == 0) {
+		Vector3[] var3 = pool;
+		synchronized (pool) {
+			if (poolSize == 0) {
 				return new Vector3(arg0, arg1, arg2);
 			} else {
-				field4309[--field4310].method6491(arg0, arg1, arg2);
-				return field4309[field4310];
+				pool[--poolSize].setTo(arg0, arg1, arg2);
+				return pool[poolSize];
 			}
 		}
 	}
 
 	@ObfuscatedName("ox.k(Lox;)Lox;")
-	public static Vector3 method6484(Vector3 arg0) {
-		Vector3[] var1 = field4309;
-		synchronized (field4309) {
-			if (field4310 == 0) {
+	public static Vector3 create(Vector3 arg0) {
+		Vector3[] var1 = pool;
+		synchronized (pool) {
+			if (poolSize == 0) {
 				return new Vector3(arg0);
 			} else {
-				field4309[--field4310].setTo(arg0);
-				return field4309[field4310];
+				pool[--poolSize].setTo(arg0);
+				return pool[poolSize];
 			}
 		}
 	}
 
 	@ObfuscatedName("ox.f(Lalw;)Lox;")
-	public static Vector3 method6485(Packet arg0) {
-		Vector3[] var1 = field4309;
-		synchronized (field4309) {
-			if (field4310 == 0) {
+	public static Vector3 create(Packet arg0) {
+		Vector3[] var1 = pool;
+		synchronized (pool) {
+			if (poolSize == 0) {
 				return new Vector3(arg0);
 			} else {
-				field4309[--field4310].method6490(arg0);
-				return field4309[field4310];
+				pool[--poolSize].decode(arg0);
+				return pool[poolSize];
 			}
 		}
 	}
 
 	@ObfuscatedName("ox.w()V")
-	public void method6486() {
-		Vector3[] var1 = field4309;
-		synchronized (field4309) {
-			if (field4310 < field4312 - 1) {
-				field4309[field4310++] = this;
+	public void release() {
+		Vector3[] var1 = pool;
+		synchronized (pool) {
+			if (poolSize < poolCapacity - 1) {
+				pool[poolSize++] = this;
 			}
 		}
 	}
@@ -103,230 +103,230 @@ public class Vector3 {
 	}
 
 	public Vector3(float arg0, float arg1, float arg2) {
-		this.field4308 = arg0;
-		this.field4311 = arg1;
-		this.field4313 = arg2;
+		this.x = arg0;
+		this.y = arg1;
+		this.z = arg2;
 	}
 
 	public Vector3(Vector3 arg0) {
-		this.field4308 = arg0.field4308;
-		this.field4311 = arg0.field4311;
-		this.field4313 = arg0.field4313;
+		this.x = arg0.x;
+		this.y = arg0.y;
+		this.z = arg0.z;
 	}
 
 	public Vector3(Packet arg0) {
-		this.field4308 = arg0.gFloat();
-		this.field4311 = arg0.gFloat();
-		this.field4313 = arg0.gFloat();
+		this.x = arg0.gFloat();
+		this.y = arg0.gFloat();
+		this.z = arg0.gFloat();
 	}
 
 	@ObfuscatedName("ox.l(Lalw;)V")
-	public void method6490(Packet arg0) {
-		this.field4308 = arg0.gFloat();
-		this.field4311 = arg0.gFloat();
-		this.field4313 = arg0.gFloat();
+	public void decode(Packet arg0) {
+		this.x = arg0.gFloat();
+		this.y = arg0.gFloat();
+		this.z = arg0.gFloat();
 	}
 
 	@ObfuscatedName("ox.u(FFF)V")
-	public void method6491(float arg0, float arg1, float arg2) {
-		this.field4308 = arg0;
-		this.field4311 = arg1;
-		this.field4313 = arg2;
+	public void setTo(float arg0, float arg1, float arg2) {
+		this.x = arg0;
+		this.y = arg1;
+		this.z = arg2;
 	}
 
 	@ObfuscatedName("ox.z(Lox;)V")
 	public void setTo(Vector3 arg0) {
-		this.method6491(arg0.field4308, arg0.field4311, arg0.field4313);
+		this.setTo(arg0.x, arg0.y, arg0.z);
 	}
 
 	@ObfuscatedName("ox.p()V")
-	public final void method6493() {
-		this.field4313 = 0.0F;
-		this.field4311 = 0.0F;
-		this.field4308 = 0.0F;
+	public final void reset() {
+		this.z = 0.0F;
+		this.y = 0.0F;
+		this.x = 0.0F;
 	}
 
 	@ObfuscatedName("ox.d(Lox;)Z")
-	public boolean method6488(Vector3 arg0) {
-		return this.field4308 == arg0.field4308 && this.field4311 == arg0.field4311 && this.field4313 == arg0.field4313;
+	public boolean isEqualTo(Vector3 other) {
+		return this.x == other.x && this.y == other.y && this.z == other.z;
 	}
 
 	@ObfuscatedName("ox.c()V")
-	public final void method6494() {
-		this.field4308 = -this.field4308;
-		this.field4311 = -this.field4311;
-		this.field4313 = -this.field4313;
+	public final void negate() {
+		this.x = -this.x;
+		this.y = -this.y;
+		this.z = -this.z;
 	}
 
 	@ObfuscatedName("ox.r()V")
-	public final void method6513() {
-		float var1 = 1.0F / this.method6519();
-		this.field4308 *= var1;
-		this.field4311 *= var1;
-		this.field4313 *= var1;
+	public final void normalise() {
+		float var1 = 1.0F / this.length();
+		this.x *= var1;
+		this.y *= var1;
+		this.z *= var1;
 	}
 
 	@ObfuscatedName("ox.v(Lox;)V")
-	public final void method6497(Vector3 arg0) {
-		this.field4308 += arg0.field4308;
-		this.field4311 += arg0.field4311;
-		this.field4313 += arg0.field4313;
+	public final void add(Vector3 other) {
+		this.x += other.x;
+		this.y += other.y;
+		this.z += other.z;
 	}
 
 	@ObfuscatedName("ox.o(Lox;F)V")
-	public final void method6570(Vector3 arg0, float arg1) {
-		this.field4308 += arg0.field4308 * arg1;
-		this.field4311 += arg0.field4311 * arg1;
-		this.field4313 += arg0.field4313 * arg1;
+	public final void addScaled(Vector3 other, float factor) {
+		this.x += other.x * factor;
+		this.y += other.y * factor;
+		this.z += other.z * factor;
 	}
 
 	@ObfuscatedName("ox.s(Lox;Lox;)Lox;")
-	public static final Vector3 method6499(Vector3 arg0, Vector3 arg1) {
-		Vector3 var2 = method6484(arg0);
-		var2.method6497(arg1);
+	public static final Vector3 add(Vector3 a, Vector3 b) {
+		Vector3 var2 = create(a);
+		var2.add(b);
 		return var2;
 	}
 
 	@ObfuscatedName("ox.y(Lox;)V")
-	public final void method6537(Vector3 arg0) {
-		this.field4308 -= arg0.field4308;
-		this.field4311 -= arg0.field4311;
-		this.field4313 -= arg0.field4313;
+	public final void sub(Vector3 other) {
+		this.x -= other.x;
+		this.y -= other.y;
+		this.z -= other.z;
 	}
 
 	@ObfuscatedName("ox.q(Lox;Lox;)Lox;")
-	public static final Vector3 method6528(Vector3 arg0, Vector3 arg1) {
-		Vector3 var2 = method6484(arg0);
-		var2.method6537(arg1);
+	public static final Vector3 sub(Vector3 a, Vector3 b) {
+		Vector3 var2 = create(a);
+		var2.sub(b);
 		return var2;
 	}
 
 	@ObfuscatedName("ox.x(Lox;)F")
-	public final float method6502(Vector3 arg0) {
-		return this.field4313 * arg0.field4313 + this.field4311 * arg0.field4311 + this.field4308 * arg0.field4308;
+	public final float dot(Vector3 other) {
+		return this.z * other.z + this.y * other.y + this.x * other.x;
 	}
 
 	@ObfuscatedName("ox.b(Lox;Lox;)F")
-	public static final float method6503(Vector3 arg0, Vector3 arg1) {
-		return arg0.method6502(arg1);
+	public static final float dot(Vector3 a, Vector3 b) {
+		return a.dot(b);
 	}
 
 	@ObfuscatedName("ox.h(Lox;)V")
-	public final void method6489(Vector3 arg0) {
-		this.method6491(this.field4311 * arg0.field4313 - this.field4313 * arg0.field4311, this.field4313 * arg0.field4308 - this.field4308 * arg0.field4313, this.field4308 * arg0.field4311 - this.field4311 * arg0.field4308);
+	public final void cross(Vector3 other) {
+		this.setTo(this.y * other.z - this.z * other.y, this.z * other.x - this.x * other.z, this.x * other.y - this.y * other.x);
 	}
 
 	@ObfuscatedName("ox.a(Lox;Lox;)Lox;")
-	public static final Vector3 method6587(Vector3 arg0, Vector3 arg1) {
-		Vector3 var2 = method6484(arg0);
-		var2.method6489(arg1);
+	public static final Vector3 cross(Vector3 a, Vector3 b) {
+		Vector3 var2 = create(a);
+		var2.cross(b);
 		return var2;
 	}
 
 	@ObfuscatedName("ox.g()F")
-	public final float method6519() {
-		return (float) Math.sqrt((double) (this.field4313 * this.field4313 + this.field4311 * this.field4311 + this.field4308 * this.field4308));
+	public final float length() {
+		return (float) Math.sqrt((double) (this.z * this.z + this.y * this.y + this.x * this.x));
 	}
 
 	@ObfuscatedName("ox.i()V")
-	public final void method6577() {
-		if (this.field4308 < 0.0F) {
-			this.field4308 *= -1.0F;
+	public final void abs() {
+		if (this.x < 0.0F) {
+			this.x *= -1.0F;
 		}
-		if (this.field4311 < 0.0F) {
-			this.field4311 *= -1.0F;
+		if (this.y < 0.0F) {
+			this.y *= -1.0F;
 		}
-		if (this.field4313 < 0.0F) {
-			this.field4313 *= -1.0F;
+		if (this.z < 0.0F) {
+			this.z *= -1.0F;
 		}
 	}
 
 	@ObfuscatedName("ox.j(Lox;)V")
-	public final void method6506(Vector3 arg0) {
-		this.field4308 *= arg0.field4308;
-		this.field4311 *= arg0.field4311;
-		this.field4313 *= arg0.field4313;
+	public final void multiply(Vector3 other) {
+		this.x *= other.x;
+		this.y *= other.y;
+		this.z *= other.z;
 	}
 
 	@ObfuscatedName("ox.t(Lox;Lox;)Lox;")
-	public static final Vector3 method6557(Vector3 arg0, Vector3 arg1) {
-		Vector3 var2 = method6484(arg0);
-		var2.method6506(arg1);
+	public static final Vector3 multiply(Vector3 a, Vector3 b) {
+		Vector3 var2 = create(a);
+		var2.multiply(b);
 		return var2;
 	}
 
 	@ObfuscatedName("ox.ae(F)V")
-	public final void method6496(float arg0) {
-		this.field4308 *= arg0;
-		this.field4311 *= arg0;
-		this.field4313 *= arg0;
+	public final void multiply(float arg0) {
+		this.x *= arg0;
+		this.y *= arg0;
+		this.z *= arg0;
 	}
 
 	@ObfuscatedName("ox.ag(Lox;)V")
-	public final void method6509(Vector3 arg0) {
-		this.field4308 /= arg0.field4308;
-		this.field4311 /= arg0.field4311;
-		this.field4313 /= arg0.field4313;
+	public final void divide(Vector3 arg0) {
+		this.x /= arg0.x;
+		this.y /= arg0.y;
+		this.z /= arg0.z;
 	}
 
 	@ObfuscatedName("ox.ah(Lox;Lox;)Lox;")
-	public static final Vector3 method6510(Vector3 arg0, Vector3 arg1) {
-		Vector3 var2 = method6484(arg0);
-		var2.method6509(arg1);
+	public static final Vector3 divide(Vector3 arg0, Vector3 arg1) {
+		Vector3 var2 = create(arg0);
+		var2.divide(arg1);
 		return var2;
 	}
 
 	@ObfuscatedName("ox.al(F)V")
-	public final void method6511(float arg0) {
-		this.field4308 /= arg0;
-		this.field4311 /= arg0;
-		this.field4313 /= arg0;
+	public final void divide(float arg0) {
+		this.x /= arg0;
+		this.y /= arg0;
+		this.z /= arg0;
 	}
 
 	@ObfuscatedName("ox.ac(Lox;F)Lox;")
-	public static final Vector3 method6512(Vector3 arg0, float arg1) {
-		Vector3 var2 = method6484(arg0);
-		var2.method6496(arg1);
+	public static final Vector3 multiply(Vector3 arg0, float arg1) {
+		Vector3 var2 = create(arg0);
+		var2.multiply(arg1);
 		return var2;
 	}
 
 	@ObfuscatedName("ox.ai(Lov;)V")
-	public final void method6526(Quaternion arg0) {
-		Quaternion var2 = Quaternion.method6411(this.field4308, this.field4311, this.field4313, 0.0F);
-		Quaternion var3 = Quaternion.method6419(arg0);
+	public final void rotate(Quaternion arg0) {
+		Quaternion var2 = Quaternion.create(this.x, this.y, this.z, 0.0F);
+		Quaternion var3 = Quaternion.opposite(arg0);
 		Quaternion var4 = Quaternion.method6425(var3, var2);
-		var4.method6424(arg0);
-		this.method6491(var4.field4301, var4.field4304, var4.field4305);
-		var2.method6407();
-		var3.method6407();
-		var4.method6407();
+		var4.multiply(arg0);
+		this.setTo(var4.field4301, var4.field4304, var4.field4305);
+		var2.release();
+		var3.release();
+		var4.release();
 	}
 
 	@ObfuscatedName("ox.aw(Lou;)V")
 	public final void method6567(Matrix4x3 arg0) {
-		float var2 = this.field4308;
-		float var3 = this.field4311;
-		this.field4308 = this.field4313 * arg0.field4275 + arg0.field4279 * var3 + arg0.field4276 * var2 + arg0.field4285;
-		this.field4311 = this.field4313 * arg0.field4283 + arg0.field4287 * var3 + arg0.field4277 * var2 + arg0.field4286;
-		this.field4313 = this.field4313 * arg0.field4284 + arg0.field4281 * var3 + arg0.field4278 * var2 + arg0.field4280;
+		float var2 = this.x;
+		float var3 = this.y;
+		this.x = this.z * arg0.field4275 + arg0.field4279 * var3 + arg0.field4276 * var2 + arg0.field4285;
+		this.y = this.z * arg0.field4283 + arg0.field4287 * var3 + arg0.field4277 * var2 + arg0.field4286;
+		this.z = this.z * arg0.field4284 + arg0.field4281 * var3 + arg0.field4278 * var2 + arg0.field4280;
 	}
 
 	@ObfuscatedName("ox.as(Lou;)V")
 	public final void method6521(Matrix4x3 arg0) {
-		float var2 = this.field4308;
-		float var3 = this.field4311;
-		this.field4308 = this.field4313 * arg0.field4275 + arg0.field4279 * var3 + arg0.field4276 * var2;
-		this.field4311 = this.field4313 * arg0.field4283 + arg0.field4287 * var3 + arg0.field4277 * var2;
-		this.field4313 = this.field4313 * arg0.field4284 + arg0.field4281 * var3 + arg0.field4278 * var2;
+		float var2 = this.x;
+		float var3 = this.y;
+		this.x = this.z * arg0.field4275 + arg0.field4279 * var3 + arg0.field4276 * var2;
+		this.y = this.z * arg0.field4283 + arg0.field4287 * var3 + arg0.field4277 * var2;
+		this.z = this.z * arg0.field4284 + arg0.field4281 * var3 + arg0.field4278 * var2;
 	}
 
 	@ObfuscatedName("ox.at(Lox;F)V")
 	public final void method6562(Vector3 arg0, float arg1) {
-		this.method6496(1.0F - arg1);
-		this.method6497(method6512(arg0, arg1));
+		this.multiply(1.0F - arg1);
+		this.add(multiply(arg0, arg1));
 	}
 
 	public String toString() {
-		return this.field4308 + ", " + this.field4311 + ", " + this.field4313;
+		return this.x + ", " + this.y + ", " + this.z;
 	}
 }

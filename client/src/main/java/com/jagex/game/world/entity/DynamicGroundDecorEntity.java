@@ -66,10 +66,10 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		ScaleRotTrans var4 = this.method10536();
+		ScaleRotTrans var4 = this.getTransform();
 		PickableEntity var5 = PickableEntity.method16749(this.field11132);
-		int var6 = (int) var4.field4298.field4308 >> 9;
-		int var7 = (int) var4.field4298.field4313 >> 9;
+		int var6 = (int) var4.trans.x >> 9;
+		int var7 = (int) var4.trans.z >> 9;
 		this.field11133.method8239(arg0, var2, var3, var6, var6, var7, var7, true);
 		LocType var8 = this.field11133.method8237();
 		if (var8.field7468 == null) {
@@ -84,9 +84,9 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 		}
 		this.field11135 = var2.method1731() || this.field11133.field6680 != null;
 		if (this.field11134 == null) {
-			this.field11134 = GraphEntity.method15111((int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			this.field11134 = GraphEntity.method15111((int) var4.trans.x, (int) var4.trans.y, (int) var4.trans.z, var2);
 		} else {
-			GraphEntity.method8229(this.field11134, (int) var4.field4298.field4308, (int) var4.field4298.field4311, (int) var4.field4298.field4313, var2);
+			GraphEntity.method8229(this.field11134, (int) var4.trans.x, (int) var4.trans.y, (int) var4.trans.z, var2);
 		}
 		return var5;
 	}
@@ -95,9 +95,9 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	public void method17373(Renderer arg0) {
 		Model var2 = this.field11133.method8238(arg0, 262144, true, true);
 		if (var2 != null) {
-			Vector3 var3 = this.method10536().field4298;
-			int var4 = (int) var3.field4308 >> 9;
-			int var5 = (int) var3.field4313 >> 9;
+			Vector3 var3 = this.getTransform().trans;
+			int var4 = (int) var3.x >> 9;
+			int var5 = (int) var3.z >> 9;
 			this.field11133.method8239(arg0, var2, this.method10533(), var4, var4, var5, var5, false);
 		}
 	}

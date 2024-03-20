@@ -6,8 +6,8 @@ import deob.ObfuscatedName;
 public class AudioEndianness {
 
 	@ObfuscatedName("mw.e")
-	public static final AudioEndianness field3439 = new AudioEndianness();
+	public static final AudioEndianness LITTLE = new AudioEndianness();
 
 	@ObfuscatedName("mw.n")
-	public static final AudioEndianness field3438 = new AudioEndianness();
+	public static final AudioEndianness BIG = new AudioEndianness();
 }

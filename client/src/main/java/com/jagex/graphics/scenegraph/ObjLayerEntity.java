@@ -19,21 +19,21 @@ public abstract class ObjLayerEntity extends GraphEntity {
 
 	@ObfuscatedName("ast.gy([Lakf;S)I")
 	public int method18375(Light[] arg0) {
-		Vector3 var2 = this.method10536().field4298;
-		return this.method18362((int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, arg0);
+		Vector3 var2 = this.getTransform().trans;
+		return this.method18362((int) var2.x >> this.field11716.field6900, (int) var2.z >> this.field11716.field6900, arg0);
 	}
 
 	@ObfuscatedName("ast.ga(Ldh;S)Z")
 	public boolean method18360(Renderer arg0) {
-		Vector3 var2 = this.method10536().field4298;
-		PrimaryLayerEntityList var3 = this.field11716.getEntities(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900);
-		return var3 != null && var3.field7057.field12470 ? this.field11716.field6930.method8950(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900, var3.field7057.overlayHeight() + this.overlayHeight()) : this.field11716.field6930.method8927(this.field11714, (int) var2.field4308 >> this.field11716.field6900, (int) var2.field4313 >> this.field11716.field6900);
+		Vector3 var2 = this.getTransform().trans;
+		PrimaryLayerEntityList var3 = this.field11716.getEntities(this.field11714, (int) var2.x >> this.field11716.field6900, (int) var2.z >> this.field11716.field6900);
+		return var3 != null && var3.field7057.field12470 ? this.field11716.field6930.method8950(this.field11714, (int) var2.x >> this.field11716.field6900, (int) var2.z >> this.field11716.field6900, var3.field7057.overlayHeight() + this.overlayHeight()) : this.field11716.field6930.method8927(this.field11714, (int) var2.x >> this.field11716.field6900, (int) var2.z >> this.field11716.field6900);
 	}
 
 	@ObfuscatedName("ast.gn(I)Z")
 	public boolean method18361() {
-		Vector3 var1 = this.method10536().field4298;
-		return this.field11716.field6962[this.field11716.field6942 + (((int) var1.field4308 >> this.field11716.field6900) - this.field11716.field6902)][this.field11716.field6942 + (((int) var1.field4313 >> this.field11716.field6900) - this.field11716.field6947)];
+		Vector3 var1 = this.getTransform().trans;
+		return this.field11716.field6962[this.field11716.field6942 + (((int) var1.x >> this.field11716.field6900) - this.field11716.field6902)][this.field11716.field6942 + (((int) var1.z >> this.field11716.field6900) - this.field11716.field6947)];
 	}
 
 	@ObfuscatedName("ast.fp(I)Z")

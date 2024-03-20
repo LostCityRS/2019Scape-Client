@@ -55,7 +55,7 @@ public class GLEnvironmentMapEffect extends GlEffect {
 						} else {
 							var15 = new Vector3(var12, -var11, var13);
 						}
-						float var16 = var15.method6502(var6);
+						float var16 = var15.dot(var6);
 						float var17 = Math.max(0.0F, Math.min(1.0F, var16));
 						int var18;
 						int var19;

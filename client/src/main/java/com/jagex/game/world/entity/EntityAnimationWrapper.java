@@ -19,6 +19,6 @@ public class EntityAnimationWrapper extends AnimationWrapper {
 
 	@ObfuscatedName("aoi.ag(Lfg;II)V")
 	public void method14407(SeqType arg0, int arg1) {
-		Client.audioApi.method3180(arg0, arg1, this.field11878);
+		Client.audioApi.playSequenceSound(arg0, arg1, this.field11878);
 	}
 }

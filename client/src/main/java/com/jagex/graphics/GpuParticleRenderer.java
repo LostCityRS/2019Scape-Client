@@ -146,12 +146,12 @@ public class GpuParticleRenderer {
 		boolean var17 = arg0.field10169 > 0;
 		if (var17) {
 			var16.field2989.method6247(0.0F, 0.0F, 1.0F, -arg0.field10171);
-			var16.field2990.method6491((float) (arg0.field10191 >> 16 & 0xFF) / 255.0F, (float) (arg0.field10191 >> 8 & 0xFF) / 255.0F, (float) (arg0.field10191 >> 0 & 0xFF) / 255.0F);
+			var16.field2990.setTo((float) (arg0.field10191 >> 16 & 0xFF) / 255.0F, (float) (arg0.field10191 >> 8 & 0xFF) / 255.0F, (float) (arg0.field10191 >> 0 & 0xFF) / 255.0F);
 			var16.field2989.method6265(arg0.field10190);
 			var16.field2989.method6252(1.0F / (arg0.field10119 - arg0.field10171));
 		} else {
 			var16.field2989.method6247(0.0F, 0.0F, 0.0F, 0.0F);
-			var16.field2990.method6491(0.0F, 0.0F, 0.0F);
+			var16.field2990.setTo(0.0F, 0.0F, 0.0F);
 		}
 		this.method5766(arg0, var10, var14, var8, var15, var16, var17);
 		if (field3325 != arg0.field10122) {

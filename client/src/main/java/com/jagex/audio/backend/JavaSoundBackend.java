@@ -4,7 +4,7 @@ import com.jagex.audio.api.AudioBuss;
 import com.jagex.audio.api.AudioEndianness;
 import com.jagex.audio.api.AudioFormat;
 import com.jagex.audio.api.SoundBackend;
-import com.jagex.audio.stream.AudioRelated2;
+import com.jagex.audio.stream.BussManager;
 import com.jagex.audio.stream.SoundRelated2;
 import com.jagex.audio.stream.SoundRelatedType1;
 import com.jagex.audio.stream.SoundRelatedType2;
@@ -26,7 +26,7 @@ public class JavaSoundBackend extends SoundBackend {
 	public java.util.HashMap field10688 = new java.util.HashMap();
 
 	@ObfuscatedName("aiz.m")
-	public AudioRelated2 field10694 = new AudioRelated2(this);
+	public BussManager field10694 = new BussManager(this);
 
 	@ObfuscatedName("aiz.k")
 	public volatile boolean field10690 = false;
@@ -156,7 +156,7 @@ public class JavaSoundBackend extends SoundBackend {
 			SoundRelated2[] var6 = (SoundRelated2[]) this.field10688.get(var5);
 			for (int var7 = 0; var7 < var6.length; var7++) {
 				VorbisSound var8 = new VorbisSound(2.0F);
-				var8.method3774(0, AudioFormat.field3441, AudioEndianness.field3439, 2);
+				var8.method3774(0, AudioFormat.field3441, AudioEndianness.LITTLE, 2);
 				var6[var7] = new SoundRelated2(var5, 8192, 3, var8, this);
 			}
 		}
@@ -176,7 +176,7 @@ public class JavaSoundBackend extends SoundBackend {
 	@ObfuscatedName("aiz.e(I)V")
 	public void method5874() {
 		if (this.field10694 != null) {
-			this.field10694.method5849();
+			this.field10694.update();
 		}
 		java.util.Iterator var1 = this.field10688.keySet().iterator();
 		while (true) {
@@ -297,9 +297,9 @@ public class JavaSoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiz.n(IILnd;Lmw;IFB)Ljava/lang/Object;")
-	public Object method5861(int arg0, int arg1, AudioFormat arg2, AudioEndianness arg3, int arg4, float arg5) {
+	public Object playSample(int arg0, int arg1, AudioFormat format, AudioEndianness endianness, int arg4, float arg5) {
 		PcmPlayer var7 = this.method16806((float) arg1 * arg5);
-		SoundSample var8 = new SoundSample(this, var7, arg4, (float) arg1 * arg5, arg2.field3445, arg0 < 2 ? 2 : arg0, AudioFormat.field3441 == arg2 || AudioFormat.field3442 == arg2, AudioEndianness.field3438 == arg3);
+		SoundSample var8 = new SoundSample(this, var7, arg4, (float) arg1 * arg5, format.field3445, arg0 < 2 ? 2 : arg0, AudioFormat.field3441 == format || AudioFormat.field3442 == format, AudioEndianness.BIG == endianness);
 		PcmPlayer var9 = var8.field6863;
 		synchronized (var8.field6863) {
 			var8.field6863.method8649(var8);
@@ -357,7 +357,7 @@ public class JavaSoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiz.u(I)Lmb;")
-	public AudioRelated2 method5880() {
+	public BussManager getBussManager() {
 		return this.field10694;
 	}
 

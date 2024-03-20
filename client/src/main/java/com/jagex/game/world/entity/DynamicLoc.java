@@ -147,10 +147,10 @@ public class DynamicLoc {
 			this.field6673 = var5.id;
 			return null;
 		}
-		Vector3 var6 = this.field6672.method10536().field4298;
+		Vector3 var6 = this.field6672.getTransform().trans;
 		Scene var7 = Client.world.getScene();
 		if (arg3) {
-			var7.method8814(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, this.field6679);
+			var7.method8814(this.field6677, this.field6663, (int) var6.x, (int) var6.z, this.field6679);
 			this.field6670 = false;
 		}
 		FloorModel var8 = var7.field6913[this.field6663];
@@ -165,7 +165,7 @@ public class DynamicLoc {
 			if (arg3) {
 				arg1 |= 0x40000;
 			}
-			var10 = var5.method9470(arg0, arg1, this.field6666 == 11 ? 10 : this.field6666, this.field6666 == 11 ? this.field6667 + 4 : this.field6667, var8, var9, (int) var6.field4308, var8.getFineHeight((int) var6.field4308, (int) var6.field4313), (int) var6.field4313, this.field6664, this.field6678);
+			var10 = var5.method9470(arg0, arg1, this.field6666 == 11 ? 10 : this.field6666, this.field6666 == 11 ? this.field6667 + 4 : this.field6667, var8, var9, (int) var6.x, var8.getFineHeight((int) var6.x, (int) var6.z), (int) var6.z, this.field6664, this.field6678);
 			if (var10 == null) {
 				this.field6679 = null;
 				this.field6677 = null;
@@ -176,7 +176,7 @@ public class DynamicLoc {
 						this.field6679 = new boolean[4];
 					}
 					this.field6677 = var10.method1726(this.field6677);
-					var7.method8750(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, this.field6679);
+					var7.method8750(this.field6677, this.field6663, (int) var6.x, (int) var6.z, this.field6679);
 					this.field6670 = true;
 				}
 				this.field6674 = var10.method1748();
@@ -189,7 +189,7 @@ public class DynamicLoc {
 			if (this.field6669 != null) {
 				arg1 |= this.field6669.method1691();
 			}
-			Pair var11 = var5.method9475(arg0, arg1, this.field6666 == 11 ? 10 : this.field6666, this.field6666 == 11 ? this.field6667 + 4 : this.field6667, var8, var9, (int) var6.field4308, var8.getFineHeight((int) var6.field4308, (int) var6.field4313), (int) var6.field4313, arg3, this.field6678);
+			Pair var11 = var5.method9475(arg0, arg1, this.field6666 == 11 ? 10 : this.field6666, this.field6666 == 11 ? this.field6667 + 4 : this.field6667, var8, var9, (int) var6.x, var8.getFineHeight((int) var6.x, (int) var6.z), (int) var6.z, arg3, this.field6678);
 			if (var11 == null) {
 				this.field6679 = null;
 				this.field6677 = null;
@@ -200,7 +200,7 @@ public class DynamicLoc {
 				if (arg3) {
 					this.field6677 = (HardShadow) var11.second;
 					this.field6679 = null;
-					var7.method8750(this.field6677, this.field6663, (int) var6.field4308, (int) var6.field4313, null);
+					var7.method8750(this.field6677, this.field6663, (int) var6.x, (int) var6.z, null);
 					this.field6670 = true;
 				}
 				this.field6674 = var10.method1748();
@@ -249,8 +249,8 @@ public class DynamicLoc {
 	@ObfuscatedName("sp.p(Ldh;B)V")
 	public void method8242(Renderer arg0) {
 		if (this.field6677 != null) {
-			Vector3 var2 = this.field6672.method10536().field4298;
-			Client.world.getScene().method8814(this.field6677, this.field6663, (int) var2.field4308, (int) var2.field4313, this.field6679);
+			Vector3 var2 = this.field6672.getTransform().trans;
+			Client.world.getScene().method8814(this.field6677, this.field6663, (int) var2.x, (int) var2.z, this.field6679);
 			this.field6679 = null;
 			this.field6677 = null;
 		}

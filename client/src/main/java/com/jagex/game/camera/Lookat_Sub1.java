@@ -26,12 +26,12 @@ public class Lookat_Sub1 extends Lookat {
 
 	@ObfuscatedName("anc.q(Lakt;B)V")
 	public void method18776(CoordFine arg0) {
-		this.field11848.field4308 = arg0.x;
-		this.field11848.field4311 = arg0.y;
-		this.field11848.field4313 = arg0.z;
-		if (Float.isNaN(this.field11847.field4308)) {
+		this.field11848.x = arg0.x;
+		this.field11848.y = arg0.y;
+		this.field11848.z = arg0.z;
+		if (Float.isNaN(this.field11847.x)) {
 			this.field11847.setTo(this.field11848);
-			this.field11849.method6493();
+			this.field11849.reset();
 		}
 	}
 
@@ -42,36 +42,36 @@ public class Lookat_Sub1 extends Lookat {
 
 	@ObfuscatedName("anc.n(I)Z")
 	public boolean method14145() {
-		return !Float.isNaN(this.field11847.field4308);
+		return !Float.isNaN(this.field11847.x);
 	}
 
 	@ObfuscatedName("anc.f(Lju;Lou;IIFB)V")
 	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
-		Vector3 var6 = Vector3.method6484(this.field8479.method4714());
-		var6.field4308 -= arg2;
-		var6.field4313 -= arg3;
-		var6.field4311 *= -1.0F;
-		Vector3 var7 = Vector3.method6484(this.field11847);
-		var7.field4308 -= arg2;
-		var7.field4313 -= arg3;
-		var7.field4311 *= -1.0F;
-		arg1.method6296((double) var6.field4308, (double) var6.field4311, (double) var6.field4313, (double) var7.field4308, (double) var7.field4311, (double) var7.field4313, 0.0F, 1.0F, 0.0F);
-		var6.method6486();
-		var7.method6486();
+		Vector3 var6 = Vector3.create(this.field8479.method4714());
+		var6.x -= arg2;
+		var6.z -= arg3;
+		var6.y *= -1.0F;
+		Vector3 var7 = Vector3.create(this.field11847);
+		var7.x -= arg2;
+		var7.z -= arg3;
+		var7.y *= -1.0F;
+		arg1.method6296((double) var6.x, (double) var6.y, (double) var6.z, (double) var7.x, (double) var7.y, (double) var7.z, 0.0F, 1.0F, 0.0F);
+		var6.release();
+		var7.release();
 	}
 
 	@ObfuscatedName("anc.m(I)Lox;")
 	public Vector3 method14133() {
-		return Vector3.method6484(this.field11847);
+		return Vector3.create(this.field11847);
 	}
 
 	@ObfuscatedName("anc.k(I)Lox;")
 	public Vector3 method14135() {
-		return Vector3.method6484(this.field11848);
+		return Vector3.create(this.field11848);
 	}
 
 	@ObfuscatedName("anc.w(Lalw;I)V")
 	public void method14132(Packet arg0) {
-		this.field11848.method6490(arg0);
+		this.field11848.decode(arg0);
 	}
 }

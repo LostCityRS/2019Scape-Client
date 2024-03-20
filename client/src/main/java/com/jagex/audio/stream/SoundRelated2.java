@@ -289,7 +289,7 @@ public class SoundRelated2 {
 			this.field4913 = var12.g4s();
 			this.field4926 = var12.g4s();
 			if (this.field4918 == null) {
-				this.field4918 = this.field4923.method5861(this.field4913, this.field4914, this.field4921.method3733(), this.field4921.method3734(), this.field4907, this.field4902);
+				this.field4918 = this.field4923.playSample(this.field4913, this.field4914, this.field4921.method3733(), this.field4921.method3734(), this.field4907, this.field4902);
 				if (this.field4918 == null) {
 					this.method7480(SoundRelatedType1.field4865);
 					return false;
@@ -383,9 +383,9 @@ public class SoundRelated2 {
 
 	@ObfuscatedName("rq.v(B)V")
 	public void method7492() {
-		AudioBuss var1 = this.field4923.method5880().method5851(this.field4896);
-		this.field4898 = var1 == null ? 1.0F : var1.method5901();
-		float var2 = var1 == null ? 0.1F : var1.method5899();
+		AudioBuss var1 = this.field4923.getBussManager().getBuss(this.field4896);
+		this.field4898 = var1 == null ? 1.0F : var1.getVolume();
+		float var2 = var1 == null ? 0.1F : var1.getPriority();
 		float var3 = this.field4897 * var2;
 		float var4 = this.field4910.length > 0 ? 0.0F : 1.0F;
 		for (int var5 = 0; var5 < this.field4910.length; var5++) {

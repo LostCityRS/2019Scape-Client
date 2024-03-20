@@ -764,11 +764,11 @@ public class World {
 						var6.routeWaypointX[var7] -= var2;
 						var6.routeWaypointZ[var7] -= var3;
 					}
-					Vector3 var8 = Vector3.method6484(var6.method10536().field4298);
-					var8.field4308 -= var2 * 512;
-					var8.field4313 -= var3 * 512;
+					Vector3 var8 = Vector3.create(var6.getTransform().trans);
+					var8.x -= var2 * 512;
+					var8.z -= var3 * 512;
 					var6.method10531(var8);
-					var8.method6486();
+					var8.release();
 				}
 			}
 		} else {
@@ -780,11 +780,11 @@ public class World {
 				ObjectWrapper var13 = Client.field10839[var12];
 				if (var13 != null) {
 					NpcEntity var14 = (NpcEntity) var13.field11436;
-					Vector3 var15 = Vector3.method6484(var14.method10536().field4298);
-					var15.field4308 -= var2 * 512;
-					var15.field4313 -= var3 * 512;
+					Vector3 var15 = Vector3.create(var14.getTransform().trans);
+					var15.x -= var2 * 512;
+					var15.z -= var3 * 512;
 					var14.method10531(var15);
-					if ((int) var15.field4308 >= 0 && (int) var15.field4308 <= var10 && (int) var15.field4313 >= 0 && (int) var15.field4313 <= var11) {
+					if ((int) var15.x >= 0 && (int) var15.x <= var10 && (int) var15.z >= 0 && (int) var15.z <= var11) {
 						boolean var16 = true;
 						for (int var17 = 0; var17 < var14.routeWaypointX.length; var17++) {
 							var14.routeWaypointX[var17] -= var2;
@@ -805,7 +805,7 @@ public class World {
 						var13.remove();
 						var9 = true;
 					}
-					var15.method6486();
+					var15.release();
 				}
 			}
 			if (var9) {
@@ -825,11 +825,11 @@ public class World {
 					var22.routeWaypointX[var23] -= var2;
 					var22.routeWaypointZ[var23] -= var3;
 				}
-				Vector3 var24 = Vector3.method6484(var22.method10536().field4298);
-				var24.field4308 -= var2 * 512;
-				var24.field4313 -= var3 * 512;
+				Vector3 var24 = Vector3.create(var22.getTransform().trans);
+				var24.x -= var2 * 512;
+				var24.z -= var3 * 512;
 				var22.method10531(var24);
-				var24.method6486();
+				var24.release();
 			}
 		}
 		HintArrow[] var25 = Client.hintArrows;

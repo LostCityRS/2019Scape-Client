@@ -92,11 +92,11 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 			arg0.drawParticles(var6);
 		}
 		this.field11127 = var2.method1731() || this.field11131.field6680 != null;
-		ScaleRotTrans var7 = this.method10536();
+		ScaleRotTrans var7 = this.getTransform();
 		if (this.field11129 == null) {
-			this.field11129 = GraphEntity.method15111((int) var7.field4298.field4308, (int) var7.field4298.field4311, (int) var7.field4298.field4313, var2);
+			this.field11129 = GraphEntity.method15111((int) var7.trans.x, (int) var7.trans.y, (int) var7.trans.z, var2);
 		} else {
-			GraphEntity.method8229(this.field11129, (int) var7.field4298.field4308, (int) var7.field4298.field4311, (int) var7.field4298.field4313, var2);
+			GraphEntity.method8229(this.field11129, (int) var7.trans.x, (int) var7.trans.y, (int) var7.trans.z, var2);
 		}
 		return var4;
 	}
