@@ -89,7 +89,7 @@ public class Huffman {
 			int var10 = this.encoded[var9];
 			byte var11 = this.table[var9];
 			if (var11 == 0) {
-				throw new RuntimeException("" + var9);
+				throw new RuntimeException("No codeword for data value " + var9);
 			}
 			int var12 = var7 >> 3;
 			int var13 = var7 & 0x7;

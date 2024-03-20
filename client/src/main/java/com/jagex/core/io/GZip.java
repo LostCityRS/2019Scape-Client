@@ -31,7 +31,7 @@ public class GZip {
 	@ObfuscatedName("adv.n(Lalw;[BS)V")
 	public void method15245(Packet arg0, byte[] arg1) {
 		if (arg0.data[arg0.pos] != 31 || arg0.data[arg0.pos + 1] != -117) {
-			throw new RuntimeException("");
+			throw new RuntimeException("Invalid GZIP header!");
 		}
 		if (this.field9252 == null) {
 			this.field9252 = new Inflater(true);
@@ -41,7 +41,7 @@ public class GZip {
 			this.field9252.inflate(arg1);
 		} catch (Exception var4) {
 			this.field9252.reset();
-			throw new RuntimeException("");
+			throw new RuntimeException("Invalid GZIP compressed data!");
 		}
 		this.field9252.reset();
 	}

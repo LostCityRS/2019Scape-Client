@@ -353,7 +353,7 @@ public final class ScriptRunner {
 			while (true) {
 				field8202++;
 				if (field8202 > arg1) {
-					throw new RuntimeException("");
+					throw new RuntimeException("slow");
 				}
 				var3 = arg2.field8237[++arg2.field8220];
 				if (field8206 && (field8205 == null || arg2.field8239.field12365 != null && arg2.field8239.field12365.indexOf(field8205) != -1)) {
@@ -417,7 +417,7 @@ public final class ScriptRunner {
 			}
 		}
 		if (arg3 > 0 && var6.field2351[arg3 - 1] == null) {
-			throw new RuntimeException("" + (arg3 - 1));
+			throw new RuntimeException("Gap at:" + (arg3 - 1));
 		}
 		Component var12 = new Component();
 		var12.field2184 = arg2;
@@ -5224,9 +5224,9 @@ public final class ScriptRunner {
 			var2.field2351[var1.field8242.field2183] = null;
 			Client.method4616(var2);
 		} else if (arg0.field8235) {
-			throw new RuntimeException("");
+			throw new RuntimeException("Tried to .cc_delete static .active-component!");
 		} else {
-			throw new RuntimeException("");
+			throw new RuntimeException("Tried to cc_delete static active-component!");
 		}
 	}
 
@@ -11795,7 +11795,7 @@ public final class ScriptRunner {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		int var2 = arg0.field8216[--arg0.field8226];
 		if (var2 == -1) {
-			throw new RuntimeException("");
+			throw new RuntimeException("null char");
 		}
 		arg0.field8218[++arg0.field8211 - 1] = var1 + (char) var2;
 	}
@@ -12742,7 +12742,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 2];
 		QuickChatPhraseType var4 = Client.quickChatPhraseTypeList.list(var1);
 		if (var4.getDynamicCommand(var2).id != 0) {
-			throw new RuntimeException("");
+			throw new RuntimeException("bad command");
 		}
 		arg0.field8216[++arg0.field8226 - 1] = var4.method19506(var2, var3);
 	}
