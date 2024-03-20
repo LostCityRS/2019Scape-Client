@@ -1,6 +1,6 @@
 package com.jagex.game.load;
 
-import com.jagex.audio.AudioApi;
+import com.jagex.audio.api.AudioApi;
 import com.jagex.core.constants.PublicKeys;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.MonotonicTime;

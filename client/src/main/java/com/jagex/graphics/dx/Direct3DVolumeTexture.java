@@ -1,6 +1,6 @@
 package com.jagex.graphics.dx;
 
-import com.jagex.audio.VolumeTexture;
+import com.jagex.graphics.VolumeTexture;
 import com.jagex.game.client.DataType;
 import com.jagex.graphics.GpuTextureRelated;
 import com.jagex.graphics.TextureFormat;

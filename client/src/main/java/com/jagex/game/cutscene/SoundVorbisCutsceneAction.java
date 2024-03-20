@@ -1,9 +1,9 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.audio.Sound;
-import com.jagex.audio.SoundShape;
-import com.jagex.audio.SoundType;
-import com.jagex.audio.SubBussType;
+import com.jagex.audio.stream.Sound;
+import com.jagex.audio.stream.SoundShape;
+import com.jagex.audio.stream.SoundType;
+import com.jagex.audio.stream.SubBussType;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import rs2.client.Client;

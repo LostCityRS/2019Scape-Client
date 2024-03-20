@@ -1,9 +1,9 @@
 package rs2.client.clientscript;
 
-import com.jagex.audio.Sound;
-import com.jagex.audio.SoundShape;
-import com.jagex.audio.SoundType;
-import com.jagex.audio.SubBussType;
+import com.jagex.audio.stream.Sound;
+import com.jagex.audio.stream.SoundShape;
+import com.jagex.audio.stream.SoundType;
+import com.jagex.audio.stream.SubBussType;
 import com.jagex.core.constants.Language;
 import com.jagex.core.datastruct.*;
 import com.jagex.core.io.Packet;

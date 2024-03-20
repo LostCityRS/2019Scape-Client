@@ -1,6 +1,5 @@
 package com.jagex.graphics;
 
-import com.jagex.audio.VolumeTexture;
 import com.jagex.core.datastruct.Heap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;

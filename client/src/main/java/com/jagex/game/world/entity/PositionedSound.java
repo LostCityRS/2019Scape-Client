@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.audio.*;
+import com.jagex.audio.stream.*;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;

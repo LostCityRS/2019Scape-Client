@@ -1,6 +1,5 @@
 package com.jagex.graphics;
 
-import com.jagex.audio.VolumeTexture;
 import com.jagex.core.utils.ByteArrayCopier;
 import com.jagex.game.client.DataType;
 import deob.ObfuscatedName;
