@@ -55,7 +55,7 @@ public class ClanSettingsDelta {
 			} else if (var2 == 12) {
 				var3 = new SetClanName(this);
 			} else {
-				throw new RuntimeException("");
+				throw new RuntimeException("Unrecognised ClanSettingsDelta type in decode()");
 			}
 			var3.method17726(arg0);
 			this.field3136.pushBack(var3);
@@ -66,7 +66,8 @@ public class ClanSettingsDelta {
 	@ObfuscatedName("kd.n(Lkr;I)V")
 	public void method5333(ClanSettings arg0) {
 		if (this.field3133 != arg0.field3113 || this.field3123 != arg0.field3094) {
-			throw new RuntimeException("");
+            // throw new RuntimeException("ClanSettingsDelta.applyToClanSettings(): Credentials do not match! Settings.owner:" + Q280.g(ef450.h) + " updateNum:" + ef450.s + " delta.owner:" + Q280.g(this.g) + " updateNum:" + this.d);
+			throw new RuntimeException("ClanSettingsDelta.applyToClanSettings(): Credentials do not match!");
 		}
 		for (ClanSettingsDeltaEntry var2 = (ClanSettingsDeltaEntry) this.field3136.peekFront(); var2 != null; var2 = (ClanSettingsDeltaEntry) this.field3136.prev()) {
 			var2.method17727(arg0);

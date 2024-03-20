@@ -37,7 +37,7 @@ public class ClanChannelDelta {
 			} else if (var2 == 5) {
 				var3 = new UpdateUserDetailsV2(this);
 			} else {
-				throw new RuntimeException("");
+				throw new RuntimeException("Unrecognised ClanChannelDelta type in decode()");
 			}
 			var3.method17757(arg0);
 			this.field3141.pushBack(var3);
@@ -48,7 +48,8 @@ public class ClanChannelDelta {
 	@ObfuscatedName("kc.n(Lakr;B)V")
 	public void method5342(ClanChannel arg0) {
 		if (this.field3140 != arg0.nodeId || this.field3146 != arg0.field11395) {
-			throw new RuntimeException("");
+            // throw new RuntimeException("ClanChannelDelta.applyToClanChannel(): Credentials do not match! cc.clanHash:" + dr574.bq + " updateNum:" + dr574.n + " delta.clanHash:" + this.g + " updateNum:" + this.d);
+			throw new RuntimeException("ClanChannelDelta.applyToClanChannel(): Credentials do not match!");
 		}
 		for (ClanChannelDeltaEntry var2 = (ClanChannelDeltaEntry) this.field3141.peekFront(); var2 != null; var2 = (ClanChannelDeltaEntry) this.field3141.prev()) {
 			var2.method17753(arg0);

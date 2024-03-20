@@ -221,7 +221,7 @@ public class ClanSettings {
 			arg1 = null;
 		}
 		if (this.field3091 != arg0 > 0L) {
-			throw new RuntimeException("");
+			throw new RuntimeException("Invalid UserHash arg to this method - useUserHashes:" + this.field3091 + " but userhash:" + arg0);
 		} else if ((arg1 != null) == this.field3092) {
 			if (arg0 > 0L && (this.field3103 == null || this.affinedCount >= this.field3103.length) || arg1 != null && (this.affinedDisplayNames == null || this.affinedCount >= this.affinedDisplayNames.length)) {
 				this.method5315(this.affinedCount + 5);
@@ -244,14 +244,14 @@ public class ClanSettings {
 			this.affinedCount++;
 			this.field3118 = null;
 		} else {
-			throw new RuntimeException("");
+			throw new RuntimeException("Invalid DisplayName arg to this method - useDisplayNames:" + this.field3092 + " but displayname:" + arg1);
 		}
 	}
 
 	@ObfuscatedName("kr.p(II)V")
 	public void method5263(int arg0) {
 		if (arg0 < 0 || arg0 >= this.affinedCount) {
-			throw new RuntimeException("");
+			throw new RuntimeException("Invalid pos in doDeleteMember - pos:" + arg0 + " memberCount:" + this.affinedCount);
 		}
 		this.affinedCount--;
 		this.field3118 = null;
@@ -313,7 +313,7 @@ public class ClanSettings {
 			arg1 = null;
 		}
 		if (this.field3091 != arg0 > 0L) {
-			throw new RuntimeException("");
+			throw new RuntimeException("Invalid UserHash arg to this method - useUserHashes:" + this.field3091 + " but userhash:" + arg0);
 		} else if ((arg1 != null) == this.field3092) {
 			if (arg0 > 0L && (this.field3112 == null || this.bannedCount >= this.field3112.length) || arg1 != null && (this.bannedDisplayNames == null || this.bannedCount >= this.bannedDisplayNames.length)) {
 				this.method5255(this.bannedCount + 5);
@@ -326,7 +326,7 @@ public class ClanSettings {
 			}
 			this.bannedCount++;
 		} else {
-			throw new RuntimeException("");
+			throw new RuntimeException("Invalid DisplayName arg to this method - useDisplayNames:" + this.field3092 + " but displayname:" + arg1);
 		}
 	}
 
@@ -494,7 +494,7 @@ public class ClanSettings {
 	public void method5274(Packet arg0) {
 		int var2 = arg0.g1();
 		if (var2 < 1 || var2 > 6) {
-			throw new RuntimeException("" + var2);
+			throw new RuntimeException("Unsupported ClanSettings version: " + var2);
 		}
 		int var3 = arg0.g1();
 		if ((var3 & 0x1) != 0) {

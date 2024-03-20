@@ -53,7 +53,7 @@ public class VorbisFloor {
 		this.field2034 = arg0;
 		int var3 = this.field2034.read(16);
 		if (var3 != 1) {
-			throw new RuntimeException();
+			throw new RuntimeException("Unsupported floor type " + var3);
 		}
 		if (this.field2035 != null && this.field2035.length == arg1) {
 			for (int var4 = 0; var4 < this.field2035.length; var4++) {
