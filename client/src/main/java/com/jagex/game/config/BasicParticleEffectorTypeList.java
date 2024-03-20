@@ -36,7 +36,7 @@ public class BasicParticleEffectorTypeList implements ParticleEffectorTypeList {
 	}
 
 	@ObfuscatedName("no.n(I)V")
-	public void method5974() {
-		this.field3537.clear();
+	public void cacheReset() {
+		this.field3537.reset();
 	}
 }

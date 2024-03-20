@@ -53,26 +53,26 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 	}
 
 	@ObfuscatedName("fu.m(I)V")
-	public void method3011() {
+	public void cacheReset() {
 		WeightedCache var1 = this.frameCache;
 		synchronized (this.frameCache) {
-			this.frameCache.clear();
+			this.frameCache.reset();
 		}
 	}
 
 	@ObfuscatedName("fu.k(II)V")
-	public void method3012(int arg0) {
+	public void cacheClean(int arg0) {
 		WeightedCache var2 = this.frameCache;
 		synchronized (this.frameCache) {
-			this.frameCache.update(arg0);
+			this.frameCache.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("fu.f(I)V")
-	public void method3019() {
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.frameCache;
 		synchronized (this.frameCache) {
-			this.frameCache.method2928();
+			this.frameCache.clear();
 		}
 	}
 }

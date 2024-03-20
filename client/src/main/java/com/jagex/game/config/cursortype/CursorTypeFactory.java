@@ -18,26 +18,26 @@ public abstract class CursorTypeFactory {
 	}
 
 	@ObfuscatedName("xd.e(I)V")
-	public void method10287() {
+	public void cacheReset() {
 		WeightedCache var1 = this.cursorCache;
 		synchronized (this.cursorCache) {
-			this.cursorCache.clear();
+			this.cursorCache.reset();
 		}
 	}
 
 	@ObfuscatedName("xd.n(II)V")
-	public void method10291(int arg0) {
+	public void cacheClean(int arg0) {
 		WeightedCache var2 = this.cursorCache;
 		synchronized (this.cursorCache) {
-			this.cursorCache.update(arg0);
+			this.cursorCache.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("xd.m(I)V")
-	public void method10289() {
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.cursorCache;
 		synchronized (this.cursorCache) {
-			this.cursorCache.method2928();
+			this.cursorCache.clear();
 		}
 	}
 }

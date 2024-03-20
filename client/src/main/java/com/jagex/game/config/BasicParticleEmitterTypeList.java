@@ -35,7 +35,7 @@ public class BasicParticleEmitterTypeList implements ParticleEmitterTypeList {
 	}
 
 	@ObfuscatedName("ni.n(I)V")
-	public void method6008() {
-		this.field3562.clear();
+	public void cacheReset() {
+		this.field3562.reset();
 	}
 }

@@ -19,7 +19,7 @@ public class DualIterableQueue implements Iterable {
 	}
 
 	@ObfuscatedName("aap.e(I)V")
-	public void clearAll() {
+	public void removeAll() {
 		while (this.head.secondaryPrev != this.head) {
 			this.head.secondaryPrev.secondaryRemove();
 		}

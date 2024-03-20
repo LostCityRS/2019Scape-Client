@@ -15,20 +15,20 @@ public class HitmarkTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aoj.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((HitmarkTypeFactory) this.factory).method9277();
+	public void cacheReset() {
+		super.cacheReset();
+		((HitmarkTypeFactory) this.factory).cacheReset();
 	}
 
 	@ObfuscatedName("aoj.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((HitmarkTypeFactory) this.factory).method9282(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((HitmarkTypeFactory) this.factory).cacheClean(num);
 	}
 
 	@ObfuscatedName("aoj.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((HitmarkTypeFactory) this.factory).method9279();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((HitmarkTypeFactory) this.factory).cacheRemoveSoftReferences();
 	}
 }

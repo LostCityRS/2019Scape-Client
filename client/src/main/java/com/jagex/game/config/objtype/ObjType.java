@@ -189,7 +189,7 @@ public class ObjType implements ConfigType {
 	public int shardtemplate = -1;
 
 	@ObfuscatedName("abv.bi")
-	public String field8678 = "null";
+	public String shardname = "null";
 
 	@ObfuscatedName("abv.bn")
 	public int shardcount = 0;
@@ -219,7 +219,7 @@ public class ObjType implements ConfigType {
 	public boolean tradeable = false;
 
 	@ObfuscatedName("abv.bo")
-	public boolean field8688 = false;
+	public boolean cert_not_tradeable = false;
 
 	@ObfuscatedName("abv.bz")
 	public int dummyitem = 0;
@@ -258,8 +258,8 @@ public class ObjType implements ConfigType {
 		this.id = id;
 		this.myList = objs;
 		this.factory = factory;
-		this.op = (String[]) this.factory.defaultOps.clone();
-		this.iop = (String[]) this.factory.defaultIOps.clone();
+		this.op = (String[]) this.factory.defaultops.clone();
+		this.iop = (String[]) this.factory.defaultiops.clone();
 	}
 
 	@ObfuscatedName("abv.n(I)V")
@@ -280,8 +280,8 @@ public class ObjType implements ConfigType {
 			return;
 		}
 		this.team = 0;
-		this.op = this.factory.defaultOps;
-		this.iop = this.factory.defaultIOps;
+		this.op = this.factory.defaultops;
+		this.iop = this.factory.defaultiops;
 		this.stockmarket = false;
 		this.field8691 = null;
 		this.tradeable = false;
@@ -289,10 +289,10 @@ public class ObjType implements ConfigType {
 			return;
 		}
 		boolean var1 = false;
-		for (Node var2 = this.params.peekFront(); var2 != null; var2 = this.params.prev()) {
-			ParamType var3 = (ParamType) this.factory.paramTL.list((int) var2.nodeId);
-			if (var3.autodisable) {
-				var2.remove();
+		for (Node param = this.params.peekFront(); param != null; param = this.params.prev()) {
+			ParamType paramType = (ParamType) this.factory.paramTL.list((int) param.nodeId);
+			if (paramType.autodisable) {
+				param.remove();
 			} else {
 				var1 = true;
 			}
@@ -509,11 +509,11 @@ public class ObjType implements ConfigType {
 			} else if (code == 163) {
 				this.shardcount = buf.g2();
 			} else if (code == 164) {
-				this.field8678 = buf.gjstr();
+				this.shardname = buf.gjstr();
 			} else if (code == 165) {
 				this.stackable = 2; // never
 			} else if (code == 167) {
-				this.field8688 = true;
+				this.cert_not_tradeable = true;
 			} else if (code == 168) {
 				this.placeholder = false;
 			} else if (code == 249) {
@@ -557,13 +557,13 @@ public class ObjType implements ConfigType {
 		if (DerivedObjType.CERT == derived) {
 			this.cost = to.cost;
 			this.stackable = 1;
-			if (to.field8688) {
+			if (to.cert_not_tradeable) {
 				this.tradeable = false;
 			} else {
 				this.tradeable = to.tradeable;
 			}
 		} else if (DerivedObjType.SHARD == derived) {
-			this.name = to.field8678;
+			this.name = to.shardname;
 			this.cost = (int) Math.floor((double) (to.cost / to.shardcount));
 			this.stackable = 1;
 			this.stockmarket = to.stockmarket;
@@ -572,7 +572,7 @@ public class ObjType implements ConfigType {
 			this.cursor = from.cursor;
 			this.icursor = from.icursor;
 			this.iop = new String[5];
-			this.iop[0] = LocalisedText.field8958.forLang(language);
+			this.iop[0] = LocalisedText.SHARD_ITEM_COMBINE.forLang(language);
 			this.iop[4] = localisedText.forLang(language);
 		} else {
 			this.cost = 0;

@@ -14926,7 +14926,7 @@ public final class ScriptRunner {
 		Client.preferences.method18157(Client.preferences.textures, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Preferences.method16391();
 		Client.method9516();
-		SpotShadowFactory.method3076();
+		SpotShadowFactory.cacheReset();
 		Client.field10800 = false;
 	}
 
@@ -15982,7 +15982,7 @@ public final class ScriptRunner {
 		int var1 = Preferences.method4288();
 		arg0.field8216[++arg0.field8226 - 1] = Preferences.field11775 = Client.preferences.displayMode.getValue();
 		arg0.field8216[++arg0.field8226 - 1] = var1;
-		SpotShadowFactory.method3076();
+		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -16005,7 +16005,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("yk.ayt(Lyf;I)V")
 	public static final void autosetup_sethigh(ClientScriptState arg0) {
 		Preferences.method9619();
-		SpotShadowFactory.method3076();
+		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -16014,7 +16014,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("alk.aya(Lyf;I)V")
 	public static final void autosetup_setmedium(ClientScriptState arg0) {
 		Preferences.method8479();
-		SpotShadowFactory.method3076();
+		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -16023,7 +16023,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("hf.aye(Lyf;B)V")
 	public static final void autosetup_setlow(ClientScriptState arg0) {
 		Preferences.method3056();
-		SpotShadowFactory.method3076();
+		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;
@@ -16032,7 +16032,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("w.ayh(Lyf;I)V")
 	public static final void autosetup_setmin(ClientScriptState arg0) {
 		Preferences.method131(true);
-		SpotShadowFactory.method3076();
+		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
 		Client.field10800 = false;

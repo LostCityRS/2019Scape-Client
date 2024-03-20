@@ -75,11 +75,11 @@ public class MaterialTextureProvider {
 
 	@ObfuscatedName("lu.k()V")
 	public void method5643() {
-		this.field3267.update(5);
+		this.field3267.clean(5);
 	}
 
 	@ObfuscatedName("lu.f()V")
 	public void method5644() {
-		this.field3267.clear();
+		this.field3267.reset();
 	}
 }

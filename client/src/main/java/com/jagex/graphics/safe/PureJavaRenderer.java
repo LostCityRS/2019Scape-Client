@@ -235,8 +235,8 @@ public class PureJavaRenderer extends Renderer {
 			}
 		}
 		this.field9776 = arg0;
-		this.billboardMaterialSprites.update(5);
-		this.materialTextureCache.update(5);
+		this.billboardMaterialSprites.clean(5);
+		this.materialTextureCache.clean(5);
 	}
 
 	@ObfuscatedName("afg.c()I")

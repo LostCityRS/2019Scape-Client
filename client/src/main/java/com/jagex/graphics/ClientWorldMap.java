@@ -248,10 +248,10 @@ public class ClientWorldMap extends WorldMap {
 				field6798 = 16;
 			}
 			method8514(arg1, field6797 >> 2 << 10, field6798 >> 1);
-			WorldMap.field6788.method18871(1024, 256);
+			WorldMap.field6788.cacheResize(1024, 256);
 			WorldMap.field6789.method18915(256, 256);
-			WorldMap.field6785.method14910(4096);
-			Client.varBitTypeList.method14910(256);
+			WorldMap.field6785.cacheResize(4096);
+			Client.varBitTypeList.cacheResize(256);
 			loading = 20;
 		} else if (loading == 20) {
 			if (!field6842) {
@@ -332,22 +332,22 @@ public class ClientWorldMap extends WorldMap {
 		method8508();
 		field6806.clearAll();
 		WorldMap.field6805 = null;
-		field6831.clear();
-		field6832.clear();
+		field6831.reset();
+		field6832.reset();
 		field7241 = null;
 		field11665 = -1;
 		field11653 = -1;
 		if (WorldMap.field6788 != null) {
-			WorldMap.field6788.method14895();
-			WorldMap.field6788.method18871(128, 64);
+			WorldMap.field6788.cacheReset();
+			WorldMap.field6788.cacheResize(128, 64);
 		}
 		if (WorldMap.field6789 != null) {
 			WorldMap.field6789.method18915(64, 64);
 		}
 		if (WorldMap.field6785 != null) {
-			WorldMap.field6785.method14910(256);
+			WorldMap.field6785.cacheResize(256);
 		}
-		Client.varBitTypeList.method14910(64);
+		Client.varBitTypeList.cacheResize(64);
 	}
 
 	@ObfuscatedName("amr.dy(I)V")
@@ -374,8 +374,8 @@ public class ClientWorldMap extends WorldMap {
 		method14689();
 		WorldMap.currentWorldMap = null;
 		field7280 = null;
-		field11667.clear();
-		field11668.clear();
+		field11667.removeAll();
+		field11668.removeAll();
 		for (int var0 = 0; var0 < 3; var0++) {
 			for (int var1 = 0; var1 < 5; var1++) {
 				field11659[var0][var1] = null;
@@ -424,7 +424,7 @@ public class ClientWorldMap extends WorldMap {
 			DefaultSprites.fontP12Full.method2682("Mem:" + var16 + "k", var13, var18, var17, -1);
 			var14 = var18 - 15;
 		}
-		field6831.update(5);
+		field6831.clean(5);
 	}
 
 	@ObfuscatedName("aq.dx(Ldh;Laat;IIB)V")
@@ -879,7 +879,7 @@ public class ClientWorldMap extends WorldMap {
 				}
 			}
 		}
-		field6832.update(5);
+		field6832.clean(5);
 	}
 
 	@ObfuscatedName("aq.ed(IIB)V")

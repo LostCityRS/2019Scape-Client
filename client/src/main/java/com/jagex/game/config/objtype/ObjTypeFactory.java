@@ -44,10 +44,10 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public int field8611;
 
 	@ObfuscatedName("abr.z")
-	public final String[] defaultOps;
+	public final String[] defaultops;
 
 	@ObfuscatedName("abr.p")
-	public final String[] defaultIOps;
+	public final String[] defaultiops;
 
 	public ObjTypeFactory(ModeGame modeGame, Language language, boolean allowMembers, Js5 configClient, ConfigTypeList list) {
 		this.languageId = language;
@@ -55,11 +55,11 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		this.configClient = configClient;
 		this.paramTL = list;
 		if (ModeGame.RUNESCAPE == modeGame) {
-			this.defaultOps = new String[] { null, null, LocalisedText.TAKE.forLang(this.languageId), null, null, LocalisedText.EXAMINE.forLang(this.languageId) };
+			this.defaultops = new String[] { null, null, LocalisedText.TAKE.forLang(this.languageId), null, null, LocalisedText.EXAMINE.forLang(this.languageId) };
 		} else {
-			this.defaultOps = new String[] { null, null, LocalisedText.TAKE.forLang(this.languageId), null, null, null };
+			this.defaultops = new String[] { null, null, LocalisedText.TAKE.forLang(this.languageId), null, null, null };
 		}
-		this.defaultIOps = new String[] { null, null, null, null, LocalisedText.DROP.forLang(this.languageId) };
+		this.defaultiops = new String[] { null, null, null, null, LocalisedText.DROP.forLang(this.languageId) };
 	}
 
 	@ObfuscatedName("abr.e(Ldh;IIIIILxg;I)Lcm;")
@@ -71,7 +71,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 		this.field8609.field8606 = arg4;
 		this.field8609.field8603 = arg5;
 		this.field8609.field8608 = arg6 != null;
-		return (Sprite) this.iconCache.method9646(this.field8609);
+		return (Sprite) this.iconCache.get(this.field8609);
 	}
 
 	@ObfuscatedName("abr.n(Ldh;Ldh;IIIIZZILeu;Lxg;Lws;Lao;I)Lcm;")
@@ -113,69 +113,69 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 			var20.field8606 = arg5;
 			var20.field8603 = arg8;
 			var20.field8608 = arg10 != null;
-			this.iconCache.method9654(var19, var20);
+			this.iconCache.put(var19, var20);
 		}
 		return var19;
 	}
 
 	@ObfuscatedName("abr.m(ZB)V")
-	public void method14618(boolean arg0) {
+	public void setAllowMembers(boolean arg0) {
 		if (this.allowMembers != arg0) {
 			this.allowMembers = arg0;
-			this.method14623();
+			this.cacheReset();
 		}
 	}
 
 	@ObfuscatedName("abr.k(II)V")
-	public void method14619(int arg0) {
+	public void resetModelCache(int arg0) {
 		this.field8611 = arg0;
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.clear();
+			this.modelCache.reset();
 		}
 	}
 
 	@ObfuscatedName("abr.f(I)V")
-	public void method14623() {
+	public void cacheReset() {
+		WeightedCache var1 = this.modelCache;
+		synchronized (this.modelCache) {
+			this.modelCache.reset();
+		}
+		IconCache var3 = this.iconCache;
+		synchronized (this.iconCache) {
+			this.iconCache.reset();
+		}
+	}
+
+	@ObfuscatedName("abr.w(I)V")
+	public void resetIconCache() {
+		IconCache var1 = this.iconCache;
+		synchronized (this.iconCache) {
+			this.iconCache.reset();
+		}
+	}
+
+	@ObfuscatedName("abr.l(IB)V")
+	public void cacheClean(int arg0) {
+		WeightedCache var2 = this.modelCache;
+		synchronized (this.modelCache) {
+			this.modelCache.clean(arg0);
+		}
+		IconCache var4 = this.iconCache;
+		synchronized (this.iconCache) {
+			this.iconCache.clean(arg0);
+		}
+	}
+
+	@ObfuscatedName("abr.u(I)V")
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.modelCache;
 		synchronized (this.modelCache) {
 			this.modelCache.clear();
 		}
 		IconCache var3 = this.iconCache;
 		synchronized (this.iconCache) {
-			this.iconCache.method9652();
-		}
-	}
-
-	@ObfuscatedName("abr.w(I)V")
-	public void method14621() {
-		IconCache var1 = this.iconCache;
-		synchronized (this.iconCache) {
-			this.iconCache.method9652();
-		}
-	}
-
-	@ObfuscatedName("abr.l(IB)V")
-	public void method14624(int arg0) {
-		WeightedCache var2 = this.modelCache;
-		synchronized (this.modelCache) {
-			this.modelCache.update(arg0);
-		}
-		IconCache var4 = this.iconCache;
-		synchronized (this.iconCache) {
-			this.iconCache.method9651(arg0);
-		}
-	}
-
-	@ObfuscatedName("abr.u(I)V")
-	public void method14622() {
-		WeightedCache var1 = this.modelCache;
-		synchronized (this.modelCache) {
-			this.modelCache.method2928();
-		}
-		IconCache var3 = this.iconCache;
-		synchronized (this.iconCache) {
-			this.iconCache.method9653();
+			this.iconCache.clear();
 		}
 	}
 }

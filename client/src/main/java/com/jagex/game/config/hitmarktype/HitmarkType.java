@@ -216,10 +216,10 @@ public class HitmarkType implements ConfigType {
 		if (this.field7295 < 0) {
 			return null;
 		}
-		Sprite var2 = (Sprite) this.field7307.field7316.get((long) this.field7295);
+		Sprite var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7295);
 		if (var2 == null) {
 			this.method9256(arg0);
-			var2 = (Sprite) this.field7307.field7316.get((long) this.field7295);
+			var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7295);
 		}
 		return var2;
 	}
@@ -229,10 +229,10 @@ public class HitmarkType implements ConfigType {
 		if (this.field7299 < 0) {
 			return null;
 		}
-		Sprite var2 = (Sprite) this.field7307.field7316.get((long) this.field7299);
+		Sprite var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7299);
 		if (var2 == null) {
 			this.method9256(arg0);
-			var2 = (Sprite) this.field7307.field7316.get((long) this.field7299);
+			var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7299);
 		}
 		return var2;
 	}
@@ -242,10 +242,10 @@ public class HitmarkType implements ConfigType {
 		if (this.field7300 < 0) {
 			return null;
 		}
-		Sprite var2 = (Sprite) this.field7307.field7316.get((long) this.field7300);
+		Sprite var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7300);
 		if (var2 == null) {
 			this.method9256(arg0);
-			var2 = (Sprite) this.field7307.field7316.get((long) this.field7300);
+			var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7300);
 		}
 		return var2;
 	}
@@ -255,32 +255,32 @@ public class HitmarkType implements ConfigType {
 		if (this.field7301 < 0) {
 			return null;
 		}
-		Sprite var2 = (Sprite) this.field7307.field7316.get((long) this.field7301);
+		Sprite var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7301);
 		if (var2 == null) {
 			this.method9256(arg0);
-			var2 = (Sprite) this.field7307.field7316.get((long) this.field7301);
+			var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7301);
 		}
 		return var2;
 	}
 
 	@ObfuscatedName("vb.o(Ldh;I)V")
 	public void method9256(Renderer arg0) {
-		Js5 var2 = this.field7307.field7315;
-		if (this.field7295 >= 0 && this.field7307.field7316.get((long) this.field7295) == null && var2.method6889(this.field7295)) {
+		Js5 var2 = this.field7307.configClient;
+		if (this.field7295 >= 0 && this.field7307.spriteCache.get((long) this.field7295) == null && var2.method6889(this.field7295)) {
 			SpriteData var3 = SpriteDataProvider.get(var2, this.field7295);
-			this.field7307.field7316.put(arg0.createSprite(var3, true), (long) this.field7295);
+			this.field7307.spriteCache.put(arg0.createSprite(var3, true), (long) this.field7295);
 		}
-		if (this.field7299 >= 0 && this.field7307.field7316.get((long) this.field7299) == null && var2.method6889(this.field7299)) {
+		if (this.field7299 >= 0 && this.field7307.spriteCache.get((long) this.field7299) == null && var2.method6889(this.field7299)) {
 			SpriteData var4 = SpriteDataProvider.get(var2, this.field7299);
-			this.field7307.field7316.put(arg0.createSprite(var4, true), (long) this.field7299);
+			this.field7307.spriteCache.put(arg0.createSprite(var4, true), (long) this.field7299);
 		}
-		if (this.field7300 >= 0 && this.field7307.field7316.get((long) this.field7300) == null && var2.method6889(this.field7300)) {
+		if (this.field7300 >= 0 && this.field7307.spriteCache.get((long) this.field7300) == null && var2.method6889(this.field7300)) {
 			SpriteData var5 = SpriteDataProvider.get(var2, this.field7300);
-			this.field7307.field7316.put(arg0.createSprite(var5, true), (long) this.field7300);
+			this.field7307.spriteCache.put(arg0.createSprite(var5, true), (long) this.field7300);
 		}
-		if (this.field7301 >= 0 && this.field7307.field7316.get((long) this.field7301) == null && var2.method6889(this.field7301)) {
+		if (this.field7301 >= 0 && this.field7307.spriteCache.get((long) this.field7301) == null && var2.method6889(this.field7301)) {
 			SpriteData var6 = SpriteDataProvider.get(var2, this.field7301);
-			this.field7307.field7316.put(arg0.createSprite(var6, true), (long) this.field7301);
+			this.field7307.spriteCache.put(arg0.createSprite(var6, true), (long) this.field7301);
 		}
 	}
 

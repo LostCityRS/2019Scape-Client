@@ -196,7 +196,7 @@ public class PlayerEntity extends PathingEntity {
 		if (Client.currentPlayerUid == this.localPlayerIndex && var23 != null) {
 			for (int var25 = 0; var25 < var16.length; var25++) {
 				if (var16[var25] != var23[var25]) {
-					Client.objTypeList.method18903();
+					Client.objTypeList.resetIconCache();
 					break;
 				}
 			}

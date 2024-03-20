@@ -32,35 +32,35 @@ public class ObjTypeList extends CachingConfigTypeList {
 
 	@ObfuscatedName("aon.ai(ZI)V")
 	public void setAllowMembers(boolean arg0) {
-		((ObjTypeFactory) this.factory).method14618(arg0);
-		super.method14895();
+		((ObjTypeFactory) this.factory).setAllowMembers(arg0);
+		super.cacheReset();
 	}
 
 	@ObfuscatedName("aon.aw(II)V")
-	public void method18902(int arg0) {
-		((ObjTypeFactory) this.factory).method14619(arg0);
+	public void resetModelCache(int arg0) {
+		((ObjTypeFactory) this.factory).resetModelCache(arg0);
 	}
 
 	@ObfuscatedName("aon.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((ObjTypeFactory) this.factory).method14623();
+	public void cacheReset() {
+		super.cacheReset();
+		((ObjTypeFactory) this.factory).cacheReset();
 	}
 
 	@ObfuscatedName("aon.as(I)V")
-	public void method18903() {
-		((ObjTypeFactory) this.factory).method14621();
+	public void resetIconCache() {
+		((ObjTypeFactory) this.factory).resetIconCache();
 	}
 
 	@ObfuscatedName("aon.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((ObjTypeFactory) this.factory).method14624(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((ObjTypeFactory) this.factory).cacheClean(num);
 	}
 
 	@ObfuscatedName("aon.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((ObjTypeFactory) this.factory).method14622();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((ObjTypeFactory) this.factory).cacheRemoveSoftReferences();
 	}
 }

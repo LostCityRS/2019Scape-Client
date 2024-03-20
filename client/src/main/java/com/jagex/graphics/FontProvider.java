@@ -157,29 +157,29 @@ public class FontProvider implements FontIconProvider {
 	}
 
 	@ObfuscatedName("oi.z(B)V")
-	public void method6165() {
-		this.field4203.clear();
-		this.field4202.clear();
+	public void cacheReset() {
+		this.field4203.reset();
+		this.field4202.reset();
 		if (this.field4205 != null) {
-			this.field4205.clear();
+			this.field4205.reset();
 		}
 	}
 
 	@ObfuscatedName("oi.p(II)V")
-	public void method6166(int arg0) {
-		this.field4203.update(arg0);
-		this.field4202.update(arg0);
+	public void cacheClean(int arg0) {
+		this.field4203.clean(arg0);
+		this.field4202.clean(arg0);
 		if (this.field4205 != null) {
-			this.field4205.update(arg0);
+			this.field4205.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("oi.d(I)V")
-	public void method6167() {
-		this.field4203.method2928();
-		this.field4202.method2928();
+	public void cacheRemoveSoftReferences() {
+		this.field4203.clear();
+		this.field4202.clear();
 		if (this.field4205 != null) {
-			this.field4205.method2928();
+			this.field4205.clear();
 		}
 	}
 
@@ -192,7 +192,7 @@ public class FontProvider implements FontIconProvider {
 			arg0 = this.field4206;
 		} else {
 			if (this.field4206 != arg0) {
-				this.field4205.clear();
+				this.field4205.reset();
 			}
 			this.field4206 = arg0;
 		}

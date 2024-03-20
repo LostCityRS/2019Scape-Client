@@ -16,26 +16,26 @@ public class MapElementTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aoc.al(III)V")
-	public void method18871(int arg0, int arg1) {
-		super.method14910(arg0);
-		((MapElementTypeFactory) this.factory).field2414 = new WeightedCache(arg1);
+	public void cacheResize(int size, int elementCacheSize) {
+		super.cacheResize(size);
+		((MapElementTypeFactory) this.factory).elementCache = new WeightedCache(elementCacheSize);
 	}
 
 	@ObfuscatedName("aoc.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((MapElementTypeFactory) this.factory).field2414.clear();
+	public void cacheReset() {
+		super.cacheReset();
+		((MapElementTypeFactory) this.factory).elementCache.reset();
 	}
 
 	@ObfuscatedName("aoc.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((MapElementTypeFactory) this.factory).field2414.update(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((MapElementTypeFactory) this.factory).elementCache.clean(num);
 	}
 
 	@ObfuscatedName("aoc.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((MapElementTypeFactory) this.factory).field2414.method2928();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((MapElementTypeFactory) this.factory).elementCache.clear();
 	}
 }

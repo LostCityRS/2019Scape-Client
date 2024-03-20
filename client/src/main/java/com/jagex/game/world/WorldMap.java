@@ -271,7 +271,7 @@ public class WorldMap {
 		field6789 = arg6;
 		field6791 = arg7;
 		field6790 = arg8;
-		field6796.clear();
+		field6796.removeAll();
 		int[] var9 = field6794.method6895(Js5WorldMapGroup.field7968.getId());
 		if (var9 != null) {
 			for (int var10 = 0; var10 < var9.length; var10++) {

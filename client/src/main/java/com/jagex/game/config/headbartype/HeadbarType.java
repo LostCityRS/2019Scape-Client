@@ -99,20 +99,20 @@ public class HeadbarType implements ConfigType {
 		if (arg1 < 0) {
 			return null;
 		}
-		Sprite var3 = (Sprite) this.field7226.field7230.get((long) arg1);
+		Sprite var3 = (Sprite) this.field7226.spriteCache.get((long) arg1);
 		if (var3 == null) {
 			this.method9152(arg0);
-			var3 = (Sprite) this.field7226.field7230.get((long) arg1);
+			var3 = (Sprite) this.field7226.spriteCache.get((long) arg1);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("uk.p(Ldh;II)V")
 	public void method9151(Renderer arg0, int arg1) {
-		Js5 var3 = this.field7226.field7229;
-		if (arg1 >= 0 && this.field7226.field7230.get((long) arg1) == null && var3.method6889(arg1)) {
+		Js5 var3 = this.field7226.configClient;
+		if (arg1 >= 0 && this.field7226.spriteCache.get((long) arg1) == null && var3.method6889(arg1)) {
 			SpriteData var4 = SpriteDataProvider.get(var3, arg1);
-			this.field7226.field7230.put(arg0.createSprite(var4, true), (long) arg1);
+			this.field7226.spriteCache.put(arg0.createSprite(var4, true), (long) arg1);
 		}
 	}
 

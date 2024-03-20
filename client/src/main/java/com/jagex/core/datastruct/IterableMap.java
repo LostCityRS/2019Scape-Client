@@ -106,7 +106,7 @@ public final class IterableMap implements Iterable {
 	}
 
 	@ObfuscatedName("aan.w(B)V")
-	public void clear() {
+	public void removeAll() {
 		for (int index = 0; index < this.size; index++) {
 			Node node = this.nodes[index];
 			while (true) {

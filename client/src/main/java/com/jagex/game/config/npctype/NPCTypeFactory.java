@@ -24,30 +24,30 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 	public final WeightedCache modelCache = new WeightedCache(50);
 
 	@ObfuscatedName("ih.f")
-	public final WeightedCache field2768 = new WeightedCache(5);
+	public final WeightedCache headModelCache = new WeightedCache(5);
 
 	@ObfuscatedName("ih.w")
 	public int field2773;
 
 	@ObfuscatedName("ih.l")
-	public final String[] defaultOps;
+	public final String[] defaultops;
 
 	public NPCTypeFactory(boolean allowMembers, Js5 configClient, Language language, ModeGame modeGame) {
 		this.allowMembers = allowMembers;
 		this.configClient = configClient;
 		this.modeGame = modeGame;
 		if (ModeGame.RUNESCAPE == this.modeGame) {
-			this.defaultOps = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.forLang(language) };
+			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.forLang(language) };
 		} else {
-			this.defaultOps = new String[] { null, null, null, null, null, null };
+			this.defaultops = new String[] { null, null, null, null, null, null };
 		}
 	}
 
 	@ObfuscatedName("ih.e(ZI)V")
-	public void method4579(boolean arg0) {
+	public void setAllowMembers(boolean arg0) {
 		if (this.allowMembers != arg0) {
 			this.allowMembers = arg0;
-			this.method4577();
+			this.cacheReset();
 		}
 	}
 
@@ -56,47 +56,47 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 		this.field2773 = arg0;
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.clear();
+			this.modelCache.reset();
 		}
-		WeightedCache var4 = this.field2768;
-		synchronized (this.field2768) {
-			this.field2768.clear();
+		WeightedCache var4 = this.headModelCache;
+		synchronized (this.headModelCache) {
+			this.headModelCache.reset();
 		}
 	}
 
 	@ObfuscatedName("ih.m(B)V")
-	public void method4577() {
+	public void cacheReset() {
 		WeightedCache var1 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.clear();
+			this.modelCache.reset();
 		}
-		WeightedCache var3 = this.field2768;
-		synchronized (this.field2768) {
-			this.field2768.clear();
+		WeightedCache var3 = this.headModelCache;
+		synchronized (this.headModelCache) {
+			this.headModelCache.reset();
 		}
 	}
 
 	@ObfuscatedName("ih.k(II)V")
-	public void method4578(int arg0) {
+	public void cacheClean(int arg0) {
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.update(arg0);
+			this.modelCache.clean(arg0);
 		}
-		WeightedCache var4 = this.field2768;
-		synchronized (this.field2768) {
-			this.field2768.update(arg0);
+		WeightedCache var4 = this.headModelCache;
+		synchronized (this.headModelCache) {
+			this.headModelCache.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("ih.f(I)V")
-	public void method4584() {
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.method2928();
+			this.modelCache.clear();
 		}
-		WeightedCache var3 = this.field2768;
-		synchronized (this.field2768) {
-			this.field2768.method2928();
+		WeightedCache var3 = this.headModelCache;
+		synchronized (this.headModelCache) {
+			this.headModelCache.clear();
 		}
 	}
 }

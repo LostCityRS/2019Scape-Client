@@ -714,7 +714,7 @@ public class World {
 			}
 			Client.field11011 = 0;
 			Client.field10906 = 0;
-			Client.miniMenuEntries.clear();
+			Client.miniMenuEntries.removeAll();
 		}
 		this.field5020 = this.rebuildType;
 	}
@@ -916,7 +916,7 @@ public class World {
 		}
 		MiniMenu.method5175();
 		Minimap.method5065();
-		Client.spotanims.clear();
+		Client.spotanims.removeAll();
 		Client.projectiles.clearAll();
 		Client.textCoords.clear();
 		ParticleSystemRenderer.method3561();
@@ -1052,7 +1052,7 @@ public class World {
 			}
 		}
 		if (!this.asyncRebuilding) {
-			Client.method14055(true);
+			Client.resetCaches(true);
 		}
 		boolean underwater = false;
 		if (Client.preferences.waterDetail.getValue() == 2) {

@@ -693,7 +693,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 10) {
 					Client.textCoords.clear();
 				} else if (arg0 == 5) {
-					Client.method10444();
+					Client.removeSoftReferencesCaches();
 					for (int var2 = 0; var2 < 10; var2++) {
 						System.gc();
 					}
@@ -701,7 +701,7 @@ public class DeveloperConsole {
 					int var4 = (int) ((var3.totalMemory() - var3.freeMemory()) / 1024L);
 					addline("" + var4);
 				} else if (arg0 == 20) {
-					Client.method10444();
+					Client.removeSoftReferencesCaches();
 					for (int var5 = 0; var5 < 10; var5++) {
 						System.gc();
 					}
@@ -709,7 +709,7 @@ public class DeveloperConsole {
 					int var7 = (int) ((var6.totalMemory() - var6.freeMemory()) / 1024L);
 					addline("" + var7);
 					SceneManager.method7319();
-					Client.method10444();
+					Client.removeSoftReferencesCaches();
 					for (int var8 = 0; var8 < 10; var8++) {
 						System.gc();
 					}
@@ -743,7 +743,7 @@ public class DeveloperConsole {
 					addline(Component.field2175.method2926() + " " + Component.field2175.method2925());
 					addline(Component.field2297.method2926() + " " + Component.field2297.method2925());
 				} else if (arg0 == 8) {
-					Client.method14055(false);
+					Client.resetCaches(false);
 				} else if (arg0 == 13) {
 					Client.field10848 = !Client.field10848;
 					Client.renderer.method2253(Client.field10848);

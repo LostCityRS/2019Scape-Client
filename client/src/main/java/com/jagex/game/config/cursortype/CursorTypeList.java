@@ -15,20 +15,20 @@ public class CursorTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aog.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((CursorTypeFactory) this.factory).method10287();
+	public void cacheReset() {
+		super.cacheReset();
+		((CursorTypeFactory) this.factory).cacheReset();
 	}
 
 	@ObfuscatedName("aog.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((CursorTypeFactory) this.factory).method10291(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((CursorTypeFactory) this.factory).cacheClean(num);
 	}
 
 	@ObfuscatedName("aog.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((CursorTypeFactory) this.factory).method10289();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((CursorTypeFactory) this.factory).cacheRemoveSoftReferences();
 	}
 }

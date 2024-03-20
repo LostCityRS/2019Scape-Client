@@ -244,7 +244,7 @@ public class NPCType implements ConfigType {
 		this.id = id;
 		this.factory = factory;
 		this.myList = npcs;
-		this.op = (String[]) this.factory.defaultOps.clone();
+		this.op = (String[]) this.factory.defaultops.clone();
 	}
 
 	@ObfuscatedName("if.e(Lalw;B)V")
@@ -805,10 +805,10 @@ public class NPCType implements ConfigType {
 			if (arg5 != null) {
 				var9 |= arg5.field2688 << 24;
 			}
-			WeightedCache var11 = this.factory.field2768;
+			WeightedCache var11 = this.factory.headModelCache;
 			Model var12;
-			synchronized (this.factory.field2768) {
-				var12 = (Model) this.factory.field2768.get(var9);
+			synchronized (this.factory.headModelCache) {
+				var12 = (Model) this.factory.headModelCache.get(var9);
 			}
 			if (var12 == null || (var12.method1691() & var8) != var8) {
 				if (var12 != null) {
@@ -891,9 +891,9 @@ public class NPCType implements ConfigType {
 					var12.method1745(this.field2711, this.field2712, this.field2698, this.field2714 & 0xFF);
 				}
 				var12.method1690(var8);
-				WeightedCache var30 = this.factory.field2768;
-				synchronized (this.factory.field2768) {
-					this.factory.field2768.put(var12, var9);
+				WeightedCache var30 = this.factory.headModelCache;
+				synchronized (this.factory.headModelCache) {
+					this.factory.headModelCache.put(var12, var9);
 				}
 			}
 			if (arg4 != null) {

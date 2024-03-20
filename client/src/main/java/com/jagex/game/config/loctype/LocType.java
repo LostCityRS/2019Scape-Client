@@ -262,7 +262,7 @@ public class LocType implements ConfigType {
 		this.id = id;
 		this.factory = factory;
 		this.myList = locs;
-		this.op = (String[]) this.factory.defaultOps.clone();
+		this.op = (String[]) this.factory.defaultops.clone();
 	}
 
 	@ObfuscatedName("vd.e(Lalw;B)V")

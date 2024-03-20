@@ -78,21 +78,21 @@ public class HintArrow {
 	@ObfuscatedName("tt.n(II)V")
 	public static void method8643(int arg0) {
 		field753 = arg0;
-		field752.clear();
+		field752.reset();
 	}
 
 	@ObfuscatedName("du.m(B)V")
-	public static void method2086() {
-		field752.clear();
+	public static void cacheReset() {
+		field752.reset();
 	}
 
 	@ObfuscatedName("xe.k(II)V")
-	public static void method10284(int arg0) {
-		field752.update(arg0);
+	public static void cacheClean(int arg0) {
+		field752.clean(arg0);
 	}
 
 	@ObfuscatedName("ahd.f(B)V")
-	public static void method16718() {
-		field752.method2928();
+	public static void cacheRemoveSoftReferences() {
+		field752.clear();
 	}
 }

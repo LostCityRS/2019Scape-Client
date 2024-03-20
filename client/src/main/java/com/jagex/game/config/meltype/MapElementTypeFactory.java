@@ -9,13 +9,13 @@ import deob.ObfuscatedName;
 public abstract class MapElementTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("hh.e")
-	public final Js5 field2415;
+	public final Js5 configClient;
 
 	@ObfuscatedName("hh.n")
-	public WeightedCache field2414;
+	public WeightedCache elementCache;
 
-	public MapElementTypeFactory(Js5 arg0, int arg1) {
-		this.field2415 = arg0;
-		this.field2414 = new WeightedCache(arg1);
+	public MapElementTypeFactory(Js5 configClient, int size) {
+		this.configClient = configClient;
+		this.elementCache = new WeightedCache(size);
 	}
 }

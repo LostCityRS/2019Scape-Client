@@ -27,7 +27,7 @@ public abstract class LocTypeFactory {
 	public int field7536;
 
 	@ObfuscatedName("vh.w")
-	public final String[] defaultOps;
+	public final String[] defaultops;
 
 	@ObfuscatedName("vh.l")
 	public ModelUnlit[] field7535 = new ModelUnlit[4];
@@ -38,17 +38,17 @@ public abstract class LocTypeFactory {
 	public LocTypeFactory(boolean allowMembers, Language language, ModeGame modeGame) {
 		this.allowMembers = allowMembers;
 		if (ModeGame.RUNESCAPE == modeGame) {
-			this.defaultOps = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.forLang(language) };
+			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.forLang(language) };
 		} else {
-			this.defaultOps = new String[] { null, null, null, null, null, null };
+			this.defaultops = new String[] { null, null, null, null, null, null };
 		}
 	}
 
 	@ObfuscatedName("vh.e(ZI)V")
-	public void method9519(boolean arg0) {
+	public void setAllowMembers(boolean arg0) {
 		if (this.allowMembers != arg0) {
 			this.allowMembers = arg0;
-			this.method9521();
+			this.cacheReset();
 		}
 	}
 
@@ -57,65 +57,65 @@ public abstract class LocTypeFactory {
 		this.field7536 = arg0;
 		WeightedCache var2 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
-			this.modelCacheStatic.clear();
+			this.modelCacheStatic.reset();
 		}
 		WeightedCache var4 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
-			this.modelCacheDynamic.clear();
+			this.modelCacheDynamic.reset();
 		}
 		WeightedCache var6 = this.field7532;
 		synchronized (this.field7532) {
-			this.field7532.clear();
+			this.field7532.reset();
 		}
 	}
 
 	@ObfuscatedName("vh.m(I)V")
-	public void method9521() {
+	public void cacheReset() {
 		WeightedCache var1 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
-			this.modelCacheStatic.clear();
+			this.modelCacheStatic.reset();
 		}
 		WeightedCache var3 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
-			this.modelCacheDynamic.clear();
+			this.modelCacheDynamic.reset();
 		}
 		WeightedCache var5 = this.field7532;
 		synchronized (this.field7532) {
-			this.field7532.clear();
+			this.field7532.reset();
 		}
 		this.field7535 = new ModelUnlit[4];
 		this.field7529 = new Pair(null, null);
 	}
 
 	@ObfuscatedName("vh.k(IB)V")
-	public void method9522(int arg0) {
+	public void cacheClean(int arg0) {
 		WeightedCache var2 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
-			this.modelCacheStatic.update(arg0);
+			this.modelCacheStatic.clean(arg0);
 		}
 		WeightedCache var4 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
-			this.modelCacheDynamic.update(arg0);
+			this.modelCacheDynamic.clean(arg0);
 		}
 		WeightedCache var6 = this.field7532;
 		synchronized (this.field7532) {
-			this.field7532.update(arg0);
+			this.field7532.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("vh.f(I)V")
-	public void method9520() {
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
-			this.modelCacheStatic.method2928();
+			this.modelCacheStatic.clear();
 		}
 		WeightedCache var3 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
-			this.modelCacheDynamic.method2928();
+			this.modelCacheDynamic.clear();
 		}
 		WeightedCache var5 = this.field7532;
 		synchronized (this.field7532) {
-			this.field7532.method2928();
+			this.field7532.clear();
 		}
 	}
 

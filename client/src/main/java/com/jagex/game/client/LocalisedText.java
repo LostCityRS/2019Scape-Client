@@ -46,7 +46,7 @@ public class LocalisedText {
 	public static final LocalisedText field8957 = new LocalisedText(" shards of this type to receive a ", " dieser Fragmente, um folgenden Gegenstand herzustellen: ", " de ces fragments pour obtenir l'objet suivant : ", " desses fragmentos pelo seguinte objeto: ", " de estos fragmentos para obtener el siguiente objeto: ");
 
 	@ObfuscatedName("acz.r")
-	public static final LocalisedText field8958 = new LocalisedText("Combine", "Kombinieren", "Combiner", "Combinar", "Combinar");
+	public static final LocalisedText SHARD_ITEM_COMBINE = new LocalisedText("Combine", "Kombinieren", "Combiner", "Combinar", "Combinar");
 
 	@ObfuscatedName("acz.v")
 	public static final LocalisedText TAKE = new LocalisedText("Take", "Nehmen", "Prendre", "Pegar", "Agarrar");

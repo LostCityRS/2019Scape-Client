@@ -16,7 +16,7 @@ public class LocTypeList extends CachingConfigTypeList {
 
 	@ObfuscatedName("aop.al(ZI)V")
 	public void setAllowMembers(boolean arg0) {
-		((LocTypeFactory) this.factory).method9519(arg0);
+		((LocTypeFactory) this.factory).setAllowMembers(arg0);
 	}
 
 	@ObfuscatedName("aop.ac(IB)V")
@@ -25,20 +25,20 @@ public class LocTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aop.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((LocTypeFactory) this.factory).method9521();
+	public void cacheReset() {
+		super.cacheReset();
+		((LocTypeFactory) this.factory).cacheReset();
 	}
 
 	@ObfuscatedName("aop.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((LocTypeFactory) this.factory).method9522(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((LocTypeFactory) this.factory).cacheClean(num);
 	}
 
 	@ObfuscatedName("aop.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((LocTypeFactory) this.factory).method9520();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((LocTypeFactory) this.factory).cacheRemoveSoftReferences();
 	}
 }

@@ -1231,31 +1231,31 @@ public class Component {
 	@ObfuscatedName("ack.q(IB)V")
 	public static void method14950(int arg0) {
 		field11802 = arg0;
-		field2297.clear();
+		field2297.reset();
 	}
 
 	@ObfuscatedName("lv.x(I)V")
-	public static void method5403() {
+	public static void cacheReset() {
+		field2175.reset();
+		field2297.reset();
+		field2176.reset();
+		field2177.reset();
+	}
+
+	@ObfuscatedName("sp.b(II)V")
+	public static void cacheClean(int arg0) {
+		field2175.clean(arg0);
+		field2297.clean(arg0);
+		field2176.clean(arg0);
+		field2177.clean(arg0);
+	}
+
+	@ObfuscatedName("kh.h(I)V")
+	public static void cacheRemoveSoftReferences() {
 		field2175.clear();
 		field2297.clear();
 		field2176.clear();
 		field2177.clear();
-	}
-
-	@ObfuscatedName("sp.b(II)V")
-	public static void method8274(int arg0) {
-		field2175.update(arg0);
-		field2297.update(arg0);
-		field2176.update(arg0);
-		field2177.update(arg0);
-	}
-
-	@ObfuscatedName("kh.h(I)V")
-	public static void method5204() {
-		field2175.method2928();
-		field2297.method2928();
-		field2176.method2928();
-		field2177.method2928();
 	}
 
 	@ObfuscatedName("jh.a(B)V")

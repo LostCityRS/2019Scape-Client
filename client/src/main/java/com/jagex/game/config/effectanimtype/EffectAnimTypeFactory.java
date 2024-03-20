@@ -26,31 +26,31 @@ public abstract class EffectAnimTypeFactory implements ConfigTypeFactory {
 		this.field8264 = arg0;
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.clear();
+			this.modelCache.reset();
 		}
 	}
 
 	@ObfuscatedName("yc.n(B)V")
-	public void method13834() {
+	public void cacheReset() {
 		WeightedCache var1 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.clear();
+			this.modelCache.reset();
 		}
 	}
 
 	@ObfuscatedName("yc.m(IB)V")
-	public void method13821(int arg0) {
+	public void cacheClean(int arg0) {
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.update(arg0);
+			this.modelCache.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("yc.k(I)V")
-	public void method13822() {
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.modelCache;
 		synchronized (this.modelCache) {
-			this.modelCache.method2928();
+			this.modelCache.clear();
 		}
 	}
 }

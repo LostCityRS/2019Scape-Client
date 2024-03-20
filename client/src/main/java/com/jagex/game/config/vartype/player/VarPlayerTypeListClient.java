@@ -51,27 +51,27 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	}
 
 	@ObfuscatedName("adj.v(I)V")
-	public void method15256() {
+	public void cacheReset() {
 		WeightedCache var1 = this.field9254;
 		synchronized (this.field9254) {
-			this.field9254.clear();
+			this.field9254.reset();
 		}
 	}
 
 	@ObfuscatedName("adj.o(II)V")
-	public void method15259(int arg0) {
+	public void cacheClean(int arg0) {
 		WeightedCache var2 = this.field9254;
 		synchronized (this.field9254) {
-			this.field9254.update(arg0);
+			this.field9254.clean(arg0);
 		}
 	}
 
 	// line 54
 	@ObfuscatedName("adj.s(B)V")
-	public void method15257() {
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.field9254;
 		synchronized (this.field9254) {
-			this.field9254.method2928();
+			this.field9254.clear();
 		}
 	}
 

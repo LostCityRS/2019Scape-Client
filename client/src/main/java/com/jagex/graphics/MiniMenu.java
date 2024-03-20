@@ -1131,14 +1131,14 @@ public class MiniMenu {
 			if (var0.field12310 > 1) {
 				var0.field12310 = 0;
 				field534.put(var0, ((MinimenuEntry) var0.field12312.head.secondaryPrev).field12305);
-				var0.field12312.clearAll();
+				var0.field12312.removeAll();
 			}
 		}
 		field543 = 0;
 		field546 = 0;
 		field542.clearAll();
-		field549.clear();
-		field550.clearAll();
+		field549.removeAll();
+		field550.removeAll();
 		method2771(field8348);
 	}
 
@@ -1148,14 +1148,14 @@ public class MiniMenu {
 			if (var0.field12310 > 1) {
 				var0.field12310 = 0;
 				field534.put(var0, ((MinimenuEntry) var0.field12312.head.secondaryPrev).field12305);
-				var0.field12312.clearAll();
+				var0.field12312.removeAll();
 			}
 		}
 		field543 = 0;
 		field546 = 0;
 		field542.clearAll();
-		field549.clear();
-		field550.clearAll();
+		field549.removeAll();
+		field550.removeAll();
 		field562 = false;
 	}
 

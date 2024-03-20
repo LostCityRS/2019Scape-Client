@@ -77,35 +77,35 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("abe.z(II)V")
-	public void method14910(int arg0) {
+	public void cacheResize(int size) {
 		WeightedCache var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.clear();
-			this.recentUse = new WeightedCache(arg0);
+			this.recentUse.reset();
+			this.recentUse = new WeightedCache(size);
 		}
 	}
 
 	@ObfuscatedName("abe.r(I)V")
-	public void method14895() {
+	public void cacheReset() {
 		WeightedCache var1 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.clear();
+			this.recentUse.reset();
 		}
 	}
 
 	@ObfuscatedName("abe.v(II)V")
-	public void method14896(int arg0) {
+	public void cacheClean(int num) {
 		WeightedCache var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.update(arg0);
+			this.recentUse.clean(num);
 		}
 	}
 
 	@ObfuscatedName("abe.o(I)V")
-	public void method14899() {
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.method2928();
+			this.recentUse.clear();
 		}
 	}
 

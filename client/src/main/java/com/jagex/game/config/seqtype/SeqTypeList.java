@@ -28,20 +28,20 @@ public class SeqTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aos.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((SeqTypeFactory) this.factory).method3011();
+	public void cacheReset() {
+		super.cacheReset();
+		((SeqTypeFactory) this.factory).cacheReset();
 	}
 
 	@ObfuscatedName("aos.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((SeqTypeFactory) this.factory).method3012(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((SeqTypeFactory) this.factory).cacheClean(num);
 	}
 
 	@ObfuscatedName("aos.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((SeqTypeFactory) this.factory).method3019();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((SeqTypeFactory) this.factory).cacheRemoveSoftReferences();
 	}
 }

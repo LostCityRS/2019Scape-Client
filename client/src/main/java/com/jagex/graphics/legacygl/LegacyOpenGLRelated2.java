@@ -73,11 +73,11 @@ public class LegacyOpenGLRelated2 {
 
 	@ObfuscatedName("ca.k()V")
 	public void method1402() {
-		this.field1185.update(5);
+		this.field1185.clean(5);
 	}
 
 	@ObfuscatedName("ca.f()V")
 	public void method1399() {
-		this.field1185.clear();
+		this.field1185.reset();
 	}
 }

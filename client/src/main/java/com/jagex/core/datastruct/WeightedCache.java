@@ -12,10 +12,10 @@ public final class WeightedCache {
 	public int field1756;
 
 	@ObfuscatedName("eb.m")
-	public IterableMap field1757;
+	public IterableMap iterableMap;
 
 	@ObfuscatedName("eb.k")
-	public DualIterableQueue field1755;
+	public DualIterableQueue queue;
 
 	@ObfuscatedName("eb.f")
 	public CacheRemovalListener field1759;
@@ -30,18 +30,18 @@ public final class WeightedCache {
 	}
 
 	public WeightedCache(int arg0, int arg1) {
-		this.field1755 = new DualIterableQueue();
+		this.queue = new DualIterableQueue();
 		this.field1758 = arg0;
 		this.field1756 = arg0;
 		int var3;
 		for (var3 = 1; var3 + var3 < arg0 && var3 < arg1; var3 += var3) {
 		}
-		this.field1757 = new IterableMap(var3);
+		this.iterableMap = new IterableMap(var3);
 	}
 
 	@ObfuscatedName("eb.n(J)Ljava/lang/Object;")
 	public Object get(long arg0) {
-		WeightedWrapper var3 = (WeightedWrapper) this.field1757.getNode(arg0);
+		WeightedWrapper var3 = (WeightedWrapper) this.iterableMap.getNode(arg0);
 		if (var3 == null) {
 			return null;
 		}
@@ -54,13 +54,13 @@ public final class WeightedCache {
 		}
 		if (var3.method19424()) {
 			HardWeightedWrapper var5 = new HardWeightedWrapper(var4, var3.field12328);
-			this.field1757.pushNode(var5, var3.nodeId);
-			this.field1755.pushBack(var5);
+			this.iterableMap.pushNode(var5, var3.nodeId);
+			this.queue.pushBack(var5);
 			var5.secondaryNodeId = 0L;
 			var3.remove();
 			var3.secondaryRemove();
 		} else {
-			this.field1755.pushBack(var3);
+			this.queue.pushBack(var3);
 			var3.secondaryNodeId = 0L;
 		}
 		return var4;
@@ -68,7 +68,7 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.m(J)V")
 	public void method2957(long arg0) {
-		WeightedWrapper var3 = (WeightedWrapper) this.field1757.getNode(arg0);
+		WeightedWrapper var3 = (WeightedWrapper) this.iterableMap.getNode(arg0);
 		this.method2918(var3);
 	}
 
@@ -94,7 +94,7 @@ public final class WeightedCache {
 		this.method2957(arg1);
 		this.field1756 -= arg2;
 		while (this.field1756 < 0) {
-			WeightedWrapper var5 = (WeightedWrapper) this.field1755.pollFront();
+			WeightedWrapper var5 = (WeightedWrapper) this.queue.pollFront();
 			if (var5 == null) {
 				throw new RuntimeException("");
 			}
@@ -106,14 +106,14 @@ public final class WeightedCache {
 			}
 		}
 		HardWeightedWrapper var6 = new HardWeightedWrapper(arg0, arg2);
-		this.field1757.pushNode(var6, arg1);
-		this.field1755.pushBack(var6);
+		this.iterableMap.pushNode(var6, arg1);
+		this.queue.pushBack(var6);
 		var6.secondaryNodeId = 0L;
 	}
 
 	@ObfuscatedName("eb.l(IB)V")
-	public void update(int arg0) {
-		for (WeightedWrapper var2 = (WeightedWrapper) this.field1755.peekFront(); var2 != null; var2 = (WeightedWrapper) this.field1755.prev()) {
+	public void clean(int arg0) {
+		for (WeightedWrapper var2 = (WeightedWrapper) this.queue.peekFront(); var2 != null; var2 = (WeightedWrapper) this.queue.prev()) {
 			if (var2.method19424()) {
 				if (var2.method19423() == null) {
 					var2.remove();
@@ -122,7 +122,7 @@ public final class WeightedCache {
 				}
 			} else if (++var2.secondaryNodeId > (long) arg0) {
 				SoftWeightedWrapper var3 = new SoftWeightedWrapper(var2.method19423(), var2.field12328);
-				this.field1757.pushNode(var3, var2.nodeId);
+				this.iterableMap.pushNode(var3, var2.nodeId);
 				DualIterableQueue.method10144(var3, var2);
 				var2.remove();
 				var2.secondaryRemove();
@@ -131,9 +131,9 @@ public final class WeightedCache {
 	}
 
 	@ObfuscatedName("eb.u(B)V")
-	public void clear() {
-		this.field1755.clearAll();
-		this.field1757.clear();
+	public void reset() {
+		this.queue.removeAll();
+		this.iterableMap.removeAll();
 		this.field1756 = this.field1758;
 	}
 
@@ -148,9 +148,9 @@ public final class WeightedCache {
 	}
 
 	@ObfuscatedName("eb.d(B)I")
-	public int method2927() {
+	public int count() {
 		int var1 = 0;
-		for (WeightedWrapper var2 = (WeightedWrapper) this.field1755.peekFront(); var2 != null; var2 = (WeightedWrapper) this.field1755.prev()) {
+		for (WeightedWrapper var2 = (WeightedWrapper) this.queue.peekFront(); var2 != null; var2 = (WeightedWrapper) this.queue.prev()) {
 			if (!var2.method19424()) {
 				var1++;
 			}
@@ -159,8 +159,8 @@ public final class WeightedCache {
 	}
 
 	@ObfuscatedName("eb.c(I)V")
-	public void method2928() {
-		for (WeightedWrapper var1 = (WeightedWrapper) this.field1755.peekFront(); var1 != null; var1 = (WeightedWrapper) this.field1755.prev()) {
+	public void clear() {
+		for (WeightedWrapper var1 = (WeightedWrapper) this.queue.peekFront(); var1 != null; var1 = (WeightedWrapper) this.queue.prev()) {
 			if (var1.method19424()) {
 				var1.remove();
 				var1.secondaryRemove();
@@ -171,14 +171,14 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.r(I)Ljava/lang/Object;")
 	public Object method2950() {
-		WeightedWrapper var1 = (WeightedWrapper) this.field1757.peekFront();
+		WeightedWrapper var1 = (WeightedWrapper) this.iterableMap.peekFront();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
 			WeightedWrapper var3 = var1;
-			var1 = (WeightedWrapper) this.field1757.prev();
+			var1 = (WeightedWrapper) this.iterableMap.prev();
 			var3.remove();
 			var3.secondaryRemove();
 			this.field1756 += var3.field12328;
@@ -188,14 +188,14 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.v(I)Ljava/lang/Object;")
 	public Object method2937() {
-		WeightedWrapper var1 = (WeightedWrapper) this.field1757.prev();
+		WeightedWrapper var1 = (WeightedWrapper) this.iterableMap.prev();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
 			WeightedWrapper var3 = var1;
-			var1 = (WeightedWrapper) this.field1757.prev();
+			var1 = (WeightedWrapper) this.iterableMap.prev();
 			var3.remove();
 			var3.secondaryRemove();
 			this.field1756 += var3.field12328;

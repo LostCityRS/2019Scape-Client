@@ -221,7 +221,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("ei.c(B)V")
 	public static void method2752() {
-		recentUse.clear();
+		recentUse.removeAll();
 	}
 
 	@ObfuscatedName("ajo.r([II[IZI)J")
@@ -356,11 +356,11 @@ public class ClientInvCache extends Node {
 	@ObfuscatedName("ku.y(IB)V")
 	public static void method5150(int arg0) {
 		field11222 = arg0;
-		modelCache.clear();
+		modelCache.reset();
 	}
 
 	@ObfuscatedName("acd.x(I)V")
-	public static void method14941() {
-		modelCache.clear();
+	public static void cacheReset() {
+		modelCache.reset();
 	}
 }

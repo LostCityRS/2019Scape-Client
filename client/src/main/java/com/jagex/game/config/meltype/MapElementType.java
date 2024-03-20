@@ -385,14 +385,14 @@ public class MapElementType implements ConfigType {
 	public Sprite method4025(Renderer arg0, boolean arg1) {
 		int var3 = arg1 ? this.field2403 : this.sprite;
 		int var4 = var3 | arg0.field1595 << 29;
-		Sprite var5 = (Sprite) this.field2368.field2414.get((long) var4);
+		Sprite var5 = (Sprite) this.field2368.elementCache.get((long) var4);
 		if (var5 != null) {
 			return var5;
-		} else if (this.field2368.field2415.method6889(var3)) {
-			SpriteData var6 = SpriteDataProvider.method1609(this.field2368.field2415, var3, 0);
+		} else if (this.field2368.configClient.method6889(var3)) {
+			SpriteData var6 = SpriteDataProvider.method1609(this.field2368.configClient, var3, 0);
 			if (var6 != null) {
 				var5 = arg0.createSprite(var6, true);
-				this.field2368.field2414.put(var5, (long) var4);
+				this.field2368.elementCache.put(var5, (long) var4);
 			}
 			return var5;
 		} else {
@@ -403,14 +403,14 @@ public class MapElementType implements ConfigType {
 	@ObfuscatedName("hs.d(Ldh;B)Lcm;")
 	public Sprite method4026(Renderer arg0) {
 		int var2 = this.field2384 | arg0.field1595 << 29;
-		Sprite var3 = (Sprite) this.field2368.field2414.get((long) var2);
+		Sprite var3 = (Sprite) this.field2368.elementCache.get((long) var2);
 		if (var3 != null) {
 			return var3;
-		} else if (this.field2368.field2415.method6889(this.field2384)) {
-			SpriteData var4 = SpriteDataProvider.method1609(this.field2368.field2415, this.field2384, 0);
+		} else if (this.field2368.configClient.method6889(this.field2384)) {
+			SpriteData var4 = SpriteDataProvider.method1609(this.field2368.configClient, this.field2384, 0);
 			if (var4 != null) {
 				var3 = arg0.createSprite(var4, true);
-				this.field2368.field2414.put(var3, (long) var2);
+				this.field2368.elementCache.put(var3, (long) var2);
 			}
 			return var3;
 		} else {
@@ -420,15 +420,15 @@ public class MapElementType implements ConfigType {
 
 	@ObfuscatedName("hs.c(Ldh;I)Lcm;")
 	public Sprite method4027(Renderer arg0) {
-		Sprite var2 = (Sprite) this.field2368.field2414.get((long) (this.field2383 | 0x20000 | arg0.field1595 << 29));
+		Sprite var2 = (Sprite) this.field2368.elementCache.get((long) (this.field2383 | 0x20000 | arg0.field1595 << 29));
 		if (var2 != null) {
 			return var2;
 		}
-		this.field2368.field2415.method6889(this.field2383);
-		SpriteData var3 = SpriteDataProvider.method1609(this.field2368.field2415, this.field2383, 0);
+		this.field2368.configClient.method6889(this.field2383);
+		SpriteData var3 = SpriteDataProvider.method1609(this.field2368.configClient, this.field2383, 0);
 		if (var3 != null) {
 			var2 = arg0.createSprite(var3, true);
-			this.field2368.field2414.put(var2, (long) (this.field2383 | 0x20000 | arg0.field1595 << 29));
+			this.field2368.elementCache.put(var2, (long) (this.field2383 | 0x20000 | arg0.field1595 << 29));
 		}
 		return var2;
 	}

@@ -169,31 +169,31 @@ public class SpotShadowFactory {
 		field616 = arg0;
 		WeightedCache var1 = field617;
 		synchronized (field617) {
-			field617.clear();
+			field617.reset();
 		}
 	}
 
 	@ObfuscatedName("ft.k(I)V")
-	public static void method3076() {
+	public static void cacheReset() {
 		WeightedCache var0 = field617;
 		synchronized (field617) {
-			field617.clear();
+			field617.reset();
 		}
 	}
 
 	@ObfuscatedName("vg.f(IB)V")
-	public static void method9467(int arg0) {
+	public static void cacheClean(int arg0) {
 		WeightedCache var1 = field617;
 		synchronized (field617) {
-			field617.update(arg0);
+			field617.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("kh.w(B)V")
-	public static void method5201() {
+	public static void cacheRemoveSoftReferences() {
 		WeightedCache var0 = field617;
 		synchronized (field617) {
-			field617.method2928();
+			field617.clear();
 		}
 	}
 }

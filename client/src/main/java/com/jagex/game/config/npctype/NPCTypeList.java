@@ -16,8 +16,8 @@ public class NPCTypeList extends CachingConfigTypeList {
 
 	@ObfuscatedName("aod.al(ZI)V")
 	public void setAllowMembers(boolean arg0) {
-		((NPCTypeFactory) this.factory).method4579(arg0);
-		super.method14895();
+		((NPCTypeFactory) this.factory).setAllowMembers(arg0);
+		super.cacheReset();
 	}
 
 	@ObfuscatedName("aod.ac(II)V")
@@ -26,20 +26,20 @@ public class NPCTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aod.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((NPCTypeFactory) this.factory).method4577();
+	public void cacheReset() {
+		super.cacheReset();
+		((NPCTypeFactory) this.factory).cacheReset();
 	}
 
 	@ObfuscatedName("aod.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((NPCTypeFactory) this.factory).method4578(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((NPCTypeFactory) this.factory).cacheClean(num);
 	}
 
 	@ObfuscatedName("aod.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((NPCTypeFactory) this.factory).method4584();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((NPCTypeFactory) this.factory).cacheRemoveSoftReferences();
 	}
 }

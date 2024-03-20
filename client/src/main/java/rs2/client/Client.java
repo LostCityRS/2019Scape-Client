@@ -2438,7 +2438,7 @@ public final class Client extends GameShell {
 			PreciseSleep.sleep(2L);
 		}
 		if (field10807) {
-			method323();
+			cleanCaches();
 		}
 		if (preferences.unknown6.getValue() == 1 && state == 4 && openedTopInterface != -1) {
 			preferences.method18157(preferences.unknown6, 0);
@@ -2862,7 +2862,7 @@ public final class Client extends GameShell {
 		method3596(arg0, arg1, arg2);
 		fontProvider.method6158();
 		fontProvider.method6157(fontFactory);
-		fontProvider.method6165();
+		fontProvider.cacheReset();
 		DefaultSprites.method7114(renderer);
 		DefaultSprites.method5202(renderer, spritesJs5);
 		MiniMenu.method5147();
@@ -3014,7 +3014,7 @@ public final class Client extends GameShell {
 		world.method7737(true);
 		SkyBox.method7713();
 		Minimap.method829();
-		method14055(false);
+		resetCaches(false);
 		DefaultSprites.method3568();
 		ClientWorldMap.method18566();
 		Loading.method18929();
@@ -3039,7 +3039,7 @@ public final class Client extends GameShell {
 				}
 			}
 		}
-		spotanims.clear();
+		spotanims.removeAll();
 		renderer.dispose();
 		renderer = null;
 	}
@@ -3462,7 +3462,7 @@ public final class Client extends GameShell {
 		Component.method14950(var0);
 		world.method7750().method18891(var0);
 		field3183.method7677().method7750().method18891(var0);
-		objTypeList.method18902(var0);
+		objTypeList.resetModelCache(var0);
 		npcTypeList.method18877(var0);
 		effectAnimTypeList.method18896(var0);
 		HintArrow.method8643(var0);
@@ -3496,9 +3496,9 @@ public final class Client extends GameShell {
 			players[var2] = null;
 		}
 		field11011 = 0;
-		miniMenuEntries.clear();
+		miniMenuEntries.removeAll();
 		field10906 = 0;
-		objStacks.clear();
+		objStacks.removeAll();
 		method4046(method14298());
 		currentIncrementVerifyId = 0;
 		localPlayerGameState.varps.method9624();
@@ -3527,7 +3527,7 @@ public final class Client extends GameShell {
 		}
 		LoginManager.method9067();
 		method14454();
-		method14055(false);
+		resetCaches(false);
 		world.method7747();
 		world.method7746();
 		world.method7730();
@@ -3549,137 +3549,137 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("r.fq(I)V")
-	public static final void method323() {
-		overlayTypeList.method14896(5);
-		underlayTypeList.method14896(5);
-		idkTypeList.method14896(5);
-		world.method7750().method14896(5);
-		npcTypeList.method14896(5);
-		objTypeList.method14896(5);
-		seqTypeList.method14896(5);
-		effectAnimTypeList.method14896(5);
-		varBitTypeList.method14896(5);
-		varPlayerTypeList.method15259(5);
-		varNpcTypeList.method15274(5);
-		varClanTypeList.method15274(5);
-		varClanSettingTypeList.method15274(5);
-		varPlayerGroupTypeList.method15274(5);
-		varObjTypeList.method15274(5);
-		basTypeList.method14896(5);
-		mapElementTypeList.method14896(5);
-		msiTypeList.method14896(5);
-		paramTypeList.method14896(5);
-		skyBoxTypeList.method14896(5);
-		skyDecorTypeList.method14896(5);
-		lightTypeList.method14896(5);
-		cursorTypeList.method14896(5);
-		hitmarkTypeList.method14896(5);
-		headbarTypeList.method14896(5);
-		PlayerModel.method9976(5);
-		Component.method8274(50);
-		fontProvider.method6166(50);
-		HintArrow.method10284(5);
-		SpotShadowFactory.method9467(5);
-		field10830.update(5);
-		headIconsCache.update(5);
-		ScriptRunner.field8204.update(5);
-		field11013.update(5);
-		field9123.method14896(5);
-		field1840.method14896(5);
-		field10834.update(5);
+	public static final void cleanCaches() {
+		overlayTypeList.cacheClean(5);
+		underlayTypeList.cacheClean(5);
+		idkTypeList.cacheClean(5);
+		world.method7750().cacheClean(5);
+		npcTypeList.cacheClean(5);
+		objTypeList.cacheClean(5);
+		seqTypeList.cacheClean(5);
+		effectAnimTypeList.cacheClean(5);
+		varBitTypeList.cacheClean(5);
+		varPlayerTypeList.cacheClean(5);
+		varNpcTypeList.cacheClean(5);
+		varClanTypeList.cacheClean(5);
+		varClanSettingTypeList.cacheClean(5);
+		varPlayerGroupTypeList.cacheClean(5);
+		varObjTypeList.cacheClean(5);
+		basTypeList.cacheClean(5);
+		mapElementTypeList.cacheClean(5);
+		msiTypeList.cacheClean(5);
+		paramTypeList.cacheClean(5);
+		skyBoxTypeList.cacheClean(5);
+		skyDecorTypeList.cacheClean(5);
+		lightTypeList.cacheClean(5);
+		cursorTypeList.cacheClean(5);
+		hitmarkTypeList.cacheClean(5);
+		headbarTypeList.cacheClean(5);
+		PlayerModel.cacheClean(5);
+		Component.cacheClean(50);
+		fontProvider.cacheClean(50);
+		HintArrow.cacheClean(5);
+		SpotShadowFactory.cacheClean(5);
+		field10830.clean(5);
+		headIconsCache.clean(5);
+		ScriptRunner.field8204.clean(5);
+		field11013.clean(5);
+		field9123.cacheClean(5);
+		field1840.cacheClean(5);
+		field10834.clean(5);
 	}
 
 	@ObfuscatedName("yj.ff(B)V")
-	public static final void method10444() {
-		overlayTypeList.method14899();
-		underlayTypeList.method14899();
-		idkTypeList.method14899();
-		world.method7750().method14899();
-		npcTypeList.method14899();
-		objTypeList.method14899();
-		seqTypeList.method14899();
-		effectAnimTypeList.method14899();
-		varBitTypeList.method14899();
-		varPlayerTypeList.method15257();
-		varNpcTypeList.method15268();
-		varClanTypeList.method15268();
-		varClanSettingTypeList.method15268();
-		varPlayerGroupTypeList.method15268();
-		varObjTypeList.method15268();
-		basTypeList.method14899();
-		msiTypeList.method14899();
-		mapElementTypeList.method14899();
-		paramTypeList.method14899();
-		skyBoxTypeList.method14899();
-		skyDecorTypeList.method14899();
-		lightTypeList.method14899();
-		cursorTypeList.method14899();
-		hitmarkTypeList.method14899();
-		headbarTypeList.method14899();
-		PlayerModel.method8366();
-		Component.method5204();
-		fontProvider.method6167();
-		HintArrow.method16718();
-		SpotShadowFactory.method5201();
-		field10830.method2928();
-		headIconsCache.method2928();
-		ScriptRunner.field8204.method2928();
-		field11013.method2928();
-		field9123.method14899();
-		field1840.method14899();
-		field10834.method2928();
+	public static final void removeSoftReferencesCaches() {
+		overlayTypeList.cacheRemoveSoftReferences();
+		underlayTypeList.cacheRemoveSoftReferences();
+		idkTypeList.cacheRemoveSoftReferences();
+		world.method7750().cacheRemoveSoftReferences();
+		npcTypeList.cacheRemoveSoftReferences();
+		objTypeList.cacheRemoveSoftReferences();
+		seqTypeList.cacheRemoveSoftReferences();
+		effectAnimTypeList.cacheRemoveSoftReferences();
+		varBitTypeList.cacheRemoveSoftReferences();
+		varPlayerTypeList.cacheRemoveSoftReferences();
+		varNpcTypeList.cacheRemoveSoftReferences();
+		varClanTypeList.cacheRemoveSoftReferences();
+		varClanSettingTypeList.cacheRemoveSoftReferences();
+		varPlayerGroupTypeList.cacheRemoveSoftReferences();
+		varObjTypeList.cacheRemoveSoftReferences();
+		basTypeList.cacheRemoveSoftReferences();
+		msiTypeList.cacheRemoveSoftReferences();
+		mapElementTypeList.cacheRemoveSoftReferences();
+		paramTypeList.cacheRemoveSoftReferences();
+		skyBoxTypeList.cacheRemoveSoftReferences();
+		skyDecorTypeList.cacheRemoveSoftReferences();
+		lightTypeList.cacheRemoveSoftReferences();
+		cursorTypeList.cacheRemoveSoftReferences();
+		hitmarkTypeList.cacheRemoveSoftReferences();
+		headbarTypeList.cacheRemoveSoftReferences();
+		PlayerModel.cacheRemoveSoftReferences();
+		Component.cacheRemoveSoftReferences();
+		fontProvider.cacheRemoveSoftReferences();
+		HintArrow.cacheRemoveSoftReferences();
+		SpotShadowFactory.cacheRemoveSoftReferences();
+		field10830.clear();
+		headIconsCache.clear();
+		ScriptRunner.field8204.clear();
+		field11013.clear();
+		field9123.cacheRemoveSoftReferences();
+		field1840.cacheRemoveSoftReferences();
+		field10834.clear();
 	}
 
 	@ObfuscatedName("zb.fl(ZB)V")
-	public static final void method14055(boolean arg0) {
-		if (!arg0) {
-			overlayTypeList.method14895();
-			underlayTypeList.method14895();
-			idkTypeList.method14895();
-			world.method7750().method14895();
-			npcTypeList.method14895();
-			objTypeList.method14895();
-			seqTypeList.method14895();
-			effectAnimTypeList.method14895();
-			varBitTypeList.method14895();
-			varPlayerTypeList.method15256();
-			varNpcTypeList.method15277();
-			varClanTypeList.method15277();
-			varClanSettingTypeList.method15277();
-			varPlayerGroupTypeList.method15277();
-			varObjTypeList.method15277();
-			basTypeList.method14895();
-			msiTypeList.method14895();
-			mapElementTypeList.method14895();
-			paramTypeList.method14895();
-			skyBoxTypeList.method14895();
-			skyDecorTypeList.method14895();
-			lightTypeList.method14895();
-			cursorTypeList.method14895();
-			hitmarkTypeList.method14895();
-			headbarTypeList.method14895();
-			PlayerModel.method15184();
-			Component.method5403();
-			fontProvider.method6165();
-			ClientInvCache.method14941();
+	public static final void resetCaches(boolean notResetAll) {
+		if (!notResetAll) {
+			overlayTypeList.cacheReset();
+			underlayTypeList.cacheReset();
+			idkTypeList.cacheReset();
+			world.method7750().cacheReset();
+			npcTypeList.cacheReset();
+			objTypeList.cacheReset();
+			seqTypeList.cacheReset();
+			effectAnimTypeList.cacheReset();
+			varBitTypeList.cacheReset();
+			varPlayerTypeList.cacheReset();
+			varNpcTypeList.cacheReset();
+			varClanTypeList.cacheReset();
+			varClanSettingTypeList.cacheReset();
+			varPlayerGroupTypeList.cacheReset();
+			varObjTypeList.cacheReset();
+			basTypeList.cacheReset();
+			msiTypeList.cacheReset();
+			mapElementTypeList.cacheReset();
+			paramTypeList.cacheReset();
+			skyBoxTypeList.cacheReset();
+			skyDecorTypeList.cacheReset();
+			lightTypeList.cacheReset();
+			cursorTypeList.cacheReset();
+			hitmarkTypeList.cacheReset();
+			headbarTypeList.cacheReset();
+			PlayerModel.cacheReset();
+			Component.cacheReset();
+			fontProvider.cacheReset();
+			ClientInvCache.cacheReset();
 			if (modewhere != ModeWhere.LIVE) {
 				for (int var1 = 0; var1 < field9166.length; var1++) {
 					field9166[var1] = null;
 				}
 				field10798 = 0;
 			}
-			world.method7816().clearCache();
-			HintArrow.method2086();
-			SpotShadowFactory.method3076();
-			basicParticleEmitterTypeList.method6008();
-			basicParticleEffectorTypeList.method5974();
-			ScriptRunner.field8204.clear();
-			field10830.clear();
-			headIconsCache.clear();
-			field11013.clear();
-			field9123.method14895();
-			field1840.method14895();
-			field10834.clear();
+			world.method7816().cacheReset();
+			HintArrow.cacheReset();
+			SpotShadowFactory.cacheReset();
+			basicParticleEmitterTypeList.cacheReset();
+			basicParticleEffectorTypeList.cacheReset();
+			ScriptRunner.field8204.reset();
+			field10830.reset();
+			headIconsCache.reset();
+			field11013.reset();
+			field9123.cacheReset();
+			field1840.cacheReset();
+			field10834.reset();
 		}
 		ClientScriptHelpers.method8004();
 		ObjIconFactory.method17658();
@@ -4006,7 +4006,7 @@ public final class Client extends GameShell {
 				sceneState = 1;
 			}
 			if (sceneState == 1 && state != 3) {
-				CutsceneManager.field1718.clear();
+				CutsceneManager.field1718.removeAll();
 				sceneState = 0;
 				field11041 = loopCycle;
 				field10797 = 0;

@@ -16,25 +16,25 @@ public class MSITypeList extends CachingConfigTypeList {
 
 	@ObfuscatedName("aox.al(III)V")
 	public void method18915(int arg0, int arg1) {
-		super.method14910(arg0);
+		super.cacheResize(arg0);
 		((MSITypeFactory) this.factory).method15072(arg1);
 	}
 
 	@ObfuscatedName("aox.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((MSITypeFactory) this.factory).method15075();
+	public void cacheReset() {
+		super.cacheReset();
+		((MSITypeFactory) this.factory).cacheReset();
 	}
 
 	@ObfuscatedName("aox.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((MSITypeFactory) this.factory).method15074(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((MSITypeFactory) this.factory).cacheClean(num);
 	}
 
 	@ObfuscatedName("aox.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((MSITypeFactory) this.factory).method15078();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((MSITypeFactory) this.factory).cacheRemoveSoftReferences();
 	}
 }

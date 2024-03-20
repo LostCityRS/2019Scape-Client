@@ -188,10 +188,10 @@ public class EnvironmentManager {
 	}
 
 	@ObfuscatedName("xu.l(I)V")
-	public void clearCache() {
-		this.samplerCache.clear();
-		this.skyboxCache.clear();
-		this.colourRemappingCache.clear();
+	public void cacheReset() {
+		this.samplerCache.reset();
+		this.skyboxCache.reset();
+		this.colourRemappingCache.reset();
 	}
 
 	@ObfuscatedName("xu.u(II)Ldz;")

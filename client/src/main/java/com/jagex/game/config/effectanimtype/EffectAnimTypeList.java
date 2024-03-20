@@ -20,20 +20,20 @@ public class EffectAnimTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aot.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((EffectAnimTypeFactory) this.factory).method13834();
+	public void cacheReset() {
+		super.cacheReset();
+		((EffectAnimTypeFactory) this.factory).cacheReset();
 	}
 
 	@ObfuscatedName("aot.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((EffectAnimTypeFactory) this.factory).method13821(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((EffectAnimTypeFactory) this.factory).cacheClean(num);
 	}
 
 	@ObfuscatedName("aot.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((EffectAnimTypeFactory) this.factory).method13822();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((EffectAnimTypeFactory) this.factory).cacheRemoveSoftReferences();
 	}
 }

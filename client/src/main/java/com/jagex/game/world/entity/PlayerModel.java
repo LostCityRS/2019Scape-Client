@@ -612,7 +612,7 @@ public class PlayerModel {
 	public static int method18304() {
 		WeightedCache var0 = field7901;
 		synchronized (field7901) {
-			return field7901.method2927();
+			return field7901.count();
 		}
 	}
 
@@ -621,16 +621,40 @@ public class PlayerModel {
 		field4037 = arg0;
 		WeightedCache var1 = field7902;
 		synchronized (field7902) {
-			field7902.clear();
+			field7902.reset();
 		}
 		WeightedCache var3 = field7901;
 		synchronized (field7901) {
-			field7901.clear();
+			field7901.reset();
 		}
 	}
 
 	@ObfuscatedName("ada.r(I)V")
-	public static void method15184() {
+	public static void cacheReset() {
+		WeightedCache var0 = field7901;
+		synchronized (field7901) {
+			field7901.reset();
+		}
+		WeightedCache var2 = field7902;
+		synchronized (field7902) {
+			field7902.reset();
+		}
+	}
+
+	@ObfuscatedName("xw.v(IB)V")
+	public static void cacheClean(int arg0) {
+		WeightedCache var1 = field7901;
+		synchronized (field7901) {
+			field7901.clean(arg0);
+		}
+		WeightedCache var3 = field7902;
+		synchronized (field7902) {
+			field7902.clean(arg0);
+		}
+	}
+
+	@ObfuscatedName("sc.o(S)V")
+	public static void cacheRemoveSoftReferences() {
 		WeightedCache var0 = field7901;
 		synchronized (field7901) {
 			field7901.clear();
@@ -638,30 +662,6 @@ public class PlayerModel {
 		WeightedCache var2 = field7902;
 		synchronized (field7902) {
 			field7902.clear();
-		}
-	}
-
-	@ObfuscatedName("xw.v(IB)V")
-	public static void method9976(int arg0) {
-		WeightedCache var1 = field7901;
-		synchronized (field7901) {
-			field7901.update(arg0);
-		}
-		WeightedCache var3 = field7902;
-		synchronized (field7902) {
-			field7902.update(arg0);
-		}
-	}
-
-	@ObfuscatedName("sc.o(S)V")
-	public static void method8366() {
-		WeightedCache var0 = field7901;
-		synchronized (field7901) {
-			field7901.method2928();
-		}
-		WeightedCache var2 = field7902;
-		synchronized (field7902) {
-			field7902.method2928();
 		}
 	}
 }

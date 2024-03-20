@@ -287,7 +287,7 @@ public class Minimap {
 			method16444(arg1);
 			WorldMapRelated var47 = Client.world.method7871();
 			if (var47 != null) {
-				Client.mapElementTypeList.method18871(1024, 64);
+				Client.mapElementTypeList.cacheResize(1024, 64);
 				CoordGrid var48 = Client.world.method7727();
 				for (int var49 = 0; var49 < var47.field6777; var49++) {
 					int var50 = var47.field6776[var49];
@@ -304,7 +304,7 @@ public class Minimap {
 						}
 					}
 				}
-				Client.mapElementTypeList.method18871(128, 64);
+				Client.mapElementTypeList.cacheResize(128, 64);
 			}
 		}
 		return true;

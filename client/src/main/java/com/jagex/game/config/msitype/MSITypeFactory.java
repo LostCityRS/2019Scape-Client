@@ -25,26 +25,26 @@ public abstract class MSITypeFactory implements ConfigTypeFactory {
 	}
 
 	@ObfuscatedName("ace.n(I)V")
-	public void method15075() {
+	public void cacheReset() {
 		WeightedCache var1 = this.field9156;
 		synchronized (this.field9156) {
-			this.field9156.clear();
+			this.field9156.reset();
 		}
 	}
 
 	@ObfuscatedName("ace.m(II)V")
-	public void method15074(int arg0) {
+	public void cacheClean(int arg0) {
 		WeightedCache var2 = this.field9156;
 		synchronized (this.field9156) {
-			this.field9156.update(arg0);
+			this.field9156.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("ace.k(I)V")
-	public void method15078() {
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.field9156;
 		synchronized (this.field9156) {
-			this.field9156.method2928();
+			this.field9156.clear();
 		}
 	}
 }

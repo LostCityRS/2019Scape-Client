@@ -52,9 +52,9 @@ public class DelayedStateChange extends SecondaryNode {
 
 	@ObfuscatedName("al.n(I)V")
 	public static void method716() {
-		field12291.clear();
-		field12290.clearAll();
-		field12289.clearAll();
+		field12291.removeAll();
+		field12290.removeAll();
+		field12289.removeAll();
 	}
 
 	@ObfuscatedName("kh.m(B)Lars;")

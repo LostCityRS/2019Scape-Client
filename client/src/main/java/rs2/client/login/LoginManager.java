@@ -1197,11 +1197,11 @@ public class LoginManager {
 		Client.localPlayerEntity = null;
 		Client.field11011 = 0;
 		Client.field10906 = 0;
-		Client.miniMenuEntries.clear();
+		Client.miniMenuEntries.removeAll();
 		Client.projectiles.clearAll();
-		Client.spotanims.clear();
+		Client.spotanims.removeAll();
 		Client.textCoords.clear();
-		Client.objStacks.clear();
+		Client.objStacks.removeAll();
 		ChangeLocationRequest.field11237 = new IterableQueue();
 		ChangeLocationRequest.field11242 = new IterableQueue();
 		Client.cameraMoveX = 0;

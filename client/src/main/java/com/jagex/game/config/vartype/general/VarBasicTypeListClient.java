@@ -51,26 +51,26 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	}
 
 	@ObfuscatedName("adm.v(I)V")
-	public void method15277() {
+	public void cacheReset() {
 		WeightedCache var1 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.clear();
+			this.recentUse.reset();
 		}
 	}
 
 	@ObfuscatedName("adm.o(II)V")
-	public void method15274(int arg0) {
+	public void cacheClean(int arg0) {
 		WeightedCache var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.update(arg0);
+			this.recentUse.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("adm.s(I)V")
-	public void method15268() {
+	public void cacheRemoveSoftReferences() {
 		WeightedCache var1 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.method2928();
+			this.recentUse.clear();
 		}
 	}
 

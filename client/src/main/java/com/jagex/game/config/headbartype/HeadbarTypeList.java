@@ -15,20 +15,20 @@ public class HeadbarTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aol.r(I)V")
-	public void method14895() {
-		super.method14895();
-		((HeadbarTypeFactory) this.factory).method9166();
+	public void cacheReset() {
+		super.cacheReset();
+		((HeadbarTypeFactory) this.factory).cacheReset();
 	}
 
 	@ObfuscatedName("aol.v(II)V")
-	public void method14896(int arg0) {
-		super.method14896(arg0);
-		((HeadbarTypeFactory) this.factory).method9172(arg0);
+	public void cacheClean(int num) {
+		super.cacheClean(num);
+		((HeadbarTypeFactory) this.factory).cacheClean(num);
 	}
 
 	@ObfuscatedName("aol.o(I)V")
-	public void method14899() {
-		super.method14899();
-		((HeadbarTypeFactory) this.factory).method9168();
+	public void cacheRemoveSoftReferences() {
+		super.cacheRemoveSoftReferences();
+		((HeadbarTypeFactory) this.factory).cacheRemoveSoftReferences();
 	}
 }

@@ -8,36 +8,36 @@ import deob.ObfuscatedName;
 public abstract class HitmarkTypeFactory {
 
 	@ObfuscatedName("vl.e")
-	public final Js5 field7315;
+	public final Js5 configClient;
 
 	@ObfuscatedName("vl.n")
-	public final WeightedCache field7316 = new WeightedCache(20);
+	public final WeightedCache spriteCache = new WeightedCache(20);
 
-	public HitmarkTypeFactory(Js5 arg0) {
-		this.field7315 = arg0;
+	public HitmarkTypeFactory(Js5 configClient) {
+		this.configClient = configClient;
 	}
 
 	@ObfuscatedName("vl.e(I)V")
-	public void method9277() {
-		WeightedCache var1 = this.field7316;
-		synchronized (this.field7316) {
-			this.field7316.clear();
+	public void cacheReset() {
+		WeightedCache var1 = this.spriteCache;
+		synchronized (this.spriteCache) {
+			this.spriteCache.reset();
 		}
 	}
 
 	@ObfuscatedName("vl.n(II)V")
-	public void method9282(int arg0) {
-		WeightedCache var2 = this.field7316;
-		synchronized (this.field7316) {
-			this.field7316.update(arg0);
+	public void cacheClean(int arg0) {
+		WeightedCache var2 = this.spriteCache;
+		synchronized (this.spriteCache) {
+			this.spriteCache.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("vl.m(I)V")
-	public void method9279() {
-		WeightedCache var1 = this.field7316;
-		synchronized (this.field7316) {
-			this.field7316.method2928();
+	public void cacheRemoveSoftReferences() {
+		WeightedCache var1 = this.spriteCache;
+		synchronized (this.spriteCache) {
+			this.spriteCache.clear();
 		}
 	}
 }

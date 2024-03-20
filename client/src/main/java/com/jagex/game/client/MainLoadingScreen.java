@@ -44,7 +44,7 @@ public class MainLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("z.e(B)V")
 	public static void method271() {
-		field2930.clear();
+		field2930.reset();
 	}
 
 	public MainLoadingScreen(LoadingScreenType arg0, int arg1, int arg2, LoadingScreenElementFactory arg3) {

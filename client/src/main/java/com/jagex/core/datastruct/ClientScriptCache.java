@@ -58,8 +58,8 @@ public final class ClientScriptCache {
 
 	@ObfuscatedName("ex.m(I)V")
 	public void method2969() {
-		this.field1763.clearAll();
-		this.field1764.clear();
+		this.field1763.removeAll();
+		this.field1764.removeAll();
 		this.field1760 = new SecondaryNode();
 		this.field1762 = this.field1761;
 	}

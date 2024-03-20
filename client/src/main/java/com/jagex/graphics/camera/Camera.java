@@ -155,7 +155,7 @@ public abstract class Camera {
 		this.field2875 = true;
 		this.field2876 = 0;
 		this.field2877 = 1.0F;
-		this.field2878.clear();
+		this.field2878.removeAll();
 	}
 
 	@ObfuscatedName("je.n(F[[[ILqx;III)V")
@@ -411,7 +411,7 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.ae(B)V")
 	public void method4705() {
-		this.field2878.clear();
+		this.field2878.removeAll();
 	}
 
 	@ObfuscatedName("je.ag(B)Z")
