@@ -62,16 +62,19 @@ public abstract class Js5TcpClient {
 		var7.secondaryNodeId = var5;
 		var7.field12565 = arg2;
 		var7.field12342 = arg3;
+
 		if (arg3) {
 			if (this.method7021() >= 500) {
-				throw new RuntimeException();
+				throw new RuntimeException("Urgent list exceeded max limit of 500");
 			}
+
 			this.urgent.pushBack(var7);
 		} else if (this.method7013() < 500) {
 			this.prefetch.pushBack(var7);
 		} else {
-			throw new RuntimeException();
+			throw new RuntimeException("Prefetch list exceeded max limit of 500");
 		}
+
 		return var7;
 	}
 

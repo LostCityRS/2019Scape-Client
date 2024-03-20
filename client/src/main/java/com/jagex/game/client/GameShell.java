@@ -214,6 +214,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			JagException.field9164 = field11885;
 			this.startCommon(arg1, arg2, arg3, arg4, arg5, arg6);
 		} catch (Throwable var10) {
+            // logger.error("", throwable);
 			JagException.report(null, var10);
 			this.error("crash");
 		}
@@ -371,18 +372,22 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 					}
 				}
 				var8.method14818();
+                // logger.debug("Cache: Read cache locator file from: {}, state: {}", cacheLocator, (Object)n3);
 			} catch (IOException var29) {
+                // logger.error("Cache: Error opening cache locator file.", iOException);
 				var29.printStackTrace();
 			}
 			if (var5 != null) {
 				File var14 = new File(var5);
 				if (!var14.exists()) {
+	                // logger.debug("Cache: Cache locator location does not exist: {}", string4);
 					var5 = null;
 				}
 			}
 			if (var5 != null) {
 				File var15 = new File(var5, "test.dat");
 				if (!this.checkWritable(var15, true)) {
+	                // logger.debug("Cache: Cache locator location not writable: {}", string4);
 					var5 = null;
 				}
 			}
@@ -394,16 +399,19 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 					if (var18.exists() && this.checkWritable(new File(var18, "test.dat"), true)) {
 						var5 = var18.toString();
 						var7 = true;
+	                    // logger.debug("Cache: Legacy cache found: {}", (Object)string4);
 						break label103;
 					}
 				}
 			}
 		}
 		if (var5 == null) {
+            // logger.debug("Cache: No previous cache found, using default.");
 			var5 = homeDir + File.separatorChar + "jagexcache" + var4 + File.separatorChar + arg0 + File.separatorChar + arg1 + File.separatorChar;
 			var7 = true;
 		}
 		if (var6 != null) {
+            // logger.debug("Cache: Copying cache from old location: {}", string5);
 			File var19 = new File(var6);
 			File var20 = new File(var5);
 			try {
@@ -412,12 +420,14 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				for (int var23 = 0; var23 < var22.length; var23++) {
 					File var24 = var22[var23];
 					File var25 = new File(var20, var24.getName());
+                    // logger.debug("Cache: Copying old file: {} to {}", file, (Object)file2);
 					boolean var26 = var24.renameTo(var25);
 					if (!var26) {
 						throw new IOException();
 					}
 				}
 			} catch (Exception var28) {
+                // logger.error("Cache: Error when copying cache from old location.", exception);
 				var28.printStackTrace();
 			}
 			var7 = true;
@@ -425,12 +435,14 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		if (var7) {
 			this.writeCacheLocator(new File(var5), null);
 		}
+        // logger.debug("Cache: Using cache at: {}", string4);
 		return new File(var5);
 	}
 
 	@ObfuscatedName("sk.k(Ljava/io/File;Ljava/io/File;I)V")
 	public void writeCacheLocator(File arg0, File arg1) {
 		try {
+            // logger.debug("Cache: Writing cache locator file with new location: {} old location: {}", file, file2 == null ? "N/A" : file2);
 			FileOnDisk var3 = new FileOnDisk(cacheLocator, "rw", 10000L);
 			Packet var4 = new Packet(500);
 			var4.p1(3);
@@ -442,6 +454,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			var3.method14808(var4.data, 0, var4.pos);
 			var3.method14818();
 		} catch (IOException var6) {
+            // logger.error("Cache: Error writing cache locator file.", iOException);
 			var6.printStackTrace();
 		}
 	}
@@ -474,6 +487,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		File var3 = new File(cacheDirectory, "preferences" + arg0 + ".dat");
 		if (var3.exists()) {
 			try {
+                // logger.debug("Prefs: Opening existing prefs {} in modern location: {}", (Object)string, (Object)file);
 				return new FileOnDisk(var3, "rw", 10000L);
 			} catch (IOException var14) {
 			}
@@ -487,11 +501,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		File var7 = new File(homeDir, "jagex_" + arg1 + "_preferences" + arg0 + var6 + ".dat");
 		if (!arg2 && var7.exists()) {
 			try {
+                // logger.debug("Prefs: Opening existing prefs {} in historic location: {}", (Object)string, (Object)file2);
 				return new FileOnDisk(var7, "rw", 10000L);
 			} catch (IOException var13) {
 			}
 		}
 		try {
+            // logger.debug("Prefs: Opening new prefs {} in modern location: {}", (Object)string, (Object)file);
 			return new FileOnDisk(var3, "rw", 10000L);
 		} catch (IOException var12) {
 			throw new RuntimeException();
@@ -504,18 +520,21 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			File var0 = new File(homeDir, "random.dat");
 			if (var0.exists()) {
 				uidDat = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
+                // logger.debug("UID: Opening UID in user's home directory: {}", file);
 			} else {
 				label34: for (int var1 = 0; var1 < historicCacheDirectories.length; var1++) {
 					for (int var2 = 0; var2 < historicCacheLocations.length; var2++) {
 						File var3 = new File(historicCacheLocations[var2] + historicCacheDirectories[var1] + File.separatorChar + "random.dat");
 						if (var3.exists()) {
 							uidDat = new BufferedFile(new FileOnDisk(var3, "rw", 25L), 24, 0);
+	                        // logger.debug("UID: Opening UID in historic directory: {}", file2);
 							break label34;
 						}
 					}
 				}
 			}
 			if (uidDat == null) {
+                // logger.debug("UID: Couldn't find existing UID, creating new one in user's home directory: {}", file);
 				RandomAccessFile var4 = new RandomAccessFile(var0, "rw");
 				int var5 = var4.read();
 				var4.seek(0L);
@@ -525,6 +544,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				uidDat = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
 			}
 		} catch (IOException var7) {
+            // logger.error("Error opening random.dat", iOException);
 		}
 	}
 
@@ -651,6 +671,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	public void run() {
+        // logger.debug("run");
 		try {
 			this.run_inner();
 		} catch (ThreadDeath var7) {
@@ -665,6 +686,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.h(I)V")
 	public void run_inner() {
+        // logger.debug("run_inner");
 		if (javaVendor != null) {
 			String var1 = javaVendor.toLowerCase();
 			if (var1.indexOf("sun") != -1 || var1.indexOf("apple") != -1) {
@@ -689,8 +711,10 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		maxmemory = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
 		cpucount = Runtime.getRuntime().availableProcessors();
 		this.addcanvas();
+        // logger.debug("maininit");
 		this.maininit();
 		field6594 = Timer.method6109();
+        // logger.debug("mainloop");
 		while (killtime == 0L || MonotonicTime.get() < killtime) {
 			field6624 = field6594.method8158(logicUpdateInterval);
 			for (int var5 = 0; var5 < field6624; var5++) {
@@ -771,6 +795,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 			shutdown = true;
 		}
+        // logger.debug("Shutdown start - clean:{}", bl);
 		try {
 			this.mainquit();
 		} catch (Exception var11) {
@@ -805,6 +830,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			frame.dispose();
 			frame = null;
 		}
+        // logger.debug("Shutdown complete - clean:{}", bl);
 	}
 
 	@ObfuscatedName("nw.ae(B)I")
@@ -977,6 +1003,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			return;
 		}
 		this.alreadyerrored = true;
+        // logger.debug("error_game_{}", (Object)string);
 		System.out.println("error_game_" + arg0);
 		try {
 			BrowserControl.call(field11885, "loggedout");
@@ -985,6 +1012,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		try {
 			field11885.getAppletContext().showDocument(new URL(field11885.getCodeBase(), "error_game_" + arg0 + ".ws"), "_top");
 		} catch (Exception var4) {
+            // logger.error("", exception);
 		}
 	}
 
