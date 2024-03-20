@@ -14365,7 +14365,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ek.apo(Lyf;I)V")
 	public static final void login_resetreply(ClientScriptState arg0) {
 		if (!LoginManager.isInProgress()) {
-			LoginManager.method9067();
+			LoginManager.resetLoginState();
 		}
 	}
 
@@ -14666,7 +14666,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		String var2 = (String) arg0.field8218[--arg0.field8211];
 		boolean var3 = arg0.field8216[arg0.field8226 + 1] == 1;
-		LoginManager.requestSocialNetwork(var1, var2, var3);
+		LoginManager.requestSocialNetworkLogin(var1, var2, var3);
 	}
 
 	@ObfuscatedName("cc.aru(Lyf;I)V")
@@ -14709,7 +14709,7 @@ public final class ScriptRunner {
 		Client.preferences.method18157(Client.preferences.brightness, var1);
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("akw.ars(Lyf;I)V")
@@ -14721,7 +14721,7 @@ public final class ScriptRunner {
 		Client.preferences.removeRoofs2.clampValue();
 		Client.method3128();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("fv.arm(Lyf;I)V")
@@ -14729,28 +14729,28 @@ public final class ScriptRunner {
 		Client.preferences.method18157(Client.preferences.groundDecoration, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("ec.ark(Lyf;B)V")
 	public static final void detail_idleanims_many(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.idleAnimations, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("any.arn(Lyf;I)V")
 	public static final void detail_flickering_on(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.flickeringEffects, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("fz.ara(Lyf;I)V")
 	public static final void detail_spotshadows_on(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.characterShadows, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("aae.ard(Lyf;I)V")
@@ -14758,7 +14758,7 @@ public final class ScriptRunner {
 		Client.preferences.method18157(Client.preferences.sceneryShadows, arg0.field8216[--arg0.field8226]);
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("ju.arr(Lyf;S)V")
@@ -14766,7 +14766,7 @@ public final class ScriptRunner {
 		Client.preferences.method18157(Client.preferences.shadowQuality, arg0.field8216[--arg0.field8226]);
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("no.asa(Lyf;I)V")
@@ -14775,7 +14775,7 @@ public final class ScriptRunner {
 		Client.method9516();
 		Client.world.method7816().resetFade();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("yu.asg(Lyf;B)V")
@@ -14783,7 +14783,7 @@ public final class ScriptRunner {
 		Client.preferences.method18157(Client.preferences.waterDetail, arg0.field8216[--arg0.field8226] == 1 ? 2 : 0);
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("ck.aso(Lyf;B)V")
@@ -14791,7 +14791,7 @@ public final class ScriptRunner {
 		Client.preferences.method18157(Client.preferences.fog, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("xe.ask(Lyf;B)V")
@@ -14805,14 +14805,14 @@ public final class ScriptRunner {
 	public static final void detail_stereo(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.stereo, arg0.field8216[--arg0.field8226] == 1 ? 1 : 0);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("io.asy(Lyf;I)V")
 	public static final void detail_soundvol(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.soundVolume, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("pd.asr(Lyf;B)V")
@@ -14822,7 +14822,7 @@ public final class ScriptRunner {
 		if (var1 != var2) {
 			Client.preferences.method18157(Client.preferences.unknownVolume1, var1);
 			Preferences.method16391();
-			Client.field10800 = false;
+			Client.preferencesChangeNotified = false;
 		}
 	}
 
@@ -14830,7 +14830,7 @@ public final class ScriptRunner {
 	public static final void detail_bgsoundvol(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.backgroundSoundVolume, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("mw.asq(Lyf;B)V")
@@ -14849,7 +14849,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Client.preferences.method18157(Client.preferences.particles, var1);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("akw.asp(Lyf;I)V")
@@ -14862,7 +14862,7 @@ public final class ScriptRunner {
 	public static final void detail_buildarea(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.buildArea, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("ajf.ase(Lyf;I)V")
@@ -14912,7 +14912,7 @@ public final class ScriptRunner {
 			Client.preferences.method18157(Client.preferences.preset, 0);
 		}
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("aax.asv(Lyf;I)V")
@@ -14927,7 +14927,7 @@ public final class ScriptRunner {
 		Preferences.method16391();
 		Client.method9516();
 		SpotShadowFactory.cacheReset();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("fl.asw(Lyf;I)V")
@@ -14941,7 +14941,7 @@ public final class ScriptRunner {
 	public static final void detail_speechvol(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.speechVolume, arg0.field8216[--arg0.field8226]);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("nv.ash(Lyf;I)V")
@@ -14951,7 +14951,7 @@ public final class ScriptRunner {
 		if (var1 != var2) {
 			Client.preferences.method18157(Client.preferences.unknownVolume2, var1);
 			Preferences.method16391();
-			Client.field10800 = false;
+			Client.preferencesChangeNotified = false;
 		}
 	}
 
@@ -14964,7 +14964,7 @@ public final class ScriptRunner {
 		if (var1 != Client.preferences.loadingScreen.getValue()) {
 			Client.preferences.method18157(Client.preferences.loadingScreen, var1);
 			Preferences.method16391();
-			Client.field10800 = false;
+			Client.preferencesChangeNotified = false;
 		}
 	}
 
@@ -14974,7 +14974,7 @@ public final class ScriptRunner {
 		if (var1 != Client.preferences.skyboxes.getValue()) {
 			Client.preferences.method18157(Client.preferences.skyboxes, var1);
 			Preferences.method16391();
-			Client.field10800 = false;
+			Client.preferencesChangeNotified = false;
 		}
 	}
 
@@ -14984,7 +14984,7 @@ public final class ScriptRunner {
 		if (var1 != Client.preferences.animDetail.getValue()) {
 			Client.preferences.method18157(Client.preferences.animDetail, var1);
 			Preferences.method16391();
-			Client.field10800 = false;
+			Client.preferencesChangeNotified = false;
 			Client.world.method7753();
 		}
 	}
@@ -15985,7 +15985,7 @@ public final class ScriptRunner {
 		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("jx.ayd(Lyf;I)V")
@@ -16008,7 +16008,7 @@ public final class ScriptRunner {
 		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("alk.aya(Lyf;I)V")
@@ -16017,7 +16017,7 @@ public final class ScriptRunner {
 		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("hf.aye(Lyf;B)V")
@@ -16026,7 +16026,7 @@ public final class ScriptRunner {
 		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("w.ayh(Lyf;I)V")
@@ -16035,14 +16035,14 @@ public final class ScriptRunner {
 		SpotShadowFactory.cacheReset();
 		Client.world.method7753();
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("sc.ayl(Lyf;I)V")
 	public static final void autosetup_setcustom(ClientScriptState arg0) {
 		Client.preferences.method18157(Client.preferences.preset, 0);
 		Preferences.method16391();
-		Client.field10800 = false;
+		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("qo.ayy(Lyf;I)V")

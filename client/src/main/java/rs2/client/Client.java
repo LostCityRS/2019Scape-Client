@@ -312,7 +312,7 @@ public final class Client extends GameShell {
 	public static int loopCycle = 0;
 
 	@ObfuscatedName("client.df")
-	public static boolean field10800 = true;
+	public static boolean preferencesChangeNotified = true;
 
 	@ObfuscatedName("client.dw")
 	public static boolean field10801 = true;
@@ -2189,7 +2189,7 @@ public final class Client extends GameShell {
 		if (state == 2) {
 			return;
 		}
-		if ((state == 1 || isStateTitle(state) || method15084(state)) && audioApi != null) {
+		if ((state == 1 || isStateTitle(state) || isStateLobby(state)) && audioApi != null) {
             audioApi.playSong(audioApi.getTitleScreenSong(), preferences.unknownVolume2.getValue());
 		}
 		if (field10856) {
@@ -2290,16 +2290,16 @@ public final class Client extends GameShell {
 		if (isStateTitle(state) && !method9273(state)) {
 			this.updateTitleScreen();
 			AccountCreationManager.method14952();
-			LoginManager.method3048();
-		} else if (method15084(state) && !method9273(state)) {
+			LoginManager.login();
+		} else if (isStateLobby(state) && !method9273(state)) {
 			this.updateTitleScreen();
-			LoginManager.method3048();
+			LoginManager.login();
 		} else if (state == 9) {
-			LoginManager.method3048();
+			LoginManager.login();
 		} else if (isStateGame(state) && !method9273(state)) {
 			updateGame();
 		} else if (state == 14 || state == 19) {
-			LoginManager.method3048();
+			LoginManager.login();
 			if (LoginManager.enterGameReply != -3 && LoginManager.enterGameReply != 2 && LoginManager.enterGameReply != 15) {
 				if (state == 19) {
 					LoginManager.field444 = LoginManager.disallowResult;
@@ -2376,9 +2376,9 @@ public final class Client extends GameShell {
 		}
 		if (method2092(state)) {
 			Loading.method2010(var3);
-		} else if (method3538(state)) {
+		} else if (isStateLoginLobby(state)) {
 			method10376();
-		} else if (method13797(state)) {
+		} else if (isStateLoginGame(state)) {
 			method10376();
 		} else if (method9273(state)) {
 			if (world.method7724() == RebuildStage.field5006) {
@@ -2559,17 +2559,17 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("gy.el(II)Z")
-	public static boolean method3538(int arg0) {
+	public static boolean isStateLoginLobby(int arg0) {
 		return arg0 == 4 || arg0 == 17 || arg0 == 7 || arg0 == 0 || arg0 == 12 || arg0 == 8;
 	}
 
 	@ObfuscatedName("ace.ej(II)Z")
-	public static boolean method15084(int arg0) {
+	public static boolean isStateLobby(int arg0) {
 		return arg0 == 13 || arg0 == 6 || arg0 == 15 || arg0 == 16;
 	}
 
 	@ObfuscatedName("yd.ep(II)Z")
-	public static boolean method13797(int arg0) {
+	public static boolean isStateLoginGame(int arg0) {
 		return arg0 == 13 || arg0 == 15;
 	}
 
@@ -2588,7 +2588,7 @@ public final class Client extends GameShell {
 			TwitchHardwarePlatform.method8632();
 		}
 		if (state == 14 || state == 19) {
-			LoginManager.method5143();
+			LoginManager.requestGameLogin();
 		}
 		if (state != 14 && field11764 != null) {
 			field11764.closeGracefully();
@@ -2608,11 +2608,11 @@ public final class Client extends GameShell {
 			method9287(var1);
 		}
 		if (state == 17 || state == 9) {
-			if (!LoginManager.method4407()) {
+			if (!LoginManager.requestLobbyLogin()) {
 				return;
 			}
 		} else if (state == 7 || state == 15 && Client.state != 16) {
-			if (!LoginManager.method5143()) {
+			if (!LoginManager.requestGameLogin()) {
 				return;
 			}
 		} else if (state == 12) {
@@ -2625,8 +2625,8 @@ public final class Client extends GameShell {
 		if (state == 3 || state == 4) {
 			method3095();
 		}
-		boolean var2 = state == 1 || isStateTitle(state) || method15084(state);
-		boolean var3 = Client.state == 1 || isStateTitle(Client.state) || method15084(Client.state);
+		boolean var2 = state == 1 || isStateTitle(state) || isStateLobby(state);
+		boolean var3 = Client.state == 1 || isStateTitle(Client.state) || isStateLobby(Client.state);
 		if (var2 != var3) {
 			js5TcpClient.method7010(!var2);
 		}
@@ -2728,7 +2728,7 @@ public final class Client extends GameShell {
 					for (int var8 = 0; var8 < var5.length; var8++) {
 						var5[var8].method15009(var7.g4s());
 					}
-					boolean var9 = method2092(state) || isStateTitle(state) || method15084(state);
+					boolean var9 = method2092(state) || isStateTitle(state) || isStateLobby(state);
 					js5TcpClient.method7017(js5Stream, !var9);
 					js5Socket = null;
 					js5Stream = null;
@@ -2774,7 +2774,7 @@ public final class Client extends GameShell {
 				ScriptRunner.method15086(openedTopInterface, null);
 			}
 		}
-		LoginManager.method10450();
+		LoginManager.resetCredentials();
 		field9155.method4680(true);
 		LoginManager.field485 = false;
 		MiniMenu.method8326();
@@ -2846,7 +2846,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("i.ef(I)Lax;")
 	public static ServerConnection getCurrentConnection() {
-		return method15084(state) || state == 0 ? lobbyConnection : gameConnection;
+		return isStateLobby(state) || state == 0 ? lobbyConnection : gameConnection;
 	}
 
 	@ObfuscatedName("s.et(IZI)V")
@@ -2987,7 +2987,7 @@ public final class Client extends GameShell {
 		world.method7737(true);
 		world.method7816().resetFade();
 		Minimap.method829();
-		field10800 = false;
+		preferencesChangeNotified = false;
 		field10801 = false;
 		field10836 = true;
 		field8871 = null;
@@ -3224,7 +3224,7 @@ public final class Client extends GameShell {
 		if (openedTopInterface != -1) {
 			method9585(true);
 		}
-		if (getCurrentConnection().getStream() != null && (isStateGame(state) || method15084(state))) {
+		if (getCurrentConnection().getStream() != null && (isStateGame(state) || isStateLobby(state))) {
 			notifyWindowStatus(getCurrentConnection());
 		}
 		for (int var8 = 0; var8 < 114; var8++) {
@@ -3525,7 +3525,7 @@ public final class Client extends GameShell {
 			}
 			var3.closeGracefully();
 		}
-		LoginManager.method9067();
+		LoginManager.resetLoginState();
 		method14454();
 		resetCaches(false);
 		world.method7747();
@@ -3687,7 +3687,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("sz.fb(I)V")
 	public static final void tryReconnect() {
-		if (method15084(state) || isStateTitle(state)) {
+		if (isStateLobby(state) || isStateTitle(state)) {
 			logoutReason = LogoutReason.field9135;
 			logout(false);
 		} else {
@@ -9369,7 +9369,7 @@ public final class Client extends GameShell {
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.UPDATE_REBOOT_TIMER == connection.packetType) {
-			if (method15084(state)) {
+			if (isStateLobby(state)) {
 				rebootTimer = (int) ((float) in.g2() * 2.5F);
 			} else {
 				rebootTimer = in.g2() * 30;

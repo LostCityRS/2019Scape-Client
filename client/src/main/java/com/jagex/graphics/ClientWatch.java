@@ -167,7 +167,7 @@ public class ClientWatch {
 			var10.buf.p1(GameShell.focus ? 1 : 0);
 			Client.gameConnection.queue(var10);
 		}
-		if (!Client.field10800) {
+		if (!Client.preferencesChangeNotified) {
 			ClientMessage var11 = ClientMessage.createMessage(ClientProt.CLIENT_DETAILOPTIONS_STATUS, Client.gameConnection.randomOut);
 			var11.buf.p1(0);
 			int var12 = var11.buf.pos;
@@ -175,7 +175,7 @@ public class ClientWatch {
 			var11.buf.pdata(var13.data, 0, var13.pos);
 			var11.buf.psize1(var11.buf.pos - var12);
 			Client.gameConnection.queue(var11);
-			Client.field10800 = true;
+			Client.preferencesChangeNotified = true;
 		}
 		if (Client.field10801 || Client.preferences.toolkit.getValue() != 1) {
 			return;

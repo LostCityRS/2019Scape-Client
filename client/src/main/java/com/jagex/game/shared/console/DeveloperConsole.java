@@ -518,7 +518,7 @@ public class DeveloperConsole {
 						addline("Success");
 						Client.preferences.method18157(Client.preferences.toolkit, 0);
 						Preferences.method16391();
-						Client.field10800 = false;
+						Client.preferencesChangeNotified = false;
 					} else {
 						addline("Failure");
 					}
@@ -530,7 +530,7 @@ public class DeveloperConsole {
 						addline("Success");
 						Client.preferences.method18157(Client.preferences.toolkit, 1);
 						Preferences.method16391();
-						Client.field10800 = false;
+						Client.preferencesChangeNotified = false;
 					} else {
 						addline("Failure");
 					}
@@ -542,7 +542,7 @@ public class DeveloperConsole {
 						addline("Success");
 						Client.preferences.method18157(Client.preferences.toolkit, 3);
 						Preferences.method16391();
-						Client.field10800 = false;
+						Client.preferencesChangeNotified = false;
 					} else {
 						addline("Failure");
 					}
@@ -554,7 +554,7 @@ public class DeveloperConsole {
 						addline("Success");
 						Client.preferences.method18157(Client.preferences.toolkit, 5);
 						Preferences.method16391();
-						Client.field10800 = false;
+						Client.preferencesChangeNotified = false;
 					} else {
 						addline("Failure");
 					}
@@ -603,7 +603,7 @@ public class DeveloperConsole {
 					String[] var21 = StringTools.split(arg0.substring(8), ' ');
 					int var22 = Integer.parseInt(var21[0]);
 					String var23 = var21.length > 1 ? var21[1] : "";
-					LoginManager.requestSocialNetwork(var22, var23, true);
+					LoginManager.requestSocialNetworkLogin(var22, var23, true);
 					return;
 				}
 				if (arg0.startsWith("setoutput ")) {

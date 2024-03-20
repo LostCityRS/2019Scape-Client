@@ -262,7 +262,7 @@ public class EnvironmentManager {
 		Object var2 = null;
 		int var3 = -1;
 		int var4 = -1;
-		if (Client.isStateTitle(Client.state) || Client.method15084(Client.state)) {
+		if (Client.isStateTitle(Client.state) || Client.isStateLobby(Client.state)) {
 			var3 = Client.cameraMouseX >> 12;
 			var4 = Client.cameraMouseZ >> 12;
 		} else {

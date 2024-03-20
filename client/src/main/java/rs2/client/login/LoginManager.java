@@ -37,13 +37,13 @@ import java.net.URL;
 public class LoginManager {
 
 	@ObfuscatedName("m.m")
-	public static int field431;
+	public static int requestState;
 
 	@ObfuscatedName("m.k")
 	public static ServerConnection connection;
 
 	@ObfuscatedName("m.f")
-	public static boolean field456 = false;
+	public static boolean ssoEnabled = false;
 
 	@ObfuscatedName("m.w")
 	public static long field434;
@@ -58,16 +58,16 @@ public class LoginManager {
 	public static boolean isSocialLogin = false;
 
 	@ObfuscatedName("m.p")
-	public static int field472 = -1;
+	public static int ssoKey = -1;
 
 	@ObfuscatedName("m.d")
-	public static long field439 = -1L;
+	public static long socialKey = -1L;
 
 	@ObfuscatedName("m.ap")
 	public static int loginState = 7;
 
 	@ObfuscatedName("m.aq")
-	public static long field437 = 0L;
+	public static long socialname = 0L;
 
 	@ObfuscatedName("m.ax")
 	public static String username = "";
@@ -85,10 +85,10 @@ public class LoginManager {
 	public static long authKey;
 
 	@ObfuscatedName("m.ab")
-	public static int field478 = 0;
+	public static int loginwait = 0;
 
 	@ObfuscatedName("m.az")
-	public static int field475 = 0;
+	public static int loginAttempts = 0;
 
 	@ObfuscatedName("t.aa")
 	public static int replyPacketSize;
@@ -97,7 +97,7 @@ public class LoginManager {
 	public static int field7542;
 
 	@ObfuscatedName("anh.ak")
-	public static int field11819;
+	public static int loginReply;
 
 	@ObfuscatedName("m.an")
 	public static int enterLobbyReply = -2;
@@ -133,42 +133,42 @@ public class LoginManager {
 	public static int banDuration = 0;
 
 	@ObfuscatedName("m.bq")
-	public static boolean field487 = false;
+	public static boolean unused = false;
 
 	public LoginManager() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("kg.e(I)Z")
-	public static boolean method5143() {
-		return field472 == -1 ? method10320(username, password) : method7703();
+	public static boolean requestGameLogin() {
+		return ssoKey == -1 ? requestGameLoginWithUsername(username, password) : requestGameLoginWithSSO();
 	}
 
 	@ObfuscatedName("iu.n(S)Z")
-	public static boolean method4407() {
-		return field472 == -1 ? method17521(username, password) : method1592();
+	public static boolean requestLobbyLogin() {
+		return ssoKey == -1 ? requestLobbyLoginWithUsername(username, password) : requestLobbyLoginWithSSO();
 	}
 
 	@ObfuscatedName("ug.m(I)V")
-	public static final void method9067() {
+	public static final void resetLoginState() {
 		loginState = 7;
 		enterGameReply = -2;
 		enterLobbyReply = -2;
 	}
 
 	@ObfuscatedName("jd.k(B)V")
-	public static final void method4641() {
-		field439 = -1L;
-		field437 = 0L;
-		field472 = -1;
+	public static final void resetSocialKeys() {
+		socialKey = -1L;
+		socialname = 0L;
+		ssoKey = -1;
 	}
 
 	@ObfuscatedName("aaa.f(B)V")
 	public static final void cancelLogin() {
 		if (loginState != 7) {
 			connection.closeGracefully();
-			method9067();
-			method10367();
+			resetLoginState();
+			updateLoginState();
 		}
 	}
 
@@ -186,10 +186,10 @@ public class LoginManager {
 
 	@ObfuscatedName("ag.u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZB)V")
 	public static void requestLogin(String arg0, String arg1, String arg2, boolean arg3) {
-		if (arg0.length() > 320 || !method16808()) {
+		if (arg0.length() > 320 || !isLoginReady()) {
 			return;
 		}
-		method4641();
+		resetSocialKeys();
 		username = arg0;
 		password = arg1;
 		newAuthPreference = arg2;
@@ -198,14 +198,14 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("df.z(ILjava/lang/String;ZI)V")
-	public static void requestSocialNetwork(int arg0, String newAuthPreference, boolean authDontTrust) {
-		if (!method16808()) {
+	public static void requestSocialNetworkLogin(int ssoKey, String newAuthPreference, boolean authDontTrust) {
+		if (!isLoginReady()) {
 			return;
 		}
-		if (field472 != arg0) {
-			field439 = -1L;
+		if (LoginManager.ssoKey != ssoKey) {
+			socialKey = -1L;
 		}
-		field472 = arg0;
+		LoginManager.ssoKey = ssoKey;
 		LoginManager.newAuthPreference = newAuthPreference;
 		LoginManager.authDontTrust = authDontTrust;
 		Client.setState(7);
@@ -213,11 +213,11 @@ public class LoginManager {
 
 	@ObfuscatedName("amr.p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V")
 	public static void enterLobby(String username, String password, String newAuthPreference, boolean authDontTrust) {
-		if (username.length() > 320 || !method16808()) {
+		if (username.length() > 320 || !isLoginReady()) {
 			return;
 		}
 		Client.lobbyConnection.closeGracefully();
-		method4641();
+		resetSocialKeys();
 		LoginManager.username = username;
 		LoginManager.password = password;
 		LoginManager.newAuthPreference = newAuthPreference;
@@ -226,14 +226,14 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("aji.d(ILjava/lang/String;ZS)V")
-	public static void enterLobbySocialNetwork(int arg0, String newAuthPreference, boolean authDontTrust) {
-		if (!method16808()) {
+	public static void enterLobbySocialNetwork(int ssoKey, String newAuthPreference, boolean authDontTrust) {
+		if (!isLoginReady()) {
 			return;
 		}
-		if (field472 != arg0) {
-			field439 = -1L;
+		if (LoginManager.ssoKey != ssoKey) {
+			socialKey = -1L;
 		}
-		field472 = arg0;
+		LoginManager.ssoKey = ssoKey;
 		LoginManager.newAuthPreference = newAuthPreference;
 		LoginManager.authDontTrust = authDontTrust;
 		Client.lobbyConnection.closeGracefully();
@@ -250,7 +250,7 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("ys.r(B)V")
-	public static void method10450() {
+	public static void resetCredentials() {
 		newAuthPreference = "";
 		password = "";
 		username = "";
@@ -258,49 +258,49 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("ajf.v(Ljava/lang/String;Ljava/lang/String;B)Z")
-	public static boolean method17521(String arg0, String arg1) {
-		field431 = 132;
+	public static boolean requestLobbyLoginWithUsername(String arg0, String arg1) {
+		requestState = 132;
 		connection = Client.lobbyConnection;
-		return method7238(false, false, arg0, arg1, -1L);
+		return requestLogin(false, false, arg0, arg1, -1L);
 	}
 
 	@ObfuscatedName("xo.o(Ljava/lang/String;Ljava/lang/String;I)Z")
-	public static boolean method10320(String arg0, String arg1) {
-		field431 = 211;
+	public static boolean requestGameLoginWithUsername(String arg0, String arg1) {
+		requestState = 211;
 		connection = Client.gameConnection;
-		return method7238(false, false, arg0, arg1, -1L);
+		return requestLogin(false, false, arg0, arg1, -1L);
 	}
 
 	@ObfuscatedName("rg.s(I)Z")
-	public static boolean method7703() {
-		field431 = 211;
+	public static boolean requestGameLoginWithSSO() {
+		requestState = 211;
 		connection = Client.gameConnection;
-		return method7238(field439 == -1L, true, "", "", field439);
+		return requestLogin(socialKey == -1L, true, "", "", socialKey);
 	}
 
 	@ObfuscatedName("cz.y(I)Z")
-	public static boolean method1592() {
-		field431 = 132;
+	public static boolean requestLobbyLoginWithSSO() {
+		requestState = 132;
 		connection = Client.lobbyConnection;
-		return method7238(field439 == -1L, true, "", "", field439);
+		return requestLogin(socialKey == -1L, true, "", "", socialKey);
 	}
 
 	@ObfuscatedName("qj.q(ZZLjava/lang/String;Ljava/lang/String;J)Z")
-	public static boolean method7238(boolean isSocialLogin, boolean arg1, String username, String password, long arg4) {
+	public static boolean requestLogin(boolean isSocialLogin, boolean ssoEnabled, String username, String password, long socialKey) {
 		LoginManager.isSocialLogin = isSocialLogin;
-		if (!arg1) {
-			field472 = -1;
+		if (!ssoEnabled) {
+			ssoKey = -1;
 		}
-		field456 = arg1;
+		LoginManager.ssoEnabled = ssoEnabled;
 		LoginManager.username = username;
 		LoginManager.password = password;
-		field439 = arg4;
-		if (!field456 && (LoginManager.username.equals("") || LoginManager.password.equals(""))) {
+		LoginManager.socialKey = socialKey;
+		if (!LoginManager.ssoEnabled && (LoginManager.username.equals("") || LoginManager.password.equals(""))) {
 			setReply(3);
-			method10367();
+			updateLoginState();
 			return false;
 		}
-		if (field431 != 132) {
+		if (requestState != 132) {
 			hoptime = 0;
 			disallowResult = -1;
 			disallowTrigger = -1;
@@ -308,48 +308,48 @@ public class LoginManager {
 		connection.disconnected = false;
 		setReply(-3);
 		loginState = 14;
-		field478 = 0;
-		field475 = 0;
+		loginwait = 0;
+		loginAttempts = 0;
 		return true;
 	}
 
 	@ObfuscatedName("fj.x(B)V")
-	public static final void method3048() {
+	public static final void login() {
 		if (loginState == 7 || loginState == 103) {
 			return;
 		}
 		try {
-			short var0;
-			if (field475 == 0 && loginState < 98) {
-				var0 = 500;
+			short loginwait;
+			if (loginAttempts == 0 && loginState < 98) {
+				loginwait = 500;
 			} else {
-				var0 = 2000;
+				loginwait = 2000;
 			}
 			if (isSocialLogin && loginState >= 64) {
-				var0 = 6000;
+				loginwait = 6000;
 			}
-			if (field431 == 211 && loginState != 215 && enterGameReply != 42 || field431 == 132 && enterLobbyReply != 49 && enterLobbyReply != 52) {
-				field478++;
+			if (requestState == 211 && loginState != 215 && enterGameReply != 42 || requestState == 132 && enterLobbyReply != 49 && enterLobbyReply != 52) {
+				LoginManager.loginwait++;
 			}
-			if (field478 > var0) {
+			if (LoginManager.loginwait > loginwait) {
 				connection.closeGracefully();
-				if (field475 >= 3) {
+				if (loginAttempts >= 3) {
 					loginState = 7;
 					setReply(-5);
-					method10367();
+					updateLoginState();
 					return;
 				}
-				if (field431 == 211) {
+				if (requestState == 211) {
 					WorldSwitcher.currentWorld.configureSocketType();
 				} else {
 					WorldSwitcher.currentLobby.configureSocketType();
 				}
-				field478 = 0;
-				field475++;
+				LoginManager.loginwait = 0;
+				loginAttempts++;
 				loginState = 14;
 			}
 			if (loginState == 14) {
-				if (field431 == 211) {
+				if (requestState == 211) {
 					connection.setStream(Stream.createStream(WorldSwitcher.currentWorld.getSocket(), 40000), WorldSwitcher.currentWorld.host);
 				} else {
 					connection.setStream(Stream.createStream(WorldSwitcher.currentLobby.getSocket(), 40000), WorldSwitcher.currentLobby.host);
@@ -372,13 +372,13 @@ public class LoginManager {
 				}
 				connection.getStream().read(connection.in.data, 0, 9);
 				connection.in.pos = 0;
-				int var2 = connection.in.g1();
-				if (var2 != 0) {
+				int reply = connection.in.g1();
+				if (reply != 0) {
 					loginState = 7;
-					method481(var2);
-					setReply(var2);
+					nothing(reply);
+					setReply(reply);
 					connection.closeGracefully();
-					method10367();
+					updateLoginState();
 					return;
 				}
 				field434 = connection.in.g8();
@@ -396,23 +396,23 @@ public class LoginManager {
 				int var4 = message.buf.pos;
 				message.buf.p4(910);
 				message.buf.p4(1);
-				if (field431 == 211) {
+				if (requestState == 211) {
 					message.buf.p1(Client.state == 14 ? 1 : 0);
 				}
-				Packet var5 = createSecuredPacket();
-				putAuth(var5, (long) field472);
-				authKey = field472;
-				var5.p1(field472);
-				var5.p1(Client.language.getId());
-				var5.p4(Client.playerIsAffiliate);
+				Packet buf = createSecuredPacket();
+				putAuth(buf, (long) ssoKey);
+				authKey = ssoKey;
+				buf.p1(ssoKey);
+				buf.p1(Client.language.getId());
+				buf.p4(Client.playerIsAffiliate);
 				for (int var6 = 0; var6 < 5; var6++) {
-					var5.p4(Client.secureRandom.nextInt());
+					buf.p4(Client.secureRandom.nextInt());
 				}
-				var5.p8(Client.field10810);
-				var5.p1(Client.modegame.field8339);
-				var5.p1(Client.secureRandom.nextInt());
-				var5.rsaenc(PublicKeys.field624, PublicKeys.field626);
-				message.buf.pdata(var5.data, 0, var5.pos);
+				buf.p8(Client.field10810);
+				buf.p1(Client.modegame.field8339);
+				buf.p1(Client.secureRandom.nextInt());
+				buf.rsaenc(PublicKeys.field624, PublicKeys.field626);
+				message.buf.pdata(buf.data, 0, buf.pos);
 				message.buf.psize2(message.buf.pos - var4);
 				connection.queue(message);
 				connection.flush();
@@ -457,8 +457,8 @@ public class LoginManager {
 				connection.in.pos = 16;
 				connection.in.tinydec(outKey);
 				connection.in.pos = 0;
-				field439 = connection.in.g8();
-				field437 = connection.in.g8();
+				socialKey = connection.in.g8();
+				socialname = connection.in.g8();
 				loginState = 84;
 			}
 			if (loginState == 84) {
@@ -466,7 +466,7 @@ public class LoginManager {
 				connection.clearWriteQueue();
 				ClientMessage message = ClientMessage.createMessage();
 				PacketBit buf = message.buf;
-				if (field431 == 211) {
+				if (requestState == 211) {
 					LoginProt prot;
 					if (isSocialLogin) {
 						prot = LoginProt.SOCIAL_NETWORK_LOGIN;
@@ -485,11 +485,11 @@ public class LoginManager {
 						Packet loginPacket = createLoginPacket();
 						buf.pdata(loginPacket.data, 0, loginPacket.pos);
 						var13 = buf.pos;
-						buf.p1(field439 == -1L ? 1 : 0);
-						if (field439 == -1L) {
+						buf.p1(socialKey == -1L ? 1 : 0);
+						if (socialKey == -1L) {
 							buf.pjstr(username);
 						} else {
-							buf.p8(field439);
+							buf.p8(socialKey);
 						}
 					}
 					buf.p1(Client.getWindowMode());
@@ -502,7 +502,7 @@ public class LoginManager {
 					Packet preferencesPacket = Client.preferences.createPreferencesBlock();
 					buf.p1(preferencesPacket.pos);
 					buf.pdata(preferencesPacket.data, 0, preferencesPacket.pos);
-					Client.field10800 = true;
+					Client.preferencesChangeNotified = true;
 					Packet hardwarePacket = new Packet(Client.hardwarePlatform.calculateHardwarePlatformSize());
 					Client.hardwarePlatform.createHardwareBlock(hardwarePacket);
 					buf.pdata(hardwarePacket.data, 0, hardwarePacket.data.length);
@@ -543,11 +543,11 @@ public class LoginManager {
 						Packet var21 = createLoginPacket();
 						buf.pdata(var21.data, 0, var21.pos);
 						var20 = buf.pos;
-						buf.p1(field439 == -1L ? 1 : 0);
-						if (field439 == -1L) {
+						buf.p1(socialKey == -1L ? 1 : 0);
+						if (socialKey == -1L) {
 							buf.pjstr(username);
 						} else {
-							buf.p8(field439);
+							buf.p8(socialKey);
 						}
 					}
 					buf.p1(Client.modegame.field8339);
@@ -602,15 +602,15 @@ public class LoginManager {
 					setReply(reply);
 					return;
 				} else if (reply == 52) {
-					field11819 = reply;
+					loginReply = reply;
 					loginState = 225;
 				} else if (reply == 2) {
-					if (field487) {
-						field487 = false;
+					if (unused) {
+						unused = false;
 						loginState = 14;
 						return;
 					}
-					if (field431 == 211) {
+					if (requestState == 211) {
 						Client.field7228.method16415();
 						loginState = 256;
 					} else {
@@ -619,9 +619,9 @@ public class LoginManager {
 				} else if (reply == 15) {
 					connection.packetSize = -2;
 					loginState = 204;
-				} else if (reply == 23 && field475 < 3) {
-					field478 = 0;
-					field475++;
+				} else if (reply == 23 && loginAttempts < 3) {
+					LoginManager.loginwait = 0;
+					loginAttempts++;
 					loginState = 14;
 					connection.closeGracefully();
 					return;
@@ -629,23 +629,23 @@ public class LoginManager {
 					loginState = 215;
 					setReply(reply);
 					return;
-				} else if (field431 == 132 && reply == 49 && Client.state != 9) {
+				} else if (requestState == 132 && reply == 49 && Client.state != 9) {
 					if (enterLobbyReply != 52) {
 						setReply(reply);
 					}
 					return;
-				} else if (!field456 || isSocialLogin || field472 == -1 || reply != 35) {
+				} else if (!ssoEnabled || isSocialLogin || ssoKey == -1 || reply != 35) {
 					if (reply != 53) {
 						loginState = 7;
 						setReply(reply);
 						connection.closeGracefully();
-						method10367();
+						updateLoginState();
 						return;
 					}
 					loginState = 245;
 				} else {
 					isSocialLogin = true;
-					field478 = 0;
+					LoginManager.loginwait = 0;
 					loginState = 14;
 					connection.closeGracefully();
 					return;
@@ -661,7 +661,7 @@ public class LoginManager {
 				loginState = 7;
 				setReply(21);
 				connection.closeGracefully();
-				method10367();
+				updateLoginState();
 				return;
 			}
 			if (loginState == 215) {
@@ -683,17 +683,17 @@ public class LoginManager {
 				loginState = 7;
 				setReply(53);
 				connection.closeGracefully();
-				method10367();
+				updateLoginState();
 				return;
 			}
 			if (loginState == 194) {
-				if (field11819 == 29) {
+				if (loginReply == 29) {
 					if (!connection.getStream().hasAvailable(1)) {
 						return;
 					}
 					connection.getStream().read(connection.in.data, 0, 1);
 					disallowResult = connection.in.data[0] & 0xFF;
-				} else if (field11819 == 45) {
+				} else if (loginReply == 45) {
 					if (!connection.getStream().hasAvailable(3)) {
 						return;
 					}
@@ -704,12 +704,12 @@ public class LoginManager {
 					throw new IllegalStateException();
 				}
 				loginState = 7;
-				setReply(field11819);
+				setReply(loginReply);
 				connection.closeGracefully();
-				method10367();
-				if (Client.method15084(Client.state)) {
+				updateLoginState();
+				if (Client.isStateLobby(Client.state)) {
 					Client.logout(true);
-					enterGameReply = field11819;
+					enterGameReply = loginReply;
 				}
 				return;
 			}
@@ -736,13 +736,13 @@ public class LoginManager {
 				Packet var29 = new Packet(var28);
 				String var30 = var29.gjstr();
 				Browser.method4607(var30, true, Client.field10784);
-				setReply(field11819);
-				if (field431 == 132 && Client.state != 9) {
+				setReply(loginReply);
+				if (requestState == 132 && Client.state != 9) {
 					loginState = 98;
 				} else {
 					loginState = 7;
 					connection.closeGracefully();
-					method10367();
+					updateLoginState();
 				}
 				return;
 			}
@@ -785,20 +785,20 @@ public class LoginManager {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 1);
-				int var35 = connection.in.data[0] & 0xFF;
-				if (var35 != 2) {
-					if (var35 != 29 && var35 != 45) {
+				int reply = connection.in.data[0] & 0xFF;
+				if (reply != 2) {
+					if (reply != 29 && reply != 45) {
 						loginState = 7;
-						setReply(var35);
+						setReply(reply);
 						connection.closeGracefully();
-						method10367();
-						if (Client.method15084(Client.state)) {
+						updateLoginState();
+						if (Client.isStateLobby(Client.state)) {
 							Client.logout(true);
-							enterGameReply = var35;
+							enterGameReply = reply;
 						}
 						return;
 					}
-					field11819 = var35;
+					loginReply = reply;
 					loginState = 194;
 					return;
 				}
@@ -814,7 +814,7 @@ public class LoginManager {
 			}
 			if (loginState == 157) {
 				PacketBit in = connection.in;
-				if (field431 == 211) {
+				if (requestState == 211) {
 					if (!connection.getStream().hasAvailable(replyPacketSize)) {
 						return;
 					}
@@ -902,7 +902,7 @@ public class LoginManager {
 				if (Client.modewhere == ModeWhere.LIVE) {
 					JavascriptFunction.field4024.method6090();
 				}
-				if (field431 != 211) {
+				if (requestState != 211) {
 					loginState = 7;
 					setReply(2);
 					method10282();
@@ -983,41 +983,41 @@ public class LoginManager {
 				connection.packetType = null;
 				return;
 			}
-		} catch (IOException var50) {
+		} catch (IOException ioException) {
 			connection.closeGracefully();
-			if (field475 < 3) {
-				if (field431 == 211) {
+			if (loginAttempts < 3) {
+				if (requestState == 211) {
 					WorldSwitcher.currentWorld.configureSocketType();
 				} else {
 					WorldSwitcher.currentLobby.configureSocketType();
 				}
-				field478 = 0;
-				field475++;
+				loginwait = 0;
+				loginAttempts++;
 				loginState = 14;
 			} else {
 				loginState = 7;
 				setReply(-4);
-				method10367();
+				updateLoginState();
 			}
 		}
 	}
 
 	@ObfuscatedName("kl.b(Lase;I)V")
-	public static void getAuthPreferences(PacketBit arg0) {
-		boolean var1 = arg0.g1() == 1;
+	public static void getAuthPreferences(PacketBit buf) {
+		boolean var1 = buf.g1() == 1;
 		if (!var1) {
 			return;
 		}
 		boolean var2 = false;
-		int var3 = arg0.gIsaac1() << 24;
-		int var4 = var3 | arg0.gIsaac1() << 16;
-		int var5 = var4 | arg0.gIsaac1() << 8;
-		int var6 = var5 | arg0.gIsaac1();
+		int var3 = buf.gIsaac1() << 24;
+		int var4 = var3 | buf.gIsaac1() << 16;
+		int var5 = var4 | buf.gIsaac1() << 8;
+		int var6 = var5 | buf.gIsaac1();
 		Client.authPreferences.method590(authKey, var6);
 	}
 
 	@ObfuscatedName("s.h(IB)V")
-	public static void method481(int arg0) {
+	public static void nothing(int arg0) {
 	}
 
 	@ObfuscatedName("iq.a(B)Lalw;")
@@ -1078,18 +1078,18 @@ public class LoginManager {
 		Packet buf = createSecuredPacket();
 		if (Client.state != 14) {
 			long authKey;
-			if (field472 != -1) {
-				authKey = field472;
-			} else if (field439 == -1L) {
+			if (ssoKey != -1) {
+				authKey = ssoKey;
+			} else if (socialKey == -1L) {
 				authKey = StringTools.method15380(username);
 			} else {
-				authKey = field439;
+				authKey = socialKey;
 			}
 			LoginManager.authKey = authKey;
 			putAuth(buf, authKey);
 			buf.pbool(false);
 			buf.pjstr(password);
-			buf.p8(field437);
+			buf.p8(socialname);
 			buf.p8(Client.field10810);
 		}
 		buf.rsaenc(PublicKeys.field624, PublicKeys.field626);
@@ -1098,15 +1098,15 @@ public class LoginManager {
 
 	@ObfuscatedName("ag.j(II)V")
 	public static void setReply(int reply) {
-		if (field431 == 132) {
+		if (requestState == 132) {
 			enterLobbyReply = reply;
-		} else if (field431 == 211) {
+		} else if (requestState == 211) {
 			enterGameReply = reply;
 		}
 	}
 
 	@ObfuscatedName("ye.t(I)V")
-	public static void method10367() {
+	public static void updateLoginState() {
 		if (Client.method14437(Client.state)) {
 			if (Client.lobbyConnection.getStream() == null) {
 				Client.setState(17);
@@ -1293,7 +1293,7 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("aiz.ai(I)Z")
-	public static boolean method16808() {
+	public static boolean isLoginReady() {
 		if (Client.state == 4) {
 			return !isInProgress() && !AccountCreationManager.isInProgress();
 		} else {
