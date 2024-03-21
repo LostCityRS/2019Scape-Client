@@ -2663,7 +2663,7 @@ public final class Client extends GameShell {
 				return;
 			}
 			if (js5TcpClient.field4455 >= 4 && js5TcpClient.field4454 == -1) {
-				this.method8071("js5crc", "a=" + js5TcpClient.field4457 + "&g=" + js5TcpClient.field4456);
+				this.error("js5crc", "a=" + js5TcpClient.field4457 + "&g=" + js5TcpClient.field4456);
 				state = 2;
 				return;
 			}
