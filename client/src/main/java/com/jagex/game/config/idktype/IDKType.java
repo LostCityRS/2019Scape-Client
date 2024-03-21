@@ -125,19 +125,19 @@ public class IDKType implements ConfigType {
 	}
 
 	@ObfuscatedName("jv.z(B)Z")
-	public boolean method4999() {
+	public boolean hasReadyModels() {
 		if (this.models == null) {
 			return true;
 		}
-		boolean var1 = true;
+		boolean ready = true;
 		Js5 var2 = this.configClient;
 		synchronized (this.configClient) {
-			for (int var3 = 0; var3 < this.models.length; var3++) {
-				if (!this.configClient.requestdownload(this.models[var3], 0)) {
-					var1 = false;
+			for (int index = 0; index < this.models.length; index++) {
+				if (!this.configClient.requestdownload(this.models[index], 0)) {
+					ready = false;
 				}
 			}
-			return var1;
+			return ready;
 		}
 	}
 
@@ -186,7 +186,7 @@ public class IDKType implements ConfigType {
 	}
 
 	@ObfuscatedName("jv.d(I)Z")
-	public boolean method5001() {
+	public boolean hasReadyHeads() {
 		boolean var1 = true;
 		Js5 var2 = this.configClient;
 		synchronized (this.configClient) {

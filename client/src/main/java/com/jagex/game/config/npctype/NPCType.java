@@ -906,19 +906,19 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.c(I)Z")
-	public final boolean modelsLoaded() {
+	public final boolean hasReadyModels() {
 		if (this.models == null) {
 			return true;
 		}
-		boolean loaded = true;
+		boolean ready = true;
 		int[] var2 = this.models;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			int var4 = var2[var3];
 			if (!this.factory.configClient.requestdownload(var4, 0)) {
-				loaded = false;
+				ready = false;
 			}
 		}
-		return loaded;
+		return ready;
 	}
 
 	@ObfuscatedName("if.r(IIB)I")

@@ -102,7 +102,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		FloorModel var5 = this.field11716.field6915[this.level];
 		FloorModel var6 = this.field11714 < 3 ? this.field11716.field6915[this.field11714 + 1] : null;
 		Vector3 var7 = this.getTransform().trans;
-		return this.field12609 == null || this.field12609.method14375() ? var4.method13802(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.x, (int) var7.y, (int) var7.z, null, (byte) 2) : var4.method13802(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.x, (int) var7.y, (int) var7.z, this.field12609, (byte) 2);
+		return this.field12609 == null || this.field12609.method14375() ? var4.getModel(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.x, (int) var7.y, (int) var7.z, null, (byte) 2) : var4.getModel(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.x, (int) var7.y, (int) var7.z, this.field12609, (byte) 2);
 	}
 
 	@ObfuscatedName("aur.fc(Ldh;I)Ltl;")

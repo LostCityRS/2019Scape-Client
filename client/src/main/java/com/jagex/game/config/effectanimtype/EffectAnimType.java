@@ -58,10 +58,10 @@ public class EffectAnimType implements ConfigType {
 	public boolean field8261 = false;
 
 	@ObfuscatedName("yy.q")
-	public byte field8262 = 0;
+	public byte hillskew_mode = 0;
 
 	@ObfuscatedName("yy.x")
-	public int field8263 = -1;
+	public int hillskew_value = -1;
 
 	public EffectAnimType(int id, EffectAnimTypeFactory factory) {
 		this.id = id;
@@ -98,14 +98,14 @@ public class EffectAnimType implements ConfigType {
 		} else if (code == 10) {
 			this.field8261 = true;
 		} else if (code == 9) {
-			this.field8262 = 3;
-			this.field8263 = 8224;
+			this.hillskew_mode = 3;
+			this.hillskew_value = 8224;
 		} else if (code == 15) {
-			this.field8262 = 3;
-			this.field8263 = buf.g2();
+			this.hillskew_mode = 3;
+			this.hillskew_value = buf.g2();
 		} else if (code == 16) {
-			this.field8262 = 3;
-			this.field8263 = buf.g4s();
+			this.hillskew_mode = 3;
+			this.hillskew_value = buf.g4s();
 		} else if (code == 40) {
 			int length = buf.g1();
 			this.recol_s = new short[length];
@@ -157,24 +157,24 @@ public class EffectAnimType implements ConfigType {
 	}
 
 	@ObfuscatedName("yy.z(Ldh;ILaaq;BI)Ldo;")
-	public final Model method13817(Renderer arg0, int arg1, AnimationWrapper arg2, byte arg3) {
+	public final Model getModel(Renderer arg0, int arg1, AnimationWrapper arg2, byte arg3) {
 		return this.getModel(arg0, arg1, false, null, null, 0, 0, 0, 0, 0, 0, 0, arg2, arg3);
 	}
 
 	@ObfuscatedName("yy.p(Ldh;IIIIILaaq;BI)Ldo;")
-	public final Model method13800(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, AnimationWrapper arg6, byte arg7) {
-		return this.field8262 == 3 ? this.getModel(arg0, arg1, true, null, null, 0, 0, 0, arg2, arg3, arg4, arg5, arg6, arg7) : this.getModel(arg0, arg1, false, null, null, 0, 0, 0, arg2, 0, 0, 0, arg6, arg7);
+	public final Model getModel(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, AnimationWrapper arg6, byte arg7) {
+		return this.hillskew_mode == 3 ? this.getModel(arg0, arg1, true, null, null, 0, 0, 0, arg2, arg3, arg4, arg5, arg6, arg7) : this.getModel(arg0, arg1, false, null, null, 0, 0, 0, arg2, 0, 0, 0, arg6, arg7);
 	}
 
 	@ObfuscatedName("yy.d(Ldh;IILcb;Lcb;IIILaaq;BB)Ldo;")
-	public final Model method13802(Renderer arg0, int arg1, int arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, AnimationWrapper arg8, byte arg9) {
+	public final Model getModel(Renderer arg0, int arg1, int arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, AnimationWrapper arg8, byte arg9) {
 		return this.getModel(arg0, arg1, true, arg3, arg4, arg5, arg6, arg7, arg2, 0, 0, 0, arg8, arg9);
 	}
 
 	@ObfuscatedName("yy.c(Ldh;IZLcb;Lcb;IIIIIIILaaq;BI)Ldo;")
 	public final Model getModel(Renderer arg0, int arg1, boolean arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, AnimationWrapper arg12, byte arg13) {
 		int var15 = arg1;
-		boolean var16 = arg2 & this.field8262 != 0;
+		boolean var16 = arg2 & this.hillskew_mode != 0;
 		if (arg12 != null) {
 			var15 = arg1 | arg12.method14358();
 		}
@@ -261,7 +261,7 @@ public class EffectAnimType implements ConfigType {
 					var26.method1805(0, arg11, 0);
 				}
 			} else {
-				var26.method1700(this.field8262, this.field8263, arg3, arg4, arg5, arg6, arg7);
+				var26.method1700(this.hillskew_mode, this.hillskew_value, arg3, arg4, arg5, arg6, arg7);
 			}
 		}
 		var26.method1690(arg1);
@@ -269,7 +269,7 @@ public class EffectAnimType implements ConfigType {
 	}
 
 	@ObfuscatedName("yy.r(B)Z")
-	public final boolean method13803() {
+	public final boolean hasReadyModel() {
 		return this.model == -1 ? true : this.factory.configClient.requestdownload(this.model, 0);
 	}
 

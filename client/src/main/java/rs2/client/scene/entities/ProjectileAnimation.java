@@ -248,7 +248,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	@ObfuscatedName("aue.f(Ldh;II)Ldo;")
 	public Model method19727(Renderer arg0, int arg1) {
 		EffectAnimType var3 = (EffectAnimType) Client.effectAnimTypeList.list(this.field12603);
-		return var3.method13817(arg0, arg1, this.field12602, (byte) 2);
+		return var3.getModel(arg0, arg1, this.field12602, (byte) 2);
 	}
 
 	@ObfuscatedName("aue.fc(Ldh;I)Ltl;")

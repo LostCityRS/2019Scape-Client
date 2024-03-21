@@ -787,7 +787,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 					var11 |= 0x7;
 				}
 				if (var9.field6658 < 0 || arg1.field7357 == null || arg1.field7357[var9.field6658] == null) {
-					Model var21 = this.field10459[var7 + 1] = var10.method13800(arg0, var11, var9.field6660 * 2048, this.field10405, this.field12466, this.field10407, var9.field6659, var8);
+					Model var21 = this.field10459[var7 + 1] = var10.getModel(arg0, var11, var9.field6660 * 2048, this.field10405, this.field12466, this.field10407, var9.field6659, var8);
 					if (var21 != null) {
 						if (var9.field6661 != 0) {
 							var21.method1805(0, -var9.field6661 << 2, 0);
@@ -795,7 +795,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 						var21.field1298 = false;
 					}
 				} else {
-					Model var12 = this.field10459[var7 + 1] = var10.method13817(arg0, var11, var9.field6659, var8);
+					Model var12 = this.field10459[var7 + 1] = var10.getModel(arg0, var11, var9.field6659, var8);
 					if (var12 != null) {
 						int var13 = 0;
 						int var14 = 0;

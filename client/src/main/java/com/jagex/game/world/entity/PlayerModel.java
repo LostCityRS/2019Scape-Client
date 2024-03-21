@@ -403,7 +403,7 @@ public class PlayerModel {
 					if (!((ObjType) arg5.list(var40 & 0x3FFFFFFF)).method14649(this.isFemale, var41)) {
 						var38 = true;
 					}
-				} else if ((var40 & Integer.MIN_VALUE) != 0 && !((IDKType) arg3.list(var40 & 0x3FFFFFFF)).method4999()) {
+				} else if ((var40 & Integer.MIN_VALUE) != 0 && !((IDKType) arg3.list(var40 & 0x3FFFFFFF)).hasReadyModels()) {
 					var38 = true;
 				}
 				var39++;
@@ -487,7 +487,7 @@ public class PlayerModel {
 					if (!((ObjType) arg4.list(var16 & 0x3FFFFFFF)).method14651(this.isFemale, var17)) {
 						var14 = true;
 					}
-				} else if ((var16 & Integer.MIN_VALUE) != 0 && !((IDKType) arg2.list(var16 & 0x3FFFFFFF)).method5001()) {
+				} else if ((var16 & Integer.MIN_VALUE) != 0 && !((IDKType) arg2.list(var16 & 0x3FFFFFFF)).hasReadyHeads()) {
 					var14 = true;
 				}
 			}
@@ -561,7 +561,7 @@ public class PlayerModel {
 			}
 			ModelUnlit[] var16 = new ModelUnlit[3];
 			int var17 = 0;
-			if (!((IDKType) arg2.list(arg5)).method5001() || !((IDKType) arg2.list(arg6)).method5001() || !((IDKType) arg2.list(arg7)).method5001()) {
+			if (!((IDKType) arg2.list(arg5)).hasReadyHeads() || !((IDKType) arg2.list(arg6)).hasReadyHeads() || !((IDKType) arg2.list(arg7)).hasReadyHeads()) {
 				return null;
 			}
 			ModelUnlit var18 = ((IDKType) arg2.list(arg5)).getHeadModel();
