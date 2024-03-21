@@ -53,7 +53,7 @@ public class Headbar extends Link {
 			var2.unlink();
 			var2 = var3;
 		}
-		if (this.field11215.field7227 + var2.field11219 + var2.field11217 > arg0) {
+		if (this.field11215.sticktime + var2.field11219 + var2.field11217 > arg0) {
 			return var2;
 		} else {
 			var2.unlink();

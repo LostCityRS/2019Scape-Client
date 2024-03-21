@@ -13,117 +13,117 @@ import deob.ObfuscatedName;
 public class HeadbarType implements ConfigType {
 
 	@ObfuscatedName("uk.e")
-	public final HeadbarTypeFactory field7226;
+	public final HeadbarTypeFactory factory;
 
 	@ObfuscatedName("uk.m")
-	public int field7223 = 255;
+	public int showpriority = 255;
 
 	@ObfuscatedName("uk.k")
-	public int field7218 = 255;
+	public int hidepriority = 255;
 
 	@ObfuscatedName("uk.f")
-	public int field7219 = -1;
+	public int fadeout = -1;
 
 	@ObfuscatedName("uk.w")
 	public int field7220 = 1;
 
 	@ObfuscatedName("uk.l")
-	public int field7227 = 70;
+	public int sticktime = 70;
 
 	@ObfuscatedName("uk.u")
-	public int field7217 = -1;
+	public int full = -1;
 
 	@ObfuscatedName("uk.z")
-	public int field7215 = -1;
+	public int empty = -1;
 
 	@ObfuscatedName("uk.p")
-	public int field7224 = -1;
+	public int fulllocalpartner = -1;
 
 	@ObfuscatedName("uk.d")
-	public int field7225 = -1;
+	public int emptylocalpartner = -1;
 
 	@ObfuscatedName("uk.c")
-	public int field7222 = -1;
+	public int fullglobalpartner = -1;
 
 	@ObfuscatedName("uk.r")
-	public int field7221 = -1;
+	public int emptyglobalpartner = -1;
 
-	public HeadbarType(int arg0, HeadbarTypeFactory arg1) {
-		this.field7226 = arg1;
+	public HeadbarType(int arg0, HeadbarTypeFactory factory) {
+		this.factory = factory;
 	}
 
 	@ObfuscatedName("uk.e(Lalw;B)V")
 	public void decode(Packet buf) {
 		while (true) {
-			int var2 = buf.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method9149(buf, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("uk.u(Lalw;II)V")
-	public void method9149(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			arg0.g2();
-		} else if (arg1 == 2) {
-			this.field7223 = arg0.g1();
-		} else if (arg1 == 3) {
-			this.field7218 = arg0.g1();
-		} else if (arg1 == 4) {
-			this.field7219 = 0;
-		} else if (arg1 == 5) {
-			this.field7227 = arg0.g2();
-		} else if (arg1 == 6) {
-			arg0.g1();
-		} else if (arg1 == 7) {
-			this.field7217 = arg0.gSmart2or4null();
-		} else if (arg1 == 8) {
-			this.field7215 = arg0.gSmart2or4null();
-		} else if (arg1 == 9) {
-			this.field7224 = arg0.gSmart2or4null();
-		} else if (arg1 == 10) {
-			this.field7225 = arg0.gSmart2or4null();
-		} else if (arg1 == 11) {
-			this.field7219 = arg0.g2();
-		} else if (arg1 == 12) {
-			this.field7222 = arg0.gSmart2or4null();
-		} else if (arg1 == 13) {
-			this.field7221 = arg0.gSmart2or4null();
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			buf.g2();
+		} else if (code == 2) {
+			this.showpriority = buf.g1();
+		} else if (code == 3) {
+			this.hidepriority = buf.g1();
+		} else if (code == 4) {
+			this.fadeout = 0;
+		} else if (code == 5) {
+			this.sticktime = buf.g2();
+		} else if (code == 6) {
+			buf.g1();
+		} else if (code == 7) {
+			this.full = buf.gSmart2or4null();
+		} else if (code == 8) {
+			this.empty = buf.gSmart2or4null();
+		} else if (code == 9) {
+			this.fulllocalpartner = buf.gSmart2or4null();
+		} else if (code == 10) {
+			this.emptylocalpartner = buf.gSmart2or4null();
+		} else if (code == 11) {
+			this.fadeout = buf.g2();
+		} else if (code == 12) {
+			this.fullglobalpartner = buf.gSmart2or4null();
+		} else if (code == 13) {
+			this.emptyglobalpartner = buf.gSmart2or4null();
 		}
 	}
 
 	@ObfuscatedName("uk.z(Ldh;IB)Lcm;")
-	public Sprite method9150(Renderer arg0, int arg1) {
-		if (arg1 < 0) {
+	public Sprite getSprite(Renderer renderer, int id) {
+		if (id < 0) {
 			return null;
 		}
-		Sprite var3 = (Sprite) this.field7226.spriteCache.get((long) arg1);
+		Sprite var3 = (Sprite) this.factory.spriteCache.get((long) id);
 		if (var3 == null) {
-			this.method9152(arg0);
-			var3 = (Sprite) this.field7226.spriteCache.get((long) arg1);
+			this.loadSprites(renderer);
+			var3 = (Sprite) this.factory.spriteCache.get((long) id);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("uk.p(Ldh;II)V")
-	public void method9151(Renderer arg0, int arg1) {
-		Js5 var3 = this.field7226.configClient;
-		if (arg1 >= 0 && this.field7226.spriteCache.get((long) arg1) == null && var3.method6889(arg1)) {
-			SpriteData var4 = SpriteDataProvider.get(var3, arg1);
-			this.field7226.spriteCache.put(arg0.createSprite(var4, true), (long) arg1);
+	public void loadSprite(Renderer renderer, int id) {
+		Js5 js5 = this.factory.configClient;
+		if (id >= 0 && this.factory.spriteCache.get((long) id) == null && js5.method6889(id)) {
+			SpriteData var4 = SpriteDataProvider.get(js5, id);
+			this.factory.spriteCache.put(renderer.createSprite(var4, true), (long) id);
 		}
 	}
 
 	@ObfuscatedName("uk.d(Ldh;I)V")
-	public void method9152(Renderer arg0) {
-		this.method9151(arg0, this.field7217);
-		this.method9151(arg0, this.field7215);
-		this.method9151(arg0, this.field7224);
-		this.method9151(arg0, this.field7225);
-		this.method9151(arg0, this.field7222);
-		this.method9151(arg0, this.field7221);
+	public void loadSprites(Renderer renderer) {
+		this.loadSprite(renderer, this.full);
+		this.loadSprite(renderer, this.empty);
+		this.loadSprite(renderer, this.fulllocalpartner);
+		this.loadSprite(renderer, this.emptylocalpartner);
+		this.loadSprite(renderer, this.fullglobalpartner);
+		this.loadSprite(renderer, this.emptyglobalpartner);
 	}
 
 	@ObfuscatedName("uk.n(I)V")

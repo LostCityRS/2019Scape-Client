@@ -7158,14 +7158,14 @@ public final class Client extends GameShell {
 							Sprite var22;
 							Sprite var23;
 							if (var21 == null || CommunityPartnerType.field1950 == var21.field12070) {
-								var22 = var20.method9150(renderer, var20.field7215);
-								var23 = var20.method9150(renderer, var20.field7217);
+								var22 = var20.getSprite(renderer, var20.empty);
+								var23 = var20.getSprite(renderer, var20.full);
 							} else if (CommunityPartnerType.field1947 == var21.field12070) {
-								var22 = var20.method9150(renderer, var20.field7225);
-								var23 = var20.method9150(renderer, var20.field7224);
+								var22 = var20.getSprite(renderer, var20.emptylocalpartner);
+								var23 = var20.getSprite(renderer, var20.fulllocalpartner);
 							} else {
-								var22 = var20.method9150(renderer, var20.field7221);
-								var23 = var20.method9150(renderer, var20.field7222);
+								var22 = var20.getSprite(renderer, var20.emptyglobalpartner);
+								var23 = var20.getSprite(renderer, var20.fullglobalpartner);
 							}
 							if (var22 != null && var23 != null) {
 								int var24 = 255;
@@ -7179,9 +7179,9 @@ public final class Client extends GameShell {
 									var30 = (var27 - var29) * var28 / var19.field11217 + var29;
 								} else {
 									var30 = var27;
-									int var31 = var19.field11217 + var20.field7227 - var26;
-									if (var20.field7219 >= 0) {
-										var24 = (var31 << 8) / (var20.field7227 - var20.field7219);
+									int var31 = var19.field11217 + var20.sticktime - var26;
+									if (var20.fadeout >= 0) {
+										var24 = (var31 << 8) / (var20.sticktime - var20.fadeout);
 									}
 								}
 								if (var19.field11218 > 0 && var30 < 2) {

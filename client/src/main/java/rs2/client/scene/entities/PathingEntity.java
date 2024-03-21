@@ -657,7 +657,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		HeadbarType var7 = (HeadbarType) Client.headbarTypeList.list(headbarId);
 		Headbar var8 = null;
 		Headbar var9 = null;
-		int var10 = var7.field7218;
+		int var10 = var7.hidepriority;
 		int var11 = 0;
 		for (Headbar var12 = (Headbar) this.field10416.peekFront(); var12 != null; var12 = (Headbar) this.field10416.prev()) {
 			var11++;
@@ -665,12 +665,12 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 				var12.method17456(arg1 + arg3, arg4, arg5, arg2);
 				return;
 			}
-			if (var12.field11215.field7223 <= var7.field7223) {
+			if (var12.field11215.showpriority <= var7.showpriority) {
 				var8 = var12;
 			}
-			if (var12.field11215.field7218 > var10) {
+			if (var12.field11215.hidepriority > var10) {
 				var9 = var12;
-				var10 = var12.field11215.field7218;
+				var10 = var12.field11215.hidepriority;
 			}
 		}
 		if (var9 == null && var11 >= Client.graphicsDefaults.field7745) {

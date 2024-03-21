@@ -9,8 +9,8 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ale")
 public class BasicHeadbarTypeFactory extends HeadbarTypeFactory implements ConfigTypeFactory {
 
-	public BasicHeadbarTypeFactory(Js5 arg0) {
-		super(arg0);
+	public BasicHeadbarTypeFactory(Js5 configClient) {
+		super(configClient);
 	}
 
 	@ObfuscatedName("ale.v(ILao;I)Lay;")

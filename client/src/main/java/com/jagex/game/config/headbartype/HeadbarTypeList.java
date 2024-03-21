@@ -10,8 +10,8 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aol")
 public class HeadbarTypeList extends CachingConfigTypeList {
 
-	public HeadbarTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
-		super(arg0, arg1, arg2, Js5ConfigGroup.HEADBARTYPE, 64, new BasicHeadbarTypeFactory(arg3));
+	public HeadbarTypeList(ModeGame modeGame, Language language, Js5 configClient, Js5 spritesClient) {
+		super(modeGame, language, configClient, Js5ConfigGroup.HEADBARTYPE, 64, new BasicHeadbarTypeFactory(spritesClient));
 	}
 
 	@ObfuscatedName("aol.r(I)V")

@@ -20,8 +20,8 @@ public final class WeightedCache {
 	@ObfuscatedName("eb.f")
 	public CacheRemovalListener field1759;
 
-	public WeightedCache(int arg0) {
-		this(arg0, arg0);
+	public WeightedCache(int size) {
+		this(size, size);
 	}
 
 	@ObfuscatedName("eb.e(Len;B)V")
