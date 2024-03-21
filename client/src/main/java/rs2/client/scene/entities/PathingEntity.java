@@ -601,8 +601,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		int var12 = 0;
 		if (hitmarkId >= 0) {
 			HitmarkType var13 = (HitmarkType) Client.hitmarkTypeList.list(hitmarkId);
-			var11 = var13.field7309;
-			var12 = var13.field7297;
+			var11 = var13.replacemode;
+			var12 = var13.sticktime;
 		}
 		if (var8) {
 			if (var11 == -1) {

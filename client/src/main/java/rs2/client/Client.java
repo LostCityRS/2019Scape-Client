@@ -7319,9 +7319,9 @@ public final class Client extends GameShell {
 							continue;
 						}
 						var71 = (HitmarkType) hitmarkTypeList.list(var12.field10411[var68]);
-						var72 = var71.field7297;
-						if (var71 != null && var71.field7298 != null) {
-							var71 = var71.method9251(localPlayerGameState, localPlayerGameState);
+						var72 = var71.sticktime;
+						if (var71 != null && var71.multimark != null) {
+							var71 = var71.getMultiHitmark(localPlayerGameState, localPlayerGameState);
 							if (var71 == null) {
 								var12.field10421[var68] = -1;
 								continue;
@@ -7334,8 +7334,8 @@ public final class Client extends GameShell {
 					HitmarkType var74 = null;
 					if (var73 >= 0) {
 						var74 = (HitmarkType) hitmarkTypeList.list(var73);
-						if (var74 != null && var74.field7298 != null) {
-							var74 = var74.method9251(localPlayerGameState, localPlayerGameState);
+						if (var74 != null && var74.multimark != null) {
+							var74 = var74.getMultiHitmark(localPlayerGameState, localPlayerGameState);
 						}
 					}
 					if (var69 - var72 <= loopCycle) {
@@ -7371,50 +7371,50 @@ public final class Client extends GameShell {
 								int var97 = 0;
 								int var98 = 0;
 								int var99 = 0;
-								Sprite var100 = var71.method9258(renderer);
+								Sprite var100 = var71.getSprite(renderer);
 								if (var100 != null) {
 									var80 = var100.getWidth();
 									var100.method1432(field11113);
 									var84 = field11113[0];
 								}
-								Sprite var101 = var71.method9253(renderer);
+								Sprite var101 = var71.getMiddleGraphicSprite(renderer);
 								if (var101 != null) {
 									var81 = var101.getWidth();
 									var101.method1432(field11113);
 									var85 = field11113[0];
 								}
-								Sprite var102 = var71.method9254(renderer);
+								Sprite var102 = var71.getLeftGraphicSprite(renderer);
 								if (var102 != null) {
 									var82 = var102.getWidth();
 									var102.method1432(field11113);
 									var86 = field11113[0];
 								}
-								Sprite var103 = var71.method9255(renderer);
+								Sprite var103 = var71.getRightGraphicSprite(renderer);
 								if (var103 != null) {
 									var83 = var103.getWidth();
 									var103.method1432(field11113);
 									var87 = field11113[0];
 								}
 								if (var74 != null) {
-									var88 = var74.method9258(renderer);
+									var88 = var74.getSprite(renderer);
 									if (var88 != null) {
 										var92 = var88.getWidth();
 										var88.method1432(field11113);
 										var96 = field11113[0];
 									}
-									var89 = var74.method9253(renderer);
+									var89 = var74.getMiddleGraphicSprite(renderer);
 									if (var89 != null) {
 										var93 = var89.getWidth();
 										var89.method1432(field11113);
 										var97 = field11113[0];
 									}
-									var90 = var74.method9254(renderer);
+									var90 = var74.getLeftGraphicSprite(renderer);
 									if (var90 != null) {
 										var94 = var90.getWidth();
 										var90.method1432(field11113);
 										var98 = field11113[0];
 									}
-									var91 = var74.method9255(renderer);
+									var91 = var74.getRightGraphicSprite(renderer);
 									if (var91 != null) {
 										var95 = var91.getWidth();
 										var91.method1432(field11113);
@@ -7425,9 +7425,9 @@ public final class Client extends GameShell {
 								Font var105 = DefaultSprites.field8321;
 								FontMetrics var106 = DefaultSprites.field6778;
 								FontMetrics var107 = DefaultSprites.field6778;
-								int var108 = var71.field7310;
+								int var108 = var71.damagefont;
 								if (var108 >= 0) {
-									Font var109 = (Font) fontProvider.method6188(fontFactory, var108, true, var71.field7294);
+									Font var109 = (Font) fontProvider.method6188(fontFactory, var108, true, var71.damagecolour_set);
 									FontMetrics var110 = fontProvider.method6163(fontFactory, var108);
 									if (var109 != null && var110 != null) {
 										var104 = var109;
@@ -7435,9 +7435,9 @@ public final class Client extends GameShell {
 									}
 								}
 								if (var74 != null) {
-									int var111 = var74.field7310;
+									int var111 = var74.damagefont;
 									if (var111 >= 0) {
-										Font var112 = (Font) fontProvider.method6188(fontFactory, var111, true, var74.field7294);
+										Font var112 = (Font) fontProvider.method6188(fontFactory, var111, true, var74.damagecolour_set);
 										FontMetrics var113 = fontProvider.method6163(fontFactory, var111);
 										if (var112 != null && var113 != null) {
 											var105 = var112;
@@ -7518,18 +7518,18 @@ public final class Client extends GameShell {
 									}
 								}
 								int var136 = var12.field10421[var68] - loopCycle;
-								int var137 = var71.field7302 - var71.field7302 * var136 / var71.field7297;
-								int var138 = var71.field7306 * var136 / var71.field7297 + -var71.field7306;
+								int var137 = var71.scrolltooffsetx - var71.scrolltooffsetx * var136 / var71.sticktime;
+								int var138 = var71.scrolltooffsety * var136 / var71.sticktime + -var71.scrolltooffsety;
 								int var139 = (int) (field10922[0] + (float) arg0 - (float) (var128 >> 1) + (float) var137);
 								int var140 = (int) (field10922[1] + (float) arg1 - 12.0F + (float) var138);
-								int var141 = var71.field7289 + var140 + 15;
+								int var141 = var71.damageyof + var140 + 15;
 								int var142 = 0;
 								if (var74 != null) {
-									var142 = var74.field7289 + var140 + 15;
+									var142 = var74.damageyof + var140 + 15;
 								}
 								int var143 = 255;
-								if (var71.field7304 >= 0) {
-									var143 = (var136 << 8) / (var71.field7297 - var71.field7304);
+								if (var71.fadeat >= 0) {
+									var143 = (var136 << 8) / (var71.sticktime - var71.fadeat);
 								}
 								if (var143 >= 0 && var143 < 255) {
 									int var144 = var143 << 24;
@@ -7538,66 +7538,66 @@ public final class Client extends GameShell {
 										var100.method1443(var123 + var139 - var84, var140, 0, var145, 1);
 									}
 									if (var102 != null) {
-										var102.method1443(var71.field7308 + (var124 + var139 - var86), var71.field7288 + var140, 0, var145, 1);
+										var102.method1443(var71.graphicxof + (var124 + var139 - var86), var71.graphicyof + var140, 0, var145, 1);
 									}
 									if (var101 != null) {
 										for (int var146 = 0; var146 < var120; var146++) {
-											var101.method1443(var71.field7308 + var81 * var146 + (var125 + var139 - var85), var71.field7288 + var140, 0, var145, 1);
+											var101.method1443(var71.graphicxof + var81 * var146 + (var125 + var139 - var85), var71.graphicyof + var140, 0, var145, 1);
 										}
 									}
 									if (var103 != null) {
-										var103.method1443(var71.field7308 + (var129 + var139 - var87), var71.field7288 + var140, 0, var145, 1);
+										var103.method1443(var71.graphicxof + (var129 + var139 - var87), var71.graphicyof + var140, 0, var145, 1);
 									}
-									var104.method2681(var118, var126 + var139, var141, var71.field7296 | var144, 0);
+									var104.method2681(var118, var126 + var139, var141, var71.damagecolour | var144, 0);
 									if (var74 != null) {
 										if (var88 != null) {
 											var88.method1443(var130 + var139 - var96, var140, 0, var145, 1);
 										}
 										if (var90 != null) {
-											var90.method1443(var74.field7308 + (var131 + var139 - var98), var74.field7288 + var140, 0, var145, 1);
+											var90.method1443(var74.graphicxof + (var131 + var139 - var98), var74.graphicyof + var140, 0, var145, 1);
 										}
 										if (var89 != null) {
 											for (int var147 = 0; var147 < var121; var147++) {
-												var89.method1443(var74.field7308 + var93 * var147 + (var132 + var139 - var97), var74.field7288 + var140, 0, var145, 1);
+												var89.method1443(var74.graphicxof + var93 * var147 + (var132 + var139 - var97), var74.graphicyof + var140, 0, var145, 1);
 											}
 										}
 										if (var91 != null) {
-											var91.method1443(var74.field7308 + (var133 + var139 - var99), var74.field7288 + var140, 0, var145, 1);
+											var91.method1443(var74.graphicxof + (var133 + var139 - var99), var74.graphicyof + var140, 0, var145, 1);
 										}
-										var105.method2681(var115, var134 + var139, var142, var74.field7296 | var144, 0);
+										var105.method2681(var115, var134 + var139, var142, var74.damagecolour | var144, 0);
 									}
 								} else {
 									if (var100 != null) {
 										var100.method1439(var123 + var139 - var84, var140);
 									}
 									if (var102 != null) {
-										var102.method1439(var71.field7308 + (var124 + var139 - var86), var71.field7288 + var140);
+										var102.method1439(var71.graphicxof + (var124 + var139 - var86), var71.graphicyof + var140);
 									}
 									if (var101 != null) {
 										for (int var148 = 0; var148 < var120; var148++) {
-											var101.method1439(var71.field7308 + var81 * var148 + (var125 + var139 - var85), var71.field7288 + var140);
+											var101.method1439(var71.graphicxof + var81 * var148 + (var125 + var139 - var85), var71.graphicyof + var140);
 										}
 									}
 									if (var103 != null) {
-										var103.method1439(var71.field7308 + (var129 + var139 - var87), var71.field7288 + var140);
+										var103.method1439(var71.graphicxof + (var129 + var139 - var87), var71.graphicyof + var140);
 									}
-									var104.method2681(var118, var126 + var139, var141, var71.field7296 | 0xFF000000, 0);
+									var104.method2681(var118, var126 + var139, var141, var71.damagecolour | 0xFF000000, 0);
 									if (var74 != null) {
 										if (var88 != null) {
 											var88.method1439(var130 + var139 - var96, var140);
 										}
 										if (var90 != null) {
-											var90.method1439(var74.field7308 + (var131 + var139 - var98), var74.field7288 + var140);
+											var90.method1439(var74.graphicxof + (var131 + var139 - var98), var74.graphicyof + var140);
 										}
 										if (var89 != null) {
 											for (int var149 = 0; var149 < var121; var149++) {
-												var89.method1439(var74.field7308 + var93 * var149 + (var132 + var139 - var97), var74.field7288 + var140);
+												var89.method1439(var74.graphicxof + var93 * var149 + (var132 + var139 - var97), var74.graphicyof + var140);
 											}
 										}
 										if (var91 != null) {
-											var91.method1439(var74.field7308 + (var133 + var139 - var99), var74.field7288 + var140);
+											var91.method1439(var74.graphicxof + (var133 + var139 - var99), var74.graphicyof + var140);
 										}
-										var105.method2681(var115, var134 + var139, var142, var74.field7296 | 0xFF000000, 0);
+										var105.method2681(var115, var134 + var139, var142, var74.damagecolour | 0xFF000000, 0);
 									}
 								}
 							}

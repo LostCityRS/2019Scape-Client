@@ -9,8 +9,8 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ala")
 public class BasicHitmarkTypeFactory extends HitmarkTypeFactory implements ConfigTypeFactory {
 
-	public BasicHitmarkTypeFactory(Js5 arg0) {
-		super(arg0);
+	public BasicHitmarkTypeFactory(Js5 js5) {
+		super(js5);
 	}
 
 	@ObfuscatedName("ala.v(ILao;I)Lay;")

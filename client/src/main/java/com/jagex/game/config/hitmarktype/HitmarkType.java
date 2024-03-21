@@ -20,188 +20,188 @@ import deob.ObfuscatedName;
 public class HitmarkType implements ConfigType {
 
 	@ObfuscatedName("vb.e")
-	public final ConfigTypeList field7303;
+	public final ConfigTypeList myList;
 
 	@ObfuscatedName("vb.n")
-	public final HitmarkTypeFactory field7307;
+	public final HitmarkTypeFactory factory;
 
 	@ObfuscatedName("vb.u")
-	public boolean field7294 = false;
+	public boolean damagecolour_set = false;
 
 	@ObfuscatedName("vb.z")
-	public int field7310 = -1;
+	public int damagefont = -1;
 
 	@ObfuscatedName("vb.p")
-	public int field7296 = 16777215;
+	public int damagecolour = 16777215;
 
 	@ObfuscatedName("vb.d")
-	public int field7297 = 70;
+	public int sticktime = 70;
 
 	@ObfuscatedName("vb.c")
-	public int field7295 = -1;
+	public int classgraphic = -1;
 
 	@ObfuscatedName("vb.r")
-	public int field7299 = -1;
+	public int middlegraphic = -1;
 
 	@ObfuscatedName("vb.v")
-	public int field7300 = -1;
+	public int leftgraphic = -1;
 
 	@ObfuscatedName("vb.o")
-	public int field7301 = -1;
+	public int rightgraphic = -1;
 
 	@ObfuscatedName("vb.s")
-	public int field7302 = 0;
+	public int scrolltooffsetx = 0;
 
 	@ObfuscatedName("vb.y")
-	public int field7306 = 0;
+	public int scrolltooffsety = 0;
 
 	@ObfuscatedName("vb.q")
-	public int field7304 = -1;
+	public int fadeat = -1;
 
 	@ObfuscatedName("vb.x")
-	public String field7305 = "";
+	public String damageformat = "";
 
 	@ObfuscatedName("vb.b")
-	public int field7309 = -1;
+	public int replacemode = -1;
 
 	@ObfuscatedName("vb.h")
-	public int field7289 = 0;
+	public int damageyof = 0;
 
 	@ObfuscatedName("vb.a")
-	public int field7308 = 0;
+	public int graphicxof = 0;
 
 	@ObfuscatedName("vb.g")
-	public int field7288 = 0;
+	public int graphicyof = 0;
 
 	@ObfuscatedName("vb.i")
-	public int[] field7298;
+	public int[] multimark;
 
 	@ObfuscatedName("vb.j")
-	public int field7311 = -1;
+	public int multivarbit = -1;
 
 	@ObfuscatedName("vb.t")
-	public int field7312 = -1;
+	public int multivarp = -1;
 
 	@ObfuscatedName("vb.ae")
-	public int field7313 = 1;
+	public int damagescaleto = 1;
 
 	@ObfuscatedName("vb.ag")
-	public int field7314 = 1;
+	public int damagescalefrom = 1;
 
-	public HitmarkType(int arg0, HitmarkTypeFactory arg1, ConfigTypeList arg2) {
-		this.field7307 = arg1;
-		this.field7303 = arg2;
+	public HitmarkType(int arg0, HitmarkTypeFactory factory, ConfigTypeList hitmarks) {
+		this.factory = factory;
+		this.myList = hitmarks;
 	}
 
 	@ObfuscatedName("vb.e(Lalw;B)V")
 	public void decode(Packet buf) {
 		while (true) {
-			int var2 = buf.g1();
-			if (var2 == 0) {
+			int code = buf.g1();
+			if (code == 0) {
 				return;
 			}
-			this.method9257(buf, var2);
+			this.decode(buf, code);
 		}
 	}
 
 	@ObfuscatedName("vb.u(Lalw;II)V")
-	public void method9257(Packet arg0, int arg1) {
-		if (arg1 == 1) {
-			this.field7310 = arg0.gSmart2or4null();
-		} else if (arg1 == 2) {
-			this.field7296 = arg0.g3();
-			this.field7294 = true;
-		} else if (arg1 == 3) {
-			this.field7295 = arg0.gSmart2or4null();
-		} else if (arg1 == 4) {
-			this.field7300 = arg0.gSmart2or4null();
-		} else if (arg1 == 5) {
-			this.field7299 = arg0.gSmart2or4null();
-		} else if (arg1 == 6) {
-			this.field7301 = arg0.gSmart2or4null();
-		} else if (arg1 == 7) {
-			this.field7302 = arg0.g2s();
-		} else if (arg1 == 8) {
-			this.field7305 = arg0.gjstr2();
-		} else if (arg1 == 9) {
-			this.field7297 = arg0.g2();
-		} else if (arg1 == 10) {
-			this.field7306 = arg0.g2s();
-		} else if (arg1 == 11) {
-			this.field7304 = 0;
-		} else if (arg1 == 12) {
-			this.field7309 = arg0.g1();
-		} else if (arg1 == 13) {
-			this.field7289 = arg0.g2s();
-		} else if (arg1 == 14) {
-			this.field7304 = arg0.g2();
-		} else if (arg1 == 16) {
-			this.field7308 = arg0.g2s();
-			this.field7288 = arg0.g2s();
-		} else if (arg1 == 17 || arg1 == 18) {
-			this.field7311 = arg0.g2();
-			if (this.field7311 == 65535) {
-				this.field7311 = -1;
+	public void decode(Packet buf, int code) {
+		if (code == 1) {
+			this.damagefont = buf.gSmart2or4null();
+		} else if (code == 2) {
+			this.damagecolour = buf.g3();
+			this.damagecolour_set = true;
+		} else if (code == 3) {
+			this.classgraphic = buf.gSmart2or4null();
+		} else if (code == 4) {
+			this.leftgraphic = buf.gSmart2or4null();
+		} else if (code == 5) {
+			this.middlegraphic = buf.gSmart2or4null();
+		} else if (code == 6) {
+			this.rightgraphic = buf.gSmart2or4null();
+		} else if (code == 7) {
+			this.scrolltooffsetx = buf.g2s();
+		} else if (code == 8) {
+			this.damageformat = buf.gjstr2();
+		} else if (code == 9) {
+			this.sticktime = buf.g2();
+		} else if (code == 10) {
+			this.scrolltooffsety = buf.g2s();
+		} else if (code == 11) {
+			this.fadeat = 0;
+		} else if (code == 12) {
+			this.replacemode = buf.g1();
+		} else if (code == 13) {
+			this.damageyof = buf.g2s();
+		} else if (code == 14) {
+			this.fadeat = buf.g2();
+		} else if (code == 16) {
+			this.graphicxof = buf.g2s();
+			this.graphicyof = buf.g2s();
+		} else if (code == 17 || code == 18) {
+			this.multivarbit = buf.g2();
+			if (this.multivarbit == 65535) {
+				this.multivarbit = -1;
 			}
-			this.field7312 = arg0.g2();
-			if (this.field7312 == 65535) {
-				this.field7312 = -1;
+			this.multivarp = buf.g2();
+			if (this.multivarp == 65535) {
+				this.multivarp = -1;
 			}
-			int var3 = -1;
-			if (arg1 == 18) {
-				var3 = arg0.g2();
-				if (var3 == 65535) {
-					var3 = -1;
+			int defaultId = -1;
+			if (code == 18) {
+				defaultId = buf.g2();
+				if (defaultId == 65535) {
+					defaultId = -1;
 				}
 			}
-			int var4 = arg0.g1();
-			this.field7298 = new int[var4 + 2];
-			for (int var5 = 0; var5 <= var4; var5++) {
-				this.field7298[var5] = arg0.g2();
-				if (this.field7298[var5] == 65535) {
-					this.field7298[var5] = -1;
+			int length = buf.g1();
+			this.multimark = new int[length + 2];
+			for (int index = 0; index <= length; index++) {
+				this.multimark[index] = buf.g2();
+				if (this.multimark[index] == 65535) {
+					this.multimark[index] = -1;
 				}
 			}
-			this.field7298[var4 + 1] = var3;
-		} else if (arg1 == 19) {
-			this.field7313 = arg0.g2();
-		} else if (arg1 == 20) {
-			this.field7314 = arg0.g2();
+			this.multimark[length + 1] = defaultId;
+		} else if (code == 19) {
+			this.damagescaleto = buf.g2();
+		} else if (code == 20) {
+			this.damagescalefrom = buf.g2();
 		}
 	}
 
 	@ObfuscatedName("vb.z(Lem;Lep;I)Lvb;")
-	public final HitmarkType method9251(VariableTypeProvider arg0, VarIntDomain arg1) {
-		int var3 = -1;
-		if (this.field7298 == null) {
+	public final HitmarkType getMultiHitmark(VariableTypeProvider varTypeProvider, VarIntDomain varDomain) {
+		int i = -1;
+		if (this.multimark == null) {
 			return this;
-		} else if (arg0 == null || arg1 == null) {
+		} else if (varTypeProvider == null || varDomain == null) {
 			return null;
 		} else {
-			if (this.field7311 != -1) {
-				VarBitType var4 = arg0.getVarBitType(this.field7311);
+			if (this.multivarbit != -1) {
+				VarBitType var4 = varTypeProvider.getVarBitType(this.multivarbit);
 				if (var4 != null) {
-					var3 = arg1.getVarBitValue(var4);
+					i = varDomain.getVarBitValue(var4);
 				}
-			} else if (this.field7312 != -1) {
-				VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.field7312);
+			} else if (this.multivarp != -1) {
+				VarType var5 = varTypeProvider.getVarType(VarDomainType.PLAYER, this.multivarp);
 				if (var5 != null) {
-					var3 = arg1.getVarValueInt(var5);
+					i = varDomain.getVarValueInt(var5);
 				}
 			}
-			if (var3 >= 0 && var3 < this.field7298.length - 1) {
-				return this.field7298[var3] == -1 ? null : (HitmarkType) this.field7303.list(this.field7298[var3]);
+			if (i >= 0 && i < this.multimark.length - 1) {
+				return this.multimark[i] == -1 ? null : (HitmarkType) this.myList.list(this.multimark[i]);
 			} else {
-				int var6 = this.field7298[this.field7298.length - 1];
-				return var6 == -1 ? null : (HitmarkType) this.field7303.list(var6);
+				int var6 = this.multimark[this.multimark.length - 1];
+				return var6 == -1 ? null : (HitmarkType) this.myList.list(var6);
 			}
 		}
 	}
 
 	@ObfuscatedName("vb.p(II)Ljava/lang/String;")
 	public String method9252(int arg0) {
-		String var2 = this.field7305;
-		int var3 = this.field7313 * arg0 / this.field7314;
+		String var2 = this.damageformat;
+		int var3 = this.damagescaleto * arg0 / this.damagescalefrom;
 		while (true) {
 			int var4 = var2.indexOf("%1");
 			if (var4 < 0) {
@@ -212,75 +212,75 @@ public class HitmarkType implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.d(Ldh;I)Lcm;")
-	public Sprite method9258(Renderer arg0) {
-		if (this.field7295 < 0) {
+	public Sprite getSprite(Renderer renderer) {
+		if (this.classgraphic < 0) {
 			return null;
 		}
-		Sprite var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7295);
-		if (var2 == null) {
-			this.method9256(arg0);
-			var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7295);
+		Sprite sprite = (Sprite) this.factory.spriteCache.get((long) this.classgraphic);
+		if (sprite == null) {
+			this.loadSprites(renderer);
+			sprite = (Sprite) this.factory.spriteCache.get((long) this.classgraphic);
 		}
-		return var2;
+		return sprite;
 	}
 
 	@ObfuscatedName("vb.c(Ldh;I)Lcm;")
-	public Sprite method9253(Renderer arg0) {
-		if (this.field7299 < 0) {
+	public Sprite getMiddleGraphicSprite(Renderer renderer) {
+		if (this.middlegraphic < 0) {
 			return null;
 		}
-		Sprite var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7299);
-		if (var2 == null) {
-			this.method9256(arg0);
-			var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7299);
+		Sprite sprite = (Sprite) this.factory.spriteCache.get((long) this.middlegraphic);
+		if (sprite == null) {
+			this.loadSprites(renderer);
+			sprite = (Sprite) this.factory.spriteCache.get((long) this.middlegraphic);
 		}
-		return var2;
+		return sprite;
 	}
 
 	@ObfuscatedName("vb.r(Ldh;I)Lcm;")
-	public Sprite method9254(Renderer arg0) {
-		if (this.field7300 < 0) {
+	public Sprite getLeftGraphicSprite(Renderer renderer) {
+		if (this.leftgraphic < 0) {
 			return null;
 		}
-		Sprite var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7300);
-		if (var2 == null) {
-			this.method9256(arg0);
-			var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7300);
+		Sprite sprite = (Sprite) this.factory.spriteCache.get((long) this.leftgraphic);
+		if (sprite == null) {
+			this.loadSprites(renderer);
+			sprite = (Sprite) this.factory.spriteCache.get((long) this.leftgraphic);
 		}
-		return var2;
+		return sprite;
 	}
 
 	@ObfuscatedName("vb.v(Ldh;B)Lcm;")
-	public Sprite method9255(Renderer arg0) {
-		if (this.field7301 < 0) {
+	public Sprite getRightGraphicSprite(Renderer renderer) {
+		if (this.rightgraphic < 0) {
 			return null;
 		}
-		Sprite var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7301);
-		if (var2 == null) {
-			this.method9256(arg0);
-			var2 = (Sprite) this.field7307.spriteCache.get((long) this.field7301);
+		Sprite sprite = (Sprite) this.factory.spriteCache.get((long) this.rightgraphic);
+		if (sprite == null) {
+			this.loadSprites(renderer);
+			sprite = (Sprite) this.factory.spriteCache.get((long) this.rightgraphic);
 		}
-		return var2;
+		return sprite;
 	}
 
 	@ObfuscatedName("vb.o(Ldh;I)V")
-	public void method9256(Renderer arg0) {
-		Js5 var2 = this.field7307.configClient;
-		if (this.field7295 >= 0 && this.field7307.spriteCache.get((long) this.field7295) == null && var2.method6889(this.field7295)) {
-			SpriteData var3 = SpriteDataProvider.get(var2, this.field7295);
-			this.field7307.spriteCache.put(arg0.createSprite(var3, true), (long) this.field7295);
+	public void loadSprites(Renderer renderer) {
+		Js5 js5 = this.factory.configClient;
+		if (this.classgraphic >= 0 && this.factory.spriteCache.get((long) this.classgraphic) == null && js5.method6889(this.classgraphic)) {
+			SpriteData sprite = SpriteDataProvider.get(js5, this.classgraphic);
+			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.classgraphic);
 		}
-		if (this.field7299 >= 0 && this.field7307.spriteCache.get((long) this.field7299) == null && var2.method6889(this.field7299)) {
-			SpriteData var4 = SpriteDataProvider.get(var2, this.field7299);
-			this.field7307.spriteCache.put(arg0.createSprite(var4, true), (long) this.field7299);
+		if (this.middlegraphic >= 0 && this.factory.spriteCache.get((long) this.middlegraphic) == null && js5.method6889(this.middlegraphic)) {
+			SpriteData sprite = SpriteDataProvider.get(js5, this.middlegraphic);
+			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.middlegraphic);
 		}
-		if (this.field7300 >= 0 && this.field7307.spriteCache.get((long) this.field7300) == null && var2.method6889(this.field7300)) {
-			SpriteData var5 = SpriteDataProvider.get(var2, this.field7300);
-			this.field7307.spriteCache.put(arg0.createSprite(var5, true), (long) this.field7300);
+		if (this.leftgraphic >= 0 && this.factory.spriteCache.get((long) this.leftgraphic) == null && js5.method6889(this.leftgraphic)) {
+			SpriteData sprite = SpriteDataProvider.get(js5, this.leftgraphic);
+			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.leftgraphic);
 		}
-		if (this.field7301 >= 0 && this.field7307.spriteCache.get((long) this.field7301) == null && var2.method6889(this.field7301)) {
-			SpriteData var6 = SpriteDataProvider.get(var2, this.field7301);
-			this.field7307.spriteCache.put(arg0.createSprite(var6, true), (long) this.field7301);
+		if (this.rightgraphic >= 0 && this.factory.spriteCache.get((long) this.rightgraphic) == null && js5.method6889(this.rightgraphic)) {
+			SpriteData sprite = SpriteDataProvider.get(js5, this.rightgraphic);
+			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.rightgraphic);
 		}
 	}
 

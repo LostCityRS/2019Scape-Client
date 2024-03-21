@@ -10,8 +10,8 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aoj")
 public class HitmarkTypeList extends CachingConfigTypeList {
 
-	public HitmarkTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
-		super(arg0, arg1, arg2, Js5ConfigGroup.HITMARKTYPE, 64, new BasicHitmarkTypeFactory(arg3));
+	public HitmarkTypeList(ModeGame modeGame, Language language, Js5 configClient, Js5 spritesClient) {
+		super(modeGame, language, configClient, Js5ConfigGroup.HITMARKTYPE, 64, new BasicHitmarkTypeFactory(spritesClient));
 	}
 
 	@ObfuscatedName("aoj.r(I)V")
