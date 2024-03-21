@@ -10839,7 +10839,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("eb.aaw(Lyf;I)V")
 	public static final void clan_isself(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.clanChatUsers == null || var1 >= Client.clanChatCount || !Client.clanChatUsers[var1].nameUnfiltered.equalsIgnoreCase(Client.localPlayerEntity.field12062)) {
+		if (Client.clanChatUsers == null || var1 >= Client.clanChatCount || !Client.clanChatUsers[var1].nameUnfiltered.equalsIgnoreCase(Client.localPlayerEntity.nameUnfiltered)) {
 			arg0.field8216[++arg0.field8226 - 1] = 0;
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 1;
@@ -12511,7 +12511,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("yw.ahy(Lyf;S)V")
 	public static final void chat_playername(ClientScriptState arg0) {
 		String var1;
-		if (Client.localPlayerEntity == null || Client.localPlayerEntity.field12057 == null) {
+		if (Client.localPlayerEntity == null || Client.localPlayerEntity.name == null) {
 			var1 = "";
 		} else {
 			var1 = Client.localPlayerEntity.method19115(true);
@@ -12548,7 +12548,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("abv.aii(Lyf;I)V")
 	public static final void chat_playername_unfiltered(ClientScriptState arg0) {
 		String var1;
-		if (Client.localPlayerEntity == null || Client.localPlayerEntity.field12057 == null) {
+		if (Client.localPlayerEntity == null || Client.localPlayerEntity.name == null) {
 			var1 = "";
 		} else {
 			var1 = Client.localPlayerEntity.method19116(false);
@@ -16064,7 +16064,7 @@ public final class ScriptRunner {
 		boolean var1 = false;
 		if (Client.javascriptEnabled) {
 			try {
-				Object var2 = JavascriptFunction.ADVERT_PLAY.method6097(new Object[] { Client.lobbyDOB, Client.localPlayerEntity.index == 1, arg0.field8216[--arg0.field8226] });
+				Object var2 = JavascriptFunction.ADVERT_PLAY.method6097(new Object[] { Client.lobbyDOB, Client.localPlayerEntity.gender == 1, arg0.field8216[--arg0.field8226] });
 				if (var2 != null) {
 					var1 = (Boolean) var2;
 				}

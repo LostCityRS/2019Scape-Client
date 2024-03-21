@@ -37,7 +37,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public int localPlayerIndex;
 
 	@ObfuscatedName("ahm.o")
-	public int field10430;
+	public int size;
 
 	@ObfuscatedName("ahm.s")
 	public int field11715;
@@ -246,7 +246,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public PathingEntity(Scene arg0, int arg1, VarTypeList arg2) {
 		super(arg0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, (byte) 0);
 		this.localPlayerIndex = -1;
-		this.field10430 = 1;
+		this.size = 1;
 		this.field10463 = -32768;
 		this.field10420 = -32768;
 		this.field10452 = true;
@@ -723,18 +723,18 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	}
 
 	@ObfuscatedName("ahm.t(II)V")
-	public void method16502(int arg0) {
-		this.field10430 = arg0;
+	public void setSize(int size) {
+		this.size = size;
 	}
 
 	@ObfuscatedName("ahm.bz(I)I")
 	public int size() {
-		return this.field10430;
+		return this.size;
 	}
 
 	@ObfuscatedName("ahm.bv(I)V")
 	public void method16529() {
-		int var1 = (this.field10430 - 1 << 8) + 240;
+		int var1 = (this.size - 1 << 8) + 240;
 		Vector3 var2 = this.getTransform().trans;
 		this.field12471 = (short) ((int) var2.x - var1 >> 9);
 		this.field12468 = (short) ((int) var2.z - var1 >> 9);

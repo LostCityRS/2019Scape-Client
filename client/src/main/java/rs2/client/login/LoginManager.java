@@ -845,7 +845,7 @@ public class LoginManager {
 					Client.playerModLevel = in.g1();
 					Client.field10951 = in.g1() == 1;
 					Client.lobbyDOB = in.g3s();
-					Client.localPlayerEntity.index = (byte) in.g1();
+					Client.localPlayerEntity.gender = (byte) in.g1();
 					Client.playerIsQuickChat = in.g1() == 1;
 					Client.field10953 = in.g1() == 1;
 					Client.lobbyMembership = in.g8();
@@ -865,7 +865,7 @@ public class LoginManager {
 					Client.lobbyCCExpiry = in.g2();
 					Client.lobbyGraceExpiry = in.g2();
 					Client.lobbyDOBRequested = in.g1() == 1;
-					Client.localPlayerEntity.field12062 = Client.localPlayerEntity.field12057 = JagException.field12492 = in.gjstr2();
+					Client.localPlayerEntity.nameUnfiltered = Client.localPlayerEntity.name = JagException.user = in.gjstr2();
 					Client.lobbyMembersStats = in.g1();
 					Client.lobbyPlayAge = in.g4s();
 					WorldSwitcher.field9200 = new ServerAddress();

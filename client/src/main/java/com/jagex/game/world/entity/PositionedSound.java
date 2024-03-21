@@ -27,19 +27,19 @@ public class PositionedSound extends Node {
 	public static IterableMap field11366 = new IterableMap(16);
 
 	@ObfuscatedName("akc.u")
-	public int field11349;
+	public int level;
 
 	@ObfuscatedName("akc.z")
-	public int field11352;
+	public int maxX;
 
 	@ObfuscatedName("akc.p")
-	public int field11358;
+	public int minX;
 
 	@ObfuscatedName("akc.d")
-	public int field11351;
+	public int minZ;
 
 	@ObfuscatedName("akc.c")
-	public int field11353;
+	public int maxZ;
 
 	@ObfuscatedName("akc.r")
 	public Vector3 field11350 = new Vector3(0.0F, 0.0F, 0.0F);
@@ -48,37 +48,37 @@ public class PositionedSound extends Node {
 	public Vector3 field11355 = new Vector3(0.0F, 0.0F, 0.0F);
 
 	@ObfuscatedName("akc.o")
-	public int field11356;
+	public int size;
 
 	@ObfuscatedName("akc.s")
-	public int field11357;
+	public int range;
 
 	@ObfuscatedName("akc.y")
-	public int field11359;
+	public int volume;
 
 	@ObfuscatedName("akc.q")
-	public LocType field11348;
+	public LocType loc;
 
 	@ObfuscatedName("akc.x")
-	public NpcEntity field11345;
+	public NpcEntity npc;
 
 	@ObfuscatedName("akc.b")
-	public PlayerEntity field11361;
+	public PlayerEntity player;
 
 	@ObfuscatedName("akc.j")
 	public int field11360 = 0;
 
 	@ObfuscatedName("akc.t")
-	public boolean field11367;
+	public boolean multisound;
 
 	@ObfuscatedName("akc.ae")
-	public int field11368;
+	public int minrate;
 
 	@ObfuscatedName("akc.ag")
-	public int field11369;
+	public int maxrate;
 
 	@ObfuscatedName("akc.ah")
-	public int field11370;
+	public int sound;
 
 	@ObfuscatedName("akc.al")
 	public Sound field11371;
@@ -87,16 +87,16 @@ public class PositionedSound extends Node {
 	public Sound field11372;
 
 	@ObfuscatedName("akc.ai")
-	public int field11373;
+	public int mindelay;
 
 	@ObfuscatedName("akc.aw")
-	public int field11374;
+	public int maxdelay;
 
 	@ObfuscatedName("akc.as")
-	public int[] field11375;
+	public int[] random;
 
 	@ObfuscatedName("akc.at")
-	public int field11354;
+	public int delay;
 
 	@ObfuscatedName("zj.e(ZB)V")
 	public static void method13908(boolean arg0) {
@@ -137,12 +137,12 @@ public class PositionedSound extends Node {
 	@ObfuscatedName("ada.n(I)V")
 	public static void method15185() {
 		for (PositionedSound var0 = (PositionedSound) field11346.peekFront(); var0 != null; var0 = (PositionedSound) field11346.prev()) {
-			if (var0.field11367) {
+			if (var0.multisound) {
 				var0.method17660();
 			}
 		}
 		for (PositionedSound var1 = (PositionedSound) field11347.peekFront(); var1 != null; var1 = (PositionedSound) field11347.prev()) {
-			if (var1.field11367) {
+			if (var1.multisound) {
 				var1.method17660();
 			}
 		}
@@ -150,60 +150,60 @@ public class PositionedSound extends Node {
 
 	@ObfuscatedName("akc.m(B)V")
 	public void method17660() {
-		int var1 = this.field11370;
-		if (this.field11348 != null) {
-			LocType var2 = this.field11348.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+		int var1 = this.sound;
+		if (this.loc != null) {
+			LocType var2 = this.loc.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 			if (var2 == null) {
-				this.field11370 = -1;
-				this.field11357 = 0;
-				this.field11359 = 0;
-				this.field11373 = 0;
-				this.field11374 = 0;
-				this.field11375 = null;
-				this.field11369 = 256;
-				this.field11368 = 256;
-				this.field11356 = 0;
+				this.sound = -1;
+				this.range = 0;
+				this.volume = 0;
+				this.mindelay = 0;
+				this.maxdelay = 0;
+				this.random = null;
+				this.maxrate = 256;
+				this.minrate = 256;
+				this.size = 0;
 			} else {
-				this.field11370 = var2.bgsound_sound;
-				this.field11357 = var2.bgsound_range << 9;
-				this.field11359 = var2.bgsound_volume;
-				this.field11373 = var2.bgsound_mindelay;
-				this.field11374 = var2.bgsound_maxdelay;
-				this.field11375 = var2.bgsound_random;
-				this.field11369 = var2.bgsound_maxrate;
-				this.field11368 = var2.bgsound_minrate;
+				this.sound = var2.bgsound_sound;
+				this.range = var2.bgsound_range << 9;
+				this.volume = var2.bgsound_volume;
+				this.mindelay = var2.bgsound_mindelay;
+				this.maxdelay = var2.bgsound_maxdelay;
+				this.random = var2.bgsound_random;
+				this.maxrate = var2.bgsound_maxrate;
+				this.minrate = var2.bgsound_minrate;
 			}
-		} else if (this.field11345 != null) {
-			int var3 = method647(this.field11345);
+		} else if (this.npc != null) {
+			int var3 = getNpcSound(this.npc);
 			if (var1 != var3) {
-				this.field11370 = var3;
-				NPCType var4 = this.field11345.npcType;
+				this.sound = var3;
+				NPCType var4 = this.npc.npcType;
 				if (var4.multinpc != null) {
 					var4 = var4.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var4 == null) {
-					this.field11356 = 0;
-					this.field11357 = 0;
-					this.field11359 = 0;
-					this.field11369 = 256;
-					this.field11368 = 256;
+					this.size = 0;
+					this.range = 0;
+					this.volume = 0;
+					this.maxrate = 256;
+					this.minrate = 256;
 				} else {
-					this.field11357 = var4.bgsound_range << 9;
-					this.field11356 = var4.bgsound_size << 9;
-					this.field11359 = var4.bgsound_volume;
-					this.field11369 = var4.bgsound_maxrate;
-					this.field11368 = var4.bgsound_minrate;
+					this.range = var4.bgsound_range << 9;
+					this.size = var4.bgsound_size << 9;
+					this.volume = var4.bgsound_volume;
+					this.maxrate = var4.bgsound_maxrate;
+					this.minrate = var4.bgsound_minrate;
 				}
 			}
-		} else if (this.field11361 != null) {
-			this.field11370 = method16456(this.field11361);
-			this.field11357 = this.field11361.field12067 << 9;
-			this.field11356 = 0;
-			this.field11359 = this.field11361.field12068;
-			this.field11369 = 256;
-			this.field11368 = 256;
+		} else if (this.player != null) {
+			this.sound = getPlayerSound(this.player);
+			this.range = this.player.bgsound_range << 9;
+			this.size = 0;
+			this.volume = this.player.bgsound_volume;
+			this.maxrate = 256;
+			this.minrate = 256;
 		}
-		if (this.field11370 != var1 && this.field11371 != null && this.field11371 != null) {
+		if (this.sound != var1 && this.field11371 != null && this.field11371 != null) {
 			this.field11371.method7380(100);
 			Client.audioApi.play(this.field11371);
 			this.field11371 = null;
@@ -211,84 +211,84 @@ public class PositionedSound extends Node {
 	}
 
 	@ObfuscatedName("wp.k(IIIILvd;Laqc;Laqk;I)V")
-	public static void method9739(int arg0, int arg1, int arg2, int arg3, LocType arg4, NpcEntity arg5, PlayerEntity arg6) {
-		PositionedSound var7 = new PositionedSound();
-		var7.field11349 = arg0;
-		var7.field11358 = arg1 << 9;
-		var7.field11351 = arg2 << 9;
-		if (arg4 != null) {
-			var7.field11348 = arg4;
-			int var8 = arg4.width;
-			int var9 = arg4.length;
+	public static void method9739(int level, int x, int z, int arg3, LocType loc, NpcEntity npc, PlayerEntity player) {
+		PositionedSound sound = new PositionedSound();
+		sound.level = level;
+		sound.minX = x << 9;
+		sound.minZ = z << 9;
+		if (loc != null) {
+			sound.loc = loc;
+			int width = loc.width;
+			int length = loc.length;
 			if (arg3 == 1 || arg3 == 3) {
-				var8 = arg4.length;
-				var9 = arg4.width;
+				width = loc.length;
+				length = loc.width;
 			}
-			var7.field11352 = arg1 + var8 << 9;
-			var7.field11353 = arg2 + var9 << 9;
-			var7.field11370 = arg4.bgsound_sound;
-			var7.field11357 = arg4.bgsound_range << 9;
-			var7.field11359 = arg4.bgsound_volume;
-			var7.field11373 = arg4.bgsound_mindelay;
-			var7.field11374 = arg4.bgsound_maxdelay;
-			var7.field11375 = arg4.bgsound_random;
-			var7.field11369 = arg4.bgsound_maxrate;
-			var7.field11368 = arg4.bgsound_minrate;
-			var7.field11356 = arg4.bgsound_size << 9;
-			if (arg4.multiloc != null) {
-				var7.field11367 = true;
-				var7.method17660();
+			sound.maxX = x + width << 9;
+			sound.maxZ = z + length << 9;
+			sound.sound = loc.bgsound_sound;
+			sound.range = loc.bgsound_range << 9;
+			sound.volume = loc.bgsound_volume;
+			sound.mindelay = loc.bgsound_mindelay;
+			sound.maxdelay = loc.bgsound_maxdelay;
+			sound.random = loc.bgsound_random;
+			sound.maxrate = loc.bgsound_maxrate;
+			sound.minrate = loc.bgsound_minrate;
+			sound.size = loc.bgsound_size << 9;
+			if (loc.multiloc != null) {
+				sound.multisound = true;
+				sound.method17660();
 			}
-			if (var7.field11375 != null) {
-				var7.field11354 = var7.field11373 + (int) (Math.random() * (double) (var7.field11374 - var7.field11373));
+			if (sound.random != null) {
+				sound.delay = sound.mindelay + (int) (Math.random() * (double) (sound.maxdelay - sound.mindelay));
 			}
-			field11346.pushBack(var7);
-			Client.audioApi.preloadSounds(var7.field11370);
-			Client.audioApi.loadSounds(var7.field11375);
-		} else if (arg5 != null) {
-			var7.field11345 = arg5;
-			NPCType var10 = arg5.npcType;
-			if (var10.multinpc != null) {
-				var7.field11367 = true;
-				var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+			field11346.pushBack(sound);
+			Client.audioApi.preloadSounds(sound.sound);
+			Client.audioApi.loadSounds(sound.random);
+		} else if (npc != null) {
+			sound.npc = npc;
+			NPCType npcType = npc.npcType;
+			if (npcType.multinpc != null) {
+				sound.multisound = true;
+				npcType = npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			}
-			if (var10 != null) {
-				var7.field11352 = var10.size + arg1 << 9;
-				var7.field11353 = var10.size + arg2 << 9;
-				var7.field11370 = method647(arg5);
-				var7.field11357 = var10.bgsound_range << 9;
-				var7.field11359 = var10.bgsound_volume;
-				var7.field11369 = var10.bgsound_maxrate;
-				var7.field11368 = var10.bgsound_minrate;
-				var7.field11356 = var10.bgsound_size << 9;
-				Client.audioApi.preloadSounds(var10.bgsound);
-				Client.audioApi.preloadSounds(var10.bgsound_crawl);
-				Client.audioApi.preloadSounds(var10.bgsound_walk);
-				Client.audioApi.preloadSounds(var10.bgsound_run);
+			if (npcType != null) {
+				sound.maxX = npcType.size + x << 9;
+				sound.maxZ = npcType.size + z << 9;
+				sound.sound = getNpcSound(npc);
+				sound.range = npcType.bgsound_range << 9;
+				sound.volume = npcType.bgsound_volume;
+				sound.maxrate = npcType.bgsound_maxrate;
+				sound.minrate = npcType.bgsound_minrate;
+				sound.size = npcType.bgsound_size << 9;
+				Client.audioApi.preloadSounds(npcType.bgsound);
+				Client.audioApi.preloadSounds(npcType.bgsound_crawl);
+				Client.audioApi.preloadSounds(npcType.bgsound_walk);
+				Client.audioApi.preloadSounds(npcType.bgsound_run);
 			}
-			field11347.pushBack(var7);
-		} else if (arg6 != null) {
-			var7.field11361 = arg6;
-			var7.field11352 = arg1 + arg6.size() << 9;
-			var7.field11353 = arg2 + arg6.size() << 9;
-			var7.field11370 = method16456(arg6);
-			var7.field11357 = arg6.field12067 << 9;
-			var7.field11359 = arg6.field12068;
-			var7.field11369 = 256;
-			var7.field11368 = 256;
-			var7.field11356 = 0;
-			field11366.pushNode(var7, (long) arg6.localPlayerIndex);
-			Client.audioApi.preloadSounds(arg6.field12063);
-			Client.audioApi.preloadSounds(arg6.field12049);
-			Client.audioApi.preloadSounds(arg6.field12065);
-			Client.audioApi.preloadSounds(arg6.field12066);
+			field11347.pushBack(sound);
+		} else if (player != null) {
+			sound.player = player;
+			sound.maxX = x + player.size() << 9;
+			sound.maxZ = z + player.size() << 9;
+			sound.sound = getPlayerSound(player);
+			sound.range = player.bgsound_range << 9;
+			sound.volume = player.bgsound_volume;
+			sound.maxrate = 256;
+			sound.minrate = 256;
+			sound.size = 0;
+			field11366.pushNode(sound, (long) player.localPlayerIndex);
+			Client.audioApi.preloadSounds(player.bgsound_player);
+			Client.audioApi.preloadSounds(player.bgsound_crawl_player);
+			Client.audioApi.preloadSounds(player.bgsound_walk_player);
+			Client.audioApi.preloadSounds(player.bgsound_run_player);
 		}
 	}
 
 	@ObfuscatedName("oi.f(IIILvd;B)V")
 	public static void method6206(int arg0, int arg1, int arg2, LocType arg3) {
 		for (PositionedSound var4 = (PositionedSound) field11346.peekFront(); var4 != null; var4 = (PositionedSound) field11346.prev()) {
-			if (var4.field11349 == arg0 && arg1 << 9 == var4.field11358 && arg2 << 9 == var4.field11351 && var4.field11348.id == arg3.id) {
+			if (var4.level == arg0 && arg1 << 9 == var4.minX && arg2 << 9 == var4.minZ && var4.loc.id == arg3.id) {
 				if (var4.field11371 != null) {
 					var4.field11371.method7380(100);
 					Client.audioApi.play(var4.field11371);
@@ -303,7 +303,7 @@ public class PositionedSound extends Node {
 	@ObfuscatedName("xn.w(Laqc;I)V")
 	public static void method10111(NpcEntity arg0) {
 		for (PositionedSound var1 = (PositionedSound) field11347.peekFront(); var1 != null; var1 = (PositionedSound) field11347.prev()) {
-			if (var1.field11345 == arg0) {
+			if (var1.npc == arg0) {
 				if (var1.field11371 != null) {
 					var1.field11371.method7380(100);
 					Client.audioApi.play(var1.field11371);
@@ -340,40 +340,40 @@ public class PositionedSound extends Node {
 	}
 
 	@ObfuscatedName("t.z(Laqc;I)I")
-	public static int method647(NpcEntity arg0) {
-		NPCType var1 = arg0.npcType;
-		if (var1.multinpc != null) {
-			var1 = var1.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
-			if (var1 == null) {
+	public static int getNpcSound(NpcEntity npc) {
+		NPCType npcType = npc.npcType;
+		if (npcType.multinpc != null) {
+			npcType = npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+			if (npcType == null) {
 				return -1;
 			}
 		}
-		int var2 = var1.bgsound_walk;
-		BASType var3 = arg0.getBASType();
-		int var4 = arg0.field10432.method14348();
-		if (var4 == -1 || arg0.field10432.field11877) {
-			var2 = var1.bgsound;
+		int sound = npcType.bgsound_walk;
+		BASType var3 = npc.getBASType();
+		int var4 = npc.field10432.method14348();
+		if (var4 == -1 || npc.field10432.field11877) {
+			sound = npcType.bgsound;
 		} else if (var3.field7361 == var4 || var3.field7329 == var4 || var3.field7331 == var4 || var3.field7330 == var4) {
-			var2 = var1.bgsound_run;
+			sound = npcType.bgsound_run;
 		} else if (var3.field7332 == var4 || var3.field7333 == var4 || var3.field7319 == var4 || var3.field7328 == var4) {
-			var2 = var1.bgsound_crawl;
+			sound = npcType.bgsound_crawl;
 		}
-		return var2;
+		return sound;
 	}
 
 	@ObfuscatedName("ags.p(Laqk;I)I")
-	public static int method16456(PlayerEntity arg0) {
-		int var1 = arg0.field12065;
-		BASType var2 = arg0.getBASType();
-		int var3 = arg0.field10432.method14348();
-		if (var3 == -1 || arg0.field10432.field11877) {
-			var1 = arg0.field12063;
-		} else if (var2.field7361 == var3 || var2.field7329 == var3 || var2.field7331 == var3 || var2.field7330 == var3) {
-			var1 = arg0.field12066;
-		} else if (var2.field7332 == var3 || var2.field7333 == var3 || var2.field7319 == var3 || var2.field7328 == var3) {
-			var1 = arg0.field12049;
+	public static int getPlayerSound(PlayerEntity player) {
+		int sound = player.bgsound_walk_player;
+		BASType bas = player.getBASType();
+		int var3 = player.field10432.method14348();
+		if (var3 == -1 || player.field10432.field11877) {
+			sound = player.bgsound_player;
+		} else if (bas.field7361 == var3 || bas.field7329 == var3 || bas.field7331 == var3 || bas.field7330 == var3) {
+			sound = player.bgsound_run_player;
+		} else if (bas.field7332 == var3 || bas.field7333 == var3 || bas.field7319 == var3 || bas.field7328 == var3) {
+			sound = player.bgsound_crawl_player;
 		}
-		return var1;
+		return sound;
 	}
 
 	@ObfuscatedName("agz.d(IIIII)V")
@@ -383,9 +383,9 @@ public class PositionedSound extends Node {
 		}
 		for (PositionedSound var5 = (PositionedSound) field11347.peekFront(); var5 != null; var5 = (PositionedSound) field11347.prev()) {
 			byte var6 = 1;
-			BASType var7 = var5.field11345.getBASType();
-			int var8 = var5.field11345.field10432.method14348();
-			if (var8 == -1 || var5.field11345.field10432.field11877) {
+			BASType var7 = var5.npc.getBASType();
+			int var8 = var5.npc.field10432.method14348();
+			if (var8 == -1 || var5.npc.field10432.field11877) {
 				var6 = 0;
 			} else if (var7.field7361 == var8 || var7.field7329 == var8 || var7.field7331 == var8 || var7.field7330 == var8) {
 				var6 = 2;
@@ -393,24 +393,24 @@ public class PositionedSound extends Node {
 				var6 = 3;
 			}
 			if (var5.field11360 != var6) {
-				int var9 = method647(var5.field11345);
-				NPCType var10 = var5.field11345.npcType;
+				int var9 = getNpcSound(var5.npc);
+				NPCType var10 = var5.npc.npcType;
 				if (var10.multinpc != null) {
 					var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var10 == null || var9 == -1) {
-					var5.field11370 = -1;
+					var5.sound = -1;
 					var5.field11360 = var6;
-				} else if (var5.field11370 == var9) {
+				} else if (var5.sound == var9) {
 					var5.field11360 = var6;
-					var5.field11359 = var10.bgsound_volume;
+					var5.volume = var10.bgsound_volume;
 				} else {
 					boolean var11 = false;
 					if (var5.field11371 == null) {
 						var11 = true;
 					} else {
-						var5.field11359 -= 512;
-						if (var5.field11359 <= 0) {
+						var5.volume -= 512;
+						if (var5.volume <= 0) {
 							var5.field11371.method7380(100);
 							Client.audioApi.play(var5.field11371);
 							var5.field11371 = null;
@@ -418,25 +418,25 @@ public class PositionedSound extends Node {
 						}
 					}
 					if (var11) {
-						var5.field11359 = var10.bgsound_volume;
-						var5.field11370 = var9;
+						var5.volume = var10.bgsound_volume;
+						var5.sound = var9;
 						var5.field11360 = var6;
 					}
 				}
 			}
-			Vector3 var12 = var5.field11345.getTransform().trans;
-			var5.field11358 = (int) var12.x;
-			var5.field11352 = (int) var12.x + (var5.field11345.size() << 8);
-			var5.field11351 = (int) var12.z;
-			var5.field11353 = (int) var12.z + (var5.field11345.size() << 8);
-			var5.field11349 = var5.field11345.level;
+			Vector3 var12 = var5.npc.getTransform().trans;
+			var5.minX = (int) var12.x;
+			var5.maxX = (int) var12.x + (var5.npc.size() << 8);
+			var5.minZ = (int) var12.z;
+			var5.maxZ = (int) var12.z + (var5.npc.size() << 8);
+			var5.level = var5.npc.level;
 			method7896(var5, arg0, arg1, arg2, arg3);
 		}
 		for (PositionedSound var13 = (PositionedSound) field11366.peekFront(); var13 != null; var13 = (PositionedSound) field11366.prev()) {
 			byte var14 = 1;
-			BASType var15 = var13.field11361.getBASType();
-			int var16 = var13.field11361.field10432.method14348();
-			if (var16 == -1 || var13.field11361.field10432.field11877) {
+			BASType var15 = var13.player.getBASType();
+			int var16 = var13.player.field10432.method14348();
+			if (var16 == -1 || var13.player.field10432.field11877) {
 				var14 = 0;
 			} else if (var15.field7361 == var16 || var15.field7329 == var16 || var15.field7331 == var16 || var15.field7330 == var16) {
 				var14 = 2;
@@ -444,17 +444,17 @@ public class PositionedSound extends Node {
 				var14 = 3;
 			}
 			if (var13.field11360 != var14) {
-				int var17 = method16456(var13.field11361);
-				if (var13.field11370 == var17) {
-					var13.field11359 = var13.field11361.field12068;
+				int var17 = getPlayerSound(var13.player);
+				if (var13.sound == var17) {
+					var13.volume = var13.player.bgsound_volume;
 					var13.field11360 = var14;
 				} else {
 					boolean var18 = false;
 					if (var13.field11371 == null) {
 						var18 = true;
 					} else {
-						var13.field11359 -= 512;
-						if (var13.field11359 <= 0) {
+						var13.volume -= 512;
+						if (var13.volume <= 0) {
 							var13.field11371.method7380(100);
 							Client.audioApi.play(var13.field11371);
 							var13.field11371 = null;
@@ -462,45 +462,45 @@ public class PositionedSound extends Node {
 						}
 					}
 					if (var18) {
-						var13.field11359 = var13.field11361.field12068;
-						var13.field11370 = var17;
+						var13.volume = var13.player.bgsound_volume;
+						var13.sound = var17;
 						var13.field11360 = var14;
 					}
 				}
 			}
-			Vector3 var19 = var13.field11361.getTransform().trans;
-			var13.field11358 = (int) var19.x;
-			var13.field11352 = (int) var19.x + (var13.field11361.size() << 8);
-			var13.field11351 = (int) var19.z;
-			var13.field11353 = (int) var19.z + (var13.field11361.size() << 8);
-			var13.field11349 = var13.field11361.level;
+			Vector3 var19 = var13.player.getTransform().trans;
+			var13.minX = (int) var19.x;
+			var13.maxX = (int) var19.x + (var13.player.size() << 8);
+			var13.minZ = (int) var19.z;
+			var13.maxZ = (int) var19.z + (var13.player.size() << 8);
+			var13.level = var13.player.level;
 			method7896(var13, arg0, arg1, arg2, arg3);
 		}
 	}
 
 	@ObfuscatedName("rd.c(Lakc;IIIII)V")
 	public static void method7896(PositionedSound arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (arg0.field11370 == -1 && arg0.field11375 == null) {
+		if (arg0.sound == -1 && arg0.random == null) {
 			return;
 		}
-		int var5 = arg0.field11359;
-		if (arg0.field11357 != 0 && Client.preferences.backgroundSoundVolume.getValue() != 0 && arg0.field11349 == arg1) {
+		int var5 = arg0.volume;
+		if (arg0.range != 0 && Client.preferences.backgroundSoundVolume.getValue() != 0 && arg0.level == arg1) {
 			if (arg0.field11371 != null && (arg0.field11371.method7385() == SoundVolume.field4953 || arg0.field11371.method7385() == SoundVolume.field4947)) {
 				Client.audioApi.play(arg0.field11371);
 				arg0.field11371 = null;
 			}
 			if (arg0.field11371 != null) {
-				int var10 = (int) ((float) (arg0.field11352 - arg0.field11358) * 0.5F + (float) arg0.field11358);
-				int var11 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
+				int var10 = (int) ((float) (arg0.maxX - arg0.minX) * 0.5F + (float) arg0.minX);
+				int var11 = (int) ((float) (arg0.maxZ - arg0.minZ) * 0.5F + (float) arg0.minZ);
 				arg0.field11350.x = var10;
 				arg0.field11350.z = var11;
-			} else if (arg0.field11370 >= 0) {
+			} else if (arg0.sound >= 0) {
 				short var6 = 256;
-				int var7 = (int) ((float) (arg0.field11352 - arg0.field11358) * 0.5F + (float) arg0.field11358);
-				int var8 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
+				int var7 = (int) ((float) (arg0.maxX - arg0.minX) * 0.5F + (float) arg0.minX);
+				int var8 = (int) ((float) (arg0.maxZ - arg0.minZ) * 0.5F + (float) arg0.minZ);
 				arg0.field11350.x = var7;
 				arg0.field11350.z = var8;
-				arg0.field11371 = Client.audioApi.createSound(SoundType.field1821, arg0, arg0.field11370, -1, 0, SubBussType.LOCATION_GENERIC_SUB.getId(), SoundShape.field1838, (float) arg0.field11356, (float) arg0.field11357, arg0.field11350, 0, var6, false);
+				arg0.field11371 = Client.audioApi.createSound(SoundType.field1821, arg0, arg0.sound, -1, 0, SubBussType.LOCATION_GENERIC_SUB.getId(), SoundShape.field1838, (float) arg0.size, (float) arg0.range, arg0.field11350, 0, var6, false);
 				if (arg0.field11371 != null) {
 					float var9 = (float) var5 / 255.0F;
 					arg0.field11371.method7403(var9, 150);
@@ -508,26 +508,26 @@ public class PositionedSound extends Node {
 				}
 			}
 			if (arg0.field11372 != null) {
-				int var16 = (int) ((float) (arg0.field11352 - arg0.field11358) * 0.5F + (float) arg0.field11358);
-				int var17 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
+				int var16 = (int) ((float) (arg0.maxX - arg0.minX) * 0.5F + (float) arg0.minX);
+				int var17 = (int) ((float) (arg0.maxZ - arg0.minZ) * 0.5F + (float) arg0.minZ);
 				arg0.field11355.x = var16;
 				arg0.field11355.z = var17;
 				if (arg0.field11372.method7385() == SoundVolume.field4953 || arg0.field11372.method7385() == SoundVolume.field4947) {
 					Client.audioApi.play(arg0.field11372);
 					arg0.field11372 = null;
 				}
-			} else if (arg0.field11375 != null && (arg0.field11354 -= arg4) <= 0) {
-				int var12 = arg0.field11369 == 256 && arg0.field11368 == 256 ? 256 : (int) (Math.random() * (double) (arg0.field11369 - arg0.field11368)) + arg0.field11368;
-				int var13 = (int) (Math.random() * (double) arg0.field11375.length);
-				int var14 = (int) ((float) (arg0.field11352 - arg0.field11358) * 0.5F + (float) arg0.field11358);
-				int var15 = (int) ((float) (arg0.field11353 - arg0.field11351) * 0.5F + (float) arg0.field11351);
+			} else if (arg0.random != null && (arg0.delay -= arg4) <= 0) {
+				int var12 = arg0.maxrate == 256 && arg0.minrate == 256 ? 256 : (int) (Math.random() * (double) (arg0.maxrate - arg0.minrate)) + arg0.minrate;
+				int var13 = (int) (Math.random() * (double) arg0.random.length);
+				int var14 = (int) ((float) (arg0.maxX - arg0.minX) * 0.5F + (float) arg0.minX);
+				int var15 = (int) ((float) (arg0.maxZ - arg0.minZ) * 0.5F + (float) arg0.minZ);
 				arg0.field11355.x = var14;
 				arg0.field11355.z = var15;
-				arg0.field11372 = Client.audioApi.createSound(SoundType.field1822, arg0, arg0.field11375[var13], 0, var5, SubBussType.LOCATION_RANDOM_SUB.getId(), SoundShape.field1838, (float) arg0.field11356, (float) (arg0.field11357 + arg0.field11356), arg0.field11355, 0, var12, false);
+				arg0.field11372 = Client.audioApi.createSound(SoundType.field1822, arg0, arg0.random[var13], 0, var5, SubBussType.LOCATION_RANDOM_SUB.getId(), SoundShape.field1838, (float) arg0.size, (float) (arg0.range + arg0.size), arg0.field11355, 0, var12, false);
 				if (arg0.field11372 != null) {
 					arg0.field11372.method7441();
 				}
-				arg0.field11354 = arg0.field11373 + (int) (Math.random() * (double) (arg0.field11374 - arg0.field11373));
+				arg0.delay = arg0.mindelay + (int) (Math.random() * (double) (arg0.maxdelay - arg0.mindelay));
 			}
 		} else if (arg0.field11371 != null) {
 			arg0.field11371.method7380(100);

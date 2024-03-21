@@ -269,7 +269,7 @@ public class ReceivePlayerPositions {
 				var6.field522 = player.targetId;
 				var6.field525 = player.field12070;
 				var6.field526 = player.field12048;
-				if (player.field12067 > 0) {
+				if (player.bgsound_range > 0) {
 					PositionedSound.method5142(player);
 				}
 				Client.players[highResIndex] = null;
@@ -722,7 +722,7 @@ public class ReceivePlayerPositions {
 		if ((mask & 0x200) != 0) { // forced chat
 			String message = buf.gjstr();
 			if (Client.localPlayerEntity == player) {
-				ChatHistory.addMessage(2, 0, player.method19115(true), player.method19116(false), player.field12057, message, null);
+				ChatHistory.addMessage(2, 0, player.method19115(true), player.method19116(false), player.name, message, null);
 			}
 			player.addMessage(message, 0, 0);
 		}
@@ -785,7 +785,7 @@ public class ReceivePlayerPositions {
 			String message = buf.gjstr();
 			int var76 = buf.g1();
 			if ((var76 & 0x1) != 0) {
-				ChatHistory.addMessage(2, var76, player.method19115(true), player.method19116(false), player.field12057, message, null);
+				ChatHistory.addMessage(2, var76, player.method19115(true), player.method19116(false), player.name, message, null);
 			}
 			player.addMessage(message, 0, 0);
 		}

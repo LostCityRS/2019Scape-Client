@@ -608,7 +608,7 @@ public class Minimap {
 				int var32 = field718 * 4 + 2 - var8 / 128 + (Client.localPlayerEntity.size() - 1) * 2;
 				method4142(arg1, var5, arg2 - DefaultSprites.field11888, arg3 - DefaultSprites.field10232, var31, var32, DefaultSprites.field9149[field730 ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
 			}
-			if (!Client.localPlayerEntity.field12071.method10195()) {
+			if (!Client.localPlayerEntity.visibility.isNotVisible()) {
 				arg0.method2301(arg1.field2196 / 2 + arg2 - 1, arg1.field2197 / 2 + arg3 - 1, 3, 3, -1);
 			}
 		}
@@ -647,21 +647,21 @@ public class Minimap {
 		int[] var7 = ReceivePlayerPositions.highResolutionsIndices;
 		for (int var8 = 0; var8 < var6; var8++) {
 			PlayerEntity var9 = Client.players[var7[var8]];
-			if (var9 != null && var9.method19119() && !var9.field12071.method10195() && Client.localPlayerEntity != var9 && Client.localPlayerEntity.level == var9.level) {
+			if (var9 != null && var9.method19119() && !var9.visibility.isNotVisible() && Client.localPlayerEntity != var9 && Client.localPlayerEntity.level == var9.level) {
 				Vector3 var10 = var9.getTransform().trans;
 				int var11 = (int) var10.x / 128 - arg0 / 128;
 				int var12 = (int) var10.z / 128 - arg1 / 128;
 				boolean var13 = false;
 				for (int var14 = 0; var14 < Client.friendsCount; var14++) {
 					Friend var15 = Client.friends[var14];
-					if (var9.field12062.equals(var15.field606) && var15.worldId != 0) {
+					if (var9.nameUnfiltered.equals(var15.field606) && var15.worldId != 0) {
 						var13 = true;
 						break;
 					}
 				}
 				boolean var16 = false;
 				for (int var17 = 0; var17 < Client.clanChatCount; var17++) {
-					if (var9.field12062.equals(Client.clanChatUsers[var17].nameUnfiltered)) {
+					if (var9.nameUnfiltered.equals(Client.clanChatUsers[var17].nameUnfiltered)) {
 						var16 = true;
 						break;
 					}

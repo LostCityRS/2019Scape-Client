@@ -1443,7 +1443,7 @@ public class World {
 						Client.field11036[++Client.field11011 - 1] = var7;
 						npc.field10440 = Client.loopCycle;
 						npc.method19156(var14);
-						npc.method16502(npc.npcType.size);
+						npc.setSize(npc.npcType.size);
 						npc.field10444 = npc.npcType.turnspeed << 3;
 						npc.method16491(npc.npcType.respawndir.method13895().getId() << 11 & 0x3FFF, true);
 						npc.method19159(var9, var12, var13, true, npc.size());

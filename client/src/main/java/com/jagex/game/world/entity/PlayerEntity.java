@@ -32,19 +32,19 @@ import rs2.client.scene.entities.PathingEntity;
 public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.cn")
-	public String field12057;
+	public String name;
 
 	@ObfuscatedName("aqk.cv")
-	public String field12062;
+	public String nameUnfiltered;
 
 	@ObfuscatedName("aqk.cp")
-	public int field12050;
+	public int titleId;
 
 	@ObfuscatedName("aqk.ca")
-	public String field12051;
+	public String title;
 
 	@ObfuscatedName("aqk.cx")
-	public byte index = 0;
+	public byte gender = 0;
 
 	@ObfuscatedName("aqk.cw")
 	public PlayerModel model;
@@ -77,22 +77,22 @@ public class PlayerEntity extends PathingEntity {
 	public int field12060 = 0;
 
 	@ObfuscatedName("aqk.cy")
-	public int field12063 = -1;
+	public int bgsound_player = -1;
 
 	@ObfuscatedName("aqk.cc")
-	public int field12049 = -1;
+	public int bgsound_crawl_player = -1;
 
 	@ObfuscatedName("aqk.cz")
-	public int field12065 = -1;
+	public int bgsound_walk_player = -1;
 
 	@ObfuscatedName("aqk.ck")
-	public int field12066 = -1;
+	public int bgsound_run_player = -1;
 
 	@ObfuscatedName("aqk.cj")
-	public int field12067 = 0;
+	public int bgsound_range = 0;
 
 	@ObfuscatedName("aqk.cd")
-	public int field12068 = 255;
+	public int bgsound_volume = 255;
 
 	@ObfuscatedName("aqk.dd")
 	public int bas;
@@ -101,7 +101,7 @@ public class PlayerEntity extends PathingEntity {
 	public CommunityPartnerType field12070 = CommunityPartnerType.field1950;
 
 	@ObfuscatedName("aqk.da")
-	public PlayerGender field12071 = PlayerGender.field7918;
+	public PlayerVisibility visibility = PlayerVisibility.VISIBLE;
 
 	@ObfuscatedName("aqk.dt")
 	public boolean field12048 = false;
@@ -117,8 +117,8 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.hq(Lalw;BI)V")
-	public void method19121(Packet arg0, byte arg1) {
-		this.index = arg1;
+	public void setIdentityKit(Packet buf, byte gender) {
+		this.gender = gender;
 		int var3 = -1;
 		this.field12060 = 0;
 		int[] var4 = new int[Client.wearposDefaults.field7766.length];
@@ -126,15 +126,15 @@ public class PlayerEntity extends PathingEntity {
 		ObjType[] var6 = new ObjType[Client.wearposDefaults.field7766.length];
 		for (int var7 = 0; var7 < Client.wearposDefaults.field7766.length; var7++) {
 			if (Client.wearposDefaults.field7766[var7] != 1) {
-				int var8 = arg0.g1();
+				int var8 = buf.g1();
 				if (var8 == 0) {
 					var4[var7] = 0;
 				} else {
-					int var9 = arg0.g1();
+					int var9 = buf.g1();
 					int var10 = (var8 << 8) + var9;
 					if (var7 == 0 && var10 == 65535) {
-						var3 = arg0.gSmart2or4null();
-						this.field12060 = arg0.g1();
+						var3 = buf.gSmart2or4null();
+						this.field12060 = buf.g1();
 						break;
 					}
 					if (var10 >= 2048) {
@@ -152,12 +152,12 @@ public class PlayerEntity extends PathingEntity {
 			}
 		}
 		if (var3 == -1) {
-			int var13 = arg0.g2();
+			int var13 = buf.g2();
 			int var14 = 0;
 			for (int var15 = 0; var15 < Client.wearposDefaults.field7766.length; var15++) {
 				if (Client.wearposDefaults.field7766[var15] == 0) {
 					if ((var13 & 0x1 << var14) != 0) {
-						var5[var15] = ObjTypeCustomisation.method1061(var6[var15], arg0);
+						var5[var15] = ObjTypeCustomisation.method1061(var6[var15], buf);
 					}
 					var14++;
 				}
@@ -165,7 +165,7 @@ public class PlayerEntity extends PathingEntity {
 		}
 		int[] var16 = new int[10];
 		for (int var17 = 0; var17 < 10; var17++) {
-			int var18 = arg0.g1();
+			int var18 = buf.g1();
 			if (PlayerModel.field1434.length < 1 || var18 < 0 || var18 >= PlayerModel.field1434[var17][0].length) {
 				var18 = 0;
 			}
@@ -173,19 +173,19 @@ public class PlayerEntity extends PathingEntity {
 		}
 		int[] var19 = new int[10];
 		for (int var20 = 0; var20 < 10; var20++) {
-			int var21 = arg0.g1();
+			int var21 = buf.g1();
 			if (PlayerModel.field9259.length < 1 || var21 < 0 || var21 >= PlayerModel.field9259[var20][0].length) {
 				var21 = 0;
 			}
 			var19[var20] = var21;
 		}
-		this.bas = arg0.g2();
+		this.bas = buf.g2();
 		if (this.model == null) {
 			this.model = new PlayerModel();
 		}
 		int var22 = this.model.field7892;
 		int[] var23 = this.model.field7894;
-		this.model.method10113(this.getBASId(), var4, var5, var16, var19, this.index == 1, var3);
+		this.model.method10113(this.getBASId(), var4, var5, var16, var19, this.gender == 1, var3);
 		if (var3 != var22) {
 			Vector3 var24 = Vector3.create(this.getTransform().trans);
 			var24.x = (this.routeWaypointX[0] << 9) + (this.size() << 8);
@@ -215,40 +215,40 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.hf(Lalw;I)V")
-	public final void getAppearance(Packet arg0) {
-		arg0.pos = 0;
-		int var2 = arg0.g1();
-		byte var3 = (byte) (var2 & 0x1);
-		boolean var4 = (var2 & 0x4) != 0;
-		int var5 = super.size();
-		this.method16502((var2 >> 3 & 0x7) + 1);
-		boolean var6 = (var2 & 0x40) != 0;
+	public final void getAppearance(Packet buf) {
+		buf.pos = 0;
+		int info = buf.g1();
+		byte gender = (byte) (info & 0x1);
+		boolean var4 = (info & 0x4) != 0;
+		int size = super.size();
+		this.setSize((info >> 3 & 0x7) + 1);
+		boolean showTitle = (info & 0x40) != 0;
 		Vector3 var7 = Vector3.create(this.getTransform().trans);
-		var7.x += this.size() - var5 << 8;
-		var7.z += this.size() - var5 << 8;
+		var7.x += this.size() - size << 8;
+		var7.z += this.size() - size << 8;
 		this.method10531(var7);
 		var7.release();
-		if (var6) {
-			this.field12050 = arg0.gSmart1or2();
-			int var8 = var3 == 0 ? Client.titleDefaults.field7671 : Client.titleDefaults.field7670;
-			this.field12051 = ((EnumType) Client.enumTypeList.list(var8)).getValueString(this.field12050);
+		if (showTitle) {
+			this.titleId = buf.gSmart1or2();
+			int titleEnumId = gender == 0 ? Client.titleDefaults.field7671 : Client.titleDefaults.field7670;
+			this.title = ((EnumType) Client.enumTypeList.list(titleEnumId)).getValueString(this.titleId);
 		} else {
-			this.field12050 = -1;
-			this.field12051 = null;
+			this.titleId = -1;
+			this.title = null;
 		}
-		this.field12071 = (PlayerGender) SerializableEnums.decode(PlayerGender.method10193(), arg0.g1b());
+		this.visibility = (PlayerVisibility) SerializableEnums.decode(PlayerVisibility.values(), buf.g1b());
 		if (Client.modewhere == ModeWhere.LIVE && Client.staffModLevel >= 2) {
-			this.field12071 = PlayerGender.field7918;
+			this.visibility = PlayerVisibility.VISIBLE;
 		}
-		this.method19121(arg0, var3);
-		this.field12057 = arg0.gjstr();
-		this.field12062 = this.field12057;
+		this.setIdentityKit(buf, gender);
+		this.name = buf.gjstr();
+		this.nameUnfiltered = this.name;
 		if (Client.localPlayerEntity == this) {
-			JagException.field12492 = this.field12057;
+			JagException.user = this.name;
 		}
-		this.combatLevel = arg0.g1();
+		this.combatLevel = buf.g1();
 		if (var4) {
-			this.field12059 = arg0.g2();
+			this.field12059 = buf.g2();
 			if (this.field12059 == 65535) {
 				this.field12059 = -1;
 			}
@@ -256,29 +256,29 @@ public class PlayerEntity extends PathingEntity {
 			this.field12058 = -1;
 		} else {
 			this.field12059 = 0;
-			this.field12072 = arg0.g1();
-			this.field12058 = arg0.g1();
+			this.field12072 = buf.g1();
+			this.field12058 = buf.g1();
 			if (this.field12058 == 255) {
 				this.field12058 = -1;
 			}
 		}
-		int var9 = this.field12067;
-		this.field12067 = arg0.g1();
-		if (this.field12067 == 0) {
+		int bgsound_range = this.bgsound_range;
+		this.bgsound_range = buf.g1();
+		if (this.bgsound_range == 0) {
 			PositionedSound.method5142(this);
 			return;
 		}
-		int var10 = this.field12063;
-		int var11 = this.field12049;
-		int var12 = this.field12065;
-		int var13 = this.field12066;
-		int var14 = this.field12068;
-		this.field12063 = arg0.g2();
-		this.field12049 = arg0.g2();
-		this.field12065 = arg0.g2();
-		this.field12066 = arg0.g2();
-		this.field12068 = arg0.g1();
-		if (this.field12067 != var9 || this.field12063 != var10 || this.field12049 != var11 || this.field12065 != var12 || this.field12066 != var13 || this.field12068 != var14) {
+		int bgsound = this.bgsound_player;
+		int bgsound_crawl = this.bgsound_crawl_player;
+		int bgsound_walk = this.bgsound_walk_player;
+		int bgsound_run = this.bgsound_run_player;
+		int bgsound_volume = this.bgsound_volume;
+		this.bgsound_player = buf.g2();
+		this.bgsound_crawl_player = buf.g2();
+		this.bgsound_walk_player = buf.g2();
+		this.bgsound_run_player = buf.g2();
+		this.bgsound_volume = buf.g1();
+		if (this.bgsound_range != bgsound_range || this.bgsound_player != bgsound || this.bgsound_crawl_player != bgsound_crawl || this.bgsound_walk_player != bgsound_walk || this.bgsound_run_player != bgsound_run || this.bgsound_volume != bgsound_volume) {
 			PositionedSound.method10310(this);
 		}
 	}
@@ -525,13 +525,13 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.hy(ZB)Ljava/lang/String;")
 	public String method19115(boolean arg0) {
-		String var2 = arg0 ? this.field12057 : this.field12062;
-		return this.field12051 == null ? var2 : this.field12051.replaceAll(TextUtil.NAME, var2);
+		String var2 = arg0 ? this.name : this.nameUnfiltered;
+		return this.title == null ? var2 : this.title.replaceAll(TextUtil.NAME, var2);
 	}
 
 	@ObfuscatedName("aqk.he(ZI)Ljava/lang/String;")
 	public String method19116(boolean arg0) {
-		return arg0 ? this.field12057 : this.field12062;
+		return arg0 ? this.name : this.nameUnfiltered;
 	}
 
 	@ObfuscatedName("aqk.hn(IIBB)V")
@@ -660,7 +660,7 @@ public class PlayerEntity extends PathingEntity {
 			if (this.field10409.text == null) {
 				return null;
 			}
-			if (Client.publicChatFilter == 0 || Client.publicChatFilter == 3 || Client.publicChatFilter == 1 && Client.friendTest(this.field12062)) {
+			if (Client.publicChatFilter == 0 || Client.publicChatFilter == 3 || Client.publicChatFilter == 1 && Client.friendTest(this.nameUnfiltered)) {
 				return this.field10409;
 			}
 		}
