@@ -1017,12 +1017,12 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.am(Ljava/lang/String;Ljava/lang/String;B)V")
-	public void method8071(String arg0, String arg1) {
+	public void error(String arg0, String arg1) {
 		if (this.alreadyerrored) {
 			return;
 		}
 		this.alreadyerrored = true;
-		System.out.println("error_game_" + arg0);
+		System.out.println("error_game_" + arg0 + "?" + arg1);
 		try {
 			BrowserControl.call(field11885, "loggedout");
 		} catch (Throwable var6) {
