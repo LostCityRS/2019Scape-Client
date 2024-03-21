@@ -228,7 +228,7 @@ public class ObjType implements ConfigType {
 	public IterableMap params;
 
 	@ObfuscatedName("abv.br")
-	public int[] field8691;
+	public int[] quests;
 
 	@ObfuscatedName("abv.bg")
 	public int picksizeshift = 0;
@@ -283,7 +283,7 @@ public class ObjType implements ConfigType {
 		this.op = this.factory.defaultops;
 		this.iop = this.factory.defaultiops;
 		this.stockmarket = false;
-		this.field8691 = null;
+		this.quests = null;
 		this.tradeable = false;
 		if (this.params == null) {
 			return;
@@ -477,9 +477,9 @@ public class ObjType implements ConfigType {
 			buf.g2();
 		} else if (code == 132) {
 			int length = buf.g1();
-			this.field8691 = new int[length];
+			this.quests = new int[length];
 			for (int index = 0; index < length; index++) {
-				this.field8691[index] = buf.g2();
+				this.quests[index] = buf.g2();
 			}
 		} else if (code == 134) {
 			this.picksizeshift = buf.g1();
@@ -1168,7 +1168,7 @@ public class ObjType implements ConfigType {
 			return arg1;
 		} else {
 			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
-			return var3 == null ? arg1 : var3.intValue;
+			return var3 == null ? arg1 : var3.value;
 		}
 	}
 
@@ -1178,17 +1178,17 @@ public class ObjType implements ConfigType {
 			return arg1;
 		} else {
 			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
-			return var3 == null ? arg1 : (String) var3.field11436;
+			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}
 
 	@ObfuscatedName("abv.ae(II)I")
-	public int getCursor(int arg0) {
-		return this.cursor == null ? -1 : this.cursor[arg0];
+	public int getCursor(int op) {
+		return this.cursor == null ? -1 : this.cursor[op];
 	}
 
 	@ObfuscatedName("abv.ag(II)I")
-	public int getICursor(int arg0) {
-		return this.icursor == null ? -1 : this.icursor[arg0];
+	public int getICursor(int op) {
+		return this.icursor == null ? -1 : this.icursor[op];
 	}
 }

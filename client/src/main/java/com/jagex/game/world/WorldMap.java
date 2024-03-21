@@ -150,28 +150,28 @@ public class WorldMap {
 	public static int[][] field6800 = new int[][] { { 2, 2, 0, 0, 0, 0 }, { 2, 2, 2, 0, 0, 0 }, { 1, 2, 2, 2, 0, 0 }, { 1, 1, 1, 2, 2, 0 }, { 1, 1, 1, 2, 2, 2 }, { 1, 1, 1, 1, 2, 2 } };
 
 	@ObfuscatedName("tf.au")
-	public static final int field6822 = CompassPoint.field8311.getId();
+	public static final int NORTH = CompassPoint.NORTH.getId();
 
 	@ObfuscatedName("tf.ar")
-	public static final int field6823 = CompassPoint.field8305.getId();
+	public static final int NORTHWEST = CompassPoint.NORTHWEST.getId();
 
 	@ObfuscatedName("tf.ap")
-	public static final int field6824 = CompassPoint.field8303.getId();
+	public static final int NORTHEAST = CompassPoint.NORTHEAST.getId();
 
 	@ObfuscatedName("tf.aq")
-	public static final int field6825 = CompassPoint.field8306.getId();
+	public static final int SOUTHWEST = CompassPoint.SOUTHWEST.getId();
 
 	@ObfuscatedName("tf.ax")
-	public static final int field6826 = CompassPoint.field8307.getId();
+	public static final int SOUTH = CompassPoint.SOUTH.getId();
 
 	@ObfuscatedName("tf.av")
-	public static final int field6827 = CompassPoint.field8308.getId();
+	public static final int WEST = CompassPoint.WEST.getId();
 
 	@ObfuscatedName("tf.ao")
-	public static final int field6843 = CompassPoint.field8309.getId();
+	public static final int EAST = CompassPoint.EAST.getId();
 
 	@ObfuscatedName("tf.aj")
-	public static final int field6829 = CompassPoint.field8310.getId();
+	public static final int SOUTHEAST = CompassPoint.SOUTHEAST.getId();
 
 	@ObfuscatedName("tf.ay")
 	public static java.util.HashMap[][][] field6830;
@@ -610,11 +610,11 @@ public class WorldMap {
 						if (var3 != null) {
 							for (int var4 = 0; var4 < var3.field11444.length; var4++) {
 								LocType var5 = (LocType) field6785.list(var3.field11444[var4]);
-								int var6 = var5.field7485;
-								if (var5.field7505 != null) {
-									LocType var7 = var5.method9477(field6791, field6790);
+								int var6 = var5.mapelement;
+								if (var5.multiloc != null) {
+									LocType var7 = var5.getVisible(field6791, field6790);
 									if (var7 != null) {
-										var6 = var7.field7485;
+										var6 = var7.mapelement;
 									}
 								}
 								if (var6 != -1) {
@@ -628,11 +628,11 @@ public class WorldMap {
 					} else {
 						Integer var9 = (Integer) var2;
 						LocType var10 = (LocType) field6785.list(var9);
-						int var11 = var10.field7485;
-						if (var10.field7505 != null) {
-							LocType var12 = var10.method9477(field6791, field6790);
+						int var11 = var10.mapelement;
+						if (var10.multiloc != null) {
+							LocType var12 = var10.getVisible(field6791, field6790);
 							if (var12 != null) {
-								var11 = var12.field7485;
+								var11 = var12.mapelement;
 							}
 						}
 						if (var11 != -1) {
@@ -661,11 +661,11 @@ public class WorldMap {
 							} while (var19.field6773 == null);
 							for (int var20 = 0; var20 < var19.field6773.length; var20++) {
 								LocType var21 = (LocType) field6785.list(var19.field6773[var20]);
-								int var22 = var21.field7485;
-								if (var21.field7505 != null) {
-									LocType var23 = var21.method9477(field6791, field6790);
+								int var22 = var21.mapelement;
+								if (var21.multiloc != null) {
+									LocType var23 = var21.getVisible(field6791, field6790);
 									if (var23 != null) {
-										var22 = var23.field7485;
+										var22 = var23.mapelement;
 									}
 								}
 								if (var22 != -1) {
@@ -1047,14 +1047,14 @@ public class WorldMap {
 						if (arg2 < 64) {
 							method8522(field6838, var65, var66, var69, var70, arg2);
 						} else {
-							field6855[field6822] = method8534(var64, var68 + 8);
-							field6855[field6823] = method8534(var64 + 8, var68 + 8);
-							field6855[field6824] = method8534(var64 + 8, var68);
-							field6855[field6825] = method8534(var64 + 8, var68 - 8);
-							field6855[field6826] = method8534(var64, var68 - 8);
-							field6855[field6827] = method8534(var64 - 8, var68 - 8);
-							field6855[field6843] = method8534(var64 - 8, var68);
-							field6855[field6829] = method8534(var64 - 8, var68 + 8);
+							field6855[NORTH] = method8534(var64, var68 + 8);
+							field6855[NORTHWEST] = method8534(var64 + 8, var68 + 8);
+							field6855[NORTHEAST] = method8534(var64 + 8, var68);
+							field6855[SOUTHWEST] = method8534(var64 + 8, var68 - 8);
+							field6855[SOUTH] = method8534(var64, var68 - 8);
+							field6855[WEST] = method8534(var64 - 8, var68 - 8);
+							field6855[EAST] = method8534(var64 - 8, var68);
+							field6855[SOUTHEAST] = method8534(var64 - 8, var68 + 8);
 							method8538(field6838, var65, var66, var69, var70, arg2);
 						}
 					}
@@ -1093,9 +1093,9 @@ public class WorldMap {
 			int var21 = arg11[var20] & 0x3F;
 			if (LocShape.WALL_STRAIGHT.id == var21 || LocShape.WALL_L.id == var21 || LocShape.WALL_SQUARE_CORNER.id == var21 || LocShape.WALL_DIAGONAL.id == var21) {
 				LocType var22 = (LocType) field6785.list(arg10[var20]);
-				if (var22.field7486 == -1) {
+				if (var22.mapsceneicon == -1) {
 					int var23 = -3355444;
-					if (var22.active2 == 1) {
+					if (var22.active == 1) {
 						var23 = -3407872;
 					}
 					int var24 = arg11[var20] >> 6 & 0x3;
@@ -1175,11 +1175,11 @@ public class WorldMap {
 		}
 		for (int var7 = 0; var7 < arg5.length; var7++) {
 			LocType var8 = (LocType) field6785.list(arg5[var7]);
-			int var9 = var8.field7486;
+			int var9 = var8.mapsceneicon;
 			if (var9 != -1) {
 				MSIType var10 = (MSIType) field6789.list(var9);
-				Sprite var11 = var10.method15057(arg0, var8.field7487 ? arg6[var7] >> 6 & 0x3 : 0, var8.field7504 ? var8.mirror : false);
-				int[] var12 = var10.method15058(arg0, var8.field7487 ? arg6[var7] >> 6 & 0x3 : 0, var8.field7504 ? var8.mirror : false);
+				Sprite var11 = var10.method15057(arg0, var8.mapsceneiconrotate ? arg6[var7] >> 6 & 0x3 : 0, var8.mapsceneiconmirror ? var8.mirror : false);
+				int[] var12 = var10.method15058(arg0, var8.mapsceneiconrotate ? arg6[var7] >> 6 & 0x3 : 0, var8.mapsceneiconmirror ? var8.mirror : false);
 				if (var11 != null) {
 					int var13 = var11.method1434();
 					int var14 = var11.method1436();
@@ -1338,65 +1338,65 @@ public class WorldMap {
 	public static void method8538(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		int var6 = field6792.field7691 >> 24 & 0xFF;
 		int var7 = 255 - var6;
-		if ((!field6855[field6822] || !field6855[field6824] && !field6855[field6843]) && (!field6855[field6826] || !field6855[field6824] && !field6855[field6843])) {
+		if ((!field6855[NORTH] || !field6855[NORTHEAST] && !field6855[EAST]) && (!field6855[SOUTH] || !field6855[NORTHEAST] && !field6855[EAST])) {
 			method8539(arg0, arg1, arg2, arg3, arg4, arg5, var6, var7, true, true, true, true);
-			if (field6855[field6823]) {
+			if (field6855[NORTHWEST]) {
 				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = field6792.field7692;
 				arg0[(arg5 - arg4) * arg5 + arg2] = field6792.field7692;
 				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = field6792.field7692;
 			}
-			if (field6855[field6825]) {
+			if (field6855[SOUTHWEST]) {
 				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = field6792.field7692;
 				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = field6792.field7692;
 				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = field6792.field7692;
 			}
-			if (field6855[field6827]) {
+			if (field6855[WEST]) {
 				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = field6792.field7692;
 				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = field6792.field7692;
 				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = field6792.field7692;
 			}
-			if (field6855[field6829]) {
+			if (field6855[SOUTHEAST]) {
 				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = field6792.field7692;
 				arg0[(arg5 - arg4) * arg5 + arg1] = field6792.field7692;
 				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = field6792.field7692;
 			}
 			return;
 		}
-		if (field6855[field6822] && field6855[field6824]) {
-			method8541(arg0, arg2 - field6792.field7694 + 1, arg4 - field6792.field7694 + 1, arg5, var6, var7, field6823);
+		if (field6855[NORTH] && field6855[NORTHEAST]) {
+			method8541(arg0, arg2 - field6792.field7694 + 1, arg4 - field6792.field7694 + 1, arg5, var6, var7, NORTHWEST);
 		} else {
 			method8539(arg0, arg2 - field6792.field7694 + 1, arg2, arg4 - field6792.field7694 + 1, arg4, arg5, var6, var7, true, true, false, false);
-			if (field6855[field6823]) {
+			if (field6855[NORTHWEST]) {
 				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = field6792.field7692;
 				arg0[(arg5 - arg4) * arg5 + arg2] = field6792.field7692;
 				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = field6792.field7692;
 			}
 		}
-		if (field6855[field6826] && field6855[field6824]) {
-			method8541(arg0, arg2 - field6792.field7694 + 1, arg3, arg5, var6, var7, field6825);
+		if (field6855[SOUTH] && field6855[NORTHEAST]) {
+			method8541(arg0, arg2 - field6792.field7694 + 1, arg3, arg5, var6, var7, SOUTHWEST);
 		} else {
 			method8539(arg0, arg2 - field6792.field7694 + 1, arg2, arg3, field6792.field7694 + arg3 - 1, arg5, var6, var7, false, true, true, false);
-			if (field6855[field6825]) {
+			if (field6855[SOUTHWEST]) {
 				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = field6792.field7692;
 				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = field6792.field7692;
 				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = field6792.field7692;
 			}
 		}
-		if (field6855[field6826] && field6855[field6843]) {
-			method8541(arg0, arg1, arg3, arg5, var6, var7, field6827);
+		if (field6855[SOUTH] && field6855[EAST]) {
+			method8541(arg0, arg1, arg3, arg5, var6, var7, WEST);
 		} else {
 			method8539(arg0, arg1, field6792.field7694 + arg1 - 1, arg3, field6792.field7694 + arg3 - 1, arg5, var6, var7, false, false, true, true);
-			if (field6855[field6827]) {
+			if (field6855[WEST]) {
 				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = field6792.field7692;
 				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = field6792.field7692;
 				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = field6792.field7692;
 			}
 		}
-		if (field6855[field6822] && field6855[field6843]) {
-			method8541(arg0, arg1, arg4 - field6792.field7694 + 1, arg5, var6, var7, field6829);
+		if (field6855[NORTH] && field6855[EAST]) {
+			method8541(arg0, arg1, arg4 - field6792.field7694 + 1, arg5, var6, var7, SOUTHEAST);
 		} else {
 			method8539(arg0, arg1, field6792.field7694 + arg1 - 1, arg4 - field6792.field7694 + 1, arg4, arg5, var6, var7, true, false, false, true);
-			if (field6855[field6829]) {
+			if (field6855[SOUTHEAST]) {
 				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = field6792.field7692;
 				arg0[(arg5 - arg4) * arg5 + arg1] = field6792.field7692;
 				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = field6792.field7692;
@@ -1430,14 +1430,14 @@ public class WorldMap {
 	@ObfuscatedName("tf.at([IIIIIIIIZZZZ)V")
 	public static void method8539(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, boolean arg8, boolean arg9, boolean arg10, boolean arg11) {
 		for (int var12 = arg1; var12 <= arg2; var12++) {
-			boolean var13 = arg9 ? field6855[field6824] && arg2 - var12 < field6792.field7693 : false;
-			boolean var14 = arg11 ? field6855[field6843] && var12 - arg1 < field6792.field7693 : false;
+			boolean var13 = arg9 ? field6855[NORTHEAST] && arg2 - var12 < field6792.field7693 : false;
+			boolean var14 = arg11 ? field6855[EAST] && var12 - arg1 < field6792.field7693 : false;
 			for (int var15 = arg3; var15 <= arg4; var15++) {
 				if (var13 || var14) {
 					arg0[(arg5 - var15 - 1) * arg5 + var12] = field6792.field7692;
 				} else {
-					boolean var16 = arg8 ? field6855[field6822] && arg4 - var15 < field6792.field7693 : false;
-					boolean var17 = arg10 ? field6855[field6826] && var15 - arg3 < field6792.field7693 : false;
+					boolean var16 = arg8 ? field6855[NORTH] && arg4 - var15 < field6792.field7693 : false;
+					boolean var17 = arg10 ? field6855[SOUTH] && var15 - arg3 < field6792.field7693 : false;
 					if (var16 || var17) {
 						arg0[(arg5 - var15 - 1) * arg5 + var12] = field6792.field7692;
 					} else {
@@ -1457,12 +1457,12 @@ public class WorldMap {
 	public static void method8541(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		for (int var7 = 0; var7 < field6792.field7694; var7++) {
 			int var8 = var7;
-			if (field6823 == arg6 || field6825 == arg6) {
+			if (NORTHWEST == arg6 || SOUTHWEST == arg6) {
 				var8 = field6792.field7694 - var7 - 1;
 			}
 			for (int var9 = 0; var9 < field6792.field7694; var9++) {
 				int var10 = var9;
-				if (field6825 == arg6 || field6827 == arg6) {
+				if (SOUTHWEST == arg6 || WEST == arg6) {
 					var10 = field6792.field7694 - var9 - 1;
 				}
 				int var11 = field6800[var8][var10];

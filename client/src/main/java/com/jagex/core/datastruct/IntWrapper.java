@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public class IntWrapper extends Node {
 
 	@ObfuscatedName("akd.k")
-	public int intValue;
+	public int value;
 
-	public IntWrapper(int intValue) {
-		this.intValue = intValue;
+	public IntWrapper(int value) {
+		this.value = value;
 	}
 }

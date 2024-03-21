@@ -7,69 +7,69 @@ import deob.ObfuscatedName;
 public class CompassPoint implements SerializableEnum {
 
 	@ObfuscatedName("zi.e")
-	public static final CompassPoint field8311 = new CompassPoint(7, 0);
+	public static final CompassPoint NORTH = new CompassPoint(7, 0);
 
 	@ObfuscatedName("zi.n")
-	public static final CompassPoint field8305 = new CompassPoint(6, 1);
+	public static final CompassPoint NORTHWEST = new CompassPoint(6, 1);
 
 	@ObfuscatedName("zi.m")
-	public static final CompassPoint field8303 = new CompassPoint(3, 2);
+	public static final CompassPoint NORTHEAST = new CompassPoint(3, 2);
 
 	@ObfuscatedName("zi.k")
-	public static final CompassPoint field8306 = new CompassPoint(5, 3);
+	public static final CompassPoint SOUTHWEST = new CompassPoint(5, 3);
 
 	@ObfuscatedName("zi.f")
-	public static final CompassPoint field8307 = new CompassPoint(0, 4);
+	public static final CompassPoint SOUTH = new CompassPoint(0, 4);
 
 	@ObfuscatedName("zi.w")
-	public static final CompassPoint field8308 = new CompassPoint(4, 5);
+	public static final CompassPoint WEST = new CompassPoint(4, 5);
 
 	@ObfuscatedName("zi.l")
-	public static final CompassPoint field8309 = new CompassPoint(1, 6);
+	public static final CompassPoint EAST = new CompassPoint(1, 6);
 
 	@ObfuscatedName("zi.u")
-	public static final CompassPoint field8310 = new CompassPoint(2, 7);
+	public static final CompassPoint SOUTHEAST = new CompassPoint(2, 7);
 
 	@ObfuscatedName("zi.z")
 	public final int index;
 
 	@ObfuscatedName("zi.p")
-	public final int id;
+	public final int serialID;
 
 	@ObfuscatedName("vj.e(I)[Lzi;")
 	public static CompassPoint[] values() {
-		return new CompassPoint[] { field8305, field8307, field8303, field8311, field8310, field8309, field8306, field8308 };
+		return new CompassPoint[] {NORTHWEST, SOUTH, NORTHEAST, NORTH, SOUTHEAST, EAST, SOUTHWEST, WEST};
 	}
 
 	public CompassPoint(int arg0, int arg1) {
 		this.index = arg0;
-		this.id = arg1;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("zi.n()I")
 	public int getId() {
-		return this.id;
+		return this.serialID;
 	}
 
 	@ObfuscatedName("zi.m(I)Lzi;")
 	public CompassPoint method13895() {
 		switch(this.index) {
 			case 0:
-				return field8311;
+				return NORTH;
 			case 1:
-				return field8303;
+				return NORTHEAST;
 			case 2:
-				return field8306;
+				return SOUTHWEST;
 			case 3:
-				return field8309;
+				return EAST;
 			case 4:
-				return field8305;
+				return NORTHWEST;
 			case 5:
-				return field8310;
+				return SOUTHEAST;
 			case 6:
-				return field8308;
+				return WEST;
 			case 7:
-				return field8307;
+				return SOUTH;
 			default:
 				throw new IllegalStateException();
 		}

@@ -18,7 +18,7 @@ public class ClientCameraTrackableProvider implements CameraTrackableProvider {
 		if (CameraTrackableType.field2839 == arg0) {
 			ObjectWrapper var3 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) arg1);
 			if (var3 != null) {
-				return (CameraTrackable) var3.field11436;
+				return (CameraTrackable) var3.value;
 			}
 		}
 		return null;

@@ -21,10 +21,10 @@ public class NPCHeadIconCustomisation {
 		this.field2682 = new int[8];
 		this.field2681 = new short[8];
 		int var2 = 0;
-		if (arg0.field2738 != null && arg0.field2728 != null) {
-			var2 = arg0.field2738.length;
-			System.arraycopy(arg0.field2738, 0, this.field2682, 0, var2);
-			System.arraycopy(arg0.field2728, 0, this.field2681, 0, var2);
+		if (arg0.headicon_groupid != null && arg0.headicon_id != null) {
+			var2 = arg0.headicon_groupid.length;
+			System.arraycopy(arg0.headicon_groupid, 0, this.field2682, 0, var2);
+			System.arraycopy(arg0.headicon_id, 0, this.field2681, 0, var2);
 		}
 		for (int var3 = var2; var3 < 8; var3++) {
 			this.field2682[var3] = -1;

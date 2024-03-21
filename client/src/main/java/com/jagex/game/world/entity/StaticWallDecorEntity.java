@@ -59,20 +59,20 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		this.field11156 = arg9;
 		this.field11155 = (byte) arg13;
 		this.field11152 = (byte) arg12;
-		this.field11157 = arg3.active2 != 0 && !arg9;
-		this.field11158 = arg1.supportsHardShadows() && arg3.field7453 && !this.field11156 && Client.preferences.sceneryShadows.getValue() != 0;
+		this.field11157 = arg3.active != 0 && !arg9;
+		this.field11158 = arg1.supportsHardShadows() && arg3.hardshadow && !this.field11156 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field11151 = arg7;
 		int var16 = 2048;
-		if (arg3.field7525) {
+		if (arg3.antimacro) {
 			var16 |= 0x80000;
 		}
 		Pair var17 = this.method17414(arg1, var16, this.field11158);
 		if (var17 != null) {
 			this.field11150 = (Model) var17.first;
 			this.field11154 = (HardShadow) var17.second;
-			if (arg3.field7525) {
+			if (arg3.antimacro) {
 				this.field11150 = this.field11150.method1773((byte) 0, var16, false);
-				if (arg3.field7525) {
+				if (arg3.antimacro) {
 					LocTint var18 = Client.world.method7722();
 					this.field11150.method1745(var18.field5015, var18.field5013, var18.field5014, var18.field5012);
 				}
@@ -148,7 +148,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		var2.setTo(this.method10533());
 		var2.translate((float) this.field12452, 0.0F, (float) this.field12451);
 		PickableEntity var3 = PickableEntity.method16749(this.field11157);
-		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).clickbox;
 		if (var4 == null) {
 			this.field11150.draw(var2, this.field11713[0], 0);
 		} else {
@@ -164,7 +164,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 
 	@ObfuscatedName("ajk.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).clickbox;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

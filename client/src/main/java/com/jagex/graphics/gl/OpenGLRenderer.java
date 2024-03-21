@@ -1323,7 +1323,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		while (!this.field12000._isEmpty()) {
 			IntWrapper var5 = (IntWrapper) this.field12000.pollFront();
 			this.field12007[var3++] = (int) var5.nodeId;
-			this.field10053 -= var5.intValue;
+			this.field10053 -= var5.value;
 			if (var3 == 1000) {
 				OpenGL.glDeleteBuffersARB(var3, this.field12007, 0);
 				var3 = 0;
@@ -1336,7 +1336,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		while (!this.field12023._isEmpty()) {
 			IntWrapper var6 = (IntWrapper) this.field12023.pollFront();
 			this.field12007[var3++] = (int) var6.nodeId;
-			this.field10052 -= var6.intValue;
+			this.field10052 -= var6.value;
 			if (var3 == 1000) {
 				OpenGL.glDeleteTextures(var3, this.field12007, 0);
 				var3 = 0;
@@ -1348,7 +1348,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		}
 		while (!this.field12035._isEmpty()) {
 			IntWrapper var7 = (IntWrapper) this.field12035.pollFront();
-			this.field12007[var3++] = var7.intValue;
+			this.field12007[var3++] = var7.value;
 			if (var3 == 1000) {
 				OpenGL.glDeleteFramebuffersEXT(var3, this.field12007, 0);
 				var3 = 0;
@@ -1361,7 +1361,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		while (!this.field12003._isEmpty()) {
 			IntWrapper var8 = (IntWrapper) this.field12003.pollFront();
 			this.field12007[var3++] = (int) var8.nodeId;
-			this.field10117 -= var8.intValue;
+			this.field10117 -= var8.value;
 			if (var3 == 1000) {
 				OpenGL.glDeleteRenderbuffersEXT(var3, this.field12007, 0);
 				var3 = 0;
@@ -1373,7 +1373,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		}
 		while (!this.field12011._isEmpty()) {
 			IntWrapper var10 = (IntWrapper) this.field12011.pollFront();
-			OpenGL.glDeleteLists((int) var10.nodeId, var10.intValue);
+			OpenGL.glDeleteLists((int) var10.nodeId, var10.value);
 		}
 		while (!this.field12004._isEmpty()) {
 			Node var11 = this.field12004.pollFront();
@@ -1385,7 +1385,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		}
 		while (!this.field12011._isEmpty()) {
 			IntWrapper var13 = (IntWrapper) this.field12011.pollFront();
-			OpenGL.glDeleteLists((int) var13.nodeId, var13.intValue);
+			OpenGL.glDeleteLists((int) var13.nodeId, var13.value);
 		}
 		if (this.method2520() > 100663296 && MonotonicTime.get() > this.field12006 + 60000L) {
 			System.gc();

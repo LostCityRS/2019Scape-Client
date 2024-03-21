@@ -56,7 +56,7 @@ public class CutsceneLocation {
 		}
 		LocType var1 = (LocType) Client.locTypeList.list(this.field1735);
 		boolean var2 = var1.method9473(this.field1736.id);
-		int[] var3 = var1.method9484();
+		int[] var3 = var1.getAnim();
 		if (var3 != null) {
 			int[] var4 = var3;
 			for (int var5 = 0; var5 < var4.length; var5++) {

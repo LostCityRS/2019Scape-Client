@@ -30,9 +30,9 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	public final boolean field11130;
 
 	public DynamicSceneryEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, int arg16, int arg17, boolean arg18, ScaleRotTrans arg19) {
-		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, method6824(arg14, arg15), arg19);
+		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.raiseobject == 1, method6824(arg14, arg15), arg19);
 		this.field11131 = new DynamicLoc(arg1, arg2, arg3, arg14, arg15, arg5, this, arg9, arg16, arg17);
-		this.field11128 = arg3.active2 != 0 && !arg9;
+		this.field11128 = arg3.active != 0 && !arg9;
 		this.field11130 = arg18;
 		this.method18363(1);
 	}
@@ -81,11 +81,11 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 		PickableEntity var4 = PickableEntity.method16749(this.field11128);
 		this.field11131.method8239(arg0, var2, var3, this.field12471, this.field12472, this.field12468, this.field12467, true);
 		LocType var5 = this.field11131.method8237();
-		if (var5.field7468 == null) {
+		if (var5.clickbox == null) {
 			var2.draw(var3, this.field11713[0], 0);
 		} else {
 			var2.draw(var3, null, 0);
-			arg0.method2193(var3, this.field11713[0], var5.field7468);
+			arg0.method2193(var3, this.field11713[0], var5.clickbox);
 		}
 		if (this.field11131.field6680 != null) {
 			ParticleList var6 = this.field11131.field6680.method9965();
@@ -117,11 +117,11 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	@ObfuscatedName("ajy.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		LocType var4 = this.field11131.method8237();
-		if (var4.field7468 == null) {
+		if (var4.clickbox == null) {
 			Model var5 = this.field11131.method8238(arg0, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
-			return arg0.method2191(arg1, arg2, this.method10533(), var4.field7468);
+			return arg0.method2191(arg1, arg2, this.method10533(), var4.clickbox);
 		}
 	}
 

@@ -193,7 +193,7 @@ public class PlayerModel {
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
 	public Model method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, VariableTypeProvider arg6, VarIntDomain arg7, AnimationWrapper arg8, AnimationWrapper arg9, AnimationWrapper[] arg10, int[] arg11, int arg12, boolean arg13, WearposDefaults arg14) {
 		if (this.field7892 != -1) {
-			return ((NPCType) arg4.list(this.field7892)).method4542(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
+			return ((NPCType) arg4.list(this.field7892)).getSequencedModel(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
 		}
 		int var16 = arg1;
 		long var17 = this.field7888;

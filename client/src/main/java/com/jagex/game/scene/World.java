@@ -710,7 +710,7 @@ public class World {
 			Iterator var1 = Client.miniMenuEntries.iterator();
 			while (var1.hasNext()) {
 				ObjectWrapper var2 = (ObjectWrapper) var1.next();
-				PositionedSound.method10111((NpcEntity) var2.field11436);
+				PositionedSound.method10111((NpcEntity) var2.value);
 			}
 			Client.field11011 = 0;
 			Client.field10906 = 0;
@@ -759,7 +759,7 @@ public class World {
 			for (int var4 = 0; var4 < Client.field10906; var4++) {
 				ObjectWrapper var5 = Client.field10839[var4];
 				if (var5 != null) {
-					NpcEntity var6 = (NpcEntity) var5.field11436;
+					NpcEntity var6 = (NpcEntity) var5.value;
 					for (int var7 = 0; var7 < var6.routeWaypointX.length; var7++) {
 						var6.routeWaypointX[var7] -= var2;
 						var6.routeWaypointZ[var7] -= var3;
@@ -779,7 +779,7 @@ public class World {
 			for (int var12 = 0; var12 < Client.field10906; var12++) {
 				ObjectWrapper var13 = Client.field10839[var12];
 				if (var13 != null) {
-					NpcEntity var14 = (NpcEntity) var13.field11436;
+					NpcEntity var14 = (NpcEntity) var13.value;
 					Vector3 var15 = Vector3.create(var14.getTransform().trans);
 					var15.x -= var2 * 512;
 					var15.z -= var3 * 512;
@@ -1047,7 +1047,7 @@ public class World {
 			for (int var17 = 0; var17 < Client.field10839.length; var17++) {
 				ObjectWrapper var18 = Client.field10839[var17];
 				if (var18 != null) {
-					((GraphEntity) var18.field11436).field11716 = null;
+					((GraphEntity) var18.value).field11716 = null;
 				}
 			}
 		}
@@ -1434,7 +1434,7 @@ public class World {
 					int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z + var11;
 					NPCType var14 = (NPCType) Client.npcTypeList.list(buf.g2());
 					ObjectWrapper var15 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var7);
-					if (var15 == null && (var14.field2743 & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {
+					if (var15 == null && (var14.walkflags & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {
 						NpcEntity npc = new NpcEntity(this.scene);
 						npc.localPlayerIndex = var7;
 						ObjectWrapper var17 = new ObjectWrapper(npc);

@@ -154,7 +154,7 @@ public class NpcEntity extends PathingEntity {
 		var4.setTo(var2);
 		var4.translate(0.0F, (float) (-20 - this.field10408), 0.0F);
 		BASType var8 = this.getBASType();
-		NPCType var9 = this.npcType.field2735 == null ? this.npcType : this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+		NPCType var9 = this.npcType.multinpc == null ? this.npcType : this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 		boolean var10 = var9.clickbox != null;
 		this.field10458 = false;
 		PickableEntity var11 = null;
@@ -163,15 +163,15 @@ public class NpcEntity extends PathingEntity {
 			EntityWalkAnimationWrapper var13 = this.field10432.method14346() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
 			short var14 = Client.graphicsDefaults.field7728;
 			byte var15 = Client.graphicsDefaults.field7757;
-			if (this.npcType.field2741 > -1) {
-				var14 = this.npcType.field2741;
-				var15 = this.npcType.field2702;
+			if (this.npcType.spotshadowtexture > -1) {
+				var14 = this.npcType.spotshadowtexture;
+				var15 = this.npcType.spotshadowtexture_alpha;
 			}
 			Model var16;
 			if (var14 > -1 && Client.preferences.textures.getValue() == 1) {
 				var16 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var14, var15, var13 == null ? var12 : var13);
 			} else {
-				var16 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.npcType.size, this.field10459[0], this.npcType.field2737 & 0xFFFF, this.npcType.field2729 & 0xFFFF, this.npcType.field2739 & 0xFF, this.npcType.field2740 & 0xFF, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.npcType.size, this.field10459[0], this.npcType.spotshadowcolour_1 & 0xFFFF, this.npcType.spotshadowcolour_2 & 0xFFFF, this.npcType.spotshadowtrans_1 & 0xFF, this.npcType.spotshadowtrans_2 & 0xFF, var13 == null ? var12 : var13);
 			}
 			if (var16 != null) {
 				var11 = PickableEntity.method16749(this.method19162());
@@ -245,7 +245,7 @@ public class NpcEntity extends PathingEntity {
 		}
 		boolean var10 = false;
 		if (this.field10433 != 0) {
-			NPCType var11 = this.npcType.field2735 == null ? this.npcType : this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+			NPCType var11 = this.npcType.multinpc == null ? this.npcType : this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var11 == null || Client.loopCycle >= this.field10438 + var11.field2765) {
 				this.field10433 = 0;
 			} else {
@@ -424,7 +424,7 @@ public class NpcEntity extends PathingEntity {
 		if (this.field12079 != -1) {
 			return this.field12079;
 		}
-		if (this.npcType.field2735 != null) {
+		if (this.npcType.multinpc != null) {
 			NPCType var1 = this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var1 != null && var1.bas != -1) {
 				return var1.bas;
@@ -435,7 +435,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.bs(B)I")
 	public int method16486() {
-		if (this.npcType.field2735 != null) {
+		if (this.npcType.multinpc != null) {
 			NPCType var1 = this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var1 != null && var1.covermarker != -1) {
 				return var1.covermarker;
@@ -446,7 +446,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.bo(I)I")
 	public int height() {
-		if (this.npcType.field2735 != null) {
+		if (this.npcType.multinpc != null) {
 			NPCType var1 = this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var1 != null && var1.overlayheight != -1) {
 				return var1.overlayheight;
@@ -592,6 +592,6 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.gc(I)Z")
 	public boolean method18359() {
-		return this.npcType.field2735 == null || this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState) != null;
+		return this.npcType.multinpc == null || this.npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState) != null;
 	}
 }

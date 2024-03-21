@@ -152,7 +152,7 @@ public class PositionedSound extends Node {
 	public void method17660() {
 		int var1 = this.field11370;
 		if (this.field11348 != null) {
-			LocType var2 = this.field11348.method9477(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+			LocType var2 = this.field11348.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 			if (var2 == null) {
 				this.field11370 = -1;
 				this.field11357 = 0;
@@ -164,21 +164,21 @@ public class PositionedSound extends Node {
 				this.field11368 = 256;
 				this.field11356 = 0;
 			} else {
-				this.field11370 = var2.field7508;
-				this.field11357 = var2.field7509 << 9;
-				this.field11359 = var2.field7511;
-				this.field11373 = var2.field7512;
-				this.field11374 = var2.field7466;
-				this.field11375 = var2.field7514;
-				this.field11369 = var2.field7523;
-				this.field11368 = var2.field7521;
+				this.field11370 = var2.bgsound_sound;
+				this.field11357 = var2.bgsound_range << 9;
+				this.field11359 = var2.bgsound_volume;
+				this.field11373 = var2.bgsound_mindelay;
+				this.field11374 = var2.bgsound_maxdelay;
+				this.field11375 = var2.bgsound_random;
+				this.field11369 = var2.bgsound_maxrate;
+				this.field11368 = var2.bgsound_minrate;
 			}
 		} else if (this.field11345 != null) {
 			int var3 = method647(this.field11345);
 			if (var1 != var3) {
 				this.field11370 = var3;
 				NPCType var4 = this.field11345.npcType;
-				if (var4.field2735 != null) {
+				if (var4.multinpc != null) {
 					var4 = var4.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var4 == null) {
@@ -188,11 +188,11 @@ public class PositionedSound extends Node {
 					this.field11369 = 256;
 					this.field11368 = 256;
 				} else {
-					this.field11357 = var4.field2750 << 9;
-					this.field11356 = var4.bgsoundsize << 9;
-					this.field11359 = var4.bgsoundvolume;
-					this.field11369 = var4.field2700;
-					this.field11368 = var4.field2761;
+					this.field11357 = var4.bgsound_range << 9;
+					this.field11356 = var4.bgsound_size << 9;
+					this.field11359 = var4.bgsound_volume;
+					this.field11369 = var4.bgsound_maxrate;
+					this.field11368 = var4.bgsound_minrate;
 				}
 			}
 		} else if (this.field11361 != null) {
@@ -226,16 +226,16 @@ public class PositionedSound extends Node {
 			}
 			var7.field11352 = arg1 + var8 << 9;
 			var7.field11353 = arg2 + var9 << 9;
-			var7.field11370 = arg4.field7508;
-			var7.field11357 = arg4.field7509 << 9;
-			var7.field11359 = arg4.field7511;
-			var7.field11373 = arg4.field7512;
-			var7.field11374 = arg4.field7466;
-			var7.field11375 = arg4.field7514;
-			var7.field11369 = arg4.field7523;
-			var7.field11368 = arg4.field7521;
-			var7.field11356 = arg4.field7510 << 9;
-			if (arg4.field7505 != null) {
+			var7.field11370 = arg4.bgsound_sound;
+			var7.field11357 = arg4.bgsound_range << 9;
+			var7.field11359 = arg4.bgsound_volume;
+			var7.field11373 = arg4.bgsound_mindelay;
+			var7.field11374 = arg4.bgsound_maxdelay;
+			var7.field11375 = arg4.bgsound_random;
+			var7.field11369 = arg4.bgsound_maxrate;
+			var7.field11368 = arg4.bgsound_minrate;
+			var7.field11356 = arg4.bgsound_size << 9;
+			if (arg4.multiloc != null) {
 				var7.field11367 = true;
 				var7.method17660();
 			}
@@ -248,7 +248,7 @@ public class PositionedSound extends Node {
 		} else if (arg5 != null) {
 			var7.field11345 = arg5;
 			NPCType var10 = arg5.npcType;
-			if (var10.field2735 != null) {
+			if (var10.multinpc != null) {
 				var7.field11367 = true;
 				var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			}
@@ -256,15 +256,15 @@ public class PositionedSound extends Node {
 				var7.field11352 = var10.size + arg1 << 9;
 				var7.field11353 = var10.size + arg2 << 9;
 				var7.field11370 = method647(arg5);
-				var7.field11357 = var10.field2750 << 9;
-				var7.field11359 = var10.bgsoundvolume;
-				var7.field11369 = var10.field2700;
-				var7.field11368 = var10.field2761;
-				var7.field11356 = var10.bgsoundsize << 9;
-				Client.audioApi.preloadSounds(var10.field2746);
-				Client.audioApi.preloadSounds(var10.field2747);
-				Client.audioApi.preloadSounds(var10.field2748);
-				Client.audioApi.preloadSounds(var10.field2749);
+				var7.field11357 = var10.bgsound_range << 9;
+				var7.field11359 = var10.bgsound_volume;
+				var7.field11369 = var10.bgsound_maxrate;
+				var7.field11368 = var10.bgsound_minrate;
+				var7.field11356 = var10.bgsound_size << 9;
+				Client.audioApi.preloadSounds(var10.bgsound);
+				Client.audioApi.preloadSounds(var10.bgsound_crawl);
+				Client.audioApi.preloadSounds(var10.bgsound_walk);
+				Client.audioApi.preloadSounds(var10.bgsound_run);
 			}
 			field11347.pushBack(var7);
 		} else if (arg6 != null) {
@@ -342,21 +342,21 @@ public class PositionedSound extends Node {
 	@ObfuscatedName("t.z(Laqc;I)I")
 	public static int method647(NpcEntity arg0) {
 		NPCType var1 = arg0.npcType;
-		if (var1.field2735 != null) {
+		if (var1.multinpc != null) {
 			var1 = var1.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var1 == null) {
 				return -1;
 			}
 		}
-		int var2 = var1.field2748;
+		int var2 = var1.bgsound_walk;
 		BASType var3 = arg0.getBASType();
 		int var4 = arg0.field10432.method14348();
 		if (var4 == -1 || arg0.field10432.field11877) {
-			var2 = var1.field2746;
+			var2 = var1.bgsound;
 		} else if (var3.field7361 == var4 || var3.field7329 == var4 || var3.field7331 == var4 || var3.field7330 == var4) {
-			var2 = var1.field2749;
+			var2 = var1.bgsound_run;
 		} else if (var3.field7332 == var4 || var3.field7333 == var4 || var3.field7319 == var4 || var3.field7328 == var4) {
-			var2 = var1.field2747;
+			var2 = var1.bgsound_crawl;
 		}
 		return var2;
 	}
@@ -395,7 +395,7 @@ public class PositionedSound extends Node {
 			if (var5.field11360 != var6) {
 				int var9 = method647(var5.field11345);
 				NPCType var10 = var5.field11345.npcType;
-				if (var10.field2735 != null) {
+				if (var10.multinpc != null) {
 					var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var10 == null || var9 == -1) {
@@ -403,7 +403,7 @@ public class PositionedSound extends Node {
 					var5.field11360 = var6;
 				} else if (var5.field11370 == var9) {
 					var5.field11360 = var6;
-					var5.field11359 = var10.bgsoundvolume;
+					var5.field11359 = var10.bgsound_volume;
 				} else {
 					boolean var11 = false;
 					if (var5.field11371 == null) {
@@ -418,7 +418,7 @@ public class PositionedSound extends Node {
 						}
 					}
 					if (var11) {
-						var5.field11359 = var10.bgsoundvolume;
+						var5.field11359 = var10.bgsound_volume;
 						var5.field11370 = var9;
 						var5.field11360 = var6;
 					}

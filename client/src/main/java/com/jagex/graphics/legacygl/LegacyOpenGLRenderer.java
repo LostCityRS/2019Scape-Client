@@ -3157,7 +3157,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		while (!this.field9883._isEmpty()) {
 			IntWrapper var4 = (IntWrapper) this.field9883.pollFront();
 			field9890[var2++] = (int) var4.nodeId;
-			this.field9880 -= var4.intValue;
+			this.field9880 -= var4.value;
 			if (var2 == 1000) {
 				OpenGL.glDeleteBuffersARB(var2, field9890, 0);
 				var2 = 0;
@@ -3170,7 +3170,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		while (!this.field9884._isEmpty()) {
 			IntWrapper var5 = (IntWrapper) this.field9884.pollFront();
 			field9890[var2++] = (int) var5.nodeId;
-			this.field9879 -= var5.intValue;
+			this.field9879 -= var5.value;
 			if (var2 == 1000) {
 				OpenGL.glDeleteTextures(var2, field9890, 0);
 				var2 = 0;
@@ -3182,7 +3182,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		}
 		while (!this.field9885._isEmpty()) {
 			IntWrapper var6 = (IntWrapper) this.field9885.pollFront();
-			field9890[var2++] = var6.intValue;
+			field9890[var2++] = var6.value;
 			if (var2 == 1000) {
 				OpenGL.glDeleteFramebuffersEXT(var2, field9890, 0);
 				var2 = 0;
@@ -3195,7 +3195,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		while (!this.field9886._isEmpty()) {
 			IntWrapper var7 = (IntWrapper) this.field9886.pollFront();
 			field9890[var2++] = (int) var7.nodeId;
-			this.field9881 -= var7.intValue;
+			this.field9881 -= var7.value;
 			if (var2 == 1000) {
 				OpenGL.glDeleteRenderbuffersEXT(var2, field9890, 0);
 				var2 = 0;
@@ -3207,7 +3207,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		}
 		while (!this.field9938._isEmpty()) {
 			IntWrapper var9 = (IntWrapper) this.field9938.pollFront();
-			OpenGL.glDeleteLists((int) var9.nodeId, var9.intValue);
+			OpenGL.glDeleteLists((int) var9.nodeId, var9.value);
 		}
 		while (!this.field9838._isEmpty()) {
 			Node var10 = this.field9838.pollFront();
@@ -3219,7 +3219,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		}
 		while (!this.field9938._isEmpty()) {
 			IntWrapper var12 = (IntWrapper) this.field9938.pollFront();
-			OpenGL.glDeleteLists((int) var12.nodeId, var12.intValue);
+			OpenGL.glDeleteLists((int) var12.nodeId, var12.value);
 		}
 		this.field10026.method1402();
 		if (this.method2520() > 100663296 && MonotonicTime.get() > this.field9823 + 60000L) {

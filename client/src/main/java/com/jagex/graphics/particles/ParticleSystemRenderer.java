@@ -82,7 +82,7 @@ public class ParticleSystemRenderer {
 			field7799.pushNode(var1, (long) arg0);
 			field7795[++field7798 - 1] = var2;
 		}
-		return var1.intValue;
+		return var1.value;
 	}
 
 	@ObfuscatedName("ah.n(Lnb;Lnp;I)V")

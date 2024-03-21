@@ -7,9 +7,9 @@ import deob.ObfuscatedName;
 public class ObjectWrapper extends Node {
 
 	@ObfuscatedName("ake.k")
-	public final Object field11436;
+	public final Object value;
 
-	public ObjectWrapper(Object arg0) {
-		this.field11436 = arg0;
+	public ObjectWrapper(Object value) {
+		this.value = value;
 	}
 }

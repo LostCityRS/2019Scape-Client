@@ -64,16 +64,16 @@ public class LocType implements ConfigType {
 	public byte[] retexindices;
 
 	@ObfuscatedName("vd.s")
-	public byte field7469;
+	public byte tint_hue;
 
 	@ObfuscatedName("vd.y")
-	public byte field7464;
+	public byte tint_saturation;
 
 	@ObfuscatedName("vd.q")
-	public byte field7465;
+	public byte tint_lightness;
 
 	@ObfuscatedName("vd.x")
-	public byte field7493 = 0;
+	public byte tint_amount = 0;
 
 	@ObfuscatedName("vd.b")
 	public int width = 1;
@@ -85,13 +85,13 @@ public class LocType implements ConfigType {
 	public int blockwalk = 2;
 
 	@ObfuscatedName("vd.g")
-	public int active2 = -1;
+	public int active = -1;
 
 	@ObfuscatedName("vd.i")
-	public byte hillskew = 0;
+	public byte hillskew_mode = 0;
 
 	@ObfuscatedName("vd.j")
-	public int field7472 = -1;
+	public int hillskew_value = -1;
 
 	@ObfuscatedName("vd.t")
 	public boolean sharelight = false;
@@ -109,7 +109,7 @@ public class LocType implements ConfigType {
 	public int[] anim = null;
 
 	@ObfuscatedName("vd.ac")
-	public int[] field7478 = null;
+	public int[] anim_weight = null;
 
 	@ObfuscatedName("vd.ai")
 	public boolean field7479 = false;
@@ -127,22 +127,22 @@ public class LocType implements ConfigType {
 	public String[] op;
 
 	@ObfuscatedName("vd.am")
-	public int[] field7497;
+	public int[] cursor;
 
 	@ObfuscatedName("vd.au")
-	public int field7485 = -1;
+	public int mapelement = -1;
 
 	@ObfuscatedName("vd.ar")
-	public int field7486 = -1;
+	public int mapsceneicon = -1;
 
 	@ObfuscatedName("vd.ap")
-	public boolean field7487 = false;
+	public boolean mapsceneiconrotate = false;
 
 	@ObfuscatedName("vd.aq")
 	public int field7488 = 0;
 
 	@ObfuscatedName("vd.ax")
-	public boolean field7504 = false;
+	public boolean mapsceneiconmirror = false;
 
 	@ObfuscatedName("vd.av")
 	public boolean mirror = false;
@@ -184,52 +184,52 @@ public class LocType implements ConfigType {
 	public boolean breakroutefinding = false;
 
 	@ObfuscatedName("vd.bh")
-	public int field7503 = -1;
+	public int raiseobject = -1;
 
 	@ObfuscatedName("vd.bx")
 	public int field7448 = 0;
 
 	@ObfuscatedName("vd.bd")
-	public int[] field7505;
+	public int[] multiloc;
 
 	@ObfuscatedName("vd.bc")
-	public int field7506 = -1;
+	public int multivarbit = -1;
 
 	@ObfuscatedName("vd.bi")
-	public int field7507 = -1;
+	public int multivarp = -1;
 
 	@ObfuscatedName("vd.bn")
-	public int field7508 = -1;
+	public int bgsound_sound = -1;
 
 	@ObfuscatedName("vd.bt")
-	public int field7509 = 0;
+	public int bgsound_range = 0;
 
 	@ObfuscatedName("vd.bq")
-	public int field7510 = 0;
+	public int bgsound_size = 0;
 
 	@ObfuscatedName("vd.bm")
-	public int field7511 = 255;
+	public int bgsound_volume = 255;
 
 	@ObfuscatedName("vd.bb")
-	public int field7512 = 0;
+	public int bgsound_mindelay = 0;
 
 	@ObfuscatedName("vd.be")
-	public int field7466 = 0;
+	public int bgsound_maxdelay = 0;
 
 	@ObfuscatedName("vd.by")
-	public int[] field7514;
+	public int[] bgsound_random;
 
 	@ObfuscatedName("vd.bu")
-	public boolean field7515 = true;
+	public boolean randseq = true;
 
 	@ObfuscatedName("vd.bw")
-	public boolean field7516 = false;
+	public boolean istexture = false;
 
 	@ObfuscatedName("vd.bo")
-	public boolean field7453 = true;
+	public boolean hardshadow = true;
 
 	@ObfuscatedName("vd.bz")
-	public boolean field7518 = false;
+	public boolean members = false;
 
 	@ObfuscatedName("vd.bv")
 	public IterableMap params;
@@ -238,25 +238,25 @@ public class LocType implements ConfigType {
 	public boolean field7520 = false;
 
 	@ObfuscatedName("vd.bg")
-	public int[] field7484;
+	public int[] quests;
 
 	@ObfuscatedName("vd.ba")
-	public int field7521 = 256;
+	public int bgsound_minrate = 256;
 
 	@ObfuscatedName("vd.bp")
-	public int field7523 = 256;
+	public int bgsound_maxrate = 256;
 
 	@ObfuscatedName("vd.bj")
 	public boolean field7524 = false;
 
 	@ObfuscatedName("vd.bs")
-	public boolean field7525 = false;
+	public boolean antimacro = false;
 
 	@ObfuscatedName("vd.cl")
 	public LocTypeRelated field7526 = LocTypeRelated.field7439;
 
 	@ObfuscatedName("vd.cg")
-	public Cuboid field7468;
+	public Cuboid clickbox;
 
 	public LocType(int id, LocTypeFactory factory, ConfigTypeList locs) {
 		this.id = id;
@@ -282,9 +282,9 @@ public class LocType implements ConfigType {
 		if (this.breakroutefinding) {
 			this.blockwalk = 0;
 		}
-		if (!this.factory.allowMembers && this.field7518) {
+		if (!this.factory.allowMembers && this.members) {
 			this.op = null;
-			this.field7484 = null;
+			this.quests = null;
 		}
 	}
 
@@ -312,9 +312,9 @@ public class LocType implements ConfigType {
 			this.blockwalk = 0;
 		} else if (code != 18) {
 			if (code == 19) {
-				this.active2 = buf.g1();
+				this.active = buf.g1();
 			} else if (code == 21) {
-				this.hillskew = 1;
+				this.hillskew_mode = 1;
 			} else if (code == 22) {
 				this.sharelight = true;
 			} else if (code == 23) {
@@ -409,59 +409,59 @@ public class LocType implements ConfigType {
 			} else if (code == 74) {
 				this.breakroutefinding = true;
 			} else if (code == 75) {
-				this.field7503 = buf.g1();
+				this.raiseobject = buf.g1();
 			} else if (code == 77 || code == 92) {
-				this.field7506 = buf.g2();
-				if (this.field7506 == 65535) {
-					this.field7506 = -1;
+				this.multivarbit = buf.g2();
+				if (this.multivarbit == 65535) {
+					this.multivarbit = -1;
 				}
-				this.field7507 = buf.g2();
-				if (this.field7507 == 65535) {
-					this.field7507 = -1;
+				this.multivarp = buf.g2();
+				if (this.multivarp == 65535) {
+					this.multivarp = -1;
 				}
-				int var38 = -1;
+				int defaultId = -1;
 				if (code == 92) {
-					var38 = buf.gSmart2or4null();
+					defaultId = buf.gSmart2or4null();
 				}
-				int var39 = buf.gSmart1or2();
-				this.field7505 = new int[var39 + 2];
-				for (int var40 = 0; var40 <= var39; var40++) {
-					this.field7505[var40] = buf.gSmart2or4null();
+				int length = buf.gSmart1or2();
+				this.multiloc = new int[length + 2];
+				for (int index = 0; index <= length; index++) {
+					this.multiloc[index] = buf.gSmart2or4null();
 				}
-				this.field7505[var39 + 1] = var38;
+				this.multiloc[length + 1] = defaultId;
 			} else if (code == 78) {
-				this.field7508 = buf.g2();
-				this.field7509 = buf.g1();
+				this.bgsound_sound = buf.g2();
+				this.bgsound_range = buf.g1();
 			} else if (code == 79) {
-				this.field7512 = buf.g2();
-				this.field7466 = buf.g2();
-				this.field7509 = buf.g1();
+				this.bgsound_mindelay = buf.g2();
+				this.bgsound_maxdelay = buf.g2();
+				this.bgsound_range = buf.g1();
 				int var24 = buf.g1();
-				this.field7514 = new int[var24];
-				for (int var25 = 0; var25 < var24; var25++) {
-					this.field7514[var25] = buf.g2();
+				this.bgsound_random = new int[var24];
+				for (int index = 0; index < var24; index++) {
+					this.bgsound_random[index] = buf.g2();
 				}
 			} else if (code == 81) {
-				this.hillskew = 2;
-				this.field7472 = buf.g1() * 256;
+				this.hillskew_mode = 2;
+				this.hillskew_value = buf.g1() * 256;
 			} else if (code == 82) {
-				this.field7516 = true;
+				this.istexture = true;
 			} else if (code == 88) {
-				this.field7453 = false;
+				this.hardshadow = false;
 			} else if (code == 89) {
-				this.field7515 = false;
+				this.randseq = false;
 			} else if (code == 91) {
-				this.field7518 = true;
+				this.members = true;
 			} else if (code == 93) {
-				this.hillskew = 3;
-				this.field7472 = buf.g2();
+				this.hillskew_mode = 3;
+				this.hillskew_value = buf.g2();
 			} else if (code == 94) {
-				this.hillskew = 4;
+				this.hillskew_mode = 4;
 			} else if (code == 95) {
-				this.hillskew = 5;
-				this.field7472 = buf.g2s();
+				this.hillskew_mode = 5;
+				this.hillskew_value = buf.g2s();
 			} else if (code == 97) {
-				this.field7487 = true;
+				this.mapsceneiconrotate = true;
 			} else if (code == 98) {
 				this.field7520 = true;
 			} else if (code == 99 || code == 100) {
@@ -470,46 +470,46 @@ public class LocType implements ConfigType {
 			} else if (code == 101) {
 				this.field7488 = buf.g1();
 			} else if (code == 102) {
-				this.field7486 = buf.g2();
+				this.mapsceneicon = buf.g2();
 			} else if (code == 103) {
 				this.occlude = 0;
 			} else if (code == 104) {
-				this.field7511 = buf.g1();
+				this.bgsound_volume = buf.g1();
 			} else if (code == 105) {
-				this.field7504 = true;
+				this.mapsceneiconmirror = true;
 			} else if (code == 106) {
-				int var26 = buf.g1();
-				int var27 = 0;
-				this.anim = new int[var26];
-				this.field7478 = new int[var26];
-				for (int var28 = 0; var28 < var26; var28++) {
-					this.anim[var28] = buf.gSmart2or4null();
-					var27 += this.field7478[var28] = buf.g1();
+				int length = buf.g1();
+				int weight = 0;
+				this.anim = new int[length];
+				this.anim_weight = new int[length];
+				for (int index = 0; index < length; index++) {
+					this.anim[index] = buf.gSmart2or4null();
+					weight += this.anim_weight[index] = buf.g1();
 				}
-				for (int var29 = 0; var29 < var26; var29++) {
-					this.field7478[var29] = this.field7478[var29] * 65535 / var27;
+				for (int var29 = 0; var29 < length; var29++) {
+					this.anim_weight[var29] = this.anim_weight[var29] * 65535 / weight;
 				}
 			} else if (code == 107) {
-				this.field7485 = buf.g2();
+				this.mapelement = buf.g2();
 			} else if (code >= 150 && code < 155) {
 				this.op[code - 150] = buf.gjstr().intern();
 				if (!this.factory.allowMembers) {
 					this.op[code - 150] = null;
 				}
 			} else if (code == 160) {
-				int var30 = buf.g1();
-				this.field7484 = new int[var30];
-				for (int var31 = 0; var31 < var30; var31++) {
-					this.field7484[var31] = buf.g2();
+				int length = buf.g1();
+				this.quests = new int[length];
+				for (int index = 0; index < length; index++) {
+					this.quests[index] = buf.g2();
 				}
 			} else if (code == 162) {
-				this.hillskew = 3;
-				this.field7472 = buf.g4s();
+				this.hillskew_mode = 3;
+				this.hillskew_value = buf.g4s();
 			} else if (code == 163) {
-				this.field7469 = buf.g1b();
-				this.field7464 = buf.g1b();
-				this.field7465 = buf.g1b();
-				this.field7493 = buf.g1b();
+				this.tint_hue = buf.g1b();
+				this.tint_saturation = buf.g1b();
+				this.tint_lightness = buf.g1b();
+				this.tint_amount = buf.g1b();
 			} else if (code == 164) {
 				this.field7522 = buf.g2s();
 			} else if (code == 165) {
@@ -524,23 +524,23 @@ public class LocType implements ConfigType {
 				} else if (code == 171) {
 					this.field7476 = buf.gSmart1or2();
 				} else if (code == 173) {
-					this.field7521 = buf.g2();
-					this.field7523 = buf.g2();
+					this.bgsound_minrate = buf.g2();
+					this.bgsound_maxrate = buf.g2();
 				} else if (code == 177) {
 					this.field7524 = true;
 				} else if (code == 178) {
-					this.field7510 = buf.g1();
+					this.bgsound_size = buf.g1();
 				} else if (code == 186) {
 					this.field7526 = (LocTypeRelated) SerializableEnums.decode(LocTypeRelated.method9002(), buf.g1());
 				} else if (code != 188) {
 					if (code == 189) {
-						this.field7525 = true;
+						this.antimacro = true;
 					} else if (code >= 190 && code < 196) {
-						if (this.field7497 == null) {
-							this.field7497 = new int[6];
-							Arrays.fill(this.field7497, -1);
+						if (this.cursor == null) {
+							this.cursor = new int[6];
+							Arrays.fill(this.cursor, -1);
 						}
-						this.field7497[code - 190] = buf.g2();
+						this.cursor[code - 190] = buf.g2();
 					} else if (code == 196) {
 						SerializableEnums.decode(LocTypeRelated3.method208(), buf.g1());
 					} else if (code == 197) {
@@ -549,13 +549,13 @@ public class LocType implements ConfigType {
 						if (code == 200) {
 							this.field7479 = true;
 						} else if (code == 201) {
-							this.field7468 = new Cuboid();
-							this.field7468.minX = buf.gSmart1or2s();
-							this.field7468.minY = buf.gSmart1or2s();
-							this.field7468.minZ = buf.gSmart1or2s();
-							this.field7468.maxX = buf.gSmart1or2s();
-							this.field7468.maxY = buf.gSmart1or2s();
-							this.field7468.maxZ = buf.gSmart1or2s();
+							this.clickbox = new Cuboid();
+							this.clickbox.minX = buf.gSmart1or2s();
+							this.clickbox.minY = buf.gSmart1or2s();
+							this.clickbox.minZ = buf.gSmart1or2s();
+							this.clickbox.maxX = buf.gSmart1or2s();
+							this.clickbox.maxY = buf.gSmart1or2s();
+							this.clickbox.maxZ = buf.gSmart1or2s();
 						} else if (code == 249) {
 							int var32 = buf.g1();
 							if (this.params == null) {
@@ -582,25 +582,25 @@ public class LocType implements ConfigType {
 
 	@ObfuscatedName("vd.z(I)V")
 	public void postDecodeActive() {
-		if (this.active2 == -1) {
-			this.active2 = 0;
+		if (this.active == -1) {
+			this.active = 0;
 			if (this.shapes != null && this.shapes.length == 1 && LocShape.CENTREPIECE_STRAIGHT.id == this.shapes[0]) {
-				this.active2 = 1;
+				this.active = 1;
 			}
 			for (int var1 = 0; var1 < 5; var1++) {
 				if (this.op[var1] != null) {
-					this.active2 = 1;
+					this.active = 1;
 					break;
 				}
 			}
 		}
-		if (this.field7503 == -1) {
-			this.field7503 = this.blockwalk == 0 ? 0 : 1;
+		if (this.raiseobject == -1) {
+			this.raiseobject = this.blockwalk == 0 ? 0 : 1;
 		}
-		if (this.method9504() || this.field7520 || this.field7505 != null) {
+		if (this.method9504() || this.field7520 || this.multiloc != null) {
 			this.field7524 = true;
 		}
-		if (this.active2 <= 0 && LocTypeRelated.field7438 == this.field7526) {
+		if (this.active <= 0 && LocTypeRelated.field7438 == this.field7526) {
 		}
 	}
 
@@ -651,10 +651,10 @@ public class LocType implements ConfigType {
 			var14 |= arg10.field7444 << 32;
 		}
 		int var16 = arg1;
-		if (this.hillskew == 3) {
+		if (this.hillskew_mode == 3) {
 			var16 = arg1 | 0x7;
 		} else {
-			if (this.hillskew != 0 || this.field7449 != 0) {
+			if (this.hillskew_mode != 0 || this.field7449 != 0) {
 				var16 = arg1 | 0x2;
 			}
 			if (this.field7522 != 0) {
@@ -667,7 +667,7 @@ public class LocType implements ConfigType {
 		if (arg9) {
 			var16 |= 0x40000;
 		}
-		boolean var17 = this.hillskew != 0 && (arg4 != null || arg5 != null);
+		boolean var17 = this.hillskew_mode != 0 && (arg4 != null || arg5 != null);
 		boolean var18 = this.field7522 != 0 || this.field7449 != 0 || this.field7500 != 0;
 		WeightedCache var19 = this.factory.modelCacheDynamic;
 		Pair var20;
@@ -710,7 +710,7 @@ public class LocType implements ConfigType {
 		if (var17 || var18) {
 			var28 = var22.method1773((byte) 0, var16, true);
 			if (var17) {
-				var28.method1700(this.hillskew, this.field7472, arg4, arg5, arg6, arg7, arg8);
+				var28.method1700(this.hillskew_mode, this.hillskew_value, arg4, arg5, arg6, arg7, arg8);
 			}
 			if (var18) {
 				var28.method1805(this.field7522, this.field7449, this.field7500);
@@ -741,10 +741,10 @@ public class LocType implements ConfigType {
 		if (arg9 != null) {
 			arg1 |= arg9.method14358();
 		}
-		if (this.hillskew == 3) {
+		if (this.hillskew_mode == 3) {
 			arg1 |= 0x7;
 		} else {
-			if (this.hillskew != 0 || this.field7449 != 0) {
+			if (this.hillskew_mode != 0 || this.field7449 != 0) {
 				arg1 |= 0x2;
 			}
 			if (this.field7522 != 0) {
@@ -788,12 +788,12 @@ public class LocType implements ConfigType {
 			}
 			var18.method1693(2048);
 		}
-		if (this.hillskew != 0) {
+		if (this.hillskew_mode != 0) {
 			if (!var22) {
 				var18 = var18.method1773((byte) 3, arg1, true);
 				var22 = true;
 			}
-			var18.method1700(this.hillskew, this.field7472, arg4, arg5, arg6, arg7, arg8);
+			var18.method1700(this.hillskew_mode, this.hillskew_value, arg4, arg5, arg6, arg7, arg8);
 		}
 		if (this.field7522 != 0 || this.field7449 != 0 || this.field7500 != 0) {
 			if (!var22) {
@@ -836,7 +836,7 @@ public class LocType implements ConfigType {
 		if (this.retex_s != null) {
 			arg1 |= 0x8000;
 		}
-		if (this.field7493 != 0) {
+		if (this.tint_amount != 0) {
 			arg1 |= 0x80000;
 		}
 		Model var10 = null;
@@ -959,8 +959,8 @@ public class LocType implements ConfigType {
 				var28.method1744(this.retex_s[var33], var32[var33]);
 			}
 		}
-		if (this.field7493 != 0) {
-			var28.method1745(this.field7469, this.field7464, this.field7465, this.field7493 & 0xFF);
+		if (this.tint_amount != 0) {
+			var28.method1745(this.tint_hue, this.tint_saturation, this.tint_lightness, this.tint_amount & 0xFF);
 		}
 		if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
 			var28.method1699(this.resizex, this.resizey, this.resizez);
@@ -973,56 +973,56 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.o(Lem;Lep;I)Lvd;")
-	public final LocType method9477(VariableTypeProvider arg0, VarIntDomain arg1) {
-		int var3 = -1;
-		if (this.field7506 != -1) {
-			VarBitType var4 = arg0.getVarBitType(this.field7506);
+	public final LocType getVisible(VariableTypeProvider varProvider, VarIntDomain varDomain) {
+		int i = -1;
+		if (this.multivarbit != -1) {
+			VarBitType var4 = varProvider.getVarBitType(this.multivarbit);
 			if (var4 != null) {
-				var3 = arg1.getVarBitValue(var4);
+				i = varDomain.getVarBitValue(var4);
 			}
-		} else if (this.field7507 != -1) {
-			VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.field7507);
+		} else if (this.multivarp != -1) {
+			VarType var5 = varProvider.getVarType(VarDomainType.PLAYER, this.multivarp);
 			if (var5 != null) {
-				var3 = arg1.getVarValueInt(var5);
+				i = varDomain.getVarValueInt(var5);
 			}
 		}
-		if (var3 >= 0 && var3 < this.field7505.length - 1) {
-			return this.field7505[var3] == -1 ? null : (LocType) this.myList.list(this.field7505[var3]);
+		if (i >= 0 && i < this.multiloc.length - 1) {
+			return this.multiloc[i] == -1 ? null : (LocType) this.myList.list(this.multiloc[i]);
 		} else {
-			int var6 = this.field7505[this.field7505.length - 1];
+			int var6 = this.multiloc[this.multiloc.length - 1];
 			return var6 == -1 ? null : (LocType) this.myList.list(var6);
 		}
 	}
 
 	@ObfuscatedName("vd.s(III)I")
-	public int method9481(int arg0, int arg1) {
+	public int getParam(int arg0, int arg1) {
 		if (this.params == null) {
 			return arg1;
 		} else {
 			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
-			return var3 == null ? arg1 : var3.intValue;
+			return var3 == null ? arg1 : var3.value;
 		}
 	}
 
 	@ObfuscatedName("vd.y(ILjava/lang/String;B)Ljava/lang/String;")
-	public String method9479(int arg0, String arg1) {
+	public String getParam(int arg0, String arg1) {
 		if (this.params == null) {
 			return arg1;
 		} else {
 			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
-			return var3 == null ? arg1 : (String) var3.field11436;
+			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}
 
 	@ObfuscatedName("vd.q(I)Z")
 	public boolean method9480() {
-		if (this.field7505 == null) {
-			return this.field7508 != -1 || this.field7514 != null;
+		if (this.multiloc == null) {
+			return this.bgsound_sound != -1 || this.bgsound_random != null;
 		}
-		for (int var1 = 0; var1 < this.field7505.length; var1++) {
-			if (this.field7505[var1] != -1) {
-				LocType var2 = (LocType) this.myList.list(this.field7505[var1]);
-				if (var2.field7508 != -1 || var2.field7514 != null) {
+		for (int var1 = 0; var1 < this.multiloc.length; var1++) {
+			if (this.multiloc[var1] != -1) {
+				LocType var2 = (LocType) this.myList.list(this.multiloc[var1]);
+				if (var2.bgsound_sound != -1 || var2.bgsound_random != null) {
 					return true;
 				}
 			}
@@ -1048,25 +1048,25 @@ public class LocType implements ConfigType {
 			}
 			int var1 = (int) (Math.random() * 65535.0D);
 			for (int var2 = 0; var2 < this.anim.length; var2++) {
-				if (var1 <= this.field7478[var2]) {
+				if (var1 <= this.anim_weight[var2]) {
 					return this.anim[var2];
 				}
-				var1 -= this.field7478[var2];
+				var1 -= this.anim_weight[var2];
 			}
 		}
 		return -1;
 	}
 
 	@ObfuscatedName("vd.a(I)[I")
-	public int[] method9484() {
+	public int[] getAnim() {
 		return this.anim;
 	}
 
 	@ObfuscatedName("vd.g(IB)Z")
-	public boolean method9493(int arg0) {
-		if (this.anim != null && arg0 != -1) {
-			for (int var2 = 0; var2 < this.anim.length; var2++) {
-				if (this.anim[var2] == arg0) {
+	public boolean hasAnim(int id) {
+		if (this.anim != null && id != -1) {
+			for (int index = 0; index < this.anim.length; index++) {
+				if (this.anim[index] == id) {
 					return true;
 				}
 			}
@@ -1075,7 +1075,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.i(IS)I")
-	public int method9486(int arg0) {
-		return this.field7497 == null ? -1 : this.field7497[arg0];
+	public int getCursor(int op) {
+		return this.cursor == null ? -1 : this.cursor[op];
 	}
 }

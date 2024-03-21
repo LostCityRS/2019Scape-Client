@@ -171,20 +171,20 @@ public class HitmarkType implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.z(Lem;Lep;I)Lvb;")
-	public final HitmarkType getMultiHitmark(VariableTypeProvider varTypeProvider, VarIntDomain varDomain) {
+	public final HitmarkType getVisible(VariableTypeProvider varProvider, VarIntDomain varDomain) {
 		int i = -1;
 		if (this.multimark == null) {
 			return this;
-		} else if (varTypeProvider == null || varDomain == null) {
+		} else if (varProvider == null || varDomain == null) {
 			return null;
 		} else {
 			if (this.multivarbit != -1) {
-				VarBitType var4 = varTypeProvider.getVarBitType(this.multivarbit);
+				VarBitType var4 = varProvider.getVarBitType(this.multivarbit);
 				if (var4 != null) {
 					i = varDomain.getVarBitValue(var4);
 				}
 			} else if (this.multivarp != -1) {
-				VarType var5 = varTypeProvider.getVarType(VarDomainType.PLAYER, this.multivarp);
+				VarType var5 = varProvider.getVarType(VarDomainType.PLAYER, this.multivarp);
 				if (var5 != null) {
 					i = varDomain.getVarValueInt(var5);
 				}

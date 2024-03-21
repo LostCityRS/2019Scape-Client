@@ -283,7 +283,7 @@ public class SeqType implements ConfigType {
 			return arg1;
 		} else {
 			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
-			return var3 == null ? arg1 : var3.intValue;
+			return var3 == null ? arg1 : var3.value;
 		}
 	}
 
@@ -293,7 +293,7 @@ public class SeqType implements ConfigType {
 			return arg1;
 		} else {
 			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
-			return var3 == null ? arg1 : (String) var3.field11436;
+			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}
 

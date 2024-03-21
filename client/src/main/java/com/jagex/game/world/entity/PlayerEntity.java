@@ -343,8 +343,8 @@ public class PlayerEntity extends PathingEntity {
 				short var12 = Client.graphicsDefaults.field7728;
 				byte var13 = Client.graphicsDefaults.field7757;
 				if (this.model.field7892 != -1) {
-					var12 = ((NPCType) Client.npcTypeList.list(this.model.field7892)).field2741;
-					var13 = ((NPCType) Client.npcTypeList.list(this.model.field7892)).field2702;
+					var12 = ((NPCType) Client.npcTypeList.list(this.model.field7892)).spotshadowtexture;
+					var13 = ((NPCType) Client.npcTypeList.list(this.model.field7892)).spotshadowtexture_alpha;
 				}
 				Object var14 = null;
 				Model var15;
@@ -372,7 +372,7 @@ public class PlayerEntity extends PathingEntity {
 					if (var17.field745 == 1) {
 						ObjectWrapper var18 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var17.field744);
 						if (var18 != null) {
-							NpcEntity var19 = (NpcEntity) var18.field11436;
+							NpcEntity var19 = (NpcEntity) var18.value;
 							Vector3 var20 = Vector3.sub(var19.getTransform().trans, Client.localPlayerEntity.getTransform().trans);
 							int var21 = (int) var20.x;
 							int var22 = (int) var20.z;

@@ -105,7 +105,7 @@ public final class CutsceneEntity {
 			return true;
 		}
 		NPCType var1 = (NPCType) Client.npcTypeList.list(this.field1743);
-		boolean var2 = var1.method4545();
+		boolean var2 = var1.modelsLoaded();
 		if (this.field1747 == null) {
 			BASType var3 = (BASType) Client.basTypeList.list(var1.bas);
 			this.field1747 = var3.method9293();

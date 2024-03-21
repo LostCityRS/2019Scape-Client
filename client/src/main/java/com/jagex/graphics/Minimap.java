@@ -342,16 +342,16 @@ public class Minimap {
 			return false;
 		}
 		LocType var4 = (LocType) arg1.list(arg0.method8223());
-		if (var4.field7518 && !Client.loggedInMembers) {
+		if (var4.members && !Client.loggedInMembers) {
 			return false;
 		}
-		int var5 = var4.field7485;
-		if (var4.field7505 != null) {
-			for (int var6 = 0; var6 < var4.field7505.length; var6++) {
-				if (var4.field7505[var6] != -1) {
-					LocType var7 = (LocType) arg1.list(var4.field7505[var6]);
-					if (var7.field7485 >= 0) {
-						var5 = var7.field7485;
+		int var5 = var4.mapelement;
+		if (var4.multiloc != null) {
+			for (int var6 = 0; var6 < var4.multiloc.length; var6++) {
+				if (var4.multiloc[var6] != -1) {
+					LocType var7 = (LocType) arg1.list(var4.multiloc[var6]);
+					if (var7.mapelement >= 0) {
+						var5 = var7.mapelement;
 					}
 				}
 			}
@@ -388,10 +388,10 @@ public class Minimap {
 	@ObfuscatedName("ajc.d(Lst;S)Z")
 	public static boolean method17469(Location arg0) {
 		LocType var1 = (LocType) Client.world.method7750().list(arg0.method8223());
-		if (var1.field7486 == -1) {
+		if (var1.mapsceneicon == -1) {
 			return true;
 		} else {
-			MSIType var2 = (MSIType) Client.msiTypeList.list(var1.field7486);
+			MSIType var2 = (MSIType) Client.msiTypeList.list(var1.mapsceneicon);
 			return var2.field9151 == -1 ? true : var2.method15060();
 		}
 	}
@@ -404,9 +404,9 @@ public class Minimap {
 			LocType var10 = (LocType) Client.world.method7750().list(var9.method8223());
 			int var11 = var9.method8204() & 0x3;
 			int var12 = var9.method8220();
-			if (var10.field7486 == -1) {
+			if (var10.mapsceneicon == -1) {
 				int var13 = arg6;
-				if (var10.active2 > 0) {
+				if (var10.active > 0) {
 					var13 = arg7;
 				}
 				if (LocShape.WALL_STRAIGHT.id == var12 || LocShape.WALL_L.id == var12) {
@@ -451,11 +451,11 @@ public class Minimap {
 			LocType var15 = (LocType) Client.world.method7750().list(var14.method8223());
 			int var16 = var14.method8204() & 0x3;
 			int var17 = var14.method8220();
-			if (var15.field7486 != -1) {
+			if (var15.mapsceneicon != -1) {
 				method1900(arg0, var15, var16, arg4, arg5);
 			} else if (LocShape.WALL_DIAGONAL.id == var17) {
 				int var18 = -1118482;
-				if (var15.active2 > 0) {
+				if (var15.active > 0) {
 					var18 = -1179648;
 				}
 				if (var16 == 0 || var16 == 2) {
@@ -471,25 +471,25 @@ public class Minimap {
 		}
 		LocType var20 = (LocType) Client.world.method7750().list(var19.method8223());
 		int var21 = var19.method8204() & 0x3;
-		if (var20.field7486 != -1) {
+		if (var20.mapsceneicon != -1) {
 			method1900(arg0, var20, var21, arg4, arg5);
 		}
 	}
 
 	@ObfuscatedName("dz.r(Ldh;Lvd;IIII)V")
 	public static void method1900(Renderer arg0, LocType arg1, int arg2, int arg3, int arg4) {
-		MSIType var5 = (MSIType) Client.msiTypeList.list(arg1.field7486);
+		MSIType var5 = (MSIType) Client.msiTypeList.list(arg1.mapsceneicon);
 		if (var5.field9151 == -1) {
 			return;
 		}
 		int var7;
-		if (arg1.field7487) {
+		if (arg1.mapsceneiconrotate) {
 			int var6 = arg1.field7488 + arg2;
 			var7 = var6 & 0x3;
 		} else {
 			var7 = 0;
 		}
-		Sprite var8 = var5.method15057(arg0, var7, arg1.field7504);
+		Sprite var8 = var5.method15057(arg0, var7, arg1.mapsceneiconmirror);
 		if (var8 == null) {
 			return;
 		}
@@ -570,7 +570,7 @@ public class Minimap {
 		}
 		WorldMapRelated var14 = Client.world.method7871();
 		for (IntWrapper var15 = (IntWrapper) field727.peekFront(); var15 != null; var15 = (IntWrapper) field727.prev()) {
-			int var16 = var15.intValue;
+			int var16 = var15.value;
 			int var17 = (var14.field6776[var16] >> 14 & 0x3FFF) - var6.x;
 			int var18 = (var14.field6776[var16] & 0x3FFF) - var6.z;
 			int var19 = var17 * 4 + 2 - var7 / 128;
@@ -581,13 +581,13 @@ public class Minimap {
 			int var22 = field725[var21] * 4 + 2 - var7 / 128;
 			int var23 = field733[var21] * 4 + 2 - var8 / 128;
 			LocType var24 = (LocType) Client.world.method7750().list(field726[var21]);
-			if (var24.field7505 != null) {
-				var24 = var24.method9477(Client.localPlayerGameState, Client.localPlayerGameState);
-				if (var24 == null || var24.field7485 == -1) {
+			if (var24.multiloc != null) {
+				var24 = var24.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+				if (var24 == null || var24.mapelement == -1) {
 					continue;
 				}
 			}
-			method15085(arg0, var5, arg1, arg2, arg3, var22, var23, var24.field7485);
+			method15085(arg0, var5, arg1, arg2, arg3, var22, var23, var24.mapelement);
 		}
 		for (ObjStackList var25 = (ObjStackList) Client.objStacks.peekFront(); var25 != null; var25 = (ObjStackList) Client.objStacks.prev()) {
 			int var26 = (int) (var25.nodeId >> 28 & 0x3L);
@@ -620,10 +620,10 @@ public class Minimap {
 		for (int var7 = 0; var7 < Client.field11011; var7++) {
 			ObjectWrapper var8 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var7]);
 			if (var8 != null) {
-				NpcEntity var9 = (NpcEntity) var8.field11436;
+				NpcEntity var9 = (NpcEntity) var8.value;
 				if (var9.method19160() && Client.localPlayerEntity.level == var9.level) {
 					NPCType var10 = var9.npcType;
-					if (var10 != null && var10.field2735 != null) {
+					if (var10 != null && var10.multinpc != null) {
 						var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 					}
 					if (var10 != null && var10.minimap && var10.active) {
@@ -700,7 +700,7 @@ public class Minimap {
 				if (var8.field745 == 1) {
 					ObjectWrapper var9 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var8.field744);
 					if (var9 != null) {
-						NpcEntity var10 = (NpcEntity) var9.field11436;
+						NpcEntity var10 = (NpcEntity) var9.value;
 						Vector3 var11 = var10.getTransform().trans;
 						int var12 = (int) var11.x / 128 - arg0 / 128;
 						int var13 = (int) var11.z / 128 - arg1 / 128;

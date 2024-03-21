@@ -30,7 +30,7 @@ public class SetVarbitCutsceneAction extends CutsceneAction {
 		if (var1 == null) {
 			CutsceneManager.field1718.pushNode(new IntWrapper(this.field10289), this.field10288);
 		} else {
-			var1.intValue = this.field10289;
+			var1.value = this.field10289;
 		}
 	}
 }

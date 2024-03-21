@@ -3032,7 +3032,7 @@ public final class Client extends GameShell {
 			}
 		}
 		for (int var4 = 0; var4 < field10906; var4++) {
-			NpcEntity var5 = (NpcEntity) field10839[var4].field11436;
+			NpcEntity var5 = (NpcEntity) field10839[var4].value;
 			if (var5 != null) {
 				for (int var6 = 0; var6 < var5.field10459.length; var6++) {
 					var5.field10459[var6] = null;
@@ -3727,9 +3727,9 @@ public final class Client extends GameShell {
 		method5013();
 		field11058++;
 		for (int var2 = 0; var2 < field10906; var2++) {
-			NpcEntity var3 = (NpcEntity) field10839[var2].field11436;
+			NpcEntity var3 = (NpcEntity) field10839[var2].value;
 			if (var3 != null) {
-				byte var4 = var3.npcType.field2743;
+				byte var4 = var3.npcType.walkflags;
 				if ((var4 & 0x1) != 0) {
 					int var5 = var3.size();
 					if ((var4 & 0x2) != 0 && var3.routeLength == 0 && Math.random() * 1000.0D < 10.0D) {
@@ -4399,7 +4399,7 @@ public final class Client extends GameShell {
 			long var4 = (long) field11036[var3];
 			ObjectWrapper var6 = (ObjectWrapper) miniMenuEntries.getNode(var4);
 			if (var6 != null) {
-				((PathingEntity) var6.field11436).method16520();
+				((PathingEntity) var6.value).method16520();
 			}
 		}
 		if (sceneState != 0) {
@@ -5004,7 +5004,7 @@ public final class Client extends GameShell {
 			int var1 = field11036[var0];
 			ObjectWrapper var2 = (ObjectWrapper) miniMenuEntries.getNode((long) var1);
 			if (var2 != null) {
-				NpcEntity var3 = (NpcEntity) var2.field11436;
+				NpcEntity var3 = (NpcEntity) var2.value;
 				updateEntity(var3, false);
 			}
 		}
@@ -5305,7 +5305,7 @@ public final class Client extends GameShell {
 			if (arg0.targetId < 32768) {
 				ObjectWrapper var2 = (ObjectWrapper) miniMenuEntries.getNode((long) arg0.targetId);
 				if (var2 != null) {
-					var1 = (PathingEntity) var2.field11436;
+					var1 = (PathingEntity) var2.value;
 				}
 			} else if (arg0.targetId >= 32768) {
 				var1 = players[arg0.targetId - 32768];
@@ -5372,7 +5372,7 @@ public final class Client extends GameShell {
 						arg0.method16583(var3, -1);
 						continue;
 					}
-					NpcEntity var17 = (NpcEntity) var16.field11436;
+					NpcEntity var17 = (NpcEntity) var16.value;
 					Vector3 var18 = var17.getTransform().trans;
 					var11 = (int) var7.x - (int) var18.x;
 					var12 = (int) var7.z - (int) var18.z;
@@ -6616,8 +6616,8 @@ public final class Client extends GameShell {
 			}
 		}
 		for (int var8 = 0; var8 < field11011; var8++) {
-			NpcEntity var9 = (NpcEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var8])).field11436;
-			if (var9.method19160() && var9.npcType.method4567(localPlayerGameState, localPlayerGameState)) {
+			NpcEntity var9 = (NpcEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var8])).value;
+			if (var9.method19160() && var9.npcType.isVisible(localPlayerGameState, localPlayerGameState)) {
 				var9.method16529();
 				if (var9.field12471 >= 0 && var9.field12468 >= 0 && var9.field12472 < world.getSizeX() && var9.field12467 < world.getSizeZ()) {
 					int var10 = 0;
@@ -6665,7 +6665,7 @@ public final class Client extends GameShell {
 				if (var12.field745 == 1) {
 					ObjectWrapper var13 = (ObjectWrapper) miniMenuEntries.getNode((long) var12.field744);
 					if (var13 != null) {
-						NpcEntity var14 = (NpcEntity) var13.field11436;
+						NpcEntity var14 = (NpcEntity) var13.value;
 						if (var14.field10404 >= 0) {
 							var14.field10404 += 2048;
 						}
@@ -6717,7 +6717,7 @@ public final class Client extends GameShell {
 				if (var6 < var1) {
 					var8 = players[var2[var6]];
 				} else {
-					var8 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var6 - var1])).field11436;
+					var8 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var6 - var1])).value;
 				}
 				if (var8.level != arg0 || var8.field10404 < 0 || var8.field10401) {
 					continue;
@@ -6786,7 +6786,7 @@ public final class Client extends GameShell {
 				if (var6 < var1) {
 					var8 = players[var2[var6]];
 				} else {
-					var8 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var6 - var1])).field11436;
+					var8 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var6 - var1])).value;
 				}
 				if (var8.level != arg0) {
 					continue;
@@ -6865,7 +6865,7 @@ public final class Client extends GameShell {
 	public static final void method16925() {
 		field10919 = 0;
 		for (int var0 = 0; var0 < field11011; var0++) {
-			NpcEntity var1 = (NpcEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var0])).field11436;
+			NpcEntity var1 = (NpcEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var0])).value;
 			if (var1.field10452 && var1.method16486() != -1) {
 				int var2 = (var1.size() - 1) * 256 + 252;
 				Vector3 var3 = var1.getTransform().trans;
@@ -6945,7 +6945,7 @@ public final class Client extends GameShell {
 				if (var3 < var0) {
 					var5 = players[var1[var3]];
 				} else {
-					var5 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var3 - var0])).field11436;
+					var5 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var3 - var0])).value;
 				}
 				if (var5.field10404 < 0) {
 					continue;
@@ -6988,7 +6988,7 @@ public final class Client extends GameShell {
 					} else {
 						ObjectWrapper var4 = (ObjectWrapper) miniMenuEntries.getNode((long) (var1.field12593 - 1));
 						if (var4 != null) {
-							NpcEntity var5 = (NpcEntity) var4.field11436;
+							NpcEntity var5 = (NpcEntity) var4.value;
 							Vector3 var6 = var5.getTransform().trans;
 							if ((int) var6.x >= 0 && (int) var6.x < world.getSizeX() * 512 && (int) var6.z >= 0 && (int) var6.z < world.getSizeZ() * 512) {
 								var1.method19725((int) var6.x, (int) var6.z, getHeightmapY((int) var6.x, (int) var6.z, var1.level) - var1.field12587, loopCycle);
@@ -7106,7 +7106,7 @@ public final class Client extends GameShell {
 				}
 				if (var11.field1743 >= 0) {
 					var10 = ((NpcEntity) var12).npcType;
-					if (var10.field2735 != null) {
+					if (var10.multinpc != null) {
 						var10 = var10.getVisible(localPlayerGameState, localPlayerGameState);
 						if (var10 == null) {
 							continue;
@@ -7117,9 +7117,9 @@ public final class Client extends GameShell {
 				if (var9 < var6) {
 					var12 = players[var7[var9]];
 				} else {
-					var12 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var9 - var6])).field11436;
+					var12 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) field11036[var9 - var6])).value;
 					var10 = ((NpcEntity) var12).npcType;
-					if (var10.field2735 != null) {
+					if (var10.multinpc != null) {
 						var10 = var10.getVisible(localPlayerGameState, localPlayerGameState);
 						if (var10 == null) {
 							continue;
@@ -7240,8 +7240,8 @@ public final class Client extends GameShell {
 						}
 					} else {
 						NpcEntity var45 = (NpcEntity) var12;
-						int[] var46 = var45.field12080 == null ? var45.npcType.field2738 : var45.field12080.field2682;
-						short[] var47 = var45.field12080 == null ? var45.npcType.field2728 : var45.field12080.field2681;
+						int[] var46 = var45.field12080 == null ? var45.npcType.headicon_groupid : var45.field12080.field2682;
+						short[] var47 = var45.field12080 == null ? var45.npcType.headicon_id : var45.field12080.field2681;
 						if (var47 != null && var46 != null) {
 							for (int var48 = 0; var48 < var47.length; var48++) {
 								if (var47[var48] >= 0 && var46[var48] >= 0) {
@@ -7321,7 +7321,7 @@ public final class Client extends GameShell {
 						var71 = (HitmarkType) hitmarkTypeList.list(var12.field10411[var68]);
 						var72 = var71.sticktime;
 						if (var71 != null && var71.multimark != null) {
-							var71 = var71.getMultiHitmark(localPlayerGameState, localPlayerGameState);
+							var71 = var71.getVisible(localPlayerGameState, localPlayerGameState);
 							if (var71 == null) {
 								var12.field10421[var68] = -1;
 								continue;
@@ -7335,7 +7335,7 @@ public final class Client extends GameShell {
 					if (var73 >= 0) {
 						var74 = (HitmarkType) hitmarkTypeList.list(var73);
 						if (var74 != null && var74.multimark != null) {
-							var74 = var74.getMultiHitmark(localPlayerGameState, localPlayerGameState);
+							var74 = var74.getVisible(localPlayerGameState, localPlayerGameState);
 						}
 					}
 					if (var69 - var72 <= loopCycle) {
@@ -7612,14 +7612,14 @@ public final class Client extends GameShell {
 			if (var151 < 2048) {
 				var152 = players[var151];
 			} else {
-				var152 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) (var151 - 2048))).field11436;
+				var152 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) (var151 - 2048))).value;
 			}
 			int var153 = field10918[var150];
 			PathingEntity var154;
 			if (var153 < 2048) {
 				var154 = players[var153];
 			} else {
-				var154 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) (var153 - 2048))).field11436;
+				var154 = (PathingEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) (var153 - 2048))).value;
 			}
 			method6810(var152, var154, --var152.field10402, arg0, arg1, arg2, arg3, arg4, arg5);
 		}
@@ -7795,7 +7795,7 @@ public final class Client extends GameShell {
 			int var12 = field11036[var11];
 			ObjectWrapper var13 = (ObjectWrapper) miniMenuEntries.getNode((long) var12);
 			if (var13 != null) {
-				((PathingEntity) var13.field11436).method16518(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+				((PathingEntity) var13.value).method16518(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 			}
 		}
 	}
@@ -8276,7 +8276,7 @@ public final class Client extends GameShell {
 			int var59 = in.g1_alt2();
 			ObjectWrapper var60 = (ObjectWrapper) miniMenuEntries.getNode((long) var58);
 			if (var60 != null) {
-				addSequences((PathingEntity) var60.field11436, var56, var59, true);
+				addSequences((PathingEntity) var60.value, var56, var59, true);
 			}
 			connection.packetType = null;
 			return true;
@@ -9558,7 +9558,7 @@ public final class Client extends GameShell {
 				int var397 = var381 & 0xFFFF;
 				ObjectWrapper var398 = (ObjectWrapper) miniMenuEntries.getNode((long) var397);
 				if (var398 != null) {
-					NpcEntity var399 = (NpcEntity) var398.field11436;
+					NpcEntity var399 = (NpcEntity) var398.value;
 					EntitySpotAnim var400 = var399.spotAnims[var384];
 					if (var382 == 65535) {
 						var382 = -1;
@@ -9964,8 +9964,8 @@ public final class Client extends GameShell {
 				}
 			}
 			for (int var517 = 0; var517 < field10906; var517++) {
-				((PathingEntity) field10839[var517].field11436).field10427 = null;
-				((PathingEntity) field10839[var517].field11436).field10454.method14362(-1);
+				((PathingEntity) field10839[var517].value).field10427 = null;
+				((PathingEntity) field10839[var517].value).field10454.method14362(-1);
 			}
 			connection.packetType = null;
 			return true;
@@ -10520,7 +10520,7 @@ public final class Client extends GameShell {
 			int var682 = in.g2_alt3();
 			ObjectWrapper var683 = (ObjectWrapper) miniMenuEntries.getNode((long) var682);
 			if (var683 != null) {
-				NpcEntity var684 = (NpcEntity) var683.field11436;
+				NpcEntity var684 = (NpcEntity) var683.value;
 				if (var684.field12080 == null) {
 					var684.field12080 = new NPCHeadIconCustomisation(var684.npcType);
 				}
@@ -11143,12 +11143,12 @@ public final class Client extends GameShell {
 		for (int var2 = 0; var2 < field10846; var2++) {
 			int var3 = field10847[var2];
 			ObjectWrapper var4 = (ObjectWrapper) miniMenuEntries.getNode((long) var3);
-			NpcEntity var5 = (NpcEntity) var4.field11436;
+			NpcEntity var5 = (NpcEntity) var4.value;
 			if (field10815 != var5.field10440) {
 				if (MiniMenu.field562 && MiniMenu.method8494(var3)) {
 					MiniMenu.method6031();
 				}
-				if (var5.npcType.method4556()) {
+				if (var5.npcType.hasBackgroundSound()) {
 					PositionedSound.method10111(var5);
 				}
 				var5.method19156(null);
@@ -11191,8 +11191,8 @@ public final class Client extends GameShell {
 			throw new RuntimeException("" + (field10906 - field11011));
 		}
 		for (int var16 = 0; var16 < field10906; var16++) {
-			if (((PathingEntity) field10839[var16].field11436).field10440 != field10815) {
-				throw new RuntimeException("" + ((PathingEntity) field10839[var16].field11436).localPlayerIndex);
+			if (((PathingEntity) field10839[var16].value).field10440 != field10815) {
+				throw new RuntimeException("" + ((PathingEntity) field10839[var16].value).localPlayerIndex);
 			}
 		}
 	}
@@ -11213,7 +11213,7 @@ public final class Client extends GameShell {
 		field11011 = 0;
 		for (int var3 = 0; var3 < var1; var3++) {
 			int var4 = field11036[var3];
-			NpcEntity var5 = (NpcEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) var4)).field11436;
+			NpcEntity var5 = (NpcEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) var4)).value;
 			int var6 = var0.gBit(1);
 			if (var6 == 0) {
 				field11036[++field11011 - 1] = var4;
@@ -11274,10 +11274,10 @@ public final class Client extends GameShell {
 				field10839[++field10906 - 1] = var4;
 				var3 = true;
 			}
-			NpcEntity var6 = (NpcEntity) var4.field11436;
+			NpcEntity var6 = (NpcEntity) var4.value;
 			field11036[++field11011 - 1] = var2;
 			var6.field10440 = field10815;
-			if (var6.npcType != null && var6.npcType.method4556()) {
+			if (var6.npcType != null && var6.npcType.hasBackgroundSound()) {
 				PositionedSound.method10111(var6);
 			}
 			int var7 = var1.gBit(2);
@@ -11302,7 +11302,7 @@ public final class Client extends GameShell {
 				var6.method16491(var11, true);
 			}
 			var6.method19159(var7, localPlayerEntity.routeWaypointX[0] + var12, localPlayerEntity.routeWaypointZ[0] + var8, var10 == 1, var6.size());
-			if (var6.npcType.method4556()) {
+			if (var6.npcType.hasBackgroundSound()) {
 				PositionedSound.method9739(var6.level, var6.routeWaypointX[0], var6.routeWaypointZ[0], 0, null, var6, null);
 			}
 			if (var3) {
@@ -11317,7 +11317,7 @@ public final class Client extends GameShell {
 		PacketBit var0 = gameConnection.in;
 		for (int var1 = 0; var1 < field10876; var1++) {
 			int var2 = field10844[var1];
-			NpcEntity var3 = (NpcEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) var2)).field11436;
+			NpcEntity var3 = (NpcEntity) ((ObjectWrapper) miniMenuEntries.getNode((long) var2)).value;
 			var0.g2();
 			int var4 = var0.g1();
 			if ((var4 & 0x2) != 0) {
@@ -11463,13 +11463,13 @@ public final class Client extends GameShell {
 				}
 			}
 			if ((var4 & 0x10) != 0) {
-				if (var3.npcType.method4556()) {
+				if (var3.npcType.hasBackgroundSound()) {
 					PositionedSound.method10111(var3);
 				}
 				var3.method19157((NPCType) npcTypeList.list(var0.gSmart2or4null()), (var4 & 0x10000) == 0, (var4 & 0x800000) == 0, true);
 				var3.method16502(var3.npcType.size);
 				var3.field10444 = var3.npcType.turnspeed << 3;
-				if (var3.npcType.method4556()) {
+				if (var3.npcType.hasBackgroundSound()) {
 					PositionedSound.method9739(var3.level, var3.routeWaypointX[0], var3.routeWaypointZ[0], 0, null, var3, null);
 				}
 			}
@@ -12770,7 +12770,7 @@ public final class Client extends GameShell {
 			int var11 = field11036[var10];
 			ObjectWrapper var12 = (ObjectWrapper) miniMenuEntries.getNode((long) var11);
 			if (var12 != null) {
-				((PathingEntity) var12.field11436).method16519(var3, var4, arg2);
+				((PathingEntity) var12.value).method16519(var3, var4, arg2);
 			}
 		}
 	}
@@ -13178,8 +13178,8 @@ public final class Client extends GameShell {
 											int var74 = field11036[var73];
 											ObjectWrapper var75 = (ObjectWrapper) miniMenuEntries.getNode((long) var74);
 											if (var75 != null) {
-												ScriptRunner.method3661(ClientTriggerType.field7260, ((NpcEntity) var75.field11436).npcType.id, -1, (PathingEntity) var75.field11436, var74);
-												((PathingEntity) var75.field11436).method16571(var15, var16, var17, var18, var13 - var12.field2206, var14 - var12.field2207, arg9, arg10);
+												ScriptRunner.method3661(ClientTriggerType.field7260, ((NpcEntity) var75.value).npcType.id, -1, (PathingEntity) var75.value, var74);
+												((PathingEntity) var75.value).method16571(var15, var16, var17, var18, var13 - var12.field2206, var14 - var12.field2207, arg9, arg10);
 											}
 										}
 										continue;
@@ -14645,7 +14645,7 @@ public final class Client extends GameShell {
 				int var19 = arg1 - 1;
 				ObjectWrapper var20 = (ObjectWrapper) miniMenuEntries.getNode((long) var19);
 				if (var20 != null) {
-					var17 = (PathingEntity) var20.field11436;
+					var17 = (PathingEntity) var20.value;
 				}
 			}
 			if (var17 != null) {

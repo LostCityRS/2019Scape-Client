@@ -1274,7 +1274,7 @@ public class LoginManager {
 		}
 		Client.localPlayerEntity = null;
 		for (int var1 = 0; var1 < Client.field10906; var1++) {
-			PathingEntity var2 = (PathingEntity) Client.field10839[var1].field11436;
+			PathingEntity var2 = (PathingEntity) Client.field10839[var1].value;
 			if (var2 != null) {
 				var2.targetId = -1;
 			}

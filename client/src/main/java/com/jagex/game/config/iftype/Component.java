@@ -1176,7 +1176,7 @@ public class Component {
 				return var39;
 			}
 		} else if (this.field2224 == 6) {
-			Model var40 = ((NPCType) arg4.list(this.field2294)).method4542(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
+			Model var40 = ((NPCType) arg4.list(this.field2294)).getSequencedModel(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
 			if (var40 == null) {
 				field2338 = true;
 				return null;
@@ -1404,7 +1404,7 @@ public class Component {
 			return arg1;
 		} else {
 			IntWrapper var3 = (IntWrapper) this.field2333.getNode((long) arg0);
-			return var3 == null ? arg1 : var3.intValue;
+			return var3 == null ? arg1 : var3.value;
 		}
 	}
 
@@ -1414,7 +1414,7 @@ public class Component {
 			return arg1;
 		} else {
 			ObjectWrapper var3 = (ObjectWrapper) this.field2333.getNode((long) arg0);
-			return var3 == null ? arg1 : (String) var3.field11436;
+			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}
 
@@ -1429,7 +1429,7 @@ public class Component {
 		if (var3 == null) {
 			this.field2333.pushNode(new IntWrapper(arg1), (long) arg0);
 		} else {
-			var3.intValue = arg1;
+			var3.value = arg1;
 		}
 	}
 

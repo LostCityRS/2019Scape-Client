@@ -298,7 +298,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.sm()V")
 	public void method16105() {
 		for (ObjectWrapper var1 = (ObjectWrapper) this.field11959.peekFront(); var1 != null; var1 = (ObjectWrapper) this.field11959.prev()) {
-			Direct3DInterface1 var2 = (Direct3DInterface1) var1.field11436;
+			Direct3DInterface1 var2 = (Direct3DInterface1) var1.value;
 			var2.method6220();
 			if (this.renderTarget == var2) {
 				var2.method1630();
@@ -311,7 +311,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	public void method15973() {
 		this.method2126();
 		for (ObjectWrapper var1 = (ObjectWrapper) this.field11959.peekFront(); var1 != null; var1 = (ObjectWrapper) this.field11959.prev()) {
-			Direct3DInterface1 var2 = (Direct3DInterface1) var1.field11436;
+			Direct3DInterface1 var2 = (Direct3DInterface1) var1.value;
 			var2.method1629();
 		}
 		super.method15973();
@@ -490,7 +490,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	@ObfuscatedName("aqd.aha(Loz;)Lake;")
 	public ObjectWrapper method19005(Direct3DInterface1 arg0) {
 		for (ObjectWrapper var2 = (ObjectWrapper) this.field11959.peekFront(); var2 != null; var2 = (ObjectWrapper) this.field11959.prev()) {
-			if (var2.field11436 == arg0) {
+			if (var2.value == arg0) {
 				return var2;
 			}
 		}

@@ -85,7 +85,7 @@ public class DynamicLoc {
 		this.field6675 = arg8 != -1;
 		this.field6663 = (byte) arg5;
 		this.field6668 = arg7;
-		this.field6676 = arg0.supportsHardShadows() && arg2.field7453 && !this.field6668;
+		this.field6676 = arg0.supportsHardShadows() && arg2.hardshadow && !this.field6668;
 		this.field6664 = new EntityAnimationWrapper(arg6, false);
 		this.method8244(false, arg8, 1, this.field6675 ? arg9 : 0);
 	}
@@ -126,8 +126,8 @@ public class DynamicLoc {
 	@ObfuscatedName("sp.w(Ldh;IZZI)Ldo;")
 	public final Model method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
 		LocType var5 = (LocType) this.field6681.list(this.field6665);
-		if (var5.field7505 != null) {
-			var5 = var5.method9477(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+		if (var5.multiloc != null) {
+			var5 = var5.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 		}
 		if (var5 == null) {
 			this.method8242(arg0);
@@ -217,8 +217,8 @@ public class DynamicLoc {
 		ModelParticleEffector[] var10 = arg1.method1765();
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
 			LocType var11 = (LocType) this.field6681.list(this.field6665);
-			if (var11.field7505 != null) {
-				var11 = var11.method9477(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+			if (var11.multiloc != null) {
+				var11 = var11.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 			}
 			if (var11 != null) {
 				this.field6680 = ParticleSystem.method9962(Client.loopCycle, true);
@@ -292,8 +292,8 @@ public class DynamicLoc {
 		if (arg1 == -1) {
 			LocType var7 = (LocType) this.field6681.list(this.field6665);
 			LocType var8 = var7;
-			if (var7.field7505 != null) {
-				var7 = var7.method9477(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+			if (var7.multiloc != null) {
+				var7 = var7.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 			}
 			if (var7 == null) {
 				return;
@@ -303,11 +303,11 @@ public class DynamicLoc {
 			}
 			if (var7.method9504()) {
 				if (!var7.field7479 || Client.preferences.animDetail.getValue() == 1) {
-					if (arg0 && this.field6664.method14346() && var7.method9493(this.field6664.method14348())) {
+					if (arg0 && this.field6664.method14346() && var7.hasAnim(this.field6664.method14348())) {
 						return;
 					}
 					if (this.field6673 != var7.id) {
-						var6 = var7.field7515;
+						var6 = var7.randseq;
 					}
 					var5 = var7.method9483();
 					if (var7.method9514()) {
@@ -317,11 +317,11 @@ public class DynamicLoc {
 					}
 				}
 			} else if (var8 != null && var8.method9504() && (!var8.field7479 || Client.preferences.animDetail.getValue() == 1)) {
-				if (arg0 && this.field6664.method14346() && var8.method9493(this.field6664.method14348())) {
+				if (arg0 && this.field6664.method14346() && var8.hasAnim(this.field6664.method14348())) {
 					return;
 				}
 				if (this.field6673 != var7.id) {
-					var6 = var8.field7515;
+					var6 = var8.randseq;
 				}
 				var5 = var8.method9483();
 				if (var8.method9514()) {

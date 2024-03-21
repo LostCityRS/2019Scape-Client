@@ -58,24 +58,24 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		this.field11715 = arg3.id;
 		this.field11190 = arg9;
 		this.field11189 = (byte) arg10;
-		this.field11191 = arg3.active2 != 0 && !arg9;
+		this.field11191 = arg3.active != 0 && !arg9;
 		this.field11184 = arg11;
-		this.field11193 = arg1.supportsHardShadows() && arg3.field7453 && !this.field11190 && Client.preferences.sceneryShadows.getValue() != 0;
+		this.field11193 = arg1.supportsHardShadows() && arg3.hardshadow && !this.field11190 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field11194 = arg7;
 		int var14 = 2048;
 		if (this.field11184) {
 			var14 |= 0x10000;
 		}
-		if (arg3.field7525) {
+		if (arg3.antimacro) {
 			var14 |= 0x80000;
 		}
 		Pair var15 = this.method17436(arg1, var14, this.field11193);
 		if (var15 != null) {
 			this.field11192 = (Model) var15.first;
 			this.field11186 = (HardShadow) var15.second;
-			if (this.field11184 || arg3.field7525) {
+			if (this.field11184 || arg3.antimacro) {
 				this.field11192 = this.field11192.method1773((byte) 0, var14, false);
-				if (arg3.field7525) {
+				if (arg3.antimacro) {
 					LocTint var16 = Client.world.method7722();
 					this.field11192.method1745(var16.field5015, var16.field5013, var16.field5014, var16.field5012);
 				}
@@ -149,7 +149,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		}
 		Matrix4x3 var2 = this.method10533();
 		PickableEntity var3 = PickableEntity.method16749(this.field11191);
-		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).clickbox;
 		if (var4 == null) {
 			this.field11192.draw(var2, this.field11713[0], 0);
 		} else {
@@ -165,7 +165,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).clickbox;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

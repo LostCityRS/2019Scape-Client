@@ -5120,7 +5120,7 @@ public final class ScriptRunner {
 		IterableMap var1 = arg0.field8239.field12375[arg0.field8236[arg0.field8220]];
 		IntWrapper var2 = (IntWrapper) var1.getNode((long) arg0.field8216[--arg0.field8226]);
 		if (var2 != null) {
-			arg0.field8220 += var2.intValue;
+			arg0.field8220 += var2.value;
 		}
 	}
 
@@ -10319,7 +10319,7 @@ public final class ScriptRunner {
 		if (MiniMenu.method18429(var1) == 4) {
 			ObjectWrapper var2 = (ObjectWrapper) Client.miniMenuEntries.getNode(var1.method19370());
 			if (var2 != null) {
-				arg0.currentEntity = (PathingEntity) var2.field11436;
+				arg0.currentEntity = (PathingEntity) var2.value;
 				arg0.field8216[++arg0.field8226 - 1] = 1;
 				return;
 			}
@@ -12156,9 +12156,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.paramTypeList.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((NPCType) Client.npcTypeList.list(var1)).method4548(var2, var3.defaultstr);
+			arg0.field8218[++arg0.field8211 - 1] = ((NPCType) Client.npcTypeList.list(var1)).getParam(var2, var3.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((NPCType) Client.npcTypeList.list(var1)).method4551(var2, var3.defaultint);
+			arg0.field8216[++arg0.field8226 - 1] = ((NPCType) Client.npcTypeList.list(var1)).getParam(var2, var3.defaultint);
 		}
 	}
 
@@ -12169,9 +12169,9 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		ParamType var3 = (ParamType) Client.paramTypeList.list(var2);
 		if (var3.isStringType()) {
-			arg0.field8218[++arg0.field8211 - 1] = ((LocType) Client.world.method7750().list(var1)).method9479(var2, var3.defaultstr);
+			arg0.field8218[++arg0.field8211 - 1] = ((LocType) Client.world.method7750().list(var1)).getParam(var2, var3.defaultstr);
 		} else {
-			arg0.field8216[++arg0.field8226 - 1] = ((LocType) Client.world.method7750().list(var1)).method9481(var2, var3.defaultint);
+			arg0.field8216[++arg0.field8226 - 1] = ((LocType) Client.world.method7750().list(var1)).getParam(var2, var3.defaultint);
 		}
 	}
 
@@ -16484,7 +16484,7 @@ public final class ScriptRunner {
 		NpcEntity var1 = (NpcEntity) arg0.currentEntity;
 		String var2 = var1.field12082;
 		NPCType var3 = var1.npcType;
-		if (var3.field2735 != null) {
+		if (var3.multinpc != null) {
 			NPCType var4 = var3.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var4 == null) {
 				var2 = "";
@@ -16545,7 +16545,7 @@ public final class ScriptRunner {
 		NpcEntity var1 = (NpcEntity) arg0.currentEntity;
 		boolean var2 = false;
 		NPCType var3 = var1.npcType;
-		if (var3.field2735 != null) {
+		if (var3.multinpc != null) {
 			var3 = var3.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 		}
 		if (var3 != null) {
@@ -16558,7 +16558,7 @@ public final class ScriptRunner {
 	public static final void is_npc_visible(ClientScriptState arg0) {
 		NpcEntity var1 = (NpcEntity) arg0.currentEntity;
 		NPCType var2 = var1.npcType;
-		if (var2.field2735 != null) {
+		if (var2.multinpc != null) {
 			var2 = var2.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
 		}
 		arg0.field8216[++arg0.field8226 - 1] = var2 == null ? 0 : 1;

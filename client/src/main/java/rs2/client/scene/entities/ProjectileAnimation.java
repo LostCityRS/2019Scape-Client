@@ -178,7 +178,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 			int var3 = this.field12605 - 1;
 			ObjectWrapper var4 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var3);
 			if (var4 != null) {
-				var1 = (PathingEntity) var4.field11436;
+				var1 = (PathingEntity) var4.value;
 			}
 		}
 		if (var1 == null) {

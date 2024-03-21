@@ -173,7 +173,7 @@ public class ClanSettings {
 			return null;
 		} else {
 			Node var2 = this.field3115.getNode((long) arg0);
-			return var2 != null && var2 instanceof IntWrapper ? Integer.valueOf(((IntWrapper) var2).intValue) : null;
+			return var2 != null && var2 instanceof IntWrapper ? Integer.valueOf(((IntWrapper) var2).value) : null;
 		}
 	}
 
@@ -193,7 +193,7 @@ public class ClanSettings {
 			return null;
 		} else {
 			Node var2 = this.field3115.getNode((long) arg0);
-			return var2 != null && var2 instanceof ObjectWrapper ? (String) ((ObjectWrapper) var2).field11436 : null;
+			return var2 != null && var2 instanceof ObjectWrapper ? (String) ((ObjectWrapper) var2).value : null;
 		}
 	}
 
@@ -397,10 +397,10 @@ public class ClanSettings {
 			if (var3 != null) {
 				if (var3 instanceof IntWrapper) {
 					IntWrapper var4 = (IntWrapper) var3;
-					if (var4.intValue == arg1) {
+					if (var4.value == arg1) {
 						return false;
 					}
-					var4.intValue = arg1;
+					var4.value = arg1;
 					return true;
 				}
 				var3.remove();
@@ -424,11 +424,11 @@ public class ClanSettings {
 			if (var10 != null) {
 				if (var10 instanceof IntWrapper) {
 					IntWrapper var11 = (IntWrapper) var10;
-					if ((var11.intValue & var7) == var9) {
+					if ((var11.value & var7) == var9) {
 						return false;
 					}
-					var11.intValue &= ~var7;
-					var11.intValue |= var9;
+					var11.value &= ~var7;
+					var11.value |= var9;
 					return true;
 				}
 				var10.remove();
@@ -474,8 +474,8 @@ public class ClanSettings {
 			if (var3 != null) {
 				if (var3 instanceof ObjectWrapper) {
 					ObjectWrapper var4 = (ObjectWrapper) var3;
-					if (var4.field11436 instanceof String) {
-						if (arg1.equals(var4.field11436)) {
+					if (var4.value instanceof String) {
+						if (arg1.equals(var4.value)) {
 							return false;
 						}
 						var4.remove();

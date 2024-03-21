@@ -59,32 +59,32 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	public int field11138;
 
 	public StaticSceneryEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, ScaleRotTrans arg18) {
-		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.field7503 == 1, method14062(arg14, arg15), arg18);
+		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.raiseobject == 1, method14062(arg14, arg15), arg18);
 		this.field11145 = arg2;
 		this.field11715 = arg3.id;
 		this.field11714 = (byte) arg5;
 		this.field11143 = arg9;
 		this.field11137 = (byte) arg14;
 		this.field11142 = (byte) arg15;
-		this.field11144 = arg3.active2 != 0 && !arg9;
+		this.field11144 = arg3.active != 0 && !arg9;
 		this.field11139 = arg16;
-		this.field11141 = arg1.supportsHardShadows() && arg3.field7453 && !this.field11143 && Client.preferences.sceneryShadows.getValue() != 0;
+		this.field11141 = arg1.supportsHardShadows() && arg3.hardshadow && !this.field11143 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field12470 = arg17;
 		this.field11138 = arg7;
 		int var20 = 2048;
 		if (this.field11139) {
 			var20 |= 0x10000;
 		}
-		if (arg3.field7525) {
+		if (arg3.antimacro) {
 			var20 |= 0x80000;
 		}
 		Pair var21 = this.method17400(arg1, var20, this.field11141);
 		if (var21 != null) {
 			this.field11136 = (Model) var21.first;
 			this.field11146 = (HardShadow) var21.second;
-			if (this.field11139 || arg3.field7525) {
+			if (this.field11139 || arg3.antimacro) {
 				this.field11136 = this.field11136.method1773((byte) 0, var20, false);
-				if (arg3.field7525) {
+				if (arg3.antimacro) {
 					LocTint var22 = Client.world.method7722();
 					this.field11136.method1745(var22.field5015, var22.field5013, var22.field5014, var22.field5012);
 				}
@@ -167,7 +167,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 		}
 		Matrix4x3 var2 = this.method10533();
 		PickableEntity var3 = PickableEntity.method16749(this.field11144);
-		Cuboid var4 = ((LocType) this.field11145.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11145.list(this.field11715)).clickbox;
 		if (var4 == null) {
 			this.field11136.draw(var2, this.field11713[0], 0);
 		} else {
@@ -183,7 +183,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 
 	@ObfuscatedName("ajv.fa(Ldh;IIB)Z")
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.field11145.list(this.field11715)).field7468;
+		Cuboid var4 = ((LocType) this.field11145.list(this.field11715)).clickbox;
 		if (var4 != null) {
 			return arg0.method2191(arg1, arg2, this.method10533(), var4);
 		}

@@ -79,16 +79,16 @@ public class NPCType implements ConfigType {
 	public byte[] retexindices;
 
 	@ObfuscatedName("if.a")
-	public byte field2711;
+	public byte tint_hue;
 
 	@ObfuscatedName("if.g")
-	public byte field2712;
+	public byte tint_saturation;
 
 	@ObfuscatedName("if.i")
-	public byte field2698;
+	public byte tint_lightness;
 
 	@ObfuscatedName("if.j")
-	public byte field2714 = 0;
+	public byte tint_strength = 0;
 
 	@ObfuscatedName("if.t")
 	public String[] op;
@@ -127,10 +127,10 @@ public class NPCType implements ConfigType {
 	public int contrast = 0;
 
 	@ObfuscatedName("if.au")
-	public int[] field2738 = null;
+	public int[] headicon_groupid = null;
 
 	@ObfuscatedName("if.ar")
-	public short[] field2728 = null;
+	public short[] headicon_id = null;
 
 	@ObfuscatedName("if.ap")
 	public int covermarker = -1;
@@ -139,13 +139,13 @@ public class NPCType implements ConfigType {
 	public int turnspeed = 32;
 
 	@ObfuscatedName("if.ax")
-	public int[] field2735;
+	public int[] multinpc;
 
 	@ObfuscatedName("if.av")
-	public int field2730 = -1;
+	public int multivarbit = -1;
 
 	@ObfuscatedName("if.ao")
-	public int field2755 = -1;
+	public int multivarp = -1;
 
 	@ObfuscatedName("if.aj")
 	public boolean active = true;
@@ -157,46 +157,46 @@ public class NPCType implements ConfigType {
 	public boolean spotshadow = true;
 
 	@ObfuscatedName("if.az")
-	public short field2737 = 0;
+	public short spotshadowcolour_1 = 0;
 
 	@ObfuscatedName("if.aa")
-	public short field2729 = 0;
+	public short spotshadowcolour_2 = 0;
 
 	@ObfuscatedName("if.af")
-	public byte field2739 = -96;
+	public byte spotshadowtrans_1 = -96;
 
 	@ObfuscatedName("if.ak")
-	public byte field2740 = -16;
+	public byte spotshadowtrans_2 = -16;
 
 	@ObfuscatedName("if.an")
-	public short field2741 = -1;
+	public short spotshadowtexture = -1;
 
 	@ObfuscatedName("if.bf")
-	public byte field2702 = 0;
+	public byte spotshadowtexture_alpha = 0;
 
 	@ObfuscatedName("if.bl")
-	public byte field2743 = 0;
+	public byte walkflags = 0;
 
 	@ObfuscatedName("if.bx")
-	public int field2746 = -1;
+	public int bgsound = -1;
 
 	@ObfuscatedName("if.bd")
-	public int field2747 = -1;
+	public int bgsound_crawl = -1;
 
 	@ObfuscatedName("if.bc")
-	public int field2748 = -1;
+	public int bgsound_walk = -1;
 
 	@ObfuscatedName("if.bi")
-	public int field2749 = -1;
+	public int bgsound_run = -1;
 
 	@ObfuscatedName("if.bn")
-	public int field2750 = 0;
+	public int bgsound_range = 0;
 
 	@ObfuscatedName("if.bt")
-	public int bgsoundsize = 0;
+	public int bgsound_size = 0;
 
 	@ObfuscatedName("if.bq")
-	public int bgsoundvolume = 255;
+	public int bgsound_volume = 255;
 
 	@ObfuscatedName("if.bm")
 	public IterableMap params;
@@ -205,13 +205,13 @@ public class NPCType implements ConfigType {
 	public int overlayheight = -1;
 
 	@ObfuscatedName("if.be")
-	public CompassPoint respawndir = CompassPoint.field8307;
+	public CompassPoint respawndir = CompassPoint.SOUTH;
 
 	@ObfuscatedName("if.by")
 	public int mapelement = -1;
 
 	@ObfuscatedName("if.bu")
-	public int[] field2757;
+	public int[] quests;
 
 	@ObfuscatedName("if.bw")
 	public byte reprioritiseattackop = -1;
@@ -223,10 +223,10 @@ public class NPCType implements ConfigType {
 	public Cuboid clickbox;
 
 	@ObfuscatedName("if.bv")
-	public int field2761 = 256;
+	public int bgsound_minrate = 256;
 
 	@ObfuscatedName("if.br")
-	public int field2700 = 256;
+	public int bgsound_maxrate = 256;
 
 	@ObfuscatedName("if.bg")
 	public int picksizeshift = 0;
@@ -346,48 +346,48 @@ public class NPCType implements ConfigType {
 			this.contrast = buf.g1b() * 5;
 		} else if (code == 102) {
 			int var23 = buf.g1();
-			int var24 = 0;
+			int length = 0;
 			for (int var25 = var23; var25 != 0; var25 >>= 0x1) {
-				var24++;
+				length++;
 			}
-			this.field2738 = new int[var24];
-			this.field2728 = new short[var24];
-			for (int var26 = 0; var26 < var24; var26++) {
+			this.headicon_groupid = new int[length];
+			this.headicon_id = new short[length];
+			for (int var26 = 0; var26 < length; var26++) {
 				if ((var23 & 0x1 << var26) == 0) {
-					this.field2738[var26] = -1;
-					this.field2728[var26] = -1;
+					this.headicon_groupid[var26] = -1;
+					this.headicon_id[var26] = -1;
 				} else {
-					this.field2738[var26] = buf.gSmart2or4null();
-					this.field2728[var26] = (short) buf.gSmart1or2null();
+					this.headicon_groupid[var26] = buf.gSmart2or4null();
+					this.headicon_id[var26] = (short) buf.gSmart1or2null();
 				}
 			}
 		} else if (code == 103) {
 			this.turnspeed = buf.g2();
 		} else if (code == 106 || code == 118) {
-			this.field2730 = buf.g2();
-			if (this.field2730 == 65535) {
-				this.field2730 = -1;
+			this.multivarbit = buf.g2();
+			if (this.multivarbit == 65535) {
+				this.multivarbit = -1;
 			}
-			this.field2755 = buf.g2();
-			if (this.field2755 == 65535) {
-				this.field2755 = -1;
+			this.multivarp = buf.g2();
+			if (this.multivarp == 65535) {
+				this.multivarp = -1;
 			}
-			int var40 = -1;
+			int defaultId = -1;
 			if (code == 118) {
-				var40 = buf.g2();
-				if (var40 == 65535) {
-					var40 = -1;
+				defaultId = buf.g2();
+				if (defaultId == 65535) {
+					defaultId = -1;
 				}
 			}
-			int var41 = buf.gSmart1or2();
-			this.field2735 = new int[var41 + 2];
-			for (int var42 = 0; var42 <= var41; var42++) {
-				this.field2735[var42] = buf.g2();
-				if (this.field2735[var42] == 65535) {
-					this.field2735[var42] = -1;
+			int length = buf.gSmart1or2();
+			this.multinpc = new int[length + 2];
+			for (int index = 0; index <= length; index++) {
+				this.multinpc[index] = buf.g2();
+				if (this.multinpc[index] == 65535) {
+					this.multinpc[index] = -1;
 				}
 			}
-			this.field2735[var41 + 1] = var40;
+			this.multinpc[length + 1] = defaultId;
 		} else if (code == 107) {
 			this.active = false;
 		} else if (code == 109) {
@@ -395,22 +395,22 @@ public class NPCType implements ConfigType {
 		} else if (code == 111) {
 			this.spotshadow = false;
 		} else if (code == 113) {
-			this.field2737 = (short) buf.g2();
-			this.field2729 = (short) buf.g2();
+			this.spotshadowcolour_1 = (short) buf.g2();
+			this.spotshadowcolour_2 = (short) buf.g2();
 		} else if (code == 114) {
-			this.field2739 = buf.g1b();
-			this.field2740 = buf.g1b();
+			this.spotshadowtrans_1 = buf.g1b();
+			this.spotshadowtrans_2 = buf.g1b();
 		} else if (code == 119) {
-			this.field2743 = buf.g1b();
+			this.walkflags = buf.g1b();
 		} else if (code == 121) {
 			this.modeloffset = new int[this.models.length][];
 			int length = buf.g1();
 			for (int index = 0; index < length; index++) {
-				int var29 = buf.g1();
-				int[] var30 = this.modeloffset[var29] = new int[3];
-				var30[0] = buf.g1b();
-				var30[1] = buf.g1b();
-				var30[2] = buf.g1b();
+				int offset = buf.g1();
+				int[] offsets = this.modeloffset[offset] = new int[3];
+				offsets[0] = buf.g1b();
+				offsets[1] = buf.g1b();
+				offsets[2] = buf.g1b();
 			}
 		} else if (code == 123) {
 			this.overlayheight = buf.g2();
@@ -421,23 +421,23 @@ public class NPCType implements ConfigType {
 		} else if (code == 128) {
 			SerializableEnums.decode(MoveSpeed.values(), buf.g1());
 		} else if (code == 134) {
-			this.field2746 = buf.g2();
-			if (this.field2746 == 65535) {
-				this.field2746 = -1;
+			this.bgsound = buf.g2();
+			if (this.bgsound == 65535) {
+				this.bgsound = -1;
 			}
-			this.field2747 = buf.g2();
-			if (this.field2747 == 65535) {
-				this.field2747 = -1;
+			this.bgsound_crawl = buf.g2();
+			if (this.bgsound_crawl == 65535) {
+				this.bgsound_crawl = -1;
 			}
-			this.field2748 = buf.g2();
-			if (this.field2748 == 65535) {
-				this.field2748 = -1;
+			this.bgsound_walk = buf.g2();
+			if (this.bgsound_walk == 65535) {
+				this.bgsound_walk = -1;
 			}
-			this.field2749 = buf.g2();
-			if (this.field2749 == 65535) {
-				this.field2749 = -1;
+			this.bgsound_run = buf.g2();
+			if (this.bgsound_run == 65535) {
+				this.bgsound_run = -1;
 			}
-			this.field2750 = buf.g1();
+			this.bgsound_range = buf.g1();
 		} else if (code == 135 || code == 136) {
 			buf.g1();
 			buf.g2();
@@ -446,7 +446,7 @@ public class NPCType implements ConfigType {
 		} else if (code == 138) {
 			this.covermarker = buf.gSmart2or4null();
 		} else if (code == 140) {
-			this.bgsoundvolume = buf.g1();
+			this.bgsound_volume = buf.g1();
 		} else if (code == 141) {
 			this.follower = true;
 		} else if (code == 142) {
@@ -459,30 +459,30 @@ public class NPCType implements ConfigType {
 				this.op[code - 150] = null;
 			}
 		} else if (code == 155) {
-			this.field2711 = buf.g1b();
-			this.field2712 = buf.g1b();
-			this.field2698 = buf.g1b();
-			this.field2714 = buf.g1b();
+			this.tint_hue = buf.g1b();
+			this.tint_saturation = buf.g1b();
+			this.tint_lightness = buf.g1b();
+			this.tint_strength = buf.g1b();
 		} else if (code == 158) {
 			this.reprioritiseattackop = 1;
 		} else if (code == 159) {
 			this.reprioritiseattackop = 0;
 		} else if (code == 160) {
 			int var31 = buf.g1();
-			this.field2757 = new int[var31];
+			this.quests = new int[var31];
 			for (int var32 = 0; var32 < var31; var32++) {
-				this.field2757[var32] = buf.g2();
+				this.quests[var32] = buf.g2();
 			}
 		} else if (code != 162) {
 			if (code == 163) {
 				this.picksize = buf.g1();
 			} else if (code == 164) {
-				this.field2761 = buf.g2();
-				this.field2700 = buf.g2();
+				this.bgsound_minrate = buf.g2();
+				this.bgsound_maxrate = buf.g2();
 			} else if (code == 165) {
 				this.picksizeshift = buf.g1();
 			} else if (code == 168) {
-				this.bgsoundsize = buf.g1();
+				this.bgsound_size = buf.g1();
 			} else if (code == 169) {
 				this.antimacro = false;
 			} else if (code >= 170 && code < 176) {
@@ -507,8 +507,8 @@ public class NPCType implements ConfigType {
 				} else if (code == 180) {
 					this.field2765 = buf.g1() & 0xFF;
 				} else if (code == 181) {
-					this.field2741 = (short) buf.g2();
-					this.field2702 = (byte) buf.g1();
+					this.spotshadowtexture = (short) buf.g2();
+					this.spotshadowtexture_alpha = (byte) buf.g1();
 				} else if (code == 182) {
 					this.transmogfakenpc = true;
 				} else if (code == 249) {
@@ -549,13 +549,13 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.z(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;I)Ldo;")
-	public final Model method4542(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10) {
+	public final Model getSequencedModel(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10) {
 		return this.getSequencedModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, this.bas, true);
 	}
 
 	@ObfuscatedName("if.p(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;IZB)Ldo;")
 	public final Model getSequencedModel(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10, int arg11, boolean arg12) {
-		if (this.field2735 != null) {
+		if (this.multinpc != null) {
 			NPCType var14 = this.getVisible(arg3, arg4);
 			return var14 == null ? null : var14.getSequencedModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
 		}
@@ -608,7 +608,7 @@ public class NPCType implements ConfigType {
 			if (this.retex_s != null) {
 				var25 |= 0x8000;
 			}
-			if (this.field2714 != 0) {
+			if (this.tint_strength != 0) {
 				var25 |= 0x80000;
 			}
 			int[] var26 = arg10 == null || arg10.field2689 == null ? this.models : arg10.field2689;
@@ -715,8 +715,8 @@ public class NPCType implements ConfigType {
 					var22.method1744(this.retex_s[var47], var46[var47]);
 				}
 			}
-			if (this.field2714 != 0) {
-				var22.method1745(this.field2711, this.field2712, this.field2698, this.field2714 & 0xFF);
+			if (this.tint_strength != 0) {
+				var22.method1745(this.tint_hue, this.tint_saturation, this.tint_lightness, this.tint_strength & 0xFF);
 			}
 			var22.method1736();
 			var22.method1690(var15);
@@ -791,7 +791,7 @@ public class NPCType implements ConfigType {
 
 	@ObfuscatedName("if.d(Ldh;ILem;Lep;Laaq;Lia;S)Ldo;")
 	public final Model getHeadModel(Renderer arg0, int arg1, VariableTypeProvider arg2, VarIntDomain arg3, AnimationWrapper arg4, NPCTypeCustomisation arg5) {
-		if (this.field2735 != null) {
+		if (this.multinpc != null) {
 			NPCType var7 = this.getVisible(arg2, arg3);
 			return var7 == null ? null : var7.getHeadModel(arg0, arg1, arg2, arg3, arg4, arg5);
 		} else if (this.heads == null && (arg5 == null || arg5.field2689 == null)) {
@@ -821,7 +821,7 @@ public class NPCType implements ConfigType {
 				if (this.retex_s != null) {
 					var14 |= 0x8000;
 				}
-				if (this.field2714 != 0) {
+				if (this.tint_strength != 0) {
 					var14 |= 0x80000;
 				}
 				int[] var15 = arg5 == null || arg5.field2689 == null ? this.heads : arg5.field2689;
@@ -887,8 +887,8 @@ public class NPCType implements ConfigType {
 						var12.method1744(this.retex_s[var29], var28[var29]);
 					}
 				}
-				if (this.field2714 != 0) {
-					var12.method1745(this.field2711, this.field2712, this.field2698, this.field2714 & 0xFF);
+				if (this.tint_strength != 0) {
+					var12.method1745(this.tint_hue, this.tint_saturation, this.tint_lightness, this.tint_strength & 0xFF);
 				}
 				var12.method1690(var8);
 				WeightedCache var30 = this.factory.headModelCache;
@@ -906,97 +906,97 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.c(I)Z")
-	public final boolean method4545() {
+	public final boolean modelsLoaded() {
 		if (this.models == null) {
 			return true;
 		}
-		boolean var1 = true;
+		boolean loaded = true;
 		int[] var2 = this.models;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			int var4 = var2[var3];
 			if (!this.factory.configClient.requestdownload(var4, 0)) {
-				var1 = false;
+				loaded = false;
 			}
 		}
-		return var1;
+		return loaded;
 	}
 
 	@ObfuscatedName("if.r(IIB)I")
-	public int method4551(int arg0, int arg1) {
+	public int getParam(int arg0, int arg1) {
 		if (this.params == null) {
 			return arg1;
 		} else {
 			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
-			return var3 == null ? arg1 : var3.intValue;
+			return var3 == null ? arg1 : var3.value;
 		}
 	}
 
 	@ObfuscatedName("if.v(ILjava/lang/String;I)Ljava/lang/String;")
-	public String method4548(int arg0, String arg1) {
+	public String getParam(int arg0, String arg1) {
 		if (this.params == null) {
 			return arg1;
 		} else {
 			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
-			return var3 == null ? arg1 : (String) var3.field11436;
+			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}
 
 	@ObfuscatedName("if.o(Lem;Lep;S)Lif;")
-	public final NPCType getVisible(VariableTypeProvider arg0, VarIntDomain arg1) {
-		int var3 = -1;
-		if (this.field2730 != -1) {
-			VarBitType var4 = arg0.getVarBitType(this.field2730);
+	public final NPCType getVisible(VariableTypeProvider varProvider, VarIntDomain varDomain) {
+		int i = -1;
+		if (this.multivarbit != -1) {
+			VarBitType var4 = varProvider.getVarBitType(this.multivarbit);
 			if (var4 != null) {
-				var3 = arg1.getVarBitValue(var4);
+				i = varDomain.getVarBitValue(var4);
 			}
-		} else if (this.field2755 != -1) {
-			VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.field2755);
+		} else if (this.multivarp != -1) {
+			VarType var5 = varProvider.getVarType(VarDomainType.PLAYER, this.multivarp);
 			if (var5 != null) {
-				var3 = arg1.getVarValueInt(var5);
+				i = varDomain.getVarValueInt(var5);
 			}
 		}
-		if (var3 >= 0 && var3 < this.field2735.length - 1) {
-			return this.field2735[var3] == -1 ? null : (NPCType) this.myList.list(this.field2735[var3]);
+		if (i >= 0 && i < this.multinpc.length - 1) {
+			return this.multinpc[i] == -1 ? null : (NPCType) this.myList.list(this.multinpc[i]);
 		} else {
-			int var6 = this.field2735[this.field2735.length - 1];
+			int var6 = this.multinpc[this.multinpc.length - 1];
 			return var6 == -1 ? null : (NPCType) this.myList.list(var6);
 		}
 	}
 
 	@ObfuscatedName("if.s(Lem;Lep;I)Z")
-	public boolean method4567(VariableTypeProvider arg0, VarIntDomain arg1) {
-		if (this.field2735 == null) {
+	public boolean isVisible(VariableTypeProvider varProvider, VarIntDomain varDomain) {
+		if (this.multinpc == null) {
 			return true;
 		}
 		int var3 = -1;
-		if (this.field2730 != -1) {
-			VarBitType var4 = arg0.getVarBitType(this.field2730);
+		if (this.multivarbit != -1) {
+			VarBitType var4 = varProvider.getVarBitType(this.multivarbit);
 			if (var4 != null) {
-				var3 = arg1.getVarBitValue(var4);
+				var3 = varDomain.getVarBitValue(var4);
 			}
-		} else if (this.field2755 != -1) {
-			VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.field2755);
+		} else if (this.multivarp != -1) {
+			VarType var5 = varProvider.getVarType(VarDomainType.PLAYER, this.multivarp);
 			if (var5 != null) {
-				var3 = arg1.getVarValueInt(var5);
+				var3 = varDomain.getVarValueInt(var5);
 			}
 		}
-		if (var3 >= 0 && var3 < this.field2735.length - 1) {
-			return this.field2735[var3] != -1;
+		if (var3 >= 0 && var3 < this.multinpc.length - 1) {
+			return this.multinpc[var3] != -1;
 		} else {
-			int var6 = this.field2735[this.field2735.length - 1];
+			int var6 = this.multinpc[this.multinpc.length - 1];
 			return var6 != -1;
 		}
 	}
 
 	@ObfuscatedName("if.y(S)Z")
-	public boolean method4556() {
-		if (this.field2735 == null) {
-			return this.field2746 != -1 || this.field2748 != -1 || this.field2749 != -1;
+	public boolean hasBackgroundSound() {
+		if (this.multinpc == null) {
+			return this.bgsound != -1 || this.bgsound_walk != -1 || this.bgsound_run != -1;
 		}
-		for (int var1 = 0; var1 < this.field2735.length; var1++) {
-			if (this.field2735[var1] != -1) {
-				NPCType var2 = (NPCType) this.myList.list(this.field2735[var1]);
-				if (var2.field2746 != -1 || var2.field2748 != -1 || var2.field2749 != -1) {
+		for (int var1 = 0; var1 < this.multinpc.length; var1++) {
+			if (this.multinpc[var1] != -1) {
+				NPCType var2 = (NPCType) this.myList.list(this.multinpc[var1]);
+				if (var2.bgsound != -1 || var2.bgsound_walk != -1 || var2.bgsound_run != -1) {
 					return true;
 				}
 			}
@@ -1005,7 +1005,7 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.q(II)I")
-	public int method4563(int arg0) {
-		return this.cursor == null ? -1 : this.cursor[arg0];
+	public int getCursor(int op) {
+		return this.cursor == null ? -1 : this.cursor[op];
 	}
 }
