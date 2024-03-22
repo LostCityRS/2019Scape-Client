@@ -10317,7 +10317,7 @@ public final class ScriptRunner {
 	public static final void npc_find_active_minimenu_entry(ClientScriptState arg0) {
 		MinimenuEntry var1 = MiniMenu.method4924();
 		if (MiniMenu.method18429(var1) == 4) {
-			ObjectWrapper var2 = (ObjectWrapper) Client.miniMenuEntries.getNode(var1.method19370());
+			ObjectWrapper var2 = (ObjectWrapper) Client.npcs.getNode(var1.method19370());
 			if (var2 != null) {
 				arg0.currentEntity = (PathingEntity) var2.value;
 				arg0.field8216[++arg0.field8226 - 1] = 1;
@@ -13656,7 +13656,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ua.amr(Lyf;I)V")
 	public static final void cam_reset(ClientScriptState arg0) {
-		Client.method4046(Client.method14298());
+		Client.resetCamera(Client.getDefaultCameraState());
 	}
 
 	@ObfuscatedName("vx.aml(Lyf;I)V")
@@ -14284,9 +14284,9 @@ public final class ScriptRunner {
 	public static final void cam2_enable(ClientScriptState arg0) {
 		boolean var1 = arg0.field8216[--arg0.field8226] == 1;
 		if (var1) {
-			Client.method4046(3);
+			Client.resetCamera(3);
 		} else {
-			Client.method4046(2);
+			Client.resetCamera(2);
 		}
 	}
 

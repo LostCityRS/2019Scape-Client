@@ -707,14 +707,14 @@ public class World {
 			return;
 		}
 		if (RebuildType.REBUILD_REGION == this.rebuildType || RebuildType.field5068 == this.rebuildType || this.field5020 != this.rebuildType && (RebuildType.REBUILD_NORMAL == this.rebuildType || RebuildType.REBUILD_NORMAL == this.field5020)) {
-			Iterator var1 = Client.miniMenuEntries.iterator();
+			Iterator var1 = Client.npcs.iterator();
 			while (var1.hasNext()) {
 				ObjectWrapper var2 = (ObjectWrapper) var1.next();
 				PositionedSound.method10111((NpcEntity) var2.value);
 			}
 			Client.field11011 = 0;
 			Client.field10906 = 0;
-			Client.miniMenuEntries.removeAll();
+			Client.npcs.removeAll();
 		}
 		this.field5020 = this.rebuildType;
 	}
@@ -809,9 +809,9 @@ public class World {
 				}
 			}
 			if (var9) {
-				Client.field10906 = Client.miniMenuEntries.length();
+				Client.field10906 = Client.npcs.length();
 				int var18 = 0;
-				Iterator var19 = Client.miniMenuEntries.iterator();
+				Iterator var19 = Client.npcs.iterator();
 				while (var19.hasNext()) {
 					ObjectWrapper var20 = (ObjectWrapper) var19.next();
 					Client.field10839[var18++] = var20;
@@ -901,7 +901,7 @@ public class World {
 			Client.field8910 -= var2 * 512;
 			Client.field3569 -= var3 * 512;
 			if (Client.cameraState != 4 && Client.cameraState != 3) {
-				Client.method4046(Client.method14298());
+				Client.resetCamera(Client.getDefaultCameraState());
 			}
 		} else {
 			Client.cameraMoveX -= var2;
@@ -1433,12 +1433,12 @@ public class World {
 					int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x + var10;
 					int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z + var11;
 					NPCType var14 = (NPCType) Client.npcTypeList.list(buf.g2());
-					ObjectWrapper var15 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var7);
+					ObjectWrapper var15 = (ObjectWrapper) Client.npcs.getNode((long) var7);
 					if (var15 == null && (var14.walkflags & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {
 						NpcEntity npc = new NpcEntity(this.scene);
 						npc.localPlayerIndex = var7;
 						ObjectWrapper var17 = new ObjectWrapper(npc);
-						Client.miniMenuEntries.pushNode(var17, (long) var7);
+						Client.npcs.pushNode(var17, (long) var7);
 						Client.field10839[++Client.field10906 - 1] = var17;
 						Client.field11036[++Client.field11011 - 1] = var7;
 						npc.field10440 = Client.loopCycle;

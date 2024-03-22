@@ -618,7 +618,7 @@ public class Minimap {
 	@ObfuscatedName("je.o(Ldh;IILhf;Lch;IIB)V")
 	public static void method4838(Renderer arg0, int arg1, int arg2, Component arg3, GraphicsRelated arg4, int arg5, int arg6) {
 		for (int var7 = 0; var7 < Client.field11011; var7++) {
-			ObjectWrapper var8 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var7]);
+			ObjectWrapper var8 = (ObjectWrapper) Client.npcs.getNode((long) Client.field11036[var7]);
 			if (var8 != null) {
 				NpcEntity var9 = (NpcEntity) var8.value;
 				if (var9.method19160() && Client.localPlayerEntity.level == var9.level) {
@@ -698,7 +698,7 @@ public class Minimap {
 			HintArrow var8 = var6[var7];
 			if (var8 != null && var8.field745 != 0 && Client.loopCycle % 20 < 10) {
 				if (var8.field745 == 1) {
-					ObjectWrapper var9 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var8.field744);
+					ObjectWrapper var9 = (ObjectWrapper) Client.npcs.getNode((long) var8.field744);
 					if (var9 != null) {
 						NpcEntity var10 = (NpcEntity) var9.value;
 						Vector3 var11 = var10.getTransform().trans;

@@ -370,7 +370,7 @@ public class PlayerEntity extends PathingEntity {
 				HintArrow var17 = Client.hintArrows[var16];
 				if (var17 != null && var17.field750 != -1) {
 					if (var17.field745 == 1) {
-						ObjectWrapper var18 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var17.field744);
+						ObjectWrapper var18 = (ObjectWrapper) Client.npcs.getNode((long) var17.field744);
 						if (var18 != null) {
 							NpcEntity var19 = (NpcEntity) var18.value;
 							Vector3 var20 = Vector3.sub(var19.getTransform().trans, Client.localPlayerEntity.getTransform().trans);

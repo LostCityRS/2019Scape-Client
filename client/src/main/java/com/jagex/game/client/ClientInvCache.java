@@ -32,10 +32,10 @@ public class ClientInvCache extends Node {
 	public static int field11222;
 
 	@ObfuscatedName("ajo.l")
-	public int[] slotObjs = new int[] { -1 };
+	public int[] invSlotObjId = new int[] { -1 };
 
 	@ObfuscatedName("ajo.u")
-	public int[] slotAmounts = new int[] { 0 };
+	public int[] invSlotObjCount = new int[] { 0 };
 
 	@ObfuscatedName("ajo.z")
 	public VarContainerSparse[] vars = null;
@@ -45,8 +45,8 @@ public class ClientInvCache extends Node {
 		ClientInvCache inv = getCachedInvs(invId, arg2);
 		if (inv == null) {
 			return -1;
-		} else if (slot >= 0 && slot < inv.slotObjs.length) {
-			return inv.slotObjs[slot];
+		} else if (slot >= 0 && slot < inv.invSlotObjId.length) {
+			return inv.invSlotObjId[slot];
 		} else {
 			return -1;
 		}
@@ -57,8 +57,8 @@ public class ClientInvCache extends Node {
 		ClientInvCache inv = getCachedInvs(invId, arg2);
 		if (inv == null) {
 			return 0;
-		} else if (slot >= 0 && slot < inv.slotAmounts.length) {
-			return inv.slotAmounts[slot];
+		} else if (slot >= 0 && slot < inv.invSlotObjCount.length) {
+			return inv.invSlotObjCount[slot];
 		} else {
 			return 0;
 		}
@@ -70,7 +70,7 @@ public class ClientInvCache extends Node {
 		VarType baseVar = varbit.baseVar;
 		ClientInvCache inv = getCachedInvs(invId, arg3);
 		int var7;
-		if (inv == null || slot < 0 || slot >= inv.slotAmounts.length || inv.vars == null || inv.vars[slot] == null) {
+		if (inv == null || slot < 0 || slot >= inv.invSlotObjCount.length || inv.vars == null || inv.vars[slot] == null) {
 			var7 = (Integer) baseVar.getDefaultValue();
 		} else {
 			var7 = inv.vars[slot].method14728(baseVar.id);
@@ -87,9 +87,9 @@ public class ClientInvCache extends Node {
 			return 0;
 		} else {
 			int total = 0;
-			for (int index = 0; index < inv.slotAmounts.length; index++) {
-				if (inv.slotObjs[index] == slot) {
-					total += inv.slotAmounts[index];
+			for (int index = 0; index < inv.invSlotObjCount.length; index++) {
+				if (inv.invSlotObjId[index] == slot) {
+					total += inv.invSlotObjCount[index];
 				}
 			}
 			return total;
@@ -103,8 +103,8 @@ public class ClientInvCache extends Node {
 		if (inv == null) {
 			return 0;
 		}
-		for (int slot = 0; slot < inv.slotObjs.length; slot++) {
-			if (inv.slotObjs[slot] >= 0 && ((ObjType) Client.objTypeList.list(inv.slotObjs[slot])).category == categoryId) {
+		for (int slot = 0; slot < inv.invSlotObjId.length; slot++) {
+			if (inv.invSlotObjId[slot] >= 0 && ((ObjType) Client.objTypeList.list(inv.invSlotObjId[slot])).category == categoryId) {
 				total += getNum(invId, slot, arg2);
 			}
 		}
@@ -118,13 +118,13 @@ public class ClientInvCache extends Node {
 			return 0;
 		}
 		int total = 0;
-		for (int slot = 0; slot < var4.slotObjs.length; slot++) {
-			if (var4.slotObjs[slot] >= 0 && var4.slotObjs[slot] < Client.objTypeList.num) {
-				ObjType objType = (ObjType) Client.objTypeList.list(var4.slotObjs[slot]);
+		for (int slot = 0; slot < var4.invSlotObjId.length; slot++) {
+			if (var4.invSlotObjId[slot] >= 0 && var4.invSlotObjId[slot] < Client.objTypeList.num) {
+				ObjType objType = (ObjType) Client.objTypeList.list(var4.invSlotObjId[slot]);
 				int value = objType.getParam(paramId, ((ParamType) Client.paramTypeList.list(paramId)).defaultint);
 				if (stack) {
-					total += var4.slotAmounts[slot] * value;
-				} else if (var4.slotAmounts[slot] > 0) {
+					total += var4.invSlotObjCount[slot] * value;
+				} else if (var4.invSlotObjCount[slot] > 0) {
 					total += value;
 				}
 			}
@@ -142,12 +142,12 @@ public class ClientInvCache extends Node {
 			return ((InvType) Client.invTypeList.list(invId)).size;
 		}
 		int total = 0;
-		for (int var4 = 0; var4 < inv.slotObjs.length; var4++) {
-			if (inv.slotObjs[var4] == -1) {
+		for (int var4 = 0; var4 < inv.invSlotObjId.length; var4++) {
+			if (inv.invSlotObjId[var4] == -1) {
 				total++;
 			}
 		}
-		return total + (((InvType) Client.invTypeList.list(invId)).size - inv.slotObjs.length);
+		return total + (((InvType) Client.invTypeList.list(invId)).size - inv.invSlotObjId.length);
 	}
 
 	@ObfuscatedName("so.u(IZS)Lajo;")
@@ -164,33 +164,33 @@ public class ClientInvCache extends Node {
 			var8 = new ClientInvCache();
 			recentUse.pushNode(var8, var6);
 		}
-		if (var8.slotObjs.length <= arg1) {
+		if (var8.invSlotObjId.length <= arg1) {
 			int[] var9 = new int[arg1 + 1];
 			int[] var10 = new int[arg1 + 1];
 			VarContainerSparse[] var11 = null;
 			if (var8.vars != null) {
 				var11 = new VarContainerSparse[arg1 + 1];
 			}
-			for (int var12 = 0; var12 < var8.slotObjs.length; var12++) {
-				var9[var12] = var8.slotObjs[var12];
-				var10[var12] = var8.slotAmounts[var12];
+			for (int var12 = 0; var12 < var8.invSlotObjId.length; var12++) {
+				var9[var12] = var8.invSlotObjId[var12];
+				var10[var12] = var8.invSlotObjCount[var12];
 				if (var8.vars != null) {
 					var11[var12] = var8.vars[var12];
 				}
 			}
-			for (int var13 = var8.slotObjs.length; var13 < arg1; var13++) {
+			for (int var13 = var8.invSlotObjId.length; var13 < arg1; var13++) {
 				var9[var13] = -1;
 				var10[var13] = 0;
 			}
-			var8.slotObjs = var9;
-			var8.slotAmounts = var10;
+			var8.invSlotObjId = var9;
+			var8.invSlotObjCount = var10;
 			var8.vars = var11;
 		}
-		var8.slotObjs[arg1] = arg2;
-		var8.slotAmounts[arg1] = arg3;
+		var8.invSlotObjId[arg1] = arg2;
+		var8.invSlotObjCount[arg1] = arg3;
 		if (arg4 != null) {
 			if (var8.vars == null) {
-				var8.vars = new VarContainerSparse[var8.slotObjs.length];
+				var8.vars = new VarContainerSparse[var8.invSlotObjId.length];
 			}
 			var8.vars[arg1] = arg4;
 		} else if (var8.vars != null) {
@@ -204,9 +204,9 @@ public class ClientInvCache extends Node {
 		if (inv == null) {
 			return;
 		}
-		for (int slot = 0; slot < inv.slotObjs.length; slot++) {
-			inv.slotObjs[slot] = -1;
-			inv.slotAmounts[slot] = 0;
+		for (int slot = 0; slot < inv.invSlotObjId.length; slot++) {
+			inv.invSlotObjId[slot] = -1;
+			inv.invSlotObjCount[slot] = 0;
 		}
 		inv.vars = null;
 	}
@@ -252,13 +252,13 @@ public class ClientInvCache extends Node {
 		if (arg3 != -1) {
 			var9 = (BASType) Client.basTypeList.list(arg3);
 		}
-		int[] var10 = this.slotObjs;
+		int[] var10 = this.invSlotObjId;
 		if (var9 != null && var9.field7318 != null) {
 			var10 = new int[var9.field7318.length];
 			for (int var11 = 0; var11 < var9.field7318.length; var11++) {
 				int var12 = var9.field7318[var11];
-				if (var12 >= 0 && var12 < this.slotObjs.length) {
-					var10[var11] = this.slotObjs[var12];
+				if (var12 >= 0 && var12 < this.invSlotObjId.length) {
+					var10[var11] = this.invSlotObjId[var12];
 				} else {
 					var10[var11] = -1;
 				}

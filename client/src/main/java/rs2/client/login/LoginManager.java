@@ -1197,7 +1197,7 @@ public class LoginManager {
 		Client.localPlayerEntity = null;
 		Client.field11011 = 0;
 		Client.field10906 = 0;
-		Client.miniMenuEntries.removeAll();
+		Client.npcs.removeAll();
 		Client.projectiles.removeAll();
 		Client.spotanims.removeAll();
 		Client.textCoords.clear();
@@ -1280,7 +1280,7 @@ public class LoginManager {
 			}
 		}
 		ClientInvCache.method2752();
-		Client.method4046(Client.method14298());
+		Client.resetCamera(Client.getDefaultCameraState());
 		Client.setState(18);
 		for (int var3 = 0; var3 < 114; var3++) {
 			Client.field11072[var3] = true;

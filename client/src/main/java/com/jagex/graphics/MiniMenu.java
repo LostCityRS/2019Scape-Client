@@ -851,7 +851,7 @@ public class MiniMenu {
 										int var38 = (int) var37.x - (var35.size() - 1 << 8);
 										int var39 = (int) var37.z - (var35.size() - 1 << 8);
 										for (int var40 = 0; var40 < Client.field11011; var40++) {
-											ObjectWrapper var41 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var40]);
+											ObjectWrapper var41 = (ObjectWrapper) Client.npcs.getNode((long) Client.field11036[var40]);
 											if (var41 != null) {
 												NpcEntity var42 = (NpcEntity) var41.value;
 												if (var42.field10403 != Client.loopCycle && var42.field10452) {
@@ -898,7 +898,7 @@ public class MiniMenu {
 									int var55 = (int) var54.x - (var53.npcType.size - 1 << 8);
 									int var56 = (int) var54.z - (var53.npcType.size - 1 << 8);
 									for (int var57 = 0; var57 < Client.field11011; var57++) {
-										ObjectWrapper var58 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) Client.field11036[var57]);
+										ObjectWrapper var58 = (ObjectWrapper) Client.npcs.getNode((long) Client.field11036[var57]);
 										if (var58 != null) {
 											NpcEntity var59 = (NpcEntity) var58.value;
 											if (var59.field10403 != Client.loopCycle && var53 != var59 && var59.field10452) {
@@ -1453,7 +1453,7 @@ public class MiniMenu {
 		} else if (arg0.field12303 != -1) {
 			var1 = ((ObjType) Client.objTypeList.list(arg0.field12303)).quests;
 		} else if (method16450(arg0.field12307)) {
-			ObjectWrapper var2 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) arg0.field12300);
+			ObjectWrapper var2 = (ObjectWrapper) Client.npcs.getNode((long) arg0.field12300);
 			if (var2 != null) {
 				NpcEntity var3 = (NpcEntity) var2.value;
 				NPCType var4 = var3.npcType;
@@ -2156,7 +2156,7 @@ public class MiniMenu {
 			var21 = ClientProt.OPNPC6;
 		}
 		if (var21 != null) {
-			ObjectWrapper var22 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var7);
+			ObjectWrapper var22 = (ObjectWrapper) Client.npcs.getNode((long) var7);
 			if (var22 != null) {
 				NpcEntity var23 = (NpcEntity) var22.value;
 				Client.field10866 = arg1;
@@ -2187,7 +2187,7 @@ public class MiniMenu {
 			Client.method6820(var4, var5);
 		}
 		if (var6 == 8) {
-			ObjectWrapper var26 = (ObjectWrapper) Client.miniMenuEntries.getNode((long) var7);
+			ObjectWrapper var26 = (ObjectWrapper) Client.npcs.getNode((long) var7);
 			if (var26 != null) {
 				NpcEntity var27 = (NpcEntity) var26.value;
 				Client.field10866 = arg1;
