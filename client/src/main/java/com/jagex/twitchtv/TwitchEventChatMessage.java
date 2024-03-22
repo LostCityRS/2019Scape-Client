@@ -1,6 +1,6 @@
 package com.jagex.twitchtv;
 
-import com.jagex.game.client.TwitchVarType;
+import com.jagex.game.client.TwitchEventSubject;
 import deob.ObfuscatedName;
 
 public class TwitchEventChatMessage extends TwitchEvent {
@@ -34,7 +34,7 @@ public class TwitchEventChatMessage extends TwitchEvent {
 	}
 
 	@ObfuscatedName("com/jagex/twitchtv/TwitchEventChatMessage.n()Lud;")
-	public TwitchVarType method11() {
-		return TwitchVarType.CHAT_MESSAGE;
+	public TwitchEventSubject method11() {
+		return TwitchEventSubject.CHAT_MESSAGE;
 	}
 }

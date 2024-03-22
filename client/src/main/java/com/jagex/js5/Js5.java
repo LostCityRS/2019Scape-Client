@@ -7,7 +7,7 @@ import com.jagex.core.utils.ByteArrayCopier;
 import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.StringTools;
 import com.jagex.js5.index.Js5Index;
-import com.jagex.js5.network.Js5GroupHeader;
+import com.jagex.js5.network.JS5CompressionHeader;
 import deob.ObfuscatedName;
 import lzma.sdk.lzma.LZMA;
 
@@ -644,7 +644,7 @@ public final class Js5 {
 	@ObfuscatedName("qi.ai([BB)[B")
 	public static byte[] uncompress(byte[] src) {
 		Packet buf = new Packet(src);
-		Js5GroupHeader header = new Js5GroupHeader(buf);
+		JS5CompressionHeader header = new JS5CompressionHeader(buf);
 		Js5CompressionType type = header.getCompressionType();
 		int len = header.getPackedLength();
 

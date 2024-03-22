@@ -391,7 +391,7 @@ public class TwitchHardwarePlatform {
 			for (int var7 = 0; var7 < var6.length; var7++) {
 				TwitchEvent var8 = var6[var7];
 				if (var8 != null && method6878(var8, arg1)) {
-					TwitchVarType var9 = var8.method11();
+					TwitchEventSubject var9 = var8.method11();
 					if (var9 != null) {
 						ScriptRunner.method13907(var9.getId(), var8);
 					}
@@ -548,7 +548,7 @@ public class TwitchHardwarePlatform {
 	@ObfuscatedName("xt.ac(IIB)V")
 	public static void method10361(int arg0, int arg1) {
 		TwitchEventResult var2 = new TwitchEventResult(arg0, arg1);
-		TwitchVarType var3 = var2.method11();
+		TwitchEventSubject var3 = var2.method11();
 		if (var3 != null) {
 			ScriptRunner.method13907(var3.getId(), var2);
 		}

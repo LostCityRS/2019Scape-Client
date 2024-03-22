@@ -6,7 +6,7 @@ import com.jagex.js5.Js5CompressionType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("pc")
-public class Js5GroupHeader {
+public class JS5CompressionHeader {
 
 	@ObfuscatedName("pc.e")
 	public final Js5CompressionType compressionType;
@@ -17,7 +17,7 @@ public class Js5GroupHeader {
 	@ObfuscatedName("pc.m")
 	public final int unpackedLength;
 
-	public Js5GroupHeader(Packet buf) {
+	public JS5CompressionHeader(Packet buf) {
 		this.compressionType = (Js5CompressionType) SerializableEnums.decode(Js5CompressionType.values(), buf.g1());
 		this.packedLength = buf.g4s();
 

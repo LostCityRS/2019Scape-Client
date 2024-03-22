@@ -623,7 +623,7 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 	}
 
 	@ObfuscatedName("qw.w(CB)Lqw;")
-	public static ScriptVarType getDefault(char arg0) {
+	public static ScriptVarType getByLegacyChar(char arg0) {
 		return arg0 == 'O' ? OBJ : varByLegacyChar[Cp1252.encode(arg0) & 0xFF];
 	}
 

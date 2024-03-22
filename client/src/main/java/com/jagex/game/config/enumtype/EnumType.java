@@ -53,10 +53,10 @@ public class EnumType implements ConfigType, ConfigRelated {
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
 			char var3 = Cp1252.byteToCp1252Char(buf.g1b());
-			this.inputtype = ScriptVarType.getDefault(var3);
+			this.inputtype = ScriptVarType.getByLegacyChar(var3);
 		} else if (code == 2) {
 			char var4 = Cp1252.byteToCp1252Char(buf.g1b());
-			this.outputtype = ScriptVarType.getDefault(var4);
+			this.outputtype = ScriptVarType.getByLegacyChar(var4);
 		} else if (code == 3) {
 			this.defaultString = buf.gjstr();
 		} else if (code == 4) {

@@ -1,6 +1,6 @@
 package com.jagex.twitchtv;
 
-import com.jagex.game.client.TwitchVarType;
+import com.jagex.game.client.TwitchEventSubject;
 import deob.ObfuscatedName;
 
 public class TwitchEventLiveStreams extends TwitchEvent {
@@ -41,7 +41,7 @@ public class TwitchEventLiveStreams extends TwitchEvent {
 	}
 
 	@ObfuscatedName("com/jagex/twitchtv/TwitchEventLiveStreams.n()Lud;")
-	public TwitchVarType method11() {
+	public TwitchEventSubject method11() {
 		return null;
 	}
 
