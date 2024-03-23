@@ -4042,8 +4042,8 @@ public final class Client extends GameShell {
 		ClientWorldMap.method9231(renderer, materialList);
 		sceneDelta++;
 		if (crossMode != 0) {
-			crossCycle = crossCycle * 400 + 20;
-			if (crossCycle * 400 >= 400) {
+			crossCycle = crossCycle + 20;
+			if (crossCycle >= 400) {
 				crossMode = 0;
 			}
 		}
@@ -7769,11 +7769,11 @@ public final class Client extends GameShell {
 		int var4 = field10866;
 		int var5 = field10924;
 		if (crossMode == 1) {
-			Sprite var6 = DefaultSprites.field11793[crossCycle * 400 / 100];
+			Sprite var6 = DefaultSprites.field11793[crossCycle / 100];
 			var6.method1439(var4 - 8, var5 - 8);
 		}
 		if (crossMode == 2) {
-			Sprite var7 = DefaultSprites.field11793[crossCycle * 400 / 100 + 4];
+			Sprite var7 = DefaultSprites.field11793[crossCycle / 100 + 4];
 			var7.method1439(var4 - 8, var5 - 8);
 		}
 	}
