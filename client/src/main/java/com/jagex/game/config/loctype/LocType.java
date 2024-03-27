@@ -70,10 +70,10 @@ public class LocType implements ConfigType {
 	public byte tint_saturation;
 
 	@ObfuscatedName("vd.q")
-	public byte tint_lightness;
+	public byte tint_luminence;
 
 	@ObfuscatedName("vd.x")
-	public byte tint_amount = 0;
+	public byte tint_weight = 0;
 
 	@ObfuscatedName("vd.b")
 	public int width = 1;
@@ -88,10 +88,10 @@ public class LocType implements ConfigType {
 	public int active = -1;
 
 	@ObfuscatedName("vd.i")
-	public byte hillskew_mode = 0;
+	public byte hillchange = 0;
 
 	@ObfuscatedName("vd.j")
-	public int hillskew_value = -1;
+	public int hillchange_value = -1;
 
 	@ObfuscatedName("vd.t")
 	public boolean sharelight = false;
@@ -169,13 +169,13 @@ public class LocType implements ConfigType {
 	public int zoff = 0;
 
 	@ObfuscatedName("vd.ak")
-	public int field7522 = 0;
+	public int post_xoff = 0;
 
 	@ObfuscatedName("vd.an")
-	public int field7449 = 0;
+	public int post_yoff = 0;
 
 	@ObfuscatedName("vd.bf")
-	public int field7500 = 0;
+	public int post_zoff = 0;
 
 	@ObfuscatedName("vd.bl")
 	public boolean forcedecor = false;
@@ -314,7 +314,7 @@ public class LocType implements ConfigType {
 			if (code == 19) {
 				this.active = buf.g1();
 			} else if (code == 21) {
-				this.hillskew_mode = 1;
+				this.hillchange = 1;
 			} else if (code == 22) {
 				this.sharelight = true;
 			} else if (code == 23) {
@@ -442,8 +442,8 @@ public class LocType implements ConfigType {
 					this.bgsound_random[index] = buf.g2();
 				}
 			} else if (code == 81) {
-				this.hillskew_mode = 2;
-				this.hillskew_value = buf.g1() * 256;
+				this.hillchange = 2;
+				this.hillchange_value = buf.g1() * 256;
 			} else if (code == 82) {
 				this.istexture = true;
 			} else if (code == 88) {
@@ -453,13 +453,13 @@ public class LocType implements ConfigType {
 			} else if (code == 91) {
 				this.members = true;
 			} else if (code == 93) {
-				this.hillskew_mode = 3;
-				this.hillskew_value = buf.g2();
+				this.hillchange = 3;
+				this.hillchange_value = buf.g2();
 			} else if (code == 94) {
-				this.hillskew_mode = 4;
+				this.hillchange = 4;
 			} else if (code == 95) {
-				this.hillskew_mode = 5;
-				this.hillskew_value = buf.g2s();
+				this.hillchange = 5;
+				this.hillchange_value = buf.g2s();
 			} else if (code == 97) {
 				this.mapsceneiconrotate = true;
 			} else if (code == 98) {
@@ -503,19 +503,19 @@ public class LocType implements ConfigType {
 					this.quests[index] = buf.g2();
 				}
 			} else if (code == 162) {
-				this.hillskew_mode = 3;
-				this.hillskew_value = buf.g4s();
+				this.hillchange = 3;
+				this.hillchange_value = buf.g4s();
 			} else if (code == 163) {
 				this.tint_hue = buf.g1b();
 				this.tint_saturation = buf.g1b();
-				this.tint_lightness = buf.g1b();
-				this.tint_amount = buf.g1b();
+				this.tint_luminence = buf.g1b();
+				this.tint_weight = buf.g1b();
 			} else if (code == 164) {
-				this.field7522 = buf.g2s();
+				this.post_xoff = buf.g2s();
 			} else if (code == 165) {
-				this.field7449 = buf.g2s();
+				this.post_yoff = buf.g2s();
 			} else if (code == 166) {
-				this.field7500 = buf.g2s();
+				this.post_zoff = buf.g2s();
 			} else if (code == 167) {
 				this.field7448 = buf.g2();
 			} else if (code != 168 && code != 169) {
@@ -651,24 +651,24 @@ public class LocType implements ConfigType {
 			var14 |= arg10.field7444 << 32;
 		}
 		int var16 = arg1;
-		if (this.hillskew_mode == 3) {
+		if (this.hillchange == 3) {
 			var16 = arg1 | 0x7;
 		} else {
-			if (this.hillskew_mode != 0 || this.field7449 != 0) {
+			if (this.hillchange != 0 || this.post_yoff != 0) {
 				var16 = arg1 | 0x2;
 			}
-			if (this.field7522 != 0) {
+			if (this.post_xoff != 0) {
 				var16 |= 0x1;
 			}
-			if (this.field7500 != 0) {
+			if (this.post_zoff != 0) {
 				var16 |= 0x4;
 			}
 		}
 		if (arg9) {
 			var16 |= 0x40000;
 		}
-		boolean var17 = this.hillskew_mode != 0 && (arg4 != null || arg5 != null);
-		boolean var18 = this.field7522 != 0 || this.field7449 != 0 || this.field7500 != 0;
+		boolean var17 = this.hillchange != 0 && (arg4 != null || arg5 != null);
+		boolean var18 = this.post_xoff != 0 || this.post_yoff != 0 || this.post_zoff != 0;
 		WeightedCache var19 = this.factory.modelCacheDynamic;
 		Pair var20;
 		synchronized (this.factory.modelCacheDynamic) {
@@ -710,10 +710,10 @@ public class LocType implements ConfigType {
 		if (var17 || var18) {
 			var28 = var22.method1773((byte) 0, var16, true);
 			if (var17) {
-				var28.method1700(this.hillskew_mode, this.hillskew_value, arg4, arg5, arg6, arg7, arg8);
+				var28.method1700(this.hillchange, this.hillchange_value, arg4, arg5, arg6, arg7, arg8);
 			}
 			if (var18) {
-				var28.method1805(this.field7522, this.field7449, this.field7500);
+				var28.method1805(this.post_xoff, this.post_yoff, this.post_zoff);
 			}
 			if (arg9) {
 				var23 = var28.method1726(null);
@@ -741,16 +741,16 @@ public class LocType implements ConfigType {
 		if (arg9 != null) {
 			arg1 |= arg9.method14358();
 		}
-		if (this.hillskew_mode == 3) {
+		if (this.hillchange == 3) {
 			arg1 |= 0x7;
 		} else {
-			if (this.hillskew_mode != 0 || this.field7449 != 0) {
+			if (this.hillchange != 0 || this.post_yoff != 0) {
 				arg1 |= 0x2;
 			}
-			if (this.field7522 != 0) {
+			if (this.post_xoff != 0) {
 				arg1 |= 0x1;
 			}
-			if (this.field7500 != 0) {
+			if (this.post_zoff != 0) {
 				arg1 |= 0x4;
 			}
 		}
@@ -788,19 +788,19 @@ public class LocType implements ConfigType {
 			}
 			var18.method1693(2048);
 		}
-		if (this.hillskew_mode != 0) {
+		if (this.hillchange != 0) {
 			if (!var22) {
 				var18 = var18.method1773((byte) 3, arg1, true);
 				var22 = true;
 			}
-			var18.method1700(this.hillskew_mode, this.hillskew_value, arg4, arg5, arg6, arg7, arg8);
+			var18.method1700(this.hillchange, this.hillchange_value, arg4, arg5, arg6, arg7, arg8);
 		}
-		if (this.field7522 != 0 || this.field7449 != 0 || this.field7500 != 0) {
+		if (this.post_xoff != 0 || this.post_yoff != 0 || this.post_zoff != 0) {
 			if (!var22) {
 				var18 = var18.method1773((byte) 3, arg1, true);
 				var22 = true;
 			}
-			var18.method1805(this.field7522, this.field7449, this.field7500);
+			var18.method1805(this.post_xoff, this.post_yoff, this.post_zoff);
 		}
 		if (var22) {
 			var18.method1690(var14);
@@ -836,7 +836,7 @@ public class LocType implements ConfigType {
 		if (this.retex_s != null) {
 			arg1 |= 0x8000;
 		}
-		if (this.tint_amount != 0) {
+		if (this.tint_weight != 0) {
 			arg1 |= 0x80000;
 		}
 		Model var10 = null;
@@ -959,8 +959,8 @@ public class LocType implements ConfigType {
 				var28.method1744(this.retex_s[var33], var32[var33]);
 			}
 		}
-		if (this.tint_amount != 0) {
-			var28.method1745(this.tint_hue, this.tint_saturation, this.tint_lightness, this.tint_amount & 0xFF);
+		if (this.tint_weight != 0) {
+			var28.method1745(this.tint_hue, this.tint_saturation, this.tint_luminence, this.tint_weight & 0xFF);
 		}
 		if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
 			var28.method1699(this.resizex, this.resizey, this.resizez);
