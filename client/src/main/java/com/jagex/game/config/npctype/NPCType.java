@@ -85,10 +85,10 @@ public class NPCType implements ConfigType {
 	public byte tint_saturation;
 
 	@ObfuscatedName("if.i")
-	public byte tint_lightness;
+	public byte tint_luminence;
 
 	@ObfuscatedName("if.j")
-	public byte tint_strength = 0;
+	public byte tint_weight = 0;
 
 	@ObfuscatedName("if.t")
 	public String[] op;
@@ -461,8 +461,8 @@ public class NPCType implements ConfigType {
 		} else if (code == 155) {
 			this.tint_hue = buf.g1b();
 			this.tint_saturation = buf.g1b();
-			this.tint_lightness = buf.g1b();
-			this.tint_strength = buf.g1b();
+			this.tint_luminence = buf.g1b();
+			this.tint_weight = buf.g1b();
 		} else if (code == 158) {
 			this.reprioritiseattackop = 1;
 		} else if (code == 159) {
@@ -608,7 +608,7 @@ public class NPCType implements ConfigType {
 			if (this.retex_s != null) {
 				var25 |= 0x8000;
 			}
-			if (this.tint_strength != 0) {
+			if (this.tint_weight != 0) {
 				var25 |= 0x80000;
 			}
 			int[] var26 = arg10 == null || arg10.field2689 == null ? this.models : arg10.field2689;
@@ -715,8 +715,8 @@ public class NPCType implements ConfigType {
 					var22.method1744(this.retex_s[var47], var46[var47]);
 				}
 			}
-			if (this.tint_strength != 0) {
-				var22.method1745(this.tint_hue, this.tint_saturation, this.tint_lightness, this.tint_strength & 0xFF);
+			if (this.tint_weight != 0) {
+				var22.method1745(this.tint_hue, this.tint_saturation, this.tint_luminence, this.tint_weight & 0xFF);
 			}
 			var22.method1736();
 			var22.method1690(var15);
@@ -821,7 +821,7 @@ public class NPCType implements ConfigType {
 				if (this.retex_s != null) {
 					var14 |= 0x8000;
 				}
-				if (this.tint_strength != 0) {
+				if (this.tint_weight != 0) {
 					var14 |= 0x80000;
 				}
 				int[] var15 = arg5 == null || arg5.field2689 == null ? this.heads : arg5.field2689;
@@ -887,8 +887,8 @@ public class NPCType implements ConfigType {
 						var12.method1744(this.retex_s[var29], var28[var29]);
 					}
 				}
-				if (this.tint_strength != 0) {
-					var12.method1745(this.tint_hue, this.tint_saturation, this.tint_lightness, this.tint_strength & 0xFF);
+				if (this.tint_weight != 0) {
+					var12.method1745(this.tint_hue, this.tint_saturation, this.tint_luminence, this.tint_weight & 0xFF);
 				}
 				var12.method1690(var8);
 				WeightedCache var30 = this.factory.headModelCache;
