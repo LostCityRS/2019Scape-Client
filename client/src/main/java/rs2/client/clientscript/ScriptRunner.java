@@ -10721,7 +10721,7 @@ public final class ScriptRunner {
 		if (Client.clanChatDisplayName == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
-			arg0.field8218[++arg0.field8211 - 1] = Base37.method15309(Client.clanChatDisplayName);
+			arg0.field8218[++arg0.field8211 - 1] = Base37.fromBase37orEmpty(Client.clanChatDisplayName);
 		}
 	}
 

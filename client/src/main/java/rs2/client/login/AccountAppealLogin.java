@@ -100,7 +100,7 @@ public class AccountAppealLogin {
 		var12.pdata(var5.data, 0, var5.pos);
 		var12.p2(var11.pos);
 		var12.pdata(var11.data, 0, var11.pos);
-		String var13 = Base64.method10220(var12.data);
+		String var13 = Base64.toBase64(var12.data);
 		try {
 			URL var14 = new URL(Client.method4591("services", false) + "m=accountappeal/login.ws");
 			URLConnection var15 = var14.openConnection();
