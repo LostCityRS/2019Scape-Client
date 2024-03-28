@@ -2107,7 +2107,7 @@ public final class Client extends GameShell {
 			var7 = var7 + "_" + var1;
 			var8 = 0;
 		}
-		this.startApplet(var6, modegame.field8333, var7, var8, Js5Archive.getRequiredArrayLength(), 910, 1, runInFrame);
+		this.startApplet(var6, modegame.titleURL, var7, var8, Js5Archive.getRequiredArrayLength(), 910, 1, runInFrame);
 	}
 
 	@ObfuscatedName("client.al(I)V")
@@ -2147,7 +2147,7 @@ public final class Client extends GameShell {
 		WorldSwitcher.currentWorld = WorldSwitcher.world;
 		js5DiskCache = new Js5DiskCache();
 		js5TcpClient = new ClientJs5TcpClient();
-		js5HttpClient = new Js5HttpClient(WorldSwitcher.httpContent.host, WorldSwitcher.httpContent.port, modegame.method);
+		js5HttpClient = new Js5HttpClient(WorldSwitcher.httpContent.host, WorldSwitcher.httpContent.port, modegame.game);
 		if (modegame == ModeGame.RUNESCAPE) {
 			field10809 = false;
 		}
@@ -3700,7 +3700,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("aax.fo(I)V")
 	public static void method14147() {
-		FileOnDisk var0 = GameShell.openPrefs("2", modegame.field8333, true);
+		FileOnDisk var0 = GameShell.openPrefs("2", modegame.titleURL, true);
 		field7228.method16418(var0);
 	}
 
@@ -14608,7 +14608,7 @@ public final class Client extends GameShell {
 		if (siteSettings != null) {
 			var3 = "/p=" + siteSettings;
 		}
-		String var4 = modegame.field8333 + ".com";
+		String var4 = modegame.titleURL + ".com";
 		return var2 + arg0 + "." + var4 + "/l=" + language.serialID + "/a=" + playerIsAffiliate + var3 + "/";
 	}
 

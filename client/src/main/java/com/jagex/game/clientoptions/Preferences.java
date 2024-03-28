@@ -37,7 +37,7 @@ public class Preferences {
 		FileOnDisk var0 = null;
 		ClientOptions var1 = new ClientOptions(Client.modegame, 0);
 		try {
-			var0 = GameShell.openPrefs("", Client.modegame.field8333, false);
+			var0 = GameShell.openPrefs("", Client.modegame.titleURL, false);
 			byte[] var2 = new byte[(int) var0.method14821()];
 			int var4;
 			for (int var3 = 0; var3 < var2.length; var3 += var4) {
@@ -62,7 +62,7 @@ public class Preferences {
 	public static void method16391() {
 		FileOnDisk var0 = null;
 		try {
-			var0 = GameShell.openPrefs("", Client.modegame.field8333, true);
+			var0 = GameShell.openPrefs("", Client.modegame.titleURL, true);
 			Packet var1 = Client.preferences.createPreferencesBlock();
 			var0.method14808(var1.data, 0, var1.pos);
 		} catch (Exception var5) {

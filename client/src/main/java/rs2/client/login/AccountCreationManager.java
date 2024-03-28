@@ -240,7 +240,7 @@ public class AccountCreationManager {
 				var1.buf.p4(Client.userFlow1);
 				var1.buf.pjstr(Client.field579);
 				var1.buf.p1(Client.language.getId());
-				var1.buf.p1(Client.modegame.method);
+				var1.buf.p1(Client.modegame.game);
 				GameShell.pushUID192(var1.buf);
 				String var4 = Client.createAdditionalInfo;
 				var1.buf.p1(var4 == null ? 0 : 1);

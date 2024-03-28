@@ -24,18 +24,18 @@ public class ModeGame {
 	public static final ModeGame OLDSCAPE = new ModeGame("oldscape", "RuneScape 2007", 5, Namespace.RUNESCAPE);
 
 	@ObfuscatedName("zd.l")
-	public final String field8333;
+	public final String titleURL;
 
 	@ObfuscatedName("zd.u")
 	public final String title;
 
 	@ObfuscatedName("zd.z")
-	public final int method;
+	public final int game;
 
-	public ModeGame(String arg0, String title, int method, Namespace arg3) {
-		this.field8333 = arg0;
+	public ModeGame(String titleURL, String title, int game, Namespace arg3) {
+		this.titleURL = titleURL;
 		this.title = title;
-		this.method = method;
+		this.game = game;
 	}
 
 	@ObfuscatedName("qx.e(B)[Lzd;")
@@ -44,11 +44,11 @@ public class ModeGame {
 	}
 
 	@ObfuscatedName("rg.n(II)Lzd;")
-	public static ModeGame of(int method) {
+	public static ModeGame of(int game) {
 		ModeGame[] modes = values();
 		for (int index = 0; index < modes.length; index++) {
 			ModeGame mode = modes[index];
-			if (mode.method == method) {
+			if (mode.game == game) {
 				return mode;
 			}
 		}

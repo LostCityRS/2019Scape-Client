@@ -45,7 +45,7 @@ public class LoadingScreenNewsManager implements Runnable {
 	public void run() {
 		try {
 			int var1 = ServerPorts.method14998(Client.modewhere, ServerType.field8347, WorldSwitcher.world.node);
-			BufferedReader var2 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + WorldSwitcher.world.host + ":" + var1 + "/news.ws?game=" + Client.modegame.method)).openStream())));
+			BufferedReader var2 = new BufferedReader(new InputStreamReader(new DataInputStream((new URL("http://" + WorldSwitcher.world.host + ":" + var1 + "/news.ws?game=" + Client.modegame.game)).openStream())));
 			String var3 = var2.readLine();
 			ArrayList var4 = new ArrayList();
 			while (var3 != null) {
