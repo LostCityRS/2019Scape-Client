@@ -1,12 +1,12 @@
 package com.jagex.game.config.skydecortype;
 
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("iy")
-public class SkyDecorType implements ConfigType, ConfigRelated {
+public class SkyDecorType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("iy.e")
 	public int field2780;

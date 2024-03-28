@@ -8,19 +8,19 @@ import deob.ObfuscatedName;
 public class Js5ArchiveResourceLoader implements ResourceLoader {
 
 	@ObfuscatedName("pw.e")
-	public final Js5 field4328;
+	public final Js5 js5;
 
-	public Js5ArchiveResourceLoader(Js5 arg0) {
-		this.field4328 = arg0;
+	public Js5ArchiveResourceLoader(Js5 js5) {
+		this.js5 = js5;
 	}
 
 	@ObfuscatedName("pw.e(I)I")
-	public int method6782() {
-		return this.field4328.fetchAll() ? 100 : this.field4328.getPercentageComplete();
+	public int getPercentageComplete() {
+		return this.js5.fetchAll() ? 100 : this.js5.getPercentageComplete();
 	}
 
 	@ObfuscatedName("pw.n(B)Lacv;")
-	public LoadableResourceType method6781() {
-		return LoadableResourceType.field8914;
+	public LoadableResourceType getLoadableResourceType() {
+		return LoadableResourceType.JS5_ARCHIVE;
 	}
 }

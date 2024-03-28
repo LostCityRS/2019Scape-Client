@@ -19,19 +19,19 @@ import java.util.concurrent.Future;
 public class Js5HttpClient {
 
 	@ObfuscatedName("pu.e")
-	public String field4474;
+	public String host;
 
 	@ObfuscatedName("pu.n")
-	public int field4465;
+	public int port;
 
 	@ObfuscatedName("pu.m")
-	public final int field4473;
+	public final int method;
 
 	@ObfuscatedName("pu.f")
-	public volatile int field4467 = 0;
+	public volatile int pendingRequests = 0;
 
 	@ObfuscatedName("pu.l")
-	public ExecutorService field4469 = Executors.newFixedThreadPool(2);
+	public ExecutorService executor = Executors.newFixedThreadPool(2);
 
 	@ObfuscatedName("pu.u")
 	public long field4470;
@@ -39,30 +39,30 @@ public class Js5HttpClient {
 	@ObfuscatedName("pu.c")
 	public boolean field4468 = false;
 
-	public Js5HttpClient(String arg0, int arg1, int arg2) {
-		this.field4474 = arg0;
-		this.field4465 = arg1;
-		this.field4473 = arg2;
+	public Js5HttpClient(String host, int port, int method) {
+		this.host = host;
+		this.port = port;
+		this.method = method;
 	}
 
 	@ObfuscatedName("pu.e(I)Z")
-	public boolean method7048() {
-		return this.field4467 >= 10;
+	public boolean isPendingRequestsFull() {
+		return this.pendingRequests >= 10;
 	}
 
 	@ObfuscatedName("pu.n(I)Latb;")
 	public Js5HttpRequest method7049() {
-		return this.method7068(255, 255, (byte) 0, true, 0, 0);
+		return this.sendHttpRequest(255, 255, (byte) 0, true, 0, 0);
 	}
 
 	@ObfuscatedName("pu.m(IIBZIII)Latb;")
-	public Js5HttpRequest method7068(int arg0, int arg1, byte arg2, boolean arg3, int arg4, int arg5) {
-		if (arg0 < 0 || arg1 < 0) {
-			throw new RuntimeException(arg0 + "," + arg1);
-		} else if (this.method7048()) {
+	public Js5HttpRequest sendHttpRequest(int archive, int group, byte padding, boolean urgent, int crc, int version) {
+		if (archive < 0 || group < 0) {
+			throw new RuntimeException(archive + "," + group);
+		} else if (this.isPendingRequestsFull()) {
 			return null;
 		} else {
-			boolean var7 = arg0 == 255 && arg1 == 255;
+			boolean var7 = archive == 255 && group == 255;
 			if (!this.field4468 && !var7) {
 				return null;
 			} else if (this.field4470 + 10000L >= MonotonicTime.get()) {
@@ -73,32 +73,32 @@ public class Js5HttpClient {
 				if (var7) {
 					var9 = "&cb=" + MonotonicTime.get();
 				} else {
-					var9 = "&c=" + arg4 + "&v=" + arg5;
+					var9 = "&c=" + crc + "&v=" + version;
 				}
-				URL var10;
+				URL url;
 				try {
-					var10 = new URL("http", this.field4474, this.field4465, "/ms?m=" + this.field4473 + "&a=" + arg0 + "&g=" + arg1 + var9);
+					url = new URL("http", this.host, this.port, "/ms?m=" + this.method + "&a=" + archive + "&g=" + group + var9);
 				} catch (MalformedURLException var14) {
 					return null;
 				}
-				Js5HttpRequest var12 = new Js5HttpRequest(arg2);
-				var12.field12342 = arg3;
-				this.field4467++;
-				Future var13 = this.field4469.submit(new Js5HTTPClient_Task(this, var10, var12));
-				var12.method19716(var13);
-				return var12;
+				Js5HttpRequest newRequest = new Js5HttpRequest(padding);
+				newRequest.urgent = urgent;
+				this.pendingRequests++;
+				Future future = this.executor.submit(new Js5HTTPClient_Task(this, url, newRequest));
+				newRequest.setFutureResponse(future);
+				return newRequest;
 			}
 		}
 	}
 
 	@ObfuscatedName("pu.k(I)V")
-	public void method7051() {
-		this.field4467--;
+	public void removePendingRequest() {
+		this.pendingRequests--;
 	}
 
 	@ObfuscatedName("pu.f(I)V")
-	public void method7063() {
-		this.field4469.shutdown();
+	public void shutdownExecutor() {
+		this.executor.shutdown();
 	}
 
 	// line 75
@@ -148,58 +148,58 @@ public class Js5HttpClient {
 		public final Js5HttpClient this$0;
 
 		@ObfuscatedName("pr.e")
-		public byte[] field4405;
+		public byte[] response;
 
 		// line 106
-		public Js5HTTPClientResponse(Js5HttpClient arg0, InputStream arg1, Js5HttpRequest arg2, URL arg3) {
-			this.this$0 = arg0;
-			this.field4405 = null;
-			if (arg1 != null) {
+		public Js5HTTPClientResponse(Js5HttpClient httpclient, InputStream in, Js5HttpRequest request, URL arg3) {
+			this.this$0 = httpclient;
+			this.response = null;
+			if (in != null) {
 				short var5 = 10240;
-				Packet var6 = new Packet(var5, true);
-				int var7 = 0;
-				byte[] var8 = ByteArrayPool.alloc(1024);
-				while (var7 >= 0) {
+				Packet buf = new Packet(var5, true);
+				int length = 0;
+				byte[] alloc = ByteArrayPool.alloc(1024);
+				while (length >= 0) {
 					try {
-						var7 = arg1.read(var8);
-					} catch (IOException var18) {
-						var18.printStackTrace();
-						var7 = -1;
+						length = in.read(alloc);
+					} catch (IOException ioException) {
+						ioException.printStackTrace();
+						length = -1;
 					}
-					if (var7 > 0) {
-						if (var6.pos + var7 >= var6.data.length) {
-							int var10 = var6.data.length + 10240;
-							byte[] var11 = ByteArrayPool.alloc(var10, true);
-							System.arraycopy(var6.data, 0, var11, 0, var6.pos);
-							ByteArrayPool.release(var6.data);
-							var6.data = var11;
+					if (length > 0) {
+						if (buf.pos + length >= buf.data.length) {
+							int size = buf.data.length + 10240;
+							byte[] bytes = ByteArrayPool.alloc(size, true);
+							System.arraycopy(buf.data, 0, bytes, 0, buf.pos);
+							ByteArrayPool.release(buf.data);
+							buf.data = bytes;
 						}
-						var6.pdata(var8, 0, var7);
+						buf.pdata(alloc, 0, length);
 					}
 				}
-				for (int var12 = 0; var12 < arg2.field12563; var12++) {
-					var6.p1(0);
+				for (int index = 0; index < request.padding; index++) {
+					buf.p1(0);
 				}
-				byte[] var13 = new byte[var6.pos];
-				System.arraycopy(var6.data, 0, var13, 0, var6.pos);
-				var6.release();
+				byte[] bytes = new byte[buf.pos];
+				System.arraycopy(buf.data, 0, bytes, 0, buf.pos);
+				buf.release();
 				Object var14 = null;
-				ByteArrayPool.release(var8);
+				ByteArrayPool.release(alloc);
 				Object var15 = null;
-				this.field4405 = var13;
+				this.response = bytes;
 				try {
-					arg1.close();
-				} catch (IOException var17) {
-					var17.printStackTrace();
+					in.close();
+				} catch (IOException ioException) {
+					ioException.printStackTrace();
 				}
 			}
-			arg2.field12344 = false;
-			arg0.method7051();
+			request.awaitingResponse = false;
+			httpclient.removePendingRequest();
 		}
 
 		@ObfuscatedName("pr.e(I)[B")
-		public byte[] method6872() {
-			return this.field4405;
+		public byte[] getResponseBytes() {
+			return this.response;
 		}
 	}
 }

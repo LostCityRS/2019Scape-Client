@@ -26,7 +26,7 @@ public class DllResourceLoader implements ResourceLoader {
 	}
 
 	@ObfuscatedName("pa.e(I)I")
-	public int method6782() {
+	public int getPercentageComplete() {
 		if (this.field4337) {
 			return 100;
 		}
@@ -50,7 +50,7 @@ public class DllResourceLoader implements ResourceLoader {
 	}
 
 	@ObfuscatedName("pa.n(B)Lacv;")
-	public LoadableResourceType method6781() {
-		return LoadableResourceType.field8915;
+	public LoadableResourceType getLoadableResourceType() {
+		return LoadableResourceType.DLL;
 	}
 }

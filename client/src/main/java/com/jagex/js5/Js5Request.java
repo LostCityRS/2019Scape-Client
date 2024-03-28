@@ -7,17 +7,17 @@ import deob.ObfuscatedName;
 public abstract class Js5Request extends SecondaryNode {
 
 	@ObfuscatedName("ask.l")
-	public boolean field12342;
+	public boolean urgent;
 
 	@ObfuscatedName("ask.u")
 	public boolean field12343;
 
 	@ObfuscatedName("ask.z")
-	public volatile boolean field12344 = true;
+	public volatile boolean awaitingResponse = true;
 
 	@ObfuscatedName("ask.e(I)[B")
-	public abstract byte[] method19444();
+	public abstract byte[] getBytes();
 
 	@ObfuscatedName("ask.n(I)I")
-	public abstract int method19446();
+	public abstract int getPercentageComplete();
 }

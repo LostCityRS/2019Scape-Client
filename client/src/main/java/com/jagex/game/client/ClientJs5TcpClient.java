@@ -16,306 +16,306 @@ import java.util.Iterator;
 public class ClientJs5TcpClient extends Js5TcpClient {
 
 	@ObfuscatedName("aik.g")
-	public Stream field10751;
+	public Stream stream;
 
 	@ObfuscatedName("aik.w(IIB)V")
-	public void method7015(int arg0, int arg1) {
+	public void error(int archive, int group) {
 		try {
-			this.field10751.closeGracefully();
+			this.stream.closeGracefully();
 		} catch (Exception var4) {
 		}
-		this.field10751 = null;
-		this.field4455++;
-		this.field4454 = -1;
+		this.stream = null;
+		this.errorCount++;
+		this.js5State = -1;
 		this.xorcode = (byte) (Math.random() * 255.0D + 1.0D);
-		this.field4457 = arg0;
-		this.field4456 = arg1;
+		this.archive = archive;
+		this.group = group;
 	}
 
 	@ObfuscatedName("aik.l(I)Z")
-	public boolean method7016() {
-		if (this.field10751 != null) {
-			long var1 = MonotonicTime.get();
-			int var3 = (int) (var1 - this.field4452);
-			this.field4452 = var1;
-			if (var3 > 200) {
-				var3 = 200;
+	public boolean process() {
+		if (this.stream != null) {
+			long current = MonotonicTime.get();
+			int delay = (int) (current - this.lastTimestamp);
+			this.lastTimestamp = current;
+			if (delay > 200) {
+				delay = 200;
 			}
-			this.field4441 += var3;
-			if (this.field4441 > 30000) {
+			this.delay += delay;
+			if (this.delay > 30000) {
 				try {
-					this.field10751.closeGracefully();
-				} catch (Exception var34) {
+					this.stream.closeGracefully();
+				} catch (Exception exception) {
 				}
-				this.field10751 = null;
+				this.stream = null;
 			}
 		}
-		if (this.field10751 == null) {
-			return this.method7021() == 0 && this.method7013() == 0;
+		if (this.stream == null) {
+			return this.getTotalUrgents() == 0 && this.getTotalPrefetches() == 0;
 		}
 		try {
-			for (Js5NetRequest var5 = (Js5NetRequest) this.urgent.peekFront(); var5 != null; var5 = (Js5NetRequest) this.urgent.prev()) {
-				this.field4450.pos = 0;
-				this.field4450.p1(1);
-				this.field4450.p5(var5.secondaryNodeId);
-				this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
-				this.field4451.pushBack(var5);
+			for (Js5NetRequest urgent = (Js5NetRequest) this.urgent.peekFront(); urgent != null; urgent = (Js5NetRequest) this.urgent.prev()) {
+				this.out.pos = 0;
+				this.out.p1(1);
+				this.out.p5(urgent.secondaryNodeId);
+				this.stream.write(this.out.data, 0, this.out.data.length);
+				this.urgentRequested.pushBack(urgent);
 			}
-			for (Js5NetRequest var6 = (Js5NetRequest) this.prefetch.peekFront(); var6 != null; var6 = (Js5NetRequest) this.prefetch.prev()) {
-				this.field4450.pos = 0;
-				this.field4450.p1(0);
-				this.field4450.p5(var6.secondaryNodeId);
-				this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
-				this.field4443.pushBack(var6);
+			for (Js5NetRequest prefetch = (Js5NetRequest) this.prefetch.peekFront(); prefetch != null; prefetch = (Js5NetRequest) this.prefetch.prev()) {
+				this.out.pos = 0;
+				this.out.p1(0);
+				this.out.p5(prefetch.secondaryNodeId);
+				this.stream.write(this.out.data, 0, this.out.data.length);
+				this.prefetchRequested.pushBack(prefetch);
 			}
-			for (int var7 = 0; var7 < 100; var7++) {
-				int var8 = this.field10751.available();
-				if (var8 < 0) {
+			for (int index = 0; index < 100; index++) {
+				int available = this.stream.available();
+				if (available < 0) {
 					throw new IOException();
 				}
-				if (var8 == 0) {
+				if (available == 0) {
 					break;
 				}
-				this.field4441 = 0;
-				if (this.field4462 == null) {
-					int var9 = 5 - this.field4459.pos;
-					if (var9 > var8) {
-						var9 = var8;
+				this.delay = 0;
+				if (this.currentRequest == null) {
+					int pos = 5 - this.client.pos;
+					if (pos > available) {
+						pos = available;
 					}
-					this.field10751.read(this.field4459.data, this.field4459.pos, var9);
+					this.stream.read(this.client.data, this.client.pos, pos);
 					if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
-						for (int var10 = 0; var10 < var9; var10++) {
-							this.field4459.data[this.field4459.pos + var10] ^= this.xorcode;
+						for (int i = 0; i < pos; i++) {
+							this.client.data[this.client.pos + i] ^= this.xorcode;
 						}
 					}
-					this.field4459.pos += var9;
-					if (this.field4459.pos >= 5) {
-						this.field4459.pos = 0;
-						int var11 = this.field4459.g1();
-						int var12 = this.field4459.g4s();
-						boolean var13 = (var12 & Integer.MIN_VALUE) != 0;
-						int var14 = var12 & Integer.MAX_VALUE;
-						long var15 = ((long) var11 << 32) + (long) var14;
-						if (var13) {
-							Iterator var17 = this.field4443.iterator();
-							while (var17.hasNext()) {
-								Js5NetRequest var18 = (Js5NetRequest) var17.next();
-								if (var18.secondaryNodeId == var15) {
-									this.field4462 = var18;
+					this.client.pos += pos;
+					if (this.client.pos >= 5) {
+						this.client.pos = 0;
+						int archive = this.client.g1();
+						int group = this.client.g4s();
+						boolean prefetch = (group & Integer.MIN_VALUE) != 0;
+						int groupId = group & Integer.MAX_VALUE;
+						long uid = ((long) archive << 32) + (long) groupId;
+						if (prefetch) {
+							Iterator prefetchIterator = this.prefetchRequested.iterator();
+							while (prefetchIterator.hasNext()) {
+								Js5NetRequest next = (Js5NetRequest) prefetchIterator.next();
+								if (next.secondaryNodeId == uid) {
+									this.currentRequest = next;
 									break;
 								}
 							}
 						} else {
-							Iterator var19 = this.field4451.iterator();
-							while (var19.hasNext()) {
-								Js5NetRequest var20 = (Js5NetRequest) var19.next();
-								if (var20.secondaryNodeId == var15) {
-									this.field4462 = var20;
+							Iterator urgentIterator = this.urgentRequested.iterator();
+							while (urgentIterator.hasNext()) {
+								Js5NetRequest next = (Js5NetRequest) urgentIterator.next();
+								if (next.secondaryNodeId == uid) {
+									this.currentRequest = next;
 									break;
 								}
 							}
 						}
-						if (this.field4462 == null) {
+						if (this.currentRequest == null) {
 							throw new IOException();
 						}
-						this.field4461 = 5;
-						this.field4459.pos = 0;
-						this.field4460.pos = 0;
+						this.outPos = 5;
+						this.client.pos = 0;
+						this.server.pos = 0;
 					}
 				} else {
-					Packet var21 = this.field4462.field12564;
-					if (var21 == null) {
-						int var22 = 5 - this.field4460.pos;
-						if (var22 > var8) {
-							var22 = var8;
+					Packet buf = this.currentRequest.buf;
+					if (buf == null) {
+						int pos = 5 - this.server.pos;
+						if (pos > available) {
+							pos = available;
 						}
-						this.field10751.read(this.field4460.data, this.field4460.pos, var22);
+						this.stream.read(this.server.data, this.server.pos, pos);
 						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
-							for (int var23 = 0; var23 < var22; var23++) {
-								this.field4460.data[this.field4460.pos + var23] ^= this.xorcode;
+							for (int i = 0; i < pos; i++) {
+								this.server.data[this.server.pos + i] ^= this.xorcode;
 							}
 						}
-						this.field4460.pos += var22;
-						if (this.field4460.pos >= 5) {
-							this.field4460.pos = 0;
-							int var24 = this.field4460.g1();
-							int var25 = this.field4460.g4s();
-							byte var26 = 5;
-							if (var24 != Js5CompressionType.UNCOMPRESSED.getId()) {
-								var26 = 9;
+						this.server.pos += pos;
+						if (this.server.pos >= 5) {
+							this.server.pos = 0;
+							int archive = this.server.g1();
+							int group = this.server.g4s();
+							byte length = 5;
+							if (archive != Js5CompressionType.UNCOMPRESSED.getId()) {
+								length = 9;
 							}
-							Packet var27 = this.field4462.field12564 = new Packet(var25 + var26 + this.field4462.field12565);
-							var27.p1(var24);
-							var27.p4(var25);
-							this.field4461 += 5;
+							Packet out = this.currentRequest.buf = new Packet(group + length + this.currentRequest.offset);
+							out.p1(archive);
+							out.p4(group);
+							this.outPos += 5;
 						}
 					} else {
-						int var28 = var21.data.length - this.field4462.field12565;
-						int var29 = 102400 - this.field4461;
-						if (var29 > var28 - var21.pos) {
-							var29 = var28 - var21.pos;
+						int off = buf.data.length - this.currentRequest.offset;
+						int pos = 102400 - this.outPos;
+						if (pos > off - buf.pos) {
+							pos = off - buf.pos;
 						}
-						if (var29 > var8) {
-							var29 = var8;
+						if (pos > available) {
+							pos = available;
 						}
-						this.field10751.read(var21.data, var21.pos, var29);
+						this.stream.read(buf.data, buf.pos, pos);
 						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
-							for (int var30 = 0; var30 < var29; var30++) {
-								var21.data[var21.pos + var30] ^= this.xorcode;
+							for (int i = 0; i < pos; i++) {
+								buf.data[buf.pos + i] ^= this.xorcode;
 							}
 						}
-						var21.pos += var29;
-						this.field4461 += var29;
-						if (var21.pos == var28) {
-							this.field4462.secondaryRemove();
-							this.field4462.field12344 = false;
-							this.field4462 = null;
-						} else if (this.field4461 == 102400) {
-							this.field4461 = 0;
-							this.field4462 = null;
+						buf.pos += pos;
+						this.outPos += pos;
+						if (buf.pos == off) {
+							this.currentRequest.secondaryRemove();
+							this.currentRequest.awaitingResponse = false;
+							this.currentRequest = null;
+						} else if (this.outPos == 102400) {
+							this.outPos = 0;
+							this.currentRequest = null;
 						}
 					}
 				}
 			}
 			return true;
-		} catch (IOException var35) {
+		} catch (IOException ioException) {
 			try {
-				this.field10751.closeGracefully();
+				this.stream.closeGracefully();
 			} catch (Exception var33) {
 			}
-			this.field10751 = null;
-			this.field4455++;
-			this.field4454 = -2;
-			return this.method7021() == 0 && this.method7013() == 0;
+			this.stream = null;
+			this.errorCount++;
+			this.js5State = -2;
+			return this.getTotalUrgents() == 0 && this.getTotalPrefetches() == 0;
 		}
 	}
 
 	@ObfuscatedName("aik.u(Ljava/lang/Object;ZI)V")
-	public void method7017(Object arg0, boolean arg1) {
-		if (this.field10751 != null) {
+	public void createNewJs5Stream(Object stream, boolean isLoggedIn) {
+		if (this.stream != null) {
 			try {
-				this.field10751.closeGracefully();
-			} catch (Exception var10) {
+				this.stream.closeGracefully();
+			} catch (Exception exception) {
 			}
-			this.field10751 = null;
+			this.stream = null;
 		}
-		this.field10751 = (Stream) arg0;
-		this.method16859();
-		this.method7010(arg1);
-		this.field4459.pos = 0;
-		this.field4460.pos = 0;
-		this.field4462 = null;
+		this.stream = (Stream) stream;
+		this.sendNewStream();
+		this.sendLoginStatus(isLoggedIn);
+		this.client.pos = 0;
+		this.server.pos = 0;
+		this.currentRequest = null;
 		while (true) {
-			Js5NetRequest var4 = (Js5NetRequest) this.field4451.pollFront();
-			if (var4 == null) {
+			Js5NetRequest urgent = (Js5NetRequest) this.urgentRequested.pollFront();
+			if (urgent == null) {
 				while (true) {
-					Js5NetRequest var5 = (Js5NetRequest) this.field4443.pollFront();
-					if (var5 == null) {
+					Js5NetRequest prefetch = (Js5NetRequest) this.prefetchRequested.pollFront();
+					if (prefetch == null) {
 						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 							try {
-								this.field4450.pos = 0;
-								this.field4450.p1(4);
-								this.field4450.p1(this.xorcode);
-								this.field4450.p4(0);
-								this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
-							} catch (IOException var9) {
+								this.out.pos = 0;
+								this.out.p1(4);
+								this.out.p1(this.xorcode);
+								this.out.p4(0);
+								this.stream.write(this.out.data, 0, this.out.data.length);
+							} catch (IOException ioException) {
 								try {
-									this.field10751.closeGracefully();
-								} catch (Exception var8) {
+									this.stream.closeGracefully();
+								} catch (Exception exception) {
 								}
-								this.field10751 = null;
-								this.field4455++;
-								this.field4454 = -2;
+								this.stream = null;
+								this.errorCount++;
+								this.js5State = -2;
 							}
 						}
-						this.field4441 = 0;
-						this.field4452 = MonotonicTime.get();
+						this.delay = 0;
+						this.lastTimestamp = MonotonicTime.get();
 						return;
 					}
-					var5.field12564 = null;
-					this.prefetch.pushBack(var5);
+					prefetch.buf = null;
+					this.prefetch.pushBack(prefetch);
 				}
 			}
-			var4.field12564 = null;
-			this.urgent.pushBack(var4);
+			urgent.buf = null;
+			this.urgent.pushBack(urgent);
 		}
 	}
 
 	@ObfuscatedName("aik.ac(I)V")
-	public void method16859() {
-		if (this.field10751 == null) {
+	public void sendNewStream() {
+		if (this.stream == null) {
 			return;
 		}
 		try {
-			this.field4450.pos = 0;
-			this.field4450.p1(6);
-			this.field4450.p3(4);
-			this.field4450.p2(0);
-			this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
-		} catch (IOException var4) {
+			this.out.pos = 0;
+			this.out.p1(6);
+			this.out.p3(4);
+			this.out.p2(0);
+			this.stream.write(this.out.data, 0, this.out.data.length);
+		} catch (IOException ioException) {
 			try {
-				this.field10751.closeGracefully();
-			} catch (Exception var3) {
+				this.stream.closeGracefully();
+			} catch (Exception exception) {
 			}
-			this.field10751 = null;
-			this.field4455++;
-			this.field4454 = -2;
+			this.stream = null;
+			this.errorCount++;
+			this.js5State = -2;
 		}
 	}
 
 	@ObfuscatedName("aik.z(ZI)V")
-	public void method7010(boolean arg0) {
-		if (this.field10751 == null) {
+	public void sendLoginStatus(boolean isLoggedIn) {
+		if (this.stream == null) {
 			return;
 		}
 		try {
-			this.field4450.pos = 0;
-			this.field4450.p1(arg0 ? 2 : 3);
-			this.field4450.p5(0L);
-			this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
-		} catch (IOException var5) {
+			this.out.pos = 0;
+			this.out.p1(isLoggedIn ? 2 : 3);
+			this.out.p5(0L);
+			this.stream.write(this.out.data, 0, this.out.data.length);
+		} catch (IOException ioException) {
 			try {
-				this.field10751.closeGracefully();
-			} catch (Exception var4) {
+				this.stream.closeGracefully();
+			} catch (Exception exception) {
 			}
-			this.field10751 = null;
-			this.field4455++;
-			this.field4454 = -2;
+			this.stream = null;
+			this.errorCount++;
+			this.js5State = -2;
 		}
 	}
 
 	@ObfuscatedName("aik.p(I)V")
-	public void method7014() {
-		if (this.field10751 == null) {
+	public void sendCloseStream() {
+		if (this.stream == null) {
 			return;
 		}
 		try {
-			this.field4450.pos = 0;
-			this.field4450.p1(7);
-			this.field4450.p5(0L);
-			this.field10751.write(this.field4450.data, 0, this.field4450.data.length);
-		} catch (IOException var4) {
+			this.out.pos = 0;
+			this.out.p1(7);
+			this.out.p5(0L);
+			this.stream.write(this.out.data, 0, this.out.data.length);
+		} catch (IOException ioException) {
 			try {
-				this.field10751.closeGracefully();
-			} catch (Exception var3) {
+				this.stream.closeGracefully();
+			} catch (Exception exception) {
 			}
-			this.field10751 = null;
-			this.field4455++;
-			this.field4454 = -2;
+			this.stream = null;
+			this.errorCount++;
+			this.js5State = -2;
 		}
 	}
 
 	@ObfuscatedName("aik.d(I)V")
-	public void method7020() {
-		if (this.field10751 != null) {
-			this.field10751.closeGracefully();
+	public void closeGracefully() {
+		if (this.stream != null) {
+			this.stream.closeGracefully();
 		}
 	}
 
 	@ObfuscatedName("aik.c(I)V")
-	public void method7035() {
-		if (this.field10751 != null) {
-			this.field10751.closeForcefully();
+	public void closeForcefully() {
+		if (this.stream != null) {
+			this.stream.closeForcefully();
 		}
 	}
 }

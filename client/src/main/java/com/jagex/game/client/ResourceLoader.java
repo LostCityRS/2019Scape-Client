@@ -6,8 +6,8 @@ import deob.ObfuscatedName;
 public interface ResourceLoader {
 
 	@ObfuscatedName("acu.e(I)I")
-	int method6782();
+	int getPercentageComplete();
 
 	@ObfuscatedName("acu.n(B)Lacv;")
-	LoadableResourceType method6781();
+	LoadableResourceType getLoadableResourceType();
 }

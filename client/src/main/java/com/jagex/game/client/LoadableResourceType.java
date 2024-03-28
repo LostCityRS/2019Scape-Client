@@ -6,14 +6,14 @@ import deob.ObfuscatedName;
 public class LoadableResourceType {
 
 	@ObfuscatedName("acv.e")
-	public static final LoadableResourceType field8914 = new LoadableResourceType();
+	public static final LoadableResourceType JS5_ARCHIVE = new LoadableResourceType();
 
 	@ObfuscatedName("acv.n")
-	public static final LoadableResourceType field8913 = new LoadableResourceType();
+	public static final LoadableResourceType JS5_FILE = new LoadableResourceType();
 
 	@ObfuscatedName("acv.m")
-	public static final LoadableResourceType field8912 = new LoadableResourceType();
+	public static final LoadableResourceType JS5_GROUP = new LoadableResourceType();
 
 	@ObfuscatedName("acv.k")
-	public static final LoadableResourceType field8915 = new LoadableResourceType();
+	public static final LoadableResourceType DLL = new LoadableResourceType();
 }

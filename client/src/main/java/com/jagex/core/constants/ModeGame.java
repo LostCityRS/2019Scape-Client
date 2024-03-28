@@ -30,26 +30,26 @@ public class ModeGame {
 	public final String title;
 
 	@ObfuscatedName("zd.z")
-	public final int field8339;
+	public final int method;
 
-	public ModeGame(String arg0, String arg1, int arg2, Namespace arg3) {
+	public ModeGame(String arg0, String title, int method, Namespace arg3) {
 		this.field8333 = arg0;
-		this.title = arg1;
-		this.field8339 = arg2;
+		this.title = title;
+		this.method = method;
 	}
 
 	@ObfuscatedName("qx.e(B)[Lzd;")
-	public static ModeGame[] method7118() {
+	public static ModeGame[] values() {
 		return new ModeGame[] {RUNESCAPE, ALTERNATEREALITY, OLDSCAPE, TRANSFORMERS, SCRATCH, STELLARDAWN};
 	}
 
 	@ObfuscatedName("rg.n(II)Lzd;")
-	public static ModeGame method7704(int arg0) {
-		ModeGame[] var1 = method7118();
-		for (int var2 = 0; var2 < var1.length; var2++) {
-			ModeGame var3 = var1[var2];
-			if (var3.field8339 == arg0) {
-				return var3;
+	public static ModeGame of(int method) {
+		ModeGame[] modes = values();
+		for (int index = 0; index < modes.length; index++) {
+			ModeGame mode = modes[index];
+			if (mode.method == method) {
+				return mode;
 			}
 		}
 		return null;

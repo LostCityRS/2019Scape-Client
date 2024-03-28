@@ -2041,7 +2041,7 @@ public final class Client extends GameShell {
 						WorldSwitcher.httpContent.node = Integer.parseInt(value);
 						break;
 					case 46:
-						modegame = ModeGame.method7704(Integer.parseInt(value));
+						modegame = ModeGame.of(Integer.parseInt(value));
 						if (modegame == ModeGame.RUNESCAPE) {
 							namespace = Namespace.RUNESCAPE;
 						} else {
@@ -2147,7 +2147,7 @@ public final class Client extends GameShell {
 		WorldSwitcher.currentWorld = WorldSwitcher.world;
 		js5DiskCache = new Js5DiskCache();
 		js5TcpClient = new ClientJs5TcpClient();
-		js5HttpClient = new Js5HttpClient(WorldSwitcher.httpContent.host, WorldSwitcher.httpContent.port, modegame.field8339);
+		js5HttpClient = new Js5HttpClient(WorldSwitcher.httpContent.host, WorldSwitcher.httpContent.port, modegame.method);
 		if (modegame == ModeGame.RUNESCAPE) {
 			field10809 = false;
 		}
@@ -2215,7 +2215,7 @@ public final class Client extends GameShell {
 		long var7 = MonotonicTime.get();
 		gameConnection.refreshNetStats();
 		lobbyConnection.refreshNetStats();
-		this.method16917();
+		this.processJs5TcpClient();
 		if (js5Client != null) {
 			js5Client.method6837();
 		}
@@ -2478,8 +2478,8 @@ public final class Client extends GameShell {
 		if (audioApi != null) {
 			audioApi.method3165();
 		}
-		js5TcpClient.method7020();
-		js5HttpClient.method7063();
+		js5TcpClient.closeGracefully();
+		js5HttpClient.shutdownExecutor();
 		js5DiskCache.method6992();
 		if (inetAddressLookupRequest != null) {
 			inetAddressLookupRequest.method10572();
@@ -2628,7 +2628,7 @@ public final class Client extends GameShell {
 		boolean var2 = state == 1 || isStateTitle(state) || isStateLobby(state);
 		boolean var3 = Client.state == 1 || isStateTitle(Client.state) || isStateLobby(Client.state);
 		if (var2 != var3) {
-			js5TcpClient.method7010(!var2);
+			js5TcpClient.sendLoginStatus(!var2);
 		}
 		if (method9273(state) || state == 14 || state == 19) {
 			renderer.method2150();
@@ -2637,40 +2637,40 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("client.ek(B)V")
-	public void method16917() {
-		boolean var1 = js5TcpClient.method7016();
-		if (!var1) {
-			this.method16918();
+	public void processJs5TcpClient() {
+		boolean processed = js5TcpClient.process();
+		if (!processed) {
+			this.js5Error();
 		}
 	}
 
 	@ObfuscatedName("client.em(B)V")
-	public void method16918() {
-		if (js5TcpClient.field4455 > field10829) {
+	public void js5Error() {
+		if (js5TcpClient.errorCount > field10829) {
 			WorldSwitcher.content.configureSocketType();
-			field10821 = js5TcpClient.field4455 * 250 - 250;
+			field10821 = js5TcpClient.errorCount * 250 - 250;
 			if (field10821 > 3000) {
 				field10821 = 3000;
 			}
-			if (js5TcpClient.field4455 >= 2 && js5TcpClient.field4454 == 6) {
+			if (js5TcpClient.errorCount >= 2 && js5TcpClient.js5State == 6) {
 				this.error("js5connect_outofdate");
 				state = 2;
 				return;
 			}
-			if (js5TcpClient.field4455 >= 1 && js5TcpClient.field4454 == 48) {
+			if (js5TcpClient.errorCount >= 1 && js5TcpClient.js5State == 48) {
 				this.error("sessionexpired");
 				state = 2;
 				return;
 			}
-			if (js5TcpClient.field4455 >= 4 && js5TcpClient.field4454 == -1) {
-				this.error("js5crc", "a=" + js5TcpClient.field4457 + "&g=" + js5TcpClient.field4456);
+			if (js5TcpClient.errorCount >= 4 && js5TcpClient.js5State == -1) {
+				this.error("js5crc", "a=" + js5TcpClient.archive + "&g=" + js5TcpClient.group);
 				state = 2;
 				return;
 			}
-			if (js5TcpClient.field4455 >= 4 && method2092(state)) {
-				if (js5TcpClient.field4454 == 7 || js5TcpClient.field4454 == 9) {
+			if (js5TcpClient.errorCount >= 4 && method2092(state)) {
+				if (js5TcpClient.js5State == 7 || js5TcpClient.js5State == 9) {
 					this.error("js5connect_full");
-				} else if (js5TcpClient.field4454 <= 0) {
+				} else if (js5TcpClient.js5State <= 0) {
 					this.error("js5io");
 				} else if (field11068 == null) {
 					this.error("js5connect");
@@ -2681,7 +2681,7 @@ public final class Client extends GameShell {
 				return;
 			}
 		}
-		field10829 = js5TcpClient.field4455;
+		field10829 = js5TcpClient.errorCount;
 		if (field10821 > 0) {
 			field10821--;
 			return;
@@ -2693,60 +2693,60 @@ public final class Client extends GameShell {
 			}
 			if (field10827 == 1) {
 				js5Stream = Stream.createStream(js5Socket, 131072);
-				int var1 = gamepack.length() + 10;
-				Packet var2 = new Packet(var1 + 2);
-				var2.p1(LoginProt.INIT_JS5REMOTE_CONNECTION.id);
-				var2.p1(var1);
-				var2.p4(910);
-				var2.p4(1);
-				var2.pjstr(gamepack);
-				var2.p1(language.serialID);
-				js5Stream.write(var2.data, 0, var1 + 2);
+				int length = gamepack.length() + 10;
+				Packet buf = new Packet(length + 2);
+				buf.p1(LoginProt.INIT_JS5REMOTE_CONNECTION.id);
+				buf.p1(length);
+				buf.p4(910);
+				buf.p4(1);
+				buf.pjstr(gamepack);
+				buf.p1(language.serialID);
+				js5Stream.write(buf.data, 0, length + 2);
 				field10827++;
 				field10353 = MonotonicTime.get();
 			}
 			if (field10827 == 2) {
 				if (js5Stream.hasAvailable(1)) {
-					byte[] var3 = new byte[1];
-					int var4 = js5Stream.read(var3, 0, 1);
-					if (var3[0] != 0) {
-						this.method16986(var4);
+					byte[] bytes = new byte[1];
+					int reply = js5Stream.read(bytes, 0, 1);
+					if (bytes[0] != 0) {
+						this.setJs5ErrorState(reply);
 						return;
 					}
 					field10827++;
 				} else if (MonotonicTime.get() - field10353 > 30000L) {
-					this.method16986(1001);
+					this.setJs5ErrorState(1001);
 					return;
 				}
 			}
 			if (field10827 == 3) {
-				LoadableResource[] var5 = LoadableResource.method15007();
-				int var6 = var5.length * 4;
-				if (js5Stream.hasAvailable(var6)) {
-					Packet var7 = new Packet(var6);
-					js5Stream.read(var7.data, 0, var7.data.length);
-					for (int var8 = 0; var8 < var5.length; var8++) {
-						var5[var8].method15009(var7.g4s());
+				LoadableResource[] resources = LoadableResource.values();
+				int length = resources.length * 4;
+				if (js5Stream.hasAvailable(length)) {
+					Packet buf = new Packet(length);
+					js5Stream.read(buf.data, 0, buf.data.length);
+					for (int index = 0; index < resources.length; index++) {
+						resources[index].setLength(buf.g4s());
 					}
-					boolean var9 = method2092(state) || isStateTitle(state) || isStateLobby(state);
-					js5TcpClient.method7017(js5Stream, !var9);
+					boolean isLoggedIn = method2092(state) || isStateTitle(state) || isStateLobby(state);
+					js5TcpClient.createNewJs5Stream(js5Stream, !isLoggedIn);
 					js5Socket = null;
 					js5Stream = null;
 					field10827 = 0;
 				}
 			}
 		} catch (IOException var11) {
-			this.method16986(1002);
+			this.setJs5ErrorState(1002);
 		}
 	}
 
 	@ObfuscatedName("client.eh(II)V")
-	public void method16986(int arg0) {
+	public void setJs5ErrorState(int state) {
 		js5Socket = null;
 		js5Stream = null;
 		field10827 = 0;
-		js5TcpClient.field4455++;
-		js5TcpClient.field4454 = arg0;
+		js5TcpClient.errorCount++;
+		js5TcpClient.js5State = state;
 	}
 
 	@ObfuscatedName("qe.eq(ZI)V")
@@ -5858,7 +5858,7 @@ public final class Client extends GameShell {
 		cameraMouseZ = var18;
 		cameraPitch = var19;
 		cameraYaw = var20;
-		if (field11023 && js5TcpClient.method7021() == 0) {
+		if (field11023 && js5TcpClient.getTotalUrgents() == 0) {
 			field11023 = false;
 		}
 		if (field11023) {

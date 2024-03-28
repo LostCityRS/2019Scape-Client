@@ -394,7 +394,7 @@ public final class Js5 {
 			try {
 				var15 = uncompress(var10);
 			} catch (RuntimeException var51) {
-				throw JagException.method19636(var51, (key != null) + " " + group + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.index.field4393[group] + " " + this.index.crc);
+				throw JagException.method19636(var51, (key != null) + " " + group + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.index.crcs[group] + " " + this.index.crc);
 			}
 
 			if (this.discardPacked) {

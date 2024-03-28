@@ -5,14 +5,14 @@ import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.world.entity.ObjectWrapper;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("adx")
-public class StructType extends SecondaryNode implements ConfigType, ConfigRelated {
+public class StructType extends SecondaryNode implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("adx.k")
 	public IterableMap params;

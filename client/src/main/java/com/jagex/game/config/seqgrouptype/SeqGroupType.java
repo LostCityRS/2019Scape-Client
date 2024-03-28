@@ -1,12 +1,12 @@
 package com.jagex.game.config.seqgrouptype;
 
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("fm")
-public class SeqGroupType implements ConfigType, ConfigRelated {
+public class SeqGroupType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("fm.e")
 	public boolean[] field1793;

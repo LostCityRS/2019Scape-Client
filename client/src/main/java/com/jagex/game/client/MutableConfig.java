@@ -3,7 +3,7 @@ package com.jagex.game.client;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aby")
-public interface ConfigRelated {
+public interface MutableConfig {
 
 	@ObfuscatedName("aby.z(IB)V")
 	void setId(int arg0);

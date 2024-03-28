@@ -51,8 +51,8 @@ public class Js5Client {
 		this.field4369 = arg2;
 		this.field4370 = arg3;
 		this.field4373 = arg4;
-		if (!this.field4371.method7012()) {
-			this.field4374 = this.field4371.method7011(255, 255, (byte) 0, true);
+		if (!this.field4371.isUrgentsFull()) {
+			this.field4374 = this.field4371.queueRequest(255, 255, (byte) 0, true);
 		}
 		if (this.field4372 != null) {
 			this.field4375 = this.field4372.method7049();
@@ -65,15 +65,15 @@ public class Js5Client {
 			return true;
 		}
 		if (this.field4374 == null) {
-			if (this.field4371.method7012()) {
+			if (this.field4371.isUrgentsFull()) {
 				return false;
 			}
-			this.field4374 = this.field4371.method7011(255, 255, (byte) 0, true);
+			this.field4374 = this.field4371.queueRequest(255, 255, (byte) 0, true);
 		}
-		if (this.field4374.field12344) {
+		if (this.field4374.awaitingResponse) {
 			return false;
 		}
-		Packet var1 = new Packet(this.field4374.method19444());
+		Packet var1 = new Packet(this.field4374.getBytes());
 		this.field4376 = new Js5MasterIndex(var1, this.field4370, this.field4373);
 		if (this.field4379 == null) {
 			this.field4379 = new Js5NetResourceProvider[this.field4376.field4480.length];
@@ -82,7 +82,7 @@ public class Js5Client {
 				if (this.field4379[var2] != null) {
 					Js5MasterIndexArchiveData var3 = this.field4376.field4480[var2];
 					this.field4379[var2].method16821(var3.field4383, var3.field4382, var3.field4380, var3.field4381);
-					if (this.field4379[var2].method16830()) {
+					if (this.field4379[var2].hasHttpClient()) {
 						this.field4379[var2].method16832(false);
 					}
 				}
@@ -137,19 +137,19 @@ public class Js5Client {
 		} else if (this.field4372 != null && !this.field4378) {
 			if (this.field4375 == null) {
 				this.field4375 = this.field4372.method7049();
-			} else if (!this.field4375.field12344) {
-				byte[] var3 = this.field4375.method19444();
+			} else if (!this.field4375.awaitingResponse) {
+				byte[] var3 = this.field4375.getBytes();
 				try {
 					this.field4377 = new Js5MasterIndex(new Packet(var3), this.field4370, this.field4373);
 					for (int var4 = 0; var4 < this.field4379.length; var4++) {
-						if (this.field4379[var4] != null && this.field4379[var4].method16830()) {
+						if (this.field4379[var4] != null && this.field4379[var4].hasHttpClient()) {
 							Js5MasterIndexArchiveData var5 = this.field4377.field4480[var4];
 							this.field4379[var4].method16832(this.field4379[var4].method16822(var5.field4383, var5.field4382, var5.field4380, var5.field4381));
 						}
 					}
 				} catch (Exception var8) {
 					for (int var7 = 0; var7 < this.field4379.length; var7++) {
-						if (this.field4379[var7] != null && this.field4379[var7].method16830()) {
+						if (this.field4379[var7] != null && this.field4379[var7].hasHttpClient()) {
 							this.field4379[var7].method16832(false);
 						}
 					}

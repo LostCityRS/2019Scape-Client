@@ -1,12 +1,12 @@
 package com.jagex.game.config.flutype;
 
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aaz")
-public class FloorUnderlayType implements ConfigType, ConfigRelated {
+public class FloorUnderlayType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("aaz.e")
 	public int colour = 0;

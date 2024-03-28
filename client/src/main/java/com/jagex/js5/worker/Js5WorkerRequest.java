@@ -11,22 +11,22 @@ public class Js5WorkerRequest extends Js5Request {
 	public int field12559;
 
 	@ObfuscatedName("atf.v")
-	public DiskStore field12556;
+	public DiskStore diskStore;
 
 	@ObfuscatedName("atf.o")
-	public byte[] field12557;
+	public byte[] bytes;
 
 	@ObfuscatedName("atf.e(I)[B")
-	public byte[] method19444() {
-		if (this.field12344) {
+	public byte[] getBytes() {
+		if (this.awaitingResponse) {
 			throw new RuntimeException("Not ready!");
 		}
 
-		return this.field12557;
+		return this.bytes;
 	}
 
 	@ObfuscatedName("atf.n(I)I")
-	public int method19446() {
-		return this.field12344 ? 0 : 100;
+	public int getPercentageComplete() {
+		return this.awaitingResponse ? 0 : 100;
 	}
 }

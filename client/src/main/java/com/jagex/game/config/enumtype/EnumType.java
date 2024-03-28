@@ -3,7 +3,7 @@ package com.jagex.game.config.enumtype;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.Cp1252;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
@@ -12,7 +12,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 @ObfuscatedName("abm")
-public class EnumType implements ConfigType, ConfigRelated {
+public class EnumType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("abm.e")
 	public ScriptVarType inputtype;

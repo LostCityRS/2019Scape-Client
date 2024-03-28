@@ -2,7 +2,7 @@ package com.jagex.game.config.skyboxtype;
 
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.skydecortype.SkyDecorType;
@@ -12,7 +12,7 @@ import com.jagex.graphics.SkyboxRelated;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("uv")
-public class SkyBoxType implements ConfigType, ConfigRelated {
+public class SkyBoxType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("uv.e")
 	public int field7233 = 0;

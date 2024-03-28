@@ -576,7 +576,7 @@ public class DeveloperConsole {
 							var17.getStream().closeForcefully();
 						}
 					}
-					Client.js5TcpClient.method7035();
+					Client.js5TcpClient.closeForcefully();
 					return;
 				}
 				if (arg0.startsWith("getclientvarpbit")) {
@@ -720,9 +720,9 @@ public class DeveloperConsole {
 				} else if (arg0 == 23) {
 					WorldSwitcher.currentWorld.configureSocketType();
 				} else if (arg0 == 14) {
-					Client.js5TcpClient.method7020();
+					Client.js5TcpClient.closeGracefully();
 				} else if (arg0 == 6) {
-					Client.js5TcpClient.method7014();
+					Client.js5TcpClient.sendCloseStream();
 				} else if (arg0 == 26) {
 					GameShell.canvas.setLocation(50, 50);
 				} else if (arg0 == 22) {

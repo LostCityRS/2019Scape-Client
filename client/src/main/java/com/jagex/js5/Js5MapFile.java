@@ -35,7 +35,7 @@ public class Js5MapFile {
 	@ObfuscatedName("qz.p")
 	public final int id;
 
-	public Js5MapFile(int arg0) {
-		this.id = arg0;
+	public Js5MapFile(int id) {
+		this.id = id;
 	}
 }

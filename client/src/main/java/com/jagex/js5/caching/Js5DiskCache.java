@@ -10,45 +10,45 @@ import deob.ObfuscatedName;
 public class Js5DiskCache implements Runnable {
 
 	@ObfuscatedName("pf.e")
-	public DualIterableQueue field4438 = new DualIterableQueue();
+	public DualIterableQueue queue = new DualIterableQueue();
 
 	@ObfuscatedName("pf.n")
-	public int field4437 = 0;
+	public int pendingRequests = 0;
 
 	@ObfuscatedName("pf.m")
 	public boolean field4439 = false;
 
 	@ObfuscatedName("pf.k")
-	public Thread field4440 = new Thread(this);
+	public Thread thread = new Thread(this);
 
 	public Js5DiskCache() {
-		this.field4440.setDaemon(true);
-		this.field4440.start();
-		this.field4440.setPriority(1);
+		this.thread.setDaemon(true);
+		this.thread.start();
+		this.thread.setPriority(1);
 	}
 
 	@ObfuscatedName("pf.e(ILuf;S)Latf;")
 	public Js5WorkerRequest method6997(int arg0, DiskStore arg1) {
 		Js5WorkerRequest var3 = new Js5WorkerRequest();
 		var3.field12559 = 1;
-		DualIterableQueue var4 = this.field4438;
-		synchronized (this.field4438) {
-			Js5WorkerRequest var5 = (Js5WorkerRequest) this.field4438.peekFront();
+		DualIterableQueue var4 = this.queue;
+		synchronized (this.queue) {
+			Js5WorkerRequest var5 = (Js5WorkerRequest) this.queue.peekFront();
 			while (true) {
 				if (var5 == null) {
 					break;
 				}
-				if (var5.secondaryNodeId == (long) arg0 && var5.field12556 == arg1 && var5.field12559 == 2) {
-					var3.field12557 = var5.field12557;
-					var3.field12344 = false;
+				if (var5.secondaryNodeId == (long) arg0 && var5.diskStore == arg1 && var5.field12559 == 2) {
+					var3.bytes = var5.bytes;
+					var3.awaitingResponse = false;
 					return var3;
 				}
-				var5 = (Js5WorkerRequest) this.field4438.prev();
+				var5 = (Js5WorkerRequest) this.queue.prev();
 			}
 		}
-		var3.field12557 = arg1.method9010(arg0);
-		var3.field12344 = false;
-		var3.field12342 = true;
+		var3.bytes = arg1.method9010(arg0);
+		var3.awaitingResponse = false;
+		var3.urgent = true;
 		return var3;
 	}
 
@@ -57,10 +57,10 @@ public class Js5DiskCache implements Runnable {
 		Js5WorkerRequest var4 = new Js5WorkerRequest();
 		var4.field12559 = 2;
 		var4.secondaryNodeId = arg0;
-		var4.field12557 = arg1;
-		var4.field12556 = arg2;
-		var4.field12342 = false;
-		this.method6987(var4);
+		var4.bytes = arg1;
+		var4.diskStore = arg2;
+		var4.urgent = false;
+		this.queueRequest(var4);
 		return var4;
 	}
 
@@ -69,69 +69,69 @@ public class Js5DiskCache implements Runnable {
 		Js5WorkerRequest var3 = new Js5WorkerRequest();
 		var3.field12559 = 3;
 		var3.secondaryNodeId = arg0;
-		var3.field12556 = arg1;
-		var3.field12342 = false;
-		this.method6987(var3);
+		var3.diskStore = arg1;
+		var3.urgent = false;
+		this.queueRequest(var3);
 		return var3;
 	}
 
 	@ObfuscatedName("pf.k(Latf;I)V")
-	public void method6987(Js5WorkerRequest arg0) {
-		DualIterableQueue var2 = this.field4438;
-		synchronized (this.field4438) {
-			this.field4438.pushBack(arg0);
-			this.field4437++;
-			this.field4438.notifyAll();
+	public void queueRequest(Js5WorkerRequest arg0) {
+		DualIterableQueue var2 = this.queue;
+		synchronized (this.queue) {
+			this.queue.pushBack(arg0);
+			this.pendingRequests++;
+			this.queue.notifyAll();
 		}
 	}
 
 	public void run() {
 		while (!this.field4439) {
-			DualIterableQueue var1 = this.field4438;
+			DualIterableQueue var1 = this.queue;
 			Js5WorkerRequest var2;
-			synchronized (this.field4438) {
-				var2 = (Js5WorkerRequest) this.field4438.pollFront();
+			synchronized (this.queue) {
+				var2 = (Js5WorkerRequest) this.queue.pollFront();
 				if (var2 == null) {
 					try {
-						this.field4438.wait();
+						this.queue.wait();
 					} catch (InterruptedException var7) {
 					}
 					continue;
 				}
-				this.field4437--;
+				this.pendingRequests--;
 			}
 			try {
 				if (var2.field12559 == 2) {
-					var2.field12556.method9011((int) var2.secondaryNodeId, var2.field12557, var2.field12557.length);
+					var2.diskStore.method9011((int) var2.secondaryNodeId, var2.bytes, var2.bytes.length);
 				} else if (var2.field12559 == 3) {
-					var2.field12557 = var2.field12556.method9010((int) var2.secondaryNodeId);
+					var2.bytes = var2.diskStore.method9010((int) var2.secondaryNodeId);
 				}
 			} catch (Exception var6) {
 				JagException.report(null, var6);
 			}
-			var2.field12344 = false;
+			var2.awaitingResponse = false;
 		}
 	}
 
 	@ObfuscatedName("pf.f(I)I")
 	public int method6991() {
-		DualIterableQueue var1 = this.field4438;
-		synchronized (this.field4438) {
-			return this.field4437;
+		DualIterableQueue var1 = this.queue;
+		synchronized (this.queue) {
+			return this.pendingRequests;
 		}
 	}
 
 	@ObfuscatedName("pf.w(I)V")
 	public void method6992() {
 		this.field4439 = true;
-		DualIterableQueue var1 = this.field4438;
-		synchronized (this.field4438) {
-			this.field4438.notifyAll();
+		DualIterableQueue var1 = this.queue;
+		synchronized (this.queue) {
+			this.queue.notifyAll();
 		}
 		try {
-			this.field4440.join();
+			this.thread.join();
 		} catch (InterruptedException var4) {
 		}
-		this.field4440 = null;
+		this.thread = null;
 	}
 }

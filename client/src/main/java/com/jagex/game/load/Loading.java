@@ -270,9 +270,9 @@ public class Loading {
 		if (field3419 == LoadingStage.field2911) {
 			boolean var1 = loadingScreensJs5.fetchAll();
 			boolean var2 = Client.defaultsJs5.fetchAll();
-			int var3 = Client.js5Providers[Js5Archive.LOADING_SCREENS.getArchiveId()].method16823();
-			int var4 = var3 + Client.js5Providers[field2941 ? Js5Archive.LOADING_SPRITES_RAW.getArchiveId() : Js5Archive.LOADING_SPRITES.getArchiveId()].method16823();
-			int var5 = var4 + Client.js5Providers[Js5Archive.FONTMETRICS.getArchiveId()].method16823();
+			int var3 = Client.js5Providers[Js5Archive.LOADING_SCREENS.getArchiveId()].getPercentageComplete();
+			int var4 = var3 + Client.js5Providers[field2941 ? Js5Archive.LOADING_SPRITES_RAW.getArchiveId() : Js5Archive.LOADING_SPRITES.getArchiveId()].getPercentageComplete();
+			int var5 = var4 + Client.js5Providers[Js5Archive.FONTMETRICS.getArchiveId()].getPercentageComplete();
 			int var6 = var5 + (var2 ? 100 : Client.defaultsJs5.getPercentageComplete());
 			int var7 = var6 + (var1 ? 100 : loadingScreensJs5.getPercentageComplete());
 			if (var7 != 500) {
@@ -356,7 +356,7 @@ public class Loading {
 			int var15 = 0;
 			for (int var16 = 0; var16 < Client.js5Providers.length; var16++) {
 				if (Client.js5Providers[var16] != null) {
-					var14 += Client.js5Providers[var16].method16823();
+					var14 += Client.js5Providers[var16].getPercentageComplete();
 					var15++;
 				}
 			}

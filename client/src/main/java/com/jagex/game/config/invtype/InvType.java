@@ -2,12 +2,12 @@ package com.jagex.game.config.invtype;
 
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ady")
-public class InvType extends SecondaryNode implements ConfigType, ConfigRelated {
+public class InvType extends SecondaryNode implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("ady.k")
 	public int stockLength = 0;

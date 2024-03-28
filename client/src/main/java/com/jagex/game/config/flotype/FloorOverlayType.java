@@ -2,12 +2,12 @@ package com.jagex.game.config.flotype;
 
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ColourUtils;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yn")
-public class FloorOverlayType implements ConfigType, ConfigRelated {
+public class FloorOverlayType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("yn.n")
 	public int id;

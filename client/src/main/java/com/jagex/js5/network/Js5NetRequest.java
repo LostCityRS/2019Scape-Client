@@ -8,22 +8,22 @@ import deob.ObfuscatedName;
 public class Js5NetRequest extends Js5Request {
 
 	@ObfuscatedName("auq.p")
-	public Packet field12564;
+	public Packet buf;
 
 	@ObfuscatedName("auq.d")
-	public byte field12565;
+	public byte offset;
 
 	@ObfuscatedName("auq.e(I)[B")
-	public byte[] method19444() {
-		if (this.field12344 || this.field12564.pos < this.field12564.data.length - this.field12565) {
+	public byte[] getBytes() {
+		if (this.awaitingResponse || this.buf.pos < this.buf.data.length - this.offset) {
 			throw new RuntimeException("Not ready!");
 		}
 
-		return this.field12564.data;
+		return this.buf.data;
 	}
 
 	@ObfuscatedName("auq.n(I)I")
-	public int method19446() {
-		return this.field12564 == null ? 0 : this.field12564.pos / (this.field12564.data.length - this.field12565);
+	public int getPercentageComplete() {
+		return this.buf == null ? 0 : this.buf.pos / (this.buf.data.length - this.offset);
 	}
 }

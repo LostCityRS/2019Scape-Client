@@ -22,13 +22,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	public int field10733;
 
 	@ObfuscatedName("aij.n")
-	public Js5TcpClient field10720;
+	public Js5TcpClient tcpClient;
 
 	@ObfuscatedName("aij.m")
-	public Js5HttpClient field10721;
+	public Js5HttpClient httpClient;
 
 	@ObfuscatedName("aij.k")
-	public Js5DiskCache field10744;
+	public Js5DiskCache diskCache;
 
 	@ObfuscatedName("aij.f")
 	public DiskStore field10723;
@@ -37,13 +37,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	public DiskStore field10724;
 
 	@ObfuscatedName("aij.l")
-	public Js5Request field10743;
+	public Js5Request currentRequest;
 
 	@ObfuscatedName("aij.u")
-	public int field10722;
+	public int crc;
 
 	@ObfuscatedName("aij.z")
-	public byte[] field10727;
+	public byte[] whirlpool;
 
 	@ObfuscatedName("aij.p")
 	public int indexversion;
@@ -58,7 +58,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	public int field10740 = 0;
 
 	@ObfuscatedName("aij.y")
-	public IterableMap field10731 = new IterableMap(16);
+	public IterableMap requests = new IterableMap(16);
 
 	@ObfuscatedName("aij.q")
 	public boolean field10725;
@@ -85,9 +85,9 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	public long field10734 = 0L;
 
 	@ObfuscatedName("aij.ag")
-	public static CRC32 field10746 = new CRC32();
+	public static CRC32 crc32 = new CRC32();
 
-	public Js5NetResourceProvider(int arg0, DiskStore arg1, DiskStore arg2, Js5TcpClient arg3, Js5HttpClient arg4, Js5DiskCache arg5, int arg6, byte[] arg7, int arg8, boolean arg9, int arg10) {
+	public Js5NetResourceProvider(int arg0, DiskStore arg1, DiskStore arg2, Js5TcpClient tcpClient, Js5HttpClient httpClient, Js5DiskCache diskCache, int crc, byte[] whirlpool, int indexversion, boolean arg9, int arg10) {
 		this.field10733 = arg0;
 		this.field10723 = arg1;
 		if (this.field10723 == null) {
@@ -97,39 +97,39 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			this.field10735 = new IterableQueue();
 		}
 		this.field10724 = arg2;
-		this.field10720 = arg3;
-		this.field10721 = arg4;
-		this.field10744 = arg5;
-		this.field10722 = arg6;
-		this.field10727 = arg7;
-		this.indexversion = arg8;
+		this.tcpClient = tcpClient;
+		this.httpClient = httpClient;
+		this.diskCache = diskCache;
+		this.crc = crc;
+		this.whirlpool = whirlpool;
+		this.indexversion = indexversion;
 		this.field10748 = arg9;
 		if (this.field10724 != null) {
-			this.field10743 = this.field10744.method6997(this.field10733, this.field10724);
+			this.currentRequest = this.diskCache.method6997(this.field10733, this.field10724);
 		}
 	}
 
 	@ObfuscatedName("aij.o(I[BIII)V")
-	public void method16821(int arg0, byte[] arg1, int arg2, int arg3) {
-		if (this.method16822(arg0, arg1, arg2, arg3)) {
+	public void method16821(int crc, byte[] whirlpool, int indexversion, int arg3) {
+		if (this.method16822(crc, whirlpool, indexversion, arg3)) {
 			return;
 		}
-		this.field10722 = arg0;
-		this.field10727 = arg1;
-		this.indexversion = arg2;
+		this.crc = crc;
+		this.whirlpool = whirlpool;
+		this.indexversion = indexversion;
 		this.index = null;
-		this.field10743 = null;
-		if (!this.field10720.method7012()) {
-			this.field10743 = this.field10720.method7011(255, this.field10733, (byte) 0, true);
+		this.currentRequest = null;
+		if (!this.tcpClient.isUrgentsFull()) {
+			this.currentRequest = this.tcpClient.queueRequest(255, this.field10733, (byte) 0, true);
 		}
 	}
 
 	@ObfuscatedName("aij.s(I[BIII)Z")
-	public boolean method16822(int arg0, byte[] arg1, int arg2, int arg3) {
-		if (this.field10722 == arg0 && this.indexversion == arg2) {
+	public boolean method16822(int crc, byte[] whirlpool, int indexversion, int arg3) {
+		if (this.crc == crc && this.indexversion == indexversion) {
 			boolean var5 = true;
-			for (int var6 = 0; var6 < this.field10727.length; var6++) {
-				if (this.field10727[var6] != arg1[var6]) {
+			for (int var6 = 0; var6 < this.whirlpool.length; var6++) {
+				if (this.whirlpool[var6] != whirlpool[var6]) {
 					var5 = false;
 					break;
 				}
@@ -142,9 +142,9 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@ObfuscatedName("aij.y(I)I")
-	public int method16823() {
+	public int getPercentageComplete() {
 		if (this.fetchindex() == null) {
-			return this.field10743 == null ? 0 : this.field10743.method19446();
+			return this.currentRequest == null ? 0 : this.currentRequest.getPercentageComplete();
 		} else {
 			return 100;
 		}
@@ -155,55 +155,55 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.index != null) {
 			return this.index;
 		}
-		if (this.field10743 == null) {
-			if (this.field10720.method7012()) {
+		if (this.currentRequest == null) {
+			if (this.tcpClient.isUrgentsFull()) {
 				return null;
 			}
-			this.field10743 = this.field10720.method7011(255, this.field10733, (byte) 0, true);
+			this.currentRequest = this.tcpClient.queueRequest(255, this.field10733, (byte) 0, true);
 		}
-		if (this.field10743.field12344) {
+		if (this.currentRequest.awaitingResponse) {
 			return null;
 		}
-		byte[] var1 = this.field10743.method19444();
-		if (this.field10743 instanceof Js5WorkerRequest) {
+		byte[] bytes = this.currentRequest.getBytes();
+		if (this.currentRequest instanceof Js5WorkerRequest) {
 			try {
-				if (var1 == null) {
+				if (bytes == null) {
 					throw new RuntimeException();
 				}
-				this.index = new Js5Index(var1, this.field10722, this.field10727);
+				this.index = new Js5Index(bytes, this.crc, this.whirlpool);
 				if (this.index.indexversion != this.indexversion) {
 					throw new RuntimeException();
 				}
 			} catch (RuntimeException var4) {
 				this.index = null;
-				if (this.field10720.method7012()) {
-					this.field10743 = null;
+				if (this.tcpClient.isUrgentsFull()) {
+					this.currentRequest = null;
 				} else {
-					this.field10743 = this.field10720.method7011(255, this.field10733, (byte) 0, true);
+					this.currentRequest = this.tcpClient.queueRequest(255, this.field10733, (byte) 0, true);
 				}
 				return null;
 			}
 		} else {
 			try {
-				if (var1 == null) {
+				if (bytes == null) {
 					throw new RuntimeException();
 				}
-				this.index = new Js5Index(var1, this.field10722, this.field10727);
+				this.index = new Js5Index(bytes, this.crc, this.whirlpool);
 			} catch (RuntimeException var5) {
-				this.field10720.method7015(255, this.field10733);
+				this.tcpClient.error(255, this.field10733);
 				this.index = null;
-				if (this.field10720.method7012()) {
-					this.field10743 = null;
+				if (this.tcpClient.isUrgentsFull()) {
+					this.currentRequest = null;
 				} else {
-					this.field10743 = this.field10720.method7011(255, this.field10733, (byte) 0, true);
+					this.currentRequest = this.tcpClient.queueRequest(255, this.field10733, (byte) 0, true);
 				}
 				return null;
 			}
 			if (this.field10724 != null) {
-				this.field10744.method6988(this.field10733, var1, this.field10724);
+				this.diskCache.method6988(this.field10733, bytes, this.field10724);
 			}
 		}
-		this.field10743 = null;
+		this.currentRequest = null;
 		if (this.field10723 != null) {
 			this.field10745 = new byte[this.index.capacity];
 			this.field10740 = 0;
@@ -213,36 +213,36 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.n(II)[B")
 	public byte[] fetchgroup(int arg0) {
-		Js5Request var2 = this.fetchgroup_inner(arg0, 0);
-		if (var2 == null) {
+		Js5Request request = this.fetchgroup_inner(arg0, 0);
+		if (request == null) {
 			return null;
 		} else {
-			byte[] var3 = var2.method19444();
-			var2.remove();
-			return var3;
+			byte[] bytes = request.getBytes();
+			request.remove();
+			return bytes;
 		}
 	}
 
 	@ObfuscatedName("aij.q(IIB)Lask;")
-	public Js5Request fetchgroup_inner(int arg0, int arg1) {
-		Js5Request var3 = (Js5Request) this.field10731.getNode((long) arg0);
-		if (var3 != null && arg1 == 0 && !var3.field12342 && var3.field12344) {
-			var3.remove();
-			var3 = null;
+	public Js5Request fetchgroup_inner(int group, int arg1) {
+		Js5Request request = (Js5Request) this.requests.getNode((long) group);
+		if (request != null && arg1 == 0 && !request.urgent && request.awaitingResponse) {
+			request.remove();
+			request = null;
 		}
 
-		if (var3 == null) {
+		if (request == null) {
 			if (arg1 == 0) {
-				if (this.field10723 != null && this.field10745[arg0] != -1) {
-					var3 = this.field10744.method6997(arg0, this.field10723);
-				} else if (this.field10721 == null) {
-					if (this.field10720.method7012()) {
+				if (this.field10723 != null && this.field10745[group] != -1) {
+					request = this.diskCache.method6997(group, this.field10723);
+				} else if (this.httpClient == null) {
+					if (this.tcpClient.isUrgentsFull()) {
 						return null;
 					}
-					var3 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
+					request = this.tcpClient.queueRequest(this.field10733, group, (byte) 2, true);
 				} else {
-					var3 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.index.field4393[arg0], this.index.groupVersions[arg0]);
-					if (var3 == null) {
+					request = this.httpClient.sendHttpRequest(this.field10733, group, (byte) 2, true, this.index.crcs[group], this.index.groupVersions[group]);
+					if (request == null) {
 						return null;
 					}
 				}
@@ -251,163 +251,163 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 					throw new RuntimeException("fetchgroup_inner - VERIFY requested but no datafs available!");
 				}
 
-				var3 = this.field10744.method6996(arg0, this.field10723);
+				request = this.diskCache.method6996(group, this.field10723);
 			} else if (arg1 == 2) {
 				if (this.field10723 == null) {
 					throw new RuntimeException("fetchgroup_inner - PREFETCH requested but no datafs available!");
 				}
 
-				if (this.field10745[arg0] != -1) {
+				if (this.field10745[group] != -1) {
 					throw new RuntimeException("fetchgroup_inner - PREFETCH requested, but cache isn't known invalid!");
 				}
 
-				if (this.field10721 != null) {
+				if (this.httpClient != null) {
 					return null;
 				}
 
-				if (this.field10720.method7028()) {
+				if (this.tcpClient.isPrefetchesFull()) {
 					return null;
 				}
 
-				var3 = this.field10720.method7011(this.field10733, arg0, (byte) 2, false);
+				request = this.tcpClient.queueRequest(this.field10733, group, (byte) 2, false);
 			} else {
 				throw new RuntimeException("Invalid fetchgroup mode!");
 			}
 
-			this.field10731.pushNode(var3, (long) arg0);
+			this.requests.pushNode(request, (long) group);
 		}
 
-		if (var3.field12344) {
+		if (request.awaitingResponse) {
 			return null;
 		}
 
-		byte[] var4 = var3.method19444();
-		if (!(var3 instanceof Js5WorkerRequest)) {
+		byte[] bytes = request.getBytes();
+		if (!(request instanceof Js5WorkerRequest)) {
 			try {
-				if (var4 == null || var4.length <= 2) {
-					if (this.field10721 != null) {
-						var3.remove();
+				if (bytes == null || bytes.length <= 2) {
+					if (this.httpClient != null) {
+						request.remove();
 						return null;
 					}
 
-					throw new RuntimeException("Data from server too small - data:" + var4);
+					throw new RuntimeException("Data from server too small - data:" + bytes);
 				}
 
-				field10746.reset();
-				field10746.update(var4, 0, var4.length - 2);
+				crc32.reset();
+				crc32.update(bytes, 0, bytes.length - 2);
 
-				int var13 = (int) field10746.getValue();
-				if (this.index.field4393[arg0] != var13) {
+				int var13 = (int) crc32.getValue();
+				if (this.index.crcs[group] != var13) {
 					throw new RuntimeException("Net fetch CRC incorrect");
 				}
 
-				if (this.index.field4395 != null && this.index.field4395[arg0] != null) {
-					byte[] var14 = this.index.field4395[arg0];
-					byte[] var15 = Whirlpool.method18308(var4, 0, var4.length - 2);
-					for (int var16 = 0; var16 < 64; var16++) {
-						if (var14[var16] != var15[var16]) {
+				if (this.index.whirlpools != null && this.index.whirlpools[group] != null) {
+					byte[] whirlpool = this.index.whirlpools[group];
+					byte[] resulted = Whirlpool.method18308(bytes, 0, bytes.length - 2);
+					for (int index = 0; index < 64; index++) {
+						if (whirlpool[index] != resulted[index]) {
 		                    // throw new RuntimeException("Whirlpool for group " + arg0 + " incorrect - got:" + hexString(var14) + " expected:" + hexString(var15));
-							throw new RuntimeException("Whirlpool for group " + arg0 + " incorrect");
+							throw new RuntimeException("Whirlpool for group " + group + " incorrect");
 						}
 					}
 				}
 
-				if (this.field10721 != null) {
-					this.field10720.field4455 = 0;
-					this.field10720.field4454 = 0;
+				if (this.httpClient != null) {
+					this.tcpClient.errorCount = 0;
+					this.tcpClient.js5State = 0;
 				}
 			} catch (RuntimeException var21) {
-				this.field10720.method7015(this.field10733, arg0);
-				var3.remove();
-				if (var3.field12342) {
-					if (this.field10721 == null) {
-						if (!this.field10720.method7012()) {
-							Js5NetRequest var19 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
-							this.field10731.pushNode(var19, (long) arg0);
+				this.tcpClient.error(this.field10733, group);
+				request.remove();
+				if (request.urgent) {
+					if (this.httpClient == null) {
+						if (!this.tcpClient.isUrgentsFull()) {
+							Js5NetRequest netRequest = this.tcpClient.queueRequest(this.field10733, group, (byte) 2, true);
+							this.requests.pushNode(netRequest, (long) group);
 						}
-					} else if (!this.field10721.method7048()) {
-						Js5HttpRequest var18 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.index.field4393[arg0], this.index.groupVersions[arg0]);
-						if (var18 != null) {
-							this.field10731.pushNode(var18, (long) arg0);
+					} else if (!this.httpClient.isPendingRequestsFull()) {
+						Js5HttpRequest httpRequest = this.httpClient.sendHttpRequest(this.field10733, group, (byte) 2, true, this.index.crcs[group], this.index.groupVersions[group]);
+						if (httpRequest != null) {
+							this.requests.pushNode(httpRequest, (long) group);
 						}
 					}
 				}
 				return null;
 			}
 
-			var4[var4.length - 2] = (byte) (this.index.groupVersions[arg0] >>> 8);
-			var4[var4.length - 1] = (byte) this.index.groupVersions[arg0];
+			bytes[bytes.length - 2] = (byte) (this.index.groupVersions[group] >>> 8);
+			bytes[bytes.length - 1] = (byte) this.index.groupVersions[group];
 
 			if (this.field10723 != null) {
-				this.field10744.method6988(arg0, var4, this.field10723);
-				if (this.field10745[arg0] != 1) {
+				this.diskCache.method6988(group, bytes, this.field10723);
+				if (this.field10745[group] != 1) {
 					this.field10740++;
-					this.field10745[arg0] = 1;
+					this.field10745[group] = 1;
 				}
 			}
 
-			if (!var3.field12342) {
-				var3.remove();
+			if (!request.urgent) {
+				request.remove();
 			}
 
-			return var3;
+			return request;
 		}
 
 		try {
-			if (var4 == null || var4.length <= 2) {
-				throw new RuntimeException("Data not in cache - data:" + var4);
+			if (bytes == null || bytes.length <= 2) {
+				throw new RuntimeException("Data not in cache - data:" + bytes);
 			}
 
-			field10746.reset();
-			field10746.update(var4, 0, var4.length - 2);
-			int var5 = (int) field10746.getValue();
-			if (this.index.field4393[arg0] != var5) {
+			crc32.reset();
+			crc32.update(bytes, 0, bytes.length - 2);
+			int crc = (int) crc32.getValue();
+			if (this.index.crcs[group] != crc) {
 				throw new RuntimeException("Net fetch CRC incorrect");
 			}
 
-			if (this.index.field4395 != null && this.index.field4395[arg0] != null) {
-				byte[] var6 = this.index.field4395[arg0];
-				byte[] var7 = Whirlpool.method18308(var4, 0, var4.length - 2);
-				for (int var8 = 0; var8 < 64; var8++) {
-					if (var6[var8] != var7[var8]) {
+			if (this.index.whirlpools != null && this.index.whirlpools[group] != null) {
+				byte[] whirlpool = this.index.whirlpools[group];
+				byte[] resulted = Whirlpool.method18308(bytes, 0, bytes.length - 2);
+				for (int index = 0; index < 64; index++) {
+					if (whirlpool[index] != resulted[index]) {
 						throw new RuntimeException("Disk fetch Whirlpool incorrect");
 					}
 				}
 			}
 
-			int var9 = ((var4[var4.length - 2] & 0xFF) << 8) + (var4[var4.length - 1] & 0xFF);
-			if ((this.index.groupVersions[arg0] & 0xFFFF) != var9) {
-				throw new RuntimeException("Version incorrect - wanted:" + this.index.groupVersions[arg0] + " got:" + var9);
+			int version = ((bytes[bytes.length - 2] & 0xFF) << 8) + (bytes[bytes.length - 1] & 0xFF);
+			if ((this.index.groupVersions[group] & 0xFFFF) != version) {
+				throw new RuntimeException("Version incorrect - wanted:" + this.index.groupVersions[group] + " got:" + version);
 			}
 
-			if (this.field10745[arg0] != 1) {
-				if (this.field10745[arg0] == 0) {
+			if (this.field10745[group] != 1) {
+				if (this.field10745[group] == 0) {
 					// this.x++; // (tfu)
 				}
 
 				this.field10740++;
-				this.field10745[arg0] = 1;
+				this.field10745[group] = 1;
 			}
 
-			if (!var3.field12342) {
-				var3.remove();
+			if (!request.urgent) {
+				request.remove();
 			}
 
-			return var3;
+			return request;
 		} catch (Exception var20) {
-			this.field10745[arg0] = -1;
-			var3.remove();
+			this.field10745[group] = -1;
+			request.remove();
 
-			if (var3.field12342) {
-				if (this.field10721 == null) {
-					if (!this.field10720.method7012()) {
-						Js5NetRequest var12 = this.field10720.method7011(this.field10733, arg0, (byte) 2, true);
-						this.field10731.pushNode(var12, (long) arg0);
+			if (request.urgent) {
+				if (this.httpClient == null) {
+					if (!this.tcpClient.isUrgentsFull()) {
+						Js5NetRequest var12 = this.tcpClient.queueRequest(this.field10733, group, (byte) 2, true);
+						this.requests.pushNode(var12, (long) group);
 					}
-				} else if (!this.field10721.method7048()) {
-					Js5HttpRequest var11 = this.field10721.method7068(this.field10733, arg0, (byte) 2, true, this.index.field4393[arg0], this.index.groupVersions[arg0]);
+				} else if (!this.httpClient.isPendingRequestsFull()) {
+					Js5HttpRequest var11 = this.httpClient.sendHttpRequest(this.field10733, group, (byte) 2, true, this.index.crcs[group], this.index.groupVersions[group]);
 					if (var11 != null) {
-						this.field10731.pushNode(var11, (long) arg0);
+						this.requests.pushNode(var11, (long) group);
 					}
 				}
 			}
@@ -462,7 +462,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 					if (this.index.groupSizes[this.field10739] == 0) {
 						this.field10739++;
 					} else {
-						if (this.field10744.field4437 >= 250) {
+						if (this.diskCache.pendingRequests >= 250) {
 							var1 = false;
 							break;
 						}
@@ -499,7 +499,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 					if (this.index.groupSizes[this.field10739] == 0) {
 						this.field10739++;
 					} else {
-						if (this.field10720.method7028()) {
+						if (this.tcpClient.isPrefetchesFull()) {
 							var5 = false;
 							break;
 						}
@@ -524,10 +524,10 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 		}
         if (this.field10748 && MonotonicTime.get() >= this.field10734) {
-            for (Js5Request var9 = (Js5Request) this.field10731.peekFront(); var9 != null; var9 = (Js5Request) this.field10731.prev()) {
-                if (!var9.field12344) {
+            for (Js5Request var9 = (Js5Request) this.requests.peekFront(); var9 != null; var9 = (Js5Request) this.requests.prev()) {
+                if (!var9.awaitingResponse) {
                     if (var9.field12343) {
-                        if (!var9.field12342) {
+                        if (!var9.urgent) {
                             throw new RuntimeException();
                         }
                         var9.remove();
@@ -544,7 +544,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.h(B)I")
 	public int method16826() {
-		return this.index == null ? 0 : this.index.field4387;
+		return this.index == null ? 0 : this.index.length;
 	}
 
 	@ObfuscatedName("aij.a(B)I")
@@ -560,13 +560,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			Node var1 = this.field10735.peekFront();
 			return var1 == null ? 0 : (int) var1.nodeId;
 		} else {
-			return this.index.field4387;
+			return this.index.length;
 		}
 	}
 
 	@ObfuscatedName("aij.i(I)V")
 	public void method16829() {
-		if (this.field10721 != null || this.field10723 == null) {
+		if (this.httpClient != null || this.field10723 == null) {
 			return;
 		}
 		this.field10725 = true;
@@ -593,8 +593,8 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.k(II)I")
 	public int getPercentageComplete(int arg0) {
-		Js5Request var2 = (Js5Request) this.field10731.getNode((long) arg0);
-		return var2 == null ? 0 : var2.method19446();
+		Js5Request var2 = (Js5Request) this.requests.getNode((long) arg0);
+		return var2 == null ? 0 : var2.getPercentageComplete();
 	}
 
 	@ObfuscatedName("aij.j(I)Z")
@@ -604,11 +604,11 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.t(ZS)V")
 	public void method16832(boolean arg0) {
-		this.field10721.method7053(arg0);
+		this.httpClient.method7053(arg0);
 	}
 
 	@ObfuscatedName("aij.ae(I)Z")
-	public boolean method16830() {
-		return this.field10721 != null;
+	public boolean hasHttpClient() {
+		return this.httpClient != null;
 	}
 }

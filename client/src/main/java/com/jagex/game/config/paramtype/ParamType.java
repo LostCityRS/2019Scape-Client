@@ -3,13 +3,13 @@ package com.jagex.game.config.paramtype;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.Cp1252;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("adp")
-public class ParamType implements ConfigType, ConfigRelated {
+public class ParamType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("adp.e")
 	public ScriptVarType type;

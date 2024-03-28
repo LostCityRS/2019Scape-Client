@@ -10,25 +10,25 @@ import java.util.concurrent.Future;
 public class Js5HttpRequest extends Js5Request {
 
 	@ObfuscatedName("atb.p")
-	public Future field12562;
+	public Future futureResponse;
 
 	@ObfuscatedName("atb.d")
-	public final int field12563;
+	public final int padding;
 
-	public Js5HttpRequest(int arg0) {
-		this.field12563 = arg0;
+	public Js5HttpRequest(int padding) {
+		this.padding = padding;
 	}
 
 	@ObfuscatedName("atb.l(Ljava/util/concurrent/Future;B)V")
-	public void method19716(Future arg0) {
-		this.field12562 = arg0;
+	public void setFutureResponse(Future futureResponse) {
+		this.futureResponse = futureResponse;
 	}
 
 	@ObfuscatedName("atb.e(I)[B")
-	public byte[] method19444() {
-		if (this.field12562.isDone()) {
+	public byte[] getBytes() {
+		if (this.futureResponse.isDone()) {
 			try {
-				return ((Js5HttpClient.Js5HTTPClientResponse) this.field12562.get()).method6872();
+				return ((Js5HttpClient.Js5HTTPClientResponse) this.futureResponse.get()).getResponseBytes();
 			} catch (InterruptedException var3) {
 				var3.printStackTrace();
 			} catch (ExecutionException var4) {
@@ -39,10 +39,10 @@ public class Js5HttpRequest extends Js5Request {
 	}
 
 	@ObfuscatedName("atb.n(I)I")
-	public int method19446() {
-		if (this.field12562 == null) {
+	public int getPercentageComplete() {
+		if (this.futureResponse == null) {
 			return 0;
-		} else if (this.field12562.isDone()) {
+		} else if (this.futureResponse.isDone()) {
 			return 100;
 		} else {
 			return 0;

@@ -1,12 +1,12 @@
 package com.jagex.game.config.lighttype;
 
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("adl")
-public class LightType implements ConfigType, ConfigRelated {
+public class LightType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("adl.e")
 	public int field9168 = 0;

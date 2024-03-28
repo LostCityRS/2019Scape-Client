@@ -409,7 +409,7 @@ public class LoginManager {
 					buf.p4(Client.secureRandom.nextInt());
 				}
 				buf.p8(Client.field10810);
-				buf.p1(Client.modegame.field8339);
+				buf.p1(Client.modegame.method);
 				buf.p1(Client.secureRandom.nextInt());
 				buf.rsaenc(PublicKeys.field624, PublicKeys.field626);
 				message.buf.pdata(buf.data, 0, buf.pos);
@@ -550,7 +550,7 @@ public class LoginManager {
 							buf.p8(socialKey);
 						}
 					}
-					buf.p1(Client.modegame.field8339);
+					buf.p1(Client.modegame.method);
 					buf.p1(Client.language.getId());
 					buf.p1(Client.getWindowMode());
 					buf.p2(GameShell.canvasWid);

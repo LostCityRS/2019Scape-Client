@@ -3,7 +3,7 @@ package com.jagex.game.config.bastype;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
-import com.jagex.game.client.ConfigRelated;
+import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Trig1;
@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 @ObfuscatedName("vr")
-public class BASType implements ConfigRelated, ConfigType {
+public class BASType implements MutableConfig, ConfigType {
 
 	@ObfuscatedName("vr.e")
 	public int field7345;

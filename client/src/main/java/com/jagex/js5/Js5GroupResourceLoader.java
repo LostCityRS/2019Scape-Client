@@ -8,23 +8,23 @@ import deob.ObfuscatedName;
 public class Js5GroupResourceLoader implements ResourceLoader {
 
 	@ObfuscatedName("pk.e")
-	public final Js5 field4329;
+	public final Js5 js5;
 
 	@ObfuscatedName("pk.n")
-	public final int field4330;
+	public final int group;
 
-	public Js5GroupResourceLoader(Js5 arg0, int arg1) {
-		this.field4329 = arg0;
-		this.field4330 = arg1;
+	public Js5GroupResourceLoader(Js5 js5, int group) {
+		this.js5 = js5;
+		this.group = group;
 	}
 
 	@ObfuscatedName("pk.e(I)I")
-	public int method6782() {
-		return this.field4329.method6927(this.field4330) ? 100 : this.field4329.getPercentageComplete(this.field4330);
+	public int getPercentageComplete() {
+		return this.js5.method6927(this.group) ? 100 : this.js5.getPercentageComplete(this.group);
 	}
 
 	@ObfuscatedName("pk.n(B)Lacv;")
-	public LoadableResourceType method6781() {
-		return LoadableResourceType.field8912;
+	public LoadableResourceType getLoadableResourceType() {
+		return LoadableResourceType.JS5_GROUP;
 	}
 }
