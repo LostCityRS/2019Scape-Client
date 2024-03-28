@@ -25,7 +25,7 @@ public class Js5HttpClient {
 	public int port;
 
 	@ObfuscatedName("pu.m")
-	public final int method;
+	public final int game;
 
 	@ObfuscatedName("pu.f")
 	public volatile int pendingRequests = 0;
@@ -39,10 +39,10 @@ public class Js5HttpClient {
 	@ObfuscatedName("pu.c")
 	public boolean field4468 = false;
 
-	public Js5HttpClient(String host, int port, int method) {
+	public Js5HttpClient(String host, int port, int game) {
 		this.host = host;
 		this.port = port;
-		this.method = method;
+		this.game = game;
 	}
 
 	@ObfuscatedName("pu.e(I)Z")
@@ -77,7 +77,7 @@ public class Js5HttpClient {
 				}
 				URL url;
 				try {
-					url = new URL("http", this.host, this.port, "/ms?m=" + this.method + "&a=" + archive + "&g=" + group + var9);
+					url = new URL("http", this.host, this.port, "/ms?m=" + this.game + "&a=" + archive + "&g=" + group + var9);
 				} catch (MalformedURLException var14) {
 					return null;
 				}
