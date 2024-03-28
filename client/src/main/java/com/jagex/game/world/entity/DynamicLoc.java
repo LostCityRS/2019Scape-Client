@@ -307,7 +307,7 @@ public class DynamicLoc {
 						return;
 					}
 					if (this.field6673 != var7.id) {
-						var6 = var7.randseq;
+						var6 = var7.randomanimframe;
 					}
 					var5 = var7.method9483();
 					if (var7.method9514()) {
@@ -321,7 +321,7 @@ public class DynamicLoc {
 					return;
 				}
 				if (this.field6673 != var7.id) {
-					var6 = var8.randseq;
+					var6 = var8.randomanimframe;
 				}
 				var5 = var8.method9483();
 				if (var8.method9514()) {

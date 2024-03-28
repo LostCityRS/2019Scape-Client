@@ -220,7 +220,7 @@ public class LocType implements ConfigType {
 	public int[] bgsound_random;
 
 	@ObfuscatedName("vd.bu")
-	public boolean randseq = true;
+	public boolean randomanimframe = true;
 
 	@ObfuscatedName("vd.bw")
 	public boolean istexture = false;
@@ -449,7 +449,7 @@ public class LocType implements ConfigType {
 			} else if (code == 88) {
 				this.hardshadow = false;
 			} else if (code == 89) {
-				this.randseq = false;
+				this.randomanimframe = false;
 			} else if (code == 91) {
 				this.members = true;
 			} else if (code == 93) {
