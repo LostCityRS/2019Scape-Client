@@ -118,7 +118,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gt.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
-			group.addMember(this.member);
+			group.doAddMember(this.member);
 		}
 	}
 
@@ -139,10 +139,10 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("fk.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
-			PlayerGroupMember member = group.getMember(this.index);
+			PlayerGroupMember member = group.doGetMember(this.index);
 			member.uid();
 			member.getDisplayName();
-			group.deleteMember(this.index);
+			group.doDeleteMember(this.index);
 		}
 	}
 
@@ -167,7 +167,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("go.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
-			group.addBanned(this.banned);
+			group.doAddBanned(this.banned);
 		}
 	}
 
@@ -189,7 +189,7 @@ public class PlayerGroupDelta {
 		@ObfuscatedName("fr.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
 			PlayerGroupBanned banned = (PlayerGroupBanned) group.getBanned().get(this.index);
-			group.deleteBanned(this.index);
+			group.doDeleteBanned(this.index);
 			banned.getDisplayName();
 		}
 	}
@@ -215,8 +215,8 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gn.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
-			group.setMemberRank(this.index, this.rank);
-			group.getMember(this.index).uid();
+			group.doSetMemberRank(this.index, this.rank);
+			group.doGetMember(this.index).uid();
 		}
 	}
 
@@ -241,8 +241,8 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gh.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
-			group.setMemberOnline(this.index, this.nodeId);
-			group.getMember(this.index).uid();
+			group.doSetMemberOnline(this.index, this.nodeId);
+			group.doGetMember(this.index).uid();
 		}
 	}
 
@@ -263,8 +263,8 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gf.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
-			group.setMemberOffline(this.index);
-			group.getMember(this.index);
+			group.doSetMemberOffline(this.index);
+			group.doGetMember(this.index);
 		}
 	}
 
@@ -289,8 +289,8 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("fe.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
-			group.setMemberReady(this.index, this.loading);
-			group.getMember(this.index).uid();
+			group.doSetMemberReady(this.index, this.loading);
+			group.doGetMember(this.index).uid();
 		}
 	}
 
@@ -315,8 +315,8 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gm.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
-			group.setMemberTeam(this.index, this.team);
-			group.getMember(this.index).uid();
+			group.doSetMemberTeam(this.index, this.team);
+			group.doGetMember(this.index).uid();
 		}
 	}
 
@@ -350,7 +350,7 @@ public class PlayerGroupDelta {
 
 		@ObfuscatedName("gk.e(Lgq;B)V")
 		public void apply(PlayerGroup group) {
-			group.setMembersReady();
+			group.doSetMembersReady();
 		}
 	}
 
@@ -374,8 +374,8 @@ public class PlayerGroupDelta {
 		}
 
 		@ObfuscatedName("gp.e(Lgq;B)V")
-		public void apply(PlayerGroup arg0) {
-			arg0.updateMember(this.index, this.member);
+		public void apply(PlayerGroup group) {
+			group.updateMember(this.index, this.member);
 		}
 	}
 

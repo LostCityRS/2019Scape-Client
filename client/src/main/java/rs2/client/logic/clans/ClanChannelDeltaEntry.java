@@ -8,8 +8,8 @@ import deob.ObfuscatedName;
 public abstract class ClanChannelDeltaEntry extends Node {
 
 	@ObfuscatedName("aku.n(Lakr;S)V")
-	public abstract void method17753(ClanChannel arg0);
+	public abstract void apply(ClanChannel channel);
 
 	@ObfuscatedName("aku.e(Lalw;I)V")
-	public abstract void method17757(Packet arg0);
+	public abstract void decode(Packet buf);
 }

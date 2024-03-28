@@ -6740,11 +6740,11 @@ public final class ScriptRunner {
 		int var4 = arg2.field8216[--arg2.field8226];
 		switch(arg3.index) {
 			case 0:
-				arg0.field2336 = Client.currentPlayerGroup.getMember(var4).getDisplayName();
+				arg0.field2336 = Client.currentPlayerGroup.doGetMember(var4).getDisplayName();
 				break;
 			case 1:
 			case 4:
-				arg0.field2336 = arg2.activeClanChannel.channelUsers[var4].displayName;
+				arg0.field2336 = arg2.activeClanChannel.channelUsers[var4].name;
 				break;
 			case 2:
 				if (Client.field11080 != 2 || var4 >= Client.friendsCount) {
@@ -10966,7 +10966,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		boolean var2 = arg0.field8216[arg0.field8226 + 1] == 1;
 		int var3 = arg0.field8216[arg0.field8226 + 2];
-		PlayerGroupMember var4 = Client.currentPlayerGroup.getMember(var1);
+		PlayerGroupMember var4 = Client.currentPlayerGroup.doGetMember(var1);
 		if (var4.clearVariables() == null) {
 			var4.resetVariables(Client.field10837);
 		}
@@ -10991,43 +10991,43 @@ public final class ScriptRunner {
 	@ObfuscatedName("io.abn(Lyf;I)V")
 	public static final void player_group_member_get_rank(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.getMember(var1).getRank();
+		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.doGetMember(var1).getRank();
 	}
 
 	@ObfuscatedName("pv.abj(Lyf;I)V")
 	public static final void player_group_member_get_team(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.getMember(var1).getTeam();
+		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.doGetMember(var1).getTeam();
 	}
 
 	@ObfuscatedName("dg.aba(Lyf;I)V")
 	public static final void player_group_member_get_last_seen_node_id(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.getMember(var1).getNodeId();
+		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.doGetMember(var1).getNodeId();
 	}
 
 	@ObfuscatedName("au.abz(Lyf;I)V")
 	public static final void player_group_member_get_status(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.getMember(var1).getStatus().getId();
+		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.doGetMember(var1).getStatus().getId();
 	}
 
 	@ObfuscatedName("dm.abu(Lyf;S)V")
 	public static final void player_group_member_is_online(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.getMember(var1).isOnline() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.doGetMember(var1).isOnline() ? 1 : 0;
 	}
 
 	@ObfuscatedName("tz.abl(Lyf;B)V")
 	public static final void player_group_member_is_member(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.getMember(var1).isMembers() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.currentPlayerGroup.doGetMember(var1).isMembers() ? 1 : 0;
 	}
 
 	@ObfuscatedName("eb.abp(Lyf;I)V")
 	public static final void player_group_member_get_displayname(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8218[++arg0.field8211 - 1] = Client.currentPlayerGroup.getMember(var1).getDisplayName();
+		arg0.field8218[++arg0.field8211 - 1] = Client.currentPlayerGroup.doGetMember(var1).getDisplayName();
 	}
 
 	@ObfuscatedName("l.abm(Lyf;B)V")
@@ -11036,7 +11036,7 @@ public final class ScriptRunner {
 		int var1 = arg0.field8216[arg0.field8226];
 		int var2 = arg0.field8216[arg0.field8226 + 1];
 		boolean var3 = arg0.field8216[arg0.field8226 + 2] == 1;
-		PlayerStat var4 = Client.currentPlayerGroup.getMember(var1).getStat(var2);
+		PlayerStat var4 = Client.currentPlayerGroup.doGetMember(var1).getStat(var2);
 		arg0.field8216[++arg0.field8226 - 1] = var3 ? var4.getBaseLevel() : var4.getXP();
 	}
 
@@ -11146,7 +11146,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("hy.acu(Lyf;I)V")
 	public static final void activeclansettings_getaffinedcount(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = arg0.activeClanSettings.affinedCount;
+		arg0.field8216[++arg0.field8226 - 1] = arg0.activeClanSettings.memberCount;
 	}
 
 	@ObfuscatedName("qw.acg(Lyf;I)V")
@@ -11269,7 +11269,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("qt.adi(Lyf;I)V")
 	public static final void activeclanchannel_getuserdisplayname(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		arg0.field8218[++arg0.field8211 - 1] = arg0.activeClanChannel.channelUsers[var1].displayName;
+		arg0.field8218[++arg0.field8211 - 1] = arg0.activeClanChannel.channelUsers[var1].name;
 	}
 
 	@ObfuscatedName("akz.adz(Lyf;I)V")

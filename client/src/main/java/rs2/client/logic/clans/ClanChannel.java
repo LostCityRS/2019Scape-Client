@@ -11,10 +11,10 @@ import java.util.BitSet;
 public class ClanChannel extends Node {
 
 	@ObfuscatedName("akr.k")
-	public boolean field11397;
+	public boolean useUserHashes;
 
 	@ObfuscatedName("akr.f")
-	public boolean field11390 = true;
+	public boolean useDisplayNames = true;
 
 	@ObfuscatedName("akr.w")
 	public ClanChannelUser[] channelUsers;
@@ -23,10 +23,10 @@ public class ClanChannel extends Node {
 	public int userCount = 0;
 
 	@ObfuscatedName("akr.u")
-	public int[] field11394;
+	public int[] sortedUserSlots;
 
 	@ObfuscatedName("akr.z")
-	public long field11395;
+	public long updateNum;
 
 	@ObfuscatedName("akr.p")
 	public String clanName = null;
@@ -42,101 +42,101 @@ public class ClanChannel extends Node {
 	}
 
 	@ObfuscatedName("akr.e(IB)V")
-	public void method17738(int arg0) {
+	public void allocChannelUsers(int num) {
 		if (this.channelUsers == null) {
-			this.channelUsers = new ClanChannelUser[arg0];
+			this.channelUsers = new ClanChannelUser[num];
 		} else {
-			System.arraycopy(this.channelUsers, 0, this.channelUsers = new ClanChannelUser[arg0], 0, this.userCount);
+			System.arraycopy(this.channelUsers, 0, this.channelUsers = new ClanChannelUser[num], 0, this.userCount);
 		}
 	}
 
-	public ClanChannel(Packet arg0) {
-		this.method17737(arg0);
+	public ClanChannel(Packet buf) {
+		this.decode(buf);
 	}
 
 	@ObfuscatedName("akr.n(I)[I")
 	public int[] getSortedUserSlot() {
-		if (this.field11394 == null) {
-			String[] var1 = new String[this.userCount];
-			this.field11394 = new int[this.userCount];
+		if (this.sortedUserSlots == null) {
+			String[] names = new String[this.userCount];
+			this.sortedUserSlots = new int[this.userCount];
 			int var2 = 0;
 			while (var2 < this.userCount) {
-				var1[var2] = this.channelUsers[var2].displayName;
-				this.field11394[var2] = var2++;
+				names[var2] = this.channelUsers[var2].name;
+				this.sortedUserSlots[var2] = var2++;
 			}
-			Algorithms.method4054(var1, this.field11394);
+			Algorithms.method4054(names, this.sortedUserSlots);
 		}
-		return this.field11394;
+		return this.sortedUserSlots;
 	}
 
 	@ObfuscatedName("akr.m(Lkb;I)V")
-	public void method17734(ClanChannelUser arg0) {
+	public void doAddUser(ClanChannelUser user) {
 		if (this.channelUsers == null || this.userCount >= this.channelUsers.length) {
-			this.method17738(this.userCount + 5);
+			this.allocChannelUsers(this.userCount + 5);
 		}
-		this.channelUsers[++this.userCount - 1] = arg0;
-		this.field11394 = null;
+		this.channelUsers[++this.userCount - 1] = user;
+		this.sortedUserSlots = null;
 	}
 
 	@ObfuscatedName("akr.k(II)V")
-	public void method17735(int arg0) {
+	public void doDeleteUser(int pos) {
 		this.userCount--;
 		if (this.userCount == 0) {
 			this.channelUsers = null;
 		} else {
-			System.arraycopy(this.channelUsers, arg0 + 1, this.channelUsers, arg0, this.userCount - arg0);
+			System.arraycopy(this.channelUsers, pos + 1, this.channelUsers, pos, this.userCount - pos);
 		}
-		this.field11394 = null;
+		this.sortedUserSlots = null;
 	}
 
 	@ObfuscatedName("akr.f(Ljava/lang/String;B)I")
-	public int getUserSlot(String arg0) {
-		for (int var2 = 0; var2 < this.userCount; var2++) {
-			if (this.channelUsers[var2].displayName.equalsIgnoreCase(arg0)) {
-				return var2;
+	public int getUserSlot(String name) {
+		for (int index = 0; index < this.userCount; index++) {
+			if (this.channelUsers[index].name.equalsIgnoreCase(name)) {
+				return index;
 			}
 		}
 		return -1;
 	}
 
 	@ObfuscatedName("akr.w(Lalw;I)V")
-	public void method17737(Packet arg0) {
-		int var2 = arg0.g1();
-		if ((var2 & 0x1) != 0) {
-			this.field11397 = true;
+	public void decode(Packet buf) {
+		int info = buf.g1();
+		if ((info & 0x1) != 0) {
+			this.useUserHashes = true;
 		}
-		if ((var2 & 0x2) != 0) {
-			this.field11390 = true;
+		if ((info & 0x2) != 0) {
+			this.useDisplayNames = true;
 		}
 		int var3 = 2;
-		if ((var2 & 0x4) != 0) {
-			var3 = arg0.g1();
+		if ((info & 0x4) != 0) {
+			var3 = buf.g1();
 		}
-		this.nodeId = arg0.g8();
-		this.field11395 = arg0.g8();
-		this.clanName = arg0.gjstr();
-		arg0.g1();
-		this.rankKick = arg0.g1b();
-		this.rankTalk = arg0.g1b();
-		this.userCount = arg0.g2();
+		this.nodeId = buf.g8();
+		this.updateNum = buf.g8();
+		this.clanName = buf.gjstr();
+		buf.g1();
+		this.rankKick = buf.g1b();
+		this.rankTalk = buf.g1b();
+		this.userCount = buf.g2();
 		if (this.userCount <= 0) {
 			return;
 		}
 		this.channelUsers = new ClanChannelUser[this.userCount];
-		for (int var4 = 0; var4 < this.userCount; var4++) {
-			ClanChannelUser var5 = new ClanChannelUser();
-			if (this.field11397) {
-				arg0.g8();
+		for (int index = 0; index < this.userCount; index++) {
+			ClanChannelUser user = new ClanChannelUser();
+			if (this.useUserHashes) {
+				buf.g8();
 			}
-			if (this.field11390) {
-				var5.displayName = arg0.gjstr();
+			if (this.useDisplayNames) {
+				user.name = buf.gjstr();
 			}
-			var5.rank = arg0.g1b();
-			var5.world = arg0.g2();
+			user.rank = buf.g1b();
+			user.world = buf.g2();
 			if (var3 >= 3) {
-				arg0.g1();
+				buf.g1();
 			}
-			this.channelUsers[var4] = var5;
+			this.channelUsers[index] = user;
 		}
 	}
 }

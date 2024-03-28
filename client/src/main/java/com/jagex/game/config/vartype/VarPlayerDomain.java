@@ -25,8 +25,8 @@ public final class VarPlayerDomain implements VarDomain {
 	public int method9623(boolean arg0) {
 		long var2 = MonotonicTime.get();
         for (LongNode var4 = (LongNode) (arg0 ? this.field7610.peekFront() : this.field7610.prev()); var4 != null; var4 = (LongNode) this.field7610.prev()) {
-			if ((var4.field11441 & 0x3FFFFFFFFFFFFFFFL) < var2) {
-				if ((var4.field11441 & 0x4000000000000000L) != 0L) {
+			if ((var4.value & 0x3FFFFFFFFFFFFFFFL) < var2) {
+				if ((var4.value & 0x4000000000000000L) != 0L) {
 					int var5 = (int) var4.nodeId;
 					this.field7609[var5] = this.field7604[var5];
 					var4.remove();
@@ -63,7 +63,7 @@ public final class VarPlayerDomain implements VarDomain {
 			LongNode var4 = new LongNode(MonotonicTime.get() + 500L);
             this.field7610.pushNode(var4, (long) arg0.id);
 		} else {
-			var3.field11441 = MonotonicTime.get() + 500L;
+			var3.value = MonotonicTime.get() + 500L;
 		}
 	}
 
@@ -74,8 +74,8 @@ public final class VarPlayerDomain implements VarDomain {
 		if (var3 == null) {
 			LongNode var4 = new LongNode(4611686018427387905L);
 			this.field7610.pushNode(var4, (long) arg0.id);
-		} else if (var3.field11441 != 4611686018427387905L) {
-			var3.field11441 = MonotonicTime.get() + 500L | 0x4000000000000000L;
+		} else if (var3.value != 4611686018427387905L) {
+			var3.value = MonotonicTime.get() + 500L | 0x4000000000000000L;
 		}
 	}
 

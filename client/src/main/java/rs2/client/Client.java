@@ -9287,7 +9287,7 @@ public final class Client extends GameShell {
 			int var320 = in.pos;
 			int var321 = in.g2();
 			boolean var322 = in.g1() == 1;
-			PlayerGroupMember var323 = currentPlayerGroup.getMember(var321);
+			PlayerGroupMember var323 = currentPlayerGroup.doGetMember(var321);
 			VarContainerSparse var324 = var323.clearVariables();
 			if (var324 == null || var322) {
 				var323.resetVariables(field10837);
@@ -9910,7 +9910,7 @@ public final class Client extends GameShell {
 			} else {
 				var501 = field1766;
 			}
-			var500.method5342(var501);
+			var500.applyToClanChannel(var501);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.MESSAGE_FRIENDCHANNEL == connection.packetType) {
@@ -10312,7 +10312,7 @@ public final class Client extends GameShell {
 			} else {
 				var636 = field6867;
 			}
-			var635.method5333(var636);
+			var635.applyToClanSettings(var636);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.CHANGE_LOBBY == connection.packetType) {
@@ -14165,7 +14165,7 @@ public final class Client extends GameShell {
 		if (var3.rank != -1) {
 			return;
 		}
-		String var4 = var3.displayName;
+		String var4 = var3.name;
 		ServerConnection var5 = getCurrentConnection();
 		ClientMessage var6 = ClientMessage.createMessage(ClientProt.CLANCHANNEL_KICKUSER, var5.randomOut);
 		var6.buf.p1(Packet.pjstrlen(var4) + 3);
@@ -14186,9 +14186,9 @@ public final class Client extends GameShell {
 		}
 		ServerConnection var2 = getCurrentConnection();
 		ClientMessage var3 = ClientMessage.createMessage(ClientProt.AFFINEDCLANSETTINGS_ADDBANNED_FROMCHANNEL, var2.randomOut);
-		var3.buf.p1(Packet.pjstrlen(var1.displayName) + 2);
+		var3.buf.p1(Packet.pjstrlen(var1.name) + 2);
 		var3.buf.p2(arg0);
-		var3.buf.pjstr(var1.displayName);
+		var3.buf.pjstr(var1.name);
 		var2.queue(var3);
 	}
 
@@ -14200,10 +14200,10 @@ public final class Client extends GameShell {
 		ClanChannelUser var2 = field3022.channelUsers[arg0];
 		ServerConnection var3 = getCurrentConnection();
 		ClientMessage var4 = ClientMessage.createMessage(ClientProt.AFFINEDCLANSETTINGS_SETMUTED_FROMCHANNEL, var3.randomOut);
-		var4.buf.p1(Packet.pjstrlen(var2.displayName) + 3);
+		var4.buf.p1(Packet.pjstrlen(var2.name) + 3);
 		var4.buf.p2(arg0);
 		var4.buf.p1(arg1 ? 1 : 0);
-		var4.buf.pjstr(var2.displayName);
+		var4.buf.pjstr(var2.name);
 		var3.queue(var4);
 	}
 

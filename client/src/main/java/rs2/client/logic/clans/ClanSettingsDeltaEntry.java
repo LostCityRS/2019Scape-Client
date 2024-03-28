@@ -8,9 +8,9 @@ import deob.ObfuscatedName;
 public abstract class ClanSettingsDeltaEntry extends Node {
 
 	@ObfuscatedName("akp.e(Lalw;B)V")
-	public abstract void method17726(Packet arg0);
+	public abstract void decode(Packet buf);
 
 	@ObfuscatedName("akp.n(Lkr;I)V")
-	public abstract void method17727(ClanSettings arg0);
+	public abstract void apply(ClanSettings settings);
 
 }

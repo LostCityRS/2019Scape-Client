@@ -12,5 +12,5 @@ public class ClanChannelUser {
 	public int world;
 
 	@ObfuscatedName("kb.m")
-	public String displayName;
+	public String name;
 }
