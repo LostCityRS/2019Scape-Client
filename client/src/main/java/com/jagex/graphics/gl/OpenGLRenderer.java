@@ -493,7 +493,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		OpenGL.glFlush();
 		OpenGL.glReadBuffer(1029);
 		OpenGL.glDrawBuffer(1029);
-		this.method2168(var7, var9, var8, var10);
+		this.resetBounds(var7, var9, var8, var10);
 		this.method2164(var3, var4, var5, var6);
 	}
 

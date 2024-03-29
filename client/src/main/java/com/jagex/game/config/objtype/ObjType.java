@@ -855,7 +855,7 @@ public class ObjType implements ConfigType {
 		var26.rotateAroundAxis(0.0F, 1.0F, 0.0F, Trig1.radians(this.yan2d << 3));
 		var26.translate((float) (this.xof2d << 2), (float) ((Trig1.field4270[this.xan2d << 3] * var22 >> 14) - var20.method1748() / 2 + (this.yof2d << 2)), (float) ((this.yof2d << 2) + (Trig1.field4272[this.xan2d << 3] * var22 >> 14)));
 		var26.rotateAroundAxis(1.0F, 0.0F, 0.0F, Trig1.radians(this.xan2d << 3));
-		arg0.method2168(0, 0, 36, 32);
+		arg0.resetBounds(0, 0, 36, 32);
 		arg0.method2475(2, 0);
 		arg0.fillRectangle(0, 0, 36, 32, 0, 0);
 		arg0.setFog(0, -1, 0);
@@ -884,7 +884,7 @@ public class ObjType implements ConfigType {
 			var21.method1439(0, 0);
 		}
 		if (arg6 == 1 || arg6 == 2 && (this.stackable == 1 || arg2 != 1) && arg2 != -1) {
-			arg7.method2681(formatObjCount(arg2, this.factory.languageId, arg9), 0, 9, -256, -16777215);
+			arg7.drawString(formatObjCount(arg2, this.factory.languageId, arg9), 0, 9, -256, -16777215);
 		}
 		int[] var28 = arg0.method2149(0, 0, 36, 32);
 		for (int var29 = 0; var29 < var28.length; var29++) {

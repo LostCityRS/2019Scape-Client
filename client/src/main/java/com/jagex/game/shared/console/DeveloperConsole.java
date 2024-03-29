@@ -102,8 +102,8 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("sm.m(S)V")
 	public static void method8025() {
-		field768 = DefaultSprites.field10268.field8569 + DefaultSprites.field10268.field8562 + 2;
-		field763 = DefaultSprites.fontP12FullMetrics.field8569 + DefaultSprites.fontP12FullMetrics.field8562 + 2;
+		field768 = DefaultSprites.b12FullMetrics.field8569 + DefaultSprites.b12FullMetrics.field8562 + 2;
+		field763 = DefaultSprites.p12FullMetrics.field8569 + DefaultSprites.p12FullMetrics.field8562 + 2;
 		field4845 = new String[500];
 		for (int var0 = 0; var0 < field4845.length; var0++) {
 			field4845[var0] = "";
@@ -334,7 +334,7 @@ public class DeveloperConsole {
 		if (TwitchHardwarePlatform.method5076() && TwitchHardwarePlatform.method8634()) {
 			TwitchHardwarePlatform.method5389(0, 0, GameShell.canvasWid, 350);
 		}
-		arg0.method2168(0, 0, GameShell.canvasWid, 350);
+		arg0.resetBounds(0, 0, GameShell.canvasWid, 350);
 		arg0.fillRectangle(0, 0, GameShell.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);
 		int var1 = 350 / field763;
 		if (field764 > 0) {
@@ -350,21 +350,21 @@ public class DeveloperConsole {
 				int var7 = (GameShell.canvasWid - 8 - 16) / var6.length;
 				for (int var8 = 0; var8 < var6.length; var8++) {
 					int var9 = var7 * var8 + 8;
-					arg0.method2168(var9, 0, var7 + var9 - 8, 350);
-					DefaultSprites.fontP12Full.method2681(method14312(var6[var8]), var9, 350 - field768 - 2 - DefaultSprites.fontP12FullMetrics.field8569 - field763 * (var5 - field771), -1, -16777216);
+					arg0.resetBounds(var9, 0, var7 + var9 - 8, 350);
+					DefaultSprites.p12FullFont.drawString(method14312(var6[var8]), var9, 350 - field768 - 2 - DefaultSprites.p12FullMetrics.field8569 - field763 * (var5 - field771), -1, -16777216);
 				}
 			}
 		}
-		DefaultSprites.field8321.method2682("910 1", GameShell.canvasWid - 25, 330, -1, -16777216);
-		arg0.method2168(0, 0, GameShell.canvasWid, 350);
+		DefaultSprites.p11FullFont.method2682("910 1", GameShell.canvasWid - 25, 330, -1, -16777216);
+		arg0.resetBounds(0, 0, GameShell.canvasWid, 350);
 		arg0.method2176(0, 350 - field768, GameShell.canvasWid, -1);
-		DefaultSprites.field10355.method2681("--> " + method14312(currententry), 10, 350 - DefaultSprites.field10268.field8569 - 1, -1, -16777216);
+		DefaultSprites.b12FullFont.drawString("--> " + method14312(currententry), 10, 350 - DefaultSprites.b12FullMetrics.field8569 - 1, -1, -16777216);
 		if (GameShell.focus) {
 			int var10 = -1;
 			if (Client.loopCycle % 30 > 15) {
 				var10 = 16777215;
 			}
-			arg0.method2177(DefaultSprites.field10268.method14532("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - DefaultSprites.field10268.field8569 - 11, 12, var10);
+			arg0.method2177(DefaultSprites.b12FullMetrics.stringWidth("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - DefaultSprites.b12FullMetrics.field8569 - 11, 12, var10);
 		}
 		arg0.resetClip();
 		method16858();

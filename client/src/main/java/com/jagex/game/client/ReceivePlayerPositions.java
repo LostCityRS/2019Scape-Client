@@ -722,7 +722,7 @@ public class ReceivePlayerPositions {
 		if ((mask & 0x200) != 0) { // forced chat
 			String message = buf.gjstr();
 			if (Client.localPlayerEntity == player) {
-				ChatHistory.addMessage(2, 0, player.method19115(true), player.method19116(false), player.name, message, null);
+				ChatHistory.addMessage(2, 0, player.method19115(true), player.getName(false), player.name, message, null);
 			}
 			player.addMessage(message, 0, 0);
 		}
@@ -785,7 +785,7 @@ public class ReceivePlayerPositions {
 			String message = buf.gjstr();
 			int var76 = buf.g1();
 			if ((var76 & 0x1) != 0) {
-				ChatHistory.addMessage(2, var76, player.method19115(true), player.method19116(false), player.name, message, null);
+				ChatHistory.addMessage(2, var76, player.method19115(true), player.getName(false), player.name, message, null);
 			}
 			player.addMessage(message, 0, 0);
 		}

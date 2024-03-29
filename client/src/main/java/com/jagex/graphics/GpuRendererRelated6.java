@@ -247,7 +247,7 @@ public class GpuRendererRelated6 {
 		if (var31 != 0) {
 			this.method5796();
 			this.field3389.method2170(true);
-			this.field3389.method2168(var19, var20, var21, var22);
+			this.field3389.resetBounds(var19, var20, var21, var22);
 		}
 		this.method5798();
 		float var32 = this.method5799(arg0);
@@ -287,7 +287,7 @@ public class GpuRendererRelated6 {
 		if (var31 != 0) {
 			this.field3389.method2170(false);
 			this.field3389.resetClip();
-			this.field3389.method2168(var19, var20, var21, var22);
+			this.field3389.resetBounds(var19, var20, var21, var22);
 		}
 	}
 

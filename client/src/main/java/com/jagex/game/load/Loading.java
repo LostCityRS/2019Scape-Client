@@ -296,11 +296,11 @@ public class Loading {
 			}
 		}
 		if (field3419 == LoadingStage.field2904) {
-			Client.fontProvider = new FontProvider(Client.renderer, loadingSpritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
+			Client.fontProvider = new FontProvider(Client.renderer, loadingSpritesJs5, Client.fontmetricsJs5, DefaultSprites.fonts());
 		}
 		if (field3419 == LoadingStage.field2905) {
-			int var12 = Client.fontProvider.method6179();
-			int var13 = Client.fontProvider.method6161();
+			int var12 = Client.fontProvider.getLoadedFontsCount();
+			int var13 = Client.fontProvider.getFontsCount();
 			if (var12 < var13) {
 				return var12 * 100 / var13;
 			}
@@ -314,8 +314,8 @@ public class Loading {
 					return 0;
 				}
 			}
-			Client.fontProvider.method6157(Client.fontFactory);
-			DefaultSprites.method7114(Client.renderer);
+			Client.fontProvider.loadFonts(Client.fontFactory);
+			DefaultSprites.loadFonts(Client.renderer);
 			Client.setState(11);
 		}
 		if (field3419 == LoadingStage.OPEN_JS5_ARCHIVES) {
@@ -370,7 +370,7 @@ public class Loading {
 				return (var14 - field2945) * 100 / (100 - field2945);
 			}
 			DefaultSprites.method16430(Client.graphicsDefaults);
-			Client.fontProvider = new FontProvider(Client.renderer, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.method845());
+			Client.fontProvider = new FontProvider(Client.renderer, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.fonts());
 		}
 		if (field3419 == LoadingStage.field2909) {
 			byte[] var17 = Client.defaultsJs5.method6894(DefaultsGroup.AUDIO.js5GroupId);
@@ -466,8 +466,8 @@ public class Loading {
 			Client.hardwarePlatform = new HardwarePlatform(true);
 		}
 		if (field3419 == LoadingStage.SETUP_STATIC_SPRITES) {
-			int var20 = DefaultSprites.method15381(Client.spritesJs5) + Client.fontProvider.method6191(true);
-			int var21 = DefaultSprites.method14611() + Client.fontProvider.method6161();
+			int var20 = DefaultSprites.getLoadedSpritesCount(Client.spritesJs5) + Client.fontProvider.getLoadedFontsCount(true);
+			int var21 = DefaultSprites.getSpritesCount() + Client.fontProvider.getFontsCount();
 			if (var20 < var21) {
 				return var20 * 100 / var21;
 			}
@@ -540,9 +540,9 @@ public class Loading {
 				}
 			}
 			Client.setWindowMode(Client.preferences.maxScreenSize.getValue(), -1, -1, false);
-			Client.fontProvider.method6157(Client.fontFactory);
-			DefaultSprites.method7114(Client.renderer);
-			DefaultSprites.method5202(Client.renderer, Client.spritesJs5);
+			Client.fontProvider.loadFonts(Client.fontFactory);
+			DefaultSprites.loadFonts(Client.renderer);
+			DefaultSprites.loadSprites(Client.renderer, Client.spritesJs5);
 		}
 		return method3584();
 	}

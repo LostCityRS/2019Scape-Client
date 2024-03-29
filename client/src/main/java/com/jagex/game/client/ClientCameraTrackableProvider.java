@@ -12,10 +12,10 @@ public class ClientCameraTrackableProvider implements CameraTrackableProvider {
 
 	@ObfuscatedName("z.e(Ljl;IB)Ljn;")
 	public CameraTrackable method268(CameraTrackableType arg0, int arg1) {
-		if (CameraTrackableType.field2838 == arg0) {
+		if (CameraTrackableType.PLAYER == arg0) {
 			return Client.players[arg1];
 		}
-		if (CameraTrackableType.field2839 == arg0) {
+		if (CameraTrackableType.NPC == arg0) {
 			ObjectWrapper var3 = (ObjectWrapper) Client.npcs.getNode((long) arg1);
 			if (var3 != null) {
 				return (CameraTrackable) var3.value;

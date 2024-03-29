@@ -11746,7 +11746,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
-		FontMetrics var4 = Client.fontProvider.method6163(Client.fontFactory, var3);
+		FontMetrics var4 = Client.fontProvider.getFontMetrics(Client.fontFactory, var3);
 		arg0.field8216[++arg0.field8226 - 1] = var4.method14538(var1, var2, DefaultSprites.field10302);
 	}
 
@@ -11756,7 +11756,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 2;
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
-		FontMetrics var4 = Client.fontProvider.method6163(Client.fontFactory, var3);
+		FontMetrics var4 = Client.fontProvider.getFontMetrics(Client.fontFactory, var3);
 		arg0.field8216[++arg0.field8226 - 1] = var4.method14551(var1, var2, DefaultSprites.field10302);
 	}
 
@@ -11767,7 +11767,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		int var4 = arg0.field8216[arg0.field8226 + 2];
-		FontMetrics var5 = Client.fontProvider.method6163(Client.fontFactory, var3);
+		FontMetrics var5 = Client.fontProvider.getFontMetrics(Client.fontFactory, var3);
 		String var6 = var5.method14539(var1, var2, DefaultSprites.field10302, var4);
 		arg0.field8218[++arg0.field8211 - 1] = var6 == null ? "" : var6;
 	}
@@ -11908,8 +11908,8 @@ public final class ScriptRunner {
 	public static final void stringwidth(ClientScriptState arg0) {
 		String var1 = (String) arg0.field8218[--arg0.field8211];
 		int var2 = arg0.field8216[--arg0.field8226];
-		FontMetrics var3 = Client.fontProvider.method6163(Client.fontFactory, var2);
-		arg0.field8216[++arg0.field8226 - 1] = var3.method14533(var1, DefaultSprites.field10302);
+		FontMetrics var3 = Client.fontProvider.getFontMetrics(Client.fontFactory, var2);
+		arg0.field8216[++arg0.field8226 - 1] = var3.stringWidth(var1, DefaultSprites.field10302);
 	}
 
 	@ObfuscatedName("ap.agj(Lyf;B)V")
@@ -12551,7 +12551,7 @@ public final class ScriptRunner {
 		if (Client.localPlayerEntity == null || Client.localPlayerEntity.name == null) {
 			var1 = "";
 		} else {
-			var1 = Client.localPlayerEntity.method19116(false);
+			var1 = Client.localPlayerEntity.getName(false);
 		}
 		arg0.field8218[++arg0.field8211 - 1] = var1;
 	}
@@ -16470,7 +16470,7 @@ public final class ScriptRunner {
 		if (var1 == null) {
 			arg0.field8218[++arg0.field8211 - 1] = "";
 		} else {
-			arg0.field8218[++arg0.field8211 - 1] = var1.method8281();
+			arg0.field8218[++arg0.field8211 - 1] = var1.getText();
 		}
 	}
 
@@ -17283,7 +17283,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ace.bfr(Lyf;B)V")
 	public static final void method15087(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		FontMetrics var2 = Client.fontProvider.method6163(Client.fontFactory, var1);
+		FontMetrics var2 = Client.fontProvider.getFontMetrics(Client.fontFactory, var1);
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8566;
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8562;
 		arg0.field8216[++arg0.field8226 - 1] = var2.field8569;

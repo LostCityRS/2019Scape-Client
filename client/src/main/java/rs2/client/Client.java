@@ -1005,7 +1005,7 @@ public final class Client extends GameShell {
 	public static int field3023;
 
 	@ObfuscatedName("client.mi")
-	public static int field10916 = 0;
+	public static int sceneCycle = 0;
 
 	@ObfuscatedName("client.mr")
 	public static int[] field10917 = new int[503];
@@ -1257,7 +1257,7 @@ public final class Client extends GameShell {
 	public static IterableMap openedSubInterfaces = new IterableMap(8);
 
 	@ObfuscatedName("client.qp")
-	public static int field10980 = 0;
+	public static int chatEffects = 0;
 
 	@ObfuscatedName("client.qx")
 	public static Component field11056 = null;
@@ -1476,25 +1476,25 @@ public final class Client extends GameShell {
 	public static final int[] field11042;
 
 	@ObfuscatedName("client.sc")
-	public static int field10865;
+	public static int chatCount;
 
 	@ObfuscatedName("client.sg")
 	public static int field11044;
 
 	@ObfuscatedName("client.tu")
-	public static int[] field11045;
+	public static int[] chatX;
 
 	@ObfuscatedName("client.ta")
-	public static int[] field10982;
+	public static int[] chatY;
 
 	@ObfuscatedName("client.tr")
-	public static int[] field11047;
+	public static int[] chatWidth;
 
 	@ObfuscatedName("client.tc")
-	public static EntityChatLine[] field11048;
+	public static EntityChatLine[] chats;
 
 	@ObfuscatedName("client.tj")
-	public static final int[] field10956;
+	public static final int[] chatColours;
 
 	@ObfuscatedName("client.te")
 	public static int publicChatFilter;
@@ -1763,13 +1763,13 @@ public final class Client extends GameShell {
 		}
 		field10997 = 0;
 		field11042 = new int[4];
-		field10865 = 0;
+		chatCount = 0;
 		field11044 = 54;
-		field11045 = new int[field11044];
-		field10982 = new int[field11044];
-		field11047 = new int[field11044];
-		field11048 = new EntityChatLine[field11044];
-		field10956 = new int[] { 16776960, 16711680, 65280, 65535, 16711935, 16777215 };
+		chatX = new int[field11044];
+		chatY = new int[field11044];
+		chatWidth = new int[field11044];
+		chats = new EntityChatLine[field11044];
+		chatColours = new int[] { 16776960, 16711680, 65280, 65535, 16711935, 16777215 };
 		publicChatFilter = 0;
 		tradeChatFilter = 0;
 		field11053 = new long[100];
@@ -2383,19 +2383,19 @@ public final class Client extends GameShell {
 		} else if (method9273(state)) {
 			if (world.method7724() == RebuildStage.field5006) {
 				int var4 = world.method7725() / 2;
-				MessageBox.draw(LocalisedText.LOADING.forLang(language) + TextUtil.BR + "(" + var4 + "%)", true, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+				MessageBox.draw(LocalisedText.LOADING.forLang(language) + TextUtil.BR + "(" + var4 + "%)", true, renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 			} else if (world.method7724() == RebuildStage.field5005) {
 				int var5 = world.method7726() / 2 + 50;
-				MessageBox.draw(LocalisedText.LOADING.forLang(language) + TextUtil.BR + "(" + var5 + "%)", true, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+				MessageBox.draw(LocalisedText.LOADING.forLang(language) + TextUtil.BR + "(" + var5 + "%)", true, renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 			} else {
-				MessageBox.draw(LocalisedText.LOADING.forLang(language), true, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+				MessageBox.draw(LocalisedText.LOADING.forLang(language), true, renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 			}
 		} else if (state == 18) {
 			method18329(var1);
 		} else if (state == 14) {
-			MessageBox.draw(LocalisedText.CONLOST.forLang(language) + TextUtil.BR + LocalisedText.ATTEMPT_TO_REESTABLISH.forLang(language), false, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+			MessageBox.draw(LocalisedText.CONLOST.forLang(language) + TextUtil.BR + LocalisedText.ATTEMPT_TO_REESTABLISH.forLang(language), false, renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 		} else if (state == 19) {
-			MessageBox.draw(LocalisedText.PLEASEWAIT.forLang(language), false, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+			MessageBox.draw(LocalisedText.PLEASEWAIT.forLang(language), false, renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 		}
 		if (field10997 == 3) {
 			for (int var6 = 0; var6 < field11051; var6++) {
@@ -2860,11 +2860,11 @@ public final class Client extends GameShell {
 		method7239();
 		method15235();
 		method3596(arg0, arg1, arg2);
-		fontProvider.method6158();
-		fontProvider.method6157(fontFactory);
+		fontProvider.clearFonts();
+		fontProvider.loadFonts(fontFactory);
 		fontProvider.cacheReset();
-		DefaultSprites.method7114(renderer);
-		DefaultSprites.method5202(renderer, spritesJs5);
+		DefaultSprites.loadFonts(renderer);
+		DefaultSprites.loadSprites(renderer, spritesJs5);
 		MiniMenu.method5147();
 		method9734();
 		method9516();
@@ -2891,8 +2891,8 @@ public final class Client extends GameShell {
 			renderer = Renderer.create(0, GameShell.canvas, materialList, textureList, basicBillboardTypeList, basicParticleEmitterTypeList, basicParticleEffectorTypeList, shadersJs5, preferences.antiAliasing2.getValue() * 2);
 			if (arg1 != null) {
 				renderer.method2475(1, 0);
-				FontMetrics var3 = FontMetrics.method6068(fontmetricsJs5, DefaultSprites.field505, 0, fontProvider);
-				Font var4 = renderer.createFont(var3, SpriteDataProvider.method1609(spritesJs5, DefaultSprites.field505, 0), true);
+				FontMetrics var3 = FontMetrics.method6068(fontmetricsJs5, DefaultSprites.p12_full, 0, fontProvider);
+				Font var4 = renderer.createFont(var3, SpriteDataProvider.method1609(spritesJs5, DefaultSprites.p12_full, 0), true);
 				method8024();
 				MessageBox.draw(arg1, true, renderer, var4, var3);
 			}
@@ -2902,8 +2902,8 @@ public final class Client extends GameShell {
 				if (arg1 != null) {
 					var5 = Renderer.create(0, GameShell.canvas, materialList, textureList, basicBillboardTypeList, basicParticleEmitterTypeList, basicParticleEffectorTypeList, shadersJs5, 0);
 					var5.method2475(1, 0);
-					FontMetrics var6 = FontMetrics.method1593(fontmetricsJs5, DefaultSprites.field505, 0);
-					Font var7 = var5.createFont(var6, SpriteDataProvider.method1609(spritesJs5, DefaultSprites.field505, 0), true);
+					FontMetrics var6 = FontMetrics.method1593(fontmetricsJs5, DefaultSprites.p12_full, 0);
+					Font var7 = var5.createFont(var6, SpriteDataProvider.method1609(spritesJs5, DefaultSprites.p12_full, 0), true);
 					method8024();
 					MessageBox.draw(arg1, true, var5, var7, var6);
 					try {
@@ -2917,7 +2917,7 @@ public final class Client extends GameShell {
 						method7239();
 						System.gc();
 						renderer = Renderer.create(arg0, GameShell.canvas, materialList, textureList, basicBillboardTypeList, basicParticleEmitterTypeList, basicParticleEffectorTypeList, shadersJs5, preferences.antiAliasing2.getValue() * 2);
-						fontProvider = new FontProvider(renderer, spritesJs5, fontmetricsJs5, DefaultSprites.method845());
+						fontProvider = new FontProvider(renderer, spritesJs5, fontmetricsJs5, DefaultSprites.fonts());
 						if (renderer.method2194()) {
 							boolean var9 = true;
 							try {
@@ -3084,7 +3084,7 @@ public final class Client extends GameShell {
 
 		try {
 			Dimension canvasSize = GameShell.canvas.getSize();
-			MessageBox.draw(LocalisedText.PROFILING.forLang(language), true, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+			MessageBox.draw(LocalisedText.PROFILING.forLang(language), true, renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 
 			ModelUnlit baseModelTest = ModelUnlit.get(modelsJs5, graphicsDefaults.performancemetricsmodel, 0);
 
@@ -4392,14 +4392,14 @@ public final class Client extends GameShell {
 		for (int var1 = 0; var1 < ReceivePlayerPositions.highResolutionsCount; var1++) {
 			PlayerEntity var2 = players[var0[var1]];
 			if (var2 != null) {
-				var2.method16520();
+				var2.removeChatLine();
 			}
 		}
 		for (int var3 = 0; var3 < field11011; var3++) {
 			long var4 = (long) field11036[var3];
 			ObjectWrapper var6 = (ObjectWrapper) npcs.getNode(var4);
 			if (var6 != null) {
-				((PathingEntity) var6.value).method16520();
+				((PathingEntity) var6.value).removeChatLine();
 			}
 		}
 		if (sceneState != 0) {
@@ -4408,7 +4408,7 @@ public final class Client extends GameShell {
 		for (int var7 = 0; var7 < CutsceneManager.field1721.length; var7++) {
 			CutsceneEntity var8 = CutsceneManager.field1721[var7];
 			if (var8.field1744) {
-				var8.method2870().method16520();
+				var8.method2870().removeChatLine();
 			}
 		}
 	}
@@ -5705,7 +5705,7 @@ public final class Client extends GameShell {
 			renderer.method2301(arg0, arg1, arg2, arg3, -16777216);
 			return;
 		}
-		field10916++;
+		sceneCycle++;
 		if (localPlayerEntity != null && (int) var5.x - (localPlayerEntity.size() - 1) * 256 >> 9 == Minimap.field731 && (int) var5.z - (localPlayerEntity.size() - 1) * 256 >> 9 == Minimap.field718) {
 			Minimap.field731 = -1;
 			Minimap.field718 = -1;
@@ -5799,7 +5799,7 @@ public final class Client extends GameShell {
 		}
 		renderer.method2164(var8, var9, var10, var11);
 		renderer.method2170(true);
-		renderer.method2168(var8, var9, var8 + var10, var9 + var11);
+		renderer.resetBounds(var8, var9, var8 + var10, var9 + var11);
 		Environment var23 = world.method7816().getCurrentEnv();
 		int var24 = var23.getFogColour();
 		Vector3i var25 = new Vector3i();
@@ -5837,7 +5837,7 @@ public final class Client extends GameShell {
 		int var29 = preferences.removeRoofs2.getValue();
 		byte var30;
 		if (var29 == 2) {
-			var30 = (byte) field10916;
+			var30 = (byte) sceneCycle;
 		} else if (var29 == 3) {
 			var30 = (byte) (field11096 ? 1 : -1);
 		} else {
@@ -5863,7 +5863,7 @@ public final class Client extends GameShell {
 		}
 		if (field11023) {
 			renderer.method2301(var8, var9, var10, var11, -16777216);
-			MessageBox.draw(LocalisedText.LOADING.forLang(language), false, renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+			MessageBox.draw(LocalisedText.LOADING.forLang(language), false, renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 		}
 		method15141(field10792, false, (float) (var10 / 2 + var8), (float) (var11 / 2 + var9), (float) (field11078 << 1), (float) (field11078 << 1), var10, var11);
 		renderer.method2220(field10792);
@@ -5937,7 +5937,7 @@ public final class Client extends GameShell {
 				method2900();
 			}
 		} else {
-			method2835((byte) (field10916 - 4 & 0xFF));
+			method2835((byte) (sceneCycle - 4 & 0xFF));
 			method818(2);
 		}
 		field11046 = currentPlayerLevel;
@@ -6150,8 +6150,8 @@ public final class Client extends GameShell {
 	@ObfuscatedName("ahj.hp(I)V")
 	public static final void method16610() {
 		byte[][][] var0 = world.method7742();
-		byte var1 = (byte) (field10916 - 4 & 0xFF);
-		int var2 = field10916 % world.getSizeX();
+		byte var1 = (byte) (sceneCycle - 4 & 0xFF);
+		int var2 = sceneCycle % world.getSizeX();
 		for (int var3 = 0; var3 < 4; var3++) {
 			for (int var4 = 0; var4 < world.getSizeZ(); var4++) {
 				var0[var3][var2][var4] = var1;
@@ -6329,7 +6329,7 @@ public final class Client extends GameShell {
 	@ObfuscatedName("rw.hy([[[Ltk;IIIZI)Z")
 	public static final boolean method7472(Tile[][][] arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		byte[][][] var5 = world.method7742();
-		byte var6 = arg4 ? 1 : (byte) (field10916 & 0xFF);
+		byte var6 = arg4 ? 1 : (byte) (sceneCycle & 0xFF);
 		if (var5[currentPlayerLevel][arg2][arg3] == var6) {
 			return false;
 		}
@@ -7059,7 +7059,7 @@ public final class Client extends GameShell {
 				var6.unlink();
 			} else {
 				method18486(var6.field11206, (var6.field11202 << 9) + 256, (var6.field11204 << 9) + 256, 0, var6.field11205 * 2, false, false);
-				DefaultSprites.field10355.method2683(var6.field11208, (int) (field10922[0] + (float) arg0), (int) (field10922[1] + (float) arg1), var6.field11207 | 0xFF000000, 0);
+				DefaultSprites.b12FullFont.drawStringCenter(var6.field11208, (int) (field10922[0] + (float) arg0), (int) (field10922[1] + (float) arg1), var6.field11207 | 0xFF000000, 0);
 			}
 		}
 	}
@@ -7072,7 +7072,7 @@ public final class Client extends GameShell {
 			if (var8 != null && var8.field745 == 2) {
 				method18486(var8.field749, var8.field746, var8.field747, 0, var8.field742 * 2, false, false);
 				if (field10922[0] > -1.0F && loopCycle % 20 < 10) {
-					Sprite var9 = DefaultSprites.field8323[var8.field751];
+					Sprite var9 = DefaultSprites.hintarrowSprites[var8.field751];
 					int var10 = (int) (field10922[0] + (float) arg0 - 12.0F);
 					int var11 = (int) (field10922[1] + (float) arg1 - 28.0F);
 					var9.method1439(var10, var11);
@@ -7085,7 +7085,7 @@ public final class Client extends GameShell {
 	public static final void method7133(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		int var6 = ReceivePlayerPositions.highResolutionsCount;
 		int[] var7 = ReceivePlayerPositions.highResolutionsIndices;
-		field10865 = 0;
+		chatCount = 0;
 		int var8;
 		if (sceneState == 0) {
 			var8 = CutsceneManager.field1721.length;
@@ -7101,7 +7101,7 @@ public final class Client extends GameShell {
 					continue;
 				}
 				var12 = var11.method2870();
-				if (field10916 != var12.field11715) {
+				if (sceneCycle != var12.field11715) {
 					continue;
 				}
 				if (var11.field1743 >= 0) {
@@ -7126,28 +7126,28 @@ public final class Client extends GameShell {
 						}
 					}
 				}
-				if (var12.field10404 < 0 || field10916 != var12.field11715 && localPlayerEntity.level != var12.level) {
+				if (var12.field10404 < 0 || sceneCycle != var12.field11715 && localPlayerEntity.level != var12.level) {
 					continue;
 				}
 			}
 			method16483(var12, var12.height(), false);
 			if (!(field10922[0] < 0.0F)) {
-				if (var12.method16512()) {
+				if (var12.showChat()) {
 					EntityChatLine var13 = var12.getChatLine();
-					if (var13 != null && field10865 < field11044) {
-						String var14 = var13.method8281();
+					if (var13 != null && chatCount < field11044) {
+						String var14 = var13.getText();
 						if (emojiList.isAutochat()) {
 							var14 = emojiList.substitute(var14);
 						}
-						field11047[field10865] = DefaultSprites.field10268.method14532(var14) / 2;
-						field11045[field10865] = (int) field10922[0];
-						field10982[field10865] = (int) field10922[1];
-						field11048[field10865] = var13;
-						field10865++;
+						chatWidth[chatCount] = DefaultSprites.b12FullMetrics.stringWidth(var14) / 2;
+						chatX[chatCount] = (int) field10922[0];
+						chatY[chatCount] = (int) field10922[1];
+						chats[chatCount] = var13;
+						chatCount++;
 					}
 				}
 				int var15 = (int) (field10922[1] + (float) arg1);
-				int var16 = var15 - DefaultSprites.field10268.field8562;
+				int var16 = var15 - DefaultSprites.b12FullMetrics.field8562;
 				boolean var17 = false;
 				if (!var12.field10452 && !var12.field10416.isEmpty()) {
 					for (Headbar var18 = (Headbar) var12.field10416.peekFront(); var18 != null; var18 = (Headbar) var12.field10416.prev()) {
@@ -7194,14 +7194,14 @@ public final class Client extends GameShell {
 									int var34 = var24 << 24;
 									int var35 = var34 | 0xFFFFFF;
 									var22.method1443(var33, var16, 0, var35, 1);
-									renderer.method2161(var33, var16, var30 + var33, var16 + var32);
+									renderer.setBounds(var33, var16, var30 + var33, var16 + var32);
 									var23.method1443(var33, var16, 0, var35, 1);
 								} else {
 									var22.method1439(var33, var16);
-									renderer.method2161(var33, var16, var30 + var33, var16 + var32);
+									renderer.setBounds(var33, var16, var30 + var33, var16 + var32);
 									var23.method1439(var33, var16);
 								}
-								renderer.method2168(arg0, arg1, arg0 + arg2, arg1 + arg3);
+								renderer.resetBounds(arg0, arg1, arg0 + arg2, arg1 + arg3);
 								var16 -= 2;
 								var17 = true;
 							}
@@ -7273,7 +7273,7 @@ public final class Client extends GameShell {
 					for (int var62 = 0; var62 < var61.length; var62++) {
 						HintArrow var63 = var61[var62];
 						if (var63 != null && var63.field745 == 1 && var63.field744 == field11036[var9 - var6]) {
-							Sprite var64 = DefaultSprites.field8323[var63.field751];
+							Sprite var64 = DefaultSprites.hintarrowSprites[var63.field751];
 							if (var64.getHeight() > var60) {
 								var60 = var64.getHeight();
 							}
@@ -7298,7 +7298,7 @@ public final class Client extends GameShell {
 					for (int var56 = 0; var56 < var55.length; var56++) {
 						HintArrow var57 = var55[var56];
 						if (var57 != null && var57.field745 == 10 && var57.field744 == var7[var9]) {
-							Sprite var58 = DefaultSprites.field8323[var57.field751];
+							Sprite var58 = DefaultSprites.hintarrowSprites[var57.field751];
 							if (var58.getHeight() > var54) {
 								var54 = var58.getHeight();
 							}
@@ -7421,14 +7421,14 @@ public final class Client extends GameShell {
 										var99 = field11113[0];
 									}
 								}
-								Font var104 = DefaultSprites.field8321;
-								Font var105 = DefaultSprites.field8321;
-								FontMetrics var106 = DefaultSprites.field6778;
-								FontMetrics var107 = DefaultSprites.field6778;
+								Font var104 = DefaultSprites.p11FullFont;
+								Font var105 = DefaultSprites.p11FullFont;
+								FontMetrics var106 = DefaultSprites.p11FullMetrics;
+								FontMetrics var107 = DefaultSprites.p11FullMetrics;
 								int var108 = var71.damagefont;
 								if (var108 >= 0) {
-									Font var109 = (Font) fontProvider.method6188(fontFactory, var108, true, var71.damagecolour_set);
-									FontMetrics var110 = fontProvider.method6163(fontFactory, var108);
+									Font var109 = (Font) fontProvider.getFont(fontFactory, var108, true, var71.damagecolour_set);
+									FontMetrics var110 = fontProvider.getFontMetrics(fontFactory, var108);
 									if (var109 != null && var110 != null) {
 										var104 = var109;
 										var106 = var110;
@@ -7437,8 +7437,8 @@ public final class Client extends GameShell {
 								if (var74 != null) {
 									int var111 = var74.damagefont;
 									if (var111 >= 0) {
-										Font var112 = (Font) fontProvider.method6188(fontFactory, var111, true, var74.damagecolour_set);
-										FontMetrics var113 = fontProvider.method6163(fontFactory, var111);
+										Font var112 = (Font) fontProvider.getFont(fontFactory, var111, true, var74.damagecolour_set);
+										FontMetrics var113 = fontProvider.getFontMetrics(fontFactory, var111);
 										if (var112 != null && var113 != null) {
 											var105 = var112;
 											var107 = var113;
@@ -7450,10 +7450,10 @@ public final class Client extends GameShell {
 								boolean var116 = false;
 								int var117 = 0;
 								String var118 = var71.method9252(var12.field10412[var68]);
-								int var119 = var106.method14532(var118);
+								int var119 = var106.stringWidth(var118);
 								if (var74 != null) {
 									var115 = var74.method9252(var12.field10445[var68]);
-									var117 = var107.method14532(var115);
+									var117 = var107.stringWidth(var115);
 								}
 								int var120 = 0;
 								int var121 = 0;
@@ -7548,7 +7548,7 @@ public final class Client extends GameShell {
 									if (var103 != null) {
 										var103.method1443(var71.graphicxof + (var129 + var139 - var87), var71.graphicyof + var140, 0, var145, 1);
 									}
-									var104.method2681(var118, var126 + var139, var141, var71.damagecolour | var144, 0);
+									var104.drawString(var118, var126 + var139, var141, var71.damagecolour | var144, 0);
 									if (var74 != null) {
 										if (var88 != null) {
 											var88.method1443(var130 + var139 - var96, var140, 0, var145, 1);
@@ -7564,7 +7564,7 @@ public final class Client extends GameShell {
 										if (var91 != null) {
 											var91.method1443(var74.graphicxof + (var133 + var139 - var99), var74.graphicyof + var140, 0, var145, 1);
 										}
-										var105.method2681(var115, var134 + var139, var142, var74.damagecolour | var144, 0);
+										var105.drawString(var115, var134 + var139, var142, var74.damagecolour | var144, 0);
 									}
 								} else {
 									if (var100 != null) {
@@ -7581,7 +7581,7 @@ public final class Client extends GameShell {
 									if (var103 != null) {
 										var103.method1439(var71.graphicxof + (var129 + var139 - var87), var71.graphicyof + var140);
 									}
-									var104.method2681(var118, var126 + var139, var141, var71.damagecolour | 0xFF000000, 0);
+									var104.drawString(var118, var126 + var139, var141, var71.damagecolour | 0xFF000000, 0);
 									if (var74 != null) {
 										if (var88 != null) {
 											var88.method1439(var130 + var139 - var96, var140);
@@ -7597,7 +7597,7 @@ public final class Client extends GameShell {
 										if (var91 != null) {
 											var91.method1439(var74.graphicxof + (var133 + var139 - var99), var74.graphicyof + var140);
 										}
-										var105.method2681(var115, var134 + var139, var142, var74.damagecolour | 0xFF000000, 0);
+										var105.drawString(var115, var134 + var139, var142, var74.damagecolour | 0xFF000000, 0);
 									}
 								}
 							}
@@ -7623,108 +7623,108 @@ public final class Client extends GameShell {
 			}
 			method6810(var152, var154, --var152.field10402, arg0, arg1, arg2, arg3, arg4, arg5);
 		}
-		int var155 = DefaultSprites.field10268.field8569 + DefaultSprites.field10268.field8562 + 2;
-		for (int var156 = 0; var156 < field10865; var156++) {
-			int var157 = field11045[var156];
-			int var158 = field10982[var156];
-			int var159 = field11047[var156];
-			boolean var160 = true;
-			while (var160) {
-				var160 = false;
-				for (int var161 = 0; var161 < var156; var161++) {
-					if (var158 + 2 > field10982[var161] - var155 && var158 - var155 < field10982[var161] + 2 && var157 - var159 < field11047[var161] + field11045[var161] && var157 + var159 > field11045[var161] - field11047[var161] && field10982[var161] - var155 < var158) {
-						var158 = field10982[var161] - var155;
-						var160 = true;
+		int chatHeight = DefaultSprites.b12FullMetrics.field8569 + DefaultSprites.b12FullMetrics.field8562 + 2;
+		for (int index = 0; index < chatCount; index++) {
+			int x = chatX[index];
+			int y = chatY[index];
+			int padding = chatWidth[index];
+			boolean sorting = true;
+			while (sorting) {
+				sorting = false;
+				for (int j = 0; j < index; j++) {
+					if (y + 2 > chatY[j] - chatHeight && y - chatHeight < chatY[j] + 2 && x - padding < chatWidth[j] + chatX[j] && x + padding > chatX[j] - chatWidth[j] && chatY[j] - chatHeight < y) {
+						y = chatY[j] - chatHeight;
+						sorting = true;
 					}
 				}
 			}
-			field10982[var156] = var158;
-			String var162 = field11048[var156].method8281();
+			chatY[index] = y;
+			String message = chats[index].getText();
 			if (emojiList.isAutochat()) {
-				var162 = emojiList.substitute(var162);
+				message = emojiList.substitute(message);
 			}
-			if (field10980 == 0) {
-				int var163 = 16776960;
-				int var164 = field11048[var156].method8284();
-				if (var164 < 6) {
-					var163 = field10956[var164];
+			if (chatEffects == 0) {
+				int colour = 16776960;
+				int chatColour = chats[index].getColour();
+				if (chatColour < 6) {
+					colour = chatColours[chatColour];
 				}
-				if (var164 == 6) {
-					var163 = field10916 % 20 < 10 ? 16711680 : 16776960;
+				if (chatColour == 6) {
+					colour = sceneCycle % 20 < 10 ? 16711680 : 16776960;
 				}
-				if (var164 == 7) {
-					var163 = field10916 % 20 < 10 ? 255 : 65535;
+				if (chatColour == 7) {
+					colour = sceneCycle % 20 < 10 ? 255 : 65535;
 				}
-				if (var164 == 8) {
-					var163 = field10916 % 20 < 10 ? 45056 : 8454016;
+				if (chatColour == 8) {
+					colour = sceneCycle % 20 < 10 ? 45056 : 8454016;
 				}
-				if (var164 == 9) {
-					int var165 = 150 - field11048[var156].method8285() * 150 / field11048[var156].method8280();
-					if (var165 < 50) {
-						var163 = var165 * 1280 + 16711680;
-					} else if (var165 < 100) {
-						var163 = 16776960 - (var165 - 50) * 327680;
-					} else if (var165 < 150) {
-						var163 = (var165 - 100) * 5 + 65280;
+				if (chatColour == 9) {
+					int delta = 150 - chats[index].getTime() * 150 / chats[index].method8280();
+					if (delta < 50) {
+						colour = delta * 1280 + 16711680;
+					} else if (delta < 100) {
+						colour = 16776960 - (delta - 50) * 327680;
+					} else if (delta < 150) {
+						colour = (delta - 100) * 5 + 65280;
 					}
 				}
-				if (var164 == 10) {
-					int var166 = 150 - field11048[var156].method8285() * 150 / field11048[var156].method8280();
-					if (var166 < 50) {
-						var163 = var166 * 5 + 16711680;
-					} else if (var166 < 100) {
-						var163 = 16711935 - (var166 - 50) * 327680;
-					} else if (var166 < 150) {
-						var163 = (var166 - 100) * 327680 + 255 - (var166 - 100) * 5;
+				if (chatColour == 10) {
+					int delta = 150 - chats[index].getTime() * 150 / chats[index].method8280();
+					if (delta < 50) {
+						colour = delta * 5 + 16711680;
+					} else if (delta < 100) {
+						colour = 16711935 - (delta - 50) * 327680;
+					} else if (delta < 150) {
+						colour = (delta - 100) * 327680 + 255 - (delta - 100) * 5;
 					}
 				}
-				if (var164 == 11) {
-					int var167 = 150 - field11048[var156].method8285() * 150 / field11048[var156].method8280();
-					if (var167 < 50) {
-						var163 = 16777215 - var167 * 327685;
-					} else if (var167 < 100) {
-						var163 = (var167 - 50) * 327685 + 65280;
-					} else if (var167 < 150) {
-						var163 = 16777215 - (var167 - 100) * 327680;
+				if (chatColour == 11) {
+					int delta = 150 - chats[index].getTime() * 150 / chats[index].method8280();
+					if (delta < 50) {
+						colour = 16777215 - delta * 327685;
+					} else if (delta < 100) {
+						colour = (delta - 50) * 327685 + 65280;
+					} else if (delta < 150) {
+						colour = 16777215 - (delta - 100) * 327680;
 					}
 				}
-				int var168 = var163 | 0xFF000000;
-				int var169 = field11048[var156].method8283();
-				if (var169 == 0) {
-					DefaultSprites.field10355.method2683(var162, arg0 + var157, arg1 + var158, var168, -16777216);
+				int var168 = colour | 0xFF000000;
+				int effect = chats[index].getEffect();
+				if (effect == 0) {
+					DefaultSprites.b12FullFont.drawStringCenter(message, arg0 + x, arg1 + y, var168, -16777216);
 				}
-				if (var169 == 1) {
-					DefaultSprites.field10355.method2710(var162, arg0 + var157, arg1 + var158, var168, -16777216, field10916);
+				if (effect == 1) {
+					DefaultSprites.b12FullFont.drawCenteredWave(message, arg0 + x, arg1 + y, var168, -16777216, sceneCycle);
 				}
-				if (var169 == 2) {
-					DefaultSprites.field10355.method2687(var162, arg0 + var157, arg1 + var158, var168, -16777216, field10916);
+				if (effect == 2) {
+					DefaultSprites.b12FullFont.method2687(message, arg0 + x, arg1 + y, var168, -16777216, sceneCycle);
 				}
-				if (var169 == 3) {
-					int var170 = 150 - field11048[var156].method8285() * 150 / field11048[var156].method8280();
-					DefaultSprites.field10355.method2730(var162, arg0 + var157, arg1 + var158, var168, -16777216, field10916, var170);
+				if (effect == 3) {
+					int var170 = 150 - chats[index].getTime() * 150 / chats[index].method8280();
+					DefaultSprites.b12FullFont.method2730(message, arg0 + x, arg1 + y, var168, -16777216, sceneCycle, var170);
 				}
-				if (var169 == 4) {
-					int var171 = 150 - field11048[var156].method8285() * 150 / field11048[var156].method8280();
-					int var172 = var171 * (DefaultSprites.field10268.method14532(var162) + 100) / 150;
-					renderer.method2161(arg0 + var157 - 50, arg1, arg0 + var157 + 50, arg1 + arg3);
-					DefaultSprites.field10355.method2681(var162, arg0 + var157 + 50 - var172, arg1 + var158, var168, -16777216);
-					renderer.method2168(arg0, arg1, arg0 + arg2, arg1 + arg3);
+				if (effect == 4) {
+					int delta = 150 - chats[index].getTime() * 150 / chats[index].method8280();
+					int var172 = delta * (DefaultSprites.b12FullMetrics.stringWidth(message) + 100) / 150;
+					renderer.setBounds(arg0 + x - 50, arg1, arg0 + x + 50, arg1 + arg3);
+					DefaultSprites.b12FullFont.drawString(message, arg0 + x + 50 - var172, arg1 + y, var168, -16777216);
+					renderer.resetBounds(arg0, arg1, arg0 + arg2, arg1 + arg3);
 				}
-				if (var169 == 5) {
-					int var173 = 150 - field11048[var156].method8285() * 150 / field11048[var156].method8280();
+				if (effect == 5) {
+					int delta = 150 - chats[index].getTime() * 150 / chats[index].method8280();
 					int var174 = 0;
-					if (var173 < 25) {
-						var174 = var173 - 25;
-					} else if (var173 > 125) {
-						var174 = var173 - 125;
+					if (delta < 25) {
+						var174 = delta - 25;
+					} else if (delta > 125) {
+						var174 = delta - 125;
 					}
-					int var175 = DefaultSprites.field10268.field8569 + DefaultSprites.field10268.field8562;
-					renderer.method2161(arg0, arg1 + var158 - var175 - 1, arg0 + arg2, arg1 + var158 + 5);
-					DefaultSprites.field10355.method2683(var162, arg0 + var157, arg1 + var158 + var174, var168, -16777216);
-					renderer.method2168(arg0, arg1, arg0 + arg2, arg1 + arg3);
+					int var175 = DefaultSprites.b12FullMetrics.field8569 + DefaultSprites.b12FullMetrics.field8562;
+					renderer.setBounds(arg0, arg1 + y - var175 - 1, arg0 + arg2, arg1 + y + 5);
+					DefaultSprites.b12FullFont.drawStringCenter(message, arg0 + x, arg1 + y + var174, var168, -16777216);
+					renderer.resetBounds(arg0, arg1, arg0 + arg2, arg1 + arg3);
 				}
 			} else {
-				DefaultSprites.field10355.method2683(var162, arg0 + var157, arg1 + var158, -256, -16777216);
+				DefaultSprites.b12FullFont.drawStringCenter(message, arg0 + x, arg1 + y, -256, -16777216);
 			}
 		}
 	}
@@ -7769,11 +7769,11 @@ public final class Client extends GameShell {
 		int var4 = field10866;
 		int var5 = field10924;
 		if (crossMode == 1) {
-			Sprite var6 = DefaultSprites.field11793[crossCycle / 100];
+			Sprite var6 = DefaultSprites.crossSprites[crossCycle / 100];
 			var6.method1439(var4 - 8, var5 - 8);
 		}
 		if (crossMode == 2) {
-			Sprite var7 = DefaultSprites.field11793[crossCycle / 100 + 4];
+			Sprite var7 = DefaultSprites.crossSprites[crossCycle / 100 + 4];
 			var7.method1439(var4 - 8, var5 - 8);
 		}
 	}
@@ -8885,9 +8885,9 @@ public final class Client extends GameShell {
 						var228 = var223 ? 17 : 2;
 					}
 					if (var222.field3602 == -1) {
-						ChatHistory.method15054(var228, 0, var220.method19115(true), var220.method19116(false), var220.name, var227, null, var225, var222);
+						ChatHistory.method15054(var228, 0, var220.method19115(true), var220.getName(false), var220.name, var227, null, var225, var222);
 					} else {
-						ChatHistory.method15054(var228, 0, TextUtil.imgTag(var222.field3602) + var220.method19115(true), TextUtil.imgTag(var222.field3602) + var220.method19116(false), var220.name, var227, null, var225, var222);
+						ChatHistory.method15054(var228, 0, TextUtil.imgTag(var222.field3602) + var220.method19115(true), TextUtil.imgTag(var222.field3602) + var220.getName(false), var220.name, var227, null, var225, var222);
 					}
 				}
 			}
@@ -9476,7 +9476,7 @@ public final class Client extends GameShell {
 			HintArrow var377 = new HintArrow();
 			var377.field745 = var376;
 			var377.field751 = in.g1();
-			if (var377.field751 >= 0 && var377.field751 < DefaultSprites.field8323.length) {
+			if (var377.field751 >= 0 && var377.field751 < DefaultSprites.hintarrowSprites.length) {
 				if (var377.field745 == 1 || var377.field745 == 10) {
 					var377.field744 = in.g2();
 					var377.field743 = in.g2();
@@ -12106,7 +12106,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("pk.ja([Lhf;IIIIIIIIZI)V")
 	public static final void method6797(Component[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9) {
-		renderer.method2168(arg2, arg3, arg4, arg5);
+		renderer.resetBounds(arg2, arg3, arg4, arg5);
 		for (int var10 = 0; var10 < arg0.length; var10++) {
 			Component var11 = arg0[var10];
 			if (var11 != null && (var11.field2200 == arg1 || arg1 == -1412584499 && field10989 == var11)) {
@@ -12194,7 +12194,7 @@ public final class Client extends GameShell {
 									method2104(var13, var14, var11.field2196, var11.field2197, Component.field2161 == var11.clientcode);
 									method9547(var12, var20, var21, var22, var23, var13, var14);
 									renderer.method2263();
-									renderer.method2168(arg2, arg3, arg4, arg5);
+									renderer.resetBounds(arg2, arg3, arg4, arg5);
 									field11072[var12] = true;
 								}
 								continue;
@@ -12202,7 +12202,7 @@ public final class Client extends GameShell {
 							if (Component.field2171 == var11.clientcode && sceneState == 3) {
 								if (var11.field2184 != 5 || var11.method3970(renderer) != null) {
 									Minimap.method328(renderer, var11, var13, var14);
-									renderer.method2168(arg2, arg3, arg4, arg5);
+									renderer.resetBounds(arg2, arg3, arg4, arg5);
 								}
 								continue;
 							}
@@ -12218,20 +12218,20 @@ public final class Client extends GameShell {
 								if (var11.method3970(renderer) != null) {
 									renderer.method2202();
 									method8887(var11, var13, var14);
-									renderer.method2168(arg2, arg3, arg4, arg5);
+									renderer.resetBounds(arg2, arg3, arg4, arg5);
 								}
 								continue;
 							}
 							if (Component.WORLD_MAP == var11.clientcode) {
 								ClientWorldMap.method7008(renderer, var13, var14, var11.field2196, var11.field2197);
 								field11072[var12] = true;
-								renderer.method2168(arg2, arg3, arg4, arg5);
+								renderer.resetBounds(arg2, arg3, arg4, arg5);
 								continue;
 							}
 							if (Component.WORLD_MAP_OVERVIEW == var11.clientcode) {
 								ClientWorldMap.method3549(renderer, var13, var14, var11.field2196, var11.field2197);
 								field11072[var12] = true;
-								renderer.method2168(arg2, arg3, arg4, arg5);
+								renderer.resetBounds(arg2, arg3, arg4, arg5);
 								continue;
 							}
 							if (Component.DEBUG == var11.clientcode) {
@@ -12308,7 +12308,7 @@ public final class Client extends GameShell {
 									}
 								}
 							}
-							renderer.method2168(arg2, arg3, arg4, arg5);
+							renderer.resetBounds(arg2, arg3, arg4, arg5);
 						}
 						if (field10911[var12] || field10997 > 1) {
 							if (var11.field2184 == 3) {
@@ -12345,7 +12345,7 @@ public final class Client extends GameShell {
 											var43 = var11.field2210;
 										}
 										if (field10988) {
-											renderer.method2161(var13, var14, var11.field2196 + var13, var11.field2197 + var14);
+											renderer.setBounds(var13, var14, var11.field2196 + var13, var11.field2197 + var14);
 										}
 										int var46 = var41 << 24;
 										if (var11.field2267) {
@@ -12354,7 +12354,7 @@ public final class Client extends GameShell {
 											var42.method2685(var44, var13, var14, var11.field2196, var11.field2197, var46 | var43, var11.field2265 ? var46 : -1, var11.field2223, var11.field2264, var11.field2229, var11.field2236, DefaultSprites.field10302, null, null, 0, 0);
 										}
 										if (field10988) {
-											renderer.method2168(arg2, arg3, arg4, arg5);
+											renderer.resetBounds(arg2, arg3, arg4, arg5);
 										}
 									} else if (Component.field2338) {
 										method4616(var11);
@@ -12397,7 +12397,7 @@ public final class Client extends GameShell {
 											int var54 = var53 | var52 << 24;
 											boolean var55 = var54 != -1;
 											if (var11.field2217) {
-												renderer.method2161(var13, var14, var11.field2196 + var13, var11.field2197 + var14);
+												renderer.setBounds(var13, var14, var11.field2196 + var13, var11.field2197 + var14);
 												if (var11.field2216 != 0) {
 													int var56 = (var11.field2196 + (var50 - 1)) / var50;
 													int var57 = (var11.field2197 + (var51 - 1)) / var51;
@@ -12415,7 +12415,7 @@ public final class Client extends GameShell {
 												} else {
 													var48.method1448(var13, var14, var11.field2196, var11.field2197);
 												}
-												renderer.method2168(arg2, arg3, arg4, arg5);
+												renderer.resetBounds(arg2, arg3, arg4, arg5);
 											} else if (var55) {
 												if (var11.field2216 != 0) {
 													var48.method1452((float) var11.field2196 / 2.0F + (float) var13, (float) var11.field2197 / 2.0F + (float) var14, var11.field2196 * 4096 / var50, var11.field2216, 0, var54, 1);
@@ -12568,9 +12568,9 @@ public final class Client extends GameShell {
 									var11.method3951(renderer, var60, field10875, loopCycle);
 									renderer.method2263();
 									renderer.method2170(true);
-									renderer.method2168(arg2, arg3, arg4, arg5);
+									renderer.resetBounds(arg2, arg3, arg4, arg5);
 									if (field10988) {
-										renderer.method2161(var13, var14, var11.field2196 + var13, var11.field2197 + var14);
+										renderer.setBounds(var13, var14, var11.field2196 + var13, var11.field2197 + var14);
 									}
 									if (var11.field2250) {
 										world.method7816().setLighting((float) var11.field2248 / 256.0F, (float) var11.field2251 / 256.0F, (float) var11.field2255 / 256.0F, var11.field2257, var11.field2345, var11.field2252, var11.field2302, var11.field2258);
@@ -12582,11 +12582,11 @@ public final class Client extends GameShell {
 										renderer.drawParticles(var11.field2254.method9939());
 									}
 									if (field10988) {
-										renderer.method2168(arg2, arg3, arg4, arg5);
+										renderer.resetBounds(arg2, arg3, arg4, arg5);
 									}
 									renderer.method2170(false);
 									renderer.resetClip();
-									renderer.method2168(arg2, arg3, arg4, arg5);
+									renderer.resetBounds(arg2, arg3, arg4, arg5);
 									if (var11.field2250) {
 										world.method7816().setLightingInterface();
 									}
@@ -12634,7 +12634,7 @@ public final class Client extends GameShell {
 		if (fps < 20) {
 			var5 = -65536;
 		}
-		DefaultSprites.fontP12Full.method2682("Fps:" + fps + " (" + fpsAverage + " ms)", var3, var4, var5, -1);
+		DefaultSprites.p12FullFont.method2682("Fps:" + fps + " (" + fpsAverage + " ms)", var3, var4, var5, -1);
 		var4 += 15;
 		Runtime var6 = Runtime.getRuntime();
 		long var7 = var6.totalMemory() / 1024L;
@@ -12643,7 +12643,7 @@ public final class Client extends GameShell {
 		if (var9 > 262144L) {
 			var11 = -65536;
 		}
-		DefaultSprites.fontP12Full.method2682("Mem:" + var9 + "/" + var7 + "k", var3, var4, var11, -1);
+		DefaultSprites.p12FullFont.method2682("Mem:" + var9 + "/" + var7 + "k", var3, var4, var11, -1);
 		var4 += 15;
 		long var12 = gameConnection.pingProvider.getPingedAddress();
 		String var14 = "N/A";
@@ -12653,7 +12653,7 @@ public final class Client extends GameShell {
 				var14 = TextUtil.method596(16711680) + var14 + TextUtil.method596(16776960);
 			}
 		}
-		DefaultSprites.fontP12Full.method2682("Game: In:" + gameConnection.inBytesPerSecond + "B/s " + "Out:" + gameConnection.outBytesPerSecond + "B/s " + "Ping:" + var14, var3, var4, -256, -1);
+		DefaultSprites.p12FullFont.method2682("Game: In:" + gameConnection.inBytesPerSecond + "B/s " + "Out:" + gameConnection.outBytesPerSecond + "B/s " + "Ping:" + var14, var3, var4, -256, -1);
 		var4 += 15;
 		long var15 = lobbyConnection.pingProvider.getPingedAddress();
 		String var17 = "N/A";
@@ -12663,10 +12663,10 @@ public final class Client extends GameShell {
 				var17 = TextUtil.method596(16711680) + var17 + TextUtil.method596(16776960);
 			}
 		}
-		DefaultSprites.fontP12Full.method2682("Lobby: In:" + lobbyConnection.inBytesPerSecond + "B/s " + "Out:" + lobbyConnection.outBytesPerSecond + "B/s " + "Ping:" + var17, var3, var4, -256, -1);
+		DefaultSprites.p12FullFont.method2682("Lobby: In:" + lobbyConnection.inBytesPerSecond + "B/s " + "Out:" + lobbyConnection.outBytesPerSecond + "B/s " + "Ping:" + var17, var3, var4, -256, -1);
 		var4 += 15;
 		int var18 = renderer.method2520() / 1024;
-		DefaultSprites.fontP12Full.method2682("Offheap:" + var18 + "k", var3, var4, var18 > 65536 ? -65536 : -256, -1);
+		DefaultSprites.p12FullFont.method2682("Offheap:" + var18 + "k", var3, var4, var18 > 65536 ? -65536 : -256, -1);
 		var4 += 15;
 		int var19 = 0;
 		int var20 = 0;
@@ -12681,7 +12681,7 @@ public final class Client extends GameShell {
 		long var23 = var19 == 0 ? 0L : (long) var21 * 100L / (long) var19;
 		long var25 = var19 == 0 ? 0L : (long) var20 * 10000L / (long) var19;
 		String var27 = "Cache:" + StringComparator.localised(var25, 2, true, Language.EN) + "% (" + var23 + "%)";
-		DefaultSprites.field8321.method2682(var27, var3, var4, -256, -1);
+		DefaultSprites.p11FullFont.method2682(var27, var3, var4, -256, -1);
 		var4 += 12;
 	}
 
@@ -13891,7 +13891,7 @@ public final class Client extends GameShell {
 			field10968 = var2;
 		}
 		if (var1 == 6) {
-			field10980 = var2;
+			chatEffects = var2;
 		}
 	}
 
@@ -14011,7 +14011,7 @@ public final class Client extends GameShell {
 		if (var3 == null) {
 			return;
 		}
-		renderer.method2168(arg1, arg2, arg0.field2196 + arg1, arg0.field2197 + arg2);
+		renderer.resetBounds(arg1, arg2, arg0.field2196 + arg1, arg0.field2197 + arg2);
 		if (Minimap.field724 >= 3) {
 			renderer.method2206(-16777216, var3.field2147, arg1, arg2);
 			return;
@@ -14024,7 +14024,7 @@ public final class Client extends GameShell {
 		}
 		int var5 = minimapAnticheatAngle * 2 + var4 & 0x3FFF;
 		int var6 = var5 << 2;
-		DefaultSprites.field7207.method1455((float) arg0.field2196 / 2.0F + (float) arg1, (float) arg0.field2197 / 2.0F + (float) arg2, 4226, var6, var3.field2147, arg1, arg2);
+		DefaultSprites.compassSprites.method1455((float) arg0.field2196 / 2.0F + (float) arg1, (float) arg0.field2197 / 2.0F + (float) arg2, 4226, var6, var3.field2147, arg1, arg2);
 	}
 
 	@ObfuscatedName("qa.kt(Ljava/lang/String;I)I")

@@ -89,22 +89,22 @@ public class GraphicsDefaults {
 	public int invMillionColor = 0x00FF80;
 
 	@ObfuscatedName("ws.ai")
-	public int field7733 = -1;
+	public int p11_full = -1;
 
 	@ObfuscatedName("ws.aw")
-	public int field7746 = -1;
+	public int p12_full = -1;
 
 	@ObfuscatedName("ws.as")
-	public int field7747 = -1;
+	public int b12_full = -1;
 
 	@ObfuscatedName("ws.at")
-	public int field7748 = -1;
+	public int hintarrows = -1;
 
 	@ObfuscatedName("ws.ad")
 	public int field7715 = -1;
 
 	@ObfuscatedName("ws.am")
-	public int field7750 = -1;
+	public int mapflag = -1;
 
 	@ObfuscatedName("ws.au")
 	public int field7751;
@@ -113,10 +113,10 @@ public class GraphicsDefaults {
 	public int field7752;
 
 	@ObfuscatedName("ws.ap")
-	public int field7753 = -1;
+	public int cross = -1;
 
 	@ObfuscatedName("ws.aq")
-	public int field7732 = -1;
+	public int mapdots = -1;
 
 	@ObfuscatedName("ws.ax")
 	public int field7755 = -1;
@@ -125,7 +125,7 @@ public class GraphicsDefaults {
 	public int field7756 = -1;
 
 	@ObfuscatedName("ws.ao")
-	public int field7720 = -1;
+	public int compass = -1;
 
 	@ObfuscatedName("ws.aj")
 	public int field7721 = -1;
@@ -233,19 +233,19 @@ public class GraphicsDefaults {
 				} else if (var3 == 21) {
 					this.field7730 = buf.g1();
 				} else if (var3 == 22) {
-					this.field7733 = buf.gSmart2or4null();
-					this.field7746 = buf.gSmart2or4null();
-					this.field7747 = buf.gSmart2or4null();
-					this.field7748 = buf.gSmart2or4null();
+					this.p11_full = buf.gSmart2or4null();
+					this.p12_full = buf.gSmart2or4null();
+					this.b12_full = buf.gSmart2or4null();
+					this.hintarrows = buf.gSmart2or4null();
 					this.field7715 = buf.gSmart2or4null();
-					this.field7750 = buf.gSmart2or4null();
+					this.mapflag = buf.gSmart2or4null();
 					this.field7751 = buf.g1b();
 					this.field7752 = buf.g1b();
-					this.field7753 = buf.gSmart2or4null();
-					this.field7732 = buf.gSmart2or4null();
+					this.cross = buf.gSmart2or4null();
+					this.mapdots = buf.gSmart2or4null();
 					this.field7755 = buf.gSmart2or4null();
 					this.field7756 = buf.gSmart2or4null();
-					this.field7720 = buf.gSmart2or4null();
+					this.compass = buf.gSmart2or4null();
 					this.field7721 = buf.gSmart2or4null();
 					this.field7741 = buf.gSmart2or4null();
 				} else if (var3 == 23) {

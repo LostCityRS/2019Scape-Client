@@ -9,7 +9,7 @@ import deob.ObfuscatedName;
 public interface CameraTrackable {
 
 	@ObfuscatedName("jn.f(B)Lox;")
-	Vector3 method4666();
+	Vector3 createVector3();
 
 	@ObfuscatedName("jn.m(B)Lakt;")
 	CoordFine method4667();
@@ -18,8 +18,8 @@ public interface CameraTrackable {
 	Quaternion method4668();
 
 	@ObfuscatedName("jn.n(I)I")
-	int method4670();
+	int getIndex();
 
 	@ObfuscatedName("jn.e(I)Ljl;")
-	CameraTrackableType method4675();
+	CameraTrackableType getCameraTrackableType();
 }

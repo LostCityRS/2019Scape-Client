@@ -63,7 +63,7 @@ public class LoginRelated1 implements LoadingScreenElement {
 		if (this.field3039.field3168 != 1 && MonotonicTime.get() - this.field3040 > 10000L) {
 			var4 = var4 + " (" + Loading.field593.method4855().field2920 + ")";
 		}
-		this.field3041.method2683(var4, var2, var3, this.field3039.field3176, -1);
+		this.field3041.drawStringCenter(var4, var2, var3, this.field3039.field3176, -1);
 	}
 
 	@ObfuscatedName("kg.m(I)Z")

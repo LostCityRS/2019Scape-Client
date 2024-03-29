@@ -48,7 +48,7 @@ public abstract class Font {
 	}
 
 	@ObfuscatedName("eu.e(Ljava/lang/String;IIIIB)V")
-	public void method2681(String arg0, int arg1, int arg2, int arg3, int arg4) {
+	public void drawString(String arg0, int arg1, int arg2, int arg3, int arg4) {
 		if (arg0 != null) {
 			this.method2686(arg3, arg4);
 			this.method2694(arg0, arg1, arg2, null, null, null, 0, 0);
@@ -59,15 +59,15 @@ public abstract class Font {
 	public void method2682(String arg0, int arg1, int arg2, int arg3, int arg4) {
 		if (arg0 != null) {
 			this.method2686(arg3, arg4);
-			this.method2694(arg0, arg1 - this.field1667.method14532(arg0), arg2, null, null, null, 0, 0);
+			this.method2694(arg0, arg1 - this.field1667.stringWidth(arg0), arg2, null, null, null, 0, 0);
 		}
 	}
 
 	@ObfuscatedName("eu.m(Ljava/lang/String;IIIII)V")
-	public void method2683(String arg0, int arg1, int arg2, int arg3, int arg4) {
+	public void drawStringCenter(String arg0, int arg1, int arg2, int arg3, int arg4) {
 		if (arg0 != null) {
 			this.method2686(arg3, arg4);
-			this.method2694(arg0, arg1 - this.field1667.method14532(arg0) / 2, arg2, null, null, null, 0, 0);
+			this.method2694(arg0, arg1 - this.field1667.stringWidth(arg0) / 2, arg2, null, null, null, 0, 0);
 		}
 	}
 
@@ -124,9 +124,9 @@ public abstract class Font {
 			if (arg7 == 0) {
 				this.method2694(field1679[var21], arg1, var19, arg11, arg12, arg13, arg14, arg15);
 			} else if (arg7 == 1) {
-				this.method2694(field1679[var21], arg1 + (arg3 - this.field1667.method14532(field1679[var21])) / 2, var19, arg11, arg12, arg13, arg14, arg15);
+				this.method2694(field1679[var21], arg1 + (arg3 - this.field1667.stringWidth(field1679[var21])) / 2, var19, arg11, arg12, arg13, arg14, arg15);
 			} else if (arg7 == 2) {
-				this.method2694(field1679[var21], arg1 + arg3 - this.field1667.method14532(field1679[var21]), var19, arg11, arg12, arg13, arg14, arg15);
+				this.method2694(field1679[var21], arg1 + arg3 - this.field1667.stringWidth(field1679[var21]), var19, arg11, arg12, arg13, arg14, arg15);
 			} else if (var18 - 1 == var21) {
 				this.method2694(field1679[var21], arg1, var19, arg11, arg12, arg13, arg14, arg15);
 			} else {
@@ -140,7 +140,7 @@ public abstract class Font {
 	}
 
 	@ObfuscatedName("eu.w(Ljava/lang/String;IIIIII)V")
-	public void method2710(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void drawCenteredWave(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		if (arg0 == null) {
 			return;
 		}
@@ -150,7 +150,7 @@ public abstract class Font {
 		for (int var9 = 0; var9 < var7; var9++) {
 			var8[var9] = (int) (Math.sin((double) arg5 / 5.0D + (double) var9 / 2.0D) * 5.0D);
 		}
-		this.method2695(arg0, arg1 - this.field1667.method14532(arg0) / 2, arg2, null, null, null, var8);
+		this.method2695(arg0, arg1 - this.field1667.stringWidth(arg0) / 2, arg2, null, null, null, var8);
 	}
 
 	@ObfuscatedName("eu.l(Ljava/lang/String;IIIIIB)V")
@@ -166,7 +166,7 @@ public abstract class Font {
 			var8[var10] = (int) (Math.sin((double) arg5 / 5.0D + (double) var10 / 5.0D) * 5.0D);
 			var9[var10] = (int) (Math.sin((double) arg5 / 5.0D + (double) var10 / 3.0D) * 5.0D);
 		}
-		this.method2695(arg0, arg1 - this.field1667.method14532(arg0) / 2, arg2, null, null, var8, var9);
+		this.method2695(arg0, arg1 - this.field1667.stringWidth(arg0) / 2, arg2, null, null, var8, var9);
 	}
 
 	@ObfuscatedName("eu.u(Ljava/lang/String;IIIIIII)V")
@@ -184,7 +184,7 @@ public abstract class Font {
 		for (int var12 = 0; var12 < var10; var12++) {
 			var11[var12] = (int) (Math.sin((double) arg5 / 1.0D + (double) var12 / 1.5D) * var8);
 		}
-		this.method2695(arg0, arg1 - this.field1667.method14532(arg0) / 2, arg2, null, null, null, var11);
+		this.method2695(arg0, arg1 - this.field1667.stringWidth(arg0) / 2, arg2, null, null, null, var11);
 	}
 
 	@ObfuscatedName("eu.z(Ljava/lang/String;IIIILjava/util/Random;I[Lcm;[IB)I")
@@ -234,16 +234,16 @@ public abstract class Font {
 			var21 = arg2 + arg4 - this.field1667.field8569;
 		}
 		if (arg7 == 1) {
-			var22 = this.field1667.method14532(arg0) + var18;
+			var22 = this.field1667.stringWidth(arg0) + var18;
 			var20 = (arg3 - var22) / 2 + arg1;
 		} else if (arg7 == 2) {
-			var22 = this.field1667.method14532(arg0) + var18;
+			var22 = this.field1667.stringWidth(arg0) + var18;
 			var20 = arg3 - var22 + arg1;
 		}
 		this.method2695(arg0, var20, var21, arg12, arg13, var17, null);
 		if (arg11 != null) {
 			if (var22 == -1) {
-				var22 = this.field1667.method14532(arg0) + var18;
+				var22 = this.field1667.stringWidth(arg0) + var18;
 			}
 			arg11[0] = var20;
 			arg11[1] = var21 - this.field1667.field8562;
@@ -322,7 +322,7 @@ public abstract class Font {
 			}
 		}
 		if (var3 > 0) {
-			field1677 = (arg1 - this.field1667.method14532(arg0) << 8) / var3;
+			field1677 = (arg1 - this.field1667.stringWidth(arg0) << 8) / var3;
 		}
 	}
 
@@ -384,7 +384,7 @@ public abstract class Font {
 										var23 = StringTools.parseInt(var15.substring(7, var22));
 										var21 = StringTools.parseInt(var15.substring(var22 + 1));
 									}
-									Sprite[] var24 = this.field1667.field8575.method6185(this.field1666, var23);
+									Sprite[] var24 = this.field1667.field8575.getIconSprites(this.field1666, var23);
 									if (var24 != null) {
 										int var25 = Math.min(var24[var21].method1436(), this.field1667.field8569 + this.field1667.field8562);
 										if ((field1674 & -16777216) == -16777216) {
@@ -519,7 +519,7 @@ public abstract class Font {
 										var27 = arg6[var11];
 									}
 									var11++;
-									Sprite[] var28 = this.field1667.field8575.method6185(this.field1666, var25);
+									Sprite[] var28 = this.field1667.field8575.getIconSprites(this.field1666, var25);
 									if (var28 != null) {
 										int var29 = Math.min(var28[var23].method1436(), this.field1667.field8569 + this.field1667.field8562);
 										var28[var23].method1443(arg1 + var26, this.field1667.field8566 + var8 + 3 - var29 + var27, 1, -1, 1);

@@ -216,12 +216,12 @@ public class FontMetrics {
 	}
 
 	@ObfuscatedName("aac.p(Ljava/lang/String;I)I")
-	public int method14532(String arg0) {
-		return this.method14533(arg0, null);
+	public int stringWidth(String arg0) {
+		return this.stringWidth(arg0, null);
 	}
 
 	@ObfuscatedName("aac.d(Ljava/lang/String;[Laay;B)I")
-	public int method14533(String arg0, FontGlyph[] arg1) {
+	public int stringWidth(String arg0, FontGlyph[] arg1) {
 		if (arg0 == null) {
 			return 0;
 		}
@@ -272,7 +272,7 @@ public class FontMetrics {
 									} else {
 										var14 = StringTools.parseInt(var9.substring(7, var13));
 									}
-									var5 += this.field8575.method6160(var14);
+									var5 += this.field8575.getIconWidth(var14);
 									var4 = -1;
 								} catch (Exception var16) {
 								}
@@ -296,10 +296,10 @@ public class FontMetrics {
 
 	@ObfuscatedName("aac.c(Ljava/lang/String;I[Laay;I)Ljava/lang/String;")
 	public String method14534(String arg0, int arg1, FontGlyph[] arg2) {
-		if (this.method14533(arg0, arg2) <= arg1) {
+		if (this.stringWidth(arg0, arg2) <= arg1) {
 			return arg0;
 		}
-		int var4 = arg1 - this.method14533("...", null);
+		int var4 = arg1 - this.stringWidth("...", null);
 		int var5 = -1;
 		int var6 = -1;
 		int var7 = 0;
@@ -352,7 +352,7 @@ public class FontMetrics {
 									} else {
 										var17 = StringTools.parseInt(var12.substring(7, var16));
 									}
-									var7 += this.field8575.method6160(var17);
+									var7 += this.field8575.getIconWidth(var17);
 									var6 = -1;
 									if (var7 > var4) {
 										return var9 + "...";
@@ -503,7 +503,7 @@ public class FontMetrics {
 							} else {
 								var24 = StringTools.parseInt(var19.substring(7, var23));
 							}
-							int var10000 = var17 + this.field8575.method6160(var24);
+							int var10000 = var17 + this.field8575.getIconWidth(var24);
 							var12 = -1;
 						} catch (Exception var28) {
 						}
@@ -563,7 +563,7 @@ public class FontMetrics {
 		int var4 = this.method14535(arg0, new int[] { arg1 }, field8561, arg2);
 		int var5 = 0;
 		for (int var6 = 0; var6 < var4; var6++) {
-			int var7 = this.method14533(field8561[var6], arg2);
+			int var7 = this.stringWidth(field8561[var6], arg2);
 			if (var7 > var5) {
 				var5 = var7;
 			}
@@ -614,7 +614,7 @@ public class FontMetrics {
 					int var10000 = var7 + var9;
 					var8++;
 				}
-				int var12 = this.method14533(var10, arg4);
+				int var12 = this.stringWidth(var10, arg4);
 				int var13 = this.field8562 + arg2 * var8;
 				return new Point(var12, var13);
 			}
@@ -643,7 +643,7 @@ public class FontMetrics {
 		int var10 = 0;
 		int var11 = 0;
 		int var12;
-		for (var12 = 0; var12 < arg3 && var10 < var9.length(); var12 = this.method14533(var9.substring(0, var10), arg5)) {
+		for (var12 = 0; var12 < arg3 && var10 < var9.length(); var12 = this.stringWidth(var9.substring(0, var10), arg5)) {
 			var11 = var12;
 			var10++;
 		}

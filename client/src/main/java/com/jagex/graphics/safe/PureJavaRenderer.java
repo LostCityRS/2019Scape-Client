@@ -629,7 +629,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bi(IIII)V")
-	public void method2168(int arg0, int arg1, int arg2, int arg3) {
+	public void resetBounds(int arg0, int arg1, int arg2, int arg3) {
 		if (arg0 < 0) {
 			arg0 = 0;
 		}
@@ -650,7 +650,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bn(IIII)V")
-	public void method2161(int arg0, int arg1, int arg2, int arg3) {
+	public void setBounds(int arg0, int arg1, int arg2, int arg3) {
 		if (this.clipMinX < arg0) {
 			this.clipMinX = arg0;
 		}

@@ -286,8 +286,8 @@ public class ClientWorldMap extends WorldMap {
 				}
 				for (int var12 = 0; var12 < 5; var12++) {
 					if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
-						field11659[var11][var12] = (Font) Client.fontProvider.method6188(Client.fontFactory, WorldMap.field6792.field7697[var11][var12], true, true);
-						field11660[var11][var12] = Client.fontProvider.method6163(Client.fontFactory, WorldMap.field6792.field7697[var11][var12]);
+						field11659[var11][var12] = (Font) Client.fontProvider.getFont(Client.fontFactory, WorldMap.field6792.field7697[var11][var12], true, true);
+						field11660[var11][var12] = Client.fontProvider.getFontMetrics(Client.fontFactory, WorldMap.field6792.field7697[var11][var12]);
 						if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
 							return;
 						}
@@ -386,7 +386,7 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("pf.dh(Ldh;IIIIS)V")
 	public static void method7008(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
-		arg0.method2168(arg1, arg2, arg1 + arg3, arg2 + arg4);
+		arg0.resetBounds(arg1, arg2, arg1 + arg3, arg2 + arg4);
 		if (loading < 100) {
 			byte var5 = 20;
 			int var6 = arg3 / 2 + arg1;
@@ -394,7 +394,7 @@ public class ClientWorldMap extends WorldMap {
 			arg0.fillRectangle(arg1, arg2, arg3, arg4, -16777216, 0);
 			arg0.drawRectangle(var6 - 152, var7, 304, 34, Client.field10825[Client.field10773].getRGB(), 0);
 			arg0.fillRectangle(var6 - 150, var7 + 2, loading * 3, 30, Client.field10824[Client.field10773].getRGB(), 0);
-			DefaultSprites.field10355.method2683(LocalisedText.LOADINGDOTDOTDOT.forLang(Client.language), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
+			DefaultSprites.b12FullFont.drawStringCenter(LocalisedText.LOADINGDOTDOTDOT.forLang(Client.language), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
 			return;
 		}
 		int var8 = field11443 - (int) ((float) arg3 / WorldMap.field6803);
@@ -413,7 +413,7 @@ public class ClientWorldMap extends WorldMap {
 		if (Client.field10794) {
 			int var13 = arg1 + arg3 - 5;
 			int var14 = arg2 + arg4 - 8;
-			DefaultSprites.fontP12Full.method2682("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
+			DefaultSprites.p12FullFont.method2682("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
 			int var18 = var14 - 15;
 			Runtime var15 = Runtime.getRuntime();
 			int var16 = (int) ((var15.totalMemory() - var15.freeMemory()) / 1024L);
@@ -421,7 +421,7 @@ public class ClientWorldMap extends WorldMap {
 			if (var16 > 65536) {
 				var17 = 16711680;
 			}
-			DefaultSprites.fontP12Full.method2682("Mem:" + var16 + "k", var13, var18, var17, -1);
+			DefaultSprites.p12FullFont.method2682("Mem:" + var16 + "k", var13, var18, var17, -1);
 			var14 = var18 - 15;
 		}
 		field6831.clean(5);
@@ -826,7 +826,7 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("gc.eu(Ldh;IIIIB)V")
 	public static final void method3549(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
-		arg0.method2168(arg1, arg2, arg1 + arg3, arg2 + arg4);
+		arg0.resetBounds(arg1, arg2, arg1 + arg3, arg2 + arg4);
 		arg0.method2301(arg1, arg2, arg3, arg4, -16777216);
 		if (loading < 100) {
 			return;

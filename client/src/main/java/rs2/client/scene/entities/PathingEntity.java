@@ -76,7 +76,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public int field10408;
 
 	@ObfuscatedName("ahm.ag")
-	public EntityChatLine field10409;
+	public EntityChatLine currentChatLine;
 
 	@ObfuscatedName("ahm.ah")
 	public byte field10410;
@@ -903,24 +903,24 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	}
 
 	@ObfuscatedName("ahm.cl(B)V")
-	public void method16520() {
-		if (this.field10409 != null && this.field10409.text != null) {
-			this.field10409.field6683--;
-			if (this.field10409.field6683 == 0) {
-				this.field10409.text = null;
+	public void removeChatLine() {
+		if (this.currentChatLine != null && this.currentChatLine.text != null) {
+			this.currentChatLine.time--;
+			if (this.currentChatLine.time == 0) {
+				this.currentChatLine.text = null;
 			}
 		}
 	}
 
 	@ObfuscatedName("ahm.cu(Ljava/lang/String;IIII)V")
-	public void method16510(String arg0, int arg1, int arg2, int arg3) {
-		if (this.field10409 == null) {
-			this.field10409 = new EntityChatLine();
+	public void setChatLine(String text, int color, int effect, int time) {
+		if (this.currentChatLine == null) {
+			this.currentChatLine = new EntityChatLine();
 		}
-		this.field10409.text = arg0;
-		this.field10409.field6686 = arg1;
-		this.field10409.field6684 = arg2;
-		this.field10409.field6683 = this.field10409.field6685 = arg3;
+		this.currentChatLine.text = text;
+		this.currentChatLine.colour = color;
+		this.currentChatLine.effect = effect;
+		this.currentChatLine.time = this.currentChatLine.field6685 = time;
 	}
 
 	@ObfuscatedName("ahm.ci(I)Z")
@@ -1002,7 +1002,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public abstract int getBASId();
 
 	@ObfuscatedName("ahm.cg(I)Z")
-	public abstract boolean method16512();
+	public abstract boolean showChat();
 
 	@ObfuscatedName("ahm.ce(I)Lsu;")
 	public abstract EntityChatLine getChatLine();

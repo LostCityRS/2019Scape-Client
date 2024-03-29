@@ -542,7 +542,7 @@ public abstract class Renderer {
 	public abstract void method2160(int arg0, int arg1, int[] arg2, int[] arg3);
 
 	@ObfuscatedName("dh.bn(IIII)V")
-	public abstract void method2161(int arg0, int arg1, int arg2, int arg3);
+	public abstract void setBounds(int arg0, int arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.aa(III)V")
 	public abstract void method2163(int arg0, int arg1, int arg2);
@@ -554,7 +554,7 @@ public abstract class Renderer {
 	public abstract void resetClip();
 
 	@ObfuscatedName("dh.bi(IIII)V")
-	public abstract void method2168(int arg0, int arg1, int arg2, int arg3);
+	public abstract void resetBounds(int arg0, int arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.bq([I)V")
 	public abstract void method2171(int[] arg0);

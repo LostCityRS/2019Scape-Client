@@ -514,7 +514,7 @@ public class MiniMenu {
 			}
 		}
 		FontMetrics var2 = method16902();
-		int var3 = var2.method14532(LocalisedText.CHOOSEOPTION.forLang(Client.language));
+		int var3 = var2.stringWidth(LocalisedText.CHOOSEOPTION.forLang(Client.language));
 		int var6;
 		if (field540) {
 			for (MinimenuSubmenu var7 = (MinimenuSubmenu) field550.peekFront(); var7 != null; var7 = (MinimenuSubmenu) field550.prev()) {
@@ -605,9 +605,9 @@ public class MiniMenu {
 	public static FontMetrics method16902() {
 		FontMetrics var0;
 		if (!field564) {
-			var0 = DefaultSprites.field10268;
+			var0 = DefaultSprites.b12FullMetrics;
 		} else if (field1841 == null || field8786 == null) {
-			var0 = DefaultSprites.field10268;
+			var0 = DefaultSprites.b12FullMetrics;
 		} else {
 			var0 = field8786;
 		}
@@ -742,7 +742,7 @@ public class MiniMenu {
 		if (field553 != null) {
 			arg0.method2220(field553);
 			arg0.method2217(field572);
-			arg0.method2168(field563, field559, field563 + field560, field561 + field559);
+			arg0.resetBounds(field563, field559, field563 + field560, field561 + field559);
 			arg0.method2164(field563, field559, field560, field561);
 		}
 	}
@@ -1432,7 +1432,7 @@ public class MiniMenu {
 		}
 		Font var4 = field576.method3942(Client.fontProvider, Client.fontFactory);
 		if (var4 == null) {
-			var4 = DefaultSprites.field10355;
+			var4 = DefaultSprites.b12FullFont;
 		}
 		var4.method2700(var1, field556, field557, field576.field2196, field576.field2197, field576.field2210, field576.field2219, field576.field2223, field576.field2264, Client.field10890, Client.field1681, Client.field11042, DefaultSprites.field10302, null);
 		Client.method3066(Client.field11042[0], Client.field11042[1], Client.field11042[2], Client.field11042[3]);
@@ -1488,7 +1488,7 @@ public class MiniMenu {
 		}
 		arg8.method2689(var13, arg2 + 3, arg6, arg10, 0, Client.field10890, Client.field1681, DefaultSprites.field10302, null);
 		if (arg7.field12299) {
-			DefaultSprites.field1940.method1439(arg2 + 5 + arg9.method14533(var13, DefaultSprites.field10302), arg6 - arg9.field8562);
+			DefaultSprites.field1940.method1439(arg2 + 5 + arg9.stringWidth(var13, DefaultSprites.field10302), arg6 - arg9.field8562);
 		}
 	}
 
@@ -1505,14 +1505,14 @@ public class MiniMenu {
 	public static void method213(Renderer arg0) {
 		int var1 = -10660793;
 		method4064(arg0, field11738, field2960, field1289, field2576, var1, -16777216);
-		DefaultSprites.field10355.method2681(LocalisedText.CHOOSEOPTION.forLang(Client.language), field11738 + 3, field2960 + 14, var1, -1);
+		DefaultSprites.b12FullFont.drawString(LocalisedText.CHOOSEOPTION.forLang(Client.language), field11738 + 3, field2960 + 14, var1, -1);
 		int var2 = Client.mouse.method9086();
 		int var3 = Client.mouse.method9092();
 		if (!field540) {
 			int var4 = 0;
 			for (MinimenuEntry var5 = (MinimenuEntry) field542.peekFront(); var5 != null; var5 = (MinimenuEntry) field542.prev()) {
 				int var6 = field536 * (field546 - 1 - var4) + field2960 + 31;
-				method9284(var2, var3, field11738, field2960, field1289, field2576, var6, var5, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
+				method9284(var2, var3, field11738, field2960, field1289, field2576, var6, var5, DefaultSprites.b12FullFont, DefaultSprites.b12FullMetrics, -1, -256);
 				var4++;
 			}
 			return;
@@ -1521,9 +1521,9 @@ public class MiniMenu {
 		for (MinimenuSubmenu var8 = (MinimenuSubmenu) field550.peekFront(); var8 != null; var8 = (MinimenuSubmenu) field550.prev()) {
 			int var9 = field536 * var7 + field2960 + 31;
 			if (var8.field12310 == 1) {
-				method9284(var2, var3, field11738, field2960, field1289, field2576, var9, (MinimenuEntry) var8.field12312.head.secondaryPrev, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
+				method9284(var2, var3, field11738, field2960, field1289, field2576, var9, (MinimenuEntry) var8.field12312.head.secondaryPrev, DefaultSprites.b12FullFont, DefaultSprites.b12FullMetrics, -1, -256);
 			} else {
-				method16748(var2, var3, field11738, field2960, field1289, field2576, var9, var8, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
+				method16748(var2, var3, field11738, field2960, field1289, field2576, var9, var8, DefaultSprites.b12FullFont, DefaultSprites.b12FullMetrics, -1, -256);
 			}
 			var7++;
 		}
@@ -1531,11 +1531,11 @@ public class MiniMenu {
 			return;
 		}
 		method4064(arg0, field1981, field2433, field554, field3005, var1, -16777216);
-		DefaultSprites.field10355.method2681(field541.field12311, field1981 + 3, field2433 + 14, var1, -1);
+		DefaultSprites.b12FullFont.drawString(field541.field12311, field1981 + 3, field2433 + 14, var1, -1);
 		int var10 = 0;
 		for (MinimenuEntry var11 = (MinimenuEntry) field541.field12312.peekFront(); var11 != null; var11 = (MinimenuEntry) field541.field12312.prev()) {
 			int var12 = field536 * var10 + field2433 + 31;
-			method9284(var2, var3, field1981, field2433, field554, field3005, var12, var11, DefaultSprites.field10355, DefaultSprites.field10268, -1, -256);
+			method9284(var2, var3, field1981, field2433, field554, field3005, var12, var11, DefaultSprites.b12FullFont, DefaultSprites.b12FullMetrics, -1, -256);
 			var10++;
 		}
 	}
@@ -1565,7 +1565,7 @@ public class MiniMenu {
 			field8480.method1439(arg1, arg2);
 			field3568.method1439(arg1 + arg3 - field3568.getWidth(), arg2);
 		}
-		arg6.method2681(arg8, arg1 + 3, (20 - arg7.field8562) / 2 + arg7.field8562 + arg2, field1266 | 0xFF000000, -1);
+		arg6.drawString(arg8, arg1 + 3, (20 - arg7.field8562) / 2 + arg7.field8562 + arg2, field1266 | 0xFF000000, -1);
 		arg0.fillRectangle(arg1, arg2 + arg5, arg3, arg4 - arg5, var9 << 24 | field7676, 1);
 	}
 
@@ -1606,8 +1606,8 @@ public class MiniMenu {
 		int var4 = field2576 - 3;
 		byte var5 = 20;
 		if (field1841 == null || field8786 == null) {
-			field1841 = (Font) Client.fontProvider.method6188(Client.fontFactory, field8463, true, true);
-			field8786 = Client.fontProvider.method6163(Client.fontFactory, field8463);
+			field1841 = (Font) Client.fontProvider.getFont(Client.fontFactory, field8463, true, true);
+			field8786 = Client.fontProvider.getFontMetrics(Client.fontFactory, field8463);
 			if (field1841 != null && field8786 != null) {
 				method6031();
 				int var6 = var3 / 2 + var1;
@@ -1623,7 +1623,7 @@ public class MiniMenu {
 		}
 		Font var7;
 		if (field1841 == null || field8786 == null) {
-			var7 = DefaultSprites.field10355;
+			var7 = DefaultSprites.b12FullFont;
 		} else {
 			var7 = field1841;
 		}
@@ -1716,7 +1716,7 @@ public class MiniMenu {
 	@ObfuscatedName("aiv.bh(Larn;Laac;B)I")
 	public static int method16910(MinimenuSubmenu arg0, FontMetrics arg1) {
 		String var2 = method15244(arg0);
-		return arg1.method14533(var2, DefaultSprites.field10302);
+		return arg1.stringWidth(var2, DefaultSprites.field10302);
 	}
 
 	@ObfuscatedName("ii.bx(Larm;Laac;I)I")
@@ -1726,7 +1726,7 @@ public class MiniMenu {
 		if (var3 != null) {
 			var2 = var2 + method14480(var3);
 		}
-		int var4 = arg1.method14533(var2, DefaultSprites.field10302);
+		int var4 = arg1.stringWidth(var2, DefaultSprites.field10302);
 		if (arg0.field12299) {
 			var4 += DefaultSprites.field1940.getWidth() + 4;
 		}

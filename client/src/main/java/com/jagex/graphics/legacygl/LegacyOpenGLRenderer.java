@@ -1107,7 +1107,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		OpenGL.glFlush();
 		OpenGL.glReadBuffer(1029);
 		OpenGL.glDrawBuffer(1029);
-		this.method2168(var1, var3, var2, var4);
+		this.resetBounds(var1, var3, var2, var4);
 		this.method2164(var5, var6, var7, var8);
 	}
 
@@ -1983,7 +1983,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.bi(IIII)V")
-	public final void method2168(int arg0, int arg1, int arg2, int arg3) {
+	public final void resetBounds(int arg0, int arg1, int arg2, int arg3) {
 		if (this.renderTarget == null) {
 			return;
 		}
@@ -2008,7 +2008,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.bn(IIII)V")
-	public final void method2161(int arg0, int arg1, int arg2, int arg3) {
+	public final void setBounds(int arg0, int arg1, int arg2, int arg3) {
 		if (this.field9927 < arg0) {
 			this.field9927 = arg0;
 		}

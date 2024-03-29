@@ -12,210 +12,210 @@ import java.util.Map;
 public class FontProvider implements FontIconProvider {
 
 	@ObfuscatedName("oi.e")
-	public final Js5 field4200;
+	public final Js5 js5Sprites;
 
 	@ObfuscatedName("oi.n")
-	public final Js5 field4201;
+	public final Js5 js5FontMetrics;
 
 	@ObfuscatedName("oi.m")
-	public final WeightedCache field4202 = new WeightedCache(20);
+	public final WeightedCache fontCache = new WeightedCache(20);
 
 	@ObfuscatedName("oi.k")
-	public final WeightedCache field4203 = new WeightedCache(20);
+	public final WeightedCache fontMetricsCache = new WeightedCache(20);
 
 	@ObfuscatedName("oi.f")
-	public final int[] field4204;
+	public final int[] fontIds;
 
 	@ObfuscatedName("oi.w")
-	public WeightedCache field4205;
+	public WeightedCache iconCache;
 
 	@ObfuscatedName("oi.l")
-	public Renderer field4206 = null;
+	public Renderer renderer = null;
 
 	@ObfuscatedName("oi.u")
-	public Map field4207 = null;
+	public Map fonts = null;
 
-	public FontProvider(Renderer arg0, Js5 arg1, Js5 arg2, int[] arg3) {
-		this.field4206 = arg0;
-		this.field4200 = arg1;
-		this.field4201 = arg2;
-		this.field4204 = arg3;
-		this.field4205 = new WeightedCache(20);
+	public FontProvider(Renderer renderer, Js5 js5Sprites, Js5 js5FontMetrics, int[] fontIds) {
+		this.renderer = renderer;
+		this.js5Sprites = js5Sprites;
+		this.js5FontMetrics = js5FontMetrics;
+		this.fontIds = fontIds;
+		this.iconCache = new WeightedCache(20);
 	}
 
 	@ObfuscatedName("oi.e(Loq;I)V")
-	public void method6157(FontFactory arg0) {
-		this.field4207 = new HashMap(this.field4204.length);
-		for (int var2 = 0; var2 < this.field4204.length; var2++) {
-			int var3 = this.field4204[var2];
-			FontMetrics var4 = FontMetrics.method10677(this.field4201, var3, this);
-			byte[] var5 = this.field4200.method6894(var3);
-			Object var6 = arg0.method210(var5, var4, true);
-			this.field4207.put(var2, new Pair(var6, var4));
+	public void loadFonts(FontFactory factory) {
+		this.fonts = new HashMap(this.fontIds.length);
+		for (int index = 0; index < this.fontIds.length; index++) {
+			int fontId = this.fontIds[index];
+			FontMetrics fontMetrics = FontMetrics.method10677(this.js5FontMetrics, fontId, this);
+			byte[] bytes = this.js5Sprites.method6894(fontId);
+			Object font = factory.createFont(bytes, fontMetrics, true);
+			this.fonts.put(index, new Pair(font, fontMetrics));
 		}
 	}
 
 	@ObfuscatedName("oi.n(S)V")
-	public void method6158() {
-		this.field4207 = null;
+	public void clearFonts() {
+		this.fonts = null;
 	}
 
 	@ObfuscatedName("oi.m(I)I")
-	public int method6179() {
-		return this.method6191(false);
+	public int getLoadedFontsCount() {
+		return this.getLoadedFontsCount(false);
 	}
 
 	@ObfuscatedName("oi.k(ZI)I")
-	public int method6191(boolean arg0) {
-		if (this.field4204 == null) {
+	public int getLoadedFontsCount(boolean arg0) {
+		if (this.fontIds == null) {
 			return 0;
-		} else if (arg0 || this.field4207 == null) {
-			int var2 = 0;
-			for (int var3 = 0; var3 < this.field4204.length; var3++) {
-				int var4 = this.field4204[var3];
-				if (this.field4200.method6889(var4)) {
-					var2++;
+		} else if (arg0 || this.fonts == null) {
+			int count = 0;
+			for (int index = 0; index < this.fontIds.length; index++) {
+				int fontId = this.fontIds[index];
+				if (this.js5Sprites.method6889(fontId)) {
+					count++;
 				}
-				if (this.field4201.method6889(var4)) {
-					var2++;
+				if (this.js5FontMetrics.method6889(fontId)) {
+					count++;
 				}
 			}
-			return var2;
+			return count;
 		} else {
-			return this.field4204.length * 2;
+			return this.fontIds.length * 2;
 		}
 	}
 
 	@ObfuscatedName("oi.f(B)I")
-	public int method6161() {
-		return this.field4204 == null ? 0 : this.field4204.length * 2;
+	public int getFontsCount() {
+		return this.fontIds == null ? 0 : this.fontIds.length * 2;
 	}
 
 	@ObfuscatedName("oi.w(Loq;IZZI)Ljava/lang/Object;")
-	public Object method6188(FontFactory arg0, int arg1, boolean arg2, boolean arg3) {
-		if (arg1 == -1) {
+	public Object getFont(FontFactory factory, int fontId, boolean cache, boolean arg3) {
+		if (fontId == -1) {
 			return null;
 		}
-		if (this.field4204 != null) {
-			for (int var5 = 0; var5 < this.field4204.length; var5++) {
-				if (this.field4204[var5] == arg1) {
-					return ((Pair) this.field4207.get(var5)).first;
+		if (this.fontIds != null) {
+			for (int var5 = 0; var5 < this.fontIds.length; var5++) {
+				if (this.fontIds[var5] == fontId) {
+					return ((Pair) this.fonts.get(var5)).first;
 				}
 			}
 		}
-		Object var6 = this.field4202.get((long) (arg1 << 1 | (arg3 ? 1 : 0)));
-		if (var6 != null) {
-			return var6;
+		Object cached = this.fontCache.get((long) (fontId << 1 | (arg3 ? 1 : 0)));
+		if (cached != null) {
+			return cached;
 		}
-		byte[] var7 = this.field4200.method6894(arg1);
-		if (var7 == null) {
+		byte[] bytes = this.js5Sprites.method6894(fontId);
+		if (bytes == null) {
 			return null;
 		}
-		FontMetrics var8 = this.method6164(arg0, arg1, arg2, false);
-		if (var8 == null) {
+		FontMetrics fontMetrics = this.getFontMetrics(factory, fontId, cache, false);
+		if (fontMetrics == null) {
 			return null;
 		} else {
-			Object var9 = arg0.method210(var7, var8, arg3);
-			this.field4202.put(var9, (long) (arg1 << 1 | (arg3 ? 1 : 0)));
-			return var9;
+			Object font = factory.createFont(bytes, fontMetrics, arg3);
+			this.fontCache.put(font, (long) (fontId << 1 | (arg3 ? 1 : 0)));
+			return font;
 		}
 	}
 
 	@ObfuscatedName("oi.l(Loq;II)Laac;")
-	public FontMetrics method6163(FontFactory arg0, int arg1) {
-		return this.method6164(arg0, arg1, true, true);
+	public FontMetrics getFontMetrics(FontFactory factory, int fontId) {
+		return this.getFontMetrics(factory, fontId, true, true);
 	}
 
 	@ObfuscatedName("oi.u(Loq;IZZB)Laac;")
-	public FontMetrics method6164(FontFactory arg0, int arg1, boolean arg2, boolean arg3) {
-		if (arg1 == -1) {
+	public FontMetrics getFontMetrics(FontFactory arg0, int fontId, boolean cache, boolean arg3) {
+		if (fontId == -1) {
 			return null;
 		}
-		if (this.field4204 != null) {
-			for (int var5 = 0; var5 < this.field4204.length; var5++) {
-				if (this.field4204[var5] == arg1) {
-					return (FontMetrics) ((Pair) this.field4207.get(var5)).second;
+		if (this.fontIds != null) {
+			for (int var5 = 0; var5 < this.fontIds.length; var5++) {
+				if (this.fontIds[var5] == fontId) {
+					return (FontMetrics) ((Pair) this.fonts.get(var5)).second;
 				}
 			}
 		}
 		if (arg3) {
-			this.field4200.method6889(arg1);
+			this.js5Sprites.method6889(fontId);
 		}
-		FontMetrics var6 = (FontMetrics) this.field4203.get((long) arg1);
-		if (var6 != null) {
-			return var6;
+		FontMetrics cached = (FontMetrics) this.fontMetricsCache.get((long) fontId);
+		if (cached != null) {
+			return cached;
 		}
-		FontMetrics var7 = FontMetrics.method10677(this.field4201, arg1, this);
-		if (var7 == null) {
+		FontMetrics fontMetrics = FontMetrics.method10677(this.js5FontMetrics, fontId, this);
+		if (fontMetrics == null) {
 			return null;
 		} else {
-			if (arg2) {
-				this.field4203.put(var7, (long) arg1);
+			if (cache) {
+				this.fontMetricsCache.put(fontMetrics, (long) fontId);
 			}
-			return var7;
+			return fontMetrics;
 		}
 	}
 
 	@ObfuscatedName("oi.z(B)V")
 	public void cacheReset() {
-		this.field4203.reset();
-		this.field4202.reset();
-		if (this.field4205 != null) {
-			this.field4205.reset();
+		this.fontMetricsCache.reset();
+		this.fontCache.reset();
+		if (this.iconCache != null) {
+			this.iconCache.reset();
 		}
 	}
 
 	@ObfuscatedName("oi.p(II)V")
 	public void cacheClean(int arg0) {
-		this.field4203.clean(arg0);
-		this.field4202.clean(arg0);
-		if (this.field4205 != null) {
-			this.field4205.clean(arg0);
+		this.fontMetricsCache.clean(arg0);
+		this.fontCache.clean(arg0);
+		if (this.iconCache != null) {
+			this.iconCache.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("oi.d(I)V")
 	public void cacheRemoveSoftReferences() {
-		this.field4203.clear();
-		this.field4202.clear();
-		if (this.field4205 != null) {
-			this.field4205.clear();
+		this.fontMetricsCache.clear();
+		this.fontCache.clear();
+		if (this.iconCache != null) {
+			this.iconCache.clear();
 		}
 	}
 
 	@ObfuscatedName("oi.c(Ldh;II)[Lcm;")
-	public Sprite[] method6185(Renderer arg0, int arg1) {
-		if (this.field4205 == null) {
+	public Sprite[] getIconSprites(Renderer renderer, int id) {
+		if (this.iconCache == null) {
 			return null;
 		}
-		if (arg0 == null) {
-			arg0 = this.field4206;
+		if (renderer == null) {
+			renderer = this.renderer;
 		} else {
-			if (this.field4206 != arg0) {
-				this.field4205.reset();
+			if (this.renderer != renderer) {
+				this.iconCache.reset();
 			}
-			this.field4206 = arg0;
+			this.renderer = renderer;
 		}
-		if (arg0 == null) {
+		if (renderer == null) {
 			return null;
 		}
-		Sprite[] var3 = (Sprite[]) this.field4205.get((long) arg1);
-		if (var3 == null) {
-			SpriteData[] var4 = SpriteDataProvider.method1608(this.field4200, arg1, 0);
-			if (var4 != null && var4.length > 0) {
-				var3 = new Sprite[var4.length];
-				for (int var5 = 0; var5 < var4.length; var5++) {
-					var3[var5] = arg0.createSprite(var4[var5], true);
+		Sprite[] cached = (Sprite[]) this.iconCache.get((long) id);
+		if (cached == null) {
+			SpriteData[] sprites = SpriteDataProvider.method1608(this.js5Sprites, id, 0);
+			if (sprites != null && sprites.length > 0) {
+				cached = new Sprite[sprites.length];
+				for (int index = 0; index < sprites.length; index++) {
+					cached[index] = renderer.createSprite(sprites[index], true);
 				}
-				this.field4205.put(var3, (long) arg1);
+				this.iconCache.put(cached, (long) id);
 			}
 		}
-		return var3;
+		return cached;
 	}
 
 	@ObfuscatedName("oi.r(II)I")
-	public int method6160(int arg0) {
-		Sprite[] var2 = this.method6185(this.field4206, arg0);
-		return var2 == null ? 0 : var2[0].method1434();
+	public int getIconWidth(int id) {
+		Sprite[] sprites = this.getIconSprites(this.renderer, id);
+		return sprites == null ? 0 : sprites[0].method1434();
 	}
 }

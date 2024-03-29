@@ -9,30 +9,30 @@ public class EntityChatLine {
 	public String text;
 
 	@ObfuscatedName("su.n")
-	public int field6686;
+	public int colour;
 
 	@ObfuscatedName("su.m")
-	public int field6684;
+	public int effect;
 
 	@ObfuscatedName("su.k")
 	public int field6685;
 
 	@ObfuscatedName("su.f")
-	public int field6683;
+	public int time;
 
 	@ObfuscatedName("su.e(I)Ljava/lang/String;")
-	public String method8281() {
+	public String getText() {
 		return this.text;
 	}
 
 	@ObfuscatedName("su.n(B)I")
-	public int method8284() {
-		return this.field6686;
+	public int getColour() {
+		return this.colour;
 	}
 
 	@ObfuscatedName("su.m(B)I")
-	public int method8283() {
-		return this.field6684;
+	public int getEffect() {
+		return this.effect;
 	}
 
 	@ObfuscatedName("su.k(B)I")
@@ -41,7 +41,7 @@ public class EntityChatLine {
 	}
 
 	@ObfuscatedName("su.f(I)I")
-	public int method8285() {
-		return this.field6683;
+	public int getTime() {
+		return this.time;
 	}
 }

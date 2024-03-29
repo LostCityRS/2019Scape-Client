@@ -735,7 +735,7 @@ public class World {
 		this.field5059 = arg1;
 		if (!this.asyncRebuilding) {
 			Client.setState(arg2);
-			MessageBox.draw(LocalisedText.LOADING.forLang(Client.language), true, Client.renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+			MessageBox.draw(LocalisedText.LOADING.forLang(Client.language), true, Client.renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 		}
 		if (this.field5018 == null) {
 			this.field5025 = new CoordGrid(0, 0, 0);
@@ -1031,7 +1031,7 @@ public class World {
 			return false;
 		}
 		if (!this.asyncRebuilding && RebuildStage.field5007 != this.rebuildStage) {
-			MessageBox.draw(LocalisedText.LOADING.forLang(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.fontP12Full, DefaultSprites.fontP12FullMetrics);
+			MessageBox.draw(LocalisedText.LOADING.forLang(Client.language) + TextUtil.BR + "(100%)", true, Client.renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 		}
 		this.rebuildStage = RebuildStage.field5008;
 		if (!this.asyncRebuilding && Client.audioApi != null) {
@@ -1076,7 +1076,7 @@ public class World {
 		if (Client.field11005 == 0) {
 			this.scene.method8737(null);
 		} else {
-			this.scene.method8737(DefaultSprites.field8321);
+			this.scene.method8737(DefaultSprites.p11FullFont);
 		}
 		this.field5050 = new LocTint();
 		this.field5038 = -0.05F + (float) (Math.random() / 10.0D);

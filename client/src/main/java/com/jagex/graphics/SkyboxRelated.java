@@ -197,7 +197,7 @@ public class SkyboxRelated {
 			return;
 		}
 		arg0.method2171(field5138);
-		arg0.method2168(0, 0, this.field5123, this.field5123);
+		arg0.resetBounds(0, 0, this.field5123, this.field5123);
 		arg0.method2475(2, 0);
 		arg0.fillRectangle(0, 0, this.field5123, this.field5123, 0, 0);
 		int var4 = 0;
@@ -250,7 +250,7 @@ public class SkyboxRelated {
 		this.field5128 = arg0.method2314(0, 0, this.field5123, this.field5123, true);
 		this.field5128.method1441(0, 0, 3);
 		arg0.method2220(var20);
-		arg0.method2168(field5138[0], field5138[1], field5138[2], field5138[3]);
+		arg0.resetBounds(field5138[0], field5138[1], field5138[2], field5138[3]);
 	}
 
 	@ObfuscatedName("sw.l(Ldh;Lsw;)V")
@@ -258,7 +258,7 @@ public class SkyboxRelated {
 		method7992(arg0);
 		method7986(arg0);
 		arg0.method2171(field5138);
-		arg0.method2168(0, 0, this.field5123, this.field5123);
+		arg0.resetBounds(0, 0, this.field5123, this.field5123);
 		arg0.method2475(2, 0);
 		arg0.fillRectangle(0, 0, this.field5123, this.field5123, this.field5111 | 0xFF000000, 0);
 		int var3 = 0;
@@ -314,7 +314,7 @@ public class SkyboxRelated {
 		field5137.method1446(0, 0, this.field5123, this.field5123, 1, 0, 0);
 		this.field5128.method1441(0, 0, 3);
 		arg0.method2220(var14);
-		arg0.method2168(field5138[0], field5138[1], field5138[2], field5138[3]);
+		arg0.resetBounds(field5138[0], field5138[1], field5138[2], field5138[3]);
 	}
 
 	@ObfuscatedName("sw.u(Ldh;)V")

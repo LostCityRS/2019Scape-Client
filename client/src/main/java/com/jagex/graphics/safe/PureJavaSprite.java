@@ -158,7 +158,7 @@ public abstract class PureJavaSprite extends Sprite {
 			this.field9362 = new int[4];
 		}
 		this.field9373.method2171(this.field9362);
-		this.field9373.method2161(this.field9373.clipMinX, this.field9373.clipMinY, arg0 + arg2, arg1 + arg3);
+		this.field9373.setBounds(this.field9373.clipMinX, this.field9373.clipMinY, arg0 + arg2, arg1 + arg3);
 		int var8 = this.method1434();
 		int var9 = this.method1436();
 		int var10 = (arg2 + var8 - 1) / var8;
@@ -169,7 +169,7 @@ public abstract class PureJavaSprite extends Sprite {
 				this.method1443(var8 * var14 + arg0, arg1 + var13, arg4, arg5, arg6);
 			}
 		}
-		this.field9373.method2168(this.field9362[0], this.field9362[1], this.field9362[2], this.field9362[3]);
+		this.field9373.resetBounds(this.field9362[0], this.field9362[1], this.field9362[2], this.field9362[3]);
 	}
 
 	@ObfuscatedName("ael.cg(FFFFFF)Z")

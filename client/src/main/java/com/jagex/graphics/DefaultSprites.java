@@ -9,28 +9,28 @@ import rs2.client.Client;
 public class DefaultSprites {
 
 	@ObfuscatedName("l.e")
-	public static int field506;
+	public static int p11_full;
 
 	@ObfuscatedName("l.n")
-	public static int field505;
+	public static int p12_full;
 
 	@ObfuscatedName("l.m")
-	public static int field509;
+	public static int b12_full;
 
 	@ObfuscatedName("l.k")
-	public static int field507;
+	public static int hintarrows;
 
 	@ObfuscatedName("l.f")
 	public static int field514;
 
 	@ObfuscatedName("l.w")
-	public static int field508;
+	public static int mapflag;
 
 	@ObfuscatedName("adg.l")
-	public static int field9210;
+	public static int cross;
 
 	@ObfuscatedName("l.u")
-	public static int field504;
+	public static int mapdots;
 
 	@ObfuscatedName("l.z")
 	public static int field511;
@@ -42,37 +42,37 @@ public class DefaultSprites {
 	public static int field512;
 
 	@ObfuscatedName("apy.c")
-	public static int field11891;
+	public static int compass;
 
 	@ObfuscatedName("arc.r")
 	public static int field12241;
 
 	@ObfuscatedName("tw.v")
-	public static FontMetrics field6778;
+	public static FontMetrics p11FullMetrics;
 
 	@ObfuscatedName("is.o")
-	public static FontMetrics fontP12FullMetrics;
+	public static FontMetrics p12FullMetrics;
 
 	@ObfuscatedName("afp.s")
-	public static FontMetrics field10268;
+	public static FontMetrics b12FullMetrics;
 
 	@ObfuscatedName("zj.y")
-	public static Font field8321;
+	public static Font p11FullFont;
 
 	@ObfuscatedName("adh.q")
-	public static Font fontP12Full;
+	public static Font p12FullFont;
 
 	@ObfuscatedName("agr.x")
-	public static Font field10355;
+	public static Font b12FullFont;
 
 	@ObfuscatedName("zj.b")
-	public static Sprite[] field8323;
+	public static Sprite[] hintarrowSprites;
 
 	@ObfuscatedName("l.h")
 	public static Sprite[] field513;
 
 	@ObfuscatedName("acj.a")
-	public static Sprite[] field9149;
+	public static Sprite[] mapflagSprites;
 
 	@ObfuscatedName("aoh.g")
 	public static int field11888;
@@ -81,16 +81,16 @@ public class DefaultSprites {
 	public static int field10232;
 
 	@ObfuscatedName("ann.j")
-	public static Sprite[] field11793;
+	public static Sprite[] crossSprites;
 
 	@ObfuscatedName("l.t")
-	public static Sprite[] field510;
+	public static Sprite[] mapdotsSprites;
 
 	@ObfuscatedName("agk.ae")
 	public static Sprite[] field10302;
 
 	@ObfuscatedName("uj.ag")
-	public static Sprite field7207;
+	public static Sprite compassSprites;
 
 	@ObfuscatedName("gc.ah")
 	public static Sprite field1940;
@@ -104,143 +104,143 @@ public class DefaultSprites {
 	}
 
 	@ObfuscatedName("gl.e(Lws;B)V")
-	public static void method3470(GraphicsDefaults arg0) {
-		field506 = arg0.field7733;
-		field505 = arg0.field7746;
-		field509 = arg0.field7747;
+	public static void method3470(GraphicsDefaults graphics) {
+		p11_full = graphics.p11_full;
+		p12_full = graphics.p12_full;
+		b12_full = graphics.b12_full;
 	}
 
 	@ObfuscatedName("aft.n(Lws;I)V")
-	public static void method16430(GraphicsDefaults arg0) {
-		field507 = arg0.field7748;
-		field514 = arg0.field7715;
-		field508 = arg0.field7750;
-		field11888 = arg0.field7751;
-		field10232 = arg0.field7752;
-		field9210 = arg0.field7753;
-		field504 = arg0.field7732;
-		field511 = arg0.field7755;
-		field7572 = arg0.field7756;
-		field11891 = arg0.field7720;
-		field512 = arg0.field7721;
-		field12241 = arg0.field7741;
+	public static void method16430(GraphicsDefaults graphics) {
+		hintarrows = graphics.hintarrows;
+		field514 = graphics.field7715;
+		mapflag = graphics.mapflag;
+		field11888 = graphics.field7751;
+		field10232 = graphics.field7752;
+		cross = graphics.cross;
+		mapdots = graphics.mapdots;
+		field511 = graphics.field7755;
+		field7572 = graphics.field7756;
+		compass = graphics.compass;
+		field512 = graphics.field7721;
+		field12241 = graphics.field7741;
 	}
 
 	@ObfuscatedName("au.m(I)[I")
-	public static int[] method845() {
-		return new int[] { field506, field505, field509 };
+	public static int[] fonts() {
+		return new int[] {p11_full, p12_full, b12_full};
 	}
 
 	@ObfuscatedName("qx.k(Ldh;I)V")
-	public static void method7114(Renderer arg0) {
-		field8321 = (Font) Client.fontProvider.method6188(Client.fontFactory, field506, true, true);
-		field6778 = Client.fontProvider.method6163(Client.fontFactory, field506);
-		fontP12Full = (Font) Client.fontProvider.method6188(Client.fontFactory, field505, true, true);
-		fontP12FullMetrics = Client.fontProvider.method6163(Client.fontFactory, field505);
-		field10355 = (Font) Client.fontProvider.method6188(Client.fontFactory, field509, true, true);
-		field10268 = Client.fontProvider.method6163(Client.fontFactory, field509);
+	public static void loadFonts(Renderer arg0) {
+		p11FullFont = (Font) Client.fontProvider.getFont(Client.fontFactory, p11_full, true, true);
+		p11FullMetrics = Client.fontProvider.getFontMetrics(Client.fontFactory, p11_full);
+		p12FullFont = (Font) Client.fontProvider.getFont(Client.fontFactory, p12_full, true, true);
+		p12FullMetrics = Client.fontProvider.getFontMetrics(Client.fontFactory, p12_full);
+		b12FullFont = (Font) Client.fontProvider.getFont(Client.fontFactory, b12_full, true, true);
+		b12FullMetrics = Client.fontProvider.getFontMetrics(Client.fontFactory, b12_full);
 	}
 
 	@ObfuscatedName("aej.f(Lpy;I)I")
-	public static int method15381(Js5 arg0) {
-		int var1 = 0;
-		if (arg0.method6889(field507)) {
-			var1++;
+	public static int getLoadedSpritesCount(Js5 spritesJs5) {
+		int count = 0;
+		if (spritesJs5.method6889(hintarrows)) {
+			count++;
 		}
-		if (arg0.method6889(field514)) {
-			var1++;
+		if (spritesJs5.method6889(field514)) {
+			count++;
 		}
-		if (arg0.method6889(field508)) {
-			var1++;
+		if (spritesJs5.method6889(mapflag)) {
+			count++;
 		}
-		if (arg0.method6889(field9210)) {
-			var1++;
+		if (spritesJs5.method6889(cross)) {
+			count++;
 		}
-		if (arg0.method6889(field504)) {
-			var1++;
+		if (spritesJs5.method6889(mapdots)) {
+			count++;
 		}
-		if (arg0.method6889(field511)) {
-			var1++;
+		if (spritesJs5.method6889(field511)) {
+			count++;
 		}
-		if (arg0.method6889(field7572)) {
-			var1++;
+		if (spritesJs5.method6889(field7572)) {
+			count++;
 		}
-		if (arg0.method6889(field11891)) {
-			var1++;
+		if (spritesJs5.method6889(compass)) {
+			count++;
 		}
-		if (arg0.method6889(field512)) {
-			var1++;
+		if (spritesJs5.method6889(field512)) {
+			count++;
 		}
-		if (arg0.method6889(field12241)) {
-			var1++;
+		if (spritesJs5.method6889(field12241)) {
+			count++;
 		}
-		return var1;
+		return count;
 	}
 
 	@ObfuscatedName("aam.w(I)I")
-	public static int method14611() {
+	public static int getSpritesCount() {
 		return 10;
 	}
 
 	@ObfuscatedName("kh.l(Ldh;Lpy;I)V")
-	public static void method5202(Renderer arg0, Js5 arg1) {
-		SpriteData[] var2 = SpriteDataProvider.method1608(arg1, field507, 0);
-		field8323 = new Sprite[var2.length];
-		for (int var3 = 0; var3 < var2.length; var3++) {
-			field8323[var3] = arg0.createSprite(var2[var3], true);
+	public static void loadSprites(Renderer renderer, Js5 spritesJs5) {
+		SpriteData[] hintarrows = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.hintarrows, 0);
+		DefaultSprites.hintarrowSprites = new Sprite[hintarrows.length];
+		for (int var3 = 0; var3 < hintarrows.length; var3++) {
+			DefaultSprites.hintarrowSprites[var3] = renderer.createSprite(hintarrows[var3], true);
 		}
-		SpriteData[] var4 = SpriteDataProvider.method1608(arg1, field514, 0);
+		SpriteData[] var4 = SpriteDataProvider.method1608(spritesJs5, field514, 0);
 		field513 = new Sprite[var4.length];
 		for (int var5 = 0; var5 < var4.length; var5++) {
-			field513[var5] = arg0.createSprite(var4[var5], true);
+			field513[var5] = renderer.createSprite(var4[var5], true);
 		}
-		SpriteData[] var6 = SpriteDataProvider.method1608(arg1, field508, 0);
-		field9149 = new Sprite[var6.length];
+		SpriteData[] mapflags = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.mapflag, 0);
+		DefaultSprites.mapflagSprites = new Sprite[mapflags.length];
 		byte var7 = 25;
-		for (int var8 = 0; var8 < var6.length; var8++) {
-			var6[var8].method2605(-var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D));
-			field9149[var8] = arg0.createSprite(var6[var8], true);
+		for (int var8 = 0; var8 < mapflags.length; var8++) {
+			mapflags[var8].method2605(-var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D));
+			DefaultSprites.mapflagSprites[var8] = renderer.createSprite(mapflags[var8], true);
 		}
-		SpriteData[] var9 = SpriteDataProvider.method1608(arg1, field9210, 0);
-		field11793 = new Sprite[var9.length];
-		for (int var10 = 0; var10 < var9.length; var10++) {
-			field11793[var10] = arg0.createSprite(var9[var10], true);
+		SpriteData[] crosses = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.cross, 0);
+		DefaultSprites.crossSprites = new Sprite[crosses.length];
+		for (int var10 = 0; var10 < crosses.length; var10++) {
+			DefaultSprites.crossSprites[var10] = renderer.createSprite(crosses[var10], true);
 		}
-		SpriteData[] var11 = SpriteDataProvider.method1608(arg1, field504, 0);
-		field510 = new Sprite[var11.length];
+		SpriteData[] mapdots = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.mapdots, 0);
+		DefaultSprites.mapdotsSprites = new Sprite[mapdots.length];
 		byte var12 = 12;
-		for (int var13 = 0; var13 < var11.length; var13++) {
-			var11[var13].method2605(-var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D));
-			field510[var13] = arg0.createSprite(var11[var13], true);
+		for (int var13 = 0; var13 < mapdots.length; var13++) {
+			mapdots[var13].method2605(-var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D));
+			DefaultSprites.mapdotsSprites[var13] = renderer.createSprite(mapdots[var13], true);
 		}
-		SpriteData[] var14 = SpriteDataProvider.method1608(arg1, field511, 0);
+		SpriteData[] var14 = SpriteDataProvider.method1608(spritesJs5, field511, 0);
 		field10302 = new Sprite[var14.length];
 		byte var15 = 12;
 		for (int var16 = 0; var16 < var14.length; var16++) {
 			var14[var16].method2605(-var15 + (int) (Math.random() * (double) var15 * 2.0D), -var15 + (int) (Math.random() * (double) var15 * 2.0D), -var15 + (int) (Math.random() * (double) var15 * 2.0D));
-			field10302[var16] = arg0.createSprite(var14[var16], true);
+			field10302[var16] = renderer.createSprite(var14[var16], true);
 		}
-		field7207 = arg0.createSprite(SpriteDataProvider.method1609(arg1, field11891, 0), true);
-		field1940 = arg0.createSprite(SpriteDataProvider.method1609(arg1, field512, 0), true);
-		SpriteData[] var17 = SpriteDataProvider.method1608(arg1, field12241, 0);
+		compassSprites = renderer.createSprite(SpriteDataProvider.method1609(spritesJs5, compass, 0), true);
+		field1940 = renderer.createSprite(SpriteDataProvider.method1609(spritesJs5, field512, 0), true);
+		SpriteData[] var17 = SpriteDataProvider.method1608(spritesJs5, field12241, 0);
 		field6719 = new Sprite[var17.length];
 		for (int var18 = 0; var18 < var17.length; var18++) {
-			field6719[var18] = arg0.createSprite(var17[var18], true);
+			field6719[var18] = renderer.createSprite(var17[var18], true);
 		}
 	}
 
 	@ObfuscatedName("ge.u(I)V")
 	public static void method3568() {
-		field8321 = null;
-		fontP12Full = null;
-		field10355 = null;
-		field8323 = null;
+		p11FullFont = null;
+		p12FullFont = null;
+		b12FullFont = null;
+		hintarrowSprites = null;
 		field513 = null;
-		field9149 = null;
-		field11793 = null;
-		field510 = null;
+		mapflagSprites = null;
+		crossSprites = null;
+		mapdotsSprites = null;
 		field10302 = null;
-		field7207 = null;
+		compassSprites = null;
 		field1940 = null;
 		field6719 = null;
 	}

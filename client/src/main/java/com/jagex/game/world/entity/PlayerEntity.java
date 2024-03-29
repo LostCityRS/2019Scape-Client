@@ -425,7 +425,7 @@ public class PlayerEntity extends PathingEntity {
 			}
 			this.field10459[var38] = null;
 		}
-		this.field11715 = Client.field10916;
+		this.field11715 = Client.sceneCycle;
 		return var8;
 	}
 
@@ -530,8 +530,8 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.he(ZI)Ljava/lang/String;")
-	public String method19116(boolean arg0) {
-		return arg0 ? this.name : this.nameUnfiltered;
+	public String getName(boolean isFiltered) {
+		return isFiltered ? this.name : this.nameUnfiltered;
 	}
 
 	@ObfuscatedName("aqk.hn(IIBB)V")
@@ -650,18 +650,18 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.cg(I)Z")
-	public boolean method16512() {
+	public boolean showChat() {
 		return Client.graphicsDefaults.playerShouldDisplayChat;
 	}
 
 	@ObfuscatedName("aqk.ce(I)Lsu;")
 	public EntityChatLine getChatLine() {
-		if (this.field10409 != null) {
-			if (this.field10409.text == null) {
+		if (this.currentChatLine != null) {
+			if (this.currentChatLine.text == null) {
 				return null;
 			}
 			if (Client.publicChatFilter == 0 || Client.publicChatFilter == 3 || Client.publicChatFilter == 1 && Client.friendTest(this.nameUnfiltered)) {
-				return this.field10409;
+				return this.currentChatLine;
 			}
 		}
 		return null;
@@ -669,16 +669,16 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.hc(Ljava/lang/String;III)V")
 	public void addMessage(String arg0, int arg1, int arg2) {
-		this.method16510(arg0, arg1, arg2, GameShell.method6016() * Client.graphicsDefaults.playerChatTimeout);
+		this.setChatLine(arg0, arg1, arg2, GameShell.method6016() * Client.graphicsDefaults.playerChatTimeout);
 	}
 
 	@ObfuscatedName("aqk.e(I)Ljl;")
-	public CameraTrackableType method4675() {
-		return CameraTrackableType.field2838;
+	public CameraTrackableType getCameraTrackableType() {
+		return CameraTrackableType.PLAYER;
 	}
 
 	@ObfuscatedName("aqk.n(I)I")
-	public int method4670() {
+	public int getIndex() {
 		return this.localPlayerIndex;
 	}
 
@@ -696,7 +696,7 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.f(B)Lox;")
-	public Vector3 method4666() {
+	public Vector3 createVector3() {
 		return Vector3.create();
 	}
 

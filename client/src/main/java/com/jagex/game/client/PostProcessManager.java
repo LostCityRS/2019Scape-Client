@@ -287,7 +287,7 @@ public class PostProcessManager {
 					this.field3265.method15439(0, this.field3251);
 				} else if (var10) {
 					this.field3247.method2143(this.field3265);
-					this.field3247.method2168(this.field3258, this.field3259, this.field3258 + arg0, this.field3259 + arg1);
+					this.field3247.resetBounds(this.field3258, this.field3259, this.field3258 + arg0, this.field3259 + arg1);
 				} else {
 					var11 = true;
 					this.field3265.method15439(0, this.field3255);

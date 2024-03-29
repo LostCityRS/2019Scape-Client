@@ -221,7 +221,7 @@ public class Minimap {
 				if (field728) {
 					arg0.resetClip();
 				} else {
-					arg0.method2168(0, 0, var9 * 4 + var30, var9 * 4 + var31);
+					arg0.resetBounds(0, 0, var9 * 4 + var30, var9 * 4 + var31);
 				}
 				arg0.method2475(3, -16777216);
 				int var36 = var9;
@@ -530,7 +530,7 @@ public class Minimap {
 				throw new IllegalStateException("");
 			}
 		}
-		arg0.method2168(arg2, arg3, arg1.field2196 + arg2, arg1.field2197 + arg3);
+		arg0.resetBounds(arg2, arg3, arg1.field2196 + arg2, arg1.field2197 + arg3);
 		if (field724 == 2 || field724 == 5 || field734 == null) {
 			if (var5 == null) {
 				return;
@@ -596,7 +596,7 @@ public class Minimap {
 				int var28 = (int) (var25.nodeId >> 14 & 0x3FFFL) - var6.z;
 				int var29 = var27 * 4 + 2 - var7 / 128;
 				int var30 = var28 * 4 + 2 - var8 / 128;
-				method715(arg1, var5, arg2, arg3, var29, var30, DefaultSprites.field510[0]);
+				method715(arg1, var5, arg2, arg3, var29, var30, DefaultSprites.mapdotsSprites[0]);
 			}
 		}
 		method4838(arg0, var7, var8, arg1, var5, arg2, arg3);
@@ -606,7 +606,7 @@ public class Minimap {
 			if (field731 != -1) {
 				int var31 = field731 * 4 + 2 - var7 / 128 + (Client.localPlayerEntity.size() - 1) * 2;
 				int var32 = field718 * 4 + 2 - var8 / 128 + (Client.localPlayerEntity.size() - 1) * 2;
-				method4142(arg1, var5, arg2 - DefaultSprites.field11888, arg3 - DefaultSprites.field10232, var31, var32, DefaultSprites.field9149[field730 ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
+				method4142(arg1, var5, arg2 - DefaultSprites.field11888, arg3 - DefaultSprites.field10232, var31, var32, DefaultSprites.mapflagSprites[field730 ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
 			}
 			if (!Client.localPlayerEntity.visibility.isNotVisible()) {
 				arg0.method2301(arg1.field2196 / 2 + arg2 - 1, arg1.field2197 / 2 + arg3 - 1, 3, 3, -1);
@@ -631,7 +631,7 @@ public class Minimap {
 						int var12 = (int) var11.x / 128 - arg1 / 128;
 						int var13 = (int) var11.z / 128 - arg2 / 128;
 						if (var10.mapelement == -1) {
-							method715(arg3, arg4, arg5, arg6, var12, var13, DefaultSprites.field510[1]);
+							method715(arg3, arg4, arg5, arg6, var12, var13, DefaultSprites.mapdotsSprites[1]);
 						} else {
 							method15085(arg0, arg4, arg3, arg5, arg6, var12, var13, var10.mapelement);
 						}
@@ -671,21 +671,21 @@ public class Minimap {
 					var18 = true;
 				}
 				if (var9.model != null && var9.model.field7892 != -1 && ((NPCType) Client.npcTypeList.list(var9.model.field7892)).transmogfakenpc) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[1]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.mapdotsSprites[1]);
 				} else if (CommunityPartnerType.field1947 == var9.field12070) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[8]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.mapdotsSprites[8]);
 				} else if (CommunityPartnerType.field1948 == var9.field12070) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[6]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.mapdotsSprites[6]);
 				} else if (var18) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[4]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.mapdotsSprites[4]);
 				} else if (var13) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[3]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.mapdotsSprites[3]);
 				} else if (var9.field12048) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[7]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.mapdotsSprites[7]);
 				} else if (var16) {
-					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[5]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.mapdotsSprites[5]);
 				} else {
-					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.field510[2]);
+					method715(arg2, arg3, arg4, arg5, var11, var12, DefaultSprites.mapdotsSprites[2]);
 				}
 			}
 		}
@@ -832,15 +832,15 @@ public class Minimap {
 		if (var32 != null) {
 			var34 = var32.getHeight();
 		}
-		Font var35 = DefaultSprites.field8321;
-		FontMetrics var36 = DefaultSprites.field6778;
+		Font var35 = DefaultSprites.p11FullFont;
+		FontMetrics var36 = DefaultSprites.p11FullMetrics;
 		if (var8.textSize == 1) {
-			var35 = DefaultSprites.fontP12Full;
-			var36 = DefaultSprites.fontP12FullMetrics;
+			var35 = DefaultSprites.p12FullFont;
+			var36 = DefaultSprites.p12FullMetrics;
 		}
 		if (var8.textSize == 2) {
-			var35 = DefaultSprites.field10355;
-			var36 = DefaultSprites.field10268;
+			var35 = DefaultSprites.b12FullFont;
+			var36 = DefaultSprites.b12FullMetrics;
 		}
 		method3654(arg2, arg1, arg3, arg4, arg5, arg6, var34, var8.text, var35, var36, var8.field2366);
 	}

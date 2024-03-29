@@ -1398,7 +1398,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.bi(IIII)V")
-	public final void method2168(int arg0, int arg1, int arg2, int arg3) {
+	public final void resetBounds(int arg0, int arg1, int arg2, int arg3) {
 		int var5;
 		int var6;
 		if (this.renderTarget == null) {
@@ -1426,7 +1426,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.bn(IIII)V")
-	public final void method2161(int arg0, int arg1, int arg2, int arg3) {
+	public final void setBounds(int arg0, int arg1, int arg2, int arg3) {
 		int var5;
 		int var6;
 		if (this.renderTarget == null) {

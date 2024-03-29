@@ -63,7 +63,7 @@ public class PositionEntity extends Position {
 	@ObfuscatedName("ahd.ae(B)V")
 	public void method16684() {
 		if (this.field10552 != null) {
-			this.field10552 = this.field3084.method4697().method268(this.field10552.method4675(), this.field10552.method4670());
+			this.field10552 = this.field3084.method4697().method268(this.field10552.getCameraTrackableType(), this.field10552.getIndex());
 		}
 	}
 
@@ -87,7 +87,7 @@ public class PositionEntity extends Position {
 	public Quaternion method16685() {
 		Quaternion var1 = Quaternion.create(this.field10554);
 		if (this.field10556) {
-			Vector3 var2 = this.field10552.method4666();
+			Vector3 var2 = this.field10552.createVector3();
 			if (var2.length() < (float) this.field10561) {
 				var2 = Vector3.create(0.0F, 0.0F, 1.0F);
 				Quaternion var3 = this.field10552.method4668();
@@ -265,7 +265,7 @@ public class PositionEntity extends Position {
 
 	@ObfuscatedName("ahd.u(Lalw;I)V")
 	public void method5224(Packet arg0) {
-		CameraTrackableType var2 = CameraTrackableType.method15213(arg0.g1());
+		CameraTrackableType var2 = CameraTrackableType.of(arg0.g1());
 		int var3 = arg0.g2();
 		this.field10553.decode(arg0);
 		this.field10554.decode(arg0);

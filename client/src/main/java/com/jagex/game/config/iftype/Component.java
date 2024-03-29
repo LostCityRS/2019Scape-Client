@@ -1067,14 +1067,14 @@ public class Component {
 
 	@ObfuscatedName("hf.r(Loi;Loq;S)Leu;")
 	public Font method3942(FontProvider arg0, FontFactory arg1) {
-		Font var3 = (Font) arg0.method6188(arg1, this.field2287, false, this.field2275);
+		Font var3 = (Font) arg0.getFont(arg1, this.field2287, false, this.field2275);
 		field2338 = var3 == null;
 		return var3;
 	}
 
 	@ObfuscatedName("hf.v(Loi;Loq;I)Laac;")
 	public FontMetrics method3943(FontProvider arg0, FontFactory arg1) {
-		FontMetrics var3 = arg0.method6163(arg1, this.field2287);
+		FontMetrics var3 = arg0.getFontMetrics(arg1, this.field2287);
 		field2338 = var3 == null;
 		return var3;
 	}

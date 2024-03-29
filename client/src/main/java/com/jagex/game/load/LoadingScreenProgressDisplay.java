@@ -45,7 +45,7 @@ public abstract class LoadingScreenProgressDisplay implements LoadingScreenEleme
 		if (MonotonicTime.get() - this.field3031 > 10000L) {
 			var4 = var4 + " (" + Loading.field593.method4855().field2920 + ")";
 		}
-		this.field3029.method2683(var4, this.field3027.field3163 / 2 + var2, this.field3027.field3165 + this.field3027.field3160 / 2 + var3 + 4, this.field3027.field3164, -1);
+		this.field3029.drawStringCenter(var4, this.field3027.field3163 / 2 + var2, this.field3027.field3165 + this.field3027.field3160 / 2 + var3 + 4, this.field3027.field3164, -1);
 	}
 
 	@ObfuscatedName("kz.e(I)V")

@@ -45,7 +45,7 @@ public class LookatEntity extends Lookat {
 	@ObfuscatedName("anw.x(I)V")
 	public void method18815() {
 		if (this.field11867 != null) {
-			this.field11867 = this.field8479.method4697().method268(this.field11867.method4675(), this.field11867.method4670());
+			this.field11867 = this.field8479.method4697().method268(this.field11867.getCameraTrackableType(), this.field11867.getIndex());
 		}
 	}
 
@@ -108,7 +108,7 @@ public class LookatEntity extends Lookat {
 
 	@ObfuscatedName("anw.w(Lalw;I)V")
 	public void method14132(Packet arg0) {
-		CameraTrackableType var2 = CameraTrackableType.method15213(arg0.g1());
+		CameraTrackableType var2 = CameraTrackableType.of(arg0.g1());
 		int var3 = arg0.g2();
 		this.field11867 = this.field8479.method4697().method268(var2, var3);
 		this.field11863.decode(arg0);

@@ -224,7 +224,7 @@ public class NpcEntity extends PathingEntity {
 			}
 			this.field10459[var19] = null;
 		}
-		this.field11715 = Client.field10916;
+		this.field11715 = Client.sceneCycle;
 		return var11;
 	}
 
@@ -542,19 +542,19 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.cg(I)Z")
-	public boolean method16512() {
+	public boolean showChat() {
 		return Client.graphicsDefaults.npcShouldDisplayChat;
 	}
 
 	@ObfuscatedName("aqc.ce(I)Lsu;")
 	public EntityChatLine getChatLine() {
-		return this.field10409 != null && this.field10409.text == null ? null : this.field10409;
+		return this.currentChatLine != null && this.currentChatLine.text == null ? null : this.currentChatLine;
 	}
 
 	@ObfuscatedName("aqc.hc(Ljava/lang/String;III)V")
 	public void method19166(String arg0, int arg1, int arg2) {
 		int var4 = GameShell.method6016() * Client.graphicsDefaults.npcChatTimeout;
-		this.method16510(arg0, arg1, arg2, var4);
+		this.setChatLine(arg0, arg1, arg2, var4);
 	}
 
 	@ObfuscatedName("aqc.cx(I)I")
@@ -563,12 +563,12 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.e(I)Ljl;")
-	public CameraTrackableType method4675() {
-		return CameraTrackableType.field2839;
+	public CameraTrackableType getCameraTrackableType() {
+		return CameraTrackableType.NPC;
 	}
 
 	@ObfuscatedName("aqc.n(I)I")
-	public int method4670() {
+	public int getIndex() {
 		return this.localPlayerIndex;
 	}
 
@@ -586,7 +586,7 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.f(B)Lox;")
-	public Vector3 method4666() {
+	public Vector3 createVector3() {
 		return Vector3.create();
 	}
 
