@@ -338,7 +338,7 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.x()Z")
-	public boolean method2141() {
+	public boolean supportsAntiAliasing() {
 		return false;
 	}
 
@@ -358,12 +358,12 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.g()Ljava/lang/String;")
-	public String method2132() {
+	public String hardwareInfo() {
 		return "";
 	}
 
 	@ObfuscatedName("afg.i()[I")
-	public int[] method2413() {
+	public int[] textureFormat() {
 		return null;
 	}
 

@@ -153,12 +153,12 @@ public class Direct3DRenderer extends GpuRenderer {
 	public static final int[] field11997 = new int[] { 22, 23 };
 
 	@ObfuscatedName("aqd.rx()Z")
-	public boolean method15957() {
+	public boolean hasVertexShader() {
 		return (this.caps.VertexShaderVersion & 0xFFFF) >= 257;
 	}
 
 	@ObfuscatedName("aqd.ry()Z")
-	public boolean method15958() {
+	public boolean hasFragmentShader() {
 		return (this.caps.PixelShaderVersion & 0xFFFF) >= 257;
 	}
 
@@ -257,31 +257,31 @@ public class Direct3DRenderer extends GpuRenderer {
 			this.field11961 = D3DLIGHT.Create();
 			this.field11988 = D3DLIGHT.Create();
 			this.field11970 = D3DLIGHT.Create();
-			this.field10186 = this.caps.MaxSimultaneousTextures;
-			this.field10094 = this.caps.MaxActiveLights > 0 ? this.caps.MaxActiveLights : 8;
+			this.maxSimutaneousTextures = this.caps.MaxSimultaneousTextures;
+			this.maxActiveLights = this.caps.MaxActiveLights > 0 ? this.caps.MaxActiveLights : 8;
 			this.field11975 = (this.caps.TextureCaps & 0x2) == 0;
-			this.field10192 = (this.caps.TextureCaps & 0x800) != 0;
+			this.hasTextureCubeMap = (this.caps.TextureCaps & 0x800) != 0;
 			this.field10125 = (this.caps.TextureCaps & 0x2000) != 0;
 			this.field11963 = (this.caps.TextureCaps & 0x8000) != 0;
 			this.field11967 = (this.caps.TextureCaps & 0x10000) != 0;
 			this.field11976 = (this.caps.TextureCaps & 0x4000) != 0;
 			this.hasFramebufferObject = this.caps.NumSimultaneousRTs > 0;
 			this.field10116 = this.hasFramebufferObject;
-			this.field10134 = this.caps.NumSimultaneousRTs > 0;
-			this.field10172 = this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, true, 2) == 0;
-			this.field10199 = this.caps.NumSimultaneousRTs > 0 && this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, 113, true, 2) == 0;
+			this.hasFramebufferBlit = this.caps.NumSimultaneousRTs > 0;
+			this.hasMultiSample = this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, true, 2) == 0;
+			this.hasFramebufferMultisample = this.caps.NumSimultaneousRTs > 0 && this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, 113, true, 2) == 0;
 			this.field11979 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, method16082('A', 'T', 'O', 'C')) == 0;
 			this.field11980 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, method16082('A', '2', 'M', '1')) == 0;
 			this.field11971 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, method16082('S', 'S', 'A', 'A')) == 0;
-			this.field10074 = (this.caps.PrimitiveMiscCaps & 0x20000) != 0;
+			this.hasBlendFuncSeparate = (this.caps.PrimitiveMiscCaps & 0x20000) != 0;
 			this.field11953 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.displayMode.Format, 524288, 3, 113) == 0;
 			this.field11983 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.displayMode.Format, 524288, 3, 116) == 0;
-			this.field11965 = new boolean[this.field10186];
-			this.field11966 = new boolean[this.field10186];
-			this.field11981 = new boolean[this.field10186];
-			this.field11969 = new GpuTextureRelated[this.field10186];
-			this.field11977 = new boolean[this.field10186];
-			this.field11962 = new int[this.field10186];
+			this.field11965 = new boolean[this.maxSimutaneousTextures];
+			this.field11966 = new boolean[this.maxSimutaneousTextures];
+			this.field11981 = new boolean[this.maxSimutaneousTextures];
+			this.field11969 = new GpuTextureRelated[this.maxSimutaneousTextures];
+			this.field11977 = new boolean[this.maxSimutaneousTextures];
+			this.field11962 = new int[this.maxSimutaneousTextures];
 			Matrix4x3 var17 = new Matrix4x3();
 			var17.setToScale(1.0F, -1.0F, 0.5F);
 			var17.translate(0.0F, 0.0F, 0.5F);
@@ -351,7 +351,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.sw()V")
 	public void method16232() {
-		for (int var1 = 0; var1 < this.field10186; var1++) {
+		for (int var1 = 0; var1 < this.maxSimutaneousTextures; var1++) {
 			IDirect3DDevice.SetSamplerState(this.device, var1, 7, 2);
 			IDirect3DDevice.SetSamplerState(this.device, var1, 6, 2);
 			IDirect3DDevice.SetSamplerState(this.device, var1, 5, 2);
@@ -369,7 +369,7 @@ public class Direct3DRenderer extends GpuRenderer {
 		IDirect3DDevice.SetRenderState(this.device, 23, 4);
 		IDirect3DDevice.SetRenderState(this.device, 25, 5);
 		IDirect3DDevice.SetRenderState(this.device, 24, 0);
-		IDirect3DDevice.SetRenderState(this.device, 206, this.field10074);
+		IDirect3DDevice.SetRenderState(this.device, 206, this.hasBlendFuncSeparate);
 		IDirect3DDevice.SetRenderState(this.device, 181, 0);
 		this.method19007();
 		IDirect3DDevice.SetRenderState(this.device, 147, 1);
@@ -1206,7 +1206,7 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.rc(Ljava/lang/String;)Lho;")
-	public Shader method15964(String arg0) {
+	public Shader createShader(String arg0) {
 		byte[] var2 = this.getShader(arg0);
 		if (var2 == null) {
 			return null;
@@ -1359,28 +1359,28 @@ public class Direct3DRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqd.g()Ljava/lang/String;")
-	public String method2132() {
+	public String hardwareInfo() {
 		String var1 = "Caps: 4:";
 		String var2 = ":";
 		String var3 = var1 + this.field10180 + var2;
-		String var4 = var3 + this.field10186 + var2;
-		String var5 = var4 + this.field10094 + var2;
-		String var6 = var5 + (this.field10172 ? 1 : 0) + var2;
-		String var7 = var6 + (this.method15957() ? 1 : 0) + var2;
-		String var8 = var7 + (this.method15958() ? 1 : 0) + var2;
+		String var4 = var3 + this.maxSimutaneousTextures + var2;
+		String var5 = var4 + this.maxActiveLights + var2;
+		String var6 = var5 + (this.hasMultiSample ? 1 : 0) + var2;
+		String var7 = var6 + (this.hasVertexShader() ? 1 : 0) + var2;
+		String var8 = var7 + (this.hasFragmentShader() ? 1 : 0) + var2;
 		String var9 = var8 + (this.field10125 ? 1 : 0) + var2;
-		String var10 = var9 + (this.field10192 ? 1 : 0) + var2;
+		String var10 = var9 + (this.hasTextureCubeMap ? 1 : 0) + var2;
 		String var11 = var10 + (this.field11975 ? 1 : 0) + var2;
 		String var12 = var11 + (this.field11963 ? 1 : 0) + var2;
 		String var13 = var12 + (this.field11967 ? 1 : 0) + var2;
 		String var14 = var13 + (this.field11976 ? 1 : 0) + var2;
 		String var15 = var14 + (this.hasFramebufferObject ? 1 : 0) + var2;
-		String var16 = var15 + (this.field10134 ? 1 : 0) + var2;
-		String var17 = var16 + (this.field10199 ? 1 : 0) + var2;
+		String var16 = var15 + (this.hasFramebufferBlit ? 1 : 0) + var2;
+		String var17 = var16 + (this.hasFramebufferMultisample ? 1 : 0) + var2;
 		String var18 = var17 + (this.field11979 ? 1 : 0) + var2;
 		String var19 = var18 + (this.field11980 ? 1 : 0) + var2;
 		String var20 = var19 + (this.field11971 ? 1 : 0) + var2;
-		String var21 = var20 + (this.field10074 ? 1 : 0) + var2;
+		String var21 = var20 + (this.hasBlendFuncSeparate ? 1 : 0) + var2;
 		String var22 = var21 + (this.field11953 ? 1 : 0) + var2;
 		return var22 + (this.field11983 ? 1 : 0);
 	}

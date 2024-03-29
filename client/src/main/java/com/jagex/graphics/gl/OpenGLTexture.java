@@ -23,7 +23,7 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 
 	public OpenGLTexture(OpenGLRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4) {
 		super(arg0, 3553, arg1, arg2, arg3 * arg4, false);
-		if (this.field4980.field12022) {
+		if (this.field4980.hasTextureNonPowerOfTwo) {
 			this.field10671 = arg3;
 			this.field10672 = arg4;
 			this.field10673 = 1.0F;
@@ -40,7 +40,7 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 
 	public OpenGLTexture(OpenGLRenderer arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
 		super(arg0, 3553, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, arg1 * arg2, arg3);
-		if (this.field4980.field12022) {
+		if (this.field4980.hasTextureNonPowerOfTwo) {
 			this.field10671 = arg1;
 			this.field10672 = arg2;
 			this.field10673 = 1.0F;
@@ -68,7 +68,7 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 
 	public OpenGLTexture(OpenGLRenderer arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, byte[] arg5, int arg6, int arg7) {
 		super(arg0, 3553, arg1, DataType.UNSIGNED_INT_8, arg2 * arg3, arg4);
-		if (this.field4980.field12022) {
+		if (this.field4980.hasTextureNonPowerOfTwo) {
 			this.field10671 = arg2;
 			this.field10672 = arg3;
 			this.field10673 = 1.0F;
@@ -104,7 +104,7 @@ public class OpenGLTexture extends OpenGLBaseTexture implements Texture2 {
 
 	public OpenGLTexture(OpenGLRenderer arg0, TextureFormat arg1, int arg2, int arg3, boolean arg4, float[] arg5, int arg6, int arg7) {
 		super(arg0, 3553, arg1, DataType.FLOAT_32, arg2 * arg3, arg4);
-		if (this.field4980.field12022) {
+		if (this.field4980.hasTextureNonPowerOfTwo) {
 			this.field10671 = arg2;
 			this.field10672 = arg3;
 			this.field10673 = 1.0F;

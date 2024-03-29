@@ -500,13 +500,13 @@ public abstract class Renderer {
 	public abstract boolean method2130();
 
 	@ObfuscatedName("dh.g()Ljava/lang/String;")
-	public abstract String method2132();
+	public abstract String hardwareInfo();
 
 	@ObfuscatedName("dh.bp(IIIII)V")
 	public abstract void drawVerticalLine(int x1, int y1, int x2, int y2, int arg4);
 
 	@ObfuscatedName("dh.x()Z")
-	public abstract boolean method2141();
+	public abstract boolean supportsAntiAliasing();
 
 	@ObfuscatedName("dh.ad(Ljava/awt/Canvas;II)Lafy;")
 	public abstract Surface createSurface(Canvas arg0, int arg1, int arg2);
@@ -743,7 +743,7 @@ public abstract class Renderer {
 	public abstract int method2394(int arg0, int arg1);
 
 	@ObfuscatedName("dh.i()[I")
-	public abstract int[] method2413();
+	public abstract int[] textureFormat();
 
 	@ObfuscatedName("dh.ba(IIIII)V")
 	public abstract void drawHorizontalLine(int x, int y, int width, int rgb, int arg4);

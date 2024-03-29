@@ -19,25 +19,25 @@ public class ColourRemappingFilter extends PostProcessEffect {
 	public static GpuColourRemapper[] field10653 = new GpuColourRemapper[] { null, null, null };
 
 	@ObfuscatedName("ais.l")
-	public Shader field10654;
+	public Shader shader;
 
 	@ObfuscatedName("ais.u")
-	public ProgramUniform field10658;
+	public ProgramUniform sceneTexUniform;
 
 	@ObfuscatedName("ais.z")
-	public Program[] field10659 = null;
+	public Program[] techRemap3DPrograms = null;
 
 	@ObfuscatedName("ais.p")
-	public ProgramUniform[] field10660 = null;
+	public ProgramUniform[] remapTex3DPrograms = null;
 
 	@ObfuscatedName("ais.d")
-	public ProgramUniform field10661;
+	public ProgramUniform paramsWeightingsUniform;
 
 	@ObfuscatedName("ais.c")
-	public ProgramUniform field10662;
+	public ProgramUniform pixelOffsetUniforms;
 
 	@ObfuscatedName("ais.r")
-	public ProgramUniform field10657;
+	public ProgramUniform posAndTexCoordsUniform;
 
 	@ObfuscatedName("ais.v")
 	public boolean field10664;
@@ -48,7 +48,7 @@ public class ColourRemappingFilter extends PostProcessEffect {
 
 	@ObfuscatedName("ais.e()Z")
 	public boolean method5558() {
-		return this.field3242.hasFramebufferObject && this.field3242.method15958();
+		return this.gpuRenderer.hasFramebufferObject && this.gpuRenderer.hasFragmentShader();
 	}
 
 	@ObfuscatedName("ais.n()Z")
@@ -61,38 +61,38 @@ public class ColourRemappingFilter extends PostProcessEffect {
 		if (!this.method5558()) {
 			return false;
 		}
-		this.field10654 = this.field3242.method15964("FilterColourRemapping");
-		if (this.field10654 == null) {
+		this.shader = this.gpuRenderer.createShader("FilterColourRemapping");
+		if (this.shader == null) {
 			return false;
 		}
 		try {
-			this.field10658 = this.field10654.getUniform("sceneTex");
-			this.field10659 = new Program[3];
-			this.field10660 = new ProgramUniform[3];
-			if (this.field3242.field10125) {
-				this.field10659[0] = this.field10654.getProgram("techRemap3D_1");
-				this.field10659[1] = this.field10654.getProgram("techRemap3D_2");
-				this.field10659[2] = this.field10654.getProgram("techRemap3D_3");
-				this.field10660[0] = this.field10654.getUniform("remapTex3D_1");
-				this.field10660[1] = this.field10654.getUniform("remapTex3D_2");
-				this.field10660[2] = this.field10654.getUniform("remapTex3D_3");
+			this.sceneTexUniform = this.shader.getUniform("sceneTex");
+			this.techRemap3DPrograms = new Program[3];
+			this.remapTex3DPrograms = new ProgramUniform[3];
+			if (this.gpuRenderer.field10125) {
+				this.techRemap3DPrograms[0] = this.shader.getProgram("techRemap3D_1");
+				this.techRemap3DPrograms[1] = this.shader.getProgram("techRemap3D_2");
+				this.techRemap3DPrograms[2] = this.shader.getProgram("techRemap3D_3");
+				this.remapTex3DPrograms[0] = this.shader.getUniform("remapTex3D_1");
+				this.remapTex3DPrograms[1] = this.shader.getUniform("remapTex3D_2");
+				this.remapTex3DPrograms[2] = this.shader.getUniform("remapTex3D_3");
 			} else {
-				this.field10659[0] = this.field10654.getProgram("techRemap2D_1");
-				this.field10659[1] = this.field10654.getProgram("techRemap2D_2");
-				this.field10659[2] = this.field10654.getProgram("techRemap2D_3");
-				this.field10660[0] = this.field10654.getUniform("remapTex2D_1");
-				this.field10660[1] = this.field10654.getUniform("remapTex2D_2");
-				this.field10660[2] = this.field10654.getUniform("remapTex2D_3");
+				this.techRemap3DPrograms[0] = this.shader.getProgram("techRemap2D_1");
+				this.techRemap3DPrograms[1] = this.shader.getProgram("techRemap2D_2");
+				this.techRemap3DPrograms[2] = this.shader.getProgram("techRemap2D_3");
+				this.remapTex3DPrograms[0] = this.shader.getUniform("remapTex2D_1");
+				this.remapTex3DPrograms[1] = this.shader.getUniform("remapTex2D_2");
+				this.remapTex3DPrograms[2] = this.shader.getUniform("remapTex2D_3");
 			}
-			this.field10661 = this.field10654.getUniform("paramsWeightings");
-			this.field10662 = this.field10654.getUniform("pixelOffset");
-			this.field10657 = this.field10654.getUniform("PosAndTexCoords");
+			this.paramsWeightingsUniform = this.shader.getUniform("paramsWeightings");
+			this.pixelOffsetUniforms = this.shader.getUniform("pixelOffset");
+			this.posAndTexCoordsUniform = this.shader.getUniform("PosAndTexCoords");
 		} catch (UniformNotFoundException var3) {
 			return false;
 		} catch (ProgramNotFoundException var4) {
 			return false;
 		}
-		if (this.field10659[0].compile() && this.field10659[1].compile() && this.field10659[2].compile()) {
+		if (this.techRemap3DPrograms[0].compile() && this.techRemap3DPrograms[1].compile() && this.techRemap3DPrograms[2].compile()) {
 			this.field10664 = true;
 			return true;
 		} else {
@@ -115,7 +115,7 @@ public class ColourRemappingFilter extends PostProcessEffect {
 
 	@ObfuscatedName("ais.l(ILafq;Llz;Ldw;Llz;Z)V")
 	public void method5564(int arg0, Framebuffer arg1, GpuTexture arg2, EffectInterface arg3, GpuTexture arg4, boolean arg5) {
-		float var7 = this.field3242.method15954();
+		float var7 = this.gpuRenderer.method15954();
 		float var8 = (float) arg1.getWidth();
 		float var9 = (float) arg1.getHeight();
 		float var11 = var7 * 2.0F / var8;
@@ -123,19 +123,19 @@ public class ColourRemappingFilter extends PostProcessEffect {
 		float[] var13 = new float[] { var11 + -1.0F, var12 + 1.0F, 0.0F, 0.0F, var11 + -1.0F, var12 + -3.0F, 0.0F, 2.0F, var11 + 3.0F, var12 + 1.0F, 2.0F, 0.0F };
 		int var14 = (int) var8;
 		int var15 = (int) var9;
-		int var16 = arg5 ? this.field3242.getSurface().getWidth() : var14;
-		int var17 = arg5 ? this.field3242.getSurface().getHeight() : var15;
-		Program var18 = this.field10659[field10655 - 1];
-		this.field10654.setCurrentProgram(var18);
-		this.field10654.enable();
-		this.field10654.setUniform(this.field10661, field10656, field10663[0], field10663[1], field10663[2]);
+		int var16 = arg5 ? this.gpuRenderer.getSurface().getWidth() : var14;
+		int var17 = arg5 ? this.gpuRenderer.getSurface().getHeight() : var15;
+		Program var18 = this.techRemap3DPrograms[field10655 - 1];
+		this.shader.setCurrentProgram(var18);
+		this.shader.enable();
+		this.shader.setUniform4f(this.paramsWeightingsUniform, field10656, field10663[0], field10663[1], field10663[2]);
 		Object var19 = null;
 		Object var20 = null;
 		for (int var21 = 0; var21 < field10655; var21++) {
 			if (field10653[var21] != null) {
-				ProgramUniform var22 = this.field10660[var21];
+				ProgramUniform var22 = this.remapTex3DPrograms[var21];
 				BaseTexture var23 = field10653[var21].method15431();
-				this.field10654.setUniform(var22, var21 + 1, var23);
+				this.shader.setUniform1i(var22, var21 + 1, var23);
 			}
 		}
 		float var24 = (float) var14 / var8;
@@ -146,15 +146,15 @@ public class ColourRemappingFilter extends PostProcessEffect {
 		var13[5] = (var13[5] - 1.0F) * var25 + 1.0F;
 		var13[10] *= var26;
 		var13[7] *= var27;
-		this.field10654.setUniform(this.field10657, var13);
-		this.field10654.setUniform(this.field10658, 0, arg2);
-		this.field10654.setUniform(this.field10662, 0.0F, 0.0F, 0.0F, 0.0F);
-		this.field3242.method2164(0, 0, var14, var15);
+		this.shader.setUniformFloatv(this.posAndTexCoordsUniform, var13);
+		this.shader.setUniform1i(this.sceneTexUniform, 0, arg2);
+		this.shader.setUniform4f(this.pixelOffsetUniforms, 0.0F, 0.0F, 0.0F, 0.0F);
+		this.gpuRenderer.method2164(0, 0, var14, var15);
 	}
 
 	@ObfuscatedName("ais.u(I)V")
 	public void method5565(int arg0) {
-		this.field10654.method4214();
+		this.shader.method4214();
 	}
 
 	@ObfuscatedName("ais.d()I")

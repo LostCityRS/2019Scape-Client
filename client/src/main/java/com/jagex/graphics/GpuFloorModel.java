@@ -806,19 +806,19 @@ public class GpuFloorModel extends FloorModel {
 									if (var33 == 2) {
 										var35 = this.field9516.field10152;
 									}
-									var35.field12143.setTo(this.field9516.field10081);
-									var35.field12127.scale(1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F, 1.0F);
-									var35.field12129.setTo(this.field9516.field10035.entries[12], this.field9516.field10035.entries[13], this.field9516.field10035.entries[14]);
+									var35.wvpMatrix.setTo(this.field9516.field10081);
+									var35.texCoordMatrix.scale(1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F, 1.0F);
+									var35.eyePosAndTime.setTo(this.field9516.field10035.entries[12], this.field9516.field10035.entries[13], this.field9516.field10035.entries[14]);
 									Material var36 = this.field9516.materialList.get(var31.field11402);
 									var35.field12147 = var36.effectArg1;
 									var35.field12145 = var31.field11400;
 									var35.field12146 = var31.field11407 - var31.field11400 + 1;
 									var35.field12120 = var29;
 									var35.field12148 = var31.field11408 / 3;
-									var35.field12138.method6248(var22.field2979);
-									var35.field12140.setTo(var22.field2973);
-									var35.field12124.method6248(var22.field2984);
-									var35.field12144.setTo(var22.field2975);
+									var35.heightFogPlane.method6248(var22.field2979);
+									var35.heightFogColour.setTo(var22.field2973);
+									var35.distanceFogPlane.method6248(var22.field2984);
+									var35.distanceFogColour.setTo(var22.field2975);
 									var35.method19210();
 								}
 								break;
@@ -837,7 +837,7 @@ public class GpuFloorModel extends FloorModel {
 							case 7:
 								var22.field2969.setTo(this.field9516.field10035.entries[12], this.field9516.field10035.entries[13], this.field9516.field10035.entries[14]);
 								var22.field2980.setToIdentity();
-								var22.field2967 = this.field9516.method15994();
+								var22.field2967 = this.field9516.getEnvMapSampler();
 								var22.method5026(0);
 						}
 						var29 += var31.field11408;

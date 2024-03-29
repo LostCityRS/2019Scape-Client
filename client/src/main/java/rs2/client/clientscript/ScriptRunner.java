@@ -16130,7 +16130,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("qf.azz(Lyf;B)V")
 	public static final void detailcanmod_antialiasing(ClientScriptState arg0) {
-		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.antiAliasing.canMod() && Client.renderer.method2141() ? 1 : 0;
+		arg0.field8216[++arg0.field8226 - 1] = Client.preferences.antiAliasing.canMod() && Client.renderer.supportsAntiAliasing() ? 1 : 0;
 	}
 
 	@ObfuscatedName("sl.azb(Lyf;I)V")
@@ -16286,7 +16286,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("rd.bay(Lyf;B)V")
 	public static final void detailcanset_antialiasing(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
-		if (Client.renderer.method2141()) {
+		if (Client.renderer.supportsAntiAliasing()) {
 			arg0.field8216[++arg0.field8226 - 1] = Client.preferences.antiAliasing.canSetValue(var1);
 		} else {
 			arg0.field8216[++arg0.field8226 - 1] = 3;

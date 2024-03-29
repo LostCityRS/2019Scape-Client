@@ -18,13 +18,13 @@ public class RendererInfo {
 	public final String device;
 
 	@ObfuscatedName("cz.p")
-	public final long field1265;
+	public final long driverVersion;
 
 	public RendererInfo(int toolkitId, String name, int version, String device, long arg4, boolean arg5) {
 		this.toolkitId = toolkitId;
 		this.name = name;
 		this.version = version;
 		this.device = device;
-		this.field1265 = arg4;
+		this.driverVersion = arg4;
 	}
 }

@@ -9,42 +9,43 @@ public class ShaderData {
 	public String name;
 
 	@ObfuscatedName("hj.k")
-	public ProgramUniformData[] uniforms;
+	public ProgramUniformData[] vertexUniforms;
 
 	@ObfuscatedName("hj.f")
-	public ProgramUniformData[] uniforms2;
+	public ProgramUniformData[] fragmentUniforms;
 
 	@ObfuscatedName("hj.w")
 	public ProgramData[] programs;
 
 	// line 13
 	public ShaderData(byte[] arg0) throws ShaderDataException {
-		this.method4279(arg0);
+		this.decode(arg0);
 	}
 
 	// line 18
 	@ObfuscatedName("hj.e([BB)V")
-	public void method4279(byte[] arg0) throws ShaderDataException {
-		ShaderDataReader var2 = new ShaderDataReader(arg0);
-		int var3 = var2.method4133();
+	public void decode(byte[] bytes) throws ShaderDataException {
+		ShaderDataReader buf = new ShaderDataReader(bytes);
+		int var3 = buf.g2();
 		if (var3 != 4) {
 			throw new ShaderDataException(this, var3, 4);
 		}
-		this.name = var2.method4134();
-		this.uniforms = new ProgramUniformData[var2.method4133()];
-		this.uniforms2 = new ProgramUniformData[var2.method4133()];
-		this.programs = new ProgramData[var2.method4133()];
-		for (int var4 = 0; var4 < this.uniforms.length; var4++) {
-			this.uniforms[var4] = new ProgramUniformData();
-			this.uniforms[var4].method4290(var2);
+		this.name = buf.gstr();
+		System.out.println("name = " + name);
+		this.vertexUniforms = new ProgramUniformData[buf.g2()];
+		this.fragmentUniforms = new ProgramUniformData[buf.g2()];
+		this.programs = new ProgramData[buf.g2()];
+		for (int var4 = 0; var4 < this.vertexUniforms.length; var4++) {
+			this.vertexUniforms[var4] = new ProgramUniformData();
+			this.vertexUniforms[var4].decode(buf);
 		}
-		for (int var5 = 0; var5 < this.uniforms2.length; var5++) {
-			this.uniforms2[var5] = new ProgramUniformData();
-			this.uniforms2[var5].method4290(var2);
+		for (int var5 = 0; var5 < this.fragmentUniforms.length; var5++) {
+			this.fragmentUniforms[var5] = new ProgramUniformData();
+			this.fragmentUniforms[var5].decode(buf);
 		}
 		for (int var6 = 0; var6 < this.programs.length; var6++) {
 			this.programs[var6] = new ProgramData();
-			this.programs[var6].method4077(var2);
+			this.programs[var6].decode(buf);
 		}
 	}
 

@@ -429,8 +429,8 @@ public class DeveloperConsole {
 				addline("Name: " + var3.name);
 				addline("Version: " + var3.version);
 				addline("Device: " + var3.device);
-				addline("Driver Version: " + var3.field1265);
-				String var4 = Client.renderer.method2132();
+				addline("Driver Version: " + var3.driverVersion);
+				String var4 = Client.renderer.hardwareInfo();
 				if (var4.length() > 0) {
 					addline(var4);
 				}

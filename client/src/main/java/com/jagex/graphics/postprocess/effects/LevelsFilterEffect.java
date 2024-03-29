@@ -7,28 +7,28 @@ import deob.ObfuscatedName;
 public class LevelsFilterEffect extends PostProcessEffect {
 
 	@ObfuscatedName("aia.m")
-	public Shader field10645;
+	public Shader shader;
 
 	@ObfuscatedName("aia.k")
-	public Program field10641;
+	public Program techAdjustUniform;
 
 	@ObfuscatedName("aia.f")
-	public ProgramUniform field10649;
+	public ProgramUniform sceneTexUniform;
 
 	@ObfuscatedName("aia.w")
-	public ProgramUniform field10652;
+	public ProgramUniform paramsGammaUniform;
 
 	@ObfuscatedName("aia.l")
-	public ProgramUniform field10644;
+	public ProgramUniform paramsRangesUniform;
 
 	@ObfuscatedName("aia.u")
-	public ProgramUniform field10646;
+	public ProgramUniform pixelOffsetUniform;
 
 	@ObfuscatedName("aia.z")
-	public ProgramUniform field10648;
+	public ProgramUniform posAndTexCoordsUniform;
 
 	@ObfuscatedName("aia.p")
-	public static float field10647 = 1.0F;
+	public static float paramsGamma = 1.0F;
 
 	@ObfuscatedName("aia.d")
 	public static float field10642 = 0.0F;
@@ -51,7 +51,7 @@ public class LevelsFilterEffect extends PostProcessEffect {
 
 	@ObfuscatedName("aia.e()Z")
 	public boolean method5558() {
-		return this.field3242.hasFramebufferObject && this.field3242.method15958();
+		return this.gpuRenderer.hasFramebufferObject && this.gpuRenderer.hasFragmentShader();
 	}
 
 	@ObfuscatedName("aia.n()Z")
@@ -64,23 +64,23 @@ public class LevelsFilterEffect extends PostProcessEffect {
 		if (!this.method5558()) {
 			return false;
 		}
-		this.field10645 = this.field3242.method15964("FilterLevels");
-		if (this.field10645 == null) {
+		this.shader = this.gpuRenderer.createShader("FilterLevels");
+		if (this.shader == null) {
 			return false;
 		}
 		try {
-			this.field10649 = this.field10645.getUniform("sceneTex");
-			this.field10652 = this.field10645.getUniform("paramsGamma");
-			this.field10644 = this.field10645.getUniform("paramsRanges");
-			this.field10646 = this.field10645.getUniform("pixelOffset");
-			this.field10648 = this.field10645.getUniform("PosAndTexCoords");
-			this.field10641 = this.field10645.getProgram("techAdjust");
+			this.sceneTexUniform = this.shader.getUniform("sceneTex");
+			this.paramsGammaUniform = this.shader.getUniform("paramsGamma");
+			this.paramsRangesUniform = this.shader.getUniform("paramsRanges");
+			this.pixelOffsetUniform = this.shader.getUniform("pixelOffset");
+			this.posAndTexCoordsUniform = this.shader.getUniform("PosAndTexCoords");
+			this.techAdjustUniform = this.shader.getProgram("techAdjust");
 		} catch (UniformNotFoundException var3) {
 			return false;
 		} catch (ProgramNotFoundException var4) {
 			return false;
 		}
-		if (this.field10641.compile()) {
+		if (this.techAdjustUniform.compile()) {
 			this.field10640 = true;
 			return true;
 		} else {
@@ -103,7 +103,7 @@ public class LevelsFilterEffect extends PostProcessEffect {
 
 	@ObfuscatedName("aia.l(ILafq;Llz;Ldw;Llz;Z)V")
 	public void method5564(int arg0, Framebuffer arg1, GpuTexture arg2, EffectInterface arg3, GpuTexture arg4, boolean arg5) {
-		float var7 = this.field3242.method15954();
+		float var7 = this.gpuRenderer.method15954();
 		float var8 = (float) arg1.getWidth();
 		float var9 = (float) arg1.getHeight();
 		float var10 = var7 * 2.0F / var8;
@@ -111,10 +111,10 @@ public class LevelsFilterEffect extends PostProcessEffect {
 		float[] var12 = new float[] { var10 + -1.0F, var11 + 1.0F, 0.0F, 0.0F, var10 + -1.0F, var11 + -3.0F, 0.0F, 2.0F, var10 + 3.0F, var11 + 1.0F, 2.0F, 0.0F };
 		int var13 = (int) var8;
 		int var14 = (int) var9;
-		int var15 = arg5 ? this.field3242.getSurface().getWidth() : var13;
-		int var16 = arg5 ? this.field3242.getSurface().getHeight() : var14;
-		this.field10645.setCurrentProgram(this.field10641);
-		this.field10645.enable();
+		int var15 = arg5 ? this.gpuRenderer.getSurface().getWidth() : var13;
+		int var16 = arg5 ? this.gpuRenderer.getSurface().getHeight() : var14;
+		this.shader.setCurrentProgram(this.techAdjustUniform);
+		this.shader.enable();
 		float var17 = (float) var13 / var8;
 		float var18 = (float) var14 / var9;
 		float var19 = (float) var15 / var8;
@@ -123,17 +123,17 @@ public class LevelsFilterEffect extends PostProcessEffect {
 		var12[5] = (var12[5] - 1.0F) * var18 + 1.0F;
 		var12[10] *= var19;
 		var12[7] *= var20;
-		this.field10645.setUniform(this.field10648, var12);
-		this.field10645.setUniform(this.field10649, 0, arg2);
-		this.field10645.setUniform(this.field10652, field10647);
-		this.field10645.setUniform(this.field10644, field10642, field10643, field10650, field10651);
-		this.field10645.setUniform(this.field10646, 0.0F, 0.0F, 0.0F, 0.0F);
-		this.field3242.method2164(0, 0, var13, var14);
+		this.shader.setUniformFloatv(this.posAndTexCoordsUniform, var12);
+		this.shader.setUniform1i(this.sceneTexUniform, 0, arg2);
+		this.shader.setUniform1f(this.paramsGammaUniform, paramsGamma);
+		this.shader.setUniform4f(this.paramsRangesUniform, field10642, field10643, field10650, field10651);
+		this.shader.setUniform4f(this.pixelOffsetUniform, 0.0F, 0.0F, 0.0F, 0.0F);
+		this.gpuRenderer.method2164(0, 0, var13, var14);
 	}
 
 	@ObfuscatedName("aia.u(I)V")
 	public void method5565(int arg0) {
-		this.field10645.method4214();
+		this.shader.method4214();
 	}
 
 	@ObfuscatedName("aia.d()I")
@@ -148,6 +148,6 @@ public class LevelsFilterEffect extends PostProcessEffect {
 
 	@ObfuscatedName("aia.v()Z")
 	public boolean method5571() {
-		return field10647 == 1.0F && field10642 == 0.0F && field10643 == 1.0F && field10650 == 0.0F && field10651 == 1.0F;
+		return paramsGamma == 1.0F && field10642 == 0.0F && field10643 == 1.0F && field10650 == 0.0F && field10651 == 1.0F;
 	}
 }

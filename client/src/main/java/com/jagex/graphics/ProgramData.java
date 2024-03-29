@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class ProgramData {
 
 	@ObfuscatedName("hn.e")
-	public String field2432;
+	public String name;
 
 	@ObfuscatedName("hn.n")
 	public String vertexShaderFile;
@@ -15,27 +15,27 @@ public class ProgramData {
 	public String fragmentShaderFile;
 
 	@ObfuscatedName("hn.k")
-	public ProgramDefineData[] field2429;
+	public ProgramDefineData[] vertexPrograms;
 
 	@ObfuscatedName("hn.f")
-	public ProgramDefineData[] field2431;
+	public ProgramDefineData[] fragmentPrograms;
 
 	@ObfuscatedName("hn.e(Lhw;I)V")
-	public void method4077(ShaderDataReader arg0) {
-		this.field2432 = arg0.method4134();
-		this.vertexShaderFile = arg0.method4134();
-		this.fragmentShaderFile = arg0.method4134();
-		int var2 = arg0.method4133();
-		int var3 = arg0.method4133();
-		this.field2429 = var2 == 0 ? null : new ProgramDefineData[var2];
-		this.field2431 = var3 == 0 ? null : new ProgramDefineData[var3];
-		for (int var4 = 0; var4 < var2; var4++) {
-			this.field2429[var4] = new ProgramDefineData();
-			this.field2429[var4].method4146(arg0);
+	public void decode(ShaderDataReader buf) {
+		this.name = buf.gstr();
+		this.vertexShaderFile = buf.gstr();
+		this.fragmentShaderFile = buf.gstr();
+		int var2 = buf.g2();
+		int var3 = buf.g2();
+		this.vertexPrograms = var2 == 0 ? null : new ProgramDefineData[var2];
+		this.fragmentPrograms = var3 == 0 ? null : new ProgramDefineData[var3];
+		for (int index = 0; index < var2; index++) {
+			this.vertexPrograms[index] = new ProgramDefineData();
+			this.vertexPrograms[index].decode(buf);
 		}
-		for (int var5 = 0; var5 < var3; var5++) {
-			this.field2431[var5] = new ProgramDefineData();
-			this.field2431[var5].method4146(arg0);
+		for (int index = 0; index < var3; index++) {
+			this.fragmentPrograms[index] = new ProgramDefineData();
+			this.fragmentPrograms[index].decode(buf);
 		}
 	}
 }

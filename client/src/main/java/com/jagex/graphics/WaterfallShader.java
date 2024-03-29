@@ -12,43 +12,43 @@ public class WaterfallShader extends WaterShader {
 	public final WaterRelated field12119;
 
 	@ObfuscatedName("aqw.aw")
-	public ProgramUniform field12103;
+	public ProgramUniform timeUniform;
 
 	@ObfuscatedName("aqw.as")
-	public ProgramUniform field12104;
+	public ProgramUniform billowSampler3DUniform;
 
 	@ObfuscatedName("aqw.at")
-	public Program field12105;
+	public Program waterfall3DProgram;
 
 	@ObfuscatedName("aqw.ad")
-	public Program field12102;
+	public Program waterfall2DProgram;
 
 	@ObfuscatedName("aqw.am")
-	public ProgramUniform field12107;
+	public ProgramUniform wvpMatrixUniform;
 
 	@ObfuscatedName("aqw.au")
-	public final Matrix4x4 field12108 = new Matrix4x4();
+	public final Matrix4x4 wvpMatrix = new Matrix4x4();
 
 	@ObfuscatedName("aqw.ar")
-	public ProgramUniform field12118;
+	public ProgramUniform worldMatrixUniform;
 
 	@ObfuscatedName("aqw.ap")
-	public final Matrix4x4 field12106 = new Matrix4x4();
+	public final Matrix4x4 worldMatrix = new Matrix4x4();
 
 	@ObfuscatedName("aqw.aq")
-	public ProgramUniform field12111;
+	public ProgramUniform uGenerationPlaneUniform;
 
 	@ObfuscatedName("aqw.ax")
-	public final float[] field12112 = new float[4];
+	public final float[] uGenerationPlane = new float[4];
 
 	@ObfuscatedName("aqw.av")
-	public ProgramUniform field12113;
+	public ProgramUniform vGenerationPlaneUniform;
 
 	@ObfuscatedName("aqw.ao")
-	public final float[] field12114 = new float[4];
+	public final float[] vGenerationPlane = new float[4];
 
 	@ObfuscatedName("aqw.aj")
-	public float field12109;
+	public float time;
 
 	@ObfuscatedName("aqw.ay")
 	public int field12116;
@@ -62,28 +62,28 @@ public class WaterfallShader extends WaterShader {
 	@ObfuscatedName("aqw.aa")
 	public int field12117;
 
-	public WaterfallShader(GpuRenderer arg0, WaterRelated arg1) throws ShaderException {
-		super(arg0);
+	public WaterfallShader(GpuRenderer gpuRenderer, WaterRelated arg1) throws ShaderException {
+		super(gpuRenderer);
 		this.field12119 = arg1;
-		if (this.field12119.method5407() && arg0.method15957()) {
-			this.method16761("Waterfall");
+		if (this.field12119.method5407() && gpuRenderer.hasVertexShader()) {
+			this.createShaderProgram("Waterfall");
 		}
 	}
 
 	@ObfuscatedName("aqw.a()Z")
 	public boolean method16762() throws ShaderException {
-		this.field12118 = this.field10587.getUniform("WorldMatrix");
-		this.field12107 = this.field10587.getUniform("WVPMatrix");
-		this.field12111 = this.field10587.getUniform("UGenerationPlane");
-		this.field12113 = this.field10587.getUniform("VGenerationPlane");
-		this.field12103 = this.field10587.getUniform("Time");
-		this.field12104 = this.field10587.getUniform("billowSampler3D");
+		this.worldMatrixUniform = this.shader.getUniform("WorldMatrix");
+		this.wvpMatrixUniform = this.shader.getUniform("WVPMatrix");
+		this.uGenerationPlaneUniform = this.shader.getUniform("UGenerationPlane");
+		this.vGenerationPlaneUniform = this.shader.getUniform("VGenerationPlane");
+		this.timeUniform = this.shader.getUniform("Time");
+		this.billowSampler3DUniform = this.shader.getUniform("billowSampler3D");
 		if (this.field12119.field3229) {
-			this.field12105 = this.field10587.getProgram("Waterfall3D");
-			this.field10587.setCurrentProgram(this.field12105);
+			this.waterfall3DProgram = this.shader.getProgram("Waterfall3D");
+			this.shader.setCurrentProgram(this.waterfall3DProgram);
 		} else {
-			this.field12102 = this.field10587.getProgram("Waterfall2D");
-			this.field10587.setCurrentProgram(this.field12102);
+			this.waterfall2DProgram = this.shader.getProgram("Waterfall2D");
+			this.shader.setCurrentProgram(this.waterfall2DProgram);
 		}
 		return true;
 	}
@@ -95,44 +95,44 @@ public class WaterfallShader extends WaterShader {
 		float var5 = (arg0 & 0x40) == 0 ? 4.8828125E-4F : 9.765625E-4F;
 		boolean var6 = (arg0 & 0x80) != 0;
 		if (var6) {
-			this.field12112[0] = var5;
-			this.field12112[1] = 0.0F;
-			this.field12112[2] = 0.0F;
-			this.field12112[3] = 0.0F;
+			this.uGenerationPlane[0] = var5;
+			this.uGenerationPlane[1] = 0.0F;
+			this.uGenerationPlane[2] = 0.0F;
+			this.uGenerationPlane[3] = 0.0F;
 		} else {
-			this.field12112[0] = 0.0F;
-			this.field12112[1] = 0.0F;
-			this.field12112[2] = var5;
-			this.field12112[3] = 0.0F;
+			this.uGenerationPlane[0] = 0.0F;
+			this.uGenerationPlane[1] = 0.0F;
+			this.uGenerationPlane[2] = var5;
+			this.uGenerationPlane[3] = 0.0F;
 		}
-		this.field12114[0] = 0.0F;
-		this.field12114[1] = var5;
-		this.field12114[2] = 0.0F;
-		this.field12114[3] = (float) this.field3233.field10181 * var3 % 1.0F;
+		this.vGenerationPlane[0] = 0.0F;
+		this.vGenerationPlane[1] = var5;
+		this.vGenerationPlane[2] = 0.0F;
+		this.vGenerationPlane[3] = (float) this.gpuRenderer.field10181 * var3 % 1.0F;
 		if (this.field12119.field3229) {
-			this.field12109 = (float) ((double) var4 * (double) this.field3233.field10181 % 1.0D);
+			this.time = (float) ((double) var4 * (double) this.gpuRenderer.field10181 % 1.0D);
 		} else {
-			int var7 = (int) ((float) this.field3233.field10181 * var4 * 16.0F);
-			this.field3233.setTexture(this.field12119.field3227[var7 % 16]);
+			int var7 = (int) ((float) this.gpuRenderer.field10181 * var4 * 16.0F);
+			this.gpuRenderer.setTexture(this.field12119.field3227[var7 % 16]);
 		}
 	}
 
 	@ObfuscatedName("aqw.bl(I)V")
 	public void method19202() {
 		if (this.field12119.field3229) {
-			this.field10587.setCurrentProgram(this.field12105);
+			this.shader.setCurrentProgram(this.waterfall3DProgram);
 		} else {
-			this.field10587.setCurrentProgram(this.field12102);
+			this.shader.setCurrentProgram(this.waterfall2DProgram);
 		}
-		this.field10587.enable();
+		this.shader.enable();
 		if (this.field12119.field3229) {
-			this.field10587.setUniform(this.field12104, 0, this.field12119.field3228);
+			this.shader.setUniform1i(this.billowSampler3DUniform, 0, this.field12119.field3228);
 		}
-		this.field10587.setUniform4x4(this.field12118, this.field12106);
-		this.field10587.setUniform4x4(this.field12107, this.field12108);
-		this.field10587.setUniform(this.field12111, new Vector4(this.field12112[0], this.field12112[1], this.field12112[2], this.field12112[3]));
-		this.field10587.setUniform(this.field12113, new Vector4(this.field12114[0], this.field12114[1], this.field12114[2], this.field12114[3]));
-		this.field10587.setUniform(this.field12103, new Vector4(this.field12109, 0.0F, 0.0F, 0.0F));
-		this.field3233.method16079(PrimitiveType.field3403, this.field12116, this.field12110, this.field12115, this.field12117);
+		this.shader.setUniform4fv(this.worldMatrixUniform, this.worldMatrix);
+		this.shader.setUniform4fv(this.wvpMatrixUniform, this.wvpMatrix);
+		this.shader.setUniform4fv(this.uGenerationPlaneUniform, new Vector4(this.uGenerationPlane[0], this.uGenerationPlane[1], this.uGenerationPlane[2], this.uGenerationPlane[3]));
+		this.shader.setUniform4fv(this.vGenerationPlaneUniform, new Vector4(this.vGenerationPlane[0], this.vGenerationPlane[1], this.vGenerationPlane[2], this.vGenerationPlane[3]));
+		this.shader.setUniform4fv(this.timeUniform, new Vector4(this.time, 0.0F, 0.0F, 0.0F));
+		this.gpuRenderer.method16079(PrimitiveType.field3403, this.field12116, this.field12110, this.field12115, this.field12117);
 	}
 }

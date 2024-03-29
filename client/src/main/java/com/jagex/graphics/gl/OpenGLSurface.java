@@ -28,14 +28,14 @@ public class OpenGLSurface extends GpuSurface {
 	public boolean field12521;
 
 	public OpenGLSurface(OpenGLRenderer arg0, Canvas arg1) {
-		this(arg0, arg1, arg0.field12020.prepareSurface(arg1));
+		this(arg0, arg1, arg0.opengl.prepareSurface(arg1));
 	}
 
 	public OpenGLSurface(OpenGLRenderer arg0, Canvas arg1, long arg2) {
 		super(arg0);
 		this.field12521 = false;
 		this.field12519 = arg1;
-		this.field12518 = arg0.field12020;
+		this.field12518 = arg0.opengl;
 		this.field12516 = arg2;
 		this.method19660();
 	}

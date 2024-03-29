@@ -152,7 +152,7 @@ public abstract class GpuRenderer extends Renderer {
 	public Matrix4x4 field10078 = this.field10168;
 
 	@ObfuscatedName("afc.cn")
-	public Matrix4x4 field10079 = new Matrix4x4();
+	public Matrix4x4 projectionMatrix = new Matrix4x4();
 
 	@ObfuscatedName("afc.cv")
 	public Matrix4x4 field10145 = new Matrix4x4();
@@ -461,25 +461,25 @@ public abstract class GpuRenderer extends Renderer {
 	public int field10185;
 
 	@ObfuscatedName("afc.gn")
-	public int field10186;
+	public int maxSimutaneousTextures;
 
 	@ObfuscatedName("afc.gc")
-	public int field10094;
+	public int maxActiveLights;
 
 	@ObfuscatedName("afc.gf")
 	public boolean hasFramebufferObject;
 
 	@ObfuscatedName("afc.gx")
-	public boolean field10134;
+	public boolean hasFramebufferBlit;
 
 	@ObfuscatedName("afc.ge")
-	public boolean field10199;
+	public boolean hasFramebufferMultisample;
 
 	@ObfuscatedName("afc.gg")
-	public boolean field10172;
+	public boolean hasMultiSample;
 
 	@ObfuscatedName("afc.gr")
-	public boolean field10192;
+	public boolean hasTextureCubeMap;
 
 	@ObfuscatedName("afc.gs")
 	public boolean field10125;
@@ -488,7 +488,7 @@ public abstract class GpuRenderer extends Renderer {
 	public boolean field10116;
 
 	@ObfuscatedName("afc.gh")
-	public boolean field10074;
+	public boolean hasBlendFuncSeparate;
 
 	@ObfuscatedName("afc.gm")
 	public VertexBuffer field10196;
@@ -649,18 +649,18 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.ru()V")
 	public final void init() {
-		this.field10093 = new BaseTexture[this.field10186];
-		this.field10162 = new Matrix4x4[this.field10186];
-		this.field10135 = new GpuRendererRelated4[this.field10186];
-		this.field10136 = new TextureCombineMode[this.field10186];
-		this.field10137 = new TextureCombineMode[this.field10186];
-		for (int var1 = 0; var1 < this.field10186; var1++) {
+		this.field10093 = new BaseTexture[this.maxSimutaneousTextures];
+		this.field10162 = new Matrix4x4[this.maxSimutaneousTextures];
+		this.field10135 = new GpuRendererRelated4[this.maxSimutaneousTextures];
+		this.field10136 = new TextureCombineMode[this.maxSimutaneousTextures];
+		this.field10137 = new TextureCombineMode[this.maxSimutaneousTextures];
+		for (int var1 = 0; var1 < this.maxSimutaneousTextures; var1++) {
 			this.field10137[var1] = TextureCombineMode.field3395;
 			this.field10136[var1] = TextureCombineMode.field3395;
 			this.field10135[var1] = GpuRendererRelated4.field3372;
 			this.field10162[var1] = new Matrix4x4();
 		}
-		this.field10045 = new Light[this.field10094 - 2];
+		this.field10045 = new Light[this.maxActiveLights - 2];
 		int[] var2 = new int[] { -1 };
 		this.field10140 = this.method16033(1, 1, false, var2, 0, 0);
 		var2[0] = -16777216;
@@ -758,7 +758,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.method16175();
 		this.method16059();
 		this.method16058();
-		for (int var1 = this.field10186 - 1; var1 >= 0; var1--) {
+		for (int var1 = this.maxSimutaneousTextures - 1; var1 >= 0; var1--) {
 			this.setActiveTexture(var1);
 			this.method16256();
 			this.method16052();
@@ -989,12 +989,12 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.x()Z")
-	public final boolean method2141() {
-		return this.field10172;
+	public final boolean supportsAntiAliasing() {
+		return this.hasMultiSample;
 	}
 
 	@ObfuscatedName("afc.i()[I")
-	public final int[] method2413() {
+	public final int[] textureFormat() {
 		return null;
 	}
 
@@ -1093,7 +1093,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.dg(FFFFF)V")
 	public void setLevels(float arg0, float arg1, float arg2, float arg3, float arg4) {
-		LevelsFilterEffect.field10647 = arg0;
+		LevelsFilterEffect.paramsGamma = arg0;
 		LevelsFilterEffect.field10642 = arg1;
 		LevelsFilterEffect.field10643 = arg2;
 		LevelsFilterEffect.field10650 = arg3;
@@ -1309,7 +1309,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.sz()Lmr;")
-	public final GpuCubeTexture method15994() {
+	public final GpuCubeTexture getEnvMapSampler() {
 		return this.field10161 == null ? null : this.field10161.method15652();
 	}
 
@@ -1489,7 +1489,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.so()Lpq;")
-	public final Matrix4x4 method16000() {
+	public final Matrix4x4 getViewMatrix() {
 		return GpuRendererRelated3.field3321 == this.field10050 ? this.field10059 : field10064;
 	}
 
@@ -1552,7 +1552,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.ta()Lpq;")
-	public Matrix4x4 method16002() {
+	public Matrix4x4 getModelMatrix() {
 		return this.field10056;
 	}
 
@@ -1571,7 +1571,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.tc()Lpq;")
-	public Matrix4x4 method16244() {
+	public Matrix4x4 getModelViewMatrix() {
 		if (GpuRendererRelated3.field3321 == this.field10050) {
 			if (!this.field10070) {
 				this.method16003();
@@ -1588,8 +1588,8 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.te()Lpq;")
-	public final Matrix4x4 method16005() {
-		return this.field10079;
+	public final Matrix4x4 getProjectionMatrix() {
+		return this.projectionMatrix;
 	}
 
 	@ObfuscatedName("afc.tm()V")
@@ -1691,10 +1691,10 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.th()V")
 	public final void method16013() {
-		this.field10079.setTo(this.field10078);
-		this.method16006(this.field10079);
-		this.field10092 = (this.field10079.entries[14] - this.field10079.entries[15]) / (this.field10079.entries[11] - this.field10079.entries[10]);
-		this.field10170 = -this.field10079.entries[14] / this.field10079.entries[10];
+		this.projectionMatrix.setTo(this.field10078);
+		this.method16006(this.projectionMatrix);
+		this.field10092 = (this.projectionMatrix.entries[14] - this.projectionMatrix.entries[15]) / (this.projectionMatrix.entries[11] - this.projectionMatrix.entries[10]);
+		this.field10170 = -this.projectionMatrix.entries[14] / this.projectionMatrix.entries[10];
 		this.method16088();
 	}
 
@@ -1812,7 +1812,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.df()I")
 	public final int getMaxLights() {
-		return this.field10094 - 2;
+		return this.maxActiveLights - 2;
 	}
 
 	@ObfuscatedName("afc.to(Z)V")
@@ -2003,7 +2003,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.ue()Lpq;")
-	public final Matrix4x4 method16045() {
+	public final Matrix4x4 getTextureMatrix() {
 		return this.field10162[this.field10177];
 	}
 
@@ -2169,7 +2169,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.bv(IIIIII)V")
 	public final void fillRectangle(int x, int y, int width, int height, int rgb, int arg5) {
-		if (this.field10172 && this.field10180 != 0) {
+		if (this.hasMultiSample && this.field10180 != 0) {
 			this.method16294(false);
 		}
 		if (this.field10107) {
@@ -2179,7 +2179,7 @@ public abstract class GpuRenderer extends Renderer {
 		} else {
 			this.field10057.drawTintedScaled(x, y, width, height, 0, rgb, arg5);
 		}
-		if (this.field10172 && this.field10180 != 0) {
+		if (this.hasMultiSample && this.field10180 != 0) {
 			this.method16294(true);
 		}
 	}
@@ -2192,14 +2192,14 @@ public abstract class GpuRenderer extends Renderer {
 		if (this instanceof OpenGLRenderer) {
 			var7 = -1;
 		}
-		if (this.field10172 && this.field10180 != 0) {
+		if (this.hasMultiSample && this.field10180 != 0) {
 			this.method16294(false);
 		}
 		this.drawLine(x, y + var7, x + var8, y + var7, rgb, arg5);
 		this.drawLine(x, y + var9 + var7, x + var8, y + var9 + var7, rgb, arg5);
 		this.drawLine(x, y, x, y + var9, rgb, arg5);
 		this.drawLine(x + var8, y, x + var8, y + var9, rgb, arg5);
-		if (this.field10172 && this.field10180 != 0) {
+		if (this.hasMultiSample && this.field10180 != 0) {
 			this.method16294(true);
 		}
 	}
@@ -2442,16 +2442,16 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method15955();
 
 	@ObfuscatedName("afc.rx()Z")
-	public abstract boolean method15957();
+	public abstract boolean hasVertexShader();
 
 	@ObfuscatedName("afc.ry()Z")
-	public abstract boolean method15958();
+	public abstract boolean hasFragmentShader();
 
 	@ObfuscatedName("afc.rg(Z)Z")
 	public abstract boolean method15959(boolean arg0);
 
 	@ObfuscatedName("afc.rc(Ljava/lang/String;)Lho;")
-	public abstract Shader method15964(String arg0);
+	public abstract Shader createShader(String arg0);
 
 	@ObfuscatedName("afc.rn(Lpq;Lpq;Lpq;)V")
 	public abstract void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2);
@@ -2463,7 +2463,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method15978();
 
 	@ObfuscatedName("afc.g()Ljava/lang/String;")
-	public abstract String method2132();
+	public abstract String hardwareInfo();
 
 	@ObfuscatedName("afc.tq()V")
 	public abstract void method15990();

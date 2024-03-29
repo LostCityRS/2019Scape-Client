@@ -125,7 +125,7 @@ public class PostProcessManager {
 				throw new RuntimeException();
 		}
 		this.field3265 = this.field3247.createFramebuffer();
-		if (this.field3247.field10180 > 1 && this.field3247.field10134 && this.field3247.field10199) {
+		if (this.field3247.field10180 > 1 && this.field3247.hasFramebufferBlit && this.field3247.hasFramebufferMultisample) {
 			this.field3245 = this.field3247.createFramebuffer();
 			this.field3253 = this.field3247.method2146(this.field3256, this.field3246, TextureFormat.RGBA, this.field3260, this.field3247.field10180);
 			this.field3262 = this.field3247.method2356(this.field3256, this.field3246, this.field3247.field10180);

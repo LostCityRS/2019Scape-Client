@@ -6,13 +6,13 @@ import deob.ObfuscatedName;
 public abstract class PostProcessEffect {
 
 	@ObfuscatedName("lh.e")
-	public final GpuRenderer field3242;
+	public final GpuRenderer gpuRenderer;
 
 	@ObfuscatedName("lh.n")
 	public boolean field3243;
 
-	public PostProcessEffect(GpuRenderer arg0) {
-		this.field3242 = arg0;
+	public PostProcessEffect(GpuRenderer gpuRenderer) {
+		this.gpuRenderer = gpuRenderer;
 	}
 
 	@ObfuscatedName("lh.k()Z")

@@ -3517,9 +3517,9 @@ public class GpuModel extends Model {
 						} else {
 							WaterfallShader var27 = this.field9730.field10175;
 							var27.method19204(var24.effectArg1, var24.field1359);
-							var27.field12106.setToMatrix4x3(arg0);
-							var27.field12108.setToMatrix4x3(arg0);
-							var27.field12108.multiply(this.field9730.field10081);
+							var27.worldMatrix.setToMatrix4x3(arg0);
+							var27.wvpMatrix.setToMatrix4x3(arg0);
+							var27.wvpMatrix.multiply(this.field9730.field10081);
 							var27.field12116 = this.field9741[var19];
 							var27.field12110 = this.field9752[var19];
 							var27.field12115 = var20 * 3;
@@ -3534,7 +3534,7 @@ public class GpuModel extends Model {
 						var2.field2969.setTo(this.field9730.field10035.entries[12], this.field9730.field10035.entries[13], this.field9730.field10035.entries[14]);
 						var2.field2969.method6567(var12);
 						var2.field2980.setToMatrix4x3(arg0);
-						var2.field2967 = this.field9730.method15994();
+						var2.field2967 = this.field9730.getEnvMapSampler();
 						var2.method5026(var13);
 				}
 			}

@@ -32,7 +32,7 @@ public final class ProgrammableSpriteShader extends SpriteShader {
 
 	@ObfuscatedName("ahz.u(B)Z")
 	public boolean method16651() throws ShaderException {
-		this.field10532 = this.field3002.method15964("Sprite");
+		this.field10532 = this.field3002.createShader("Sprite");
 		ProgramUniform var1 = this.field10532.getUniform("WVPMatrix");
 		ProgramUniform var2 = this.field10532.getUniform("SpriteSampler");
 		ProgramUniform var3 = this.field10532.getUniform("MaskSampler");
@@ -85,12 +85,12 @@ public final class ProgrammableSpriteShader extends SpriteShader {
 
 	@ObfuscatedName("ahz.z(I)V")
 	public void method16649() {
-		this.field10532.setUniform(this.field10534[1], 0, this.field2997);
+		this.field10532.setUniform1i(this.field10534[1], 0, this.field2997);
 		this.field3002.method16006(this.field2995);
-		this.field10532.setUniform4x4(this.field10534[0], this.field2995);
-		this.field10532.setUniform4x2(this.field10534[3], this.field2998);
-		this.field10532.setUniform(this.field10534[5], this.field10535.field4244, this.field10535.field4243, this.field10535.field4242, this.field10535.field4245);
-		this.field10532.setUniform(this.field10534[6], this.field10536.field4244, this.field10536.field4243, this.field10536.field4242, this.field10536.field4245);
+		this.field10532.setUniform4fv(this.field10534[0], this.field2995);
+		this.field10532.setUniform2fv(this.field10534[3], this.field2998);
+		this.field10532.setUniform4f(this.field10534[5], this.field10535.field4244, this.field10535.field4243, this.field10535.field4242, this.field10535.field4245);
+		this.field10532.setUniform4f(this.field10534[6], this.field10536.field4244, this.field10536.field4243, this.field10536.field4242, this.field10536.field4245);
 		this.field3002.method16120(0, this.field3000);
 		this.field3002.method16177(this.field2994);
 		this.field3002.method16077(PrimitiveType.field3404, this.field3001, 2);
@@ -109,8 +109,8 @@ public final class ProgrammableSpriteShader extends SpriteShader {
 		this.field10532.setCurrentProgram(this.field10527[1]);
 		this.field10532.enable();
 		this.field10534 = this.field10533[this.field10532.getCurrentProgramIndex()];
-		this.field10532.setUniform(this.field10534[2], 1, this.field2996);
-		this.field10532.setUniform4x2(this.field10534[4], this.field2999);
+		this.field10532.setUniform1i(this.field10534[2], 1, this.field2996);
+		this.field10532.setUniform2fv(this.field10534[4], this.field2999);
 		this.method16649();
 	}
 }

@@ -37,8 +37,8 @@ public final class Direct3DProgramManager extends Shader {
 				throw new IllegalArgumentException();
 			}
 			if (this.field10387) {
-				this.field10388.method19032(this.field10389.field10367);
-				this.field10388.method18998(this.field10389.field10360);
+				this.field10388.method19032(this.field10389.vertexShader3d);
+				this.field10388.method18998(this.field10389.pixelShader3d);
 				this.field10388.program = this.field10389;
 			}
 			return true;
@@ -57,8 +57,8 @@ public final class Direct3DProgramManager extends Shader {
 		if (this.field10389 == null) {
 			throw new ProgramManagerException();
 		}
-		this.field10388.method19032(this.field10389.field10367);
-		this.field10388.method18998(this.field10389.field10360);
+		this.field10388.method19032(this.field10389.vertexShader3d);
+		this.field10388.method18998(this.field10389.pixelShader3d);
 		this.field10388.program = this.field10389;
 		this.field10387 = true;
 	}

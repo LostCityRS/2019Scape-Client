@@ -13,7 +13,7 @@ public final class FixedFunctionParticleShader extends ParticleShader {
 
 	@ObfuscatedName("ahf.e(Lpq;)V")
 	public void method5038(Matrix4x4 arg0) {
-		this.field2986.method15967(arg0, this.field2986.field10059, this.field2986.field10079);
+		this.field2986.method15967(arg0, this.field2986.field10059, this.field2986.projectionMatrix);
 	}
 
 	@ObfuscatedName("ahf.n(IZ)V")

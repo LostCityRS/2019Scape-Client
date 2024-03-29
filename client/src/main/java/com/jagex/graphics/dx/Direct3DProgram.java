@@ -21,10 +21,10 @@ public final class Direct3DProgram extends Program {
 	public Direct3DRenderer renderer;
 
 	@ObfuscatedName("agt.l")
-	public long field10367;
+	public long vertexShader3d;
 
 	@ObfuscatedName("agt.u")
-	public long field10360;
+	public long pixelShader3d;
 
 	@ObfuscatedName("agt.z")
 	public static final float[] field10361 = new float[16];
@@ -41,8 +41,8 @@ public final class Direct3DProgram extends Program {
 	@ObfuscatedName("agt.o")
 	public final boolean[] field10359;
 
-	public Direct3DProgram(Direct3DRenderer renderer, Direct3DProgramManager programManager, ProgramData arg2) {
-		this(renderer, arg2);
+	public Direct3DProgram(Direct3DRenderer renderer, Direct3DProgramManager programManager, ProgramData programData) {
+		this(renderer, programData);
 		this.renderer = renderer;
 		this.programManager = programManager;
 	}
@@ -51,7 +51,7 @@ public final class Direct3DProgram extends Program {
 		this.field10357 = false;
 		this.field10366 = new float[2][];
 		this.field10359 = new boolean[2];
-		this.field2435 = programData.field2432;
+		this.name = programData.name;
 		if (programData.vertexShaderFile != null) {
 			this.vertexShaderFile = programData.vertexShaderFile;
 			this.vertexShader = renderer.getShader(this.vertexShaderFile);
@@ -68,9 +68,9 @@ public final class Direct3DProgram extends Program {
 		if (this.field10357) {
 			return true;
 		}
-		this.field10367 = this.vertexShader == null ? 0L : IDirect3DDevice.CreateVertexShader(this.renderer.device, this.vertexShader);
-		this.field10360 = this.fragmentShader == null ? 0L : IDirect3DDevice.CreatePixelShader(this.renderer.device, this.fragmentShader);
-		if (this.field10367 == 0L && this.field10360 == 0L) {
+		this.vertexShader3d = this.vertexShader == null ? 0L : IDirect3DDevice.CreateVertexShader(this.renderer.device, this.vertexShader);
+		this.pixelShader3d = this.fragmentShader == null ? 0L : IDirect3DDevice.CreatePixelShader(this.renderer.device, this.fragmentShader);
+		if (this.vertexShader3d == 0L && this.pixelShader3d == 0L) {
 			return false;
 		}
 		int var1 = -1;
@@ -101,7 +101,7 @@ public final class Direct3DProgram extends Program {
 				var14 = var13.getElementType();
 				var15 = var13.getElementCount();
 			}
-			switch(var14.ordinal) {
+			switch(var14.index) {
 				case 17:
 				case 35:
 				case 52:
@@ -148,7 +148,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.k(Laql;F)V")
-	public void setUniform(ProgramUniform arg0, float arg1) {
+	public void setUniform1f(ProgramUniform arg0, float arg1) {
 		int var3 = ((Direct3DProgramUniform) arg0).method19676();
 		int var4 = ((Direct3DProgramUniform) arg0).method19677();
 		if (arg0.getType() != UniformType.FLOAT_1 && arg0.getType() != UniformType.field2509) {
@@ -167,7 +167,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.f(Laql;FF)V")
-	public void setUniform(ProgramUniform arg0, float arg1, float arg2) {
+	public void setUniform2f(ProgramUniform arg0, float arg1, float arg2) {
 		int var4 = ((Direct3DProgramUniform) arg0).method19676();
 		int var5 = ((Direct3DProgramUniform) arg0).method19677();
 		if (arg0.getType() != UniformType.FLOAT_2) {
@@ -188,7 +188,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.w(Laql;FFF)V")
-	public void setUniform(ProgramUniform arg0, float arg1, float arg2, float arg3) {
+	public void setUniform3f(ProgramUniform arg0, float arg1, float arg2, float arg3) {
 		int var5 = ((Direct3DProgramUniform) arg0).method19676();
 		int var6 = ((Direct3DProgramUniform) arg0).method19677();
 		if (arg0.getType() != UniformType.FLOAT_3) {
@@ -212,7 +212,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.l(Laql;FFFF)V")
-	public void setUniform(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
+	public void setUniform4f(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
 		int var6 = ((Direct3DProgramUniform) arg0).method19676();
 		int var7 = ((Direct3DProgramUniform) arg0).method19677();
 		if (arg0.getType() != UniformType.FLOAT_4) {
@@ -238,7 +238,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.p(Laql;Lpq;)V")
-	public void setUniform4x2(ProgramUniform arg0, Matrix4x4 arg1) {
+	public void setUniform2fv(ProgramUniform arg0, Matrix4x4 arg1) {
 		int var3 = ((Direct3DProgramUniform) arg0).method19676();
 		int var4 = ((Direct3DProgramUniform) arg0).method19677();
 		if (arg0.getType() != UniformType.MATRIX_4X2) {
@@ -253,7 +253,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.d(Laql;Lpq;)V")
-	public void setUniform4x4(ProgramUniform arg0, Matrix4x4 arg1) {
+	public void setUniform4fv(ProgramUniform arg0, Matrix4x4 arg1) {
 		int var3 = ((Direct3DProgramUniform) arg0).method19676();
 		int var4 = ((Direct3DProgramUniform) arg0).method19677();
 		if (arg0.getType() != UniformType.MATRIX_4X4) {
@@ -268,7 +268,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.z(Laql;[FI)V")
-	public void setUniform(ProgramUniform arg0, float[] arg1, int arg2) {
+	public void setUniformFloatv(ProgramUniform arg0, float[] arg1, int arg2) {
 		int var4 = ((Direct3DProgramUniform) arg0).method19676();
 		int var5 = ((Direct3DProgramUniform) arg0).method19677();
 		if (arg0.getType() != UniformType.ARRAY) {
@@ -283,13 +283,13 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.c(Laql;ILmq;)V")
-	public void setUniform(ProgramUniform arg0, int arg1, BaseTexture arg2) {
+	public void setUniform1i(ProgramUniform arg0, int arg1, BaseTexture arg2) {
 		this.renderer.setActiveTexture(arg1);
 		this.renderer.setTexture(arg2);
 	}
 
 	@ObfuscatedName("agt.r(IFFF)V")
-	public void setUniform(int arg0, float arg1, float arg2, float arg3) {
+	public void setUniform3f(int arg0, float arg1, float arg2, float arg3) {
 		int var5 = arg0 >> 16;
 		int var6 = (arg0 & 0xFFFF) * 4;
 		this.field10366[var5][var6] = arg1;
@@ -299,7 +299,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.v(IFFFF)V")
-	public void setUniform(int arg0, float arg1, float arg2, float arg3, float arg4) {
+	public void setUniform4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
 		int var6 = arg0 >> 16;
 		int var7 = (arg0 & 0xFFFF) * 4;
 		this.field10366[var6][var7] = arg1;
@@ -310,7 +310,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.s(ILpq;)V")
-	public void setUniform3x3(int arg0, Matrix4x4 arg1) {
+	public void setUniform3fv(int arg0, Matrix4x4 arg1) {
 		int var3 = arg0 >> 16;
 		int var4 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1.method6620(field10361), 0, this.field10366[var3], var4, 12);
@@ -318,7 +318,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.y(ILpq;)V")
-	public void setUniform4x2(int arg0, Matrix4x4 arg1) {
+	public void setUniform2fv(int arg0, Matrix4x4 arg1) {
 		int var3 = arg0 >> 16;
 		int var4 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1.method6637(field10361), 0, this.field10366[var3], var4, 8);
@@ -326,7 +326,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.q(ILpq;)V")
-	public void setUniform4x4(int arg0, Matrix4x4 arg1) {
+	public void setUniform4fv(int arg0, Matrix4x4 arg1) {
 		int var3 = arg0 >> 16;
 		int var4 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1.method6620(field10361), 0, this.field10366[var3], var4, 16);
@@ -334,7 +334,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.o(I[FI)V")
-	public void setUniform(int arg0, float[] arg1, int arg2) {
+	public void setUniformFloatv(int arg0, float[] arg1, int arg2) {
 		int var4 = arg0 >> 16;
 		int var5 = (arg0 & 0xFFFF) * 4;
 		System.arraycopy(arg1, 0, this.field10366[var4], var5, arg2);
@@ -354,7 +354,7 @@ public final class Direct3DProgram extends Program {
 	}
 
 	@ObfuscatedName("agt.x(IILmq;)V")
-	public void setUniform(int arg0, int arg1, BaseTexture arg2) {
+	public void setUniform1i(int arg0, int arg1, BaseTexture arg2) {
 		this.renderer.setActiveTexture(arg1);
 		this.renderer.setTexture(arg2);
 	}
@@ -377,26 +377,26 @@ public final class Direct3DProgram extends Program {
 
 	@ObfuscatedName("agt.m()V")
 	public void delete() {
-		if (this.field10367 != 0L) {
-			IUnknown.Release(this.field10367);
-			this.field10367 = 0L;
+		if (this.vertexShader3d != 0L) {
+			IUnknown.Release(this.vertexShader3d);
+			this.vertexShader3d = 0L;
 		}
-		if (this.field10360 != 0L) {
-			IUnknown.Release(this.field10360);
-			this.field10360 = 0L;
+		if (this.pixelShader3d != 0L) {
+			IUnknown.Release(this.pixelShader3d);
+			this.pixelShader3d = 0L;
 		}
 		this.renderer.method16198(this);
 	}
 
 	@ObfuscatedName("agt.bf()V")
 	public void method16466() {
-		if (this.field10367 != 0L) {
-			this.renderer.method19023(this.field10367);
-			this.field10367 = 0L;
+		if (this.vertexShader3d != 0L) {
+			this.renderer.method19023(this.vertexShader3d);
+			this.vertexShader3d = 0L;
 		}
-		if (this.field10360 != 0L) {
-			this.renderer.method19023(this.field10360);
-			this.field10360 = 0L;
+		if (this.pixelShader3d != 0L) {
+			this.renderer.method19023(this.pixelShader3d);
+			this.pixelShader3d = 0L;
 		}
 	}
 

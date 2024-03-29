@@ -6,10 +6,10 @@ import deob.ObfuscatedName;
 public abstract class GpuRendererRelated2 {
 
 	@ObfuscatedName("lc.e")
-	public final GpuRenderer field3233;
+	public final GpuRenderer gpuRenderer;
 
 	public GpuRendererRelated2(GpuRenderer arg0) {
-		this.field3233 = arg0;
+		this.gpuRenderer = arg0;
 	}
 
 	@ObfuscatedName("lc.m(I)V")

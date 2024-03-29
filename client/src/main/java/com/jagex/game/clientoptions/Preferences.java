@@ -125,7 +125,7 @@ public class Preferences {
 				if (Client.preferences.displayMode.getValue() == 3) {
 					var0.method18313(4);
 					RendererInfo var9 = Client.renderer.getRendererInfo();
-					long var10 = var9.field1265 & 0xFFFFFFFFFFFFL;
+					long var10 = var9.driverVersion & 0xFFFFFFFFFFFFL;
 					switch(var9.toolkitId) {
 						case 4098:
 							boolean var13 = var10 >= 60129613779L;

@@ -37,16 +37,16 @@ public abstract class Shader {
 	public Shader(GpuRenderer renderer, ShaderData shader) {
 		this.name = shader.name;
 
-		this.uniformsCount = shader.uniforms.length;
+		this.uniformsCount = shader.vertexUniforms.length;
 		this.uniforms = new HashMap(this.uniformsCount, field2571);
 		for (int i = 0; i < this.uniformsCount; i++) {
-			this.uniforms.put(i, shader.uniforms[i].field2586, this.method4165(shader.uniforms[i]));
+			this.uniforms.put(i, shader.vertexUniforms[i].field2586, this.method4165(shader.vertexUniforms[i]));
 		}
 
-		this.uniforms2Count = shader.uniforms2.length;
+		this.uniforms2Count = shader.fragmentUniforms.length;
 		this.uniforms2 = new HashMap(this.uniforms2Count, field2571);
 		for (int i = 0; i < this.uniforms2Count; i++) {
-			this.uniforms2.put(i, shader.uniforms2[i].field2586, this.method4165(shader.uniforms2[i]));
+			this.uniforms2.put(i, shader.fragmentUniforms[i].field2586, this.method4165(shader.fragmentUniforms[i]));
 		}
 
 		this.programs = new Program[shader.programs.length];
@@ -123,109 +123,109 @@ public abstract class Shader {
 	}
 
 	@ObfuscatedName("ho.o(Laql;FB)V")
-	public final void setUniform(ProgramUniform arg0, float arg1) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1);
+	public final void setUniform1f(ProgramUniform arg0, float arg1) {
+		this.programs[this.currentProgramIndex].setUniform1f(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.s(Laql;FFB)V")
-	public final void setUniform(ProgramUniform arg0, float arg1, float arg2) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2);
+	public final void setUniform2f(ProgramUniform arg0, float arg1, float arg2) {
+		this.programs[this.currentProgramIndex].setUniform2f(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("ho.y(Laql;FFFI)V")
-	public final void setUniform(ProgramUniform arg0, float arg1, float arg2, float arg3) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2, arg3);
+	public final void setUniform3f(ProgramUniform arg0, float arg1, float arg2, float arg3) {
+		this.programs[this.currentProgramIndex].setUniform3f(arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("ho.q(Laql;FFFFI)V")
-	public final void setUniform(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2, arg3, arg4);
+	public final void setUniform4f(ProgramUniform arg0, float arg1, float arg2, float arg3, float arg4) {
+		this.programs[this.currentProgramIndex].setUniform4f(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("ho.x(Laql;Lox;I)V")
-	public final void setUniform(ProgramUniform arg0, Vector3 arg1) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.x, arg1.y, arg1.z);
+	public final void setUniform3fv(ProgramUniform arg0, Vector3 arg1) {
+		this.programs[this.currentProgramIndex].setUniform3f(arg0, arg1.x, arg1.y, arg1.z);
 	}
 
 	@ObfuscatedName("ho.b(Laql;Log;I)V")
-	public final void setUniform(ProgramUniform arg0, Vector4 arg1) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.field4244, arg1.field4243, arg1.field4242, arg1.field4245);
+	public final void setUniform4fv(ProgramUniform arg0, Vector4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform4f(arg0, arg1.field4244, arg1.field4243, arg1.field4242, arg1.field4245);
 	}
 
 	@ObfuscatedName("ho.h(Laql;[FI)V")
-	public final void setUniform(ProgramUniform arg0, float[] arg1) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg1.length);
+	public final void setUniformFloatv(ProgramUniform arg0, float[] arg1) {
+		this.programs[this.currentProgramIndex].setUniformFloatv(arg0, arg1, arg1.length);
 	}
 
 	@ObfuscatedName("ho.a(Laql;IB)V")
-	public final void setUniformColour(ProgramUniform arg0, int arg1) {
+	public final void setFloatColour(ProgramUniform arg0, int arg1) {
 		float var3 = (float) (arg1 >> 16 & 0xFF) / 255.0F;
 		float var4 = (float) (arg1 >> 8 & 0xFF) / 255.0F;
 		float var5 = (float) (arg1 & 0xFF) / 255.0F;
 		float var6 = (float) (arg1 >> 24 & 0xFF) / 255.0F;
-		this.setUniform(arg0, var3, var4, var5, var6);
+		this.setUniform4f(arg0, var3, var4, var5, var6);
 	}
 
 	@ObfuscatedName("ho.g(Laql;Lpq;I)V")
-	public final void setUniform4x2(ProgramUniform arg0, Matrix4x4 arg1) {
-		this.programs[this.currentProgramIndex].setUniform4x2(arg0, arg1);
+	public final void setUniform2fv(ProgramUniform arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform2fv(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.i(Laql;Lpq;I)V")
-	public final void setUniform4x4(ProgramUniform arg0, Matrix4x4 arg1) {
-		this.programs[this.currentProgramIndex].setUniform4x4(arg0, arg1);
+	public final void setUniform4fv(ProgramUniform arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform4fv(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.j(Laql;ILmq;I)V")
-	public final void setUniform(ProgramUniform arg0, int arg1, BaseTexture arg2) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2);
+	public final void setUniform1i(ProgramUniform arg0, int arg1, BaseTexture arg2) {
+		this.programs[this.currentProgramIndex].setUniform1i(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("ho.t(IFFFI)V")
-	public final void setUniform(int arg0, float arg1, float arg2, float arg3) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2, arg3);
+	public final void setUniform3f(int arg0, float arg1, float arg2, float arg3) {
+		this.programs[this.currentProgramIndex].setUniform3f(arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("ho.ae(IFFFFI)V")
-	public final void setUniform(int arg0, float arg1, float arg2, float arg3, float arg4) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2, arg3, arg4);
+	public final void setUniform4f(int arg0, float arg1, float arg2, float arg3, float arg4) {
+		this.programs[this.currentProgramIndex].setUniform4f(arg0, arg1, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("ho.ag(ILox;B)V")
-	public final void setUniform(int arg0, Vector3 arg1) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1.x, arg1.y, arg1.z);
+	public final void setUniform3fv(int arg0, Vector3 arg1) {
+		this.programs[this.currentProgramIndex].setUniform3f(arg0, arg1.x, arg1.y, arg1.z);
 	}
 
 	@ObfuscatedName("ho.ah(I[FII)V")
-	public final void setUniform(int arg0, float[] arg1, int arg2) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2);
+	public final void setUniformFloatv(int arg0, float[] arg1, int arg2) {
+		this.programs[this.currentProgramIndex].setUniformFloatv(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("ho.al(ILpq;I)V")
-	public final void setUniform3x3(int arg0, Matrix4x4 arg1) {
-		this.programs[this.currentProgramIndex].setUniform3x3(arg0, arg1);
+	public final void setUniform3fv(int arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform3fv(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.ac(ILpq;I)V")
-	public final void setUniform4x2(int arg0, Matrix4x4 arg1) {
-		this.programs[this.currentProgramIndex].setUniform4x2(arg0, arg1);
+	public final void setUniform2fv(int arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform2fv(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.ai(ILpq;I)V")
-	public final void setUniform4x4(int arg0, Matrix4x4 arg1) {
-		this.programs[this.currentProgramIndex].setUniform4x4(arg0, arg1);
+	public final void setUniform4fv(int arg0, Matrix4x4 arg1) {
+		this.programs[this.currentProgramIndex].setUniform4fv(arg0, arg1);
 	}
 
 	@ObfuscatedName("ho.aw(IILmq;B)V")
-	public final void setUniform(int arg0, int arg1, BaseTexture arg2) {
-		this.programs[this.currentProgramIndex].setUniform(arg0, arg1, arg2);
+	public final void setUniform1i(int arg0, int arg1, BaseTexture arg2) {
+		this.programs[this.currentProgramIndex].setUniform1i(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("ho.as(Ljava/lang/String;B)Laql;")
-	public ProgramUniform getUniform(String arg0) throws UniformNotFoundException {
-		ProgramUniform var2 = (ProgramUniform) this.uniforms.get(arg0);
+	public ProgramUniform getUniform(String name) throws UniformNotFoundException {
+		ProgramUniform var2 = (ProgramUniform) this.uniforms.get(name);
 		if (var2 == null) {
-			throw new UniformNotFoundException(arg0);
+			throw new UniformNotFoundException(name);
 		}
 		return var2;
 	}
@@ -236,13 +236,13 @@ public abstract class Shader {
 	}
 
 	@ObfuscatedName("ho.ad(IB)Laql;")
-	public ProgramUniform getUniform2(int arg0) {
-		return (ProgramUniform) this.uniforms2.get(arg0);
+	public ProgramUniform getUniform2(int id) {
+		return (ProgramUniform) this.uniforms2.get(id);
 	}
 
 	@ObfuscatedName("ho.am(Ljava/lang/String;S)Laql;")
-	public ProgramUniform getUniform2(String arg0) {
-		return (ProgramUniform) this.uniforms2.get(arg0);
+	public ProgramUniform getUniform2(String name) {
+		return (ProgramUniform) this.uniforms2.get(name);
 	}
 
 	@ObfuscatedName("ho.au(I)I")

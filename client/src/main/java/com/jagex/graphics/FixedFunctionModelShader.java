@@ -13,7 +13,7 @@ public class FixedFunctionModelShader extends ModelShader {
 
 	@ObfuscatedName("ahl.n(Lpq;)V")
 	public void method5018(Matrix4x4 arg0) {
-		this.field2963.method15967(arg0, this.field2963.field10059, this.field2963.field10079);
+		this.field2963.method15967(arg0, this.field2963.field10059, this.field2963.projectionMatrix);
 	}
 
 	@ObfuscatedName("ahl.m(Z)V")

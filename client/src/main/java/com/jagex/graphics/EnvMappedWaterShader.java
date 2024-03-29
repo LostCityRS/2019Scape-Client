@@ -16,73 +16,73 @@ public class EnvMappedWaterShader extends WaterShader {
 	public final WaterRelated field12122;
 
 	@ObfuscatedName("aqe.as")
-	public ProgramUniform field12121;
+	public ProgramUniform normalSamplerUniform;
 
 	@ObfuscatedName("aqe.at")
-	public ProgramUniform field12123;
+	public ProgramUniform envMapSamplerUniform;
 
 	@ObfuscatedName("aqe.ad")
-	public ProgramUniform field12125;
+	public ProgramUniform wvpMatrixUniform;
 
 	@ObfuscatedName("aqe.am")
-	public final Matrix4x4 field12143 = new Matrix4x4();
+	public final Matrix4x4 wvpMatrix = new Matrix4x4();
 
 	@ObfuscatedName("aqe.au")
-	public ProgramUniform field12126;
+	public ProgramUniform texCoordMatrixUniform;
 
 	@ObfuscatedName("aqe.ar")
-	public final Matrix4x4 field12127 = new Matrix4x4();
+	public final Matrix4x4 texCoordMatrix = new Matrix4x4();
 
 	@ObfuscatedName("aqe.ap")
-	public ProgramUniform field12141;
+	public ProgramUniform eyePosAndTimeUniform;
 
 	@ObfuscatedName("aqe.aq")
-	public final Vector3 field12129 = new Vector3();
+	public final Vector3 eyePosAndTime = new Vector3();
 
 	@ObfuscatedName("aqe.ax")
 	public int field12147;
 
 	@ObfuscatedName("aqe.av")
-	public ProgramUniform field12142;
+	public ProgramUniform sunDirectionAndExponentUniform;
 
 	@ObfuscatedName("aqe.ao")
-	public final Vector4 field12132 = new Vector4();
+	public final Vector4 sunDirectionAndExponent = new Vector4();
 
 	@ObfuscatedName("aqe.aj")
-	public ProgramUniform field12133;
+	public ProgramUniform sunColourAndWaveExponentUniform;
 
 	@ObfuscatedName("aqe.ay")
-	public final Vector4 field12134 = new Vector4();
+	public final Vector4 sunColourAndWaveExponent = new Vector4();
 
 	@ObfuscatedName("aqe.ab")
-	public ProgramUniform field12135;
+	public ProgramUniform waveIntensityAndBreakWaterDepthAndOffsetUniform;
 
 	@ObfuscatedName("aqe.az")
-	public final Vector4 field12136 = new Vector4();
+	public final Vector4 waveIntensityAndBreakWaterDepthAndOffset = new Vector4();
 
 	@ObfuscatedName("aqe.aa")
-	public ProgramUniform field12137;
+	public ProgramUniform heightFogPlaneUniform;
 
 	@ObfuscatedName("aqe.af")
-	public final Vector4 field12138 = new Vector4();
+	public final Vector4 heightFogPlane = new Vector4();
 
 	@ObfuscatedName("aqe.ak")
-	public ProgramUniform field12139;
+	public ProgramUniform heightFogColourUniform;
 
 	@ObfuscatedName("aqe.an")
-	public final Vector3 field12140 = new Vector3();
+	public final Vector3 heightFogColour = new Vector3();
 
 	@ObfuscatedName("aqe.bf")
-	public ProgramUniform field12151;
+	public ProgramUniform distanceFogPlaneUniform;
 
 	@ObfuscatedName("aqe.bl")
-	public final Vector4 field12124 = new Vector4();
+	public final Vector4 distanceFogPlane = new Vector4();
 
 	@ObfuscatedName("aqe.bk")
-	public ProgramUniform field12149;
+	public ProgramUniform distanceFogColourUniform;
 
 	@ObfuscatedName("aqe.bh")
-	public final Vector3 field12144 = new Vector3();
+	public final Vector3 distanceFogColour = new Vector3();
 
 	@ObfuscatedName("aqe.bx")
 	public int field12145;
@@ -103,15 +103,15 @@ public class EnvMappedWaterShader extends WaterShader {
 	public boolean field12150;
 
 	@ObfuscatedName("aqe.bq")
-	public Program field12128;
+	public Program envMappedWaterProgram;
 
 	public EnvMappedWaterShader(GpuRenderer arg0, WaterRelated arg1, boolean arg2) throws ShaderException {
 		super(arg0);
 		new Matrix4x4();
 		this.field12122 = arg1;
 		this.field12150 = arg2;
-		if (arg0.method15957() && arg0.method15958()) {
-			this.field12131 = this.method16761("EnvMappedWater");
+		if (arg0.hasVertexShader() && arg0.hasFragmentShader()) {
+			this.field12131 = this.createShaderProgram("EnvMappedWater");
 		} else {
 			this.field12131 = false;
 		}
@@ -122,20 +122,20 @@ public class EnvMappedWaterShader extends WaterShader {
 		if (!this.field12122.method5409()) {
 			return false;
 		}
-		this.field12121 = this.field10587.getUniform("NormalSampler");
-		this.field12123 = this.field10587.getUniform("EnvMapSampler");
-		this.field12125 = this.field10587.getUniform("WVPMatrix");
-		this.field12126 = this.field10587.getUniform("TexCoordMatrix");
-		this.field12141 = this.field10587.getUniform("EyePosAndTime");
-		this.field12142 = this.field10587.getUniform("SunDirectionAndExponent");
-		this.field12133 = this.field10587.getUniform("SunColourAndWaveExponent");
-		this.field12135 = this.field10587.getUniform("WaveIntensityAndBreakWaterDepthAndOffset");
-		this.field12137 = this.field10587.getUniform("HeightFogPlane");
-		this.field12139 = this.field10587.getUniform("HeightFogColour");
-		this.field12151 = this.field10587.getUniform("DistanceFogPlane");
-		this.field12149 = this.field10587.getUniform("DistanceFogColour");
-		this.field12128 = this.field10587.getProgram(this.field12150 ? "EnvMappedSea" : "EnvMappedWater");
-		this.field10587.setCurrentProgram(this.field12128);
+		this.normalSamplerUniform = this.shader.getUniform("NormalSampler");
+		this.envMapSamplerUniform = this.shader.getUniform("EnvMapSampler");
+		this.wvpMatrixUniform = this.shader.getUniform("WVPMatrix");
+		this.texCoordMatrixUniform = this.shader.getUniform("TexCoordMatrix");
+		this.eyePosAndTimeUniform = this.shader.getUniform("EyePosAndTime");
+		this.sunDirectionAndExponentUniform = this.shader.getUniform("SunDirectionAndExponent");
+		this.sunColourAndWaveExponentUniform = this.shader.getUniform("SunColourAndWaveExponent");
+		this.waveIntensityAndBreakWaterDepthAndOffsetUniform = this.shader.getUniform("WaveIntensityAndBreakWaterDepthAndOffset");
+		this.heightFogPlaneUniform = this.shader.getUniform("HeightFogPlane");
+		this.heightFogColourUniform = this.shader.getUniform("HeightFogColour");
+		this.distanceFogPlaneUniform = this.shader.getUniform("DistanceFogPlane");
+		this.distanceFogColourUniform = this.shader.getUniform("DistanceFogColour");
+		this.envMappedWaterProgram = this.shader.getProgram(this.field12150 ? "EnvMappedSea" : "EnvMappedWater");
+		this.shader.setCurrentProgram(this.envMappedWaterProgram);
 		return true;
 	}
 
@@ -154,32 +154,32 @@ public class EnvMappedWaterShader extends WaterShader {
 
 	@ObfuscatedName("aqe.ag(Z)V")
 	public void method16769(boolean arg0) {
-		float var2 = (1.0F - Math.abs(this.field3233.field10114[1])) * 2.0F + 1.0F;
-		float var3 = this.field3233.field10123;
-		this.field3233.field10123 *= var2;
+		float var2 = (1.0F - Math.abs(this.gpuRenderer.field10114[1])) * 2.0F + 1.0F;
+		float var3 = this.gpuRenderer.field10123;
+		this.gpuRenderer.field10123 *= var2;
 		super.method16769(arg0);
-		this.field3233.field10123 = var3;
+		this.gpuRenderer.field10123 = var3;
 	}
 
 	@ObfuscatedName("aqe.bl(B)V")
 	public void method19210() {
 		this.method19208();
-		this.field10587.setCurrentProgram(this.field12128);
-		this.field10587.enable();
-		this.field10587.setUniform(this.field12121, 0, this.field12122.field3224);
-		this.field10587.setUniform(this.field12123, 1, this.field3233.method15994());
-		this.field10587.setUniform4x4(this.field12125, this.field12143);
-		this.field10587.setUniform4x2(this.field12126, this.field12127);
+		this.shader.setCurrentProgram(this.envMappedWaterProgram);
+		this.shader.enable();
+		this.shader.setUniform1i(this.normalSamplerUniform, 0, this.field12122.field3224);
+		this.shader.setUniform1i(this.envMapSamplerUniform, 1, this.gpuRenderer.getEnvMapSampler());
+		this.shader.setUniform4fv(this.wvpMatrixUniform, this.wvpMatrix);
+		this.shader.setUniform2fv(this.texCoordMatrixUniform, this.texCoordMatrix);
 		int var1 = 0x1 << (this.field12147 & 0x3);
-		this.field10587.setUniform(this.field12141, this.field12129.x, this.field12129.y, this.field12129.z, (float) (this.field3233.field10181 * var1 % 40000) / 40000.0F);
-		this.field10587.setUniform(this.field12142, this.field12132);
-		this.field10587.setUniform(this.field12133, this.field12134);
-		this.field10587.setUniform(this.field12135, this.field12136);
-		this.field10587.setUniform(this.field12137, this.field12138);
-		this.field10587.setUniform(this.field12139, this.field12140);
-		this.field10587.setUniform(this.field12151, this.field12124);
-		this.field10587.setUniform(this.field12149, this.field12144);
-		this.field3233.method16079(PrimitiveType.field3403, this.field12145, this.field12146, this.field12120, this.field12148);
+		this.shader.setUniform4f(this.eyePosAndTimeUniform, this.eyePosAndTime.x, this.eyePosAndTime.y, this.eyePosAndTime.z, (float) (this.gpuRenderer.field10181 * var1 % 40000) / 40000.0F);
+		this.shader.setUniform4fv(this.sunDirectionAndExponentUniform, this.sunDirectionAndExponent);
+		this.shader.setUniform4fv(this.sunColourAndWaveExponentUniform, this.sunColourAndWaveExponent);
+		this.shader.setUniform4fv(this.waveIntensityAndBreakWaterDepthAndOffsetUniform, this.waveIntensityAndBreakWaterDepthAndOffset);
+		this.shader.setUniform4fv(this.heightFogPlaneUniform, this.heightFogPlane);
+		this.shader.setUniform3fv(this.heightFogColourUniform, this.heightFogColour);
+		this.shader.setUniform4fv(this.distanceFogPlaneUniform, this.distanceFogPlane);
+		this.shader.setUniform3fv(this.distanceFogColourUniform, this.distanceFogColour);
+		this.gpuRenderer.method16079(PrimitiveType.field3403, this.field12145, this.field12146, this.field12120, this.field12148);
 	}
 
 	@ObfuscatedName("aqe.bk(I)V")
@@ -190,9 +190,9 @@ public class EnvMappedWaterShader extends WaterShader {
 		float var3 = 0.4F;
 		float var4 = 0.1F;
 		byte var5 = 5;
-		this.field12127.scale(this.field12130, this.field12130, this.field12130, this.field12130);
-		this.field12132.method6247(-this.field3233.field10114[0], -this.field3233.field10114[1], -this.field3233.field10114[2], 32.0F);
-		this.field12134.method6247(this.field3233.field10142, this.field3233.field10120, this.field3233.field10210, (float) var5);
-		this.field12136.method6247(var4, var3, (float) var1, var2);
+		this.texCoordMatrix.scale(this.field12130, this.field12130, this.field12130, this.field12130);
+		this.sunDirectionAndExponent.method6247(-this.gpuRenderer.field10114[0], -this.gpuRenderer.field10114[1], -this.gpuRenderer.field10114[2], 32.0F);
+		this.sunColourAndWaveExponent.method6247(this.gpuRenderer.field10142, this.gpuRenderer.field10120, this.gpuRenderer.field10210, (float) var5);
+		this.waveIntensityAndBreakWaterDepthAndOffset.method6247(var4, var3, (float) var1, var2);
 	}
 }

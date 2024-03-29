@@ -27,7 +27,7 @@ import java.awt.*;
 public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.hx")
-	public OpenGL field12020;
+	public OpenGL opengl;
 
 	@ObfuscatedName("aqv.hq")
 	public IterableQueue field12011 = new IterableQueue();
@@ -96,22 +96,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 	public boolean hasVertexBufferObject;
 
 	@ObfuscatedName("aqv.ie")
-	public boolean field12002;
+	public boolean hasTextureRectangle;
 
 	@ObfuscatedName("aqv.iu")
-	public boolean field12022;
+	public boolean hasTextureNonPowerOfTwo;
 
 	@ObfuscatedName("aqv.in")
-	public final boolean field12032;
+	public final boolean hasVertexShader;
 
 	@ObfuscatedName("aqv.ir")
-	public final boolean field12024;
+	public final boolean hasVertexProgram;
 
 	@ObfuscatedName("aqv.it")
-	public final boolean field12025;
+	public final boolean hasFragmentShader;
 
 	@ObfuscatedName("aqv.ix")
-	public final boolean field12026;
+	public final boolean hasFragmentProgram;
 
 	@ObfuscatedName("aqv.is")
 	public final int field12027;
@@ -158,7 +158,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.rc(Ljava/lang/String;)Lho;")
-	public Shader method15964(String arg0) {
+	public Shader createShader(String arg0) {
 		byte[] var2 = this.method19089(arg0);
 		if (var2 == null) {
 			return null;
@@ -169,13 +169,13 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.rx()Z")
-	public boolean method15957() {
-		return this.field12032;
+	public boolean hasVertexShader() {
+		return this.hasVertexShader;
 	}
 
 	@ObfuscatedName("aqv.ry()Z")
-	public boolean method15958() {
-		return this.field12025;
+	public boolean hasFragmentShader() {
+		return this.hasFragmentShader;
 	}
 
 	@ObfuscatedName("aqv.rg(Z)Z")
@@ -199,8 +199,8 @@ public final class OpenGLRenderer extends GpuRenderer {
 		this.field12019 = 0;
 		int[] var12 = new int[1];
 		try {
-			this.field12020 = arg0;
-			this.field12020.method1();
+			this.opengl = arg0;
+			this.opengl.method1();
 			this.field12037 = OpenGL.glGetString(7936).toLowerCase();
 			this.field12001 = OpenGL.glGetString(7937).toLowerCase();
 			if (this.field12037.indexOf("microsoft") != -1 || this.field12037.indexOf("brian paul") != -1 || this.field12037.indexOf("mesa") != -1) {
@@ -222,33 +222,33 @@ public final class OpenGLRenderer extends GpuRenderer {
 				throw new RuntimeException("");
 			}
 			OpenGL.glGetIntegerv(34018, var12, 0);
-			this.field10186 = var12[0];
-			if (this.field10186 < 2) {
+			this.maxSimutaneousTextures = var12[0];
+			if (this.maxSimutaneousTextures < 2) {
 				throw new RuntimeException("");
 			}
-			this.field10094 = 8;
-			this.hasVertexBufferObject = this.field12020.method0("GL_ARB_vertex_buffer_object");
-			this.field10172 = this.field12020.method0("GL_ARB_multisample");
-			this.field10074 = this.field12020.method0("GL_EXT_blend_func_separate");
-			this.field12002 = this.field12020.method0("GL_ARB_texture_rectangle");
-			this.field10192 = this.field12020.method0("GL_ARB_texture_cube_map");
-			this.field12022 = this.field12020.method0("GL_ARB_texture_non_power_of_two");
+			this.maxActiveLights = 8;
+			this.hasVertexBufferObject = this.opengl.method0("GL_ARB_vertex_buffer_object");
+			this.hasMultiSample = this.opengl.method0("GL_ARB_multisample");
+			this.hasBlendFuncSeparate = this.opengl.method0("GL_EXT_blend_func_separate");
+			this.hasTextureRectangle = this.opengl.method0("GL_ARB_texture_rectangle");
+			this.hasTextureCubeMap = this.opengl.method0("GL_ARB_texture_cube_map");
+			this.hasTextureNonPowerOfTwo = this.opengl.method0("GL_ARB_texture_non_power_of_two");
 			this.field10125 = true;
-			this.field12032 = this.field12020.method0("GL_ARB_vertex_shader");
-			this.field12024 = this.field12020.method0("GL_ARB_vertex_program");
-			this.field12025 = this.field12020.method0("GL_ARB_fragment_shader");
-			this.field12026 = this.field12020.method0("GL_ARB_fragment_program");
-			this.hasFramebufferObject = this.field12020.method0("GL_EXT_framebuffer_object");
+			this.hasVertexShader = this.opengl.method0("GL_ARB_vertex_shader");
+			this.hasVertexProgram = this.opengl.method0("GL_ARB_vertex_program");
+			this.hasFragmentShader = this.opengl.method0("GL_ARB_fragment_shader");
+			this.hasFragmentProgram = this.opengl.method0("GL_ARB_fragment_program");
+			this.hasFramebufferObject = this.opengl.method0("GL_EXT_framebuffer_object");
 			this.field10116 = this.hasFramebufferObject;
-			this.field10134 = this.field12020.method0("GL_EXT_framebuffer_blit");
-			this.field10199 = this.field12020.method0("GL_EXT_framebuffer_multisample");
-			this.field12028 = this.field10110 != null && (this.field11999 >= 32 || this.field12020.method0("GL_ARB_sync"));
-			this.field12014 = new int[this.field10186];
-			if (!this.method15957() || !this.method15958()) {
-				if (!this.field12020.method0("GL_ARB_multitexture")) {
+			this.hasFramebufferBlit = this.opengl.method0("GL_EXT_framebuffer_blit");
+			this.hasFramebufferMultisample = this.opengl.method0("GL_EXT_framebuffer_multisample");
+			this.field12028 = this.field10110 != null && (this.field11999 >= 32 || this.opengl.method0("GL_ARB_sync"));
+			this.field12014 = new int[this.maxSimutaneousTextures];
+			if (!this.hasVertexShader() || !this.hasFragmentShader()) {
+				if (!this.opengl.method0("GL_ARB_multitexture")) {
 					throw new RuntimeException("");
 				}
-				if (!this.field12020.method0("GL_ARB_texture_env_combine")) {
+				if (!this.opengl.method0("GL_ARB_texture_env_combine")) {
 					throw new RuntimeException("");
 				}
 			}
@@ -305,7 +305,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 						}
 					}
 
-					this.field12002 &= this.field12020.method0("GL_ARB_half_float_pixel");
+					this.hasTextureRectangle &= this.opengl.method0("GL_ARB_half_float_pixel");
 					this.field12016 = true;
 				} else if (!var20) {
 					 this.hasFramebufferObject = false;
@@ -343,11 +343,11 @@ public final class OpenGLRenderer extends GpuRenderer {
 		OpenGL.glClearDepth(1.0F);
 		OpenGL.glAlphaFunc(516, 0.0F);
 		OpenGL.glPolygonMode(1028, 6914);
-		if (this.field10172) {
+		if (this.hasMultiSample) {
 			this.method16294(this.field10180 > 1);
 			OpenGL.glDisable(32926);
 		}
-		for (int var1 = this.field10186 - 1; var1 >= 0; var1--) {
+		for (int var1 = this.maxSimutaneousTextures - 1; var1 >= 0; var1--) {
 			OpenGL.glActiveTexture(var1 + 33984);
 			OpenGL.glTexEnvi(8960, 8704, 34160);
 			OpenGL.glTexEnvi(8960, 34161, 8448);
@@ -371,7 +371,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		OpenGL.glFogf(2914, 0.95F);
 		OpenGL.glFogi(2917, 9729);
 		OpenGL.glHint(3156, 4353);
-		this.field12020.setSwapInterval(0);
+		this.opengl.setSwapInterval(0);
 		super.method16232();
 	}
 
@@ -404,10 +404,10 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.p()V")
 	public void method2369() {
 		super.method2369();
-		if (this.field12020 != null) {
-			this.field12020.method2();
-			this.field12020.release();
-			this.field12020 = null;
+		if (this.opengl != null) {
+			this.opengl.method2();
+			this.opengl.release();
+			this.opengl = null;
 		}
 	}
 
@@ -1014,7 +1014,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.vm()V")
 	public void method16059() {
-		if (this.field10074) {
+		if (this.hasBlendFuncSeparate) {
 			byte var1 = 0;
 			byte var2 = 0;
 			if (this.field10174 == 0) {
@@ -1581,7 +1581,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.ahy()V")
 	public void method19078() {
 		int var1 = 0;
-		while (!this.field12020.method1()) {
+		while (!this.opengl.method1()) {
 			if (var1++ > 5) {
 				throw new RuntimeException("");
 			}
@@ -1597,27 +1597,27 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.g()Ljava/lang/String;")
-	public String method2132() {
+	public String hardwareInfo() {
 		String var1 = "Caps: 4:";
 		String var2 = ":";
 		String var3 = var1 + this.field10180 + var2;
 		String var4 = var3 + this.field12027 + var2;
-		String var5 = var4 + this.field10186 + var2;
-		String var6 = var5 + this.field10094 + var2;
+		String var5 = var4 + this.maxSimutaneousTextures + var2;
+		String var6 = var5 + this.maxActiveLights + var2;
 		String var7 = var6 + (this.hasVertexBufferObject ? 1 : 0) + var2;
-		String var8 = var7 + (this.field10172 ? 1 : 0) + var2;
-		String var9 = var8 + (this.field12024 ? 1 : 0) + var2;
-		String var10 = var9 + (this.field12026 ? 1 : 0) + var2;
-		String var11 = var10 + (this.field12032 ? 1 : 0) + var2;
-		String var12 = var11 + (this.field12025 ? 1 : 0) + var2;
+		String var8 = var7 + (this.hasMultiSample ? 1 : 0) + var2;
+		String var9 = var8 + (this.hasVertexProgram ? 1 : 0) + var2;
+		String var10 = var9 + (this.hasFragmentProgram ? 1 : 0) + var2;
+		String var11 = var10 + (this.hasVertexShader ? 1 : 0) + var2;
+		String var12 = var11 + (this.hasFragmentShader ? 1 : 0) + var2;
 		String var13 = var12 + (this.field10125 ? 1 : 0) + var2;
-		String var14 = var13 + (this.field12002 ? 1 : 0) + var2;
-		String var15 = var14 + (this.field10192 ? 1 : 0) + var2;
-		String var16 = var15 + (this.field12022 ? 1 : 0) + var2;
+		String var14 = var13 + (this.hasTextureRectangle ? 1 : 0) + var2;
+		String var15 = var14 + (this.hasTextureCubeMap ? 1 : 0) + var2;
+		String var16 = var15 + (this.hasTextureNonPowerOfTwo ? 1 : 0) + var2;
 		String var17 = var16 + (this.hasFramebufferObject ? 1 : 0) + var2;
-		String var18 = var17 + (this.field10134 ? 1 : 0) + var2;
-		String var19 = var18 + (this.field10199 ? 1 : 0) + var2;
-		String var20 = var19 + (this.field10074 ? 1 : 0) + var2;
+		String var18 = var17 + (this.hasFramebufferBlit ? 1 : 0) + var2;
+		String var19 = var18 + (this.hasFramebufferMultisample ? 1 : 0) + var2;
+		String var20 = var19 + (this.hasBlendFuncSeparate ? 1 : 0) + var2;
 		return var20 + OpenGL.glGetString(35724).toLowerCase();
 	}
 }

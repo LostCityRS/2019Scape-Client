@@ -23,7 +23,7 @@ public abstract class ProgramUniform extends HashMapValue {
 	public UniformType field12213;
 
 	public ProgramUniform(ProgramUniformData arg0) {
-		this.field12211 = arg0.field2592;
+		this.field12211 = arg0.uniformType;
 		this.field12210 = arg0.field2586;
 		this.field12209 = arg0.field2590;
 		this.field12212 = arg0.field2588;

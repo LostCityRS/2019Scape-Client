@@ -19,40 +19,40 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 	public static float field10626 = 1.0F;
 
 	@ObfuscatedName("aii.u")
-	public Shader field10627;
+	public Shader shader;
 
 	@ObfuscatedName("aii.z")
-	public Program field10628;
+	public Program techFullscreenTriProgram;
 
 	@ObfuscatedName("aii.p")
-	public Program field10632;
+	public Program brightpassProgram;
 
 	@ObfuscatedName("aii.d")
-	public Program field10622;
+	public Program blurProgram;
 
 	@ObfuscatedName("aii.c")
-	public Program field10631;
+	public Program compositeProgram;
 
 	@ObfuscatedName("aii.r")
-	public Program field10637;
+	public Program techDefaultProgram;
 
 	@ObfuscatedName("aii.v")
-	public ProgramUniform field10633;
+	public ProgramUniform sceneTexUniform;
 
 	@ObfuscatedName("aii.o")
-	public ProgramUniform field10634;
+	public ProgramUniform bloomTex1Uniform;
 
 	@ObfuscatedName("aii.s")
-	public ProgramUniform field10630;
+	public ProgramUniform paramsUniform;
 
 	@ObfuscatedName("aii.y")
-	public ProgramUniform field10636;
+	public ProgramUniform sampleSizeUniform;
 
 	@ObfuscatedName("aii.q")
-	public ProgramUniform field10629;
+	public ProgramUniform pixelOffsetAndBloomScaleUniform;
 
 	@ObfuscatedName("aii.x")
-	public ProgramUniform field10635;
+	public ProgramUniform posAndTexCoordsUniform;
 
 	@ObfuscatedName("aii.b")
 	public boolean field10639;
@@ -63,7 +63,7 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 
 	@ObfuscatedName("aii.e()Z")
 	public boolean method5558() {
-		return this.field3242.hasFramebufferObject && this.field3242.method15958() && this.field3242.method15959(true);
+		return this.gpuRenderer.hasFramebufferObject && this.gpuRenderer.hasFragmentShader() && this.gpuRenderer.method15959(true);
 	}
 
 	@ObfuscatedName("aii.n()Z")
@@ -76,37 +76,37 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 		if (!this.method5558()) {
 			return false;
 		}
-		this.field10627 = this.field3242.method15964("FilterBloom");
-		if (this.field10627 == null) {
+		this.shader = this.gpuRenderer.createShader("FilterBloom");
+		if (this.shader == null) {
 			return false;
 		}
 		try {
-			this.field10633 = this.field10627.getUniform("sceneTex");
-			this.field10634 = this.field10627.getUniform("bloomTex1");
-			this.field10630 = this.field10627.getUniform("params");
-			this.field10636 = this.field10627.getUniform("sampleSize");
-			this.field10629 = this.field10627.getUniform("pixelOffsetAndBloomScale");
-			this.field10635 = this.field10627.getUniform("PosAndTexCoords");
-			this.field10627.getProgram("test");
-			this.field10628 = this.field10627.getProgram("techFullscreenTri");
-			this.field10632 = this.field10627.getProgram("brightpass");
-			this.field10622 = this.field10627.getProgram("blur");
-			this.field10631 = this.field10627.getProgram("composite");
-			this.field10637 = this.field10627.getProgram("techDefault");
+			this.sceneTexUniform = this.shader.getUniform("sceneTex");
+			this.bloomTex1Uniform = this.shader.getUniform("bloomTex1");
+			this.paramsUniform = this.shader.getUniform("params");
+			this.sampleSizeUniform = this.shader.getUniform("sampleSize");
+			this.pixelOffsetAndBloomScaleUniform = this.shader.getUniform("pixelOffsetAndBloomScale");
+			this.posAndTexCoordsUniform = this.shader.getUniform("PosAndTexCoords");
+			this.shader.getProgram("test");
+			this.techFullscreenTriProgram = this.shader.getProgram("techFullscreenTri");
+			this.brightpassProgram = this.shader.getProgram("brightpass");
+			this.blurProgram = this.shader.getProgram("blur");
+			this.compositeProgram = this.shader.getProgram("composite");
+			this.techDefaultProgram = this.shader.getProgram("techDefault");
 		} catch (UniformNotFoundException var3) {
 			return false;
 		} catch (ProgramNotFoundException var4) {
 			return false;
 		}
-		if (!this.field10628.compile()) {
+		if (!this.techFullscreenTriProgram.compile()) {
 			return false;
-		} else if (!this.field10632.compile()) {
+		} else if (!this.brightpassProgram.compile()) {
 			return false;
-		} else if (!this.field10622.compile()) {
+		} else if (!this.blurProgram.compile()) {
 			return false;
-		} else if (!this.field10631.compile()) {
+		} else if (!this.compositeProgram.compile()) {
 			return false;
-		} else if (this.field10637.compile()) {
+		} else if (this.techDefaultProgram.compile()) {
 			this.field10639 = true;
 			return true;
 		} else {
@@ -129,7 +129,7 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 
 	@ObfuscatedName("aii.l(ILafq;Llz;Ldw;Llz;Z)V")
 	public void method5564(int arg0, Framebuffer arg1, GpuTexture arg2, EffectInterface arg3, GpuTexture arg4, boolean arg5) {
-		float var7 = this.field3242.method15954();
+		float var7 = this.gpuRenderer.method15954();
 		float var8 = (float) arg1.getWidth();
 		float var9 = (float) arg1.getHeight();
 		GpuTexture var10 = arg2;
@@ -138,34 +138,34 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 		float[] var13 = new float[] { var11 + -1.0F, var12 + 1.0F, 0.0F, 0.0F, var11 + -1.0F, var12 + -3.0F, 0.0F, 2.0F, var11 + 3.0F, var12 + 1.0F, 2.0F, 0.0F };
 		int var14 = (int) var8;
 		int var15 = (int) var9;
-		int var16 = arg5 ? this.field3242.getSurface().getWidth() : var14;
-		int var17 = arg5 ? this.field3242.getSurface().getHeight() : var15;
+		int var16 = arg5 ? this.gpuRenderer.getSurface().getWidth() : var14;
+		int var17 = arg5 ? this.gpuRenderer.getSurface().getHeight() : var15;
 		if (arg0 == 0) {
 			var14 = 256;
 			var15 = 256;
-			this.field10627.setCurrentProgram(this.field10632);
-			this.field10627.enable();
+			this.shader.setCurrentProgram(this.brightpassProgram);
+			this.shader.enable();
 		} else if (arg0 == 1) {
 			var14 = 256;
 			var15 = 256;
 			var16 = var14;
 			var17 = var15;
-			this.field10627.setCurrentProgram(this.field10622);
-			this.field10627.enable();
-			this.field10627.setUniform(this.field10636, field10626 / var8, 0.0F);
+			this.shader.setCurrentProgram(this.blurProgram);
+			this.shader.enable();
+			this.shader.setUniform2f(this.sampleSizeUniform, field10626 / var8, 0.0F);
 		} else if (arg0 == 2) {
 			var14 = 256;
 			var15 = 256;
 			var16 = var14;
 			var17 = var15;
-			this.field10627.setCurrentProgram(this.field10622);
-			this.field10627.enable();
-			this.field10627.setUniform(this.field10636, 0.0F, field10626 / var9);
+			this.shader.setCurrentProgram(this.blurProgram);
+			this.shader.enable();
+			this.shader.setUniform2f(this.sampleSizeUniform, 0.0F, field10626 / var9);
 		} else if (arg0 == 3) {
-			this.field10627.setCurrentProgram(this.field10631);
+			this.shader.setCurrentProgram(this.compositeProgram);
 			var10 = arg4;
-			this.field10627.setUniform(this.field10634, 1, arg2);
-			this.field10627.enable();
+			this.shader.setUniform1i(this.bloomTex1Uniform, 1, arg2);
+			this.shader.enable();
 		}
 		float var18 = (float) var14 / var8;
 		float var19 = (float) var15 / var9;
@@ -175,16 +175,16 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 		var13[5] = (var13[5] - 1.0F) * var19 + 1.0F;
 		var13[10] *= var20;
 		var13[7] *= var21;
-		this.field10627.setUniform(this.field10635, var13);
-		this.field10627.setUniform(this.field10633, 0, var10);
-		this.field10627.setUniform(this.field10630, field10625, field10623, field10624, 0.0F);
-		this.field10627.setUniform(this.field10629, 0.0F, 0.0F, 256.0F / var8, 256.0F / var9);
-		this.field3242.method2164(0, 0, var14, var15);
+		this.shader.setUniformFloatv(this.posAndTexCoordsUniform, var13);
+		this.shader.setUniform1i(this.sceneTexUniform, 0, var10);
+		this.shader.setUniform4f(this.paramsUniform, field10625, field10623, field10624, 0.0F);
+		this.shader.setUniform4f(this.pixelOffsetAndBloomScaleUniform, 0.0F, 0.0F, 256.0F / var8, 256.0F / var9);
+		this.gpuRenderer.method2164(0, 0, var14, var15);
 	}
 
 	@ObfuscatedName("aii.u(I)V")
 	public void method5565(int arg0) {
-		this.field10627.method4214();
+		this.shader.method4214();
 	}
 
 	@ObfuscatedName("aii.d()I")

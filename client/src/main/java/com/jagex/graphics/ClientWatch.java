@@ -180,7 +180,7 @@ public class ClientWatch {
 		if (Client.field10801 || Client.preferences.toolkit.getValue() != 1) {
 			return;
 		}
-		int[] var14 = Client.renderer.method2413();
+		int[] var14 = Client.renderer.textureFormat();
 		ClientMessage var15 = ClientMessage.createMessage(ClientProt.CLIENT_COMPRESSEDTEXTUREFORMAT_SUPPORT, Client.gameConnection.randomOut);
 		var15.buf.p2(0);
 		int var16 = var15.buf.pos;

@@ -6,36 +6,36 @@ import deob.ObfuscatedName;
 public class ShaderDataReader {
 
 	@ObfuscatedName("hw.e")
-	public byte[] field2437;
+	public byte[] bytes;
 
 	@ObfuscatedName("hw.n")
-	public int field2438;
+	public int pos;
 
-	public ShaderDataReader(byte[] arg0) {
-		this.field2437 = arg0;
-		this.field2438 = 0;
+	public ShaderDataReader(byte[] bytes) {
+		this.bytes = bytes;
+		this.pos = 0;
 	}
 
 	@ObfuscatedName("hw.e(I)I")
-	public int method4133() {
-		short var1 = 0;
-		for (int var2 = 0; var2 < 2; var2++) {
-			var1 = (short) (var1 | (this.field2437[++this.field2438 - 1] & 0xFF) << var2 * 8);
+	public int g2() {
+		short value = 0;
+		for (int index = 0; index < 2; index++) {
+			value = (short) (value | (this.bytes[++this.pos - 1] & 0xFF) << index * 8);
 		}
-		return var1;
+		return value;
 	}
 
 	@ObfuscatedName("hw.n(I)Ljava/lang/String;")
-	public String method4134() {
-		int var1 = this.method4133();
-		if (var1 == -1) {
+	public String gstr() {
+		int length = this.g2();
+		if (length == -1) {
 			return null;
-		} else if (var1 > 256) {
+		} else if (length > 256) {
 			throw new ShaderDataReaderException();
 		} else {
-			String var2 = new String(this.field2437, this.field2438, var1);
-			this.field2438 += var1;
-			return var2;
+			String value = new String(this.bytes, this.pos, length);
+			this.pos += length;
+			return value;
 		}
 	}
 }

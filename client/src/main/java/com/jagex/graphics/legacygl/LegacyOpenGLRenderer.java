@@ -966,7 +966,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.x()Z")
-	public boolean method2141() {
+	public boolean supportsAntiAliasing() {
 		return this.field9988 && (!this.isBloomEnabled() || this.field9989);
 	}
 
@@ -991,7 +991,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.g()Ljava/lang/String;")
-	public String method2132() {
+	public String hardwareInfo() {
 		String var1 = "Caps: 2:";
 		String var2 = ":";
 		String var3 = var1 + this.field9967 + var2;
@@ -1025,7 +1025,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.i()[I")
-	public int[] method2413() {
+	public int[] textureFormat() {
 		int[] var1 = new int[1];
 		OpenGL.glGetIntegerv(34466, var1, 0);
 		int var2 = var1[0];
