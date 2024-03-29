@@ -388,7 +388,7 @@ public class MapElementType implements ConfigType {
 		Sprite var5 = (Sprite) this.field2368.elementCache.get((long) var4);
 		if (var5 != null) {
 			return var5;
-		} else if (this.field2368.configClient.method6889(var3)) {
+		} else if (this.field2368.configClient.loadFile(var3)) {
 			SpriteData var6 = SpriteDataProvider.method1609(this.field2368.configClient, var3, 0);
 			if (var6 != null) {
 				var5 = arg0.createSprite(var6, true);
@@ -406,7 +406,7 @@ public class MapElementType implements ConfigType {
 		Sprite var3 = (Sprite) this.field2368.elementCache.get((long) var2);
 		if (var3 != null) {
 			return var3;
-		} else if (this.field2368.configClient.method6889(this.field2384)) {
+		} else if (this.field2368.configClient.loadFile(this.field2384)) {
 			SpriteData var4 = SpriteDataProvider.method1609(this.field2368.configClient, this.field2384, 0);
 			if (var4 != null) {
 				var3 = arg0.createSprite(var4, true);
@@ -424,7 +424,7 @@ public class MapElementType implements ConfigType {
 		if (var2 != null) {
 			return var2;
 		}
-		this.field2368.configClient.method6889(this.field2383);
+		this.field2368.configClient.loadFile(this.field2383);
 		SpriteData var3 = SpriteDataProvider.method1609(this.field2368.configClient, this.field2383, 0);
 		if (var3 != null) {
 			var2 = arg0.createSprite(var3, true);

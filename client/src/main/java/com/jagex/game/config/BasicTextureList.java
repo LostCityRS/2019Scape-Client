@@ -20,13 +20,13 @@ public class BasicTextureList extends BasicTextureListInner {
 		boolean var9 = true;
 		if (TextureRelated2.field7586 == arg0) {
 			if (arg2 > -1 && this.field9773.method6929(arg2)) {
-				var9 = this.field9773.method6889(arg2);
+				var9 = this.field9773.loadFile(arg2);
 			}
-			return var9 & this.field9773.method6889(arg1);
+			return var9 & this.field9773.loadFile(arg1);
 		} else if (TextureRelated2.field7585 == arg0) {
-			return this.field9773.method6889(arg1);
+			return this.field9773.loadFile(arg1);
 		} else if (TextureRelated2.field7587 == arg0) {
-			return this.field9773.method6889(arg2);
+			return this.field9773.loadFile(arg2);
 		} else {
 			return false;
 		}

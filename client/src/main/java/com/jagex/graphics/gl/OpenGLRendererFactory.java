@@ -26,7 +26,7 @@ public class OpenGLRendererFactory {
 		try {
 			GpuRenderer.method15968();
 			NativeLibraries.getLoader().load("jaggl");
-			Renderer.method6020(arg0);
+			Renderer.setIgnoreRepaint(arg0);
 			OpenGL var8 = new OpenGL();
 			long var9 = var8.init(arg0, 8, 8, 8, 24, 0, arg7);
 			if (var9 == 0L) {

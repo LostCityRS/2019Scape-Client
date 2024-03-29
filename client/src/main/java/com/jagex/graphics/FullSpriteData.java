@@ -186,7 +186,7 @@ public class FullSpriteData extends SpriteData {
 	}
 
 	@ObfuscatedName("afb.o()V")
-	public void method2601() {
+	public void flipHorizontally() {
 		int[] var1 = this.field10216;
 		for (int var2 = this.field10218 - 1; var2 >= 0; var2--) {
 			int var3 = this.field10213 * var2;
@@ -205,7 +205,7 @@ public class FullSpriteData extends SpriteData {
 	}
 
 	@ObfuscatedName("afb.s()V")
-	public void method2602() {
+	public void flipVertically() {
 		int[] var1 = this.field10216;
 		for (int var2 = (this.field10218 >> 1) - 1; var2 >= 0; var2--) {
 			int var3 = this.field10213 * var2;
@@ -224,7 +224,7 @@ public class FullSpriteData extends SpriteData {
 	}
 
 	@ObfuscatedName("afb.y()V")
-	public void method2588() {
+	public void rotate() {
 		int[] var1 = new int[this.field10218 * this.field10213];
 		int var2 = 0;
 		for (int var3 = 0; var3 < this.field10213; var3++) {

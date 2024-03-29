@@ -258,7 +258,7 @@ public class SkyBox {
 	@ObfuscatedName("sv.c(Ldh;IIIIIIIIIZZII)V")
 	public void method7947(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, boolean arg11, int arg12) {
 		int var14 = 255 - arg12;
-		arg0.method2202();
+		arg0.flush();
 		arg0.method2203();
 		if (this.field5103 == null) {
 			arg0.method2475(2, 0);

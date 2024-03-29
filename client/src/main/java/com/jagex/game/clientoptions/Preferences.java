@@ -266,7 +266,7 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.antiAliasing, 0);
 		Client.preferences.method18157(Client.preferences.antiAliasing2, 0);
 		Client.preferences.method18157(Client.preferences.particles, 2);
-		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.SIZE_104.id);
+		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
 		Client.preferences.method18157(Client.preferences.bloom, 0);
 		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
 			Client.renderer.disableBloom();
@@ -298,7 +298,7 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.antiAliasing, 0);
 		Client.preferences.method18157(Client.preferences.antiAliasing2, 0);
 		Client.preferences.method18157(Client.preferences.particles, 1);
-		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.SIZE_104.id);
+		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
 		Client.preferences.method18157(Client.preferences.bloom, 0);
 		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
 			Client.renderer.disableBloom();
@@ -330,7 +330,7 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.antiAliasing, 0);
 		Client.preferences.method18157(Client.preferences.antiAliasing2, 0);
 		Client.preferences.method18157(Client.preferences.particles, 0);
-		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.SIZE_104.id);
+		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
 		Client.preferences.method18157(Client.preferences.bloom, 0);
 		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
 			Client.renderer.disableBloom();
@@ -362,7 +362,7 @@ public class Preferences {
 		Client.preferences.method18157(Client.preferences.antiAliasing, 0);
 		Client.preferences.method18157(Client.preferences.antiAliasing2, 0);
 		Client.preferences.method18157(Client.preferences.particles, 0);
-		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.SIZE_104.id);
+		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
 		Client.preferences.method18157(Client.preferences.bloom, 0);
 		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
 			Client.renderer.disableBloom();

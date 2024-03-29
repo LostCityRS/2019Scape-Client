@@ -163,8 +163,8 @@ public class ClientWorldMap extends WorldMap {
 		if (loading < 10) {
 			for (int var2 = 0; var2 < field11659.length; var2++) {
 				for (int var3 = 0; var3 < field11659[var2].length; var3++) {
-					Client.spritesJs5.method6889(WorldMap.field6792.field7697[var2][var3]);
-					Client.fontmetricsJs5.method6889(WorldMap.field6792.field7697[var2][var3]);
+					Client.spritesJs5.loadFile(WorldMap.field6792.field7697[var2][var3]);
+					Client.fontmetricsJs5.loadFile(WorldMap.field6792.field7697[var2][var3]);
 				}
 			}
 			if (!WorldMap.field6795.method6886(WorldMap.currentWorldMap.field12351)) {
@@ -845,7 +845,7 @@ public class ClientWorldMap extends WorldMap {
 			field6833 = field6832;
 			method8620(field6786, field6810 + field6808, field6812 + field6786, field6808, var8, var9, var6 + var8, var7 + var9);
 			method8523(arg0, false, false, Client.loggedInMembers, true);
-			arg0.method2202();
+			arg0.flush();
 			field7241 = arg0.method2314(var8, var9, var6, var7, true);
 		}
 		field7241.drawSprite(var8, var9);

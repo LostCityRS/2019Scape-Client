@@ -619,7 +619,7 @@ public class MiniMenu {
 	public static void method6031() {
 		method1594();
 		field562 = false;
-		Client.method3066(field11738, field2960, field1289, field2576);
+		Client.requestRedrawAtPoint(field11738, field2960, field1289, field2576);
 		field11913 = null;
 		field1846 = null;
 	}
@@ -628,7 +628,7 @@ public class MiniMenu {
 	public static void method1594() {
 		if (field541 != null) {
 			field541 = null;
-			Client.method3066(field1981, field2433, field554, field3005);
+			Client.requestRedrawAtPoint(field1981, field2433, field554, field3005);
 		}
 	}
 
@@ -1435,7 +1435,7 @@ public class MiniMenu {
 			var4 = DefaultSprites.b12FullFont;
 		}
 		var4.drawStringTaggableAntimacro(var1, field556, field557, field576.width, field576.height, field576.colour, field576.field2219, field576.field2223, field576.field2264, Client.field10890, Client.field1681, Client.field11042, DefaultSprites.field10302, null);
-		Client.method3066(Client.field11042[0], Client.field11042[1], Client.field11042[2], Client.field11042[3]);
+		Client.requestRedrawAtPoint(Client.field11042[0], Client.field11042[1], Client.field11042[2], Client.field11042[3]);
 	}
 
 	@ObfuscatedName("hp.ay(Ldh;IIIIIII)V")
@@ -1547,11 +1547,11 @@ public class MiniMenu {
 			var9 = 0;
 		}
 		if (field9253 == null || field8480 == null) {
-			if (Client.spritesJs5.method6889(field12340) && Client.spritesJs5.method6889(field740)) {
+			if (Client.spritesJs5.loadFile(field12340) && Client.spritesJs5.loadFile(field740)) {
 				field9253 = arg0.createSprite(SpriteDataProvider.method1609(Client.spritesJs5, field12340, 0), true);
 				SpriteData var10 = SpriteDataProvider.method1609(Client.spritesJs5, field740, 0);
 				field8480 = arg0.createSprite(var10, true);
-				var10.method2601();
+				var10.flipHorizontally();
 				field3568 = arg0.createSprite(var10, true);
 			} else {
 				arg0.fillRectangle(arg1, arg2, arg3, arg5, var9 << 24 | field7676, 1);
@@ -1571,15 +1571,15 @@ public class MiniMenu {
 
 	@ObfuscatedName("tm.an(Ldh;IIIIII)V")
 	public static void method8462(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		if ((field1224 == null || field10568 == null || field11699 == null) && Client.spritesJs5.method6889(field11642) && Client.spritesJs5.method6889(field1748) && Client.spritesJs5.method6889(field1847)) {
+		if ((field1224 == null || field10568 == null || field11699 == null) && Client.spritesJs5.loadFile(field11642) && Client.spritesJs5.loadFile(field1748) && Client.spritesJs5.loadFile(field1847)) {
 			SpriteData var6 = SpriteDataProvider.method1609(Client.spritesJs5, field1748, 0);
 			field10568 = arg0.createSprite(var6, true);
-			var6.method2601();
+			var6.flipHorizontally();
 			field566 = arg0.createSprite(var6, true);
 			field1224 = arg0.createSprite(SpriteDataProvider.method1609(Client.spritesJs5, field11642, 0), true);
 			SpriteData var7 = SpriteDataProvider.method1609(Client.spritesJs5, field1847, 0);
 			field11699 = arg0.createSprite(var7, true);
-			var7.method2601();
+			var7.flipHorizontally();
 			field11831 = arg0.createSprite(var7, true);
 		}
 		if (field1224 == null || field10568 == null || field11699 == null) {

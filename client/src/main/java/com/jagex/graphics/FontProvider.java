@@ -73,10 +73,10 @@ public class FontProvider implements FontIconProvider {
 			int count = 0;
 			for (int index = 0; index < this.fontIds.length; index++) {
 				int fontId = this.fontIds[index];
-				if (this.js5Sprites.method6889(fontId)) {
+				if (this.js5Sprites.loadFile(fontId)) {
 					count++;
 				}
-				if (this.js5FontMetrics.method6889(fontId)) {
+				if (this.js5FontMetrics.loadFile(fontId)) {
 					count++;
 				}
 			}
@@ -139,7 +139,7 @@ public class FontProvider implements FontIconProvider {
 			}
 		}
 		if (arg3) {
-			this.js5Sprites.method6889(fontId);
+			this.js5Sprites.loadFile(fontId);
 		}
 		FontMetrics cached = (FontMetrics) this.fontMetricsCache.get((long) fontId);
 		if (cached != null) {

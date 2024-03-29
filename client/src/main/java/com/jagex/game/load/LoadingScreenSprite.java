@@ -31,14 +31,14 @@ public class LoadingScreenSprite implements LoadingScreenElement {
 	@ObfuscatedName("jk.n(ZI)V")
 	public void method5105(boolean arg0) {
 		if (arg0) {
-			int var2 = this.field3019.field3215.method5382(this.field3021.getX(), Client.frameWidth) + this.field3019.field3216;
-			int var3 = this.field3019.field3214.method5375(this.field3021.method1436(), Client.frameHeight) + this.field3019.field3217;
+			int var2 = this.field3019.field3215.computeX(this.field3021.getX(), Client.frameWidth) + this.field3019.field3216;
+			int var3 = this.field3019.field3214.computeY(this.field3021.method1436(), Client.frameHeight) + this.field3019.field3217;
 			this.field3021.drawSprite(var2, var3);
 		}
 	}
 
 	@ObfuscatedName("jk.m(I)Z")
 	public boolean method5106() {
-		return this.field3020.method6889(this.field3019.field3218);
+		return this.field3020.loadFile(this.field3019.field3218);
 	}
 }

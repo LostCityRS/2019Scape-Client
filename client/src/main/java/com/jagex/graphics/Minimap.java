@@ -128,7 +128,7 @@ public class Minimap {
 
 	@ObfuscatedName("aaz.l(Ldh;IB)Z")
 	public static boolean method14493(Renderer arg0, int arg1) {
-		arg0.method2202();
+		arg0.flush();
 		MonotonicTime.get();
 		if (!arg0.method2215()) {
 			return false;
@@ -252,7 +252,7 @@ public class Minimap {
 					}
 				}
 				arg0.fillRectangle(var30, var31, var9 * 4, var9 * 4, var26, 2);
-				arg0.method2202();
+				arg0.flush();
 				if (!field720) {
 					field734.method1440((var28 - var10) * 4 + 48, var3 * 4 + 48 - (var29 - var11) * 4 - var9 * 4, var9 * 4, var9 * 4, var30, var31);
 					if (field728) {
@@ -517,7 +517,7 @@ public class Minimap {
 		if (Client.localPlayerEntity == null) {
 			return;
 		}
-		arg0.method2202();
+		arg0.flush();
 		Graphic var4 = null;
 		GraphicsRelated var5 = null;
 		if (arg1.type == 5) {

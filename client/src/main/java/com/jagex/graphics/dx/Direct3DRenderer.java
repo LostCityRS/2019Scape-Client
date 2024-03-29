@@ -229,7 +229,7 @@ public class Direct3DRenderer extends GpuRenderer {
 				}
 				var8 = new Direct3DRenderer(var9, var10, var11, var19, var15, var14, var13, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 				if (!var8.field1613.containsKey(arg0)) {
-					Renderer.method6020(arg0);
+					Renderer.setIgnoreRepaint(arg0);
 					var8.method2138(arg0, new Direct3DSurface(var8, arg0, arg0.getWidth(), arg0.getHeight(), true));
 				}
 				var8.method2140(arg0);
@@ -514,7 +514,7 @@ public class Direct3DRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqd.aq(IIII)[I")
 	public int[] method2149(int arg0, int arg1, int arg2, int arg3) {
-		this.method2202();
+		this.flush();
 		int[] var5 = null;
 		long var6 = IDirect3DDevice.GetRenderTarget(this.device, 0);
 		long var8 = IDirect3DDevice.CreateRenderTarget(this.device, arg2, arg3, 21, 0, 0, true);

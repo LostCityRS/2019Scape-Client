@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class BuildAreaSize {
 
 	@ObfuscatedName("ib.e")
-	public static final BuildAreaSize SIZE_104 = new BuildAreaSize(0, 104);
+	public static final BuildAreaSize STANDARD = new BuildAreaSize(0, 104);
 
 	@ObfuscatedName("ib.n")
 	public static final BuildAreaSize SIZE_120 = new BuildAreaSize(1, 120);
@@ -18,7 +18,7 @@ public class BuildAreaSize {
 	public static final BuildAreaSize SIZE_168 = new BuildAreaSize(3, 168);
 
 	@ObfuscatedName("ib.f")
-	public static final BuildAreaSize SIZE_72 = new BuildAreaSize(4, 72);
+	public static final BuildAreaSize CONSTRUCTION = new BuildAreaSize(4, 72);
 
 	@ObfuscatedName("ib.w")
 	public static final BuildAreaSize SIZE_256 = new BuildAreaSize(5, 256);
@@ -36,7 +36,7 @@ public class BuildAreaSize {
 
 	@ObfuscatedName("anb.e(I)[Lib;")
 	public static BuildAreaSize[] values() {
-		return new BuildAreaSize[] {SIZE_168, SIZE_72, SIZE_104, SIZE_256, SIZE_120, SIZE_136};
+		return new BuildAreaSize[] {SIZE_168, CONSTRUCTION, STANDARD, SIZE_256, SIZE_120, SIZE_136};
 	}
 
 	@ObfuscatedName("fd.n(IB)Lib;")

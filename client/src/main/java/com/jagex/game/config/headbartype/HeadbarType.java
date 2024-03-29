@@ -110,7 +110,7 @@ public class HeadbarType implements ConfigType {
 	@ObfuscatedName("uk.p(Ldh;II)V")
 	public void loadSprite(Renderer renderer, int id) {
 		Js5 js5 = this.factory.configClient;
-		if (id >= 0 && this.factory.spriteCache.get((long) id) == null && js5.method6889(id)) {
+		if (id >= 0 && this.factory.spriteCache.get((long) id) == null && js5.loadFile(id)) {
 			SpriteData var4 = SpriteDataProvider.get(js5, id);
 			this.factory.spriteCache.put(renderer.createSprite(var4, true), (long) id);
 		}

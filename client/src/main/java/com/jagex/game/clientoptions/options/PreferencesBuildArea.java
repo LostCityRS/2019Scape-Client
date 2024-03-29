@@ -23,19 +23,19 @@ public class PreferencesBuildArea extends Preference {
 		}
 		int var1 = this.options.hardwareInfo().maxmemory();
 		if (var1 < 245) {
-			this.currentValue = BuildAreaSize.SIZE_104.id;
+			this.currentValue = BuildAreaSize.STANDARD.id;
 		}
 		if (BuildAreaSize.SIZE_168.id == this.currentValue && var1 < 500) {
 			this.currentValue = BuildAreaSize.SIZE_136.id;
 		}
-		if (this.currentValue < BuildAreaSize.SIZE_104.id || this.currentValue > BuildAreaSize.SIZE_72.id) {
+		if (this.currentValue < BuildAreaSize.STANDARD.id || this.currentValue > BuildAreaSize.CONSTRUCTION.id) {
 			this.currentValue = this.defaultValue();
 		}
 	}
 
 	@ObfuscatedName("aml.e(B)I")
 	public int defaultValue() {
-		return this.options.hardwareInfo().unused() ? BuildAreaSize.SIZE_256.id : BuildAreaSize.SIZE_104.id;
+		return this.options.hardwareInfo().unused() ? BuildAreaSize.SIZE_256.id : BuildAreaSize.STANDARD.id;
 	}
 
 	@ObfuscatedName("aml.s(I)Z")

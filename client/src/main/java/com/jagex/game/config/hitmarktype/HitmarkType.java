@@ -266,19 +266,19 @@ public class HitmarkType implements ConfigType {
 	@ObfuscatedName("vb.o(Ldh;I)V")
 	public void loadSprites(Renderer renderer) {
 		Js5 js5 = this.factory.configClient;
-		if (this.classgraphic >= 0 && this.factory.spriteCache.get((long) this.classgraphic) == null && js5.method6889(this.classgraphic)) {
+		if (this.classgraphic >= 0 && this.factory.spriteCache.get((long) this.classgraphic) == null && js5.loadFile(this.classgraphic)) {
 			SpriteData sprite = SpriteDataProvider.get(js5, this.classgraphic);
 			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.classgraphic);
 		}
-		if (this.middlegraphic >= 0 && this.factory.spriteCache.get((long) this.middlegraphic) == null && js5.method6889(this.middlegraphic)) {
+		if (this.middlegraphic >= 0 && this.factory.spriteCache.get((long) this.middlegraphic) == null && js5.loadFile(this.middlegraphic)) {
 			SpriteData sprite = SpriteDataProvider.get(js5, this.middlegraphic);
 			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.middlegraphic);
 		}
-		if (this.leftgraphic >= 0 && this.factory.spriteCache.get((long) this.leftgraphic) == null && js5.method6889(this.leftgraphic)) {
+		if (this.leftgraphic >= 0 && this.factory.spriteCache.get((long) this.leftgraphic) == null && js5.loadFile(this.leftgraphic)) {
 			SpriteData sprite = SpriteDataProvider.get(js5, this.leftgraphic);
 			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.leftgraphic);
 		}
-		if (this.rightgraphic >= 0 && this.factory.spriteCache.get((long) this.rightgraphic) == null && js5.method6889(this.rightgraphic)) {
+		if (this.rightgraphic >= 0 && this.factory.spriteCache.get((long) this.rightgraphic) == null && js5.loadFile(this.rightgraphic)) {
 			SpriteData sprite = SpriteDataProvider.get(js5, this.rightgraphic);
 			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.rightgraphic);
 		}

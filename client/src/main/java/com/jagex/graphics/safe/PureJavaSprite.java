@@ -150,7 +150,7 @@ public abstract class PureJavaSprite extends Sprite {
 	}
 
 	@ObfuscatedName("ael.x(IIIIIII)V")
-	public void method1449(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public void drawTiledTinted(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		}

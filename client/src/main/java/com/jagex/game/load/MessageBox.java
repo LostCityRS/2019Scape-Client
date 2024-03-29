@@ -8,181 +8,205 @@ import rs2.client.Client;
 public class MessageBox {
 
 	@ObfuscatedName("as.e")
-	public static LoadingScreenAlignmentX field709;
+	public static LoadingScreenAlignmentX halign;
 
 	@ObfuscatedName("as.n")
-	public static LoadingScreenAlignmentY field715;
+	public static LoadingScreenAlignmentY valign;
 
 	@ObfuscatedName("as.m")
-	public static int field711;
+	public static int boxX;
 
 	@ObfuscatedName("j.k")
-	public static int field621;
+	public static int boxY;
 
 	@ObfuscatedName("as.f")
-	public static int field712;
+	public static int minWidth;
 
 	@ObfuscatedName("x.w")
-	public static int field592;
+	public static int minHeight;
 
 	@ObfuscatedName("uz.l")
-	public static int field7091;
+	public static int borderCornerId;
 
 	@ObfuscatedName("gp.u")
-	public static int field1921;
+	public static int borderLineId;
 
 	@ObfuscatedName("vy.z")
-	public static int field7424;
+	public static int backgroundId;
 
 	@ObfuscatedName("as.p")
-	public static int field713;
+	public static int fontId;
 
 	@ObfuscatedName("as.d")
-	public static SpriteData field714;
+	public static SpriteData borderCorner;
 
 	@ObfuscatedName("as.c")
-	public static SpriteData field710;
+	public static SpriteData borderLine;
 
 	@ObfuscatedName("rk.r")
-	public static SpriteData field4963;
+	public static SpriteData background;
 
 	@ObfuscatedName("acm.v")
-	public static FontMetrics field8851;
+	public static FontMetrics font1;
 
 	@ObfuscatedName("as.o")
-	public static PalettedSpriteData field716;
+	public static PalettedSpriteData font2;
 
 	@ObfuscatedName("ae.s")
-	public static int field627;
+	public static int color;
 
 	@ObfuscatedName("adx.y")
-	public static boolean field9262;
+	public static boolean setup;
 
 	public MessageBox() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("fm.e(Lkv;Lky;IIIIIIIIII)V")
-	public static void method3004(LoadingScreenAlignmentX arg0, LoadingScreenAlignmentY arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
-		field709 = arg0;
-		field715 = arg1;
-		field711 = arg2;
-		field621 = arg3;
-		field712 = arg4;
-		field592 = arg5;
-		field7091 = arg6;
-		field1921 = arg7;
-		field7424 = arg8;
-		field714 = null;
-		field710 = null;
-		field4963 = null;
-		field627 = arg9;
-		field713 = arg10;
-		method16459();
-		field9262 = true;
+	public static void setup(LoadingScreenAlignmentX halign, LoadingScreenAlignmentY valign, int boxX, int boxY, int minWidth, int minHeight, int borderCornerId, int borderLineId, int backgroundId, int color, int fontId) {
+		MessageBox.halign = halign;
+		MessageBox.valign = valign;
+		MessageBox.boxX = boxX;
+		MessageBox.boxY = boxY;
+		MessageBox.minWidth = minWidth;
+		MessageBox.minHeight = minHeight;
+		MessageBox.borderCornerId = borderCornerId;
+		MessageBox.borderLineId = borderLineId;
+		MessageBox.backgroundId = backgroundId;
+		MessageBox.borderCorner = null;
+		MessageBox.borderLine = null;
+		MessageBox.background = null;
+		MessageBox.color = color;
+		MessageBox.fontId = fontId;
+		downloadSprites();
+		MessageBox.setup = true;
 	}
 
 	@ObfuscatedName("agz.n(I)Z")
-	public static boolean method16459() {
-		boolean var0 = true;
-		if (field714 == null) {
-			if (Client.spritesJs5.method6889(field7091)) {
-				field714 = SpriteDataProvider.get(Client.spritesJs5, field7091);
+	public static boolean downloadSprites() {
+		boolean loaded = true;
+
+		if (borderCorner == null) {
+			if (Client.spritesJs5.loadFile(borderCornerId)) {
+				borderCorner = SpriteDataProvider.get(Client.spritesJs5, borderCornerId);
 			} else {
-				var0 = false;
+				loaded = false;
 			}
 		}
-		if (field710 == null) {
-			if (Client.spritesJs5.method6889(field1921)) {
-				field710 = SpriteDataProvider.get(Client.spritesJs5, field1921);
+
+		if (borderLine == null) {
+			if (Client.spritesJs5.loadFile(borderLineId)) {
+				borderLine = SpriteDataProvider.get(Client.spritesJs5, borderLineId);
 			} else {
-				var0 = false;
+				loaded = false;
 			}
 		}
-		if (field4963 == null) {
-			if (Client.spritesJs5.method6889(field7424)) {
-				field4963 = SpriteDataProvider.get(Client.spritesJs5, field7424);
+
+		if (background == null) {
+			if (Client.spritesJs5.loadFile(backgroundId)) {
+				background = SpriteDataProvider.get(Client.spritesJs5, backgroundId);
 			} else {
-				var0 = false;
+				loaded = false;
 			}
 		}
-		if (field8851 == null) {
-			if (Client.fontmetricsJs5.method6889(field713)) {
-				field8851 = Client.fontProvider.getFontMetrics(Client.fontFactory, field713);
+
+		if (font1 == null) {
+			if (Client.fontmetricsJs5.loadFile(fontId)) {
+				font1 = Client.fontProvider.getFontMetrics(Client.fontFactory, fontId);
 			} else {
-				var0 = false;
+				loaded = false;
 			}
 		}
-		if (field716 == null) {
-			if (Client.spritesJs5.method6889(field713)) {
-				field716 = (PalettedSpriteData) SpriteDataProvider.get(Client.spritesJs5, field713);
+
+		if (font2 == null) {
+			if (Client.spritesJs5.loadFile(fontId)) {
+				font2 = (PalettedSpriteData) SpriteDataProvider.get(Client.spritesJs5, fontId);
 			} else {
-				var0 = false;
+				loaded = false;
 			}
 		}
-		return var0;
+
+		return loaded;
 	}
 
 	@ObfuscatedName("ae.m(Ljava/lang/String;ZLdh;Leu;Laac;B)V")
-	public static void draw(String arg0, boolean arg1, Renderer arg2, Font arg3, FontMetrics arg4) {
-		boolean var5 = !field9262 || method16459();
-		if (!var5) {
+	public static void draw(String text, boolean arg1, Renderer renderer, Font font, FontMetrics fontMetrics) {
+		boolean loaded = !setup || downloadSprites();
+		if (!loaded) {
 			return;
 		}
-		if (field9262 && var5) {
-			FontMetrics var6 = field8851;
-			Font var7 = arg2.createFont(var6, field716, true);
-			int var8 = var6.parawidth(arg0, 250, null);
-			int var9 = var6.paraheight(arg0, 250, var6.field8566, null);
-			int var10 = field710.getWidth();
+
+		if (setup && loaded) {
+			FontMetrics var6 = font1;
+			Font var7 = renderer.createFont(var6, font2, true);
+
+			int width = var6.parawidth(text, 250, null);
+			int height = var6.paraheight(text, 250, var6.field8566, null);
+			int var10 = borderLine.getWidth();
+
 			int var11 = var10 + 4;
-			int var12 = var11 * 2 + var8;
-			int var13 = var11 * 2 + var9;
-			if (var12 < field712) {
-				var12 = field712;
+			int var12 = var11 * 2 + width;
+			int var13 = var11 * 2 + height;
+
+			if (var12 < minWidth) {
+				var12 = minWidth;
 			}
-			if (var13 < field592) {
-				var13 = field592;
+
+			if (var13 < minHeight) {
+				var13 = minHeight;
 			}
-			int var14 = field709.method5382(var12, Client.frameWidth) + field711;
-			int var15 = field715.method5375(var13, Client.frameHeight) + field621;
-			arg2.createSprite(field4963, false).method1449(var14 + field714.getWidth(), var15 + field714.getHeight(), var12 - field714.getWidth() * 2, var13 - field714.getHeight() * 2, 1, -1, 0);
-			arg2.createSprite(field714, true).drawSprite(var14, var15);
-			field714.method2601();
-			arg2.createSprite(field714, true).drawSprite(var12 + var14 - var10, var15);
-			field714.method2602();
-			arg2.createSprite(field714, true).drawSprite(var12 + var14 - var10, var13 + var15 - var10);
-			field714.method2601();
-			arg2.createSprite(field714, true).drawSprite(var14, var13 + var15 - var10);
-			field714.method2602();
-			arg2.createSprite(field710, true).method1448(var14, var15 + field714.getHeight(), var10, var13 - field714.getHeight() * 2);
-			field710.method2588();
-			arg2.createSprite(field710, true).method1448(var14 + field714.getWidth(), var15, var12 - field714.getWidth() * 2, var10);
-			field710.method2588();
-			arg2.createSprite(field710, true).method1448(var12 + var14 - var10, var15 + field714.getHeight(), var10, var13 - field714.getHeight() * 2);
-			field710.method2588();
-			arg2.createSprite(field710, true).method1448(var14 + field714.getWidth(), var13 + var15 - var10, var12 - field714.getWidth() * 2, var10);
-			field710.method2588();
-			var7.drawStringTaggable(arg0, var11 + var14, var11 + var15, var12 - var11 * 2, var13 - var11 * 2, field627 | 0xFF000000, -1, 1, 1, 0, null, null, null, 0, 0);
-			Client.method3066(var14, var15, var12, var13);
+
+			int var14 = halign.computeX(var12, Client.frameWidth) + boxX;
+			int var15 = valign.computeY(var13, Client.frameHeight) + boxY;
+
+			renderer.createSprite(background, false).drawTiledTinted(var14 + borderCorner.getWidth(), var15 + borderCorner.getHeight(), var12 - borderCorner.getWidth() * 2, var13 - borderCorner.getHeight() * 2, 1, -1, 0);
+
+			renderer.createSprite(borderCorner, true).drawSprite(var14, var15);
+			borderCorner.flipHorizontally();
+
+			renderer.createSprite(borderCorner, true).drawSprite(var12 + var14 - var10, var15);
+			borderCorner.flipVertically();
+
+			renderer.createSprite(borderCorner, true).drawSprite(var12 + var14 - var10, var13 + var15 - var10);
+			borderCorner.flipHorizontally();
+
+			renderer.createSprite(borderCorner, true).drawSprite(var14, var13 + var15 - var10);
+			borderCorner.flipVertically();
+
+			renderer.createSprite(borderLine, true).drawTiled(var14, var15 + borderCorner.getHeight(), var10, var13 - borderCorner.getHeight() * 2);
+			borderLine.rotate();
+
+			renderer.createSprite(borderLine, true).drawTiled(var14 + borderCorner.getWidth(), var15, var12 - borderCorner.getWidth() * 2, var10);
+			borderLine.rotate();
+
+			renderer.createSprite(borderLine, true).drawTiled(var12 + var14 - var10, var15 + borderCorner.getHeight(), var10, var13 - borderCorner.getHeight() * 2);
+			borderLine.rotate();
+
+			renderer.createSprite(borderLine, true).drawTiled(var14 + borderCorner.getWidth(), var13 + var15 - var10, var12 - borderCorner.getWidth() * 2, var10);
+			borderLine.rotate();
+
+			var7.drawStringTaggable(text, var11 + var14, var11 + var15, var12 - var11 * 2, var13 - var11 * 2, color | 0xFF000000, -1, 1, 1, 0, null, null, null, 0, 0);
+			Client.requestRedrawAtPoint(var14, var15, var12, var13);
 		} else {
-			int var16 = arg4.parawidth(arg0, 250, null);
-			int var17 = arg4.paraheight(arg0, 250, null) * 13;
+			int width = fontMetrics.parawidth(text, 250, null);
+			int height = fontMetrics.paraheight(text, 250, null) * 13;
+
 			byte var18 = 4;
 			int var19 = var18 + 6;
 			int var20 = var18 + 6;
-			arg2.fillRectangle(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18, -16777216, 0);
-			arg2.drawRectangle(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18, -1, 0);
-			arg3.drawStringTaggable(arg0, var19, var20, var16, var17, -1, -1, 1, 1, 0, null, null, null, 0, 0);
-			Client.method3066(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18);
+
+			renderer.fillRectangle(var19 - var18, var20 - var18, width + var18 + var18, height + var18 + var18, -16777216, 0);
+			renderer.drawRectangle(var19 - var18, var20 - var18, width + var18 + var18, height + var18 + var18, -1, 0);
+			font.drawStringTaggable(text, var19, var20, width, height, -1, -1, 1, 1, 0, null, null, null, 0, 0);
+			Client.requestRedrawAtPoint(var19 - var18, var20 - var18, width + var18 + var18, height + var18 + var18);
 		}
-		if (!arg1) {
-			return;
-		}
-		try {
-			arg2.method2202();
-			arg2.method2115();
-		} catch (RendererException var22) {
-		}
-	}
+
+        if (arg1) {
+            try {
+                renderer.flush();
+                renderer.method2115();
+            } catch (RendererException var22) {
+            }
+        }
+    }
 }

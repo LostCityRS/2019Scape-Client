@@ -34,8 +34,8 @@ public class LoadingScreenNewsDisplay implements LoadingScreenElement {
 		if (var2 == null) {
 			return;
 		}
-		int var3 = this.field3025.field3155.method5382(this.field3025.field3154, Client.frameWidth) + this.field3025.field3150;
-		int var4 = this.field3025.field3149.method5375(this.field3025.field3156, Client.frameHeight) + this.field3025.field3151;
+		int var3 = this.field3025.field3155.computeX(this.field3025.field3154, Client.frameWidth) + this.field3025.field3150;
+		int var4 = this.field3025.field3149.computeY(this.field3025.field3156, Client.frameHeight) + this.field3025.field3151;
 		if (this.field3025.field3158) {
 			Client.renderer.drawRectangle(var3, var4, this.field3025.field3154, this.field3025.field3156, this.field3025.field3148, 0);
 		}

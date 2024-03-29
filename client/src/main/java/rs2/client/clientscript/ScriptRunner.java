@@ -9752,7 +9752,7 @@ public final class ScriptRunner {
 		arg0.field8226 -= 11;
 		LoadingScreenAlignmentX[] var1 = LoadingScreenAlignmentX.method13948();
 		LoadingScreenAlignmentY[] var2 = LoadingScreenAlignmentY.method2774();
-		MessageBox.method3004(var1[arg0.field8216[arg0.field8226]], var2[arg0.field8216[arg0.field8226 + 1]], arg0.field8216[arg0.field8226 + 2], arg0.field8216[arg0.field8226 + 3], arg0.field8216[arg0.field8226 + 4], arg0.field8216[arg0.field8226 + 5], arg0.field8216[arg0.field8226 + 6], arg0.field8216[arg0.field8226 + 7], arg0.field8216[arg0.field8226 + 8], arg0.field8216[arg0.field8226 + 9], arg0.field8216[arg0.field8226 + 10]);
+		MessageBox.setup(var1[arg0.field8216[arg0.field8226]], var2[arg0.field8216[arg0.field8226 + 1]], arg0.field8216[arg0.field8226 + 2], arg0.field8216[arg0.field8226 + 3], arg0.field8216[arg0.field8226 + 4], arg0.field8216[arg0.field8226 + 5], arg0.field8216[arg0.field8226 + 6], arg0.field8216[arg0.field8226 + 7], arg0.field8216[arg0.field8226 + 8], arg0.field8216[arg0.field8226 + 9], arg0.field8216[arg0.field8226 + 10]);
 	}
 
 	@ObfuscatedName("uv.vc(Lyf;I)V")
@@ -13481,13 +13481,13 @@ public final class ScriptRunner {
 		MiniMenu.field1266 = arg0.field8216[arg0.field8226 + 9];
 		MiniMenu.field2901 = arg0.field8216[arg0.field8226 + 10];
 		MiniMenu.field8463 = arg0.field8216[arg0.field8226 + 11];
-		Client.spritesJs5.method6889(MiniMenu.field12340);
-		Client.spritesJs5.method6889(MiniMenu.field740);
-		Client.spritesJs5.method6889(MiniMenu.field11642);
-		Client.spritesJs5.method6889(MiniMenu.field1748);
-		Client.spritesJs5.method6889(MiniMenu.field1847);
-		Client.spritesJs5.method6889(MiniMenu.field8463);
-		Client.fontmetricsJs5.method6889(MiniMenu.field8463);
+		Client.spritesJs5.loadFile(MiniMenu.field12340);
+		Client.spritesJs5.loadFile(MiniMenu.field740);
+		Client.spritesJs5.loadFile(MiniMenu.field11642);
+		Client.spritesJs5.loadFile(MiniMenu.field1748);
+		Client.spritesJs5.loadFile(MiniMenu.field1847);
+		Client.spritesJs5.loadFile(MiniMenu.field8463);
+		Client.fontmetricsJs5.loadFile(MiniMenu.field8463);
 		MiniMenu.field1224 = null;
 		MiniMenu.field11831 = null;
 		MiniMenu.field11699 = null;

@@ -21,7 +21,7 @@ public class LoadingScreenAlignmentY {
 	}
 
 	@ObfuscatedName("ky.n(IIS)I")
-	public int method5375(int arg0, int arg1) {
+	public int computeY(int arg0, int arg1) {
 		int var3 = GameShell.canvasHei > arg1 ? GameShell.canvasHei : arg1;
 		if (field3181 == this) {
 			return 0;

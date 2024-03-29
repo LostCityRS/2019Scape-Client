@@ -342,7 +342,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.x(IIIIIII)V")
-	public void method1449(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public void drawTiledTinted(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		int var8 = arg0 + arg2;
 		int var9 = arg1 + arg3;
 		this.field9396.method1082(false);

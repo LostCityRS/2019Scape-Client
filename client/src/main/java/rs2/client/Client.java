@@ -2412,7 +2412,7 @@ public final class Client extends GameShell {
 		}
 		if (!method2092(state) && !method9273(state) && openedTopInterface != -1) {
 			try {
-				renderer.method2202();
+				renderer.flush();
 				TwitchHardwarePlatform.method593(renderer, MonotonicTime.get(), GameShell.canvasWid, GameShell.canvasHei);
 				renderer.method2115();
 			} catch (RendererException var10) {
@@ -5829,7 +5829,7 @@ public final class Client extends GameShell {
 			} else {
 				var23.getSkybox().method7946(renderer, field3023 << 3, var8, var9, var10, var11, cameraPitch, cameraYaw, field2656, var24, true, false);
 			}
-			renderer.method2202();
+			renderer.flush();
 		}
 		renderer.method2170(false);
 		MiniMenu.method5928(field10793, field10792, var10, var11);
@@ -9035,7 +9035,7 @@ public final class Client extends GameShell {
 			field11041 = -1;
 			field10862 = var257;
 			sceneState = 2;
-			cutscenesJs5.method6889(field10862);
+			cutscenesJs5.loadFile(field10862);
 			MiniMenu.method6031();
 			MiniMenu.method3074();
 			int var258 = in.g2();
@@ -11813,7 +11813,7 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("fn.jy(IIIIB)V")
-	public static final void method3066(int arg0, int arg1, int arg2, int arg3) {
+	public static final void requestRedrawAtPoint(int arg0, int arg1, int arg2, int arg3) {
 		for (int var4 = 0; var4 < field11051; var4++) {
 			Rectangle var5 = field11040[var4];
 			if (var5.x + var5.width > arg0 && var5.x < arg0 + arg2 && var5.y + var5.height > arg1 && var5.y < arg1 + arg3) {
@@ -12154,7 +12154,7 @@ public final class Client extends GameShell {
 								var19 = field10998 + field10889 - child.height;
 							}
 							if (method17197(child).method17701()) {
-								method3066(var18, var19, child.width, child.height);
+								requestRedrawAtPoint(var18, var19, child.width, child.height);
 							}
 							if (Component.field2266 != child.field2271) {
 								childX = var18;
@@ -12190,7 +12190,7 @@ public final class Client extends GameShell {
 						if (child.clientcode != 0) {
 							if (Component.field2341 == child.clientcode || Component.field2161 == child.clientcode) {
 								if (field10888) {
-									renderer.method2202();
+									renderer.flush();
 									method2104(childX, childY, child.width, child.height, Component.field2161 == child.clientcode);
 									method9547(var12, var20, var21, var22, var23, childX, childY);
 									renderer.method2263();
@@ -12216,7 +12216,7 @@ public final class Client extends GameShell {
 							}
 							if (Component.COMPASS == child.clientcode) {
 								if (child.method3970(renderer) != null) {
-									renderer.method2202();
+									renderer.flush();
 									method8887(child, childX, childY);
 									renderer.resetBounds(arg2, arg3, arg4, arg5);
 								}
@@ -12272,7 +12272,7 @@ public final class Client extends GameShell {
 						}
 						if (child.type == 0) {
 							if (Component.field2168 == child.clientcode) {
-								renderer.method2202();
+								renderer.flush();
 								world.method7816().updateFull(world);
 								renderer.method2172(childX, childY, GameShell.canvasWid, GameShell.canvasHei);
 							}
@@ -12411,9 +12411,9 @@ public final class Client extends GameShell {
 														}
 													}
 												} else if (var55) {
-													var48.method1449(childX, childY, child.width, child.height, 0, var54, 1);
+													var48.drawTiledTinted(childX, childY, child.width, child.height, 0, var54, 1);
 												} else {
-													var48.method1448(childX, childY, child.width, child.height);
+													var48.drawTiled(childX, childY, child.width, child.height);
 												}
 												renderer.resetBounds(arg2, arg3, arg4, arg5);
 											} else if (var55) {
@@ -12437,7 +12437,7 @@ public final class Client extends GameShell {
 									}
 								}
 							} else if (child.type == 6) {
-								renderer.method2202();
+								renderer.flush();
 								Model var60 = null;
 								int var61 = 2048;
 								if (child.field2189 != 0) {
@@ -14690,7 +14690,7 @@ public final class Client extends GameShell {
 		field7015 = field11114.iterator();
 		while (field7015.hasNext()) {
 			int var1 = (Integer) field7015.next();
-			if (spritesJs5.method6889(var1)) {
+			if (spritesJs5.loadFile(var1)) {
 				field7015.remove();
 			}
 		}

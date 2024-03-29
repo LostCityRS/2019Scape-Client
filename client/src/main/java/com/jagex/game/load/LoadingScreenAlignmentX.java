@@ -21,7 +21,7 @@ public class LoadingScreenAlignmentX {
 	}
 
 	@ObfuscatedName("kv.n(III)I")
-	public int method5382(int arg0, int arg1) {
+	public int computeX(int arg0, int arg1) {
 		int var3 = GameShell.canvasWid > arg1 ? GameShell.canvasWid : arg1;
 		if (field3186 == this) {
 			return 0;

@@ -54,6 +54,6 @@ public class LoginRelated2 implements LoadingScreenElement {
 
 	@ObfuscatedName("ku.m(I)Z")
 	public boolean method5106() {
-		return this.field3045.method6889(this.field3047.field3200);
+		return this.field3045.loadFile(this.field3047.field3200);
 	}
 }

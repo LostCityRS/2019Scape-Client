@@ -183,7 +183,7 @@ public final class Js5 {
 	}
 
 	@ObfuscatedName("py.p(II)Z")
-	public synchronized boolean method6889(int group) {
+	public synchronized boolean loadFile(int group) {
 		if (!this.isIndexReady()) {
 			return false;
 		} else if (this.index.groupCapacities.length == 1) {

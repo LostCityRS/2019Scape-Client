@@ -17,6 +17,6 @@ public class LoginRelated9 extends LoadingScreenRelated6 {
 	public void method16662(int arg0, int arg1, int arg2, int arg3) {
 		int var5 = this.field10543.getX();
 		int var6 = ((LoadingScreenRelated4_Sub1) this.field3027).field12100 * Loading.method3583() / 10 % var5;
-		this.field10543.method1448(arg0 - var5 + var6, arg1, arg2 + var5 - var6, arg3);
+		this.field10543.drawTiled(arg0 - var5 + var6, arg1, arg2 + var5 - var6, arg3);
 	}
 }

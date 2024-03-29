@@ -1012,7 +1012,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.cm()V")
-	public void method2202() {
+	public void flush() {
 		if (this.field10146 != null) {
 			this.field10146.method5796();
 		}

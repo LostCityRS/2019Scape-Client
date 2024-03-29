@@ -270,7 +270,7 @@ public class PalettedSpriteData extends SpriteData {
 	}
 
 	@ObfuscatedName("afr.o()V")
-	public void method2601() {
+	public void flipHorizontally() {
 		byte[] var1 = this.colour;
 		if (this.field10228 == null) {
 			for (int var2 = this.field10221 - 1; var2 >= 0; var2--) {
@@ -307,7 +307,7 @@ public class PalettedSpriteData extends SpriteData {
 	}
 
 	@ObfuscatedName("afr.s()V")
-	public void method2602() {
+	public void flipVertically() {
 		byte[] var1 = this.colour;
 		if (this.field10228 == null) {
 			for (int var2 = (this.field10221 >> 1) - 1; var2 >= 0; var2--) {
@@ -344,7 +344,7 @@ public class PalettedSpriteData extends SpriteData {
 	}
 
 	@ObfuscatedName("afr.y()V")
-	public void method2588() {
+	public void rotate() {
 		byte[] var1 = new byte[this.field10221 * this.field10220];
 		int var2 = 0;
 		if (this.field10228 == null) {

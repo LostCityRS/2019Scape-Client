@@ -80,17 +80,17 @@ public class MSIType implements ConfigType {
 
 	@ObfuscatedName("aco.d(Ldh;IZJ)V")
 	public void method15059(Renderer arg0, int arg1, boolean arg2, long arg3) {
-		if (!this.field9153.field9157.method6889(this.field9151)) {
+		if (!this.field9153.field9157.loadFile(this.field9151)) {
 			return;
 		}
 		SpriteData var6 = SpriteDataProvider.method1609(this.field9153.field9157, this.field9151, 0);
 		if (var6 != null) {
 			var6.method2595();
 			if (arg2) {
-				var6.method2602();
+				var6.flipVertically();
 			}
 			for (int var7 = 0; var7 < arg1; var7++) {
-				var6.method2588();
+				var6.rotate();
 			}
 			this.field9150 = var6.method2604(false);
 			if (this.field9154 != 0) {
@@ -123,7 +123,7 @@ public class MSIType implements ConfigType {
 
 	@ObfuscatedName("aco.c(I)Z")
 	public boolean method15060() {
-		return this.field9153.field9157.method6889(this.field9151);
+		return this.field9153.field9157.loadFile(this.field9151);
 	}
 
 	@ObfuscatedName("aco.n(I)V")

@@ -144,34 +144,34 @@ public class DefaultSprites {
 	@ObfuscatedName("aej.f(Lpy;I)I")
 	public static int getLoadedSpritesCount(Js5 spritesJs5) {
 		int count = 0;
-		if (spritesJs5.method6889(hintarrows)) {
+		if (spritesJs5.loadFile(hintarrows)) {
 			count++;
 		}
-		if (spritesJs5.method6889(field514)) {
+		if (spritesJs5.loadFile(field514)) {
 			count++;
 		}
-		if (spritesJs5.method6889(mapflag)) {
+		if (spritesJs5.loadFile(mapflag)) {
 			count++;
 		}
-		if (spritesJs5.method6889(cross)) {
+		if (spritesJs5.loadFile(cross)) {
 			count++;
 		}
-		if (spritesJs5.method6889(mapdots)) {
+		if (spritesJs5.loadFile(mapdots)) {
 			count++;
 		}
-		if (spritesJs5.method6889(field511)) {
+		if (spritesJs5.loadFile(field511)) {
 			count++;
 		}
-		if (spritesJs5.method6889(field7572)) {
+		if (spritesJs5.loadFile(field7572)) {
 			count++;
 		}
-		if (spritesJs5.method6889(compass)) {
+		if (spritesJs5.loadFile(compass)) {
 			count++;
 		}
-		if (spritesJs5.method6889(field512)) {
+		if (spritesJs5.loadFile(field512)) {
 			count++;
 		}
-		if (spritesJs5.method6889(field12241)) {
+		if (spritesJs5.loadFile(field12241)) {
 			count++;
 		}
 		return count;

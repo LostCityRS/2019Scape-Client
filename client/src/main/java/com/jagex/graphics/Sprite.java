@@ -21,8 +21,8 @@ public abstract class Sprite implements FontGlyph {
 	}
 
 	@ObfuscatedName("cm.q(IIII)V")
-	public final void method1448(int arg0, int arg1, int arg2, int arg3) {
-		this.method1449(arg0, arg1, arg2, arg3, 1, -1, 1);
+	public final void drawTiled(int arg0, int arg1, int arg2, int arg3) {
+		this.drawTiledTinted(arg0, arg1, arg2, arg3, 1, -1, 1);
 	}
 
 	@ObfuscatedName("cm.b(FFFFII)V")
@@ -145,7 +145,7 @@ public abstract class Sprite implements FontGlyph {
 	public abstract void drawTintedScaled(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7);
 
 	@ObfuscatedName("cm.x(IIIIIII)V")
-	public abstract void method1449(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
+	public abstract void drawTiledTinted(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("cm.al(FFFFFFILch;II)V")
 	public abstract void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9);

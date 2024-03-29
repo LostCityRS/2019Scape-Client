@@ -585,7 +585,7 @@ public class World {
 	@ObfuscatedName("rl.ad(I)V")
 	public void method7824() {
 		this.field5020 = this.rebuildType;
-		this.setBuildAreaSize(BuildAreaSize.SIZE_104);
+		this.setBuildAreaSize(BuildAreaSize.STANDARD);
 		for (int var1 = 0; var1 < 4; var1++) {
 			for (int var2 = 0; var2 < this.mapSizeX >> 3; var2++) {
 				for (int var3 = 0; var3 < this.mapSizeZ >> 3; var3++) {

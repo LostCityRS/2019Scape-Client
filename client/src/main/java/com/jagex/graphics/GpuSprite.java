@@ -297,7 +297,7 @@ public class GpuSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aef.x(IIIIIII)V")
-	public void method1449(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public void drawTiledTinted(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		if (this.field9403.method16337() != GpuImageRelated.field3236) {
 			int var8 = arg1 + arg3;
 			int var9 = arg0 + arg2;

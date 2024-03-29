@@ -157,7 +157,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("nw.j(Ljava/awt/Canvas;I)V")
-	public static void method6020(Canvas arg0) {
+	public static void setIgnoreRepaint(Canvas arg0) {
 		try {
 			Class var1 = Class.forName("java.awt.Canvas");
 			Method var2 = var1.getMethod("setIgnoreRepaint", Boolean.TYPE);
@@ -190,7 +190,7 @@ public abstract class Renderer {
 	@ObfuscatedName("dh.ah(Ljava/awt/Canvas;III)V")
 	public final void method2178(Canvas arg0, int arg1, int arg2) {
 		if (!this.field1613.containsKey(arg0)) {
-			method6020(arg0);
+			setIgnoreRepaint(arg0);
 			this.method2138(arg0, this.createSurface(arg0, arg1, arg2));
 		}
 	}
@@ -338,7 +338,7 @@ public abstract class Renderer {
 	}
 
 	@ObfuscatedName("dh.cm()V")
-	public void method2202() {
+	public void flush() {
 	}
 
 	@ObfuscatedName("dh.cq()V")

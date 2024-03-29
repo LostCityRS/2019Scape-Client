@@ -60,7 +60,7 @@ public class FrameSet extends SecondaryNode {
 			int var9 = var8.g2();
 			Js5 var10 = field12326;
 			synchronized (field12326) {
-				var5 &= field12326.method6889(var9);
+				var5 &= field12326.loadFile(var9);
 			}
 		}
 		if (!var5) {

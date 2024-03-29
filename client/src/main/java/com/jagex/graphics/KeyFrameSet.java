@@ -76,7 +76,7 @@ public class KeyFrameSet extends SecondaryNode {
 		Js5 var7 = field8302;
 		boolean var8;
 		synchronized (field8302) {
-			var8 = var3 & field8302.method6889(var6);
+			var8 = var3 & field8302.loadFile(var6);
 		}
 		if (!var8) {
 			return false;

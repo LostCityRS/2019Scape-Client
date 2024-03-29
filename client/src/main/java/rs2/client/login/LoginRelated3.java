@@ -38,8 +38,8 @@ public class LoginRelated3 implements LoadingScreenElement {
 	@ObfuscatedName("ki.n(ZI)V")
 	public void method5105(boolean arg0) {
 		if (arg0) {
-			int var2 = this.field3054.field3201.method5382(this.field3054.field3209, Client.frameWidth) + this.field3054.field3204;
-			int var3 = this.field3054.field3208.method5375(this.field3054.field3206, Client.frameHeight) + this.field3054.field3205;
+			int var2 = this.field3054.field3201.computeX(this.field3054.field3209, Client.frameWidth) + this.field3054.field3204;
+			int var3 = this.field3054.field3208.computeY(this.field3054.field3206, Client.frameHeight) + this.field3054.field3205;
 			this.field3055.drawStringTaggable(this.field3054.field3203, var2, var3, this.field3054.field3209, this.field3054.field3206, this.field3054.field3212, this.field3054.field3213, this.field3054.field3210, this.field3054.field3207, this.field3054.field3202, null, null, null, 0, 0);
 		}
 	}
@@ -47,10 +47,10 @@ public class LoginRelated3 implements LoadingScreenElement {
 	@ObfuscatedName("ki.m(I)Z")
 	public boolean method5106() {
 		boolean var1 = true;
-		if (!this.field3053.method6889(this.field3054.field3211)) {
+		if (!this.field3053.loadFile(this.field3054.field3211)) {
 			var1 = false;
 		}
-		if (!this.field3052.method6889(this.field3054.field3211)) {
+		if (!this.field3052.loadFile(this.field3054.field3211)) {
 			var1 = false;
 		}
 		return var1;

@@ -1041,10 +1041,10 @@ public class Component {
 			return null;
 		}
 		if (this.field2220) {
-			var5.method2602();
+			var5.flipVertically();
 		}
 		if (this.field2213) {
-			var5.method2601();
+			var5.flipHorizontally();
 		}
 		if (this.field2218 > 0) {
 			var5.method2646(this.field2218);

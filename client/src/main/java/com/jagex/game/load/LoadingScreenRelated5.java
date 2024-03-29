@@ -28,7 +28,7 @@ public class LoadingScreenRelated5 extends LoadingScreenProgressDisplay {
 		int[] var5 = new int[4];
 		Client.renderer.method2171(var5);
 		Client.renderer.resetBounds(arg1, arg2 + 2, arg1 + var4, this.field3027.field3160 + arg2);
-		this.field10545.method1448(arg1, arg2 + 2, this.field3027.field3163, this.field3027.field3160);
+		this.field10545.drawTiled(arg1, arg2 + 2, this.field3027.field3163, this.field3027.field3160);
 		Client.renderer.resetBounds(var5[0], var5[1], var5[2], var5[3]);
 	}
 
@@ -40,6 +40,6 @@ public class LoadingScreenRelated5 extends LoadingScreenProgressDisplay {
 
 	@ObfuscatedName("aho.m(I)Z")
 	public boolean method5106() {
-		return super.method5106() ? this.field3028.method6889(((LoadingScreenRelated1) this.field3027).field10576) : false;
+		return super.method5106() ? this.field3028.loadFile(((LoadingScreenRelated1) this.field3027).field10576) : false;
 	}
 }

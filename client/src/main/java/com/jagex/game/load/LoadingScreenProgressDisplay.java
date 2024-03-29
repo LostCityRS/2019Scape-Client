@@ -37,8 +37,8 @@ public abstract class LoadingScreenProgressDisplay implements LoadingScreenEleme
 
 	@ObfuscatedName("kz.n(ZI)V")
 	public void method5105(boolean arg0) {
-		int var2 = this.field3027.field3167.method5382(this.field3027.field3163, Client.frameWidth) + this.field3027.field3161;
-		int var3 = this.field3027.field3159.method5375(this.field3027.field3160, Client.frameHeight) + this.field3027.field3162;
+		int var2 = this.field3027.field3167.computeX(this.field3027.field3163, Client.frameWidth) + this.field3027.field3161;
+		int var3 = this.field3027.field3159.computeY(this.field3027.field3160, Client.frameHeight) + this.field3027.field3162;
 		this.method5121(arg0, var2, var3);
 		this.method5122(arg0, var2, var3);
 		String var4 = Loading.field593.method4852();
@@ -57,10 +57,10 @@ public abstract class LoadingScreenProgressDisplay implements LoadingScreenEleme
 	@ObfuscatedName("kz.m(I)Z")
 	public boolean method5106() {
 		boolean var1 = true;
-		if (!this.field3028.method6889(this.field3027.field3166)) {
+		if (!this.field3028.loadFile(this.field3027.field3166)) {
 			var1 = false;
 		}
-		if (!this.field3026.method6889(this.field3027.field3166)) {
+		if (!this.field3026.loadFile(this.field3027.field3166)) {
 			var1 = false;
 		}
 		return var1;

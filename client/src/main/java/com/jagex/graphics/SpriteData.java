@@ -9,7 +9,7 @@ public abstract class SpriteData {
 	public abstract boolean isPaletted();
 
 	@ObfuscatedName("de.y()V")
-	public abstract void method2588();
+	public abstract void rotate();
 
 	@ObfuscatedName("de.f()I")
 	public abstract int getPaddingLeft();
@@ -33,10 +33,10 @@ public abstract class SpriteData {
 	public abstract void method2600(int arg0);
 
 	@ObfuscatedName("de.o()V")
-	public abstract void method2601();
+	public abstract void flipHorizontally();
 
 	@ObfuscatedName("de.s()V")
-	public abstract void method2602();
+	public abstract void flipVertically();
 
 	@ObfuscatedName("de.w()I")
 	public abstract int getPaddingRight();
