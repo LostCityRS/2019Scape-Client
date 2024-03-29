@@ -216,7 +216,7 @@ public class GpuSprite extends Sprite {
 		}
 		this.field9403.method15981();
 		this.field9403.method16054(arg4);
-		SpriteShader var8 = this.field9403.field10149;
+		SpriteShader var8 = this.field9403.spriteShader;
 		var8.field2997 = this.field9401;
 		var8.method5050(arg2, rgb);
 		int var9 = this.field9408 + x;
@@ -237,7 +237,7 @@ public class GpuSprite extends Sprite {
 	@ObfuscatedName("aef.v(IILch;II)V")
 	public void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4) {
 		this.field9403.method15981();
-		SpriteShader var6 = this.field9403.field10149;
+		SpriteShader var6 = this.field9403.spriteShader;
 		var6.field2997 = this.field9401;
 		var6.method5050(1, -1);
 		int var7 = this.field9408 + arg0;
@@ -274,7 +274,7 @@ public class GpuSprite extends Sprite {
 		}
 		this.field9403.method15981();
 		this.field9403.method16054(arg6);
-		SpriteShader var9 = this.field9403.field10149;
+		SpriteShader var9 = this.field9403.spriteShader;
 		var9.field2997 = this.field9401;
 		var9.method5050(arg4, arg5);
 		if (this.field9405) {
@@ -333,7 +333,7 @@ public class GpuSprite extends Sprite {
 		}
 		this.field9403.method15981();
 		this.field9403.method16054(arg6);
-		SpriteShader var22 = this.field9403.field10149;
+		SpriteShader var22 = this.field9403.spriteShader;
 		var22.field2997 = this.field9401;
 		var22.method5050(arg4, arg5);
 		float var23 = (float) this.field9403.getRenderTarget().getWidth();
@@ -477,7 +477,7 @@ public class GpuSprite extends Sprite {
 			arg4 = arg4 + var19 + var23;
 			arg5 = arg5 + var20 + var24;
 		}
-		SpriteShader var25 = this.field9403.field10149;
+		SpriteShader var25 = this.field9403.spriteShader;
 		var25.field2997 = this.field9401;
 		var25.method5050(arg6, arg7);
 		float var26 = (float) this.field9403.getRenderTarget().getWidth();
@@ -500,7 +500,7 @@ public class GpuSprite extends Sprite {
 	@ObfuscatedName("aef.al(FFFFFFILch;II)V")
 	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9) {
 		this.field9403.method15981();
-		SpriteShader var11 = this.field9403.field10149;
+		SpriteShader var11 = this.field9403.spriteShader;
 		var11.field2997 = this.field9401;
 		var11.method5050(1, -1);
 		float var12 = (float) this.field9403.getRenderTarget().getWidth();

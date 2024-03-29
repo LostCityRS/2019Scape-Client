@@ -339,12 +339,12 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.sw()V")
 	public void method16232() {
 		OpenGL.glDepthFunc(515);
-		this.method19084();
+		this.enableCullFace();
 		OpenGL.glClearDepth(1.0F);
 		OpenGL.glAlphaFunc(516, 0.0F);
 		OpenGL.glPolygonMode(1028, 6914);
 		if (this.hasMultiSample) {
-			this.method16294(this.field10180 > 1);
+			this.enableAntiAliasing(this.field10180 > 1);
 			OpenGL.glDisable(32926);
 		}
 		for (int var1 = this.maxSimutaneousTextures - 1; var1 >= 0; var1--) {
@@ -466,10 +466,10 @@ public final class OpenGLRenderer extends GpuRenderer {
 		int var5 = this.field10103;
 		int var6 = this.field10104;
 		this.method2263();
-		int var7 = this.field10095;
-		int var8 = this.field10193;
-		int var9 = this.field10138;
-		int var10 = this.field10106;
+		int var7 = this.left;
+		int var8 = this.right;
+		int var9 = this.top;
+		int var10 = this.bottom;
 		this.resetClip();
 		OpenGL.glReadBuffer(1028);
 		OpenGL.glDrawBuffer(1029);
@@ -713,10 +713,10 @@ public final class OpenGLRenderer extends GpuRenderer {
 		if (this.renderTarget == null) {
 			return;
 		}
-		int var1 = this.field10105 + this.field10095;
-		int var2 = this.field10132 + this.renderTarget.getHeight() - this.field10106;
-		int var3 = this.field10193 - this.field10095;
-		int var4 = this.field10106 - this.field10138;
+		int var1 = this.field10105 + this.left;
+		int var2 = this.field10132 + this.renderTarget.getHeight() - this.bottom;
+		int var3 = this.right - this.left;
+		int var4 = this.bottom - this.top;
 		if (var3 < 0) {
 			var3 = 0;
 		}
@@ -727,7 +727,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.sj()V")
-	public void method15999() {
+	public void enableScissorTest() {
 		if (this.field10182) {
 			OpenGL.glEnable(3089);
 		} else {
@@ -754,7 +754,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.tp()V")
-	public void method16016() {
+	public void enableDepth() {
 		if (this.field10109 && this.field10044) {
 			OpenGL.glEnable(2929);
 		} else {
@@ -763,12 +763,12 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.tv()V")
-	public void method16017() {
+	public void enableDepthWrite() {
 		OpenGL.glDepthMask(this.field10107 && this.field10108);
 	}
 
 	@ObfuscatedName("aqv.tg()V")
-	public void method16233() {
+	public void enableLighting() {
 		if (this.field10111 && !this.field10113) {
 			OpenGL.glEnable(2896);
 		} else {
@@ -777,7 +777,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.tq()V")
-	public void method15990() {
+	public void enableLightingAmbient() {
 		this.field12030[0] = this.field10142 * this.field10122;
 		this.field12030[1] = this.field10122 * this.field10120;
 		this.field12030[2] = this.field10210 * this.field10122;
@@ -786,7 +786,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.tx()V")
-	public void method16021() {
+	public void enableLightingDiffuse() {
 		this.field12030[0] = this.field10142 * this.field10123;
 		this.field12030[1] = this.field10123 * this.field10120;
 		this.field12030[2] = this.field10210 * this.field10123;
@@ -800,7 +800,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.tk()V")
-	public void method16307() {
+	public void enableLightingView() {
 		OpenGL.glMatrixMode(5888);
 		OpenGL.glLoadMatrixf(this.field10059.entries, 0);
 		OpenGL.glLightfv(16384, 4611, this.field10114, 0);
@@ -808,7 +808,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.td()V")
-	public void method16024() {
+	public void enableLighting0and1() {
 		if (this.field10112) {
 			OpenGL.glEnable(16384);
 			OpenGL.glEnable(16385);
@@ -909,7 +909,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	@ObfuscatedName("aqv.vo()V")
 	public void method16050() {
 		OpenGL.glMatrixMode(5890);
-		if (this.field10135[this.field10177] == GpuRendererRelated4.field3372) {
+		if (this.field10135[this.field10177] == TextureTramsformType.DISABLE) {
 			OpenGL.glLoadIdentity();
 		} else {
 			OpenGL.glLoadMatrixf(this.field10162[this.field10177].toArray(this.field12031), 0);
@@ -949,7 +949,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.vr()V")
-	public final void method16049() {
+	public final void enableTextureFactor() {
 		this.field12030[0] = (float) (this.field10160 & 0xFF0000) / 1.671168E7F;
 		this.field12030[1] = (float) (this.field10160 & 0xFF00) / 65280.0F;
 		this.field12030[2] = (float) (this.field10160 & 0xFF) / 255.0F;
@@ -990,22 +990,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.vy(I)V")
-	public void method16057(int arg0) {
+	public void enableColorWriteTest(int arg0) {
 		OpenGL.glColorMask((arg0 & 0x1) != 0, (arg0 & 0x2) != 0, (arg0 & 0x4) != 0, (arg0 & 0x8) != 0);
 	}
 
 	@ObfuscatedName("aqv.ve()V")
-	public void method16058() {
-		if (this.field10091) {
+	public void enableAlphaTest() {
+		if (this.alphaTestEnabled) {
 			OpenGL.glEnable(3008);
 		} else {
 			OpenGL.glDisable(3008);
 		}
-		OpenGL.glAlphaFunc(516, (float) (this.field10178 & 0xFF) / 255.0F);
+		OpenGL.glAlphaFunc(516, (float) (this.alphaRef & 0xFF) / 255.0F);
 		if (this.field10180 <= 1) {
 			return;
 		}
-		if (this.field10178 == 0) {
+		if (this.alphaRef == 0) {
 			OpenGL.glDisable(32926);
 		} else {
 			OpenGL.glEnable(32926);
@@ -1013,7 +1013,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.vm()V")
-	public void method16059() {
+	public void enableBlend() {
 		if (this.hasBlendFuncSeparate) {
 			byte var1 = 0;
 			byte var2 = 0;
@@ -1054,8 +1054,8 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.vg()V")
-	public void method16175() {
-		if (this.field10176) {
+	public void enableAlphaBlend() {
+		if (this.alphaBlendEnabled) {
 			OpenGL.glEnable(3042);
 		} else {
 			OpenGL.glDisable(3042);
@@ -1063,21 +1063,21 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.aho()V")
-	public void method19084() {
-		if (this.field10179 == 1) {
+	public void enableCullFace() {
+		if (this.cullModeEnabled == 1) {
 			OpenGL.glDisable(2884);
 			return;
 		}
 		OpenGL.glEnable(2884);
-		if (this.field10179 == 2) {
+		if (this.cullModeEnabled == 2) {
 			OpenGL.glCullFace(1029);
-		} else if (this.field10179 == 3) {
+		} else if (this.cullModeEnabled == 3) {
 			OpenGL.glCullFace(1028);
 		}
 	}
 
 	@ObfuscatedName("aqv.vz()V")
-	public void method15978() {
+	public void enableFog() {
 		if (this.field10167 && this.field10166 && this.field10169 >= 0) {
 			OpenGL.glEnable(2912);
 		} else {
@@ -1086,25 +1086,25 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.vh()V")
-	public void method16123() {
-		this.field10119 = this.field10092 - (float) this.field10189;
-		this.field10171 = this.field10119 - (float) this.field10169;
-		if (this.field10171 < this.field10170) {
-			this.field10171 = this.field10170;
+	public void setFogParameters() {
+		this.fogEnd = this.field10092 - (float) this.field10189;
+		this.fogStart = this.fogEnd - (float) this.field10169;
+		if (this.fogStart < this.field10170) {
+			this.fogStart = this.field10170;
 		}
-		if (!this.field10099) {
+		if (!this.lightingEnabled) {
 			return;
 		}
-		OpenGL.glFogf(2915, this.field10171);
-		OpenGL.glFogf(2916, this.field10119);
-		this.field12030[0] = (float) (this.field10191 & 0xFF0000) / 1.671168E7F;
-		this.field12030[1] = (float) (this.field10191 & 0xFF00) / 65280.0F;
-		this.field12030[2] = (float) (this.field10191 & 0xFF) / 255.0F;
+		OpenGL.glFogf(2915, this.fogStart);
+		OpenGL.glFogf(2916, this.fogEnd);
+		this.field12030[0] = (float) (this.fogDensity & 0xFF0000) / 1.671168E7F;
+		this.field12030[1] = (float) (this.fogDensity & 0xFF00) / 65280.0F;
+		this.field12030[2] = (float) (this.fogDensity & 0xFF) / 255.0F;
 		OpenGL.glFogfv(2918, this.field12030, 0);
 	}
 
 	@ObfuscatedName("aqv.vj(Z)V")
-	public void method16294(boolean arg0) {
+	public void enableAntiAliasing(boolean arg0) {
 		if (arg0) {
 			OpenGL.glEnable(32925);
 		} else {
@@ -1113,33 +1113,33 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.vn(Z)Llr;")
-	public final VertexBuffer method16085(boolean arg0) {
+	public final VertexBuffer createVertexBuffer(boolean arg0) {
 		return new OpenGLVertexBuffer(this, arg0);
 	}
 
 	@ObfuscatedName("aqv.vc(Z)Lml;")
-	public final IndexBuffer method16067(boolean arg0) {
+	public final IndexBuffer createIndexBuffer(boolean arg0) {
 		return new OpenGLIndexBuffer(this, DataType.UNSIGNED_INT_16, arg0);
 	}
 
 	@ObfuscatedName("aqv.vf([Llk;)Llo;")
-	public VertexDeclaration method16065(VertexDeclarationElement[] arg0) {
+	public VertexDeclaration createVertexDeclaration(VertexDeclarationElement[] arg0) {
 		return new VertexDeclaration_Sub1(arg0);
 	}
 
 	@ObfuscatedName("aqv.wn(ILlr;)V")
-	public void method16120(int arg0, VertexBuffer arg1) {
+	public void setStreamSource(int arg0, VertexBuffer arg1) {
 		this.field12012[arg0] = (OpenGLVertexBuffer) arg1;
 	}
 
 	@ObfuscatedName("aqv.wa(Lml;)V")
-	public void method16102(IndexBuffer arg0) {
+	public void setIndices(IndexBuffer arg0) {
 		this.field12036 = (OpenGLIndexBuffer) arg0;
 		this.field12036.method7658();
 	}
 
 	@ObfuscatedName("aqv.vk(Llo;)V")
-	public void method16177(VertexDeclaration arg0) {
+	public void setVertexDeclaration(VertexDeclaration arg0) {
 		VertexDeclarationElement[] var2 = arg0.elements;
 		int var3 = 0;
 		boolean var4 = false;
@@ -1230,22 +1230,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.wz(Lms;II)V")
-	public final void method16077(PrimitiveType arg0, int arg1, int arg2) {
+	public final void drawPrimitive(PrimitiveType arg0, int arg1, int arg2) {
 		byte var4;
 		int var5;
-		if (PrimitiveType.field3406 == arg0) {
+		if (PrimitiveType.LINELIST == arg0) {
 			var4 = 1;
 			var5 = arg2 * 2;
-		} else if (PrimitiveType.field3400 == arg0) {
+		} else if (PrimitiveType.LINESTRIP == arg0) {
 			var4 = 3;
 			var5 = arg2 + 1;
-		} else if (PrimitiveType.field3403 == arg0) {
+		} else if (PrimitiveType.TRIANGLELIST == arg0) {
 			var4 = 4;
 			var5 = arg2 * 3;
-		} else if (PrimitiveType.field3404 == arg0) {
+		} else if (PrimitiveType.TRIANGLEFAN == arg0) {
 			var4 = 6;
 			var5 = arg2 + 2;
-		} else if (PrimitiveType.field3405 == arg0) {
+		} else if (PrimitiveType.TRIANGLESTRIP == arg0) {
 			var4 = 5;
 			var5 = arg2 + 2;
 		} else {
@@ -1256,22 +1256,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.wj(Lml;Lms;IIII)V")
-	public final void method16078(IndexBuffer arg0, PrimitiveType arg1, int arg2, int arg3, int arg4, int arg5) {
+	public final void drawIndexedPrimitiveIB(IndexBuffer arg0, PrimitiveType arg1, int arg2, int arg3, int arg4, int arg5) {
 		byte var7;
 		int var8;
-		if (PrimitiveType.field3406 == arg1) {
+		if (PrimitiveType.LINELIST == arg1) {
 			var7 = 1;
 			var8 = arg5 * 2;
-		} else if (PrimitiveType.field3400 == arg1) {
+		} else if (PrimitiveType.LINESTRIP == arg1) {
 			var7 = 3;
 			var8 = arg5 + 1;
-		} else if (PrimitiveType.field3403 == arg1) {
+		} else if (PrimitiveType.TRIANGLELIST == arg1) {
 			var7 = 4;
 			var8 = arg5 * 3;
-		} else if (PrimitiveType.field3404 == arg1) {
+		} else if (PrimitiveType.TRIANGLEFAN == arg1) {
 			var7 = 6;
 			var8 = arg5 + 2;
-		} else if (PrimitiveType.field3405 == arg1) {
+		} else if (PrimitiveType.TRIANGLESTRIP == arg1) {
 			var7 = 5;
 			var8 = arg5 + 2;
 		} else {
@@ -1285,22 +1285,22 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.we(Lms;IIII)V")
-	public final void method16079(PrimitiveType arg0, int arg1, int arg2, int arg3, int arg4) {
+	public final void drawIndexedPrimitive(PrimitiveType arg0, int arg1, int arg2, int arg3, int arg4) {
 		byte var6;
 		int var7;
-		if (PrimitiveType.field3406 == arg0) {
+		if (PrimitiveType.LINELIST == arg0) {
 			var6 = 1;
 			var7 = arg4 * 2;
-		} else if (PrimitiveType.field3400 == arg0) {
+		} else if (PrimitiveType.LINESTRIP == arg0) {
 			var6 = 3;
 			var7 = arg4 + 1;
-		} else if (PrimitiveType.field3403 == arg0) {
+		} else if (PrimitiveType.TRIANGLELIST == arg0) {
 			var6 = 4;
 			var7 = arg4 * 3;
-		} else if (PrimitiveType.field3404 == arg0) {
+		} else if (PrimitiveType.TRIANGLEFAN == arg0) {
 			var6 = 6;
 			var7 = arg4 + 2;
-		} else if (PrimitiveType.field3405 == arg0) {
+		} else if (PrimitiveType.TRIANGLESTRIP == arg0) {
 			var6 = 5;
 			var7 = arg4 + 2;
 		} else {
@@ -1437,7 +1437,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 
 	@ObfuscatedName("aqv.ahs(Ldg;)I")
 	public static final int method19076(DataType arg0) {
-		switch(arg0.field1650) {
+		switch(arg0.index) {
 			case 0:
 				return 5126;
 			case 1:
@@ -1590,7 +1590,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 	}
 
 	@ObfuscatedName("aqv.wp(I)V")
-	public void method16081(int arg0) {
+	public void enableFillMode(int arg0) {
 		if (!this.field12029) {
 			OpenGL.glPolygonMode(1028, (arg0 & 0x2) == 0 ? 6914 : 6913);
 		}

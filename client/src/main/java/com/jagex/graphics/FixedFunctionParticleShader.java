@@ -21,7 +21,7 @@ public final class FixedFunctionParticleShader extends ParticleShader {
 		this.field2986.method16041(1, TextureCombiner.field3367);
 		this.field2986.method16042(1, TextureCombiner.field3367);
 		this.method16626();
-		this.field2986.method16079(PrimitiveType.field3403, 0, arg0 * 4, 0, arg0 * 2);
+		this.field2986.drawIndexedPrimitive(PrimitiveType.TRIANGLELIST, 0, arg0 * 4, 0, arg0 * 2);
 	}
 
 	@ObfuscatedName("ahf.m(Z)V")
@@ -41,6 +41,6 @@ public final class FixedFunctionParticleShader extends ParticleShader {
 		this.field2986.method16042(0, TextureCombiner.field3365);
 		this.field2986.method16115(TextureCombineMode.field3395, TextureCombineMode.field3395);
 		this.field2986.method16046().setTo(this.field2987);
-		this.field2986.method16174(GpuRendererRelated4.field3370);
+		this.field2986.method16174(TextureTramsformType.COUNT2);
 	}
 }

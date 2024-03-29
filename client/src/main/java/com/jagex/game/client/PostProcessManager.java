@@ -90,7 +90,7 @@ public class PostProcessManager {
 		if (this.field3263 != null) {
 			return;
 		}
-		this.field3263 = this.field3247.method16085(false);
+		this.field3263 = this.field3247.createVertexBuffer(false);
 		this.field3263.allocate(12, 4);
 		ByteBuffer var1 = this.field3247.temporaryBuffer;
 		var1.clear();
@@ -98,14 +98,14 @@ public class PostProcessManager {
 		var1.putFloat(1.0F);
 		var1.putFloat(2.0F);
 		this.field3263.upload(0, var1.position(), this.field3247.temporaryBufferAddress);
-		this.field3264 = this.field3247.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.TEX_COORD_1) });
+		this.field3264 = this.field3247.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.TEX_COORD_1) });
 	}
 
 	@ObfuscatedName("ls.n()V")
 	public void method5597() {
-		this.field3247.method16120(0, this.field3263);
-		this.field3247.method16177(this.field3264);
-		this.field3247.method16077(PrimitiveType.field3403, 0, 1);
+		this.field3247.setStreamSource(0, this.field3263);
+		this.field3247.setVertexDeclaration(this.field3264);
+		this.field3247.drawPrimitive(PrimitiveType.TRIANGLELIST, 0, 1);
 	}
 
 	@ObfuscatedName("ls.m()V")
@@ -233,7 +233,7 @@ public class PostProcessManager {
 		this.field3258 = arg0;
 		this.field3259 = arg1;
 		this.field3247.method2475(3, -16777216);
-		this.field3247.method16057(15);
+		this.field3247.enableColorWriteTest(15);
 		this.field3247.method16055(0);
 		this.field3261 = true;
 		return true;

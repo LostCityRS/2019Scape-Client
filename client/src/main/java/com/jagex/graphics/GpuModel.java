@@ -283,10 +283,10 @@ public class GpuModel extends Model {
 			this.field9756 = new GpuModelRelated(GpuFlagsUnknown.method5456(this.field9725, this.field9700));
 		}
 		if (arg3 && arg4) {
-			this.field9731.field3356 = this.field9731.field3359 = this.field9730.method16085(this.field9735);
-			this.field9734.field3356 = this.field9734.field3359 = this.field9730.method16085(this.field9735);
-			this.field9732.field3356 = this.field9732.field3359 = this.field9730.method16085(this.field9735);
-			this.field9733.field3356 = this.field9733.field3359 = this.field9730.method16085(this.field9735);
+			this.field9731.field3356 = this.field9731.field3359 = this.field9730.createVertexBuffer(this.field9735);
+			this.field9734.field3356 = this.field9734.field3359 = this.field9730.createVertexBuffer(this.field9735);
+			this.field9732.field3356 = this.field9732.field3359 = this.field9730.createVertexBuffer(this.field9735);
+			this.field9733.field3356 = this.field9733.field3359 = this.field9730.createVertexBuffer(this.field9735);
 		}
 	}
 
@@ -3354,9 +3354,9 @@ public class GpuModel extends Model {
 				arg1.field1686 = true;
 			}
 		}
-		this.field9730.method16081(arg2);
+		this.field9730.enableFillMode(arg2);
 		this.method15601(arg0);
-		this.field9730.method16081(0);
+		this.field9730.enableFillMode(0);
 		var5.setToMatrix4x3(arg0);
 		var5.multiply(this.field9730.field10059);
 		this.method15604(var5);
@@ -3371,11 +3371,11 @@ public class GpuModel extends Model {
 		}
 		this.field9730.method16022();
 		this.field9730.method16199();
-		ModelShader var2 = this.field9730.field10148;
-		this.field9730.method16120(0, this.field9731.field3359);
-		this.field9730.method16120(1, this.field9732.field3359);
-		this.field9730.method16120(2, this.field9734.field3359);
-		this.field9730.method16102(this.field9756.field3239);
+		ModelShader var2 = this.field9730.modelShader;
+		this.field9730.setStreamSource(0, this.field9731.field3359);
+		this.field9730.setStreamSource(1, this.field9732.field3359);
+		this.field9730.setStreamSource(2, this.field9734.field3359);
+		this.field9730.setIndices(this.field9756.field3239);
 		this.field9730.field10066.setToMatrix4x3(arg0);
 		var2.method5018(this.field9730.field10066);
 		var2.field2982.setToIdentity();
@@ -3389,8 +3389,8 @@ public class GpuModel extends Model {
 			var2.field2973.setTo(0.0F, 0.0F, 0.0F);
 		}
 		if (this.field9730.field10169 > 0) {
-			var2.field2984.method6247(0.0F, 0.0F, 1.0F, -this.field9730.field10171);
-			var2.field2975.setTo((float) (this.field9730.field10191 >> 16 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 8 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 0 & 0xFF) / 255.0F);
+			var2.field2984.method6247(0.0F, 0.0F, 1.0F, -this.field9730.fogStart);
+			var2.field2975.setTo((float) (this.field9730.fogDensity >> 16 & 0xFF) / 255.0F, (float) (this.field9730.fogDensity >> 8 & 0xFF) / 255.0F, (float) (this.field9730.fogDensity >> 0 & 0xFF) / 255.0F);
 			this.field9730.field10066.setToMatrix4x3(arg0);
 			this.field9730.field10066.method6631();
 			var2.field2979.method6265(this.field9730.field10066);
@@ -3398,14 +3398,14 @@ public class GpuModel extends Model {
 			this.field9730.field10066.multiply(this.field9730.field10059);
 			this.field9730.field10066.method6631();
 			var2.field2984.method6265(this.field9730.field10066);
-			var2.field2984.method6252(1.0F / (this.field9730.field10119 - this.field9730.field10171));
+			var2.field2984.method6252(1.0F / (this.field9730.fogEnd - this.field9730.fogStart));
 		} else {
 			var2.field2984.method6247(0.0F, 0.0F, 0.0F, 0.0F);
 			var2.field2975.setTo(0.0F, 0.0F, 0.0F);
 		}
 		if ((this.field9700 & 0x37) == 0) {
-			this.field9730.method16177(this.field9730.field10184);
-			if (this.field9730.field10099) {
+			this.field9730.setVertexDeclaration(this.field9730.field10184);
+			if (this.field9730.lightingEnabled) {
 				this.field9730.method16118(false);
 			}
 			for (int var4 = 0; var4 < this.field9741.length; var4++) {
@@ -3437,13 +3437,13 @@ public class GpuModel extends Model {
 				var2.method5019(var8);
 			}
 		} else {
-			this.field9730.method16120(3, this.field9733.field3359);
-			this.field9730.method16177(this.field9730.field10202);
+			this.field9730.setStreamSource(3, this.field9733.field3359);
+			this.field9730.setVertexDeclaration(this.field9730.field10202);
 			Matrix4x3 var12 = this.field9730.field10065;
 			var12.setTo(arg0);
 			var12.method6300();
 			int var13 = 0;
-			if (this.field9730.field10099) {
+			if (this.field9730.lightingEnabled) {
 				this.field9730.method16118(true);
 			} else {
 				var2.field2976.setTo(this.field9730.field10114[0], this.field9730.field10114[1], this.field9730.field10114[2]);
@@ -3512,10 +3512,10 @@ public class GpuModel extends Model {
 						var2.method5020(var13);
 						break;
 					case 5:
-						if (this.field9730.field10099) {
+						if (this.field9730.lightingEnabled) {
 							var2.method5020(var13);
 						} else {
-							WaterfallShader var27 = this.field9730.field10175;
+							WaterfallShader var27 = this.field9730.waterfallShader;
 							var27.method19204(var24.effectArg1, var24.field1359);
 							var27.worldMatrix.setToMatrix4x3(arg0);
 							var27.wvpMatrix.setToMatrix4x3(arg0);
@@ -3549,10 +3549,10 @@ public class GpuModel extends Model {
 		}
 		this.field9730.method2219(!this.field9737);
 		Matrix4x3 var2 = this.field9730.field10065;
-		ParticleShader var3 = this.field9730.field10151;
+		ParticleShader var3 = this.field9730.particleShader;
 		boolean var4 = this.field9730.field10169 > 0;
 		if (var4) {
-			var3.field2990.setTo((float) (this.field9730.field10191 >> 16 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 8 & 0xFF) / 255.0F, (float) (this.field9730.field10191 >> 0 & 0xFF) / 255.0F);
+			var3.field2990.setTo((float) (this.field9730.fogDensity >> 16 & 0xFF) / 255.0F, (float) (this.field9730.fogDensity >> 8 & 0xFF) / 255.0F, (float) (this.field9730.fogDensity >> 0 & 0xFF) / 255.0F);
 		} else {
 			var3.field2990.setTo(0.0F, 0.0F, 0.0F);
 		}
@@ -3574,7 +3574,7 @@ public class GpuModel extends Model {
 				var3.field2987.setToIdentity();
 				var3.field2988 = var7.field3297;
 				if (var4) {
-					var3.field2985 = 1.0F - (this.field9730.field10119 - var13) / (this.field9730.field10119 - this.field9730.field10171);
+					var3.field2985 = 1.0F - (this.field9730.fogEnd - var13) / (this.field9730.fogEnd - this.field9730.fogStart);
 				}
 				var3.field2991 = null;
 				if (var6.field3347 != -1) {
@@ -3592,7 +3592,7 @@ public class GpuModel extends Model {
 			return true;
 		}
 		if (this.field9756.field3237 == null) {
-			this.field9756.field3237 = this.field9730.method16067(false);
+			this.field9756.field3237 = this.field9730.createIndexBuffer(false);
 		}
 		IndexBuffer var1 = this.field9756.field3237;
 		var1.method5831(this.field9721 * 6);
@@ -3646,7 +3646,7 @@ public class GpuModel extends Model {
 		boolean var5 = true;
 		if (var3 && this.field9711 != null) {
 			if (this.field9731.field3356 == null) {
-				this.field9731.field3356 = this.field9730.method16085(this.field9735);
+				this.field9731.field3356 = this.field9730.createVertexBuffer(this.field9735);
 			}
 			VertexBuffer var6 = this.field9731.field3356;
 			var6.allocate(this.field9710 * 12, 12);
@@ -3679,7 +3679,7 @@ public class GpuModel extends Model {
 		}
 		if (var1) {
 			if (this.field9732.field3356 == null) {
-				this.field9732.field3356 = this.field9730.method16085(this.field9735);
+				this.field9732.field3356 = this.field9730.createVertexBuffer(this.field9735);
 			}
 			VertexBuffer var19 = this.field9732.field3356;
 			var19.allocate(this.field9710 * 4, 4);
@@ -3818,7 +3818,7 @@ public class GpuModel extends Model {
 		}
 		if (var2) {
 			if (this.field9733.field3356 == null) {
-				this.field9733.field3356 = this.field9730.method16085(this.field9735);
+				this.field9733.field3356 = this.field9730.createVertexBuffer(this.field9735);
 			}
 			VertexBuffer var67 = this.field9733.field3356;
 			var67.allocate(this.field9710 * 12, 12);
@@ -3879,7 +3879,7 @@ public class GpuModel extends Model {
 		}
 		if (var4) {
 			if (this.field9734.field3356 == null) {
-				this.field9734.field3356 = this.field9730.method16085(this.field9735);
+				this.field9734.field3356 = this.field9730.createVertexBuffer(this.field9735);
 			}
 			VertexBuffer var85 = this.field9734.field3356;
 			var85.allocate(this.field9710 * 8, 8);

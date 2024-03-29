@@ -102,7 +102,7 @@ public class ProgrammableModelShader extends ModelShader {
 		this.shader.setUniform3f(this.field10501[8], this.field2973.x, this.field2973.y, this.field2973.z);
 		this.shader.setUniform4f(this.field10501[9], this.field2984.field4244, this.field2984.field4243, this.field2984.field4242, this.field2984.field4245);
 		this.shader.setUniform3f(this.field10501[10], this.field2975.x, this.field2975.y, this.field2975.z);
-		this.field2963.method16079(PrimitiveType.field3403, this.field2981, this.field2983, this.field2972, this.field2962);
+		this.field2963.drawIndexedPrimitive(PrimitiveType.TRIANGLELIST, this.field2981, this.field2983, this.field2972, this.field2962);
 	}
 
 	@ObfuscatedName("ahv.l()V")
@@ -140,7 +140,7 @@ public class ProgrammableModelShader extends ModelShader {
 			this.shader.setUniformFloatv(this.field10501[1], this.field2965, arg0 * 4);
 			this.shader.setUniformFloatv(this.field10501[0], this.field2964, arg0 * 4);
 		}
-		this.field2963.method16079(PrimitiveType.field3403, this.field2981, this.field2983, this.field2972, this.field2962);
+		this.field2963.drawIndexedPrimitive(PrimitiveType.TRIANGLELIST, this.field2981, this.field2983, this.field2972, this.field2962);
 	}
 
 	@ObfuscatedName("ahv.k(I)V")

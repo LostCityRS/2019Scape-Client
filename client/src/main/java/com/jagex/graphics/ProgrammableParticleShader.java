@@ -81,7 +81,7 @@ public class ProgrammableParticleShader extends ParticleShader {
 		this.shader.setCurrentProgram(arg1 ? this.field10513 : this.field10514);
 		this.shader.enable();
 		this.method16629(arg1, true);
-		this.field2986.method16079(PrimitiveType.field3403, 0, arg0 * 4, 0, arg0 * 2);
+		this.field2986.drawIndexedPrimitive(PrimitiveType.TRIANGLELIST, 0, arg0 * 4, 0, arg0 * 2);
 	}
 
 	@ObfuscatedName("ahr.m(Z)V")

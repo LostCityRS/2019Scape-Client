@@ -37,8 +37,8 @@ public final class Direct3DProgramManager extends Shader {
 				throw new IllegalArgumentException();
 			}
 			if (this.field10387) {
-				this.field10388.method19032(this.field10389.vertexShader3d);
-				this.field10388.method18998(this.field10389.pixelShader3d);
+				this.field10388.setVertexShader(this.field10389.vertexShader3d);
+				this.field10388.setPixelShader(this.field10389.pixelShader3d);
 				this.field10388.program = this.field10389;
 			}
 			return true;
@@ -57,16 +57,16 @@ public final class Direct3DProgramManager extends Shader {
 		if (this.field10389 == null) {
 			throw new ProgramManagerException();
 		}
-		this.field10388.method19032(this.field10389.vertexShader3d);
-		this.field10388.method18998(this.field10389.pixelShader3d);
+		this.field10388.setVertexShader(this.field10389.vertexShader3d);
+		this.field10388.setPixelShader(this.field10389.pixelShader3d);
 		this.field10388.program = this.field10389;
 		this.field10387 = true;
 	}
 
 	@ObfuscatedName("agc.n()V")
 	public void method4214() {
-		this.field10388.method19032(0L);
-		this.field10388.method18998(0L);
+		this.field10388.setVertexShader(0L);
+		this.field10388.setPixelShader(0L);
 		this.field10387 = false;
 		this.field10388.program = null;
 		this.field10388.setActiveTexture(1);

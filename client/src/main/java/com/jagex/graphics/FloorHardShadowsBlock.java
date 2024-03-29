@@ -68,7 +68,7 @@ public class FloorHardShadowsBlock {
 		if (var10 > 0) {
 			this.field3282 = Integer.MIN_VALUE;
 			this.field3284 = Integer.MAX_VALUE;
-			this.field3279 = this.field3271.method16067(false);
+			this.field3279 = this.field3271.createIndexBuffer(false);
 			this.field3279.method5831(var10);
 			ByteBuffer var17 = this.field3271.temporaryBuffer;
 			var17.clear();
@@ -109,7 +109,7 @@ public class FloorHardShadowsBlock {
 			return;
 		}
 		this.method5658();
-		this.field3271.method16102(arg1);
+		this.field3271.setIndices(arg1);
 		arg0.field2966 = this.field3280;
 		arg0.field2981 = this.field3284;
 		arg0.field2983 = this.field3282 - this.field3284 + 1;

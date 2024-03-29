@@ -60,11 +60,11 @@ public class GpuParticleRenderer {
 	public static float field3325;
 
 	public GpuParticleRenderer(GpuRenderer arg0) {
-		this.field3326 = arg0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR, VertexDeclarationElementComponent.TEX_COORD_2 }), new VertexDeclarationElement(VertexDeclarationElementComponent.NORMAL) });
-		this.field3333 = arg0.method16085(true);
-		this.field3329 = arg0.method16085(false);
+		this.field3326 = arg0.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR, VertexDeclarationElementComponent.TEX_COORD_2 }), new VertexDeclarationElement(VertexDeclarationElementComponent.NORMAL) });
+		this.field3333 = arg0.createVertexBuffer(true);
+		this.field3329 = arg0.createVertexBuffer(false);
 		this.field3329.allocate(393168, 12);
-		this.field3327 = arg0.method16067(false);
+		this.field3327 = arg0.createIndexBuffer(false);
 		this.field3327.method5831(49146);
 		ByteBuffer var2 = arg0.temporaryBuffer;
 		var2.clear();
@@ -138,17 +138,17 @@ public class GpuParticleRenderer {
 			var15 = 0;
 			var14 += 2;
 		}
-		arg0.method16102(this.field3327);
-		ParticleShader var16 = arg0.field10151;
+		arg0.setIndices(this.field3327);
+		ParticleShader var16 = arg0.particleShader;
 		var16.method5038(Matrix4x4.IDENTITY);
 		var16.field2987.setToIdentity();
 		var16.field2988 = -1;
 		boolean var17 = arg0.field10169 > 0;
 		if (var17) {
-			var16.field2989.method6247(0.0F, 0.0F, 1.0F, -arg0.field10171);
-			var16.field2990.setTo((float) (arg0.field10191 >> 16 & 0xFF) / 255.0F, (float) (arg0.field10191 >> 8 & 0xFF) / 255.0F, (float) (arg0.field10191 >> 0 & 0xFF) / 255.0F);
+			var16.field2989.method6247(0.0F, 0.0F, 1.0F, -arg0.fogStart);
+			var16.field2990.setTo((float) (arg0.fogDensity >> 16 & 0xFF) / 255.0F, (float) (arg0.fogDensity >> 8 & 0xFF) / 255.0F, (float) (arg0.fogDensity >> 0 & 0xFF) / 255.0F);
 			var16.field2989.method6265(arg0.field10190);
-			var16.field2989.method6252(1.0F / (arg0.field10119 - arg0.field10171));
+			var16.field2989.method6252(1.0F / (arg0.fogEnd - arg0.fogStart));
 		} else {
 			var16.field2989.method6247(0.0F, 0.0F, 0.0F, 0.0F);
 			var16.field2990.setTo(0.0F, 0.0F, 0.0F);
@@ -455,10 +455,10 @@ public class GpuParticleRenderer {
 			}
 		}
 		this.field3333.upload(0, var23.position(), arg0.temporaryBufferAddress);
-		arg0.method16120(0, this.field3333);
-		arg0.method16120(1, this.field3329);
-		arg0.method16177(this.field3326);
-		ParticleShader var51 = arg0.field10151;
+		arg0.setStreamSource(0, this.field3333);
+		arg0.setStreamSource(1, this.field3329);
+		arg0.setVertexDeclaration(this.field3326);
+		ParticleShader var51 = arg0.particleShader;
 		var51.method5039(var4, arg2);
 	}
 }

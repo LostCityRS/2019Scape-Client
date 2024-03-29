@@ -100,16 +100,16 @@ public class EnvMappedWaterShader extends WaterShader {
 	public float field12130 = 0.0F;
 
 	@ObfuscatedName("aqe.bt")
-	public boolean field12150;
+	public boolean isEnvMappedSea;
 
 	@ObfuscatedName("aqe.bq")
 	public Program envMappedWaterProgram;
 
-	public EnvMappedWaterShader(GpuRenderer arg0, WaterRelated arg1, boolean arg2) throws ShaderException {
+	public EnvMappedWaterShader(GpuRenderer arg0, WaterRelated arg1, boolean isEnvMappedSea) throws ShaderException {
 		super(arg0);
 		new Matrix4x4();
 		this.field12122 = arg1;
-		this.field12150 = arg2;
+		this.isEnvMappedSea = isEnvMappedSea;
 		if (arg0.hasVertexShader() && arg0.hasFragmentShader()) {
 			this.field12131 = this.createShaderProgram("EnvMappedWater");
 		} else {
@@ -134,7 +134,7 @@ public class EnvMappedWaterShader extends WaterShader {
 		this.heightFogColourUniform = this.shader.getUniform("HeightFogColour");
 		this.distanceFogPlaneUniform = this.shader.getUniform("DistanceFogPlane");
 		this.distanceFogColourUniform = this.shader.getUniform("DistanceFogColour");
-		this.envMappedWaterProgram = this.shader.getProgram(this.field12150 ? "EnvMappedSea" : "EnvMappedWater");
+		this.envMappedWaterProgram = this.shader.getProgram(this.isEnvMappedSea ? "EnvMappedSea" : "EnvMappedWater");
 		this.shader.setCurrentProgram(this.envMappedWaterProgram);
 		return true;
 	}
@@ -179,7 +179,7 @@ public class EnvMappedWaterShader extends WaterShader {
 		this.shader.setUniform3fv(this.heightFogColourUniform, this.heightFogColour);
 		this.shader.setUniform4fv(this.distanceFogPlaneUniform, this.distanceFogPlane);
 		this.shader.setUniform3fv(this.distanceFogColourUniform, this.distanceFogColour);
-		this.gpuRenderer.method16079(PrimitiveType.field3403, this.field12145, this.field12146, this.field12120, this.field12148);
+		this.gpuRenderer.drawIndexedPrimitive(PrimitiveType.TRIANGLELIST, this.field12145, this.field12146, this.field12120, this.field12148);
 	}
 
 	@ObfuscatedName("aqe.bk(I)V")

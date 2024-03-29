@@ -49,7 +49,7 @@ public class Direct3DTexture extends Direct3DBaseTexture implements GpuTexture {
 			this.field10667 = (float) arg3 / (float) this.width;
 			this.field10668 = (float) arg4 / (float) this.height;
 		}
-		this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 0, arg5, Direct3DRenderer.method19011(this.format, this.field4218), arg6);
+		this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 0, arg5, Direct3DRenderer.getD3DFormat(this.format, this.field4218), arg6);
 	}
 
 	public Direct3DTexture(Direct3DRenderer arg0, int arg1, int arg2, boolean arg3, int[] arg4, int arg5, int arg6) {
@@ -104,9 +104,9 @@ public class Direct3DTexture extends Direct3DBaseTexture implements GpuTexture {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 0, 1024, Direct3DRenderer.method19011(this.format, DataType.UNSIGNED_INT_8), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 0, 1024, Direct3DRenderer.getD3DFormat(this.format, DataType.UNSIGNED_INT_8), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 1, 0, Direct3DRenderer.method19011(this.format, DataType.UNSIGNED_INT_8), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 1, 0, Direct3DRenderer.getD3DFormat(this.format, DataType.UNSIGNED_INT_8), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.width;
@@ -145,9 +145,9 @@ public class Direct3DTexture extends Direct3DBaseTexture implements GpuTexture {
 			}
 		}
 		if (arg4) {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 0, 1024, Direct3DRenderer.method19011(this.format, DataType.FLOAT_32), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 0, 1024, Direct3DRenderer.getD3DFormat(this.format, DataType.FLOAT_32), 1);
 		} else {
-			this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 1, 0, Direct3DRenderer.method19011(this.format, DataType.FLOAT_32), 1);
+			this.field4217 = IDirect3DDevice.CreateTexture(this.renderer.device, this.width, this.height, 1, 0, Direct3DRenderer.getD3DFormat(this.format, DataType.FLOAT_32), 1);
 		}
 		if (arg7 == 0) {
 			arg7 = this.width;

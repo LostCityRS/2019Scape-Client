@@ -415,10 +415,10 @@ public class GpuFloorModel extends FloorModel {
 
 	@ObfuscatedName("aem.av()V")
 	public void method15413() {
-		this.field9509 = this.field9516.method16085(false);
+		this.field9509 = this.field9516.createVertexBuffer(false);
 		this.field9509.allocate(this.field9492 * 4, 4);
 		this.field9509.upload(0, this.field9492 * 4, this.field9516.method15963(this.field9520));
-		this.field9508 = this.field9516.method16085(false);
+		this.field9508 = this.field9516.createVertexBuffer(false);
 		this.field9508.allocate(this.field9522 * this.field9492, this.field9522);
 		this.field9508.upload(0, this.field9522 * this.field9492, this.field9516.method15963(this.field9521));
 		this.field9520.clear();
@@ -427,14 +427,14 @@ public class GpuFloorModel extends FloorModel {
 		this.field9521 = null;
 		if ((this.field9491 & 0x7) == 0) {
 			if (this.field9503 == null) {
-				this.field9493 = this.field9516.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2 }), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR) });
+				this.field9493 = this.field9516.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2 }), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR) });
 			} else {
-				this.field9493 = this.field9516.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.TEX_COORD_1 }), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR) });
+				this.field9493 = this.field9516.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.TEX_COORD_1 }), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR) });
 			}
 		} else if (this.field9503 == null) {
-			this.field9493 = this.field9516.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.NORMAL }), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR) });
+			this.field9493 = this.field9516.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.NORMAL }), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR) });
 		} else {
-			this.field9493 = this.field9516.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.TEX_COORD_1, VertexDeclarationElementComponent.NORMAL }), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR) });
+			this.field9493 = this.field9516.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.TEX_COORD_1, VertexDeclarationElementComponent.NORMAL }), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR) });
 		}
 		for (int var1 = 0; var1 < this.field9519; var1++) {
 			GpuFloorModelRelated1 var2 = (GpuFloorModelRelated1) this.field9497[var1];
@@ -702,13 +702,13 @@ public class GpuFloorModel extends FloorModel {
 			var20.method17767(this.field9526, this.field9525);
 		}
 		int var21 = var18.position();
-		ModelShader var22 = this.field9516.field10148;
+		ModelShader var22 = this.field9516.modelShader;
 		this.field9516.method16022();
 		if (this.field9516.field10169 > 0) {
-			var22.field2975.setTo((float) (this.field9516.field10191 >> 16 & 0xFF) / 255.0F, (float) (this.field9516.field10191 >> 8 & 0xFF) / 255.0F, (float) (this.field9516.field10191 >> 0 & 0xFF) / 255.0F);
-			var22.field2984.method6247(0.0F, 0.0F, 1.0F, -this.field9516.field10171);
+			var22.field2975.setTo((float) (this.field9516.fogDensity >> 16 & 0xFF) / 255.0F, (float) (this.field9516.fogDensity >> 8 & 0xFF) / 255.0F, (float) (this.field9516.fogDensity >> 0 & 0xFF) / 255.0F);
+			var22.field2984.method6247(0.0F, 0.0F, 1.0F, -this.field9516.fogStart);
 			var22.field2984.method6265(this.field9516.field10190);
-			var22.field2984.method6252(1.0F / (this.field9516.field10119 - this.field9516.field10171));
+			var22.field2984.method6252(1.0F / (this.field9516.fogEnd - this.field9516.fogStart));
 		} else {
 			var22.field2984.method6247(0.0F, 0.0F, 0.0F, 0.0F);
 			var22.field2975.setTo(0.0F, 0.0F, 0.0F);
@@ -716,8 +716,8 @@ public class GpuFloorModel extends FloorModel {
 		if (var21 != 0) {
 			IndexBuffer var23 = this.field9516.method15988(var21 / 2);
 			var23.upload(0, var21, this.field9516.temporaryBufferAddress);
-			this.field9516.method16120(0, this.field9508);
-			this.field9516.method16102(var23);
+			this.field9516.setStreamSource(0, this.field9508);
+			this.field9516.setIndices(var23);
 			var22.method5018(Matrix4x4.IDENTITY);
 			if ((this.field9491 & 0x7) == 0) {
 				int var24 = 0;
@@ -741,8 +741,8 @@ public class GpuFloorModel extends FloorModel {
 							var22.field2966 = this.field9516.field10188.method5639(var28);
 							var27 = !Material.method261(var28.effect);
 						}
-						this.field9516.method16120(1, var26.field11405);
-						this.field9516.method16177(this.field9493);
+						this.field9516.setStreamSource(1, var26.field11405);
+						this.field9516.setVertexDeclaration(this.field9493);
 						var22.field2982.scale(1.0F / var26.field11403, 1.0F / var26.field11403, 1.0F, 1.0F);
 						var22.field2981 = var26.field11400;
 						var22.field2983 = var26.field11407 - var26.field11400 + 1;
@@ -779,8 +779,8 @@ public class GpuFloorModel extends FloorModel {
 							var22.field2966 = this.field9516.field10188.method5639(var34);
 							var22.method5036(var34.effectArg1);
 						}
-						this.field9516.method16120(1, var31.field11405);
-						this.field9516.method16177(this.field9493);
+						this.field9516.setStreamSource(1, var31.field11405);
+						this.field9516.setVertexDeclaration(this.field9493);
 						var22.field2982.scale(1.0F / var31.field11403, 1.0F / var31.field11403, 1.0F, 1.0F);
 						var22.field2981 = var31.field11400;
 						var22.field2983 = var31.field11407 - var31.field11400 + 1;
@@ -799,12 +799,12 @@ public class GpuFloorModel extends FloorModel {
 							case 4:
 							case 8:
 							case 9:
-								if (this.field9516.field10099 || (this.field9491 & 0x8) == 0 || !this.field9516.field10153.method19209()) {
+								if (this.field9516.lightingEnabled || (this.field9491 & 0x8) == 0 || !this.field9516.seaWaterShader.method19209()) {
 									var22.method5020(0);
 								} else {
-									EnvMappedWaterShader var35 = this.field9516.field10153;
+									EnvMappedWaterShader var35 = this.field9516.seaWaterShader;
 									if (var33 == 2) {
-										var35 = this.field9516.field10152;
+										var35 = this.field9516.waterShader;
 									}
 									var35.wvpMatrix.setTo(this.field9516.field10081);
 									var35.texCoordMatrix.scale(1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F / ((float) var31.field11404.field1576 * var31.field11403), 1.0F, 1.0F);
@@ -861,9 +861,9 @@ public class GpuFloorModel extends FloorModel {
 			return;
 		}
 		this.field9516.method16054(1);
-		this.field9516.method16120(0, this.field9508);
-		this.field9516.method16120(1, this.field9509);
-		this.field9516.method16177(this.field9493);
+		this.field9516.setStreamSource(0, this.field9508);
+		this.field9516.setStreamSource(1, this.field9509);
+		this.field9516.setVertexDeclaration(this.field9493);
 		Matrix4x4 var40 = this.field9516.field10066;
 		var40.setToIdentity();
 		var40.entries[13] = -1.0F;
@@ -909,11 +909,11 @@ public class GpuFloorModel extends FloorModel {
 			return;
 		}
 		this.field9516.method16022();
-		ModelShader var20 = this.field9516.field10148;
-		this.field9516.method16120(0, this.field9508);
-		this.field9516.method16120(1, this.field9509);
-		this.field9516.method16177(this.field9493);
-		this.field9516.method16102(var9);
+		ModelShader var20 = this.field9516.modelShader;
+		this.field9516.setStreamSource(0, this.field9508);
+		this.field9516.setStreamSource(1, this.field9509);
+		this.field9516.setVertexDeclaration(this.field9493);
+		this.field9516.setIndices(var9);
 		this.field9516.method2217(Matrix4x3.IDENTITY);
 		float var21 = (float) this.field9516.getRenderTarget().getWidth();
 		float var22 = (float) this.field9516.getRenderTarget().getHeight();

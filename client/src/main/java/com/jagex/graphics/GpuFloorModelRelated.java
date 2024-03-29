@@ -196,9 +196,9 @@ public class GpuFloorModelRelated extends Node {
 
 	@ObfuscatedName("akx.e()V")
 	public void method17780() {
-		this.field11423 = this.field11416.method16067(false);
+		this.field11423 = this.field11416.createIndexBuffer(false);
 		this.field11423.method5831(this.field11413);
-		this.field11424 = this.field11416.method16085(false);
+		this.field11424 = this.field11416.createVertexBuffer(false);
 		this.field11424.allocate(this.field11420 * 16, 16);
 		this.field11424.upload(0, this.field11420 * 16, this.field11416.temporaryBufferAddress);
 		this.field11423.upload(0, this.field11413 * 2, (long) (this.field11416.field10048 >> 1) + this.field11416.temporaryBufferAddress);
@@ -376,9 +376,9 @@ public class GpuFloorModelRelated extends Node {
 		arg0.field2966 = this.field11416.field10140;
 		float var4 = this.field11415.method17610();
 		arg0.field2968.setTo(var4, var4, var4);
-		this.field11416.method16120(0, this.field11424);
-		this.field11416.method16177(this.field11416.field10204);
-		this.field11416.method16102(this.field11423);
+		this.field11416.setStreamSource(0, this.field11424);
+		this.field11416.setVertexDeclaration(this.field11416.field10204);
+		this.field11416.setIndices(this.field11423);
 		arg0.method5020(0);
 	}
 }

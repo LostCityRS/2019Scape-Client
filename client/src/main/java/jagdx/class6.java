@@ -61,22 +61,22 @@ public class class6 {
 	public static final int anInt4245 = 27;
 
 	@OriginalMember(owner = "client!jagdx/l", name = "x", descriptor = "I")
-	public static final int anInt4246 = 1;
+	public static final int D3DTSS_COLOROP = 1; // D3DTEXTURESTAGESTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "b", descriptor = "I")
-	public static final int anInt4247 = 2;
+	public static final int D3DTSS_COLORARG1 = 2; // D3DTEXTURESTAGESTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "h", descriptor = "I")
-	public static final int anInt4248 = 4;
+	public static final int D3DTSS_ALPHAOP = 4; // D3DTEXTURESTAGESTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "a", descriptor = "I")
-	public static final int anInt4249 = 7;
+	public static final int D3DTSS_BUMPENVMAT00 = 7; // D3DTEXTURESTAGESTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "g", descriptor = "I")
-	public static final int anInt4250 = 10;
+	public static final int D3DTSS_BUMPENVMAT11 = 10; // D3DTEXTURESTAGESTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "i", descriptor = "I")
-	public static final int anInt4251 = 26;
+	public static final int D3DTSS_COLORARG0 = 26; // D3DTEXTURESTAGESTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "j", descriptor = "I")
 	public static final int anInt4252 = 0;
@@ -97,22 +97,22 @@ public class class6 {
 	public static final int anInt4257 = 32;
 
 	@OriginalMember(owner = "client!jagdx/l", name = "ac", descriptor = "I")
-	public static final int anInt4258 = 0;
+	public static final int D3DTTFF_DISABLE = 0; // D3DTEXTURETRANSFORMFLAGS
 
 	@OriginalMember(owner = "client!jagdx/l", name = "ai", descriptor = "I")
-	public static final int anInt4259 = 1;
+	public static final int D3DTTFF_COUNT1 = 1; // D3DTEXTURETRANSFORMFLAGS
 
 	@OriginalMember(owner = "client!jagdx/l", name = "aw", descriptor = "I")
-	public static final int anInt4260 = 2;
+	public static final int D3DTTFF_COUNT2 = 2; // D3DTEXTURETRANSFORMFLAGS
 
 	@OriginalMember(owner = "client!jagdx/l", name = "as", descriptor = "I")
-	public static final int anInt4261 = 3;
+	public static final int D3DTTFF_COUNT3 = 3; // D3DTEXTURETRANSFORMFLAGS
 
 	@OriginalMember(owner = "client!jagdx/l", name = "at", descriptor = "I")
-	public static final int anInt4262 = 4;
+	public static final int D3DTTFF_COUNT4 = 4; // D3DTEXTURETRANSFORMFLAGS
 
 	@OriginalMember(owner = "client!jagdx/l", name = "ad", descriptor = "I")
-	public static final int anInt4263 = 256;
+	public static final int D3DTTFF_PROJECTED = 256; // D3DTEXTURETRANSFORMFLAGS
 
 	@OriginalMember(owner = "client!jagdx/l", name = "am", descriptor = "I")
 	public static final int anInt4264 = 0;
@@ -148,115 +148,115 @@ public class class6 {
 	public static final int anInt4274 = 8;
 
 	@OriginalMember(owner = "client!jagdx/l", name = "az", descriptor = "I")
-	public static final int anInt4275 = 7;
+	public static final int D3DRS_ZENABLE = 7; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "aa", descriptor = "I")
-	public static final int anInt4276 = 8;
+	public static final int D3DRS_FILLMODE = 8; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "af", descriptor = "I")
-	public static final int anInt4277 = 9;
+	public static final int D3DRS_SHADEMODE = 9; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "ak", descriptor = "I")
-	public static final int anInt4278 = 14;
+	public static final int D3DRS_ZWRITEENABLE = 14; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "an", descriptor = "I")
-	public static final int anInt4279 = 15;
+	public static final int D3DRS_ALPHATESTENABLE = 15; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bf", descriptor = "I")
-	public static final int anInt4280 = 19;
+	public static final int D3DRS_SRCBLEND = 19; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bl", descriptor = "I")
-	public static final int anInt4281 = 20;
+	public static final int D3DRS_DESTBLEND = 20; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bk", descriptor = "I")
-	public static final int anInt4282 = 22;
+	public static final int D3DRS_CULLMODE = 22; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bh", descriptor = "I")
-	public static final int anInt4283 = 23;
+	public static final int D3DRS_ZFUNC = 23; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bx", descriptor = "I")
-	public static final int anInt4284 = 24;
+	public static final int D3DRS_ALPHAREF = 24; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bd", descriptor = "I")
-	public static final int anInt4285 = 25;
+	public static final int D3DRS_ALPHAFUNC = 25; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bc", descriptor = "I")
-	public static final int anInt4286 = 27;
+	public static final int D3DRS_ALPHABLENDENABLE = 27; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bi", descriptor = "I")
-	public static final int anInt4287 = 28;
+	public static final int D3DRS_FOGENABLE = 28; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bn", descriptor = "I")
-	public static final int anInt4288 = 34;
+	public static final int D3DRS_FOGCOLOR = 34; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bt", descriptor = "I")
-	public static final int anInt4289 = 35;
+	public static final int D3DRS_FOGTABLEMODE = 35; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bq", descriptor = "I")
-	public static final int anInt4290 = 36;
+	public static final int D3DRS_FOGSTART = 36; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bm", descriptor = "I")
-	public static final int anInt4291 = 37;
+	public static final int D3DRS_FOGEND = 37; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bb", descriptor = "I")
-	public static final int anInt4292 = 38;
+	public static final int D3DRS_FOGDENSITY = 38; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "be", descriptor = "I")
-	public static final int anInt4293 = 60;
+	public static final int D3DRS_TEXTUREFACTOR = 60; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "by", descriptor = "I")
-	public static final int anInt4294 = 137;
+	public static final int D3DRS_LIGHTING = 137; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bu", descriptor = "I")
-	public static final int anInt4295 = 145;
+	public static final int D3DRS_DIFFUSEMATERIALSOURCE = 145; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bw", descriptor = "I")
-	public static final int anInt4296 = 147;
+	public static final int D3DRS_AMBIENTMATERIALSOURCE = 147; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bo", descriptor = "I")
-	public static final int anInt4297 = 154;
+	public static final int D3DRS_POINTSIZE = 154; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bz", descriptor = "I")
-	public static final int anInt4298 = 161;
+	public static final int D3DRS_MULTISAMPLEANTIALIAS = 161; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bv", descriptor = "I")
-	public static final int anInt4299 = 168;
+	public static final int D3DRS_COLORWRITEENABLE = 168; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "br", descriptor = "I")
-	public static final int anInt4300 = 174;
+	public static final int D3DRS_SCISSORTESTENABLE = 174; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bg", descriptor = "I")
-	public static final int anInt4301 = 181;
+	public static final int D3DRS_ADAPTIVETESS_Y = 181; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "ba", descriptor = "I")
-	public static final int anInt4302 = 206;
+	public static final int D3DRS_SEPARATEALPHABLENDENABLE = 206; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bp", descriptor = "I")
-	public static final int anInt4303 = 207;
+	public static final int D3DRS_SRCBLENDALPHA = 207; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bj", descriptor = "I")
-	public static final int anInt4304 = 208;
+	public static final int D3DRS_DESTBLENDALPHA = 208; // D3DRENDERSTATETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "bs", descriptor = "I")
 	public static final int anInt4305 = 1;
 
 	@OriginalMember(owner = "client!jagdx/l", name = "cl", descriptor = "I")
-	public static final int anInt4306 = 1;
+	public static final int D3DPT_POINTLIST = 1; // D3DPRIMITIVETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "cg", descriptor = "I")
-	public static final int anInt4307 = 2;
+	public static final int D3DPT_LINELIST = 2; // D3DPRIMITIVETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "ce", descriptor = "I")
-	public static final int anInt4308 = 3;
+	public static final int D3DPT_LINESTRIP = 3; // D3DPRIMITIVETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "cu", descriptor = "I")
-	public static final int anInt4309 = 4;
+	public static final int D3DPT_TRIANGLELIST = 4; // D3DPRIMITIVETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "ci", descriptor = "I")
-	public static final int anInt4310 = 5;
+	public static final int D3DPT_TRIANGLESTRIP = 5; // D3DPRIMITIVETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "cn", descriptor = "I")
-	public static final int anInt4311 = 6;
+	public static final int D3DPT_TRIANGLEFAN = 6; // D3DPRIMITIVETYPE
 
 	@OriginalMember(owner = "client!jagdx/l", name = "cv", descriptor = "I")
 	public static final int anInt4312 = 4;

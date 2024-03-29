@@ -44,7 +44,7 @@ public abstract class GpuRenderer extends Renderer {
 	public final Js5 field10041;
 
 	@ObfuscatedName("afc.ab")
-	public boolean field10099;
+	public boolean lightingEnabled;
 
 	@ObfuscatedName("afc.az")
 	public int[] field10043;
@@ -194,16 +194,16 @@ public abstract class GpuRenderer extends Renderer {
 	public float field10092 = 3584.0F;
 
 	@ObfuscatedName("afc.cs")
-	public int field10138 = 0;
+	public int top = 0;
 
 	@ObfuscatedName("afc.cy")
-	public int field10106 = 0;
+	public int bottom = 0;
 
 	@ObfuscatedName("afc.cc")
-	public int field10095 = 0;
+	public int left = 0;
 
 	@ObfuscatedName("afc.cz")
-	public int field10193 = 0;
+	public int right = 0;
 
 	@ObfuscatedName("afc.ck")
 	public int field10097 = 0;
@@ -320,7 +320,7 @@ public abstract class GpuRenderer extends Renderer {
 	public Matrix4x4[] field10162;
 
 	@ObfuscatedName("afc.ep")
-	public GpuRendererRelated4[] field10135;
+	public TextureTramsformType[] field10135;
 
 	@ObfuscatedName("afc.ev")
 	public TextureCombineMode[] field10136;
@@ -359,25 +359,25 @@ public abstract class GpuRenderer extends Renderer {
 	public final GpuRendererRelated2[] field10147 = new GpuRendererRelated2[16];
 
 	@ObfuscatedName("afc.er")
-	public ModelShader field10148;
+	public ModelShader modelShader;
 
 	@ObfuscatedName("afc.en")
-	public SpriteShader field10149;
+	public SpriteShader spriteShader;
 
 	@ObfuscatedName("afc.eb")
-	public BatchedSpriteShader field10115;
+	public BatchedSpriteShader batchedSpriteShader;
 
 	@ObfuscatedName("afc.ex")
-	public ParticleShader field10151;
+	public ParticleShader particleShader;
 
 	@ObfuscatedName("afc.fg")
-	public EnvMappedWaterShader field10152;
+	public EnvMappedWaterShader waterShader;
 
 	@ObfuscatedName("afc.fu")
-	public EnvMappedWaterShader field10153;
+	public EnvMappedWaterShader seaWaterShader;
 
 	@ObfuscatedName("afc.fs")
-	public WaterfallShader field10175;
+	public WaterfallShader waterfallShader;
 
 	@ObfuscatedName("afc.fz")
 	public PostProcessManager field10155;
@@ -407,7 +407,7 @@ public abstract class GpuRenderer extends Renderer {
 	public boolean field10167 = true;
 
 	@ObfuscatedName("afc.fq")
-	public int field10191 = -1;
+	public int fogDensity = -1;
 
 	@ObfuscatedName("afc.ff")
 	public int field10169 = -1;
@@ -416,10 +416,10 @@ public abstract class GpuRenderer extends Renderer {
 	public int field10189 = 0;
 
 	@ObfuscatedName("afc.fb")
-	public float field10171;
+	public float fogStart;
 
 	@ObfuscatedName("afc.fo")
-	public float field10119;
+	public float fogEnd;
 
 	@ObfuscatedName("afc.fy")
 	public int field10096 = 1;
@@ -431,16 +431,16 @@ public abstract class GpuRenderer extends Renderer {
 	public BlendMode field10211 = BlendMode.field3364;
 
 	@ObfuscatedName("afc.fh")
-	public boolean field10176 = true;
+	public boolean alphaBlendEnabled = true;
 
 	@ObfuscatedName("afc.fr")
-	public boolean field10091 = true;
+	public boolean alphaTestEnabled = true;
 
 	@ObfuscatedName("afc.gu")
-	public byte field10178 = 0;
+	public byte alphaRef = 0;
 
 	@ObfuscatedName("afc.gq")
-	public int field10179 = 2;
+	public int cullModeEnabled = 2;
 
 	@ObfuscatedName("afc.gl")
 	public final int field10180;
@@ -560,7 +560,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.rz()Z")
 	public final boolean method16279() {
-		return this.field10099;
+		return this.lightingEnabled;
 	}
 
 	@ObfuscatedName("afc.re(I)V")
@@ -651,13 +651,13 @@ public abstract class GpuRenderer extends Renderer {
 	public final void init() {
 		this.field10093 = new BaseTexture[this.maxSimutaneousTextures];
 		this.field10162 = new Matrix4x4[this.maxSimutaneousTextures];
-		this.field10135 = new GpuRendererRelated4[this.maxSimutaneousTextures];
+		this.field10135 = new TextureTramsformType[this.maxSimutaneousTextures];
 		this.field10136 = new TextureCombineMode[this.maxSimutaneousTextures];
 		this.field10137 = new TextureCombineMode[this.maxSimutaneousTextures];
 		for (int var1 = 0; var1 < this.maxSimutaneousTextures; var1++) {
 			this.field10137[var1] = TextureCombineMode.field3395;
 			this.field10136[var1] = TextureCombineMode.field3395;
-			this.field10135[var1] = GpuRendererRelated4.field3372;
+			this.field10135[var1] = TextureTramsformType.DISABLE;
 			this.field10162[var1] = new Matrix4x4();
 		}
 		this.field10045 = new Light[this.maxActiveLights - 2];
@@ -666,16 +666,16 @@ public abstract class GpuRenderer extends Renderer {
 		var2[0] = -16777216;
 		this.field10141 = this.method16033(1, 1, false, var2, 0, 0);
 		this.setBufferHeap(new GpuHeap(262144));
-		this.field10203 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2 }) });
-		this.field10204 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
-		this.field10202 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.VERTEX), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR), new VertexDeclarationElement(VertexDeclarationElementComponent.TEX_COORD_2), new VertexDeclarationElement(VertexDeclarationElementComponent.NORMAL) });
-		this.field10184 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.VERTEX), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR), new VertexDeclarationElement(VertexDeclarationElementComponent.TEX_COORD_2) });
+		this.field10203 = this.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.TEX_COORD_2 }) });
+		this.field10204 = this.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
+		this.field10202 = this.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.VERTEX), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR), new VertexDeclarationElement(VertexDeclarationElementComponent.TEX_COORD_2), new VertexDeclarationElement(VertexDeclarationElementComponent.NORMAL) });
+		this.field10184 = this.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.VERTEX), new VertexDeclarationElement(VertexDeclarationElementComponent.COLOR), new VertexDeclarationElement(VertexDeclarationElementComponent.TEX_COORD_2) });
 		for (int var3 = 0; var3 < 8; var3++) {
 			this.field10058[var3] = new GpuModel(this, 0, 0, false, false);
 			this.field10207[var3] = new GpuModel(this, 0, 0, true, true);
 		}
 		this.method15970();
-		this.field10077 = this.method16067(true);
+		this.field10077 = this.createIndexBuffer(true);
 		this.method16232();
 		this.resetClip();
 		this.method2150();
@@ -687,27 +687,27 @@ public abstract class GpuRenderer extends Renderer {
 	@ObfuscatedName("afc.sv()V")
 	public final void method15970() {
 		this.field10049 = new WaterRelated(this);
-		this.field10099 = false;
+		this.lightingEnabled = false;
 		try {
-			this.field10148 = new ProgrammableModelShader(this);
-			this.field10149 = new ProgrammableSpriteShader(this);
-			this.field10115 = new ProgrammableBatchedSpriteShader(this);
-			this.field10151 = new ProgrammableParticleShader(this);
-			this.field10152 = new EnvMappedWaterShader(this, this.field10049, false);
-			this.field10153 = new EnvMappedWaterShader(this, this.field10049, true);
-			this.field10175 = new WaterfallShader(this, this.field10049);
+			this.modelShader = new ProgrammableModelShader(this);
+			this.spriteShader = new ProgrammableSpriteShader(this);
+			this.batchedSpriteShader = new ProgrammableBatchedSpriteShader(this);
+			this.particleShader = new ProgrammableParticleShader(this);
+			this.waterShader = new EnvMappedWaterShader(this, this.field10049, false);
+			this.seaWaterShader = new EnvMappedWaterShader(this, this.field10049, true);
+			this.waterfallShader = new WaterfallShader(this, this.field10049);
 		} catch (Exception var4) {
 			var4.printStackTrace();
-			this.field10148 = new FixedFunctionModelShader(this);
-			this.field10149 = new FixedFunctionSpriteShader(this);
-			this.field10115 = new FixedFunctionBatchedSpriteShader(this);
-			this.field10151 = new FixedFunctionParticleShader(this);
-			this.field10152 = null;
-			this.field10153 = null;
-			this.field10175 = null;
-			this.field10099 = true;
+			this.modelShader = new FixedFunctionModelShader(this);
+			this.spriteShader = new FixedFunctionSpriteShader(this);
+			this.batchedSpriteShader = new FixedFunctionBatchedSpriteShader(this);
+			this.particleShader = new FixedFunctionParticleShader(this);
+			this.waterShader = null;
+			this.seaWaterShader = null;
+			this.waterfallShader = null;
+			this.lightingEnabled = true;
 		}
-		if (!this.field10099) {
+		if (!this.lightingEnabled) {
 			int var2;
 			int var3;
 			if (this.renderTarget == null) {
@@ -738,33 +738,33 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.sw()V")
 	public void method16232() {
-		this.method16057(7);
+		this.enableColorWriteTest(7);
 		this.method16367();
 	}
 
 	@ObfuscatedName("afc.ss()V")
 	public final void method16367() {
-		this.method15990();
-		this.method16021();
-		this.method16233();
+		this.enableLightingAmbient();
+		this.enableLightingDiffuse();
+		this.enableLighting();
 		this.method16199();
-		this.method16307();
+		this.enableLightingView();
 		this.method16023();
-		this.method16024();
-		this.method16016();
-		this.method16017();
-		this.method15978();
-		this.method16123();
-		this.method16175();
-		this.method16059();
-		this.method16058();
+		this.enableLighting0and1();
+		this.enableDepth();
+		this.enableDepthWrite();
+		this.enableFog();
+		this.setFogParameters();
+		this.enableAlphaBlend();
+		this.enableBlend();
+		this.enableAlphaTest();
 		for (int var1 = this.maxSimutaneousTextures - 1; var1 >= 0; var1--) {
 			this.setActiveTexture(var1);
 			this.method16256();
 			this.method16052();
 			this.method16048();
 		}
-		this.method16049();
+		this.enableTextureFactor();
 		this.method15997();
 	}
 
@@ -827,7 +827,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.sk()V")
 	public final void method15974() {
-		this.field10197 = this.method16085(false);
+		this.field10197 = this.createVertexBuffer(false);
 		short var1 = 160;
 		this.field10197.allocate(var1, 32);
 		this.temporaryBuffer.clear();
@@ -872,20 +872,20 @@ public abstract class GpuRenderer extends Renderer {
 		this.temporaryBuffer.putFloat(0.0F);
 		this.temporaryBuffer.putFloat(0.0F);
 		this.field10197.upload(0, this.temporaryBuffer.position(), this.temporaryBufferAddress);
-		this.field10055 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.TEX_COORD_2 }) });
+		this.field10055 = this.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR, VertexDeclarationElementComponent.TEX_COORD_2, VertexDeclarationElementComponent.TEX_COORD_2 }) });
 	}
 
 	@ObfuscatedName("afc.si()V")
 	public final void method16125() {
-		this.field10196 = this.method16085(true);
+		this.field10196 = this.createVertexBuffer(true);
 		byte var1 = 24;
 		this.field10196.allocate(var1, 12);
-		this.field10150 = this.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.VERTEX) });
+		this.field10150 = this.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(VertexDeclarationElementComponent.VERTEX) });
 	}
 
 	@ObfuscatedName("afc.se()V")
 	public final void method15976() {
-		this.field10195 = this.method16085(false);
+		this.field10195 = this.createVertexBuffer(false);
 		this.field10195.allocate(3096, 12);
 		this.temporaryBuffer.clear();
 		this.temporaryBuffer.putFloat(0.0F);
@@ -1372,53 +1372,53 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.bq([I)V")
 	public final void method2171(int[] arg0) {
-		arg0[0] = this.field10095;
-		arg0[1] = this.field10138;
-		arg0[2] = this.field10193;
-		arg0[3] = this.field10106;
+		arg0[0] = this.left;
+		arg0[1] = this.top;
+		arg0[2] = this.right;
+		arg0[3] = this.bottom;
 	}
 
 	@ObfuscatedName("afc.bc()V")
 	public final void resetClip() {
 		if (this.renderTarget == null) {
-			this.field10106 = 0;
-			this.field10193 = 0;
-			this.field10138 = 0;
-			this.field10095 = 0;
+			this.bottom = 0;
+			this.right = 0;
+			this.top = 0;
+			this.left = 0;
 		} else {
-			this.field10138 = 0;
-			this.field10095 = 0;
-			this.field10193 = this.renderTarget.getWidth();
-			this.field10106 = this.renderTarget.getHeight();
+			this.top = 0;
+			this.left = 0;
+			this.right = this.renderTarget.getWidth();
+			this.bottom = this.renderTarget.getHeight();
 		}
 		if (this.field10182) {
 			this.field10182 = false;
-			this.method15999();
+			this.enableScissorTest();
 		}
 	}
 
 	@ObfuscatedName("afc.bi(IIII)V")
 	public final void resetBounds(int left, int top, int right, int bottom) {
-		int var5;
-		int var6;
+		int width;
+		int height;
 		if (this.renderTarget == null) {
-			var6 = 0;
-			var5 = 0;
+			height = 0;
+			width = 0;
 		} else {
-			var5 = this.renderTarget.getWidth();
-			var6 = this.renderTarget.getHeight();
+			width = this.renderTarget.getWidth();
+			height = this.renderTarget.getHeight();
 		}
-		if (left <= 0 && right >= var5 - 1 && top <= 0 && bottom >= var6 - 1) {
+		if (left <= 0 && right >= width - 1 && top <= 0 && bottom >= height - 1) {
 			this.resetClip();
 			return;
 		}
-		this.field10095 = left >= 0 ? left : 0;
-		this.field10193 = right <= var5 ? right : var5;
-		this.field10138 = top >= 0 ? top : 0;
-		this.field10106 = bottom <= var6 ? bottom : var6;
+		this.left = left >= 0 ? left : 0;
+		this.right = right <= width ? right : width;
+		this.top = top >= 0 ? top : 0;
+		this.bottom = bottom <= height ? bottom : height;
 		if (!this.field10182 && (this.field10144 || this.method16337() == GpuImageRelated.field3236)) {
 			this.field10182 = true;
-			this.method15999();
+			this.enableScissorTest();
 		}
 		if (this.field10182) {
 			this.method15955();
@@ -1427,34 +1427,34 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.bn(IIII)V")
 	public final void setBounds(int left, int top, int right, int bottom) {
-		int var5;
-		int var6;
+		int width;
+		int height;
 		if (this.renderTarget == null) {
-			var6 = 0;
-			var5 = 0;
+			height = 0;
+			width = 0;
 		} else {
-			var5 = this.renderTarget.getWidth();
-			var6 = this.renderTarget.getHeight();
+			width = this.renderTarget.getWidth();
+			height = this.renderTarget.getHeight();
 		}
 		int var7 = left >= 0 ? left : 0;
-		int var8 = right <= var5 ? right : var5;
+		int var8 = right <= width ? right : width;
 		int var9 = top >= 0 ? top : 0;
-		int var10 = bottom <= var6 ? bottom : var6;
+		int var10 = bottom <= height ? bottom : height;
 		boolean var11 = false;
-		if (this.field10095 < var7) {
-			this.field10095 = var7;
+		if (this.left < var7) {
+			this.left = var7;
 			var11 = true;
 		}
-		if (this.field10193 > var8) {
-			this.field10193 = var8;
+		if (this.right > var8) {
+			this.right = var8;
 			var11 = true;
 		}
-		if (this.field10138 < var9) {
-			this.field10138 = var9;
+		if (this.top < var9) {
+			this.top = var9;
 			var11 = true;
 		}
-		if (this.field10106 > var10) {
-			this.field10106 = var10;
+		if (this.bottom > var10) {
+			this.bottom = var10;
 			var11 = true;
 		}
 		if (!var11) {
@@ -1462,7 +1462,7 @@ public abstract class GpuRenderer extends Renderer {
 		}
 		if (!this.field10182 && (this.field10144 || this.method16337() == GpuImageRelated.field3236)) {
 			this.field10182 = true;
-			this.method15999();
+			this.enableScissorTest();
 		}
 		if (this.field10182) {
 			this.method15955();
@@ -1476,7 +1476,7 @@ public abstract class GpuRenderer extends Renderer {
 		this.method15997();
 		if (!this.field10182 && (this.field10144 || this.method16337() == GpuImageRelated.field3236)) {
 			this.field10182 = true;
-			this.method15999();
+			this.enableScissorTest();
 		}
 		if (this.field10182) {
 			this.method15955();
@@ -1701,14 +1701,14 @@ public abstract class GpuRenderer extends Renderer {
 	@ObfuscatedName("afc.dv(Z)V")
 	public final void method2219(boolean arg0) {
 		this.field10107 = arg0;
-		this.method16017();
+		this.enableDepthWrite();
 	}
 
 	@ObfuscatedName("afc.tt(Z)V")
 	public final void method16015(boolean arg0) {
 		if (this.field10044 != arg0) {
 			this.field10044 = arg0;
-			this.method16016();
+			this.enableDepth();
 			this.field10205 &= 0xFFFFFFE0;
 		}
 	}
@@ -1717,7 +1717,7 @@ public abstract class GpuRenderer extends Renderer {
 	public final void method16361(boolean arg0) {
 		if (this.field10108 != arg0) {
 			this.field10108 = arg0;
-			this.method16017();
+			this.enableDepthWrite();
 			this.field10205 &= 0xFFFFFFE0;
 		}
 	}
@@ -1819,7 +1819,7 @@ public abstract class GpuRenderer extends Renderer {
 	public final void method16118(boolean arg0) {
 		if (this.field10111 != arg0) {
 			this.field10111 = arg0;
-			this.method16233();
+			this.enableLighting();
 			this.field10205 &= 0xFFFFFFF8;
 		}
 	}
@@ -1836,7 +1836,7 @@ public abstract class GpuRenderer extends Renderer {
 	public final void setSunAmbientIntensity(float arg0) {
 		if (this.field10122 != arg0) {
 			this.field10122 = arg0;
-			this.method15990();
+			this.enableLightingAmbient();
 			this.method16023();
 		}
 	}
@@ -1854,9 +1854,9 @@ public abstract class GpuRenderer extends Renderer {
 				this.field10142 = (float) (this.field10118 & 0xFF0000) / 1.671168E7F;
 				this.field10120 = (float) (this.field10118 & 0xFF00) / 65280.0F;
 				this.field10210 = (float) (this.field10118 & 0xFF) / 255.0F;
-				this.method15990();
+				this.enableLightingAmbient();
 			}
-			this.method16021();
+			this.enableLightingDiffuse();
 		}
 		if (this.field10173[0] != arg3 || this.field10173[1] != arg4 || this.field10173[2] != arg5) {
 			this.field10173[0] = arg3;
@@ -1872,7 +1872,7 @@ public abstract class GpuRenderer extends Renderer {
 			this.field10072[0] = -this.field10114[0];
 			this.field10072[1] = -this.field10114[1];
 			this.field10072[2] = -this.field10114[2];
-			this.method16307();
+			this.enableLightingView();
 			this.field10130 = (int) (arg3 * 256.0F / arg4);
 			this.field10131 = (int) (arg5 * 256.0F / arg4);
 		}
@@ -1998,7 +1998,7 @@ public abstract class GpuRenderer extends Renderer {
 	public void method16044(int arg0) {
 		if (this.field10160 != arg0) {
 			this.field10160 = arg0;
-			this.method16049();
+			this.enableTextureFactor();
 		}
 	}
 
@@ -2013,15 +2013,15 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.vx(Lmv;)V")
-	public final void method16174(GpuRendererRelated4 arg0) {
+	public final void method16174(TextureTramsformType arg0) {
 		this.field10135[this.field10177] = arg0;
 		this.method16270();
 	}
 
 	@ObfuscatedName("afc.vb()V")
 	public final void method16048() {
-		if (this.field10135[this.field10177] != GpuRendererRelated4.field3372) {
-			this.field10135[this.field10177] = GpuRendererRelated4.field3372;
+		if (this.field10135[this.field10177] != TextureTramsformType.DISABLE) {
+			this.field10135[this.field10177] = TextureTramsformType.DISABLE;
 			this.field10162[this.field10177].setToIdentity();
 			this.method16270();
 		}
@@ -2091,17 +2091,17 @@ public abstract class GpuRenderer extends Renderer {
 			var3 = false;
 			var4 = false;
 		}
-		if (this.field10091 != var3) {
-			this.field10091 = var3;
-			this.method16058();
+		if (this.alphaTestEnabled != var3) {
+			this.alphaTestEnabled = var3;
+			this.enableAlphaTest();
 		}
-		if (this.field10176 != var4) {
-			this.field10176 = var4;
-			this.method16175();
+		if (this.alphaBlendEnabled != var4) {
+			this.alphaBlendEnabled = var4;
+			this.enableAlphaBlend();
 		}
 		if (this.field10211 != var2) {
 			this.field10211 = var2;
-			this.method16059();
+			this.enableBlend();
 		}
 		this.field10096 = arg0;
 		this.field10205 &= 0xFFFFFFE3;
@@ -2111,16 +2111,16 @@ public abstract class GpuRenderer extends Renderer {
 	public final void method16055(int arg0) {
 		if (this.field10174 != arg0) {
 			this.field10174 = arg0;
-			this.method16059();
+			this.enableBlend();
 		}
 	}
 
 	@ObfuscatedName("afc.vs(B)V")
 	public final void method16056(byte arg0) {
-		if (this.field10178 == arg0) {
+		if (this.alphaRef == arg0) {
 			return;
 		}
-		this.field10178 = arg0;
+		this.alphaRef = arg0;
 		if (arg0 == 0) {
 			this.method16055(0);
 			this.method16054(1);
@@ -2128,28 +2128,28 @@ public abstract class GpuRenderer extends Renderer {
 			this.method16055(3);
 			this.method16054(3);
 		}
-		this.method16058();
+		this.enableAlphaTest();
 	}
 
 	@ObfuscatedName("afc.vp(Z)V")
 	public final void method16061(boolean arg0) {
 		if (this.field10166 != arg0) {
 			this.field10166 = arg0;
-			this.method15978();
+			this.enableFog();
 			this.field10205 &= 0xFFFFFFE0;
 		}
 	}
 
 	@ObfuscatedName("afc.dn(III)V")
 	public final void setFog(int arg0, int arg1, int arg2) {
-		if (this.field10191 == arg0 && this.field10169 == arg1 && this.field10189 == arg2) {
+		if (this.fogDensity == arg0 && this.field10169 == arg1 && this.field10189 == arg2) {
 			return;
 		}
-		this.field10191 = arg0;
+		this.fogDensity = arg0;
 		this.field10169 = arg1;
 		this.field10189 = arg2;
 		this.method16088();
-		this.method15978();
+		this.enableFog();
 	}
 
 	@ObfuscatedName("afc.vd()V")
@@ -2157,7 +2157,7 @@ public abstract class GpuRenderer extends Renderer {
 		if (this.field10067 != null) {
 			this.field10067.method5419();
 		}
-		this.method16123();
+		this.setFogParameters();
 	}
 
 	@ObfuscatedName("afc.cs(ILch;II)V")
@@ -2170,7 +2170,7 @@ public abstract class GpuRenderer extends Renderer {
 	@ObfuscatedName("afc.bv(IIIIII)V")
 	public final void fillRectangle(int x, int y, int width, int height, int rgb, int arg5) {
 		if (this.hasMultiSample && this.field10180 != 0) {
-			this.method16294(false);
+			this.enableAntiAliasing(false);
 		}
 		if (this.field10107) {
 			this.method2219(false);
@@ -2180,7 +2180,7 @@ public abstract class GpuRenderer extends Renderer {
 			this.field10057.drawTintedScaled(x, y, width, height, 0, rgb, arg5);
 		}
 		if (this.hasMultiSample && this.field10180 != 0) {
-			this.method16294(true);
+			this.enableAntiAliasing(true);
 		}
 	}
 
@@ -2193,14 +2193,14 @@ public abstract class GpuRenderer extends Renderer {
 			var7 = -1;
 		}
 		if (this.hasMultiSample && this.field10180 != 0) {
-			this.method16294(false);
+			this.enableAntiAliasing(false);
 		}
 		this.drawLine(x, y + var7, x + var8, y + var7, rgb, arg5);
 		this.drawLine(x, y + var9 + var7, x + var8, y + var9 + var7, rgb, arg5);
 		this.drawLine(x, y, x, y + var9, rgb, arg5);
 		this.drawLine(x + var8, y, x + var8, y + var9, rgb, arg5);
 		if (this.hasMultiSample && this.field10180 != 0) {
-			this.method16294(true);
+			this.enableAntiAliasing(true);
 		}
 	}
 
@@ -2245,7 +2245,7 @@ public abstract class GpuRenderer extends Renderer {
 		var14.method5433(arg4);
 		this.method16054(arg5);
 		var14.method5421();
-		this.method16294(false);
+		this.enableAntiAliasing(false);
 		int var15 = arg8 % (arg6 + arg7);
 		float var16 = (float) arg6 * var12;
 		float var17 = (float) arg6 * var11;
@@ -2304,7 +2304,7 @@ public abstract class GpuRenderer extends Renderer {
 			var20 = var16;
 			var21 = var17;
 		}
-		this.method16294(true);
+		this.enableAntiAliasing(true);
 		var14.method5416();
 	}
 
@@ -2342,21 +2342,21 @@ public abstract class GpuRenderer extends Renderer {
 
 	@ObfuscatedName("afc.wo()V")
 	public final void method16074() {
-		this.method16120(0, this.field10196);
-		this.method16177(this.field10150);
-		this.method16077(PrimitiveType.field3406, 0, 1);
+		this.setStreamSource(0, this.field10196);
+		this.setVertexDeclaration(this.field10150);
+		this.drawPrimitive(PrimitiveType.LINELIST, 0, 1);
 	}
 
 	@ObfuscatedName("afc.wu()V")
 	public final void method16075() {
-		this.method16076(PrimitiveType.field3404, 2);
+		this.method16076(PrimitiveType.TRIANGLEFAN, 2);
 	}
 
 	@ObfuscatedName("afc.wk(Lms;I)V")
 	public final void method16076(PrimitiveType arg0, int arg1) {
-		this.method16120(0, this.field10197);
-		this.method16177(this.field10055);
-		this.method16077(arg0, 0, arg1);
+		this.setStreamSource(0, this.field10197);
+		this.setVertexDeclaration(this.field10055);
+		this.drawPrimitive(arg0, 0, arg1);
 	}
 
 	@ObfuscatedName("afc.wr()V")
@@ -2390,7 +2390,7 @@ public abstract class GpuRenderer extends Renderer {
 
 	// line 1872
 	@ObfuscatedName("afc.wv(CCCC)I")
-	public static int method16082(char arg0, char arg1, char arg2, char arg3) {
+	public static int makeFourCC(char arg0, char arg1, char arg2, char arg3) {
 		return (arg0 & 0xFF) << 0 | (arg1 & 0xFF) << 8 | (arg2 & 0xFF) << 16 | (arg3 & 0xFF) << 24;
 	}
 
@@ -2415,10 +2415,10 @@ public abstract class GpuRenderer extends Renderer {
 
 		@ObfuscatedName("mi.e()V")
 		public void method5836() {
-			this.field3412 = this.this$0.method16085(true);
-			this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
-			this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
-			this.this$0.method16065(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
+			this.field3412 = this.this$0.createVertexBuffer(true);
+			this.this$0.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
+			this.this$0.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
+			this.this$0.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
 			this.field3411 = 16;
 		}
 
@@ -2460,37 +2460,37 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract GpuTexture method15975(TextureFormat arg0, int arg1, int arg2, boolean arg3, byte[] arg4, int arg5, int arg6);
 
 	@ObfuscatedName("afc.vz()V")
-	public abstract void method15978();
+	public abstract void enableFog();
 
 	@ObfuscatedName("afc.g()Ljava/lang/String;")
 	public abstract String hardwareInfo();
 
 	@ObfuscatedName("afc.tq()V")
-	public abstract void method15990();
+	public abstract void enableLightingAmbient();
 
 	@ObfuscatedName("afc.sa()V")
 	public abstract void method15997();
 
 	@ObfuscatedName("afc.sj()V")
-	public abstract void method15999();
+	public abstract void enableScissorTest();
 
 	@ObfuscatedName("afc.ti(Lpq;)V")
 	public abstract void method16006(Matrix4x4 arg0);
 
 	@ObfuscatedName("afc.tp()V")
-	public abstract void method16016();
+	public abstract void enableDepth();
 
 	@ObfuscatedName("afc.tv()V")
-	public abstract void method16017();
+	public abstract void enableDepthWrite();
 
 	@ObfuscatedName("afc.tx()V")
-	public abstract void method16021();
+	public abstract void enableLightingDiffuse();
 
 	@ObfuscatedName("afc.tl()V")
 	public abstract void method16023();
 
 	@ObfuscatedName("afc.td()V")
-	public abstract void method16024();
+	public abstract void enableLighting0and1();
 
 	@ObfuscatedName("afc.um()V")
 	public abstract void method16025();
@@ -2517,7 +2517,7 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method16043(int arg0, TextureCombiner arg1, boolean arg2);
 
 	@ObfuscatedName("afc.vr()V")
-	public abstract void method16049();
+	public abstract void enableTextureFactor();
 
 	@ObfuscatedName("afc.vo()V")
 	public abstract void method16050();
@@ -2529,34 +2529,34 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method16052();
 
 	@ObfuscatedName("afc.vy(I)V")
-	public abstract void method16057(int arg0);
+	public abstract void enableColorWriteTest(int arg0);
 
 	@ObfuscatedName("afc.ve()V")
-	public abstract void method16058();
+	public abstract void enableAlphaTest();
 
 	@ObfuscatedName("afc.vm()V")
-	public abstract void method16059();
+	public abstract void enableBlend();
 
 	@ObfuscatedName("afc.vf([Llk;)Llo;")
-	public abstract VertexDeclaration method16065(VertexDeclarationElement[] arg0);
+	public abstract VertexDeclaration createVertexDeclaration(VertexDeclarationElement[] arg0);
 
 	@ObfuscatedName("afc.vc(Z)Lml;")
-	public abstract IndexBuffer method16067(boolean arg0);
+	public abstract IndexBuffer createIndexBuffer(boolean arg0);
 
 	@ObfuscatedName("afc.wz(Lms;II)V")
-	public abstract void method16077(PrimitiveType arg0, int arg1, int arg2);
+	public abstract void drawPrimitive(PrimitiveType arg0, int arg1, int arg2);
 
 	@ObfuscatedName("afc.wj(Lml;Lms;IIII)V")
-	public abstract void method16078(IndexBuffer arg0, PrimitiveType arg1, int arg2, int arg3, int arg4, int arg5);
+	public abstract void drawIndexedPrimitiveIB(IndexBuffer arg0, PrimitiveType arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("afc.we(Lms;IIII)V")
-	public abstract void method16079(PrimitiveType arg0, int arg1, int arg2, int arg3, int arg4);
+	public abstract void drawIndexedPrimitive(PrimitiveType arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("afc.wp(I)V")
-	public abstract void method16081(int arg0);
+	public abstract void enableFillMode(int arg0);
 
 	@ObfuscatedName("afc.vn(Z)Llr;")
-	public abstract VertexBuffer method16085(boolean arg0);
+	public abstract VertexBuffer createVertexBuffer(boolean arg0);
 
 	@ObfuscatedName("afc.uy(Lck;Ldg;II)Lmo;")
 	public abstract Texture2 method16089(TextureFormat arg0, DataType arg1, int arg2, int arg3);
@@ -2565,25 +2565,25 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract void method16091();
 
 	@ObfuscatedName("afc.wa(Lml;)V")
-	public abstract void method16102(IndexBuffer arg0);
+	public abstract void setIndices(IndexBuffer arg0);
 
 	@ObfuscatedName("afc.wn(ILlr;)V")
-	public abstract void method16120(int arg0, VertexBuffer arg1);
+	public abstract void setStreamSource(int arg0, VertexBuffer arg1);
 
 	@ObfuscatedName("afc.vh()V")
-	public abstract void method16123();
+	public abstract void setFogParameters();
 
 	@ObfuscatedName("afc.vg()V")
-	public abstract void method16175();
+	public abstract void enableAlphaBlend();
 
 	@ObfuscatedName("afc.vk(Llo;)V")
-	public abstract void method16177(VertexDeclaration arg0);
+	public abstract void setVertexDeclaration(VertexDeclaration arg0);
 
 	@ObfuscatedName("afc.uk(Lck;IIIZ[B)Lll;")
 	public abstract VolumeTexture method16197(TextureFormat arg0, int arg1, int arg2, int arg3, boolean arg4, byte[] arg5);
 
 	@ObfuscatedName("afc.tg()V")
-	public abstract void method16233();
+	public abstract void enableLighting();
 
 	@ObfuscatedName("afc.vw()V")
 	public abstract void method16256();
@@ -2592,8 +2592,8 @@ public abstract class GpuRenderer extends Renderer {
 	public abstract boolean method16289(TextureFormat arg0, DataType arg1);
 
 	@ObfuscatedName("afc.vj(Z)V")
-	public abstract void method16294(boolean arg0);
+	public abstract void enableAntiAliasing(boolean arg0);
 
 	@ObfuscatedName("afc.tk()V")
-	public abstract void method16307();
+	public abstract void enableLightingView();
 }

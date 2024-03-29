@@ -133,6 +133,6 @@ public class WaterfallShader extends WaterShader {
 		this.shader.setUniform4fv(this.uGenerationPlaneUniform, new Vector4(this.uGenerationPlane[0], this.uGenerationPlane[1], this.uGenerationPlane[2], this.uGenerationPlane[3]));
 		this.shader.setUniform4fv(this.vGenerationPlaneUniform, new Vector4(this.vGenerationPlane[0], this.vGenerationPlane[1], this.vGenerationPlane[2], this.vGenerationPlane[3]));
 		this.shader.setUniform4fv(this.timeUniform, new Vector4(this.time, 0.0F, 0.0F, 0.0F));
-		this.gpuRenderer.method16079(PrimitiveType.field3403, this.field12116, this.field12110, this.field12115, this.field12117);
+		this.gpuRenderer.drawIndexedPrimitive(PrimitiveType.TRIANGLELIST, this.field12116, this.field12110, this.field12115, this.field12117);
 	}
 }

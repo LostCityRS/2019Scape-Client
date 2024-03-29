@@ -33,13 +33,13 @@ public class DataType {
 	public static final DataType FLOAT_32 = new DataType(0, 4);
 
 	@ObfuscatedName("dg.p")
-	public final int field1650;
+	public final int index;
 
 	@ObfuscatedName("dg.d")
 	public final int field1652;
 
-	public DataType(int arg0, int arg1) {
-		this.field1650 = arg0;
+	public DataType(int index, int arg1) {
+		this.index = index;
 		this.field1652 = arg1;
 	}
 }

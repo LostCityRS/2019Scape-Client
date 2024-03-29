@@ -86,7 +86,7 @@ public class GpuFont extends Font {
 		}
 		this.field10247 = arg0.method16204(this.fontMetrics.field8571, this.fontMetrics.field8572, false, var5);
 		this.field10247.method5824(this.fontMetrics.field8570 == 1 ? GpuTextureRelated.field3322 : GpuTextureRelated.field3323);
-		this.field10246 = arg0.method16085(false);
+		this.field10246 = arg0.createVertexBuffer(false);
 		this.field10246.allocate(20480, 20);
 		ByteBuffer var29 = this.field10244.temporaryBuffer;
 		var29.clear();
@@ -136,7 +136,7 @@ public class GpuFont extends Font {
 		}
 		this.field10244.method15981();
 		this.field10244.method16054(1);
-		SpriteShader var9 = this.field10244.field10149;
+		SpriteShader var9 = this.field10244.spriteShader;
 		var9.field2997 = this.field10247;
 		var9.method5050(0, arg3);
 		float var10 = (float) this.field10244.getRenderTarget().getWidth();

@@ -152,7 +152,7 @@ public class GpuFloorModelRelated1 extends Node {
 
 	@ObfuscatedName("akh.f(I)V")
 	public void method17766(int arg0) {
-		this.field11405 = this.field11409.method16085(false);
+		this.field11405 = this.field11409.createVertexBuffer(false);
 		this.field11405.allocate(arg0 * 4, 4);
 		this.field11405.upload(0, arg0 * 4, this.field11411);
 		this.field11410.clear();

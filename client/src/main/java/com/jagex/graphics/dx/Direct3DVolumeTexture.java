@@ -27,7 +27,7 @@ public class Direct3DVolumeTexture extends Direct3DBaseTexture implements Volume
 		this.field10613 = arg2;
 		this.field10614 = arg3;
 		this.field10615 = arg4;
-		this.field4217 = IDirect3DDevice.CreateVolumeTexture(this.renderer.device, arg2, arg3, arg4, 1, 0, Direct3DRenderer.method19011(arg1, this.field4218), 1);
+		this.field4217 = IDirect3DDevice.CreateVolumeTexture(this.renderer.device, arg2, arg3, arg4, 1, 0, Direct3DRenderer.getD3DFormat(arg1, this.field4218), 1);
 		this.renderer.ensureTemporaryBufferCapacity(this.field10614 * this.field10613 * arg1.id);
 		ByteBuffer var8 = this.renderer.temporaryBuffer;
 		var8.clear();
