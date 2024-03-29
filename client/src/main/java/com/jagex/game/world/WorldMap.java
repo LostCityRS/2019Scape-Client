@@ -877,9 +877,9 @@ public class WorldMap {
 					throw new RuntimeException();
 				}
 				if (var41.getWidth() == var30 && var41.getHeight() == var37) {
-					var41.method1439(var31, var40);
+					var41.drawSprite(var31, var40);
 				} else {
-					var41.method1474(var31, var40, var30, var37);
+					var41.drawTintedScaled(var31, var40, var30, var37);
 				}
 			}
 		}
@@ -1181,7 +1181,7 @@ public class WorldMap {
 				Sprite var11 = var10.method15057(arg0, var8.mapsceneiconrotate ? arg6[var7] >> 6 & 0x3 : 0, var8.mapsceneiconmirror ? var8.mirror : false);
 				int[] var12 = var10.method15058(arg0, var8.mapsceneiconrotate ? arg6[var7] >> 6 & 0x3 : 0, var8.mapsceneiconmirror ? var8.mirror : false);
 				if (var11 != null) {
-					int var13 = var11.method1434();
+					int var13 = var11.getX();
 					int var14 = var11.method1436();
 					int var15 = arg2 * var13 / 64 >> 2;
 					int var16 = arg2 * var14 / 64 >> 2;
@@ -1264,9 +1264,9 @@ public class WorldMap {
 		WorldMapRelated2.method2053(arg0, var3, arg2.field2398);
 		if (arg2.field2399 <= 0) {
 			for (int var22 = 0; var22 < var3.length / 2 - 1; var22++) {
-				arg0.method2374(var3[var22 * 2], var3[var22 * 2 + 1], var3[(var22 + 1) * 2], var3[(var22 + 1) * 2 + 1], arg2.field2406[arg2.field2407[var22] & 0xFF]);
+				arg0.drawLine(var3[var22 * 2], var3[var22 * 2 + 1], var3[(var22 + 1) * 2], var3[(var22 + 1) * 2 + 1], arg2.field2406[arg2.field2407[var22] & 0xFF]);
 			}
-			arg0.method2374(var3[var3.length - 2], var3[var3.length - 1], var3[0], var3[1], arg2.field2406[arg2.field2407[arg2.field2407.length - 1] & 0xFF]);
+			arg0.drawLine(var3[var3.length - 2], var3[var3.length - 1], var3[0], var3[1], arg2.field2406[arg2.field2407[arg2.field2407.length - 1] & 0xFF]);
 			return;
 		}
 		for (int var7 = 0; var7 < var3.length / 2 - 1; var7++) {

@@ -109,7 +109,7 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 			Model var5 = this.field11133.method8238(arg0, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
-			return arg0.method2191(arg1, arg2, this.method10533(), var4.clickbox);
+			return arg0.pick(arg1, arg2, this.method10533(), var4.clickbox);
 		}
 	}
 

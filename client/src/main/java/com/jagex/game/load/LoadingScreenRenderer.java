@@ -153,18 +153,18 @@ public class LoadingScreenRenderer implements Runnable {
 							int var9 = var7 << 24 | 0xFFFFFF;
 							Client.method8024();
 							Client.renderer.method2475(1, 0);
-							Sprite var10 = Client.renderer.method2365(GameShell.canvasWid, GameShell.canvasHei, true);
+							Sprite var10 = Client.renderer.createSprite(GameShell.canvasWid, GameShell.canvasHei, true);
 							Framebuffer var11 = Client.renderer.createFramebuffer();
 							var11.method15439(0, var10.method1437());
 							Client.renderer.method2142(var11);
 							this.field2880.method4888(true);
 							Client.renderer.method2143(var11);
-							var10.method1443(0, 0, 0, var9, 1);
+							var10.drawSprite(0, 0, 0, var9, 1);
 							Client.renderer.method2142(var11);
 							Client.renderer.method2475(1, 0);
 							this.field2883.method4888(true);
 							Client.renderer.method2143(var11);
-							var10.method1443(0, 0, 0, var8, 1);
+							var10.drawSprite(0, 0, 0, var8, 1);
 						}
 						try {
 							if (Client.renderer != null && !(this.field2883 instanceof PreLoadingScreen)) {

@@ -76,7 +76,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.k()I")
-	public int method1434() {
+	public int getX() {
 		return this.field9396.field11900 + this.field9391 + this.field9397;
 	}
 
@@ -177,13 +177,13 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.r(IIIII)V")
-	public void method1443(int arg0, int arg1, int arg2, int arg3, int arg4) {
+	public void drawSprite(int x, int y, int arg2, int rgb, int arg4) {
 		this.field9396.method1082(false);
 		this.field9399.method15772();
 		this.field9399.method15791(arg4);
-		OpenGL.glColor4ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3, (byte) (arg3 >> 24));
-		int var6 = this.field9391 + arg0;
-		int var7 = this.field9392 + arg1;
+		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
+		int var6 = this.field9391 + x;
+		int var7 = this.field9392 + y;
 		if (this.field9393 == null) {
 			this.field9399.method15777(this.field9396);
 			this.field9399.method15778(arg2);
@@ -269,7 +269,7 @@ public class LegacyOpenGLSprite extends Sprite {
 		this.field9399.method15791(arg6);
 		OpenGL.glColor4ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5, (byte) (arg5 >> 24));
 		if (this.field9395) {
-			float var9 = (float) arg2 / (float) this.method1434();
+			float var9 = (float) arg2 / (float) this.getX();
 			float var10 = (float) arg3 / (float) this.method1436();
 			float var11 = (float) this.field9391 * var9 + (float) arg0;
 			float var12 = (float) this.field9392 * var10 + (float) arg1;
@@ -368,7 +368,7 @@ public class LegacyOpenGLSprite extends Sprite {
 		}
 		OpenGL.glPushMatrix();
 		OpenGL.glTranslatef((float) this.field9391, (float) this.field9392, 0.0F);
-		int var12 = this.method1434();
+		int var12 = this.getX();
 		int var13 = this.method1436();
 		int var14 = this.field9396.field11902 + arg1;
 		OpenGL.glBegin(7);
@@ -437,7 +437,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	@ObfuscatedName("aei.ag(FFFFFFIIII)V")
 	public void method1433(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, int arg7, int arg8, int arg9) {
 		if (this.field9395) {
-			float var11 = (float) this.method1434();
+			float var11 = (float) this.getX();
 			float var12 = (float) this.method1436();
 			float var13 = (arg2 - arg0) / var11;
 			float var14 = (arg3 - arg1) / var11;
@@ -482,7 +482,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9) {
 		LegacyGraphicRelated var11 = ((LegacyGraphicRelated2) arg7).field9416;
 		if (this.field9395) {
-			float var12 = (float) this.method1434();
+			float var12 = (float) this.getX();
 			float var13 = (float) this.method1436();
 			float var14 = (arg2 - arg0) / var12;
 			float var15 = (arg3 - arg1) / var12;

@@ -413,7 +413,7 @@ public class ClientWorldMap extends WorldMap {
 		if (Client.field10794) {
 			int var13 = arg1 + arg3 - 5;
 			int var14 = arg2 + arg4 - 8;
-			DefaultSprites.p12FullFont.method2682("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
+			DefaultSprites.p12FullFont.drawStringRight("Fps: " + GameShell.fps + " (" + GameShell.fpsAverage + " ms)", var13, var14, 16776960, -1);
 			int var18 = var14 - 15;
 			Runtime var15 = Runtime.getRuntime();
 			int var16 = (int) ((var15.totalMemory() - var15.freeMemory()) / 1024L);
@@ -421,7 +421,7 @@ public class ClientWorldMap extends WorldMap {
 			if (var16 > 65536) {
 				var17 = 16711680;
 			}
-			DefaultSprites.p12FullFont.method2682("Mem:" + var16 + "k", var13, var18, var17, -1);
+			DefaultSprites.p12FullFont.drawStringRight("Mem:" + var16 + "k", var13, var18, var17, -1);
 			var14 = var18 - 15;
 		}
 		field6831.clean(5);
@@ -514,16 +514,16 @@ public class ClientWorldMap extends WorldMap {
 			if (var9 != null) {
 				switch(arg2.field2365.index) {
 					case 0:
-						var10 = arg1.field11449 - var9.method1434();
+						var10 = arg1.field11449 - var9.getX();
 						var11 = arg1.field11449;
 						break;
 					case 1:
 						var10 = arg1.field11449;
-						var11 = arg1.field11449 + var9.method1434();
+						var11 = arg1.field11449 + var9.getX();
 						break;
 					case 2:
-						var10 = arg1.field11449 - (var9.method1434() + 1 >> 1);
-						var11 = arg1.field11449 + (var9.method1434() + 1 >> 1);
+						var10 = arg1.field11449 - (var9.getX() + 1 >> 1);
+						var11 = arg1.field11449 + (var9.getX() + 1 >> 1);
 				}
 				switch(arg2.field2405.index) {
 					case 0:
@@ -567,8 +567,8 @@ public class ClientWorldMap extends WorldMap {
 		if (arg2.text != null) {
 			method2678(arg2.textSize);
 			if (field717 != null) {
-				var22 = field10471.method14545(arg2.text, GameShell.canvasWid, 0, null);
-				var17 = field10471.method14551(arg2.text, GameShell.canvasWid, null);
+				var22 = field10471.paraheight(arg2.text, GameShell.canvasWid, 0, null);
+				var17 = field10471.parawidth(arg2.text, GameShell.canvasWid, null);
 				var15 = arg2.field2410 * (WorldMap.field6851 - WorldMap.field6801) / (WorldMap.field6847 - WorldMap.field6845) + (arg1.field11449 - var17 / 2);
 				int var23 = arg1.field11451 - arg2.field2394 * (WorldMap.field6852 - WorldMap.field6837) / (WorldMap.field6846 - WorldMap.field6848);
 				if (var9 == null) {
@@ -609,14 +609,14 @@ public class ClientWorldMap extends WorldMap {
 				case 0:
 					var24 = var9.getWidth();
 					var25 = (var9.getWidth() + 1) / 2;
-					var26 = var9.method1434();
+					var26 = var9.getX();
 					break;
 				case 1:
 					var25 = -(var9.getWidth() + 1) / 2;
 					break;
 				case 2:
 					var24 = var9.getWidth() / 2;
-					var26 = var9.method1434() >> 1;
+					var26 = var9.getX() >> 1;
 			}
 			switch(arg2.field2405.index) {
 				case 0:
@@ -644,11 +644,11 @@ public class ClientWorldMap extends WorldMap {
 				}
 				int var32 = var31 << 24 | 0xFFFF00;
 				if (arg0 instanceof GpuRenderer) {
-					arg0.method2301(arg1.field11449 - var24 - 7, arg1.field11451 - var27 - 7, var9.getWidth() + 14, var9.getWidth() + 14, var32);
-					arg0.method2301(arg1.field11449 - var24 - 5, arg1.field11451 - var27 - 5, var9.getWidth() + 10, var9.getWidth() + 10, var32);
-					arg0.method2301(arg1.field11449 - var24 - 3, arg1.field11451 - var27 - 3, var9.getWidth() + 6, var9.getWidth() + 6, var32);
-					arg0.method2301(arg1.field11449 - var24 - 1, arg1.field11451 - var27 - 1, var9.getWidth() + 2, var9.getWidth() + 2, var32);
-					arg0.method2301(arg1.field11449 - var24, arg1.field11451 - var27, var9.getWidth(), var9.getWidth(), var32);
+					arg0.fillRectangle(arg1.field11449 - var24 - 7, arg1.field11451 - var27 - 7, var9.getWidth() + 14, var9.getWidth() + 14, var32);
+					arg0.fillRectangle(arg1.field11449 - var24 - 5, arg1.field11451 - var27 - 5, var9.getWidth() + 10, var9.getWidth() + 10, var32);
+					arg0.fillRectangle(arg1.field11449 - var24 - 3, arg1.field11451 - var27 - 3, var9.getWidth() + 6, var9.getWidth() + 6, var32);
+					arg0.fillRectangle(arg1.field11449 - var24 - 1, arg1.field11451 - var27 - 1, var9.getWidth() + 2, var9.getWidth() + 2, var32);
+					arg0.fillRectangle(arg1.field11449 - var24, arg1.field11451 - var27, var9.getWidth(), var9.getWidth(), var32);
 				} else {
 					arg0.method2175(arg1.field11449 - var25, arg1.field11451 - var28, var9.getWidth() / 2 + 7, var32);
 					arg0.method2175(arg1.field11449 - var25, arg1.field11451 - var28 - var28 == 0 ? 0 : 1, var9.getWidth() / 2 + 5, var32);
@@ -657,7 +657,7 @@ public class ClientWorldMap extends WorldMap {
 					arg0.method2175(arg1.field11449 - var25, arg1.field11451 - var28 - var28 == 0 ? 0 : 1, var9.getWidth() / 2, var32);
 				}
 			}
-			var9.method1439(arg1.field11449 - var26, arg1.field11451 - var29);
+			var9.drawSprite(arg1.field11449 - var26, arg1.field11451 - var29);
 			int var33 = 0;
 			int var34 = 0;
 			if (var30 != null && var14 != null) {
@@ -666,10 +666,10 @@ public class ClientWorldMap extends WorldMap {
 					default:
 						break;
 					case 1:
-						var33 = var14.method1434();
+						var33 = var14.getX();
 						break;
 					case 2:
-						var33 = var14.method1434() >> 1;
+						var33 = var14.getX() >> 1;
 				}
 				switch(arg2.field2405.index) {
 					case 0:
@@ -687,7 +687,7 @@ public class ClientWorldMap extends WorldMap {
 					var35 = var30.field619 * 255 / field11664;
 				}
 				int var36 = var35 << 24 | 0xFFFF00;
-				var14.method1443(arg1.field11449 - var33, arg1.field11451 - var34, 0, var36, 1);
+				var14.drawSprite(arg1.field11449 - var33, arg1.field11451 - var34, 0, var36, 1);
 			}
 		}
 		if (arg2.text != null && field717 != null) {
@@ -724,8 +724,8 @@ public class ClientWorldMap extends WorldMap {
 		int var8 = 0;
 		int var9 = 0;
 		if (arg2.text != null) {
-			var9 = field10471.method14545(arg2.text, GameShell.canvasWid, 0, null);
-			var8 = field10471.method14551(arg2.text, GameShell.canvasWid, null);
+			var9 = field10471.paraheight(arg2.text, GameShell.canvasWid, 0, null);
+			var8 = field10471.parawidth(arg2.text, GameShell.canvasWid, null);
 		}
 		int var10 = var4 / 2 + arg1.field11449;
 		int var11 = arg1.field11451;
@@ -755,12 +755,12 @@ public class ClientWorldMap extends WorldMap {
 			var15 = var8 + var13 + 10;
 			var16 = var9 + var11 + 3;
 			if (arg2.field2377 != 0) {
-				arg0.method2301(var13, var11, var15 - var13, var16 - var11, arg2.field2377);
+				arg0.fillRectangle(var13, var11, var15 - var13, var16 - var11, arg2.field2377);
 			}
 			if (arg2.field2378 != 0) {
-				arg0.method2173(var13, var11, var15 - var13, var16 - var11, arg2.field2378);
+				arg0.drawRectangle(var13, var11, var15 - var13, var16 - var11, arg2.field2378);
 			}
-			field717.method2720(arg2.text, var10, var11, var8, var9, arg2.field2366 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
+			field717.drawStringTaggable(arg2.text, var10, var11, var8, var9, arg2.field2366 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
 		}
 		if (arg2.sprite == -1 && arg2.text == null) {
 			return;
@@ -812,22 +812,22 @@ public class ClientWorldMap extends WorldMap {
 		int var7 = arg3 - 5;
 		int var8 = arg4 + 2;
 		if (arg2.field2377 != 0) {
-			arg0.method2301(var7, var8, arg6 + 10, arg4 + arg5 - var8 + 1, arg2.field2377);
+			arg0.fillRectangle(var7, var8, arg6 + 10, arg4 + arg5 - var8 + 1, arg2.field2377);
 		}
 		if (arg2.field2378 != 0) {
-			arg0.method2173(var7, var8, arg6 + 10, arg4 + arg5 - var8 + 1, arg2.field2378);
+			arg0.drawRectangle(var7, var8, arg6 + 10, arg4 + arg5 - var8 + 1, arg2.field2378);
 		}
 		int var9 = arg2.field2366;
 		if (arg1.field11450 && arg2.field2372 != -1) {
 			var9 = arg2.field2372;
 		}
-		field717.method2720(arg2.text, arg3, arg4, arg6, arg5, var9 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
+		field717.drawStringTaggable(arg2.text, arg3, arg4, arg6, arg5, var9 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
 	}
 
 	@ObfuscatedName("gc.eu(Ldh;IIIIB)V")
 	public static final void method3549(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		arg0.resetBounds(arg1, arg2, arg1 + arg3, arg2 + arg4);
-		arg0.method2301(arg1, arg2, arg3, arg4, -16777216);
+		arg0.fillRectangle(arg1, arg2, arg3, arg4, -16777216);
 		if (loading < 100) {
 			return;
 		}
@@ -848,7 +848,7 @@ public class ClientWorldMap extends WorldMap {
 			arg0.method2202();
 			field7241 = arg0.method2314(var8, var9, var6, var7, true);
 		}
-		field7241.method1439(var8, var9);
+		field7241.drawSprite(var8, var9);
 		int var10 = field3121 * var6 / field6812;
 		int var11 = field4603 * var7 / field6810;
 		int var12 = field2606 * var6 / field6812 + var8;
@@ -875,7 +875,7 @@ public class ClientWorldMap extends WorldMap {
 					}
 					int var19 = var15.field11448 * var6 / field6812 + var8;
 					int var20 = (field6810 - var15.field11452) * var7 / field6810 + var9;
-					arg0.method2301(var19 - 2, var20 - 2, 4, 4, var18 << 24 | 0xFFFF00);
+					arg0.fillRectangle(var19 - 2, var20 - 2, 4, 4, var18 << 24 | 0xFFFF00);
 				}
 			}
 		}

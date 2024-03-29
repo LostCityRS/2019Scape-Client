@@ -51,12 +51,12 @@ public class LoadingScreenRelated6 extends LoadingScreenProgressDisplay {
 		int[] var4 = new int[4];
 		Client.renderer.method2171(var4);
 		Client.renderer.resetBounds(arg1, arg2, this.field3027.field3163 + arg1, this.field3027.field3160 + arg2);
-		int var5 = this.field10539.method1434();
+		int var5 = this.field10539.getX();
 		int var6 = this.field10539.method1436();
-		int var7 = this.field10542.method1434();
+		int var7 = this.field10542.getX();
 		int var8 = this.field10542.method1436();
-		this.field10539.method1439(arg1, (this.field3027.field3160 - var6) / 2 + arg2);
-		this.field10542.method1439(this.field3027.field3163 + arg1 - var7, (this.field3027.field3160 - var8) / 2 + arg2);
+		this.field10539.drawSprite(arg1, (this.field3027.field3160 - var6) / 2 + arg2);
+		this.field10542.drawSprite(this.field3027.field3163 + arg1 - var7, (this.field3027.field3160 - var8) / 2 + arg2);
 		Client.renderer.resetBounds(arg1, arg2, this.field3027.field3163 + arg1, arg2 + this.field10541.method1436());
 		this.field10541.method1448(arg1 + var5, arg2, this.field3027.field3163 - var5 - var7, this.field3027.field3160);
 		int var9 = this.field10544.method1436();
@@ -67,8 +67,8 @@ public class LoadingScreenRelated6 extends LoadingScreenProgressDisplay {
 
 	@ObfuscatedName("ahb.p(ZIII)V")
 	public void method5122(boolean arg0, int arg1, int arg2) {
-		int var4 = arg1 + this.field10539.method1434();
-		int var5 = this.field3027.field3163 + arg1 - this.field10542.method1434();
+		int var4 = arg1 + this.field10539.getX();
+		int var5 = this.field3027.field3163 + arg1 - this.field10542.getX();
 		int var6 = arg2 + this.field10541.method1436();
 		int var7 = this.field3027.field3160 + arg2 - this.field10544.method1436();
 		int var8 = var5 - var4;

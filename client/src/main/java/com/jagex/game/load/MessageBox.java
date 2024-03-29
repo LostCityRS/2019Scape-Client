@@ -132,8 +132,8 @@ public class MessageBox {
 		if (field9262 && var5) {
 			FontMetrics var6 = field8851;
 			Font var7 = arg2.createFont(var6, field716, true);
-			int var8 = var6.method14551(arg0, 250, null);
-			int var9 = var6.method14545(arg0, 250, var6.field8566, null);
+			int var8 = var6.parawidth(arg0, 250, null);
+			int var9 = var6.paraheight(arg0, 250, var6.field8566, null);
 			int var10 = field710.getWidth();
 			int var11 = var10 + 4;
 			int var12 = var11 * 2 + var8;
@@ -147,13 +147,13 @@ public class MessageBox {
 			int var14 = field709.method5382(var12, Client.frameWidth) + field711;
 			int var15 = field715.method5375(var13, Client.frameHeight) + field621;
 			arg2.createSprite(field4963, false).method1449(var14 + field714.getWidth(), var15 + field714.getHeight(), var12 - field714.getWidth() * 2, var13 - field714.getHeight() * 2, 1, -1, 0);
-			arg2.createSprite(field714, true).method1439(var14, var15);
+			arg2.createSprite(field714, true).drawSprite(var14, var15);
 			field714.method2601();
-			arg2.createSprite(field714, true).method1439(var12 + var14 - var10, var15);
+			arg2.createSprite(field714, true).drawSprite(var12 + var14 - var10, var15);
 			field714.method2602();
-			arg2.createSprite(field714, true).method1439(var12 + var14 - var10, var13 + var15 - var10);
+			arg2.createSprite(field714, true).drawSprite(var12 + var14 - var10, var13 + var15 - var10);
 			field714.method2601();
-			arg2.createSprite(field714, true).method1439(var14, var13 + var15 - var10);
+			arg2.createSprite(field714, true).drawSprite(var14, var13 + var15 - var10);
 			field714.method2602();
 			arg2.createSprite(field710, true).method1448(var14, var15 + field714.getHeight(), var10, var13 - field714.getHeight() * 2);
 			field710.method2588();
@@ -163,17 +163,17 @@ public class MessageBox {
 			field710.method2588();
 			arg2.createSprite(field710, true).method1448(var14 + field714.getWidth(), var13 + var15 - var10, var12 - field714.getWidth() * 2, var10);
 			field710.method2588();
-			var7.method2720(arg0, var11 + var14, var11 + var15, var12 - var11 * 2, var13 - var11 * 2, field627 | 0xFF000000, -1, 1, 1, 0, null, null, null, 0, 0);
+			var7.drawStringTaggable(arg0, var11 + var14, var11 + var15, var12 - var11 * 2, var13 - var11 * 2, field627 | 0xFF000000, -1, 1, 1, 0, null, null, null, 0, 0);
 			Client.method3066(var14, var15, var12, var13);
 		} else {
-			int var16 = arg4.method14551(arg0, 250, null);
-			int var17 = arg4.method14538(arg0, 250, null) * 13;
+			int var16 = arg4.parawidth(arg0, 250, null);
+			int var17 = arg4.paraheight(arg0, 250, null) * 13;
 			byte var18 = 4;
 			int var19 = var18 + 6;
 			int var20 = var18 + 6;
 			arg2.fillRectangle(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18, -16777216, 0);
 			arg2.drawRectangle(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18, -1, 0);
-			arg3.method2720(arg0, var19, var20, var16, var17, -1, -1, 1, 1, 0, null, null, null, 0, 0);
+			arg3.drawStringTaggable(arg0, var19, var20, var16, var17, -1, -1, 1, 1, 0, null, null, null, 0, 0);
 			Client.method3066(var19 - var18, var20 - var18, var16 + var18 + var18, var17 + var18 + var18);
 		}
 		if (!arg1) {

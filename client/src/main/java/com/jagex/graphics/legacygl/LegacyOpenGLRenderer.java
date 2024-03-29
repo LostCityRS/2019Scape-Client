@@ -1163,7 +1163,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		}
 		this.method2142(this.field10024);
 		this.method2475(1, -16777216);
-		this.field9854.method1474(this.field1611, this.field1618, this.field1619, this.field1610);
+		this.field9854.drawTintedScaled(this.field1611, this.field1618, this.field1619, this.field1610);
 		OpenGL.glBindBufferARB(35051, this.field10025[this.field10029]);
 		OpenGL.glReadPixelsub(0, 0, this.field1615, this.field1588, 32993, 5121, null, 0);
 		OpenGL.glBindBufferARB(35051, 0);
@@ -1211,7 +1211,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 			}
 			this.method2142(this.field10024);
 			this.method2475(1, -16777216);
-			this.field9854.method1474(this.field1611, this.field1618, this.field1619, this.field1610);
+			this.field9854.drawTintedScaled(this.field1611, this.field1618, this.field1619, this.field1610);
 			this.field9975.download(0, 0, arg0, arg1, arg2, arg3, 0, arg0);
 			this.method2143(this.field10024);
 			return 0L;
@@ -1309,14 +1309,14 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.bz(IIIIII)V")
-	public void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		float var7 = (float) arg0 + 0.35F;
-		float var8 = (float) arg1 + 0.35F;
-		float var9 = (float) arg2 + var7 - 1.0F;
-		float var10 = (float) arg3 + var8 - 1.0F;
+	public void drawRectangle(int x, int y, int width, int height, int rgb, int arg5) {
+		float var7 = (float) x + 0.35F;
+		float var8 = (float) y + 0.35F;
+		float var9 = (float) width + var7 - 1.0F;
+		float var10 = (float) height + var8 - 1.0F;
 		this.method15771();
 		this.method15791(arg5);
-		OpenGL.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, (byte) (arg4 >> 24));
+		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
 		if (this.field9988) {
 			OpenGL.glDisable(32925);
 		}
@@ -1332,14 +1332,14 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.bv(IIIIII)V")
-	public void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		float var7 = (float) arg0 + 0.35F;
-		float var8 = (float) arg1 + 0.35F;
-		float var9 = (float) arg2 + var7;
-		float var10 = (float) arg3 + var8;
+	public void fillRectangle(int x, int y, int width, int height, int rgb, int arg5) {
+		float var7 = (float) x + 0.35F;
+		float var8 = (float) y + 0.35F;
+		float var9 = (float) width + var7;
+		float var10 = (float) height + var8;
 		this.method15771();
 		this.method15791(arg5);
-		OpenGL.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, (byte) (arg4 >> 24));
+		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
 		if (this.field9988) {
 			OpenGL.glDisable(32925);
 		}
@@ -1416,37 +1416,37 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.ba(IIIII)V")
-	public void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
+	public void drawHorizontalLine(int x, int y, int width, int rgb, int arg4) {
 		this.method15771();
 		this.method15791(arg4);
-		float var6 = (float) arg0 + 0.35F;
-		float var7 = (float) arg1 + 0.35F;
-		OpenGL.glColor4ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3, (byte) (arg3 >> 24));
+		float var6 = (float) x + 0.35F;
+		float var7 = (float) y + 0.35F;
+		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
 		OpenGL.glBegin(1);
 		OpenGL.glVertex2f(var6, var7);
-		OpenGL.glVertex2f((float) arg2 + var6, var7);
+		OpenGL.glVertex2f((float) width + var6, var7);
 		OpenGL.glEnd();
 	}
 
 	@ObfuscatedName("afa.bp(IIIII)V")
-	public void drawVerticalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
+	public void drawVerticalLine(int x1, int y1, int x2, int y2, int arg4) {
 		this.method15771();
 		this.method15791(arg4);
-		float var6 = (float) arg0 + 0.35F;
-		float var7 = (float) arg1 + 0.35F;
-		OpenGL.glColor4ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3, (byte) (arg3 >> 24));
+		float var6 = (float) x1 + 0.35F;
+		float var7 = (float) y1 + 0.35F;
+		OpenGL.glColor4ub((byte) (y2 >> 16), (byte) (y2 >> 8), (byte) y2, (byte) (y2 >> 24));
 		OpenGL.glBegin(1);
 		OpenGL.glVertex2f(var6, var7);
-		OpenGL.glVertex2f(var6, (float) arg2 + var7);
+		OpenGL.glVertex2f(var6, (float) x2 + var7);
 		OpenGL.glEnd();
 	}
 
 	@ObfuscatedName("afa.bj(IIIIII)V")
-	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5) {
 		this.method15771();
 		this.method15791(arg5);
-		float var7 = (float) arg2 - (float) arg0;
-		float var8 = (float) arg3 - (float) arg1;
+		float var7 = (float) x2 - (float) x1;
+		float var8 = (float) y2 - (float) y1;
 		float var9;
 		if (var7 == 0.0F && var8 == 0.0F) {
 			var9 = 1.0F;
@@ -1455,10 +1455,10 @@ public class LegacyOpenGLRenderer extends Renderer {
 			var9 = var7 * var10;
 			var8 *= var10;
 		}
-		OpenGL.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, (byte) (arg4 >> 24));
+		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
 		OpenGL.glBegin(1);
-		OpenGL.glVertex2f((float) arg0 + 0.35F, (float) arg1 + 0.35F);
-		OpenGL.glVertex2f((float) arg2 + var9 + 0.35F, (float) arg3 + var8 + 0.35F);
+		OpenGL.glVertex2f((float) x1 + 0.35F, (float) y1 + 0.35F);
+		OpenGL.glVertex2f((float) x2 + var9 + 0.35F, (float) y2 + var8 + 0.35F);
 		OpenGL.glEnd();
 	}
 
@@ -1645,9 +1645,9 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.ce(IIIIIII)V")
-	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5, int arg6) {
 		OpenGL.glLineWidth((float) arg5);
-		this.drawLine(arg0, arg1, arg2, arg3, arg4, arg6);
+		this.drawLine(x1, y1, x2, y2, rgb, arg6);
 		OpenGL.glLineWidth(1.0F);
 	}
 
@@ -1983,43 +1983,43 @@ public class LegacyOpenGLRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afa.bi(IIII)V")
-	public final void resetBounds(int arg0, int arg1, int arg2, int arg3) {
+	public final void resetBounds(int left, int top, int right, int bottom) {
 		if (this.renderTarget == null) {
 			return;
 		}
-		if (arg0 < 0) {
-			arg0 = 0;
+		if (left < 0) {
+			left = 0;
 		}
-		if (arg2 > this.renderTarget.getWidth()) {
-			arg2 = this.renderTarget.getWidth();
+		if (right > this.renderTarget.getWidth()) {
+			right = this.renderTarget.getWidth();
 		}
-		if (arg1 < 0) {
-			arg1 = 0;
+		if (top < 0) {
+			top = 0;
 		}
-		if (arg3 > this.renderTarget.getHeight()) {
-			arg3 = this.renderTarget.getHeight();
+		if (bottom > this.renderTarget.getHeight()) {
+			bottom = this.renderTarget.getHeight();
 		}
-		this.field9927 = arg0;
-		this.field9925 = arg1;
-		this.field9928 = arg2;
-		this.field9926 = arg3;
+		this.field9927 = left;
+		this.field9925 = top;
+		this.field9928 = right;
+		this.field9926 = bottom;
 		OpenGL.glEnable(3089);
 		this.method15743();
 	}
 
 	@ObfuscatedName("afa.bn(IIII)V")
-	public final void setBounds(int arg0, int arg1, int arg2, int arg3) {
-		if (this.field9927 < arg0) {
-			this.field9927 = arg0;
+	public final void setBounds(int left, int top, int right, int bottom) {
+		if (this.field9927 < left) {
+			this.field9927 = left;
 		}
-		if (this.field9928 > arg2) {
-			this.field9928 = arg2;
+		if (this.field9928 > right) {
+			this.field9928 = right;
 		}
-		if (this.field9925 < arg1) {
-			this.field9925 = arg1;
+		if (this.field9925 < top) {
+			this.field9925 = top;
 		}
-		if (this.field9926 > arg3) {
-			this.field9926 = arg3;
+		if (this.field9926 > bottom) {
+			this.field9926 = bottom;
 		}
 		OpenGL.glEnable(3089);
 		this.method15743();

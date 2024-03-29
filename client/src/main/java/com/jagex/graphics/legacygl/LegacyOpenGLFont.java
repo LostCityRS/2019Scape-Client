@@ -23,7 +23,7 @@ public class LegacyOpenGLFont extends Font {
 	public LegacyOpenGLFont(LegacyOpenGLRenderer arg0, FontMetrics arg1, SpriteData arg2, boolean arg3) {
 		super(arg0, arg1);
 		this.field10243 = arg0;
-		int[] var5 = new int[this.field1667.field8572 * this.field1667.field8571];
+		int[] var5 = new int[this.fontMetrics.field8572 * this.fontMetrics.field8571];
 		if (arg3) {
 			Object var6 = null;
 			byte[] var8;
@@ -51,7 +51,7 @@ public class LegacyOpenGLFont extends Font {
 					}
 				}
 			}
-			this.field10241 = LegacyGraphicRelated.method18932(arg0, TextureFormat.ALPHA, DataType.UNSIGNED_INT_8, this.field1667.field8571, this.field1667.field8572, false, var8, TextureFormat.ALPHA);
+			this.field10241 = LegacyGraphicRelated.method18932(arg0, TextureFormat.ALPHA, DataType.UNSIGNED_INT_8, this.fontMetrics.field8571, this.fontMetrics.field8572, false, var8, TextureFormat.ALPHA);
 			this.field10240 = true;
 		} else {
 			if (arg2.isPaletted()) {
@@ -85,22 +85,22 @@ public class LegacyOpenGLFont extends Font {
 					}
 				}
 			}
-			this.field10241 = LegacyGraphicRelated.method18931(arg0, this.field1667.field8571, this.field1667.field8572, false, var5, 0, 0);
+			this.field10241 = LegacyGraphicRelated.method18931(arg0, this.fontMetrics.field8571, this.fontMetrics.field8572, false, var5, 0, 0);
 			this.field10240 = false;
 		}
-		this.field10241.method1082(this.field1667.field8570 != 1);
+		this.field10241.method1082(this.fontMetrics.field8570 != 1);
 		this.field10242 = new RenderList(arg0, 256);
-		float var28 = 1.0F / (float) this.field1667.field8571;
-		float var29 = 1.0F / (float) this.field1667.field8572;
+		float var28 = 1.0F / (float) this.fontMetrics.field8571;
+		float var29 = 1.0F / (float) this.fontMetrics.field8572;
 		for (int var30 = 0; var30 < 256; var30++) {
 			int var31 = arg1.method14558(var30);
 			int var32 = arg1.method14529(var30);
-			short[] var33 = this.field1667.method14561(var30);
+			short[] var33 = this.fontMetrics.method14561(var30);
 			float var34 = (float) var33[0] * var28;
 			float var35 = (float) var33[1] * var29;
 			float var36 = (float) (var33[0] + var33[2]) * var28;
 			float var37 = (float) (var33[1] + var33[3]) * var29;
-			int var38 = this.field1667.method14560(var30);
+			int var38 = this.fontMetrics.method14560(var30);
 			this.field10242.method1245(var30);
 			OpenGL.glBegin(7);
 			OpenGL.glTexCoord2f(var34, 1.0F - var35);
@@ -117,7 +117,7 @@ public class LegacyOpenGLFont extends Font {
 	}
 
 	@ObfuscatedName("afs.s(CIIIZ)V")
-	public void method2690(char arg0, int arg1, int arg2, int arg3, boolean arg4) {
+	public void drawChar(char arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		this.field10243.method15731();
 		this.field10243.method15777(this.field10241);
 		if (this.field10240 || arg4) {
@@ -136,7 +136,7 @@ public class LegacyOpenGLFont extends Font {
 	}
 
 	@ObfuscatedName("afs.y(CIIIZLch;II)V")
-	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
+	public void drawChar2(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
 		LegacyGraphicRelated2 var9 = (LegacyGraphicRelated2) arg5;
 		LegacyGraphicRelated var10 = var9.field9416;
 		this.field10243.method15731();

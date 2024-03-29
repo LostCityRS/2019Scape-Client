@@ -1398,7 +1398,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.bi(IIII)V")
-	public final void resetBounds(int arg0, int arg1, int arg2, int arg3) {
+	public final void resetBounds(int left, int top, int right, int bottom) {
 		int var5;
 		int var6;
 		if (this.renderTarget == null) {
@@ -1408,14 +1408,14 @@ public abstract class GpuRenderer extends Renderer {
 			var5 = this.renderTarget.getWidth();
 			var6 = this.renderTarget.getHeight();
 		}
-		if (arg0 <= 0 && arg2 >= var5 - 1 && arg1 <= 0 && arg3 >= var6 - 1) {
+		if (left <= 0 && right >= var5 - 1 && top <= 0 && bottom >= var6 - 1) {
 			this.resetClip();
 			return;
 		}
-		this.field10095 = arg0 >= 0 ? arg0 : 0;
-		this.field10193 = arg2 <= var5 ? arg2 : var5;
-		this.field10138 = arg1 >= 0 ? arg1 : 0;
-		this.field10106 = arg3 <= var6 ? arg3 : var6;
+		this.field10095 = left >= 0 ? left : 0;
+		this.field10193 = right <= var5 ? right : var5;
+		this.field10138 = top >= 0 ? top : 0;
+		this.field10106 = bottom <= var6 ? bottom : var6;
 		if (!this.field10182 && (this.field10144 || this.method16337() == GpuImageRelated.field3236)) {
 			this.field10182 = true;
 			this.method15999();
@@ -1426,7 +1426,7 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.bn(IIII)V")
-	public final void setBounds(int arg0, int arg1, int arg2, int arg3) {
+	public final void setBounds(int left, int top, int right, int bottom) {
 		int var5;
 		int var6;
 		if (this.renderTarget == null) {
@@ -1436,10 +1436,10 @@ public abstract class GpuRenderer extends Renderer {
 			var5 = this.renderTarget.getWidth();
 			var6 = this.renderTarget.getHeight();
 		}
-		int var7 = arg0 >= 0 ? arg0 : 0;
-		int var8 = arg2 <= var5 ? arg2 : var5;
-		int var9 = arg1 >= 0 ? arg1 : 0;
-		int var10 = arg3 <= var6 ? arg3 : var6;
+		int var7 = left >= 0 ? left : 0;
+		int var8 = right <= var5 ? right : var5;
+		int var9 = top >= 0 ? top : 0;
+		int var10 = bottom <= var6 ? bottom : var6;
 		boolean var11 = false;
 		if (this.field10095 < var7) {
 			this.field10095 = var7;
@@ -2168,16 +2168,16 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.bv(IIIIII)V")
-	public final void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public final void fillRectangle(int x, int y, int width, int height, int rgb, int arg5) {
 		if (this.field10172 && this.field10180 != 0) {
 			this.method16294(false);
 		}
 		if (this.field10107) {
 			this.method2219(false);
-			this.field10057.method1446(arg0, arg1, arg2, arg3, 0, arg4, arg5);
+			this.field10057.drawTintedScaled(x, y, width, height, 0, rgb, arg5);
 			this.method2219(true);
 		} else {
-			this.field10057.method1446(arg0, arg1, arg2, arg3, 0, arg4, arg5);
+			this.field10057.drawTintedScaled(x, y, width, height, 0, rgb, arg5);
 		}
 		if (this.field10172 && this.field10180 != 0) {
 			this.method16294(true);
@@ -2185,9 +2185,9 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.bz(IIIIII)V")
-	public final void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		int var8 = arg2 - 1;
-		int var9 = arg3 - 1;
+	public final void drawRectangle(int x, int y, int width, int height, int rgb, int arg5) {
+		int var8 = width - 1;
+		int var9 = height - 1;
 		byte var7 = 0;
 		if (this instanceof OpenGLRenderer) {
 			var7 = -1;
@@ -2195,10 +2195,10 @@ public abstract class GpuRenderer extends Renderer {
 		if (this.field10172 && this.field10180 != 0) {
 			this.method16294(false);
 		}
-		this.drawLine(arg0, arg1 + var7, arg0 + var8, arg1 + var7, arg4, arg5);
-		this.drawLine(arg0, arg1 + var9 + var7, arg0 + var8, arg1 + var9 + var7, arg4, arg5);
-		this.drawLine(arg0, arg1, arg0, arg1 + var9, arg4, arg5);
-		this.drawLine(arg0 + var8, arg1, arg0 + var8, arg1 + var9, arg4, arg5);
+		this.drawLine(x, y + var7, x + var8, y + var7, rgb, arg5);
+		this.drawLine(x, y + var9 + var7, x + var8, y + var9 + var7, rgb, arg5);
+		this.drawLine(x, y, x, y + var9, rgb, arg5);
+		this.drawLine(x + var8, y, x + var8, y + var9, rgb, arg5);
 		if (this.field10172 && this.field10180 != 0) {
 			this.method16294(true);
 		}
@@ -2213,18 +2213,18 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.ba(IIIII)V")
-	public final void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		this.drawLine(arg0, arg1, arg0 + arg2, arg1, arg3, arg4);
+	public final void drawHorizontalLine(int x, int y, int width, int rgb, int arg4) {
+		this.drawLine(x, y, x + width, y, rgb, arg4);
 	}
 
 	@ObfuscatedName("afc.bp(IIIII)V")
-	public final void drawVerticalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		this.drawLine(arg0, arg1, arg0, arg1 + arg2, arg3, arg4);
+	public final void drawVerticalLine(int x1, int y1, int x2, int y2, int arg4) {
+		this.drawLine(x1, y1, x1, y1 + x2, y2, arg4);
 	}
 
 	@ObfuscatedName("afc.bj(IIIIII)V")
-	public final void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		this.drawLine(arg0, arg1, arg2, arg3, arg4, 1, arg5);
+	public final void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5) {
+		this.drawLine(x1, y1, x2, y2, rgb, 1, arg5);
 	}
 
 	@ObfuscatedName("afc.cl(IIIIIIIII)V")
@@ -2317,11 +2317,11 @@ public abstract class GpuRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afc.ce(IIIIIII)V")
-	public final void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		int var8 = (int) ((float) arg0 + 1.0F);
-		int var9 = (int) ((float) arg1 + 1.0F);
-		int var10 = (int) ((float) arg2 + 1.0F);
-		int var11 = (int) ((float) arg3 + 1.0F);
+	public final void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5, int arg6) {
+		int var8 = (int) ((float) x1 + 1.0F);
+		int var9 = (int) ((float) y1 + 1.0F);
+		int var10 = (int) ((float) x2 + 1.0F);
+		int var11 = (int) ((float) y2 + 1.0F);
 		float var12 = (float) (var10 - var8);
 		float var13 = (float) (var11 - var9);
 		float var14 = 1.0F / (float) Math.sqrt((double) (var12 * var12 + var13 * var13));
@@ -2332,7 +2332,7 @@ public abstract class GpuRenderer extends Renderer {
 		float var19 = -var16;
 		float var21 = (float) arg5 * 0.5F * var19;
 		float var22 = (float) arg5 * 0.5F * var15;
-		this.field10057.method1442((float) var17 - var21, (float) var18 - var22, (float) var10 - var21, (float) var11 - var22, (float) var17 + var21, (float) var18 + var22, 0, arg4, arg6);
+		this.field10057.method1442((float) var17 - var21, (float) var18 - var22, (float) var10 - var21, (float) var11 - var22, (float) var17 + var21, (float) var18 + var22, 0, rgb, arg6);
 	}
 
 	@ObfuscatedName("afc.dt(Ldm;)V")

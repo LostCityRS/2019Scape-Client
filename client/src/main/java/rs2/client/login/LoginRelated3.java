@@ -31,7 +31,7 @@ public class LoginRelated3 implements LoadingScreenElement {
 
 	@ObfuscatedName("ki.e(I)V")
 	public void method5104() {
-		FontMetrics var1 = FontMetrics.method10677(this.field3052, this.field3054.field3211, Client.fontProvider);
+		FontMetrics var1 = FontMetrics.createFontMetrics(this.field3052, this.field3054.field3211, Client.fontProvider);
 		this.field3055 = Client.renderer.createFont(var1, SpriteDataProvider.get(this.field3053, this.field3054.field3211), true);
 	}
 
@@ -40,7 +40,7 @@ public class LoginRelated3 implements LoadingScreenElement {
 		if (arg0) {
 			int var2 = this.field3054.field3201.method5382(this.field3054.field3209, Client.frameWidth) + this.field3054.field3204;
 			int var3 = this.field3054.field3208.method5375(this.field3054.field3206, Client.frameHeight) + this.field3054.field3205;
-			this.field3055.method2720(this.field3054.field3203, var2, var3, this.field3054.field3209, this.field3054.field3206, this.field3054.field3212, this.field3054.field3213, this.field3054.field3210, this.field3054.field3207, this.field3054.field3202, null, null, null, 0, 0);
+			this.field3055.drawStringTaggable(this.field3054.field3203, var2, var3, this.field3054.field3209, this.field3054.field3206, this.field3054.field3212, this.field3054.field3213, this.field3054.field3210, this.field3054.field3207, this.field3054.field3202, null, null, null, 0, 0);
 		}
 	}
 

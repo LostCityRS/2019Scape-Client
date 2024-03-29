@@ -140,7 +140,7 @@ public abstract class PureJavaSprite extends Sprite {
 	}
 
 	@ObfuscatedName("ael.k()I")
-	public int method1434() {
+	public int getX() {
 		return this.field9358 + this.field9356 + this.field9355;
 	}
 
@@ -159,14 +159,14 @@ public abstract class PureJavaSprite extends Sprite {
 		}
 		this.field9373.method2171(this.field9362);
 		this.field9373.setBounds(this.field9373.clipMinX, this.field9373.clipMinY, arg0 + arg2, arg1 + arg3);
-		int var8 = this.method1434();
+		int var8 = this.getX();
 		int var9 = this.method1436();
 		int var10 = (arg2 + var8 - 1) / var8;
 		int var11 = (arg3 + var9 - 1) / var9;
 		for (int var12 = 0; var12 < var11; var12++) {
 			int var13 = var9 * var12;
 			for (int var14 = 0; var14 < var10; var14++) {
-				this.method1443(var8 * var14 + arg0, arg1 + var13, arg4, arg5, arg6);
+				this.drawSprite(var8 * var14 + arg0, arg1 + var13, arg4, arg5, arg6);
 			}
 		}
 		this.field9373.resetBounds(this.field9362[0], this.field9362[1], this.field9362[2], this.field9362[3]);
@@ -335,5 +335,5 @@ public abstract class PureJavaSprite extends Sprite {
 	public abstract void drawAsBillboard(boolean arg0, boolean arg1, boolean arg2, int arg3, int arg4, float arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, boolean arg12);
 
 	@ObfuscatedName("ael.r(IIIII)V")
-	public abstract void method1443(int arg0, int arg1, int arg2, int arg3, int arg4);
+	public abstract void drawSprite(int x, int y, int arg2, int rgb, int arg4);
 }

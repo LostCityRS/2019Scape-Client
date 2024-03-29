@@ -132,7 +132,7 @@ public class Component {
 	public int field2183 = -1;
 
 	@ObfuscatedName("hf.ad")
-	public int field2184;
+	public int type;
 
 	@ObfuscatedName("hf.am")
 	public int clientcode = 0;
@@ -162,16 +162,16 @@ public class Component {
 	public int field2193 = 0;
 
 	@ObfuscatedName("hf.ay")
-	public int field2194 = 0;
+	public int x = 0;
 
 	@ObfuscatedName("hf.ab")
-	public int field2195 = 0;
+	public int y = 0;
 
 	@ObfuscatedName("hf.az")
-	public int field2196 = 0;
+	public int width = 0;
 
 	@ObfuscatedName("hf.aa")
-	public int field2197 = 0;
+	public int height = 0;
 
 	@ObfuscatedName("hf.af")
 	public int field2198 = 1;
@@ -210,10 +210,10 @@ public class Component {
 	public int field2319 = 0;
 
 	@ObfuscatedName("hf.bt")
-	public int field2210 = 0;
+	public int colour = 0;
 
 	@ObfuscatedName("hf.bq")
-	public boolean field2263 = false;
+	public boolean fill = false;
 
 	@ObfuscatedName("hf.bm")
 	public int field2212 = 0;
@@ -363,7 +363,7 @@ public class Component {
 	public boolean field2275 = true;
 
 	@ObfuscatedName("hf.dq")
-	public String field2261 = "";
+	public String text = "";
 
 	@ObfuscatedName("hf.dc")
 	public int field2229 = 0;
@@ -381,7 +381,7 @@ public class Component {
 	public int field2236 = 0;
 
 	@ObfuscatedName("hf.dw")
-	public boolean field2267 = false;
+	public boolean antimacro = false;
 
 	@ObfuscatedName("hf.ds")
 	public ServerKeyProperties field2268 = ServerKeyProperties.field11386;
@@ -764,9 +764,9 @@ public class Component {
 		if (var2 == 255) {
 			var2 = -1;
 		}
-		this.field2184 = arg0.g1();
-		if ((this.field2184 & 0x80) != 0) {
-			this.field2184 &= 0x7F;
+		this.type = arg0.g1();
+		if ((this.type & 0x80) != 0) {
+			this.type &= 0x7F;
 			this.field2155 = arg0.gjstr();
 		}
 		this.clientcode = arg0.g2();
@@ -793,14 +793,14 @@ public class Component {
 		if (var2 >= 0) {
 			this.field2205 = (var3 & 0x2) != 0;
 		}
-		if (this.field2184 == 0) {
+		if (this.type == 0) {
 			this.field2208 = arg0.g2();
 			this.field2319 = arg0.g2();
 			if (var2 < 0) {
 				this.field2205 = arg0.g1() == 1;
 			}
 		}
-		if (this.field2184 == 5) {
+		if (this.type == 5) {
 			this.field2215 = arg0.g4s();
 			this.field2216 = arg0.g2();
 			int var4 = arg0.g1();
@@ -811,12 +811,12 @@ public class Component {
 			this.field2219 = arg0.g4s();
 			this.field2220 = arg0.g1() == 1;
 			this.field2213 = arg0.g1() == 1;
-			this.field2210 = arg0.g4s();
+			this.colour = arg0.g4s();
 			if (var2 >= 3) {
 				this.field2253 = arg0.g1() == 1;
 			}
 		}
-		if (this.field2184 == 6) {
+		if (this.type == 6) {
 			this.field2224 = 1;
 			this.field2294 = arg0.gSmart2or4null();
 			int var5 = arg0.g1();
@@ -848,30 +848,30 @@ public class Component {
 				this.field2238 = arg0.g2();
 			}
 		}
-		if (this.field2184 == 4) {
+		if (this.type == 4) {
 			this.field2287 = arg0.gSmart2or4null();
 			if (var2 >= 2) {
 				this.field2275 = arg0.g1() == 1;
 			}
-			this.field2261 = arg0.gjstr();
+			this.text = arg0.gjstr();
 			this.field2229 = arg0.g1();
 			this.field2223 = arg0.g1();
 			this.field2264 = arg0.g1();
 			this.field2265 = arg0.g1() == 1;
-			this.field2210 = arg0.g4s();
+			this.colour = arg0.g4s();
 			this.field2212 = arg0.g1();
 			if (var2 >= 0) {
 				this.field2236 = arg0.g1();
 			}
 		}
-		if (this.field2184 == 3) {
-			this.field2210 = arg0.g4s();
-			this.field2263 = arg0.g1() == 1;
+		if (this.type == 3) {
+			this.colour = arg0.g4s();
+			this.fill = arg0.g1() == 1;
 			this.field2212 = arg0.g1();
 		}
-		if (this.field2184 == 9) {
+		if (this.type == 9) {
 			this.field2156 = arg0.g1();
-			this.field2210 = arg0.g4s();
+			this.colour = arg0.g4s();
 			this.field2214 = arg0.g1() == 1;
 		}
 		int var7 = arg0.g3();

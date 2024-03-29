@@ -22,7 +22,7 @@ public class GpuFont extends Font {
 	public GpuFont(GpuRenderer arg0, FontMetrics arg1, SpriteData arg2, boolean arg3) {
 		super(arg0, arg1);
 		this.field10244 = arg0;
-		int[] var5 = new int[this.field1667.field8572 * this.field1667.field8571];
+		int[] var5 = new int[this.fontMetrics.field8572 * this.fontMetrics.field8571];
 		if (arg3) {
 			Object var6 = null;
 			byte[] var8;
@@ -84,23 +84,23 @@ public class GpuFont extends Font {
 				}
 			}
 		}
-		this.field10247 = arg0.method16204(this.field1667.field8571, this.field1667.field8572, false, var5);
-		this.field10247.method5824(this.field1667.field8570 == 1 ? GpuTextureRelated.field3322 : GpuTextureRelated.field3323);
+		this.field10247 = arg0.method16204(this.fontMetrics.field8571, this.fontMetrics.field8572, false, var5);
+		this.field10247.method5824(this.fontMetrics.field8570 == 1 ? GpuTextureRelated.field3322 : GpuTextureRelated.field3323);
 		this.field10246 = arg0.method16085(false);
 		this.field10246.allocate(20480, 20);
 		ByteBuffer var29 = this.field10244.temporaryBuffer;
 		var29.clear();
 		this.field10245 = new float[256][4];
-		float var30 = 1.0F / (float) this.field1667.field8571;
-		float var31 = 1.0F / (float) this.field1667.field8572;
+		float var30 = 1.0F / (float) this.fontMetrics.field8571;
+		float var31 = 1.0F / (float) this.fontMetrics.field8572;
 		for (int var32 = 0; var32 < 256; var32++) {
-			short[] var33 = this.field1667.method14561(var32);
+			short[] var33 = this.fontMetrics.method14561(var32);
 			this.field10245[var32][0] = (float) var33[0] * var30;
 			this.field10245[var32][1] = (float) var33[1] * var31;
 			this.field10245[var32][2] = (float) (var33[0] + var33[2]) * var30;
 			this.field10245[var32][3] = (float) (var33[1] + var33[3]) * var31;
-			int var34 = this.field1667.method14558(var32);
-			int var35 = this.field1667.method14529(var32);
+			int var34 = this.fontMetrics.method14558(var32);
+			int var35 = this.fontMetrics.method14529(var32);
 			var29.putFloat(0.0F);
 			var29.putFloat(0.0F);
 			var29.putFloat(0.0F);
@@ -126,11 +126,11 @@ public class GpuFont extends Font {
 	}
 
 	@ObfuscatedName("afx.s(CIIIZ)V")
-	public void method2690(char arg0, int arg1, int arg2, int arg3, boolean arg4) {
+	public void drawChar(char arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		if (this.field10244.method16337() != GpuImageRelated.field3236) {
-			int var6 = arg2 + this.field1667.method14560(arg0);
-			float var7 = (float) this.field1667.method14558(arg0);
-			float var8 = (float) this.field1667.method14529(arg0);
+			int var6 = arg2 + this.fontMetrics.method14560(arg0);
+			float var7 = (float) this.fontMetrics.method14558(arg0);
+			float var8 = (float) this.fontMetrics.method14529(arg0);
 			this.field10244.field10146.method5797((float) arg1, (float) var6, (float) arg1 + var7, (float) var6 + var8, this.field10245[arg0][0], this.field10245[arg0][1], this.field10245[arg0][2], this.field10245[arg0][3], this.field10247, arg3);
 			return;
 		}
@@ -153,6 +153,6 @@ public class GpuFont extends Font {
 	}
 
 	@ObfuscatedName("afx.y(CIIIZLch;II)V")
-	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
+	public void drawChar2(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
 	}
 }

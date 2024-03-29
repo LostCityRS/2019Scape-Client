@@ -629,39 +629,39 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bi(IIII)V")
-	public void resetBounds(int arg0, int arg1, int arg2, int arg3) {
-		if (arg0 < 0) {
-			arg0 = 0;
+	public void resetBounds(int left, int top, int right, int bottom) {
+		if (left < 0) {
+			left = 0;
 		}
-		if (arg1 < 0) {
-			arg1 = 0;
+		if (top < 0) {
+			top = 0;
 		}
-		if (arg2 > this.sizeX) {
-			arg2 = this.sizeX;
+		if (right > this.sizeX) {
+			right = this.sizeX;
 		}
-		if (arg3 > this.sizeY) {
-			arg3 = this.sizeY;
+		if (bottom > this.sizeY) {
+			bottom = this.sizeY;
 		}
-		this.clipMinX = arg0;
-		this.clipMaxX = arg2;
-		this.clipMinY = arg1;
-		this.clipMaxY = arg3;
+		this.clipMinX = left;
+		this.clipMaxX = right;
+		this.clipMinY = top;
+		this.clipMaxY = bottom;
 		this.method15664();
 	}
 
 	@ObfuscatedName("afg.bn(IIII)V")
-	public void setBounds(int arg0, int arg1, int arg2, int arg3) {
-		if (this.clipMinX < arg0) {
-			this.clipMinX = arg0;
+	public void setBounds(int left, int top, int right, int bottom) {
+		if (this.clipMinX < left) {
+			this.clipMinX = left;
 		}
-		if (this.clipMinY < arg1) {
-			this.clipMinY = arg1;
+		if (this.clipMinY < top) {
+			this.clipMinY = top;
 		}
-		if (this.clipMaxX > arg2) {
-			this.clipMaxX = arg2;
+		if (this.clipMaxX > right) {
+			this.clipMaxX = right;
 		}
-		if (this.clipMaxY > arg3) {
-			this.clipMaxY = arg3;
+		if (this.clipMaxY > bottom) {
+			this.clipMaxY = bottom;
 		}
 		this.method15664();
 	}
@@ -685,62 +685,62 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bz(IIIIII)V")
-	public void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		this.drawHorizontalLine(arg0, arg1, arg2, arg4, arg5);
-		this.drawHorizontalLine(arg0, arg1 + arg3 - 1, arg2, arg4, arg5);
-		this.drawVerticalLine(arg0, arg1 + 1, arg3 - 2, arg4, arg5);
-		this.drawVerticalLine(arg0 + arg2 - 1, arg1 + 1, arg3 - 2, arg4, arg5);
+	public void drawRectangle(int x, int y, int width, int height, int rgb, int arg5) {
+		this.drawHorizontalLine(x, y, width, rgb, arg5);
+		this.drawHorizontalLine(x, y + height - 1, width, rgb, arg5);
+		this.drawVerticalLine(x, y + 1, height - 2, rgb, arg5);
+		this.drawVerticalLine(x + width - 1, y + 1, height - 2, rgb, arg5);
 	}
 
 	@ObfuscatedName("afg.bv(IIIIII)V")
-	public void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void fillRectangle(int x, int y, int width, int height, int rgb, int arg5) {
 		if (this.colour == null) {
 			return;
 		}
-		if (arg0 < this.clipMinX) {
-			arg2 -= this.clipMinX - arg0;
-			arg0 = this.clipMinX;
+		if (x < this.clipMinX) {
+			width -= this.clipMinX - x;
+			x = this.clipMinX;
 		}
-		if (arg1 < this.clipMinY) {
-			arg3 -= this.clipMinY - arg1;
-			arg1 = this.clipMinY;
+		if (y < this.clipMinY) {
+			height -= this.clipMinY - y;
+			y = this.clipMinY;
 		}
-		if (arg0 + arg2 > this.clipMaxX) {
-			arg2 = this.clipMaxX - arg0;
+		if (x + width > this.clipMaxX) {
+			width = this.clipMaxX - x;
 		}
-		if (arg1 + arg3 > this.clipMaxY) {
-			arg3 = this.clipMaxY - arg1;
+		if (y + height > this.clipMaxY) {
+			height = this.clipMaxY - y;
 		}
-		if (arg2 <= 0 || arg3 <= 0 || arg0 > this.clipMaxX || arg1 > this.clipMaxY) {
+		if (width <= 0 || height <= 0 || x > this.clipMaxX || y > this.clipMaxY) {
 			return;
 		}
-		int var7 = this.sizeX - arg2;
-		int var8 = this.sizeX * arg1 + arg0;
-		int var9 = arg4 >>> 24;
+		int var7 = this.sizeX - width;
+		int var8 = this.sizeX * y + x;
+		int var9 = rgb >>> 24;
 		if (arg5 == 0 || arg5 == 1 && var9 == 255) {
-			int var22 = arg2 >> 3;
-			int var23 = arg2 & 0x7;
+			int var22 = width >> 3;
+			int var23 = width & 0x7;
 			int var24 = var8 - 1;
-			for (int var25 = -arg3; var25 < 0; var25++) {
+			for (int var25 = -height; var25 < 0; var25++) {
 				if (var22 > 0) {
 					int var26 = var22;
 					do {
 						var24++;
-						this.colour[var24] = arg4;
+						this.colour[var24] = rgb;
 						var24++;
-						this.colour[var24] = arg4;
+						this.colour[var24] = rgb;
 						var24++;
-						this.colour[var24] = arg4;
+						this.colour[var24] = rgb;
 						var24++;
-						this.colour[var24] = arg4;
+						this.colour[var24] = rgb;
 						var24++;
-						this.colour[var24] = arg4;
+						this.colour[var24] = rgb;
 						var24++;
-						this.colour[var24] = arg4;
+						this.colour[var24] = rgb;
 						var24++;
-						this.colour[var24] = arg4;
+						this.colour[var24] = rgb;
 						var24++;
-						this.colour[var24] = arg4;
+						this.colour[var24] = rgb;
 						var26--;
 					} while (var26 > 0);
 				}
@@ -748,17 +748,17 @@ public class PureJavaRenderer extends Renderer {
 					int var27 = var23;
 					do {
 						var24++;
-						this.colour[var24] = arg4;
+						this.colour[var24] = rgb;
 						var27--;
 					} while (var27 > 0);
 				}
 				var24 += var7;
 			}
 		} else if (arg5 == 1) {
-			int var10 = ((arg4 & 0xFF00FF) * var9 >> 8 & 0xFF00FF) + (((arg4 & 0xFF00FF00) >>> 8) * var9 & 0xFF00FF00);
+			int var10 = ((rgb & 0xFF00FF) * var9 >> 8 & 0xFF00FF) + (((rgb & 0xFF00FF00) >>> 8) * var9 & 0xFF00FF00);
 			int var11 = 256 - var9;
-			for (int var12 = 0; var12 < arg3; var12++) {
-				for (int var13 = -arg2; var13 < 0; var13++) {
+			for (int var12 = 0; var12 < height; var12++) {
+				for (int var13 = -width; var13 < 0; var13++) {
 					int var14 = this.colour[var8];
 					int var15 = ((var14 & 0xFF00FF) * var11 >> 8 & 0xFF00FF) + (((var14 & 0xFF00FF00) >>> 8) * var11 & 0xFF00FF00);
 					this.colour[var8++] = var10 + var15;
@@ -766,11 +766,11 @@ public class PureJavaRenderer extends Renderer {
 				var8 += var7;
 			}
 		} else if (arg5 == 2) {
-			for (int var16 = 0; var16 < arg3; var16++) {
-				for (int var17 = -arg2; var17 < 0; var17++) {
+			for (int var16 = 0; var16 < height; var16++) {
+				for (int var17 = -width; var17 < 0; var17++) {
 					int var18 = this.colour[var8];
-					int var19 = arg4 + var18;
-					int var20 = (arg4 & 0xFF00FF) + (var18 & 0xFF00FF);
+					int var19 = rgb + var18;
+					int var20 = (rgb & 0xFF00FF) + (var18 & 0xFF00FF);
 					int var21 = (var19 - var20 & 0x10000) + (var20 & 0x1000100);
 					this.colour[var8++] = var19 - var21 | var21 - (var21 >>> 8);
 				}
@@ -972,36 +972,36 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.ba(IIIII)V")
-	public void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (this.colour == null || (arg1 < this.clipMinY || arg1 >= this.clipMaxY)) {
+	public void drawHorizontalLine(int x, int y, int width, int rgb, int arg4) {
+		if (this.colour == null || (y < this.clipMinY || y >= this.clipMaxY)) {
 			return;
 		}
-		if (arg0 < this.clipMinX) {
-			arg2 -= this.clipMinX - arg0;
-			arg0 = this.clipMinX;
+		if (x < this.clipMinX) {
+			width -= this.clipMinX - x;
+			x = this.clipMinX;
 		}
-		if (arg0 + arg2 > this.clipMaxX) {
-			arg2 = this.clipMaxX - arg0;
+		if (x + width > this.clipMaxX) {
+			width = this.clipMaxX - x;
 		}
-		int var6 = this.sizeX * arg1 + arg0;
-		int var7 = arg3 >>> 24;
+		int var6 = this.sizeX * y + x;
+		int var7 = rgb >>> 24;
 		if (arg4 == 0 || arg4 == 1 && var7 == 255) {
-			for (int var18 = 0; var18 < arg2; var18++) {
-				this.colour[var6 + var18] = arg3;
+			for (int var18 = 0; var18 < width; var18++) {
+				this.colour[var6 + var18] = rgb;
 			}
 		} else if (arg4 == 1) {
-			int var8 = (var7 << 24) + ((arg3 & 0xFF00FF) * var7 >> 8 & 0xFF00FF) + ((arg3 & 0xFF00) * var7 >> 8 & 0xFF00);
+			int var8 = (var7 << 24) + ((rgb & 0xFF00FF) * var7 >> 8 & 0xFF00FF) + ((rgb & 0xFF00) * var7 >> 8 & 0xFF00);
 			int var9 = 256 - var7;
-			for (int var10 = 0; var10 < arg2; var10++) {
+			for (int var10 = 0; var10 < width; var10++) {
 				int var11 = this.colour[var6 + var10];
 				int var12 = ((var11 & 0xFF00) * var9 >> 8 & 0xFF00) + ((var11 & 0xFF00FF) * var9 >> 8 & 0xFF00FF);
 				this.colour[var6 + var10] = var8 + var12;
 			}
 		} else if (arg4 == 2) {
-			for (int var13 = 0; var13 < arg2; var13++) {
+			for (int var13 = 0; var13 < width; var13++) {
 				int var14 = this.colour[var6 + var13];
-				int var15 = arg3 + var14;
-				int var16 = (arg3 & 0xFF00FF) + (var14 & 0xFF00FF);
+				int var15 = rgb + var14;
+				int var16 = (rgb & 0xFF00FF) + (var14 & 0xFF00FF);
 				int var17 = (var15 - var16 & 0x10000) + (var16 & 0x1000100);
 				this.colour[var6 + var13] = var15 - var17 | var17 - (var17 >>> 8);
 			}
@@ -1063,38 +1063,38 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bp(IIIII)V")
-	public void drawVerticalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (this.colour == null || (arg0 < this.clipMinX || arg0 >= this.clipMaxX)) {
+	public void drawVerticalLine(int x1, int y1, int x2, int y2, int arg4) {
+		if (this.colour == null || (x1 < this.clipMinX || x1 >= this.clipMaxX)) {
 			return;
 		}
-		if (arg1 < this.clipMinY) {
-			arg2 -= this.clipMinY - arg1;
-			arg1 = this.clipMinY;
+		if (y1 < this.clipMinY) {
+			x2 -= this.clipMinY - y1;
+			y1 = this.clipMinY;
 		}
-		if (arg1 + arg2 > this.clipMaxY) {
-			arg2 = this.clipMaxY - arg1;
+		if (y1 + x2 > this.clipMaxY) {
+			x2 = this.clipMaxY - y1;
 		}
-		int var6 = this.sizeX * arg1 + arg0;
-		int var7 = arg3 >>> 24;
+		int var6 = this.sizeX * y1 + x1;
+		int var7 = y2 >>> 24;
 		if (arg4 == 0 || arg4 == 1 && var7 == 255) {
-			for (int var20 = 0; var20 < arg2; var20++) {
-				this.colour[this.sizeX * var20 + var6] = arg3;
+			for (int var20 = 0; var20 < x2; var20++) {
+				this.colour[this.sizeX * var20 + var6] = y2;
 			}
 		} else if (arg4 == 1) {
-			int var8 = (var7 << 24) + ((arg3 & 0xFF00) * var7 >> 8 & 0xFF00) + ((arg3 & 0xFF00FF) * var7 >> 8 & 0xFF00FF);
+			int var8 = (var7 << 24) + ((y2 & 0xFF00) * var7 >> 8 & 0xFF00) + ((y2 & 0xFF00FF) * var7 >> 8 & 0xFF00FF);
 			int var9 = 256 - var7;
-			for (int var10 = 0; var10 < arg2; var10++) {
+			for (int var10 = 0; var10 < x2; var10++) {
 				int var11 = this.sizeX * var10 + var6;
 				int var12 = this.colour[var11];
 				int var13 = ((var12 & 0xFF00) * var9 >> 8 & 0xFF00) + ((var12 & 0xFF00FF) * var9 >> 8 & 0xFF00FF);
 				this.colour[var11] = var8 + var13;
 			}
 		} else if (arg4 == 2) {
-			for (int var14 = 0; var14 < arg2; var14++) {
+			for (int var14 = 0; var14 < x2; var14++) {
 				int var15 = this.sizeX * var14 + var6;
 				int var16 = this.colour[var15];
-				int var17 = arg3 + var16;
-				int var18 = (arg3 & 0xFF00FF) + (var16 & 0xFF00FF);
+				int var17 = y2 + var16;
+				int var18 = (y2 & 0xFF00FF) + (var16 & 0xFF00FF);
 				int var19 = (var17 - var18 & 0x10000) + (var18 & 0x1000100);
 				this.colour[var15] = var17 - var19 | var19 - (var19 >>> 8);
 			}
@@ -1158,138 +1158,138 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.bj(IIIIII)V")
-	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5) {
 		if (this.colour == null) {
 			return;
 		}
-		int var7 = arg2 - arg0;
-		int var8 = arg3 - arg1;
+		int var7 = x2 - x1;
+		int var8 = y2 - y1;
 		if (var8 == 0) {
 			if (var7 >= 0) {
-				this.drawHorizontalLine(arg0, arg1, var7 + 1, arg4, arg5);
+				this.drawHorizontalLine(x1, y1, var7 + 1, rgb, arg5);
 			} else {
-				this.drawHorizontalLine(arg0 + var7, arg1, -var7 + 1, arg4, arg5);
+				this.drawHorizontalLine(x1 + var7, y1, -var7 + 1, rgb, arg5);
 			}
 		} else if (var7 != 0) {
 			if (var7 + var8 < 0) {
-				arg0 += var7;
+				x1 += var7;
 				var7 = -var7;
-				arg1 += var8;
+				y1 += var8;
 				var8 = -var8;
 			}
 			if (var7 > var8) {
-				int var9 = arg1 << 16;
+				int var9 = y1 << 16;
 				int var10 = var9 + 32768;
 				int var11 = var8 << 16;
 				int var12 = (int) Math.floor((double) var11 / (double) var7 + 0.5D);
-				int var13 = arg0 + var7;
-				if (arg0 < this.clipMinX) {
-					var10 += (this.clipMinX - arg0) * var12;
-					arg0 = this.clipMinX;
+				int var13 = x1 + var7;
+				if (x1 < this.clipMinX) {
+					var10 += (this.clipMinX - x1) * var12;
+					x1 = this.clipMinX;
 				}
 				if (var13 >= this.clipMaxX) {
 					var13 = this.clipMaxX - 1;
 				}
-				int var14 = arg4 >>> 24;
+				int var14 = rgb >>> 24;
 				if (arg5 == 0 || arg5 == 1 && var14 == 255) {
-					while (arg0 <= var13) {
+					while (x1 <= var13) {
 						int var27 = var10 >> 16;
 						if (var27 >= this.clipMinY && var27 < this.clipMaxY) {
-							this.colour[this.sizeX * var27 + arg0] = arg4;
+							this.colour[this.sizeX * var27 + x1] = rgb;
 						}
 						var10 += var12;
-						arg0++;
+						x1++;
 					}
 				} else if (arg5 == 1) {
-					int var15 = (var14 << 24) + ((arg4 & 0xFF00) * var14 >> 8 & 0xFF00) + ((arg4 & 0xFF00FF) * var14 >> 8 & 0xFF00FF);
+					int var15 = (var14 << 24) + ((rgb & 0xFF00) * var14 >> 8 & 0xFF00) + ((rgb & 0xFF00FF) * var14 >> 8 & 0xFF00FF);
 					int var16 = 256 - var14;
-					while (arg0 <= var13) {
+					while (x1 <= var13) {
 						int var17 = var10 >> 16;
 						if (var17 >= this.clipMinY && var17 < this.clipMaxY) {
-							int var18 = this.sizeX * var17 + arg0;
+							int var18 = this.sizeX * var17 + x1;
 							int var19 = this.colour[var18];
 							int var20 = ((var19 & 0xFF00) * var16 >> 8 & 0xFF00) + ((var19 & 0xFF00FF) * var16 >> 8 & 0xFF00FF);
 							this.colour[var18] = var15 + var20;
 						}
 						var10 += var12;
-						arg0++;
+						x1++;
 					}
 				} else if (arg5 == 2) {
-					while (arg0 <= var13) {
+					while (x1 <= var13) {
 						int var21 = var10 >> 16;
 						if (var21 >= this.clipMinY && var21 < this.clipMaxY) {
-							int var22 = this.sizeX * var21 + arg0;
+							int var22 = this.sizeX * var21 + x1;
 							int var23 = this.colour[var22];
-							int var24 = arg4 + var23;
-							int var25 = (arg4 & 0xFF00FF) + (var23 & 0xFF00FF);
+							int var24 = rgb + var23;
+							int var25 = (rgb & 0xFF00FF) + (var23 & 0xFF00FF);
 							int var26 = (var24 - var25 & 0x10000) + (var25 & 0x1000100);
 							this.colour[var22] = var24 - var26 | var26 - (var26 >>> 8);
 						}
 						var10 += var12;
-						arg0++;
+						x1++;
 					}
 				} else {
 					throw new IllegalArgumentException();
 				}
 			} else {
-				int var28 = arg0 << 16;
+				int var28 = x1 << 16;
 				int var29 = var28 + 32768;
 				int var30 = var7 << 16;
 				int var31 = (int) Math.floor((double) var30 / (double) var8 + 0.5D);
-				int var32 = arg1 + var8;
-				if (arg1 < this.clipMinY) {
-					var29 += (this.clipMinY - arg1) * var31;
-					arg1 = this.clipMinY;
+				int var32 = y1 + var8;
+				if (y1 < this.clipMinY) {
+					var29 += (this.clipMinY - y1) * var31;
+					y1 = this.clipMinY;
 				}
 				if (var32 >= this.clipMaxY) {
 					var32 = this.clipMaxY - 1;
 				}
-				int var33 = arg4 >>> 24;
+				int var33 = rgb >>> 24;
 				if (arg5 == 0 || arg5 == 1 && var33 == 255) {
-					while (arg1 <= var32) {
+					while (y1 <= var32) {
 						int var46 = var29 >> 16;
 						if (var46 >= this.clipMinX && var46 < this.clipMaxX) {
-							this.colour[this.sizeX * arg1 + var46] = arg4;
+							this.colour[this.sizeX * y1 + var46] = rgb;
 						}
 						var29 += var31;
-						arg1++;
+						y1++;
 					}
 				} else if (arg5 == 1) {
-					int var34 = (var33 << 24) + ((arg4 & 0xFF00FF) * var33 >> 8 & 0xFF00FF) + ((arg4 & 0xFF00) * var33 >> 8 & 0xFF00);
+					int var34 = (var33 << 24) + ((rgb & 0xFF00FF) * var33 >> 8 & 0xFF00FF) + ((rgb & 0xFF00) * var33 >> 8 & 0xFF00);
 					int var35 = 256 - var33;
-					while (arg1 <= var32) {
+					while (y1 <= var32) {
 						int var36 = var29 >> 16;
 						if (var36 >= this.clipMinX && var36 < this.clipMaxX) {
-							int var37 = this.sizeX * arg1 + var36;
+							int var37 = this.sizeX * y1 + var36;
 							int var38 = this.colour[var37];
 							int var39 = ((var38 & 0xFF00FF) * var35 >> 8 & 0xFF00FF) + ((var38 & 0xFF00) * var35 >> 8 & 0xFF00);
-							this.colour[this.sizeX * arg1 + var36] = var34 + var39;
+							this.colour[this.sizeX * y1 + var36] = var34 + var39;
 						}
 						var29 += var31;
-						arg1++;
+						y1++;
 					}
 				} else if (arg5 == 2) {
-					while (arg1 <= var32) {
+					while (y1 <= var32) {
 						int var40 = var29 >> 16;
 						if (var40 >= this.clipMinX && var40 < this.clipMaxX) {
-							int var41 = this.sizeX * arg1 + var40;
+							int var41 = this.sizeX * y1 + var40;
 							int var42 = this.colour[var41];
-							int var43 = arg4 + var42;
-							int var44 = (arg4 & 0xFF00FF) + (var42 & 0xFF00FF);
+							int var43 = rgb + var42;
+							int var44 = (rgb & 0xFF00FF) + (var42 & 0xFF00FF);
 							int var45 = (var43 - var44 & 0x10000) + (var44 & 0x1000100);
 							this.colour[var41] = var43 - var45 | var45 - (var45 >>> 8);
 						}
 						var29 += var31;
-						arg1++;
+						y1++;
 					}
 				} else {
 					throw new IllegalArgumentException();
 				}
 			}
 		} else if (var8 >= 0) {
-			this.drawVerticalLine(arg0, arg1, var8 + 1, arg4, arg5);
+			this.drawVerticalLine(x1, y1, var8 + 1, rgb, arg5);
 		} else {
-			this.drawVerticalLine(arg0, arg1 + var8, -var8 + 1, arg4, arg5);
+			this.drawVerticalLine(x1, y1 + var8, -var8 + 1, rgb, arg5);
 		}
 	}
 
@@ -1759,14 +1759,14 @@ public class PureJavaRenderer extends Renderer {
 	}
 
 	@ObfuscatedName("afg.ce(IIIIIII)V")
-	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5, int arg6) {
 		if (this.colour == null) {
 			return;
 		}
 		PureJavaRendererContext var8 = this.getContext(Thread.currentThread());
 		Rasteriser var9 = var8.rasteriser;
-		int var10 = arg2 - arg0;
-		int var11 = arg3 - arg1;
+		int var10 = x2 - x1;
+		int var11 = y2 - y1;
 		int var12 = var10 >= 0 ? var10 : -var10;
 		int var13 = var11 >= 0 ? var11 : -var11;
 		int var14 = var12;
@@ -1789,8 +1789,8 @@ public class PureJavaRenderer extends Renderer {
 		int var20 = arg5 * var16 + 1 >> 17;
 		int var21 = arg5 * var15 >> 17;
 		int var22 = arg5 * var15 + 1 >> 17;
-		int var23 = arg0 - var9.method1025();
-		int var24 = arg1 - var9.method1026();
+		int var23 = x1 - var9.method1025();
+		int var24 = y1 - var9.method1026();
 		int var25 = var19 + var23;
 		int var26 = var23 - var20;
 		int var27 = var17 + var23 - var20;
@@ -1802,15 +1802,15 @@ public class PureJavaRenderer extends Renderer {
 		if (arg6 == 0) {
 			var9.field935 = 0;
 		} else if (arg6 == 1) {
-			var9.field935 = 255 - (arg4 >>> 24);
+			var9.field935 = 255 - (rgb >>> 24);
 		} else {
 			throw new IllegalArgumentException();
 		}
 		this.method2219(false);
 		var9.field936 = var25 < 0 || var25 > var9.field945 || var26 < 0 || var26 > var9.field945 || var27 < 0 || var27 > var9.field945;
-		var9.drawTriangle(true, false, false, (float) var29, (float) var30, (float) var31, (float) var25, (float) var26, (float) var27, 100.0F, 100.0F, 100.0F, arg4);
+		var9.drawTriangle(true, false, false, (float) var29, (float) var30, (float) var31, (float) var25, (float) var26, (float) var27, 100.0F, 100.0F, 100.0F, rgb);
 		var9.field936 = var25 < 0 || var25 > var9.field945 || var27 < 0 || var27 > var9.field945 || var28 < 0 || var28 > var9.field945;
-		var9.drawTriangle(true, false, false, (float) var29, (float) var31, (float) var32, (float) var25, (float) var27, (float) var28, 100.0F, 100.0F, 100.0F, arg4);
+		var9.drawTriangle(true, false, false, (float) var29, (float) var31, (float) var32, (float) var25, (float) var27, (float) var28, 100.0F, 100.0F, 100.0F, rgb);
 		this.method2219(true);
 	}
 

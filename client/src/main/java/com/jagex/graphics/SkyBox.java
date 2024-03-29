@@ -287,13 +287,13 @@ public class SkyBox {
 					}
 					if (SkyBoxFillMode.field7237 == this.field5099) {
 						for (int var20 = var19 - arg5; var20 < arg4; var20 += arg5) {
-							this.field5095.method1446(arg2 + var20, arg3 + var18, arg5, arg5, 0, var14 << 24 | 0xFFFFFF, var17);
+							this.field5095.drawTintedScaled(arg2 + var20, arg3 + var18, arg5, arg5, 0, var14 << 24 | 0xFFFFFF, var17);
 						}
 						if ((this.field5096 & 0xFF000000) != 0) {
-							arg0.method2301(0, 0, arg4, arg3 + var18 + 1, this.field5096);
+							arg0.fillRectangle(0, 0, arg4, arg3 + var18 + 1, this.field5096);
 						}
 						if ((this.field5097 & 0xFF000000) != 0) {
-							arg0.method2301(0, arg3 + var18 + arg5, arg4, arg5 - (arg3 + var18 + arg5), this.field5097);
+							arg0.fillRectangle(0, arg3 + var18 + arg5, arg4, arg5 - (arg3 + var18 + arg5), this.field5097);
 						}
 					} else {
 						while (var18 > arg5) {
@@ -304,7 +304,7 @@ public class SkyBox {
 						}
 						for (int var21 = var19 - arg5; var21 < arg4; var21 += arg5) {
 							for (int var22 = var18 - arg5; var22 < arg5; var22 += arg5) {
-								this.field5095.method1446(arg2 + var21, arg3 + var22, arg5, arg5, 0, var14 << 24 | 0xFFFFFF, var17);
+								this.field5095.drawTintedScaled(arg2 + var21, arg3 + var22, arg5, arg5, 0, var14 << 24 | 0xFFFFFF, var17);
 							}
 						}
 					}

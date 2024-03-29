@@ -256,7 +256,7 @@ public class Minimap {
 				if (!field720) {
 					field734.method1440((var28 - var10) * 4 + 48, var3 * 4 + 48 - (var29 - var11) * 4 - var9 * 4, var9 * 4, var9 * 4, var30, var31);
 					if (field728) {
-						field734.method1439(256, 0);
+						field734.drawSprite(256, 0);
 						try {
 							arg0.method2115();
 							PreciseSleep.sleep(2000L);
@@ -269,7 +269,7 @@ public class Minimap {
 		if (field720) {
 			arg0.method2143(var20);
 			if (field728) {
-				field734.method1439(256, 0);
+				field734.drawSprite(256, 0);
 				try {
 					arg0.method2115();
 					PreciseSleep.sleep(2000L);
@@ -411,35 +411,35 @@ public class Minimap {
 				}
 				if (LocShape.WALL_STRAIGHT.id == var12 || LocShape.WALL_L.id == var12) {
 					if (var11 == 0) {
-						arg0.method2177(arg4, arg5, 4, var13);
+						arg0.drawVerticalLine(arg4, arg5, 4, var13);
 					} else if (var11 == 1) {
-						arg0.method2176(arg4, arg5, 4, var13);
+						arg0.drawHorizontalLine(arg4, arg5, 4, var13);
 					} else if (var11 == 2) {
-						arg0.method2177(arg4 + 3, arg5, 4, var13);
+						arg0.drawVerticalLine(arg4 + 3, arg5, 4, var13);
 					} else if (var11 == 3) {
-						arg0.method2176(arg4, arg5 + 3, 4, var13);
+						arg0.drawHorizontalLine(arg4, arg5 + 3, 4, var13);
 					}
 				}
 				if (LocShape.WALL_SQUARE_CORNER.id == var12) {
 					if (var11 == 0) {
-						arg0.method2301(arg4, arg5, 1, 1, var13);
+						arg0.fillRectangle(arg4, arg5, 1, 1, var13);
 					} else if (var11 == 1) {
-						arg0.method2301(arg4 + 3, arg5, 1, 1, var13);
+						arg0.fillRectangle(arg4 + 3, arg5, 1, 1, var13);
 					} else if (var11 == 2) {
-						arg0.method2301(arg4 + 3, arg5 + 3, 1, 1, var13);
+						arg0.fillRectangle(arg4 + 3, arg5 + 3, 1, 1, var13);
 					} else if (var11 == 3) {
-						arg0.method2301(arg4, arg5 + 3, 1, 1, var13);
+						arg0.fillRectangle(arg4, arg5 + 3, 1, 1, var13);
 					}
 				}
 				if (LocShape.WALL_L.id == var12) {
 					if (var11 == 0) {
-						arg0.method2176(arg4, arg5, 4, var13);
+						arg0.drawHorizontalLine(arg4, arg5, 4, var13);
 					} else if (var11 == 1) {
-						arg0.method2177(arg4 + 3, arg5, 4, var13);
+						arg0.drawVerticalLine(arg4 + 3, arg5, 4, var13);
 					} else if (var11 == 2) {
-						arg0.method2176(arg4, arg5 + 3, 4, var13);
+						arg0.drawHorizontalLine(arg4, arg5 + 3, 4, var13);
 					} else if (var11 == 3) {
-						arg0.method2177(arg4, arg5, 4, var13);
+						arg0.drawVerticalLine(arg4, arg5, 4, var13);
 					}
 				}
 			} else {
@@ -459,9 +459,9 @@ public class Minimap {
 					var18 = -1179648;
 				}
 				if (var16 == 0 || var16 == 2) {
-					arg0.method2374(arg4, arg5 + 3, arg4 + 3, arg5, var18);
+					arg0.drawLine(arg4, arg5 + 3, arg4 + 3, arg5, var18);
 				} else {
-					arg0.method2374(arg4, arg5, arg4 + 3, arg5 + 3, var18);
+					arg0.drawLine(arg4, arg5, arg4 + 3, arg5 + 3, var18);
 				}
 			}
 		}
@@ -499,16 +499,16 @@ public class Minimap {
 			var9 = arg1.length;
 			var10 = arg1.width;
 		}
-		int var11 = var8.method1434();
+		int var11 = var8.getX();
 		int var12 = var8.method1436();
 		if (var5.field9152) {
 			var11 = var9 * 4;
 			var12 = var10 * 4;
 		}
 		if (var5.field9154 == 0) {
-			var8.method1474(arg3, arg4 - (var10 - 1) * 4, var11, var12);
+			var8.drawTintedScaled(arg3, arg4 - (var10 - 1) * 4, var11, var12);
 		} else {
-			var8.method1446(arg3, arg4 - (var10 - 1) * 4, var11, var12, 0, var5.field9154 | 0xFF000000, 1);
+			var8.drawTintedScaled(arg3, arg4 - (var10 - 1) * 4, var11, var12, 0, var5.field9154 | 0xFF000000, 1);
 		}
 	}
 
@@ -520,17 +520,17 @@ public class Minimap {
 		arg0.method2202();
 		Graphic var4 = null;
 		GraphicsRelated var5 = null;
-		if (arg1.field2184 == 5) {
+		if (arg1.type == 5) {
 			var4 = arg1.method3970(arg0);
 			if (var4 == null) {
 				return;
 			}
 			var5 = var4.field2147;
-			if (arg1.field2196 != var4.field2144 || arg1.field2197 != var4.field2146) {
+			if (arg1.width != var4.field2144 || arg1.height != var4.field2146) {
 				throw new IllegalStateException("");
 			}
 		}
-		arg0.resetBounds(arg2, arg3, arg1.field2196 + arg2, arg1.field2197 + arg3);
+		arg0.resetBounds(arg2, arg3, arg1.width + arg2, arg1.height + arg3);
 		if (field724 == 2 || field724 == 5 || field734 == null) {
 			if (var5 == null) {
 				return;
@@ -564,9 +564,9 @@ public class Minimap {
 		int var12 = var7 / 128 + 48;
 		int var13 = Client.world.getSizeZ() * 4 + 48 - var8 / 128;
 		if (var5 == null) {
-			field734.method1453((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, 1, -1, 1);
+			field734.method1453((float) arg1.width / 2.0F + (float) arg2, (float) arg1.height / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, 1, -1, 1);
 		} else {
-			field734.method1456((float) arg1.field2196 / 2.0F + (float) arg2, (float) arg1.field2197 / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, var5, arg2, arg3);
+			field734.method1456((float) arg1.width / 2.0F + (float) arg2, (float) arg1.height / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, var5, arg2, arg3);
 		}
 		WorldMapRelated var14 = Client.world.method7871();
 		for (IntWrapper var15 = (IntWrapper) field727.peekFront(); var15 != null; var15 = (IntWrapper) field727.prev()) {
@@ -609,7 +609,7 @@ public class Minimap {
 				method4142(arg1, var5, arg2 - DefaultSprites.field11888, arg3 - DefaultSprites.field10232, var31, var32, DefaultSprites.mapflagSprites[field730 ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
 			}
 			if (!Client.localPlayerEntity.visibility.isNotVisible()) {
-				arg0.method2301(arg1.field2196 / 2 + arg2 - 1, arg1.field2197 / 2 + arg3 - 1, 3, 3, -1);
+				arg0.fillRectangle(arg1.width / 2 + arg2 - 1, arg1.height / 2 + arg3 - 1, 3, 3, -1);
 			}
 		}
 		arg0.method2164(field721[0], field721[1], field721[2], field721[3]);
@@ -753,8 +753,8 @@ public class Minimap {
 					var12 = var12 * 256 / (Client.minimapZoom + 256);
 					var13 = var13 * 256 / (Client.minimapZoom + 256);
 				}
-				var9[var10 * 2] = ((var8.field2393[var10 * 2] * 4 + arg5) * var13 + (var8.field2393[var10 * 2 + 1] * 4 + arg6) * var12 >> 14) + arg2.field2196 / 2 + arg3;
-				var9[var10 * 2 + 1] = arg2.field2197 / 2 + arg4 - ((var8.field2393[var10 * 2 + 1] * 4 + arg6) * var13 - (var8.field2393[var10 * 2] * 4 + arg5) * var12 >> 14);
+				var9[var10 * 2] = ((var8.field2393[var10 * 2] * 4 + arg5) * var13 + (var8.field2393[var10 * 2 + 1] * 4 + arg6) * var12 >> 14) + arg2.width / 2 + arg3;
+				var9[var10 * 2 + 1] = arg2.height / 2 + arg4 - ((var8.field2393[var10 * 2 + 1] * 4 + arg6) * var13 - (var8.field2393[var10 * 2] * 4 + arg5) * var12 >> 14);
 			}
 			Graphic var14 = arg2.method3970(arg0);
 			if (var14 != null) {
@@ -870,36 +870,36 @@ public class Minimap {
 		Sprite var15 = DefaultSprites.field513[arg6];
 		int var16 = var15.getWidth();
 		int var17 = var15.getHeight();
-		int var18 = arg0.field2196 / 2 + var13 - var16 / 2;
+		int var18 = arg0.width / 2 + var13 - var16 / 2;
 		int var19 = var16 + var18;
-		int var20 = arg0.field2197 / 2 + -var14 - var17;
+		int var20 = arg0.height / 2 + -var14 - var17;
 		int var21 = var17 + var20;
 		boolean var22;
 		if (arg1 == null) {
 			int var24 = var16 / 2;
-			var22 = var20 <= -var17 || var21 >= arg0.field2197 || var18 <= -var24 || var19 >= arg0.field2196 + var24;
+			var22 = var20 <= -var17 || var21 >= arg0.height || var18 <= -var24 || var19 >= arg0.width + var24;
 		} else {
 			var22 = !arg1.method3914(var18, var20) || !arg1.method3914(var19, var20) || !arg1.method3914(var18, var21) || !arg1.method3914(var19, var21);
 		}
 		if (var22) {
 			double var25 = Math.atan2((double) var13, (double) var14);
 			double var27 = Math.atan2((double) Math.abs(var13), (double) Math.abs(var14));
-			double var29 = Math.atan2((double) (arg0.field2196 / 2), (double) (arg0.field2197 / 2));
+			double var29 = Math.atan2((double) (arg0.width / 2), (double) (arg0.height / 2));
 			boolean var31 = false;
 			double var32 = 0.0D;
 			double var34;
 			int var36;
 			if (var27 < var29) {
 				var34 = 1.5707963267948966D - var25;
-				var36 = arg0.field2197 / 2;
+				var36 = arg0.height / 2;
 			} else {
 				var34 = var25;
-				var36 = arg0.field2196 / 2;
+				var36 = arg0.width / 2;
 			}
 			int var37 = Math.abs((int) -((double) var36 * Math.sin(1.5707963267948966D) / Math.sin(var34)));
-			DefaultSprites.field6719[arg6].method1450((float) arg0.field2196 / 2.0F + (float) arg2 + 0.0F, (float) arg0.field2197 / 2.0F + (float) arg3 - 0.0F, (float) DefaultSprites.field6719[arg6].method1434() / 2.0F, (float) var37, 4096, (int) (-var25 / 6.283185307179586D * 65535.0D));
+			DefaultSprites.field6719[arg6].method1450((float) arg0.width / 2.0F + (float) arg2 + 0.0F, (float) arg0.height / 2.0F + (float) arg3 - 0.0F, (float) DefaultSprites.field6719[arg6].getX() / 2.0F, (float) var37, 4096, (int) (-var25 / 6.283185307179586D * 65535.0D));
 		} else if (arg1 == null) {
-			var15.method1439(arg2 + var18, arg3 + var20);
+			var15.drawSprite(arg2 + var18, arg3 + var20);
 		} else {
 			var15.method1444(arg2 + var18, arg3 + var20, arg1.field2147, arg2, arg3);
 		}
@@ -923,7 +923,7 @@ public class Minimap {
 		} else {
 			var11 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 		}
-		int var12 = Math.max(arg0.field2196 / 2, arg0.field2197 / 2) + 10;
+		int var12 = Math.max(arg0.width / 2, arg0.height / 2) + 10;
 		int var13 = arg4 * arg4 + arg5 * arg5;
 		if (var13 > var12 * var12) {
 			return;
@@ -939,33 +939,33 @@ public class Minimap {
 		double var18 = arg7 / 100.0D;
 		switch(arg8.index) {
 			case 0:
-				arg2 = arg0.field2196 / 2 + arg2 + var16 - (int) ((double) arg6.method1434() * var18);
+				arg2 = arg0.width / 2 + arg2 + var16 - (int) ((double) arg6.getX() * var18);
 				break;
 			case 1:
-				arg2 = arg0.field2196 / 2 + arg2 + var16;
+				arg2 = arg0.width / 2 + arg2 + var16;
 				break;
 			case 2:
-				arg2 = arg0.field2196 / 2 + arg2 + var16 - (int) ((double) (arg6.method1434() / 2) * var18);
+				arg2 = arg0.width / 2 + arg2 + var16 - (int) ((double) (arg6.getX() / 2) * var18);
 		}
 		switch(arg9.index) {
 			case 0:
-				arg3 = arg0.field2197 / 2 + arg3 - var17 - (int) ((double) arg6.method1436() * var18);
+				arg3 = arg0.height / 2 + arg3 - var17 - (int) ((double) arg6.method1436() * var18);
 				break;
 			case 1:
-				arg3 = arg0.field2197 / 2 + arg3 - var17;
+				arg3 = arg0.height / 2 + arg3 - var17;
 				break;
 			case 2:
-				arg3 = arg0.field2197 / 2 + arg3 - var17 - (int) ((double) (arg6.method1436() / 2) * var18);
+				arg3 = arg0.height / 2 + arg3 - var17 - (int) ((double) (arg6.method1436() / 2) * var18);
 		}
 		if (arg1 == null) {
 			if (var18 == 1.0D) {
-				arg6.method1439(arg2, arg3);
+				arg6.drawSprite(arg2, arg3);
 			}
-			arg6.method1474(arg2, arg3, (int) ((double) arg6.method1434() * var18), (int) ((double) arg6.method1436() * var18));
+			arg6.drawTintedScaled(arg2, arg3, (int) ((double) arg6.getX() * var18), (int) ((double) arg6.method1436() * var18));
 		} else if (var18 == 1.0D) {
 			arg6.method1444(arg2, arg3, arg1, arg2, arg3);
 		} else {
-			arg6.method1474(arg2, arg3, (int) ((double) arg6.method1434() * var18), (int) ((double) arg6.method1436() * var18));
+			arg6.drawTintedScaled(arg2, arg3, (int) ((double) arg6.getX() * var18), (int) ((double) arg6.method1436() * var18));
 		}
 	}
 
@@ -979,7 +979,7 @@ public class Minimap {
 		} else {
 			var11 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 		}
-		int var12 = Math.max(arg0.field2196 / 2, arg0.field2197 / 2) + 10;
+		int var12 = Math.max(arg0.width / 2, arg0.height / 2) + 10;
 		int var13 = arg4 * arg4 + arg5 * arg5;
 		if (var13 > var12 * var12) {
 			return;
@@ -992,11 +992,11 @@ public class Minimap {
 		}
 		int var16 = arg4 * var15 + arg5 * var14 >> 14;
 		int var17 = arg5 * var15 - arg4 * var14 >> 14;
-		int var18 = arg9.method14551(arg7, 100, null);
-		int var19 = arg9.method14545(arg7, 100, 0, null);
+		int var18 = arg9.parawidth(arg7, 100, null);
+		int var19 = arg9.paraheight(arg7, 100, 0, null);
 		int var20 = var16 - var18 / 2;
-		if (var20 >= -arg0.field2196 && var20 <= arg0.field2196 && var17 >= -arg0.field2197 && var17 <= arg0.field2197) {
-			arg8.method2720(arg7, arg0.field2196 / 2 + arg2 + var20, arg0.field2197 / 2 + arg3 - var17 - arg6 - var19, var18, 50, arg10, 0, 1, 0, 0, null, null, arg1, arg2, arg3);
+		if (var20 >= -arg0.width && var20 <= arg0.width && var17 >= -arg0.height && var17 <= arg0.height) {
+			arg8.drawStringTaggable(arg7, arg0.width / 2 + arg2 + var20, arg0.height / 2 + arg3 - var17 - arg6 - var19, var18, 50, arg10, 0, 1, 0, 0, null, null, arg1, arg2, arg3);
 		}
 	}
 

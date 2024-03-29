@@ -549,7 +549,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		}
 		this.method2142(this.field12018);
 		this.method2475(1, -16777216);
-		this.field12033.method1474(this.field1611, this.field1618, this.field1619, this.field1610);
+		this.field12033.drawTintedScaled(this.field1611, this.field1618, this.field1619, this.field1610);
 		OpenGL.glBindBufferARB(35051, this.field12017[this.field12019]);
 		OpenGL.glReadPixelsub(0, 0, this.field1615, this.field1588, 32993, 5121, null, 0);
 		OpenGL.glBindBufferARB(35051, 0);
@@ -597,7 +597,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 			}
 			this.method2142(this.field12018);
 			this.method2475(1, -16777216);
-			this.field12033.method1474(this.field1611, this.field1618, this.field1619, this.field1610);
+			this.field12033.drawTintedScaled(this.field1611, this.field1618, this.field1619, this.field1610);
 			this.field12034.download(0, 0, arg0, arg1, arg2, arg3, 0, arg0);
 			this.method2143(this.field12018);
 			return 0L;

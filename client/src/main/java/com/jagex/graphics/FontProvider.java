@@ -48,7 +48,7 @@ public class FontProvider implements FontIconProvider {
 		this.fonts = new HashMap(this.fontIds.length);
 		for (int index = 0; index < this.fontIds.length; index++) {
 			int fontId = this.fontIds[index];
-			FontMetrics fontMetrics = FontMetrics.method10677(this.js5FontMetrics, fontId, this);
+			FontMetrics fontMetrics = FontMetrics.createFontMetrics(this.js5FontMetrics, fontId, this);
 			byte[] bytes = this.js5Sprites.method6894(fontId);
 			Object font = factory.createFont(bytes, fontMetrics, true);
 			this.fonts.put(index, new Pair(font, fontMetrics));
@@ -145,7 +145,7 @@ public class FontProvider implements FontIconProvider {
 		if (cached != null) {
 			return cached;
 		}
-		FontMetrics fontMetrics = FontMetrics.method10677(this.js5FontMetrics, fontId, this);
+		FontMetrics fontMetrics = FontMetrics.createFontMetrics(this.js5FontMetrics, fontId, this);
 		if (fontMetrics == null) {
 			return null;
 		} else {
@@ -216,6 +216,6 @@ public class FontProvider implements FontIconProvider {
 	@ObfuscatedName("oi.r(II)I")
 	public int getIconWidth(int id) {
 		Sprite[] sprites = this.getIconSprites(this.renderer, id);
-		return sprites == null ? 0 : sprites[0].method1434();
+		return sprites == null ? 0 : sprites[0].getX();
 	}
 }

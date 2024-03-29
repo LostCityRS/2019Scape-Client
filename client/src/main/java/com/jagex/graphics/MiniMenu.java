@@ -1295,7 +1295,7 @@ public class MiniMenu {
 			return false;
 		}
 		Component var4 = Component.field11725[var2].field2151[var3];
-		if (arg1 == -1 && var4.field2184 == 0) {
+		if (arg1 == -1 && var4.type == 0) {
 			for (MinimenuEntry var5 = (MinimenuEntry) field542.peekFront(); var5 != null; var5 = (MinimenuEntry) field542.prev()) {
 				if (var5.field12307 == 58 || var5.field12307 == 1007 || var5.field12307 == 25 || var5.field12307 == 57 || var5.field12307 == 30) {
 					for (Component var6 = Component.method10202(var5.field12302); var6 != null; var6 = Client.method6000(Component.field11725[var6.field2158 >> 16], var6)) {
@@ -1434,15 +1434,15 @@ public class MiniMenu {
 		if (var4 == null) {
 			var4 = DefaultSprites.b12FullFont;
 		}
-		var4.method2700(var1, field556, field557, field576.field2196, field576.field2197, field576.field2210, field576.field2219, field576.field2223, field576.field2264, Client.field10890, Client.field1681, Client.field11042, DefaultSprites.field10302, null);
+		var4.drawStringTaggableAntimacro(var1, field556, field557, field576.width, field576.height, field576.colour, field576.field2219, field576.field2223, field576.field2264, Client.field10890, Client.field1681, Client.field11042, DefaultSprites.field10302, null);
 		Client.method3066(Client.field11042[0], Client.field11042[1], Client.field11042[2], Client.field11042[3]);
 	}
 
 	@ObfuscatedName("hp.ay(Ldh;IIIIIII)V")
 	public static void method4064(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		arg0.method2301(arg1, arg2, arg3, arg4, arg5);
-		arg0.method2301(arg1 + 1, arg2 + 1, arg3 - 2, 16, arg6);
-		arg0.method2173(arg1 + 1, arg2 + 18, arg3 - 2, arg4 - 19, arg6);
+		arg0.fillRectangle(arg1, arg2, arg3, arg4, arg5);
+		arg0.fillRectangle(arg1 + 1, arg2 + 1, arg3 - 2, 16, arg6);
+		arg0.drawRectangle(arg1 + 1, arg2 + 18, arg3 - 2, arg4 - 19, arg6);
 	}
 
 	@ObfuscatedName("pc.ab(Larm;I)[I")
@@ -1488,7 +1488,7 @@ public class MiniMenu {
 		}
 		arg8.method2689(var13, arg2 + 3, arg6, arg10, 0, Client.field10890, Client.field1681, DefaultSprites.field10302, null);
 		if (arg7.field12299) {
-			DefaultSprites.field1940.method1439(arg2 + 5 + arg9.stringWidth(var13, DefaultSprites.field10302), arg6 - arg9.field8562);
+			DefaultSprites.field1940.drawSprite(arg2 + 5 + arg9.stringWidth(var13, DefaultSprites.field10302), arg6 - arg9.field8562);
 		}
 	}
 
@@ -1560,10 +1560,10 @@ public class MiniMenu {
 		if (field9253 != null && field8480 != null) {
 			int var11 = (arg3 - field8480.getWidth() * 2) / field9253.getWidth();
 			for (int var12 = 0; var12 < var11; var12++) {
-				field9253.method1439(arg1 + field8480.getWidth() + var12 * field9253.getWidth(), arg2);
+				field9253.drawSprite(arg1 + field8480.getWidth() + var12 * field9253.getWidth(), arg2);
 			}
-			field8480.method1439(arg1, arg2);
-			field3568.method1439(arg1 + arg3 - field3568.getWidth(), arg2);
+			field8480.drawSprite(arg1, arg2);
+			field3568.drawSprite(arg1 + arg3 - field3568.getWidth(), arg2);
 		}
 		arg6.drawString(arg8, arg1 + 3, (20 - arg7.field8562) / 2 + arg7.field8562 + arg2, field1266 | 0xFF000000, -1);
 		arg0.fillRectangle(arg1, arg2 + arg5, arg3, arg4 - arg5, var9 << 24 | field7676, 1);
@@ -1587,15 +1587,15 @@ public class MiniMenu {
 		}
 		int var8 = (arg3 - field11699.getWidth() * 2) / field1224.getWidth();
 		for (int var9 = 0; var9 < var8; var9++) {
-			field1224.method1439(arg1 + field11699.getWidth() + var9 * field1224.getWidth(), arg2 + arg4 - field1224.getHeight());
+			field1224.drawSprite(arg1 + field11699.getWidth() + var9 * field1224.getWidth(), arg2 + arg4 - field1224.getHeight());
 		}
 		int var10 = (arg4 - arg5 - field11699.getHeight()) / field10568.getHeight();
 		for (int var11 = 0; var11 < var10; var11++) {
-			field10568.method1439(arg1, arg2 + arg5 + var11 * field10568.getHeight());
-			field566.method1439(arg1 + arg3 - field566.getWidth(), arg2 + arg5 + var11 * field10568.getHeight());
+			field10568.drawSprite(arg1, arg2 + arg5 + var11 * field10568.getHeight());
+			field566.drawSprite(arg1 + arg3 - field566.getWidth(), arg2 + arg5 + var11 * field10568.getHeight());
 		}
-		field11699.method1439(arg1, arg2 + arg4 - field11699.getHeight());
-		field11831.method1439(arg1 + arg3 - field11699.getWidth(), arg2 + arg4 - field11699.getHeight());
+		field11699.drawSprite(arg1, arg2 + arg4 - field11699.getHeight());
+		field11831.drawSprite(arg1 + arg3 - field11699.getWidth(), arg2 + arg4 - field11699.getHeight());
 	}
 
 	@ObfuscatedName("aky.bf(Ldh;I)V")
@@ -2305,11 +2305,11 @@ public class MiniMenu {
 			Client.gameConnection.queue(var36);
 			Client.method6820(var4, var5);
 		}
-		if (var6 == 30 && Client.field11056 == null) {
+		if (var6 == 30 && Client.pressedContinueOption == null) {
 			Client.method612(var5, var4);
-			Client.field11056 = Component.method16682(var5, var4);
-			if (Client.field11056 != null) {
-				Client.method4616(Client.field11056);
+			Client.pressedContinueOption = Component.method16682(var5, var4);
+			if (Client.pressedContinueOption != null) {
+				Client.method4616(Client.pressedContinueOption);
 			}
 		}
 		if (Client.targetModeActive) {

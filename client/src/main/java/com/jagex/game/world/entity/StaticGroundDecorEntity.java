@@ -167,7 +167,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	public boolean method17375(Renderer arg0, int arg1, int arg2) {
 		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).clickbox;
 		if (var4 != null) {
-			return arg0.method2191(arg1, arg2, this.method10533(), var4);
+			return arg0.pick(arg1, arg2, this.method10533(), var4);
 		}
 		Model var5 = this.method17435(arg0, 131072);
 		if (var5 == null) {

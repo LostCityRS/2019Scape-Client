@@ -69,8 +69,8 @@ public class CameraManager {
 		Vector3 var2 = var0.method5219();
 		Quaternion var3 = var1.method18787();
 		if (Client.field10986 != null) {
-			int var4 = Client.field10986.field2196;
-			int var5 = Client.field10986.field2197;
+			int var4 = Client.field10986.width;
+			int var5 = Client.field10986.height;
 			float var6 = 1000.0F;
 			float var7 = (float) (Math.atan((double) ((float) var4 / 2.0F / var6)) * 2.0D);
 			float var8 = (float) (Math.atan((double) ((float) var5 / 2.0F / var6)) * 2.0D);

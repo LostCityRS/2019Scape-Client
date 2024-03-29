@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface FontGlyph {
 
 	@ObfuscatedName("aay.k()I")
-	int method1434();
+	int getX();
 }

@@ -52,6 +52,6 @@ public class LoadingScreenNewsDisplay implements LoadingScreenElement {
 
 	@ObfuscatedName("kw.z(Leu;Ljava/lang/String;IIII)I")
 	public int method5117(Font arg0, String arg1, int arg2, int arg3, int arg4) {
-		return arg0.method2720(arg1, arg2 + arg4, arg3 + arg4, this.field3025.field3154 - arg4 * 2, this.field3025.field3156 - arg4 * 2, this.field3025.field3152, this.field3025.field3153, 0, 0, 0, null, null, null, 0, 0);
+		return arg0.drawStringTaggable(arg1, arg2 + arg4, arg3 + arg4, this.field3025.field3154 - arg4 * 2, this.field3025.field3156 - arg4 * 2, this.field3025.field3152, this.field3025.field3153, 0, 0, 0, null, null, null, 0, 0);
 	}
 }

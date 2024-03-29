@@ -155,9 +155,9 @@ public class Rasteriser {
 		if (!arg0) {
 			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 		} else if (this.field940) {
-			this.renderer.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
-			this.renderer.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
-			this.renderer.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
+			this.renderer.drawLine((int) arg6, (int) arg3, (int) arg7, (int) arg4, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
+			this.renderer.drawLine((int) arg7, (int) arg4, (int) arg8, (int) arg5, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
+			this.renderer.drawLine((int) arg8, (int) arg5, (int) arg6, (int) arg3, ColourUtils.field8149[(int) arg12 & 0xFFFF]);
 		} else {
 			float var16 = arg7 - arg6;
 			float var17 = arg4 - arg3;
@@ -930,9 +930,9 @@ public class Rasteriser {
 		if (!arg0) {
 			this.drawTriangle(false, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 0);
 		} else if (this.field940) {
-			this.renderer.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12 | 0xFF000000);
-			this.renderer.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12 | 0xFF000000);
-			this.renderer.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, arg12 | 0xFF000000);
+			this.renderer.drawLine((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12 | 0xFF000000);
+			this.renderer.drawLine((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12 | 0xFF000000);
+			this.renderer.drawLine((int) arg8, (int) arg5, (int) arg6, (int) arg3, arg12 | 0xFF000000);
 		} else {
 			float var16 = arg7 - arg6;
 			float var17 = arg4 - arg3;
@@ -2145,9 +2145,9 @@ public class Rasteriser {
 	@ObfuscatedName("bd.u(ZZZFFFFFFFFFI)V")
 	public final void drawTriangle(boolean arg0, boolean arg1, boolean arg2, float arg3, float arg4, float arg5, float arg6, float arg7, float arg8, float arg9, float arg10, float arg11, int arg12) {
 		if (this.field940) {
-			this.renderer.method2374((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12);
-			this.renderer.method2374((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12);
-			this.renderer.method2374((int) arg8, (int) arg5, (int) arg6, (int) arg3, arg12);
+			this.renderer.drawLine((int) arg6, (int) arg3, (int) arg7, (int) arg4, arg12);
+			this.renderer.drawLine((int) arg7, (int) arg4, (int) arg8, (int) arg5, arg12);
+			this.renderer.drawLine((int) arg8, (int) arg5, (int) arg6, (int) arg3, arg12);
 			return;
 		}
 		float var14 = arg7 - arg6;

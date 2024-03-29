@@ -1229,7 +1229,7 @@ public class LoginManager {
 		Client.openedTopInterface = -1;
 		Client.openedSubInterfaces = new IterableMap(8);
 		Component.method5075();
-		Client.field11056 = null;
+		Client.pressedContinueOption = null;
 		for (int var3 = 0; var3 < 8; var3++) {
 			Client.field10961[var3] = null;
 			Client.field10962[var3] = false;

@@ -10,28 +10,28 @@ import java.util.Random;
 public abstract class Font {
 
 	@ObfuscatedName("eu.e")
-	public FontMetrics field1667;
+	public FontMetrics fontMetrics;
 
 	@ObfuscatedName("eu.n")
-	public Renderer field1666;
+	public Renderer renderer;
 
 	@ObfuscatedName("eu.w")
-	public static int field1671 = -1;
+	public static int strikethrough = -1;
 
 	@ObfuscatedName("eu.l")
-	public static int field1673 = -1;
+	public static int underline = -1;
 
 	@ObfuscatedName("eu.u")
-	public static int field1669 = 0;
+	public static int originalRgb = 0;
 
 	@ObfuscatedName("eu.z")
-	public static int field1674 = 0;
+	public static int rgb = 0;
 
 	@ObfuscatedName("eu.p")
-	public static int field1675 = 0;
+	public static int originalShadow = 0;
 
 	@ObfuscatedName("eu.d")
-	public static int field1676 = 0;
+	public static int shadow = 0;
 
 	@ObfuscatedName("eu.c")
 	public static int field1677 = 0;
@@ -40,268 +40,268 @@ public abstract class Font {
 	public static int field1678 = 0;
 
 	@ObfuscatedName("eu.v")
-	public static String[] field1679 = new String[100];
+	public static String[] stringBuilder = new String[100];
 
-	public Font(Renderer arg0, FontMetrics arg1) {
-		this.field1666 = arg0;
-		this.field1667 = arg1;
+	public Font(Renderer renderer, FontMetrics fontMetrics) {
+		this.renderer = renderer;
+		this.fontMetrics = fontMetrics;
 	}
 
 	@ObfuscatedName("eu.e(Ljava/lang/String;IIIIB)V")
-	public void drawString(String arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (arg0 != null) {
-			this.method2686(arg3, arg4);
-			this.method2694(arg0, arg1, arg2, null, null, null, 0, 0);
+	public void drawString(String str, int x, int y, int rgb, int shadow) {
+		if (str != null) {
+			this.setStyle(rgb, shadow);
+			this.drawChars(str, x, y, null, null, null, 0, 0);
 		}
 	}
 
 	@ObfuscatedName("eu.n(Ljava/lang/String;IIIII)V")
-	public void method2682(String arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (arg0 != null) {
-			this.method2686(arg3, arg4);
-			this.method2694(arg0, arg1 - this.field1667.stringWidth(arg0), arg2, null, null, null, 0, 0);
+	public void drawStringRight(String str, int x, int y, int rgb, int shadow) {
+		if (str != null) {
+			this.setStyle(rgb, shadow);
+			this.drawChars(str, x - this.fontMetrics.stringWidth(str), y, null, null, null, 0, 0);
 		}
 	}
 
 	@ObfuscatedName("eu.m(Ljava/lang/String;IIIII)V")
-	public void drawStringCenter(String arg0, int arg1, int arg2, int arg3, int arg4) {
-		if (arg0 != null) {
-			this.method2686(arg3, arg4);
-			this.method2694(arg0, arg1 - this.field1667.stringWidth(arg0) / 2, arg2, null, null, null, 0, 0);
+	public void drawStringCenter(String str, int x, int y, int rgb, int shadow) {
+		if (str != null) {
+			this.setStyle(rgb, shadow);
+			this.drawChars(str, x - this.fontMetrics.stringWidth(str) / 2, y, null, null, null, 0, 0);
 		}
 	}
 
 	@ObfuscatedName("eu.k(Ljava/lang/String;IIIIIIIII[Lcm;[ILch;IIS)I")
-	public int method2720(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, Sprite[] arg10, int[] arg11, GraphicsRelated arg12, int arg13, int arg14) {
-		return this.method2685(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, 0, arg10, arg11, arg12, arg13, arg14);
+	public int drawStringTaggable(String str, int x, int y, int width, int height, int rgb, int shadow, int arg7, int arg8, int arg9, Sprite[] glyphs, int[] arg11, GraphicsRelated arg12, int arg13, int arg14) {
+		return this.drawStringTaggable(str, x, y, width, height, rgb, shadow, arg7, arg8, arg9, 0, glyphs, arg11, arg12, arg13, arg14);
 	}
 
 	@ObfuscatedName("eu.f(Ljava/lang/String;IIIIIIIIII[Lcm;[ILch;III)I")
-	public int method2685(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, Sprite[] arg11, int[] arg12, GraphicsRelated arg13, int arg14, int arg15) {
-		if (arg0 == null) {
+	public int drawStringTaggable(String str, int x, int y, int width, int height, int rgb, int shadow, int arg7, int arg8, int arg9, int arg10, Sprite[] glyphs, int[] arg12, GraphicsRelated arg13, int arg14, int arg15) {
+		if (str == null) {
 			return 0;
 		}
-		this.method2686(arg5, arg6);
+		this.setStyle(rgb, shadow);
 		if (arg9 == 0) {
-			arg9 = this.field1667.field8566;
+			arg9 = this.fontMetrics.field8566;
 		}
-		int[] var17;
-		if (arg4 < this.field1667.field8569 + this.field1667.field8562 + arg9 && arg4 < arg9 + arg9) {
-			var17 = null;
+		int[] splitWidth;
+		if (height < this.fontMetrics.field8569 + this.fontMetrics.field8562 + arg9 && height < arg9 + arg9) {
+			splitWidth = null;
 		} else {
-			var17 = new int[] { arg3 };
+			splitWidth = new int[] { width };
 		}
-		int var18 = this.field1667.method14535(arg0, var17, field1679, arg11);
+		int split = this.fontMetrics.splitInit(str, splitWidth, stringBuilder, glyphs);
 		if (arg10 == -1) {
-			arg10 = arg4 / arg9;
+			arg10 = height / arg9;
 			if (arg10 <= 0) {
 				arg10 = 1;
 			}
 		}
-		if (arg10 > 0 && var18 >= arg10) {
-			field1679[arg10 - 1] = this.field1667.method14534(field1679[arg10 - 1], arg3, arg11);
-			var18 = arg10;
+		if (arg10 > 0 && split >= arg10) {
+			stringBuilder[arg10 - 1] = this.fontMetrics.truncString(stringBuilder[arg10 - 1], width, glyphs);
+			split = arg10;
 		}
-		if (arg8 == 3 && var18 == 1) {
+		if (arg8 == 3 && split == 1) {
 			arg8 = 1;
 		}
-		int var19;
+		int yoff;
 		if (arg8 == 0) {
-			var19 = this.field1667.field8562 + arg2;
+			yoff = this.fontMetrics.field8562 + y;
 		} else if (arg8 == 1) {
-			var19 = (arg4 - this.field1667.field8562 - this.field1667.field8569 - (var18 - 1) * arg9) / 2 + this.field1667.field8562 + arg2;
+			yoff = (height - this.fontMetrics.field8562 - this.fontMetrics.field8569 - (split - 1) * arg9) / 2 + this.fontMetrics.field8562 + y;
 		} else if (arg8 == 2) {
-			var19 = arg2 + arg4 - this.field1667.field8569 - (var18 - 1) * arg9;
+			yoff = y + height - this.fontMetrics.field8569 - (split - 1) * arg9;
 		} else {
-			int var20 = (arg4 - this.field1667.field8562 - this.field1667.field8569 - (var18 - 1) * arg9) / (var18 + 1);
+			int var20 = (height - this.fontMetrics.field8562 - this.fontMetrics.field8569 - (split - 1) * arg9) / (split + 1);
 			if (var20 < 0) {
 				var20 = 0;
 			}
-			var19 = this.field1667.field8562 + arg2 + var20;
+			yoff = this.fontMetrics.field8562 + y + var20;
 			arg9 += var20;
 		}
-		for (int var21 = 0; var21 < var18; var21++) {
+		for (int index = 0; index < split; index++) {
 			if (arg7 == 0) {
-				this.method2694(field1679[var21], arg1, var19, arg11, arg12, arg13, arg14, arg15);
+				this.drawChars(stringBuilder[index], x, yoff, glyphs, arg12, arg13, arg14, arg15);
 			} else if (arg7 == 1) {
-				this.method2694(field1679[var21], arg1 + (arg3 - this.field1667.stringWidth(field1679[var21])) / 2, var19, arg11, arg12, arg13, arg14, arg15);
+				this.drawChars(stringBuilder[index], x + (width - this.fontMetrics.stringWidth(stringBuilder[index])) / 2, yoff, glyphs, arg12, arg13, arg14, arg15);
 			} else if (arg7 == 2) {
-				this.method2694(field1679[var21], arg1 + arg3 - this.field1667.stringWidth(field1679[var21]), var19, arg11, arg12, arg13, arg14, arg15);
-			} else if (var18 - 1 == var21) {
-				this.method2694(field1679[var21], arg1, var19, arg11, arg12, arg13, arg14, arg15);
+				this.drawChars(stringBuilder[index], x + width - this.fontMetrics.stringWidth(stringBuilder[index]), yoff, glyphs, arg12, arg13, arg14, arg15);
+			} else if (split - 1 == index) {
+				this.drawChars(stringBuilder[index], x, yoff, glyphs, arg12, arg13, arg14, arg15);
 			} else {
-				this.method2716(field1679[var21], arg3);
-				this.method2694(field1679[var21], arg1, var19, arg11, arg12, arg13, arg14, arg15);
+				this.method2716(stringBuilder[index], width);
+				this.drawChars(stringBuilder[index], x, yoff, glyphs, arg12, arg13, arg14, arg15);
 				field1677 = 0;
 			}
-			var19 += arg9;
+			yoff += arg9;
 		}
-		return var18;
+		return split;
 	}
 
 	@ObfuscatedName("eu.w(Ljava/lang/String;IIIIII)V")
-	public void drawCenteredWave(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		if (arg0 == null) {
+	public void drawCenteredWave(String str, int x, int y, int rgb, int shadow, int phase) {
+		if (str == null) {
 			return;
 		}
-		this.method2686(arg3, arg4);
-		int var7 = arg0.length();
-		int[] var8 = new int[var7];
-		for (int var9 = 0; var9 < var7; var9++) {
-			var8[var9] = (int) (Math.sin((double) arg5 / 5.0D + (double) var9 / 2.0D) * 5.0D);
+		this.setStyle(rgb, shadow);
+		int length = str.length();
+		int[] wave = new int[length];
+		for (int index = 0; index < length; index++) {
+			wave[index] = (int) (Math.sin((double) phase / 5.0D + (double) index / 2.0D) * 5.0D);
 		}
-		this.method2695(arg0, arg1 - this.field1667.stringWidth(arg0) / 2, arg2, null, null, null, var8);
+		this.drawCharsAlpha(str, x - this.fontMetrics.stringWidth(str) / 2, y, null, null, null, wave);
 	}
 
 	@ObfuscatedName("eu.l(Ljava/lang/String;IIIIIB)V")
-	public void method2687(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		if (arg0 == null) {
+	public void drawCenteredWave2(String str, int x, int y, int rgb, int shadow, int phase) {
+		if (str == null) {
 			return;
 		}
-		this.method2686(arg3, arg4);
-		int var7 = arg0.length();
-		int[] var8 = new int[var7];
-		int[] var9 = new int[var7];
-		for (int var10 = 0; var10 < var7; var10++) {
-			var8[var10] = (int) (Math.sin((double) arg5 / 5.0D + (double) var10 / 5.0D) * 5.0D);
-			var9[var10] = (int) (Math.sin((double) arg5 / 5.0D + (double) var10 / 3.0D) * 5.0D);
+		this.setStyle(rgb, shadow);
+		int length = str.length();
+		int[] wave1 = new int[length];
+		int[] wave2 = new int[length];
+		for (int index = 0; index < length; index++) {
+			wave1[index] = (int) (Math.sin((double) phase / 5.0D + (double) index / 5.0D) * 5.0D);
+			wave2[index] = (int) (Math.sin((double) phase / 5.0D + (double) index / 3.0D) * 5.0D);
 		}
-		this.method2695(arg0, arg1 - this.field1667.stringWidth(arg0) / 2, arg2, null, null, var8, var9);
+		this.drawCharsAlpha(str, x - this.fontMetrics.stringWidth(str) / 2, y, null, null, wave1, wave2);
 	}
 
 	@ObfuscatedName("eu.u(Ljava/lang/String;IIIIIII)V")
-	public void method2730(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		if (arg0 == null) {
+	public void drawCenteredShake(String str, int x, int y, int rgb, int shadow, int phase, int arg6) {
+		if (str == null) {
 			return;
 		}
-		this.method2686(arg3, arg4);
+		this.setStyle(rgb, shadow);
 		double var8 = 7.0D - (double) arg6 / 8.0D;
 		if (var8 < 0.0D) {
 			var8 = 0.0D;
 		}
-		int var10 = arg0.length();
-		int[] var11 = new int[var10];
-		for (int var12 = 0; var12 < var10; var12++) {
-			var11[var12] = (int) (Math.sin((double) arg5 / 1.0D + (double) var12 / 1.5D) * var8);
+		int length = str.length();
+		int[] pixels = new int[length];
+		for (int index = 0; index < length; index++) {
+			pixels[index] = (int) (Math.sin((double) phase / 1.0D + (double) index / 1.5D) * var8);
 		}
-		this.method2695(arg0, arg1 - this.field1667.stringWidth(arg0) / 2, arg2, null, null, null, var11);
+		this.drawCharsAlpha(str, x - this.fontMetrics.stringWidth(str) / 2, y, null, null, null, pixels);
 	}
 
 	@ObfuscatedName("eu.z(Ljava/lang/String;IIIILjava/util/Random;I[Lcm;[IB)I")
-	public int method2689(String arg0, int arg1, int arg2, int arg3, int arg4, Random arg5, int arg6, Sprite[] arg7, int[] arg8) {
-		if (arg0 == null) {
+	public int method2689(String str, int x, int y, int rgb, int shadow, Random random, int seed, Sprite[] arg7, int[] arg8) {
+		if (str == null) {
 			return 0;
 		}
-		arg5.setSeed((long) arg6);
-		int var10 = (arg5.nextInt() & 0x1F) + 192;
-		this.method2686(var10 << 24 | arg3 & 0xFFFFFF, var10 << 24 | arg4 & 0xFFFFFF);
-		int var11 = arg0.length();
-		int[] var12 = new int[var11];
-		int var13 = 0;
-		for (int var14 = 0; var14 < var11; var14++) {
-			var12[var14] = var13;
-			if ((arg5.nextInt() & 0x3) == 0) {
-				var13++;
+		random.setSeed((long) seed);
+		int rand = (random.nextInt() & 0x1F) + 192;
+		this.setStyle(rand << 24 | rgb & 0xFFFFFF, rand << 24 | shadow & 0xFFFFFF);
+		int length = str.length();
+		int[] pixels = new int[length];
+		int modified = 0;
+		for (int index = 0; index < length; index++) {
+			pixels[index] = modified;
+			if ((random.nextInt() & 0x3) == 0) {
+				modified++;
 			}
 		}
-		this.method2695(arg0, arg1, arg2, arg7, arg8, var12, null);
-		return var13;
+		this.drawCharsAlpha(str, x, y, arg7, arg8, pixels, null);
+		return modified;
 	}
 
 	@ObfuscatedName("eu.p(Ljava/lang/String;IIIIIIIILjava/util/Random;I[I[Lcm;[II)I")
-	public int method2700(String arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, Random arg9, int arg10, int[] arg11, Sprite[] arg12, int[] arg13) {
-		if (arg0 == null) {
+	public int drawStringTaggableAntimacro(String str, int x, int y, int width, int height, int rgb, int shadow, int arg7, int arg8, Random random, int seed, int[] arg11, Sprite[] arg12, int[] arg13) {
+		if (str == null) {
 			return 0;
 		}
-		arg9.setSeed((long) arg10);
-		int var15 = (arg9.nextInt() & 0x1F) + 192;
-		this.method2686(var15 << 24 | arg5 & 0xFFFFFF, arg6 == -1 ? 0 : var15 << 24 | arg6 & 0xFFFFFF);
-		int var16 = arg0.length();
-		int[] var17 = new int[var16];
-		int var18 = 0;
-		for (int var19 = 0; var19 < var16; var19++) {
-			var17[var19] = var18;
-			if ((arg9.nextInt() & 0x3) == 0) {
-				var18++;
+		random.setSeed((long) seed);
+		int rand = (random.nextInt() & 0x1F) + 192;
+		this.setStyle(rand << 24 | rgb & 0xFFFFFF, shadow == -1 ? 0 : rand << 24 | shadow & 0xFFFFFF);
+		int length = str.length();
+		int[] pixels = new int[length];
+		int modified = 0;
+		for (int var19 = 0; var19 < length; var19++) {
+			pixels[var19] = modified;
+			if ((random.nextInt() & 0x3) == 0) {
+				modified++;
 			}
 		}
-		int var20 = arg1;
-		int var21 = this.field1667.field8562 + arg2;
-		int var22 = -1;
+		int offx = x;
+		int offy = this.fontMetrics.field8562 + y;
+		int offw = -1;
 		if (arg8 == 1) {
-			var21 += (arg4 - this.field1667.field8562 - this.field1667.field8569) / 2;
+			offy += (height - this.fontMetrics.field8562 - this.fontMetrics.field8569) / 2;
 		} else if (arg8 == 2) {
-			var21 = arg2 + arg4 - this.field1667.field8569;
+			offy = y + height - this.fontMetrics.field8569;
 		}
 		if (arg7 == 1) {
-			var22 = this.field1667.stringWidth(arg0) + var18;
-			var20 = (arg3 - var22) / 2 + arg1;
+			offw = this.fontMetrics.stringWidth(str) + modified;
+			offx = (width - offw) / 2 + x;
 		} else if (arg7 == 2) {
-			var22 = this.field1667.stringWidth(arg0) + var18;
-			var20 = arg3 - var22 + arg1;
+			offw = this.fontMetrics.stringWidth(str) + modified;
+			offx = width - offw + x;
 		}
-		this.method2695(arg0, var20, var21, arg12, arg13, var17, null);
+		this.drawCharsAlpha(str, offx, offy, arg12, arg13, pixels, null);
 		if (arg11 != null) {
-			if (var22 == -1) {
-				var22 = this.field1667.stringWidth(arg0) + var18;
+			if (offw == -1) {
+				offw = this.fontMetrics.stringWidth(str) + modified;
 			}
-			arg11[0] = var20;
-			arg11[1] = var21 - this.field1667.field8562;
-			arg11[2] = var22;
-			arg11[3] = this.field1667.field8569 + this.field1667.field8562;
+			arg11[0] = offx;
+			arg11[1] = offy - this.fontMetrics.field8562;
+			arg11[2] = offw;
+			arg11[3] = this.fontMetrics.field8569 + this.fontMetrics.field8562;
 		}
-		return var18;
+		return modified;
 	}
 
 	@ObfuscatedName("eu.d(III)V")
-	public void method2686(int arg0, int arg1) {
-		field1671 = -1;
-		field1673 = -1;
-		field1669 = arg0;
-		field1674 = arg0;
+	public void setStyle(int rgb, int shadow) {
+		strikethrough = -1;
+		underline = -1;
+		originalRgb = rgb;
+		Font.rgb = rgb;
 		field1677 = 0;
 		field1678 = 0;
-		if (arg1 == -1) {
-			arg1 = 0;
+		if (shadow == -1) {
+			shadow = 0;
 		}
-		field1675 = arg1;
-		field1676 = arg1;
+		originalShadow = shadow;
+		Font.shadow = shadow;
 	}
 
 	@ObfuscatedName("eu.c(Ljava/lang/String;I)V")
-	public void method2731(String arg0) {
+	public void evaluateTag(String tag) {
 		try {
-			if (arg0.startsWith("col=")) {
-				field1674 = field1674 & 0xFF000000 | StringTools.method4321(arg0.substring(4), 16) & 0xFFFFFF;
-			} else if (arg0.equals("/col")) {
-				field1674 = field1674 & 0xFF000000 | field1669 & 0xFFFFFF;
+			if (tag.startsWith("col=")) {
+				rgb = rgb & 0xFF000000 | StringTools.method4321(tag.substring(4), 16) & 0xFFFFFF;
+			} else if (tag.equals("/col")) {
+				rgb = rgb & 0xFF000000 | originalRgb & 0xFFFFFF;
 			}
-			if (arg0.startsWith("argb=")) {
-				field1674 = StringTools.method4321(arg0.substring(5), 16);
-			} else if (arg0.equals("/argb")) {
-				field1674 = field1669;
-			} else if (arg0.startsWith("str=")) {
-				field1671 = field1674 & 0xFF000000 | StringTools.method4321(arg0.substring(4), 16);
-			} else if (arg0.equals("str")) {
-				field1671 = field1674 & 0xFF000000 | 0x800000;
-			} else if (arg0.equals("/str")) {
-				field1671 = -1;
-			} else if (arg0.startsWith("u=")) {
-				field1673 = field1674 & 0xFF000000 | StringTools.method4321(arg0.substring(2), 16);
-			} else if (arg0.equals("u")) {
-				field1673 = field1674 & 0xFF000000;
-			} else if (arg0.equals("/u")) {
-				field1673 = -1;
-			} else if (arg0.equalsIgnoreCase("shad=-1")) {
-				field1676 = 0;
-			} else if (arg0.startsWith("shad=")) {
-				field1676 = field1674 & 0xFF000000 | StringTools.method4321(arg0.substring(5), 16);
-			} else if (arg0.equals("shad")) {
-				field1676 = field1674 & 0xFF000000;
-			} else if (arg0.equals("/shad")) {
-				field1676 = field1675;
-			} else if (arg0.equals("br")) {
-				this.method2686(field1669, field1675);
+			if (tag.startsWith("argb=")) {
+				rgb = StringTools.method4321(tag.substring(5), 16);
+			} else if (tag.equals("/argb")) {
+				rgb = originalRgb;
+			} else if (tag.startsWith("str=")) {
+				strikethrough = rgb & 0xFF000000 | StringTools.method4321(tag.substring(4), 16);
+			} else if (tag.equals("str")) {
+				strikethrough = rgb & 0xFF000000 | 0x800000;
+			} else if (tag.equals("/str")) {
+				strikethrough = -1;
+			} else if (tag.startsWith("u=")) {
+				underline = rgb & 0xFF000000 | StringTools.method4321(tag.substring(2), 16);
+			} else if (tag.equals("u")) {
+				underline = rgb & 0xFF000000;
+			} else if (tag.equals("/u")) {
+				underline = -1;
+			} else if (tag.equalsIgnoreCase("shad=-1")) {
+				shadow = 0;
+			} else if (tag.startsWith("shad=")) {
+				shadow = rgb & 0xFF000000 | StringTools.method4321(tag.substring(5), 16);
+			} else if (tag.equals("shad")) {
+				shadow = rgb & 0xFF000000;
+			} else if (tag.equals("/shad")) {
+				shadow = originalShadow;
+			} else if (tag.equals("br")) {
+				this.setStyle(originalRgb, originalShadow);
 			}
 		} catch (Exception var3) {
 		}
@@ -322,77 +322,77 @@ public abstract class Font {
 			}
 		}
 		if (var3 > 0) {
-			field1677 = (arg1 - this.field1667.stringWidth(arg0) << 8) / var3;
+			field1677 = (arg1 - this.fontMetrics.stringWidth(arg0) << 8) / var3;
 		}
 	}
 
 	@ObfuscatedName("eu.v(Ljava/lang/String;II[Lcm;[ILch;III)V")
-	public void method2694(String arg0, int arg1, int arg2, Sprite[] arg3, int[] arg4, GraphicsRelated arg5, int arg6, int arg7) {
-		int var9 = arg2 - this.field1667.field8566;
+	public void drawChars(String str, int x, int y, Sprite[] glyphs, int[] arg4, GraphicsRelated arg5, int arg6, int arg7) {
+		int var9 = y - this.fontMetrics.field8566;
 		int var10 = -1;
 		int var11 = -1;
-		int var12 = arg0.length();
-		for (int var13 = 0; var13 < var12; var13++) {
-			char var14 = (char) (Cp1252.encode(arg0.charAt(var13)) & 0xFF);
-			if (var14 == '<') {
-				var10 = var13;
+		int var12 = str.length();
+		for (int index = 0; index < var12; index++) {
+			char c = (char) (Cp1252.encode(str.charAt(index)) & 0xFF);
+			if (c == '<') {
+				var10 = index;
 			} else {
-				if (var14 == '>' && var10 != -1) {
-					String var15 = arg0.substring(var10 + 1, var13);
+				if (c == '>' && var10 != -1) {
+					String var15 = str.substring(var10 + 1, index);
 					var10 = -1;
 					if (var15.equals("lt")) {
-						var14 = '<';
+						c = '<';
 					} else if (var15.equals("gt")) {
-						var14 = '>';
+						c = '>';
 					} else if (var15.equals("nbsp")) {
-						var14 = 160;
+						c = 160;
 					} else if (var15.equals("shy")) {
-						var14 = 173;
+						c = 173;
 					} else if (var15.equals("times")) {
-						var14 = 215;
+						c = 215;
 					} else if (var15.equals("euro")) {
-						var14 = 128;
+						c = 128;
 					} else if (var15.equals("copy")) {
-						var14 = 169;
+						c = 169;
 					} else {
 						if (!var15.equals("reg")) {
 							if (var15.startsWith("img=")) {
 								try {
 									int var16 = StringTools.parseInt(var15.substring(4));
-									Sprite var17 = arg3[var16];
+									Sprite var17 = glyphs[var16];
 									int var18 = arg4 == null ? var17.method1436() : arg4[var16];
-									if ((field1674 & -16777216) == -16777216) {
-										var17.method1443(arg1, this.field1667.field8566 + var9 - var18, 1, -1, 1);
+									if ((rgb & -16777216) == -16777216) {
+										var17.drawSprite(x, this.fontMetrics.field8566 + var9 - var18, 1, -1, 1);
 									} else {
-										var17.method1443(arg1, this.field1667.field8566 + var9 - var18, 0, field1674 & 0xFF000000 | 0xFFFFFF, 1);
+										var17.drawSprite(x, this.fontMetrics.field8566 + var9 - var18, 0, rgb & 0xFF000000 | 0xFFFFFF, 1);
 									}
-									arg1 += arg3[var16].method1434();
+									x += glyphs[var16].getX();
 									var11 = -1;
 								} catch (Exception var29) {
 								}
 							} else if (!var15.startsWith("sprite=")) {
-								this.method2731(var15);
-							} else if (this.field1667.field8575 != null) {
+								this.evaluateTag(var15);
+							} else if (this.fontMetrics.fontIconProvider != null) {
 								try {
 									boolean var20 = true;
-									int var21 = 0;
-									int var22 = var15.indexOf(44);
-									int var23;
-									if (var22 == -1) {
-										var23 = StringTools.parseInt(var15.substring(7));
+									int spriteIndex = 0;
+									int iconIndex = var15.indexOf(44);
+									int iconId;
+									if (iconIndex == -1) {
+										iconId = StringTools.parseInt(var15.substring(7));
 									} else {
-										var23 = StringTools.parseInt(var15.substring(7, var22));
-										var21 = StringTools.parseInt(var15.substring(var22 + 1));
+										iconId = StringTools.parseInt(var15.substring(7, iconIndex));
+										spriteIndex = StringTools.parseInt(var15.substring(iconIndex + 1));
 									}
-									Sprite[] var24 = this.field1667.field8575.getIconSprites(this.field1666, var23);
-									if (var24 != null) {
-										int var25 = Math.min(var24[var21].method1436(), this.field1667.field8569 + this.field1667.field8562);
-										if ((field1674 & -16777216) == -16777216) {
-											var24[var21].method1443(arg1, this.field1667.field8566 + var9 + 2 - var25, 1, -1, 1);
+									Sprite[] sprites = this.fontMetrics.fontIconProvider.getIconSprites(this.renderer, iconId);
+									if (sprites != null) {
+										int var25 = Math.min(sprites[spriteIndex].method1436(), this.fontMetrics.field8569 + this.fontMetrics.field8562);
+										if ((rgb & -16777216) == -16777216) {
+											sprites[spriteIndex].drawSprite(x, this.fontMetrics.field8566 + var9 + 2 - var25, 1, -1, 1);
 										} else {
-											var24[var21].method1443(arg1, this.field1667.field8566 + var9 + 2 - var25, 0, field1674 & 0xFF000000 | 0xFFFFFF, 1);
+											sprites[spriteIndex].drawSprite(x, this.fontMetrics.field8566 + var9 + 2 - var25, 0, rgb & 0xFF000000 | 0xFFFFFF, 1);
 										}
-										arg1 += var24[var21].method1434();
+										x += sprites[spriteIndex].getX();
 									}
 									var11 = -1;
 								} catch (Exception var28) {
@@ -400,76 +400,76 @@ public abstract class Font {
 							}
 							continue;
 						}
-						var14 = 174;
+						c = 174;
 					}
 				}
 				if (var10 == -1) {
 					if (var11 != -1) {
-						arg1 += this.field1667.method14537(var11, var14);
+						x += this.fontMetrics.method14537(var11, c);
 					}
-					if (var14 == ' ') {
+					if (c == ' ') {
 						if (field1677 > 0) {
 							field1678 += field1677;
-							arg1 += field1678 >> 8;
+							x += field1678 >> 8;
 							field1678 &= 0xFF;
 						}
 					} else if (arg5 == null) {
-						if ((field1676 & 0xFF000000) != 0) {
-							this.method2690(var14, arg1 + 1, var9 + 1, field1676, true);
+						if ((shadow & 0xFF000000) != 0) {
+							this.drawChar(c, x + 1, var9 + 1, shadow, true);
 						}
-						this.method2690(var14, arg1, var9, field1674, false);
+						this.drawChar(c, x, var9, rgb, false);
 					} else {
-						if ((field1676 & 0xFF000000) != 0) {
-							this.method2697(var14, arg1 + 1, var9 + 1, field1676, true, arg5, arg6, arg7);
+						if ((shadow & 0xFF000000) != 0) {
+							this.drawChar2(c, x + 1, var9 + 1, shadow, true, arg5, arg6, arg7);
 						}
-						this.method2697(var14, arg1, var9, field1674, false, arg5, arg6, arg7);
+						this.drawChar2(c, x, var9, rgb, false, arg5, arg6, arg7);
 					}
-					int var27 = this.field1667.method14558(var14);
-					if (field1671 != -1) {
-						this.field1666.method2176(arg1, (int) ((double) this.field1667.field8566 * 0.7D) + var9, var27, field1671);
+					int var27 = this.fontMetrics.method14558(c);
+					if (strikethrough != -1) {
+						this.renderer.drawHorizontalLine(x, (int) ((double) this.fontMetrics.field8566 * 0.7D) + var9, var27, strikethrough);
 					}
-					if (field1673 != -1) {
-						this.field1666.method2176(arg1, this.field1667.field8566 + var9 + 1, var27, field1673);
+					if (underline != -1) {
+						this.renderer.drawHorizontalLine(x, this.fontMetrics.field8566 + var9 + 1, var27, underline);
 					}
-					arg1 += var27;
-					var11 = var14;
+					x += var27;
+					var11 = c;
 				}
 			}
 		}
 	}
 
 	@ObfuscatedName("eu.o(Ljava/lang/String;II[Lcm;[I[I[II)V")
-	public void method2695(String arg0, int arg1, int arg2, Sprite[] arg3, int[] arg4, int[] arg5, int[] arg6) {
-		int var8 = arg2 - this.field1667.field8566;
+	public void drawCharsAlpha(String str, int x, int y, Sprite[] glyphs, int[] arg4, int[] arg5, int[] arg6) {
+		int yoff = y - this.fontMetrics.field8566;
 		int var9 = -1;
 		int var10 = -1;
 		int var11 = 0;
-		int var12 = arg0.length();
-		for (int var13 = 0; var13 < var12; var13++) {
-			char var14 = (char) (Cp1252.encode(arg0.charAt(var13)) & 0xFF);
-			if (var14 == '<') {
-				var9 = var13;
+		int length = str.length();
+		for (int index = 0; index < length; index++) {
+			char c = (char) (Cp1252.encode(str.charAt(index)) & 0xFF);
+			if (c == '<') {
+				var9 = index;
 			} else {
-				if (var14 == '>' && var9 != -1) {
-					String var15 = arg0.substring(var9 + 1, var13);
+				if (c == '>' && var9 != -1) {
+					String tag = str.substring(var9 + 1, index);
 					var9 = -1;
-					if (var15.equals("lt")) {
-						var14 = '<';
-					} else if (var15.equals("gt")) {
-						var14 = '>';
-					} else if (var15.equals("nbsp")) {
-						var14 = 160;
-					} else if (var15.equals("shy")) {
-						var14 = 173;
-					} else if (var15.equals("times")) {
-						var14 = 215;
-					} else if (var15.equals("euro")) {
-						var14 = 128;
-					} else if (var15.equals("copy")) {
-						var14 = 169;
+					if (tag.equals("lt")) {
+						c = '<';
+					} else if (tag.equals("gt")) {
+						c = '>';
+					} else if (tag.equals("nbsp")) {
+						c = 160;
+					} else if (tag.equals("shy")) {
+						c = 173;
+					} else if (tag.equals("times")) {
+						c = 215;
+					} else if (tag.equals("euro")) {
+						c = 128;
+					} else if (tag.equals("copy")) {
+						c = 169;
 					} else {
-						if (!var15.equals("reg")) {
-							if (var15.startsWith("img=")) {
+						if (!tag.equals("reg")) {
+							if (tag.startsWith("img=")) {
 								try {
 									int var16;
 									if (arg5 == null) {
@@ -484,27 +484,27 @@ public abstract class Font {
 										var17 = arg6[var11];
 									}
 									var11++;
-									int var18 = StringTools.parseInt(var15.substring(4));
-									Sprite var19 = arg3[var18];
+									int var18 = StringTools.parseInt(tag.substring(4));
+									Sprite var19 = glyphs[var18];
 									int var20 = arg4 == null ? var19.method1436() : arg4[var18];
-									var19.method1443(arg1 + var16, this.field1667.field8566 + var8 - var20 + var17, 1, -1, 1);
-									arg1 += arg3[var18].method1434();
+									var19.drawSprite(x + var16, this.fontMetrics.field8566 + yoff - var20 + var17, 1, -1, 1);
+									x += glyphs[var18].getX();
 									var10 = -1;
 								} catch (Exception var35) {
 								}
-							} else if (!var15.startsWith("sprite=")) {
-								this.method2731(var15);
-							} else if (this.field1667.field8575 != null) {
+							} else if (!tag.startsWith("sprite=")) {
+								this.evaluateTag(tag);
+							} else if (this.fontMetrics.fontIconProvider != null) {
 								try {
 									boolean var22 = true;
 									int var23 = 0;
-									int var24 = var15.indexOf(44);
+									int var24 = tag.indexOf(44);
 									int var25;
 									if (var24 == -1) {
-										var25 = StringTools.parseInt(var15.substring(7));
+										var25 = StringTools.parseInt(tag.substring(7));
 									} else {
-										var25 = StringTools.parseInt(var15.substring(7, var24));
-										var23 = StringTools.parseInt(var15.substring(var24 + 1));
+										var25 = StringTools.parseInt(tag.substring(7, var24));
+										var23 = StringTools.parseInt(tag.substring(var24 + 1));
 									}
 									int var26;
 									if (arg5 == null) {
@@ -519,11 +519,11 @@ public abstract class Font {
 										var27 = arg6[var11];
 									}
 									var11++;
-									Sprite[] var28 = this.field1667.field8575.getIconSprites(this.field1666, var25);
+									Sprite[] var28 = this.fontMetrics.fontIconProvider.getIconSprites(this.renderer, var25);
 									if (var28 != null) {
-										int var29 = Math.min(var28[var23].method1436(), this.field1667.field8569 + this.field1667.field8562);
-										var28[var23].method1443(arg1 + var26, this.field1667.field8566 + var8 + 3 - var29 + var27, 1, -1, 1);
-										arg1 += var28[var23].method1434();
+										int var29 = Math.min(var28[var23].method1436(), this.fontMetrics.field8569 + this.fontMetrics.field8562);
+										var28[var23].drawSprite(x + var26, this.fontMetrics.field8566 + yoff + 3 - var29 + var27, 1, -1, 1);
+										x += var28[var23].getX();
 									}
 									var10 = -1;
 								} catch (Exception var34) {
@@ -531,12 +531,12 @@ public abstract class Font {
 							}
 							continue;
 						}
-						var14 = 174;
+						c = 174;
 					}
 				}
 				if (var9 == -1) {
 					if (var10 != -1) {
-						arg1 += this.field1667.method14537(var10, var14);
+						x += this.fontMetrics.method14537(var10, c);
 					}
 					int var31;
 					if (arg5 == null) {
@@ -551,33 +551,33 @@ public abstract class Font {
 						var32 = arg6[var11];
 					}
 					var11++;
-					if (var14 != ' ') {
-						if ((field1676 & 0xFF000000) != 0) {
-							this.method2690(var14, arg1 + 1 + var31, var8 + 1 + var32, field1676, true);
+					if (c != ' ') {
+						if ((shadow & 0xFF000000) != 0) {
+							this.drawChar(c, x + 1 + var31, yoff + 1 + var32, shadow, true);
 						}
-						this.method2690(var14, arg1 + var31, var8 + var32, field1674, false);
+						this.drawChar(c, x + var31, yoff + var32, rgb, false);
 					} else if (field1677 > 0) {
 						field1678 += field1677;
-						arg1 += field1678 >> 8;
+						x += field1678 >> 8;
 						field1678 &= 0xFF;
 					}
-					int var33 = this.field1667.method14558(var14);
-					if (field1671 != -1) {
-						this.field1666.method2176(arg1, (int) ((double) this.field1667.field8566 * 0.7D) + var8, var33, field1671);
+					int var33 = this.fontMetrics.method14558(c);
+					if (strikethrough != -1) {
+						this.renderer.drawHorizontalLine(x, (int) ((double) this.fontMetrics.field8566 * 0.7D) + yoff, var33, strikethrough);
 					}
-					if (field1673 != -1) {
-						this.field1666.method2176(arg1, this.field1667.field8566 + var8, var33, field1673);
+					if (underline != -1) {
+						this.renderer.drawHorizontalLine(x, this.fontMetrics.field8566 + yoff, var33, underline);
 					}
-					arg1 += var33;
-					var10 = var14;
+					x += var33;
+					var10 = c;
 				}
 			}
 		}
 	}
 
 	@ObfuscatedName("eu.s(CIIIZ)V")
-	public abstract void method2690(char arg0, int arg1, int arg2, int arg3, boolean arg4);
+	public abstract void drawChar(char arg0, int arg1, int arg2, int arg3, boolean arg4);
 
 	@ObfuscatedName("eu.y(CIIIZLch;II)V")
-	public abstract void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7);
+	public abstract void drawChar2(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7);
 }

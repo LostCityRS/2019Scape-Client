@@ -420,7 +420,7 @@ public final class ScriptRunner {
 			throw new RuntimeException("Gap at:" + (arg3 - 1));
 		}
 		Component var12 = new Component();
-		var12.field2184 = arg2;
+		var12.type = arg2;
 		var12.field2200 = var12.field2158 = var6.field2158;
 		var12.field2183 = arg3;
 		var6.field2351[arg3] = var12;
@@ -5304,10 +5304,10 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("tp.bw(Lhf;Lyf;I)V")
 	public static final void cc_if_resume_pausebutton(Component arg0, ClientScriptState arg1) {
-		if (Client.method17197(arg0).method17689() && Client.field11056 == null) {
+		if (Client.method17197(arg0).method17689() && Client.pressedContinueOption == null) {
 			Client.method612(arg0.field2158, arg0.field2183);
-			Client.field11056 = Component.method16682(arg0.field2158, arg0.field2183);
-			Client.method4616(Client.field11056);
+			Client.pressedContinueOption = Component.method16682(arg0.field2158, arg0.field2183);
+			Client.method4616(Client.pressedContinueOption);
 		}
 	}
 
@@ -5392,7 +5392,7 @@ public final class ScriptRunner {
 		arg0.field2187 = (byte) var4;
 		Client.method4616(arg0);
 		Client.method2103(arg1, arg0);
-		if (arg0.field2184 == 0) {
+		if (arg0.type == 0) {
 			Client.method8329(arg1, arg0, false);
 		}
 		if (arg0.field2183 == -1 && !arg1.field2150) {
@@ -5439,7 +5439,7 @@ public final class ScriptRunner {
 		arg0.field2174 = (byte) var4;
 		Client.method4616(arg0);
 		Client.method2103(arg1, arg0);
-		if (arg0.field2184 == 0) {
+		if (arg0.type == 0) {
 			Client.method8329(arg1, arg0, false);
 		}
 	}
@@ -5495,7 +5495,7 @@ public final class ScriptRunner {
 		arg0.field2199 = arg2.field8216[arg2.field8226 + 1];
 		Client.method4616(arg0);
 		Client.method2103(arg1, arg0);
-		if (arg0.field2184 == 0) {
+		if (arg0.type == 0) {
 			Client.method8329(arg1, arg0, false);
 		}
 	}
@@ -5541,15 +5541,15 @@ public final class ScriptRunner {
 	public static final void cc_if_setscrollpos(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.field8226 -= 2;
 		arg0.field2206 = arg2.field8216[arg2.field8226];
-		if (arg0.field2206 > arg0.field2208 - arg0.field2196) {
-			arg0.field2206 = arg0.field2208 - arg0.field2196;
+		if (arg0.field2206 > arg0.field2208 - arg0.width) {
+			arg0.field2206 = arg0.field2208 - arg0.width;
 		}
 		if (arg0.field2206 < 0) {
 			arg0.field2206 = 0;
 		}
 		arg0.field2207 = arg2.field8216[arg2.field8226 + 1];
-		if (arg0.field2207 > arg0.field2319 - arg0.field2197) {
-			arg0.field2207 = arg0.field2319 - arg0.field2197;
+		if (arg0.field2207 > arg0.field2319 - arg0.height) {
+			arg0.field2207 = arg0.field2319 - arg0.height;
 		}
 		if (arg0.field2207 < 0) {
 			arg0.field2207 = 0;
@@ -5578,7 +5578,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("mj.cr(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setcolour(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2210 = arg2.field8216[--arg2.field8226];
+		arg0.colour = arg2.field8216[--arg2.field8226];
 		Client.method4616(arg0);
 		if (arg0.field2183 == -1 && !arg1.field2150) {
 			DelayedStateChange.method14870(arg0.field2158);
@@ -5603,7 +5603,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ch.ch(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setfill(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2263 = arg2.field8216[--arg2.field8226] == 1;
+		arg0.fill = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 	}
 
@@ -5941,8 +5941,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("fb.ee(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_settext(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.field8218[--arg2.field8211];
-		if (!var3.equals(arg0.field2261)) {
-			arg0.field2261 = var3;
+		if (!var3.equals(arg0.text)) {
+			arg0.text = var3;
 			Client.method4616(arg0);
 		}
 		if (arg0.field2183 == -1 && !arg1.field2150) {
@@ -6040,7 +6040,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("if.eg(Lhf;Lhq;Lyf;S)V")
 	public static final void cc_if_settextantimacro(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2267 = arg2.field8216[--arg2.field8226] == 1;
+		arg0.antimacro = arg2.field8216[--arg2.field8226] == 1;
 		Client.method4616(arg0);
 		if (arg0.field2183 == -1 && !arg1.field2150) {
 			DelayedStateChange.method9793(arg0.field2158);
@@ -6157,7 +6157,7 @@ public final class ScriptRunner {
 		arg0.field2208 = arg2.field8216[arg2.field8226];
 		arg0.field2319 = arg2.field8216[arg2.field8226 + 1];
 		Client.method4616(arg0);
-		if (arg0.field2184 == 0) {
+		if (arg0.type == 0) {
 			Client.method8329(arg1, arg0, false);
 		}
 	}
@@ -8809,28 +8809,28 @@ public final class ScriptRunner {
 	public static final void cc_getx(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2194;
+		arg0.field8216[++arg0.field8226 - 1] = var2.x;
 	}
 
 	@ObfuscatedName("vq.rz(Lyf;I)V")
 	public static final void cc_gety(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2195;
+		arg0.field8216[++arg0.field8226 - 1] = var2.y;
 	}
 
 	@ObfuscatedName("aqc.re(Lyf;I)V")
 	public static final void cc_getwidth(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2196;
+		arg0.field8216[++arg0.field8226 - 1] = var2.width;
 	}
 
 	@ObfuscatedName("fu.rt(Lyf;I)V")
 	public static final void cc_getheight(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2197;
+		arg0.field8216[++arg0.field8226 - 1] = var2.height;
 	}
 
 	@ObfuscatedName("ac.rl(Lyf;B)V")
@@ -8860,7 +8860,7 @@ public final class ScriptRunner {
 	public static final void cc_getcolour(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2210;
+		arg0.field8216[++arg0.field8226 - 1] = var2.colour;
 	}
 
 	@ObfuscatedName("iy.rn(Lyf;I)V")
@@ -8881,7 +8881,7 @@ public final class ScriptRunner {
 	public static final void cc_gettext(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.field8235 ? arg0.field8225 : arg0.field8217;
 		Component var2 = var1.field8242;
-		arg0.field8218[++arg0.field8211 - 1] = var2.field2261;
+		arg0.field8218[++arg0.field8211 - 1] = var2.text;
 	}
 
 	@ObfuscatedName("tj.sv(Lyf;I)V")
@@ -9098,7 +9098,7 @@ public final class ScriptRunner {
 		FontMetrics var2 = arg0.method3943(Client.fontProvider, Client.fontFactory);
 		int var3 = arg1.field8216[--arg1.field8226];
 		int var4 = arg1.field8216[--arg1.field8226];
-		int var5 = var2.method14542(arg0.field2261, arg0.field2196, arg0.field2229, var4, var3, DefaultSprites.field10302);
+		int var5 = var2.getCharIndexAtPos(arg0.text, arg0.width, arg0.field2229, var4, var3, DefaultSprites.field10302);
 		arg1.field8216[++arg1.field8226 - 1] = var5;
 	}
 
@@ -9120,7 +9120,7 @@ public final class ScriptRunner {
 	public static final void cc_if_getcharposatindex(Component arg0, ClientScriptState arg1) {
 		FontMetrics var2 = arg0.method3943(Client.fontProvider, Client.fontFactory);
 		int var3 = arg1.field8216[--arg1.field8226];
-		Point var4 = var2.method14541(arg0.field2261, arg0.field2196, arg0.field2229, var3, DefaultSprites.field10302);
+		Point var4 = var2.getCharPosAtIndex(arg0.text, arg0.width, arg0.field2229, var3, DefaultSprites.field10302);
 		arg1.field8216[++arg1.field8226 - 1] = var4.x;
 		arg1.field8216[++arg1.field8226 - 1] = var4.y;
 	}
@@ -9342,28 +9342,28 @@ public final class ScriptRunner {
 	public static final void if_getx(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2194;
+		arg0.field8216[++arg0.field8226 - 1] = var2.x;
 	}
 
 	@ObfuscatedName("as.tl(Lyf;S)V")
 	public static final void if_gety(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2195;
+		arg0.field8216[++arg0.field8226 - 1] = var2.y;
 	}
 
 	@ObfuscatedName("hv.td(Lyf;I)V")
 	public static final void if_getwidth(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2196;
+		arg0.field8216[++arg0.field8226 - 1] = var2.width;
 	}
 
 	@ObfuscatedName("vm.ul(Lyf;I)V")
 	public static final void if_getheight(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2197;
+		arg0.field8216[++arg0.field8226 - 1] = var2.height;
 	}
 
 	@ObfuscatedName("wi.um(Lyf;I)V")
@@ -9393,7 +9393,7 @@ public final class ScriptRunner {
 	public static final void if_getcolour(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		arg0.field8216[++arg0.field8226 - 1] = var2.field2210;
+		arg0.field8216[++arg0.field8226 - 1] = var2.colour;
 	}
 
 	@ObfuscatedName("q.ua(Lyf;B)V")
@@ -9484,7 +9484,7 @@ public final class ScriptRunner {
 	public static final void if_gettext(ClientScriptState arg0) {
 		int var1 = arg0.field8216[--arg0.field8226];
 		Component var2 = Component.method10202(var1);
-		arg0.field8218[++arg0.field8211 - 1] = var2.field2261;
+		arg0.field8218[++arg0.field8211 - 1] = var2.text;
 	}
 
 	@ObfuscatedName("po.uh(Lyf;I)V")
@@ -11747,7 +11747,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		FontMetrics var4 = Client.fontProvider.getFontMetrics(Client.fontFactory, var3);
-		arg0.field8216[++arg0.field8226 - 1] = var4.method14538(var1, var2, DefaultSprites.field10302);
+		arg0.field8216[++arg0.field8226 - 1] = var4.paraheight(var1, var2, DefaultSprites.field10302);
 	}
 
 	@ObfuscatedName("hv.afr(Lyf;I)V")
@@ -11757,7 +11757,7 @@ public final class ScriptRunner {
 		int var2 = arg0.field8216[arg0.field8226];
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		FontMetrics var4 = Client.fontProvider.getFontMetrics(Client.fontFactory, var3);
-		arg0.field8216[++arg0.field8226 - 1] = var4.method14551(var1, var2, DefaultSprites.field10302);
+		arg0.field8216[++arg0.field8226 - 1] = var4.parawidth(var1, var2, DefaultSprites.field10302);
 	}
 
 	@ObfuscatedName("vc.afh(Lyf;I)V")
@@ -11768,7 +11768,7 @@ public final class ScriptRunner {
 		int var3 = arg0.field8216[arg0.field8226 + 1];
 		int var4 = arg0.field8216[arg0.field8226 + 2];
 		FontMetrics var5 = Client.fontProvider.getFontMetrics(Client.fontFactory, var3);
-		String var6 = var5.method14539(var1, var2, DefaultSprites.field10302, var4);
+		String var6 = var5.paraline(var1, var2, DefaultSprites.field10302, var4);
 		arg0.field8218[++arg0.field8211 - 1] = var6 == null ? "" : var6;
 	}
 
@@ -12368,114 +12368,114 @@ public final class ScriptRunner {
 			return;
 		}
 		String var2 = var1.toLowerCase();
-		byte var3 = 0;
+		byte colour = 0;
 		if (var2.startsWith(LocalisedText.CHATCOL0.forLang(Language.EN))) {
-			var3 = 0;
+			colour = 0;
 			var1 = var1.substring(LocalisedText.CHATCOL0.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL1.forLang(Language.EN))) {
-			var3 = 1;
+			colour = 1;
 			var1 = var1.substring(LocalisedText.CHATCOL1.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL2.forLang(Language.EN))) {
-			var3 = 2;
+			colour = 2;
 			var1 = var1.substring(LocalisedText.CHATCOL2.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL3.forLang(Language.EN))) {
-			var3 = 3;
+			colour = 3;
 			var1 = var1.substring(LocalisedText.CHATCOL3.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL4.forLang(Language.EN))) {
-			var3 = 4;
+			colour = 4;
 			var1 = var1.substring(LocalisedText.CHATCOL4.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL5.forLang(Language.EN))) {
-			var3 = 5;
+			colour = 5;
 			var1 = var1.substring(LocalisedText.CHATCOL5.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL6.forLang(Language.EN))) {
-			var3 = 6;
+			colour = 6;
 			var1 = var1.substring(LocalisedText.CHATCOL6.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL7.forLang(Language.EN))) {
-			var3 = 7;
+			colour = 7;
 			var1 = var1.substring(LocalisedText.CHATCOL7.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL8.forLang(Language.EN))) {
-			var3 = 8;
+			colour = 8;
 			var1 = var1.substring(LocalisedText.CHATCOL8.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL9.forLang(Language.EN))) {
-			var3 = 9;
+			colour = 9;
 			var1 = var1.substring(LocalisedText.CHATCOL9.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL10.forLang(Language.EN))) {
-			var3 = 10;
+			colour = 10;
 			var1 = var1.substring(LocalisedText.CHATCOL10.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL11.forLang(Language.EN))) {
-			var3 = 11;
+			colour = 11;
 			var1 = var1.substring(LocalisedText.CHATCOL11.forLang(Language.EN).length());
 		} else if (Client.language != Language.EN) {
 			if (var2.startsWith(LocalisedText.CHATCOL0.forLang(Client.language))) {
-				var3 = 0;
+				colour = 0;
 				var1 = var1.substring(LocalisedText.CHATCOL0.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL1.forLang(Client.language))) {
-				var3 = 1;
+				colour = 1;
 				var1 = var1.substring(LocalisedText.CHATCOL1.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL2.forLang(Client.language))) {
-				var3 = 2;
+				colour = 2;
 				var1 = var1.substring(LocalisedText.CHATCOL2.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL3.forLang(Client.language))) {
-				var3 = 3;
+				colour = 3;
 				var1 = var1.substring(LocalisedText.CHATCOL3.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL4.forLang(Client.language))) {
-				var3 = 4;
+				colour = 4;
 				var1 = var1.substring(LocalisedText.CHATCOL4.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL5.forLang(Client.language))) {
-				var3 = 5;
+				colour = 5;
 				var1 = var1.substring(LocalisedText.CHATCOL5.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL6.forLang(Client.language))) {
-				var3 = 6;
+				colour = 6;
 				var1 = var1.substring(LocalisedText.CHATCOL6.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL7.forLang(Client.language))) {
-				var3 = 7;
+				colour = 7;
 				var1 = var1.substring(LocalisedText.CHATCOL7.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL8.forLang(Client.language))) {
-				var3 = 8;
+				colour = 8;
 				var1 = var1.substring(LocalisedText.CHATCOL8.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL9.forLang(Client.language))) {
-				var3 = 9;
+				colour = 9;
 				var1 = var1.substring(LocalisedText.CHATCOL9.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL10.forLang(Client.language))) {
-				var3 = 10;
+				colour = 10;
 				var1 = var1.substring(LocalisedText.CHATCOL10.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL11.forLang(Client.language))) {
-				var3 = 11;
+				colour = 11;
 				var1 = var1.substring(LocalisedText.CHATCOL11.forLang(Client.language).length());
 			}
 		}
 		String var4 = var1.toLowerCase();
-		byte var5 = 0;
+		byte effect = 0;
 		if (var4.startsWith(LocalisedText.CHATEFFECT1.forLang(Language.EN))) {
-			var5 = 1;
+			effect = 1;
 			var1 = var1.substring(LocalisedText.CHATEFFECT1.forLang(Language.EN).length());
 		} else if (var4.startsWith(LocalisedText.CHATEFFECT2.forLang(Language.EN))) {
-			var5 = 2;
+			effect = 2;
 			var1 = var1.substring(LocalisedText.CHATEFFECT2.forLang(Language.EN).length());
 		} else if (var4.startsWith(LocalisedText.CHATEFFECT3.forLang(Language.EN))) {
-			var5 = 3;
+			effect = 3;
 			var1 = var1.substring(LocalisedText.CHATEFFECT3.forLang(Language.EN).length());
 		} else if (var4.startsWith(LocalisedText.CHATEFFECT4.forLang(Language.EN))) {
-			var5 = 4;
+			effect = 4;
 			var1 = var1.substring(LocalisedText.CHATEFFECT4.forLang(Language.EN).length());
 		} else if (var4.startsWith(LocalisedText.CHATEFFECT5.forLang(Language.EN))) {
-			var5 = 5;
+			effect = 5;
 			var1 = var1.substring(LocalisedText.CHATEFFECT5.forLang(Language.EN).length());
 		} else if (Client.language != Language.EN) {
 			if (var4.startsWith(LocalisedText.CHATEFFECT1.forLang(Client.language))) {
-				var5 = 1;
+				effect = 1;
 				var1 = var1.substring(LocalisedText.CHATEFFECT1.forLang(Client.language).length());
 			} else if (var4.startsWith(LocalisedText.CHATEFFECT2.forLang(Client.language))) {
-				var5 = 2;
+				effect = 2;
 				var1 = var1.substring(LocalisedText.CHATEFFECT2.forLang(Client.language).length());
 			} else if (var4.startsWith(LocalisedText.CHATEFFECT3.forLang(Client.language))) {
-				var5 = 3;
+				effect = 3;
 				var1 = var1.substring(LocalisedText.CHATEFFECT3.forLang(Client.language).length());
 			} else if (var4.startsWith(LocalisedText.CHATEFFECT4.forLang(Client.language))) {
-				var5 = 4;
+				effect = 4;
 				var1 = var1.substring(LocalisedText.CHATEFFECT4.forLang(Client.language).length());
 			} else if (var4.startsWith(LocalisedText.CHATEFFECT5.forLang(Client.language))) {
-				var5 = 5;
+				effect = 5;
 				var1 = var1.substring(LocalisedText.CHATEFFECT5.forLang(Client.language).length());
 			}
 		}
@@ -12483,8 +12483,8 @@ public final class ScriptRunner {
 		ClientMessage var7 = ClientMessage.createMessage(ClientProt.MESSAGE_PUBLIC, var6.randomOut);
 		var7.buf.p1(0);
 		int var8 = var7.buf.pos;
-		var7.buf.p1(var3);
-		var7.buf.p1(var5);
+		var7.buf.p1(colour);
+		var7.buf.p1(effect);
 		WordPack.encode(var7.buf, var1);
 		var7.buf.psize1(var7.buf.pos - var8);
 		var6.queue(var7);
@@ -15397,7 +15397,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("yb.avl(Lyf;I)V")
 	public static final void viewport_geteffectivesize(ClientScriptState arg0) {
-		Client.method13981(0, 0, Client.field10986.field2196, Client.field10986.field2197, false);
+		Client.method13981(0, 0, Client.field10986.width, Client.field10986.height, false);
 		arg0.field8216[++arg0.field8226 - 1] = Client.field11076;
 		arg0.field8216[++arg0.field8226 - 1] = Client.field11077;
 	}

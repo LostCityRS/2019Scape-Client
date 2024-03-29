@@ -169,7 +169,7 @@ public class SkyboxRelated {
 		int var20 = (int) (var12[0] - (float) (this.field5130 / 2));
 		int var21 = (int) (var12[1] - (float) (this.field5130 / 2));
 		if (var21 < arg4 && this.field5130 + var21 > 0 && var20 < arg3 && this.field5130 + var20 > 0) {
-			this.field5128.method1446(var20, var21, this.field5130, this.field5130, 0, arg10 << 24 | 0xFFFFFF, 1);
+			this.field5128.drawTintedScaled(var20, var21, this.field5130, this.field5130, 0, arg10 << 24 | 0xFFFFFF, 1);
 		}
 	}
 
@@ -307,11 +307,11 @@ public class SkyboxRelated {
 		var12.draw(var16, null, 1);
 		int var17 = this.field5123 * 13 / 16;
 		int var18 = (this.field5123 - var17) / 2;
-		field5118.method1446(var18, var18, var17, var17, 0, this.field5111 | 0xFF000000, 1);
+		field5118.drawTintedScaled(var18, var18, var17, var17, 0, this.field5111 | 0xFF000000, 1);
 		this.field5128 = arg0.method2314(0, 0, this.field5123, this.field5123, true);
 		arg0.method2475(2, 0);
 		arg0.fillRectangle(0, 0, this.field5123, this.field5123, 0, 0);
-		field5137.method1446(0, 0, this.field5123, this.field5123, 1, 0, 0);
+		field5137.drawTintedScaled(0, 0, this.field5123, this.field5123, 1, 0, 0);
 		this.field5128.method1441(0, 0, 3);
 		arg0.method2220(var14);
 		arg0.resetBounds(field5138[0], field5138[1], field5138[2], field5138[3]);

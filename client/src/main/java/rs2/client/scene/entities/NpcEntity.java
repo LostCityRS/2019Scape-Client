@@ -470,7 +470,7 @@ public class NpcEntity extends PathingEntity {
 		if (this.npcType == null) {
 			return false;
 		} else if (this.npcType.clickbox != null) {
-			return arg0.method2191(arg1, arg2, this.method10533(), this.npcType.clickbox);
+			return arg0.pick(arg1, arg2, this.method10533(), this.npcType.clickbox);
 		} else if (this.method19167(arg0, 131072)) {
 			Matrix4x3 var4 = this.method10533();
 			boolean var5 = false;

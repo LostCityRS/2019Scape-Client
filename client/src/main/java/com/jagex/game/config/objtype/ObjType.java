@@ -872,16 +872,16 @@ public class ObjType implements ConfigType {
 			this.method14648(var27, arg4);
 		}
 		if (this.lenttemplate != -1) {
-			var21.method1439(0, 0);
+			var21.drawSprite(0, 0);
 		} else if (this.boughttemplate != -1) {
-			var21.method1439(0, 0);
+			var21.drawSprite(0, 0);
 		}
-		arg0.createSprite(var27, 0, 36, 36, 32).method1439(0, 0);
+		arg0.createSprite(var27, 0, 36, 36, 32).drawSprite(0, 0);
 		if (this.certtemplate != -1) {
-			var21.method1439(0, 0);
+			var21.drawSprite(0, 0);
 		}
 		if (this.shardtemplate != -1) {
-			var21.method1439(0, 0);
+			var21.drawSprite(0, 0);
 		}
 		if (arg6 == 1 || arg6 == 2 && (this.stackable == 1 || arg2 != 1) && arg2 != -1) {
 			arg7.drawString(formatObjCount(arg2, this.factory.languageId, arg9), 0, 9, -256, -16777215);

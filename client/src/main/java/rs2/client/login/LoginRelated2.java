@@ -37,7 +37,7 @@ public class LoginRelated2 implements LoadingScreenElement {
 		}
 		int var2 = GameShell.canvasWid > Client.frameWidth ? GameShell.canvasWid : Client.frameWidth;
 		int var3 = GameShell.canvasHei > Client.frameHeight ? GameShell.canvasHei : Client.frameHeight;
-		int var4 = this.field3046.method1434();
+		int var4 = this.field3046.getX();
 		int var5 = this.field3046.method1436();
 		int var6 = 0;
 		int var7 = var2;
@@ -49,7 +49,7 @@ public class LoginRelated2 implements LoadingScreenElement {
 			var7 = var3 * var4 / var5;
 			var6 = (var2 - var7) / 2;
 		}
-		this.field3046.method1474(var6, var9, var7, var8);
+		this.field3046.drawTintedScaled(var6, var9, var7, var8);
 	}
 
 	@ObfuscatedName("ku.m(I)Z")

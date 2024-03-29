@@ -24,15 +24,15 @@ public class FontRelated2 extends Font {
 		this.field10236 = arg0;
 		this.field10237 = new byte[256][];
 		for (int var4 = 0; var4 < 256; var4++) {
-			int var5 = this.field1667.method14558(var4);
-			int var6 = this.field1667.method14529(var4);
-			short[] var7 = this.field1667.method14561(var4);
+			int var5 = this.fontMetrics.method14558(var4);
+			int var6 = this.fontMetrics.method14529(var4);
+			short[] var7 = this.fontMetrics.method14561(var4);
 			short var8 = var7[0];
 			short var9 = var7[1];
 			byte[] var10 = new byte[var5 * var6];
 			for (int var11 = 0; var11 < var6; var11++) {
 				for (int var12 = 0; var12 < var5; var12++) {
-					var10[var5 * var11 + var12] = arg2.colour[this.field1667.field8570 * var12 + this.field1667.field8571 * (this.field1667.field8570 * var11 + var9) + var8];
+					var10[var5 * var11 + var12] = arg2.colour[this.fontMetrics.field8570 * var12 + this.fontMetrics.field8571 * (this.fontMetrics.field8570 * var11 + var9) + var8];
 				}
 			}
 			this.field10237[var4] = var10;
@@ -41,13 +41,13 @@ public class FontRelated2 extends Font {
 	}
 
 	@ObfuscatedName("afd.s(CIIIZ)V")
-	public void method2690(char arg0, int arg1, int arg2, int arg3, boolean arg4) {
+	public void drawChar(char arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		if (this.field10236.colour == null) {
 			return;
 		}
-		int var6 = arg2 + this.field1667.method14560(arg0);
-		int var7 = this.field1667.method14558(arg0);
-		int var8 = this.field1667.method14529(arg0);
+		int var6 = arg2 + this.fontMetrics.method14560(arg0);
+		int var7 = this.fontMetrics.method14558(arg0);
+		int var8 = this.fontMetrics.method14529(arg0);
 		int var9 = this.field10236.sizeX;
 		int var10 = var6 * var9 + arg1;
 		int var11 = var9 - var7;
@@ -173,17 +173,17 @@ public class FontRelated2 extends Font {
 	}
 
 	@ObfuscatedName("afd.y(CIIIZLch;II)V")
-	public void method2697(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
+	public void drawChar2(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
 		if (this.field10236.colour == null) {
 			return;
 		}
 		if (arg5 == null) {
-			this.method2690(arg0, arg1, arg2, arg3, arg4);
+			this.drawChar(arg0, arg1, arg2, arg3, arg4);
 			return;
 		}
-		int var9 = arg2 + this.field1667.method14560(arg0);
-		int var10 = this.field1667.method14558(arg0);
-		int var11 = this.field1667.method14529(arg0);
+		int var9 = arg2 + this.fontMetrics.method14560(arg0);
+		int var10 = this.fontMetrics.method14558(arg0);
+		int var11 = this.fontMetrics.method14529(arg0);
 		int var12 = this.field10236.sizeX;
 		int var13 = var9 * var12 + arg1;
 		int var14 = var12 - var10;
@@ -218,9 +218,9 @@ public class FontRelated2 extends Font {
 			return;
 		}
 		if (arg4) {
-			this.method16379(this.field10237[arg0], this.field10236.colour, arg3, var16, var13, var10, var11, var14, var15, arg1, var9, this.field1667.method14558(arg0), arg5, arg6, arg7);
+			this.method16379(this.field10237[arg0], this.field10236.colour, arg3, var16, var13, var10, var11, var14, var15, arg1, var9, this.fontMetrics.method14558(arg0), arg5, arg6, arg7);
 		} else {
-			this.method16385(this.field10237[arg0], this.field10236.colour, this.field10235, arg3, var16, var13, var10, var11, var14, var15, arg1, var9, this.field1667.method14558(arg0), arg5, arg6, arg7);
+			this.method16385(this.field10237[arg0], this.field10236.colour, this.field10235, arg3, var16, var13, var10, var11, var14, var15, arg1, var9, this.fontMetrics.method14558(arg0), arg5, arg6, arg7);
 		}
 	}
 
