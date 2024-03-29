@@ -678,7 +678,7 @@ public final class Client extends GameShell {
 	public static Map field1232;
 
 	@ObfuscatedName("qi.in")
-	public static VariableTypeProvider field4626;
+	public static VariableTypeProvider variableTypeProvider;
 
 	@ObfuscatedName("nu.ir")
 	public static QuickChatCatTypeList quickChatCatTypeList;
@@ -2585,7 +2585,7 @@ public final class Client extends GameShell {
 		}
 		field10915 = 0;
 		if (Client.state == 18 && state != 3) {
-			TwitchHardwarePlatform.method8632();
+			TwitchHardwarePlatform.logout();
 		}
 		if (state == 14 || state == 19) {
 			LoginManager.requestGameLogin();
@@ -12264,7 +12264,7 @@ public final class Client extends GameShell {
 								continue;
 							}
 							if (Component.field2172 == child.clientcode) {
-								if (TwitchHardwarePlatform.method5076() && TwitchHardwarePlatform.method8634()) {
+								if (TwitchHardwarePlatform.isStreaming() && TwitchHardwarePlatform.method8634()) {
 									TwitchHardwarePlatform.method5389(arg2, arg3, arg4, arg5);
 								}
 								continue;

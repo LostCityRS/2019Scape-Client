@@ -31,7 +31,6 @@ public class ShaderData {
 			throw new ShaderDataException(this, var3, 4);
 		}
 		this.name = buf.gstr();
-		System.out.println("name = " + name);
 		this.vertexUniforms = new ProgramUniformData[buf.g2()];
 		this.fragmentUniforms = new ProgramUniformData[buf.g2()];
 		this.programs = new ProgramData[buf.g2()];

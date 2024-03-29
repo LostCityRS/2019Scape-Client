@@ -85,12 +85,11 @@ public class OpenGLProgram extends Program {
 				ProgramDefineData[] var4 = programData.vertexPrograms;
 				for (int var5 = 0; var5 < var4.length; var5++) {
 					ProgramDefineData var6 = var4[var5];
-//					stringBuilder.append("#define " + var6.field2566 + " " + var6.field2565 + '\n');
+					stringBuilder.append("#define " + var6.field2566 + " " + var6.field2565 + '\n');
 				}
 			}
 			stringBuilder.append(new String(glRenderer.method19089(this.vertexShaderFile)));
 			this.vertexShaderName = stringBuilder.toString();
-			System.out.println(this.vertexShaderName);
 		}
 		if (programData.fragmentShaderFile != null) {
 			this.fragmentShaderFile = programData.fragmentShaderFile;
@@ -104,7 +103,6 @@ public class OpenGLProgram extends Program {
 			}
 			stringBuilder.append(new String(glRenderer.method19089(this.fragmentShaderFile)));
 			this.fragmentShaderName = stringBuilder.toString();
-			System.out.println(this.fragmentShaderName);
 		}
 		ArrayUtil.method14009(this.field10377, 0, this.field10377.length, -1);
 	}

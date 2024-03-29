@@ -18,155 +18,155 @@ public class ClientScript extends SecondaryNode {
 	public ClientTriggerType field12373;
 
 	@ObfuscatedName("asc.u")
-	public String field12365;
+	public String scriptName;
 
 	@ObfuscatedName("asc.z")
-	public ClientScriptCommand[] field12369;
+	public ClientScriptCommand[] instructions;
 
 	@ObfuscatedName("asc.p")
-	public int[] field12367;
+	public int[] intOperands;
 
 	@ObfuscatedName("asc.d")
-	public Object[] field12366;
+	public Object[] objectOperands;
 
 	@ObfuscatedName("asc.c")
-	public int field12370;
+	public int intLocalCount;
 
 	@ObfuscatedName("asc.r")
-	public int field12368;
+	public int objectLocalCount;
 
 	@ObfuscatedName("asc.v")
-	public int field12371;
+	public int longLocalCount;
 
 	@ObfuscatedName("asc.o")
-	public int field12372;
+	public int intArgCount;
 
 	@ObfuscatedName("asc.s")
-	public int field12374;
+	public int objectArgCount;
 
 	@ObfuscatedName("asc.y")
-	public int field12364;
+	public int longArgCount;
 
 	@ObfuscatedName("asc.q")
-	public IterableMap[] field12375;
+	public IterableMap[] switchTables;
 
 	@ObfuscatedName("asc.x")
-	public final VariableTypeProvider field12376;
+	public final VariableTypeProvider varTypeProvider;
 
-	public ClientScript(Packet arg0, VariableTypeProvider arg1) {
-		this.field12376 = arg1;
-		int var3 = this.method19494(arg0);
-		int var4 = 0;
-		ClientScriptCommand[] var5 = ClientScriptCommand.method7897();
-		while (arg0.pos < var3) {
-			ClientScriptCommand var6 = this.method19493(arg0, var5);
-			this.method19495(arg0, var4, var6);
-			var4++;
+	public ClientScript(Packet buf, VariableTypeProvider varTypeProvider) {
+		this.varTypeProvider = varTypeProvider;
+		int size = this.decodeScript(buf);
+		int instr = 0;
+		ClientScriptCommand[] commands = ClientScriptCommand.values();
+		while (buf.pos < size) {
+			ClientScriptCommand command = this.decodeAtPos(buf, commands);
+			this.decodeOperands(buf, instr, command);
+			instr++;
 		}
 	}
 
 	@ObfuscatedName("asc.e(Lalw;[Lss;I)Lss;")
-	public ClientScriptCommand method19493(Packet arg0, ClientScriptCommand[] arg1) {
-		int var3 = arg0.g2();
-		if (var3 < 0 || var3 >= arg1.length) {
+	public ClientScriptCommand decodeAtPos(Packet buf, ClientScriptCommand[] commands) {
+		int pos = buf.g2();
+		if (pos < 0 || pos >= commands.length) {
 			throw new RuntimeException("");
 		}
-		return arg1[var3];
+		return commands[pos];
 	}
 
 	@ObfuscatedName("asc.n(Lalw;I)I")
-	public int method19494(Packet arg0) {
-		arg0.pos = (arg0.data.length - 2);
-		int var2 = arg0.g2();
-		int var3 = arg0.data.length - 2 - var2 - 16;
-		arg0.pos = var3;
-		int var4 = arg0.g4s();
-		this.field12370 = arg0.g2();
-		this.field12368 = arg0.g2();
-		this.field12371 = arg0.g2();
-		this.field12372 = arg0.g2();
-		this.field12374 = arg0.g2();
-		this.field12364 = arg0.g2();
-		int var5 = arg0.g1();
-		if (var5 > 0) {
-			this.field12375 = new IterableMap[var5];
-			for (int var6 = 0; var6 < var5; var6++) {
-				int var7 = arg0.g2();
-				IterableMap var8 = new IterableMap(var7 > 0 ? IntMath.bitceil(var7) : 1);
-				this.field12375[var6] = var8;
-				while (var7-- > 0) {
-					int var9 = arg0.g4s();
-					int var10 = arg0.g4s();
-					var8.pushNode(new IntWrapper(var10), (long) var9);
+	public int decodeScript(Packet buf) {
+		buf.pos = (buf.data.length - 2);
+		int trailerLen = buf.g2();
+		int trailerPos = buf.data.length - 2 - trailerLen - 16;
+		buf.pos = trailerPos;
+		int instructions = buf.g4s();
+		this.intLocalCount = buf.g2();
+		this.objectLocalCount = buf.g2();
+		this.longLocalCount = buf.g2();
+		this.intArgCount = buf.g2();
+		this.objectArgCount = buf.g2();
+		this.longArgCount = buf.g2();
+		int switches = buf.g1();
+		if (switches > 0) {
+			this.switchTables = new IterableMap[switches];
+			for (int index = 0; index < switches; index++) {
+				int count = buf.g2();
+				IterableMap var8 = new IterableMap(count > 0 ? IntMath.bitceil(count) : 1);
+				this.switchTables[index] = var8;
+				while (count-- > 0) {
+					int key = buf.g4s();
+					int offset = buf.g4s();
+					var8.pushNode(new IntWrapper(offset), (long) key);
 				}
 			}
 		}
-		arg0.pos = 0;
-		this.field12365 = arg0.fastgstr();
-		this.field12369 = new ClientScriptCommand[var4];
-		return var3;
+		buf.pos = 0;
+		this.scriptName = buf.fastgstr();
+		this.instructions = new ClientScriptCommand[instructions];
+		return trailerPos;
 	}
 
 	@ObfuscatedName("asc.m(Lalw;ILss;I)V")
-	public void method19495(Packet arg0, int arg1, ClientScriptCommand arg2) {
-		int var4 = this.field12369.length;
-		if (ClientScriptCommand.field5937 == arg2 || ClientScriptCommand.field5651 == arg2) {
-			VarDomainType var7 = (VarDomainType) SerializableEnums.decode(VarDomainType.values(), arg0.g1());
-			int var8 = arg0.g2();
-			if (this.field12366 == null) {
-				this.field12366 = new Object[var4];
+	public void decodeOperands(Packet buf, int instr, ClientScriptCommand command) {
+		int length = this.instructions.length;
+		if (ClientScriptCommand.PUSH_VAR == command || ClientScriptCommand.POP_VAR == command) {
+			VarDomainType varDomainType = (VarDomainType) SerializableEnums.decode(VarDomainType.values(), buf.g1());
+			int varId = buf.g2();
+			if (this.objectOperands == null) {
+				this.objectOperands = new Object[length];
 			}
-			this.field12366[arg1] = this.field12376.getVarType(var7, var8);
-			if (this.field12367 == null) {
-				this.field12367 = new int[var4];
+			this.objectOperands[instr] = this.varTypeProvider.getVarType(varDomainType, varId);
+			if (this.intOperands == null) {
+				this.intOperands = new int[length];
 			}
-			this.field12367[arg1] = arg0.g1();
-		} else if (ClientScriptCommand.field5144 == arg2) {
-			BaseVarType var5 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), arg0.g1());
-			switch(var5.index) {
+			this.intOperands[instr] = buf.g1();
+		} else if (ClientScriptCommand.PUSH_CONSTANT_STRING == command) {
+			BaseVarType baseVarType = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), buf.g1());
+			switch(baseVarType.index) {
 				case 1:
-					if (this.field12366 == null) {
-						this.field12366 = new Object[var4];
+					if (this.objectOperands == null) {
+						this.objectOperands = new Object[length];
 					}
-					this.field12366[arg1] = arg0.gjstr().intern();
+					this.objectOperands[instr] = buf.gjstr().intern();
 					break;
 				case 2:
-					if (this.field12367 == null) {
-						this.field12367 = new int[var4];
+					if (this.intOperands == null) {
+						this.intOperands = new int[length];
 					}
-					arg2 = ClientScriptCommand.field5463;
-					this.field12367[arg1] = arg0.g4s();
+					command = ClientScriptCommand.PUSH_CONSTANT_INT;
+					this.intOperands[instr] = buf.g4s();
 					break;
 				case 3:
 				default:
 					throw new RuntimeException();
 				case 4:
-					if (this.field12366 == null) {
-						this.field12366 = new Object[var4];
+					if (this.objectOperands == null) {
+						this.objectOperands = new Object[length];
 					}
-					arg2 = ClientScriptCommand.field5164;
-					this.field12366[arg1] = arg0.g8();
+					command = ClientScriptCommand.PUSH_LONG_CONSTANT;
+					this.objectOperands[instr] = buf.g8();
 			}
-		} else if (ClientScriptCommand.field5142 == arg2 || ClientScriptCommand.field5143 == arg2) {
-			int var6 = arg0.g2();
-			if (this.field12366 == null) {
-				this.field12366 = new Object[var4];
+		} else if (ClientScriptCommand.PUSH_VARBIT == command || ClientScriptCommand.POP_VARBIT == command) {
+			int varbitId = buf.g2();
+			if (this.objectOperands == null) {
+				this.objectOperands = new Object[length];
 			}
-			this.field12366[arg1] = this.field12376.getVarBitType(var6);
-			if (this.field12367 == null) {
-				this.field12367 = new int[var4];
+			this.objectOperands[instr] = this.varTypeProvider.getVarBitType(varbitId);
+			if (this.intOperands == null) {
+				this.intOperands = new int[length];
 			}
-			this.field12367[arg1] = arg0.g1();
+			this.intOperands[instr] = buf.g1();
 		} else {
-			if (this.field12367 == null) {
-				this.field12367 = new int[var4];
+			if (this.intOperands == null) {
+				this.intOperands = new int[length];
 			}
-			if (arg2 != null && arg2.field6572) {
-				this.field12367[arg1] = arg0.g4s();
+			if (command != null && command.isLargeOperand) {
+				this.intOperands[instr] = buf.g4s();
 			} else {
-				this.field12367[arg1] = arg0.g1();
+				this.intOperands[instr] = buf.g1();
 			}
 		}
-		this.field12369[arg1] = arg2;
+		this.instructions[instr] = command;
 	}
 }

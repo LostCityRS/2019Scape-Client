@@ -6,17 +6,17 @@ import deob.ObfuscatedName;
 public class ScriptFrame {
 
 	@ObfuscatedName("yx.e")
-	public ClientScript field8190;
+	public ClientScript script;
 
 	@ObfuscatedName("yx.n")
-	public int field8189 = -1;
+	public int pc = -1;
 
 	@ObfuscatedName("yx.m")
-	public int[] field8188;
+	public int[] intLocals;
 
 	@ObfuscatedName("yx.k")
-	public Object[] field8191;
+	public Object[] objectLocals;
 
 	@ObfuscatedName("yx.f")
-	public long[] field8192;
+	public long[] longLocals;
 }

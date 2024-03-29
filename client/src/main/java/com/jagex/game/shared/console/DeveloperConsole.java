@@ -331,7 +331,7 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("ky.r(Ldh;I)V")
 	public static void method5378(Renderer renderer) {
-		if (TwitchHardwarePlatform.method5076() && TwitchHardwarePlatform.method8634()) {
+		if (TwitchHardwarePlatform.isStreaming() && TwitchHardwarePlatform.method8634()) {
 			TwitchHardwarePlatform.method5389(0, 0, GameShell.canvasWid, 350);
 		}
 		renderer.resetBounds(0, 0, GameShell.canvasWid, 350);

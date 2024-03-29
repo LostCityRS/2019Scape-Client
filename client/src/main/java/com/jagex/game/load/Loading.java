@@ -448,7 +448,7 @@ public class Loading {
 			Client.varObjTypeList = new VarBasicTypeListClient(Client.modegame, VarDomainType.OBJECT, Client.language, Client.configJs5);
 			Client.field1232 = VarTypeList.createDomainToListEnumMap(new VarTypeList[] { Client.varBasicTypeList, Client.varPlayerTypeList, Client.varNpcTypeList, Client.varClanTypeList, Client.varClanSettingTypeList, Client.varPlayerGroupTypeList, Client.varObjTypeList});
 			Client.varBitTypeList = new VarBitTypeList(Client.modegame, Client.language, Client.configJs5, Client.field1232);
-			Client.field4626 = new VariableTypeProviderClient();
+			Client.variableTypeProvider = new VariableTypeProviderClient();
 			Component.method3669(Client.interfacesJs5, Client.modelsJs5, Client.spritesJs5, Client.fontmetricsJs5);
 			Client.basicBillboardTypeList = new BasicBillboardTypeList(Client.configBillboardJs5);
 			Client.basicParticleEffectorTypeList = new BasicParticleEffectorTypeList(Client.configParticleJs5);

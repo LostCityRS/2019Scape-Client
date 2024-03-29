@@ -9,7 +9,7 @@ import rs2.client.Client;
 public class ClientScriptHelpers {
 
 	@ObfuscatedName("yw.e")
-	public static ClientScriptCache field8187 = new ClientScriptCache(128);
+	public static ClientScriptCache cache = new ClientScriptCache(128);
 
 	public ClientScriptHelpers() throws Throwable {
 		throw new Error();
@@ -17,47 +17,47 @@ public class ClientScriptHelpers {
 
 	@ObfuscatedName("ss.e(I)V")
 	public static void method8004() {
-		field8187.method2969();
+		cache.method2969();
 	}
 
 	@ObfuscatedName("lv.n(II)Lasc;")
-	public static ClientScript method5402(int arg0) {
-		ClientScript var1 = (ClientScript) field8187.method2966((long) arg0);
-		if (var1 != null) {
-			return var1;
+	public static ClientScript getScript(int scriptId) {
+		ClientScript cached = (ClientScript) cache.method2966((long) scriptId);
+		if (cached != null) {
+			return cached;
 		}
-		byte[] var2 = Client.clientscriptsJs5.getfile(arg0, 0);
-		if (var2 == null || var2.length <= 1) {
+		byte[] bytes = Client.clientscriptsJs5.getfile(scriptId, 0);
+		if (bytes == null || bytes.length <= 1) {
 			return null;
 		}
-		ClientScript var3;
+		ClientScript script;
 		try {
-			var3 = method2817(var2);
+			script = decode(bytes);
 		} catch (Exception var5) {
-			throw new RuntimeException(var5.getMessage() + " " + arg0);
+			throw new RuntimeException(var5.getMessage() + " " + scriptId);
 		}
-		field8187.method2968(var3, (long) arg0);
-		return var3;
+		cache.method2968(script, (long) scriptId);
+		return script;
 	}
 
 	@ObfuscatedName("vs.m(Luh;IIS)Lasc;")
 	public static ClientScript method9425(ClientTriggerType arg0, int arg1, int arg2) {
 		int var3 = arg0.field7271 | arg1 << 10;
-		ClientScript var4 = (ClientScript) field8187.method2966((long) var3 << 16);
+		ClientScript var4 = (ClientScript) cache.method2966((long) var3 << 16);
 		if (var4 != null) {
 			return var4;
 		}
 		byte[] var5 = Client.clientscriptsJs5.method6894(Client.clientscriptsJs5.method6903(var3));
 		if (var5 == null) {
 			int var8 = arg0.field7271 | arg2 + 65536 << 10;
-			ClientScript var9 = (ClientScript) field8187.method2966((long) var8 << 16);
+			ClientScript var9 = (ClientScript) cache.method2966((long) var8 << 16);
 			if (var9 != null) {
 				return var9;
 			}
 			byte[] var10 = Client.clientscriptsJs5.method6894(Client.clientscriptsJs5.method6903(var8));
 			if (var10 == null) {
 				int var13 = arg0.field7271 | 0x3FFFC00;
-				ClientScript var14 = (ClientScript) field8187.method2966((long) var13 << 16);
+				ClientScript var14 = (ClientScript) cache.method2966((long) var13 << 16);
 				if (var14 != null) {
 					return var14;
 				}
@@ -69,12 +69,12 @@ public class ClientScriptHelpers {
 				} else {
 					ClientScript var16;
 					try {
-						var16 = method2817(var15);
+						var16 = decode(var15);
 					} catch (Exception var20) {
 						throw new RuntimeException(var20.getMessage() + " " + var13);
 					}
 					var16.field12373 = arg0;
-					field8187.method2968(var16, (long) var13 << 16);
+					cache.method2968(var16, (long) var13 << 16);
 					return var16;
 				}
 			} else if (var10.length <= 1) {
@@ -82,12 +82,12 @@ public class ClientScriptHelpers {
 			} else {
 				ClientScript var11;
 				try {
-					var11 = method2817(var10);
+					var11 = decode(var10);
 				} catch (Exception var19) {
 					throw new RuntimeException(var19.getMessage() + " " + var8);
 				}
 				var11.field12373 = arg0;
-				field8187.method2968(var11, (long) var8 << 16);
+				cache.method2968(var11, (long) var8 << 16);
 				return var11;
 			}
 		} else if (var5.length <= 1) {
@@ -95,18 +95,18 @@ public class ClientScriptHelpers {
 		} else {
 			ClientScript var6;
 			try {
-				var6 = method2817(var5);
+				var6 = decode(var5);
 			} catch (Exception var18) {
 				throw new RuntimeException(var18.getMessage() + " " + var3);
 			}
 			var6.field12373 = arg0;
-			field8187.method2968(var6, (long) var3 << 16);
+			cache.method2968(var6, (long) var3 << 16);
 			return var6;
 		}
 	}
 
 	@ObfuscatedName("ek.k([BS)Lasc;")
-	public static ClientScript method2817(byte[] arg0) {
-		return new ClientScript(new Packet(arg0), Client.field4626);
+	public static ClientScript decode(byte[] bytes) {
+		return new ClientScript(new Packet(bytes), Client.variableTypeProvider);
 	}
 }
