@@ -1623,7 +1623,7 @@ public class MapLoader {
 
 	@ObfuscatedName("ki.i(IIIII)I")
 	public static final int method5171(int arg0, int arg1, int arg2, int arg3) {
-		int var4 = 65536 - Trig1.field4272[arg2 * 8192 / arg3] >> 1;
+		int var4 = 65536 - Trig1.cos[arg2 * 8192 / arg3] >> 1;
 		return ((65536 - var4) * arg0 >> 16) + (arg1 * var4 >> 16);
 	}
 

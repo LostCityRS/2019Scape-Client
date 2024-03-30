@@ -211,7 +211,7 @@ public class StaticPointLight {
 			int var3 = this.field7010 * arg0 / 50 + this.field7011 & 0x7FF;
 			switch(this.field7009) {
 				case 1:
-					var4 = (Trig1.field4270[var3 << 3] >> 4) + 1024;
+					var4 = (Trig1.sin[var3 << 3] >> 4) + 1024;
 					break;
 				case 2:
 					var4 = var3;

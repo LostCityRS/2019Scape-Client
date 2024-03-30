@@ -1409,8 +1409,8 @@ public class PureJavaModel extends Model {
 		} else if (arg0 == 12288) {
 			this.method15469();
 		} else {
-			int var2 = Trig1.field4270[arg0];
-			int var3 = Trig1.field4272[arg0];
+			int var2 = Trig1.sin[arg0];
+			int var3 = Trig1.cos[arg0];
 			synchronized (this) {
 				for (int var5 = 0; var5 < this.vertexCount; var5++) {
 					int var6 = this.vertexZ[var5] * var2 + this.vertexX[var5] * var3 >> 14;
@@ -1438,8 +1438,8 @@ public class PureJavaModel extends Model {
 			this.method15472();
 			return;
 		} else {
-			int var2 = Trig1.field4270[arg0];
-			int var3 = Trig1.field4272[arg0];
+			int var2 = Trig1.sin[arg0];
+			int var3 = Trig1.cos[arg0];
 			synchronized (this) {
 				for (int var5 = 0; var5 < this.field9549; var5++) {
 					int var6 = this.vertexZ[var5] * var2 + this.vertexX[var5] * var3 >> 14;
@@ -1603,8 +1603,8 @@ public class PureJavaModel extends Model {
 		if ((this.allowedOperations & 0x6) != 6) {
 			throw new IllegalStateException();
 		}
-		int var2 = Trig1.field4270[arg0];
-		int var3 = Trig1.field4272[arg0];
+		int var2 = Trig1.sin[arg0];
+		int var3 = Trig1.cos[arg0];
 		synchronized (this) {
 			for (int var5 = 0; var5 < this.vertexCount; var5++) {
 				int var6 = this.vertexY[var5] * var3 - this.vertexZ[var5] * var2 >> 14;
@@ -1620,8 +1620,8 @@ public class PureJavaModel extends Model {
 		if ((this.allowedOperations & 0x3) != 3) {
 			throw new IllegalStateException();
 		}
-		int var2 = Trig1.field4270[arg0];
-		int var3 = Trig1.field4272[arg0];
+		int var2 = Trig1.sin[arg0];
+		int var3 = Trig1.cos[arg0];
 		synchronized (this) {
 			for (int var5 = 0; var5 < this.vertexCount; var5++) {
 				int var6 = this.vertexY[var5] * var2 + this.vertexX[var5] * var3 >> 14;
@@ -2053,22 +2053,22 @@ public class PureJavaModel extends Model {
 							this.vertexY[var32] -= this.originY;
 							this.vertexZ[var32] -= this.originZ;
 							if (arg4 != 0) {
-								int var33 = Trig1.field4270[arg4];
-								int var34 = Trig1.field4272[arg4];
+								int var33 = Trig1.sin[arg4];
+								int var34 = Trig1.cos[arg4];
 								int var35 = this.vertexY[var32] * var33 + this.vertexX[var32] * var34 + 16383 >> 14;
 								this.vertexY[var32] = this.vertexY[var32] * var34 - this.vertexX[var32] * var33 + 16383 >> 14;
 								this.vertexX[var32] = var35;
 							}
 							if (arg2 != 0) {
-								int var36 = Trig1.field4270[arg2];
-								int var37 = Trig1.field4272[arg2];
+								int var36 = Trig1.sin[arg2];
+								int var37 = Trig1.cos[arg2];
 								int var38 = this.vertexY[var32] * var37 - this.vertexZ[var32] * var36 + 16383 >> 14;
 								this.vertexZ[var32] = this.vertexZ[var32] * var37 + this.vertexY[var32] * var36 + 16383 >> 14;
 								this.vertexY[var32] = var38;
 							}
 							if (arg3 != 0) {
-								int var39 = Trig1.field4270[arg3];
-								int var40 = Trig1.field4272[arg3];
+								int var39 = Trig1.sin[arg3];
+								int var40 = Trig1.cos[arg3];
 								int var41 = this.vertexZ[var32] * var39 + this.vertexX[var32] * var40 + 16383 >> 14;
 								this.vertexZ[var32] = this.vertexZ[var32] * var40 - this.vertexX[var32] * var39 + 16383 >> 14;
 								this.vertexX[var32] = var41;
@@ -2084,22 +2084,22 @@ public class PureJavaModel extends Model {
 							this.vertexY[var43] -= this.originY;
 							this.vertexZ[var43] -= this.originZ;
 							if (arg2 != 0) {
-								int var44 = Trig1.field4270[arg2];
-								int var45 = Trig1.field4272[arg2];
+								int var44 = Trig1.sin[arg2];
+								int var45 = Trig1.cos[arg2];
 								int var46 = this.vertexY[var43] * var45 - this.vertexZ[var43] * var44 + 16383 >> 14;
 								this.vertexZ[var43] = this.vertexZ[var43] * var45 + this.vertexY[var43] * var44 + 16383 >> 14;
 								this.vertexY[var43] = var46;
 							}
 							if (arg4 != 0) {
-								int var47 = Trig1.field4270[arg4];
-								int var48 = Trig1.field4272[arg4];
+								int var47 = Trig1.sin[arg4];
+								int var48 = Trig1.cos[arg4];
 								int var49 = this.vertexY[var43] * var47 + this.vertexX[var43] * var48 + 16383 >> 14;
 								this.vertexY[var43] = this.vertexY[var43] * var48 - this.vertexX[var43] * var47 + 16383 >> 14;
 								this.vertexX[var43] = var49;
 							}
 							if (arg3 != 0) {
-								int var50 = Trig1.field4270[arg3];
-								int var51 = Trig1.field4272[arg3];
+								int var50 = Trig1.sin[arg3];
+								int var51 = Trig1.cos[arg3];
 								int var52 = this.vertexZ[var43] * var50 + this.vertexX[var43] * var51 + 16383 >> 14;
 								this.vertexZ[var43] = this.vertexZ[var43] * var51 - this.vertexX[var43] * var50 + 16383 >> 14;
 								this.vertexX[var43] = var52;
@@ -2371,22 +2371,22 @@ public class PureJavaModel extends Model {
 								this.vertexY[var97] -= this.originY;
 								this.vertexZ[var97] -= this.originZ;
 								if (arg4 != 0) {
-									int var98 = Trig1.field4270[arg4];
-									int var99 = Trig1.field4272[arg4];
+									int var98 = Trig1.sin[arg4];
+									int var99 = Trig1.cos[arg4];
 									int var100 = this.vertexY[var97] * var98 + this.vertexX[var97] * var99 + 16383 >> 14;
 									this.vertexY[var97] = this.vertexY[var97] * var99 - this.vertexX[var97] * var98 + 16383 >> 14;
 									this.vertexX[var97] = var100;
 								}
 								if (arg2 != 0) {
-									int var101 = Trig1.field4270[arg2];
-									int var102 = Trig1.field4272[arg2];
+									int var101 = Trig1.sin[arg2];
+									int var102 = Trig1.cos[arg2];
 									int var103 = this.vertexY[var97] * var102 - this.vertexZ[var97] * var101 + 16383 >> 14;
 									this.vertexZ[var97] = this.vertexZ[var97] * var102 + this.vertexY[var97] * var101 + 16383 >> 14;
 									this.vertexY[var97] = var103;
 								}
 								if (arg3 != 0) {
-									int var104 = Trig1.field4270[arg3];
-									int var105 = Trig1.field4272[arg3];
+									int var104 = Trig1.sin[arg3];
+									int var105 = Trig1.cos[arg3];
 									int var106 = this.vertexZ[var97] * var104 + this.vertexX[var97] * var105 + 16383 >> 14;
 									this.vertexZ[var97] = this.vertexZ[var97] * var105 - this.vertexX[var97] * var104 + 16383 >> 14;
 									this.vertexX[var97] = var106;
@@ -2426,12 +2426,12 @@ public class PureJavaModel extends Model {
 					this.field9538 = false;
 				}
 				int[] var45 = new int[9];
-				int var46 = Trig1.field4272[arg2];
-				int var47 = Trig1.field4270[arg2];
-				int var48 = Trig1.field4272[arg3];
-				int var49 = Trig1.field4270[arg3];
-				int var50 = Trig1.field4272[arg4];
-				int var51 = Trig1.field4270[arg4];
+				int var46 = Trig1.cos[arg2];
+				int var47 = Trig1.sin[arg2];
+				int var48 = Trig1.cos[arg3];
+				int var49 = Trig1.sin[arg3];
+				int var50 = Trig1.cos[arg4];
+				int var51 = Trig1.sin[arg4];
 				int var52 = var47 * var50 + 8192 >> 14;
 				int var53 = var47 * var51 + 8192 >> 14;
 				var45[0] = var48 * var50 + var49 * var53 + 8192 >> 14;
@@ -2748,22 +2748,22 @@ public class PureJavaModel extends Model {
 				this.vertexY[var8] -= this.originY;
 				this.vertexZ[var8] -= this.originZ;
 				if (arg3 != 0) {
-					int var9 = Trig1.field4270[arg3];
-					int var10 = Trig1.field4272[arg3];
+					int var9 = Trig1.sin[arg3];
+					int var10 = Trig1.cos[arg3];
 					int var11 = this.vertexY[var8] * var9 + this.vertexX[var8] * var10 + 16383 >> 14;
 					this.vertexY[var8] = this.vertexY[var8] * var10 - this.vertexX[var8] * var9 + 16383 >> 14;
 					this.vertexX[var8] = var11;
 				}
 				if (arg1 != 0) {
-					int var12 = Trig1.field4270[arg1];
-					int var13 = Trig1.field4272[arg1];
+					int var12 = Trig1.sin[arg1];
+					int var13 = Trig1.cos[arg1];
 					int var14 = this.vertexY[var8] * var13 - this.vertexZ[var8] * var12 + 16383 >> 14;
 					this.vertexZ[var8] = this.vertexZ[var8] * var13 + this.vertexY[var8] * var12 + 16383 >> 14;
 					this.vertexY[var8] = var14;
 				}
 				if (arg2 != 0) {
-					int var15 = Trig1.field4270[arg2];
-					int var16 = Trig1.field4272[arg2];
+					int var15 = Trig1.sin[arg2];
+					int var16 = Trig1.cos[arg2];
 					int var17 = this.vertexZ[var8] * var15 + this.vertexX[var8] * var16 + 16383 >> 14;
 					this.vertexZ[var8] = this.vertexZ[var8] * var16 - this.vertexX[var8] * var15 + 16383 >> 14;
 					this.vertexX[var8] = var17;

@@ -448,7 +448,7 @@ public class DeveloperConsole {
 					addline("Pos: " + (new CoordGrid(Client.localPlayerEntity.level, (int) var6.x >> 9, (int) var6.z >> 9)).toString() + " Height: " + (Client.getHeightmapY((int) var6.x - (var5.x << 9), (int) var6.z - (var5.z << 9), Client.localPlayerEntity.level) + (int) var6.y));
 					addline("Look: " + (new CoordGrid(Client.localPlayerEntity.level, (int) var7.x >> 9, (int) var7.z >> 9)).toString() + " Height: " + (Client.getHeightmapY((int) var7.x - (var5.x << 9), (int) var6.z - (var5.z << 9), Client.localPlayerEntity.level) + (int) var6.y));
 				} else {
-					addline("Pos: " + Client.localPlayerEntity.level + "," + ((Client.cameraMouseX >> 9) + var5.x >> 6) + "," + ((Client.cameraMouseZ >> 9) + var5.z >> 6) + "," + ((Client.cameraMouseX >> 9) + var5.x & 0x3F) + "," + ((Client.cameraMouseZ >> 9) + var5.z & 0x3F) + " Height: " + (Client.getHeightmapY(Client.cameraMouseX, Client.cameraMouseZ, Client.localPlayerEntity.level) - Client.cameraMouseY));
+					addline("Pos: " + Client.localPlayerEntity.level + "," + ((Client.cameraX >> 9) + var5.x >> 6) + "," + ((Client.cameraZ >> 9) + var5.z >> 6) + "," + ((Client.cameraX >> 9) + var5.x & 0x3F) + "," + ((Client.cameraZ >> 9) + var5.z & 0x3F) + " Height: " + (Client.getHeightmapY(Client.cameraX, Client.cameraZ, Client.localPlayerEntity.level) - Client.cameraY));
 					addline("Look: " + Client.localPlayerEntity.level + "," + (Client.cameraLookX + var5.x >> 6) + "," + (Client.cameraLookZ + var5.z >> 6) + "," + (Client.cameraLookX + var5.x & 0x3F) + "," + (Client.cameraLookZ + var5.z & 0x3F) + " Height: " + (Client.getHeightmapY(Client.cameraLookX, Client.cameraLookZ, Client.localPlayerEntity.level) - Client.field1983));
 				}
 				return;

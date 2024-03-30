@@ -145,7 +145,7 @@ public class ClientWatch {
 			int var6;
 			int var8;
 			if (Client.cameraState != 3) {
-				var6 = (int) Client.orbitCameraXan >> 3;
+				var6 = (int) Client.orbitCameraPitch >> 3;
 				var8 = (int) Client.orbitCameraYaw >> 3;
 			} else if (Client.cam2.getPositionMode() == PositionMode.ENTITY) {
 				PositionEntity var5 = (PositionEntity) Client.cam2.getPosition();

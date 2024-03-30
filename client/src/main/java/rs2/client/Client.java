@@ -918,13 +918,13 @@ public final class Client extends GameShell {
 	public static int field10893 = 0;
 
 	@ObfuscatedName("xb.lr")
-	public static int cameraMouseX;
+	public static int cameraX;
 
 	@ObfuscatedName("ahq.lq")
-	public static int cameraMouseY;
+	public static int cameraY;
 
 	@ObfuscatedName("fo.lo")
-	public static int cameraMouseZ;
+	public static int cameraZ;
 
 	@ObfuscatedName("vp.lh")
 	public static int cameraPitch;
@@ -933,10 +933,10 @@ public final class Client extends GameShell {
 	public static int cameraYaw;
 
 	@ObfuscatedName("is.lu")
-	public static int field2656;
+	public static int cameraRoll;
 
 	@ObfuscatedName("client.ly")
-	public static float orbitCameraXan = 1088.0F;
+	public static float orbitCameraPitch = 1088.0F;
 
 	@ObfuscatedName("client.lg")
 	public static float orbitCameraYaw = 0.0F;
@@ -954,10 +954,10 @@ public final class Client extends GameShell {
 	public static boolean field11059 = false;
 
 	@ObfuscatedName("acw.ln")
-	public static int field8910;
+	public static int orbitCameraX;
 
 	@ObfuscatedName("nl.lt")
-	public static int field3569;
+	public static int orbitCameraZ;
 
 	@ObfuscatedName("client.ld")
 	public static int field11089 = 1;
@@ -969,7 +969,7 @@ public final class Client extends GameShell {
 	public static boolean field10902 = true;
 
 	@ObfuscatedName("client.mh")
-	public static int field10806 = 0;
+	public static int cameraPitchClamp = 0;
 
 	@ObfuscatedName("client.me")
 	public static int[][][] field10981 = new int[2][][];
@@ -1023,13 +1023,13 @@ public final class Client extends GameShell {
 	public static int field10921 = 0;
 
 	@ObfuscatedName("client.mc")
-	public static float[] field10922 = new float[3];
+	public static float[] projection = new float[3];
 
 	@ObfuscatedName("client.ma")
-	public static int field10866 = 0;
+	public static int crossX = 0;
 
 	@ObfuscatedName("client.mj")
-	public static int field10924 = 0;
+	public static int crossY = 0;
 
 	@ObfuscatedName("client.mw")
 	public static int crossCycle = 0;
@@ -1278,7 +1278,7 @@ public final class Client extends GameShell {
 	public static Component field10986 = null;
 
 	@ObfuscatedName("client.qj")
-	public static boolean field10888 = true;
+	public static boolean gameScreenEnabled = true;
 
 	@ObfuscatedName("client.qr")
 	public static boolean field10988 = false;
@@ -1620,28 +1620,28 @@ public final class Client extends GameShell {
 	public static boolean[] cameraModifierEnabled;
 
 	@ObfuscatedName("client.uu")
-	public static int[] field11062;
+	public static int[] cameraModifierJitter;
 
 	@ObfuscatedName("client.uo")
-	public static int[] field11063;
+	public static int[] cameraModifierWobbleScale;
 
 	@ObfuscatedName("client.un")
-	public static int[] field11064;
+	public static int[] cameraModifierCycle;
 
 	@ObfuscatedName("client.ue")
-	public static int[] field10996;
+	public static int[] cameraModifierWobbleSpeed;
 
 	@ObfuscatedName("client.vq")
-	public static short field11066;
+	public static short viewportFovMax;
 
 	@ObfuscatedName("client.vx")
-	public static short field10987;
+	public static short viewportFovMin;
 
 	@ObfuscatedName("client.vb")
-	public static short field10874;
+	public static short viewportZoomMin;
 
 	@ObfuscatedName("client.vl")
-	public static short field11069;
+	public static short viewportZoomMax;
 
 	@ObfuscatedName("client.vr")
 	public static short field11070;
@@ -1656,16 +1656,16 @@ public final class Client extends GameShell {
 	public static short field10943;
 
 	@ObfuscatedName("client.vt")
-	public static int field10780;
+	public static int viewportX;
 
 	@ObfuscatedName("client.vu")
-	public static int field11075;
+	public static int viewportY;
 
 	@ObfuscatedName("client.vi")
-	public static int field11076;
+	public static int viewportWidth;
 
 	@ObfuscatedName("client.va")
-	public static int field11077;
+	public static int viewportHeight;
 
 	@ObfuscatedName("client.vs")
 	public static int field11078;
@@ -1780,22 +1780,22 @@ public final class Client extends GameShell {
 		field10899 = 0;
 		cameraProvider = new ClientCameraTrackableProvider();
 		cameraModifierEnabled = new boolean[5];
-		field11062 = new int[5];
-		field11063 = new int[5];
-		field11064 = new int[5];
-		field10996 = new int[5];
-		field11066 = 256;
-		field10987 = 205;
-		field10874 = 256;
-		field11069 = 320;
+		cameraModifierJitter = new int[5];
+		cameraModifierWobbleScale = new int[5];
+		cameraModifierCycle = new int[5];
+		cameraModifierWobbleSpeed = new int[5];
+		viewportFovMax = 256;
+		viewportFovMin = 205;
+		viewportZoomMin = 256;
+		viewportZoomMax = 320;
 		field11070 = 1;
 		field11071 = 32767;
 		field10900 = 1;
 		field10943 = 32767;
-		field10780 = 0;
-		field11075 = 0;
-		field11076 = 0;
-		field11077 = 0;
+		viewportX = 0;
+		viewportY = 0;
+		viewportWidth = 0;
+		viewportHeight = 0;
 		field11078 = 0;
 		friendsCount = 0;
 		field11080 = 0;
@@ -2785,11 +2785,11 @@ public final class Client extends GameShell {
 		localPlayerEntity.method10538((float) (world.getSizeX() * 512 / 2), 0.0F, (float) (world.getSizeZ() * 512 / 2));
 		localPlayerEntity.routeWaypointX[0] = world.getSizeX() / 2;
 		localPlayerEntity.routeWaypointZ[0] = world.getSizeZ() / 2;
-		cameraMouseZ = 0;
-		cameraMouseX = 0;
+		cameraZ = 0;
+		cameraX = 0;
 		if (Client.cameraState == 5) {
-			cameraMouseX = cameraMoveX << 9;
-			cameraMouseZ = cameraMoveZ << 9;
+			cameraX = cameraMoveX << 9;
+			cameraZ = cameraMoveZ << 9;
 		} else {
 			applyCameraMoveAlong();
 		}
@@ -3722,7 +3722,7 @@ public final class Client extends GameShell {
 		updateInterfaces();
 		ClientWatch.method9835();
 		sceneDelta++;
-		MiniMenu.method6967(-1, -1);
+		MiniMenu.setBounds(-1, -1);
 		MiniMenu.method18919(null, -1, -1);
 		method5013();
 		field11058++;
@@ -3769,7 +3769,7 @@ public final class Client extends GameShell {
 			} else {
 				applyCameraMoveAlong();
 			}
-			if (cameraMouseX >> 9 < 14 || cameraMouseX >> 9 >= world.getSizeX() - 14 || cameraMouseZ >> 9 < 14 || cameraMouseZ >> 9 >= world.getSizeZ() - 14) {
+			if (cameraX >> 9 < 14 || cameraX >> 9 >= world.getSizeX() - 14 || cameraZ >> 9 < 14 || cameraZ >> 9 >= world.getSizeZ() - 14) {
 				world.rebuildMap(new RebuildRequest(RebuildType.field5063, null));
 			}
 		}
@@ -4109,7 +4109,7 @@ public final class Client extends GameShell {
 												jtele(var39, var40.x + localPlayerEntity.routeWaypointX[0], var40.z + localPlayerEntity.routeWaypointZ[0]);
 											}
 											for (int var41 = 0; var41 < 5; var41++) {
-												int var10002 = field10996[var41]++;
+												int var10002 = cameraModifierWobbleSpeed[var41]++;
 											}
 											if (field7228.field10252 && field7228.field10253 < MonotonicTime.get() - 60000L) {
 												method14147();
@@ -4488,9 +4488,9 @@ public final class Client extends GameShell {
 			var2[var4] = (((float) var11 * var1 + (float) var10) * var1 + (float) var9) * var1 + (float) var8;
 		}
 		CoordGrid var12 = world.method7727();
-		cameraMouseX = (int) var2[0] - var12.x * 512;
-		cameraMouseY = (int) var2[1] * -1;
-		cameraMouseZ = (int) var2[2] - var12.z * 512;
+		cameraX = (int) var2[0] - var12.x * 512;
+		cameraY = (int) var2[1] * -1;
+		cameraZ = (int) var2[2] - var12.z * 512;
 		float[] var13 = new float[3];
 		int var14 = field10932 * 2;
 		for (int var15 = 0; var15 < 3; var15++) {
@@ -4509,7 +4509,7 @@ public final class Client extends GameShell {
 		double var26 = Math.sqrt((double) (var23 * var23 + var25 * var25));
 		cameraPitch = (int) (Math.atan2((double) var24, var26) * 2607.5945876176133D) & 0x3FFF;
 		cameraYaw = (int) (-Math.atan2((double) var23, (double) var25) * 2607.5945876176133D) & 0x3FFF;
-		field2656 = (field10976 * (field10981[field10904][var3 + 2][3] - field10981[field10904][var3][3]) >> 16) + field10981[field10904][var3][3];
+		cameraRoll = (field10976 * (field10981[field10904][var3 + 2][3] - field10981[field10904][var3][3]) >> 16) + field10981[field10904][var3][3];
 	}
 
 	@ObfuscatedName("amf.go(B)V")
@@ -4518,53 +4518,53 @@ public final class Client extends GameShell {
 		int var1 = cameraMoveZ * 512 + 256;
 		int var2 = getHeightmapY(var0, var1, currentPlayerLevel) - cameraSrcHeight;
 		if (cameraMoveSpeed >= 100) {
-			cameraMouseX = cameraMoveX * 512 + 256;
-			cameraMouseZ = cameraMoveZ * 512 + 256;
-			cameraMouseY = getHeightmapY(cameraMouseX, cameraMouseZ, currentPlayerLevel) - cameraSrcHeight;
+			cameraX = cameraMoveX * 512 + 256;
+			cameraZ = cameraMoveZ * 512 + 256;
+			cameraY = getHeightmapY(cameraX, cameraZ, currentPlayerLevel) - cameraSrcHeight;
 		} else {
-			if (cameraMouseX < var0) {
-				cameraMouseX += cameraMoveSpeed * (var0 - cameraMouseX) / 1000 + cameraMoveAcceleration;
-				if (cameraMouseX > var0) {
-					cameraMouseX = var0;
+			if (cameraX < var0) {
+				cameraX += cameraMoveSpeed * (var0 - cameraX) / 1000 + cameraMoveAcceleration;
+				if (cameraX > var0) {
+					cameraX = var0;
 				}
 			}
-			if (cameraMouseX > var0) {
-				cameraMouseX -= cameraMoveSpeed * (cameraMouseX - var0) / 1000 + cameraMoveAcceleration;
-				if (cameraMouseX < var0) {
-					cameraMouseX = var0;
+			if (cameraX > var0) {
+				cameraX -= cameraMoveSpeed * (cameraX - var0) / 1000 + cameraMoveAcceleration;
+				if (cameraX < var0) {
+					cameraX = var0;
 				}
 			}
-			if (cameraMouseY < var2) {
-				cameraMouseY += cameraMoveSpeed * (var2 - cameraMouseY) / 1000 + cameraMoveAcceleration;
-				if (cameraMouseY > var2) {
-					cameraMouseY = var2;
+			if (cameraY < var2) {
+				cameraY += cameraMoveSpeed * (var2 - cameraY) / 1000 + cameraMoveAcceleration;
+				if (cameraY > var2) {
+					cameraY = var2;
 				}
 			}
-			if (cameraMouseY > var2) {
-				cameraMouseY -= cameraMoveSpeed * (cameraMouseY - var2) / 1000 + cameraMoveAcceleration;
-				if (cameraMouseY < var2) {
-					cameraMouseY = var2;
+			if (cameraY > var2) {
+				cameraY -= cameraMoveSpeed * (cameraY - var2) / 1000 + cameraMoveAcceleration;
+				if (cameraY < var2) {
+					cameraY = var2;
 				}
 			}
-			if (cameraMouseZ < var1) {
-				cameraMouseZ += cameraMoveSpeed * (var1 - cameraMouseZ) / 1000 + cameraMoveAcceleration;
-				if (cameraMouseZ > var1) {
-					cameraMouseZ = var1;
+			if (cameraZ < var1) {
+				cameraZ += cameraMoveSpeed * (var1 - cameraZ) / 1000 + cameraMoveAcceleration;
+				if (cameraZ > var1) {
+					cameraZ = var1;
 				}
 			}
-			if (cameraMouseZ > var1) {
-				cameraMouseZ -= cameraMoveSpeed * (cameraMouseZ - var1) / 1000 + cameraMoveAcceleration;
-				if (cameraMouseZ < var1) {
-					cameraMouseZ = var1;
+			if (cameraZ > var1) {
+				cameraZ -= cameraMoveSpeed * (cameraZ - var1) / 1000 + cameraMoveAcceleration;
+				if (cameraZ < var1) {
+					cameraZ = var1;
 				}
 			}
 		}
 		int var3 = cameraLookX * 512 + 256;
 		int var4 = cameraLookZ * 512 + 256;
 		int var5 = getHeightmapY(var3, var4, currentPlayerLevel) - field1983;
-		int var6 = var3 - cameraMouseX;
-		int var7 = var5 - cameraMouseY;
-		int var8 = var4 - cameraMouseZ;
+		int var6 = var3 - cameraX;
+		int var7 = var5 - cameraY;
+		int var8 = var4 - cameraZ;
 		int var9 = (int) Math.sqrt((double) (var6 * var6 + var8 * var8));
 		int var10 = (int) (Math.atan2((double) var7, (double) var9) * 2607.5945876176133D) & 0x3FFF;
 		int var11 = (int) (Math.atan2((double) var6, (double) var8) * -2607.5945876176133D) & 0x3FFF;
@@ -4612,7 +4612,7 @@ public final class Client extends GameShell {
 		if (var14 < 0 && var13 > 0 || var14 > 0 && var13 < 0) {
 			cameraYaw = var11;
 		}
-		field2656 = 0;
+		cameraRoll = 0;
 	}
 
 	@ObfuscatedName("yn.gk(II)V")
@@ -4631,11 +4631,11 @@ public final class Client extends GameShell {
 			CoordGrid var4 = world.method7727();
 			cameraPitch = (int) ((double) cam2.method4718() * 2607.5945876176133D) & 0x3FFF;
 			cameraYaw = (int) ((double) cam2.method4719() * -2607.5945876176133D) & 0x3FFF;
-			field2656 = 0;
-			field11078 = (int) ((float) field7286 + (float) ((int) ((double) field11076 / (Math.tan((double) (cam2.method4784() / 2.0F)) * 4.0D)) - field7286) * var2);
-			cameraMouseX = (int) ((float) (var3.x - var4.x * 512 - field9214) * var2 + (float) field9214);
-			cameraMouseY = (int) ((float) (-var3.y - field4857) * var2 + (float) field4857);
-			cameraMouseZ = (int) ((float) (var3.z - var4.z * 512 - field7231) * var2 + (float) field7231);
+			cameraRoll = 0;
+			field11078 = (int) ((float) field7286 + (float) ((int) ((double) viewportWidth / (Math.tan((double) (cam2.method4784() / 2.0F)) * 4.0D)) - field7286) * var2);
+			cameraX = (int) ((float) (var3.x - var4.x * 512 - field9214) * var2 + (float) field9214);
+			cameraY = (int) ((float) (-var3.y - field4857) * var2 + (float) field4857);
+			cameraZ = (int) ((float) (var3.z - var4.z * 512 - field7231) * var2 + (float) field7231);
 			var5 = -cameraYaw - field8720 & 0x3FFF;
 			if (var5 > 8192) {
 				var5 -= 16384;
@@ -4643,19 +4643,19 @@ public final class Client extends GameShell {
 				var5 += 16384;
 			}
 		} else {
-			int var6 = (int) orbitCameraXan;
-			if (field10806 >> 8 > var6) {
-				var6 = field10806 >> 8;
+			int pitch = (int) orbitCameraPitch;
+			if (cameraPitchClamp >> 8 > pitch) {
+				pitch = cameraPitchClamp >> 8;
 			}
-			if (cameraModifierEnabled[4] && field11063[4] + 128 > var6) {
-				var6 = field11063[4] + 128;
+			if (cameraModifierEnabled[4] && cameraModifierWobbleScale[4] + 128 > pitch) {
+				pitch = cameraModifierWobbleScale[4] + 128;
 			}
-			int var7 = cameraAnticheatAngle + (int) orbitCameraYaw & 0x3FFF;
+			int yaw = cameraAnticheatAngle + (int) orbitCameraYaw & 0x3FFF;
 			Vector3 var8 = localPlayerEntity.getTransform().trans;
-			method14042(field8910, getHeightmapY((int) var8.x, (int) var8.z, currentPlayerLevel) - cameraFollowHeight, field3569, var6, var7, (var6 >> 3) * 3 + 600 << 2, arg0);
-			cameraMouseX = (int) ((float) (cameraMouseX - field9214) * var2 + (float) field9214);
-			cameraMouseY = (int) ((float) (cameraMouseY - field4857) * var2 + (float) field4857);
-			cameraMouseZ = (int) ((float) (cameraMouseZ - field7231) * var2 + (float) field7231);
+			orbitCamera(orbitCameraX, getHeightmapY((int) var8.x, (int) var8.z, currentPlayerLevel) - cameraFollowHeight, orbitCameraZ, pitch, yaw, (pitch >> 3) * 3 + 600 << 2, arg0);
+			cameraX = (int) ((float) (cameraX - field9214) * var2 + (float) field9214);
+			cameraY = (int) ((float) (cameraY - field4857) * var2 + (float) field4857);
+			cameraZ = (int) ((float) (cameraZ - field7231) * var2 + (float) field7231);
 			cameraPitch = (int) ((float) (cameraPitch - field1267) * var2 + (float) field1267);
 			var5 = cameraYaw - field8720;
 			if (var5 > 8192) {
@@ -4674,12 +4674,12 @@ public final class Client extends GameShell {
 		Vector3 var2 = localPlayerEntity.getTransform().trans;
 		int var3 = cameraAnticheatOffsetX + (int) var2.x;
 		int var4 = cameraAnticheatOffsetZ + (int) var2.z;
-		if (field8910 - var3 < -2000 || field8910 - var3 > 2000 || field3569 - var4 < -2000 || field3569 - var4 > 2000) {
-			field8910 = var3;
-			field3569 = var4;
+		if (orbitCameraX - var3 < -2000 || orbitCameraX - var3 > 2000 || orbitCameraZ - var4 < -2000 || orbitCameraZ - var4 > 2000) {
+			orbitCameraX = var3;
+			orbitCameraZ = var4;
 		}
-		if (field8910 != var3) {
-			int var5 = var3 - field8910;
+		if (orbitCameraX != var3) {
+			int var5 = var3 - orbitCameraX;
 			int var6 = (int) ((long) var5 * arg0 / 320L);
 			if (var5 > 0) {
 				if (var6 == 0) {
@@ -4692,10 +4692,10 @@ public final class Client extends GameShell {
 			} else if (var6 < var5) {
 				var6 = var5;
 			}
-			field8910 += var6;
+			orbitCameraX += var6;
 		}
-		if (field3569 != var4) {
-			int var7 = var4 - field3569;
+		if (orbitCameraZ != var4) {
+			int var7 = var4 - orbitCameraZ;
 			int var8 = (int) ((long) var7 * arg0 / 320L);
 			if (var7 > 0) {
 				if (var8 == 0) {
@@ -4708,10 +4708,10 @@ public final class Client extends GameShell {
 			} else if (var8 < var7) {
 				var8 = var7;
 			}
-			field3569 += var8;
+			orbitCameraZ += var8;
 		}
 		orbitCameraYaw += (float) arg0 * field10896 / 6.0F;
-		orbitCameraXan += (float) arg0 * field10897 / 6.0F;
+		orbitCameraPitch += (float) arg0 * field10897 / 6.0F;
 		method14884();
 	}
 
@@ -4719,8 +4719,8 @@ public final class Client extends GameShell {
 	public static final void method3093(long arg0) {
 		int var2 = field10892;
 		int var3 = field10893;
-		if (field8910 != var2) {
-			int var4 = var2 - field8910;
+		if (orbitCameraX != var2) {
+			int var4 = var2 - orbitCameraX;
 			int var5 = (int) ((long) var4 * arg0 / 320L);
 			if (var4 > 0) {
 				if (var5 == 0) {
@@ -4733,10 +4733,10 @@ public final class Client extends GameShell {
 			} else if (var5 < var4) {
 				var5 = var4;
 			}
-			field8910 += var5;
+			orbitCameraX += var5;
 		}
-		if (field3569 != var3) {
-			int var6 = var3 - field3569;
+		if (orbitCameraZ != var3) {
+			int var6 = var3 - orbitCameraZ;
 			int var7 = (int) ((long) var6 * arg0 / 320L);
 			if (var6 > 0) {
 				if (var7 == 0) {
@@ -4749,10 +4749,10 @@ public final class Client extends GameShell {
 			} else if (var7 < var6) {
 				var7 = var6;
 			}
-			field3569 += var7;
+			orbitCameraZ += var7;
 		}
 		orbitCameraYaw += (float) arg0 * field10896 / 40.0F * 8.0F;
-		orbitCameraXan += (float) arg0 * field10897 / 40.0F * 8.0F;
+		orbitCameraPitch += (float) arg0 * field10897 / 40.0F * 8.0F;
 		method14884();
 	}
 
@@ -4798,12 +4798,12 @@ public final class Client extends GameShell {
 		int var4 = arg1 << 3;
 		int var5 = arg2 << 3;
 		if (Client.cameraState != 3) {
-			orbitCameraXan = var3;
+			orbitCameraPitch = var3;
 			orbitCameraYaw = var4;
 			if (Client.cameraState == 5) {
 				cameraPitch = var3;
 				cameraYaw = var4;
-				field2656 = var5;
+				cameraRoll = var5;
 			}
 			method14884();
 		} else if (cam2.getPositionMode() == PositionMode.ENTITY) {
@@ -4823,11 +4823,11 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("abx.ge(B)V")
 	public static final void method14884() {
-		if (orbitCameraXan < 1077.0F) {
-			orbitCameraXan = 1077.0F;
+		if (orbitCameraPitch < 1077.0F) {
+			orbitCameraPitch = 1077.0F;
 		}
-		if (orbitCameraXan > 2787.0F) {
-			orbitCameraXan = 2787.0F;
+		if (orbitCameraPitch > 2787.0F) {
+			orbitCameraPitch = 2787.0F;
 		}
 		while (orbitCameraYaw >= 16384.0F) {
 			orbitCameraYaw -= 16384.0F;
@@ -4837,9 +4837,9 @@ public final class Client extends GameShell {
 		}
 		SceneLevelTileFlags var0 = world.method7793();
 		Scene var1 = world.getScene();
-		int var2 = field8910 >> 9;
-		int var3 = field3569 >> 9;
-		int var4 = getHeightmapY(field8910, field3569, currentPlayerLevel);
+		int var2 = orbitCameraX >> 9;
+		int var3 = orbitCameraZ >> 9;
+		int var4 = getHeightmapY(orbitCameraX, orbitCameraZ, currentPlayerLevel);
 		int var5 = 0;
 		if (var2 > 3 && var3 > 3 && var2 < world.getSizeX() - 4 && var3 < world.getSizeZ() - 4) {
 			for (int var6 = var2 - 4; var6 <= var2 + 4; var6++) {
@@ -4869,10 +4869,10 @@ public final class Client extends GameShell {
 		if (var12 < 262144) {
 			var12 = 262144;
 		}
-		if (var12 > field10806) {
-			field10806 += (var12 - field10806) / 24;
-		} else if (var12 < field10806) {
-			field10806 += (var12 - field10806) / 80;
+		if (var12 > cameraPitchClamp) {
+			cameraPitchClamp += (var12 - cameraPitchClamp) / 24;
+		} else if (var12 < cameraPitchClamp) {
+			cameraPitchClamp += (var12 - cameraPitchClamp) / 80;
 		}
 	}
 
@@ -4887,9 +4887,9 @@ public final class Client extends GameShell {
 			method9025();
 		}
 		if (arg5 && cameraMoveSpeed >= 100) {
-			cameraMouseX = cameraMoveX * 512 + 256;
-			cameraMouseZ = cameraMoveZ * 512 + 256;
-			cameraMouseY = getHeightmapY(cameraMouseX, cameraMouseZ, currentPlayerLevel) - cameraSrcHeight;
+			cameraX = cameraMoveX * 512 + 256;
+			cameraZ = cameraMoveZ * 512 + 256;
+			cameraY = getHeightmapY(cameraX, cameraZ, currentPlayerLevel) - cameraSrcHeight;
 		}
 		Client.cameraState = 5;
 		field3538 = -1;
@@ -4910,13 +4910,13 @@ public final class Client extends GameShell {
 			int var5 = cameraLookX * 512 + 256;
 			int var6 = cameraLookZ * 512 + 256;
 			int var7 = getHeightmapY(var5, var6, currentPlayerLevel) - field1983;
-			int var8 = var5 - cameraMouseX;
-			int var9 = var7 - cameraMouseY;
-			int var10 = var6 - cameraMouseZ;
+			int var8 = var5 - cameraX;
+			int var9 = var7 - cameraY;
+			int var10 = var6 - cameraZ;
 			int var11 = (int) Math.sqrt((double) (var8 * var8 + var10 * var10));
 			cameraPitch = (int) (Math.atan2((double) var9, (double) var11) * 2607.5945876176133D) & 0x3FFF;
 			cameraYaw = (int) (Math.atan2((double) var8, (double) var10) * -2607.5945876176133D) & 0x3FFF;
-			field2656 = 0;
+			cameraRoll = 0;
 			if (cameraPitch < 1024) {
 				cameraPitch = 1024;
 			}
@@ -4966,9 +4966,9 @@ public final class Client extends GameShell {
 		field3538 = -1;
 		field810 = -1;
 		field10899 = loopCycle;
-		field9214 = cameraMouseX;
-		field4857 = cameraMouseY;
-		field7231 = cameraMouseZ;
+		field9214 = cameraX;
+		field4857 = cameraY;
+		field7231 = cameraZ;
 		field1267 = cameraPitch;
 		field8720 = cameraYaw;
 		field7286 = field11078;
@@ -4978,12 +4978,12 @@ public final class Client extends GameShell {
 	public static final void method9025() {
 		CoordGrid var0 = world.method7727();
 		Vector3 var1 = cam2.method4714();
-		cameraMouseX = (int) var1.x - (var0.x << 9);
-		cameraMouseY = -((int) var1.y);
-		cameraMouseZ = (int) var1.z - (var0.z << 9);
+		cameraX = (int) var1.x - (var0.x << 9);
+		cameraY = -((int) var1.y);
+		cameraZ = (int) var1.z - (var0.z << 9);
 		cameraPitch = (int) ((double) cam2.method4718() * 2607.5945876176133D) & 0x3FFF;
 		cameraYaw = (int) ((double) cam2.method4719() * 2607.5945876176133D) & 0x3FFF;
-		field2656 = 0;
+		cameraRoll = 0;
 	}
 
 	@ObfuscatedName("vb.gm(B)V")
@@ -5662,7 +5662,7 @@ public final class Client extends GameShell {
 			field11072[var2] = false;
 		}
 		field11037 = loopCycle;
-		MiniMenu.method6967(-1, -1);
+		MiniMenu.setBounds(-1, -1);
 		if (openedTopInterface != -1) {
 			field11051 = 0;
 			method15281();
@@ -5684,9 +5684,9 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("dy.hd(IIIIZI)V")
-	public static final void method2104(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
+	public static final void drawScene(int x, int y, int width, int height, boolean arg4) {
 		if (world.getScene() == null) {
-			renderer.fillRectangle(arg0, arg1, arg2, arg3, -16777216);
+			renderer.fillRectangle(x, y, width, height, -16777216);
 			return;
 		}
 		Vector3 var5 = localPlayerEntity.getTransform().trans;
@@ -5702,7 +5702,7 @@ public final class Client extends GameShell {
 			var6 = true;
 		}
 		if (var6) {
-			renderer.fillRectangle(arg0, arg1, arg2, arg3, -16777216);
+			renderer.fillRectangle(x, y, width, height, -16777216);
 			return;
 		}
 		sceneCycle++;
@@ -5711,95 +5711,95 @@ public final class Client extends GameShell {
 			Minimap.field718 = -1;
 			DelayedStateChange.method14036();
 		}
-		method8193();
+		pushEntities();
 		if (!arg4) {
-			method5180();
+			pushProjectiles();
 		}
-		method3597();
+		pushSpotanims();
 		for (int var7 = 0; var7 < hintTrails.length; var7++) {
 			if (hintTrails[var7] != null && !hintTrails[var7].method8407() && hintTrails[var7].method8408(renderer)) {
 				hintTrails[var7].method8412(world.getScene());
 			}
 		}
-		method13981(arg0, arg1, arg2, arg3, true);
-		int var8 = field10780;
-		int var9 = field11075;
-		int var10 = field11076;
-		int var11 = field11077;
-		MiniMenu.method6967(var8, var9);
+		setViewport(x, y, width, height, true);
+		int viewportX = Client.viewportX;
+		int viewportY = Client.viewportY;
+		int viewportWidth = Client.viewportWidth;
+		int viewportHeight = Client.viewportHeight;
+		MiniMenu.setBounds(viewportX, viewportY);
 		if (Client.cameraState == 2) {
-			int var12 = (int) orbitCameraXan;
-			if (field10806 >> 8 > var12) {
-				var12 = field10806 >> 8;
+			int pitch = (int) orbitCameraPitch;
+			if (cameraPitchClamp >> 8 > pitch) {
+				pitch = cameraPitchClamp >> 8;
 			}
-			if (cameraModifierEnabled[4] && field11063[4] + 128 > var12) {
-				var12 = field11063[4] + 128;
+			if (cameraModifierEnabled[4] && cameraModifierWobbleScale[4] + 128 > pitch) {
+				pitch = cameraModifierWobbleScale[4] + 128;
 			}
-			int var13 = cameraAnticheatAngle + (int) orbitCameraYaw & 0x3FFF;
-			method14042(field8910, getHeightmapY((int) var5.x, (int) var5.z, currentPlayerLevel) - cameraFollowHeight, field3569, var12, var13, (var12 >> 3) * 3 + 600 << 2, var11);
+			int yaw = cameraAnticheatAngle + (int) orbitCameraYaw & 0x3FFF;
+			orbitCamera(orbitCameraX, getHeightmapY((int) var5.x, (int) var5.z, currentPlayerLevel) - cameraFollowHeight, orbitCameraZ, pitch, yaw, (pitch >> 3) * 3 + 600 << 2, viewportHeight);
 		} else if (Client.cameraState == 4) {
-			int var14 = (int) orbitCameraXan;
-			if (field10806 >> 8 > var14) {
-				var14 = field10806 >> 8;
+			int pitch = (int) orbitCameraPitch;
+			if (cameraPitchClamp >> 8 > pitch) {
+				pitch = cameraPitchClamp >> 8;
 			}
-			if (cameraModifierEnabled[4] && field11063[4] + 128 > var14) {
-				var14 = field11063[4] + 128;
+			if (cameraModifierEnabled[4] && cameraModifierWobbleScale[4] + 128 > pitch) {
+				pitch = cameraModifierWobbleScale[4] + 128;
 			}
-			int var15 = (int) orbitCameraYaw & 0x3FFF;
-			method14042(field8910, getHeightmapY(field10892, field10893, currentPlayerLevel) - cameraFollowHeight, field3569, var14, var15, (var14 >> 3) * 3 + 600 << 2, var11);
+			int yaw = (int) orbitCameraYaw & 0x3FFF;
+			orbitCamera(orbitCameraX, getHeightmapY(field10892, field10893, currentPlayerLevel) - cameraFollowHeight, orbitCameraZ, pitch, yaw, (pitch >> 3) * 3 + 600 << 2, viewportHeight);
 		} else if (Client.cameraState == 1) {
-			method10490(var11);
+			method10490(viewportHeight);
 		}
-		int var16 = cameraMouseX;
-		int var17 = cameraMouseY;
-		int var18 = cameraMouseZ;
-		int var19 = cameraPitch;
-		int var20 = cameraYaw;
-		for (int var21 = 0; var21 < 5; var21++) {
-			if (cameraModifierEnabled[var21]) {
-				int var22 = (int) (Math.random() * (double) (field11062[var21] * 2 + 1) - (double) field11062[var21] + Math.sin((double) field11064[var21] / 100.0D * (double) field10996[var21]) * (double) field11063[var21]);
-				if (var21 == 0) {
-					cameraMouseX += var22 << 2;
+		int cameraX = Client.cameraX;
+		int cameraY = Client.cameraY;
+		int cameraZ = Client.cameraZ;
+		int cameraPitch = Client.cameraPitch;
+		int cameraYaw = Client.cameraYaw;
+		for (int type = 0; type < 5; type++) {
+			if (cameraModifierEnabled[type]) {
+				int jitter = (int) (Math.random() * (double) (cameraModifierJitter[type] * 2 + 1) - (double) cameraModifierJitter[type] + Math.sin((double) cameraModifierCycle[type] / 100.0D * (double) cameraModifierWobbleSpeed[type]) * (double) cameraModifierWobbleScale[type]);
+				if (type == 0) {
+					Client.cameraX += jitter << 2;
 				}
-				if (var21 == 1) {
-					cameraMouseY += var22 << 2;
+				if (type == 1) {
+					Client.cameraY += jitter << 2;
 				}
-				if (var21 == 2) {
-					cameraMouseZ += var22 << 2;
+				if (type == 2) {
+					Client.cameraZ += jitter << 2;
 				}
-				if (var21 == 3) {
-					cameraYaw = cameraYaw + var22 & 0x3FFF;
+				if (type == 3) {
+					Client.cameraYaw = Client.cameraYaw + jitter & 0x3FFF;
 				}
-				if (var21 == 4) {
-					cameraPitch += var22;
-					if (cameraPitch < 1024) {
-						cameraPitch = 1024;
-					} else if (cameraPitch > 3072) {
-						cameraPitch = 3072;
+				if (type == 4) {
+					Client.cameraPitch += jitter;
+					if (Client.cameraPitch < 1024) {
+						Client.cameraPitch = 1024;
+					} else if (Client.cameraPitch > 3072) {
+						Client.cameraPitch = 3072;
 					}
 				}
 			}
 		}
-		if (cameraMouseX < 0) {
-			cameraMouseX = 0;
+		if (Client.cameraX < 0) {
+			Client.cameraX = 0;
 		}
-		if (cameraMouseX > (world.getScene().maxTileX << 9) - 1) {
-			cameraMouseX = (world.getScene().maxTileX << 9) - 1;
+		if (Client.cameraX > (world.getScene().maxTileX << 9) - 1) {
+			Client.cameraX = (world.getScene().maxTileX << 9) - 1;
 		}
-		if (cameraMouseZ < 0) {
-			cameraMouseZ = 0;
+		if (Client.cameraZ < 0) {
+			Client.cameraZ = 0;
 		}
-		if (cameraMouseZ > (world.getScene().maxTileZ << 9) - 1) {
-			cameraMouseZ = (world.getScene().maxTileZ << 9) - 1;
+		if (Client.cameraZ > (world.getScene().maxTileZ << 9) - 1) {
+			Client.cameraZ = (world.getScene().maxTileZ << 9) - 1;
 		}
 		if (preferences.removeRoofs2.getValue() == 2) {
 			method16610();
 		} else if (preferences.removeRoofs2.getValue() == 3) {
 			method2671();
 		}
-		renderer.method2164(var8, var9, var10, var11);
+		renderer.method2164(viewportX, viewportY, viewportWidth, viewportHeight);
 		renderer.method2170(true);
-		renderer.resetBounds(var8, var9, var8 + var10, var9 + var11);
+		renderer.resetBounds(viewportX, viewportY, viewportX + viewportWidth, viewportY + viewportHeight);
 		Environment var23 = world.method7816().getCurrentEnv();
 		int var24 = var23.getFogColour();
 		Vector3i var25 = new Vector3i();
@@ -5809,11 +5809,11 @@ public final class Client extends GameShell {
 		} else if (Client.cameraState == 3) {
 			cam2.method4707(var25, field10793, field10792, var26.x << 9, var26.z << 9);
 		} else {
-			field10793.setToTranslation((float) -cameraMouseX, (float) -cameraMouseY, (float) -cameraMouseZ);
-			field10793.rotateAroundAxis(0.0F, -1.0F, 0.0F, Trig1.radians(-cameraYaw & 0x3FFF));
-			field10793.rotateAroundAxis(-1.0F, 0.0F, 0.0F, Trig1.radians(-cameraPitch & 0x3FFF));
-			field10793.rotateAroundAxis(0.0F, 0.0F, -1.0F, Trig1.radians(-field2656 & 0x3FFF));
-			method15141(field10792, true, (float) (var10 / 2), (float) (var11 / 2), (float) (field11078 << 1), (float) (field11078 << 1), var10, var11);
+			field10793.setToTranslation((float) -Client.cameraX, (float) -Client.cameraY, (float) -Client.cameraZ);
+			field10793.rotateAroundAxis(0.0F, -1.0F, 0.0F, Trig1.radians(-Client.cameraYaw & 0x3FFF));
+			field10793.rotateAroundAxis(-1.0F, 0.0F, 0.0F, Trig1.radians(-Client.cameraPitch & 0x3FFF));
+			field10793.rotateAroundAxis(0.0F, 0.0F, -1.0F, Trig1.radians(-cameraRoll & 0x3FFF));
+			method15141(field10792, true, (float) (viewportWidth / 2), (float) (viewportHeight / 2), (float) (field11078 << 1), (float) (field11078 << 1), viewportWidth, viewportHeight);
 		}
 		renderer.method2217(field10793);
 		renderer.method2220(field10792);
@@ -5825,14 +5825,14 @@ public final class Client extends GameShell {
 			if (Client.cameraState == 3) {
 				int var27 = (int) ((double) cam2.method4718() * 2607.5945876176133D);
 				int var28 = (int) ((double) cam2.method4719() * 2607.5945876176133D);
-				var23.getSkybox().method7946(renderer, field3023 << 3, var8, var9, var10, var11, var27, var28, 0, var24, true, false);
+				var23.getSkybox().method7946(renderer, field3023 << 3, viewportX, viewportY, viewportWidth, viewportHeight, var27, var28, 0, var24, true, false);
 			} else {
-				var23.getSkybox().method7946(renderer, field3023 << 3, var8, var9, var10, var11, cameraPitch, cameraYaw, field2656, var24, true, false);
+				var23.getSkybox().method7946(renderer, field3023 << 3, viewportX, viewportY, viewportWidth, viewportHeight, Client.cameraPitch, Client.cameraYaw, cameraRoll, var24, true, false);
 			}
 			renderer.flush();
 		}
 		renderer.method2170(false);
-		MiniMenu.method5928(field10793, field10792, var10, var11);
+		MiniMenu.method5928(field10793, field10792, viewportWidth, viewportHeight);
 		world.method7816().updatePartial(world);
 		int var29 = preferences.removeRoofs2.getValue();
 		byte var30;
@@ -5846,82 +5846,82 @@ public final class Client extends GameShell {
 		if (CameraManager.method2978() || Client.cameraState == 3) {
 			world.getScene().method8845(loopCycle, var25.field2835, var25.field2836, var25.field2837, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.level + 1, var30, (int) var5.x >> 9, (int) var5.z >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
 		} else {
-			world.getScene().method8845(loopCycle, cameraMouseX, cameraMouseY, cameraMouseZ, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.level + 1, var30, (int) var5.x >> 9, (int) var5.z >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
+			world.getScene().method8845(loopCycle, Client.cameraX, Client.cameraY, Client.cameraZ, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.level + 1, var30, (int) var5.x >> 9, (int) var5.z >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
 		}
 		field10915++;
 		if (!renderer.method2234() && state == 18) {
-			method8275(var8, var9, var10, var11);
+			draw3DEntityElements(viewportX, viewportY, viewportWidth, viewportHeight);
 		}
 		world.getScene().clearEntities();
-		cameraMouseX = var16;
-		cameraMouseY = var17;
-		cameraMouseZ = var18;
-		cameraPitch = var19;
-		cameraYaw = var20;
+		Client.cameraX = cameraX;
+		Client.cameraY = cameraY;
+		Client.cameraZ = cameraZ;
+		Client.cameraPitch = cameraPitch;
+		Client.cameraYaw = cameraYaw;
 		if (field11023 && js5TcpClient.getTotalUrgents() == 0) {
 			field11023 = false;
 		}
 		if (field11023) {
-			renderer.fillRectangle(var8, var9, var10, var11, -16777216);
+			renderer.fillRectangle(viewportX, viewportY, viewportWidth, viewportHeight, -16777216);
 			MessageBox.draw(LocalisedText.LOADING.forLang(language), false, renderer, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 		}
-		method15141(field10792, false, (float) (var10 / 2 + var8), (float) (var11 / 2 + var9), (float) (field11078 << 1), (float) (field11078 << 1), var10, var11);
+		method15141(field10792, false, (float) (viewportWidth / 2 + viewportX), (float) (viewportHeight / 2 + viewportY), (float) (field11078 << 1), (float) (field11078 << 1), viewportWidth, viewportHeight);
 		renderer.method2220(field10792);
 		MiniMenu.method9927(field10792);
 	}
 
 	@ObfuscatedName("zm.hx(IIIIZI)V")
-	public static final void method13981(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
-		if (arg2 < 1) {
-			arg2 = 1;
+	public static final void setViewport(int x, int y, int width, int height, boolean drawing) {
+		if (width < 1) {
+			width = 1;
 		}
-		if (arg3 < 1) {
-			arg3 = 1;
+		if (height < 1) {
+			height = 1;
 		}
-		int var5 = arg3 - 334;
+		int var5 = height - 334;
 		if (var5 < 0) {
 			var5 = 0;
 		} else if (var5 > 100) {
 			var5 = 100;
 		}
-		int var6 = (field10987 - field11066) * var5 / 100 + field11066;
-		int var7 = arg3 * var6 * 512 / (arg2 * 334);
+		int var6 = (viewportFovMin - viewportFovMax) * var5 / 100 + viewportFovMax;
+		int var7 = height * var6 * 512 / (width * 334);
 		if (var7 < field10900) {
 			short var8 = field10900;
-			var6 = arg2 * var8 * 334 / (arg3 * 512);
+			var6 = width * var8 * 334 / (height * 512);
 			if (var6 > field11071) {
 				var6 = field11071;
-				int var9 = arg3 * var6 * 512 / (var8 * 334);
-				int var10 = (arg2 - var9) / 2;
-				if (arg4) {
+				int var9 = height * var6 * 512 / (var8 * 334);
+				int var10 = (width - var9) / 2;
+				if (drawing) {
 					renderer.resetClip();
-					renderer.fillRectangle(arg0, arg1, var10, arg3, -16777216);
-					renderer.fillRectangle(arg0 + arg2 - var10, arg1, var10, arg3, -16777216);
+					renderer.fillRectangle(x, y, var10, height, -16777216);
+					renderer.fillRectangle(x + width - var10, y, var10, height, -16777216);
 				}
-				arg0 += var10;
-				arg2 -= var10 * 2;
+				x += var10;
+				width -= var10 * 2;
 			}
 		} else if (var7 > field10943) {
 			short var11 = field10943;
-			var6 = arg2 * var11 * 334 / (arg3 * 512);
+			var6 = width * var11 * 334 / (height * 512);
 			if (var6 < field11070) {
 				var6 = field11070;
-				int var12 = arg2 * var11 * 334 / (var6 * 512);
-				int var13 = (arg3 - var12) / 2;
-				if (arg4) {
+				int var12 = width * var11 * 334 / (var6 * 512);
+				int var13 = (height - var12) / 2;
+				if (drawing) {
 					renderer.resetClip();
-					renderer.fillRectangle(arg0, arg1, arg2, var13, -16777216);
-					renderer.fillRectangle(arg0, arg1 + arg3 - var13, arg2, var13, -16777216);
+					renderer.fillRectangle(x, y, width, var13, -16777216);
+					renderer.fillRectangle(x, y + height - var13, width, var13, -16777216);
 				}
-				arg1 += var13;
-				arg3 -= var13 * 2;
+				y += var13;
+				height -= var13 * 2;
 			}
 		}
-		field11078 = arg3 * var6 / 334;
-		field10780 = arg0;
-		field11075 = arg1;
-		field11076 = (short) arg2;
-		field11077 = (short) arg3;
+		field11078 = height * var6 / 334;
+		viewportX = x;
+		viewportY = y;
+		viewportWidth = (short) width;
+		viewportHeight = (short) height;
 	}
 
 	@ObfuscatedName("ff.hq(I)V")
@@ -5993,8 +5993,8 @@ public final class Client extends GameShell {
 		Vector3 var0 = localPlayerEntity.getTransform().trans;
 		SceneLevelTileFlags var1 = world.method7793();
 		if (Client.cameraState != 2 && Client.cameraState != 3 && field810 == -1) {
-			int var2 = getHeightmapY(cameraMouseX, cameraMouseZ, currentPlayerLevel);
-			if (var2 - cameraMouseY < 3200 && (var1.levelTileFlags[currentPlayerLevel][cameraMouseX >> 9][cameraMouseZ >> 9] & 0x4) != 0) {
+			int var2 = getHeightmapY(cameraX, cameraZ, currentPlayerLevel);
+			if (var2 - cameraY < 3200 && (var1.levelTileFlags[currentPlayerLevel][cameraX >> 9][cameraZ >> 9] & 0x4) != 0) {
 				field11096 = true;
 			}
 			return;
@@ -6033,14 +6033,14 @@ public final class Client extends GameShell {
 				return;
 			}
 		} else {
-			var8 = cameraMouseX >> 9;
-			var9 = cameraMouseZ >> 9;
+			var8 = cameraX >> 9;
+			var9 = cameraZ >> 9;
 		}
 		int var10 = var5 >> 9;
 		int var11 = var6 >> 9;
 		if (var1.method7102(var8, var9)) {
-			int var12 = getHeightmapY(cameraMouseX, cameraMouseZ, 3);
-			if (cameraMouseY >= var12) {
+			int var12 = getHeightmapY(cameraX, cameraZ, 3);
+			if (cameraY >= var12) {
 				field11096 = true;
 			}
 			return;
@@ -6171,9 +6171,9 @@ public final class Client extends GameShell {
 		SceneLevelTileFlags var7 = world.method7793();
 		Scene var8 = world.getScene();
 		if (Client.cameraState != 2 && Client.cameraState != 3 && field810 == -1) {
-			int var9 = getHeightmapY(cameraMouseX, cameraMouseZ, currentPlayerLevel);
-			if (var9 - cameraMouseY < 3200 && (var7.levelTileFlags[currentPlayerLevel][cameraMouseX >> 9][cameraMouseZ >> 9] & 0x4) != 0) {
-				method7472(var8.levelTiles, 1, cameraMouseX >> 9, cameraMouseZ >> 9, false);
+			int var9 = getHeightmapY(cameraX, cameraZ, currentPlayerLevel);
+			if (var9 - cameraY < 3200 && (var7.levelTileFlags[currentPlayerLevel][cameraX >> 9][cameraZ >> 9] & 0x4) != 0) {
+				method7472(var8.levelTiles, 1, cameraX >> 9, cameraZ >> 9, false);
 			}
 			return;
 		}
@@ -6211,14 +6211,14 @@ public final class Client extends GameShell {
 				return;
 			}
 		} else {
-			var15 = cameraMouseX >> 9;
-			var16 = cameraMouseZ >> 9;
+			var15 = cameraX >> 9;
+			var16 = cameraZ >> 9;
 		}
 		int var17 = var12 >> 9;
 		int var18 = var13 >> 9;
 		if (var7.method7102(var15, var16)) {
-			int var19 = getHeightmapY(cameraMouseX, cameraMouseZ, 3);
-			if (cameraMouseY >= var19) {
+			int var19 = getHeightmapY(cameraX, cameraZ, 3);
+			if (cameraY >= var19) {
 				method7472(var8.levelTiles, 1, var15, var16, false);
 			}
 			return;
@@ -6545,7 +6545,7 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("sq.hn(I)V")
-	public static final void method8193() {
+	public static final void pushEntities() {
 		for (CoverMarkerClickbox var0 = (CoverMarkerClickbox) field10882.pollFront(); var0 != null; var0 = (CoverMarkerClickbox) field10882.pollFront()) {
 			CoverMarkerClickbox.method3032(var0);
 		}
@@ -6968,7 +6968,7 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("ks.ij(I)V")
-	public static final void method5180() {
+	public static final void pushProjectiles() {
 		for (ProjectileEntityWrapper var0 = (ProjectileEntityWrapper) projectiles.peekFront(); var0 != null; var0 = (ProjectileEntityWrapper) projectiles.prev()) {
 			ProjectileAnimation var1 = var0.field12309;
 			if (loopCycle > var1.field12589) {
@@ -7032,7 +7032,7 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("gm.iq(I)V")
-	public static final void method3597() {
+	public static final void pushSpotanims() {
 		Iterator var0 = spotanims.iterator();
 		while (var0.hasNext()) {
 			SpotAnimEntityWrapper var1 = (SpotAnimEntityWrapper) var0.next();
@@ -7044,37 +7044,37 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("sp.ig(IIIII)V")
-	public static final void method8275(int arg0, int arg1, int arg2, int arg3) {
-		MiniMenu.method6036(renderer);
-		method16754(arg0, arg1, arg2, arg3, 256, 256);
-		method7133(arg0, arg1, arg2, arg3, 256, 256);
-		method6809(arg0, arg1, arg2, arg3, 256, 256);
-		method3109(arg0, arg1, arg2, arg3);
+	public static final void draw3DEntityElements(int arg0, int arg1, int arg2, int arg3) {
+		MiniMenu.drawMenu(renderer);
+		drawTextCoords(arg0, arg1, arg2, arg3, 256, 256);
+		draw2DEntityElements(arg0, arg1, arg2, arg3, 256, 256);
+		drawHintArrows(arg0, arg1, arg2, arg3, 256, 256);
+		drawCrossSprites(arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("ahs.iv(IIIIIII)V")
-	public static final void method16754(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public static final void drawTextCoords(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		for (TextCoord var6 = (TextCoord) textCoords.peekFront(); var6 != null; var6 = (TextCoord) textCoords.prev()) {
 			if (loopCycle >= var6.field11203) {
 				var6.unlink();
 			} else {
-				method18486(var6.field11206, (var6.field11202 << 9) + 256, (var6.field11204 << 9) + 256, 0, var6.field11205 * 2, false, false);
-				DefaultSprites.b12FullFont.drawStringCenter(var6.field11208, (int) (field10922[0] + (float) arg0), (int) (field10922[1] + (float) arg1), var6.field11207 | 0xFF000000, 0);
+				project(var6.field11206, (var6.field11202 << 9) + 256, (var6.field11204 << 9) + 256, 0, var6.field11205 * 2, false, false);
+				DefaultSprites.b12FullFont.drawStringCenter(var6.field11208, (int) (projection[0] + (float) arg0), (int) (projection[1] + (float) arg1), var6.field11207 | 0xFF000000, 0);
 			}
 		}
 	}
 
 	@ObfuscatedName("pm.ie(IIIIIIB)V")
-	public static final void method6809(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public static final void drawHintArrows(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		HintArrow[] var6 = hintArrows;
 		for (int var7 = 0; var7 < var6.length; var7++) {
 			HintArrow var8 = var6[var7];
 			if (var8 != null && var8.field745 == 2) {
-				method18486(var8.field749, var8.field746, var8.field747, 0, var8.field742 * 2, false, false);
-				if (field10922[0] > -1.0F && loopCycle % 20 < 10) {
+				project(var8.field749, var8.field746, var8.field747, 0, var8.field742 * 2, false, false);
+				if (projection[0] > -1.0F && loopCycle % 20 < 10) {
 					Sprite var9 = DefaultSprites.hintarrowSprites[var8.field751];
-					int var10 = (int) (field10922[0] + (float) arg0 - 12.0F);
-					int var11 = (int) (field10922[1] + (float) arg1 - 28.0F);
+					int var10 = (int) (projection[0] + (float) arg0 - 12.0F);
+					int var11 = (int) (projection[1] + (float) arg1 - 28.0F);
 					var9.drawSprite(var10, var11);
 				}
 			}
@@ -7082,7 +7082,7 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("qz.iu(IIIIIIB)V")
-	public static final void method7133(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public static final void draw2DEntityElements(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		int var6 = ReceivePlayerPositions.highResolutionsCount;
 		int[] var7 = ReceivePlayerPositions.highResolutionsIndices;
 		chatCount = 0;
@@ -7130,8 +7130,8 @@ public final class Client extends GameShell {
 					continue;
 				}
 			}
-			method16483(var12, var12.height(), false);
-			if (!(field10922[0] < 0.0F)) {
+			projectFromEntity2d(var12, var12.height(), false);
+			if (!(projection[0] < 0.0F)) {
 				if (var12.showChat()) {
 					EntityChatLine var13 = var12.getChatLine();
 					if (var13 != null && chatCount < field11044) {
@@ -7140,13 +7140,13 @@ public final class Client extends GameShell {
 							var14 = emojiList.substitute(var14);
 						}
 						chatWidth[chatCount] = DefaultSprites.b12FullMetrics.stringWidth(var14) / 2;
-						chatX[chatCount] = (int) field10922[0];
-						chatY[chatCount] = (int) field10922[1];
+						chatX[chatCount] = (int) projection[0];
+						chatY[chatCount] = (int) projection[1];
 						chats[chatCount] = var13;
 						chatCount++;
 					}
 				}
-				int var15 = (int) (field10922[1] + (float) arg1);
+				int var15 = (int) (projection[1] + (float) arg1);
 				int var16 = var15 - DefaultSprites.b12FullMetrics.field8562;
 				boolean var17 = false;
 				if (!var12.field10452 && !var12.field10416.isEmpty()) {
@@ -7188,7 +7188,7 @@ public final class Client extends GameShell {
 									var30 = 2;
 								}
 								int var32 = var22.getHeight();
-								int var33 = (int) (field10922[0] + (float) arg0 - (float) (var22.getWidth() >> 1));
+								int var33 = (int) (projection[0] + (float) arg0 - (float) (var22.getWidth() >> 1));
 								var16 -= var32;
 								if (var24 >= 0 && var24 < 255) {
 									int var34 = var24 << 24;
@@ -7233,7 +7233,7 @@ public final class Client extends GameShell {
 								}
 								if (var43 != null) {
 									var16 -= var43.getHeight();
-									var43.drawSprite((int) (field10922[0] + (float) arg0 - 12.0F), var16);
+									var43.drawSprite((int) (projection[0] + (float) arg0 - 12.0F), var16);
 									var16 -= 2;
 								}
 							}
@@ -7258,7 +7258,7 @@ public final class Client extends GameShell {
 									}
 									if (var52 != null) {
 										var16 -= var52.getHeight();
-										var52.drawSprite((int) (field10922[0] + (float) arg0 - (float) (var52.getWidth() >> 1)), var16);
+										var52.drawSprite((int) (projection[0] + (float) arg0 - (float) (var52.getWidth() >> 1)), var16);
 										var16 -= 2;
 									}
 								}
@@ -7285,7 +7285,7 @@ public final class Client extends GameShell {
 								var65 = loopCycle % (var66 * 2) < var66;
 							}
 							if (var65) {
-								var64.drawSprite((int) (field10922[0] + (float) arg0 - 12.0F), var16 - var64.getHeight());
+								var64.drawSprite((int) (projection[0] + (float) arg0 - 12.0F), var16 - var64.getHeight());
 							}
 						}
 					}
@@ -7302,7 +7302,7 @@ public final class Client extends GameShell {
 							if (var58.getHeight() > var54) {
 								var54 = var58.getHeight();
 							}
-							var58.drawSprite((int) (field10922[0] + (float) arg0 - 12.0F), var16 - var58.getHeight());
+							var58.drawSprite((int) (projection[0] + (float) arg0 - 12.0F), var16 - var58.getHeight());
 						}
 					}
 					if (var54 > 0) {
@@ -7343,10 +7343,10 @@ public final class Client extends GameShell {
 							var12.field10421[var68] = -1;
 						} else {
 							int var75 = var12.height() / 2;
-							method16483(var12, var75, false);
-							if (field10922[0] > -1.0F) {
-								field10922[0] += graphicsDefaults.hitmarkpos_x[var68];
-								field10922[1] += graphicsDefaults.hitmarkpos_y[var68];
+							projectFromEntity2d(var12, var75, false);
+							if (projection[0] > -1.0F) {
+								projection[0] += graphicsDefaults.hitmarkpos_x[var68];
+								projection[1] += graphicsDefaults.hitmarkpos_y[var68];
 								Object var76 = null;
 								Object var77 = null;
 								Object var78 = null;
@@ -7520,8 +7520,8 @@ public final class Client extends GameShell {
 								int var136 = var12.field10421[var68] - loopCycle;
 								int var137 = var71.scrolltooffsetx - var71.scrolltooffsetx * var136 / var71.sticktime;
 								int var138 = var71.scrolltooffsety * var136 / var71.sticktime + -var71.scrolltooffsety;
-								int var139 = (int) (field10922[0] + (float) arg0 - (float) (var128 >> 1) + (float) var137);
-								int var140 = (int) (field10922[1] + (float) arg1 - 12.0F + (float) var138);
+								int var139 = (int) (projection[0] + (float) arg0 - (float) (var128 >> 1) + (float) var137);
+								int var140 = (int) (projection[1] + (float) arg1 - 12.0F + (float) var138);
 								int var141 = var71.damageyof + var140 + 15;
 								int var142 = 0;
 								if (var74 != null) {
@@ -7746,9 +7746,9 @@ public final class Client extends GameShell {
 			field10830.put(var11, (long) var9);
 		}
 		Vector3 var13 = arg0.getTransform().trans;
-		method18486(arg0.level, (int) var13.x, (int) var13.z, arg0.size() * 256, 0, false, false);
-		int var14 = (int) (field10922[0] + (float) arg3 - 18.0F);
-		int var15 = (int) (field10922[1] + (float) arg4 - 16.0F - 54.0F);
+		project(arg0.level, (int) var13.x, (int) var13.z, arg0.size() * 256, 0, false, false);
+		int var14 = (int) (projection[0] + (float) arg3 - 18.0F);
+		int var15 = (int) (projection[1] + (float) arg4 - 16.0F - 54.0F);
 		int var16 = arg2 / 4 * 18 + var14;
 		int var17 = arg2 % 4 * 18 + var15;
 		var11.drawSprite(var16, var17);
@@ -7765,9 +7765,9 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("fp.ir(IIIII)V")
-	public static final void method3109(int arg0, int arg1, int arg2, int arg3) {
-		int var4 = field10866;
-		int var5 = field10924;
+	public static final void drawCrossSprites(int arg0, int arg1, int arg2, int arg3) {
+		int var4 = crossX;
+		int var5 = crossY;
 		if (crossMode == 1) {
 			Sprite var6 = DefaultSprites.crossSprites[crossCycle / 100];
 			var6.drawSprite(var4 - 8, var5 - 8);
@@ -7801,17 +7801,17 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("aac.ix(Lalh;IZI)V")
-	public static final void method14574(GraphEntity arg0, int arg1, boolean arg2) {
-		method15197(arg0, arg1, true, arg2);
+	public static final void projectFromEntity3d(GraphEntity arg0, int arg1, boolean arg2) {
+		projectFromEntity(arg0, arg1, true, arg2);
 	}
 
 	@ObfuscatedName("agy.is(Lalh;IZI)V")
-	public static final void method16483(GraphEntity arg0, int arg1, boolean arg2) {
-		method15197(arg0, arg1, false, arg2);
+	public static final void projectFromEntity2d(GraphEntity arg0, int arg1, boolean arg2) {
+		projectFromEntity(arg0, arg1, false, arg2);
 	}
 
 	@ObfuscatedName("adb.ib(Lalh;IZZI)V")
-	public static final void method15197(GraphEntity arg0, int arg1, boolean arg2, boolean arg3) {
+	public static final void projectFromEntity(GraphEntity arg0, int arg1, boolean arg2, boolean arg3) {
 		int var7;
 		int var8;
 		if (arg0 instanceof PrimaryLayerEntity && arg0 instanceof Location) {
@@ -7825,14 +7825,14 @@ public final class Client extends GameShell {
 			var7 = (int) var9.x;
 			var8 = (int) var9.z;
 		}
-		method18486(arg0.level, var7, var8, 0, arg1, arg2, arg3);
+		project(arg0.level, var7, var8, 0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("amk.il(IIIIIZZI)V")
-	public static final void method18486(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5, boolean arg6) {
+	public static final void project(int arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5, boolean arg6) {
 		if (!arg5 && (arg1 < 512 || arg2 < 512 || arg1 > (world.getSizeX() - 2) * 512 || arg2 > (world.getSizeZ() - 2) * 512)) {
-			float[] var7 = field10922;
-			field10922[1] = -1.0F;
+			float[] var7 = projection;
+			projection[1] = -1.0F;
 			var7[0] = -1.0F;
 			return;
 		}
@@ -7841,15 +7841,15 @@ public final class Client extends GameShell {
 		field10793.translate((float) arg3, 0.0F, 0.0F);
 		renderer.method2217(field10793);
 		if (arg5) {
-			renderer.method2525((float) arg1, (float) var8, (float) arg2, field10922);
+			renderer.method2525((float) arg1, (float) var8, (float) arg2, projection);
 		} else {
-			renderer.method2507((float) arg1, (float) var8, (float) arg2, field10922);
+			renderer.method2507((float) arg1, (float) var8, (float) arg2, projection);
 		}
 		field10793.translate((float) -arg3, 0.0F, 0.0F);
 		renderer.method2217(field10793);
 		if (!arg6) {
-			field10922[0] -= field10780;
-			field10922[1] -= field11075;
+			projection[0] -= viewportX;
+			projection[1] -= viewportY;
 		}
 	}
 
@@ -7908,34 +7908,34 @@ public final class Client extends GameShell {
 	}
 
 	@ObfuscatedName("zs.id(IIIIIIIB)V")
-	public static final void method14042(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		int var7 = arg6 - 334;
+	public static final void orbitCamera(int targetX, int targetY, int targetZ, int pitch, int yaw, int distance, int viewportHeight) {
+		int var7 = viewportHeight - 334;
 		if (var7 < 0) {
 			var7 = 0;
 		} else if (var7 > 100) {
 			var7 = 100;
 		}
-		int var8 = (field11069 - field10874) * var7 / 100 + field10874;
-		int var9 = arg5 * var8 >> 8;
-		int var10 = 16384 - arg3 & 0x3FFF;
-		int var11 = 16384 - arg4 & 0x3FFF;
-		int var12 = 0;
-		int var13 = 0;
-		int var14 = var9;
-		if (var10 != 0) {
-			var13 = Trig1.field4270[var10] * -var9 >> 14;
-			var14 = Trig1.field4272[var10] * var9 >> 14;
+		int var8 = (viewportZoomMax - viewportZoomMin) * var7 / 100 + viewportZoomMin;
+		int tmp = distance * var8 >> 8;
+		int invPitch = 16384 - pitch & 0x3FFF;
+		int invYaw = 16384 - yaw & 0x3FFF;
+		int x = 0;
+		int y = 0;
+		int z = tmp;
+		if (invPitch != 0) {
+			y = Trig1.sin[invPitch] * -tmp >> 14;
+			z = Trig1.cos[invPitch] * tmp >> 14;
 		}
-		if (var11 != 0) {
-			var12 = Trig1.field4270[var11] * var14 >> 14;
-			var14 = Trig1.field4272[var11] * var14 >> 14;
+		if (invYaw != 0) {
+			x = Trig1.sin[invYaw] * z >> 14;
+			z = Trig1.cos[invYaw] * z >> 14;
 		}
-		cameraMouseX = arg0 - var12;
-		cameraMouseY = arg1 - var13;
-		cameraMouseZ = arg2 - var14;
-		cameraPitch = arg3;
-		cameraYaw = arg4;
-		field2656 = 0;
+		cameraX = targetX - x;
+		cameraY = targetY - y;
+		cameraZ = targetZ - z;
+		cameraPitch = pitch;
+		cameraYaw = yaw;
+		cameraRoll = 0;
 	}
 
 	@ObfuscatedName("pz.ia(III)V")
@@ -9672,10 +9672,10 @@ public final class Client extends GameShell {
 			int var430 = in.g1();
 			incrementVerifyId();
 			cameraModifierEnabled[var427] = true;
-			field11062[var427] = var428;
-			field11063[var427] = var429;
-			field11064[var427] = var430;
-			field10996[var427] = var426;
+			cameraModifierJitter[var427] = var428;
+			cameraModifierWobbleScale[var427] = var429;
+			cameraModifierCycle[var427] = var430;
+			cameraModifierWobbleSpeed[var427] = var426;
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.MIDI_SONG == connection.packetType) {
@@ -12189,9 +12189,9 @@ public final class Client extends GameShell {
 					if (var20 < var22 && var21 < var23) {
 						if (child.clientcode != 0) {
 							if (Component.field2341 == child.clientcode || Component.field2161 == child.clientcode) {
-								if (field10888) {
+								if (gameScreenEnabled) {
 									renderer.flush();
-									method2104(childX, childY, child.width, child.height, Component.field2161 == child.clientcode);
+									drawScene(childX, childY, child.width, child.height, Component.field2161 == child.clientcode);
 									method9547(var12, var20, var21, var22, var23, childX, childY);
 									renderer.method2263();
 									renderer.resetBounds(arg2, arg3, arg4, arg5);
@@ -12288,7 +12288,7 @@ public final class Client extends GameShell {
 								if (renderer.method2234()) {
 									renderer.method2233(child.width, child.height);
 									if (state == 18) {
-										method8275(childX, childY, child.width, child.height);
+										draw3DEntityElements(childX, childY, child.width, child.height);
 									}
 								}
 								if (sceneState == 0) {
@@ -12558,8 +12558,8 @@ public final class Client extends GameShell {
 										field10875.rotateAroundAxis(0.0F, 0.0F, 1.0F, Trig1.radians(child.modelangle_z));
 										field10875.translate((float) child.field2305, (float) child.field2209, (float) child.field2235);
 									} else {
-										int var80 = (child.modelzoom << 2) * Trig1.field4270[child.modelangle_x << 3] >> 14;
-										int var81 = (child.modelzoom << 2) * Trig1.field4272[child.modelangle_x << 3] >> 14;
+										int var80 = (child.modelzoom << 2) * Trig1.sin[child.modelangle_x << 3] >> 14;
+										int var81 = (child.modelzoom << 2) * Trig1.cos[child.modelangle_x << 3] >> 14;
 										field10875.setToRotation(0.0F, 0.0F, 1.0F, Trig1.radians(-child.modelangle_z << 3));
 										field10875.rotateAroundAxis(0.0F, 1.0F, 0.0F, Trig1.radians(child.modelangle_y << 3));
 										field10875.translate((float) (child.modelxof << 2), (float) ((child.modelyof << 2) + var80 + var62), (float) ((child.modelyof << 2) + var81));
@@ -13154,7 +13154,7 @@ public final class Client extends GameShell {
 										}
 										if (Component.field2341 == var12.clientcode) {
 											if (MiniMenu.field562 || arg9 < var15 || arg10 < var16 || arg9 >= var17 || arg10 >= var18) {
-												MiniMenu.method6036(renderer);
+												MiniMenu.drawMenu(renderer);
 											} else {
 												MiniMenu.method5015(renderer, arg9, arg10);
 												for (CoverMarkerClickbox var68 = (CoverMarkerClickbox) field10882.peekFront(); var68 != null; var68 = (CoverMarkerClickbox) field10882.prev()) {
@@ -13212,8 +13212,8 @@ public final class Client extends GameShell {
 										} else {
 											var51 = minimapAnticheatAngle + (int) orbitCameraYaw & 0x3FFF;
 										}
-										int var52 = Trig1.field4270[var51];
-										int var53 = Trig1.field4272[var51];
+										int var52 = Trig1.sin[var51];
+										int var53 = Trig1.cos[var51];
 										if (Client.cameraState != 4) {
 											var52 = (minimapZoom + 256) * var52 >> 8;
 											var53 = (minimapZoom + 256) * var53 >> 8;

@@ -819,8 +819,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 							if (var17 != 0) {
 								var12.method1693(var17);
 							}
-							int var18 = Trig1.field4270[var17];
-							int var19 = Trig1.field4272[var17];
+							int var18 = Trig1.sin[var17];
+							int var19 = Trig1.cos[var17];
 							int var20 = var13 * var19 + var15 * var18 >> 14;
 							var15 = var15 * var19 - var13 * var18 >> 14;
 							var13 = var20;
@@ -841,8 +841,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		Vector3 var6 = this.getTransform().trans;
 		int var7 = this.field12472 + this.field12471 >> 1;
 		int var8 = this.field12468 + this.field12467 >> 1;
-		int var9 = Trig1.field4270[arg0];
-		int var10 = Trig1.field4272[arg0];
+		int var9 = Trig1.sin[arg0];
+		int var10 = Trig1.cos[arg0];
 		int var11 = -arg1 / 2;
 		int var12 = -arg2 / 2;
 		int var13 = var9 * var12 + var10 * var11 >> 14;

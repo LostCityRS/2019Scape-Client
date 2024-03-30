@@ -137,8 +137,8 @@ public class Matrix4x3 {
 			this.entry32 = arg5;
 			return;
 		}
-		float var7 = Trig2.field4273[arg0 & 0x3FFF];
-		float var8 = Trig2.field4274[arg0 & 0x3FFF];
+		float var7 = TrigMatrix.cos[arg0 & 0x3FFF];
+		float var8 = TrigMatrix.sin[arg0 & 0x3FFF];
 		this.entry22 = 1.0F;
 		this.entry21 = 0.0F;
 		this.entry20 = 0.0F;

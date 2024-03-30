@@ -86,7 +86,7 @@ public class ParticleEffectorType {
 
 	@ObfuscatedName("na.m(B)V")
 	public void method5990() {
-		this.field3554 = Trig1.field4272[this.field3555 << 3];
+		this.field3554 = Trig1.cos[this.field3555 << 3];
 		long var1 = (long) this.field3551;
 		long var3 = (long) this.field3552;
 		long var5 = (long) this.field3553;

@@ -11629,13 +11629,13 @@ public final class ScriptRunner {
 	@ObfuscatedName("fa.aek(Lyf;I)V")
 	public static final void sin_deg(ClientScriptState arg0) {
 		int var1 = arg0.intStack[arg0.isp - 1];
-		arg0.intStack[arg0.isp - 1] = Trig1.method6276(var1);
+		arg0.intStack[arg0.isp - 1] = Trig1.sin(var1);
 	}
 
 	@ObfuscatedName("ju.aem(Lyf;B)V")
 	public static final void cos_deg(ClientScriptState arg0) {
 		int var1 = arg0.intStack[arg0.isp - 1];
-		arg0.intStack[arg0.isp - 1] = Trig1.method6279(var1);
+		arg0.intStack[arg0.isp - 1] = Trig1.cos(var1);
 	}
 
 	@ObfuscatedName("akp.aep(Lyf;B)V")
@@ -11643,7 +11643,7 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = Trig1.method6280(var1, var2);
+		arg0.intStack[++arg0.isp - 1] = Trig1.atan2(var1, var2);
 	}
 
 	@ObfuscatedName("art.aeq(Lyf;I)V")
@@ -13667,7 +13667,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ke.amx(Lyf;I)V")
 	public static final void cam_getangle_xa(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = (int) Client.orbitCameraXan >> 3;
+		arg0.intStack[++arg0.isp - 1] = (int) Client.orbitCameraPitch >> 3;
 	}
 
 	@ObfuscatedName("cs.ami(Lyf;B)V")
@@ -15347,26 +15347,26 @@ public final class ScriptRunner {
 	@ObfuscatedName("abx.avq(Lyf;B)V")
 	public static final void viewport_setfov(ClientScriptState arg0) {
 		arg0.isp -= 2;
-		Client.field11066 = (short) arg0.intStack[arg0.isp];
-		if (Client.field11066 <= 0) {
-			Client.field11066 = 256;
+		Client.viewportFovMax = (short) arg0.intStack[arg0.isp];
+		if (Client.viewportFovMax <= 0) {
+			Client.viewportFovMax = 256;
 		}
-		Client.field10987 = (short) arg0.intStack[arg0.isp + 1];
-		if (Client.field10987 <= 0) {
-			Client.field10987 = 205;
+		Client.viewportFovMin = (short) arg0.intStack[arg0.isp + 1];
+		if (Client.viewportFovMin <= 0) {
+			Client.viewportFovMin = 205;
 		}
 	}
 
 	@ObfuscatedName("pp.avt(Lyf;I)V")
 	public static final void viewport_setzoom(ClientScriptState arg0) {
 		arg0.isp -= 2;
-		Client.field10874 = (short) arg0.intStack[arg0.isp];
-		if (Client.field10874 <= 0) {
-			Client.field10874 = 256;
+		Client.viewportZoomMin = (short) arg0.intStack[arg0.isp];
+		if (Client.viewportZoomMin <= 0) {
+			Client.viewportZoomMin = 256;
 		}
-		Client.field11069 = (short) arg0.intStack[arg0.isp + 1];
-		if (Client.field11069 <= 0) {
-			Client.field11069 = 320;
+		Client.viewportZoomMax = (short) arg0.intStack[arg0.isp + 1];
+		if (Client.viewportZoomMax <= 0) {
+			Client.viewportZoomMax = 320;
 		}
 	}
 
@@ -15397,21 +15397,21 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("yb.avl(Lyf;I)V")
 	public static final void viewport_geteffectivesize(ClientScriptState arg0) {
-		Client.method13981(0, 0, Client.field10986.width, Client.field10986.height, false);
-		arg0.intStack[++arg0.isp - 1] = Client.field11076;
-		arg0.intStack[++arg0.isp - 1] = Client.field11077;
+		Client.setViewport(0, 0, Client.field10986.width, Client.field10986.height, false);
+		arg0.intStack[++arg0.isp - 1] = Client.viewportWidth;
+		arg0.intStack[++arg0.isp - 1] = Client.viewportHeight;
 	}
 
 	@ObfuscatedName("nc.avc(Lyf;I)V")
 	public static final void viewport_getzoom(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.field10874;
-		arg0.intStack[++arg0.isp - 1] = Client.field11069;
+		arg0.intStack[++arg0.isp - 1] = Client.viewportZoomMin;
+		arg0.intStack[++arg0.isp - 1] = Client.viewportZoomMax;
 	}
 
 	@ObfuscatedName("gt.avu(Lyf;I)V")
 	public static final void viewport_getfov(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.field11066;
-		arg0.intStack[++arg0.isp - 1] = Client.field10987;
+		arg0.intStack[++arg0.isp - 1] = Client.viewportFovMax;
+		arg0.intStack[++arg0.isp - 1] = Client.viewportFovMin;
 	}
 
 	@ObfuscatedName("fj.avi(Lyf;B)V")
@@ -16506,10 +16506,10 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("zl.bbi(Lyf;I)V")
 	public static final void get_entity_screen_position(ClientScriptState arg0) {
-		Client.method14574(arg0.activeEntity, arg0.intStack[--arg0.isp], true);
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field10922[0];
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field10922[1];
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field10922[2];
+		Client.projectFromEntity3d(arg0.activeEntity, arg0.intStack[--arg0.isp], true);
+		arg0.intStack[++arg0.isp - 1] = (int) Client.projection[0];
+		arg0.intStack[++arg0.isp - 1] = (int) Client.projection[1];
+		arg0.intStack[++arg0.isp - 1] = (int) Client.projection[2];
 	}
 
 	@ObfuscatedName("gv.bbs(Lyf;B)V")
@@ -16519,8 +16519,8 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("sb.bbl(Lyf;I)V")
 	public static final void if_set_gamescreen_enabled(ClientScriptState arg0) {
-		Client.field10888 = arg0.intStack[--arg0.isp] == 1;
-		if (Client.field10888) {
+		Client.gameScreenEnabled = arg0.intStack[--arg0.isp] == 1;
+		if (Client.gameScreenEnabled) {
 			Minimap.method16601();
 		}
 	}
@@ -16576,18 +16576,18 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("uj.bcj(Lyf;I)V")
 	public static final void get_loc_screen_position(ClientScriptState arg0) {
-		Client.method14574((GraphEntity) arg0.activeLoc, arg0.intStack[--arg0.isp], true);
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field10922[0];
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field10922[1];
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field10922[2];
+		Client.projectFromEntity3d((GraphEntity) arg0.activeLoc, arg0.intStack[--arg0.isp], true);
+		arg0.intStack[++arg0.isp - 1] = (int) Client.projection[0];
+		arg0.intStack[++arg0.isp - 1] = (int) Client.projection[1];
+		arg0.intStack[++arg0.isp - 1] = (int) Client.projection[2];
 	}
 
 	@ObfuscatedName("ty.bci(Lyf;B)V")
 	public static final void get_obj_screen_position(ClientScriptState arg0) {
-		Client.method14574(arg0.activeObj, arg0.intStack[--arg0.isp], true);
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field10922[0];
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field10922[1];
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field10922[2];
+		Client.projectFromEntity3d(arg0.activeObj, arg0.intStack[--arg0.isp], true);
+		arg0.intStack[++arg0.isp - 1] = (int) Client.projection[0];
+		arg0.intStack[++arg0.isp - 1] = (int) Client.projection[1];
+		arg0.intStack[++arg0.isp - 1] = (int) Client.projection[2];
 	}
 
 	@ObfuscatedName("akr.bcx(Lyf;B)V")

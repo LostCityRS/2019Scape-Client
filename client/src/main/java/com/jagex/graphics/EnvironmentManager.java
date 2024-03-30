@@ -263,8 +263,8 @@ public class EnvironmentManager {
 		int var3 = -1;
 		int var4 = -1;
 		if (Client.isStateTitle(Client.state) || Client.isStateLobby(Client.state)) {
-			var3 = Client.cameraMouseX >> 12;
-			var4 = Client.cameraMouseZ >> 12;
+			var3 = Client.cameraX >> 12;
+			var4 = Client.cameraZ >> 12;
 		} else {
 			if (Client.localPlayerEntity != null) {
 				var3 = Client.localPlayerEntity.routeWaypointX[0] >> 3;

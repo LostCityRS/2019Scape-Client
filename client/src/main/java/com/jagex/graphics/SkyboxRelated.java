@@ -216,16 +216,16 @@ public class SkyboxRelated {
 		}
 		if (this.field5125 != 0) {
 			int var7 = -this.field5125 & 0x3FFF;
-			int var8 = Trig1.field4270[var7];
-			int var9 = Trig1.field4272[var7];
+			int var8 = Trig1.sin[var7];
+			int var9 = Trig1.cos[var7];
 			int var10 = var5 * var9 - var6 * var8 >> 14;
 			var6 = var5 * var8 + var6 * var9 >> 14;
 			var5 = var10;
 		}
 		if (this.field5121 != 0) {
 			int var11 = -this.field5121 & 0x3FFF;
-			int var12 = Trig1.field4270[var11];
-			int var13 = Trig1.field4272[var11];
+			int var12 = Trig1.sin[var11];
+			int var13 = Trig1.cos[var11];
 			int var14 = var4 * var13 + var6 * var12 >> 14;
 			var6 = var6 * var13 - var4 * var12 >> 14;
 			var4 = var14;
@@ -276,15 +276,15 @@ public class SkyboxRelated {
 			}
 		}
 		if (this.field5125 != 0) {
-			int var6 = Trig1.field4270[this.field5125];
-			int var7 = Trig1.field4272[this.field5125];
+			int var6 = Trig1.sin[this.field5125];
+			int var7 = Trig1.cos[this.field5125];
 			int var8 = var4 * var7 - var5 * var6 >> 14;
 			var5 = var4 * var6 + var5 * var7 >> 14;
 			var4 = var8;
 		}
 		if (this.field5121 != 0) {
-			int var9 = Trig1.field4270[this.field5121];
-			int var10 = Trig1.field4272[this.field5121];
+			int var9 = Trig1.sin[this.field5121];
+			int var10 = Trig1.cos[this.field5121];
 			int var11 = var3 * var10 + var5 * var9 >> 14;
 			var5 = var5 * var10 - var3 * var9 >> 14;
 			var3 = var11;
@@ -328,13 +328,13 @@ public class SkyboxRelated {
 		var1.method1936(0, -128, 0);
 		for (int var2 = 0; var2 <= 24; var2++) {
 			int var3 = var2 * 8192 / 24;
-			int var4 = Trig1.field4270[var3];
-			int var5 = Trig1.field4272[var3];
+			int var4 = Trig1.sin[var3];
+			int var5 = Trig1.cos[var3];
 			for (int var6 = 1; var6 < 24; var6++) {
 				int var7 = var6 * 8192 / 24;
-				int var8 = Trig1.field4272[var7] >> 7;
-				int var9 = Trig1.field4270[var7] * var4 >> 21;
-				int var10 = Trig1.field4270[var7] * var5 >> 21;
+				int var8 = Trig1.cos[var7] >> 7;
+				int var9 = Trig1.sin[var7] * var4 >> 21;
+				int var10 = Trig1.sin[var7] * var5 >> 21;
 				var1.method1936(var10, var8, -var9);
 			}
 			if (var2 > 0) {

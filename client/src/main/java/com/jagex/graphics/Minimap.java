@@ -747,8 +747,8 @@ public class Minimap {
 				} else {
 					var11 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 				}
-				int var12 = Trig1.field4270[var11];
-				int var13 = Trig1.field4272[var11];
+				int var12 = Trig1.sin[var11];
+				int var13 = Trig1.cos[var11];
 				if (Client.cameraState != 4) {
 					var12 = var12 * 256 / (Client.minimapZoom + 256);
 					var13 = var13 * 256 / (Client.minimapZoom + 256);
@@ -859,8 +859,8 @@ public class Minimap {
 		} else {
 			var10 = Client.minimapAnticheatAngle + (int) Client.orbitCameraYaw & 0x3FFF;
 		}
-		int var11 = Trig1.field4270[var10];
-		int var12 = Trig1.field4272[var10];
+		int var11 = Trig1.sin[var10];
+		int var12 = Trig1.cos[var10];
 		if (Client.cameraState != 4) {
 			var11 = var11 * 256 / (Client.minimapZoom + 256);
 			var12 = var12 * 256 / (Client.minimapZoom + 256);
@@ -928,8 +928,8 @@ public class Minimap {
 		if (var13 > var12 * var12) {
 			return;
 		}
-		int var14 = Trig1.field4270[var11];
-		int var15 = Trig1.field4272[var11];
+		int var14 = Trig1.sin[var11];
+		int var15 = Trig1.cos[var11];
 		if (Client.cameraState != 4) {
 			var14 = var14 * 256 / (Client.minimapZoom + 256);
 			var15 = var15 * 256 / (Client.minimapZoom + 256);
@@ -984,8 +984,8 @@ public class Minimap {
 		if (var13 > var12 * var12) {
 			return;
 		}
-		int var14 = Trig1.field4270[var11];
-		int var15 = Trig1.field4272[var11];
+		int var14 = Trig1.sin[var11];
+		int var15 = Trig1.cos[var11];
 		if (Client.cameraState != 4) {
 			var14 = var14 * 256 / (Client.minimapZoom + 256);
 			var15 = var15 * 256 / (Client.minimapZoom + 256);

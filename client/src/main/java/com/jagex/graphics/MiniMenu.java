@@ -122,16 +122,16 @@ public class MiniMenu {
 	public static int field557 = -1;
 
 	@ObfuscatedName("o.am")
-	public static int field563 = -1;
+	public static int viewportX = -1;
 
 	@ObfuscatedName("o.au")
-	public static int field559 = -1;
+	public static int viewportY = -1;
 
 	@ObfuscatedName("o.ar")
-	public static int field560 = 0;
+	public static int viewportWidth = 0;
 
 	@ObfuscatedName("o.ap")
-	public static int field561 = 0;
+	public static int viewportHeight = 0;
 
 	@ObfuscatedName("o.aq")
 	public static Matrix4x4 field553 = null;
@@ -738,12 +738,12 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("nt.b(Ldh;I)V")
-	public static void method6036(Renderer arg0) {
+	public static void drawMenu(Renderer arg0) {
 		if (field553 != null) {
 			arg0.method2220(field553);
 			arg0.method2217(field572);
-			arg0.resetBounds(field563, field559, field563 + field560, field561 + field559);
-			arg0.method2164(field563, field559, field560, field561);
+			arg0.resetBounds(viewportX, viewportY, viewportX + viewportWidth, viewportHeight + viewportY);
+			arg0.method2164(viewportX, viewportY, viewportWidth, viewportHeight);
 		}
 	}
 
@@ -754,20 +754,20 @@ public class MiniMenu {
 		}
 		CoordGrid var3 = Client.world.method7727();
 		Matrix4x4 var4 = arg0.method2208();
-		method6036(arg0);
+		drawMenu(arg0);
 		var4.setToMatrix4x3(field572);
 		var4.multiply(field553);
 		var4.method6611();
-		int var5 = arg1 - field563;
-		int var6 = arg2 - field559;
+		int var5 = arg1 - viewportX;
+		int var6 = arg2 - viewportY;
 		if (Client.world.getScene() == null) {
 			return;
 		}
 		if (!Client.targetModeActive || (Client.field1765 & 0x40) != 0) {
 			int var7 = -1;
 			int var8 = -1;
-			float var9 = (float) var5 * 2.0F / (float) field560 - 1.0F;
-			float var10 = (float) var6 * 2.0F / (float) field561 - 1.0F;
+			float var9 = (float) var5 * 2.0F / (float) viewportWidth - 1.0F;
+			float var10 = (float) var6 * 2.0F / (float) viewportHeight - 1.0F;
 			var4.method6614(var9, var10, -1.0F, field569);
 			float var11 = field569[0] / field569[3];
 			float var12 = field569[1] / field569[3];
@@ -1179,9 +1179,9 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("py.ai(IIB)V")
-	public static void method6967(int arg0, int arg1) {
-		field563 = arg0;
-		field559 = arg1;
+	public static void setBounds(int viewportX, int viewportY) {
+		MiniMenu.viewportX = viewportX;
+		MiniMenu.viewportY = viewportY;
 	}
 
 	@ObfuscatedName("aoq.aw(Lhf;IIB)V")
@@ -1378,15 +1378,15 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("mw.ax(Lou;Lpq;IIB)V")
-	public static void method5928(Matrix4x3 arg0, Matrix4x4 arg1, int arg2, int arg3) {
+	public static void method5928(Matrix4x3 arg0, Matrix4x4 arg1, int viewportWidth, int viewportHeight) {
 		if (field553 == null) {
 			field553 = new Matrix4x4(arg1);
 		} else {
 			field553.setTo(arg1);
 		}
 		field572.setTo(arg0);
-		field560 = arg2;
-		field561 = arg3;
+		MiniMenu.viewportWidth = viewportWidth;
+		MiniMenu.viewportHeight = viewportHeight;
 	}
 
 	@ObfuscatedName("xl.av(Lpq;B)V")
@@ -2076,8 +2076,8 @@ public class MiniMenu {
 		if (var14 != null) {
 			PlayerEntity var15 = Client.players[var7];
 			if (var15 != null) {
-				Client.field10866 = arg1;
-				Client.field10924 = arg2;
+				Client.crossX = arg1;
+				Client.crossY = arg2;
 				Client.crossMode = 2;
 				Client.crossCycle = 0;
 				ClientMessage var16 = ClientMessage.createMessage(var14, Client.gameConnection.randomOut);
@@ -2102,8 +2102,8 @@ public class MiniMenu {
 			var17 = ClientProt.OPLOC6;
 		}
 		if (var17 != null) {
-			Client.field10866 = arg1;
-			Client.field10924 = arg2;
+			Client.crossX = arg1;
+			Client.crossY = arg2;
 			Client.crossMode = 2;
 			Client.crossCycle = 0;
 			ClientMessage var18 = ClientMessage.createMessage(var17, Client.gameConnection.randomOut);
@@ -2132,8 +2132,8 @@ public class MiniMenu {
 					var19.buf.p2((int) var20.z);
 					var19.buf.p1(63);
 				} else {
-					Client.field10866 = arg1;
-					Client.field10924 = arg2;
+					Client.crossX = arg1;
+					Client.crossY = arg2;
 					Client.crossMode = 1;
 					Client.crossCycle = 0;
 				}
@@ -2159,8 +2159,8 @@ public class MiniMenu {
 			ObjectWrapper var22 = (ObjectWrapper) Client.npcs.getNode((long) var7);
 			if (var22 != null) {
 				NpcEntity var23 = (NpcEntity) var22.value;
-				Client.field10866 = arg1;
-				Client.field10924 = arg2;
+				Client.crossX = arg1;
+				Client.crossY = arg2;
 				Client.crossMode = 2;
 				Client.crossCycle = 0;
 				ClientMessage var24 = ClientMessage.createMessage(var21, Client.gameConnection.randomOut);
@@ -2171,8 +2171,8 @@ public class MiniMenu {
 			}
 		}
 		if (var6 == 17) {
-			Client.field10866 = arg1;
-			Client.field10924 = arg2;
+			Client.crossX = arg1;
+			Client.crossY = arg2;
 			Client.crossMode = 2;
 			Client.crossCycle = 0;
 			ClientMessage var25 = ClientMessage.createMessage(ClientProt.OPOBJT, Client.gameConnection.randomOut);
@@ -2190,8 +2190,8 @@ public class MiniMenu {
 			ObjectWrapper var26 = (ObjectWrapper) Client.npcs.getNode((long) var7);
 			if (var26 != null) {
 				NpcEntity var27 = (NpcEntity) var26.value;
-				Client.field10866 = arg1;
-				Client.field10924 = arg2;
+				Client.crossX = arg1;
+				Client.crossY = arg2;
 				Client.crossMode = 2;
 				Client.crossCycle = 0;
 				ClientMessage var28 = ClientMessage.createMessage(ClientProt.OPNPCT, Client.gameConnection.randomOut);
@@ -2205,8 +2205,8 @@ public class MiniMenu {
 			}
 		}
 		if (var6 == 2) {
-			Client.field10866 = arg1;
-			Client.field10924 = arg2;
+			Client.crossX = arg1;
+			Client.crossY = arg2;
 			Client.crossMode = 2;
 			Client.crossCycle = 0;
 			ClientMessage var29 = ClientMessage.createMessage(ClientProt.OPLOCT, Client.gameConnection.randomOut);
@@ -2224,8 +2224,8 @@ public class MiniMenu {
 			if (Client.staffModLevel > 0 && method6035()) {
 				Client.jtele(Client.localPlayerEntity.level, var10.x + var4, var10.z + var5);
 			} else {
-				Client.field10866 = arg1;
-				Client.field10924 = arg2;
+				Client.crossX = arg1;
+				Client.crossY = arg2;
 				Client.crossMode = 1;
 				Client.crossCycle = 0;
 				ClientMessage var30 = ClientMessage.createMessage(ClientProt.FACE_SQUARE, Client.gameConnection.randomOut);
@@ -2235,8 +2235,8 @@ public class MiniMenu {
 			}
 		}
 		if (var6 == 16) {
-			Client.field10866 = arg1;
-			Client.field10924 = arg2;
+			Client.crossX = arg1;
+			Client.crossY = arg2;
 			Client.crossMode = 2;
 			Client.crossCycle = 0;
 			ClientMessage var31 = ClientMessage.createMessage(ClientProt.OPPLAYERT, Client.gameConnection.randomOut);
@@ -2262,8 +2262,8 @@ public class MiniMenu {
 			var32 = ClientProt.OPOBJ6;
 		}
 		if (var32 != null) {
-			Client.field10866 = arg1;
-			Client.field10924 = arg2;
+			Client.crossX = arg1;
+			Client.crossY = arg2;
 			Client.crossMode = 2;
 			Client.crossCycle = 0;
 			ClientMessage var33 = ClientMessage.createMessage(var32, Client.gameConnection.randomOut);
@@ -2277,8 +2277,8 @@ public class MiniMenu {
 		if (var6 == 15) {
 			PlayerEntity var34 = Client.players[var7];
 			if (var34 != null) {
-				Client.field10866 = arg1;
-				Client.field10924 = arg2;
+				Client.crossX = arg1;
+				Client.crossY = arg2;
 				Client.crossMode = 2;
 				Client.crossCycle = 0;
 				ClientMessage var35 = ClientMessage.createMessage(ClientProt.OPPLAYERT, Client.gameConnection.randomOut);
@@ -2292,8 +2292,8 @@ public class MiniMenu {
 			}
 		}
 		if (var6 == 59) {
-			Client.field10866 = arg1;
-			Client.field10924 = arg2;
+			Client.crossX = arg1;
+			Client.crossY = arg2;
 			Client.crossMode = 1;
 			Client.crossCycle = 0;
 			ClientMessage var36 = ClientMessage.createMessage(ClientProt.APCOORDT, Client.gameConnection.randomOut);

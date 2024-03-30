@@ -427,8 +427,8 @@ public class World {
 		this.setBuildAreaSize(BuildAreaSize.buildAreaSizeForId(Client.preferences.buildArea.getValue()));
 		int var1 = this.field5018.x;
 		int var2 = this.field5018.z;
-		int var3 = (Client.cameraMouseX >> 12) + (var1 >> 3);
-		int var4 = (Client.cameraMouseZ >> 12) + (var2 >> 3);
+		int var3 = (Client.cameraX >> 12) + (var1 >> 3);
+		int var4 = (Client.cameraZ >> 12) + (var2 >> 3);
 		Client.localPlayerEntity.level = 0;
 		Client.currentPlayerLevel = 0;
 		Client.localPlayerEntity.tele(8, 8);
@@ -898,8 +898,8 @@ public class World {
 		if (arg0 == 3) {
 			Client.field10892 -= var2 * 512;
 			Client.field10893 -= var3 * 512;
-			Client.field8910 -= var2 * 512;
-			Client.field3569 -= var3 * 512;
+			Client.orbitCameraX -= var2 * 512;
+			Client.orbitCameraZ -= var3 * 512;
 			if (Client.cameraState != 4 && Client.cameraState != 3) {
 				Client.cameraReset(Client.getDefaultCameraState());
 			}
@@ -908,8 +908,8 @@ public class World {
 			Client.cameraMoveZ -= var3;
 			Client.cameraLookX -= var2;
 			Client.cameraLookZ -= var3;
-			Client.cameraMouseX -= var2 * 512;
-			Client.cameraMouseZ -= var3 * 512;
+			Client.cameraX -= var2 * 512;
+			Client.cameraZ -= var3 * 512;
 			if (Math.abs(var2) > this.mapSizeX || Math.abs(var3) > this.mapSizeZ) {
 				this.field5062.resetFade();
 			}

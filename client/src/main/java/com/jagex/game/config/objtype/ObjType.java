@@ -853,7 +853,7 @@ public class ObjType implements ConfigType {
 		Matrix4x3 var26 = arg0.method2209();
 		var26.setToRotation(0.0F, 0.0F, 1.0F, Trig1.radians(-this.zan2d << 3));
 		var26.rotateAroundAxis(0.0F, 1.0F, 0.0F, Trig1.radians(this.yan2d << 3));
-		var26.translate((float) (this.xof2d << 2), (float) ((Trig1.field4270[this.xan2d << 3] * var22 >> 14) - var20.method1748() / 2 + (this.yof2d << 2)), (float) ((this.yof2d << 2) + (Trig1.field4272[this.xan2d << 3] * var22 >> 14)));
+		var26.translate((float) (this.xof2d << 2), (float) ((Trig1.sin[this.xan2d << 3] * var22 >> 14) - var20.method1748() / 2 + (this.yof2d << 2)), (float) ((this.yof2d << 2) + (Trig1.cos[this.xan2d << 3] * var22 >> 14)));
 		var26.rotateAroundAxis(1.0F, 0.0F, 0.0F, Trig1.radians(this.xan2d << 3));
 		arg0.resetBounds(0, 0, 36, 32);
 		arg0.method2475(2, 0);

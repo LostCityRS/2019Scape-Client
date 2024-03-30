@@ -1135,8 +1135,8 @@ public class ModelUnlit {
 	@ObfuscatedName("dq.o(III)V")
 	public void method1946(int arg0, int arg1, int arg2) {
 		if (arg2 != 0) {
-			int var4 = Trig1.field4270[arg2];
-			int var5 = Trig1.field4272[arg2];
+			int var4 = Trig1.sin[arg2];
+			int var5 = Trig1.cos[arg2];
 			for (int var6 = 0; var6 < this.vertexCount; var6++) {
 				int var7 = this.vertexY[var6] * var4 + this.vertexX[var6] * var5 >> 14;
 				this.vertexY[var6] = this.vertexY[var6] * var5 - this.vertexX[var6] * var4 >> 14;
@@ -1144,8 +1144,8 @@ public class ModelUnlit {
 			}
 		}
 		if (arg0 != 0) {
-			int var8 = Trig1.field4270[arg0];
-			int var9 = Trig1.field4272[arg0];
+			int var8 = Trig1.sin[arg0];
+			int var9 = Trig1.cos[arg0];
 			for (int var10 = 0; var10 < this.vertexCount; var10++) {
 				int var11 = this.vertexY[var10] * var9 - this.vertexZ[var10] * var8 >> 14;
 				this.vertexZ[var10] = this.vertexZ[var10] * var9 + this.vertexY[var10] * var8 >> 14;
@@ -1155,8 +1155,8 @@ public class ModelUnlit {
 		if (arg1 == 0) {
 			return;
 		}
-		int var12 = Trig1.field4270[arg1];
-		int var13 = Trig1.field4272[arg1];
+		int var12 = Trig1.sin[arg1];
+		int var13 = Trig1.cos[arg1];
 		for (int var14 = 0; var14 < this.vertexCount; var14++) {
 			int var15 = this.vertexZ[var14] * var12 + this.vertexX[var14] * var13 >> 14;
 			this.vertexZ[var14] = this.vertexZ[var14] * var13 - this.vertexX[var14] * var12 >> 14;
