@@ -84,7 +84,7 @@ public class ChatHistory {
 	}
 
 	@ObfuscatedName("v.p(I)V")
-	public static void method329() {
+	public static void clear() {
 		field2594.clear();
 		field2597.removeAll();
 		field2596.removeAll();

@@ -524,7 +524,7 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.hy(ZB)Ljava/lang/String;")
-	public String method19115(boolean arg0) {
+	public String getNameWithExtras(boolean arg0) {
 		String var2 = arg0 ? this.name : this.nameUnfiltered;
 		return this.title == null ? var2 : this.title.replaceAll(TextUtil.NAME, var2);
 	}

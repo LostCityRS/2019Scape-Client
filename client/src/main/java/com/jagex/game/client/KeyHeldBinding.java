@@ -20,7 +20,7 @@ public class KeyHeldBinding implements Binding {
 		int[] var5 = this.field7423;
 		for (int var6 = 0; var6 < var5.length; var6++) {
 			int var7 = var5[var6];
-			if (!arg3.method9080(var7)) {
+			if (!arg3.keyheld(var7)) {
 				return false;
 			}
 		}

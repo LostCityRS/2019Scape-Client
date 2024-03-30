@@ -93,25 +93,25 @@ public class CameraManager {
 		field605 = Client.mouse.getX();
 		field7284 = Client.mouse.getY();
 		var3.opposite();
-		if (Client.keyboard.method9080(98)) {
+		if (Client.keyboard.keyheld(98)) {
 			Vector3 var13 = Vector3.create(0.0F, 0.0F, 25.0F);
 			var13.rotate(var3);
 			var13.y *= -1.0F;
 			var2.add(var13);
 		}
-		if (Client.keyboard.method9080(99)) {
+		if (Client.keyboard.keyheld(99)) {
 			Vector3 var14 = Vector3.create(0.0F, 0.0F, -25.0F);
 			var14.rotate(var3);
 			var14.y *= -1.0F;
 			var2.add(var14);
 		}
-		if (Client.keyboard.method9080(96)) {
+		if (Client.keyboard.keyheld(96)) {
 			Vector3 var15 = Vector3.create(-25.0F, 0.0F, 0.0F);
 			var15.rotate(var3);
 			var15.y *= -1.0F;
 			var2.add(var15);
 		}
-		if (Client.keyboard.method9080(97)) {
+		if (Client.keyboard.keyheld(97)) {
 			Vector3 var16 = Vector3.create(25.0F, 0.0F, 0.0F);
 			var16.rotate(var3);
 			var16.y *= -1.0F;

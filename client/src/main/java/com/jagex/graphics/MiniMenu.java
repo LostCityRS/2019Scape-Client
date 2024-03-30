@@ -695,32 +695,32 @@ public class MiniMenu {
 		if (Client.targetModeActive) {
 			ParamType var3 = (ParamType) (Client.field7677 == -1 ? null : Client.paramTypeList.list(Client.field7677));
 			if (Client.method17197(arg0).method17708() && (Client.field1765 & 0x20) != 0 && (var3 == null || arg0.getParam(Client.field7677, var3.defaultint) != var3.defaultint)) {
-				method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + arg0.field2279, Client.field1844, 58, arg0.invobject, 0L, arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
+				method3042(Client.field11039, Client.field10977 + " " + TextUtil.ARROW + " " + arg0.opbase, Client.field1844, 58, arg0.invobject, 0L, arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
 			}
 		}
 		for (int var4 = 9; var4 >= 5; var4--) {
 			String var5 = method2846(arg0, var4);
 			if (var5 != null) {
-				method3042(var5, arg0.field2279, Client.method17826(arg0, var4), 1007, arg0.invobject, (long) (var4 + 1), arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
+				method3042(var5, arg0.opbase, Client.method17826(arg0, var4), 1007, arg0.invobject, (long) (var4 + 1), arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
 			}
 		}
 		String var6 = Client.method9557(arg0);
 		if (var6 != null) {
-			method3042(var6, arg0.field2279, arg0.field2283, 25, arg0.invobject, 0L, arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
+			method3042(var6, arg0.opbase, arg0.targetopcursor, 25, arg0.invobject, 0L, arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
 		}
 		for (int var7 = 4; var7 >= 0; var7--) {
 			String var8 = method2846(arg0, var7);
 			if (var8 != null) {
-				method3042(var8, arg0.field2279, Client.method17826(arg0, var7), 57, arg0.invobject, (long) (var7 + 1), arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
+				method3042(var8, arg0.opbase, Client.method17826(arg0, var7), 57, arg0.invobject, (long) (var7 + 1), arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
 			}
 		}
 		if (!Client.method17197(arg0).method17689()) {
 			return;
 		}
-		if (arg0.field2180 == null) {
+		if (arg0.pausetext == null) {
 			method3042(LocalisedText.CONTINUE.forLang(Client.language), "", -1, 30, arg0.invobject, 0L, arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
 		} else {
-			method3042(arg0.field2180, "", -1, 30, arg0.invobject, 0L, arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
+			method3042(arg0.pausetext, "", -1, 30, arg0.invobject, 0L, arg0.id, arg0.parentlayer, true, false, (long) (arg0.id << 32 | arg0.parentlayer), false);
 		}
 	}
 
@@ -946,9 +946,9 @@ public class MiniMenu {
 										if (var75.minimenu_colour_overridden) {
 											var76 = var75.minimenu_colour;
 										} else if (var75.members) {
-											var76 = field1971.field7665;
+											var76 = field1971.members_colour;
 										} else {
-											var76 = field1971.field7661;
+											var76 = field1971.free_colour;
 										}
 										if (Client.targetModeActive && Client.localPlayerEntity.level == var29.field6978.level) {
 											ParamType var77 = (ParamType) (Client.field7677 == -1 ? null : Client.paramTypeList.list(Client.field7677));
@@ -1434,7 +1434,7 @@ public class MiniMenu {
 		if (var4 == null) {
 			var4 = DefaultSprites.b12FullFont;
 		}
-		var4.drawStringTaggableAntimacro(var1, field556, field557, field576.width, field576.height, field576.colour, field576.field2219, field576.field2223, field576.field2264, Client.field10890, Client.field1681, Client.field11042, DefaultSprites.field10302, null);
+		var4.drawStringTaggableAntimacro(var1, field556, field557, field576.width, field576.height, field576.colour, field576.graphicshadow, field576.field2223, field576.field2264, Client.field10890, Client.field1681, Client.field11042, DefaultSprites.field10302, null);
 		Client.requestRedrawAtPoint(Client.field11042[0], Client.field11042[1], Client.field11042[2], Client.field11042[3]);
 	}
 
@@ -1905,14 +1905,14 @@ public class MiniMenu {
 				}
 				String var5 = Client.modegame == ModeGame.STELLARDAWN ? LocalisedText.RATING.forLang(Client.language) : LocalisedText.LEVEL.forLang(Client.language);
 				if (arg0.combatLevel >= arg0.field12072) {
-					var6 = arg0.method19115(true) + (var2 ? method17760(arg0.combatLevel, Client.localPlayerEntity.combatLevel) : TextUtil.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.combatLevel + TextUtil.CLOSE_PARENTHESIS;
+					var6 = arg0.getNameWithExtras(true) + (var2 ? method17760(arg0.combatLevel, Client.localPlayerEntity.combatLevel) : TextUtil.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.combatLevel + TextUtil.CLOSE_PARENTHESIS;
 				} else {
-					var6 = arg0.method19115(true) + (var2 ? method17760(arg0.combatLevel, Client.localPlayerEntity.combatLevel) : TextUtil.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.combatLevel + "+" + (arg0.field12072 - arg0.combatLevel) + TextUtil.CLOSE_PARENTHESIS;
+					var6 = arg0.getNameWithExtras(true) + (var2 ? method17760(arg0.combatLevel, Client.localPlayerEntity.combatLevel) : TextUtil.method596(16777215)) + TextUtil.OPEN_PARENTHESIS + var5 + arg0.combatLevel + "+" + (arg0.field12072 - arg0.combatLevel) + TextUtil.CLOSE_PARENTHESIS;
 				}
 			} else if (arg0.field12059 == -1) {
-				var6 = arg0.method19115(true);
+				var6 = arg0.getNameWithExtras(true);
 			} else {
-				var6 = arg0.method19115(true) + TextUtil.OPEN_PARENTHESIS + LocalisedText.SKILL.forLang(Client.language) + arg0.field12059 + TextUtil.CLOSE_PARENTHESIS;
+				var6 = arg0.getNameWithExtras(true) + TextUtil.OPEN_PARENTHESIS + LocalisedText.SKILL.forLang(Client.language) + arg0.field12059 + TextUtil.CLOSE_PARENTHESIS;
 			}
 			boolean var7 = false;
 			if (arg0.model != null && arg0.model.field7892 != -1) {
@@ -1978,7 +1978,7 @@ public class MiniMenu {
 
 	@ObfuscatedName("ez.be(Lhf;II)Ljava/lang/String;")
 	public static String method2846(Component arg0, int arg1) {
-		if (!Client.method17197(arg0).method17690(arg1) && arg0.field2315 == null) {
+		if (!Client.method17197(arg0).method17690(arg1) && arg0.onop == null) {
 			return null;
 		} else if (arg0.op == null || arg0.op.length <= arg1 || arg0.op[arg1] == null || arg0.op[arg1].trim().length() == 0) {
 			return Client.field10881 ? "Hidden-" + arg1 : null;
@@ -2047,7 +2047,7 @@ public class MiniMenu {
 				if (Client.field11039 == null) {
 					Client.field11039 = "Null";
 				}
-				Client.field10977 = var12.field2279 + TextUtil.method596(16777215);
+				Client.field10977 = var12.opbase + TextUtil.method596(16777215);
 			}
 			return;
 		}

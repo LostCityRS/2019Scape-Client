@@ -30,10 +30,10 @@ public class MiniMenuDefaults {
 	public KeyHeldBinding field7659;
 
 	@ObfuscatedName("wf.u")
-	public int field7665;
+	public int members_colour;
 
 	@ObfuscatedName("wf.z")
-	public int field7661;
+	public int free_colour;
 
 	@ObfuscatedName("wf.p")
 	public boolean field7668;
@@ -73,9 +73,9 @@ public class MiniMenuDefaults {
 			} else if (var2 == 11) {
 				this.field7668 = true;
 			} else if (var2 == 12) {
-				this.field7665 = arg0.g4s();
+				this.members_colour = arg0.g4s();
 			} else if (var2 == 13) {
-				this.field7661 = arg0.g4s();
+				this.free_colour = arg0.g4s();
 			}
 		}
 	}

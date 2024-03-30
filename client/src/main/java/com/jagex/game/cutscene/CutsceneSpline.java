@@ -61,6 +61,6 @@ public class CutsceneSpline {
 			var2[var3 * 2 + 1][2] = this.field1733[var3];
 			var2[var3 * 2 + 1][3] = this.field1730[var3];
 		}
-		Client.field10981[arg0] = var2;
+		Client.cutsceneSpline[arg0] = var2;
 	}
 }

@@ -740,8 +740,8 @@ public class DeveloperConsole {
 					Vector3 var11 = Client.localPlayerEntity.getTransform().trans;
 					addline("" + Client.world.getScene().field6913[Client.localPlayerEntity.level].getTileHeight((int) var11.x >> 9, (int) var11.z >> 9));
 				} else if (arg0 == 27) {
-					addline(Component.field2175.method2926() + " " + Component.field2175.method2925());
-					addline(Component.field2297.method2926() + " " + Component.field2297.method2925());
+					addline(Component.spriteCache.method2926() + " " + Component.spriteCache.method2925());
+					addline(Component.modelCache.method2926() + " " + Component.modelCache.method2925());
 				} else if (arg0 == 8) {
 					Client.resetCaches(false);
 				} else if (arg0 == 13) {

@@ -89,7 +89,7 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 	}
 
 	@ObfuscatedName("alg.m(II)Z")
-	public boolean method9080(int arg0) {
+	public boolean keyheld(int arg0) {
 		return arg0 >= 0 && arg0 < 112 ? this.field11683[arg0] : false;
 	}
 

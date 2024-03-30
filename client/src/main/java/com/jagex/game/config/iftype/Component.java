@@ -102,16 +102,16 @@ public class Component {
 	public static Js5 field8370;
 
 	@ObfuscatedName("hf.t")
-	public static WeightedCache field2175 = new WeightedCache(6000000, 200);
+	public static WeightedCache spriteCache = new WeightedCache(6000000, 200);
 
 	@ObfuscatedName("hf.ae")
-	public static WeightedCache field2176 = new WeightedCache(8);
+	public static WeightedCache graphicCache = new WeightedCache(8);
 
 	@ObfuscatedName("hf.ag")
-	public static WeightedCache field2177 = new WeightedCache(4);
+	public static WeightedCache skyBoxCache = new WeightedCache(4);
 
 	@ObfuscatedName("hf.ah")
-	public static WeightedCache field2297 = new WeightedCache(50);
+	public static WeightedCache modelCache = new WeightedCache(50);
 
 	@ObfuscatedName("anq.al")
 	public static int field11802;
@@ -150,16 +150,16 @@ public class Component {
 	public byte field2174 = 0;
 
 	@ObfuscatedName("hf.ax")
-	public int field2190 = 0;
+	public int xpos = 0;
 
 	@ObfuscatedName("hf.av")
-	public int field2191 = 0;
+	public int ypos = 0;
 
 	@ObfuscatedName("hf.ao")
-	public int field2192 = 0;
+	public int wsize = 0;
 
 	@ObfuscatedName("hf.aj")
-	public int field2193 = 0;
+	public int hsize = 0;
 
 	@ObfuscatedName("hf.ay")
 	public int x = 0;
@@ -174,10 +174,10 @@ public class Component {
 	public int height = 0;
 
 	@ObfuscatedName("hf.af")
-	public int field2198 = 1;
+	public int aspectwidth = 1;
 
 	@ObfuscatedName("hf.ak")
-	public int field2199 = 1;
+	public int aspectheight = 1;
 
 	@ObfuscatedName("hf.an")
 	public int layer = -1;
@@ -192,10 +192,10 @@ public class Component {
 	public int field2269 = -1;
 
 	@ObfuscatedName("hf.bh")
-	public int field2204 = -1;
+	public int mouseovercursor = -1;
 
 	@ObfuscatedName("hf.bx")
-	public boolean field2205 = false;
+	public boolean noclickthrough = false;
 
 	@ObfuscatedName("hf.bd")
 	public int scrollx = 0;
@@ -219,10 +219,10 @@ public class Component {
 	public int trans = 0;
 
 	@ObfuscatedName("hf.bb")
-	public int field2156 = 1;
+	public int linewid = 1;
 
 	@ObfuscatedName("hf.be")
-	public boolean field2214 = false;
+	public boolean linedirection = false;
 
 	@ObfuscatedName("hf.by")
 	public int graphic = -1;
@@ -234,22 +234,22 @@ public class Component {
 	public boolean field2217 = false;
 
 	@ObfuscatedName("hf.bo")
-	public int field2218 = 0;
+	public int outline = 0;
 
 	@ObfuscatedName("hf.bz")
-	public int field2219 = 0;
+	public int graphicshadow = 0;
 
 	@ObfuscatedName("hf.bv")
-	public boolean field2220;
+	public boolean vflip;
 
 	@ObfuscatedName("hf.br")
-	public boolean field2213;
+	public boolean hflip;
 
 	@ObfuscatedName("hf.bg")
-	public boolean field2222 = false;
+	public boolean alpha = false;
 
 	@ObfuscatedName("hf.ba")
-	public boolean field2253 = true;
+	public boolean clickmask = true;
 
 	@ObfuscatedName("hf.bp")
 	public int field2224 = 1;
@@ -279,13 +279,13 @@ public class Component {
 	public int modelangle_z = 0;
 
 	@ObfuscatedName("hf.cv")
-	public int field2305 = 0;
+	public int modelorigin_x = 0;
 
 	@ObfuscatedName("hf.cp")
-	public int field2209 = 0;
+	public int modelorigin_y = 0;
 
 	@ObfuscatedName("hf.ca")
-	public int field2235 = 0;
+	public int modelorigin_z = 0;
 
 	@ObfuscatedName("hf.cx")
 	public int modelzoom = 100;
@@ -360,7 +360,7 @@ public class Component {
 	public int font = -1;
 
 	@ObfuscatedName("hf.dm")
-	public boolean field2275 = true;
+	public boolean fontmono = true;
 
 	@ObfuscatedName("hf.dq")
 	public String text = "";
@@ -375,10 +375,10 @@ public class Component {
 	public int field2264 = 0;
 
 	@ObfuscatedName("hf.dn")
-	public boolean field2265 = false;
+	public boolean textshadow = false;
 
 	@ObfuscatedName("hf.df")
-	public int field2236 = 0;
+	public int maxlines = 0;
 
 	@ObfuscatedName("hf.dw")
 	public boolean antimacro = false;
@@ -405,169 +405,169 @@ public class Component {
 	public int[] field2300;
 
 	@ObfuscatedName("hf.eo")
-	public String field2279 = "";
+	public String opbase = "";
 
 	@ObfuscatedName("hf.ey")
 	public String[] op;
 
 	@ObfuscatedName("hf.eu")
-	public String field2180;
+	public String pausetext;
 
 	@ObfuscatedName("hf.ed")
-	public int[] field2282;
+	public int[] opcursor;
 
 	@ObfuscatedName("hf.ee")
-	public int field2283 = -1;
+	public int targetopcursor = -1;
 
 	@ObfuscatedName("hf.es")
 	public Component field2284 = null;
 
 	@ObfuscatedName("hf.ei")
-	public int field2285 = 0;
+	public int dragdeadzone = 0;
 
 	@ObfuscatedName("hf.el")
-	public int field2286 = 0;
+	public int dragdeadtime = 0;
 
 	@ObfuscatedName("hf.ej")
-	public int field2271 = field2234;
+	public int dragrenderbehaviour = field2234;
 
 	@ObfuscatedName("hf.ep")
-	public String field2288 = "";
+	public String targetverb = "";
 
 	@ObfuscatedName("hf.ev")
-	public boolean field2179 = false;
+	public boolean hashook = false;
 
 	@ObfuscatedName("hf.ec")
-	public Object[] field2290;
+	public Object[] onload;
 
 	@ObfuscatedName("hf.ek")
-	public Object[] field2291;
+	public Object[] onclick;
 
 	@ObfuscatedName("hf.em")
-	public Object[] field2292;
+	public Object[] onclickrepeat;
 
 	@ObfuscatedName("hf.eh")
-	public Object[] field2293;
+	public Object[] onrelease;
 
 	@ObfuscatedName("hf.eq")
-	public Object[] field2244;
+	public Object[] onhold;
 
 	@ObfuscatedName("hf.eg")
-	public Object[] field2233;
+	public Object[] onmouseover;
 
 	@ObfuscatedName("hf.ez")
-	public Object[] field2296;
+	public Object[] onmouserepeat;
 
 	@ObfuscatedName("hf.ef")
-	public Object[] field2280;
+	public Object[] onmouseleave;
 
 	@ObfuscatedName("hf.et")
-	public Object[] field2362;
+	public Object[] ondrag;
 
 	@ObfuscatedName("hf.ea")
-	public Object[] field2178;
+	public Object[] ondragcomplete;
 
 	@ObfuscatedName("hf.ew")
-	public Object[] field2249;
+	public Object[] ontargetenter;
 
 	@ObfuscatedName("hf.er")
-	public Object[] field2299;
+	public Object[] ontargetleave;
 
 	@ObfuscatedName("hf.en")
-	public Object[] field2322;
+	public Object[] onvartransmit;
 
 	@ObfuscatedName("hf.eb")
-	public int[] field2303;
+	public int[] onvartransmitlist;
 
 	@ObfuscatedName("hf.ex")
-	public Object[] field2304;
+	public Object[] oninvtransmit;
 
 	@ObfuscatedName("hf.fg")
-	public int[] field2247;
+	public int[] oninvtransmitlist;
 
 	@ObfuscatedName("hf.fm")
-	public Object[] field2306;
+	public Object[] onstattransmit;
 
 	@ObfuscatedName("hf.fu")
-	public int[] field2307;
+	public int[] onstattransmitlist;
 
 	@ObfuscatedName("hf.fs")
-	public Object[] field2308;
+	public Object[] onvarctransmit;
 
 	@ObfuscatedName("hf.fz")
-	public int[] field2309;
+	public int[] onvarctransmitlist;
 
 	@ObfuscatedName("hf.fj")
-	public Object[] field2310;
+	public Object[] onvarcstrtransmit;
 
 	@ObfuscatedName("hf.fd")
-	public int[] field2311;
+	public int[] onvarcstrtransmitlist;
 
 	@ObfuscatedName("hf.fn")
-	public Object[] field2312;
+	public Object[] onvarclantransmit;
 
 	@ObfuscatedName("hf.fi")
 	public int[] field2313;
 
 	@ObfuscatedName("hf.ft")
-	public Object[] field2314;
+	public Object[] ontimer;
 
 	@ObfuscatedName("hf.fx")
-	public Object[] field2315;
+	public Object[] onop;
 
 	@ObfuscatedName("hf.fv")
-	public Object[] field2225;
+	public Object[] onopt;
 
 	@ObfuscatedName("hf.fc")
-	public Object[] field2317;
+	public Object[] onscrollwheel;
 
 	@ObfuscatedName("hf.fw")
-	public Object[] field2318;
+	public Object[] onchattransmit;
 
 	@ObfuscatedName("hf.fa")
-	public Object[] field2295;
+	public Object[] onkey;
 
 	@ObfuscatedName("hf.fp")
-	public Object[] field2320;
+	public Object[] onfriendtransmit;
 
 	@ObfuscatedName("hf.fq")
-	public Object[] field2355;
+	public Object[] onclantransmit;
 
 	@ObfuscatedName("hf.ff")
-	public Object[] field2232;
+	public Object[] onclansettingstransmit;
 
 	@ObfuscatedName("hf.fl")
-	public Object[] field2323;
+	public Object[] onclanchanneltransmit;
 
 	@ObfuscatedName("hf.fb")
-	public Object[] field2347;
+	public Object[] onmisctransmit;
 
 	@ObfuscatedName("hf.fo")
-	public Object[] field2325;
+	public Object[] onstocktransmit;
 
 	@ObfuscatedName("hf.fy")
-	public Object[] field2326;
+	public Object[] ondialogabort;
 
 	@ObfuscatedName("hf.fe")
-	public Object[] field2327;
+	public Object[] onsubchange;
 
 	@ObfuscatedName("hf.fk")
-	public Object[] field2328;
+	public Object[] oncamfinished;
 
 	@ObfuscatedName("hf.fh")
-	public Object[] field2329;
+	public Object[] onresize;
 
 	@ObfuscatedName("hf.fr")
-	public Object[] field2330;
+	public Object[] onplayergrouptransmit;
 
 	@ObfuscatedName("hf.gu")
-	public Object[] field2359;
+	public Object[] onplayergroupvarptransmit;
 
 	@ObfuscatedName("hf.gq")
-	public Object[] field2332;
+	public Object[] oncameraupdatetransmit;
 
 	@ObfuscatedName("hf.gl")
-	public IterableMap field2333;
+	public IterableMap params;
 
 	@ObfuscatedName("hf.go")
 	public int invobject = -1;
@@ -606,7 +606,7 @@ public class Component {
 	public int field2188 = -1;
 
 	@ObfuscatedName("hf.gs")
-	public int field2262 = -1;
+	public int modelanim = -1;
 
 	@ObfuscatedName("hf.gt")
 	public AnimationWrapper field2170;
@@ -621,7 +621,7 @@ public class Component {
 	public boolean field2350 = false;
 
 	@ObfuscatedName("hf.gj")
-	public boolean field2360 = false;
+	public boolean held = false;
 
 	@ObfuscatedName("hf.gw")
 	public int field2352 = -1;
@@ -737,7 +737,7 @@ public class Component {
 				if (var7 != null) {
 					Component var8 = arg2.field2151[var6] = new Component();
 					var8.parentlayer = (arg0 << 16) + var6;
-					var8.method3938(new Packet(var7));
+					var8.decode(new Packet(var7));
 				}
 			}
 		}
@@ -759,123 +759,123 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.z(Lalw;I)V")
-	public void method3938(Packet arg0) {
-		int var2 = arg0.g1();
+	public void decode(Packet buf) {
+		int var2 = buf.g1();
 		if (var2 == 255) {
 			var2 = -1;
 		}
-		this.type = arg0.g1();
+		this.type = buf.g1();
 		if ((this.type & 0x80) != 0) {
 			this.type &= 0x7F;
-			this.field2155 = arg0.gjstr();
+			this.field2155 = buf.gjstr();
 		}
-		this.clientcode = arg0.g2();
-		this.field2190 = arg0.g2s();
-		this.field2191 = arg0.g2s();
-		this.field2192 = arg0.g2();
-		this.field2193 = arg0.g2();
-		this.field2356 = arg0.g1b();
-		this.field2174 = arg0.g1b();
-		this.field2186 = arg0.g1b();
-		this.field2187 = arg0.g1b();
+		this.clientcode = buf.g2();
+		this.xpos = buf.g2s();
+		this.ypos = buf.g2s();
+		this.wsize = buf.g2();
+		this.hsize = buf.g2();
+		this.field2356 = buf.g1b();
+		this.field2174 = buf.g1b();
+		this.field2186 = buf.g1b();
+		this.field2187 = buf.g1b();
 		if (this.field2356 == 4 || this.field2174 == 4) {
-			this.field2198 = arg0.g2();
-			this.field2199 = arg0.g2();
+			this.aspectwidth = buf.g2();
+			this.aspectheight = buf.g2();
 		}
-		this.layer = arg0.g2();
+		this.layer = buf.g2();
 		if (this.layer == 65535) {
 			this.layer = -1;
 		} else {
 			this.layer += this.parentlayer & 0xFFFF0000;
 		}
-		int var3 = arg0.g1();
+		int var3 = buf.g1();
 		this.hide = (var3 & 0x1) != 0;
 		if (var2 >= 0) {
-			this.field2205 = (var3 & 0x2) != 0;
+			this.noclickthrough = (var3 & 0x2) != 0;
 		}
 		if (this.type == 0) {
-			this.scrollwidth = arg0.g2();
-			this.scrollheight = arg0.g2();
+			this.scrollwidth = buf.g2();
+			this.scrollheight = buf.g2();
 			if (var2 < 0) {
-				this.field2205 = arg0.g1() == 1;
+				this.noclickthrough = buf.g1() == 1;
 			}
 		}
 		if (this.type == 5) {
-			this.graphic = arg0.g4s();
-			this.angle2d = arg0.g2();
-			int var4 = arg0.g1();
+			this.graphic = buf.g4s();
+			this.angle2d = buf.g2();
+			int var4 = buf.g1();
 			this.field2217 = (var4 & 0x1) != 0;
-			this.field2222 = (var4 & 0x2) != 0;
-			this.trans = arg0.g1();
-			this.field2218 = arg0.g1();
-			this.field2219 = arg0.g4s();
-			this.field2220 = arg0.g1() == 1;
-			this.field2213 = arg0.g1() == 1;
-			this.colour = arg0.g4s();
+			this.alpha = (var4 & 0x2) != 0;
+			this.trans = buf.g1();
+			this.outline = buf.g1();
+			this.graphicshadow = buf.g4s();
+			this.vflip = buf.g1() == 1;
+			this.hflip = buf.g1() == 1;
+			this.colour = buf.g4s();
 			if (var2 >= 3) {
-				this.field2253 = arg0.g1() == 1;
+				this.clickmask = buf.g1() == 1;
 			}
 		}
 		if (this.type == 6) {
 			this.field2224 = 1;
-			this.field2294 = arg0.gSmart2or4null();
-			int var5 = arg0.g1();
+			this.field2294 = buf.gSmart2or4null();
+			int var5 = buf.g1();
 			boolean var6 = (var5 & 0x1) == 1;
 			this.field2274 = (var5 & 0x2) == 2;
 			this.field2239 = (var5 & 0x4) == 4;
 			this.field2260 = (var5 & 0x8) == 8;
 			if (var6) {
-				this.field2305 = arg0.g2s();
-				this.field2209 = arg0.g2s();
-				this.modelangle_x = arg0.g2();
-				this.modelangle_y = arg0.g2();
-				this.modelangle_z = arg0.g2();
-				this.modelzoom = arg0.g2();
+				this.modelorigin_x = buf.g2s();
+				this.modelorigin_y = buf.g2s();
+				this.modelangle_x = buf.g2();
+				this.modelangle_y = buf.g2();
+				this.modelangle_z = buf.g2();
+				this.modelzoom = buf.g2();
 			} else if (this.field2274) {
-				this.field2305 = arg0.g2s();
-				this.field2209 = arg0.g2s();
-				this.field2235 = arg0.g2s();
-				this.modelangle_x = arg0.g2();
-				this.modelangle_y = arg0.g2();
-				this.modelangle_z = arg0.g2();
-				this.modelzoom = arg0.g2s();
+				this.modelorigin_x = buf.g2s();
+				this.modelorigin_y = buf.g2s();
+				this.modelorigin_z = buf.g2s();
+				this.modelangle_x = buf.g2();
+				this.modelangle_y = buf.g2();
+				this.modelangle_z = buf.g2();
+				this.modelzoom = buf.g2s();
 			}
-			this.field2262 = arg0.gSmart2or4null();
+			this.modelanim = buf.gSmart2or4null();
 			if (this.field2356 != 0) {
-				this.field2227 = arg0.g2();
+				this.field2227 = buf.g2();
 			}
 			if (this.field2174 != 0) {
-				this.field2238 = arg0.g2();
+				this.field2238 = buf.g2();
 			}
 		}
 		if (this.type == 4) {
-			this.font = arg0.gSmart2or4null();
+			this.font = buf.gSmart2or4null();
 			if (var2 >= 2) {
-				this.field2275 = arg0.g1() == 1;
+				this.fontmono = buf.g1() == 1;
 			}
-			this.text = arg0.gjstr();
-			this.field2229 = arg0.g1();
-			this.field2223 = arg0.g1();
-			this.field2264 = arg0.g1();
-			this.field2265 = arg0.g1() == 1;
-			this.colour = arg0.g4s();
-			this.trans = arg0.g1();
+			this.text = buf.gjstr();
+			this.field2229 = buf.g1();
+			this.field2223 = buf.g1();
+			this.field2264 = buf.g1();
+			this.textshadow = buf.g1() == 1;
+			this.colour = buf.g4s();
+			this.trans = buf.g1();
 			if (var2 >= 0) {
-				this.field2236 = arg0.g1();
+				this.maxlines = buf.g1();
 			}
 		}
 		if (this.type == 3) {
-			this.colour = arg0.g4s();
-			this.fill = arg0.g1() == 1;
-			this.trans = arg0.g1();
+			this.colour = buf.g4s();
+			this.fill = buf.g1() == 1;
+			this.trans = buf.g1();
 		}
 		if (this.type == 9) {
-			this.field2156 = arg0.g1();
-			this.colour = arg0.g4s();
-			this.field2214 = arg0.g1() == 1;
+			this.linewid = buf.g1();
+			this.colour = buf.g4s();
+			this.linedirection = buf.g1() == 1;
 		}
-		int var7 = arg0.g3();
-		int var8 = arg0.g1();
+		int var7 = buf.g3();
+		int var8 = buf.g1();
 		if (var8 != 0) {
 			this.field2270 = new byte[11][];
 			this.field2281 = new byte[11][];
@@ -883,146 +883,146 @@ public class Component {
 			this.field2300 = new int[11];
 			while (var8 != 0) {
 				int var9 = (var8 >> 4) - 1;
-				int var10 = var8 << 8 | arg0.g1();
+				int var10 = var8 << 8 | buf.g1();
 				int var11 = var10 & 0xFFF;
 				if (var11 == 4095) {
 					var11 = -1;
 				}
-				byte var12 = arg0.g1b();
+				byte var12 = buf.g1b();
 				if (var12 != 0) {
 					this.field2324 = true;
 				}
-				byte var13 = arg0.g1b();
+				byte var13 = buf.g1b();
 				this.field2211[var9] = var11;
 				this.field2270[var9] = new byte[] { var12 };
 				this.field2281[var9] = new byte[] { var13 };
-				var8 = arg0.g1();
+				var8 = buf.g1();
 			}
 		}
-		this.field2279 = arg0.gjstr();
-		int var14 = arg0.g1();
+		this.opbase = buf.gjstr();
+		int var14 = buf.g1();
 		int var15 = var14 & 0xF;
 		int var16 = var14 >> 4;
 		if (var15 > 0) {
 			this.op = new String[var15];
 			for (int var17 = 0; var17 < var15; var17++) {
-				this.op[var17] = arg0.gjstr();
+				this.op[var17] = buf.gjstr();
 			}
 		}
 		if (var16 > 0) {
-			int var18 = arg0.g1();
-			this.field2282 = new int[var18 + 1];
-			for (int var19 = 0; var19 < this.field2282.length; var19++) {
-				this.field2282[var19] = -1;
+			int var18 = buf.g1();
+			this.opcursor = new int[var18 + 1];
+			for (int var19 = 0; var19 < this.opcursor.length; var19++) {
+				this.opcursor[var19] = -1;
 			}
-			this.field2282[var18] = arg0.g2();
+			this.opcursor[var18] = buf.g2();
 		}
 		if (var16 > 1) {
-			int var20 = arg0.g1();
-			this.field2282[var20] = arg0.g2();
+			int var20 = buf.g1();
+			this.opcursor[var20] = buf.g2();
 		}
-		this.field2180 = arg0.gjstr();
-		if (this.field2180.equals("")) {
-			this.field2180 = null;
+		this.pausetext = buf.gjstr();
+		if (this.pausetext.equals("")) {
+			this.pausetext = null;
 		}
-		this.field2285 = arg0.g1();
-		this.field2286 = arg0.g1();
-		this.field2271 = arg0.g1();
-		this.field2288 = arg0.gjstr();
+		this.dragdeadzone = buf.g1();
+		this.dragdeadtime = buf.g1();
+		this.dragrenderbehaviour = buf.g1();
+		this.targetverb = buf.gjstr();
 		int var21 = -1;
 		if (ServerKeyProperties.method16667(var7) != 0) {
-			var21 = arg0.g2();
+			var21 = buf.g2();
 			if (var21 == 65535) {
 				var21 = -1;
 			}
-			this.field2202 = arg0.g2();
+			this.field2202 = buf.g2();
 			if (this.field2202 == 65535) {
 				this.field2202 = -1;
 			}
-			this.field2269 = arg0.g2();
+			this.field2269 = buf.g2();
 			if (this.field2269 == 65535) {
 				this.field2269 = -1;
 			}
 		}
 		if (var2 >= 0) {
-			this.field2204 = arg0.g2();
-			if (this.field2204 == 65535) {
-				this.field2204 = -1;
+			this.mouseovercursor = buf.g2();
+			if (this.mouseovercursor == 65535) {
+				this.mouseovercursor = -1;
 			}
 		}
 		this.field2268 = new ServerKeyProperties(var7, var21);
 		if (var2 >= 0) {
-			int var22 = arg0.g1();
+			int var22 = buf.g1();
 			for (int var23 = 0; var23 < var22; var23++) {
-				int var24 = arg0.g3();
-				int var25 = arg0.g4s();
-				this.field2333.pushNode(new IntWrapper(var25), (long) var24);
+				int var24 = buf.g3();
+				int var25 = buf.g4s();
+				this.params.pushNode(new IntWrapper(var25), (long) var24);
 			}
-			int var26 = arg0.g1();
+			int var26 = buf.g1();
 			for (int var27 = 0; var27 < var26; var27++) {
-				int var28 = arg0.g3();
-				String var29 = arg0.gjstr2();
-				this.field2333.pushNode(new ObjectWrapper(var29), (long) var28);
+				int var28 = buf.g3();
+				String var29 = buf.gjstr2();
+				this.params.pushNode(new ObjectWrapper(var29), (long) var28);
 			}
 		}
-		this.field2290 = this.method3939(arg0);
-		this.field2233 = this.method3939(arg0);
-		this.field2280 = this.method3939(arg0);
-		this.field2299 = this.method3939(arg0);
-		this.field2249 = this.method3939(arg0);
-		this.field2322 = this.method3939(arg0);
-		this.field2304 = this.method3939(arg0);
-		this.field2306 = this.method3939(arg0);
-		this.field2314 = this.method3939(arg0);
-		this.field2315 = this.method3939(arg0);
+		this.onload = this.decodeHook(buf);
+		this.onmouseover = this.decodeHook(buf);
+		this.onmouseleave = this.decodeHook(buf);
+		this.ontargetleave = this.decodeHook(buf);
+		this.ontargetenter = this.decodeHook(buf);
+		this.onvartransmit = this.decodeHook(buf);
+		this.oninvtransmit = this.decodeHook(buf);
+		this.onstattransmit = this.decodeHook(buf);
+		this.ontimer = this.decodeHook(buf);
+		this.onop = this.decodeHook(buf);
 		if (var2 >= 0) {
-			this.field2225 = this.method3939(arg0);
+			this.onopt = this.decodeHook(buf);
 		}
-		this.field2296 = this.method3939(arg0);
-		this.field2291 = this.method3939(arg0);
-		this.field2292 = this.method3939(arg0);
-		this.field2293 = this.method3939(arg0);
-		this.field2244 = this.method3939(arg0);
-		this.field2362 = this.method3939(arg0);
-		this.field2178 = this.method3939(arg0);
-		this.field2317 = this.method3939(arg0);
-		this.field2308 = this.method3939(arg0);
-		this.field2310 = this.method3939(arg0);
-		this.field2303 = this.method3940(arg0);
-		this.field2247 = this.method3940(arg0);
-		this.field2307 = this.method3940(arg0);
-		this.field2309 = this.method3940(arg0);
-		this.field2311 = this.method3940(arg0);
+		this.onmouserepeat = this.decodeHook(buf);
+		this.onclick = this.decodeHook(buf);
+		this.onclickrepeat = this.decodeHook(buf);
+		this.onrelease = this.decodeHook(buf);
+		this.onhold = this.decodeHook(buf);
+		this.ondrag = this.decodeHook(buf);
+		this.ondragcomplete = this.decodeHook(buf);
+		this.onscrollwheel = this.decodeHook(buf);
+		this.onvarctransmit = this.decodeHook(buf);
+		this.onvarcstrtransmit = this.decodeHook(buf);
+		this.onvartransmitlist = this.decodeTransmitList(buf);
+		this.oninvtransmitlist = this.decodeTransmitList(buf);
+		this.onstattransmitlist = this.decodeTransmitList(buf);
+		this.onvarctransmitlist = this.decodeTransmitList(buf);
+		this.onvarcstrtransmitlist = this.decodeTransmitList(buf);
 	}
 
 	@ObfuscatedName("hf.p(Lalw;I)[Ljava/lang/Object;")
-	public Object[] method3939(Packet arg0) {
-		int var2 = arg0.g1();
-		if (var2 == 0) {
+	public Object[] decodeHook(Packet buf) {
+		int length = buf.g1();
+		if (length == 0) {
 			return null;
 		}
-		Object[] var3 = new Object[var2];
-		for (int var4 = 0; var4 < var2; var4++) {
-			int var5 = arg0.g1();
+		Object[] var3 = new Object[length];
+		for (int index = 0; index < length; index++) {
+			int var5 = buf.g1();
 			if (var5 == 0) {
-				var3[var4] = Integer.valueOf(arg0.g4s());
+				var3[index] = Integer.valueOf(buf.g4s());
 			} else if (var5 == 1) {
-				var3[var4] = arg0.gjstr();
+				var3[index] = buf.gjstr();
 			}
 		}
-		this.field2179 = true;
+		this.hashook = true;
 		return var3;
 	}
 
 	@ObfuscatedName("hf.d(Lalw;B)[I")
-	public int[] method3940(Packet arg0) {
-		int var2 = arg0.g1();
-		if (var2 == 0) {
+	public int[] decodeTransmitList(Packet buf) {
+		int length = buf.g1();
+		if (length == 0) {
 			return null;
 		}
-		int[] var3 = new int[var2];
-		for (int var4 = 0; var4 < var2; var4++) {
-			var3[var4] = arg0.g4s();
+		int[] var3 = new int[length];
+		for (int index = 0; index < length; index++) {
+			var3[index] = buf.g4s();
 		}
 		return var3;
 	}
@@ -1030,8 +1030,8 @@ public class Component {
 	@ObfuscatedName("hf.c(Ldh;B)Lcm;")
 	public Sprite method3941(Renderer arg0) {
 		field2338 = false;
-		long var2 = ((long) this.field2219 << 40) + ((long) this.field2218 << 36) + (long) this.graphic + ((this.field2222 ? 1L : 0L) << 35) + ((this.field2220 ? 1L : 0L) << 38) + ((this.field2213 ? 1L : 0L) << 39);
-		Sprite var4 = (Sprite) field2175.get(var2);
+		long var2 = ((long) this.graphicshadow << 40) + ((long) this.outline << 36) + (long) this.graphic + ((this.alpha ? 1L : 0L) << 35) + ((this.vflip ? 1L : 0L) << 38) + ((this.hflip ? 1L : 0L) << 39);
+		Sprite var4 = (Sprite) spriteCache.get(var2);
 		if (var4 != null) {
 			return var4;
 		}
@@ -1040,34 +1040,34 @@ public class Component {
 			field2338 = true;
 			return null;
 		}
-		if (this.field2220) {
+		if (this.vflip) {
 			var5.flipVertically();
 		}
-		if (this.field2213) {
+		if (this.hflip) {
 			var5.flipHorizontally();
 		}
-		if (this.field2218 > 0) {
-			var5.method2646(this.field2218);
-		} else if (this.field2219 != 0) {
+		if (this.outline > 0) {
+			var5.method2646(this.outline);
+		} else if (this.graphicshadow != 0) {
 			var5.method2646(1);
 		}
-		if (this.field2218 >= 1) {
+		if (this.outline >= 1) {
 			var5.method2599(1);
 		}
-		if (this.field2218 >= 2) {
+		if (this.outline >= 2) {
 			var5.method2599(16777215);
 		}
-		if (this.field2219 != 0) {
-			var5.method2600(this.field2219 | 0xFF000000);
+		if (this.graphicshadow != 0) {
+			var5.method2600(this.graphicshadow | 0xFF000000);
 		}
 		Sprite var6 = arg0.createSprite(var5, true);
-		field2175.put(var6, var2, var6.getWidth() * var6.getHeight() * 4);
+		spriteCache.put(var6, var2, var6.getWidth() * var6.getHeight() * 4);
 		return var6;
 	}
 
 	@ObfuscatedName("hf.r(Loi;Loq;S)Leu;")
 	public Font method3942(FontProvider arg0, FontFactory arg1) {
-		Font var3 = (Font) arg0.getFont(arg1, this.font, false, this.field2275);
+		Font var3 = (Font) arg0.getFont(arg1, this.font, false, this.fontmono);
 		field2338 = var3 == null;
 		return var3;
 	}
@@ -1112,7 +1112,7 @@ public class Component {
 				arg1 |= 0x8000;
 			}
 			long var30 = (long) arg0.field1595 << 59 | (long) this.field2224 << 55 | (long) this.field2294 << 38 | var13 & 0x3FFFFFFFFFL;
-			Model var32 = (Model) field2297.get(var30);
+			Model var32 = (Model) modelCache.get(var30);
 			if (var32 == null || arg0.method2394(var32.method1691(), arg1) != 0) {
 				if (var32 != null) {
 					arg1 = arg0.method2213(arg1, var32.method1691());
@@ -1136,7 +1136,7 @@ public class Component {
 						var32.method1744(this.field2346[var35], this.field2245[var35]);
 					}
 				}
-				field2297.put(var32, var30);
+				modelCache.put(var32, var30);
 			}
 			if (var32 == null) {
 				return null;
@@ -1220,10 +1220,10 @@ public class Component {
 			return null;
 		}
 		long var3 = ((long) this.field2342 & 0xFFFFL) << 48 | ((long) this.field2343 & 0xFFFFL) << 32 | ((long) this.field2344 & 0xFFFFL) << 16 | (long) this.field2339 & 0xFFFFL;
-		SkyBox var5 = (SkyBox) field2177.get(var3);
+		SkyBox var5 = (SkyBox) skyBoxCache.get(var3);
 		if (var5 == null) {
 			var5 = SkyBoxType.method305(this.field2339, this.field2342, this.field2343, this.field2344, arg0, arg1);
-			field2177.put(var5, var3);
+			skyBoxCache.put(var5, var3);
 		}
 		return var5;
 	}
@@ -1231,31 +1231,31 @@ public class Component {
 	@ObfuscatedName("ack.q(IB)V")
 	public static void method14950(int arg0) {
 		field11802 = arg0;
-		field2297.reset();
+		modelCache.reset();
 	}
 
 	@ObfuscatedName("lv.x(I)V")
 	public static void cacheReset() {
-		field2175.reset();
-		field2297.reset();
-		field2176.reset();
-		field2177.reset();
+		spriteCache.reset();
+		modelCache.reset();
+		graphicCache.reset();
+		skyBoxCache.reset();
 	}
 
 	@ObfuscatedName("sp.b(II)V")
 	public static void cacheClean(int arg0) {
-		field2175.clean(arg0);
-		field2297.clean(arg0);
-		field2176.clean(arg0);
-		field2177.clean(arg0);
+		spriteCache.clean(arg0);
+		modelCache.clean(arg0);
+		graphicCache.clean(arg0);
+		skyBoxCache.clean(arg0);
 	}
 
 	@ObfuscatedName("kh.h(I)V")
 	public static void cacheRemoveSoftReferences() {
-		field2175.clear();
-		field2297.clear();
-		field2176.clear();
-		field2177.clear();
+		spriteCache.clear();
+		modelCache.clear();
+		graphicCache.clear();
+		skyBoxCache.clear();
 	}
 
 	@ObfuscatedName("jh.a(B)V")
@@ -1265,61 +1265,61 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.g(I)V")
-	public void method3976() {
-		this.field2290 = null;
-		this.field2291 = null;
-		this.field2292 = null;
-		this.field2293 = null;
-		this.field2244 = null;
-		this.field2233 = null;
-		this.field2296 = null;
-		this.field2280 = null;
-		this.field2362 = null;
-		this.field2178 = null;
-		this.field2249 = null;
-		this.field2299 = null;
-		this.field2322 = null;
-		this.field2303 = null;
+	public void clearscripthooks() {
+		this.onload = null;
+		this.onclick = null;
+		this.onclickrepeat = null;
+		this.onrelease = null;
+		this.onhold = null;
+		this.onmouseover = null;
+		this.onmouserepeat = null;
+		this.onmouseleave = null;
+		this.ondrag = null;
+		this.ondragcomplete = null;
+		this.ontargetenter = null;
+		this.ontargetleave = null;
+		this.onvartransmit = null;
+		this.onvartransmitlist = null;
 		this.field2353 = 0;
-		this.field2304 = null;
-		this.field2247 = null;
+		this.oninvtransmit = null;
+		this.oninvtransmitlist = null;
 		this.field2354 = 0;
-		this.field2306 = null;
-		this.field2307 = null;
+		this.onstattransmit = null;
+		this.onstattransmitlist = null;
 		this.field2160 = 0;
-		this.field2308 = null;
-		this.field2309 = null;
+		this.onvarctransmit = null;
+		this.onvarctransmitlist = null;
 		this.field2289 = 0;
-		this.field2310 = null;
-		this.field2311 = null;
+		this.onvarcstrtransmit = null;
+		this.onvarcstrtransmitlist = null;
 		this.field2357 = 0;
-		this.field2312 = null;
+		this.onvarclantransmit = null;
 		this.field2313 = null;
 		this.field2358 = 0;
-		this.field2314 = null;
-		this.field2315 = null;
-		this.field2225 = null;
-		this.field2317 = null;
-		this.field2318 = null;
-		this.field2295 = null;
-		this.field2320 = null;
-		this.field2355 = null;
-		this.field2232 = null;
-		this.field2323 = null;
-		this.field2347 = null;
-		this.field2325 = null;
-		this.field2326 = null;
-		this.field2327 = null;
-		this.field2328 = null;
-		this.field2329 = null;
-		this.field2330 = null;
-		this.field2359 = null;
-		this.field2332 = null;
+		this.ontimer = null;
+		this.onop = null;
+		this.onopt = null;
+		this.onscrollwheel = null;
+		this.onchattransmit = null;
+		this.onkey = null;
+		this.onfriendtransmit = null;
+		this.onclantransmit = null;
+		this.onclansettingstransmit = null;
+		this.onclanchanneltransmit = null;
+		this.onmisctransmit = null;
+		this.onstocktransmit = null;
+		this.ondialogabort = null;
+		this.onsubchange = null;
+		this.oncamfinished = null;
+		this.onresize = null;
+		this.onplayergrouptransmit = null;
+		this.onplayergroupvarptransmit = null;
+		this.oncameraupdatetransmit = null;
 		this.field2352 = -1;
 	}
 
 	@ObfuscatedName("hf.i(ILjava/lang/String;B)V")
-	public void method3947(int arg0, String arg1) {
+	public void setop(int arg0, String arg1) {
 		if (this.op == null || this.op.length <= arg0) {
 			String[] var3 = new String[arg0 + 1];
 			if (this.op != null) {
@@ -1333,29 +1333,29 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.j(III)V")
-	public void method3948(int arg0, int arg1) {
-		if (this.field2282 == null || this.field2282.length <= arg0) {
+	public void setopcursor(int arg0, int arg1) {
+		if (this.opcursor == null || this.opcursor.length <= arg0) {
 			int[] var3 = new int[arg0 + 1];
-			if (this.field2282 != null) {
-				for (int var4 = 0; var4 < this.field2282.length; var4++) {
-					var3[var4] = this.field2282[var4];
+			if (this.opcursor != null) {
+				for (int var4 = 0; var4 < this.opcursor.length; var4++) {
+					var3[var4] = this.opcursor[var4];
 				}
-				for (int var5 = this.field2282.length; var5 < arg0; var5++) {
+				for (int var5 = this.opcursor.length; var5 < arg0; var5++) {
 					var3[var5] = -1;
 				}
 			}
-			this.field2282 = var3;
+			this.opcursor = var3;
 		}
-		this.field2282[arg0] = arg1;
+		this.opcursor[arg0] = arg1;
 	}
 
 	@ObfuscatedName("hf.t(Ldh;B)Lhx;")
 	public Graphic method3970(Renderer arg0) {
 		long var2 = (long) this.parentlayer << 32 | (long) this.id & 0xFFFFFFFFL;
-		Graphic var4 = (Graphic) field2176.get(var2);
+		Graphic var4 = (Graphic) graphicCache.get(var2);
 		if (var4 != null) {
 			if (this.graphic != var4.field2148) {
-				field2176.method2957(var2);
+				graphicCache.method2957(var2);
 				var4 = null;
 			}
 			if (var4 != null) {
@@ -1393,41 +1393,41 @@ public class Component {
 			return null;
 		} else {
 			Graphic var16 = new Graphic(var6, var7, var9, var8, var15, this.graphic);
-			field2176.put(var16, var2);
+			graphicCache.put(var16, var2);
 			return var16;
 		}
 	}
 
 	@ObfuscatedName("hf.ae(III)I")
 	public int getParam(int arg0, int arg1) {
-		if (this.field2333 == null) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.field2333.getNode((long) arg0);
+			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
 
 	@ObfuscatedName("hf.ag(ILjava/lang/String;I)Ljava/lang/String;")
 	public String getParam(int arg0, String arg1) {
-		if (this.field2333 == null) {
+		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.field2333.getNode((long) arg0);
+			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}
 
 	@ObfuscatedName("hf.ah(III)V")
 	public void method3952(int arg0, int arg1) {
-		if (this.field2333 == null) {
-			this.field2333 = new IterableMap(16);
-			this.field2333.pushNode(new IntWrapper(arg1), (long) arg0);
+		if (this.params == null) {
+			this.params = new IterableMap(16);
+			this.params.pushNode(new IntWrapper(arg1), (long) arg0);
 			return;
 		}
-		IntWrapper var3 = (IntWrapper) this.field2333.getNode((long) arg0);
+		IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
 		if (var3 == null) {
-			this.field2333.pushNode(new IntWrapper(arg1), (long) arg0);
+			this.params.pushNode(new IntWrapper(arg1), (long) arg0);
 		} else {
 			var3.value = arg1;
 		}
@@ -1435,22 +1435,22 @@ public class Component {
 
 	@ObfuscatedName("hf.al(ILjava/lang/String;I)V")
 	public void method4003(int arg0, String arg1) {
-		if (this.field2333 == null) {
-			this.field2333 = new IterableMap(16);
-			this.field2333.pushNode(new ObjectWrapper(arg1), (long) arg0);
+		if (this.params == null) {
+			this.params = new IterableMap(16);
+			this.params.pushNode(new ObjectWrapper(arg1), (long) arg0);
 			return;
 		}
-		ObjectWrapper var3 = (ObjectWrapper) this.field2333.getNode((long) arg0);
+		ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
 		if (var3 != null) {
 			var3.remove();
 		}
-		this.field2333.pushNode(new ObjectWrapper(arg1), (long) arg0);
+		this.params.pushNode(new ObjectWrapper(arg1), (long) arg0);
 	}
 
 	@ObfuscatedName("hf.ac(II)V")
 	public void method3954(int arg0) {
-		if (this.field2333 != null) {
-			Node var2 = this.field2333.getNode((long) arg0);
+		if (this.params != null) {
+			Node var2 = this.params.getNode((long) arg0);
 			if (var2 != null) {
 				var2.remove();
 			}
@@ -1458,7 +1458,7 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.ai(ISSI)V")
-	public void method3964(int arg0, short arg1, short arg2) {
+	public void setrecol(int arg0, short arg1, short arg2) {
 		if (arg0 >= 5) {
 			return;
 		}
@@ -1471,7 +1471,7 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.aw(ISSI)V")
-	public void method3993(int arg0, short arg1, short arg2) {
+	public void setretex(int arg0, short arg1, short arg2) {
 		if (arg0 >= 5) {
 			return;
 		}

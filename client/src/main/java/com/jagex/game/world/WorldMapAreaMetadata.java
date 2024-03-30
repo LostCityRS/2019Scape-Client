@@ -17,7 +17,7 @@ public class WorldMapAreaMetadata extends SecondaryNode {
 	public String field12351;
 
 	@ObfuscatedName("asy.z")
-	public String field12352;
+	public String mapName;
 
 	@ObfuscatedName("asy.p")
 	public IterableQueue field12353;
@@ -49,7 +49,7 @@ public class WorldMapAreaMetadata extends SecondaryNode {
 	public WorldMapAreaMetadata(int arg0, String arg1, String arg2, int arg3, int arg4, boolean arg5, int arg6, int arg7) {
 		this.id = arg0;
 		this.field12351 = arg1;
-		this.field12352 = arg2;
+		this.mapName = arg2;
 		this.configOrigin = arg3;
 		this.field12355 = arg4;
 		this.field12350 = arg5;

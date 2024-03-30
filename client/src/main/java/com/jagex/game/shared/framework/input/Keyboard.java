@@ -22,5 +22,5 @@ public abstract class Keyboard {
 	public abstract KeyboardEvent method9075();
 
 	@ObfuscatedName("ub.m(II)Z")
-	public abstract boolean method9080(int arg0);
+	public abstract boolean keyheld(int arg0);
 }

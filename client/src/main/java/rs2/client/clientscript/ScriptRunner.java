@@ -164,10 +164,10 @@ public final class ScriptRunner {
 	public static void method16465(Component[] arg0) {
 		for (int var1 = 0; var1 < arg0.length; var1++) {
 			Component var2 = arg0[var1];
-			if (var2.field2290 != null) {
+			if (var2.onload != null) {
 				HookRequest var3 = new HookRequest();
 				var3.field11491 = var2;
-				var3.field11493 = var2.field2290;
+				var3.field11493 = var2.onload;
 				method10370(var3, 5000000);
 			}
 		}
@@ -5374,8 +5374,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("kw.ba(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setposition(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.isp -= 4;
-		arg0.field2190 = arg2.intStack[arg2.isp];
-		arg0.field2191 = arg2.intStack[arg2.isp + 1];
+		arg0.xpos = arg2.intStack[arg2.isp];
+		arg0.ypos = arg2.intStack[arg2.isp + 1];
 		int var3 = arg2.intStack[arg2.isp + 2];
 		if (var3 < 0) {
 			var3 = 0;
@@ -5419,8 +5419,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("ge.bs(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setsize(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.isp -= 4;
-		arg0.field2192 = arg2.intStack[arg2.isp];
-		arg0.field2193 = arg2.intStack[arg2.isp + 1];
+		arg0.wsize = arg2.intStack[arg2.isp];
+		arg0.hsize = arg2.intStack[arg2.isp + 1];
 		arg0.field2227 = 0;
 		arg0.field2238 = 0;
 		int var3 = arg2.intStack[arg2.isp + 2];
@@ -5491,8 +5491,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("rz.cn(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setaspect(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.isp -= 2;
-		arg0.field2198 = arg2.intStack[arg2.isp];
-		arg0.field2199 = arg2.intStack[arg2.isp + 1];
+		arg0.aspectwidth = arg2.intStack[arg2.isp];
+		arg0.aspectheight = arg2.intStack[arg2.isp + 1];
 		Client.method4616(arg0);
 		Client.method2103(arg1, arg0);
 		if (arg0.type == 0) {
@@ -5518,7 +5518,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("z.ca(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setnoclickthrough(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2205 = arg2.intStack[--arg2.isp] == 1;
+		arg0.noclickthrough = arg2.intStack[--arg2.isp] == 1;
 	}
 
 	@ObfuscatedName("au.cx(Lyf;B)V")
@@ -5647,7 +5647,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("sv.ck(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_setlinewid(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2156 = arg2.intStack[--arg2.isp];
+		arg0.linewid = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
 	}
 
@@ -5801,7 +5801,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("yl.ds(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setmodelanim(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.intStack[--arg2.isp];
-		if (arg0.field2262 != var3) {
+		if (arg0.modelanim != var3) {
 			if (var3 == -1) {
 				arg0.field2170 = null;
 			} else {
@@ -5810,7 +5810,7 @@ public final class ScriptRunner {
 				}
 				arg0.field2170.method14362(var3);
 			}
-			arg0.field2262 = var3;
+			arg0.modelanim = var3;
 			Client.method4616(arg0);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
@@ -6018,7 +6018,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("yu.em(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_settextshadow(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2265 = arg2.intStack[--arg2.isp] == 1;
+		arg0.textshadow = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
 	}
 
@@ -6065,7 +6065,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("jq.et(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_setoutline(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2218 = arg2.intStack[--arg2.isp];
+		arg0.outline = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
 	}
 
@@ -6087,7 +6087,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("wq.er(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_setgraphicshadow(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2219 = arg2.intStack[--arg2.isp];
+		arg0.graphicshadow = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
 	}
 
@@ -6109,7 +6109,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("uf.ex(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setvflip(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2220 = arg2.intStack[--arg2.isp] == 1;
+		arg0.vflip = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
 	}
 
@@ -6131,7 +6131,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("dh.fu(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_sethflip(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2213 = arg2.intStack[--arg2.isp] == 1;
+		arg0.hflip = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
 	}
 
@@ -6180,7 +6180,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("rm.fi(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_setalpha(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2222 = arg2.intStack[--arg2.isp] == 1;
+		arg0.alpha = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
 	}
 
@@ -6228,7 +6228,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("nz.fa(Lhf;Lhq;Lyf;S)V")
 	public static final void cc_if_setlinedirection(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.intStack[--arg2.isp];
-		arg0.field2214 = var3 == 1;
+		arg0.linedirection = var3 == 1;
 		Client.method4616(arg0);
 	}
 
@@ -6251,8 +6251,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("il.ff(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setmodelorigin(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.isp -= 2;
-		arg0.field2305 = arg2.intStack[arg2.isp];
-		arg0.field2209 = arg2.intStack[arg2.isp + 1];
+		arg0.modelorigin_x = arg2.intStack[arg2.isp];
+		arg0.modelorigin_y = arg2.intStack[arg2.isp + 1];
 		Client.method4616(arg0);
 	}
 
@@ -6274,7 +6274,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("d.fo(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_setmaxlines(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2236 = arg2.intStack[--arg2.isp];
+		arg0.maxlines = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
 	}
 
@@ -6360,7 +6360,7 @@ public final class ScriptRunner {
 		if (var3 < 0 || var3 >= 5) {
 			return;
 		}
-		arg0.method3964(var3, var4, var5);
+		arg0.setrecol(var3, var4, var5);
 		Client.method4616(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
 			DelayedStateChange.method14614(arg0.parentlayer, var3);
@@ -6392,7 +6392,7 @@ public final class ScriptRunner {
 		if (var3 < 0 || var3 >= 5) {
 			return;
 		}
-		arg0.method3993(var3, var4, var5);
+		arg0.setretex(var3, var4, var5);
 		Client.method4616(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
 			DelayedStateChange.method2051(arg0.parentlayer, var3);
@@ -6417,7 +6417,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("v.gc(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_setfontmono(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2275 = arg2.intStack[--arg2.isp] == 1;
+		arg0.fontmono = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
 			DelayedStateChange.method18682(arg0.parentlayer);
@@ -6457,7 +6457,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("abv.gg(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setclickmask(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2253 = arg2.intStack[--arg2.isp] == 1;
+		arg0.clickmask = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
 			DelayedStateChange.method3026(arg0.parentlayer);
@@ -6482,7 +6482,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("jp.gt(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setheld(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2360 = arg2.intStack[--arg2.isp] == 1;
+		arg0.held = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
 	}
 
@@ -6583,8 +6583,8 @@ public final class ScriptRunner {
 		arg0.field2241 = arg3;
 		if (arg0.field2227 > 0) {
 			arg0.modelzoom = arg0.modelzoom * 32 / arg0.field2227;
-		} else if (arg0.field2192 > 0) {
-			arg0.modelzoom = arg0.modelzoom * 32 / arg0.field2192;
+		} else if (arg0.wsize > 0) {
+			arg0.modelzoom = arg0.modelzoom * 32 / arg0.wsize;
 		}
 	}
 
@@ -6885,7 +6885,7 @@ public final class ScriptRunner {
 	public static final void cc_if_setop(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.intStack[--arg2.isp] - 1;
 		if (var3 >= 0 && var3 <= 9) {
-			arg0.method3947(var3, (String) arg2.objectStack[--arg2.osp]);
+			arg0.setop(var3, (String) arg2.objectStack[--arg2.osp]);
 		} else {
 			arg2.osp--;
 		}
@@ -6939,7 +6939,7 @@ public final class ScriptRunner {
 	public static final void cc_if_setdragrenderbehaviour(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.intStack[--arg2.isp];
 		if (Component.field2234 == var3 || Component.field2301 == var3 || Component.field2157 == var3 || Component.field2266 == var3) {
-			arg0.field2271 = var3;
+			arg0.dragrenderbehaviour = var3;
 		}
 	}
 
@@ -6961,7 +6961,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("vm.ia(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setdragdeadzone(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2285 = arg2.intStack[--arg2.isp];
+		arg0.dragdeadzone = arg2.intStack[--arg2.isp];
 	}
 
 	@ObfuscatedName("ud.if(Lyf;B)V")
@@ -6982,7 +6982,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("db.iy(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setdragdeadtime(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2286 = arg2.intStack[--arg2.isp];
+		arg0.dragdeadtime = arg2.intStack[--arg2.isp];
 	}
 
 	@ObfuscatedName("ii.ii(Lyf;B)V")
@@ -7123,7 +7123,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("hz.jg(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setopbase(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2279 = (String) arg2.objectStack[--arg2.osp];
+		arg0.opbase = (String) arg2.objectStack[--arg2.osp];
 	}
 
 	@ObfuscatedName("ie.jx(Lyf;I)V")
@@ -7144,7 +7144,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ahd.jp(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_settargetverb(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2288 = (String) arg2.objectStack[--arg2.osp];
+		arg0.targetverb = (String) arg2.objectStack[--arg2.osp];
 	}
 
 	@ObfuscatedName("abr.jk(Lyf;I)V")
@@ -7211,7 +7211,7 @@ public final class ScriptRunner {
 		int var3 = arg2.intStack[--arg2.isp];
 		int var4 = arg2.intStack[--arg2.isp];
 		if (var4 >= 1 && var4 <= 10) {
-			arg0.method3948(var4 - 1, var3);
+			arg0.setopcursor(var4 - 1, var3);
 		}
 	}
 
@@ -7233,7 +7233,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("aba.ks(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_setpausetext(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2180 = (String) arg2.objectStack[--arg2.osp];
+		arg0.pausetext = (String) arg2.objectStack[--arg2.osp];
 	}
 
 	@ObfuscatedName("ke.kh(Lyf;I)V")
@@ -7254,7 +7254,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("abh.kl(Lhf;Lhq;Lyf;S)V")
 	public static final void cc_if_settargetopcursor(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2283 = arg2.intStack[--arg2.isp];
+		arg0.targetopcursor = arg2.intStack[--arg2.isp];
 	}
 
 	@ObfuscatedName("agu.kb(Lyf;I)V")
@@ -7551,7 +7551,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("xz.lx(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setmouseovercursor(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2204 = arg2.intStack[--arg2.isp];
+		arg0.mouseovercursor = arg2.intStack[--arg2.isp];
 	}
 
 	@ObfuscatedName("uw.lj(Lyf;I)V")
@@ -7572,7 +7572,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("el.lz(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_clearscripthooks(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.method3976();
+		arg0.clearscripthooks();
 	}
 
 	@ObfuscatedName("aga.ln(Lyf;B)V")
@@ -7633,8 +7633,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2291 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onclick = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("ek.mh(Lyf;I)V")
@@ -7659,8 +7659,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2244 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onhold = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("dm.me(Lyf;B)V")
@@ -7685,8 +7685,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2293 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onrelease = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("ux.my(Lyf;I)V")
@@ -7711,8 +7711,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2233 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onmouseover = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("dd.mq(Lyf;B)V")
@@ -7737,8 +7737,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2280 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onmouseleave = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("fa.mo(Lyf;S)V")
@@ -7763,8 +7763,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2362 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.ondrag = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("ht.mr(Lyf;B)V")
@@ -7789,8 +7789,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2299 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.ontargetleave = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("sn.mu(Lyf;I)V")
@@ -7816,9 +7816,9 @@ public final class ScriptRunner {
 		if (var4 != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2322 = method552(var3, arg2);
-		arg0.field2303 = var4;
-		arg0.field2179 = true;
+		arg0.onvartransmit = method552(var3, arg2);
+		arg0.onvartransmitlist = var4;
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("gw.ma(Lyf;I)V")
@@ -7843,8 +7843,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2314 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.ontimer = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("ea.mm(Lyf;B)V")
@@ -7869,8 +7869,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2315 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onop = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("tr.ny(Lyf;B)V")
@@ -7895,8 +7895,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2178 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.ondragcomplete = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("ty.no(Lyf;I)V")
@@ -7971,8 +7971,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2178 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.ondragcomplete = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("vb.nt(Lyf;B)V")
@@ -8080,8 +8080,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2292 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onclickrepeat = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("agd.oo(Lyf;I)V")
@@ -8106,8 +8106,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2296 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onmouserepeat = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("hs.oi(Lyf;S)V")
@@ -8133,9 +8133,9 @@ public final class ScriptRunner {
 		if (var4 != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2304 = method552(var3, arg2);
-		arg0.field2247 = var4;
-		arg0.field2179 = true;
+		arg0.oninvtransmit = method552(var3, arg2);
+		arg0.oninvtransmitlist = var4;
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("aco.oa(Lyf;B)V")
@@ -8161,9 +8161,9 @@ public final class ScriptRunner {
 		if (var4 != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2306 = method552(var3, arg2);
-		arg0.field2307 = var4;
-		arg0.field2179 = true;
+		arg0.onstattransmit = method552(var3, arg2);
+		arg0.onstattransmitlist = var4;
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("ch.op(Lyf;B)V")
@@ -8188,8 +8188,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2249 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.ontargetenter = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("rm.oy(Lyf;I)V")
@@ -8214,8 +8214,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2317 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onscrollwheel = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("kv.os(Lyf;I)V")
@@ -8240,8 +8240,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2318 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onchattransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("qu.ok(Lyf;I)V")
@@ -8266,8 +8266,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2295 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onkey = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("vh.ov(Lyf;I)V")
@@ -8365,8 +8365,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2320 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onfriendtransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("ss.pa(Lyf;B)V")
@@ -8391,8 +8391,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2355 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onclantransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("r.pn(Lyf;I)V")
@@ -8417,8 +8417,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2347 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onmisctransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("vn.pl(Lyf;I)V")
@@ -8443,8 +8443,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2326 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.ondialogabort = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("kn.py(Lyf;I)V")
@@ -8469,8 +8469,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2327 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onsubchange = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("ir.pj(Lyf;S)V")
@@ -8495,8 +8495,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2325 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onstocktransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("dn.pu(Lyf;I)V")
@@ -8521,8 +8521,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2328 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.oncamfinished = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("a.qx(Lyf;B)V")
@@ -8547,8 +8547,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2329 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onresize = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("ny.qg(Lyf;I)V")
@@ -8574,9 +8574,9 @@ public final class ScriptRunner {
 		if (var4 != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2308 = method552(var3, arg2);
-		arg0.field2309 = var4;
-		arg0.field2179 = true;
+		arg0.onvarctransmit = method552(var3, arg2);
+		arg0.onvarctransmitlist = var4;
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("pn.qj(Lyf;B)V")
@@ -8602,9 +8602,9 @@ public final class ScriptRunner {
 		if (var4 != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2310 = method552(var3, arg2);
-		arg0.field2311 = var4;
-		arg0.field2179 = true;
+		arg0.onvarcstrtransmit = method552(var3, arg2);
+		arg0.onvarcstrtransmitlist = var4;
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("l.qd(Lyf;I)V")
@@ -8629,8 +8629,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2225 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onopt = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("tu.qw(Lyf;I)V")
@@ -8655,8 +8655,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2232 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onclansettingstransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("acd.qq(Lyf;I)V")
@@ -8681,8 +8681,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2323 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onclanchanneltransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("vj.qs(Lyf;B)V")
@@ -8707,8 +8707,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2312 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onvarclantransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("fg.qv(Lyf;B)V")
@@ -8733,8 +8733,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2330 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onplayergrouptransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("aej.qb(Lyf;B)V")
@@ -8759,8 +8759,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2359 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.onplayergroupvarptransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("v.rv(Lyf;B)V")
@@ -8785,8 +8785,8 @@ public final class ScriptRunner {
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
 		}
-		arg0.field2332 = method552(var3, arg2);
-		arg0.field2179 = true;
+		arg0.oncameraupdatetransmit = method552(var3, arg2);
+		arg0.hashook = true;
 	}
 
 	@ObfuscatedName("kh.rx(Lyf;I)V")
@@ -9059,10 +9059,10 @@ public final class ScriptRunner {
 	public static final void cc_getopbase(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		if (var2.field2279 == null) {
+		if (var2.opbase == null) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 		} else {
-			arg0.objectStack[++arg0.osp - 1] = var2.field2279;
+			arg0.objectStack[++arg0.osp - 1] = var2.opbase;
 		}
 	}
 
@@ -9070,10 +9070,10 @@ public final class ScriptRunner {
 	public static final void cc_if_callonresize(Component arg0, ClientScriptState arg1) {
 		if (arg1.field8229 >= 10) {
 			throw new RuntimeException();
-		} else if (arg0.field2329 != null) {
+		} else if (arg0.onresize != null) {
 			HookRequest var2 = new HookRequest();
 			var2.field11491 = arg0;
-			var2.field11493 = arg0.field2329;
+			var2.field11493 = arg0.onresize;
 			var2.field11499 = arg1.field8229 + 1;
 			Client.field11031.pushBack(var2);
 		}
@@ -9621,10 +9621,10 @@ public final class ScriptRunner {
 	public static final void if_getopbase(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		if (var2.field2279 == null) {
+		if (var2.opbase == null) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 		} else {
-			arg0.objectStack[++arg0.osp - 1] = var2.field2279;
+			arg0.objectStack[++arg0.osp - 1] = var2.opbase;
 		}
 	}
 
@@ -12076,21 +12076,21 @@ public final class ScriptRunner {
 	public static final void oc_find(ClientScriptState arg0) {
 		String var1 = (String) arg0.objectStack[--arg0.osp];
 		int var2 = arg0.intStack[--arg0.isp];
-		arg0.intStack[++arg0.isp - 1] = Client.method4628(var1, var2 == 1);
+		arg0.intStack[++arg0.isp - 1] = Client.findObjs(var1, var2 == 1);
 	}
 
 	@ObfuscatedName("zl.agy(Lyf;I)V")
 	public static final void oc_findnext(ClientScriptState arg0) {
-		if (Client.field8054 == null || Client.field8728 >= Client.field8054.length) {
+		if (Client.objFindResults == null || Client.objFindResultsIndex >= Client.objFindResults.length) {
 			arg0.intStack[++arg0.isp - 1] = -1;
 		} else {
-			arg0.intStack[++arg0.isp - 1] = Client.field8054[++Client.field8728 - 1] & 0xFFFF;
+			arg0.intStack[++arg0.isp - 1] = Client.objFindResults[++Client.objFindResultsIndex - 1] & 0xFFFF;
 		}
 	}
 
 	@ObfuscatedName("ajd.ahm(Lyf;B)V")
 	public static final void oc_findrestart(ClientScriptState arg0) {
-		Client.field8728 = 0;
+		Client.objFindResultsIndex = 0;
 	}
 
 	@ObfuscatedName("abq.ahc(Lyf;I)V")
@@ -12108,9 +12108,9 @@ public final class ScriptRunner {
 		if (var2.minimenu_colour_overridden) {
 			var3 = var2.minimenu_colour;
 		} else if (var2.members) {
-			var3 = MiniMenu.field1971.field7665;
+			var3 = MiniMenu.field1971.members_colour;
 		} else {
-			var3 = MiniMenu.field1971.field7661;
+			var3 = MiniMenu.field1971.free_colour;
 		}
 		arg0.intStack[++arg0.isp - 1] = var3;
 	}
@@ -12340,7 +12340,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("vo.ahp(Lyf;B)V")
 	public static final void chat_clear(ClientScriptState arg0) {
-		ChatHistory.method329();
+		ChatHistory.clear();
 	}
 
 	@ObfuscatedName("xo.ahe(Lyf;S)V")
@@ -12514,7 +12514,7 @@ public final class ScriptRunner {
 		if (Client.localPlayerEntity == null || Client.localPlayerEntity.name == null) {
 			var1 = "";
 		} else {
-			var1 = Client.localPlayerEntity.method19115(true);
+			var1 = Client.localPlayerEntity.getNameWithExtras(true);
 		}
 		arg0.objectStack[++arg0.osp - 1] = var1;
 	}
@@ -12751,26 +12751,26 @@ public final class ScriptRunner {
 	public static final void chatphrase_find(ClientScriptState arg0) {
 		String var1 = (String) arg0.objectStack[--arg0.osp];
 		boolean var2 = arg0.intStack[--arg0.isp] == 1;
-		arg0.intStack[++arg0.isp - 1] = Client.method4296(var1, var2);
+		arg0.intStack[++arg0.isp - 1] = Client.findChatPhrases(var1, var2);
 	}
 
 	@ObfuscatedName("yr.aja(Lyf;I)V")
 	public static final void chatphrase_findnext(ClientScriptState arg0) {
-		if (Client.field10750 == null || Client.field7272 >= Client.field10750.length) {
+		if (Client.chatPhraseFindResults == null || Client.chatPhraseFindResultsIndex >= Client.chatPhraseFindResults.length) {
 			arg0.intStack[++arg0.isp - 1] = -1;
 		} else {
-			arg0.intStack[++arg0.isp - 1] = Client.field10750[++Client.field7272 - 1] & 0xFFFF;
+			arg0.intStack[++arg0.isp - 1] = Client.chatPhraseFindResults[++Client.chatPhraseFindResultsIndex - 1] & 0xFFFF;
 		}
 	}
 
 	@ObfuscatedName("hr.ajp(Lyf;B)V")
 	public static final void chatphrase_findrestart(ClientScriptState arg0) {
-		Client.field7272 = 0;
+		Client.chatPhraseFindResultsIndex = 0;
 	}
 
 	@ObfuscatedName("aos.ajy(Lyf;I)V")
 	public static final void keyheld_alt(ClientScriptState arg0) {
-		if (Client.keyboard.method9080(86)) {
+		if (Client.keyboard.keyheld(86)) {
 			arg0.intStack[++arg0.isp - 1] = 1;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 0;
@@ -12779,7 +12779,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("er.ajs(Lyf;B)V")
 	public static final void keyheld_ctrl(ClientScriptState arg0) {
-		if (Client.keyboard.method9080(82)) {
+		if (Client.keyboard.keyheld(82)) {
 			arg0.intStack[++arg0.isp - 1] = 1;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 0;
@@ -12788,7 +12788,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("amt.ajv(Lyf;B)V")
 	public static final void keyheld_shift(ClientScriptState arg0) {
-		if (Client.keyboard.method9080(81)) {
+		if (Client.keyboard.keyheld(81)) {
 			arg0.intStack[++arg0.isp - 1] = 1;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 0;
@@ -12901,10 +12901,10 @@ public final class ScriptRunner {
 	@ObfuscatedName("je.ajl(Lyf;I)V")
 	public static final void worldmap_getmapname(ClientScriptState arg0) {
 		WorldMapAreaMetadata var1 = WorldMap.getMapByName(arg0.intStack[--arg0.isp]);
-		if (var1 == null || var1.field12352 == null) {
+		if (var1 == null || var1.mapName == null) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 		} else {
-			arg0.objectStack[++arg0.osp - 1] = var1.field12352;
+			arg0.objectStack[++arg0.osp - 1] = var1.mapName;
 		}
 	}
 
@@ -13390,7 +13390,7 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		if (var1 >= 0 && var1 < 2) {
-			Client.field10981[var1] = new int[var2 << 1][4];
+			Client.cutsceneSpline[var1] = new int[var2 << 1][4];
 		}
 	}
 
@@ -13404,15 +13404,15 @@ public final class ScriptRunner {
 		int var5 = arg0.intStack[arg0.isp + 4];
 		int var6 = arg0.intStack[arg0.isp + 5];
 		int var7 = arg0.intStack[arg0.isp + 6];
-		if (var1 >= 0 && var1 < 2 && Client.field10981[var1] != null && var2 >= 0 && var2 < Client.field10981[var1].length) {
-			Client.field10981[var1][var2] = new int[] { (var3 >> 14 & 0x3FFF) << 9, var4 << 2, (var3 & 0x3FFF) << 9, var7 };
-			Client.field10981[var1][var2 + 1] = new int[] { (var5 >> 14 & 0x3FFF) << 9, var6 << 2, (var5 & 0x3FFF) << 9 };
+		if (var1 >= 0 && var1 < 2 && Client.cutsceneSpline[var1] != null && var2 >= 0 && var2 < Client.cutsceneSpline[var1].length) {
+			Client.cutsceneSpline[var1][var2] = new int[] { (var3 >> 14 & 0x3FFF) << 9, var4 << 2, (var3 & 0x3FFF) << 9, var7 };
+			Client.cutsceneSpline[var1][var2 + 1] = new int[] { (var5 >> 14 & 0x3FFF) << 9, var6 << 2, (var5 & 0x3FFF) << 9 };
 		}
 	}
 
 	@ObfuscatedName("ff.alp(Lyf;I)V")
 	public static final void spline_length(ClientScriptState arg0) {
-		int var1 = Client.field10981[arg0.intStack[--arg0.isp]].length >> 1;
+		int var1 = Client.cutsceneSpline[arg0.intStack[--arg0.isp]].length >> 1;
 		arg0.intStack[++arg0.isp - 1] = var1;
 	}
 
@@ -13632,7 +13632,7 @@ public final class ScriptRunner {
 		}
 		Client.field10904 = var1;
 		int var2 = arg0.intStack[arg0.isp + 1];
-		if (var2 + 1 >= Client.field10981[Client.field10904].length >> 1) {
+		if (var2 + 1 >= Client.cutsceneSpline[Client.field10904].length >> 1) {
 			throw new RuntimeException();
 		}
 		Client.field10909 = var2 * 2;
@@ -13645,7 +13645,7 @@ public final class ScriptRunner {
 		}
 		Client.field10908 = var3;
 		int var4 = arg0.intStack[arg0.isp + 5];
-		if (var4 + 1 >= Client.field10981[Client.field10908].length >> 1) {
+		if (var4 + 1 >= Client.cutsceneSpline[Client.field10908].length >> 1) {
 			throw new RuntimeException();
 		}
 		Client.field10932 = var4 * 4;
@@ -16476,7 +16476,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("abx.bbf(Lyf;B)V")
 	public static final void get_displayname_withextras(ClientScriptState arg0) {
-		arg0.objectStack[++arg0.osp - 1] = ((PlayerEntity) arg0.activeEntity).method19115(true);
+		arg0.objectStack[++arg0.osp - 1] = ((PlayerEntity) arg0.activeEntity).getNameWithExtras(true);
 	}
 
 	@ObfuscatedName("d.bbn(Lyf;B)V")
