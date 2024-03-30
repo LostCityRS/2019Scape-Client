@@ -624,7 +624,7 @@ public class Minimap {
 				if (var9.method19160() && Client.localPlayerEntity.level == var9.level) {
 					NPCType var10 = var9.npcType;
 					if (var10 != null && var10.multinpc != null) {
-						var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+						var10 = var10.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 					}
 					if (var10 != null && var10.minimap && var10.active) {
 						Vector3 var11 = var9.getTransform().trans;

@@ -16485,7 +16485,7 @@ public final class ScriptRunner {
 		String var2 = var1.field12082;
 		NPCType var3 = var1.npcType;
 		if (var3.multinpc != null) {
-			NPCType var4 = var3.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+			NPCType var4 = var3.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var4 == null) {
 				var2 = "";
 			} else {
@@ -16546,7 +16546,7 @@ public final class ScriptRunner {
 		boolean var2 = false;
 		NPCType var3 = var1.npcType;
 		if (var3.multinpc != null) {
-			var3 = var3.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+			var3 = var3.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 		}
 		if (var3 != null) {
 			var2 = var3.active;
@@ -16559,7 +16559,7 @@ public final class ScriptRunner {
 		NpcEntity var1 = (NpcEntity) arg0.activeEntity;
 		NPCType var2 = var1.npcType;
 		if (var2.multinpc != null) {
-			var2 = var2.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+			var2 = var2.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 		}
 		arg0.intStack[++arg0.isp - 1] = var2 == null ? 0 : 1;
 	}

@@ -7107,7 +7107,7 @@ public final class Client extends GameShell {
 				if (var11.field1743 >= 0) {
 					var10 = ((NpcEntity) var12).npcType;
 					if (var10.multinpc != null) {
-						var10 = var10.getVisible(localPlayerGameState, localPlayerGameState);
+						var10 = var10.getMultiNPC(localPlayerGameState, localPlayerGameState);
 						if (var10 == null) {
 							continue;
 						}
@@ -7120,7 +7120,7 @@ public final class Client extends GameShell {
 					var12 = (PathingEntity) ((ObjectWrapper) npcs.getNode((long) field11036[var9 - var6])).value;
 					var10 = ((NpcEntity) var12).npcType;
 					if (var10.multinpc != null) {
-						var10 = var10.getVisible(localPlayerGameState, localPlayerGameState);
+						var10 = var10.getMultiNPC(localPlayerGameState, localPlayerGameState);
 						if (var10 == null) {
 							continue;
 						}

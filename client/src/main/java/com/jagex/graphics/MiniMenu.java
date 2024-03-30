@@ -1458,7 +1458,7 @@ public class MiniMenu {
 				NpcEntity var3 = (NpcEntity) var2.value;
 				NPCType var4 = var3.npcType;
 				if (var4.multinpc != null) {
-					var4 = var4.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+					var4 = var4.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var4 != null) {
 					var1 = var4.quests;
@@ -1790,7 +1790,7 @@ public class MiniMenu {
 		NPCType var2 = arg0.npcType;
 		String var3 = arg0.field12082;
 		if (var2.multinpc != null) {
-			var2 = var2.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+			var2 = var2.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var2 == null) {
 				return;
 			}

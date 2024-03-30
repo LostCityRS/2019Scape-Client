@@ -179,7 +179,7 @@ public class PositionedSound extends Node {
 				this.sound = var3;
 				NPCType var4 = this.npc.npcType;
 				if (var4.multinpc != null) {
-					var4 = var4.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+					var4 = var4.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var4 == null) {
 					this.size = 0;
@@ -250,7 +250,7 @@ public class PositionedSound extends Node {
 			NPCType npcType = npc.npcType;
 			if (npcType.multinpc != null) {
 				sound.multisound = true;
-				npcType = npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+				npcType = npcType.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 			}
 			if (npcType != null) {
 				sound.maxX = npcType.size + x << 9;
@@ -343,7 +343,7 @@ public class PositionedSound extends Node {
 	public static int getNpcSound(NpcEntity npc) {
 		NPCType npcType = npc.npcType;
 		if (npcType.multinpc != null) {
-			npcType = npcType.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+			npcType = npcType.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (npcType == null) {
 				return -1;
 			}
@@ -396,7 +396,7 @@ public class PositionedSound extends Node {
 				int var9 = getNpcSound(var5.npc);
 				NPCType var10 = var5.npc.npcType;
 				if (var10.multinpc != null) {
-					var10 = var10.getVisible(Client.localPlayerGameState, Client.localPlayerGameState);
+					var10 = var10.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var10 == null || var9 == -1) {
 					var5.sound = -1;
