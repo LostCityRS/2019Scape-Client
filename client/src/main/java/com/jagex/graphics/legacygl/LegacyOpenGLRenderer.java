@@ -2588,12 +2588,12 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.ar(II)Ldw;")
 	public EffectInterface method2121(int arg0, int arg1) {
-		return new PostProcessingRelated(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1);
+		return new PostProcessingRelated(this, TextureFormat.DEPTH, DataType.UNSIGNED_INT_24, arg0, arg1);
 	}
 
 	@ObfuscatedName("afa.ap(III)Ldw;")
 	public EffectInterface method2356(int arg0, int arg1, int arg2) {
-		return new PostProcessingRelated(this, TextureFormat.field1268, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
+		return new PostProcessingRelated(this, TextureFormat.DEPTH, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("afa.au(IILck;Ldg;I)Ldp;")
@@ -3287,7 +3287,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 
 	@ObfuscatedName("afa.uy(Lck;)I")
 	public static int method15899(TextureFormat arg0) {
-		switch(arg0.field1278) {
+		switch(arg0.index) {
 			case 0:
 				return 6402;
 			case 1:
@@ -3310,7 +3310,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 	@ObfuscatedName("afa.uv(Lck;Ldg;)I")
 	public static int method15799(TextureFormat arg0, DataType arg1) {
 		if (DataType.UNSIGNED_INT_8 == arg1) {
-			switch(arg0.field1278) {
+			switch(arg0.index) {
 				case 2:
 					return 6407;
 				case 3:
@@ -3326,7 +3326,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 					return 6409;
 			}
 		} else if (DataType.UNSIGNED_INT_16 == arg1) {
-			switch(arg0.field1278) {
+			switch(arg0.index) {
 				case 0:
 					return 33189;
 				case 1:
@@ -3345,14 +3345,14 @@ public class LegacyOpenGLRenderer extends Renderer {
 					return 32834;
 			}
 		} else if (DataType.UNSIGNED_INT_24 == arg1) {
-			switch(arg0.field1278) {
+			switch(arg0.index) {
 				case 0:
 					return 33190;
 				default:
 					throw new IllegalArgumentException();
 			}
 		} else if (DataType.FLOAT_16 == arg1) {
-			switch(arg0.field1278) {
+			switch(arg0.index) {
 				case 2:
 					return 34843;
 				case 3:
@@ -3368,7 +3368,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 					return 34846;
 			}
 		} else if (DataType.FLOAT_32 == arg1) {
-			switch(arg0.field1278) {
+			switch(arg0.index) {
 				case 2:
 					return 34837;
 				case 3:

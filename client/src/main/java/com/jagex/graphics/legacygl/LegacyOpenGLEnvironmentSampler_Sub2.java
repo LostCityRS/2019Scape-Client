@@ -47,7 +47,7 @@ public class LegacyOpenGLEnvironmentSampler_Sub2 extends LegacyOpenGLEnvironment
 				field11948[var5] = new int[var4];
 				System.arraycopy(var3, var4 * var5, field11948[var5], 0, var4);
 			}
-			this.field11947 = new LegacyOpenGLCubeTexture(this.field11946, TextureFormat.field1271, DataType.UNSIGNED_INT_8, var2.size, var2.field1332 != 0, field11948);
+			this.field11947 = new LegacyOpenGLCubeTexture(this.field11946, TextureFormat.RGB, DataType.UNSIGNED_INT_8, var2.size, var2.field1332 != 0, field11948);
 		}
 		return this.field11947;
 	}

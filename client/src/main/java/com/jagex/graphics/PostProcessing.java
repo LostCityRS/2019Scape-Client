@@ -151,12 +151,12 @@ public class PostProcessing {
 		}
 		if (this.field1172) {
 			if (this.field1163 != null) {
-				this.field1178 = new PostProcessingRelated(this.field1169, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167, this.field1169.field9967);
+				this.field1178 = new PostProcessingRelated(this.field1169, TextureFormat.DEPTH, DataType.UNSIGNED_INT_24, this.field1177, this.field1167, this.field1169.field9967);
 			}
 			if (this.field1179) {
-				this.field1161 = new LegacyOpenGLRelated(this.field1169, 34037, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
+				this.field1161 = new LegacyOpenGLRelated(this.field1169, 34037, TextureFormat.DEPTH, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
 			} else if (this.field1178 == null) {
-				this.field1178 = new PostProcessingRelated(this.field1169, TextureFormat.field1268, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
+				this.field1178 = new PostProcessingRelated(this.field1169, TextureFormat.DEPTH, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
 			}
 			this.field1172 = false;
 			this.field1173 = true;

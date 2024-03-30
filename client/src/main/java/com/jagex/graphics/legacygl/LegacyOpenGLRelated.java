@@ -28,7 +28,7 @@ public class LegacyOpenGLRelated extends LegacyOpenGLTexture {
 	}
 
 	public LegacyOpenGLRelated(LegacyOpenGLRenderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		super(arg0, arg1, TextureFormat.field1271, DataType.UNSIGNED_INT_8, arg4 * arg5, false);
+		super(arg0, arg1, TextureFormat.RGB, DataType.UNSIGNED_INT_8, arg4 * arg5, false);
 		this.field9272 = arg4;
 		this.field9271 = arg5;
 		this.field1006.method15777(this);

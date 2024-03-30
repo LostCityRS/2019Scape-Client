@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class TextureFormat {
 
 	@ObfuscatedName("ck.e")
-	public static final TextureFormat field1271 = new TextureFormat(2, 3);
+	public static final TextureFormat RGB = new TextureFormat(2, 3);
 
 	@ObfuscatedName("ck.n")
 	public static final TextureFormat RGBA = new TextureFormat(4, 4);
@@ -15,13 +15,13 @@ public class TextureFormat {
 	public static final TextureFormat ALPHA = new TextureFormat(6, 1);
 
 	@ObfuscatedName("ck.k")
-	public static final TextureFormat field1275 = new TextureFormat(7, 1);
+	public static final TextureFormat LUMINANCE = new TextureFormat(7, 1);
 
 	@ObfuscatedName("ck.f")
-	public static final TextureFormat field1272 = new TextureFormat(3, 2);
+	public static final TextureFormat ALPHA_LUMINANCE = new TextureFormat(3, 2);
 
 	@ObfuscatedName("ck.w")
-	public static final TextureFormat field1268 = new TextureFormat(0, 1);
+	public static final TextureFormat DEPTH = new TextureFormat(0, 1);
 
 	@ObfuscatedName("ck.l")
 	public static final TextureFormat field1274 = new TextureFormat(9, 3);
@@ -36,13 +36,13 @@ public class TextureFormat {
 	public static final TextureFormat COMPRESSED_RGBA_S3TC_DXT5 = new TextureFormat(8, 1);
 
 	@ObfuscatedName("ck.d")
-	public final int field1278;
+	public final int index;
 
 	@ObfuscatedName("ck.c")
 	public final int id;
 
-	public TextureFormat(int arg0, int arg1) {
-		this.field1278 = arg0;
-		this.id = arg1;
+	public TextureFormat(int index, int id) {
+		this.index = index;
+		this.id = id;
 	}
 }

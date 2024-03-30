@@ -57,26 +57,26 @@ public class WaterRelated {
 		if (this.field3229 && !this.field3223.field10116) {
 			this.field3229 = false;
 		}
-		if (this.field3229 && !this.field3223.method16289(TextureFormat.field1272, DataType.UNSIGNED_INT_8)) {
+		if (this.field3229 && !this.field3223.method16289(TextureFormat.ALPHA_LUMINANCE, DataType.UNSIGNED_INT_8)) {
 			this.field3229 = false;
 		}
-		if (this.field3229 || this.field3223.method16026(TextureFormat.field1272, DataType.UNSIGNED_INT_8)) {
+		if (this.field3229 || this.field3223.method16026(TextureFormat.ALPHA_LUMINANCE, DataType.UNSIGNED_INT_8)) {
 			method5410();
 			if (this.field3229) {
 				byte[] var6 = ByteArrayCopier.method4540(field3230, false);
-				this.field3226 = this.field3223.method16197(TextureFormat.field1272, 128, 128, 16, true, var6);
+				this.field3226 = this.field3223.method16197(TextureFormat.ALPHA_LUMINANCE, 128, 128, 16, true, var6);
 				byte[] var7 = ByteArrayCopier.method4540(field3231, false);
-				this.field3228 = this.field3223.method16197(TextureFormat.field1272, 128, 128, 16, true, var7);
+				this.field3228 = this.field3223.method16197(TextureFormat.ALPHA_LUMINANCE, 128, 128, 16, true, var7);
 			} else {
 				this.field3232 = new GpuTexture[16];
 				for (int var2 = 0; var2 < 16; var2++) {
 					byte[] var3 = ByteArrayCopier.method6024(field3230, var2 * 32768, 32768);
-					this.field3232[var2] = this.field3223.method16028(TextureFormat.field1272, 128, 128, true, var3);
+					this.field3232[var2] = this.field3223.method16028(TextureFormat.ALPHA_LUMINANCE, 128, 128, true, var3);
 				}
 				this.field3227 = new GpuTexture[16];
 				for (int var4 = 0; var4 < 16; var4++) {
 					byte[] var5 = ByteArrayCopier.method6024(field3231, var4 * 32768, 32768);
-					this.field3227[var4] = this.field3223.method16028(TextureFormat.field1272, 128, 128, true, var5);
+					this.field3227[var4] = this.field3223.method16028(TextureFormat.ALPHA_LUMINANCE, 128, 128, true, var5);
 				}
 			}
 		}

@@ -1239,13 +1239,13 @@ public class Direct3DRenderer extends GpuRenderer {
 				}
 				break;
 			case 7:
-				switch(textureFormat.field1278) {
+				switch(textureFormat.index) {
 					case 0:
-						return 77;
+						return D3DFORMAT.D3DFMT_D24X8;
 					case 1:
 						return D3DFORMAT.D3DFMT_DXT1;
 					case 2:
-						return D3DFORMAT.D3DFMT_D24X8;
+						return D3DFORMAT.D3DFMT_X8R8G8B8;
 					case 3:
 						return D3DFORMAT.D3DFMT_A8L8;
 					case 4:
