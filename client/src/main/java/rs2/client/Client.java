@@ -2163,7 +2163,7 @@ public final class Client extends GameShell {
 		}
 		cam2 = new BasicCamera(cameraProvider);
 		try {
-			cam2.setControlMode(CameraControlMode.SERVER);
+			cam2.setControlMode(CameraControlMode.CLIENT);
 			cam2.setPositionMode(PositionMode.POINT, false);
 			cam2.setLookatMode(LookatMode.POINT, false);
 			cam2.setPositionMode(PositionMode.POINT, false);

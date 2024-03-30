@@ -34,7 +34,7 @@ public class CameraManager {
 	@ObfuscatedName("y.e(Lakt;I)V")
 	public static void method542(CoordFine arg0) {
 		camera = new BasicCamera(Client.cameraProvider);
-		camera.setControlMode(CameraControlMode.SERVER);
+		camera.setControlMode(CameraControlMode.CLIENT);
 		try {
 			PositionPoint var1 = (PositionPoint) camera.setPositionMode(PositionMode.POINT, false);
 			LookatOrientation var2 = (LookatOrientation) camera.setLookatMode(LookatMode.ORIENTATION, false);

@@ -132,9 +132,9 @@ public abstract class Camera {
 		this.positionMode = null;
 		this.position = null;
 		if (CameraRelated.field2812 != this.field2848 && arg0) {
-			this.controlMode = CameraControlMode.SERVER;
-		} else {
 			this.controlMode = CameraControlMode.CLIENT;
+		} else {
+			this.controlMode = CameraControlMode.SERVER;
 		}
 		this.linearMovementMode = CameraLinearMovementMode.field2825;
 		this.lookatMaxSpeed.setTo(100.0F, 100.0F, 100.0F);
@@ -191,7 +191,7 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.f(Lii;ZI)Laax;")
 	public Lookat setLookatMode(LookatMode arg0, boolean arg1) throws CameraException {
-		if (CameraControlMode.CLIENT == this.controlMode && !arg1) {
+		if (CameraControlMode.SERVER == this.controlMode && !arg1) {
 			throw new CameraException();
 		}
 		this.lookatMode = arg0;
@@ -215,7 +215,7 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.w(Lim;ZI)Lkl;")
 	public Position setPositionMode(PositionMode arg0, boolean arg1) throws CameraException {
-		if (CameraControlMode.CLIENT == this.controlMode && !arg1) {
+		if (CameraControlMode.SERVER == this.controlMode && !arg1) {
 			throw new CameraException();
 		}
 		this.positionMode = arg0;
@@ -235,10 +235,10 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.l(I)Z")
 	public boolean method4686() {
-		if (CameraRelated.field2812 == this.field2848 && CameraControlMode.CLIENT == this.controlMode) {
+		if (CameraRelated.field2812 == this.field2848 && CameraControlMode.SERVER == this.controlMode) {
 			return true;
 		} else {
-			return CameraRelated.field2813 == this.field2848 && CameraControlMode.SERVER == this.controlMode;
+			return CameraRelated.field2813 == this.field2848 && CameraControlMode.CLIENT == this.controlMode;
 		}
 	}
 
