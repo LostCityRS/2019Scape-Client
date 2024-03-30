@@ -246,7 +246,7 @@ public class Loading {
 		if (Client.preferences.unknown6.getValue() == 0) {
 			for (int var0 = 0; var0 < Client.field10819; var0++) {
 				if (Client.field11067[var0].method9131() == 's' || Client.field11067[var0].method9131() == 'S') {
-					Client.preferences.method18157(Client.preferences.unknown6, 1);
+					Client.preferences.setPreference(Client.preferences.unknown6, 1);
 					Client.field10812 = true;
 					GraphicsPacketQueue.method6971(ToolkitType.field8880);
 					break;
@@ -492,7 +492,7 @@ public class Loading {
 			boolean var22 = true;
 			for (int var23 = 0; var23 < Component.field11725[Client.graphicsDefaults.login_interface].field2151.length; var23++) {
 				Component var24 = Component.field11725[Client.graphicsDefaults.login_interface].field2151[var23];
-				if (var24.type == 5 && var24.field2215 != -1 && !Client.spritesJs5.requestdownload(var24.field2215, 0)) {
+				if (var24.type == 5 && var24.graphic != -1 && !Client.spritesJs5.requestdownload(var24.graphic, 0)) {
 					var22 = false;
 				}
 			}
@@ -521,13 +521,13 @@ public class Loading {
 			Client.js5Archives.remove(Js5Archive.LOADING_SPRITES_RAW);
 			MainLoadingScreen.method271();
 			Client.isSafeMode = Client.preferences.unknown6.getValue() == 1;
-			Client.preferences.method18157(Client.preferences.unknown6, 1);
+			Client.preferences.setPreference(Client.preferences.unknown6, 1);
 			if (Client.isSafeMode) {
-				Client.preferences.method18157(Client.preferences.toolkit, 0);
+				Client.preferences.setPreference(Client.preferences.toolkit, 0);
 			} else if (Client.preferences.toolkit.defaulted && Client.hardwarePlatform.cpuInfoRam < 512 && Client.hardwarePlatform.cpuInfoRam != 0) {
-				Client.preferences.method18157(Client.preferences.toolkit, 0);
+				Client.preferences.setPreference(Client.preferences.toolkit, 0);
 			}
-			Preferences.method16391();
+			Preferences.save();
 			if (Client.isSafeMode) {
 				Client.method486(0, false);
 				if (!Client.field10812) {

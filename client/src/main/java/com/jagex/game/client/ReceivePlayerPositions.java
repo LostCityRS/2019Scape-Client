@@ -102,14 +102,14 @@ public class ReceivePlayerPositions {
 			}
 		}
 		buf.accessBytes();
-		PositionMode var14 = Client.field9155.method4780();
-		if (PositionMode.field2815 == var14) {
-			PositionEntity var15 = (PositionEntity) Client.field9155.method4709();
+		PositionMode var14 = Client.cam2.getPositionMode();
+		if (PositionMode.ENTITY == var14) {
+			PositionEntity var15 = (PositionEntity) Client.cam2.getPosition();
 			var15.method16684();
 		}
-		LookatMode var16 = Client.field9155.method4743();
-		if (LookatMode.field2788 == var16) {
-			LookatEntity var17 = (LookatEntity) Client.field9155.method4797();
+		LookatMode var16 = Client.cam2.getLookatMode();
+		if (LookatMode.ENTITY == var16) {
+			LookatEntity var17 = (LookatEntity) Client.cam2.getLookat();
 			var17.method18815();
 		}
 	}

@@ -28,7 +28,7 @@ public class Browser {
 	}
 
 	@ObfuscatedName("ii.n(Ljava/lang/String;ZZB)V")
-	public static void method4607(String arg0, boolean arg1, boolean arg2) {
+	public static void openUrl(String arg0, boolean arg1, boolean arg2) {
 		method6081(arg0, arg1, "openjs", arg2);
 	}
 

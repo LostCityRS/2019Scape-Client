@@ -15,7 +15,7 @@ public class ActiveComponent {
 
 	@ObfuscatedName("ya.e(I)Lhf;")
 	public Component method13790() {
-		return this.field8241.method3924(this.field8242.field2158);
+		return this.field8241.method3924(this.field8242.parentlayer);
 	}
 
 	@ObfuscatedName("ya.n(III)Z")

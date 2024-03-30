@@ -364,7 +364,7 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ac(B)V")
-	public void method7753() {
+	public void rebuild() {
 		if (this.asyncRebuilding) {
 			this.method7729();
 			this.field5060 = -1L;
@@ -901,7 +901,7 @@ public class World {
 			Client.field8910 -= var2 * 512;
 			Client.field3569 -= var3 * 512;
 			if (Client.cameraState != 4 && Client.cameraState != 3) {
-				Client.resetCamera(Client.getDefaultCameraState());
+				Client.cameraReset(Client.getDefaultCameraState());
 			}
 		} else {
 			Client.cameraMoveX -= var2;

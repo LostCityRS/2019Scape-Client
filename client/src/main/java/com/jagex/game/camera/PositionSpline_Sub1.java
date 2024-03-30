@@ -14,20 +14,20 @@ public class PositionSpline_Sub1 extends PositionSpline {
 	@ObfuscatedName("aqx.ag(FFFB)F")
 	public float method16722(float arg0, float arg1, float arg2) {
 		float var4 = arg0 - this.field10563;
-		if (this.field3084.method4778().x == Float.POSITIVE_INFINITY) {
-			arg1 = this.field3084.method4693().length();
+		if (this.camera.method4778().x == Float.POSITIVE_INFINITY) {
+			arg1 = this.camera.method4693().length();
 		} else {
-			float var5 = arg1 / this.field3084.method4778().length();
+			float var5 = arg1 / this.camera.method4778().length();
 			float var6 = arg1 / 2.0F * var5;
 			if (var6 > var4) {
-				arg1 -= this.field3084.method4778().length() * arg2;
+				arg1 -= this.camera.method4778().length() * arg2;
 				if (arg1 < 0.0F) {
 					arg1 = 0.0F;
 				}
-			} else if (arg1 < this.field3084.method4693().length()) {
-				arg1 += this.field3084.method4778().length() * arg2;
-				if (arg1 > this.field3084.method4693().length()) {
-					arg1 = this.field3084.method4693().length();
+			} else if (arg1 < this.camera.method4693().length()) {
+				arg1 += this.camera.method4778().length() * arg2;
+				if (arg1 > this.camera.method4693().length()) {
+					arg1 = this.camera.method4693().length();
 				}
 			}
 		}

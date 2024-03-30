@@ -14,17 +14,17 @@ public class CpuProfiling {
 	}
 
 	@ObfuscatedName("z.n(I)I")
-	public static int method270() {
-		Canvas var0 = new Canvas();
-		var0.setSize(100, 100);
-		Renderer var1 = Renderer.create(0, var0, null, null, null, null, null, null, 0);
-		long var2 = MonotonicTime.get();
+	public static int profile() {
+		Canvas canvas = new Canvas();
+		canvas.setSize(100, 100);
+		Renderer renderer = Renderer.create(0, canvas, null, null, null, null, null, null, 0);
+		long start = MonotonicTime.get();
 		for (int var4 = 0; var4 < 10000; var4++) {
-			var1.method2552(5, 10, 100.0F, 75, 50, 100.0F, 15, 90, 100.0F, -65536, -65536, -65536, 1);
+			renderer.method2552(5, 10, 100.0F, 75, 50, 100.0F, 15, 90, 100.0F, -65536, -65536, -65536, 1);
 		}
-		int var5 = (int) (MonotonicTime.get() - var2);
-		var1.fillRectangle(0, 0, 100, 100, -16777216);
-		var1.dispose();
-		return var5;
+		int timeElapsed = (int) (MonotonicTime.get() - start);
+		renderer.fillRectangle(0, 0, 100, 100, -16777216);
+		renderer.dispose();
+		return timeElapsed;
 	}
 }

@@ -36,7 +36,7 @@ public class Interface {
 
 	@ObfuscatedName("hq.m(II)Lhf;")
 	public Component method3924(int arg0) {
-		if (this.field2151[0].field2158 >>> 16 != arg0 >>> 16) {
+		if (this.field2151[0].parentlayer >>> 16 != arg0 >>> 16) {
 			throw new IllegalArgumentException();
 		}
 		return this.field2151[arg0 & 0xFFFF];

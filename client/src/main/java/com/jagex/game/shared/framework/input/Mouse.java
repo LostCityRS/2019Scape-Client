@@ -24,13 +24,13 @@ public abstract class Mouse {
 	}
 
 	@ObfuscatedName("uj.u(I)I")
-	public abstract int method9086();
+	public abstract int getX();
 
 	@ObfuscatedName("uj.m(I)V")
 	public abstract void method9087();
 
 	@ObfuscatedName("uj.z(I)I")
-	public abstract int method9092();
+	public abstract int getY();
 
 	@ObfuscatedName("uj.p(I)Lakm;")
 	public abstract MouseEvent method9093();

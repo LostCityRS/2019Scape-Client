@@ -49,7 +49,7 @@ public class Lookat_Sub2 extends Lookat {
 
 	@ObfuscatedName("ani.f(Lju;Lou;IIFB)V")
 	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
-		double[] var6 = this.field8479.method4715();
+		double[] var6 = this.camera.method4715();
 		var6[0] -= arg2;
 		var6[2] -= arg3;
 		double[] var7 = this.method18849();
@@ -73,7 +73,7 @@ public class Lookat_Sub2 extends Lookat {
 	}
 
 	@ObfuscatedName("ani.w(Lalw;I)V")
-	public void method14132(Packet arg0) {
-		this.field11874 = new Spline(arg0);
+	public void decode(Packet buf) {
+		this.field11874 = new Spline(buf);
 	}
 }

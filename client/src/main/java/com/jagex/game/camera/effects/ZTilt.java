@@ -13,14 +13,14 @@ public class ZTilt extends CameraEffect {
 	@ObfuscatedName("atj.u")
 	public float field12551 = 0.0F;
 
-	public ZTilt(int arg0, float arg1) {
-		super(arg0);
+	public ZTilt(int id, float arg1) {
+		super(id);
 		this.field12551 = arg1;
 	}
 
-	public ZTilt(int arg0, Packet arg1) {
-		super(arg0);
-		this.field12551 = arg1.gFloat();
+	public ZTilt(int id, Packet buf) {
+		super(id);
+		this.field12551 = buf.gFloat();
 	}
 
 	@ObfuscatedName("atj.r(FI)V")
@@ -38,7 +38,7 @@ public class ZTilt extends CameraEffect {
 	}
 
 	@ObfuscatedName("atj.k(Lalw;I)V")
-	public void method19434(Packet arg0) {
-		this.field12551 = arg0.gFloat();
+	public void decode(Packet buf) {
+		this.field12551 = buf.gFloat();
 	}
 }

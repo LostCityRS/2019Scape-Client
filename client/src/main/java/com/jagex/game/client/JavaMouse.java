@@ -123,12 +123,12 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	}
 
 	@ObfuscatedName("alb.u(I)I")
-	public int method9086() {
+	public int getX() {
 		return this.field11689;
 	}
 
 	@ObfuscatedName("alb.z(I)I")
-	public int method9092() {
+	public int getY() {
 		return this.field11690;
 	}
 

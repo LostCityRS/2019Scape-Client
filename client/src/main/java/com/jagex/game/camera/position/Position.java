@@ -12,10 +12,10 @@ import deob.ObfuscatedName;
 public abstract class Position {
 
 	@ObfuscatedName("kl.e")
-	public final Camera field3084;
+	public final Camera camera;
 
-	public Position(Camera arg0) {
-		this.field3084 = arg0;
+	public Position(Camera camera) {
+		this.camera = camera;
 	}
 
 	@ObfuscatedName("kl.n(I)Z")

@@ -126,10 +126,10 @@ public class Component {
 	public int field2181;
 
 	@ObfuscatedName("hf.as")
-	public int field2158 = -1;
+	public int parentlayer = -1;
 
 	@ObfuscatedName("hf.at")
-	public int field2183 = -1;
+	public int id = -1;
 
 	@ObfuscatedName("hf.ad")
 	public int type;
@@ -180,10 +180,10 @@ public class Component {
 	public int field2199 = 1;
 
 	@ObfuscatedName("hf.an")
-	public int field2200 = -1;
+	public int layer = -1;
 
 	@ObfuscatedName("hf.bf")
-	public boolean field2201 = false;
+	public boolean hide = false;
 
 	@ObfuscatedName("hf.bl")
 	public int field2202 = -1;
@@ -198,16 +198,16 @@ public class Component {
 	public boolean field2205 = false;
 
 	@ObfuscatedName("hf.bd")
-	public int field2206 = 0;
+	public int scrollx = 0;
 
 	@ObfuscatedName("hf.bc")
-	public int field2207 = 0;
+	public int scrolly = 0;
 
 	@ObfuscatedName("hf.bi")
-	public int field2208 = 0;
+	public int scrollwidth = 0;
 
 	@ObfuscatedName("hf.bn")
-	public int field2319 = 0;
+	public int scrollheight = 0;
 
 	@ObfuscatedName("hf.bt")
 	public int colour = 0;
@@ -216,7 +216,7 @@ public class Component {
 	public boolean fill = false;
 
 	@ObfuscatedName("hf.bm")
-	public int field2212 = 0;
+	public int trans = 0;
 
 	@ObfuscatedName("hf.bb")
 	public int field2156 = 1;
@@ -225,10 +225,10 @@ public class Component {
 	public boolean field2214 = false;
 
 	@ObfuscatedName("hf.by")
-	public int field2215 = -1;
+	public int graphic = -1;
 
 	@ObfuscatedName("hf.bu")
-	public int field2216 = 0;
+	public int angle2d = 0;
 
 	@ObfuscatedName("hf.bw")
 	public boolean field2217 = false;
@@ -264,19 +264,19 @@ public class Component {
 	public boolean field2274;
 
 	@ObfuscatedName("hf.cg")
-	public int field2228 = 0;
+	public int modelxof = 0;
 
 	@ObfuscatedName("hf.ce")
-	public int field2316 = 0;
+	public int modelyof = 0;
 
 	@ObfuscatedName("hf.cu")
-	public int field2230 = 0;
+	public int modelangle_x = 0;
 
 	@ObfuscatedName("hf.ci")
-	public int field2231 = 0;
+	public int modelangle_y = 0;
 
 	@ObfuscatedName("hf.cn")
-	public int field2331 = 0;
+	public int modelangle_z = 0;
 
 	@ObfuscatedName("hf.cv")
 	public int field2305 = 0;
@@ -288,7 +288,7 @@ public class Component {
 	public int field2235 = 0;
 
 	@ObfuscatedName("hf.cx")
-	public int field2272 = 100;
+	public int modelzoom = 100;
 
 	@ObfuscatedName("hf.cw")
 	public int field2227 = 0;
@@ -357,7 +357,7 @@ public class Component {
 	public int field2258;
 
 	@ObfuscatedName("hf.dv")
-	public int field2287 = -1;
+	public int font = -1;
 
 	@ObfuscatedName("hf.dm")
 	public boolean field2275 = true;
@@ -408,7 +408,7 @@ public class Component {
 	public String field2279 = "";
 
 	@ObfuscatedName("hf.ey")
-	public String[] field2321;
+	public String[] op;
 
 	@ObfuscatedName("hf.eu")
 	public String field2180;
@@ -570,10 +570,10 @@ public class Component {
 	public IterableMap field2333;
 
 	@ObfuscatedName("hf.go")
-	public int field2334 = -1;
+	public int invobject = -1;
 
 	@ObfuscatedName("hf.gk")
-	public int field2335 = 0;
+	public int invcount = 0;
 
 	@ObfuscatedName("hf.gp")
 	public String field2336 = null;
@@ -736,7 +736,7 @@ public class Component {
 				byte[] var7 = field7085.getfile(arg0, var6, arg1);
 				if (var7 != null) {
 					Component var8 = arg2.field2151[var6] = new Component();
-					var8.field2158 = (arg0 << 16) + var6;
+					var8.parentlayer = (arg0 << 16) + var6;
 					var8.method3938(new Packet(var7));
 				}
 			}
@@ -782,31 +782,31 @@ public class Component {
 			this.field2198 = arg0.g2();
 			this.field2199 = arg0.g2();
 		}
-		this.field2200 = arg0.g2();
-		if (this.field2200 == 65535) {
-			this.field2200 = -1;
+		this.layer = arg0.g2();
+		if (this.layer == 65535) {
+			this.layer = -1;
 		} else {
-			this.field2200 += this.field2158 & 0xFFFF0000;
+			this.layer += this.parentlayer & 0xFFFF0000;
 		}
 		int var3 = arg0.g1();
-		this.field2201 = (var3 & 0x1) != 0;
+		this.hide = (var3 & 0x1) != 0;
 		if (var2 >= 0) {
 			this.field2205 = (var3 & 0x2) != 0;
 		}
 		if (this.type == 0) {
-			this.field2208 = arg0.g2();
-			this.field2319 = arg0.g2();
+			this.scrollwidth = arg0.g2();
+			this.scrollheight = arg0.g2();
 			if (var2 < 0) {
 				this.field2205 = arg0.g1() == 1;
 			}
 		}
 		if (this.type == 5) {
-			this.field2215 = arg0.g4s();
-			this.field2216 = arg0.g2();
+			this.graphic = arg0.g4s();
+			this.angle2d = arg0.g2();
 			int var4 = arg0.g1();
 			this.field2217 = (var4 & 0x1) != 0;
 			this.field2222 = (var4 & 0x2) != 0;
-			this.field2212 = arg0.g1();
+			this.trans = arg0.g1();
 			this.field2218 = arg0.g1();
 			this.field2219 = arg0.g4s();
 			this.field2220 = arg0.g1() == 1;
@@ -827,18 +827,18 @@ public class Component {
 			if (var6) {
 				this.field2305 = arg0.g2s();
 				this.field2209 = arg0.g2s();
-				this.field2230 = arg0.g2();
-				this.field2231 = arg0.g2();
-				this.field2331 = arg0.g2();
-				this.field2272 = arg0.g2();
+				this.modelangle_x = arg0.g2();
+				this.modelangle_y = arg0.g2();
+				this.modelangle_z = arg0.g2();
+				this.modelzoom = arg0.g2();
 			} else if (this.field2274) {
 				this.field2305 = arg0.g2s();
 				this.field2209 = arg0.g2s();
 				this.field2235 = arg0.g2s();
-				this.field2230 = arg0.g2();
-				this.field2231 = arg0.g2();
-				this.field2331 = arg0.g2();
-				this.field2272 = arg0.g2s();
+				this.modelangle_x = arg0.g2();
+				this.modelangle_y = arg0.g2();
+				this.modelangle_z = arg0.g2();
+				this.modelzoom = arg0.g2s();
 			}
 			this.field2262 = arg0.gSmart2or4null();
 			if (this.field2356 != 0) {
@@ -849,7 +849,7 @@ public class Component {
 			}
 		}
 		if (this.type == 4) {
-			this.field2287 = arg0.gSmart2or4null();
+			this.font = arg0.gSmart2or4null();
 			if (var2 >= 2) {
 				this.field2275 = arg0.g1() == 1;
 			}
@@ -859,7 +859,7 @@ public class Component {
 			this.field2264 = arg0.g1();
 			this.field2265 = arg0.g1() == 1;
 			this.colour = arg0.g4s();
-			this.field2212 = arg0.g1();
+			this.trans = arg0.g1();
 			if (var2 >= 0) {
 				this.field2236 = arg0.g1();
 			}
@@ -867,7 +867,7 @@ public class Component {
 		if (this.type == 3) {
 			this.colour = arg0.g4s();
 			this.fill = arg0.g1() == 1;
-			this.field2212 = arg0.g1();
+			this.trans = arg0.g1();
 		}
 		if (this.type == 9) {
 			this.field2156 = arg0.g1();
@@ -904,9 +904,9 @@ public class Component {
 		int var15 = var14 & 0xF;
 		int var16 = var14 >> 4;
 		if (var15 > 0) {
-			this.field2321 = new String[var15];
+			this.op = new String[var15];
 			for (int var17 = 0; var17 < var15; var17++) {
-				this.field2321[var17] = arg0.gjstr();
+				this.op[var17] = arg0.gjstr();
 			}
 		}
 		if (var16 > 0) {
@@ -1030,12 +1030,12 @@ public class Component {
 	@ObfuscatedName("hf.c(Ldh;B)Lcm;")
 	public Sprite method3941(Renderer arg0) {
 		field2338 = false;
-		long var2 = ((long) this.field2219 << 40) + ((long) this.field2218 << 36) + (long) this.field2215 + ((this.field2222 ? 1L : 0L) << 35) + ((this.field2220 ? 1L : 0L) << 38) + ((this.field2213 ? 1L : 0L) << 39);
+		long var2 = ((long) this.field2219 << 40) + ((long) this.field2218 << 36) + (long) this.graphic + ((this.field2222 ? 1L : 0L) << 35) + ((this.field2220 ? 1L : 0L) << 38) + ((this.field2213 ? 1L : 0L) << 39);
 		Sprite var4 = (Sprite) field2175.get(var2);
 		if (var4 != null) {
 			return var4;
 		}
-		SpriteData var5 = SpriteDataProvider.method1609(field8370, this.field2215, 0);
+		SpriteData var5 = SpriteDataProvider.method1609(field8370, this.graphic, 0);
 		if (var5 == null) {
 			field2338 = true;
 			return null;
@@ -1067,14 +1067,14 @@ public class Component {
 
 	@ObfuscatedName("hf.r(Loi;Loq;S)Leu;")
 	public Font method3942(FontProvider arg0, FontFactory arg1) {
-		Font var3 = (Font) arg0.getFont(arg1, this.field2287, false, this.field2275);
+		Font var3 = (Font) arg0.getFont(arg1, this.font, false, this.field2275);
 		field2338 = var3 == null;
 		return var3;
 	}
 
 	@ObfuscatedName("hf.v(Loi;Loq;I)Laac;")
 	public FontMetrics method3943(FontProvider arg0, FontFactory arg1) {
-		FontMetrics var3 = arg0.getFontMetrics(arg1, this.field2287);
+		FontMetrics var3 = arg0.getFontMetrics(arg1, this.font);
 		field2338 = var3 == null;
 		return var3;
 	}
@@ -1320,16 +1320,16 @@ public class Component {
 
 	@ObfuscatedName("hf.i(ILjava/lang/String;B)V")
 	public void method3947(int arg0, String arg1) {
-		if (this.field2321 == null || this.field2321.length <= arg0) {
+		if (this.op == null || this.op.length <= arg0) {
 			String[] var3 = new String[arg0 + 1];
-			if (this.field2321 != null) {
-				for (int var4 = 0; var4 < this.field2321.length; var4++) {
-					var3[var4] = this.field2321[var4];
+			if (this.op != null) {
+				for (int var4 = 0; var4 < this.op.length; var4++) {
+					var3[var4] = this.op[var4];
 				}
 			}
-			this.field2321 = var3;
+			this.op = var3;
 		}
-		this.field2321[arg0] = arg1;
+		this.op[arg0] = arg1;
 	}
 
 	@ObfuscatedName("hf.j(III)V")
@@ -1351,10 +1351,10 @@ public class Component {
 
 	@ObfuscatedName("hf.t(Ldh;B)Lhx;")
 	public Graphic method3970(Renderer arg0) {
-		long var2 = (long) this.field2158 << 32 | (long) this.field2183 & 0xFFFFFFFFL;
+		long var2 = (long) this.parentlayer << 32 | (long) this.id & 0xFFFFFFFFL;
 		Graphic var4 = (Graphic) field2176.get(var2);
 		if (var4 != null) {
-			if (this.field2215 != var4.field2148) {
+			if (this.graphic != var4.field2148) {
 				field2176.method2957(var2);
 				var4 = null;
 			}
@@ -1362,7 +1362,7 @@ public class Component {
 				return var4;
 			}
 		}
-		SpriteData var5 = SpriteDataProvider.method1609(field8370, this.field2215, 0);
+		SpriteData var5 = SpriteDataProvider.method1609(field8370, this.graphic, 0);
 		if (var5 == null) {
 			return null;
 		}
@@ -1392,14 +1392,14 @@ public class Component {
 		if (var15 == null) {
 			return null;
 		} else {
-			Graphic var16 = new Graphic(var6, var7, var9, var8, var15, this.field2215);
+			Graphic var16 = new Graphic(var6, var7, var9, var8, var15, this.graphic);
 			field2176.put(var16, var2);
 			return var16;
 		}
 	}
 
 	@ObfuscatedName("hf.ae(III)I")
-	public int method3950(int arg0, int arg1) {
+	public int getParam(int arg0, int arg1) {
 		if (this.field2333 == null) {
 			return arg1;
 		} else {
@@ -1409,7 +1409,7 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.ag(ILjava/lang/String;I)Ljava/lang/String;")
-	public String method3975(int arg0, String arg1) {
+	public String getParam(int arg0, String arg1) {
 		if (this.field2333 == null) {
 			return arg1;
 		} else {

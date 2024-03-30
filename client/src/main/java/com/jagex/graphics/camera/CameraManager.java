@@ -19,7 +19,7 @@ public class CameraManager {
 	public static boolean field603 = false;
 
 	@ObfuscatedName("a.n")
-	public static BasicCamera field604;
+	public static BasicCamera camera;
 
 	@ObfuscatedName("a.m")
 	public static int field605;
@@ -33,27 +33,27 @@ public class CameraManager {
 
 	@ObfuscatedName("y.e(Lakt;I)V")
 	public static void method542(CoordFine arg0) {
-		field604 = new BasicCamera(Client.field11034);
-		field604.method4683(CameraControlMode.field2828);
+		camera = new BasicCamera(Client.cameraProvider);
+		camera.setControlMode(CameraControlMode.SERVER);
 		try {
-			PositionPoint var1 = (PositionPoint) field604.method4688(PositionMode.field2816, false);
-			LookatOrientation var2 = (LookatOrientation) field604.method4684(LookatMode.field2791, false);
+			PositionPoint var1 = (PositionPoint) camera.setPositionMode(PositionMode.POINT, false);
+			LookatOrientation var2 = (LookatOrientation) camera.setLookatMode(LookatMode.ORIENTATION, false);
 			var1.method16671(arg0);
 			var2.method18781(new Quaternion(0.0F, 0.0F, 0.0F));
-			field604.method4695(Vector3.create(99999.0F, 99999.0F, 99999.0F));
-			field604.method4814(Vector3.create(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
-			field604.method4832(Vector3.create(99999.0F, 99999.0F, 99999.0F));
-			field604.method4690(Vector3.create(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
+			camera.setPositionMaxSpeed(Vector3.create(99999.0F, 99999.0F, 99999.0F));
+			camera.setPositionAcceleration(Vector3.create(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
+			camera.setLookatMaxSpeed(Vector3.create(99999.0F, 99999.0F, 99999.0F));
+			camera.setLookatAcceleration(Vector3.create(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY));
 		} catch (CameraException var4) {
 		}
-		field605 = Client.mouse.method9086();
-		field7284 = Client.mouse.method9092();
+		field605 = Client.mouse.getX();
+		field7284 = Client.mouse.getY();
 		field603 = true;
 	}
 
 	@ObfuscatedName("hd.n(I)V")
 	public static void method3913() {
-		field604 = null;
+		camera = null;
 		field603 = false;
 	}
 
@@ -64,8 +64,8 @@ public class CameraManager {
 
 	@ObfuscatedName("dg.k(B)V")
 	public static void method2585() {
-		PositionPoint var0 = (PositionPoint) field604.method4709();
-		LookatOrientation var1 = (LookatOrientation) field604.method4797();
+		PositionPoint var0 = (PositionPoint) camera.getPosition();
+		LookatOrientation var1 = (LookatOrientation) camera.getLookat();
 		Vector3 var2 = var0.method5219();
 		Quaternion var3 = var1.method18787();
 		if (Client.field10986 != null) {
@@ -75,23 +75,23 @@ public class CameraManager {
 			float var7 = (float) (Math.atan((double) ((float) var4 / 2.0F / var6)) * 2.0D);
 			float var8 = (float) (Math.atan((double) ((float) var5 / 2.0F / var6)) * 2.0D);
 			try {
-				field604.method4828(var7, var8);
+				camera.setFieldOfView(var7, var8);
 			} catch (CameraException var21) {
 			}
 		}
 		if (Client.mouse.method9121()) {
 			Quaternion var10 = Quaternion.create();
-			var10.setToRotation(1.0F, 0.0F, 0.0F, (float) (Client.mouse.method9092() - field7284) / 200.0F);
+			var10.setToRotation(1.0F, 0.0F, 0.0F, (float) (Client.mouse.getY() - field7284) / 200.0F);
 			var3.multiply(var10);
 			Vector3 var11 = Vector3.create(0.0F, 1.0F, 0.0F);
 			var11.rotate(var3);
 			Quaternion var12 = Quaternion.create();
-			var12.setToRotation(var11, (float) (field605 - Client.mouse.method9086()) / 200.0F);
+			var12.setToRotation(var11, (float) (field605 - Client.mouse.getX()) / 200.0F);
 			var3.multiply(var12);
 			var1.method18781(var3);
 		}
-		field605 = Client.mouse.method9086();
-		field7284 = Client.mouse.method9092();
+		field605 = Client.mouse.getX();
+		field7284 = Client.mouse.getY();
 		var3.opposite();
 		if (Client.keyboard.method9080(98)) {
 			Vector3 var13 = Vector3.create(0.0F, 0.0F, 25.0F);
@@ -122,6 +122,6 @@ public class CameraManager {
 		CoordGrid var18 = Client.world.method7727();
 		int var19 = var18.x << 9;
 		int var20 = var18.z << 9;
-		field604.method4681(0.02F, Client.world.method7744().levelHeightmap, Client.world.method7793(), var19, var20);
+		camera.method4681(0.02F, Client.world.method7744().levelHeightmap, Client.world.method7793(), var19, var20);
 	}
 }

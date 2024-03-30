@@ -178,7 +178,7 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("vn.l(B)V")
-	public static void method9584() {
+	public static void continueLogin() {
 		if (loginState == 103) {
 			loginState = 110;
 		}
@@ -735,7 +735,7 @@ public class LoginManager {
 				connection.in.pos = 0;
 				Packet var29 = new Packet(var28);
 				String var30 = var29.gjstr();
-				Browser.method4607(var30, true, Client.field10784);
+				Browser.openUrl(var30, true, Client.field10784);
 				setReply(loginReply);
 				if (requestState == 132 && Client.state != 9) {
 					loginState = 98;
@@ -1224,7 +1224,7 @@ public class LoginManager {
 					break;
 				}
 			}
-			Client.method214(var2, true, false);
+			Client.ifCloseSub(var2, true, false);
 		}
 		Client.openedTopInterface = -1;
 		Client.openedSubInterfaces = new IterableMap(8);
@@ -1249,7 +1249,7 @@ public class LoginManager {
 		Client.field10902 = true;
 		LocType.clientpalette = NPCType.clientpalette = ObjType.clientpalette = new short[256];
 		Client.field4868 = LocalisedText.WALKHERE.forLang(Client.language);
-		Client.preferences.method18157(Client.preferences.removeRoofs2, Client.preferences.removeRoofs.getValue());
+		Client.preferences.setPreference(Client.preferences.removeRoofs2, Client.preferences.removeRoofs.getValue());
 		Client.currentIncrementVerifyId = 0;
 		MiniMenu.method5175();
 		Client.pingRequest = null;
@@ -1280,7 +1280,7 @@ public class LoginManager {
 			}
 		}
 		ClientInvCache.method2752();
-		Client.resetCamera(Client.getDefaultCameraState());
+		Client.cameraReset(Client.getDefaultCameraState());
 		Client.setState(18);
 		for (int var3 = 0; var3 < 114; var3++) {
 			Client.field11072[var3] = true;

@@ -18,16 +18,16 @@ public class LookatOrientation extends Lookat {
 	public final Quaternion field11850 = new Quaternion(Float.NaN, Float.NaN, Float.NaN, Float.NaN);
 
 	@ObfuscatedName("anb.k")
-	public static int field11860 = 0;
+	public static int rotationX = 0;
 
 	@ObfuscatedName("anb.f")
-	public static int field11853 = 0;
+	public static int rotationY = 0;
 
 	@ObfuscatedName("anb.w")
-	public static int field11852 = 0;
+	public static int movementX = 0;
 
 	@ObfuscatedName("anb.l")
-	public static int field11855 = 0;
+	public static int movementZ = 0;
 
 	@ObfuscatedName("anb.u")
 	public static float field11857 = -1.0F;
@@ -47,8 +47,8 @@ public class LookatOrientation extends Lookat {
 	@ObfuscatedName("anb.r")
 	public static float field11861 = -1.0F;
 
-	public LookatOrientation(Camera arg0) {
-		super(arg0);
+	public LookatOrientation(Camera camera) {
+		super(camera);
 	}
 
 	@ObfuscatedName("anb.q(Lov;I)V")
@@ -61,23 +61,23 @@ public class LookatOrientation extends Lookat {
 	}
 
 	@ObfuscatedName("anb.x(II)V")
-	public void method18789(int arg0) {
-		field11860 = arg0;
+	public void setRotationX(int arg0) {
+		rotationX = arg0;
 	}
 
 	@ObfuscatedName("anb.b(IB)V")
-	public void method18783(int arg0) {
-		field11853 = arg0;
+	public void setRotationY(int arg0) {
+		rotationY = arg0;
 	}
 
 	@ObfuscatedName("anb.h(IB)V")
-	public void method18788(int arg0) {
-		field11852 = arg0;
+	public void setMovementX(int arg0) {
+		movementX = arg0;
 	}
 
 	@ObfuscatedName("anb.a(IB)V")
-	public void method18784(int arg0) {
-		field11855 = arg0;
+	public void setMovementZ(int arg0) {
+		movementZ = arg0;
 	}
 
 	@ObfuscatedName("anb.m(I)Lox;")
@@ -85,7 +85,7 @@ public class LookatOrientation extends Lookat {
 		Vector3 var1 = new Vector3(0.0F, 0.0F, 1000.0F);
 		var1.rotate(Quaternion.opposite(this.field11856));
 		var1.y *= -1.0F;
-		var1.add(this.field8479.method4714());
+		var1.add(this.camera.method4714());
 		return var1;
 	}
 
@@ -94,12 +94,12 @@ public class LookatOrientation extends Lookat {
 		Vector3 var1 = new Vector3(0.0F, 0.0F, 1000.0F);
 		var1.rotate(Quaternion.opposite(this.field11850));
 		var1.y *= -1.0F;
-		var1.add(this.field8479.method4714());
+		var1.add(this.camera.method4714());
 		return var1;
 	}
 
 	@ObfuscatedName("anb.g(IIII)V")
-	public void method18785(int arg0, int arg1, int arg2) {
+	public void setVector(int arg0, int arg1, int arg2) {
 		Matrix4x3 var4 = new Matrix4x3();
 		var4.setToCameraTransform(0.0D, 0.0D, 0.0D, (double) arg0, (double) -arg1, (double) arg2, 0.0F, 1.0F, 0.0F);
 		Matrix3x3 var5 = new Matrix3x3();
@@ -112,39 +112,39 @@ public class LookatOrientation extends Lookat {
 	@ObfuscatedName("anb.e(FB)V")
 	public void method14131(float arg0) {
 		Quaternion var2 = this.method18787();
-		if (field11860 != 0 || field11853 != 0) {
+		if (rotationX != 0 || rotationY != 0) {
 			Quaternion var3 = Quaternion.create();
-			var3.setToRotation(1.0F, 0.0F, 0.0F, (float) ((double) field11860 * 3.141592653589793D * 2.0D) / 16384.0F);
+			var3.setToRotation(1.0F, 0.0F, 0.0F, (float) ((double) rotationX * 3.141592653589793D * 2.0D) / 16384.0F);
 			var2.multiply(var3);
 			Vector3 var4 = Vector3.create(0.0F, 1.0F, 0.0F);
 			var4.rotate(var2);
 			Quaternion var5 = Quaternion.create();
 			var4.normalise();
-			var5.setToRotation(var4, (float) ((double) field11853 * 3.141592653589793D * 2.0D) / 16384.0F);
+			var5.setToRotation(var4, (float) ((double) rotationY * 3.141592653589793D * 2.0D) / 16384.0F);
 			var2.multiply(var5);
 			this.method18781(var2);
-			field11860 = 0;
-			field11853 = 0;
+			rotationX = 0;
+			rotationY = 0;
 		}
-		if (this.field8479.method4780() != PositionMode.field2816 || field11852 == 0 && field11855 == 0) {
+		if (this.camera.getPositionMode() != PositionMode.POINT || movementX == 0 && movementZ == 0) {
 			return;
 		}
 		var2.opposite();
-		PositionPoint var6 = (PositionPoint) this.field8479.method4709();
+		PositionPoint var6 = (PositionPoint) this.camera.getPosition();
 		CoordFine var7 = var6.method5221();
 		Vector3 var8 = var7.method17853();
-		Vector3 var9 = Vector3.create(0.0F, 0.0F, (float) field11855);
+		Vector3 var9 = Vector3.create(0.0F, 0.0F, (float) movementZ);
 		var9.rotate(var2);
 		var9.y *= -1.0F;
 		var8.add(var9);
-		Vector3 var10 = Vector3.create((float) field11852, 0.0F, 0.0F);
+		Vector3 var10 = Vector3.create((float) movementX, 0.0F, 0.0F);
 		var10.rotate(var2);
 		var10.y *= -1.0F;
 		var8.add(var10);
 		this.method18790(var8);
 		var6.method16671(new CoordFine(var7.level, (int) var8.x, (int) var8.y, (int) var8.z));
-		field11852 = 0;
-		field11855 = 0;
+		movementX = 0;
+		movementZ = 0;
 	}
 
 	@ObfuscatedName("anb.i(Lox;B)V")
@@ -170,7 +170,7 @@ public class LookatOrientation extends Lookat {
 	}
 
 	@ObfuscatedName("anb.j(Lox;IIIIIIB)V")
-	public void method18780(Vector3 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+	public void setMaxDistanceClamping(Vector3 arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		field11857 = arg1 == -1 ? -1.0F : arg0.x - (float) (arg1 * 512);
 		field11851 = arg2 == -1 ? -1.0F : (float) (arg2 * 512) + arg0.x;
 		field11858 = arg5 == -1 ? -1.0F : -arg0.y - (float) (arg5 * 512);
@@ -181,7 +181,7 @@ public class LookatOrientation extends Lookat {
 
 	@ObfuscatedName("anb.n(I)Z")
 	public boolean method14145() {
-		return !Float.isNaN(this.field11856.w) && this.field8479.method4714() != null;
+		return !Float.isNaN(this.field11856.w) && this.camera.method4714() != null;
 	}
 
 	@ObfuscatedName("anb.t(I)Lov;")
@@ -191,7 +191,7 @@ public class LookatOrientation extends Lookat {
 
 	@ObfuscatedName("anb.f(Lju;Lou;IIFB)V")
 	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
-		Vector3 var6 = Vector3.create(this.field8479.method4714());
+		Vector3 var6 = Vector3.create(this.camera.method4714());
 		var6.x -= arg2;
 		var6.z -= arg3;
 		var6.y *= -1.0F;
@@ -202,7 +202,7 @@ public class LookatOrientation extends Lookat {
 	}
 
 	@ObfuscatedName("anb.w(Lalw;I)V")
-	public void method14132(Packet arg0) {
-		this.field11856.decode(arg0);
+	public void decode(Packet buf) {
+		this.field11856.decode(buf);
 	}
 }

@@ -145,10 +145,10 @@ public class ClientWatch {
 			int var6;
 			int var8;
 			if (Client.cameraState != 3) {
-				var6 = (int) Client.field11004 >> 3;
+				var6 = (int) Client.orbitCameraXan >> 3;
 				var8 = (int) Client.orbitCameraYaw >> 3;
-			} else if (Client.field9155.method4780() == PositionMode.field2815) {
-				PositionEntity var5 = (PositionEntity) Client.field9155.method4709();
+			} else if (Client.cam2.getPositionMode() == PositionMode.ENTITY) {
+				PositionEntity var5 = (PositionEntity) Client.cam2.getPosition();
 				var6 = CameraHelpers.method9198(var5.field10554) >> 3;
 				short var7 = 1024;
 				var8 = (var7 * 3 - (CameraHelpers.method2041(var5.field10554) >> 3)) % (var7 * 2);

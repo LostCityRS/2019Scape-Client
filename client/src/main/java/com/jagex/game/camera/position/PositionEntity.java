@@ -63,7 +63,7 @@ public class PositionEntity extends Position {
 	@ObfuscatedName("ahd.ae(B)V")
 	public void method16684() {
 		if (this.field10552 != null) {
-			this.field10552 = this.field3084.method4697().method268(this.field10552.getCameraTrackableType(), this.field10552.getIndex());
+			this.field10552 = this.camera.method4697().getCameraTrackable(this.field10552.getCameraTrackableType(), this.field10552.getIndex());
 		}
 	}
 
@@ -74,13 +74,13 @@ public class PositionEntity extends Position {
 		}
 		this.method16686(arg1, arg2, arg3, arg4);
 		Quaternion var6 = this.method16685();
-		this.field10555.method6428(var6, this.field3084.method4724());
+		this.field10555.method6428(var6, this.camera.method4724());
 		if (Float.isNaN(this.field10555.w)) {
 			this.field10555.setTo(var6);
 		}
 		var6.release();
 		this.field10559.setTo(this.field10552.method4667().method17853());
-		this.field3084.method4807(true, arg0, this.field10558, this.field3084.method4721(), this.field10559, this.field10560);
+		this.camera.method4807(true, arg0, this.field10558, this.camera.method4721(), this.field10559, this.field10560);
 	}
 
 	@ObfuscatedName("ahd.ag(B)Lov;")
@@ -105,7 +105,7 @@ public class PositionEntity extends Position {
 
 	@ObfuscatedName("ahd.ah([[[ILqx;IIB)V")
 	public void method16686(int[][][] arg0, SceneLevelTileFlags arg1, int arg2, int arg3) {
-		if (!this.method5218() || !this.field3084.method4730() && !this.field3084.method4731()) {
+		if (!this.method5218() || !this.camera.method4730() && !this.camera.method4731()) {
 			return;
 		}
 		CoordFine var5 = this.field10552.method4667();
@@ -118,7 +118,7 @@ public class PositionEntity extends Position {
 			var6 = this.field10557 + 1;
 			var7 = false;
 		}
-		if (!this.field3084.method4731() || arg0 == null) {
+		if (!this.camera.method4731() || arg0 == null) {
 			return;
 		}
 		float var8 = this.method16687(arg0, arg1, arg2, arg3, var6, var7);
@@ -275,6 +275,6 @@ public class PositionEntity extends Position {
 			this.field10556 = false;
 		}
 		this.field10561 = arg0.g2();
-		this.field10552 = this.field3084.method4697().method268(var2, var3);
+		this.field10552 = this.camera.method4697().getCameraTrackable(var2, var3);
 	}
 }

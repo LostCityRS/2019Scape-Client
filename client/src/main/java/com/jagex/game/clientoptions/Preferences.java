@@ -59,7 +59,7 @@ public class Preferences {
 	}
 
 	@ObfuscatedName("afd.n(I)V")
-	public static void method16391() {
+	public static void save() {
 		FileOnDisk var0 = null;
 		try {
 			var0 = GameShell.openPrefs("", Client.modegame.titleURL, true);
@@ -76,14 +76,14 @@ public class Preferences {
 	}
 
 	@ObfuscatedName("hj.m(I)I")
-	public static int method4288() {
-		ClientAutoSetupResult var0 = method4063();
+	public static int getAutoSetupResult() {
+		ClientAutoSetupResult var0 = autosetup();
 		GraphicsPacketQueue.method4995(var0);
-		return var0.method14996();
+		return var0.getResult();
 	}
 
 	@ObfuscatedName("hp.k(B)Lalq;")
-	public static ClientAutoSetupResult method4063() {
+	public static ClientAutoSetupResult autosetup() {
 		ClientAutoSetupResult var0 = new ClientAutoSetupResult();
 		boolean var1 = false;
 		boolean var2 = false;
@@ -111,7 +111,7 @@ public class Preferences {
 			var5 = false;
 		}
 		if (!var4 && !var2) {
-			method18306(var0);
+			setAutosetup(var0);
 			return var0;
 		}
 		int var6 = -1;
@@ -119,8 +119,8 @@ public class Preferences {
 		int var8 = -1;
 		if (var2) {
 			try {
-				Client.preferences.method18157(Client.preferences.unknown6, 3);
-				method16391();
+				Client.preferences.setPreference(Client.preferences.unknown6, 3);
+				save();
 				var7 = Client.getPerformanceMetric(3, 1000);
 				if (Client.preferences.displayMode.getValue() == 3) {
 					var0.method18313(4);
@@ -148,8 +148,8 @@ public class Preferences {
 		}
 		if (var5) {
 			try {
-				Client.preferences.method18157(Client.preferences.unknown6, 5);
-				method16391();
+				Client.preferences.setPreference(Client.preferences.unknown6, 5);
+				save();
 				var8 = Client.getPerformanceMetric(5, 1000);
 				if (Client.preferences.displayMode.getValue() == 5) {
 					var0.method18313(8192);
@@ -160,8 +160,8 @@ public class Preferences {
 		}
 		if (var4) {
 			try {
-				Client.preferences.method18157(Client.preferences.unknown6, 4);
-				method16391();
+				Client.preferences.setPreference(Client.preferences.unknown6, 4);
+				save();
 				var6 = Client.getPerformanceMetric(1, 1000);
 				if (Client.preferences.displayMode.getValue() == 1) {
 					var0.method18313(2);
@@ -170,9 +170,9 @@ public class Preferences {
 				var0.method18313(2048);
 			}
 		}
-		Client.preferences.method18157(Client.preferences.unknown6, 0);
+		Client.preferences.setPreference(Client.preferences.unknown6, 0);
 		if (var6 == -1 && var7 == -1) {
-			method18306(var0);
+			setAutosetup(var0);
 			return var0;
 		}
 		var0.method18318(3, var7);
@@ -188,38 +188,38 @@ public class Preferences {
 	}
 
 	@ObfuscatedName("alz.f(Lalq;I)V")
-	public static void method18306(ClientAutoSetupResult arg0) {
-		arg0.method18314(0);
-		byte var2;
+	public static void setAutosetup(ClientAutoSetupResult autoSetupResult) {
+		autoSetupResult.method18314(0);
+		byte resultId;
 		if (GameShell.maxmemory >= 96) {
-			int var1 = CpuProfiling.method270();
-			if (var1 <= 100) {
-				method9619();
-				var2 = 4;
-			} else if (var1 <= 500) {
-				method8479();
-				var2 = 3;
-			} else if (var1 <= 1003) {
-				method3056();
-				var2 = 2;
+			int profileTime = CpuProfiling.profile();
+			if (profileTime <= 100) {
+				setHigh();
+				resultId = 4;
+			} else if (profileTime <= 500) {
+				setMedium();
+				resultId = 3;
+			} else if (profileTime <= 1003) {
+				setLow();
+				resultId = 2;
 			} else {
-				method131(true);
-				var2 = 1;
+				setMin(true);
+				resultId = 1;
 			}
-			arg0.method18318(0, var1);
+			autoSetupResult.method18318(0, profileTime);
 		} else {
-			method131(true);
-			var2 = 1;
-			arg0.method18313(64);
+			setMin(true);
+			resultId = 1;
+			autoSetupResult.method18313(64);
 		}
 		if (Client.preferences.displayMode.getValue() == 0) {
-			Client.preferences.method18177(Client.preferences.displayMode, true);
+			Client.preferences.setPreferencesDisplayMode(Client.preferences.displayMode, true);
 		} else {
-			Client.preferences.method18157(Client.preferences.toolkit, 0);
+			Client.preferences.setPreference(Client.preferences.toolkit, 0);
 			Client.method486(0, false);
 		}
-		method16391();
-		arg0.method18312(var2);
+		save();
+		autoSetupResult.setResultId(resultId);
 	}
 
 	@ObfuscatedName("et.w(Lalq;IIB)V")
@@ -227,162 +227,162 @@ public class Preferences {
 		arg0.method18314(arg1);
 		byte var3;
 		if (arg2 > 100000) {
-			method9619();
+			setHigh();
 			var3 = 4;
 		} else if (arg2 > 50000) {
-			method8479();
+			setMedium();
 			var3 = 3;
 		} else if (arg2 > 10000) {
-			method3056();
+			setLow();
 			var3 = 2;
 		} else {
-			method131(true);
+			setMin(true);
 			var3 = 1;
 		}
 		if (Client.preferences.displayMode.getValue() == arg1) {
-			Client.preferences.method18177(Client.preferences.displayMode, true);
+			Client.preferences.setPreferencesDisplayMode(Client.preferences.displayMode, true);
 		} else {
-			Client.preferences.method18157(Client.preferences.toolkit, arg1);
+			Client.preferences.setPreference(Client.preferences.toolkit, arg1);
 			Client.method486(arg1, false);
 		}
-		method16391();
-		arg0.method18312(var3);
+		save();
+		arg0.setResultId(var3);
 	}
 
 	@ObfuscatedName("wo.l(B)V")
-	public static void method9619() {
-		Client.preferences.method18157(Client.preferences.removeRoofs, 2);
-		Client.preferences.method18157(Client.preferences.removeRoofs2, 2);
-		Client.preferences.method18157(Client.preferences.groundDecoration, 1);
-		Client.preferences.method18157(Client.preferences.groundBlending, 1);
-		Client.preferences.method18157(Client.preferences.idleAnimations, 1);
-		Client.preferences.method18157(Client.preferences.flickeringEffects, 1);
-		Client.preferences.method18157(Client.preferences.characterShadows, 1);
-		Client.preferences.method18157(Client.preferences.textures, 1);
-		Client.preferences.method18157(Client.preferences.sceneryShadows, 2);
-		Client.preferences.method18157(Client.preferences.lightingDetail, 1);
-		Client.preferences.method18157(Client.preferences.waterDetail, 2);
-		Client.preferences.method18157(Client.preferences.fog, 1);
-		Client.preferences.method18157(Client.preferences.antiAliasing, 0);
-		Client.preferences.method18157(Client.preferences.antiAliasing2, 0);
-		Client.preferences.method18157(Client.preferences.particles, 2);
-		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
-		Client.preferences.method18157(Client.preferences.bloom, 0);
+	public static void setHigh() {
+		Client.preferences.setPreference(Client.preferences.removeRoofs, 2);
+		Client.preferences.setPreference(Client.preferences.removeRoofs2, 2);
+		Client.preferences.setPreference(Client.preferences.groundDecoration, 1);
+		Client.preferences.setPreference(Client.preferences.groundBlending, 1);
+		Client.preferences.setPreference(Client.preferences.idleAnimations, 1);
+		Client.preferences.setPreference(Client.preferences.flickeringEffects, 1);
+		Client.preferences.setPreference(Client.preferences.characterShadows, 1);
+		Client.preferences.setPreference(Client.preferences.textures, 1);
+		Client.preferences.setPreference(Client.preferences.sceneryShadows, 2);
+		Client.preferences.setPreference(Client.preferences.lightingDetail, 1);
+		Client.preferences.setPreference(Client.preferences.waterDetail, 2);
+		Client.preferences.setPreference(Client.preferences.fog, 1);
+		Client.preferences.setPreference(Client.preferences.antiAliasing, 0);
+		Client.preferences.setPreference(Client.preferences.antiAliasing2, 0);
+		Client.preferences.setPreference(Client.preferences.particles, 2);
+		Client.preferences.setPreference(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
+		Client.preferences.setPreference(Client.preferences.bloom, 0);
 		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
 			Client.renderer.disableBloom();
 		}
-		Client.preferences.method18157(Client.preferences.skyboxes, 1);
-		Client.preferences.method18157(Client.preferences.animDetail, 1);
-		method5326();
-		Client.preferences.method18157(Client.preferences.screenSize, 0);
-		Client.preferences.method18157(Client.preferences.preset, 4);
+		Client.preferences.setPreference(Client.preferences.skyboxes, 1);
+		Client.preferences.setPreference(Client.preferences.animDetail, 1);
+		setCpuUsagePreference();
+		Client.preferences.setPreference(Client.preferences.screenSize, 0);
+		Client.preferences.setPreference(Client.preferences.preset, 4);
 		Client.method9516();
 		Client.world.method7816().resetFade();
 		Client.field10836 = true;
 	}
 
 	@ObfuscatedName("ty.u(B)V")
-	public static void method8479() {
-		Client.preferences.method18157(Client.preferences.removeRoofs, 2);
-		Client.preferences.method18157(Client.preferences.removeRoofs2, 2);
-		Client.preferences.method18157(Client.preferences.groundDecoration, 1);
-		Client.preferences.method18157(Client.preferences.groundBlending, 1);
-		Client.preferences.method18157(Client.preferences.idleAnimations, 1);
-		Client.preferences.method18157(Client.preferences.flickeringEffects, 1);
-		Client.preferences.method18157(Client.preferences.characterShadows, 1);
-		Client.preferences.method18157(Client.preferences.textures, 1);
-		Client.preferences.method18157(Client.preferences.sceneryShadows, 1);
-		Client.preferences.method18157(Client.preferences.lightingDetail, 1);
-		Client.preferences.method18157(Client.preferences.waterDetail, 0);
-		Client.preferences.method18157(Client.preferences.fog, 1);
-		Client.preferences.method18157(Client.preferences.antiAliasing, 0);
-		Client.preferences.method18157(Client.preferences.antiAliasing2, 0);
-		Client.preferences.method18157(Client.preferences.particles, 1);
-		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
-		Client.preferences.method18157(Client.preferences.bloom, 0);
+	public static void setMedium() {
+		Client.preferences.setPreference(Client.preferences.removeRoofs, 2);
+		Client.preferences.setPreference(Client.preferences.removeRoofs2, 2);
+		Client.preferences.setPreference(Client.preferences.groundDecoration, 1);
+		Client.preferences.setPreference(Client.preferences.groundBlending, 1);
+		Client.preferences.setPreference(Client.preferences.idleAnimations, 1);
+		Client.preferences.setPreference(Client.preferences.flickeringEffects, 1);
+		Client.preferences.setPreference(Client.preferences.characterShadows, 1);
+		Client.preferences.setPreference(Client.preferences.textures, 1);
+		Client.preferences.setPreference(Client.preferences.sceneryShadows, 1);
+		Client.preferences.setPreference(Client.preferences.lightingDetail, 1);
+		Client.preferences.setPreference(Client.preferences.waterDetail, 0);
+		Client.preferences.setPreference(Client.preferences.fog, 1);
+		Client.preferences.setPreference(Client.preferences.antiAliasing, 0);
+		Client.preferences.setPreference(Client.preferences.antiAliasing2, 0);
+		Client.preferences.setPreference(Client.preferences.particles, 1);
+		Client.preferences.setPreference(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
+		Client.preferences.setPreference(Client.preferences.bloom, 0);
 		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
 			Client.renderer.disableBloom();
 		}
-		Client.preferences.method18157(Client.preferences.skyboxes, 1);
-		Client.preferences.method18157(Client.preferences.animDetail, 1);
-		method5326();
-		Client.preferences.method18157(Client.preferences.screenSize, 1);
-		Client.preferences.method18157(Client.preferences.preset, 3);
+		Client.preferences.setPreference(Client.preferences.skyboxes, 1);
+		Client.preferences.setPreference(Client.preferences.animDetail, 1);
+		setCpuUsagePreference();
+		Client.preferences.setPreference(Client.preferences.screenSize, 1);
+		Client.preferences.setPreference(Client.preferences.preset, 3);
 		Client.method9516();
 		Client.world.method7816().resetFade();
 		Client.field10836 = true;
 	}
 
 	@ObfuscatedName("fd.z(I)V")
-	public static void method3056() {
-		Client.preferences.method18157(Client.preferences.removeRoofs, 1);
-		Client.preferences.method18157(Client.preferences.removeRoofs2, 1);
-		Client.preferences.method18157(Client.preferences.groundDecoration, 1);
-		Client.preferences.method18157(Client.preferences.groundBlending, 1);
-		Client.preferences.method18157(Client.preferences.idleAnimations, 0);
-		Client.preferences.method18157(Client.preferences.flickeringEffects, 0);
-		Client.preferences.method18157(Client.preferences.characterShadows, 0);
-		Client.preferences.method18157(Client.preferences.sceneryShadows, 0);
-		Client.preferences.method18157(Client.preferences.textures, 0);
-		Client.preferences.method18157(Client.preferences.lightingDetail, 0);
-		Client.preferences.method18157(Client.preferences.waterDetail, 0);
-		Client.preferences.method18157(Client.preferences.fog, 0);
-		Client.preferences.method18157(Client.preferences.antiAliasing, 0);
-		Client.preferences.method18157(Client.preferences.antiAliasing2, 0);
-		Client.preferences.method18157(Client.preferences.particles, 0);
-		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
-		Client.preferences.method18157(Client.preferences.bloom, 0);
+	public static void setLow() {
+		Client.preferences.setPreference(Client.preferences.removeRoofs, 1);
+		Client.preferences.setPreference(Client.preferences.removeRoofs2, 1);
+		Client.preferences.setPreference(Client.preferences.groundDecoration, 1);
+		Client.preferences.setPreference(Client.preferences.groundBlending, 1);
+		Client.preferences.setPreference(Client.preferences.idleAnimations, 0);
+		Client.preferences.setPreference(Client.preferences.flickeringEffects, 0);
+		Client.preferences.setPreference(Client.preferences.characterShadows, 0);
+		Client.preferences.setPreference(Client.preferences.sceneryShadows, 0);
+		Client.preferences.setPreference(Client.preferences.textures, 0);
+		Client.preferences.setPreference(Client.preferences.lightingDetail, 0);
+		Client.preferences.setPreference(Client.preferences.waterDetail, 0);
+		Client.preferences.setPreference(Client.preferences.fog, 0);
+		Client.preferences.setPreference(Client.preferences.antiAliasing, 0);
+		Client.preferences.setPreference(Client.preferences.antiAliasing2, 0);
+		Client.preferences.setPreference(Client.preferences.particles, 0);
+		Client.preferences.setPreference(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
+		Client.preferences.setPreference(Client.preferences.bloom, 0);
 		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
 			Client.renderer.disableBloom();
 		}
-		Client.preferences.method18157(Client.preferences.skyboxes, 0);
-		Client.preferences.method18157(Client.preferences.animDetail, 0);
-		method5326();
-		Client.preferences.method18157(Client.preferences.screenSize, 2);
-		Client.preferences.method18157(Client.preferences.preset, 2);
+		Client.preferences.setPreference(Client.preferences.skyboxes, 0);
+		Client.preferences.setPreference(Client.preferences.animDetail, 0);
+		setCpuUsagePreference();
+		Client.preferences.setPreference(Client.preferences.screenSize, 2);
+		Client.preferences.setPreference(Client.preferences.preset, 2);
 		Client.method9516();
 		Client.world.method7816().resetFade();
 		Client.field10836 = true;
 	}
 
 	@ObfuscatedName("e.p(ZI)V")
-	public static void method131(boolean arg0) {
-		Client.preferences.method18157(Client.preferences.removeRoofs, 1);
-		Client.preferences.method18157(Client.preferences.removeRoofs2, 1);
-		Client.preferences.method18157(Client.preferences.groundDecoration, 0);
-		Client.preferences.method18157(Client.preferences.fog, 0);
-		Client.preferences.method18157(Client.preferences.groundBlending, 0);
-		Client.preferences.method18157(Client.preferences.idleAnimations, 0);
-		Client.preferences.method18157(Client.preferences.flickeringEffects, 0);
-		Client.preferences.method18157(Client.preferences.characterShadows, 0);
-		Client.preferences.method18157(Client.preferences.sceneryShadows, 0);
-		Client.preferences.method18157(Client.preferences.textures, 0);
-		Client.preferences.method18157(Client.preferences.lightingDetail, 0);
-		Client.preferences.method18157(Client.preferences.waterDetail, 0);
-		Client.preferences.method18157(Client.preferences.antiAliasing, 0);
-		Client.preferences.method18157(Client.preferences.antiAliasing2, 0);
-		Client.preferences.method18157(Client.preferences.particles, 0);
-		Client.preferences.method18157(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
-		Client.preferences.method18157(Client.preferences.bloom, 0);
+	public static void setMin(boolean arg0) {
+		Client.preferences.setPreference(Client.preferences.removeRoofs, 1);
+		Client.preferences.setPreference(Client.preferences.removeRoofs2, 1);
+		Client.preferences.setPreference(Client.preferences.groundDecoration, 0);
+		Client.preferences.setPreference(Client.preferences.fog, 0);
+		Client.preferences.setPreference(Client.preferences.groundBlending, 0);
+		Client.preferences.setPreference(Client.preferences.idleAnimations, 0);
+		Client.preferences.setPreference(Client.preferences.flickeringEffects, 0);
+		Client.preferences.setPreference(Client.preferences.characterShadows, 0);
+		Client.preferences.setPreference(Client.preferences.sceneryShadows, 0);
+		Client.preferences.setPreference(Client.preferences.textures, 0);
+		Client.preferences.setPreference(Client.preferences.lightingDetail, 0);
+		Client.preferences.setPreference(Client.preferences.waterDetail, 0);
+		Client.preferences.setPreference(Client.preferences.antiAliasing, 0);
+		Client.preferences.setPreference(Client.preferences.antiAliasing2, 0);
+		Client.preferences.setPreference(Client.preferences.particles, 0);
+		Client.preferences.setPreference(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
+		Client.preferences.setPreference(Client.preferences.bloom, 0);
 		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
 			Client.renderer.disableBloom();
 		}
-		Client.preferences.method18157(Client.preferences.skyboxes, 0);
-		Client.preferences.method18157(Client.preferences.animDetail, 0);
-		method5326();
-		Client.preferences.method18157(Client.preferences.screenSize, 2);
-		Client.preferences.method18157(Client.preferences.preset, 1);
+		Client.preferences.setPreference(Client.preferences.skyboxes, 0);
+		Client.preferences.setPreference(Client.preferences.animDetail, 0);
+		setCpuUsagePreference();
+		Client.preferences.setPreference(Client.preferences.screenSize, 2);
+		Client.preferences.setPreference(Client.preferences.preset, 1);
 		Client.method9516();
 		Client.world.method7816().resetFade();
 		Client.field10836 = true;
 	}
 
 	@ObfuscatedName("kr.d(B)V")
-	public static void method5326() {
+	public static void setCpuUsagePreference() {
 		if (GameShell.cpucount > 1) {
-			Client.preferences.method18157(Client.preferences.cpuUsage, 4);
+			Client.preferences.setPreference(Client.preferences.cpuUsage, 4);
 		} else {
-			Client.preferences.method18157(Client.preferences.cpuUsage, 2);
+			Client.preferences.setPreference(Client.preferences.cpuUsage, 2);
 		}
 	}
 }

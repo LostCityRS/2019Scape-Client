@@ -9,7 +9,7 @@ import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anc")
-public class Lookat_Sub1 extends Lookat {
+public class LookatPoint extends Lookat {
 
 	@ObfuscatedName("anc.n")
 	public final Vector3 field11847 = new Vector3(Float.NaN, Float.NaN, Float.NaN);
@@ -20,7 +20,7 @@ public class Lookat_Sub1 extends Lookat {
 	@ObfuscatedName("anc.k")
 	public final Vector3 field11849 = new Vector3();
 
-	public Lookat_Sub1(Camera arg0) {
+	public LookatPoint(Camera arg0) {
 		super(arg0);
 	}
 
@@ -37,7 +37,7 @@ public class Lookat_Sub1 extends Lookat {
 
 	@ObfuscatedName("anc.e(FB)V")
 	public void method14131(float arg0) {
-		this.field8479.method4807(false, arg0, this.field11847, this.field8479.method4721(), this.field11848, this.field11849);
+		this.camera.method4807(false, arg0, this.field11847, this.camera.method4721(), this.field11848, this.field11849);
 	}
 
 	@ObfuscatedName("anc.n(I)Z")
@@ -47,7 +47,7 @@ public class Lookat_Sub1 extends Lookat {
 
 	@ObfuscatedName("anc.f(Lju;Lou;IIFB)V")
 	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
-		Vector3 var6 = Vector3.create(this.field8479.method4714());
+		Vector3 var6 = Vector3.create(this.camera.method4714());
 		var6.x -= arg2;
 		var6.z -= arg3;
 		var6.y *= -1.0F;
@@ -71,7 +71,7 @@ public class Lookat_Sub1 extends Lookat {
 	}
 
 	@ObfuscatedName("anc.w(Lalw;I)V")
-	public void method14132(Packet arg0) {
-		this.field11848.decode(arg0);
+	public void decode(Packet buf) {
+		this.field11848.decode(buf);
 	}
 }

@@ -11,17 +11,17 @@ import deob.ObfuscatedName;
 public abstract class Lookat {
 
 	@ObfuscatedName("aax.e")
-	public final Camera field8479;
+	public final Camera camera;
 
-	public Lookat(Camera arg0) {
-		this.field8479 = arg0;
+	public Lookat(Camera camera) {
+		this.camera = camera;
 	}
 
 	@ObfuscatedName("aax.e(FB)V")
 	public abstract void method14131(float arg0);
 
 	@ObfuscatedName("aax.w(Lalw;I)V")
-	public abstract void method14132(Packet arg0);
+	public abstract void decode(Packet buf);
 
 	@ObfuscatedName("aax.m(I)Lox;")
 	public abstract Vector3 method14133();

@@ -131,7 +131,7 @@ public class AudioApi {
 			float var15 = 0.0F;
 			float var19;
 			if (Client.cameraState == 3) {
-				float var16 = Client.field9155.method4719();
+				float var16 = Client.cam2.method4719();
 				if (var8.x != 0.0F || var8.z != 0.0F) {
 					int var17 = (int) ((double) (var16 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var8.x, (double) var8.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
 					if (var17 > 8192) {
@@ -215,7 +215,7 @@ public class AudioApi {
 				}
 				if (var9.x != 0.0F || var9.z != 0.0F) {
 					if (Client.cameraState == 3) {
-						float var27 = Client.field9155.method4719();
+						float var27 = Client.cam2.method4719();
 						if (var9.x != 0.0F || var9.z != 0.0F) {
 							int var28 = (int) ((double) (var27 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var9.x, (double) var9.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
 							if (var28 > 8192) {

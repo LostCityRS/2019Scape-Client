@@ -24,25 +24,25 @@ public class ShakeMode {
 	public static final ShakeMode field2624 = new ShakeMode(5);
 
 	@ObfuscatedName("iu.l")
-	public int field2621;
+	public int id;
 
-	public ShakeMode(int arg0) {
-		this.field2621 = arg0;
+	public ShakeMode(int id) {
+		this.id = id;
 	}
 
 	@ObfuscatedName("cj.e(II)Liu;")
-	public static ShakeMode method1599(int arg0) {
-		if (field2625.field2621 == arg0) {
+	public static ShakeMode of(int id) {
+		if (field2625.id == id) {
 			return field2625;
-		} else if (field2620.field2621 == arg0) {
+		} else if (field2620.id == id) {
 			return field2620;
-		} else if (field2619.field2621 == arg0) {
+		} else if (field2619.id == id) {
 			return field2619;
-		} else if (field2622.field2621 == arg0) {
+		} else if (field2622.id == id) {
 			return field2622;
-		} else if (field2623.field2621 == arg0) {
+		} else if (field2623.id == id) {
 			return field2623;
-		} else if (field2624.field2621 == arg0) {
+		} else if (field2624.id == id) {
 			return field2624;
 		} else {
 			return null;

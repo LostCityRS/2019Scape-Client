@@ -14,28 +14,28 @@ import deob.ObfuscatedName;
 public abstract class CameraEffect extends SecondaryNode {
 
 	@ObfuscatedName("aso.l")
-	public final int field12341;
+	public final int id;
 
 	@ObfuscatedName("ary.e(ILie;Lalw;I)Laso;")
-	public static CameraEffect method19262(int arg0, CameraEffectType arg1, Packet arg2) {
-		if (CameraEffectType.field2618 == arg1) {
-			return new Shake(arg0, arg2);
-		} else if (CameraEffectType.field2616 == arg1) {
-			return new ZTilt(arg0, arg2);
+	public static CameraEffect createCameraEffect(int arg0, CameraEffectType arg1, Packet buf) {
+		if (CameraEffectType.SHAKE == arg1) {
+			return new Shake(arg0, buf);
+		} else if (CameraEffectType.ZTILT == arg1) {
+			return new ZTilt(arg0, buf);
 		} else {
 			return null;
 		}
 	}
 
-	public CameraEffect(int arg0) {
-		this.field12341 = arg0;
+	public CameraEffect(int id) {
+		this.id = id;
 	}
 
 	@ObfuscatedName("aso.n(FI)V")
 	public abstract void method19431(float arg0);
 
 	@ObfuscatedName("aso.k(Lalw;I)V")
-	public abstract void method19434(Packet arg0);
+	public abstract void decode(Packet buf);
 
 	@ObfuscatedName("aso.m(Lju;Lou;Lpq;I)V")
 	public abstract void method19440(Vector3i arg0, Matrix4x3 arg1, Matrix4x4 arg2);

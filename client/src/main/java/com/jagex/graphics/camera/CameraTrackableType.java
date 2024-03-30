@@ -12,17 +12,17 @@ public class CameraTrackableType {
 	public static final CameraTrackableType NPC = new CameraTrackableType(1);
 
 	@ObfuscatedName("jl.m")
-	public int index;
+	public int id;
 
-	public CameraTrackableType(int index) {
-		this.index = index;
+	public CameraTrackableType(int id) {
+		this.id = id;
 	}
 
     @ObfuscatedName("ads.e(II)Ljl;")
     public static CameraTrackableType of(int index) {
-        if (PLAYER.index == index) {
+        if (PLAYER.id == index) {
             return PLAYER;
-        } else if (NPC.index == index) {
+        } else if (NPC.id == index) {
             return NPC;
         } else {
             return null;

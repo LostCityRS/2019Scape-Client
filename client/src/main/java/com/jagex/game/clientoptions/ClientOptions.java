@@ -637,13 +637,13 @@ public class ClientOptions extends Node {
 	}
 
 	@ObfuscatedName("ali.f(Lzf;IB)V")
-	public void method18157(Preference arg0, int arg1) {
+	public void setPreference(Preference arg0, int arg1) {
 		arg0.method14071(arg1);
 		this.clampPreferencesValues();
 	}
 
 	@ObfuscatedName("ali.w(Lamd;ZI)V")
-	public void method18177(PreferencesDisplayMode arg0, boolean arg1) {
+	public void setPreferencesDisplayMode(PreferencesDisplayMode arg0, boolean arg1) {
 		arg0.method18544(arg1);
 		this.clampPreferencesValues();
 	}

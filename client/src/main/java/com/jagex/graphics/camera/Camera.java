@@ -20,46 +20,46 @@ public abstract class Camera {
 	public final CameraRelated field2848;
 
 	@ObfuscatedName("je.n")
-	public CameraControlMode field2857;
+	public CameraControlMode controlMode;
 
 	@ObfuscatedName("je.m")
-	public CameraProjectionMode field2844;
+	public CameraProjectionMode projectionMode;
 
 	@ObfuscatedName("je.k")
-	public LookatMode field2845;
+	public LookatMode lookatMode;
 
 	@ObfuscatedName("je.f")
-	public Lookat field2846;
+	public Lookat lookat;
 
 	@ObfuscatedName("je.w")
-	public PositionMode field2847;
+	public PositionMode positionMode;
 
 	@ObfuscatedName("je.l")
-	public Position field2863;
+	public Position position;
 
 	@ObfuscatedName("je.u")
 	public final CameraTrackableProvider field2874;
 
 	@ObfuscatedName("je.z")
-	public CameraLinearMovementMode field2842;
+	public CameraLinearMovementMode linearMovementMode;
 
 	@ObfuscatedName("je.p")
 	public int field2851;
 
 	@ObfuscatedName("je.d")
-	public float field2852;
+	public float positionAngularInterpolation;
 
 	@ObfuscatedName("je.c")
-	public final Vector3 field2853 = new Vector3();
+	public final Vector3 lookatMaxSpeed = new Vector3();
 
 	@ObfuscatedName("je.r")
-	public final Vector3 field2854 = new Vector3();
+	public final Vector3 positionMaxSpeed = new Vector3();
 
 	@ObfuscatedName("je.o")
-	public final Vector3 field2856 = new Vector3();
+	public final Vector3 lookatAcceleration = new Vector3();
 
 	@ObfuscatedName("je.s")
-	public final Vector3 field2867 = new Vector3();
+	public final Vector3 positionAcceleration = new Vector3();
 
 	@ObfuscatedName("je.y")
 	public final float field2858 = 5120.0F;
@@ -80,10 +80,10 @@ public abstract class Camera {
 	public float field2849 = 1.0F;
 
 	@ObfuscatedName("je.g")
-	public final Vector3 field2864 = new Vector3();
+	public final Vector3 lookatSpring = new Vector3();
 
 	@ObfuscatedName("je.i")
-	public final Vector3 field2865 = new Vector3();
+	public final Vector3 positionSpring = new Vector3();
 
 	@ObfuscatedName("je.j")
 	public float field2866;
@@ -116,7 +116,7 @@ public abstract class Camera {
 	public float field2877 = 1.0F;
 
 	@ObfuscatedName("je.am")
-	public IterableMap field2878 = new IterableMap(8);
+	public IterableMap effects = new IterableMap(8);
 
 	public Camera(CameraRelated arg0, CameraTrackableProvider arg1) {
 		this.field2848 = arg0;
@@ -126,24 +126,24 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.e(ZB)V")
 	public void method4680(boolean arg0) {
-		this.field2844 = CameraProjectionMode.field2831;
-		this.field2845 = null;
-		this.field2846 = null;
-		this.field2847 = null;
-		this.field2863 = null;
+		this.projectionMode = CameraProjectionMode.field2831;
+		this.lookatMode = null;
+		this.lookat = null;
+		this.positionMode = null;
+		this.position = null;
 		if (CameraRelated.field2812 != this.field2848 && arg0) {
-			this.field2857 = CameraControlMode.field2828;
+			this.controlMode = CameraControlMode.SERVER;
 		} else {
-			this.field2857 = CameraControlMode.field2829;
+			this.controlMode = CameraControlMode.CLIENT;
 		}
-		this.field2842 = CameraLinearMovementMode.field2825;
-		this.field2853.setTo(100.0F, 100.0F, 100.0F);
-		this.field2854.setTo(100.0F, 100.0F, 100.0F);
-		this.field2852 = 0.05F;
-		this.field2856.setTo(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY);
-		this.field2867.setTo(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY);
-		this.field2864.setTo(1.0F, 1.0F, 1.0F);
-		this.field2865.setTo(1.0F, 1.0F, 1.0F);
+		this.linearMovementMode = CameraLinearMovementMode.field2825;
+		this.lookatMaxSpeed.setTo(100.0F, 100.0F, 100.0F);
+		this.positionMaxSpeed.setTo(100.0F, 100.0F, 100.0F);
+		this.positionAngularInterpolation = 0.05F;
+		this.lookatAcceleration.setTo(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY);
+		this.positionAcceleration.setTo(Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY, Float.POSITIVE_INFINITY);
+		this.lookatSpring.setTo(1.0F, 1.0F, 1.0F);
+		this.positionSpring.setTo(1.0F, 1.0F, 1.0F);
 		this.field2866 = 1.1F;
 		this.field2843 = 1.1F;
 		this.field2855 = 50.0F;
@@ -155,18 +155,18 @@ public abstract class Camera {
 		this.field2875 = true;
 		this.field2876 = 0;
 		this.field2877 = 1.0F;
-		this.field2878.removeAll();
+		this.effects.removeAll();
 	}
 
 	@ObfuscatedName("je.n(F[[[ILqx;III)V")
 	public void method4681(float arg0, int[][][] arg1, SceneLevelTileFlags arg2, int arg3, int arg4) {
-		if (this.field2846 != null) {
-			this.field2846.method14131(arg0);
+		if (this.lookat != null) {
+			this.lookat.method14131(arg0);
 		}
-		if (this.field2863 != null) {
-			this.field2863.method5238(arg0, arg1, arg2, arg3, arg4);
+		if (this.position != null) {
+			this.position.method5238(arg0, arg1, arg2, arg3, arg4);
 		}
-		Iterator var6 = this.field2878.iterator();
+		Iterator var6 = this.effects.iterator();
 		while (var6.hasNext()) {
 			CameraEffect var7 = (CameraEffect) var6.next();
 			var7.method19431(arg0);
@@ -175,114 +175,114 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.m(ZFLox;Lov;Lox;Lox;B)V")
 	public void method4807(boolean arg0, float arg1, Vector3 arg2, Quaternion arg3, Vector3 arg4, Vector3 arg5) {
-		if (CameraLinearMovementMode.field2824 == this.field2842) {
-			CameraMode1.method5205(arg1, arg2, arg4, arg5, arg0 ? this.field2867 : this.field2856, arg0 ? this.field2854 : this.field2853, (float) this.field2876, this.field2877, this.field2861, this.field2869);
-		} else if (CameraLinearMovementMode.field2825 == this.field2842) {
-			CameraMode2.method8144(arg1, arg2, arg3, arg4, arg5, arg0 ? this.field2867 : this.field2856, arg0 ? this.field2854 : this.field2853, (float) this.field2876, this.field2877, this.field2861, this.field2869);
-		} else if (CameraLinearMovementMode.field2823 == this.field2842) {
-			CameraMode3.method14933(arg1, arg2, arg3, arg4, arg5, arg0 ? this.field2865 : this.field2864, arg0 ? this.field2843 : this.field2866, this.field2861, this.field2849);
+		if (CameraLinearMovementMode.field2824 == this.linearMovementMode) {
+			CameraMode1.method5205(arg1, arg2, arg4, arg5, arg0 ? this.positionAcceleration : this.lookatAcceleration, arg0 ? this.positionMaxSpeed : this.lookatMaxSpeed, (float) this.field2876, this.field2877, this.field2861, this.field2869);
+		} else if (CameraLinearMovementMode.field2825 == this.linearMovementMode) {
+			CameraMode2.method8144(arg1, arg2, arg3, arg4, arg5, arg0 ? this.positionAcceleration : this.lookatAcceleration, arg0 ? this.positionMaxSpeed : this.lookatMaxSpeed, (float) this.field2876, this.field2877, this.field2861, this.field2869);
+		} else if (CameraLinearMovementMode.field2823 == this.linearMovementMode) {
+			CameraMode3.method14933(arg1, arg2, arg3, arg4, arg5, arg0 ? this.positionSpring : this.lookatSpring, arg0 ? this.field2843 : this.field2866, this.field2861, this.field2849);
 		}
 	}
 
 	@ObfuscatedName("je.k(Ljd;B)V")
-	public void method4683(CameraControlMode arg0) {
-		this.field2857 = arg0;
+	public void setControlMode(CameraControlMode controlMode) {
+		this.controlMode = controlMode;
 	}
 
 	@ObfuscatedName("je.f(Lii;ZI)Laax;")
-	public Lookat method4684(LookatMode arg0, boolean arg1) throws CameraException {
-		if (CameraControlMode.field2829 == this.field2857 && !arg1) {
+	public Lookat setLookatMode(LookatMode arg0, boolean arg1) throws CameraException {
+		if (CameraControlMode.CLIENT == this.controlMode && !arg1) {
 			throw new CameraException();
 		}
-		this.field2845 = arg0;
-		if (LookatMode.field2788 == arg0) {
-			this.field2846 = new LookatEntity(this);
-		} else if (LookatMode.field2791 == arg0) {
-			this.field2846 = new LookatOrientation(this);
-		} else if (LookatMode.field2790 == arg0) {
-			this.field2846 = new Lookat_Sub1(this);
+		this.lookatMode = arg0;
+		if (LookatMode.ENTITY == arg0) {
+			this.lookat = new LookatEntity(this);
+		} else if (LookatMode.ORIENTATION == arg0) {
+			this.lookat = new LookatOrientation(this);
+		} else if (LookatMode.POINT == arg0) {
+			this.lookat = new LookatPoint(this);
 		} else if (LookatMode.field2789 == arg0) {
-			this.field2846 = new LookatSpline_Sub1(this);
+			this.lookat = new LookatSpline_Sub1(this);
 		} else if (LookatMode.field2795 == arg0) {
-			this.field2846 = new LookatSpline_Sub4(this);
+			this.lookat = new LookatSpline_Sub4(this);
 		} else if (LookatMode.field2792 == arg0) {
-			this.field2846 = new Lookat_Sub2(this);
+			this.lookat = new Lookat_Sub2(this);
 		} else if (LookatMode.field2787 == arg0) {
-			this.field2846 = new LookatSpline_Sub2(this);
+			this.lookat = new LookatSpline_Sub2(this);
 		}
-		return this.field2846;
+		return this.lookat;
 	}
 
 	@ObfuscatedName("je.w(Lim;ZI)Lkl;")
-	public Position method4688(PositionMode arg0, boolean arg1) throws CameraException {
-		if (CameraControlMode.field2829 == this.field2857 && !arg1) {
+	public Position setPositionMode(PositionMode arg0, boolean arg1) throws CameraException {
+		if (CameraControlMode.CLIENT == this.controlMode && !arg1) {
 			throw new CameraException();
 		}
-		this.field2847 = arg0;
-		if (PositionMode.field2815 == arg0) {
-			this.field2863 = new PositionEntity(this);
-		} else if (PositionMode.field2816 == arg0) {
-			this.field2863 = new PositionPoint(this);
+		this.positionMode = arg0;
+		if (PositionMode.ENTITY == arg0) {
+			this.position = new PositionEntity(this);
+		} else if (PositionMode.POINT == arg0) {
+			this.position = new PositionPoint(this);
 		} else if (PositionMode.field2819 == arg0) {
-			this.field2863 = new PositionSpline_Sub1(this);
+			this.position = new PositionSpline_Sub1(this);
 		} else if (PositionMode.field2817 == arg0) {
-			this.field2863 = new PositionSpline_Sub3(this);
+			this.position = new PositionSpline_Sub3(this);
 		} else if (PositionMode.field2818 == arg0) {
-			this.field2863 = new PositionSpline_Sub2(this);
+			this.position = new PositionSpline_Sub2(this);
 		}
-		return this.field2863;
+		return this.position;
 	}
 
 	@ObfuscatedName("je.l(I)Z")
 	public boolean method4686() {
-		if (CameraRelated.field2812 == this.field2848 && CameraControlMode.field2829 == this.field2857) {
+		if (CameraRelated.field2812 == this.field2848 && CameraControlMode.CLIENT == this.controlMode) {
 			return true;
 		} else {
-			return CameraRelated.field2813 == this.field2848 && CameraControlMode.field2828 == this.field2857;
+			return CameraRelated.field2813 == this.field2848 && CameraControlMode.SERVER == this.controlMode;
 		}
 	}
 
 	@ObfuscatedName("je.u(FB)V")
-	public void method4712(float arg0) throws CameraException {
+	public void setLookatAngularInterpolation(float arg0) throws CameraException {
 		if (!this.method4686()) {
 			throw new CameraException();
 		}
 	}
 
 	@ObfuscatedName("je.z(FI)V")
-	public void method4766(float arg0) throws CameraException {
+	public void setPositionAngularInterpolation(float arg0) throws CameraException {
 		if (!this.method4686()) {
 			throw new CameraException();
 		}
-		this.field2852 = arg0;
+		this.positionAngularInterpolation = arg0;
 	}
 
 	@ObfuscatedName("je.p(Lic;I)V")
-	public void method4689(CameraLinearMovementMode arg0) throws CameraException {
+	public void setLinearMovementMode(CameraLinearMovementMode arg0) throws CameraException {
 		if (!this.method4686()) {
 			throw new CameraException();
 		}
-		this.field2842 = arg0;
+		this.linearMovementMode = arg0;
 	}
 
 	@ObfuscatedName("je.d(Lox;I)V")
-	public void method4690(Vector3 arg0) throws CameraException {
-		if (!this.method4686() || !this.field2842.field2821) {
+	public void setLookatAcceleration(Vector3 arg0) throws CameraException {
+		if (!this.method4686() || !this.linearMovementMode.field2821) {
 			throw new CameraException();
 		}
-		this.field2856.setTo(arg0);
+		this.lookatAcceleration.setTo(arg0);
 	}
 
 	@ObfuscatedName("je.c(Lox;I)V")
-	public void method4814(Vector3 arg0) throws CameraException {
-		if (!this.method4686() || !this.field2842.field2821) {
+	public void setPositionAcceleration(Vector3 arg0) throws CameraException {
+		if (!this.method4686() || !this.linearMovementMode.field2821) {
 			throw new CameraException();
 		}
-		this.field2867.setTo(arg0);
+		this.positionAcceleration.setTo(arg0);
 	}
 
 	@ObfuscatedName("je.r(FFFB)V")
-	public void method4782(float arg0, float arg1, float arg2) throws CameraException {
+	public void setSnapDistances(float arg0, float arg1, float arg2) throws CameraException {
 		if (!this.method4686()) {
 			throw new CameraException();
 		}
@@ -292,7 +292,7 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.v(I)V")
-	public void method4756() throws CameraException {
+	public void resetSnapDistances() throws CameraException {
 		if (!this.method4686()) {
 			throw new CameraException();
 		}
@@ -302,52 +302,52 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.o(Lox;I)V")
-	public void method4832(Vector3 arg0) throws CameraException {
-		if (!this.method4686() || !this.field2842.field2821) {
+	public void setLookatMaxSpeed(Vector3 arg0) throws CameraException {
+		if (!this.method4686() || !this.linearMovementMode.field2821) {
 			throw new CameraException();
 		}
-		this.field2853.setTo(arg0);
+		this.lookatMaxSpeed.setTo(arg0);
 	}
 
 	@ObfuscatedName("je.s(Lox;I)V")
-	public void method4695(Vector3 arg0) throws CameraException {
-		if (!this.method4686() || !this.field2842.field2821) {
+	public void setPositionMaxSpeed(Vector3 arg0) throws CameraException {
+		if (!this.method4686() || !this.linearMovementMode.field2821) {
 			throw new CameraException();
 		}
-		this.field2854.setTo(arg0);
+		this.positionMaxSpeed.setTo(arg0);
 	}
 
 	@ObfuscatedName("je.y(Lox;FI)V")
-	public void method4696(Vector3 arg0, float arg1) throws CameraException {
-		if (!this.method4686() || this.field2842.field2821) {
+	public void setSpringProperties(Vector3 arg0, float arg1) throws CameraException {
+		if (!this.method4686() || this.linearMovementMode.field2821) {
 			throw new CameraException();
 		}
-		this.field2864.setTo(arg0);
-		this.field2865.setTo(arg0);
+		this.lookatSpring.setTo(arg0);
+		this.positionSpring.setTo(arg0);
 		this.field2866 = arg1;
 		this.field2843 = arg1;
 	}
 
 	@ObfuscatedName("je.q(Lox;FI)V")
-	public void method4699(Vector3 arg0, float arg1) throws CameraException {
-		if (!this.method4686() || this.field2842.field2821) {
+	public void setLookatSpringProperties(Vector3 arg0, float arg1) throws CameraException {
+		if (!this.method4686() || this.linearMovementMode.field2821) {
 			throw new CameraException();
 		}
-		this.field2864.setTo(arg0);
+		this.lookatSpring.setTo(arg0);
 		this.field2866 = arg1;
 	}
 
 	@ObfuscatedName("je.x(Lox;FB)V")
-	public void method4725(Vector3 arg0, float arg1) throws CameraException {
-		if (!this.method4686() || this.field2842.field2821) {
+	public void setPositionSpringProperties(Vector3 arg0, float arg1) throws CameraException {
+		if (!this.method4686() || this.linearMovementMode.field2821) {
 			throw new CameraException();
 		}
-		this.field2865.setTo(arg0);
+		this.positionSpring.setTo(arg0);
 		this.field2843 = arg1;
 	}
 
 	@ObfuscatedName("je.b(FFB)V")
-	public void method4698(float arg0, float arg1) throws CameraException {
+	public void setDepthPlanes(float arg0, float arg1) throws CameraException {
 		if (!this.method4686()) {
 			throw new CameraException();
 		}
@@ -365,7 +365,7 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.h(FFI)V")
-	public void method4828(float arg0, float arg1) throws CameraException {
+	public void setFieldOfView(float arg0, float arg1) throws CameraException {
 		if (!this.method4686()) {
 			throw new CameraException();
 		}
@@ -374,7 +374,7 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.a(ZZI)V")
-	public void method4700(boolean arg0, boolean arg1) throws CameraException {
+	public void setCollisionMode(boolean arg0, boolean arg1) throws CameraException {
 		if (!this.method4686()) {
 			throw new CameraException();
 		}
@@ -383,8 +383,8 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.g(IFI)V")
-	public void method4701(int arg0, float arg1) throws CameraException {
-		if (!this.method4686() || !this.field2842.field2821) {
+	public void setTrailDistance(int arg0, float arg1) throws CameraException {
+		if (!this.method4686() || !this.linearMovementMode.field2821) {
 			throw new CameraException();
 		}
 		this.field2876 = arg0;
@@ -392,34 +392,34 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.i(Laso;I)V")
-	public void method4702(CameraEffect arg0) {
-		this.field2878.pushNode(arg0, (long) arg0.field12341);
+	public void addEffect(CameraEffect arg0) {
+		this.effects.pushNode(arg0, (long) arg0.id);
 	}
 
 	@ObfuscatedName("je.j(II)V")
-	public void method4703(int arg0) {
-		CameraEffect var2 = (CameraEffect) this.field2878.getNode((long) arg0);
+	public void removeEffect(int arg0) {
+		CameraEffect var2 = (CameraEffect) this.effects.getNode((long) arg0);
 		if (var2 != null) {
 			var2.remove();
 		}
 	}
 
 	@ObfuscatedName("je.t(II)Laso;")
-	public CameraEffect method4704(int arg0) {
-		return (CameraEffect) this.field2878.getNode((long) arg0);
+	public CameraEffect getEffect(int arg0) {
+		return (CameraEffect) this.effects.getNode((long) arg0);
 	}
 
 	@ObfuscatedName("je.ae(B)V")
-	public void method4705() {
-		this.field2878.removeAll();
+	public void removeAllEffects() {
+		this.effects.removeAll();
 	}
 
 	@ObfuscatedName("je.ag(B)Z")
 	public boolean method4744() {
-		if (this.field2846 == null || this.field2863 == null) {
+		if (this.lookat == null || this.position == null) {
 			return false;
-		} else if (this.field2846.method14145()) {
-			return this.field2863.method5218();
+		} else if (this.lookat.method14145()) {
+			return this.position.method5218();
 		} else {
 			return false;
 		}
@@ -430,14 +430,14 @@ public abstract class Camera {
 		if (!this.method4744()) {
 			return;
 		}
-		this.field2846.method14136(arg0, arg1, arg3, arg4, this.field2863.method5222());
-		this.field2863.method5223(arg0, arg3, arg4);
-		if (CameraProjectionMode.field2831 == this.field2844) {
+		this.lookat.method14136(arg0, arg1, arg3, arg4, this.position.method5222());
+		this.position.method5223(arg0, arg3, arg4);
+		if (CameraProjectionMode.field2831 == this.projectionMode) {
 			arg2.setToPerspectiveProjection(this.field2855, this.field2859, this.field2872, this.field2868);
 		} else {
 			arg2.method6601(this.field2855, this.field2859, (float) this.field2851);
 		}
-		Iterator var6 = this.field2878.iterator();
+		Iterator var6 = this.effects.iterator();
 		while (var6.hasNext()) {
 			CameraEffect var7 = (CameraEffect) var6.next();
 			var7.method19440(arg0, arg1, arg2);
@@ -445,18 +445,18 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.al(I)Ljd;")
-	public CameraControlMode method4708() {
-		return this.field2857;
+	public CameraControlMode getControlMode() {
+		return this.controlMode;
 	}
 
 	@ObfuscatedName("je.ac(B)Lkl;")
-	public Position method4709() {
-		return this.field2863;
+	public Position getPosition() {
+		return this.position;
 	}
 
 	@ObfuscatedName("je.ai(I)Laax;")
-	public Lookat method4797() {
-		return this.field2846;
+	public Lookat getLookat() {
+		return this.lookat;
 	}
 
 	@ObfuscatedName("je.aw(I)Ljy;")
@@ -465,33 +465,33 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.as(B)Lii;")
-	public LookatMode method4743() {
-		return this.field2845;
+	public LookatMode getLookatMode() {
+		return this.lookatMode;
 	}
 
 	@ObfuscatedName("je.at(I)Lim;")
-	public PositionMode method4780() {
-		return this.field2847;
+	public PositionMode getPositionMode() {
+		return this.positionMode;
 	}
 
 	@ObfuscatedName("je.ad(I)Lox;")
 	public Vector3 method4714() {
-		return this.field2863 != null && this.field2863.method5218() ? this.field2863.method5219() : null;
+		return this.position != null && this.position.method5218() ? this.position.method5219() : null;
 	}
 
 	@ObfuscatedName("je.am(I)[D")
 	public double[] method4715() {
-		return this.field2863 != null && this.field2863.method5218() ? this.field2863.method5230() : null;
+		return this.position != null && this.position.method5218() ? this.position.method5230() : null;
 	}
 
 	@ObfuscatedName("je.au(I)Lox;")
 	public Vector3 method4711() {
-		return this.field2846 != null && this.field2846.method14145() ? this.field2846.method14133() : null;
+		return this.lookat != null && this.lookat.method14145() ? this.lookat.method14133() : null;
 	}
 
 	@ObfuscatedName("je.ar(I)Lakt;")
 	public CoordFine method4717() {
-		return this.field2863 != null && this.field2863.method5218() ? this.field2863.method5221() : null;
+		return this.position != null && this.position.method5218() ? this.position.method5221() : null;
 	}
 
 	@ObfuscatedName("je.ap(B)F")
@@ -538,27 +538,27 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.ao(B)Lox;")
 	public Vector3 method4794() {
-		return this.field2856;
+		return this.lookatAcceleration;
 	}
 
 	@ObfuscatedName("je.aj(I)Lox;")
 	public Vector3 method4778() {
-		return this.field2867;
+		return this.positionAcceleration;
 	}
 
 	@ObfuscatedName("je.ay(S)F")
 	public float method4724() {
-		return this.field2852;
+		return this.positionAngularInterpolation;
 	}
 
 	@ObfuscatedName("je.ab(B)Lox;")
 	public Vector3 method4728() {
-		return this.field2853;
+		return this.lookatMaxSpeed;
 	}
 
 	@ObfuscatedName("je.az(B)Lox;")
 	public Vector3 method4693() {
-		return this.field2854;
+		return this.positionMaxSpeed;
 	}
 
 	@ObfuscatedName("je.aa(I)F")

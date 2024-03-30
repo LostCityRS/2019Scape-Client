@@ -6,24 +6,24 @@ import deob.ObfuscatedName;
 public class CameraControlMode {
 
 	@ObfuscatedName("jd.e")
-	public static final CameraControlMode field2829 = new CameraControlMode(0);
+	public static final CameraControlMode CLIENT = new CameraControlMode(0);
 
 	@ObfuscatedName("jd.n")
-	public static final CameraControlMode field2828 = new CameraControlMode(1);
+	public static final CameraControlMode SERVER = new CameraControlMode(1);
 
 	@ObfuscatedName("jd.m")
-	public int field2827;
+	public int index;
 
-	public CameraControlMode(int arg0) {
-		this.field2827 = arg0;
+	public CameraControlMode(int index) {
+		this.index = index;
 	}
 
 	@ObfuscatedName("ir.e(II)Ljd;")
-	public static CameraControlMode method4461(int arg0) {
-		if (field2829.field2827 == arg0) {
-			return field2829;
-		} else if (field2828.field2827 == arg0) {
-			return field2828;
+	public static CameraControlMode of(int index) {
+		if (CLIENT.index == index) {
+			return CLIENT;
+		} else if (SERVER.index == index) {
+			return SERVER;
 		} else {
 			return null;
 		}

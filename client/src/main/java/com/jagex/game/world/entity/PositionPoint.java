@@ -48,7 +48,7 @@ public class PositionPoint extends Position {
 		if (this.field10550) {
 			this.method16681(arg1, arg2, arg3, arg4);
 		}
-		this.field3084.method4807(true, arg0, this.field10548, this.field3084.method4721(), this.field10549, this.field10547);
+		this.camera.method4807(true, arg0, this.field10548, this.camera.method4721(), this.field10549, this.field10547);
 	}
 
 	@ObfuscatedName("ahh.n(I)Z")
@@ -94,13 +94,13 @@ public class PositionPoint extends Position {
 	}
 
 	@ObfuscatedName("ahh.ae(ZI)V")
-	public void method16672(boolean arg0) {
+	public void setCollision(boolean arg0) {
 		this.field10550 = arg0;
 	}
 
 	@ObfuscatedName("ahh.ag([[[ILqx;III)V")
 	public void method16681(int[][][] arg0, SceneLevelTileFlags arg1, int arg2, int arg3) {
-		if (!this.method5218() || !this.field3084.method4730() && !this.field3084.method4731() || !this.field3084.method4731() || arg0 == null) {
+		if (!this.method5218() || !this.camera.method4730() && !this.camera.method4731() || !this.camera.method4731() || arg0 == null) {
 			return;
 		}
 		int var5 = (int) this.field10549.x - arg2 >> 9;

@@ -45,7 +45,7 @@ public class LookatEntity extends Lookat {
 	@ObfuscatedName("anw.x(I)V")
 	public void method18815() {
 		if (this.field11867 != null) {
-			this.field11867 = this.field8479.method4697().method268(this.field11867.getCameraTrackableType(), this.field11867.getIndex());
+			this.field11867 = this.camera.method4697().getCameraTrackable(this.field11867.getCameraTrackableType(), this.field11867.getIndex());
 		}
 	}
 
@@ -53,7 +53,7 @@ public class LookatEntity extends Lookat {
 	public void method14131(float arg0) {
 		if (this.field11867 != null) {
 			this.field11862.setTo(this.field11867.method4667().method17853());
-			this.field8479.method4807(false, arg0, this.field11865, this.field8479.method4721(), this.field11862, this.field11866);
+			this.camera.method4807(false, arg0, this.field11865, this.camera.method4721(), this.field11862, this.field11866);
 		}
 	}
 
@@ -64,7 +64,7 @@ public class LookatEntity extends Lookat {
 
 	@ObfuscatedName("anw.f(Lju;Lou;IIFB)V")
 	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
-		Vector3 var6 = Vector3.create(this.field8479.method4714());
+		Vector3 var6 = Vector3.create(this.camera.method4714());
 		var6.x -= arg2;
 		var6.z -= arg3;
 		var6.y *= -1.0F;
@@ -107,12 +107,12 @@ public class LookatEntity extends Lookat {
 	}
 
 	@ObfuscatedName("anw.w(Lalw;I)V")
-	public void method14132(Packet arg0) {
-		CameraTrackableType var2 = CameraTrackableType.of(arg0.g1());
-		int var3 = arg0.g2();
-		this.field11867 = this.field8479.method4697().method268(var2, var3);
-		this.field11863.decode(arg0);
-		if (arg0.g1() == 1) {
+	public void decode(Packet buf) {
+		CameraTrackableType var2 = CameraTrackableType.of(buf.g1());
+		int var3 = buf.g2();
+		this.field11867 = this.camera.method4697().getCameraTrackable(var2, var3);
+		this.field11863.decode(buf);
+		if (buf.g1() == 1) {
 			this.field11864 = true;
 		} else {
 			this.field11864 = false;

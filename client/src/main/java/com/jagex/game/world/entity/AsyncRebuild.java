@@ -82,7 +82,7 @@ public class AsyncRebuild implements Runnable {
 	@ObfuscatedName("ry.l(Lrt;I)V")
 	public void method7689(RebuildRequest arg0) {
 		if (RebuildType.field5070 == arg0.rebuildType) {
-			this.field5004.method7753();
+			this.field5004.rebuild();
 		} else {
 			this.field5004.rebuildMap(arg0);
 		}

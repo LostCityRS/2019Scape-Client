@@ -198,19 +198,19 @@ public final class ScriptRunner {
 					var10 = arg0.field11497;
 				}
 				if (var10 == -2147483645) {
-					var10 = arg0.field11491 == null ? -1 : arg0.field11491.field2158;
+					var10 = arg0.field11491 == null ? -1 : arg0.field11491.parentlayer;
 				}
 				if (var10 == -2147483644) {
 					var10 = arg0.field11494;
 				}
 				if (var10 == -2147483643) {
-					var10 = arg0.field11491 == null ? -1 : arg0.field11491.field2183;
+					var10 = arg0.field11491 == null ? -1 : arg0.field11491.id;
 				}
 				if (var10 == -2147483642) {
-					var10 = arg0.field11495 == null ? -1 : arg0.field11495.field2158;
+					var10 = arg0.field11495 == null ? -1 : arg0.field11495.parentlayer;
 				}
 				if (var10 == -2147483641) {
-					var10 = arg0.field11495 == null ? -1 : arg0.field11495.field2183;
+					var10 = arg0.field11495 == null ? -1 : arg0.field11495.id;
 				}
 				if (var10 == -2147483640) {
 					var10 = arg0.field11496;
@@ -278,8 +278,8 @@ public final class ScriptRunner {
 		state.objectLocals = new Object[script.objectLocalCount];
 		if (ClientTriggerType.field7263 == script.field12373 || ClientTriggerType.field7255 == script.field12373 || ClientTriggerType.field7254 == script.field12373) {
 			state.intLocals[0] = arg1;
-			state.intLocals[1] = Client.mouse.method9086();
-			state.intLocals[2] = Client.mouse.method9092();
+			state.intLocals[1] = Client.mouse.getX();
+			state.intLocals[2] = Client.mouse.getY();
 		} else if (ClientTriggerType.field7258 == script.field12373 || ClientTriggerType.field7249 == script.field12373 || ClientTriggerType.field7257 == script.field12373 || ClientTriggerType.field7253 == script.field12373 || ClientTriggerType.field7252 == script.field12373) {
 			state.intLocals[0] = arg1;
 		} else if (ClientTriggerType.field7251 == script.field12373) {
@@ -421,8 +421,8 @@ public final class ScriptRunner {
 		}
 		Component var12 = new Component();
 		var12.type = arg2;
-		var12.field2200 = var12.field2158 = var6.field2158;
-		var12.field2183 = arg3;
+		var12.layer = var12.parentlayer = var6.parentlayer;
+		var12.id = arg3;
 		var6.field2351[arg3] = var12;
 		if (var6.field2351 != var6.field2349) {
 			var6.field2349[arg3] = var12;
@@ -443,7 +443,7 @@ public final class ScriptRunner {
 		if (arg1 == null) {
 			return;
 		}
-		if (arg1.field2183 == -1) {
+		if (arg1.id == -1) {
 			Component[] var5 = arg0.method3932();
 			int var6;
 			for (var6 = 0; var6 < var5.length && var5[var6] != arg1; var6++) {
@@ -455,15 +455,15 @@ public final class ScriptRunner {
 			var5[var5.length - 1] = arg1;
 			return;
 		}
-		Component var2 = arg0.method3924(arg1.field2200);
+		Component var2 = arg0.method3924(arg1.layer);
 		if (var2 == null) {
 			return;
 		}
 		if (var2.field2351 == var2.field2349) {
 			var2.field2349 = new Component[var2.field2351.length];
 			var2.field2349[var2.field2349.length - 1] = arg1;
-			ArrayUtil.method14008(var2.field2351, 0, var2.field2349, 0, arg1.field2183);
-			ArrayUtil.method14008(var2.field2351, arg1.field2183 + 1, var2.field2349, arg1.field2183, var2.field2351.length - arg1.field2183 - 1);
+			ArrayUtil.method14008(var2.field2351, 0, var2.field2349, 0, arg1.id);
+			ArrayUtil.method14008(var2.field2351, arg1.id + 1, var2.field2349, arg1.id, var2.field2351.length - arg1.id - 1);
 			return;
 		}
 		int var3 = 0;
@@ -483,7 +483,7 @@ public final class ScriptRunner {
 		if (arg1 == null) {
 			return;
 		}
-		if (arg1.field2183 == -1) {
+		if (arg1.id == -1) {
 			Component[] var5 = arg0.method3932();
 			int var6;
 			for (var6 = 0; var6 < var5.length && var5[var6] != arg1; var6++) {
@@ -495,15 +495,15 @@ public final class ScriptRunner {
 			var5[0] = arg1;
 			return;
 		}
-		Component var2 = arg0.field2151[arg1.field2200 & 0xFFFF];
+		Component var2 = arg0.field2151[arg1.layer & 0xFFFF];
 		if (var2 == null) {
 			return;
 		}
 		if (var2.field2351 == var2.field2349) {
 			var2.field2349 = new Component[var2.field2351.length];
 			var2.field2349[0] = arg1;
-			ArrayUtil.method14008(var2.field2351, 0, var2.field2349, 1, arg1.field2183);
-			ArrayUtil.method14008(var2.field2351, arg1.field2183 + 1, var2.field2349, arg1.field2183 + 1, var2.field2351.length - arg1.field2183 - 1);
+			ArrayUtil.method14008(var2.field2351, 0, var2.field2349, 1, arg1.id);
+			ArrayUtil.method14008(var2.field2351, arg1.id + 1, var2.field2349, arg1.id + 1, var2.field2351.length - arg1.id - 1);
 			return;
 		}
 		int var3 = 0;
@@ -519,7 +519,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("pf.x(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZI)V")
-	public static void method7005(String arg0, String arg1, String arg2, boolean arg3, boolean arg4) {
+	public static void openUrl(String arg0, String arg1, String arg2, boolean arg3, boolean arg4) {
 		ServerConnection var5 = Client.getCurrentConnection();
 		if (var5.getStream() == null) {
 			return;
@@ -5219,9 +5219,9 @@ public final class ScriptRunner {
 	@ObfuscatedName("iy.bn(Lyf;B)V")
 	public static final void cc_delete(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
-		if (var1.field8242.field2183 != -1) {
+		if (var1.field8242.id != -1) {
 			Component var2 = var1.method13790();
-			var2.field2351[var1.field8242.field2183] = null;
+			var2.field2351[var1.field8242.id] = null;
 			Client.method4616(var2);
 		} else if (arg0.secondary) {
 			throw new RuntimeException("Tried to .cc_delete static .active-component!");
@@ -5305,8 +5305,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("tp.bw(Lhf;Lyf;I)V")
 	public static final void cc_if_resume_pausebutton(Component arg0, ClientScriptState arg1) {
 		if (Client.method17197(arg0).method17689() && Client.pressedContinueOption == null) {
-			Client.method612(arg0.field2158, arg0.field2183);
-			Client.pressedContinueOption = Component.method16682(arg0.field2158, arg0.field2183);
+			Client.method612(arg0.parentlayer, arg0.id);
+			Client.pressedContinueOption = Component.method16682(arg0.parentlayer, arg0.id);
 			Client.method4616(Client.pressedContinueOption);
 		}
 	}
@@ -5395,8 +5395,8 @@ public final class ScriptRunner {
 		if (arg0.type == 0) {
 			Client.method8329(arg1, arg0, false);
 		}
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method16433(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method16433(arg0.parentlayer);
 		}
 	}
 
@@ -5463,12 +5463,12 @@ public final class ScriptRunner {
 	@ObfuscatedName("ju.ce(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_sethide(Component arg0, Interface arg1, ClientScriptState arg2) {
 		boolean var3 = arg2.intStack[--arg2.isp] == 1;
-		if (arg0.field2201 != var3) {
-			arg0.field2201 = var3;
+		if (arg0.hide != var3) {
+			arg0.hide = var3;
 			Client.method4616(arg0);
 		}
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method10340(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method10340(arg0.parentlayer);
 		}
 	}
 
@@ -5540,23 +5540,23 @@ public final class ScriptRunner {
 	@ObfuscatedName("any.ct(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setscrollpos(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.isp -= 2;
-		arg0.field2206 = arg2.intStack[arg2.isp];
-		if (arg0.field2206 > arg0.field2208 - arg0.width) {
-			arg0.field2206 = arg0.field2208 - arg0.width;
+		arg0.scrollx = arg2.intStack[arg2.isp];
+		if (arg0.scrollx > arg0.scrollwidth - arg0.width) {
+			arg0.scrollx = arg0.scrollwidth - arg0.width;
 		}
-		if (arg0.field2206 < 0) {
-			arg0.field2206 = 0;
+		if (arg0.scrollx < 0) {
+			arg0.scrollx = 0;
 		}
-		arg0.field2207 = arg2.intStack[arg2.isp + 1];
-		if (arg0.field2207 > arg0.field2319 - arg0.height) {
-			arg0.field2207 = arg0.field2319 - arg0.height;
+		arg0.scrolly = arg2.intStack[arg2.isp + 1];
+		if (arg0.scrolly > arg0.scrollheight - arg0.height) {
+			arg0.scrolly = arg0.scrollheight - arg0.height;
 		}
-		if (arg0.field2207 < 0) {
-			arg0.field2207 = 0;
+		if (arg0.scrolly < 0) {
+			arg0.scrolly = 0;
 		}
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method1588(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method1588(arg0.parentlayer);
 		}
 	}
 
@@ -5580,8 +5580,8 @@ public final class ScriptRunner {
 	public static final void cc_if_setcolour(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.colour = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method14870(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method14870(arg0.parentlayer);
 		}
 	}
 
@@ -5625,7 +5625,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("hx.cy(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_settrans(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2212 = arg2.intStack[--arg2.isp];
+		arg0.trans = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
 	}
 
@@ -5670,13 +5670,13 @@ public final class ScriptRunner {
 	@ObfuscatedName("jx.dd(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setgraphic(Component arg0, Interface arg1, ClientScriptState arg2) {
 		int var3 = arg2.intStack[--arg2.isp];
-		arg0.field2334 = -1;
-		if (arg0.field2215 != var3) {
-			arg0.field2215 = var3;
+		arg0.invobject = -1;
+		if (arg0.graphic != var3) {
+			arg0.graphic = var3;
 			Client.method4616(arg0);
 		}
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method7714(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method7714(arg0.parentlayer);
 		}
 	}
 
@@ -5698,7 +5698,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("dd.dt(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_set2dangle(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2216 = arg2.intStack[--arg2.isp];
+		arg0.angle2d = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
 	}
 
@@ -5745,8 +5745,8 @@ public final class ScriptRunner {
 		arg0.field2224 = 1;
 		arg0.field2294 = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method19198(arg0.parentlayer);
 		}
 	}
 
@@ -5769,16 +5769,16 @@ public final class ScriptRunner {
 	@ObfuscatedName("sd.dn(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setmodelangle(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.isp -= 6;
-		arg0.field2228 = arg2.intStack[arg2.isp];
-		arg0.field2316 = arg2.intStack[arg2.isp + 1];
-		arg0.field2230 = arg2.intStack[arg2.isp + 2];
-		arg0.field2231 = arg2.intStack[arg2.isp + 3];
-		arg0.field2331 = arg2.intStack[arg2.isp + 4];
-		arg0.field2272 = arg2.intStack[arg2.isp + 5];
+		arg0.modelxof = arg2.intStack[arg2.isp];
+		arg0.modelyof = arg2.intStack[arg2.isp + 1];
+		arg0.modelangle_x = arg2.intStack[arg2.isp + 2];
+		arg0.modelangle_y = arg2.intStack[arg2.isp + 3];
+		arg0.modelangle_z = arg2.intStack[arg2.isp + 4];
+		arg0.modelzoom = arg2.intStack[arg2.isp + 5];
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method2886(arg0.field2158);
-			DelayedStateChange.method14792(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method2886(arg0.parentlayer);
+			DelayedStateChange.method14792(arg0.parentlayer);
 		}
 	}
 
@@ -5813,8 +5813,8 @@ public final class ScriptRunner {
 			arg0.field2262 = var3;
 			Client.method4616(arg0);
 		}
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method10523(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method10523(arg0.parentlayer);
 		}
 	}
 
@@ -5945,8 +5945,8 @@ public final class ScriptRunner {
 			arg0.text = var3;
 			Client.method4616(arg0);
 		}
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method16464(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method16464(arg0.parentlayer);
 		}
 	}
 
@@ -5968,10 +5968,10 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ft.el(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_settextfont(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2287 = arg2.intStack[--arg2.isp];
+		arg0.font = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method7247(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method7247(arg0.parentlayer);
 		}
 	}
 
@@ -6042,8 +6042,8 @@ public final class ScriptRunner {
 	public static final void cc_if_settextantimacro(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.antimacro = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method9793(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method9793(arg0.parentlayer);
 		}
 	}
 
@@ -6154,8 +6154,8 @@ public final class ScriptRunner {
 	@ObfuscatedName("tv.fj(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setscrollsize(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.isp -= 2;
-		arg0.field2208 = arg2.intStack[arg2.isp];
-		arg0.field2319 = arg2.intStack[arg2.isp + 1];
+		arg0.scrollwidth = arg2.intStack[arg2.isp];
+		arg0.scrollheight = arg2.intStack[arg2.isp + 1];
 		Client.method4616(arg0);
 		if (arg0.type == 0) {
 			Client.method8329(arg1, arg0, false);
@@ -6202,10 +6202,10 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("fa.fv(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_setmodelzoom(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2272 = arg2.intStack[--arg2.isp];
+		arg0.modelzoom = arg2.intStack[--arg2.isp];
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method2886(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method2886(arg0.parentlayer);
 		}
 	}
 
@@ -6362,8 +6362,8 @@ public final class ScriptRunner {
 		}
 		arg0.method3964(var3, var4, var5);
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method14614(arg0.field2158, var3);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method14614(arg0.parentlayer, var3);
 		}
 	}
 
@@ -6394,8 +6394,8 @@ public final class ScriptRunner {
 		}
 		arg0.method3993(var3, var4, var5);
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method2051(arg0.field2158, var3);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method2051(arg0.parentlayer, var3);
 		}
 	}
 
@@ -6419,8 +6419,8 @@ public final class ScriptRunner {
 	public static final void cc_if_setfontmono(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2275 = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method18682(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method18682(arg0.parentlayer);
 		}
 	}
 
@@ -6459,8 +6459,8 @@ public final class ScriptRunner {
 	public static final void cc_if_setclickmask(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2253 = arg2.intStack[--arg2.isp] == 1;
 		Client.method4616(arg0);
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method3026(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method3026(arg0.parentlayer);
 		}
 	}
 
@@ -6507,8 +6507,8 @@ public final class ScriptRunner {
 		arg0.field2224 = 2;
 		arg0.field2363 = null;
 		arg0.field2294 = arg2.intStack[--arg2.isp];
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method19198(arg0.parentlayer);
 		}
 	}
 
@@ -6533,8 +6533,8 @@ public final class ScriptRunner {
 		arg0.field2224 = 3;
 		arg0.field2294 = Client.currentPlayerUid;
 		arg0.field2298 = 0;
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method19198(arg0.parentlayer);
 		}
 	}
 
@@ -6559,32 +6559,32 @@ public final class ScriptRunner {
 		arg4.isp -= 2;
 		int var5 = arg4.intStack[arg4.isp];
 		int var6 = arg4.intStack[arg4.isp + 1];
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method6798(arg0.field2158);
-			DelayedStateChange.method2886(arg0.field2158);
-			DelayedStateChange.method14792(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method6798(arg0.parentlayer);
+			DelayedStateChange.method2886(arg0.parentlayer);
+			DelayedStateChange.method14792(arg0.parentlayer);
 		}
 		if (var5 == -1) {
 			arg0.field2224 = 1;
 			arg0.field2294 = -1;
-			arg0.field2334 = -1;
+			arg0.invobject = -1;
 			return;
 		}
-		arg0.field2334 = var5;
-		arg0.field2335 = var6;
+		arg0.invobject = var5;
+		arg0.invcount = var6;
 		arg0.field2246 = arg2;
 		ObjType var7 = (ObjType) Client.objTypeList.list(var5);
-		arg0.field2230 = var7.xan2d;
-		arg0.field2231 = var7.yan2d;
-		arg0.field2331 = var7.zan2d;
-		arg0.field2228 = var7.xof2d;
-		arg0.field2316 = var7.yof2d;
-		arg0.field2272 = var7.zoom2d;
+		arg0.modelangle_x = var7.xan2d;
+		arg0.modelangle_y = var7.yan2d;
+		arg0.modelangle_z = var7.zan2d;
+		arg0.modelxof = var7.xof2d;
+		arg0.modelyof = var7.yof2d;
+		arg0.modelzoom = var7.zoom2d;
 		arg0.field2241 = arg3;
 		if (arg0.field2227 > 0) {
-			arg0.field2272 = arg0.field2272 * 32 / arg0.field2227;
+			arg0.modelzoom = arg0.modelzoom * 32 / arg0.field2227;
 		} else if (arg0.field2192 > 0) {
-			arg0.field2272 = arg0.field2272 * 32 / arg0.field2192;
+			arg0.modelzoom = arg0.modelzoom * 32 / arg0.field2192;
 		}
 	}
 
@@ -6689,8 +6689,8 @@ public final class ScriptRunner {
 		arg0.field2224 = 6;
 		arg0.field2363 = null;
 		arg0.field2294 = arg2.intStack[--arg2.isp];
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method19198(arg0.parentlayer);
 		}
 	}
 
@@ -6714,8 +6714,8 @@ public final class ScriptRunner {
 	public static final void cc_if_setplayermodel(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg0.field2224 = 5;
 		arg0.field2294 = arg2.intStack[--arg2.isp];
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method19198(arg0.parentlayer);
 		}
 	}
 
@@ -6860,8 +6860,8 @@ public final class ScriptRunner {
 		arg0.field2224 = 5;
 		arg0.field2294 = Client.currentPlayerUid;
 		arg0.field2298 = 0;
-		if (arg0.field2183 == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.field2158);
+		if (arg0.id == -1 && !arg1.field2150) {
+			DelayedStateChange.method19198(arg0.parentlayer);
 		}
 	}
 
@@ -7165,7 +7165,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("mj.kz(Lhf;Lhq;Lyf;B)V")
 	public static final void cc_if_clearops(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2321 = null;
+		arg0.op = null;
 	}
 
 	@ObfuscatedName("kh.ke(Lyf;I)V")
@@ -8291,7 +8291,7 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method1016(var2, var3, arg0);
+		cc_if_setongamepad(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("tu.pt(Lyf;I)V")
@@ -8299,7 +8299,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method1016(var2, var3, arg0);
+		cc_if_setongamepad(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("kr.pi(Lyf;I)V")
@@ -8307,7 +8307,7 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method1016(var2, var3, arg0);
+		cc_if_setongamepad(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("yx.pq(Lyf;I)V")
@@ -8315,7 +8315,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method1016(var2, var3, arg0);
+		cc_if_setongamepad(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aht.ph(Lyf;I)V")
@@ -8323,7 +8323,7 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method1016(var2, var3, arg0);
+		cc_if_setongamepad(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("acd.pe(Lyf;B)V")
@@ -8331,7 +8331,7 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method1016(var2, var3, arg0);
+		cc_if_setongamepad(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("fp.pb(Lyf;I)V")
@@ -8339,7 +8339,7 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >> 16];
-		method1016(var2, var3, arg0);
+		cc_if_setongamepad(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("aib.pw(Lyf;B)V")
@@ -8347,11 +8347,11 @@ public final class ScriptRunner {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
-		method1016(var2, var3, arg0);
+		cc_if_setongamepad(var2, var3, arg0);
 	}
 
 	@ObfuscatedName("bf.pk(Lhf;Lhq;Lyf;I)V")
-	public static final void method1016(Component arg0, Interface arg1, ClientScriptState arg2) {
+	public static final void cc_if_setongamepad(Component arg0, Interface arg1, ClientScriptState arg2) {
 		String var3 = (String) arg2.objectStack[--arg2.osp];
 		if (method7881(var3, arg2) != null) {
 			var3 = var3.substring(0, var3.length() - 1);
@@ -8837,14 +8837,14 @@ public final class ScriptRunner {
 	public static final void cc_gethide(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2201 ? 1 : 0;
+		arg0.intStack[++arg0.isp - 1] = var2.hide ? 1 : 0;
 	}
 
 	@ObfuscatedName("tb.rc(Lyf;B)V")
 	public static final void cc_getlayer(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2200;
+		arg0.intStack[++arg0.isp - 1] = var2.layer;
 	}
 
 	@ObfuscatedName("ez.rr(Lyf;I)V")
@@ -8853,7 +8853,7 @@ public final class ScriptRunner {
 		Component var2 = var1.field8242;
 		Interface var3 = var1.field8241;
 		Component var4 = Client.method6000(var3, var2);
-		arg0.intStack[++arg0.isp - 1] = var4 == null ? -1 : var4.field2158;
+		arg0.intStack[++arg0.isp - 1] = var4 == null ? -1 : var4.parentlayer;
 	}
 
 	@ObfuscatedName("sq.rd(Lyf;I)V")
@@ -8867,14 +8867,14 @@ public final class ScriptRunner {
 	public static final void cc_getscrollx(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2206;
+		arg0.intStack[++arg0.isp - 1] = var2.scrollx;
 	}
 
 	@ObfuscatedName("cy.rb(Lyf;I)V")
 	public static final void cc_getscrolly(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2207;
+		arg0.intStack[++arg0.isp - 1] = var2.scrolly;
 	}
 
 	@ObfuscatedName("sh.ru(Lyf;I)V")
@@ -8888,70 +8888,70 @@ public final class ScriptRunner {
 	public static final void cc_getscrollwidth(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2208;
+		arg0.intStack[++arg0.isp - 1] = var2.scrollwidth;
 	}
 
 	@ObfuscatedName("xv.sw(Lyf;I)V")
 	public static final void cc_getscrollheight(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2319;
+		arg0.intStack[++arg0.isp - 1] = var2.scrollheight;
 	}
 
 	@ObfuscatedName("nk.ss(Lyf;I)V")
 	public static final void cc_getmodelzoom(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2272;
+		arg0.intStack[++arg0.isp - 1] = var2.modelzoom;
 	}
 
 	@ObfuscatedName("hi.sx(Lyf;I)V")
 	public static final void cc_getmodelangle_x(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2230;
+		arg0.intStack[++arg0.isp - 1] = var2.modelangle_x;
 	}
 
 	@ObfuscatedName("ajd.sm(Lyf;B)V")
 	public static final void cc_getmodelangle_z(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2331;
+		arg0.intStack[++arg0.isp - 1] = var2.modelangle_z;
 	}
 
 	@ObfuscatedName("zd.sk(Lyf;B)V")
 	public static final void cc_getmodelangle_y(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2231;
+		arg0.intStack[++arg0.isp - 1] = var2.modelangle_y;
 	}
 
 	@ObfuscatedName("gc.si(Lyf;I)V")
 	public static final void cc_gettrans(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2212;
+		arg0.intStack[++arg0.isp - 1] = var2.trans;
 	}
 
 	@ObfuscatedName("sf.se(Lyf;I)V")
 	public static final void cc_getmodelxof(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2228;
+		arg0.intStack[++arg0.isp - 1] = var2.modelxof;
 	}
 
 	@ObfuscatedName("ns.sn(Lyf;I)V")
 	public static final void cc_getmodelyof(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2316;
+		arg0.intStack[++arg0.isp - 1] = var2.modelyof;
 	}
 
 	@ObfuscatedName("dc.sr(Lyf;I)V")
 	public static final void cc_getgraphic(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2215;
+		arg0.intStack[++arg0.isp - 1] = var2.graphic;
 	}
 
 	@ObfuscatedName("iw.sq(Lyf;I)V")
@@ -8961,9 +8961,9 @@ public final class ScriptRunner {
 		int var3 = arg0.intStack[--arg0.isp];
 		ParamType var4 = (ParamType) Client.paramTypeList.list(var3);
 		if (var4.isStringType()) {
-			arg0.objectStack[++arg0.osp - 1] = var2.method3975(var3, var4.defaultstr);
+			arg0.objectStack[++arg0.osp - 1] = var2.getParam(var3, var4.defaultstr);
 		} else {
-			arg0.intStack[++arg0.isp - 1] = var2.method3950(var3, var4.defaultint);
+			arg0.intStack[++arg0.isp - 1] = var2.getParam(var3, var4.defaultint);
 		}
 	}
 
@@ -8971,7 +8971,7 @@ public final class ScriptRunner {
 	public static final void cc_get2dangle(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2216;
+		arg0.intStack[++arg0.isp - 1] = var2.angle2d;
 	}
 
 	@ObfuscatedName("th.st(Lyf;I)V")
@@ -8985,7 +8985,7 @@ public final class ScriptRunner {
 	public static final void cc_getfontgraphic(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2287;
+		arg0.intStack[++arg0.isp - 1] = var2.font;
 	}
 
 	@ObfuscatedName("ane.sp(Lyf;I)V")
@@ -9007,24 +9007,24 @@ public final class ScriptRunner {
 	public static final void cc_getfontmetrics(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2287;
+		arg0.intStack[++arg0.isp - 1] = var2.font;
 	}
 
 	@ObfuscatedName("rm.sd(Lyf;S)V")
 	public static final void cc_getinvobject(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2334;
+		arg0.intStack[++arg0.isp - 1] = var2.invobject;
 	}
 
 	@ObfuscatedName("va.sz(Lyf;I)V")
 	public static final void cc_getinvcount(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		if (var2.field2334 == -1) {
+		if (var2.invobject == -1) {
 			arg0.intStack[++arg0.isp - 1] = 0;
 		} else {
-			arg0.intStack[++arg0.isp - 1] = var2.field2335;
+			arg0.intStack[++arg0.isp - 1] = var2.invcount;
 		}
 	}
 
@@ -9032,7 +9032,7 @@ public final class ScriptRunner {
 	public static final void cc_getid(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.field8242;
-		arg0.intStack[++arg0.isp - 1] = var2.field2183;
+		arg0.intStack[++arg0.isp - 1] = var2.id;
 	}
 
 	@ObfuscatedName("dd.sy(Lyf;B)V")
@@ -9048,10 +9048,10 @@ public final class ScriptRunner {
 		Component var2 = var1.field8242;
 		int var3 = arg0.intStack[--arg0.isp];
 		int var4 = var3 - 1;
-		if (var2.field2321 == null || var4 >= var2.field2321.length || var2.field2321[var4] == null) {
+		if (var2.op == null || var4 >= var2.op.length || var2.op[var4] == null) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 		} else {
-			arg0.objectStack[++arg0.osp - 1] = var2.field2321[var4];
+			arg0.objectStack[++arg0.osp - 1] = var2.op[var4];
 		}
 	}
 
@@ -9370,14 +9370,14 @@ public final class ScriptRunner {
 	public static final void if_gethide(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = Client.method16930(var2) ? 1 : 0;
+		arg0.intStack[++arg0.isp - 1] = Client.ifIsVisible(var2) ? 1 : 0;
 	}
 
 	@ObfuscatedName("ack.uq(Lyf;I)V")
 	public static final void if_getlayer(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2200;
+		arg0.intStack[++arg0.isp - 1] = var2.layer;
 	}
 
 	@ObfuscatedName("wf.uc(Lyf;I)V")
@@ -9386,7 +9386,7 @@ public final class ScriptRunner {
 		Component var2 = Component.method10202(var1);
 		Interface var3 = Component.field11725[var1 >>> 16];
 		Component var4 = Client.method6000(var3, var2);
-		arg0.intStack[++arg0.isp - 1] = var4 == null ? -1 : var4.field2158;
+		arg0.intStack[++arg0.isp - 1] = var4 == null ? -1 : var4.parentlayer;
 	}
 
 	@ObfuscatedName("ng.ui(Lyf;I)V")
@@ -9400,84 +9400,84 @@ public final class ScriptRunner {
 	public static final void if_getscrollx(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2206;
+		arg0.intStack[++arg0.isp - 1] = var2.scrollx;
 	}
 
 	@ObfuscatedName("ef.uf(Lyf;I)V")
 	public static final void if_getscrolly(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2207;
+		arg0.intStack[++arg0.isp - 1] = var2.scrolly;
 	}
 
 	@ObfuscatedName("jv.ug(Lyf;I)V")
 	public static final void if_getscrollwidth(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2208;
+		arg0.intStack[++arg0.isp - 1] = var2.scrollwidth;
 	}
 
 	@ObfuscatedName("ain.ub(Lyf;B)V")
 	public static final void if_getscrollheight(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2319;
+		arg0.intStack[++arg0.isp - 1] = var2.scrollheight;
 	}
 
 	@ObfuscatedName("zt.uj(Lyf;S)V")
 	public static final void if_getmodelzoom(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2272;
+		arg0.intStack[++arg0.isp - 1] = var2.modelzoom;
 	}
 
 	@ObfuscatedName("aat.ut(Lyf;S)V")
 	public static final void if_getmodelangle_x(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2230;
+		arg0.intStack[++arg0.isp - 1] = var2.modelangle_x;
 	}
 
 	@ObfuscatedName("acp.uk(Lyf;B)V")
 	public static final void if_getmodelangle_z(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2331;
+		arg0.intStack[++arg0.isp - 1] = var2.modelangle_z;
 	}
 
 	@ObfuscatedName("gv.uy(Lyf;B)V")
 	public static final void if_getmodelangle_y(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2231;
+		arg0.intStack[++arg0.isp - 1] = var2.modelangle_y;
 	}
 
 	@ObfuscatedName("zt.uv(Lyf;I)V")
 	public static final void if_gettrans(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2212;
+		arg0.intStack[++arg0.isp - 1] = var2.trans;
 	}
 
 	@ObfuscatedName("ar.uw(Lyf;I)V")
 	public static final void if_getmodelxof(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2228;
+		arg0.intStack[++arg0.isp - 1] = var2.modelxof;
 	}
 
 	@ObfuscatedName("agy.up(Lyf;I)V")
 	public static final void if_getmodelyof(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2316;
+		arg0.intStack[++arg0.isp - 1] = var2.modelyof;
 	}
 
 	@ObfuscatedName("cj.ud(Lyf;B)V")
 	public static final void if_getgraphic(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2215;
+		arg0.intStack[++arg0.isp - 1] = var2.graphic;
 	}
 
 	@ObfuscatedName("dz.uz(Lyf;I)V")
@@ -9491,7 +9491,7 @@ public final class ScriptRunner {
 	public static final void if_get2dangle(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2216;
+		arg0.intStack[++arg0.isp - 1] = var2.angle2d;
 	}
 
 	@ObfuscatedName("kv.us(Lyf;I)V")
@@ -9505,7 +9505,7 @@ public final class ScriptRunner {
 	public static final void if_getfontgraphic(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2287;
+		arg0.intStack[++arg0.isp - 1] = var2.font;
 	}
 
 	@ObfuscatedName("ac.ur(Lyf;I)V")
@@ -9527,22 +9527,22 @@ public final class ScriptRunner {
 	public static final void if_getfontmetrics(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.field2287;
+		arg0.intStack[++arg0.isp - 1] = var2.font;
 	}
 
 	@ObfuscatedName("to.uo(Lyf;S)V")
 	public static final void if_getinvobject(ClientScriptState arg0) {
 		Component var1 = Component.method10202(arg0.intStack[--arg0.isp]);
-		arg0.intStack[++arg0.isp - 1] = var1.field2334;
+		arg0.intStack[++arg0.isp - 1] = var1.invobject;
 	}
 
 	@ObfuscatedName("h.un(Lyf;I)V")
 	public static final void if_getinvcount(ClientScriptState arg0) {
 		Component var1 = Component.method10202(arg0.intStack[--arg0.isp]);
-		if (var1.field2334 == -1) {
+		if (var1.invobject == -1) {
 			arg0.intStack[++arg0.isp - 1] = 0;
 		} else {
-			arg0.intStack[++arg0.isp - 1] = var1.field2335;
+			arg0.intStack[++arg0.isp - 1] = var1.invcount;
 		}
 	}
 
@@ -9575,7 +9575,7 @@ public final class ScriptRunner {
 	}
 
 	@ObfuscatedName("hy.vx(Lyf;I)V")
-	public static final void method4067(ClientScriptState arg0) {
+	public static final void ifHasSub(ClientScriptState arg0) {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
@@ -9589,12 +9589,12 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("jx.vb(Lyf;B)V")
 	public static final void if_hassubmodal(ClientScriptState arg0) {
-		method4067(arg0);
+		ifHasSub(arg0);
 	}
 
 	@ObfuscatedName("vc.vl(Lyf;B)V")
 	public static final void if_hassuboverlay(ClientScriptState arg0) {
-		method4067(arg0);
+		ifHasSub(arg0);
 	}
 
 	@ObfuscatedName("agk.vr(Lyf;I)V")
@@ -9610,10 +9610,10 @@ public final class ScriptRunner {
 		Component var2 = Component.method10202(var1);
 		int var3 = arg0.intStack[--arg0.isp];
 		int var4 = var3 - 1;
-		if (var2.field2321 == null || var4 >= var2.field2321.length || var2.field2321[var4] == null) {
+		if (var2.op == null || var4 >= var2.op.length || var2.op[var4] == null) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 		} else {
-			arg0.objectStack[++arg0.osp - 1] = var2.field2321[var4];
+			arg0.objectStack[++arg0.osp - 1] = var2.op[var4];
 		}
 	}
 
@@ -9636,7 +9636,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("aau.vt(Lyf;I)V")
 	public static final void if_close(ClientScriptState arg0) {
-		Client.method8276(true);
+		Client.ifClose(true);
 	}
 
 	@ObfuscatedName("mz.vu(Lyf;B)V")
@@ -9679,7 +9679,7 @@ public final class ScriptRunner {
 	public static final void opplayer(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		String var2 = (String) arg0.objectStack[--arg0.osp];
-		Client.method15190(var1, var2);
+		Client.opplayer(var1, var2);
 	}
 
 	@ObfuscatedName("ge.ve(Lyf;I)V")
@@ -9689,7 +9689,7 @@ public final class ScriptRunner {
 		int var2 = arg0.intStack[arg0.isp + 1];
 		int var3 = arg0.intStack[arg0.isp + 2];
 		Component var4 = Component.method10202(var3);
-		Client.method16750(var4, var1, var2);
+		Client.ifDragPickup(var4, var1, var2);
 	}
 
 	@ObfuscatedName("qe.vm(Lyf;I)V")
@@ -9698,7 +9698,7 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		ActiveComponent var3 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
-		Client.method16750(var3.field8242, var1, var2);
+		Client.ifDragPickup(var3.field8242, var1, var2);
 	}
 
 	@ObfuscatedName("na.vg(Lyf;B)V")
@@ -9714,7 +9714,7 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		Client.method4489(var1, new SubInterface(var2, 3), null, true);
+		Client.ifOpenSub(var1, new SubInterface(var2, 3), null, true);
 	}
 
 	@ObfuscatedName("aar.vd(Lyf;S)V")
@@ -9723,13 +9723,13 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.getNode((long) var1);
 		if (var2 != null && var2.field11570 == 3) {
-			Client.method214(var2, true, true);
+			Client.ifCloseSub(var2, true, true);
 		}
 	}
 
 	@ObfuscatedName("hv.vh(Lyf;B)V")
 	public static final void opplayert(ClientScriptState arg0) {
-		Client.method4406((String) arg0.objectStack[--arg0.osp]);
+		Client.opplayert((String) arg0.objectStack[--arg0.osp]);
 	}
 
 	@ObfuscatedName("ah.vz(Lyf;I)V")
@@ -10269,7 +10269,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("uf.yl(Lyf;I)V")
 	public static final void profile_cpu(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = CpuProfiling.method270();
+		arg0.intStack[++arg0.isp - 1] = CpuProfiling.profile();
 	}
 
 	@ObfuscatedName("sd.yi(Lyf;I)V")
@@ -10289,22 +10289,22 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ank.yf(Lyf;B)V")
 	public static final void get_mousex(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.mouse.method9086();
+		arg0.intStack[++arg0.isp - 1] = Client.mouse.getX();
 	}
 
 	@ObfuscatedName("dl.ya(Lyf;I)V")
 	public static final void get_mousey(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.mouse.method9092();
+		arg0.intStack[++arg0.isp - 1] = Client.mouse.getY();
 	}
 
 	@ObfuscatedName("aks.yd(Lyf;I)V")
 	public static final void get_active_minimenu_entry(ClientScriptState arg0) {
-		method4597(MiniMenu.method4924(), arg0);
+		method4597(MiniMenu.getActiveMiniMenuEntry(), arg0);
 	}
 
 	@ObfuscatedName("oh.yy(Lyf;B)V")
 	public static final void get_second_minimenu_entry(ClientScriptState arg0) {
-		method4597(MiniMenu.method3558(), arg0);
+		method4597(MiniMenu.getSecondaryMiniMenuEntry(), arg0);
 	}
 
 	@ObfuscatedName("jk.yc(Lyf;B)V")
@@ -10315,7 +10315,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ake.yu(Lyf;I)V")
 	public static final void npc_find_active_minimenu_entry(ClientScriptState arg0) {
-		MinimenuEntry var1 = MiniMenu.method4924();
+		MinimenuEntry var1 = MiniMenu.getActiveMiniMenuEntry();
 		if (MiniMenu.method18429(var1) == 4) {
 			ObjectWrapper var2 = (ObjectWrapper) Client.npcs.getNode(var1.method19370());
 			if (var2 != null) {
@@ -10329,7 +10329,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ai.yt(Lyf;I)V")
 	public static final void player_find_active_minimenu_entry(ClientScriptState arg0) {
-		MinimenuEntry var1 = MiniMenu.method4924();
+		MinimenuEntry var1 = MiniMenu.getActiveMiniMenuEntry();
 		if (MiniMenu.method18429(var1) == 7) {
 			int var2 = (int) var1.method19368();
 			if (var2 >= 0 && var2 <= ReceivePlayerPositions.highResolutionsCount) {
@@ -13366,16 +13366,16 @@ public final class ScriptRunner {
 	public static final void setdefaultwindowmode(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		if (var1 >= 1 && var1 <= 2) {
-			Client.preferences.method18157(Client.preferences.maxScreenSize, var1);
-			Client.preferences.method18157(Client.preferences.maxScreenSize2, var1);
-			Preferences.method16391();
+			Client.preferences.setPreference(Client.preferences.maxScreenSize, var1);
+			Client.preferences.setPreference(Client.preferences.maxScreenSize2, var1);
+			Preferences.save();
 		}
 	}
 
 	@ObfuscatedName("aja.alq(Lyf;B)V")
 	public static final void openurl(ClientScriptState arg0) {
 		arg0.osp -= 2;
-		method7005((String) arg0.objectStack[arg0.osp], (String) arg0.objectStack[arg0.osp + 1], "", arg0.intStack[--arg0.isp] == 1, false);
+		openUrl((String) arg0.objectStack[arg0.osp], (String) arg0.objectStack[arg0.osp + 1], "", arg0.intStack[--arg0.isp] == 1, false);
 	}
 
 	@ObfuscatedName("va.ala(Lyf;I)V")
@@ -13449,14 +13449,14 @@ public final class ScriptRunner {
 		String var1 = (String) arg0.objectStack[--arg0.osp];
 		boolean var2 = arg0.intStack[--arg0.isp] == 1;
 		String var3 = Client.method7363() + var1;
-		Browser.method4607(var3, var2, Client.field10784);
+		Browser.openUrl(var3, var2, Client.field10784);
 	}
 
 	@ObfuscatedName("dm.alr(Lyf;I)V")
 	public static final void openurlraw(ClientScriptState arg0) {
 		String var1 = (String) arg0.objectStack[--arg0.osp];
 		boolean var2 = arg0.intStack[--arg0.isp] == 1;
-		Browser.method4607(var1, var2, Client.field10784);
+		Browser.openUrl(var1, var2, Client.field10784);
 	}
 
 	@ObfuscatedName("yg.alx(Lyf;S)V")
@@ -13522,7 +13522,7 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = MiniMenu.method961(var1, var2) ? 1 : 0;
+		arg0.intStack[++arg0.isp - 1] = MiniMenu.isOpen(var1, var2) ? 1 : 0;
 	}
 
 	@ObfuscatedName("na.amn(Lyf;I)V")
@@ -13566,7 +13566,7 @@ public final class ScriptRunner {
 	@ObfuscatedName("ys.amk(Lyf;B)V")
 	public static final void openurl_shim(ClientScriptState arg0) {
 		arg0.osp -= 3;
-		method7005((String) arg0.objectStack[arg0.osp], (String) arg0.objectStack[arg0.osp + 1], (String) arg0.objectStack[arg0.osp + 2], arg0.intStack[--arg0.isp] == 1, true);
+		openUrl((String) arg0.objectStack[arg0.osp], (String) arg0.objectStack[arg0.osp + 1], (String) arg0.objectStack[arg0.osp + 2], arg0.intStack[--arg0.isp] == 1, true);
 	}
 
 	@ObfuscatedName("ev.amc(Lyf;I)V")
@@ -13607,7 +13607,7 @@ public final class ScriptRunner {
 		int var3 = arg0.intStack[arg0.isp + 2];
 		int var4 = arg0.intStack[arg0.isp + 3];
 		CoordGrid var5 = Client.world.method7727();
-		Client.method15723((var1 >> 14 & 0x3FFF) - var5.x, (var1 & 0x3FFF) - var5.z, var2 << 2, var3, var4, false);
+		Client.cameraMoveTo((var1 >> 14 & 0x3FFF) - var5.x, (var1 & 0x3FFF) - var5.z, var2 << 2, var3, var4, false);
 		Client.field10902 = true;
 	}
 
@@ -13619,7 +13619,7 @@ public final class ScriptRunner {
 		int var3 = arg0.intStack[arg0.isp + 2];
 		int var4 = arg0.intStack[arg0.isp + 3];
 		CoordGrid var5 = Client.world.method7727();
-		Client.method14706((var1 >> 14 & 0x3FFF) - var5.x, (var1 & 0x3FFF) - var5.z, var2 << 2, var3, var4);
+		Client.cameraLookAt((var1 >> 14 & 0x3FFF) - var5.x, (var1 & 0x3FFF) - var5.z, var2 << 2, var3, var4);
 		Client.field10902 = true;
 	}
 
@@ -13656,24 +13656,24 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("ua.amr(Lyf;I)V")
 	public static final void cam_reset(ClientScriptState arg0) {
-		Client.resetCamera(Client.getDefaultCameraState());
+		Client.cameraReset(Client.getDefaultCameraState());
 	}
 
 	@ObfuscatedName("vx.aml(Lyf;I)V")
 	public static final void cam_forceangle(ClientScriptState arg0) {
 		arg0.isp -= 2;
-		Client.method4843(arg0.intStack[arg0.isp], arg0.intStack[arg0.isp + 1], 0);
+		Client.cameraForceAngle(arg0.intStack[arg0.isp], arg0.intStack[arg0.isp + 1], 0);
 	}
 
 	@ObfuscatedName("ke.amx(Lyf;I)V")
 	public static final void cam_getangle_xa(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = (int) Client.field11004 >> 3;
+		arg0.intStack[++arg0.isp - 1] = (int) Client.orbitCameraXan >> 3;
 	}
 
 	@ObfuscatedName("cs.ami(Lyf;B)V")
 	public static final void cam_getangle_ya(ClientScriptState arg0) {
 		if (Client.cameraState == 3) {
-			arg0.intStack[++arg0.isp - 1] = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) >> 3;
+			arg0.intStack[++arg0.isp - 1] = (int) ((double) Client.cam2.method4719() * 2607.5945876176133D) >> 3;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = (int) Client.orbitCameraYaw >> 3;
 		}
@@ -13681,22 +13681,22 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("vy.amp(Lyf;B)V")
 	public static final void cam_inc_x(ClientScriptState arg0) {
-		Client.method3653();
+		Client.cameraIncX();
 	}
 
 	@ObfuscatedName("ql.amj(Lyf;I)V")
 	public static final void cam_dec_x(ClientScriptState arg0) {
-		Client.method14311();
+		Client.cameraDecX();
 	}
 
 	@ObfuscatedName("sg.ane(Lyf;I)V")
 	public static final void cam_inc_y(ClientScriptState arg0) {
-		Client.method13836();
+		Client.cameraIncY();
 	}
 
 	@ObfuscatedName("vz.ann(Lyf;I)V")
 	public static final void cam_dec_y(ClientScriptState arg0) {
-		Client.method4019();
+		Client.cameraDecY();
 	}
 
 	@ObfuscatedName("vg.and(Lyf;I)V")
@@ -13705,12 +13705,12 @@ public final class ScriptRunner {
 		if (var1 < 0) {
 			var1 = 0;
 		}
-		Client.field10901 = Client.field11089 * 35 + var1;
+		Client.cameraFollowHeight = Client.field11089 * 35 + var1;
 	}
 
 	@ObfuscatedName("jx.anf(Lyf;B)V")
 	public static final void cam_getfollowheight(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.field10901 - Client.field11089 * 35;
+		arg0.intStack[++arg0.isp - 1] = Client.cameraFollowHeight - Client.field11089 * 35;
 	}
 
 	@ObfuscatedName("wv.anq(Lyf;B)V")
@@ -13741,7 +13741,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("j.anm(Lyf;I)V")
 	public static final void cam_smoothreset(ClientScriptState arg0) {
-		Client.method3605();
+		Client.cameraSmoothReset();
 	}
 
 	@ObfuscatedName("dz.any(Lyf;B)V")
@@ -13794,14 +13794,14 @@ public final class ScriptRunner {
 	@ObfuscatedName("nv.anu(Lyf;B)V")
 	public static final void cam2_setlookatmode(ClientScriptState arg0) throws CameraException {
 		int var1 = arg0.intStack[--arg0.isp];
-		Client.field9155.method4684(LookatMode.method3259(var1), true);
+		Client.cam2.setLookatMode(LookatMode.of(var1), true);
 		Client.field10902 = true;
 	}
 
 	@ObfuscatedName("nu.ant(Lyf;B)V")
 	public static final void cam2_setpositionmode(ClientScriptState arg0) throws CameraException {
 		int var1 = arg0.intStack[--arg0.isp];
-		Client.field9155.method4688(PositionMode.method1058(var1), true);
+		Client.cam2.setPositionMode(PositionMode.method1058(var1), true);
 		Client.field10902 = true;
 	}
 
@@ -13820,8 +13820,8 @@ public final class ScriptRunner {
 		if (var3.z == -1.0F) {
 			var3.z = Float.POSITIVE_INFINITY;
 		}
-		Client.field9155.method4690(var3);
-		Client.field9155.method4712((float) var2 / 1000.0F);
+		Client.cam2.setLookatAcceleration(var3);
+		Client.cam2.setLookatAngularInterpolation((float) var2 / 1000.0F);
 		var3.release();
 	}
 
@@ -13840,8 +13840,8 @@ public final class ScriptRunner {
 		if (var3.z == -1.0F) {
 			var3.z = Float.POSITIVE_INFINITY;
 		}
-		Client.field9155.method4814(var3);
-		Client.field9155.method4766((float) var2 / 1000.0F);
+		Client.cam2.setPositionAcceleration(var3);
+		Client.cam2.setPositionAngularInterpolation((float) var2 / 1000.0F);
 		var3.release();
 	}
 
@@ -13850,7 +13850,7 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		Vector3 var2 = Vector3.create((float) var1, (float) var1, (float) var1);
-		Client.field9155.method4832(var2);
+		Client.cam2.setLookatMaxSpeed(var2);
 		var2.release();
 	}
 
@@ -13859,7 +13859,7 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		Vector3 var2 = Vector3.create((float) var1, (float) var1, (float) var1);
-		Client.field9155.method4695(var2);
+		Client.cam2.setPositionMaxSpeed(var2);
 		var2.release();
 	}
 
@@ -13868,7 +13868,7 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		Client.field9155.method4698((float) var1, (float) var2);
+		Client.cam2.setDepthPlanes((float) var1, (float) var2);
 	}
 
 	@ObfuscatedName("eu.anz(Lyf;B)V")
@@ -13876,16 +13876,16 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		Client.field9155.method4828((float) ((double) var1 * 3.141592653589793D * 2.0D / 16384.0D), (float) ((double) var2 * 3.141592653589793D * 2.0D / 16384.0D));
+		Client.cam2.setFieldOfView((float) ((double) var1 * 3.141592653589793D * 2.0D / 16384.0D), (float) ((double) var2 * 3.141592653589793D * 2.0D / 16384.0D));
 	}
 
 	@ObfuscatedName("kl.anj(Lyf;I)V")
 	public static final void cam2_setlookatpoint_point(ClientScriptState arg0) {
 		CoordFine var1 = (CoordFine) arg0.objectStack[--arg0.osp];
-		if (Client.field9155.method4743() != LookatMode.field2790) {
+		if (Client.cam2.getLookatMode() != LookatMode.POINT) {
 			throw new RuntimeException();
 		}
-		Lookat_Sub1 var2 = (Lookat_Sub1) Client.field9155.method4797();
+		LookatPoint var2 = (LookatPoint) Client.cam2.getLookat();
 		var2.method18776(var1);
 		Client.field10902 = true;
 	}
@@ -13893,33 +13893,33 @@ public final class ScriptRunner {
 	@ObfuscatedName("agz.anl(Lyf;I)V")
 	public static final void cam2_setpositionpoint_point(ClientScriptState arg0) {
 		CoordFine var1 = (CoordFine) arg0.objectStack[--arg0.osp];
-		if (Client.field9155.method4780() != PositionMode.field2816) {
+		if (Client.cam2.getPositionMode() != PositionMode.POINT) {
 			throw new RuntimeException();
 		}
-		PositionPoint var2 = (PositionPoint) Client.field9155.method4709();
+		PositionPoint var2 = (PositionPoint) Client.cam2.getPosition();
 		var2.method16671(var1);
 		Client.field10902 = true;
 	}
 
 	@ObfuscatedName("kj.ans(Lyf;I)V")
 	public static final void cam2_getpositionpoint_point(ClientScriptState arg0) {
-		if (Client.field9155.method4780() != PositionMode.field2816) {
+		if (Client.cam2.getPositionMode() != PositionMode.POINT) {
 			throw new RuntimeException();
 		}
-		arg0.objectStack[++arg0.osp - 1] = Client.field9155.method4717();
+		arg0.objectStack[++arg0.osp - 1] = Client.cam2.method4717();
 	}
 
 	@ObfuscatedName("hq.anc(Lyf;Lahm;I)V")
-	public static final void method3936(ClientScriptState arg0, PathingEntity arg1) {
+	public static final void cameraLookatEntity(ClientScriptState arg0, PathingEntity arg1) {
 		arg0.isp -= 4;
 		int var2 = arg0.intStack[arg0.isp];
 		int var3 = arg0.intStack[arg0.isp + 1];
 		int var4 = arg0.intStack[arg0.isp + 2];
 		boolean var5 = arg0.intStack[arg0.isp + 3] == 1;
-		if (Client.field9155.method4743() != LookatMode.field2788) {
+		if (Client.cam2.getLookatMode() != LookatMode.ENTITY) {
 			throw new RuntimeException();
 		}
-		LookatEntity var6 = (LookatEntity) Client.field9155.method4797();
+		LookatEntity var6 = (LookatEntity) Client.cam2.getLookat();
 		if (arg1 != null) {
 			var6.method18816(arg1, new Vector3((float) var2, (float) var3, (float) var4), var5);
 		}
@@ -13928,12 +13928,12 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("pj.anb(Lyf;B)V")
 	public static final void cam2_setlookatentity_player(ClientScriptState arg0) {
-		method3936(arg0, Client.localPlayerEntity);
+		cameraLookatEntity(arg0, Client.localPlayerEntity);
 	}
 
 	@ObfuscatedName("as.anw(Lyf;I)V")
 	public static final void cam2_setlookatentity_npc(ClientScriptState arg0) {
-		method3936(arg0, arg0.activeEntity);
+		cameraLookatEntity(arg0, arg0.activeEntity);
 	}
 
 	@ObfuscatedName("go.ano(Lyf;Lahm;I)V")
@@ -13946,10 +13946,10 @@ public final class ScriptRunner {
 		int var6 = arg0.intStack[arg0.isp + 4];
 		boolean var7 = arg0.intStack[arg0.isp + 5] == 1;
 		int var8 = arg0.intStack[arg0.isp + 6];
-		if (Client.field9155.method4780() != PositionMode.field2815) {
+		if (Client.cam2.getPositionMode() != PositionMode.ENTITY) {
 			throw new RuntimeException();
 		}
-		PositionEntity var9 = (PositionEntity) Client.field9155.method4709();
+		PositionEntity var9 = (PositionEntity) Client.cam2.getPosition();
 		Quaternion var10 = new Quaternion();
 		Quaternion var11 = new Quaternion();
 		var10.setToRotation(0.0F, 1.0F, 0.0F, (float) ((double) var6 * 3.141592653589793D * 2.0D / 16384.0D));
@@ -13985,50 +13985,50 @@ public final class ScriptRunner {
 		int var3 = arg0.intStack[arg0.isp + 2];
 		float var4 = (float) (Math.atan((double) ((float) var1 / 2.0F / (float) var3)) * 2.0D);
 		float var5 = (float) (Math.atan((double) ((float) var2 / 2.0F / (float) var3)) * 2.0D);
-		Client.field9155.method4828(var4, var5);
+		Client.cam2.setFieldOfView(var4, var5);
 	}
 
 	@ObfuscatedName("gq.aoi(Lyf;I)V")
 	public static final void cam2_setpositionspline_spline(ClientScriptState arg0) {
-		if (!Client.field9155.method4780().method4623()) {
+		if (!Client.cam2.getPositionMode().method4623()) {
 			throw new RuntimeException();
 		}
-		PositionSpline var1 = (PositionSpline) Client.field9155.method4709();
+		PositionSpline var1 = (PositionSpline) Client.cam2.getPosition();
 		var1.method16720(Client.field3178, -1, 0.0F);
 		Client.field10902 = true;
 	}
 
 	@ObfuscatedName("aal.aow(Lyf;I)V")
 	public static final void cam2_setlookatspline_spline(ClientScriptState arg0) {
-		if (!Client.field9155.method4743().method4602()) {
+		if (!Client.cam2.getLookatMode().method4602()) {
 			throw new RuntimeException();
 		}
-		LookatSpline var1 = (LookatSpline) Client.field9155.method4797();
+		LookatSpline var1 = (LookatSpline) Client.cam2.getLookat();
 		var1.method18832(Client.field3178, -1, 0.0F);
 		Client.field10902 = true;
 	}
 
 	@ObfuscatedName("if.aob(Lyf;I)V")
 	public static final void cam2_getcontrolmode(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.field9155.method4708().field2827;
+		arg0.intStack[++arg0.isp - 1] = Client.cam2.getControlMode().index;
 	}
 
 	@ObfuscatedName("vw.aoo(Lyf;I)V")
 	public static final void cam2_getlookatmode(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.field9155.method4743() == null ? -1 : Client.field9155.method4743().field2794;
+		arg0.intStack[++arg0.isp - 1] = Client.cam2.getLookatMode() == null ? -1 : Client.cam2.getLookatMode().id;
 	}
 
 	@ObfuscatedName("he.aos(Lyf;I)V")
 	public static final void cam2_getpositionmode(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.field9155.method4780() == null ? -1 : Client.field9155.method4780().field2814;
+		arg0.intStack[++arg0.isp - 1] = Client.cam2.getPositionMode() == null ? -1 : Client.cam2.getPositionMode().index;
 	}
 
 	@ObfuscatedName("rp.aoc(Lyf;I)V")
 	public static final void cam2_getpositionentity_angleoffsets(ClientScriptState arg0) {
-		if (Client.field9155.method4780() != PositionMode.field2815) {
+		if (Client.cam2.getPositionMode() != PositionMode.ENTITY) {
 			throw new RuntimeException();
 		}
-		PositionEntity var1 = (PositionEntity) Client.field9155.method4709();
+		PositionEntity var1 = (PositionEntity) Client.cam2.getPosition();
 		arg0.intStack[++arg0.isp - 1] = (int) ((double) var1.method16693() * 2607.5945876176133D) & 0x3FFF;
 		arg0.intStack[++arg0.isp - 1] = (int) ((double) var1.method16694() * 2607.5945876176133D) & 0x3FFF;
 	}
@@ -14039,25 +14039,25 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		int var3 = arg0.intStack[arg0.isp + 2];
-		ShakeMode var4 = ShakeMode.method1599(var1);
+		ShakeMode var4 = ShakeMode.of(var1);
 		float var5 = (float) var2;
 		if (ShakeMode.field2622 == var4 || ShakeMode.field2623 == var4 || ShakeMode.field2624 == var4) {
 			var5 = Trig1.radians(var2);
 		}
-		Shake var6 = new Shake(Client.field9155.method16602(), var4, var5, (float) var3 / 1000.0F);
-		Client.field9155.method4702(var6);
-		arg0.intStack[++arg0.isp - 1] = var6.field12341;
+		Shake var6 = new Shake(Client.cam2.method16602(), var4, var5, (float) var3 / 1000.0F);
+		Client.cam2.addEffect(var6);
+		arg0.intStack[++arg0.isp - 1] = var6.id;
 	}
 
 	@ObfuscatedName("aaq.aok(Lyf;I)V")
 	public static final void cam2_removeeffect(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		Client.field9155.method4703(var1);
+		Client.cam2.removeEffect(var1);
 	}
 
 	@ObfuscatedName("sn.aov(Lyf;B)V")
 	public static final void cam2_removealleffects(ClientScriptState arg0) {
-		Client.field9155.method4705();
+		Client.cam2.removeAllEffects();
 	}
 
 	@ObfuscatedName("ar.aor(Lyf;I)V")
@@ -14077,8 +14077,8 @@ public final class ScriptRunner {
 		if (var5.z == -1.0F) {
 			var5.z = Float.POSITIVE_INFINITY;
 		}
-		Client.field9155.method4690(var5);
-		Client.field9155.method4712((float) var4 / 1000.0F);
+		Client.cam2.setLookatAcceleration(var5);
+		Client.cam2.setLookatAngularInterpolation((float) var4 / 1000.0F);
 		var5.release();
 	}
 
@@ -14099,8 +14099,8 @@ public final class ScriptRunner {
 		if (var5.z == -1.0F) {
 			var5.z = Float.POSITIVE_INFINITY;
 		}
-		Client.field9155.method4814(var5);
-		Client.field9155.method4766((float) var4 / 1000.0F);
+		Client.cam2.setPositionAcceleration(var5);
+		Client.cam2.setPositionAngularInterpolation((float) var4 / 1000.0F);
 		var5.release();
 	}
 
@@ -14111,7 +14111,7 @@ public final class ScriptRunner {
 		int var2 = arg0.intStack[arg0.isp + 1];
 		int var3 = arg0.intStack[arg0.isp + 2];
 		Vector3 var4 = Vector3.create((float) var1, (float) var2, (float) var3);
-		Client.field9155.method4832(var4);
+		Client.cam2.setLookatMaxSpeed(var4);
 		var4.release();
 	}
 
@@ -14122,18 +14122,18 @@ public final class ScriptRunner {
 		int var2 = arg0.intStack[arg0.isp + 1];
 		int var3 = arg0.intStack[arg0.isp + 2];
 		Vector3 var4 = Vector3.create((float) var1, (float) var2, (float) var3);
-		Client.field9155.method4695(var4);
+		Client.cam2.setPositionMaxSpeed(var4);
 		var4.release();
 	}
 
 	@ObfuscatedName("aqy.aof(Lyf;B)V")
 	public static final void cam2_getpositionentity_lookatangleoffsets(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field9155.method4780() != PositionMode.field2815 || Client.field9155.method4743() != LookatMode.field2788) {
+		if (Client.cam2.getPositionMode() != PositionMode.ENTITY || Client.cam2.getLookatMode() != LookatMode.ENTITY) {
 			throw new RuntimeException();
 		}
-		PositionEntity var2 = (PositionEntity) Client.field9155.method4709();
-		LookatEntity var3 = (LookatEntity) Client.field9155.method4797();
+		PositionEntity var2 = (PositionEntity) Client.cam2.getPosition();
+		LookatEntity var3 = (LookatEntity) Client.cam2.getLookat();
 		Vector3 var4 = var2.method16691();
 		Vector3 var5 = Vector3.create(var4);
 		var5.y += var1;
@@ -14160,11 +14160,11 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("pz.aop(Lyf;I)V")
 	public static final void cam2_getpositionentity_lookatangle(ClientScriptState arg0) {
-		if (Client.field9155.method4780() != PositionMode.field2815 || Client.field9155.method4743() != LookatMode.field2788) {
+		if (Client.cam2.getPositionMode() != PositionMode.ENTITY || Client.cam2.getLookatMode() != LookatMode.ENTITY) {
 			throw new RuntimeException();
 		}
-		Vector3 var1 = ((PositionEntity) Client.field9155.method4709()).method16691();
-		Vector3 var2 = ((LookatEntity) Client.field9155.method4797()).method18819();
+		Vector3 var1 = ((PositionEntity) Client.cam2.getPosition()).method16691();
+		Vector3 var2 = ((LookatEntity) Client.cam2.getLookat()).method18819();
 		Vector3 var3 = Vector3.create(var1);
 		var3.sub(var2);
 		float var4 = CameraHelpers.method9272(var3.x, var3.z);
@@ -14173,11 +14173,11 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("f.aog(Lyf;I)V")
 	public static final void cam2_getpositionentity_lookatdistance(ClientScriptState arg0) {
-		if (Client.field9155.method4780() != PositionMode.field2815 || Client.field9155.method4743() != LookatMode.field2788) {
+		if (Client.cam2.getPositionMode() != PositionMode.ENTITY || Client.cam2.getLookatMode() != LookatMode.ENTITY) {
 			throw new RuntimeException();
 		}
-		Vector3 var1 = ((PositionEntity) Client.field9155.method4709()).method16691();
-		Vector3 var2 = ((LookatEntity) Client.field9155.method4797()).method18819();
+		Vector3 var1 = ((PositionEntity) Client.cam2.getPosition()).method16691();
+		Vector3 var2 = ((LookatEntity) Client.cam2.getLookat()).method18819();
 		Vector3 var3 = Vector3.create(var1);
 		var3.sub(var2);
 		arg0.intStack[++arg0.isp - 1] = (int) var3.length();
@@ -14188,23 +14188,23 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		boolean var1 = arg0.intStack[arg0.isp] == 1;
 		boolean var2 = arg0.intStack[arg0.isp + 1] == 1;
-		Client.field9155.method4700(var1, var2);
+		Client.cam2.setCollisionMode(var1, var2);
 	}
 
 	@ObfuscatedName("qf.aot(Lyf;I)V")
 	public static final void cam2_setpositionpointcollision(ClientScriptState arg0) {
-		if (Client.field9155.method4780() != PositionMode.field2816) {
+		if (Client.cam2.getPositionMode() != PositionMode.POINT) {
 			throw new RuntimeException();
 		}
-		((PositionPoint) Client.field9155.method4709()).method16672(arg0.intStack[--arg0.isp] == 1);
+		((PositionPoint) Client.cam2.getPosition()).setCollision(arg0.intStack[--arg0.isp] == 1);
 	}
 
 	@ObfuscatedName("dl.aoe(Lyf;I)V")
 	public static final void cam2_addeffect_ztilt(ClientScriptState arg0) {
 		float var1 = Trig1.radians(arg0.intStack[--arg0.isp]);
-		ZTilt var2 = new ZTilt(Client.field9155.method16602(), var1);
-		Client.field9155.method4702(var2);
-		arg0.intStack[++arg0.isp - 1] = var2.field12341;
+		ZTilt var2 = new ZTilt(Client.cam2.method16602(), var1);
+		Client.cam2.addEffect(var2);
+		arg0.intStack[++arg0.isp - 1] = var2.id;
 	}
 
 	@ObfuscatedName("mz.aon(Lyf;I)V")
@@ -14212,7 +14212,7 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		float var2 = Trig1.radians(arg0.intStack[arg0.isp + 1]);
-		CameraEffect var3 = Client.field9155.method4704(var1);
+		CameraEffect var3 = Client.cam2.getEffect(var1);
 		if (var3 == null) {
 			throw new RuntimeException("");
 		} else if (var3 instanceof ZTilt) {
@@ -14227,7 +14227,7 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		float var2 = (float) arg0.intStack[arg0.isp + 1] / 1000.0F;
-		Client.field9155.method4701(var1, var2);
+		Client.cam2.setTrailDistance(var1, var2);
 	}
 
 	@ObfuscatedName("wg.aox(Lyf;S)V")
@@ -14237,7 +14237,7 @@ public final class ScriptRunner {
 		if (var2 == null) {
 			throw new RuntimeException();
 		}
-		Client.field9155.method4689(var2);
+		Client.cam2.setLinearMovementMode(var2);
 	}
 
 	@ObfuscatedName("ur.aoq(Lyf;S)V")
@@ -14247,17 +14247,17 @@ public final class ScriptRunner {
 		float var2 = (float) arg0.intStack[arg0.isp + 1];
 		float var3 = (float) arg0.intStack[arg0.isp + 2];
 		float var4 = (float) arg0.intStack[arg0.isp + 3] / 1000.0F;
-		Client.field9155.method4696(Vector3.create(var1, var2, var3), var4);
+		Client.cam2.setSpringProperties(Vector3.create(var1, var2, var3), var4);
 	}
 
 	@ObfuscatedName("qd.aoz(Lyf;I)V")
 	public static final void cam2_setlookatangularinterpolation(ClientScriptState arg0) throws CameraException {
-		Client.field9155.method4712((float) arg0.intStack[--arg0.isp] / 1000.0F);
+		Client.cam2.setLookatAngularInterpolation((float) arg0.intStack[--arg0.isp] / 1000.0F);
 	}
 
 	@ObfuscatedName("qj.api(Lyf;B)V")
 	public static final void cam2_setpositionangularinterpolation(ClientScriptState arg0) throws CameraException {
-		Client.field9155.method4766((float) arg0.intStack[--arg0.isp] / 1000.0F);
+		Client.cam2.setPositionAngularInterpolation((float) arg0.intStack[--arg0.isp] / 1000.0F);
 	}
 
 	@ObfuscatedName("qo.apw(Lyf;I)V")
@@ -14267,7 +14267,7 @@ public final class ScriptRunner {
 		float var2 = (float) arg0.intStack[arg0.isp + 1];
 		float var3 = (float) arg0.intStack[arg0.isp + 2];
 		float var4 = (float) arg0.intStack[arg0.isp + 3] / 1000.0F;
-		Client.field9155.method4699(Vector3.create(var1, var2, var3), var4);
+		Client.cam2.setLookatSpringProperties(Vector3.create(var1, var2, var3), var4);
 	}
 
 	@ObfuscatedName("ajd.ape(Lyf;I)V")
@@ -14277,16 +14277,16 @@ public final class ScriptRunner {
 		float var2 = (float) arg0.intStack[arg0.isp + 1];
 		float var3 = (float) arg0.intStack[arg0.isp + 2];
 		float var4 = (float) arg0.intStack[arg0.isp + 3] / 1000.0F;
-		Client.field9155.method4725(Vector3.create(var1, var2, var3), var4);
+		Client.cam2.setPositionSpringProperties(Vector3.create(var1, var2, var3), var4);
 	}
 
 	@ObfuscatedName("rt.apq(Lyf;S)V")
 	public static final void cam2_enable(ClientScriptState arg0) {
 		boolean var1 = arg0.intStack[--arg0.isp] == 1;
 		if (var1) {
-			Client.resetCamera(3);
+			Client.cameraReset(3);
 		} else {
-			Client.resetCamera(2);
+			Client.cameraReset(2);
 		}
 	}
 
@@ -14298,68 +14298,68 @@ public final class ScriptRunner {
 	@ObfuscatedName("ho.apy(Lyf;I)V")
 	public static final void cam2_setsnapdistances(ClientScriptState arg0) throws CameraException {
 		arg0.isp -= 3;
-		Client.field9155.method4782((float) arg0.intStack[arg0.isp], (float) arg0.intStack[arg0.isp + 1], (float) arg0.intStack[arg0.isp + 2]);
+		Client.cam2.setSnapDistances((float) arg0.intStack[arg0.isp], (float) arg0.intStack[arg0.isp + 1], (float) arg0.intStack[arg0.isp + 2]);
 	}
 
 	@ObfuscatedName("eq.apj(Lyf;B)V")
 	public static final void cam2_resetsnapdistances(ClientScriptState arg0) throws CameraException {
-		Client.field9155.method4756();
+		Client.cam2.resetSnapDistances();
 	}
 
 	@ObfuscatedName("wg.apu(Lyf;I)V")
 	public static final void cam2_setlookatorientation_vector(ClientScriptState arg0) {
 		arg0.isp -= 3;
-		if (Client.field9155.method4743() != LookatMode.field2791) {
+		if (Client.cam2.getLookatMode() != LookatMode.ORIENTATION) {
 			throw new RuntimeException();
 		}
-		((LookatOrientation) Client.field9155.method4797()).method18785(arg0.intStack[arg0.isp], arg0.intStack[arg0.isp + 1], arg0.intStack[arg0.isp + 2]);
+		((LookatOrientation) Client.cam2.getLookat()).setVector(arg0.intStack[arg0.isp], arg0.intStack[arg0.isp + 1], arg0.intStack[arg0.isp + 2]);
 	}
 
 	@ObfuscatedName("tt.apc(Lyf;I)V")
 	public static final void cam2_setlookatorientation_yrotation(ClientScriptState arg0) {
-		if (Client.field9155.method4743() != LookatMode.field2791) {
+		if (Client.cam2.getLookatMode() != LookatMode.ORIENTATION) {
 			throw new RuntimeException();
 		}
-		((LookatOrientation) Client.field9155.method4797()).method18783(arg0.intStack[--arg0.isp]);
+		((LookatOrientation) Client.cam2.getLookat()).setRotationY(arg0.intStack[--arg0.isp]);
 	}
 
 	@ObfuscatedName("ga.apg(Lyf;B)V")
 	public static final void cam2_setlookatorientation_xrotation(ClientScriptState arg0) {
-		if (Client.field9155.method4743() != LookatMode.field2791) {
+		if (Client.cam2.getLookatMode() != LookatMode.ORIENTATION) {
 			throw new RuntimeException();
 		}
-		((LookatOrientation) Client.field9155.method4797()).method18789(arg0.intStack[--arg0.isp]);
+		((LookatOrientation) Client.cam2.getLookat()).setRotationX(arg0.intStack[--arg0.isp]);
 	}
 
 	@ObfuscatedName("e.apx(Lyf;I)V")
 	public static final void cam2_setlookatorientation_xmovement(ClientScriptState arg0) {
-		if (Client.field9155.method4743() != LookatMode.field2791) {
+		if (Client.cam2.getLookatMode() != LookatMode.ORIENTATION) {
 			throw new RuntimeException();
 		}
-		((LookatOrientation) Client.field9155.method4797()).method18788(arg0.intStack[--arg0.isp]);
+		((LookatOrientation) Client.cam2.getLookat()).setMovementX(arg0.intStack[--arg0.isp]);
 	}
 
 	@ObfuscatedName("tl.apb(Lyf;I)V")
 	public static final void cam2_setlookatorientation_zmovement(ClientScriptState arg0) {
-		if (Client.field9155.method4743() != LookatMode.field2791) {
+		if (Client.cam2.getLookatMode() != LookatMode.ORIENTATION) {
 			throw new RuntimeException();
 		}
-		((LookatOrientation) Client.field9155.method4797()).method18784(arg0.intStack[--arg0.isp]);
+		((LookatOrientation) Client.cam2.getLookat()).setMovementZ(arg0.intStack[--arg0.isp]);
 	}
 
 	@ObfuscatedName("yu.apl(Lyf;I)V")
 	public static final void cam2_setlookatorientation_maxdistanceclamping(ClientScriptState arg0) {
 		arg0.isp -= 6;
 		CoordFine var1 = (CoordFine) arg0.objectStack[--arg0.osp];
-		if (Client.field9155.method4743() != LookatMode.field2791) {
+		if (Client.cam2.getLookatMode() != LookatMode.ORIENTATION) {
 			throw new RuntimeException();
 		}
-		((LookatOrientation) Client.field9155.method4797()).method18780(var1.method17853(), arg0.intStack[arg0.isp], arg0.intStack[arg0.isp + 1], arg0.intStack[arg0.isp + 2], arg0.intStack[arg0.isp + 3], arg0.intStack[arg0.isp + 4], arg0.intStack[arg0.isp + 5]);
+		((LookatOrientation) Client.cam2.getLookat()).setMaxDistanceClamping(var1.method17853(), arg0.intStack[arg0.isp], arg0.intStack[arg0.isp + 1], arg0.intStack[arg0.isp + 2], arg0.intStack[arg0.isp + 3], arg0.intStack[arg0.isp + 4], arg0.intStack[arg0.isp + 5]);
 	}
 
 	@ObfuscatedName("eu.apr(Lyf;I)V")
 	public static final void login_continue(ClientScriptState arg0) {
-		LoginManager.method9584();
+		LoginManager.continueLogin();
 	}
 
 	@ObfuscatedName("ek.apo(Lyf;I)V")
@@ -14706,112 +14706,112 @@ public final class ScriptRunner {
 	@ObfuscatedName("pu.arq(Lyf;I)V")
 	public static final void detail_brightness(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		Client.preferences.method18157(Client.preferences.brightness, var1);
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.brightness, var1);
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("akw.ars(Lyf;I)V")
 	public static final void detail_removeroofs_option(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		Client.preferences.method18157(Client.preferences.removeRoofs, var1);
-		Client.preferences.method18157(Client.preferences.removeRoofs2, var1);
+		Client.preferences.setPreference(Client.preferences.removeRoofs, var1);
+		Client.preferences.setPreference(Client.preferences.removeRoofs2, var1);
 		Client.preferences.removeRoofs.clampValue();
 		Client.preferences.removeRoofs2.clampValue();
 		Client.method3128();
-		Preferences.method16391();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("fv.arm(Lyf;I)V")
 	public static final void detail_grounddecor_on(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.groundDecoration, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.groundDecoration, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("ec.ark(Lyf;B)V")
 	public static final void detail_idleanims_many(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.idleAnimations, arg0.intStack[--arg0.isp]);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.idleAnimations, arg0.intStack[--arg0.isp]);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("any.arn(Lyf;I)V")
 	public static final void detail_flickering_on(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.flickeringEffects, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.flickeringEffects, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("fz.ara(Lyf;I)V")
 	public static final void detail_spotshadows_on(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.characterShadows, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.characterShadows, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("aae.ard(Lyf;I)V")
 	public static final void detail_hardshadows(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.sceneryShadows, arg0.intStack[--arg0.isp]);
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.sceneryShadows, arg0.intStack[--arg0.isp]);
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("ju.arr(Lyf;S)V")
 	public static final void detail_shadowquality(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.shadowQuality, arg0.intStack[--arg0.isp]);
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.shadowQuality, arg0.intStack[--arg0.isp]);
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("no.asa(Lyf;I)V")
 	public static final void detail_lightdetail_high(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.lightingDetail, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
+		Client.preferences.setPreference(Client.preferences.lightingDetail, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
 		Client.method9516();
 		Client.world.method7816().resetFade();
-		Preferences.method16391();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("yu.asg(Lyf;B)V")
 	public static final void detail_waterdetail_high(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.waterDetail, arg0.intStack[--arg0.isp] == 1 ? 2 : 0);
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.waterDetail, arg0.intStack[--arg0.isp] == 1 ? 2 : 0);
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("ck.aso(Lyf;B)V")
 	public static final void detail_fog_on(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.fog, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.fog, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("xe.ask(Lyf;B)V")
 	public static final void detail_antialiasing(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.antiAliasing2, arg0.intStack[--arg0.isp]);
+		Client.preferences.setPreference(Client.preferences.antiAliasing2, arg0.intStack[--arg0.isp]);
 		Client.method486(Client.preferences.displayMode.getValue(), false);
-		Preferences.method16391();
+		Preferences.save();
 	}
 
 	@ObfuscatedName("oo.asd(Lyf;I)V")
 	public static final void detail_stereo(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.stereo, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.stereo, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("io.asy(Lyf;I)V")
 	public static final void detail_soundvol(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.soundVolume, arg0.intStack[--arg0.isp]);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.soundVolume, arg0.intStack[--arg0.isp]);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
@@ -14820,16 +14820,16 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[--arg0.isp];
 		int var2 = Client.preferences.unknownVolume1.getValue();
 		if (var1 != var2) {
-			Client.preferences.method18157(Client.preferences.unknownVolume1, var1);
-			Preferences.method16391();
+			Client.preferences.setPreference(Client.preferences.unknownVolume1, var1);
+			Preferences.save();
 			Client.preferencesChangeNotified = false;
 		}
 	}
 
 	@ObfuscatedName("e.asc(Lyf;I)V")
 	public static final void detail_bgsoundvol(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.backgroundSoundVolume, arg0.intStack[--arg0.isp]);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.backgroundSoundVolume, arg0.intStack[--arg0.isp]);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
@@ -14837,9 +14837,9 @@ public final class ScriptRunner {
 	public static final void detail_removeroofs_option_override(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		if (var1 == -1) {
-			Client.preferences.method18157(Client.preferences.removeRoofs2, Client.preferences.removeRoofs.getValue());
+			Client.preferences.setPreference(Client.preferences.removeRoofs2, Client.preferences.removeRoofs.getValue());
 		} else {
-			Client.preferences.method18157(Client.preferences.removeRoofs2, var1);
+			Client.preferences.setPreference(Client.preferences.removeRoofs2, var1);
 		}
 		Client.method3128();
 	}
@@ -14847,21 +14847,21 @@ public final class ScriptRunner {
 	@ObfuscatedName("vj.asf(Lyf;B)V")
 	public static final void detail_particles(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		Client.preferences.method18157(Client.preferences.particles, var1);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.particles, var1);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("akw.asp(Lyf;I)V")
 	public static final void detail_antialiasing_default(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.antiAliasing, arg0.intStack[--arg0.isp]);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.antiAliasing, arg0.intStack[--arg0.isp]);
+		Preferences.save();
 	}
 
 	@ObfuscatedName("sz.asb(Lyf;B)V")
 	public static final void detail_buildarea(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.buildArea, arg0.intStack[--arg0.isp]);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.buildArea, arg0.intStack[--arg0.isp]);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
@@ -14871,26 +14871,26 @@ public final class ScriptRunner {
 		if (var1 < 0 || var1 > 1) {
 			var1 = 0;
 		}
-		Client.method9756(var1 == 1);
+		Client.setBloom(var1 == 1);
 	}
 
 	@ObfuscatedName("py.asz(Lyf;I)V")
 	public static final void detail_customcursors(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.customCursors, arg0.intStack[--arg0.isp] == 0 ? 0 : 1);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.customCursors, arg0.intStack[--arg0.isp] == 0 ? 0 : 1);
+		Preferences.save();
 	}
 
 	@ObfuscatedName("uk.asl(Lyf;I)V")
 	public static final void detail_idleanims(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.idleAnimations, arg0.intStack[--arg0.isp]);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.idleAnimations, arg0.intStack[--arg0.isp]);
+		Preferences.save();
 	}
 
 	@ObfuscatedName("ht.asu(Lyf;I)V")
 	public static final void detail_groundblending(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.groundBlending, arg0.intStack[--arg0.isp] == 0 ? 0 : 1);
-		Preferences.method16391();
-		Client.world.method7753();
+		Client.preferences.setPreference(Client.preferences.groundBlending, arg0.intStack[--arg0.isp] == 0 ? 0 : 1);
+		Preferences.save();
+		Client.world.rebuild();
 	}
 
 	@ObfuscatedName("pu.asn(Lyf;I)V")
@@ -14907,24 +14907,24 @@ public final class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		boolean var2 = arg0.intStack[arg0.isp + 1] == 1;
-		Client.preferences.method18157(Client.preferences.toolkit, var1);
+		Client.preferences.setPreference(Client.preferences.toolkit, var1);
 		if (!var2) {
-			Client.preferences.method18157(Client.preferences.preset, 0);
+			Client.preferences.setPreference(Client.preferences.preset, 0);
 		}
-		Preferences.method16391();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("aax.asv(Lyf;I)V")
 	public static final void detail_cpuusage(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.cpuUsage, arg0.intStack[--arg0.isp]);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.cpuUsage, arg0.intStack[--arg0.isp]);
+		Preferences.save();
 	}
 
 	@ObfuscatedName("ge.asm(Lyf;I)V")
 	public static final void detail_texturing(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.textures, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.textures, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
+		Preferences.save();
 		Client.method9516();
 		SpotShadowFactory.cacheReset();
 		Client.preferencesChangeNotified = false;
@@ -14932,15 +14932,15 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("fl.asw(Lyf;I)V")
 	public static final void detail_maxscreensize(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.screenSize, arg0.intStack[--arg0.isp]);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.screenSize, arg0.intStack[--arg0.isp]);
+		Preferences.save();
 		Client.field10836 = true;
 	}
 
 	@ObfuscatedName("wu.ast(Lyf;B)V")
 	public static final void detail_speechvol(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.speechVolume, arg0.intStack[--arg0.isp]);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.speechVolume, arg0.intStack[--arg0.isp]);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
@@ -14949,8 +14949,8 @@ public final class ScriptRunner {
 		int var1 = arg0.intStack[--arg0.isp];
 		int var2 = Client.preferences.unknownVolume2.getValue();
 		if (var1 != var2) {
-			Client.preferences.method18157(Client.preferences.unknownVolume2, var1);
-			Preferences.method16391();
+			Client.preferences.setPreference(Client.preferences.unknownVolume2, var1);
+			Preferences.save();
 			Client.preferencesChangeNotified = false;
 		}
 	}
@@ -14962,8 +14962,8 @@ public final class ScriptRunner {
 			var1 = 0;
 		}
 		if (var1 != Client.preferences.loadingScreen.getValue()) {
-			Client.preferences.method18157(Client.preferences.loadingScreen, var1);
-			Preferences.method16391();
+			Client.preferences.setPreference(Client.preferences.loadingScreen, var1);
+			Preferences.save();
 			Client.preferencesChangeNotified = false;
 		}
 	}
@@ -14972,8 +14972,8 @@ public final class ScriptRunner {
 	public static final void detail_skydetail(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		if (var1 != Client.preferences.skyboxes.getValue()) {
-			Client.preferences.method18157(Client.preferences.skyboxes, var1);
-			Preferences.method16391();
+			Client.preferences.setPreference(Client.preferences.skyboxes, var1);
+			Preferences.save();
 			Client.preferencesChangeNotified = false;
 		}
 	}
@@ -14982,10 +14982,10 @@ public final class ScriptRunner {
 	public static final void detail_animdetail(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		if (var1 != Client.preferences.animDetail.getValue()) {
-			Client.preferences.method18157(Client.preferences.animDetail, var1);
-			Preferences.method16391();
+			Client.preferences.setPreference(Client.preferences.animDetail, var1);
+			Preferences.save();
 			Client.preferencesChangeNotified = false;
-			Client.world.method7753();
+			Client.world.rebuild();
 		}
 	}
 
@@ -15777,7 +15777,7 @@ public final class ScriptRunner {
 		if (arg0 < 1 || arg0 > 10) {
 			throw new RuntimeException();
 		}
-		Client.method4527(arg0, arg1.field2158, arg1.field2183, "");
+		Client.method4527(arg0, arg1.parentlayer, arg1.id, "");
 	}
 
 	@ObfuscatedName("il.axk(Lyf;I)V")
@@ -15979,12 +15979,12 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("adv.ayo(Lyf;I)V")
 	public static final void autosetup_dosetup(ClientScriptState arg0) {
-		int var1 = Preferences.method4288();
+		int var1 = Preferences.getAutoSetupResult();
 		arg0.intStack[++arg0.isp - 1] = Preferences.field11775 = Client.preferences.displayMode.getValue();
 		arg0.intStack[++arg0.isp - 1] = var1;
 		SpotShadowFactory.cacheReset();
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
@@ -16004,44 +16004,44 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("yk.ayt(Lyf;I)V")
 	public static final void autosetup_sethigh(ClientScriptState arg0) {
-		Preferences.method9619();
+		Preferences.setHigh();
 		SpotShadowFactory.cacheReset();
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("alk.aya(Lyf;I)V")
 	public static final void autosetup_setmedium(ClientScriptState arg0) {
-		Preferences.method8479();
+		Preferences.setMedium();
 		SpotShadowFactory.cacheReset();
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("hf.aye(Lyf;B)V")
 	public static final void autosetup_setlow(ClientScriptState arg0) {
-		Preferences.method3056();
+		Preferences.setLow();
 		SpotShadowFactory.cacheReset();
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("w.ayh(Lyf;I)V")
 	public static final void autosetup_setmin(ClientScriptState arg0) {
-		Preferences.method131(true);
+		Preferences.setMin(true);
 		SpotShadowFactory.cacheReset();
-		Client.world.method7753();
-		Preferences.method16391();
+		Client.world.rebuild();
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
 	@ObfuscatedName("sc.ayl(Lyf;I)V")
 	public static final void autosetup_setcustom(ClientScriptState arg0) {
-		Client.preferences.method18157(Client.preferences.preset, 0);
-		Preferences.method16391();
+		Client.preferences.setPreference(Client.preferences.preset, 0);
+		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
 
@@ -16514,7 +16514,7 @@ public final class ScriptRunner {
 
 	@ObfuscatedName("gv.bbs(Lyf;B)V")
 	public static final void if_get_gamescreen(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.field10986 == null ? -1 : Client.field10986.field2158;
+		arg0.intStack[++arg0.isp - 1] = Client.field10986 == null ? -1 : Client.field10986.parentlayer;
 	}
 
 	@ObfuscatedName("sb.bbl(Lyf;I)V")

@@ -127,7 +127,7 @@ public abstract class LookatSpline extends Lookat {
 
 	@ObfuscatedName("ano.f(Lju;Lou;IIFB)V")
 	public void method14136(Vector3i arg0, Matrix4x3 arg1, int arg2, int arg3, float arg4) {
-		double[] var6 = this.field8479.method4715();
+		double[] var6 = this.camera.method4715();
 		var6[0] -= arg2;
 		var6[2] -= arg3;
 		double[] var7 = this.method18837();
@@ -151,18 +151,18 @@ public abstract class LookatSpline extends Lookat {
 	}
 
 	@ObfuscatedName("ano.w(Lalw;I)V")
-	public void method14132(Packet arg0) {
+	public void decode(Packet buf) {
 		this.field11873 = 0.0F;
 		this.field11871 = 0.0F;
 		this.field11870 = 0;
-		int var2 = arg0.g1();
+		int var2 = buf.g1();
 		this.field11872 = new Spline[var2];
 		this.field11869 = new float[var2];
 		for (int var3 = 0; var3 < var2; var3++) {
-			this.field11872[var3] = new Spline(arg0);
-			this.field11869[var3] = arg0.gFloat();
+			this.field11872[var3] = new Spline(buf);
+			this.field11869[var3] = buf.gFloat();
 		}
-		this.method18839(arg0, var2);
+		this.method18839(buf, var2);
 	}
 
 	@ObfuscatedName("ano.b(FFFI)F")

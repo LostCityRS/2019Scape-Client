@@ -29,117 +29,117 @@ public class BasicCamera extends Camera {
 	}
 
 	@ObfuscatedName("ahc.fz(Lalw;II)V")
-	public void method16604(Packet arg0, int arg1) {
-		int var3 = arg0.pos;
-		int var4 = arg0.g1();
-		this.method4683(CameraControlMode.method4461(var4 & 0x1));
+	public void decode(Packet buf, int size) {
+		int var3 = buf.pos;
+		int var4 = buf.g1();
+		this.setControlMode(CameraControlMode.of(var4 & 0x1));
 		if ((var4 & 0x8) != 0) {
-			LookatMode var5 = LookatMode.method3259(arg0.g1());
-			if (this.field2845 != var5) {
+			LookatMode var5 = LookatMode.of(buf.g1());
+			if (this.lookatMode != var5) {
 				try {
-					this.method4684(var5, true);
+					this.setLookatMode(var5, true);
 				} catch (CameraException var20) {
 					var20.printStackTrace();
 				}
 			}
 		}
 		if ((var4 & 0x10) != 0) {
-			PositionMode var7 = PositionMode.method1058(arg0.g1());
-			if (this.field2847 != var7) {
+			PositionMode var7 = PositionMode.method1058(buf.g1());
+			if (this.positionMode != var7) {
 				try {
-					this.method4688(var7, true);
+					this.setPositionMode(var7, true);
 				} catch (CameraException var19) {
 					var19.printStackTrace();
 				}
 			}
 		}
 		if ((var4 >> 7 & 0x1) == 1) {
-			int var9 = arg0.g2();
+			int var9 = buf.g2();
 			if ((var9 >> CameraSettingType.field2810.field2803 & 0x1) == 1) {
-				this.field2853.decode(arg0);
+				this.lookatMaxSpeed.decode(buf);
 			}
 			if ((var9 >> CameraSettingType.field2797.field2803 & 0x1) == 1) {
-				this.field2854.decode(arg0);
+				this.positionMaxSpeed.decode(buf);
 			}
 			if ((var9 >> CameraSettingType.field2809.field2803 & 0x1) == 1) {
-				this.field2856.decode(arg0);
+				this.lookatAcceleration.decode(buf);
 			}
 			if ((var9 >> CameraSettingType.field2799.field2803 & 0x1) == 1) {
-				this.field2867.decode(arg0);
+				this.positionAcceleration.decode(buf);
 			}
 			if ((var9 >> CameraSettingType.field2798.field2803 & 0x1) == 1) {
-				this.field2855 = arg0.gFloat();
-				this.field2859 = arg0.gFloat();
+				this.field2855 = buf.gFloat();
+				this.field2859 = buf.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2801.field2803 & 0x1) == 1) {
-				this.field2872 = arg0.gFloat();
-				this.field2868 = arg0.gFloat();
+				this.field2872 = buf.gFloat();
+				this.field2868 = buf.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2802.field2803 & 0x1) == 1) {
-				this.field2844 = CameraProjectionMode.method16906(arg0.g1());
+				this.projectionMode = CameraProjectionMode.method16906(buf.g1());
 			}
 			if ((var9 >> CameraSettingType.field2806.field2803 & 0x1) == 1) {
-				this.field2851 = arg0.g3();
-				arg0.g1();
+				this.field2851 = buf.g3();
+				buf.g1();
 			}
 			if ((var9 >> CameraSettingType.field2804.field2803 & 0x1) == 1) {
-				int var10 = arg0.g1();
+				int var10 = buf.g1();
 				this.field2862 = (var10 & 0x1) == 1;
 				this.field2875 = (var10 & 0x2) == 2;
 			}
 			if ((var9 >> CameraSettingType.field2805.field2803 & 0x1) == 1) {
-				int var11 = arg0.g1();
+				int var11 = buf.g1();
 				for (int var12 = 0; var12 < var11; var12++) {
-					int var13 = arg0.g1();
-					int var14 = arg0.g1();
+					int var13 = buf.g1();
+					int var14 = buf.g1();
 					if (var13 == 0) {
-						this.method4703(var14);
+						this.removeEffect(var14);
 					} else {
-						CameraEffectType var15 = CameraEffectType.method5101(arg0.g1());
+						CameraEffectType var15 = CameraEffectType.of(buf.g1());
 						boolean var16 = true;
-						Iterator var17 = this.field2878.iterator();
+						Iterator var17 = this.effects.iterator();
 						while (var17.hasNext()) {
 							CameraEffect var18 = (CameraEffect) var17.next();
-							if (var18.field12341 == var14) {
-								var18.method19434(arg0);
+							if (var18.id == var14) {
+								var18.decode(buf);
 								var16 = false;
 								break;
 							}
 						}
 						if (var16) {
-							this.method4702(CameraEffect.method19262(var14, var15, arg0));
+							this.addEffect(CameraEffect.createCameraEffect(var14, var15, buf));
 						}
 					}
 				}
 			}
 			if ((var9 >> CameraSettingType.field2811.field2803 & 0x1) == 1) {
-				this.field2876 = arg0.g2();
-				this.field2877 = arg0.gFloat();
+				this.field2876 = buf.g2();
+				this.field2877 = buf.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2807.field2803 & 0x1) == 1) {
-				this.field2842 = CameraLinearMovementMode.method17805(arg0.g1());
+				this.linearMovementMode = CameraLinearMovementMode.method17805(buf.g1());
 			}
 			if ((var9 >> CameraSettingType.field2808.field2803 & 0x1) == 1) {
-				this.field2864.decode(arg0);
-				this.field2865.decode(arg0);
-				this.field2866 = arg0.gFloat();
-				this.field2843 = arg0.gFloat();
+				this.lookatSpring.decode(buf);
+				this.positionSpring.decode(buf);
+				this.field2866 = buf.gFloat();
+				this.field2843 = buf.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2796.field2803 & 0x1) == 1) {
-				arg0.gFloat();
+				buf.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2800.field2803 & 0x1) == 1) {
-				this.field2852 = arg0.gFloat();
+				this.positionAngularInterpolation = buf.gFloat();
 			}
 		}
-		if (this.field2846 != null && (var4 >> 5 & 0x1) == 1) {
-			this.field2846.method14132(arg0);
+		if (this.lookat != null && (var4 >> 5 & 0x1) == 1) {
+			this.lookat.decode(buf);
 		}
-		if (this.field2863 != null && (var4 >> 6 & 0x1) == 1) {
-			this.field2863.method5224(arg0);
+		if (this.position != null && (var4 >> 6 & 0x1) == 1) {
+			this.position.method5224(buf);
 		}
-		if (arg0.pos - var3 != arg1) {
-			throw new RuntimeException(arg0.pos - var3 + "," + arg1);
+		if (buf.pos - var3 != size) {
+			throw new RuntimeException(buf.pos - var3 + "," + size);
 		}
 	}
 }

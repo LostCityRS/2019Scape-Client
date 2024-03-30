@@ -6,24 +6,24 @@ import deob.ObfuscatedName;
 public class CameraEffectType {
 
 	@ObfuscatedName("ie.e")
-	public static final CameraEffectType field2618 = new CameraEffectType(0);
+	public static final CameraEffectType SHAKE = new CameraEffectType(0);
 
 	@ObfuscatedName("ie.n")
-	public static final CameraEffectType field2616 = new CameraEffectType(1);
+	public static final CameraEffectType ZTILT = new CameraEffectType(1);
 
 	@ObfuscatedName("ie.m")
-	public final int field2617;
+	public final int index;
 
-	public CameraEffectType(int arg0) {
-		this.field2617 = arg0;
+	public CameraEffectType(int index) {
+		this.index = index;
 	}
 
     @ObfuscatedName("jp.e(IB)Lie;")
-    public static CameraEffectType method5101(int arg0) {
-        if (field2618.field2617 == arg0) {
-            return field2618;
-        } else if (field2616.field2617 == arg0) {
-            return field2616;
+    public static CameraEffectType of(int index) {
+        if (SHAKE.index == index) {
+            return SHAKE;
+        } else if (ZTILT.index == index) {
+            return ZTILT;
         } else {
             return null;
         }

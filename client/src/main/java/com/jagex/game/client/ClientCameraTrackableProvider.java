@@ -11,12 +11,12 @@ import rs2.client.Client;
 public class ClientCameraTrackableProvider implements CameraTrackableProvider {
 
 	@ObfuscatedName("z.e(Ljl;IB)Ljn;")
-	public CameraTrackable method268(CameraTrackableType arg0, int arg1) {
-		if (CameraTrackableType.PLAYER == arg0) {
-			return Client.players[arg1];
+	public CameraTrackable getCameraTrackable(CameraTrackableType cameraTrackableType, int index) {
+		if (CameraTrackableType.PLAYER == cameraTrackableType) {
+			return Client.players[index];
 		}
-		if (CameraTrackableType.NPC == arg0) {
-			ObjectWrapper var3 = (ObjectWrapper) Client.npcs.getNode((long) arg1);
+		if (CameraTrackableType.NPC == cameraTrackableType) {
+			ObjectWrapper var3 = (ObjectWrapper) Client.npcs.getNode((long) index);
 			if (var3 != null) {
 				return (CameraTrackable) var3.value;
 			}

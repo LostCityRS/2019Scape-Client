@@ -27,10 +27,10 @@ public abstract class AutoSetupResult {
 	public int field8905;
 
 	@ObfuscatedName("acc.b")
-	public int field8896;
+	public int result;
 
 	@ObfuscatedName("acc.w(I)I")
-	public int method14996() {
-		return this.field8896;
+	public int getResult() {
+		return this.result;
 	}
 }

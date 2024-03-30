@@ -227,9 +227,9 @@ public final class ChangeLocationRequest extends Node {
 		Client.world.method7744().method16871(Client.renderer, arg0, arg1, arg2, arg3);
 		if (arg4 >= 0) {
 			int var11 = Client.preferences.groundDecoration.getValue();
-			Client.preferences.method18157(Client.preferences.groundDecoration, 1);
+			Client.preferences.setPreference(Client.preferences.groundDecoration, 1);
 			Client.world.method7744().addGroundLoc(Client.renderer, var10, arg0, arg2, arg3, arg4, arg5, arg6, arg8, arg9, arg7);
-			Client.preferences.method18157(Client.preferences.groundDecoration, var11);
+			Client.preferences.setPreference(Client.preferences.groundDecoration, var11);
 		}
 		Minimap.method16444(Client.localPlayerEntity.level);
 	}

@@ -133,7 +133,7 @@ public class AccountAppealLogin {
 						}
 						String var21 = new String(var18.data, 0, var18.pos);
 						if (method15242(var21)) {
-							Browser.method4607(var21, true, Client.field10784);
+							Browser.openUrl(var21, true, Client.field10784);
 							return 2;
 						} else {
 							return 5;

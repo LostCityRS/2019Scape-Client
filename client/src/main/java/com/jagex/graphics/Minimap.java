@@ -555,7 +555,7 @@ public class Minimap {
 			var7 = (int) var11.x;
 			var8 = (int) var11.z;
 			if (Client.cameraState == 3) {
-				var9 = (int) -((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
+				var9 = (int) -((double) Client.cam2.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 			} else {
 				var9 = Client.minimapAnticheatAngle + (int) -Client.orbitCameraYaw & 0x3FFF;
 			}
@@ -741,7 +741,7 @@ public class Minimap {
 			for (int var10 = 0; var10 < var9.length / 2; var10++) {
 				int var11;
 				if (Client.cameraState == 3) {
-					var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
+					var11 = (int) ((double) Client.cam2.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 				} else if (Client.cameraState == 4) {
 					var11 = (int) Client.orbitCameraYaw & 0x3FFF;
 				} else {
@@ -853,7 +853,7 @@ public class Minimap {
 		}
 		int var10;
 		if (Client.cameraState == 3) {
-			var10 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
+			var10 = (int) ((double) Client.cam2.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 		} else if (Client.cameraState == 4) {
 			var10 = (int) Client.orbitCameraYaw & 0x3FFF;
 		} else {
@@ -917,7 +917,7 @@ public class Minimap {
 		}
 		int var11;
 		if (Client.cameraState == 3) {
-			var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
+			var11 = (int) ((double) Client.cam2.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 		} else if (Client.cameraState == 4) {
 			var11 = (int) Client.orbitCameraYaw & 0x3FFF;
 		} else {
@@ -973,7 +973,7 @@ public class Minimap {
 	public static void method3654(Component arg0, GraphicsRelated arg1, int arg2, int arg3, int arg4, int arg5, int arg6, String arg7, Font arg8, FontMetrics arg9, int arg10) {
 		int var11;
 		if (Client.cameraState == 3) {
-			var11 = (int) ((double) Client.field9155.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
+			var11 = (int) ((double) Client.cam2.method4719() * 2607.5945876176133D) + Client.minimapAnticheatAngle & 0x3FFF;
 		} else if (Client.cameraState == 4) {
 			var11 = (int) Client.orbitCameraYaw & 0x3FFF;
 		} else {

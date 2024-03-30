@@ -30,9 +30,9 @@ public class ObjIconFactory {
 
 	@ObfuscatedName("y.e(Ldh;Lhf;I)V")
 	public static void method539(Renderer arg0, Component arg1) {
-		boolean var2 = Client.objTypeList.method18900(arg0, arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246 ? Client.localPlayerEntity.model : null) == null;
+		boolean var2 = Client.objTypeList.method18900(arg0, arg1.invobject, arg1.invcount, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246 ? Client.localPlayerEntity.model : null) == null;
 		if (var2) {
-			field631.pushBack(new ObjIconRequest(arg1.field2334, arg1.field2335, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246));
+			field631.pushBack(new ObjIconRequest(arg1.invobject, arg1.invcount, arg1.field2218, arg1.field2219 | 0xFF000000, arg1.field2241, arg1.field2246));
 			Client.method4616(arg1);
 		}
 	}
