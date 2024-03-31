@@ -57,7 +57,7 @@ public class ArrayUtil {
 	}
 
 	@ObfuscatedName("zp.z([Ljava/lang/Object;I[Ljava/lang/Object;II)V")
-	public static void method14008(Object[] arg0, int arg1, Object[] arg2, int arg3, int arg4) {
+	public static void copy(Object[] arg0, int arg1, Object[] arg2, int arg3, int arg4) {
 		if (arg0 == arg2) {
 			if (arg1 == arg3) {
 				return;

@@ -82,13 +82,13 @@ public class ClientScriptState {
 	public ObjStackEntity activeObj;
 
 	@ObfuscatedName("yf.g")
-	public Map field8234 = new HashMap();
+	public Map primaryVars = new HashMap();
 
 	@ObfuscatedName("yf.i")
-	public Map field8233 = new HashMap();
+	public Map secondaryVars = new HashMap();
 
 	@ObfuscatedName("yf.j")
-	public int field8229 = 0;
+	public int nestedCoun = 0;
 
 	@ObfuscatedName("yf.t")
 	public int field8231;

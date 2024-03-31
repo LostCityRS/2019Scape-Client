@@ -22,7 +22,7 @@ public class SubInterfaceActiveLoc extends SubInterface {
 		if (var1 == null) {
 			return false;
 		} else {
-			ScriptRunner.method15112(ClientTriggerType.field7264, this.field11571, -1, var1);
+			ScriptRunner.runLoc(ClientTriggerType.IF_PROCESS_ACTIVE_LOC, this.field11571, -1, var1);
 			return true;
 		}
 	}

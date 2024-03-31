@@ -8,14 +8,14 @@ import deob.ObfuscatedName;
 public class ActiveComponent {
 
 	@ObfuscatedName("ya.e")
-	public Component field8242;
+	public Component com;
 
 	@ObfuscatedName("ya.n")
-	public Interface field8241;
+	public Interface itf;
 
 	@ObfuscatedName("ya.e(I)Lhf;")
 	public Component method13790() {
-		return this.field8241.method3924(this.field8242.parentlayer);
+		return this.itf.getComponent(this.com.parentlayer);
 	}
 
 	@ObfuscatedName("ya.n(III)Z")
@@ -25,15 +25,15 @@ public class ActiveComponent {
 			this.method13788();
 			return false;
 		} else {
-			this.field8241 = Component.field11725[arg0 >> 16];
-			this.field8242 = var3;
+			this.itf = Component.interfaces[arg0 >> 16];
+			this.com = var3;
 			return true;
 		}
 	}
 
 	@ObfuscatedName("ya.m(I)V")
 	public void method13788() {
-		this.field8241 = null;
-		this.field8242 = null;
+		this.itf = null;
+		this.com = null;
 	}
 }

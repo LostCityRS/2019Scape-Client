@@ -953,14 +953,14 @@ public class ClientWorldMap extends WorldMap {
 													}
 													if (!var8.field11252.field11450) {
 														var8.field11252.field11450 = true;
-														ScriptRunner.method830(ClientTriggerType.field7263, var8.field11252.field11446, var9.category);
+														ScriptRunner.runTrigger(ClientTriggerType.WORLDMAPELEMENTMOUSEOVER, var8.field11252.field11446, var9.category);
 													}
 													if (var8.field11252.field11450) {
-														ScriptRunner.method830(ClientTriggerType.field7255, var8.field11252.field11446, var9.category);
+														ScriptRunner.runTrigger(ClientTriggerType.WORLDMAPELEMENTMOUSEREPEAT, var8.field11252.field11446, var9.category);
 													}
 												} else if (var8.field11252.field11450) {
 													var8.field11252.field11450 = false;
-													ScriptRunner.method830(ClientTriggerType.field7254, var8.field11252.field11446, var9.category);
+													ScriptRunner.runTrigger(ClientTriggerType.WORLDMAPELEMENTMOUSELEAVE, var8.field11252.field11446, var9.category);
 												}
 											}
 										}
@@ -994,15 +994,15 @@ public class ClientWorldMap extends WorldMap {
 	@ObfuscatedName("acl.ee(IIIB)V")
 	public static void method15110(int arg0, int arg1, int arg2) {
 		if (arg0 == 1008) {
-			ScriptRunner.method830(ClientTriggerType.field7258, arg1, arg2);
+			ScriptRunner.runTrigger(ClientTriggerType.OPWORLDMAPELEMENT1, arg1, arg2);
 		} else if (arg0 == 1009) {
-			ScriptRunner.method830(ClientTriggerType.field7249, arg1, arg2);
+			ScriptRunner.runTrigger(ClientTriggerType.OPWORLDMAPELEMENT2, arg1, arg2);
 		} else if (arg0 == 1010) {
-			ScriptRunner.method830(ClientTriggerType.field7257, arg1, arg2);
+			ScriptRunner.runTrigger(ClientTriggerType.OPWORLDMAPELEMENT3, arg1, arg2);
 		} else if (arg0 == 1011) {
-			ScriptRunner.method830(ClientTriggerType.field7253, arg1, arg2);
+			ScriptRunner.runTrigger(ClientTriggerType.OPWORLDMAPELEMENT4, arg1, arg2);
 		} else if (arg0 == 1012) {
-			ScriptRunner.method830(ClientTriggerType.field7252, arg1, arg2);
+			ScriptRunner.runTrigger(ClientTriggerType.OPWORLDMAPELEMENT5, arg1, arg2);
 		}
 	}
 

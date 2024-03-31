@@ -22,7 +22,7 @@ public class SubInterfaceActiveObj extends SubInterface {
 		if (var1 == null) {
 			return false;
 		} else {
-			ScriptRunner.method9018(ClientTriggerType.field7248, this.field11571, -1, this.field12431, var1);
+			ScriptRunner.runObj(ClientTriggerType.IF_PROCESS_ACTIVE_OBJ, this.field11571, -1, this.field12431, var1);
 			return true;
 		}
 	}

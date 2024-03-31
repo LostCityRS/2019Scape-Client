@@ -41,22 +41,22 @@ public class ClientScriptHelpers {
 	}
 
 	@ObfuscatedName("vs.m(Luh;IIS)Lasc;")
-	public static ClientScript method9425(ClientTriggerType arg0, int arg1, int arg2) {
-		int var3 = arg0.field7271 | arg1 << 10;
+	public static ClientScript getByTrigger(ClientTriggerType arg0, int arg1, int arg2) {
+		int var3 = arg0.id | arg1 << 10;
 		ClientScript var4 = (ClientScript) cache.method2966((long) var3 << 16);
 		if (var4 != null) {
 			return var4;
 		}
 		byte[] var5 = Client.clientscriptsJs5.method6894(Client.clientscriptsJs5.method6903(var3));
 		if (var5 == null) {
-			int var8 = arg0.field7271 | arg2 + 65536 << 10;
+			int var8 = arg0.id | arg2 + 65536 << 10;
 			ClientScript var9 = (ClientScript) cache.method2966((long) var8 << 16);
 			if (var9 != null) {
 				return var9;
 			}
 			byte[] var10 = Client.clientscriptsJs5.method6894(Client.clientscriptsJs5.method6903(var8));
 			if (var10 == null) {
-				int var13 = arg0.field7271 | 0x3FFFC00;
+				int var13 = arg0.id | 0x3FFFC00;
 				ClientScript var14 = (ClientScript) cache.method2966((long) var13 << 16);
 				if (var14 != null) {
 					return var14;

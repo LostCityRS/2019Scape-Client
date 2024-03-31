@@ -81,13 +81,13 @@ public class DelayedStateChange extends SecondaryNode {
 	}
 
 	@ObfuscatedName("gv.k(Lec;I)V")
-	public static void method3607(VarType arg0) {
+	public static void onVarClientInt(VarType arg0) {
 		DelayedStateChange var1 = method5072(1, (long) arg0.id);
 		var1.method19333();
 	}
 
 	@ObfuscatedName("zr.f(Lec;B)V")
-	public static void method14066(VarType arg0) {
+	public static void onVarClientString(VarType arg0) {
 		DelayedStateChange var1 = method5072(2, (long) arg0.id);
 		var1.method19333();
 	}
@@ -213,7 +213,7 @@ public class DelayedStateChange extends SecondaryNode {
 		DelayedStateChange var3 = method5072(1, (long) var2.baseVar.id);
 		try {
 			if (field12295) {
-				var3.field12268 = Client.field7228.getVarValueInt(var2.baseVar);
+				var3.field12268 = Client.clientVariableManager.getVarValueInt(var2.baseVar);
 			}
 			var3.field12268 = var2.setVarbitValue(var3.field12268, arg1);
 			var3.method19269();

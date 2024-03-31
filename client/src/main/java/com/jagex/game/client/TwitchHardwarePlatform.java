@@ -393,7 +393,7 @@ public class TwitchHardwarePlatform {
 				if (var8 != null && method6878(var8, arg1)) {
 					TwitchEventSubject var9 = var8.method11();
 					if (var9 != null) {
-						ScriptRunner.method13907(var9.getId(), var8);
+						ScriptRunner.triggerTwitch(var9.getId(), var8);
 					}
 				}
 			}
@@ -550,7 +550,7 @@ public class TwitchHardwarePlatform {
 		TwitchEventResult var2 = new TwitchEventResult(arg0, arg1);
 		TwitchEventSubject var3 = var2.method11();
 		if (var3 != null) {
-			ScriptRunner.method13907(var3.getId(), var2);
+			ScriptRunner.triggerTwitch(var3.getId(), var2);
 		}
 	}
 

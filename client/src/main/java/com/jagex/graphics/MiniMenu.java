@@ -1291,14 +1291,14 @@ public class MiniMenu {
 		}
 		int var2 = arg0 >> 16;
 		int var3 = arg0 & 0xFFFF;
-		if (Component.field11725[var2] == null || Component.field11725[var2].field2151[var3] == null) {
+		if (Component.interfaces[var2] == null || Component.interfaces[var2].components[var3] == null) {
 			return false;
 		}
-		Component var4 = Component.field11725[var2].field2151[var3];
+		Component var4 = Component.interfaces[var2].components[var3];
 		if (arg1 == -1 && var4.type == 0) {
 			for (MinimenuEntry var5 = (MinimenuEntry) field542.peekFront(); var5 != null; var5 = (MinimenuEntry) field542.prev()) {
 				if (var5.field12307 == 58 || var5.field12307 == 1007 || var5.field12307 == 25 || var5.field12307 == 57 || var5.field12307 == 30) {
-					for (Component var6 = Component.method10202(var5.field12302); var6 != null; var6 = Client.method6000(Component.field11725[var6.parentlayer >> 16], var6)) {
+					for (Component var6 = Component.method10202(var5.field12302); var6 != null; var6 = Client.method6000(Component.interfaces[var6.parentlayer >> 16], var6)) {
 						if (var4.parentlayer == var6.parentlayer) {
 							return true;
 						}
@@ -1326,12 +1326,12 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("jd.au(Larm;I)Ljava/lang/String;")
-	public static String method4642(MinimenuEntry arg0) {
+	public static String getEntryOp(MinimenuEntry arg0) {
 		return field562 || arg0 == null ? "" : arg0.field12297;
 	}
 
 	@ObfuscatedName("nw.ar(Larm;B)Ljava/lang/String;")
-	public static String method6018(MinimenuEntry arg0) {
+	public static String getEntryOpBase(MinimenuEntry arg0) {
 		if (field562 || arg0 == null) {
 			return "";
 		} else if ((arg0.field12301 == null || arg0.field12301.length() == 0) && arg0.field12296 != null && arg0.field12296.length() > 0) {
@@ -1342,7 +1342,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("amn.ap(Larm;I)I")
-	public static int method18429(MinimenuEntry arg0) {
+	public static int getEntryEntityType(MinimenuEntry arg0) {
 		if (field562) {
 			return 6;
 		} else if (arg0 == null) {
@@ -2309,14 +2309,14 @@ public class MiniMenu {
 			Client.method612(var5, var4);
 			Client.pressedContinueOption = Component.method16682(var5, var4);
 			if (Client.pressedContinueOption != null) {
-				Client.method4616(Client.pressedContinueOption);
+				Client.requestRedrawComponent(Client.pressedContinueOption);
 			}
 		}
 		if (Client.targetModeActive) {
 			Client.method9403();
 		}
 		if (Client.selectedArea != null && Client.selectedCycle == 0) {
-			Client.method4616(Client.selectedArea);
+			Client.requestRedrawComponent(Client.selectedArea);
 		}
 	}
 

@@ -87,7 +87,7 @@ public class Component {
 	public static int field2172 = 1411;
 
 	@ObfuscatedName("ama.h")
-	public static Interface[] field11725;
+	public static Interface[] interfaces;
 
 	@ObfuscatedName("aag.a")
 	public static boolean[] field8424;
@@ -612,10 +612,10 @@ public class Component {
 	public AnimationWrapper field2170;
 
 	@ObfuscatedName("hf.gh")
-	public Component[] field2351;
+	public Component[] subcomponents;
 
 	@ObfuscatedName("hf.gm")
-	public Component[] field2349;
+	public Component[] sortedsubcomponents;
 
 	@ObfuscatedName("hf.gv")
 	public boolean field2350 = false;
@@ -664,25 +664,25 @@ public class Component {
 		field7085 = arg0;
 		field1707 = arg1;
 		field8370 = arg2;
-		field11725 = new Interface[field7085.capacity()];
+		interfaces = new Interface[field7085.capacity()];
 		field8424 = new boolean[field7085.capacity()];
 	}
 
 	@ObfuscatedName("xh.n(II)Lhf;")
 	public static Component method10202(int arg0) {
 		int var1 = arg0 >> 16;
-		if (field11725[var1] == null || field11725[var1].method3924(arg0) == null) {
-			boolean var2 = method5364(var1, null);
+		if (interfaces[var1] == null || interfaces[var1].getComponent(arg0) == null) {
+			boolean var2 = openInterface(var1, null);
 			if (!var2) {
 				return null;
 			}
 		}
-		return field11725[var1].method3924(arg0);
+		return interfaces[var1].getComponent(arg0);
 	}
 
 	@ObfuscatedName("kp.m(II)Lhq;")
 	public static Interface method5367(int arg0) {
-		return field11725[arg0 >> 16];
+		return interfaces[arg0 >> 16];
 	}
 
 	@ObfuscatedName("ahh.k(IIB)Lhf;")
@@ -690,20 +690,20 @@ public class Component {
 		Component var2 = method10202(arg0);
 		if (arg1 == -1) {
 			return var2;
-		} else if (var2 == null || var2.field2351 == null || arg1 >= var2.field2351.length) {
+		} else if (var2 == null || var2.subcomponents == null || arg1 >= var2.subcomponents.length) {
 			return null;
 		} else {
-			return var2.field2351[arg1];
+			return var2.subcomponents[arg1];
 		}
 	}
 
 	@ObfuscatedName("kn.f(I[II)Z")
-	public static boolean method5364(int arg0, int[] arg1) {
+	public static boolean openInterface(int arg0, int[] arg1) {
 		if (field8424[arg0]) {
 			return true;
 		}
-		field11725[arg0] = method5405(arg0, arg1, field11725[arg0], false);
-		if (field11725[arg0] == null) {
+		interfaces[arg0] = method5405(arg0, arg1, interfaces[arg0], false);
+		if (interfaces[arg0] == null) {
 			return false;
 		} else {
 			field8424[arg0] = true;
@@ -723,19 +723,19 @@ public class Component {
 		} else if (arg2 == null) {
 			var5 = new Component[var4];
 		} else {
-			var5 = arg2.field2151;
+			var5 = arg2.components;
 		}
 		if (arg2 == null) {
 			arg2 = new Interface(arg3, var5);
 		} else {
-			arg2.field2151 = var5;
+			arg2.components = var5;
 			arg2.field2150 = arg3;
 		}
 		for (int var6 = 0; var6 < var4; var6++) {
-			if (arg2.field2151[var6] == null) {
+			if (arg2.components[var6] == null) {
 				byte[] var7 = field7085.getfile(arg0, var6, arg1);
 				if (var7 != null) {
-					Component var8 = arg2.field2151[var6] = new Component();
+					Component var8 = arg2.components[var6] = new Component();
 					var8.parentlayer = (arg0 << 16) + var6;
 					var8.decode(new Packet(var7));
 				}
@@ -748,7 +748,7 @@ public class Component {
 	public static void method16640(int arg0) {
 		if (arg0 != -1 && !field8424[arg0]) {
 			field7085.method6899(arg0);
-			field11725[arg0] = null;
+			interfaces[arg0] = null;
 		}
 	}
 
@@ -1260,7 +1260,7 @@ public class Component {
 
 	@ObfuscatedName("jh.a(B)V")
 	public static void method5075() {
-		field11725 = new Interface[field7085.capacity()];
+		interfaces = new Interface[field7085.capacity()];
 		field8424 = new boolean[field7085.capacity()];
 	}
 

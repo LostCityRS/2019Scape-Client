@@ -241,7 +241,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public int field10439;
 
 	@ObfuscatedName("ahm.ci")
-	public VarDomain field10415;
+	public VarDomain varDomain;
 
 	public PathingEntity(Scene arg0, int arg1, VarTypeList arg2) {
 		super(arg0, 0, 0, 0, 0, 0, 0, 0, 0, 0, false, (byte) 0);
@@ -284,7 +284,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		this.field10458 = false;
 		this.field10462 = -1;
 		this.field10439 = -1;
-		this.field10415 = new PathingEntityVarDomain(this);
+		this.varDomain = new PathingEntityVarDomain(this);
 		this.routeWaypointX = new int[arg1];
 		this.routeWaypointZ = new int[arg1];
 		this.routeSpeeds = new byte[arg1];
@@ -938,7 +938,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 			return false;
 		} else {
 			this.field10462 = arg0;
-			ScriptRunner.method16465(this.field10461.field2151);
+			ScriptRunner.runOnLoad(this.field10461.components);
 			return true;
 		}
 	}
@@ -966,7 +966,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	@ObfuscatedName("ahm.ca(IIZB)V")
 	public void method16519(int arg0, int arg1, boolean arg2) {
 		if (this.method16515()) {
-			Client.method1597(this.field10461.field2151, -1, arg0, arg1, arg2);
+			Client.method1597(this.field10461.components, -1, arg0, arg1, arg2);
 		}
 	}
 

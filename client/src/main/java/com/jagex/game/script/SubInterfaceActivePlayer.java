@@ -22,7 +22,7 @@ public class SubInterfaceActivePlayer extends SubInterface {
 		if (var1 == null) {
 			return false;
 		} else {
-			ScriptRunner.method3661(ClientTriggerType.field7265, this.field11571, -1, var1, this.field12430);
+			ScriptRunner.runPathingEntity(ClientTriggerType.IF_PROCESS_ACTIVE_PLAYER, this.field11571, -1, var1, this.field12430);
 			return true;
 		}
 	}

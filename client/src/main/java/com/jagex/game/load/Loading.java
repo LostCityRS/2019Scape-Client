@@ -476,7 +476,7 @@ public class Loading {
 			WorldMap.method8506(Client.worldmapJs5, Client.worldmapAreaDataJs5, Client.overlayTypeList, Client.underlayTypeList, Client.world.method7750(), Client.mapElementTypeList, Client.msiTypeList, Client.localPlayerGameState, Client.localPlayerGameState);
 		}
 		if (field3419 == LoadingStage.SETUP_VARC_SYSTEM) {
-			Client.field7228 = new ClientVariableManager(Client.varBasicTypeList);
+			Client.clientVariableManager = new ClientVariableManager(Client.varBasicTypeList);
 			method9212();
 			Client.authPreferences = TotpPreferences.method18618();
 			Client.mapsJs5.discardNames(false, true);
@@ -486,12 +486,12 @@ public class Loading {
 			Client.field10807 = true;
 		}
 		if (field3419 == LoadingStage.field2916 && Client.graphicsDefaults.login_interface != -1) {
-			if (!Component.method5364(Client.graphicsDefaults.login_interface, null)) {
+			if (!Component.openInterface(Client.graphicsDefaults.login_interface, null)) {
 				return 0;
 			}
 			boolean var22 = true;
-			for (int var23 = 0; var23 < Component.field11725[Client.graphicsDefaults.login_interface].field2151.length; var23++) {
-				Component var24 = Component.field11725[Client.graphicsDefaults.login_interface].field2151[var23];
+			for (int var23 = 0; var23 < Component.interfaces[Client.graphicsDefaults.login_interface].components.length; var23++) {
+				Component var24 = Component.interfaces[Client.graphicsDefaults.login_interface].components[var23];
 				if (var24.type == 5 && var24.graphic != -1 && !Client.spritesJs5.requestdownload(var24.graphic, 0)) {
 					var22 = false;
 				}
@@ -581,7 +581,7 @@ public class Loading {
 	@ObfuscatedName("ux.c(I)V")
 	public static void method9212() {
 		FileOnDisk var0 = GameShell.openPrefs("2", Client.modegame.titleURL, false);
-		Client.field7228.method16420(var0);
+		Client.clientVariableManager.method16420(var0);
 	}
 
 	@ObfuscatedName("ss.r(B)V")

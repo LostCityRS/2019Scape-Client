@@ -611,7 +611,7 @@ public class LoginManager {
 						return;
 					}
 					if (requestState == 211) {
-						Client.field7228.method16415();
+						Client.clientVariableManager.method16415();
 						loginState = 256;
 					} else {
 						loginState = 141;
@@ -777,7 +777,7 @@ public class LoginManager {
 						break;
 					}
 					VarValue var32 = Client.varBasicTypeList.decodeVarValue(connection.in);
-					Client.field7228.field1708.setVarObject(var32.var, var32.value);
+					Client.clientVariableManager.field1708.setVarObject(var32.var, var32.value);
 				}
 			}
 			if (loginState == 138) {
@@ -1289,7 +1289,7 @@ public class LoginManager {
 		Client.pingRequest = null;
 		Client.field3457 = 0L;
 		Client.method3652();
-		Client.field7228.method16421();
+		Client.clientVariableManager.method16421();
 	}
 
 	@ObfuscatedName("aiz.ai(I)Z")

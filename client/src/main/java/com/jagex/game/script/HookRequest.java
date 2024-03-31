@@ -8,35 +8,35 @@ import deob.ObfuscatedName;
 public class HookRequest extends Node {
 
 	@ObfuscatedName("als.k")
-	public Object[] field11493;
+	public Object[] args;
 
 	@ObfuscatedName("als.f")
-	public boolean field11490;
+	public boolean isMouseHook;
 
 	@ObfuscatedName("als.w")
-	public Component field11491;
+	public Component component;
 
 	@ObfuscatedName("als.l")
-	public int field11492;
+	public int mouseX;
 
 	@ObfuscatedName("als.u")
-	public int field11497;
+	public int mouseY;
 
 	@ObfuscatedName("als.z")
-	public int field11494;
+	public int opindex;
 
 	@ObfuscatedName("als.p")
-	public Component field11495;
+	public Component drop;
 
 	@ObfuscatedName("als.d")
-	public int field11496;
+	public int key;
 
 	@ObfuscatedName("als.c")
-	public int field11489;
+	public int keychar;
 
 	@ObfuscatedName("als.r")
-	public String field11498;
+	public String opbase;
 
 	@ObfuscatedName("als.v")
-	public int field11499;
+	public int nestedCount;
 }
