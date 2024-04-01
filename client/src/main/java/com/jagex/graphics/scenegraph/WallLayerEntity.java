@@ -43,39 +43,39 @@ public abstract class WallLayerEntity extends GraphEntity {
 	public int method18375(Light[] arg0) {
 		if (this.field8176) {
 			Vector3 var2 = this.getTransform().trans;
-			int var3 = (int) var2.x >> this.field11716.field6900;
-			int var4 = (int) var2.z >> this.field11716.field6900;
+			int var3 = (int) var2.x >> this.scene.field6900;
+			int var4 = (int) var2.z >> this.scene.field6900;
 			int var5 = 0;
-			if (this.field11716.field6902 == var3) {
+			if (this.scene.field6902 == var3) {
 				var5++;
-			} else if (this.field11716.field6902 < var3) {
+			} else if (this.scene.field6902 < var3) {
 				var5 += 2;
 			}
-			if (this.field11716.field6947 == var4) {
+			if (this.scene.field6947 == var4) {
 				var5 += 3;
-			} else if (this.field11716.field6947 > var4) {
+			} else if (this.scene.field6947 > var4) {
 				var5 += 6;
 			}
 			int var6 = field12454[var5];
 			if ((this.field12463 & var6) == 0) {
 				if (this.field12463 == 1 && var3 > 0) {
 					var3--;
-				} else if (this.field12463 == 4 && var3 <= this.field11716.maxTileX) {
+				} else if (this.field12463 == 4 && var3 <= this.scene.maxTileX) {
 					var3++;
 				} else if (this.field12463 == 8 && var4 > 0) {
 					var4--;
-				} else if (this.field12463 == 2 && var4 <= this.field11716.maxTileZ) {
+				} else if (this.field12463 == 2 && var4 <= this.scene.maxTileZ) {
 					var4++;
-				} else if (this.field12463 == 16 && var3 > 0 && var4 <= this.field11716.maxTileZ) {
+				} else if (this.field12463 == 16 && var3 > 0 && var4 <= this.scene.maxTileZ) {
 					var3--;
 					var4++;
-				} else if (this.field12463 == 32 && var3 <= this.field11716.maxTileX && var4 <= this.field11716.maxTileZ) {
+				} else if (this.field12463 == 32 && var3 <= this.scene.maxTileX && var4 <= this.scene.maxTileZ) {
 					var3++;
 					var4++;
 				} else if (this.field12463 == 128 && var3 > 0 && var4 > 0) {
 					var3--;
 					var4--;
-				} else if (this.field12463 == 64 && var3 <= this.field11716.maxTileX && var4 > 0) {
+				} else if (this.field12463 == 64 && var3 <= this.scene.maxTileX && var4 > 0) {
 					var3++;
 					var4--;
 				} else {
@@ -92,14 +92,14 @@ public abstract class WallLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asw.ga(Ldh;S)Z")
-	public boolean method18360(Renderer arg0) {
+	public boolean method18360(Renderer renderer) {
 		Vector3 var2 = this.getTransform().trans;
-		return this.field11716.field6930.method8928(this, this.field11714, (int) var2.x >> this.field11716.field6900, (int) var2.z >> this.field11716.field6900);
+		return this.scene.field6930.method8928(this, this.field11714, (int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900);
 	}
 
 	@ObfuscatedName("asw.gn(I)Z")
 	public boolean method18361() {
 		Vector3 var1 = this.getTransform().trans;
-		return this.field11716.field6962[this.field11716.field6942 + (((int) var1.x >> this.field11716.field6900) - this.field11716.field6902)][this.field11716.field6942 + (((int) var1.z >> this.field11716.field6900) - this.field11716.field6947)];
+		return this.scene.field6962[this.scene.field6942 + (((int) var1.x >> this.scene.field6900) - this.scene.field6902)][this.scene.field6942 + (((int) var1.z >> this.scene.field6900) - this.scene.field6947)];
 	}
 }

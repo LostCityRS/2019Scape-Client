@@ -12,10 +12,10 @@ public abstract class MouseEvent extends Node {
 	}
 
 	@ObfuscatedName("akm.n(I)I")
-	public abstract int method17831();
+	public abstract int getMouseClickX();
 
 	@ObfuscatedName("akm.m(B)I")
-	public abstract int method17832();
+	public abstract int getMouseClickY();
 
 	@ObfuscatedName("akm.k(I)I")
 	public abstract int method17833();

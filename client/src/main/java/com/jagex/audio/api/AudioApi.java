@@ -1161,7 +1161,7 @@ public class AudioApi {
 				} else if (arg2 instanceof ProjectileAnimation) {
 					var11 = ((ProjectileAnimation) arg2).targeted();
 				}
-				if (var11 != 0 && var11 != Client.localPlayerEntity.targeted() && Client.field10787 != var11) {
+				if (var11 != 0 && var11 != Client.localPlayerEntity.targeted() && Client.activeTarget != var11) {
 					var10 = arg0.field1783 * var10 / 100;
 					if (var10 < 0) {
 						var10 = 0;

@@ -332,7 +332,7 @@ public class DeveloperConsole {
 	@ObfuscatedName("ky.r(Ldh;I)V")
 	public static void method5378(Renderer renderer) {
 		if (TwitchHardwarePlatform.isStreaming() && TwitchHardwarePlatform.method8634()) {
-			TwitchHardwarePlatform.method5389(0, 0, GameShell.canvasWid, 350);
+			TwitchHardwarePlatform.drawTwitchStream(0, 0, GameShell.canvasWid, 350);
 		}
 		renderer.resetBounds(0, 0, GameShell.canvasWid, 350);
 		renderer.fillRectangle(0, 0, GameShell.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);

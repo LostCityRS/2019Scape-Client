@@ -34,7 +34,7 @@ public class PickableEntityList {
 		while (var1.hasNext()) {
 			PickableEntity var2 = (PickableEntity) var1.next();
 			var1.remove();
-			PickableEntity.method3657(var2);
+			PickableEntity.pushPickableEntity(var2);
 		}
 	}
 
@@ -42,7 +42,7 @@ public class PickableEntityList {
 	public void method8683(PickableEntity arg0) {
 		GraphEntity var2 = arg0.field6978;
 		boolean var3 = true;
-		ScreenBoundingBox[] var4 = arg0.field6978.field11713;
+		ScreenBoundingBox[] var4 = arg0.field6978.entityBounds;
 		for (int var5 = 0; var5 < var4.length; var5++) {
 			if (var4[var5].field1686) {
 				var3 = false;
@@ -52,14 +52,14 @@ public class PickableEntityList {
 		if (var3) {
 			return;
 		}
-		arg0.field6980 = this;
+		arg0.pickables = this;
 		if (this.field6884) {
 			Iterator var6 = this.field6885.iterator();
 			while (var6.hasNext()) {
 				PickableEntity var7 = (PickableEntity) var6.next();
 				if (var7.field6978 == var2) {
 					var6.remove();
-					PickableEntity.method3657(var7);
+					PickableEntity.pushPickableEntity(var7);
 				}
 			}
 		}

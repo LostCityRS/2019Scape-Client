@@ -145,7 +145,7 @@ public abstract class PureJavaSprite extends Sprite {
 	}
 
 	@ObfuscatedName("ael.w()I")
-	public int method1436() {
+	public int getY() {
 		return this.field9372 + this.field9359 + this.field9360;
 	}
 
@@ -160,7 +160,7 @@ public abstract class PureJavaSprite extends Sprite {
 		this.field9373.method2171(this.field9362);
 		this.field9373.setBounds(this.field9373.clipMinX, this.field9373.clipMinY, arg0 + arg2, arg1 + arg3);
 		int var8 = this.getX();
-		int var9 = this.method1436();
+		int var9 = this.getY();
 		int var10 = (arg2 + var8 - 1) / var8;
 		int var11 = (arg3 + var9 - 1) / var9;
 		for (int var12 = 0; var12 < var11; var12++) {

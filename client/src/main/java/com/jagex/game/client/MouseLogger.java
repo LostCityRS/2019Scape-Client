@@ -43,13 +43,13 @@ public abstract class MouseLogger {
 						break label102;
 					}
 					var6.remove();
-					int var7 = var6.method17832();
+					int var7 = var6.getMouseClickY();
 					if (var7 < -1) {
 						var7 = -1;
 					} else if (var7 > 65534) {
 						var7 = 65534;
 					}
-					int var8 = var6.method17831();
+					int var8 = var6.getMouseClickX();
 					if (var8 < -1) {
 						var8 = -1;
 					} else if (var8 > 65534) {

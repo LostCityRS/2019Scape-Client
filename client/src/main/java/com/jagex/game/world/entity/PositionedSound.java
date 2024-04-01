@@ -152,7 +152,7 @@ public class PositionedSound extends Node {
 	public void method17660() {
 		int var1 = this.sound;
 		if (this.loc != null) {
-			LocType var2 = this.loc.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+			LocType var2 = this.loc.getMultiLoc(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 			if (var2 == null) {
 				this.sound = -1;
 				this.range = 0;
@@ -350,12 +350,12 @@ public class PositionedSound extends Node {
 		}
 		int sound = npcType.bgsound_walk;
 		BASType var3 = npc.getBASType();
-		int var4 = npc.field10432.method14348();
+		int var4 = npc.field10432.getSeqTypeId();
 		if (var4 == -1 || npc.field10432.field11877) {
 			sound = npcType.bgsound;
-		} else if (var3.field7361 == var4 || var3.field7329 == var4 || var3.field7331 == var4 || var3.field7330 == var4) {
+		} else if (var3.runanim == var4 || var3.runanim_b == var4 || var3.runanim_r == var4 || var3.runanim_l == var4) {
 			sound = npcType.bgsound_run;
-		} else if (var3.field7332 == var4 || var3.field7333 == var4 || var3.field7319 == var4 || var3.field7328 == var4) {
+		} else if (var3.crawlanim == var4 || var3.crawlanim_b == var4 || var3.crawlanim_r == var4 || var3.crawlanim_l == var4) {
 			sound = npcType.bgsound_crawl;
 		}
 		return sound;
@@ -365,12 +365,12 @@ public class PositionedSound extends Node {
 	public static int getPlayerSound(PlayerEntity player) {
 		int sound = player.bgsound_walk_player;
 		BASType bas = player.getBASType();
-		int var3 = player.field10432.method14348();
+		int var3 = player.field10432.getSeqTypeId();
 		if (var3 == -1 || player.field10432.field11877) {
 			sound = player.bgsound_player;
-		} else if (bas.field7361 == var3 || bas.field7329 == var3 || bas.field7331 == var3 || bas.field7330 == var3) {
+		} else if (bas.runanim == var3 || bas.runanim_b == var3 || bas.runanim_r == var3 || bas.runanim_l == var3) {
 			sound = player.bgsound_run_player;
-		} else if (bas.field7332 == var3 || bas.field7333 == var3 || bas.field7319 == var3 || bas.field7328 == var3) {
+		} else if (bas.crawlanim == var3 || bas.crawlanim_b == var3 || bas.crawlanim_r == var3 || bas.crawlanim_l == var3) {
 			sound = player.bgsound_crawl_player;
 		}
 		return sound;
@@ -384,12 +384,12 @@ public class PositionedSound extends Node {
 		for (PositionedSound var5 = (PositionedSound) field11347.peekFront(); var5 != null; var5 = (PositionedSound) field11347.prev()) {
 			byte var6 = 1;
 			BASType var7 = var5.npc.getBASType();
-			int var8 = var5.npc.field10432.method14348();
+			int var8 = var5.npc.field10432.getSeqTypeId();
 			if (var8 == -1 || var5.npc.field10432.field11877) {
 				var6 = 0;
-			} else if (var7.field7361 == var8 || var7.field7329 == var8 || var7.field7331 == var8 || var7.field7330 == var8) {
+			} else if (var7.runanim == var8 || var7.runanim_b == var8 || var7.runanim_r == var8 || var7.runanim_l == var8) {
 				var6 = 2;
-			} else if (var7.field7332 == var8 || var7.field7333 == var8 || var7.field7319 == var8 || var7.field7328 == var8) {
+			} else if (var7.crawlanim == var8 || var7.crawlanim_b == var8 || var7.crawlanim_r == var8 || var7.crawlanim_l == var8) {
 				var6 = 3;
 			}
 			if (var5.field11360 != var6) {
@@ -435,12 +435,12 @@ public class PositionedSound extends Node {
 		for (PositionedSound var13 = (PositionedSound) field11366.peekFront(); var13 != null; var13 = (PositionedSound) field11366.prev()) {
 			byte var14 = 1;
 			BASType var15 = var13.player.getBASType();
-			int var16 = var13.player.field10432.method14348();
+			int var16 = var13.player.field10432.getSeqTypeId();
 			if (var16 == -1 || var13.player.field10432.field11877) {
 				var14 = 0;
-			} else if (var15.field7361 == var16 || var15.field7329 == var16 || var15.field7331 == var16 || var15.field7330 == var16) {
+			} else if (var15.runanim == var16 || var15.runanim_b == var16 || var15.runanim_r == var16 || var15.runanim_l == var16) {
 				var14 = 2;
-			} else if (var15.field7332 == var16 || var15.field7333 == var16 || var15.field7319 == var16 || var15.field7328 == var16) {
+			} else if (var15.crawlanim == var16 || var15.crawlanim_b == var16 || var15.crawlanim_r == var16 || var15.crawlanim_l == var16) {
 				var14 = 3;
 			}
 			if (var13.field11360 != var14) {

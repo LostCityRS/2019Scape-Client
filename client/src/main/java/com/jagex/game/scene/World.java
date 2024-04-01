@@ -78,10 +78,10 @@ public class World {
 	public Scene scene;
 
 	@ObfuscatedName("rl.v")
-	public EnvironmentManager field5062;
+	public EnvironmentManager environmentManager;
 
 	@ObfuscatedName("rl.o")
-	public SceneLevelTileFlags field5032;
+	public SceneLevelTileFlags sceneLevelTileFlags;
 
 	@ObfuscatedName("rl.s")
 	public int field5042;
@@ -102,7 +102,7 @@ public class World {
 	public float field5038;
 
 	@ObfuscatedName("rl.a")
-	public LocTypeList field5039;
+	public LocTypeList locTypeList;
 
 	@ObfuscatedName("rl.g")
 	public int[][] field5040;
@@ -178,12 +178,12 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.e(I)Lrc;")
-	public RebuildType method7828() {
+	public RebuildType getRebuildType() {
 		return this.rebuildType;
 	}
 
 	@ObfuscatedName("rl.n(I)Lrg;")
-	public RebuildStage method7724() {
+	public RebuildStage getRebuildStage() {
 		return this.rebuildStage;
 	}
 
@@ -248,18 +248,18 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.o(I)Lqx;")
-	public SceneLevelTileFlags method7793() {
-		return this.field5032;
+	public SceneLevelTileFlags getSceneLevelTileFlags() {
+		return this.sceneLevelTileFlags;
 	}
 
 	@ObfuscatedName("rl.s(B)Lxu;")
-	public EnvironmentManager method7816() {
-		return this.field5062;
+	public EnvironmentManager getEnvironmentManager() {
+		return this.environmentManager;
 	}
 
 	@ObfuscatedName("rl.y(I)Laop;")
-	public LocTypeList method7750() {
-		return this.field5039;
+	public LocTypeList getLocTypeList() {
+		return this.locTypeList;
 	}
 
 	@ObfuscatedName("rl.q(I)[[I")
@@ -289,7 +289,7 @@ public class World {
 
 	@ObfuscatedName("rl.g(Laop;I)V")
 	public void method7733(LocTypeList arg0) {
-		this.field5039 = arg0;
+		this.locTypeList = arg0;
 	}
 
 	@ObfuscatedName("rl.i(B)V")
@@ -302,9 +302,9 @@ public class World {
 	@ObfuscatedName("rl.j(B)V")
 	public void method7747() {
 		if (this.scene != null) {
-			PickableEntity.method15000();
+			PickableEntity.resetStack();
 			this.field5061 = this.scene.method8733();
-			this.scene.field6959.method8680();
+			this.scene.pickableEntities.method8680();
 			this.scene = null;
 		}
 	}
@@ -322,18 +322,18 @@ public class World {
 	@ObfuscatedName("rl.ae(ZI)V")
 	public void method7737(boolean arg0) {
 		EnvironmentOverride var2 = null;
-		if (this.field5062 != null && arg0) {
-			var2 = this.field5062.getOverride();
+		if (this.environmentManager != null && arg0) {
+			var2 = this.environmentManager.getOverride();
 		}
-		this.field5062 = new EnvironmentManager(Client.renderer, Client.spritesJs5, this.mapSizeX >> 3, this.mapSizeZ >> 3);
+		this.environmentManager = new EnvironmentManager(Client.renderer, Client.spritesJs5, this.mapSizeX >> 3, this.mapSizeZ >> 3);
 		if (var2 != null) {
-			this.field5062.setOverride(this, var2, 0);
+			this.environmentManager.setOverride(this, var2, 0);
 		}
 	}
 
 	@ObfuscatedName("rl.ag(I)V")
 	public void method7730() {
-		this.field5062.setOverride(this, null, 0);
+		this.environmentManager.setOverride(this, null, 0);
 	}
 
 	@ObfuscatedName("rl.ah(B)V")
@@ -360,7 +360,7 @@ public class World {
 		this.field5020 = var3;
 		arg0.field5025 = this.field5018;
 		this.field5025 = arg0.field5018;
-		this.field5062.method9992(arg0.method7816());
+		this.environmentManager.method9992(arg0.getEnvironmentManager());
 	}
 
 	@ObfuscatedName("rl.ac(B)V")
@@ -377,8 +377,8 @@ public class World {
 			this.rebuildMapSquaresNpcs = var1.rebuildMapSquaresNpcs;
 			this.rebuildMapSquaresUnderwaterLands = var1.rebuildMapSquaresUnderwaterLands;
 			this.rebuildMapSquaresUnderwaterLocs = var1.rebuildMapSquaresUnderwaterLocs;
-			this.field5032 = var1.field5032;
-			this.field5062 = var1.field5062;
+			this.sceneLevelTileFlags = var1.sceneLevelTileFlags;
+			this.environmentManager = var1.environmentManager;
 			this.field5057 = var1.field5057;
 			this.field5042 = var1.field5042;
 			this.field5034 = var1.field5034;
@@ -695,7 +695,7 @@ public class World {
 		this.field5040 = new int[this.mapSizeX][this.mapSizeZ];
 		this.field5041 = new int[this.mapSizeX][this.mapSizeZ];
 		this.field5029 = new byte[4][this.mapSizeX][this.mapSizeZ];
-		this.field5032 = new SceneLevelTileFlags(4, this.mapSizeX, this.mapSizeZ);
+		this.sceneLevelTileFlags = new SceneLevelTileFlags(4, this.mapSizeX, this.mapSizeZ);
 		this.method7737(false);
 		Minimap.method829();
 		this.buildAreaSize = buildAreaSize;
@@ -712,7 +712,7 @@ public class World {
 				ObjectWrapper var2 = (ObjectWrapper) var1.next();
 				PositionedSound.method10111((NpcEntity) var2.value);
 			}
-			Client.field11011 = 0;
+			Client.npcCount = 0;
 			Client.field10906 = 0;
 			Client.npcs.removeAll();
 		}
@@ -773,7 +773,7 @@ public class World {
 			}
 		} else {
 			boolean var9 = false;
-			Client.field11011 = 0;
+			Client.npcCount = 0;
 			int var10 = this.mapSizeX - 512;
 			int var11 = this.mapSizeZ - 512;
 			for (int var12 = 0; var12 < Client.field10906; var12++) {
@@ -794,7 +794,7 @@ public class World {
 							}
 						}
 						if (var16) {
-							Client.field11036[++Client.field11011 - 1] = var14.localPlayerIndex;
+							Client.field11036[++Client.npcCount - 1] = var14.localPlayerIndex;
 						} else {
 							var14.method19156(null);
 							var13.remove();
@@ -836,14 +836,14 @@ public class World {
 		for (int var26 = 0; var26 < var25.length; var26++) {
 			HintArrow var27 = var25[var26];
 			if (var27 != null) {
-				var27.field746 -= var2 * 512;
-				var27.field747 -= var3 * 512;
+				var27.hintOffsetX -= var2 * 512;
+				var27.hintOffsetZ -= var3 * 512;
 			}
 		}
 		for (ChangeLocationRequest var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.peekFront(); var28 != null; var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.prev()) {
-			var28.field11226 -= var2;
-			var28.field11228 -= var3;
-			LocType var29 = (LocType) this.field5039.list(var28.field11234);
+			var28.x -= var2;
+			var28.z -= var3;
+			LocType var29 = (LocType) this.locTypeList.list(var28.field11234);
 			int var30;
 			int var31;
 			if ((var28.field11235 & 0x1) == 0) {
@@ -853,14 +853,14 @@ public class World {
 				var30 = var29.length;
 				var31 = var29.width;
 			}
-			if (RebuildType.field5069 != this.rebuildType && (var28.field11226 + var30 <= 0 || var28.field11228 + var31 <= 0 || var28.field11226 >= this.mapSizeX || var28.field11228 >= this.mapSizeZ)) {
+			if (RebuildType.field5069 != this.rebuildType && (var28.x + var30 <= 0 || var28.z + var31 <= 0 || var28.x >= this.mapSizeX || var28.z >= this.mapSizeZ)) {
 				var28.remove();
 			}
 		}
 		for (ChangeLocationRequest var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.peekFront(); var32 != null; var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.prev()) {
-			var32.field11226 -= var2;
-			var32.field11228 -= var3;
-			LocType var33 = (LocType) this.field5039.list(var32.field11234);
+			var32.x -= var2;
+			var32.z -= var3;
+			LocType var33 = (LocType) this.locTypeList.list(var32.field11234);
 			int var34;
 			int var35;
 			if ((var32.field11235 & 0x1) == 0) {
@@ -870,7 +870,7 @@ public class World {
 				var34 = var33.length;
 				var35 = var33.width;
 			}
-			if (RebuildType.field5069 != this.rebuildType && (var32.field11226 + var34 <= 0 || var32.field11228 + var35 <= 0 || var32.field11226 >= this.mapSizeX || var32.field11228 >= this.mapSizeZ)) {
+			if (RebuildType.field5069 != this.rebuildType && (var32.x + var34 <= 0 || var32.z + var35 <= 0 || var32.x >= this.mapSizeX || var32.z >= this.mapSizeZ)) {
 				var32.remove();
 			}
 		}
@@ -890,9 +890,9 @@ public class World {
 				}
 			}
 		}
-		if (Minimap.field731 != 0) {
-			Minimap.field731 -= var2;
-			Minimap.field718 -= var3;
+		if (Minimap.flagSceneTileX != 0) {
+			Minimap.flagSceneTileX -= var2;
+			Minimap.flagSceneTileZ -= var3;
 		}
 		PositionedSound.method13908(false);
 		if (arg0 == 3) {
@@ -911,7 +911,7 @@ public class World {
 			Client.cameraX -= var2 * 512;
 			Client.cameraZ -= var3 * 512;
 			if (Math.abs(var2) > this.mapSizeX || Math.abs(var3) > this.mapSizeZ) {
-				this.field5062.resetFade();
+				this.environmentManager.resetFade();
 			}
 		}
 		MiniMenu.method5175();
@@ -926,14 +926,14 @@ public class World {
 	public void method7763() {
 		this.underwaterMapLoader = null;
 		this.mapLoader = null;
-		if (this.field5032 != null) {
-			this.field5032.method7101();
+		if (this.sceneLevelTileFlags != null) {
+			this.sceneLevelTileFlags.method7101();
 		}
-		if (this.field5062 != null) {
-			this.field5062.clearEnvironmentMap();
+		if (this.environmentManager != null) {
+			this.environmentManager.clearEnvironmentMap();
 		}
 		if (this.scene != null) {
-			this.scene.field6959.method8680();
+			this.scene.pickableEntities.method8680();
 			this.scene = null;
 		}
 	}
@@ -998,7 +998,7 @@ public class World {
 					var8 = 10;
 					var9 = 10;
 				}
-				int var10 = ClientMapLoader.testReadLocs(this.field5039, locs, var8, var9, this.mapSizeX, this.mapSizeZ, var5, var4);
+				int var10 = ClientMapLoader.testReadLocs(this.locTypeList, locs, var8, var9, this.mapSizeX, this.mapSizeZ, var5, var4);
 				if (var10 > 0) {
 					this.rebuildLocsCount += var10;
 				}
@@ -1011,7 +1011,7 @@ public class World {
 					var12 = 10;
 					var13 = 10;
 				}
-				int var14 = ClientMapLoader.testReadLocs(this.field5039, ulocs, var12, var13, this.mapSizeX, this.mapSizeZ, var5, var4);
+				int var14 = ClientMapLoader.testReadLocs(this.locTypeList, ulocs, var12, var13, this.mapSizeX, this.mapSizeZ, var5, var4);
 				if (var14 > 0) {
 					this.rebuildLocsCount += var14;
 				}
@@ -1041,13 +1041,13 @@ public class World {
 			for (int var15 = 0; var15 < 2048; var15++) {
 				PlayerEntity var16 = Client.players[var15];
 				if (var16 != null) {
-					var16.field11716 = null;
+					var16.scene = null;
 				}
 			}
 			for (int var17 = 0; var17 < Client.field10839.length; var17++) {
 				ObjectWrapper var18 = Client.field10839[var17];
 				if (var18 != null) {
-					((GraphEntity) var18.value).field11716 = null;
+					((GraphEntity) var18.value).scene = null;
 				}
 			}
 		}
@@ -1080,7 +1080,7 @@ public class World {
 		}
 		this.field5050 = new LocTint();
 		this.field5038 = -0.05F + (float) (Math.random() / 10.0D);
-		this.mapLoader = new ClientMapLoader(this.scene, this.field5039, 4, this.mapSizeX, this.mapSizeZ, false, this.field5032, this.field5062);
+		this.mapLoader = new ClientMapLoader(this.scene, this.locTypeList, 4, this.mapSizeX, this.mapSizeZ, false, this.sceneLevelTileFlags, this.environmentManager);
 		this.mapLoader.method7136();
 		this.mapLoader.sceneryShadows = Client.preferences.sceneryShadows.getValue();
 		this.mapLoader.isWaterDetail = Client.preferences.waterDetail.getValue() == 2;
@@ -1095,11 +1095,11 @@ public class World {
 		if (this.asyncRebuilding) {
 			this.sleep(50);
 		}
-		this.field5062.method9991(this.mapSizeX >> 4, this.mapSizeZ >> 4);
-		this.field5062.updatePartial(this);
+		this.environmentManager.method9991(this.mapSizeX >> 4, this.mapSizeZ >> 4);
+		this.environmentManager.updatePartial(this);
 		if (underwater) {
 			this.scene.method8703(true);
-			this.underwaterMapLoader = new ClientMapLoader(this.scene, this.field5039, 1, this.mapSizeX, this.mapSizeZ, true, this.field5032, this.field5062);
+			this.underwaterMapLoader = new ClientMapLoader(this.scene, this.locTypeList, 1, this.mapSizeX, this.mapSizeZ, true, this.sceneLevelTileFlags, this.environmentManager);
 			this.underwaterMapLoader.method7136();
 			this.underwaterMapLoader.sceneryShadows = Client.preferences.sceneryShadows.getValue();
 			this.underwaterMapLoader.isWaterDetail = Client.preferences.waterDetail.getValue() == 2;
@@ -1208,13 +1208,13 @@ public class World {
 			this.method7854();
 		} else {
 			Client.audioApi.method3149();
-			this.field5062.updateFog();
+			this.environmentManager.updateFog();
 			GameShell.method135();
 		}
 		for (int var27 = 0; var27 < 4; var27++) {
 			for (int var28 = 0; var28 < this.mapSizeX; var28++) {
 				for (int var29 = 0; var29 < this.mapSizeZ; var29++) {
-					Client.method7359(var27, var28, var29);
+					Client.sortObjStacks(var27, var28, var29);
 				}
 			}
 		}
@@ -1424,7 +1424,7 @@ public class World {
 				}
 				Packet buf = new Packet(this.rebuildMapSquaresNpcs[index]);
 				int var6 = 0;
-				while (buf.pos < this.rebuildMapSquaresNpcs[index].length && var6 < 511 && Client.field11011 < 1023) {
+				while (buf.pos < this.rebuildMapSquaresNpcs[index].length && var6 < 511 && Client.npcCount < 1023) {
 					int var7 = var3 | var6++ << 6;
 					int var8 = buf.g2();
 					int var9 = var8 >> 14;
@@ -1440,13 +1440,13 @@ public class World {
 						ObjectWrapper var17 = new ObjectWrapper(npc);
 						Client.npcs.pushNode(var17, (long) var7);
 						Client.field10839[++Client.field10906 - 1] = var17;
-						Client.field11036[++Client.field11011 - 1] = var7;
+						Client.field11036[++Client.npcCount - 1] = var7;
 						npc.field10440 = Client.loopCycle;
 						npc.method19156(var14);
 						npc.setSize(npc.npcType.size);
 						npc.field10444 = npc.npcType.turnspeed << 3;
 						npc.method16491(npc.npcType.respawndir.method13895().getId() << 11 & 0x3FFF, true);
-						npc.method19159(var9, var12, var13, true, npc.size());
+						npc.move(var9, var12, var13, true, npc.size());
 					}
 				}
 			}

@@ -7,31 +7,31 @@ import deob.ObfuscatedName;
 public class CompressedTextureFormat implements SerializableEnum {
 
 	@ObfuscatedName("bg.e")
-	public static final CompressedTextureFormat field1093 = new CompressedTextureFormat(0, "COMPRESSED_RGB_S3TC_DXT1_EXT (0x83f0)", 33776);
+	public static final CompressedTextureFormat COMPRESSED_RGB_S3TC_DXT1_EXT = new CompressedTextureFormat(0, "COMPRESSED_RGB_S3TC_DXT1_EXT (0x83f0)", 33776);
 
 	@ObfuscatedName("bg.n")
-	public static final CompressedTextureFormat field1056 = new CompressedTextureFormat(1, "COMPRESSED_RGBA_S3TC_DXT1_EXT (0x83f1)", 33777);
+	public static final CompressedTextureFormat COMPRESSED_RGBA_S3TC_DXT1_EXT = new CompressedTextureFormat(1, "COMPRESSED_RGBA_S3TC_DXT1_EXT (0x83f1)", 33777);
 
 	@ObfuscatedName("bg.m")
-	public static final CompressedTextureFormat field1057 = new CompressedTextureFormat(2, "COMPRESSED_RGBA_S3TC_DXT3_EXT (0x83f2)", 33778);
+	public static final CompressedTextureFormat COMPRESSED_RGBA_S3TC_DXT3_EXT = new CompressedTextureFormat(2, "COMPRESSED_RGBA_S3TC_DXT3_EXT (0x83f2)", 33778);
 
 	@ObfuscatedName("bg.k")
-	public static final CompressedTextureFormat field1058 = new CompressedTextureFormat(3, "COMPRESSED_RGBA_S3TC_DXT5_EXT (0x83f3)", 33779);
+	public static final CompressedTextureFormat COMPRESSED_RGBA_S3TC_DXT5_EXT = new CompressedTextureFormat(3, "COMPRESSED_RGBA_S3TC_DXT5_EXT (0x83f3)", 33779);
 
 	@ObfuscatedName("bg.f")
-	public static final CompressedTextureFormat field1059 = new CompressedTextureFormat(4, "PALETTE4_RGB8_OES (0x8b90)", 35728);
+	public static final CompressedTextureFormat PALETTE4_RGB8_OES = new CompressedTextureFormat(4, "PALETTE4_RGB8_OES (0x8b90)", 35728);
 
 	@ObfuscatedName("bg.w")
-	public static final CompressedTextureFormat field1060 = new CompressedTextureFormat(5, "PALETTE4_RGBA8_OES (0x8b91)", 35729);
+	public static final CompressedTextureFormat PALETTE4_RGBA8_OES = new CompressedTextureFormat(5, "PALETTE4_RGBA8_OES (0x8b91)", 35729);
 
 	@ObfuscatedName("bg.l")
-	public static final CompressedTextureFormat field1061 = new CompressedTextureFormat(6, "PALETTE4_R5_G6_B5_OES (0x8b92)", 35730);
+	public static final CompressedTextureFormat PALETTE4_R5_G6_B5_OES = new CompressedTextureFormat(6, "PALETTE4_R5_G6_B5_OES (0x8b92)", 35730);
 
 	@ObfuscatedName("bg.u")
-	public static final CompressedTextureFormat field1062 = new CompressedTextureFormat(7, "PALETTE4_RGBA4_OES (0x8b93)", 35731);
+	public static final CompressedTextureFormat PALETTE4_RGBA4_OES = new CompressedTextureFormat(7, "PALETTE4_RGBA4_OES (0x8b93)", 35731);
 
 	@ObfuscatedName("bg.z")
-	public static final CompressedTextureFormat field1108 = new CompressedTextureFormat(8, "PALETTE4_RGB5_A1_OES (0x8b94)", 35732);
+	public static final CompressedTextureFormat PALETTE4_RGB5_A1_OES = new CompressedTextureFormat(8, "PALETTE4_RGB5_A1_OES (0x8b94)", 35732);
 
 	@ObfuscatedName("bg.p")
 	public static final CompressedTextureFormat field1064 = new CompressedTextureFormat(9, "PALETTE8_RGB8_OES (0x8b95)", 35733);
@@ -163,23 +163,23 @@ public class CompressedTextureFormat implements SerializableEnum {
 	public static final CompressedTextureFormat field1106 = new CompressedTextureFormat(51, "COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR (0x93dd)", 37853);
 
 	@ObfuscatedName("bg.bf")
-	public final int field1085;
+	public final int index;
 
 	@ObfuscatedName("bg.bl")
-	public final int field1074;
+	public final int code;
 
 	@ObfuscatedName("bg.e(I)[Lbg;")
-	public static CompressedTextureFormat[] method1304() {
-		return new CompressedTextureFormat[] { field1093, field1056, field1057, field1058, field1059, field1060, field1061, field1062, field1108, field1064, field1067, field1066, field1107, field1068, field1069, field1070, field1080, field1072, field1073, field1104, field1105, field1076, field1078, field1075, field1079, field1101, field1081, field1082, field1083, field1091, field1065, field1086, field1087, field1088, field1077, field1071, field1090, field1092, field1097, field1084, field1095, field1096, field1094, field1098, field1055, field1100, field1063, field1102, field1103, field1099, field1089, field1106 };
+	public static CompressedTextureFormat[] values() {
+		return new CompressedTextureFormat[] {COMPRESSED_RGB_S3TC_DXT1_EXT, COMPRESSED_RGBA_S3TC_DXT1_EXT, COMPRESSED_RGBA_S3TC_DXT3_EXT, COMPRESSED_RGBA_S3TC_DXT5_EXT, PALETTE4_RGB8_OES, PALETTE4_RGBA8_OES, PALETTE4_R5_G6_B5_OES, PALETTE4_RGBA4_OES, PALETTE4_RGB5_A1_OES, field1064, field1067, field1066, field1107, field1068, field1069, field1070, field1080, field1072, field1073, field1104, field1105, field1076, field1078, field1075, field1079, field1101, field1081, field1082, field1083, field1091, field1065, field1086, field1087, field1088, field1077, field1071, field1090, field1092, field1097, field1084, field1095, field1096, field1094, field1098, field1055, field1100, field1063, field1102, field1103, field1099, field1089, field1106 };
 	}
 
-	public CompressedTextureFormat(int arg0, String arg1, int arg2) {
-		this.field1085 = arg0;
-		this.field1074 = arg2;
+	public CompressedTextureFormat(int index, String arg1, int code) {
+		this.index = index;
+		this.code = code;
 	}
 
 	@ObfuscatedName("bg.n()I")
 	public int getId() {
-		return this.field1085;
+		return this.index;
 	}
 }

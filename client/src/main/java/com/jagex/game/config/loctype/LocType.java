@@ -713,7 +713,7 @@ public class LocType implements ConfigType {
 				var28.method1700(this.hillchange, this.hillchange_value, arg4, arg5, arg6, arg7, arg8);
 			}
 			if (var18) {
-				var28.method1805(this.post_xoff, this.post_yoff, this.post_zoff);
+				var28.translate(this.post_xoff, this.post_yoff, this.post_zoff);
 			}
 			if (arg9) {
 				var23 = var28.method1726(null);
@@ -800,7 +800,7 @@ public class LocType implements ConfigType {
 				var18 = var18.method1773((byte) 3, arg1, true);
 				var22 = true;
 			}
-			var18.method1805(this.post_xoff, this.post_yoff, this.post_zoff);
+			var18.translate(this.post_xoff, this.post_yoff, this.post_zoff);
 		}
 		if (var22) {
 			var18.method1690(var14);
@@ -923,7 +923,7 @@ public class LocType implements ConfigType {
 		}
 		if (LocShape.WALLDECOR_STRAIGHT_NOOFFSET.id == arg2 && arg3 > 3) {
 			var28.method1694(2048);
-			var28.method1805(180, 0, -180);
+			var28.translate(180, 0, -180);
 		}
 		int var29 = arg3 & 0x3;
 		if (var29 == 1) {
@@ -942,9 +942,9 @@ public class LocType implements ConfigType {
 			}
 			for (int var31 = 0; var31 < this.recol_s.length; var31++) {
 				if (this.recol_d_palette == null || var31 >= this.recol_d_palette.length) {
-					var28.method1859(this.recol_s[var31], var30[var31]);
+					var28.recolor(this.recol_s[var31], var30[var31]);
 				} else {
-					var28.method1859(this.recol_s[var31], clientpalette[this.recol_d_palette[var31] & 0xFF]);
+					var28.recolor(this.recol_s[var31], clientpalette[this.recol_d_palette[var31] & 0xFF]);
 				}
 			}
 		}
@@ -956,24 +956,24 @@ public class LocType implements ConfigType {
 				var32 = arg4.field7445;
 			}
 			for (int var33 = 0; var33 < this.retex_s.length; var33++) {
-				var28.method1744(this.retex_s[var33], var32[var33]);
+				var28.retexture(this.retex_s[var33], var32[var33]);
 			}
 		}
 		if (this.tint_weight != 0) {
 			var28.method1745(this.tint_hue, this.tint_saturation, this.tint_luminence, this.tint_weight & 0xFF);
 		}
 		if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
-			var28.method1699(this.resizex, this.resizey, this.resizez);
+			var28.scale(this.resizex, this.resizey, this.resizez);
 		}
 		if (this.xoff != 0 || this.yoff != 0 || this.zoff != 0) {
-			var28.method1805(this.xoff, this.yoff, this.zoff);
+			var28.translate(this.xoff, this.yoff, this.zoff);
 		}
 		var28.method1690(var8);
 		return var28;
 	}
 
 	@ObfuscatedName("vd.o(Lem;Lep;I)Lvd;")
-	public final LocType getVisible(VariableTypeProvider varProvider, VarIntDomain varDomain) {
+	public final LocType getMultiLoc(VariableTypeProvider varProvider, VarIntDomain varDomain) {
 		int i = -1;
 		if (this.multivarbit != -1) {
 			VarBitType var4 = varProvider.getVarBitType(this.multivarbit);

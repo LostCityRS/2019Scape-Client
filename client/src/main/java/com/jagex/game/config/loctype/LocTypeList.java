@@ -20,8 +20,8 @@ public class LocTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aop.ac(IB)V")
-	public void method18891(int arg0) {
-		((LocTypeFactory) this.factory).method9541(arg0);
+	public void resetModelCache(int arg0) {
+		((LocTypeFactory) this.factory).resetModelCache(arg0);
 	}
 
 	@ObfuscatedName("aop.r(I)V")

@@ -63,7 +63,7 @@ public class ChatHistory {
 		ChatLine var10 = var9.method4323(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
 		field2597.pushNode(var10, (long) var10.uid);
 		field2596.pushBack(var10);
-		Client.field11021 = Client.field11058;
+		Client.lastOnChatTransmitRedrawCycle = Client.redrawCycle;
 	}
 
 	@ObfuscatedName("qo.l(III)Lasg;")

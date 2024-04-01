@@ -16,13 +16,13 @@ public class AppletMouseLogger extends MouseLogger {
 			return;
 		}
 		int var2 = this.method10262(var1, 32767);
-		int var3 = var1.method17832();
+		int var3 = var1.getMouseClickY();
 		if (var3 < 0) {
 			var3 = 0;
 		} else if (var3 > 65535) {
 			var3 = 65535;
 		}
-		int var4 = var1.method17831();
+		int var4 = var1.getMouseClickX();
 		if (var4 < 0) {
 			var4 = 0;
 		} else if (var4 > 65535) {

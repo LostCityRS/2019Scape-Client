@@ -14,16 +14,16 @@ import rs2.client.Client;
 public final class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("ajt.k")
-	public int field11238;
+	public int level;
 
 	@ObfuscatedName("ajt.f")
 	public int field11229;
 
 	@ObfuscatedName("ajt.w")
-	public int field11226;
+	public int x;
 
 	@ObfuscatedName("ajt.l")
-	public int field11228;
+	public int z;
 
 	@ObfuscatedName("ajt.u")
 	public int field11227;
@@ -71,17 +71,17 @@ public final class ChangeLocationRequest extends Node {
 	public static void method4653(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
 		ChangeLocationRequest var8 = null;
 		for (ChangeLocationRequest var9 = (ChangeLocationRequest) field11237.peekFront(); var9 != null; var9 = (ChangeLocationRequest) field11237.prev()) {
-			if (var9.field11238 == arg0 && var9.field11226 == arg1 && var9.field11228 == arg2 && var9.field11229 == arg3) {
+			if (var9.level == arg0 && var9.x == arg1 && var9.z == arg2 && var9.field11229 == arg3) {
 				var8 = var9;
 				break;
 			}
 		}
 		if (var8 == null) {
 			var8 = new ChangeLocationRequest();
-			var8.field11238 = arg0;
+			var8.level = arg0;
 			var8.field11229 = arg3;
-			var8.field11226 = arg1;
-			var8.field11228 = arg2;
+			var8.x = arg1;
+			var8.z = arg2;
 			if (arg1 >= 0 && arg2 >= 0 && arg1 < Client.world.getSizeX() && arg2 < Client.world.getSizeZ()) {
 				method9023(var8);
 			}
@@ -101,17 +101,17 @@ public final class ChangeLocationRequest extends Node {
 	public static void method6816(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, LocTypeCustomisation arg6) {
 		ChangeLocationRequest var7 = null;
 		for (ChangeLocationRequest var8 = (ChangeLocationRequest) field11242.peekFront(); var8 != null; var8 = (ChangeLocationRequest) field11242.prev()) {
-			if (var8.field11238 == arg0 && var8.field11226 == arg1 && var8.field11228 == arg2 && var8.field11229 == arg3) {
+			if (var8.level == arg0 && var8.x == arg1 && var8.z == arg2 && var8.field11229 == arg3) {
 				var7 = var8;
 				break;
 			}
 		}
 		if (var7 == null) {
 			var7 = new ChangeLocationRequest();
-			var7.field11238 = arg0;
+			var7.level = arg0;
 			var7.field11229 = arg3;
-			var7.field11226 = arg1;
-			var7.field11228 = arg2;
+			var7.x = arg1;
+			var7.z = arg2;
 			field11242.pushBack(var7);
 		}
 		var7.field11234 = arg4;
@@ -128,7 +128,7 @@ public final class ChangeLocationRequest extends Node {
 				var0.remove();
 			} else {
 				var0.field11239 = true;
-				if (var0.field11226 >= 0 && var0.field11228 >= 0 && var0.field11226 < Client.world.getSizeX() && var0.field11228 < Client.world.getSizeZ()) {
+				if (var0.x >= 0 && var0.z >= 0 && var0.x < Client.world.getSizeX() && var0.z < Client.world.getSizeZ()) {
 					method9023(var0);
 				}
 			}
@@ -150,16 +150,16 @@ public final class ChangeLocationRequest extends Node {
 		}
 		Location var2 = null;
 		if (arg0.field11229 == 0) {
-			var2 = (Location) var1.getWall(arg0.field11238, arg0.field11226, arg0.field11228);
+			var2 = (Location) var1.getWall(arg0.level, arg0.x, arg0.z);
 		}
 		if (arg0.field11229 == 1) {
-			var2 = (Location) var1.getWallDecoration(arg0.field11238, arg0.field11226, arg0.field11228);
+			var2 = (Location) var1.getWallDecoration(arg0.level, arg0.x, arg0.z);
 		}
 		if (arg0.field11229 == 2) {
-			var2 = (Location) var1.getEntity(arg0.field11238, arg0.field11226, arg0.field11228, Client.field11001);
+			var2 = (Location) var1.getEntity(arg0.level, arg0.x, arg0.z, Client.field11001);
 		}
 		if (arg0.field11229 == 3) {
-			var2 = (Location) var1.getGroundDecoration(arg0.field11238, arg0.field11226, arg0.field11228);
+			var2 = (Location) var1.getGroundDecoration(arg0.level, arg0.x, arg0.z);
 		}
 		if (var2 == null) {
 			arg0.field11227 = -1;
@@ -172,7 +172,7 @@ public final class ChangeLocationRequest extends Node {
 		}
 		if (var2 instanceof GraphEntity) {
 			GraphEntity var3 = (GraphEntity) var2;
-			arg0.field11230 = var3.field11711 == null ? null : new ScaleRotTrans(var3.field11711);
+			arg0.field11230 = var3.scaleRotTrans == null ? null : new ScaleRotTrans(var3.scaleRotTrans);
 		}
 	}
 
@@ -189,19 +189,19 @@ public final class ChangeLocationRequest extends Node {
 	@ObfuscatedName("eq.w(Lajt;ZI)V")
 	public static final void method2834(ChangeLocationRequest arg0, boolean arg1) {
 		if (arg0.field11240) {
-			if (arg0.field11227 < 0 || ClientMapLoader.method14705(Client.world.method7750(), arg0.field11227, arg0.field11232)) {
+			if (arg0.field11227 < 0 || ClientMapLoader.method14705(Client.world.getLocTypeList(), arg0.field11227, arg0.field11232)) {
 				if (arg1) {
-					method9194(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, null);
+					method9194(arg0.level, arg0.field11229, arg0.x, arg0.z, null);
 				} else {
-					method15005(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, arg0.field11227, arg0.field11231, arg0.field11232, arg0.field11233, -1, 0);
+					method15005(arg0.level, arg0.field11229, arg0.x, arg0.z, arg0.field11227, arg0.field11231, arg0.field11232, arg0.field11233, -1, 0);
 				}
 				arg0.remove();
 			}
-		} else if (arg0.field11239 && arg0.field11226 >= 1 && arg0.field11228 >= 1 && arg0.field11226 <= Client.world.getSizeX() - 2 && arg0.field11228 <= Client.world.getSizeZ() - 2 && (arg0.field11234 < 0 || ClientMapLoader.method14705(Client.world.method7750(), arg0.field11234, arg0.field11236))) {
+		} else if (arg0.field11239 && arg0.x >= 1 && arg0.z >= 1 && arg0.x <= Client.world.getSizeX() - 2 && arg0.z <= Client.world.getSizeZ() - 2 && (arg0.field11234 < 0 || ClientMapLoader.method14705(Client.world.getLocTypeList(), arg0.field11234, arg0.field11236))) {
 			if (arg1) {
-				method9194(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, arg0.field11241);
+				method9194(arg0.level, arg0.field11229, arg0.x, arg0.z, arg0.field11241);
 			} else {
-				method15005(arg0.field11238, arg0.field11229, arg0.field11226, arg0.field11228, arg0.field11234, arg0.field11235, arg0.field11236, arg0.field11230, -1, 0);
+				method15005(arg0.level, arg0.field11229, arg0.x, arg0.z, arg0.field11234, arg0.field11235, arg0.field11236, arg0.field11230, -1, 0);
 			}
 			arg0.field11239 = false;
 			if (!arg1 && arg0.field11234 == arg0.field11227 && arg0.field11227 == -1) {
@@ -218,7 +218,7 @@ public final class ChangeLocationRequest extends Node {
 			return;
 		}
 		int var10 = arg0;
-		if (arg0 < 3 && Client.world.method7793().isLinkBelow(arg2, arg3)) {
+		if (arg0 < 3 && Client.world.getSceneLevelTileFlags().isLinkBelow(arg2, arg3)) {
 			var10 = arg0 + 1;
 		}
 		if (Client.world.getScene() == null) {

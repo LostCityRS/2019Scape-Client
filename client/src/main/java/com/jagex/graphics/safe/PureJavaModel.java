@@ -115,7 +115,7 @@ public class PureJavaModel extends Model {
 	public byte[] facePriority;
 
 	@ObfuscatedName("afi.ay")
-	public byte[] faceTrans;
+	public byte[] faceAlpha;
 
 	@ObfuscatedName("afi.ab")
 	public short[] field9574;
@@ -142,13 +142,13 @@ public class PureJavaModel extends Model {
 	public boolean verticesUpscaled = false;
 
 	@ObfuscatedName("afi.bk")
-	public int originX;
+	public int baseX;
 
 	@ObfuscatedName("afi.bh")
-	public int originY;
+	public int baseY;
 
 	@ObfuscatedName("afi.bx")
-	public int originZ;
+	public int baseZ;
 
 	@ObfuscatedName("afi.bd")
 	public boolean field9538 = false;
@@ -274,7 +274,7 @@ public class PureJavaModel extends Model {
 		this.faceVertex3 = model.faceVertex3;
 		this.facePriority = model.facePriority;
 		this.faceColour = model.faceColour;
-		this.faceTrans = model.faceTrans;
+		this.faceAlpha = model.faceTrans;
 		this.field9576 = model.field1399;
 		this.faceType = model.faceType;
 		this.emitters = model.emitters;
@@ -353,7 +353,7 @@ public class PureJavaModel extends Model {
 				}
 			}
 
-			boolean var30 = this.faceTrans != null && this.faceTrans[var14] != 0 || var15 != null && MaterialAlphaMode.MULTIPLY == var15.alphaMode;
+			boolean var30 = this.faceAlpha != null && this.faceAlpha[var14] != 0 || var15 != null && MaterialAlphaMode.MULTIPLY == var15.alphaMode;
 			if ((var12 || var30) && this.facePriority != null) {
 				var16 += this.facePriority[var14] << 17;
 			}
@@ -786,10 +786,10 @@ public class PureJavaModel extends Model {
 					var9 = this.faceType[var8];
 				}
 				byte var10;
-				if (this.faceTrans == null) {
+				if (this.faceAlpha == null) {
 					var10 = 0;
 				} else {
-					var10 = this.faceTrans[var8];
+					var10 = this.faceAlpha[var8];
 				}
 				short var11;
 				if (this.field9574 == null) {
@@ -1009,9 +1009,9 @@ public class PureJavaModel extends Model {
 			throw new IllegalStateException("");
 		} else if ((var6.allowedOperations & 0x10000) == 65536) {
 			this.method15458(this.renderer.getContext(Thread.currentThread()));
-			this.method15488();
+			this.calculateBounds();
 			this.method15496();
-			var6.method15488();
+			var6.calculateBounds();
 			var6.method15496();
 			field9543++;
 			int var7 = 0;
@@ -1228,21 +1228,21 @@ public class PureJavaModel extends Model {
 			arg0.field9602 = this.field9602;
 		}
 		if ((arg2 & 0x100) == 0) {
-			arg0.faceTrans = this.faceTrans;
+			arg0.faceAlpha = this.faceAlpha;
 		} else {
-			if (arg1.faceTrans == null || arg1.faceTrans.length < this.faceCount) {
+			if (arg1.faceAlpha == null || arg1.faceAlpha.length < this.faceCount) {
 				int var19 = this.faceCount;
-				arg0.faceTrans = arg1.faceTrans = new byte[var19];
+				arg0.faceAlpha = arg1.faceAlpha = new byte[var19];
 			} else {
-				arg0.faceTrans = arg1.faceTrans;
+				arg0.faceAlpha = arg1.faceAlpha;
 			}
-			if (this.faceTrans == null) {
+			if (this.faceAlpha == null) {
 				for (int var21 = 0; var21 < this.faceCount; var21++) {
-					arg0.faceTrans[var21] = 0;
+					arg0.faceAlpha[var21] = 0;
 				}
 			} else {
 				for (int var20 = 0; var20 < this.faceCount; var20++) {
-					arg0.faceTrans[var20] = this.faceTrans[var20];
+					arg0.faceAlpha[var20] = this.faceAlpha[var20];
 				}
 			}
 		}
@@ -1403,7 +1403,7 @@ public class PureJavaModel extends Model {
 		if ((this.allowedOperations & 0x5) != 5) {
 			throw new IllegalStateException();
 		} else if (arg0 == 4096) {
-			this.method15467();
+			this.rotateY90();
 		} else if (arg0 == 8192) {
 			this.method15468();
 		} else if (arg0 == 12288) {
@@ -1472,7 +1472,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.hn()V")
-	public void method15467() {
+	public void rotateY90() {
 		synchronized (this) {
 			for (int var2 = 0; var2 < this.vertexCount; var2++) {
 				int var3 = this.vertexX[var2];
@@ -1599,7 +1599,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.r(I)V")
-	public void method1852(int arg0) {
+	public void rotateX(int arg0) {
 		if ((this.allowedOperations & 0x6) != 6) {
 			throw new IllegalStateException();
 		}
@@ -1616,7 +1616,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.v(I)V")
-	public void method1696(int arg0) {
+	public void rotateZ(int arg0) {
 		if ((this.allowedOperations & 0x3) != 3) {
 			throw new IllegalStateException();
 		}
@@ -1633,7 +1633,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.o(III)V")
-	public void method1805(int arg0, int arg1, int arg2) {
+	public void translate(int arg0, int arg1, int arg2) {
 		if (arg0 != 0 && (this.allowedOperations & 0x1) != 1) {
 			throw new IllegalStateException();
 		} else if (arg1 != 0 && (this.allowedOperations & 0x2) != 2) {
@@ -1704,7 +1704,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.y(III)V")
-	public void method1699(int arg0, int arg1, int arg2) {
+	public void scale(int arg0, int arg1, int arg2) {
 		if (arg0 != 128 && (this.allowedOperations & 0x1) != 1) {
 			throw new IllegalStateException();
 		} else if (arg1 != 128 && (this.allowedOperations & 0x2) != 2) {
@@ -1733,7 +1733,7 @@ public class PureJavaModel extends Model {
 			throw new IllegalStateException();
 		}
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		int var8 = this.minX + arg4;
 		int var9 = this.maxX + arg4;
@@ -1952,9 +1952,9 @@ public class PureJavaModel extends Model {
 		if (this.labelVertices == null) {
 			return false;
 		} else {
-			this.originX = 0;
-			this.originY = 0;
-			this.originZ = 0;
+			this.baseX = 0;
+			this.baseY = 0;
+			this.baseZ = 0;
 			return true;
 		}
 	}
@@ -1977,12 +1977,12 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.at(I[IIIIIZ)V")
-	public void method1717(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
-		int var8 = arg1.length;
-		if (arg0 == 0) {
-			int var9 = arg2 << 4;
-			int var10 = arg3 << 4;
-			int var11 = arg4 << 4;
+	public void applyTransform(int type, int[] labels, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
+		int var8 = labels.length;
+		if (type == 0) {
+			int x = arg2 << 4;
+			int y = arg3 << 4;
+			int z = arg4 << 4;
 			if (!this.verticesUpscaled) {
 				for (int var12 = 0; var12 < this.vertexCount; var12++) {
 					this.vertexX[var12] <<= 0x4;
@@ -1991,33 +1991,33 @@ public class PureJavaModel extends Model {
 				}
 				this.verticesUpscaled = true;
 			}
-			int var13 = 0;
-			this.originX = 0;
-			this.originY = 0;
-			this.originZ = 0;
-			for (int var14 = 0; var14 < var8; var14++) {
-				int var15 = arg1[var14];
-				if (var15 < this.labelVertices.length) {
-					int[] var16 = this.labelVertices[var15];
-					for (int var17 = 0; var17 < var16.length; var17++) {
-						int var18 = var16[var17];
-						this.originX += this.vertexX[var18];
-						this.originY += this.vertexY[var18];
-						this.originZ += this.vertexZ[var18];
-						var13++;
+			int count = 0;
+			this.baseX = 0;
+			this.baseY = 0;
+			this.baseZ = 0;
+			for (int g = 0; g < var8; g++) {
+				int label = labels[g];
+				if (label < this.labelVertices.length) {
+					int[] vertices = this.labelVertices[label];
+					for (int i = 0; i < vertices.length; i++) {
+						int v = vertices[i];
+						this.baseX += this.vertexX[v];
+						this.baseY += this.vertexY[v];
+						this.baseZ += this.vertexZ[v];
+						count++;
 					}
 				}
 			}
-			if (var13 > 0) {
-				this.originX = this.originX / var13 + var9;
-				this.originY = this.originY / var13 + var10;
-				this.originZ = this.originZ / var13 + var11;
+			if (count > 0) {
+				this.baseX = this.baseX / count + x;
+				this.baseY = this.baseY / count + y;
+				this.baseZ = this.baseZ / count + z;
 			} else {
-				this.originX = var9;
-				this.originY = var10;
-				this.originZ = var11;
+				this.baseX = x;
+				this.baseY = y;
+				this.baseZ = z;
 			}
-		} else if (arg0 == 1) {
+		} else if (type == 1) {
 			int var19 = arg2 << 4;
 			int var20 = arg3 << 4;
 			int var21 = arg4 << 4;
@@ -2030,7 +2030,7 @@ public class PureJavaModel extends Model {
 				this.verticesUpscaled = true;
 			}
 			for (int var23 = 0; var23 < var8; var23++) {
-				int var24 = arg1[var23];
+				int var24 = labels[var23];
 				if (var24 < this.labelVertices.length) {
 					int[] var25 = this.labelVertices[var24];
 					for (int var26 = 0; var26 < var25.length; var26++) {
@@ -2041,17 +2041,17 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 2) {
+		} else if (type == 2) {
 			for (int var28 = 0; var28 < var8; var28++) {
-				int var29 = arg1[var28];
+				int var29 = labels[var28];
 				if (var29 < this.labelVertices.length) {
 					int[] var30 = this.labelVertices[var29];
 					if ((arg5 & 0x1) == 0) {
 						for (int var31 = 0; var31 < var30.length; var31++) {
 							int var32 = var30[var31];
-							this.vertexX[var32] -= this.originX;
-							this.vertexY[var32] -= this.originY;
-							this.vertexZ[var32] -= this.originZ;
+							this.vertexX[var32] -= this.baseX;
+							this.vertexY[var32] -= this.baseY;
+							this.vertexZ[var32] -= this.baseZ;
 							if (arg4 != 0) {
 								int var33 = Trig1.sin[arg4];
 								int var34 = Trig1.cos[arg4];
@@ -2073,16 +2073,16 @@ public class PureJavaModel extends Model {
 								this.vertexZ[var32] = this.vertexZ[var32] * var40 - this.vertexX[var32] * var39 + 16383 >> 14;
 								this.vertexX[var32] = var41;
 							}
-							this.vertexX[var32] += this.originX;
-							this.vertexY[var32] += this.originY;
-							this.vertexZ[var32] += this.originZ;
+							this.vertexX[var32] += this.baseX;
+							this.vertexY[var32] += this.baseY;
+							this.vertexZ[var32] += this.baseZ;
 						}
 					} else {
 						for (int var42 = 0; var42 < var30.length; var42++) {
 							int var43 = var30[var42];
-							this.vertexX[var43] -= this.originX;
-							this.vertexY[var43] -= this.originY;
-							this.vertexZ[var43] -= this.originZ;
+							this.vertexX[var43] -= this.baseX;
+							this.vertexY[var43] -= this.baseY;
+							this.vertexZ[var43] -= this.baseZ;
 							if (arg2 != 0) {
 								int var44 = Trig1.sin[arg2];
 								int var45 = Trig1.cos[arg2];
@@ -2104,47 +2104,47 @@ public class PureJavaModel extends Model {
 								this.vertexZ[var43] = this.vertexZ[var43] * var51 - this.vertexX[var43] * var50 + 16383 >> 14;
 								this.vertexX[var43] = var52;
 							}
-							this.vertexX[var43] += this.originX;
-							this.vertexY[var43] += this.originY;
-							this.vertexZ[var43] += this.originZ;
+							this.vertexX[var43] += this.baseX;
+							this.vertexY[var43] += this.baseY;
+							this.vertexZ[var43] += this.baseZ;
 						}
 					}
 				}
 			}
-		} else if (arg0 == 3) {
+		} else if (type == 3) {
 			for (int var53 = 0; var53 < var8; var53++) {
-				int var54 = arg1[var53];
+				int var54 = labels[var53];
 				if (var54 < this.labelVertices.length) {
 					int[] var55 = this.labelVertices[var54];
 					for (int var56 = 0; var56 < var55.length; var56++) {
 						int var57 = var55[var56];
-						this.vertexX[var57] -= this.originX;
-						this.vertexY[var57] -= this.originY;
-						this.vertexZ[var57] -= this.originZ;
+						this.vertexX[var57] -= this.baseX;
+						this.vertexY[var57] -= this.baseY;
+						this.vertexZ[var57] -= this.baseZ;
 						this.vertexX[var57] = this.vertexX[var57] * arg2 / 128;
 						this.vertexY[var57] = this.vertexY[var57] * arg3 / 128;
 						this.vertexZ[var57] = this.vertexZ[var57] * arg4 / 128;
-						this.vertexX[var57] += this.originX;
-						this.vertexY[var57] += this.originY;
-						this.vertexZ[var57] += this.originZ;
+						this.vertexX[var57] += this.baseX;
+						this.vertexY[var57] += this.baseY;
+						this.vertexZ[var57] += this.baseZ;
 					}
 				}
 			}
-		} else if (arg0 == 5) {
-			if (this.labelFaces != null && this.faceTrans != null) {
+		} else if (type == 5) {
+			if (this.labelFaces != null && this.faceAlpha != null) {
 				for (int var58 = 0; var58 < var8; var58++) {
-					int var59 = arg1[var58];
+					int var59 = labels[var58];
 					if (var59 < this.labelFaces.length) {
 						int[] var60 = this.labelFaces[var59];
 						for (int var61 = 0; var61 < var60.length; var61++) {
 							int var62 = var60[var61];
-							int var63 = (this.faceTrans[var62] & 0xFF) + arg2 * 8;
+							int var63 = (this.faceAlpha[var62] & 0xFF) + arg2 * 8;
 							if (var63 < 0) {
 								var63 = 0;
 							} else if (var63 > 255) {
 								var63 = 255;
 							}
-							this.faceTrans[var62] = (byte) var63;
+							this.faceAlpha[var62] = (byte) var63;
 						}
 					}
 				}
@@ -2152,14 +2152,14 @@ public class PureJavaModel extends Model {
 					for (int var64 = 0; var64 < this.billboardCount; var64++) {
 						Billboard var65 = this.billboards[var64];
 						BillboardPlacement var66 = this.billboardPlacements[var64];
-						var66.field819 = var66.field819 & 0xFFFFFF | 255 - (this.faceTrans[var65.field901] & 0xFF) << 24;
+						var66.field819 = var66.field819 & 0xFFFFFF | 255 - (this.faceAlpha[var65.field901] & 0xFF) << 24;
 					}
 				}
 			}
-		} else if (arg0 == 7) {
+		} else if (type == 7) {
 			if (this.labelFaces != null) {
 				for (int var67 = 0; var67 < var8; var67++) {
-					int var68 = arg1[var67];
+					int var68 = labels[var67];
 					if (var68 < this.labelFaces.length) {
 						int[] var69 = this.labelFaces[var68];
 						for (int var70 = 0; var70 < var69.length; var70++) {
@@ -2194,10 +2194,10 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 8) {
+		} else if (type == 8) {
 			if (this.labelBillboards != null) {
 				for (int var82 = 0; var82 < var8; var82++) {
-					int var83 = arg1[var82];
+					int var83 = labels[var82];
 					if (var83 < this.labelBillboards.length) {
 						int[] var84 = this.labelBillboards[var83];
 						for (int var85 = 0; var85 < var84.length; var85++) {
@@ -2208,10 +2208,10 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 10) {
+		} else if (type == 10) {
 			if (this.labelBillboards != null) {
 				for (int var87 = 0; var87 < var8; var87++) {
-					int var88 = arg1[var87];
+					int var88 = labels[var87];
 					if (var88 < this.labelBillboards.length) {
 						int[] var89 = this.labelBillboards[var88];
 						for (int var90 = 0; var90 < var89.length; var90++) {
@@ -2222,9 +2222,9 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 9 && this.labelBillboards != null) {
+		} else if (type == 9 && this.labelBillboards != null) {
 			for (int var92 = 0; var92 < var8; var92++) {
-				int var93 = arg1[var92];
+				int var93 = labels[var92];
 				if (var93 < this.labelBillboards.length) {
 					int[] var94 = this.labelBillboards[var93];
 					for (int var95 = 0; var95 < var94.length; var95++) {
@@ -2239,7 +2239,7 @@ public class PureJavaModel extends Model {
 	@ObfuscatedName("afi.ad(I[IIIIIZ)V")
 	public void method1711(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		if (arg0 != 0) {
-			this.method1717(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+			this.applyTransform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 			return;
 		}
 		int var8 = arg2 << 4;
@@ -2253,9 +2253,9 @@ public class PureJavaModel extends Model {
 			}
 			this.verticesUpscaled = true;
 		}
-		this.originX = var8;
-		this.originY = var9;
-		this.originZ = var10;
+		this.baseX = var8;
+		this.baseY = var9;
+		this.baseZ = var10;
 	}
 
 	@ObfuscatedName("afi.au(I[IIIIZI[I)V")
@@ -2275,9 +2275,9 @@ public class PureJavaModel extends Model {
 			}
 			this.verticesUpscaled = true;
 		}
-		this.originX = var9;
-		this.originY = var10;
-		this.originZ = var11;
+		this.baseX = var9;
+		this.baseY = var10;
+		this.baseZ = var11;
 	}
 
 	@ObfuscatedName("afi.am(I[IIIIZI[I)V")
@@ -2296,9 +2296,9 @@ public class PureJavaModel extends Model {
 				this.verticesUpscaled = true;
 			}
 			int var14 = 0;
-			this.originX = 0;
-			this.originY = 0;
-			this.originZ = 0;
+			this.baseX = 0;
+			this.baseY = 0;
+			this.baseZ = 0;
 			for (int var15 = 0; var15 < var9; var15++) {
 				int var16 = arg1[var15];
 				if (var16 < this.labelVertices.length) {
@@ -2306,23 +2306,23 @@ public class PureJavaModel extends Model {
 					for (int var18 = 0; var18 < var17.length; var18++) {
 						int var19 = var17[var18];
 						if (this.vertexSourceModels == null || (arg6 & this.vertexSourceModels[var19]) != 0) {
-							this.originX += this.vertexX[var19];
-							this.originY += this.vertexY[var19];
-							this.originZ += this.vertexZ[var19];
+							this.baseX += this.vertexX[var19];
+							this.baseY += this.vertexY[var19];
+							this.baseZ += this.vertexZ[var19];
 							var14++;
 						}
 					}
 				}
 			}
 			if (var14 > 0) {
-				this.originX = this.originX / var14 + var10;
-				this.originY = this.originY / var14 + var11;
-				this.originZ = this.originZ / var14 + var12;
+				this.baseX = this.baseX / var14 + var10;
+				this.baseY = this.baseY / var14 + var11;
+				this.baseZ = this.baseZ / var14 + var12;
 				this.field9538 = true;
 			} else {
-				this.originX = var10;
-				this.originY = var11;
-				this.originZ = var12;
+				this.baseX = var10;
+				this.baseY = var11;
+				this.baseZ = var12;
 			}
 		} else if (arg0 == 1) {
 			if (arg7 != null) {
@@ -2367,9 +2367,9 @@ public class PureJavaModel extends Model {
 						for (int var96 = 0; var96 < var95.length; var96++) {
 							int var97 = var95[var96];
 							if (this.vertexSourceModels == null || (arg6 & this.vertexSourceModels[var97]) != 0) {
-								this.vertexX[var97] -= this.originX;
-								this.vertexY[var97] -= this.originY;
-								this.vertexZ[var97] -= this.originZ;
+								this.vertexX[var97] -= this.baseX;
+								this.vertexY[var97] -= this.baseY;
+								this.vertexZ[var97] -= this.baseZ;
 								if (arg4 != 0) {
 									int var98 = Trig1.sin[arg4];
 									int var99 = Trig1.cos[arg4];
@@ -2391,9 +2391,9 @@ public class PureJavaModel extends Model {
 									this.vertexZ[var97] = this.vertexZ[var97] * var105 - this.vertexX[var97] * var104 + 16383 >> 14;
 									this.vertexX[var97] = var106;
 								}
-								this.vertexX[var97] += this.originX;
-								this.vertexY[var97] += this.originY;
-								this.vertexZ[var97] += this.originZ;
+								this.vertexX[var97] += this.baseX;
+								this.vertexY[var97] += this.baseY;
+								this.vertexZ[var97] += this.baseZ;
 							}
 						}
 					}
@@ -2414,15 +2414,15 @@ public class PureJavaModel extends Model {
 				int var37 = arg7[13] << 4;
 				int var38 = arg7[14] << 4;
 				if (this.field9538) {
-					int var39 = arg7[6] * this.originZ + arg7[0] * this.originX + arg7[3] * this.originY + 8192 >> 14;
-					int var40 = arg7[7] * this.originZ + arg7[1] * this.originX + arg7[4] * this.originY + 8192 >> 14;
-					int var41 = arg7[8] * this.originZ + arg7[2] * this.originX + arg7[5] * this.originY + 8192 >> 14;
+					int var39 = arg7[6] * this.baseZ + arg7[0] * this.baseX + arg7[3] * this.baseY + 8192 >> 14;
+					int var40 = arg7[7] * this.baseZ + arg7[1] * this.baseX + arg7[4] * this.baseY + 8192 >> 14;
+					int var41 = arg7[8] * this.baseZ + arg7[2] * this.baseX + arg7[5] * this.baseY + 8192 >> 14;
 					int var42 = var36 + var39;
 					int var43 = var37 + var40;
 					int var44 = var38 + var41;
-					this.originX = var42;
-					this.originY = var43;
-					this.originZ = var44;
+					this.baseX = var42;
+					this.baseY = var43;
+					this.baseZ = var44;
 					this.field9538 = false;
 				}
 				int[] var45 = new int[9];
@@ -2443,12 +2443,12 @@ public class PureJavaModel extends Model {
 				var45[6] = -var49 * var50 + var48 * var53 + 8192 >> 14;
 				var45[7] = var48 * var52 + var49 * var51 + 8192 >> 14;
 				var45[8] = var46 * var48 + 8192 >> 14;
-				int var54 = var45[2] * -this.originZ + var45[0] * -this.originX + var45[1] * -this.originY + 8192 >> 14;
-				int var55 = var45[5] * -this.originZ + var45[3] * -this.originX + var45[4] * -this.originY + 8192 >> 14;
-				int var56 = var45[8] * -this.originZ + var45[6] * -this.originX + var45[7] * -this.originY + 8192 >> 14;
-				int var57 = this.originX + var54;
-				int var58 = this.originY + var55;
-				int var59 = this.originZ + var56;
+				int var54 = var45[2] * -this.baseZ + var45[0] * -this.baseX + var45[1] * -this.baseY + 8192 >> 14;
+				int var55 = var45[5] * -this.baseZ + var45[3] * -this.baseX + var45[4] * -this.baseY + 8192 >> 14;
+				int var56 = var45[8] * -this.baseZ + var45[6] * -this.baseX + var45[7] * -this.baseY + 8192 >> 14;
+				int var57 = this.baseX + var54;
+				int var58 = this.baseY + var55;
+				int var59 = this.baseZ + var56;
 				int[] var60 = new int[9];
 				for (int var61 = 0; var61 < 3; var61++) {
 					for (int var62 = 0; var62 < 3; var62++) {
@@ -2511,15 +2511,15 @@ public class PureJavaModel extends Model {
 						for (int var161 = 0; var161 < var160.length; var161++) {
 							int var162 = var160[var161];
 							if (this.vertexSourceModels == null || (arg6 & this.vertexSourceModels[var162]) != 0) {
-								this.vertexX[var162] -= this.originX;
-								this.vertexY[var162] -= this.originY;
-								this.vertexZ[var162] -= this.originZ;
+								this.vertexX[var162] -= this.baseX;
+								this.vertexY[var162] -= this.baseY;
+								this.vertexZ[var162] -= this.baseZ;
 								this.vertexX[var162] = this.vertexX[var162] * arg2 / 128;
 								this.vertexY[var162] = this.vertexY[var162] * arg3 / 128;
 								this.vertexZ[var162] = this.vertexZ[var162] * arg4 / 128;
-								this.vertexX[var162] += this.originX;
-								this.vertexY[var162] += this.originY;
-								this.vertexZ[var162] += this.originZ;
+								this.vertexX[var162] += this.baseX;
+								this.vertexY[var162] += this.baseY;
+								this.vertexZ[var162] += this.baseZ;
 							}
 						}
 					}
@@ -2540,26 +2540,26 @@ public class PureJavaModel extends Model {
 				int var112 = arg7[13] << 4;
 				int var113 = arg7[14] << 4;
 				if (this.field9538) {
-					int var114 = arg7[6] * this.originZ + arg7[0] * this.originX + arg7[3] * this.originY + 8192 >> 14;
-					int var115 = arg7[7] * this.originZ + arg7[1] * this.originX + arg7[4] * this.originY + 8192 >> 14;
-					int var116 = arg7[8] * this.originZ + arg7[2] * this.originX + arg7[5] * this.originY + 8192 >> 14;
+					int var114 = arg7[6] * this.baseZ + arg7[0] * this.baseX + arg7[3] * this.baseY + 8192 >> 14;
+					int var115 = arg7[7] * this.baseZ + arg7[1] * this.baseX + arg7[4] * this.baseY + 8192 >> 14;
+					int var116 = arg7[8] * this.baseZ + arg7[2] * this.baseX + arg7[5] * this.baseY + 8192 >> 14;
 					int var117 = var111 + var114;
 					int var118 = var112 + var115;
 					int var119 = var113 + var116;
-					this.originX = var117;
-					this.originY = var118;
-					this.originZ = var119;
+					this.baseX = var117;
+					this.baseY = var118;
+					this.baseZ = var119;
 					this.field9538 = false;
 				}
 				int var120 = arg2 << 15 >> 7;
 				int var121 = arg3 << 15 >> 7;
 				int var122 = arg4 << 15 >> 7;
-				int var123 = -this.originX * var120 + 8192 >> 14;
-				int var124 = -this.originY * var121 + 8192 >> 14;
-				int var125 = -this.originZ * var122 + 8192 >> 14;
-				int var126 = this.originX + var123;
-				int var127 = this.originY + var124;
-				int var128 = this.originZ + var125;
+				int var123 = -this.baseX * var120 + 8192 >> 14;
+				int var124 = -this.baseY * var121 + 8192 >> 14;
+				int var125 = -this.baseZ * var122 + 8192 >> 14;
+				int var126 = this.baseX + var123;
+				int var127 = this.baseY + var124;
+				int var128 = this.baseZ + var125;
 				int[] var129 = new int[] { arg7[0] * var120 + 8192 >> 14, arg7[3] * var120 + 8192 >> 14, arg7[6] * var120 + 8192 >> 14, arg7[1] * var121 + 8192 >> 14, arg7[4] * var121 + 8192 >> 14, arg7[7] * var121 + 8192 >> 14, arg7[2] * var122 + 8192 >> 14, arg7[5] * var122 + 8192 >> 14, arg7[8] * var122 + 8192 >> 14 };
 				int var130 = var111 * var120 + 8192 >> 14;
 				int var131 = var112 * var121 + 8192 >> 14;
@@ -2605,7 +2605,7 @@ public class PureJavaModel extends Model {
 				}
 			}
 		} else if (arg0 == 5) {
-			if (this.labelFaces != null && this.faceTrans != null) {
+			if (this.labelFaces != null && this.faceAlpha != null) {
 				for (int var163 = 0; var163 < var9; var163++) {
 					int var164 = arg1[var163];
 					if (var164 < this.labelFaces.length) {
@@ -2613,13 +2613,13 @@ public class PureJavaModel extends Model {
 						for (int var166 = 0; var166 < var165.length; var166++) {
 							int var167 = var165[var166];
 							if (this.field9576 == null || (arg6 & this.field9576[var167]) != 0) {
-								int var168 = (this.faceTrans[var167] & 0xFF) + arg2 * 8;
+								int var168 = (this.faceAlpha[var167] & 0xFF) + arg2 * 8;
 								if (var168 < 0) {
 									var168 = 0;
 								} else if (var168 > 255) {
 									var168 = 255;
 								}
-								this.faceTrans[var167] = (byte) var168;
+								this.faceAlpha[var167] = (byte) var168;
 							}
 						}
 					}
@@ -2628,7 +2628,7 @@ public class PureJavaModel extends Model {
 					for (int var169 = 0; var169 < this.billboardCount; var169++) {
 						Billboard var170 = this.billboards[var169];
 						BillboardPlacement var171 = this.billboardPlacements[var169];
-						var171.field819 = var171.field819 & 0xFFFFFF | 255 - (this.faceTrans[var170.field901] & 0xFF) << 24;
+						var171.field819 = var171.field819 & 0xFFFFFF | 255 - (this.faceAlpha[var170.field901] & 0xFF) << 24;
 					}
 				}
 			}
@@ -2718,23 +2718,23 @@ public class PureJavaModel extends Model {
 	public void method1721(int arg0, int arg1, int arg2, int arg3) {
 		if (arg0 == 0) {
 			int var5 = 0;
-			this.originX = 0;
-			this.originY = 0;
-			this.originZ = 0;
+			this.baseX = 0;
+			this.baseY = 0;
+			this.baseZ = 0;
 			for (int var6 = 0; var6 < this.vertexCount; var6++) {
-				this.originX += this.vertexX[var6];
-				this.originY += this.vertexY[var6];
-				this.originZ += this.vertexZ[var6];
+				this.baseX += this.vertexX[var6];
+				this.baseY += this.vertexY[var6];
+				this.baseZ += this.vertexZ[var6];
 				var5++;
 			}
 			if (var5 > 0) {
-				this.originX = this.originX / var5 + arg1;
-				this.originY = this.originY / var5 + arg2;
-				this.originZ = this.originZ / var5 + arg3;
+				this.baseX = this.baseX / var5 + arg1;
+				this.baseY = this.baseY / var5 + arg2;
+				this.baseZ = this.baseZ / var5 + arg3;
 			} else {
-				this.originX = arg1;
-				this.originY = arg2;
-				this.originZ = arg3;
+				this.baseX = arg1;
+				this.baseY = arg2;
+				this.baseZ = arg3;
 			}
 		} else if (arg0 == 1) {
 			for (int var7 = 0; var7 < this.vertexCount; var7++) {
@@ -2744,9 +2744,9 @@ public class PureJavaModel extends Model {
 			}
 		} else if (arg0 == 2) {
 			for (int var8 = 0; var8 < this.vertexCount; var8++) {
-				this.vertexX[var8] -= this.originX;
-				this.vertexY[var8] -= this.originY;
-				this.vertexZ[var8] -= this.originZ;
+				this.vertexX[var8] -= this.baseX;
+				this.vertexY[var8] -= this.baseY;
+				this.vertexZ[var8] -= this.baseZ;
 				if (arg3 != 0) {
 					int var9 = Trig1.sin[arg3];
 					int var10 = Trig1.cos[arg3];
@@ -2768,37 +2768,37 @@ public class PureJavaModel extends Model {
 					this.vertexZ[var8] = this.vertexZ[var8] * var16 - this.vertexX[var8] * var15 + 16383 >> 14;
 					this.vertexX[var8] = var17;
 				}
-				this.vertexX[var8] += this.originX;
-				this.vertexY[var8] += this.originY;
-				this.vertexZ[var8] += this.originZ;
+				this.vertexX[var8] += this.baseX;
+				this.vertexY[var8] += this.baseY;
+				this.vertexZ[var8] += this.baseZ;
 			}
 		} else if (arg0 == 3) {
 			for (int var18 = 0; var18 < this.vertexCount; var18++) {
-				this.vertexX[var18] -= this.originX;
-				this.vertexY[var18] -= this.originY;
-				this.vertexZ[var18] -= this.originZ;
+				this.vertexX[var18] -= this.baseX;
+				this.vertexY[var18] -= this.baseY;
+				this.vertexZ[var18] -= this.baseZ;
 				this.vertexX[var18] = this.vertexX[var18] * arg1 / 128;
 				this.vertexY[var18] = this.vertexY[var18] * arg2 / 128;
 				this.vertexZ[var18] = this.vertexZ[var18] * arg3 / 128;
-				this.vertexX[var18] += this.originX;
-				this.vertexY[var18] += this.originY;
-				this.vertexZ[var18] += this.originZ;
+				this.vertexX[var18] += this.baseX;
+				this.vertexY[var18] += this.baseY;
+				this.vertexZ[var18] += this.baseZ;
 			}
 		} else if (arg0 == 5) {
 			for (int var19 = 0; var19 < this.faceCount; var19++) {
-				int var20 = (this.faceTrans[var19] & 0xFF) + arg1 * 8;
+				int var20 = (this.faceAlpha[var19] & 0xFF) + arg1 * 8;
 				if (var20 < 0) {
 					var20 = 0;
 				} else if (var20 > 255) {
 					var20 = 255;
 				}
-				this.faceTrans[var19] = (byte) var20;
+				this.faceAlpha[var19] = (byte) var20;
 			}
 			if (this.billboards != null) {
 				for (int var21 = 0; var21 < this.billboardCount; var21++) {
 					Billboard var22 = this.billboards[var21];
 					BillboardPlacement var23 = this.billboardPlacements[var21];
-					var23.field819 = var23.field819 & 0xFFFFFF | 255 - (this.faceTrans[var22.field901] & 0xFF) << 24;
+					var23.field819 = var23.field819 & 0xFFFFFF | 255 - (this.faceAlpha[var22.field901] & 0xFF) << 24;
 				}
 			}
 		} else if (arg0 == 7) {
@@ -2890,7 +2890,7 @@ public class PureJavaModel extends Model {
 		Matrix4x4 var6 = this.renderer.field9793;
 		Matrix4x4 var7 = this.renderer.field9795;
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		boolean var8 = var5.method6613();
 		float[] var9 = var4.field845;
@@ -3152,10 +3152,10 @@ public class PureJavaModel extends Model {
 
 	@ObfuscatedName("afi.io(I)Z")
 	public final boolean method15480(int arg0) {
-		if (this.faceTrans == null) {
+		if (this.faceAlpha == null) {
 			return false;
 		} else {
-			return this.faceTrans[arg0] != 0;
+			return this.faceAlpha[arg0] != 0;
 		}
 	}
 
@@ -3223,10 +3223,10 @@ public class PureJavaModel extends Model {
 			var8 = this.renderer.materialList.get(this.field9574[arg3] & 0xFFFF).field1330;
 		}
 		if (!var8) {
-			if (this.faceTrans == null) {
+			if (this.faceAlpha == null) {
 				this.rasteriser.field935 = 0;
 			} else {
-				this.rasteriser.field935 = this.faceTrans[arg3] & 0xFF;
+				this.rasteriser.field935 = this.faceAlpha[arg3] & 0xFF;
 			}
 			if (this.field9565[arg3] == -1) {
 				this.rasteriser.drawTriangle(arg0, arg1, arg2, this.field9607[var5], this.field9607[var6], this.field9607[var7], this.field9578[var5], this.field9578[var6], this.field9578[var7], this.field9609[var5], this.field9609[var6], this.field9609[var7], ColourUtils.field8149[this.field9563[arg3] & 0xFFFF]);
@@ -3236,8 +3236,8 @@ public class PureJavaModel extends Model {
 			return;
 		}
 		int var9 = -16777216;
-		if (this.faceTrans != null) {
-			var9 = 255 - (this.faceTrans[arg3] & 0xFF) << 24;
+		if (this.faceAlpha != null) {
+			var9 = 255 - (this.faceAlpha[arg3] & 0xFF) << 24;
 		}
 		if (this.field9565[arg3] == -1) {
 			int var10 = var9 | this.field9563[arg3] & 0xFFFFFF;
@@ -3275,15 +3275,15 @@ public class PureJavaModel extends Model {
 			} else if (this.field9606[var29] > this.field9534.field832) {
 				var32 = (float) (this.field9534.field832 - this.field9606[var29]) * 1.0F / (float) (this.field9534.field832 - this.field9534.field861);
 			}
-			if (this.faceTrans == null) {
+			if (this.faceAlpha == null) {
 				this.rasteriser.field935 = 0;
 			} else {
-				this.rasteriser.field935 = this.faceTrans[arg3] & 0xFF;
+				this.rasteriser.field935 = this.faceAlpha[arg3] & 0xFF;
 			}
 			if (var5) {
 				int var33 = -16777216;
-				if (this.faceTrans != null) {
-					var33 = 255 - (this.faceTrans[arg3] & 0xFF) << 24;
+				if (this.faceAlpha != null) {
+					var33 = 255 - (this.faceAlpha[arg3] & 0xFF) << 24;
 				}
 				if (this.field9565[arg3] == -1) {
 					int var34 = var33 | this.field9563[arg3] & 0xFFFFFF;
@@ -3339,15 +3339,15 @@ public class PureJavaModel extends Model {
 			this.method15483(arg0, arg1, arg2, arg3);
 			return;
 		}
-		if (this.faceTrans == null) {
+		if (this.faceAlpha == null) {
 			this.rasteriser.field935 = 0;
 		} else {
-			this.rasteriser.field935 = this.faceTrans[arg3] & 0xFF;
+			this.rasteriser.field935 = this.faceAlpha[arg3] & 0xFF;
 		}
 		if (var5) {
 			int var25 = -16777216;
-			if (this.faceTrans != null) {
-				var25 = 255 - (this.faceTrans[arg3] & 0xFF) << 24;
+			if (this.faceAlpha != null) {
+				var25 = 255 - (this.faceAlpha[arg3] & 0xFF) << 24;
 			}
 			if (this.field9565[arg3] == -1) {
 				int var26 = var25 | this.field9563[arg3] & 0xFFFFFF;
@@ -3376,7 +3376,7 @@ public class PureJavaModel extends Model {
 		int var11 = Integer.MAX_VALUE;
 		int var12 = Integer.MIN_VALUE;
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		int var13 = this.maxX - this.minX >> 1;
 		int var14 = this.maxY - this.minY >> 1;
@@ -3460,7 +3460,7 @@ public class PureJavaModel extends Model {
 				}
 			}
 			for (int var43 = 0; var43 < this.field9557; var43++) {
-				if (this.field9578[this.faceVertex1[var43]] != -999999.0F && this.field9578[this.faceVertex2[var43]] != -999999.0F && this.field9578[this.faceVertex3[var43]] != -999999.0F && this.method15485(arg0, arg1, this.field9607[this.faceVertex1[var43]], this.field9607[this.faceVertex2[var43]], this.field9607[this.faceVertex3[var43]], this.field9578[this.faceVertex1[var43]], this.field9578[this.faceVertex2[var43]], this.field9578[this.faceVertex3[var43]])) {
+				if (this.field9578[this.faceVertex1[var43]] != -999999.0F && this.field9578[this.faceVertex2[var43]] != -999999.0F && this.field9578[this.faceVertex3[var43]] != -999999.0F && this.pointWithinTriangle(arg0, arg1, this.field9607[this.faceVertex1[var43]], this.field9607[this.faceVertex2[var43]], this.field9607[this.faceVertex3[var43]], this.field9578[this.faceVertex1[var43]], this.field9578[this.faceVertex2[var43]], this.field9578[this.faceVertex3[var43]])) {
 					return true;
 				}
 			}
@@ -3469,7 +3469,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.iu(IIFFFFFF)Z")
-	public boolean method15485(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, float arg6, float arg7) {
+	public boolean pointWithinTriangle(int arg0, int arg1, float arg2, float arg3, float arg4, float arg5, float arg6, float arg7) {
 		if ((float) arg1 < arg2 && (float) arg1 < arg3 && (float) arg1 < arg4) {
 			return false;
 		} else if ((float) arg1 > arg2 && (float) arg1 > arg3 && (float) arg1 > arg4) {
@@ -3530,7 +3530,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.in()V")
-	public void method15488() {
+	public void calculateBounds() {
 		if (this.boundsValid) {
 			return;
 		}
@@ -3590,78 +3590,78 @@ public class PureJavaModel extends Model {
 			return;
 		}
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		this.height = this.minY;
 		this.heightValid = true;
 	}
 
 	@ObfuscatedName("afi.aj()I")
-	public int method1727() {
+	public int getHorizontalRadius() {
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		return this.horizontalRadius;
 	}
 
 	@ObfuscatedName("afi.ay()I")
-	public int method1728() {
+	public int getRadius() {
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		return this.radius;
 	}
 
 	@ObfuscatedName("afi.ab()I")
-	public int method1729() {
+	public int getMinX() {
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		return this.minX;
 	}
 
 	@ObfuscatedName("afi.az()I")
-	public int method1730() {
+	public int getMaxX() {
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		return this.maxX;
 	}
 
 	@ObfuscatedName("afi.aa()I")
-	public int method1748() {
+	public int getMinY() {
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		return this.minY;
 	}
 
 	@ObfuscatedName("afi.af()I")
-	public int method1695() {
+	public int getMaxY() {
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		return this.maxY;
 	}
 
 	@ObfuscatedName("afi.ak()I")
-	public int method1733() {
+	public int getMinZ() {
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		return this.minZ;
 	}
 
 	@ObfuscatedName("afi.an()I")
-	public int method1794() {
+	public int getMaxZ() {
 		if (!this.boundsValid) {
-			this.method15488();
+			this.calculateBounds();
 		}
 		return this.maxZ;
 	}
 
 	@ObfuscatedName("afi.bf()I")
-	public int method1707() {
+	public int getHeight() {
 		if (!this.heightValid) {
 			this.method1736();
 		}
@@ -3698,11 +3698,11 @@ public class PureJavaModel extends Model {
 
 	@ObfuscatedName("afi.bc()[B")
 	public byte[] method1741() {
-		return this.faceTrans;
+		return this.faceAlpha;
 	}
 
 	@ObfuscatedName("afi.bi(SS)V")
-	public void method1859(short arg0, short arg1) {
+	public void recolor(short arg0, short arg1) {
 		for (int var3 = 0; var3 < this.faceCount; var3++) {
 			if (this.faceColour[var3] == arg0) {
 				this.faceColour[var3] = arg1;
@@ -3725,17 +3725,17 @@ public class PureJavaModel extends Model {
 		if ((this.allowedOperations & 0x100000) == 0) {
 			throw new RuntimeException();
 		}
-		if (this.faceTrans == null) {
-			this.faceTrans = new byte[this.faceCount];
+		if (this.faceAlpha == null) {
+			this.faceAlpha = new byte[this.faceCount];
 		}
 		if (arg1 == null) {
 			for (int var3 = 0; var3 < this.faceCount; var3++) {
-				this.faceTrans[var3] = arg0;
+				this.faceAlpha[var3] = arg0;
 			}
 		} else {
 			for (int var4 = 0; var4 < this.faceCount; var4++) {
 				int var5 = 255 - (255 - (arg1[var4] & 0xFF)) * (255 - (arg0 & 0xFF)) / 255;
-				this.faceTrans[var4] = (byte) var5;
+				this.faceAlpha[var4] = (byte) var5;
 			}
 		}
 		if (this.field9602 == 2) {
@@ -3744,7 +3744,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.bt(SS)V")
-	public void method1744(short arg0, short arg1) {
+	public void retexture(short arg0, short arg1) {
 		if (this.field9574 == null) {
 			return;
 		}

@@ -329,7 +329,7 @@ public abstract class Model {
 						var28 = arg6;
 					}
 				}
-				this.method1852(var28);
+				this.rotateX(var28);
 			}
 		}
 		if (arg4 != 0) {
@@ -345,7 +345,7 @@ public abstract class Model {
 						var30 = arg7;
 					}
 				}
-				this.method1696(var30);
+				this.rotateZ(var30);
 			}
 		}
 		int var32 = var14 + var23;
@@ -354,7 +354,7 @@ public abstract class Model {
 		}
 		int var33 = (var32 >> 1) - arg2;
 		if (var33 != 0) {
-			this.method1805(0, var33, 0);
+			this.translate(0, var33, 0);
 		}
 	}
 
@@ -451,7 +451,7 @@ public abstract class Model {
 				var19 = null;
 			}
 		}
-		this.method1717(0, new int[0], 0, 0, 0, 0, arg13);
+		this.applyTransform(0, new int[0], 0, 0, 0, 0, arg13);
 		this.method1712(var18.field1628, var18, var19, arg10, arg11, 0, arg12, true, arg13, 65535, null);
 		this.method1776();
 		this.method1703();
@@ -474,7 +474,7 @@ public abstract class Model {
 		AnimBase var7 = arg0.field12317;
 		int var8 = arg1 % (arg0.method19384() + 1);
 		this.method1713(var7, arg0, var8, 0, arg5, arg4, false, 65535, null);
-		this.method1717(0, new int[0], 0, 0, 0, 0, arg5);
+		this.applyTransform(0, new int[0], 0, 0, 0, 0, arg5);
 		AnimBase var9 = arg2.field12317;
 		int var10 = arg3 % (arg2.method19384() + 1);
 		this.method1713(var9, arg2, var10, 0, arg5, arg4, true, 65535, null);
@@ -507,7 +507,7 @@ public abstract class Model {
 				var14 = null;
 			}
 		}
-		this.method1717(0, new int[0], 0, 0, 0, 0, arg9);
+		this.applyTransform(0, new int[0], 0, 0, 0, 0, arg9);
 		this.method1712(var13.field1628, var13, var14, arg6, arg7, 0, arg8, true, arg9, 65535, null);
 		this.method1776();
 		this.method1703();
@@ -537,7 +537,7 @@ public abstract class Model {
 			}
 		}
 		this.method1712(var12, var11, var13, arg4, arg5, 0, arg8, false, arg9, 65535, null);
-		this.method1717(0, new int[0], 0, 0, 0, 0, arg9);
+		this.applyTransform(0, new int[0], 0, 0, 0, 0, arg9);
 		AnimBase var14 = arg6.field12317;
 		int var15 = arg7 % (arg6.method19384() + 1);
 		this.method1713(var14, arg6, var15, 0, arg9, arg8, true, 65535, null);
@@ -820,7 +820,7 @@ public abstract class Model {
 			}
 		}
 		if (arg7 == 65535) {
-			this.method1717(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+			this.applyTransform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 		} else {
 			this.method1719(arg0, arg1, arg2, arg3, arg4, arg6, arg7, arg8);
 		}
@@ -940,16 +940,16 @@ public abstract class Model {
 	public abstract void method1694(int arg0);
 
 	@ObfuscatedName("do.af()I")
-	public abstract int method1695();
+	public abstract int getMaxY();
 
 	@ObfuscatedName("do.v(I)V")
-	public abstract void method1696(int arg0);
+	public abstract void rotateZ(int arg0);
 
 	@ObfuscatedName("do.s()V")
 	public abstract void method1698();
 
 	@ObfuscatedName("do.y(III)V")
-	public abstract void method1699(int arg0, int arg1, int arg2);
+	public abstract void scale(int arg0, int arg1, int arg2);
 
 	@ObfuscatedName("do.q(IILcb;Lcb;III)V")
 	public abstract void method1700(int arg0, int arg1, FloorModel arg2, FloorModel arg3, int arg4, int arg5, int arg6);
@@ -961,7 +961,7 @@ public abstract class Model {
 	public abstract void method1703();
 
 	@ObfuscatedName("do.bf()I")
-	public abstract int method1707();
+	public abstract int getHeight();
 
 	@ObfuscatedName("do.ad(I[IIIIIZ)V")
 	public abstract void method1711(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6);
@@ -970,7 +970,7 @@ public abstract class Model {
 	public abstract boolean method1716();
 
 	@ObfuscatedName("do.at(I[IIIIIZ)V")
-	public abstract void method1717(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6);
+	public abstract void applyTransform(int type, int[] labels, int arg2, int arg3, int arg4, int arg5, boolean arg6);
 
 	@ObfuscatedName("do.am(I[IIIIZI[I)V")
 	public abstract void method1719(int arg0, int[] arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, int[] arg7);
@@ -988,22 +988,22 @@ public abstract class Model {
 	public abstract HardShadow method1726(HardShadow arg0);
 
 	@ObfuscatedName("do.aj()I")
-	public abstract int method1727();
+	public abstract int getHorizontalRadius();
 
 	@ObfuscatedName("do.ay()I")
-	public abstract int method1728();
+	public abstract int getRadius();
 
 	@ObfuscatedName("do.ab()I")
-	public abstract int method1729();
+	public abstract int getMinX();
 
 	@ObfuscatedName("do.az()I")
-	public abstract int method1730();
+	public abstract int getMaxX();
 
 	@ObfuscatedName("do.bb()Z")
 	public abstract boolean method1731();
 
 	@ObfuscatedName("do.ak()I")
-	public abstract int method1733();
+	public abstract int getMinZ();
 
 	@ObfuscatedName("do.bl()V")
 	public abstract void method1736();
@@ -1018,7 +1018,7 @@ public abstract class Model {
 	public abstract byte[] method1741();
 
 	@ObfuscatedName("do.bt(SS)V")
-	public abstract void method1744(short arg0, short arg1);
+	public abstract void retexture(short arg0, short arg1);
 
 	@ObfuscatedName("do.bq(IIII)V")
 	public abstract void method1745(int arg0, int arg1, int arg2, int arg3);
@@ -1030,7 +1030,7 @@ public abstract class Model {
 	public abstract void method1747(byte arg0, byte[] arg1);
 
 	@ObfuscatedName("do.aa()I")
-	public abstract int method1748();
+	public abstract int getMinY();
 
 	@ObfuscatedName("do.bu()[Ldu;")
 	public abstract ModelParticleEmitter[] method1750();
@@ -1048,10 +1048,10 @@ public abstract class Model {
 	public abstract void method1776();
 
 	@ObfuscatedName("do.an()I")
-	public abstract int method1794();
+	public abstract int getMaxZ();
 
 	@ObfuscatedName("do.o(III)V")
-	public abstract void method1805(int arg0, int arg1, int arg2);
+	public abstract void translate(int arg0, int arg1, int arg2);
 
 	@ObfuscatedName("do.be()Z")
 	public abstract boolean method1812();
@@ -1063,10 +1063,10 @@ public abstract class Model {
 	public abstract void method1816();
 
 	@ObfuscatedName("do.r(I)V")
-	public abstract void method1852(int arg0);
+	public abstract void rotateX(int arg0);
 
 	@ObfuscatedName("do.bi(SS)V")
-	public abstract void method1859(short arg0, short arg1);
+	public abstract void recolor(short arg0, short arg1);
 
 	@ObfuscatedName("do.bx()I")
 	public abstract int method1862();

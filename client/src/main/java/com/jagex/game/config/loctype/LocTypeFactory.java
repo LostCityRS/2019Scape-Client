@@ -53,7 +53,7 @@ public abstract class LocTypeFactory {
 	}
 
 	@ObfuscatedName("vh.n(IB)V")
-	public void method9541(int arg0) {
+	public void resetModelCache(int arg0) {
 		this.field7536 = arg0;
 		WeightedCache var2 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {

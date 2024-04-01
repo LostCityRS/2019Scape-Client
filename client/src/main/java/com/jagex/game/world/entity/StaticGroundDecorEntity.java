@@ -81,7 +81,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 				}
 			}
 		}
-		this.method18363(1);
+		this.createEntityBounds(1);
 	}
 
 	@ObfuscatedName("ajz.bu(B)Z")
@@ -100,7 +100,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.by(B)I")
 	public int overlayHeight() {
-		return this.field11192 == null ? 0 : this.field11192.method1748();
+		return this.field11192 == null ? 0 : this.field11192.getMinY();
 	}
 
 	@ObfuscatedName("ajz.bz(Ldh;IB)Ldo;")
@@ -119,12 +119,12 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		FloorModel var5;
 		FloorModel var6;
 		if (this.field11190) {
-			var5 = this.field11716.field6917[this.field11714];
-			var6 = this.field11716.field6915[0];
+			var5 = this.scene.field6917[this.field11714];
+			var6 = this.scene.field6915[0];
 		} else {
-			var5 = this.field11716.field6915[this.field11714];
+			var5 = this.scene.field6915[this.field11714];
 			if (this.field11714 < 3) {
-				var6 = this.field11716.field6915[this.field11714 + 1];
+				var6 = this.scene.field6915[this.field11714 + 1];
 			} else {
 				var6 = null;
 			}
@@ -134,42 +134,42 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer renderer) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11187 == null) {
-			this.field11187 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17435(arg0, 0));
+			this.field11187 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17435(renderer, 0));
 		}
 		return this.field11187;
 	}
 
 	@ObfuscatedName("ajz.fc(Ldh;I)Ltl;")
-	public PickableEntity method17372(Renderer arg0) {
+	public PickableEntity draw(Renderer renderer) {
 		if (this.field11192 == null) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
-		PickableEntity var3 = PickableEntity.method16749(this.field11191);
+		PickableEntity var3 = PickableEntity.getPickableEntity(this.field11191);
 		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).clickbox;
 		if (var4 == null) {
-			this.field11192.draw(var2, this.field11713[0], 0);
+			this.field11192.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.field11192.draw(var2, null, 0);
-			arg0.method2193(var2, this.field11713[0], var4);
+			renderer.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajz.fw(Ldh;I)V")
-	public void method17373(Renderer arg0) {
+	public void method17373(Renderer renderer) {
 	}
 
 	@ObfuscatedName("ajz.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer renderer, int arg1, int arg2) {
 		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).clickbox;
 		if (var4 != null) {
-			return arg0.pick(arg1, arg2, this.method10533(), var4);
+			return renderer.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17435(arg0, 131072);
+		Model var5 = this.method17435(renderer, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -184,9 +184,9 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
-		if (arg1 instanceof StaticGroundDecorEntity) {
-			StaticGroundDecorEntity var7 = (StaticGroundDecorEntity) arg1;
+	public void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+		if (entity instanceof StaticGroundDecorEntity) {
+			StaticGroundDecorEntity var7 = (StaticGroundDecorEntity) entity;
 			if (this.field11192 != null && var7.field11192 != null) {
 				this.field11192.method1686(var7.field11192, arg2, arg3, arg4, arg5);
 			}
@@ -246,7 +246,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 
@@ -263,7 +263,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 }

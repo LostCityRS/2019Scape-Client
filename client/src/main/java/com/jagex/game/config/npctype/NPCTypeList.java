@@ -21,8 +21,8 @@ public class NPCTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aod.ac(II)V")
-	public void method18877(int arg0) {
-		((NPCTypeFactory) this.factory).method4575(arg0);
+	public void resetModelCache(int arg0) {
+		((NPCTypeFactory) this.factory).resetModelCache(arg0);
 	}
 
 	@ObfuscatedName("aod.r(I)V")

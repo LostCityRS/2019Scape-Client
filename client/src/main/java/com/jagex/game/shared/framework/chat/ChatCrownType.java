@@ -37,13 +37,13 @@ public class ChatCrownType implements SerializableEnum {
 	public final int field3607;
 
 	@ObfuscatedName("nn.d")
-	public final int field3602;
+	public final int img;
 
 	@ObfuscatedName("nn.c")
 	public final boolean field3609;
 
 	@ObfuscatedName("nn.r")
-	public final boolean field3599;
+	public final boolean ignorable;
 
 	@ObfuscatedName("nn.e(I)[Lnn;")
 	public static ChatCrownType[] method6043() {
@@ -52,9 +52,9 @@ public class ChatCrownType implements SerializableEnum {
 
 	public ChatCrownType(int arg0, int arg1, boolean arg2, boolean arg3, boolean arg4) {
 		this.field3607 = arg0;
-		this.field3602 = arg1;
+		this.img = arg1;
 		this.field3609 = arg3;
-		this.field3599 = arg4;
+		this.ignorable = arg4;
 	}
 
 	@ObfuscatedName("nn.n()I")

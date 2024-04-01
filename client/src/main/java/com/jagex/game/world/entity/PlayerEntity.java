@@ -204,11 +204,11 @@ public class PlayerEntity extends PathingEntity {
 		if (this.field10393 != null) {
 			this.field10393.method9930();
 		}
-		if (!this.field10432.method14346() || !this.field10432.field11877) {
+		if (!this.field10432.hasSeqType() || !this.field10432.field11877) {
 			return;
 		}
 		BASType var26 = this.getBASType();
-		if (!var26.method9290(this.field10432.method14348())) {
+		if (!var26.method9290(this.field10432.getSeqTypeId())) {
 			this.field10432.method14362(-1);
 			this.field10432.field11877 = false;
 		}
@@ -311,20 +311,20 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer renderer) {
 		return null;
 	}
 
 	@ObfuscatedName("aqk.fc(Ldh;I)Ltl;")
-	public PickableEntity method17372(Renderer arg0) {
-		if (this.model == null || !this.method19114(arg0, 2048)) {
+	public PickableEntity draw(Renderer renderer) {
+		if (this.model == null || !this.method19114(renderer, 2048)) {
 			return null;
 		}
-		Matrix4x3 var2 = arg0.method2209();
+		Matrix4x3 var2 = renderer.method2209();
 		Matrix4x3 var3 = this.method10533();
 		ScaleRotTrans var4 = this.getTransform();
 		int var5 = this.field10395.method316();
-		Tile var6 = this.field11716.levelTiles[this.level][(int) var4.trans.x >> 9][(int) var4.trans.z >> 9];
+		Tile var6 = this.scene.levelTiles[this.level][(int) var4.trans.x >> 9][(int) var4.trans.z >> 9];
 		if (var6 == null || var6.groundDecoration == null) {
 			this.field10408 = (int) ((float) this.field10408 - (float) this.field10408 / 10.0F);
 		} else {
@@ -338,10 +338,10 @@ public class PlayerEntity extends PathingEntity {
 		if (Client.preferences.characterShadows.getValue() == 1) {
 			BASType var9 = this.getBASType();
 			if (var9.field7346 && (this.model.field7892 == -1 || ((NPCType) Client.npcTypeList.list(this.model.field7892)).spotshadow)) {
-				AnimationWrapper var10 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
-				EntityWalkAnimationWrapper var11 = this.field10432.method14346() && (!this.field10432.field11877 || var10 == null) ? this.field10432 : null;
-				short var12 = Client.graphicsDefaults.field7728;
-				byte var13 = Client.graphicsDefaults.field7757;
+				AnimationWrapper var10 = this.field10454.hasSeqType() && this.field10454.method14355() ? this.field10454 : null;
+				EntityWalkAnimationWrapper var11 = this.field10432.hasSeqType() && (!this.field10432.field11877 || var10 == null) ? this.field10432 : null;
+				short var12 = Client.graphicsDefaults.spotshadowtexture;
+				byte var13 = Client.graphicsDefaults.spotshadowtexture_alpha;
 				if (this.model.field7892 != -1) {
 					var12 = ((NPCType) Client.npcTypeList.list(this.model.field7892)).spotshadowtexture;
 					var13 = ((NPCType) Client.npcTypeList.list(this.model.field7892)).spotshadowtexture_alpha;
@@ -349,19 +349,19 @@ public class PlayerEntity extends PathingEntity {
 				Object var14 = null;
 				Model var15;
 				if (var12 > -1 && Client.preferences.textures.getValue() == 1) {
-					var15 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var12, var13, var11 == null ? var10 : var11);
+					var15 = SpotShadowFactory.method3283(renderer, var5, this.field10405, this.field12466, this.field10407, this.idk[0], var12, var13, var11 == null ? var10 : var11);
 				} else {
-					var15 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, 1, this.field10459[0], 0, 0, 160, 240, var11 == null ? var10 : var11);
+					var15 = SpotShadowFactory.method5102(renderer, var5, this.field10405, this.field12466, this.field10407, 1, this.idk[0], 0, 0, 160, 240, var11 == null ? var10 : var11);
 				}
 				if (var15 != null) {
-					if (this.field11713 == null || this.field11713.length < this.field10459.length + 1) {
-						this.method18363(this.field10459.length + 1);
+					if (this.entityBounds == null || this.entityBounds.length < this.idk.length + 1) {
+						this.createEntityBounds(this.idk.length + 1);
 					}
-					var8 = PickableEntity.method16749(true);
+					var8 = PickableEntity.getPickableEntity(true);
 					this.field10458 = true;
-					arg0.method2219(false);
-					var15.draw(var2, this.field11713[this.field10459.length], 0);
-					arg0.method2219(true);
+					renderer.method2219(false);
+					var15.draw(var2, this.entityBounds[this.idk.length], 0);
+					renderer.method2219(true);
 				}
 			}
 		}
@@ -369,31 +369,31 @@ public class PlayerEntity extends PathingEntity {
 			for (int var16 = Client.hintArrows.length - 1; var16 >= 0; var16--) {
 				HintArrow var17 = Client.hintArrows[var16];
 				if (var17 != null && var17.field750 != -1) {
-					if (var17.field745 == 1) {
+					if (var17.hintType == 1) {
 						ObjectWrapper var18 = (ObjectWrapper) Client.npcs.getNode((long) var17.field744);
 						if (var18 != null) {
 							NpcEntity var19 = (NpcEntity) var18.value;
 							Vector3 var20 = Vector3.sub(var19.getTransform().trans, Client.localPlayerEntity.getTransform().trans);
 							int var21 = (int) var20.x;
 							int var22 = (int) var20.z;
-							this.method19113(arg0, var2, this.field10459[0], (long) var21, (long) var22, var17.field750, 92160000L);
+							this.method19113(renderer, var2, this.idk[0], (long) var21, (long) var22, var17.field750, 92160000L);
 						}
 					}
-					if (var17.field745 == 2) {
+					if (var17.hintType == 2) {
 						Vector3 var23 = Client.localPlayerEntity.getTransform().trans;
-						long var24 = (long) (var17.field746 - (int) var23.x);
-						long var26 = (long) (var17.field747 - (int) var23.z);
+						long var24 = (long) (var17.hintOffsetX - (int) var23.x);
+						long var26 = (long) (var17.hintOffsetZ - (int) var23.z);
 						long var28 = (long) (var17.field748 << 9);
 						long var30 = var28 * var28;
-						this.method19113(arg0, var2, this.field10459[0], var24, var26, var17.field750, var30);
+						this.method19113(renderer, var2, this.idk[0], var24, var26, var17.field750, var30);
 					}
-					if (var17.field745 == 10 && var17.field744 >= 0 && var17.field744 < Client.players.length) {
+					if (var17.hintType == 10 && var17.field744 >= 0 && var17.field744 < Client.players.length) {
 						PlayerEntity var32 = Client.players[var17.field744];
 						if (var32 != null) {
 							Vector3 var33 = Vector3.sub(var32.getTransform().trans, Client.localPlayerEntity.getTransform().trans);
 							int var34 = (int) var33.x;
 							int var35 = (int) var33.z;
-							this.method19113(arg0, var2, this.field10459[0], (long) var34, (long) var35, var17.field750, 92160000L);
+							this.method19113(renderer, var2, this.idk[0], (long) var34, (long) var35, var17.field750, 92160000L);
 						}
 					}
 				}
@@ -401,45 +401,45 @@ public class PlayerEntity extends PathingEntity {
 		}
 		var2.setTo(var3);
 		var2.translate(0.0F, (float) (-5 - this.field10408), 0.0F);
-		if (this.field11713 == null || this.field11713.length < this.field10459.length) {
-			this.method18363(this.field10459.length);
+		if (this.entityBounds == null || this.entityBounds.length < this.idk.length) {
+			this.createEntityBounds(this.idk.length);
 		}
 		if (var8 == null) {
-			var8 = PickableEntity.method16749(true);
+			var8 = PickableEntity.getPickableEntity(true);
 		}
-		this.method16576(arg0, this.field10459, var2, false);
-		for (int var36 = 0; var36 < this.field10459.length; var36++) {
-			if (this.field10459[var36] == null) {
-				this.field11713[var36].field1686 = false;
+		this.method16576(renderer, this.idk, var2, false);
+		for (int var36 = 0; var36 < this.idk.length; var36++) {
+			if (this.idk[var36] == null) {
+				this.entityBounds[var36].field1686 = false;
 			} else {
-				this.field10459[var36].draw(var2, this.field11713[var36], Client.localPlayerEntity == this ? 1 : 0);
+				this.idk[var36].draw(var2, this.entityBounds[var36], Client.localPlayerEntity == this ? 1 : 0);
 			}
 		}
 		if (this.field10393 != null) {
 			ParticleList var37 = this.field10393.method9965();
-			arg0.drawParticles(var37);
+			renderer.drawParticles(var37);
 		}
-		for (int var38 = 0; var38 < this.field10459.length; var38++) {
-			if (this.field10459[var38] != null) {
-				this.field10458 |= this.field10459[var38].method1731();
+		for (int var38 = 0; var38 < this.idk.length; var38++) {
+			if (this.idk[var38] != null) {
+				this.field10458 |= this.idk[var38].method1731();
 			}
-			this.field10459[var38] = null;
+			this.idk[var38] = null;
 		}
 		this.field11715 = Client.sceneCycle;
 		return var8;
 	}
 
 	@ObfuscatedName("aqk.fw(Ldh;I)V")
-	public void method17373(Renderer arg0) {
-		if (this.model == null || !this.field10449 && !this.method19114(arg0, 0)) {
+	public void method17373(Renderer renderer) {
+		if (this.model == null || !this.field10449 && !this.method19114(renderer, 0)) {
 			return;
 		}
-		Matrix4x3 var2 = arg0.method2209();
+		Matrix4x3 var2 = renderer.method2209();
 		var2.setToTransform2(this.getTransform());
 		var2.translate(0.0F, -5.0F, 0.0F);
-		this.method16576(arg0, this.field10459, var2, this.field10449);
-		for (int var3 = 0; var3 < this.field10459.length; var3++) {
-			this.field10459[var3] = null;
+		this.method16576(renderer, this.idk, var2, this.field10449);
+		for (int var3 = 0; var3 < this.idk.length; var3++) {
+			this.idk[var3] = null;
 		}
 	}
 
@@ -462,8 +462,8 @@ public class PlayerEntity extends PathingEntity {
 	public boolean method19114(Renderer arg0, int arg1) {
 		int var3 = arg1;
 		BASType var4 = this.getBASType();
-		AnimationWrapper var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
-		EntityWalkAnimationWrapper var6 = !this.field10432.method14346() || this.field12053 || this.field10432.field11877 && var5 != null ? null : this.field10432;
+		AnimationWrapper var5 = this.field10454.hasSeqType() && !this.field10454.method14355() ? this.field10454 : null;
+		EntityWalkAnimationWrapper var6 = !this.field10432.hasSeqType() || this.field12053 || this.field10432.field11877 && var5 != null ? null : this.field10432;
 		int var7 = var4.field7342;
 		int var8 = var4.field7343;
 		if (var7 != 0 || var8 != 0 || var4.field7355 != 0 || var4.field7358 != 0) {
@@ -474,7 +474,7 @@ public class PlayerEntity extends PathingEntity {
 		if (var10) {
 			arg1 |= 0x80000;
 		}
-		Model var11 = this.field10459[0] = this.model.method10126(arg0, arg1, Client.basTypeList, Client.idkTypeList, Client.npcTypeList, Client.objTypeList, Client.localPlayerGameState, Client.localPlayerGameState, var5, var6, this.field10398, this.field10442, var9, true, Client.wearposDefaults);
+		Model var11 = this.idk[0] = this.model.method10126(arg0, arg1, Client.basTypeList, Client.idkTypeList, Client.npcTypeList, Client.objTypeList, Client.localPlayerGameState, Client.localPlayerGameState, var5, var6, this.field10398, this.field10442, var9, true, Client.wearposDefaults);
 		int var12 = PlayerModel.method18304();
 		if (GameShell.maxmemory < 96 && var12 > 50) {
 			SceneManager.method7319();
@@ -496,22 +496,22 @@ public class PlayerEntity extends PathingEntity {
 		if (var11 == null) {
 			return false;
 		}
-		this.field10463 = var11.method1748();
-		this.field10420 = var11.method1707();
-		var11.method1728();
+		this.minY = var11.getMinY();
+		this.height = var11.getHeight();
+		var11.getRadius();
 		this.method16505(var11);
 		if (var7 == 0 && var8 == 0) {
 			this.method16507(var9, this.size() << 9, this.size() << 9, 0, 0);
 		} else {
 			this.method16507(var9, var7, var8, var4.field7344, var4.field7323);
 			if (this.field10405 != 0) {
-				var11.method1852(this.field10405);
+				var11.rotateX(this.field10405);
 			}
 			if (this.field12466 != 0) {
-				var11.method1696(this.field12466);
+				var11.rotateZ(this.field12466);
 			}
 			if (this.field10407 != 0) {
-				var11.method1805(0, this.field10407, 0);
+				var11.translate(0, this.field10407, 0);
 			}
 		}
 		if (var10) {
@@ -536,7 +536,7 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.hn(IIBB)V")
 	public final void movePlayer(int x, int z, byte speed) {
-		if (this.field10454.method14346() && this.field10454.method14347().field1782 == 1) {
+		if (this.field10454.hasSeqType() && this.field10454.getSeqType().field1782 == 1) {
 			this.field10427 = null;
 			this.field10454.method14362(-1);
 		}
@@ -573,7 +573,7 @@ public class PlayerEntity extends PathingEntity {
 		this.method10531(var4);
 		var4.release();
 		if (Client.localPlayerEntity == this) {
-			Client.world.method7816().resetFade();
+			Client.world.getEnvironmentManager().resetFade();
 		}
 		if (this.field10393 != null) {
 			this.field10393.method9930();
@@ -611,25 +611,25 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.bs(B)I")
-	public int method16486() {
+	public int getCoverMarker() {
 		return -1;
 	}
 
 	@ObfuscatedName("aqk.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		if (this.model == null || !this.method19114(arg0, 131072)) {
+	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+		if (this.model == null || !this.method19114(renderer, 131072)) {
 			return false;
 		}
 		Matrix4x3 var4 = this.method10533();
 		boolean var5 = false;
-		for (int var6 = 0; var6 < this.field10459.length; var6++) {
-			if (this.field10459[var6] != null && this.field10459[var6].field1298 && this.field10459[var6].method1725(arg1, arg2, var4, true, 0)) {
+		for (int var6 = 0; var6 < this.idk.length; var6++) {
+			if (this.idk[var6] != null && this.idk[var6].field1298 && this.idk[var6].method1725(arg1, arg2, var4, true, 0)) {
 				var5 = true;
 				break;
 			}
 		}
-		for (int var7 = 0; var7 < this.field10459.length; var7++) {
-			this.field10459[var7] = null;
+		for (int var7 = 0; var7 < this.idk.length; var7++) {
+			this.idk[var7] = null;
 		}
 		return var5;
 	}
@@ -640,7 +640,7 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

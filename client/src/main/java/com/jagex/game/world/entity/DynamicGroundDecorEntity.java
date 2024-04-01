@@ -31,7 +31,7 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg13);
 		this.field11133 = new DynamicLoc(arg1, arg2, arg3, LocShape.GROUND_DECOR.id, arg10, arg5, this, arg9, arg11, arg12);
 		this.field11132 = arg3.active != 0 && !arg9;
-		this.method18363(1);
+		this.createEntityBounds(1);
 	}
 
 	@ObfuscatedName("ajs.bu(B)Z")
@@ -45,7 +45,7 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	}
 
 	@ObfuscatedName("ajs.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer renderer) {
 		return this.field11134;
 	}
 
@@ -60,27 +60,27 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	}
 
 	@ObfuscatedName("ajs.fc(Ldh;I)Ltl;")
-	public PickableEntity method17372(Renderer arg0) {
-		Model var2 = this.field11133.method8238(arg0, 2048, false, true);
+	public PickableEntity draw(Renderer renderer) {
+		Model var2 = this.field11133.method8238(renderer, 2048, false, true);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
 		ScaleRotTrans var4 = this.getTransform();
-		PickableEntity var5 = PickableEntity.method16749(this.field11132);
+		PickableEntity var5 = PickableEntity.getPickableEntity(this.field11132);
 		int var6 = (int) var4.trans.x >> 9;
 		int var7 = (int) var4.trans.z >> 9;
-		this.field11133.method8239(arg0, var2, var3, var6, var6, var7, var7, true);
+		this.field11133.method8239(renderer, var2, var3, var6, var6, var7, var7, true);
 		LocType var8 = this.field11133.method8237();
 		if (var8.clickbox == null) {
-			var2.draw(var3, this.field11713[0], 0);
+			var2.draw(var3, this.entityBounds[0], 0);
 		} else {
 			var2.draw(var3, null, 0);
-			arg0.method2193(var3, this.field11713[0], var8.clickbox);
+			renderer.method2193(var3, this.entityBounds[0], var8.clickbox);
 		}
 		if (this.field11133.field6680 != null) {
 			ParticleList var9 = this.field11133.field6680.method9965();
-			arg0.drawParticles(var9);
+			renderer.drawParticles(var9);
 		}
 		this.field11135 = var2.method1731() || this.field11133.field6680 != null;
 		if (this.field11134 == null) {
@@ -92,24 +92,24 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	}
 
 	@ObfuscatedName("ajs.fw(Ldh;I)V")
-	public void method17373(Renderer arg0) {
-		Model var2 = this.field11133.method8238(arg0, 262144, true, true);
+	public void method17373(Renderer renderer) {
+		Model var2 = this.field11133.method8238(renderer, 262144, true, true);
 		if (var2 != null) {
 			Vector3 var3 = this.getTransform().trans;
 			int var4 = (int) var3.x >> 9;
 			int var5 = (int) var3.z >> 9;
-			this.field11133.method8239(arg0, var2, this.method10533(), var4, var4, var5, var5, false);
+			this.field11133.method8239(renderer, var2, this.method10533(), var4, var4, var5, var5, false);
 		}
 	}
 
 	@ObfuscatedName("ajs.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer renderer, int arg1, int arg2) {
 		LocType var4 = this.field11133.method8237();
 		if (var4.clickbox == null) {
-			Model var5 = this.field11133.method8238(arg0, 131072, false, false);
+			Model var5 = this.field11133.method8238(renderer, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
-			return arg0.pick(arg1, arg2, this.method10533(), var4.clickbox);
+			return renderer.pick(arg1, arg2, this.method10533(), var4.clickbox);
 		}
 	}
 
@@ -119,7 +119,7 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	}
 
 	@ObfuscatedName("ajs.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

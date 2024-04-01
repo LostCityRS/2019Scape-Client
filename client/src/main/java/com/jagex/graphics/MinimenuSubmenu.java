@@ -23,7 +23,7 @@ public class MinimenuSubmenu extends SecondaryNode {
 
 	@ObfuscatedName("arn.e(I)I")
 	public int method19375() {
-		return this.field12312.head.secondaryPrev == this.field12312.head ? -1 : ((MinimenuEntry) this.field12312.head.secondaryPrev).field12307;
+		return this.field12312.head.secondaryPrev == this.field12312.head ? -1 : ((MinimenuEntry) this.field12312.head.secondaryPrev).menuAction;
 	}
 
 	@ObfuscatedName("arn.n(Larm;I)Z")
@@ -32,7 +32,7 @@ public class MinimenuSubmenu extends SecondaryNode {
 		arg0.secondaryRemove();
 		MinimenuEntry var3 = (MinimenuEntry) this.field12312.peekFront();
 		while (var3 != null) {
-			if (MiniMenu.method18853(arg0.field12307, var3.field12307)) {
+			if (MiniMenu.method18853(arg0.menuAction, var3.menuAction)) {
 				DualIterableQueue.pushNodeBack(arg0, var3);
 				this.field12310++;
 				return !var2;

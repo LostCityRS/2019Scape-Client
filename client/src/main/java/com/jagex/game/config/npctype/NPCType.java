@@ -698,9 +698,9 @@ public class NPCType implements ConfigType {
 				}
 				for (int var45 = 0; var45 < this.recol_s.length; var45++) {
 					if (this.recol_d_palette == null || var45 >= this.recol_d_palette.length) {
-						var22.method1859(this.recol_s[var45], var44[var45]);
+						var22.recolor(this.recol_s[var45], var44[var45]);
 					} else {
-						var22.method1859(this.recol_s[var45], clientpalette[this.recol_d_palette[var45] & 0xFF]);
+						var22.recolor(this.recol_s[var45], clientpalette[this.recol_d_palette[var45] & 0xFF]);
 					}
 				}
 			}
@@ -712,7 +712,7 @@ public class NPCType implements ConfigType {
 					var46 = arg10.field2685;
 				}
 				for (int var47 = 0; var47 < this.retex_s.length; var47++) {
-					var22.method1744(this.retex_s[var47], var46[var47]);
+					var22.retexture(this.retex_s[var47], var46[var47]);
 				}
 			}
 			if (this.tint_weight != 0) {
@@ -783,7 +783,7 @@ public class NPCType implements ConfigType {
 			arg6.method14359(var50, 0);
 		}
 		if (this.resizeh != 128 || this.resizev != 128) {
-			var50.method1699(this.resizeh, this.resizev, this.resizeh);
+			var50.scale(this.resizeh, this.resizev, this.resizeh);
 		}
 		var50.method1690(arg1);
 		return var50;
@@ -870,9 +870,9 @@ public class NPCType implements ConfigType {
 					}
 					for (int var27 = 0; var27 < this.recol_s.length; var27++) {
 						if (this.recol_d_palette == null || var27 >= this.recol_d_palette.length) {
-							var12.method1859(this.recol_s[var27], var26[var27]);
+							var12.recolor(this.recol_s[var27], var26[var27]);
 						} else {
-							var12.method1859(this.recol_s[var27], clientpalette[this.recol_d_palette[var27] & 0xFF]);
+							var12.recolor(this.recol_s[var27], clientpalette[this.recol_d_palette[var27] & 0xFF]);
 						}
 					}
 				}
@@ -884,7 +884,7 @@ public class NPCType implements ConfigType {
 						var28 = arg5.field2685;
 					}
 					for (int var29 = 0; var29 < this.retex_s.length; var29++) {
-						var12.method1744(this.retex_s[var29], var28[var29]);
+						var12.retexture(this.retex_s[var29], var28[var29]);
 					}
 				}
 				if (this.tint_weight != 0) {

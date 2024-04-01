@@ -15,8 +15,8 @@ public class EffectAnimTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aot.al(II)V")
-	public void method18896(int arg0) {
-		((EffectAnimTypeFactory) this.factory).method13832(arg0);
+	public void resetModelCache(int arg0) {
+		((EffectAnimTypeFactory) this.factory).resetModelCache(arg0);
 	}
 
 	@ObfuscatedName("aot.r(I)V")

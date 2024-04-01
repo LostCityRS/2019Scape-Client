@@ -127,7 +127,7 @@ public class DynamicLoc {
 	public final Model method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
 		LocType var5 = (LocType) this.field6681.list(this.field6665);
 		if (var5.multiloc != null) {
-			var5 = var5.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+			var5 = var5.getMultiLoc(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 		}
 		if (var5 == null) {
 			this.method8242(arg0);
@@ -161,7 +161,7 @@ public class DynamicLoc {
 			var9 = this.field6663 < 3 ? var7.field6913[this.field6663 + 1] : null;
 		}
 		Model var10 = null;
-		if (this.field6664.method14346()) {
+		if (this.field6664.hasSeqType()) {
 			if (arg3) {
 				arg1 |= 0x40000;
 			}
@@ -179,8 +179,8 @@ public class DynamicLoc {
 					var7.method8750(this.field6677, this.field6663, (int) var6.x, (int) var6.z, this.field6679);
 					this.field6670 = true;
 				}
-				this.field6674 = var10.method1748();
-				var10.method1728();
+				this.field6674 = var10.getMinY();
+				var10.getRadius();
 			}
 			this.field6669 = null;
 		} else if (this.field6669 != null && (this.field6669.method1691() & arg1) == arg1 && this.field6673 == var5.id) {
@@ -203,8 +203,8 @@ public class DynamicLoc {
 					var7.method8750(this.field6677, this.field6663, (int) var6.x, (int) var6.z, null);
 					this.field6670 = true;
 				}
-				this.field6674 = var10.method1748();
-				var10.method1728();
+				this.field6674 = var10.getMinY();
+				var10.getRadius();
 			}
 		}
 		this.field6673 = var5.id;
@@ -218,7 +218,7 @@ public class DynamicLoc {
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
 			LocType var11 = (LocType) this.field6681.list(this.field6665);
 			if (var11.multiloc != null) {
-				var11 = var11.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+				var11 = var11.getMultiLoc(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 			}
 			if (var11 != null) {
 				this.field6680 = ParticleSystem.method9962(Client.loopCycle, true);
@@ -258,7 +258,7 @@ public class DynamicLoc {
 
 	@ObfuscatedName("sp.d(Lalh;I)V")
 	public void method8243(GraphEntity arg0) {
-		if (this.field6671 != null && this.field6671.method14346()) {
+		if (this.field6671 != null && this.field6671.hasSeqType()) {
 			this.field6671.method14367(Client.loopCycle - this.field6662);
 			if (this.field6671.method14375()) {
 				this.field6671.method14362(-1);
@@ -270,7 +270,7 @@ public class DynamicLoc {
 				return;
 			}
 		}
-		if (!this.field6664.method14346()) {
+		if (!this.field6664.hasSeqType()) {
 			this.method8244(false, -1, 0, 0);
 		} else if (this.field6664.method14367(Client.loopCycle - this.field6662)) {
 			if (Client.preferences.sceneryShadows.getValue() == 2) {
@@ -293,7 +293,7 @@ public class DynamicLoc {
 			LocType var7 = (LocType) this.field6681.list(this.field6665);
 			LocType var8 = var7;
 			if (var7.multiloc != null) {
-				var7 = var7.getVisible(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
+				var7 = var7.getMultiLoc(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
 			}
 			if (var7 == null) {
 				return;
@@ -303,7 +303,7 @@ public class DynamicLoc {
 			}
 			if (var7.method9504()) {
 				if (!var7.field7479 || Client.preferences.animDetail.getValue() == 1) {
-					if (arg0 && this.field6664.method14346() && var7.hasAnim(this.field6664.method14348())) {
+					if (arg0 && this.field6664.hasSeqType() && var7.hasAnim(this.field6664.getSeqTypeId())) {
 						return;
 					}
 					if (this.field6673 != var7.id) {
@@ -317,7 +317,7 @@ public class DynamicLoc {
 					}
 				}
 			} else if (var8 != null && var8.method9504() && (!var8.field7479 || Client.preferences.animDetail.getValue() == 1)) {
-				if (arg0 && this.field6664.method14346() && var8.hasAnim(this.field6664.method14348())) {
+				if (arg0 && this.field6664.hasSeqType() && var8.hasAnim(this.field6664.getSeqTypeId())) {
 					return;
 				}
 				if (this.field6673 != var7.id) {

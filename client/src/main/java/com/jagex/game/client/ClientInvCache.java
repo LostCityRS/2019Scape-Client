@@ -212,7 +212,7 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("xj.d(IZB)V")
-	public static void method10309(int arg0, boolean arg1) {
+	public static void remove(int arg0, boolean arg1) {
 		ClientInvCache var2 = getCachedInvs(arg0, arg1);
 		if (var2 != null) {
 			var2.remove();
@@ -220,7 +220,7 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("ei.c(B)V")
-	public static void method2752() {
+	public static void removeAll() {
 		recentUse.removeAll();
 	}
 
@@ -325,7 +325,7 @@ public class ClientInvCache extends Node {
 							}
 							for (int var31 = 0; var31 < PlayerModel.field10766[var30].length; var31++) {
 								if (arg5.field7895[var30] < PlayerModel.field9259[var30][var31].length) {
-									var7.method1744(PlayerModel.field10766[var30][var31], PlayerModel.field9259[var30][var31][arg5.field7895[var30]]);
+									var7.retexture(PlayerModel.field10766[var30][var31], PlayerModel.field9259[var30][var31][arg5.field7895[var30]]);
 								}
 							}
 							var30++;
@@ -333,7 +333,7 @@ public class ClientInvCache extends Node {
 					}
 					for (int var29 = 0; var29 < PlayerModel.field7577[var28].length; var29++) {
 						if (arg5.field7894[var28] < PlayerModel.field1434[var28][var29].length) {
-							var7.method1859(PlayerModel.field7577[var28][var29], PlayerModel.field1434[var28][var29][arg5.field7894[var28]]);
+							var7.recolor(PlayerModel.field7577[var28][var29], PlayerModel.field1434[var28][var29][arg5.field7894[var28]]);
 						}
 					}
 					var28++;
@@ -354,7 +354,7 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("ku.y(IB)V")
-	public static void method5150(int arg0) {
+	public static void resetModelCache(int arg0) {
 		field11222 = arg0;
 		modelCache.reset();
 	}

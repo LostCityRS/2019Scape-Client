@@ -39,7 +39,7 @@ public class TextUtil {
 	}
 
 	@ObfuscatedName("h.n(II)Ljava/lang/String;")
-	public static String method596(int arg0) {
+	public static String colTag(int arg0) {
 		return "<col=" + Integer.toHexString(arg0) + ">";
 	}
 }

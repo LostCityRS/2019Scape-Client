@@ -72,7 +72,7 @@ public class ReceivePlayerPositions {
 		player.routeWaypointZ[0] = hz - coord.z;
 		player.method10538((float) ((player.routeWaypointX[0] << 9) + (player.size() << 8)), player.method10525().trans.y, (float) ((player.routeWaypointZ[0] << 9) + (player.size() << 8)));
 		Client.currentPlayerLevel = player.level = player.field11714 = hl;
-		if (Client.world.method7793().isLinkBelow(player.routeWaypointX[0], player.routeWaypointZ[0])) {
+		if (Client.world.getSceneLevelTileFlags().isLinkBelow(player.routeWaypointX[0], player.routeWaypointZ[0])) {
 			player.field11714++;
 		}
 		if (appearances[localPlayerIndex] != null) {
@@ -394,7 +394,7 @@ public class ReceivePlayerPositions {
 					player.movePlayer(nextX, nextZ, speeds[highResIndex]);
 				}
 				player.level = player.field11714 = (byte) (player.level + dl & 0x3);
-				if (Client.world.method7793().isLinkBelow(nextX, nextZ)) {
+				if (Client.world.getSceneLevelTileFlags().isLinkBelow(nextX, nextZ)) {
 					player.field11714++;
 				}
 				if (Client.currentPlayerUid == highResIndex && Client.currentPlayerLevel != player.level) {
@@ -415,7 +415,7 @@ public class ReceivePlayerPositions {
 					player.movePlayer(nextX, nextZ, speeds[highResIndex]);
 				}
 				player.level = player.field11714 = (byte) (player.level + dl & 0x3);
-				if (Client.world.method7793().isLinkBelow(nextX, nextZ)) {
+				if (Client.world.getSceneLevelTileFlags().isLinkBelow(nextX, nextZ)) {
 					player.field11714++;
 				}
 				if (Client.currentPlayerUid == highResIndex) {
@@ -463,7 +463,7 @@ public class ReceivePlayerPositions {
 			player.field12048 = lowResPlayer.field526;
 			player.routeSpeeds[0] = speeds[lowResIndex];
 			player.level = player.field11714 = (byte) level;
-			if (Client.world.method7793().isLinkBelow(nextX, nextZ)) {
+			if (Client.world.getSceneLevelTileFlags().isLinkBelow(nextX, nextZ)) {
 				player.field11714++;
 			}
 			player.tele(nextX, nextZ);

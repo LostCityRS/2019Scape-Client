@@ -1250,7 +1250,7 @@ public abstract class GpuRenderer extends Renderer {
 	@ObfuscatedName("afc.cr(IIIIZ)Lcm;")
 	public final Sprite method2314(int arg0, int arg1, int arg2, int arg3, boolean arg4) {
 		GpuSprite var6 = new GpuSprite(this, arg2, arg3, arg4, false);
-		var6.method1440(0, 0, arg2, arg3, arg0, arg1);
+		var6.draw(0, 0, arg2, arg3, arg0, arg1);
 		return var6;
 	}
 

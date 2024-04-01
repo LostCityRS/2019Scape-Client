@@ -30,7 +30,7 @@ public class NativeMouseLogger extends MouseLogger {
 			return;
 		}
 		ClientMessage var2 = ClientMessage.createMessage(ClientProt.EVENT_NATIVE_MOUSE_CLICK, Client.gameConnection.randomOut);
-		var2.buf.p4(var1.method17831() | var1.method17832() << 16);
+		var2.buf.p4(var1.getMouseClickX() | var1.getMouseClickY() << 16);
 		var2.buf.p2_alt1(this.method10262(var1, 65535));
 		var2.buf.p1_alt1(var1.method19539() << 1 | var1.method19537() & 0x1);
 		Client.gameConnection.queue(var2);

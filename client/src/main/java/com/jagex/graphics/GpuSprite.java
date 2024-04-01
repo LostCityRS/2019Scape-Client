@@ -113,7 +113,7 @@ public class GpuSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aef.p(IIIIII)V")
-	public void method1440(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void draw(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		this.field9401.upload(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
@@ -187,7 +187,7 @@ public class GpuSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aef.w()I")
-	public int method1436() {
+	public int getY() {
 		return this.field9410 + this.field9404 + this.field9412;
 	}
 
@@ -265,7 +265,7 @@ public class GpuSprite extends Sprite {
 		if (this.field9403.method16337() != GpuImageRelated.field3236) {
 			if (this.field9405) {
 				arg2 = this.field9407 * arg2 / this.getX();
-				arg3 = this.field9404 * arg3 / this.method1436();
+				arg3 = this.field9404 * arg3 / this.getY();
 				arg0 += this.field9408 * arg2 / this.field9407;
 				arg1 += this.field9410 * arg3 / this.field9404;
 			}
@@ -279,7 +279,7 @@ public class GpuSprite extends Sprite {
 		var9.method5050(arg4, arg5);
 		if (this.field9405) {
 			arg2 = this.field9407 * arg2 / this.getX();
-			arg3 = this.field9404 * arg3 / this.method1436();
+			arg3 = this.field9404 * arg3 / this.getY();
 			arg0 += this.field9408 * arg2 / this.field9407;
 			arg1 += this.field9410 * arg3 / this.field9404;
 		}
@@ -302,7 +302,7 @@ public class GpuSprite extends Sprite {
 			int var8 = arg1 + arg3;
 			int var9 = arg0 + arg2;
 			int var10 = this.getX();
-			int var11 = this.method1436();
+			int var11 = this.getY();
 			int var12 = this.field9410 + arg1;
 			for (int var13 = this.field9404 + var12; var13 <= var8; var13 += var11) {
 				int var14 = this.field9408 + arg0;
@@ -352,7 +352,7 @@ public class GpuSprite extends Sprite {
 			var22.method5051();
 		} else if (var26) {
 			int var27 = arg1 + arg3;
-			int var28 = this.method1436();
+			int var28 = this.getY();
 			var22.field2998.scale(this.field9401.getU((float) arg2), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
 			int var29 = this.field9410 + arg1;
 			for (int var30 = this.field9404 + var29; var30 <= var27; var30 += var28) {
@@ -398,7 +398,7 @@ public class GpuSprite extends Sprite {
 			int var37 = arg1 + arg3;
 			int var38 = arg0 + arg2;
 			int var39 = this.getX();
-			int var40 = this.method1436();
+			int var40 = this.getY();
 			int var41 = this.field9410 + arg1;
 			for (int var42 = this.field9404 + var41; var42 <= var37; var42 += var40) {
 				var22.field2998.scale(this.field9401.getU((float) this.field9407), this.field9401.getV((float) this.field9404), 1.0F, 1.0F);
@@ -457,7 +457,7 @@ public class GpuSprite extends Sprite {
 		this.field9403.method16054(arg8);
 		if (this.field9405) {
 			float var11 = (float) this.getX();
-			float var12 = (float) this.method1436();
+			float var12 = (float) this.getY();
 			float var13 = (arg2 - arg0) / var11;
 			float var14 = (arg3 - arg1) / var11;
 			float var15 = (arg4 - arg0) / var12;
@@ -508,7 +508,7 @@ public class GpuSprite extends Sprite {
 		var11.field2995.setToIdentity();
 		if (this.field9405) {
 			float var14 = (float) this.field9407 / (float) this.getX();
-			float var15 = (float) this.field9404 / (float) this.method1436();
+			float var15 = (float) this.field9404 / (float) this.getY();
 			var11.field2995.entries[0] = (arg2 - arg0) * var14;
 			var11.field2995.entries[1] = (arg3 - arg1) * var14;
 			var11.field2995.entries[4] = (arg4 - arg0) * var15;

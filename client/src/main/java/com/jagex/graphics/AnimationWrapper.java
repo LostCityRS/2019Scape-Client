@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public class AnimationWrapper {
 
 	@ObfuscatedName("aaq.k")
-	public SeqType field8501;
+	public SeqType seqType;
 
 	@ObfuscatedName("aaq.f")
 	public int field8502;
@@ -67,7 +67,7 @@ public class AnimationWrapper {
 
 	@ObfuscatedName("aaq.n(Laaq;I)V")
 	public final void method14370(AnimationWrapper arg0) {
-		this.field8501 = arg0.field8501;
+		this.seqType = arg0.seqType;
 		this.field8507 = arg0.field8507;
 		this.field8500 = arg0.field8500;
 		this.field8503 = arg0.field8503;
@@ -79,18 +79,18 @@ public class AnimationWrapper {
 	}
 
 	@ObfuscatedName("aaq.m(I)Z")
-	public final boolean method14346() {
-		return this.field8501 != null;
+	public final boolean hasSeqType() {
+		return this.seqType != null;
 	}
 
 	@ObfuscatedName("aaq.k(I)Lfg;")
-	public final SeqType method14347() {
-		return this.field8501;
+	public final SeqType getSeqType() {
+		return this.seqType;
 	}
 
 	@ObfuscatedName("aaq.f(B)I")
-	public final int method14348() {
-		return this.field8501 == null ? -1 : this.field8501.id;
+	public final int getSeqTypeId() {
+		return this.seqType == null ? -1 : this.seqType.id;
 	}
 
 	@ObfuscatedName("aaq.w(II)V")
@@ -120,46 +120,46 @@ public class AnimationWrapper {
 
 	@ObfuscatedName("aaq.d(IIIZZI)V")
 	public final void method14354(int arg0, int arg1, int arg2, boolean arg3, boolean arg4) {
-		if (arg0 == this.method14348()) {
+		if (arg0 == this.getSeqTypeId()) {
 			return;
 		}
 		if (arg0 == -1) {
-			this.field8501 = null;
+			this.seqType = null;
 		} else {
-			if (this.field8501 == null || this.field8501.id != arg0) {
-				this.field8501 = (SeqType) field12490.list(arg0);
-				if (this.field8501 == null || this.field8501.field1770 == null && !this.field8501.method2985()) {
-					this.field8501 = null;
+			if (this.seqType == null || this.seqType.id != arg0) {
+				this.seqType = (SeqType) field12490.list(arg0);
+				if (this.seqType == null || this.seqType.field1770 == null && !this.seqType.method2985()) {
+					this.seqType = null;
 					return;
 				}
-			} else if (this.field8501.field1768 == 0) {
+			} else if (this.seqType.field1768 == 0) {
 				return;
 			}
 			this.field8504 = 0;
 			this.field8503 = arg1;
 			this.field8509 = arg2;
 			this.field8505 = arg4;
-			if (this.field8501.method2985()) {
+			if (this.seqType.method2985()) {
 				if (arg3) {
 					this.field8502 = -1;
 				} else {
 					this.field8502 = 0;
 				}
-				this.method14413(this.field8501, this.field8502);
+				this.method14413(this.seqType, this.field8502);
 			} else {
 				if (arg3) {
-					this.field8511 = (int) (Math.random() * (double) this.field8501.field1770.length);
-					this.field8502 = (int) (Math.random() * (double) this.field8501.frames[this.field8511]);
+					this.field8511 = (int) (Math.random() * (double) this.seqType.field1770.length);
+					this.field8502 = (int) (Math.random() * (double) this.seqType.frames[this.field8511]);
 				} else {
 					this.field8511 = 0;
 					this.field8502 = 0;
 				}
 				this.field8506 = this.field8511 + 1;
-				if (this.field8506 < 0 || this.field8506 >= this.field8501.field1770.length) {
+				if (this.field8506 < 0 || this.field8506 >= this.seqType.field1770.length) {
 					this.field8506 = 0;
 				}
 				if (this.field8503 == 0) {
-					this.method14407(this.field8501, this.field8511);
+					this.method14407(this.seqType, this.field8511);
 				}
 			}
 			this.field8507 = false;
@@ -189,11 +189,11 @@ public class AnimationWrapper {
 		}
 		int var1 = 0;
 		if (this.method14372()) {
-			if (this.field8501.method2985()) {
+			if (this.seqType.method2985()) {
 				var1 |= this.field8498.field8525;
 			} else {
 				var1 |= this.field8513.field8515;
-				if (this.field8500 && this.field8501.field1771 != null) {
+				if (this.field8500 && this.seqType.field1771 != null) {
 					var1 |= this.field8512.field8515;
 				}
 			}
@@ -203,36 +203,36 @@ public class AnimationWrapper {
 
 	@ObfuscatedName("aaq.s(Ldo;II)V")
 	public final void method14359(Model arg0, int arg1) {
-		if (this.field8501 == null) {
+		if (this.seqType == null) {
 			return;
 		}
-		if (this.field8501.field1770 == null) {
-			if (this.field8501.method2985() && this.method14372()) {
-				arg0.method1705(this.field8498.field8523, this.field8502, arg1, this.field8501.field1786);
+		if (this.seqType.field1770 == null) {
+			if (this.seqType.method2985() && this.method14372()) {
+				arg0.method1705(this.field8498.field8523, this.field8502, arg1, this.seqType.field1786);
 			}
 		} else if (this.method14372()) {
-			arg0.method1704(this.field8513.field8520, this.field8513.field8516, this.field8513.field8519, this.field8513.field8517, this.field8502, this.field8501.frames[this.field8511], arg1, this.field8501.field1786);
-			if (this.field8500 && this.field8501.field1771 != null && this.field8512.field8518) {
-				arg0.method1704(this.field8512.field8520, this.field8512.field8516, this.field8512.field8519, this.field8512.field8517, this.field8502, this.field8501.frames[this.field8511], arg1, this.field8501.field1786);
+			arg0.method1704(this.field8513.field8520, this.field8513.field8516, this.field8513.field8519, this.field8513.field8517, this.field8502, this.seqType.frames[this.field8511], arg1, this.seqType.field1786);
+			if (this.field8500 && this.seqType.field1771 != null && this.field8512.field8518) {
+				arg0.method1704(this.field8512.field8520, this.field8512.field8516, this.field8512.field8519, this.field8512.field8517, this.field8502, this.seqType.frames[this.field8511], arg1, this.seqType.field1786);
 			}
 		}
 	}
 
 	@ObfuscatedName("aaq.y(Ldo;IIB)V")
 	public final void method14360(Model arg0, int arg1, int arg2) {
-		if (this.field8501.field1770 != null && this.method14372()) {
-			arg0.method1706(this.field8513.field8520, this.field8513.field8516, this.field8513.field8519, this.field8513.field8517, this.field8502, this.field8501.frames[this.field8511], arg1, arg2, this.field8501.field1786, null);
-			if (this.field8500 && this.field8501.field1771 != null && this.field8512.field8518) {
-				arg0.method1706(this.field8512.field8520, this.field8512.field8516, this.field8512.field8519, this.field8512.field8517, this.field8502, this.field8501.frames[this.field8511], arg1, arg2, this.field8501.field1786, null);
+		if (this.seqType.field1770 != null && this.method14372()) {
+			arg0.method1706(this.field8513.field8520, this.field8513.field8516, this.field8513.field8519, this.field8513.field8517, this.field8502, this.seqType.frames[this.field8511], arg1, arg2, this.seqType.field1786, null);
+			if (this.field8500 && this.seqType.field1771 != null && this.field8512.field8518) {
+				arg0.method1706(this.field8512.field8520, this.field8512.field8516, this.field8512.field8519, this.field8512.field8517, this.field8502, this.seqType.frames[this.field8511], arg1, arg2, this.seqType.field1786, null);
 			}
 		}
 	}
 
 	@ObfuscatedName("aaq.q(Ldo;B)V")
 	public final void method14361(Model arg0) {
-		if (this.field8501.field1770 != null && this.method14372()) {
+		if (this.seqType.field1770 != null && this.method14372()) {
 			arg0.method1878(this.field8513.field8520, this.field8513.field8516);
-			if (this.field8500 && this.field8501.field1771 != null && this.field8512.field8518) {
+			if (this.field8500 && this.seqType.field1771 != null && this.field8512.field8518) {
 				arg0.method1878(this.field8512.field8520, this.field8512.field8516);
 			}
 		}
@@ -243,8 +243,8 @@ public class AnimationWrapper {
 		if (!arg1.method14372() || !arg2.method14372()) {
 			return;
 		}
-		SeqType var3 = arg1.field8501;
-		SeqType var4 = arg2.field8501;
+		SeqType var3 = arg1.seqType;
+		SeqType var4 = arg2.seqType;
 		if (var3.field1770 == null) {
 			if (var3.method2985()) {
 				if (var4.field1770 != null) {
@@ -277,18 +277,18 @@ public class AnimationWrapper {
 
 	@ObfuscatedName("aaq.g(IB)V")
 	public final void method14389(int arg0) {
-		if (this.field8501.method2985()) {
+		if (this.seqType.method2985()) {
 			this.method14366(arg0);
 			return;
 		}
 		this.field8511 = 0;
-		this.field8506 = this.field8501.field1770.length > 1 ? 1 : -1;
+		this.field8506 = this.seqType.field1770.length > 1 ? 1 : -1;
 		this.field8502 = 0;
 		this.field8507 = false;
 		this.field8503 = arg0;
 		this.field8504 = 0;
-		if (this.field8501 != null & this.field8501.field1770 != null) {
-			this.method14407(this.field8501, this.field8511);
+		if (this.seqType != null & this.seqType.field1770 != null) {
+			this.method14407(this.seqType, this.field8511);
 			this.method14373();
 		}
 	}
@@ -299,16 +299,16 @@ public class AnimationWrapper {
 		this.field8503 = arg0;
 		this.field8504 = 0;
 		this.field8502 = 0;
-		if (this.field8501 != null) {
-			this.method14413(this.field8501, this.field8502);
+		if (this.seqType != null) {
+			this.method14413(this.seqType, this.field8502);
 		}
 	}
 
 	@ObfuscatedName("aaq.j(II)Z")
 	public final boolean method14367(int arg0) {
-		if (this.field8501 == null || arg0 == 0) {
+		if (this.seqType == null || arg0 == 0) {
 			return false;
-		} else if (this.field8501.method2985()) {
+		} else if (this.seqType.method2985()) {
 			return this.method14356(arg0);
 		} else {
 			if (this.field8503 > 0) {
@@ -318,20 +318,20 @@ public class AnimationWrapper {
 				}
 				arg0 -= this.field8503;
 				this.field8503 = 0;
-				this.method14407(this.field8501, this.field8511);
+				this.method14407(this.seqType, this.field8511);
 			}
 			int var2 = this.field8502 + arg0;
-			boolean var3 = this.field8501.field1772 | SeqType.field1775;
-			if (var2 > 100 && this.field8501.replayoff > 0) {
-				int var4 = this.field8501.field1770.length - this.field8501.replayoff;
-				while (this.field8511 < var4 && var2 > this.field8501.frames[this.field8511]) {
-					var2 -= this.field8501.frames[this.field8511];
+			boolean var3 = this.seqType.field1772 | SeqType.field1775;
+			if (var2 > 100 && this.seqType.replayoff > 0) {
+				int var4 = this.seqType.field1770.length - this.seqType.replayoff;
+				while (this.field8511 < var4 && var2 > this.seqType.frames[this.field8511]) {
+					var2 -= this.seqType.frames[this.field8511];
 					this.field8511++;
 				}
 				if (this.field8511 >= var4) {
 					int var5 = 0;
-					for (int var6 = var4; var6 < this.field8501.field1770.length; var6++) {
-						var5 += this.field8501.frames[var6];
+					for (int var6 = var4; var6 < this.seqType.field1770.length; var6++) {
+						var5 += this.seqType.frames[var6];
 					}
 					if (this.field8509 == 0) {
 						this.field8504 += var2 / var5;
@@ -339,42 +339,42 @@ public class AnimationWrapper {
 					var2 %= var5;
 				}
 				this.field8506 = this.field8511 + 1;
-				if (this.field8506 >= this.field8501.field1770.length) {
-					if (this.field8501.replayoff == -1 && this.field8505) {
+				if (this.field8506 >= this.seqType.field1770.length) {
+					if (this.seqType.replayoff == -1 && this.field8505) {
 						this.field8506 = 0;
 					} else {
-						this.field8506 -= this.field8501.replayoff;
+						this.field8506 -= this.seqType.replayoff;
 					}
-					if (this.field8506 < 0 || this.field8506 >= this.field8501.field1770.length) {
+					if (this.field8506 < 0 || this.field8506 >= this.seqType.field1770.length) {
 						this.field8506 = 0;
 					}
 				}
 				var3 = true;
 			}
-			while (var2 > this.field8501.frames[this.field8511]) {
+			while (var2 > this.seqType.frames[this.field8511]) {
 				var3 = true;
-				var2 -= this.field8501.frames[++this.field8511 - 1];
-				if (this.field8511 >= this.field8501.field1770.length) {
-					if (this.field8501.replayoff != -1 && this.field8509 != 2) {
-						this.field8511 -= this.field8501.replayoff;
+				var2 -= this.seqType.frames[++this.field8511 - 1];
+				if (this.field8511 >= this.seqType.field1770.length) {
+					if (this.seqType.replayoff != -1 && this.field8509 != 2) {
+						this.field8511 -= this.seqType.replayoff;
 						if (this.field8509 == 0) {
 							this.field8504++;
 						}
 					}
-					if (this.field8504 >= this.field8501.replaycount || this.field8511 < 0 || this.field8511 >= this.field8501.field1770.length) {
+					if (this.field8504 >= this.seqType.replaycount || this.field8511 < 0 || this.field8511 >= this.seqType.field1770.length) {
 						this.field8507 = true;
 						break;
 					}
 				}
-				this.method14407(this.field8501, this.field8511);
+				this.method14407(this.seqType, this.field8511);
 				this.field8506 = this.field8511 + 1;
-				if (this.field8506 >= this.field8501.field1770.length) {
-					if (this.field8501.replayoff == -1 && this.field8505) {
+				if (this.field8506 >= this.seqType.field1770.length) {
+					if (this.seqType.replayoff == -1 && this.field8505) {
 						this.field8506 = 0;
 					} else {
-						this.field8506 -= this.field8501.replayoff;
+						this.field8506 -= this.seqType.replayoff;
 					}
-					if (this.field8506 < 0 || this.field8506 >= this.field8501.field1770.length) {
+					if (this.field8506 < 0 || this.field8506 >= this.seqType.field1770.length) {
 						this.field8506 = 0;
 					}
 				}
@@ -408,18 +408,18 @@ public class AnimationWrapper {
 		}
 		boolean var5 = arg0 != 0;
 		for (int var6 = 0; var6 < arg0; var6++) {
-			this.method14413(this.field8501, this.field8502);
+			this.method14413(this.seqType, this.field8502);
 			this.field8502++;
 			if (this.field8502 >= var3.method19383()) {
-				if (this.field8501.replayoff == -1 || this.field8509 == 2) {
+				if (this.seqType.replayoff == -1 || this.field8509 == 2) {
 					this.field8507 = true;
 				} else {
-					int var7 = var3.method19384() - this.field8501.replayoff;
+					int var7 = var3.method19384() - this.seqType.replayoff;
 					this.field8502 = var7;
 					if (this.field8509 == 0) {
 						this.field8504++;
 					}
-					if (this.field8504 >= this.field8501.replaycount) {
+					if (this.field8504 >= this.seqType.replaycount) {
 						this.field8507 = true;
 					}
 				}
@@ -431,12 +431,12 @@ public class AnimationWrapper {
 	@ObfuscatedName("aaq.ae(II)Z")
 	public final boolean method14369(int arg0) {
 		int var2;
-		if (this.field8501 == null | (var2 = arg0 - this.field8503) <= 0) {
+		if (this.seqType == null | (var2 = arg0 - this.field8503) <= 0) {
 			return false;
-		} else if (this.field8501.method2985()) {
+		} else if (this.seqType.method2985()) {
 			return true;
 		} else {
-			return this.field8501.field1772 | this.field8502 + var2 > this.field8501.frames[this.field8511];
+			return this.seqType.field1772 | this.field8502 + var2 > this.seqType.frames[this.field8511];
 		}
 	}
 
@@ -451,17 +451,17 @@ public class AnimationWrapper {
 
 	@ObfuscatedName("aaq.al(B)Z")
 	public final boolean method14372() {
-		if (this.field8501 == null) {
+		if (this.seqType == null) {
 			return false;
 		}
 		boolean var1 = false;
 		boolean var2;
-		if (this.field8501.method2985()) {
-			var2 = this.field8498.method14443(field12490, this.field8501);
+		if (this.seqType.method2985()) {
+			var2 = this.field8498.method14443(field12490, this.seqType);
 		} else {
-			var2 = this.field8513.method14431(field12490, this.field8501, this.field8511, this.field8506, this.field8501.field1770);
-			if (var2 && this.field8500 && this.field8501.field1771 != null) {
-				this.field8512.method14431(field12490, this.field8501, this.field8511, this.field8506, this.field8501.field1771);
+			var2 = this.field8513.method14431(field12490, this.seqType, this.field8511, this.field8506, this.seqType.field1770);
+			if (var2 && this.field8500 && this.seqType.field1771 != null) {
+				this.field8512.method14431(field12490, this.seqType, this.field8511, this.field8506, this.seqType.field1771);
 			}
 		}
 		return var2;
@@ -469,7 +469,7 @@ public class AnimationWrapper {
 
 	@ObfuscatedName("aaq.ac(I)V")
 	public final void method14373() {
-		if (this.field8501 == null || this.field8501.method2985()) {
+		if (this.seqType == null || this.seqType.method2985()) {
 			this.field8498.method14442();
 		} else {
 			this.field8513.method14432();

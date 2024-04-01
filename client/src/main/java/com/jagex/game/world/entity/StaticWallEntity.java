@@ -91,7 +91,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 				}
 			}
 		}
-		this.method18363(1);
+		this.createEntityBounds(1);
 	}
 
 	@ObfuscatedName("ajg.bu(B)Z")
@@ -110,7 +110,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.by(B)I")
 	public int overlayHeight() {
-		return this.field11173 == null ? 0 : this.field11173.method1748();
+		return this.field11173 == null ? 0 : this.field11173.getMinY();
 	}
 
 	@ObfuscatedName("cs.bz(III)I")
@@ -134,12 +134,12 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		FloorModel var5;
 		FloorModel var6;
 		if (this.field11169) {
-			var5 = this.field11716.field6917[this.field11714];
-			var6 = this.field11716.field6915[0];
+			var5 = this.scene.field6917[this.field11714];
+			var6 = this.scene.field6915[0];
 		} else {
-			var5 = this.field11716.field6915[this.field11714];
+			var5 = this.scene.field6915[this.field11714];
 			if (this.field11714 < 3) {
-				var6 = this.field11716.field6915[this.field11714 + 1];
+				var6 = this.scene.field6915[this.field11714 + 1];
 			} else {
 				var6 = null;
 			}
@@ -149,42 +149,42 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer renderer) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11165 == null) {
-			this.field11165 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17419(arg0, 0));
+			this.field11165 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17419(renderer, 0));
 		}
 		return this.field11165;
 	}
 
 	@ObfuscatedName("ajg.fc(Ldh;I)Ltl;")
-	public PickableEntity method17372(Renderer arg0) {
+	public PickableEntity draw(Renderer renderer) {
 		if (this.field11173 == null) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
-		PickableEntity var3 = PickableEntity.method16749(this.field11170);
+		PickableEntity var3 = PickableEntity.getPickableEntity(this.field11170);
 		Cuboid var4 = ((LocType) this.field11162.list(this.field11166)).clickbox;
 		if (var4 == null) {
-			this.field11173.draw(var2, this.field11713[0], 0);
+			this.field11173.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.field11173.draw(var2, null, 0);
-			arg0.method2193(var2, this.field11713[0], var4);
+			renderer.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajg.fw(Ldh;I)V")
-	public void method17373(Renderer arg0) {
+	public void method17373(Renderer renderer) {
 	}
 
 	@ObfuscatedName("ajg.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer renderer, int arg1, int arg2) {
 		Cuboid var4 = ((LocType) this.field11162.list(this.field11166)).clickbox;
 		if (var4 != null) {
-			return arg0.pick(arg1, arg2, this.method10533(), var4);
+			return renderer.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17419(arg0, 131072);
+		Model var5 = this.method17419(renderer, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -199,14 +199,14 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
-		if (arg1 instanceof StaticWallEntity) {
-			StaticWallEntity var7 = (StaticWallEntity) arg1;
+	public void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+		if (entity instanceof StaticWallEntity) {
+			StaticWallEntity var7 = (StaticWallEntity) entity;
 			if (this.field11173 != null && var7.field11173 != null) {
 				this.field11173.method1686(var7.field11173, arg2, arg3, arg4, arg5);
 			}
-		} else if (arg1 instanceof StaticSceneryEntity) {
-			StaticSceneryEntity var8 = (StaticSceneryEntity) arg1;
+		} else if (entity instanceof StaticSceneryEntity) {
+			StaticSceneryEntity var8 = (StaticSceneryEntity) entity;
 			if (this.field11173 != null && var8.field11136 != null) {
 				this.field11173.method1686(var8.field11136, arg2, arg3, arg4, arg5);
 			}
@@ -266,7 +266,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 
@@ -283,7 +283,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 }

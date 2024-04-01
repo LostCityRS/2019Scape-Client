@@ -537,27 +537,27 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.ao(B)Lox;")
-	public Vector3 method4794() {
+	public Vector3 getLookatAcceleration() {
 		return this.lookatAcceleration;
 	}
 
 	@ObfuscatedName("je.aj(I)Lox;")
-	public Vector3 method4778() {
+	public Vector3 getPositionAcceleration() {
 		return this.positionAcceleration;
 	}
 
 	@ObfuscatedName("je.ay(S)F")
-	public float method4724() {
+	public float getPositionAngularInterpolation() {
 		return this.positionAngularInterpolation;
 	}
 
 	@ObfuscatedName("je.ab(B)Lox;")
-	public Vector3 method4728() {
+	public Vector3 getLookatMaxSpeed() {
 		return this.lookatMaxSpeed;
 	}
 
 	@ObfuscatedName("je.az(B)Lox;")
-	public Vector3 method4693() {
+	public Vector3 getPositionMaxSpeed() {
 		return this.positionMaxSpeed;
 	}
 

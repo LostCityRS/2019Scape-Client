@@ -276,8 +276,8 @@ public class Preferences {
 		setCpuUsagePreference();
 		Client.preferences.setPreference(Client.preferences.screenSize, 0);
 		Client.preferences.setPreference(Client.preferences.preset, 4);
-		Client.method9516();
-		Client.world.method7816().resetFade();
+		Client.resetModelCaches();
+		Client.world.getEnvironmentManager().resetFade();
 		Client.field10836 = true;
 	}
 
@@ -308,8 +308,8 @@ public class Preferences {
 		setCpuUsagePreference();
 		Client.preferences.setPreference(Client.preferences.screenSize, 1);
 		Client.preferences.setPreference(Client.preferences.preset, 3);
-		Client.method9516();
-		Client.world.method7816().resetFade();
+		Client.resetModelCaches();
+		Client.world.getEnvironmentManager().resetFade();
 		Client.field10836 = true;
 	}
 
@@ -340,8 +340,8 @@ public class Preferences {
 		setCpuUsagePreference();
 		Client.preferences.setPreference(Client.preferences.screenSize, 2);
 		Client.preferences.setPreference(Client.preferences.preset, 2);
-		Client.method9516();
-		Client.world.method7816().resetFade();
+		Client.resetModelCaches();
+		Client.world.getEnvironmentManager().resetFade();
 		Client.field10836 = true;
 	}
 
@@ -372,8 +372,8 @@ public class Preferences {
 		setCpuUsagePreference();
 		Client.preferences.setPreference(Client.preferences.screenSize, 2);
 		Client.preferences.setPreference(Client.preferences.preset, 1);
-		Client.method9516();
-		Client.world.method7816().resetFade();
+		Client.resetModelCaches();
+		Client.world.getEnvironmentManager().resetFade();
 		Client.field10836 = true;
 	}
 

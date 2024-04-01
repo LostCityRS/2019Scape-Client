@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public class LocPositionAdjustment {
 
 	@ObfuscatedName("vz.e")
-	public int rotation;
+	public int angle;
 
 	@ObfuscatedName("vz.n")
 	public int shape;
@@ -37,10 +37,10 @@ public class LocPositionAdjustment {
 		if (arg2) {
 			int var6 = buf.g1();
 			this.shape = info & 0x7F;
-			this.rotation = var6;
+			this.angle = var6;
 		} else {
 			this.shape = info >> 2 & 0x1F;
-			this.rotation = info & 0x3;
+			this.angle = info & 0x3;
 		}
 		this.field7539 = null;
 		if (var5) {

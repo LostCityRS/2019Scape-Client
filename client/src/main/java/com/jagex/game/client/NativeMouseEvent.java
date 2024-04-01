@@ -174,12 +174,12 @@ public class NativeMouseEvent extends MouseEvent {
 	}
 
 	@ObfuscatedName("asp.n(I)I")
-	public int method17831() {
+	public int getMouseClickX() {
 		return this.field12419;
 	}
 
 	@ObfuscatedName("asp.m(B)I")
-	public int method17832() {
+	public int getMouseClickY() {
 		return this.field12424;
 	}
 }

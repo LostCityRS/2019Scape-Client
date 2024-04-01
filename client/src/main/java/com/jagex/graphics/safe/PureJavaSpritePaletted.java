@@ -31,7 +31,7 @@ public class PureJavaSpritePaletted extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apd.p(IIIIII)V")
-	public void method1440(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void draw(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		throw new IllegalStateException();
 	}
 

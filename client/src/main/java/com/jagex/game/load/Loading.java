@@ -116,7 +116,7 @@ public class Loading {
 	}
 
 	@ObfuscatedName("jb.e(I)V")
-	public static void method4883() {
+	public static void reload() {
 		field2944 = true;
 		field8535 = LoginManager.username;
 		field4407 = LoginManager.password;
@@ -402,9 +402,9 @@ public class Loading {
 			}
 			Client.wearposDefaults = new WearposDefaults(Client.defaultsJs5);
 			Client.skillDefaults = new SkillDefaults(Client.defaultsJs5);
-			MiniMenu.field1971 = new MiniMenuDefaults(Client.defaultsJs5);
+			MiniMenu.miniMenuDefaults = new MiniMenuDefaults(Client.defaultsJs5);
 			Client.cutsceneDefaults = new CutsceneDefaults(Client.defaultsJs5);
-			WorldMap.field6792 = new WorldMapDefaults(Client.defaultsJs5);
+			WorldMap.worldMapDefaults = new WorldMapDefaults(Client.defaultsJs5);
 		}
 		if (field3419 == LoadingStage.SETUP_CONFIG_DECODERS) {
 			if (Client.graphicsDefaults.performancemetricsmodel != -1 && !Client.modelsJs5.requestdownload(Client.graphicsDefaults.performancemetricsmodel, 0)) {
@@ -415,8 +415,8 @@ public class Loading {
 			Client.paramTypeList = new ParamTypeList(Client.modegame, Client.language, Client.configJs5);
 			Client.basTypeList = new BASTypeList(Client.modegame, Client.language, Client.configJs5);
 			Client.cursorTypeList = new CursorTypeList(Client.modegame, Client.language, Client.configJs5, Client.spritesJs5);
-			Client.field9123 = new CachingConfigTypeList(Client.modegame, Client.language, Client.configJs5, Js5ConfigGroup.DBROWTYPE, 64, new BasicTypeFactory(DBRowType.class));
-			Client.field1840 = new CachingConfigTypeList(Client.modegame, Client.language, Client.configJs5, Js5ConfigGroup.DBTABLETYPE, 16, new BasicTypeFactory(DBTableType.class));
+			Client.dbRowTypeList = new CachingConfigTypeList(Client.modegame, Client.language, Client.configJs5, Js5ConfigGroup.DBROWTYPE, 64, new BasicTypeFactory(DBRowType.class));
+			Client.dbTableTypeList = new CachingConfigTypeList(Client.modegame, Client.language, Client.configJs5, Js5ConfigGroup.DBTABLETYPE, 16, new BasicTypeFactory(DBTableType.class));
 			Client.enumTypeList = new EnumTypeList(Client.modegame, Client.language, Client.configEnumJs5);
 			Client.overlayTypeList = new FloorOverlayTypeList(Client.modegame, Client.language, Client.configJs5);
 			Client.underlayTypeList = new FloorUnderlayTypeList(Client.modegame, Client.language, Client.configJs5);
@@ -446,8 +446,8 @@ public class Loading {
 			Client.varClanSettingTypeList = new VarBasicTypeListClient(Client.modegame, VarDomainType.CLAN_SETTING, Client.language, Client.configJs5);
 			Client.varPlayerGroupTypeList = new VarBasicTypeListClient(Client.modegame, VarDomainType.PLAYER_GROUP, Client.language, Client.configJs5);
 			Client.varObjTypeList = new VarBasicTypeListClient(Client.modegame, VarDomainType.OBJECT, Client.language, Client.configJs5);
-			Client.field1232 = VarTypeList.createDomainToListEnumMap(new VarTypeList[] { Client.varBasicTypeList, Client.varPlayerTypeList, Client.varNpcTypeList, Client.varClanTypeList, Client.varClanSettingTypeList, Client.varPlayerGroupTypeList, Client.varObjTypeList});
-			Client.varBitTypeList = new VarBitTypeList(Client.modegame, Client.language, Client.configJs5, Client.field1232);
+			Client.varDomainToListEnumMap = VarTypeList.createDomainToListEnumMap(new VarTypeList[] { Client.varBasicTypeList, Client.varPlayerTypeList, Client.varNpcTypeList, Client.varClanTypeList, Client.varClanSettingTypeList, Client.varPlayerGroupTypeList, Client.varObjTypeList});
+			Client.varBitTypeList = new VarBitTypeList(Client.modegame, Client.language, Client.configJs5, Client.varDomainToListEnumMap);
 			Client.variableTypeProvider = new VariableTypeProviderClient();
 			Component.method3669(Client.interfacesJs5, Client.modelsJs5, Client.spritesJs5, Client.fontmetricsJs5);
 			Client.basicBillboardTypeList = new BasicBillboardTypeList(Client.configBillboardJs5);
@@ -456,7 +456,7 @@ public class Loading {
 			Client.quickChatCatTypeList = new QuickChatCatTypeList(Client.language, Client.quickchatJs5, Client.quickchatGlobalJs5);
 			Client.quickChatPhraseTypeList = new QuickChatPhraseTypeList(Client.language, Client.quickchatJs5, Client.quickchatGlobalJs5, new ClientDynamicProvider());
 			Client.localPlayerGameState = new PlayerGameState(Client.varPlayerTypeList, Client.varBitTypeList, Client.skillDefaults.getSkillCount());
-			Client.method9516();
+			Client.resetModelCaches();
 			AnimationWrapper.method6114(Client.seqTypeList);
 			ParticleSystemRenderer.method706(Client.basicParticleEmitterTypeList, Client.basicParticleEffectorTypeList);
 			SkyBox.method13864(Client.modelsJs5, Client.materialList, Client.textureList);
@@ -473,7 +473,7 @@ public class Loading {
 			}
 		}
 		if (field3419 == LoadingStage.field2914) {
-			WorldMap.method8506(Client.worldmapJs5, Client.worldmapAreaDataJs5, Client.overlayTypeList, Client.underlayTypeList, Client.world.method7750(), Client.mapElementTypeList, Client.msiTypeList, Client.localPlayerGameState, Client.localPlayerGameState);
+			WorldMap.method8506(Client.worldmapJs5, Client.worldmapAreaDataJs5, Client.overlayTypeList, Client.underlayTypeList, Client.world.getLocTypeList(), Client.mapElementTypeList, Client.msiTypeList, Client.localPlayerGameState, Client.localPlayerGameState);
 		}
 		if (field3419 == LoadingStage.SETUP_VARC_SYSTEM) {
 			Client.clientVariableManager = new ClientVariableManager(Client.varBasicTypeList);

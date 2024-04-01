@@ -38,7 +38,7 @@ public class LoginRelated2 implements LoadingScreenElement {
 		int var2 = GameShell.canvasWid > Client.frameWidth ? GameShell.canvasWid : Client.frameWidth;
 		int var3 = GameShell.canvasHei > Client.frameHeight ? GameShell.canvasHei : Client.frameHeight;
 		int var4 = this.field3046.getX();
-		int var5 = this.field3046.method1436();
+		int var5 = this.field3046.getY();
 		int var6 = 0;
 		int var7 = var2;
 		int var8 = var2 * var5 / var4;

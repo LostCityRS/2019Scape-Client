@@ -545,7 +545,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 		if (this.field12033 == null) {
 			this.field12033 = this.method2314(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), false);
 		} else {
-			this.field12033.method1440(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), 0, 0);
+			this.field12033.draw(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), 0, 0);
 		}
 		this.method2142(this.field12018);
 		this.method2475(1, -16777216);
@@ -593,7 +593,7 @@ public final class OpenGLRenderer extends GpuRenderer {
 			if (this.field12033 == null) {
 				this.field12033 = this.method2314(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), false);
 			} else {
-				this.field12033.method1440(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), 0, 0);
+				this.field12033.draw(0, 0, this.renderTarget.getWidth(), this.renderTarget.getHeight(), 0, 0);
 			}
 			this.method2142(this.field12018);
 			this.method2475(1, -16777216);

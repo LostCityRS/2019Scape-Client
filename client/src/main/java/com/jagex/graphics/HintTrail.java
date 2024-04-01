@@ -93,7 +93,7 @@ public class HintTrail {
 	@ObfuscatedName("ta.k(Ltx;B)V")
 	public void method8405(Scene arg0) {
 		this.field6752 = new LinkedList();
-		SceneLevelTileFlags var2 = Client.world.method7793();
+		SceneLevelTileFlags var2 = Client.world.getSceneLevelTileFlags();
 		CoordGrid var3 = Client.world.method7727();
 		CoordGrid var4 = new CoordGrid(Client.currentPlayerLevel, this.field6750[0], this.field6753[0]);
 		for (int var5 = 1; var5 < this.field6751; var5++) {
@@ -126,7 +126,7 @@ public class HintTrail {
 	}
 
 	@ObfuscatedName("qo.f(II)V")
-	public static void method7309(int arg0) {
+	public static void resetModelCache(int arg0) {
 		field6755 = arg0;
 	}
 

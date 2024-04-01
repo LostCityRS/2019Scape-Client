@@ -38,10 +38,10 @@ public class GraphicsDefaults {
 	public boolean field7727 = true;
 
 	@ObfuscatedName("ws.o")
-	public short field7728 = -1;
+	public short spotshadowtexture = -1;
 
 	@ObfuscatedName("ws.s")
-	public byte field7757 = 0;
+	public byte spotshadowtexture_alpha = 0;
 
 	@ObfuscatedName("ws.y")
 	public int field7730 = 100;
@@ -228,8 +228,8 @@ public class GraphicsDefaults {
 				} else if (var3 == 19) {
 					this.invMillionColor = buf.g4s();
 				} else if (var3 == 20) {
-					this.field7728 = (short) buf.g2();
-					this.field7757 = (byte) buf.g1();
+					this.spotshadowtexture = (short) buf.g2();
+					this.spotshadowtexture_alpha = (byte) buf.g1();
 				} else if (var3 == 21) {
 					this.field7730 = buf.g1();
 				} else if (var3 == 22) {

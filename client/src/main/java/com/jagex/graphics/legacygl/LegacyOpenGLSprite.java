@@ -86,7 +86,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.w()I")
-	public int method1436() {
+	public int getY() {
 		return this.field9396.field11902 + this.field9392 + this.field9398;
 	}
 
@@ -96,7 +96,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.p(IIIIII)V")
-	public void method1440(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void draw(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		this.method15372(arg0, arg1, arg2, arg3, arg4, arg5, false);
 	}
 
@@ -270,7 +270,7 @@ public class LegacyOpenGLSprite extends Sprite {
 		OpenGL.glColor4ub((byte) (arg5 >> 16), (byte) (arg5 >> 8), (byte) arg5, (byte) (arg5 >> 24));
 		if (this.field9395) {
 			float var9 = (float) arg2 / (float) this.getX();
-			float var10 = (float) arg3 / (float) this.method1436();
+			float var10 = (float) arg3 / (float) this.getY();
 			float var11 = (float) this.field9391 * var9 + (float) arg0;
 			float var12 = (float) this.field9392 * var10 + (float) arg1;
 			float var13 = (float) this.field9396.field11900 * var9 + var11;
@@ -369,7 +369,7 @@ public class LegacyOpenGLSprite extends Sprite {
 		OpenGL.glPushMatrix();
 		OpenGL.glTranslatef((float) this.field9391, (float) this.field9392, 0.0F);
 		int var12 = this.getX();
-		int var13 = this.method1436();
+		int var13 = this.getY();
 		int var14 = this.field9396.field11902 + arg1;
 		OpenGL.glBegin(7);
 		int var15 = arg1;
@@ -438,7 +438,7 @@ public class LegacyOpenGLSprite extends Sprite {
 	public void method1433(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, int arg7, int arg8, int arg9) {
 		if (this.field9395) {
 			float var11 = (float) this.getX();
-			float var12 = (float) this.method1436();
+			float var12 = (float) this.getY();
 			float var13 = (arg2 - arg0) / var11;
 			float var14 = (arg3 - arg1) / var11;
 			float var15 = (arg4 - arg0) / var12;
@@ -483,7 +483,7 @@ public class LegacyOpenGLSprite extends Sprite {
 		LegacyGraphicRelated var11 = ((LegacyGraphicRelated2) arg7).field9416;
 		if (this.field9395) {
 			float var12 = (float) this.getX();
-			float var13 = (float) this.method1436();
+			float var13 = (float) this.getY();
 			float var14 = (arg2 - arg0) / var12;
 			float var15 = (arg3 - arg1) / var12;
 			float var16 = (arg4 - arg0) / var13;

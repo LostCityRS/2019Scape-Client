@@ -60,7 +60,7 @@ public class WorldMap {
 	public static VariableTypeProvider field6791;
 
 	@ObfuscatedName("tf.u")
-	public static WorldMapDefaults field6792;
+	public static WorldMapDefaults worldMapDefaults;
 
 	@ObfuscatedName("tf.z")
 	public static WorldMapAreaMetadata currentWorldMap;
@@ -313,7 +313,7 @@ public class WorldMap {
 		WorldMapAreaMetadata var1 = (WorldMapAreaMetadata) field6796.getNode((long) arg0);
 		if (var1 != null && currentWorldMap != var1) {
 			currentWorldMap = var1;
-			field6819 = field6792.field7690 == currentWorldMap.id;
+			field6819 = worldMapDefaults.field7690 == currentWorldMap.id;
 		}
 	}
 
@@ -323,7 +323,7 @@ public class WorldMap {
 			return false;
 		} else {
 			currentWorldMap = arg0;
-			field6819 = field6792.field7690 == currentWorldMap.id;
+			field6819 = worldMapDefaults.field7690 == currentWorldMap.id;
 			return true;
 		}
 	}
@@ -409,7 +409,7 @@ public class WorldMap {
 	public static boolean method8542(Renderer arg0, int arg1, int arg2, boolean arg3) {
 		long var4 = MonotonicTime.get();
 		if (field6793 == 0) {
-			if (field6792.field7695 == currentWorldMap.id) {
+			if (worldMapDefaults.field7695 == currentWorldMap.id) {
 				int var6 = field6795.getgroupid(currentWorldMap.field12351);
 				if (field6841 == null) {
 					field6841 = new Packet(field6795.getfile(var6, 0));
@@ -612,7 +612,7 @@ public class WorldMap {
 								LocType var5 = (LocType) field6785.list(var3.field11444[var4]);
 								int var6 = var5.mapelement;
 								if (var5.multiloc != null) {
-									LocType var7 = var5.getVisible(field6791, field6790);
+									LocType var7 = var5.getMultiLoc(field6791, field6790);
 									if (var7 != null) {
 										var6 = var7.mapelement;
 									}
@@ -630,7 +630,7 @@ public class WorldMap {
 						LocType var10 = (LocType) field6785.list(var9);
 						int var11 = var10.mapelement;
 						if (var10.multiloc != null) {
-							LocType var12 = var10.getVisible(field6791, field6790);
+							LocType var12 = var10.getMultiLoc(field6791, field6790);
 							if (var12 != null) {
 								var11 = var12.mapelement;
 							}
@@ -663,7 +663,7 @@ public class WorldMap {
 								LocType var21 = (LocType) field6785.list(var19.field6773[var20]);
 								int var22 = var21.mapelement;
 								if (var21.multiloc != null) {
-									LocType var23 = var21.getVisible(field6791, field6790);
+									LocType var23 = var21.getMultiLoc(field6791, field6790);
 									if (var23 != null) {
 										var22 = var23.mapelement;
 									}
@@ -1182,7 +1182,7 @@ public class WorldMap {
 				int[] var12 = var10.method15058(arg0, var8.mapsceneiconrotate ? arg6[var7] >> 6 & 0x3 : 0, var8.mapsceneiconmirror ? var8.mirror : false);
 				if (var11 != null) {
 					int var13 = var11.getX();
-					int var14 = var11.method1436();
+					int var14 = var11.getY();
 					int var15 = arg2 * var13 / 64 >> 2;
 					int var16 = arg2 * var14 / 64 >> 2;
 					if (var10.field9152) {
@@ -1336,91 +1336,91 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.aw([IIIIII)V")
 	public static void method8538(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		int var6 = field6792.field7691 >> 24 & 0xFF;
+		int var6 = worldMapDefaults.field7691 >> 24 & 0xFF;
 		int var7 = 255 - var6;
 		if ((!field6855[NORTH] || !field6855[NORTHEAST] && !field6855[EAST]) && (!field6855[SOUTH] || !field6855[NORTHEAST] && !field6855[EAST])) {
 			method8539(arg0, arg1, arg2, arg3, arg4, arg5, var6, var7, true, true, true, true);
 			if (field6855[NORTHWEST]) {
-				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = field6792.field7692;
-				arg0[(arg5 - arg4) * arg5 + arg2] = field6792.field7692;
-				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg4) * arg5 + arg2] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = worldMapDefaults.field7692;
 			}
 			if (field6855[SOUTHWEST]) {
-				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = field6792.field7692;
-				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = field6792.field7692;
-				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = worldMapDefaults.field7692;
 			}
 			if (field6855[WEST]) {
-				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = field6792.field7692;
-				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = field6792.field7692;
-				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = worldMapDefaults.field7692;
 			}
 			if (field6855[SOUTHEAST]) {
-				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = field6792.field7692;
-				arg0[(arg5 - arg4) * arg5 + arg1] = field6792.field7692;
-				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg4) * arg5 + arg1] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = worldMapDefaults.field7692;
 			}
 			return;
 		}
 		if (field6855[NORTH] && field6855[NORTHEAST]) {
-			method8541(arg0, arg2 - field6792.field7694 + 1, arg4 - field6792.field7694 + 1, arg5, var6, var7, NORTHWEST);
+			method8541(arg0, arg2 - worldMapDefaults.field7694 + 1, arg4 - worldMapDefaults.field7694 + 1, arg5, var6, var7, NORTHWEST);
 		} else {
-			method8539(arg0, arg2 - field6792.field7694 + 1, arg2, arg4 - field6792.field7694 + 1, arg4, arg5, var6, var7, true, true, false, false);
+			method8539(arg0, arg2 - worldMapDefaults.field7694 + 1, arg2, arg4 - worldMapDefaults.field7694 + 1, arg4, arg5, var6, var7, true, true, false, false);
 			if (field6855[NORTHWEST]) {
-				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = field6792.field7692;
-				arg0[(arg5 - arg4) * arg5 + arg2] = field6792.field7692;
-				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg2] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg4) * arg5 + arg2] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg2 - 1] = worldMapDefaults.field7692;
 			}
 		}
 		if (field6855[SOUTH] && field6855[NORTHEAST]) {
-			method8541(arg0, arg2 - field6792.field7694 + 1, arg3, arg5, var6, var7, SOUTHWEST);
+			method8541(arg0, arg2 - worldMapDefaults.field7694 + 1, arg3, arg5, var6, var7, SOUTHWEST);
 		} else {
-			method8539(arg0, arg2 - field6792.field7694 + 1, arg2, arg3, field6792.field7694 + arg3 - 1, arg5, var6, var7, false, true, true, false);
+			method8539(arg0, arg2 - worldMapDefaults.field7694 + 1, arg2, arg3, worldMapDefaults.field7694 + arg3 - 1, arg5, var6, var7, false, true, true, false);
 			if (field6855[SOUTHWEST]) {
-				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = field6792.field7692;
-				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = field6792.field7692;
-				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg2] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg3 - 2) * arg5 + arg2] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg2 - 1] = worldMapDefaults.field7692;
 			}
 		}
 		if (field6855[SOUTH] && field6855[EAST]) {
 			method8541(arg0, arg1, arg3, arg5, var6, var7, WEST);
 		} else {
-			method8539(arg0, arg1, field6792.field7694 + arg1 - 1, arg3, field6792.field7694 + arg3 - 1, arg5, var6, var7, false, false, true, true);
+			method8539(arg0, arg1, worldMapDefaults.field7694 + arg1 - 1, arg3, worldMapDefaults.field7694 + arg3 - 1, arg5, var6, var7, false, false, true, true);
 			if (field6855[WEST]) {
-				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = field6792.field7692;
-				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = field6792.field7692;
-				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = field6792.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg1] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg3 - 2) * arg5 + arg1] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg3 - 1) * arg5 + arg1 + 1] = worldMapDefaults.field7692;
 			}
 		}
 		if (field6855[NORTH] && field6855[EAST]) {
-			method8541(arg0, arg1, arg4 - field6792.field7694 + 1, arg5, var6, var7, SOUTHEAST);
+			method8541(arg0, arg1, arg4 - worldMapDefaults.field7694 + 1, arg5, var6, var7, SOUTHEAST);
 		} else {
-			method8539(arg0, arg1, field6792.field7694 + arg1 - 1, arg4 - field6792.field7694 + 1, arg4, arg5, var6, var7, true, false, false, true);
+			method8539(arg0, arg1, worldMapDefaults.field7694 + arg1 - 1, arg4 - worldMapDefaults.field7694 + 1, arg4, arg5, var6, var7, true, false, false, true);
 			if (field6855[SOUTHEAST]) {
-				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = field6792.field7692;
-				arg0[(arg5 - arg4) * arg5 + arg1] = field6792.field7692;
-				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = field6792.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg1] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg4) * arg5 + arg1] = worldMapDefaults.field7692;
+				arg0[(arg5 - arg4 - 1) * arg5 + arg1 + 1] = worldMapDefaults.field7692;
 			}
 		}
-		if (field6792.field7694 + arg1 < arg2 - field6792.field7694) {
-			method8539(arg0, field6792.field7694 + arg1, arg2 - field6792.field7694, arg3, arg4, arg5, var6, var7, true, false, true, false);
+		if (worldMapDefaults.field7694 + arg1 < arg2 - worldMapDefaults.field7694) {
+			method8539(arg0, worldMapDefaults.field7694 + arg1, arg2 - worldMapDefaults.field7694, arg3, arg4, arg5, var6, var7, true, false, true, false);
 		}
-		if (field6792.field7694 + arg3 + 1 < arg4 - field6792.field7694 - 1) {
-			method8539(arg0, arg1, field6792.field7694 + arg1 - 1, field6792.field7694 + arg3, arg4 - field6792.field7694, arg5, var6, var7, false, false, false, true);
-			method8539(arg0, arg2 - field6792.field7694 + 1, arg2, field6792.field7694 + arg3, arg4 - field6792.field7694, arg5, var6, var7, false, true, false, false);
+		if (worldMapDefaults.field7694 + arg3 + 1 < arg4 - worldMapDefaults.field7694 - 1) {
+			method8539(arg0, arg1, worldMapDefaults.field7694 + arg1 - 1, worldMapDefaults.field7694 + arg3, arg4 - worldMapDefaults.field7694, arg5, var6, var7, false, false, false, true);
+			method8539(arg0, arg2 - worldMapDefaults.field7694 + 1, arg2, worldMapDefaults.field7694 + arg3, arg4 - worldMapDefaults.field7694, arg5, var6, var7, false, true, false, false);
 		}
 	}
 
 	@ObfuscatedName("tf.as([IIIIII)V")
 	public static void method8522(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		int var6 = field6792.field7691 >> 24 & 0xFF;
+		int var6 = worldMapDefaults.field7691 >> 24 & 0xFF;
 		int var7 = 255 - var6;
 		for (int var8 = arg1; var8 <= arg2; var8++) {
 			for (int var9 = arg3; var9 <= arg4; var9++) {
 				int var10 = arg0[(arg5 - var9 - 1) * arg5 + var8];
 				if (field6853 != var10) {
 					field6853 = var10;
-					field6807 = ((field6792.field7691 & 0xFF00FF) * var6 + (var10 & 0xFF00FF) * var7 & -16711936) + ((field6792.field7691 & 0xFF00) * var6 + (var10 & 0xFF00) * var7 & 0xFF0000) >> 8 | 0xFF000000;
+					field6807 = ((worldMapDefaults.field7691 & 0xFF00FF) * var6 + (var10 & 0xFF00FF) * var7 & -16711936) + ((worldMapDefaults.field7691 & 0xFF00) * var6 + (var10 & 0xFF00) * var7 & 0xFF0000) >> 8 | 0xFF000000;
 				}
 				arg0[(arg5 - var9 - 1) * arg5 + var8] = field6807;
 			}
@@ -1430,21 +1430,21 @@ public class WorldMap {
 	@ObfuscatedName("tf.at([IIIIIIIIZZZZ)V")
 	public static void method8539(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, boolean arg8, boolean arg9, boolean arg10, boolean arg11) {
 		for (int var12 = arg1; var12 <= arg2; var12++) {
-			boolean var13 = arg9 ? field6855[NORTHEAST] && arg2 - var12 < field6792.field7693 : false;
-			boolean var14 = arg11 ? field6855[EAST] && var12 - arg1 < field6792.field7693 : false;
+			boolean var13 = arg9 ? field6855[NORTHEAST] && arg2 - var12 < worldMapDefaults.field7693 : false;
+			boolean var14 = arg11 ? field6855[EAST] && var12 - arg1 < worldMapDefaults.field7693 : false;
 			for (int var15 = arg3; var15 <= arg4; var15++) {
 				if (var13 || var14) {
-					arg0[(arg5 - var15 - 1) * arg5 + var12] = field6792.field7692;
+					arg0[(arg5 - var15 - 1) * arg5 + var12] = worldMapDefaults.field7692;
 				} else {
-					boolean var16 = arg8 ? field6855[NORTH] && arg4 - var15 < field6792.field7693 : false;
-					boolean var17 = arg10 ? field6855[SOUTH] && var15 - arg3 < field6792.field7693 : false;
+					boolean var16 = arg8 ? field6855[NORTH] && arg4 - var15 < worldMapDefaults.field7693 : false;
+					boolean var17 = arg10 ? field6855[SOUTH] && var15 - arg3 < worldMapDefaults.field7693 : false;
 					if (var16 || var17) {
-						arg0[(arg5 - var15 - 1) * arg5 + var12] = field6792.field7692;
+						arg0[(arg5 - var15 - 1) * arg5 + var12] = worldMapDefaults.field7692;
 					} else {
 						int var18 = arg0[(arg5 - var15 - 1) * arg5 + var12];
 						if (field6853 != var18) {
 							field6853 = var18;
-							field6807 = ((field6792.field7691 & 0xFF00FF) * arg6 + (var18 & 0xFF00FF) * arg7 & -16711936) + ((field6792.field7691 & 0xFF00) * arg6 + (var18 & 0xFF00) * arg7 & 0xFF0000) >> 8 | 0xFF000000;
+							field6807 = ((worldMapDefaults.field7691 & 0xFF00FF) * arg6 + (var18 & 0xFF00FF) * arg7 & -16711936) + ((worldMapDefaults.field7691 & 0xFF00) * arg6 + (var18 & 0xFF00) * arg7 & 0xFF0000) >> 8 | 0xFF000000;
 						}
 						arg0[(arg5 - var15 - 1) * arg5 + var12] = field6807;
 					}
@@ -1455,15 +1455,15 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.ad([IIIIIII)V")
 	public static void method8541(int[] arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		for (int var7 = 0; var7 < field6792.field7694; var7++) {
+		for (int var7 = 0; var7 < worldMapDefaults.field7694; var7++) {
 			int var8 = var7;
 			if (NORTHWEST == arg6 || SOUTHWEST == arg6) {
-				var8 = field6792.field7694 - var7 - 1;
+				var8 = worldMapDefaults.field7694 - var7 - 1;
 			}
-			for (int var9 = 0; var9 < field6792.field7694; var9++) {
+			for (int var9 = 0; var9 < worldMapDefaults.field7694; var9++) {
 				int var10 = var9;
 				if (SOUTHWEST == arg6 || WEST == arg6) {
-					var10 = field6792.field7694 - var9 - 1;
+					var10 = worldMapDefaults.field7694 - var9 - 1;
 				}
 				int var11 = field6800[var8][var10];
 				if (var11 != 0) {
@@ -1471,11 +1471,11 @@ public class WorldMap {
 						int var12 = arg0[(arg3 - arg2 - var9 - 1) * arg3 + arg1 + var7];
 						if (field6853 != var12) {
 							field6853 = var12;
-							field6807 = ((field6792.field7691 & 0xFF00FF) * arg4 + (var12 & 0xFF00FF) * arg5 & -16711936) + ((field6792.field7691 & 0xFF00) * arg4 + (var12 & 0xFF00) * arg5 & 0xFF0000) >> 8 | 0xFF000000;
+							field6807 = ((worldMapDefaults.field7691 & 0xFF00FF) * arg4 + (var12 & 0xFF00FF) * arg5 & -16711936) + ((worldMapDefaults.field7691 & 0xFF00) * arg4 + (var12 & 0xFF00) * arg5 & 0xFF0000) >> 8 | 0xFF000000;
 						}
 						arg0[(arg3 - arg2 - var9 - 1) * arg3 + arg1 + var7] = field6807;
 					} else if (var11 == 2) {
-						arg0[(arg3 - arg2 - var9 - 1) * arg3 + arg1 + var7] = field6792.field7692;
+						arg0[(arg3 - arg2 - var9 - 1) * arg3 + arg1 + var7] = worldMapDefaults.field7692;
 					}
 				}
 			}

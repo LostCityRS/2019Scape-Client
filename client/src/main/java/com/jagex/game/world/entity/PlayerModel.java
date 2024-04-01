@@ -201,42 +201,42 @@ public class PlayerModel {
 		boolean var20 = false;
 		boolean var21 = false;
 		if (arg8 != null) {
-			SeqType var22 = arg8.method14347();
+			SeqType var22 = arg8.getSeqType();
 			if (var22 != null && (var22.mainhand >= 0 || var22.offhand >= 0)) {
 				var19 = new int[this.field7890.length];
 				for (int var23 = 0; var23 < var19.length; var23++) {
 					var19[var23] = this.field7890[var23];
 				}
-				if (var22.mainhand >= 0 && arg14.field7763 != -1) {
+				if (var22.mainhand >= 0 && arg14.mainhand != -1) {
 					var20 = true;
 					if (var22.mainhand == 65535) {
-						var19[arg14.field7763] = 0;
+						var19[arg14.mainhand] = 0;
 						for (int var24 = 0; var24 < arg14.field7769.length; var24++) {
 							var19[arg14.field7769[var24]] = 0;
 						}
 						var17 ^= 0xFFFFFFFF00000000L;
 					} else {
-						var19[arg14.field7763] = var22.mainhand | 0x40000000;
+						var19[arg14.mainhand] = var22.mainhand | 0x40000000;
 						for (int var25 = 0; var25 < arg14.field7769.length; var25++) {
 							var19[arg14.field7769[var25]] = 0;
 						}
-						var17 ^= (long) var19[arg14.field7763] << 32;
+						var17 ^= (long) var19[arg14.mainhand] << 32;
 					}
 				}
-				if (var22.offhand >= 0 && arg14.field7770 != -1) {
+				if (var22.offhand >= 0 && arg14.offhand != -1) {
 					var21 = true;
 					if (var22.offhand == 65535) {
-						var19[arg14.field7770] = 0;
+						var19[arg14.offhand] = 0;
 						for (int var26 = 0; var26 < arg14.field7767.length; var26++) {
 							var19[arg14.field7767[var26]] = 0;
 						}
 						var17 ^= 0xFFFFFFFFL;
 					} else {
-						var19[arg14.field7770] = var22.offhand | 0x40000000;
+						var19[arg14.offhand] = var22.offhand | 0x40000000;
 						for (int var27 = 0; var27 < arg14.field7767.length; var27++) {
 							var19[arg14.field7767[var27]] = 0;
 						}
-						var17 ^= var19[arg14.field7770];
+						var17 ^= var19[arg14.offhand];
 					}
 				}
 			}
@@ -346,14 +346,14 @@ public class PlayerModel {
 						for (int var63 = 0; var63 < 10; var63++) {
 							for (int var64 = 0; var64 < field7577[var63].length; var64++) {
 								if (this.field7894[var63] < field1434[var63][var64].length) {
-									var34.method1859(field7577[var63][var64], field1434[var63][var64][this.field7894[var63]]);
+									var34.recolor(field7577[var63][var64], field1434[var63][var64][this.field7894[var63]]);
 								}
 							}
 						}
 						for (int var65 = 0; var65 < 10; var65++) {
 							for (int var66 = 0; var66 < field10766[var65].length; var66++) {
 								if (this.field7895[var65] < field9259[var65][var66].length) {
-									var34.method1744(field10766[var65][var66], field9259[var65][var66][this.field7895[var65]]);
+									var34.retexture(field10766[var65][var66], field9259[var65][var66][this.field7895[var65]]);
 								}
 							}
 						}
@@ -373,7 +373,7 @@ public class PlayerModel {
 				ObjTypeCustomisation var41 = null;
 				boolean var42 = false;
 				if (var20) {
-					if (arg14.field7763 == var39) {
+					if (arg14.mainhand == var39) {
 						var42 = true;
 					} else {
 						for (int var43 = 0; var43 < arg14.field7769.length; var43++) {
@@ -385,7 +385,7 @@ public class PlayerModel {
 					}
 				}
 				if (var21) {
-					if (arg14.field7770 == var39) {
+					if (arg14.offhand == var39) {
 						var42 = true;
 					} else {
 						for (int var44 = 0; var44 < arg14.field7767.length; var44++) {
@@ -520,14 +520,14 @@ public class PlayerModel {
 			for (int var27 = 0; var27 < 10; var27++) {
 				for (int var28 = 0; var28 < field7577[var27].length; var28++) {
 					if (this.field7894[var27] < field1434[var27][var28].length) {
-						var11.method1859(field7577[var27][var28], field1434[var27][var28][this.field7894[var27]]);
+						var11.recolor(field7577[var27][var28], field1434[var27][var28][this.field7894[var27]]);
 					}
 				}
 			}
 			for (int var29 = 0; var29 < 10; var29++) {
 				for (int var30 = 0; var30 < field10766[var29].length; var30++) {
 					if (this.field7895[var29] < field9259[var29][var30].length) {
-						var11.method1744(field10766[var29][var30], field9259[var29][var30][this.field7895[var29]]);
+						var11.retexture(field10766[var29][var30], field9259[var29][var30][this.field7895[var29]]);
 					}
 				}
 			}
@@ -582,14 +582,14 @@ public class PlayerModel {
 			for (int var23 = 0; var23 < 10; var23++) {
 				for (int var24 = 0; var24 < field7577[var23].length; var24++) {
 					if (this.field7894[var23] < field1434[var23][var24].length) {
-						var13.method1859(field7577[var23][var24], field1434[var23][var24][this.field7894[var23]]);
+						var13.recolor(field7577[var23][var24], field1434[var23][var24][this.field7894[var23]]);
 					}
 				}
 			}
 			for (int var25 = 0; var25 < 10; var25++) {
 				for (int var26 = 0; var26 < field10766[var25].length; var26++) {
 					if (this.field7895[var25] < field9259[var25][var26].length) {
-						var13.method1744(field10766[var25][var26], field9259[var25][var26][this.field7895[var25]]);
+						var13.retexture(field10766[var25][var26], field9259[var25][var26][this.field7895[var25]]);
 					}
 				}
 			}
@@ -617,7 +617,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("eg.c(IS)V")
-	public static void method2837(int arg0) {
+	public static void resetModelCache(int arg0) {
 		field4037 = arg0;
 		WeightedCache var1 = field7902;
 		synchronized (field7902) {

@@ -34,7 +34,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 		this.field11131 = new DynamicLoc(arg1, arg2, arg3, arg14, arg15, arg5, this, arg9, arg16, arg17);
 		this.field11128 = arg3.active != 0 && !arg9;
 		this.field11130 = arg18;
-		this.method18363(1);
+		this.createEntityBounds(1);
 	}
 
 	@ObfuscatedName("pd.bz(III)B")
@@ -62,7 +62,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer renderer) {
 		return this.field11129;
 	}
 
@@ -72,24 +72,24 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fc(Ldh;I)Ltl;")
-	public PickableEntity method17372(Renderer arg0) {
-		Model var2 = this.field11131.method8238(arg0, 2048, false, true);
+	public PickableEntity draw(Renderer renderer) {
+		Model var2 = this.field11131.method8238(renderer, 2048, false, true);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		PickableEntity var4 = PickableEntity.method16749(this.field11128);
-		this.field11131.method8239(arg0, var2, var3, this.field12471, this.field12472, this.field12468, this.field12467, true);
+		PickableEntity var4 = PickableEntity.getPickableEntity(this.field11128);
+		this.field11131.method8239(renderer, var2, var3, this.field12471, this.field12472, this.field12468, this.field12467, true);
 		LocType var5 = this.field11131.method8237();
 		if (var5.clickbox == null) {
-			var2.draw(var3, this.field11713[0], 0);
+			var2.draw(var3, this.entityBounds[0], 0);
 		} else {
 			var2.draw(var3, null, 0);
-			arg0.method2193(var3, this.field11713[0], var5.clickbox);
+			renderer.method2193(var3, this.entityBounds[0], var5.clickbox);
 		}
 		if (this.field11131.field6680 != null) {
 			ParticleList var6 = this.field11131.field6680.method9965();
-			arg0.drawParticles(var6);
+			renderer.drawParticles(var6);
 		}
 		this.field11127 = var2.method1731() || this.field11131.field6680 != null;
 		ScaleRotTrans var7 = this.getTransform();
@@ -102,10 +102,10 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fw(Ldh;I)V")
-	public void method17373(Renderer arg0) {
-		Model var2 = this.field11131.method8238(arg0, 262144, true, true);
+	public void method17373(Renderer renderer) {
+		Model var2 = this.field11131.method8238(renderer, 262144, true, true);
 		if (var2 != null) {
-			this.field11131.method8239(arg0, var2, this.method10533(), this.field12471, this.field12472, this.field12468, this.field12467, false);
+			this.field11131.method8239(renderer, var2, this.method10533(), this.field12471, this.field12472, this.field12468, this.field12467, false);
 		}
 	}
 
@@ -115,13 +115,13 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer renderer, int arg1, int arg2) {
 		LocType var4 = this.field11131.method8237();
 		if (var4.clickbox == null) {
-			Model var5 = this.field11131.method8238(arg0, 131072, false, false);
+			Model var5 = this.field11131.method8238(renderer, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
-			return arg0.pick(arg1, arg2, this.method10533(), var4.clickbox);
+			return renderer.pick(arg1, arg2, this.method10533(), var4.clickbox);
 		}
 	}
 
@@ -131,7 +131,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

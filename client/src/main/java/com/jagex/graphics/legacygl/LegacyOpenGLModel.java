@@ -1335,7 +1335,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.r(I)V")
-	public void method1852(int arg0) {
+	public void rotateX(int arg0) {
 		int var2 = Trig1.sin[arg0];
 		int var3 = Trig1.cos[arg0];
 		for (int var4 = 0; var4 < this.field9635; var4++) {
@@ -1350,7 +1350,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.v(I)V")
-	public void method1696(int arg0) {
+	public void rotateZ(int arg0) {
 		int var2 = Trig1.sin[arg0];
 		int var3 = Trig1.cos[arg0];
 		for (int var4 = 0; var4 < this.field9635; var4++) {
@@ -1365,7 +1365,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.o(III)V")
-	public void method1805(int arg0, int arg1, int arg2) {
+	public void translate(int arg0, int arg1, int arg2) {
 		for (int var4 = 0; var4 < this.field9635; var4++) {
 			if (arg0 != 0) {
 				this.field9636[var4] += arg0;
@@ -1412,7 +1412,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.y(III)V")
-	public void method1699(int arg0, int arg1, int arg2) {
+	public void scale(int arg0, int arg1, int arg2) {
 		for (int var4 = 0; var4 < this.field9635; var4++) {
 			if (arg0 != 128) {
 				this.field9636[var4] = this.field9636[var4] * arg0 >> 7;
@@ -1569,7 +1569,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.aj()I")
-	public int method1727() {
+	public int getHorizontalRadius() {
 		if (!this.field9669) {
 			this.method15552();
 		}
@@ -1577,7 +1577,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.ay()I")
-	public int method1728() {
+	public int getRadius() {
 		if (!this.field9669) {
 			this.method15552();
 		}
@@ -1585,7 +1585,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.ab()I")
-	public int method1729() {
+	public int getMinX() {
 		if (!this.field9669) {
 			this.method15552();
 		}
@@ -1593,7 +1593,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.az()I")
-	public int method1730() {
+	public int getMaxX() {
 		if (!this.field9669) {
 			this.method15552();
 		}
@@ -1601,7 +1601,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.aa()I")
-	public int method1748() {
+	public int getMinY() {
 		if (!this.field9669) {
 			this.method15552();
 		}
@@ -1609,7 +1609,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.af()I")
-	public int method1695() {
+	public int getMaxY() {
 		if (!this.field9669) {
 			this.method15552();
 		}
@@ -1617,7 +1617,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.ak()I")
-	public int method1733() {
+	public int getMinZ() {
 		if (!this.field9669) {
 			this.method15552();
 		}
@@ -1625,7 +1625,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.an()I")
-	public int method1794() {
+	public int getMaxZ() {
 		if (!this.field9669) {
 			this.method15552();
 		}
@@ -1633,7 +1633,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.bf()I")
-	public int method1707() {
+	public int getHeight() {
 		if (!this.field9676) {
 			this.method1736();
 		}
@@ -1828,7 +1828,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.bi(SS)V")
-	public void method1859(short arg0, short arg1) {
+	public void recolor(short arg0, short arg1) {
 		for (int var3 = 0; var3 < this.field9670; var3++) {
 			if (this.field9651[var3] == arg0) {
 				this.field9651[var3] = arg1;
@@ -1864,7 +1864,7 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.bt(SS)V")
-	public void method1744(short arg0, short arg1) {
+	public void retexture(short arg0, short arg1) {
 		MaterialList var3 = this.field9626.materialList;
 		for (int var4 = 0; var4 < this.field9670; var4++) {
 			if (this.field9685[var4] == arg0) {
@@ -2577,9 +2577,9 @@ public class LegacyOpenGLModel extends Model {
 	}
 
 	@ObfuscatedName("afk.at(I[IIIIIZ)V")
-	public void method1717(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
-		int var8 = arg1.length;
-		if (arg0 == 0) {
+	public void applyTransform(int type, int[] labels, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
+		int var8 = labels.length;
+		if (type == 0) {
 			int var9 = arg2 << 4;
 			int var10 = arg3 << 4;
 			int var11 = arg4 << 4;
@@ -2588,7 +2588,7 @@ public class LegacyOpenGLModel extends Model {
 			field9693 = 0;
 			field9694 = 0;
 			for (int var13 = 0; var13 < var8; var13++) {
-				int var14 = arg1[var13];
+				int var14 = labels[var13];
 				if (var14 < this.field9638.length) {
 					int[] var15 = this.field9638[var14];
 					for (int var16 = 0; var16 < var15.length; var16++) {
@@ -2609,12 +2609,12 @@ public class LegacyOpenGLModel extends Model {
 				field9693 = var10;
 				field9694 = var11;
 			}
-		} else if (arg0 == 1) {
+		} else if (type == 1) {
 			int var18 = arg2 << 4;
 			int var19 = arg3 << 4;
 			int var20 = arg4 << 4;
 			for (int var21 = 0; var21 < var8; var21++) {
-				int var22 = arg1[var21];
+				int var22 = labels[var21];
 				if (var22 < this.field9638.length) {
 					int[] var23 = this.field9638[var22];
 					for (int var24 = 0; var24 < var23.length; var24++) {
@@ -2625,9 +2625,9 @@ public class LegacyOpenGLModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 2) {
+		} else if (type == 2) {
 			for (int var26 = 0; var26 < var8; var26++) {
-				int var27 = arg1[var26];
+				int var27 = labels[var26];
 				if (var27 < this.field9638.length) {
 					int[] var28 = this.field9638[var27];
 					if ((arg5 & 0x1) == 0) {
@@ -2697,7 +2697,7 @@ public class LegacyOpenGLModel extends Model {
 			}
 			if (arg6) {
 				for (int var51 = 0; var51 < var8; var51++) {
-					int var52 = arg1[var51];
+					int var52 = labels[var51];
 					if (var52 < this.field9638.length) {
 						int[] var53 = this.field9638[var52];
 						for (int var54 = 0; var54 < var53.length; var54++) {
@@ -2738,9 +2738,9 @@ public class LegacyOpenGLModel extends Model {
 					this.field9673.field1111 = null;
 				}
 			}
-		} else if (arg0 == 3) {
+		} else if (type == 3) {
 			for (int var69 = 0; var69 < var8; var69++) {
-				int var70 = arg1[var69];
+				int var70 = labels[var69];
 				if (var70 < this.field9638.length) {
 					int[] var71 = this.field9638[var70];
 					for (int var72 = 0; var72 < var71.length; var72++) {
@@ -2757,10 +2757,10 @@ public class LegacyOpenGLModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 5) {
+		} else if (type == 5) {
 			if (this.field9649 != null) {
 				for (int var74 = 0; var74 < var8; var74++) {
-					int var75 = arg1[var74];
+					int var75 = labels[var74];
 					if (var75 < this.field9649.length) {
 						int[] var76 = this.field9649[var75];
 						for (int var77 = 0; var77 < var76.length; var77++) {
@@ -2786,10 +2786,10 @@ public class LegacyOpenGLModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 7) {
+		} else if (type == 7) {
 			if (this.field9649 != null) {
 				for (int var83 = 0; var83 < var8; var83++) {
-					int var84 = arg1[var83];
+					int var84 = labels[var83];
 					if (var84 < this.field9649.length) {
 						int[] var85 = this.field9649[var84];
 						for (int var86 = 0; var86 < var85.length; var86++) {
@@ -2826,10 +2826,10 @@ public class LegacyOpenGLModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 8) {
+		} else if (type == 8) {
 			if (this.field9686 != null) {
 				for (int var98 = 0; var98 < var8; var98++) {
-					int var99 = arg1[var98];
+					int var99 = labels[var98];
 					if (var99 < this.field9686.length) {
 						int[] var100 = this.field9686[var99];
 						for (int var101 = 0; var101 < var100.length; var101++) {
@@ -2840,10 +2840,10 @@ public class LegacyOpenGLModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 10) {
+		} else if (type == 10) {
 			if (this.field9686 != null) {
 				for (int var103 = 0; var103 < var8; var103++) {
-					int var104 = arg1[var103];
+					int var104 = labels[var103];
 					if (var104 < this.field9686.length) {
 						int[] var105 = this.field9686[var104];
 						for (int var106 = 0; var106 < var105.length; var106++) {
@@ -2854,9 +2854,9 @@ public class LegacyOpenGLModel extends Model {
 					}
 				}
 			}
-		} else if (arg0 == 9 && this.field9686 != null) {
+		} else if (type == 9 && this.field9686 != null) {
 			for (int var108 = 0; var108 < var8; var108++) {
-				int var109 = arg1[var108];
+				int var109 = labels[var108];
 				if (var109 < this.field9686.length) {
 					int[] var110 = this.field9686[var109];
 					for (int var111 = 0; var111 < var110.length; var111++) {
@@ -2871,7 +2871,7 @@ public class LegacyOpenGLModel extends Model {
 	@ObfuscatedName("afk.ad(I[IIIIIZ)V")
 	public void method1711(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		if (arg0 != 0) {
-			this.method1717(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
+			this.applyTransform(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 			return;
 		}
 		int var8 = arg2 << 4;

@@ -12,7 +12,7 @@ import deob.ObfuscatedName;
 public class SpotShadowFactory {
 
 	@ObfuscatedName("i.e")
-	public static WeightedCache field617 = new WeightedCache(32);
+	public static WeightedCache modelCache = new WeightedCache(32);
 
 	@ObfuscatedName("i.n")
 	public static int field616;
@@ -32,10 +32,10 @@ public class SpotShadowFactory {
 			var12 = var13 & 0xFFFFFDFF;
 		}
 		long var14 = ((long) arg8 << 48) + ((long) arg7 << 32) + (long) ((arg10 << 24) + (arg9 << 16) + arg5);
-		WeightedCache var16 = field617;
+		WeightedCache var16 = modelCache;
 		Model var17;
-		synchronized (field617) {
-			var17 = (Model) field617.get(var14);
+		synchronized (modelCache) {
+			var17 = (Model) modelCache.get(var14);
 		}
 		if (var17 == null || arg0.method2394(var17.method1691(), var12) != 0) {
 			if (var17 != null) {
@@ -72,34 +72,34 @@ public class SpotShadowFactory {
 				}
 			}
 			var17 = arg0.createModel(var22, var12, field616, 64, 768);
-			WeightedCache var38 = field617;
-			synchronized (field617) {
-				field617.put(var17, var14);
+			WeightedCache var38 = modelCache;
+			synchronized (modelCache) {
+				modelCache.put(var17, var14);
 			}
 		}
-		int var40 = arg6.method1729();
-		int var41 = arg6.method1730();
-		int var42 = arg6.method1733();
-		int var43 = arg6.method1794();
+		int var40 = arg6.getMinX();
+		int var41 = arg6.getMaxX();
+		int var42 = arg6.getMinZ();
+		int var43 = arg6.getMaxZ();
 		Model var44;
 		if (arg11 == null) {
 			var44 = var17.method1773((byte) 3, var12, true);
-			var44.method1699(var41 - var40 >> 1, 128, var43 - var42 >> 1);
-			var44.method1805(var40 + var41 >> 1, 0, var42 + var43 >> 1);
+			var44.scale(var41 - var40 >> 1, 128, var43 - var42 >> 1);
+			var44.translate(var40 + var41 >> 1, 0, var42 + var43 >> 1);
 		} else {
 			var44 = var17.method1773((byte) 3, var12, true);
-			var44.method1699(var41 - var40 >> 1, 128, var43 - var42 >> 1);
-			var44.method1805(var40 + var41 >> 1, 0, var42 + var43 >> 1);
+			var44.scale(var41 - var40 >> 1, 128, var43 - var42 >> 1);
+			var44.translate(var40 + var41 >> 1, 0, var42 + var43 >> 1);
 			arg11.method14361(var44);
 		}
 		if (arg2 != 0) {
-			var44.method1852(arg2);
+			var44.rotateX(arg2);
 		}
 		if (arg3 != 0) {
-			var44.method1696(arg3);
+			var44.rotateZ(arg3);
 		}
 		if (arg4 != 0) {
-			var44.method1805(0, arg4, 0);
+			var44.translate(0, arg4, 0);
 		}
 		return var44;
 	}
@@ -115,10 +115,10 @@ public class SpotShadowFactory {
 			var9 = var10 & 0xFFFFFDFF;
 		}
 		long var11 = (long) ((arg6 & 0xFFFF) << 8 | arg7);
-		WeightedCache var13 = field617;
+		WeightedCache var13 = modelCache;
 		Model var14;
-		synchronized (field617) {
-			var14 = (Model) field617.get(var11);
+		synchronized (modelCache) {
+			var14 = (Model) modelCache.get(var11);
 		}
 		if (var14 == null || arg0.method2394(var14.method1691(), var9) != 0) {
 			if (var14 != null) {
@@ -132,68 +132,68 @@ public class SpotShadowFactory {
 			var16.method1938((short) 1, (short) 2, (short) 0);
 			var16.method1938((short) 2, (short) 3, (short) 0);
 			var14 = arg0.createModel(var16, var9, field616, 64, 768);
-			WeightedCache var19 = field617;
-			synchronized (field617) {
-				field617.put(var14, var11);
+			WeightedCache var19 = modelCache;
+			synchronized (modelCache) {
+				modelCache.put(var14, var11);
 			}
 		}
-		int var21 = arg5.method1729();
-		int var22 = arg5.method1730();
-		int var23 = arg5.method1733();
-		int var24 = arg5.method1794();
+		int var21 = arg5.getMinX();
+		int var22 = arg5.getMaxX();
+		int var23 = arg5.getMinZ();
+		int var24 = arg5.getMaxZ();
 		Model var25;
 		if (arg8 == null) {
 			var25 = var14.method1773((byte) 3, var9, true);
-			var25.method1699(var22 - var21 >> 1, 128, var24 - var23 >> 1);
-			var25.method1805(var21 + var22 >> 1, 0, var23 + var24 >> 1);
+			var25.scale(var22 - var21 >> 1, 128, var24 - var23 >> 1);
+			var25.translate(var21 + var22 >> 1, 0, var23 + var24 >> 1);
 		} else {
 			var25 = var14.method1773((byte) 3, var9, true);
-			var25.method1699(var22 - var21 >> 1, 128, var24 - var23 >> 1);
-			var25.method1805(var21 + var22 >> 1, 0, var23 + var24 >> 1);
+			var25.scale(var22 - var21 >> 1, 128, var24 - var23 >> 1);
+			var25.translate(var21 + var22 >> 1, 0, var23 + var24 >> 1);
 			arg8.method14361(var25);
 		}
 		if (arg2 != 0) {
-			var25.method1852(arg2);
+			var25.rotateX(arg2);
 		}
 		if (arg3 != 0) {
-			var25.method1696(arg3);
+			var25.rotateZ(arg3);
 		}
 		if (arg4 != 0) {
-			var25.method1805(0, arg4, 0);
+			var25.translate(0, arg4, 0);
 		}
 		return var25;
 	}
 
 	@ObfuscatedName("ajb.m(II)V")
-	public static void method17441(int arg0) {
+	public static void resetModelCache(int arg0) {
 		field616 = arg0;
-		WeightedCache var1 = field617;
-		synchronized (field617) {
-			field617.reset();
+		WeightedCache var1 = modelCache;
+		synchronized (modelCache) {
+			modelCache.reset();
 		}
 	}
 
 	@ObfuscatedName("ft.k(I)V")
 	public static void cacheReset() {
-		WeightedCache var0 = field617;
-		synchronized (field617) {
-			field617.reset();
+		WeightedCache var0 = modelCache;
+		synchronized (modelCache) {
+			modelCache.reset();
 		}
 	}
 
 	@ObfuscatedName("vg.f(IB)V")
 	public static void cacheClean(int arg0) {
-		WeightedCache var1 = field617;
-		synchronized (field617) {
-			field617.clean(arg0);
+		WeightedCache var1 = modelCache;
+		synchronized (modelCache) {
+			modelCache.clean(arg0);
 		}
 	}
 
 	@ObfuscatedName("kh.w(B)V")
 	public static void cacheRemoveSoftReferences() {
-		WeightedCache var0 = field617;
-		synchronized (field617) {
-			field617.clear();
+		WeightedCache var0 = modelCache;
+		synchronized (modelCache) {
+			modelCache.clear();
 		}
 	}
 }

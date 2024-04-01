@@ -18,8 +18,8 @@ public class LoginScreenRelated8 extends LoadingScreenSprite {
 	@ObfuscatedName("aha.n(ZI)V")
 	public void method5105(boolean arg0) {
 		int var2 = this.field3019.field3215.computeX(this.field3021.getX(), Client.frameWidth) + this.field3019.field3216;
-		int var3 = this.field3019.field3214.computeY(this.field3021.method1436(), Client.frameHeight) + this.field3019.field3217;
-		this.field3021.method1451((float) (var2 + this.field3021.getX() / 2), (float) (var3 + this.field3021.method1436() / 2), 4096, this.field10537);
+		int var3 = this.field3019.field3214.computeY(this.field3021.getY(), Client.frameHeight) + this.field3019.field3217;
+		this.field3021.method1451((float) (var2 + this.field3021.getX() / 2), (float) (var3 + this.field3021.getY() / 2), 4096, this.field10537);
 		this.field10537 += ((LoginScreenRelated3) this.field3019).field10582;
 	}
 }

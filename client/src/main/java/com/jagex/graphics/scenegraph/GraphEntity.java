@@ -14,7 +14,7 @@ import deob.ObfuscatedName;
 public abstract class GraphEntity extends GraphNode {
 
 	@ObfuscatedName("alh.c")
-	public Scene field11716;
+	public Scene scene;
 
 	@ObfuscatedName("alh.r")
 	public GraphEntity field11712;
@@ -29,22 +29,22 @@ public abstract class GraphEntity extends GraphNode {
 	public int field11715;
 
 	@ObfuscatedName("alh.y")
-	public ScreenBoundingBox[] field11713;
+	public ScreenBoundingBox[] entityBounds;
 
 	@ObfuscatedName("alh.q")
-	public ScaleRotTrans field11711;
+	public ScaleRotTrans scaleRotTrans;
 
-	public GraphEntity(Scene arg0) {
-		this(arg0, (ScaleRotTrans) null);
+	public GraphEntity(Scene scene) {
+		this(scene, (ScaleRotTrans) null);
 	}
 
-	public GraphEntity(Scene arg0, ScaleRotTrans arg1) {
-		this.field11716 = arg0;
-		this.field11711 = arg1;
+	public GraphEntity(Scene scene, ScaleRotTrans scaleRotTrans) {
+		this.scene = scene;
+		this.scaleRotTrans = scaleRotTrans;
 	}
 
 	@ObfuscatedName("alh.gp(I)I")
-	public int method18371() {
+	public int getPickSizeShift() {
 		return 0;
 	}
 
@@ -55,7 +55,7 @@ public abstract class GraphEntity extends GraphNode {
 
 	@ObfuscatedName("alh.gf(II[Lakf;I)I")
 	public int method18362(int arg0, int arg1, Light[] arg2) {
-		long var4 = this.field11716.field6954[this.level][arg0][arg1];
+		long var4 = this.scene.field6954[this.level][arg0][arg1];
 		long var6 = 0L;
 		int var8 = 0;
 		while (var6 <= 48L) {
@@ -63,7 +63,7 @@ public abstract class GraphEntity extends GraphNode {
 			if (var9 <= 0) {
 				break;
 			}
-			arg2[var8++] = this.field11716.field6926[var9 - 1].field7003;
+			arg2[var8++] = this.scene.field6926[var9 - 1].field7003;
 			var6 += 16L;
 		}
 		for (int var10 = var8; var10 < 4; var10++) {
@@ -74,13 +74,13 @@ public abstract class GraphEntity extends GraphNode {
 
 	@ObfuscatedName("acl.gx(IIILdo;I)Luq;")
 	public static EntityBounds method15111(int arg0, int arg1, int arg2, Model arg3) {
-		return arg3 == null ? null : new EntityBounds(arg0, arg1, arg2, arg3.method1727(), arg3.method1729(), arg3.method1730(), arg3.method1748(), arg3.method1695(), arg3.method1733(), arg3.method1794());
+		return arg3 == null ? null : new EntityBounds(arg0, arg1, arg2, arg3.getHorizontalRadius(), arg3.getMinX(), arg3.getMaxX(), arg3.getMinY(), arg3.getMaxY(), arg3.getMinZ(), arg3.getMaxZ());
 	}
 
 	@ObfuscatedName("sl.ge(Luq;IIILdo;I)V")
 	public static void method8229(EntityBounds arg0, int arg1, int arg2, int arg3, Model arg4) {
 		if (arg4 != null) {
-			arg0.method8967(arg1, arg2, arg3, arg4.method1727(), arg4.method1729(), arg4.method1730(), arg4.method1748(), arg4.method1695(), arg4.method1733(), arg4.method1794());
+			arg0.method8967(arg1, arg2, arg3, arg4.getHorizontalRadius(), arg4.getMinX(), arg4.getMaxX(), arg4.getMinY(), arg4.getMaxY(), arg4.getMinZ(), arg4.getMaxZ());
 		}
 	}
 
@@ -90,15 +90,15 @@ public abstract class GraphEntity extends GraphNode {
 	}
 
 	@ObfuscatedName("alh.gg(II)V")
-	public void method18363(int arg0) {
-		this.field11713 = new ScreenBoundingBox[arg0];
-		for (int var2 = 0; var2 < this.field11713.length; var2++) {
-			this.field11713[var2] = new ScreenBoundingBox();
+	public void createEntityBounds(int arg0) {
+		this.entityBounds = new ScreenBoundingBox[arg0];
+		for (int var2 = 0; var2 < this.entityBounds.length; var2++) {
+			this.entityBounds[var2] = new ScreenBoundingBox();
 		}
 	}
 
 	@ObfuscatedName("alh.fa(Ldh;IIB)Z")
-	public abstract boolean method17375(Renderer arg0, int arg1, int arg2);
+	public abstract boolean method17375(Renderer renderer, int arg1, int arg2);
 
 	@ObfuscatedName("alh.fp(I)Z")
 	public abstract boolean method17379();
@@ -113,16 +113,16 @@ public abstract class GraphEntity extends GraphNode {
 	public abstract void applyLighting();
 
 	@ObfuscatedName("alh.fw(Ldh;I)V")
-	public abstract void method17373(Renderer arg0);
+	public abstract void method17373(Renderer renderer);
 
 	@ObfuscatedName("alh.fq(Ldh;Lalh;IIIZB)V")
-	public abstract void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("alh.ga(Ldh;S)Z")
-	public abstract boolean method18360(Renderer arg0);
+	public abstract boolean method18360(Renderer renderer);
 
 	@ObfuscatedName("alh.fc(Ldh;I)Ltl;")
-	public abstract PickableEntity method17372(Renderer arg0);
+	public abstract PickableEntity draw(Renderer renderer);
 
 	@ObfuscatedName("alh.gn(I)Z")
 	public abstract boolean method18361();
@@ -131,7 +131,7 @@ public abstract class GraphEntity extends GraphNode {
 	public abstract int overlayHeight();
 
 	@ObfuscatedName("alh.fv(Ldh;B)Luq;")
-	public abstract EntityBounds method17371(Renderer arg0);
+	public abstract EntityBounds method17371(Renderer renderer);
 
 	@ObfuscatedName("alh.gy([Lakf;S)I")
 	public abstract int method18375(Light[] arg0);

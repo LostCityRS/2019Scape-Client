@@ -68,7 +68,7 @@ public final class CutsceneEntity {
 			}
 		}
 		if (this.field1743 >= 0) {
-			this.field1745.method19159(arg2, arg0, arg1, true, this.field1745.size());
+			this.field1745.move(arg2, arg0, arg1, true, this.field1745.size());
 			this.field1745.method16491(arg3, true);
 		} else {
 			this.field1742.level = this.field1742.field11714 = (byte) arg2;
@@ -90,7 +90,7 @@ public final class CutsceneEntity {
 			this.field1742.level = this.field1742.field11714 = (byte) arg0;
 			this.field1742.tele(arg1, arg2);
 		} else {
-			this.field1745.method19159(arg0, arg1, arg2, true, this.field1745.size());
+			this.field1745.move(arg0, arg1, arg2, true, this.field1745.size());
 		}
 	}
 

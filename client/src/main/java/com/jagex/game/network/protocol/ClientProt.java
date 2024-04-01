@@ -246,7 +246,7 @@ public class ClientProt {
 	public static final ClientProt MAP_BUILD_COMPLETE = new ClientProt(79, 4);
 
 	@ObfuscatedName("nr.ce")
-	public static final ClientProt field3762 = new ClientProt(80, 0);
+	public static final ClientProt TELEMETRY_ERROR = new ClientProt(80, 0);
 
 	@ObfuscatedName("nr.cu")
 	public static final ClientProt OPOBJ1 = new ClientProt(81, 7);

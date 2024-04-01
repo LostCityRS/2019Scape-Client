@@ -11,7 +11,7 @@ public final class VariableTypeProviderClient implements VariableTypeProvider {
 
 	@ObfuscatedName("js.w(Lqe;II)Lec;")
 	public VarType getVarType(VarDomainType domainType, int id) {
-		return (VarType) ((ConfigTypeList) Client.field1232.get(domainType)).list(id);
+		return (VarType) ((ConfigTypeList) Client.varDomainToListEnumMap.get(domainType)).list(id);
 	}
 
 	@ObfuscatedName("js.l(IB)Lkh;")

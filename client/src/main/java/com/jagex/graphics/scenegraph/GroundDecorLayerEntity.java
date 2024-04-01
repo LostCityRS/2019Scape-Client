@@ -37,7 +37,7 @@ public abstract class GroundDecorLayerEntity extends GraphEntity {
 	public int method18375(Light[] arg0) {
 		if (this.field8176) {
 			Vector3 var2 = this.getTransform().trans;
-			this.field12449 = this.method18362((int) var2.x >> this.field11716.field6900, (int) var2.z >> this.field11716.field6900, this.field12447);
+			this.field12449 = this.method18362((int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900, this.field12447);
 			this.field8176 = false;
 		}
 		for (int var3 = 0; var3 < this.field12449; var3++) {
@@ -47,14 +47,14 @@ public abstract class GroundDecorLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asv.ga(Ldh;S)Z")
-	public boolean method18360(Renderer arg0) {
+	public boolean method18360(Renderer renderer) {
 		Vector3 var2 = this.getTransform().trans;
-		return this.field11716.field6930.method8927(this.field11714, (int) var2.x >> this.field11716.field6900, (int) var2.z >> this.field11716.field6900);
+		return this.scene.field6930.method8927(this.field11714, (int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900);
 	}
 
 	@ObfuscatedName("asv.gn(I)Z")
 	public boolean method18361() {
 		Vector3 var1 = this.getTransform().trans;
-		return this.field11716.field6962[this.field11716.field6942 + (((int) var1.x >> this.field11716.field6900) - this.field11716.field6902)][this.field11716.field6942 + (((int) var1.z >> this.field11716.field6900) - this.field11716.field6947)];
+		return this.scene.field6962[this.scene.field6942 + (((int) var1.x >> this.scene.field6900) - this.scene.field6902)][this.scene.field6942 + (((int) var1.z >> this.scene.field6900) - this.scene.field6947)];
 	}
 }

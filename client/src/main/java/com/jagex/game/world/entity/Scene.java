@@ -194,7 +194,7 @@ public class Scene {
 	public HashMap field6958 = new HashMap();
 
 	@ObfuscatedName("tx.bn")
-	public PickableEntityList field6959;
+	public PickableEntityList pickableEntities;
 
 	@ObfuscatedName("tx.bt")
 	public boolean[][] field6960;
@@ -251,7 +251,7 @@ public class Scene {
 		this.field6962 = new boolean[this.field6942 + this.field6942 + 1][this.field6942 + this.field6942 + 1];
 		this.field6960 = new boolean[this.field6942 + this.field6942 + 2][this.field6942 + this.field6942 + 2];
 		this.field6908 = new int[this.field6942 + this.field6942 + 2];
-		this.field6959 = new PickableEntityList(false);
+		this.pickableEntities = new PickableEntityList(false);
 	}
 
 	@ObfuscatedName("tx.e(IB)V")
@@ -323,7 +323,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.w(IIIB)Ltk;")
-	public Tile method8706(int arg0, int arg1, int arg2) {
+	public Tile getTile(int arg0, int arg1, int arg2) {
 		if (this.levelTiles[arg0][arg1][arg2] == null) {
 			boolean var4 = this.levelTiles[0][arg1][arg2] != null && this.levelTiles[0][arg1][arg2].bridge != null;
 			if (var4 && arg0 >= this.maxLevel - 1) {
@@ -336,7 +336,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.l(IIIB)Ltk;")
 	public Tile method8707(int arg0, int arg1, int arg2) {
-		return this.method8706(arg0, Math.min(this.maxTileX - 1, Math.max(0, arg1)), Math.min(this.maxTileZ - 1, Math.max(0, arg2)));
+		return this.getTile(arg0, Math.min(this.maxTileX - 1, Math.max(0, arg1)), Math.min(this.maxTileZ - 1, Math.max(0, arg2)));
 	}
 
 	@ObfuscatedName("tx.u(IIII)V")
@@ -411,7 +411,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.y(IIILasv;B)V")
 	public void addGroundDecoration(int arg0, int arg1, int arg2, GroundDecorLayerEntity arg3) {
-		Tile var5 = this.method8706(arg0, arg1, arg2);
+		Tile var5 = this.getTile(arg0, arg1, arg2);
 		if (var5 == null) {
 			return;
 		}
@@ -430,8 +430,8 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.q(IIIILast;S)V")
-	public void method8718(int arg0, int arg1, int arg2, int arg3, ObjLayerEntity arg4) {
-		Tile var6 = this.method8706(arg0, arg1, arg2);
+	public void addObjStack(int arg0, int arg1, int arg2, int arg3, ObjLayerEntity arg4) {
+		Tile var6 = this.getTile(arg0, arg1, arg2);
 		if (var6 == null) {
 			return;
 		}
@@ -452,7 +452,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.x(IIILasw;Lasw;I)V")
 	public void addWall(int arg0, int arg1, int arg2, WallLayerEntity arg3, WallLayerEntity arg4) {
-		Tile var6 = this.method8706(arg0, arg1, arg2);
+		Tile var6 = this.getTile(arg0, arg1, arg2);
 		if (var6 == null) {
 			return;
 		}
@@ -486,7 +486,7 @@ public class Scene {
 
 	@ObfuscatedName("tx.b(IIILasm;Lasm;B)V")
 	public void addWallDecoration(int arg0, int arg1, int arg2, WallDecorLayerEntity arg3, WallDecorLayerEntity arg4) {
-		Tile var6 = this.method8706(arg0, arg1, arg2);
+		Tile var6 = this.getTile(arg0, arg1, arg2);
 		if (var6 == null) {
 			return;
 		}
@@ -568,7 +568,7 @@ public class Scene {
 		}
 		if (arg1) {
 			this.entities[++this.entityCount - 1] = arg0;
-			arg0.field11716 = this;
+			arg0.scene = this;
 		} else {
 			int var19 = this.field6917 == this.field6913 ? 1 : 0;
 			if (!arg0.method16488()) {
@@ -1053,12 +1053,12 @@ public class Scene {
 			this.field6930.field7017 = false;
 		}
 		ParticleSystemRenderer.method8460(this, this.renderer);
-		if (!this.field6959.field6884) {
-			Iterator var34 = this.field6959.field6885.iterator();
+		if (!this.pickableEntities.field6884) {
+			Iterator var34 = this.pickableEntities.field6885.iterator();
 			while (var34.hasNext()) {
 				PickableEntity var35 = (PickableEntity) var34.next();
 				var34.remove();
-				PickableEntity.method3657(var35);
+				PickableEntity.pushPickableEntity(var35);
 			}
 		}
 		if (this.field6906) {
@@ -1326,15 +1326,15 @@ public class Scene {
 			var11.field1579 = this.method8715(var9, var10);
 			this.renderer.setWaterFog(this.field6915[0].getFineHeight((int) var6.x, (int) var6.z), var11);
 		}
-		PickableEntity var12 = arg0.method17372(this.renderer);
+		PickableEntity var12 = arg0.draw(this.renderer);
 		if (var12 == null) {
 			return;
 		}
-		if (var12.field6977) {
+		if (var12.active) {
 			var12.field6978 = arg0;
-			this.field6959.method8683(var12);
+			this.pickableEntities.method8683(var12);
 		} else {
-			PickableEntity.method3657(var12);
+			PickableEntity.pushPickableEntity(var12);
 		}
 	}
 
@@ -1574,7 +1574,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.bh(IIII)V")
-	public void method8756(int arg0, int arg1, int arg2) {
+	public void addPointLightColour(int arg0, int arg1, int arg2) {
 		List var4 = (List) this.field6957.get(arg0);
 		if (var4 == null) {
 			return;
@@ -1587,7 +1587,7 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.bx(IIIB)V")
-	public void method8757(int arg0, int arg1, int arg2) {
+	public void setPointLightIntensity(int arg0, int arg1, int arg2) {
 		List var4 = (List) this.field6957.get(arg0);
 		if (var4 == null) {
 			return;

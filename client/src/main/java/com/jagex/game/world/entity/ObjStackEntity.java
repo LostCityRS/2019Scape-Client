@@ -68,7 +68,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 
 	public ObjStackEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		super(arg0, arg1, arg2, arg3, arg4, arg5);
-		this.method18363(3);
+		this.createEntityBounds(3);
 		this.method19718();
 	}
 
@@ -95,7 +95,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 	}
 
 	@ObfuscatedName("aut.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer renderer) {
 		return null;
 	}
 
@@ -105,10 +105,10 @@ public class ObjStackEntity extends ObjLayerEntity {
 	}
 
 	@ObfuscatedName("aut.fc(Ldh;I)Ltl;")
-	public PickableEntity method17372(Renderer arg0) {
+	public PickableEntity draw(Renderer renderer) {
 		Vector3 var2 = Vector3.create(this.getTransform().trans);
-		PrimaryLayerEntityList var3 = this.field11716.getEntities(this.level, (int) var2.x >> 9, (int) var2.z >> 9);
-		GroundDecorLayerEntity var4 = this.field11716.getGroundDecoration(this.level, (int) var2.x >> 9, (int) var2.z >> 9);
+		PrimaryLayerEntityList var3 = this.scene.getEntities(this.level, (int) var2.x >> 9, (int) var2.z >> 9);
+		GroundDecorLayerEntity var4 = this.scene.getGroundDecoration(this.level, (int) var2.x >> 9, (int) var2.z >> 9);
 		int var5 = 0;
 		while (var3 != null) {
 			if (var3.field7057.field12470 && var3.field7057.overlayHeight() < var5) {
@@ -124,13 +124,13 @@ public class ObjStackEntity extends ObjLayerEntity {
 			this.method10531(var2);
 			this.field12578 = var5;
 		}
-		Matrix4x3 var6 = arg0.method2209();
+		Matrix4x3 var6 = renderer.method2209();
 		var6.setToIdentity();
 		if (this.field12578 == 0) {
 			boolean var7 = false;
 			boolean var8 = false;
 			boolean var9 = false;
-			FloorModel var10 = this.field11716.field6913[this.field11714];
+			FloorModel var10 = this.scene.field6913[this.field11714];
 			int var11 = this.field12579 << 1;
 			int var13 = -var11 / 2;
 			int var14 = -var11 / 2;
@@ -172,11 +172,11 @@ public class ObjStackEntity extends ObjLayerEntity {
 		var2.release();
 		Vector3 var33 = this.getTransform().trans;
 		var6.translate(var33.x, var33.y - 10.0F, var33.z);
-		PickableEntity var34 = PickableEntity.method16749(true);
+		PickableEntity var34 = PickableEntity.getPickableEntity(true);
 		this.field12576 = false;
 		this.field12579 = 0;
 		if (this.field12573 != -1) {
-			Model var35 = ((ObjType) Client.objTypeList.list(this.field12573)).method14644(arg0, 526336, this.field12583, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
+			Model var35 = ((ObjType) Client.objTypeList.list(this.field12573)).method14644(renderer, 526336, this.field12583, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
 			if (var35 != null) {
 				if (this.field12577 == null) {
 					field12584.setToIdentity();
@@ -184,13 +184,13 @@ public class ObjStackEntity extends ObjLayerEntity {
 					field12584.setTo(this.field12577);
 				}
 				field12584.method6316(var6);
-				var35.draw(field12584, this.field11713[2], 0);
+				var35.draw(field12584, this.entityBounds[2], 0);
 				this.field12576 |= var35.method1731();
-				this.field12579 = var35.method1728();
+				this.field12579 = var35.getRadius();
 			}
 		}
 		if (this.field12569 != -1) {
-			Model var36 = ((ObjType) Client.objTypeList.list(this.field12569)).method14644(arg0, 526336, this.field12572, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
+			Model var36 = ((ObjType) Client.objTypeList.list(this.field12569)).method14644(renderer, 526336, this.field12572, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
 			if (var36 != null) {
 				if (this.field12568 == null) {
 					field12584.setToIdentity();
@@ -198,14 +198,14 @@ public class ObjStackEntity extends ObjLayerEntity {
 					field12584.setTo(this.field12568);
 				}
 				field12584.method6316(var6);
-				var36.draw(field12584, this.field11713[1], 0);
+				var36.draw(field12584, this.entityBounds[1], 0);
 				this.field12576 |= var36.method1731();
-				if (var36.method1728() > this.field12579) {
-					this.field12579 = var36.method1728();
+				if (var36.getRadius() > this.field12579) {
+					this.field12579 = var36.getRadius();
 				}
 			}
 		}
-		Model var37 = ((ObjType) Client.objTypeList.list(this.field12580)).method14644(arg0, 526336, this.field12570, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
+		Model var37 = ((ObjType) Client.objTypeList.list(this.field12580)).method14644(renderer, 526336, this.field12570, null, null, this.field12581, this.field12582, this.field12574, this.field12575);
 		if (var37 != null) {
 			if (this.field12571 == null) {
 				field12584.setToIdentity();
@@ -213,10 +213,10 @@ public class ObjStackEntity extends ObjLayerEntity {
 				field12584.setTo(this.field12571);
 			}
 			field12584.method6316(var6);
-			var37.draw(field12584, this.field11713[0], 0);
+			var37.draw(field12584, this.entityBounds[0], 0);
 			this.field12576 |= var37.method1731();
-			if (var37.method1728() > this.field12579) {
-				this.field12579 = var37.method1728();
+			if (var37.getRadius() > this.field12579) {
+				this.field12579 = var37.getRadius();
 			}
 		}
 		return var34;
@@ -233,11 +233,11 @@ public class ObjStackEntity extends ObjLayerEntity {
 	}
 
 	@ObfuscatedName("aut.fw(Ldh;I)V")
-	public void method17373(Renderer arg0) {
+	public void method17373(Renderer renderer) {
 	}
 
 	@ObfuscatedName("aut.gp(I)I")
-	public int method18371() {
+	public int getPickSizeShift() {
 		ObjType var1 = (ObjType) Client.objTypeList.list(this.field12580);
 		int var2 = var1.picksizeshift;
 		if (this.field12569 != -1) {
@@ -256,11 +256,11 @@ public class ObjStackEntity extends ObjLayerEntity {
 	}
 
 	@ObfuscatedName("aut.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer arg0, int arg1, int arg2) {
-		Matrix4x3 var4 = arg0.method2209();
+	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+		Matrix4x3 var4 = renderer.method2209();
 		var4.setToTransform2(this.getTransform());
 		var4.translate(0.0F, -10.0F, 0.0F);
-		Model var5 = ((ObjType) Client.objTypeList.list(this.field12580)).method14644(arg0, 131072, this.field12570, null, null, 0, 0, 0, 0);
+		Model var5 = ((ObjType) Client.objTypeList.list(this.field12580)).method14644(renderer, 131072, this.field12570, null, null, 0, 0, 0, 0);
 		if (var5 != null) {
 			if (this.field12571 == null) {
 				field12584.setToIdentity();
@@ -273,7 +273,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 			}
 		}
 		if (this.field12569 != -1) {
-			Model var6 = ((ObjType) Client.objTypeList.list(this.field12569)).method14644(arg0, 131072, this.field12572, null, null, 0, 0, 0, 0);
+			Model var6 = ((ObjType) Client.objTypeList.list(this.field12569)).method14644(renderer, 131072, this.field12572, null, null, 0, 0, 0, 0);
 			if (var6 != null) {
 				if (this.field12568 == null) {
 					field12584.setToIdentity();
@@ -287,7 +287,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 			}
 		}
 		if (this.field12573 != -1) {
-			Model var7 = ((ObjType) Client.objTypeList.list(this.field12573)).method14644(arg0, 131072, this.field12583, null, null, 0, 0, 0, 0);
+			Model var7 = ((ObjType) Client.objTypeList.list(this.field12573)).method14644(renderer, 131072, this.field12583, null, null, 0, 0, 0, 0);
 			if (var7 != null) {
 				if (this.field12577 == null) {
 					field12584.setToIdentity();

@@ -78,7 +78,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 				}
 			}
 		}
-		this.method18363(1);
+		this.createEntityBounds(1);
 	}
 
 	@ObfuscatedName("ajk.bu(B)Z")
@@ -97,7 +97,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 
 	@ObfuscatedName("ajk.by(B)I")
 	public int overlayHeight() {
-		return this.field11150 == null ? 0 : this.field11150.method1748();
+		return this.field11150 == null ? 0 : this.field11150.getMinY();
 	}
 
 	@ObfuscatedName("ajk.bz(Ldh;IB)Ldo;")
@@ -116,12 +116,12 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		FloorModel var5;
 		FloorModel var6;
 		if (this.field11156) {
-			var5 = this.field11716.field6917[this.field11714];
-			var6 = this.field11716.field6915[0];
+			var5 = this.scene.field6917[this.field11714];
+			var6 = this.scene.field6915[0];
 		} else {
-			var5 = this.field11716.field6915[this.field11714];
+			var5 = this.scene.field6915[this.field11714];
 			if (this.field11714 < 3) {
-				var6 = this.field11716.field6915[this.field11714 + 1];
+				var6 = this.scene.field6915[this.field11714 + 1];
 			} else {
 				var6 = null;
 			}
@@ -131,44 +131,44 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	}
 
 	@ObfuscatedName("ajk.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer renderer) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11149 == null) {
-			this.field11149 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17411(arg0, 0));
+			this.field11149 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17411(renderer, 0));
 		}
 		return this.field11149;
 	}
 
 	@ObfuscatedName("ajk.fc(Ldh;I)Ltl;")
-	public PickableEntity method17372(Renderer arg0) {
+	public PickableEntity draw(Renderer renderer) {
 		if (this.field11150 == null) {
 			return null;
 		}
-		Matrix4x3 var2 = arg0.method2209();
+		Matrix4x3 var2 = renderer.method2209();
 		var2.setTo(this.method10533());
 		var2.translate((float) this.field12452, 0.0F, (float) this.field12451);
-		PickableEntity var3 = PickableEntity.method16749(this.field11157);
+		PickableEntity var3 = PickableEntity.getPickableEntity(this.field11157);
 		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).clickbox;
 		if (var4 == null) {
-			this.field11150.draw(var2, this.field11713[0], 0);
+			this.field11150.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.field11150.draw(var2, null, 0);
-			arg0.method2193(var2, this.field11713[0], var4);
+			renderer.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajk.fw(Ldh;I)V")
-	public void method17373(Renderer arg0) {
+	public void method17373(Renderer renderer) {
 	}
 
 	@ObfuscatedName("ajk.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer renderer, int arg1, int arg2) {
 		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).clickbox;
 		if (var4 != null) {
-			return arg0.pick(arg1, arg2, this.method10533(), var4);
+			return renderer.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17411(arg0, 131072);
+		Model var5 = this.method17411(renderer, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -222,7 +222,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 
@@ -239,7 +239,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.field11716.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
 		}
 	}
 }

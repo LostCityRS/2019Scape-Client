@@ -360,7 +360,7 @@ public abstract class Font {
 								try {
 									int var16 = StringTools.parseInt(var15.substring(4));
 									Sprite var17 = glyphs[var16];
-									int var18 = arg4 == null ? var17.method1436() : arg4[var16];
+									int var18 = arg4 == null ? var17.getY() : arg4[var16];
 									if ((rgb & -16777216) == -16777216) {
 										var17.drawSprite(x, this.fontMetrics.field8566 + var9 - var18, 1, -1, 1);
 									} else {
@@ -386,7 +386,7 @@ public abstract class Font {
 									}
 									Sprite[] sprites = this.fontMetrics.fontIconProvider.getIconSprites(this.renderer, iconId);
 									if (sprites != null) {
-										int var25 = Math.min(sprites[spriteIndex].method1436(), this.fontMetrics.field8569 + this.fontMetrics.field8562);
+										int var25 = Math.min(sprites[spriteIndex].getY(), this.fontMetrics.field8569 + this.fontMetrics.field8562);
 										if ((rgb & -16777216) == -16777216) {
 											sprites[spriteIndex].drawSprite(x, this.fontMetrics.field8566 + var9 + 2 - var25, 1, -1, 1);
 										} else {
@@ -486,7 +486,7 @@ public abstract class Font {
 									var11++;
 									int var18 = StringTools.parseInt(tag.substring(4));
 									Sprite var19 = glyphs[var18];
-									int var20 = arg4 == null ? var19.method1436() : arg4[var18];
+									int var20 = arg4 == null ? var19.getY() : arg4[var18];
 									var19.drawSprite(x + var16, this.fontMetrics.field8566 + yoff - var20 + var17, 1, -1, 1);
 									x += glyphs[var18].getX();
 									var10 = -1;
@@ -521,7 +521,7 @@ public abstract class Font {
 									var11++;
 									Sprite[] var28 = this.fontMetrics.fontIconProvider.getIconSprites(this.renderer, var25);
 									if (var28 != null) {
-										int var29 = Math.min(var28[var23].method1436(), this.fontMetrics.field8569 + this.fontMetrics.field8562);
+										int var29 = Math.min(var28[var23].getY(), this.fontMetrics.field8569 + this.fontMetrics.field8562);
 										var28[var23].drawSprite(x + var26, this.fontMetrics.field8566 + yoff + 3 - var29 + var27, 1, -1, 1);
 										x += var28[var23].getX();
 									}

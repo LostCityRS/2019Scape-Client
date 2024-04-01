@@ -19,7 +19,7 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("auu.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer renderer, int arg1, int arg2) {
 		return false;
 	}
 
@@ -39,7 +39,7 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("auu.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 	}
 
 	@ObfuscatedName("auu.ff(B)V")
@@ -47,15 +47,15 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("auu.fc(Ldh;I)Ltl;")
-	public PickableEntity method17372(Renderer arg0) {
+	public PickableEntity draw(Renderer renderer) {
 		if (this.field12614.field6754 == null) {
 			return null;
 		}
-		Matrix4x3 var2 = arg0.method2209();
+		Matrix4x3 var2 = renderer.method2209();
 		Matrix4x3 var3 = this.method10533();
 		ScaleRotTrans var4 = this.getTransform();
 		var2.setTo(var3);
-		Tile var5 = this.field11716.levelTiles[this.level][(int) var4.trans.x >> 9][(int) var4.trans.z >> 9];
+		Tile var5 = this.scene.levelTiles[this.level][(int) var4.trans.x >> 9][(int) var4.trans.z >> 9];
 		if (var5 != null && var5.groundDecoration != null) {
 			var2.translate(0.0F, (float) -var5.groundDecoration.field12448, 0.0F);
 		}
@@ -64,16 +64,16 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("auu.fw(Ldh;I)V")
-	public void method17373(Renderer arg0) {
+	public void method17373(Renderer renderer) {
 	}
 
 	@ObfuscatedName("auu.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer renderer) {
 		return null;
 	}
 
 	@ObfuscatedName("auu.by(B)I")
 	public int overlayHeight() {
-		return this.field12614.field6754 == null ? 0 : this.field12614.field6754.method1748();
+		return this.field12614.field6754 == null ? 0 : this.field12614.field6754.getMinY();
 	}
 }

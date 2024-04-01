@@ -683,20 +683,20 @@ public class ObjType implements ConfigType {
 			}
 			var14 = arg0.createModel(var17, var16, this.factory.field8611, this.ambient + 64, this.contrast + 850);
 			if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
-				var14.method1699(this.resizex, this.resizey, this.resizez);
+				var14.scale(this.resizex, this.resizey, this.resizez);
 			}
 			if (this.recol_s != null) {
 				for (int var18 = 0; var18 < this.recol_s.length; var18++) {
 					if (this.recol_d_palette == null || var18 >= this.recol_d_palette.length) {
-						var14.method1859(this.recol_s[var18], this.recol_d[var18]);
+						var14.recolor(this.recol_s[var18], this.recol_d[var18]);
 					} else {
-						var14.method1859(this.recol_s[var18], clientpalette[this.recol_d_palette[var18] & 0xFF]);
+						var14.recolor(this.recol_s[var18], clientpalette[this.recol_d_palette[var18] & 0xFF]);
 					}
 				}
 			}
 			if (this.retex_s != null) {
 				for (int var19 = 0; var19 < this.retex_s.length; var19++) {
-					var14.method1744(this.retex_s[var19], this.retex_d[var19]);
+					var14.retexture(this.retex_s[var19], this.retex_d[var19]);
 				}
 			}
 			if (arg3 != null) {
@@ -710,7 +710,7 @@ public class ObjType implements ConfigType {
 							}
 							for (int var23 = 0; var23 < PlayerModel.field10766[var22].length; var23++) {
 								if (arg3.field7895[var22] < PlayerModel.field9259[var22][var23].length) {
-									var14.method1744(PlayerModel.field10766[var22][var23], PlayerModel.field9259[var22][var23][arg3.field7895[var22]]);
+									var14.retexture(PlayerModel.field10766[var22][var23], PlayerModel.field9259[var22][var23][arg3.field7895[var22]]);
 								}
 							}
 							var22++;
@@ -718,7 +718,7 @@ public class ObjType implements ConfigType {
 					}
 					for (int var21 = 0; var21 < PlayerModel.field7577[var20].length; var21++) {
 						if (arg3.field7894[var20] < PlayerModel.field1434[var20][var21].length) {
-							var14.method1859(PlayerModel.field7577[var20][var21], PlayerModel.field1434[var20][var21][arg3.field7894[var20]]);
+							var14.recolor(PlayerModel.field7577[var20][var21], PlayerModel.field1434[var20][var21][arg3.field7894[var20]]);
 						}
 					}
 					var20++;
@@ -809,7 +809,7 @@ public class ObjType implements ConfigType {
 			return null;
 		}
 		if (var19) {
-			var20.method1699(this.resizex, this.resizey, this.resizez);
+			var20.scale(this.resizex, this.resizey, this.resizez);
 		}
 		Sprite var21 = null;
 		if (this.certtemplate != -1) {
@@ -853,7 +853,7 @@ public class ObjType implements ConfigType {
 		Matrix4x3 var26 = arg0.method2209();
 		var26.setToRotation(0.0F, 0.0F, 1.0F, Trig1.radians(-this.zan2d << 3));
 		var26.rotateAroundAxis(0.0F, 1.0F, 0.0F, Trig1.radians(this.yan2d << 3));
-		var26.translate((float) (this.xof2d << 2), (float) ((Trig1.sin[this.xan2d << 3] * var22 >> 14) - var20.method1748() / 2 + (this.yof2d << 2)), (float) ((this.yof2d << 2) + (Trig1.cos[this.xan2d << 3] * var22 >> 14)));
+		var26.translate((float) (this.xof2d << 2), (float) ((Trig1.sin[this.xan2d << 3] * var22 >> 14) - var20.getMinY() / 2 + (this.yof2d << 2)), (float) ((this.yof2d << 2) + (Trig1.cos[this.xan2d << 3] * var22 >> 14)));
 		var26.rotateAroundAxis(1.0F, 0.0F, 0.0F, Trig1.radians(this.xan2d << 3));
 		arg0.resetBounds(0, 0, 36, 32);
 		arg0.method2475(2, 0);

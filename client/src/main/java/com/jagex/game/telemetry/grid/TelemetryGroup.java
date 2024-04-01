@@ -67,11 +67,11 @@ public class TelemetryGroup {
 
 	@ObfuscatedName("fy.l(IB)I")
 	public int method3320(int arg0) {
-		return this.method3296(arg0, -1);
+		return this.addColumn(arg0, -1);
 	}
 
 	@ObfuscatedName("fy.u(IZI)V")
-	public void method3293(int arg0, boolean arg1) {
+	public void setRowPinned(int arg0, boolean arg1) {
 		this.field1884.set(arg0, arg1 ? arg0 : field1889);
 	}
 
@@ -86,7 +86,7 @@ public class TelemetryGroup {
 	}
 
 	@ObfuscatedName("fy.d(III)I")
-	public int method3296(int arg0, int arg1) {
+	public int addColumn(int arg0, int arg1) {
 		if (this.field1886.size() == 8) {
 			throw new RuntimeException("");
 		} else if (this.getColumnIndex(arg0) == -1) {
@@ -106,7 +106,7 @@ public class TelemetryGroup {
 	}
 
 	@ObfuscatedName("fy.c(IB)V")
-	public void method3322(int arg0) {
+	public void removeColumn(int arg0) {
 		this.field1886.remove(arg0);
 		Iterator var2 = this.field1887.iterator();
 		while (var2.hasNext()) {
@@ -117,11 +117,11 @@ public class TelemetryGroup {
 
 	@ObfuscatedName("fy.r(II)I")
 	public int method3298(int arg0) {
-		return this.method3301(arg0, -1);
+		return this.addRow(arg0, -1);
 	}
 
 	@ObfuscatedName("fy.v(IIB)V")
-	public void method3325(int arg0, int arg1) {
+	public void moveRow(int arg0, int arg1) {
 		this.method3300(arg0, arg1);
 		for (int var3 = 0; var3 < this.field1884.size(); var3++) {
 			Integer var4 = (Integer) this.field1884.get(var3);
@@ -142,7 +142,7 @@ public class TelemetryGroup {
 	}
 
 	@ObfuscatedName("fy.s(III)I")
-	public int method3301(int arg0, int arg1) {
+	public int addRow(int arg0, int arg1) {
 		if (this.field1882.size() == 40) {
 			throw new RuntimeException("");
 		} else if (this.getRowIndex(arg0) == -1) {
@@ -174,7 +174,7 @@ public class TelemetryGroup {
 	}
 
 	@ObfuscatedName("fy.q(II)V")
-	public void method3303(int arg0) {
+	public void removeRow(int arg0) {
 		this.method3304(arg0);
 		int var2 = arg0;
 		for (int var3 = arg0; var3 < this.field1882.size(); var3++) {
@@ -195,7 +195,7 @@ public class TelemetryGroup {
 	}
 
 	@ObfuscatedName("fy.b(III)V")
-	public void method3356(int arg0, int arg1) {
+	public void moveColumn(int arg0, int arg1) {
 		this.field1886.add(arg1, this.field1886.remove(arg0));
 		Iterator var3 = this.field1887.iterator();
 		while (var3.hasNext()) {
@@ -210,7 +210,7 @@ public class TelemetryGroup {
 	}
 
 	@ObfuscatedName("fy.a(IILjava/lang/Object;I)V")
-	public void method3307(int arg0, int arg1, Object arg2) {
+	public void clearGridValue(int arg0, int arg1, Object arg2) {
 		((List) this.field1887.get(arg0)).set(arg1, arg2);
 	}
 }

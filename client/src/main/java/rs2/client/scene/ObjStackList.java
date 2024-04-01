@@ -8,5 +8,5 @@ import deob.ObfuscatedName;
 public class ObjStackList extends Node {
 
 	@ObfuscatedName("ajm.k")
-	public IterableQueue field11263 = new IterableQueue();
+	public IterableQueue levelObjStacks = new IterableQueue();
 }

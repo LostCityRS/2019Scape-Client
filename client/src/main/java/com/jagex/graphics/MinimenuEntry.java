@@ -25,10 +25,10 @@ public class MinimenuEntry extends SecondaryNode {
 	public final long field12300;
 
 	@ObfuscatedName("arm.r")
-	public final int field12304;
+	public final int sceneBaseTileX;
 
 	@ObfuscatedName("arm.v")
-	public final int field12302;
+	public final int sceneBaseTileZ;
 
 	@ObfuscatedName("arm.o")
 	public final boolean field12299;
@@ -40,7 +40,7 @@ public class MinimenuEntry extends SecondaryNode {
 	public final boolean field12306;
 
 	@ObfuscatedName("arm.q")
-	public int field12307;
+	public int menuAction;
 
 	@ObfuscatedName("arm.x")
 	public String field12296;
@@ -49,11 +49,11 @@ public class MinimenuEntry extends SecondaryNode {
 		this.field12301 = arg1;
 		this.field12297 = arg0;
 		this.field12298 = arg2;
-		this.field12307 = arg3;
+		this.menuAction = arg3;
 		this.field12303 = arg4;
 		this.field12300 = arg5;
-		this.field12304 = arg6;
-		this.field12302 = arg7;
+		this.sceneBaseTileX = arg6;
+		this.sceneBaseTileZ = arg7;
 		this.field12308 = arg8;
 		this.field12299 = arg9;
 		this.field12305 = arg10;

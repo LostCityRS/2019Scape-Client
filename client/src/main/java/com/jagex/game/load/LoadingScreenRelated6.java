@@ -52,14 +52,14 @@ public class LoadingScreenRelated6 extends LoadingScreenProgressDisplay {
 		Client.renderer.method2171(var4);
 		Client.renderer.resetBounds(arg1, arg2, this.field3027.field3163 + arg1, this.field3027.field3160 + arg2);
 		int var5 = this.field10539.getX();
-		int var6 = this.field10539.method1436();
+		int var6 = this.field10539.getY();
 		int var7 = this.field10542.getX();
-		int var8 = this.field10542.method1436();
+		int var8 = this.field10542.getY();
 		this.field10539.drawSprite(arg1, (this.field3027.field3160 - var6) / 2 + arg2);
 		this.field10542.drawSprite(this.field3027.field3163 + arg1 - var7, (this.field3027.field3160 - var8) / 2 + arg2);
-		Client.renderer.resetBounds(arg1, arg2, this.field3027.field3163 + arg1, arg2 + this.field10541.method1436());
+		Client.renderer.resetBounds(arg1, arg2, this.field3027.field3163 + arg1, arg2 + this.field10541.getY());
 		this.field10541.drawTiled(arg1 + var5, arg2, this.field3027.field3163 - var5 - var7, this.field3027.field3160);
-		int var9 = this.field10544.method1436();
+		int var9 = this.field10544.getY();
 		Client.renderer.resetBounds(arg1, this.field3027.field3160 + arg2 - var9, this.field3027.field3163 + arg1, this.field3027.field3160 + arg2);
 		this.field10544.drawTiled(arg1 + var5, this.field3027.field3160 + arg2 - var9, this.field3027.field3163 - var5 - var7, this.field3027.field3160);
 		Client.renderer.resetBounds(var4[0], var4[1], var4[2], var4[3]);
@@ -69,8 +69,8 @@ public class LoadingScreenRelated6 extends LoadingScreenProgressDisplay {
 	public void method5122(boolean arg0, int arg1, int arg2) {
 		int var4 = arg1 + this.field10539.getX();
 		int var5 = this.field3027.field3163 + arg1 - this.field10542.getX();
-		int var6 = arg2 + this.field10541.method1436();
-		int var7 = this.field3027.field3160 + arg2 - this.field10544.method1436();
+		int var6 = arg2 + this.field10541.getY();
+		int var7 = this.field3027.field3160 + arg2 - this.field10544.getY();
 		int var8 = var5 - var4;
 		int var9 = var7 - var6;
 		int var10 = this.method5123() * var8 / 10000;

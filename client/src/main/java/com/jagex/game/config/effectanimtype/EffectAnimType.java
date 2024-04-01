@@ -213,12 +213,12 @@ public class EffectAnimType implements ConfigType {
 			var18 = arg0.createModel(var21, var20, this.factory.field8264, this.ambient + 64, this.contrast + 850);
 			if (this.recol_s != null) {
 				for (int var22 = 0; var22 < this.recol_s.length; var22++) {
-					var18.method1859(this.recol_s[var22], this.recol_d[var22]);
+					var18.recolor(this.recol_s[var22], this.recol_d[var22]);
 				}
 			}
 			if (this.retex_s != null) {
 				for (int var23 = 0; var23 < this.retex_s.length; var23++) {
-					var18.method1744(this.retex_s[var23], this.retex_d[var23]);
+					var18.retexture(this.retex_s[var23], this.retex_d[var23]);
 				}
 			}
 			var18.method1690(var15);
@@ -232,7 +232,7 @@ public class EffectAnimType implements ConfigType {
 			arg12.method14359(var26, 0);
 		}
 		if (this.resizeh != 128 || this.resizev != 128) {
-			var26.method1699(this.resizeh, this.resizev, this.resizeh);
+			var26.scale(this.resizeh, this.resizev, this.resizeh);
 		}
 		if (this.orientation != 0) {
 			if (this.orientation == 90) {
@@ -252,13 +252,13 @@ public class EffectAnimType implements ConfigType {
 		if (var16) {
 			if (arg3 == null) {
 				if (arg9 != 0) {
-					var26.method1852(arg9);
+					var26.rotateX(arg9);
 				}
 				if (arg10 != 0) {
-					var26.method1696(arg10);
+					var26.rotateZ(arg10);
 				}
 				if (arg11 != 0) {
-					var26.method1805(0, arg11, 0);
+					var26.translate(0, arg11, 0);
 				}
 			} else {
 				var26.method1700(this.hillskew_mode, this.hillskew_value, arg3, arg4, arg5, arg6, arg7);

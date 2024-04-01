@@ -93,13 +93,13 @@ public class Component {
 	public static boolean[] field8424;
 
 	@ObfuscatedName("ua.g")
-	public static Js5 field7085;
+	public static Js5 interfacesJs5;
 
 	@ObfuscatedName("ec.i")
-	public static Js5 field1707;
+	public static Js5 modelsJs5;
 
 	@ObfuscatedName("zl.j")
-	public static Js5 field8370;
+	public static Js5 spritesJs5;
 
 	@ObfuscatedName("hf.t")
 	public static WeightedCache spriteCache = new WeightedCache(6000000, 200);
@@ -120,7 +120,7 @@ public class Component {
 	public static boolean field2338 = false;
 
 	@ObfuscatedName("hf.ai")
-	public String field2155;
+	public String name;
 
 	@ObfuscatedName("hf.aw")
 	public int field2181;
@@ -231,7 +231,7 @@ public class Component {
 	public int angle2d = 0;
 
 	@ObfuscatedName("hf.bw")
-	public boolean field2217 = false;
+	public boolean tiling = false;
 
 	@ObfuscatedName("hf.bo")
 	public int outline = 0;
@@ -297,7 +297,7 @@ public class Component {
 	public int field2238 = 0;
 
 	@ObfuscatedName("hf.cf")
-	public boolean field2239 = false;
+	public boolean modelorthog = false;
 
 	@ObfuscatedName("hf.co")
 	public boolean field2260 = false;
@@ -306,31 +306,31 @@ public class Component {
 	public int field2241 = 2;
 
 	@ObfuscatedName("hf.cm")
-	public short[] field2242;
+	public short[] recol_s;
 
 	@ObfuscatedName("hf.cq")
-	public short[] field2243;
+	public short[] recol_d;
 
 	@ObfuscatedName("hf.ch")
-	public short[] field2346;
+	public short[] retex_s;
 
 	@ObfuscatedName("hf.cb")
-	public short[] field2245;
+	public short[] retex_d;
 
 	@ObfuscatedName("hf.cs")
-	public int field2240;
+	public int tint_hue;
 
 	@ObfuscatedName("hf.cy")
-	public int field2256;
+	public int tint_saturation;
 
 	@ObfuscatedName("hf.cc")
-	public int field2203;
+	public int tint_luminence;
 
 	@ObfuscatedName("hf.cz")
-	public int field2189;
+	public int tint_weight;
 
 	@ObfuscatedName("hf.ck")
-	public boolean field2250 = false;
+	public boolean customlighting = false;
 
 	@ObfuscatedName("hf.cj")
 	public int field2345;
@@ -357,7 +357,7 @@ public class Component {
 	public int field2258;
 
 	@ObfuscatedName("hf.dv")
-	public int font = -1;
+	public int textfont = -1;
 
 	@ObfuscatedName("hf.dm")
 	public boolean fontmono = true;
@@ -381,7 +381,7 @@ public class Component {
 	public int maxlines = 0;
 
 	@ObfuscatedName("hf.dw")
-	public boolean antimacro = false;
+	public boolean textantimacro = false;
 
 	@ObfuscatedName("hf.ds")
 	public ServerKeyProperties field2268 = ServerKeyProperties.field11386;
@@ -420,7 +420,7 @@ public class Component {
 	public int targetopcursor = -1;
 
 	@ObfuscatedName("hf.es")
-	public Component field2284 = null;
+	public Component draggable = null;
 
 	@ObfuscatedName("hf.ei")
 	public int dragdeadzone = 0;
@@ -576,10 +576,10 @@ public class Component {
 	public int invcount = 0;
 
 	@ObfuscatedName("hf.gp")
-	public String field2336 = null;
+	public String link = null;
 
 	@ObfuscatedName("hf.gy")
-	public GroupUserKind field2337;
+	public GroupUserKind groupKind;
 
 	@ObfuscatedName("hf.ga")
 	public boolean field2246 = false;
@@ -624,7 +624,7 @@ public class Component {
 	public boolean held = false;
 
 	@ObfuscatedName("hf.gw")
-	public int field2352 = -1;
+	public int lastRedrawCycle = -1;
 
 	@ObfuscatedName("hf.gd")
 	public int field2353 = 0;
@@ -661,11 +661,11 @@ public class Component {
 
 	@ObfuscatedName("gb.e(Lpy;Lpy;Lpy;Lpy;I)V")
 	public static void method3669(Js5 arg0, Js5 arg1, Js5 arg2, Js5 arg3) {
-		field7085 = arg0;
-		field1707 = arg1;
-		field8370 = arg2;
-		interfaces = new Interface[field7085.capacity()];
-		field8424 = new boolean[field7085.capacity()];
+		interfacesJs5 = arg0;
+		modelsJs5 = arg1;
+		spritesJs5 = arg2;
+		interfaces = new Interface[interfacesJs5.capacity()];
+		field8424 = new boolean[interfacesJs5.capacity()];
 	}
 
 	@ObfuscatedName("xh.n(II)Lhf;")
@@ -713,10 +713,10 @@ public class Component {
 
 	@ObfuscatedName("la.w(I[ILhq;ZI)Lhq;")
 	public static Interface method5405(int arg0, int[] arg1, Interface arg2, boolean arg3) {
-		if (!field7085.method6927(arg0)) {
+		if (!interfacesJs5.method6927(arg0)) {
 			return null;
 		}
-		int var4 = field7085.getGroupCapacity(arg0);
+		int var4 = interfacesJs5.getGroupCapacity(arg0);
 		Component[] var5;
 		if (var4 == 0) {
 			var5 = new Component[0];
@@ -733,7 +733,7 @@ public class Component {
 		}
 		for (int var6 = 0; var6 < var4; var6++) {
 			if (arg2.components[var6] == null) {
-				byte[] var7 = field7085.getfile(arg0, var6, arg1);
+				byte[] var7 = interfacesJs5.getfile(arg0, var6, arg1);
 				if (var7 != null) {
 					Component var8 = arg2.components[var6] = new Component();
 					var8.parentlayer = (arg0 << 16) + var6;
@@ -747,7 +747,7 @@ public class Component {
 	@ObfuscatedName("ahr.l(II)V")
 	public static void method16640(int arg0) {
 		if (arg0 != -1 && !field8424[arg0]) {
-			field7085.method6899(arg0);
+			interfacesJs5.method6899(arg0);
 			interfaces[arg0] = null;
 		}
 	}
@@ -767,7 +767,7 @@ public class Component {
 		this.type = buf.g1();
 		if ((this.type & 0x80) != 0) {
 			this.type &= 0x7F;
-			this.field2155 = buf.gjstr();
+			this.name = buf.gjstr();
 		}
 		this.clientcode = buf.g2();
 		this.xpos = buf.g2s();
@@ -804,7 +804,7 @@ public class Component {
 			this.graphic = buf.g4s();
 			this.angle2d = buf.g2();
 			int var4 = buf.g1();
-			this.field2217 = (var4 & 0x1) != 0;
+			this.tiling = (var4 & 0x1) != 0;
 			this.alpha = (var4 & 0x2) != 0;
 			this.trans = buf.g1();
 			this.outline = buf.g1();
@@ -822,7 +822,7 @@ public class Component {
 			int var5 = buf.g1();
 			boolean var6 = (var5 & 0x1) == 1;
 			this.field2274 = (var5 & 0x2) == 2;
-			this.field2239 = (var5 & 0x4) == 4;
+			this.modelorthog = (var5 & 0x4) == 4;
 			this.field2260 = (var5 & 0x8) == 8;
 			if (var6) {
 				this.modelorigin_x = buf.g2s();
@@ -849,7 +849,7 @@ public class Component {
 			}
 		}
 		if (this.type == 4) {
-			this.font = buf.gSmart2or4null();
+			this.textfont = buf.gSmart2or4null();
 			if (var2 >= 2) {
 				this.fontmono = buf.g1() == 1;
 			}
@@ -1035,7 +1035,7 @@ public class Component {
 		if (var4 != null) {
 			return var4;
 		}
-		SpriteData var5 = SpriteDataProvider.method1609(field8370, this.graphic, 0);
+		SpriteData var5 = SpriteDataProvider.method1609(spritesJs5, this.graphic, 0);
 		if (var5 == null) {
 			field2338 = true;
 			return null;
@@ -1067,14 +1067,14 @@ public class Component {
 
 	@ObfuscatedName("hf.r(Loi;Loq;S)Leu;")
 	public Font method3942(FontProvider arg0, FontFactory arg1) {
-		Font var3 = (Font) arg0.getFont(arg1, this.font, false, this.fontmono);
+		Font var3 = (Font) arg0.getFont(arg1, this.textfont, false, this.fontmono);
 		field2338 = var3 == null;
 		return var3;
 	}
 
 	@ObfuscatedName("hf.v(Loi;Loq;I)Laac;")
 	public FontMetrics method3943(FontProvider arg0, FontFactory arg1) {
-		FontMetrics var3 = arg0.getFontMetrics(arg1, this.font);
+		FontMetrics var3 = arg0.getFontMetrics(arg1, this.textfont);
 		field2338 = var3 == null;
 		return var3;
 	}
@@ -1093,21 +1093,21 @@ public class Component {
 			}
 			long var13 = -1L;
 			long[] var15 = Packet.crc64table;
-			if (this.field2242 != null) {
-				for (int var16 = 0; var16 < this.field2242.length; var16++) {
-					long var17 = var13 >>> 8 ^ var15[(int) ((var13 ^ (long) (this.field2242[var16] >> 8)) & 0xFFL)];
-					long var19 = var17 >>> 8 ^ var15[(int) ((var17 ^ (long) this.field2242[var16]) & 0xFFL)];
-					long var21 = var19 >>> 8 ^ var15[(int) ((var19 ^ (long) (this.field2243[var16] >> 8)) & 0xFFL)];
-					var13 = var21 >>> 8 ^ var15[(int) ((var21 ^ (long) this.field2243[var16]) & 0xFFL)];
+			if (this.recol_s != null) {
+				for (int var16 = 0; var16 < this.recol_s.length; var16++) {
+					long var17 = var13 >>> 8 ^ var15[(int) ((var13 ^ (long) (this.recol_s[var16] >> 8)) & 0xFFL)];
+					long var19 = var17 >>> 8 ^ var15[(int) ((var17 ^ (long) this.recol_s[var16]) & 0xFFL)];
+					long var21 = var19 >>> 8 ^ var15[(int) ((var19 ^ (long) (this.recol_d[var16] >> 8)) & 0xFFL)];
+					var13 = var21 >>> 8 ^ var15[(int) ((var21 ^ (long) this.recol_d[var16]) & 0xFFL)];
 				}
 				arg1 |= 0x4000;
 			}
-			if (this.field2346 != null) {
-				for (int var23 = 0; var23 < this.field2346.length; var23++) {
-					long var24 = var13 >>> 8 ^ var15[(int) ((var13 ^ (long) (this.field2346[var23] >> 8)) & 0xFFL)];
-					long var26 = var24 >>> 8 ^ var15[(int) ((var24 ^ (long) this.field2346[var23]) & 0xFFL)];
-					long var28 = var26 >>> 8 ^ var15[(int) ((var26 ^ (long) (this.field2245[var23] >> 8)) & 0xFFL)];
-					var13 = var28 >>> 8 ^ var15[(int) ((var28 ^ (long) this.field2245[var23]) & 0xFFL)];
+			if (this.retex_s != null) {
+				for (int var23 = 0; var23 < this.retex_s.length; var23++) {
+					long var24 = var13 >>> 8 ^ var15[(int) ((var13 ^ (long) (this.retex_s[var23] >> 8)) & 0xFFL)];
+					long var26 = var24 >>> 8 ^ var15[(int) ((var24 ^ (long) this.retex_s[var23]) & 0xFFL)];
+					long var28 = var26 >>> 8 ^ var15[(int) ((var26 ^ (long) (this.retex_d[var23] >> 8)) & 0xFFL)];
+					var13 = var28 >>> 8 ^ var15[(int) ((var28 ^ (long) this.retex_d[var23]) & 0xFFL)];
 				}
 				arg1 |= 0x8000;
 			}
@@ -1117,7 +1117,7 @@ public class Component {
 				if (var32 != null) {
 					arg1 = arg0.method2213(arg1, var32.method1691());
 				}
-				ModelUnlit var33 = ModelUnlit.get(field1707, this.field2294, 0);
+				ModelUnlit var33 = ModelUnlit.get(modelsJs5, this.field2294, 0);
 				if (var33 == null) {
 					field2338 = true;
 					return null;
@@ -1126,14 +1126,14 @@ public class Component {
 					var33.method1947(2);
 				}
 				var32 = arg0.createModel(var33, arg1, field11802, 64, 768);
-				if (this.field2242 != null) {
-					for (int var34 = 0; var34 < this.field2242.length; var34++) {
-						var32.method1859(this.field2242[var34], this.field2243[var34]);
+				if (this.recol_s != null) {
+					for (int var34 = 0; var34 < this.recol_s.length; var34++) {
+						var32.recolor(this.recol_s[var34], this.recol_d[var34]);
 					}
 				}
-				if (this.field2346 != null) {
-					for (int var35 = 0; var35 < this.field2346.length; var35++) {
-						var32.method1744(this.field2346[var35], this.field2245[var35]);
+				if (this.retex_s != null) {
+					for (int var35 = 0; var35 < this.retex_s.length; var35++) {
+						var32.retexture(this.retex_s[var35], this.retex_d[var35]);
 					}
 				}
 				modelCache.put(var32, var30);
@@ -1229,7 +1229,7 @@ public class Component {
 	}
 
 	@ObfuscatedName("ack.q(IB)V")
-	public static void method14950(int arg0) {
+	public static void resetModelCache(int arg0) {
 		field11802 = arg0;
 		modelCache.reset();
 	}
@@ -1260,8 +1260,8 @@ public class Component {
 
 	@ObfuscatedName("jh.a(B)V")
 	public static void method5075() {
-		interfaces = new Interface[field7085.capacity()];
-		field8424 = new boolean[field7085.capacity()];
+		interfaces = new Interface[interfacesJs5.capacity()];
+		field8424 = new boolean[interfacesJs5.capacity()];
 	}
 
 	@ObfuscatedName("hf.g(I)V")
@@ -1315,7 +1315,7 @@ public class Component {
 		this.onplayergrouptransmit = null;
 		this.onplayergroupvarptransmit = null;
 		this.oncameraupdatetransmit = null;
-		this.field2352 = -1;
+		this.lastRedrawCycle = -1;
 	}
 
 	@ObfuscatedName("hf.i(ILjava/lang/String;B)V")
@@ -1362,7 +1362,7 @@ public class Component {
 				return var4;
 			}
 		}
-		SpriteData var5 = SpriteDataProvider.method1609(field8370, this.graphic, 0);
+		SpriteData var5 = SpriteDataProvider.method1609(spritesJs5, this.graphic, 0);
 		if (var5 == null) {
 			return null;
 		}
@@ -1462,12 +1462,12 @@ public class Component {
 		if (arg0 >= 5) {
 			return;
 		}
-		if (this.field2242 == null) {
-			this.field2242 = new short[5];
-			this.field2243 = new short[5];
+		if (this.recol_s == null) {
+			this.recol_s = new short[5];
+			this.recol_d = new short[5];
 		}
-		this.field2242[arg0] = arg1;
-		this.field2243[arg0] = arg2;
+		this.recol_s[arg0] = arg1;
+		this.recol_d[arg0] = arg2;
 	}
 
 	@ObfuscatedName("hf.aw(ISSI)V")
@@ -1475,11 +1475,11 @@ public class Component {
 		if (arg0 >= 5) {
 			return;
 		}
-		if (this.field2346 == null) {
-			this.field2346 = new short[5];
-			this.field2245 = new short[5];
+		if (this.retex_s == null) {
+			this.retex_s = new short[5];
+			this.retex_d = new short[5];
 		}
-		this.field2346[arg0] = arg1;
-		this.field2245[arg0] = arg2;
+		this.retex_s[arg0] = arg1;
+		this.retex_d[arg0] = arg2;
 	}
 }

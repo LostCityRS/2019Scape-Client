@@ -119,7 +119,7 @@ public class ProjAnimCutsceneAction extends CutsceneAction {
 		}
 		int var10 = this.field10352 << 2;
 		ProjectileAnimation var11 = new ProjectileAnimation(Client.world.getScene(), this.field10347, var3, var3, var1, var2, this.field10344 << 2, Client.loopCycle, this.field10350 + Client.loopCycle, this.field10351, var10, this.field10341 + 1, this.field10345 + 1, this.field10348 << 2, false, 0, 0);
-		var11.method19725(var6, var7, this.field10348 << 2, this.field10350 + Client.loopCycle);
+		var11.updateVelocity(var6, var7, this.field10348 << 2, this.field10350 + Client.loopCycle);
 		Client.projectiles.pushBack(new ProjectileEntityWrapper(var11));
 	}
 

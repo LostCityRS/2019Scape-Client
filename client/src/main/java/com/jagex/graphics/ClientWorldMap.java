@@ -163,8 +163,8 @@ public class ClientWorldMap extends WorldMap {
 		if (loading < 10) {
 			for (int var2 = 0; var2 < field11659.length; var2++) {
 				for (int var3 = 0; var3 < field11659[var2].length; var3++) {
-					Client.spritesJs5.loadFile(WorldMap.field6792.field7697[var2][var3]);
-					Client.fontmetricsJs5.loadFile(WorldMap.field6792.field7697[var2][var3]);
+					Client.spritesJs5.loadFile(WorldMap.worldMapDefaults.field7697[var2][var3]);
+					Client.fontmetricsJs5.loadFile(WorldMap.worldMapDefaults.field7697[var2][var3]);
 				}
 			}
 			if (!WorldMap.field6795.method6886(WorldMap.currentWorldMap.field12351)) {
@@ -286,8 +286,8 @@ public class ClientWorldMap extends WorldMap {
 				}
 				for (int var12 = 0; var12 < 5; var12++) {
 					if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
-						field11659[var11][var12] = (Font) Client.fontProvider.getFont(Client.fontFactory, WorldMap.field6792.field7697[var11][var12], true, true);
-						field11660[var11][var12] = Client.fontProvider.getFontMetrics(Client.fontFactory, WorldMap.field6792.field7697[var11][var12]);
+						field11659[var11][var12] = (Font) Client.fontProvider.getFont(Client.fontFactory, WorldMap.worldMapDefaults.field7697[var11][var12], true, true);
+						field11660[var11][var12] = Client.fontProvider.getFontMetrics(Client.fontFactory, WorldMap.worldMapDefaults.field7697[var11][var12]);
 						if (field11659[var11][var12] == null || field11660[var11][var12] == null) {
 							return;
 						}
@@ -385,7 +385,7 @@ public class ClientWorldMap extends WorldMap {
 	}
 
 	@ObfuscatedName("pf.dh(Ldh;IIIIS)V")
-	public static void method7008(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
+	public static void drawWorldMap(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		arg0.resetBounds(arg1, arg2, arg1 + arg3, arg2 + arg4);
 		if (loading < 100) {
 			byte var5 = 20;
@@ -527,16 +527,16 @@ public class ClientWorldMap extends WorldMap {
 				}
 				switch(arg2.field2405.index) {
 					case 0:
-						var12 = arg1.field11451 - var9.method1436();
+						var12 = arg1.field11451 - var9.getY();
 						var13 = arg1.field11451;
 						break;
 					case 1:
 						var12 = arg1.field11451;
-						var13 = arg1.field11451 + var9.method1436();
+						var13 = arg1.field11451 + var9.getY();
 						break;
 					case 2:
-						var12 = arg1.field11451 - (var9.method1436() + 1 >> 1);
-						var13 = arg1.field11451 + (var9.method1436() + 1 >> 1);
+						var12 = arg1.field11451 - (var9.getY() + 1 >> 1);
+						var13 = arg1.field11451 + (var9.getY() + 1 >> 1);
 				}
 				if (var10 < var5) {
 					var5 = var10;
@@ -574,7 +574,7 @@ public class ClientWorldMap extends WorldMap {
 				if (var9 == null) {
 					var16 = var23 - var22 / 2;
 				} else {
-					var16 = var23 - ((var9.method1436() >> 1) + var22);
+					var16 = var23 - ((var9.getY() >> 1) + var22);
 				}
 				var18 = arg3 + var15;
 				if (var18 < var5) {
@@ -622,14 +622,14 @@ public class ClientWorldMap extends WorldMap {
 				case 0:
 					var27 = var9.getWidth();
 					var28 = (var9.getWidth() + 1) / 2;
-					var29 = var9.method1436();
+					var29 = var9.getY();
 					break;
 				case 1:
 					var28 = -(var9.getWidth() + 1) / 2;
 					break;
 				case 2:
 					var27 = var9.getWidth() / 2;
-					var29 = var9.method1436() >> 1;
+					var29 = var9.getY() >> 1;
 			}
 			WorldMapFlash var30 = (WorldMapFlash) field11661.get(arg1.field11446);
 			if (var30 == null) {
@@ -673,12 +673,12 @@ public class ClientWorldMap extends WorldMap {
 				}
 				switch(arg2.field2405.index) {
 					case 0:
-						var34 = (var14.method1436() + var9.method1436()) / 2;
+						var34 = (var14.getY() + var9.getY()) / 2;
 					case 1:
 					default:
 						break;
 					case 2:
-						var34 = (var14.method1436() / 2 + var9.method1436()) / 2;
+						var34 = (var14.getY() / 2 + var9.getY()) / 2;
 				}
 				int var35;
 				if (var30.field619 > field11664 / 2) {
@@ -760,7 +760,7 @@ public class ClientWorldMap extends WorldMap {
 			if (arg2.field2378 != 0) {
 				arg0.drawRectangle(var13, var11, var15 - var13, var16 - var11, arg2.field2378);
 			}
-			field717.drawStringTaggable(arg2.text, var10, var11, var8, var9, arg2.field2366 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
+			field717.drawStringTaggable(arg2.text, var10, var11, var8, var9, arg2.field2366 | 0xFF000000, WorldMap.worldMapDefaults.field7686, 1, 0, 0, null, null, null, 0, 0);
 		}
 		if (arg2.sprite == -1 && arg2.text == null) {
 			return;
@@ -821,11 +821,11 @@ public class ClientWorldMap extends WorldMap {
 		if (arg1.field11450 && arg2.field2372 != -1) {
 			var9 = arg2.field2372;
 		}
-		field717.drawStringTaggable(arg2.text, arg3, arg4, arg6, arg5, var9 | 0xFF000000, WorldMap.field6792.field7686, 1, 0, 0, null, null, null, 0, 0);
+		field717.drawStringTaggable(arg2.text, arg3, arg4, arg6, arg5, var9 | 0xFF000000, WorldMap.worldMapDefaults.field7686, 1, 0, 0, null, null, null, 0, 0);
 	}
 
 	@ObfuscatedName("gc.eu(Ldh;IIIIB)V")
-	public static final void method3549(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
+	public static final void drawWorldMapOverview(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
 		arg0.resetBounds(arg1, arg2, arg1 + arg3, arg2 + arg4);
 		arg0.fillRectangle(arg1, arg2, arg3, arg4, -16777216);
 		if (loading < 100) {
@@ -1034,7 +1034,7 @@ public class ClientWorldMap extends WorldMap {
 		CoordGrid var1 = Client.localPlayerEntity.coord();
 		WorldMapAreaMetadata var2 = getMap(var1.x, var1.z);
 		if (var2 == null) {
-			var2 = getMapByName(WorldMap.field6792.field7695);
+			var2 = getMapByName(WorldMap.worldMapDefaults.field7695);
 		}
 		if (field7280 == var2 && !arg0) {
 			return;

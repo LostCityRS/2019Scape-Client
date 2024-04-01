@@ -86,7 +86,7 @@ public class ClientWatch {
 					}
 					if (var1 != null && GameShell.canvas.isShowing() && GameShell.focus) {
 						var2.method19541(var1);
-						if (!var2.method19540() && var2.method17831() < GameShell.canvasWid && var2.method17832() < GameShell.canvasHei && var2.method17831() >= 0 && var2.method17832() >= 0) {
+						if (!var2.method19540() && var2.getMouseClickX() < GameShell.canvasWid && var2.getMouseClickY() < GameShell.canvasHei && var2.getMouseClickX() >= 0 && var2.getMouseClickY() >= 0) {
 							int var3 = var2.method17848();
 							if (var2.method17848() == -1) {
 								field7948.method10261(var2);
@@ -188,7 +188,7 @@ public class ClientWatch {
 			var15.buf.p1(0);
 		} else {
 			var15.buf.p1(1);
-			CompressedTextureFormat[] var17 = CompressedTextureFormat.method1304();
+			CompressedTextureFormat[] var17 = CompressedTextureFormat.values();
 			HashSet var18 = new HashSet();
 			ArrayList var19 = new ArrayList();
 			int var20 = 0;
@@ -221,7 +221,7 @@ public class ClientWatch {
 				}
 				boolean var21 = false;
 				for (int var22 = 0; var22 < var17.length; var22++) {
-					if (var14[var20] == var17[var22].field1074) {
+					if (var14[var20] == var17[var22].code) {
 						var18.add(var17[var22]);
 						var21 = true;
 						break;

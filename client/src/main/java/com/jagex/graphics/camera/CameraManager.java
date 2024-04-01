@@ -122,6 +122,6 @@ public class CameraManager {
 		CoordGrid var18 = Client.world.method7727();
 		int var19 = var18.x << 9;
 		int var20 = var18.z << 9;
-		camera.method4681(0.02F, Client.world.method7744().levelHeightmap, Client.world.method7793(), var19, var20);
+		camera.method4681(0.02F, Client.world.method7744().levelHeightmap, Client.world.getSceneLevelTileFlags(), var19, var20);
 	}
 }

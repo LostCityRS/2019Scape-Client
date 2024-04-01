@@ -74,7 +74,7 @@ public class PositionEntity extends Position {
 		}
 		this.method16686(arg1, arg2, arg3, arg4);
 		Quaternion var6 = this.method16685();
-		this.field10555.method6428(var6, this.camera.method4724());
+		this.field10555.method6428(var6, this.camera.getPositionAngularInterpolation());
 		if (Float.isNaN(this.field10555.w)) {
 			this.field10555.setTo(var6);
 		}

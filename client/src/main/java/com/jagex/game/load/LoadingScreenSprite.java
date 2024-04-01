@@ -32,7 +32,7 @@ public class LoadingScreenSprite implements LoadingScreenElement {
 	public void method5105(boolean arg0) {
 		if (arg0) {
 			int var2 = this.field3019.field3215.computeX(this.field3021.getX(), Client.frameWidth) + this.field3019.field3216;
-			int var3 = this.field3019.field3214.computeY(this.field3021.method1436(), Client.frameHeight) + this.field3019.field3217;
+			int var3 = this.field3019.field3214.computeY(this.field3021.getY(), Client.frameHeight) + this.field3019.field3217;
 			this.field3021.drawSprite(var2, var3);
 		}
 	}

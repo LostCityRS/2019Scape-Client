@@ -428,7 +428,7 @@ public class ClientMapLoader extends MapLoader {
 									var18 = arg2 + x;
 									var19 = arg3 + z;
 									var20 = (LocType) locs.list(locId);
-									if ((var15.rotation & 0x1) == 0) {
+									if ((var15.angle & 0x1) == 0) {
 										var21 = var20.width;
 										var22 = var20.length;
 									} else {
@@ -498,7 +498,7 @@ public class ClientMapLoader extends MapLoader {
 									LocType var16 = (LocType) this.locs.list(locId);
 									int var17;
 									int var18;
-									if ((var13.rotation & 0x1) == 0) {
+									if ((var13.angle & 0x1) == 0) {
 										var17 = var16.width;
 										var18 = var16.length;
 									} else {
@@ -512,7 +512,7 @@ public class ClientMapLoader extends MapLoader {
 						} while (var19 <= 0);
 					} while (var20 <= 0);
 				} while (LocShape.CENTREPIECE_STRAIGHT.id != var13.shape && LocShape.CENTREPIECE_DIAGONAL.id != var13.shape && (var14 <= 0 || var15 <= 0 || var14 >= this.maxTileX - 1 || var15 >= this.maxTileZ - 1));
-				this.addGroundLoc(renderer, level, level, var14, var15, locId, var13.rotation, var13.shape, -1, 0, var13.field7539);
+				this.addGroundLoc(renderer, level, level, var14, var15, locId, var13.angle, var13.shape, -1, 0, var13.field7539);
 			}
 		}
 	}
@@ -564,15 +564,15 @@ public class ClientMapLoader extends MapLoader {
 									LocType var19 = (LocType) this.locs.list(locId);
 									int var20;
 									int var21;
-									if ((var18.rotation & 0x1) == 0) {
+									if ((var18.angle & 0x1) == 0) {
 										var20 = var19.width;
 										var21 = var19.length;
 									} else {
 										var20 = var19.length;
 										var21 = var19.width;
 									}
-									var22 = arg3 + MapCoordUtil.method9606(z & 0x7, x & 0x7, arg8, var19.width, var19.length, var18.rotation);
-									var23 = arg4 + MapCoordUtil.method2733(z & 0x7, x & 0x7, arg8, var19.width, var19.length, var18.rotation);
+									var22 = arg3 + MapCoordUtil.method9606(z & 0x7, x & 0x7, arg8, var19.width, var19.length, var18.angle);
+									var23 = arg4 + MapCoordUtil.method2733(z & 0x7, x & 0x7, arg8, var19.width, var19.length, var18.angle);
 									var24 = var20 + var22;
 									var25 = var21 + var23;
 								} while (var22 >= this.maxTileX);
@@ -580,7 +580,7 @@ public class ClientMapLoader extends MapLoader {
 						} while (var24 <= 0);
 					} while (var25 <= 0);
 				} while (LocShape.CENTREPIECE_STRAIGHT.id != var18.shape && LocShape.CENTREPIECE_DIAGONAL.id != var18.shape && (var22 <= 0 || var23 <= 0 || var22 >= this.maxTileX - 1 || var23 >= this.maxTileZ - 1));
-				this.addGroundLoc(arg0, arg2, arg2, var22, var23, locId, var18.rotation + arg8 & 0x3, var18.shape, -1, 0, var18.field7539);
+				this.addGroundLoc(arg0, arg2, arg2, var22, var23, locId, var18.angle + arg8 & 0x3, var18.shape, -1, 0, var18.field7539);
 			}
 		}
 	}

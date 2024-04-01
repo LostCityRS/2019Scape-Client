@@ -33,11 +33,11 @@ public class TelemetryGrid {
 
 	@ObfuscatedName("fo.k(Lfy;I)I")
 	public int method3270(TelemetryGroup arg0) {
-		return this.method3265(arg0, -1);
+		return this.addGroup(arg0, -1);
 	}
 
 	@ObfuscatedName("fo.f(Lfy;II)I")
-	public int method3265(TelemetryGroup arg0, int arg1) {
+	public int addGroup(TelemetryGroup arg0, int arg1) {
 		if (this.field1879.size() == 5) {
 			throw new RuntimeException("");
 		} else if (this.getGroupIndex(arg0.id) == -1) {
@@ -52,7 +52,7 @@ public class TelemetryGrid {
 	}
 
 	@ObfuscatedName("fo.w(II)V")
-	public void method3266(int arg0) {
+	public void removeGroup(int arg0) {
 		this.field1879.remove(arg0);
 	}
 

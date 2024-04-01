@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public class HookRequest extends Node {
 
 	@ObfuscatedName("als.k")
-	public Object[] args;
+	public Object[] onop;
 
 	@ObfuscatedName("als.f")
 	public boolean isMouseHook;

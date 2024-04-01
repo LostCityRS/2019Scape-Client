@@ -7,13 +7,13 @@ import deob.ObfuscatedName;
 public class Obj extends Node {
 
 	@ObfuscatedName("ajf.k")
-	public int field11261;
+	public int index;
 
 	@ObfuscatedName("ajf.f")
-	public int field11260;
+	public int count;
 
 	public Obj(int arg0, int arg1) {
-		this.field11261 = arg0;
-		this.field11260 = arg1;
+		this.index = arg0;
+		this.count = arg1;
 	}
 }

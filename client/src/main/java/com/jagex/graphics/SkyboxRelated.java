@@ -234,8 +234,8 @@ public class SkyboxRelated {
 		arg0.setSun(this.field5111, 1.0F, 1.0F, (float) var4, (float) var5, (float) var6);
 		var3.method1946(this.field5126 & 0x3FFF, this.field5127 & 0x3FFF, this.field5124 & 0x3FFF);
 		Model var15 = arg0.createModel(var3, 2048, 0, 64, 768);
-		int var16 = var15.method1730() - var15.method1729();
-		int var17 = var15.method1695() - var15.method1748();
+		int var16 = var15.getMaxX() - var15.getMinX();
+		int var17 = var15.getMaxY() - var15.getMinY();
 		int var18 = var16 > var17 ? var16 : var17;
 		int var19 = this.field5123 * 1024 / var18;
 		Matrix4x4 var20 = arg0.method2355();
@@ -245,7 +245,7 @@ public class SkyboxRelated {
 		Matrix4x3 var22 = new Matrix4x3();
 		arg0.method2217(var22);
 		Matrix4x3 var23 = arg0.method2209();
-		var23.setToTranslation(0.0F, 0.0F, (float) (50 - var15.method1733()));
+		var23.setToTranslation(0.0F, 0.0F, (float) (50 - var15.getMinZ()));
 		var15.draw(var23, null, 1);
 		this.field5128 = arg0.method2314(0, 0, this.field5123, this.field5123, true);
 		this.field5128.method1441(0, 0, 3);
@@ -290,10 +290,10 @@ public class SkyboxRelated {
 			var3 = var11;
 		}
 		Model var12 = field5129.method1773((byte) 0, 51200, true);
-		var12.method1744((short) 0, (short) this.field5135);
+		var12.retexture((short) 0, (short) this.field5135);
 		arg0.setSunAmbientIntensity(1.0F);
 		arg0.setSun(16777215, 1.0F, 1.0F, (float) var3, (float) var4, (float) var5);
-		int var13 = this.field5123 * 1024 / (var12.method1730() - var12.method1729());
+		int var13 = this.field5123 * 1024 / (var12.getMaxX() - var12.getMinX());
 		if (this.field5111 != 0) {
 			var13 = var13 * 13 / 16;
 		}
@@ -303,7 +303,7 @@ public class SkyboxRelated {
 		arg0.method2220(var15);
 		arg0.method2217(new Matrix4x3());
 		Matrix4x3 var16 = new Matrix4x3();
-		var16.setToTranslation(0.0F, 0.0F, (float) (50 - var12.method1733()));
+		var16.setToTranslation(0.0F, 0.0F, (float) (50 - var12.getMinZ()));
 		var12.draw(var16, null, 1);
 		int var17 = this.field5123 * 13 / 16;
 		int var18 = (this.field5123 - var17) / 2;

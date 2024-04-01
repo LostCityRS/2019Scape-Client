@@ -24,10 +24,10 @@ public class MiniMenuDefaults {
 	public KeyHeldBinding field7663;
 
 	@ObfuscatedName("wf.w")
-	public KeyHeldBinding field7664;
+	public KeyHeldBinding ctrlrunning;
 
 	@ObfuscatedName("wf.l")
-	public KeyHeldBinding field7659;
+	public KeyHeldBinding shiftteleport;
 
 	@ObfuscatedName("wf.u")
 	public int members_colour;
@@ -61,9 +61,9 @@ public class MiniMenuDefaults {
 			} else if (var2 == 5) {
 				this.field7663 = KeyHeldBinding.method6037(arg0);
 			} else if (var2 == 6) {
-				this.field7664 = KeyHeldBinding.method6037(arg0);
+				this.ctrlrunning = KeyHeldBinding.method6037(arg0);
 			} else if (var2 == 7) {
-				this.field7659 = KeyHeldBinding.method6037(arg0);
+				this.shiftteleport = KeyHeldBinding.method6037(arg0);
 			} else if (var2 == 8) {
 				Bindings.method4055(arg0);
 			} else if (var2 == 9) {

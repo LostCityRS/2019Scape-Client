@@ -35,12 +35,12 @@ public final class BasicMouseEvent extends MouseEvent {
 	}
 
 	@ObfuscatedName("asf.n(I)I")
-	public int method17831() {
+	public int getMouseClickX() {
 		return this.field12386;
 	}
 
 	@ObfuscatedName("asf.m(B)I")
-	public int method17832() {
+	public int getMouseClickY() {
 		return this.field12387;
 	}
 

@@ -635,7 +635,7 @@ public class TwitchHardwarePlatform {
 	}
 
 	@ObfuscatedName("kt.av(IIIII)V")
-	public static void method5389(int arg0, int arg1, int arg2, int arg3) {
+	public static void drawTwitchStream(int arg0, int arg1, int arg2, int arg3) {
 		field7392.addLast(new TwitchRelated(arg0, arg1, arg2 - arg0, arg3 - arg1));
 	}
 

@@ -52,7 +52,7 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 	}
 
 	@ObfuscatedName("ih.n(II)V")
-	public void method4575(int arg0) {
+	public void resetModelCache(int arg0) {
 		this.field2773 = arg0;
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {

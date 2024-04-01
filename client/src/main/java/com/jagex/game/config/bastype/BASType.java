@@ -16,7 +16,7 @@ import java.util.Iterator;
 public class BASType implements MutableConfig, ConfigType {
 
 	@ObfuscatedName("vr.e")
-	public int field7345;
+	public int readyanim;
 
 	@ObfuscatedName("vr.n")
 	public int[] field7335;
@@ -28,46 +28,46 @@ public class BASType implements MutableConfig, ConfigType {
 	public int field7327;
 
 	@ObfuscatedName("vr.f")
-	public int field7322;
+	public int readyanim_l;
 
 	@ObfuscatedName("vr.w")
-	public int field7354;
+	public int readyanim_r;
 
 	@ObfuscatedName("vr.l")
-	public int field7350;
+	public int walkanim;
 
 	@ObfuscatedName("vr.u")
-	public int field7325;
+	public int walkanim_b;
 
 	@ObfuscatedName("vr.z")
-	public int field7326;
+	public int walkanim_l;
 
 	@ObfuscatedName("vr.p")
-	public int field7351;
+	public int walkanim_r;
 
 	@ObfuscatedName("vr.d")
-	public int field7361;
+	public int runanim;
 
 	@ObfuscatedName("vr.c")
-	public int field7329;
+	public int runanim_b;
 
 	@ObfuscatedName("vr.r")
-	public int field7330;
+	public int runanim_l;
 
 	@ObfuscatedName("vr.v")
-	public int field7331;
+	public int runanim_r;
 
 	@ObfuscatedName("vr.o")
-	public int field7332;
+	public int crawlanim;
 
 	@ObfuscatedName("vr.s")
-	public int field7333;
+	public int crawlanim_b;
 
 	@ObfuscatedName("vr.y")
-	public int field7328;
+	public int crawlanim_l;
 
 	@ObfuscatedName("vr.q")
-	public int field7319;
+	public int crawlanim_r;
 
 	@ObfuscatedName("vr.x")
 	public int field7352;
@@ -139,7 +139,7 @@ public class BASType implements MutableConfig, ConfigType {
 	public int field7358;
 
 	@ObfuscatedName("vr.ax")
-	public int field7359;
+	public int walkspeed;
 
 	@ObfuscatedName("vr.av")
 	public int field7360;
@@ -148,24 +148,24 @@ public class BASType implements MutableConfig, ConfigType {
 	public boolean field7346;
 
 	public BASType() {
-		this.field7345 = -1;
+		this.readyanim = -1;
 		this.field7335 = null;
 		this.field7324 = null;
 		this.field7327 = 0;
-		this.field7322 = -1;
-		this.field7354 = -1;
-		this.field7350 = -1;
-		this.field7325 = -1;
-		this.field7326 = -1;
-		this.field7351 = -1;
-		this.field7361 = -1;
-		this.field7329 = -1;
-		this.field7330 = -1;
-		this.field7331 = -1;
-		this.field7332 = -1;
-		this.field7333 = -1;
-		this.field7328 = -1;
-		this.field7319 = -1;
+		this.readyanim_l = -1;
+		this.readyanim_r = -1;
+		this.walkanim = -1;
+		this.walkanim_b = -1;
+		this.walkanim_l = -1;
+		this.walkanim_r = -1;
+		this.runanim = -1;
+		this.runanim_b = -1;
+		this.runanim_l = -1;
+		this.runanim_r = -1;
+		this.crawlanim = -1;
+		this.crawlanim_b = -1;
+		this.crawlanim_l = -1;
+		this.crawlanim_r = -1;
 		this.field7352 = -1;
 		this.field7337 = -1;
 		this.field7338 = -1;
@@ -184,30 +184,30 @@ public class BASType implements MutableConfig, ConfigType {
 		this.field7356 = 0;
 		this.field7334 = 0;
 		this.field7358 = 0;
-		this.field7359 = -1;
+		this.walkspeed = -1;
 		this.field7360 = -1;
 		this.field7346 = true;
 	}
 
 	public BASType(int arg0) {
-		this.field7345 = -1;
+		this.readyanim = -1;
 		this.field7335 = null;
 		this.field7324 = null;
 		this.field7327 = 0;
-		this.field7322 = -1;
-		this.field7354 = -1;
-		this.field7350 = -1;
-		this.field7325 = -1;
-		this.field7326 = -1;
-		this.field7351 = -1;
-		this.field7361 = -1;
-		this.field7329 = -1;
-		this.field7330 = -1;
-		this.field7331 = -1;
-		this.field7332 = -1;
-		this.field7333 = -1;
-		this.field7328 = -1;
-		this.field7319 = -1;
+		this.readyanim_l = -1;
+		this.readyanim_r = -1;
+		this.walkanim = -1;
+		this.walkanim_b = -1;
+		this.walkanim_l = -1;
+		this.walkanim_r = -1;
+		this.runanim = -1;
+		this.runanim_b = -1;
+		this.runanim_l = -1;
+		this.runanim_r = -1;
+		this.crawlanim = -1;
+		this.crawlanim_b = -1;
+		this.crawlanim_l = -1;
+		this.crawlanim_r = -1;
 		this.field7352 = -1;
 		this.field7337 = -1;
 		this.field7338 = -1;
@@ -226,7 +226,7 @@ public class BASType implements MutableConfig, ConfigType {
 		this.field7356 = 0;
 		this.field7334 = 0;
 		this.field7358 = 0;
-		this.field7359 = -1;
+		this.walkspeed = -1;
 		this.field7360 = -1;
 		this.field7346 = true;
 	}
@@ -245,24 +245,24 @@ public class BASType implements MutableConfig, ConfigType {
 	@ObfuscatedName("vr.u(Lalw;II)V")
 	public void method9298(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field7345 = arg0.gSmart2or4null();
-			this.field7350 = arg0.gSmart2or4null();
+			this.readyanim = arg0.gSmart2or4null();
+			this.walkanim = arg0.gSmart2or4null();
 		} else if (arg1 == 2) {
-			this.field7332 = arg0.gSmart2or4null();
+			this.crawlanim = arg0.gSmart2or4null();
 		} else if (arg1 == 3) {
-			this.field7333 = arg0.gSmart2or4null();
+			this.crawlanim_b = arg0.gSmart2or4null();
 		} else if (arg1 == 4) {
-			this.field7328 = arg0.gSmart2or4null();
+			this.crawlanim_l = arg0.gSmart2or4null();
 		} else if (arg1 == 5) {
-			this.field7319 = arg0.gSmart2or4null();
+			this.crawlanim_r = arg0.gSmart2or4null();
 		} else if (arg1 == 6) {
-			this.field7361 = arg0.gSmart2or4null();
+			this.runanim = arg0.gSmart2or4null();
 		} else if (arg1 == 7) {
-			this.field7329 = arg0.gSmart2or4null();
+			this.runanim_b = arg0.gSmart2or4null();
 		} else if (arg1 == 8) {
-			this.field7330 = arg0.gSmart2or4null();
+			this.runanim_l = arg0.gSmart2or4null();
 		} else if (arg1 == 9) {
-			this.field7331 = arg0.gSmart2or4null();
+			this.runanim_r = arg0.gSmart2or4null();
 		} else if (arg1 == 26) {
 			this.field7342 = (short) (arg0.g1() * 4);
 			this.field7343 = (short) (arg0.g1() * 4);
@@ -303,17 +303,17 @@ public class BASType implements MutableConfig, ConfigType {
 		} else if (arg1 == 36) {
 			this.field7358 = arg0.g2s();
 		} else if (arg1 == 37) {
-			this.field7359 = arg0.g1();
+			this.walkspeed = arg0.g1();
 		} else if (arg1 == 38) {
-			this.field7322 = arg0.gSmart2or4null();
+			this.readyanim_l = arg0.gSmart2or4null();
 		} else if (arg1 == 39) {
-			this.field7354 = arg0.gSmart2or4null();
+			this.readyanim_r = arg0.gSmart2or4null();
 		} else if (arg1 == 40) {
-			this.field7325 = arg0.gSmart2or4null();
+			this.walkanim_b = arg0.gSmart2or4null();
 		} else if (arg1 == 41) {
-			this.field7326 = arg0.gSmart2or4null();
+			this.walkanim_l = arg0.gSmart2or4null();
 		} else if (arg1 == 42) {
-			this.field7351 = arg0.gSmart2or4null();
+			this.walkanim_r = arg0.gSmart2or4null();
 		} else if (arg1 == 43) {
 			arg0.g2();
 		} else if (arg1 == 44) {
@@ -375,8 +375,8 @@ public class BASType implements MutableConfig, ConfigType {
 
 	@ObfuscatedName("vr.p(I)I")
 	public int method9295() {
-		if (this.field7345 != -1) {
-			return this.field7345;
+		if (this.readyanim != -1) {
+			return this.readyanim;
 		} else if (this.field7335 == null) {
 			return -1;
 		} else {
@@ -393,7 +393,7 @@ public class BASType implements MutableConfig, ConfigType {
 	public boolean method9290(int arg0) {
 		if (arg0 == -1) {
 			return false;
-		} else if (this.field7345 == arg0) {
+		} else if (this.readyanim == arg0) {
 			return true;
 		} else {
 			if (this.field7335 != null) {
@@ -451,7 +451,7 @@ public class BASType implements MutableConfig, ConfigType {
 	@ObfuscatedName("vr.o(I)[I")
 	public int[] method9293() {
 		IterableMap var1 = new IterableMap(16);
-		method6205(this.field7345, var1);
+		method6205(this.readyanim, var1);
 		if (this.field7335 != null) {
 			int[] var2 = this.field7335;
 			for (int var3 = 0; var3 < var2.length; var3++) {
@@ -459,20 +459,20 @@ public class BASType implements MutableConfig, ConfigType {
 				method6205(var4, var1);
 			}
 		}
-		method6205(this.field7322, var1);
-		method6205(this.field7354, var1);
-		method6205(this.field7350, var1);
-		method6205(this.field7325, var1);
-		method6205(this.field7326, var1);
-		method6205(this.field7351, var1);
-		method6205(this.field7361, var1);
-		method6205(this.field7329, var1);
-		method6205(this.field7330, var1);
-		method6205(this.field7331, var1);
-		method6205(this.field7332, var1);
-		method6205(this.field7333, var1);
-		method6205(this.field7328, var1);
-		method6205(this.field7319, var1);
+		method6205(this.readyanim_l, var1);
+		method6205(this.readyanim_r, var1);
+		method6205(this.walkanim, var1);
+		method6205(this.walkanim_b, var1);
+		method6205(this.walkanim_l, var1);
+		method6205(this.walkanim_r, var1);
+		method6205(this.runanim, var1);
+		method6205(this.runanim_b, var1);
+		method6205(this.runanim_l, var1);
+		method6205(this.runanim_r, var1);
+		method6205(this.crawlanim, var1);
+		method6205(this.crawlanim_b, var1);
+		method6205(this.crawlanim_l, var1);
+		method6205(this.crawlanim_r, var1);
 		method6205(this.field7352, var1);
 		method6205(this.field7337, var1);
 		method6205(this.field7338, var1);

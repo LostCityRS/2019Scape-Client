@@ -49,7 +49,7 @@ public class NpcEntity extends PathingEntity {
 	public int vislevel;
 
 	@ObfuscatedName("aqc.cr")
-	public String field12082;
+	public String name;
 
 	@ObfuscatedName("aqc.cm")
 	public int[] field12087 = new int[6];
@@ -116,7 +116,7 @@ public class NpcEntity extends PathingEntity {
 		this.npcType = arg0;
 		if (this.npcType != null) {
 			if (arg1) {
-				this.field12082 = this.npcType.name;
+				this.name = this.npcType.name;
 			}
 			if (arg2) {
 				this.vislevel = this.npcType.vislevel;
@@ -131,20 +131,20 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer arg0) {
+	public EntityBounds method17371(Renderer renderer) {
 		return null;
 	}
 
 	@ObfuscatedName("aqc.fc(Ldh;I)Ltl;")
-	public PickableEntity method17372(Renderer arg0) {
-		if (this.npcType == null || !this.method19167(arg0, 526336)) {
+	public PickableEntity draw(Renderer renderer) {
+		if (this.npcType == null || !this.isVisible(renderer, 526336)) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
 		ScaleRotTrans var3 = this.getTransform();
-		Matrix4x3 var4 = arg0.method2209();
+		Matrix4x3 var4 = renderer.method2209();
 		int var5 = this.field10395.method316();
-		Tile var6 = this.field11716.levelTiles[this.level][(int) var3.trans.x >> 9][(int) var3.trans.z >> 9];
+		Tile var6 = this.scene.levelTiles[this.level][(int) var3.trans.x >> 9][(int) var3.trans.z >> 9];
 		if (var6 == null || var6.groundDecoration == null) {
 			this.field10408 = (int) ((float) this.field10408 - (float) this.field10408 / 10.0F);
 		} else {
@@ -159,81 +159,81 @@ public class NpcEntity extends PathingEntity {
 		this.field10458 = false;
 		PickableEntity var11 = null;
 		if (Client.preferences.characterShadows.getValue() == 1 && var9.spotshadow && var8.field7346) {
-			AnimationWrapper var12 = this.field10454.method14346() && this.field10454.method14355() ? this.field10454 : null;
-			EntityWalkAnimationWrapper var13 = this.field10432.method14346() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
-			short var14 = Client.graphicsDefaults.field7728;
-			byte var15 = Client.graphicsDefaults.field7757;
+			AnimationWrapper var12 = this.field10454.hasSeqType() && this.field10454.method14355() ? this.field10454 : null;
+			EntityWalkAnimationWrapper var13 = this.field10432.hasSeqType() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
+			short var14 = Client.graphicsDefaults.spotshadowtexture;
+			byte var15 = Client.graphicsDefaults.spotshadowtexture_alpha;
 			if (this.npcType.spotshadowtexture > -1) {
 				var14 = this.npcType.spotshadowtexture;
 				var15 = this.npcType.spotshadowtexture_alpha;
 			}
 			Model var16;
 			if (var14 > -1 && Client.preferences.textures.getValue() == 1) {
-				var16 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.field10459[0], var14, var15, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method3283(renderer, var5, this.field10405, this.field12466, this.field10407, this.idk[0], var14, var15, var13 == null ? var12 : var13);
 			} else {
-				var16 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.npcType.size, this.field10459[0], this.npcType.spotshadowcolour_1 & 0xFFFF, this.npcType.spotshadowcolour_2 & 0xFFFF, this.npcType.spotshadowtrans_1 & 0xFF, this.npcType.spotshadowtrans_2 & 0xFF, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method5102(renderer, var5, this.field10405, this.field12466, this.field10407, this.npcType.size, this.idk[0], this.npcType.spotshadowcolour_1 & 0xFFFF, this.npcType.spotshadowcolour_2 & 0xFFFF, this.npcType.spotshadowtrans_1 & 0xFF, this.npcType.spotshadowtrans_2 & 0xFF, var13 == null ? var12 : var13);
 			}
 			if (var16 != null) {
-				var11 = PickableEntity.method16749(this.method19162());
+				var11 = PickableEntity.getPickableEntity(this.method19162());
 				this.field10458 = true;
-				arg0.method2219(false);
+				renderer.method2219(false);
 				if (var10) {
 					var16.draw(var4, null, 0);
 				} else {
-					if (this.field11713 == null || this.field11713.length < this.field10459.length + 1) {
-						this.method18363(this.field10459.length + 1);
+					if (this.entityBounds == null || this.entityBounds.length < this.idk.length + 1) {
+						this.createEntityBounds(this.idk.length + 1);
 					}
-					var16.draw(var4, this.field11713[this.field10459.length], 0);
+					var16.draw(var4, this.entityBounds[this.idk.length], 0);
 				}
-				arg0.method2219(true);
+				renderer.method2219(true);
 			}
 		}
 		if (var10) {
-			if (this.field11713 == null || this.field11713.length > 1) {
-				this.method18363(1);
+			if (this.entityBounds == null || this.entityBounds.length > 1) {
+				this.createEntityBounds(1);
 			}
-			arg0.method2193(var4, this.field11713[0], var9.clickbox);
-		} else if (this.field11713 == null || this.field11713.length < this.field10459.length) {
-			this.method18363(this.field10459.length);
+			renderer.method2193(var4, this.entityBounds[0], var9.clickbox);
+		} else if (this.entityBounds == null || this.entityBounds.length < this.idk.length) {
+			this.createEntityBounds(this.idk.length);
 		}
 		if (var11 == null) {
-			var11 = PickableEntity.method16749(this.method19162());
+			var11 = PickableEntity.getPickableEntity(this.method19162());
 		}
-		this.method16576(arg0, this.field10459, var4, false);
-		for (int var17 = 0; var17 < this.field10459.length; var17++) {
-			if (this.field10459[var17] != null) {
+		this.method16576(renderer, this.idk, var4, false);
+		for (int var17 = 0; var17 < this.idk.length; var17++) {
+			if (this.idk[var17] != null) {
 				if (this.npcType.antimacro) {
-					this.field10459[var17].method1745(this.field12073, this.field12086, this.field12088, this.field12089);
+					this.idk[var17].method1745(this.field12073, this.field12086, this.field12088, this.field12089);
 				}
 				if (var10) {
-					this.field10459[var17].draw(var4, null, 0);
+					this.idk[var17].draw(var4, null, 0);
 				} else {
-					this.field10459[var17].draw(var4, this.field11713[var17], 0);
+					this.idk[var17].draw(var4, this.entityBounds[var17], 0);
 				}
 			} else if (!var10) {
-				this.field11713[var17].field1686 = false;
+				this.entityBounds[var17].field1686 = false;
 			}
 		}
 		if (this.field10393 != null) {
 			ParticleList var18 = this.field10393.method9965();
-			arg0.drawParticles(var18);
+			renderer.drawParticles(var18);
 		}
-		for (int var19 = 0; var19 < this.field10459.length; var19++) {
-			if (this.field10459[var19] != null) {
-				this.field10458 |= this.field10459[var19].method1731();
+		for (int var19 = 0; var19 < this.idk.length; var19++) {
+			if (this.idk[var19] != null) {
+				this.field10458 |= this.idk[var19].method1731();
 			}
-			this.field10459[var19] = null;
+			this.idk[var19] = null;
 		}
 		this.field11715 = Client.sceneCycle;
 		return var11;
 	}
 
 	@ObfuscatedName("aqc.hh(Ldh;II)Z")
-	public boolean method19167(Renderer arg0, int arg1) {
+	public boolean isVisible(Renderer arg0, int arg1) {
 		int var3 = arg1;
 		BASType var4 = this.getBASType();
-		AnimationWrapper var5 = this.field10454.method14346() && !this.field10454.method14355() ? this.field10454 : null;
-		EntityWalkAnimationWrapper var6 = this.field10432.method14346() && (!this.field10432.field11877 || var5 == null) ? this.field10432 : null;
+		AnimationWrapper var5 = this.field10454.hasSeqType() && !this.field10454.method14355() ? this.field10454 : null;
+		EntityWalkAnimationWrapper var6 = this.field10432.hasSeqType() && (!this.field10432.field11877 || var5 == null) ? this.field10432 : null;
 		int var7 = var4.field7342;
 		int var8 = var4.field7343;
 		if (var7 != 0 || var8 != 0 || var4.field7355 != 0 || var4.field7358 != 0) {
@@ -257,26 +257,26 @@ public class NpcEntity extends PathingEntity {
 			arg1 |= 0x100;
 		}
 		int var12 = this.field10395.method316();
-		Model var13 = this.field10459[0] = this.npcType.getSequencedModel(arg0, arg1, Client.basTypeList, Client.localPlayerGameState, Client.localPlayerGameState, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.getBASId(), false);
+		Model var13 = this.idk[0] = this.npcType.getSequencedModel(arg0, arg1, Client.basTypeList, Client.localPlayerGameState, Client.localPlayerGameState, var5, var6, this.field10398, this.field10442, var12, this.field12076, this.getBASId(), false);
 		if (var13 == null) {
 			return false;
 		}
-		this.field10463 = var13.method1748();
-		this.field10420 = var13.method1707();
-		var13.method1728();
+		this.minY = var13.getMinY();
+		this.height = var13.getHeight();
+		var13.getRadius();
 		this.method16505(var13);
 		if (var7 == 0 && var8 == 0) {
 			this.method16507(var12, this.size() << 9, this.size() << 9, 0, 0);
 		} else {
 			this.method16507(var12, var7, var8, var4.field7344, var4.field7323);
 			if (this.field10405 != 0) {
-				this.field10459[0].method1852(this.field10405);
+				this.idk[0].rotateX(this.field10405);
 			}
 			if (this.field12466 != 0) {
-				this.field10459[0].method1696(this.field12466);
+				this.idk[0].rotateZ(this.field12466);
 			}
 			if (this.field10407 != 0) {
-				this.field10459[0].method1805(0, this.field10407, 0);
+				this.idk[0].translate(0, this.field10407, 0);
 			}
 		}
 		if (var9) {
@@ -290,21 +290,21 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fw(Ldh;I)V")
-	public void method17373(Renderer arg0) {
-		if (this.npcType == null || !this.field10449 && !this.method19167(arg0, 0)) {
+	public void method17373(Renderer renderer) {
+		if (this.npcType == null || !this.field10449 && !this.isVisible(renderer, 0)) {
 			return;
 		}
-		Matrix4x3 var2 = arg0.method2209();
+		Matrix4x3 var2 = renderer.method2209();
 		var2.setTo(this.method10533());
 		var2.translate(0.0F, -5.0F, 0.0F);
-		this.method16576(arg0, this.field10459, var2, this.field10449);
-		for (int var3 = 0; var3 < this.field10459.length; var3++) {
-			this.field10459[var3] = null;
+		this.method16576(renderer, this.idk, var2, this.field10449);
+		for (int var3 = 0; var3 < this.idk.length; var3++) {
+			this.idk[var3] = null;
 		}
 	}
 
 	@ObfuscatedName("aqc.hp(Lzi;II)V")
-	public final void method19168(CompassPoint arg0, int arg1) {
+	public final void step(CompassPoint arg0, int arg1) {
 		int var3 = this.routeWaypointX[0];
 		int var4 = this.routeWaypointZ[0];
 		switch(arg0.index) {
@@ -336,7 +336,7 @@ public class NpcEntity extends PathingEntity {
 			case 7:
 				var4++;
 		}
-		if (this.field10454.method14346() && this.field10454.method14347().field1782 == 1) {
+		if (this.field10454.hasSeqType() && this.field10454.getSeqType().field1782 == 1) {
 			this.field10427 = null;
 			this.field10454.method14362(-1);
 		}
@@ -363,12 +363,12 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.hy(IIIZIB)V")
-	public void method19159(int arg0, int arg1, int arg2, boolean arg3, int arg4) {
+	public void move(int arg0, int arg1, int arg2, boolean arg3, int arg4) {
 		this.level = this.field11714 = (byte) arg0;
-		if (Client.world.method7793().isLinkBelow(arg1, arg2)) {
+		if (Client.world.getSceneLevelTileFlags().isLinkBelow(arg1, arg2)) {
 			this.field11714++;
 		}
-		if (this.field10454.method14346() && this.field10454.method14347().field1782 == 1) {
+		if (this.field10454.hasSeqType() && this.field10454.getSeqType().field1782 == 1) {
 			this.field10427 = null;
 			this.field10454.method14362(-1);
 		}
@@ -415,7 +415,7 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.he(I)Z")
-	public final boolean method19160() {
+	public final boolean exists() {
 		return this.npcType != null;
 	}
 
@@ -434,7 +434,7 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.bs(B)I")
-	public int method16486() {
+	public int getCoverMarker() {
 		if (this.npcType.multinpc != null) {
 			NPCType var1 = this.npcType.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 			if (var1 != null && var1.covermarker != -1) {
@@ -461,21 +461,21 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.gp(I)I")
-	public int method18371() {
+	public int getPickSizeShift() {
 		return this.npcType == null ? 0 : this.npcType.picksizeshift;
 	}
 
 	@ObfuscatedName("aqc.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer arg0, int arg1, int arg2) {
+	public boolean method17375(Renderer renderer, int arg1, int arg2) {
 		if (this.npcType == null) {
 			return false;
 		} else if (this.npcType.clickbox != null) {
-			return arg0.pick(arg1, arg2, this.method10533(), this.npcType.clickbox);
-		} else if (this.method19167(arg0, 131072)) {
+			return renderer.pick(arg1, arg2, this.method10533(), this.npcType.clickbox);
+		} else if (this.isVisible(renderer, 131072)) {
 			Matrix4x3 var4 = this.method10533();
 			boolean var5 = false;
-			for (int var6 = 0; var6 < this.field10459.length; var6++) {
-				if (this.field10459[var6] != null && this.field10459[var6].field1298) {
+			for (int var6 = 0; var6 < this.idk.length; var6++) {
+				if (this.idk[var6] != null && this.idk[var6].field1298) {
 					boolean var10000;
 					label52: {
 						label51: {
@@ -494,15 +494,15 @@ public class NpcEntity extends PathingEntity {
 						var10000 = false;
 					}
 					boolean var7 = var10000;
-					boolean var8 = this.field10459[var6].method1725(arg1, arg2, var4, var7, this.npcType.picksizeshift);
+					boolean var8 = this.idk[var6].method1725(arg1, arg2, var4, var7, this.npcType.picksizeshift);
 					if (var8) {
 						var5 = true;
 						break;
 					}
 				}
 			}
-			for (int var9 = 0; var9 < this.field10459.length; var9++) {
-				this.field10459[var9] = null;
+			for (int var9 = 0; var9 < this.idk.length; var9++) {
+				this.idk[var9] = null;
 			}
 			return var5;
 		} else {
@@ -516,7 +516,7 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

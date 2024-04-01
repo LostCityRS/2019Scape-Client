@@ -22,7 +22,7 @@ public abstract class EffectAnimTypeFactory implements ConfigTypeFactory {
 	}
 
 	@ObfuscatedName("yc.e(II)V")
-	public void method13832(int arg0) {
+	public void resetModelCache(int arg0) {
 		this.field8264 = arg0;
 		WeightedCache var2 = this.modelCache;
 		synchronized (this.modelCache) {

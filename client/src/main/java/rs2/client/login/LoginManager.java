@@ -833,8 +833,8 @@ public class LoginManager {
 					Client.loggedInMembers = in.g1() == 1;
 					Client.owner = in.gjstr();
 					Client.field1238 = in.g6() - MonotonicTime.get();
-					Client.world.method7750().setAllowMembers(Client.loggedInMembers);
-					Client.field3183.method7677().method7750().setAllowMembers(Client.loggedInMembers);
+					Client.world.getLocTypeList().setAllowMembers(Client.loggedInMembers);
+					Client.field3183.method7677().getLocTypeList().setAllowMembers(Client.loggedInMembers);
 					Client.objTypeList.setAllowMembers(Client.loggedInMembers);
 					Client.npcTypeList.setAllowMembers(Client.loggedInMembers);
 				} else if (connection.getStream().hasAvailable(replyPacketSize)) {
@@ -1145,7 +1145,7 @@ public class LoginManager {
 		connection.lastPacketType2 = null;
 		connection.idleNetCycles = 0;
 		Client.rebootTimer = 0;
-		Client.field11080 = 0;
+		Client.friendsListState = 0;
 		Client.friendsCount = 0;
 		Client.ignoresCount = 0;
 		Client.clanChatDisplayName = null;
@@ -1153,7 +1153,7 @@ public class LoginManager {
 		Client.clanChatUsers = null;
 		Client.field6867 = null;
 		Client.field1890 = null;
-		Client.field11095 = true;
+		Client.telemetryError = true;
 		ClientWatch.method13845();
 		for (int var0 = 0; var0 < Client.localPlayerGameState.stats.length; var0++) {
 			PlayerStat var1 = new PlayerStat(Client.skillDefaults.getSkill(var0), false);
@@ -1195,7 +1195,7 @@ public class LoginManager {
 			Client.players[var1] = null;
 		}
 		Client.localPlayerEntity = null;
-		Client.field11011 = 0;
+		Client.npcCount = 0;
 		Client.field10906 = 0;
 		Client.npcs.removeAll();
 		Client.projectiles.removeAll();
@@ -1235,7 +1235,7 @@ public class LoginManager {
 			Client.field10962[var3] = false;
 			Client.field10832[var3] = -1;
 		}
-		ClientInvCache.method2752();
+		ClientInvCache.removeAll();
 		Client.field11023 = true;
 		for (int var4 = 0; var4 < 114; var4++) {
 			Client.field11072[var4] = true;
@@ -1245,7 +1245,7 @@ public class LoginManager {
 				Client.stockmarketSlots[var5][var6] = new StockmarketSlot();
 			}
 		}
-		Client.world.method7816().resetFade();
+		Client.world.getEnvironmentManager().resetFade();
 		Client.field10902 = true;
 		LocType.clientpalette = NPCType.clientpalette = ObjType.clientpalette = new short[256];
 		Client.field4868 = LocalisedText.WALKHERE.forLang(Client.language);
@@ -1279,7 +1279,7 @@ public class LoginManager {
 				var2.targetId = -1;
 			}
 		}
-		ClientInvCache.method2752();
+		ClientInvCache.removeAll();
 		Client.cameraReset(Client.getDefaultCameraState());
 		Client.setState(18);
 		for (int var3 = 0; var3 < 114; var3++) {

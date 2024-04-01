@@ -168,7 +168,7 @@ public class ScriptRunner {
 			if (var2.onload != null) {
 				HookRequest var3 = new HookRequest();
 				var3.component = var2;
-				var3.args = var2.onload;
+				var3.onop = var2.onload;
 				runHook(var3, 5000000);
 			}
 		}
@@ -176,7 +176,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("yo.w(Lals;II)V")
 	public static void runHook(HookRequest arg0, int arg1) {
-		Object[] var2 = arg0.args;
+		Object[] var2 = arg0.onop;
 		int var3 = (Integer) var2[0];
 		ClientScript var4 = ClientScriptHelpers.getScript(var3);
 		if (var4 == null) {
@@ -5721,7 +5721,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("wq.dv(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_settiling(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2217 = arg2.intStack[--arg2.isp] == 1;
+		arg0.tiling = arg2.intStack[--arg2.isp] == 1;
 		Client.requestRedrawComponent(arg0);
 	}
 
@@ -5837,7 +5837,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("db.dp(Lhf;Lhq;Lyf;S)V")
 	public static final void cc_if_setmodelorthog(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2239 = arg2.intStack[--arg2.isp] == 1;
+		arg0.modelorthog = arg2.intStack[--arg2.isp] == 1;
 		Client.requestRedrawComponent(arg0);
 	}
 
@@ -5860,10 +5860,10 @@ public class ScriptRunner {
 	@ObfuscatedName("dy.dh(Lhf;Lhq;Lyf;S)V")
 	public static final void cc_if_setmodeltint(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.isp -= 4;
-		arg0.field2240 = arg2.intStack[arg2.isp];
-		arg0.field2256 = arg2.intStack[arg2.isp + 1];
-		arg0.field2203 = arg2.intStack[arg2.isp + 2];
-		arg0.field2189 = arg2.intStack[arg2.isp + 3];
+		arg0.tint_hue = arg2.intStack[arg2.isp];
+		arg0.tint_saturation = arg2.intStack[arg2.isp + 1];
+		arg0.tint_luminence = arg2.intStack[arg2.isp + 2];
+		arg0.tint_weight = arg2.intStack[arg2.isp + 3];
 		Client.requestRedrawComponent(arg0);
 	}
 
@@ -5886,7 +5886,7 @@ public class ScriptRunner {
 	@ObfuscatedName("adg.de(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_setmodellighting(Component arg0, Interface arg1, ClientScriptState arg2) {
 		arg2.isp -= 10;
-		arg0.field2250 = true;
+		arg0.customlighting = true;
 		arg0.field2248 = Math.max(Math.min(arg2.intStack[arg2.isp], 2816), 0);
 		arg0.field2251 = Math.max(Math.min(arg2.intStack[arg2.isp + 1], 2816), 0);
 		arg0.field2255 = Math.max(Math.min(arg2.intStack[arg2.isp + 2], 2816), 0);
@@ -5919,7 +5919,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("gz.ey(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_resetmodellighting(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2250 = false;
+		arg0.customlighting = false;
 		Client.requestRedrawComponent(arg0);
 	}
 
@@ -5969,7 +5969,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("ft.el(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_settextfont(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.font = arg2.intStack[--arg2.isp];
+		arg0.textfont = arg2.intStack[--arg2.isp];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
 			DelayedStateChange.method7247(arg0.parentlayer);
@@ -6041,7 +6041,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("if.eg(Lhf;Lhq;Lyf;S)V")
 	public static final void cc_if_settextantimacro(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.antimacro = arg2.intStack[--arg2.isp] == 1;
+		arg0.textantimacro = arg2.intStack[--arg2.isp] == 1;
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
 			DelayedStateChange.method9793(arg0.parentlayer);
@@ -6741,30 +6741,30 @@ public class ScriptRunner {
 		int var4 = arg2.intStack[--arg2.isp];
 		switch(arg3.index) {
 			case 0:
-				arg0.field2336 = Client.currentPlayerGroup.doGetMember(var4).getDisplayName();
+				arg0.link = Client.currentPlayerGroup.doGetMember(var4).getDisplayName();
 				break;
 			case 1:
 			case 4:
-				arg0.field2336 = arg2.activeClanChannel.channelUsers[var4].name;
+				arg0.link = arg2.activeClanChannel.channelUsers[var4].name;
 				break;
 			case 2:
-				if (Client.field11080 != 2 || var4 >= Client.friendsCount) {
+				if (Client.friendsListState != 2 || var4 >= Client.friendsCount) {
 					return;
 				}
-				arg0.field2336 = Client.friends[var4].field606;
+				arg0.link = Client.friends[var4].field606;
 				break;
 			case 3:
-				arg0.field2336 = ((PlayerGroupBanned) Client.currentPlayerGroup.getBanned().get(var4)).getDisplayName();
+				arg0.link = ((PlayerGroupBanned) Client.currentPlayerGroup.getBanned().get(var4)).getDisplayName();
 				break;
 			case 5:
 				if (Client.clanChatUsers != null && var4 < Client.clanChatUsers.length) {
-					arg0.field2336 = Client.clanChatUsers[var4].name;
+					arg0.link = Client.clanChatUsers[var4].name;
 				}
 				break;
 			default:
 				throw new IllegalStateException();
 		}
-		arg0.field2337 = arg3;
+		arg0.groupKind = arg3;
 	}
 
 	@ObfuscatedName("jb.ht(Lyf;I)V")
@@ -6836,8 +6836,8 @@ public class ScriptRunner {
 
 	@ObfuscatedName("bf.iq(Lhf;Lhq;Lyf;I)V")
 	public static final void cc_if_resetlinkplayer(Component arg0, Interface arg1, ClientScriptState arg2) {
-		arg0.field2336 = null;
-		arg0.field2337 = null;
+		arg0.link = null;
+		arg0.groupKind = null;
 	}
 
 	@ObfuscatedName("fp.ig(Lyf;B)V")
@@ -6914,9 +6914,9 @@ public class ScriptRunner {
 		int var3 = arg2.intStack[arg2.isp];
 		int var4 = arg2.intStack[arg2.isp + 1];
 		if (var3 == -1 && var4 == -1) {
-			arg0.field2284 = null;
+			arg0.draggable = null;
 		} else {
-			arg0.field2284 = Component.method16682(var3, var4);
+			arg0.draggable = Component.method16682(var3, var4);
 		}
 	}
 
@@ -7275,7 +7275,7 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("su.kd(Lhf;IILyf;I)V")
-	public static final void method8295(Component arg0, int arg1, int arg2, ClientScriptState arg3) {
+	public static final void cc_if_setopchar(Component arg0, int arg1, int arg2, ClientScriptState arg3) {
 		if (arg0.field2300 == null) {
 			if (arg2 <= 0) {
 				return;
@@ -7308,7 +7308,7 @@ public class ScriptRunner {
 		if (var2 < 0 || var2 > 9) {
 			throw new RuntimeException();
 		}
-		method8295(arg0, var2, var3, arg1);
+		cc_if_setopchar(arg0, var2, var3, arg1);
 	}
 
 	@ObfuscatedName("jl.kj(Lyf;I)V")
@@ -7329,7 +7329,7 @@ public class ScriptRunner {
 	public static final void cc_if_setoptchar(Component arg0, ClientScriptState arg1) {
 		byte var2 = 10;
 		int var3 = arg1.intStack[--arg1.isp];
-		method8295(arg0, var2, var3, arg1);
+		cc_if_setopchar(arg0, var2, var3, arg1);
 	}
 
 	@ObfuscatedName("ux.km(Lyf;I)V")
@@ -7439,7 +7439,7 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("qp.lc(Lhf;IIILyf;S)V")
-	public static final void method7097(Component arg0, int arg1, int arg2, int arg3, ClientScriptState arg4) {
+	public static final void cc_if_setopkeyrate(Component arg0, int arg1, int arg2, int arg3, ClientScriptState arg4) {
 		if (arg0.field2211 == null) {
 			throw new RuntimeException();
 		}
@@ -7456,7 +7456,7 @@ public class ScriptRunner {
 		if (var2 < 0 || var2 > 9) {
 			throw new RuntimeException();
 		}
-		method7097(arg0, var2, var3, var4, arg1);
+		cc_if_setopkeyrate(arg0, var2, var3, var4, arg1);
 	}
 
 	@ObfuscatedName("ww.lm(Lyf;I)V")
@@ -7478,7 +7478,7 @@ public class ScriptRunner {
 		byte var2 = 10;
 		int var3 = arg1.intStack[--arg1.isp];
 		int var4 = arg1.intStack[--arg1.isp];
-		method7097(arg0, var2, var3, var4, arg1);
+		cc_if_setopkeyrate(arg0, var2, var3, var4, arg1);
 	}
 
 	@ObfuscatedName("yx.le(Lyf;B)V")
@@ -7496,7 +7496,7 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("is.lq(Lhf;ILyf;I)V")
-	public static final void method4490(Component arg0, int arg1, ClientScriptState arg2) {
+	public static final void cc_if_setopkeyignoreheld(Component arg0, int arg1, ClientScriptState arg2) {
 		if (arg0.field2270 == null) {
 			throw new RuntimeException();
 		}
@@ -7513,7 +7513,7 @@ public class ScriptRunner {
 		if (var2 < 0 || var2 > 9) {
 			throw new RuntimeException();
 		}
-		method4490(arg0, var2, arg1);
+		cc_if_setopkeyignoreheld(arg0, var2, arg1);
 	}
 
 	@ObfuscatedName("iw.lh(Lyf;I)V")
@@ -7533,7 +7533,7 @@ public class ScriptRunner {
 	@ObfuscatedName("hj.lu(Lhf;Lyf;I)V")
 	public static final void cc_if_setoptkeyignoreheld(Component arg0, ClientScriptState arg1) {
 		byte var2 = 10;
-		method4490(arg0, var2, arg1);
+		cc_if_setopkeyignoreheld(arg0, var2, arg1);
 	}
 
 	@ObfuscatedName("ku.ly(Lyf;B)V")
@@ -8986,7 +8986,7 @@ public class ScriptRunner {
 	public static final void cc_getfontgraphic(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.com;
-		arg0.intStack[++arg0.isp - 1] = var2.font;
+		arg0.intStack[++arg0.isp - 1] = var2.textfont;
 	}
 
 	@ObfuscatedName("ane.sp(Lyf;I)V")
@@ -9008,7 +9008,7 @@ public class ScriptRunner {
 	public static final void cc_getfontmetrics(ClientScriptState arg0) {
 		ActiveComponent var1 = arg0.secondary ? arg0.activeComponent2 : arg0.activeComponent;
 		Component var2 = var1.com;
-		arg0.intStack[++arg0.isp - 1] = var2.font;
+		arg0.intStack[++arg0.isp - 1] = var2.textfont;
 	}
 
 	@ObfuscatedName("rm.sd(Lyf;S)V")
@@ -9074,7 +9074,7 @@ public class ScriptRunner {
 		} else if (arg0.onresize != null) {
 			HookRequest var2 = new HookRequest();
 			var2.component = arg0;
-			var2.args = arg0.onresize;
+			var2.onop = arg0.onresize;
 			var2.nestedCount = arg1.nestedCoun + 1;
 			Client.field11031.pushBack(var2);
 		}
@@ -9506,7 +9506,7 @@ public class ScriptRunner {
 	public static final void if_getfontgraphic(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.font;
+		arg0.intStack[++arg0.isp - 1] = var2.textfont;
 	}
 
 	@ObfuscatedName("ac.ur(Lyf;I)V")
@@ -9528,7 +9528,7 @@ public class ScriptRunner {
 	public static final void if_getfontmetrics(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.method10202(var1);
-		arg0.intStack[++arg0.isp - 1] = var2.font;
+		arg0.intStack[++arg0.isp - 1] = var2.textfont;
 	}
 
 	@ObfuscatedName("to.uo(Lyf;S)V")
@@ -10585,9 +10585,9 @@ public class ScriptRunner {
 
 	@ObfuscatedName("vc.zz(Lyf;I)V")
 	public static final void friend_count(ClientScriptState arg0) {
-		if (Client.field11080 == 0) {
+		if (Client.friendsListState == 0) {
 			arg0.intStack[++arg0.isp - 1] = -2;
-		} else if (Client.field11080 == 1) {
+		} else if (Client.friendsListState == 1) {
 			arg0.intStack[++arg0.isp - 1] = -1;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = Client.friendsCount;
@@ -10597,7 +10597,7 @@ public class ScriptRunner {
 	@ObfuscatedName("pz.zs(Lyf;I)V")
 	public static final void friend_getname(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 != 2 || var1 >= Client.friendsCount) {
+		if (Client.friendsListState != 2 || var1 >= Client.friendsCount) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 			arg0.objectStack[++arg0.osp - 1] = "";
 			return;
@@ -10614,7 +10614,7 @@ public class ScriptRunner {
 	@ObfuscatedName("vv.zl(Lyf;I)V")
 	public static final void friend_getworld(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 2 && var1 < Client.friendsCount) {
+		if (Client.friendsListState == 2 && var1 < Client.friendsCount) {
 			arg0.intStack[++arg0.isp - 1] = Client.friends[var1].worldId;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 0;
@@ -10624,7 +10624,7 @@ public class ScriptRunner {
 	@ObfuscatedName("ajd.zb(Lyf;I)V")
 	public static final void friend_getrank(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 2 && var1 < Client.friendsCount) {
+		if (Client.friendsListState == 2 && var1 < Client.friendsCount) {
 			arg0.intStack[++arg0.isp - 1] = Client.friends[var1].rank;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 0;
@@ -10634,7 +10634,7 @@ public class ScriptRunner {
 	@ObfuscatedName("ik.zg(Lyf;B)V")
 	public static final void friend_getnotes(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 2 && var1 < Client.friendsCount) {
+		if (Client.friendsListState == 2 && var1 < Client.friendsCount) {
 			arg0.objectStack[++arg0.osp - 1] = Client.friends[var1].notes;
 		} else {
 			arg0.objectStack[++arg0.osp - 1] = "";
@@ -10644,7 +10644,7 @@ public class ScriptRunner {
 	@ObfuscatedName("qm.zx(Lyf;B)V")
 	public static final void friend_getworldflags(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 2 && var1 < Client.friendsCount) {
+		if (Client.friendsListState == 2 && var1 < Client.friendsCount) {
 			arg0.intStack[++arg0.isp - 1] = Client.friends[var1].worldFlags;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 0;
@@ -10710,7 +10710,7 @@ public class ScriptRunner {
 	@ObfuscatedName("hs.aas(Lyf;B)V")
 	public static final void friend_getworldname(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 2 && var1 < Client.friendsCount) {
+		if (Client.friendsListState == 2 && var1 < Client.friendsCount) {
 			arg0.objectStack[++arg0.osp - 1] = Client.friends[var1].worldName;
 		} else {
 			arg0.objectStack[++arg0.osp - 1] = "";
@@ -10794,7 +10794,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("zs.aal(Lyf;S)V")
 	public static final void ignore_count(ClientScriptState arg0) {
-		if (Client.field11080 == 0) {
+		if (Client.friendsListState == 0) {
 			arg0.intStack[++arg0.isp - 1] = -1;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = Client.ignoresCount;
@@ -10804,7 +10804,7 @@ public class ScriptRunner {
 	@ObfuscatedName("fl.aaz(Lyf;I)V")
 	public static final void ignore_getname(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 0 || var1 >= Client.ignoresCount) {
+		if (Client.friendsListState == 0 || var1 >= Client.ignoresCount) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 			arg0.objectStack[++arg0.osp - 1] = "";
 			return;
@@ -10821,7 +10821,7 @@ public class ScriptRunner {
 	@ObfuscatedName("ad.aan(Lyf;I)V")
 	public static final void ignore_getnotes(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 0 || var1 >= Client.ignoresCount) {
+		if (Client.friendsListState == 0 || var1 >= Client.ignoresCount) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 		} else {
 			arg0.objectStack[++arg0.osp - 1] = Client.ignores[var1].notes;
@@ -10869,7 +10869,7 @@ public class ScriptRunner {
 	@ObfuscatedName("ad.aav(Lyf;B)V")
 	public static final void friend_platform(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 2 && var1 >= 0 && var1 < Client.friendsCount) {
+		if (Client.friendsListState == 2 && var1 >= 0 && var1 < Client.friendsCount) {
 			arg0.intStack[++arg0.isp - 1] = Client.friends[var1].platform;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 0;
@@ -10924,7 +10924,7 @@ public class ScriptRunner {
 	@ObfuscatedName("tc.abh(Lyf;I)V")
 	public static final void ignore_getname_unfiltered(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 0 || var1 >= Client.ignoresCount) {
+		if (Client.friendsListState == 0 || var1 >= Client.ignoresCount) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 		} else {
 			arg0.objectStack[++arg0.osp - 1] = Client.ignores[var1].nameUnfiltered;
@@ -10934,7 +10934,7 @@ public class ScriptRunner {
 	@ObfuscatedName("eu.abf(Lyf;B)V")
 	public static final void friend_is_referrer(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 2 && var1 < Client.friendsCount) {
+		if (Client.friendsListState == 2 && var1 < Client.friendsCount) {
 			arg0.intStack[++arg0.isp - 1] = Client.friends[var1].referrer ? 1 : 0;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 0;
@@ -10944,7 +10944,7 @@ public class ScriptRunner {
 	@ObfuscatedName("pj.abi(Lyf;I)V")
 	public static final void friend_is_referred(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.field11080 == 2 && var1 < Client.friendsCount) {
+		if (Client.friendsListState == 2 && var1 < Client.friendsCount) {
 			arg0.intStack[++arg0.isp - 1] = Client.friends[var1].referred ? 1 : 0;
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 0;
@@ -11703,7 +11703,7 @@ public class ScriptRunner {
 	@ObfuscatedName("tl.afz(Lyf;B)V")
 	public static final void get_col_tag(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		arg0.objectStack[++arg0.osp - 1] = TextUtil.method596(var1);
+		arg0.objectStack[++arg0.osp - 1] = TextUtil.colTag(var1);
 	}
 
 	@ObfuscatedName("jx.afe(Lyf;I)V")
@@ -12109,9 +12109,9 @@ public class ScriptRunner {
 		if (var2.minimenu_colour_overridden) {
 			var3 = var2.minimenu_colour;
 		} else if (var2.members) {
-			var3 = MiniMenu.field1971.members_colour;
+			var3 = MiniMenu.miniMenuDefaults.members_colour;
 		} else {
-			var3 = MiniMenu.field1971.free_colour;
+			var3 = MiniMenu.miniMenuDefaults.free_colour;
 		}
 		arg0.intStack[++arg0.isp - 1] = var3;
 	}
@@ -12170,9 +12170,9 @@ public class ScriptRunner {
 		int var2 = arg0.intStack[arg0.isp + 1];
 		ParamType var3 = (ParamType) Client.paramTypeList.list(var2);
 		if (var3.isStringType()) {
-			arg0.objectStack[++arg0.osp - 1] = ((LocType) Client.world.method7750().list(var1)).getParam(var2, var3.defaultstr);
+			arg0.objectStack[++arg0.osp - 1] = ((LocType) Client.world.getLocTypeList().list(var1)).getParam(var2, var3.defaultstr);
 		} else {
-			arg0.intStack[++arg0.isp - 1] = ((LocType) Client.world.method7750().list(var1)).getParam(var2, var3.defaultint);
+			arg0.intStack[++arg0.isp - 1] = ((LocType) Client.world.getLocTypeList().list(var1)).getParam(var2, var3.defaultint);
 		}
 	}
 
@@ -12213,7 +12213,7 @@ public class ScriptRunner {
 		int var1 = arg0.intStack[--arg0.isp];
 		BASType var2 = (BASType) Client.basTypeList.list(var1);
 		if (var2.field7335 == null || var2.field7335.length <= 0) {
-			arg0.intStack[++arg0.isp - 1] = var2.field7345;
+			arg0.intStack[++arg0.isp - 1] = var2.readyanim;
 			return;
 		}
 		int var3 = 0;
@@ -13963,7 +13963,7 @@ public class ScriptRunner {
 		int var14 = var13.x << 9;
 		int var15 = var13.z << 9;
 		if (arg1 != null) {
-			var9.method16683(arg1, new Vector3((float) var2, (float) var3, (float) var4), var10, var7, var8, Client.world.method7744().levelHeightmap, Client.world.method7793(), var14, var15);
+			var9.method16683(arg1, new Vector3((float) var2, (float) var3, (float) var4), var10, var7, var8, Client.world.method7744().levelHeightmap, Client.world.getSceneLevelTileFlags(), var14, var15);
 		}
 		Client.field10902 = true;
 	}
@@ -14773,8 +14773,8 @@ public class ScriptRunner {
 	@ObfuscatedName("no.asa(Lyf;I)V")
 	public static final void detail_lightdetail_high(ClientScriptState arg0) {
 		Client.preferences.setPreference(Client.preferences.lightingDetail, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
-		Client.method9516();
-		Client.world.method7816().resetFade();
+		Client.resetModelCaches();
+		Client.world.getEnvironmentManager().resetFade();
 		Preferences.save();
 		Client.preferencesChangeNotified = false;
 	}
@@ -14926,7 +14926,7 @@ public class ScriptRunner {
 	public static final void detail_texturing(ClientScriptState arg0) {
 		Client.preferences.setPreference(Client.preferences.textures, arg0.intStack[--arg0.isp] == 1 ? 1 : 0);
 		Preferences.save();
-		Client.method9516();
+		Client.resetModelCaches();
 		SpotShadowFactory.cacheReset();
 		Client.preferencesChangeNotified = false;
 	}
@@ -15648,7 +15648,7 @@ public class ScriptRunner {
 			arg0.objectStack[++arg0.osp - 1] = "";
 			return;
 		}
-		String var2 = Component.interfaces[var1].components[0].field2155;
+		String var2 = Component.interfaces[var1].components[0].name;
 		if (var2 == null) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 		} else {
@@ -15674,7 +15674,7 @@ public class ScriptRunner {
 			arg0.objectStack[++arg0.osp - 1] = "";
 			return;
 		}
-		String var3 = Component.interfaces[var2].components[var1].field2155;
+		String var3 = Component.interfaces[var2].components[var1].name;
 		if (var3 == null) {
 			arg0.objectStack[++arg0.osp - 1] = "";
 		} else {
@@ -15806,7 +15806,7 @@ public class ScriptRunner {
 		Component var3 = Component.method16682(var1, var2);
 		Client.method9403();
 		ServerKeyProperties var4 = Client.method17197(var3);
-		Client.method10592(var3, var4.method17691(), var4.field11381);
+		Client.setTargetActiveComponent(var3, var4.method17691(), var4.field11381);
 	}
 
 	@ObfuscatedName("kb.axp(Lyf;B)V")
@@ -16483,7 +16483,7 @@ public class ScriptRunner {
 	@ObfuscatedName("d.bbn(Lyf;B)V")
 	public static final void get_npc_name(ClientScriptState arg0) {
 		NpcEntity var1 = (NpcEntity) arg0.activeEntity;
-		String var2 = var1.field12082;
+		String var2 = var1.name;
 		NPCType var3 = var1.npcType;
 		if (var3.multinpc != null) {
 			NPCType var4 = var3.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
@@ -16572,7 +16572,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("cj.bcd(Lyf;I)V")
 	public static final void is_targeted_entity(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.field10787 == arg0.activeEntity.targeted() ? 1 : 0;
+		arg0.intStack[++arg0.isp - 1] = Client.activeTarget == arg0.activeEntity.targeted() ? 1 : 0;
 	}
 
 	@ObfuscatedName("uj.bcj(Lyf;I)V")
@@ -16608,9 +16608,9 @@ public class ScriptRunner {
 		int var4 = 0;
 		int var5 = 0;
 		int var6 = 0;
-		if (arg0.field11713 != null) {
-			for (int var7 = 0; var7 < arg0.field11713.length; var7++) {
-				ScreenBoundingBox var8 = arg0.field11713[var7];
+		if (arg0.entityBounds != null) {
+			for (int var7 = 0; var7 < arg0.entityBounds.length; var7++) {
+				ScreenBoundingBox var8 = arg0.entityBounds[var7];
 				if (var8.field1686) {
 					int var9;
 					int var10;
@@ -17089,8 +17089,8 @@ public class ScriptRunner {
 		int var3 = arg0.intStack[arg0.isp + 2];
 		int var4 = DBUtils.method746(var2);
 		int var5 = DBUtils.method15018(var2);
-		DBRowType var6 = (DBRowType) Client.field9123.list(var1);
-		DBTableType var7 = (DBTableType) Client.field1840.list(var4);
+		DBRowType var6 = (DBRowType) Client.dbRowTypeList.list(var1);
+		DBTableType var7 = (DBTableType) Client.dbTableTypeList.list(var4);
 		ScriptVarType[] var8 = var7.types[var5];
 		Object[] var9 = var6.method14711(var5);
 		if (var9 == null && var7.defaultValues != null) {
@@ -17131,8 +17131,8 @@ public class ScriptRunner {
 		int var3 = 0;
 		int var4 = var2 >>> 8;
 		int var5 = var2 & 0xFF;
-		DBRowType var6 = (DBRowType) Client.field9123.list(var1);
-		DBTableType var7 = (DBTableType) Client.field1840.list(var4);
+		DBRowType var6 = (DBRowType) Client.dbRowTypeList.list(var1);
+		DBTableType var7 = (DBTableType) Client.dbTableTypeList.list(var4);
 		ScriptVarType[] var8 = var7.types[var5];
 		Object[] var9 = var6.method14711(var5);
 		if (var9 == null && var7.defaultValues != null) {
@@ -17182,7 +17182,7 @@ public class ScriptRunner {
 	@ObfuscatedName("ei.beb(Lyf;B)V")
 	public static final void db_getrowtable(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		DBRowType var2 = (DBRowType) Client.field9123.list(var1);
+		DBRowType var2 = (DBRowType) Client.dbRowTypeList.list(var1);
 		arg0.intStack[++arg0.isp - 1] = var2.tableId;
 	}
 

@@ -68,7 +68,7 @@ public class PureJavaSpriteAlpha extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apv.p(IIIIII)V")
-	public void method1440(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void draw(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		int[] var7 = this.field9373.colour;
 		if (var7 == null) {
 			throw new IllegalStateException("");
