@@ -271,7 +271,7 @@ public class LegacyOpenGLModel extends Model {
 				}
 				int var10003 = this.field9670;
 				int var10001 = this.field9670;
-				this.field9670 = (var10003 + 1) * 3;
+				this.field9670 = var10003 + 1;
 				var9[var10001] = var10;
 				this.field9679[arg1.faceVertex1[var10]]++;
 				this.field9679[arg1.faceVertex2[var10]]++;
@@ -393,7 +393,7 @@ public class LegacyOpenGLModel extends Model {
 				this.field9639[var37] = new LegacyModelRelated(var43);
 			}
 		}
-		int var44 = this.field9670;
+		int var44 = this.field9670 * 3;
 		this.field9681 = new short[var44];
 		this.field9682 = new short[var44];
 		this.field9644 = new short[var44];

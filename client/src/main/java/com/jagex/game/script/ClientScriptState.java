@@ -88,7 +88,7 @@ public class ClientScriptState {
 	public Map secondaryVars = new HashMap();
 
 	@ObfuscatedName("yf.j")
-	public int nestedCoun = 0;
+	public int nestedCount = 0;
 
 	@ObfuscatedName("yf.t")
 	public int field8231;

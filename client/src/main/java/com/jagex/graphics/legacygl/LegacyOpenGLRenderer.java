@@ -32,6 +32,8 @@ import java.lang.reflect.Field;
 @ObfuscatedName("afa")
 public class LegacyOpenGLRenderer extends Renderer {
 
+	public static final boolean ALLOW_MICROSOFT = true; // microsoft support is better now!
+
 	@ObfuscatedName("afa.cl")
 	public OpenGL field10022;
 
@@ -740,7 +742,7 @@ public class LegacyOpenGLRenderer extends Renderer {
 		int var1 = 0;
 		this.field9996 = OpenGL.glGetString(7936).toLowerCase();
 		this.field9977 = OpenGL.glGetString(7937).toLowerCase();
-		if (this.field9996.indexOf("microsoft") != -1) {
+		if (!LegacyOpenGLRenderer.ALLOW_MICROSOFT && this.field9996.indexOf("microsoft") != -1) {
 			var1 |= 0x1;
 		}
 		if (this.field9996.indexOf("brian paul") != -1 || this.field9996.indexOf("mesa") != -1) {

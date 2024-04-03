@@ -231,9 +231,9 @@ public class ScriptRunner {
 				var5.longLocals[var8++] = var12;
 			}
 		}
-		var5.nestedCoun = arg0.nestedCount;
+		var5.nestedCount = arg0.nestedCount;
 		execute(var4, arg1, var5);
-		var5.nestedCoun = 0;
+		var5.nestedCount = 0;
 	}
 
 	@ObfuscatedName("gz.l(Luh;IILahm;II)V")
@@ -4988,8 +4988,8 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("aat.ad(Lyf;I)V")
-	public static final void push_int_local(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = arg0.intLocals[arg0.intOperands[arg0.pc]];
+	public static final void push_int_local(ClientScriptState state) {
+		state.intStack[++state.isp - 1] = state.intLocals[state.intOperands[state.pc]];
 	}
 
 	@ObfuscatedName("dr.am(Lyf;B)V")
@@ -9069,13 +9069,13 @@ public class ScriptRunner {
 
 	@ObfuscatedName("agy.sj(Lhf;Lyf;I)V")
 	public static final void cc_if_callonresize(Component arg0, ClientScriptState arg1) {
-		if (arg1.nestedCoun >= 10) {
+		if (arg1.nestedCount >= 10) {
 			throw new RuntimeException();
 		} else if (arg0.onresize != null) {
 			HookRequest var2 = new HookRequest();
 			var2.component = arg0;
 			var2.onop = arg0.onresize;
-			var2.nestedCount = arg1.nestedCoun + 1;
+			var2.nestedCount = arg1.nestedCount + 1;
 			Client.field11031.pushBack(var2);
 		}
 	}
