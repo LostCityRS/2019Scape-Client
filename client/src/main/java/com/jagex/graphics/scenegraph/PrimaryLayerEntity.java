@@ -3,7 +3,7 @@ package com.jagex.graphics.scenegraph;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.game.world.entity.StaticPointLight;
 import com.jagex.graphics.Light;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 
@@ -167,8 +167,8 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("ash.ga(Ldh;S)Z")
-	public boolean method18360(Renderer renderer) {
-		return this.scene.field6930.method8930(this.field11714, this.field12471, this.field12472, this.field12468, this.field12467, this.method17371(renderer));
+	public boolean method18360(Toolkit toolkit) {
+		return this.scene.field6930.method8930(this.field11714, this.field12471, this.field12472, this.field12468, this.field12467, this.method17371(toolkit));
 	}
 
 	@ObfuscatedName("ash.gn(I)Z")

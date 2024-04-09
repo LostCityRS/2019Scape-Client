@@ -1,11 +1,11 @@
 package rs2.client.logic.clans;
 
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.Algorithms;
-import com.jagex.game.world.entity.ObjectWrapper;
+import com.jagex.game.world.entity.ObjectNode;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 
@@ -173,7 +173,7 @@ public class ClanSettings {
 			return null;
 		} else {
 			Node node = this.settingsMap.getNode((long) uid);
-			return node != null && node instanceof IntWrapper ? Integer.valueOf(((IntWrapper) node).value) : null;
+			return node != null && node instanceof IntNode ? Integer.valueOf(((IntNode) node).value) : null;
 		}
 	}
 
@@ -193,7 +193,7 @@ public class ClanSettings {
 			return null;
 		} else {
 			Node node = this.settingsMap.getNode((long) uid);
-			return node != null && node instanceof ObjectWrapper ? (String) ((ObjectWrapper) node).value : null;
+			return node != null && node instanceof ObjectNode ? (String) ((ObjectNode) node).value : null;
 		}
 	}
 
@@ -395,8 +395,8 @@ public class ClanSettings {
 		} else {
 			Node node = this.settingsMap.getNode((long) uid);
 			if (node != null) {
-				if (node instanceof IntWrapper) {
-					IntWrapper settingValue = (IntWrapper) node;
+				if (node instanceof IntNode) {
+					IntNode settingValue = (IntNode) node;
 					if (settingValue.value == setting) {
 						return false;
 					}
@@ -406,7 +406,7 @@ public class ClanSettings {
 				node.remove();
 			}
 		}
-		this.settingsMap.pushNode(new IntWrapper(setting), (long) uid);
+		this.settingsMap.pushNode(new IntNode(setting), (long) uid);
 		return true;
 	}
 
@@ -422,8 +422,8 @@ public class ClanSettings {
 		} else {
 			Node node = this.settingsMap.getNode((long) uid);
 			if (node != null) {
-				if (node instanceof IntWrapper) {
-					IntWrapper settingValue = (IntWrapper) node;
+				if (node instanceof IntNode) {
+					IntNode settingValue = (IntNode) node;
 					if ((settingValue.value & var7) == var9) {
 						return false;
 					}
@@ -434,7 +434,7 @@ public class ClanSettings {
 				node.remove();
 			}
 		}
-		this.settingsMap.pushNode(new IntWrapper(var9), (long) uid);
+		this.settingsMap.pushNode(new IntNode(var9), (long) uid);
 		return true;
 	}
 
@@ -472,21 +472,21 @@ public class ClanSettings {
 		} else {
 			Node node = this.settingsMap.getNode((long) uid);
 			if (node != null) {
-				if (node instanceof ObjectWrapper) {
-					ObjectWrapper settingValue = (ObjectWrapper) node;
+				if (node instanceof ObjectNode) {
+					ObjectNode settingValue = (ObjectNode) node;
 					if (settingValue.value instanceof String) {
 						if (setting.equals(settingValue.value)) {
 							return false;
 						}
 						settingValue.remove();
-						this.settingsMap.pushNode(new ObjectWrapper(setting), settingValue.nodeId);
+						this.settingsMap.pushNode(new ObjectNode(setting), settingValue.nodeId);
 						return true;
 					}
 				}
 				node.remove();
 			}
 		}
-		this.settingsMap.pushNode(new ObjectWrapper(setting), (long) uid);
+		this.settingsMap.pushNode(new ObjectNode(setting), (long) uid);
 		return true;
 	}
 
@@ -600,13 +600,13 @@ public class ClanSettings {
 			int type = setting >>> 30;
 			if (type == 0) {
 				int value = buf.g4s();
-				this.settingsMap.pushNode(new IntWrapper(value), (long) uid);
+				this.settingsMap.pushNode(new IntNode(value), (long) uid);
 			} else if (type == 1) {
 				long value = buf.g8();
 				this.settingsMap.pushNode(new LongNode(value), (long) uid);
 			} else if (type == 2) {
 				String value = buf.gjstr();
-				this.settingsMap.pushNode(new ObjectWrapper(value), (long) uid);
+				this.settingsMap.pushNode(new ObjectNode(value), (long) uid);
 			}
 		}
 	}

@@ -18,7 +18,7 @@ public class ClientAutoSetupResult extends AutoSetupResult implements SendablePa
 		var1.buf.p2(this.field8899);
 		var1.buf.p1_alt3(this.result);
 		var1.buf.p3(this.field8902);
-		var1.buf.p3_alt1(this.field8898);
+		var1.buf.p3_alt2(this.field8898);
 		Client.gameConnection.queue(var1);
 	}
 

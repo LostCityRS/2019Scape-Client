@@ -5,7 +5,7 @@ import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.TextUtil;
 import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.graphics.GraphicsPacketQueue;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.twitchtv.*;
 import deob.ObfuscatedName;
@@ -260,7 +260,7 @@ public class TwitchHardwarePlatform {
 	@ObfuscatedName("th.r(I)I")
 	public static int logout() {
 		if (loginReady) {
-			stopStream(Client.renderer);
+			stopStream(Client.toolkit);
 			return twitchTV.Logout();
 		} else {
 			return 12;
@@ -301,7 +301,7 @@ public class TwitchHardwarePlatform {
 	}
 
 	@ObfuscatedName("tk.s(Ldh;I)I")
-	public static int stopStream(Renderer arg0) {
+	public static int stopStream(Toolkit arg0) {
 		reset();
 		return twitchTV.StopStreaming();
 	}
@@ -313,7 +313,7 @@ public class TwitchHardwarePlatform {
 		field894 = null;
 		field7392.clear();
 		field7380.clear();
-		Client.renderer.method2126();
+		Client.toolkit.method2126();
 	}
 
 	@ObfuscatedName("nk.q(Ljava/lang/String;I)I")
@@ -355,7 +355,7 @@ public class TwitchHardwarePlatform {
 	}
 
 	@ObfuscatedName("hy.j(Ldh;J)V")
-	public static void method4069(Renderer arg0, long arg1) {
+	public static void method4069(Toolkit arg0, long arg1) {
 		if (field7388 == 3 || field7388 == 0) {
 			return;
 		}
@@ -420,7 +420,7 @@ public class TwitchHardwarePlatform {
 	}
 
 	@ObfuscatedName("h.t(Ldh;JIIB)V")
-	public static void method593(Renderer arg0, long arg1, int arg2, int arg3) {
+	public static void method593(Toolkit arg0, long arg1, int arg2, int arg3) {
 		if (arg0.method2360() && arg0.method2502() > -1) {
 			int var5 = arg0.method2502();
 			TwitchRelated2 var6 = null;
@@ -492,7 +492,7 @@ public class TwitchHardwarePlatform {
 	}
 
 	@ObfuscatedName("qd.ah(Ldh;J)V")
-	public static void method7259(Renderer arg0, long arg1) {
+	public static void method7259(Toolkit arg0, long arg1) {
 		arg0.method2126();
 		field7392.clear();
 		field7380.clear();
@@ -559,7 +559,7 @@ public class TwitchHardwarePlatform {
 		if (field7397 != null && field7397.getWidth() == field7391.width && field7397.getHeight() == field7391.height) {
 			field7397.method1469(0, 0, field7391.width, field7391.height, field7391.buffer, 0, field7391.width);
 		} else {
-			field7397 = Client.renderer.createSprite(field7391.buffer, 0, field7391.width, field7391.width, field7391.height, false);
+			field7397 = Client.toolkit.createSprite(field7391.buffer, 0, field7391.width, field7391.width, field7391.height, false);
 		}
 	}
 

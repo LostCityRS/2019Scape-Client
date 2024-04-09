@@ -6,7 +6,7 @@ import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.FloorModel;
 import com.jagex.graphics.Model;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.graphics.scenegraph.WallLayerEntity;
 import com.jagex.math.Cuboid;
@@ -61,7 +61,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	@ObfuscatedName("ajg.j")
 	public int field12460;
 
-	public StaticWallEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, ScaleRotTrans arg13) {
+	public StaticWallEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, ScaleRotTrans arg13) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, method1575(arg10, arg11), arg13);
 		this.field11162 = arg2;
 		this.field11166 = arg3.id;
@@ -119,7 +119,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.bv(Ldh;II)Ldo;")
-	public Model method17419(Renderer arg0, int arg1) {
+	public Model method17419(Toolkit arg0, int arg1) {
 		if (this.field11173 != null && arg0.method2394(this.field11173.method1691(), arg1) == 0) {
 			return this.field11173;
 		} else {
@@ -129,7 +129,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.br(Ldh;IZI)Labg;")
-	public Pair method17420(Renderer arg0, int arg1, boolean arg2) {
+	public Pair method17420(Toolkit arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11162.list(this.field11166);
 		FloorModel var5;
 		FloorModel var6;
@@ -149,16 +149,16 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer renderer) {
+	public EntityBounds method17371(Toolkit toolkit) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11165 == null) {
-			this.field11165 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17419(renderer, 0));
+			this.field11165 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17419(toolkit, 0));
 		}
 		return this.field11165;
 	}
 
 	@ObfuscatedName("ajg.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Renderer renderer) {
+	public PickableEntity draw(Toolkit toolkit) {
 		if (this.field11173 == null) {
 			return null;
 		}
@@ -169,22 +169,22 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 			this.field11173.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.field11173.draw(var2, null, 0);
-			renderer.method2193(var2, this.entityBounds[0], var4);
+			toolkit.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajg.fw(Ldh;I)V")
-	public void method17373(Renderer renderer) {
+	public void method17373(Toolkit toolkit) {
 	}
 
 	@ObfuscatedName("ajg.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
 		Cuboid var4 = ((LocType) this.field11162.list(this.field11166)).clickbox;
 		if (var4 != null) {
-			return renderer.pick(arg1, arg2, this.method10533(), var4);
+			return toolkit.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17419(renderer, 131072);
+		Model var5 = this.method17419(toolkit, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -199,7 +199,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		if (entity instanceof StaticWallEntity) {
 			StaticWallEntity var7 = (StaticWallEntity) entity;
 			if (this.field11173 != null && var7.field11173 != null) {
@@ -254,7 +254,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.l(Ldh;B)V")
-	public void method8217(Renderer arg0) {
+	public void method8217(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11163 == null && this.field11172) {
@@ -271,7 +271,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.u(Ldh;B)V")
-	public void method8209(Renderer arg0) {
+	public void method8209(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11163 == null && this.field11172) {

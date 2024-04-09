@@ -1,21 +1,21 @@
 package com.jagex.graphics.gl.effects;
 
-import com.jagex.graphics.legacygl.LegacyOpenGLRenderer;
-import com.jagex.graphics.legacygl.LegacyOpenGLTexture;
+import com.jagex.graphics.gl.GlToolkit;
+import com.jagex.graphics.gl.GlTexture;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("by")
 public abstract class GlEffect {
 
 	@ObfuscatedName("by.e")
-	public final LegacyOpenGLRenderer field1021;
+	public final GlToolkit field1021;
 
-	public GlEffect(LegacyOpenGLRenderer arg0) {
+	public GlEffect(GlToolkit arg0) {
 		this.field1021 = arg0;
 	}
 
 	@ObfuscatedName("by.w(Lbq;I)V")
-	public abstract void method1251(LegacyOpenGLTexture arg0, int arg1);
+	public abstract void method1251(GlTexture arg0, int arg1);
 
 	@ObfuscatedName("by.e()Z")
 	public abstract boolean method1252();

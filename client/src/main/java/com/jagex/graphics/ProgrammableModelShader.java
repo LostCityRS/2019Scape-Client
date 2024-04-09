@@ -8,13 +8,13 @@ import deob.ObfuscatedName;
 public class ProgrammableModelShader extends ModelShader {
 
 	@ObfuscatedName("ahv.i")
-	public Shader shader;
+	public GpuShader shader;
 
 	@ObfuscatedName("ahv.ak")
 	public final Matrix4x4 field10499 = new Matrix4x4();
 
 	@ObfuscatedName("ahv.an")
-	public final Program[] field10500 = new Program[19];
+	public final GpuProgram[] field10500 = new GpuProgram[19];
 
 	@ObfuscatedName("ahv.bf")
 	public final int[][] field10473 = new int[19][17];
@@ -22,7 +22,7 @@ public class ProgrammableModelShader extends ModelShader {
 	@ObfuscatedName("ahv.bl")
 	public int[] field10501;
 
-	public ProgrammableModelShader(GpuRenderer arg0) throws ShaderException {
+	public ProgrammableModelShader(GpuToolkit arg0) throws ShaderException {
 		super(arg0);
 		this.method16619();
 	}

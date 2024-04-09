@@ -5,7 +5,7 @@ import com.jagex.game.client.MovingParticle;
 import com.jagex.game.config.ParticleEmitterType;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.ModelParticleEmitter;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
 
@@ -69,7 +69,7 @@ public class ParticleEmitter {
 	@ObfuscatedName("xm.x")
 	public boolean field7773 = false;
 
-	public ParticleEmitter(Renderer arg0, ModelParticleEmitter arg1, ParticleSystem arg2, long arg3) {
+	public ParticleEmitter(Toolkit arg0, ModelParticleEmitter arg1, ParticleSystem arg2, long arg3) {
 		this.field7788 = arg1;
 		this.field7785 = arg2;
 		this.field7774 = arg3;
@@ -119,7 +119,7 @@ public class ParticleEmitter {
 	}
 
 	@ObfuscatedName("xm.n(Ldh;JIZI)V")
-	public void method9897(Renderer arg0, long arg1, int arg2, boolean arg3) {
+	public void method9897(Toolkit arg0, long arg1, int arg2, boolean arg3) {
 		if (this.field7778) {
 			arg3 = false;
 		} else if (ParticleSystemRenderer.field7802 < this.field7772.field3504) {
@@ -292,7 +292,7 @@ public class ParticleEmitter {
 	}
 
 	@ObfuscatedName("xm.m(Ltx;Ldh;J)V")
-	public void method9898(Scene arg0, Renderer arg1, long arg2) {
+	public void method9898(Scene arg0, Toolkit arg1, long arg2) {
 		for (MovingParticle var5 = (MovingParticle) this.field7775.peekFront(); var5 != null; var5 = (MovingParticle) this.field7775.prev()) {
 			var5.method19668(arg0, arg1, arg2);
 		}

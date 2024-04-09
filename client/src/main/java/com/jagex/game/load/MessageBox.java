@@ -130,7 +130,7 @@ public class MessageBox {
 	}
 
 	@ObfuscatedName("ae.m(Ljava/lang/String;ZLdh;Leu;Laac;B)V")
-	public static void draw(String text, boolean arg1, Renderer renderer, Font font, FontMetrics fontMetrics) {
+	public static void draw(String text, boolean arg1, Toolkit toolkit, Font font, FontMetrics fontMetrics) {
 		boolean loaded = !setup || downloadSprites();
 		if (!loaded) {
 			return;
@@ -138,7 +138,7 @@ public class MessageBox {
 
 		if (setup && loaded) {
 			FontMetrics var6 = font1;
-			Font var7 = renderer.createFont(var6, font2, true);
+			Font var7 = toolkit.createFont(var6, font2, true);
 
 			int width = var6.parawidth(text, 250, null);
 			int height = var6.paraheight(text, 250, var6.field8566, null);
@@ -159,30 +159,30 @@ public class MessageBox {
 			int var14 = halign.computeX(var12, Client.frameWidth) + boxX;
 			int var15 = valign.computeY(var13, Client.frameHeight) + boxY;
 
-			renderer.createSprite(background, false).drawTiledTinted(var14 + borderCorner.getWidth(), var15 + borderCorner.getHeight(), var12 - borderCorner.getWidth() * 2, var13 - borderCorner.getHeight() * 2, 1, -1, 0);
+			toolkit.createSprite(background, false).drawTiledTinted(var14 + borderCorner.getWidth(), var15 + borderCorner.getHeight(), var12 - borderCorner.getWidth() * 2, var13 - borderCorner.getHeight() * 2, 1, -1, 0);
 
-			renderer.createSprite(borderCorner, true).drawSprite(var14, var15);
+			toolkit.createSprite(borderCorner, true).drawSprite(var14, var15);
 			borderCorner.flipHorizontally();
 
-			renderer.createSprite(borderCorner, true).drawSprite(var12 + var14 - var10, var15);
+			toolkit.createSprite(borderCorner, true).drawSprite(var12 + var14 - var10, var15);
 			borderCorner.flipVertically();
 
-			renderer.createSprite(borderCorner, true).drawSprite(var12 + var14 - var10, var13 + var15 - var10);
+			toolkit.createSprite(borderCorner, true).drawSprite(var12 + var14 - var10, var13 + var15 - var10);
 			borderCorner.flipHorizontally();
 
-			renderer.createSprite(borderCorner, true).drawSprite(var14, var13 + var15 - var10);
+			toolkit.createSprite(borderCorner, true).drawSprite(var14, var13 + var15 - var10);
 			borderCorner.flipVertically();
 
-			renderer.createSprite(borderLine, true).drawTiled(var14, var15 + borderCorner.getHeight(), var10, var13 - borderCorner.getHeight() * 2);
+			toolkit.createSprite(borderLine, true).drawTiled(var14, var15 + borderCorner.getHeight(), var10, var13 - borderCorner.getHeight() * 2);
 			borderLine.rotate();
 
-			renderer.createSprite(borderLine, true).drawTiled(var14 + borderCorner.getWidth(), var15, var12 - borderCorner.getWidth() * 2, var10);
+			toolkit.createSprite(borderLine, true).drawTiled(var14 + borderCorner.getWidth(), var15, var12 - borderCorner.getWidth() * 2, var10);
 			borderLine.rotate();
 
-			renderer.createSprite(borderLine, true).drawTiled(var12 + var14 - var10, var15 + borderCorner.getHeight(), var10, var13 - borderCorner.getHeight() * 2);
+			toolkit.createSprite(borderLine, true).drawTiled(var12 + var14 - var10, var15 + borderCorner.getHeight(), var10, var13 - borderCorner.getHeight() * 2);
 			borderLine.rotate();
 
-			renderer.createSprite(borderLine, true).drawTiled(var14 + borderCorner.getWidth(), var13 + var15 - var10, var12 - borderCorner.getWidth() * 2, var10);
+			toolkit.createSprite(borderLine, true).drawTiled(var14 + borderCorner.getWidth(), var13 + var15 - var10, var12 - borderCorner.getWidth() * 2, var10);
 			borderLine.rotate();
 
 			var7.drawStringTaggable(text, var11 + var14, var11 + var15, var12 - var11 * 2, var13 - var11 * 2, color | 0xFF000000, -1, 1, 1, 0, null, null, null, 0, 0);
@@ -195,16 +195,16 @@ public class MessageBox {
 			int var19 = var18 + 6;
 			int var20 = var18 + 6;
 
-			renderer.fillRectangle(var19 - var18, var20 - var18, width + var18 + var18, height + var18 + var18, -16777216, 0);
-			renderer.drawRectangle(var19 - var18, var20 - var18, width + var18 + var18, height + var18 + var18, -1, 0);
+			toolkit.fillRectangle(var19 - var18, var20 - var18, width + var18 + var18, height + var18 + var18, -16777216, 0);
+			toolkit.drawRectangle(var19 - var18, var20 - var18, width + var18 + var18, height + var18 + var18, -1, 0);
 			font.drawStringTaggable(text, var19, var20, width, height, -1, -1, 1, 1, 0, null, null, null, 0, 0);
 			Client.requestRedrawAtPoint(var19 - var18, var20 - var18, width + var18 + var18, height + var18 + var18);
 		}
 
         if (arg1) {
             try {
-                renderer.flush();
-                renderer.method2115();
+                toolkit.flush();
+                toolkit.method2115();
             } catch (RendererException var22) {
             }
         }

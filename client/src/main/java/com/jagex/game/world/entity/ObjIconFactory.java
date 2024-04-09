@@ -5,7 +5,7 @@ import com.jagex.game.config.iftype.Component;
 import com.jagex.graphics.DefaultSprites;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.SpriteDataProvider;
 import deob.ObfuscatedName;
 import rs2.client.Client;
@@ -16,7 +16,7 @@ import java.awt.*;
 public class ObjIconFactory {
 
 	@ObfuscatedName("ag.e")
-	public static Renderer field630;
+	public static Toolkit field630;
 
 	@ObfuscatedName("ag.n")
 	public static Font field629;
@@ -29,7 +29,7 @@ public class ObjIconFactory {
 	}
 
 	@ObfuscatedName("y.e(Ldh;Lhf;I)V")
-	public static void method539(Renderer arg0, Component arg1) {
+	public static void method539(Toolkit arg0, Component arg1) {
 		boolean var2 = Client.objTypeList.method18900(arg0, arg1.invobject, arg1.invcount, arg1.outline, arg1.graphicshadow | 0xFF000000, arg1.field2241, arg1.field2246 ? Client.localPlayerEntity.model : null) == null;
 		if (var2) {
 			field631.pushBack(new ObjIconRequest(arg1.invobject, arg1.invcount, arg1.outline, arg1.graphicshadow | 0xFF000000, arg1.field2241, arg1.field2246));
@@ -38,7 +38,7 @@ public class ObjIconFactory {
 	}
 
 	@ObfuscatedName("xk.n(Ldh;S)V")
-	public static void method10323(Renderer arg0) {
+	public static void method10323(Toolkit arg0) {
 		if (field631.length() == 0) {
 			return;
 		}
@@ -53,7 +53,7 @@ public class ObjIconFactory {
 		if (field630 == null) {
 			Canvas var2 = new Canvas();
 			var2.setSize(36, 32);
-			field630 = Renderer.create(0, var2, Client.materialList, Client.textureList, Client.basicBillboardTypeList, Client.basicParticleEmitterTypeList, Client.basicParticleEffectorTypeList, Client.shadersJs5, 0);
+			field630 = Toolkit.create(0, var2, Client.materialList, Client.textureList, Client.basicBillboardTypeList, Client.basicParticleEmitterTypeList, Client.basicParticleEffectorTypeList, Client.shadersJs5, 0);
 			field629 = field630.createFont(FontMetrics.createFontMetrics(Client.fontmetricsJs5, DefaultSprites.p11_full, 0), SpriteDataProvider.method1609(Client.spritesJs5, DefaultSprites.p11_full, 0), true);
 		}
 		for (ObjIconRequest var3 = (ObjIconRequest) field631.peekFront(); var3 != null; var3 = (ObjIconRequest) field631.prev()) {

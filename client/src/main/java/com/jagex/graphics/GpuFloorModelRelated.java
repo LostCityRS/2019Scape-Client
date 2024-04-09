@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
 public class GpuFloorModelRelated extends Node {
 
 	@ObfuscatedName("akx.k")
-	public final GpuRenderer field11416;
+	public final GpuToolkit field11416;
 
 	@ObfuscatedName("akx.f")
 	public final GpuFloorModel field11414;
@@ -42,7 +42,7 @@ public class GpuFloorModelRelated extends Node {
 	public int field11413 = 0;
 
 	@ObfuscatedName("akx.v")
-	public IndexBuffer field11423;
+	public GpuIndexBuffer field11423;
 
 	@ObfuscatedName("akx.o")
 	public VertexBuffer field11424;
@@ -62,7 +62,7 @@ public class GpuFloorModelRelated extends Node {
 	@ObfuscatedName("akx.b")
 	public ByteBuffer field11429;
 
-	public GpuFloorModelRelated(GpuRenderer arg0, GpuFloorModel arg1, Light arg2, int[] arg3) {
+	public GpuFloorModelRelated(GpuToolkit arg0, GpuFloorModel arg1, Light arg2, int[] arg3) {
 		this.field11416 = arg0;
 		this.field11415 = arg2;
 		this.field11414 = arg1;
@@ -341,7 +341,7 @@ public class GpuFloorModelRelated extends Node {
 			if (var11 > this.field11417) {
 				if (var10.position() != 0 && var9 != 0) {
 					int var16 = var10.position();
-					IndexBuffer var17 = this.field11416.method15988(var16 / 2);
+					GpuIndexBuffer var17 = this.field11416.method15988(var16 / 2);
 					var17.upload(0, var16, this.field11416.temporaryBufferAddress);
 					this.method17784(arg0, var17, var9 / 3);
 					break;
@@ -368,7 +368,7 @@ public class GpuFloorModelRelated extends Node {
 	}
 
 	@ObfuscatedName("akx.k(Ljj;Lml;I)V")
-	public void method17784(ModelShader arg0, IndexBuffer arg1, int arg2) {
+	public void method17784(ModelShader arg0, GpuIndexBuffer arg1, int arg2) {
 		arg0.field2981 = 0;
 		arg0.field2983 = this.field11420;
 		arg0.field2972 = 0;

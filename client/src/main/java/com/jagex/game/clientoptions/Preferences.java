@@ -124,7 +124,7 @@ public class Preferences {
 				var7 = Client.getPerformanceMetric(3, 1000);
 				if (Client.preferences.displayMode.getValue() == 3) {
 					var0.method18313(4);
-					RendererInfo var9 = Client.renderer.getRendererInfo();
+					RendererInfo var9 = Client.toolkit.getRendererInfo();
 					long var10 = var9.driverVersion & 0xFFFFFFFFFFFFL;
 					switch(var9.toolkitId) {
 						case 4098:
@@ -268,8 +268,8 @@ public class Preferences {
 		Client.preferences.setPreference(Client.preferences.particles, 2);
 		Client.preferences.setPreference(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
 		Client.preferences.setPreference(Client.preferences.bloom, 0);
-		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
-			Client.renderer.disableBloom();
+		if (Client.toolkit != null && Client.toolkit.isBloomSupported() && Client.toolkit.isBloomEnabled()) {
+			Client.toolkit.disableBloom();
 		}
 		Client.preferences.setPreference(Client.preferences.skyboxes, 1);
 		Client.preferences.setPreference(Client.preferences.animDetail, 1);
@@ -300,8 +300,8 @@ public class Preferences {
 		Client.preferences.setPreference(Client.preferences.particles, 1);
 		Client.preferences.setPreference(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
 		Client.preferences.setPreference(Client.preferences.bloom, 0);
-		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
-			Client.renderer.disableBloom();
+		if (Client.toolkit != null && Client.toolkit.isBloomSupported() && Client.toolkit.isBloomEnabled()) {
+			Client.toolkit.disableBloom();
 		}
 		Client.preferences.setPreference(Client.preferences.skyboxes, 1);
 		Client.preferences.setPreference(Client.preferences.animDetail, 1);
@@ -332,8 +332,8 @@ public class Preferences {
 		Client.preferences.setPreference(Client.preferences.particles, 0);
 		Client.preferences.setPreference(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
 		Client.preferences.setPreference(Client.preferences.bloom, 0);
-		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
-			Client.renderer.disableBloom();
+		if (Client.toolkit != null && Client.toolkit.isBloomSupported() && Client.toolkit.isBloomEnabled()) {
+			Client.toolkit.disableBloom();
 		}
 		Client.preferences.setPreference(Client.preferences.skyboxes, 0);
 		Client.preferences.setPreference(Client.preferences.animDetail, 0);
@@ -364,8 +364,8 @@ public class Preferences {
 		Client.preferences.setPreference(Client.preferences.particles, 0);
 		Client.preferences.setPreference(Client.preferences.buildArea, BuildAreaSize.STANDARD.id);
 		Client.preferences.setPreference(Client.preferences.bloom, 0);
-		if (Client.renderer != null && Client.renderer.isBloomSupported() && Client.renderer.isBloomEnabled()) {
-			Client.renderer.disableBloom();
+		if (Client.toolkit != null && Client.toolkit.isBloomSupported() && Client.toolkit.isBloomEnabled()) {
+			Client.toolkit.disableBloom();
 		}
 		Client.preferences.setPreference(Client.preferences.skyboxes, 0);
 		Client.preferences.setPreference(Client.preferences.animDetail, 0);

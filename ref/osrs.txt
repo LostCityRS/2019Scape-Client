@@ -169,7 +169,7 @@
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/animation/AnimationSampler.h
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/materials/shaders/Shader.h
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/materials/RenderMaterial.h
-/Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/renderer/DrawableSortKey.h
+/Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/toolkit/DrawableSortKey.h
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/effects/lighting/PointLightIndicesEffect.cpp
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/effects/skybox/SkyBox.cpp
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/effects/skybox/SkyBoxRenderer.cpp
@@ -203,7 +203,7 @@
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/particles/ParticleEmitter.cpp
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/particles/ParticleSystem.cpp
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/particles/ParticleSystemRenderer.cpp
-/Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/renderer/SceneViewData.cpp
+/Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/toolkit/SceneViewData.cpp
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/scenegraph/GraphNode.cpp
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/terrain/BasicTerrainOverlayShape.cpp
 /Users/bamboo/bamboo-home-01/xml-data/build-dir/NXT-OS847-BIF/libs/graphics/runetek7/terrain/CornerTriTerrainOverlayShape.cpp

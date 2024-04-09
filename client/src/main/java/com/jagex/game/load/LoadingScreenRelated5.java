@@ -26,16 +26,16 @@ public class LoadingScreenRelated5 extends LoadingScreenProgressDisplay {
 	public void method5122(boolean arg0, int arg1, int arg2) {
 		int var4 = this.method5123() * this.field3027.field3163 / 10000;
 		int[] var5 = new int[4];
-		Client.renderer.method2171(var5);
-		Client.renderer.resetBounds(arg1, arg2 + 2, arg1 + var4, this.field3027.field3160 + arg2);
+		Client.toolkit.method2171(var5);
+		Client.toolkit.resetBounds(arg1, arg2 + 2, arg1 + var4, this.field3027.field3160 + arg2);
 		this.field10545.drawTiled(arg1, arg2 + 2, this.field3027.field3163, this.field3027.field3160);
-		Client.renderer.resetBounds(var5[0], var5[1], var5[2], var5[3]);
+		Client.toolkit.resetBounds(var5[0], var5[1], var5[2], var5[3]);
 	}
 
 	@ObfuscatedName("aho.z(ZIIS)V")
 	public void method5121(boolean arg0, int arg1, int arg2) {
-		Client.renderer.drawRectangle(arg1 - 2, arg2, this.field3027.field3163 + 4, this.field3027.field3160 + 2, ((LoadingScreenRelated1) this.field3027).field10575, 0);
-		Client.renderer.drawRectangle(arg1 - 1, arg2 + 1, this.field3027.field3163 + 2, this.field3027.field3160, 0, 0);
+		Client.toolkit.drawRectangle(arg1 - 2, arg2, this.field3027.field3163 + 4, this.field3027.field3160 + 2, ((LoadingScreenRelated1) this.field3027).field10575, 0);
+		Client.toolkit.drawRectangle(arg1 - 1, arg2 + 1, this.field3027.field3163 + 2, this.field3027.field3160, 0, 0);
 	}
 
 	@ObfuscatedName("aho.m(I)Z")

@@ -1,7 +1,7 @@
 package com.jagex.game.clientoptions.options;
 
 import com.jagex.game.clientoptions.ClientOptions;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ane")
@@ -29,12 +29,12 @@ public class PreferencesSkyboxes extends Preference {
 
 	@ObfuscatedName("ane.s(I)Z")
 	public boolean canMod() {
-		return Renderer.method723(this.options.displayMode.getValue());
+		return Toolkit.method723(this.options.displayMode.getValue());
 	}
 
 	@ObfuscatedName("ane.n(II)I")
 	public int canSetValue(int value) {
-		return Renderer.method723(this.options.displayMode.getValue()) ? 1 : 3;
+		return Toolkit.method723(this.options.displayMode.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("ane.k(II)V")

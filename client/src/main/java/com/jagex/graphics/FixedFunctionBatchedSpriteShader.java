@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ahk")
 public class FixedFunctionBatchedSpriteShader extends BatchedSpriteShader {
 
-	public FixedFunctionBatchedSpriteShader(GpuRenderer arg0) {
+	public FixedFunctionBatchedSpriteShader(GpuToolkit arg0) {
 		super(arg0);
 	}
 

@@ -1,7 +1,7 @@
 package com.jagex.game.clientoptions.options;
 
 import com.jagex.game.clientoptions.ClientOptions;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("and")
@@ -17,7 +17,7 @@ public class PreferencesBloom extends Preference {
 
 	@ObfuscatedName("and.o(I)V")
 	public void clampValue() {
-		if (this.options.displayMode.method18546() && !Renderer.method723(this.options.displayMode.getValue())) {
+		if (this.options.displayMode.method18546() && !Toolkit.method723(this.options.displayMode.getValue())) {
 			this.currentValue = 0;
 		}
 		if (this.options.hardwareInfo().unused()) {
@@ -36,12 +36,12 @@ public class PreferencesBloom extends Preference {
 
 	@ObfuscatedName("and.s(I)Z")
 	public boolean canMod() {
-		return Renderer.method723(this.options.displayMode.getValue());
+		return Toolkit.method723(this.options.displayMode.getValue());
 	}
 
 	@ObfuscatedName("and.n(II)I")
 	public int canSetValue(int value) {
-		return Renderer.method723(this.options.displayMode.getValue()) ? 1 : 3;
+		return Toolkit.method723(this.options.displayMode.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("and.k(II)V")

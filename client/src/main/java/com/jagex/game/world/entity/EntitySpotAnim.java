@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.graphics.AnimationWrapper;
+import com.jagex.graphics.AnimationNode;
 import deob.ObfuscatedName;
 import rs2.client.scene.entities.PathingEntity;
 
@@ -8,7 +8,7 @@ import rs2.client.scene.entities.PathingEntity;
 public class EntitySpotAnim {
 
 	@ObfuscatedName("sl.e")
-	public final AnimationWrapper field6659;
+	public final AnimationNode field6659;
 
 	@ObfuscatedName("sl.n")
 	public int field6657 = -1;
@@ -23,6 +23,6 @@ public class EntitySpotAnim {
 	public int field6658;
 
 	public EntitySpotAnim(PathingEntity arg0) {
-		this.field6659 = new EntityAnimationWrapper(arg0, false);
+		this.field6659 = new EntityAnimationNode(arg0, false);
 	}
 }

@@ -32,7 +32,7 @@ public class LoginRelated3 implements LoadingScreenElement {
 	@ObfuscatedName("ki.e(I)V")
 	public void method5104() {
 		FontMetrics var1 = FontMetrics.createFontMetrics(this.field3052, this.field3054.field3211, Client.fontProvider);
-		this.field3055 = Client.renderer.createFont(var1, SpriteDataProvider.get(this.field3053, this.field3054.field3211), true);
+		this.field3055 = Client.toolkit.createFont(var1, SpriteDataProvider.get(this.field3053, this.field3054.field3211), true);
 	}
 
 	@ObfuscatedName("ki.n(ZI)V")

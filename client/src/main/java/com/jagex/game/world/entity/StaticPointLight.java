@@ -4,7 +4,7 @@ import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.NoiseGenerator;
 import com.jagex.graphics.Light;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
 
@@ -50,7 +50,7 @@ public class StaticPointLight {
 	@ObfuscatedName("ul.at")
 	public int field6990 = -1;
 
-	public StaticPointLight(Renderer arg0, int arg1, Packet arg2, int arg3) {
+	public StaticPointLight(Toolkit arg0, int arg1, Packet arg2, int arg3) {
 		if (field1970 == null) {
 			method3615();
 		}
@@ -89,7 +89,7 @@ public class StaticPointLight {
 	}
 
 	@ObfuscatedName("ul.e(Ldh;IIIIII)V")
-	public void method8900(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void method8900(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		this.field7003 = arg0.createLight(arg1, arg2, arg3, arg4, arg5, 1.0F);
 	}
 

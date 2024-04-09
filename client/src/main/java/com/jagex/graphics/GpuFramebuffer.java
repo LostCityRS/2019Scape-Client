@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public abstract class GpuFramebuffer extends Framebuffer {
 
 	@ObfuscatedName("apz.n")
-	public GpuRenderer field11923;
+	public GpuToolkit field11923;
 
-	public GpuFramebuffer(GpuRenderer arg0) {
+	public GpuFramebuffer(GpuToolkit arg0) {
 		this.field11923 = arg0;
 	}
 

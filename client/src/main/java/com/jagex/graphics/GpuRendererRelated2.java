@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public abstract class GpuRendererRelated2 {
 
 	@ObfuscatedName("lc.e")
-	public final GpuRenderer gpuRenderer;
+	public final GpuToolkit gpuRenderer;
 
-	public GpuRendererRelated2(GpuRenderer arg0) {
+	public GpuRendererRelated2(GpuToolkit arg0) {
 		this.gpuRenderer = arg0;
 	}
 

@@ -1,12 +1,12 @@
 package com.jagex.game.config.seqtype;
 
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.seqgrouptype.SeqGroupType;
-import com.jagex.game.world.entity.ObjectWrapper;
+import com.jagex.game.world.entity.ObjectNode;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 
@@ -223,9 +223,9 @@ public class SeqType implements ConfigType {
 					int var15 = buf.g3();
 					Node var16;
 					if (var14) {
-						var16 = new ObjectWrapper(buf.gjstr());
+						var16 = new ObjectNode(buf.gjstr());
 					} else {
-						var16 = new IntWrapper(buf.g4s());
+						var16 = new IntNode(buf.g4s());
 					}
 					this.params.pushNode(var16, (long) var15);
 				}
@@ -282,7 +282,7 @@ public class SeqType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -292,7 +292,7 @@ public class SeqType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

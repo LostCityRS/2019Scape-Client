@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import deob.ObfuscatedName;
 
@@ -56,7 +56,7 @@ public class PickableEntity {
 	}
 
 	@ObfuscatedName("tl.k(Ldh;III)Z")
-	public boolean method8889(Renderer arg0, int arg1, int arg2) {
+	public boolean method8889(Toolkit arg0, int arg1, int arg2) {
 		int var4 = this.field6978.getPickSizeShift();
 		if (this.field6978.entityBounds != null) {
 			for (int var5 = 0; var5 < this.field6978.entityBounds.length; var5++) {

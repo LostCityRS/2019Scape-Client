@@ -12,10 +12,10 @@ public class GpuModelRelated {
 	public boolean field3240;
 
 	@ObfuscatedName("lb.m")
-	public IndexBuffer field3239;
+	public GpuIndexBuffer field3239;
 
 	@ObfuscatedName("lb.k")
-	public IndexBuffer field3237;
+	public GpuIndexBuffer field3237;
 
 	public GpuModelRelated(boolean arg0) {
 		this.field3240 = arg0;

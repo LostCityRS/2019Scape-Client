@@ -2,7 +2,7 @@ package com.jagex.game.config.headbartype;
 
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.graphics.SpriteData;
 import com.jagex.graphics.SpriteDataProvider;
@@ -95,35 +95,35 @@ public class HeadbarType implements ConfigType {
 	}
 
 	@ObfuscatedName("uk.z(Ldh;IB)Lcm;")
-	public Sprite getSprite(Renderer renderer, int id) {
+	public Sprite getSprite(Toolkit toolkit, int id) {
 		if (id < 0) {
 			return null;
 		}
 		Sprite var3 = (Sprite) this.factory.spriteCache.get((long) id);
 		if (var3 == null) {
-			this.loadSprites(renderer);
+			this.loadSprites(toolkit);
 			var3 = (Sprite) this.factory.spriteCache.get((long) id);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("uk.p(Ldh;II)V")
-	public void loadSprite(Renderer renderer, int id) {
+	public void loadSprite(Toolkit toolkit, int id) {
 		Js5 js5 = this.factory.configClient;
 		if (id >= 0 && this.factory.spriteCache.get((long) id) == null && js5.loadFile(id)) {
 			SpriteData var4 = SpriteDataProvider.get(js5, id);
-			this.factory.spriteCache.put(renderer.createSprite(var4, true), (long) id);
+			this.factory.spriteCache.put(toolkit.createSprite(var4, true), (long) id);
 		}
 	}
 
 	@ObfuscatedName("uk.d(Ldh;I)V")
-	public void loadSprites(Renderer renderer) {
-		this.loadSprite(renderer, this.full);
-		this.loadSprite(renderer, this.empty);
-		this.loadSprite(renderer, this.fulllocalpartner);
-		this.loadSprite(renderer, this.emptylocalpartner);
-		this.loadSprite(renderer, this.fullglobalpartner);
-		this.loadSprite(renderer, this.emptyglobalpartner);
+	public void loadSprites(Toolkit toolkit) {
+		this.loadSprite(toolkit, this.full);
+		this.loadSprite(toolkit, this.empty);
+		this.loadSprite(toolkit, this.fulllocalpartner);
+		this.loadSprite(toolkit, this.emptylocalpartner);
+		this.loadSprite(toolkit, this.fullglobalpartner);
+		this.loadSprite(toolkit, this.emptyglobalpartner);
 	}
 
 	@ObfuscatedName("uk.n(I)V")

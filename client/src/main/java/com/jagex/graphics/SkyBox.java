@@ -157,7 +157,7 @@ public class SkyBox {
 	}
 
 	@ObfuscatedName("sv.u(Ldh;III)Z")
-	public boolean method7944(Renderer arg0, int arg1, int arg2) {
+	public boolean method7944(Toolkit arg0, int arg1, int arg2) {
 		if (this.field5083 != arg1) {
 			this.field5083 = arg1;
 			int var4 = IntMath.method3082(arg1);
@@ -207,7 +207,7 @@ public class SkyBox {
 	}
 
 	@ObfuscatedName("sv.z(Ldh;I)V")
-	public void method7938(Renderer arg0) {
+	public void method7938(Toolkit arg0) {
 		try {
 			boolean var2 = field1810.method6927(this.field5093);
 			if (var2) {
@@ -227,12 +227,12 @@ public class SkyBox {
 	}
 
 	@ObfuscatedName("sv.p(Ldh;IIIIIIIIII)V")
-	public void method7945(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
+	public void method7945(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9) {
 		this.method7946(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, 0, arg9, true, false);
 	}
 
 	@ObfuscatedName("sv.d(Ldh;IIIIIIIIIZZI)V")
-	public void method7946(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, boolean arg11) {
+	public void method7946(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, boolean arg11) {
 		int var13 = 0;
 		if (this.field5102) {
 			var13 = this.field5104;
@@ -256,7 +256,7 @@ public class SkyBox {
 	}
 
 	@ObfuscatedName("sv.c(Ldh;IIIIIIIIIZZII)V")
-	public void method7947(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, boolean arg11, int arg12) {
+	public void method7947(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, boolean arg11, int arg12) {
 		int var14 = 255 - arg12;
 		arg0.flush();
 		arg0.method2203();
@@ -334,7 +334,7 @@ public class SkyBox {
 	}
 
 	@ObfuscatedName("sv.r(Ldh;IIIII)V")
-	public void method7948(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
+	public void method7948(Toolkit arg0, int arg1, int arg2, int arg3, int arg4) {
 		Matrix4x3 var6 = arg0.method2218();
 		Matrix4x3 var7 = new Matrix4x3();
 		var7.setToTranslation(0.0F, 0.0F, 0.0F);

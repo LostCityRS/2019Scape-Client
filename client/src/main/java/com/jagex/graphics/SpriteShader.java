@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 public abstract class SpriteShader {
 
 	@ObfuscatedName("jc.e")
-	public GpuRenderer field3002;
+	public GpuToolkit field3002;
 
 	@ObfuscatedName("jc.n")
 	public GpuTexture field2997;
@@ -33,7 +33,7 @@ public abstract class SpriteShader {
 	@ObfuscatedName("jc.z")
 	public VertexDeclaration field2994;
 
-	public SpriteShader(GpuRenderer arg0) {
+	public SpriteShader(GpuToolkit arg0) {
 		this.field3002 = arg0;
 	}
 

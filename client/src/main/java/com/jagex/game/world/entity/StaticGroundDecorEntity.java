@@ -6,7 +6,7 @@ import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.FloorModel;
 import com.jagex.graphics.Model;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.graphics.scenegraph.GroundDecorLayerEntity;
 import com.jagex.math.Cuboid;
@@ -52,7 +52,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	@ObfuscatedName("ajz.a")
 	public int field11194;
 
-	public StaticGroundDecorEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, boolean arg11, ScaleRotTrans arg12) {
+	public StaticGroundDecorEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, boolean arg11, ScaleRotTrans arg12) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg12);
 		this.field11185 = arg2;
 		this.field11715 = arg3.id;
@@ -104,7 +104,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.bz(Ldh;IB)Ldo;")
-	public Model method17435(Renderer arg0, int arg1) {
+	public Model method17435(Toolkit arg0, int arg1) {
 		if (this.field11192 != null && arg0.method2394(this.field11192.method1691(), arg1) == 0) {
 			return this.field11192;
 		} else {
@@ -114,7 +114,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.bv(Ldh;IZI)Labg;")
-	public Pair method17436(Renderer arg0, int arg1, boolean arg2) {
+	public Pair method17436(Toolkit arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11185.list(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
@@ -134,16 +134,16 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer renderer) {
+	public EntityBounds method17371(Toolkit toolkit) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11187 == null) {
-			this.field11187 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17435(renderer, 0));
+			this.field11187 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17435(toolkit, 0));
 		}
 		return this.field11187;
 	}
 
 	@ObfuscatedName("ajz.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Renderer renderer) {
+	public PickableEntity draw(Toolkit toolkit) {
 		if (this.field11192 == null) {
 			return null;
 		}
@@ -154,22 +154,22 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 			this.field11192.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.field11192.draw(var2, null, 0);
-			renderer.method2193(var2, this.entityBounds[0], var4);
+			toolkit.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajz.fw(Ldh;I)V")
-	public void method17373(Renderer renderer) {
+	public void method17373(Toolkit toolkit) {
 	}
 
 	@ObfuscatedName("ajz.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
 		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).clickbox;
 		if (var4 != null) {
-			return renderer.pick(arg1, arg2, this.method10533(), var4);
+			return toolkit.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17435(renderer, 131072);
+		Model var5 = this.method17435(toolkit, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -184,7 +184,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		if (entity instanceof StaticGroundDecorEntity) {
 			StaticGroundDecorEntity var7 = (StaticGroundDecorEntity) entity;
 			if (this.field11192 != null && var7.field11192 != null) {
@@ -234,7 +234,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.l(Ldh;B)V")
-	public void method8217(Renderer arg0) {
+	public void method8217(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11186 == null && this.field11193) {
@@ -251,7 +251,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.u(Ldh;B)V")
-	public void method8209(Renderer arg0) {
+	public void method8209(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11186 == null && this.field11193) {

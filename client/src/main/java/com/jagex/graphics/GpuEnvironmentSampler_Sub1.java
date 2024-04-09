@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class GpuEnvironmentSampler_Sub1 extends GpuEnvironmentSampler {
 
 	@ObfuscatedName("aps.e")
-	public final GpuRenderer field11950;
+	public final GpuToolkit field11950;
 
 	@ObfuscatedName("aps.n")
 	public GpuCubeTexture field11952;
@@ -17,7 +17,7 @@ public class GpuEnvironmentSampler_Sub1 extends GpuEnvironmentSampler {
 	@ObfuscatedName("aps.k")
 	public static final int[][] field11949 = new int[6][];
 
-	public GpuEnvironmentSampler_Sub1(GpuRenderer arg0, int arg1) {
+	public GpuEnvironmentSampler_Sub1(GpuToolkit arg0, int arg1) {
 		this.field11950 = arg0;
 		this.field11951 = arg1;
 	}

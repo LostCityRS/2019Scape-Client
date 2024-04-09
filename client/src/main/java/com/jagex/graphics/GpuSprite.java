@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public class GpuSprite extends Sprite {
 
 	@ObfuscatedName("aef.e")
-	public final GpuRenderer field9403;
+	public final GpuToolkit field9403;
 
 	@ObfuscatedName("aef.n")
 	public final GpuTexture field9401;
@@ -49,7 +49,7 @@ public class GpuSprite extends Sprite {
 	@ObfuscatedName("aef.v")
 	public final boolean field9413;
 
-	public GpuSprite(GpuRenderer arg0, int arg1, int arg2, boolean arg3, boolean arg4) {
+	public GpuSprite(GpuToolkit arg0, int arg1, int arg2, boolean arg3, boolean arg4) {
 		this.field9405 = false;
 		this.field9410 = 0;
 		this.field9408 = 0;
@@ -73,7 +73,7 @@ public class GpuSprite extends Sprite {
 		this.field9413 = !this.field9406 && this.field9401.method5732();
 	}
 
-	public GpuSprite(GpuRenderer arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5) {
+	public GpuSprite(GpuToolkit arg0, int arg1, int arg2, int[] arg3, int arg4, int arg5) {
 		this.field9405 = false;
 		this.field9410 = 0;
 		this.field9408 = 0;
@@ -91,11 +91,11 @@ public class GpuSprite extends Sprite {
 		this.field9413 = !this.field9406 && this.field9401.method5732();
 	}
 
-	public GpuSprite(GpuRenderer arg0, GpuTexture arg1) {
+	public GpuSprite(GpuToolkit arg0, GpuTexture arg1) {
 		this(arg0, arg1, arg1.getWidth(), arg1.getHeight());
 	}
 
-	public GpuSprite(GpuRenderer arg0, GpuTexture arg1, int arg2, int arg3) {
+	public GpuSprite(GpuToolkit arg0, GpuTexture arg1, int arg2, int arg3) {
 		this.field9405 = false;
 		this.field9410 = 0;
 		this.field9408 = 0;
@@ -235,7 +235,7 @@ public class GpuSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aef.v(IILch;II)V")
-	public void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4) {
+	public void method1444(int arg0, int arg1, SpriteRelated arg2, int arg3, int arg4) {
 		this.field9403.method15981();
 		SpriteShader var6 = this.field9403.spriteShader;
 		var6.field2997 = this.field9401;
@@ -498,7 +498,7 @@ public class GpuSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aef.al(FFFFFFILch;II)V")
-	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9) {
+	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, SpriteRelated arg7, int arg8, int arg9) {
 		this.field9403.method15981();
 		SpriteShader var11 = this.field9403.spriteShader;
 		var11.field2997 = this.field9401;

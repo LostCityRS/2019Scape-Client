@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 public abstract class BatchedSpriteShader {
 
 	@ObfuscatedName("jz.e")
-	public GpuRenderer field2993;
+	public GpuToolkit field2993;
 
 	@ObfuscatedName("jz.n")
 	public GpuTexture field2992;
 
-	public BatchedSpriteShader(GpuRenderer arg0) {
+	public BatchedSpriteShader(GpuToolkit arg0) {
 		this.field2993 = arg0;
 	}
 

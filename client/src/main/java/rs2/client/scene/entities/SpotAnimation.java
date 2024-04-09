@@ -22,7 +22,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	public int field12608 = 0;
 
 	@ObfuscatedName("aur.ah")
-	public AnimationWrapper field12609;
+	public AnimationNode field12609;
 
 	@ObfuscatedName("aur.al")
 	public int overlayHeight = 0;
@@ -44,7 +44,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		EffectAnimType var16 = (EffectAnimType) Client.effectAnimTypeList.list(this.effectAnim);
 		int var17 = var16.anim;
 		if (var17 != -1) {
-			this.field12609 = new EntityAnimationWrapper(this, false);
+			this.field12609 = new EntityAnimationNode(this, false);
 			int var18 = var16.field8261 ? 0 : 2;
 			if (arg13) {
 				var18 = 1;
@@ -75,7 +75,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer renderer) {
+	public EntityBounds method17371(Toolkit toolkit) {
 		return null;
 	}
 
@@ -97,7 +97,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.f(Ldh;IIB)Ldo;")
-	public Model method19748(Renderer arg0, int arg1, int arg2) {
+	public Model method19748(Toolkit arg0, int arg1, int arg2) {
 		EffectAnimType var4 = (EffectAnimType) Client.effectAnimTypeList.list(arg2);
 		FloorModel var5 = this.scene.field6915[this.level];
 		FloorModel var6 = this.field11714 < 3 ? this.scene.field6915[this.field11714 + 1] : null;
@@ -106,18 +106,18 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Renderer renderer) {
-		Model var2 = this.method19748(renderer, (this.field12608 == 0 ? 0 : 5) | 0x800, this.effectAnim);
+	public PickableEntity draw(Toolkit toolkit) {
+		Model var2 = this.method19748(toolkit, (this.field12608 == 0 ? 0 : 5) | 0x800, this.effectAnim);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		this.method19750(renderer, var2, var3);
+		this.method19750(toolkit, var2, var3);
 		PickableEntity var4 = PickableEntity.getPickableEntity(false);
 		var2.draw(var3, this.entityBounds[0], 0);
 		if (this.field12612 != null) {
 			ParticleList var5 = this.field12612.method9965();
-			renderer.drawParticles(var5);
+			toolkit.drawParticles(var5);
 		}
 		this.field12611 = var2.method1731();
 		this.overlayHeight = var2.getMinY();
@@ -126,15 +126,15 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fw(Ldh;I)V")
-	public void method17373(Renderer renderer) {
-		Model var2 = this.method19748(renderer, 0, this.effectAnim);
+	public void method17373(Toolkit toolkit) {
+		Model var2 = this.method19748(toolkit, 0, this.effectAnim);
 		if (var2 != null) {
-			this.method19750(renderer, var2, this.method10533());
+			this.method19750(toolkit, var2, this.method10533());
 		}
 	}
 
 	@ObfuscatedName("aur.w(Ldh;Ldo;Lou;B)V")
-	public void method19750(Renderer arg0, Model arg1, Matrix4x3 arg2) {
+	public void method19750(Toolkit arg0, Model arg1, Matrix4x3 arg2) {
 		arg1.method1689(arg2);
 		ModelParticleEmitter[] var4 = arg1.method1750();
 		ModelParticleEffector[] var5 = arg1.method1765();
@@ -155,7 +155,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
 		return false;
 	}
 
@@ -165,7 +165,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

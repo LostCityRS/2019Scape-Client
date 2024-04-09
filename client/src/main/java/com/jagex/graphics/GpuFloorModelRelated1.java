@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 public class GpuFloorModelRelated1 extends Node {
 
 	@ObfuscatedName("akh.k")
-	public final GpuRenderer field11409;
+	public final GpuToolkit field11409;
 
 	@ObfuscatedName("akh.f")
 	public final GpuFloorModel field11401;

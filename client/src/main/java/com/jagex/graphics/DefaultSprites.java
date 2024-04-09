@@ -132,7 +132,7 @@ public class DefaultSprites {
 	}
 
 	@ObfuscatedName("qx.k(Ldh;I)V")
-	public static void loadFonts(Renderer arg0) {
+	public static void loadFonts(Toolkit arg0) {
 		p11FullFont = (Font) Client.fontProvider.getFont(Client.fontFactory, p11_full, true, true);
 		p11FullMetrics = Client.fontProvider.getFontMetrics(Client.fontFactory, p11_full);
 		p12FullFont = (Font) Client.fontProvider.getFont(Client.fontFactory, p12_full, true, true);
@@ -183,49 +183,49 @@ public class DefaultSprites {
 	}
 
 	@ObfuscatedName("kh.l(Ldh;Lpy;I)V")
-	public static void loadSprites(Renderer renderer, Js5 spritesJs5) {
+	public static void loadSprites(Toolkit toolkit, Js5 spritesJs5) {
 		SpriteData[] hintarrows = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.hintarrows, 0);
 		DefaultSprites.hintarrowSprites = new Sprite[hintarrows.length];
 		for (int var3 = 0; var3 < hintarrows.length; var3++) {
-			DefaultSprites.hintarrowSprites[var3] = renderer.createSprite(hintarrows[var3], true);
+			DefaultSprites.hintarrowSprites[var3] = toolkit.createSprite(hintarrows[var3], true);
 		}
 		SpriteData[] var4 = SpriteDataProvider.method1608(spritesJs5, field514, 0);
 		field513 = new Sprite[var4.length];
 		for (int var5 = 0; var5 < var4.length; var5++) {
-			field513[var5] = renderer.createSprite(var4[var5], true);
+			field513[var5] = toolkit.createSprite(var4[var5], true);
 		}
 		SpriteData[] mapflags = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.mapflag, 0);
 		DefaultSprites.mapflagSprites = new Sprite[mapflags.length];
 		byte var7 = 25;
 		for (int var8 = 0; var8 < mapflags.length; var8++) {
 			mapflags[var8].method2605(-var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D));
-			DefaultSprites.mapflagSprites[var8] = renderer.createSprite(mapflags[var8], true);
+			DefaultSprites.mapflagSprites[var8] = toolkit.createSprite(mapflags[var8], true);
 		}
 		SpriteData[] crosses = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.cross, 0);
 		DefaultSprites.crossSprites = new Sprite[crosses.length];
 		for (int var10 = 0; var10 < crosses.length; var10++) {
-			DefaultSprites.crossSprites[var10] = renderer.createSprite(crosses[var10], true);
+			DefaultSprites.crossSprites[var10] = toolkit.createSprite(crosses[var10], true);
 		}
 		SpriteData[] mapdots = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.mapdots, 0);
 		DefaultSprites.mapdotsSprites = new Sprite[mapdots.length];
 		byte var12 = 12;
 		for (int var13 = 0; var13 < mapdots.length; var13++) {
 			mapdots[var13].method2605(-var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D));
-			DefaultSprites.mapdotsSprites[var13] = renderer.createSprite(mapdots[var13], true);
+			DefaultSprites.mapdotsSprites[var13] = toolkit.createSprite(mapdots[var13], true);
 		}
 		SpriteData[] var14 = SpriteDataProvider.method1608(spritesJs5, field511, 0);
 		field10302 = new Sprite[var14.length];
 		byte var15 = 12;
 		for (int var16 = 0; var16 < var14.length; var16++) {
 			var14[var16].method2605(-var15 + (int) (Math.random() * (double) var15 * 2.0D), -var15 + (int) (Math.random() * (double) var15 * 2.0D), -var15 + (int) (Math.random() * (double) var15 * 2.0D));
-			field10302[var16] = renderer.createSprite(var14[var16], true);
+			field10302[var16] = toolkit.createSprite(var14[var16], true);
 		}
-		compassSprites = renderer.createSprite(SpriteDataProvider.method1609(spritesJs5, compass, 0), true);
-		field1940 = renderer.createSprite(SpriteDataProvider.method1609(spritesJs5, field512, 0), true);
+		compassSprites = toolkit.createSprite(SpriteDataProvider.method1609(spritesJs5, compass, 0), true);
+		field1940 = toolkit.createSprite(SpriteDataProvider.method1609(spritesJs5, field512, 0), true);
 		SpriteData[] var17 = SpriteDataProvider.method1608(spritesJs5, field12241, 0);
 		field6719 = new Sprite[var17.length];
 		for (int var18 = 0; var18 < var17.length; var18++) {
-			field6719[var18] = renderer.createSprite(var17[var18], true);
+			field6719[var18] = toolkit.createSprite(var17[var18], true);
 		}
 	}
 

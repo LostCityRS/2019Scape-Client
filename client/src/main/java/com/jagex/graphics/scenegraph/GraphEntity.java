@@ -6,7 +6,7 @@ import com.jagex.game.world.entity.PickableEntity;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.Light;
 import com.jagex.graphics.Model;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 
@@ -98,7 +98,7 @@ public abstract class GraphEntity extends GraphNode {
 	}
 
 	@ObfuscatedName("alh.fa(Ldh;IIB)Z")
-	public abstract boolean method17375(Renderer renderer, int arg1, int arg2);
+	public abstract boolean method17375(Toolkit toolkit, int arg1, int arg2);
 
 	@ObfuscatedName("alh.fp(I)Z")
 	public abstract boolean method17379();
@@ -113,16 +113,16 @@ public abstract class GraphEntity extends GraphNode {
 	public abstract void applyLighting();
 
 	@ObfuscatedName("alh.fw(Ldh;I)V")
-	public abstract void method17373(Renderer renderer);
+	public abstract void method17373(Toolkit toolkit);
 
 	@ObfuscatedName("alh.fq(Ldh;Lalh;IIIZB)V")
-	public abstract void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("alh.ga(Ldh;S)Z")
-	public abstract boolean method18360(Renderer renderer);
+	public abstract boolean method18360(Toolkit toolkit);
 
 	@ObfuscatedName("alh.fc(Ldh;I)Ltl;")
-	public abstract PickableEntity draw(Renderer renderer);
+	public abstract PickableEntity draw(Toolkit toolkit);
 
 	@ObfuscatedName("alh.gn(I)Z")
 	public abstract boolean method18361();
@@ -131,7 +131,7 @@ public abstract class GraphEntity extends GraphNode {
 	public abstract int overlayHeight();
 
 	@ObfuscatedName("alh.fv(Ldh;B)Luq;")
-	public abstract EntityBounds method17371(Renderer renderer);
+	public abstract EntityBounds method17371(Toolkit toolkit);
 
 	@ObfuscatedName("alh.gy([Lakf;S)I")
 	public abstract int method18375(Light[] arg0);

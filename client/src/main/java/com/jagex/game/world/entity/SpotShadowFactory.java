@@ -1,10 +1,10 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.core.datastruct.WeightedCache;
-import com.jagex.graphics.AnimationWrapper;
+import com.jagex.graphics.AnimationNode;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelUnlit;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
 
@@ -22,7 +22,7 @@ public class SpotShadowFactory {
 	}
 
 	@ObfuscatedName("jp.e(Ldh;IIIIILdo;IIIILaaq;B)Ldo;")
-	public static Model method5102(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, Model arg6, int arg7, int arg8, int arg9, int arg10, AnimationWrapper arg11) {
+	public static Model method5102(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, Model arg6, int arg7, int arg8, int arg9, int arg10, AnimationNode arg11) {
 		if (arg6 == null) {
 			return null;
 		}
@@ -105,7 +105,7 @@ public class SpotShadowFactory {
 	}
 
 	@ObfuscatedName("fo.n(Ldh;IIIILdo;SBLaaq;I)Ldo;")
-	public static Model method3283(Renderer arg0, int arg1, int arg2, int arg3, int arg4, Model arg5, short arg6, byte arg7, AnimationWrapper arg8) {
+	public static Model method3283(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, Model arg5, short arg6, byte arg7, AnimationNode arg8) {
 		if (arg5 == null) {
 			return null;
 		}

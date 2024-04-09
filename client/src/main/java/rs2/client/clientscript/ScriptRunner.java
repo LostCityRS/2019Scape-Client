@@ -8,6 +8,10 @@ import com.jagex.core.constants.Language;
 import com.jagex.core.datastruct.*;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.*;
+import com.jagex.game.ClientWorldMap;
+import com.jagex.game.MiniMap;
+import com.jagex.game.MiniMenu;
+import com.jagex.game.MiniMenuEntry;
 import com.jagex.game.camera.*;
 import com.jagex.game.camera.effects.Shake;
 import com.jagex.game.camera.effects.ZTilt;
@@ -542,7 +546,7 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("iy.b(Larm;Lyf;I)V")
-	public static final void pushMinimenuEntry(MinimenuEntry arg0, ClientScriptState arg1) {
+	public static final void pushMinimenuEntry(MiniMenuEntry arg0, ClientScriptState arg1) {
 		arg1.intStack[++arg1.isp - 1] = MiniMenu.getEntryEntityType(arg0);
 		arg1.objectStack[++arg1.osp - 1] = MiniMenu.getEntryOp(arg0);
 		arg1.objectStack[++arg1.osp - 1] = MiniMenu.getEntryOpBase(arg0);
@@ -5119,7 +5123,7 @@ public class ScriptRunner {
 	@ObfuscatedName("agj.ab(Lyf;I)V")
 	public static final void _switch(ClientScriptState arg0) {
 		IterableMap var1 = arg0.script.switchTables[arg0.intOperands[arg0.pc]];
-		IntWrapper var2 = (IntWrapper) var1.getNode((long) arg0.intStack[--arg0.isp]);
+		IntNode var2 = (IntNode) var1.getNode((long) arg0.intStack[--arg0.isp]);
 		if (var2 != null) {
 			arg0.pc += var2.value;
 		}
@@ -5807,7 +5811,7 @@ public class ScriptRunner {
 				arg0.field2170 = null;
 			} else {
 				if (arg0.field2170 == null) {
-					arg0.field2170 = new InterfaceAnimationWrapper();
+					arg0.field2170 = new InterfaceAnimationNode();
 				}
 				arg0.field2170.method14362(var3);
 			}
@@ -8995,7 +8999,7 @@ public class ScriptRunner {
 		Component var2 = var1.com;
 		int var3 = -1;
 		int var4 = -1;
-		Graphic var5 = var2.method3970(Client.renderer);
+		Graphic var5 = var2.method3970(Client.toolkit);
 		if (var5 != null) {
 			var3 = var5.field2144;
 			var4 = var5.field2146;
@@ -9515,7 +9519,7 @@ public class ScriptRunner {
 		Component var2 = Component.method10202(var1);
 		int var3 = -1;
 		int var4 = -1;
-		Graphic var5 = var2.method3970(Client.renderer);
+		Graphic var5 = var2.method3970(Client.toolkit);
 		if (var5 != null) {
 			var3 = var5.field2144;
 			var4 = var5.field2146;
@@ -10316,9 +10320,9 @@ public class ScriptRunner {
 
 	@ObfuscatedName("ake.yu(Lyf;I)V")
 	public static final void npc_find_active_minimenu_entry(ClientScriptState arg0) {
-		MinimenuEntry var1 = MiniMenu.getActiveMiniMenuEntry();
+		MiniMenuEntry var1 = MiniMenu.getActiveMiniMenuEntry();
 		if (MiniMenu.getEntryEntityType(var1) == 4) {
-			ObjectWrapper var2 = (ObjectWrapper) Client.npcs.getNode(var1.method19370());
+			ObjectNode var2 = (ObjectNode) Client.npcs.getNode(var1.method19370());
 			if (var2 != null) {
 				arg0.activeEntity = (PathingEntity) var2.value;
 				arg0.intStack[++arg0.isp - 1] = 1;
@@ -10330,7 +10334,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("ai.yt(Lyf;I)V")
 	public static final void player_find_active_minimenu_entry(ClientScriptState arg0) {
-		MinimenuEntry var1 = MiniMenu.getActiveMiniMenuEntry();
+		MiniMenuEntry var1 = MiniMenu.getActiveMiniMenuEntry();
 		if (MiniMenu.getEntryEntityType(var1) == 7) {
 			int var2 = (int) var1.method19368();
 			if (var2 >= 0 && var2 <= ReceivePlayerPositions.highResolutionsCount) {
@@ -16131,7 +16135,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("qf.azz(Lyf;B)V")
 	public static final void detailcanmod_antialiasing(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.preferences.antiAliasing.canMod() && Client.renderer.supportsAntiAliasing() ? 1 : 0;
+		arg0.intStack[++arg0.isp - 1] = Client.preferences.antiAliasing.canMod() && Client.toolkit.supportsAntiAliasing() ? 1 : 0;
 	}
 
 	@ObfuscatedName("sl.azb(Lyf;I)V")
@@ -16146,7 +16150,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("ik.azw(Lyf;I)V")
 	public static final void detailcanmod_bloom(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.preferences.bloom.canMod() && Client.renderer.isBloomSupported() ? 1 : 0;
+		arg0.intStack[++arg0.isp - 1] = Client.preferences.bloom.canMod() && Client.toolkit.isBloomSupported() ? 1 : 0;
 	}
 
 	@ObfuscatedName("ip.azs(Lyf;I)V")
@@ -16287,7 +16291,7 @@ public class ScriptRunner {
 	@ObfuscatedName("rd.bay(Lyf;B)V")
 	public static final void detailcanset_antialiasing(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.renderer.supportsAntiAliasing()) {
+		if (Client.toolkit.supportsAntiAliasing()) {
 			arg0.intStack[++arg0.isp - 1] = Client.preferences.antiAliasing.canSetValue(var1);
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 3;
@@ -16309,7 +16313,7 @@ public class ScriptRunner {
 	@ObfuscatedName("xc.bar(Lyf;B)V")
 	public static final void detailcanset_bloom(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		if (Client.renderer.isBloomSupported()) {
+		if (Client.toolkit.isBloomSupported()) {
 			arg0.intStack[++arg0.isp - 1] = Client.preferences.bloom.canSetValue(var1);
 		} else {
 			arg0.intStack[++arg0.isp - 1] = 3;
@@ -16522,7 +16526,7 @@ public class ScriptRunner {
 	public static final void if_set_gamescreen_enabled(ClientScriptState arg0) {
 		Client.gameScreenEnabled = arg0.intStack[--arg0.isp] == 1;
 		if (Client.gameScreenEnabled) {
-			Minimap.method16601();
+			MiniMap.method16601();
 		}
 	}
 

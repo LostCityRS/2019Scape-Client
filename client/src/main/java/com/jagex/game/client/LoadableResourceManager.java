@@ -1,7 +1,7 @@
 package com.jagex.game.client;
 
 import com.jagex.game.load.Loading;
-import com.jagex.graphics.ClientWatch;
+import com.jagex.game.ClientWatch;
 import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.js5.Js5ArchiveResourceLoader;
 import com.jagex.js5.Js5FileResourceLoader;
@@ -29,11 +29,11 @@ public class LoadableResourceManager {
 	@ObfuscatedName("kg.e(I)I")
 	public static int method5140() {
 		if (field4332 == 0) {
-			LoadableResource.DLL_JACLIB.setResourceLoader(new DllResourceLoader("jaclib"));
+			LoadableResource.DLL_JACLIB.setResourceLoader(new Js5DllResourceLoader("jaclib"));
 			if (LoadableResource.DLL_JACLIB.getResourceLoader().getPercentageComplete() != 100) {
 				return 1;
 			}
-			if (!((DllResourceLoader) LoadableResource.DLL_JACLIB.getResourceLoader()).method6812() && !Loading.method6040()) {
+			if (!((Js5DllResourceLoader) LoadableResource.DLL_JACLIB.getResourceLoader()).method6812() && !Loading.method6040()) {
 				try {
 					Client.field8301.method8050();
 					ClientWatch.method1427();
@@ -48,15 +48,15 @@ public class LoadableResourceManager {
 		if (field4332 == 1) {
 			loadableResources = LoadableResource.values();
 			LoadableResource.JS5_DEFAULTS.setResourceLoader(new Js5ArchiveResourceLoader(Client.defaultsJs5));
-			LoadableResource.DLL_JAGGL.setResourceLoader(new DllResourceLoader("jaggl"));
-			DllResourceLoader var2 = new DllResourceLoader("jagdx");
+			LoadableResource.DLL_JAGGL.setResourceLoader(new Js5DllResourceLoader("jaggl"));
+			Js5DllResourceLoader var2 = new Js5DllResourceLoader("jagdx");
 			if (!GameShell.osName.startsWith("win")) {
 				var2.method6813();
 			}
 			LoadableResource.DLL_JAGDX.setResourceLoader(var2);
-			LoadableResource.DLL_SW3D.setResourceLoader(new DllResourceLoader("sw3d"));
-			LoadableResource.DLL_HW3D.setResourceLoader(new DllResourceLoader("hw3d"));
-			LoadableResource.DLL_SETUP_EXE.setResourceLoader(new DllResourceLoader("RuneScape-Setup.exe", true));
+			LoadableResource.DLL_SW3D.setResourceLoader(new Js5DllResourceLoader("sw3d"));
+			LoadableResource.DLL_HW3D.setResourceLoader(new Js5DllResourceLoader("hw3d"));
+			LoadableResource.DLL_SETUP_EXE.setResourceLoader(new Js5DllResourceLoader("RuneScape-Setup.exe", true));
 			LoadableResource.JS5_SHADERS.setResourceLoader(new Js5ArchiveResourceLoader(Client.shadersJs5));
 			LoadableResource.JS5_MATERIALS.setResourceLoader(new Js5ArchiveResourceLoader(Client.materialsJs5));
 			LoadableResource.JS5_CONFIG.setResourceLoader(new Js5ArchiveResourceLoader(Client.configJs5));

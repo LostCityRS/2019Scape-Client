@@ -6,9 +6,9 @@ import deob.ObfuscatedName;
 public abstract class GpuSurface extends Surface {
 
 	@ObfuscatedName("apa.e")
-	public GpuRenderer field11940;
+	public GpuToolkit field11940;
 
-	public GpuSurface(GpuRenderer arg0) {
+	public GpuSurface(GpuToolkit arg0) {
 		this.field11940 = arg0;
 	}
 

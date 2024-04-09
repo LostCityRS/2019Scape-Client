@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.graphics.ClientWatch;
+import com.jagex.game.ClientWatch;
 import deob.ObfuscatedName;
 
 import java.util.Queue;

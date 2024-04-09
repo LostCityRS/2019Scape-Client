@@ -1,6 +1,6 @@
 package com.jagex.game.config.iftype;
 
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.WeightedCache;
@@ -21,7 +21,7 @@ import com.jagex.game.config.skyboxtype.SkyBoxTypeList;
 import com.jagex.game.config.skydecortype.SkyDecorTypeList;
 import com.jagex.game.config.vartype.VarIntDomain;
 import com.jagex.game.config.vartype.VariableTypeProvider;
-import com.jagex.game.world.entity.ObjectWrapper;
+import com.jagex.game.world.entity.ObjectNode;
 import com.jagex.game.world.entity.PlayerModel;
 import com.jagex.graphics.*;
 import com.jagex.graphics.particles.ParticleSystem;
@@ -609,7 +609,7 @@ public class Component {
 	public int modelanim = -1;
 
 	@ObfuscatedName("hf.gt")
-	public AnimationWrapper field2170;
+	public AnimationNode field2170;
 
 	@ObfuscatedName("hf.gh")
 	public Component[] subcomponents;
@@ -956,13 +956,13 @@ public class Component {
 			for (int var23 = 0; var23 < var22; var23++) {
 				int var24 = buf.g3();
 				int var25 = buf.g4s();
-				this.params.pushNode(new IntWrapper(var25), (long) var24);
+				this.params.pushNode(new IntNode(var25), (long) var24);
 			}
 			int var26 = buf.g1();
 			for (int var27 = 0; var27 < var26; var27++) {
 				int var28 = buf.g3();
 				String var29 = buf.gjstr2();
-				this.params.pushNode(new ObjectWrapper(var29), (long) var28);
+				this.params.pushNode(new ObjectNode(var29), (long) var28);
 			}
 		}
 		this.onload = this.decodeHook(buf);
@@ -1028,7 +1028,7 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.c(Ldh;B)Lcm;")
-	public Sprite method3941(Renderer arg0) {
+	public Sprite method3941(Toolkit arg0) {
 		field2338 = false;
 		long var2 = ((long) this.graphicshadow << 40) + ((long) this.outline << 36) + (long) this.graphic + ((this.alpha ? 1L : 0L) << 35) + ((this.vflip ? 1L : 0L) << 38) + ((this.hflip ? 1L : 0L) << 39);
 		Sprite var4 = (Sprite) spriteCache.get(var2);
@@ -1080,7 +1080,7 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.o(Ldh;ILaof;Laov;Laod;Laon;Laos;Lem;Lep;Laaq;Lxg;I)Ldo;")
-	public Model method3944(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, SeqTypeList arg6, VariableTypeProvider arg7, VarIntDomain arg8, AnimationWrapper arg9, PlayerModel arg10) {
+	public Model method3944(Toolkit arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, SeqTypeList arg6, VariableTypeProvider arg7, VarIntDomain arg8, AnimationNode arg9, PlayerModel arg10) {
 		field2338 = false;
 		if (this.field2224 == 0) {
 			return null;
@@ -1202,7 +1202,7 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.s(Ldh;Ldo;Lou;IB)V")
-	public void method3951(Renderer arg0, Model arg1, Matrix4x3 arg2, int arg3) {
+	public void method3951(Toolkit arg0, Model arg1, Matrix4x3 arg2, int arg3) {
 		arg1.method1689(arg2);
 		ModelParticleEmitter[] var5 = arg1.method1750();
 		ModelParticleEffector[] var6 = arg1.method1765();
@@ -1350,7 +1350,7 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.t(Ldh;B)Lhx;")
-	public Graphic method3970(Renderer arg0) {
+	public Graphic method3970(Toolkit arg0) {
 		long var2 = (long) this.parentlayer << 32 | (long) this.id & 0xFFFFFFFFL;
 		Graphic var4 = (Graphic) graphicCache.get(var2);
 		if (var4 != null) {
@@ -1388,7 +1388,7 @@ public class Component {
 			var8[var10 + var5.getPaddingTop()] = var11 + var5.getPaddingLeft();
 			var9[var10 + var5.getPaddingTop()] = var12 - var11;
 		}
-		GraphicsRelated var15 = arg0.method2205(var6, var7, var8, var9);
+		SpriteRelated var15 = arg0.method2205(var6, var7, var8, var9);
 		if (var15 == null) {
 			return null;
 		} else {
@@ -1403,7 +1403,7 @@ public class Component {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -1413,7 +1413,7 @@ public class Component {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}
@@ -1422,12 +1422,12 @@ public class Component {
 	public void method3952(int arg0, int arg1) {
 		if (this.params == null) {
 			this.params = new IterableMap(16);
-			this.params.pushNode(new IntWrapper(arg1), (long) arg0);
+			this.params.pushNode(new IntNode(arg1), (long) arg0);
 			return;
 		}
-		IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+		IntNode var3 = (IntNode) this.params.getNode((long) arg0);
 		if (var3 == null) {
-			this.params.pushNode(new IntWrapper(arg1), (long) arg0);
+			this.params.pushNode(new IntNode(arg1), (long) arg0);
 		} else {
 			var3.value = arg1;
 		}
@@ -1437,14 +1437,14 @@ public class Component {
 	public void method4003(int arg0, String arg1) {
 		if (this.params == null) {
 			this.params = new IterableMap(16);
-			this.params.pushNode(new ObjectWrapper(arg1), (long) arg0);
+			this.params.pushNode(new ObjectNode(arg1), (long) arg0);
 			return;
 		}
-		ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
+		ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
 		if (var3 != null) {
 			var3.remove();
 		}
-		this.params.pushNode(new ObjectWrapper(arg1), (long) arg0);
+		this.params.pushNode(new ObjectNode(arg1), (long) arg0);
 	}
 
 	@ObfuscatedName("hf.ac(II)V")

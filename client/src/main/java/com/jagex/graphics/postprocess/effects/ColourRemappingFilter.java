@@ -4,7 +4,7 @@ import com.jagex.graphics.*;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ais")
-public class ColourRemappingFilter extends PostProcessEffect {
+public class ColourRemappingFilter extends GpuPostProcessEffect {
 
 	@ObfuscatedName("ais.m")
 	public static float[] field10663 = new float[] { 0.0F, 0.0F, 0.0F };
@@ -19,13 +19,13 @@ public class ColourRemappingFilter extends PostProcessEffect {
 	public static GpuColourRemapper[] field10653 = new GpuColourRemapper[] { null, null, null };
 
 	@ObfuscatedName("ais.l")
-	public Shader shader;
+	public GpuShader shader;
 
 	@ObfuscatedName("ais.u")
 	public ProgramUniform sceneTexUniform;
 
 	@ObfuscatedName("ais.z")
-	public Program[] techRemap3DPrograms = null;
+	public GpuProgram[] techRemap3DPrograms = null;
 
 	@ObfuscatedName("ais.p")
 	public ProgramUniform[] remapTex3DPrograms = null;
@@ -42,7 +42,7 @@ public class ColourRemappingFilter extends PostProcessEffect {
 	@ObfuscatedName("ais.v")
 	public boolean field10664;
 
-	public ColourRemappingFilter(GpuRenderer arg0) {
+	public ColourRemappingFilter(GpuToolkit arg0) {
 		super(arg0);
 	}
 
@@ -67,7 +67,7 @@ public class ColourRemappingFilter extends PostProcessEffect {
 		}
 		try {
 			this.sceneTexUniform = this.shader.getUniform("sceneTex");
-			this.techRemap3DPrograms = new Program[3];
+			this.techRemap3DPrograms = new GpuProgram[3];
 			this.remapTex3DPrograms = new ProgramUniform[3];
 			if (this.gpuRenderer.field10125) {
 				this.techRemap3DPrograms[0] = this.shader.getProgram("techRemap3D_1");
@@ -125,7 +125,7 @@ public class ColourRemappingFilter extends PostProcessEffect {
 		int var15 = (int) var9;
 		int var16 = arg5 ? this.gpuRenderer.getSurface().getWidth() : var14;
 		int var17 = arg5 ? this.gpuRenderer.getSurface().getHeight() : var15;
-		Program var18 = this.techRemap3DPrograms[field10655 - 1];
+		GpuProgram var18 = this.techRemap3DPrograms[field10655 - 1];
 		this.shader.setCurrentProgram(var18);
 		this.shader.enable();
 		this.shader.setUniform4f(this.paramsWeightingsUniform, field10656, field10663[0], field10663[1], field10663[2]);

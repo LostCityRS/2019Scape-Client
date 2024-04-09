@@ -1,7 +1,7 @@
 package com.jagex.game.clientoptions.options;
 
 import com.jagex.game.clientoptions.ClientOptions;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("amx")
@@ -24,7 +24,7 @@ public class PreferencesScreenSize extends Preference {
 
 	@ObfuscatedName("amx.e(B)I")
 	public int defaultValue() {
-		return this.options.displayMode.method18546() && Renderer.method551(this.options.displayMode.getValue()) ? 1 : 0;
+		return this.options.displayMode.method18546() && Toolkit.method551(this.options.displayMode.getValue()) ? 1 : 0;
 	}
 
 	@ObfuscatedName("amx.s(B)Z")

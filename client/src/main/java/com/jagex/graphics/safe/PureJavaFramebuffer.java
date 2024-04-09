@@ -9,7 +9,7 @@ import deob.ObfuscatedName;
 public class PureJavaFramebuffer extends Framebuffer {
 
 	@ObfuscatedName("apn.n")
-	public PureJavaRenderer renderer;
+	public PureJavaToolkit renderer;
 
 	@ObfuscatedName("apn.m")
 	public PureJavaDepthBuffer depthBuffer;
@@ -23,7 +23,7 @@ public class PureJavaFramebuffer extends Framebuffer {
 	@ObfuscatedName("apn.w")
 	public int height = 0;
 
-	public PureJavaFramebuffer(PureJavaRenderer renderer) {
+	public PureJavaFramebuffer(PureJavaToolkit renderer) {
 		this.renderer = renderer;
 	}
 

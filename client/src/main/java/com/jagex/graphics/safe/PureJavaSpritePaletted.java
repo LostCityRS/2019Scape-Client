@@ -2,7 +2,7 @@ package com.jagex.graphics.safe;
 
 import com.jagex.game.client.JavaGraphicsRelated3;
 import com.jagex.graphics.GraphicsDeletable;
-import com.jagex.graphics.GraphicsRelated;
+import com.jagex.graphics.SpriteRelated;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("apd")
@@ -14,7 +14,7 @@ public class PureJavaSpritePaletted extends PureJavaSprite {
 	@ObfuscatedName("apd.au")
 	public int[] field11906;
 
-	public PureJavaSpritePaletted(PureJavaRenderer arg0, byte[] arg1, int[] arg2, int arg3, int arg4) {
+	public PureJavaSpritePaletted(PureJavaToolkit arg0, byte[] arg1, int[] arg2, int arg3, int arg4) {
 		super(arg0, arg3, arg4);
 		this.field11907 = arg1;
 		this.field11906 = arg2;
@@ -362,7 +362,7 @@ public class PureJavaSpritePaletted extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apd.v(IILch;II)V")
-	public void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4) {
+	public void method1444(int arg0, int arg1, SpriteRelated arg2, int arg3, int arg4) {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		}

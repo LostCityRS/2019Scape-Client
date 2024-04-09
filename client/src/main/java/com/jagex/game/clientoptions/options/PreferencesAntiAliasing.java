@@ -1,7 +1,7 @@
 package com.jagex.game.clientoptions.options;
 
 import com.jagex.game.clientoptions.ClientOptions;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anq")
@@ -17,7 +17,7 @@ public class PreferencesAntiAliasing extends Preference {
 
 	@ObfuscatedName("anq.o(B)V")
 	public void clampValue() {
-		if (this.options.displayMode.method18546() && !Renderer.method723(this.options.displayMode.getValue())) {
+		if (this.options.displayMode.method18546() && !Toolkit.method723(this.options.displayMode.getValue())) {
 			this.currentValue = 0;
 		}
 		if (this.currentValue < 0 || this.currentValue > 2) {
@@ -32,12 +32,12 @@ public class PreferencesAntiAliasing extends Preference {
 
 	@ObfuscatedName("anq.s(I)Z")
 	public boolean canMod() {
-		return Renderer.method723(this.options.displayMode.getValue());
+		return Toolkit.method723(this.options.displayMode.getValue());
 	}
 
 	@ObfuscatedName("anq.n(II)I")
 	public int canSetValue(int value) {
-		return Renderer.method723(this.options.displayMode.getValue()) ? 1 : 3;
+		return Toolkit.method723(this.options.displayMode.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("anq.k(II)V")

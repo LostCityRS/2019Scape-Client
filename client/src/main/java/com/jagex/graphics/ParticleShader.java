@@ -9,7 +9,7 @@ import deob.ObfuscatedName;
 public abstract class ParticleShader {
 
 	@ObfuscatedName("jo.e")
-	public GpuRenderer field2986;
+	public GpuToolkit field2986;
 
 	@ObfuscatedName("jo.n")
 	public GpuTexture field2991;
@@ -29,7 +29,7 @@ public abstract class ParticleShader {
 	@ObfuscatedName("jo.l")
 	public float field2985 = 0.0F;
 
-	public ParticleShader(GpuRenderer arg0) {
+	public ParticleShader(GpuToolkit arg0) {
 		this.field2986 = arg0;
 	}
 

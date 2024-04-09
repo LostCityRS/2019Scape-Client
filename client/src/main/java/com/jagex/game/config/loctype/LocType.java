@@ -567,9 +567,9 @@ public class LocType implements ConfigType {
 								int var36 = buf.g3();
 								Node var37;
 								if (var35) {
-									var37 = new ObjectWrapper(buf.gjstr().intern());
+									var37 = new ObjectNode(buf.gjstr().intern());
 								} else {
-									var37 = new IntWrapper(buf.g4s());
+									var37 = new IntNode(buf.g4s());
 								}
 								this.params.pushNode(var37, (long) var36);
 							}
@@ -641,7 +641,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.c(Ldh;IIILcb;Lcb;IIIZLvp;B)Labg;")
-	public final synchronized Pair method9475(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, boolean arg9, LocTypeCustomisation arg10) {
+	public final synchronized Pair method9475(Toolkit arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, boolean arg9, LocTypeCustomisation arg10) {
 		if (LocShape.isWallDecor(arg2)) {
 			arg2 = LocShape.WALLDECOR_STRAIGHT_NOOFFSET.id;
 		}
@@ -728,7 +728,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.r(Ldh;IIILcb;Lcb;IIILaaq;Lvp;B)Ldo;")
-	public final synchronized Model method9470(Renderer arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, AnimationWrapper arg9, LocTypeCustomisation arg10) {
+	public final synchronized Model method9470(Toolkit arg0, int arg1, int arg2, int arg3, FloorModel arg4, FloorModel arg5, int arg6, int arg7, int arg8, AnimationNode arg9, LocTypeCustomisation arg10) {
 		if (LocShape.isWallDecor(arg2)) {
 			arg2 = LocShape.WALLDECOR_STRAIGHT_NOOFFSET.id;
 		}
@@ -809,7 +809,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.v(Ldh;IIILvp;I)Ldo;")
-	public Model method9476(Renderer arg0, int arg1, int arg2, int arg3, LocTypeCustomisation arg4) {
+	public Model method9476(Toolkit arg0, int arg1, int arg2, int arg3, LocTypeCustomisation arg4) {
 		int var6 = this.ambient + 64;
 		int var7 = this.contrast * 5 + 850;
 		int var8 = arg1;
@@ -999,7 +999,7 @@ public class LocType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -1009,7 +1009,7 @@ public class LocType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

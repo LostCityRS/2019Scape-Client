@@ -6,7 +6,7 @@ import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.FloorModel;
 import com.jagex.graphics.Model;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.math.Cuboid;
@@ -58,7 +58,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	@ObfuscatedName("ajv.i")
 	public int field11138;
 
-	public StaticSceneryEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, ScaleRotTrans arg18) {
+	public StaticSceneryEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, ScaleRotTrans arg18) {
 		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.raiseobject == 1, method14062(arg14, arg15), arg18);
 		this.field11145 = arg2;
 		this.field11715 = arg3.id;
@@ -122,7 +122,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.br(Ldh;II)Ldo;")
-	public Model method17399(Renderer arg0, int arg1) {
+	public Model method17399(Toolkit arg0, int arg1) {
 		if (this.field11136 != null && arg0.method2394(this.field11136.method1691(), arg1) == 0) {
 			return this.field11136;
 		} else {
@@ -132,7 +132,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.bg(Ldh;IZI)Labg;")
-	public Pair method17400(Renderer arg0, int arg1, boolean arg2) {
+	public Pair method17400(Toolkit arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11145.list(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
@@ -152,16 +152,16 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer renderer) {
+	public EntityBounds method17371(Toolkit toolkit) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11148 == null) {
-			this.field11148 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17399(renderer, 0));
+			this.field11148 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17399(toolkit, 0));
 		}
 		return this.field11148;
 	}
 
 	@ObfuscatedName("ajv.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Renderer renderer) {
+	public PickableEntity draw(Toolkit toolkit) {
 		if (this.field11136 == null) {
 			return null;
 		}
@@ -172,22 +172,22 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 			this.field11136.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.field11136.draw(var2, null, 0);
-			renderer.method2193(var2, this.entityBounds[0], var4);
+			toolkit.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajv.fw(Ldh;I)V")
-	public void method17373(Renderer renderer) {
+	public void method17373(Toolkit toolkit) {
 	}
 
 	@ObfuscatedName("ajv.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
 		Cuboid var4 = ((LocType) this.field11145.list(this.field11715)).clickbox;
 		if (var4 != null) {
-			return renderer.pick(arg1, arg2, this.method10533(), var4);
+			return toolkit.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17399(renderer, 131072);
+		Model var5 = this.method17399(toolkit, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -202,7 +202,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		if (entity instanceof StaticWallEntity) {
 			StaticWallEntity var7 = (StaticWallEntity) entity;
 			if (this.field11136 != null && var7.field11173 != null) {
@@ -257,7 +257,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.l(Ldh;B)V")
-	public void method8217(Renderer arg0) {
+	public void method8217(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11146 == null && this.field11141) {
@@ -274,7 +274,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.u(Ldh;B)V")
-	public void method8209(Renderer arg0) {
+	public void method8209(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11146 == null && this.field11141) {

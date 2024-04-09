@@ -1,6 +1,5 @@
 package com.jagex.graphics.safe;
 
-import com.jagex.graphics.DefaultPureJavaSurface;
 import com.jagex.graphics.Surface;
 import deob.ObfuscatedName;
 
@@ -10,7 +9,7 @@ import java.awt.*;
 public abstract class PureJavaSurface extends Surface {
 
 	@ObfuscatedName("aph.e")
-	public final PureJavaRenderer field11930;
+	public final PureJavaToolkit field11930;
 
 	@ObfuscatedName("aph.n")
 	public final Canvas field11926;
@@ -31,11 +30,11 @@ public abstract class PureJavaSurface extends Surface {
 	public boolean field11924;
 
 	@ObfuscatedName("aoh.x(Lafg;Ljava/awt/Canvas;III)Laph;")
-	public static PureJavaSurface method18912(PureJavaRenderer arg0, Canvas arg1, int arg2, int arg3) {
+	public static PureJavaSurface method18912(PureJavaToolkit arg0, Canvas arg1, int arg2, int arg3) {
 		return new DefaultPureJavaSurface(arg0, arg1, arg2, arg3);
 	}
 
-	public PureJavaSurface(PureJavaRenderer arg0, Canvas arg1, int arg2, int arg3) {
+	public PureJavaSurface(PureJavaToolkit arg0, Canvas arg1, int arg2, int arg3) {
 		this.field11926 = arg1;
 		this.field11930 = arg0;
 		this.field11925 = arg2;

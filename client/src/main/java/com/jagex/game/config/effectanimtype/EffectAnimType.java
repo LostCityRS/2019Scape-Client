@@ -157,22 +157,22 @@ public class EffectAnimType implements ConfigType {
 	}
 
 	@ObfuscatedName("yy.z(Ldh;ILaaq;BI)Ldo;")
-	public final Model getModel(Renderer arg0, int arg1, AnimationWrapper arg2, byte arg3) {
+	public final Model getModel(Toolkit arg0, int arg1, AnimationNode arg2, byte arg3) {
 		return this.getModel(arg0, arg1, false, null, null, 0, 0, 0, 0, 0, 0, 0, arg2, arg3);
 	}
 
 	@ObfuscatedName("yy.p(Ldh;IIIIILaaq;BI)Ldo;")
-	public final Model getModel(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, AnimationWrapper arg6, byte arg7) {
+	public final Model getModel(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, AnimationNode arg6, byte arg7) {
 		return this.hillskew_mode == 3 ? this.getModel(arg0, arg1, true, null, null, 0, 0, 0, arg2, arg3, arg4, arg5, arg6, arg7) : this.getModel(arg0, arg1, false, null, null, 0, 0, 0, arg2, 0, 0, 0, arg6, arg7);
 	}
 
 	@ObfuscatedName("yy.d(Ldh;IILcb;Lcb;IIILaaq;BB)Ldo;")
-	public final Model getModel(Renderer arg0, int arg1, int arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, AnimationWrapper arg8, byte arg9) {
+	public final Model getModel(Toolkit arg0, int arg1, int arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, AnimationNode arg8, byte arg9) {
 		return this.getModel(arg0, arg1, true, arg3, arg4, arg5, arg6, arg7, arg2, 0, 0, 0, arg8, arg9);
 	}
 
 	@ObfuscatedName("yy.c(Ldh;IZLcb;Lcb;IIIIIIILaaq;BI)Ldo;")
-	public final Model getModel(Renderer arg0, int arg1, boolean arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, AnimationWrapper arg12, byte arg13) {
+	public final Model getModel(Toolkit arg0, int arg1, boolean arg2, FloorModel arg3, FloorModel arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, AnimationNode arg12, byte arg13) {
 		int var15 = arg1;
 		boolean var16 = arg2 & this.hillskew_mode != 0;
 		if (arg12 != null) {

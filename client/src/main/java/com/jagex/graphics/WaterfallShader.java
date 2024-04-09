@@ -9,7 +9,7 @@ import deob.ObfuscatedName;
 public class WaterfallShader extends WaterShader {
 
 	@ObfuscatedName("aqw.ai")
-	public final WaterRelated field12119;
+	public final GpuWaterRelated field12119;
 
 	@ObfuscatedName("aqw.aw")
 	public ProgramUniform timeUniform;
@@ -18,10 +18,10 @@ public class WaterfallShader extends WaterShader {
 	public ProgramUniform billowSampler3DUniform;
 
 	@ObfuscatedName("aqw.at")
-	public Program waterfall3DProgram;
+	public GpuProgram waterfall3DProgram;
 
 	@ObfuscatedName("aqw.ad")
-	public Program waterfall2DProgram;
+	public GpuProgram waterfall2DProgram;
 
 	@ObfuscatedName("aqw.am")
 	public ProgramUniform wvpMatrixUniform;
@@ -62,7 +62,7 @@ public class WaterfallShader extends WaterShader {
 	@ObfuscatedName("aqw.aa")
 	public int field12117;
 
-	public WaterfallShader(GpuRenderer gpuRenderer, WaterRelated arg1) throws ShaderException {
+	public WaterfallShader(GpuToolkit gpuRenderer, GpuWaterRelated arg1) throws ShaderException {
 		super(gpuRenderer);
 		this.field12119 = arg1;
 		if (this.field12119.method5407() && gpuRenderer.hasVertexShader()) {

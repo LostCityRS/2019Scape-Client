@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 public class MaterialTextureProvider {
 
 	@ObfuscatedName("lu.e")
-	public final GpuRenderer field3269;
+	public final GpuToolkit field3269;
 
 	@ObfuscatedName("lu.n")
 	public final TextureList field3268;
@@ -15,7 +15,7 @@ public class MaterialTextureProvider {
 	@ObfuscatedName("lu.m")
 	public WeightedCache field3267 = new WeightedCache(10485760, 256);
 
-	public MaterialTextureProvider(GpuRenderer arg0, TextureList arg1) {
+	public MaterialTextureProvider(GpuToolkit arg0, TextureList arg1) {
 		this.field3269 = arg0;
 		this.field3268 = arg1;
 	}

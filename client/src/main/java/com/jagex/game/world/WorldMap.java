@@ -24,7 +24,7 @@ import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.world.entity.LocShape;
 import com.jagex.graphics.CompassPoint;
 import com.jagex.graphics.MaterialList;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.js5.Js5;
 import com.jagex.js5.Js5WorldMapGroup;
@@ -406,7 +406,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.c(Ldh;IIZ)Z")
-	public static boolean method8542(Renderer arg0, int arg1, int arg2, boolean arg3) {
+	public static boolean method8542(Toolkit arg0, int arg1, int arg2, boolean arg3) {
 		long var4 = MonotonicTime.get();
 		if (field6793 == 0) {
 			if (worldMapDefaults.field7695 == currentWorldMap.id) {
@@ -521,7 +521,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.r(Ldh;Lalw;IIII[I[I)V")
-	public static void method8518(Renderer arg0, Packet arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6, int[] arg7) {
+	public static void method8518(Toolkit arg0, Packet arg1, int arg2, int arg3, int arg4, int arg5, int[] arg6, int[] arg7) {
 		int var8 = arg1.g1();
 		if ((var8 & 0x1) == 0) {
 			boolean var9 = (var8 & 0x2) == 0;
@@ -792,7 +792,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.q(Ldh;ZZZZ)V")
-	public static void method8523(Renderer arg0, boolean arg1, boolean arg2, boolean arg3, boolean arg4) {
+	public static void method8523(Toolkit arg0, boolean arg1, boolean arg2, boolean arg3, boolean arg4) {
 		int var5 = field6847 - field6845;
 		int var6 = field6846 - field6848;
 		int var7 = (field6851 - field6801 << 16) / var5;
@@ -801,7 +801,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.x(Ldh;ZZIIIIZZ)V")
-	public static void method8524(Renderer arg0, boolean arg1, boolean arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7, boolean arg8) {
+	public static void method8524(Toolkit arg0, boolean arg1, boolean arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7, boolean arg8) {
 		int var9 = field6847 - field6845;
 		int var10 = field6846 - field6848;
 		if (field6847 < field6812) {
@@ -886,7 +886,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.b(Ldh;IIII)V")
-	public static void method8536(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
+	public static void method8536(Toolkit arg0, int arg1, int arg2, int arg3, int arg4) {
 		Sprite var5 = (Sprite) field6833.get(-1L);
 		if (var5 == null || var5.getWidth() != arg3) {
 			int var6;
@@ -906,7 +906,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.h(IIIIZZZLdh;)V")
-	public static void method8526(int arg0, int arg1, int arg2, int arg3, boolean arg4, boolean arg5, boolean arg6, Renderer arg7) {
+	public static void method8526(int arg0, int arg1, int arg2, int arg3, boolean arg4, boolean arg5, boolean arg6, Toolkit arg7) {
 		int var8 = arg0 * 64;
 		int var9 = arg1 * 64;
 		if (field6838 == null || arg2 * arg2 != field6838.length) {
@@ -1150,7 +1150,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.g(Ldh;[IIIIIII)V")
-	public static void method8528(Renderer arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public static void method8528(Toolkit arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		Object var8 = field6817[arg7];
 		if (var8 == null) {
 			return;
@@ -1169,7 +1169,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.i(Ldh;[IIII[I[B)V")
-	public static void method8529(Renderer arg0, int[] arg1, int arg2, int arg3, int arg4, int[] arg5, byte[] arg6) {
+	public static void method8529(Toolkit arg0, int[] arg1, int arg2, int arg3, int arg4, int[] arg5, byte[] arg6) {
 		if (arg5 == null) {
 			return;
 		}
@@ -1227,7 +1227,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.j(Ldh;)Laat;")
-	public static IterableQueue method8602(Renderer arg0) {
+	public static IterableQueue method8602(Toolkit arg0) {
 		int var1 = field6847 - field6845;
 		int var2 = field6846 - field6848;
 		int var3 = (field6851 - field6801 << 16) / var1;
@@ -1236,7 +1236,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.t(Ldh;IIII)Laat;")
-	public static IterableQueue method8531(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
+	public static IterableQueue method8531(Toolkit arg0, int arg1, int arg2, int arg3, int arg4) {
 		for (WorldMapElement var5 = (WorldMapElement) field6806.peekFront(); var5 != null; var5 = (WorldMapElement) field6806.prev()) {
 			method8525(arg0, var5, arg1, arg2, arg3, arg4);
 		}
@@ -1244,13 +1244,13 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.ae(Ldh;Laks;IIII)V")
-	public static void method8525(Renderer arg0, WorldMapElement arg1, int arg2, int arg3, int arg4, int arg5) {
+	public static void method8525(Toolkit arg0, WorldMapElement arg1, int arg2, int arg3, int arg4, int arg5) {
 		arg1.field11449 = ((arg1.field11448 - field6845) * arg2 + arg4 >> 16) + field6801;
 		arg1.field11451 = field6852 - ((arg1.field11452 - field6848) * arg3 + arg5 >> 16);
 	}
 
 	@ObfuscatedName("tf.ag(Ldh;Laks;Lhs;)V")
-	public static void method8533(Renderer arg0, WorldMapElement arg1, MapElementType arg2) {
+	public static void method8533(Toolkit arg0, WorldMapElement arg1, MapElementType arg2) {
 		if (arg2.field2393 == null) {
 			return;
 		}

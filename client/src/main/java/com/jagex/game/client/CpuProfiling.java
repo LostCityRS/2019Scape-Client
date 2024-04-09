@@ -1,7 +1,7 @@
 package com.jagex.game.client;
 
 import com.jagex.core.utils.MonotonicTime;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 import java.awt.*;
@@ -17,14 +17,14 @@ public class CpuProfiling {
 	public static int profile() {
 		Canvas canvas = new Canvas();
 		canvas.setSize(100, 100);
-		Renderer renderer = Renderer.create(0, canvas, null, null, null, null, null, null, 0);
+		Toolkit toolkit = Toolkit.create(0, canvas, null, null, null, null, null, null, 0);
 		long start = MonotonicTime.get();
 		for (int var4 = 0; var4 < 10000; var4++) {
-			renderer.method2552(5, 10, 100.0F, 75, 50, 100.0F, 15, 90, 100.0F, -65536, -65536, -65536, 1);
+			toolkit.method2552(5, 10, 100.0F, 75, 50, 100.0F, 15, 90, 100.0F, -65536, -65536, -65536, 1);
 		}
 		int timeElapsed = (int) (MonotonicTime.get() - start);
-		renderer.fillRectangle(0, 0, 100, 100, -16777216);
-		renderer.dispose();
+		toolkit.fillRectangle(0, 0, 100, 100, -16777216);
+		toolkit.dispose();
 		return timeElapsed;
 	}
 }

@@ -1,17 +1,17 @@
 package com.jagex.graphics;
 
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.dx.Direct3DGraphicsDeletable;
-import com.jagex.graphics.dx.Direct3DRenderer;
+import com.jagex.graphics.dx.DxGraphicsDeletable;
+import com.jagex.graphics.dx.DxToolkit;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;
 
 @ObfuscatedName("of")
-public class GraphicsDeleteableRelated implements Direct3DGraphicsDeletable {
+public class GraphicsDeleteableRelated implements DxGraphicsDeletable {
 
 	@ObfuscatedName("of.e")
-	public final Direct3DRenderer field4228;
+	public final DxToolkit field4228;
 
 	@ObfuscatedName("of.n")
 	public final DataType field4229;
@@ -28,13 +28,13 @@ public class GraphicsDeleteableRelated implements Direct3DGraphicsDeletable {
 	@ObfuscatedName("of.w")
 	public long field4233;
 
-	public GraphicsDeleteableRelated(Direct3DRenderer arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
+	public GraphicsDeleteableRelated(DxToolkit arg0, TextureFormat arg1, DataType arg2, int arg3, int arg4, int arg5) {
 		this.field4228 = arg0;
 		this.field4231 = arg3;
 		this.field4232 = arg4;
 		this.field4230 = arg1;
 		this.field4229 = arg2;
-		this.field4233 = IDirect3DDevice.CreateRenderTarget(this.field4228.device, arg3, arg4, Direct3DRenderer.getD3DFormat(this.field4230, this.field4229), arg5, 0, false);
+		this.field4233 = IDirect3DDevice.CreateRenderTarget(this.field4228.device, arg3, arg4, DxToolkit.getD3DFormat(this.field4230, this.field4229), arg5, 0, false);
 		this.field4228.method15985(this);
 	}
 

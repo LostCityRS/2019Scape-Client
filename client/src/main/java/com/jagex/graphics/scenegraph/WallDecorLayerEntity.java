@@ -2,7 +2,7 @@ package com.jagex.graphics.scenegraph;
 
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.Light;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
@@ -51,7 +51,7 @@ public abstract class WallDecorLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asm.ga(Ldh;S)Z")
-	public boolean method18360(Renderer renderer) {
+	public boolean method18360(Toolkit toolkit) {
 		Vector3 var2 = this.getTransform().trans;
 		return this.scene.field6930.method8950(this.field11714, (int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900, this.overlayHeight());
 	}
@@ -68,7 +68,7 @@ public abstract class WallDecorLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asm.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

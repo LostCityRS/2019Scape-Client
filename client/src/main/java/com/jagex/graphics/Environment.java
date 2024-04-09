@@ -136,7 +136,7 @@ public class Environment {
 	}
 
 	@ObfuscatedName("xv.m(Ldh;Lxv;Lxv;FI)V")
-	public void setToInterpolation(Renderer arg0, Environment arg1, Environment arg2, float arg3) {
+	public void setToInterpolation(Toolkit arg0, Environment arg1, Environment arg2, float arg3) {
 		this.sunColour = ColourUtils.interpolateColours(arg1.sunColour, arg2.sunColour, arg3 * 255.0F);
 		this.sunDiffuseIntensity = (arg2.sunDiffuseIntensity - arg1.sunDiffuseIntensity) * arg3 + arg1.sunDiffuseIntensity;
 		this.sunShadowIntensity = (arg2.sunShadowIntensity - arg1.sunShadowIntensity) * arg3 + arg1.sunShadowIntensity;
@@ -252,7 +252,7 @@ public class Environment {
 	@ObfuscatedName("xv.k(Lalw;Lxu;B)V")
 	public void decode(Packet buf, EnvironmentManager manager) {
 		int var3 = buf.g1();
-		if (Client.preferences.lightingDetail.getValue() == 1 && Client.renderer.getMaxLights() > 0) {
+		if (Client.preferences.lightingDetail.getValue() == 1 && Client.toolkit.getMaxLights() > 0) {
 			if ((var3 & EnvironmentProperty.field8143.field8144) == 0) {
 				this.sunColour = 16777215;
 			} else {
@@ -350,7 +350,7 @@ public class Environment {
 
 	@ObfuscatedName("xv.p(Lxu;Lyj;I)V")
 	public void applyOverride(EnvironmentManager manager, EnvironmentOverride override) {
-		if (Client.preferences.lightingDetail.getValue() == 1 && Client.renderer.getMaxLights() > 0) {
+		if (Client.preferences.lightingDetail.getValue() == 1 && Client.toolkit.getMaxLights() > 0) {
 			if (override.getSunColour() != -1) {
 				this.sunColour = override.getSunColour();
 			}

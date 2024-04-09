@@ -1,7 +1,7 @@
 package com.jagex.game.config.objtype;
 
 import com.jagex.core.constants.Language;
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.WeightedCache;
@@ -12,7 +12,7 @@ import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.defaults.GraphicsDefaults;
 import com.jagex.game.config.paramtype.ParamType;
 import com.jagex.game.world.entity.ObjTypeCustomisation;
-import com.jagex.game.world.entity.ObjectWrapper;
+import com.jagex.game.world.entity.ObjectNode;
 import com.jagex.game.world.entity.PlayerModel;
 import com.jagex.graphics.*;
 import com.jagex.math.IntMath;
@@ -527,9 +527,9 @@ public class ObjType implements ConfigType {
 					int var25 = buf.g3();
 					Node var26;
 					if (isString) {
-						var26 = new ObjectWrapper(buf.gjstr());
+						var26 = new ObjectNode(buf.gjstr());
 					} else {
-						var26 = new IntWrapper(buf.g4s());
+						var26 = new IntNode(buf.g4s());
 					}
 					this.params.pushNode(var26, (long) var25);
 				}
@@ -633,7 +633,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
-	public final Model method14644(Renderer arg0, int arg1, int arg2, PlayerModel arg3, AnimationWrapper arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final Model method14644(Toolkit arg0, int arg1, int arg2, PlayerModel arg3, AnimationNode arg4, int arg5, int arg6, int arg7, int arg8) {
 		if (this.countobj != null && arg2 > 1) {
 			int var10 = -1;
 			for (int var11 = 0; var11 < 10; var11++) {
@@ -760,7 +760,7 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.s(Ldh;Ldh;IIIZILeu;Lxg;Lws;B)[I")
-	public int[] method14646(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, Font arg7, PlayerModel arg8, GraphicsDefaults arg9) {
+	public int[] method14646(Toolkit arg0, Toolkit arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, Font arg7, PlayerModel arg8, GraphicsDefaults arg9) {
 		ModelUnlit var11 = ModelUnlit.get(this.factory.configClient, this.mesh, 0);
 		if (var11 == null) {
 			return null;
@@ -1167,7 +1167,7 @@ public class ObjType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -1177,7 +1177,7 @@ public class ObjType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

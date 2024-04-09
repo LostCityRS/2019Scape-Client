@@ -13,7 +13,7 @@ public abstract class Font {
 	public FontMetrics fontMetrics;
 
 	@ObfuscatedName("eu.n")
-	public Renderer renderer;
+	public Toolkit toolkit;
 
 	@ObfuscatedName("eu.w")
 	public static int strikethrough = -1;
@@ -42,8 +42,8 @@ public abstract class Font {
 	@ObfuscatedName("eu.v")
 	public static String[] stringBuilder = new String[100];
 
-	public Font(Renderer renderer, FontMetrics fontMetrics) {
-		this.renderer = renderer;
+	public Font(Toolkit toolkit, FontMetrics fontMetrics) {
+		this.toolkit = toolkit;
 		this.fontMetrics = fontMetrics;
 	}
 
@@ -72,12 +72,12 @@ public abstract class Font {
 	}
 
 	@ObfuscatedName("eu.k(Ljava/lang/String;IIIIIIIII[Lcm;[ILch;IIS)I")
-	public int drawStringTaggable(String str, int x, int y, int width, int height, int rgb, int shadow, int arg7, int arg8, int arg9, Sprite[] glyphs, int[] arg11, GraphicsRelated arg12, int arg13, int arg14) {
+	public int drawStringTaggable(String str, int x, int y, int width, int height, int rgb, int shadow, int arg7, int arg8, int arg9, Sprite[] glyphs, int[] arg11, SpriteRelated arg12, int arg13, int arg14) {
 		return this.drawStringTaggable(str, x, y, width, height, rgb, shadow, arg7, arg8, arg9, 0, glyphs, arg11, arg12, arg13, arg14);
 	}
 
 	@ObfuscatedName("eu.f(Ljava/lang/String;IIIIIIIIII[Lcm;[ILch;III)I")
-	public int drawStringTaggable(String str, int x, int y, int width, int height, int rgb, int shadow, int arg7, int arg8, int arg9, int arg10, Sprite[] glyphs, int[] arg12, GraphicsRelated arg13, int arg14, int arg15) {
+	public int drawStringTaggable(String str, int x, int y, int width, int height, int rgb, int shadow, int arg7, int arg8, int arg9, int arg10, Sprite[] glyphs, int[] arg12, SpriteRelated arg13, int arg14, int arg15) {
 		if (str == null) {
 			return 0;
 		}
@@ -327,7 +327,7 @@ public abstract class Font {
 	}
 
 	@ObfuscatedName("eu.v(Ljava/lang/String;II[Lcm;[ILch;III)V")
-	public void drawChars(String str, int x, int y, Sprite[] glyphs, int[] arg4, GraphicsRelated arg5, int arg6, int arg7) {
+	public void drawChars(String str, int x, int y, Sprite[] glyphs, int[] arg4, SpriteRelated arg5, int arg6, int arg7) {
 		int var9 = y - this.fontMetrics.field8566;
 		int var10 = -1;
 		int var11 = -1;
@@ -384,7 +384,7 @@ public abstract class Font {
 										iconId = StringTools.parseInt(var15.substring(7, iconIndex));
 										spriteIndex = StringTools.parseInt(var15.substring(iconIndex + 1));
 									}
-									Sprite[] sprites = this.fontMetrics.fontIconProvider.getIconSprites(this.renderer, iconId);
+									Sprite[] sprites = this.fontMetrics.fontIconProvider.getIconSprites(this.toolkit, iconId);
 									if (sprites != null) {
 										int var25 = Math.min(sprites[spriteIndex].getY(), this.fontMetrics.field8569 + this.fontMetrics.field8562);
 										if ((rgb & -16777216) == -16777216) {
@@ -426,10 +426,10 @@ public abstract class Font {
 					}
 					int var27 = this.fontMetrics.method14558(c);
 					if (strikethrough != -1) {
-						this.renderer.drawHorizontalLine(x, (int) ((double) this.fontMetrics.field8566 * 0.7D) + var9, var27, strikethrough);
+						this.toolkit.drawHorizontalLine(x, (int) ((double) this.fontMetrics.field8566 * 0.7D) + var9, var27, strikethrough);
 					}
 					if (underline != -1) {
-						this.renderer.drawHorizontalLine(x, this.fontMetrics.field8566 + var9 + 1, var27, underline);
+						this.toolkit.drawHorizontalLine(x, this.fontMetrics.field8566 + var9 + 1, var27, underline);
 					}
 					x += var27;
 					var11 = c;
@@ -519,7 +519,7 @@ public abstract class Font {
 										var27 = arg6[var11];
 									}
 									var11++;
-									Sprite[] var28 = this.fontMetrics.fontIconProvider.getIconSprites(this.renderer, var25);
+									Sprite[] var28 = this.fontMetrics.fontIconProvider.getIconSprites(this.toolkit, var25);
 									if (var28 != null) {
 										int var29 = Math.min(var28[var23].getY(), this.fontMetrics.field8569 + this.fontMetrics.field8562);
 										var28[var23].drawSprite(x + var26, this.fontMetrics.field8566 + yoff + 3 - var29 + var27, 1, -1, 1);
@@ -563,10 +563,10 @@ public abstract class Font {
 					}
 					int var33 = this.fontMetrics.method14558(c);
 					if (strikethrough != -1) {
-						this.renderer.drawHorizontalLine(x, (int) ((double) this.fontMetrics.field8566 * 0.7D) + yoff, var33, strikethrough);
+						this.toolkit.drawHorizontalLine(x, (int) ((double) this.fontMetrics.field8566 * 0.7D) + yoff, var33, strikethrough);
 					}
 					if (underline != -1) {
-						this.renderer.drawHorizontalLine(x, this.fontMetrics.field8566 + yoff, var33, underline);
+						this.toolkit.drawHorizontalLine(x, this.fontMetrics.field8566 + yoff, var33, underline);
 					}
 					x += var33;
 					var10 = c;
@@ -579,5 +579,5 @@ public abstract class Font {
 	public abstract void drawChar(char arg0, int arg1, int arg2, int arg3, boolean arg4);
 
 	@ObfuscatedName("eu.y(CIIIZLch;II)V")
-	public abstract void drawChar2(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7);
+	public abstract void drawChar2(char arg0, int arg1, int arg2, int arg3, boolean arg4, SpriteRelated arg5, int arg6, int arg7);
 }

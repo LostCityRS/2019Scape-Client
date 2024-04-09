@@ -6,7 +6,7 @@ import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.FloorModel;
 import com.jagex.graphics.Model;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.graphics.scenegraph.WallDecorLayerEntity;
 import com.jagex.math.Cuboid;
@@ -52,7 +52,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	@ObfuscatedName("ajk.a")
 	public int field11151;
 
-	public StaticWallDecorEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
+	public StaticWallDecorEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, arg10, arg11, arg14);
 		this.field11159 = arg2;
 		this.field11715 = arg3.id;
@@ -101,7 +101,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	}
 
 	@ObfuscatedName("ajk.bz(Ldh;IB)Ldo;")
-	public Model method17411(Renderer arg0, int arg1) {
+	public Model method17411(Toolkit arg0, int arg1) {
 		if (this.field11150 != null && arg0.method2394(this.field11150.method1691(), arg1) == 0) {
 			return this.field11150;
 		} else {
@@ -111,7 +111,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	}
 
 	@ObfuscatedName("ajk.bv(Ldh;IZI)Labg;")
-	public Pair method17414(Renderer arg0, int arg1, boolean arg2) {
+	public Pair method17414(Toolkit arg0, int arg1, boolean arg2) {
 		LocType var4 = (LocType) this.field11159.list(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
@@ -131,20 +131,20 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	}
 
 	@ObfuscatedName("ajk.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer renderer) {
+	public EntityBounds method17371(Toolkit toolkit) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11149 == null) {
-			this.field11149 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17411(renderer, 0));
+			this.field11149 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17411(toolkit, 0));
 		}
 		return this.field11149;
 	}
 
 	@ObfuscatedName("ajk.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Renderer renderer) {
+	public PickableEntity draw(Toolkit toolkit) {
 		if (this.field11150 == null) {
 			return null;
 		}
-		Matrix4x3 var2 = renderer.method2209();
+		Matrix4x3 var2 = toolkit.method2209();
 		var2.setTo(this.method10533());
 		var2.translate((float) this.field12452, 0.0F, (float) this.field12451);
 		PickableEntity var3 = PickableEntity.getPickableEntity(this.field11157);
@@ -153,22 +153,22 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 			this.field11150.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.field11150.draw(var2, null, 0);
-			renderer.method2193(var2, this.entityBounds[0], var4);
+			toolkit.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajk.fw(Ldh;I)V")
-	public void method17373(Renderer renderer) {
+	public void method17373(Toolkit toolkit) {
 	}
 
 	@ObfuscatedName("ajk.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
 		Cuboid var4 = ((LocType) this.field11159.list(this.field11715)).clickbox;
 		if (var4 != null) {
-			return renderer.pick(arg1, arg2, this.method10533(), var4);
+			return toolkit.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17411(renderer, 131072);
+		Model var5 = this.method17411(toolkit, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -210,7 +210,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	}
 
 	@ObfuscatedName("ajk.l(Ldh;B)V")
-	public void method8217(Renderer arg0) {
+	public void method8217(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11154 == null && this.field11158) {
@@ -227,7 +227,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	}
 
 	@ObfuscatedName("ajk.u(Ldh;B)V")
-	public void method8209(Renderer arg0) {
+	public void method8209(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
 		if (this.field11154 == null && this.field11158) {

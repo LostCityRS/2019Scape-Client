@@ -2,7 +2,7 @@ package com.jagex.graphics.safe;
 
 import com.jagex.game.client.JavaGraphicsRelated3;
 import com.jagex.graphics.GraphicsDeletable;
-import com.jagex.graphics.GraphicsRelated;
+import com.jagex.graphics.SpriteRelated;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("apo")
@@ -11,12 +11,12 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 	@ObfuscatedName("apo.am")
 	public int[] field11904;
 
-	public PureJavaSpriteNormal(PureJavaRenderer arg0, int arg1, int arg2) {
+	public PureJavaSpriteNormal(PureJavaToolkit arg0, int arg1, int arg2) {
 		super(arg0, arg1, arg2);
 		this.field11904 = new int[arg1 * arg2];
 	}
 
-	public PureJavaSpriteNormal(PureJavaRenderer arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
+	public PureJavaSpriteNormal(PureJavaToolkit arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
 		super(arg0, arg4, arg5);
 		if (arg6) {
 			this.field11904 = new int[arg4 * arg5];
@@ -38,7 +38,7 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 		}
 	}
 
-	public PureJavaSpriteNormal(PureJavaRenderer arg0, int[] arg1, int arg2, int arg3) {
+	public PureJavaSpriteNormal(PureJavaToolkit arg0, int[] arg1, int arg2, int arg3) {
 		super(arg0, arg2, arg3);
 		this.field11904 = arg1;
 	}
@@ -428,7 +428,7 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apo.v(IILch;II)V")
-	public void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4) {
+	public void method1444(int arg0, int arg1, SpriteRelated arg2, int arg3, int arg4) {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		}

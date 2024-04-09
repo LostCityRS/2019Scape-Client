@@ -9,7 +9,7 @@ import deob.ObfuscatedName;
 public abstract class ModelShader {
 
 	@ObfuscatedName("jj.n")
-	public GpuRenderer field2963;
+	public GpuToolkit field2963;
 
 	@ObfuscatedName("jj.m")
 	public float[] field2964 = new float[16];
@@ -74,7 +74,7 @@ public abstract class ModelShader {
 	@ObfuscatedName("jj.g")
 	public int field2962;
 
-	public ModelShader(GpuRenderer arg0) {
+	public ModelShader(GpuToolkit arg0) {
 		this.field2963 = arg0;
 	}
 

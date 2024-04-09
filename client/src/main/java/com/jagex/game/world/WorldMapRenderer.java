@@ -2,7 +2,7 @@ package com.jagex.game.world;
 
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.config.iftype.Component;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("v")
@@ -13,7 +13,7 @@ public class WorldMapRenderer {
 	}
 
 	@ObfuscatedName("qi.e(Ldh;IILhf;I)V")
-	public static void method7274(Renderer arg0, int arg1, int arg2, Component arg3) {
+	public static void method7274(Toolkit arg0, int arg1, int arg2, Component arg3) {
 		byte var4 = 127;
 		byte var5 = 7;
 		for (int var6 = 63; var6 >= 0; var6--) {
@@ -26,7 +26,7 @@ public class WorldMapRenderer {
 	}
 
 	@ObfuscatedName("s.n(Ldh;IILhf;II)V")
-	public static void method480(Renderer arg0, int arg1, int arg2, Component arg3, int arg4) {
+	public static void method480(Toolkit arg0, int arg1, int arg2, Component arg3, int arg4) {
 		for (int var5 = 7; var5 >= 0; var5--) {
 			for (int var6 = 127; var6 >= 0; var6--) {
 				int var7 = (arg4 & 0x3F) << 10 | (var5 & 0x7) << 7 | var6 & 0x7F;

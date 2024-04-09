@@ -6,6 +6,7 @@ import com.jagex.core.io.Packet;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.Timer;
 import com.jagex.core.utils.TotpPreferences;
+import com.jagex.game.MiniMenu;
 import com.jagex.game.client.*;
 import com.jagex.game.clientoptions.Preferences;
 import com.jagex.game.compression.huffman.Huffman;
@@ -296,7 +297,7 @@ public class Loading {
 			}
 		}
 		if (field3419 == LoadingStage.field2904) {
-			Client.fontProvider = new FontProvider(Client.renderer, loadingSpritesJs5, Client.fontmetricsJs5, DefaultSprites.fonts());
+			Client.fontProvider = new FontProvider(Client.toolkit, loadingSpritesJs5, Client.fontmetricsJs5, DefaultSprites.fonts());
 		}
 		if (field3419 == LoadingStage.field2905) {
 			int var12 = Client.fontProvider.getLoadedFontsCount();
@@ -315,7 +316,7 @@ public class Loading {
 				}
 			}
 			Client.fontProvider.loadFonts(Client.fontFactory);
-			DefaultSprites.loadFonts(Client.renderer);
+			DefaultSprites.loadFonts(Client.toolkit);
 			Client.setState(11);
 		}
 		if (field3419 == LoadingStage.OPEN_JS5_ARCHIVES) {
@@ -370,7 +371,7 @@ public class Loading {
 				return (var14 - field2945) * 100 / (100 - field2945);
 			}
 			DefaultSprites.method16430(Client.graphicsDefaults);
-			Client.fontProvider = new FontProvider(Client.renderer, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.fonts());
+			Client.fontProvider = new FontProvider(Client.toolkit, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.fonts());
 		}
 		if (field3419 == LoadingStage.field2909) {
 			byte[] var17 = Client.defaultsJs5.method6894(DefaultsGroup.AUDIO.js5GroupId);
@@ -457,7 +458,7 @@ public class Loading {
 			Client.quickChatPhraseTypeList = new QuickChatPhraseTypeList(Client.language, Client.quickchatJs5, Client.quickchatGlobalJs5, new ClientDynamicProvider());
 			Client.localPlayerGameState = new PlayerGameState(Client.varPlayerTypeList, Client.varBitTypeList, Client.skillDefaults.getSkillCount());
 			Client.resetModelCaches();
-			AnimationWrapper.method6114(Client.seqTypeList);
+			AnimationNode.method6114(Client.seqTypeList);
 			ParticleSystemRenderer.method706(Client.basicParticleEmitterTypeList, Client.basicParticleEffectorTypeList);
 			SkyBox.method13864(Client.modelsJs5, Client.materialList, Client.textureList);
 			Huffman var19 = new Huffman(Client.binaryJs5.method6906("huffman", ""));
@@ -541,8 +542,8 @@ public class Loading {
 			}
 			Client.setWindowMode(Client.preferences.maxScreenSize.getValue(), -1, -1, false);
 			Client.fontProvider.loadFonts(Client.fontFactory);
-			DefaultSprites.loadFonts(Client.renderer);
-			DefaultSprites.loadSprites(Client.renderer, Client.spritesJs5);
+			DefaultSprites.loadFonts(Client.toolkit);
+			DefaultSprites.loadSprites(Client.toolkit, Client.spritesJs5);
 		}
 		return method3584();
 	}

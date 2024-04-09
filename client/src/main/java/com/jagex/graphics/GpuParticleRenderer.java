@@ -21,7 +21,7 @@ public class GpuParticleRenderer {
 	public VertexDeclaration field3326;
 
 	@ObfuscatedName("ld.k")
-	public IndexBuffer field3327;
+	public GpuIndexBuffer field3327;
 
 	@ObfuscatedName("ld.f")
 	public final int field3328 = 64;
@@ -59,7 +59,7 @@ public class GpuParticleRenderer {
 	@ObfuscatedName("ld.s")
 	public static float field3325;
 
-	public GpuParticleRenderer(GpuRenderer arg0) {
+	public GpuParticleRenderer(GpuToolkit arg0) {
 		this.field3326 = arg0.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR, VertexDeclarationElementComponent.TEX_COORD_2 }), new VertexDeclarationElement(VertexDeclarationElementComponent.NORMAL) });
 		this.field3333 = arg0.createVertexBuffer(true);
 		this.field3329 = arg0.createVertexBuffer(false);
@@ -97,7 +97,7 @@ public class GpuParticleRenderer {
 	}
 
 	@ObfuscatedName("ld.e(Lafc;)V")
-	public void method5755(GpuRenderer arg0) {
+	public void method5755(GpuToolkit arg0) {
 		this.field3333.allocate(786336, 24);
 	}
 
@@ -107,7 +107,7 @@ public class GpuParticleRenderer {
 	}
 
 	@ObfuscatedName("ld.m(Lafc;Ldm;)V")
-	public void method5770(GpuRenderer arg0, ParticleList arg1) {
+	public void method5770(GpuToolkit arg0, ParticleList arg1) {
 		arg0.method2219(false);
 		field3325 = arg0.field10122;
 		float var3 = arg0.field10059.entries[2];
@@ -161,7 +161,7 @@ public class GpuParticleRenderer {
 	}
 
 	@ObfuscatedName("ld.k(Lafc;Lajn;IIILjo;Z)V")
-	public void method5766(GpuRenderer arg0, DualLink arg1, int arg2, int arg3, int arg4, ParticleShader arg5, boolean arg6) {
+	public void method5766(GpuToolkit arg0, DualLink arg1, int arg2, int arg3, int arg4, ParticleShader arg5, boolean arg6) {
 		DualLink var8 = arg1.dualPrev;
 		int var9 = 0;
 		int var10 = -2;
@@ -229,7 +229,7 @@ public class GpuParticleRenderer {
 	}
 
 	@ObfuscatedName("ld.w(Lafc;IZ)V")
-	public void method5759(GpuRenderer arg0, int arg1, boolean arg2) {
+	public void method5759(GpuToolkit arg0, int arg1, boolean arg2) {
 		int var4 = 0;
 		Matrix4x4 var5 = arg0.field10059;
 		float var6 = var5.entries[0];

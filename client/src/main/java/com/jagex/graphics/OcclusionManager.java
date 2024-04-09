@@ -76,7 +76,7 @@ public class OcclusionManager {
 	public int[] field7032;
 
 	@ObfuscatedName("um.t")
-	public static Renderer field7041;
+	public static Toolkit field7041;
 
 	@ObfuscatedName("um.ae")
 	public final float[] field7037 = new float[3];
@@ -276,7 +276,7 @@ public class OcclusionManager {
 	}
 
 	@ObfuscatedName("um.w(Ldh;I)V")
-	public void method8923(Renderer arg0, int arg1) {
+	public void method8923(Toolkit arg0, int arg1) {
 		field7041 = arg0;
 		if (!this.field7031 || !this.field7017) {
 			this.field7033 = 0;
@@ -333,7 +333,7 @@ public class OcclusionManager {
 	}
 
 	@ObfuscatedName("um.l(Ldh;Lui;I)V")
-	public void method8918(Renderer arg0, Occluder arg1, int arg2) {
+	public void method8918(Toolkit arg0, Occluder arg1, int arg2) {
 		field7041 = arg0;
 		if (this.field7035 != null && arg1.field7067 >= arg2) {
 			for (int var4 = 0; var4 < this.field7035.length; var4++) {

@@ -757,7 +757,7 @@ public class Packet extends Node {
 	}
 
 	@ObfuscatedName("alw.cu(II)V")
-	public void p3_alt1(int value) {
+	public void p3_alt2(int value) {
 		this.data[(++this.pos) - 1] = (byte) (value >> 16);
 		this.data[(++this.pos) - 1] = (byte) value;
 		this.data[(++this.pos) - 1] = (byte) (value >> 8);

@@ -1,6 +1,6 @@
 package com.jagex.graphics.particles;
 
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.MovingParticle;
@@ -8,7 +8,7 @@ import com.jagex.game.config.ParticleEffectorType;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
 import com.jagex.game.world.entity.Scene;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 import java.util.Iterator;
@@ -72,13 +72,13 @@ public class ParticleSystemRenderer {
 
 	@ObfuscatedName("vh.e(II)I")
 	public static int method9543(int arg0) {
-		IntWrapper var1 = (IntWrapper) field7799.getNode((long) arg0);
+		IntNode var1 = (IntNode) field7799.getNode((long) arg0);
 		if (var1 == null) {
 			ParticleEffectorType var2 = field12041.method5973(arg0);
 			if (var2 == null || var2.field3549 != 2) {
 				return -1;
 			}
-			var1 = new IntWrapper(field7798);
+			var1 = new IntNode(field7798);
 			field7799.pushNode(var1, (long) arg0);
 			field7795[++field7798 - 1] = var2;
 		}
@@ -98,7 +98,7 @@ public class ParticleSystemRenderer {
 	}
 
 	@ObfuscatedName("po.m(Ldh;J)V")
-	public static void method6866(Renderer arg0, long arg1) {
+	public static void method6866(Toolkit arg0, long arg1) {
 		field7801 = field7790;
 		field7790 = 0;
 		MonotonicTime.get();
@@ -115,7 +115,7 @@ public class ParticleSystemRenderer {
 	}
 
 	@ObfuscatedName("tm.k(Ltx;Ldh;B)V")
-	public static void method8460(Scene arg0, Renderer arg1) {
+	public static void method8460(Scene arg0, Toolkit arg1) {
 		Iterator var2 = field8349.iterator();
 		while (var2.hasNext()) {
 			ParticleSystem var3 = (ParticleSystem) var2.next();

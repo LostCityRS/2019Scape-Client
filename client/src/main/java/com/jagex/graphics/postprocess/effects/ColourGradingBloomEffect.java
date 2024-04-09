@@ -4,7 +4,7 @@ import com.jagex.graphics.*;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aii")
-public class ColourGradingBloomEffect extends PostProcessEffect {
+public class ColourGradingBloomEffect extends GpuPostProcessEffect {
 
 	@ObfuscatedName("aii.k")
 	public static float field10623 = 0.25F;
@@ -19,22 +19,22 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 	public static float field10626 = 1.0F;
 
 	@ObfuscatedName("aii.u")
-	public Shader shader;
+	public GpuShader shader;
 
 	@ObfuscatedName("aii.z")
-	public Program techFullscreenTriProgram;
+	public GpuProgram techFullscreenTriProgram;
 
 	@ObfuscatedName("aii.p")
-	public Program brightpassProgram;
+	public GpuProgram brightpassProgram;
 
 	@ObfuscatedName("aii.d")
-	public Program blurProgram;
+	public GpuProgram blurProgram;
 
 	@ObfuscatedName("aii.c")
-	public Program compositeProgram;
+	public GpuProgram compositeProgram;
 
 	@ObfuscatedName("aii.r")
-	public Program techDefaultProgram;
+	public GpuProgram techDefaultProgram;
 
 	@ObfuscatedName("aii.v")
 	public ProgramUniform sceneTexUniform;
@@ -57,7 +57,7 @@ public class ColourGradingBloomEffect extends PostProcessEffect {
 	@ObfuscatedName("aii.b")
 	public boolean field10639;
 
-	public ColourGradingBloomEffect(GpuRenderer arg0) {
+	public ColourGradingBloomEffect(GpuToolkit arg0) {
 		super(arg0);
 	}
 

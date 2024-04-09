@@ -1,6 +1,6 @@
 package com.jagex.game.world;
 
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ds")
@@ -35,17 +35,17 @@ public class WorldMapRelated2 {
 	}
 
 	@ObfuscatedName("ds.e(Ldh;[II)V")
-	public static void method2053(Renderer arg0, int[] arg1, int arg2) {
+	public static void method2053(Toolkit arg0, int[] arg1, int arg2) {
 		method2055(arg0, arg1, 0, arg1.length, arg2, null, null);
 	}
 
 	@ObfuscatedName("ds.n(Ldh;[II[I[I)V")
-	public static void method2054(Renderer arg0, int[] arg1, int arg2, int[] arg3, int[] arg4) {
+	public static void method2054(Toolkit arg0, int[] arg1, int arg2, int[] arg3, int[] arg4) {
 		method2055(arg0, arg1, 0, arg1.length, arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("ds.m(Ldh;[IIII[I[I)V")
-	public static void method2055(Renderer arg0, int[] arg1, int arg2, int arg3, int arg4, int[] arg5, int[] arg6) {
+	public static void method2055(Toolkit arg0, int[] arg1, int arg2, int arg3, int arg4, int[] arg5, int[] arg6) {
 		int[] var7 = new int[4];
 		arg0.method2171(var7);
 		if (arg5 != null && var7[3] - var7[1] != arg5.length) {

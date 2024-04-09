@@ -1,10 +1,10 @@
 package com.jagex.game.client;
 
-import com.jagex.graphics.GraphicsRelated;
+import com.jagex.graphics.SpriteRelated;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aej")
-public class JavaGraphicsRelated3 extends GraphicsRelated {
+public class JavaGraphicsRelated3 extends SpriteRelated {
 
 	@ObfuscatedName("aej.e")
 	public int[] field9414;

@@ -1,6 +1,6 @@
 package com.jagex.game.config.questtype;
 
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
@@ -11,7 +11,7 @@ import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
-import com.jagex.game.world.entity.ObjectWrapper;
+import com.jagex.game.world.entity.ObjectNode;
 import com.jagex.game.world.entity.PlayerStatProvider;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
@@ -195,9 +195,9 @@ public class QuestType implements ConfigType {
 				int var21 = buf.g3();
 				Node var22;
 				if (var20) {
-					var22 = new ObjectWrapper(buf.gjstr());
+					var22 = new ObjectNode(buf.gjstr());
 				} else {
-					var22 = new IntWrapper(buf.g4s());
+					var22 = new IntNode(buf.g4s());
 				}
 				this.params.pushNode(var22, (long) var21);
 			}
@@ -216,7 +216,7 @@ public class QuestType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -226,7 +226,7 @@ public class QuestType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("st")
@@ -19,10 +19,10 @@ public interface Location {
 	boolean method8207();
 
 	@ObfuscatedName("st.u(Ldh;B)V")
-	void method8209(Renderer arg0);
+	void method8209(Toolkit arg0);
 
 	@ObfuscatedName("st.l(Ldh;B)V")
-	void method8217(Renderer arg0);
+	void method8217(Toolkit arg0);
 
 	@ObfuscatedName("st.n(I)I")
 	int method8220();

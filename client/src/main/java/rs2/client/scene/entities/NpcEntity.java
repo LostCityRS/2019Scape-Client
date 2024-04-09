@@ -1,5 +1,6 @@
 package rs2.client.scene.entities;
 
+import com.jagex.game.MiniMenu;
 import com.jagex.game.client.GameShell;
 import com.jagex.game.client.MoveSpeed;
 import com.jagex.game.config.bastype.BASType;
@@ -131,18 +132,18 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer renderer) {
+	public EntityBounds method17371(Toolkit toolkit) {
 		return null;
 	}
 
 	@ObfuscatedName("aqc.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Renderer renderer) {
-		if (this.npcType == null || !this.isVisible(renderer, 526336)) {
+	public PickableEntity draw(Toolkit toolkit) {
+		if (this.npcType == null || !this.isVisible(toolkit, 526336)) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
 		ScaleRotTrans var3 = this.getTransform();
-		Matrix4x3 var4 = renderer.method2209();
+		Matrix4x3 var4 = toolkit.method2209();
 		int var5 = this.field10395.method316();
 		Tile var6 = this.scene.levelTiles[this.level][(int) var3.trans.x >> 9][(int) var3.trans.z >> 9];
 		if (var6 == null || var6.groundDecoration == null) {
@@ -159,8 +160,8 @@ public class NpcEntity extends PathingEntity {
 		this.field10458 = false;
 		PickableEntity var11 = null;
 		if (Client.preferences.characterShadows.getValue() == 1 && var9.spotshadow && var8.field7346) {
-			AnimationWrapper var12 = this.field10454.hasSeqType() && this.field10454.method14355() ? this.field10454 : null;
-			EntityWalkAnimationWrapper var13 = this.field10432.hasSeqType() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
+			AnimationNode var12 = this.field10454.hasSeqType() && this.field10454.method14355() ? this.field10454 : null;
+			EntityWalkAnimationNode var13 = this.field10432.hasSeqType() && (!this.field10432.field11877 || var12 == null) ? this.field10432 : null;
 			short var14 = Client.graphicsDefaults.spotshadowtexture;
 			byte var15 = Client.graphicsDefaults.spotshadowtexture_alpha;
 			if (this.npcType.spotshadowtexture > -1) {
@@ -169,14 +170,14 @@ public class NpcEntity extends PathingEntity {
 			}
 			Model var16;
 			if (var14 > -1 && Client.preferences.textures.getValue() == 1) {
-				var16 = SpotShadowFactory.method3283(renderer, var5, this.field10405, this.field12466, this.field10407, this.idk[0], var14, var15, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method3283(toolkit, var5, this.field10405, this.field12466, this.field10407, this.idk[0], var14, var15, var13 == null ? var12 : var13);
 			} else {
-				var16 = SpotShadowFactory.method5102(renderer, var5, this.field10405, this.field12466, this.field10407, this.npcType.size, this.idk[0], this.npcType.spotshadowcolour_1 & 0xFFFF, this.npcType.spotshadowcolour_2 & 0xFFFF, this.npcType.spotshadowtrans_1 & 0xFF, this.npcType.spotshadowtrans_2 & 0xFF, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method5102(toolkit, var5, this.field10405, this.field12466, this.field10407, this.npcType.size, this.idk[0], this.npcType.spotshadowcolour_1 & 0xFFFF, this.npcType.spotshadowcolour_2 & 0xFFFF, this.npcType.spotshadowtrans_1 & 0xFF, this.npcType.spotshadowtrans_2 & 0xFF, var13 == null ? var12 : var13);
 			}
 			if (var16 != null) {
 				var11 = PickableEntity.getPickableEntity(this.method19162());
 				this.field10458 = true;
-				renderer.method2219(false);
+				toolkit.method2219(false);
 				if (var10) {
 					var16.draw(var4, null, 0);
 				} else {
@@ -185,21 +186,21 @@ public class NpcEntity extends PathingEntity {
 					}
 					var16.draw(var4, this.entityBounds[this.idk.length], 0);
 				}
-				renderer.method2219(true);
+				toolkit.method2219(true);
 			}
 		}
 		if (var10) {
 			if (this.entityBounds == null || this.entityBounds.length > 1) {
 				this.createEntityBounds(1);
 			}
-			renderer.method2193(var4, this.entityBounds[0], var9.clickbox);
+			toolkit.method2193(var4, this.entityBounds[0], var9.clickbox);
 		} else if (this.entityBounds == null || this.entityBounds.length < this.idk.length) {
 			this.createEntityBounds(this.idk.length);
 		}
 		if (var11 == null) {
 			var11 = PickableEntity.getPickableEntity(this.method19162());
 		}
-		this.method16576(renderer, this.idk, var4, false);
+		this.method16576(toolkit, this.idk, var4, false);
 		for (int var17 = 0; var17 < this.idk.length; var17++) {
 			if (this.idk[var17] != null) {
 				if (this.npcType.antimacro) {
@@ -216,7 +217,7 @@ public class NpcEntity extends PathingEntity {
 		}
 		if (this.field10393 != null) {
 			ParticleList var18 = this.field10393.method9965();
-			renderer.drawParticles(var18);
+			toolkit.drawParticles(var18);
 		}
 		for (int var19 = 0; var19 < this.idk.length; var19++) {
 			if (this.idk[var19] != null) {
@@ -229,11 +230,11 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.hh(Ldh;II)Z")
-	public boolean isVisible(Renderer arg0, int arg1) {
+	public boolean isVisible(Toolkit arg0, int arg1) {
 		int var3 = arg1;
 		BASType var4 = this.getBASType();
-		AnimationWrapper var5 = this.field10454.hasSeqType() && !this.field10454.method14355() ? this.field10454 : null;
-		EntityWalkAnimationWrapper var6 = this.field10432.hasSeqType() && (!this.field10432.field11877 || var5 == null) ? this.field10432 : null;
+		AnimationNode var5 = this.field10454.hasSeqType() && !this.field10454.method14355() ? this.field10454 : null;
+		EntityWalkAnimationNode var6 = this.field10432.hasSeqType() && (!this.field10432.field11877 || var5 == null) ? this.field10432 : null;
 		int var7 = var4.field7342;
 		int var8 = var4.field7343;
 		if (var7 != 0 || var8 != 0 || var4.field7355 != 0 || var4.field7358 != 0) {
@@ -290,14 +291,14 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fw(Ldh;I)V")
-	public void method17373(Renderer renderer) {
-		if (this.npcType == null || !this.field10449 && !this.isVisible(renderer, 0)) {
+	public void method17373(Toolkit toolkit) {
+		if (this.npcType == null || !this.field10449 && !this.isVisible(toolkit, 0)) {
 			return;
 		}
-		Matrix4x3 var2 = renderer.method2209();
+		Matrix4x3 var2 = toolkit.method2209();
 		var2.setTo(this.method10533());
 		var2.translate(0.0F, -5.0F, 0.0F);
-		this.method16576(renderer, this.idk, var2, this.field10449);
+		this.method16576(toolkit, this.idk, var2, this.field10449);
 		for (int var3 = 0; var3 < this.idk.length; var3++) {
 			this.idk[var3] = null;
 		}
@@ -466,12 +467,12 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
 		if (this.npcType == null) {
 			return false;
 		} else if (this.npcType.clickbox != null) {
-			return renderer.pick(arg1, arg2, this.method10533(), this.npcType.clickbox);
-		} else if (this.isVisible(renderer, 131072)) {
+			return toolkit.pick(arg1, arg2, this.method10533(), this.npcType.clickbox);
+		} else if (this.isVisible(toolkit, 131072)) {
 			Matrix4x3 var4 = this.method10533();
 			boolean var5 = false;
 			for (int var6 = 0; var6 < this.idk.length; var6++) {
@@ -516,7 +517,7 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

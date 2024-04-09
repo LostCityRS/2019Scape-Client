@@ -9,7 +9,7 @@ import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.graphics.SpriteData;
 import com.jagex.graphics.SpriteDataProvider;
@@ -212,75 +212,75 @@ public class HitmarkType implements ConfigType {
 	}
 
 	@ObfuscatedName("vb.d(Ldh;I)Lcm;")
-	public Sprite getSprite(Renderer renderer) {
+	public Sprite getSprite(Toolkit toolkit) {
 		if (this.classgraphic < 0) {
 			return null;
 		}
 		Sprite sprite = (Sprite) this.factory.spriteCache.get((long) this.classgraphic);
 		if (sprite == null) {
-			this.loadSprites(renderer);
+			this.loadSprites(toolkit);
 			sprite = (Sprite) this.factory.spriteCache.get((long) this.classgraphic);
 		}
 		return sprite;
 	}
 
 	@ObfuscatedName("vb.c(Ldh;I)Lcm;")
-	public Sprite getMiddleGraphicSprite(Renderer renderer) {
+	public Sprite getMiddleGraphicSprite(Toolkit toolkit) {
 		if (this.middlegraphic < 0) {
 			return null;
 		}
 		Sprite sprite = (Sprite) this.factory.spriteCache.get((long) this.middlegraphic);
 		if (sprite == null) {
-			this.loadSprites(renderer);
+			this.loadSprites(toolkit);
 			sprite = (Sprite) this.factory.spriteCache.get((long) this.middlegraphic);
 		}
 		return sprite;
 	}
 
 	@ObfuscatedName("vb.r(Ldh;I)Lcm;")
-	public Sprite getLeftGraphicSprite(Renderer renderer) {
+	public Sprite getLeftGraphicSprite(Toolkit toolkit) {
 		if (this.leftgraphic < 0) {
 			return null;
 		}
 		Sprite sprite = (Sprite) this.factory.spriteCache.get((long) this.leftgraphic);
 		if (sprite == null) {
-			this.loadSprites(renderer);
+			this.loadSprites(toolkit);
 			sprite = (Sprite) this.factory.spriteCache.get((long) this.leftgraphic);
 		}
 		return sprite;
 	}
 
 	@ObfuscatedName("vb.v(Ldh;B)Lcm;")
-	public Sprite getRightGraphicSprite(Renderer renderer) {
+	public Sprite getRightGraphicSprite(Toolkit toolkit) {
 		if (this.rightgraphic < 0) {
 			return null;
 		}
 		Sprite sprite = (Sprite) this.factory.spriteCache.get((long) this.rightgraphic);
 		if (sprite == null) {
-			this.loadSprites(renderer);
+			this.loadSprites(toolkit);
 			sprite = (Sprite) this.factory.spriteCache.get((long) this.rightgraphic);
 		}
 		return sprite;
 	}
 
 	@ObfuscatedName("vb.o(Ldh;I)V")
-	public void loadSprites(Renderer renderer) {
+	public void loadSprites(Toolkit toolkit) {
 		Js5 js5 = this.factory.configClient;
 		if (this.classgraphic >= 0 && this.factory.spriteCache.get((long) this.classgraphic) == null && js5.loadFile(this.classgraphic)) {
 			SpriteData sprite = SpriteDataProvider.get(js5, this.classgraphic);
-			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.classgraphic);
+			this.factory.spriteCache.put(toolkit.createSprite(sprite, true), (long) this.classgraphic);
 		}
 		if (this.middlegraphic >= 0 && this.factory.spriteCache.get((long) this.middlegraphic) == null && js5.loadFile(this.middlegraphic)) {
 			SpriteData sprite = SpriteDataProvider.get(js5, this.middlegraphic);
-			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.middlegraphic);
+			this.factory.spriteCache.put(toolkit.createSprite(sprite, true), (long) this.middlegraphic);
 		}
 		if (this.leftgraphic >= 0 && this.factory.spriteCache.get((long) this.leftgraphic) == null && js5.loadFile(this.leftgraphic)) {
 			SpriteData sprite = SpriteDataProvider.get(js5, this.leftgraphic);
-			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.leftgraphic);
+			this.factory.spriteCache.put(toolkit.createSprite(sprite, true), (long) this.leftgraphic);
 		}
 		if (this.rightgraphic >= 0 && this.factory.spriteCache.get((long) this.rightgraphic) == null && js5.loadFile(this.rightgraphic)) {
 			SpriteData sprite = SpriteDataProvider.get(js5, this.rightgraphic);
-			this.factory.spriteCache.put(renderer.createSprite(sprite, true), (long) this.rightgraphic);
+			this.factory.spriteCache.put(toolkit.createSprite(sprite, true), (long) this.rightgraphic);
 		}
 	}
 

@@ -3,7 +3,7 @@ package com.jagex.game.world.entity;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.Model;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.graphics.scenegraph.WallLayerEntity;
@@ -32,7 +32,7 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 	@ObfuscatedName("ajj.y")
 	public boolean field11183 = true;
 
-	public DynamicWallEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
+	public DynamicWallEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
 		super(arg0, arg6, arg7, arg8, arg4, arg5, method9908(arg10, arg11), arg14);
 		this.field11179 = new DynamicLoc(arg1, arg2, arg3, arg10, arg11, arg5, this, arg9, arg12, arg13);
 		this.field11178 = arg3.active != 0 && !arg9;
@@ -55,7 +55,7 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajj.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer renderer) {
+	public EntityBounds method17371(Toolkit toolkit) {
 		return this.field11181;
 	}
 
@@ -75,8 +75,8 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajj.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Renderer renderer) {
-		Model var2 = this.field11179.method8238(renderer, 2048, false, true);
+	public PickableEntity draw(Toolkit toolkit) {
+		Model var2 = this.field11179.method8238(toolkit, 2048, false, true);
 		if (var2 == null) {
 			return null;
 		}
@@ -85,17 +85,17 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 		PickableEntity var5 = PickableEntity.getPickableEntity(this.field11178);
 		int var6 = (int) var4.trans.x >> 9;
 		int var7 = (int) var4.trans.z >> 9;
-		this.field11179.method8239(renderer, var2, var3, var6, var6, var7, var7, true);
+		this.field11179.method8239(toolkit, var2, var3, var6, var6, var7, var7, true);
 		LocType var8 = this.field11179.method8237();
 		if (var8.clickbox == null) {
 			var2.draw(var3, this.entityBounds[0], 0);
 		} else {
 			var2.draw(var3, null, 0);
-			renderer.method2193(var3, this.entityBounds[0], var8.clickbox);
+			toolkit.method2193(var3, this.entityBounds[0], var8.clickbox);
 		}
 		if (this.field11179.field6680 != null) {
 			ParticleList var9 = this.field11179.field6680.method9965();
-			renderer.drawParticles(var9);
+			toolkit.drawParticles(var9);
 		}
 		this.field11183 = var2.method1731() || this.field11179.field6680 != null;
 		if (this.field11181 == null) {
@@ -107,8 +107,8 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajj.fw(Ldh;I)V")
-	public void method17373(Renderer renderer) {
-		Model var2 = this.field11179.method8238(renderer, 262144, true, true);
+	public void method17373(Toolkit toolkit) {
+		Model var2 = this.field11179.method8238(toolkit, 262144, true, true);
 		if (var2 == null) {
 			return;
 		}
@@ -116,17 +116,17 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 		ScaleRotTrans var4 = this.getTransform();
 		int var5 = (int) var4.trans.x >> 9;
 		int var6 = (int) var4.trans.z >> 9;
-		this.field11179.method8239(renderer, var2, var3, var5, var5, var6, var6, false);
+		this.field11179.method8239(toolkit, var2, var3, var5, var5, var6, var6, false);
 	}
 
 	@ObfuscatedName("ajj.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
 		LocType var4 = this.field11179.method8237();
 		if (var4.clickbox == null) {
-			Model var5 = this.field11179.method8238(renderer, 131072, false, false);
+			Model var5 = this.field11179.method8238(toolkit, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
-			return renderer.pick(arg1, arg2, this.method10533(), var4.clickbox);
+			return toolkit.pick(arg1, arg2, this.method10533(), var4.clickbox);
 		}
 	}
 
@@ -136,7 +136,7 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajj.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
@@ -175,12 +175,12 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajj.l(Ldh;B)V")
-	public void method8217(Renderer arg0) {
+	public void method8217(Toolkit arg0) {
 		this.field11179.method8241(arg0);
 	}
 
 	@ObfuscatedName("ajj.u(Ldh;B)V")
-	public void method8209(Renderer arg0) {
+	public void method8209(Toolkit arg0) {
 		this.field11179.method8242(arg0);
 	}
 }

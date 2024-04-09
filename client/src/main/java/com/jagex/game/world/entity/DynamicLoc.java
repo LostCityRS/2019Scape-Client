@@ -41,10 +41,10 @@ public class DynamicLoc {
 	public Model field6669;
 
 	@ObfuscatedName("sp.z")
-	public AnimationWrapper field6664;
+	public AnimationNode field6664;
 
 	@ObfuscatedName("sp.p")
-	public AnimationWrapper field6671;
+	public AnimationNode field6671;
 
 	@ObfuscatedName("sp.d")
 	public int field6662;
@@ -76,7 +76,7 @@ public class DynamicLoc {
 	@ObfuscatedName("sp.b")
 	public LocTypeCustomisation field6678;
 
-	public DynamicLoc(Renderer arg0, LocTypeList arg1, LocType arg2, int arg3, int arg4, int arg5, GraphEntity arg6, boolean arg7, int arg8, int arg9) {
+	public DynamicLoc(Toolkit arg0, LocTypeList arg1, LocType arg2, int arg3, int arg4, int arg5, GraphEntity arg6, boolean arg7, int arg8, int arg9) {
 		this.field6681 = arg1;
 		this.field6665 = arg2.id;
 		this.field6666 = arg3;
@@ -86,7 +86,7 @@ public class DynamicLoc {
 		this.field6663 = (byte) arg5;
 		this.field6668 = arg7;
 		this.field6676 = arg0.supportsHardShadows() && arg2.hardshadow && !this.field6668;
-		this.field6664 = new EntityAnimationWrapper(arg6, false);
+		this.field6664 = new EntityAnimationNode(arg6, false);
 		this.method8244(false, arg8, 1, this.field6675 ? arg9 : 0);
 	}
 
@@ -94,7 +94,7 @@ public class DynamicLoc {
 	public void method8260(int arg0, int arg1) {
 		this.field6671 = null;
 		if (arg1 > 0) {
-			this.field6671 = new EntityAnimationWrapper(this.field6672, false);
+			this.field6671 = new EntityAnimationNode(this.field6672, false);
 			this.field6671.method14353(arg0, arg1, 1, false);
 		} else {
 			this.field6675 = true;
@@ -124,7 +124,7 @@ public class DynamicLoc {
 	}
 
 	@ObfuscatedName("sp.w(Ldh;IZZI)Ldo;")
-	public final Model method8238(Renderer arg0, int arg1, boolean arg2, boolean arg3) {
+	public final Model method8238(Toolkit arg0, int arg1, boolean arg2, boolean arg3) {
 		LocType var5 = (LocType) this.field6681.list(this.field6665);
 		if (var5.multiloc != null) {
 			var5 = var5.getMultiLoc(Client.localPlayerGameState, Client.sceneState == 0 ? CutsceneManager.field1723 : Client.localPlayerGameState);
@@ -212,7 +212,7 @@ public class DynamicLoc {
 	}
 
 	@ObfuscatedName("sp.l(Ldh;Ldo;Lou;IIIIZB)V")
-	public void method8239(Renderer arg0, Model arg1, Matrix4x3 arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
+	public void method8239(Toolkit arg0, Model arg1, Matrix4x3 arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
 		ModelParticleEmitter[] var9 = arg1.method1750();
 		ModelParticleEffector[] var10 = arg1.method1765();
 		if ((this.field6680 == null || this.field6680.field7804) && (var9 != null || var10 != null)) {
@@ -242,12 +242,12 @@ public class DynamicLoc {
 	}
 
 	@ObfuscatedName("sp.z(Ldh;I)V")
-	public void method8241(Renderer arg0) {
+	public void method8241(Toolkit arg0) {
 		this.method8238(arg0, 262144, true, true);
 	}
 
 	@ObfuscatedName("sp.p(Ldh;B)V")
-	public void method8242(Renderer arg0) {
+	public void method8242(Toolkit arg0) {
 		if (this.field6677 != null) {
 			Vector3 var2 = this.field6672.getTransform().trans;
 			Client.world.getScene().method8814(this.field6677, this.field6663, (int) var2.x, (int) var2.z, this.field6679);

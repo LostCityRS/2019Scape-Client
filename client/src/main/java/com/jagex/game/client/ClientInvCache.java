@@ -12,10 +12,10 @@ import com.jagex.game.config.vartype.VarContainerSparse;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.world.entity.PlayerModel;
-import com.jagex.graphics.AnimationWrapper;
+import com.jagex.graphics.AnimationNode;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelUnlit;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 
@@ -245,7 +245,7 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("ajo.v(Ldh;ILaaq;IZLxg;I)Ldo;")
-	public final Model method17475(Renderer arg0, int arg1, AnimationWrapper arg2, int arg3, boolean arg4, PlayerModel arg5) {
+	public final Model method17475(Toolkit arg0, int arg1, AnimationNode arg2, int arg3, boolean arg4, PlayerModel arg5) {
 		Model var7 = null;
 		int var8 = arg1;
 		BASType var9 = null;

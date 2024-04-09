@@ -6,15 +6,15 @@ import deob.ObfuscatedName;
 public class ProgrammableBatchedSpriteShader extends BatchedSpriteShader {
 
 	@ObfuscatedName("ahq.m")
-	public Shader field10515;
+	public GpuShader field10515;
 
 	@ObfuscatedName("ahq.k")
 	public ProgramUniform field10516;
 
 	@ObfuscatedName("ahq.f")
-	public Program field10517;
+	public GpuProgram field10517;
 
-	public ProgrammableBatchedSpriteShader(GpuRenderer arg0) throws ShaderException {
+	public ProgrammableBatchedSpriteShader(GpuToolkit arg0) throws ShaderException {
 		super(arg0);
 		this.method16642();
 	}

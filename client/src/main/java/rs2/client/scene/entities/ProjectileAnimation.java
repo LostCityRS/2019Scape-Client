@@ -68,7 +68,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	public double accelerationY;
 
 	@ObfuscatedName("aue.ao")
-	public final AnimationWrapper field12602;
+	public final AnimationNode field12602;
 
 	@ObfuscatedName("aue.aj")
 	public int overlayHeight = 0;
@@ -98,7 +98,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		this.field12594 = arg15;
 		this.targeted = targeted;
 		int anim = ((EffectAnimType) Client.effectAnimTypeList.list(this.effectAnim)).anim;
-		this.field12602 = new EntityAnimationWrapper(this, false);
+		this.field12602 = new EntityAnimationNode(this, false);
 		this.field12602.method14362(anim);
 		this.createEntityBounds(1);
 	}
@@ -124,7 +124,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aue.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer renderer) {
+	public EntityBounds method17371(Toolkit toolkit) {
 		return null;
 	}
 
@@ -176,7 +176,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 			}
 		} else {
 			int var3 = this.target2 - 1;
-			ObjectWrapper var4 = (ObjectWrapper) Client.npcs.getNode((long) var3);
+			ObjectNode var4 = (ObjectNode) Client.npcs.getNode((long) var3);
 			if (var4 != null) {
 				var1 = (PathingEntity) var4.value;
 			}
@@ -246,24 +246,24 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aue.f(Ldh;II)Ldo;")
-	public Model getModel(Renderer renderer, int arg1) {
+	public Model getModel(Toolkit toolkit, int arg1) {
 		EffectAnimType var3 = (EffectAnimType) Client.effectAnimTypeList.list(this.effectAnim);
-		return var3.getModel(renderer, arg1, this.field12602, (byte) 2);
+		return var3.getModel(toolkit, arg1, this.field12602, (byte) 2);
 	}
 
 	@ObfuscatedName("aue.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Renderer renderer) {
-		Model var2 = this.getModel(renderer, 2048);
+	public PickableEntity draw(Toolkit toolkit) {
+		Model var2 = this.getModel(toolkit, 2048);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		this.method19743(renderer, var2, var3);
+		this.method19743(toolkit, var2, var3);
 		PickableEntity var4 = PickableEntity.getPickableEntity(false);
 		var2.draw(var3, this.entityBounds[0], 0);
 		if (this.field12585 != null) {
 			ParticleList var5 = this.field12585.method9965();
-			renderer.drawParticles(var5);
+			toolkit.drawParticles(var5);
 		}
 		this.field12604 = var2.method1731();
 		var2.getRadius();
@@ -272,13 +272,13 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aue.fw(Ldh;I)V")
-	public void method17373(Renderer renderer) {
-		Model var2 = this.getModel(renderer, 0);
+	public void method17373(Toolkit toolkit) {
+		Model var2 = this.getModel(toolkit, 0);
 		if (var2 != null) {
 			Matrix4x3 var3 = this.method10533();
 			this.overlayHeight = var2.getMinY();
 			var2.getRadius();
-			this.method19743(renderer, var2, var3);
+			this.method19743(toolkit, var2, var3);
 		}
 	}
 
@@ -290,7 +290,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aue.w(Ldh;Ldo;Lou;B)V")
-	public void method19743(Renderer arg0, Model arg1, Matrix4x3 arg2) {
+	public void method19743(Toolkit arg0, Model arg1, Matrix4x3 arg2) {
 		arg1.method1689(arg2);
 		ModelParticleEmitter[] var4 = arg1.method1750();
 		ModelParticleEffector[] var5 = arg1.method1765();
@@ -311,7 +311,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aue.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
 		return false;
 	}
 
@@ -321,7 +321,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aue.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

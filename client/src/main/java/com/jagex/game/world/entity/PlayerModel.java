@@ -15,10 +15,10 @@ import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.config.seqtype.SeqTypeList;
 import com.jagex.game.config.vartype.VarIntDomain;
 import com.jagex.game.config.vartype.VariableTypeProvider;
-import com.jagex.graphics.AnimationWrapper;
+import com.jagex.graphics.AnimationNode;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelUnlit;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
@@ -191,7 +191,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
-	public Model method10126(Renderer arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, VariableTypeProvider arg6, VarIntDomain arg7, AnimationWrapper arg8, AnimationWrapper arg9, AnimationWrapper[] arg10, int[] arg11, int arg12, boolean arg13, WearposDefaults arg14) {
+	public Model method10126(Toolkit arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, VariableTypeProvider arg6, VarIntDomain arg7, AnimationNode arg8, AnimationNode arg9, AnimationNode[] arg10, int[] arg11, int arg12, boolean arg13, WearposDefaults arg14) {
 		if (this.field7892 != -1) {
 			return ((NPCType) arg4.list(this.field7892)).getSequencedModel(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
 		}
@@ -452,7 +452,7 @@ public class PlayerModel {
 			}
 		}
 		if (arg8 != null && arg9 != null) {
-			AnimationWrapper.method2099(var69, arg8, arg9);
+			AnimationNode.method2099(var69, arg8, arg9);
 		} else if (arg8 != null) {
 			arg8.method14359(var69, 0);
 		} else if (arg9 != null) {
@@ -462,7 +462,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.z(Ldh;ILaov;Laod;Laon;Lem;Lep;Laaq;B)Ldo;")
-	public Model method10120(Renderer arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, VariableTypeProvider arg5, VarIntDomain arg6, AnimationWrapper arg7) {
+	public Model method10120(Toolkit arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, VariableTypeProvider arg5, VarIntDomain arg6, AnimationNode arg7) {
 		if (this.field7892 != -1) {
 			return ((NPCType) arg3.list(this.field7892)).getHeadModel(arg0, arg1, arg5, arg6, arg7, null);
 		}
@@ -547,7 +547,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.p(Ldh;ILaov;Laos;Laaq;IIIB)Ldo;")
-	public Model method10130(Renderer arg0, int arg1, IDKTypeList arg2, SeqTypeList arg3, AnimationWrapper arg4, int arg5, int arg6, int arg7) {
+	public Model method10130(Toolkit arg0, int arg1, IDKTypeList arg2, SeqTypeList arg3, AnimationNode arg4, int arg5, int arg6, int arg7) {
 		int var9 = arg4 == null ? arg1 : arg1 | arg4.method14358();
 		long var10 = (long) arg7 << 32 | (long) (arg6 << 16) | (long) arg5;
 		WeightedCache var12 = field7902;

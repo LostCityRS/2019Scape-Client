@@ -1,7 +1,7 @@
 package com.jagex.graphics.safe;
 
 import com.jagex.game.client.JavaGraphicsRelated3;
-import com.jagex.graphics.GraphicsRelated;
+import com.jagex.graphics.SpriteRelated;
 import com.jagex.graphics.Sprite;
 import deob.ObfuscatedName;
 
@@ -9,7 +9,7 @@ import deob.ObfuscatedName;
 public abstract class PureJavaSprite extends Sprite {
 
 	@ObfuscatedName("ael.e")
-	public PureJavaRenderer field9373;
+	public PureJavaToolkit field9373;
 
 	@ObfuscatedName("ael.n")
 	public int field9356;
@@ -107,7 +107,7 @@ public abstract class PureJavaSprite extends Sprite {
 	@ObfuscatedName("ael.ad")
 	public static int field9379 = 0;
 
-	public PureJavaSprite(PureJavaRenderer arg0, int arg1, int arg2) {
+	public PureJavaSprite(PureJavaToolkit arg0, int arg1, int arg2) {
 		this.field9373 = arg0;
 		this.field9356 = arg1;
 		this.field9372 = arg2;
@@ -307,7 +307,7 @@ public abstract class PureJavaSprite extends Sprite {
 	}
 
 	@ObfuscatedName("ael.al(FFFFFFILch;II)V")
-	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9) {
+	public void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, SpriteRelated arg7, int arg8, int arg9) {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		} else if (this.method15366(arg0, arg1, arg2, arg3, arg4, arg5)) {
@@ -320,7 +320,7 @@ public abstract class PureJavaSprite extends Sprite {
 	public abstract void method15354(int arg0, int arg1);
 
 	@ObfuscatedName("ael.v(IILch;II)V")
-	public abstract void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4);
+	public abstract void method1444(int arg0, int arg1, SpriteRelated arg2, int arg3, int arg4);
 
 	@ObfuscatedName("ael.y(IIIIIIII)V")
 	public abstract void drawTintedScaled(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7);

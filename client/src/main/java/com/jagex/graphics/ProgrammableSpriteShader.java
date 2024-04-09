@@ -8,10 +8,10 @@ import deob.ObfuscatedName;
 public final class ProgrammableSpriteShader extends SpriteShader {
 
 	@ObfuscatedName("ahz.p")
-	public Shader field10532;
+	public GpuShader field10532;
 
 	@ObfuscatedName("ahz.g")
-	public final Program[] field10527 = new Program[3];
+	public final GpuProgram[] field10527 = new GpuProgram[3];
 
 	@ObfuscatedName("ahz.i")
 	public final int[][] field10533 = new int[3][7];
@@ -25,7 +25,7 @@ public final class ProgrammableSpriteShader extends SpriteShader {
 	@ObfuscatedName("ahz.ae")
 	public Vector4 field10536 = new Vector4(0.0F, 0.0F, 0.0F, 0.0F);
 
-	public ProgrammableSpriteShader(GpuRenderer arg0) throws ShaderException {
+	public ProgrammableSpriteShader(GpuToolkit arg0) throws ShaderException {
 		super(arg0);
 		this.method16651();
 	}

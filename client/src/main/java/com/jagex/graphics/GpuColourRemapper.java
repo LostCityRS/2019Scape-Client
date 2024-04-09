@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 public class GpuColourRemapper extends ColourRemapper {
 
 	@ObfuscatedName("aeq.e")
-	public final GpuRenderer field9529;
+	public final GpuToolkit field9529;
 
 	@ObfuscatedName("aeq.n")
 	public BaseTexture field9530;
 
-	public GpuColourRemapper(GpuRenderer arg0, int[] arg1) {
+	public GpuColourRemapper(GpuToolkit arg0, int[] arg1) {
 		this.field9529 = arg0;
 		if (this.field9529.field10125) {
 			byte[] var3 = this.method15433(arg1);

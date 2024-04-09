@@ -1,6 +1,6 @@
 package com.jagex.game.config.meltype;
 
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.SerializableEnums;
@@ -14,8 +14,8 @@ import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
-import com.jagex.game.world.entity.ObjectWrapper;
-import com.jagex.graphics.Renderer;
+import com.jagex.game.world.entity.ObjectNode;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.graphics.SpriteData;
 import com.jagex.graphics.SpriteDataProvider;
@@ -304,9 +304,9 @@ public class MapElementType implements ConfigType {
 				int var13 = arg0.g3();
 				Node var14;
 				if (var12) {
-					var14 = new ObjectWrapper(arg0.gjstr());
+					var14 = new ObjectNode(arg0.gjstr());
 				} else {
-					var14 = new IntWrapper(arg0.g4s());
+					var14 = new IntNode(arg0.g4s());
 				}
 				this.params.pushNode(var14, (long) var13);
 			}
@@ -382,7 +382,7 @@ public class MapElementType implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.p(Ldh;ZI)Lcm;")
-	public Sprite method4025(Renderer arg0, boolean arg1) {
+	public Sprite method4025(Toolkit arg0, boolean arg1) {
 		int var3 = arg1 ? this.field2403 : this.sprite;
 		int var4 = var3 | arg0.field1595 << 29;
 		Sprite var5 = (Sprite) this.field2368.elementCache.get((long) var4);
@@ -401,7 +401,7 @@ public class MapElementType implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.d(Ldh;B)Lcm;")
-	public Sprite method4026(Renderer arg0) {
+	public Sprite method4026(Toolkit arg0) {
 		int var2 = this.field2384 | arg0.field1595 << 29;
 		Sprite var3 = (Sprite) this.field2368.elementCache.get((long) var2);
 		if (var3 != null) {
@@ -419,7 +419,7 @@ public class MapElementType implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.c(Ldh;I)Lcm;")
-	public Sprite method4027(Renderer arg0) {
+	public Sprite method4027(Toolkit arg0) {
 		Sprite var2 = (Sprite) this.field2368.elementCache.get((long) (this.field2383 | 0x20000 | arg0.field1595 << 29));
 		if (var2 != null) {
 			return var2;
@@ -438,7 +438,7 @@ public class MapElementType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -448,7 +448,7 @@ public class MapElementType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

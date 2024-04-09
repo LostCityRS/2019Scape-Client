@@ -1,7 +1,7 @@
 package com.jagex.game.clientoptions.options;
 
 import com.jagex.game.clientoptions.ClientOptions;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anu")
@@ -29,7 +29,7 @@ public class PreferencesUnused0 extends Preference {
 
 	@ObfuscatedName("anu.n(II)I")
 	public int canSetValue(int value) {
-		return Renderer.method723(this.options.displayMode.getValue()) ? 1 : 3;
+		return Toolkit.method723(this.options.displayMode.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("anu.k(II)V")

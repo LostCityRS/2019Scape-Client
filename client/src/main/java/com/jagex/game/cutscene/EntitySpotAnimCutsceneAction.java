@@ -4,7 +4,7 @@ import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aqm")
-public class EntitySpotAnimCutsceneAction extends CutsceneActionUnused {
+public class EntitySpotAnimCutsceneAction extends CutsceneAction_Sub1 {
 
 	@ObfuscatedName("aqm.f")
 	public final int field12045;

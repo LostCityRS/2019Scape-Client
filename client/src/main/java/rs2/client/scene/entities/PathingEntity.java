@@ -109,10 +109,10 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public int[] field10427;
 
 	@ObfuscatedName("ahm.ar")
-	public EntityWalkAnimationWrapper field10432;
+	public EntityWalkAnimationNode field10432;
 
 	@ObfuscatedName("ahm.ap")
-	public AnimationWrapper field10454;
+	public AnimationNode field10454;
 
 	@ObfuscatedName("ahm.aq")
 	public EntitySpotAnim[] spotAnims;
@@ -172,7 +172,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public int field10440;
 
 	@ObfuscatedName("ahm.bi")
-	public final UnknownEntityAnimationWrapper[] field10398;
+	public final UnknownEntityAnimationNode[] field10398;
 
 	@ObfuscatedName("ahm.bn")
 	public int[] field10442;
@@ -263,8 +263,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		this.field10416 = new LinkQueue();
 		this.targetId = -1;
 		this.field10427 = null;
-		this.field10432 = new EntityWalkAnimationWrapper(this, false);
-		this.field10454 = new EntityAnimationWrapper(this, false);
+		this.field10432 = new EntityWalkAnimationNode(this, false);
+		this.field10454 = new EntityAnimationNode(this, false);
 		this.field10446 = -1;
 		this.field10464 = -1;
 		this.field10437 = 0;
@@ -293,7 +293,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		for (int var4 = 0; var4 < 5; var4++) {
 			this.spotAnims[var4] = new EntitySpotAnim(this);
 		}
-		this.field10398 = new UnknownEntityAnimationWrapper[Client.wearposDefaults.field7766.length];
+		this.field10398 = new UnknownEntityAnimationNode[Client.wearposDefaults.field7766.length];
 		this.field10460 = new VarContainerSparse(arg2);
 	}
 
@@ -465,7 +465,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	}
 
 	@ObfuscatedName("ahm.b(Ldh;[Ldo;Lou;ZI)V")
-	public void method16576(Renderer arg0, Model[] arg1, Matrix4x3 arg2, boolean arg3) {
+	public void method16576(Toolkit arg0, Model[] arg1, Matrix4x3 arg2, boolean arg3) {
 		if (!arg3) {
 			int var5 = 0;
 			int var6 = 0;
@@ -757,7 +757,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	}
 
 	@ObfuscatedName("ahm.bg(Ldh;Lvr;IIIII)V")
-	public void method16506(Renderer arg0, BASType arg1, int arg2, int arg3, int arg4, int arg5) {
+	public void method16506(Toolkit arg0, BASType arg1, int arg2, int arg3, int arg4, int arg5) {
 		for (int var7 = 0; var7 < this.spotAnims.length; var7++) {
 			byte var8 = 0;
 			if (var7 == 0) {

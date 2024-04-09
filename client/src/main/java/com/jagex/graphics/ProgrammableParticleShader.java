@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public class ProgrammableParticleShader extends ParticleShader {
 
 	@ObfuscatedName("ahr.u")
-	public Shader shader;
+	public GpuShader shader;
 
 	@ObfuscatedName("ahr.z")
 	public ProgramUniform field10512;
@@ -35,15 +35,15 @@ public class ProgrammableParticleShader extends ParticleShader {
 	public ProgramUniform field10511;
 
 	@ObfuscatedName("ahr.y")
-	public Program field10514;
+	public GpuProgram field10514;
 
 	@ObfuscatedName("ahr.q")
-	public Program field10513;
+	public GpuProgram field10513;
 
 	@ObfuscatedName("ahr.x")
-	public Program field10510;
+	public GpuProgram field10510;
 
-	public ProgrammableParticleShader(GpuRenderer arg0) throws ShaderException {
+	public ProgrammableParticleShader(GpuToolkit arg0) throws ShaderException {
 		super(arg0);
 		this.method16630();
 	}

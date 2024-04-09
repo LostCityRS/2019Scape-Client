@@ -21,9 +21,9 @@ import com.jagex.game.network.protocol.ServerProt;
 import com.jagex.game.scene.ChangeLocationRequest;
 import com.jagex.game.script.SubInterface;
 import com.jagex.game.world.entity.PlayerStat;
-import com.jagex.graphics.ClientWatch;
-import com.jagex.graphics.MiniMenu;
-import com.jagex.graphics.Minimap;
+import com.jagex.game.ClientWatch;
+import com.jagex.game.MiniMenu;
+import com.jagex.game.MiniMap;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import rs2.client.Client;
@@ -1179,7 +1179,7 @@ public class LoginManager {
 		Client.lobbyConnection.closeGracefully();
 		method14959();
 		GameShell.focus = true;
-		ClassCheck.method4052();
+		ReflectionCheck.method4052();
 		for (int var0 = 0; var0 < Client.hintArrows.length; var0++) {
 			Client.hintArrows[var0] = null;
 		}
@@ -1190,7 +1190,7 @@ public class LoginManager {
 		Client.minimapAnticheatAngle = (int) (Math.random() * 120.0D) - 60;
 		Client.minimapZoom = (int) (Math.random() * 30.0D) - 20;
 		Client.orbitCameraYaw = (int) (Math.random() * 160.0D) - 80 & 0x3FFF;
-		Minimap.method9233();
+		MiniMap.method9233();
 		for (int var1 = 0; var1 < 2048; var1++) {
 			Client.players[var1] = null;
 		}
@@ -1268,7 +1268,7 @@ public class LoginManager {
 		connection.idleNetCycles = 0;
 		Client.rebootTimer = 0;
 		MiniMenu.method5175();
-		Minimap.method3552();
+		MiniMap.method3552();
 		for (int var0 = 0; var0 < 2048; var0++) {
 			Client.players[var0] = null;
 		}

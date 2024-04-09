@@ -1,6 +1,6 @@
 package com.jagex.game.script;
 
-import com.jagex.game.world.entity.ObjectWrapper;
+import com.jagex.game.world.entity.ObjectNode;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 import rs2.client.clientscript.ScriptRunner;
@@ -19,7 +19,7 @@ public class SubInterfaceActiveNpc extends SubInterface {
 
 	@ObfuscatedName("asz.e(B)Z")
 	public boolean method18183() {
-		ObjectWrapper var1 = (ObjectWrapper) Client.npcs.getNode((long) this.field12428);
+		ObjectNode var1 = (ObjectNode) Client.npcs.getNode((long) this.field12428);
 		if (var1 == null) {
 			return false;
 		} else {

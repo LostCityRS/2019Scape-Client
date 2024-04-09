@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public abstract class WaterShader extends GpuRendererRelated2 {
 
 	@ObfuscatedName("ahi.n")
-	public Shader shader;
+	public GpuShader shader;
 
 	@ObfuscatedName("ahi.m")
 	public ProgramUniform textureMatrixUniform;
@@ -73,7 +73,7 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 	@ObfuscatedName("ahi.ac")
 	public float[] field10612 = new float[3];
 
-	public WaterShader(GpuRenderer gpuRenderer) {
+	public WaterShader(GpuToolkit gpuRenderer) {
 		super(gpuRenderer);
 		new Matrix4x3();
 		this.field10611 = new Matrix4x4[this.gpuRenderer.maxSimutaneousTextures];
@@ -105,7 +105,7 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 		this.sunDirectionOSUniform = this.shader.getUniform2("sunDirectionOS");
 		if (this.method16762()) {
 			if (this.shader.getCurrentProgram() == null) {
-				Program var2 = this.shader.compilePrograms();
+				GpuProgram var2 = this.shader.compilePrograms();
 				if (var2 == null) {
 					throw new ShaderException(this.shader.getName() + "");
 				}

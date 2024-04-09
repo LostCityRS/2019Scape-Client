@@ -4,7 +4,7 @@ import com.jagex.core.datastruct.WeightedCache;
 import com.jagex.core.io.GZip;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.load.*;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.graphics.SpriteDataProvider;
 import com.jagex.js5.Js5;
@@ -37,7 +37,7 @@ public class MainLoadingScreen implements LoadingScreen {
 	public final int field2932;
 
 	@ObfuscatedName("jr.l")
-	public Renderer field2933;
+	public Toolkit field2933;
 
 	@ObfuscatedName("jr.u")
 	public boolean field2929;
@@ -59,8 +59,8 @@ public class MainLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("jr.l(S)V")
 	public void method4916() {
-		if (Client.renderer != this.field2933) {
-			this.field2933 = Client.renderer;
+		if (Client.toolkit != this.field2933) {
+			this.field2933 = Client.toolkit;
 			this.field2929 = true;
 		}
 		this.field2933.method2475(3, 0);
@@ -113,7 +113,7 @@ public class MainLoadingScreen implements LoadingScreen {
 		Sprite var2 = (Sprite) field2930.get((long) arg1);
 		if (var2 == null) {
 			if (Loading.field2941) {
-				var2 = Client.renderer.createSprite(SpriteDataProvider.get(arg0, arg1), true);
+				var2 = Client.toolkit.createSprite(SpriteDataProvider.get(arg0, arg1), true);
 			} else {
 				var2 = method3594(arg0.method6894(arg1));
 			}
@@ -146,7 +146,7 @@ public class MainLoadingScreen implements LoadingScreen {
 			int height = img.getHeight();
 			int[] pixels = new int[width * height];
 			img.getRGB(0, 0, width, height, pixels, 0, width);
-			return Client.renderer.createSprite(pixels, 0, width, width, height);
+			return Client.toolkit.createSprite(pixels, 0, width, width, height);
 		} catch (Exception ex) {
 			return null;
 		}

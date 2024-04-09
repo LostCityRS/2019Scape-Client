@@ -3,7 +3,7 @@ package com.jagex.game.world.entity;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.Model;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
@@ -29,7 +29,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	@ObfuscatedName("ajy.s")
 	public final boolean field11130;
 
-	public DynamicSceneryEntity(Scene arg0, Renderer arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, int arg16, int arg17, boolean arg18, ScaleRotTrans arg19) {
+	public DynamicSceneryEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, int arg16, int arg17, boolean arg18, ScaleRotTrans arg19) {
 		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.raiseobject == 1, method6824(arg14, arg15), arg19);
 		this.field11131 = new DynamicLoc(arg1, arg2, arg3, arg14, arg15, arg5, this, arg9, arg16, arg17);
 		this.field11128 = arg3.active != 0 && !arg9;
@@ -62,7 +62,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Renderer renderer) {
+	public EntityBounds method17371(Toolkit toolkit) {
 		return this.field11129;
 	}
 
@@ -72,24 +72,24 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Renderer renderer) {
-		Model var2 = this.field11131.method8238(renderer, 2048, false, true);
+	public PickableEntity draw(Toolkit toolkit) {
+		Model var2 = this.field11131.method8238(toolkit, 2048, false, true);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
 		PickableEntity var4 = PickableEntity.getPickableEntity(this.field11128);
-		this.field11131.method8239(renderer, var2, var3, this.field12471, this.field12472, this.field12468, this.field12467, true);
+		this.field11131.method8239(toolkit, var2, var3, this.field12471, this.field12472, this.field12468, this.field12467, true);
 		LocType var5 = this.field11131.method8237();
 		if (var5.clickbox == null) {
 			var2.draw(var3, this.entityBounds[0], 0);
 		} else {
 			var2.draw(var3, null, 0);
-			renderer.method2193(var3, this.entityBounds[0], var5.clickbox);
+			toolkit.method2193(var3, this.entityBounds[0], var5.clickbox);
 		}
 		if (this.field11131.field6680 != null) {
 			ParticleList var6 = this.field11131.field6680.method9965();
-			renderer.drawParticles(var6);
+			toolkit.drawParticles(var6);
 		}
 		this.field11127 = var2.method1731() || this.field11131.field6680 != null;
 		ScaleRotTrans var7 = this.getTransform();
@@ -102,10 +102,10 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fw(Ldh;I)V")
-	public void method17373(Renderer renderer) {
-		Model var2 = this.field11131.method8238(renderer, 262144, true, true);
+	public void method17373(Toolkit toolkit) {
+		Model var2 = this.field11131.method8238(toolkit, 262144, true, true);
 		if (var2 != null) {
-			this.field11131.method8239(renderer, var2, this.method10533(), this.field12471, this.field12472, this.field12468, this.field12467, false);
+			this.field11131.method8239(toolkit, var2, this.method10533(), this.field12471, this.field12472, this.field12468, this.field12467, false);
 		}
 	}
 
@@ -115,13 +115,13 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fa(Ldh;IIB)Z")
-	public boolean method17375(Renderer renderer, int arg1, int arg2) {
+	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
 		LocType var4 = this.field11131.method8237();
 		if (var4.clickbox == null) {
-			Model var5 = this.field11131.method8238(renderer, 131072, false, false);
+			Model var5 = this.field11131.method8238(toolkit, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
-			return renderer.pick(arg1, arg2, this.method10533(), var4.clickbox);
+			return toolkit.pick(arg1, arg2, this.method10533(), var4.clickbox);
 		}
 	}
 
@@ -131,7 +131,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Renderer renderer, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
@@ -170,12 +170,12 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.l(Ldh;B)V")
-	public void method8217(Renderer arg0) {
+	public void method8217(Toolkit arg0) {
 		this.field11131.method8241(arg0);
 	}
 
 	@ObfuscatedName("ajy.u(Ldh;B)V")
-	public void method8209(Renderer arg0) {
+	public void method8209(Toolkit arg0) {
 		this.field11131.method8242(arg0);
 	}
 }

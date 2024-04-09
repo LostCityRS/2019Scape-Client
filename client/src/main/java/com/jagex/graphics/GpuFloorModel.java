@@ -19,7 +19,7 @@ import java.util.Iterator;
 public class GpuFloorModel extends FloorModel {
 
 	@ObfuscatedName("aem.u")
-	public final GpuRenderer field9516;
+	public final GpuToolkit field9516;
 
 	@ObfuscatedName("aem.z")
 	public int field9488;
@@ -138,7 +138,7 @@ public class GpuFloorModel extends FloorModel {
 	@ObfuscatedName("aem.ab")
 	public int[] field9526 = new int[1];
 
-	public GpuFloorModel(GpuRenderer arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
+	public GpuFloorModel(GpuToolkit arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
 		super(arg3, arg4, arg7, arg5);
 		this.field9516 = arg0;
 		this.field9488 = this.field1236 - 2;
@@ -714,7 +714,7 @@ public class GpuFloorModel extends FloorModel {
 			var22.field2975.setTo(0.0F, 0.0F, 0.0F);
 		}
 		if (var21 != 0) {
-			IndexBuffer var23 = this.field9516.method15988(var21 / 2);
+			GpuIndexBuffer var23 = this.field9516.method15988(var21 / 2);
 			var23.upload(0, var21, this.field9516.temporaryBufferAddress);
 			this.field9516.setStreamSource(0, this.field9508);
 			this.field9516.setIndices(var23);
@@ -876,7 +876,7 @@ public class GpuFloorModel extends FloorModel {
 		if (this.field9511 <= 0) {
 			return;
 		}
-		IndexBuffer var9 = this.field9516.method15988(this.field9517);
+		GpuIndexBuffer var9 = this.field9516.method15988(this.field9517);
 		int var10 = 0;
 		int var11 = 32767;
 		int var12 = -32768;

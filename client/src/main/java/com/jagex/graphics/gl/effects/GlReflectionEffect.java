@@ -1,9 +1,9 @@
 package com.jagex.graphics.gl.effects;
 
 import com.jagex.graphics.RenderList;
-import com.jagex.graphics.legacygl.LegacyOpenGLCubeTexture;
-import com.jagex.graphics.legacygl.LegacyOpenGLRenderer;
-import com.jagex.graphics.legacygl.LegacyOpenGLTexture;
+import com.jagex.graphics.gl.GlCubeTexture;
+import com.jagex.graphics.gl.GlToolkit;
+import com.jagex.graphics.gl.GlTexture;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
@@ -16,7 +16,7 @@ public class GlReflectionEffect extends GlEffect {
 	@ObfuscatedName("aez.f")
 	public boolean field9294 = false;
 
-	public GlReflectionEffect(LegacyOpenGLRenderer arg0) {
+	public GlReflectionEffect(GlToolkit arg0) {
 		super(arg0);
 		if (arg0.field9952) {
 			this.field9291 = new RenderList(arg0, 2);
@@ -56,7 +56,7 @@ public class GlReflectionEffect extends GlEffect {
 
 	@ObfuscatedName("aez.n(Z)V")
 	public void method1263(boolean arg0) {
-		LegacyOpenGLCubeTexture var2 = this.field1021.method15760();
+		GlCubeTexture var2 = this.field1021.method15760();
 		if (this.field9291 == null || var2 == null || !arg0) {
 			this.field1021.method15781(0, 34168, 770);
 			return;
@@ -96,7 +96,7 @@ public class GlReflectionEffect extends GlEffect {
 	}
 
 	@ObfuscatedName("aez.w(Lbq;I)V")
-	public void method1251(LegacyOpenGLTexture arg0, int arg1) {
+	public void method1251(GlTexture arg0, int arg1) {
 		this.field1021.method15777(arg0);
 		this.field1021.method15778(arg1);
 	}

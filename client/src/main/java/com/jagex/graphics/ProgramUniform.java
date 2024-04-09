@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
 import com.jagex.core.datastruct.HashMapValue;
-import com.jagex.graphics.gl.OpenGLError;
+import com.jagex.graphics.glx.GlxError;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aql")
@@ -56,7 +56,7 @@ public abstract class ProgramUniform extends HashMapValue {
 	@ObfuscatedName("aql.f(I)I")
 	public int getElementCount() {
 		if (UniformType.ARRAY != this.field12211) {
-			throw new OpenGLError(this, this.field12211.toString().toLowerCase());
+			throw new GlxError(this, this.field12211.toString().toLowerCase());
 		}
 		return this.field12212;
 	}

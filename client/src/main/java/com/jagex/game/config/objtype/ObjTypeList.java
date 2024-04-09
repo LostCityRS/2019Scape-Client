@@ -8,7 +8,7 @@ import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.game.config.defaults.GraphicsDefaults;
 import com.jagex.game.world.entity.PlayerModel;
 import com.jagex.graphics.Font;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
@@ -21,12 +21,12 @@ public class ObjTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aon.al(Ldh;IIIIILxg;I)Lcm;")
-	public Sprite method18900(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, PlayerModel arg6) {
+	public Sprite method18900(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, PlayerModel arg6) {
 		return ((ObjTypeFactory) this.factory).method14616(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("aon.ac(Ldh;Ldh;IIIIZZILeu;Lxg;Lws;S)Lcm;")
-	public Sprite method18905(Renderer arg0, Renderer arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, Font arg9, PlayerModel arg10, GraphicsDefaults arg11) {
+	public Sprite method18905(Toolkit arg0, Toolkit arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7, int arg8, Font arg9, PlayerModel arg10, GraphicsDefaults arg11) {
 		return ((ObjTypeFactory) this.factory).method14617(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, this);
 	}
 

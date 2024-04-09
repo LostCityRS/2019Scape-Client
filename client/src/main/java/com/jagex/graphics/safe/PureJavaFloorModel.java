@@ -2,7 +2,6 @@ package com.jagex.graphics.safe;
 
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.HardShadow;
-import com.jagex.game.client.Rasteriser;
 import com.jagex.graphics.*;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
@@ -11,7 +10,7 @@ import deob.ObfuscatedName;
 public class PureJavaFloorModel extends FloorModel {
 
 	@ObfuscatedName("aee.d")
-	public final PureJavaRenderer field9423;
+	public final PureJavaToolkit field9423;
 
 	@ObfuscatedName("aee.c")
 	public final int field9427;
@@ -85,7 +84,7 @@ public class PureJavaFloorModel extends FloorModel {
 	@ObfuscatedName("aee.at")
 	public byte[][] field9447;
 
-	public PureJavaFloorModel(PureJavaRenderer arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
+	public PureJavaFloorModel(PureJavaToolkit arg0, int arg1, int arg2, int arg3, int arg4, int[][] arg5, int[][] arg6, int arg7) {
 		super(arg3, arg4, arg7, arg5);
 		this.field9423 = arg0;
 		this.field9427 = arg2;
@@ -783,7 +782,7 @@ public class PureJavaFloorModel extends FloorModel {
 
 	@ObfuscatedName("aee.ao(III)V")
 	public void method15392(int arg0, int arg1, int arg2) {
-		PureJavaRendererContext var4 = this.field9423.getContext(Thread.currentThread());
+		PureJavaToolkitContext var4 = this.field9423.getContext(Thread.currentThread());
 		var4.rasteriser.field935 = 0;
 		if (this.field9438 != null) {
 			this.method15405(arg0, arg1, var4.field867, var4, var4.rasteriser, var4.field863, var4.field827, var4.field831, var4.field866, var4.field859, arg2);
@@ -795,7 +794,7 @@ public class PureJavaFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aee.aj(IILbd;[F[F[F[F[FI)V")
-	public void method15393(int arg0, int arg1, Rasteriser arg2, float[] arg3, float[] arg4, float[] arg5, float[] arg6, float[] arg7, int arg8) {
+	public void method15393(int arg0, int arg1, PureJavaRasteriser arg2, float[] arg3, float[] arg4, float[] arg5, float[] arg6, float[] arg7, int arg8) {
 		UnblendedTileData1 var10 = this.field9425[arg0][arg1];
 		if (var10 == null) {
 			UnblendedTileData2 var66 = this.field9443[arg0][arg1];
@@ -1021,7 +1020,7 @@ public class PureJavaFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aee.ay(IIZLaz;Lbd;[F[F[F[F[FI)V")
-	public void method15405(int arg0, int arg1, boolean arg2, PureJavaRendererContext arg3, Rasteriser arg4, float[] arg5, float[] arg6, float[] arg7, float[] arg8, float[] arg9, int arg10) {
+	public void method15405(int arg0, int arg1, boolean arg2, PureJavaToolkitContext arg3, PureJavaRasteriser arg4, float[] arg5, float[] arg6, float[] arg7, float[] arg8, float[] arg9, int arg10) {
 		BlendedUntexturedTileData1 var12 = this.field9438[arg0][arg1];
 		if (var12 == null) {
 			BlendedUntexturedTileData2 var99 = this.field9428[arg0][arg1];
@@ -1464,7 +1463,7 @@ public class PureJavaFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aee.ab(IIZLaz;Lbd;[F[F[F[F[FI)V")
-	public void method15394(int arg0, int arg1, boolean arg2, PureJavaRendererContext arg3, Rasteriser arg4, float[] arg5, float[] arg6, float[] arg7, float[] arg8, float[] arg9, int arg10) {
+	public void method15394(int arg0, int arg1, boolean arg2, PureJavaToolkitContext arg3, PureJavaRasteriser arg4, float[] arg5, float[] arg6, float[] arg7, float[] arg8, float[] arg9, int arg10) {
 		BlendedTexturedTileData var12 = this.field9429[arg0][arg1];
 		if (arg10 != 0 && (arg10 & 0x2) != 0 || var12 == null) {
 			return;
@@ -1559,8 +1558,8 @@ public class PureJavaFloorModel extends FloorModel {
 
 	@ObfuscatedName("aee.w(IIIIIII[[Z)V")
 	public void method1526(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7) {
-		PureJavaRendererContext var9 = this.field9423.getContext(Thread.currentThread());
-		Rasteriser var10 = var9.rasteriser;
+		PureJavaToolkitContext var9 = this.field9423.getContext(Thread.currentThread());
+		PureJavaRasteriser var10 = var9.rasteriser;
 		var10.field935 = 0;
 		var10.field936 = true;
 		this.field9423.method15687();
@@ -1572,7 +1571,7 @@ public class PureJavaFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aee.aa(IIIIIII[[ZLaz;Lbd;[F[F)V")
-	public void method15401(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7, PureJavaRendererContext arg8, Rasteriser arg9, float[] arg10, float[] arg11) {
+	public void method15401(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7, PureJavaToolkitContext arg8, PureJavaRasteriser arg9, float[] arg10, float[] arg11) {
 		int var13 = (arg6 - arg4) * arg2 / 256;
 		int var14 = arg2 >> 8;
 		boolean var15 = arg8.field834;
@@ -1637,7 +1636,7 @@ public class PureJavaFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aee.af(IIIIIII[[ZLaz;Lbd;[F[F)V")
-	public void method15395(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7, PureJavaRendererContext arg8, Rasteriser arg9, float[] arg10, float[] arg11) {
+	public void method15395(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, boolean[][] arg7, PureJavaToolkitContext arg8, PureJavaRasteriser arg9, float[] arg10, float[] arg11) {
 		int var13 = (arg6 - arg4) * arg2 / 256;
 		int var14 = arg2 >> 8;
 		boolean var15 = arg8.field834;

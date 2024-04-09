@@ -3,8 +3,6 @@ package com.jagex.graphics.safe;
 import com.jagex.core.utils.Algorithms;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.HardShadow;
-import com.jagex.game.client.JavaModelRelated1;
-import com.jagex.game.client.Rasteriser;
 import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.BillboardType;
 import com.jagex.game.config.BillboardTypeList;
@@ -19,19 +17,19 @@ import deob.ObfuscatedName;
 public class PureJavaModel extends Model {
 
 	@ObfuscatedName("afi.f")
-	public PureJavaRenderer renderer;
+	public PureJavaToolkit renderer;
 
 	@ObfuscatedName("afi.w")
 	public boolean field9533 = false;
 
 	@ObfuscatedName("afi.l")
-	public PureJavaRendererContext field9534;
+	public PureJavaToolkitContext field9534;
 
 	@ObfuscatedName("afi.u")
-	public PureJavaRendererContext field9535;
+	public PureJavaToolkitContext field9535;
 
 	@ObfuscatedName("afi.z")
-	public Rasteriser rasteriser;
+	public PureJavaRasteriser rasteriser;
 
 	@ObfuscatedName("afi.p")
 	public static int field9547 = 4096;
@@ -67,10 +65,10 @@ public class PureJavaModel extends Model {
 	public short[] vertexSourceModels;
 
 	@ObfuscatedName("afi.ae")
-	public VertexNormal[] vertexNormal;
+	public PureJavaVertexNormal[] vertexNormal;
 
 	@ObfuscatedName("afi.ag")
-	public VertexNormal[] field9555;
+	public PureJavaVertexNormal[] field9555;
 
 	@ObfuscatedName("afi.ah")
 	public int faceCount = 0;
@@ -106,7 +104,7 @@ public class PureJavaModel extends Model {
 	public int field9602 = 0;
 
 	@ObfuscatedName("afi.av")
-	public JavaModelRelated1[] field9570;
+	public PureJavaModelRelated1[] field9570;
 
 	@ObfuscatedName("afi.ao")
 	public byte[] faceType;
@@ -252,11 +250,11 @@ public class PureJavaModel extends Model {
 	@ObfuscatedName("afi.cf")
 	public PureJavaModel[] field9539;
 
-	public PureJavaModel(PureJavaRenderer renderer) {
+	public PureJavaModel(PureJavaToolkit renderer) {
 		this.renderer = renderer;
 	}
 
-	public PureJavaModel(PureJavaRenderer renderer, ModelUnlit model, int allowedOperations, int arg3, int arg4, int arg5) {
+	public PureJavaModel(PureJavaToolkit renderer, ModelUnlit model, int allowedOperations, int arg3, int arg4, int arg5) {
 		this.renderer = renderer;
 		this.allowedOperations = allowedOperations;
 		this.field9546 = arg3;
@@ -389,7 +387,7 @@ public class PureJavaModel extends Model {
 		this.faceVertexU = new float[this.faceCount][];
 		this.faceVertexV = new float[this.faceCount][];
 		ModelRelated1 var40 = this.method1687(model, var9, this.faceCount);
-		PureJavaRendererContext var41 = this.renderer.getContext(Thread.currentThread());
+		PureJavaToolkitContext var41 = this.renderer.getContext(Thread.currentThread());
 		float[] var42 = var41.field860;
 		boolean var43 = false;
 
@@ -632,7 +630,7 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.hb(Laz;)V")
-	public void method15458(PureJavaRendererContext arg0) {
+	public void method15458(PureJavaToolkitContext arg0) {
 		this.rasteriser = arg0.rasteriser;
 		if (this.field9534 == arg0) {
 			return;
@@ -653,7 +651,7 @@ public class PureJavaModel extends Model {
 
 	@ObfuscatedName("afi.hg(Ljava/lang/Thread;)V")
 	public void method15545(Thread arg0) {
-		PureJavaRendererContext var2 = this.renderer.getContext(arg0);
+		PureJavaToolkitContext var2 = this.renderer.getContext(arg0);
 		if (this.field9535 != var2) {
 			this.field9535 = var2;
 			this.field9617 = this.field9535.field830;
@@ -677,9 +675,9 @@ public class PureJavaModel extends Model {
 
 	@ObfuscatedName("afi.hx()V")
 	public void method15459() {
-		this.vertexNormal = new VertexNormal[this.field9549];
+		this.vertexNormal = new PureJavaVertexNormal[this.field9549];
 		for (int var1 = 0; var1 < this.field9549; var1++) {
-			this.vertexNormal[var1] = new VertexNormal();
+			this.vertexNormal[var1] = new PureJavaVertexNormal();
 		}
 		for (int var2 = 0; var2 < this.faceCount; var2++) {
 			short var3 = this.faceVertex1[var2];
@@ -712,26 +710,26 @@ public class PureJavaModel extends Model {
 				var19 = this.faceType[var2];
 			}
 			if (var19 == 0) {
-				VertexNormal var20 = this.vertexNormal[var3];
+				PureJavaVertexNormal var20 = this.vertexNormal[var3];
 				var20.field875 += var16;
 				var20.field874 += var17;
 				var20.field873 += var18;
 				var20.field876++;
-				VertexNormal var21 = this.vertexNormal[var4];
+				PureJavaVertexNormal var21 = this.vertexNormal[var4];
 				var21.field875 += var16;
 				var21.field874 += var17;
 				var21.field873 += var18;
 				var21.field876++;
-				VertexNormal var22 = this.vertexNormal[var5];
+				PureJavaVertexNormal var22 = this.vertexNormal[var5];
 				var22.field875 += var16;
 				var22.field874 += var17;
 				var22.field873 += var18;
 				var22.field876++;
 			} else if (var19 == 1) {
 				if (this.field9570 == null) {
-					this.field9570 = new JavaModelRelated1[this.faceCount];
+					this.field9570 = new PureJavaModelRelated1[this.faceCount];
 				}
-				JavaModelRelated1 var23 = this.field9570[var2] = new JavaModelRelated1();
+				PureJavaModelRelated1 var23 = this.field9570[var2] = new PureJavaModelRelated1();
 				var23.field871 = var16;
 				var23.field869 = var17;
 				var23.field870 = var18;
@@ -806,7 +804,7 @@ public class PureJavaModel extends Model {
 				if (var11 != -1) {
 					int var34 = this.faceColour[var8] & 0xFFFF;
 					if (var9 == 0) {
-						VertexNormal var35;
+						PureJavaVertexNormal var35;
 						if (this.field9555 == null || this.field9555[this.faceVertex1[var8]] == null) {
 							var35 = this.vertexNormal[this.faceVertex1[var8]];
 						} else {
@@ -816,7 +814,7 @@ public class PureJavaModel extends Model {
 						int var37 = var36 > 256 ? var6 : var7;
 						int var38 = this.method15463((var36 * var37 >> 18) + (var5 >> 2));
 						this.field9563[var8] = var38 << 24 | this.method15461(var34, var11, var38);
-						VertexNormal var39;
+						PureJavaVertexNormal var39;
 						if (this.field9555 == null || this.field9555[this.faceVertex2[var8]] == null) {
 							var39 = this.vertexNormal[this.faceVertex2[var8]];
 						} else {
@@ -826,7 +824,7 @@ public class PureJavaModel extends Model {
 						int var41 = var40 > 256 ? var6 : var7;
 						int var42 = this.method15463((var40 * var41 >> 18) + (var5 >> 2));
 						this.field9583[var8] = var42 << 24 | this.method15461(var34, var11, var42);
-						VertexNormal var43;
+						PureJavaVertexNormal var43;
 						if (this.field9555 == null || this.field9555[this.faceVertex3[var8]] == null) {
 							var43 = this.vertexNormal[this.faceVertex3[var8]];
 						} else {
@@ -837,7 +835,7 @@ public class PureJavaModel extends Model {
 						int var46 = this.method15463((var44 * var45 >> 18) + (var5 >> 2));
 						this.field9565[var8] = var46 << 24 | this.method15461(var34, var11, var46);
 					} else if (var9 == 1) {
-						JavaModelRelated1 var47 = this.field9570[var8];
+						PureJavaModelRelated1 var47 = this.field9570[var8];
 						int var48 = var47.field870 * var4 + var47.field871 * var2 + var47.field869 * var3 >> 16;
 						int var49 = var48 > 256 ? var6 : var7;
 						int var50 = this.method15463((var48 * var49 >> 18) + (var5 >> 2));
@@ -850,7 +848,7 @@ public class PureJavaModel extends Model {
 					int var12 = this.faceColour[var8] & 0xFFFF;
 					int var13 = (var12 & 0x7F) * this.field9546 >> 7;
 					short var14 = ColourUtils.method4937(var12 & 0xFFFFFF80 | var13);
-					VertexNormal var15;
+					PureJavaVertexNormal var15;
 					if (this.field9555 == null || this.field9555[this.faceVertex1[var8]] == null) {
 						var15 = this.vertexNormal[this.faceVertex1[var8]];
 					} else {
@@ -860,7 +858,7 @@ public class PureJavaModel extends Model {
 					int var17 = var16 > 256 ? var6 : var7;
 					int var18 = (var16 * var17 >> 17) + (var5 >> 1);
 					this.field9563[var8] = var18 << 17 | ColourUtils.method6807(var14, var18);
-					VertexNormal var19;
+					PureJavaVertexNormal var19;
 					if (this.field9555 == null || this.field9555[this.faceVertex2[var8]] == null) {
 						var19 = this.vertexNormal[this.faceVertex2[var8]];
 					} else {
@@ -870,7 +868,7 @@ public class PureJavaModel extends Model {
 					int var21 = var20 > 256 ? var6 : var7;
 					int var22 = (var20 * var21 >> 17) + (var5 >> 1);
 					this.field9583[var8] = var22 << 17 | ColourUtils.method6807(var14, var22);
-					VertexNormal var23;
+					PureJavaVertexNormal var23;
 					if (this.field9555 == null || this.field9555[this.faceVertex3[var8]] == null) {
 						var23 = this.vertexNormal[this.faceVertex3[var8]];
 					} else {
@@ -884,7 +882,7 @@ public class PureJavaModel extends Model {
 					int var27 = this.faceColour[var8] & 0xFFFF;
 					int var28 = (var27 & 0x7F) * this.field9546 >> 7;
 					short var29 = ColourUtils.method4937(var27 & 0xFFFFFF80 | var28);
-					JavaModelRelated1 var30 = this.field9570[var8];
+					PureJavaModelRelated1 var30 = this.field9570[var8];
 					int var31 = var30.field870 * var4 + var30.field871 * var2 + var30.field869 * var3 >> 16;
 					int var32 = var31 > 256 ? var6 : var7;
 					int var33 = (var31 * var32 >> 17) + (var5 >> 1);
@@ -1018,7 +1016,7 @@ public class PureJavaModel extends Model {
 			int[] var8 = var6.vertexX;
 			int var9 = var6.field9549;
 			for (int var10 = 0; var10 < this.field9549; var10++) {
-				VertexNormal var11 = this.vertexNormal[var10];
+				PureJavaVertexNormal var11 = this.vertexNormal[var10];
 				if (var11.field876 != 0) {
 					int var12 = this.vertexY[var10] - arg2;
 					if (var12 >= var6.minY && var12 <= var6.maxY) {
@@ -1027,21 +1025,21 @@ public class PureJavaModel extends Model {
 							int var14 = this.vertexZ[var10] - arg3;
 							if (var14 >= var6.minZ && var14 <= var6.maxZ) {
 								for (int var15 = 0; var15 < var9; var15++) {
-									VertexNormal var16 = var6.vertexNormal[var15];
+									PureJavaVertexNormal var16 = var6.vertexNormal[var15];
 									if (var8[var15] == var13 && var6.vertexZ[var15] == var14 && var6.vertexY[var15] == var12 && var16.field876 != 0) {
 										if (this.field9555 == null) {
-											this.field9555 = new VertexNormal[this.field9549];
+											this.field9555 = new PureJavaVertexNormal[this.field9549];
 										}
 										if (var6.field9555 == null) {
-											var6.field9555 = new VertexNormal[var9];
+											var6.field9555 = new PureJavaVertexNormal[var9];
 										}
-										VertexNormal var17 = this.field9555[var10];
+										PureJavaVertexNormal var17 = this.field9555[var10];
 										if (var17 == null) {
-											var17 = this.field9555[var10] = new VertexNormal(var11);
+											var17 = this.field9555[var10] = new PureJavaVertexNormal(var11);
 										}
-										VertexNormal var18 = var6.field9555[var15];
+										PureJavaVertexNormal var18 = var6.field9555[var15];
 										if (var18 == null) {
-											var18 = var6.field9555[var15] = new VertexNormal(var16);
+											var18 = var6.field9555[var15] = new PureJavaVertexNormal(var16);
 										}
 										var17.field875 += var16.field875;
 										var17.field874 += var16.field874;
@@ -1255,7 +1253,7 @@ public class PureJavaModel extends Model {
 		} else {
 			if (arg1.vertexNormal == null || arg1.vertexNormal.length < this.field9549) {
 				int var22 = this.field9549;
-				arg0.vertexNormal = arg1.vertexNormal = new VertexNormal[var22];
+				arg0.vertexNormal = arg1.vertexNormal = new PureJavaVertexNormal[var22];
 			} else {
 				arg0.vertexNormal = arg1.vertexNormal;
 			}
@@ -1263,7 +1261,7 @@ public class PureJavaModel extends Model {
 				arg0.vertexNormal = null;
 			} else {
 				for (int var23 = 0; var23 < this.field9549; var23++) {
-					arg0.vertexNormal[var23] = new VertexNormal(this.vertexNormal[var23]);
+					arg0.vertexNormal[var23] = new PureJavaVertexNormal(this.vertexNormal[var23]);
 				}
 			}
 			if (this.field9570 == null) {
@@ -1271,12 +1269,12 @@ public class PureJavaModel extends Model {
 			} else {
 				if (arg1.field9570 == null || arg1.field9570.length < this.faceCount) {
 					int var24 = this.faceCount;
-					arg0.field9570 = arg1.field9570 = new JavaModelRelated1[var24];
+					arg0.field9570 = arg1.field9570 = new PureJavaModelRelated1[var24];
 				} else {
 					arg0.field9570 = arg1.field9570;
 				}
 				for (int var25 = 0; var25 < this.faceCount; var25++) {
-					arg0.field9570[var25] = this.field9570[var25] == null ? null : new JavaModelRelated1(this.field9570[var25]);
+					arg0.field9570[var25] = this.field9570[var25] == null ? null : new PureJavaModelRelated1(this.field9570[var25]);
 				}
 			}
 		}
@@ -2855,7 +2853,7 @@ public class PureJavaModel extends Model {
 		if (this.vertexSourceModels == null) {
 			return;
 		}
-		PureJavaRendererContext var4 = this.renderer.getContext(Thread.currentThread());
+		PureJavaToolkitContext var4 = this.renderer.getContext(Thread.currentThread());
 		Matrix4x3 var5 = var4.field838;
 		var5.setTo(arg0);
 		if (arg2) {
@@ -2884,7 +2882,7 @@ public class PureJavaModel extends Model {
 		if (this.field9549 < 1) {
 			return;
 		}
-		PureJavaRendererContext var4 = this.renderer.getContext(Thread.currentThread());
+		PureJavaToolkitContext var4 = this.renderer.getContext(Thread.currentThread());
 		Matrix4x4 var5 = var4.field828;
 		var5.setToMatrix4x3(arg0);
 		Matrix4x4 var6 = this.renderer.field9793;

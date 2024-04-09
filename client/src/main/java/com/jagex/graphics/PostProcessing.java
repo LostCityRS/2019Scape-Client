@@ -3,9 +3,9 @@ package com.jagex.graphics;
 import com.jagex.core.datastruct.IterableQueue;
 import com.jagex.core.datastruct.Node;
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.legacygl.LegacyOpenGLFramebuffer;
-import com.jagex.graphics.legacygl.LegacyOpenGLRelated;
-import com.jagex.graphics.legacygl.LegacyOpenGLRenderer;
+import com.jagex.graphics.gl.GlFramebuffer;
+import com.jagex.graphics.gl.GlTexture_Sub1;
+import com.jagex.graphics.gl.GlToolkit;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
@@ -13,16 +13,16 @@ import jaggl.OpenGL;
 public class PostProcessing {
 
 	@ObfuscatedName("cv.e")
-	public final LegacyOpenGLRenderer field1169;
+	public final GlToolkit field1169;
 
 	@ObfuscatedName("cv.n")
-	public LegacyOpenGLFramebuffer field1162;
+	public GlFramebuffer field1162;
 
 	@ObfuscatedName("cv.m")
-	public LegacyOpenGLFramebuffer field1163;
+	public GlFramebuffer field1163;
 
 	@ObfuscatedName("cv.k")
-	public LegacyOpenGLFramebuffer field1164;
+	public GlFramebuffer field1164;
 
 	@ObfuscatedName("cv.f")
 	public int field1165 = 0;
@@ -55,13 +55,13 @@ public class PostProcessing {
 	public boolean field1174 = true;
 
 	@ObfuscatedName("cv.o")
-	public LegacyOpenGLRelated[] field1175 = new LegacyOpenGLRelated[2];
+	public GlTexture_Sub1[] field1175 = new GlTexture_Sub1[2];
 
 	@ObfuscatedName("cv.s")
 	public PostProcessingRelated field1176;
 
 	@ObfuscatedName("cv.y")
-	public LegacyOpenGLRelated field1161;
+	public GlTexture_Sub1 field1161;
 
 	@ObfuscatedName("cv.q")
 	public PostProcessingRelated field1178;
@@ -75,12 +75,12 @@ public class PostProcessing {
 	@ObfuscatedName("cv.h")
 	public DataType field1181 = DataType.UNSIGNED_INT_8;
 
-	public PostProcessing(LegacyOpenGLRenderer arg0) {
+	public PostProcessing(GlToolkit arg0) {
 		this.field1169 = arg0;
 		if (this.field1169.field9985 && this.field1169.field9965) {
-			this.field1164 = this.field1162 = new LegacyOpenGLFramebuffer(this.field1169);
+			this.field1164 = this.field1162 = new GlFramebuffer(this.field1169);
 			if (this.field1169.field9967 > 1 && this.field1169.field9901 && this.field1169.field9987) {
-				this.field1164 = this.field1163 = new LegacyOpenGLFramebuffer(this.field1169);
+				this.field1164 = this.field1163 = new GlFramebuffer(this.field1169);
 			}
 		}
 	}
@@ -154,7 +154,7 @@ public class PostProcessing {
 				this.field1178 = new PostProcessingRelated(this.field1169, TextureFormat.DEPTH, DataType.UNSIGNED_INT_24, this.field1177, this.field1167, this.field1169.field9967);
 			}
 			if (this.field1179) {
-				this.field1161 = new LegacyOpenGLRelated(this.field1169, 34037, TextureFormat.DEPTH, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
+				this.field1161 = new GlTexture_Sub1(this.field1169, 34037, TextureFormat.DEPTH, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
 			} else if (this.field1178 == null) {
 				this.field1178 = new PostProcessingRelated(this.field1169, TextureFormat.DEPTH, DataType.UNSIGNED_INT_24, this.field1177, this.field1167);
 			}
@@ -166,8 +166,8 @@ public class PostProcessing {
 			if (this.field1163 != null) {
 				this.field1176 = new PostProcessingRelated(this.field1169, TextureFormat.RGBA, this.field1181, this.field1177, this.field1167, this.field1169.field9967);
 			}
-			this.field1175[0] = new LegacyOpenGLRelated(this.field1169, 34037, TextureFormat.RGBA, this.field1181, this.field1177, this.field1167);
-			this.field1175[1] = this.field1168 > 1 ? new LegacyOpenGLRelated(this.field1169, 34037, TextureFormat.RGBA, this.field1181, this.field1177, this.field1167) : null;
+			this.field1175[0] = new GlTexture_Sub1(this.field1169, 34037, TextureFormat.RGBA, this.field1181, this.field1177, this.field1167);
+			this.field1175[1] = this.field1168 > 1 ? new GlTexture_Sub1(this.field1169, 34037, TextureFormat.RGBA, this.field1181, this.field1177, this.field1167) : null;
 			this.field1171 = false;
 			this.field1173 = true;
 			this.field1174 = true;

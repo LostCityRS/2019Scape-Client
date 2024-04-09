@@ -1,7 +1,7 @@
  The Directory Table (offset 0x1b):
   1	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/occlusion
   2	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render/OGL
-  3	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  3	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   4	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/include/EASTL
   5	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/model
   6	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/assetbuilder/jobs/buildterrain
@@ -103,7 +103,7 @@
   102	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/postprocess/effects
   103	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/fonts
   104	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/water
-  105	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  105	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   106	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/particles
   107	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/lighting/shadowmapping
   108	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/refraction
@@ -933,7 +933,7 @@
   48	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/scene
   49	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/shared/console
   50	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/lighting
-  51	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  51	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   52	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math/quaternion
   53	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/camera/lookat
   54	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/windowing/linux
@@ -977,7 +977,7 @@
   92	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/seqtype
   93	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/npctype
   94	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/view
-  95	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  95	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   96	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/hitmarktype
   97	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/shared/utils
   98	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/taskrunner
@@ -1338,7 +1338,7 @@
   37	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/model
   38	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/audio
   39	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render
-  40	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  40	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   41	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/model/particles
   42	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/scene/entities
   43	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/msitype
@@ -1355,7 +1355,7 @@
   54	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math/vector
   55	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math/primitives
   56	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/tweaky
-  57	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  57	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   58	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/scene/minimap
   59	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/questtype
   60	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/vartype
@@ -1676,7 +1676,7 @@
   1	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/sqlite
   2	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/libpng-1.6.7/png16
   3	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/shared/movement
-  4	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  4	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   5	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math/colour/../vector
   6	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/jtl/pool
   7	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/scene
@@ -2099,7 +2099,7 @@
  The Directory Table (offset 0x14b4b):
   1	/usr/include/c++/4.8
   2	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/jtl/pool
-  3	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  3	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   4	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/src
   5	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/include/EASTL/internal
   6	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/occlusion
@@ -2114,7 +2114,7 @@
   15	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/jtl
   16	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/audio/workers
   17	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/lighting/shadowmapping
-  18	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  18	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   19	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/clientscript/ops
   20	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/libtommath
   21	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math
@@ -2220,7 +2220,7 @@
   24	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config
   25	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/lighttype
   26	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render
-  27	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  27	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   28	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/vartype
   29	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/vartype/constants
   30	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/scenegraph
@@ -2372,7 +2372,7 @@
   16	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/terrain
   17	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/jtl/managed_ptr
   18	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render
-  19	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  19	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   20	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/jtl
   21	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/js5/index
   22	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/shared/framework/input
@@ -2595,7 +2595,7 @@
   3	/usr/include/c++/4.8/bits
   4	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/include/EASTL
   5	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render/OGL
-  6	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  6	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   7	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/include/EASTL/internal
   8	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render
   9	/usr/include/c++/4.8
@@ -2675,7 +2675,7 @@
   83	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/assetbuilder/jobs/buildterrain
   84	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/water
   85	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/src
-  86	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  86	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
 
  The File Name Table (offset 0x1bb6e):
   Entry	Dir	Time	Size	Name
@@ -2917,7 +2917,7 @@
   36	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/jtl/managed_ptr
   37	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/scene
   38	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/scenegraph
-  39	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  39	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   40	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects
   41	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/shared/console
   42	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/hitmarktype
@@ -3206,7 +3206,7 @@
   10	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config
   11	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/include/EASTL/internal
   12	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render/OGL
-  13	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  13	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   14	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/file/linux
   15	/usr/include/c++/4.8/bits
   16	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render
@@ -3273,7 +3273,7 @@
   77	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/occlusion
   78	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/inventories
   79	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/terrain
-  80	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  80	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   81	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/script/activepointers
   82	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/script
   83	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/clientscript
@@ -3541,7 +3541,7 @@
   33	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/audio
   34	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/encryption
   35	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/terrain
-  36	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  36	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   37	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/materials/sprites
   38	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/primitive/debugprimitive
   39	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/primitive/debugprimitivebasic
@@ -3569,7 +3569,7 @@
   61	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects
   62	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/irradiance
   63	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/player
-  64	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  64	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   65	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/primitive/drawprimitive
   66	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/materials/shaders
   67	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/logic/clans
@@ -3856,7 +3856,7 @@
   78	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/shared/utils
   79	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/npctype
   80	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/logic/player
-  81	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  81	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   82	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/image
   83	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/camera/spline
   84	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/js5/worker
@@ -3865,7 +3865,7 @@
   87	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client
   88	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/clientstream/standard
   89	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/water
-  90	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  90	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   91	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math/primitives
   92	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/assetbuilder/jobs/buildwater
   93	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/shared/framework/input/event
@@ -4135,7 +4135,7 @@
   32	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/audio/decoders/vorbis
   33	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/materials/shaders
   34	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects
-  35	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  35	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   36	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/skybox
   37	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/audio/sdl
   38	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/pipe
@@ -4176,7 +4176,7 @@
   73	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/network
   74	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client
   75	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/time
-  76	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  76	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   77	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/lighting
   78	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/scene/entities
   79	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/scenegraph
@@ -4466,10 +4466,10 @@
   53	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/pipe/unix
   54	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/input
   55	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/animation
-  56	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  56	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   57	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/settings/file_based
   58	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/skybox
-  59	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  59	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   60	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/loctype
   61	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/water
   62	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/waterparameters
@@ -4682,7 +4682,7 @@
   16	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/jtl/pool
   17	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config
   18	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/scene/entities
-  19	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  19	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   20	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/scenegraph
   21	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math
   22	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/animation
@@ -4702,7 +4702,7 @@
   36	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/clientscript/emoji
   37	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/core/utils
   38	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/js5/caching
-  39	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  39	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   40	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render/OGL/..
   41	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/graphicutils/rendertotexture
   42	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/scene/minimap
@@ -5056,11 +5056,11 @@
   50	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/interface/components
   51	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/scene/worldmap
   52	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/particles
-  53	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  53	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   54	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/occlusion
   55	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/filesystem/sqlite
   56	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/lighting/shadowmapping
-  57	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  57	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   58	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/graphicutils/rendertotexture
   59	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/water
   60	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/waterparameters
@@ -5269,7 +5269,7 @@
   22	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/jtl/managed_ptr
   23	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/debug
   24	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/debug/sections
-  25	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  25	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   26	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects
   27	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/lighting/shadowmapping
   28	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/js5
@@ -5485,7 +5485,7 @@
   21	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/alphatesting
   22	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/particles
   23	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math/colour/../vector
-  24	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  24	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   25	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/include/EASTL/internal
   26	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/gui
   27	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/tweaky
@@ -5779,14 +5779,14 @@
   40	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/seqtype
   41	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/js5/index
   42	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/skybox
-  43	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  43	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   44	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/water
   45	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/waterparameters
   46	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/fonts
   47	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/primitive/debugprimitivebasic
   48	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/occlusion
   49	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/primitive/drawprimitive
-  50	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  50	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   51	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/iftype/components
   52	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/assetbuilder
   53	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/minimenu
@@ -6294,7 +6294,7 @@
   23	/usr/include/c++/4.8/bits
   24	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/graphicutils/createtexture
   25	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/postprocess
-  26	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  26	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   27	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/scene/entities
   28	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/water
   29	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/js5/index
@@ -6334,7 +6334,7 @@
   63	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/worldareatype
   64	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/materials/textures
   65	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render/OGL
-  66	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  66	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   67	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects/waterparameters
   68	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math/colour
   69	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/postprocess
@@ -6504,7 +6504,7 @@
  The Directory Table (offset 0x4247a):
   1	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/gui
   2	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render/OGL
-  3	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  3	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   4	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/model
   5	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/js5
   6	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/scene/entities
@@ -6583,7 +6583,7 @@
   79	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/idktype
   80	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/inventories
   81	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/assetbuilder/jobs/buildmodel
-  82	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  82	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
 
  The File Name Table (offset 0x443db):
   Entry	Dir	Time	Size	Name
@@ -6783,7 +6783,7 @@
   12	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/src
   13	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/render
   14	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7
-  15	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  15	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   16	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/effects
   17	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/heap
   18	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/core/memory
@@ -6830,7 +6830,7 @@
   59	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/materials/shaders
   60	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/time/frametime
   61	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math/colour
-  62	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  62	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   63	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek5
   64	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/particles
   65	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/postprocess/filters
@@ -7024,7 +7024,7 @@
   20	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/bytepacking
   21	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config
   22	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7
-  23	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  23	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   24	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/EASTL/include/EASTL/internal
   25	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/devplatform/3rdPartyLibs/cpp/sqlite
   26	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/shared/framework/gwc
@@ -7048,7 +7048,7 @@
   44	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/time/linux
   45	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/shared/console
   46	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/occlusion
-  47	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  47	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   48	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/graphicutils/rendertotexture
   49	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/lighting/shadowmapping
   50	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/scene/minimap
@@ -7305,10 +7305,10 @@
   21	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/core/memory
   22	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/jtl/managed_ptr
   23	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/assetbuilder/jobs/buildcombinedlocation
-  24	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer
+  24	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit
   25	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/enumtype
   26	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/materials/sprites
-  27	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  27	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   28	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/math/colour
   29	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/postprocess/effects
   30	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/postprocess/filters
@@ -7509,7 +7509,7 @@
   33	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/hal/system/callstack/linux
   34	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/logger
   35	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/projects/rs2client/logic/chat
-  36	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/renderer/renderpasses
+  36	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/runetek7/toolkit/renderpasses
   37	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/graphics/graphicutils/rendertotexture
   38	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/inventories
   39	/secure/home/user9/bamboo-home-01/xml-data/build-dir/NXT-BUIL878-BLR/libs/game/runetek5/config/vartype

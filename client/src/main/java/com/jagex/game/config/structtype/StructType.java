@@ -1,13 +1,13 @@
 package com.jagex.game.config.structtype;
 
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
-import com.jagex.game.world.entity.ObjectWrapper;
+import com.jagex.game.world.entity.ObjectNode;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 
@@ -43,9 +43,9 @@ public class StructType extends SecondaryNode implements ConfigType, MutableConf
 			int var7 = buf.g3();
 			Node var8;
 			if (var6) {
-				var8 = new ObjectWrapper(buf.gjstr());
+				var8 = new ObjectNode(buf.gjstr());
 			} else {
-				var8 = new IntWrapper(buf.g4s());
+				var8 = new IntNode(buf.g4s());
 			}
 			this.params.pushNode(var8, (long) var7);
 		}
@@ -56,7 +56,7 @@ public class StructType extends SecondaryNode implements ConfigType, MutableConf
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -66,7 +66,7 @@ public class StructType extends SecondaryNode implements ConfigType, MutableConf
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

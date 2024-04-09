@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.graphics.legacygl.LegacyOpenGLRenderer;
+import com.jagex.graphics.gl.GlToolkit;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
@@ -10,7 +10,7 @@ public class RenderList {
 	@ObfuscatedName("be.e")
 	public final int field1020;
 
-	public RenderList(LegacyOpenGLRenderer arg0, int arg1) {
+	public RenderList(GlToolkit arg0, int arg1) {
 		this.field1020 = OpenGL.glGenLists(arg1);
 	}
 

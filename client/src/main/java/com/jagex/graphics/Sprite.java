@@ -77,12 +77,12 @@ public abstract class Sprite implements FontGlyph {
 	}
 
 	@ObfuscatedName("cm.j(FFIILch;II)V")
-	public final void method1455(float arg0, float arg1, int arg2, int arg3, GraphicsRelated arg4, int arg5, int arg6) {
+	public final void method1455(float arg0, float arg1, int arg2, int arg3, SpriteRelated arg4, int arg5, int arg6) {
 		this.method1456(arg0, arg1, (float) this.getX() / 2.0F, (float) this.getY() / 2.0F, arg2, arg3, arg4, arg5, arg6);
 	}
 
 	@ObfuscatedName("cm.t(FFFFIILch;II)V")
-	public final void method1456(float arg0, float arg1, float arg2, float arg3, int arg4, int arg5, GraphicsRelated arg6, int arg7, int arg8) {
+	public final void method1456(float arg0, float arg1, float arg2, float arg3, int arg4, int arg5, SpriteRelated arg6, int arg7, int arg8) {
 		if (arg4 == 0) {
 			return;
 		}
@@ -104,7 +104,7 @@ public abstract class Sprite implements FontGlyph {
 	}
 
 	@ObfuscatedName("cm.ah(FFFFFFLch;II)V")
-	public final void method1499(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, GraphicsRelated arg6, int arg7, int arg8) {
+	public final void method1499(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, SpriteRelated arg6, int arg7, int arg8) {
 		this.method1454(arg0, arg1, arg2, arg3, arg4, arg5, 1, arg6, arg7, arg8);
 	}
 
@@ -139,7 +139,7 @@ public abstract class Sprite implements FontGlyph {
 	public abstract void drawSprite(int x, int y, int arg2, int rgb, int arg4);
 
 	@ObfuscatedName("cm.v(IILch;II)V")
-	public abstract void method1444(int arg0, int arg1, GraphicsRelated arg2, int arg3, int arg4);
+	public abstract void method1444(int arg0, int arg1, SpriteRelated arg2, int arg3, int arg4);
 
 	@ObfuscatedName("cm.y(IIIIIIII)V")
 	public abstract void drawTintedScaled(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7);
@@ -148,7 +148,7 @@ public abstract class Sprite implements FontGlyph {
 	public abstract void drawTiledTinted(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("cm.al(FFFFFFILch;II)V")
-	public abstract void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, GraphicsRelated arg7, int arg8, int arg9);
+	public abstract void method1454(float arg0, float arg1, float arg2, float arg3, float arg4, float arg5, int arg6, SpriteRelated arg7, int arg8, int arg9);
 
 	@ObfuscatedName("cm.m()I")
 	public abstract int getWidth();

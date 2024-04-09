@@ -13,7 +13,7 @@ public class EnvMappedWaterShader extends WaterShader {
 	public final boolean field12131;
 
 	@ObfuscatedName("aqe.aw")
-	public final WaterRelated field12122;
+	public final GpuWaterRelated field12122;
 
 	@ObfuscatedName("aqe.as")
 	public ProgramUniform normalSamplerUniform;
@@ -103,9 +103,9 @@ public class EnvMappedWaterShader extends WaterShader {
 	public boolean isEnvMappedSea;
 
 	@ObfuscatedName("aqe.bq")
-	public Program envMappedWaterProgram;
+	public GpuProgram envMappedWaterProgram;
 
-	public EnvMappedWaterShader(GpuRenderer arg0, WaterRelated arg1, boolean isEnvMappedSea) throws ShaderException {
+	public EnvMappedWaterShader(GpuToolkit arg0, GpuWaterRelated arg1, boolean isEnvMappedSea) throws ShaderException {
 		super(arg0);
 		new Matrix4x4();
 		this.field12122 = arg1;

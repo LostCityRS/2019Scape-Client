@@ -61,7 +61,7 @@ public final class TwitchCommands {
 
 	@ObfuscatedName("p.u(Lyf;B)V")
 	public static void ttv_stream_stop(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = TwitchHardwarePlatform.stopStream(Client.renderer);
+		arg0.intStack[++arg0.isp - 1] = TwitchHardwarePlatform.stopStream(Client.toolkit);
 	}
 
 	@ObfuscatedName("yo.z(Lyf;S)V")

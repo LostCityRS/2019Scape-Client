@@ -11,7 +11,7 @@ import java.nio.ByteBuffer;
 public class GpuRendererRelated6 {
 
 	@ObfuscatedName("md.e")
-	public final GpuRenderer field3389;
+	public final GpuToolkit field3389;
 
 	@ObfuscatedName("md.n")
 	public GpuImageRelated field3391 = GpuImageRelated.field3235;
@@ -44,12 +44,12 @@ public class GpuRendererRelated6 {
 	public VertexDeclaration field3381;
 
 	@ObfuscatedName("md.c")
-	public IndexBuffer field3392;
+	public GpuIndexBuffer field3392;
 
 	@ObfuscatedName("md.r")
 	public int[] field3393 = new int[4];
 
-	public GpuRendererRelated6(GpuRenderer arg0, int arg1) {
+	public GpuRendererRelated6(GpuToolkit arg0, int arg1) {
 		this.field3389 = arg0;
 		this.field3390 = this.field3389.createVertexBuffer(true);
 		this.field3390.allocate(arg1 * 96, 24);

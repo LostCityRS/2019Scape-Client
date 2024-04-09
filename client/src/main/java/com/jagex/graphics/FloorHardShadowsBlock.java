@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 public class FloorHardShadowsBlock {
 
 	@ObfuscatedName("ly.m")
-	public final GpuRenderer field3271;
+	public final GpuToolkit field3271;
 
 	@ObfuscatedName("ly.k")
 	public final FloorHardShadows field3273;
@@ -30,7 +30,7 @@ public class FloorHardShadowsBlock {
 	public final int field3278;
 
 	@ObfuscatedName("ly.p")
-	public IndexBuffer field3279;
+	public GpuIndexBuffer field3279;
 
 	@ObfuscatedName("ly.d")
 	public GpuTexture field3280;
@@ -47,7 +47,7 @@ public class FloorHardShadowsBlock {
 	@ObfuscatedName("ly.o")
 	public byte[] field3281;
 
-	public FloorHardShadowsBlock(GpuRenderer arg0, FloorHardShadows arg1, GpuFloorModel arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public FloorHardShadowsBlock(GpuToolkit arg0, FloorHardShadows arg1, GpuFloorModel arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		this.field3271 = arg0;
 		this.field3273 = arg1;
 		this.field3274 = arg6;
@@ -104,7 +104,7 @@ public class FloorHardShadowsBlock {
 	}
 
 	@ObfuscatedName("ly.n(Ljj;Lml;II)V")
-	public void method5656(ModelShader arg0, IndexBuffer arg1, int arg2, int arg3) {
+	public void method5656(ModelShader arg0, GpuIndexBuffer arg1, int arg2, int arg3) {
 		if (arg3 <= 0) {
 			return;
 		}

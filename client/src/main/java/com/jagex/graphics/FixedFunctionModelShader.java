@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ahl")
 public class FixedFunctionModelShader extends ModelShader {
 
-	public FixedFunctionModelShader(GpuRenderer arg0) {
+	public FixedFunctionModelShader(GpuToolkit arg0) {
 		super(arg0);
 	}
 

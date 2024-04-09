@@ -3,6 +3,7 @@ package com.jagex.game.client;
 import com.jagex.core.datastruct.IntegerBox;
 import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.io.Packet;
+import com.jagex.game.MiniMap;
 import com.jagex.game.config.lighttype.LightType;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
@@ -53,7 +54,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.ce(Ldh;Lalw;IIB)V")
-	public final void readNormalEnvironment(Renderer arg0, Packet arg1, int arg2, int arg3) {
+	public final void readNormalEnvironment(Toolkit arg0, Packet arg1, int arg2, int arg3) {
 		if (this.underwater) {
 			return;
 		}
@@ -215,7 +216,7 @@ public class ClientMapLoader extends MapLoader {
 						if (var6 != null) {
 							this.field10764.setEnvironmentMap(var35, var36, var6);
 						}
-						Minimap.method14707(var35, var36, var7);
+						MiniMap.method14707(var35, var36, var7);
 					}
 				}
 			}
@@ -239,7 +240,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.cu(Ldh;Lalw;IIIIIIIB)V")
-	public final void readRegionEnvironment(Renderer arg0, Packet arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final void readRegionEnvironment(Toolkit arg0, Packet arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		if (this.underwater) {
 			return;
 		}
@@ -375,7 +376,7 @@ public class ClientMapLoader extends MapLoader {
 			if (var11 != null) {
 				this.field10764.setEnvironmentMap(arg3 >> 3, arg4 >> 3, var11);
 			}
-			Minimap.method14707(arg3 >> 3, arg4 >> 3, var12);
+			MiniMap.method14707(arg3 >> 3, arg4 >> 3, var12);
 			if (!var10 && this.field4517 != null && this.field4517[arg2] != null) {
 				int var40 = arg3 + 7;
 				int var41 = arg4 + 7;
@@ -462,7 +463,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.cv(Ldh;[BIII)V")
-	public final void readNormalLocs(Renderer renderer, byte[] locs, int arg2, int arg3) {
+	public final void readNormalLocs(Toolkit toolkit, byte[] locs, int arg2, int arg3) {
 		Packet buf = new Packet(locs);
 		int locId = -1;
 		label63: while (true) {
@@ -512,13 +513,13 @@ public class ClientMapLoader extends MapLoader {
 						} while (var19 <= 0);
 					} while (var20 <= 0);
 				} while (LocShape.CENTREPIECE_STRAIGHT.id != var13.shape && LocShape.CENTREPIECE_DIAGONAL.id != var13.shape && (var14 <= 0 || var15 <= 0 || var14 >= this.maxTileX - 1 || var15 >= this.maxTileZ - 1));
-				this.addGroundLoc(renderer, level, level, var14, var15, locId, var13.angle, var13.shape, -1, 0, var13.field7539);
+				this.addGroundLoc(toolkit, level, level, var14, var15, locId, var13.angle, var13.shape, -1, 0, var13.field7539);
 			}
 		}
 	}
 
 	@ObfuscatedName("aih.cp(Ldh;[BIIIIIIII)V")
-	public final void readRegionLocs(Renderer arg0, byte[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final void readRegionLocs(Toolkit arg0, byte[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		Packet buf = new Packet(arg1);
 		int locId = -1;
 		label88: while (true) {
@@ -586,7 +587,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.ca(Ldh;IIIIIIIIILoe;I)V")
-	public final void addGroundLoc(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, ScaleRotTrans arg10) {
+	public final void addGroundLoc(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, ScaleRotTrans arg10) {
 		if (arg2 < this.field10756) {
 			this.field10756 = arg2;
 		}
@@ -701,7 +702,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.cx(Ldh;IIZLvd;IIIIIIIIIZLcb;IILoe;I)Z")
-	public boolean addWallLoc(Renderer arg0, int arg1, int rotation, boolean arg3, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, boolean arg14, FloorModel arg15, int arg16, int arg17, ScaleRotTrans arg18) {
+	public boolean addWallLoc(Toolkit arg0, int arg1, int rotation, boolean arg3, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, boolean arg14, FloorModel arg15, int arg16, int arg17, ScaleRotTrans arg18) {
 		if (LocShape.WALL_STRAIGHT.id == arg1) {
 			int var20 = arg4.occlude;
 			if (field10754 && arg4.occlude == -1) {
@@ -873,7 +874,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.cw(Ldh;IIZLvd;IIIIIIIIILoe;B)Z")
-	public boolean addWallDecorationLoc(Renderer arg0, int locShapeId, int arg2, boolean isStatic, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
+	public boolean addWallDecorationLoc(Toolkit arg0, int locShapeId, int arg2, boolean isStatic, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
 		if (LocShape.WALLDECOR_STRAIGHT_NOOFFSET.id == locShapeId) {
 			WallDecorLayerEntity var17;
 			if (isStatic) {
@@ -971,7 +972,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.ct(Ldh;IIIIB)V")
-	public void method16871(Renderer arg0, int arg1, int arg2, int arg3, int arg4) {
+	public void method16871(Toolkit arg0, int arg1, int arg2, int arg3, int arg4) {
 		Location var6 = this.method16899(arg1, arg2, arg3, arg4);
 		if (var6 == null) {
 			return;
@@ -1035,7 +1036,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.co(Ldh;ZB)V")
-	public final void method16877(Renderer arg0, boolean arg1) {
+	public final void method16877(Toolkit arg0, boolean arg1) {
 		this.scene.buildModels();
 		if (!arg1) {
 			if (this.levels > 1) {

@@ -4,23 +4,23 @@ import com.jagex.game.client.DataType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aed")
-public class GpuRelated2 extends GraphicsRelated {
+public class GpuRelated2 extends SpriteRelated {
 
 	@ObfuscatedName("aed.e")
 	public final GpuTexture field9417;
 
-	public GpuRelated2(GpuRenderer arg0, int arg1, int arg2, byte[] arg3) {
+	public GpuRelated2(GpuToolkit arg0, int arg1, int arg2, byte[] arg3) {
 		this.field9417 = arg0.method16028(TextureFormat.ALPHA, arg1, arg2, false, arg3);
 		this.field9417.setWarp(false, false);
 	}
 
-	public GpuRelated2(GpuRenderer arg0, int arg1, int arg2, int[] arg3) {
+	public GpuRelated2(GpuToolkit arg0, int arg1, int arg2, int[] arg3) {
 		this.field9417 = arg0.method16204(arg1, arg2, false, arg3);
 		this.field9417.setWarp(false, false);
 	}
 
 	@ObfuscatedName("aed.e(Lafc;II[I[I)Laed;")
-	public static GpuRelated2 method15388(GpuRenderer arg0, int arg1, int arg2, int[] arg3, int[] arg4) {
+	public static GpuRelated2 method15388(GpuToolkit arg0, int arg1, int arg2, int[] arg3, int[] arg4) {
 		if (!arg0.method16026(TextureFormat.ALPHA, DataType.UNSIGNED_INT_8)) {
 			int[] var9 = new int[arg1 * arg2];
 			for (int var10 = 0; var10 < arg2; var10++) {

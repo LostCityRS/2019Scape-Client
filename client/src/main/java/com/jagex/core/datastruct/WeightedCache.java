@@ -41,7 +41,7 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.n(J)Ljava/lang/Object;")
 	public Object get(long arg0) {
-		WeightedWrapper var3 = (WeightedWrapper) this.iterableMap.getNode(arg0);
+		ReferenceNode var3 = (ReferenceNode) this.iterableMap.getNode(arg0);
 		if (var3 == null) {
 			return null;
 		}
@@ -52,8 +52,8 @@ public final class WeightedCache {
 			this.field1756 += var3.field12328;
 			return null;
 		}
-		if (var3.method19424()) {
-			HardWeightedWrapper var5 = new HardWeightedWrapper(var4, var3.field12328);
+		if (var3.isSoft()) {
+			HardReferenceNode var5 = new HardReferenceNode(var4, var3.field12328);
 			this.iterableMap.pushNode(var5, var3.nodeId);
 			this.queue.pushBack(var5);
 			var5.secondaryNodeId = 0L;
@@ -68,12 +68,12 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.m(J)V")
 	public void method2957(long arg0) {
-		WeightedWrapper var3 = (WeightedWrapper) this.iterableMap.getNode(arg0);
+		ReferenceNode var3 = (ReferenceNode) this.iterableMap.getNode(arg0);
 		this.method2918(var3);
 	}
 
 	@ObfuscatedName("eb.k(Lasa;I)V")
-	public void method2918(WeightedWrapper arg0) {
+	public void method2918(ReferenceNode arg0) {
 		if (arg0 != null) {
 			arg0.remove();
 			arg0.secondaryRemove();
@@ -94,18 +94,18 @@ public final class WeightedCache {
 		this.method2957(arg1);
 		this.field1756 -= arg2;
 		while (this.field1756 < 0) {
-			WeightedWrapper var5 = (WeightedWrapper) this.queue.pollFront();
+			ReferenceNode var5 = (ReferenceNode) this.queue.pollFront();
 			if (var5 == null) {
 				throw new RuntimeException("");
 			}
-			if (!var5.method19424()) {
+			if (!var5.isSoft()) {
 			}
 			this.method2918(var5);
 			if (this.field1759 != null) {
 				this.field1759.method2914(var5.method19423());
 			}
 		}
-		HardWeightedWrapper var6 = new HardWeightedWrapper(arg0, arg2);
+		HardReferenceNode var6 = new HardReferenceNode(arg0, arg2);
 		this.iterableMap.pushNode(var6, arg1);
 		this.queue.pushBack(var6);
 		var6.secondaryNodeId = 0L;
@@ -113,15 +113,15 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.l(IB)V")
 	public void clean(int arg0) {
-		for (WeightedWrapper var2 = (WeightedWrapper) this.queue.peekFront(); var2 != null; var2 = (WeightedWrapper) this.queue.prev()) {
-			if (var2.method19424()) {
+		for (ReferenceNode var2 = (ReferenceNode) this.queue.peekFront(); var2 != null; var2 = (ReferenceNode) this.queue.prev()) {
+			if (var2.isSoft()) {
 				if (var2.method19423() == null) {
 					var2.remove();
 					var2.secondaryRemove();
 					this.field1756 += var2.field12328;
 				}
 			} else if (++var2.secondaryNodeId > (long) arg0) {
-				SoftWeightedWrapper var3 = new SoftWeightedWrapper(var2.method19423(), var2.field12328);
+				SoftReferenceNode var3 = new SoftReferenceNode(var2.method19423(), var2.field12328);
 				this.iterableMap.pushNode(var3, var2.nodeId);
 				DualIterableQueue.method10144(var3, var2);
 				var2.remove();
@@ -150,8 +150,8 @@ public final class WeightedCache {
 	@ObfuscatedName("eb.d(B)I")
 	public int count() {
 		int var1 = 0;
-		for (WeightedWrapper var2 = (WeightedWrapper) this.queue.peekFront(); var2 != null; var2 = (WeightedWrapper) this.queue.prev()) {
-			if (!var2.method19424()) {
+		for (ReferenceNode var2 = (ReferenceNode) this.queue.peekFront(); var2 != null; var2 = (ReferenceNode) this.queue.prev()) {
+			if (!var2.isSoft()) {
 				var1++;
 			}
 		}
@@ -160,8 +160,8 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.c(I)V")
 	public void clear() {
-		for (WeightedWrapper var1 = (WeightedWrapper) this.queue.peekFront(); var1 != null; var1 = (WeightedWrapper) this.queue.prev()) {
-			if (var1.method19424()) {
+		for (ReferenceNode var1 = (ReferenceNode) this.queue.peekFront(); var1 != null; var1 = (ReferenceNode) this.queue.prev()) {
+			if (var1.isSoft()) {
 				var1.remove();
 				var1.secondaryRemove();
 				this.field1756 += var1.field12328;
@@ -171,14 +171,14 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.r(I)Ljava/lang/Object;")
 	public Object method2950() {
-		WeightedWrapper var1 = (WeightedWrapper) this.iterableMap.peekFront();
+		ReferenceNode var1 = (ReferenceNode) this.iterableMap.peekFront();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
-			WeightedWrapper var3 = var1;
-			var1 = (WeightedWrapper) this.iterableMap.prev();
+			ReferenceNode var3 = var1;
+			var1 = (ReferenceNode) this.iterableMap.prev();
 			var3.remove();
 			var3.secondaryRemove();
 			this.field1756 += var3.field12328;
@@ -188,14 +188,14 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.v(I)Ljava/lang/Object;")
 	public Object method2937() {
-		WeightedWrapper var1 = (WeightedWrapper) this.iterableMap.prev();
+		ReferenceNode var1 = (ReferenceNode) this.iterableMap.prev();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
-			WeightedWrapper var3 = var1;
-			var1 = (WeightedWrapper) this.iterableMap.prev();
+			ReferenceNode var3 = var1;
+			var1 = (ReferenceNode) this.iterableMap.prev();
 			var3.remove();
 			var3.secondaryRemove();
 			this.field1756 += var3.field12328;

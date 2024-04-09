@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ahf")
 public final class FixedFunctionParticleShader extends ParticleShader {
 
-	public FixedFunctionParticleShader(GpuRenderer arg0) {
+	public FixedFunctionParticleShader(GpuToolkit arg0) {
 		super(arg0);
 	}
 

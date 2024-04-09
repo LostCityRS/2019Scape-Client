@@ -144,12 +144,12 @@ public class SkyboxRelated {
 	}
 
 	@ObfuscatedName("sw.m(Ldh;Lsw;)Z")
-	public boolean method7980(Renderer arg0, SkyboxRelated arg1) {
+	public boolean method7980(Toolkit arg0, SkyboxRelated arg1) {
 		return this.field5128 != null || this.method7999(arg0, arg1);
 	}
 
 	@ObfuscatedName("sw.k(Ldh;IIIIIIIIII)V")
-	public void method7981(Renderer arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
+	public void method7981(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10) {
 		if (this.field5128 == null) {
 			return;
 		}
@@ -174,7 +174,7 @@ public class SkyboxRelated {
 	}
 
 	@ObfuscatedName("sw.f(Ldh;Lsw;)Z")
-	public boolean method7999(Renderer arg0, SkyboxRelated arg1) {
+	public boolean method7999(Toolkit arg0, SkyboxRelated arg1) {
 		if (this.field5128 == null) {
 			if (this.field5112 == 0) {
 				if (SkyBox.field2421.loadTexture(TextureRelated2.field7586, this.field5135, -1, TextureRelated1.field7569, 0.7F, this.field5123, this.field5123, false)) {
@@ -191,7 +191,7 @@ public class SkyboxRelated {
 	}
 
 	@ObfuscatedName("sw.w(Ldh;Lsw;)V")
-	public void method7983(Renderer arg0, SkyboxRelated arg1) {
+	public void method7983(Toolkit arg0, SkyboxRelated arg1) {
 		ModelUnlit var3 = ModelUnlit.get(SkyBox.field1810, this.field5135, 0);
 		if (var3 == null) {
 			return;
@@ -254,7 +254,7 @@ public class SkyboxRelated {
 	}
 
 	@ObfuscatedName("sw.l(Ldh;Lsw;)V")
-	public void method7985(Renderer arg0, SkyboxRelated arg1) {
+	public void method7985(Toolkit arg0, SkyboxRelated arg1) {
 		method7992(arg0);
 		method7986(arg0);
 		arg0.method2171(field5138);
@@ -318,7 +318,7 @@ public class SkyboxRelated {
 	}
 
 	@ObfuscatedName("sw.u(Ldh;)V")
-	public static void method7992(Renderer arg0) {
+	public static void method7992(Toolkit arg0) {
 		if (field5129 != null) {
 			return;
 		}
@@ -360,7 +360,7 @@ public class SkyboxRelated {
 	}
 
 	@ObfuscatedName("sw.z(Ldh;)V")
-	public static void method7986(Renderer arg0) {
+	public static void method7986(Toolkit arg0) {
 		if (field5137 != null) {
 			return;
 		}

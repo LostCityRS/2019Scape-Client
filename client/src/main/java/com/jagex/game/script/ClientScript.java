@@ -1,6 +1,6 @@
 package com.jagex.game.script;
 
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.IterableMap;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.datastruct.SerializableEnums;
@@ -97,7 +97,7 @@ public class ClientScript extends SecondaryNode {
 				while (count-- > 0) {
 					int key = buf.g4s();
 					int offset = buf.g4s();
-					var8.pushNode(new IntWrapper(offset), (long) key);
+					var8.pushNode(new IntNode(offset), (long) key);
 				}
 			}
 		}

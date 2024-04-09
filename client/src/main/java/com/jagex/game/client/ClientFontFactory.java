@@ -11,6 +11,6 @@ public final class ClientFontFactory implements FontFactory {
 
 	@ObfuscatedName("k.e([BLaac;ZI)Ljava/lang/Object;")
 	public Object createFont(byte[] bytes, FontMetrics fontMetrics, boolean arg2) {
-		return Client.renderer.createFont(fontMetrics, SpriteDataProvider.method1615(bytes)[0], arg2);
+		return Client.toolkit.createFont(fontMetrics, SpriteDataProvider.method1615(bytes)[0], arg2);
 	}
 }

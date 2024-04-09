@@ -8,7 +8,7 @@ import com.jagex.game.world.entity.Scene;
 import com.jagex.game.world.entity.Tile;
 import com.jagex.graphics.FloorModel;
 import com.jagex.graphics.Particle;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.particles.ParticleEffector;
 import com.jagex.graphics.particles.ParticleEmitter;
 import com.jagex.graphics.particles.ParticleSystem;
@@ -350,7 +350,7 @@ public class MovingParticle extends Particle {
 	}
 
 	@ObfuscatedName("atz.l(Ltx;Ldh;J)V")
-	public void method19668(Scene arg0, Renderer arg1, long arg2) {
+	public void method19668(Scene arg0, Toolkit arg1, long arg2) {
 		int var5 = this.x >> arg0.field6900 + 12;
 		int var6 = this.z >> arg0.field6900 + 12;
 		int var7 = this.y >> 12;

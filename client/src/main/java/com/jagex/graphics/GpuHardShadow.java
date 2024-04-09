@@ -21,7 +21,7 @@ public class GpuHardShadow extends HardShadow {
 	@ObfuscatedName("ati.c")
 	public final byte[] field12548;
 
-	public GpuHardShadow(GpuRenderer arg0, int arg1, int arg2) {
+	public GpuHardShadow(GpuToolkit arg0, int arg1, int arg2) {
 		this.field12548 = new byte[arg1 * arg2];
 	}
 

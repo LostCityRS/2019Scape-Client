@@ -21,7 +21,7 @@ import java.nio.ByteBuffer;
 public class GpuModel extends Model {
 
 	@ObfuscatedName("afo.l")
-	public final GpuRenderer field9730;
+	public final GpuToolkit field9730;
 
 	@ObfuscatedName("afo.u")
 	public int field9725;
@@ -245,7 +245,7 @@ public class GpuModel extends Model {
 	@ObfuscatedName("afo.ce")
 	public static GpuModelUnknown field9772;
 
-	public GpuModel(GpuRenderer arg0, int arg1, int arg2, boolean arg3, boolean arg4) {
+	public GpuModel(GpuToolkit arg0, int arg1, int arg2, boolean arg3, boolean arg4) {
 		this.field9703 = 0;
 		this.field9704 = 0;
 		this.field9710 = 0;
@@ -267,20 +267,20 @@ public class GpuModel extends Model {
 		this.field9725 = arg1;
 		this.field9700 = arg2;
 		this.field9735 = arg4;
-		if (arg3 || GpuFlagsUnknown.method5438(this.field9725, this.field9700)) {
-			this.field9731 = new GpuModelRelated4(GpuFlagsUnknown.method5452(this.field9725, this.field9700));
+		if (arg3 || GpuModelFlags.method5438(this.field9725, this.field9700)) {
+			this.field9731 = new GpuModelRelated4(GpuModelFlags.method5452(this.field9725, this.field9700));
 		}
-		if (arg3 || GpuFlagsUnknown.method5450(this.field9725, this.field9700)) {
-			this.field9734 = new GpuModelRelated4(GpuFlagsUnknown.method5491(this.field9725, this.field9700));
+		if (arg3 || GpuModelFlags.method5450(this.field9725, this.field9700)) {
+			this.field9734 = new GpuModelRelated4(GpuModelFlags.method5491(this.field9725, this.field9700));
 		}
-		if (arg3 || GpuFlagsUnknown.method5449(this.field9725, this.field9700)) {
-			this.field9732 = new GpuModelRelated4(GpuFlagsUnknown.method5454(this.field9725, this.field9700));
+		if (arg3 || GpuModelFlags.method5449(this.field9725, this.field9700)) {
+			this.field9732 = new GpuModelRelated4(GpuModelFlags.method5454(this.field9725, this.field9700));
 		}
-		if (arg3 || GpuFlagsUnknown.method5448(this.field9725, this.field9700)) {
-			this.field9733 = new GpuModelRelated4(GpuFlagsUnknown.method5527(this.field9725, this.field9700));
+		if (arg3 || GpuModelFlags.method5448(this.field9725, this.field9700)) {
+			this.field9733 = new GpuModelRelated4(GpuModelFlags.method5527(this.field9725, this.field9700));
 		}
-		if (arg3 || GpuFlagsUnknown.method5451(this.field9725, this.field9700)) {
-			this.field9756 = new GpuModelRelated(GpuFlagsUnknown.method5456(this.field9725, this.field9700));
+		if (arg3 || GpuModelFlags.method5451(this.field9725, this.field9700)) {
+			this.field9756 = new GpuModelRelated(GpuModelFlags.method5456(this.field9725, this.field9700));
 		}
 		if (arg3 && arg4) {
 			this.field9731.field3356 = this.field9731.field3359 = this.field9730.createVertexBuffer(this.field9735);
@@ -290,7 +290,7 @@ public class GpuModel extends Model {
 		}
 	}
 
-	public GpuModel(GpuRenderer arg0, ModelUnlit arg1, int arg2, int arg3, int arg4, int arg5) {
+	public GpuModel(GpuToolkit arg0, ModelUnlit arg1, int arg2, int arg3, int arg4, int arg5) {
 		this(arg0, arg2, arg5, true, false);
 		MaterialList var7 = arg0.materialList;
 		BillboardTypeList var8 = arg0.billboardList;
@@ -399,7 +399,7 @@ public class GpuModel extends Model {
 		this.field9767 = arg1.vertexY;
 		this.field9712 = arg1.vertexZ;
 		this.field9709 = arg1.vertexSourceModels;
-		GpuModelNormal[] var36 = new GpuModelNormal[this.field9704];
+		GpuVertexNormal[] var36 = new GpuVertexNormal[this.field9704];
 		this.field9755 = arg1.emitters;
 		this.field9738 = arg1.effectors;
 		if (arg1.billboard != null) {
@@ -452,7 +452,7 @@ public class GpuModel extends Model {
 			int var47 = this.field9753[var46];
 			this.field9753[var46] = var45;
 			var45 += var47;
-			var36[var46] = new GpuModelNormal();
+			var36[var46] = new GpuVertexNormal();
 		}
 		this.field9753[arg1.field1374] = var45;
 		ModelRelated1 var48 = this.method1687(arg1, var9, this.field9716);
@@ -483,17 +483,17 @@ public class GpuModel extends Model {
 			int var66 = var62 * 256 / var63;
 			byte var67 = arg1.faceType == null ? 0 : arg1.faceType[var50];
 			if (var67 == 0) {
-				GpuModelNormal var68 = var36[var51];
+				GpuVertexNormal var68 = var36[var51];
 				var68.field3379 += var64;
 				var68.field3377 += var65;
 				var68.field3378 += var66;
 				var68.field3380++;
-				GpuModelNormal var69 = var36[var52];
+				GpuVertexNormal var69 = var36[var52];
 				var69.field3379 += var64;
 				var69.field3377 += var65;
 				var69.field3378 += var66;
 				var69.field3380++;
-				GpuModelNormal var70 = var36[var53];
+				GpuVertexNormal var70 = var36[var53];
 				var70.field3379 += var64;
 				var70.field3377 += var65;
 				var70.field3378 += var66;
@@ -737,11 +737,11 @@ public class GpuModel extends Model {
 				short var167 = arg1.faceVertex1[var73];
 				short var168 = arg1.faceVertex2[var73];
 				short var169 = arg1.faceVertex3[var73];
-				GpuModelNormal var170 = var36[var167];
+				GpuVertexNormal var170 = var36[var167];
 				this.field9713[var72] = this.method15592(arg1, var167, var72, var165 | var88 << 24, var170.field3379, var170.field3377, var170.field3378, var170.field3380, var77, var78);
-				GpuModelNormal var171 = var36[var168];
+				GpuVertexNormal var171 = var36[var168];
 				this.field9762[var72] = this.method15592(arg1, var168, var72, var165 | var91 << 24, var171.field3379, var171.field3377, var171.field3378, var171.field3380, var79, var80);
-				GpuModelNormal var172 = var36[var169];
+				GpuVertexNormal var172 = var36[var169];
 				this.field9726[var72] = this.method15592(arg1, var169, var72, var165 | var94 << 24, var172.field3379, var172.field3377, var172.field3378, var172.field3380, var81, var82);
 			} else if (var164 == 1) {
 				GpuFaceNormal var173 = var49[var73];
@@ -824,13 +824,13 @@ public class GpuModel extends Model {
 		this.field9747 = method15591(this.field9747, this.field9710);
 		this.field9707 = method15633(this.field9707, this.field9710);
 		this.field9724 = method15633(this.field9724, this.field9710);
-		if (arg1.vertexLabel != null && GpuFlagsUnknown.method5465(arg2, this.field9700)) {
+		if (arg1.vertexLabel != null && GpuModelFlags.method5465(arg2, this.field9700)) {
 			this.field9702 = arg1.method1940(false);
 		}
-		if (arg1.billboard != null && GpuFlagsUnknown.method5466(arg2, this.field9700)) {
+		if (arg1.billboard != null && GpuModelFlags.method5466(arg2, this.field9700)) {
 			this.field9751 = arg1.method1963();
 		}
-		if (arg1.faceLabel != null && GpuFlagsUnknown.method5496(arg2, this.field9700)) {
+		if (arg1.faceLabel != null && GpuModelFlags.method5496(arg2, this.field9700)) {
 			int var189 = 0;
 			int[] var190 = new int[256];
 			for (int var191 = 0; var191 < this.field9716; var191++) {
@@ -913,16 +913,16 @@ public class GpuModel extends Model {
 	@ObfuscatedName("afo.u(I)V")
 	public void method1690(int arg0) {
 		if (this.field9731 != null) {
-			this.field9731.field3357 = GpuFlagsUnknown.method5452(arg0, this.field9700);
+			this.field9731.field3357 = GpuModelFlags.method5452(arg0, this.field9700);
 		}
 		if (this.field9734 != null) {
-			this.field9734.field3357 = GpuFlagsUnknown.method5491(arg0, this.field9700);
+			this.field9734.field3357 = GpuModelFlags.method5491(arg0, this.field9700);
 		}
 		if (this.field9732 != null) {
-			this.field9732.field3357 = GpuFlagsUnknown.method5454(arg0, this.field9700);
+			this.field9732.field3357 = GpuModelFlags.method5454(arg0, this.field9700);
 		}
 		if (this.field9733 != null) {
-			this.field9733.field3357 = GpuFlagsUnknown.method5527(arg0, this.field9700);
+			this.field9733.field3357 = GpuModelFlags.method5527(arg0, this.field9700);
 		}
 		this.field9725 = arg0;
 		if (this.field9771 != null && (this.field9725 & 0x10000) == 0) {
@@ -978,9 +978,9 @@ public class GpuModel extends Model {
 			arg0.field9737 = true;
 		}
 		arg0.field9699 = this.field9699;
-		boolean var6 = GpuFlagsUnknown.method5435(arg2, this.field9700);
-		boolean var7 = GpuFlagsUnknown.method5436(arg2, this.field9700);
-		boolean var8 = GpuFlagsUnknown.method5437(arg2, this.field9700);
+		boolean var6 = GpuModelFlags.method5435(arg2, this.field9700);
+		boolean var7 = GpuModelFlags.method5436(arg2, this.field9700);
+		boolean var8 = GpuModelFlags.method5437(arg2, this.field9700);
 		boolean var9 = var6 | var7 | var8;
 		if (var9) {
 			if (!var6) {
@@ -1020,17 +1020,17 @@ public class GpuModel extends Model {
 			arg0.field9767 = this.field9767;
 			arg0.field9712 = this.field9712;
 		}
-		if (GpuFlagsUnknown.method5452(arg2, this.field9700)) {
+		if (GpuModelFlags.method5452(arg2, this.field9700)) {
 			arg0.field9731 = arg1.field9731;
 			arg0.field9731.field3359 = this.field9731.field3359;
 			arg0.field9731.field3358 = this.field9731.field3358;
 			arg0.field9731.field3357 = true;
-		} else if (GpuFlagsUnknown.method5438(arg2, this.field9700)) {
+		} else if (GpuModelFlags.method5438(arg2, this.field9700)) {
 			arg0.field9731 = this.field9731;
 		} else {
 			arg0.field9731 = null;
 		}
-		if (GpuFlagsUnknown.method5471(arg2, this.field9700)) {
+		if (GpuModelFlags.method5471(arg2, this.field9700)) {
 			if (arg1.field9722 == null || arg1.field9722.length < this.field9716) {
 				arg0.field9722 = arg1.field9722 = new short[this.field9716];
 			} else {
@@ -1042,7 +1042,7 @@ public class GpuModel extends Model {
 		} else {
 			arg0.field9722 = this.field9722;
 		}
-		if (GpuFlagsUnknown.method5458(arg2, this.field9700)) {
+		if (GpuModelFlags.method5458(arg2, this.field9700)) {
 			if (arg1.field9745 == null || arg1.field9745.length < this.field9716) {
 				arg0.field9745 = arg1.field9745 = new byte[this.field9716];
 			} else {
@@ -1054,17 +1054,17 @@ public class GpuModel extends Model {
 		} else {
 			arg0.field9745 = this.field9745;
 		}
-		if (GpuFlagsUnknown.method5454(arg2, this.field9700)) {
+		if (GpuModelFlags.method5454(arg2, this.field9700)) {
 			arg0.field9732 = arg1.field9732;
 			arg0.field9732.field3359 = this.field9732.field3359;
 			arg0.field9732.field3358 = this.field9732.field3358;
 			arg0.field9732.field3357 = true;
-		} else if (GpuFlagsUnknown.method5449(arg2, this.field9700)) {
+		} else if (GpuModelFlags.method5449(arg2, this.field9700)) {
 			arg0.field9732 = this.field9732;
 		} else {
 			arg0.field9732 = null;
 		}
-		if (GpuFlagsUnknown.method5439(arg2, this.field9700)) {
+		if (GpuModelFlags.method5439(arg2, this.field9700)) {
 			if (arg1.field9723 == null || arg1.field9723.length < this.field9710) {
 				int var13 = this.field9710;
 				arg0.field9723 = arg1.field9723 = new short[var13];
@@ -1112,17 +1112,17 @@ public class GpuModel extends Model {
 			arg0.field9715 = this.field9715;
 			arg0.field9747 = this.field9747;
 		}
-		if (GpuFlagsUnknown.method5527(arg2, this.field9700)) {
+		if (GpuModelFlags.method5527(arg2, this.field9700)) {
 			arg0.field9733 = arg1.field9733;
 			arg0.field9733.field3359 = this.field9733.field3359;
 			arg0.field9733.field3358 = this.field9733.field3358;
 			arg0.field9733.field3357 = true;
-		} else if (GpuFlagsUnknown.method5448(arg2, this.field9700)) {
+		} else if (GpuModelFlags.method5448(arg2, this.field9700)) {
 			arg0.field9733 = this.field9733;
 		} else {
 			arg0.field9733 = null;
 		}
-		if (GpuFlagsUnknown.method5514(arg2, this.field9700)) {
+		if (GpuModelFlags.method5514(arg2, this.field9700)) {
 			if (arg1.field9707 == null || arg1.field9707.length < this.field9716) {
 				int var18 = this.field9710;
 				arg0.field9707 = arg1.field9707 = new float[var18];
@@ -1139,17 +1139,17 @@ public class GpuModel extends Model {
 			arg0.field9707 = this.field9707;
 			arg0.field9724 = this.field9724;
 		}
-		if (GpuFlagsUnknown.method5491(arg2, this.field9700)) {
+		if (GpuModelFlags.method5491(arg2, this.field9700)) {
 			arg0.field9734 = arg1.field9734;
 			arg0.field9734.field3359 = this.field9734.field3359;
 			arg0.field9734.field3358 = this.field9734.field3358;
 			arg0.field9734.field3357 = true;
-		} else if (GpuFlagsUnknown.method5450(arg2, this.field9700)) {
+		} else if (GpuModelFlags.method5450(arg2, this.field9700)) {
 			arg0.field9734 = this.field9734;
 		} else {
 			arg0.field9734 = null;
 		}
-		if (GpuFlagsUnknown.method5443(arg2, this.field9700)) {
+		if (GpuModelFlags.method5443(arg2, this.field9700)) {
 			if (arg1.field9713 == null || arg1.field9713.length < this.field9716) {
 				int var20 = this.field9716;
 				arg0.field9713 = arg1.field9713 = new short[var20];
@@ -1170,17 +1170,17 @@ public class GpuModel extends Model {
 			arg0.field9762 = this.field9762;
 			arg0.field9726 = this.field9726;
 		}
-		if (GpuFlagsUnknown.method5456(arg2, this.field9700)) {
+		if (GpuModelFlags.method5456(arg2, this.field9700)) {
 			arg0.field9756 = arg1.field9756;
 			arg0.field9756.field3239 = this.field9756.field3239;
 			arg0.field9756.field3238 = this.field9756.field3238;
 			arg0.field9756.field3240 = true;
-		} else if (GpuFlagsUnknown.method5451(arg2, this.field9700)) {
+		} else if (GpuModelFlags.method5451(arg2, this.field9700)) {
 			arg0.field9756 = this.field9756;
 		} else {
 			arg0.field9756 = null;
 		}
-		if (GpuFlagsUnknown.method5434(arg2, this.field9700)) {
+		if (GpuModelFlags.method5434(arg2, this.field9700)) {
 			if (arg1.field9717 == null || arg1.field9717.length < this.field9716) {
 				int var22 = this.field9716;
 				arg0.field9717 = arg1.field9717 = new short[var22];
@@ -1193,7 +1193,7 @@ public class GpuModel extends Model {
 		} else {
 			arg0.field9717 = this.field9717;
 		}
-		if (!GpuFlagsUnknown.method5445(arg2, this.field9700)) {
+		if (!GpuModelFlags.method5445(arg2, this.field9700)) {
 			arg0.field9757 = this.field9757;
 		} else if (arg1.field9757 == null || arg1.field9757.length < this.field9746) {
 			int var25 = this.field9746;
@@ -1250,11 +1250,11 @@ public class GpuModel extends Model {
 			return;
 		}
 		this.field9736 = false;
-		if (this.field9755 == null && this.field9738 == null && this.field9758 == null && !GpuFlagsUnknown.method5530(this.field9725, this.field9700)) {
+		if (this.field9755 == null && this.field9738 == null && this.field9758 == null && !GpuModelFlags.method5530(this.field9725, this.field9700)) {
 			boolean var1 = false;
 			boolean var2 = false;
 			boolean var3 = false;
-			if (this.field9705 != null && !GpuFlagsUnknown.method5529(this.field9725, this.field9700)) {
+			if (this.field9705 != null && !GpuModelFlags.method5529(this.field9725, this.field9700)) {
 				if (this.field9731 == null || this.field9731.method5787()) {
 					if (!this.field9718) {
 						this.method15613();
@@ -1264,7 +1264,7 @@ public class GpuModel extends Model {
 					this.field9736 = true;
 				}
 			}
-			if (this.field9767 != null && !GpuFlagsUnknown.method5532(this.field9725, this.field9700)) {
+			if (this.field9767 != null && !GpuModelFlags.method5532(this.field9725, this.field9700)) {
 				if (this.field9731 == null || this.field9731.method5787()) {
 					if (!this.field9718) {
 						this.method15613();
@@ -1274,7 +1274,7 @@ public class GpuModel extends Model {
 					this.field9736 = true;
 				}
 			}
-			if (this.field9712 != null && !GpuFlagsUnknown.method5459(this.field9725, this.field9700)) {
+			if (this.field9712 != null && !GpuModelFlags.method5459(this.field9725, this.field9700)) {
 				if (this.field9731 == null || this.field9731.method5787()) {
 					if (!this.field9718) {
 						this.method15613();
@@ -1298,7 +1298,7 @@ public class GpuModel extends Model {
 			this.field9754 = null;
 			this.field9753 = null;
 		}
-		if (this.field9747 != null && !GpuFlagsUnknown.method5460(this.field9725, this.field9700)) {
+		if (this.field9747 != null && !GpuModelFlags.method5460(this.field9725, this.field9700)) {
 			label211: {
 				label210: {
 					if ((this.field9700 & 0x37) == 0) {
@@ -1317,21 +1317,21 @@ public class GpuModel extends Model {
 				this.field9736 = true;
 			}
 		}
-		if (this.field9722 != null && !GpuFlagsUnknown.method5461(this.field9725, this.field9700)) {
+		if (this.field9722 != null && !GpuModelFlags.method5461(this.field9725, this.field9700)) {
 			if (this.field9732 == null || this.field9732.method5787()) {
 				this.field9722 = null;
 			} else {
 				this.field9736 = true;
 			}
 		}
-		if (this.field9745 != null && !GpuFlagsUnknown.method5462(this.field9725, this.field9700)) {
+		if (this.field9745 != null && !GpuModelFlags.method5462(this.field9725, this.field9700)) {
 			if (this.field9732 == null || this.field9732.method5787()) {
 				this.field9745 = null;
 			} else {
 				this.field9736 = true;
 			}
 		}
-		if (this.field9707 != null && !GpuFlagsUnknown.method5463(this.field9725, this.field9700)) {
+		if (this.field9707 != null && !GpuModelFlags.method5463(this.field9725, this.field9700)) {
 			if (this.field9734 == null || this.field9734.method5787()) {
 				this.field9724 = null;
 				this.field9707 = null;
@@ -1339,14 +1339,14 @@ public class GpuModel extends Model {
 				this.field9736 = true;
 			}
 		}
-		if (this.field9717 != null && !GpuFlagsUnknown.method5468(this.field9725, this.field9700)) {
+		if (this.field9717 != null && !GpuModelFlags.method5468(this.field9725, this.field9700)) {
 			if (this.field9732 == null || this.field9732.method5787()) {
 				this.field9717 = null;
 			} else {
 				this.field9736 = true;
 			}
 		}
-		if (this.field9713 != null && !GpuFlagsUnknown.method5486(this.field9725, this.field9700)) {
+		if (this.field9713 != null && !GpuModelFlags.method5486(this.field9725, this.field9700)) {
 			if ((this.field9756 == null || this.field9756.method5544()) && (this.field9732 == null || this.field9732.method5787())) {
 				this.field9726 = null;
 				this.field9762 = null;
@@ -1369,15 +1369,15 @@ public class GpuModel extends Model {
 				this.field9736 = true;
 			}
 		}
-		if (this.field9728 != null && !GpuFlagsUnknown.method5496(this.field9725, this.field9700)) {
+		if (this.field9728 != null && !GpuModelFlags.method5496(this.field9725, this.field9700)) {
 			this.field9728 = null;
 			this.field9759 = null;
 		}
-		if (this.field9702 != null && !GpuFlagsUnknown.method5465(this.field9725, this.field9700)) {
+		if (this.field9702 != null && !GpuModelFlags.method5465(this.field9725, this.field9700)) {
 			this.field9702 = null;
 			this.field9709 = null;
 		}
-		if (this.field9751 != null && !GpuFlagsUnknown.method5466(this.field9725, this.field9700)) {
+		if (this.field9751 != null && !GpuModelFlags.method5466(this.field9725, this.field9700)) {
 			this.field9751 = null;
 		}
 		if (this.field9750 != null && (this.field9725 & 0x800) == 0 && (this.field9725 & 0x40000) == 0) {
@@ -3594,7 +3594,7 @@ public class GpuModel extends Model {
 		if (this.field9756.field3237 == null) {
 			this.field9756.field3237 = this.field9730.createIndexBuffer(false);
 		}
-		IndexBuffer var1 = this.field9756.field3237;
+		GpuIndexBuffer var1 = this.field9756.field3237;
 		var1.method5831(this.field9721 * 6);
 		Unsafe var2 = this.field9730.field10110;
 		if (var2 != null) {

@@ -4,13 +4,13 @@ import com.jagex.graphics.*;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aia")
-public class LevelsFilterEffect extends PostProcessEffect {
+public class LevelsFilterEffect extends GpuPostProcessEffect {
 
 	@ObfuscatedName("aia.m")
-	public Shader shader;
+	public GpuShader shader;
 
 	@ObfuscatedName("aia.k")
-	public Program techAdjustUniform;
+	public GpuProgram techAdjustUniform;
 
 	@ObfuscatedName("aia.f")
 	public ProgramUniform sceneTexUniform;
@@ -45,7 +45,7 @@ public class LevelsFilterEffect extends PostProcessEffect {
 	@ObfuscatedName("aia.o")
 	public boolean field10640;
 
-	public LevelsFilterEffect(GpuRenderer arg0) {
+	public LevelsFilterEffect(GpuToolkit arg0) {
 		super(arg0);
 	}
 

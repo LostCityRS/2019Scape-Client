@@ -13,7 +13,7 @@ import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
-import com.jagex.game.world.entity.ObjectWrapper;
+import com.jagex.game.world.entity.ObjectNode;
 import com.jagex.graphics.*;
 import com.jagex.js5.Js5;
 import com.jagex.math.Cuboid;
@@ -522,9 +522,9 @@ public class NPCType implements ConfigType {
 						int var38 = buf.g3();
 						Node var39;
 						if (var37) {
-							var39 = new ObjectWrapper(buf.gjstr());
+							var39 = new ObjectNode(buf.gjstr());
 						} else {
-							var39 = new IntWrapper(buf.g4s());
+							var39 = new IntNode(buf.g4s());
 						}
 						this.params.pushNode(var39, (long) var38);
 					}
@@ -549,12 +549,12 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.z(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;I)Ldo;")
-	public final Model getSequencedModel(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10) {
+	public final Model getSequencedModel(Toolkit arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationNode arg5, AnimationNode arg6, AnimationNode[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10) {
 		return this.getSequencedModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, this.bas, true);
 	}
 
 	@ObfuscatedName("if.p(Ldh;ILaof;Lem;Lep;Laaq;Laaq;[Laaq;[IILia;IZB)Ldo;")
-	public final Model getSequencedModel(Renderer arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationWrapper arg5, AnimationWrapper arg6, AnimationWrapper[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10, int arg11, boolean arg12) {
+	public final Model getSequencedModel(Toolkit arg0, int arg1, BASTypeList arg2, VariableTypeProvider arg3, VarIntDomain arg4, AnimationNode arg5, AnimationNode arg6, AnimationNode[] arg7, int[] arg8, int arg9, NPCTypeCustomisation arg10, int arg11, boolean arg12) {
 		if (this.multinpc != null) {
 			NPCType var14 = this.getMultiNPC(arg3, arg4);
 			return var14 == null ? null : var14.getSequencedModel(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12);
@@ -776,7 +776,7 @@ public class NPCType implements ConfigType {
 			}
 		}
 		if (arg5 != null && arg6 != null) {
-			AnimationWrapper.method2099(var50, arg5, arg6);
+			AnimationNode.method2099(var50, arg5, arg6);
 		} else if (arg5 != null) {
 			arg5.method14359(var50, 0);
 		} else if (arg6 != null) {
@@ -790,7 +790,7 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.d(Ldh;ILem;Lep;Laaq;Lia;S)Ldo;")
-	public final Model getHeadModel(Renderer arg0, int arg1, VariableTypeProvider arg2, VarIntDomain arg3, AnimationWrapper arg4, NPCTypeCustomisation arg5) {
+	public final Model getHeadModel(Toolkit arg0, int arg1, VariableTypeProvider arg2, VarIntDomain arg3, AnimationNode arg4, NPCTypeCustomisation arg5) {
 		if (this.multinpc != null) {
 			NPCType var7 = this.getMultiNPC(arg2, arg3);
 			return var7 == null ? null : var7.getHeadModel(arg0, arg1, arg2, arg3, arg4, arg5);
@@ -926,7 +926,7 @@ public class NPCType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntWrapper var3 = (IntWrapper) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -936,7 +936,7 @@ public class NPCType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectWrapper var3 = (ObjectWrapper) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

@@ -2,7 +2,7 @@ package com.jagex.game.config.msitype;
 
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.graphics.SpriteData;
 import com.jagex.graphics.SpriteDataProvider;
@@ -56,7 +56,7 @@ public class MSIType implements ConfigType {
 	}
 
 	@ObfuscatedName("aco.z(Ldh;IZI)Lcm;")
-	public Sprite method15057(Renderer arg0, int arg1, boolean arg2) {
+	public Sprite method15057(Toolkit arg0, int arg1, boolean arg2) {
 		long var4 = (long) (this.field9151 | arg1 << 16 | (arg2 ? 262144 : 0) | arg0.field1595 << 19);
 		Sprite var6 = (Sprite) this.field9153.field9156.get(var4);
 		if (var6 == null) {
@@ -68,7 +68,7 @@ public class MSIType implements ConfigType {
 	}
 
 	@ObfuscatedName("aco.p(Ldh;IZB)[I")
-	public int[] method15058(Renderer arg0, int arg1, boolean arg2) {
+	public int[] method15058(Toolkit arg0, int arg1, boolean arg2) {
 		if (this.field9150 == null) {
 			long var4 = (long) (this.field9151 | arg1 << 16 | (arg2 ? 262144 : 0) | arg0.field1595 << 19);
 			this.method15059(arg0, arg1, arg2, var4);
@@ -79,7 +79,7 @@ public class MSIType implements ConfigType {
 	}
 
 	@ObfuscatedName("aco.d(Ldh;IZJ)V")
-	public void method15059(Renderer arg0, int arg1, boolean arg2, long arg3) {
+	public void method15059(Toolkit arg0, int arg1, boolean arg2, long arg3) {
 		if (!this.field9153.field9157.loadFile(this.field9151)) {
 			return;
 		}

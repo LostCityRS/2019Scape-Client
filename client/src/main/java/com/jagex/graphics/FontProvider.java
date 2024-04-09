@@ -30,13 +30,13 @@ public class FontProvider implements FontIconProvider {
 	public WeightedCache iconCache;
 
 	@ObfuscatedName("oi.l")
-	public Renderer renderer = null;
+	public Toolkit toolkit = null;
 
 	@ObfuscatedName("oi.u")
 	public Map fonts = null;
 
-	public FontProvider(Renderer renderer, Js5 js5Sprites, Js5 js5FontMetrics, int[] fontIds) {
-		this.renderer = renderer;
+	public FontProvider(Toolkit toolkit, Js5 js5Sprites, Js5 js5FontMetrics, int[] fontIds) {
+		this.toolkit = toolkit;
 		this.js5Sprites = js5Sprites;
 		this.js5FontMetrics = js5FontMetrics;
 		this.fontIds = fontIds;
@@ -184,19 +184,19 @@ public class FontProvider implements FontIconProvider {
 	}
 
 	@ObfuscatedName("oi.c(Ldh;II)[Lcm;")
-	public Sprite[] getIconSprites(Renderer renderer, int id) {
+	public Sprite[] getIconSprites(Toolkit toolkit, int id) {
 		if (this.iconCache == null) {
 			return null;
 		}
-		if (renderer == null) {
-			renderer = this.renderer;
+		if (toolkit == null) {
+			toolkit = this.toolkit;
 		} else {
-			if (this.renderer != renderer) {
+			if (this.toolkit != toolkit) {
 				this.iconCache.reset();
 			}
-			this.renderer = renderer;
+			this.toolkit = toolkit;
 		}
-		if (renderer == null) {
+		if (toolkit == null) {
 			return null;
 		}
 		Sprite[] cached = (Sprite[]) this.iconCache.get((long) id);
@@ -205,7 +205,7 @@ public class FontProvider implements FontIconProvider {
 			if (sprites != null && sprites.length > 0) {
 				cached = new Sprite[sprites.length];
 				for (int index = 0; index < sprites.length; index++) {
-					cached[index] = renderer.createSprite(sprites[index], true);
+					cached[index] = toolkit.createSprite(sprites[index], true);
 				}
 				this.iconCache.put(cached, (long) id);
 			}
@@ -215,7 +215,7 @@ public class FontProvider implements FontIconProvider {
 
 	@ObfuscatedName("oi.r(II)I")
 	public int getIconWidth(int id) {
-		Sprite[] sprites = this.getIconSprites(this.renderer, id);
+		Sprite[] sprites = this.getIconSprites(this.toolkit, id);
 		return sprites == null ? 0 : sprites[0].getX();
 	}
 }

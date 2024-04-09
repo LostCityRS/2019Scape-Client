@@ -4,7 +4,7 @@ import com.jagex.game.client.MovingParticle;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.ModelParticleEffector;
 import com.jagex.graphics.ModelParticleEmitter;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 import java.util.Iterator;
@@ -126,7 +126,7 @@ public class ParticleSystem {
 	}
 
 	@ObfuscatedName("xy.l(Ldh;J)Z")
-	public boolean method9934(Renderer arg0, long arg1) {
+	public boolean method9934(Toolkit arg0, long arg1) {
 		if (this.field7811 == this.field7808) {
 			this.method9946();
 		} else {
@@ -162,7 +162,7 @@ public class ParticleSystem {
 	}
 
 	@ObfuscatedName("xy.z(Ldh;J[Ldu;[Lcq;Z)V")
-	public void method9936(Renderer arg0, long arg1, ModelParticleEmitter[] arg2, ModelParticleEffector[] arg3, boolean arg4) {
+	public void method9936(Toolkit arg0, long arg1, ModelParticleEmitter[] arg2, ModelParticleEffector[] arg3, boolean arg4) {
 		if (!this.field7804) {
 			this.method9937(arg0, arg2, arg4);
 			this.method9938(arg3, arg4);
@@ -171,7 +171,7 @@ public class ParticleSystem {
 	}
 
 	@ObfuscatedName("xy.p(Ldh;[Ldu;Z)V")
-	public void method9937(Renderer arg0, ModelParticleEmitter[] arg1, boolean arg2) {
+	public void method9937(Toolkit arg0, ModelParticleEmitter[] arg1, boolean arg2) {
 		for (int var4 = 0; var4 < 64; var4++) {
 			field7817[var4] = false;
 		}
@@ -278,7 +278,7 @@ public class ParticleSystem {
 	}
 
 	@ObfuscatedName("xy.v(Ltx;Ldh;)V")
-	public void method9941(Scene arg0, Renderer arg1) {
+	public void method9941(Scene arg0, Toolkit arg1) {
 		this.field7816.list.clear();
 		Iterator var3 = this.field7809.iterator();
 		while (var3.hasNext()) {

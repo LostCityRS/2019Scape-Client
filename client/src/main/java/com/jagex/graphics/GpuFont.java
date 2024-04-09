@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 public class GpuFont extends Font {
 
 	@ObfuscatedName("afx.o")
-	public final GpuRenderer field10244;
+	public final GpuToolkit field10244;
 
 	@ObfuscatedName("afx.s")
 	public final GpuTexture field10247;
@@ -19,7 +19,7 @@ public class GpuFont extends Font {
 	@ObfuscatedName("afx.q")
 	public float[][] field10245;
 
-	public GpuFont(GpuRenderer arg0, FontMetrics arg1, SpriteData arg2, boolean arg3) {
+	public GpuFont(GpuToolkit arg0, FontMetrics arg1, SpriteData arg2, boolean arg3) {
 		super(arg0, arg1);
 		this.field10244 = arg0;
 		int[] var5 = new int[this.fontMetrics.field8572 * this.fontMetrics.field8571];
@@ -153,6 +153,6 @@ public class GpuFont extends Font {
 	}
 
 	@ObfuscatedName("afx.y(CIIIZLch;II)V")
-	public void drawChar2(char arg0, int arg1, int arg2, int arg3, boolean arg4, GraphicsRelated arg5, int arg6, int arg7) {
+	public void drawChar2(char arg0, int arg1, int arg2, int arg3, boolean arg4, SpriteRelated arg5, int arg6, int arg7) {
 	}
 }

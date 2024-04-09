@@ -5,6 +5,7 @@ import com.jagex.core.utils.Cp1252;
 import com.jagex.core.utils.FileUtil;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.StringTools;
+import com.jagex.game.MiniMap;
 import com.jagex.game.client.*;
 import com.jagex.game.clientoptions.Preferences;
 import com.jagex.game.config.iftype.Component;
@@ -330,12 +331,12 @@ public class DeveloperConsole {
 	}
 
 	@ObfuscatedName("ky.r(Ldh;I)V")
-	public static void method5378(Renderer renderer) {
+	public static void method5378(Toolkit toolkit) {
 		if (TwitchHardwarePlatform.isStreaming() && TwitchHardwarePlatform.method8634()) {
 			TwitchHardwarePlatform.drawTwitchStream(0, 0, GameShell.canvasWid, 350);
 		}
-		renderer.resetBounds(0, 0, GameShell.canvasWid, 350);
-		renderer.fillRectangle(0, 0, GameShell.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);
+		toolkit.resetBounds(0, 0, GameShell.canvasWid, 350);
+		toolkit.fillRectangle(0, 0, GameShell.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);
 		int var1 = 350 / field763;
 		if (field764 > 0) {
 			int var2 = 346 - field763 - 4;
@@ -344,29 +345,29 @@ public class DeveloperConsole {
 			if (field764 > 1) {
 				var4 += (field764 - 1 - field771) * (var2 - var3) / (field764 - 1);
 			}
-			renderer.fillRectangle(GameShell.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
+			toolkit.fillRectangle(GameShell.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
 			for (int var5 = field771; var5 < field771 + var1 && var5 < field764; var5++) {
 				String[] var6 = StringTools.split(field4845[var5], '\b');
 				int var7 = (GameShell.canvasWid - 8 - 16) / var6.length;
 				for (int var8 = 0; var8 < var6.length; var8++) {
 					int var9 = var7 * var8 + 8;
-					renderer.resetBounds(var9, 0, var7 + var9 - 8, 350);
+					toolkit.resetBounds(var9, 0, var7 + var9 - 8, 350);
 					DefaultSprites.p12FullFont.drawString(method14312(var6[var8]), var9, 350 - field768 - 2 - DefaultSprites.p12FullMetrics.field8569 - field763 * (var5 - field771), -1, -16777216);
 				}
 			}
 		}
 		DefaultSprites.p11FullFont.drawStringRight("910 1", GameShell.canvasWid - 25, 330, -1, -16777216);
-		renderer.resetBounds(0, 0, GameShell.canvasWid, 350);
-		renderer.drawHorizontalLine(0, 350 - field768, GameShell.canvasWid, -1);
+		toolkit.resetBounds(0, 0, GameShell.canvasWid, 350);
+		toolkit.drawHorizontalLine(0, 350 - field768, GameShell.canvasWid, -1);
 		DefaultSprites.b12FullFont.drawString("--> " + method14312(currententry), 10, 350 - DefaultSprites.b12FullMetrics.field8569 - 1, -1, -16777216);
 		if (GameShell.focus) {
 			int var10 = -1;
 			if (Client.loopCycle % 30 > 15) {
 				var10 = 16777215;
 			}
-			renderer.drawVerticalLine(DefaultSprites.b12FullMetrics.stringWidth("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - DefaultSprites.b12FullMetrics.field8569 - 11, 12, var10);
+			toolkit.drawVerticalLine(DefaultSprites.b12FullMetrics.stringWidth("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - DefaultSprites.b12FullMetrics.field8569 - 11, 12, var10);
 		}
-		renderer.resetClip();
+		toolkit.resetClip();
 		method16858();
 	}
 
@@ -423,14 +424,14 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equals("renderer")) {
-				RendererInfo var3 = Client.renderer.getRendererInfo();
+				RendererInfo var3 = Client.toolkit.getRendererInfo();
 				addline("Toolkit ID: " + Client.preferences.displayMode.getValue());
 				addline("Vendor: " + var3.toolkitId);
 				addline("Name: " + var3.name);
 				addline("Version: " + var3.version);
 				addline("Device: " + var3.device);
 				addline("Driver Version: " + var3.driverVersion);
-				String var4 = Client.renderer.hardwareInfo();
+				String var4 = Client.toolkit.hardwareInfo();
 				if (var4.length() > 0) {
 					addline(var4);
 				}
@@ -746,7 +747,7 @@ public class DeveloperConsole {
 					Client.resetCaches(false);
 				} else if (arg0 == 13) {
 					Client.field10848 = !Client.field10848;
-					Client.renderer.method2253(Client.field10848);
+					Client.toolkit.method2253(Client.field10848);
 					method16752();
 					return;
 				} else if (arg0 == 1) {
@@ -771,7 +772,7 @@ public class DeveloperConsole {
 			Client.field3183.method7680(new RebuildRequest(RebuildType.field5070, null));
 		} else {
 			Client.world.rebuild();
-			Minimap.method5065();
+			MiniMap.method5065();
 		}
 	}
 }

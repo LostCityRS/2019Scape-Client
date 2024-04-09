@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ahu")
 public final class FixedFunctionSpriteShader extends SpriteShader {
 
-	public FixedFunctionSpriteShader(GpuRenderer arg0) {
+	public FixedFunctionSpriteShader(GpuToolkit arg0) {
 		super(arg0);
 	}
 

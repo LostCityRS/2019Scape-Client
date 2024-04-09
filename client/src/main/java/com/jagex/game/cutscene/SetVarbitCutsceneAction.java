@@ -1,6 +1,6 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.core.datastruct.IntWrapper;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
@@ -26,9 +26,9 @@ public class SetVarbitCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agx.n(I)V")
 	public void method2890() {
-		IntWrapper var1 = (IntWrapper) CutsceneManager.field1718.getNode(this.field10288);
+		IntNode var1 = (IntNode) CutsceneManager.field1718.getNode(this.field10288);
 		if (var1 == null) {
-			CutsceneManager.field1718.pushNode(new IntWrapper(this.field10289), this.field10288);
+			CutsceneManager.field1718.pushNode(new IntNode(this.field10289), this.field10288);
 		} else {
 			var1.value = this.field10289;
 		}

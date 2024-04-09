@@ -2,20 +2,20 @@ package com.jagex.graphics;
 
 import com.jagex.core.datastruct.Node;
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.legacygl.LegacyOpenGLRelated;
-import com.jagex.graphics.legacygl.LegacyOpenGLRenderer;
+import com.jagex.graphics.gl.GlTexture_Sub1;
+import com.jagex.graphics.gl.GlToolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ajl")
 public abstract class PostProcessingFilter extends Node {
 
 	@ObfuscatedName("ajl.k")
-	public final LegacyOpenGLRenderer field11270;
+	public final GlToolkit field11270;
 
 	@ObfuscatedName("ajl.f")
 	public boolean field11271;
 
-	public PostProcessingFilter(LegacyOpenGLRenderer arg0) {
+	public PostProcessingFilter(GlToolkit arg0) {
 		this.field11270 = arg0;
 	}
 
@@ -43,7 +43,7 @@ public abstract class PostProcessingFilter extends Node {
 	public abstract boolean method17534();
 
 	@ObfuscatedName("ajl.f(ILadt;Ladt;II)V")
-	public abstract void method17537(int arg0, LegacyOpenGLRelated arg1, LegacyOpenGLRelated arg2, int arg3, int arg4);
+	public abstract void method17537(int arg0, GlTexture_Sub1 arg1, GlTexture_Sub1 arg2, int arg3, int arg4);
 
 	@ObfuscatedName("ajl.w(I)V")
 	public abstract void method17538(int arg0);

@@ -1,13 +1,13 @@
 package com.jagex.game.cutscene;
 
 import com.jagex.core.io.Packet;
-import com.jagex.game.world.entity.SpotAnimEntityWrapper;
+import com.jagex.game.world.entity.SpotAnimEntityNode;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 import rs2.client.scene.entities.SpotAnimation;
 
 @ObfuscatedName("aqn")
-public class MapAnimCutsceneAction extends CutsceneActionUnused {
+public class MapAnimCutsceneAction extends CutsceneAction_Sub1 {
 
 	@ObfuscatedName("aqn.f")
 	public final int field12043;
@@ -35,6 +35,6 @@ public class MapAnimCutsceneAction extends CutsceneActionUnused {
 			var3++;
 		}
 		SpotAnimation var4 = new SpotAnimation(Client.world.getScene(), this.field10303, 0, this.field12044, var3, var1, Client.getHeightmapY(var1, var2, this.field12044) - this.field10305, var2, this.field12043, this.field12043, this.field12042, this.field12042, this.field10304, false, 0);
-		Client.spotanims.pushNode(new SpotAnimEntityWrapper(var4), (long) (this.field12043 << 16 | this.field12042));
+		Client.spotanims.pushNode(new SpotAnimEntityNode(var4), (long) (this.field12043 << 16 | this.field12042));
 	}
 }

@@ -2,7 +2,7 @@ package com.jagex.graphics.scenegraph;
 
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.Light;
-import com.jagex.graphics.Renderer;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.ScaleRotTrans;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
@@ -92,7 +92,7 @@ public abstract class WallLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asw.ga(Ldh;S)Z")
-	public boolean method18360(Renderer renderer) {
+	public boolean method18360(Toolkit toolkit) {
 		Vector3 var2 = this.getTransform().trans;
 		return this.scene.field6930.method8928(this, this.field11714, (int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900);
 	}
