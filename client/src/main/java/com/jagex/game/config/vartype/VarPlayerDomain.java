@@ -1,6 +1,6 @@
 package com.jagex.game.config.vartype;
 
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.config.vartype.bit.VarBitOverflowException;
 import com.jagex.game.config.vartype.bit.VarBitType;
@@ -19,7 +19,7 @@ public final class VarPlayerDomain implements VarDomain {
 	public int[] field7609 = new int[Client.varPlayerTypeList.length()];
 
 	@ObfuscatedName("wu.l")
-	public IterableMap field7610 = new IterableMap(128);
+	public HashTable field7610 = new HashTable(128);
 
 	@ObfuscatedName("wu.i(ZI)I")
 	public int method9623(boolean arg0) {
@@ -47,7 +47,7 @@ public final class VarPlayerDomain implements VarDomain {
 				this.field7609[var1] = 0;
 			}
 		}
-		this.field7610 = new IterableMap(128);
+		this.field7610 = new HashTable(128);
 	}
 
 	@ObfuscatedName("wu.u(Lec;I)I")

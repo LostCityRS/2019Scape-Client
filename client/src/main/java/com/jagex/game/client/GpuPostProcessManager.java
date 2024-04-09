@@ -13,10 +13,10 @@ public class GpuPostProcessManager {
 	public GpuToolkit field3247;
 
 	@ObfuscatedName("ls.n")
-	public Framebuffer field3245;
+	public FrameBuffer field3245;
 
 	@ObfuscatedName("ls.m")
-	public Framebuffer field3265;
+	public FrameBuffer field3265;
 
 	@ObfuscatedName("ls.k")
 	public Texture2 field3244;

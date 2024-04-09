@@ -1,7 +1,7 @@
 package rs2.client.logic;
 
-import com.jagex.core.datastruct.DualIterableQueue;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.SecondaryLinkedList;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.MonotonicTime;
@@ -27,13 +27,13 @@ public class DelayedStateChange extends SecondaryNode {
 	public String field12269;
 
 	@ObfuscatedName("ars.ac")
-	public static DualIterableQueue field12289 = new DualIterableQueue();
+	public static SecondaryLinkedList field12289 = new SecondaryLinkedList();
 
 	@ObfuscatedName("ars.ai")
-	public static DualIterableQueue field12290 = new DualIterableQueue();
+	public static SecondaryLinkedList field12290 = new SecondaryLinkedList();
 
 	@ObfuscatedName("ars.aw")
-	public static IterableMap field12291 = new IterableMap(16);
+	public static HashTable field12291 = new HashTable(16);
 
 	@ObfuscatedName("ars.am")
 	public static boolean field12295 = false;

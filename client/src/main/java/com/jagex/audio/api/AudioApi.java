@@ -4,8 +4,8 @@ import com.jagex.audio.backend.AudioMixer;
 import com.jagex.audio.backend.AudioMixerRelated;
 import com.jagex.audio.backend.SoundBackendConfig;
 import com.jagex.audio.stream.*;
-import com.jagex.core.datastruct.CacheRemovalListener;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTableRemovalListener;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.game.client.ClientMessage;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.network.protocol.ClientProt;
@@ -44,13 +44,13 @@ public class AudioApi {
 	public List field1867 = new ArrayList();
 
 	@ObfuscatedName("fb.v")
-	public WeightedCache field1856;
+	public SoftLruHashTable field1856;
 
 	@ObfuscatedName("fb.o")
-	public WeightedCache field1862;
+	public SoftLruHashTable field1862;
 
 	@ObfuscatedName("fb.s")
-	public WeightedCache field1863;
+	public SoftLruHashTable field1863;
 
 	@ObfuscatedName("fb.y")
 	public int field1864;
@@ -351,12 +351,12 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fb.m(I)Leb;")
-	public WeightedCache method3145() {
+	public SoftLruHashTable method3145() {
 		return this.field1856;
 	}
 
 	@ObfuscatedName("fb.k(I)Leb;")
-	public WeightedCache method3146() {
+	public SoftLruHashTable method3146() {
 		return this.field1862;
 	}
 
@@ -372,9 +372,9 @@ public class AudioApi {
 			return;
 		}
 		this.field1864 = arg0;
-		this.field1856 = new WeightedCache(arg1, 100);
-		this.field1862 = new WeightedCache(10);
-		this.field1856.setRemovalListener(new AudioApiCacheRemovalListener(this));
+		this.field1856 = new SoftLruHashTable(arg1, 100);
+		this.field1862 = new SoftLruHashTable(10);
+		this.field1856.setRemovalListener(new AudioApiRemovalListener(this));
 		SoundBackendConfig var3 = new SoundBackendConfig(SoundBackendType.DUMMY);
 		AudioMixer.createBackend(var3);
 		this.configureRoutingArchitecture();
@@ -383,13 +383,13 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fs")
-	public static class AudioApiCacheRemovalListener implements CacheRemovalListener {
+	public static class AudioApiRemovalListener implements SoftLruHashTableRemovalListener {
 
 		// $FF: synthetic field
 		public final AudioApi this$0;
 
 		// line 267
-		public AudioApiCacheRemovalListener(AudioApi arg0) {
+		public AudioApiRemovalListener(AudioApi arg0) {
 			this.this$0 = arg0;
 		}
 

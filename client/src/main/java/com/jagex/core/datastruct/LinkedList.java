@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Iterator;
 
 @ObfuscatedName("aat")
-public class IterableQueue implements Iterable, Collection {
+public class LinkedList implements Iterable, Collection {
 
 	@ObfuscatedName("aat.e")
 	public Node head = new Node();
@@ -14,7 +14,7 @@ public class IterableQueue implements Iterable, Collection {
 	@ObfuscatedName("aat.n")
 	public Node peeked;
 
-	public IterableQueue() {
+	public LinkedList() {
 		this.head.prev = this.head;
 		this.head.next = this.head;
 	}
@@ -60,7 +60,7 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.f(Laat;Ltj;I)V")
-	public void moveToFront(IterableQueue queue, Node nextNode) {
+	public void moveToFront(LinkedList queue, Node nextNode) {
 		Node node = this.head.next;
 		this.head.next = nextNode.next;
 		nextNode.next.prev = this.head;
@@ -73,7 +73,7 @@ public class IterableQueue implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.w(Laat;I)V")
-	public void merge(IterableQueue queue) {
+	public void merge(LinkedList queue) {
 		if (this.head.prev != this.head) {
 			this.moveToFront(queue, this.head.prev);
 		}

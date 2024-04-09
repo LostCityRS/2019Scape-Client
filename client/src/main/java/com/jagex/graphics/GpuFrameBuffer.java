@@ -3,12 +3,12 @@ package com.jagex.graphics;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("apz")
-public abstract class GpuFramebuffer extends Framebuffer {
+public abstract class GpuFrameBuffer extends FrameBuffer {
 
 	@ObfuscatedName("apz.n")
 	public GpuToolkit field11923;
 
-	public GpuFramebuffer(GpuToolkit arg0) {
+	public GpuFrameBuffer(GpuToolkit arg0) {
 		this.field11923 = arg0;
 	}
 

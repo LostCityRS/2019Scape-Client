@@ -15,7 +15,7 @@ public class GlFont extends Font {
 	public final GlTexture_Sub1_Sub1 field10241;
 
 	@ObfuscatedName("afs.y")
-	public final RenderList field10242;
+	public final GlRenderList field10242;
 
 	@ObfuscatedName("afs.q")
 	public final boolean field10240;
@@ -89,7 +89,7 @@ public class GlFont extends Font {
 			this.field10240 = false;
 		}
 		this.field10241.method1082(this.fontMetrics.field8570 != 1);
-		this.field10242 = new RenderList(arg0, 256);
+		this.field10242 = new GlRenderList(arg0, 256);
 		float var28 = 1.0F / (float) this.fontMetrics.field8571;
 		float var29 = 1.0F / (float) this.fontMetrics.field8572;
 		for (int var30 = 0; var30 < 256; var30++) {

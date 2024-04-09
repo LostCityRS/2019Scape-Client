@@ -56,7 +56,7 @@ public abstract class Toolkit {
 	public Hashtable field1613 = new Hashtable();
 
 	@ObfuscatedName("dh.ae")
-	public final Framebuffer[] field1620 = new Framebuffer[4];
+	public final FrameBuffer[] field1620 = new FrameBuffer[4];
 
 	@ObfuscatedName("dh.ag")
 	public int field1615;
@@ -241,7 +241,7 @@ public abstract class Toolkit {
 	}
 
 	@ObfuscatedName("dh.as(Lafq;B)V")
-	public final void method2142(Framebuffer arg0) {
+	public final void method2142(FrameBuffer arg0) {
 		if (this.field1616 >= 3) {
 			throw new RuntimeException();
 		}
@@ -255,7 +255,7 @@ public abstract class Toolkit {
 	}
 
 	@ObfuscatedName("dh.at(Lafq;I)V")
-	public final void method2143(Framebuffer arg0) {
+	public final void method2143(FrameBuffer arg0) {
 		if (this.field1616 < 0 || this.field1620[this.field1616] != arg0) {
 			throw new RuntimeException();
 		}
@@ -512,7 +512,7 @@ public abstract class Toolkit {
 	public abstract Surface createSurface(Canvas arg0, int arg1, int arg2);
 
 	@ObfuscatedName("dh.am()Lafq;")
-	public abstract Framebuffer createFramebuffer();
+	public abstract FrameBuffer createFramebuffer();
 
 	@ObfuscatedName("dh.au(IILck;Ldg;I)Ldp;")
 	public abstract GraphicsDeletable method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4);

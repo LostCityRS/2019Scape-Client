@@ -2,7 +2,7 @@ package com.jagex.game.config.vartype.general;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
@@ -20,7 +20,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	public final Js5 configClient;
 
 	@ObfuscatedName("adm.m")
-	public final WeightedCache recentUse = new WeightedCache(64);
+	public final SoftLruHashTable recentUse = new SoftLruHashTable(64);
 
 	public VarBasicTypeListClient(ModeGame arg0, VarDomainType arg1, Language arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.getGroupCapacity(arg1.getJs5GroupID().id));
@@ -29,7 +29,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 
 	@ObfuscatedName("adm.e(II)Lay;")
 	public ConfigType list(int id) {
-		WeightedCache var2 = this.recentUse;
+		SoftLruHashTable var2 = this.recentUse;
 		synchronized (this.recentUse) {
 			VarBasicType var3 = (VarBasicType) this.recentUse.get((long) id);
 			if (var3 == null) {
@@ -52,7 +52,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 
 	@ObfuscatedName("adm.v(I)V")
 	public void cacheReset() {
-		WeightedCache var1 = this.recentUse;
+		SoftLruHashTable var1 = this.recentUse;
 		synchronized (this.recentUse) {
 			this.recentUse.reset();
 		}
@@ -60,7 +60,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 
 	@ObfuscatedName("adm.o(II)V")
 	public void cacheClean(int arg0) {
-		WeightedCache var2 = this.recentUse;
+		SoftLruHashTable var2 = this.recentUse;
 		synchronized (this.recentUse) {
 			this.recentUse.clean(arg0);
 		}
@@ -68,7 +68,7 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 
 	@ObfuscatedName("adm.s(I)V")
 	public void cacheRemoveSoftReferences() {
-		WeightedCache var1 = this.recentUse;
+		SoftLruHashTable var1 = this.recentUse;
 		synchronized (this.recentUse) {
 			this.recentUse.clear();
 		}

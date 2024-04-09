@@ -1,7 +1,7 @@
 package rs2.client.logic.chat;
 
-import com.jagex.core.datastruct.DualIterableQueue;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.SecondaryLinkedList;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.game.shared.framework.chat.ChatCrownType;
 import deob.ObfuscatedName;
 import rs2.client.Client;
@@ -16,10 +16,10 @@ public class ChatHistory {
 	public static final Map field2594 = new HashMap();
 
 	@ObfuscatedName("hz.n")
-	public static final IterableMap field2597 = new IterableMap(1024);
+	public static final HashTable field2597 = new HashTable(1024);
 
 	@ObfuscatedName("hz.m")
-	public static final DualIterableQueue field2596 = new DualIterableQueue();
+	public static final SecondaryLinkedList field2596 = new SecondaryLinkedList();
 
 	@ObfuscatedName("hz.k")
 	public static int field2595 = 0;

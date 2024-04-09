@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.graphics.DefaultSprites;
 import com.jagex.graphics.Font;
@@ -22,7 +22,7 @@ public class ObjIconFactory {
 	public static Font field629;
 
 	@ObfuscatedName("ag.m")
-	public static IterableQueue field631 = new IterableQueue();
+	public static LinkedList field631 = new LinkedList();
 
 	public ObjIconFactory() throws Throwable {
 		throw new Error();

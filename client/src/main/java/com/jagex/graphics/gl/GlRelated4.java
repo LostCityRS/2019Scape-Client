@@ -1,12 +1,10 @@
-package com.jagex.graphics.glx;
+package com.jagex.graphics.gl;
 
-import com.jagex.graphics.gl.GlTexture_Sub1;
-import com.jagex.graphics.gl.GlPostProcessingRelated;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("ct")
-public class GlxRelated4 implements GlPostProcessingRelated {
+public class GlRelated4 implements GlPostProcessingRelated {
 
 	@ObfuscatedName("ct.e")
 	public final int field1203;
@@ -14,7 +12,7 @@ public class GlxRelated4 implements GlPostProcessingRelated {
 	@ObfuscatedName("ct.n")
 	public final GlTexture_Sub1 field1202;
 
-	public GlxRelated4(GlTexture_Sub1 arg0, int arg1) {
+	public GlRelated4(GlTexture_Sub1 arg0, int arg1) {
 		this.field1203 = arg1;
 		this.field1202 = arg0;
 	}

@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
@@ -66,7 +66,7 @@ public class FrameSet extends SecondaryNode {
 		if (!var5) {
 			return false;
 		}
-		IterableQueue var12 = new IterableQueue();
+		LinkedList var12 = new LinkedList();
 		Js5 var13 = field12325;
 		int[] var15;
 		synchronized (field12325) {

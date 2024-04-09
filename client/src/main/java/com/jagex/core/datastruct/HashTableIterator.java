@@ -5,10 +5,10 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("aah")
-public class IterableMapIterator implements Iterator {
+public class HashTableIterator implements Iterator {
 
 	@ObfuscatedName("aah.e")
-	public IterableMap map;
+	public HashTable map;
 
 	@ObfuscatedName("aah.n")
 	public Node next;
@@ -19,7 +19,7 @@ public class IterableMapIterator implements Iterator {
 	@ObfuscatedName("aah.k")
 	public Node prev = null;
 
-	public IterableMapIterator(IterableMap map) {
+	public HashTableIterator(HashTable map) {
 		this.map = map;
 		this.advance();
 	}

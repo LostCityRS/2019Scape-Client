@@ -72,22 +72,22 @@ public class MiniMenu {
 	public static int field543 = 0;
 
 	@ObfuscatedName("o.b")
-	public static IterableQueue field542 = new IterableQueue();
+	public static LinkedList field542 = new LinkedList();
 
 	@ObfuscatedName("o.h")
-	public static IterableMap field549 = new IterableMap(16);
+	public static HashTable field549 = new HashTable(16);
 
 	@ObfuscatedName("o.a")
-	public static DualIterableQueue field550 = new DualIterableQueue();
+	public static SecondaryLinkedList field550 = new SecondaryLinkedList();
 
 	@ObfuscatedName("o.g")
-	public static IterableQueue field538 = new IterableQueue();
+	public static LinkedList field538 = new LinkedList();
 
 	@ObfuscatedName("o.i")
-	public static IterableQueue field552 = new IterableQueue();
+	public static LinkedList field552 = new LinkedList();
 
 	@ObfuscatedName("o.j")
-	public static WeightedCache field534 = new WeightedCache(30);
+	public static SoftLruHashTable field534 = new SoftLruHashTable(30);
 
 	@ObfuscatedName("amq.t")
 	public static int field11738;
@@ -380,7 +380,7 @@ public class MiniMenu {
 					}
 					if (var28 != -1) {
 						int var33 = 0;
-						DualIterableQueueIterator var34 = new DualIterableQueueIterator(field550);
+						SecondaryLinkedListIterator var34 = new SecondaryLinkedListIterator(field550);
 						for (MiniMenuSubMenu var35 = (MiniMenuSubMenu) var34.nextNode(); var35 != null; var35 = (MiniMenuSubMenu) var34.next()) {
 							if (var28 == var33) {
 								if (var35.field12310 > 1) {
@@ -410,7 +410,7 @@ public class MiniMenu {
 			}
 			if (var6 != -1) {
 				int var10 = 0;
-				DualIterableQueueIterator var11 = new DualIterableQueueIterator(field541.field12312);
+				SecondaryLinkedListIterator var11 = new SecondaryLinkedListIterator(field541.field12312);
 				for (MiniMenuEntry var12 = (MiniMenuEntry) var11.nextNode(); var12 != null; var12 = (MiniMenuEntry) var11.next()) {
 					if (var6 == var10) {
 						useMenuOption(var12, var4, var5, true);
@@ -440,7 +440,7 @@ public class MiniMenu {
 				}
 				if (var20 != -1) {
 					int var24 = 0;
-					DualIterableQueueIterator var25 = new DualIterableQueueIterator(field550);
+					SecondaryLinkedListIterator var25 = new SecondaryLinkedListIterator(field550);
 					for (MiniMenuSubMenu var26 = (MiniMenuSubMenu) var25.nextNode(); var26 != null; var26 = (MiniMenuSubMenu) var25.next()) {
 						if (var20 == var24) {
 							useMenuOption((MiniMenuEntry) var26.field12312.head.secondaryPrev, var4, var5, true);
@@ -681,7 +681,7 @@ public class MiniMenu {
 		arg0.secondaryRemove();
 		for (MiniMenuSubMenu var2 = (MiniMenuSubMenu) field550.peekFront(); var2 != null; var2 = (MiniMenuSubMenu) field550.prev()) {
 			if (method18853(arg0.method19375(), var2.method19375())) {
-				DualIterableQueue.method10144(arg0, var2);
+				SecondaryLinkedList.method10144(arg0, var2);
 				var1 = true;
 				break;
 			}
@@ -1217,7 +1217,7 @@ public class MiniMenu {
 						}
 						if (var10 != -1) {
 							int var14 = 0;
-							DualIterableQueueIterator var15 = new DualIterableQueueIterator(field550);
+							SecondaryLinkedListIterator var15 = new SecondaryLinkedListIterator(field550);
 							for (MiniMenuSubMenu var16 = (MiniMenuSubMenu) var15.nextNode(); var16 != null; var16 = (MiniMenuSubMenu) var15.next()) {
 								if (var14++ == var10) {
 									return ((MiniMenuEntry) var16.field12312.head.secondaryPrev).field12298;
@@ -1241,7 +1241,7 @@ public class MiniMenu {
 						}
 						if (var17 != -1) {
 							int var21 = 0;
-							DualIterableQueueIterator var22 = new DualIterableQueueIterator(field541.field12312);
+							SecondaryLinkedListIterator var22 = new SecondaryLinkedListIterator(field541.field12312);
 							for (MiniMenuEntry var23 = (MiniMenuEntry) var22.nextNode(); var23 != null; var23 = (MiniMenuEntry) var22.next()) {
 								if (var21++ == var17) {
 									return var23.field12298;

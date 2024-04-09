@@ -1,6 +1,6 @@
 package rs2.client.logic.clans;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
@@ -14,7 +14,7 @@ public class ClanSettingsDelta {
 	public int updateNum = -1;
 
 	@ObfuscatedName("kd.m")
-	public IterableQueue queue = new IterableQueue();
+	public LinkedList queue = new LinkedList();
 
 	public ClanSettingsDelta(Packet buf) {
 		this.decode(buf);

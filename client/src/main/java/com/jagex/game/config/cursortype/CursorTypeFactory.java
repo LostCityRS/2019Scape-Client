@@ -1,6 +1,6 @@
 package com.jagex.game.config.cursortype;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
@@ -11,7 +11,7 @@ public abstract class CursorTypeFactory {
 	public Js5 js5;
 
 	@ObfuscatedName("xd.n")
-	public final WeightedCache cursorCache = new WeightedCache(2);
+	public final SoftLruHashTable cursorCache = new SoftLruHashTable(2);
 
 	public CursorTypeFactory(Js5 js5) {
 		this.js5 = js5;
@@ -19,7 +19,7 @@ public abstract class CursorTypeFactory {
 
 	@ObfuscatedName("xd.e(I)V")
 	public void cacheReset() {
-		WeightedCache var1 = this.cursorCache;
+		SoftLruHashTable var1 = this.cursorCache;
 		synchronized (this.cursorCache) {
 			this.cursorCache.reset();
 		}
@@ -27,7 +27,7 @@ public abstract class CursorTypeFactory {
 
 	@ObfuscatedName("xd.n(II)V")
 	public void cacheClean(int arg0) {
-		WeightedCache var2 = this.cursorCache;
+		SoftLruHashTable var2 = this.cursorCache;
 		synchronized (this.cursorCache) {
 			this.cursorCache.clean(arg0);
 		}
@@ -35,7 +35,7 @@ public abstract class CursorTypeFactory {
 
 	@ObfuscatedName("xd.m(I)V")
 	public void cacheRemoveSoftReferences() {
-		WeightedCache var1 = this.cursorCache;
+		SoftLruHashTable var1 = this.cursorCache;
 		synchronized (this.cursorCache) {
 			this.cursorCache.clear();
 		}

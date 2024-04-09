@@ -2,7 +2,7 @@ package com.jagex.graphics.dx;
 
 import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.GpuVolumeTexture;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.game.client.DataType;
 import com.jagex.game.client.PrimitiveType;
 import com.jagex.game.config.BillboardTypeList;
@@ -40,7 +40,7 @@ public class DxToolkit extends GpuToolkit {
 	public final D3DDISPLAYMODE displayMode;
 
 	@ObfuscatedName("aqd.hp")
-	public IterableQueue field11959 = new IterableQueue();
+	public LinkedList field11959 = new LinkedList();
 
 	@ObfuscatedName("aqd.hy")
 	public boolean field11960 = false;
@@ -464,8 +464,8 @@ public class DxToolkit extends GpuToolkit {
 	}
 
 	@ObfuscatedName("aqd.am()Lafq;")
-	public Framebuffer createFramebuffer() {
-		return new DxFramebuffer(this);
+	public FrameBuffer createFramebuffer() {
+		return new DxFrameBuffer(this);
 	}
 
 	@ObfuscatedName("aqd.ad(Ljava/awt/Canvas;II)Lafy;")
@@ -475,17 +475,17 @@ public class DxToolkit extends GpuToolkit {
 
 	@ObfuscatedName("aqd.au(IILck;Ldg;I)Ldp;")
 	public GraphicsDeletable method2146(int arg0, int arg1, TextureFormat arg2, DataType arg3, int arg4) {
-		return new GraphicsDeleteableRelated(this, arg2, arg3, arg0, arg1, arg4);
+		return new DxGraphicsDeletable_Sub1(this, arg2, arg3, arg0, arg1, arg4);
 	}
 
 	@ObfuscatedName("aqd.ar(II)Ldw;")
 	public EffectInterface method2121(int arg0, int arg1) {
-		return new EffectInterfaceRelated(this, DataType.UNSIGNED_INT_24, arg0, arg1, 0);
+		return new DxFrameBufferInterface_Sub1(this, DataType.UNSIGNED_INT_24, arg0, arg1, 0);
 	}
 
 	@ObfuscatedName("aqd.ap(III)Ldw;")
 	public EffectInterface method2356(int arg0, int arg1, int arg2) {
-		return new EffectInterfaceRelated(this, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
+		return new DxFrameBufferInterface_Sub1(this, DataType.UNSIGNED_INT_24, arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("aqd.aha(Loz;)Lake;")

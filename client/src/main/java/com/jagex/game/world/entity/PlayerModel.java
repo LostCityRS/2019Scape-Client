@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.bastype.BASTypeList;
@@ -69,10 +69,10 @@ public class PlayerModel {
 	public static final int[] field7900 = new int[] { 8, 11, 4, 6, 9, 7, 10, 0 };
 
 	@ObfuscatedName("xg.a")
-	public static WeightedCache field7901 = new WeightedCache(260);
+	public static SoftLruHashTable field7901 = new SoftLruHashTable(260);
 
 	@ObfuscatedName("xg.g")
-	public static WeightedCache field7902 = new WeightedCache(5);
+	public static SoftLruHashTable field7902 = new SoftLruHashTable(5);
 
 	@ObfuscatedName("ns.i")
 	public static int field4037;
@@ -266,7 +266,7 @@ public class PlayerModel {
 				}
 			}
 		}
-		WeightedCache var33 = field7901;
+		SoftLruHashTable var33 = field7901;
 		Model var34;
 		synchronized (field7901) {
 			var34 = (Model) field7901.get(var17);
@@ -285,7 +285,7 @@ public class PlayerModel {
 				if (var39 >= var19.length) {
 					if (var38) {
 						if (this.field7899 != -1L) {
-							WeightedCache var45 = field7901;
+							SoftLruHashTable var45 = field7901;
 							synchronized (field7901) {
 								var34 = (Model) field7901.get(this.field7899);
 							}
@@ -360,7 +360,7 @@ public class PlayerModel {
 						var34.method1736();
 						if (arg13) {
 							var34.method1690(var16);
-							WeightedCache var67 = field7901;
+							SoftLruHashTable var67 = field7901;
 							synchronized (field7901) {
 								field7901.put(var34, var17);
 							}
@@ -467,7 +467,7 @@ public class PlayerModel {
 			return ((NPCType) arg3.list(this.field7892)).getHeadModel(arg0, arg1, arg5, arg6, arg7, null);
 		}
 		int var9 = arg7 == null ? arg1 : arg1 | arg7.method14358();
-		WeightedCache var10 = field7902;
+		SoftLruHashTable var10 = field7902;
 		Model var11;
 		synchronized (field7902) {
 			var11 = (Model) field7902.get(this.field7888);
@@ -532,7 +532,7 @@ public class PlayerModel {
 				}
 			}
 			var11.method1690(var9);
-			WeightedCache var31 = field7902;
+			SoftLruHashTable var31 = field7902;
 			synchronized (field7902) {
 				field7902.put(var11, this.field7888);
 			}
@@ -550,7 +550,7 @@ public class PlayerModel {
 	public Model method10130(Toolkit arg0, int arg1, IDKTypeList arg2, SeqTypeList arg3, AnimationNode arg4, int arg5, int arg6, int arg7) {
 		int var9 = arg4 == null ? arg1 : arg1 | arg4.method14358();
 		long var10 = (long) arg7 << 32 | (long) (arg6 << 16) | (long) arg5;
-		WeightedCache var12 = field7902;
+		SoftLruHashTable var12 = field7902;
 		Model var13;
 		synchronized (field7902) {
 			var13 = (Model) field7902.get(var10);
@@ -594,7 +594,7 @@ public class PlayerModel {
 				}
 			}
 			var13.method1690(var9);
-			WeightedCache var27 = field7902;
+			SoftLruHashTable var27 = field7902;
 			synchronized (field7902) {
 				field7902.put(var13, var10);
 			}
@@ -610,7 +610,7 @@ public class PlayerModel {
 
 	@ObfuscatedName("alb.d(I)I")
 	public static int method18304() {
-		WeightedCache var0 = field7901;
+		SoftLruHashTable var0 = field7901;
 		synchronized (field7901) {
 			return field7901.count();
 		}
@@ -619,11 +619,11 @@ public class PlayerModel {
 	@ObfuscatedName("eg.c(IS)V")
 	public static void resetModelCache(int arg0) {
 		field4037 = arg0;
-		WeightedCache var1 = field7902;
+		SoftLruHashTable var1 = field7902;
 		synchronized (field7902) {
 			field7902.reset();
 		}
-		WeightedCache var3 = field7901;
+		SoftLruHashTable var3 = field7901;
 		synchronized (field7901) {
 			field7901.reset();
 		}
@@ -631,11 +631,11 @@ public class PlayerModel {
 
 	@ObfuscatedName("ada.r(I)V")
 	public static void cacheReset() {
-		WeightedCache var0 = field7901;
+		SoftLruHashTable var0 = field7901;
 		synchronized (field7901) {
 			field7901.reset();
 		}
-		WeightedCache var2 = field7902;
+		SoftLruHashTable var2 = field7902;
 		synchronized (field7902) {
 			field7902.reset();
 		}
@@ -643,11 +643,11 @@ public class PlayerModel {
 
 	@ObfuscatedName("xw.v(IB)V")
 	public static void cacheClean(int arg0) {
-		WeightedCache var1 = field7901;
+		SoftLruHashTable var1 = field7901;
 		synchronized (field7901) {
 			field7901.clean(arg0);
 		}
-		WeightedCache var3 = field7902;
+		SoftLruHashTable var3 = field7902;
 		synchronized (field7902) {
 			field7902.clean(arg0);
 		}
@@ -655,11 +655,11 @@ public class PlayerModel {
 
 	@ObfuscatedName("sc.o(S)V")
 	public static void cacheRemoveSoftReferences() {
-		WeightedCache var0 = field7901;
+		SoftLruHashTable var0 = field7901;
 		synchronized (field7901) {
 			field7901.clear();
 		}
-		WeightedCache var2 = field7902;
+		SoftLruHashTable var2 = field7902;
 		synchronized (field7902) {
 			field7902.clear();
 		}

@@ -1,7 +1,7 @@
 package com.jagex.graphics.gl.effects;
 
-import com.jagex.graphics.RenderList;
-import com.jagex.graphics.gl.GlEffectRelated2;
+import com.jagex.graphics.GlRenderList;
+import com.jagex.graphics.gl.GlWaterRelated;
 import com.jagex.graphics.gl.GlToolkit;
 import com.jagex.graphics.gl.GlTexture;
 import deob.ObfuscatedName;
@@ -11,18 +11,18 @@ import jaggl.OpenGL;
 public class GlLakeWaterEffect extends GlEffect {
 
 	@ObfuscatedName("aeh.k")
-	public RenderList field9297;
+	public GlRenderList field9297;
 
 	@ObfuscatedName("aeh.f")
-	public GlEffectRelated2 field9295;
+	public GlWaterRelated field9295;
 
 	@ObfuscatedName("aeh.w")
 	public static final float[] field9296 = new float[4];
 
-	public GlLakeWaterEffect(GlToolkit arg0, GlEffectRelated2 arg1) {
+	public GlLakeWaterEffect(GlToolkit arg0, GlWaterRelated arg1) {
 		super(arg0);
 		this.field9295 = arg1;
-		this.field9297 = new RenderList(arg0, 2);
+		this.field9297 = new GlRenderList(arg0, 2);
 		this.field9297.method1245(0);
 		this.field1021.method15776(1);
 		if (this.field9295.field1040) {

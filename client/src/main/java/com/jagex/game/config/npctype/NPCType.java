@@ -199,7 +199,7 @@ public class NPCType implements ConfigType {
 	public int bgsound_volume = 255;
 
 	@ObfuscatedName("if.bm")
-	public IterableMap params;
+	public HashTable params;
 
 	@ObfuscatedName("if.bb")
 	public int overlayheight = -1;
@@ -515,7 +515,7 @@ public class NPCType implements ConfigType {
 					int var34 = buf.g1();
 					if (this.params == null) {
 						int var35 = IntMath.bitceil(var34);
-						this.params = new IterableMap(var35);
+						this.params = new HashTable(var35);
 					}
 					for (int var36 = 0; var36 < var34; var36++) {
 						boolean var37 = buf.g1() == 1;
@@ -586,7 +586,7 @@ public class NPCType implements ConfigType {
 		if (arg10 != null) {
 			var19 |= arg10.field2688 << 24;
 		}
-		WeightedCache var21 = this.factory.modelCache;
+		SoftLruHashTable var21 = this.factory.modelCache;
 		Model var22;
 		synchronized (this.factory.modelCache) {
 			var22 = (Model) this.factory.modelCache.get(var19);
@@ -720,7 +720,7 @@ public class NPCType implements ConfigType {
 			}
 			var22.method1736();
 			var22.method1690(var15);
-			WeightedCache var48 = this.factory.modelCache;
+			SoftLruHashTable var48 = this.factory.modelCache;
 			synchronized (this.factory.modelCache) {
 				this.factory.modelCache.put(var22, var19);
 			}
@@ -805,7 +805,7 @@ public class NPCType implements ConfigType {
 			if (arg5 != null) {
 				var9 |= arg5.field2688 << 24;
 			}
-			WeightedCache var11 = this.factory.headModelCache;
+			SoftLruHashTable var11 = this.factory.headModelCache;
 			Model var12;
 			synchronized (this.factory.headModelCache) {
 				var12 = (Model) this.factory.headModelCache.get(var9);
@@ -891,7 +891,7 @@ public class NPCType implements ConfigType {
 					var12.method1745(this.tint_hue, this.tint_saturation, this.tint_luminence, this.tint_weight & 0xFF);
 				}
 				var12.method1690(var8);
-				WeightedCache var30 = this.factory.headModelCache;
+				SoftLruHashTable var30 = this.factory.headModelCache;
 				synchronized (this.factory.headModelCache) {
 					this.factory.headModelCache.put(var12, var9);
 				}

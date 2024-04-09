@@ -1,6 +1,6 @@
 package com.jagex.game.scene;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.game.client.ClientMapLoader;
 import com.jagex.game.world.entity.*;
@@ -59,10 +59,10 @@ public final class ChangeLocationRequest extends Node {
 	public boolean field11240 = false;
 
 	@ObfuscatedName("ajt.x")
-	public static IterableQueue field11237 = new IterableQueue();
+	public static LinkedList field11237 = new LinkedList();
 
 	@ObfuscatedName("ajt.b")
-	public static IterableQueue field11242 = new IterableQueue();
+	public static LinkedList field11242 = new LinkedList();
 
 	@ObfuscatedName("ajt.h")
 	public static long field11243 = 1L;

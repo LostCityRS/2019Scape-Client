@@ -1,6 +1,6 @@
 package com.jagex.graphics.gl;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.game.client.DataType;
 import com.jagex.graphics.*;
 import deob.ObfuscatedName;
@@ -15,7 +15,7 @@ public class GlRelated2 {
 	public final TextureList field1186;
 
 	@ObfuscatedName("ca.m")
-	public final WeightedCache field1185 = new WeightedCache(10485760, 256);
+	public final SoftLruHashTable field1185 = new SoftLruHashTable(10485760, 256);
 
 	public GlRelated2(GlToolkit arg0, TextureList arg1) {
 		this.field1187 = arg0;

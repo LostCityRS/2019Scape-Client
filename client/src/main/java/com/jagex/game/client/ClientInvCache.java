@@ -1,8 +1,8 @@
 package com.jagex.game.client;
 
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.invtype.InvType;
@@ -23,10 +23,10 @@ import rs2.client.Client;
 public class ClientInvCache extends Node {
 
 	@ObfuscatedName("ajo.k")
-	public static final IterableMap recentUse = new IterableMap(32);
+	public static final HashTable recentUse = new HashTable(32);
 
 	@ObfuscatedName("ajo.f")
-	public static final WeightedCache modelCache = new WeightedCache(10);
+	public static final SoftLruHashTable modelCache = new SoftLruHashTable(10);
 
 	@ObfuscatedName("ajo.w")
 	public static int field11222;

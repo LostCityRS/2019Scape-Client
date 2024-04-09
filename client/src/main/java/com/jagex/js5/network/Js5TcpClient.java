@@ -1,6 +1,6 @@
 package com.jagex.js5.network;
 
-import com.jagex.core.datastruct.DualIterableQueue;
+import com.jagex.core.datastruct.SecondaryLinkedList;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
@@ -8,16 +8,16 @@ import deob.ObfuscatedName;
 public abstract class Js5TcpClient {
 
 	@ObfuscatedName("pp.l")
-	public DualIterableQueue urgent = new DualIterableQueue();
+	public SecondaryLinkedList urgent = new SecondaryLinkedList();
 
 	@ObfuscatedName("pp.u")
-	public DualIterableQueue urgentRequested = new DualIterableQueue();
+	public SecondaryLinkedList urgentRequested = new SecondaryLinkedList();
 
 	@ObfuscatedName("pp.z")
-	public DualIterableQueue prefetch = new DualIterableQueue();
+	public SecondaryLinkedList prefetch = new SecondaryLinkedList();
 
 	@ObfuscatedName("pp.p")
-	public DualIterableQueue prefetchRequested = new DualIterableQueue();
+	public SecondaryLinkedList prefetchRequested = new SecondaryLinkedList();
 
 	@ObfuscatedName("pp.d")
 	public int delay;

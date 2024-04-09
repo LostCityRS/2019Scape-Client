@@ -7,6 +7,7 @@ import com.jagex.audio.stream.SoundType;
 import com.jagex.audio.api.SubBussType;
 import com.jagex.core.constants.*;
 import com.jagex.core.datastruct.*;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.io.Stream;
@@ -383,7 +384,7 @@ public final class Client extends GameShell {
 	public static Mouse mouse;
 
 	@ObfuscatedName("client.ev")
-	public static IterableQueue mouseEvents = new IterableQueue();
+	public static LinkedList mouseEvents = new LinkedList();
 
 	@ObfuscatedName("client.ec")
 	public static int field10817 = 0;
@@ -551,10 +552,10 @@ public final class Client extends GameShell {
 	public static DiskStore diskStore;
 
 	@ObfuscatedName("client.gt")
-	public static WeightedCache field10830 = new WeightedCache(8);
+	public static SoftLruHashTable field10830 = new SoftLruHashTable(8);
 
 	@ObfuscatedName("client.gh")
-	public static WeightedCache headIconsCache = new WeightedCache(8);
+	public static SoftLruHashTable headIconsCache = new SoftLruHashTable(8);
 
 	@ObfuscatedName("client.gm")
 	public static String field11068 = null;
@@ -584,10 +585,10 @@ public final class Client extends GameShell {
 	public static CachingConfigTypeList dbTableTypeList;
 
 	@ObfuscatedName("client.ha")
-	public static WeightedCache field10834 = new WeightedCache(16);
+	public static SoftLruHashTable field10834 = new SoftLruHashTable(16);
 
 	@ObfuscatedName("client.hk")
-	public static WeightedCache field10857 = new WeightedCache(8);
+	public static SoftLruHashTable field10857 = new SoftLruHashTable(8);
 
 	@ObfuscatedName("aaq.hu")
 	public static EnumTypeList enumTypeList;
@@ -707,7 +708,7 @@ public final class Client extends GameShell {
 	public static PlayerGroupResourceProvider field10837 = new ClientPlayerGroupResourceProvider();
 
 	@ObfuscatedName("client.id")
-	public static IterableMap npcs = new IterableMap(64);
+	public static HashTable npcs = new HashTable(64);
 
 	@ObfuscatedName("client.ia")
 	public static ObjectNode[] field10839 = new ObjectNode[1024];
@@ -1199,13 +1200,13 @@ public final class Client extends GameShell {
 	public static int lobbyPlayAge;
 
 	@ObfuscatedName("client.pw")
-	public static IterableMap objStacks = new IterableMap(64);
+	public static HashTable objStacks = new HashTable(64);
 
 	@ObfuscatedName("client.pk")
-	public static IterableQueue projectiles = new IterableQueue();
+	public static LinkedList projectiles = new LinkedList();
 
 	@ObfuscatedName("client.pm")
-	public static IterableMap spotanims = new IterableMap(16);
+	public static HashTable spotanims = new HashTable(16);
 
 	@ObfuscatedName("client.pa")
 	public static LinkQueue textCoords = new LinkQueue();
@@ -1256,7 +1257,7 @@ public final class Client extends GameShell {
 	public static volatile int openedTopInterface = -1;
 
 	@ObfuscatedName("client.pc")
-	public static IterableMap openedSubInterfaces = new IterableMap(8);
+	public static HashTable openedSubInterfaces = new HashTable(8);
 
 	@ObfuscatedName("client.qp")
 	public static int chatEffects = 0;
@@ -1442,16 +1443,16 @@ public final class Client extends GameShell {
 	public static SparseVarDomain varClan;
 
 	@ObfuscatedName("client.sh")
-	public static IterableQueue field11031 = new IterableQueue();
+	public static LinkedList field11031 = new LinkedList();
 
 	@ObfuscatedName("client.st")
-	public static IterableQueue field11032 = new IterableQueue();
+	public static LinkedList field11032 = new LinkedList();
 
 	@ObfuscatedName("client.sl")
-	public static IterableQueue field11033 = new IterableQueue();
+	public static LinkedList field11033 = new LinkedList();
 
 	@ObfuscatedName("client.sp")
-	public static IterableMap field10873 = new IterableMap(512);
+	public static HashTable field10873 = new HashTable(512);
 
 	@ObfuscatedName("mc.su")
 	public static Clipboard clipboard;
@@ -1733,7 +1734,7 @@ public final class Client extends GameShell {
 	public static HttpClient field7957;
 
 	@ObfuscatedName("client.wl")
-	public static WeightedCache field11013;
+	public static SoftLruHashTable field11013;
 
 	@ObfuscatedName("client.wp")
 	public static Map field11093;
@@ -1810,7 +1811,7 @@ public final class Client extends GameShell {
 		field11001 = new PrimaryLayerLocEntityPredicate();
 		field11090 = -1L;
 		field11091 = -1L;
-		field11013 = new WeightedCache(8);
+		field11013 = new SoftLruHashTable(8);
 		field11093 = new java.util.HashMap();
 		telemetry = new TelemetryGrid();
 		telemetryError = false;
@@ -2767,7 +2768,7 @@ public final class Client extends GameShell {
 				ifCloseSub(var1, true, false);
 			}
 			openedTopInterface = -1;
-			openedSubInterfaces = new IterableMap(8);
+			openedSubInterfaces = new HashTable(8);
 			Component.method5075();
 			openedTopInterface = graphicsDefaults.login_interface;
 			if (openedTopInterface != -1) {
@@ -2814,7 +2815,7 @@ public final class Client extends GameShell {
 				ifCloseSub(var1, true, false);
 			}
 			openedTopInterface = -1;
-			openedSubInterfaces = new IterableMap(8);
+			openedSubInterfaces = new HashTable(8);
 			Component.method5075();
 			openedTopInterface = graphicsDefaults.lobby_interface;
 			if (openedTopInterface != -1) {
@@ -11017,7 +11018,7 @@ public final class Client extends GameShell {
 				var12 = (var10.count + 1) * var12;
 			}
 			if (var9 > var12) {
-				IterableQueue.pushNodeBack(arg3, var10);
+				LinkedList.pushNodeBack(arg3, var10);
 				return;
 			}
 		}
@@ -12709,7 +12710,7 @@ public final class Client extends GameShell {
 		}
 		if (!arg0.field2150) {
 			int var2 = arg1.parentlayer >>> 16;
-			IterableMapIterator var3 = new IterableMapIterator(openedSubInterfaces);
+			HashTableIterator var3 = new HashTableIterator(openedSubInterfaces);
 			for (SubInterface var4 = (SubInterface) var3.nextNode(); var4 != null; var4 = (SubInterface) var3.next()) {
 				if (var4.field11571 == var2) {
 					return Component.method10202((int) var4.nodeId);
@@ -13990,7 +13991,7 @@ public final class Client extends GameShell {
 		if (!arg2 && openedTopInterface != -1) {
 			method1023(openedTopInterface, 1);
 		}
-		IterableMapIterator var6 = new IterableMapIterator(openedSubInterfaces);
+		HashTableIterator var6 = new HashTableIterator(openedSubInterfaces);
 		for (SubInterface var7 = (SubInterface) var6.nextNode(); var7 != null; var7 = (SubInterface) var6.next()) {
 			if (!var7.hasNext()) {
 				var7 = (SubInterface) var6.nextNode();
@@ -14471,8 +14472,8 @@ public final class Client extends GameShell {
 		String var2 = arg0.toLowerCase();
 		objFindResults = null;
 		objFindResultsIndex = 0;
-		LinkedList var3 = new LinkedList();
-		LinkedList var4 = new LinkedList();
+		java.util.LinkedList var3 = new java.util.LinkedList();
+		java.util.LinkedList var4 = new java.util.LinkedList();
 		for (int var5 = 0; var5 < objTypeList.num; var5++) {
 			ObjType var6 = (ObjType) objTypeList.list(var5);
 			if ((!arg1 || var6.stockmarket) && var6.certtemplate == -1 && var6.lenttemplate == -1 && var6.boughttemplate == -1 && var6.dummyitem == 0 && var6.name.toLowerCase().indexOf(var2) != -1) {
@@ -14500,8 +14501,8 @@ public final class Client extends GameShell {
 		String var2 = arg0.toLowerCase();
 		chatPhraseFindResults = null;
 		chatPhraseFindResultsIndex = 0;
-		LinkedList var3 = new LinkedList();
-		LinkedList var4 = new LinkedList();
+		java.util.LinkedList var3 = new java.util.LinkedList();
+		java.util.LinkedList var4 = new java.util.LinkedList();
 		int var5 = arg1 ? 32768 : 0;
 		int var6 = var5 + (arg1 ? quickChatPhraseTypeList.configClientLargeNum : quickChatPhraseTypeList.configClientSmallNum);
 		for (int var7 = var5; var7 < var6; var7++) {

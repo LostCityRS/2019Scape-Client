@@ -456,7 +456,7 @@ public class GpuModel extends Model {
 		}
 		this.field9753[arg1.field1374] = var45;
 		ModelRelated1 var48 = this.method1687(arg1, var9, this.field9716);
-		GpuFaceNormal[] var49 = new GpuFaceNormal[arg1.faceCount];
+		GpuTriangleNormal[] var49 = new GpuTriangleNormal[arg1.faceCount];
 		for (int var50 = 0; var50 < arg1.faceCount; var50++) {
 			short var51 = arg1.faceVertex1[var50];
 			short var52 = arg1.faceVertex2[var50];
@@ -499,7 +499,7 @@ public class GpuModel extends Model {
 				var70.field3378 += var66;
 				var70.field3380++;
 			} else if (var67 == 1) {
-				GpuFaceNormal var71 = var49[var50] = new GpuFaceNormal();
+				GpuTriangleNormal var71 = var49[var50] = new GpuTriangleNormal();
 				var71.field3351 = var64;
 				var71.field3352 = var65;
 				var71.field3353 = var66;
@@ -744,7 +744,7 @@ public class GpuModel extends Model {
 				GpuVertexNormal var172 = var36[var169];
 				this.field9726[var72] = this.method15592(arg1, var169, var72, var165 | var94 << 24, var172.field3379, var172.field3377, var172.field3378, var172.field3380, var81, var82);
 			} else if (var164 == 1) {
-				GpuFaceNormal var173 = var49[var73];
+				GpuTriangleNormal var173 = var49[var73];
 				long var174 = ((long) (var173.field3353 + 256) << 24) + ((long) (var173.field3351 & Integer.MIN_VALUE) << 9) + ((long) (var173.field3352 + 256) << 32) + (long) (var74 << 8) + (long) var75;
 				this.field9713[var72] = this.method15592(arg1, arg1.faceVertex1[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var77, var78);
 				this.field9762[var72] = this.method15592(arg1, arg1.faceVertex2[var73], var72, var174 | var88 << 41, var173.field3351, var173.field3352, var173.field3353, 0, var79, var80);

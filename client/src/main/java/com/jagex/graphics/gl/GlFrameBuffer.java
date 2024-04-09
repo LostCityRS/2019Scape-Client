@@ -1,13 +1,13 @@
 package com.jagex.graphics.gl;
 
 import com.jagex.graphics.EffectInterface;
-import com.jagex.graphics.Framebuffer;
+import com.jagex.graphics.FrameBuffer;
 import com.jagex.graphics.GraphicsDeletable;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("app")
-public class GlFramebuffer extends Framebuffer {
+public class GlFrameBuffer extends FrameBuffer {
 
 	@ObfuscatedName("app.m")
 	public final GlToolkit field11915;
@@ -33,7 +33,7 @@ public class GlFramebuffer extends Framebuffer {
 	@ObfuscatedName("app.p")
 	public final GlPostProcessingRelated[] field11922 = new GlPostProcessingRelated[4];
 
-	public GlFramebuffer(GlToolkit arg0) {
+	public GlFrameBuffer(GlToolkit arg0) {
 		if (!arg0.field9985) {
 			throw new IllegalStateException("");
 		}

@@ -1,6 +1,6 @@
 package com.jagex.game.config.headbartype;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
@@ -11,7 +11,7 @@ public abstract class HeadbarTypeFactory {
 	public final Js5 configClient;
 
 	@ObfuscatedName("uy.n")
-	public WeightedCache spriteCache = new WeightedCache(20);
+	public SoftLruHashTable spriteCache = new SoftLruHashTable(20);
 
 	public HeadbarTypeFactory(Js5 configClient) {
 		this.configClient = configClient;
@@ -19,7 +19,7 @@ public abstract class HeadbarTypeFactory {
 
 	@ObfuscatedName("uy.e(I)V")
 	public void cacheReset() {
-		WeightedCache var1 = this.spriteCache;
+		SoftLruHashTable var1 = this.spriteCache;
 		synchronized (this.spriteCache) {
 			this.spriteCache.reset();
 		}
@@ -27,7 +27,7 @@ public abstract class HeadbarTypeFactory {
 
 	@ObfuscatedName("uy.n(II)V")
 	public void cacheClean(int arg0) {
-		WeightedCache var2 = this.spriteCache;
+		SoftLruHashTable var2 = this.spriteCache;
 		synchronized (this.spriteCache) {
 			this.spriteCache.clean(arg0);
 		}
@@ -35,7 +35,7 @@ public abstract class HeadbarTypeFactory {
 
 	@ObfuscatedName("uy.m(I)V")
 	public void cacheRemoveSoftReferences() {
-		WeightedCache var1 = this.spriteCache;
+		SoftLruHashTable var1 = this.spriteCache;
 		synchronized (this.spriteCache) {
 			this.spriteCache.clear();
 		}

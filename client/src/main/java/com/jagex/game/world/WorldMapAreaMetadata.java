@@ -1,7 +1,7 @@
 package com.jagex.game.world;
 
 import com.jagex.core.constants.BuildAreaSize;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
@@ -20,7 +20,7 @@ public class WorldMapAreaMetadata extends SecondaryNode {
 	public String mapName;
 
 	@ObfuscatedName("asy.p")
-	public IterableQueue field12353;
+	public LinkedList field12353;
 
 	@ObfuscatedName("asy.d")
 	public int configOrigin;
@@ -58,7 +58,7 @@ public class WorldMapAreaMetadata extends SecondaryNode {
 			this.configZoom = 0;
 		}
 		BuildAreaSize.buildAreaSizeForId(arg7);
-		this.field12353 = new IterableQueue();
+		this.field12353 = new LinkedList();
 	}
 
 	@ObfuscatedName("asy.e(III)Z")

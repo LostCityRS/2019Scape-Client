@@ -102,7 +102,7 @@ public class LevelsFilterEffect extends GpuPostProcessEffect {
 	}
 
 	@ObfuscatedName("aia.l(ILafq;Llz;Ldw;Llz;Z)V")
-	public void method5564(int arg0, Framebuffer arg1, GpuTexture arg2, EffectInterface arg3, GpuTexture arg4, boolean arg5) {
+	public void method5564(int arg0, FrameBuffer arg1, GpuTexture arg2, EffectInterface arg3, GpuTexture arg4, boolean arg5) {
 		float var7 = this.gpuRenderer.method15954();
 		float var8 = (float) arg1.getWidth();
 		float var9 = (float) arg1.getHeight();

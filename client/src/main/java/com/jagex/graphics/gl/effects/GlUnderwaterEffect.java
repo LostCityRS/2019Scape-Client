@@ -1,9 +1,9 @@
 package com.jagex.graphics.gl.effects;
 
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.RenderList;
+import com.jagex.graphics.GlRenderList;
 import com.jagex.graphics.TextureFormat;
-import com.jagex.graphics.gl.GlEffectRelated2;
+import com.jagex.graphics.gl.GlWaterRelated;
 import com.jagex.graphics.gl.GlToolkit;
 import com.jagex.graphics.gl.GlTexture;
 import com.jagex.graphics.gl.GlUnderwaterTexture;
@@ -14,10 +14,10 @@ import jaggl.OpenGL;
 public class GlUnderwaterEffect extends GlEffect {
 
 	@ObfuscatedName("aet.k")
-	public final GlEffectRelated2 field9302;
+	public final GlWaterRelated field9302;
 
 	@ObfuscatedName("aet.f")
-	public RenderList field9300;
+	public GlRenderList field9300;
 
 	@ObfuscatedName("aet.w")
 	public GlUnderwaterTexture field9303;
@@ -25,7 +25,7 @@ public class GlUnderwaterEffect extends GlEffect {
 	@ObfuscatedName("aet.l")
 	public static final float[] field9305 = new float[] { 0.0F, 0.0F, 0.0F, 0.0F };
 
-	public GlUnderwaterEffect(GlToolkit arg0, GlEffectRelated2 arg1) {
+	public GlUnderwaterEffect(GlToolkit arg0, GlWaterRelated arg1) {
 		super(arg0);
 		this.field9302 = arg1;
 		this.method15341();
@@ -114,7 +114,7 @@ public class GlUnderwaterEffect extends GlEffect {
 
 	@ObfuscatedName("aet.b()V")
 	public void method15341() {
-		this.field9300 = new RenderList(this.field1021, 2);
+		this.field9300 = new GlRenderList(this.field1021, 2);
 		this.field9300.method1245(0);
 		this.field1021.method15776(1);
 		this.field1021.method15810(7681, 260);

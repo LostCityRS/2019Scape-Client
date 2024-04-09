@@ -1,6 +1,6 @@
 package com.jagex.game.config.bastype;
 
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.MutableConfig;
@@ -450,7 +450,7 @@ public class BASType implements MutableConfig, ConfigType {
 
 	@ObfuscatedName("vr.o(I)[I")
 	public int[] method9293() {
-		IterableMap var1 = new IterableMap(16);
+		HashTable var1 = new HashTable(16);
 		method6205(this.readyanim, var1);
 		if (this.field7335 != null) {
 			int[] var2 = this.field7335;
@@ -490,7 +490,7 @@ public class BASType implements MutableConfig, ConfigType {
 	}
 
 	@ObfuscatedName("oi.s(ILaan;I)V")
-	public static final void method6205(int arg0, IterableMap arg1) {
+	public static final void method6205(int arg0, HashTable arg1) {
 		if (arg0 != -1 && arg1.getNode((long) arg0) == null) {
 			arg1.pushNode(new Node(), (long) arg0);
 		}

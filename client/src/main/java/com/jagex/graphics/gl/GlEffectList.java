@@ -4,7 +4,7 @@ import com.jagex.graphics.gl.effects.*;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("bw")
-public class GlEffects {
+public class GlEffectList {
 
 	@ObfuscatedName("bw.e")
 	public GlEffect[] field1030;
@@ -22,14 +22,14 @@ public class GlEffects {
 	public final GlToolkit field1029;
 
 	@ObfuscatedName("bw.w")
-	public final GlEffectRelated2 field1031;
+	public final GlWaterRelated field1031;
 
 	@ObfuscatedName("bw.l")
 	public final GlEffect_Sub1 field1032;
 
-	public GlEffects(GlToolkit arg0) {
+	public GlEffectList(GlToolkit arg0) {
 		this.field1029 = arg0;
-		this.field1031 = new GlEffectRelated2(arg0);
+		this.field1031 = new GlWaterRelated(arg0);
 		this.field1030 = new GlEffect[16];
 		this.field1030[1] = new GlEnvironmentMapEffect(arg0);
 		this.field1030[2] = new GlWaterEffect(arg0, this.field1031);

@@ -3,7 +3,7 @@ package com.jagex.game.config.loctype;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.core.datastruct.Pair;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.game.client.LocalisedText;
 import com.jagex.graphics.ModelUnlit;
 import deob.ObfuscatedName;
@@ -15,13 +15,13 @@ public abstract class LocTypeFactory {
 	public boolean allowMembers;
 
 	@ObfuscatedName("vh.n")
-	public final WeightedCache modelCacheStatic = new WeightedCache(500);
+	public final SoftLruHashTable modelCacheStatic = new SoftLruHashTable(500);
 
 	@ObfuscatedName("vh.m")
-	public final WeightedCache modelCacheDynamic = new WeightedCache(30);
+	public final SoftLruHashTable modelCacheDynamic = new SoftLruHashTable(30);
 
 	@ObfuscatedName("vh.k")
-	public final WeightedCache field7532 = new WeightedCache(50);
+	public final SoftLruHashTable field7532 = new SoftLruHashTable(50);
 
 	@ObfuscatedName("vh.f")
 	public int field7536;
@@ -55,15 +55,15 @@ public abstract class LocTypeFactory {
 	@ObfuscatedName("vh.n(IB)V")
 	public void resetModelCache(int arg0) {
 		this.field7536 = arg0;
-		WeightedCache var2 = this.modelCacheStatic;
+		SoftLruHashTable var2 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
 			this.modelCacheStatic.reset();
 		}
-		WeightedCache var4 = this.modelCacheDynamic;
+		SoftLruHashTable var4 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
 			this.modelCacheDynamic.reset();
 		}
-		WeightedCache var6 = this.field7532;
+		SoftLruHashTable var6 = this.field7532;
 		synchronized (this.field7532) {
 			this.field7532.reset();
 		}
@@ -71,15 +71,15 @@ public abstract class LocTypeFactory {
 
 	@ObfuscatedName("vh.m(I)V")
 	public void cacheReset() {
-		WeightedCache var1 = this.modelCacheStatic;
+		SoftLruHashTable var1 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
 			this.modelCacheStatic.reset();
 		}
-		WeightedCache var3 = this.modelCacheDynamic;
+		SoftLruHashTable var3 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
 			this.modelCacheDynamic.reset();
 		}
-		WeightedCache var5 = this.field7532;
+		SoftLruHashTable var5 = this.field7532;
 		synchronized (this.field7532) {
 			this.field7532.reset();
 		}
@@ -89,15 +89,15 @@ public abstract class LocTypeFactory {
 
 	@ObfuscatedName("vh.k(IB)V")
 	public void cacheClean(int arg0) {
-		WeightedCache var2 = this.modelCacheStatic;
+		SoftLruHashTable var2 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
 			this.modelCacheStatic.clean(arg0);
 		}
-		WeightedCache var4 = this.modelCacheDynamic;
+		SoftLruHashTable var4 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
 			this.modelCacheDynamic.clean(arg0);
 		}
-		WeightedCache var6 = this.field7532;
+		SoftLruHashTable var6 = this.field7532;
 		synchronized (this.field7532) {
 			this.field7532.clean(arg0);
 		}
@@ -105,15 +105,15 @@ public abstract class LocTypeFactory {
 
 	@ObfuscatedName("vh.f(I)V")
 	public void cacheRemoveSoftReferences() {
-		WeightedCache var1 = this.modelCacheStatic;
+		SoftLruHashTable var1 = this.modelCacheStatic;
 		synchronized (this.modelCacheStatic) {
 			this.modelCacheStatic.clear();
 		}
-		WeightedCache var3 = this.modelCacheDynamic;
+		SoftLruHashTable var3 = this.modelCacheDynamic;
 		synchronized (this.modelCacheDynamic) {
 			this.modelCacheDynamic.clear();
 		}
-		WeightedCache var5 = this.field7532;
+		SoftLruHashTable var5 = this.field7532;
 		synchronized (this.field7532) {
 			this.field7532.clear();
 		}

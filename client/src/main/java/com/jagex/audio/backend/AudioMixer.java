@@ -7,7 +7,7 @@ import com.jagex.audio.api.VolumeProvider;
 import com.jagex.audio.stream.AudioApiRelated2;
 import com.jagex.audio.stream.AudioStream;
 import com.jagex.audio.stream.AudioStream2;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
@@ -48,7 +48,7 @@ public class AudioMixer {
 	}
 
 	@ObfuscatedName("nq.k(Lpy;ILwj;ZLeb;I)Lwr;")
-	public static AudioApiRelated2 method6064(Js5 arg0, int arg1, AudioMixerRelated arg2, boolean arg3, WeightedCache arg4) {
+	public static AudioApiRelated2 method6064(Js5 arg0, int arg1, AudioMixerRelated arg2, boolean arg3, SoftLruHashTable arg4) {
 		if (field8056 == null) {
 			return null;
 		} else {

@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
-import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.Algorithms;
 import com.jagex.core.utils.ColourUtils;
@@ -76,7 +76,7 @@ public class GpuFloorModel extends FloorModel {
 	public FloorHardShadows field9505;
 
 	@ObfuscatedName("aem.ae")
-	public IterableQueue field9485 = new IterableQueue();
+	public LinkedList field9485 = new LinkedList();
 
 	@ObfuscatedName("aem.ag")
 	public Node[] field9496;
@@ -109,7 +109,7 @@ public class GpuFloorModel extends FloorModel {
 	public float[][] field9487;
 
 	@ObfuscatedName("aem.au")
-	public IterableMap field9513;
+	public HashTable field9513;
 
 	@ObfuscatedName("aem.ar")
 	public Node[] field9497;
@@ -178,7 +178,7 @@ public class GpuFloorModel extends FloorModel {
 		}
 		this.field9495--;
 		this.field9512++;
-		this.field9513 = new IterableMap(128);
+		this.field9513 = new HashTable(128);
 		if ((this.field9491 & 0x10) != 0) {
 			this.field9505 = new FloorHardShadows(this.field9516, this);
 		}
@@ -335,7 +335,7 @@ public class GpuFloorModel extends FloorModel {
 		if (var6 < 1) {
 			var6 = 1;
 		}
-		IterableMap var7 = new IterableMap(var6);
+		HashTable var7 = new HashTable(var6);
 		GpuFloorModelRelated1[] var8 = new GpuFloorModelRelated1[this.field9498];
 		for (int var9 = 0; var9 < this.field1235; var9++) {
 			for (int var10 = 0; var10 < this.field1234; var10++) {
@@ -466,7 +466,7 @@ public class GpuFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aem.aj(II[[B[Lakh;Laan;[Lakh;)V")
-	public void method15415(int arg0, int arg1, byte[][] arg2, GpuFloorModelRelated1[] arg3, IterableMap arg4, GpuFloorModelRelated1[] arg5) {
+	public void method15415(int arg0, int arg1, byte[][] arg2, GpuFloorModelRelated1[] arg3, HashTable arg4, GpuFloorModelRelated1[] arg5) {
 		if (this.field9510[arg0][arg1] == null) {
 			return;
 		}

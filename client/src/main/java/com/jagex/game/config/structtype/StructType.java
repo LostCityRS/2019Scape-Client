@@ -1,7 +1,7 @@
 package com.jagex.game.config.structtype;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
@@ -15,7 +15,7 @@ import deob.ObfuscatedName;
 public class StructType extends SecondaryNode implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("adx.k")
-	public IterableMap params;
+	public HashTable params;
 
 	@ObfuscatedName("adx.e(Lalw;B)V")
 	public void decode(Packet buf) {
@@ -36,7 +36,7 @@ public class StructType extends SecondaryNode implements ConfigType, MutableConf
 		int var3 = buf.g1();
 		if (this.params == null) {
 			int var4 = IntMath.bitceil(var3);
-			this.params = new IterableMap(var4);
+			this.params = new HashTable(var4);
 		}
 		for (int var5 = 0; var5 < var3; var5++) {
 			boolean var6 = buf.g1() == 1;

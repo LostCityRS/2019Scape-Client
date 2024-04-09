@@ -1,7 +1,7 @@
 package com.jagex.game.config.quickchatphrasetype;
 
 import com.jagex.core.constants.Language;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.QuickChatDynamicProvider;
 import com.jagex.game.shared.framework.chat.QuickChatDynamicCommand;
@@ -24,7 +24,7 @@ public class QuickChatPhraseTypeList {
 	public int configClientLargeNum = 0;
 
 	@ObfuscatedName("ach.f")
-	public final WeightedCache recentUse = new WeightedCache(64);
+	public final SoftLruHashTable recentUse = new SoftLruHashTable(64);
 
 	@ObfuscatedName("ach.u")
 	public QuickChatDynamicProvider quickChatDynamicProvider = null;

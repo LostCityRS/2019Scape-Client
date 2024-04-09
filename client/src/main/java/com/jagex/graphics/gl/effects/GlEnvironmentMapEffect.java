@@ -1,7 +1,7 @@
 package com.jagex.graphics.gl.effects;
 
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.RenderList;
+import com.jagex.graphics.GlRenderList;
 import com.jagex.graphics.TextureFormat;
 import com.jagex.graphics.gl.GlCubeTexture;
 import com.jagex.graphics.gl.GlToolkit;
@@ -14,7 +14,7 @@ import jaggl.OpenGL;
 public class GlEnvironmentMapEffect extends GlEffect {
 
 	@ObfuscatedName("aeb.d")
-	public RenderList field9333;
+	public GlRenderList field9333;
 
 	@ObfuscatedName("aeb.c")
 	public boolean field9335;
@@ -91,7 +91,7 @@ public class GlEnvironmentMapEffect extends GlEffect {
 
 	@ObfuscatedName("aeb.b()V")
 	public void method15349() {
-		this.field9333 = new RenderList(this.field1021, 2);
+		this.field9333 = new GlRenderList(this.field1021, 2);
 		this.field9333.method1245(0);
 		this.field1021.method15776(1);
 		OpenGL.glTexGeni(8192, 9472, 34065);

@@ -1,28 +1,28 @@
 package com.jagex.graphics;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.gl.GlFramebuffer;
+import com.jagex.graphics.gl.GlFrameBuffer;
 import com.jagex.graphics.gl.GlTexture_Sub1;
 import com.jagex.graphics.gl.GlToolkit;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("cv")
-public class PostProcessing {
+public class GlPostProcessing {
 
 	@ObfuscatedName("cv.e")
 	public final GlToolkit field1169;
 
 	@ObfuscatedName("cv.n")
-	public GlFramebuffer field1162;
+	public GlFrameBuffer field1162;
 
 	@ObfuscatedName("cv.m")
-	public GlFramebuffer field1163;
+	public GlFrameBuffer field1163;
 
 	@ObfuscatedName("cv.k")
-	public GlFramebuffer field1164;
+	public GlFrameBuffer field1164;
 
 	@ObfuscatedName("cv.f")
 	public int field1165 = 0;
@@ -40,7 +40,7 @@ public class PostProcessing {
 	public boolean field1180;
 
 	@ObfuscatedName("cv.p")
-	public IterableQueue field1170 = new IterableQueue();
+	public LinkedList field1170 = new LinkedList();
 
 	@ObfuscatedName("cv.d")
 	public boolean field1171 = true;
@@ -75,12 +75,12 @@ public class PostProcessing {
 	@ObfuscatedName("cv.h")
 	public DataType field1181 = DataType.UNSIGNED_INT_8;
 
-	public PostProcessing(GlToolkit arg0) {
+	public GlPostProcessing(GlToolkit arg0) {
 		this.field1169 = arg0;
 		if (this.field1169.field9985 && this.field1169.field9965) {
-			this.field1164 = this.field1162 = new GlFramebuffer(this.field1169);
+			this.field1164 = this.field1162 = new GlFrameBuffer(this.field1169);
 			if (this.field1169.field9967 > 1 && this.field1169.field9901 && this.field1169.field9987) {
-				this.field1164 = this.field1163 = new GlFramebuffer(this.field1169);
+				this.field1164 = this.field1163 = new GlFrameBuffer(this.field1169);
 			}
 		}
 	}

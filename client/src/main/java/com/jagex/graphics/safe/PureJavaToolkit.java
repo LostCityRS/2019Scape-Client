@@ -1,7 +1,7 @@
 package com.jagex.graphics.safe;
 
 import com.jagex.core.datastruct.Heap;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.DataType;
@@ -128,10 +128,10 @@ public class PureJavaToolkit extends Toolkit {
 	public PureJavaToolkitContext[] context;
 
 	@ObfuscatedName("afg.bw")
-	public WeightedCache materialTextureCache;
+	public SoftLruHashTable materialTextureCache;
 
 	@ObfuscatedName("afg.bo")
-	public WeightedCache billboardMaterialSprites;
+	public SoftLruHashTable billboardMaterialSprites;
 
 	@ObfuscatedName("afg.bz")
 	public Sprite cachedBillboardSprite;
@@ -143,7 +143,7 @@ public class PureJavaToolkit extends Toolkit {
 	public Sprite field9786;
 
 	@ObfuscatedName("afg.bg")
-	public Framebuffer field9775;
+	public FrameBuffer field9775;
 
 	public PureJavaToolkit(Canvas arg0, MaterialList arg1, TextureList arg2, BillboardTypeList arg3, ParticleEmitterTypeList arg4, ParticleEffectorTypeList arg5, int arg6, int arg7) {
 		this(arg1, arg2, arg3, arg4, arg5);
@@ -171,11 +171,11 @@ public class PureJavaToolkit extends Toolkit {
 		this.field9796 = new float[6][4];
 		this.field9813 = 1.0F;
 		this.field9799 = 0.0F;
-		this.billboardMaterialSprites = new WeightedCache(16);
+		this.billboardMaterialSprites = new SoftLruHashTable(16);
 		this.cachedBillboardMaterial = -1;
 
 		try {
-			this.materialTextureCache = new WeightedCache(10485760, 256);
+			this.materialTextureCache = new SoftLruHashTable(10485760, 256);
 			this.field9792 = new Matrix4x3();
 			this.field9793 = new Matrix4x4();
 			this.field9795 = new Matrix4x4();
@@ -251,7 +251,7 @@ public class PureJavaToolkit extends Toolkit {
 
 	@ObfuscatedName("afg.rh(I)[I")
 	public int[] getMaterialTexture(int arg0) {
-		WeightedCache var2 = this.materialTextureCache;
+		SoftLruHashTable var2 = this.materialTextureCache;
 		PureJavaTexture var4;
 		synchronized (var2) {
 			Material var3 = this.materialList.get(arg0);
@@ -2669,8 +2669,8 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.am()Lafq;")
-	public Framebuffer createFramebuffer() {
-		return new PureJavaFramebuffer(this);
+	public FrameBuffer createFramebuffer() {
+		return new PureJavaFrameBuffer(this);
 	}
 
 	@ObfuscatedName("afg.sk(II)Ldp;")

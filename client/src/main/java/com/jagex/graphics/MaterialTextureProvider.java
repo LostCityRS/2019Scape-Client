@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("lu")
@@ -13,7 +13,7 @@ public class MaterialTextureProvider {
 	public final TextureList field3268;
 
 	@ObfuscatedName("lu.m")
-	public WeightedCache field3267 = new WeightedCache(10485760, 256);
+	public SoftLruHashTable field3267 = new SoftLruHashTable(10485760, 256);
 
 	public MaterialTextureProvider(GpuToolkit arg0, TextureList arg1) {
 		this.field3269 = arg0;

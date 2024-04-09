@@ -2,13 +2,12 @@ package com.jagex.graphics.dx;
 
 import com.jagex.game.client.DataType;
 import com.jagex.graphics.FrameBufferInterface;
-import com.jagex.graphics.dx.DxToolkit;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;
 
 @ObfuscatedName("oy")
-public class EffectInterfaceRelated implements FrameBufferInterface {
+public class DxFrameBufferInterface_Sub1 implements FrameBufferInterface {
 
 	@ObfuscatedName("oy.e")
 	public final DxToolkit field4238;
@@ -25,7 +24,7 @@ public class EffectInterfaceRelated implements FrameBufferInterface {
 	@ObfuscatedName("oy.f")
 	public long field4237;
 
-	public EffectInterfaceRelated(DxToolkit arg0, DataType arg1, int arg2, int arg3, int arg4) {
+	public DxFrameBufferInterface_Sub1(DxToolkit arg0, DataType arg1, int arg2, int arg3, int arg4) {
 		this.field4238 = arg0;
 		this.field4236 = arg2;
 		this.field4235 = arg3;

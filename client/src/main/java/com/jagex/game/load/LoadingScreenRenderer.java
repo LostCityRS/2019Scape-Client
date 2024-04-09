@@ -5,7 +5,7 @@ import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
 import com.jagex.game.client.GameShell;
 import com.jagex.game.client.PreLoadingScreen;
-import com.jagex.graphics.Framebuffer;
+import com.jagex.graphics.FrameBuffer;
 import com.jagex.graphics.RendererException;
 import com.jagex.graphics.Sprite;
 import deob.ObfuscatedName;
@@ -154,7 +154,7 @@ public class LoadingScreenRenderer implements Runnable {
 							Client.method8024();
 							Client.toolkit.method2475(1, 0);
 							Sprite var10 = Client.toolkit.createSprite(GameShell.canvasWid, GameShell.canvasHei, true);
-							Framebuffer var11 = Client.toolkit.createFramebuffer();
+							FrameBuffer var11 = Client.toolkit.createFramebuffer();
 							var11.method15439(0, var10.method1437());
 							Client.toolkit.method2142(var11);
 							this.field2880.method4888(true);

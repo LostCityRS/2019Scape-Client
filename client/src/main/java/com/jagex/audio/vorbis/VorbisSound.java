@@ -2,7 +2,7 @@ package com.jagex.audio.vorbis;
 
 import com.jagex.audio.api.AudioEndianness;
 import com.jagex.audio.api.AudioFormat;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
@@ -205,7 +205,7 @@ public class VorbisSound implements VorbisInterface {
 	public static List field2057 = new ArrayList();
 
 	@ObfuscatedName("hk.bm")
-	public static WeightedCache field2067 = new WeightedCache(524288, 1024);
+	public static SoftLruHashTable field2067 = new SoftLruHashTable(524288, 1024);
 
 	@ObfuscatedName("hk.bb")
 	public byte[] field2108;
@@ -399,7 +399,7 @@ public class VorbisSound implements VorbisInterface {
 
 	@ObfuscatedName("hk.a(I)Lhb;")
 	public WindowFunction method3836(int arg0) {
-		WeightedCache var2 = field2067;
+		SoftLruHashTable var2 = field2067;
 		synchronized (field2067) {
 			Object var3 = null;
 			WindowFunction var4 = (WindowFunction) field2067.method2950();
@@ -451,7 +451,7 @@ public class VorbisSound implements VorbisInterface {
 	@ObfuscatedName("hk.g(Lhb;)V")
 	public void method3742(WindowFunction arg0) {
 		if (arg0 != null) {
-			WeightedCache var2 = field2067;
+			SoftLruHashTable var2 = field2067;
 			synchronized (field2067) {
 				arg0.field2125 = false;
 			}

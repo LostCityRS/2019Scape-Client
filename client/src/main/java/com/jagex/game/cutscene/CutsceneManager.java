@@ -1,7 +1,7 @@
 package com.jagex.game.cutscene;
 
-import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.ClientMessage;
 import com.jagex.game.config.vartype.VarIntDomain;
@@ -15,7 +15,7 @@ import rs2.client.clientscript.ScriptRunner;
 public class CutsceneManager {
 
 	@ObfuscatedName("eq.e")
-	public static IterableQueue field1712 = new IterableQueue();
+	public static LinkedList field1712 = new LinkedList();
 
 	@ObfuscatedName("eq.n")
 	public static CutsceneSpline[] field1714;
@@ -33,7 +33,7 @@ public class CutsceneManager {
 	public static CutsceneAction[] field1713;
 
 	@ObfuscatedName("eq.l")
-	public static IterableMap field1718 = new IterableMap(32);
+	public static HashTable field1718 = new HashTable(32);
 
 	@ObfuscatedName("eq.u")
 	public static int field1715 = 1;

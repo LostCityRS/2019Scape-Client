@@ -15,10 +15,10 @@ public final class ClientScriptCache {
 	public int field1762;
 
 	@ObfuscatedName("ex.k")
-	public IterableMap field1764;
+	public HashTable field1764;
 
 	@ObfuscatedName("ex.f")
-	public DualIterableQueue field1763 = new DualIterableQueue();
+	public SecondaryLinkedList field1763 = new SecondaryLinkedList();
 
 	public ClientScriptCache(int arg0) {
 		this.field1761 = arg0;
@@ -26,7 +26,7 @@ public final class ClientScriptCache {
 		int var2;
 		for (var2 = 1; var2 + var2 < arg0; var2 += var2) {
 		}
-		this.field1764 = new IterableMap(var2);
+		this.field1764 = new HashTable(var2);
 	}
 
 	@ObfuscatedName("ex.e(J)Laky;")

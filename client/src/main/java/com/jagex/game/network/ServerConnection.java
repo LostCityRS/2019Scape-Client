@@ -1,6 +1,6 @@
 package com.jagex.game.network;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.io.Stream;
@@ -20,7 +20,7 @@ public class ServerConnection {
 	public Stream stream;
 
 	@ObfuscatedName("ax.n")
-	public IterableQueue writeQueue = new IterableQueue();
+	public LinkedList writeQueue = new LinkedList();
 
 	@ObfuscatedName("ax.m")
 	public int writePos = 0;

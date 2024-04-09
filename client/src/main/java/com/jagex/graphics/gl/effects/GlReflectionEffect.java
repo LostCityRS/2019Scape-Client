@@ -1,6 +1,6 @@
 package com.jagex.graphics.gl.effects;
 
-import com.jagex.graphics.RenderList;
+import com.jagex.graphics.GlRenderList;
 import com.jagex.graphics.gl.GlCubeTexture;
 import com.jagex.graphics.gl.GlToolkit;
 import com.jagex.graphics.gl.GlTexture;
@@ -11,7 +11,7 @@ import jaggl.OpenGL;
 public class GlReflectionEffect extends GlEffect {
 
 	@ObfuscatedName("aez.k")
-	public RenderList field9291;
+	public GlRenderList field9291;
 
 	@ObfuscatedName("aez.f")
 	public boolean field9294 = false;
@@ -19,7 +19,7 @@ public class GlReflectionEffect extends GlEffect {
 	public GlReflectionEffect(GlToolkit arg0) {
 		super(arg0);
 		if (arg0.field9952) {
-			this.field9291 = new RenderList(arg0, 2);
+			this.field9291 = new GlRenderList(arg0, 2);
 			this.field9291.method1245(0);
 			this.field1021.method15776(1);
 			this.field1021.method15810(34165, 7681);

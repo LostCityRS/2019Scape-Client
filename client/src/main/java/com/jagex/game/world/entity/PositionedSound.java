@@ -2,8 +2,8 @@ package com.jagex.game.world.entity;
 
 import com.jagex.audio.api.SubBussType;
 import com.jagex.audio.stream.*;
-import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.loctype.LocType;
@@ -18,13 +18,13 @@ import rs2.client.scene.entities.NpcEntity;
 public class PositionedSound extends Node {
 
 	@ObfuscatedName("akc.f")
-	public static IterableQueue field11346 = new IterableQueue();
+	public static LinkedList field11346 = new LinkedList();
 
 	@ObfuscatedName("akc.w")
-	public static IterableQueue field11347 = new IterableQueue();
+	public static LinkedList field11347 = new LinkedList();
 
 	@ObfuscatedName("akc.l")
-	public static IterableMap field11366 = new IterableMap(16);
+	public static HashTable field11366 = new HashTable(16);
 
 	@ObfuscatedName("akc.u")
 	public int level;

@@ -1,8 +1,8 @@
 package com.jagex.graphics.gl.effects;
 
 import com.jagex.game.client.NoiseGenerator;
-import com.jagex.graphics.RenderList;
-import com.jagex.graphics.gl.GlEffectRelated2;
+import com.jagex.graphics.GlRenderList;
+import com.jagex.graphics.gl.GlWaterRelated;
 import com.jagex.graphics.gl.GlToolkit;
 import com.jagex.graphics.gl.GlTexture;
 import com.jagex.graphics.gl.GlShaderCompiler;
@@ -13,7 +13,7 @@ import jaggl.OpenGL;
 public class GlWaterEffect extends GlEffect {
 
 	@ObfuscatedName("aeu.f")
-	public RenderList field9284;
+	public GlRenderList field9284;
 
 	@ObfuscatedName("aeu.w")
 	public int field9285;
@@ -28,12 +28,12 @@ public class GlWaterEffect extends GlEffect {
 	public GlShaderCompiler field9289;
 
 	@ObfuscatedName("aeu.p")
-	public final GlEffectRelated2 field9288;
+	public final GlWaterRelated field9288;
 
 	@ObfuscatedName("aeu.d")
 	public static final float[] field9286 = new float[4];
 
-	public GlWaterEffect(GlToolkit arg0, GlEffectRelated2 arg1) {
+	public GlWaterEffect(GlToolkit arg0, GlWaterRelated arg1) {
 		super(arg0);
 		this.field9288 = arg1;
 		if (this.field1021.field9999 && this.field1021.field9982 >= 2) {
@@ -64,7 +64,7 @@ public class GlWaterEffect extends GlEffect {
 
 	@ObfuscatedName("aeu.b()V")
 	public void method15339() {
-		this.field9284 = new RenderList(this.field1021, 2);
+		this.field9284 = new GlRenderList(this.field1021, 2);
 		this.field9284.method1245(0);
 		this.field1021.method15776(1);
 		this.field1021.method15765(-16777216);

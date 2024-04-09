@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 public class HashMap {
 
 	@ObfuscatedName("ix.e")
-	public IterableMap map;
+	public HashTable map;
 
 	@ObfuscatedName("ix.n")
 	public HashMapValue[] nodes;
@@ -18,7 +18,7 @@ public class HashMap {
 		int var3;
 		for (var3 = 1; var3 < size; var3 += var3) {
 		}
-		this.map = new IterableMap(var3);
+		this.map = new HashTable(var3);
 		this.nodes = new HashMapValue[var3];
 		this.key = key;
 	}
@@ -59,7 +59,7 @@ public class HashMap {
 			int size;
 			for (size = this.nodes.length; size <= valueint; size += size) {
 			}
-			this.map = new IterableMap(size);
+			this.map = new HashTable(size);
 			for (int index = 0; index < this.nodes.length; index++) {
 				HashMapValue var7 = this.nodes[index];
 				if (var7 != null) {

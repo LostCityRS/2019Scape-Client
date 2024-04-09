@@ -1,9 +1,9 @@
 package com.jagex.game.config.iftype;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.Graphic;
 import com.jagex.game.client.GroupUserKind;
@@ -102,16 +102,16 @@ public class Component {
 	public static Js5 spritesJs5;
 
 	@ObfuscatedName("hf.t")
-	public static WeightedCache spriteCache = new WeightedCache(6000000, 200);
+	public static SoftLruHashTable spriteCache = new SoftLruHashTable(6000000, 200);
 
 	@ObfuscatedName("hf.ae")
-	public static WeightedCache graphicCache = new WeightedCache(8);
+	public static SoftLruHashTable graphicCache = new SoftLruHashTable(8);
 
 	@ObfuscatedName("hf.ag")
-	public static WeightedCache skyBoxCache = new WeightedCache(4);
+	public static SoftLruHashTable skyBoxCache = new SoftLruHashTable(4);
 
 	@ObfuscatedName("hf.ah")
-	public static WeightedCache modelCache = new WeightedCache(50);
+	public static SoftLruHashTable modelCache = new SoftLruHashTable(50);
 
 	@ObfuscatedName("anq.al")
 	public static int field11802;
@@ -567,7 +567,7 @@ public class Component {
 	public Object[] oncameraupdatetransmit;
 
 	@ObfuscatedName("hf.gl")
-	public IterableMap params;
+	public HashTable params;
 
 	@ObfuscatedName("hf.go")
 	public int invobject = -1;
@@ -1421,7 +1421,7 @@ public class Component {
 	@ObfuscatedName("hf.ah(III)V")
 	public void method3952(int arg0, int arg1) {
 		if (this.params == null) {
-			this.params = new IterableMap(16);
+			this.params = new HashTable(16);
 			this.params.pushNode(new IntNode(arg1), (long) arg0);
 			return;
 		}
@@ -1436,7 +1436,7 @@ public class Component {
 	@ObfuscatedName("hf.al(ILjava/lang/String;I)V")
 	public void method4003(int arg0, String arg1) {
 		if (this.params == null) {
-			this.params = new IterableMap(16);
+			this.params = new HashTable(16);
 			this.params.pushNode(new ObjectNode(arg1), (long) arg0);
 			return;
 		}

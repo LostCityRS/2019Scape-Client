@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import rs2.client.Client;
@@ -11,7 +11,7 @@ import java.util.Iterator;
 public abstract class MouseLogger {
 
 	@ObfuscatedName("xb.e")
-	public final IterableQueue field7955 = new IterableQueue();
+	public final LinkedList field7955 = new LinkedList();
 
 	@ObfuscatedName("xb.n")
 	public long field7952 = -1L;

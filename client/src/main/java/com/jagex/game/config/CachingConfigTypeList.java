@@ -2,7 +2,7 @@ package com.jagex.game.config;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ArchiveUtil;
 import com.jagex.js5.Js5;
@@ -23,7 +23,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	public int num;
 
 	@ObfuscatedName("abe.k")
-	public WeightedCache recentUse;
+	public SoftLruHashTable recentUse;
 
 	@ObfuscatedName("abe.f")
 	public final ConfigTypeFactory factory;
@@ -34,13 +34,13 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		this.configGroup = configGroup;
 		this.factory = factory;
 		this.num = ArchiveUtil.getArchiveSize(this.configClient, this.configGroup);
-		this.recentUse = new WeightedCache(cacheSize);
+		this.recentUse = new SoftLruHashTable(cacheSize);
 	}
 
 	// line 30
 	@ObfuscatedName("abe.e(II)Lay;")
 	public ConfigType list(int id) {
-		WeightedCache var2 = this.recentUse;
+		SoftLruHashTable var2 = this.recentUse;
 		ConfigType cachedConfigType;
 		synchronized (this.recentUse) {
 			cachedConfigType = (ConfigType) this.recentUse.get((long) id);
@@ -49,7 +49,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 			return cachedConfigType;
 		}
 		ConfigType configType = this.list_uncached(id);
-		WeightedCache var6 = this.recentUse;
+		SoftLruHashTable var6 = this.recentUse;
 		synchronized (this.recentUse) {
 			this.recentUse.put(configType, (long) id);
 			return configType;
@@ -78,16 +78,16 @@ public class CachingConfigTypeList implements ConfigTypeList {
 
 	@ObfuscatedName("abe.z(II)V")
 	public void cacheResize(int size) {
-		WeightedCache var2 = this.recentUse;
+		SoftLruHashTable var2 = this.recentUse;
 		synchronized (this.recentUse) {
 			this.recentUse.reset();
-			this.recentUse = new WeightedCache(size);
+			this.recentUse = new SoftLruHashTable(size);
 		}
 	}
 
 	@ObfuscatedName("abe.r(I)V")
 	public void cacheReset() {
-		WeightedCache var1 = this.recentUse;
+		SoftLruHashTable var1 = this.recentUse;
 		synchronized (this.recentUse) {
 			this.recentUse.reset();
 		}
@@ -95,7 +95,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 
 	@ObfuscatedName("abe.v(II)V")
 	public void cacheClean(int num) {
-		WeightedCache var2 = this.recentUse;
+		SoftLruHashTable var2 = this.recentUse;
 		synchronized (this.recentUse) {
 			this.recentUse.clean(num);
 		}
@@ -103,7 +103,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 
 	@ObfuscatedName("abe.o(I)V")
 	public void cacheRemoveSoftReferences() {
-		WeightedCache var1 = this.recentUse;
+		SoftLruHashTable var1 = this.recentUse;
 		synchronized (this.recentUse) {
 			this.recentUse.clear();
 		}
@@ -134,7 +134,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		// line 90
 		public Object next() {
 			int var1 = ++this.field8852 - 1;
-			WeightedCache var2 = this.this$0.recentUse;
+			SoftLruHashTable var2 = this.this$0.recentUse;
 			synchronized (this.this$0.recentUse) {
 				ConfigType var3 = (ConfigType) this.this$0.recentUse.get((long) var1);
 				if (var3 != null) {

@@ -38,7 +38,7 @@ public class GlEnvironmentSampler_Sub1 extends GlEnvironmentSampler {
 	@ObfuscatedName("apf.k(Ladq;Ladq;F)Z")
 	public boolean method18984(GlCubeTexture arg0, GlCubeTexture arg1, float arg2) {
 		boolean var4 = true;
-		GlFramebuffer var5 = this.field11944.field9877;
+		GlFrameBuffer var5 = this.field11944.field9877;
 		this.field11944.method2171(field11943);
 		this.field11944.resetClip();
 		this.field11944.method2326(field11942);

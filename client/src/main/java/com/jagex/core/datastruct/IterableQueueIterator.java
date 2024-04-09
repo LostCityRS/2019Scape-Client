@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class IterableQueueIterator implements Iterator {
 
 	@ObfuscatedName("aar.e")
-	public IterableQueue queue;
+	public LinkedList queue;
 
 	@ObfuscatedName("aar.n")
 	public Node next;
@@ -16,12 +16,12 @@ public class IterableQueueIterator implements Iterator {
 	@ObfuscatedName("aar.m")
 	public Node prev = null;
 
-	public IterableQueueIterator(IterableQueue queue) {
+	public IterableQueueIterator(LinkedList queue) {
 		this.set(queue);
 	}
 
 	@ObfuscatedName("aar.l(Laat;I)V")
-	public void set(IterableQueue queue) {
+	public void set(LinkedList queue) {
 		this.queue = queue;
 		this.advance();
 	}

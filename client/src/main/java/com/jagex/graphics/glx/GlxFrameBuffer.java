@@ -1,13 +1,13 @@
 package com.jagex.graphics.glx;
 
 import com.jagex.graphics.EffectInterface;
-import com.jagex.graphics.GpuFramebuffer;
+import com.jagex.graphics.GpuFrameBuffer;
 import com.jagex.graphics.GraphicsDeletable;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("ata")
-public class GlxFramebuffer extends GpuFramebuffer {
+public class GlxFrameBuffer extends GpuFrameBuffer {
 
 	@ObfuscatedName("ata.k")
 	public final GlxToolkit renderer;
@@ -33,7 +33,7 @@ public class GlxFramebuffer extends GpuFramebuffer {
 	@ObfuscatedName("ata.d")
 	public final GlxRelated2[] field12514 = new GlxRelated2[4];
 
-	public GlxFramebuffer(GlxToolkit arg0) {
+	public GlxFrameBuffer(GlxToolkit arg0) {
 		super(arg0);
 		this.renderer = arg0;
 		int[] var2 = new int[1];

@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.config.skyboxtype.SkyBoxType;
 import com.jagex.game.scene.World;
@@ -64,13 +64,13 @@ public class EnvironmentManager {
 	public final Vector3 sunDirection = new Vector3(-50.0F, -60.0F, -50.0F);
 
 	@ObfuscatedName("xu.q")
-	public final WeightedCache samplerCache = new WeightedCache(8);
+	public final SoftLruHashTable samplerCache = new SoftLruHashTable(8);
 
 	@ObfuscatedName("xu.x")
-	public final WeightedCache skyboxCache = new WeightedCache(8);
+	public final SoftLruHashTable skyboxCache = new SoftLruHashTable(8);
 
 	@ObfuscatedName("xu.b")
-	public final WeightedCache colourRemappingCache = new WeightedCache(8);
+	public final SoftLruHashTable colourRemappingCache = new SoftLruHashTable(8);
 
 	@ObfuscatedName("xu.h")
 	public final Js5 spriteArchive;

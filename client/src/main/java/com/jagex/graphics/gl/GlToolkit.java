@@ -2,7 +2,7 @@ package com.jagex.graphics.gl;
 
 import com.jagex.core.datastruct.Heap;
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.core.utils.MonotonicTime;
@@ -45,10 +45,10 @@ public class GlToolkit extends Toolkit {
 	public final GlRelated2 field10026;
 
 	@ObfuscatedName("afa.cu")
-	public GlEffects field10023;
+	public GlEffectList field10023;
 
 	@ObfuscatedName("afa.ci")
-	public PostProcessing field9986;
+	public GlPostProcessing field9986;
 
 	@ObfuscatedName("afa.cn")
 	public GlColourGradingBloomFilter field9864;
@@ -90,7 +90,7 @@ public class GlToolkit extends Toolkit {
 	public NativeHeap field9876;
 
 	@ObfuscatedName("afa.cb")
-	public IterableQueue field9964 = new IterableQueue();
+	public LinkedList field9964 = new LinkedList();
 
 	@ObfuscatedName("afa.cs")
 	public Unsafe field9878 = null;
@@ -105,25 +105,25 @@ public class GlToolkit extends Toolkit {
 	public int field9881;
 
 	@ObfuscatedName("afa.ck")
-	public IterableQueue field9938 = new IterableQueue();
+	public LinkedList field9938 = new LinkedList();
 
 	@ObfuscatedName("afa.cj")
-	public IterableQueue field9883 = new IterableQueue();
+	public LinkedList field9883 = new LinkedList();
 
 	@ObfuscatedName("afa.cd")
-	public IterableQueue field9884 = new IterableQueue();
+	public LinkedList field9884 = new LinkedList();
 
 	@ObfuscatedName("afa.dd")
-	public IterableQueue field9885 = new IterableQueue();
+	public LinkedList field9885 = new LinkedList();
 
 	@ObfuscatedName("afa.dr")
-	public IterableQueue field9886 = new IterableQueue();
+	public LinkedList field9886 = new LinkedList();
 
 	@ObfuscatedName("afa.da")
-	public IterableQueue field9838 = new IterableQueue();
+	public LinkedList field9838 = new LinkedList();
 
 	@ObfuscatedName("afa.dt")
-	public IterableQueue field9888 = new IterableQueue();
+	public LinkedList field9888 = new LinkedList();
 
 	@ObfuscatedName("afa.do")
 	public long field9823;
@@ -489,7 +489,7 @@ public class GlToolkit extends Toolkit {
 	public GlModel[] field10009 = new GlModel[8];
 
 	@ObfuscatedName("afa.hc")
-	public GlFramebuffer field9877;
+	public GlFrameBuffer field9877;
 
 	@ObfuscatedName("afa.ho")
 	public GlRelated3 field9918;
@@ -528,7 +528,7 @@ public class GlToolkit extends Toolkit {
 	public Sprite field9975 = null;
 
 	@ObfuscatedName("afa.it")
-	public Framebuffer field10024 = null;
+	public FrameBuffer field10024 = null;
 
 	@ObfuscatedName("afa.ix")
 	public int[] field10025 = new int[3];
@@ -678,7 +678,7 @@ public class GlToolkit extends Toolkit {
 			this.field10026 = new GlRelated2(this, this.field1596);
 			this.method15728();
 			this.field9871 = new GlEffectRelated1(this);
-			this.field9986 = new PostProcessing(this);
+			this.field9986 = new GlPostProcessing(this);
 			if (this.field9986.method1363()) {
 				this.field9864 = new GlColourGradingBloomFilter(this);
 				if (!this.field9864.method19235()) {
@@ -707,7 +707,7 @@ public class GlToolkit extends Toolkit {
 				arg0.setLocation(var29 + 1, var30);
 				arg0.setLocation(var29, var30);
 			}
-			this.field10023 = new GlEffects(this);
+			this.field10023 = new GlEffectList(this);
 			this.method15814();
 			this.method2150();
 			if (this.field9986 != null) {
@@ -818,8 +818,8 @@ public class GlToolkit extends Toolkit {
 			this.field10009[var1] = new GlModel(this);
 		}
 		if (this.field9985) {
-			this.field9877 = new GlFramebuffer(this);
-			new GlFramebuffer(this);
+			this.field9877 = new GlFrameBuffer(this);
+			new GlFrameBuffer(this);
 		}
 	}
 
@@ -1411,7 +1411,7 @@ public class GlToolkit extends Toolkit {
 			int var10 = IntMath.method3082(var9);
 			OpenGL.glVertex2f((float) arg2 + var6, var7);
 			for (int var11 = 16384 - var10; var11 > 0; var11 -= var10) {
-				OpenGL.glVertex2f(TrigVertex.cos[var11] * (float) arg2 + var6, TrigVertex.sin[var11] * (float) arg2 + var7);
+				OpenGL.glVertex2f(GlTrig.cos[var11] * (float) arg2 + var6, GlTrig.sin[var11] * (float) arg2 + var7);
 			}
 			OpenGL.glVertex2f((float) arg2 + var6, var7);
 			OpenGL.glEnd();
@@ -2585,8 +2585,8 @@ public class GlToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afa.am()Lafq;")
-	public Framebuffer createFramebuffer() {
-		return new GlFramebuffer(this);
+	public FrameBuffer createFramebuffer() {
+		return new GlFrameBuffer(this);
 	}
 
 	@ObfuscatedName("afa.ar(II)Ldw;")

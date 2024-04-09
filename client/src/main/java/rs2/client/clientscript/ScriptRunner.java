@@ -112,7 +112,7 @@ public class ScriptRunner {
 	public static int[] result = new int[3];
 
 	@ObfuscatedName("ym.w")
-	public static WeightedCache field8204 = new WeightedCache(4);
+	public static SoftLruHashTable field8204 = new SoftLruHashTable(4);
 
 	@ObfuscatedName("ym.l")
 	public static Vector3[] field8210 = new Vector3[2];
@@ -5122,7 +5122,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("agj.ab(Lyf;I)V")
 	public static final void _switch(ClientScriptState arg0) {
-		IterableMap var1 = arg0.script.switchTables[arg0.intOperands[arg0.pc]];
+		HashTable var1 = arg0.script.switchTables[arg0.intOperands[arg0.pc]];
 		IntNode var2 = (IntNode) var1.getNode((long) arg0.intStack[--arg0.isp]);
 		if (var2 != null) {
 			arg0.pc += var2.value;
@@ -13021,7 +13021,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		DualIterableQueue var3 = WorldMap.method8513(var1 >> 14 & 0x3FFF, var1 & 0x3FFF);
+		SecondaryLinkedList var3 = WorldMap.method8513(var1 >> 14 & 0x3FFF, var1 & 0x3FFF);
 		boolean var4 = false;
 		for (WorldMapAreaMetadata var5 = (WorldMapAreaMetadata) var3.peekFront(); var5 != null; var5 = (WorldMapAreaMetadata) var3.prev()) {
 			if (var5.id == var2) {
@@ -17172,7 +17172,7 @@ public class ScriptRunner {
 			throw new RuntimeException();
 		} else {
 			List var4 = var3.method15187(var2);
-			Client.field754 = new LinkedList(Client.field754);
+			Client.field754 = new java.util.LinkedList(Client.field754);
 			if (var4 == null) {
 				Client.field754.clear();
 			} else {

@@ -2,8 +2,8 @@ package rs2.client.login;
 
 import com.jagex.core.constants.ModeWhere;
 import com.jagex.core.constants.PublicKeys;
-import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.io.Stream;
@@ -1202,8 +1202,8 @@ public class LoginManager {
 		Client.spotanims.removeAll();
 		Client.textCoords.clear();
 		Client.objStacks.removeAll();
-		ChangeLocationRequest.field11237 = new IterableQueue();
-		ChangeLocationRequest.field11242 = new IterableQueue();
+		ChangeLocationRequest.field11237 = new LinkedList();
+		ChangeLocationRequest.field11242 = new LinkedList();
 		Client.cameraMoveX = 0;
 		Client.cameraMoveZ = 0;
 		Client.cameraSrcHeight = 0;
@@ -1227,7 +1227,7 @@ public class LoginManager {
 			Client.ifCloseSub(var2, true, false);
 		}
 		Client.openedTopInterface = -1;
-		Client.openedSubInterfaces = new IterableMap(8);
+		Client.openedSubInterfaces = new HashTable(8);
 		Component.method5075();
 		Client.pressedContinueOption = null;
 		for (int var3 = 0; var3 < 8; var3++) {

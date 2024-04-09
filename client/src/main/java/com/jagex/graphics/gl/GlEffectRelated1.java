@@ -35,7 +35,7 @@ public class GlEffectRelated1 {
 		if (!this.method1391()) {
 			return false;
 		}
-		GlFramebuffer var4 = this.field1183.field9877;
+		GlFrameBuffer var4 = this.field1183.field9877;
 		PostProcessingRelated var5 = new PostProcessingRelated(this.field1183, TextureFormat.RGBA, DataType.UNSIGNED_INT_8, arg0.field9269, arg0.field9268);
 		boolean var6 = false;
 		this.field1183.method2142(var4);

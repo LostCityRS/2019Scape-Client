@@ -1,6 +1,6 @@
 package com.jagex.game.config;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
@@ -12,7 +12,7 @@ public class BasicParticleEmitterTypeList implements ParticleEmitterTypeList {
 	public Js5 field3563;
 
 	@ObfuscatedName("ni.n")
-	public WeightedCache field3562 = new WeightedCache(64);
+	public SoftLruHashTable field3562 = new SoftLruHashTable(64);
 
 	public BasicParticleEmitterTypeList(Js5 arg0) {
 		this.field3563 = arg0;

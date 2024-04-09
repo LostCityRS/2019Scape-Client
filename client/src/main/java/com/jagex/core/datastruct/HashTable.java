@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("aan")
-public final class IterableMap implements Iterable {
+public final class HashTable implements Iterable {
 
 	@ObfuscatedName("aan.e")
 	public int size;
@@ -25,7 +25,7 @@ public final class IterableMap implements Iterable {
 	@ObfuscatedName("aan.w")
 	public int currentNodeIndex = 0;
 
-	public IterableMap(int size) {
+	public HashTable(int size) {
 		this.size = size;
 		this.nodes = new Node[size];
 		for (int index = 0; index < size; index++) {
@@ -146,6 +146,6 @@ public final class IterableMap implements Iterable {
 	}
 
 	public Iterator iterator() {
-		return new IterableMapIterator(this);
+		return new HashTableIterator(this);
 	}
 }

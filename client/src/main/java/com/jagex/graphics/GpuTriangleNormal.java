@@ -3,7 +3,7 @@ package com.jagex.graphics;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("mh")
-public class GpuFaceNormal {
+public class GpuTriangleNormal {
 
 	@ObfuscatedName("mh.e")
 	public int field3351;

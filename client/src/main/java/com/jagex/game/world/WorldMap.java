@@ -1,9 +1,9 @@
 package com.jagex.game.world;
 
-import com.jagex.core.datastruct.DualIterableQueue;
-import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.datastruct.IterableQueue;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SecondaryLinkedList;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.core.utils.MonotonicTime;
@@ -72,7 +72,7 @@ public class WorldMap {
 	public static Js5 field6795;
 
 	@ObfuscatedName("tf.c")
-	public static IterableMap field6796 = new IterableMap(16);
+	public static HashTable field6796 = new HashTable(16);
 
 	@ObfuscatedName("tf.r")
 	public static int field6797 = (int) (Math.random() * 11.0D) - 5;
@@ -102,7 +102,7 @@ public class WorldMap {
 	public static WorldMapRelated field6805;
 
 	@ObfuscatedName("tf.a")
-	public static IterableQueue field6806 = new IterableQueue();
+	public static LinkedList field6806 = new LinkedList();
 
 	@ObfuscatedName("tf.g")
 	public static int field6786;
@@ -177,13 +177,13 @@ public class WorldMap {
 	public static java.util.HashMap[][][] field6830;
 
 	@ObfuscatedName("tf.ab")
-	public static WeightedCache field6831 = new WeightedCache(4096, 256);
+	public static SoftLruHashTable field6831 = new SoftLruHashTable(4096, 256);
 
 	@ObfuscatedName("tf.az")
-	public static WeightedCache field6832 = new WeightedCache(4096, 1024);
+	public static SoftLruHashTable field6832 = new SoftLruHashTable(4096, 1024);
 
 	@ObfuscatedName("tf.aa")
-	public static WeightedCache field6833 = field6831;
+	public static SoftLruHashTable field6833 = field6831;
 
 	@ObfuscatedName("tf.ak")
 	public static ArrayList field6835 = new ArrayList();
@@ -344,8 +344,8 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.u(II)Laap;")
-	public static DualIterableQueue method8513(int arg0, int arg1) {
-		DualIterableQueue var2 = new DualIterableQueue();
+	public static SecondaryLinkedList method8513(int arg0, int arg1) {
+		SecondaryLinkedList var2 = new SecondaryLinkedList();
 		for (WorldMapAreaMetadata var3 = (WorldMapAreaMetadata) field6796.peekFront(); var3 != null; var3 = (WorldMapAreaMetadata) field6796.prev()) {
 			if (var3.field12350 && var3.method19469(arg0, arg1)) {
 				var2.pushBack(var3);
@@ -1227,7 +1227,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.j(Ldh;)Laat;")
-	public static IterableQueue method8602(Toolkit arg0) {
+	public static LinkedList method8602(Toolkit arg0) {
 		int var1 = field6847 - field6845;
 		int var2 = field6846 - field6848;
 		int var3 = (field6851 - field6801 << 16) / var1;
@@ -1236,7 +1236,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.t(Ldh;IIII)Laat;")
-	public static IterableQueue method8531(Toolkit arg0, int arg1, int arg2, int arg3, int arg4) {
+	public static LinkedList method8531(Toolkit arg0, int arg1, int arg2, int arg3, int arg4) {
 		for (WorldMapElement var5 = (WorldMapElement) field6806.peekFront(); var5 != null; var5 = (WorldMapElement) field6806.prev()) {
 			method8525(arg0, var5, arg1, arg2, arg3, arg4);
 		}

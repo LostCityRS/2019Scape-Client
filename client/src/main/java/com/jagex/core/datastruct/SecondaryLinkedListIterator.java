@@ -5,10 +5,10 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("aai")
-public class DualIterableQueueIterator implements Iterator {
+public class SecondaryLinkedListIterator implements Iterator {
 
 	@ObfuscatedName("aai.e")
-	public DualIterableQueue queue;
+	public SecondaryLinkedList queue;
 
 	@ObfuscatedName("aai.n")
 	public SecondaryNode next;
@@ -16,7 +16,7 @@ public class DualIterableQueueIterator implements Iterator {
 	@ObfuscatedName("aai.m")
 	public SecondaryNode prev = null;
 
-	public DualIterableQueueIterator(DualIterableQueue queue) {
+	public SecondaryLinkedListIterator(SecondaryLinkedList queue) {
 		this.queue = queue;
 		this.next = this.queue.head.secondaryPrev;
 		this.prev = null;

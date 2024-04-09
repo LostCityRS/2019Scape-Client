@@ -2,7 +2,7 @@ package com.jagex.graphics.dx;
 
 import com.jagex.graphics.EffectInterface;
 import com.jagex.graphics.FrameBufferInterface;
-import com.jagex.graphics.GpuFramebuffer;
+import com.jagex.graphics.GpuFrameBuffer;
 import com.jagex.graphics.GraphicsDeletable;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
@@ -10,7 +10,7 @@ import jagdx.IUnknown;
 import jagdx.HRESULT;
 
 @ObfuscatedName("ath")
-public class DxFramebuffer extends GpuFramebuffer {
+public class DxFrameBuffer extends GpuFrameBuffer {
 
 	@ObfuscatedName("ath.k")
 	public final DxToolkit field12499;
@@ -33,7 +33,7 @@ public class DxFramebuffer extends GpuFramebuffer {
 	@ObfuscatedName("ath.p")
 	public final DxGraphicsDeletable[] field12505 = new DxGraphicsDeletable[4];
 
-	public DxFramebuffer(DxToolkit arg0) {
+	public DxFrameBuffer(DxToolkit arg0) {
 		super(arg0);
 		this.field12499 = arg0;
 	}

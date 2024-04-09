@@ -1,6 +1,6 @@
 package com.jagex.core.utils;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import deob.ObfuscatedName;
@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 public class ReflectionCheck {
 
 	@ObfuscatedName("acj.e")
-	public static IterableQueue field9148 = new IterableQueue();
+	public static LinkedList field9148 = new LinkedList();
 
 	public ReflectionCheck() throws Throwable {
 		throw new Error();
@@ -22,7 +22,7 @@ public class ReflectionCheck {
 
 	@ObfuscatedName("hh.e(I)V")
 	public static void method4052() {
-		field9148 = new IterableQueue();
+		field9148 = new LinkedList();
 	}
 
 	@ObfuscatedName("abf.n(I)Z")

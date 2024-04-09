@@ -1,7 +1,7 @@
 package com.jagex.game.config.questtype;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
@@ -83,7 +83,7 @@ public class QuestType implements ConfigType {
 	public String[] varbitsDescriptions;
 
 	@ObfuscatedName("ir.a")
-	public IterableMap params;
+	public HashTable params;
 
 	@ObfuscatedName("ir.g")
 	public int field2651 = -1;
@@ -188,7 +188,7 @@ public class QuestType implements ConfigType {
 			int var17 = buf.g1();
 			if (this.params == null) {
 				int var18 = IntMath.bitceil(var17);
-				this.params = new IterableMap(var18);
+				this.params = new HashTable(var18);
 			}
 			for (int var19 = 0; var19 < var17; var19++) {
 				boolean var20 = buf.g1() == 1;

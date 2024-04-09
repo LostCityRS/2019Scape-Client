@@ -3,7 +3,7 @@ package com.jagex.core.datastruct;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("eb")
-public final class WeightedCache {
+public final class SoftLruHashTable {
 
 	@ObfuscatedName("eb.e")
 	public int field1758;
@@ -12,36 +12,36 @@ public final class WeightedCache {
 	public int field1756;
 
 	@ObfuscatedName("eb.m")
-	public IterableMap iterableMap;
+	public HashTable hashTable;
 
 	@ObfuscatedName("eb.k")
-	public DualIterableQueue queue;
+	public SecondaryLinkedList queue;
 
 	@ObfuscatedName("eb.f")
-	public CacheRemovalListener field1759;
+	public SoftLruHashTableRemovalListener field1759;
 
-	public WeightedCache(int size) {
+	public SoftLruHashTable(int size) {
 		this(size, size);
 	}
 
 	@ObfuscatedName("eb.e(Len;B)V")
-	public void setRemovalListener(CacheRemovalListener arg0) {
+	public void setRemovalListener(SoftLruHashTableRemovalListener arg0) {
 		this.field1759 = arg0;
 	}
 
-	public WeightedCache(int arg0, int arg1) {
-		this.queue = new DualIterableQueue();
+	public SoftLruHashTable(int arg0, int arg1) {
+		this.queue = new SecondaryLinkedList();
 		this.field1758 = arg0;
 		this.field1756 = arg0;
 		int var3;
 		for (var3 = 1; var3 + var3 < arg0 && var3 < arg1; var3 += var3) {
 		}
-		this.iterableMap = new IterableMap(var3);
+		this.hashTable = new HashTable(var3);
 	}
 
 	@ObfuscatedName("eb.n(J)Ljava/lang/Object;")
 	public Object get(long arg0) {
-		ReferenceNode var3 = (ReferenceNode) this.iterableMap.getNode(arg0);
+		ReferenceNode var3 = (ReferenceNode) this.hashTable.getNode(arg0);
 		if (var3 == null) {
 			return null;
 		}
@@ -54,7 +54,7 @@ public final class WeightedCache {
 		}
 		if (var3.isSoft()) {
 			HardReferenceNode var5 = new HardReferenceNode(var4, var3.field12328);
-			this.iterableMap.pushNode(var5, var3.nodeId);
+			this.hashTable.pushNode(var5, var3.nodeId);
 			this.queue.pushBack(var5);
 			var5.secondaryNodeId = 0L;
 			var3.remove();
@@ -68,7 +68,7 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.m(J)V")
 	public void method2957(long arg0) {
-		ReferenceNode var3 = (ReferenceNode) this.iterableMap.getNode(arg0);
+		ReferenceNode var3 = (ReferenceNode) this.hashTable.getNode(arg0);
 		this.method2918(var3);
 	}
 
@@ -106,7 +106,7 @@ public final class WeightedCache {
 			}
 		}
 		HardReferenceNode var6 = new HardReferenceNode(arg0, arg2);
-		this.iterableMap.pushNode(var6, arg1);
+		this.hashTable.pushNode(var6, arg1);
 		this.queue.pushBack(var6);
 		var6.secondaryNodeId = 0L;
 	}
@@ -122,8 +122,8 @@ public final class WeightedCache {
 				}
 			} else if (++var2.secondaryNodeId > (long) arg0) {
 				SoftReferenceNode var3 = new SoftReferenceNode(var2.method19423(), var2.field12328);
-				this.iterableMap.pushNode(var3, var2.nodeId);
-				DualIterableQueue.method10144(var3, var2);
+				this.hashTable.pushNode(var3, var2.nodeId);
+				SecondaryLinkedList.method10144(var3, var2);
 				var2.remove();
 				var2.secondaryRemove();
 			}
@@ -133,7 +133,7 @@ public final class WeightedCache {
 	@ObfuscatedName("eb.u(B)V")
 	public void reset() {
 		this.queue.removeAll();
-		this.iterableMap.removeAll();
+		this.hashTable.removeAll();
 		this.field1756 = this.field1758;
 	}
 
@@ -171,14 +171,14 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.r(I)Ljava/lang/Object;")
 	public Object method2950() {
-		ReferenceNode var1 = (ReferenceNode) this.iterableMap.peekFront();
+		ReferenceNode var1 = (ReferenceNode) this.hashTable.peekFront();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
 			ReferenceNode var3 = var1;
-			var1 = (ReferenceNode) this.iterableMap.prev();
+			var1 = (ReferenceNode) this.hashTable.prev();
 			var3.remove();
 			var3.secondaryRemove();
 			this.field1756 += var3.field12328;
@@ -188,14 +188,14 @@ public final class WeightedCache {
 
 	@ObfuscatedName("eb.v(I)Ljava/lang/Object;")
 	public Object method2937() {
-		ReferenceNode var1 = (ReferenceNode) this.iterableMap.prev();
+		ReferenceNode var1 = (ReferenceNode) this.hashTable.prev();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
 			ReferenceNode var3 = var1;
-			var1 = (ReferenceNode) this.iterableMap.prev();
+			var1 = (ReferenceNode) this.hashTable.prev();
 			var3.remove();
 			var3.secondaryRemove();
 			this.field1756 += var3.field12328;

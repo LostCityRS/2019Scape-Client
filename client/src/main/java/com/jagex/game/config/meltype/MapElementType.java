@@ -1,7 +1,7 @@
 package com.jagex.game.config.meltype;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
@@ -155,7 +155,7 @@ public class MapElementType implements ConfigType {
 	public int category = -1;
 
 	@ObfuscatedName("hs.ab")
-	public IterableMap params;
+	public HashTable params;
 
 	@ObfuscatedName("hs.az")
 	public int field2384 = -1;
@@ -297,7 +297,7 @@ public class MapElementType implements ConfigType {
 			int var9 = arg0.g1();
 			if (this.params == null) {
 				int var10 = IntMath.bitceil(var9);
-				this.params = new IterableMap(var10);
+				this.params = new HashTable(var10);
 			}
 			for (int var11 = 0; var11 < var9; var11++) {
 				boolean var12 = arg0.g1() == 1;

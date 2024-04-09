@@ -2,7 +2,7 @@ package com.jagex.game.config.meltype;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.game.config.CachingConfigTypeList;
 import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.js5.Js5;
@@ -18,7 +18,7 @@ public class MapElementTypeList extends CachingConfigTypeList {
 	@ObfuscatedName("aoc.al(III)V")
 	public void cacheResize(int size, int elementCacheSize) {
 		super.cacheResize(size);
-		((MapElementTypeFactory) this.factory).elementCache = new WeightedCache(elementCacheSize);
+		((MapElementTypeFactory) this.factory).elementCache = new SoftLruHashTable(elementCacheSize);
 	}
 
 	@ObfuscatedName("aoc.r(I)V")

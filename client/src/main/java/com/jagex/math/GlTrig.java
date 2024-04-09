@@ -3,7 +3,7 @@ package com.jagex.math;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("cn")
-public class TrigVertex {
+public class GlTrig {
 
 	@ObfuscatedName("cn.e")
 	public static final float[] sin = new float[16384];
@@ -19,7 +19,7 @@ public class TrigVertex {
 		}
 	}
 
-	public TrigVertex() throws Throwable {
+	public GlTrig() throws Throwable {
 		throw new Error();
 	}
 }

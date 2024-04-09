@@ -2,7 +2,7 @@ package com.jagex.audio.stream;
 
 import com.jagex.audio.backend.AudioMixerRelated;
 import com.jagex.audio.api.SoundBackend;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
@@ -38,12 +38,12 @@ public class AudioStream2 implements AudioApiRelated2 {
 	public int field7622;
 
 	@ObfuscatedName("we.z")
-	public WeightedCache field7623;
+	public SoftLruHashTable field7623;
 
 	@ObfuscatedName("we.p")
 	public boolean field7624;
 
-	public AudioStream2(Js5 arg0, int arg1, SoundBackend arg2, AudioMixerRelated arg3, WeightedCache arg4) {
+	public AudioStream2(Js5 arg0, int arg1, SoundBackend arg2, AudioMixerRelated arg3, SoftLruHashTable arg4) {
 		this.field7621 = arg0;
 		this.field7615 = arg1;
 		this.field7617 = arg2;
@@ -125,7 +125,7 @@ public class AudioStream2 implements AudioApiRelated2 {
 		if (this.field7618) {
 			throw new RuntimeException("");
 		}
-		WeightedCache var2 = this.field7623;
+		SoftLruHashTable var2 = this.field7623;
 		synchronized (this.field7623) {
 			List var3 = this.method9689();
 			if (var3 != null) {
@@ -145,7 +145,7 @@ public class AudioStream2 implements AudioApiRelated2 {
 		if (this.field7619 != null) {
 			this.field7619.method3131(this);
 		}
-		WeightedCache var3 = this.field7623;
+		SoftLruHashTable var3 = this.field7623;
 		synchronized (this.field7623) {
 			List var4 = this.method9689();
 			if (var4.size() > arg0) {
@@ -161,7 +161,7 @@ public class AudioStream2 implements AudioApiRelated2 {
 			return false;
 		}
 		boolean var2 = false;
-		WeightedCache var3 = this.field7623;
+		SoftLruHashTable var3 = this.field7623;
 		synchronized (this.field7623) {
 			List var4 = this.method9689();
 			if (var4 != null && var4.size() > arg0) {
@@ -182,7 +182,7 @@ public class AudioStream2 implements AudioApiRelated2 {
 			return 0;
 		}
 		int var1 = 0;
-		WeightedCache var2 = this.field7623;
+		SoftLruHashTable var2 = this.field7623;
 		synchronized (this.field7623) {
 			List var3 = this.method9689();
 			if (var3 != null) {
@@ -217,7 +217,7 @@ public class AudioStream2 implements AudioApiRelated2 {
 		if (this.field7623 == null || arg0 == null || arg1 < 0) {
 			return;
 		}
-		WeightedCache var3 = this.field7623;
+		SoftLruHashTable var3 = this.field7623;
 		synchronized (this.field7623) {
 			this.field7623.method2957((long) this.field7615);
 			if (arg1 <= this.field7623.method2925()) {
@@ -236,7 +236,7 @@ public class AudioStream2 implements AudioApiRelated2 {
 			return null;
 		}
 		Object var1 = null;
-		WeightedCache var2 = this.field7623;
+		SoftLruHashTable var2 = this.field7623;
 		synchronized (this.field7623) {
 			List var3 = (List) this.field7623.get((long) this.field7615);
 			if (var3 == null && this.field7624) {

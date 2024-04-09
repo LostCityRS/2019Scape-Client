@@ -17,9 +17,9 @@ public class GlHDWaterEffect extends GlEffect {
 	public boolean field9343 = false;
 
 	@ObfuscatedName("aev.l")
-	public GlEffectRelated2 field9344;
+	public GlWaterRelated field9344;
 
-	public GlHDWaterEffect(GlToolkit arg0, GlEffectRelated2 arg1) {
+	public GlHDWaterEffect(GlToolkit arg0, GlWaterRelated arg1) {
 		super(arg0);
 		this.field9344 = arg1;
 		if (this.field9344.field1038 != null && this.field1021.field10000 && this.field1021.field10002) {

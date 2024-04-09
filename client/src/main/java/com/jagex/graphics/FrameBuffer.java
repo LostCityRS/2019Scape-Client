@@ -3,7 +3,7 @@ package com.jagex.graphics;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afq")
-public abstract class Framebuffer extends RenderTarget {
+public abstract class FrameBuffer extends RenderTarget {
 
 	@ObfuscatedName("afq.b(ILdp;)V")
 	public abstract void method15439(int arg0, GraphicsDeletable arg1);

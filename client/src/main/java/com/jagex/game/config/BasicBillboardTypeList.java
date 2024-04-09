@@ -1,6 +1,6 @@
 package com.jagex.game.config;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
@@ -12,7 +12,7 @@ public class BasicBillboardTypeList implements BillboardTypeList {
 	public Js5 field3564;
 
 	@ObfuscatedName("nw.n")
-	public WeightedCache field3565 = new WeightedCache(64);
+	public SoftLruHashTable field3565 = new SoftLruHashTable(64);
 
 	public BasicBillboardTypeList(Js5 arg0) {
 		this.field3564 = arg0;

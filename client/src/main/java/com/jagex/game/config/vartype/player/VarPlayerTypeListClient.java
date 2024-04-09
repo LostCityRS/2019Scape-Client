@@ -2,7 +2,7 @@ package com.jagex.game.config.vartype.player;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
@@ -20,7 +20,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	public final Js5 field9255;
 
 	@ObfuscatedName("adj.m")
-	public final WeightedCache field9254 = new WeightedCache(64);
+	public final SoftLruHashTable field9254 = new SoftLruHashTable(64);
 
 	public VarPlayerTypeListClient(ModeGame arg0, VarDomainType arg1, Language arg2, Js5 arg3) {
 		super(arg0, arg1, arg2, arg3 == null ? 0 : arg3.getGroupCapacity(arg1.getJs5GroupID().id));
@@ -29,7 +29,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 
 	@ObfuscatedName("adj.e(II)Lay;")
 	public ConfigType list(int id) {
-		WeightedCache var2 = this.field9254;
+		SoftLruHashTable var2 = this.field9254;
 		synchronized (this.field9254) {
 			VarPlayerType var3 = (VarPlayerType) this.field9254.get((long) id);
 			if (var3 == null) {
@@ -52,7 +52,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 
 	@ObfuscatedName("adj.v(I)V")
 	public void cacheReset() {
-		WeightedCache var1 = this.field9254;
+		SoftLruHashTable var1 = this.field9254;
 		synchronized (this.field9254) {
 			this.field9254.reset();
 		}
@@ -60,7 +60,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 
 	@ObfuscatedName("adj.o(II)V")
 	public void cacheClean(int arg0) {
-		WeightedCache var2 = this.field9254;
+		SoftLruHashTable var2 = this.field9254;
 		synchronized (this.field9254) {
 			this.field9254.clean(arg0);
 		}
@@ -69,7 +69,7 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	// line 54
 	@ObfuscatedName("adj.s(B)V")
 	public void cacheRemoveSoftReferences() {
-		WeightedCache var1 = this.field9254;
+		SoftLruHashTable var1 = this.field9254;
 		synchronized (this.field9254) {
 			this.field9254.clear();
 		}

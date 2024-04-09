@@ -1,6 +1,6 @@
 package com.jagex.graphics.gl;
 
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.graphics.FloorModelNode;
@@ -67,7 +67,7 @@ public class GlFloorModelRelated5 extends Node {
 	public GpuPacket field11289;
 
 	@ObfuscatedName("ajr.a")
-	public IterableMap field11290;
+	public HashTable field11290;
 
 	public GlFloorModelRelated5(GlToolkit arg0, GlFloorModel arg1, Light arg2, int[] arg3) {
 		this.field11279 = arg0;
@@ -127,7 +127,7 @@ public class GlFloorModelRelated5 extends Node {
 		if (this.field11280 > 0) {
 			this.field11288 = new Packet(this.field11280 * 2);
 			this.field11289 = new GpuPacket(this.field11280 * 16);
-			this.field11290 = new IterableMap(IntMath.bitceil(this.field11280));
+			this.field11290 = new HashTable(IntMath.bitceil(this.field11280));
 			int var21 = 0;
 			int var22 = 0;
 			for (int var23 = this.field11277; var23 <= this.field11278; var23++) {

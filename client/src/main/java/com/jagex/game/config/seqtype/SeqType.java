@@ -1,7 +1,7 @@
 package com.jagex.game.config.seqtype;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
@@ -86,7 +86,7 @@ public class SeqType implements ConfigType {
 	public int[] field1790;
 
 	@ObfuscatedName("fg.j")
-	public IterableMap params;
+	public HashTable params;
 
 	@ObfuscatedName("fg.t")
 	public int field1783 = -1;
@@ -216,7 +216,7 @@ public class SeqType implements ConfigType {
 				int var11 = buf.g1();
 				if (this.params == null) {
 					int var12 = IntMath.bitceil(var11);
-					this.params = new IterableMap(var12);
+					this.params = new HashTable(var12);
 				}
 				for (int var13 = 0; var13 < var11; var13++) {
 					boolean var14 = buf.g1() == 1;

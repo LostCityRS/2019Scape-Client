@@ -1,6 +1,6 @@
 package com.jagex.game.config.effectanimtype;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
 import com.jagex.graphics.*;
@@ -187,7 +187,7 @@ public class EffectAnimType implements ConfigType {
 		if (var16) {
 			var15 |= 0x7;
 		}
-		WeightedCache var17 = this.factory.modelCache;
+		SoftLruHashTable var17 = this.factory.modelCache;
 		Model var18;
 		synchronized (this.factory.modelCache) {
 			var18 = (Model) this.factory.modelCache.get((long) (this.id | arg0.field1595 << 29));
@@ -222,7 +222,7 @@ public class EffectAnimType implements ConfigType {
 				}
 			}
 			var18.method1690(var15);
-			WeightedCache var24 = this.factory.modelCache;
+			SoftLruHashTable var24 = this.factory.modelCache;
 			synchronized (this.factory.modelCache) {
 				this.factory.modelCache.put(var18, (long) (this.id | arg0.field1595 << 29));
 			}

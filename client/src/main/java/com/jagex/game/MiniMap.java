@@ -1,7 +1,7 @@
 package com.jagex.game;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
@@ -57,7 +57,7 @@ public class MiniMap {
 	public static int[] field726 = new int[1013];
 
 	@ObfuscatedName("at.p")
-	public static IterableQueue field727 = new IterableQueue();
+	public static LinkedList field727 = new LinkedList();
 
 	@ObfuscatedName("at.d")
 	public static int flagSceneTileX = -1;
@@ -173,7 +173,7 @@ public class MiniMap {
 		for (int var19 = 0; var19 < var18.length; var19++) {
 			var18[var19] = 0;
 		}
-		Framebuffer var20 = null;
+		FrameBuffer var20 = null;
 		byte var21 = 0;
 		byte var22 = 0;
 		if (field720) {

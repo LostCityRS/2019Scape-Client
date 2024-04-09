@@ -1,12 +1,12 @@
 package com.jagex.graphics.safe;
 
 import com.jagex.graphics.EffectInterface;
-import com.jagex.graphics.Framebuffer;
+import com.jagex.graphics.FrameBuffer;
 import com.jagex.graphics.GraphicsDeletable;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("apn")
-public class PureJavaFramebuffer extends Framebuffer {
+public class PureJavaFrameBuffer extends FrameBuffer {
 
 	@ObfuscatedName("apn.n")
 	public PureJavaToolkit renderer;
@@ -23,7 +23,7 @@ public class PureJavaFramebuffer extends Framebuffer {
 	@ObfuscatedName("apn.w")
 	public int height = 0;
 
-	public PureJavaFramebuffer(PureJavaToolkit renderer) {
+	public PureJavaFrameBuffer(PureJavaToolkit renderer) {
 		this.renderer = renderer;
 	}
 

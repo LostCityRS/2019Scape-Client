@@ -1,6 +1,6 @@
 package com.jagex.graphics.camera;
 
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.game.camera.*;
 import com.jagex.game.camera.position.Position;
@@ -116,7 +116,7 @@ public abstract class Camera {
 	public float field2877 = 1.0F;
 
 	@ObfuscatedName("je.am")
-	public IterableMap effects = new IterableMap(8);
+	public HashTable effects = new HashTable(8);
 
 	public Camera(CameraRelated arg0, CameraTrackableProvider arg1) {
 		this.field2848 = arg0;

@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
 import com.jagex.core.datastruct.Heap;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.*;
@@ -68,7 +68,7 @@ public abstract class GpuToolkit extends Toolkit {
 	public NativeHeap field10154;
 
 	@ObfuscatedName("afc.bh")
-	public IterableQueue field10051 = new IterableQueue();
+	public LinkedList field10051 = new LinkedList();
 
 	@ObfuscatedName("afc.bx")
 	public int field10052;

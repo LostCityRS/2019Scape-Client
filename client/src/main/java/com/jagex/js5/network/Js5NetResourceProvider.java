@@ -1,7 +1,7 @@
 package com.jagex.js5.network;
 
-import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.encryption.Whirlpool;
@@ -58,7 +58,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	public int field10740 = 0;
 
 	@ObfuscatedName("aij.y")
-	public IterableMap requests = new IterableMap(16);
+	public HashTable requests = new HashTable(16);
 
 	@ObfuscatedName("aij.q")
 	public boolean field10725;
@@ -73,10 +73,10 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	public int field10739 = 0;
 
 	@ObfuscatedName("aij.a")
-	public IterableQueue field10735;
+	public LinkedList field10735;
 
 	@ObfuscatedName("aij.g")
-	public IterableQueue field10741 = new IterableQueue();
+	public LinkedList field10741 = new LinkedList();
 
 	@ObfuscatedName("aij.i")
 	public boolean field10748;
@@ -94,7 +94,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			this.field10738 = false;
 		} else {
 			this.field10738 = true;
-			this.field10735 = new IterableQueue();
+			this.field10735 = new LinkedList();
 		}
 		this.field10724 = arg2;
 		this.tcpClient = tcpClient;
@@ -572,7 +572,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		this.field10725 = true;
 		this.field10737 = true;
 		if (this.field10735 == null) {
-			this.field10735 = new IterableQueue();
+			this.field10735 = new LinkedList();
 		}
 	}
 

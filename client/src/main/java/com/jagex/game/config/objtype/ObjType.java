@@ -2,9 +2,9 @@ package com.jagex.game.config.objtype;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.LocalisedText;
 import com.jagex.game.config.ConfigType;
@@ -225,7 +225,7 @@ public class ObjType implements ConfigType {
 	public int dummyitem = 0;
 
 	@ObfuscatedName("abv.bv")
-	public IterableMap params;
+	public HashTable params;
 
 	@ObfuscatedName("abv.br")
 	public int[] quests;
@@ -520,7 +520,7 @@ public class ObjType implements ConfigType {
 				int length = buf.g1();
 				if (this.params == null) {
 					int var22 = IntMath.bitceil(length);
-					this.params = new IterableMap(var22);
+					this.params = new HashTable(var22);
 				}
 				for (int index = 0; index < length; index++) {
 					boolean isString = buf.g1() == 1;
@@ -649,7 +649,7 @@ public class ObjType implements ConfigType {
 		if (arg4 != null) {
 			var12 = arg1 | arg4.method14358();
 		}
-		WeightedCache var13 = this.factory.modelCache;
+		SoftLruHashTable var13 = this.factory.modelCache;
 		Model var14;
 		synchronized (this.factory.modelCache) {
 			var14 = (Model) this.factory.modelCache.get((long) (this.id | arg0.field1595 << 29));
@@ -725,7 +725,7 @@ public class ObjType implements ConfigType {
 				}
 			}
 			var14.method1690(var12);
-			WeightedCache var24 = this.factory.modelCache;
+			SoftLruHashTable var24 = this.factory.modelCache;
 			synchronized (this.factory.modelCache) {
 				this.factory.modelCache.put(var14, (long) (this.id | arg0.field1595 << 29));
 			}

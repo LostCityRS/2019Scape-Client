@@ -2,7 +2,7 @@ package com.jagex.game.config.npctype;
 
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.game.client.LocalisedText;
 import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.js5.Js5;
@@ -21,10 +21,10 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 	public final Js5 configClient;
 
 	@ObfuscatedName("ih.k")
-	public final WeightedCache modelCache = new WeightedCache(50);
+	public final SoftLruHashTable modelCache = new SoftLruHashTable(50);
 
 	@ObfuscatedName("ih.f")
-	public final WeightedCache headModelCache = new WeightedCache(5);
+	public final SoftLruHashTable headModelCache = new SoftLruHashTable(5);
 
 	@ObfuscatedName("ih.w")
 	public int field2773;
@@ -54,11 +54,11 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("ih.n(II)V")
 	public void resetModelCache(int arg0) {
 		this.field2773 = arg0;
-		WeightedCache var2 = this.modelCache;
+		SoftLruHashTable var2 = this.modelCache;
 		synchronized (this.modelCache) {
 			this.modelCache.reset();
 		}
-		WeightedCache var4 = this.headModelCache;
+		SoftLruHashTable var4 = this.headModelCache;
 		synchronized (this.headModelCache) {
 			this.headModelCache.reset();
 		}
@@ -66,11 +66,11 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("ih.m(B)V")
 	public void cacheReset() {
-		WeightedCache var1 = this.modelCache;
+		SoftLruHashTable var1 = this.modelCache;
 		synchronized (this.modelCache) {
 			this.modelCache.reset();
 		}
-		WeightedCache var3 = this.headModelCache;
+		SoftLruHashTable var3 = this.headModelCache;
 		synchronized (this.headModelCache) {
 			this.headModelCache.reset();
 		}
@@ -78,11 +78,11 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("ih.k(II)V")
 	public void cacheClean(int arg0) {
-		WeightedCache var2 = this.modelCache;
+		SoftLruHashTable var2 = this.modelCache;
 		synchronized (this.modelCache) {
 			this.modelCache.clean(arg0);
 		}
-		WeightedCache var4 = this.headModelCache;
+		SoftLruHashTable var4 = this.headModelCache;
 		synchronized (this.headModelCache) {
 			this.headModelCache.clean(arg0);
 		}
@@ -90,11 +90,11 @@ public abstract class NPCTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("ih.f(I)V")
 	public void cacheRemoveSoftReferences() {
-		WeightedCache var1 = this.modelCache;
+		SoftLruHashTable var1 = this.modelCache;
 		synchronized (this.modelCache) {
 			this.modelCache.clear();
 		}
-		WeightedCache var3 = this.headModelCache;
+		SoftLruHashTable var3 = this.headModelCache;
 		synchronized (this.headModelCache) {
 			this.headModelCache.clear();
 		}

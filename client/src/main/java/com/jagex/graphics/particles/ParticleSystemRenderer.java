@@ -1,7 +1,7 @@
 package com.jagex.graphics.particles;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.MovingParticle;
 import com.jagex.game.config.ParticleEffectorType;
@@ -55,10 +55,10 @@ public class ParticleSystemRenderer {
 	public static int field7798 = 0;
 
 	@ObfuscatedName("xl.r")
-	public static IterableMap field7799 = new IterableMap(16);
+	public static HashTable field7799 = new HashTable(16);
 
 	@ObfuscatedName("xl.v")
-	public static IterableMap field7800 = new IterableMap(8);
+	public static HashTable field7800 = new HashTable(8);
 
 	@ObfuscatedName("xl.o")
 	public static int field7796 = 0;
@@ -127,7 +127,7 @@ public class ParticleSystemRenderer {
 
 	@ObfuscatedName("ge.f(B)V")
 	public static void method3561() {
-		field7800 = new IterableMap(8);
+		field7800 = new HashTable(8);
 		field7796 = 0;
 		Iterator var0 = field8349.iterator();
 		while (var0.hasNext()) {

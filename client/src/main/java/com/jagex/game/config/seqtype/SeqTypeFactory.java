@@ -1,6 +1,6 @@
 package com.jagex.game.config.seqtype;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.game.config.ConfigTypeFactory;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.graphics.FrameSet;
@@ -15,10 +15,10 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 	public final ConfigTypeList configTypeList;
 
 	@ObfuscatedName("fu.n")
-	public final WeightedCache frameCache = new WeightedCache(100);
+	public final SoftLruHashTable frameCache = new SoftLruHashTable(100);
 
 	@ObfuscatedName("fu.m")
-	public final WeightedCache keyFrameCache = new WeightedCache(100);
+	public final SoftLruHashTable keyFrameCache = new SoftLruHashTable(100);
 
 	public SeqTypeFactory(ConfigTypeList arg0, Js5 arg1, Js5 arg2, Js5 arg3) {
 		this.configTypeList = arg0;
@@ -28,7 +28,7 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("fu.e(IB)Larr;")
 	public FrameSet method3020(int arg0) {
-		WeightedCache var2 = this.frameCache;
+		SoftLruHashTable var2 = this.frameCache;
 		synchronized (this.frameCache) {
 			FrameSet var3 = (FrameSet) this.frameCache.get((long) arg0);
 			if (var3 == null) {
@@ -41,7 +41,7 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("fu.n(IB)Lard;")
 	public KeyFrameSet method3010(int arg0) {
-		WeightedCache var2 = this.keyFrameCache;
+		SoftLruHashTable var2 = this.keyFrameCache;
 		synchronized (this.keyFrameCache) {
 			KeyFrameSet var3 = (KeyFrameSet) this.keyFrameCache.get((long) arg0);
 			if (var3 == null) {
@@ -54,7 +54,7 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("fu.m(I)V")
 	public void cacheReset() {
-		WeightedCache var1 = this.frameCache;
+		SoftLruHashTable var1 = this.frameCache;
 		synchronized (this.frameCache) {
 			this.frameCache.reset();
 		}
@@ -62,7 +62,7 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("fu.k(II)V")
 	public void cacheClean(int arg0) {
-		WeightedCache var2 = this.frameCache;
+		SoftLruHashTable var2 = this.frameCache;
 		synchronized (this.frameCache) {
 			this.frameCache.clean(arg0);
 		}
@@ -70,7 +70,7 @@ public abstract class SeqTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("fu.f(I)V")
 	public void cacheRemoveSoftReferences() {
-		WeightedCache var1 = this.frameCache;
+		SoftLruHashTable var1 = this.frameCache;
 		synchronized (this.frameCache) {
 			this.frameCache.clear();
 		}

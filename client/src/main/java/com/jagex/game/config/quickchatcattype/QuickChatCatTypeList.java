@@ -1,7 +1,7 @@
 package com.jagex.game.config.quickchatcattype;
 
 import com.jagex.core.constants.Language;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
@@ -16,7 +16,7 @@ public class QuickChatCatTypeList {
 	public final Js5 configClientLarge;
 
 	@ObfuscatedName("qr.m")
-	public final WeightedCache recentUse = new WeightedCache(64);
+	public final SoftLruHashTable recentUse = new SoftLruHashTable(64);
 
 	public QuickChatCatTypeList(Language arg0, Js5 arg1, Js5 arg2) {
 		this.configClientSmall = arg1;

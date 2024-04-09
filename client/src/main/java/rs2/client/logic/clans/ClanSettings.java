@@ -1,7 +1,7 @@
 package rs2.client.logic.clans;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.Algorithms;
@@ -85,7 +85,7 @@ public class ClanSettings {
 	public String[] bannedDisplayNames;
 
 	@ObfuscatedName("kr.t")
-	public IterableMap settingsMap;
+	public HashTable settingsMap;
 
 	public ClanSettings(Packet buf) {
 		this.decode(buf);
@@ -391,7 +391,7 @@ public class ClanSettings {
 	@ObfuscatedName("kr.y(III)Z")
 	public boolean doExtraSettingInt(int uid, int setting) {
 		if (this.settingsMap == null) {
-			this.settingsMap = new IterableMap(4);
+			this.settingsMap = new HashTable(4);
 		} else {
 			Node node = this.settingsMap.getNode((long) uid);
 			if (node != null) {
@@ -418,7 +418,7 @@ public class ClanSettings {
 		int var8 = arg1 << arg2;
 		int var9 = var8 & var7;
 		if (this.settingsMap == null) {
-			this.settingsMap = new IterableMap(4);
+			this.settingsMap = new HashTable(4);
 		} else {
 			Node node = this.settingsMap.getNode((long) uid);
 			if (node != null) {
@@ -441,7 +441,7 @@ public class ClanSettings {
 	@ObfuscatedName("kr.x(IJ)Z")
 	public boolean doExtraSettingLong(int uid, long setting) {
 		if (this.settingsMap == null) {
-			this.settingsMap = new IterableMap(4);
+			this.settingsMap = new HashTable(4);
 		} else {
 			Node node = this.settingsMap.getNode((long) uid);
 			if (node != null) {
@@ -468,7 +468,7 @@ public class ClanSettings {
 			setting = setting.substring(0, 80);
 		}
 		if (this.settingsMap == null) {
-			this.settingsMap = new IterableMap(4);
+			this.settingsMap = new HashTable(4);
 		} else {
 			Node node = this.settingsMap.getNode((long) uid);
 			if (node != null) {
@@ -593,7 +593,7 @@ public class ClanSettings {
 		if (settingsCount <= 0) {
 			return;
 		}
-		this.settingsMap = new IterableMap(settingsCount < 16 ? IntMath.bitceil(settingsCount) : 16);
+		this.settingsMap = new HashTable(settingsCount < 16 ? IntMath.bitceil(settingsCount) : 16);
 		while (settingsCount-- > 0) {
 			int setting = buf.g4s();
 			int uid = setting & 0x3FFFFFFF;

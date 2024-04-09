@@ -232,7 +232,7 @@ public class LocType implements ConfigType {
 	public boolean members = false;
 
 	@ObfuscatedName("vd.bv")
-	public IterableMap params;
+	public HashTable params;
 
 	@ObfuscatedName("vd.br")
 	public boolean field7520 = false;
@@ -560,7 +560,7 @@ public class LocType implements ConfigType {
 							int var32 = buf.g1();
 							if (this.params == null) {
 								int var33 = IntMath.bitceil(var32);
-								this.params = new IterableMap(var33);
+								this.params = new HashTable(var33);
 							}
 							for (int var34 = 0; var34 < var32; var34++) {
 								boolean var35 = buf.g1() == 1;
@@ -669,7 +669,7 @@ public class LocType implements ConfigType {
 		}
 		boolean var17 = this.hillchange != 0 && (arg4 != null || arg5 != null);
 		boolean var18 = this.post_xoff != 0 || this.post_yoff != 0 || this.post_zoff != 0;
-		WeightedCache var19 = this.factory.modelCacheDynamic;
+		SoftLruHashTable var19 = this.factory.modelCacheDynamic;
 		Pair var20;
 		synchronized (this.factory.modelCacheDynamic) {
 			var20 = (Pair) this.factory.modelCacheDynamic.get(var14);
@@ -701,7 +701,7 @@ public class LocType implements ConfigType {
 			}
 			var22.method1690(var16);
 			Pair var25 = new Pair(var22, var23);
-			WeightedCache var26 = this.factory.modelCacheDynamic;
+			SoftLruHashTable var26 = this.factory.modelCacheDynamic;
 			synchronized (this.factory.modelCacheDynamic) {
 				this.factory.modelCacheDynamic.put(var25, var14);
 			}
@@ -757,7 +757,7 @@ public class LocType implements ConfigType {
 		if (LocShape.CENTREPIECE_STRAIGHT.id == arg2 && arg3 > 3) {
 			arg1 |= 0x5;
 		}
-		WeightedCache var17 = this.factory.field7532;
+		SoftLruHashTable var17 = this.factory.field7532;
 		Model var18;
 		synchronized (this.factory.field7532) {
 			var18 = (Model) this.factory.field7532.get(var15);
@@ -770,7 +770,7 @@ public class LocType implements ConfigType {
 			if (var18 == null) {
 				return null;
 			}
-			WeightedCache var20 = this.factory.field7532;
+			SoftLruHashTable var20 = this.factory.field7532;
 			synchronized (this.factory.field7532) {
 				this.factory.field7532.put(var18, var15);
 			}
@@ -858,7 +858,7 @@ public class LocType implements ConfigType {
 				for (int var17 = 0; var17 < var14; var17++) {
 					var15 = var15 * 67783L + (long) var13[var17];
 				}
-				WeightedCache var18 = this.factory.modelCacheStatic;
+				SoftLruHashTable var18 = this.factory.modelCacheStatic;
 				synchronized (this.factory.modelCacheStatic) {
 					var10 = (Model) this.factory.modelCacheStatic.get(var15);
 				}
@@ -901,7 +901,7 @@ public class LocType implements ConfigType {
 						}
 					}
 					var10 = arg0.createModel(var21, var20, this.factory.field7536, var6, var7);
-					WeightedCache var26 = this.factory.modelCacheStatic;
+					SoftLruHashTable var26 = this.factory.modelCacheStatic;
 					synchronized (this.factory.modelCacheStatic) {
 						this.factory.modelCacheStatic.put(var10, var15);
 					}

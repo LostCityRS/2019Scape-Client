@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
@@ -57,7 +57,7 @@ public class GpuFloorModelRelated extends Node {
 	public float[][] field11422;
 
 	@ObfuscatedName("akx.x")
-	public IterableMap field11428;
+	public HashTable field11428;
 
 	@ObfuscatedName("akx.b")
 	public ByteBuffer field11429;
@@ -118,7 +118,7 @@ public class GpuFloorModelRelated extends Node {
 			}
 		}
 		if (this.field11421 > 0) {
-			this.field11428 = new IterableMap(IntMath.bitceil(this.field11421));
+			this.field11428 = new HashTable(IntMath.bitceil(this.field11421));
 			this.field11429 = this.field11416.temporaryBuffer;
 			this.field11429.clear();
 			this.field11429.position(this.field11416.field10048 >> 1);

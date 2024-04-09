@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
 import com.jagex.core.datastruct.Pair;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
@@ -18,16 +18,16 @@ public class FontProvider implements FontIconProvider {
 	public final Js5 js5FontMetrics;
 
 	@ObfuscatedName("oi.m")
-	public final WeightedCache fontCache = new WeightedCache(20);
+	public final SoftLruHashTable fontCache = new SoftLruHashTable(20);
 
 	@ObfuscatedName("oi.k")
-	public final WeightedCache fontMetricsCache = new WeightedCache(20);
+	public final SoftLruHashTable fontMetricsCache = new SoftLruHashTable(20);
 
 	@ObfuscatedName("oi.f")
 	public final int[] fontIds;
 
 	@ObfuscatedName("oi.w")
-	public WeightedCache iconCache;
+	public SoftLruHashTable iconCache;
 
 	@ObfuscatedName("oi.l")
 	public Toolkit toolkit = null;
@@ -40,7 +40,7 @@ public class FontProvider implements FontIconProvider {
 		this.js5Sprites = js5Sprites;
 		this.js5FontMetrics = js5FontMetrics;
 		this.fontIds = fontIds;
-		this.iconCache = new WeightedCache(20);
+		this.iconCache = new SoftLruHashTable(20);
 	}
 
 	@ObfuscatedName("oi.e(Loq;I)V")

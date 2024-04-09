@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("aap")
-public class DualIterableQueue implements Iterable {
+public class SecondaryLinkedList implements Iterable {
 
 	@ObfuscatedName("aap.e")
 	public SecondaryNode head = new SecondaryNode();
@@ -13,7 +13,7 @@ public class DualIterableQueue implements Iterable {
 	@ObfuscatedName("aap.n")
 	public SecondaryNode peeked;
 
-	public DualIterableQueue() {
+	public SecondaryLinkedList() {
 		this.head.secondaryPrev = this.head;
 		this.head.secondaryNext = this.head;
 	}
@@ -113,6 +113,6 @@ public class DualIterableQueue implements Iterable {
 	}
 
 	public Iterator iterator() {
-		return new DualIterableQueueIterator(this);
+		return new SecondaryLinkedListIterator(this);
 	}
 }

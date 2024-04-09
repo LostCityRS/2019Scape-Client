@@ -5,12 +5,12 @@ import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
 @ObfuscatedName("be")
-public class RenderList {
+public class GlRenderList {
 
 	@ObfuscatedName("be.e")
 	public final int field1020;
 
-	public RenderList(GlToolkit arg0, int arg1) {
+	public GlRenderList(GlToolkit arg0, int arg1) {
 		this.field1020 = OpenGL.glGenLists(arg1);
 	}
 

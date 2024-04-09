@@ -1,6 +1,6 @@
 package com.jagex.game.world.entity;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.graphics.AnimationNode;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelUnlit;
@@ -12,7 +12,7 @@ import deob.ObfuscatedName;
 public class SpotShadowFactory {
 
 	@ObfuscatedName("i.e")
-	public static WeightedCache modelCache = new WeightedCache(32);
+	public static SoftLruHashTable modelCache = new SoftLruHashTable(32);
 
 	@ObfuscatedName("i.n")
 	public static int field616;
@@ -32,7 +32,7 @@ public class SpotShadowFactory {
 			var12 = var13 & 0xFFFFFDFF;
 		}
 		long var14 = ((long) arg8 << 48) + ((long) arg7 << 32) + (long) ((arg10 << 24) + (arg9 << 16) + arg5);
-		WeightedCache var16 = modelCache;
+		SoftLruHashTable var16 = modelCache;
 		Model var17;
 		synchronized (modelCache) {
 			var17 = (Model) modelCache.get(var14);
@@ -72,7 +72,7 @@ public class SpotShadowFactory {
 				}
 			}
 			var17 = arg0.createModel(var22, var12, field616, 64, 768);
-			WeightedCache var38 = modelCache;
+			SoftLruHashTable var38 = modelCache;
 			synchronized (modelCache) {
 				modelCache.put(var17, var14);
 			}
@@ -115,7 +115,7 @@ public class SpotShadowFactory {
 			var9 = var10 & 0xFFFFFDFF;
 		}
 		long var11 = (long) ((arg6 & 0xFFFF) << 8 | arg7);
-		WeightedCache var13 = modelCache;
+		SoftLruHashTable var13 = modelCache;
 		Model var14;
 		synchronized (modelCache) {
 			var14 = (Model) modelCache.get(var11);
@@ -132,7 +132,7 @@ public class SpotShadowFactory {
 			var16.method1938((short) 1, (short) 2, (short) 0);
 			var16.method1938((short) 2, (short) 3, (short) 0);
 			var14 = arg0.createModel(var16, var9, field616, 64, 768);
-			WeightedCache var19 = modelCache;
+			SoftLruHashTable var19 = modelCache;
 			synchronized (modelCache) {
 				modelCache.put(var14, var11);
 			}
@@ -167,7 +167,7 @@ public class SpotShadowFactory {
 	@ObfuscatedName("ajb.m(II)V")
 	public static void resetModelCache(int arg0) {
 		field616 = arg0;
-		WeightedCache var1 = modelCache;
+		SoftLruHashTable var1 = modelCache;
 		synchronized (modelCache) {
 			modelCache.reset();
 		}
@@ -175,7 +175,7 @@ public class SpotShadowFactory {
 
 	@ObfuscatedName("ft.k(I)V")
 	public static void cacheReset() {
-		WeightedCache var0 = modelCache;
+		SoftLruHashTable var0 = modelCache;
 		synchronized (modelCache) {
 			modelCache.reset();
 		}
@@ -183,7 +183,7 @@ public class SpotShadowFactory {
 
 	@ObfuscatedName("vg.f(IB)V")
 	public static void cacheClean(int arg0) {
-		WeightedCache var1 = modelCache;
+		SoftLruHashTable var1 = modelCache;
 		synchronized (modelCache) {
 			modelCache.clean(arg0);
 		}
@@ -191,7 +191,7 @@ public class SpotShadowFactory {
 
 	@ObfuscatedName("kh.w(B)V")
 	public static void cacheRemoveSoftReferences() {
-		WeightedCache var0 = modelCache;
+		SoftLruHashTable var0 = modelCache;
 		synchronized (modelCache) {
 			modelCache.clear();
 		}

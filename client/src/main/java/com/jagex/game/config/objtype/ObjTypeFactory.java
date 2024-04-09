@@ -3,7 +3,7 @@ package com.jagex.game.config.objtype;
 import com.jagex.core.constants.Language;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.core.datastruct.IconCache;
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.game.client.IconCacheKey;
 import com.jagex.game.client.LocalisedText;
 import com.jagex.game.config.ConfigTypeFactory;
@@ -29,7 +29,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	public final Js5 configClient;
 
 	@ObfuscatedName("abr.k")
-	public final WeightedCache modelCache = new WeightedCache(50);
+	public final SoftLruHashTable modelCache = new SoftLruHashTable(50);
 
 	@ObfuscatedName("abr.f")
 	public final IconCache iconCache = new IconCache(250);
@@ -129,7 +129,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("abr.k(II)V")
 	public void resetModelCache(int arg0) {
 		this.field8611 = arg0;
-		WeightedCache var2 = this.modelCache;
+		SoftLruHashTable var2 = this.modelCache;
 		synchronized (this.modelCache) {
 			this.modelCache.reset();
 		}
@@ -137,7 +137,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("abr.f(I)V")
 	public void cacheReset() {
-		WeightedCache var1 = this.modelCache;
+		SoftLruHashTable var1 = this.modelCache;
 		synchronized (this.modelCache) {
 			this.modelCache.reset();
 		}
@@ -157,7 +157,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("abr.l(IB)V")
 	public void cacheClean(int arg0) {
-		WeightedCache var2 = this.modelCache;
+		SoftLruHashTable var2 = this.modelCache;
 		synchronized (this.modelCache) {
 			this.modelCache.clean(arg0);
 		}
@@ -169,7 +169,7 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("abr.u(I)V")
 	public void cacheRemoveSoftReferences() {
-		WeightedCache var1 = this.modelCache;
+		SoftLruHashTable var1 = this.modelCache;
 		synchronized (this.modelCache) {
 			this.modelCache.clear();
 		}

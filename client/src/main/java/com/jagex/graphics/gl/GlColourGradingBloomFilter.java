@@ -20,10 +20,10 @@ public class GlColourGradingBloomFilter extends PostProcessingFilter {
 	public static float field12189 = 1.0F;
 
 	@ObfuscatedName("aqf.v")
-	public GlFramebuffer field12194;
+	public GlFrameBuffer field12194;
 
 	@ObfuscatedName("aqf.o")
-	public GlFramebuffer field12195;
+	public GlFrameBuffer field12195;
 
 	@ObfuscatedName("aqf.s")
 	public GlTexture_Sub1 field12196;
@@ -77,7 +77,7 @@ public class GlColourGradingBloomFilter extends PostProcessingFilter {
 		if (!this.field11270.field9985 || !this.field11270.field10002 || !this.field11270.field9997) {
 			return false;
 		}
-		this.field12194 = new GlFramebuffer(this.field11270);
+		this.field12194 = new GlFrameBuffer(this.field11270);
 		this.field12196 = new GlTexture_Sub1(this.field11270, 3553, TextureFormat.RGBA, this.method17542(), 256, 256);
 		this.field12196.method15312(false, false);
 		this.field12197 = new GlTexture_Sub1(this.field11270, 3553, TextureFormat.RGBA, this.method17542(), 256, 256);
@@ -122,7 +122,7 @@ public class GlColourGradingBloomFilter extends PostProcessingFilter {
 			label61: while (true) {
 				if (var6 <= 256 && var7 <= 256) {
 					if (this.field12195 == null) {
-						this.field12195 = new GlFramebuffer(this.field11270);
+						this.field12195 = new GlFrameBuffer(this.field11270);
 					}
 					this.field12193 = new GlTexture_Sub1[var8];
 					int var9 = var3;

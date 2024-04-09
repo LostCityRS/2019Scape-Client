@@ -5,7 +5,6 @@ import com.jagex.graphics.EffectInterface;
 import com.jagex.graphics.GraphicsDeletable;
 import com.jagex.graphics.RenderTarget;
 import com.jagex.graphics.TextureFormat;
-import com.jagex.graphics.glx.GlxRelated4;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 
@@ -201,11 +200,11 @@ public class GlTexture_Sub1 extends GlTexture {
 
 	@ObfuscatedName("adt.ao(I)Ldw;")
 	public EffectInterface method15320(int arg0) {
-		return new GlxRelated4(this, arg0);
+		return new GlRelated4(this, arg0);
 	}
 
 	@ObfuscatedName("adt.aj(I)Ldp;")
 	public GraphicsDeletable method15317(int arg0) {
-		return new GlxRelated4(this, arg0);
+		return new GlRelated4(this, arg0);
 	}
 }

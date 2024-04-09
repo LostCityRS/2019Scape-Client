@@ -2,7 +2,7 @@ package com.jagex.graphics.glx;
 
 import com.jagex.graphics.GpuVolumeTexture;
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
@@ -30,25 +30,25 @@ public final class GlxToolkit extends GpuToolkit {
 	public OpenGL opengl;
 
 	@ObfuscatedName("aqv.hq")
-	public IterableQueue field12011 = new IterableQueue();
+	public LinkedList field12011 = new LinkedList();
 
 	@ObfuscatedName("aqv.hf")
-	public IterableQueue field12000 = new IterableQueue();
+	public LinkedList field12000 = new LinkedList();
 
 	@ObfuscatedName("aqv.hr")
-	public IterableQueue field12023 = new IterableQueue();
+	public LinkedList field12023 = new LinkedList();
 
 	@ObfuscatedName("aqv.hs")
-	public IterableQueue field12035 = new IterableQueue();
+	public LinkedList field12035 = new LinkedList();
 
 	@ObfuscatedName("aqv.hh")
-	public IterableQueue field12003 = new IterableQueue();
+	public LinkedList field12003 = new LinkedList();
 
 	@ObfuscatedName("aqv.hp")
-	public IterableQueue field12004 = new IterableQueue();
+	public LinkedList field12004 = new LinkedList();
 
 	@ObfuscatedName("aqv.hy")
-	public IterableQueue field12005 = new IterableQueue();
+	public LinkedList field12005 = new LinkedList();
 
 	@ObfuscatedName("aqv.he")
 	public long field12006;
@@ -135,7 +135,7 @@ public final class GlxToolkit extends GpuToolkit {
 	public Sprite field12034;
 
 	@ObfuscatedName("aqv.ih")
-	public Framebuffer field12018;
+	public FrameBuffer field12018;
 
 	@ObfuscatedName("aqv.iy")
 	public int[] field12017;
@@ -422,8 +422,8 @@ public final class GlxToolkit extends GpuToolkit {
 	}
 
 	@ObfuscatedName("aqv.am()Lafq;")
-	public Framebuffer createFramebuffer() {
-		return new GlxFramebuffer(this);
+	public FrameBuffer createFramebuffer() {
+		return new GlxFrameBuffer(this);
 	}
 
 	@ObfuscatedName("aqv.au(IILck;Ldg;I)Ldp;")

@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.utils.Cp1252;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.shared.framework.input.Keyboard;
@@ -15,10 +15,10 @@ import java.awt.event.KeyListener;
 public final class JavaKeyboard extends Keyboard implements KeyListener, FocusListener {
 
 	@ObfuscatedName("alg.do")
-	public IterableQueue field11681 = new IterableQueue();
+	public LinkedList field11681 = new LinkedList();
 
 	@ObfuscatedName("alg.dz")
-	public IterableQueue field11682 = new IterableQueue();
+	public LinkedList field11682 = new LinkedList();
 
 	@ObfuscatedName("alg.dv")
 	public boolean[] field11683 = new boolean[112];

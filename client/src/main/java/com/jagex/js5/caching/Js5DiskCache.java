@@ -1,6 +1,6 @@
 package com.jagex.js5.caching;
 
-import com.jagex.core.datastruct.DualIterableQueue;
+import com.jagex.core.datastruct.SecondaryLinkedList;
 import com.jagex.core.utils.JagException;
 import com.jagex.game.client.DiskStore;
 import com.jagex.js5.worker.Js5WorkerRequest;
@@ -10,7 +10,7 @@ import deob.ObfuscatedName;
 public class Js5DiskCache implements Runnable {
 
 	@ObfuscatedName("pf.e")
-	public DualIterableQueue queue = new DualIterableQueue();
+	public SecondaryLinkedList queue = new SecondaryLinkedList();
 
 	@ObfuscatedName("pf.n")
 	public int pendingRequests = 0;
@@ -31,7 +31,7 @@ public class Js5DiskCache implements Runnable {
 	public Js5WorkerRequest method6997(int arg0, DiskStore arg1) {
 		Js5WorkerRequest var3 = new Js5WorkerRequest();
 		var3.field12559 = 1;
-		DualIterableQueue var4 = this.queue;
+		SecondaryLinkedList var4 = this.queue;
 		synchronized (this.queue) {
 			Js5WorkerRequest var5 = (Js5WorkerRequest) this.queue.peekFront();
 			while (true) {
@@ -77,7 +77,7 @@ public class Js5DiskCache implements Runnable {
 
 	@ObfuscatedName("pf.k(Latf;I)V")
 	public void queueRequest(Js5WorkerRequest arg0) {
-		DualIterableQueue var2 = this.queue;
+		SecondaryLinkedList var2 = this.queue;
 		synchronized (this.queue) {
 			this.queue.pushBack(arg0);
 			this.pendingRequests++;
@@ -87,7 +87,7 @@ public class Js5DiskCache implements Runnable {
 
 	public void run() {
 		while (!this.field4439) {
-			DualIterableQueue var1 = this.queue;
+			SecondaryLinkedList var1 = this.queue;
 			Js5WorkerRequest var2;
 			synchronized (this.queue) {
 				var2 = (Js5WorkerRequest) this.queue.pollFront();
@@ -115,7 +115,7 @@ public class Js5DiskCache implements Runnable {
 
 	@ObfuscatedName("pf.f(I)I")
 	public int method6991() {
-		DualIterableQueue var1 = this.queue;
+		SecondaryLinkedList var1 = this.queue;
 		synchronized (this.queue) {
 			return this.pendingRequests;
 		}
@@ -124,7 +124,7 @@ public class Js5DiskCache implements Runnable {
 	@ObfuscatedName("pf.w(I)V")
 	public void method6992() {
 		this.field4439 = true;
-		DualIterableQueue var1 = this.queue;
+		SecondaryLinkedList var1 = this.queue;
 		synchronized (this.queue) {
 			this.queue.notifyAll();
 		}

@@ -1,8 +1,8 @@
 package com.jagex.game;
 
 import com.jagex.core.constants.ModeGame;
-import com.jagex.core.datastruct.IterableMap;
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.datastruct.IterableQueueIterator;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.*;
@@ -115,19 +115,19 @@ public class ClientWorldMap extends WorldMap {
 	public static boolean field11671 = false;
 
 	@ObfuscatedName("ajw.ck")
-	public static IterableQueue field11253;
+	public static LinkedList field11253;
 
 	@ObfuscatedName("alj.cj")
 	public static boolean disableElements = false;
 
 	@ObfuscatedName("alj.cd")
-	public static IterableMap field11667 = new IterableMap(8);
+	public static HashTable field11667 = new HashTable(8);
 
 	@ObfuscatedName("alj.dd")
-	public static IterableMap field11668 = new IterableMap(8);
+	public static HashTable field11668 = new HashTable(8);
 
 	@ObfuscatedName("alj.dr")
-	public static IterableQueueIterator field11669 = new IterableQueueIterator(new IterableQueue());
+	public static IterableQueueIterator field11669 = new IterableQueueIterator(new LinkedList());
 
 	@ObfuscatedName("alj.da")
 	public static boolean field11670 = false;
@@ -233,7 +233,7 @@ public class ClientWorldMap extends WorldMap {
 			WorldMap.field6799 = WorldMapTileShapes.method18477(WorldMap.field6840);
 			method4643();
 			method8619();
-			field11253 = new IterableQueue();
+			field11253 = new LinkedList();
 			field6797 += (int) (Math.random() * 5.0D) - 2;
 			if (field6797 < -8) {
 				field6797 = -8;
@@ -409,7 +409,7 @@ public class ClientWorldMap extends WorldMap {
 		field6833 = field6831;
 		method8620(WorldMap.field6786 + var8, WorldMap.field6808 + var9, WorldMap.field6786 + var10, WorldMap.field6808 + var11, arg1, arg2, arg1 + arg3, arg2 + arg4 + 1);
 		method8523(arg0, !field11655, !field11652, Client.loggedInMembers, false);
-		IterableQueue var12 = method8602(arg0);
+		LinkedList var12 = method8602(arg0);
 		method928(arg0, var12, 0, 0);
 		if (Client.field10794) {
 			int var13 = arg1 + arg3 - 5;
@@ -429,7 +429,7 @@ public class ClientWorldMap extends WorldMap {
 	}
 
 	@ObfuscatedName("aq.dx(Ldh;Laat;IIB)V")
-	public static void method928(Toolkit arg0, IterableQueue arg1, int arg2, int arg3) {
+	public static void method928(Toolkit arg0, LinkedList arg1, int arg2, int arg3) {
 		field11253.removeAll();
 		if (disableElements) {
 			return;

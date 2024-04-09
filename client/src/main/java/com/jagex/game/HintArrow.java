@@ -1,6 +1,6 @@
 package com.jagex.game;
 
-import com.jagex.core.datastruct.WeightedCache;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelUnlit;
 import com.jagex.graphics.Toolkit;
@@ -41,7 +41,7 @@ public class HintArrow {
 	public int field743;
 
 	@ObfuscatedName("au.d")
-	public static WeightedCache modelCache = new WeightedCache(4);
+	public static SoftLruHashTable modelCache = new SoftLruHashTable(4);
 
 	@ObfuscatedName("au.c")
 	public static int field753;

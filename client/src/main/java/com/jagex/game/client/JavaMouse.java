@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.core.datastruct.IterableQueue;
+import com.jagex.core.datastruct.LinkedList;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.shared.framework.input.Mouse;
 import deob.ObfuscatedName;
@@ -23,7 +23,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	public int field11692;
 
 	@ObfuscatedName("alb.l")
-	public IterableQueue field11695 = new IterableQueue();
+	public LinkedList field11695 = new LinkedList();
 
 	@ObfuscatedName("alb.u")
 	public int field11693;
@@ -35,7 +35,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	public int field11698;
 
 	@ObfuscatedName("alb.d")
-	public IterableQueue field11696 = new IterableQueue();
+	public LinkedList field11696 = new LinkedList();
 
 	@ObfuscatedName("alb.c")
 	public java.awt.Component field11697;
@@ -101,7 +101,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 		this.field11689 = this.field11693;
 		this.field11690 = this.field11694;
 		this.field11692 = this.field11698;
-		IterableQueue var1 = this.field11695;
+		LinkedList var1 = this.field11695;
 		this.field11695 = this.field11696;
 		this.field11696 = var1;
 		this.field11696.removeAll();

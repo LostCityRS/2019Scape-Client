@@ -1,7 +1,7 @@
 package com.jagex.game.script;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.IterableMap;
+import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
@@ -48,7 +48,7 @@ public class ClientScript extends SecondaryNode {
 	public int longArgCount;
 
 	@ObfuscatedName("asc.q")
-	public IterableMap[] switchTables;
+	public HashTable[] switchTables;
 
 	@ObfuscatedName("asc.x")
 	public final VariableTypeProvider varTypeProvider;
@@ -89,10 +89,10 @@ public class ClientScript extends SecondaryNode {
 		this.longArgCount = buf.g2();
 		int switches = buf.g1();
 		if (switches > 0) {
-			this.switchTables = new IterableMap[switches];
+			this.switchTables = new HashTable[switches];
 			for (int index = 0; index < switches; index++) {
 				int count = buf.g2();
-				IterableMap var8 = new IterableMap(count > 0 ? IntMath.bitceil(count) : 1);
+				HashTable var8 = new HashTable(count > 0 ? IntMath.bitceil(count) : 1);
 				this.switchTables[index] = var8;
 				while (count-- > 0) {
 					int key = buf.g4s();

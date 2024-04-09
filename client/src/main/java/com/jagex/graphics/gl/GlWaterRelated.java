@@ -9,7 +9,7 @@ import com.jagex.graphics.WaterRelated5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("bz")
-public class GlEffectRelated2 {
+public class GlWaterRelated {
 
 	@ObfuscatedName("bz.f")
 	public boolean field1040;
@@ -57,7 +57,7 @@ public class GlEffectRelated2 {
 		}
 	}
 
-	public GlEffectRelated2(GlToolkit arg0) {
+	public GlWaterRelated(GlToolkit arg0) {
 		this.field1040 = arg0.field9889;
 		method1283(arg0);
 		if (this.field1040) {
