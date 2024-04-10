@@ -38,7 +38,7 @@ public class ClientOptions extends Node {
 	public PreferencesBuildArea buildArea;
 
 	@ObfuscatedName("ali.y")
-	public PreferencesUnknown8 unknown8;
+	public PreferencesUnknown8 consoleKeyPress;
 
 	@ObfuscatedName("ali.q")
 	public PreferencesDrawDistance drawDistance;
@@ -101,7 +101,7 @@ public class ClientOptions extends Node {
 	public PreferencesWaterDetail waterDetail;
 
 	@ObfuscatedName("ali.au")
-	public PreferencesMaxScreenSize maxScreenSize;
+	public PreferencesMaxScreenSize windowMode;
 
 	@ObfuscatedName("ali.ar")
 	public PreferencesMaxScreenSize maxScreenSize2;
@@ -155,7 +155,7 @@ public class ClientOptions extends Node {
 	public PreferencesLoadingScreen loadingScreen;
 
 	@ObfuscatedName("ali.bh")
-	public PreferencesUnknown6 unknown6;
+	public PreferencesUnknown6 safeMode;
 
 	@ObfuscatedName("ali.bx")
 	public PreferencesUnknown7 unknown7;
@@ -257,7 +257,7 @@ public class ClientOptions extends Node {
 				this.displayMode = new PreferencesDisplayMode(this.toolkit.getValue(), this);
 				buf.g1();
 				this.waterDetail = new PreferencesWaterDetail(buf.g1(), this);
-				this.maxScreenSize = new PreferencesMaxScreenSize(buf.g1(), this);
+				this.windowMode = new PreferencesMaxScreenSize(buf.g1(), this);
 				if (version >= 35) {
 					this.unused1 = new PreferencesUnused1(buf.g1(), this);
 					this.unused2 = new PreferencesUnused2(buf.g1(), this);
@@ -278,12 +278,12 @@ public class ClientOptions extends Node {
 					this.unused11 = new PreferencesUnused11(buf.g2(), this);
 					this.unused12 = new PreferencesUnused12(buf.g2(), this);
 				}
-				this.maxScreenSize2 = new PreferencesMaxScreenSize(this.maxScreenSize.getValue(), this);
+				this.maxScreenSize2 = new PreferencesMaxScreenSize(this.windowMode.getValue(), this);
 				this.customCursors = new PreferencesCustomCursors(buf.g1(), this);
 				this.preset = new PreferencesPreset(buf.g1(), this);
 				this.cpuUsage = new PreferencesCpuUsage(buf.g1(), this);
 				this.loadingScreen = new PreferencesLoadingScreen(buf.g1(), this);
-				this.unknown6 = new PreferencesUnknown6(buf.g1(), this);
+				this.safeMode = new PreferencesUnknown6(buf.g1(), this);
 				if (version >= 26) {
 					this.unknown7 = new PreferencesUnknown7(buf.g1(), this);
 				}
@@ -291,7 +291,7 @@ public class ClientOptions extends Node {
 					this.unused13 = new PreferencesUnused13(buf.g1(), this);
 				}
 				if (version >= 30) {
-					this.unknown8 = new PreferencesUnknown8(buf.g1(), this);
+					this.consoleKeyPress = new PreferencesUnknown8(buf.g1(), this);
 				}
 				this.soundVolume = new PreferencesVolume(buf.g1(), this);
 				this.backgroundSoundVolume = new PreferencesVolume(buf.g1(), this);
@@ -388,11 +388,11 @@ public class ClientOptions extends Node {
 		if (preferences || this.waterDetail == null) {
 			this.waterDetail = new PreferencesWaterDetail(this);
 		}
-		if (preferences || this.maxScreenSize == null) {
-			this.maxScreenSize = new PreferencesMaxScreenSize(this);
+		if (preferences || this.windowMode == null) {
+			this.windowMode = new PreferencesMaxScreenSize(this);
 		}
 		if (preferences || this.maxScreenSize2 == null) {
-			this.maxScreenSize2 = new PreferencesMaxScreenSize(this.maxScreenSize.getValue(), this);
+			this.maxScreenSize2 = new PreferencesMaxScreenSize(this.windowMode.getValue(), this);
 		}
 		if (preferences || this.unused4 == null) {
 			this.unused4 = new PreferencesUnused4(this);
@@ -442,8 +442,8 @@ public class ClientOptions extends Node {
 		if (preferences || this.loadingScreen == null) {
 			this.loadingScreen = new PreferencesLoadingScreen(this);
 		}
-		if (preferences || this.unknown6 == null) {
-			this.unknown6 = new PreferencesUnknown6(this);
+		if (preferences || this.safeMode == null) {
+			this.safeMode = new PreferencesUnknown6(this);
 		}
 		if (preferences || this.unknown7 == null) {
 			this.unknown7 = new PreferencesUnknown7(this);
@@ -451,8 +451,8 @@ public class ClientOptions extends Node {
 		if (preferences || this.unused13 == null) {
 			this.unused13 = new PreferencesUnused13(this);
 		}
-		if (preferences || this.unknown8 == null) {
-			this.unknown8 = new PreferencesUnknown8(this);
+		if (preferences || this.consoleKeyPress == null) {
+			this.consoleKeyPress = new PreferencesUnknown8(this);
 		}
 		if (preferences || sounds || this.soundVolume == null) {
 			this.soundVolume = new PreferencesVolume(this);
@@ -533,10 +533,10 @@ public class ClientOptions extends Node {
 		}
 		buf.g4s();
 		if (version >= 6) {
-			this.maxScreenSize = new PreferencesMaxScreenSize(buf.g1(), this);
+			this.windowMode = new PreferencesMaxScreenSize(buf.g1(), this);
 		}
 		if (version >= 7) {
-			this.unknown6 = new PreferencesUnknown6(buf.g1(), this);
+			this.safeMode = new PreferencesUnknown6(buf.g1(), this);
 		}
 		if (version >= 8) {
 			buf.g1();
@@ -606,7 +606,7 @@ public class ClientOptions extends Node {
 		buf.p1(this.toolkit.getValue());
 		buf.p1(0);
 		buf.p1(this.waterDetail.getValue());
-		buf.p1(this.maxScreenSize.getValue());
+		buf.p1(this.windowMode.getValue());
 		buf.p1(this.unused1.getValue());
 		buf.p1(this.unused2.getValue());
 		buf.p1(this.unused3.getValue());
@@ -623,10 +623,10 @@ public class ClientOptions extends Node {
 		buf.p1(this.preset.getValue());
 		buf.p1(this.cpuUsage.getValue());
 		buf.p1(this.loadingScreen.getValue());
-		buf.p1(this.unknown6.getValue());
+		buf.p1(this.safeMode.getValue());
 		buf.p1(this.unknown7.getValue());
 		buf.p1(this.unused13.getValue());
-		buf.p1(this.unknown8.getValue());
+		buf.p1(this.consoleKeyPress.getValue());
 		buf.p1(this.soundVolume.getValue());
 		buf.p1(this.backgroundSoundVolume.getValue());
 		buf.p1(this.speechVolume.getValue());
@@ -677,7 +677,7 @@ public class ClientOptions extends Node {
 		this.toolkit.clampValue();
 		this.displayMode.clampValue();
 		this.waterDetail.clampValue();
-		this.maxScreenSize.clampValue();
+		this.windowMode.clampValue();
 		this.maxScreenSize2.clampValue();
 		this.unused4.clampValue();
 		this.unused1.clampValue();
@@ -695,10 +695,10 @@ public class ClientOptions extends Node {
 		this.preset.clampValue();
 		this.cpuUsage.clampValue();
 		this.loadingScreen.clampValue();
-		this.unknown6.clampValue();
+		this.safeMode.clampValue();
 		this.unknown7.clampValue();
 		this.unused13.clampValue();
-		this.unknown8.clampValue();
+		this.consoleKeyPress.clampValue();
 		this.soundVolume.clampValue();
 		this.backgroundSoundVolume.clampValue();
 		this.speechVolume.clampValue();

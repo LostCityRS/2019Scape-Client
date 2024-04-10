@@ -134,7 +134,7 @@ public class Loading {
 	}
 
 	@ObfuscatedName("adf.m(I)V")
-	public static void method15243() {
+	public static void update() {
 		if (field2938 == null) {
 			field2938 = LoadingStage.method4920();
 			field3419 = field2938[0];
@@ -207,7 +207,7 @@ public class Loading {
 	}
 
 	@ObfuscatedName("dk.f(ZI)V")
-	public static void method2010(boolean arg0) {
+	public static void draw(boolean arg0) {
 		if (field593 == null) {
 			method254();
 		}
@@ -244,10 +244,10 @@ public class Loading {
 
 	@ObfuscatedName("rm.z(I)I")
 	public static int method7622() {
-		if (Client.preferences.unknown6.getValue() == 0) {
-			for (int var0 = 0; var0 < Client.field10819; var0++) {
-				if (Client.field11067[var0].method9131() == 's' || Client.field11067[var0].method9131() == 'S') {
-					Client.preferences.setPreference(Client.preferences.unknown6, 1);
+		if (Client.preferences.safeMode.getValue() == 0) {
+			for (int var0 = 0; var0 < Client.allKeyboardEventCount; var0++) {
+				if (Client.allKeyboardEvents[var0].method9131() == 's' || Client.allKeyboardEvents[var0].method9131() == 'S') {
+					Client.preferences.setPreference(Client.preferences.safeMode, 1);
 					Client.field10812 = true;
 					GraphicsPacketQueue.method6971(ToolkitType.field8880);
 					break;
@@ -261,7 +261,7 @@ public class Loading {
 			if (!Client.js5Client.loadMasterIndex()) {
 				return 0;
 			}
-			Client.method3596(0, null, true);
+			Client.createToolkit(0, null, true);
 			field2941 = !MainLoadingScreen.method4062();
 			loadingSpritesJs5 = Client.createJs5(field2941 ? Js5Archive.LOADING_SPRITES_RAW : Js5Archive.LOADING_SPRITES, false, 1, true, true);
 			loadingScreensJs5 = Client.createJs5(Js5Archive.LOADING_SCREENS, false, 1, true, true);
@@ -428,7 +428,7 @@ public class Loading {
 			Client.lightTypeList = new LightTypeList(Client.modegame, Client.language, Client.configJs5);
 			Client.locTypeList = new LocTypeList(Client.modegame, Client.language, true, Client.configLocJs5, Client.modelsJs5);
 			Client.world.method7733(Client.locTypeList);
-			Client.field3183.method7674(new LocTypeList(Client.modegame, Client.language, true, Client.configLocJs5, Client.modelsJs5));
+			Client.asyncRebuild.method7674(new LocTypeList(Client.modegame, Client.language, true, Client.configLocJs5, Client.modelsJs5));
 			Client.mapElementTypeList = new MapElementTypeList(Client.modegame, Client.language, Client.configJs5, Client.spritesJs5);
 			Client.msiTypeList = new MSITypeList(Client.modegame, Client.language, Client.configJs5, Client.spritesJs5);
 			Client.npcTypeList = new NPCTypeList(Client.modegame, Client.language, true, Client.configNpcJs5, Client.modelsJs5);
@@ -521,8 +521,8 @@ public class Loading {
 			Client.js5Archives.remove(Js5Archive.LOADING_SPRITES);
 			Client.js5Archives.remove(Js5Archive.LOADING_SPRITES_RAW);
 			MainLoadingScreen.method271();
-			Client.isSafeMode = Client.preferences.unknown6.getValue() == 1;
-			Client.preferences.setPreference(Client.preferences.unknown6, 1);
+			Client.isSafeMode = Client.preferences.safeMode.getValue() == 1;
+			Client.preferences.setPreference(Client.preferences.safeMode, 1);
 			if (Client.isSafeMode) {
 				Client.preferences.setPreference(Client.preferences.toolkit, 0);
 			} else if (Client.preferences.toolkit.defaulted && Client.hardwarePlatform.cpuInfoRam < 512 && Client.hardwarePlatform.cpuInfoRam != 0) {
@@ -530,17 +530,17 @@ public class Loading {
 			}
 			Preferences.save();
 			if (Client.isSafeMode) {
-				Client.method486(0, false);
+				Client.setToolkit(0, false);
 				if (!Client.field10812) {
 					GraphicsPacketQueue.method6971(ToolkitType.field8881);
 				}
 			} else {
-				Client.method486(Client.preferences.toolkit.getValue(), false);
+				Client.setToolkit(Client.preferences.toolkit.getValue(), false);
 				if (Client.preferences.toolkit.getValue() == 0) {
 					GraphicsPacketQueue.method6971(ToolkitType.field8882);
 				}
 			}
-			Client.setWindowMode(Client.preferences.maxScreenSize.getValue(), -1, -1, false);
+			Client.setWindowMode(Client.preferences.windowMode.getValue(), -1, -1, false);
 			Client.fontProvider.loadFonts(Client.fontFactory);
 			DefaultSprites.loadFonts(Client.toolkit);
 			DefaultSprites.loadSprites(Client.toolkit, Client.spritesJs5);
@@ -586,7 +586,7 @@ public class Loading {
 	}
 
 	@ObfuscatedName("ss.r(B)V")
-	public static void method8005() {
+	public static void stopRendererThread() {
 		if (field593 != null) {
 			field593.method4856();
 		}

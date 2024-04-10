@@ -65,7 +65,7 @@ public class ClientWatch {
 		if (Client.isStateGame(Client.state)) {
 			field7949.method10261(arg0);
 		} else {
-			arg0.method17835();
+			arg0.release();
 		}
 	}
 
@@ -88,15 +88,15 @@ public class ClientWatch {
 					if (var1 != null && GameShell.canvas.isShowing() && GameShell.focus) {
 						var2.method19541(var1);
 						if (!var2.method19540() && var2.getMouseClickX() < GameShell.canvasWid && var2.getMouseClickY() < GameShell.canvasHei && var2.getMouseClickX() >= 0 && var2.getMouseClickY() >= 0) {
-							int var3 = var2.method17848();
-							if (var2.method17848() == -1) {
+							int var3 = var2.getButtonAction();
+							if (var2.getButtonAction() == -1) {
 								field7948.method10261(var2);
 							} else if (MouseEvent.method15143(var3)) {
 								field7948.method18343(var2);
 							}
 						}
 					} else {
-						var2.method17835();
+						var2.release();
 					}
 				}
 			}
@@ -112,7 +112,7 @@ public class ClientWatch {
 				if (var1 == null) {
 					return;
 				}
-				var1.method17835();
+				var1.release();
 			}
 		}
 	}
@@ -122,11 +122,11 @@ public class ClientWatch {
 		method5995();
 		field7949.method10280();
 		field7948.method10280();
-		if (Client.field10822 > 0) {
+		if (Client.keyboardEventCount > 0) {
 			ClientMessage var0 = ClientMessage.createMessage(ClientProt.EVENT_KEYBOARD, Client.gameConnection.randomOut);
-			var0.buf.p2(Client.field10822 * 4);
-			for (int var1 = 0; var1 < Client.field10822; var1++) {
-				KeyboardEvent var2 = Client.field11024[var1];
+			var0.buf.p2(Client.keyboardEventCount * 4);
+			for (int var1 = 0; var1 < Client.keyboardEventCount; var1++) {
+				KeyboardEvent var2 = Client.keyboardEvents[var1];
 				long var3 = var2.method9133() - field7947;
 				if (var3 > 16777215L) {
 					var3 = 16777215L;
@@ -178,7 +178,7 @@ public class ClientWatch {
 			Client.gameConnection.queue(var11);
 			Client.preferencesChangeNotified = true;
 		}
-		if (Client.field10801 || Client.preferences.toolkit.getValue() != 1) {
+		if (Client.compressedTextureFormatSupportTransmitted || Client.preferences.toolkit.getValue() != 1) {
 			return;
 		}
 		int[] var14 = Client.toolkit.textureFormat();
@@ -236,6 +236,6 @@ public class ClientWatch {
 		}
 		var15.buf.psize2(var15.buf.pos - var16);
 		Client.gameConnection.queue(var15);
-		Client.field10801 = true;
+		Client.compressedTextureFormatSupportTransmitted = true;
 	}
 }

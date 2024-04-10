@@ -35,7 +35,7 @@ public class WorldSwitcher {
 	public static ServerAddress field8753;
 
 	@ObfuscatedName("k.u")
-	public static boolean field488;
+	public static boolean transferCancellable;
 
 	@ObfuscatedName("abz.z")
 	public static boolean field8754 = false;
@@ -93,7 +93,7 @@ public class WorldSwitcher {
 	}
 
 	@ObfuscatedName("vu.n(ILjava/lang/String;III)Z")
-	public static boolean method9401(int arg0, String arg1, int arg2, int arg3) {
+	public static boolean setWorld(int arg0, String arg1, int arg2, int arg3) {
 		currentWorld = new ServerAddress();
 		currentWorld.node = arg0;
 		currentWorld.host = arg1;
@@ -116,7 +116,7 @@ public class WorldSwitcher {
 	@ObfuscatedName("xq.k(I)V")
 	public static void method10337() {
 		if (field9200.node != -1) {
-			method9401(field9200.node, field9200.host, field9200.port, field9200.port2);
+			setWorld(field9200.node, field9200.host, field9200.port, field9200.port2);
 		}
 	}
 

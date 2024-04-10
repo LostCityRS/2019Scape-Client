@@ -64,7 +64,7 @@ public abstract class LookatSpline extends Lookat {
 			arg0 -= this.field11869[this.field11870];
 			this.field11869[this.field11870] = 0.0F;
 		}
-		float var3 = 1.0F / (float) GameShell.method6016();
+		float var3 = 1.0F / (float) GameShell.getLogicRate();
 		while (arg0 > 0.0F) {
 			float var4 = var2.method6764();
 			if (this.field11873 >= var4) {

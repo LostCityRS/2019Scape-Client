@@ -9,7 +9,7 @@ import deob.ObfuscatedName;
 public abstract class Mouse {
 
 	@ObfuscatedName("pm.e(Ljava/awt/Component;ZI)Luj;")
-	public static Mouse method6806(java.awt.Component arg0, boolean arg1) {
+	public static Mouse create(java.awt.Component arg0, boolean arg1) {
 		return new JavaMouse(arg0, arg1);
 	}
 
@@ -33,13 +33,13 @@ public abstract class Mouse {
 	public abstract int getY();
 
 	@ObfuscatedName("uj.p(I)Lakm;")
-	public abstract MouseEvent method9093();
+	public abstract MouseEvent pollEvent();
 
 	@ObfuscatedName("uj.k(B)Z")
 	public abstract boolean method9101();
 
 	@ObfuscatedName("uj.d(I)V")
-	public abstract void method9120();
+	public abstract void unbind();
 
 	@ObfuscatedName("uj.f(I)Z")
 	public abstract boolean method9121();

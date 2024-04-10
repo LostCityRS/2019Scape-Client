@@ -28,6 +28,6 @@ public class EntitySayCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agg.n(I)V")
 	public void method2890() {
-		CutsceneManager.field1721[this.field10284].method2870().setChatLine(this.field10286, this.field10285, 0, this.field10283);
+		CutsceneManager.entities[this.field10284].getEntity().setChatLine(this.field10286, this.field10285, 0, this.field10283);
 	}
 }

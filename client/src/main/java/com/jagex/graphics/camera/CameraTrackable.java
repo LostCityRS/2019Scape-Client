@@ -12,7 +12,7 @@ public interface CameraTrackable {
 	Vector3 createVector3();
 
 	@ObfuscatedName("jn.m(B)Lakt;")
-	CoordFine method4667();
+	CoordFine getTrackableCoord();
 
 	@ObfuscatedName("jn.k(I)Lov;")
 	Quaternion method4668();

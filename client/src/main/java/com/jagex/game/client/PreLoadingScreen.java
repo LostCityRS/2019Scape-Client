@@ -158,7 +158,7 @@ public class PreLoadingScreen implements LoadingScreen {
 
 	@ObfuscatedName("jm.f(I)V")
 	public void method4890() {
-		GameShell.method8913(Loading.field593.method4851(), Loading.field593.method4852(), Client.field10824[Client.field10773], Client.field10825[Client.field10773], Client.field10826[Client.field10773]);
+		GameShell.method8913(Loading.field593.method4851(), Loading.field593.method4852(), Client.loadingBarFillColour[Client.field10773], Client.loadingBarOutlineColour[Client.field10773], Client.loadingBarTextColour[Client.field10773]);
 	}
 
 	@ObfuscatedName("jm.w(B)V")

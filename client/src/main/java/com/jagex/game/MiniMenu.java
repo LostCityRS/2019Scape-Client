@@ -42,7 +42,7 @@ public class MiniMenu {
 	public static int field536 = 16;
 
 	@ObfuscatedName("o.l")
-	public static boolean field562 = false;
+	public static boolean open = false;
 
 	@ObfuscatedName("o.u")
 	public static boolean field540 = false;
@@ -253,21 +253,21 @@ public class MiniMenu {
 
 	@ObfuscatedName("gp.f(Lvt;Lakm;I)Z")
 	public static boolean method3483(Binding arg0, MouseEvent arg1) {
-		return arg0 != null && arg0.method9396(arg1, Client.field11024, Client.field10822, Client.keyboard);
+		return arg0 != null && arg0.test(arg1, Client.keyboardEvents, Client.keyboardEventCount, Client.keyboard);
 	}
 
 	@ObfuscatedName("sf.w(B)V")
 	public static void method8326() {
-		field8348 = new MiniMenuEntry(LocalisedText.CANCEL.forLang(Client.language), "", Client.field10970, 1006, -1, 0L, 0, 0, true, false, 0L, true);
+		field8348 = new MiniMenuEntry(LocalisedText.CANCEL.forLang(Client.language), "", Client.defaultCursor, 1006, -1, 0L, 0, 0, true, false, 0L, true);
 	}
 
 	@ObfuscatedName("uf.l(B)V")
 	public static void method9026() {
-		if (Client.field10862 >= 0) {
+		if (Client.cutsceneId >= 0) {
 			return;
 		}
 		FontMetrics var0 = method16902();
-		if (!field562) {
+		if (!open) {
 			field540 = minLength != -1 && field546 >= minLength || (field564 ? 26 : 22) + field546 * field536 > GameShell.canvasHei;
 		}
 		field538.removeAll();
@@ -312,7 +312,7 @@ public class MiniMenu {
 			var4 = var3.getMouseClickX();
 			var5 = var3.getMouseClickY();
 		}
-		if (!field562) {
+		if (!open) {
 			boolean var36 = method3483(miniMenuDefaults.field7667, var3);
 			boolean var37 = method3483(miniMenuDefaults.field7660, var3);
 			boolean var38 = method3483(miniMenuDefaults.field7666, var3);
@@ -357,7 +357,7 @@ public class MiniMenu {
 			}
 			if (!var27) {
 				if (var4 < field11738 - 10 || var4 > field1289 + field11738 + 10 || var5 < field2960 - 10 || var5 > field2960 + field2576 + 10) {
-					method6031();
+					close();
 				} else if (field540) {
 					int var28 = -1;
 					int var29 = -1;
@@ -419,7 +419,7 @@ public class MiniMenu {
 					var10++;
 				}
 			}
-			method6031();
+			close();
 		} else if (var4 >= field11738 && var4 <= field1289 + field11738 && var5 >= field2960 && var5 <= field2960 + field2576) {
 			if (field540) {
 				int var20 = -1;
@@ -444,7 +444,7 @@ public class MiniMenu {
 					for (MiniMenuSubMenu var26 = (MiniMenuSubMenu) var25.nextNode(); var26 != null; var26 = (MiniMenuSubMenu) var25.next()) {
 						if (var20 == var24) {
 							useMenuOption((MiniMenuEntry) var26.field12312.head.secondaryPrev, var4, var5, true);
-							method6031();
+							close();
 							break;
 						}
 						var24++;
@@ -476,7 +476,7 @@ public class MiniMenu {
 						var17++;
 					}
 				}
-				method6031();
+				close();
 			}
 		}
 	}
@@ -562,12 +562,12 @@ public class MiniMenu {
 		field2960 = var10;
 		field1289 = var3;
 		field567 = (int) (Math.random() * 24.0D);
-		field562 = true;
+		open = true;
 	}
 
 	@ObfuscatedName("im.d(Larn;IB)V")
 	public static void method4629(MiniMenuSubMenu arg0, int arg1) {
-		if (!field562) {
+		if (!open) {
 			return;
 		}
 		FontMetrics var2 = method16902();
@@ -617,9 +617,9 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("ng.r(I)V")
-	public static void method6031() {
+	public static void close() {
 		method1594();
-		field562 = false;
+		open = false;
 		Client.requestRedrawAtPoint(field11738, field2960, field1289, field2576);
 		field11913 = null;
 		field1846 = null;
@@ -635,8 +635,8 @@ public class MiniMenu {
 
 	@ObfuscatedName("fz.o(Ljava/lang/String;Ljava/lang/String;IIIJIIZZJZB)V")
 	public static void method3042(String arg0, String arg1, int arg2, int arg3, int arg4, long arg5, int arg6, int arg7, boolean arg8, boolean arg9, long arg10, boolean arg11) {
-		if (!field562 && field546 < 505) {
-			int var14 = arg2 == -1 ? Client.field10970 : arg2;
+		if (!open && field546 < 505) {
+			int var14 = arg2 == -1 ? Client.defaultCursor : arg2;
 			MiniMenuEntry var15 = new MiniMenuEntry(arg0, arg1, var14, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11);
 			method2771(var15);
 		}
@@ -753,7 +753,7 @@ public class MiniMenu {
 		if (arg1 < 0 || arg2 < 0 || field553 == null) {
 			return;
 		}
-		CoordGrid var3 = Client.world.method7727();
+		CoordGrid var3 = Client.world.getBase();
 		Matrix4x4 var4 = arg0.method2208();
 		drawMenu(arg0);
 		var4.setToMatrix4x3(field572);
@@ -851,7 +851,7 @@ public class MiniMenu {
 									if ((var36 & 0x1) == 0 && ((int) var37.x & 0x1FF) == 0 && ((int) var37.z & 0x1FF) == 0 || (var36 & 0x1) == 1 && ((int) var37.x & 0x1FF) == 256 && ((int) var37.z & 0x1FF) == 256) {
 										int var38 = (int) var37.x - (var35.size() - 1 << 8);
 										int var39 = (int) var37.z - (var35.size() - 1 << 8);
-										for (int var40 = 0; var40 < Client.npcCount; var40++) {
+										for (int var40 = 0; var40 < Client.npcSlotCount; var40++) {
 											ObjectNode var41 = (ObjectNode) Client.npcs.getNode((long) Client.field11036[var40]);
 											if (var41 != null) {
 												NpcEntity var42 = (NpcEntity) var41.value;
@@ -898,7 +898,7 @@ public class MiniMenu {
 								if ((var53.npcType.size & 0x1) == 0 && ((int) var54.x & 0x1FF) == 0 && ((int) var54.z & 0x1FF) == 0 || (var53.npcType.size & 0x1) == 1 && ((int) var54.x & 0x1FF) == 256 && ((int) var54.z & 0x1FF) == 256) {
 									int var55 = (int) var54.x - (var53.npcType.size - 1 << 8);
 									int var56 = (int) var54.z - (var53.npcType.size - 1 << 8);
-									for (int var57 = 0; var57 < Client.npcCount; var57++) {
+									for (int var57 = 0; var57 < Client.npcSlotCount; var57++) {
 										ObjectNode var58 = (ObjectNode) Client.npcs.getNode((long) Client.field11036[var57]);
 										if (var58 != null) {
 											NpcEntity var59 = (NpcEntity) var58.value;
@@ -1059,7 +1059,7 @@ public class MiniMenu {
 
 	@ObfuscatedName("wb.g(Larm;I)V")
 	public static void method9773(MiniMenuEntry arg0) {
-		if (field562) {
+		if (open) {
 			return;
 		}
 		arg0.remove();
@@ -1119,7 +1119,7 @@ public class MiniMenu {
 
 	@ObfuscatedName("qm.ae(Ldh;I)V")
 	public static void method7316(Toolkit arg0) {
-		if (field562) {
+		if (open) {
 			method5200(arg0);
 		} else {
 			method9594(arg0);
@@ -1157,7 +1157,7 @@ public class MiniMenu {
 		field542.removeAll();
 		field549.removeAll();
 		field550.removeAll();
-		field562 = false;
+		open = false;
 	}
 
 	@ObfuscatedName("rk.al(I)V")
@@ -1175,7 +1175,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("ku.ac(B)V")
-	public static void method5147() {
+	public static void setFormattingDefault() {
 		method7617();
 	}
 
@@ -1186,7 +1186,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("aoq.aw(Lhf;IIB)V")
-	public static void method18919(Component arg0, int arg1, int arg2) {
+	public static void updateMouseOverText(Component arg0, int arg1, int arg2) {
 		field576 = arg0;
 		field556 = arg1;
 		field557 = arg2;
@@ -1195,7 +1195,7 @@ public class MiniMenu {
 	@ObfuscatedName("ap.as(I)I")
 	public static int method895() {
 		if (Client.field10989 == null) {
-			if (field562) {
+			if (open) {
 				FontMetrics var0 = method16902();
 				int var1 = Client.mouse.getX();
 				int var2 = Client.mouse.getY();
@@ -1287,7 +1287,7 @@ public class MiniMenu {
 
 	@ObfuscatedName("ax.at(IIB)Z")
 	public static boolean isOpen(int arg0, int arg1) {
-		if (!field562) {
+		if (!open) {
 			return false;
 		}
 		int var2 = arg0 >> 16;
@@ -1299,7 +1299,7 @@ public class MiniMenu {
 		if (arg1 == -1 && var4.type == 0) {
 			for (MiniMenuEntry var5 = (MiniMenuEntry) field542.peekFront(); var5 != null; var5 = (MiniMenuEntry) field542.prev()) {
 				if (var5.menuAction == 58 || var5.menuAction == 1007 || var5.menuAction == 25 || var5.menuAction == 57 || var5.menuAction == 30) {
-					for (Component var6 = Component.method10202(var5.sceneBaseTileZ); var6 != null; var6 = Client.method6000(Component.interfaces[var6.parentlayer >> 16], var6)) {
+					for (Component var6 = Component.get(var5.sceneBaseTileZ); var6 != null; var6 = Client.method6000(Component.interfaces[var6.parentlayer >> 16], var6)) {
 						if (var4.parentlayer == var6.parentlayer) {
 							return true;
 						}
@@ -1328,12 +1328,12 @@ public class MiniMenu {
 
 	@ObfuscatedName("jd.au(Larm;I)Ljava/lang/String;")
 	public static String getEntryOp(MiniMenuEntry arg0) {
-		return field562 || arg0 == null ? "" : arg0.field12297;
+		return open || arg0 == null ? "" : arg0.field12297;
 	}
 
 	@ObfuscatedName("nw.ar(Larm;B)Ljava/lang/String;")
 	public static String getEntryOpBase(MiniMenuEntry arg0) {
-		if (field562 || arg0 == null) {
+		if (open || arg0 == null) {
 			return "";
 		} else if ((arg0.field12301 == null || arg0.field12301.length() == 0) && arg0.field12296 != null && arg0.field12296.length() > 0) {
 			return arg0.field12296;
@@ -1344,7 +1344,7 @@ public class MiniMenu {
 
 	@ObfuscatedName("amn.ap(Larm;I)I")
 	public static int getEntryEntityType(MiniMenuEntry arg0) {
-		if (field562) {
+		if (open) {
 			return 6;
 		} else if (arg0 == null) {
 			return 0;
@@ -1370,7 +1370,7 @@ public class MiniMenu {
 
 	@ObfuscatedName("c.aq(Larm;I)Ljava/lang/String;")
 	public static String method313(MiniMenuEntry arg0) {
-		if (field562 || arg0 == null) {
+		if (open || arg0 == null) {
 			return "";
 		} else {
 			int[] var1 = method7096(arg0);
@@ -1610,7 +1610,7 @@ public class MiniMenu {
 			field1841 = (Font) Client.fontProvider.getFont(Client.fontFactory, field8463, true, true);
 			field8786 = Client.fontProvider.getFontMetrics(Client.fontFactory, field8463);
 			if (field1841 != null && field8786 != null) {
-				method6031();
+				close();
 				int var6 = var3 / 2 + var1;
 				if (var3 + var6 > GameShell.canvasWid) {
 					var6 = GameShell.canvasWid - var3;
@@ -2025,7 +2025,7 @@ public class MiniMenu {
 		if (action >= 2000) {
 			action -= 2000;
 		}
-		CoordGrid var10 = Client.world.method7727();
+		CoordGrid var10 = Client.world.getBase();
 		if (action == 1008 || action == 1009 || action == 1010 || action == 1011 || action == 1012) {
 			ClientWorldMap.method15110(action, var7, sceneBaseTileX);
 		}
@@ -2330,13 +2330,13 @@ public class MiniMenu {
 		if (arg2 == 1) {
 			var3 = ClientMessage.createMessage(ClientProt.MOVE_MINIMAPCLICK, Client.gameConnection.randomOut);
 		}
-		CoordGrid var4 = Client.world.method7727();
+		CoordGrid var4 = Client.world.getBase();
 		var3.buf.p2(var4.z + arg1);
 		var3.buf.p1(isCtrlKeyHeld() ? 1 : 0);
 		var3.buf.p2_alt3(var4.x + arg0);
 		MiniMap.flagSceneTileX = arg0;
 		MiniMap.flagSceneTileZ = arg1;
-		MiniMap.field730 = false;
+		MiniMap.mapFlag = false;
 		DelayedStateChange.method14036();
 		return var3;
 	}

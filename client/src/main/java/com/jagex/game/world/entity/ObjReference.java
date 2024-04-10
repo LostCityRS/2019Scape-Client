@@ -25,7 +25,7 @@ public class ObjReference {
 		if (var1 == null) {
 			return null;
 		}
-		CoordGrid var2 = Client.world.method7727();
+		CoordGrid var2 = Client.world.getBase();
 		int var3 = this.field8244.x - var2.x;
 		int var4 = this.field8244.z - var2.z;
 		if (var3 >= 0 && var4 >= 0 && var3 < Client.world.getSizeX() && var4 < Client.world.getSizeZ() && Client.world.getScene() != null) {

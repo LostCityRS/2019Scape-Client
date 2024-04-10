@@ -53,7 +53,7 @@ public class EntityHitmarkCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agi.n(I)V")
 	public void method2890() {
-		PathingEntity var1 = CutsceneManager.field1721[this.field10281].method2870();
+		PathingEntity var1 = CutsceneManager.entities[this.field10281].getEntity();
 		var1.addHitmark(this.field10279, this.field10280, this.field10282, this.field10278, Client.loopCycle, 0);
 	}
 }

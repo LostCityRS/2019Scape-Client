@@ -88,7 +88,7 @@ public class AsyncRebuild implements Runnable {
 		}
 		for (boolean var2 = this.field5004.rebuildScene(); !var2; var2 = this.field5004.rebuildScene()) {
 		}
-		this.field5004.method7729();
-		Client.world.method7729();
+		this.field5004.completeRebuild();
+		Client.world.completeRebuild();
 	}
 }

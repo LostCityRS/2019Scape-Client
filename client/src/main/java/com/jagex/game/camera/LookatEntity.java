@@ -39,7 +39,7 @@ public class LookatEntity extends Lookat {
 		this.field11867 = arg0;
 		this.field11863.setTo(arg1);
 		this.field11864 = arg2;
-		arg0.method4667();
+		arg0.getTrackableCoord();
 	}
 
 	@ObfuscatedName("anw.x(I)V")
@@ -52,7 +52,7 @@ public class LookatEntity extends Lookat {
 	@ObfuscatedName("anw.e(FB)V")
 	public void method14131(float arg0) {
 		if (this.field11867 != null) {
-			this.field11862.setTo(this.field11867.method4667().method17853());
+			this.field11862.setTo(this.field11867.getTrackableCoord().method17853());
 			this.camera.method4807(false, arg0, this.field11865, this.camera.method4721(), this.field11862, this.field11866);
 		}
 	}

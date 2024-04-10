@@ -413,7 +413,7 @@ public class AudioApi {
 
 	// line 291
 	@ObfuscatedName("fb.l(S)V")
-	public void method3149() {
+	public void update() {
 		if (!this.field1860) {
 			return;
 		}
@@ -539,7 +539,7 @@ public class AudioApi {
 
 	// line 411
 	@ObfuscatedName("fb.u(B)V")
-	public void method3165() {
+	public void stop() {
 		AudioMixer.method7606();
 	}
 

@@ -106,13 +106,13 @@ public class LoginManager {
 	public static int enterGameReply = -2;
 
 	@ObfuscatedName("m.bl")
-	public static int field469 = -2;
+	public static int lastTransferReply = -2;
 
 	@ObfuscatedName("m.bk")
-	public static int field479 = -1;
+	public static int lastTransferDisallowTrigger = -1;
 
 	@ObfuscatedName("m.bh")
-	public static int field444 = -1;
+	public static int lastTransferDisallowResult = -1;
 
 	@ObfuscatedName("m.bx")
 	public static int hoptime = 0;
@@ -314,7 +314,7 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("fj.x(B)V")
-	public static final void login() {
+	public static final void update() {
 		if (loginState == 7 || loginState == 103) {
 			return;
 		}
@@ -834,7 +834,7 @@ public class LoginManager {
 					Client.owner = in.gjstr();
 					Client.field1238 = in.g6() - MonotonicTime.get();
 					Client.world.getLocTypeList().setAllowMembers(Client.loggedInMembers);
-					Client.field3183.method7677().getLocTypeList().setAllowMembers(Client.loggedInMembers);
+					Client.asyncRebuild.method7677().getLocTypeList().setAllowMembers(Client.loggedInMembers);
 					Client.objTypeList.setAllowMembers(Client.loggedInMembers);
 					Client.npcTypeList.setAllowMembers(Client.loggedInMembers);
 				} else if (connection.getStream().hasAvailable(replyPacketSize)) {
@@ -1151,8 +1151,8 @@ public class LoginManager {
 		Client.clanChatDisplayName = null;
 		Client.clanChatCount = 0;
 		Client.clanChatUsers = null;
-		Client.field6867 = null;
-		Client.field1890 = null;
+		Client.listenedClanSettings = null;
+		Client.affinedClanSettings = null;
 		Client.telemetryError = true;
 		ClientWatch.method13845();
 		for (int var0 = 0; var0 < Client.localPlayerGameState.stats.length; var0++) {
@@ -1195,8 +1195,8 @@ public class LoginManager {
 			Client.players[var1] = null;
 		}
 		Client.localPlayerEntity = null;
+		Client.npcSlotCount = 0;
 		Client.npcCount = 0;
-		Client.field10906 = 0;
 		Client.npcs.removeAll();
 		Client.projectiles.removeAll();
 		Client.spotanims.removeAll();
@@ -1238,7 +1238,7 @@ public class LoginManager {
 		ClientInvCache.removeAll();
 		Client.field11023 = true;
 		for (int var4 = 0; var4 < 114; var4++) {
-			Client.field11072[var4] = true;
+			Client.topLevelComponentRedrawRequestedTemp[var4] = true;
 		}
 		for (int var5 = 0; var5 < 3; var5++) {
 			for (int var6 = 0; var6 < 8; var6++) {
@@ -1273,7 +1273,7 @@ public class LoginManager {
 			Client.players[var0] = null;
 		}
 		Client.localPlayerEntity = null;
-		for (int var1 = 0; var1 < Client.field10906; var1++) {
+		for (int var1 = 0; var1 < Client.npcCount; var1++) {
 			PathingEntity var2 = (PathingEntity) Client.field10839[var1].value;
 			if (var2 != null) {
 				var2.targetId = -1;
@@ -1283,7 +1283,7 @@ public class LoginManager {
 		Client.cameraReset(Client.getDefaultCameraState());
 		Client.setState(18);
 		for (int var3 = 0; var3 < 114; var3++) {
-			Client.field11072[var3] = true;
+			Client.topLevelComponentRedrawRequestedTemp[var3] = true;
 		}
 		Client.notifyWindowStatus(connection);
 		Client.pingRequest = null;

@@ -18,14 +18,14 @@ public abstract class MouseEvent extends Node {
 	public abstract int getMouseClickY();
 
 	@ObfuscatedName("akm.k(I)I")
-	public abstract int method17833();
+	public abstract int getCount();
 
 	@ObfuscatedName("akm.f(B)J")
 	public abstract long method17834();
 
 	@ObfuscatedName("akm.l(B)V")
-	public abstract void method17835();
+	public abstract void release();
 
 	@ObfuscatedName("akm.e(I)I")
-	public abstract int method17848();
+	public abstract int getButtonAction();
 }

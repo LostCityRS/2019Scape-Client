@@ -230,7 +230,7 @@ public class DefaultSprites {
 	}
 
 	@ObfuscatedName("ge.u(I)V")
-	public static void method3568() {
+	public static void clear() {
 		p11FullFont = null;
 		p12FullFont = null;
 		b12FullFont = null;

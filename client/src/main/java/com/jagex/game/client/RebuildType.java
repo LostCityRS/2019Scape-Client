@@ -9,7 +9,7 @@ public class RebuildType {
 	public static final RebuildType field5063 = new RebuildType(false, false);
 
 	@ObfuscatedName("rc.n")
-	public static final RebuildType field5064 = new RebuildType(true, false);
+	public static final RebuildType CUTSCENE = new RebuildType(true, false);
 
 	@ObfuscatedName("rc.m")
 	public static final RebuildType REBUILD_NORMAL = new RebuildType(false, false);

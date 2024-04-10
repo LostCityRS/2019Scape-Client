@@ -22,8 +22,8 @@ public class SubtitleCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("aga.n(I)V")
 	public void method2890() {
-		if (Client.field10862 != -1) {
-			ScriptRunner.triggerCutsceneSubtitle(Client.field10862, this.field10276, this.field10277);
+		if (Client.cutsceneId != -1) {
+			ScriptRunner.triggerCutsceneSubtitle(Client.cutsceneId, this.field10276, this.field10277);
 		}
 	}
 }

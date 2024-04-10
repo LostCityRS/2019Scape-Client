@@ -15,16 +15,16 @@ import rs2.client.Client;
 public class DelayedStateChange extends SecondaryNode {
 
 	@ObfuscatedName("ars.l")
-	public int field12268;
+	public int int0;
 
 	@ObfuscatedName("ars.u")
-	public int field12274;
+	public int int1;
 
 	@ObfuscatedName("ars.z")
-	public int field12267;
+	public int int2;
 
 	@ObfuscatedName("ars.p")
-	public String field12269;
+	public String str0;
 
 	@ObfuscatedName("ars.ac")
 	public static SecondaryLinkedList field12289 = new SecondaryLinkedList();
@@ -58,7 +58,7 @@ public class DelayedStateChange extends SecondaryNode {
 	}
 
 	@ObfuscatedName("kh.m(B)Lars;")
-	public static DelayedStateChange method5207() {
+	public static DelayedStateChange poll() {
 		DelayedStateChange var0 = (DelayedStateChange) field12289.peekFront();
 		if (var0 != null) {
 			var0.remove();
@@ -204,7 +204,7 @@ public class DelayedStateChange extends SecondaryNode {
 	public static void method19215(int arg0, int arg1) {
 		DelayedStateChange var2 = method5072(1, (long) arg0);
 		var2.method19269();
-		var2.field12268 = arg1;
+		var2.int0 = arg1;
 	}
 
 	@ObfuscatedName("alv.al(III)V")
@@ -213,9 +213,9 @@ public class DelayedStateChange extends SecondaryNode {
 		DelayedStateChange var3 = method5072(1, (long) var2.baseVar.id);
 		try {
 			if (field12295) {
-				var3.field12268 = Client.clientVariableManager.getVarValueInt(var2.baseVar);
+				var3.int0 = Client.clientVariableManager.getVarValueInt(var2.baseVar);
 			}
-			var3.field12268 = var2.setVarbitValue(var3.field12268, arg1);
+			var3.int0 = var2.setVarbitValue(var3.int0, arg1);
 			var3.method19269();
 		} catch (VarBitOverflowException var5) {
 			JagException.report("" + arg0, var5);
@@ -226,137 +226,137 @@ public class DelayedStateChange extends SecondaryNode {
 	public static void method14051(int arg0, String arg1) {
 		DelayedStateChange var2 = method5072(2, (long) arg0);
 		var2.method19269();
-		var2.field12269 = arg1;
+		var2.str0 = arg1;
 	}
 
 	@ObfuscatedName("ea.ai(ILjava/lang/String;B)V")
 	public static void method2887(int arg0, String arg1) {
 		DelayedStateChange var2 = method5072(3, (long) arg0);
 		var2.method19269();
-		var2.field12269 = arg1;
+		var2.str0 = arg1;
 	}
 
 	@ObfuscatedName("ww.aw(IZB)V")
 	public static void method9874(int arg0, boolean arg1) {
 		DelayedStateChange var2 = method5072(23, (long) arg0);
 		var2.method19269();
-		var2.field12268 = arg1 ? 1 : 0;
+		var2.int0 = arg1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("ajz.as(IIIII)V")
 	public static void method17439(int arg0, int arg1, int arg2, int arg3) {
 		DelayedStateChange var4 = method5072(4, (long) arg0);
 		var4.method19269();
-		var4.field12268 = arg1;
-		var4.field12274 = arg2;
-		var4.field12267 = arg3;
+		var4.int0 = arg1;
+		var4.int1 = arg2;
+		var4.int2 = arg3;
 	}
 
 	@ObfuscatedName("fi.at(III)V")
 	public static void method3073(int arg0, int arg1) {
 		DelayedStateChange var2 = method5072(5, (long) arg0);
 		var2.method19269();
-		var2.field12268 = arg1;
+		var2.int0 = arg1;
 	}
 
 	@ObfuscatedName("fr.ad(III)V")
 	public static void method3379(int arg0, int arg1) {
 		DelayedStateChange var2 = method5072(6, (long) arg0);
 		var2.method19269();
-		var2.field12268 = arg1;
+		var2.int0 = arg1;
 	}
 
 	@ObfuscatedName("ge.am(III)V")
 	public static void method3570(int arg0, int arg1) {
 		DelayedStateChange var2 = method5072(7, (long) arg0);
 		var2.method19269();
-		var2.field12268 = arg1;
+		var2.int0 = arg1;
 	}
 
 	@ObfuscatedName("ahp.au(IIIII)V")
 	public static void method16746(int arg0, int arg1, int arg2, int arg3) {
 		DelayedStateChange var4 = method5072(8, (long) arg0);
 		var4.method19269();
-		var4.field12268 = arg1;
-		var4.field12274 = arg2;
-		var4.field12267 = arg3;
+		var4.int0 = arg1;
+		var4.int1 = arg2;
+		var4.int2 = arg3;
 	}
 
 	@ObfuscatedName("kp.ar(IIIB)V")
 	public static void method5369(int arg0, int arg1, int arg2) {
 		DelayedStateChange var3 = method5072(9, (long) arg0);
 		var3.method19269();
-		var3.field12268 = arg1;
-		var3.field12274 = arg2;
+		var3.int0 = arg1;
+		var3.int1 = arg2;
 	}
 
 	@ObfuscatedName("ub.ap(IIIII)V")
 	public static void method9085(int arg0, int arg1, int arg2, int arg3) {
 		DelayedStateChange var4 = method5072(10, (long) arg0);
 		var4.method19269();
-		var4.field12268 = arg1;
-		var4.field12274 = arg2;
-		var4.field12267 = arg3;
+		var4.int0 = arg1;
+		var4.int1 = arg2;
+		var4.int2 = arg3;
 	}
 
 	@ObfuscatedName("iv.aq(IIII)V")
 	public static void method4400(int arg0, int arg1, int arg2) {
 		DelayedStateChange var3 = method5072(11, (long) arg0);
 		var3.method19269();
-		var3.field12268 = arg1;
-		var3.field12274 = arg2;
+		var3.int0 = arg1;
+		var3.int1 = arg2;
 	}
 
 	@ObfuscatedName("jh.ax(III)V")
 	public static void method5081(int arg0, int arg1) {
 		DelayedStateChange var2 = method5072(12, (long) arg0);
 		var2.method19269();
-		var2.field12268 = arg1;
+		var2.int0 = arg1;
 	}
 
 	@ObfuscatedName("wu.av(III)V")
 	public static void method9637(int arg0, int arg1) {
 		DelayedStateChange var2 = method5072(13, (long) arg0);
 		var2.method19269();
-		var2.field12268 = arg1;
+		var2.int0 = arg1;
 	}
 
 	@ObfuscatedName("aha.ao(IIB)V")
 	public static void method16659(int arg0, int arg1) {
 		DelayedStateChange var2 = method5072(15, (long) arg0);
 		var2.method19269();
-		var2.field12268 = arg1;
+		var2.int0 = arg1;
 	}
 
 	@ObfuscatedName("sp.aj(IZB)V")
 	public static void method8279(int arg0, boolean arg1) {
 		DelayedStateChange var2 = method5072(22, (long) arg0);
 		var2.method19269();
-		var2.field12268 = arg1 ? 1 : 0;
+		var2.int0 = arg1 ? 1 : 0;
 	}
 
 	@ObfuscatedName("acx.ay(IIB)V")
 	public static void method14994(int arg0, int arg1) {
 		DelayedStateChange var2 = method5072(14, 0L);
 		var2.method19269();
-		var2.field12268 = arg0;
-		var2.field12274 = arg1;
+		var2.int0 = arg0;
+		var2.int1 = arg1;
 	}
 
 	@ObfuscatedName("aoa.ab(IIIII)V")
 	public static void method18895(int arg0, int arg1, int arg2, int arg3) {
 		DelayedStateChange var4 = method5072(17, (long) arg1 << 32 | (long) arg0);
 		var4.method19269();
-		var4.field12268 = arg2;
-		var4.field12274 = arg3;
+		var4.int0 = arg2;
+		var4.int1 = arg3;
 	}
 
 	@ObfuscatedName("kt.az(IIIIS)V")
 	public static void method5395(int arg0, int arg1, int arg2, int arg3) {
 		DelayedStateChange var4 = method5072(20, (long) arg1 << 32 | (long) arg0);
 		var4.method19269();
-		var4.field12268 = arg2;
-		var4.field12274 = arg3;
+		var4.int0 = arg2;
+		var4.int1 = arg3;
 	}
 
 	public DelayedStateChange(int arg0, long arg1) {
@@ -378,12 +378,12 @@ public class DelayedStateChange extends SecondaryNode {
 	}
 
 	@ObfuscatedName("ars.ak(I)I")
-	public int method19276() {
+	public int getType() {
 		return (int) (this.nodeId >>> 56 & 0xFFL);
 	}
 
 	@ObfuscatedName("ars.an(I)J")
-	public long method19271() {
+	public long getTarget() {
 		return this.nodeId & 0xFFFFFFFFFFFFFFL;
 	}
 

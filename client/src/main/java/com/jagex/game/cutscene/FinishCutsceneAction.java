@@ -12,6 +12,6 @@ public class FinishCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("afj.n(I)V")
 	public void method2890() {
-		CutsceneManager.method7372(true);
+		CutsceneManager.finish(true);
 	}
 }

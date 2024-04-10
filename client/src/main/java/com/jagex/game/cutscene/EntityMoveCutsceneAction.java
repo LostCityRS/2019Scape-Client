@@ -33,6 +33,6 @@ public class EntityMoveCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("afp.n(I)V")
 	public void method2890() {
-		CutsceneManager.field1721[this.field10270].method2867(this.field10269, this.field10273, this.field10271, this.field10272);
+		CutsceneManager.entities[this.field10270].method2867(this.field10269, this.field10273, this.field10271, this.field10272);
 	}
 }

@@ -96,7 +96,7 @@ public class GraphNode {
 	}
 
 	@ObfuscatedName("yq.ai(Lov;)V")
-	public final void method10556(Quaternion arg0) {
+	public final void setRotation(Quaternion arg0) {
 		this.field8173.rot.setTo(arg0);
 		this.method10535();
 		if (this.field8178 != null) {
@@ -115,11 +115,11 @@ public class GraphNode {
 
 	@ObfuscatedName("yq.as(FFF)V")
 	public final void method10532(float arg0, float arg1, float arg2) {
-		this.method10538(this.field8173.trans.x + arg0, this.field8173.trans.y + arg1, this.field8173.trans.z + arg2);
+		this.setPosition(this.field8173.trans.x + arg0, this.field8173.trans.y + arg1, this.field8173.trans.z + arg2);
 	}
 
 	@ObfuscatedName("yq.at(FFF)V")
-	public final void method10538(float arg0, float arg1, float arg2) {
+	public final void setPosition(float arg0, float arg1, float arg2) {
 		this.field8173.trans.setTo(arg0, arg1, arg2);
 		this.method10535();
 		if (this.field8178 != null) {

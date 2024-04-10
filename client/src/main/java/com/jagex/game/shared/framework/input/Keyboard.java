@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public abstract class Keyboard {
 
 	@ObfuscatedName("acg.e(Ljava/awt/Component;I)Lub;")
-	public static Keyboard method15006(java.awt.Component arg0) {
+	public static Keyboard create(java.awt.Component arg0) {
 		return new JavaKeyboard(arg0);
 	}
 
@@ -16,7 +16,7 @@ public abstract class Keyboard {
 	public abstract void method9069();
 
 	@ObfuscatedName("ub.f(I)V")
-	public abstract void method9071();
+	public abstract void unbind();
 
 	@ObfuscatedName("ub.k(I)Lut;")
 	public abstract KeyboardEvent method9075();

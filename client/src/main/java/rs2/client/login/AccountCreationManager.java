@@ -208,7 +208,7 @@ public class AccountCreationManager {
 	}
 
 	@ObfuscatedName("ack.b(I)V")
-	public static void method14952() {
+	public static void update() {
 		if (createStage == null) {
 			return;
 		}

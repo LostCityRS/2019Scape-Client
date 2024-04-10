@@ -17,15 +17,15 @@ public final class Fullscreen {
 	}
 
 	@ObfuscatedName("vz.e(Laae;I)[Laal;")
-	public static FullscreenMode[] method9554(FullscreenImpl arg0) {
+	public static FullscreenMode[] getFullscreenModes(FullscreenImpl arg0) {
 		int[] var1 = arg0.method14465();
 		FullscreenMode[] var2 = new FullscreenMode[var1.length >> 2];
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			FullscreenMode var4 = new FullscreenMode();
 			var2[var3] = var4;
-			var4.field8537 = var1[var3 << 2];
-			var4.field8538 = var1[(var3 << 2) + 1];
-			var4.field8539 = var1[(var3 << 2) + 2];
+			var4.width = var1[var3 << 2];
+			var4.height = var1[(var3 << 2) + 1];
+			var4.bitDepth = var1[(var3 << 2) + 2];
 			var4.field8536 = var1[(var3 << 2) + 3];
 		}
 		return var2;
@@ -34,14 +34,14 @@ public final class Fullscreen {
 	@ObfuscatedName("if.n(Laae;IIIII)Ljava/awt/Frame;")
 	public static Frame method4572(FullscreenImpl arg0, int arg1, int arg2, int arg3, int arg4) {
 		if (arg3 == 0) {
-			FullscreenMode[] var5 = method9554(arg0);
+			FullscreenMode[] var5 = getFullscreenModes(arg0);
 			if (var5 == null) {
 				return null;
 			}
 			boolean var6 = false;
 			for (int var7 = 0; var7 < var5.length; var7++) {
-				if (var5[var7].field8537 == arg1 && var5[var7].field8538 == arg2 && (arg4 == 0 || var5[var7].field8536 == arg4) && (!var6 || var5[var7].field8539 > arg3)) {
-					arg3 = var5[var7].field8539;
+				if (var5[var7].width == arg1 && var5[var7].height == arg2 && (arg4 == 0 || var5[var7].field8536 == arg4) && (!var6 || var5[var7].bitDepth > arg3)) {
+					arg3 = var5[var7].bitDepth;
 					var6 = true;
 				}
 			}

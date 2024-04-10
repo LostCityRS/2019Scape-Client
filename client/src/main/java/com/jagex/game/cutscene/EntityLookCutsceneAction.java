@@ -20,6 +20,6 @@ public class EntityLookCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("afn.n(I)V")
 	public void method2890() {
-		CutsceneManager.field1721[this.field10267].method2870().method16491(this.field10266, true);
+		CutsceneManager.entities[this.field10267].getEntity().method16491(this.field10266, true);
 	}
 }

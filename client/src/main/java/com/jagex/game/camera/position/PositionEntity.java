@@ -56,7 +56,7 @@ public class PositionEntity extends Position {
 		this.field10554.setTo(arg2);
 		this.field10556 = arg3;
 		this.field10561 = arg4;
-		this.field10557 = this.field10552.method4667().level;
+		this.field10557 = this.field10552.getTrackableCoord().level;
 		this.method16686(arg5, arg6, arg7, arg8);
 	}
 
@@ -79,7 +79,7 @@ public class PositionEntity extends Position {
 			this.field10555.setTo(var6);
 		}
 		var6.release();
-		this.field10559.setTo(this.field10552.method4667().method17853());
+		this.field10559.setTo(this.field10552.getTrackableCoord().method17853());
 		this.camera.method4807(true, arg0, this.field10558, this.camera.method4721(), this.field10559, this.field10560);
 	}
 
@@ -108,7 +108,7 @@ public class PositionEntity extends Position {
 		if (!this.method5218() || !this.camera.method4730() && !this.camera.method4731()) {
 			return;
 		}
-		CoordFine var5 = this.field10552.method4667();
+		CoordFine var5 = this.field10552.getTrackableCoord();
 		this.field10557 = var5.level;
 		int var6 = this.field10557;
 		boolean var7 = true;

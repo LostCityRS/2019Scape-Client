@@ -16,6 +16,6 @@ public class EntityDelCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agj.n(I)V")
 	public void method2890() {
-		CutsceneManager.field1721[this.field10290].method2868();
+		CutsceneManager.entities[this.field10290].method2868();
 	}
 }

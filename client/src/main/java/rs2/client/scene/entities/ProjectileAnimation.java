@@ -166,7 +166,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		}
 		PathingEntity var1 = null;
 		if (Client.sceneState == 0) {
-			var1 = CutsceneManager.field1721[this.target2 - 1].method2870();
+			var1 = CutsceneManager.entities[this.target2 - 1].getEntity();
 		} else if (this.target2 < 0) {
 			int var2 = -this.target2 - 1;
 			if (Client.currentPlayerUid == var2) {
@@ -185,7 +185,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 			return;
 		}
 		Vector3 var5 = var1.getTransform().trans;
-		this.method10538(var5.x, (float) (Client.getHeightmapY((int) var5.x, (int) var5.z, this.level) - this.field12599), var5.z);
+		this.setPosition(var5.x, (float) (Client.getHeightmapY((int) var5.x, (int) var5.z, this.level) - this.field12599), var5.z);
 		if (this.field12594 < 0) {
 			return;
 		}

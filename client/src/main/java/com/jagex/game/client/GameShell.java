@@ -108,7 +108,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	public static FullscreenImpl fsimp14;
 
 	@ObfuscatedName("sk.ac")
-	public static boolean field6603 = false;
+	public static boolean windowClosing = false;
 
 	@ObfuscatedName("sk.ai")
 	public static volatile boolean focus_in = true;
@@ -834,7 +834,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("nw.ae(B)I")
-	public static final int method6016() {
+	public static final int getLogicRate() {
 		return (int) (1000000000L / logicUpdateInterval);
 	}
 
@@ -908,7 +908,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	public final void windowClosing(WindowEvent arg0) {
-		field6603 = true;
+		windowClosing = true;
 		this.destroy();
 	}
 

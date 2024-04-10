@@ -97,7 +97,7 @@ public class ProjAnimCutsceneAction extends CutsceneAction {
 			var2 = this.field10343 * 512 + 256;
 			var3 = this.field10340;
 		} else {
-			PathingEntity var4 = CutsceneManager.field1721[this.field10341].method2870();
+			PathingEntity var4 = CutsceneManager.entities[this.field10341].getEntity();
 			Vector3 var5 = var4.getTransform().trans;
 			var1 = (int) var5.x;
 			var2 = (int) var5.z;
@@ -109,7 +109,7 @@ public class ProjAnimCutsceneAction extends CutsceneAction {
 			var6 = this.field10346 * 512 + 256;
 			var7 = this.field10338 * 512 + 256;
 		} else {
-			PathingEntity var8 = CutsceneManager.field1721[this.field10345].method2870();
+			PathingEntity var8 = CutsceneManager.entities[this.field10345].getEntity();
 			Vector3 var9 = var8.getTransform().trans;
 			var6 = (int) var9.x;
 			var7 = (int) var9.z;

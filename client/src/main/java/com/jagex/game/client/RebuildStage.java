@@ -9,10 +9,10 @@ public class RebuildStage {
 	public static final RebuildStage field5007 = new RebuildStage();
 
 	@ObfuscatedName("rg.n")
-	public static final RebuildStage field5006 = new RebuildStage();
+	public static final RebuildStage LOAD_MAPS = new RebuildStage();
 
 	@ObfuscatedName("rg.m")
-	public static final RebuildStage field5005 = new RebuildStage();
+	public static final RebuildStage LOAD_LOCS = new RebuildStage();
 
 	@ObfuscatedName("rg.k")
 	public static final RebuildStage field5008 = new RebuildStage();

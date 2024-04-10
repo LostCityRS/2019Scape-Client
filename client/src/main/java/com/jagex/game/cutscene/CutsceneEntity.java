@@ -20,7 +20,7 @@ public final class CutsceneEntity {
 	public final int field1743;
 
 	@ObfuscatedName("ea.k")
-	public boolean field1744 = false;
+	public boolean exists = false;
 
 	@ObfuscatedName("ea.f")
 	public NpcEntity field1745 = null;
@@ -49,8 +49,8 @@ public final class CutsceneEntity {
 
 	@ObfuscatedName("ea.e(IIIII)V")
 	public void method2867(int arg0, int arg1, int arg2, int arg3) {
-		if (!this.field1744) {
-			this.field1744 = true;
+		if (!this.exists) {
+			this.exists = true;
 			if (this.field1743 >= 0) {
 				this.field1745 = new NpcEntity(Client.world.getScene(), 25);
 				this.field1745.localPlayerIndex = this.field1741;
@@ -81,7 +81,7 @@ public final class CutsceneEntity {
 	public void method2868() {
 		this.field1745 = null;
 		this.field1742 = null;
-		this.field1744 = false;
+		this.exists = false;
 	}
 
 	@ObfuscatedName("ea.m(IIII)V")
@@ -95,7 +95,7 @@ public final class CutsceneEntity {
 	}
 
 	@ObfuscatedName("ea.k(I)Lahm;")
-	public PathingEntity method2870() {
+	public PathingEntity getEntity() {
 		return this.field1745 == null ? this.field1742 : this.field1745;
 	}
 

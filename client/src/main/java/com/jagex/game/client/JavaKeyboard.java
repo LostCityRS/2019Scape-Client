@@ -151,7 +151,7 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 	}
 
 	@ObfuscatedName("alg.f(I)V")
-	public void method9071() {
+	public void unbind() {
 		this.method18263();
 	}
 

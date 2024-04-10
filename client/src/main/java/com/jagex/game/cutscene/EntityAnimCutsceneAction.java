@@ -34,7 +34,7 @@ public class EntityAnimCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agk.n(I)V")
 	public void method2890() {
-		PathingEntity var1 = CutsceneManager.field1721[this.field10301].method2870();
+		PathingEntity var1 = CutsceneManager.entities[this.field10301].getEntity();
 		if (this.field10300 == 0) {
 			Client.addSequences(var1, this.field10298, 0, false);
 		} else {

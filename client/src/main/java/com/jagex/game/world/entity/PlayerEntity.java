@@ -669,7 +669,7 @@ public class PlayerEntity extends PathingEntity {
 
 	@ObfuscatedName("aqk.hc(Ljava/lang/String;III)V")
 	public void addMessage(String arg0, int arg1, int arg2) {
-		this.setChatLine(arg0, arg1, arg2, GameShell.method6016() * Client.graphicsDefaults.playerChatTimeout);
+		this.setChatLine(arg0, arg1, arg2, GameShell.getLogicRate() * Client.graphicsDefaults.playerChatTimeout);
 	}
 
 	@ObfuscatedName("aqk.e(I)Ljl;")
@@ -683,8 +683,8 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.m(B)Lakt;")
-	public CoordFine method4667() {
-		CoordGrid var1 = Client.world.method7727();
+	public CoordFine getTrackableCoord() {
+		CoordGrid var1 = Client.world.getBase();
 		return CoordFine.method258(this.level, (int) this.getTransform().trans.x + var1.x * 512, -((int) this.getTransform().trans.y), (int) this.getTransform().trans.z + var1.z * 512);
 	}
 

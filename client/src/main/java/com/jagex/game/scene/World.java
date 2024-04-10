@@ -201,7 +201,7 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.f(I)Lve;")
-	public CoordGrid method7727() {
+	public CoordGrid getBase() {
 		return this.field5018;
 	}
 
@@ -313,7 +313,7 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.t(I)V")
-	public void method7729() {
+	public void completeRebuild() {
 		this.rebuildStage = RebuildStage.field5007;
 		this.field5044 = 0;
 		this.field5045 = 1;
@@ -323,7 +323,7 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ae(ZI)V")
-	public void method7737(boolean arg0) {
+	public void createEnvironmentManager(boolean arg0) {
 		EnvironmentOverride var2 = null;
 		if (this.environmentManager != null && arg0) {
 			var2 = this.environmentManager.getOverride();
@@ -335,7 +335,7 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ag(I)V")
-	public void method7730() {
+	public void clearEnvironmentOverride() {
 		this.environmentManager.setOverride(this, null, 0);
 	}
 
@@ -369,7 +369,7 @@ public class World {
 	@ObfuscatedName("rl.ac(B)V")
 	public void rebuild() {
 		if (this.asyncRebuilding) {
-			this.method7729();
+			this.completeRebuild();
 			this.field5060 = -1L;
 			World var1 = Client.world;
 			this.rebuildMapSquaresCount = var1.rebuildMapSquaresCount;
@@ -418,7 +418,7 @@ public class World {
 			this.method7773();
 		} else if (RebuildType.REBUILD_NORMAL == this.rebuildType) {
 			this.rebuildNormalMap(request.buf);
-		} else if (RebuildType.field5064 == this.rebuildType) {
+		} else if (RebuildType.CUTSCENE == this.rebuildType) {
 			this.method7824();
 		} else if (this.rebuildType.isRegionType()) {
 			this.rebuildRegionMap(request.buf);
@@ -699,14 +699,14 @@ public class World {
 		this.field5041 = new int[this.mapSizeX][this.mapSizeZ];
 		this.field5029 = new byte[4][this.mapSizeX][this.mapSizeZ];
 		this.sceneLevelTileFlags = new SceneLevelTileFlags(4, this.mapSizeX, this.mapSizeZ);
-		this.method7737(false);
+		this.createEnvironmentManager(false);
 		MiniMap.method829();
 		this.buildAreaSize = buildAreaSize;
 	}
 
 	@ObfuscatedName("rl.ar(I)V")
 	public void method7854() {
-		if (RebuildType.field5064 == this.rebuildType || RebuildType.field5064 == this.field5020) {
+		if (RebuildType.CUTSCENE == this.rebuildType || RebuildType.CUTSCENE == this.field5020) {
 			return;
 		}
 		if (RebuildType.REBUILD_REGION == this.rebuildType || RebuildType.field5068 == this.rebuildType || this.field5020 != this.rebuildType && (RebuildType.REBUILD_NORMAL == this.rebuildType || RebuildType.REBUILD_NORMAL == this.field5020)) {
@@ -715,8 +715,8 @@ public class World {
 				ObjectNode var2 = (ObjectNode) var1.next();
 				PositionedSound.method10111((NpcEntity) var2.value);
 			}
+			Client.npcSlotCount = 0;
 			Client.npcCount = 0;
-			Client.field10906 = 0;
 			Client.npcs.removeAll();
 		}
 		this.field5020 = this.rebuildType;
@@ -729,7 +729,7 @@ public class World {
 				throw new IllegalStateException();
 			}
 			Client.sceneState = 3;
-			Client.field10862 = -1;
+			Client.cutsceneId = -1;
 		}
 		if (!forceRebuild && this.field5022 == arg0 && this.field5059 == arg1) {
 			return;
@@ -759,7 +759,7 @@ public class World {
 		int var2 = this.field5018.x - this.field5025.x;
 		int var3 = this.field5018.z - this.field5025.z;
 		if (arg0 == 3) {
-			for (int var4 = 0; var4 < Client.field10906; var4++) {
+			for (int var4 = 0; var4 < Client.npcCount; var4++) {
 				ObjectNode var5 = Client.field10839[var4];
 				if (var5 != null) {
 					NpcEntity var6 = (NpcEntity) var5.value;
@@ -776,10 +776,10 @@ public class World {
 			}
 		} else {
 			boolean var9 = false;
-			Client.npcCount = 0;
+			Client.npcSlotCount = 0;
 			int var10 = this.mapSizeX - 512;
 			int var11 = this.mapSizeZ - 512;
-			for (int var12 = 0; var12 < Client.field10906; var12++) {
+			for (int var12 = 0; var12 < Client.npcCount; var12++) {
 				ObjectNode var13 = Client.field10839[var12];
 				if (var13 != null) {
 					NpcEntity var14 = (NpcEntity) var13.value;
@@ -797,7 +797,7 @@ public class World {
 							}
 						}
 						if (var16) {
-							Client.field11036[++Client.npcCount - 1] = var14.localPlayerIndex;
+							Client.field11036[++Client.npcSlotCount - 1] = var14.localPlayerIndex;
 						} else {
 							var14.method19156(null);
 							var13.remove();
@@ -812,7 +812,7 @@ public class World {
 				}
 			}
 			if (var9) {
-				Client.field10906 = Client.npcs.length();
+				Client.npcCount = Client.npcs.length();
 				int var18 = 0;
 				Iterator var19 = Client.npcs.iterator();
 				while (var19.hasNext()) {
@@ -918,7 +918,7 @@ public class World {
 			}
 		}
 		MiniMenu.method5175();
-		MiniMap.method5065();
+		MiniMap.rebuild();
 		Client.spotanims.removeAll();
 		Client.projectiles.removeAll();
 		Client.textCoords.clear();
@@ -968,7 +968,7 @@ public class World {
 			if (this.field5045 < this.field5044) {
 				this.field5045 = this.field5044;
 			}
-			this.rebuildStage = RebuildStage.field5006;
+			this.rebuildStage = RebuildStage.LOAD_MAPS;
 			return false;
 		}
 		for (int index = 0; index < this.rebuildMapSquaresCount; index++) {
@@ -1025,12 +1025,12 @@ public class World {
 				this.field5048 = Client.loopCycle;
 			} else if (this.field5048 != 0 && Client.loopCycle - this.field5048 == 1000) {
 				GraphicsPacketQueue.method5144(var5.intValue, var4.intValue, this.rebuildLocsCount);
-				GraphicsPacketQueue.method9189();
+				GraphicsPacketQueue.flush();
 			}
 			if (this.field5047 < this.rebuildLocsCount) {
 				this.field5047 = this.rebuildLocsCount;
 			}
-			this.rebuildStage = RebuildStage.field5005;
+			this.rebuildStage = RebuildStage.LOAD_LOCS;
 			return false;
 		}
 		if (!this.asyncRebuilding && RebuildStage.field5007 != this.rebuildStage) {
@@ -1038,7 +1038,7 @@ public class World {
 		}
 		this.rebuildStage = RebuildStage.field5008;
 		if (!this.asyncRebuilding && Client.audioApi != null) {
-			Client.audioApi.method3149();
+			Client.audioApi.update();
 		}
 		if (!this.asyncRebuilding) {
 			for (int var15 = 0; var15 < 2048; var15++) {
@@ -1194,7 +1194,7 @@ public class World {
 		if (this.asyncRebuilding) {
 			World var23 = Client.world;
 			this.method7752(var23);
-			Client.field3183.method7678(var23);
+			Client.asyncRebuild.method7678(var23);
 			var22 = true;
 			MonotonicTime.get();
 			Object var24 = Client.field10858;
@@ -1210,7 +1210,7 @@ public class World {
 			this.method7762(3);
 			this.method7854();
 		} else {
-			Client.audioApi.method3149();
+			Client.audioApi.update();
 			this.environmentManager.updateFog();
 			GameShell.method135();
 		}
@@ -1296,7 +1296,7 @@ public class World {
 				int var9 = var7 * 64 - this.field5018.x;
 				int var10 = var8 * 64 - this.field5018.z;
 				if (!this.asyncRebuilding && Client.audioApi != null) {
-					Client.audioApi.method3149();
+					Client.audioApi.update();
 				}
 				mapLoader.readNormalLandscape(buf, var9, var10, this.field5018.x, this.field5018.z);
 				mapLoader.readNormalEnvironment(Client.toolkit, buf, var9, var10);
@@ -1308,7 +1308,7 @@ public class World {
 			byte[] lands = mapSquareLands[index];
 			if (lands == null && this.field5059 < 800) {
 				if (!this.asyncRebuilding && Client.audioApi != null) {
-					Client.audioApi.method3149();
+					Client.audioApi.update();
 				}
 				mapLoader.method7167(var12, var13, 64, 64);
 			}
@@ -1319,7 +1319,7 @@ public class World {
 	public void readRegionLandscape(ClientMapLoader mapLoader, byte[][] mapSquareLands) {
 		for (int level = 0; level < mapLoader.levels; level++) {
 			if (!this.asyncRebuilding) {
-				Client.audioApi.method3149();
+				Client.audioApi.update();
 			}
 			for (int x = 0; x < this.mapSizeX >> 3; x++) {
 				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
@@ -1346,7 +1346,7 @@ public class World {
 		}
 		for (int level = 0; level < mapLoader.levels; level++) {
 			if (!this.asyncRebuilding) {
-				Client.audioApi.method3149();
+				Client.audioApi.update();
 			}
 			for (int x = 0; x < this.mapSizeX >> 3; x++) {
 				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
@@ -1367,7 +1367,7 @@ public class World {
 				int var5 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
 				int var6 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
 				if (!this.asyncRebuilding) {
-					Client.audioApi.method3149();
+					Client.audioApi.update();
 				}
 				mapLoader.readNormalLocs(Client.toolkit, locs, var5, var6);
 				if (this.asyncRebuilding) {
@@ -1381,7 +1381,7 @@ public class World {
 	public void readRegionLocs(ClientMapLoader mapLoader, byte[][] mapSquareLocs) {
 		for (int level = 0; level < mapLoader.levels; level++) {
 			if (!this.asyncRebuilding) {
-				Client.audioApi.method3149();
+				Client.audioApi.update();
 			}
 			for (int x = 0; x < this.mapSizeX >> 3; x++) {
 				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
@@ -1427,7 +1427,7 @@ public class World {
 				}
 				Packet buf = new Packet(this.rebuildMapSquaresNpcs[index]);
 				int var6 = 0;
-				while (buf.pos < this.rebuildMapSquaresNpcs[index].length && var6 < 511 && Client.npcCount < 1023) {
+				while (buf.pos < this.rebuildMapSquaresNpcs[index].length && var6 < 511 && Client.npcSlotCount < 1023) {
 					int var7 = var3 | var6++ << 6;
 					int var8 = buf.g2();
 					int var9 = var8 >> 14;
@@ -1442,8 +1442,8 @@ public class World {
 						npc.localPlayerIndex = var7;
 						ObjectNode var17 = new ObjectNode(npc);
 						Client.npcs.pushNode(var17, (long) var7);
-						Client.field10839[++Client.field10906 - 1] = var17;
-						Client.field11036[++Client.npcCount - 1] = var7;
+						Client.field10839[++Client.npcCount - 1] = var17;
+						Client.field11036[++Client.npcSlotCount - 1] = var7;
 						npc.field10440 = Client.loopCycle;
 						npc.method19156(var14);
 						npc.setSize(npc.npcType.size);

@@ -21,7 +21,7 @@ public class CutsceneManager {
 	public static CutsceneSpline[] field1714;
 
 	@ObfuscatedName("eq.m")
-	public static CutsceneEntity[] field1721;
+	public static CutsceneEntity[] entities;
 
 	@ObfuscatedName("vl.k")
 	public static CutsceneLocation[] field7317;
@@ -30,10 +30,10 @@ public class CutsceneManager {
 	public static CutsceneRoute[] field8358;
 
 	@ObfuscatedName("eq.w")
-	public static CutsceneAction[] field1713;
+	public static CutsceneAction[] actions;
 
 	@ObfuscatedName("eq.l")
-	public static HashTable field1718 = new HashTable(32);
+	public static HashTable varPlayerOverrides = new HashTable(32);
 
 	@ObfuscatedName("eq.u")
 	public static int field1715 = 1;
@@ -76,7 +76,7 @@ public class CutsceneManager {
 	}
 
 	@ObfuscatedName("xj.e(II)Z")
-	public static boolean method10308(int arg0) {
+	public static boolean load(int arg0) {
 		if (field1722 != arg0 || field694 == null) {
 			method3551();
 			field694 = CutsceneLoadingStage.field1724;
@@ -99,9 +99,9 @@ public class CutsceneManager {
 				field1714[var6] = new CutsceneSpline(var2);
 			}
 			int var7 = var2.gSmart1or2();
-			field1721 = new CutsceneEntity[var7];
+			entities = new CutsceneEntity[var7];
 			for (int var8 = 0; var8 < var7; var8++) {
-				field1721[var8] = new CutsceneEntity(var2, var8);
+				entities[var8] = new CutsceneEntity(var2, var8);
 			}
 			int var9 = var2.gSmart1or2();
 			field7317 = new CutsceneLocation[var9];
@@ -114,22 +114,22 @@ public class CutsceneManager {
 				field8358[var12] = new CutsceneRoute(var2);
 			}
 			int var13 = var2.gSmart1or2();
-			field1713 = new CutsceneAction[var13];
+			actions = new CutsceneAction[var13];
 			for (int var14 = 0; var14 < var13; var14++) {
-				field1713[var14] = CutsceneAction.method14342(var2);
+				actions[var14] = CutsceneAction.method14342(var2);
 			}
 			field694 = CutsceneLoadingStage.field1725;
 		}
 		if (field694 == CutsceneLoadingStage.field1725) {
 			boolean var15 = true;
-			CutsceneEntity[] var16 = field1721;
+			CutsceneEntity[] var16 = entities;
 			for (int var17 = 0; var17 < var16.length; var17++) {
 				CutsceneEntity var18 = var16[var17];
 				if (!var18.method2871()) {
 					var15 = false;
 				}
 			}
-			CutsceneAction[] var19 = field1713;
+			CutsceneAction[] var19 = actions;
 			for (int var20 = 0; var20 < var19.length; var20++) {
 				CutsceneAction var21 = var19[var20];
 				if (!var21.method2891()) {
@@ -168,13 +168,13 @@ public class CutsceneManager {
 
 	@ObfuscatedName("gf.m(I)V")
 	public static void method3551() {
-		field1718.removeAll();
+		varPlayerOverrides.removeAll();
 		field1712.removeAll();
 		field1714 = null;
-		field1721 = null;
+		entities = null;
 		field7317 = null;
 		field8358 = null;
-		field1713 = null;
+		actions = null;
 		field1715 = 1;
 		field1716 = 0;
 		field1710 = 0;
@@ -207,13 +207,13 @@ public class CutsceneManager {
 	}
 
 	@ObfuscatedName("qb.f(ZI)V")
-	public static void method7372(boolean arg0) {
+	public static void finish(boolean arg0) {
 		if (Client.sceneState == 4 || Client.sceneState == 3) {
 			return;
 		}
 		if (!arg0) {
-			if (field1713 != null) {
-				CutsceneAction[] var1 = field1713;
+			if (actions != null) {
+				CutsceneAction[] var1 = actions;
 				for (int var2 = 0; var2 < var1.length; var2++) {
 					CutsceneAction var3 = var1[var2];
 					var3.method2896();

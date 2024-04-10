@@ -29,7 +29,7 @@ public class AppletMouseLogger extends MouseLogger {
 			var4 = 65535;
 		}
 		byte var5 = 0;
-		if (var1.method17848() == 2) {
+		if (var1.getButtonAction() == 2) {
 			var5 = 1;
 		}
 		ClientMessage var6 = ClientMessage.createMessage(ClientProt.EVENT_MOUSE_CLICK, Client.gameConnection.randomOut);

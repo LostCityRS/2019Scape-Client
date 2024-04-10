@@ -21,12 +21,12 @@ public class HttpRequest {
 	}
 
 	@ObfuscatedName("am.e(I)Z")
-	public boolean method826() {
+	public boolean isComplete() {
 		return this.field739;
 	}
 
 	@ObfuscatedName("am.n(I)[B")
-	public byte[] method821() {
+	public byte[] getData() {
 		return this.field737;
 	}
 }

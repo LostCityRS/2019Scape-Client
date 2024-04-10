@@ -13,7 +13,7 @@ public class RendererException extends Exception {
 	}
 
 	@ObfuscatedName("apj.e(I)I")
-	public int method18925() {
+	public int getErrorCode() {
 		return this.field11892;
 	}
 }

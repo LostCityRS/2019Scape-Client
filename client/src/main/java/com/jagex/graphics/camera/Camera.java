@@ -159,7 +159,7 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.n(F[[[ILqx;III)V")
-	public void method4681(float arg0, int[][][] arg1, SceneLevelTileFlags arg2, int arg3, int arg4) {
+	public void update(float arg0, int[][][] arg1, SceneLevelTileFlags arg2, int arg3, int arg4) {
 		if (this.lookat != null) {
 			this.lookat.method14131(arg0);
 		}

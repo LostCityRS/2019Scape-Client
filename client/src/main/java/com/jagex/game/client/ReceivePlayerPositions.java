@@ -67,10 +67,10 @@ public class ReceivePlayerPositions {
 		byte hl = (byte) (highCoord >> 28);
 		int hx = highCoord >> 14 & 0x3FFF;
 		int hz = highCoord & 0x3FFF;
-		CoordGrid coord = Client.world.method7727();
+		CoordGrid coord = Client.world.getBase();
 		player.routeWaypointX[0] = hx - coord.x;
 		player.routeWaypointZ[0] = hz - coord.z;
-		player.method10538((float) ((player.routeWaypointX[0] << 9) + (player.size() << 8)), player.method10525().trans.y, (float) ((player.routeWaypointZ[0] << 9) + (player.size() << 8)));
+		player.setPosition((float) ((player.routeWaypointX[0] << 9) + (player.size() << 8)), player.method10525().trans.y, (float) ((player.routeWaypointZ[0] << 9) + (player.size() << 8)));
 		Client.currentPlayerLevel = player.level = player.field11714 = hl;
 		if (Client.world.getSceneLevelTileFlags().isLinkBelow(player.routeWaypointX[0], player.routeWaypointZ[0])) {
 			player.field11714++;
@@ -246,7 +246,7 @@ public class ReceivePlayerPositions {
 
 	@ObfuscatedName("akz.f(Lase;IS)V")
 	public static void readHighResolution(PacketBit buf, int highResIndex) {
-		CoordGrid coord = Client.world.method7727();
+		CoordGrid coord = Client.world.getBase();
 		boolean hasUpdate = buf.gBit(1) == 1;
 		if (hasUpdate) {
 			entityUpdateIds[++entityUpdateCount - 1] = highResIndex;
@@ -456,7 +456,7 @@ public class ReceivePlayerPositions {
 			int level = coord >> 28;
 			int x = coord >> 14 & 0xFF;
 			int z = coord & 0xFF;
-			CoordGrid var12 = Client.world.method7727();
+			CoordGrid var12 = Client.world.getBase();
 			int nextX = (x << 6) + dx - var12.x;
 			int nextZ = (z << 6) + dz - var12.z;
 			player.field12070 = lowResPlayer.field525;

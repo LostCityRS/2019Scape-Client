@@ -69,7 +69,7 @@ public abstract class PositionSpline extends Position {
 			arg0 -= this.field10562[this.field10564];
 			this.field10562[this.field10564] = 0.0F;
 		}
-		float var7 = 1.0F / (float) GameShell.method6016();
+		float var7 = 1.0F / (float) GameShell.getLogicRate();
 		while (arg0 > 0.0F) {
 			float var8 = var6.method6764();
 			if (this.field10563 >= var8) {

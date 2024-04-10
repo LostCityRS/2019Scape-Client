@@ -16,7 +16,7 @@ public class KeyHeldBinding implements Binding {
 	}
 
 	@ObfuscatedName("vy.e(Lakm;[Lut;ILub;I)Z")
-	public boolean method9396(MouseEvent arg0, KeyboardEvent[] arg1, int arg2, Keyboard arg3) {
+	public boolean test(MouseEvent arg0, KeyboardEvent[] arg1, int arg2, Keyboard arg3) {
 		int[] var5 = this.field7423;
 		for (int var6 = 0; var6 < var5.length; var6++) {
 			int var7 = var5[var6];

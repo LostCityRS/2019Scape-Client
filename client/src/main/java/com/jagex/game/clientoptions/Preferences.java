@@ -119,7 +119,7 @@ public class Preferences {
 		int var8 = -1;
 		if (var2) {
 			try {
-				Client.preferences.setPreference(Client.preferences.unknown6, 3);
+				Client.preferences.setPreference(Client.preferences.safeMode, 3);
 				save();
 				var7 = Client.getPerformanceMetric(3, 1000);
 				if (Client.preferences.displayMode.getValue() == 3) {
@@ -148,7 +148,7 @@ public class Preferences {
 		}
 		if (var5) {
 			try {
-				Client.preferences.setPreference(Client.preferences.unknown6, 5);
+				Client.preferences.setPreference(Client.preferences.safeMode, 5);
 				save();
 				var8 = Client.getPerformanceMetric(5, 1000);
 				if (Client.preferences.displayMode.getValue() == 5) {
@@ -160,7 +160,7 @@ public class Preferences {
 		}
 		if (var4) {
 			try {
-				Client.preferences.setPreference(Client.preferences.unknown6, 4);
+				Client.preferences.setPreference(Client.preferences.safeMode, 4);
 				save();
 				var6 = Client.getPerformanceMetric(1, 1000);
 				if (Client.preferences.displayMode.getValue() == 1) {
@@ -170,7 +170,7 @@ public class Preferences {
 				var0.method18313(2048);
 			}
 		}
-		Client.preferences.setPreference(Client.preferences.unknown6, 0);
+		Client.preferences.setPreference(Client.preferences.safeMode, 0);
 		if (var6 == -1 && var7 == -1) {
 			setAutosetup(var0);
 			return var0;
@@ -216,7 +216,7 @@ public class Preferences {
 			Client.preferences.setPreferencesDisplayMode(Client.preferences.displayMode, true);
 		} else {
 			Client.preferences.setPreference(Client.preferences.toolkit, 0);
-			Client.method486(0, false);
+			Client.setToolkit(0, false);
 		}
 		save();
 		autoSetupResult.setResultId(resultId);
@@ -243,7 +243,7 @@ public class Preferences {
 			Client.preferences.setPreferencesDisplayMode(Client.preferences.displayMode, true);
 		} else {
 			Client.preferences.setPreference(Client.preferences.toolkit, arg1);
-			Client.method486(arg1, false);
+			Client.setToolkit(arg1, false);
 		}
 		save();
 		arg0.setResultId(var3);

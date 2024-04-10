@@ -6,13 +6,13 @@ import deob.ObfuscatedName;
 public class FullscreenMode {
 
 	@ObfuscatedName("aal.e")
-	public int field8537;
+	public int width;
 
 	@ObfuscatedName("aal.n")
-	public int field8538;
+	public int height;
 
 	@ObfuscatedName("aal.m")
-	public int field8539;
+	public int bitDepth;
 
 	@ObfuscatedName("aal.k")
 	public int field8536;

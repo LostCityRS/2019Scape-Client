@@ -24,7 +24,7 @@ public class EntityRouteCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agp.n(I)V")
 	public void method2890() {
-		CutsceneEntity var1 = CutsceneManager.field1721[this.field10330];
+		CutsceneEntity var1 = CutsceneManager.entities[this.field10330];
 		CutsceneRoute var2 = CutsceneManager.field8358[this.field10331];
 		var2.method2906(var1, this.field10332);
 	}

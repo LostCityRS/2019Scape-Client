@@ -34,7 +34,7 @@ public class NativeMouseLogger extends MouseLogger {
 		var2.buf.p2_alt1(this.method10262(var1, 65535));
 		var2.buf.p1_alt1(var1.method19539() << 1 | var1.method19537() & 0x1);
 		Client.gameConnection.queue(var2);
-		var1.method17835();
+		var1.release();
 	}
 
 	@ObfuscatedName("alp.u(I)Z")

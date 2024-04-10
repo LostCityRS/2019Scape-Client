@@ -355,7 +355,7 @@ public class TwitchHardwarePlatform {
 	}
 
 	@ObfuscatedName("hy.j(Ldh;J)V")
-	public static void method4069(Toolkit arg0, long arg1) {
+	public static void update(Toolkit arg0, long arg1) {
 		if (field7388 == 3 || field7388 == 0) {
 			return;
 		}

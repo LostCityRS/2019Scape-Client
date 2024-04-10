@@ -22,7 +22,7 @@ public final class VarPlayerDomain implements VarDomain {
 	public HashTable field7610 = new HashTable(128);
 
 	@ObfuscatedName("wu.i(ZI)I")
-	public int method9623(boolean arg0) {
+	public int pollServerValue(boolean arg0) {
 		long var2 = MonotonicTime.get();
         for (LongNode var4 = (LongNode) (arg0 ? this.field7610.peekFront() : this.field7610.prev()); var4 != null; var4 = (LongNode) this.field7610.prev()) {
 			if ((var4.value & 0x3FFFFFFFFFFFFFFFL) < var2) {

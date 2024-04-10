@@ -16,7 +16,7 @@ public class LocalisedText {
 	public static final LocalisedText DEBUG_CONSOLE_ERROR = new LocalisedText("There was an error executing the command.", "Es gab einen Fehler beim Ausführen des Befehls.", "Une erreur s'est produite lors de l'exécution de la commande.", "Houve um erro quando o comando foi executado.", "Se produjo un error al ejecutar el comando.");
 
 	@ObfuscatedName("acz.m")
-	public static final LocalisedText field8948 = new LocalisedText("The developer console can be accessed with ALT-`, ALT-§ or ALT-².", "Die Entwicklerkonsole kann mit ALT+`, ALT+§ oder ALT+² aktiviert werden.", "La console de développement est accessible grâce aux touches ALT+`, ALT+§ ou ALT+².", "O painel de controle do desenvolvedor pode ser acessado com ALT-`, ALT-§ ou ALT-².", "Puedes acceder a la consola de desarrollador con ALT-`, ALT-§ o ALT-².");
+	public static final LocalisedText DEVELOPER_CONSOLE_SHORTCUT_INFO = new LocalisedText("The developer console can be accessed with ALT-`, ALT-§ or ALT-².", "Die Entwicklerkonsole kann mit ALT+`, ALT+§ oder ALT+² aktiviert werden.", "La console de développement est accessible grâce aux touches ALT+`, ALT+§ ou ALT+².", "O painel de controle do desenvolvedor pode ser acessado com ALT-`, ALT-§ ou ALT-².", "Puedes acceder a la consola de desarrollador con ALT-`, ALT-§ o ALT-².");
 
 	@ObfuscatedName("acz.k")
 	public static final LocalisedText DEBUG_CONSOLE_UNKNOWNCOMMAND = new LocalisedText("Unknown developer command: ", "Unbekannter Befehl: ", "Commande inconnue : ", "Comando desconhecido: ", "Comando desconocido: ");

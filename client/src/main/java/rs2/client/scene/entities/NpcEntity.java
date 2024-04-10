@@ -111,8 +111,8 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.hs(Lif;ZZZS)V")
 	public void method19157(NPCType arg0, boolean arg1, boolean arg2, boolean arg3) {
-		if (this.npcType != arg0 && MiniMenu.field562 && MiniMenu.method8494(this.localPlayerIndex)) {
-			MiniMenu.method6031();
+		if (this.npcType != arg0 && MiniMenu.open && MiniMenu.method8494(this.localPlayerIndex)) {
+			MiniMenu.close();
 		}
 		this.npcType = arg0;
 		if (this.npcType != null) {
@@ -554,7 +554,7 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.hc(Ljava/lang/String;III)V")
 	public void method19166(String arg0, int arg1, int arg2) {
-		int var4 = GameShell.method6016() * Client.graphicsDefaults.npcChatTimeout;
+		int var4 = GameShell.getLogicRate() * Client.graphicsDefaults.npcChatTimeout;
 		this.setChatLine(arg0, arg1, arg2, var4);
 	}
 
@@ -574,8 +574,8 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.m(B)Lakt;")
-	public CoordFine method4667() {
-		CoordGrid var1 = Client.world.method7727();
+	public CoordFine getTrackableCoord() {
+		CoordGrid var1 = Client.world.getBase();
 		return CoordFine.method258(this.level, (int) this.getTransform().trans.x + var1.x * 512, -((int) this.getTransform().trans.y), (int) this.getTransform().trans.z + var1.z * 512);
 	}
 

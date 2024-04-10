@@ -26,9 +26,9 @@ public class SetVarbitCutsceneAction extends CutsceneAction {
 
 	@ObfuscatedName("agx.n(I)V")
 	public void method2890() {
-		IntNode var1 = (IntNode) CutsceneManager.field1718.getNode(this.field10288);
+		IntNode var1 = (IntNode) CutsceneManager.varPlayerOverrides.getNode(this.field10288);
 		if (var1 == null) {
-			CutsceneManager.field1718.pushNode(new IntNode(this.field10289), this.field10288);
+			CutsceneManager.varPlayerOverrides.pushNode(new IntNode(this.field10289), this.field10288);
 		} else {
 			var1.value = this.field10289;
 		}

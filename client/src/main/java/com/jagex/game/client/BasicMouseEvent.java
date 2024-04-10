@@ -30,7 +30,7 @@ public final class BasicMouseEvent extends MouseEvent {
 	public int field12383;
 
 	@ObfuscatedName("asf.e(I)I")
-	public int method17848() {
+	public int getButtonAction() {
 		return this.field12385;
 	}
 
@@ -50,12 +50,12 @@ public final class BasicMouseEvent extends MouseEvent {
 	}
 
 	@ObfuscatedName("asf.k(I)I")
-	public int method17833() {
+	public int getCount() {
 		return this.field12383;
 	}
 
 	@ObfuscatedName("asf.l(B)V")
-	public void method17835() {
+	public void release() {
 		BasicMouseEvent[] var1 = field12388;
 		synchronized (field12388) {
 			if (field12384 < field7883 - 1) {

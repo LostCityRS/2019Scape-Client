@@ -59,7 +59,7 @@ public class NativeMouseEvent extends MouseEvent {
 	}
 
 	@ObfuscatedName("asp.l(B)V")
-	public void method17835() {
+	public void release() {
 		NativeMouseEvent[] var1 = field12413;
 		synchronized (field12413) {
 			if (field7658 < field2364 - 1) {
@@ -105,7 +105,7 @@ public class NativeMouseEvent extends MouseEvent {
 	}
 
 	@ObfuscatedName("asp.k(I)I")
-	public int method17833() {
+	public int getCount() {
 		switch(this.field12420) {
 			case 160:
 			case 512:
@@ -125,7 +125,7 @@ public class NativeMouseEvent extends MouseEvent {
 	}
 
 	@ObfuscatedName("asp.e(I)I")
-	public int method17848() {
+	public int getButtonAction() {
 		switch(this.field12420) {
 			case 160:
 			case 512:

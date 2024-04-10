@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public class CutsceneDefaults {
 
 	@ObfuscatedName("wx.e")
-	public Binding field7675;
+	public Binding cancelbinding;
 
 	public CutsceneDefaults(Js5 arg0) {
 		byte[] var2 = arg0.method6894(DefaultsGroup.CUTSCENE.js5GroupId);
@@ -25,7 +25,7 @@ public class CutsceneDefaults {
 				return;
 			}
 			if (var2 == 1) {
-				this.field7675 = Bindings.method4055(arg0);
+				this.cancelbinding = Bindings.method4055(arg0);
 			}
 		}
 	}

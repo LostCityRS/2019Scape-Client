@@ -138,10 +138,10 @@ public class Component {
 	public int clientcode = 0;
 
 	@ObfuscatedName("hf.au")
-	public byte field2186 = 0;
+	public byte xmode = 0;
 
 	@ObfuscatedName("hf.ar")
-	public byte field2187 = 0;
+	public byte ymode = 0;
 
 	@ObfuscatedName("hf.ap")
 	public byte field2356 = 0;
@@ -252,10 +252,10 @@ public class Component {
 	public boolean clickmask = true;
 
 	@ObfuscatedName("hf.bp")
-	public int field2224 = 1;
+	public int modelkind = 1;
 
 	@ObfuscatedName("hf.bj")
-	public int field2294;
+	public int model;
 
 	@ObfuscatedName("hf.bs")
 	public int field2298 = -1;
@@ -291,7 +291,7 @@ public class Component {
 	public int modelzoom = 100;
 
 	@ObfuscatedName("hf.cw")
-	public int field2227 = 0;
+	public int modelobjwidth = 0;
 
 	@ObfuscatedName("hf.ct")
 	public int field2238 = 0;
@@ -609,7 +609,7 @@ public class Component {
 	public int modelanim = -1;
 
 	@ObfuscatedName("hf.gt")
-	public AnimationNode field2170;
+	public AnimationNode modelAnimator;
 
 	@ObfuscatedName("hf.gh")
 	public Component[] subcomponents;
@@ -657,7 +657,7 @@ public class Component {
 	public ParticleSystem field2254;
 
 	@ObfuscatedName("hf.hg")
-	public NPCTypeCustomisation field2363;
+	public NPCTypeCustomisation customisation;
 
 	@ObfuscatedName("gb.e(Lpy;Lpy;Lpy;Lpy;I)V")
 	public static void method3669(Js5 arg0, Js5 arg1, Js5 arg2, Js5 arg3) {
@@ -669,7 +669,7 @@ public class Component {
 	}
 
 	@ObfuscatedName("xh.n(II)Lhf;")
-	public static Component method10202(int arg0) {
+	public static Component get(int arg0) {
 		int var1 = arg0 >> 16;
 		if (interfaces[var1] == null || interfaces[var1].getComponent(arg0) == null) {
 			boolean var2 = openInterface(var1, null);
@@ -687,7 +687,7 @@ public class Component {
 
 	@ObfuscatedName("ahh.k(IIB)Lhf;")
 	public static Component method16682(int arg0, int arg1) {
-		Component var2 = method10202(arg0);
+		Component var2 = get(arg0);
 		if (arg1 == -1) {
 			return var2;
 		} else if (var2 == null || var2.subcomponents == null || arg1 >= var2.subcomponents.length) {
@@ -776,8 +776,8 @@ public class Component {
 		this.hsize = buf.g2();
 		this.field2356 = buf.g1b();
 		this.field2174 = buf.g1b();
-		this.field2186 = buf.g1b();
-		this.field2187 = buf.g1b();
+		this.xmode = buf.g1b();
+		this.ymode = buf.g1b();
 		if (this.field2356 == 4 || this.field2174 == 4) {
 			this.aspectwidth = buf.g2();
 			this.aspectheight = buf.g2();
@@ -817,8 +817,8 @@ public class Component {
 			}
 		}
 		if (this.type == 6) {
-			this.field2224 = 1;
-			this.field2294 = buf.gSmart2or4null();
+			this.modelkind = 1;
+			this.model = buf.gSmart2or4null();
 			int var5 = buf.g1();
 			boolean var6 = (var5 & 0x1) == 1;
 			this.field2274 = (var5 & 0x2) == 2;
@@ -842,7 +842,7 @@ public class Component {
 			}
 			this.modelanim = buf.gSmart2or4null();
 			if (this.field2356 != 0) {
-				this.field2227 = buf.g2();
+				this.modelobjwidth = buf.g2();
 			}
 			if (this.field2174 != 0) {
 				this.field2238 = buf.g2();
@@ -1082,11 +1082,11 @@ public class Component {
 	@ObfuscatedName("hf.o(Ldh;ILaof;Laov;Laod;Laon;Laos;Lem;Lep;Laaq;Lxg;I)Ldo;")
 	public Model method3944(Toolkit arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, SeqTypeList arg6, VariableTypeProvider arg7, VarIntDomain arg8, AnimationNode arg9, PlayerModel arg10) {
 		field2338 = false;
-		if (this.field2224 == 0) {
+		if (this.modelkind == 0) {
 			return null;
-		} else if (this.field2224 == 1 && this.field2294 == -1) {
+		} else if (this.modelkind == 1 && this.model == -1) {
 			return null;
-		} else if (this.field2224 == 1) {
+		} else if (this.modelkind == 1) {
 			int var12 = arg1;
 			if (arg9 != null) {
 				arg1 |= arg9.method14358();
@@ -1111,13 +1111,13 @@ public class Component {
 				}
 				arg1 |= 0x8000;
 			}
-			long var30 = (long) arg0.field1595 << 59 | (long) this.field2224 << 55 | (long) this.field2294 << 38 | var13 & 0x3FFFFFFFFFL;
+			long var30 = (long) arg0.field1595 << 59 | (long) this.modelkind << 55 | (long) this.model << 38 | var13 & 0x3FFFFFFFFFL;
 			Model var32 = (Model) modelCache.get(var30);
 			if (var32 == null || arg0.method2394(var32.method1691(), arg1) != 0) {
 				if (var32 != null) {
 					arg1 = arg0.method2213(arg1, var32.method1691());
 				}
-				ModelUnlit var33 = ModelUnlit.get(modelsJs5, this.field2294, 0);
+				ModelUnlit var33 = ModelUnlit.get(modelsJs5, this.model, 0);
 				if (var33 == null) {
 					field2338 = true;
 					return null;
@@ -1147,15 +1147,15 @@ public class Component {
 			}
 			var32.method1690(var12);
 			return var32;
-		} else if (this.field2224 == 2) {
-			Model var36 = ((NPCType) arg4.list(this.field2294)).getHeadModel(arg0, arg1, arg7, arg8, arg9, this.field2363);
+		} else if (this.modelkind == 2) {
+			Model var36 = ((NPCType) arg4.list(this.model)).getHeadModel(arg0, arg1, arg7, arg8, arg9, this.customisation);
 			if (var36 == null) {
 				field2338 = true;
 				return null;
 			} else {
 				return var36;
 			}
-		} else if (this.field2224 == 3) {
+		} else if (this.modelkind == 3) {
 			if (arg10 == null) {
 				return null;
 			}
@@ -1166,8 +1166,8 @@ public class Component {
 			} else {
 				return var37;
 			}
-		} else if (this.field2224 == 4) {
-			ObjType var38 = (ObjType) arg5.list(this.field2294);
+		} else if (this.modelkind == 4) {
+			ObjType var38 = (ObjType) arg5.list(this.model);
 			Model var39 = var38.method14644(arg0, arg1, 10, arg10, arg9, 0, 0, 0, 0);
 			if (var39 == null) {
 				field2338 = true;
@@ -1175,21 +1175,21 @@ public class Component {
 			} else {
 				return var39;
 			}
-		} else if (this.field2224 == 6) {
-			Model var40 = ((NPCType) arg4.list(this.field2294)).getSequencedModel(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.field2363);
+		} else if (this.modelkind == 6) {
+			Model var40 = ((NPCType) arg4.list(this.model)).getSequencedModel(arg0, arg1, arg2, arg7, arg8, arg9, null, null, null, 0, this.customisation);
 			if (var40 == null) {
 				field2338 = true;
 				return null;
 			} else {
 				return var40;
 			}
-		} else if (this.field2224 != 7) {
+		} else if (this.modelkind != 7) {
 			return null;
 		} else if (arg10 == null) {
 			return null;
 		} else {
-			int var41 = this.field2294 >>> 16;
-			int var42 = this.field2294 & 0xFFFF;
+			int var41 = this.model >>> 16;
+			int var42 = this.model & 0xFFFF;
 			int var43 = this.field2298;
 			Model var44 = arg10.method10130(arg0, arg1, arg3, arg6, arg9, var41, var42, var43);
 			if (var44 == null) {

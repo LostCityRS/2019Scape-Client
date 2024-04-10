@@ -956,10 +956,10 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 			Client.drawInterfaceComponents(this.field10461.method3923(), -1, arg1, arg2, arg3, arg4, arg5, arg6, arg0, false);
 		} else if (arg0 == -1) {
 			for (int var8 = 0; var8 < 114; var8++) {
-				Client.field11072[var8] = true;
+				Client.topLevelComponentRedrawRequestedTemp[var8] = true;
 			}
 		} else {
-			Client.field11072[arg0] = true;
+			Client.topLevelComponentRedrawRequestedTemp[arg0] = true;
 		}
 	}
 
@@ -973,7 +973,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	@ObfuscatedName("ahm.cw(I)Lve;")
 	public CoordGrid coord() {
 		Vector3 var1 = this.getTransform().trans;
-		CoordGrid var2 = Client.world.method7727();
+		CoordGrid var2 = Client.world.getBase();
 		int var3 = ((int) var1.x >> 9) + var2.x;
 		int var4 = ((int) var1.z >> 9) + var2.z;
 		return new CoordGrid(this.level, var3, var4);
@@ -982,7 +982,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	@ObfuscatedName("ahm.ct(I)Lakt;")
 	public CoordFine coordFine() {
 		Vector3 var1 = this.getTransform().trans;
-		CoordGrid var2 = Client.world.method7727();
+		CoordGrid var2 = Client.world.getBase();
 		int var3 = var2.x * 512 + (int) var1.x;
 		int var4 = (int) var1.y;
 		int var5 = var2.z * 512 + (int) var1.z;

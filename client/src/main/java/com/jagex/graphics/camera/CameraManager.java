@@ -119,9 +119,9 @@ public class CameraManager {
 		}
 		CoordFine var17 = new CoordFine(0, (int) var2.x, (int) var2.y, (int) var2.z);
 		var0.method16671(var17);
-		CoordGrid var18 = Client.world.method7727();
+		CoordGrid var18 = Client.world.getBase();
 		int var19 = var18.x << 9;
 		int var20 = var18.z << 9;
-		camera.method4681(0.02F, Client.world.method7744().levelHeightmap, Client.world.getSceneLevelTileFlags(), var19, var20);
+		camera.update(0.02F, Client.world.method7744().levelHeightmap, Client.world.getSceneLevelTileFlags(), var19, var20);
 	}
 }

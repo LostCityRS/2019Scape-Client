@@ -86,7 +86,7 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("cc.e(B)Z")
 	public static boolean method1584() {
-		return !Client.method2092(Client.state);
+		return !Client.isStateLoading(Client.state);
 	}
 
 	@ObfuscatedName("i.n(I)V")
@@ -160,7 +160,7 @@ public class DeveloperConsole {
 	}
 
 	@ObfuscatedName("xd.u(B)V")
-	public static void method10298() {
+	public static void update() {
 		if (field776 * 36 < 102) {
 			field776 = field776 * 36 + 6;
 		}
@@ -192,8 +192,8 @@ public class DeveloperConsole {
 			}
 			Client.field10817 = 0;
 		}
-		for (int var3 = 0; var3 < Client.field10819; var3++) {
-			KeyboardEvent var4 = Client.field11067[var3];
+		for (int var3 = 0; var3 < Client.allKeyboardEventCount; var3++) {
+			KeyboardEvent var4 = Client.allKeyboardEvents[var3];
 			int var5 = var4.method9141();
 			char var6 = var4.method9131();
 			int var7 = var4.method9134();
@@ -248,12 +248,12 @@ public class DeveloperConsole {
 				method3085();
 				commandcharpointer = currententry.length();
 			} else if (StringTools.charIsAlphaNumeric(var6) || "\\/.:, _-+[]~@".indexOf(var6) != -1) {
-				currententry = currententry.substring(0, commandcharpointer) + Client.field11067[var3].method9131() + currententry.substring(commandcharpointer);
+				currententry = currententry.substring(0, commandcharpointer) + Client.allKeyboardEvents[var3].method9131() + currententry.substring(commandcharpointer);
 				commandcharpointer++;
 			}
 		}
-		Client.field10819 = 0;
-		Client.field10822 = 0;
+		Client.allKeyboardEventCount = 0;
+		Client.keyboardEventCount = 0;
 		Client.method9734();
 	}
 
@@ -331,7 +331,7 @@ public class DeveloperConsole {
 	}
 
 	@ObfuscatedName("ky.r(Ldh;I)V")
-	public static void method5378(Toolkit toolkit) {
+	public static void draw(Toolkit toolkit) {
 		if (TwitchHardwarePlatform.isStreaming() && TwitchHardwarePlatform.method8634()) {
 			TwitchHardwarePlatform.drawTwitchStream(0, 0, GameShell.canvasWid, 350);
 		}
@@ -442,7 +442,7 @@ public class DeveloperConsole {
 				return;
 			}
 			if (arg0.equalsIgnoreCase("getcamerapos")) {
-				CoordGrid var5 = Client.world.method7727();
+				CoordGrid var5 = Client.world.getBase();
 				if (Client.cameraState == 3) {
 					Vector3 var6 = Client.cam2.method4714();
 					Vector3 var7 = Client.cam2.method4711();
@@ -514,7 +514,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.equalsIgnoreCase("tk0")) {
-					Client.method486(0, false);
+					Client.setToolkit(0, false);
 					if (Client.preferences.displayMode.getValue() == 0) {
 						addline("Success");
 						Client.preferences.setPreference(Client.preferences.toolkit, 0);
@@ -526,7 +526,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.equalsIgnoreCase("tk1")) {
-					Client.method486(1, false);
+					Client.setToolkit(1, false);
 					if (Client.preferences.displayMode.getValue() == 1) {
 						addline("Success");
 						Client.preferences.setPreference(Client.preferences.toolkit, 1);
@@ -538,7 +538,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.equalsIgnoreCase("tk3")) {
-					Client.method486(3, false);
+					Client.setToolkit(3, false);
 					if (Client.preferences.displayMode.getValue() == 3) {
 						addline("Success");
 						Client.preferences.setPreference(Client.preferences.toolkit, 3);
@@ -550,7 +550,7 @@ public class DeveloperConsole {
 					return;
 				}
 				if (arg0.equalsIgnoreCase("tk5")) {
-					Client.method486(5, false);
+					Client.setToolkit(5, false);
 					if (Client.preferences.displayMode.getValue() == 5) {
 						addline("Success");
 						Client.preferences.setPreference(Client.preferences.toolkit, 5);
@@ -769,10 +769,10 @@ public class DeveloperConsole {
 	@ObfuscatedName("xi.q(B)V")
 	public static void method10153() {
 		if (Client.preferences.unknown7.getValue() == 1) {
-			Client.field3183.method7680(new RebuildRequest(RebuildType.field5070, null));
+			Client.asyncRebuild.method7680(new RebuildRequest(RebuildType.field5070, null));
 		} else {
 			Client.world.rebuild();
-			MiniMap.method5065();
+			MiniMap.rebuild();
 		}
 	}
 }

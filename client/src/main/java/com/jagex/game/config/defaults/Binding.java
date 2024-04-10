@@ -9,5 +9,5 @@ import deob.ObfuscatedName;
 public interface Binding {
 
 	@ObfuscatedName("vt.e(Lakm;[Lut;ILub;I)Z")
-	boolean method9396(MouseEvent arg0, KeyboardEvent[] arg1, int arg2, Keyboard arg3);
+	boolean test(MouseEvent arg0, KeyboardEvent[] arg1, int arg2, Keyboard arg3);
 }

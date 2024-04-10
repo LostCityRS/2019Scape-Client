@@ -92,7 +92,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	}
 
 	@ObfuscatedName("alb.p(I)Lakm;")
-	public MouseEvent method9093() {
+	public MouseEvent pollEvent() {
 		return (MouseEvent) this.field11695.pollFront();
 	}
 
@@ -133,7 +133,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	}
 
 	@ObfuscatedName("alb.d(I)V")
-	public void method9120() {
+	public void unbind() {
 		this.method18297();
 	}
 

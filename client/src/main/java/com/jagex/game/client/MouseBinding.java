@@ -24,12 +24,12 @@ public class MouseBinding implements Binding {
 	}
 
 	@ObfuscatedName("vu.e(Lakm;[Lut;ILub;I)Z")
-	public boolean method9396(MouseEvent arg0, KeyboardEvent[] arg1, int arg2, Keyboard arg3) {
+	public boolean test(MouseEvent arg0, KeyboardEvent[] arg1, int arg2, Keyboard arg3) {
 		if (arg0 != null) {
-			if (this.field7408 != arg0.method17848()) {
+			if (this.field7408 != arg0.getButtonAction()) {
 				return false;
 			}
-			if (this.field7407 > arg0.method17833()) {
+			if (this.field7407 > arg0.getCount()) {
 				return false;
 			}
 			int[] var5 = this.field7409;

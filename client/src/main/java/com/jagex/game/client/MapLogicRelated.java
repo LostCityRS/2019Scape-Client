@@ -16,7 +16,7 @@ public class MapLogicRelated {
 
 	@ObfuscatedName("pg.e(ZB)V")
 	public static void noTimeoutConnections(boolean force) {
-		Client.audioApi.method3149();
+		Client.audioApi.update();
 		if (!Client.isStateGame(Client.state)) {
 			return;
 		}
@@ -38,6 +38,6 @@ public class MapLogicRelated {
 				}
 			}
 		}
-		Client.audioApi.method3149();
+		Client.audioApi.update();
 	}
 }

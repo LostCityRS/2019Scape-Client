@@ -38,7 +38,7 @@ public class ObjIconFactory {
 	}
 
 	@ObfuscatedName("xk.n(Ldh;S)V")
-	public static void method10323(Toolkit arg0) {
+	public static void update(Toolkit arg0) {
 		if (field631.length() == 0) {
 			return;
 		}

@@ -23,7 +23,7 @@ public class GraphicsPacketQueue {
 	}
 
 	@ObfuscatedName("o.n(IB)V")
-	public static void method473(int arg0) {
+	public static void sendDirectXFailure(int arg0) {
 		method4922(new ClientDirectXFailure(arg0));
 	}
 
@@ -34,7 +34,7 @@ public class GraphicsPacketQueue {
 
 	@ObfuscatedName("ku.k(IIII)V")
 	public static void method5144(int arg0, int arg1, int arg2) {
-		method4922(new ClientMapBuildStuck(arg0, arg1, arg2, Client.field10827, Client.js5TcpClient.errorCount, Client.js5TcpClient.js5State, Client.js5TcpClient.isUrgentsFull(), Client.js5TcpClient.isPrefetchesFull(), Client.js5DiskCache.getPendingRequests()));
+		method4922(new ClientMapBuildStuck(arg0, arg1, arg2, Client.js5ConnectState, Client.js5TcpClient.errorCount, Client.js5TcpClient.js5State, Client.js5TcpClient.isUrgentsFull(), Client.js5TcpClient.isPrefetchesFull(), Client.js5DiskCache.getPendingRequests()));
 	}
 
 	@ObfuscatedName("amf.f(Lacw;Ljava/lang/String;ILjava/lang/Throwable;I)V")
@@ -51,7 +51,7 @@ public class GraphicsPacketQueue {
 	}
 
 	@ObfuscatedName("ud.l(I)V")
-	public static void method9189() {
+	public static void flush() {
 		if (Client.state != 18 && Client.state != 3 || Client.gameConnection == null) {
 			return;
 		}

@@ -56,7 +56,7 @@ public abstract class MouseLogger {
 						var8 = 65534;
 					}
 					if (this.field7954 == var8 && this.field7951 == var7) {
-						var6.method17835();
+						var6.release();
 					} else {
 						if (var1 == null) {
 							var1 = this.method10267();
@@ -108,7 +108,7 @@ public abstract class MouseLogger {
 						var4++;
 						this.method10264(var1.buf, var6);
 						this.field7953 = var6.method17834();
-						var6.method17835();
+						var6.release();
 					}
 				}
 			}

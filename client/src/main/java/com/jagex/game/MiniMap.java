@@ -66,7 +66,7 @@ public class MiniMap {
 	public static int flagSceneTileZ = -1;
 
 	@ObfuscatedName("at.r")
-	public static boolean field730 = true;
+	public static boolean mapFlag = true;
 
 	@ObfuscatedName("at.v")
 	public static boolean field732 = false;
@@ -100,7 +100,7 @@ public class MiniMap {
 	}
 
 	@ObfuscatedName("jg.m(S)V")
-	public static void method5065() {
+	public static void rebuild() {
 		field734 = null;
 		field722 = -1;
 	}
@@ -289,7 +289,7 @@ public class MiniMap {
 			WorldMapRelated var47 = Client.world.method7871();
 			if (var47 != null) {
 				Client.mapElementTypeList.cacheResize(1024, 64);
-				CoordGrid var48 = Client.world.method7727();
+				CoordGrid var48 = Client.world.getBase();
 				for (int var49 = 0; var49 < var47.field6777; var49++) {
 					int var50 = var47.field6776[var49];
 					if (var50 >> 28 == Client.localPlayerEntity.level) {
@@ -541,7 +541,7 @@ public class MiniMap {
 		}
 		arg0.method2326(field721);
 		arg0.method2263();
-		CoordGrid var6 = Client.world.method7727();
+		CoordGrid var6 = Client.world.getBase();
 		int var7;
 		int var8;
 		int var9;
@@ -607,7 +607,7 @@ public class MiniMap {
 			if (flagSceneTileX != -1) {
 				int var31 = flagSceneTileX * 4 + 2 - var7 / 128 + (Client.localPlayerEntity.size() - 1) * 2;
 				int var32 = flagSceneTileZ * 4 + 2 - var8 / 128 + (Client.localPlayerEntity.size() - 1) * 2;
-				drawOnMinimap(arg1, var5, arg2 - DefaultSprites.field11888, arg3 - DefaultSprites.field10232, var31, var32, DefaultSprites.mapflagSprites[field730 ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
+				drawOnMinimap(arg1, var5, arg2 - DefaultSprites.field11888, arg3 - DefaultSprites.field10232, var31, var32, DefaultSprites.mapflagSprites[mapFlag ? 1 : 0], 100.0D, MapAlignmentX.field2420, MapAlignmentY.field2426);
 			}
 			if (!Client.localPlayerEntity.visibility.isNotVisible()) {
 				arg0.fillRectangle(arg1.width / 2 + arg2 - 1, arg1.height / 2 + arg3 - 1, 3, 3, -1);
@@ -618,7 +618,7 @@ public class MiniMap {
 
 	@ObfuscatedName("je.o(Ldh;IILhf;Lch;IIB)V")
 	public static void drawNpcsOnMinimap(Toolkit arg0, int arg1, int arg2, Component arg3, SpriteRelated arg4, int arg5, int arg6) {
-		for (int var7 = 0; var7 < Client.npcCount; var7++) {
+		for (int var7 = 0; var7 < Client.npcSlotCount; var7++) {
 			ObjectNode var8 = (ObjectNode) Client.npcs.getNode((long) Client.field11036[var7]);
 			if (var8 != null) {
 				NpcEntity var9 = (NpcEntity) var8.value;

@@ -192,7 +192,7 @@ public class Algorithms {
 	}
 
 	@ObfuscatedName("dz.z([I[Ljava/lang/Object;I)V")
-	public static void method1901(int[] arg0, Object[] arg1) {
+	public static void quickSortParallel(int[] arg0, Object[] arg1) {
 		method4397(arg0, arg1, 0, arg0.length - 1);
 	}
 

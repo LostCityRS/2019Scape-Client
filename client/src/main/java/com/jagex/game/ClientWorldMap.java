@@ -70,7 +70,7 @@ public class ClientWorldMap extends WorldMap {
 	public static int field11654;
 
 	@ObfuscatedName("kg.ca")
-	public static Component field3044;
+	public static Component component;
 
 	@ObfuscatedName("alj.cx")
 	public static boolean field11663 = false;
@@ -183,7 +183,7 @@ public class ClientWorldMap extends WorldMap {
 			int var5 = -1;
 			int var6 = -1;
 			Vector3 var7 = Client.localPlayerEntity.getTransform().trans;
-			CoordGrid var8 = Client.world.method7727();
+			CoordGrid var8 = Client.world.getBase();
 			if (WorldMap.currentWorldMap.method19471(Client.localPlayerEntity.level, ((int) var7.x >> 9) + var8.x, ((int) var7.z >> 9) + var8.z, var4)) {
 				var5 = var4[1] - WorldMap.field6786;
 				var6 = var4[2] - WorldMap.field6808;
@@ -325,11 +325,11 @@ public class ClientWorldMap extends WorldMap {
 	}
 
 	@ObfuscatedName("abv.dp(B)V")
-	public static void method14689() {
+	public static void reset() {
 		field11253 = null;
 		loading = 0;
 		field6793 = 0;
-		field3044 = null;
+		component = null;
 		method8508();
 		field6806.removeAll();
 		WorldMap.field6805 = null;
@@ -357,7 +357,7 @@ public class ClientWorldMap extends WorldMap {
 		if (WorldMap.currentWorldMap != null) {
 			var0 = WorldMap.currentWorldMap.id;
 		}
-		method14689();
+		reset();
 		for (int var1 = 0; var1 < 3; var1++) {
 			for (int var2 = 0; var2 < 5; var2++) {
 				field11659[var1][var2] = null;
@@ -372,7 +372,7 @@ public class ClientWorldMap extends WorldMap {
 
 	@ObfuscatedName("na.db(B)V")
 	public static void method6003() {
-		method14689();
+		reset();
 		WorldMap.currentWorldMap = null;
 		field7280 = null;
 		field11667.removeAll();
@@ -393,9 +393,9 @@ public class ClientWorldMap extends WorldMap {
 			int var6 = arg3 / 2 + arg1;
 			int var7 = arg4 / 2 + arg2 - 18 - var5;
 			arg0.fillRectangle(arg1, arg2, arg3, arg4, -16777216, 0);
-			arg0.drawRectangle(var6 - 152, var7, 304, 34, Client.field10825[Client.field10773].getRGB(), 0);
-			arg0.fillRectangle(var6 - 150, var7 + 2, loading * 3, 30, Client.field10824[Client.field10773].getRGB(), 0);
-			DefaultSprites.b12FullFont.drawStringCenter(LocalisedText.LOADINGDOTDOTDOT.forLang(Client.language), var6, var5 + var7, Client.field10826[Client.field10773].getRGB(), -1);
+			arg0.drawRectangle(var6 - 152, var7, 304, 34, Client.loadingBarOutlineColour[Client.field10773].getRGB(), 0);
+			arg0.fillRectangle(var6 - 150, var7 + 2, loading * 3, 30, Client.loadingBarFillColour[Client.field10773].getRGB(), 0);
+			DefaultSprites.b12FullFont.drawStringCenter(LocalisedText.LOADINGDOTDOTDOT.forLang(Client.language), var6, var5 + var7, Client.loadingBarTextColour[Client.field10773].getRGB(), -1);
 			return;
 		}
 		int var8 = field11443 - (int) ((float) arg3 / WorldMap.field6803);
@@ -1013,7 +1013,7 @@ public class ClientWorldMap extends WorldMap {
 		method8521(arg0);
 		field6842 = false;
 		if (WorldMap.currentWorldMap != var4) {
-			method14689();
+			reset();
 		}
 		field11656 = arg1;
 		field11647 = arg2;
@@ -1044,7 +1044,7 @@ public class ClientWorldMap extends WorldMap {
 		boolean var3 = method8510(var2);
 		if (var3) {
 			field6842 = true;
-			method14689();
+			reset();
 		}
 	}
 
