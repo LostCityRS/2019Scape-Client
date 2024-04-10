@@ -16,7 +16,7 @@ public class Js5DiskCache implements Runnable {
 	public int pendingRequests = 0;
 
 	@ObfuscatedName("pf.m")
-	public boolean field4439 = false;
+	public boolean stop = false;
 
 	@ObfuscatedName("pf.k")
 	public Thread thread = new Thread(this);
@@ -28,34 +28,34 @@ public class Js5DiskCache implements Runnable {
 	}
 
 	@ObfuscatedName("pf.e(ILuf;S)Latf;")
-	public Js5WorkerRequest method6997(int arg0, DiskStore arg1) {
+	public Js5WorkerRequest readSynchronous(int arg0, DiskStore arg1) {
 		Js5WorkerRequest var3 = new Js5WorkerRequest();
-		var3.field12559 = 1;
+		var3.type = 1;
 		SecondaryLinkedList var4 = this.queue;
 		synchronized (this.queue) {
-			Js5WorkerRequest var5 = (Js5WorkerRequest) this.queue.peekFront();
+			Js5WorkerRequest other = (Js5WorkerRequest) this.queue.peekFront();
 			while (true) {
-				if (var5 == null) {
+				if (other == null) {
 					break;
 				}
-				if (var5.secondaryNodeId == (long) arg0 && var5.diskStore == arg1 && var5.field12559 == 2) {
-					var3.bytes = var5.bytes;
-					var3.awaitingResponse = false;
+				if (other.secondaryNodeId == (long) arg0 && other.diskStore == arg1 && other.type == 2) {
+					var3.bytes = other.bytes;
+					var3.incomplete = false;
 					return var3;
 				}
-				var5 = (Js5WorkerRequest) this.queue.prev();
+				other = (Js5WorkerRequest) this.queue.prev();
 			}
 		}
-		var3.bytes = arg1.method9010(arg0);
-		var3.awaitingResponse = false;
+		var3.bytes = arg1.read(arg0);
+		var3.incomplete = false;
 		var3.urgent = true;
 		return var3;
 	}
 
 	@ObfuscatedName("pf.n(I[BLuf;I)Latf;")
-	public Js5WorkerRequest method6988(int arg0, byte[] arg1, DiskStore arg2) {
+	public Js5WorkerRequest write(int arg0, byte[] arg1, DiskStore arg2) {
 		Js5WorkerRequest var4 = new Js5WorkerRequest();
-		var4.field12559 = 2;
+		var4.type = 2;
 		var4.secondaryNodeId = arg0;
 		var4.bytes = arg1;
 		var4.diskStore = arg2;
@@ -65,9 +65,9 @@ public class Js5DiskCache implements Runnable {
 	}
 
 	@ObfuscatedName("pf.m(ILuf;B)Latf;")
-	public Js5WorkerRequest method6996(int arg0, DiskStore arg1) {
+	public Js5WorkerRequest read(int arg0, DiskStore arg1) {
 		Js5WorkerRequest var3 = new Js5WorkerRequest();
-		var3.field12559 = 3;
+		var3.type = 3;
 		var3.secondaryNodeId = arg0;
 		var3.diskStore = arg1;
 		var3.urgent = false;
@@ -86,7 +86,7 @@ public class Js5DiskCache implements Runnable {
 	}
 
 	public void run() {
-		while (!this.field4439) {
+		while (!this.stop) {
 			SecondaryLinkedList var1 = this.queue;
 			Js5WorkerRequest var2;
 			synchronized (this.queue) {
@@ -101,20 +101,20 @@ public class Js5DiskCache implements Runnable {
 				this.pendingRequests--;
 			}
 			try {
-				if (var2.field12559 == 2) {
+				if (var2.type == 2) {
 					var2.diskStore.method9011((int) var2.secondaryNodeId, var2.bytes, var2.bytes.length);
-				} else if (var2.field12559 == 3) {
-					var2.bytes = var2.diskStore.method9010((int) var2.secondaryNodeId);
+				} else if (var2.type == 3) {
+					var2.bytes = var2.diskStore.read((int) var2.secondaryNodeId);
 				}
 			} catch (Exception var6) {
 				JagException.report(null, var6);
 			}
-			var2.awaitingResponse = false;
+			var2.incomplete = false;
 		}
 	}
 
 	@ObfuscatedName("pf.f(I)I")
-	public int method6991() {
+	public int getPendingRequests() {
 		SecondaryLinkedList var1 = this.queue;
 		synchronized (this.queue) {
 			return this.pendingRequests;
@@ -122,8 +122,8 @@ public class Js5DiskCache implements Runnable {
 	}
 
 	@ObfuscatedName("pf.w(I)V")
-	public void method6992() {
-		this.field4439 = true;
+	public void quit() {
+		this.stop = true;
 		SecondaryLinkedList var1 = this.queue;
 		synchronized (this.queue) {
 			this.queue.notifyAll();

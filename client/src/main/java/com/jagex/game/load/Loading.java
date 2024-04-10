@@ -258,7 +258,7 @@ public class Loading {
 			if (Client.js5Client == null) {
 				Client.js5Client = new Js5Client(Client.js5TcpClient, Client.js5HttpClient, Client.js5DiskCache, PublicKeys.field623, PublicKeys.field625);
 			}
-			if (!Client.js5Client.method6834()) {
+			if (!Client.js5Client.loadMasterIndex()) {
 				return 0;
 			}
 			Client.method3596(0, null, true);

@@ -168,7 +168,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 						this.outPos += pos;
 						if (buf.pos == off) {
 							this.currentRequest.secondaryRemove();
-							this.currentRequest.awaitingResponse = false;
+							this.currentRequest.incomplete = false;
 							this.currentRequest = null;
 						} else if (this.outPos == 102400) {
 							this.outPos = 0;

@@ -3,12 +3,12 @@ package com.jagex.core.datastruct;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("is")
-public class IntTreeMap {
+public class IntHashTable {
 
 	@ObfuscatedName("is.e")
 	public int[] field2655;
 
-	public IntTreeMap(int[] arg0) {
+	public IntHashTable(int[] arg0) {
 		int var2;
 		for (var2 = 1; var2 <= (arg0.length >> 1) + arg0.length; var2 <<= 0x1) {
 		}

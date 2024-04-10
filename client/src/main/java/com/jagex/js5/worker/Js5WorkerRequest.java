@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public class Js5WorkerRequest extends Js5Request {
 
 	@ObfuscatedName("atf.r")
-	public int field12559;
+	public int type;
 
 	@ObfuscatedName("atf.v")
 	public DiskStore diskStore;
@@ -18,7 +18,7 @@ public class Js5WorkerRequest extends Js5Request {
 
 	@ObfuscatedName("atf.e(I)[B")
 	public byte[] getBytes() {
-		if (this.awaitingResponse) {
+		if (this.incomplete) {
 			throw new RuntimeException("Not ready!");
 		}
 
@@ -27,6 +27,6 @@ public class Js5WorkerRequest extends Js5Request {
 
 	@ObfuscatedName("atf.n(I)I")
 	public int getPercentageComplete() {
-		return this.awaitingResponse ? 0 : 100;
+		return this.incomplete ? 0 : 100;
 	}
 }

@@ -11,48 +11,50 @@ import java.math.BigInteger;
 public class Js5MasterIndex {
 
 	@ObfuscatedName("qp.e")
-	public Js5MasterIndexArchiveData[] field4480;
+	public Js5MasterIndexArchiveData[] archiveData;
 
-	public Js5MasterIndex(Packet arg0, BigInteger arg1, BigInteger arg2) {
-		arg0.pos = 5;
+	public Js5MasterIndex(Packet buf, BigInteger exponent, BigInteger modulus) {
+		buf.pos = 5;
 
-		int var4 = arg0.g1();
-		arg0.pos += var4 * 80;
+		int var4 = buf.g1();
+		buf.pos += var4 * 80;
 
-		byte[] var5 = new byte[arg0.data.length - arg0.pos];
-		arg0.gdata(var5, 0, var5.length);
+		byte[] var5 = new byte[buf.data.length - buf.pos];
+		buf.gdata(var5, 0, var5.length);
 
-		byte[] var8;
-		if (arg1 == null || arg2 == null || !Client.ENABLE_JS5_RSA) {
-			var8 = var5;
+		byte[] raw;
+		if (exponent == null || modulus == null || !Client.ENABLE_JS5_RSA) {
+			raw = var5;
 		} else {
 			BigInteger var6 = new BigInteger(var5);
-			BigInteger var7 = var6.modPow(arg1, arg2);
-			var8 = var7.toByteArray();
+			BigInteger var7 = var6.modPow(exponent, modulus);
+			raw = var7.toByteArray();
 		}
 
-		if (var8.length != 65) {
-			throw new RuntimeException("Incorrect Whirlpool length - got: " + var8.length + " bytes");
+		if (raw.length != 65) {
+			throw new RuntimeException("Incorrect Whirlpool length - got: " + raw.length + " bytes");
 		}
 
-		byte[] var9 = Whirlpool.method18308(arg0.data, 5, arg0.pos - var5.length - 5);
-		for (int var10 = 0; var10 < 64; var10++) {
-			if (var8[var10 + 1] != var9[var10]) {
-	            // throw new RuntimeException("Masterindex Whirlpool from server does not match my calculation - expected:" + hexString(var8) + " got:" + hexString(var9));
+		byte[] digest = Whirlpool.compute(buf.data, 5, buf.pos - var5.length - 5);
+
+		for (int i = 0; i < 64; i++) {
+			if (raw[i + 1] != digest[i]) {
+	            // throw new RuntimeException("Masterindex Whirlpool from server does not match my calculation - expected:" + hexString(raw) + " got:" + hexString(digest));
 				throw new RuntimeException("Masterindex Whirlpool from server does not match my calculation");
 			}
 		}
 
-		this.field4480 = new Js5MasterIndexArchiveData[var4];
-		for (int var11 = 0; var11 < var4; var11++) {
-			arg0.pos = var11 * 80 + 6;
-			int var12 = arg0.g4s();
-			int var13 = arg0.g4s();
-			int var14 = arg0.g4s();
-			int var15 = arg0.g4s();
-			byte[] var16 = new byte[64];
-			arg0.gdata(var16, 0, 64);
-			this.field4480[var11] = new Js5MasterIndexArchiveData(var12, var14, var13, var15, var16);
+		this.archiveData = new Js5MasterIndexArchiveData[var4];
+		for (int i = 0; i < var4; i++) {
+			buf.pos = i * 80 + 6;
+
+			int crc = buf.g4s();
+			int version = buf.g4s();
+			int groupCount = buf.g4s();
+			int var15 = buf.g4s();
+			byte[] whirlpool = new byte[64];
+			buf.gdata(whirlpool, 0, 64);
+			this.archiveData[i] = new Js5MasterIndexArchiveData(crc, groupCount, version, var15, whirlpool);
 		}
 	}
 }

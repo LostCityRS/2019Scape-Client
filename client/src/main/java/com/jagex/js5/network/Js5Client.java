@@ -13,28 +13,28 @@ import java.math.BigInteger;
 public class Js5Client {
 
 	@ObfuscatedName("px.e")
-	public Js5TcpClient field4371;
+	public Js5TcpClient tcpClient;
 
 	@ObfuscatedName("px.n")
-	public Js5HttpClient field4372;
+	public Js5HttpClient httpClient;
 
 	@ObfuscatedName("px.m")
-	public Js5DiskCache field4369;
+	public Js5DiskCache diskCache;
 
 	@ObfuscatedName("px.k")
-	public BigInteger field4370;
+	public BigInteger rsaExponent;
 
 	@ObfuscatedName("px.f")
-	public BigInteger field4373;
+	public BigInteger rsaModulus;
 
 	@ObfuscatedName("px.w")
-	public Js5NetRequest field4374;
+	public Js5NetRequest masterIndexRequest;
 
 	@ObfuscatedName("px.l")
-	public Js5HttpRequest field4375;
+	public Js5HttpRequest httpMasterIndexRequest;
 
 	@ObfuscatedName("px.u")
-	public Js5MasterIndex field4376;
+	public Js5MasterIndex masterIndex;
 
 	@ObfuscatedName("px.z")
 	public Js5MasterIndex field4377;
@@ -43,51 +43,60 @@ public class Js5Client {
 	public boolean field4378 = false;
 
 	@ObfuscatedName("px.d")
-	public Js5NetResourceProvider[] field4379;
+	public Js5NetResourceProvider[] resourceProviders;
 
-	public Js5Client(Js5TcpClient arg0, Js5HttpClient arg1, Js5DiskCache arg2, BigInteger arg3, BigInteger arg4) {
-		this.field4371 = arg0;
-		this.field4372 = arg1;
-		this.field4369 = arg2;
-		this.field4370 = arg3;
-		this.field4373 = arg4;
-		if (!this.field4371.isUrgentsFull()) {
-			this.field4374 = this.field4371.queueRequest(255, 255, (byte) 0, true);
+	public Js5Client(Js5TcpClient tcpClient, Js5HttpClient httpClient, Js5DiskCache diskCache, BigInteger exponent, BigInteger modulus) {
+		this.tcpClient = tcpClient;
+		this.httpClient = httpClient;
+		this.diskCache = diskCache;
+
+		this.rsaExponent = exponent;
+		this.rsaModulus = modulus;
+
+		if (!this.tcpClient.isUrgentsFull()) {
+			this.masterIndexRequest = this.tcpClient.queueRequest(255, 255, (byte) 0, true);
 		}
-		if (this.field4372 != null) {
-			this.field4375 = this.field4372.method7049();
+
+		if (this.httpClient != null) {
+			this.httpMasterIndexRequest = this.httpClient.requestMasterIndex();
 		}
 	}
 
 	@ObfuscatedName("px.e(B)Z")
-	public boolean method6834() {
-		if (this.field4376 != null) {
+	public boolean loadMasterIndex() {
+		if (this.masterIndex != null) {
 			return true;
 		}
-		if (this.field4374 == null) {
-			if (this.field4371.isUrgentsFull()) {
+
+		if (this.masterIndexRequest == null) {
+			if (this.tcpClient.isUrgentsFull()) {
 				return false;
 			}
-			this.field4374 = this.field4371.queueRequest(255, 255, (byte) 0, true);
+
+			this.masterIndexRequest = this.tcpClient.queueRequest(255, 255, (byte) 0, true);
 		}
-		if (this.field4374.awaitingResponse) {
+
+		if (this.masterIndexRequest.incomplete) {
 			return false;
 		}
-		Packet var1 = new Packet(this.field4374.getBytes());
-		this.field4376 = new Js5MasterIndex(var1, this.field4370, this.field4373);
-		if (this.field4379 == null) {
-			this.field4379 = new Js5NetResourceProvider[this.field4376.field4480.length];
+
+		Packet buf = new Packet(this.masterIndexRequest.getBytes());
+		this.masterIndex = new Js5MasterIndex(buf, this.rsaExponent, this.rsaModulus);
+
+		if (this.resourceProviders == null) {
+			this.resourceProviders = new Js5NetResourceProvider[this.masterIndex.archiveData.length];
 		} else {
-			for (int var2 = 0; var2 < this.field4379.length; var2++) {
-				if (this.field4379[var2] != null) {
-					Js5MasterIndexArchiveData var3 = this.field4376.field4480[var2];
-					this.field4379[var2].method16821(var3.field4383, var3.field4382, var3.field4380, var3.field4381);
-					if (this.field4379[var2].hasHttpClient()) {
-						this.field4379[var2].method16832(false);
+			for (int var2 = 0; var2 < this.resourceProviders.length; var2++) {
+				if (this.resourceProviders[var2] != null) {
+					Js5MasterIndexArchiveData var3 = this.masterIndex.archiveData[var2];
+					this.resourceProviders[var2].method16821(var3.crc, var3.whirlpool, var3.version, var3.groupCount);
+					if (this.resourceProviders[var2].hasHttpClient()) {
+						this.resourceProviders[var2].method16832(false);
 					}
 				}
 			}
 		}
+
 		this.field4378 = false;
 		return true;
 	}
@@ -99,62 +108,67 @@ public class Js5Client {
 
 	@ObfuscatedName("px.m(ILuf;Luf;ZZI)Laij;")
 	public Js5NetResourceProvider method6836(int arg0, DiskStore arg1, DiskStore arg2, boolean arg3, boolean arg4) {
-		if (this.field4376 == null) {
+		if (this.masterIndex == null) {
 			throw new RuntimeException();
-		} else if (arg0 < 0 || arg0 >= this.field4379.length) {
+		} else if (arg0 < 0 || arg0 >= this.resourceProviders.length) {
 			throw new RuntimeException();
-		} else if (this.field4379[arg0] == null) {
-			Js5MasterIndexArchiveData var6 = this.field4376.field4480[arg0];
-			Js5NetResourceProvider var7 = new Js5NetResourceProvider(arg0, arg1, arg2, this.field4371, arg4 ? this.field4372 : null, this.field4369, var6.field4383, var6.field4382, var6.field4380, arg3, var6.field4381);
-			this.field4379[arg0] = var7;
+		} else if (this.resourceProviders[arg0] == null) {
+			Js5MasterIndexArchiveData var6 = this.masterIndex.archiveData[arg0];
+			Js5NetResourceProvider var7 = new Js5NetResourceProvider(arg0, arg1, arg2, this.tcpClient, arg4 ? this.httpClient : null, this.diskCache, var6.crc, var6.whirlpool, var6.version, arg3, var6.groupCount);
+			this.resourceProviders[arg0] = var7;
 			if (this.field4377 != null && arg4) {
-				Js5MasterIndexArchiveData var8 = this.field4377.field4480[arg0];
-				this.field4379[arg0].method16832(this.field4379[arg0].method16822(var8.field4383, var8.field4382, var8.field4380, var8.field4381));
+				Js5MasterIndexArchiveData var8 = this.field4377.archiveData[arg0];
+				this.resourceProviders[arg0].method16832(this.resourceProviders[arg0].method16822(var8.crc, var8.whirlpool, var8.version, var8.groupCount));
 			}
 			return var7;
 		} else {
-			return this.field4379[arg0];
+			return this.resourceProviders[arg0];
 		}
 	}
 
 	@ObfuscatedName("px.k(I)V")
-	public void method6837() {
-		if (this.field4379 == null) {
+	public void update() {
+		if (this.resourceProviders == null) {
 			return;
 		}
-		for (int var1 = 0; var1 < this.field4379.length; var1++) {
-			if (this.field4379[var1] != null) {
-				this.field4379[var1].method16833();
+
+		for (int i = 0; i < this.resourceProviders.length; i++) {
+			if (this.resourceProviders[i] != null) {
+				this.resourceProviders[i].processPrefetchQueue();
 			}
 		}
-		for (int var2 = 0; var2 < this.field4379.length; var2++) {
-			if (this.field4379[var2] != null) {
-				this.field4379[var2].method16825();
+
+		for (int i = 0; i < this.resourceProviders.length; i++) {
+			if (this.resourceProviders[i] != null) {
+				this.resourceProviders[i].update();
 			}
 		}
-		if (this.field4376 == null) {
-			this.method6834();
-		} else if (this.field4372 != null && !this.field4378) {
-			if (this.field4375 == null) {
-				this.field4375 = this.field4372.method7049();
-			} else if (!this.field4375.awaitingResponse) {
-				byte[] var3 = this.field4375.getBytes();
+
+		if (this.masterIndex == null) {
+			this.loadMasterIndex();
+		} else if (this.httpClient != null && !this.field4378) {
+			if (this.httpMasterIndexRequest == null) {
+				this.httpMasterIndexRequest = this.httpClient.requestMasterIndex();
+			} else if (!this.httpMasterIndexRequest.incomplete) {
+				byte[] src = this.httpMasterIndexRequest.getBytes();
 				try {
-					this.field4377 = new Js5MasterIndex(new Packet(var3), this.field4370, this.field4373);
-					for (int var4 = 0; var4 < this.field4379.length; var4++) {
-						if (this.field4379[var4] != null && this.field4379[var4].hasHttpClient()) {
-							Js5MasterIndexArchiveData var5 = this.field4377.field4480[var4];
-							this.field4379[var4].method16832(this.field4379[var4].method16822(var5.field4383, var5.field4382, var5.field4380, var5.field4381));
+					this.field4377 = new Js5MasterIndex(new Packet(src), this.rsaExponent, this.rsaModulus);
+
+					for (int i = 0; i < this.resourceProviders.length; i++) {
+						if (this.resourceProviders[i] != null && this.resourceProviders[i].hasHttpClient()) {
+							Js5MasterIndexArchiveData archiveData = this.field4377.archiveData[i];
+							this.resourceProviders[i].method16832(this.resourceProviders[i].method16822(archiveData.crc, archiveData.whirlpool, archiveData.version, archiveData.groupCount));
 						}
 					}
-				} catch (Exception var8) {
-					for (int var7 = 0; var7 < this.field4379.length; var7++) {
-						if (this.field4379[var7] != null && this.field4379[var7].hasHttpClient()) {
-							this.field4379[var7].method16832(false);
+				} catch (Exception ex) {
+					for (int i = 0; i < this.resourceProviders.length; i++) {
+						if (this.resourceProviders[i] != null && this.resourceProviders[i].hasHttpClient()) {
+							this.resourceProviders[i].method16832(false);
 						}
 					}
 				}
-				this.field4375 = null;
+
+				this.httpMasterIndexRequest = null;
 				this.field4378 = true;
 			}
 		}

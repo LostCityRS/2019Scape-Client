@@ -2220,7 +2220,7 @@ public final class Client extends GameShell {
 		lobbyConnection.refreshNetStats();
 		this.processJs5TcpClient();
 		if (js5Client != null) {
-			js5Client.method6837();
+			js5Client.update();
 		}
 		if (audioApi != null) {
 			audioApi.method3149();
@@ -2483,7 +2483,7 @@ public final class Client extends GameShell {
 		}
 		js5TcpClient.closeGracefully();
 		js5HttpClient.shutdownExecutor();
-		js5DiskCache.method6992();
+		js5DiskCache.quit();
 		if (inetAddressLookupRequest != null) {
 			inetAddressLookupRequest.method10572();
 			inetAddressLookupRequest = null;

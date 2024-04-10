@@ -32,7 +32,7 @@ public final class DiskStore {
 	}
 
 	@ObfuscatedName("uf.e(II)[B")
-	public byte[] method9010(int arg0) {
+	public byte[] read(int arg0) {
 		BufferedFile var2 = this.field7087;
 		synchronized (this.field7087) {
 			Object var10000;

@@ -15,7 +15,7 @@ public class Js5NetRequest extends Js5Request {
 
 	@ObfuscatedName("auq.e(I)[B")
 	public byte[] getBytes() {
-		if (this.awaitingResponse || this.buf.pos < this.buf.data.length - this.offset) {
+		if (this.incomplete || this.buf.pos < this.buf.data.length - this.offset) {
 			throw new RuntimeException("Not ready!");
 		}
 

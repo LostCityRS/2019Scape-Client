@@ -34,7 +34,7 @@ public class Js5HttpClient {
 	public ExecutorService executor = Executors.newFixedThreadPool(2);
 
 	@ObfuscatedName("pu.u")
-	public long field4470;
+	public long lastException;
 
 	@ObfuscatedName("pu.c")
 	public boolean field4468 = false;
@@ -51,7 +51,7 @@ public class Js5HttpClient {
 	}
 
 	@ObfuscatedName("pu.n(I)Latb;")
-	public Js5HttpRequest method7049() {
+	public Js5HttpRequest requestMasterIndex() {
 		return this.sendHttpRequest(255, 255, (byte) 0, true, 0, 0);
 	}
 
@@ -59,37 +59,44 @@ public class Js5HttpClient {
 	public Js5HttpRequest sendHttpRequest(int archive, int group, byte padding, boolean urgent, int crc, int version) {
 		if (archive < 0 || group < 0) {
 			throw new RuntimeException(archive + "," + group);
-		} else if (this.isPendingRequestsFull()) {
-			return null;
-		} else {
-			boolean var7 = archive == 255 && group == 255;
-			if (!this.field4468 && !var7) {
-				return null;
-			} else if (this.field4470 + 10000L >= MonotonicTime.get()) {
-				return null;
-			} else {
-				Object var8 = null;
-				String var9;
-				if (var7) {
-					var9 = "&cb=" + MonotonicTime.get();
-				} else {
-					var9 = "&c=" + crc + "&v=" + version;
-				}
-				URL url;
-				try {
-					url = new URL("http", this.host, this.port, "/ms?m=" + this.game + "&a=" + archive + "&g=" + group + var9);
-				} catch (MalformedURLException var14) {
-					return null;
-				}
-				Js5HttpRequest newRequest = new Js5HttpRequest(padding);
-				newRequest.urgent = urgent;
-				this.pendingRequests++;
-				Future future = this.executor.submit(new Js5HTTPClient_Task(this, url, newRequest));
-				newRequest.setFutureResponse(future);
-				return newRequest;
-			}
 		}
-	}
+
+		if (this.isPendingRequestsFull()) {
+			return null;
+		}
+
+        boolean isMasterIndex = archive == 255 && group == 255;
+        if (!this.field4468 && !isMasterIndex) {
+            return null;
+        }
+
+		if (this.lastException + 10000L >= MonotonicTime.get()) {
+            return null;
+        }
+
+        Object var8 = null;
+        String file;
+        if (isMasterIndex) {
+            file = "&cb=" + MonotonicTime.get();
+        } else {
+            file = "&c=" + crc + "&v=" + version;
+        }
+
+        URL url;
+        try {
+            url = new URL("http", this.host, this.port, "/ms?m=" + this.game + "&a=" + archive + "&g=" + group + file);
+        } catch (MalformedURLException var14) {
+            return null;
+        }
+
+        Js5HttpRequest newRequest = new Js5HttpRequest(padding);
+        newRequest.urgent = urgent;
+        this.pendingRequests++;
+
+        Future future = this.executor.submit(new Js5HTTPClient_Task(this, url, newRequest));
+        newRequest.setFutureResponse(future);
+        return newRequest;
+    }
 
 	@ObfuscatedName("pu.k(I)V")
 	public void removePendingRequest() {
@@ -114,30 +121,32 @@ public class Js5HttpClient {
 		public final Js5HttpClient this$0;
 
 		@ObfuscatedName("pv.e")
-		public URL field4429;
+		public URL url;
 
 		@ObfuscatedName("pv.n")
-		public Js5HttpRequest field4428;
+		public Js5HttpRequest request;
 
 		// line 82
 		public Js5HTTPClient_Task(Js5HttpClient arg0, URL arg1, Js5HttpRequest arg2) {
 			this.this$0 = arg0;
-			this.field4429 = arg1;
-			this.field4428 = arg2;
+			this.url = arg1;
+			this.request = arg2;
 		}
 
 		public Object call() throws Exception {
-			URLConnection var1 = this.field4429.openConnection();
+			URLConnection var1 = this.url.openConnection();
 			var1.setConnectTimeout(10000);
 			var1.setReadTimeout(60000);
+
 			boolean var2 = true;
 			try {
 				var1.connect();
 			} catch (IOException var4) {
-				this.this$0.field4470 = MonotonicTime.get();
+				this.this$0.lastException = MonotonicTime.get();
 				var2 = false;
 			}
-			return new Js5HTTPClientResponse(this.this$0, var2 ? var1.getInputStream() : null, this.field4428, this.field4429);
+
+			return new Js5HTTPClientResponse(this.this$0, var2 ? var1.getInputStream() : null, this.request, this.url);
 		}
 	}
 
@@ -193,7 +202,7 @@ public class Js5HttpClient {
 					ioException.printStackTrace();
 				}
 			}
-			request.awaitingResponse = false;
+			request.incomplete = false;
 			httpclient.removePendingRequest();
 		}
 

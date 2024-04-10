@@ -6,21 +6,21 @@ import deob.ObfuscatedName;
 public class Js5MasterIndexArchiveData {
 
 	@ObfuscatedName("ps.e")
-	public final int field4383;
+	public final int crc;
 
 	@ObfuscatedName("ps.n")
-	public final int field4381;
+	public final int groupCount;
 
 	@ObfuscatedName("ps.m")
-	public final int field4380;
+	public final int version;
 
 	@ObfuscatedName("ps.k")
-	public final byte[] field4382;
+	public final byte[] whirlpool;
 
-	public Js5MasterIndexArchiveData(int arg0, int arg1, int arg2, int arg3, byte[] arg4) {
-		this.field4383 = arg0;
-		this.field4381 = arg1;
-		this.field4380 = arg2;
-		this.field4382 = arg4;
+	public Js5MasterIndexArchiveData(int crc, int groupCount, int version, int arg3, byte[] whirlpool) {
+		this.crc = crc;
+		this.groupCount = groupCount;
+		this.version = version;
+		this.whirlpool = whirlpool;
 	}
 }

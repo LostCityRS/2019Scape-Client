@@ -220,7 +220,7 @@ public class Whirlpool {
 	}
 
 	@ObfuscatedName("alv.f([BIII)[B")
-	public static byte[] method18308(byte[] arg0, int arg1, int arg2) {
+	public static byte[] compute(byte[] arg0, int arg1, int arg2) {
 		byte[] var3;
 		if (arg1 > 0) {
 			var3 = new byte[arg2];

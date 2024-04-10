@@ -10,10 +10,10 @@ public abstract class Js5Request extends SecondaryNode {
 	public boolean urgent;
 
 	@ObfuscatedName("ask.u")
-	public boolean field12343;
+	public boolean orphan;
 
 	@ObfuscatedName("ask.z")
-	public volatile boolean awaitingResponse = true;
+	public volatile boolean incomplete = true;
 
 	@ObfuscatedName("ask.e(I)[B")
 	public abstract byte[] getBytes();

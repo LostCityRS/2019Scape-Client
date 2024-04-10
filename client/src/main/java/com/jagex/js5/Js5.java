@@ -283,7 +283,7 @@ public final class Js5 {
 		if (!this.isGroupValid(arg0)) {
 			return null;
 		}
-		int[] var2 = this.index.field4386[arg0];
+		int[] var2 = this.index.fileIds[arg0];
 		if (var2 == null) {
 			var2 = new int[this.index.groupSizes[arg0]];
 			int var3 = 0;
@@ -333,13 +333,13 @@ public final class Js5 {
 		}
 
 		if (arg0) {
-			this.index.field4390 = null;
-			this.index.field4391 = null;
+			this.index.groupNameHash = null;
+			this.index.groupNameHashTable = null;
 		}
 
 		if (arg1) {
-			this.index.field4401 = null;
-			this.index.field4402 = null;
+			this.index.fileNameHashes = null;
+			this.index.fileNameHashTables = null;
 		}
 	}
 
@@ -351,7 +351,7 @@ public final class Js5 {
 			return false;
 		} else {
 			int var4 = this.index.groupSizes[group];
-			int[] var5 = this.index.field4386[group];
+			int[] var5 = this.index.fileIds[group];
 
 			if (this.unpacked[group] == null) {
 				this.unpacked[group] = new Object[this.index.groupCapacities[group]];
@@ -392,9 +392,9 @@ public final class Js5 {
 
 			byte[] var15;
 			try {
-				var15 = uncompress(var10);
+				var15 = decompress(var10);
 			} catch (RuntimeException var51) {
-				throw JagException.method19636(var51, (key != null) + " " + group + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.index.crcs[group] + " " + this.index.crc);
+				throw JagException.method19636(var51, (key != null) + " " + group + " " + var10.length + " " + Packet.getcrc(var10, var10.length) + " " + Packet.getcrc(var10, var10.length - 2) + " " + this.index.groupChecksums[group] + " " + this.index.crc);
 			}
 
 			if (this.discardPacked) {
@@ -537,7 +537,7 @@ public final class Js5 {
 	public int getgroupid(String arg0) {
 		if (this.isIndexReady()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.index.field4391.method4486(StringTools.method3475(var2));
+			int var3 = this.index.groupNameHashTable.method4486(StringTools.method3475(var2));
 			return this.isGroupValid(var3) ? var3 : -1;
 		} else {
 			return -1;
@@ -547,7 +547,7 @@ public final class Js5 {
 	@ObfuscatedName("py.i(IS)I")
 	public int method6903(int arg0) {
 		if (this.isIndexReady()) {
-			int var2 = this.index.field4391.method4486(arg0);
+			int var2 = this.index.groupNameHashTable.method4486(arg0);
 			return this.isGroupValid(var2) ? var2 : -1;
 		} else {
 			return -1;
@@ -558,7 +558,7 @@ public final class Js5 {
 	public boolean method6904(String arg0) {
 		if (this.isIndexReady()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.index.field4391.method4486(StringTools.method3475(var2));
+			int var3 = this.index.groupNameHashTable.method4486(StringTools.method3475(var2));
 			return var3 >= 0;
 		} else {
 			return false;
@@ -572,11 +572,11 @@ public final class Js5 {
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.index.field4391.method4486(StringTools.method3475(var3));
+		int var5 = this.index.groupNameHashTable.method4486(StringTools.method3475(var3));
 		if (var5 < 0) {
 			return false;
 		} else {
-			int var6 = this.index.field4402[var5].method4486(StringTools.method3475(var4));
+			int var6 = this.index.fileNameHashTables[var5].method4486(StringTools.method3475(var4));
 			return var6 >= 0;
 		}
 	}
@@ -588,9 +588,9 @@ public final class Js5 {
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.index.field4391.method4486(StringTools.method3475(var3));
+		int var5 = this.index.groupNameHashTable.method4486(StringTools.method3475(var3));
 		if (this.isGroupValid(var5)) {
-			int var6 = this.index.field4402[var5].method4486(StringTools.method3475(var4));
+			int var6 = this.index.fileNameHashTables[var5].method4486(StringTools.method3475(var4));
 			return this.getfile(var5, var6);
 		} else {
 			return null;
@@ -604,9 +604,9 @@ public final class Js5 {
 		}
 		String var3 = arg0.toLowerCase();
 		String var4 = arg1.toLowerCase();
-		int var5 = this.index.field4391.method4486(StringTools.method3475(var3));
+		int var5 = this.index.groupNameHashTable.method4486(StringTools.method3475(var3));
 		if (this.isGroupValid(var5)) {
-			int var6 = this.index.field4402[var5].method4486(StringTools.method3475(var4));
+			int var6 = this.index.fileNameHashTables[var5].method4486(StringTools.method3475(var4));
 			return this.requestdownload(var5, var6);
 		} else {
 			return false;
@@ -623,7 +623,7 @@ public final class Js5 {
 	public boolean method6886(String arg0) {
 		if (this.isIndexReady()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.index.field4391.method4486(StringTools.method3475(var2));
+			int var3 = this.index.groupNameHashTable.method4486(StringTools.method3475(var2));
 			return this.method6927(var3);
 		} else {
 			return false;
@@ -634,7 +634,7 @@ public final class Js5 {
 	public int method6880(String arg0) {
 		if (this.isIndexReady()) {
 			String var2 = arg0.toLowerCase();
-			int var3 = this.index.field4391.method4486(StringTools.method3475(var2));
+			int var3 = this.index.groupNameHashTable.method4486(StringTools.method3475(var2));
 			return this.getPercentageComplete(var3);
 		} else {
 			return 0;
@@ -642,7 +642,7 @@ public final class Js5 {
 	}
 
 	@ObfuscatedName("qi.ai([BB)[B")
-	public static byte[] uncompress(byte[] src) {
+	public static byte[] decompress(byte[] src) {
 		Packet buf = new Packet(src);
 		JS5CompressionHeader header = new JS5CompressionHeader(buf);
 		Js5CompressionType type = header.getCompressionType();
