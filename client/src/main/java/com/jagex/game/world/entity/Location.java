@@ -13,7 +13,7 @@ public interface Location {
 	void method8205();
 
 	@ObfuscatedName("st.f(I)Z")
-	boolean method8206();
+	boolean hasShadow();
 
 	@ObfuscatedName("st.w(B)Z")
 	boolean method8207();

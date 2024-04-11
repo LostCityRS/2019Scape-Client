@@ -252,7 +252,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.f(I)Z")
-	public boolean method8206() {
+	public boolean hasShadow() {
 		return this.hasHardShadow;
 	}
 

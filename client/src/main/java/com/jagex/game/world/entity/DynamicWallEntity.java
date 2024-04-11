@@ -170,8 +170,8 @@ public class DynamicWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajj.f(I)Z")
-	public boolean method8206() {
-		return this.loc.method8240();
+	public boolean hasShadow() {
+		return this.loc.hasShadow();
 	}
 
 	@ObfuscatedName("ajj.l(Ldh;B)V")

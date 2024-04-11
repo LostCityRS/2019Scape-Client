@@ -644,7 +644,7 @@ public class ClientMapLoader extends MapLoader {
 				GroundDecorLayerEntity var26;
 				if (var24) {
 					StaticGroundDecorEntity var25 = new StaticGroundDecorEntity(this.scene, arg0, this.locs, var12, arg2, arg1, var21, var20, var22, this.underwater, arg6, var23, arg10);
-					if (var25.method8206()) {
+					if (var25.hasShadow()) {
 						var25.method8217(arg0);
 					}
 					var26 = var25;
@@ -667,7 +667,7 @@ public class ClientMapLoader extends MapLoader {
 				var31 = 15;
 			}
 			if (this.scene.addEntity(var32, false)) {
-				if (var29 != null && var29.method8206()) {
+				if (var29 != null && var29.hasShadow()) {
 					var29.method8217(arg0);
 				}
 				if (var12.hasHardShadow && this.field4512) {
@@ -685,7 +685,7 @@ public class ClientMapLoader extends MapLoader {
 			PrimaryLayerEntity var28;
 			if (var24) {
 				StaticSceneryEntity var27 = new StaticSceneryEntity(this.scene, arg0, this.locs, var12, arg2, arg1, var21, var20, var22, this.underwater, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, var23, true, arg10);
-				if (var27.method8206()) {
+				if (var27.hasShadow()) {
 					var27.method8217(arg0);
 				}
 				var28 = var27;
@@ -711,7 +711,7 @@ public class ClientMapLoader extends MapLoader {
 			WallLayerEntity var22;
 			if (arg3) {
 				StaticWallEntity var21 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg14, arg18);
-				if (var21.method8206()) {
+				if (var21.hasShadow()) {
 					var21.method8217(arg0);
 				}
 				var22 = var21;
@@ -760,7 +760,7 @@ public class ClientMapLoader extends MapLoader {
 			WallLayerEntity var24;
 			if (arg3) {
 				StaticWallEntity var23 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg14, arg18);
-				if (var23.method8206()) {
+				if (var23.hasShadow()) {
 					var23.method8217(arg0);
 				}
 				var24 = var23;
@@ -787,10 +787,10 @@ public class ClientMapLoader extends MapLoader {
 			if (arg3) {
 				StaticWallEntity var26 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation + 4, arg14, arg18);
 				StaticWallEntity var27 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, var25, arg14, arg18);
-				if (var26.method8206()) {
+				if (var26.hasShadow()) {
 					var26.method8217(arg0);
 				}
-				if (var27.method8206()) {
+				if (var27.hasShadow()) {
 					var27.method8217(arg0);
 				}
 				var28 = var26;
@@ -823,7 +823,7 @@ public class ClientMapLoader extends MapLoader {
 			WallLayerEntity var31;
 			if (arg3) {
 				StaticWallEntity var30 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg14, arg18);
-				if (var30.method8206()) {
+				if (var30.hasShadow()) {
 					var30.method8217(arg0);
 				}
 				var31 = var30;
@@ -847,7 +847,7 @@ public class ClientMapLoader extends MapLoader {
 			PrimaryLayerEntity var33;
 			if (arg3) {
 				StaticSceneryEntity var32 = new StaticSceneryEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg12, arg12, arg13, arg13, arg1, rotation, arg14, true, arg18);
-				if (var32.method8206()) {
+				if (var32.hasShadow()) {
 					var32.method8217(arg0);
 				}
 				var33 = var32;
@@ -879,7 +879,7 @@ public class ClientMapLoader extends MapLoader {
 			WallDecorLayerEntity var17;
 			if (isStatic) {
 				StaticWallDecorEntity var16 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, arg2, arg14);
-				if (var16.method8206()) {
+				if (var16.hasShadow()) {
 					var16.method8217(arg0);
 				}
 				var17 = var16;
@@ -897,7 +897,7 @@ public class ClientMapLoader extends MapLoader {
 			WallDecorLayerEntity var21;
 			if (isStatic) {
 				StaticWallDecorEntity var20 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, WALL_DECORATION_ROTATION_FORWARD_X[arg2] * var18, WALL_DECORATION_ROTATION_FORWARD_Z[arg2] * var18, locShapeId, arg2, arg14);
-				if (var20.method8206()) {
+				if (var20.hasShadow()) {
 					var20.method8217(arg0);
 				}
 				var21 = var20;
@@ -915,7 +915,7 @@ public class ClientMapLoader extends MapLoader {
 			WallDecorLayerEntity var25;
 			if (isStatic) {
 				StaticWallDecorEntity var24 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, WALL_DECORATION_ROTATION_FORWARD_X[arg2] * var22, WALL_DECORATION_ROTATION_FORWARD_Z[arg2] * var22, locShapeId, arg2 + 4, arg14);
-				if (var24.method8206()) {
+				if (var24.hasShadow()) {
 					var24.method8217(arg0);
 				}
 				var25 = var24;
@@ -929,7 +929,7 @@ public class ClientMapLoader extends MapLoader {
 			WallDecorLayerEntity var28;
 			if (isStatic) {
 				StaticWallDecorEntity var27 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var26 + 4, arg14);
-				if (var27.method8206()) {
+				if (var27.hasShadow()) {
 					var27.method8217(arg0);
 				}
 				var28 = var27;
@@ -950,10 +950,10 @@ public class ClientMapLoader extends MapLoader {
 			if (isStatic) {
 				StaticWallDecorEntity var32 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, field10753[arg2] * var30, field10762[arg2] * var30, locShapeId, arg2 + 4, arg14);
 				StaticWallDecorEntity var33 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var29 + 4, arg14);
-				if (var32.method8206()) {
+				if (var32.hasShadow()) {
 					var32.method8217(arg0);
 				}
-				if (var33.method8206()) {
+				if (var33.hasShadow()) {
 					var33.method8217(arg0);
 				}
 				var34 = var32;
@@ -983,7 +983,7 @@ public class ClientMapLoader extends MapLoader {
 		if (var7.method9480()) {
 			PositionedSound.method6206(arg1, arg3, arg4, var7);
 		}
-		if (var6.method8206()) {
+		if (var6.hasShadow()) {
 			var6.method8209(arg0);
 		}
 		if (arg2 == 0) {

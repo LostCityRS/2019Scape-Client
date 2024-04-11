@@ -165,8 +165,8 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.f(I)Z")
-	public boolean method8206() {
-		return this.loc.method8240();
+	public boolean hasShadow() {
+		return this.loc.hasShadow();
 	}
 
 	@ObfuscatedName("ajy.l(Ldh;B)V")

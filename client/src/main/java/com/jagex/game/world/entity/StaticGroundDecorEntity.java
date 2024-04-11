@@ -229,7 +229,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.f(I)Z")
-	public boolean method8206() {
+	public boolean hasShadow() {
 		return this.hasHardShadow;
 	}
 

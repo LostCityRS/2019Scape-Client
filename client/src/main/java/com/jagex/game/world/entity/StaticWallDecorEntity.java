@@ -205,7 +205,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	}
 
 	@ObfuscatedName("ajk.f(I)Z")
-	public boolean method8206() {
+	public boolean hasShadow() {
 		return this.hasHardShadow;
 	}
 

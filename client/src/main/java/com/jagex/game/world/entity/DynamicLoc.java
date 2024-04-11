@@ -237,7 +237,7 @@ public class DynamicLoc {
 	}
 
 	@ObfuscatedName("sp.u(B)Z")
-	public boolean method8240() {
+	public boolean hasShadow() {
 		return this.hasHardShadow;
 	}
 

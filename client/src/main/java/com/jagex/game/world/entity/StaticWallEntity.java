@@ -249,7 +249,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.f(I)Z")
-	public boolean method8206() {
+	public boolean hasShadow() {
 		return this.hasHardShadow;
 	}
 

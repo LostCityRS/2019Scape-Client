@@ -158,8 +158,8 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	}
 
 	@ObfuscatedName("ajs.f(I)Z")
-	public boolean method8206() {
-		return this.loc.method8240();
+	public boolean hasShadow() {
+		return this.loc.hasShadow();
 	}
 
 	@ObfuscatedName("ajs.l(Ldh;B)V")

@@ -146,8 +146,8 @@ public class DynamicWallDecorEntity extends WallDecorLayerEntity implements Loca
 	}
 
 	@ObfuscatedName("ajh.f(I)Z")
-	public boolean method8206() {
-		return this.loc.method8240();
+	public boolean hasShadow() {
+		return this.loc.hasShadow();
 	}
 
 	@ObfuscatedName("ajh.l(Ldh;B)V")
