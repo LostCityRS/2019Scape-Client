@@ -10977,19 +10977,19 @@ public class ScriptRunner {
 		}
 		if (!var2) {
 			VarBitType var6 = (VarBitType) Client.varBitTypeList.list(var3);
-			arg0.intStack[++arg0.isp - 1] = var6.getVarbitValue(var4.clearVariables().method14728(var6.baseVar.id));
+			arg0.intStack[++arg0.isp - 1] = var6.getVarbitValue(var4.clearVariables().getVarValueInt(var6.baseVar.id));
 			return;
 		}
 		VarPlayerType var5 = (VarPlayerType) Client.varPlayerTypeList.list(var3);
 		switch(var5.dataType.baseType.index) {
 			case 2:
-				arg0.intStack[++arg0.isp - 1] = var4.clearVariables().method14728(var5.id);
+				arg0.intStack[++arg0.isp - 1] = var4.clearVariables().getVarValueInt(var5.id);
 				break;
 			case 4:
-				arg0.longStack[++arg0.lsp - 1] = var4.clearVariables().method14730(var5.id);
+				arg0.longStack[++arg0.lsp - 1] = var4.clearVariables().getVarValueLong(var5.id);
 				break;
 			default:
-				arg0.objectStack[++arg0.osp - 1] = var4.clearVariables().method14738(var5.id);
+				arg0.objectStack[++arg0.osp - 1] = var4.clearVariables().getVarValue(var5.id);
 		}
 	}
 

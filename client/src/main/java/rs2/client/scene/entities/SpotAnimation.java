@@ -36,8 +36,8 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	@ObfuscatedName("aur.aw")
 	public int targeted = 0;
 
-	public SpotAnimation(Scene scene, int effectAnim, int arg2, int level, int arg4, int x, int y, int z, int arg8, int arg9, int arg10, int arg11, int arg12, boolean arg13, int targeted) {
-		super(scene, level, arg4, x, y, z, arg8, arg9, arg10, arg11, false, (byte) 0);
+	public SpotAnimation(Scene scene, int effectAnim, int arg2, int level, int occludeLevel, int x, int y, int z, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, int arg12, boolean arg13, int targeted) {
+		super(scene, level, occludeLevel, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, false, (byte) 0);
 		this.effectAnim = effectAnim;
 		this.field12608 = arg12;
 		this.targeted = targeted;

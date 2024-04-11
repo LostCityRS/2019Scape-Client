@@ -12,11 +12,11 @@ import deob.ObfuscatedName;
 public class HintTrailPoint extends PrimaryLayerEntity {
 
 	@ObfuscatedName("auu.ae")
-	public HintTrail field12614;
+	public HintTrail hintTrail;
 
-	public HintTrailPoint(Scene arg0, HintTrail arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
-		super(arg0, arg2, arg3, arg4, arg5, arg6, arg4 >> 9, arg4 >> 9, arg6 >> 9, arg6 >> 9, false, (byte) 0);
-		this.field12614 = arg1;
+	public HintTrailPoint(Scene scene, HintTrail hintTrail, int level, int occludeLevel, int x, int y, int z) {
+		super(scene, level, occludeLevel, x, y, z, x >> 9, x >> 9, z >> 9, z >> 9, false, (byte) 0);
+		this.hintTrail = hintTrail;
 	}
 
 	@ObfuscatedName("auu.fa(Ldh;IIB)Z")
@@ -49,7 +49,7 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 
 	@ObfuscatedName("auu.fc(Ldh;I)Ltl;")
 	public PickableEntity draw(Toolkit toolkit) {
-		if (this.field12614.field6754 == null) {
+		if (this.hintTrail.model == null) {
 			return null;
 		}
 		Matrix4x3 var2 = toolkit.method2209();
@@ -60,7 +60,7 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 		if (var5 != null && var5.groundDecoration != null) {
 			var2.translate(0.0F, (float) -var5.groundDecoration.field12448, 0.0F);
 		}
-		this.field12614.field6754.draw(var2, null, 0);
+		this.hintTrail.model.draw(var2, null, 0);
 		return null;
 	}
 
@@ -75,6 +75,6 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 
 	@ObfuscatedName("auu.by(B)I")
 	public int overlayHeight() {
-		return this.field12614.field6754 == null ? 0 : this.field12614.field6754.getMinY();
+		return this.hintTrail.model == null ? 0 : this.hintTrail.model.getMinY();
 	}
 }

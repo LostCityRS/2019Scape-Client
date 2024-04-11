@@ -35,7 +35,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	public final int id;
 
 	@ObfuscatedName("ajz.y")
-	public final byte field11189;
+	public final byte angle;
 
 	@ObfuscatedName("ajz.q")
 	public final boolean underwater;
@@ -52,12 +52,12 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	@ObfuscatedName("ajz.a")
 	public int y;
 
-	public StaticGroundDecorEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int arg10, boolean arg11, ScaleRotTrans scaleRotTrans) {
+	public StaticGroundDecorEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int angle, boolean arg11, ScaleRotTrans scaleRotTrans) {
 		super(scene, x, y, z, level, occludeLevel, locType.field7448, scaleRotTrans);
 		this.locTypeList = locTypeList;
 		this.id = locType.id;
 		this.underwater = underwater;
-		this.field11189 = (byte) arg10;
+		this.angle = (byte) angle;
 		this.active = locType.active != 0 && !underwater;
 		this.field11184 = arg11;
 		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
@@ -130,7 +130,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 			}
 		}
 		Vector3 var7 = this.getTransform().trans;
-		return var4.method9475(arg0, arg1, LocShape.GROUND_DECOR.id, this.field11189, var5, var6, (int) var7.x, this.y, (int) var7.z, arg2, null);
+		return var4.method9475(arg0, arg1, LocShape.GROUND_DECOR.id, this.angle, var5, var6, (int) var7.x, this.y, (int) var7.z, arg2, null);
 	}
 
 	@ObfuscatedName("ajz.fv(Ldh;B)Luq;")
@@ -213,7 +213,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.m(I)I")
 	public int getAngle() {
-		return this.field11189;
+		return this.angle;
 	}
 
 	@ObfuscatedName("ajz.k(I)V")

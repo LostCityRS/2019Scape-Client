@@ -566,7 +566,7 @@ public class ReceivePlayerPositions {
 				int var9 = buf.g1_alt3();
 				BaseVarType var10 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var9);
 				VarValue var11 = Client.varPlayerTypeList.decodeVarValue(buf, var10);
-				player.field10460.setVarObject(var11.var, var11.value);
+				player.vars.setVarValue(var11.var, var11.value);
 			}
 		}
 		if ((mask & 0x10) != 0) {
@@ -709,14 +709,14 @@ public class ReceivePlayerPositions {
 			player.getHeadIcons(headicons);
 		}
 		if ((mask & 0x20000) != 0) {
-			player.field10460.clear();
+			player.vars.clear();
 			buf.pos += 2;
 			int var62 = buf.data[(++buf.pos) - 1] & 0xFF;
 			for (int var63 = 0; var63 < var62; var63++) {
 				int var64 = buf.g1_alt3();
 				BaseVarType var65 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var64);
 				VarValue var66 = Client.varPlayerTypeList.decodeVarValue(buf, var65);
-				player.field10460.setVarObject(var66.var, var66.value);
+				player.vars.setVarValue(var66.var, var66.value);
 			}
 		}
 		if ((mask & 0x200) != 0) { // forced chat

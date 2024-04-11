@@ -14,7 +14,7 @@ public abstract class WallLayerEntity extends GraphEntity {
 	public static final int field12460 = 64;
 
 	@ObfuscatedName("asw.ae")
-	public static final int[] field12454 = new int[] { 19, 55, 38, 155, 255, 110, 137, 205, 76 };
+	public static final int[] FRONT_WALL_TYPES = new int[] { 19, 55, 38, 155, 255, 110, 137, 205, 76 };
 
 	@ObfuscatedName("asw.ag")
 	public short type;
@@ -43,46 +43,46 @@ public abstract class WallLayerEntity extends GraphEntity {
 	public int method18375(Light[] arg0) {
 		if (this.field8176) {
 			Vector3 var2 = this.getTransform().trans;
-			int var3 = (int) var2.x >> this.scene.size;
-			int var4 = (int) var2.z >> this.scene.size;
-			int var5 = 0;
-			if (this.scene.eyeTileX == var3) {
-				var5++;
-			} else if (this.scene.eyeTileX < var3) {
-				var5 += 2;
+			int tileX = (int) var2.x >> this.scene.size;
+			int tileZ = (int) var2.z >> this.scene.size;
+			int direction = 0;
+			if (this.scene.eyeTileX == tileX) {
+				direction++;
+			} else if (this.scene.eyeTileX < tileX) {
+				direction += 2;
 			}
-			if (this.scene.eyeTileZ == var4) {
-				var5 += 3;
-			} else if (this.scene.eyeTileZ > var4) {
-				var5 += 6;
+			if (this.scene.eyeTileZ == tileZ) {
+				direction += 3;
+			} else if (this.scene.eyeTileZ > tileZ) {
+				direction += 6;
 			}
-			int var6 = field12454[var5];
+			int var6 = FRONT_WALL_TYPES[direction];
 			if ((this.type & var6) == 0) {
-				if (this.type == 1 && var3 > 0) {
-					var3--;
-				} else if (this.type == 4 && var3 <= this.scene.maxTileX) {
-					var3++;
-				} else if (this.type == 8 && var4 > 0) {
-					var4--;
-				} else if (this.type == 2 && var4 <= this.scene.maxTileZ) {
-					var4++;
-				} else if (this.type == 16 && var3 > 0 && var4 <= this.scene.maxTileZ) {
-					var3--;
-					var4++;
-				} else if (this.type == 32 && var3 <= this.scene.maxTileX && var4 <= this.scene.maxTileZ) {
-					var3++;
-					var4++;
-				} else if (this.type == 128 && var3 > 0 && var4 > 0) {
-					var3--;
-					var4--;
-				} else if (this.type == 64 && var3 <= this.scene.maxTileX && var4 > 0) {
-					var3++;
-					var4--;
+				if (this.type == 1 && tileX > 0) {
+					tileX--;
+				} else if (this.type == 4 && tileX <= this.scene.maxTileX) {
+					tileX++;
+				} else if (this.type == 8 && tileZ > 0) {
+					tileZ--;
+				} else if (this.type == 2 && tileZ <= this.scene.maxTileZ) {
+					tileZ++;
+				} else if (this.type == 16 && tileX > 0 && tileZ <= this.scene.maxTileZ) {
+					tileX--;
+					tileZ++;
+				} else if (this.type == 32 && tileX <= this.scene.maxTileX && tileZ <= this.scene.maxTileZ) {
+					tileX++;
+					tileZ++;
+				} else if (this.type == 128 && tileX > 0 && tileZ > 0) {
+					tileX--;
+					tileZ--;
+				} else if (this.type == 64 && tileX <= this.scene.maxTileX && tileZ > 0) {
+					tileX++;
+					tileZ--;
 				} else {
 					throw new RuntimeException("");
 				}
 			}
-			this.field12464 = this.method18362(var3, var4, this.field12459);
+			this.field12464 = this.method18362(tileX, tileZ, this.field12459);
 			this.field8176 = false;
 		}
 		for (int var7 = 0; var7 < this.field12464; var7++) {

@@ -143,7 +143,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 					for (int var12 = 0; var12 < var10; var12++) {
 						VarValue var13 = Client.varBasicTypeList.decodeVarValue(var5);
 						if (this.field10251[var13.var] == VarLifetime.PERMANENT && ((VarType) Client.varBasicTypeList.list(var13.var)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.value.getClass())) {
-							this.field1708.setVarObject(var13.var, var13.value);
+							this.field1708.setVarValue(var13.var, var13.value);
 						}
 					}
 					return;
@@ -209,7 +209,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 			Iterator var2 = this.field10255.iterator();
 			while (var2.hasNext()) {
 				int var3 = (Integer) var2.next();
-				this.field10257[var1++] = new VarValue(var3, this.field1708.method14738(var3));
+				this.field10257[var1++] = new VarValue(var3, this.field1708.getVarValue(var3));
 			}
 			this.field10258 = 0;
 			this.field10254 = false;

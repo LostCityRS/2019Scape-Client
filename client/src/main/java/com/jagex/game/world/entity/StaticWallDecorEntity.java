@@ -35,10 +35,10 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	public final int id;
 
 	@ObfuscatedName("ajk.y")
-	public final byte field11152;
+	public final byte shape;
 
 	@ObfuscatedName("ajk.q")
-	public final byte field11155;
+	public final byte angle;
 
 	@ObfuscatedName("ajk.x")
 	public final boolean field11156;
@@ -52,13 +52,13 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	@ObfuscatedName("ajk.a")
 	public int field11151;
 
-	public StaticWallDecorEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int arg6, int arg7, int arg8, boolean underwater, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
+	public StaticWallDecorEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int arg6, int arg7, int arg8, boolean underwater, int arg10, int arg11, int shape, int angle, ScaleRotTrans arg14) {
 		super(scene, arg6, arg7, arg8, level, occludeLevel, arg10, arg11, arg14);
 		this.locTypeList = locTypeList;
 		this.id = locType.id;
 		this.field11156 = underwater;
-		this.field11155 = (byte) arg13;
-		this.field11152 = (byte) arg12;
+		this.angle = (byte) angle;
+		this.shape = (byte) shape;
 		this.active = locType.active != 0 && !underwater;
 		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.field11156 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field11151 = arg7;
@@ -127,7 +127,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 			}
 		}
 		Vector3 var7 = this.getTransform().trans;
-		return var4.method9475(arg0, arg1, this.field11152, this.field11155, var5, var6, (int) var7.x, this.field11151, (int) var7.z, arg2, null);
+		return var4.method9475(arg0, arg1, this.shape, this.angle, var5, var6, (int) var7.x, this.field11151, (int) var7.z, arg2, null);
 	}
 
 	@ObfuscatedName("ajk.fv(Ldh;B)Luq;")
@@ -184,12 +184,12 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 
 	@ObfuscatedName("ajk.n(I)I")
 	public int getShape() {
-		return this.field11152;
+		return this.shape;
 	}
 
 	@ObfuscatedName("ajk.m(I)I")
 	public int getAngle() {
-		return this.field11155;
+		return this.angle;
 	}
 
 	@ObfuscatedName("ajk.k(I)V")

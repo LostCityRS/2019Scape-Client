@@ -73,7 +73,7 @@ public class ClientInvCache extends Node {
 		if (inv == null || slot < 0 || slot >= inv.invSlotObjCount.length || inv.vars == null || inv.vars[slot] == null) {
 			var7 = (Integer) baseVar.getDefaultValue();
 		} else {
-			var7 = inv.vars[slot].method14728(baseVar.id);
+			var7 = inv.vars[slot].getVarValueInt(baseVar.id);
 		}
 		return varbit.getVarbitValue(var7);
 	}

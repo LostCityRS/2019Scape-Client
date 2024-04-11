@@ -34,8 +34,8 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 	@ObfuscatedName("ash.t")
 	public Light[] field12473;
 
-	public PrimaryLayerEntity(Scene scene, int level, int arg2, int x, int y, int z, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, boolean arg10, byte arg11) {
-		this(scene, level, arg2, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, arg10, arg11, (ScaleRotTrans) null);
+	public PrimaryLayerEntity(Scene scene, int level, int occludeLevel, int x, int y, int z, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, boolean raised, byte arg11) {
+		this(scene, level, occludeLevel, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, raised, arg11, (ScaleRotTrans) null);
 	}
 
 	public PrimaryLayerEntity(Scene scene, int level, int occludeLevel, int x, int y, int z, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, boolean raised, byte arg11, ScaleRotTrans scaleRotTrans) {

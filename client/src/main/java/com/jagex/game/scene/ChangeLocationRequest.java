@@ -242,7 +242,7 @@ public final class ChangeLocationRequest extends Node {
 		if (Client.world.getScene() == null) {
 			return;
 		}
-		Location var5 = Client.world.method7744().method16899(arg0, arg1, arg2, arg3);
+		Location var5 = Client.world.method7744().getLocation(arg0, arg1, arg2, arg3);
 		if (var5 == null) {
 			return;
 		}

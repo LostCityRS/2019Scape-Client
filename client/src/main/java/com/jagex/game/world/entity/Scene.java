@@ -208,7 +208,7 @@ public class Scene {
 	@ObfuscatedName("tx.bb")
 	public boolean[][] field6922;
 
-	public Scene(Toolkit toolkit, int size, int maxLevel, int maxTileX, int maxTileZ, int arg5, boolean underwater, boolean arg7) {
+	public Scene(Toolkit toolkit, int size, int maxLevel, int maxTileX, int maxTileZ, int drawDistance, boolean underwater, boolean lights) {
 		this.toolkit = toolkit;
 		this.lighting = this.toolkit.getMaxLights() > 0;
 		this.size = size;
@@ -217,7 +217,7 @@ public class Scene {
 		this.maxLevel = maxLevel;
 		this.maxTileX = maxTileX;
 		this.maxTileZ = maxTileZ;
-		this.drawDistance = arg5;
+		this.drawDistance = drawDistance;
 		this.debugger = new SceneDebugging();
 		this.occlusionManager = new OcclusionManager(this);
 		this.field6904 = new Tile[maxLevel][this.maxTileX][this.maxTileZ];
@@ -232,7 +232,7 @@ public class Scene {
 			this.field6914 = new Tile[1][this.maxTileX][this.maxTileZ];
 			this.underwaterLevelHeightMaps = new FloorModel[1];
 		}
-		if (arg7) {
+		if (lights) {
 			this.field6954 = new long[maxLevel][maxTileX][maxTileZ];
 			this.field6926 = new StaticPointLight[65253];
 			this.field6956 = new boolean[65253];
@@ -286,14 +286,14 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.f(III)V")
-	public void setBridge(int stx, int stz) {
-		Tile ground = this.levelTiles[0][stx][stz];
+	public void setBridge(int x, int z) {
+		Tile ground = this.levelTiles[0][x][z];
 		for (int level = 0; level < 3; level++) {
-			Tile tile = this.levelTiles[level][stx][stz] = this.levelTiles[level + 1][stx][stz];
+			Tile tile = this.levelTiles[level][x][z] = this.levelTiles[level + 1][x][z];
 			if (tile != null) {
 				for (PrimaryLayerEntityList var6 = tile.entities; var6 != null; var6 = var6.field7058) {
 					PrimaryLayerEntity var7 = var6.field7057;
-					if (var7.minSceneTileX == stx && var7.minSceneTileZ == stz) {
+					if (var7.minSceneTileX == x && var7.minSceneTileZ == z) {
 						var7.level--;
 					}
 				}
@@ -314,39 +314,39 @@ public class Scene {
 				}
 			}
 		}
-		if (this.levelTiles[0][stx][stz] == null) {
-			this.levelTiles[0][stx][stz] = new Tile(0);
-			this.levelTiles[0][stx][stz].level = 1;
+		if (this.levelTiles[0][x][z] == null) {
+			this.levelTiles[0][x][z] = new Tile(0);
+			this.levelTiles[0][x][z].level = 1;
 		}
-		this.levelTiles[0][stx][stz].bridge = ground;
-		this.levelTiles[3][stx][stz] = null;
+		this.levelTiles[0][x][z].bridge = ground;
+		this.levelTiles[3][x][z] = null;
 	}
 
 	@ObfuscatedName("tx.w(IIIB)Ltk;")
-	public Tile getTile(int arg0, int arg1, int arg2) {
-		if (this.levelTiles[arg0][arg1][arg2] == null) {
-			boolean var4 = this.levelTiles[0][arg1][arg2] != null && this.levelTiles[0][arg1][arg2].bridge != null;
-			if (var4 && arg0 >= this.maxLevel - 1) {
+	public Tile getTile(int level, int x, int z) {
+		if (this.levelTiles[level][x][z] == null) {
+			boolean bridged = this.levelTiles[0][x][z] != null && this.levelTiles[0][x][z].bridge != null;
+			if (bridged && level >= this.maxLevel - 1) {
 				return null;
 			}
-			this.method8851(arg0, arg1, arg2);
+			this.createTile(level, x, z);
 		}
-		return this.levelTiles[arg0][arg1][arg2];
+		return this.levelTiles[level][x][z];
 	}
 
 	@ObfuscatedName("tx.l(IIIB)Ltk;")
-	public Tile method8707(int arg0, int arg1, int arg2) {
-		return this.getTile(arg0, Math.min(this.maxTileX - 1, Math.max(0, arg1)), Math.min(this.maxTileZ - 1, Math.max(0, arg2)));
+	public Tile getTileCoerce(int level, int x, int z) {
+		return this.getTile(level, Math.min(this.maxTileX - 1, Math.max(0, x)), Math.min(this.maxTileZ - 1, Math.max(0, z)));
 	}
 
 	@ObfuscatedName("tx.u(IIII)V")
-	public void method8851(int arg0, int arg1, int arg2) {
-		boolean var4 = this.levelTiles[0][arg1][arg2] != null && this.levelTiles[0][arg1][arg2].bridge != null;
-		for (int var5 = arg0; var5 >= 0; var5--) {
-			if (this.levelTiles[var5][arg1][arg2] == null) {
-				Tile var6 = this.levelTiles[var5][arg1][arg2] = new Tile(var5);
-				if (var4) {
-					var6.level++;
+	public void createTile(int level, int x, int z) {
+		boolean bridged = this.levelTiles[0][x][z] != null && this.levelTiles[0][x][z].bridge != null;
+		for (int l = level; l >= 0; l--) {
+			if (this.levelTiles[l][x][z] == null) {
+				Tile tile = this.levelTiles[l][x][z] = new Tile(l);
+				if (bridged) {
+					tile.level++;
 				}
 			}
 		}
@@ -358,254 +358,254 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.p(III)I")
-	public int getWaterFogScale(int arg0, int arg1) {
-		return this.waterFogScale == null ? 0 : this.waterFogScale[arg0][arg1] & 0xFFFF;
+	public int getWaterFogScale(int x, int z) {
+		return this.waterFogScale == null ? 0 : this.waterFogScale[x][z] & 0xFFFF;
 	}
 
 	@ObfuscatedName("tx.d(IIB)I")
-	public int getWaterFogColour(int arg0, int arg1) {
-		return this.waterFogColour == null ? 0 : this.waterFogColour[arg0][arg1] & 0xFFFFFF;
+	public int getWaterFogColour(int x, int z) {
+		return this.waterFogColour == null ? 0 : this.waterFogColour[x][z] & 0xFFFFFF;
 	}
 
 	@ObfuscatedName("tx.c(III)I")
-	public int getWaterFogOffset(int arg0, int arg1) {
-		return this.waterFogOffset == null ? 0 : this.waterFogOffset[arg0][arg1] & 0xFF;
+	public int getWaterFogOffset(int x, int z) {
+		return this.waterFogOffset == null ? 0 : this.waterFogOffset[x][z] & 0xFF;
 	}
 
 	@ObfuscatedName("tx.r(IIS)I")
-	public int method8713(int arg0, int arg1) {
-		return this.field6921 == null ? 0 : this.field6921[arg0][arg1] & 0xFF;
+	public int method8713(int x, int z) {
+		return this.field6921 == null ? 0 : this.field6921[x][z] & 0xFF;
 	}
 
 	@ObfuscatedName("tx.v(IIB)I")
-	public int method8760(int arg0, int arg1) {
-		return this.field6963 == null ? 0 : this.field6963[arg0][arg1] & 0xFF;
+	public int method8760(int x, int z) {
+		return this.field6963 == null ? 0 : this.field6963[x][z] & 0xFF;
 	}
 
 	@ObfuscatedName("tx.o(IIB)I")
-	public int method8715(int arg0, int arg1) {
-		return this.field6905 == null ? 0 : this.field6905[arg0][arg1] & 0xFF;
+	public int method8715(int x, int z) {
+		return this.field6905 == null ? 0 : this.field6905[x][z] & 0xFF;
 	}
 
 	@ObfuscatedName("tx.s(IIIIIIIII)V")
-	public void setWaterFog(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public void setWaterFog(int x, int z, int colour, int scale, int offset, int arg5, int arg6, int arg7) {
 		if (this.waterFogColour != null) {
-			this.waterFogColour[arg0][arg1] = arg2 | 0xFF000000;
+			this.waterFogColour[x][z] = colour | 0xFF000000;
 		}
 		if (this.waterFogScale != null) {
-			this.waterFogScale[arg0][arg1] = (short) arg3;
+			this.waterFogScale[x][z] = (short) scale;
 		}
 		if (this.waterFogOffset != null) {
-			this.waterFogOffset[arg0][arg1] = (byte) arg4;
+			this.waterFogOffset[x][z] = (byte) offset;
 		}
 		if (this.field6921 != null) {
-			this.field6921[arg0][arg1] = (byte) arg5;
+			this.field6921[x][z] = (byte) arg5;
 		}
 		if (this.field6963 != null) {
-			this.field6963[arg0][arg1] = (byte) arg6;
+			this.field6963[x][z] = (byte) arg6;
 		}
 		if (this.field6905 != null) {
-			this.field6905[arg0][arg1] = (byte) arg7;
+			this.field6905[x][z] = (byte) arg7;
 		}
 	}
 
 	@ObfuscatedName("tx.y(IIILasv;B)V")
-	public void addGroundDecoration(int arg0, int arg1, int arg2, GroundDecorLayerEntity arg3) {
-		Tile var5 = this.getTile(arg0, arg1, arg2);
-		if (var5 == null) {
+	public void addGroundDecoration(int level, int x, int z, GroundDecorLayerEntity groundDecoration) {
+		Tile tile = this.getTile(level, x, z);
+		if (tile == null) {
 			return;
 		}
-		var5.groundDecoration = arg3;
+		tile.groundDecoration = groundDecoration;
 		int var6 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-		if (!arg3.method16488()) {
-			arg3.field11712 = this.field6945[var6];
-			this.field6945[var6] = arg3;
-		} else if (arg3.method16489()) {
-			arg3.field11712 = this.field6929[var6];
-			this.field6929[var6] = arg3;
+		if (!groundDecoration.method16488()) {
+			groundDecoration.field11712 = this.field6945[var6];
+			this.field6945[var6] = groundDecoration;
+		} else if (groundDecoration.method16489()) {
+			groundDecoration.field11712 = this.field6929[var6];
+			this.field6929[var6] = groundDecoration;
 		} else {
-			arg3.field11712 = this.field6916[var6];
-			this.field6916[var6] = arg3;
+			groundDecoration.field11712 = this.field6916[var6];
+			this.field6916[var6] = groundDecoration;
 		}
 	}
 
 	@ObfuscatedName("tx.q(IIIILast;S)V")
-	public void addObjStack(int arg0, int arg1, int arg2, int arg3, ObjLayerEntity arg4) {
-		Tile var6 = this.getTile(arg0, arg1, arg2);
-		if (var6 == null) {
+	public void addObjStack(int level, int x, int z, int arg3, ObjLayerEntity objStack) {
+		Tile tile = this.getTile(level, x, z);
+		if (tile == null) {
 			return;
 		}
-		arg4.method10531(new Vector3((float) ((arg1 << this.size) + this.field6924), (float) arg3, (float) ((arg2 << this.size) + this.field6924)));
-		var6.objStack = arg4;
+		objStack.method10531(new Vector3((float) ((x << this.size) + this.field6924), (float) arg3, (float) ((z << this.size) + this.field6924)));
+		tile.objStack = objStack;
 		int var7 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-		if (!arg4.method16488()) {
-			arg4.field11712 = this.field6945[var7];
-			this.field6945[var7] = arg4;
-		} else if (arg4.method16489()) {
-			arg4.field11712 = this.field6929[var7];
-			this.field6929[var7] = arg4;
+		if (!objStack.method16488()) {
+			objStack.field11712 = this.field6945[var7];
+			this.field6945[var7] = objStack;
+		} else if (objStack.method16489()) {
+			objStack.field11712 = this.field6929[var7];
+			this.field6929[var7] = objStack;
 		} else {
-			arg4.field11712 = this.field6916[var7];
-			this.field6916[var7] = arg4;
+			objStack.field11712 = this.field6916[var7];
+			this.field6916[var7] = objStack;
 		}
 	}
 
 	@ObfuscatedName("tx.x(IIILasw;Lasw;I)V")
-	public void addWall(int arg0, int arg1, int arg2, WallLayerEntity arg3, WallLayerEntity arg4) {
-		Tile var6 = this.getTile(arg0, arg1, arg2);
-		if (var6 == null) {
+	public void addWall(int level, int x, int z, WallLayerEntity wall, WallLayerEntity dynamicWall) {
+		Tile tile = this.getTile(level, x, z);
+		if (tile == null) {
 			return;
 		}
-		var6.wall = arg3;
-		var6.dynamicWall = arg4;
+		tile.wall = wall;
+		tile.dynamicWall = dynamicWall;
 		int var7 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-		if (!arg3.method16488()) {
-			arg3.field11712 = this.field6945[var7];
-			this.field6945[var7] = arg3;
-		} else if (arg3.method16489()) {
-			arg3.field11712 = this.field6929[var7];
-			this.field6929[var7] = arg3;
+		if (!wall.method16488()) {
+			wall.field11712 = this.field6945[var7];
+			this.field6945[var7] = wall;
+		} else if (wall.method16489()) {
+			wall.field11712 = this.field6929[var7];
+			this.field6929[var7] = wall;
 		} else {
-			arg3.field11712 = this.field6916[var7];
-			this.field6916[var7] = arg3;
+			wall.field11712 = this.field6916[var7];
+			this.field6916[var7] = wall;
 		}
-		if (arg4 == null) {
+		if (dynamicWall == null) {
 			return;
 		}
-		if (!arg4.method16488()) {
-			arg4.field11712 = this.field6945[var7];
-			this.field6945[var7] = arg4;
-		} else if (arg4.method16489()) {
-			arg4.field11712 = this.field6929[var7];
-			this.field6929[var7] = arg4;
+		if (!dynamicWall.method16488()) {
+			dynamicWall.field11712 = this.field6945[var7];
+			this.field6945[var7] = dynamicWall;
+		} else if (dynamicWall.method16489()) {
+			dynamicWall.field11712 = this.field6929[var7];
+			this.field6929[var7] = dynamicWall;
 		} else {
-			arg4.field11712 = this.field6916[var7];
-			this.field6916[var7] = arg4;
+			dynamicWall.field11712 = this.field6916[var7];
+			this.field6916[var7] = dynamicWall;
 		}
 	}
 
 	@ObfuscatedName("tx.b(IIILasm;Lasm;B)V")
-	public void addWallDecoration(int arg0, int arg1, int arg2, WallDecorLayerEntity arg3, WallDecorLayerEntity arg4) {
-		Tile var6 = this.getTile(arg0, arg1, arg2);
-		if (var6 == null) {
+	public void addWallDecoration(int level, int x, int z, WallDecorLayerEntity wallDecoration, WallDecorLayerEntity dynamicWallDecoration) {
+		Tile tile = this.getTile(level, x, z);
+		if (tile == null) {
 			return;
 		}
-		var6.wallDecoration = arg3;
-		var6.dynamicWallDecoration = arg4;
+		tile.wallDecoration = wallDecoration;
+		tile.dynamicWallDecoration = dynamicWallDecoration;
 		int var7 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-		if (!arg3.method16488()) {
-			arg3.field11712 = this.field6945[var7];
-			this.field6945[var7] = arg3;
-		} else if (arg3.method16489()) {
-			arg3.field11712 = this.field6929[var7];
-			this.field6929[var7] = arg3;
+		if (!wallDecoration.method16488()) {
+			wallDecoration.field11712 = this.field6945[var7];
+			this.field6945[var7] = wallDecoration;
+		} else if (wallDecoration.method16489()) {
+			wallDecoration.field11712 = this.field6929[var7];
+			this.field6929[var7] = wallDecoration;
 		} else {
-			arg3.field11712 = this.field6916[var7];
-			this.field6916[var7] = arg3;
+			wallDecoration.field11712 = this.field6916[var7];
+			this.field6916[var7] = wallDecoration;
 		}
-		if (arg4 == null) {
+		if (dynamicWallDecoration == null) {
 			return;
 		}
-		if (!arg4.method16488()) {
-			arg4.field11712 = this.field6945[var7];
-			this.field6945[var7] = arg4;
-		} else if (arg4.method16489()) {
-			arg4.field11712 = this.field6929[var7];
-			this.field6929[var7] = arg4;
+		if (!dynamicWallDecoration.method16488()) {
+			dynamicWallDecoration.field11712 = this.field6945[var7];
+			this.field6945[var7] = dynamicWallDecoration;
+		} else if (dynamicWallDecoration.method16489()) {
+			dynamicWallDecoration.field11712 = this.field6929[var7];
+			this.field6929[var7] = dynamicWallDecoration;
 		} else {
-			arg4.field11712 = this.field6916[var7];
-			this.field6916[var7] = arg4;
+			dynamicWallDecoration.field11712 = this.field6916[var7];
+			this.field6916[var7] = dynamicWallDecoration;
 		}
 	}
 
 	@ObfuscatedName("tx.h(Lash;ZI)Z")
-	public boolean addEntity(PrimaryLayerEntity arg0, boolean arg1) {
+	public boolean addEntity(PrimaryLayerEntity entity, boolean arg1) {
 		boolean var3 = this.underwaterLevelHeightMaps == this.levelHeightmaps;
-		int var4 = 0;
-		short var5 = 0;
-		byte var6 = 0;
-		arg0.method16529();
+		int colour = 0;
+		short scale = 0;
+		byte offset = 0;
+		entity.method16529();
 		short var7 = 0;
-		int var8 = Math.min(this.maxTileX - 1, Math.max(0, arg0.minSceneTileX));
-		int var9 = Math.min(this.maxTileX - 1, Math.max(0, arg0.maxSceneTileX));
-		int var10 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.minSceneTileZ));
-		int var11 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.maxSceneTileZ));
-		for (int var12 = var8; var12 <= var9; var12++) {
-			for (int var13 = var10; var13 <= var11; var13++) {
-				Tile var14 = this.method8707(arg0.level, var12, var13);
-				if (var14 != null) {
-					PrimaryLayerEntityList var15 = PrimaryLayerEntityList.method644(arg0);
-					PrimaryLayerEntityList var16 = var14.entities;
+		int minX = Math.min(this.maxTileX - 1, Math.max(0, entity.minSceneTileX));
+		int maxX = Math.min(this.maxTileX - 1, Math.max(0, entity.maxSceneTileX));
+		int minZ = Math.min(this.maxTileZ - 1, Math.max(0, entity.minSceneTileZ));
+		int maxZ = Math.min(this.maxTileZ - 1, Math.max(0, entity.maxSceneTileZ));
+		for (int x = minX; x <= maxX; x++) {
+			for (int z = minZ; z <= maxZ; z++) {
+				Tile tile = this.getTileCoerce(entity.level, x, z);
+				if (tile != null) {
+					PrimaryLayerEntityList var15 = PrimaryLayerEntityList.method644(entity);
+					PrimaryLayerEntityList var16 = tile.entities;
 					if (var16 == null) {
-						var14.entities = var15;
+						tile.entities = var15;
 					} else {
 						while (var16.field7058 != null) {
 							var16 = var16.field7058;
 						}
 						var16.field7058 = var15;
 					}
-					if (var3 && (this.waterFogColour[var12][var13] & 0xFF000000) != 0) {
-						var4 = this.waterFogColour[var12][var13];
-						var5 = this.waterFogScale[var12][var13];
-						var6 = this.waterFogOffset[var12][var13];
+					if (var3 && (this.waterFogColour[x][z] & 0xFF000000) != 0) {
+						colour = this.waterFogColour[x][z];
+						scale = this.waterFogScale[x][z];
+						offset = this.waterFogOffset[x][z];
 					}
-					if (!arg1 && var14.groundDecoration != null && var14.groundDecoration.field12448 > var7) {
-						var7 = var14.groundDecoration.field12448;
+					if (!arg1 && tile.groundDecoration != null && tile.groundDecoration.field12448 > var7) {
+						var7 = tile.groundDecoration.field12448;
 					}
 				}
 			}
 		}
-		if (var3 && (var4 & 0xFF000000) != 0) {
-			for (int var17 = var8; var17 <= var9; var17++) {
-				for (int var18 = var10; var18 <= var11; var18++) {
-					if ((this.waterFogColour[var17][var18] & 0xFF000000) == 0) {
-						this.waterFogColour[var17][var18] = var4;
-						this.waterFogScale[var17][var18] = var5;
-						this.waterFogOffset[var17][var18] = var6;
+		if (var3 && (colour & 0xFF000000) != 0) {
+			for (int x = minX; x <= maxX; x++) {
+				for (int z = minZ; z <= maxZ; z++) {
+					if ((this.waterFogColour[x][z] & 0xFF000000) == 0) {
+						this.waterFogColour[x][z] = colour;
+						this.waterFogScale[x][z] = scale;
+						this.waterFogOffset[x][z] = offset;
 					}
 				}
 			}
 		}
 		if (arg1) {
-			this.entities[++this.entityCount - 1] = arg0;
-			arg0.scene = this;
+			this.entities[++this.entityCount - 1] = entity;
+			entity.scene = this;
 		} else {
 			int var19 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-			if (!arg0.method16488()) {
-				arg0.field11712 = this.field6945[var19];
-				this.field6945[var19] = arg0;
-			} else if (arg0.method16489()) {
-				arg0.field11712 = this.field6929[var19];
-				this.field6929[var19] = arg0;
+			if (!entity.method16488()) {
+				entity.field11712 = this.field6945[var19];
+				this.field6945[var19] = entity;
+			} else if (entity.method16489()) {
+				entity.field11712 = this.field6929[var19];
+				this.field6929[var19] = entity;
 			} else {
-				arg0.field11712 = this.field6916[var19];
-				this.field6916[var19] = arg0;
+				entity.field11712 = this.field6916[var19];
+				this.field6916[var19] = entity;
 			}
 		}
 		if (arg1) {
-			Vector3 var20 = Vector3.create(arg0.getTransform().trans);
+			Vector3 var20 = Vector3.create(entity.getTransform().trans);
 			var20.y -= var7;
-			arg0.method10531(var20);
+			entity.method10531(var20);
 			var20.release();
 		}
 		return true;
 	}
 
 	@ObfuscatedName("tx.a(IIIII)V")
-	public void method8765(int arg0, int arg1, int arg2, int arg3) {
-		Tile var5 = this.levelTiles[arg0][arg1][arg2];
-		if (var5 == null) {
+	public void setWallDecorationOffset(int level, int x, int z, int walloff) {
+		Tile tile = this.levelTiles[level][x][z];
+		if (tile == null) {
 			return;
 		}
-		WallDecorLayerEntity var6 = var5.wallDecoration;
-		WallDecorLayerEntity var7 = var5.dynamicWallDecoration;
-		if (var6 != null) {
-			var6.field12452 = (short) (var6.field12452 * arg3 / (0x10 << this.size - 7));
-			var6.field12451 = (short) (var6.field12451 * arg3 / (0x10 << this.size - 7));
+		WallDecorLayerEntity wallDecoration = tile.wallDecoration;
+		WallDecorLayerEntity dynamicWallDecoration = tile.dynamicWallDecoration;
+		if (wallDecoration != null) {
+			wallDecoration.field12452 = (short) (wallDecoration.field12452 * walloff / (0x10 << this.size - 7));
+			wallDecoration.field12451 = (short) (wallDecoration.field12451 * walloff / (0x10 << this.size - 7));
 		}
-		if (var7 != null) {
-			var7.field12452 = (short) (var7.field12452 * arg3 / (0x10 << this.size - 7));
-			var7.field12451 = (short) (var7.field12451 * arg3 / (0x10 << this.size - 7));
+		if (dynamicWallDecoration != null) {
+			dynamicWallDecoration.field12452 = (short) (dynamicWallDecoration.field12452 * walloff / (0x10 << this.size - 7));
+			dynamicWallDecoration.field12451 = (short) (dynamicWallDecoration.field12451 * walloff / (0x10 << this.size - 7));
 		}
 	}
 
@@ -721,21 +721,21 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.ac(Lash;ZI)V")
-	public void removeEntity(PrimaryLayerEntity arg0, boolean arg1) {
-		int var3 = Math.min(this.maxTileX - 1, Math.max(0, arg0.minSceneTileX));
-		int var4 = Math.min(this.maxTileX - 1, Math.max(0, arg0.maxSceneTileX));
-		int var5 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.minSceneTileZ));
-		int var6 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.maxSceneTileZ));
-		for (int var7 = var3; var7 <= var4; var7++) {
-			for (int var8 = var5; var8 <= var6; var8++) {
-				Tile var9 = this.levelTiles[arg0.level][var7][var8];
-				if (var9 != null) {
-					PrimaryLayerEntityList var10 = var9.entities;
+	public void removeEntity(PrimaryLayerEntity entity, boolean arg1) {
+		int minX = Math.min(this.maxTileX - 1, Math.max(0, entity.minSceneTileX));
+		int maxX = Math.min(this.maxTileX - 1, Math.max(0, entity.maxSceneTileX));
+		int minZ = Math.min(this.maxTileZ - 1, Math.max(0, entity.minSceneTileZ));
+		int maxZ = Math.min(this.maxTileZ - 1, Math.max(0, entity.maxSceneTileZ));
+		for (int x = minX; x <= maxX; x++) {
+			for (int z = minZ; z <= maxZ; z++) {
+				Tile tile = this.levelTiles[entity.level][x][z];
+				if (tile != null) {
+					PrimaryLayerEntityList var10 = tile.entities;
 					PrimaryLayerEntityList var11 = null;
 					while (var10 != null) {
-						if (var10.field7057 == arg0) {
+						if (var10.field7057 == entity) {
 							if (var11 == null) {
-								var9.entities = var10.field7058;
+								tile.entities = var10.field7058;
 							} else {
 								var11.field7058 = var10.field7058;
 							}
@@ -749,7 +749,7 @@ public class Scene {
 			}
 		}
 		if (!arg1) {
-			this.method8732(arg0);
+			this.method8732(entity);
 		}
 	}
 

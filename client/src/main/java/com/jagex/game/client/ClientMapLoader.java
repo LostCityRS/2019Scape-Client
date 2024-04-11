@@ -519,7 +519,7 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.cp(Ldh;[BIIIIIIII)V")
-	public final void readRegionLocs(Toolkit arg0, byte[] arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
+	public final void readRegionLocs(Toolkit toolkit, byte[] arg1, int occludeLevel, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8) {
 		Packet buf = new Packet(arg1);
 		int locId = -1;
 		label88: while (true) {
@@ -531,8 +531,8 @@ public class ClientMapLoader extends MapLoader {
 			int locPos = 0;
 			while (true) {
 				LocPositionAdjustment var18;
-				int var22;
-				int var23;
+				int cx;
+				int cz;
 				int var25;
 				do {
 					int var24;
@@ -572,300 +572,300 @@ public class ClientMapLoader extends MapLoader {
 										var20 = var19.length;
 										var21 = var19.width;
 									}
-									var22 = arg3 + MapCoordUtil.method9606(z & 0x7, x & 0x7, arg8, var19.width, var19.length, var18.angle);
-									var23 = arg4 + MapCoordUtil.method2733(z & 0x7, x & 0x7, arg8, var19.width, var19.length, var18.angle);
-									var24 = var20 + var22;
-									var25 = var21 + var23;
-								} while (var22 >= this.maxTileX);
-							} while (var23 >= this.maxTileZ);
+									cx = arg3 + MapCoordUtil.method9606(z & 0x7, x & 0x7, arg8, var19.width, var19.length, var18.angle);
+									cz = arg4 + MapCoordUtil.method2733(z & 0x7, x & 0x7, arg8, var19.width, var19.length, var18.angle);
+									var24 = var20 + cx;
+									var25 = var21 + cz;
+								} while (cx >= this.maxTileX);
+							} while (cz >= this.maxTileZ);
 						} while (var24 <= 0);
 					} while (var25 <= 0);
-				} while (LocShape.CENTREPIECE_STRAIGHT.id != var18.shape && LocShape.CENTREPIECE_DIAGONAL.id != var18.shape && (var22 <= 0 || var23 <= 0 || var22 >= this.maxTileX - 1 || var23 >= this.maxTileZ - 1));
-				this.addGroundLoc(arg0, arg2, arg2, var22, var23, locId, var18.angle + arg8 & 0x3, var18.shape, -1, 0, var18.field7539);
+				} while (LocShape.CENTREPIECE_STRAIGHT.id != var18.shape && LocShape.CENTREPIECE_DIAGONAL.id != var18.shape && (cx <= 0 || cz <= 0 || cx >= this.maxTileX - 1 || cz >= this.maxTileZ - 1));
+				this.addGroundLoc(toolkit, occludeLevel, occludeLevel, cx, cz, locId, var18.angle + arg8 & 0x3, var18.shape, -1, 0, var18.field7539);
 			}
 		}
 	}
 
 	@ObfuscatedName("aih.ca(Ldh;IIIIIIIIILoe;I)V")
-	public final void addGroundLoc(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, ScaleRotTrans arg10) {
-		if (arg2 < this.field10756) {
-			this.field10756 = arg2;
+	public final void addGroundLoc(Toolkit toolkit, int occludeLevel, int level, int cx, int cz, int locId, int angle, int shape, int arg8, int arg9, ScaleRotTrans arg10) {
+		if (level < this.field10756) {
+			this.field10756 = level;
 		}
-		LocType var12 = (LocType) this.locs.list(arg5);
-		if (Client.preferences.textures.getValue() == 0 && var12.istexture) {
+		LocType locType = (LocType) this.locs.list(locId);
+		if (Client.preferences.textures.getValue() == 0 && locType.istexture) {
 			return;
 		}
 		int var13;
 		int var14;
-		if (arg6 == 1 || arg6 == 3) {
-			var13 = var12.length;
-			var14 = var12.width;
+		if (angle == 1 || angle == 3) {
+			var13 = locType.length;
+			var14 = locType.width;
 		} else {
-			var13 = var12.width;
-			var14 = var12.length;
+			var13 = locType.width;
+			var14 = locType.length;
 		}
 		int var15;
 		int var16;
-		if (arg3 + var13 <= this.maxTileX) {
-			var15 = (var13 >> 1) + arg3;
-			var16 = (var13 + 1 >> 1) + arg3;
+		if (cx + var13 <= this.maxTileX) {
+			var15 = (var13 >> 1) + cx;
+			var16 = (var13 + 1 >> 1) + cx;
 		} else {
-			var15 = arg3;
-			var16 = arg3 + 1;
+			var15 = cx;
+			var16 = cx + 1;
 		}
 		int var17;
 		int var18;
-		if (arg4 + var14 <= this.maxTileZ) {
-			var17 = (var14 >> 1) + arg4;
-			var18 = (var14 + 1 >> 1) + arg4;
+		if (cz + var14 <= this.maxTileZ) {
+			var17 = (var14 >> 1) + cz;
+			var18 = (var14 + 1 >> 1) + cz;
 		} else {
-			var17 = arg4;
-			var18 = arg4 + 1;
+			var17 = cz;
+			var18 = cz + 1;
 		}
-		FloorModel var19 = this.scene.levelHeightmaps[arg1];
-		int var20;
-		if (LocShape.CENTREPIECE_STRAIGHT.id == arg7 || LocShape.CENTREPIECE_DIAGONAL.id == arg7) {
-			var20 = var19.method1530(var15, var17) + var19.method1530(var16, var17) + var19.method1530(var15, var18) + var19.method1530(var16, var18) >> 2;
+		FloorModel var19 = this.scene.levelHeightmaps[occludeLevel];
+		int y;
+		if (LocShape.CENTREPIECE_STRAIGHT.id == shape || LocShape.CENTREPIECE_DIAGONAL.id == shape) {
+			y = var19.method1530(var15, var17) + var19.method1530(var16, var17) + var19.method1530(var15, var18) + var19.method1530(var16, var18) >> 2;
 		} else {
-			var20 = var19.getTileHeight(var15, var17) + var19.getTileHeight(var16, var17) + var19.getTileHeight(var15, var18) + var19.getTileHeight(var16, var18) >> 2;
+			y = var19.getTileHeight(var15, var17) + var19.getTileHeight(var16, var17) + var19.getTileHeight(var15, var18) + var19.getTileHeight(var16, var18) >> 2;
 		}
-		int var21 = (arg3 << 9) + (var13 << 8);
-		int var22 = (arg4 << 9) + (var14 << 8);
-		boolean var23 = this.field4512 && !this.underwater && var12.sharelight;
-		if (var12.method9480()) {
-			PositionedSound.method9739(arg2, arg3, arg4, arg6, var12, null, null);
+		int x = (cx << 9) + (var13 << 8);
+		int z = (cz << 9) + (var14 << 8);
+		boolean var23 = this.field4512 && !this.underwater && locType.sharelight;
+		if (locType.method9480()) {
+			PositionedSound.method9739(level, cx, cz, angle, locType, null, null);
 		}
-		boolean var24 = arg8 == -1 && (!var12.method9504() || var12.field7479 && Client.preferences.animDetail.getValue() == 0) && var12.multiloc == null && !var12.field7520 && !var12.field7524;
-		if (field10755 && (LocShape.isWall(arg7) && var12.occlude != 1 || !(!LocShape.isRoof(arg7) || var12.occlude != 0))) {
+		boolean isStatic = arg8 == -1 && (!locType.method9504() || locType.field7479 && Client.preferences.animDetail.getValue() == 0) && locType.multiloc == null && !locType.field7520 && !locType.field7524;
+		if (field10755 && (LocShape.isWall(shape) && locType.occlude != 1 || !(!LocShape.isRoof(shape) || locType.occlude != 0))) {
 			return;
 		}
-		if (LocShape.GROUND_DECOR.id == arg7) {
-			if (Client.preferences.groundDecoration.getValue() != 0 || var12.active != 0 || var12.blockwalk == 1 || var12.forcedecor) {
+		if (LocShape.GROUND_DECOR.id == shape) {
+			if (Client.preferences.groundDecoration.getValue() != 0 || locType.active != 0 || locType.blockwalk == 1 || locType.forcedecor) {
 				GroundDecorLayerEntity var26;
-				if (var24) {
-					StaticGroundDecorEntity var25 = new StaticGroundDecorEntity(this.scene, arg0, this.locs, var12, arg2, arg1, var21, var20, var22, this.underwater, arg6, var23, arg10);
+				if (isStatic) {
+					StaticGroundDecorEntity var25 = new StaticGroundDecorEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, angle, var23, arg10);
 					if (var25.hasShadow()) {
-						var25.method8217(arg0);
+						var25.method8217(toolkit);
 					}
 					var26 = var25;
 				} else {
-					var26 = new DynamicGroundDecorEntity(this.scene, arg0, this.locs, var12, arg2, arg1, var21, var20, var22, this.underwater, arg6, arg8, arg9, arg10);
+					var26 = new DynamicGroundDecorEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, angle, arg8, arg9, arg10);
 				}
-				this.scene.addGroundDecoration(arg2, arg3, arg4, var26);
+				this.scene.addGroundDecoration(level, cx, cz, var26);
 			}
-		} else if (LocShape.CENTREPIECE_STRAIGHT.id == arg7 || LocShape.CENTREPIECE_DIAGONAL.id == arg7) {
+		} else if (LocShape.CENTREPIECE_STRAIGHT.id == shape || LocShape.CENTREPIECE_DIAGONAL.id == shape) {
 			StaticSceneryEntity var29 = null;
 			int var31;
 			PrimaryLayerEntity var32;
-			if (var24) {
-				StaticSceneryEntity var30 = new StaticSceneryEntity(this.scene, arg0, this.locs, var12, arg2, arg1, var21, var20, var22, this.underwater, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, var23, LocTypeRelated.field7440 != var12.field7526, arg10);
+			if (isStatic) {
+				StaticSceneryEntity var30 = new StaticSceneryEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, cx, cx + var13 - 1, cz, cz + var14 - 1, shape, angle, var23, LocTypeRelated.field7440 != locType.field7526, arg10);
 				var31 = var30.method17401();
 				var32 = var30;
 				var29 = var30;
 			} else {
-				var32 = new DynamicSceneryEntity(this.scene, arg0, this.locs, var12, arg2, arg1, var21, var20, var22, this.underwater, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, arg8, arg9, LocTypeRelated.field7440 != var12.field7526, arg10);
+				var32 = new DynamicSceneryEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, cx, cx + var13 - 1, cz, cz + var14 - 1, shape, angle, arg8, arg9, LocTypeRelated.field7440 != locType.field7526, arg10);
 				var31 = 15;
 			}
 			if (this.scene.addEntity(var32, false)) {
 				if (var29 != null && var29.hasShadow()) {
-					var29.method8217(arg0);
+					var29.method8217(toolkit);
 				}
-				if (var12.hasHardShadow && this.field4512) {
+				if (locType.hasHardShadow && this.field4512) {
 					if (var31 > 30) {
 						var31 = 30;
 					}
 					for (int var33 = 0; var33 <= var13; var33++) {
 						for (int var34 = 0; var34 <= var14; var34++) {
-							var19.method1521(arg3 + var33, arg4 + var34, var31);
+							var19.setLevelShadeMap(cx + var33, cz + var34, var31);
 						}
 					}
 				}
 			}
-		} else if (LocShape.isRoof(arg7) || LocShape.isRoofEdge(arg7)) {
+		} else if (LocShape.isRoof(shape) || LocShape.isRoofEdge(shape)) {
 			PrimaryLayerEntity var28;
-			if (var24) {
-				StaticSceneryEntity var27 = new StaticSceneryEntity(this.scene, arg0, this.locs, var12, arg2, arg1, var21, var20, var22, this.underwater, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, var23, true, arg10);
+			if (isStatic) {
+				StaticSceneryEntity var27 = new StaticSceneryEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, cx, cx + var13 - 1, cz, cz + var14 - 1, shape, angle, var23, true, arg10);
 				if (var27.hasShadow()) {
-					var27.method8217(arg0);
+					var27.method8217(toolkit);
 				}
 				var28 = var27;
 			} else {
-				var28 = new DynamicSceneryEntity(this.scene, arg0, this.locs, var12, arg2, arg1, var21, var20, var22, this.underwater, arg3, arg3 + var13 - 1, arg4, arg4 + var14 - 1, arg7, arg6, arg8, arg9, true, arg10);
+				var28 = new DynamicSceneryEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, cx, cx + var13 - 1, cz, cz + var14 - 1, shape, angle, arg8, arg9, true, arg10);
 			}
 			this.scene.addEntity(var28, false);
-			if (this.field4512 && !this.underwater && LocShape.isRoof(arg7) && LocShape.ROOF_DIAGONAL_WITH_ROOFEDGE.id != arg7 && arg2 > 0 && var12.occlude != 0) {
-				this.levelOccludemap[arg2][arg3][arg4] = (byte) (this.levelOccludemap[arg2][arg3][arg4] | 0x4);
+			if (this.field4512 && !this.underwater && LocShape.isRoof(shape) && LocShape.ROOF_DIAGONAL_WITH_ROOFEDGE.id != shape && level > 0 && locType.occlude != 0) {
+				this.levelOccludemap[level][cx][cz] = (byte) (this.levelOccludemap[level][cx][cz] | 0x4);
 			}
-		} else if (!this.addWallLoc(arg0, arg7, arg6, var24, var12, arg8, arg9, arg2, arg1, var21, var20, var22, arg3, arg4, var23, var19, var13, var14, arg10) && !this.addWallDecorationLoc(arg0, arg7, arg6, var24, var12, arg8, arg9, arg2, arg1, var21, var20, var22, arg3, arg4, arg10)) {
+		} else if (!this.addWallLoc(toolkit, shape, angle, isStatic, locType, arg8, arg9, level, occludeLevel, x, y, z, cx, cz, var23, var19, var13, var14, arg10) && !this.addWallDecorationLoc(toolkit, shape, angle, isStatic, locType, arg8, arg9, level, occludeLevel, x, y, z, cx, cz, arg10)) {
 			;
 		}
 	}
 
 	@ObfuscatedName("aih.cx(Ldh;IIZLvd;IIIIIIIIIZLcb;IILoe;I)Z")
-	public boolean addWallLoc(Toolkit arg0, int arg1, int rotation, boolean arg3, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, boolean arg14, FloorModel arg15, int arg16, int arg17, ScaleRotTrans arg18) {
-		if (LocShape.WALL_STRAIGHT.id == arg1) {
-			int var20 = arg4.occlude;
-			if (field10754 && arg4.occlude == -1) {
-				var20 = 1;
+	public boolean addWallLoc(Toolkit toolkit, int shape, int angle, boolean isStatic, LocType locType, int arg5, int arg6, int level, int occludeLevel, int x, int y, int z, int cx, int cz, boolean arg14, FloorModel arg15, int arg16, int arg17, ScaleRotTrans scaleRotTrans) {
+		if (LocShape.WALL_STRAIGHT.id == shape) {
+			int occlude = locType.occlude;
+			if (field10754 && locType.occlude == -1) {
+				occlude = 1;
 			}
 			WallLayerEntity var22;
-			if (arg3) {
-				StaticWallEntity var21 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg14, arg18);
+			if (isStatic) {
+				StaticWallEntity var21 = new StaticWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, angle, arg14, scaleRotTrans);
 				if (var21.hasShadow()) {
-					var21.method8217(arg0);
+					var21.method8217(toolkit);
 				}
 				var22 = var21;
 			} else {
-				var22 = new DynamicWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg5, arg6, arg18);
+				var22 = new DynamicWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, angle, arg5, arg6, scaleRotTrans);
 			}
-			this.scene.addWall(arg7, arg12, arg13, var22, null);
-			if (rotation == 0) {
-				if (this.field4512 && arg4.hasHardShadow) {
-					arg15.method1521(arg12, arg13, 50);
-					arg15.method1521(arg12, arg13 + 1, 50);
+			this.scene.addWall(level, cx, cz, var22, null);
+			if (angle == 0) {
+				if (this.field4512 && locType.hasHardShadow) {
+					arg15.setLevelShadeMap(cx, cz, 50);
+					arg15.setLevelShadeMap(cx, cz + 1, 50);
 				}
-				if (var20 == 1 && !this.underwater) {
-					this.scene.occlusionManager.method8957(1, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
+				if (occlude == 1 && !this.underwater) {
+					this.scene.occlusionManager.setLevelOccludeMap(1, level, cx, cz, locType.field7475, locType.field7476);
 				}
-			} else if (rotation == 1) {
-				if (this.field4512 && arg4.hasHardShadow) {
-					arg15.method1521(arg12, arg13 + 1, 50);
-					arg15.method1521(arg12 + 1, arg13 + 1, 50);
+			} else if (angle == 1) {
+				if (this.field4512 && locType.hasHardShadow) {
+					arg15.setLevelShadeMap(cx, cz + 1, 50);
+					arg15.setLevelShadeMap(cx + 1, cz + 1, 50);
 				}
-				if (var20 == 1 && !this.underwater) {
-					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13 + 1, arg4.field7475, -arg4.field7476);
+				if (occlude == 1 && !this.underwater) {
+					this.scene.occlusionManager.setLevelOccludeMap(2, level, cx, cz + 1, locType.field7475, -locType.field7476);
 				}
-			} else if (rotation == 2) {
-				if (this.field4512 && arg4.hasHardShadow) {
-					arg15.method1521(arg12 + 1, arg13, 50);
-					arg15.method1521(arg12 + 1, arg13 + 1, 50);
+			} else if (angle == 2) {
+				if (this.field4512 && locType.hasHardShadow) {
+					arg15.setLevelShadeMap(cx + 1, cz, 50);
+					arg15.setLevelShadeMap(cx + 1, cz + 1, 50);
 				}
-				if (var20 == 1 && !this.underwater) {
-					this.scene.occlusionManager.method8957(1, arg7, arg12 + 1, arg13, arg4.field7475, -arg4.field7476);
+				if (occlude == 1 && !this.underwater) {
+					this.scene.occlusionManager.setLevelOccludeMap(1, level, cx + 1, cz, locType.field7475, -locType.field7476);
 				}
-			} else if (rotation == 3) {
-				if (this.field4512 && arg4.hasHardShadow) {
-					arg15.method1521(arg12, arg13, 50);
-					arg15.method1521(arg12 + 1, arg13, 50);
+			} else if (angle == 3) {
+				if (this.field4512 && locType.hasHardShadow) {
+					arg15.setLevelShadeMap(cx, cz, 50);
+					arg15.setLevelShadeMap(cx + 1, cz, 50);
 				}
-				if (var20 == 1 && !this.underwater) {
-					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
+				if (occlude == 1 && !this.underwater) {
+					this.scene.occlusionManager.setLevelOccludeMap(2, level, cx, cz, locType.field7475, locType.field7476);
 				}
 			}
-			if (arg4.walloff != 64) {
-				this.scene.method8765(arg7, arg12, arg13, arg4.walloff);
+			if (locType.walloff != 64) {
+				this.scene.setWallDecorationOffset(level, cx, cz, locType.walloff);
 			}
 			return true;
-		} else if (LocShape.WALL_DIAGONAL_CORNER.id == arg1) {
+		} else if (LocShape.WALL_DIAGONAL_CORNER.id == shape) {
 			WallLayerEntity var24;
-			if (arg3) {
-				StaticWallEntity var23 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg14, arg18);
+			if (isStatic) {
+				StaticWallEntity var23 = new StaticWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, angle, arg14, scaleRotTrans);
 				if (var23.hasShadow()) {
-					var23.method8217(arg0);
+					var23.method8217(toolkit);
 				}
 				var24 = var23;
 			} else {
-				var24 = new DynamicWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg5, arg6, arg18);
+				var24 = new DynamicWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, angle, arg5, arg6, scaleRotTrans);
 			}
-			this.scene.addWall(arg7, arg12, arg13, var24, null);
-			if (arg4.hasHardShadow && this.field4512) {
-				if (rotation == 0) {
-					arg15.method1521(arg12, arg13 + 1, 50);
-				} else if (rotation == 1) {
-					arg15.method1521(arg12 + 1, arg13 + 1, 50);
-				} else if (rotation == 2) {
-					arg15.method1521(arg12 + 1, arg13, 50);
-				} else if (rotation == 3) {
-					arg15.method1521(arg12, arg13, 50);
+			this.scene.addWall(level, cx, cz, var24, null);
+			if (locType.hasHardShadow && this.field4512) {
+				if (angle == 0) {
+					arg15.setLevelShadeMap(cx, cz + 1, 50);
+				} else if (angle == 1) {
+					arg15.setLevelShadeMap(cx + 1, cz + 1, 50);
+				} else if (angle == 2) {
+					arg15.setLevelShadeMap(cx + 1, cz, 50);
+				} else if (angle == 3) {
+					arg15.setLevelShadeMap(cx, cz, 50);
 				}
 			}
 			return true;
-		} else if (LocShape.WALL_L.id == arg1) {
-			int var25 = rotation + 1 & 0x3;
+		} else if (LocShape.WALL_L.id == shape) {
+			int var25 = angle + 1 & 0x3;
 			WallLayerEntity var28;
 			WallLayerEntity var29;
-			if (arg3) {
-				StaticWallEntity var26 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation + 4, arg14, arg18);
-				StaticWallEntity var27 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, var25, arg14, arg18);
+			if (isStatic) {
+				StaticWallEntity var26 = new StaticWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, angle + 4, arg14, scaleRotTrans);
+				StaticWallEntity var27 = new StaticWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, var25, arg14, scaleRotTrans);
 				if (var26.hasShadow()) {
-					var26.method8217(arg0);
+					var26.method8217(toolkit);
 				}
 				if (var27.hasShadow()) {
-					var27.method8217(arg0);
+					var27.method8217(toolkit);
 				}
 				var28 = var26;
 				var29 = var27;
 			} else {
-				var28 = new DynamicWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation + 4, arg5, arg6, arg18);
-				var29 = new DynamicWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, var25, arg5, arg6, arg18);
+				var28 = new DynamicWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, angle + 4, arg5, arg6, scaleRotTrans);
+				var29 = new DynamicWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, var25, arg5, arg6, scaleRotTrans);
 			}
-			this.scene.addWall(arg7, arg12, arg13, var28, var29);
-			if ((arg4.occlude == 1 || field10754 && arg4.occlude == -1) && !this.underwater) {
-				if (rotation == 0) {
-					this.scene.occlusionManager.method8957(1, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
-					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13 + 1, arg4.field7475, arg4.field7476);
-				} else if (rotation == 1) {
-					this.scene.occlusionManager.method8957(1, arg7, arg12 + 1, arg13, arg4.field7475, arg4.field7476);
-					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13 + 1, arg4.field7475, arg4.field7476);
-				} else if (rotation == 2) {
-					this.scene.occlusionManager.method8957(1, arg7, arg12 + 1, arg13, arg4.field7475, arg4.field7476);
-					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
-				} else if (rotation == 3) {
-					this.scene.occlusionManager.method8957(1, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
-					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
+			this.scene.addWall(level, cx, cz, var28, var29);
+			if ((locType.occlude == 1 || field10754 && locType.occlude == -1) && !this.underwater) {
+				if (angle == 0) {
+					this.scene.occlusionManager.setLevelOccludeMap(1, level, cx, cz, locType.field7475, locType.field7476);
+					this.scene.occlusionManager.setLevelOccludeMap(2, level, cx, cz + 1, locType.field7475, locType.field7476);
+				} else if (angle == 1) {
+					this.scene.occlusionManager.setLevelOccludeMap(1, level, cx + 1, cz, locType.field7475, locType.field7476);
+					this.scene.occlusionManager.setLevelOccludeMap(2, level, cx, cz + 1, locType.field7475, locType.field7476);
+				} else if (angle == 2) {
+					this.scene.occlusionManager.setLevelOccludeMap(1, level, cx + 1, cz, locType.field7475, locType.field7476);
+					this.scene.occlusionManager.setLevelOccludeMap(2, level, cx, cz, locType.field7475, locType.field7476);
+				} else if (angle == 3) {
+					this.scene.occlusionManager.setLevelOccludeMap(1, level, cx, cz, locType.field7475, locType.field7476);
+					this.scene.occlusionManager.setLevelOccludeMap(2, level, cx, cz, locType.field7475, locType.field7476);
 				}
 			}
-			if (arg4.walloff != 64) {
-				this.scene.method8765(arg7, arg12, arg13, arg4.walloff);
+			if (locType.walloff != 64) {
+				this.scene.setWallDecorationOffset(level, cx, cz, locType.walloff);
 			}
 			return true;
-		} else if (LocShape.WALL_SQUARE_CORNER.id == arg1) {
+		} else if (LocShape.WALL_SQUARE_CORNER.id == shape) {
 			WallLayerEntity var31;
-			if (arg3) {
-				StaticWallEntity var30 = new StaticWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg14, arg18);
+			if (isStatic) {
+				StaticWallEntity var30 = new StaticWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, angle, arg14, scaleRotTrans);
 				if (var30.hasShadow()) {
-					var30.method8217(arg0);
+					var30.method8217(toolkit);
 				}
 				var31 = var30;
 			} else {
-				var31 = new DynamicWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg5, arg6, arg18);
+				var31 = new DynamicWallEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, shape, angle, arg5, arg6, scaleRotTrans);
 			}
-			this.scene.addWall(arg7, arg12, arg13, var31, null);
-			if (arg4.hasHardShadow && this.field4512) {
-				if (rotation == 0) {
-					arg15.method1521(arg12, arg13 + 1, 50);
-				} else if (rotation == 1) {
-					arg15.method1521(arg12 + 1, arg13 + 1, 50);
-				} else if (rotation == 2) {
-					arg15.method1521(arg12 + 1, arg13, 50);
-				} else if (rotation == 3) {
-					arg15.method1521(arg12, arg13, 50);
+			this.scene.addWall(level, cx, cz, var31, null);
+			if (locType.hasHardShadow && this.field4512) {
+				if (angle == 0) {
+					arg15.setLevelShadeMap(cx, cz + 1, 50);
+				} else if (angle == 1) {
+					arg15.setLevelShadeMap(cx + 1, cz + 1, 50);
+				} else if (angle == 2) {
+					arg15.setLevelShadeMap(cx + 1, cz, 50);
+				} else if (angle == 3) {
+					arg15.setLevelShadeMap(cx, cz, 50);
 				}
 			}
 			return true;
-		} else if (LocShape.WALL_DIAGONAL.id == arg1) {
+		} else if (LocShape.WALL_DIAGONAL.id == shape) {
 			PrimaryLayerEntity var33;
-			if (arg3) {
-				StaticSceneryEntity var32 = new StaticSceneryEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg12, arg12, arg13, arg13, arg1, rotation, arg14, true, arg18);
+			if (isStatic) {
+				StaticSceneryEntity var32 = new StaticSceneryEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, cx, cx, cz, cz, shape, angle, arg14, true, scaleRotTrans);
 				if (var32.hasShadow()) {
-					var32.method8217(arg0);
+					var32.method8217(toolkit);
 				}
 				var33 = var32;
 			} else {
-				var33 = new DynamicSceneryEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg12, arg12 + arg16 - 1, arg13, arg13 + arg17 - 1, arg1, rotation, arg5, arg6, true, arg18);
+				var33 = new DynamicSceneryEntity(this.scene, toolkit, this.locs, locType, level, occludeLevel, x, y, z, this.underwater, cx, cx + arg16 - 1, cz, cz + arg17 - 1, shape, angle, arg5, arg6, true, scaleRotTrans);
 			}
 			this.scene.addEntity(var33, false);
-			if (arg4.occlude == 1 && !this.underwater) {
+			if (locType.occlude == 1 && !this.underwater) {
 				byte var34;
-				if ((rotation & 0x1) == 0) {
+				if ((angle & 0x1) == 0) {
 					var34 = 8;
 				} else {
 					var34 = 16;
 				}
-				this.scene.occlusionManager.method8957(var34, arg7, arg12, arg13, arg4.field7475, 0);
+				this.scene.occlusionManager.setLevelOccludeMap(var34, level, cx, cz, locType.field7475, 0);
 			}
-			if (arg4.walloff != 64) {
-				this.scene.method8765(arg7, arg12, arg13, arg4.walloff);
+			if (locType.walloff != 64) {
+				this.scene.setWallDecorationOffset(level, cx, cz, locType.walloff);
 			}
 			return true;
 		} else {
@@ -874,97 +874,97 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.cw(Ldh;IIZLvd;IIIIIIIIILoe;B)Z")
-	public boolean addWallDecorationLoc(Toolkit arg0, int locShapeId, int arg2, boolean isStatic, LocType arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
+	public boolean addWallDecorationLoc(Toolkit arg0, int locShapeId, int arg2, boolean isStatic, LocType arg4, int arg5, int arg6, int level, int arg8, int arg9, int arg10, int arg11, int x, int z, ScaleRotTrans arg14) {
 		if (LocShape.WALLDECOR_STRAIGHT_NOOFFSET.id == locShapeId) {
 			WallDecorLayerEntity var17;
 			if (isStatic) {
-				StaticWallDecorEntity var16 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, arg2, arg14);
+				StaticWallDecorEntity var16 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, arg2, arg14);
 				if (var16.hasShadow()) {
 					var16.method8217(arg0);
 				}
 				var17 = var16;
 			} else {
-				var17 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, arg2, arg5, arg6, arg14);
+				var17 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, arg2, arg5, arg6, arg14);
 			}
-			this.scene.addWallDecoration(arg7, arg12, arg13, var17, null);
+			this.scene.addWallDecoration(level, x, z, var17, null);
 			return true;
 		} else if (LocShape.WALLDECOR_STRAIGHT_OFFSET.id == locShapeId) {
 			int var18 = 65;
-			Location var19 = (Location) this.scene.getWall(arg7, arg12, arg13);
+			Location var19 = (Location) this.scene.getWall(level, x, z);
 			if (var19 != null) {
 				var18 = ((LocType) this.locs.list(var19.getId())).walloff + 1;
 			}
 			WallDecorLayerEntity var21;
 			if (isStatic) {
-				StaticWallDecorEntity var20 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, WALL_DECORATION_ROTATION_FORWARD_X[arg2] * var18, WALL_DECORATION_ROTATION_FORWARD_Z[arg2] * var18, locShapeId, arg2, arg14);
+				StaticWallDecorEntity var20 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, WALL_DECORATION_ROTATION_FORWARD_X[arg2] * var18, WALL_DECORATION_ROTATION_FORWARD_Z[arg2] * var18, locShapeId, arg2, arg14);
 				if (var20.hasShadow()) {
 					var20.method8217(arg0);
 				}
 				var21 = var20;
 			} else {
-				var21 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, WALL_DECORATION_ROTATION_FORWARD_X[arg2] * var18, WALL_DECORATION_ROTATION_FORWARD_Z[arg2] * var18, locShapeId, arg2, arg5, arg6, arg14);
+				var21 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, WALL_DECORATION_ROTATION_FORWARD_X[arg2] * var18, WALL_DECORATION_ROTATION_FORWARD_Z[arg2] * var18, locShapeId, arg2, arg5, arg6, arg14);
 			}
-			this.scene.addWallDecoration(arg7, arg12, arg13, var21, null);
+			this.scene.addWallDecoration(level, x, z, var21, null);
 			return true;
 		} else if (LocShape.WALLDECOR_DIAGONAL_OFFSET.id == locShapeId) {
 			int var22 = 33;
-			Location var23 = (Location) this.scene.getWall(arg7, arg12, arg13);
+			Location var23 = (Location) this.scene.getWall(level, x, z);
 			if (var23 != null) {
 				var22 = ((LocType) this.locs.list(var23.getId())).walloff / 2 + 1;
 			}
 			WallDecorLayerEntity var25;
 			if (isStatic) {
-				StaticWallDecorEntity var24 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, WALL_DECORATION_ROTATION_FORWARD_X[arg2] * var22, WALL_DECORATION_ROTATION_FORWARD_Z[arg2] * var22, locShapeId, arg2 + 4, arg14);
+				StaticWallDecorEntity var24 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, WALL_DECORATION_ROTATION_FORWARD_X[arg2] * var22, WALL_DECORATION_ROTATION_FORWARD_Z[arg2] * var22, locShapeId, arg2 + 4, arg14);
 				if (var24.hasShadow()) {
 					var24.method8217(arg0);
 				}
 				var25 = var24;
 			} else {
-				var25 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, field10753[arg2] * var22, field10762[arg2] * var22, locShapeId, arg2 + 4, arg5, arg6, arg14);
+				var25 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, field10753[arg2] * var22, field10762[arg2] * var22, locShapeId, arg2 + 4, arg5, arg6, arg14);
 			}
-			this.scene.addWallDecoration(arg7, arg12, arg13, var25, null);
+			this.scene.addWallDecoration(level, x, z, var25, null);
 			return true;
 		} else if (LocShape.WALLDECOR_DIAGONAL_NOOFFSET.id == locShapeId) {
 			int var26 = arg2 + 2 & 0x3;
 			WallDecorLayerEntity var28;
 			if (isStatic) {
-				StaticWallDecorEntity var27 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var26 + 4, arg14);
+				StaticWallDecorEntity var27 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var26 + 4, arg14);
 				if (var27.hasShadow()) {
 					var27.method8217(arg0);
 				}
 				var28 = var27;
 			} else {
-				var28 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var26 + 4, arg5, arg6, arg14);
+				var28 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var26 + 4, arg5, arg6, arg14);
 			}
-			this.scene.addWallDecoration(arg7, arg12, arg13, var28, null);
+			this.scene.addWallDecoration(level, x, z, var28, null);
 			return true;
 		} else if (LocShape.WALLDECOR_DIAGONAL_BOTH.id == locShapeId) {
 			int var29 = arg2 + 2 & 0x3;
 			int var30 = 33;
-			Location var31 = (Location) this.scene.getWall(arg7, arg12, arg13);
+			Location var31 = (Location) this.scene.getWall(level, x, z);
 			if (var31 != null) {
 				var30 = ((LocType) this.locs.list(var31.getId())).walloff / 2 + 1;
 			}
-			WallDecorLayerEntity var34;
-			WallDecorLayerEntity var35;
+			WallDecorLayerEntity wallDecoration;
+			WallDecorLayerEntity dynamicWallDecoration;
 			if (isStatic) {
-				StaticWallDecorEntity var32 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, field10753[arg2] * var30, field10762[arg2] * var30, locShapeId, arg2 + 4, arg14);
-				StaticWallDecorEntity var33 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var29 + 4, arg14);
+				StaticWallDecorEntity var32 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, field10753[arg2] * var30, field10762[arg2] * var30, locShapeId, arg2 + 4, arg14);
+				StaticWallDecorEntity var33 = new StaticWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var29 + 4, arg14);
 				if (var32.hasShadow()) {
 					var32.method8217(arg0);
 				}
 				if (var33.hasShadow()) {
 					var33.method8217(arg0);
 				}
-				var34 = var32;
-				var35 = var33;
+				wallDecoration = var32;
+				dynamicWallDecoration = var33;
 			} else {
-				DynamicWallDecorEntity var36 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, field10753[arg2] * var30, field10762[arg2] * var30, locShapeId, arg2 + 4, arg5, arg6, arg14);
-				DynamicWallDecorEntity var37 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var29 + 4, arg5, arg6, arg14);
-				var34 = var36;
-				var35 = var37;
+				DynamicWallDecorEntity var36 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, field10753[arg2] * var30, field10762[arg2] * var30, locShapeId, arg2 + 4, arg5, arg6, arg14);
+				DynamicWallDecorEntity var37 = new DynamicWallDecorEntity(this.scene, arg0, this.locs, arg4, level, arg8, arg9, arg10, arg11, this.underwater, 0, 0, locShapeId, var29 + 4, arg5, arg6, arg14);
+				wallDecoration = var36;
+				dynamicWallDecoration = var37;
 			}
-			this.scene.addWallDecoration(arg7, arg12, arg13, var34, var35);
+			this.scene.addWallDecoration(level, x, z, wallDecoration, dynamicWallDecoration);
 			return true;
 		} else {
 			return false;
@@ -972,8 +972,8 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.ct(Ldh;IIIIB)V")
-	public void method16871(Toolkit arg0, int arg1, int arg2, int arg3, int arg4) {
-		Location var6 = this.method16899(arg1, arg2, arg3, arg4);
+	public void method16871(Toolkit arg0, int level, int layer, int x, int z) {
+		Location var6 = this.getLocation(level, layer, x, z);
 		if (var6 == null) {
 			return;
 		}
@@ -981,56 +981,56 @@ public class ClientMapLoader extends MapLoader {
 		int var8 = var6.getShape();
 		int var9 = var6.getAngle();
 		if (var7.method9480()) {
-			PositionedSound.method6206(arg1, arg3, arg4, var7);
+			PositionedSound.method6206(level, x, z, var7);
 		}
 		if (var6.hasShadow()) {
 			var6.method8209(arg0);
 		}
-		if (arg2 == 0) {
-			this.scene.removeWall(arg1, arg3, arg4);
-			this.scene.removeDynamicWall(arg1, arg3, arg4);
+		if (layer == 0) {
+			this.scene.removeWall(level, x, z);
+			this.scene.removeDynamicWall(level, x, z);
 			if (var7.occlude == 1) {
 				if (var9 == 0) {
-					this.scene.occlusionManager.method8919(1, arg1, arg3, arg4);
+					this.scene.occlusionManager.method8919(1, level, x, z);
 				} else if (var9 == 1) {
-					this.scene.occlusionManager.method8919(2, arg1, arg3, arg4 + 1);
+					this.scene.occlusionManager.method8919(2, level, x, z + 1);
 				} else if (var9 == 2) {
-					this.scene.occlusionManager.method8919(1, arg1, arg3 + 1, arg4);
+					this.scene.occlusionManager.method8919(1, level, x + 1, z);
 				} else if (var9 == 3) {
-					this.scene.occlusionManager.method8919(2, arg1, arg3, arg4);
+					this.scene.occlusionManager.method8919(2, level, x, z);
 				}
 			}
-		} else if (arg2 == 1) {
-			this.scene.removeWallDecoration(arg1, arg3, arg4);
-			this.scene.removeDynamicWallDecoration(arg1, arg3, arg4);
-		} else if (arg2 == 2) {
-			this.scene.removeEntity(arg1, arg3, arg4, Client.field11001);
+		} else if (layer == 1) {
+			this.scene.removeWallDecoration(level, x, z);
+			this.scene.removeDynamicWallDecoration(level, x, z);
+		} else if (layer == 2) {
+			this.scene.removeEntity(level, x, z, Client.field11001);
 			if (LocShape.WALL_DIAGONAL.id == var8) {
 				if ((var9 & 0x1) == 0) {
-					this.scene.occlusionManager.method8919(8, arg1, arg3, arg4);
+					this.scene.occlusionManager.method8919(8, level, x, z);
 				} else {
-					this.scene.occlusionManager.method8919(16, arg1, arg3, arg4);
+					this.scene.occlusionManager.method8919(16, level, x, z);
 				}
 			}
-		} else if (arg2 == 3) {
-			this.scene.removeGroundDecoration(arg1, arg3, arg4);
+		} else if (layer == 3) {
+			this.scene.removeGroundDecoration(level, x, z);
 		}
 	}
 
 	@ObfuscatedName("aih.cf(IIIII)Lst;")
-	public Location method16899(int arg0, int arg1, int arg2, int arg3) {
+	public Location getLocation(int level, int layer, int x, int z) {
 		Location var5 = null;
-		if (arg1 == 0) {
-			var5 = (Location) this.scene.getWall(arg0, arg2, arg3);
+		if (layer == 0) {
+			var5 = (Location) this.scene.getWall(level, x, z);
 		}
-		if (arg1 == 1) {
-			var5 = (Location) this.scene.getWallDecoration(arg0, arg2, arg3);
+		if (layer == 1) {
+			var5 = (Location) this.scene.getWallDecoration(level, x, z);
 		}
-		if (arg1 == 2) {
-			var5 = (Location) this.scene.getEntity(arg0, arg2, arg3, Client.field11001);
+		if (layer == 2) {
+			var5 = (Location) this.scene.getEntity(level, x, z, Client.field11001);
 		}
-		if (arg1 == 3) {
-			var5 = (Location) this.scene.getGroundDecoration(arg0, arg2, arg3);
+		if (layer == 3) {
+			var5 = (Location) this.scene.getGroundDecoration(level, x, z);
 		}
 		return var5;
 	}

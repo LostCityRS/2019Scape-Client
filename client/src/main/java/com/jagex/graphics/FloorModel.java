@@ -74,7 +74,7 @@ public abstract class FloorModel {
 	}
 
 	@ObfuscatedName("cb.e(III)V")
-	public abstract void method1521(int arg0, int arg1, int arg2);
+	public abstract void setLevelShadeMap(int arg0, int arg1, int arg2);
 
 	@ObfuscatedName("cb.m(II[I[I[I[I[I[I[I[I[I[I[ILdy;Z)V")
 	public abstract void addTileUnblended(int arg0, int arg1, int[] arg2, int[] arg3, int[] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int[] arg10, int[] arg11, int[] arg12, WaterFogData arg13, boolean arg14);

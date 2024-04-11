@@ -75,7 +75,7 @@ public class PlayerGroupMember {
 		this.vars = new VarContainerSparse(groupResourceProvider.getVarPlayerTypeList());
 		for (int index = 0; index < varsCount; index++) {
 			VarValue varValue = groupResourceProvider.getVarPlayerTypeList().decodeVarValue(buf);
-			this.vars.setVarObject(varValue.var, varValue.value);
+			this.vars.setVarValue(varValue.var, varValue.value);
 		}
 		this.nodeId = buf.g2();
 		if (this.nodeId == 65535) {
@@ -166,7 +166,7 @@ public class PlayerGroupMember {
 		Iterator var3 = arg0.vars.iterator();
 		while (var3.hasNext()) {
 			VarValue var4 = (VarValue) var3.next();
-			this.vars.setVarObject(var4.var, var4.value);
+			this.vars.setVarValue(var4.var, var4.value);
 		}
 		this.members = arg0.members;
 	}

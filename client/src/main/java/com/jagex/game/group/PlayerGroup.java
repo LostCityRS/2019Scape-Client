@@ -82,7 +82,7 @@ public class PlayerGroup {
 		int varsCount = buf.g2();
 		for (int index = 0; index < varsCount; index++) {
 			VarValue var14 = groupResourceProvider.getVarPlayerGroupTypeList().decodeVarValue(buf);
-			this.vars.setVarObject(var14.var, var14.value);
+			this.vars.setVarValue(var14.var, var14.value);
 		}
 		if (!arg2) {
 			buf.g2();

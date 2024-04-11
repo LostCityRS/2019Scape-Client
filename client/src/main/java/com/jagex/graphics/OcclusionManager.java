@@ -114,38 +114,38 @@ public class OcclusionManager {
 	}
 
 	@ObfuscatedName("um.e(IIIIII)V")
-	public void method8957(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		if (arg0 != 8 && arg0 != 16) {
-			Tile var7 = this.scene.levelTiles[arg1][arg2][arg3];
+	public void setLevelOccludeMap(int type, int level, int x, int z, int arg4, int arg5) {
+		if (type != 8 && type != 16) {
+			Tile var7 = this.scene.levelTiles[level][x][z];
 			if (var7 == null) {
-				this.scene.levelTiles[arg1][arg2][arg3] = var7 = new Tile(arg1);
+				this.scene.levelTiles[level][x][z] = var7 = new Tile(level);
 			}
-			if (arg0 == 1) {
+			if (type == 1) {
 				var7.field6973 = (short) arg4;
 				var7.field6969 = (short) arg5;
-			} else if (arg0 == 2) {
+			} else if (type == 2) {
 				var7.field6975 = (short) arg4;
 				var7.field6972 = (short) arg5;
 			}
 			if (this.field7040) {
 				this.method8917();
 			}
-		} else if (arg0 == 8) {
-			int var8 = arg2 << this.scene.size;
-			int var9 = this.scene.field6901 + var8;
-			int var10 = arg3 << this.scene.size;
-			int var11 = this.scene.field6901 + var10;
-			int var12 = this.scene.field6915[arg1].getTileHeight(arg2, arg3);
-			int var13 = this.scene.field6915[arg1].getTileHeight(arg2 + 1, arg3 + 1);
-			this.field7021[this.field7023++] = new Occluder(this.scene, arg0, arg1, var8, var9, var9, var8, var12, var13, var13 - arg4, var12 - arg4, var10, var11, var11, var10);
+		} else if (type == 8) {
+			int minX = x << this.scene.size;
+			int maxX = this.scene.field6901 + minX;
+			int minZ = z << this.scene.size;
+			int maxZ = this.scene.field6901 + minZ;
+			int minY = this.scene.field6915[level].getTileHeight(x, z);
+			int var13 = this.scene.field6915[level].getTileHeight(x + 1, z + 1);
+			this.field7021[this.field7023++] = new Occluder(this.scene, type, level, minX, maxX, maxX, minX, minY, var13, var13 - arg4, minY - arg4, minZ, maxZ, maxZ, minZ);
 		} else {
-			int var14 = (arg2 << this.scene.size) + this.scene.field6901;
-			int var15 = var14 - this.scene.field6901;
-			int var16 = arg3 << this.scene.size;
-			int var17 = this.scene.field6901 + var16;
-			int var18 = this.scene.field6915[arg1].getTileHeight(arg2 + 1, arg3);
-			int var19 = this.scene.field6915[arg1].getTileHeight(arg2, arg3 + 1);
-			this.field7021[this.field7023++] = new Occluder(this.scene, arg0, arg1, var14, var15, var15, var14, var18, var19, var19 - arg4, var18 - arg4, var16, var17, var17, var16);
+			int minX = (x << this.scene.size) + this.scene.field6901;
+			int maxX = minX - this.scene.field6901;
+			int minZ = z << this.scene.size;
+			int maxZ = this.scene.field6901 + minZ;
+			int minY = this.scene.field6915[level].getTileHeight(x + 1, z);
+			int var19 = this.scene.field6915[level].getTileHeight(x, z + 1);
+			this.field7021[this.field7023++] = new Occluder(this.scene, type, level, minX, maxX, maxX, minX, minY, var19, var19 - arg4, minY - arg4, minZ, maxZ, maxZ, minZ);
 		}
 	}
 

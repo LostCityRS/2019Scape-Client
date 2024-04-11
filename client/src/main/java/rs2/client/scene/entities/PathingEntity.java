@@ -229,7 +229,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public Model[] idk;
 
 	@ObfuscatedName("ahm.cl")
-	public final VarContainer field10460;
+	public final VarContainer vars;
 
 	@ObfuscatedName("ahm.cg")
 	public Interface field10461;
@@ -294,7 +294,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 			this.spotAnims[var4] = new EntitySpotAnim(this);
 		}
 		this.field10398 = new UnknownEntityAnimationNode[Client.wearposDefaults.field7766.length];
-		this.field10460 = new VarContainerSparse(arg2);
+		this.vars = new VarContainerSparse(arg2);
 	}
 
 	public PathingEntity(Scene arg0, VarTypeList arg1) {

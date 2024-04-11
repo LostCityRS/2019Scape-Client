@@ -6,26 +6,26 @@ import deob.ObfuscatedName;
 public interface VarContainer extends Iterable {
 
 	@ObfuscatedName("abj.n(IIB)V")
-	void method14729(int arg0, int arg1);
+	void setVarValueInt(int id, int value);
 
 	@ObfuscatedName("abj.f(II)Ljava/lang/Object;")
-	Object method14738(int arg0);
+	Object getVarValue(int id);
 
 	@ObfuscatedName("abj.w(ILjava/lang/Object;B)V")
-	void setVarObject(int arg0, Object arg1);
+	void setVarValue(int id, Object value);
 
 	@ObfuscatedName("abj.l(I)V")
 	void clear();
 
 	@ObfuscatedName("abj.u(IB)V")
-	void method14734(int arg0);
+	void method14734(int id);
 
 	@ObfuscatedName("abj.m(II)J")
-	long method14730(int arg0);
+	long getVarValueLong(int id);
 
 	@ObfuscatedName("abj.e(II)I")
-	int method14728(int arg0);
+	int getVarValueInt(int id);
 
 	@ObfuscatedName("abj.k(IJ)V")
-	void method14742(int arg0, long arg1);
+	void setVarValueLong(int id, long value);
 }

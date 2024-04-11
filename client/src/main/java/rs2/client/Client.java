@@ -2981,7 +2981,7 @@ public final class Client extends GameShell {
 		if (!arg2) {
 			preferences.setPreferencesDisplayMode(preferences.displayMode, !arg2);
 		}
-		ObjIconFactory.method17658();
+		ObjIconFactory.reset();
 		toolkit.setVertexCapacity(20000);
 		toolkit.method2224(32);
 		world.method7820();
@@ -3024,7 +3024,7 @@ public final class Client extends GameShell {
 		Loading.method18929();
 		for (int var0 = 0; var0 < hintTrails.length; var0++) {
 			if (hintTrails[var0] != null) {
-				hintTrails[var0].field6754 = null;
+				hintTrails[var0].model = null;
 			}
 		}
 		for (int var1 = 0; var1 < 2048; var1++) {
@@ -3686,7 +3686,7 @@ public final class Client extends GameShell {
 			field10834.reset();
 		}
 		ClientScriptHelpers.method8004();
-		ObjIconFactory.method17658();
+		ObjIconFactory.reset();
 	}
 
 	@ObfuscatedName("sz.fb(I)V")
@@ -8183,7 +8183,7 @@ public final class Client extends GameShell {
 							var36 = new VarContainerSparse(varObjTypeList);
 							while (var37-- > 0) {
 								VarValue var38 = varObjTypeList.decodeVarValue(in);
-								var36.setVarObject(var38.var, var38.value);
+								var36.setVarValue(var38.var, var38.value);
 							}
 						}
 					}
@@ -9299,7 +9299,7 @@ public final class Client extends GameShell {
 			}
 			while (connection.packetSize - (in.pos - var320) > 0) {
 				VarValue var325 = varPlayerTypeList.decodeVarValue(in);
-				var324.setVarObject(var325.var, var325.value);
+				var324.setVarValue(var325.var, var325.value);
 			}
 			connection.packetType = null;
 			return true;
@@ -9386,7 +9386,7 @@ public final class Client extends GameShell {
 				varClan = new SparseVarDomain(varClanTypeList);
 			}
 			VarValue var352 = varClanTypeList.decodeVarValue(in);
-			varClan.field1708.setVarObject(var352.var, var352.value);
+			varClan.field1708.setVarValue(var352.var, var352.value);
 			field10841[++field11020 - 1 & 0x3F] = var352.var;
 			connection.packetType = null;
 			return true;
@@ -10058,7 +10058,7 @@ public final class Client extends GameShell {
 						var546 = new VarContainerSparse(varObjTypeList);
 						while (var547-- > 0) {
 							VarValue var548 = varObjTypeList.decodeVarValue(in);
-							var546.setVarObject(var548.var, var548.value);
+							var546.setVarValue(var548.var, var548.value);
 						}
 					}
 				}
@@ -11560,14 +11560,14 @@ public final class Client extends GameShell {
 				}
 			}
 			if ((var4 & 0x200000) != 0) {
-				var3.field10460.clear();
+				var3.vars.clear();
 				var0.pos += 2;
 				int var70 = var0.data[(++var0.pos) - 1] & 0xFF;
 				for (int var71 = 0; var71 < var70; var71++) {
 					int var72 = var0.g1_alt2();
 					BaseVarType var73 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var72);
 					VarValue var74 = varNpcTypeList.decodeVarValue(var0, var73);
-					var3.field10460.setVarObject(var74.var, var74.value);
+					var3.vars.setVarValue(var74.var, var74.value);
 				}
 			}
 			if ((var4 & 0x20000) != 0) {
@@ -11697,7 +11697,7 @@ public final class Client extends GameShell {
 					int var110 = var0.g1_alt3();
 					BaseVarType var111 = (BaseVarType) SerializableEnums.decode(BaseVarType.values(), var110);
 					VarValue var112 = varNpcTypeList.decodeVarValue(var0, var111);
-					var3.field10460.setVarObject(var112.var, var112.value);
+					var3.vars.setVarValue(var112.var, var112.value);
 				}
 			}
 		}

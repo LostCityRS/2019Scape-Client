@@ -35,10 +35,10 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	public final int id;
 
 	@ObfuscatedName("ajv.y")
-	public final byte field11137;
+	public final byte shape;
 
 	@ObfuscatedName("ajv.q")
-	public final byte field11142;
+	public final byte angle;
 
 	@ObfuscatedName("ajv.x")
 	public final boolean underwater;
@@ -58,14 +58,14 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	@ObfuscatedName("ajv.i")
 	public int field11138;
 
-	public StaticSceneryEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, int arg14, int arg15, boolean arg16, boolean arg17, ScaleRotTrans scaleRotTrans) {
-		super(scene, level, occludeLevel, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, locType.raiseobject == 1, method14062(arg14, arg15), scaleRotTrans);
+	public StaticSceneryEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, int shape, int angle, boolean arg16, boolean arg17, ScaleRotTrans scaleRotTrans) {
+		super(scene, level, occludeLevel, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, locType.raiseobject == 1, method14062(shape, angle), scaleRotTrans);
 		this.locTypeList = locTypeList;
 		this.id = locType.id;
 		this.occludeLevel = (byte) occludeLevel;
 		this.underwater = underwater;
-		this.field11137 = (byte) arg14;
-		this.field11142 = (byte) arg15;
+		this.shape = (byte) shape;
+		this.angle = (byte) angle;
 		this.active = locType.active != 0 && !underwater;
 		this.field11139 = arg16;
 		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
@@ -148,7 +148,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 			}
 		}
 		Vector3 var7 = this.getTransform().trans;
-		return var4.method9475(arg0, arg1, LocShape.CENTREPIECE_DIAGONAL.id == this.field11137 ? LocShape.CENTREPIECE_STRAIGHT.id : this.field11137, LocShape.CENTREPIECE_DIAGONAL.id == this.field11137 ? this.field11142 + 4 : this.field11142, var5, var6, (int) var7.x, this.field11138, (int) var7.z, arg2, null);
+		return var4.method9475(arg0, arg1, LocShape.CENTREPIECE_DIAGONAL.id == this.shape ? LocShape.CENTREPIECE_STRAIGHT.id : this.shape, LocShape.CENTREPIECE_DIAGONAL.id == this.shape ? this.angle + 4 : this.angle, var5, var6, (int) var7.x, this.field11138, (int) var7.z, arg2, null);
 	}
 
 	@ObfuscatedName("ajv.fv(Ldh;B)Luq;")
@@ -231,12 +231,12 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 
 	@ObfuscatedName("ajv.n(I)I")
 	public int getShape() {
-		return this.field11137;
+		return this.shape;
 	}
 
 	@ObfuscatedName("ajv.m(I)I")
 	public int getAngle() {
-		return this.field11142;
+		return this.angle;
 	}
 
 	@ObfuscatedName("ajv.k(I)V")

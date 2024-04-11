@@ -185,7 +185,7 @@ public class GpuFloorModel extends FloorModel {
 	}
 
 	@ObfuscatedName("aem.e(III)V")
-	public void method1521(int arg0, int arg1, int arg2) {
+	public void setLevelShadeMap(int arg0, int arg1, int arg2) {
 		int var4 = Math.min(this.field9514.length - 1, Math.max(0, arg0));
 		int var5 = Math.min(this.field9514[var4].length - 1, Math.max(0, arg1));
 		if ((this.field9514[var4][var5] & 0xFF) < arg2) {

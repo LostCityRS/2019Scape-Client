@@ -88,19 +88,19 @@ public class MapLoader {
 	public byte[][][] levelOccludemap;
 
 	@ObfuscatedName("qg.j")
-	public int[] field4504;
+	public int[] blendHue;
 
 	@ObfuscatedName("qg.t")
-	public int[] field4525;
+	public int[] blendSaturation;
 
 	@ObfuscatedName("qg.ae")
-	public int[] field4526;
+	public int[] blendLightness;
 
 	@ObfuscatedName("qg.ag")
-	public int[] field4509;
+	public int[] blendChroma;
 
 	@ObfuscatedName("qg.ah")
-	public int[] field4528;
+	public int[] blendMagnitude;
 
 	@ObfuscatedName("qg.ao")
 	public static final int[] field4524 = new int[] { 2, 1, 1, 1, 2, 2, 2, 1, 3, 3, 3, 2, 0, 4, 0 };
@@ -261,11 +261,11 @@ public class MapLoader {
 
 	@ObfuscatedName("qg.n(B)V")
 	public void method7137() {
-		this.field4504 = null;
-		this.field4525 = null;
-		this.field4526 = null;
-		this.field4509 = null;
-		this.field4528 = null;
+		this.blendHue = null;
+		this.blendSaturation = null;
+		this.blendLightness = null;
+		this.blendChroma = null;
+		this.blendMagnitude = null;
 		this.field4512 = false;
 	}
 
@@ -538,87 +538,87 @@ public class MapLoader {
 	@ObfuscatedName("qg.p(Ldh;Lcb;Lcb;B)V")
 	public final void method7200(Toolkit arg0, FloorModel arg1, FloorModel arg2) {
 		int[][] var4 = new int[this.maxTileX][this.maxTileZ];
-		if (this.field4504 == null || this.maxTileZ != this.field4504.length) {
-			this.field4504 = new int[this.maxTileZ];
-			this.field4525 = new int[this.maxTileZ];
-			this.field4526 = new int[this.maxTileZ];
-			this.field4509 = new int[this.maxTileZ];
-			this.field4528 = new int[this.maxTileZ];
+		if (this.blendHue == null || this.maxTileZ != this.blendHue.length) {
+			this.blendHue = new int[this.maxTileZ];
+			this.blendSaturation = new int[this.maxTileZ];
+			this.blendLightness = new int[this.maxTileZ];
+			this.blendChroma = new int[this.maxTileZ];
+			this.blendMagnitude = new int[this.maxTileZ];
 		}
-		for (int var5 = 0; var5 < this.levels; var5++) {
+		for (int level = 0; level < this.levels; level++) {
 			for (int var6 = 0; var6 < this.maxTileZ; var6++) {
-				this.field4504[var6] = 0;
-				this.field4525[var6] = 0;
-				this.field4526[var6] = 0;
-				this.field4509[var6] = 0;
-				this.field4528[var6] = 0;
+				this.blendHue[var6] = 0;
+				this.blendSaturation[var6] = 0;
+				this.blendLightness[var6] = 0;
+				this.blendChroma[var6] = 0;
+				this.blendMagnitude[var6] = 0;
 			}
-			for (int var7 = -5; var7 < this.maxTileX; var7++) {
-				for (int var8 = 0; var8 < this.maxTileZ; var8++) {
-					int var9 = var7 + 5;
-					int var10002;
-					if (var9 < this.maxTileX) {
-						int var10 = this.levelTileUnderlayIds[var5][var9][var8] & 0x7FFF;
-						if (var10 > 0) {
-							FloorUnderlayType var11 = (FloorUnderlayType) this.underlays.list(var10 - 1);
-							this.field4504[var8] += var11.hue;
-							this.field4525[var8] += var11.saturation;
-							this.field4526[var8] += var11.lightness;
-							this.field4509[var8] += var11.chroma;
-							var10002 = this.field4528[var8]++;
+			for (int x0 = -5; x0 < this.maxTileX; x0++) {
+				for (int z0 = 0; z0 < this.maxTileZ; z0++) {
+					int x1 = x0 + 5;
+					int debugMag;
+					if (x1 < this.maxTileX) {
+						int underlayId = this.levelTileUnderlayIds[level][x1][z0] & 0x7FFF;
+						if (underlayId > 0) {
+							FloorUnderlayType flu = (FloorUnderlayType) this.underlays.list(underlayId - 1);
+							this.blendHue[z0] += flu.hue;
+							this.blendSaturation[z0] += flu.saturation;
+							this.blendLightness[z0] += flu.lightness;
+							this.blendChroma[z0] += flu.chroma;
+							debugMag = this.blendMagnitude[z0]++;
 						}
 					}
-					int var12 = var7 - 5;
-					if (var12 >= 0) {
-						int var13 = this.levelTileUnderlayIds[var5][var12][var8] & 0x7FFF;
-						if (var13 > 0) {
-							FloorUnderlayType var14 = (FloorUnderlayType) this.underlays.list(var13 - 1);
-							this.field4504[var8] -= var14.hue;
-							this.field4525[var8] -= var14.saturation;
-							this.field4526[var8] -= var14.lightness;
-							this.field4509[var8] -= var14.chroma;
-							var10002 = this.field4528[var8]--;
+					int x2 = x0 - 5;
+					if (x2 >= 0) {
+						int underlayId = this.levelTileUnderlayIds[level][x2][z0] & 0x7FFF;
+						if (underlayId > 0) {
+							FloorUnderlayType flu = (FloorUnderlayType) this.underlays.list(underlayId - 1);
+							this.blendHue[z0] -= flu.hue;
+							this.blendSaturation[z0] -= flu.saturation;
+							this.blendLightness[z0] -= flu.lightness;
+							this.blendChroma[z0] -= flu.chroma;
+							debugMag = this.blendMagnitude[z0]--;
 						}
 					}
 				}
-				if (var7 >= 0) {
-					int var15 = 0;
-					int var16 = 0;
-					int var17 = 0;
-					int var18 = 0;
-					int var19 = 0;
-					for (int var20 = -5; var20 < this.maxTileZ; var20++) {
-						int var21 = var20 + 5;
-						if (var21 < this.maxTileZ) {
-							var15 += this.field4504[var21];
-							var16 += this.field4525[var21];
-							var17 += this.field4526[var21];
-							var18 += this.field4509[var21];
-							var19 += this.field4528[var21];
+				if (x0 >= 0) {
+					int hueAccumulator = 0;
+					int saturationAccumulator = 0;
+					int lightnessAccumulator = 0;
+					int luminanceAccumulator = 0;
+					int magnitudeAccumulator = 0;
+					for (int z0 = -5; z0 < this.maxTileZ; z0++) {
+						int dz1 = z0 + 5;
+						if (dz1 < this.maxTileZ) {
+							hueAccumulator += this.blendHue[dz1];
+							saturationAccumulator += this.blendSaturation[dz1];
+							lightnessAccumulator += this.blendLightness[dz1];
+							luminanceAccumulator += this.blendChroma[dz1];
+							magnitudeAccumulator += this.blendMagnitude[dz1];
 						}
-						int var22 = var20 - 5;
-						if (var22 >= 0) {
-							var15 -= this.field4504[var22];
-							var16 -= this.field4525[var22];
-							var17 -= this.field4526[var22];
-							var18 -= this.field4509[var22];
-							var19 -= this.field4528[var22];
+						int dz2 = z0 - 5;
+						if (dz2 >= 0) {
+							hueAccumulator -= this.blendHue[dz2];
+							saturationAccumulator -= this.blendSaturation[dz2];
+							lightnessAccumulator -= this.blendLightness[dz2];
+							luminanceAccumulator -= this.blendChroma[dz2];
+							magnitudeAccumulator -= this.blendMagnitude[dz2];
 						}
-						if (var20 >= 0 && var18 > 0 && var19 > 0) {
-							var4[var7][var20] = ColourUtils.hsl24to16(var15 * 256 / var18, var16 / var19, var17 / var19);
+						if (z0 >= 0 && luminanceAccumulator > 0 && magnitudeAccumulator > 0) {
+							var4[x0][z0] = ColourUtils.hsl24to16(hueAccumulator * 256 / luminanceAccumulator, saturationAccumulator / magnitudeAccumulator, lightnessAccumulator / magnitudeAccumulator);
 						}
 					}
 				}
 			}
 			if (this.isGroundBlending) {
-				this.method7147(arg0, this.scene.levelHeightmaps[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
+				this.method7147(arg0, this.scene.levelHeightmaps[level], level, var4, level == 0 ? arg1 : null, level == 0 ? arg2 : null);
 			} else {
-				this.method7199(arg0, this.scene.levelHeightmaps[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
+				this.method7199(arg0, this.scene.levelHeightmaps[level], level, var4, level == 0 ? arg1 : null, level == 0 ? arg2 : null);
 			}
-			this.levelTileUnderlayIds[var5] = null;
-			this.levelTileOverlayIds[var5] = null;
-			this.levelTileOverlayShape[var5] = null;
-			this.levelTileOverlayRotation[var5] = null;
+			this.levelTileUnderlayIds[level] = null;
+			this.levelTileOverlayIds[level] = null;
+			this.levelTileOverlayShape[level] = null;
+			this.levelTileOverlayRotation[level] = null;
 		}
 		if (!this.underwater) {
 			if (this.sceneryShadows != 0) {
@@ -767,7 +767,7 @@ public class MapLoader {
 						var50.field1579 = this.scene.method8715(var7, var8);
 					}
 					arg1.addTileUnblended(var7, var8, var29, var31, var30, var32, var19, var20, var21, var22, var25, var23, var24, var50, false);
-					this.scene.method8851(arg2, var7, var8);
+					this.scene.createTile(arg2, var7, var8);
 				}
 			}
 		}
@@ -819,7 +819,7 @@ public class MapLoader {
 					this.method7150(var18, var19);
 					int var25 = this.field4585 + this.field4584;
 					if (var25 <= 0) {
-						this.scene.method8851(arg2, var12, var14);
+						this.scene.createTile(arg2, var12, var14);
 					} else {
 						if (var11[0]) {
 							var25++;
@@ -863,7 +863,7 @@ public class MapLoader {
 							var39.field1579 = this.scene.method8715(var12, var14);
 						}
 						arg1.method1557(var12, var14, var28, var33, var29, var34, var30, var27, var31, var32, var39, this.field4507);
-						this.scene.method8851(arg2, var12, var14);
+						this.scene.createTile(arg2, var12, var14);
 					}
 				}
 			}

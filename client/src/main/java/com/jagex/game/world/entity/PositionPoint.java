@@ -25,7 +25,7 @@ public class PositionPoint extends Position {
 	public final Vector3 field10547 = new Vector3();
 
 	@ObfuscatedName("ahh.w")
-	public boolean field10550 = false;
+	public boolean collision = false;
 
 	public PositionPoint(Camera arg0) {
 		super(arg0);
@@ -45,7 +45,7 @@ public class PositionPoint extends Position {
 
 	@ObfuscatedName("ahh.e(F[[[ILqx;IIB)V")
 	public void method5238(float arg0, int[][][] arg1, SceneLevelTileFlags arg2, int arg3, int arg4) {
-		if (this.field10550) {
+		if (this.collision) {
 			this.method16681(arg1, arg2, arg3, arg4);
 		}
 		this.camera.method4807(true, arg0, this.field10548, this.camera.method4721(), this.field10549, this.field10547);
@@ -95,7 +95,7 @@ public class PositionPoint extends Position {
 
 	@ObfuscatedName("ahh.ae(ZI)V")
 	public void setCollision(boolean arg0) {
-		this.field10550 = arg0;
+		this.collision = arg0;
 	}
 
 	@ObfuscatedName("ahh.ag([[[ILqx;III)V")

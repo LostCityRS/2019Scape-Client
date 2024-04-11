@@ -32,7 +32,7 @@ public class HintTrail {
 	public final int[] field6753;
 
 	@ObfuscatedName("ta.w")
-	public Model field6754;
+	public Model model;
 
 	@ObfuscatedName("ta.l")
 	public LinkedList field6752;
@@ -51,7 +51,7 @@ public class HintTrail {
 			this.field6750[var6] = var4 + arg1.g1b();
 			this.field6753[var6] = var5 + arg1.g1b();
 		}
-		this.field6754 = this.method8402(arg0);
+		this.model = this.method8402(arg0);
 	}
 
 	@ObfuscatedName("ta.e(Ldh;S)Ldo;")
@@ -136,7 +136,7 @@ public class HintTrail {
 	@ObfuscatedName("ta.w(I)V")
 	public void method8406() {
 		this.field6756 = false;
-		this.field6754 = null;
+		this.model = null;
 	}
 
 	@ObfuscatedName("ta.l(I)Z")
@@ -146,7 +146,7 @@ public class HintTrail {
 
 	@ObfuscatedName("ta.u(Ldh;I)Z")
 	public boolean method8408(Toolkit arg0) {
-		this.field6754 = this.method8402(arg0);
-		return this.field6754 != null;
+		this.model = this.method8402(arg0);
+		return this.model != null;
 	}
 }
