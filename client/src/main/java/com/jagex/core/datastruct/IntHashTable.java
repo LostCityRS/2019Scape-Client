@@ -27,7 +27,7 @@ public class IntHashTable {
 	}
 
 	@ObfuscatedName("is.e(IS)I")
-	public int method4486(int arg0) {
+	public int get(int arg0) {
 		int var2 = (this.field2655.length >> 1) - 1;
 		int var3 = arg0 & var2;
 		while (true) {

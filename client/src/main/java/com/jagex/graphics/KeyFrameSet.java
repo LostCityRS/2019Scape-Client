@@ -63,7 +63,7 @@ public class KeyFrameSet extends SecondaryNode {
 		if (this.field12314 == null) {
 			Js5 var1 = field7411;
 			synchronized (field7411) {
-				this.field12314 = field7411.method6894(this.field12315);
+				this.field12314 = field7411.fetchFile(this.field12315);
 				if (this.field12314 == null) {
 					return false;
 				}
@@ -83,7 +83,7 @@ public class KeyFrameSet extends SecondaryNode {
 		}
 		Js5 var10 = field7411;
 		synchronized (field7411) {
-			this.field12317 = new AnimBase(var6, field8302.method6894(var6));
+			this.field12317 = new AnimBase(var6, field8302.fetchFile(var6));
 			this.method19379(var4, var5);
 			this.field12314 = null;
 			return true;

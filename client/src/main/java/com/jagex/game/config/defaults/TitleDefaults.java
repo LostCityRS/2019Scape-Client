@@ -14,7 +14,7 @@ public class TitleDefaults {
 	public int field7670 = -1;
 
 	public TitleDefaults(Js5 arg0) {
-		byte[] var2 = arg0.method6894(DefaultsGroup.TITLE.js5GroupId);
+		byte[] var2 = arg0.fetchFile(DefaultsGroup.TITLE.js5GroupId);
 		this.method9831(new Packet(var2));
 	}
 

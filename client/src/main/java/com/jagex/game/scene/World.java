@@ -951,14 +951,14 @@ public class World {
 		}
 		this.field5044 = 0;
 		for (int var1 = 0; var1 < this.rebuildMapSquaresCount; var1++) {
-			if (!Client.mapsJs5.method6927(this.rebuildMapSquaresGroupIds[var1])) {
+			if (!Client.mapsJs5.isGroupReady(this.rebuildMapSquaresGroupIds[var1])) {
 				this.field5044++;
 			}
 		}
 		if (this.field5058 == null) {
-			if (this.field5035 == null || !Client.worldmapAreaDataJs5.method6904(this.field5035.field12351)) {
+			if (this.field5035 == null || !Client.worldmapAreaDataJs5.isGroupNameValid(this.field5035.field12351)) {
 				this.field5058 = new WorldMapRelated(0);
-			} else if (Client.worldmapAreaDataJs5.method6886(this.field5035.field12351)) {
+			} else if (Client.worldmapAreaDataJs5.isGroupReady(this.field5035.field12351)) {
 				this.field5058 = WorldMapRelated.method6046(Client.worldmapAreaDataJs5, this.field5035.field12351, Client.loggedInMembers);
 			} else {
 				this.field5044++;
@@ -1241,7 +1241,7 @@ public class World {
 			for (int var36 = var32 - 1; var36 <= var33 + 1; var36++) {
 				for (int var37 = var34 - 1; var37 <= var35 + 1; var37++) {
 					if (var36 < var32 || var36 > var33 || var37 < var34 || var37 > var35) {
-						Client.mapsJs5.method6885(this.mapSquareGroupId(var36, var37));
+						Client.mapsJs5.prefetchGroup(this.mapSquareGroupId(var36, var37));
 					}
 				}
 			}

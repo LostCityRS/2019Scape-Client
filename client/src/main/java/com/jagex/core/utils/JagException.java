@@ -87,7 +87,7 @@ public class JagException extends RuntimeException {
 	}
 
 	@ObfuscatedName("atl.n(Ljava/lang/Throwable;Ljava/lang/String;)Latc;")
-	public static JagException method19636(Throwable arg0, String arg1) {
+	public static JagException report(Throwable arg0, String arg1) {
 		JagException var2;
 		if (arg0 instanceof JagException) {
 			var2 = (JagException) arg0;

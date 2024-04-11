@@ -13,7 +13,7 @@ public abstract class ByteArrayCopier {
 	}
 
 	@ObfuscatedName("ek.e([BZI)Ljava/lang/Object;")
-	public static Object method2821(byte[] arg0, boolean arg1) {
+	public static Object wrap(byte[] arg0, boolean arg1) {
 		if (arg0 == null) {
 			return null;
 		} else if (arg0.length > 136) {

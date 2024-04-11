@@ -58,7 +58,7 @@ public class AudioStream2 implements AudioApiRelated2 {
 		if (AudioStreamRelated.field7625 != this.field7616) {
 			return;
 		}
-		byte[] var1 = this.field7621.method6894(this.field7615);
+		byte[] var1 = this.field7621.fetchFile(this.field7615);
 		if (var1 == null) {
 			return;
 		}

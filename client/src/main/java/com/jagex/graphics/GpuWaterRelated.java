@@ -43,12 +43,12 @@ public class GpuWaterRelated {
 		if (field3230 == null) {
 			WaterUnknownGenerator var0 = new WaterUnknownGenerator();
 			byte[] var1 = var0.method19228(128, 128, 16);
-			field3230 = ByteArrayCopier.method2821(var1, false);
+			field3230 = ByteArrayCopier.wrap(var1, false);
 		}
 		if (field3231 == null) {
 			WaterBillowGenerator var2 = new WaterBillowGenerator();
 			byte[] var3 = var2.method19218(128, 128, 16);
-			field3231 = ByteArrayCopier.method2821(var3, false);
+			field3231 = ByteArrayCopier.wrap(var3, false);
 		}
 	}
 
@@ -96,7 +96,7 @@ public class GpuWaterRelated {
 		if (this.field3224 == null) {
 			if (field3225 == null) {
 				byte[] var1 = WaterRelated5.method8451(128, 128, 16, 8, new GlAbstractEffect1(419684), 4.0F, 4.0F, 16.0F, 0.5F, 0.6F);
-				field3225 = ByteArrayCopier.method2821(var1, false);
+				field3225 = ByteArrayCopier.wrap(var1, false);
 			}
 			byte[] var2 = ByteArrayCopier.method4540(field3225, false);
 			byte[] var3 = new byte[var2.length * 4];

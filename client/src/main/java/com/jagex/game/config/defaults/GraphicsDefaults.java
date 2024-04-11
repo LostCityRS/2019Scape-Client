@@ -134,7 +134,7 @@ public class GraphicsDefaults {
 	public int field7741 = -1;
 
 	public GraphicsDefaults(Js5 js5) {
-		byte[] bytes = js5.method6894(DefaultsGroup.GRAPHICS.js5GroupId);
+		byte[] bytes = js5.fetchFile(DefaultsGroup.GRAPHICS.js5GroupId);
 		this.decode(new Packet(bytes));
 	}
 

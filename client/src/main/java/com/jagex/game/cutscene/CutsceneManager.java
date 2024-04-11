@@ -83,7 +83,7 @@ public class CutsceneManager {
 			field1722 = arg0;
 		}
 		if (field694 == CutsceneLoadingStage.field1724) {
-			byte[] var1 = Client.cutscenesJs5.method6894(arg0);
+			byte[] var1 = Client.cutscenesJs5.fetchFile(arg0);
 			if (var1 == null) {
 				return false;
 			}

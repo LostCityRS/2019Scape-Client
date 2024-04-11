@@ -576,7 +576,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@ObfuscatedName("aij.m(IB)V")
-	public void method6856(int arg0) {
+	public void prefetchGroup(int arg0) {
 		if (this.datafs == null) {
 			return;
 		}

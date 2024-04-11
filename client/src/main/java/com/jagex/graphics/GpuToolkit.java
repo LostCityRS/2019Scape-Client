@@ -587,7 +587,7 @@ public abstract class GpuToolkit extends Toolkit {
 
 	@ObfuscatedName("afc.rr(Ljava/lang/String;Ljava/lang/String;)[B")
 	public byte[] method15965(String arg0, String arg1) {
-		return this.field10041.method6906(arg0, arg1);
+		return this.field10041.getfile(arg0, arg1);
 	}
 
 	@ObfuscatedName("afc.rd([B)Lhj;")

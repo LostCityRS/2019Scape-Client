@@ -49,7 +49,7 @@ public class FontProvider implements FontIconProvider {
 		for (int index = 0; index < this.fontIds.length; index++) {
 			int fontId = this.fontIds[index];
 			FontMetrics fontMetrics = FontMetrics.createFontMetrics(this.js5FontMetrics, fontId, this);
-			byte[] bytes = this.js5Sprites.method6894(fontId);
+			byte[] bytes = this.js5Sprites.fetchFile(fontId);
 			Object font = factory.createFont(bytes, fontMetrics, true);
 			this.fonts.put(index, new Pair(font, fontMetrics));
 		}
@@ -107,7 +107,7 @@ public class FontProvider implements FontIconProvider {
 		if (cached != null) {
 			return cached;
 		}
-		byte[] bytes = this.js5Sprites.method6894(fontId);
+		byte[] bytes = this.js5Sprites.fetchFile(fontId);
 		if (bytes == null) {
 			return null;
 		}

@@ -11,7 +11,7 @@ public class CutsceneDefaults {
 	public Binding cancelbinding;
 
 	public CutsceneDefaults(Js5 arg0) {
-		byte[] var2 = arg0.method6894(DefaultsGroup.CUTSCENE.js5GroupId);
+		byte[] var2 = arg0.fetchFile(DefaultsGroup.CUTSCENE.js5GroupId);
 		if (var2 != null) {
 			this.method9847(new Packet(var2));
 		}

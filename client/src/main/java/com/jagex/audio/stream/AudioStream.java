@@ -86,7 +86,7 @@ public class AudioStream implements AudioApiRelated2 {
 		if (arg0 == 0) {
 			var2 = this.field7631;
 		}
-		return this.field7630.method6894(var2);
+		return this.field7630.fetchFile(var2);
 	}
 
 	@ObfuscatedName("wp.p(Lalw;B)V")

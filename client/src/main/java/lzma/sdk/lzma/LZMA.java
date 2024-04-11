@@ -24,7 +24,7 @@ public class LZMA {
 	}
 
 	@ObfuscatedName("tz.e(Lalw;II)[B")
-	public static byte[] method8503(Packet arg0, int arg1) throws IOException {
+	public static byte[] decompress(Packet arg0, int arg1) throws IOException {
 		ByteArrayInputStream var2 = new ByteArrayInputStream(arg0.data);
 		var2.skip(arg0.pos);
 		return method4477(var2, arg1);

@@ -16,5 +16,5 @@ public abstract class Js5ResourceProvider {
 	public abstract int getPercentageComplete(int arg0);
 
 	@ObfuscatedName("po.m(IB)V")
-	public abstract void method6856(int arg0);
+	public abstract void prefetchGroup(int arg0);
 }

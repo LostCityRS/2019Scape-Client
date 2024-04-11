@@ -69,7 +69,7 @@ public class FontMetrics {
 
 	@ObfuscatedName("yr.m(Lpy;ILaaw;I)Laac;")
 	public static FontMetrics createFontMetrics(Js5 fontmetricsJs5, int fontId, FontIconProvider fontIconProvider) {
-		byte[] var3 = fontmetricsJs5.method6894(fontId);
+		byte[] var3 = fontmetricsJs5.fetchFile(fontId);
 		return var3 == null ? null : new FontMetrics(var3, fontIconProvider);
 	}
 

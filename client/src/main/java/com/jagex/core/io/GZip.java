@@ -24,12 +24,12 @@ public class GZip {
 		int var3 = var2.ig4s();
 		byte[] var4 = new byte[var3];
 		var2.pos = 0;
-		this.method15245(var2, var4);
+		this.decompress(var2, var4);
 		return var4;
 	}
 
 	@ObfuscatedName("adv.n(Lalw;[BS)V")
-	public void method15245(Packet arg0, byte[] arg1) {
+	public void decompress(Packet arg0, byte[] arg1) {
 		if (arg0.data[arg0.pos] != 31 || arg0.data[arg0.pos + 1] != -117) {
 			throw new RuntimeException("Invalid GZIP header!");
 		}

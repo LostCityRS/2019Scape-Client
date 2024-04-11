@@ -20,7 +20,7 @@ public class Js5GroupResourceLoader implements ResourceLoader {
 
 	@ObfuscatedName("pk.e(I)I")
 	public int getPercentageComplete() {
-		return this.js5.method6927(this.group) ? 100 : this.js5.getPercentageComplete(this.group);
+		return this.js5.isGroupReady(this.group) ? 100 : this.js5.getPercentageComplete(this.group);
 	}
 
 	@ObfuscatedName("pk.n(B)Lacv;")

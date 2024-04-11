@@ -82,15 +82,15 @@ public class HardwarePlatformLoader implements NativeLibraryLoader {
 			}
 			if (var3 == null) {
 				var3 = this.field6763 + var5;
-				if (this.field6764 == null || !this.field6764.method6905(var3, "")) {
+				if (this.field6764 == null || !this.field6764.isFileNameValid(var3, "")) {
 					throw new HardwarePlatformLoaderException(2, arg0);
 				}
 			}
 		}
-		if (!this.field6764.method6886(var3)) {
-			return this.field6764.method6880(var3);
+		if (!this.field6764.isGroupReady(var3)) {
+			return this.field6764.getPercentageComplete(var3);
 		}
-		byte[] var6 = this.field6764.method6906(var3, "");
+		byte[] var6 = this.field6764.getfile(var3, "");
 		if (var6 == null) {
 			throw new HardwarePlatformLoaderException(3, arg0);
 		}

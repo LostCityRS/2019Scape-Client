@@ -374,7 +374,7 @@ public class Loading {
 			Client.fontProvider = new FontProvider(Client.toolkit, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.fonts());
 		}
 		if (field3419 == LoadingStage.field2909) {
-			byte[] var17 = Client.defaultsJs5.method6894(DefaultsGroup.AUDIO.js5GroupId);
+			byte[] var17 = Client.defaultsJs5.fetchFile(DefaultsGroup.AUDIO.js5GroupId);
 			if (var17 == null) {
 				return 0;
 			}
@@ -392,7 +392,7 @@ public class Loading {
 			if (var18 < 100) {
 				return var18;
 			}
-			method987(Client.defaultsJs5.method6894(DefaultsGroup.MAP.js5GroupId));
+			method987(Client.defaultsJs5.fetchFile(DefaultsGroup.MAP.js5GroupId));
 			PlayerModel.field7577 = Client.graphicsDefaults.field7731;
 			PlayerModel.field1434 = Client.graphicsDefaults.field7729;
 			PlayerModel.field10766 = Client.graphicsDefaults.field7714;
@@ -461,7 +461,7 @@ public class Loading {
 			AnimationNode.method6114(Client.seqTypeList);
 			ParticleSystemRenderer.method706(Client.basicParticleEmitterTypeList, Client.basicParticleEffectorTypeList);
 			SkyBox.method13864(Client.modelsJs5, Client.materialList, Client.textureList);
-			Huffman var19 = new Huffman(Client.binaryJs5.method6906("huffman", ""));
+			Huffman var19 = new Huffman(Client.binaryJs5.getfile("huffman", ""));
 			WordPack.setHuffman(var19);
 			GameShell.field6594 = Timer.method6109();
 			Client.hardwarePlatform = new HardwarePlatform(true);

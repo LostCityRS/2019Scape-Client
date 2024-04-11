@@ -713,7 +713,7 @@ public class Component {
 
 	@ObfuscatedName("la.w(I[ILhq;ZI)Lhq;")
 	public static Interface method5405(int arg0, int[] arg1, Interface arg2, boolean arg3) {
-		if (!interfacesJs5.method6927(arg0)) {
+		if (!interfacesJs5.isGroupReady(arg0)) {
 			return null;
 		}
 		int var4 = interfacesJs5.getGroupCapacity(arg0);
@@ -747,7 +747,7 @@ public class Component {
 	@ObfuscatedName("ahr.l(II)V")
 	public static void method16640(int arg0) {
 		if (arg0 != -1 && !field8424[arg0]) {
-			interfacesJs5.method6899(arg0);
+			interfacesJs5.discardUnpacked(arg0);
 			interfaces[arg0] = null;
 		}
 	}

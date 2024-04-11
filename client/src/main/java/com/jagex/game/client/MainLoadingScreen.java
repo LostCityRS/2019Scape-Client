@@ -115,7 +115,7 @@ public class MainLoadingScreen implements LoadingScreen {
 			if (Loading.field2941) {
 				var2 = Client.toolkit.createSprite(SpriteDataProvider.get(arg0, arg1), true);
 			} else {
-				var2 = method3594(arg0.method6894(arg1));
+				var2 = method3594(arg0.fetchFile(arg1));
 			}
 			field2930.put(var2, (long) arg1);
 		}

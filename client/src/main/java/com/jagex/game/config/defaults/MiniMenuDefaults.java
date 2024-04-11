@@ -39,7 +39,7 @@ public class MiniMenuDefaults {
 	public boolean field7668;
 
 	public MiniMenuDefaults(Js5 arg0) {
-		byte[] var2 = arg0.method6894(DefaultsGroup.MENU.js5GroupId);
+		byte[] var2 = arg0.fetchFile(DefaultsGroup.MENU.js5GroupId);
 		this.method9825(new Packet(var2));
 	}
 

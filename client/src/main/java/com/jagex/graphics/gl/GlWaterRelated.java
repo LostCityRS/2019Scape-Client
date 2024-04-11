@@ -43,17 +43,17 @@ public class GlWaterRelated {
 		if (field1046 == null) {
 			NoiseGenerator3D_Sub2_Sub1 var1 = new NoiseGenerator3D_Sub2_Sub1();
 			byte[] var2 = var1.method19221(128, 128, 16);
-			field1046 = ByteArrayCopier.method2821(var2, false);
+			field1046 = ByteArrayCopier.wrap(var2, false);
 		}
 		if (field1039 == null) {
 			NoiseGenerator3D_Sub1_Sub1 var3 = new NoiseGenerator3D_Sub1_Sub1();
 			byte[] var4 = var3.method19216(128, 128, 16);
-			field1039 = ByteArrayCopier.method2821(var4, false);
+			field1039 = ByteArrayCopier.wrap(var4, false);
 		}
 		GlEffectRelated1 var5 = arg0.field9871;
 		if (var5.method1391() && field1048 == null) {
 			byte[] var6 = WaterRelated5.method8451(128, 128, 16, 8, new GlAbstractEffect1(419684), 4.0F, 4.0F, 16.0F, 0.5F, 0.6F);
-			field1048 = ByteArrayCopier.method2821(var6, false);
+			field1048 = ByteArrayCopier.wrap(var6, false);
 		}
 	}
 

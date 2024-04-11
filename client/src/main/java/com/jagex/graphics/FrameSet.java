@@ -42,10 +42,10 @@ public class FrameSet extends SecondaryNode {
 		if (this.field12323 == null) {
 			Js5 var1 = field12325;
 			synchronized (field12325) {
-				if (!field12325.method6927(this.field12324)) {
+				if (!field12325.isGroupReady(this.field12324)) {
 					return false;
 				}
-				int[] var2 = field12325.method6895(this.field12324);
+				int[] var2 = field12325.getFileIds(this.field12324);
 				this.field12323 = new byte[var2.length][];
 				for (int var3 = 0; var3 < var2.length; var3++) {
 					this.field12323[var3] = field12325.getfile(this.field12324, var2[var3]);
@@ -72,7 +72,7 @@ public class FrameSet extends SecondaryNode {
 		synchronized (field12325) {
 			int var14 = field12325.getGroupCapacity(this.field12324);
 			this.field12327 = new AnimFrame[var14];
-			var15 = field12325.method6895(this.field12324);
+			var15 = field12325.getFileIds(this.field12324);
 		}
 		for (int var17 = 0; var17 < var15.length; var17++) {
 			byte[] var18 = this.field12323[var17];
@@ -89,7 +89,7 @@ public class FrameSet extends SecondaryNode {
 			if (var21 == null) {
 				Js5 var23 = field12326;
 				synchronized (field12326) {
-					var21 = new AnimBase(var20, field12326.method6894(var20));
+					var21 = new AnimBase(var20, field12326.fetchFile(var20));
 				}
 				var12.pushBack(var21);
 			}

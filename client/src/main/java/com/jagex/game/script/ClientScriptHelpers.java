@@ -47,21 +47,21 @@ public class ClientScriptHelpers {
 		if (var4 != null) {
 			return var4;
 		}
-		byte[] var5 = Client.clientscriptsJs5.method6894(Client.clientscriptsJs5.method6903(var3));
+		byte[] var5 = Client.clientscriptsJs5.fetchFile(Client.clientscriptsJs5.getGroupId(var3));
 		if (var5 == null) {
 			int var8 = arg0.id | arg2 + 65536 << 10;
 			ClientScript var9 = (ClientScript) cache.method2966((long) var8 << 16);
 			if (var9 != null) {
 				return var9;
 			}
-			byte[] var10 = Client.clientscriptsJs5.method6894(Client.clientscriptsJs5.method6903(var8));
+			byte[] var10 = Client.clientscriptsJs5.fetchFile(Client.clientscriptsJs5.getGroupId(var8));
 			if (var10 == null) {
 				int var13 = arg0.id | 0x3FFFC00;
 				ClientScript var14 = (ClientScript) cache.method2966((long) var13 << 16);
 				if (var14 != null) {
 					return var14;
 				}
-				byte[] var15 = Client.clientscriptsJs5.method6894(Client.clientscriptsJs5.method6903(var13));
+				byte[] var15 = Client.clientscriptsJs5.fetchFile(Client.clientscriptsJs5.getGroupId(var13));
 				if (var15 == null) {
 					return null;
 				} else if (var15.length <= 1) {

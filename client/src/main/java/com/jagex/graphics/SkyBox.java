@@ -209,7 +209,7 @@ public class SkyBox {
 	@ObfuscatedName("sv.z(Ldh;I)V")
 	public void method7938(Toolkit arg0) {
 		try {
-			boolean var2 = field1810.method6927(this.field5093);
+			boolean var2 = field1810.isGroupReady(this.field5093);
 			if (var2) {
 				arg0.setSun(16777215, 0.0F, 0.0F, 1.0F, 0.0F, 0.0F);
 				ModelUnlit var3 = ModelUnlit.get(field1810, this.field5093, 0);

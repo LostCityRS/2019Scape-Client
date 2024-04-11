@@ -168,8 +168,8 @@ public class ClientWorldMap extends WorldMap {
 					Client.fontmetricsJs5.loadFile(WorldMap.worldMapDefaults.field7697[var2][var3]);
 				}
 			}
-			if (!WorldMap.field6795.method6886(WorldMap.currentWorldMap.field12351)) {
-				loading = Client.worldmapAreaDataJs5.method6880(WorldMap.currentWorldMap.field12351) / 10;
+			if (!WorldMap.field6795.isGroupReady(WorldMap.currentWorldMap.field12351)) {
+				loading = Client.worldmapAreaDataJs5.getPercentageComplete(WorldMap.currentWorldMap.field12351) / 10;
 				return;
 			}
 			loading = 10;
@@ -265,8 +265,8 @@ public class ClientWorldMap extends WorldMap {
 				loading = 60;
 			}
 		} else if (loading == 60) {
-			if (WorldMap.field6795.method6904(WorldMap.currentWorldMap.field12351)) {
-				if (!WorldMap.field6795.method6886(WorldMap.currentWorldMap.field12351)) {
+			if (WorldMap.field6795.isGroupNameValid(WorldMap.currentWorldMap.field12351)) {
+				if (!WorldMap.field6795.isGroupReady(WorldMap.currentWorldMap.field12351)) {
 					return;
 				}
 				WorldMap.field6805 = WorldMapRelated.method6046(WorldMap.field6795, WorldMap.currentWorldMap.field12351, Client.loggedInMembers);
