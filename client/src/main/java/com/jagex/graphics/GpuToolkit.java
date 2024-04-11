@@ -979,7 +979,7 @@ public abstract class GpuToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afc.h()Z")
-	public final boolean method2130() {
+	public final boolean hasExtraDrawDistance() {
 		return true;
 	}
 

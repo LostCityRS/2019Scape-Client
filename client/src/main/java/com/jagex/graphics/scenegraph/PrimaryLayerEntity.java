@@ -11,19 +11,19 @@ import deob.ObfuscatedName;
 public abstract class PrimaryLayerEntity extends GraphEntity {
 
 	@ObfuscatedName("ash.x")
-	public short field12471;
+	public short minSceneTileX;
 
 	@ObfuscatedName("ash.b")
-	public short field12472;
+	public short maxSceneTileX;
 
 	@ObfuscatedName("ash.h")
-	public short field12468;
+	public short minSceneTileZ;
 
 	@ObfuscatedName("ash.a")
-	public short field12467;
+	public short maxSceneTileZ;
 
 	@ObfuscatedName("ash.g")
-	public boolean field12470;
+	public boolean raised;
 
 	@ObfuscatedName("ash.i")
 	public byte field12469;
@@ -34,25 +34,25 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 	@ObfuscatedName("ash.t")
 	public Light[] field12473;
 
-	public PrimaryLayerEntity(Scene scene, int level, int arg2, int x, int y, int z, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11) {
-		this(scene, level, arg2, x, y, z, arg6, arg7, arg8, arg9, arg10, arg11, (ScaleRotTrans) null);
+	public PrimaryLayerEntity(Scene scene, int level, int arg2, int x, int y, int z, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, boolean arg10, byte arg11) {
+		this(scene, level, arg2, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, arg10, arg11, (ScaleRotTrans) null);
 	}
 
-	public PrimaryLayerEntity(Scene scene, int level, int arg2, int x, int y, int z, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11, ScaleRotTrans arg12) {
-		super(scene, arg12);
+	public PrimaryLayerEntity(Scene scene, int level, int occludeLevel, int x, int y, int z, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, boolean raised, byte arg11, ScaleRotTrans scaleRotTrans) {
+		super(scene, scaleRotTrans);
 		this.field12466 = 0;
 		this.field12473 = new Light[4];
 		this.level = (byte) level;
-		this.field11714 = (byte) arg2;
-		if (arg12 != null) {
-			this.method10529(arg12);
+		this.occludeLevel = (byte) occludeLevel;
+		if (scaleRotTrans != null) {
+			this.method10529(scaleRotTrans);
 		}
 		this.method10532((float) x, (float) y, (float) z);
-		this.field12471 = (short) arg6;
-		this.field12472 = (short) arg7;
-		this.field12468 = (short) arg8;
-		this.field12467 = (short) arg9;
-		this.field12470 = arg10;
+		this.minSceneTileX = (short) minSceneTileX;
+		this.maxSceneTileX = (short) maxSceneTileX;
+		this.minSceneTileZ = (short) minSceneTileZ;
+		this.maxSceneTileZ = (short) maxSceneTileZ;
+		this.raised = raised;
 		this.field12469 = arg11;
 		for (int var14 = 0; var14 < 4; var14++) {
 			this.field12473[var14] = null;
@@ -67,10 +67,10 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 	public int method18375(Light[] arg0) {
 		if (this.field8176) {
 			this.field12466 = 0;
-			int var2 = Math.max(0, this.field12471);
-			int var3 = Math.min(this.scene.field6954[this.level].length - 1, this.field12472);
-			int var4 = Math.max(0, this.field12468);
-			int var5 = Math.min(this.scene.field6954[this.level][var2].length - 1, this.field12467);
+			int var2 = Math.max(0, this.minSceneTileX);
+			int var3 = Math.min(this.scene.field6954[this.level].length - 1, this.maxSceneTileX);
+			int var4 = Math.max(0, this.minSceneTileZ);
+			int var5 = Math.min(this.scene.field6954[this.level][var2].length - 1, this.maxSceneTileZ);
 			int var6 = var4;
 			label129: while (var2 <= var3) {
 				label126: for (int var7 = var6; var7 <= var5; var7++) {
@@ -106,34 +106,34 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 				this.field12473[var15] = null;
 			}
 			if (this.field12469 != 0) {
-				int var16 = this.field12471 - this.scene.field6902;
-				int var17 = this.field12468 - this.scene.field6947;
+				int var16 = this.minSceneTileX - this.scene.eyeTileX;
+				int var17 = this.minSceneTileZ - this.scene.eyeTileZ;
 				short var18;
 				int var19;
 				int var20;
 				short var21;
 				if (this.field12469 == 1) {
 					if (var17 > var16) {
-						var18 = this.field12471;
-						var19 = this.field12468 - 1;
-						var20 = this.field12471 + 1;
-						var21 = this.field12468;
+						var18 = this.minSceneTileX;
+						var19 = this.minSceneTileZ - 1;
+						var20 = this.minSceneTileX + 1;
+						var21 = this.minSceneTileZ;
 					} else {
-						var18 = this.field12471;
-						var19 = this.field12468 + 1;
-						var20 = this.field12471 - 1;
-						var21 = this.field12468;
+						var18 = this.minSceneTileX;
+						var19 = this.minSceneTileZ + 1;
+						var20 = this.minSceneTileX - 1;
+						var21 = this.minSceneTileZ;
 					}
 				} else if (var17 > -var16) {
-					var18 = this.field12471;
-					var19 = this.field12468 - 1;
-					var20 = this.field12471 - 1;
-					var21 = this.field12468;
+					var18 = this.minSceneTileX;
+					var19 = this.minSceneTileZ - 1;
+					var20 = this.minSceneTileX - 1;
+					var21 = this.minSceneTileZ;
 				} else {
-					var18 = this.field12471;
-					var19 = this.field12468 + 1;
-					var20 = this.field12471 + 1;
-					var21 = this.field12468;
+					var18 = this.minSceneTileX;
+					var19 = this.minSceneTileZ + 1;
+					var20 = this.minSceneTileX + 1;
+					var21 = this.minSceneTileZ;
 				}
 				label92: for (int var22 = 0; var22 < this.field12466; var22++) {
 					long var23 = this.scene.field6954[this.level][var18][var19];
@@ -167,18 +167,18 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("ash.ga(Ldh;S)Z")
-	public boolean method18360(Toolkit toolkit) {
-		return this.scene.field6930.method8930(this.field11714, this.field12471, this.field12472, this.field12468, this.field12467, this.method17371(toolkit));
+	public boolean isOccluded(Toolkit toolkit) {
+		return this.scene.occlusionManager.locVisible(this.occludeLevel, this.minSceneTileX, this.maxSceneTileX, this.minSceneTileZ, this.maxSceneTileZ, this.method17371(toolkit));
 	}
 
 	@ObfuscatedName("ash.gn(I)Z")
-	public boolean method18361() {
-		for (int var1 = this.field12471; var1 <= this.field12472; var1++) {
-			for (int var2 = this.field12468; var2 <= this.field12467; var2++) {
-				int var3 = this.scene.field6942 + (var1 - this.scene.field6902);
-				if (var3 >= 0 && var3 < this.scene.field6962.length) {
-					int var4 = this.scene.field6942 + (var2 - this.scene.field6947);
-					if (var4 >= 0 && var4 < this.scene.field6962.length && this.scene.field6962[var3][var4]) {
+	public boolean isVisible() {
+		for (int var1 = this.minSceneTileX; var1 <= this.maxSceneTileX; var1++) {
+			for (int var2 = this.minSceneTileZ; var2 <= this.maxSceneTileZ; var2++) {
+				int var3 = this.scene.drawDistance + (var1 - this.scene.eyeTileX);
+				if (var3 >= 0 && var3 < this.scene.visibilityMap.length) {
+					int var4 = this.scene.drawDistance + (var2 - this.scene.eyeTileZ);
+					if (var4 >= 0 && var4 < this.scene.visibilityMap.length && this.scene.visibilityMap[var3][var4]) {
 						return true;
 					}
 				}

@@ -685,7 +685,7 @@ public class DeveloperConsole {
 				} else if (arg0 == 11) {
 					addline("" + GameShell.fps);
 				} else if (arg0 == 24) {
-					OcclusionManager var1 = Client.world.getScene().field6930;
+					OcclusionManager var1 = Client.world.getScene().occlusionManager;
 					var1.field7031 = !var1.field7031;
 				} else if (arg0 == 25) {
 					Client.field10794 = true;
@@ -739,7 +739,7 @@ public class DeveloperConsole {
 					addline(((int) var10.x >> 9) + " " + ((int) var10.z >> 9));
 				} else if (arg0 == 16) {
 					Vector3 var11 = Client.localPlayerEntity.getTransform().trans;
-					addline("" + Client.world.getScene().field6913[Client.localPlayerEntity.level].getTileHeight((int) var11.x >> 9, (int) var11.z >> 9));
+					addline("" + Client.world.getScene().levelHeightmaps[Client.localPlayerEntity.level].getTileHeight((int) var11.x >> 9, (int) var11.z >> 9));
 				} else if (arg0 == 27) {
 					addline(Component.spriteCache.method2926() + " " + Component.spriteCache.method2925());
 					addline(Component.modelCache.method2926() + " " + Component.modelCache.method2925());

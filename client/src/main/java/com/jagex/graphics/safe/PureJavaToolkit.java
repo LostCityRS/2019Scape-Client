@@ -348,7 +348,7 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.h()Z")
-	public boolean method2130() {
+	public boolean hasExtraDrawDistance() {
 		return false;
 	}
 

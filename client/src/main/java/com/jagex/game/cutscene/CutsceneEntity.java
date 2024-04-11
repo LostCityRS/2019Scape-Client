@@ -71,7 +71,7 @@ public final class CutsceneEntity {
 			this.field1745.move(arg2, arg0, arg1, true, this.field1745.size());
 			this.field1745.method16491(arg3, true);
 		} else {
-			this.field1742.level = this.field1742.field11714 = (byte) arg2;
+			this.field1742.level = this.field1742.occludeLevel = (byte) arg2;
 			this.field1742.tele(arg0, arg1);
 			this.field1742.method16491(arg3, true);
 		}
@@ -87,7 +87,7 @@ public final class CutsceneEntity {
 	@ObfuscatedName("ea.m(IIII)V")
 	public void method2866(int arg0, int arg1, int arg2) {
 		if (this.field1745 == null) {
-			this.field1742.level = this.field1742.field11714 = (byte) arg0;
+			this.field1742.level = this.field1742.occludeLevel = (byte) arg0;
 			this.field1742.tele(arg1, arg2);
 		} else {
 			this.field1745.move(arg0, arg1, arg2, true, this.field1745.size());

@@ -10,30 +10,30 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ast")
 public abstract class ObjLayerEntity extends GraphEntity {
 
-	public ObjLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		super(arg0);
-		this.level = (byte) arg4;
-		this.field11714 = (byte) arg5;
-		this.method10531(new Vector3((float) arg1, (float) arg2, (float) arg3));
+	public ObjLayerEntity(Scene scene, int x, int y, int z, int level, int occludeLevel) {
+		super(scene);
+		this.level = (byte) level;
+		this.occludeLevel = (byte) occludeLevel;
+		this.method10531(new Vector3((float) x, (float) y, (float) z));
 	}
 
 	@ObfuscatedName("ast.gy([Lakf;S)I")
 	public int method18375(Light[] arg0) {
 		Vector3 var2 = this.getTransform().trans;
-		return this.method18362((int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900, arg0);
+		return this.method18362((int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size, arg0);
 	}
 
 	@ObfuscatedName("ast.ga(Ldh;S)Z")
-	public boolean method18360(Toolkit toolkit) {
+	public boolean isOccluded(Toolkit toolkit) {
 		Vector3 var2 = this.getTransform().trans;
-		PrimaryLayerEntityList var3 = this.scene.getEntities(this.field11714, (int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900);
-		return var3 != null && var3.field7057.field12470 ? this.scene.field6930.method8950(this.field11714, (int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900, var3.field7057.overlayHeight() + this.overlayHeight()) : this.scene.field6930.method8927(this.field11714, (int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900);
+		PrimaryLayerEntityList var3 = this.scene.getEntities(this.occludeLevel, (int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size);
+		return var3 != null && var3.field7057.raised ? this.scene.occlusionManager.visible(this.occludeLevel, (int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size, var3.field7057.overlayHeight() + this.overlayHeight()) : this.scene.occlusionManager.tileVisible(this.occludeLevel, (int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size);
 	}
 
 	@ObfuscatedName("ast.gn(I)Z")
-	public boolean method18361() {
+	public boolean isVisible() {
 		Vector3 var1 = this.getTransform().trans;
-		return this.scene.field6962[this.scene.field6942 + (((int) var1.x >> this.scene.field6900) - this.scene.field6902)][this.scene.field6942 + (((int) var1.z >> this.scene.field6900) - this.scene.field6947)];
+		return this.scene.visibilityMap[this.scene.drawDistance + (((int) var1.x >> this.scene.size) - this.scene.eyeTileX)][this.scene.drawDistance + (((int) var1.z >> this.scene.size) - this.scene.eyeTileZ)];
 	}
 
 	@ObfuscatedName("ast.fp(I)Z")

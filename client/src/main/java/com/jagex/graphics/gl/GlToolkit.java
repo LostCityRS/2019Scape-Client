@@ -984,7 +984,7 @@ public class GlToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afa.h()Z")
-	public boolean method2130() {
+	public boolean hasExtraDrawDistance() {
 		return true;
 	}
 

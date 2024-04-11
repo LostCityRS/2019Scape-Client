@@ -66,8 +66,8 @@ public class ObjStackEntity extends ObjLayerEntity {
 	@ObfuscatedName("aut.at")
 	public int field12575;
 
-	public ObjStackEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		super(arg0, arg1, arg2, arg3, arg4, arg5);
+	public ObjStackEntity(Scene scene, int x, int y, int z, int level, int occludeLevel) {
+		super(scene, x, y, z, level, occludeLevel);
 		this.createEntityBounds(3);
 		this.method19718();
 	}
@@ -111,7 +111,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 		GroundDecorLayerEntity var4 = this.scene.getGroundDecoration(this.level, (int) var2.x >> 9, (int) var2.z >> 9);
 		int var5 = 0;
 		while (var3 != null) {
-			if (var3.field7057.field12470 && var3.field7057.overlayHeight() < var5) {
+			if (var3.field7057.raised && var3.field7057.overlayHeight() < var5) {
 				var5 = var3.field7057.overlayHeight();
 			}
 			var3 = var3.field7058;
@@ -130,7 +130,7 @@ public class ObjStackEntity extends ObjLayerEntity {
 			boolean var7 = false;
 			boolean var8 = false;
 			boolean var9 = false;
-			FloorModel var10 = this.scene.field6913[this.field11714];
+			FloorModel var10 = this.scene.levelHeightmaps[this.occludeLevel];
 			int var11 = this.field12579 << 1;
 			int var13 = -var11 / 2;
 			int var14 = -var11 / 2;

@@ -295,7 +295,7 @@ public class ColourUtils {
 	}
 
 	@ObfuscatedName("dd.d(IIB)I")
-	public static final int method1625(int arg0, int arg1) {
+	public static final int mulHSL(int arg0, int arg1) {
 		if (arg0 == -1) {
 			return 12345678;
 		}
@@ -309,7 +309,7 @@ public class ColourUtils {
 	}
 
 	@ObfuscatedName("xs.c(IIB)I")
-	public static final int method10223(int arg0, int arg1) {
+	public static final int adjustLightness(int arg0, int arg1) {
 		if (arg0 == -2) {
 			return 12345678;
 		} else if (arg0 == -1) {
@@ -331,7 +331,7 @@ public class ColourUtils {
 	}
 
 	@ObfuscatedName("akm.r(IIIB)I")
-	public static final int method17849(int arg0, int arg1, int arg2) {
+	public static final int hsl24to16(int arg0, int arg1, int arg2) {
 		if (arg2 > 243) {
 			arg1 >>= 0x4;
 		} else if (arg2 > 217) {

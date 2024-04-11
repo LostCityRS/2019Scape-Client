@@ -16,7 +16,7 @@ public class LocReference {
 	@ObfuscatedName("yv.m")
 	public final int field8197;
 
-	public LocReference(CoordGrid arg0, int shape, int rotation, int arg3) {
+	public LocReference(CoordGrid arg0, int shape, int angle, int arg3) {
 		this.field8196 = arg0;
 		this.shape = shape;
 		this.field8197 = arg3;
@@ -32,7 +32,7 @@ public class LocReference {
 		Location var1 = this.method10761();
 		if (var1 == null) {
 			return null;
-		} else if (var1.method8223() == this.field8197) {
+		} else if (var1.getId() == this.field8197) {
 			return var1;
 		} else {
 			return null;

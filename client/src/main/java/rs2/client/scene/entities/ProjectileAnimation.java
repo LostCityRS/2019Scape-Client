@@ -285,8 +285,8 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 	@ObfuscatedName("aue.bv(I)V")
 	public void method16529() {
 		Vector3 var1 = this.getTransform().trans;
-		this.field12471 = this.field12472 = (short) (var1.x / 512.0F);
-		this.field12468 = this.field12467 = (short) (var1.z / 512.0F);
+		this.minSceneTileX = this.maxSceneTileX = (short) (var1.x / 512.0F);
+		this.minSceneTileZ = this.maxSceneTileZ = (short) (var1.z / 512.0F);
 	}
 
 	@ObfuscatedName("aue.w(Ldh;Ldo;Lou;B)V")
@@ -299,7 +299,7 @@ public class ProjectileAnimation extends PrimaryLayerEntity {
 		}
 		if (this.field12585 != null) {
 			this.field12585.method9936(arg0, (long) Client.loopCycle, var4, var5, false);
-			this.field12585.method9963(this.level, this.field12471, this.field12472, this.field12468, this.field12467);
+			this.field12585.method9963(this.level, this.minSceneTileX, this.maxSceneTileX, this.minSceneTileZ, this.maxSceneTileZ);
 		}
 	}
 

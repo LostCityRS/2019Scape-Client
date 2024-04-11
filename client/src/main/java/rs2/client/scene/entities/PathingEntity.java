@@ -531,7 +531,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 			this.field10393.method9935((long) Client.loopCycle);
 		}
 		if (this.field10393 != null) {
-			this.field10393.method9963(this.level, this.field12471, this.field12472, this.field12468, this.field12467);
+			this.field10393.method9963(this.level, this.minSceneTileX, this.maxSceneTileX, this.minSceneTileZ, this.maxSceneTileZ);
 		}
 	}
 
@@ -736,10 +736,10 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	public void method16529() {
 		int var1 = (this.size - 1 << 8) + 240;
 		Vector3 var2 = this.getTransform().trans;
-		this.field12471 = (short) ((int) var2.x - var1 >> 9);
-		this.field12468 = (short) ((int) var2.z - var1 >> 9);
-		this.field12472 = (short) ((int) var2.x + var1 >> 9);
-		this.field12467 = (short) ((int) var2.z + var1 >> 9);
+		this.minSceneTileX = (short) ((int) var2.x - var1 >> 9);
+		this.minSceneTileZ = (short) ((int) var2.z - var1 >> 9);
+		this.maxSceneTileX = (short) ((int) var2.x + var1 >> 9);
+		this.maxSceneTileZ = (short) ((int) var2.z + var1 >> 9);
 	}
 
 	@ObfuscatedName("ahm.br(Ldo;I)V")
@@ -839,8 +839,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	@ObfuscatedName("ahm.ba(IIIIIB)V")
 	public void method16507(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		Vector3 var6 = this.getTransform().trans;
-		int var7 = this.field12472 + this.field12471 >> 1;
-		int var8 = this.field12468 + this.field12467 >> 1;
+		int var7 = this.maxSceneTileX + this.minSceneTileX >> 1;
+		int var8 = this.minSceneTileZ + this.maxSceneTileZ >> 1;
 		int var9 = Trig1.sin[arg0];
 		int var10 = Trig1.cos[arg0];
 		int var11 = -arg1 / 2;

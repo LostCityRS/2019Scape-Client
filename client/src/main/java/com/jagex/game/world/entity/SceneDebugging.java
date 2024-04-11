@@ -10,7 +10,7 @@ public class SceneDebugging {
 	}
 
 	@ObfuscatedName("aci.e(I)J")
-	public long method14971() {
+	public long time() {
 		return System.nanoTime();
 	}
 }

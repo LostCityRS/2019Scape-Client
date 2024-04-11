@@ -60,10 +60,10 @@ public class World {
 	public ClientMapLoader mapLoader;
 
 	@ObfuscatedName("rl.l")
-	public CoordGrid field5018 = new CoordGrid();
+	public CoordGrid sceneBaseTile = new CoordGrid();
 
 	@ObfuscatedName("rl.u")
-	public CoordGrid field5025 = new CoordGrid();
+	public CoordGrid mapLastBase = new CoordGrid();
 
 	@ObfuscatedName("rl.z")
 	public int field5022;
@@ -202,7 +202,7 @@ public class World {
 
 	@ObfuscatedName("rl.f(I)Lve;")
 	public CoordGrid getBase() {
-		return this.field5018;
+		return this.sceneBaseTile;
 	}
 
 	@ObfuscatedName("rl.w(I)I")
@@ -297,7 +297,7 @@ public class World {
 
 	@ObfuscatedName("rl.i(B)V")
 	public void method7746() {
-		this.field5018 = new CoordGrid();
+		this.sceneBaseTile = new CoordGrid();
 		this.field5059 = 0;
 		this.field5022 = 0;
 	}
@@ -348,7 +348,7 @@ public class World {
 			this.field5034 = (int) ((double) (this.mapSizeX) * 34.46D);
 		}
 		this.field5034 <<= 0x2;
-		if (Client.toolkit.method2130()) {
+		if (Client.toolkit.hasExtraDrawDistance()) {
 			this.field5034 += 512;
 		}
 	}
@@ -361,8 +361,8 @@ public class World {
 		RebuildType var3 = arg0.field5020;
 		arg0.field5020 = this.field5020;
 		this.field5020 = var3;
-		arg0.field5025 = this.field5018;
-		this.field5025 = arg0.field5018;
+		arg0.mapLastBase = this.sceneBaseTile;
+		this.mapLastBase = arg0.sceneBaseTile;
 		this.environmentManager.method9992(arg0.getEnvironmentManager());
 	}
 
@@ -392,8 +392,8 @@ public class World {
 			this.field5029 = var1.field5029;
 			this.rebuildType = var1.rebuildType;
 			this.buildAreaSize = var1.buildAreaSize;
-			this.field5018 = var1.field5018;
-			this.field5025 = var1.field5025;
+			this.sceneBaseTile = var1.sceneBaseTile;
+			this.mapLastBase = var1.mapLastBase;
 			this.field5022 = var1.field5022;
 			this.field5059 = var1.field5059;
 			this.mapSizeX = var1.mapSizeX;
@@ -428,8 +428,8 @@ public class World {
 	@ObfuscatedName("rl.aw(B)V")
 	public void method7773() {
 		this.setBuildAreaSize(BuildAreaSize.buildAreaSizeForId(Client.preferences.buildArea.getValue()));
-		int var1 = this.field5018.x;
-		int var2 = this.field5018.z;
+		int var1 = this.sceneBaseTile.x;
+		int var2 = this.sceneBaseTile.z;
 		int var3 = (Client.cameraX >> 12) + (var1 >> 3);
 		int var4 = (Client.cameraZ >> 12) + (var2 >> 3);
 		Client.localPlayerEntity.level = 0;
@@ -740,13 +740,13 @@ public class World {
 			Client.setState(arg2);
 			MessageBox.draw(LocalisedText.LOADING.forLang(Client.language), true, Client.toolkit, DefaultSprites.p12FullFont, DefaultSprites.p12FullMetrics);
 		}
-		if (this.field5018 == null) {
-			this.field5025 = new CoordGrid(0, 0, 0);
+		if (this.sceneBaseTile == null) {
+			this.mapLastBase = new CoordGrid(0, 0, 0);
 		} else {
-			this.field5025 = this.field5018;
+			this.mapLastBase = this.sceneBaseTile;
 		}
-		this.field5018 = new CoordGrid(0, (this.field5022 - (this.mapSizeX >> 4)) * 8, (this.field5059 - (this.mapSizeZ >> 4)) * 8);
-		this.field5035 = WorldMap.getMap(this.mapSizeX / 2 + this.field5018.x, this.mapSizeX / 2 + this.field5018.z);
+		this.sceneBaseTile = new CoordGrid(0, (this.field5022 - (this.mapSizeX >> 4)) * 8, (this.field5059 - (this.mapSizeZ >> 4)) * 8);
+		this.field5035 = WorldMap.getMap(this.mapSizeX / 2 + this.sceneBaseTile.x, this.mapSizeX / 2 + this.sceneBaseTile.z);
 		this.field5058 = null;
 		this.field5060 = -1L;
 		if (!this.asyncRebuilding) {
@@ -756,20 +756,20 @@ public class World {
 
 	@ObfuscatedName("rl.aq(II)V")
 	public void method7762(int arg0) {
-		int var2 = this.field5018.x - this.field5025.x;
-		int var3 = this.field5018.z - this.field5025.z;
+		int dx = this.sceneBaseTile.x - this.mapLastBase.x;
+		int dz = this.sceneBaseTile.z - this.mapLastBase.z;
 		if (arg0 == 3) {
 			for (int var4 = 0; var4 < Client.npcCount; var4++) {
 				ObjectNode var5 = Client.field10839[var4];
 				if (var5 != null) {
 					NpcEntity var6 = (NpcEntity) var5.value;
 					for (int var7 = 0; var7 < var6.routeWaypointX.length; var7++) {
-						var6.routeWaypointX[var7] -= var2;
-						var6.routeWaypointZ[var7] -= var3;
+						var6.routeWaypointX[var7] -= dx;
+						var6.routeWaypointZ[var7] -= dz;
 					}
 					Vector3 var8 = Vector3.create(var6.getTransform().trans);
-					var8.x -= var2 * 512;
-					var8.z -= var3 * 512;
+					var8.x -= dx * 512;
+					var8.z -= dz * 512;
 					var6.method10531(var8);
 					var8.release();
 				}
@@ -784,14 +784,14 @@ public class World {
 				if (var13 != null) {
 					NpcEntity var14 = (NpcEntity) var13.value;
 					Vector3 var15 = Vector3.create(var14.getTransform().trans);
-					var15.x -= var2 * 512;
-					var15.z -= var3 * 512;
+					var15.x -= dx * 512;
+					var15.z -= dz * 512;
 					var14.method10531(var15);
 					if ((int) var15.x >= 0 && (int) var15.x <= var10 && (int) var15.z >= 0 && (int) var15.z <= var11) {
 						boolean var16 = true;
 						for (int var17 = 0; var17 < var14.routeWaypointX.length; var17++) {
-							var14.routeWaypointX[var17] -= var2;
-							var14.routeWaypointZ[var17] -= var3;
+							var14.routeWaypointX[var17] -= dx;
+							var14.routeWaypointZ[var17] -= dz;
 							if (var14.routeWaypointX[var17] < 0 || var14.routeWaypointX[var17] >= this.mapSizeX || var14.routeWaypointZ[var17] < 0 || var14.routeWaypointZ[var17] >= this.mapSizeZ) {
 								var16 = false;
 							}
@@ -825,12 +825,12 @@ public class World {
 			PlayerEntity var22 = Client.players[var21];
 			if (var22 != null) {
 				for (int var23 = 0; var23 < var22.routeWaypointX.length; var23++) {
-					var22.routeWaypointX[var23] -= var2;
-					var22.routeWaypointZ[var23] -= var3;
+					var22.routeWaypointX[var23] -= dx;
+					var22.routeWaypointZ[var23] -= dz;
 				}
 				Vector3 var24 = Vector3.create(var22.getTransform().trans);
-				var24.x -= var2 * 512;
-				var24.z -= var3 * 512;
+				var24.x -= dx * 512;
+				var24.z -= dz * 512;
 				var22.method10531(var24);
 				var24.release();
 			}
@@ -839,13 +839,13 @@ public class World {
 		for (int var26 = 0; var26 < var25.length; var26++) {
 			HintArrow var27 = var25[var26];
 			if (var27 != null) {
-				var27.hintOffsetX -= var2 * 512;
-				var27.hintOffsetZ -= var3 * 512;
+				var27.hintOffsetX -= dx * 512;
+				var27.hintOffsetZ -= dz * 512;
 			}
 		}
 		for (ChangeLocationRequest var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.peekFront(); var28 != null; var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.prev()) {
-			var28.x -= var2;
-			var28.z -= var3;
+			var28.x -= dx;
+			var28.z -= dz;
 			LocType var29 = (LocType) this.locTypeList.list(var28.field11234);
 			int var30;
 			int var31;
@@ -861,8 +861,8 @@ public class World {
 			}
 		}
 		for (ChangeLocationRequest var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.peekFront(); var32 != null; var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.prev()) {
-			var32.x -= var2;
-			var32.z -= var3;
+			var32.x -= dx;
+			var32.z -= dz;
 			LocType var33 = (LocType) this.locTypeList.list(var32.field11234);
 			int var34;
 			int var35;
@@ -880,9 +880,9 @@ public class World {
 		for (ObjStackList var36 = (ObjStackList) Client.objStacks.peekFront(); var36 != null; var36 = (ObjStackList) Client.objStacks.prev()) {
 			int var37 = (int) (var36.nodeId >> 28 & 0x3L);
 			int var38 = (int) (var36.nodeId & 0x3FFFL);
-			int var39 = var38 - this.field5018.x;
+			int var39 = var38 - this.sceneBaseTile.x;
 			int var40 = (int) (var36.nodeId >> 14 & 0x3FFFL);
-			int var41 = var40 - this.field5018.z;
+			int var41 = var40 - this.sceneBaseTile.z;
 			if (this.scene != null) {
 				if (var39 >= 0 && var41 >= 0 && var39 < this.mapSizeX && var41 < this.mapSizeZ && var39 < this.scene.maxTileX && var41 < this.scene.maxTileZ) {
 					if (this.scene.levelTiles != null) {
@@ -894,26 +894,26 @@ public class World {
 			}
 		}
 		if (MiniMap.flagSceneTileX != 0) {
-			MiniMap.flagSceneTileX -= var2;
-			MiniMap.flagSceneTileZ -= var3;
+			MiniMap.flagSceneTileX -= dx;
+			MiniMap.flagSceneTileZ -= dz;
 		}
 		PositionedSound.method13908(false);
 		if (arg0 == 3) {
-			Client.field10892 -= var2 * 512;
-			Client.field10893 -= var3 * 512;
-			Client.orbitCameraX -= var2 * 512;
-			Client.orbitCameraZ -= var3 * 512;
+			Client.field10892 -= dx * 512;
+			Client.field10893 -= dz * 512;
+			Client.orbitCameraX -= dx * 512;
+			Client.orbitCameraZ -= dz * 512;
 			if (Client.cameraState != 4 && Client.cameraState != 3) {
 				Client.cameraReset(Client.getDefaultCameraState());
 			}
 		} else {
-			Client.cameraMoveX -= var2;
-			Client.cameraMoveZ -= var3;
-			Client.cameraLookX -= var2;
-			Client.cameraLookZ -= var3;
-			Client.cameraX -= var2 * 512;
-			Client.cameraZ -= var3 * 512;
-			if (Math.abs(var2) > this.mapSizeX || Math.abs(var3) > this.mapSizeZ) {
+			Client.cameraMoveX -= dx;
+			Client.cameraMoveZ -= dz;
+			Client.cameraLookX -= dx;
+			Client.cameraLookZ -= dz;
+			Client.cameraX -= dx * 512;
+			Client.cameraZ -= dz * 512;
+			if (Math.abs(dx) > this.mapSizeX || Math.abs(dz) > this.mapSizeZ) {
 				this.environmentManager.resetFade();
 			}
 		}
@@ -995,8 +995,8 @@ public class World {
 		for (int index = 0; index < this.rebuildMapSquaresCount; index++) {
 			byte[] locs = this.rebuildMapSquaresLocs[index];
 			if (locs != null) {
-				int var8 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
-				int var9 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
+				int var8 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x;
+				int var9 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z;
 				if (this.rebuildType.isRegionType()) {
 					var8 = 10;
 					var9 = 10;
@@ -1008,8 +1008,8 @@ public class World {
 			}
 			byte[] ulocs = this.rebuildMapSquaresUnderwaterLocs[index];
 			if (ulocs != null) {
-				int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
-				int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
+				int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x;
+				int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z;
 				if (this.rebuildType.isRegionType()) {
 					var12 = 10;
 					var13 = 10;
@@ -1066,13 +1066,13 @@ public class World {
 				}
 			}
 		}
-		int var21 = DrawDistance.method17395(Client.preferences.drawDistance.getValue()).field2675;
-		if (Client.toolkit.method2130()) {
-			var21++;
+		int drawDistance = DrawDistance.method17395(Client.preferences.drawDistance.getValue()).field2675;
+		if (Client.toolkit.hasExtraDrawDistance()) {
+			drawDistance++;
 		}
 		this.method7820();
 		this.method7763();
-		this.scene = new Scene(Client.toolkit, 9, 4, this.mapSizeX, this.mapSizeZ, var21, underwater, Client.toolkit.getMaxLights() > 0);
+		this.scene = new Scene(Client.toolkit, 9, 4, this.mapSizeX, this.mapSizeZ, drawDistance, underwater, Client.toolkit.getMaxLights() > 0);
 		this.scene.method8703(false);
 		this.scene.method8701(Client.field11005);
 		this.scene.method8759(this.field5061);
@@ -1145,11 +1145,11 @@ public class World {
 		if (!this.asyncRebuilding) {
 			MapLogicRelated.noTimeoutConnections(true);
 		}
-		this.mapLoader.method7200(Client.toolkit, underwater ? this.scene.field6917[0] : null, null);
+		this.mapLoader.method7200(Client.toolkit, underwater ? this.scene.underwaterLevelHeightMaps[0] : null, null);
 		if (this.asyncRebuilding) {
 			this.sleep(75);
 		}
-		this.mapLoader.method16877(Client.toolkit, false);
+		this.mapLoader.build(Client.toolkit, false);
 		if (this.asyncRebuilding) {
 			this.sleep(75);
 		}
@@ -1170,7 +1170,7 @@ public class World {
 				MapLogicRelated.noTimeoutConnections(true);
 			}
 			this.underwaterMapLoader.method7200(Client.toolkit, null, this.scene.field6915[0]);
-			this.underwaterMapLoader.method16877(Client.toolkit, true);
+			this.underwaterMapLoader.build(Client.toolkit, true);
 			if (!this.asyncRebuilding) {
 				MapLogicRelated.noTimeoutConnections(true);
 			}
@@ -1293,18 +1293,18 @@ public class World {
 				Packet buf = new Packet(lands);
 				int var7 = this.rebuildMapSquares[index] >> 8;
 				int var8 = this.rebuildMapSquares[index] & 0xFF;
-				int var9 = var7 * 64 - this.field5018.x;
-				int var10 = var8 * 64 - this.field5018.z;
+				int var9 = var7 * 64 - this.sceneBaseTile.x;
+				int var10 = var8 * 64 - this.sceneBaseTile.z;
 				if (!this.asyncRebuilding && Client.audioApi != null) {
 					Client.audioApi.update();
 				}
-				mapLoader.readNormalLandscape(buf, var9, var10, this.field5018.x, this.field5018.z);
+				mapLoader.readNormalLandscape(buf, var9, var10, this.sceneBaseTile.x, this.sceneBaseTile.z);
 				mapLoader.readNormalEnvironment(Client.toolkit, buf, var9, var10);
 			}
 		}
 		for (int index = 0; index < length; index++) {
-			int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
-			int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
+			int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x;
+			int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z;
 			byte[] lands = mapSquareLands[index];
 			if (lands == null && this.field5059 < 800) {
 				if (!this.asyncRebuilding && Client.audioApi != null) {
@@ -1364,8 +1364,8 @@ public class World {
 		for (int index = 0; index < this.rebuildMapSquaresCount; index++) {
 			byte[] locs = mapSquareLocs[index];
 			if (locs != null) {
-				int var5 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x;
-				int var6 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z;
+				int var5 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x;
+				int var6 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z;
 				if (!this.asyncRebuilding) {
 					Client.audioApi.update();
 				}
@@ -1433,8 +1433,8 @@ public class World {
 					int var9 = var8 >> 14;
 					int var10 = var8 >> 7 & 0x3F;
 					int var11 = var8 & 0x3F;
-					int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.field5018.x + var10;
-					int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.field5018.z + var11;
+					int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x + var10;
+					int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z + var11;
 					NPCType var14 = (NPCType) Client.npcTypeList.list(buf.g2());
 					ObjectNode var15 = (ObjectNode) Client.npcs.getNode((long) var7);
 					if (var15 == null && (var14.walkflags & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {

@@ -365,9 +365,9 @@ public class NpcEntity extends PathingEntity {
 
 	@ObfuscatedName("aqc.hy(IIIZIB)V")
 	public void move(int arg0, int arg1, int arg2, boolean arg3, int arg4) {
-		this.level = this.field11714 = (byte) arg0;
+		this.level = this.occludeLevel = (byte) arg0;
 		if (Client.world.getSceneLevelTileFlags().isLinkBelow(arg1, arg2)) {
-			this.field11714++;
+			this.occludeLevel++;
 		}
 		if (this.field10454.hasSeqType() && this.field10454.getSeqType().field1782 == 1) {
 			this.field10427 = null;

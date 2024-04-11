@@ -497,7 +497,7 @@ public abstract class Toolkit {
 	public abstract boolean method2129();
 
 	@ObfuscatedName("dh.h()Z")
-	public abstract boolean method2130();
+	public abstract boolean hasExtraDrawDistance();
 
 	@ObfuscatedName("dh.g()Ljava/lang/String;")
 	public abstract String hardwareInfo();

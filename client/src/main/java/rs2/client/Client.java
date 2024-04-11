@@ -4857,8 +4857,8 @@ public final class Client extends GameShell {
 					if (var10 != null) {
 						var9 = (var10[var6][var7] & 0xFF) * 8 << 2;
 					}
-					if (var1.field6913 != null && var1.field6913[var8] != null) {
-						int var11 = var4 - (var1.field6913[var8].getTileHeight(var6, var7) - var9);
+					if (var1.levelHeightmaps != null && var1.levelHeightmaps[var8] != null) {
+						int var11 = var4 - (var1.levelHeightmaps[var8].getTileHeight(var6, var7) - var9);
 						if (var11 > var5) {
 							var5 = var11;
 						}
@@ -5848,9 +5848,9 @@ public final class Client extends GameShell {
 			var30 = 1;
 		}
 		if (CameraManager.method2978() || Client.cameraState == 3) {
-			world.getScene().method8845(loopCycle, var25.field2835, var25.field2836, var25.field2837, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.level + 1, var30, (int) var5.x >> 9, (int) var5.z >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
+			world.getScene().draw(loopCycle, var25.field2835, var25.field2836, var25.field2837, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.level + 1, var30, (int) var5.x >> 9, (int) var5.z >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
 		} else {
-			world.getScene().method8845(loopCycle, Client.cameraX, Client.cameraY, Client.cameraZ, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.level + 1, var30, (int) var5.x >> 9, (int) var5.z >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
+			world.getScene().draw(loopCycle, Client.cameraX, Client.cameraY, Client.cameraZ, world.method7742(), field11061, field10933, field10934, field10935, field10820, localPlayerEntity.level + 1, var30, (int) var5.x >> 9, (int) var5.z >> 9, preferences.flickeringEffects.getValue() == 0, true, 0, true);
 		}
 		field10915++;
 		if (!toolkit.method2234() && state == 18) {
@@ -6365,18 +6365,18 @@ public final class Client extends GameShell {
 						if (var15 && arg0[var17][var10][var13] != null) {
 							if (arg0[var17][var10][var13].wall != null) {
 								int var18 = method2014(var11);
-								if (arg0[var17][var10][var13].wall.field12463 == var18 || arg0[var17][var10][var13].dynamicWall != null && arg0[var17][var10][var13].dynamicWall.field12463 == var18) {
+								if (arg0[var17][var10][var13].wall.type == var18 || arg0[var17][var10][var13].dynamicWall != null && arg0[var17][var10][var13].dynamicWall.type == var18) {
 									continue;
 								}
 								if (var12 != 0) {
 									int var19 = method2014(var12);
-									if (arg0[var17][var10][var13].wall.field12463 == var19 || arg0[var17][var10][var13].dynamicWall != null && arg0[var17][var10][var13].dynamicWall.field12463 == var19) {
+									if (arg0[var17][var10][var13].wall.type == var19 || arg0[var17][var10][var13].dynamicWall != null && arg0[var17][var10][var13].dynamicWall.type == var19) {
 										continue;
 									}
 								}
 								if (var14 != 0) {
 									int var20 = method2014(var14);
-									if (arg0[var17][var10][var13].wall.field12463 == var20 || arg0[var17][var10][var13].dynamicWall != null && arg0[var17][var10][var13].dynamicWall.field12463 == var20) {
+									if (arg0[var17][var10][var13].wall.type == var20 || arg0[var17][var10][var13].dynamicWall != null && arg0[var17][var10][var13].dynamicWall.type == var20) {
 										continue;
 									}
 								}
@@ -6387,8 +6387,8 @@ public final class Client extends GameShell {
 									PrimaryLayerEntity var23 = var22.field7057;
 									if (var23 instanceof Location) {
 										Location var24 = (Location) var23;
-										int var25 = var24.method8220();
-										int var26 = var24.method8204();
+										int var25 = var24.getShape();
+										int var26 = var24.getAngle();
 										if (var25 == 21) {
 											var25 = 19;
 										}
@@ -6404,11 +6404,11 @@ public final class Client extends GameShell {
 						if (var28 != null && var28.entities != null) {
 							for (PrimaryLayerEntityList var29 = var28.entities; var29 != null; var29 = var29.field7058) {
 								PrimaryLayerEntity var30 = var29.field7057;
-								if (var30.field12472 != var30.field12471 || var30.field12468 != var30.field12467) {
-									short var31 = var30.field12471;
-									short var32 = var30.field12472;
-									short var33 = var30.field12468;
-									short var34 = var30.field12467;
+								if (var30.maxSceneTileX != var30.minSceneTileX || var30.minSceneTileZ != var30.maxSceneTileZ) {
+									short var31 = var30.minSceneTileX;
+									short var32 = var30.maxSceneTileX;
+									short var33 = var30.minSceneTileZ;
+									short var34 = var30.maxSceneTileZ;
 									int var35 = Math.max(0, Math.min(var31, var5[var17].length - 1));
 									int var36 = Math.max(0, Math.min(var33, var5[var17][0].length - 1));
 									int var37 = Math.max(0, Math.min(var32, var5[var17].length - 1));
@@ -6429,7 +6429,7 @@ public final class Client extends GameShell {
 				}
 			}
 			if (var16) {
-				int var39 = world.getScene().field6913[currentPlayerLevel + 1].getTileHeight(var10, var13);
+				int var39 = world.getScene().levelHeightmaps[currentPlayerLevel + 1].getTileHeight(var10, var13);
 				if (field11061[arg1] < var39) {
 					field11061[arg1] = var39;
 				}
@@ -6586,7 +6586,7 @@ public final class Client extends GameShell {
 				var5.field10404 = -1;
 			} else {
 				var5.method16529();
-				if (var5.field12471 >= 0 && var5.field12468 >= 0 && var5.field12472 < world.getSizeX() && var5.field12467 < world.getSizeZ()) {
+				if (var5.minSceneTileX >= 0 && var5.minSceneTileZ >= 0 && var5.maxSceneTileX < world.getSizeX() && var5.maxSceneTileZ < world.getSizeZ()) {
 					var5.field12053 = var5.field10432.field11877 ? var3 : false;
 					if (localPlayerEntity == var5) {
 						var5.field10404 = Integer.MAX_VALUE;
@@ -6623,7 +6623,7 @@ public final class Client extends GameShell {
 			NpcEntity var9 = (NpcEntity) ((ObjectNode) npcs.getNode((long) field11036[var8])).value;
 			if (var9.exists() && var9.npcType.isVisible(localPlayerGameState, localPlayerGameState)) {
 				var9.method16529();
-				if (var9.field12471 >= 0 && var9.field12468 >= 0 && var9.field12472 < world.getSizeX() && var9.field12467 < world.getSizeZ()) {
+				if (var9.minSceneTileX >= 0 && var9.minSceneTileZ >= 0 && var9.maxSceneTileX < world.getSizeX() && var9.maxSceneTileZ < world.getSizeZ()) {
 					int var10 = 0;
 					if (!var9.field10452) {
 						var10++;
@@ -7820,10 +7820,10 @@ public final class Client extends GameShell {
 		int var8;
 		if (arg0 instanceof PrimaryLayerEntity && arg0 instanceof Location) {
 			PrimaryLayerEntity var4 = (PrimaryLayerEntity) arg0;
-			int var5 = var4.field12472 - var4.field12471 + 1 << 9;
-			int var6 = var4.field12467 - var4.field12468 + 1 << 9;
-			var7 = (var4.field12471 << 9) + var5 / 2;
-			var8 = (var4.field12468 << 9) + var6 / 2;
+			int var5 = var4.maxSceneTileX - var4.minSceneTileX + 1 << 9;
+			int var6 = var4.maxSceneTileZ - var4.minSceneTileZ + 1 << 9;
+			var7 = (var4.minSceneTileX << 9) + var5 / 2;
+			var8 = (var4.minSceneTileZ << 9) + var6 / 2;
 		} else {
 			Vector3 var9 = arg0.getTransform().trans;
 			var7 = (int) var9.x;
@@ -7871,7 +7871,7 @@ public final class Client extends GameShell {
 		if (level < 3 && (world.getSceneLevelTileFlags().levelTileFlags[1][var3][var4] & 0x2) != 0) {
 			realLevel = level + 1;
 		}
-		return world.getScene().field6913[realLevel].getFineHeight(x, z);
+		return world.getScene().levelHeightmaps[realLevel].getFineHeight(x, z);
 	}
 
 	@ObfuscatedName("adi.ip(IIIIII)I")
@@ -7908,7 +7908,7 @@ public final class Client extends GameShell {
 				arg4++;
 			}
 		}
-		return world.getScene().field6913[arg4].getFineHeight(arg0, arg1);
+		return world.getScene().levelHeightmaps[arg4].getFineHeight(arg0, arg1);
 	}
 
 	@ObfuscatedName("zs.id(IIIIIIIB)V")
@@ -11053,7 +11053,7 @@ public final class Client extends GameShell {
 		Matrix4x3 var15 = null;
 		ObjStackEntity var16 = (ObjStackEntity) world.getScene().removeObjStack(level, x, z);
 		if (var16 == null) {
-			var16 = new ObjStackEntity(world.getScene(), x << 265, world.getScene().field6913[level].getTileHeight(x, z), z << 265, level, level);
+			var16 = new ObjStackEntity(world.getScene(), x << 265, world.getScene().levelHeightmaps[level].getTileHeight(x, z), z << 265, level, level);
 		} else {
 			var10 = var16.field12580;
 			var11 = var16.field12569;
@@ -11128,9 +11128,9 @@ public final class Client extends GameShell {
 		}
 		var16.field12578 = 0;
 		var16.level = (byte) level;
-		var16.field11714 = (byte) level;
+		var16.occludeLevel = (byte) level;
 		if (world.getSceneLevelTileFlags().isLinkBelow(x, z)) {
-			var16.field11714++;
+			var16.occludeLevel++;
 		}
 		world.getScene().addObjStack(level, x, z, var20, var16);
 	}
@@ -11761,25 +11761,25 @@ public final class Client extends GameShell {
 			Location var10 = (Location) world.getScene().getDynamicWall(arg0, arg1, arg2);
 			if (var9 != null && shape != 2) {
 				if (var9 instanceof DynamicWallEntity) {
-					((DynamicWallEntity) var9).field11179.method8260(arg7, arg8);
+					((DynamicWallEntity) var9).loc.method8260(arg7, arg8);
 				} else {
-					ChangeLocationRequest.method15005(arg0, layer, arg1, arg2, var9.method8223(), angle, shape, arg6, arg7, arg8);
+					ChangeLocationRequest.method15005(arg0, layer, arg1, arg2, var9.getId(), angle, shape, arg6, arg7, arg8);
 				}
 			}
 			if (var10 != null) {
 				if (var10 instanceof DynamicWallEntity) {
-					((DynamicWallEntity) var10).field11179.method8260(arg7, arg8);
+					((DynamicWallEntity) var10).loc.method8260(arg7, arg8);
 				} else {
-					ChangeLocationRequest.method15005(arg0, layer, arg1, arg2, var10.method8223(), angle, shape, arg6, arg7, arg8);
+					ChangeLocationRequest.method15005(arg0, layer, arg1, arg2, var10.getId(), angle, shape, arg6, arg7, arg8);
 				}
 			}
 		} else if (layer == 1) {
 			Location var11 = (Location) world.getScene().getWallDecoration(arg0, arg1, arg2);
 			if (var11 != null) {
 				if (var11 instanceof DynamicWallDecorEntity) {
-					((DynamicWallDecorEntity) var11).field11174.method8260(arg7, arg8);
+					((DynamicWallDecorEntity) var11).loc.method8260(arg7, arg8);
 				} else {
-					int var12 = var11.method8223();
+					int var12 = var11.getId();
 					if (shape == 4 || shape == 5) {
 						ChangeLocationRequest.method15005(arg0, layer, arg1, arg2, var12, angle, 4, arg6, arg7, arg8);
 					} else if (shape == 6) {
@@ -11799,18 +11799,18 @@ public final class Client extends GameShell {
 					shape = 10;
 				}
 				if (var13 instanceof DynamicSceneryEntity) {
-					((DynamicSceneryEntity) var13).field11131.method8260(arg7, arg8);
+					((DynamicSceneryEntity) var13).loc.method8260(arg7, arg8);
 				} else {
-					ChangeLocationRequest.method15005(arg0, layer, arg1, arg2, var13.method8223(), angle, shape, arg6, arg7, arg8);
+					ChangeLocationRequest.method15005(arg0, layer, arg1, arg2, var13.getId(), angle, shape, arg6, arg7, arg8);
 				}
 			}
 		} else if (layer == 3) {
 			Location var14 = (Location) world.getScene().getGroundDecoration(arg0, arg1, arg2);
 			if (var14 != null) {
 				if (var14 instanceof DynamicGroundDecorEntity) {
-					((DynamicGroundDecorEntity) var14).field11133.method8260(arg7, arg8);
+					((DynamicGroundDecorEntity) var14).loc.method8260(arg7, arg8);
 				} else {
-					ChangeLocationRequest.method15005(arg0, layer, arg1, arg2, var14.method8223(), angle, shape, arg6, arg7, arg8);
+					ChangeLocationRequest.method15005(arg0, layer, arg1, arg2, var14.getId(), angle, shape, arg6, arg7, arg8);
 				}
 			}
 		}

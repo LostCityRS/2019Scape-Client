@@ -351,8 +351,8 @@ public class MovingParticle extends Particle {
 
 	@ObfuscatedName("atz.l(Ltx;Ldh;J)V")
 	public void method19668(Scene arg0, Toolkit arg1, long arg2) {
-		int var5 = this.x >> arg0.field6900 + 12;
-		int var6 = this.z >> arg0.field6900 + 12;
+		int var5 = this.x >> arg0.size + 12;
+		int var6 = this.z >> arg0.size + 12;
 		int var7 = this.y >> 12;
 		if (var7 > 262144 || var7 < -262144 || var5 < 0 || var5 >= arg0.maxTileX || var6 < 0 || var6 >= arg0.maxTileZ) {
 			this.method19669();
@@ -360,7 +360,7 @@ public class MovingParticle extends Particle {
 		}
 		ParticleSystem var8 = this.field12526.field7785;
 		ParticleEmitterType var9 = this.field12526.field7772;
-		FloorModel[] var10 = arg0.field6913;
+		FloorModel[] var10 = arg0.levelHeightmaps;
 		int var11 = var8.field7815;
 		Tile var12 = arg0.levelTiles[var8.field7815][var5][var6];
 		if (var12 != null) {
@@ -371,7 +371,7 @@ public class MovingParticle extends Particle {
 		if (var11 < arg0.maxLevel - 1) {
 			var14 = var10[var11 + 1].getTileHeight(var5, var6);
 		} else {
-			var14 = var13 - (0x8 << arg0.field6900);
+			var14 = var13 - (0x8 << arg0.size);
 		}
 		if (var9.field3511) {
 			if (var9.field3491 == -1 && var7 > var13) {
@@ -396,7 +396,7 @@ public class MovingParticle extends Particle {
 		}
 		if (var9.field3526 && var15 == 0 && var7 > var10[0].getTileHeight(var5, var6)) {
 			this.method19669();
-		} else if (arg0.maxLevel - 1 == var15 && var10[var15].getTileHeight(var5, var6) - var7 > 0x8 << arg0.field6900) {
+		} else if (arg0.maxLevel - 1 == var15 && var10[var15].getTileHeight(var5, var6) - var7 > 0x8 << arg0.size) {
 			this.method19669();
 		} else {
 			Tile var16 = arg0.levelTiles[var15][var5][var6];

@@ -23,7 +23,7 @@ public abstract class GraphEntity extends GraphNode {
 	public byte level;
 
 	@ObfuscatedName("alh.o")
-	public byte field11714;
+	public byte occludeLevel;
 
 	@ObfuscatedName("alh.s")
 	public int field11715;
@@ -90,10 +90,10 @@ public abstract class GraphEntity extends GraphNode {
 	}
 
 	@ObfuscatedName("alh.gg(II)V")
-	public void createEntityBounds(int arg0) {
-		this.entityBounds = new ScreenBoundingBox[arg0];
-		for (int var2 = 0; var2 < this.entityBounds.length; var2++) {
-			this.entityBounds[var2] = new ScreenBoundingBox();
+	public void createEntityBounds(int stack) {
+		this.entityBounds = new ScreenBoundingBox[stack];
+		for (int index = 0; index < this.entityBounds.length; index++) {
+			this.entityBounds[index] = new ScreenBoundingBox();
 		}
 	}
 
@@ -119,13 +119,13 @@ public abstract class GraphEntity extends GraphNode {
 	public abstract void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("alh.ga(Ldh;S)Z")
-	public abstract boolean method18360(Toolkit toolkit);
+	public abstract boolean isOccluded(Toolkit toolkit);
 
 	@ObfuscatedName("alh.fc(Ldh;I)Ltl;")
 	public abstract PickableEntity draw(Toolkit toolkit);
 
 	@ObfuscatedName("alh.gn(I)Z")
-	public abstract boolean method18361();
+	public abstract boolean isVisible();
 
 	@ObfuscatedName("alh.by(B)I")
 	public abstract int overlayHeight();

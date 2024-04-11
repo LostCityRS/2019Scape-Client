@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 public interface Location {
 
 	@ObfuscatedName("st.m(I)I")
-	int method8204();
+	int getAngle();
 
 	@ObfuscatedName("st.k(I)V")
 	void method8205();
@@ -25,8 +25,8 @@ public interface Location {
 	void method8217(Toolkit arg0);
 
 	@ObfuscatedName("st.n(I)I")
-	int method8220();
+	int getShape();
 
 	@ObfuscatedName("st.e(I)I")
-	int method8223();
+	int getId();
 }

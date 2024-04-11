@@ -102,41 +102,41 @@ public class Vector3 {
 	public Vector3() {
 	}
 
-	public Vector3(float arg0, float arg1, float arg2) {
-		this.x = arg0;
-		this.y = arg1;
-		this.z = arg2;
+	public Vector3(float x, float y, float z) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
-	public Vector3(Vector3 arg0) {
-		this.x = arg0.x;
-		this.y = arg0.y;
-		this.z = arg0.z;
+	public Vector3(Vector3 vector3) {
+		this.x = vector3.x;
+		this.y = vector3.y;
+		this.z = vector3.z;
 	}
 
-	public Vector3(Packet arg0) {
-		this.x = arg0.gFloat();
-		this.y = arg0.gFloat();
-		this.z = arg0.gFloat();
+	public Vector3(Packet buf) {
+		this.x = buf.gFloat();
+		this.y = buf.gFloat();
+		this.z = buf.gFloat();
 	}
 
 	@ObfuscatedName("ox.l(Lalw;)V")
-	public void decode(Packet arg0) {
-		this.x = arg0.gFloat();
-		this.y = arg0.gFloat();
-		this.z = arg0.gFloat();
+	public void decode(Packet buf) {
+		this.x = buf.gFloat();
+		this.y = buf.gFloat();
+		this.z = buf.gFloat();
 	}
 
 	@ObfuscatedName("ox.u(FFF)V")
-	public void setTo(float arg0, float arg1, float arg2) {
-		this.x = arg0;
-		this.y = arg1;
-		this.z = arg2;
+	public void setTo(float x, float y, float z) {
+		this.x = x;
+		this.y = y;
+		this.z = z;
 	}
 
 	@ObfuscatedName("ox.z(Lox;)V")
-	public void setTo(Vector3 arg0) {
-		this.setTo(arg0.x, arg0.y, arg0.z);
+	public void setTo(Vector3 vector3) {
+		this.setTo(vector3.x, vector3.y, vector3.z);
 	}
 
 	@ObfuscatedName("ox.p()V")

@@ -342,7 +342,7 @@ public class MiniMap {
 		if (arg0 == null) {
 			return false;
 		}
-		LocType var4 = (LocType) arg1.list(arg0.method8223());
+		LocType var4 = (LocType) arg1.list(arg0.getId());
 		if (var4.members && !Client.loggedInMembers) {
 			return false;
 		}
@@ -388,7 +388,7 @@ public class MiniMap {
 
 	@ObfuscatedName("ajc.d(Lst;S)Z")
 	public static boolean method17469(Location arg0) {
-		LocType var1 = (LocType) Client.world.getLocTypeList().list(arg0.method8223());
+		LocType var1 = (LocType) Client.world.getLocTypeList().list(arg0.getId());
 		if (var1.mapsceneicon == -1) {
 			return true;
 		} else {
@@ -402,9 +402,9 @@ public class MiniMap {
 		Scene var8 = Client.world.getScene();
 		Location var9 = (Location) var8.getWall(arg1, arg2, arg3);
 		if (var9 != null) {
-			LocType var10 = (LocType) Client.world.getLocTypeList().list(var9.method8223());
-			int var11 = var9.method8204() & 0x3;
-			int var12 = var9.method8220();
+			LocType var10 = (LocType) Client.world.getLocTypeList().list(var9.getId());
+			int var11 = var9.getAngle() & 0x3;
+			int var12 = var9.getShape();
 			if (var10.mapsceneicon == -1) {
 				int var13 = arg6;
 				if (var10.active > 0) {
@@ -449,9 +449,9 @@ public class MiniMap {
 		}
 		Location var14 = (Location) var8.getEntity(arg1, arg2, arg3, Client.field11001);
 		if (var14 != null) {
-			LocType var15 = (LocType) Client.world.getLocTypeList().list(var14.method8223());
-			int var16 = var14.method8204() & 0x3;
-			int var17 = var14.method8220();
+			LocType var15 = (LocType) Client.world.getLocTypeList().list(var14.getId());
+			int var16 = var14.getAngle() & 0x3;
+			int var17 = var14.getShape();
 			if (var15.mapsceneicon != -1) {
 				method1900(arg0, var15, var16, arg4, arg5);
 			} else if (LocShape.WALL_DIAGONAL.id == var17) {
@@ -470,8 +470,8 @@ public class MiniMap {
 		if (var19 == null) {
 			return;
 		}
-		LocType var20 = (LocType) Client.world.getLocTypeList().list(var19.method8223());
-		int var21 = var19.method8204() & 0x3;
+		LocType var20 = (LocType) Client.world.getLocTypeList().list(var19.getId());
+		int var21 = var19.getAngle() & 0x3;
 		if (var20.mapsceneicon != -1) {
 			method1900(arg0, var20, var21, arg4, arg5);
 		}

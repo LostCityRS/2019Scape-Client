@@ -25,7 +25,7 @@ public class MapLoader {
 	public FloorUnderlayTypeList underlays;
 
 	@ObfuscatedName("qg.m")
-	public SceneLevelTileFlags field4522;
+	public SceneLevelTileFlags sceneLevelTileFlags;
 
 	@ObfuscatedName("qg.k")
 	public Scene scene;
@@ -85,7 +85,7 @@ public class MapLoader {
 	public short[][][] levelTileOverlayIds;
 
 	@ObfuscatedName("qg.i")
-	public byte[][][] field4518;
+	public byte[][][] levelOccludemap;
 
 	@ObfuscatedName("qg.j")
 	public int[] field4504;
@@ -245,13 +245,13 @@ public class MapLoader {
 		this.underwater = underwater;
 		this.overlays = overlays;
 		this.underlays = underlays;
-		this.field4522 = arg7;
+		this.sceneLevelTileFlags = arg7;
 		this.levelTileUnderlayIds = new short[this.levels][this.maxTileX][this.maxTileZ];
 		this.levelTileOverlayIds = new short[this.levels][this.maxTileX][this.maxTileZ];
 		this.levelTileOverlayShape = new byte[this.levels][this.maxTileX][this.maxTileZ];
 		this.levelTileOverlayRotation = new byte[this.levels][this.maxTileX][this.maxTileZ];
 		this.levelHeightmap = new int[this.levels][this.maxTileX + 1][this.maxTileZ + 1];
-		this.field4518 = new byte[this.levels][this.maxTileX + 1][this.maxTileZ + 1];
+		this.levelOccludemap = new byte[this.levels][this.maxTileX + 1][this.maxTileZ + 1];
 	}
 
 	@ObfuscatedName("qg.e(I)V")
@@ -446,7 +446,7 @@ public class MapLoader {
 			return;
 		}
 		if (!this.underwater && !arg9) {
-			this.field4522.levelTileFlags[level][originX][originZ] = 0;
+			this.sceneLevelTileFlags.levelTileFlags[level][originX][originZ] = 0;
 		}
 		int opcode = buf.g1();
 		if ((opcode & 0x1) != 0) {
@@ -464,7 +464,7 @@ public class MapLoader {
 			if (this.underwater || arg9) {
 				buf.pos++;
 			} else {
-				this.field4522.levelTileFlags[level][originX][originZ] = buf.g1b();
+				this.sceneLevelTileFlags.levelTileFlags[level][originX][originZ] = buf.g1b();
 			}
 		}
 		if ((opcode & 0x4) != 0) {
@@ -491,7 +491,7 @@ public class MapLoader {
 		} else if (this.underwater) {
 			this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = 0;
 		} else if (level == 0) {
-			this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = -method251(arg6 + 932731, arg7 + 556238) * 8 << 2;
+			this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = -perlin(arg6 + 932731, arg7 + 556238) * 8 << 2;
 		} else {
 			this.levelHeightmap[level][originX + xOffset][originZ + zOffset] = this.levelHeightmap[level - 1][originX + xOffset][originZ + zOffset] - 960;
 		}
@@ -605,15 +605,15 @@ public class MapLoader {
 							var19 -= this.field4528[var22];
 						}
 						if (var20 >= 0 && var18 > 0 && var19 > 0) {
-							var4[var7][var20] = ColourUtils.method17849(var15 * 256 / var18, var16 / var19, var17 / var19);
+							var4[var7][var20] = ColourUtils.hsl24to16(var15 * 256 / var18, var16 / var19, var17 / var19);
 						}
 					}
 				}
 			}
 			if (this.isGroundBlending) {
-				this.method7147(arg0, this.scene.field6913[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
+				this.method7147(arg0, this.scene.levelHeightmaps[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
 			} else {
-				this.method7199(arg0, this.scene.field6913[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
+				this.method7199(arg0, this.scene.levelHeightmaps[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
 			}
 			this.levelTileUnderlayIds[var5] = null;
 			this.levelTileOverlayIds[var5] = null;
@@ -629,7 +629,7 @@ public class MapLoader {
 			}
 		}
 		for (int var23 = 0; var23 < this.levels; var23++) {
-			this.scene.field6913[var23].method1555();
+			this.scene.levelHeightmaps[var23].method1555();
 		}
 	}
 
@@ -743,7 +743,7 @@ public class MapLoader {
 					int var45 = arg1.getTileHeight(var7 + 1, var8);
 					int var46 = arg1.getTileHeight(var7 + 1, var8 + 1);
 					int var47 = arg1.getTileHeight(var7, var8 + 1);
-					boolean var48 = this.field4522.isLinkBelow(var7, var8);
+					boolean var48 = this.sceneLevelTileFlags.isLinkBelow(var7, var8);
 					if (var48 && arg2 > 1 || !var48 && arg2 > 0) {
 						boolean var49 = true;
 						if (var14 != null && !var14.occlude) {
@@ -754,7 +754,7 @@ public class MapLoader {
 							var49 = false;
 						}
 						if (var49 && var44 == var45 && var44 == var46 && var44 == var47) {
-							this.field4518[arg2][var7][var8] = (byte) (this.field4518[arg2][var7][var8] | 0x4);
+							this.levelOccludemap[arg2][var7][var8] = (byte) (this.levelOccludemap[arg2][var7][var8] | 0x4);
 						}
 					}
 					WaterFogData var50 = new WaterFogData();
@@ -1295,7 +1295,7 @@ public class MapLoader {
 		int var12 = arg0.getTileHeight(arg6, arg5);
 		int var13 = arg0.getTileHeight(arg6, arg7);
 		int var14 = arg0.getTileHeight(arg4, arg7);
-		boolean var15 = this.field4522.isLinkBelow(arg4, arg5);
+		boolean var15 = this.sceneLevelTileFlags.isLinkBelow(arg4, arg5);
 		if ((!var15 || arg3 <= 1) && (var15 || arg3 <= 0)) {
 			return;
 		}
@@ -1308,7 +1308,7 @@ public class MapLoader {
 			var16 = false;
 		}
 		if (var16 && var11 == var12 && var11 == var13 && var11 == var14) {
-			this.field4518[arg3][arg4][arg5] = (byte) (this.field4518[arg3][arg4][arg5] | 0x4);
+			this.levelOccludemap[arg3][arg4][arg5] = (byte) (this.levelOccludemap[arg3][arg4][arg5] | 0x4);
 		}
 	}
 
@@ -1595,51 +1595,51 @@ public class MapLoader {
 	}
 
 	@ObfuscatedName("l.a(III)I")
-	public static final int method251(int arg0, int arg1) {
-		int var2 = method1619(arg0 + 45365, arg1 + 91923, 4) - 128 + (method1619(arg0 + 10294, arg1 + 37821, 2) - 128 >> 1) + (method1619(arg0, arg1, 1) - 128 >> 2);
-		int var3 = (int) ((double) var2 * 0.3D) + 35;
-		if (var3 < 10) {
-			var3 = 10;
-		} else if (var3 > 60) {
-			var3 = 60;
+	public static final int perlin(int x, int z) {
+		int p = perlinScale(x + 45365, z + 91923, 4) - 128 + (perlinScale(x + 10294, z + 37821, 2) - 128 >> 1) + (perlinScale(x, z, 1) - 128 >> 2);
+		int value = (int) ((double) p * 0.3D) + 35;
+		if (value < 10) {
+			value = 10;
+		} else if (value > 60) {
+			value = 60;
 		}
-		return var3;
+		return value;
 	}
 
 	@ObfuscatedName("dd.g(IIIS)I")
-	public static final int method1619(int arg0, int arg1, int arg2) {
-		int var3 = arg0 / arg2;
-		int var4 = arg0 & arg2 - 1;
-		int var5 = arg1 / arg2;
-		int var6 = arg1 & arg2 - 1;
-		int var7 = method13989(var3, var5);
-		int var8 = method13989(var3 + 1, var5);
-		int var9 = method13989(var3, var5 + 1);
-		int var10 = method13989(var3 + 1, var5 + 1);
-		int var11 = method5171(var7, var8, var4, arg2);
-		int var12 = method5171(var9, var10, var4, arg2);
-		return method5171(var11, var12, var6, arg2);
+	public static final int perlinScale(int x, int z, int scale) {
+		int intX = x / scale;
+		int fracX = x & scale - 1;
+		int intZ = z / scale;
+		int fracZ = z & scale - 1;
+		int v1 = smoothNoise(intX, intZ);
+		int v2 = smoothNoise(intX + 1, intZ);
+		int v3 = smoothNoise(intX, intZ + 1);
+		int v4 = smoothNoise(intX + 1, intZ + 1);
+		int i1 = interpolate(v1, v2, fracX, scale);
+		int i2 = interpolate(v3, v4, fracX, scale);
+		return interpolate(i1, i2, fracZ, scale);
 	}
 
 	@ObfuscatedName("ki.i(IIIII)I")
-	public static final int method5171(int arg0, int arg1, int arg2, int arg3) {
-		int var4 = 65536 - Trig1.cos[arg2 * 8192 / arg3] >> 1;
-		return ((65536 - var4) * arg0 >> 16) + (arg1 * var4 >> 16);
+	public static final int interpolate(int a, int b, int c, int scale) {
+		int f = 65536 - Trig1.cos[c * 8192 / scale] >> 1;
+		return ((65536 - f) * a >> 16) + (b * f >> 16);
 	}
 
 	@ObfuscatedName("zu.j(III)I")
-	public static final int method13989(int arg0, int arg1) {
-		int var2 = method806(arg0 - 1, arg1 - 1) + method806(arg0 + 1, arg1 - 1) + method806(arg0 - 1, arg1 + 1) + method806(arg0 + 1, arg1 + 1);
-		int var3 = method806(arg0 - 1, arg1) + method806(arg0 + 1, arg1) + method806(arg0, arg1 - 1) + method806(arg0, arg1 + 1);
-		int var4 = method806(arg0, arg1);
-		return var4 / 4 + var2 / 16 + var3 / 8;
+	public static final int smoothNoise(int x, int z) {
+		int corners = noise(x - 1, z - 1) + noise(x + 1, z - 1) + noise(x - 1, z + 1) + noise(x + 1, z + 1);
+		int sides = noise(x - 1, z) + noise(x + 1, z) + noise(x, z - 1) + noise(x, z + 1);
+		int center = noise(x, z);
+		return center / 4 + corners / 16 + sides / 8;
 	}
 
 	@ObfuscatedName("at.t(III)I")
-	public static final int method806(int arg0, int arg1) {
-		int var2 = arg1 * 57 + arg0;
-		int var3 = var2 << 13 ^ var2;
-		int var4 = (var3 * var3 * 15731 + 789221) * var3 + 1376312589 & Integer.MAX_VALUE;
-		return var4 >> 19 & 0xFF;
+	public static final int noise(int x, int z) {
+		int n = z * 57 + x;
+		int n1 = n << 13 ^ n;
+		int n2 = (n1 * n1 * 15731 + 789221) * n1 + 1376312589 & Integer.MAX_VALUE;
+		return n2 >> 19 & 0xFF;
 	}
 }

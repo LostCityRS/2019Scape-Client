@@ -19,15 +19,15 @@ public abstract class GroundDecorLayerEntity extends GraphEntity {
 	@ObfuscatedName("asv.h")
 	public Light[] field12447 = new Light[4];
 
-	public GroundDecorLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
-		super(arg0, arg7);
-		this.level = (byte) arg4;
-		this.field11714 = (byte) arg5;
+	public GroundDecorLayerEntity(Scene scene, int x, int y, int z, int level, int occludeLevel, int arg6, ScaleRotTrans scaleRotTrans) {
+		super(scene, scaleRotTrans);
+		this.level = (byte) level;
+		this.occludeLevel = (byte) occludeLevel;
 		this.field12448 = (short) arg6;
-		if (arg7 != null) {
-			this.method10529(arg7);
+		if (scaleRotTrans != null) {
+			this.method10529(scaleRotTrans);
 		}
-		this.method10532((float) arg1, (float) arg2, (float) arg3);
+		this.method10532((float) x, (float) y, (float) z);
 		for (int var9 = 0; var9 < 4; var9++) {
 			this.field12447[var9] = null;
 		}
@@ -37,7 +37,7 @@ public abstract class GroundDecorLayerEntity extends GraphEntity {
 	public int method18375(Light[] arg0) {
 		if (this.field8176) {
 			Vector3 var2 = this.getTransform().trans;
-			this.field12449 = this.method18362((int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900, this.field12447);
+			this.field12449 = this.method18362((int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size, this.field12447);
 			this.field8176 = false;
 		}
 		for (int var3 = 0; var3 < this.field12449; var3++) {
@@ -47,14 +47,14 @@ public abstract class GroundDecorLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asv.ga(Ldh;S)Z")
-	public boolean method18360(Toolkit toolkit) {
+	public boolean isOccluded(Toolkit toolkit) {
 		Vector3 var2 = this.getTransform().trans;
-		return this.scene.field6930.method8927(this.field11714, (int) var2.x >> this.scene.field6900, (int) var2.z >> this.scene.field6900);
+		return this.scene.occlusionManager.tileVisible(this.occludeLevel, (int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size);
 	}
 
 	@ObfuscatedName("asv.gn(I)Z")
-	public boolean method18361() {
+	public boolean isVisible() {
 		Vector3 var1 = this.getTransform().trans;
-		return this.scene.field6962[this.scene.field6942 + (((int) var1.x >> this.scene.field6900) - this.scene.field6902)][this.scene.field6942 + (((int) var1.z >> this.scene.field6900) - this.scene.field6947)];
+		return this.scene.visibilityMap[this.scene.drawDistance + (((int) var1.x >> this.scene.size) - this.scene.eyeTileX)][this.scene.drawDistance + (((int) var1.z >> this.scene.size) - this.scene.eyeTileZ)];
 	}
 }

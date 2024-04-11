@@ -20,74 +20,74 @@ import rs2.client.Client;
 public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.c")
-	public static final int[] field11164 = new int[] { 1, 2, 4, 8 };
+	public static final int[] ROTATION_WALL_TYPE = new int[] { 1, 2, 4, 8 };
 
 	@ObfuscatedName("ajg.r")
-	public static final int[] field11160 = new int[] { 16, 32, 64, 128 };
+	public static final int[] ROTATION_WALL_CORNER_TYPE = new int[] { 16, 32, 64, 128 };
 
 	@ObfuscatedName("ajg.v")
-	public LocTypeList field11162;
+	public LocTypeList locTypeList;
 
 	@ObfuscatedName("ajg.o")
-	public Model field11173;
+	public Model model;
 
 	@ObfuscatedName("ajg.s")
-	public HardShadow field11163;
+	public HardShadow shadow;
 
 	@ObfuscatedName("ajg.y")
 	public EntityBounds field11165;
 
 	@ObfuscatedName("ajg.q")
-	public final int field11166;
+	public final int id;
 
 	@ObfuscatedName("ajg.x")
-	public final byte field11161;
+	public final byte angle;
 
 	@ObfuscatedName("ajg.b")
-	public final byte field11167;
+	public final byte shape;
 
 	@ObfuscatedName("ajg.h")
-	public final boolean field11169;
+	public final boolean underwater;
 
 	@ObfuscatedName("ajg.a")
-	public boolean field11170;
+	public boolean active;
 
 	@ObfuscatedName("ajg.g")
 	public boolean field11171;
 
 	@ObfuscatedName("ajg.i")
-	public boolean field11172;
+	public boolean hasHardShadow;
 
 	@ObfuscatedName("ajg.j")
-	public int field12460;
+	public int y;
 
-	public StaticWallEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, ScaleRotTrans arg13) {
-		super(arg0, arg6, arg7, arg8, arg4, arg5, method1575(arg10, arg11), arg13);
-		this.field11162 = arg2;
-		this.field11166 = arg3.id;
-		this.field11169 = arg9;
-		this.field11167 = (byte) arg10;
-		this.field11161 = (byte) arg11;
-		this.field11170 = arg3.active != 0 && !arg9;
+	public StaticWallEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int shape, int angle, boolean arg12, ScaleRotTrans scaleRotTrans) {
+		super(scene, x, y, z, level, occludeLevel, getType(shape, angle), scaleRotTrans);
+		this.locTypeList = locTypeList;
+		this.id = locType.id;
+		this.underwater = underwater;
+		this.shape = (byte) shape;
+		this.angle = (byte) angle;
+		this.active = locType.active != 0 && !underwater;
 		this.field11171 = arg12;
-		this.field11172 = arg1.supportsHardShadows() && arg3.hardshadow && !this.field11169 && Client.preferences.sceneryShadows.getValue() != 0;
-		this.field12460 = arg7;
+		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
+		this.y = y;
 		int var15 = 2048;
 		if (this.field11171) {
 			var15 |= 0x10000;
 		}
-		if (arg3.antimacro) {
+		if (locType.antimacro) {
 			var15 |= 0x80000;
 		}
-		Pair var16 = this.method17420(arg1, var15, this.field11172);
+		Pair var16 = this.method17420(toolkit, var15, this.hasHardShadow);
 		if (var16 != null) {
-			this.field11173 = (Model) var16.first;
-			this.field11163 = (HardShadow) var16.second;
-			if (this.field11171 || arg3.antimacro) {
-				this.field11173 = this.field11173.method1773((byte) 0, var15, false);
-				if (arg3.antimacro) {
+			this.model = (Model) var16.first;
+			this.shadow = (HardShadow) var16.second;
+			if (this.field11171 || locType.antimacro) {
+				this.model = this.model.method1773((byte) 0, var15, false);
+				if (locType.antimacro) {
 					LocTint var17 = Client.world.method7722();
-					this.field11173.method1745(var17.field5015, var17.field5013, var17.field5014, var17.field5012);
+					this.model.method1745(var17.field5015, var17.field5013, var17.field5014, var17.field5012);
 				}
 			}
 		}
@@ -96,32 +96,32 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.bu(B)Z")
 	public boolean method16488() {
-		if (this.field11173 == null) {
+		if (this.model == null) {
 			return true;
 		} else {
-			return !this.field11173.method1812();
+			return !this.model.method1812();
 		}
 	}
 
 	@ObfuscatedName("ajg.bw(S)Z")
 	public boolean method16489() {
-		return this.field11173 == null ? false : this.field11173.method1731();
+		return this.model == null ? false : this.model.method1731();
 	}
 
 	@ObfuscatedName("ajg.by(B)I")
 	public int overlayHeight() {
-		return this.field11173 == null ? 0 : this.field11173.getMinY();
+		return this.model == null ? 0 : this.model.getMinY();
 	}
 
 	@ObfuscatedName("cs.bz(III)I")
-	public static int method1575(int arg0, int arg1) {
-		return LocShape.WALL_DIAGONAL_CORNER.id == arg0 || LocShape.WALL_SQUARE_CORNER.id == arg0 ? field11160[arg1 & 0x3] : field11164[arg1 & 0x3];
+	public static int getType(int shape, int angle) {
+		return LocShape.WALL_DIAGONAL_CORNER.id == shape || LocShape.WALL_SQUARE_CORNER.id == shape ? ROTATION_WALL_CORNER_TYPE[angle & 0x3] : ROTATION_WALL_TYPE[angle & 0x3];
 	}
 
 	@ObfuscatedName("ajg.bv(Ldh;II)Ldo;")
 	public Model method17419(Toolkit arg0, int arg1) {
-		if (this.field11173 != null && arg0.method2394(this.field11173.method1691(), arg1) == 0) {
-			return this.field11173;
+		if (this.model != null && arg0.method2394(this.model.method1691(), arg1) == 0) {
+			return this.model;
 		} else {
 			Pair var3 = this.method17420(arg0, arg1, false);
 			return var3 == null ? null : (Model) var3.first;
@@ -130,22 +130,22 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.br(Ldh;IZI)Labg;")
 	public Pair method17420(Toolkit arg0, int arg1, boolean arg2) {
-		LocType var4 = (LocType) this.field11162.list(this.field11166);
+		LocType var4 = (LocType) this.locTypeList.list(this.id);
 		FloorModel var5;
 		FloorModel var6;
-		if (this.field11169) {
-			var5 = this.scene.field6917[this.field11714];
+		if (this.underwater) {
+			var5 = this.scene.underwaterLevelHeightMaps[this.occludeLevel];
 			var6 = this.scene.field6915[0];
 		} else {
-			var5 = this.scene.field6915[this.field11714];
-			if (this.field11714 < 3) {
-				var6 = this.scene.field6915[this.field11714 + 1];
+			var5 = this.scene.field6915[this.occludeLevel];
+			if (this.occludeLevel < 3) {
+				var6 = this.scene.field6915[this.occludeLevel + 1];
 			} else {
 				var6 = null;
 			}
 		}
 		Vector3 var7 = this.getTransform().trans;
-		return var4.method9475(arg0, arg1, this.field11167, this.field11161, var5, var6, (int) var7.x, this.field12460, (int) var7.z, arg2, null);
+		return var4.method9475(arg0, arg1, this.shape, this.angle, var5, var6, (int) var7.x, this.y, (int) var7.z, arg2, null);
 	}
 
 	@ObfuscatedName("ajg.fv(Ldh;B)Luq;")
@@ -159,16 +159,16 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.fc(Ldh;I)Ltl;")
 	public PickableEntity draw(Toolkit toolkit) {
-		if (this.field11173 == null) {
+		if (this.model == null) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
-		PickableEntity var3 = PickableEntity.getPickableEntity(this.field11170);
-		Cuboid var4 = ((LocType) this.field11162.list(this.field11166)).clickbox;
+		PickableEntity var3 = PickableEntity.getPickableEntity(this.active);
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
 		if (var4 == null) {
-			this.field11173.draw(var2, this.entityBounds[0], 0);
+			this.model.draw(var2, this.entityBounds[0], 0);
 		} else {
-			this.field11173.draw(var2, null, 0);
+			this.model.draw(var2, null, 0);
 			toolkit.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
@@ -180,7 +180,7 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.fa(Ldh;IIB)Z")
 	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.field11162.list(this.field11166)).clickbox;
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
 		if (var4 != null) {
 			return toolkit.pick(arg1, arg2, this.method10533(), var4);
 		}
@@ -202,13 +202,13 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	public void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		if (entity instanceof StaticWallEntity) {
 			StaticWallEntity var7 = (StaticWallEntity) entity;
-			if (this.field11173 != null && var7.field11173 != null) {
-				this.field11173.method1686(var7.field11173, arg2, arg3, arg4, arg5);
+			if (this.model != null && var7.model != null) {
+				this.model.method1686(var7.model, arg2, arg3, arg4, arg5);
 			}
 		} else if (entity instanceof StaticSceneryEntity) {
 			StaticSceneryEntity var8 = (StaticSceneryEntity) entity;
-			if (this.field11173 != null && var8.field11136 != null) {
-				this.field11173.method1686(var8.field11136, arg2, arg3, arg4, arg5);
+			if (this.model != null && var8.model != null) {
+				this.model.method1686(var8.model, arg2, arg3, arg4, arg5);
 			}
 		}
 	}
@@ -216,30 +216,30 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	@ObfuscatedName("ajg.ff(B)V")
 	public void applyLighting() {
 		this.field11171 = false;
-		if (this.field11173 != null) {
-			this.field11173.method1690(this.field11173.method1691() & 0xFFFEFFFF);
+		if (this.model != null) {
+			this.model.method1690(this.model.method1691() & 0xFFFEFFFF);
 		}
 	}
 
 	@ObfuscatedName("ajg.e(I)I")
-	public int method8223() {
-		return this.field11166;
+	public int getId() {
+		return this.id;
 	}
 
 	@ObfuscatedName("ajg.n(I)I")
-	public int method8220() {
-		return this.field11167;
+	public int getShape() {
+		return this.shape;
 	}
 
 	@ObfuscatedName("ajg.m(I)I")
-	public int method8204() {
-		return this.field11161;
+	public int getAngle() {
+		return this.angle;
 	}
 
 	@ObfuscatedName("ajg.k(I)V")
 	public void method8205() {
-		if (this.field11173 != null) {
-			this.field11173.method1816();
+		if (this.model != null) {
+			this.model.method1816();
 		}
 	}
 
@@ -250,23 +250,23 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 
 	@ObfuscatedName("ajg.f(I)Z")
 	public boolean method8206() {
-		return this.field11172;
+		return this.hasHardShadow;
 	}
 
 	@ObfuscatedName("ajg.l(Ldh;B)V")
 	public void method8217(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
-		if (this.field11163 == null && this.field11172) {
+		if (this.shadow == null && this.hasHardShadow) {
 			Pair var3 = this.method17420(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
-			var4 = this.field11163;
-			this.field11163 = null;
+			var4 = this.shadow;
+			this.shadow = null;
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.scene.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8750(var4, this.occludeLevel, (int) var5.x, (int) var5.z, null);
 		}
 	}
 
@@ -274,16 +274,16 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	public void method8209(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
-		if (this.field11163 == null && this.field11172) {
+		if (this.shadow == null && this.hasHardShadow) {
 			Pair var3 = this.method17420(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
-			var4 = this.field11163;
-			this.field11163 = null;
+			var4 = this.shadow;
+			this.shadow = null;
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.scene.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8814(var4, this.occludeLevel, (int) var5.x, (int) var5.z, null);
 		}
 	}
 }

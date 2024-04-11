@@ -20,64 +20,64 @@ import rs2.client.Client;
 public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements Location {
 
 	@ObfuscatedName("ajz.c")
-	public LocTypeList field11185;
+	public LocTypeList locTypeList;
 
 	@ObfuscatedName("ajz.r")
-	public Model field11192;
+	public Model model;
 
 	@ObfuscatedName("ajz.v")
-	public HardShadow field11186;
+	public HardShadow shadow;
 
 	@ObfuscatedName("ajz.o")
 	public EntityBounds field11187;
 
 	@ObfuscatedName("ajz.s")
-	public final int field11715;
+	public final int id;
 
 	@ObfuscatedName("ajz.y")
 	public final byte field11189;
 
 	@ObfuscatedName("ajz.q")
-	public final boolean field11190;
+	public final boolean underwater;
 
 	@ObfuscatedName("ajz.x")
-	public boolean field11191;
+	public boolean active;
 
 	@ObfuscatedName("ajz.b")
 	public boolean field11184;
 
 	@ObfuscatedName("ajz.h")
-	public boolean field11193;
+	public boolean hasHardShadow;
 
 	@ObfuscatedName("ajz.a")
-	public int field11194;
+	public int y;
 
-	public StaticGroundDecorEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, boolean arg11, ScaleRotTrans arg12) {
-		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg12);
-		this.field11185 = arg2;
-		this.field11715 = arg3.id;
-		this.field11190 = arg9;
+	public StaticGroundDecorEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int arg10, boolean arg11, ScaleRotTrans scaleRotTrans) {
+		super(scene, x, y, z, level, occludeLevel, locType.field7448, scaleRotTrans);
+		this.locTypeList = locTypeList;
+		this.id = locType.id;
+		this.underwater = underwater;
 		this.field11189 = (byte) arg10;
-		this.field11191 = arg3.active != 0 && !arg9;
+		this.active = locType.active != 0 && !underwater;
 		this.field11184 = arg11;
-		this.field11193 = arg1.supportsHardShadows() && arg3.hardshadow && !this.field11190 && Client.preferences.sceneryShadows.getValue() != 0;
-		this.field11194 = arg7;
+		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
+		this.y = y;
 		int var14 = 2048;
 		if (this.field11184) {
 			var14 |= 0x10000;
 		}
-		if (arg3.antimacro) {
+		if (locType.antimacro) {
 			var14 |= 0x80000;
 		}
-		Pair var15 = this.method17436(arg1, var14, this.field11193);
+		Pair var15 = this.method17436(toolkit, var14, this.hasHardShadow);
 		if (var15 != null) {
-			this.field11192 = (Model) var15.first;
-			this.field11186 = (HardShadow) var15.second;
-			if (this.field11184 || arg3.antimacro) {
-				this.field11192 = this.field11192.method1773((byte) 0, var14, false);
-				if (arg3.antimacro) {
+			this.model = (Model) var15.first;
+			this.shadow = (HardShadow) var15.second;
+			if (this.field11184 || locType.antimacro) {
+				this.model = this.model.method1773((byte) 0, var14, false);
+				if (locType.antimacro) {
 					LocTint var16 = Client.world.method7722();
-					this.field11192.method1745(var16.field5015, var16.field5013, var16.field5014, var16.field5012);
+					this.model.method1745(var16.field5015, var16.field5013, var16.field5014, var16.field5012);
 				}
 			}
 		}
@@ -86,27 +86,27 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.bu(B)Z")
 	public boolean method16488() {
-		if (this.field11192 == null) {
+		if (this.model == null) {
 			return true;
 		} else {
-			return !this.field11192.method1812();
+			return !this.model.method1812();
 		}
 	}
 
 	@ObfuscatedName("ajz.bw(S)Z")
 	public boolean method16489() {
-		return this.field11192 == null ? false : this.field11192.method1731();
+		return this.model == null ? false : this.model.method1731();
 	}
 
 	@ObfuscatedName("ajz.by(B)I")
 	public int overlayHeight() {
-		return this.field11192 == null ? 0 : this.field11192.getMinY();
+		return this.model == null ? 0 : this.model.getMinY();
 	}
 
 	@ObfuscatedName("ajz.bz(Ldh;IB)Ldo;")
 	public Model method17435(Toolkit arg0, int arg1) {
-		if (this.field11192 != null && arg0.method2394(this.field11192.method1691(), arg1) == 0) {
-			return this.field11192;
+		if (this.model != null && arg0.method2394(this.model.method1691(), arg1) == 0) {
+			return this.model;
 		} else {
 			Pair var3 = this.method17436(arg0, arg1, false);
 			return var3 == null ? null : (Model) var3.first;
@@ -115,22 +115,22 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.bv(Ldh;IZI)Labg;")
 	public Pair method17436(Toolkit arg0, int arg1, boolean arg2) {
-		LocType var4 = (LocType) this.field11185.list(this.field11715);
+		LocType var4 = (LocType) this.locTypeList.list(this.id);
 		FloorModel var5;
 		FloorModel var6;
-		if (this.field11190) {
-			var5 = this.scene.field6917[this.field11714];
+		if (this.underwater) {
+			var5 = this.scene.underwaterLevelHeightMaps[this.occludeLevel];
 			var6 = this.scene.field6915[0];
 		} else {
-			var5 = this.scene.field6915[this.field11714];
-			if (this.field11714 < 3) {
-				var6 = this.scene.field6915[this.field11714 + 1];
+			var5 = this.scene.field6915[this.occludeLevel];
+			if (this.occludeLevel < 3) {
+				var6 = this.scene.field6915[this.occludeLevel + 1];
 			} else {
 				var6 = null;
 			}
 		}
 		Vector3 var7 = this.getTransform().trans;
-		return var4.method9475(arg0, arg1, LocShape.GROUND_DECOR.id, this.field11189, var5, var6, (int) var7.x, this.field11194, (int) var7.z, arg2, null);
+		return var4.method9475(arg0, arg1, LocShape.GROUND_DECOR.id, this.field11189, var5, var6, (int) var7.x, this.y, (int) var7.z, arg2, null);
 	}
 
 	@ObfuscatedName("ajz.fv(Ldh;B)Luq;")
@@ -144,16 +144,16 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.fc(Ldh;I)Ltl;")
 	public PickableEntity draw(Toolkit toolkit) {
-		if (this.field11192 == null) {
+		if (this.model == null) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
-		PickableEntity var3 = PickableEntity.getPickableEntity(this.field11191);
-		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).clickbox;
+		PickableEntity var3 = PickableEntity.getPickableEntity(this.active);
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
 		if (var4 == null) {
-			this.field11192.draw(var2, this.entityBounds[0], 0);
+			this.model.draw(var2, this.entityBounds[0], 0);
 		} else {
-			this.field11192.draw(var2, null, 0);
+			this.model.draw(var2, null, 0);
 			toolkit.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
@@ -165,7 +165,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.fa(Ldh;IIB)Z")
 	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.field11185.list(this.field11715)).clickbox;
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
 		if (var4 != null) {
 			return toolkit.pick(arg1, arg2, this.method10533(), var4);
 		}
@@ -187,8 +187,8 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	public void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
 		if (entity instanceof StaticGroundDecorEntity) {
 			StaticGroundDecorEntity var7 = (StaticGroundDecorEntity) entity;
-			if (this.field11192 != null && var7.field11192 != null) {
-				this.field11192.method1686(var7.field11192, arg2, arg3, arg4, arg5);
+			if (this.model != null && var7.model != null) {
+				this.model.method1686(var7.model, arg2, arg3, arg4, arg5);
 			}
 		}
 	}
@@ -196,30 +196,30 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	@ObfuscatedName("ajz.ff(B)V")
 	public void applyLighting() {
 		this.field11184 = false;
-		if (this.field11192 != null) {
-			this.field11192.method1690(this.field11192.method1691() & 0xFFFEFFFF);
+		if (this.model != null) {
+			this.model.method1690(this.model.method1691() & 0xFFFEFFFF);
 		}
 	}
 
 	@ObfuscatedName("ajz.e(I)I")
-	public int method8223() {
-		return this.field11715;
+	public int getId() {
+		return this.id;
 	}
 
 	@ObfuscatedName("ajz.n(I)I")
-	public int method8220() {
+	public int getShape() {
 		return LocShape.GROUND_DECOR.id;
 	}
 
 	@ObfuscatedName("ajz.m(I)I")
-	public int method8204() {
+	public int getAngle() {
 		return this.field11189;
 	}
 
 	@ObfuscatedName("ajz.k(I)V")
 	public void method8205() {
-		if (this.field11192 != null) {
-			this.field11192.method1816();
+		if (this.model != null) {
+			this.model.method1816();
 		}
 	}
 
@@ -230,23 +230,23 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.f(I)Z")
 	public boolean method8206() {
-		return this.field11193;
+		return this.hasHardShadow;
 	}
 
 	@ObfuscatedName("ajz.l(Ldh;B)V")
 	public void method8217(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
-		if (this.field11186 == null && this.field11193) {
+		if (this.shadow == null && this.hasHardShadow) {
 			Pair var3 = this.method17436(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
-			var4 = this.field11186;
-			this.field11186 = null;
+			var4 = this.shadow;
+			this.shadow = null;
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.scene.method8750(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8750(var4, this.occludeLevel, (int) var5.x, (int) var5.z, null);
 		}
 	}
 
@@ -254,16 +254,16 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	public void method8209(Toolkit arg0) {
 		Object var2 = null;
 		HardShadow var4;
-		if (this.field11186 == null && this.field11193) {
+		if (this.shadow == null && this.hasHardShadow) {
 			Pair var3 = this.method17436(arg0, 262144, true);
 			var4 = (HardShadow) (var3 == null ? null : var3.second);
 		} else {
-			var4 = this.field11186;
-			this.field11186 = null;
+			var4 = this.shadow;
+			this.shadow = null;
 		}
 		Vector3 var5 = this.getTransform().trans;
 		if (var4 != null) {
-			this.scene.method8814(var4, this.field11714, (int) var5.x, (int) var5.z, null);
+			this.scene.method8814(var4, this.occludeLevel, (int) var5.x, (int) var5.z, null);
 		}
 	}
 }

@@ -16,10 +16,10 @@ import deob.ObfuscatedName;
 public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements Location {
 
 	@ObfuscatedName("ajs.c")
-	public DynamicLoc field11133;
+	public DynamicLoc loc;
 
 	@ObfuscatedName("ajs.r")
-	public boolean field11132;
+	public boolean active;
 
 	@ObfuscatedName("ajs.v")
 	public EntityBounds field11134;
@@ -27,10 +27,10 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	@ObfuscatedName("ajs.o")
 	public boolean field11135 = true;
 
-	public DynamicGroundDecorEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, ScaleRotTrans arg13) {
-		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg13);
-		this.field11133 = new DynamicLoc(arg1, arg2, arg3, LocShape.GROUND_DECOR.id, arg10, arg5, this, arg9, arg11, arg12);
-		this.field11132 = arg3.active != 0 && !arg9;
+	public DynamicGroundDecorEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int angle, int arg11, int arg12, ScaleRotTrans scaleRotTrans) {
+		super(scene, x, y, z, level, occludeLevel, locType.field7448, scaleRotTrans);
+		this.loc = new DynamicLoc(toolkit, locTypeList, locType, LocShape.GROUND_DECOR.id, angle, occludeLevel, this, underwater, arg11, arg12);
+		this.active = locType.active != 0 && !underwater;
 		this.createEntityBounds(1);
 	}
 
@@ -51,38 +51,38 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 
 	@ObfuscatedName("ajs.by(B)I")
 	public int overlayHeight() {
-		return this.field11133.method8262();
+		return this.loc.overlayHeight();
 	}
 
 	@ObfuscatedName("ajs.bo(I)I")
 	public int height() {
-		return this.field11133.method8236();
+		return this.loc.height();
 	}
 
 	@ObfuscatedName("ajs.fc(Ldh;I)Ltl;")
 	public PickableEntity draw(Toolkit toolkit) {
-		Model var2 = this.field11133.method8238(toolkit, 2048, false, true);
+		Model var2 = this.loc.getModel(toolkit, 2048, false, true);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
 		ScaleRotTrans var4 = this.getTransform();
-		PickableEntity var5 = PickableEntity.getPickableEntity(this.field11132);
+		PickableEntity var5 = PickableEntity.getPickableEntity(this.active);
 		int var6 = (int) var4.trans.x >> 9;
 		int var7 = (int) var4.trans.z >> 9;
-		this.field11133.method8239(toolkit, var2, var3, var6, var6, var7, var7, true);
-		LocType var8 = this.field11133.method8237();
+		this.loc.method8239(toolkit, var2, var3, var6, var6, var7, var7, true);
+		LocType var8 = this.loc.getLocType();
 		if (var8.clickbox == null) {
 			var2.draw(var3, this.entityBounds[0], 0);
 		} else {
 			var2.draw(var3, null, 0);
 			toolkit.method2193(var3, this.entityBounds[0], var8.clickbox);
 		}
-		if (this.field11133.field6680 != null) {
-			ParticleList var9 = this.field11133.field6680.method9965();
+		if (this.loc.field6680 != null) {
+			ParticleList var9 = this.loc.field6680.method9965();
 			toolkit.drawParticles(var9);
 		}
-		this.field11135 = var2.method1731() || this.field11133.field6680 != null;
+		this.field11135 = var2.method1731() || this.loc.field6680 != null;
 		if (this.field11134 == null) {
 			this.field11134 = GraphEntity.method15111((int) var4.trans.x, (int) var4.trans.y, (int) var4.trans.z, var2);
 		} else {
@@ -93,20 +93,20 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 
 	@ObfuscatedName("ajs.fw(Ldh;I)V")
 	public void method17373(Toolkit toolkit) {
-		Model var2 = this.field11133.method8238(toolkit, 262144, true, true);
+		Model var2 = this.loc.getModel(toolkit, 262144, true, true);
 		if (var2 != null) {
 			Vector3 var3 = this.getTransform().trans;
 			int var4 = (int) var3.x >> 9;
 			int var5 = (int) var3.z >> 9;
-			this.field11133.method8239(toolkit, var2, this.method10533(), var4, var4, var5, var5, false);
+			this.loc.method8239(toolkit, var2, this.method10533(), var4, var4, var5, var5, false);
 		}
 	}
 
 	@ObfuscatedName("ajs.fa(Ldh;IIB)Z")
 	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
-		LocType var4 = this.field11133.method8237();
+		LocType var4 = this.loc.getLocType();
 		if (var4.clickbox == null) {
-			Model var5 = this.field11133.method8238(toolkit, 131072, false, false);
+			Model var5 = this.loc.getModel(toolkit, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
 			return toolkit.pick(arg1, arg2, this.method10533(), var4.clickbox);
@@ -129,23 +129,23 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 	}
 
 	@ObfuscatedName("ajs.e(I)I")
-	public int method8223() {
-		return this.field11133.field6665;
+	public int getId() {
+		return this.loc.id;
 	}
 
 	@ObfuscatedName("ajs.n(I)I")
-	public int method8220() {
-		return this.field11133.field6666;
+	public int getShape() {
+		return this.loc.shape;
 	}
 
 	@ObfuscatedName("ajs.m(I)I")
-	public int method8204() {
-		return this.field11133.field6667;
+	public int getAngle() {
+		return this.loc.angle;
 	}
 
 	@ObfuscatedName("ajs.bz(Lvp;I)V")
 	public void method17396(LocTypeCustomisation arg0) {
-		this.field11133.method8265(arg0);
+		this.loc.method8265(arg0);
 	}
 
 	@ObfuscatedName("ajs.k(I)V")
@@ -159,16 +159,16 @@ public class DynamicGroundDecorEntity extends GroundDecorLayerEntity implements 
 
 	@ObfuscatedName("ajs.f(I)Z")
 	public boolean method8206() {
-		return this.field11133.method8240();
+		return this.loc.method8240();
 	}
 
 	@ObfuscatedName("ajs.l(Ldh;B)V")
 	public void method8217(Toolkit arg0) {
-		this.field11133.method8241(arg0);
+		this.loc.method8241(arg0);
 	}
 
 	@ObfuscatedName("ajs.u(Ldh;B)V")
 	public void method8209(Toolkit arg0) {
-		this.field11133.method8242(arg0);
+		this.loc.method8242(arg0);
 	}
 }

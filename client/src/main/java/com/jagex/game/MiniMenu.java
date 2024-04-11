@@ -835,8 +835,8 @@ public class MiniMenu {
 									boolean var30 = false;
 									boolean var31 = false;
 									if (var29.field6978 instanceof PrimaryLayerEntity) {
-										var32 = ((PrimaryLayerEntity) var29.field6978).field12471;
-										var33 = ((PrimaryLayerEntity) var29.field6978).field12468;
+										var32 = ((PrimaryLayerEntity) var29.field6978).minSceneTileX;
+										var33 = ((PrimaryLayerEntity) var29.field6978).minSceneTileZ;
 									} else {
 										Vector3 var34 = var29.field6978.getTransform().trans;
 										var32 = (int) var34.x >> 9;
@@ -996,7 +996,7 @@ public class MiniMenu {
 							}
 						} while (!(var29.field6978 instanceof Location));
 						var83 = (Location) var29.field6978;
-						var84 = (LocType) Client.world.getLocTypeList().list(var83.method8223());
+						var84 = (LocType) Client.world.getLocTypeList().list(var83.getId());
 						if (var84.multiloc != null) {
 							var84 = var84.getMultiLoc(Client.localPlayerGameState, Client.localPlayerGameState);
 						}
@@ -1046,15 +1046,15 @@ public class MiniMenu {
 	public static long method6964(Location arg0, int arg1, int arg2) {
 		long var3 = 4194304L;
 		long var5 = Long.MIN_VALUE;
-		LocType var7 = (LocType) Client.world.getLocTypeList().list(arg0.method8223());
-		long var8 = (long) (arg1 | arg2 << 7 | arg0.method8220() << 14 | arg0.method8204() << 20 | 0x40000000);
+		LocType var7 = (LocType) Client.world.getLocTypeList().list(arg0.getId());
+		long var8 = (long) (arg1 | arg2 << 7 | arg0.getShape() << 14 | arg0.getAngle() << 20 | 0x40000000);
 		if (var7.active == 0) {
 			var8 |= var5;
 		}
 		if (var7.raiseobject == 1) {
 			var8 |= var3;
 		}
-		return var8 | (long) arg0.method8223() << 32;
+		return var8 | (long) arg0.getId() << 32;
 	}
 
 	@ObfuscatedName("wb.g(Larm;I)V")

@@ -71,9 +71,9 @@ public class ReceivePlayerPositions {
 		player.routeWaypointX[0] = hx - coord.x;
 		player.routeWaypointZ[0] = hz - coord.z;
 		player.setPosition((float) ((player.routeWaypointX[0] << 9) + (player.size() << 8)), player.method10525().trans.y, (float) ((player.routeWaypointZ[0] << 9) + (player.size() << 8)));
-		Client.currentPlayerLevel = player.level = player.field11714 = hl;
+		Client.currentPlayerLevel = player.level = player.occludeLevel = hl;
 		if (Client.world.getSceneLevelTileFlags().isLinkBelow(player.routeWaypointX[0], player.routeWaypointZ[0])) {
-			player.field11714++;
+			player.occludeLevel++;
 		}
 		if (appearances[localPlayerIndex] != null) {
 			player.getAppearance(appearances[localPlayerIndex]);
@@ -393,9 +393,9 @@ public class ReceivePlayerPositions {
 					speeds[highResIndex] = (byte) (speed - 1);
 					player.movePlayer(nextX, nextZ, speeds[highResIndex]);
 				}
-				player.level = player.field11714 = (byte) (player.level + dl & 0x3);
+				player.level = player.occludeLevel = (byte) (player.level + dl & 0x3);
 				if (Client.world.getSceneLevelTileFlags().isLinkBelow(nextX, nextZ)) {
-					player.field11714++;
+					player.occludeLevel++;
 				}
 				if (Client.currentPlayerUid == highResIndex && Client.currentPlayerLevel != player.level) {
 					Client.currentPlayerLevel = player.level;
@@ -414,9 +414,9 @@ public class ReceivePlayerPositions {
 					speeds[highResIndex] = (byte) (speed - 1);
 					player.movePlayer(nextX, nextZ, speeds[highResIndex]);
 				}
-				player.level = player.field11714 = (byte) (player.level + dl & 0x3);
+				player.level = player.occludeLevel = (byte) (player.level + dl & 0x3);
 				if (Client.world.getSceneLevelTileFlags().isLinkBelow(nextX, nextZ)) {
-					player.field11714++;
+					player.occludeLevel++;
 				}
 				if (Client.currentPlayerUid == highResIndex) {
 					Client.currentPlayerLevel = player.level;
@@ -462,9 +462,9 @@ public class ReceivePlayerPositions {
 			player.field12070 = lowResPlayer.field525;
 			player.field12048 = lowResPlayer.field526;
 			player.routeSpeeds[0] = speeds[lowResIndex];
-			player.level = player.field11714 = (byte) level;
+			player.level = player.occludeLevel = (byte) level;
 			if (Client.world.getSceneLevelTileFlags().isLinkBelow(nextX, nextZ)) {
-				player.field11714++;
+				player.occludeLevel++;
 			}
 			player.tele(nextX, nextZ);
 			lowResolutions[lowResIndex] = null;

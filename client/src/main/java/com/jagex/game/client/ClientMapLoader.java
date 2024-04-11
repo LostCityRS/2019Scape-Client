@@ -75,7 +75,7 @@ public class ClientMapLoader extends MapLoader {
 					int var9 = arg1.g1();
 					if (var9 > 0) {
 						for (int var10 = 0; var10 < var9; var10++) {
-							StaticPointLight var11 = new StaticPointLight(arg0, this.scene.field6900, arg1, 2);
+							StaticPointLight var11 = new StaticPointLight(arg0, this.scene.size, arg1, 2);
 							if (var11.field7014 == 31) {
 								LightType var12 = (LightType) Client.lightTypeList.list(arg1.g2());
 								var11.method8899(var12.field9168, var12.field9170, var12.field9167, var12.field9169);
@@ -263,7 +263,7 @@ public class ClientMapLoader extends MapLoader {
 					int var16 = arg1.g1();
 					if (var16 > 0) {
 						for (int var17 = 0; var17 < var16; var17++) {
-							StaticPointLight var18 = new StaticPointLight(arg0, this.scene.field6900, arg1, 2);
+							StaticPointLight var18 = new StaticPointLight(arg0, this.scene.size, arg1, 2);
 							if (var18.field7014 == 31) {
 								LightType var19 = (LightType) Client.lightTypeList.list(arg1.g2());
 								var18.method8899(var19.field9168, var19.field9170, var19.field9167, var19.field9169);
@@ -622,7 +622,7 @@ public class ClientMapLoader extends MapLoader {
 			var17 = arg4;
 			var18 = arg4 + 1;
 		}
-		FloorModel var19 = this.scene.field6913[arg1];
+		FloorModel var19 = this.scene.levelHeightmaps[arg1];
 		int var20;
 		if (LocShape.CENTREPIECE_STRAIGHT.id == arg7 || LocShape.CENTREPIECE_DIAGONAL.id == arg7) {
 			var20 = var19.method1530(var15, var17) + var19.method1530(var16, var17) + var19.method1530(var15, var18) + var19.method1530(var16, var18) >> 2;
@@ -670,7 +670,7 @@ public class ClientMapLoader extends MapLoader {
 				if (var29 != null && var29.method8206()) {
 					var29.method8217(arg0);
 				}
-				if (var12.shadow && this.field4512) {
+				if (var12.hasHardShadow && this.field4512) {
 					if (var31 > 30) {
 						var31 = 30;
 					}
@@ -694,7 +694,7 @@ public class ClientMapLoader extends MapLoader {
 			}
 			this.scene.addEntity(var28, false);
 			if (this.field4512 && !this.underwater && LocShape.isRoof(arg7) && LocShape.ROOF_DIAGONAL_WITH_ROOFEDGE.id != arg7 && arg2 > 0 && var12.occlude != 0) {
-				this.field4518[arg2][arg3][arg4] = (byte) (this.field4518[arg2][arg3][arg4] | 0x4);
+				this.levelOccludemap[arg2][arg3][arg4] = (byte) (this.levelOccludemap[arg2][arg3][arg4] | 0x4);
 			}
 		} else if (!this.addWallLoc(arg0, arg7, arg6, var24, var12, arg8, arg9, arg2, arg1, var21, var20, var22, arg3, arg4, var23, var19, var13, var14, arg10) && !this.addWallDecorationLoc(arg0, arg7, arg6, var24, var12, arg8, arg9, arg2, arg1, var21, var20, var22, arg3, arg4, arg10)) {
 			;
@@ -720,36 +720,36 @@ public class ClientMapLoader extends MapLoader {
 			}
 			this.scene.addWall(arg7, arg12, arg13, var22, null);
 			if (rotation == 0) {
-				if (this.field4512 && arg4.shadow) {
+				if (this.field4512 && arg4.hasHardShadow) {
 					arg15.method1521(arg12, arg13, 50);
 					arg15.method1521(arg12, arg13 + 1, 50);
 				}
 				if (var20 == 1 && !this.underwater) {
-					this.scene.field6930.method8957(1, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(1, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
 				}
 			} else if (rotation == 1) {
-				if (this.field4512 && arg4.shadow) {
+				if (this.field4512 && arg4.hasHardShadow) {
 					arg15.method1521(arg12, arg13 + 1, 50);
 					arg15.method1521(arg12 + 1, arg13 + 1, 50);
 				}
 				if (var20 == 1 && !this.underwater) {
-					this.scene.field6930.method8957(2, arg7, arg12, arg13 + 1, arg4.field7475, -arg4.field7476);
+					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13 + 1, arg4.field7475, -arg4.field7476);
 				}
 			} else if (rotation == 2) {
-				if (this.field4512 && arg4.shadow) {
+				if (this.field4512 && arg4.hasHardShadow) {
 					arg15.method1521(arg12 + 1, arg13, 50);
 					arg15.method1521(arg12 + 1, arg13 + 1, 50);
 				}
 				if (var20 == 1 && !this.underwater) {
-					this.scene.field6930.method8957(1, arg7, arg12 + 1, arg13, arg4.field7475, -arg4.field7476);
+					this.scene.occlusionManager.method8957(1, arg7, arg12 + 1, arg13, arg4.field7475, -arg4.field7476);
 				}
 			} else if (rotation == 3) {
-				if (this.field4512 && arg4.shadow) {
+				if (this.field4512 && arg4.hasHardShadow) {
 					arg15.method1521(arg12, arg13, 50);
 					arg15.method1521(arg12 + 1, arg13, 50);
 				}
 				if (var20 == 1 && !this.underwater) {
-					this.scene.field6930.method8957(2, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
 				}
 			}
 			if (arg4.walloff != 64) {
@@ -768,7 +768,7 @@ public class ClientMapLoader extends MapLoader {
 				var24 = new DynamicWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg5, arg6, arg18);
 			}
 			this.scene.addWall(arg7, arg12, arg13, var24, null);
-			if (arg4.shadow && this.field4512) {
+			if (arg4.hasHardShadow && this.field4512) {
 				if (rotation == 0) {
 					arg15.method1521(arg12, arg13 + 1, 50);
 				} else if (rotation == 1) {
@@ -802,17 +802,17 @@ public class ClientMapLoader extends MapLoader {
 			this.scene.addWall(arg7, arg12, arg13, var28, var29);
 			if ((arg4.occlude == 1 || field10754 && arg4.occlude == -1) && !this.underwater) {
 				if (rotation == 0) {
-					this.scene.field6930.method8957(1, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
-					this.scene.field6930.method8957(2, arg7, arg12, arg13 + 1, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(1, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13 + 1, arg4.field7475, arg4.field7476);
 				} else if (rotation == 1) {
-					this.scene.field6930.method8957(1, arg7, arg12 + 1, arg13, arg4.field7475, arg4.field7476);
-					this.scene.field6930.method8957(2, arg7, arg12, arg13 + 1, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(1, arg7, arg12 + 1, arg13, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13 + 1, arg4.field7475, arg4.field7476);
 				} else if (rotation == 2) {
-					this.scene.field6930.method8957(1, arg7, arg12 + 1, arg13, arg4.field7475, arg4.field7476);
-					this.scene.field6930.method8957(2, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(1, arg7, arg12 + 1, arg13, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
 				} else if (rotation == 3) {
-					this.scene.field6930.method8957(1, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
-					this.scene.field6930.method8957(2, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(1, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
+					this.scene.occlusionManager.method8957(2, arg7, arg12, arg13, arg4.field7475, arg4.field7476);
 				}
 			}
 			if (arg4.walloff != 64) {
@@ -831,7 +831,7 @@ public class ClientMapLoader extends MapLoader {
 				var31 = new DynamicWallEntity(this.scene, arg0, this.locs, arg4, arg7, arg8, arg9, arg10, arg11, this.underwater, arg1, rotation, arg5, arg6, arg18);
 			}
 			this.scene.addWall(arg7, arg12, arg13, var31, null);
-			if (arg4.shadow && this.field4512) {
+			if (arg4.hasHardShadow && this.field4512) {
 				if (rotation == 0) {
 					arg15.method1521(arg12, arg13 + 1, 50);
 				} else if (rotation == 1) {
@@ -862,7 +862,7 @@ public class ClientMapLoader extends MapLoader {
 				} else {
 					var34 = 16;
 				}
-				this.scene.field6930.method8957(var34, arg7, arg12, arg13, arg4.field7475, 0);
+				this.scene.occlusionManager.method8957(var34, arg7, arg12, arg13, arg4.field7475, 0);
 			}
 			if (arg4.walloff != 64) {
 				this.scene.method8765(arg7, arg12, arg13, arg4.walloff);
@@ -892,7 +892,7 @@ public class ClientMapLoader extends MapLoader {
 			int var18 = 65;
 			Location var19 = (Location) this.scene.getWall(arg7, arg12, arg13);
 			if (var19 != null) {
-				var18 = ((LocType) this.locs.list(var19.method8223())).walloff + 1;
+				var18 = ((LocType) this.locs.list(var19.getId())).walloff + 1;
 			}
 			WallDecorLayerEntity var21;
 			if (isStatic) {
@@ -910,7 +910,7 @@ public class ClientMapLoader extends MapLoader {
 			int var22 = 33;
 			Location var23 = (Location) this.scene.getWall(arg7, arg12, arg13);
 			if (var23 != null) {
-				var22 = ((LocType) this.locs.list(var23.method8223())).walloff / 2 + 1;
+				var22 = ((LocType) this.locs.list(var23.getId())).walloff / 2 + 1;
 			}
 			WallDecorLayerEntity var25;
 			if (isStatic) {
@@ -943,7 +943,7 @@ public class ClientMapLoader extends MapLoader {
 			int var30 = 33;
 			Location var31 = (Location) this.scene.getWall(arg7, arg12, arg13);
 			if (var31 != null) {
-				var30 = ((LocType) this.locs.list(var31.method8223())).walloff / 2 + 1;
+				var30 = ((LocType) this.locs.list(var31.getId())).walloff / 2 + 1;
 			}
 			WallDecorLayerEntity var34;
 			WallDecorLayerEntity var35;
@@ -977,9 +977,9 @@ public class ClientMapLoader extends MapLoader {
 		if (var6 == null) {
 			return;
 		}
-		LocType var7 = (LocType) this.locs.list(var6.method8223());
-		int var8 = var6.method8220();
-		int var9 = var6.method8204();
+		LocType var7 = (LocType) this.locs.list(var6.getId());
+		int var8 = var6.getShape();
+		int var9 = var6.getAngle();
 		if (var7.method9480()) {
 			PositionedSound.method6206(arg1, arg3, arg4, var7);
 		}
@@ -991,13 +991,13 @@ public class ClientMapLoader extends MapLoader {
 			this.scene.removeDynamicWall(arg1, arg3, arg4);
 			if (var7.occlude == 1) {
 				if (var9 == 0) {
-					this.scene.field6930.method8919(1, arg1, arg3, arg4);
+					this.scene.occlusionManager.method8919(1, arg1, arg3, arg4);
 				} else if (var9 == 1) {
-					this.scene.field6930.method8919(2, arg1, arg3, arg4 + 1);
+					this.scene.occlusionManager.method8919(2, arg1, arg3, arg4 + 1);
 				} else if (var9 == 2) {
-					this.scene.field6930.method8919(1, arg1, arg3 + 1, arg4);
+					this.scene.occlusionManager.method8919(1, arg1, arg3 + 1, arg4);
 				} else if (var9 == 3) {
-					this.scene.field6930.method8919(2, arg1, arg3, arg4);
+					this.scene.occlusionManager.method8919(2, arg1, arg3, arg4);
 				}
 			}
 		} else if (arg2 == 1) {
@@ -1007,9 +1007,9 @@ public class ClientMapLoader extends MapLoader {
 			this.scene.removeEntity(arg1, arg3, arg4, Client.field11001);
 			if (LocShape.WALL_DIAGONAL.id == var8) {
 				if ((var9 & 0x1) == 0) {
-					this.scene.field6930.method8919(8, arg1, arg3, arg4);
+					this.scene.occlusionManager.method8919(8, arg1, arg3, arg4);
 				} else {
-					this.scene.field6930.method8919(16, arg1, arg3, arg4);
+					this.scene.occlusionManager.method8919(16, arg1, arg3, arg4);
 				}
 			}
 		} else if (arg2 == 3) {
@@ -1036,54 +1036,54 @@ public class ClientMapLoader extends MapLoader {
 	}
 
 	@ObfuscatedName("aih.co(Ldh;ZB)V")
-	public final void method16877(Toolkit arg0, boolean arg1) {
+	public final void build(Toolkit arg0, boolean underwater) {
 		this.scene.buildModels();
-		if (!arg1) {
+		if (!underwater) {
 			if (this.levels > 1) {
 				for (int x = 0; x < this.maxTileX; x++) {
 					for (int z = 0; z < this.maxTileZ; z++) {
-						if ((this.field4522.levelTileFlags[1][x][z] & 0x2) == 2) {
+						if ((this.sceneLevelTileFlags.levelTileFlags[1][x][z] & 0x2) == 2) {
 							this.scene.setBridge(x, z);
 						}
 					}
 				}
 			}
-			for (int var5 = 0; var5 < this.levels; var5++) {
-				for (int var6 = 0; var6 <= this.maxTileZ; var6++) {
-					for (int var7 = 0; var7 <= this.maxTileX; var7++) {
-						if ((this.field4518[var5][var7][var6] & 0x4) != 0) {
-							int var8 = var7;
-							int var9 = var7;
-							int var10 = var6;
-							int var11 = var6;
-							while (var10 > 0 && (this.field4518[var5][var7][var10 - 1] & 0x4) != 0 && var11 - var10 < 10) {
-								var10--;
+			for (int level = 0; level < this.levels; level++) {
+				for (int tileZ = 0; tileZ <= this.maxTileZ; tileZ++) {
+					for (int tileX = 0; tileX <= this.maxTileX; tileX++) {
+						if ((this.levelOccludemap[level][tileX][tileZ] & 0x4) != 0) {
+							int minTileX = tileX;
+							int maxTileX = tileX;
+							int minTileZ = tileZ;
+							int maxTileZ = tileZ;
+							while (minTileZ > 0 && (this.levelOccludemap[level][tileX][minTileZ - 1] & 0x4) != 0 && maxTileZ - minTileZ < 10) {
+								minTileZ--;
 							}
-							while (var11 < this.maxTileZ && (this.field4518[var5][var7][var11 + 1] & 0x4) != 0 && var11 - var10 < 10) {
-								var11++;
+							while (maxTileZ < this.maxTileZ && (this.levelOccludemap[level][tileX][maxTileZ + 1] & 0x4) != 0 && maxTileZ - minTileZ < 10) {
+								maxTileZ++;
 							}
-							label108: while (var8 > 0 && var9 - var8 < 10) {
-								for (int var12 = var10; var12 <= var11; var12++) {
-									if ((this.field4518[var5][var8 - 1][var12] & 0x4) == 0) {
-										break label108;
+							find_min_tile_xz: while (minTileX > 0 && maxTileX - minTileX < 10) {
+								for (int z = minTileZ; z <= maxTileZ; z++) {
+									if ((this.levelOccludemap[level][minTileX - 1][z] & 0x4) == 0) {
+										break find_min_tile_xz;
 									}
 								}
-								var8--;
+								minTileX--;
 							}
-							label95: while (var9 < this.maxTileX && var9 - var8 < 10) {
-								for (int var13 = var10; var13 <= var11; var13++) {
-									if ((this.field4518[var5][var9 + 1][var13] & 0x4) == 0) {
-										break label95;
+							find_max_tile_xz: while (maxTileX < this.maxTileX && maxTileX - minTileX < 10) {
+								for (int var13 = minTileZ; var13 <= maxTileZ; var13++) {
+									if ((this.levelOccludemap[level][maxTileX + 1][var13] & 0x4) == 0) {
+										break find_max_tile_xz;
 									}
 								}
-								var9++;
+								maxTileX++;
 							}
-							if ((var9 - var8 + 1) * (var11 - var10 + 1) >= 4) {
-								int var14 = this.levelHeightmap[var5][var8][var10];
-								this.scene.field6930.method8922(4, var5, var8 << 9, (var9 << 9) + 512, var10 << 9, (var11 << 9) + 512, var14, var14);
-								for (int var15 = var8; var15 <= var9; var15++) {
-									for (int var16 = var10; var16 <= var11; var16++) {
-										this.field4518[var5][var15][var16] &= 0xFFFFFFFB;
+							if ((maxTileX - minTileX + 1) * (maxTileZ - minTileZ + 1) >= 4) {
+								int y = this.levelHeightmap[level][minTileX][minTileZ];
+								this.scene.occlusionManager.addOccluder(4, level, minTileX << 9, (maxTileX << 9) + 512, minTileZ << 9, (maxTileZ << 9) + 512, y, y);
+								for (int x = minTileX; x <= maxTileX; x++) {
+									for (int z = minTileZ; z <= maxTileZ; z++) {
+										this.levelOccludemap[level][x][z] &= 0xFFFFFFFB;
 									}
 								}
 							}
@@ -1091,8 +1091,8 @@ public class ClientMapLoader extends MapLoader {
 					}
 				}
 			}
-			this.scene.field6930.method8931();
+			this.scene.occlusionManager.method8931();
 		}
-		this.field4518 = null;
+		this.levelOccludemap = null;
 	}
 }

@@ -100,7 +100,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	public Model method19748(Toolkit arg0, int arg1, int arg2) {
 		EffectAnimType var4 = (EffectAnimType) Client.effectAnimTypeList.list(arg2);
 		FloorModel var5 = this.scene.field6915[this.level];
-		FloorModel var6 = this.field11714 < 3 ? this.scene.field6915[this.field11714 + 1] : null;
+		FloorModel var6 = this.occludeLevel < 3 ? this.scene.field6915[this.occludeLevel + 1] : null;
 		Vector3 var7 = this.getTransform().trans;
 		return this.field12609 == null || this.field12609.method14375() ? var4.getModel(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.x, (int) var7.y, (int) var7.z, null, (byte) 2) : var4.getModel(arg0, arg1, this.field12608 * 2048, var5, var6, (int) var7.x, (int) var7.y, (int) var7.z, this.field12609, (byte) 2);
 	}
@@ -143,7 +143,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 		}
 		if (this.field12612 != null) {
 			this.field12612.method9936(arg0, (long) Client.loopCycle, var4, var5, false);
-			this.field12612.method9963(this.level, this.field12471, this.field12472, this.field12468, this.field12467);
+			this.field12612.method9963(this.level, this.minSceneTileX, this.maxSceneTileX, this.minSceneTileZ, this.maxSceneTileZ);
 		}
 	}
 

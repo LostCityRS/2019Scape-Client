@@ -89,7 +89,7 @@ public class HintTrail {
 		Iterator var2 = this.field6752.iterator();
 		while (var2.hasNext()) {
 			HintTrailPoint var3 = (HintTrailPoint) var2.next();
-			arg0.removeEntity(var3.level, var3.field12471, var3.field12468, new HintTrailPointPrimaryLayerEntityPredicate(var3));
+			arg0.removeEntity(var3.level, var3.minSceneTileX, var3.minSceneTileZ, new HintTrailPointPrimaryLayerEntityPredicate(var3));
 		}
 	}
 

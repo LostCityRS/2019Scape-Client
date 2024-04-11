@@ -148,7 +148,7 @@ public class LocType implements ConfigType {
 	public boolean mirror = false;
 
 	@ObfuscatedName("vd.ao")
-	public boolean shadow = true;
+	public boolean hasHardShadow = true;
 
 	@ObfuscatedName("vd.aj")
 	public int resizex = 128;
@@ -389,7 +389,7 @@ public class LocType implements ConfigType {
 			} else if (code == 62) {
 				this.mirror = true;
 			} else if (code == 64) {
-				this.shadow = false;
+				this.hasHardShadow = false;
 			} else if (code == 65) {
 				this.resizex = buf.g2();
 			} else if (code == 66) {

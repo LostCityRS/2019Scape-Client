@@ -166,9 +166,9 @@ public final class ChangeLocationRequest extends Node {
 			arg0.field11232 = 0;
 			arg0.field11231 = 0;
 		} else {
-			arg0.field11227 = var2.method8223();
-			arg0.field11232 = var2.method8220();
-			arg0.field11231 = var2.method8204();
+			arg0.field11227 = var2.getId();
+			arg0.field11232 = var2.getShape();
+			arg0.field11231 = var2.getAngle();
 		}
 		if (var2 instanceof GraphEntity) {
 			GraphEntity var3 = (GraphEntity) var2;

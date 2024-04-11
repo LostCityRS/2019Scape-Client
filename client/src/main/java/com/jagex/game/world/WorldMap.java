@@ -386,9 +386,9 @@ public class WorldMap {
 				var8 = 127;
 			}
 			int var9 = (arg3 + var7 & 0xFC00) + (var7 & 0x380) + var8;
-			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method10223(var9, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.adjustLightness(var9, 96)) & 0xFFFF] | 0xFF000000;
 		} else if (var6 >= 0) {
-			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method10223(arg1.get(var6).averageColour, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.adjustLightness(arg1.get(var6).averageColour, 96)) & 0xFFFF] | 0xFF000000;
 		} else if (var5.rgb == -1) {
 			var10 = 0;
 		} else {
@@ -400,7 +400,7 @@ public class WorldMap {
 				var12 = 127;
 			}
 			int var13 = (arg3 + var11 & 0xFC00) + (var11 & 0x380) + var12;
-			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method10223(var13, 96)) & 0xFFFF] | 0xFF000000;
+			var10 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.adjustLightness(var13, 96)) & 0xFFFF] | 0xFF000000;
 		}
 		return var10;
 	}
@@ -746,7 +746,7 @@ public class WorldMap {
 							arg1[var26] = 0;
 							arg2[var26] = 0;
 						} else {
-							int var27 = var21 == 0 ? 0 : ColourUtils.method17849(var18 * 256 / var21, var19 / var22, var20 / var22);
+							int var27 = var21 == 0 ? 0 : ColourUtils.hsl24to16(var18 * 256 / var21, var19 / var22, var20 / var22);
 							int var28 = (var27 & 0x7F) + arg4;
 							if (var28 < 0) {
 								var28 = 0;
@@ -755,7 +755,7 @@ public class WorldMap {
 							}
 							int var29 = (arg3 + var27 & 0xFC00) + (var27 & 0x380) + var28;
 							int var30 = field6812 * var23 + var10;
-							int var31 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.method1625(var29, 96)) & 0xFFFF];
+							int var31 = ColourUtils.field8149[ColourUtils.method4937(ColourUtils.mulHSL(var29, 96)) & 0xFFFF];
 							arg1[var30] = (byte) (var31 >> 16 & 0xFF);
 							arg2[var30] = (short) (var31 & 0xFFFF);
 						}

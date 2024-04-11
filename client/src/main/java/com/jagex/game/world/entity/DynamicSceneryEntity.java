@@ -15,10 +15,10 @@ import deob.ObfuscatedName;
 public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location {
 
 	@ObfuscatedName("ajy.c")
-	public DynamicLoc field11131;
+	public DynamicLoc loc;
 
 	@ObfuscatedName("ajy.r")
-	public boolean field11128;
+	public boolean active;
 
 	@ObfuscatedName("ajy.v")
 	public EntityBounds field11129;
@@ -29,10 +29,10 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	@ObfuscatedName("ajy.s")
 	public final boolean field11130;
 
-	public DynamicSceneryEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, int arg16, int arg17, boolean arg18, ScaleRotTrans arg19) {
-		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.raiseobject == 1, method6824(arg14, arg15), arg19);
-		this.field11131 = new DynamicLoc(arg1, arg2, arg3, arg14, arg15, arg5, this, arg9, arg16, arg17);
-		this.field11128 = arg3.active != 0 && !arg9;
+	public DynamicSceneryEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, int shape, int angle, int arg16, int arg17, boolean arg18, ScaleRotTrans scaleRotTrans) {
+		super(scene, level, occludeLevel, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, locType.raiseobject == 1, method6824(shape, angle), scaleRotTrans);
+		this.loc = new DynamicLoc(toolkit, locTypeList, locType, shape, angle, occludeLevel, this, underwater, arg16, arg17);
+		this.active = locType.active != 0 && !underwater;
 		this.field11130 = arg18;
 		this.createEntityBounds(1);
 	}
@@ -58,7 +58,7 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 
 	@ObfuscatedName("ajy.by(B)I")
 	public int overlayHeight() {
-		return this.field11131.method8262();
+		return this.loc.overlayHeight();
 	}
 
 	@ObfuscatedName("ajy.fv(Ldh;B)Luq;")
@@ -68,30 +68,30 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 
 	@ObfuscatedName("ajy.bo(I)I")
 	public int height() {
-		return this.field11131.method8236();
+		return this.loc.height();
 	}
 
 	@ObfuscatedName("ajy.fc(Ldh;I)Ltl;")
 	public PickableEntity draw(Toolkit toolkit) {
-		Model var2 = this.field11131.method8238(toolkit, 2048, false, true);
+		Model var2 = this.loc.getModel(toolkit, 2048, false, true);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		PickableEntity var4 = PickableEntity.getPickableEntity(this.field11128);
-		this.field11131.method8239(toolkit, var2, var3, this.field12471, this.field12472, this.field12468, this.field12467, true);
-		LocType var5 = this.field11131.method8237();
+		PickableEntity var4 = PickableEntity.getPickableEntity(this.active);
+		this.loc.method8239(toolkit, var2, var3, this.minSceneTileX, this.maxSceneTileX, this.minSceneTileZ, this.maxSceneTileZ, true);
+		LocType var5 = this.loc.getLocType();
 		if (var5.clickbox == null) {
 			var2.draw(var3, this.entityBounds[0], 0);
 		} else {
 			var2.draw(var3, null, 0);
 			toolkit.method2193(var3, this.entityBounds[0], var5.clickbox);
 		}
-		if (this.field11131.field6680 != null) {
-			ParticleList var6 = this.field11131.field6680.method9965();
+		if (this.loc.field6680 != null) {
+			ParticleList var6 = this.loc.field6680.method9965();
 			toolkit.drawParticles(var6);
 		}
-		this.field11127 = var2.method1731() || this.field11131.field6680 != null;
+		this.field11127 = var2.method1731() || this.loc.field6680 != null;
 		ScaleRotTrans var7 = this.getTransform();
 		if (this.field11129 == null) {
 			this.field11129 = GraphEntity.method15111((int) var7.trans.x, (int) var7.trans.y, (int) var7.trans.z, var2);
@@ -103,22 +103,22 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 
 	@ObfuscatedName("ajy.fw(Ldh;I)V")
 	public void method17373(Toolkit toolkit) {
-		Model var2 = this.field11131.method8238(toolkit, 262144, true, true);
+		Model var2 = this.loc.getModel(toolkit, 262144, true, true);
 		if (var2 != null) {
-			this.field11131.method8239(toolkit, var2, this.method10533(), this.field12471, this.field12472, this.field12468, this.field12467, false);
+			this.loc.method8239(toolkit, var2, this.method10533(), this.minSceneTileX, this.maxSceneTileX, this.minSceneTileZ, this.maxSceneTileZ, false);
 		}
 	}
 
 	@ObfuscatedName("ajy.br(Lvp;B)V")
 	public void method17369(LocTypeCustomisation arg0) {
-		this.field11131.method8265(arg0);
+		this.loc.method8265(arg0);
 	}
 
 	@ObfuscatedName("ajy.fa(Ldh;IIB)Z")
 	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
-		LocType var4 = this.field11131.method8237();
+		LocType var4 = this.loc.getLocType();
 		if (var4.clickbox == null) {
-			Model var5 = this.field11131.method8238(toolkit, 131072, false, false);
+			Model var5 = this.loc.getModel(toolkit, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
 			return toolkit.pick(arg1, arg2, this.method10533(), var4.clickbox);
@@ -141,18 +141,18 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 	}
 
 	@ObfuscatedName("ajy.e(I)I")
-	public int method8223() {
-		return this.field11131.field6665;
+	public int getId() {
+		return this.loc.id;
 	}
 
 	@ObfuscatedName("ajy.n(I)I")
-	public int method8220() {
-		return this.field11131.field6666;
+	public int getShape() {
+		return this.loc.shape;
 	}
 
 	@ObfuscatedName("ajy.m(I)I")
-	public int method8204() {
-		return this.field11131.field6667;
+	public int getAngle() {
+		return this.loc.angle;
 	}
 
 	@ObfuscatedName("ajy.k(I)V")
@@ -166,16 +166,16 @@ public class DynamicSceneryEntity extends PrimaryLayerEntity implements Location
 
 	@ObfuscatedName("ajy.f(I)Z")
 	public boolean method8206() {
-		return this.field11131.method8240();
+		return this.loc.method8240();
 	}
 
 	@ObfuscatedName("ajy.l(Ldh;B)V")
 	public void method8217(Toolkit arg0) {
-		this.field11131.method8241(arg0);
+		this.loc.method8241(arg0);
 	}
 
 	@ObfuscatedName("ajy.u(Ldh;B)V")
 	public void method8209(Toolkit arg0) {
-		this.field11131.method8242(arg0);
+		this.loc.method8242(arg0);
 	}
 }
