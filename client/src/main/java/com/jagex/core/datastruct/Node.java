@@ -9,23 +9,23 @@ public class Node {
 	public long nodeId;
 
 	@ObfuscatedName("tj.n")
-	public Node prev;
-
-	@ObfuscatedName("tj.m")
 	public Node next;
 
+	@ObfuscatedName("tj.m")
+	public Node prev;
+
 	@ObfuscatedName("tj.o(I)V")
-	public void remove() {
-		if (this.next != null) {
-			this.next.prev = this.prev;
+	public void unlink() {
+		if (this.prev != null) {
 			this.prev.next = this.next;
-			this.prev = null;
+			this.next.prev = this.prev;
 			this.next = null;
+			this.prev = null;
 		}
 	}
 
 	@ObfuscatedName("tj.s(I)Z")
-	public boolean hasNext() {
-		return this.next != null;
+	public boolean isLinked() {
+		return this.prev != null;
 	}
 }

@@ -1,7 +1,7 @@
 package com.jagex.js5.network;
 
 import com.jagex.core.datastruct.HashTable;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.encryption.Whirlpool;
@@ -73,10 +73,10 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	public int group = 0;
 
 	@ObfuscatedName("aij.a")
-	public LinkedList groupQueue;
+	public LinkList groupQueue;
 
 	@ObfuscatedName("aij.g")
-	public LinkedList field10741 = new LinkedList();
+	public LinkList field10741 = new LinkList();
 
 	@ObfuscatedName("aij.i")
 	public boolean discardOrphans;
@@ -94,7 +94,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			this.verifyAll = false;
 		} else {
 			this.verifyAll = true;
-			this.groupQueue = new LinkedList();
+			this.groupQueue = new LinkList();
 		}
 		this.masterfs = masterfs;
 		this.tcpClient = tcpClient;
@@ -218,16 +218,16 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			return null;
 		} else {
 			byte[] bytes = request.getBytes();
-			request.remove();
+			request.unlink();
 			return bytes;
 		}
 	}
 
 	@ObfuscatedName("aij.q(IIB)Lask;")
 	public Js5Request fetchgroup_inner(int group, int arg1) {
-		Js5Request request = (Js5Request) this.requests.getNode((long) group);
+		Js5Request request = (Js5Request) this.requests.get((long) group);
 		if (request != null && arg1 == 0 && !request.urgent && request.incomplete) {
-			request.remove();
+			request.unlink();
 			request = null;
 		}
 
@@ -274,7 +274,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				throw new RuntimeException("Invalid fetchgroup mode!");
 			}
 
-			this.requests.pushNode(request, (long) group);
+			this.requests.put(request, (long) group);
 		}
 
 		if (request.incomplete) {
@@ -286,7 +286,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			try {
 				if (data == null || data.length <= 2) {
 					if (this.httpClient != null) {
-						request.remove();
+						request.unlink();
 						return null;
 					}
 
@@ -318,17 +318,17 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 			} catch (RuntimeException var21) {
 				this.tcpClient.error(this.archive, group);
-				request.remove();
+				request.unlink();
 				if (request.urgent) {
 					if (this.httpClient == null) {
 						if (!this.tcpClient.isUrgentsFull()) {
 							Js5NetRequest netRequest = this.tcpClient.queueRequest(this.archive, group, (byte) 2, true);
-							this.requests.pushNode(netRequest, (long) group);
+							this.requests.put(netRequest, (long) group);
 						}
 					} else if (!this.httpClient.isPendingRequestsFull()) {
 						Js5HttpRequest httpRequest = this.httpClient.sendHttpRequest(this.archive, group, (byte) 2, true, this.index.groupChecksums[group], this.index.groupVersions[group]);
 						if (httpRequest != null) {
-							this.requests.pushNode(httpRequest, (long) group);
+							this.requests.put(httpRequest, (long) group);
 						}
 					}
 				}
@@ -347,7 +347,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 
 			if (!request.urgent) {
-				request.remove();
+				request.unlink();
 			}
 
 			return request;
@@ -391,24 +391,24 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 
 			if (!request.urgent) {
-				request.remove();
+				request.unlink();
 			}
 
 			return request;
 		} catch (Exception var20) {
 			this.groupStatus[group] = -1;
-			request.remove();
+			request.unlink();
 
 			if (request.urgent) {
 				if (this.httpClient == null) {
 					if (!this.tcpClient.isUrgentsFull()) {
 						Js5NetRequest var12 = this.tcpClient.queueRequest(this.archive, group, (byte) 2, true);
-						this.requests.pushNode(var12, (long) group);
+						this.requests.put(var12, (long) group);
 					}
 				} else if (!this.httpClient.isPendingRequestsFull()) {
 					Js5HttpRequest var11 = this.httpClient.sendHttpRequest(this.archive, group, (byte) 2, true, this.index.groupChecksums[group], this.index.groupVersions[group]);
 					if (var11 != null) {
-						this.requests.pushNode(var11, (long) group);
+						this.requests.put(var11, (long) group);
 					}
 				}
 			}
@@ -422,10 +422,10 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.groupQueue == null || this.fetchindex() == null) {
 			return;
 		}
-		for (Node node = this.field10741.peekFront(); node != null; node = this.field10741.prev()) {
+		for (Node node = this.field10741.head(); node != null; node = this.field10741.next()) {
 			int group = (int) node.nodeId;
 			if (group < 0 || group >= this.index.capacity || this.index.groupSizes[group] == 0) {
-				node.remove();
+				node.unlink();
 			} else {
 				if (this.groupStatus[group] == 0) {
 					this.fetchgroup_inner(group, 1);
@@ -434,7 +434,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 					this.fetchgroup_inner(group, 2);
 				}
 				if (this.groupStatus[group] == 1) {
-					node.remove();
+					node.unlink();
 				}
 			}
 		}
@@ -448,7 +448,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 			if (this.verifyAll) {
 				boolean var1 = true;
-				for (Node var2 = this.groupQueue.peekFront(); var2 != null; var2 = this.groupQueue.prev()) {
+				for (Node var2 = this.groupQueue.head(); var2 != null; var2 = this.groupQueue.next()) {
 					int var3 = (int) var2.nodeId;
 					if (this.groupStatus[var3] == 0) {
 						this.fetchgroup_inner(var3, 1);
@@ -456,7 +456,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 					if (this.groupStatus[var3] == 0) {
 						var1 = false;
 					} else {
-						var2.remove();
+						var2.unlink();
 					}
 				}
 				while (this.group < this.index.groupSizes.length) {
@@ -473,7 +473,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						if (this.groupStatus[this.group] == 0) {
 							Node var4 = new Node();
 							var4.nodeId = (long) (this.group);
-							this.groupQueue.pushBack(var4);
+							this.groupQueue.addTail(var4);
 							var1 = false;
 						}
 						this.group++;
@@ -485,13 +485,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 			} else if (this.prefetchAll) {
 				boolean var5 = true;
-				for (Node var6 = this.groupQueue.peekFront(); var6 != null; var6 = this.groupQueue.prev()) {
+				for (Node var6 = this.groupQueue.head(); var6 != null; var6 = this.groupQueue.next()) {
 					int var7 = (int) var6.nodeId;
 					if (this.groupStatus[var7] != 1) {
 						this.fetchgroup_inner(var7, 2);
 					}
 					if (this.groupStatus[var7] == 1) {
-						var6.remove();
+						var6.unlink();
 					} else {
 						var5 = false;
 					}
@@ -510,7 +510,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						if (this.groupStatus[this.group] != 1) {
 							Node var8 = new Node();
 							var8.nodeId = (long) (this.group);
-							this.groupQueue.pushBack(var8);
+							this.groupQueue.addTail(var8);
 							var5 = false;
 						}
 						this.group++;
@@ -525,13 +525,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 		}
         if (this.discardOrphans && MonotonicTime.get() >= this.orphanCheckTime) {
-            for (Js5Request var9 = (Js5Request) this.requests.peekFront(); var9 != null; var9 = (Js5Request) this.requests.prev()) {
+            for (Js5Request var9 = (Js5Request) this.requests.head(); var9 != null; var9 = (Js5Request) this.requests.next()) {
                 if (!var9.incomplete) {
                     if (var9.orphan) {
                         if (!var9.urgent) {
                             throw new RuntimeException();
                         }
-                        var9.remove();
+                        var9.unlink();
                     } else {
                         var9.orphan = true;
                     }
@@ -556,7 +556,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.index == null) {
 			return 0;
 		} else if (this.verifyAll) {
-			Node var1 = this.groupQueue.peekFront();
+			Node var1 = this.groupQueue.head();
 			return var1 == null ? 0 : (int) var1.nodeId;
 		} else {
 			return this.index.size;
@@ -571,7 +571,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		this.prefetchAll = true;
 		this.field10737 = true;
 		if (this.groupQueue == null) {
-			this.groupQueue = new LinkedList();
+			this.groupQueue = new LinkList();
 		}
 	}
 
@@ -580,19 +580,19 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.datafs == null) {
 			return;
 		}
-		for (Node var2 = this.field10741.peekFront(); var2 != null; var2 = this.field10741.prev()) {
+		for (Node var2 = this.field10741.head(); var2 != null; var2 = this.field10741.next()) {
 			if (var2.nodeId == (long) arg0) {
 				return;
 			}
 		}
 		Node var3 = new Node();
 		var3.nodeId = arg0;
-		this.field10741.pushBack(var3);
+		this.field10741.addTail(var3);
 	}
 
 	@ObfuscatedName("aij.k(II)I")
 	public int getPercentageComplete(int arg0) {
-		Js5Request var2 = (Js5Request) this.requests.getNode((long) arg0);
+		Js5Request var2 = (Js5Request) this.requests.get((long) arg0);
 		return var2 == null ? 0 : var2.getPercentageComplete();
 	}
 

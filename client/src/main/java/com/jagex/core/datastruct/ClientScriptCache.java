@@ -31,7 +31,7 @@ public final class ClientScriptCache {
 
 	@ObfuscatedName("ex.e(J)Laky;")
 	public SecondaryNode method2966(long arg0) {
-		SecondaryNode var3 = (SecondaryNode) this.field1764.getNode(arg0);
+		SecondaryNode var3 = (SecondaryNode) this.field1764.get(arg0);
 		if (var3 != null) {
 			this.field1763.pushBack(var3);
 		}
@@ -42,17 +42,17 @@ public final class ClientScriptCache {
 	public void method2968(SecondaryNode arg0, long arg1) {
 		if (this.field1762 == 0) {
 			SecondaryNode var4 = this.field1763.pollFront();
-			var4.remove();
+			var4.unlink();
 			var4.secondaryRemove();
 			if (this.field1760 == var4) {
 				SecondaryNode var5 = this.field1763.pollFront();
-				var5.remove();
+				var5.unlink();
 				var5.secondaryRemove();
 			}
 		} else {
 			this.field1762--;
 		}
-		this.field1764.pushNode(arg0, arg1);
+		this.field1764.put(arg0, arg1);
 		this.field1763.pushBack(arg0);
 	}
 

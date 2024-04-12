@@ -1,7 +1,7 @@
 package com.jagex.game;
 
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.SceneLevelTileFlags;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
@@ -57,7 +57,7 @@ public class MiniMap {
 	public static int[] field726 = new int[1013];
 
 	@ObfuscatedName("at.p")
-	public static LinkedList field727 = new LinkedList();
+	public static LinkList field727 = new LinkList();
 
 	@ObfuscatedName("at.d")
 	public static int flagSceneTileX = -1;
@@ -296,11 +296,11 @@ public class MiniMap {
 						int var51 = (var50 >> 14 & 0x3FFF) - var48.x;
 						int var52 = (var50 & 0x3FFF) - var48.z;
 						if (var51 >= 0 && var51 < var2 && var52 >= 0 && var52 < var3) {
-							field727.pushBack(new IntNode(var49));
+							field727.addTail(new IntNode(var49));
 						} else {
 							MapElementType var53 = (MapElementType) Client.mapElementTypeList.list(var47.field6775[var49]);
 							if (var53.field2393 != null && var53.field2396 + var51 >= 0 && var53.field2373 + var51 < var2 && var53.field2397 + var52 >= 0 && var53.field2395 + var52 < var3) {
-								field727.pushBack(new IntNode(var49));
+								field727.addTail(new IntNode(var49));
 							}
 						}
 					}
@@ -570,7 +570,7 @@ public class MiniMap {
 			field734.method1456((float) arg1.width / 2.0F + (float) arg2, (float) arg1.height / 2.0F + (float) arg3, (float) var12, (float) var13, var10, var9 << 2, var5, arg2, arg3);
 		}
 		WorldMapRelated var14 = Client.world.method7871();
-		for (IntNode var15 = (IntNode) field727.peekFront(); var15 != null; var15 = (IntNode) field727.prev()) {
+		for (IntNode var15 = (IntNode) field727.head(); var15 != null; var15 = (IntNode) field727.next()) {
 			int var16 = var15.value;
 			int var17 = (var14.field6776[var16] >> 14 & 0x3FFF) - var6.x;
 			int var18 = (var14.field6776[var16] & 0x3FFF) - var6.z;
@@ -590,7 +590,7 @@ public class MiniMap {
 			}
 			method15085(arg0, var5, arg1, arg2, arg3, var22, var23, var24.mapelement);
 		}
-		for (ObjStackList var25 = (ObjStackList) Client.objStacks.peekFront(); var25 != null; var25 = (ObjStackList) Client.objStacks.prev()) {
+		for (ObjStackList var25 = (ObjStackList) Client.objStacks.head(); var25 != null; var25 = (ObjStackList) Client.objStacks.next()) {
 			int var26 = (int) (var25.nodeId >> 28 & 0x3L);
 			if (field722 == var26) {
 				int var27 = (int) (var25.nodeId & 0x3FFFL) - var6.x;
@@ -619,7 +619,7 @@ public class MiniMap {
 	@ObfuscatedName("je.o(Ldh;IILhf;Lch;IIB)V")
 	public static void drawNpcsOnMinimap(Toolkit arg0, int arg1, int arg2, Component arg3, SpriteRelated arg4, int arg5, int arg6) {
 		for (int var7 = 0; var7 < Client.npcSlotCount; var7++) {
-			ObjectNode var8 = (ObjectNode) Client.npcs.getNode((long) Client.field11036[var7]);
+			ObjectNode var8 = (ObjectNode) Client.npcs.get((long) Client.field11036[var7]);
 			if (var8 != null) {
 				NpcEntity var9 = (NpcEntity) var8.value;
 				if (var9.exists() && Client.localPlayerEntity.level == var9.level) {
@@ -699,7 +699,7 @@ public class MiniMap {
 			HintArrow var8 = var6[var7];
 			if (var8 != null && var8.hintType != 0 && Client.loopCycle % 20 < 10) {
 				if (var8.hintType == 1) {
-					ObjectNode var9 = (ObjectNode) Client.npcs.getNode((long) var8.field744);
+					ObjectNode var9 = (ObjectNode) Client.npcs.get((long) var8.field744);
 					if (var9 != null) {
 						NpcEntity var10 = (NpcEntity) var9.value;
 						Vector3 var11 = var10.getTransform().trans;

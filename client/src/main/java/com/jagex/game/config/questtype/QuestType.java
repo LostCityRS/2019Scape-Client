@@ -199,7 +199,7 @@ public class QuestType implements ConfigType {
 				} else {
 					var22 = new IntNode(buf.g4s());
 				}
-				this.params.pushNode(var22, (long) var21);
+				this.params.put(var22, (long) var21);
 			}
 		}
 	}
@@ -216,7 +216,7 @@ public class QuestType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.get((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -226,7 +226,7 @@ public class QuestType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.get((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

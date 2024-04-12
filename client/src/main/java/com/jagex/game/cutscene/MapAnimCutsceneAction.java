@@ -35,6 +35,6 @@ public class MapAnimCutsceneAction extends CutsceneAction_Sub1 {
 			var3++;
 		}
 		SpotAnimation var4 = new SpotAnimation(Client.world.getScene(), this.field10303, 0, this.field12044, var3, var1, Client.getHeightmapY(var1, var2, this.field12044) - this.field10305, var2, this.field12043, this.field12043, this.field12042, this.field12042, this.field10304, false, 0);
-		Client.spotanims.pushNode(new SpotAnimEntityNode(var4), (long) (this.field12043 << 16 | this.field12042));
+		Client.spotanims.put(new SpotAnimEntityNode(var4), (long) (this.field12043 << 16 | this.field12042));
 	}
 }

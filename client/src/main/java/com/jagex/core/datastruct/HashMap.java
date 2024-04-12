@@ -31,7 +31,7 @@ public class HashMap {
 	@ObfuscatedName("ix.n(Ljava/lang/String;B)Lakw;")
 	public HashMapValue get(String value) {
 		long key = this.key.hash(value);
-		for (HashMapValue var4 = (HashMapValue) this.map.getNode(key); var4 != null; var4 = (HashMapValue) this.map.next()) {
+		for (HashMapValue var4 = (HashMapValue) this.map.get(key); var4 != null; var4 = (HashMapValue) this.map.nextWithKey()) {
 			if (var4.valuestr.equals(value)) {
 				return var4;
 			}
@@ -43,7 +43,7 @@ public class HashMap {
 	public void removeEntry(int index) {
 		HashMapValue entry = this.get(index);
 		if (entry != null) {
-			entry.remove();
+			entry.unlink();
 			this.nodes[entry.valueint] = null;
 		}
 	}
@@ -63,7 +63,7 @@ public class HashMap {
 			for (int index = 0; index < this.nodes.length; index++) {
 				HashMapValue var7 = this.nodes[index];
 				if (var7 != null) {
-					this.map.pushNode(var7, var7.nodeId);
+					this.map.put(var7, var7.nodeId);
 				}
 			}
 			HashMapValue[] entries = new HashMapValue[size];
@@ -74,7 +74,7 @@ public class HashMap {
 		}
 		value.valueint = valueint;
 		value.valuestr = valuestr;
-		this.map.pushNode(value, this.key.hash(valuestr));
+		this.map.put(value, this.key.hash(valuestr));
 		this.nodes[valueint] = value;
 	}
 }

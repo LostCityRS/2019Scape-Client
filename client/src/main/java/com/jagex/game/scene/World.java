@@ -596,7 +596,7 @@ public class World {
 				}
 			}
 		}
-		for (CutsceneTemplate var4 = (CutsceneTemplate) CutsceneManager.field1712.peekFront(); var4 != null; var4 = (CutsceneTemplate) CutsceneManager.field1712.prev()) {
+		for (CutsceneTemplate var4 = (CutsceneTemplate) CutsceneManager.field1712.head(); var4 != null; var4 = (CutsceneTemplate) CutsceneManager.field1712.next()) {
 			int var5 = var4.field11342;
 			boolean var6 = (var5 & 0x1) == 1;
 			int var7 = var4.field11337 >> 3;
@@ -650,7 +650,7 @@ public class World {
 		this.rebuildMapSquaresUnderwaterLands = new byte[var22][];
 		this.rebuildMapSquaresUnderwaterLocs = new byte[var22][];
 		int var23 = 0;
-		for (CutsceneTemplate var24 = (CutsceneTemplate) CutsceneManager.field1712.peekFront(); var24 != null; var24 = (CutsceneTemplate) CutsceneManager.field1712.prev()) {
+		for (CutsceneTemplate var24 = (CutsceneTemplate) CutsceneManager.field1712.head(); var24 != null; var24 = (CutsceneTemplate) CutsceneManager.field1712.next()) {
 			int var25 = var24.field11337 >>> 3;
 			int var26 = var24.field11338 >>> 3;
 			int var27 = var24.field11340 + var25;
@@ -800,19 +800,19 @@ public class World {
 							Client.field11036[++Client.npcSlotCount - 1] = var14.localPlayerIndex;
 						} else {
 							var14.method19156(null);
-							var13.remove();
+							var13.unlink();
 							var9 = true;
 						}
 					} else {
 						var14.method19156(null);
-						var13.remove();
+						var13.unlink();
 						var9 = true;
 					}
 					var15.release();
 				}
 			}
 			if (var9) {
-				Client.npcCount = Client.npcs.length();
+				Client.npcCount = Client.npcs.size();
 				int var18 = 0;
 				Iterator var19 = Client.npcs.iterator();
 				while (var19.hasNext()) {
@@ -843,7 +843,7 @@ public class World {
 				var27.hintOffsetZ -= dz * 512;
 			}
 		}
-		for (ChangeLocationRequest var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.peekFront(); var28 != null; var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.prev()) {
+		for (ChangeLocationRequest var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.head(); var28 != null; var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.next()) {
 			var28.x -= dx;
 			var28.z -= dz;
 			LocType var29 = (LocType) this.locTypeList.list(var28.field11234);
@@ -857,10 +857,10 @@ public class World {
 				var31 = var29.width;
 			}
 			if (RebuildType.field5069 != this.rebuildType && (var28.x + var30 <= 0 || var28.z + var31 <= 0 || var28.x >= this.mapSizeX || var28.z >= this.mapSizeZ)) {
-				var28.remove();
+				var28.unlink();
 			}
 		}
-		for (ChangeLocationRequest var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.peekFront(); var32 != null; var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.prev()) {
+		for (ChangeLocationRequest var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.head(); var32 != null; var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.next()) {
 			var32.x -= dx;
 			var32.z -= dz;
 			LocType var33 = (LocType) this.locTypeList.list(var32.field11234);
@@ -874,10 +874,10 @@ public class World {
 				var35 = var33.width;
 			}
 			if (RebuildType.field5069 != this.rebuildType && (var32.x + var34 <= 0 || var32.z + var35 <= 0 || var32.x >= this.mapSizeX || var32.z >= this.mapSizeZ)) {
-				var32.remove();
+				var32.unlink();
 			}
 		}
-		for (ObjStackList var36 = (ObjStackList) Client.objStacks.peekFront(); var36 != null; var36 = (ObjStackList) Client.objStacks.prev()) {
+		for (ObjStackList var36 = (ObjStackList) Client.objStacks.head(); var36 != null; var36 = (ObjStackList) Client.objStacks.next()) {
 			int var37 = (int) (var36.nodeId >> 28 & 0x3L);
 			int var38 = (int) (var36.nodeId & 0x3FFFL);
 			int var39 = var38 - this.sceneBaseTile.x;
@@ -889,7 +889,7 @@ public class World {
 						this.scene.removeObjStack(var37, var39, var41);
 					}
 				} else if (RebuildType.field5069 != this.rebuildType) {
-					var36.remove();
+					var36.unlink();
 				}
 			}
 		}
@@ -1436,12 +1436,12 @@ public class World {
 					int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x + var10;
 					int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z + var11;
 					NPCType var14 = (NPCType) Client.npcTypeList.list(buf.g2());
-					ObjectNode var15 = (ObjectNode) Client.npcs.getNode((long) var7);
+					ObjectNode var15 = (ObjectNode) Client.npcs.get((long) var7);
 					if (var15 == null && (var14.walkflags & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {
 						NpcEntity npc = new NpcEntity(this.scene);
 						npc.localPlayerIndex = var7;
 						ObjectNode var17 = new ObjectNode(npc);
-						Client.npcs.pushNode(var17, (long) var7);
+						Client.npcs.put(var17, (long) var7);
 						Client.field10839[++Client.npcCount - 1] = var17;
 						Client.field11036[++Client.npcSlotCount - 1] = var7;
 						npc.field10440 = Client.loopCycle;

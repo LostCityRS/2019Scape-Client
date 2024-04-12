@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.game.client.DataType;
 import com.jagex.graphics.gl.GlFrameBuffer;
@@ -40,7 +40,7 @@ public class GlPostProcessing {
 	public boolean field1180;
 
 	@ObfuscatedName("cv.p")
-	public LinkedList field1170 = new LinkedList();
+	public LinkList field1170 = new LinkList();
 
 	@ObfuscatedName("cv.d")
 	public boolean field1171 = true;
@@ -95,7 +95,7 @@ public class GlPostProcessing {
 		this.field1175 = null;
 		this.field1176 = null;
 		if (!this.field1170._isEmpty()) {
-			for (Node var1 = this.field1170.peekFront(); var1 != this.field1170.head; var1 = var1.prev) {
+			for (Node var1 = this.field1170.head(); var1 != this.field1170.sentinel; var1 = var1.next) {
 				((PostProcessingFilter) var1).method17570();
 			}
 		}
@@ -115,7 +115,7 @@ public class GlPostProcessing {
 
 	@ObfuscatedName("cv.k()Z")
 	public boolean method1364() {
-		for (PostProcessingFilter var1 = (PostProcessingFilter) this.field1170.peekFront(); var1 != null; var1 = (PostProcessingFilter) this.field1170.prev()) {
+		for (PostProcessingFilter var1 = (PostProcessingFilter) this.field1170.head(); var1 != null; var1 = (PostProcessingFilter) this.field1170.next()) {
 			if (!var1.method17551()) {
 				return false;
 			}
@@ -223,7 +223,7 @@ public class GlPostProcessing {
 		if (this.field1177 != arg2 || this.field1167 != arg3) {
 			this.field1177 = arg2;
 			this.field1167 = arg3;
-			for (Node var5 = this.field1170.peekFront(); var5 != this.field1170.head; var5 = var5.prev) {
+			for (Node var5 = this.field1170.head(); var5 != this.field1170.sentinel; var5 = var5.next) {
 				((PostProcessingFilter) var5).method17540(this.field1177, this.field1167);
 			}
 			this.field1171 = true;
@@ -264,14 +264,14 @@ public class GlPostProcessing {
 		int var6 = 0;
 		int var7 = 0;
 		Object var8 = null;
-		for (PostProcessingFilter var9 = (PostProcessingFilter) this.field1170.peekFront(); var9 != null; var9 = (PostProcessingFilter) this.field1170.prev()) {
+		for (PostProcessingFilter var9 = (PostProcessingFilter) this.field1170.head(); var9 != null; var9 = (PostProcessingFilter) this.field1170.next()) {
 			if (!var9.method17551()) {
 				var6++;
 			}
 		}
 		PostProcessingFilter[] var10 = new PostProcessingFilter[var6];
 		int var11 = 0;
-		for (PostProcessingFilter var12 = (PostProcessingFilter) this.field1170.peekFront(); var12 != null; var12 = (PostProcessingFilter) this.field1170.prev()) {
+		for (PostProcessingFilter var12 = (PostProcessingFilter) this.field1170.head(); var12 != null; var12 = (PostProcessingFilter) this.field1170.next()) {
 			if (!var12.method17551()) {
 				var10[var11++] = var12;
 			}
@@ -334,7 +334,7 @@ public class GlPostProcessing {
 	public boolean method1369(PostProcessingFilter arg0) {
 		if (this.field1164 != null) {
 			if (arg0.method17539() || arg0.method17534()) {
-				this.field1170.pushBack(arg0);
+				this.field1170.addTail(arg0);
 				this.method1365();
 				if (arg0.method17546() >= 0 && this.method1362()) {
 					if (this.field1177 != -1 && this.field1167 != -1) {
@@ -353,7 +353,7 @@ public class GlPostProcessing {
 	public void method1370(PostProcessingFilter arg0) {
 		arg0.field11271 = false;
 		arg0.method17570();
-		arg0.remove();
+		arg0.unlink();
 		this.method1365();
 	}
 
@@ -362,7 +362,7 @@ public class GlPostProcessing {
 		int var1 = 0;
 		boolean var2 = false;
 		DataType var3 = DataType.UNSIGNED_INT_8;
-		for (PostProcessingFilter var4 = (PostProcessingFilter) this.field1170.peekFront(); var4 != null; var4 = (PostProcessingFilter) this.field1170.prev()) {
+		for (PostProcessingFilter var4 = (PostProcessingFilter) this.field1170.head(); var4 != null; var4 = (PostProcessingFilter) this.field1170.next()) {
 			DataType var5 = var4.method17542();
 			if (var5.field1652 > var3.field1652) {
 				var3 = var5;

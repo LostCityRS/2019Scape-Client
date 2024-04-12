@@ -2,7 +2,7 @@ package com.jagex.game.world;
 
 import com.jagex.core.datastruct.SecondaryLinkedList;
 import com.jagex.core.datastruct.HashTable;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ColourUtils;
@@ -102,7 +102,7 @@ public class WorldMap {
 	public static WorldMapRelated field6805;
 
 	@ObfuscatedName("tf.a")
-	public static LinkedList field6806 = new LinkedList();
+	public static LinkList field6806 = new LinkList();
 
 	@ObfuscatedName("tf.g")
 	public static int field6786;
@@ -276,7 +276,7 @@ public class WorldMap {
 		if (var9 != null) {
 			for (int var10 = 0; var10 < var9.length; var10++) {
 				WorldMapAreaMetadata var11 = WorldMapAreaMetadata.method3468(field6794, var9[var10]);
-				field6796.pushNode(var11, (long) var11.id);
+				field6796.put(var11, (long) var11.id);
 			}
 		}
 		ColourUtils.method10156(true, false);
@@ -310,7 +310,7 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.k(I)V")
 	public static void method8521(int arg0) {
-		WorldMapAreaMetadata var1 = (WorldMapAreaMetadata) field6796.getNode((long) arg0);
+		WorldMapAreaMetadata var1 = (WorldMapAreaMetadata) field6796.get((long) arg0);
 		if (var1 != null && currentWorldMap != var1) {
 			currentWorldMap = var1;
 			field6819 = worldMapDefaults.field7690 == currentWorldMap.id;
@@ -330,7 +330,7 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.w(II)Lasy;")
 	public static WorldMapAreaMetadata getMap(int arg0, int arg1) {
-		for (WorldMapAreaMetadata var2 = (WorldMapAreaMetadata) field6796.peekFront(); var2 != null; var2 = (WorldMapAreaMetadata) field6796.prev()) {
+		for (WorldMapAreaMetadata var2 = (WorldMapAreaMetadata) field6796.head(); var2 != null; var2 = (WorldMapAreaMetadata) field6796.next()) {
 			if (var2.field12350 && var2.method19469(arg0, arg1)) {
 				return var2;
 			}
@@ -340,13 +340,13 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.l(I)Lasy;")
 	public static WorldMapAreaMetadata getMapByName(int arg0) {
-		return (WorldMapAreaMetadata) field6796.getNode((long) arg0);
+		return (WorldMapAreaMetadata) field6796.get((long) arg0);
 	}
 
 	@ObfuscatedName("tf.u(II)Laap;")
 	public static SecondaryLinkedList method8513(int arg0, int arg1) {
 		SecondaryLinkedList var2 = new SecondaryLinkedList();
-		for (WorldMapAreaMetadata var3 = (WorldMapAreaMetadata) field6796.peekFront(); var3 != null; var3 = (WorldMapAreaMetadata) field6796.prev()) {
+		for (WorldMapAreaMetadata var3 = (WorldMapAreaMetadata) field6796.head(); var3 != null; var3 = (WorldMapAreaMetadata) field6796.next()) {
 			if (var3.field12350 && var3.method19469(arg0, arg1)) {
 				var2.pushBack(var3);
 			}
@@ -621,7 +621,7 @@ public class WorldMap {
 									WorldMapElement var8 = new WorldMapElement(var6);
 									var8.field11448 = var0;
 									var8.field11452 = var1;
-									field6806.pushBack(var8);
+									field6806.addTail(var8);
 								}
 							}
 						}
@@ -639,7 +639,7 @@ public class WorldMap {
 							WorldMapElement var13 = new WorldMapElement(var11);
 							var13.field11448 = var0;
 							var13.field11452 = var1;
-							field6806.pushBack(var13);
+							field6806.addTail(var13);
 						}
 					}
 				}
@@ -672,7 +672,7 @@ public class WorldMap {
 									WorldMapElement var24 = new WorldMapElement(var22);
 									var24.field11448 = ((field6786 >> 6) + var15) * 64 + var19.field6774 - field6786;
 									var24.field11452 = ((field6808 >> 6) + var16) * 64 + var19.field6769 - field6808;
-									field6806.pushBack(var24);
+									field6806.addTail(var24);
 								}
 							}
 						}
@@ -774,7 +774,7 @@ public class WorldMap {
 				WorldMapElement var3 = new WorldMapElement(field6805.field6775[var1]);
 				var3.field11448 = var0[1] - field6786;
 				var3.field11452 = var0[2] - field6808;
-				field6806.pushBack(var3);
+				field6806.addTail(var3);
 			}
 		}
 	}
@@ -1227,7 +1227,7 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.j(Ldh;)Laat;")
-	public static LinkedList method8602(Toolkit arg0) {
+	public static LinkList method8602(Toolkit arg0) {
 		int var1 = field6847 - field6845;
 		int var2 = field6846 - field6848;
 		int var3 = (field6851 - field6801 << 16) / var1;
@@ -1236,8 +1236,8 @@ public class WorldMap {
 	}
 
 	@ObfuscatedName("tf.t(Ldh;IIII)Laat;")
-	public static LinkedList method8531(Toolkit arg0, int arg1, int arg2, int arg3, int arg4) {
-		for (WorldMapElement var5 = (WorldMapElement) field6806.peekFront(); var5 != null; var5 = (WorldMapElement) field6806.prev()) {
+	public static LinkList method8531(Toolkit arg0, int arg1, int arg2, int arg3, int arg4) {
+		for (WorldMapElement var5 = (WorldMapElement) field6806.head(); var5 != null; var5 = (WorldMapElement) field6806.next()) {
 			method8525(arg0, var5, arg1, arg2, arg3, arg4);
 		}
 		return field6806;

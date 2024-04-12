@@ -479,7 +479,7 @@ public class BASType implements MutableConfig, ConfigType {
 		method6205(this.field7339, var1);
 		method6205(this.field7320, var1);
 		method6205(this.field7341, var1);
-		int[] var5 = new int[var1.length()];
+		int[] var5 = new int[var1.size()];
 		int var6 = 0;
 		Iterator var7 = var1.iterator();
 		while (var7.hasNext()) {
@@ -491,8 +491,8 @@ public class BASType implements MutableConfig, ConfigType {
 
 	@ObfuscatedName("oi.s(ILaan;I)V")
 	public static final void method6205(int arg0, HashTable arg1) {
-		if (arg0 != -1 && arg1.getNode((long) arg0) == null) {
-			arg1.pushNode(new Node(), (long) arg0);
+		if (arg0 != -1 && arg1.get((long) arg0) == null) {
+			arg1.put(new Node(), (long) arg0);
 		}
 	}
 

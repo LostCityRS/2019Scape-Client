@@ -289,10 +289,10 @@ public class ObjType implements ConfigType {
 			return;
 		}
 		boolean var1 = false;
-		for (Node param = this.params.peekFront(); param != null; param = this.params.prev()) {
+		for (Node param = this.params.head(); param != null; param = this.params.next()) {
 			ParamType paramType = (ParamType) this.factory.paramTL.list((int) param.nodeId);
 			if (paramType.autodisable) {
-				param.remove();
+				param.unlink();
 			} else {
 				var1 = true;
 			}
@@ -531,7 +531,7 @@ public class ObjType implements ConfigType {
 					} else {
 						var26 = new IntNode(buf.g4s());
 					}
-					this.params.pushNode(var26, (long) var25);
+					this.params.put(var26, (long) var25);
 				}
 			}
 		}
@@ -1167,7 +1167,7 @@ public class ObjType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.get((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -1177,7 +1177,7 @@ public class ObjType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.get((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

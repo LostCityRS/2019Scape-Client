@@ -1,6 +1,6 @@
 package rs2.client.logic.clans;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
@@ -14,7 +14,7 @@ public class ClanChannelDelta {
 	public long updateNum = -1L;
 
 	@ObfuscatedName("kc.m")
-	public LinkedList queue = new LinkedList();
+	public LinkList queue = new LinkList();
 
 	public ClanChannelDelta(Packet buf) {
 		this.decode(buf);
@@ -40,7 +40,7 @@ public class ClanChannelDelta {
 				throw new RuntimeException("Unrecognised ClanChannelDelta type in decode()");
 			}
 			entry.decode(buf);
-			this.queue.pushBack(entry);
+			this.queue.addTail(entry);
 		}
 	}
 
@@ -51,7 +51,7 @@ public class ClanChannelDelta {
             // throw new RuntimeException("ClanChannelDelta.applyToClanChannel(): Credentials do not match! cc.clanHash:" + dr574.bq + " updateNum:" + dr574.n + " delta.clanHash:" + this.g + " updateNum:" + this.d);
 			throw new RuntimeException("ClanChannelDelta.applyToClanChannel(): Credentials do not match!");
 		}
-		for (ClanChannelDeltaEntry entry = (ClanChannelDeltaEntry) this.queue.peekFront(); entry != null; entry = (ClanChannelDeltaEntry) this.queue.prev()) {
+		for (ClanChannelDeltaEntry entry = (ClanChannelDeltaEntry) this.queue.head(); entry != null; entry = (ClanChannelDeltaEntry) this.queue.next()) {
 			entry.apply(clanChannel);
 		}
 		clanChannel.updateNum++;

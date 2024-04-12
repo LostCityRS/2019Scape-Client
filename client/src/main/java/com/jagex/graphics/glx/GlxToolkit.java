@@ -2,7 +2,7 @@ package com.jagex.graphics.glx;
 
 import com.jagex.graphics.GpuVolumeTexture;
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.PreciseSleep;
@@ -30,25 +30,25 @@ public final class GlxToolkit extends GpuToolkit {
 	public OpenGL opengl;
 
 	@ObfuscatedName("aqv.hq")
-	public LinkedList field12011 = new LinkedList();
+	public LinkList field12011 = new LinkList();
 
 	@ObfuscatedName("aqv.hf")
-	public LinkedList field12000 = new LinkedList();
+	public LinkList field12000 = new LinkList();
 
 	@ObfuscatedName("aqv.hr")
-	public LinkedList field12023 = new LinkedList();
+	public LinkList field12023 = new LinkList();
 
 	@ObfuscatedName("aqv.hs")
-	public LinkedList field12035 = new LinkedList();
+	public LinkList field12035 = new LinkList();
 
 	@ObfuscatedName("aqv.hh")
-	public LinkedList field12003 = new LinkedList();
+	public LinkList field12003 = new LinkList();
 
 	@ObfuscatedName("aqv.hp")
-	public LinkedList field12004 = new LinkedList();
+	public LinkList field12004 = new LinkList();
 
 	@ObfuscatedName("aqv.hy")
-	public LinkedList field12005 = new LinkedList();
+	public LinkList field12005 = new LinkList();
 
 	@ObfuscatedName("aqv.he")
 	public long field12006;
@@ -1321,7 +1321,7 @@ public final class GlxToolkit extends GpuToolkit {
 		int var3 = 0;
 		int var4 = arg0 & Integer.MAX_VALUE;
 		while (!this.field12000._isEmpty()) {
-			IntNode var5 = (IntNode) this.field12000.pollFront();
+			IntNode var5 = (IntNode) this.field12000.removeHead();
 			this.field12007[var3++] = (int) var5.nodeId;
 			this.field10053 -= var5.value;
 			if (var3 == 1000) {
@@ -1334,7 +1334,7 @@ public final class GlxToolkit extends GpuToolkit {
 			var3 = 0;
 		}
 		while (!this.field12023._isEmpty()) {
-			IntNode var6 = (IntNode) this.field12023.pollFront();
+			IntNode var6 = (IntNode) this.field12023.removeHead();
 			this.field12007[var3++] = (int) var6.nodeId;
 			this.field10052 -= var6.value;
 			if (var3 == 1000) {
@@ -1347,7 +1347,7 @@ public final class GlxToolkit extends GpuToolkit {
 			var3 = 0;
 		}
 		while (!this.field12035._isEmpty()) {
-			IntNode var7 = (IntNode) this.field12035.pollFront();
+			IntNode var7 = (IntNode) this.field12035.removeHead();
 			this.field12007[var3++] = var7.value;
 			if (var3 == 1000) {
 				OpenGL.glDeleteFramebuffersEXT(var3, this.field12007, 0);
@@ -1359,7 +1359,7 @@ public final class GlxToolkit extends GpuToolkit {
 			var3 = 0;
 		}
 		while (!this.field12003._isEmpty()) {
-			IntNode var8 = (IntNode) this.field12003.pollFront();
+			IntNode var8 = (IntNode) this.field12003.removeHead();
 			this.field12007[var3++] = (int) var8.nodeId;
 			this.field10117 -= var8.value;
 			if (var3 == 1000) {
@@ -1372,19 +1372,19 @@ public final class GlxToolkit extends GpuToolkit {
 			boolean var9 = false;
 		}
 		while (!this.field12011._isEmpty()) {
-			IntNode var10 = (IntNode) this.field12011.pollFront();
+			IntNode var10 = (IntNode) this.field12011.removeHead();
 			OpenGL.glDeleteLists((int) var10.nodeId, var10.value);
 		}
 		while (!this.field12004._isEmpty()) {
-			Node var11 = this.field12004.pollFront();
+			Node var11 = this.field12004.removeHead();
 			OpenGL.glDeleteProgram((int) var11.nodeId);
 		}
 		while (!this.field12005._isEmpty()) {
-			Node var12 = this.field12005.pollFront();
+			Node var12 = this.field12005.removeHead();
 			OpenGL.glDeleteShader((int) var12.nodeId);
 		}
 		while (!this.field12011._isEmpty()) {
-			IntNode var13 = (IntNode) this.field12011.pollFront();
+			IntNode var13 = (IntNode) this.field12011.removeHead();
 			OpenGL.glDeleteLists((int) var13.nodeId, var13.value);
 		}
 		if (this.method2520() > 100663296 && MonotonicTime.get() > this.field12006 + 60000L) {
@@ -1398,41 +1398,41 @@ public final class GlxToolkit extends GpuToolkit {
 	public final synchronized void method19072(int arg0, int arg1) {
 		IntNode var3 = new IntNode(arg1);
 		var3.nodeId = arg0;
-		this.field12000.pushBack(var3);
+		this.field12000.addTail(var3);
 	}
 
 	@ObfuscatedName("aqv.ahh(II)V")
 	public final synchronized void method19073(int arg0, int arg1) {
 		IntNode var3 = new IntNode(arg1);
 		var3.nodeId = arg0;
-		this.field12023.pushBack(var3);
+		this.field12023.addTail(var3);
 	}
 
 	@ObfuscatedName("aqv.ahd(I)V")
 	public final synchronized void method19074(int arg0) {
 		IntNode var2 = new IntNode(arg0);
-		this.field12035.pushBack(var2);
+		this.field12035.addTail(var2);
 	}
 
 	@ObfuscatedName("aqv.ahn(II)V")
 	public final synchronized void method19071(int arg0, int arg1) {
 		IntNode var3 = new IntNode(arg1);
 		var3.nodeId = arg0;
-		this.field12003.pushBack(var3);
+		this.field12003.addTail(var3);
 	}
 
 	@ObfuscatedName("aqv.ahp(J)V")
 	public final synchronized void method19075(long arg0) {
 		Node var3 = new Node();
 		var3.nodeId = arg0;
-		this.field12005.pushBack(var3);
+		this.field12005.addTail(var3);
 	}
 
 	@ObfuscatedName("aqv.ahe(I)V")
 	public final synchronized void method19087(int arg0) {
 		Node var2 = new Node();
 		var2.nodeId = arg0;
-		this.field12004.pushBack(var2);
+		this.field12004.addTail(var2);
 	}
 
 	@ObfuscatedName("aqv.ahs(Ldg;)I")

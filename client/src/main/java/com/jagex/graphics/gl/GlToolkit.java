@@ -2,7 +2,7 @@ package com.jagex.graphics.gl;
 
 import com.jagex.core.datastruct.Heap;
 import com.jagex.core.datastruct.IntNode;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.core.utils.MonotonicTime;
@@ -90,7 +90,7 @@ public class GlToolkit extends Toolkit {
 	public NativeHeap field9876;
 
 	@ObfuscatedName("afa.cb")
-	public LinkedList field9964 = new LinkedList();
+	public LinkList field9964 = new LinkList();
 
 	@ObfuscatedName("afa.cs")
 	public Unsafe field9878 = null;
@@ -105,25 +105,25 @@ public class GlToolkit extends Toolkit {
 	public int field9881;
 
 	@ObfuscatedName("afa.ck")
-	public LinkedList field9938 = new LinkedList();
+	public LinkList field9938 = new LinkList();
 
 	@ObfuscatedName("afa.cj")
-	public LinkedList field9883 = new LinkedList();
+	public LinkList field9883 = new LinkList();
 
 	@ObfuscatedName("afa.cd")
-	public LinkedList field9884 = new LinkedList();
+	public LinkList field9884 = new LinkList();
 
 	@ObfuscatedName("afa.dd")
-	public LinkedList field9885 = new LinkedList();
+	public LinkList field9885 = new LinkList();
 
 	@ObfuscatedName("afa.dr")
-	public LinkedList field9886 = new LinkedList();
+	public LinkList field9886 = new LinkList();
 
 	@ObfuscatedName("afa.da")
-	public LinkedList field9838 = new LinkedList();
+	public LinkList field9838 = new LinkList();
 
 	@ObfuscatedName("afa.dt")
-	public LinkedList field9888 = new LinkedList();
+	public LinkList field9888 = new LinkList();
 
 	@ObfuscatedName("afa.do")
 	public long field9823;
@@ -926,7 +926,7 @@ public class GlToolkit extends Toolkit {
 
 	@ObfuscatedName("afa.p()V")
 	public void method2369() {
-		for (Node var1 = this.field9964.peekFront(); var1 != null; var1 = this.field9964.prev()) {
+		for (Node var1 = this.field9964.head(); var1 != null; var1 = this.field9964.next()) {
 			((GlHeap) var1).method19237();
 		}
 		if (this.field9986 != null) {
@@ -1745,7 +1745,7 @@ public class GlToolkit extends Toolkit {
 	@ObfuscatedName("afa.cp(I)Lakz;")
 	public Heap createHeap(int arg0) {
 		GlHeap var2 = new GlHeap(arg0);
-		this.field9964.pushBack(var2);
+		this.field9964.addTail(var2);
 		return var2;
 	}
 
@@ -3158,7 +3158,7 @@ public class GlToolkit extends Toolkit {
 		int var2 = 0;
 		int var3 = arg0 & Integer.MAX_VALUE;
 		while (!this.field9883._isEmpty()) {
-			IntNode var4 = (IntNode) this.field9883.pollFront();
+			IntNode var4 = (IntNode) this.field9883.removeHead();
 			field9890[var2++] = (int) var4.nodeId;
 			this.field9880 -= var4.value;
 			if (var2 == 1000) {
@@ -3171,7 +3171,7 @@ public class GlToolkit extends Toolkit {
 			var2 = 0;
 		}
 		while (!this.field9884._isEmpty()) {
-			IntNode var5 = (IntNode) this.field9884.pollFront();
+			IntNode var5 = (IntNode) this.field9884.removeHead();
 			field9890[var2++] = (int) var5.nodeId;
 			this.field9879 -= var5.value;
 			if (var2 == 1000) {
@@ -3184,7 +3184,7 @@ public class GlToolkit extends Toolkit {
 			var2 = 0;
 		}
 		while (!this.field9885._isEmpty()) {
-			IntNode var6 = (IntNode) this.field9885.pollFront();
+			IntNode var6 = (IntNode) this.field9885.removeHead();
 			field9890[var2++] = var6.value;
 			if (var2 == 1000) {
 				OpenGL.glDeleteFramebuffersEXT(var2, field9890, 0);
@@ -3196,7 +3196,7 @@ public class GlToolkit extends Toolkit {
 			var2 = 0;
 		}
 		while (!this.field9886._isEmpty()) {
-			IntNode var7 = (IntNode) this.field9886.pollFront();
+			IntNode var7 = (IntNode) this.field9886.removeHead();
 			field9890[var2++] = (int) var7.nodeId;
 			this.field9881 -= var7.value;
 			if (var2 == 1000) {
@@ -3209,19 +3209,19 @@ public class GlToolkit extends Toolkit {
 			boolean var8 = false;
 		}
 		while (!this.field9938._isEmpty()) {
-			IntNode var9 = (IntNode) this.field9938.pollFront();
+			IntNode var9 = (IntNode) this.field9938.removeHead();
 			OpenGL.glDeleteLists((int) var9.nodeId, var9.value);
 		}
 		while (!this.field9838._isEmpty()) {
-			Node var10 = this.field9838.pollFront();
+			Node var10 = this.field9838.removeHead();
 			OpenGL.glDeleteProgramARB((int) var10.nodeId);
 		}
 		while (!this.field9888._isEmpty()) {
-			Node var11 = this.field9888.pollFront();
+			Node var11 = this.field9888.removeHead();
 			OpenGL.glDeleteShader((int) var11.nodeId);
 		}
 		while (!this.field9938._isEmpty()) {
-			IntNode var12 = (IntNode) this.field9938.pollFront();
+			IntNode var12 = (IntNode) this.field9938.removeHead();
 			OpenGL.glDeleteLists((int) var12.nodeId, var12.value);
 		}
 		this.field10026.method1402();
@@ -3236,41 +3236,41 @@ public class GlToolkit extends Toolkit {
 	public final synchronized void method15870(int arg0, int arg1) {
 		IntNode var3 = new IntNode(arg1);
 		var3.nodeId = arg0;
-		this.field9883.pushBack(var3);
+		this.field9883.addTail(var3);
 	}
 
 	@ObfuscatedName("afa.uz(II)V")
 	public final synchronized void method15822(int arg0, int arg1) {
 		IntNode var3 = new IntNode(arg1);
 		var3.nodeId = arg0;
-		this.field9884.pushBack(var3);
+		this.field9884.addTail(var3);
 	}
 
 	@ObfuscatedName("afa.ug(I)V")
 	public final synchronized void method15802(int arg0) {
 		IntNode var2 = new IntNode(arg0);
-		this.field9885.pushBack(var2);
+		this.field9885.addTail(var2);
 	}
 
 	@ObfuscatedName("afa.ub(II)V")
 	public final synchronized void method15796(int arg0, int arg1) {
 		IntNode var3 = new IntNode(arg1);
 		var3.nodeId = arg0;
-		this.field9886.pushBack(var3);
+		this.field9886.addTail(var3);
 	}
 
 	@ObfuscatedName("afa.uj(J)V")
 	public final synchronized void method15816(long arg0) {
 		Node var3 = new Node();
 		var3.nodeId = arg0;
-		this.field9888.pushBack(var3);
+		this.field9888.addTail(var3);
 	}
 
 	@ObfuscatedName("afa.ut(I)V")
 	public final synchronized void method15797(int arg0) {
 		Node var2 = new Node();
 		var2.nodeId = arg0;
-		this.field9838.pushBack(var2);
+		this.field9838.addTail(var2);
 	}
 
 	@ObfuscatedName("afa.uk(I)V")

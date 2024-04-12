@@ -1,7 +1,7 @@
 package com.jagex.graphics.gl;
 
 import com.jagex.core.datastruct.HashTable;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.Algorithms;
 import com.jagex.core.utils.ColourUtils;
@@ -68,7 +68,7 @@ public class GlFloorModel extends FloorModel {
 	public GlFloorModelRelated3 field9465;
 
 	@ObfuscatedName("aek.j")
-	public LinkedList field9470 = new LinkedList();
+	public LinkList field9470 = new LinkList();
 
 	@ObfuscatedName("aek.t")
 	public Node[] field9471;
@@ -185,7 +185,7 @@ public class GlFloorModel extends FloorModel {
 			}
 			long var18 = (long) arg10.offset << 48 | (long) arg10.scale << 42 | (long) arg10.colour << 28 | (long) (var17 << 14) | (long) var16;
 			Node var20;
-			for (var20 = this.field9483.getNode(var18); var20 != null; var20 = this.field9483.next()) {
+			for (var20 = this.field9483.get(var18); var20 != null; var20 = this.field9483.nextWithKey()) {
 				GlFloorModelRelated1 var21 = (GlFloorModelRelated1) var20;
 				if (var21.field11296 == var16 && (float) var17 == var21.field11294 && var21.field11295.method2096(arg10)) {
 					break;
@@ -193,7 +193,7 @@ public class GlFloorModel extends FloorModel {
 			}
 			if (var20 == null) {
 				var14[var15] = new GlFloorModelRelated1(this, var16, var17, arg10);
-				this.field9483.pushNode(var14[var15], var18);
+				this.field9483.put(var14[var15], var18);
 			} else {
 				var14[var15] = (GlFloorModelRelated1) var20;
 			}
@@ -281,8 +281,8 @@ public class GlFloorModel extends FloorModel {
 					var1[var2][var3] = (byte) ((this.field9479[var2][var3] >> 1) + (this.field9479[var2][var3 + 1] >> 3) + (this.field9479[var2][var3 - 1] >> 2) + (this.field9479[var2 - 1][var3] >> 2) + (this.field9479[var2 + 1][var3] >> 3));
 				}
 			}
-			this.field9471 = new Node[this.field9483.length()];
-			this.field9483.addNodes(this.field9471);
+			this.field9471 = new Node[this.field9483.size()];
+			this.field9483.toArray(this.field9471);
 			for (int var4 = 0; var4 < this.field9471.length; var4++) {
 				((GlFloorModelRelated1) this.field9471[var4]).method17578(this.field9477);
 			}
@@ -411,7 +411,7 @@ public class GlFloorModel extends FloorModel {
 							}
 							Node var73 = null;
 							if ((var43 & this.field9455 - 1) == 0 && (var44 & this.field9455 - 1) == 0) {
-								var73 = var10.getNode(var50);
+								var73 = var10.get(var50);
 							}
 							int var84;
 							if (var73 == null) {
@@ -495,7 +495,7 @@ public class GlFloorModel extends FloorModel {
 								if (var47 != -1) {
 									var8[var84] = var14[var42];
 								}
-								var10.pushNode(new FloorModelNode(var41[var42]), var50);
+								var10.put(new FloorModelNode(var41[var42]), var50);
 							} else {
 								var41[var42] = ((FloorModelNode) var73).field11437;
 								var84 = var41[var42] & 0xFFFF;
@@ -674,7 +674,7 @@ public class GlFloorModel extends FloorModel {
 			this.field9453.method15810(8448, 7681);
 			this.field9453.method15780(0, 34166, 770);
 			this.field9453.method15781(0, 34167, 770);
-			for (Node var23 = this.field9470.peekFront(); var23 != null; var23 = this.field9470.prev()) {
+			for (Node var23 = this.field9470.head(); var23 != null; var23 = this.field9470.next()) {
 				GlFloorModelRelated5 var24 = (GlFloorModelRelated5) var23;
 				var24.method17572(arg0, arg1, arg2, arg3);
 			}
@@ -875,6 +875,6 @@ public class GlFloorModel extends FloorModel {
 
 	@ObfuscatedName("aek.o(Lakf;[I)V")
 	public void method1549(Light arg0, int[] arg1) {
-		this.field9470.pushBack(new GlFloorModelRelated5(this.field9453, this, arg0, arg1));
+		this.field9470.addTail(new GlFloorModelRelated5(this.field9453, this, arg0, arg1));
 	}
 }

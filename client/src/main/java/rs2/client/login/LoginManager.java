@@ -3,7 +3,7 @@ package rs2.client.login;
 import com.jagex.core.constants.ModeWhere;
 import com.jagex.core.constants.PublicKeys;
 import com.jagex.core.datastruct.HashTable;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.io.Stream;
@@ -1202,8 +1202,8 @@ public class LoginManager {
 		Client.spotanims.removeAll();
 		Client.textCoords.clear();
 		Client.objStacks.removeAll();
-		ChangeLocationRequest.field11237 = new LinkedList();
-		ChangeLocationRequest.field11242 = new LinkedList();
+		ChangeLocationRequest.field11237 = new LinkList();
+		ChangeLocationRequest.field11242 = new LinkList();
 		Client.cameraMoveX = 0;
 		Client.cameraMoveZ = 0;
 		Client.cameraSrcHeight = 0;
@@ -1217,9 +1217,9 @@ public class LoginManager {
 		if (Client.openedTopInterface != -1) {
 			Component.method7602(Client.openedTopInterface);
 		}
-		for (SubInterface var2 = (SubInterface) Client.openedSubInterfaces.peekFront(); var2 != null; var2 = (SubInterface) Client.openedSubInterfaces.prev()) {
-			if (!var2.hasNext()) {
-				var2 = (SubInterface) Client.openedSubInterfaces.peekFront();
+		for (SubInterface var2 = (SubInterface) Client.openedSubInterfaces.head(); var2 != null; var2 = (SubInterface) Client.openedSubInterfaces.next()) {
+			if (!var2.isLinked()) {
+				var2 = (SubInterface) Client.openedSubInterfaces.head();
 				if (var2 == null) {
 					break;
 				}

@@ -2,7 +2,7 @@ package com.jagex.graphics.dx;
 
 import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.GpuVolumeTexture;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.game.client.DataType;
 import com.jagex.game.client.PrimitiveType;
 import com.jagex.game.config.BillboardTypeList;
@@ -40,7 +40,7 @@ public class DxToolkit extends GpuToolkit {
 	public final D3DDISPLAYMODE displayMode;
 
 	@ObfuscatedName("aqd.hp")
-	public LinkedList field11959 = new LinkedList();
+	public LinkList field11959 = new LinkList();
 
 	@ObfuscatedName("aqd.hy")
 	public boolean field11960 = false;
@@ -298,7 +298,7 @@ public class DxToolkit extends GpuToolkit {
 
 	@ObfuscatedName("aqd.sm()V")
 	public void method16105() {
-		for (ObjectNode var1 = (ObjectNode) this.field11959.peekFront(); var1 != null; var1 = (ObjectNode) this.field11959.prev()) {
+		for (ObjectNode var1 = (ObjectNode) this.field11959.head(); var1 != null; var1 = (ObjectNode) this.field11959.next()) {
 			DxInterface1 var2 = (DxInterface1) var1.value;
 			var2.method6220();
 			if (this.renderTarget == var2) {
@@ -311,7 +311,7 @@ public class DxToolkit extends GpuToolkit {
 	@ObfuscatedName("aqd.sx()V")
 	public void method15973() {
 		this.method2126();
-		for (ObjectNode var1 = (ObjectNode) this.field11959.peekFront(); var1 != null; var1 = (ObjectNode) this.field11959.prev()) {
+		for (ObjectNode var1 = (ObjectNode) this.field11959.head(); var1 != null; var1 = (ObjectNode) this.field11959.next()) {
 			DxInterface1 var2 = (DxInterface1) var1.value;
 			var2.method1629();
 		}
@@ -490,7 +490,7 @@ public class DxToolkit extends GpuToolkit {
 
 	@ObfuscatedName("aqd.aha(Loz;)Lake;")
 	public ObjectNode method19005(DxInterface1 arg0) {
-		for (ObjectNode var2 = (ObjectNode) this.field11959.peekFront(); var2 != null; var2 = (ObjectNode) this.field11959.prev()) {
+		for (ObjectNode var2 = (ObjectNode) this.field11959.head(); var2 != null; var2 = (ObjectNode) this.field11959.next()) {
 			if (var2.value == arg0) {
 				return var2;
 			}
@@ -501,7 +501,7 @@ public class DxToolkit extends GpuToolkit {
 	@ObfuscatedName("aqd.ahx(Loz;)V")
 	public void method18995(DxInterface1 arg0) {
 		if (this.method19005(arg0) == null) {
-			this.field11959.pushBack(new ObjectNode(arg0));
+			this.field11959.addTail(new ObjectNode(arg0));
 		}
 	}
 
@@ -509,7 +509,7 @@ public class DxToolkit extends GpuToolkit {
 	public void method19000(DxInterface1 arg0) {
 		ObjectNode var2 = this.method19005(arg0);
 		if (var2 != null) {
-			var2.remove();
+			var2.unlink();
 		}
 	}
 

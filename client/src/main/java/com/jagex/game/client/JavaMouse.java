@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.shared.framework.input.Mouse;
 import deob.ObfuscatedName;
@@ -23,7 +23,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	public int field11692;
 
 	@ObfuscatedName("alb.l")
-	public LinkedList field11695 = new LinkedList();
+	public LinkList field11695 = new LinkList();
 
 	@ObfuscatedName("alb.u")
 	public int field11693;
@@ -35,7 +35,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	public int field11698;
 
 	@ObfuscatedName("alb.d")
-	public LinkedList field11696 = new LinkedList();
+	public LinkList field11696 = new LinkList();
 
 	@ObfuscatedName("alb.c")
 	public java.awt.Component field11697;
@@ -79,7 +79,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	@ObfuscatedName("alb.ay(IIIIB)V")
 	public void method18303(int arg0, int arg1, int arg2, int arg3) {
 		BasicMouseEvent var5 = BasicMouseEvent.method8438(arg0, arg1, arg2, MonotonicTime.get(), arg3);
-        this.field11696.pushBack(var5);
+        this.field11696.addTail(var5);
 	}
 
 	@ObfuscatedName("alb.ab(III)V")
@@ -93,7 +93,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 
 	@ObfuscatedName("alb.p(I)Lakm;")
 	public MouseEvent pollEvent() {
-		return (MouseEvent) this.field11695.pollFront();
+		return (MouseEvent) this.field11695.removeHead();
 	}
 
 	@ObfuscatedName("alb.m(I)V")
@@ -101,7 +101,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 		this.field11689 = this.field11693;
 		this.field11690 = this.field11694;
 		this.field11692 = this.field11698;
-		LinkedList var1 = this.field11695;
+		LinkList var1 = this.field11695;
 		this.field11695 = this.field11696;
 		this.field11696 = var1;
 		this.field11696.removeAll();

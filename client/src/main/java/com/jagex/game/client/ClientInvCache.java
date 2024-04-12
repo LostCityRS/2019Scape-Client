@@ -153,16 +153,16 @@ public class ClientInvCache extends Node {
 	@ObfuscatedName("so.u(IZS)Lajo;")
 	public static ClientInvCache getCachedInvs(int arg0, boolean arg1) {
 		long var2 = (long) (arg0 | (arg1 ? Integer.MIN_VALUE : 0));
-		return (ClientInvCache) recentUse.getNode(var2);
+		return (ClientInvCache) recentUse.get(var2);
 	}
 
 	@ObfuscatedName("hg.z(IIIILabn;ZI)V")
 	public static void update(int arg0, int arg1, int arg2, int arg3, VarContainerSparse arg4, boolean arg5) {
 		long var6 = (long) (arg0 | (arg5 ? Integer.MIN_VALUE : 0));
-		ClientInvCache var8 = (ClientInvCache) recentUse.getNode(var6);
+		ClientInvCache var8 = (ClientInvCache) recentUse.get(var6);
 		if (var8 == null) {
 			var8 = new ClientInvCache();
-			recentUse.pushNode(var8, var6);
+			recentUse.put(var8, var6);
 		}
 		if (var8.invSlotObjId.length <= arg1) {
 			int[] var9 = new int[arg1 + 1];
@@ -215,7 +215,7 @@ public class ClientInvCache extends Node {
 	public static void remove(int arg0, boolean arg1) {
 		ClientInvCache var2 = getCachedInvs(arg0, arg1);
 		if (var2 != null) {
-			var2.remove();
+			var2.unlink();
 		}
 	}
 

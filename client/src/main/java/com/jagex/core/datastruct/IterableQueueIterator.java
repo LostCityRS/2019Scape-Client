@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class IterableQueueIterator implements Iterator {
 
 	@ObfuscatedName("aar.e")
-	public LinkedList queue;
+	public LinkList queue;
 
 	@ObfuscatedName("aar.n")
 	public Node next;
@@ -16,19 +16,19 @@ public class IterableQueueIterator implements Iterator {
 	@ObfuscatedName("aar.m")
 	public Node prev = null;
 
-	public IterableQueueIterator(LinkedList queue) {
+	public IterableQueueIterator(LinkList queue) {
 		this.set(queue);
 	}
 
 	@ObfuscatedName("aar.l(Laat;I)V")
-	public void set(LinkedList queue) {
+	public void set(LinkList queue) {
 		this.queue = queue;
 		this.advance();
 	}
 
 	@ObfuscatedName("aar.u(B)V")
 	public void advance() {
-		this.next = this.queue == null ? null : this.queue.head.prev;
+		this.next = this.queue == null ? null : this.queue.sentinel.next;
 		this.prev = null;
 	}
 
@@ -40,25 +40,25 @@ public class IterableQueueIterator implements Iterator {
 
 	public Object next() {
 		Node node = this.next;
-		if (this.queue.head == node) {
+		if (this.queue.sentinel == node) {
 			node = null;
 			this.next = null;
 		} else {
-			this.next = node.prev;
+			this.next = node.next;
 		}
 		this.prev = node;
 		return node;
 	}
 
 	public boolean hasNext() {
-		return this.queue.head != this.next;
+		return this.queue.sentinel != this.next;
 	}
 
 	public void remove() {
 		if (this.prev == null) {
 			throw new IllegalStateException();
 		}
-		this.prev.remove();
+		this.prev.unlink();
 		this.prev = null;
 	}
 }

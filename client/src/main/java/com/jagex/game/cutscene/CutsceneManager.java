@@ -1,7 +1,7 @@
 package com.jagex.game.cutscene;
 
 import com.jagex.core.datastruct.HashTable;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.ClientMessage;
 import com.jagex.game.config.vartype.VarIntDomain;
@@ -15,7 +15,7 @@ import rs2.client.clientscript.ScriptRunner;
 public class CutsceneManager {
 
 	@ObfuscatedName("eq.e")
-	public static LinkedList field1712 = new LinkedList();
+	public static LinkList field1712 = new LinkList();
 
 	@ObfuscatedName("eq.n")
 	public static CutsceneSpline[] field1714;
@@ -91,7 +91,7 @@ public class CutsceneManager {
 			method6121(var2);
 			int var3 = var2.g1();
 			for (int var4 = 0; var4 < var3; var4++) {
-				field1712.pushBack(new CutsceneTemplate(var2));
+				field1712.addTail(new CutsceneTemplate(var2));
 			}
 			int var5 = var2.gSmart1or2();
 			field1714 = new CutsceneSpline[var5];

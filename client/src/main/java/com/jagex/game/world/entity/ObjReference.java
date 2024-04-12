@@ -21,7 +21,7 @@ public class ObjReference {
 
 	@ObfuscatedName("yd.e(I)Laut;")
 	public ObjStackEntity method13793() {
-		ObjStackList var1 = (ObjStackList) Client.objStacks.getNode((long) (this.field8244.level << 28 | this.field8244.z << 14 | this.field8244.x));
+		ObjStackList var1 = (ObjStackList) Client.objStacks.get((long) (this.field8244.level << 28 | this.field8244.z << 14 | this.field8244.x));
 		if (var1 == null) {
 			return null;
 		}
@@ -29,7 +29,7 @@ public class ObjReference {
 		int var3 = this.field8244.x - var2.x;
 		int var4 = this.field8244.z - var2.z;
 		if (var3 >= 0 && var4 >= 0 && var3 < Client.world.getSizeX() && var4 < Client.world.getSizeZ() && Client.world.getScene() != null) {
-			for (Obj var5 = (Obj) var1.levelObjStacks.peekFront(); var5 != null; var5 = (Obj) var1.levelObjStacks.prev()) {
+			for (Obj var5 = (Obj) var1.levelObjStacks.head(); var5 != null; var5 = (Obj) var1.levelObjStacks.next()) {
 				if (this.field8243 == var5.index) {
 					return (ObjStackEntity) Client.world.getScene().getObjStack(this.field8244.level, var3, var4);
 				}

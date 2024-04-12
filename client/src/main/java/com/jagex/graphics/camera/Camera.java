@@ -393,20 +393,20 @@ public abstract class Camera {
 
 	@ObfuscatedName("je.i(Laso;I)V")
 	public void addEffect(CameraEffect arg0) {
-		this.effects.pushNode(arg0, (long) arg0.id);
+		this.effects.put(arg0, (long) arg0.id);
 	}
 
 	@ObfuscatedName("je.j(II)V")
 	public void removeEffect(int arg0) {
-		CameraEffect var2 = (CameraEffect) this.effects.getNode((long) arg0);
+		CameraEffect var2 = (CameraEffect) this.effects.get((long) arg0);
 		if (var2 != null) {
-			var2.remove();
+			var2.unlink();
 		}
 	}
 
 	@ObfuscatedName("je.t(II)Laso;")
 	public CameraEffect getEffect(int arg0) {
-		return (CameraEffect) this.effects.getNode((long) arg0);
+		return (CameraEffect) this.effects.get((long) arg0);
 	}
 
 	@ObfuscatedName("je.ae(B)V")

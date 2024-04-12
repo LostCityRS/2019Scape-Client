@@ -41,23 +41,23 @@ public final class SoftLruHashTable {
 
 	@ObfuscatedName("eb.n(J)Ljava/lang/Object;")
 	public Object get(long arg0) {
-		ReferenceNode var3 = (ReferenceNode) this.hashTable.getNode(arg0);
+		ReferenceNode var3 = (ReferenceNode) this.hashTable.get(arg0);
 		if (var3 == null) {
 			return null;
 		}
 		Object var4 = var3.method19423();
 		if (var4 == null) {
-			var3.remove();
+			var3.unlink();
 			var3.secondaryRemove();
 			this.field1756 += var3.field12328;
 			return null;
 		}
 		if (var3.isSoft()) {
 			HardReferenceNode var5 = new HardReferenceNode(var4, var3.field12328);
-			this.hashTable.pushNode(var5, var3.nodeId);
+			this.hashTable.put(var5, var3.nodeId);
 			this.queue.pushBack(var5);
 			var5.secondaryNodeId = 0L;
-			var3.remove();
+			var3.unlink();
 			var3.secondaryRemove();
 		} else {
 			this.queue.pushBack(var3);
@@ -68,14 +68,14 @@ public final class SoftLruHashTable {
 
 	@ObfuscatedName("eb.m(J)V")
 	public void method2957(long arg0) {
-		ReferenceNode var3 = (ReferenceNode) this.hashTable.getNode(arg0);
+		ReferenceNode var3 = (ReferenceNode) this.hashTable.get(arg0);
 		this.method2918(var3);
 	}
 
 	@ObfuscatedName("eb.k(Lasa;I)V")
 	public void method2918(ReferenceNode arg0) {
 		if (arg0 != null) {
-			arg0.remove();
+			arg0.unlink();
 			arg0.secondaryRemove();
 			this.field1756 += arg0.field12328;
 		}
@@ -106,7 +106,7 @@ public final class SoftLruHashTable {
 			}
 		}
 		HardReferenceNode var6 = new HardReferenceNode(arg0, arg2);
-		this.hashTable.pushNode(var6, arg1);
+		this.hashTable.put(var6, arg1);
 		this.queue.pushBack(var6);
 		var6.secondaryNodeId = 0L;
 	}
@@ -116,15 +116,15 @@ public final class SoftLruHashTable {
 		for (ReferenceNode var2 = (ReferenceNode) this.queue.peekFront(); var2 != null; var2 = (ReferenceNode) this.queue.prev()) {
 			if (var2.isSoft()) {
 				if (var2.method19423() == null) {
-					var2.remove();
+					var2.unlink();
 					var2.secondaryRemove();
 					this.field1756 += var2.field12328;
 				}
 			} else if (++var2.secondaryNodeId > (long) arg0) {
 				SoftReferenceNode var3 = new SoftReferenceNode(var2.method19423(), var2.field12328);
-				this.hashTable.pushNode(var3, var2.nodeId);
+				this.hashTable.put(var3, var2.nodeId);
 				SecondaryLinkedList.method10144(var3, var2);
-				var2.remove();
+				var2.unlink();
 				var2.secondaryRemove();
 			}
 		}
@@ -162,7 +162,7 @@ public final class SoftLruHashTable {
 	public void clear() {
 		for (ReferenceNode var1 = (ReferenceNode) this.queue.peekFront(); var1 != null; var1 = (ReferenceNode) this.queue.prev()) {
 			if (var1.isSoft()) {
-				var1.remove();
+				var1.unlink();
 				var1.secondaryRemove();
 				this.field1756 += var1.field12328;
 			}
@@ -171,15 +171,15 @@ public final class SoftLruHashTable {
 
 	@ObfuscatedName("eb.r(I)Ljava/lang/Object;")
 	public Object method2950() {
-		ReferenceNode var1 = (ReferenceNode) this.hashTable.peekFront();
+		ReferenceNode var1 = (ReferenceNode) this.hashTable.head();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
 			ReferenceNode var3 = var1;
-			var1 = (ReferenceNode) this.hashTable.prev();
-			var3.remove();
+			var1 = (ReferenceNode) this.hashTable.next();
+			var3.unlink();
 			var3.secondaryRemove();
 			this.field1756 += var3.field12328;
 		}
@@ -188,15 +188,15 @@ public final class SoftLruHashTable {
 
 	@ObfuscatedName("eb.v(I)Ljava/lang/Object;")
 	public Object method2937() {
-		ReferenceNode var1 = (ReferenceNode) this.hashTable.prev();
+		ReferenceNode var1 = (ReferenceNode) this.hashTable.next();
 		while (var1 != null) {
 			Object var2 = var1.method19423();
 			if (var2 != null) {
 				return var2;
 			}
 			ReferenceNode var3 = var1;
-			var1 = (ReferenceNode) this.hashTable.prev();
-			var3.remove();
+			var1 = (ReferenceNode) this.hashTable.next();
+			var3.unlink();
 			var3.secondaryRemove();
 			this.field1756 += var3.field12328;
 		}

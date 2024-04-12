@@ -1,6 +1,6 @@
 package rs2.client.logic.clans;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
@@ -14,7 +14,7 @@ public class ClanSettingsDelta {
 	public int updateNum = -1;
 
 	@ObfuscatedName("kd.m")
-	public LinkedList queue = new LinkedList();
+	public LinkList queue = new LinkList();
 
 	public ClanSettingsDelta(Packet buf) {
 		this.decode(buf);
@@ -58,7 +58,7 @@ public class ClanSettingsDelta {
 				throw new RuntimeException("Unrecognised ClanSettingsDelta type in decode()");
 			}
 			entry.decode(buf);
-			this.queue.pushBack(entry);
+			this.queue.addTail(entry);
 		}
 	}
 
@@ -69,7 +69,7 @@ public class ClanSettingsDelta {
             // throw new RuntimeException("ClanSettingsDelta.applyToClanSettings(): Credentials do not match! Settings.owner:" + Q280.g(ef450.h) + " updateNum:" + ef450.s + " delta.owner:" + Q280.g(this.g) + " updateNum:" + this.d);
 			throw new RuntimeException("ClanSettingsDelta.applyToClanSettings(): Credentials do not match!");
 		}
-		for (ClanSettingsDeltaEntry entry = (ClanSettingsDeltaEntry) this.queue.peekFront(); entry != null; entry = (ClanSettingsDeltaEntry) this.queue.prev()) {
+		for (ClanSettingsDeltaEntry entry = (ClanSettingsDeltaEntry) this.queue.head(); entry != null; entry = (ClanSettingsDeltaEntry) this.queue.next()) {
 			entry.apply(settings);
 		}
 		settings.updateNum++;

@@ -53,7 +53,7 @@ public class MiniMenuSubMenu extends SecondaryNode {
 		if (this.field12310 != 0) {
 			return var2 != this.method19375();
 		}
-		this.remove();
+		this.unlink();
 		this.secondaryRemove();
 		MiniMenu.field543--;
 		MiniMenu.field534.put(this, arg0.field12305);

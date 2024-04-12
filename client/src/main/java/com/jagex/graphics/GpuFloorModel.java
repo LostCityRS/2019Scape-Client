@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
 import com.jagex.core.datastruct.HashTable;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.Algorithms;
 import com.jagex.core.utils.ColourUtils;
@@ -76,7 +76,7 @@ public class GpuFloorModel extends FloorModel {
 	public FloorHardShadows field9505;
 
 	@ObfuscatedName("aem.ae")
-	public LinkedList field9485 = new LinkedList();
+	public LinkList field9485 = new LinkList();
 
 	@ObfuscatedName("aem.ag")
 	public Node[] field9496;
@@ -222,7 +222,7 @@ public class GpuFloorModel extends FloorModel {
 			}
 			long var18 = (long) arg10.offset << 48 | (long) arg10.scale << 42 | (long) arg10.colour << 28 | (long) (var17 << 14) | (long) var16;
 			Node var20;
-			for (var20 = this.field9513.getNode(var18); var20 != null; var20 = this.field9513.next()) {
+			for (var20 = this.field9513.get(var18); var20 != null; var20 = this.field9513.nextWithKey()) {
 				GpuFloorModelRelated1 var21 = (GpuFloorModelRelated1) var20;
 				if (var21.field11402 == var16 && (float) var17 == var21.field11403 && var21.field11404.method2096(arg10)) {
 					break;
@@ -230,7 +230,7 @@ public class GpuFloorModel extends FloorModel {
 			}
 			if (var20 == null) {
 				var14[var15] = new GpuFloorModelRelated1(this, var16, var17, arg10);
-				this.field9513.pushNode(var14[var15], var18);
+				this.field9513.put(var14[var15], var18);
 			} else {
 				var14[var15] = (GpuFloorModelRelated1) var20;
 			}
@@ -316,8 +316,8 @@ public class GpuFloorModel extends FloorModel {
 				var1[var2][var3] = (byte) ((this.field9514[var2][var3] >> 1) + (this.field9514[var2][var3 + 1] >> 3) + (this.field9514[var2][var3 - 1] >> 2) + (this.field9514[var2 - 1][var3] >> 2) + (this.field9514[var2 + 1][var3] >> 3));
 			}
 		}
-		this.field9497 = new Node[this.field9513.length()];
-		this.field9513.addNodes(this.field9497);
+		this.field9497 = new Node[this.field9513.size()];
+		this.field9513.toArray(this.field9497);
 		for (int var4 = 0; var4 < this.field9497.length; var4++) {
 			((GpuFloorModelRelated1) this.field9497[var4]).method17761(this.field9511);
 		}
@@ -576,7 +576,7 @@ public class GpuFloorModel extends FloorModel {
 			}
 			Node var66 = null;
 			if ((var36 & this.field9489 - 1) == 0 && (var37 & this.field9489 - 1) == 0) {
-				var66 = arg4.getNode(var43);
+				var66 = arg4.get(var43);
 			}
 			int var80;
 			if (var66 == null) {
@@ -643,7 +643,7 @@ public class GpuFloorModel extends FloorModel {
 				if (var40 != -1) {
 					arg5[var80] = var7[var35];
 				}
-				arg4.pushNode(new FloorModelNode(var34[var35]), var43);
+				arg4.put(new FloorModelNode(var34[var35]), var43);
 			} else {
 				var34[var35] = ((FloorModelNode) var66).field11437;
 				var80 = var34[var35] & 0xFFFF;
@@ -1024,6 +1024,6 @@ public class GpuFloorModel extends FloorModel {
 
 	@ObfuscatedName("aem.o(Lakf;[I)V")
 	public void method1549(Light arg0, int[] arg1) {
-		this.field9485.pushBack(new GpuFloorModelRelated(this.field9516, this, arg0, arg1));
+		this.field9485.addTail(new GpuFloorModelRelated(this.field9516, this, arg0, arg1));
 	}
 }

@@ -8,84 +8,84 @@ import java.util.Iterator;
 public final class HashTable implements Iterable {
 
 	@ObfuscatedName("aan.e")
-	public int size;
+	public int bucketCount;
 
 	@ObfuscatedName("aan.n")
-	public Node[] nodes;
+	public Node[] buckets;
 
 	@ObfuscatedName("aan.m")
-	public long currentNodeId;
+	public long searchKey;
 
 	@ObfuscatedName("aan.k")
-	public Node next;
+	public Node searchCursor;
 
 	@ObfuscatedName("aan.f")
-	public Node prev;
+	public Node iteratorCursor;
 
 	@ObfuscatedName("aan.w")
-	public int currentNodeIndex = 0;
+	public int iteratorBucket = 0;
 
-	public HashTable(int size) {
-		this.size = size;
-		this.nodes = new Node[size];
-		for (int index = 0; index < size; index++) {
-			Node node = this.nodes[index] = new Node();
-			node.prev = node;
-			node.next = node;
+	public HashTable(int bucketCount) {
+		this.buckets = new Node[bucketCount];
+		this.bucketCount = bucketCount;
+		for (int i = 0; i < bucketCount; i++) {
+			Node sentinel = this.buckets[i] = new Node();
+			sentinel.next = sentinel;
+			sentinel.prev = sentinel;
 		}
 	}
 
 	@ObfuscatedName("aan.e(J)Ltj;")
-	public Node getNode(long id) {
-		this.currentNodeId = id;
-		Node node = this.nodes[(int) (id & (long) (this.size - 1))];
-		for (this.next = node.prev; this.next != node; this.next = this.next.prev) {
-			if (this.next.nodeId == id) {
-				Node var4 = this.next;
-				this.next = this.next.prev;
-				return var4;
+	public Node get(long key) {
+		this.searchKey = key;
+		Node sentinel = this.buckets[(int) (key & (long) (this.bucketCount - 1))];
+		for (this.searchCursor = sentinel.next; this.searchCursor != sentinel; this.searchCursor = this.searchCursor.next) {
+			if (this.searchCursor.nodeId == key) {
+				Node value = this.searchCursor;
+				this.searchCursor = this.searchCursor.next;
+				return value;
 			}
 		}
-		this.next = null;
+		this.searchCursor = null;
 		return null;
 	}
 
 	@ObfuscatedName("aan.n(I)Ltj;")
-	public Node next() {
-		if (this.next == null) {
+	public Node nextWithKey() {
+		if (this.searchCursor == null) {
 			return null;
 		}
-		Node node = this.nodes[(int) (this.currentNodeId & (long) (this.size - 1))];
-		while (this.next != node) {
-			if (this.next.nodeId == this.currentNodeId) {
-				Node var2 = this.next;
-				this.next = this.next.prev;
-				return var2;
+		Node sentinel = this.buckets[(int) (this.searchKey & (long) (this.bucketCount - 1))];
+		while (this.searchCursor != sentinel) {
+			if (this.searchCursor.nodeId == this.searchKey) {
+				Node node = this.searchCursor;
+				this.searchCursor = this.searchCursor.next;
+				return node;
 			}
-			this.next = this.next.prev;
+			this.searchCursor = this.searchCursor.next;
 		}
-		this.next = null;
+		this.searchCursor = null;
 		return null;
 	}
 
 	@ObfuscatedName("aan.m([Ltj;B)I")
-	public int addNodes(Node[] nodes) {
-		int var2 = 0;
-		for (int index = 0; index < this.size; index++) {
-			Node node = this.nodes[index];
-			for (Node var5 = node.prev; var5 != node; var5 = var5.prev) {
-				nodes[var2++] = var5;
+	public int toArray(Node[] nodes) {
+		int size = 0;
+		for (int i = 0; i < this.bucketCount; i++) {
+			Node sentinel = this.buckets[i];
+			for (Node node = sentinel.next; node != sentinel; node = node.next) {
+				nodes[size++] = node;
 			}
 		}
-		return var2;
+		return size;
 	}
 
 	@ObfuscatedName("aan.k(I)I")
-	public int length() {
+	public int size() {
 		int count = 0;
-		for (int index = 0; index < this.size; index++) {
-			Node var3 = this.nodes[index];
-			for (Node var4 = var3.prev; var4 != var3; var4 = var4.prev) {
+		for (int i = 0; i < this.bucketCount; i++) {
+			Node sentinel = this.buckets[i];
+			for (Node node = sentinel.next; node != sentinel; node = node.next) {
 				count++;
 			}
 		}
@@ -93,56 +93,56 @@ public final class HashTable implements Iterable {
 	}
 
 	@ObfuscatedName("aan.f(Ltj;J)V")
-	public void pushNode(Node node, long id) {
-		if (node.next != null) {
-			node.remove();
+	public void put(Node node, long key) {
+		if (node.prev != null) {
+			node.unlink();
 		}
-		Node var4 = this.nodes[(int) (id & (long) (this.size - 1))];
-		node.next = var4.next;
-		node.prev = var4;
-		node.next.prev = node;
+		Node sentinel = this.buckets[(int) (key & (long) (this.bucketCount - 1))];
+		node.prev = sentinel.prev;
+		node.next = sentinel;
 		node.prev.next = node;
-		node.nodeId = id;
+		node.next.prev = node;
+		node.nodeId = key;
 	}
 
 	@ObfuscatedName("aan.w(B)V")
 	public void removeAll() {
-		for (int index = 0; index < this.size; index++) {
-			Node node = this.nodes[index];
+		for (int i = 0; i < this.bucketCount; i++) {
+			Node sentinel = this.buckets[i];
 			while (true) {
-				Node next = node.prev;
-				if (node == next) {
+				Node node = sentinel.next;
+				if (sentinel == node) {
 					break;
 				}
-				next.remove();
+				node.unlink();
 			}
 		}
-		this.next = null;
-		this.prev = null;
+		this.searchCursor = null;
+		this.iteratorCursor = null;
 	}
 
 	@ObfuscatedName("aan.l(B)Ltj;")
-	public Node peekFront() {
-		this.currentNodeIndex = 0;
-		return this.prev();
+	public Node head() {
+		this.iteratorBucket = 0;
+		return this.next();
 	}
 
 	@ObfuscatedName("aan.u(I)Ltj;")
-	public Node prev() {
-		if (this.currentNodeIndex > 0 && this.nodes[this.currentNodeIndex - 1] != this.prev) {
-			Node var1 = this.prev;
-			this.prev = var1.prev;
-			return var1;
+	public Node next() {
+		if (this.iteratorBucket > 0 && this.buckets[this.iteratorBucket - 1] != this.iteratorCursor) {
+			Node node = this.iteratorCursor;
+			this.iteratorCursor = node.next;
+			return node;
 		}
-		Node var2;
+		Node node;
 		do {
-			if (this.currentNodeIndex >= this.size) {
+			if (this.iteratorBucket >= this.bucketCount) {
 				return null;
 			}
-			var2 = this.nodes[++this.currentNodeIndex - 1].prev;
-		} while (this.nodes[this.currentNodeIndex - 1] == var2);
-		this.prev = var2.prev;
-		return var2;
+			node = this.buckets[++this.iteratorBucket - 1].next;
+		} while (this.buckets[this.iteratorBucket - 1] == node);
+		this.iteratorCursor = node.next;
+		return node;
 	}
 
 	public Iterator iterator() {

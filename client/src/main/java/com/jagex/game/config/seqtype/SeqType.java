@@ -227,7 +227,7 @@ public class SeqType implements ConfigType {
 					} else {
 						var16 = new IntNode(buf.g4s());
 					}
-					this.params.pushNode(var16, (long) var15);
+					this.params.put(var16, (long) var15);
 				}
 			}
 		}
@@ -282,7 +282,7 @@ public class SeqType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.get((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -292,7 +292,7 @@ public class SeqType implements ConfigType {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.get((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}

@@ -23,7 +23,7 @@ public class TypeChatLines {
 		if (var10 == null) {
 			var10 = new ChatLine(arg0, arg1, arg2, arg3, arg4, arg6, arg7, arg5, arg8);
 		} else {
-			var10.remove();
+			var10.unlink();
 			var10.secondaryRemove();
 			var10.method19429(arg0, arg1, arg2, arg3, arg4, arg6, arg7, arg5, arg8);
 		}

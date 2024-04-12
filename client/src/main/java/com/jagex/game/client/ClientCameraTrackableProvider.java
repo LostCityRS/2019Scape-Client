@@ -16,7 +16,7 @@ public class ClientCameraTrackableProvider implements CameraTrackableProvider {
 			return Client.players[index];
 		}
 		if (CameraTrackableType.NPC == cameraTrackableType) {
-			ObjectNode var3 = (ObjectNode) Client.npcs.getNode((long) index);
+			ObjectNode var3 = (ObjectNode) Client.npcs.get((long) index);
 			if (var3 != null) {
 				return (CameraTrackable) var3.value;
 			}

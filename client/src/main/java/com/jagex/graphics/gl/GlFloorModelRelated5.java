@@ -221,7 +221,7 @@ public class GlFloorModelRelated5 extends Node {
 		int var11 = this.field11273.getFineHeight(var9, var10);
 		if ((arg4 & 0x7F) == 0 || (arg5 & 0x7F) == 0) {
 			var7 = ((long) var10 & 0xFFFFL) << 16 | (long) var9 & 0xFFFFL;
-			FloorModelNode var12 = (FloorModelNode) this.field11290.getNode(var7);
+			FloorModelNode var12 = (FloorModelNode) this.field11290.get(var7);
 			if (var12 != null) {
 				this.method17571(var12.field11437);
 				return;
@@ -229,7 +229,7 @@ public class GlFloorModelRelated5 extends Node {
 		}
 		short var13 = (short) this.field11286++;
 		if (var7 != -1L) {
-			this.field11290.pushNode(new FloorModelNode(var13), var7);
+			this.field11290.put(new FloorModelNode(var13), var7);
 		}
 		float var14;
 		float var15;

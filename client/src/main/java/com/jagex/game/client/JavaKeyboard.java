@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.utils.Cp1252;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.shared.framework.input.Keyboard;
@@ -15,10 +15,10 @@ import java.awt.event.KeyListener;
 public final class JavaKeyboard extends Keyboard implements KeyListener, FocusListener {
 
 	@ObfuscatedName("alg.do")
-	public LinkedList field11681 = new LinkedList();
+	public LinkList field11681 = new LinkList();
 
 	@ObfuscatedName("alg.dz")
-	public LinkedList field11682 = new LinkedList();
+	public LinkList field11682 = new LinkList();
 
 	@ObfuscatedName("alg.dv")
 	public boolean[] field11683 = new boolean[112];
@@ -80,12 +80,12 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 		var4.field11464 = arg1;
 		var4.field11465 = arg2;
 		var4.field11462 = MonotonicTime.get();
-		this.field11682.pushBack(var4);
+		this.field11682.addTail(var4);
 	}
 
 	@ObfuscatedName("alg.k(I)Lut;")
 	public KeyboardEvent method9075() {
-		return (KeyboardEvent) this.field11681.pollFront();
+		return (KeyboardEvent) this.field11681.removeHead();
 	}
 
 	@ObfuscatedName("alg.m(II)Z")
@@ -96,7 +96,7 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 	@ObfuscatedName("alg.n(I)V")
 	public synchronized void method9069() {
 		this.field11681.removeAll();
-		for (BasicKeyboardEvent var1 = (BasicKeyboardEvent) this.field11682.pollFront(); var1 != null; var1 = (BasicKeyboardEvent) this.field11682.pollFront()) {
+		for (BasicKeyboardEvent var1 = (BasicKeyboardEvent) this.field11682.removeHead(); var1 != null; var1 = (BasicKeyboardEvent) this.field11682.removeHead()) {
 			var1.field11467 = this.method18266();
 			if (var1.field11466 == 0) {
 				if (!this.field11683[var1.field11465]) {
@@ -106,14 +106,14 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 					var2.field11465 = var1.field11465;
 					var2.field11462 = var1.field11462;
 					var2.field11467 = var1.field11467;
-					this.field11681.pushBack(var2);
+					this.field11681.addTail(var2);
 					this.field11683[var1.field11465] = true;
 				}
 				var1.field11466 = 2;
-				this.field11681.pushBack(var1);
+				this.field11681.addTail(var1);
 			} else if (var1.field11466 == 1) {
 				if (this.field11683[var1.field11465]) {
-					this.field11681.pushBack(var1);
+					this.field11681.addTail(var1);
 					this.field11683[var1.field11465] = false;
 				}
 			} else if (var1.field11466 == -1) {
@@ -125,12 +125,12 @@ public final class JavaKeyboard extends Keyboard implements KeyListener, FocusLi
 						var4.field11465 = var3;
 						var4.field11462 = var1.field11462;
 						var4.field11467 = var1.field11467;
-						this.field11681.pushBack(var4);
+						this.field11681.addTail(var4);
 						this.field11683[var3] = false;
 					}
 				}
 			} else if (var1.field11466 == 3) {
-				this.field11681.pushBack(var1);
+				this.field11681.addTail(var1);
 			}
 		}
 	}

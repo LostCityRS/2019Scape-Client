@@ -1,6 +1,6 @@
 package com.jagex.graphics;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5;
@@ -66,7 +66,7 @@ public class FrameSet extends SecondaryNode {
 		if (!var5) {
 			return false;
 		}
-		LinkedList var12 = new LinkedList();
+		LinkList var12 = new LinkList();
 		Js5 var13 = field12325;
 		int[] var15;
 		synchronized (field12325) {
@@ -80,7 +80,7 @@ public class FrameSet extends SecondaryNode {
 			var19.pos = 1;
 			int var20 = var19.g2();
 			AnimBase var21 = null;
-			for (AnimBase var22 = (AnimBase) var12.peekFront(); var22 != null; var22 = (AnimBase) var12.prev()) {
+			for (AnimBase var22 = (AnimBase) var12.head(); var22 != null; var22 = (AnimBase) var12.next()) {
 				if (var22.field11312 == var20) {
 					var21 = var22;
 					break;
@@ -91,7 +91,7 @@ public class FrameSet extends SecondaryNode {
 				synchronized (field12326) {
 					var21 = new AnimBase(var20, field12326.fetchFile(var20));
 				}
-				var12.pushBack(var21);
+				var12.addTail(var21);
 			}
 			this.field12327[var15[var17]] = new AnimFrame(var18, var21);
 		}

@@ -956,13 +956,13 @@ public class Component {
 			for (int var23 = 0; var23 < var22; var23++) {
 				int var24 = buf.g3();
 				int var25 = buf.g4s();
-				this.params.pushNode(new IntNode(var25), (long) var24);
+				this.params.put(new IntNode(var25), (long) var24);
 			}
 			int var26 = buf.g1();
 			for (int var27 = 0; var27 < var26; var27++) {
 				int var28 = buf.g3();
 				String var29 = buf.gjstr2();
-				this.params.pushNode(new ObjectNode(var29), (long) var28);
+				this.params.put(new ObjectNode(var29), (long) var28);
 			}
 		}
 		this.onload = this.decodeHook(buf);
@@ -1403,7 +1403,7 @@ public class Component {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			IntNode var3 = (IntNode) this.params.getNode((long) arg0);
+			IntNode var3 = (IntNode) this.params.get((long) arg0);
 			return var3 == null ? arg1 : var3.value;
 		}
 	}
@@ -1413,7 +1413,7 @@ public class Component {
 		if (this.params == null) {
 			return arg1;
 		} else {
-			ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
+			ObjectNode var3 = (ObjectNode) this.params.get((long) arg0);
 			return var3 == null ? arg1 : (String) var3.value;
 		}
 	}
@@ -1422,12 +1422,12 @@ public class Component {
 	public void method3952(int arg0, int arg1) {
 		if (this.params == null) {
 			this.params = new HashTable(16);
-			this.params.pushNode(new IntNode(arg1), (long) arg0);
+			this.params.put(new IntNode(arg1), (long) arg0);
 			return;
 		}
-		IntNode var3 = (IntNode) this.params.getNode((long) arg0);
+		IntNode var3 = (IntNode) this.params.get((long) arg0);
 		if (var3 == null) {
-			this.params.pushNode(new IntNode(arg1), (long) arg0);
+			this.params.put(new IntNode(arg1), (long) arg0);
 		} else {
 			var3.value = arg1;
 		}
@@ -1437,22 +1437,22 @@ public class Component {
 	public void method4003(int arg0, String arg1) {
 		if (this.params == null) {
 			this.params = new HashTable(16);
-			this.params.pushNode(new ObjectNode(arg1), (long) arg0);
+			this.params.put(new ObjectNode(arg1), (long) arg0);
 			return;
 		}
-		ObjectNode var3 = (ObjectNode) this.params.getNode((long) arg0);
+		ObjectNode var3 = (ObjectNode) this.params.get((long) arg0);
 		if (var3 != null) {
-			var3.remove();
+			var3.unlink();
 		}
-		this.params.pushNode(new ObjectNode(arg1), (long) arg0);
+		this.params.put(new ObjectNode(arg1), (long) arg0);
 	}
 
 	@ObfuscatedName("hf.ac(II)V")
 	public void method3954(int arg0) {
 		if (this.params != null) {
-			Node var2 = this.params.getNode((long) arg0);
+			Node var2 = this.params.get((long) arg0);
 			if (var2 != null) {
-				var2.remove();
+				var2.unlink();
 			}
 		}
 	}

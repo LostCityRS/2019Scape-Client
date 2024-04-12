@@ -99,7 +99,7 @@ public class ParticleSystem {
 		while (var1.hasNext()) {
 			ParticleEffector var2 = (ParticleEffector) var1.next();
 			if (var2.field11483.field3549 == 1) {
-				var2.remove();
+				var2.unlink();
 			}
 		}
 		for (int var3 = 0; var3 < this.field7805.length; var3++) {
@@ -231,10 +231,10 @@ public class ParticleSystem {
 					}
 				}
 				if (!arg1) {
-					var5.remove();
+					var5.unlink();
 					this.field7812--;
-					if (var5.hasNext()) {
-						var5.remove();
+					if (var5.isLinked()) {
+						var5.unlink();
 						ParticleSystemRenderer.field7796--;
 					}
 				}
@@ -245,7 +245,7 @@ public class ParticleSystem {
 						ParticleEffector var8 = null;
 						if (arg0[var7].method1509(ParticleSystemRenderer.field12041).field3549 == 1 && ParticleSystemRenderer.field7796 < 32) {
 							var8 = new ParticleEffector(arg0[var7], this);
-							ParticleSystemRenderer.field7800.pushNode(var8, (long) arg0[var7].field1228);
+							ParticleSystemRenderer.field7800.put(var8, (long) arg0[var7].field1228);
 							ParticleSystemRenderer.field7796++;
 						}
 						if (var8 == null) {

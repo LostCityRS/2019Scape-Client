@@ -1,6 +1,6 @@
 package com.jagex.game.network;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.io.Stream;
@@ -20,7 +20,7 @@ public class ServerConnection {
 	public Stream stream;
 
 	@ObfuscatedName("ax.n")
-	public LinkedList writeQueue = new LinkedList();
+	public LinkList writeQueue = new LinkList();
 
 	@ObfuscatedName("ax.m")
 	public int writePos = 0;
@@ -99,7 +99,7 @@ public class ServerConnection {
 		}
 		this.out.pos = 0;
 		while (true) {
-			ClientMessage message = (ClientMessage) this.writeQueue.peekFront();
+			ClientMessage message = (ClientMessage) this.writeQueue.head();
 			if (message == null || message.pos > this.out.data.length - this.out.pos) {
 				this.stream.write(this.out.data, 0, this.out.pos);
 				this.totalBytesSent += this.out.pos;
@@ -108,7 +108,7 @@ public class ServerConnection {
 			}
 			this.out.pdata(message.buf.data, 0, message.pos);
 			this.writePos -= message.pos;
-			message.remove();
+			message.unlink();
 			message.buf.release();
 			message.pushMessage();
 		}
@@ -116,7 +116,7 @@ public class ServerConnection {
 
 	@ObfuscatedName("ax.m(Lakl;I)V")
 	public final void queue(ClientMessage message) {
-		this.writeQueue.pushBack(message);
+		this.writeQueue.addTail(message);
 		message.pos = message.buf.pos;
 		message.buf.pos = 0;
 		this.writePos += message.pos;

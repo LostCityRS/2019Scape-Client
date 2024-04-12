@@ -1,6 +1,6 @@
 package rs2.client.scene;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import deob.ObfuscatedName;
 
@@ -8,5 +8,5 @@ import deob.ObfuscatedName;
 public class ObjStackList extends Node {
 
 	@ObfuscatedName("ajm.k")
-	public LinkedList levelObjStacks = new LinkedList();
+	public LinkList levelObjStacks = new LinkList();
 }

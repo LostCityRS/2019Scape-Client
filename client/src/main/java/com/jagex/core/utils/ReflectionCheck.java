@@ -1,6 +1,6 @@
 package com.jagex.core.utils;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import deob.ObfuscatedName;
@@ -14,7 +14,7 @@ import java.lang.reflect.Method;
 public class ReflectionCheck {
 
 	@ObfuscatedName("acj.e")
-	public static LinkedList field9148 = new LinkedList();
+	public static LinkList field9148 = new LinkList();
 
 	public ReflectionCheck() throws Throwable {
 		throw new Error();
@@ -22,18 +22,18 @@ public class ReflectionCheck {
 
 	@ObfuscatedName("hh.e(I)V")
 	public static void method4052() {
-		field9148 = new LinkedList();
+		field9148 = new LinkList();
 	}
 
 	@ObfuscatedName("abf.n(I)Z")
 	public static boolean hasNext() {
-		ReflectionCheckNode var0 = (ReflectionCheckNode) field9148.peekFront();
+		ReflectionCheckNode var0 = (ReflectionCheckNode) field9148.head();
 		return var0 != null;
 	}
 
 	@ObfuscatedName("jf.m(Lase;I)V")
 	public static void createReflectionCheck(PacketBit arg0) {
-		ReflectionCheckNode var1 = (ReflectionCheckNode) field9148.peekFront();
+		ReflectionCheckNode var1 = (ReflectionCheckNode) field9148.head();
 		if (var1 == null) {
 			return;
 		}
@@ -114,7 +114,7 @@ public class ReflectionCheck {
 			}
 		}
 		arg0.addcrc(var2);
-		var1.remove();
+		var1.unlink();
 	}
 
 	@ObfuscatedName("yl.k(Lalw;IB)V")
@@ -204,7 +204,7 @@ public class ReflectionCheck {
 				var2.field11637[var3] = -5;
 			}
 		}
-		field9148.pushBack(var2);
+		field9148.addTail(var2);
 	}
 
 	@ObfuscatedName("abm.f(Ljava/lang/String;I)Ljava/lang/Class;")

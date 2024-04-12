@@ -172,7 +172,7 @@ public class ClanSettings {
 		if (this.settingsMap == null) {
 			return null;
 		} else {
-			Node node = this.settingsMap.getNode((long) uid);
+			Node node = this.settingsMap.get((long) uid);
 			return node != null && node instanceof IntNode ? Integer.valueOf(((IntNode) node).value) : null;
 		}
 	}
@@ -182,7 +182,7 @@ public class ClanSettings {
 		if (this.settingsMap == null) {
 			return null;
 		} else {
-			Node node = this.settingsMap.getNode((long) uid);
+			Node node = this.settingsMap.get((long) uid);
 			return node != null && node instanceof LongNode ? Long.valueOf(((LongNode) node).value) : null;
 		}
 	}
@@ -192,7 +192,7 @@ public class ClanSettings {
 		if (this.settingsMap == null) {
 			return null;
 		} else {
-			Node node = this.settingsMap.getNode((long) uid);
+			Node node = this.settingsMap.get((long) uid);
 			return node != null && node instanceof ObjectNode ? (String) ((ObjectNode) node).value : null;
 		}
 	}
@@ -393,7 +393,7 @@ public class ClanSettings {
 		if (this.settingsMap == null) {
 			this.settingsMap = new HashTable(4);
 		} else {
-			Node node = this.settingsMap.getNode((long) uid);
+			Node node = this.settingsMap.get((long) uid);
 			if (node != null) {
 				if (node instanceof IntNode) {
 					IntNode settingValue = (IntNode) node;
@@ -403,10 +403,10 @@ public class ClanSettings {
 					settingValue.value = setting;
 					return true;
 				}
-				node.remove();
+				node.unlink();
 			}
 		}
-		this.settingsMap.pushNode(new IntNode(setting), (long) uid);
+		this.settingsMap.put(new IntNode(setting), (long) uid);
 		return true;
 	}
 
@@ -420,7 +420,7 @@ public class ClanSettings {
 		if (this.settingsMap == null) {
 			this.settingsMap = new HashTable(4);
 		} else {
-			Node node = this.settingsMap.getNode((long) uid);
+			Node node = this.settingsMap.get((long) uid);
 			if (node != null) {
 				if (node instanceof IntNode) {
 					IntNode settingValue = (IntNode) node;
@@ -431,10 +431,10 @@ public class ClanSettings {
 					settingValue.value |= var9;
 					return true;
 				}
-				node.remove();
+				node.unlink();
 			}
 		}
-		this.settingsMap.pushNode(new IntNode(var9), (long) uid);
+		this.settingsMap.put(new IntNode(var9), (long) uid);
 		return true;
 	}
 
@@ -443,7 +443,7 @@ public class ClanSettings {
 		if (this.settingsMap == null) {
 			this.settingsMap = new HashTable(4);
 		} else {
-			Node node = this.settingsMap.getNode((long) uid);
+			Node node = this.settingsMap.get((long) uid);
 			if (node != null) {
 				if (node instanceof LongNode) {
 					LongNode settingValue = (LongNode) node;
@@ -453,10 +453,10 @@ public class ClanSettings {
 					settingValue.value = setting;
 					return true;
 				}
-				node.remove();
+				node.unlink();
 			}
 		}
-		this.settingsMap.pushNode(new LongNode(setting), (long) uid);
+		this.settingsMap.put(new LongNode(setting), (long) uid);
 		return true;
 	}
 
@@ -470,7 +470,7 @@ public class ClanSettings {
 		if (this.settingsMap == null) {
 			this.settingsMap = new HashTable(4);
 		} else {
-			Node node = this.settingsMap.getNode((long) uid);
+			Node node = this.settingsMap.get((long) uid);
 			if (node != null) {
 				if (node instanceof ObjectNode) {
 					ObjectNode settingValue = (ObjectNode) node;
@@ -478,15 +478,15 @@ public class ClanSettings {
 						if (setting.equals(settingValue.value)) {
 							return false;
 						}
-						settingValue.remove();
-						this.settingsMap.pushNode(new ObjectNode(setting), settingValue.nodeId);
+						settingValue.unlink();
+						this.settingsMap.put(new ObjectNode(setting), settingValue.nodeId);
 						return true;
 					}
 				}
-				node.remove();
+				node.unlink();
 			}
 		}
-		this.settingsMap.pushNode(new ObjectNode(setting), (long) uid);
+		this.settingsMap.put(new ObjectNode(setting), (long) uid);
 		return true;
 	}
 
@@ -600,13 +600,13 @@ public class ClanSettings {
 			int type = setting >>> 30;
 			if (type == 0) {
 				int value = buf.g4s();
-				this.settingsMap.pushNode(new IntNode(value), (long) uid);
+				this.settingsMap.put(new IntNode(value), (long) uid);
 			} else if (type == 1) {
 				long value = buf.g8();
-				this.settingsMap.pushNode(new LongNode(value), (long) uid);
+				this.settingsMap.put(new LongNode(value), (long) uid);
 			} else if (type == 2) {
 				String value = buf.gjstr();
-				this.settingsMap.pushNode(new ObjectNode(value), (long) uid);
+				this.settingsMap.put(new ObjectNode(value), (long) uid);
 			}
 		}
 	}

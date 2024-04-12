@@ -5123,7 +5123,7 @@ public class ScriptRunner {
 	@ObfuscatedName("agj.ab(Lyf;I)V")
 	public static final void _switch(ClientScriptState arg0) {
 		HashTable var1 = arg0.script.switchTables[arg0.intOperands[arg0.pc]];
-		IntNode var2 = (IntNode) var1.getNode((long) arg0.intStack[--arg0.isp]);
+		IntNode var2 = (IntNode) var1.get((long) arg0.intStack[--arg0.isp]);
 		if (var2 != null) {
 			arg0.pc += var2.value;
 		}
@@ -9080,7 +9080,7 @@ public class ScriptRunner {
 			var2.component = arg0;
 			var2.onop = arg0.onresize;
 			var2.nestedCount = arg1.nestedCount + 1;
-			Client.hookRequests.pushBack(var2);
+			Client.hookRequests.addTail(var2);
 		}
 	}
 
@@ -9554,7 +9554,7 @@ public class ScriptRunner {
 	@ObfuscatedName("gz.ue(Lyf;B)V")
 	public static final void if_hassub(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.getNode((long) var1);
+		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.get((long) var1);
 		if (var2 == null) {
 			arg0.intStack[++arg0.isp - 1] = 0;
 		} else {
@@ -9584,7 +9584,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		SubInterface var3 = (SubInterface) Client.openedSubInterfaces.getNode((long) var1);
+		SubInterface var3 = (SubInterface) Client.openedSubInterfaces.get((long) var1);
 		if (var3 != null && var3.field11571 == var2) {
 			arg0.intStack[++arg0.isp - 1] = 1;
 		} else {
@@ -9726,7 +9726,7 @@ public class ScriptRunner {
 	public static final void if_closesubclient(ClientScriptState arg0) {
 		arg0.isp--;
 		int var1 = arg0.intStack[arg0.isp];
-		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.getNode((long) var1);
+		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.get((long) var1);
 		if (var2 != null && var2.field11570 == 3) {
 			Client.ifCloseSub(var2, true, true);
 		}
@@ -10322,7 +10322,7 @@ public class ScriptRunner {
 	public static final void npc_find_active_minimenu_entry(ClientScriptState arg0) {
 		MiniMenuEntry var1 = MiniMenu.getActiveMiniMenuEntry();
 		if (MiniMenu.getEntryEntityType(var1) == 4) {
-			ObjectNode var2 = (ObjectNode) Client.npcs.getNode(var1.method19370());
+			ObjectNode var2 = (ObjectNode) Client.npcs.get(var1.method19370());
 			if (var2 != null) {
 				arg0.activeEntity = (PathingEntity) var2.value;
 				arg0.intStack[++arg0.isp - 1] = 1;
@@ -13165,12 +13165,12 @@ public class ScriptRunner {
 		if (ClientWorldMap.field11668 == null) {
 			return;
 		}
-		Node var3 = ClientWorldMap.field11668.getNode((long) var1);
+		Node var3 = ClientWorldMap.field11668.get((long) var1);
 		if (var3 != null && !var2) {
-			var3.remove();
+			var3.unlink();
 		} else if (var3 == null && var2) {
 			Node var4 = new Node();
-			ClientWorldMap.field11668.pushNode(var4, (long) var1);
+			ClientWorldMap.field11668.put(var4, (long) var1);
 		}
 	}
 
@@ -13180,7 +13180,7 @@ public class ScriptRunner {
 		if (ClientWorldMap.field11668 == null) {
 			arg0.intStack[++arg0.isp - 1] = 0;
 		} else {
-			Node var2 = ClientWorldMap.field11668.getNode((long) var1);
+			Node var2 = ClientWorldMap.field11668.get((long) var1);
 			arg0.intStack[++arg0.isp - 1] = var2 == null ? 0 : 1;
 		}
 	}
@@ -13193,12 +13193,12 @@ public class ScriptRunner {
 		if (ClientWorldMap.field11667 == null) {
 			return;
 		}
-		Node var3 = ClientWorldMap.field11667.getNode((long) var1);
+		Node var3 = ClientWorldMap.field11667.get((long) var1);
 		if (var3 != null && !var2) {
-			var3.remove();
+			var3.unlink();
 		} else if (var3 == null && var2) {
 			Node var4 = new Node();
-			ClientWorldMap.field11667.pushNode(var4, (long) var1);
+			ClientWorldMap.field11667.put(var4, (long) var1);
 		}
 	}
 
@@ -13208,7 +13208,7 @@ public class ScriptRunner {
 		if (ClientWorldMap.field11667 == null) {
 			arg0.intStack[++arg0.isp - 1] = 0;
 		} else {
-			Node var2 = ClientWorldMap.field11667.getNode((long) var1);
+			Node var2 = ClientWorldMap.field11667.get((long) var1);
 			arg0.intStack[++arg0.isp - 1] = var2 == null ? 0 : 1;
 		}
 	}
@@ -15621,7 +15621,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("rp.awi(Lyf;I)V")
 	public static final void if_debug_getopenifcount(ClientScriptState arg0) {
-		int var1 = Client.openedSubInterfaces.length();
+		int var1 = Client.openedSubInterfaces.size();
 		if (Client.openedTopInterface != -1) {
 			var1++;
 		}
@@ -15638,9 +15638,9 @@ public class ScriptRunner {
 			}
 			var1--;
 		}
-		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.peekFront();
+		SubInterface var2 = (SubInterface) Client.openedSubInterfaces.head();
 		while (var1-- > 0) {
-			var2 = (SubInterface) Client.openedSubInterfaces.prev();
+			var2 = (SubInterface) Client.openedSubInterfaces.next();
 		}
 		arg0.intStack[++arg0.isp - 1] = var2.field11571;
 	}

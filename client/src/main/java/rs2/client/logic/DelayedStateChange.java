@@ -41,10 +41,10 @@ public class DelayedStateChange extends SecondaryNode {
 	@ObfuscatedName("jx.e(IJ)Lars;")
 	public static DelayedStateChange cache(int type, long target) {
 		lastPushNew = false;
-		DelayedStateChange change = (DelayedStateChange) cache.getNode((long) type << 56 | target);
+		DelayedStateChange change = (DelayedStateChange) cache.get((long) type << 56 | target);
 		if (change == null) {
 			change = new DelayedStateChange(type, target);
-			cache.pushNode(change, change.nodeId);
+			cache.put(change, change.nodeId);
 			lastPushNew = true;
 		}
 		return change;
@@ -61,7 +61,7 @@ public class DelayedStateChange extends SecondaryNode {
 	public static DelayedStateChange poll() {
 		DelayedStateChange serverChange = (DelayedStateChange) serverQueue.peekFront();
 		if (serverChange != null) {
-			serverChange.remove();
+			serverChange.unlink();
 			serverChange.secondaryRemove();
 			return serverChange;
 		}
@@ -74,7 +74,7 @@ public class DelayedStateChange extends SecondaryNode {
 			if (clientChange.getTime() > MonotonicTime.get()) {
 				return null;
 			}
-			clientChange.remove();
+			clientChange.unlink();
 			clientChange.secondaryRemove();
 		} while ((clientChange.secondaryNodeId & Long.MIN_VALUE) == 0L);
 		return clientChange;

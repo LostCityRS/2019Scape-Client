@@ -61,7 +61,7 @@ public class ChatHistory {
 			field2594.put(arg0, var9);
 		}
 		ChatLine var10 = var9.method4323(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8);
-		field2597.pushNode(var10, (long) var10.uid);
+		field2597.put(var10, (long) var10.uid);
 		field2596.pushBack(var10);
 		Client.lastOnChatTransmitRedrawCycle = Client.redrawCycle;
 	}
@@ -74,7 +74,7 @@ public class ChatHistory {
 
 	@ObfuscatedName("d.u(II)Lasg;")
 	public static ChatLine method304(int arg0) {
-		return (ChatLine) field2597.getNode((long) arg0);
+		return (ChatLine) field2597.get((long) arg0);
 	}
 
 	@ObfuscatedName("pg.z(II)I")
@@ -93,7 +93,7 @@ public class ChatHistory {
 
 	@ObfuscatedName("agj.d(II)I")
 	public static int previousUid(int arg0) {
-		ChatLine var1 = (ChatLine) field2597.getNode((long) arg0);
+		ChatLine var1 = (ChatLine) field2597.get((long) arg0);
 		if (var1 == null) {
 			return -1;
 		} else if (field2596.head == var1.secondaryNext) {
@@ -105,7 +105,7 @@ public class ChatHistory {
 
 	@ObfuscatedName("ko.c(II)I")
 	public static int nextUid(int arg0) {
-		ChatLine var1 = (ChatLine) field2597.getNode((long) arg0);
+		ChatLine var1 = (ChatLine) field2597.get((long) arg0);
 		if (var1 == null) {
 			return -1;
 		} else if (field2596.head == var1.secondaryPrev) {

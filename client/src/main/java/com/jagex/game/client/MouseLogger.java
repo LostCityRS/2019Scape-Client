@@ -1,6 +1,6 @@
 package com.jagex.game.client;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import rs2.client.Client;
@@ -11,7 +11,7 @@ import java.util.Iterator;
 public abstract class MouseLogger {
 
 	@ObfuscatedName("xb.e")
-	public final LinkedList field7955 = new LinkedList();
+	public final LinkList field7955 = new LinkList();
 
 	@ObfuscatedName("xb.n")
 	public long field7952 = -1L;
@@ -42,7 +42,7 @@ public abstract class MouseLogger {
 					if (var1 != null && var1.buf.pos - var2 >= 252 - (this.method10263() + 6)) {
 						break label102;
 					}
-					var6.remove();
+					var6.unlink();
 					int var7 = var6.getMouseClickY();
 					if (var7 < -1) {
 						var7 = -1;
@@ -136,7 +136,7 @@ public abstract class MouseLogger {
 
 	@ObfuscatedName("xb.m(Lakm;I)V")
 	public void method10261(MouseEvent arg0) {
-		this.field7955.pushBack(arg0);
+		this.field7955.addTail(arg0);
 	}
 
 	@ObfuscatedName("xb.k(Lakm;II)I")

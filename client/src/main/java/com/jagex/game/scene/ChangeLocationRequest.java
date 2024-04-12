@@ -1,6 +1,6 @@
 package com.jagex.game.scene;
 
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.game.client.ClientMapLoader;
 import com.jagex.game.world.entity.*;
@@ -59,10 +59,10 @@ public final class ChangeLocationRequest extends Node {
 	public boolean field11240 = false;
 
 	@ObfuscatedName("ajt.x")
-	public static LinkedList field11237 = new LinkedList();
+	public static LinkList field11237 = new LinkList();
 
 	@ObfuscatedName("ajt.b")
-	public static LinkedList field11242 = new LinkedList();
+	public static LinkList field11242 = new LinkList();
 
 	@ObfuscatedName("ajt.h")
 	public static long field11243 = 1L;
@@ -70,7 +70,7 @@ public final class ChangeLocationRequest extends Node {
 	@ObfuscatedName("jf.e(IIIIIIILoe;B)V")
 	public static void method4653(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
 		ChangeLocationRequest var8 = null;
-		for (ChangeLocationRequest var9 = (ChangeLocationRequest) field11237.peekFront(); var9 != null; var9 = (ChangeLocationRequest) field11237.prev()) {
+		for (ChangeLocationRequest var9 = (ChangeLocationRequest) field11237.head(); var9 != null; var9 = (ChangeLocationRequest) field11237.next()) {
 			if (var9.level == arg0 && var9.x == arg1 && var9.z == arg2 && var9.field11229 == arg3) {
 				var8 = var9;
 				break;
@@ -85,7 +85,7 @@ public final class ChangeLocationRequest extends Node {
 			if (arg1 >= 0 && arg2 >= 0 && arg1 < Client.world.getSizeX() && arg2 < Client.world.getSizeZ()) {
 				method9023(var8);
 			}
-			field11237.pushBack(var8);
+			field11237.addTail(var8);
 		}
 		var8.field11234 = arg4;
 		var8.field11236 = arg5;
@@ -100,7 +100,7 @@ public final class ChangeLocationRequest extends Node {
 	@ObfuscatedName("pa.n(IIIIIILvp;B)V")
 	public static void method6816(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, LocTypeCustomisation arg6) {
 		ChangeLocationRequest var7 = null;
-		for (ChangeLocationRequest var8 = (ChangeLocationRequest) field11242.peekFront(); var8 != null; var8 = (ChangeLocationRequest) field11242.prev()) {
+		for (ChangeLocationRequest var8 = (ChangeLocationRequest) field11242.head(); var8 != null; var8 = (ChangeLocationRequest) field11242.next()) {
 			if (var8.level == arg0 && var8.x == arg1 && var8.z == arg2 && var8.field11229 == arg3) {
 				var7 = var8;
 				break;
@@ -112,7 +112,7 @@ public final class ChangeLocationRequest extends Node {
 			var7.field11229 = arg3;
 			var7.x = arg1;
 			var7.z = arg2;
-			field11242.pushBack(var7);
+			field11242.addTail(var7);
 		}
 		var7.field11234 = arg4;
 		var7.field11236 = arg5;
@@ -123,9 +123,9 @@ public final class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("jx.m(B)V")
 	public static final void method5070() {
-		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.peekFront(); var0 != null; var0 = (ChangeLocationRequest) field11237.prev()) {
+		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.head(); var0 != null; var0 = (ChangeLocationRequest) field11237.next()) {
 			if (var0.field11240) {
-				var0.remove();
+				var0.unlink();
 			} else {
 				var0.field11239 = true;
 				if (var0.x >= 0 && var0.z >= 0 && var0.x < Client.world.getSizeX() && var0.z < Client.world.getSizeZ()) {
@@ -133,9 +133,9 @@ public final class ChangeLocationRequest extends Node {
 				}
 			}
 		}
-		for (ChangeLocationRequest var1 = (ChangeLocationRequest) field11242.peekFront(); var1 != null; var1 = (ChangeLocationRequest) field11242.prev()) {
+		for (ChangeLocationRequest var1 = (ChangeLocationRequest) field11242.head(); var1 != null; var1 = (ChangeLocationRequest) field11242.next()) {
 			if (var1.field11240) {
-				var1.remove();
+				var1.unlink();
 			} else {
 				var1.field11239 = true;
 			}
@@ -178,10 +178,10 @@ public final class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("gp.f(B)V")
 	public static final void updateLocs() {
-		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.peekFront(); var0 != null; var0 = (ChangeLocationRequest) field11237.prev()) {
+		for (ChangeLocationRequest var0 = (ChangeLocationRequest) field11237.head(); var0 != null; var0 = (ChangeLocationRequest) field11237.next()) {
 			method2834(var0, false);
 		}
-		for (ChangeLocationRequest var1 = (ChangeLocationRequest) field11242.peekFront(); var1 != null; var1 = (ChangeLocationRequest) field11242.prev()) {
+		for (ChangeLocationRequest var1 = (ChangeLocationRequest) field11242.head(); var1 != null; var1 = (ChangeLocationRequest) field11242.next()) {
 			method2834(var1, true);
 		}
 	}
@@ -195,7 +195,7 @@ public final class ChangeLocationRequest extends Node {
 				} else {
 					method15005(arg0.level, arg0.field11229, arg0.x, arg0.z, arg0.field11227, arg0.field11231, arg0.field11232, arg0.field11233, -1, 0);
 				}
-				arg0.remove();
+				arg0.unlink();
 			}
 		} else if (arg0.field11239 && arg0.x >= 1 && arg0.z >= 1 && arg0.x <= Client.world.getSizeX() - 2 && arg0.z <= Client.world.getSizeZ() - 2 && (arg0.field11234 < 0 || ClientMapLoader.method14705(Client.world.getLocTypeList(), arg0.field11234, arg0.field11236))) {
 			if (arg1) {
@@ -205,9 +205,9 @@ public final class ChangeLocationRequest extends Node {
 			}
 			arg0.field11239 = false;
 			if (!arg1 && arg0.field11234 == arg0.field11227 && arg0.field11227 == -1) {
-				arg0.remove();
+				arg0.unlink();
 			} else if (!arg1 && arg0.field11234 == arg0.field11227 && arg0.field11235 == arg0.field11231 && arg0.field11236 == arg0.field11232) {
-				arg0.remove();
+				arg0.unlink();
 			}
 		}
 	}

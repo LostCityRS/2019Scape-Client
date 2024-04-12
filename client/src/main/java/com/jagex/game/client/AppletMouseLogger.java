@@ -45,7 +45,7 @@ public class AppletMouseLogger extends MouseLogger {
 
 	@ObfuscatedName("alt.i(I)Lakm;")
 	public MouseEvent method18354() {
-		return (MouseEvent) Client.mouseEvents.peekFront();
+		return (MouseEvent) Client.mouseEvents.head();
 	}
 
 	@ObfuscatedName("alt.z(S)Lakl;")

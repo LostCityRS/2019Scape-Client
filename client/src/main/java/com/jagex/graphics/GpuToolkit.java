@@ -1,7 +1,7 @@
 package com.jagex.graphics;
 
 import com.jagex.core.datastruct.Heap;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.*;
@@ -68,7 +68,7 @@ public abstract class GpuToolkit extends Toolkit {
 	public NativeHeap field10154;
 
 	@ObfuscatedName("afc.bh")
-	public LinkedList field10051 = new LinkedList();
+	public LinkList field10051 = new LinkList();
 
 	@ObfuscatedName("afc.bx")
 	public int field10052;
@@ -922,7 +922,7 @@ public abstract class GpuToolkit extends Toolkit {
 		}
 		this.method15973();
 		this.field10188.method5644();
-		for (Node var1 = this.field10051.peekFront(); var1 != null; var1 = this.field10051.prev()) {
+		for (Node var1 = this.field10051.head(); var1 != null; var1 = this.field10051.next()) {
 			((GpuHeap) var1).method19240();
 		}
 		ColourUtils.method14805(false, true);
@@ -1197,7 +1197,7 @@ public abstract class GpuToolkit extends Toolkit {
 	@ObfuscatedName("afc.cp(I)Lakz;")
 	public final Heap createHeap(int arg0) {
 		GpuHeap var2 = new GpuHeap(arg0);
-		this.field10051.pushBack(var2);
+		this.field10051.addTail(var2);
 		return var2;
 	}
 

@@ -2,7 +2,7 @@ package com.jagex.game;
 
 import com.jagex.core.constants.ModeGame;
 import com.jagex.core.datastruct.HashTable;
-import com.jagex.core.datastruct.LinkedList;
+import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.IterableQueueIterator;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.*;
@@ -115,7 +115,7 @@ public class ClientWorldMap extends WorldMap {
 	public static boolean field11671 = false;
 
 	@ObfuscatedName("ajw.ck")
-	public static LinkedList field11253;
+	public static LinkList field11253;
 
 	@ObfuscatedName("alj.cj")
 	public static boolean disableElements = false;
@@ -127,7 +127,7 @@ public class ClientWorldMap extends WorldMap {
 	public static HashTable field11668 = new HashTable(8);
 
 	@ObfuscatedName("alj.dr")
-	public static IterableQueueIterator field11669 = new IterableQueueIterator(new LinkedList());
+	public static IterableQueueIterator field11669 = new IterableQueueIterator(new LinkList());
 
 	@ObfuscatedName("alj.da")
 	public static boolean field11670 = false;
@@ -233,7 +233,7 @@ public class ClientWorldMap extends WorldMap {
 			WorldMap.field6799 = WorldMapTileShapes.method18477(WorldMap.field6840);
 			method4643();
 			method8619();
-			field11253 = new LinkedList();
+			field11253 = new LinkList();
 			field6797 += (int) (Math.random() * 5.0D) - 2;
 			if (field6797 < -8) {
 				field6797 = -8;
@@ -409,7 +409,7 @@ public class ClientWorldMap extends WorldMap {
 		field6833 = field6831;
 		method8620(WorldMap.field6786 + var8, WorldMap.field6808 + var9, WorldMap.field6786 + var10, WorldMap.field6808 + var11, arg1, arg2, arg1 + arg3, arg2 + arg4 + 1);
 		method8523(arg0, !field11655, !field11652, Client.loggedInMembers, false);
-		LinkedList var12 = method8602(arg0);
+		LinkList var12 = method8602(arg0);
 		method928(arg0, var12, 0, 0);
 		if (Client.field10794) {
 			int var13 = arg1 + arg3 - 5;
@@ -429,12 +429,12 @@ public class ClientWorldMap extends WorldMap {
 	}
 
 	@ObfuscatedName("aq.dx(Ldh;Laat;IIB)V")
-	public static void method928(Toolkit arg0, LinkedList arg1, int arg2, int arg3) {
+	public static void method928(Toolkit arg0, LinkList arg1, int arg2, int arg3) {
 		field11253.removeAll();
 		if (disableElements) {
 			return;
 		}
-		for (WorldMapElement var4 = (WorldMapElement) arg1.peekFront(); var4 != null; var4 = (WorldMapElement) arg1.prev()) {
+		for (WorldMapElement var4 = (WorldMapElement) arg1.head(); var4 != null; var4 = (WorldMapElement) arg1.next()) {
 			MapElementType var5 = (MapElementType) WorldMap.field6788.list(var4.field11446);
 			if (method18887(var5)) {
 				boolean var6 = method3589(arg0, var4, var5, arg2, arg3);
@@ -460,9 +460,9 @@ public class ClientWorldMap extends WorldMap {
 			return false;
 		} else if (!arg0.method4030(field6791, field6790)) {
 			return false;
-		} else if (field11667.getNode((long) arg0.field2367) != null) {
+		} else if (field11667.get((long) arg0.field2367) != null) {
 			return false;
-		} else if (field11668.getNode((long) arg0.category) == null) {
+		} else if (field11668.get((long) arg0.category) == null) {
 			if (arg0.text != null) {
 				if (arg0.textSize == 0 && field11670) {
 					return false;
@@ -704,7 +704,7 @@ public class ClientWorldMap extends WorldMap {
 			var37.field11247 = var19;
 			var37.field11250 = var20;
 			var37.field11245 = var21;
-			field11253.pushBack(var37);
+			field11253.addTail(var37);
 		}
 		return false;
 	}
@@ -775,7 +775,7 @@ public class ClientWorldMap extends WorldMap {
 		var17.field11247 = var15;
 		var17.field11250 = var14;
 		var17.field11245 = var16;
-		field11253.pushBack(var17);
+		field11253.addTail(var17);
 	}
 
 	@ObfuscatedName("ey.eo(II)V")
@@ -860,7 +860,7 @@ public class ClientWorldMap extends WorldMap {
 		}
 		arg0.fillRectangle(var12, var13, var10, var11, var14, 1);
 		arg0.drawRectangle(var12, var13, var10, var11, var14, 0);
-		for (WorldMapElement var15 = (WorldMapElement) field6806.peekFront(); var15 != null; var15 = (WorldMapElement) field6806.prev()) {
+		for (WorldMapElement var15 = (WorldMapElement) field6806.head(); var15 != null; var15 = (WorldMapElement) field6806.next()) {
 			MapElementType var16 = (MapElementType) field6788.list(var15.field11446);
 			if (method18887(var16)) {
 				WorldMapFlash var17 = (WorldMapFlash) field11661.get(var15.field11446);
@@ -932,7 +932,7 @@ public class ClientWorldMap extends WorldMap {
 								do {
 									if (!var6.hasNext()) {
 										if (field11663 && field11253 != null) {
-											for (MapElementContainer var8 = (MapElementContainer) field11253.peekFront(); var8 != null; var8 = (MapElementContainer) field11253.prev()) {
+											for (MapElementContainer var8 = (MapElementContainer) field11253.head(); var8 != null; var8 = (MapElementContainer) field11253.next()) {
 												MapElementType var9 = (MapElementType) WorldMap.field6788.list(var8.field11252.field11446);
 												if (var8.method17518(arg0, arg1)) {
 													if (var9.field2381 != null) {
@@ -1179,7 +1179,7 @@ public class ClientWorldMap extends WorldMap {
 		int var4 = Integer.MAX_VALUE;
 		int var5 = arg1 - WorldMap.field6786;
 		int var6 = arg2 - WorldMap.field6808;
-		for (WorldMapElement var7 = (WorldMapElement) field6806.peekFront(); var7 != null; var7 = (WorldMapElement) field6806.prev()) {
+		for (WorldMapElement var7 = (WorldMapElement) field6806.head(); var7 != null; var7 = (WorldMapElement) field6806.next()) {
 			if (var7.field11446 == arg0) {
 				int var8 = var7.field11448;
 				int var9 = var7.field11452;

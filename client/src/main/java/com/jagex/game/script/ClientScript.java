@@ -97,7 +97,7 @@ public class ClientScript extends SecondaryNode {
 				while (count-- > 0) {
 					int key = buf.g4s();
 					int offset = buf.g4s();
-					var8.pushNode(new IntNode(offset), (long) key);
+					var8.put(new IntNode(offset), (long) key);
 				}
 			}
 		}
