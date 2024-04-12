@@ -2337,7 +2337,7 @@ public class MiniMenu {
 		MiniMap.flagSceneTileX = arg0;
 		MiniMap.flagSceneTileZ = arg1;
 		MiniMap.mapFlag = false;
-		DelayedStateChange.method14036();
+		DelayedStateChange.onClientSetMapFlag();
 		return var3;
 	}
 

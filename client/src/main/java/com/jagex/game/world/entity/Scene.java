@@ -353,8 +353,8 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.z(ILcb;I)V")
-	public void method8709(int arg0, FloorModel arg1) {
-		this.levelHeightmaps[arg0] = arg1;
+	public void setLevelHeightmap(int level, FloorModel floor) {
+		this.levelHeightmaps[level] = floor;
 	}
 
 	@ObfuscatedName("tx.p(III)I")

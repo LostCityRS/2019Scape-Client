@@ -509,7 +509,7 @@ public class MapLoader {
 
 	@ObfuscatedName("qg.z(Ldh;[[[II)V")
 	public void method7144(Toolkit arg0, int[][][] arg1) {
-		for (int var3 = 0; var3 < this.levels; var3++) {
+		for (int level = 0; level < this.levels; level++) {
 			int var4 = 0;
 			int var5 = 0;
 			if (!this.underwater) {
@@ -530,8 +530,8 @@ public class MapLoader {
 			if (!this.isTexturing) {
 				var5 |= 0x20;
 			}
-			int[][] var6 = arg1 == null || var3 >= arg1.length ? this.levelHeightmap[var3] : arg1[var3];
-			this.scene.method8709(var3, arg0.createFloor(this.maxTileX, this.maxTileZ, this.levelHeightmap[var3], var6, 512, var4, var5));
+			int[][] var6 = arg1 == null || level >= arg1.length ? this.levelHeightmap[level] : arg1[level];
+			this.scene.setLevelHeightmap(level, arg0.createFloor(this.maxTileX, this.maxTileZ, this.levelHeightmap[level], var6, 512, var4, var5));
 		}
 	}
 

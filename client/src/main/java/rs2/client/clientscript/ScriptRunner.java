@@ -5401,7 +5401,7 @@ public class ScriptRunner {
 			Client.method8329(arg1, arg0, false);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method16433(arg0.parentlayer);
+			DelayedStateChange.onClientSetPosition(arg0.parentlayer);
 		}
 	}
 
@@ -5473,7 +5473,7 @@ public class ScriptRunner {
 			Client.requestRedrawComponent(arg0);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method10340(arg0.parentlayer);
+			DelayedStateChange.onClientSetHide(arg0.parentlayer);
 		}
 	}
 
@@ -5561,7 +5561,7 @@ public class ScriptRunner {
 		}
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method1588(arg0.parentlayer);
+			DelayedStateChange.onClientSetScrollPos(arg0.parentlayer);
 		}
 	}
 
@@ -5586,7 +5586,7 @@ public class ScriptRunner {
 		arg0.colour = arg2.intStack[--arg2.isp];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method14870(arg0.parentlayer);
+			DelayedStateChange.onClientSetColour(arg0.parentlayer);
 		}
 	}
 
@@ -5681,7 +5681,7 @@ public class ScriptRunner {
 			Client.requestRedrawComponent(arg0);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method7714(arg0.parentlayer);
+			DelayedStateChange.onClientSetGraphic(arg0.parentlayer);
 		}
 	}
 
@@ -5751,7 +5751,7 @@ public class ScriptRunner {
 		arg0.model = arg2.intStack[--arg2.isp];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.parentlayer);
+			DelayedStateChange.onClientSetModel(arg0.parentlayer);
 		}
 	}
 
@@ -5782,8 +5782,8 @@ public class ScriptRunner {
 		arg0.modelzoom = arg2.intStack[arg2.isp + 5];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method2886(arg0.parentlayer);
-			DelayedStateChange.method14792(arg0.parentlayer);
+			DelayedStateChange.onClientSetModelZoom(arg0.parentlayer);
+			DelayedStateChange.onClientSetModelAngle(arg0.parentlayer);
 		}
 	}
 
@@ -5819,7 +5819,7 @@ public class ScriptRunner {
 			Client.requestRedrawComponent(arg0);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method10523(arg0.parentlayer);
+			DelayedStateChange.onClientSetModelAnim(arg0.parentlayer);
 		}
 	}
 
@@ -5951,7 +5951,7 @@ public class ScriptRunner {
 			Client.requestRedrawComponent(arg0);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method16464(arg0.parentlayer);
+			DelayedStateChange.onClientSetText(arg0.parentlayer);
 		}
 	}
 
@@ -5976,7 +5976,7 @@ public class ScriptRunner {
 		arg0.textfont = arg2.intStack[--arg2.isp];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method7247(arg0.parentlayer);
+			DelayedStateChange.onClientSetTextFont(arg0.parentlayer);
 		}
 	}
 
@@ -6048,7 +6048,7 @@ public class ScriptRunner {
 		arg0.textantimacro = arg2.intStack[--arg2.isp] == 1;
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method9793(arg0.parentlayer);
+			DelayedStateChange.onClientSetTextAntimacro(arg0.parentlayer);
 		}
 	}
 
@@ -6210,7 +6210,7 @@ public class ScriptRunner {
 		arg0.modelzoom = arg2.intStack[--arg2.isp];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method2886(arg0.parentlayer);
+			DelayedStateChange.onClientSetModelZoom(arg0.parentlayer);
 		}
 	}
 
@@ -6368,7 +6368,7 @@ public class ScriptRunner {
 		arg0.setrecol(var3, var4, var5);
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method14614(arg0.parentlayer, var3);
+			DelayedStateChange.onClientSetRecol(arg0.parentlayer, var3);
 		}
 	}
 
@@ -6400,7 +6400,7 @@ public class ScriptRunner {
 		arg0.setretex(var3, var4, var5);
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method2051(arg0.parentlayer, var3);
+			DelayedStateChange.onClientSetRetex(arg0.parentlayer, var3);
 		}
 	}
 
@@ -6425,7 +6425,7 @@ public class ScriptRunner {
 		arg0.fontmono = arg2.intStack[--arg2.isp] == 1;
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method18682(arg0.parentlayer);
+			DelayedStateChange.onClientSetFontMono(arg0.parentlayer);
 		}
 	}
 
@@ -6465,7 +6465,7 @@ public class ScriptRunner {
 		arg0.clickmask = arg2.intStack[--arg2.isp] == 1;
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method3026(arg0.parentlayer);
+			DelayedStateChange.onClientSetClickMask(arg0.parentlayer);
 		}
 	}
 
@@ -6513,7 +6513,7 @@ public class ScriptRunner {
 		arg0.customisation = null;
 		arg0.model = arg2.intStack[--arg2.isp];
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.parentlayer);
+			DelayedStateChange.onClientSetModel(arg0.parentlayer);
 		}
 	}
 
@@ -6539,7 +6539,7 @@ public class ScriptRunner {
 		arg0.model = Client.currentPlayerUid;
 		arg0.field2298 = 0;
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.parentlayer);
+			DelayedStateChange.onClientSetModel(arg0.parentlayer);
 		}
 	}
 
@@ -6565,9 +6565,9 @@ public class ScriptRunner {
 		int var5 = arg4.intStack[arg4.isp];
 		int var6 = arg4.intStack[arg4.isp + 1];
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method6798(arg0.parentlayer);
-			DelayedStateChange.method2886(arg0.parentlayer);
-			DelayedStateChange.method14792(arg0.parentlayer);
+			DelayedStateChange.onClientSetObjectData(arg0.parentlayer);
+			DelayedStateChange.onClientSetModelZoom(arg0.parentlayer);
+			DelayedStateChange.onClientSetModelAngle(arg0.parentlayer);
 		}
 		if (var5 == -1) {
 			arg0.modelkind = 1;
@@ -6695,7 +6695,7 @@ public class ScriptRunner {
 		arg0.customisation = null;
 		arg0.model = arg2.intStack[--arg2.isp];
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.parentlayer);
+			DelayedStateChange.onClientSetModel(arg0.parentlayer);
 		}
 	}
 
@@ -6720,7 +6720,7 @@ public class ScriptRunner {
 		arg0.modelkind = 5;
 		arg0.model = arg2.intStack[--arg2.isp];
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.parentlayer);
+			DelayedStateChange.onClientSetModel(arg0.parentlayer);
 		}
 	}
 
@@ -6866,7 +6866,7 @@ public class ScriptRunner {
 		arg0.model = Client.currentPlayerUid;
 		arg0.field2298 = 0;
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.method19198(arg0.parentlayer);
+			DelayedStateChange.onClientSetModel(arg0.parentlayer);
 		}
 	}
 

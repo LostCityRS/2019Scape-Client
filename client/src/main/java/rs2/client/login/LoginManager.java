@@ -1162,7 +1162,7 @@ public class LoginManager {
 			Client.localPlayerGameState.stats[var0] = var1;
 		}
 		Client.localPlayerGameState.varps.method9624();
-		DelayedStateChange.method716();
+		DelayedStateChange.removeAll();
 		Client.notifyWindowStatus(connection);
 	}
 

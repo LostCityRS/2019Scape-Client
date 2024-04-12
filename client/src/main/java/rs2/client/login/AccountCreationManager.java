@@ -282,7 +282,7 @@ public class AccountCreationManager {
 					Client.lobbyConnection.lastPacketType2 = null;
 					Client.lobbyConnection.idleNetCycles = 0;
 					Client.localPlayerGameState.varps.method9624();
-					DelayedStateChange.method716();
+					DelayedStateChange.removeAll();
 				} else {
 					Client.lobbyConnection.closeGracefully();
 				}
