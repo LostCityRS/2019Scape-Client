@@ -467,7 +467,7 @@ public class MiniMenu {
 				}
 				if (var13 != -1) {
 					int var17 = 0;
-					IterableQueueIterator var18 = new IterableQueueIterator(field542);
+					LinkListIterator var18 = new LinkListIterator(field542);
 					for (MiniMenuEntry var19 = (MiniMenuEntry) var18.nextNode(); var19 != null; var19 = (MiniMenuEntry) var18.next()) {
 						if (var13 == var17) {
 							useMenuOption(var19, var4, var5, true);
@@ -1266,7 +1266,7 @@ public class MiniMenu {
 					}
 					if (var3 != -1) {
 						int var7 = 0;
-						IterableQueueIterator var8 = new IterableQueueIterator(field542);
+						LinkListIterator var8 = new LinkListIterator(field542);
 						for (MiniMenuEntry var9 = (MiniMenuEntry) var8.nextNode(); var9 != null; var9 = (MiniMenuEntry) var8.next()) {
 							if (var7++ == var3) {
 								return var9.field12298;

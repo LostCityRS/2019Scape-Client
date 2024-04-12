@@ -5,7 +5,7 @@ import deob.ObfuscatedName;
 import java.util.Iterator;
 
 @ObfuscatedName("aar")
-public class IterableQueueIterator implements Iterator {
+public class LinkListIterator implements Iterator {
 
 	@ObfuscatedName("aar.e")
 	public LinkList queue;
@@ -16,7 +16,7 @@ public class IterableQueueIterator implements Iterator {
 	@ObfuscatedName("aar.m")
 	public Node prev = null;
 
-	public IterableQueueIterator(LinkList queue) {
+	public LinkListIterator(LinkList queue) {
 		this.set(queue);
 	}
 

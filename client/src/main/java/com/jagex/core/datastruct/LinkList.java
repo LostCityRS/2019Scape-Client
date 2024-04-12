@@ -172,7 +172,7 @@ public class LinkList implements Iterable, Collection {
 	}
 
 	public Iterator iterator() {
-		return new IterableQueueIterator(this);
+		return new LinkListIterator(this);
 	}
 
 	public int size() {

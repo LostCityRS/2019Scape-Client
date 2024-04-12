@@ -3,7 +3,7 @@ package com.jagex.game;
 import com.jagex.core.constants.ModeGame;
 import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.LinkList;
-import com.jagex.core.datastruct.IterableQueueIterator;
+import com.jagex.core.datastruct.LinkListIterator;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.*;
 import com.jagex.game.config.iftype.Component;
@@ -127,7 +127,7 @@ public class ClientWorldMap extends WorldMap {
 	public static HashTable field11668 = new HashTable(8);
 
 	@ObfuscatedName("alj.dr")
-	public static IterableQueueIterator field11669 = new IterableQueueIterator(new LinkList());
+	public static LinkListIterator field11669 = new LinkListIterator(new LinkList());
 
 	@ObfuscatedName("alj.da")
 	public static boolean field11670 = false;
