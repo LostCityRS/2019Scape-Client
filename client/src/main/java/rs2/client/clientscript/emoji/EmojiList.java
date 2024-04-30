@@ -12,7 +12,7 @@ public class EmojiList {
 	public boolean autochat = false;
 
 	@ObfuscatedName("io.m")
-	public LinkedList field2604 = new LinkedList();
+	public LinkedList emojis = new LinkedList();
 
 	@ObfuscatedName("io.k")
 	public String field2602;
@@ -28,8 +28,8 @@ public class EmojiList {
 	}
 
 	@ObfuscatedName("io.m(I)I")
-	public int method4353() {
-		return this.field2604.size();
+	public int getSize() {
+		return this.emojis.size();
 	}
 
 	@ObfuscatedName("alv.k(CB)Z")
@@ -44,32 +44,32 @@ public class EmojiList {
 		}
 		Emoji var4 = this.method4361(arg0);
 		if (var4 != null) {
-			this.field2604.remove(var4);
+			this.emojis.remove(var4);
 		}
-		this.field2604.add(new Emoji(arg0, arg1, arg2));
+		this.emojis.add(new Emoji(arg0, arg1, arg2));
 		this.method4346();
 		return true;
 	}
 
 	@ObfuscatedName("io.w(Ljava/lang/String;I)Liq;")
 	public final Emoji method4361(String arg0) {
-		Iterator var2 = this.field2604.iterator();
+		Iterator var2 = this.emojis.iterator();
 		Emoji var3;
 		do {
 			if (!var2.hasNext()) {
 				return null;
 			}
 			var3 = (Emoji) var2.next();
-		} while (!var3.field2607.equals(arg0));
+		} while (!var3.name.equals(arg0));
 		return var3;
 	}
 
 	@ObfuscatedName("io.l(Ljava/lang/String;I)V")
 	public final void remove(String arg0) {
-		Iterator var2 = this.field2604.iterator();
+		Iterator var2 = this.emojis.iterator();
 		while (var2.hasNext()) {
 			Emoji var3 = (Emoji) var2.next();
-			if (var3.field2607.equals(arg0)) {
+			if (var3.name.equals(arg0)) {
 				var2.remove();
 				break;
 			}
@@ -78,13 +78,13 @@ public class EmojiList {
 
 	@ObfuscatedName("io.u(I)V")
 	public final void removeAll() {
-		this.field2604.clear();
+		this.emojis.clear();
 		this.field2602 = "";
 	}
 
 	@ObfuscatedName("io.z(Ljava/lang/String;I)Ljava/lang/String;")
 	public final String substitute(String arg0) {
-		if (this.field2604.isEmpty()) {
+		if (this.emojis.isEmpty()) {
 			return arg0;
 		}
 		StringBuilder var2 = new StringBuilder(arg0.length());
@@ -100,15 +100,15 @@ public class EmojiList {
 			} else if (var7 == '<') {
 				var4 = true;
 			} else if (this.field2602.indexOf(var7) != -1) {
-				for (int var8 = 0; var8 < this.field2604.size(); var8++) {
-					Emoji var9 = (Emoji) this.field2604.get(var8);
-					int var10 = var9.field2607.length();
-					if (var5 <= var3 - var10 && arg0.substring(var5, var5 + var10).equals(var9.field2607)) {
+				for (int var8 = 0; var8 < this.emojis.size(); var8++) {
+					Emoji var9 = (Emoji) this.emojis.get(var8);
+					int var10 = var9.name.length();
+					if (var5 <= var3 - var10 && arg0.substring(var5, var5 + var10).equals(var9.name)) {
 						String var11;
-						if (var9.field2609 > 0) {
-							var11 = String.format("<sprite=%d,%d>", var9.field2608, var9.field2609);
+						if (var9.spriteFile > 0) {
+							var11 = String.format("<sprite=%d,%d>", var9.spriteGroup, var9.spriteFile);
 						} else {
-							var11 = String.format("<sprite=%d>", var9.field2608);
+							var11 = String.format("<sprite=%d>", var9.spriteGroup);
 						}
 						var2.append(var11);
 						var6 = true;
@@ -127,9 +127,9 @@ public class EmojiList {
 	@ObfuscatedName("io.p(I)V")
 	public final void method4346() {
 		this.field2602 = "";
-		for (int var1 = 0; var1 < this.field2604.size(); var1++) {
-			Emoji var2 = (Emoji) this.field2604.get(var1);
-			char var3 = var2.field2607.charAt(0);
+		for (int var1 = 0; var1 < this.emojis.size(); var1++) {
+			Emoji var2 = (Emoji) this.emojis.get(var1);
+			char var3 = var2.name.charAt(0);
 			if (this.field2602.indexOf(var3) < 0) {
 				this.field2602 = this.field2602 + var3;
 			}

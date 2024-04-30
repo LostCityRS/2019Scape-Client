@@ -6,17 +6,17 @@ import deob.ObfuscatedName;
 public class Emoji {
 
 	@ObfuscatedName("iq.e")
-	public final String field2607;
+	public final String name;
 
 	@ObfuscatedName("iq.n")
-	public final int field2608;
+	public final int spriteGroup;
 
 	@ObfuscatedName("iq.m")
-	public final int field2609;
+	public final int spriteFile;
 
 	public Emoji(String arg0, int arg1, int arg2) {
-		this.field2607 = arg0;
-		this.field2608 = arg1;
-		this.field2609 = arg2;
+		this.name = arg0;
+		this.spriteGroup = arg1;
+		this.spriteFile = arg2;
 	}
 }

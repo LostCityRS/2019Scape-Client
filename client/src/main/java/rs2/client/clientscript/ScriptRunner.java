@@ -17022,7 +17022,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("fu.ben(Lyf;I)V")
 	public static final void emoji_substitute(ClientScriptState arg0) {
-		if (Client.emojiList.method4353() > 0) {
+		if (Client.emojiList.getSize() > 0) {
 			String var1 = (String) arg0.objectStack[--arg0.osp];
 			String var2 = Client.emojiList.substitute(var1);
 			arg0.objectStack[++arg0.osp - 1] = var2;
