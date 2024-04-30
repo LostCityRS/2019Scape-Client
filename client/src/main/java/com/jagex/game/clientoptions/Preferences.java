@@ -38,10 +38,10 @@ public class Preferences {
 		ClientOptions var1 = new ClientOptions(Client.modegame, 0);
 		try {
 			var0 = GameShell.openPrefs("", Client.modegame.titleURL, false);
-			byte[] var2 = new byte[(int) var0.method14821()];
+			byte[] var2 = new byte[(int) var0.length()];
 			int var4;
 			for (int var3 = 0; var3 < var2.length; var3 += var4) {
-				var4 = var0.method14812(var2, var3, var2.length - var3);
+				var4 = var0.read(var2, var3, var2.length - var3);
 				if (var4 == -1) {
 					throw new IOException();
 				}
@@ -51,7 +51,7 @@ public class Preferences {
 		}
 		try {
 			if (var0 != null) {
-				var0.method14818();
+				var0.close();
 			}
 		} catch (Exception var7) {
 		}
@@ -64,12 +64,12 @@ public class Preferences {
 		try {
 			var0 = GameShell.openPrefs("", Client.modegame.titleURL, true);
 			Packet var1 = Client.preferences.createPreferencesBlock();
-			var0.method14808(var1.data, 0, var1.pos);
+			var0.write(var1.data, 0, var1.pos);
 		} catch (Exception var5) {
 		}
 		try {
 			if (var0 != null) {
-				var0.method14818();
+				var0.close();
 			}
 		} catch (Exception var4) {
 		}

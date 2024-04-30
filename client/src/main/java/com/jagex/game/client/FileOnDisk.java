@@ -8,13 +8,13 @@ import java.io.*;
 public final class FileOnDisk {
 
 	@ObfuscatedName("abl.e")
-	public RandomAccessFile field8761;
+	public RandomAccessFile file;
 
 	@ObfuscatedName("abl.n")
-	public final long field8762;
+	public final long maxLength;
 
 	@ObfuscatedName("abl.m")
-	public long field8760;
+	public long pos;
 
 	public FileOnDisk(File arg0, String arg1, long arg2) throws IOException {
 		if (arg2 == -1L) {
@@ -23,73 +23,74 @@ public final class FileOnDisk {
 		if (arg0.length() > arg2) {
 			arg0.delete();
 		}
-		this.field8761 = new RandomAccessFile(arg0, arg1);
-		this.field8762 = arg2;
-		this.field8760 = 0L;
-		int var5 = this.field8761.read();
+		this.file = new RandomAccessFile(arg0, arg1);
+		this.maxLength = arg2;
+		this.pos = 0L;
+		int var5 = this.file.read();
 		if (var5 != -1 && !arg1.equals("r")) {
-			this.field8761.seek(0L);
-			this.field8761.write(var5);
+			this.file.seek(0L);
+			this.file.write(var5);
 		}
-		this.field8761.seek(0L);
+		this.file.seek(0L);
 	}
 
 	@ObfuscatedName("abl.e(J)V")
-	public final void method14809(long arg0) throws IOException {
-		this.field8761.seek(arg0);
-		this.field8760 = arg0;
+	public final void seek(long arg0) throws IOException {
+		this.file.seek(arg0);
+		this.pos = arg0;
 	}
 
 	@ObfuscatedName("abl.n([BIII)V")
-	public final void method14808(byte[] arg0, int arg1, int arg2) throws IOException {
-		if (this.field8760 + (long) arg2 > this.field8762) {
-			this.field8761.seek(this.field8762);
-			this.field8761.write(1);
+	public final void write(byte[] arg0, int arg1, int arg2) throws IOException {
+		if (this.pos + (long) arg2 > this.maxLength) {
+			this.file.seek(this.maxLength);
+			this.file.write(1);
 			throw new EOFException();
 		} else {
-			this.field8761.write(arg0, arg1, arg2);
-			this.field8760 += arg2;
+			this.file.write(arg0, arg1, arg2);
+			this.pos += arg2;
 		}
 	}
 
 	@ObfuscatedName("abl.m(I)V")
-	public final void method14818() throws IOException {
-		this.method14810(false);
+	public final void close() throws IOException {
+		this.close(false);
 	}
 
 	@ObfuscatedName("abl.k(ZI)V")
-	public final void method14810(boolean arg0) throws IOException {
-		if (this.field8761 == null) {
+	public final void close(boolean flush) throws IOException {
+		if (this.file == null) {
 			return;
 		}
-		if (arg0) {
+		if (flush) {
 			try {
-				this.field8761.getFD().sync();
+				this.file.getFD().sync();
 			} catch (SyncFailedException var3) {
 			}
 		}
-		this.field8761.close();
-		this.field8761 = null;
+		this.file.close();
+		this.file = null;
 	}
 
 	@ObfuscatedName("abl.f(I)J")
-	public final long method14821() throws IOException {
-		return this.field8761.length();
+	public final long length() throws IOException {
+		return this.file.length();
 	}
 
 	@ObfuscatedName("abl.w([BIIB)I")
-	public final int method14812(byte[] arg0, int arg1, int arg2) throws IOException {
-		int var4 = this.field8761.read(arg0, arg1, arg2);
+	public final int read(byte[] arg0, int arg1, int arg2) throws IOException {
+		int var4 = this.file.read(arg0, arg1, arg2);
 		if (var4 > 0) {
-			this.field8760 += var4;
+			this.pos += var4;
 		}
 		return var4;
 	}
 
 	public void finalize() throws Throwable {
-		if (this.field8761 != null) {
-			System.out.println("");
-			this.method14818();
+		if (this.file != null) {
+			// string taken from rev 550
+			System.out.println("Warning! fileondisk " + this.file + " not closed correctly using close(). Auto-closing instead. ");
+			this.close();
 		}
 	}
 }

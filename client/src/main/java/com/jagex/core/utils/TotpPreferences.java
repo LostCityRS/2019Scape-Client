@@ -75,10 +75,10 @@ public class TotpPreferences {
 		TotpPreferences var7;
 		try {
 			var0 = GameShell.openPrefs("3", Client.modegame.titleURL, false);
-			byte[] var1 = new byte[(int) var0.method14821()];
+			byte[] var1 = new byte[(int) var0.length()];
 			int var3;
 			for (int var2 = 0; var2 < var1.length; var2 += var3) {
-				var3 = var0.method14812(var1, var2, var1.length - var2);
+				var3 = var0.read(var1, var2, var1.length - var2);
 				if (var3 == -1) {
 					throw new EOFException();
 				}
@@ -90,7 +90,7 @@ public class TotpPreferences {
 		} finally {
 			try {
 				if (var0 != null) {
-					var0.method14818();
+					var0.close();
 				}
 			} catch (Exception var16) {
 			}
@@ -105,12 +105,12 @@ public class TotpPreferences {
 			var1 = GameShell.openPrefs("3", Client.modegame.titleURL, true);
 			Packet var2 = new Packet(5000);
 			this.method580(var2);
-			var1.method14808(var2.data, 0, var2.pos);
+			var1.write(var2.data, 0, var2.pos);
 		} catch (Exception var14) {
 		} finally {
 			try {
 				if (var1 != null) {
-					var1.method14818();
+					var1.close();
 				}
 			} catch (Exception var13) {
 			}

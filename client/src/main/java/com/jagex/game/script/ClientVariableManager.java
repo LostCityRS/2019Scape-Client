@@ -121,10 +121,10 @@ public final class ClientVariableManager extends SparseVarDomain {
 	@ObfuscatedName("afu.t(Labl;B)V")
 	public void method16420(FileOnDisk arg0) {
 		try {
-			byte[] var2 = new byte[(int) arg0.method14821()];
+			byte[] var2 = new byte[(int) arg0.length()];
 			int var4;
 			for (int var3 = 0; var3 < var2.length; var3 += var4) {
-				var4 = arg0.method14812(var2, var3, var2.length - var3);
+				var4 = arg0.read(var2, var3, var2.length - var3);
 				if (var4 == -1) {
 					throw new EOFException();
 				}
@@ -154,7 +154,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 			return;
 		} finally {
 			try {
-				arg0.method14818();
+				arg0.close();
 			} catch (Exception var28) {
 			}
 		}
@@ -183,11 +183,11 @@ public final class ClientVariableManager extends SparseVarDomain {
 					Client.varBasicTypeList.encodeVarValue(var6, var8);
 				}
 			}
-			arg0.method14808(var6.data, 0, var6.pos);
+			arg0.write(var6.data, 0, var6.pos);
 		} catch (Exception var20) {
 		} finally {
 			try {
-				arg0.method14818();
+				arg0.close();
 			} catch (Exception var19) {
 			}
 		}

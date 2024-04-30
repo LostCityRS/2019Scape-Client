@@ -343,9 +343,9 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		if (cacheLocator.exists()) {
 			try {
 				FileOnDisk var8 = new FileOnDisk(cacheLocator, "rw", 10000L);
-				Packet var9 = new Packet((int) var8.method14821());
+				Packet var9 = new Packet((int) var8.length());
 				while (var9.pos < var9.data.length) {
-					int var10 = var8.method14812(var9.data, var9.pos, var9.data.length - var9.pos);
+					int var10 = var8.read(var9.data, var9.pos, var9.data.length - var9.pos);
 					if (var10 == -1) {
 						throw new IOException();
 					}
@@ -371,7 +371,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 						var6 = var9.gUTF8();
 					}
 				}
-				var8.method14818();
+				var8.close();
                 // logger.debug("Cache: Read cache locator file from: {}, state: {}", cacheLocator, (Object)n3);
 			} catch (IOException var29) {
                 // logger.error("Cache: Error opening cache locator file.", iOException);
@@ -451,8 +451,8 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			if (arg1 != null) {
 				var4.pUTF8(arg1.getPath());
 			}
-			var3.method14808(var4.data, 0, var4.pos);
-			var3.method14818();
+			var3.write(var4.data, 0, var4.pos);
+			var3.close();
 		} catch (IOException var6) {
             // logger.error("Cache: Error writing cache locator file.", iOException);
 			var6.printStackTrace();

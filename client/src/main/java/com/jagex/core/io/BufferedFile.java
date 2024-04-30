@@ -10,7 +10,7 @@ import java.io.IOException;
 public class BufferedFile {
 
 	@ObfuscatedName("abp.n")
-	public FileOnDisk field8773;
+	public FileOnDisk fileOnDisk;
 
 	@ObfuscatedName("abp.m")
 	public byte[] field8765;
@@ -43,8 +43,8 @@ public class BufferedFile {
 	public long field8774;
 
 	public BufferedFile(FileOnDisk arg0, int arg1, int arg2) throws IOException {
-		this.field8773 = arg0;
-		this.field8767 = this.field8763 = arg0.method14821();
+		this.fileOnDisk = arg0;
+		this.field8767 = this.field8763 = arg0.length();
 		this.field8765 = new byte[arg1];
 		this.field8768 = new byte[arg2];
 		this.field8771 = 0L;
@@ -53,7 +53,7 @@ public class BufferedFile {
 	@ObfuscatedName("abp.e(I)V")
 	public void method14834() throws IOException {
 		this.method14822();
-		this.field8773.method14818();
+		this.fileOnDisk.close();
 	}
 
 	@ObfuscatedName("abp.n(J)V")
@@ -99,10 +99,10 @@ public class BufferedFile {
 				arg2 -= var8;
 			}
 			if (arg2 > this.field8765.length) {
-				this.field8773.method14809(this.field8771);
+				this.fileOnDisk.seek(this.field8771);
 				this.field8774 = this.field8771;
 				while (arg2 > 0) {
-					int var9 = this.field8773.method14812(arg0, arg1, arg2);
+					int var9 = this.fileOnDisk.read(arg0, arg1, arg2);
 					if (var9 == -1) {
 						break;
 					}
@@ -168,7 +168,7 @@ public class BufferedFile {
 	public void method14840() throws IOException {
 		this.field8764 = 0;
 		if (this.field8774 != this.field8771) {
-			this.field8773.method14809(this.field8771);
+			this.fileOnDisk.seek(this.field8771);
 			this.field8774 = this.field8771;
 		}
 		this.field8766 = this.field8771;
@@ -177,7 +177,7 @@ public class BufferedFile {
 			if (var1 > 200000000) {
 				var1 = 200000000;
 			}
-			int var2 = this.field8773.method14812(this.field8765, this.field8764, var1);
+			int var2 = this.fileOnDisk.read(this.field8765, this.field8764, var1);
 			if (var2 == -1) {
 				break;
 			}
@@ -206,10 +206,10 @@ public class BufferedFile {
 			}
 			if (arg2 > this.field8768.length) {
 				if (this.field8774 != this.field8771) {
-					this.field8773.method14809(this.field8771);
+					this.fileOnDisk.seek(this.field8771);
 					this.field8774 = this.field8771;
 				}
-				this.field8773.method14808(arg0, arg1, arg2);
+				this.fileOnDisk.write(arg0, arg1, arg2);
 				this.field8774 += arg2;
 				if (this.field8774 > this.field8763) {
 					this.field8763 = this.field8774;
@@ -253,10 +253,10 @@ public class BufferedFile {
 			return;
 		}
 		if (this.field8774 != this.field8769) {
-			this.field8773.method14809(this.field8769);
+			this.fileOnDisk.seek(this.field8769);
 			this.field8774 = this.field8769;
 		}
-		this.field8773.method14808(this.field8768, 0, this.field8770);
+		this.fileOnDisk.write(this.field8768, 0, this.field8770);
 		this.field8774 += (long) (this.field8770);
 		if (this.field8774 > this.field8763) {
 			this.field8763 = this.field8774;
