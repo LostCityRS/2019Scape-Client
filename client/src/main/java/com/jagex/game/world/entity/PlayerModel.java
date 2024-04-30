@@ -78,7 +78,7 @@ public class PlayerModel {
 	public static int field4037;
 
 	@ObfuscatedName("xg.e(I[I[Labw;[I[IZII)V")
-	public void method10113(int arg0, int[] arg1, ObjTypeCustomisation[] arg2, int[] arg3, int[] arg4, boolean arg5, int arg6) {
+	public void setAppearance(int arg0, int[] arg1, ObjTypeCustomisation[] arg2, int[] arg3, int[] arg4, boolean arg5, int arg6) {
 		if (this.field7891 != arg0) {
 			this.field7891 = arg0;
 		}
@@ -92,7 +92,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.n(IILaov;I)V")
-	public void method10114(int arg0, int arg1, IDKTypeList arg2) {
+	public void setIDKPart(int arg0, int arg1, IDKTypeList arg2) {
 		int var4 = field7900[arg0];
 		if (arg2.list(arg1) != null) {
 			this.field7890[var4] = arg1 | Integer.MIN_VALUE;
@@ -101,25 +101,25 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.m(III)V")
-	public void method10115(int arg0, int arg1) {
+	public void setIDKRecolourSlot(int arg0, int arg1) {
 		this.field7894[arg0] = arg1;
 		this.method10118();
 	}
 
 	@ObfuscatedName("xg.k(IIB)V")
-	public void method10142(int arg0, int arg1) {
+	public void setIDKRematerialSlot(int arg0, int arg1) {
 		this.field7895[arg0] = arg1;
 		this.method10118();
 	}
 
 	@ObfuscatedName("xg.f(ZB)V")
-	public void method10141(boolean arg0) {
+	public void setGender(boolean arg0) {
 		this.isFemale = arg0;
 		this.method10118();
 	}
 
 	@ObfuscatedName("xg.w(IILaon;B)V")
-	public void method10112(int arg0, int arg1, ObjTypeList arg2) {
+	public void setObject(int arg0, int arg1, ObjTypeList arg2) {
 		if (arg1 == -1) {
 			this.field7890[arg0] = 0;
 		} else if (arg2.list(arg1) == null) {
@@ -191,7 +191,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.u(Ldh;ILaof;Laov;Laod;Laon;Lem;Lep;Laaq;Laaq;[Laaq;[IIZLwy;B)Ldo;")
-	public Model method10126(Toolkit arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, VariableTypeProvider arg6, VarIntDomain arg7, AnimationNode arg8, AnimationNode arg9, AnimationNode[] arg10, int[] arg11, int arg12, boolean arg13, WearposDefaults arg14) {
+	public Model getBodyModel(Toolkit arg0, int arg1, BASTypeList arg2, IDKTypeList arg3, NPCTypeList arg4, ObjTypeList arg5, VariableTypeProvider arg6, VarIntDomain arg7, AnimationNode arg8, AnimationNode arg9, AnimationNode[] arg10, int[] arg11, int arg12, boolean arg13, WearposDefaults arg14) {
 		if (this.field7892 != -1) {
 			return ((NPCType) arg4.list(this.field7892)).getSequencedModel(arg0, arg1, arg2, arg6, arg7, arg8, arg9, arg10, arg11, arg12, null);
 		}
@@ -462,7 +462,7 @@ public class PlayerModel {
 	}
 
 	@ObfuscatedName("xg.z(Ldh;ILaov;Laod;Laon;Lem;Lep;Laaq;B)Ldo;")
-	public Model method10120(Toolkit arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, VariableTypeProvider arg5, VarIntDomain arg6, AnimationNode arg7) {
+	public Model getHeadModel(Toolkit arg0, int arg1, IDKTypeList arg2, NPCTypeList arg3, ObjTypeList arg4, VariableTypeProvider arg5, VarIntDomain arg6, AnimationNode arg7) {
 		if (this.field7892 != -1) {
 			return ((NPCType) arg3.list(this.field7892)).getHeadModel(arg0, arg1, arg5, arg6, arg7, null);
 		}

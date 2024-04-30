@@ -35,8 +35,8 @@ public class PlayerGameState implements VarIntDomain, VariableTypeProvider, Play
 	}
 
 	@ObfuscatedName("ah.e(IB)I")
-	public int getStatVisibleXP(int stat) {
-		return this.stats[stat].getVisibleXP(Client.loggedInMembers ? ModeAccountType.MEMBERS : ModeAccountType.FREE);
+	public int getStatXP(int stat) {
+		return this.stats[stat].getCappedXP(Client.loggedInMembers ? ModeAccountType.MEMBERS : ModeAccountType.FREE);
 	}
 
 	@ObfuscatedName("ah.n(II)I")
@@ -45,18 +45,18 @@ public class PlayerGameState implements VarIntDomain, VariableTypeProvider, Play
 	}
 
 	@ObfuscatedName("ah.m(II)I")
-	public int getStatBaseLevel(int stat) {
-		return this.stats[stat].getBaseLevel(Client.loggedInMembers ? ModeAccountType.MEMBERS : ModeAccountType.FREE);
+	public int getStatLevelMax(int stat) {
+		return this.stats[stat].getCappedXPLevel(Client.loggedInMembers ? ModeAccountType.MEMBERS : ModeAccountType.FREE);
 	}
 
 	@ObfuscatedName("ah.k(II)I")
-	public int getStatXP(int stat) {
+	public int getStatXPActual(int stat) {
 		return this.stats[stat].getXP();
 	}
 
 	@ObfuscatedName("ah.f(IB)I")
-	public int getStatBaseLevelActual(int stat) {
-		return this.stats[stat].getBaseLevel();
+	public int getStatLevelMaxActual(int stat) {
+		return this.stats[stat].getXPLevel();
 	}
 
 	@ObfuscatedName("ah.w(Lqe;II)Lec;")

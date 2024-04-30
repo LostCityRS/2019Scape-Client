@@ -227,7 +227,7 @@ public class CutsceneManager {
 		Client.field8729 = null;
 		Client.field10877 = false;
 		if (field1722 > 0) {
-			ScriptRunner.runTrigger(ClientTriggerType.CUTSCENE_END, field1722, -1);
+			ScriptRunner.executeTriggeredScriptMapElement(ClientTriggerType.CUTSCENE_END, field1722, -1);
 		}
 		method3551();
 		ClientMessage var4 = ClientMessage.createMessage(ClientProt.CUTSCENE_FINISHED, Client.gameConnection.randomOut);

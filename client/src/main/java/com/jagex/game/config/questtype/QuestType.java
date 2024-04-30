@@ -280,7 +280,7 @@ public class QuestType implements ConfigType {
 		}
 		if (this.statRequirements != null) {
 			for (int var2 = 0; var2 < this.statRequirements.length; var2++) {
-				if (((PlayerStatProvider) arg0).getStatBaseLevel(this.statRequirements[var2][0]) < this.statRequirements[var2][1]) {
+				if (((PlayerStatProvider) arg0).getStatLevelMax(this.statRequirements[var2][0]) < this.statRequirements[var2][1]) {
 					return false;
 				}
 			}
@@ -323,7 +323,7 @@ public class QuestType implements ConfigType {
 		if (this.statRequirements == null || arg1 < 0 || arg1 >= this.statRequirements.length) {
 			return false;
 		} else {
-			return ((PlayerStatProvider) arg0).getStatBaseLevel(this.statRequirements[arg1][0]) >= this.statRequirements[arg1][1];
+			return ((PlayerStatProvider) arg0).getStatLevelMax(this.statRequirements[arg1][0]) >= this.statRequirements[arg1][1];
 		}
 	}
 

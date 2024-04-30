@@ -8,6 +8,9 @@ import com.jagex.game.config.vartype.constants.VarLifetime;
 import com.jagex.game.config.vartype.constants.VarTransmitLevel;
 import deob.ObfuscatedName;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @ObfuscatedName("ec")
 public abstract class VarType implements VarConfigType {
 

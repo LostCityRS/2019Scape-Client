@@ -47,7 +47,7 @@ import com.jagex.game.config.vartype.bit.VarBitTypeList;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.game.config.vartype.general.VarBasicTypeListClient;
 import com.jagex.game.config.vartype.player.VarPlayerTypeListClient;
-import com.jagex.game.script.ClientVariableManager;
+import com.jagex.game.script.ClientVarDomain;
 import com.jagex.game.world.WorldMap;
 import com.jagex.game.world.entity.PlayerGameState;
 import com.jagex.game.world.entity.PlayerModel;
@@ -477,7 +477,7 @@ public class Loading {
 			WorldMap.method8506(Client.worldmapJs5, Client.worldmapAreaDataJs5, Client.overlayTypeList, Client.underlayTypeList, Client.world.getLocTypeList(), Client.mapElementTypeList, Client.msiTypeList, Client.localPlayerGameState, Client.localPlayerGameState);
 		}
 		if (field3419 == LoadingStage.SETUP_VARC_SYSTEM) {
-			Client.clientVariableManager = new ClientVariableManager(Client.varBasicTypeList);
+			Client.clientVarDomain = new ClientVarDomain(Client.varBasicTypeList);
 			method9212();
 			Client.authPreferences = TotpPreferences.method18618();
 			Client.mapsJs5.discardNames(false, true);
@@ -582,7 +582,7 @@ public class Loading {
 	@ObfuscatedName("ux.c(I)V")
 	public static void method9212() {
 		FileOnDisk var0 = GameShell.openPrefs("2", Client.modegame.titleURL, false);
-		Client.clientVariableManager.method16420(var0);
+		Client.clientVarDomain.method16420(var0);
 	}
 
 	@ObfuscatedName("ss.r(B)V")

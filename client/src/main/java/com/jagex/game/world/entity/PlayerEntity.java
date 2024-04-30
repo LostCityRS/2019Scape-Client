@@ -185,7 +185,7 @@ public class PlayerEntity extends PathingEntity {
 		}
 		int var22 = this.model.field7892;
 		int[] var23 = this.model.field7894;
-		this.model.method10113(this.getBASId(), var4, var5, var16, var19, this.gender == 1, var3);
+		this.model.setAppearance(this.getBASId(), var4, var5, var16, var19, this.gender == 1, var3);
 		if (var3 != var22) {
 			Vector3 var24 = Vector3.create(this.getTransform().trans);
 			var24.x = (this.routeWaypointX[0] << 9) + (this.size() << 8);
@@ -474,7 +474,7 @@ public class PlayerEntity extends PathingEntity {
 		if (var10) {
 			arg1 |= 0x80000;
 		}
-		Model var11 = this.idk[0] = this.model.method10126(arg0, arg1, Client.basTypeList, Client.idkTypeList, Client.npcTypeList, Client.objTypeList, Client.localPlayerGameState, Client.localPlayerGameState, var5, var6, this.field10398, this.field10442, var9, true, Client.wearposDefaults);
+		Model var11 = this.idk[0] = this.model.getBodyModel(arg0, arg1, Client.basTypeList, Client.idkTypeList, Client.npcTypeList, Client.objTypeList, Client.localPlayerGameState, Client.localPlayerGameState, var5, var6, this.field10398, this.field10442, var9, true, Client.wearposDefaults);
 		int var12 = PlayerModel.method18304();
 		if (GameShell.maxmemory < 96 && var12 > 50) {
 			SceneManager.method7319();

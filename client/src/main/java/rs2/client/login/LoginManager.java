@@ -64,7 +64,7 @@ public class LoginManager {
 	public static long socialKey = -1L;
 
 	@ObfuscatedName("m.ap")
-	public static int loginState = 7;
+	public static int loginStep = 7;
 
 	@ObfuscatedName("m.aq")
 	public static long socialname = 0L;
@@ -151,7 +151,7 @@ public class LoginManager {
 
 	@ObfuscatedName("ug.m(I)V")
 	public static final void resetLoginState() {
-		loginState = 7;
+		loginStep = 7;
 		enterGameReply = -2;
 		enterLobbyReply = -2;
 	}
@@ -165,7 +165,7 @@ public class LoginManager {
 
 	@ObfuscatedName("aaa.f(B)V")
 	public static final void cancelLogin() {
-		if (loginState != 7) {
+		if (loginStep != 7) {
 			connection.closeGracefully();
 			resetLoginState();
 			updateLoginState();
@@ -174,13 +174,13 @@ public class LoginManager {
 
 	@ObfuscatedName("et.w(I)Z")
 	public static final boolean isInProgress() {
-		return loginState != 7;
+		return loginStep != 7;
 	}
 
 	@ObfuscatedName("vn.l(B)V")
 	public static void continueLogin() {
-		if (loginState == 103) {
-			loginState = 110;
+		if (loginStep == 103) {
+			loginStep = 110;
 		}
 	}
 
@@ -307,7 +307,7 @@ public class LoginManager {
 		}
 		connection.disconnected = false;
 		setReply(-3);
-		loginState = 14;
+		loginStep = 14;
 		loginwait = 0;
 		loginAttempts = 0;
 		return true;
@@ -315,26 +315,26 @@ public class LoginManager {
 
 	@ObfuscatedName("fj.x(B)V")
 	public static final void update() {
-		if (loginState == 7 || loginState == 103) {
+		if (loginStep == 7 || loginStep == 103) {
 			return;
 		}
 		try {
 			short loginwait;
-			if (loginAttempts == 0 && loginState < 98) {
+			if (loginAttempts == 0 && loginStep < 98) {
 				loginwait = 500;
 			} else {
 				loginwait = 2000;
 			}
-			if (isSocialLogin && loginState >= 64) {
+			if (isSocialLogin && loginStep >= 64) {
 				loginwait = 6000;
 			}
-			if (requestState == 211 && loginState != 215 && enterGameReply != 42 || requestState == 132 && enterLobbyReply != 49 && enterLobbyReply != 52) {
+			if (requestState == 211 && loginStep != 215 && enterGameReply != 42 || requestState == 132 && enterLobbyReply != 49 && enterLobbyReply != 52) {
 				LoginManager.loginwait++;
 			}
 			if (LoginManager.loginwait > loginwait) {
 				connection.closeGracefully();
 				if (loginAttempts >= 3) {
-					loginState = 7;
+					loginStep = 7;
 					setReply(-5);
 					updateLoginState();
 					return;
@@ -346,9 +346,9 @@ public class LoginManager {
 				}
 				LoginManager.loginwait = 0;
 				loginAttempts++;
-				loginState = 14;
+				loginStep = 14;
 			}
-			if (loginState == 14) {
+			if (loginStep == 14) {
 				if (requestState == 211) {
 					connection.setStream(Stream.createStream(WorldSwitcher.currentWorld.getSocket(), 40000), WorldSwitcher.currentWorld.host);
 				} else {
@@ -364,9 +364,9 @@ public class LoginManager {
 				message.buf.p1(LoginProt.INIT_GAME_CONNECTION.id);
 				connection.queue(message);
 				connection.flush();
-				loginState = 35;
+				loginStep = 35;
 			}
-			if (loginState == 35) {
+			if (loginStep == 35) {
 				if (!connection.getStream().hasAvailable(9)) {
 					return;
 				}
@@ -374,7 +374,7 @@ public class LoginManager {
 				connection.in.pos = 0;
 				int reply = connection.in.g1();
 				if (reply != 0) {
-					loginState = 7;
+					loginStep = 7;
 					nothing(reply);
 					setReply(reply);
 					connection.closeGracefully();
@@ -384,12 +384,12 @@ public class LoginManager {
 				field434 = connection.in.g8();
 				connection.in.pos = 0;
 				if (isSocialLogin) {
-					loginState = 276;
+					loginStep = 276;
 				} else {
-					loginState = 84;
+					loginStep = 84;
 				}
 			}
-			if (loginState == 276) {
+			if (loginStep == 276) {
 				ClientMessage message = ClientMessage.createMessage();
 				message.buf.p1(LoginProt.INIT_SOCIAL_NETWORK_CONNECTION.id);
 				message.buf.p2(0);
@@ -399,8 +399,8 @@ public class LoginManager {
 				if (requestState == 211) {
 					message.buf.p1(Client.state == 14 ? 1 : 0);
 				}
-				Packet buf = createSecuredPacket();
-				putAuth(buf, (long) ssoKey);
+				Packet buf = startRSAPAcket();
+				packLoginTOTPDetails(buf, (long) ssoKey);
 				authKey = ssoKey;
 				buf.p1(ssoKey);
 				buf.p1(Client.language.getId());
@@ -416,18 +416,18 @@ public class LoginManager {
 				message.buf.psize2(message.buf.pos - var4);
 				connection.queue(message);
 				connection.flush();
-				loginState = 40;
+				loginStep = 40;
 			}
-			if (loginState == 40) {
+			if (loginStep == 40) {
 				if (!connection.getStream().hasAvailable(2)) {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 2);
 				connection.in.pos = 0;
 				connection.in.pos = connection.in.g2();
-				loginState = 58;
+				loginStep = 58;
 			}
-			if (loginState == 58) {
+			if (loginStep == 58) {
 				if (!connection.getStream().hasAvailable(connection.in.pos)) {
 					return;
 				}
@@ -438,18 +438,18 @@ public class LoginManager {
 				connection.in.pos = 0;
 				String var8 = JavascriptFunction.field4032.method6087();
 				Browser.method6081(var7, true, var8, Client.field10784);
-				loginState = 64;
+				loginStep = 64;
 			}
-			if (loginState == 64) {
+			if (loginStep == 64) {
 				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 1);
 				if ((connection.in.data[0] & 0xFF) == 1) {
-					loginState = 70;
+					loginStep = 70;
 				}
 			}
-			if (loginState == 70) {
+			if (loginStep == 70) {
 				if (!connection.getStream().hasAvailable(16)) {
 					return;
 				}
@@ -459,9 +459,9 @@ public class LoginManager {
 				connection.in.pos = 0;
 				socialKey = connection.in.g8();
 				socialname = connection.in.g8();
-				loginState = 84;
+				loginStep = 84;
 			}
-			if (loginState == 84) {
+			if (loginStep == 84) {
 				connection.in.pos = 0;
 				connection.clearWriteQueue();
 				ClientMessage message = ClientMessage.createMessage();
@@ -482,7 +482,7 @@ public class LoginManager {
 						buf.p4(1);
 						buf.p1(Client.state == 14 ? 1 : 0);
 						int var14 = buf.pos;
-						Packet loginPacket = createLoginPacket();
+						Packet loginPacket = createLoginRSAPacket();
 						buf.pdata(loginPacket.data, 0, loginPacket.pos);
 						var13 = buf.pos;
 						buf.p1(socialKey == -1L ? 1 : 0);
@@ -523,7 +523,7 @@ public class LoginManager {
 					buf.pjstr(Client.gamepack);
 					buf.p1(WorldSwitcher.field9200 != null && WorldSwitcher.field9200.node == WorldSwitcher.currentWorld.node ? 0 : 1);
 					buf.p2(WorldSwitcher.currentLobby.node);
-					putJs5Crcs(buf);
+					pushJS5CRCs(buf);
                     buf.tinyenc(outKey, var13, buf.pos);
 					buf.psize2(buf.pos - var12);
 				} else {
@@ -540,7 +540,7 @@ public class LoginManager {
 					if (!isSocialLogin) {
 						buf.p4(910);
 						buf.p4(1);
-						Packet var21 = createLoginPacket();
+						Packet var21 = createLoginRSAPacket();
 						buf.pdata(var21.data, 0, var21.pos);
 						var20 = buf.pos;
 						buf.p1(socialKey == -1L ? 1 : 0);
@@ -571,7 +571,7 @@ public class LoginManager {
 					buf.pjstr(Client.gamepack);
 					buf.p1(Client.clientType & 0x1);
 					buf.pbool(false);
-					putJs5Crcs(buf);
+					pushJS5CRCs(buf);
                     buf.tinyenc(outKey, var20, buf.pos);
 					buf.psize2(buf.pos - var19);
 				}
@@ -586,9 +586,9 @@ public class LoginManager {
 				new Isaac(inKey);
 				connection.in.setIsaac(connection.randomIn);
 				outKey = null;
-				loginState = 98;
+				loginStep = 98;
 			}
-			if (loginState == 98) {
+			if (loginStep == 98) {
 				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
@@ -596,37 +596,37 @@ public class LoginManager {
 				int reply = connection.in.g1();
 				connection.in.pos = 0;
 				if (reply == 21) {
-					loginState = 126;
+					loginStep = 126;
 				} else if (reply == 1) {
-					loginState = 103;
+					loginStep = 103;
 					setReply(reply);
 					return;
 				} else if (reply == 52) {
 					loginReply = reply;
-					loginState = 225;
+					loginStep = 225;
 				} else if (reply == 2) {
 					if (unused) {
 						unused = false;
-						loginState = 14;
+						loginStep = 14;
 						return;
 					}
 					if (requestState == 211) {
-						Client.clientVariableManager.method16415();
-						loginState = 256;
+						Client.clientVarDomain.method16415();
+						loginStep = 256;
 					} else {
-						loginState = 141;
+						loginStep = 141;
 					}
 				} else if (reply == 15) {
 					connection.packetSize = -2;
-					loginState = 204;
+					loginStep = 204;
 				} else if (reply == 23 && loginAttempts < 3) {
 					LoginManager.loginwait = 0;
 					loginAttempts++;
-					loginState = 14;
+					loginStep = 14;
 					connection.closeGracefully();
 					return;
 				} else if (reply == 42) {
-					loginState = 215;
+					loginStep = 215;
 					setReply(reply);
 					return;
 				} else if (requestState == 132 && reply == 49 && Client.state != 9) {
@@ -636,57 +636,57 @@ public class LoginManager {
 					return;
 				} else if (!ssoEnabled || isSocialLogin || ssoKey == -1 || reply != 35) {
 					if (reply != 53) {
-						loginState = 7;
+						loginStep = 7;
 						setReply(reply);
 						connection.closeGracefully();
 						updateLoginState();
 						return;
 					}
-					loginState = 245;
+					loginStep = 245;
 				} else {
 					isSocialLogin = true;
 					LoginManager.loginwait = 0;
-					loginState = 14;
+					loginStep = 14;
 					connection.closeGracefully();
 					return;
 				}
 			}
-			if (loginState == 126) {
+			if (loginStep == 126) {
 				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 1);
 				int var27 = connection.in.data[0] & 0xFF;
 				hoptime = var27 * 50;
-				loginState = 7;
+				loginStep = 7;
 				setReply(21);
 				connection.closeGracefully();
 				updateLoginState();
 				return;
 			}
-			if (loginState == 215) {
+			if (loginStep == 215) {
 				if (!connection.getStream().hasAvailable(2)) {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 2);
 				queuePosition = ((connection.in.data[0] & 0xFF) << 8) + (connection.in.data[1] & 0xFF);
-				loginState = 98;
+				loginStep = 98;
 				return;
 			}
-			if (loginState == 245) {
+			if (loginStep == 245) {
 				if (!connection.getStream().hasAvailable(4)) {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 4);
 				banDuration = connection.in.g4s();
 				connection.in.pos = 0;
-				loginState = 7;
+				loginStep = 7;
 				setReply(53);
 				connection.closeGracefully();
 				updateLoginState();
 				return;
 			}
-			if (loginState == 194) {
+			if (loginStep == 194) {
 				if (loginReply == 29) {
 					if (!connection.getStream().hasAvailable(1)) {
 						return;
@@ -703,7 +703,7 @@ public class LoginManager {
 				} else {
 					throw new IllegalStateException();
 				}
-				loginState = 7;
+				loginStep = 7;
 				setReply(loginReply);
 				connection.closeGracefully();
 				updateLoginState();
@@ -713,7 +713,7 @@ public class LoginManager {
 				}
 				return;
 			}
-			if (loginState == 225) {
+			if (loginStep == 225) {
 				if (!connection.getStream().hasAvailable(2)) {
 					return;
 				}
@@ -721,10 +721,10 @@ public class LoginManager {
 				connection.in.pos = 0;
 				field7542 = connection.in.g2();
 				connection.in.pos = 0;
-				loginState = 235;
+				loginStep = 235;
 				return;
 			}
-			if (loginState == 235) {
+			if (loginStep == 235) {
 				if (!connection.getStream().hasAvailable(field7542)) {
 					return;
 				}
@@ -738,24 +738,24 @@ public class LoginManager {
 				Browser.openUrl(var30, true, Client.field10784);
 				setReply(loginReply);
 				if (requestState == 132 && Client.state != 9) {
-					loginState = 98;
+					loginStep = 98;
 				} else {
-					loginState = 7;
+					loginStep = 7;
 					connection.closeGracefully();
 					updateLoginState();
 				}
 				return;
 			}
-			if (loginState == 256) {
+			if (loginStep == 256) {
 				if (!connection.getStream().hasAvailable(2)) {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 2);
 				connection.in.pos = 0;
 				connection.packetSize = connection.in.g2();
-				loginState = 268;
+				loginStep = 268;
 			}
-			if (loginState == 268) {
+			if (loginStep == 268) {
 				if (!connection.getStream().hasAvailable(connection.packetSize)) {
 					return;
 				}
@@ -770,17 +770,17 @@ public class LoginManager {
 							buf.p1(LoginProt.GAMELOGIN_CONTINUE.id);
 							connection.queue(message);
 							connection.flush();
-							loginState = 138;
+							loginStep = 138;
 						} else {
-							loginState = 256;
+							loginStep = 256;
 						}
 						break;
 					}
 					VarValue var32 = Client.varBasicTypeList.decodeVarValue(connection.in);
-					Client.clientVariableManager.field1708.setVarValue(var32.var, var32.value);
+					Client.clientVarDomain.field1708.setVarValue(var32.var, var32.value);
 				}
 			}
-			if (loginState == 138) {
+			if (loginStep == 138) {
 				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
@@ -788,7 +788,7 @@ public class LoginManager {
 				int reply = connection.in.data[0] & 0xFF;
 				if (reply != 2) {
 					if (reply != 29 && reply != 45) {
-						loginState = 7;
+						loginStep = 7;
 						setReply(reply);
 						connection.closeGracefully();
 						updateLoginState();
@@ -799,20 +799,20 @@ public class LoginManager {
 						return;
 					}
 					loginReply = reply;
-					loginState = 194;
+					loginStep = 194;
 					return;
 				}
-				loginState = 141;
+				loginStep = 141;
 			}
-			if (loginState == 141) {
+			if (loginStep == 141) {
 				if (!connection.getStream().hasAvailable(1)) {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 1);
 				replyPacketSize = connection.in.data[0] & 0xFF;
-				loginState = 157;
+				loginStep = 157;
 			}
-			if (loginState == 157) {
+			if (loginStep == 157) {
 				PacketBit in = connection.in;
 				if (requestState == 211) {
 					if (!connection.getStream().hasAvailable(replyPacketSize)) {
@@ -903,23 +903,23 @@ public class LoginManager {
 					JavascriptFunction.field4024.method6090();
 				}
 				if (requestState != 211) {
-					loginState = 7;
+					loginStep = 7;
 					setReply(2);
 					method10282();
 					Client.setState(13);
 					connection.packetType = null;
 					return;
 				}
-				loginState = 170;
+				loginStep = 170;
 			}
-			if (loginState == 170) {
+			if (loginStep == 170) {
 				if (!connection.getStream().hasAvailable(3)) {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 3);
-				loginState = 188;
+				loginStep = 188;
 			}
-			if (loginState == 188) {
+			if (loginStep == 188) {
 				PacketBit in = connection.in;
 				in.pos = 0;
 				if (in.isIsaac2()) {
@@ -930,16 +930,16 @@ public class LoginManager {
 				}
 				connection.packetType = ServerProt.values()[in.gIsaac1or2()];
 				connection.packetSize = in.g2();
-				loginState = 160;
+				loginStep = 160;
 			}
-			if (loginState == 160) {
+			if (loginStep == 160) {
 				if (!connection.getStream().hasAvailable(connection.packetSize)) {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, connection.packetSize);
 				connection.in.pos = 0;
 				int packetSize = connection.packetSize;
-				loginState = 7;
+				loginStep = 7;
 				setReply(2);
 				prepareForMap();
 				ReceivePlayerPositions.receivePlayerPositions(connection.in);
@@ -958,7 +958,7 @@ public class LoginManager {
 				connection.packetType = null;
 				return;
 			}
-			if (loginState == 204) {
+			if (loginStep == 204) {
 				if (connection.packetSize == -2) {
 					if (!connection.getStream().hasAvailable(2)) {
 						return;
@@ -973,7 +973,7 @@ public class LoginManager {
 				connection.getStream().read(connection.in.data, 0, connection.packetSize);
 				connection.in.pos = 0;
 				int packetSize = connection.packetSize;
-				loginState = 7;
+				loginStep = 7;
 				setReply(15);
 				prepareForPlayers();
 				ReceivePlayerPositions.receivePlayerPositions(connection.in);
@@ -993,9 +993,9 @@ public class LoginManager {
 				}
 				loginwait = 0;
 				loginAttempts++;
-				loginState = 14;
+				loginStep = 14;
 			} else {
-				loginState = 7;
+				loginStep = 7;
 				setReply(-4);
 				updateLoginState();
 			}
@@ -1021,7 +1021,7 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("iq.a(B)Lalw;")
-	public static Packet createSecuredPacket() {
+	public static Packet startRSAPAcket() {
 		Packet buf = new Packet(518);
 		outKey = new int[4];
 		outKey[0] = Client.secureRandom.nextInt();
@@ -1045,7 +1045,7 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("zl.g(Lalw;J)V")
-	public static void putAuth(Packet buf, long key) {
+	public static void packLoginTOTPDetails(Packet buf, long key) {
 		TotpType totpType;
 		if (newAuthPreference != null && newAuthPreference.length() == 6) {
 			if (authDontTrust) {
@@ -1074,8 +1074,8 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("ap.i(B)Lalw;")
-	public static Packet createLoginPacket() {
-		Packet buf = createSecuredPacket();
+	public static Packet createLoginRSAPacket() {
+		Packet buf = startRSAPAcket();
 		if (Client.state != 14) {
 			long authKey;
 			if (ssoKey != -1) {
@@ -1086,7 +1086,7 @@ public class LoginManager {
 				authKey = socialKey;
 			}
 			LoginManager.authKey = authKey;
-			putAuth(buf, authKey);
+			packLoginTOTPDetails(buf, authKey);
 			buf.pbool(false);
 			buf.pjstr(password);
 			buf.p8(socialname);
@@ -1121,7 +1121,7 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("aab.ae(Lase;I)V")
-	public static void putJs5Crcs(PacketBit buf) {
+	public static void pushJS5CRCs(PacketBit buf) {
 		Js5Archive[] archives = Js5Archive.values();
 		for (int index = 0; index < archives.length; index++) {
 			Js5Archive archive = archives[index];
@@ -1289,7 +1289,7 @@ public class LoginManager {
 		Client.pingRequest = null;
 		Client.field3457 = 0L;
 		Client.method3652();
-		Client.clientVariableManager.method16421();
+		Client.clientVarDomain.method16421();
 	}
 
 	@ObfuscatedName("aiz.ai(I)Z")

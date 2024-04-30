@@ -15,10 +15,10 @@ public class PlayerSkill {
 	public boolean members;
 
 	@ObfuscatedName("wm.k")
-	public final int field7656;
+	public final int cappedXP;
 
 	@ObfuscatedName("wm.f")
-	public final int field7651;
+	public final int cappedLevel;
 
 	@ObfuscatedName("wm.w")
 	public final PlayerSkillXPTable table;
@@ -33,11 +33,11 @@ public class PlayerSkill {
 		this.table = arg5;
 		this.baseLevel = arg6;
 		if (arg2) {
-			this.field7651 = arg4;
-			this.field7656 = this.getXPRaw(arg4);
+			this.cappedLevel = arg4;
+			this.cappedXP = this.getXPRaw(arg4);
 		} else {
-			this.field7651 = -1;
-			this.field7656 = -1;
+			this.cappedLevel = -1;
+			this.cappedXP = -1;
 		}
 	}
 
@@ -52,18 +52,18 @@ public class PlayerSkill {
 	}
 
 	@ObfuscatedName("wm.m(I)I")
-	public int method9797() {
-		return this.field7656;
+	public int getCappedXP() {
+		return this.cappedXP;
 	}
 
 	@ObfuscatedName("wm.k(I)I")
-	public int method9798() {
-		return this.field7651;
+	public int getCappedLevel() {
+		return this.cappedLevel;
 	}
 
 	@ObfuscatedName("wm.f(I)Z")
-	public boolean method9813() {
-		return this.field7656 != -1;
+	public boolean isCapped() {
+		return this.cappedXP != -1;
 	}
 
 	@ObfuscatedName("wm.w(IB)I")

@@ -76,7 +76,7 @@ public class AccountCreationManager {
 	}
 
 	@ObfuscatedName("w.k(Ljava/lang/String;B)V")
-	public static void method233(String arg0) {
+	public static void requestEmailAvailableCheck(String arg0) {
 		if (Client.state != 0) {
 			return;
 		}
@@ -92,7 +92,7 @@ public class AccountCreationManager {
 	}
 
 	@ObfuscatedName("alb.f(Ljava/lang/String;I)V")
-	public static void method18305(String arg0) {
+	public static void requestDisplayNameAvailableCheck(String arg0) {
 		if (Client.state != 0) {
 			return;
 		}
@@ -108,7 +108,7 @@ public class AccountCreationManager {
 	}
 
 	@ObfuscatedName("ae.w(I)V")
-	public static void method648() {
+	public static void requestDisplayNameSuggestion() {
 		if (Client.state == 0) {
 			ClientMessage var0 = ClientMessage.createMessage(ClientProt.CREATE_SUGGEST_NAMES, Client.lobbyConnection.randomOut);
 			Client.lobbyConnection.queue(var0);
@@ -118,7 +118,7 @@ public class AccountCreationManager {
 	}
 
 	@ObfuscatedName("arv.l(Ljava/lang/String;Ljava/lang/String;IZLjava/lang/String;I)V")
-	public static void method19266(String arg0, String arg1, int arg2, boolean arg3, String arg4) {
+	public static void requestAccountCreation(String arg0, String arg1, int arg2, boolean arg3, String arg4) {
 		if (Client.state != 0) {
 			return;
 		}
@@ -142,7 +142,7 @@ public class AccountCreationManager {
 	}
 
 	@ObfuscatedName("afu.u(II)V")
-	public static void method16428(int arg0) {
+	public static void requestStatsLogging(int arg0) {
 		if (Client.state == 0) {
 			ClientMessage var1 = ClientMessage.createMessage(ClientProt.CREATE_LOG_PROGRESS, Client.lobbyConnection.randomOut);
 			var1.buf.p1(arg0);

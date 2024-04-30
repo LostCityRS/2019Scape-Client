@@ -69,7 +69,7 @@ public class PlayerGroupMember {
 			} else {
 				stat.setXP(0);
 			}
-			stat.setLevel(stat.getBaseLevel());
+			stat.setLevel(stat.getXPLevel());
 		}
 		int varsCount = buf.g2();
 		this.vars = new VarContainerSparse(groupResourceProvider.getVarPlayerTypeList());
@@ -160,7 +160,7 @@ public class PlayerGroupMember {
 	public void update(PlayerGroupMember arg0) {
 		for (int var2 = 0; var2 < this.stats.length; var2++) {
 			this.stats[var2].setXP(arg0.stats[var2].getXP());
-			this.stats[var2].setLevel(this.stats[var2].getBaseLevel());
+			this.stats[var2].setLevel(this.stats[var2].getXPLevel());
 		}
 		this.vars.clear();
 		Iterator var3 = arg0.vars.iterator();

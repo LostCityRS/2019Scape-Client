@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 @ObfuscatedName("afu")
-public final class ClientVariableManager extends SparseVarDomain {
+public final class ClientVarDomain extends SparseVarDomain {
 
 	@ObfuscatedName("afu.m")
 	public boolean field10252 = false;
@@ -46,7 +46,7 @@ public final class ClientVariableManager extends SparseVarDomain {
 	@ObfuscatedName("afu.p")
 	public final VarLifetime[] field10251;
 
-	public ClientVariableManager(VarTypeList arg0) {
+	public ClientVarDomain(VarTypeList arg0) {
 		super(arg0);
 		this.field10251 = new VarLifetime[arg0.length()];
 		for (int var2 = 0; var2 < arg0.length(); var2++) {

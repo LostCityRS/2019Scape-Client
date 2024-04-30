@@ -730,11 +730,11 @@ public class MiniMenu {
 		if (arg0 instanceof NpcEntity) {
 			NpcEntity var1 = (NpcEntity) arg0;
 			if (var1.npcType != null) {
-				method10152(var1, Client.localPlayerEntity.level != var1.level);
+				addNPCEntries(var1, Client.localPlayerEntity.level != var1.level);
 			}
 		} else if (arg0 instanceof PlayerEntity) {
 			PlayerEntity var2 = (PlayerEntity) arg0;
-			method3542(var2, Client.localPlayerEntity.level != var2.level);
+			addPlayerEntries(var2, Client.localPlayerEntity.level != var2.level);
 		}
 	}
 
@@ -860,7 +860,7 @@ public class MiniMenu {
 													int var44 = (int) var43.x - (var42.npcType.size - 1 << 8);
 													int var45 = (int) var43.z - (var42.npcType.size - 1 << 8);
 													if (var44 >= var38 && var42.npcType.size <= var35.size() - (var44 - var38 >> 9) && var45 >= var39 && var42.npcType.size <= var35.size() - (var45 - var39 >> 9)) {
-														method10152(var42, Client.localPlayerEntity.level != var29.field6978.level);
+														addNPCEntries(var42, Client.localPlayerEntity.level != var29.field6978.level);
 														var42.field10403 = Client.loopCycle;
 													}
 												}
@@ -875,14 +875,14 @@ public class MiniMenu {
 												int var51 = (int) var50.x - (var49.size() - 1 << 8);
 												int var52 = (int) var50.z - (var49.size() - 1 << 8);
 												if (var51 >= var38 && var49.size() <= var35.size() - (var51 - var38 >> 9) && var52 >= var39 && var49.size() <= var35.size() - (var52 - var39 >> 9)) {
-													method3542(var49, Client.localPlayerEntity.level != var29.field6978.level);
+													addPlayerEntries(var49, Client.localPlayerEntity.level != var29.field6978.level);
 													var49.field10403 = Client.loopCycle;
 												}
 											}
 										}
 									}
 									if (var35.field10403 != Client.loopCycle) {
-										method3542(var35, Client.localPlayerEntity.level != var29.field6978.level);
+										addPlayerEntries(var35, Client.localPlayerEntity.level != var29.field6978.level);
 										var35.field10403 = Client.loopCycle;
 										break;
 									}
@@ -907,7 +907,7 @@ public class MiniMenu {
 												int var61 = (int) var60.x - (var59.npcType.size - 1 << 8);
 												int var62 = (int) var60.z - (var59.npcType.size - 1 << 8);
 												if (var61 >= var55 && var59.npcType.size <= var53.npcType.size - (var61 - var55 >> 9) && var62 >= var56 && var59.npcType.size <= var53.npcType.size - (var62 - var56 >> 9)) {
-													method10152(var59, Client.localPlayerEntity.level != var29.field6978.level);
+													addNPCEntries(var59, Client.localPlayerEntity.level != var29.field6978.level);
 													var59.field10403 = Client.loopCycle;
 												}
 											}
@@ -922,14 +922,14 @@ public class MiniMenu {
 											int var68 = (int) var67.x - (var66.size() - 1 << 8);
 											int var69 = (int) var67.z - (var66.size() - 1 << 8);
 											if (var68 >= var55 && var66.size() <= var53.npcType.size - (var68 - var55 >> 9) && var69 >= var56 && var66.size() <= var53.npcType.size - (var69 - var56 >> 9)) {
-												method3542(var66, Client.localPlayerEntity.level != var29.field6978.level);
+												addPlayerEntries(var66, Client.localPlayerEntity.level != var29.field6978.level);
 												var66.field10403 = Client.loopCycle;
 											}
 										}
 									}
 								}
 								if (var53.field10403 != Client.loopCycle) {
-									method10152(var53, Client.localPlayerEntity.level != var29.field6978.level);
+									addNPCEntries(var53, Client.localPlayerEntity.level != var29.field6978.level);
 									var53.field10403 = Client.loopCycle;
 									break;
 								}
@@ -1784,7 +1784,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("xi.bm(Laqc;ZI)V")
-	public static void method10152(NpcEntity arg0, boolean arg1) {
+	public static void addNPCEntries(NpcEntity arg0, boolean arg1) {
 		if (field546 >= 407) {
 			return;
 		}
@@ -1886,7 +1886,7 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("ga.bb(Laqk;ZI)V")
-	public static void method3542(PlayerEntity arg0, boolean arg1) {
+	public static void addPlayerEntries(PlayerEntity arg0, boolean arg1) {
 		if (field546 >= 407) {
 			return;
 		}
@@ -2337,7 +2337,7 @@ public class MiniMenu {
 		MiniMap.flagSceneTileX = arg0;
 		MiniMap.flagSceneTileZ = arg1;
 		MiniMap.mapFlag = false;
-		DelayedStateChange.onClientSetMapFlag();
+		DelayedStateChange.onMiniMapFlag();
 		return var3;
 	}
 

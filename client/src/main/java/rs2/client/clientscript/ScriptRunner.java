@@ -154,32 +154,32 @@ public class ScriptRunner {
 
 	@ObfuscatedName("cr.m(Lals;I)V")
 	public static void runHook(HookRequest arg0) {
-		runHook(arg0, 500000);
+		executeHookInnter(arg0, 500000);
 	}
 
 	@ObfuscatedName("ace.k(I[II)V")
-	public static void runOnLoad(int arg0, int[] arg1) {
+	public static void executeOnLoad(int arg0, int[] arg1) {
 		if (arg0 != -1 && Component.openInterface(arg0, arg1)) {
 			Component[] var2 = Component.interfaces[arg0].components;
-			runOnLoad(var2);
+			executeOnLoadComponents(var2);
 		}
 	}
 
 	@ObfuscatedName("agr.f([Lhf;I)V")
-	public static void runOnLoad(Component[] arg0) {
+	public static void executeOnLoadComponents(Component[] arg0) {
 		for (int var1 = 0; var1 < arg0.length; var1++) {
 			Component var2 = arg0[var1];
 			if (var2.onload != null) {
 				HookRequest var3 = new HookRequest();
 				var3.component = var2;
 				var3.onop = var2.onload;
-				runHook(var3, 5000000);
+				executeHookInnter(var3, 5000000);
 			}
 		}
 	}
 
 	@ObfuscatedName("yo.w(Lals;II)V")
-	public static void runHook(HookRequest arg0, int arg1) {
+	public static void executeHookInnter(HookRequest arg0, int arg1) {
 		Object[] var2 = arg0.onop;
 		int var3 = (Integer) var2[0];
 		ClientScript var4 = ClientScriptHelpers.getScript(var3);
@@ -236,44 +236,44 @@ public class ScriptRunner {
 			}
 		}
 		var5.nestedCount = arg0.nestedCount;
-		execute(var4, arg1, var5);
+		executeScript(var4, arg1, var5);
 		var5.nestedCount = 0;
 	}
 
 	@ObfuscatedName("gz.l(Luh;IILahm;II)V")
-	public static void runPathingEntity(ClientTriggerType arg0, int arg1, int arg2, PathingEntity arg3, int arg4) {
+	public static void executeTriggeredScriptPathingEntity(ClientTriggerType arg0, int arg1, int arg2, PathingEntity arg3, int arg4) {
 		ClientScriptState var5 = createClientScriptState();
 		var5.activeEntity = arg3;
 		var5.field8231 = arg4;
-		runTrigger(arg0, arg1, arg2, var5);
+		executeTrigger(arg0, arg1, arg2, var5);
 		var5.activeEntity = null;
 		var5.field8231 = -1;
 	}
 
 	@ObfuscatedName("acl.u(Luh;IILst;I)V")
-	public static void runLoc(ClientTriggerType arg0, int arg1, int arg2, Location arg3) {
+	public static void executeTriggeredScriptLoc(ClientTriggerType arg0, int arg1, int arg2, Location arg3) {
 		ClientScriptState var4 = createClientScriptState();
 		var4.activeLoc = arg3;
-		runTrigger(arg0, arg1, arg2, var4);
+		executeTrigger(arg0, arg1, arg2, var4);
 		var4.activeLoc = null;
 	}
 
 	@ObfuscatedName("uf.z(Luh;IILyd;Laut;I)V")
-	public static void runObj(ClientTriggerType arg0, int arg1, int arg2, ObjReference arg3, ObjStackEntity arg4) {
+	public static void executeTriggeredScriptObj(ClientTriggerType arg0, int arg1, int arg2, ObjReference arg3, ObjStackEntity arg4) {
 		ClientScriptState var5 = createClientScriptState();
 		var5.activeObj = arg4;
-		runTrigger(arg0, arg1, arg2, var5);
+		executeTrigger(arg0, arg1, arg2, var5);
 		var5.activeObj = null;
 	}
 
 	@ObfuscatedName("am.p(Luh;III)V")
-	public static void runTrigger(ClientTriggerType arg0, int arg1, int arg2) {
+	public static void executeTriggeredScriptMapElement(ClientTriggerType arg0, int arg1, int arg2) {
 		ClientScriptState var3 = createClientScriptState();
-		runTrigger(arg0, arg1, arg2, var3);
+		executeTrigger(arg0, arg1, arg2, var3);
 	}
 
 	@ObfuscatedName("iq.d(Luh;IILyf;I)V")
-	public static void runTrigger(ClientTriggerType arg0, int arg1, int arg2, ClientScriptState state) {
+	public static void executeTrigger(ClientTriggerType arg0, int arg1, int arg2, ClientScriptState state) {
 		ClientScript script = ClientScriptHelpers.getByTrigger(arg0, arg1, arg2);
 		if (script == null) {
 			releaseClientScriptState();
@@ -290,11 +290,11 @@ public class ScriptRunner {
 		} else if (ClientTriggerType.PROCESS_PLAYER == script.field12373) {
 			state.intLocals[0] = state.field8231;
 		}
-		execute(script, 500000, state);
+		executeScript(script, 500000, state);
 	}
 
 	@ObfuscatedName("jf.c(ILjava/lang/String;II)V")
-	public static void triggerCutsceneSubtitle(int arg0, String arg1, int arg2) {
+	public static void executeTriggeredScriptCutscene(int arg0, String arg1, int arg2) {
 		ClientScript var3 = ClientScriptHelpers.getByTrigger(ClientTriggerType.CUTSCENE_SUBTITLE, arg0, -1);
 		if (var3 == null) {
 			return;
@@ -304,11 +304,11 @@ public class ScriptRunner {
 		state.objectLocals = new String[var3.objectLocalCount];
 		state.objectLocals[0] = arg1;
 		state.intLocals[0] = arg2;
-		execute(var3, 500000, state);
+		executeScript(var3, 500000, state);
 	}
 
 	@ObfuscatedName("zj.r(ILcom/jagex/twitchtv/TwitchEvent;B)V")
-	public static void triggerTwitch(int arg0, TwitchEvent arg1) {
+	public static void executeTriggeredScriptTwitch(int arg0, TwitchEvent arg1) {
 		ClientScript script = ClientScriptHelpers.getByTrigger(ClientTriggerType.TWITCH, arg0, -1);
 		if (script == null) {
 			return;
@@ -324,11 +324,11 @@ public class ScriptRunner {
 			state.objectLocals = new String[script.objectLocalCount];
 		}
 		arg1.method12(state.intLocals, state.longLocals, state.objectLocals);
-		execute(script, 500000, state);
+		executeScript(script, 500000, state);
 	}
 
 	@ObfuscatedName("adv.v(Lasc;ILyf;I)V")
-	public static void execute(ClientScript script, int oplimit, ClientScriptState state) {
+	public static void executeScript(ClientScript script, int oplimit, ClientScriptState state) {
 		state.isp = 0;
 		state.osp = 0;
 		state.pc = -1;
@@ -339,7 +339,7 @@ public class ScriptRunner {
 		state.fp = 0;
 		state.primaryVars.clear();
 		state.primaryVars.put(VarDomainType.PLAYER, Client.localPlayerGameState.varps);
-		state.primaryVars.put(VarDomainType.CLIENT, Client.clientVariableManager);
+		state.primaryVars.put(VarDomainType.CLIENT, Client.clientVarDomain);
 		state.primaryVars.put(VarDomainType.CLAN, Client.varClan);
 		if (state.activeClanSettings != null) {
 			state.primaryVars.put(VarDomainType.CLAN_SETTING, createVarClanSettingsDomain(state.activeClanSettings));
@@ -4882,14 +4882,14 @@ public class ScriptRunner {
 		BaseVarType var3 = var1.dataType.getVarBaseType();
 		if (BaseVarType.INTEGER == var3) {
 			if (VarDomainType.CLIENT == var1.domain) {
-				DelayedStateChange.onVarClientInt(var1);
+				DelayedStateChange.onVarC(var1);
 			}
 			var2.setVarValueInt(var1, arg0.intStack[--arg0.isp]);
 		} else if (BaseVarType.LONG == var3) {
 			var2.setVarValueLong(var1, arg0.longStack[--arg0.lsp]);
 		} else if (BaseVarType.STRING == var3) {
 			if (VarDomainType.CLIENT == var1.domain) {
-				DelayedStateChange.onVarClientString(var1);
+				DelayedStateChange.onVarClientStr(var1);
 			}
 			var2.setVarValue(var1, arg0.objectStack[--arg0.osp]);
 		} else {
@@ -5326,13 +5326,13 @@ public class ScriptRunner {
 		}
 		for (int var3 = 0; var3 < IDKType.field2951.length; var3++) {
 			if (IDKType.field2951[var3] == var1) {
-				Client.localPlayerEntity.model.method10114(var3, var2, Client.idkTypeList);
+				Client.localPlayerEntity.model.setIDKPart(var3, var2, Client.idkTypeList);
 				return;
 			}
 		}
 		for (int var4 = 0; var4 < IDKType.field2959.length; var4++) {
 			if (IDKType.field2959[var4] == var1) {
-				Client.localPlayerEntity.model.method10114(var4, var2, Client.idkTypeList);
+				Client.localPlayerEntity.model.setIDKPart(var4, var2, Client.idkTypeList);
 				return;
 			}
 		}
@@ -5344,7 +5344,7 @@ public class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		if (Client.localPlayerEntity.model != null) {
-			Client.localPlayerEntity.model.method10115(var1, var2);
+			Client.localPlayerEntity.model.setIDKRecolourSlot(var1, var2);
 		}
 	}
 
@@ -5354,7 +5354,7 @@ public class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		if (Client.localPlayerEntity.model != null) {
-			Client.localPlayerEntity.model.method10142(var1, var2);
+			Client.localPlayerEntity.model.setIDKRematerialSlot(var1, var2);
 		}
 	}
 
@@ -5362,7 +5362,7 @@ public class ScriptRunner {
 	public static final void setgender(ClientScriptState arg0) {
 		boolean var1 = arg0.intStack[--arg0.isp] != 0;
 		if (Client.localPlayerEntity.model != null) {
-			Client.localPlayerEntity.model.method10141(var1);
+			Client.localPlayerEntity.model.setGender(var1);
 		}
 	}
 
@@ -5372,7 +5372,7 @@ public class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		if (Client.localPlayerEntity.model != null) {
-			Client.localPlayerEntity.model.method10112(var1, var2, Client.objTypeList);
+			Client.localPlayerEntity.model.setObject(var1, var2, Client.objTypeList);
 		}
 	}
 
@@ -5401,7 +5401,7 @@ public class ScriptRunner {
 			Client.method8329(arg1, arg0, false);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetPosition(arg0.parentlayer);
+			DelayedStateChange.onInterfaceDataXY(arg0.parentlayer);
 		}
 	}
 
@@ -5473,7 +5473,7 @@ public class ScriptRunner {
 			Client.requestRedrawComponent(arg0);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetHide(arg0.parentlayer);
+			DelayedStateChange.onInterfaceHide(arg0.parentlayer);
 		}
 	}
 
@@ -5561,7 +5561,7 @@ public class ScriptRunner {
 		}
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetScrollPos(arg0.parentlayer);
+			DelayedStateChange.onInterfaceScrollYPos(arg0.parentlayer);
 		}
 	}
 
@@ -5586,7 +5586,7 @@ public class ScriptRunner {
 		arg0.colour = arg2.intStack[--arg2.isp];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetColour(arg0.parentlayer);
+			DelayedStateChange.onInterfaceColour(arg0.parentlayer);
 		}
 	}
 
@@ -5681,7 +5681,7 @@ public class ScriptRunner {
 			Client.requestRedrawComponent(arg0);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetGraphic(arg0.parentlayer);
+			DelayedStateChange.onInterfaceGraphic(arg0.parentlayer);
 		}
 	}
 
@@ -5751,7 +5751,7 @@ public class ScriptRunner {
 		arg0.model = arg2.intStack[--arg2.isp];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetModel(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModel(arg0.parentlayer);
 		}
 	}
 
@@ -5782,8 +5782,8 @@ public class ScriptRunner {
 		arg0.modelzoom = arg2.intStack[arg2.isp + 5];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetModelZoom(arg0.parentlayer);
-			DelayedStateChange.onClientSetModelAngle(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModelXAnYAnZoom(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModelXOfYOfZAn(arg0.parentlayer);
 		}
 	}
 
@@ -5819,7 +5819,7 @@ public class ScriptRunner {
 			Client.requestRedrawComponent(arg0);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetModelAnim(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModelAnim(arg0.parentlayer);
 		}
 	}
 
@@ -5951,7 +5951,7 @@ public class ScriptRunner {
 			Client.requestRedrawComponent(arg0);
 		}
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetText(arg0.parentlayer);
+			DelayedStateChange.onInterfaceText(arg0.parentlayer);
 		}
 	}
 
@@ -5976,7 +5976,7 @@ public class ScriptRunner {
 		arg0.textfont = arg2.intStack[--arg2.isp];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetTextFont(arg0.parentlayer);
+			DelayedStateChange.onInterfaceFontType(arg0.parentlayer);
 		}
 	}
 
@@ -6048,7 +6048,7 @@ public class ScriptRunner {
 		arg0.textantimacro = arg2.intStack[--arg2.isp] == 1;
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetTextAntimacro(arg0.parentlayer);
+			DelayedStateChange.onInterfaceAntiTextMacro(arg0.parentlayer);
 		}
 	}
 
@@ -6210,7 +6210,7 @@ public class ScriptRunner {
 		arg0.modelzoom = arg2.intStack[--arg2.isp];
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetModelZoom(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModelXAnYAnZoom(arg0.parentlayer);
 		}
 	}
 
@@ -6368,7 +6368,7 @@ public class ScriptRunner {
 		arg0.setrecol(var3, var4, var5);
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetRecol(arg0.parentlayer, var3);
+			DelayedStateChange.onInterfaceRecol(arg0.parentlayer, var3);
 		}
 	}
 
@@ -6400,7 +6400,7 @@ public class ScriptRunner {
 		arg0.setretex(var3, var4, var5);
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetRetex(arg0.parentlayer, var3);
+			DelayedStateChange.onInterfaceRetex(arg0.parentlayer, var3);
 		}
 	}
 
@@ -6425,7 +6425,7 @@ public class ScriptRunner {
 		arg0.fontmono = arg2.intStack[--arg2.isp] == 1;
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetFontMono(arg0.parentlayer);
+			DelayedStateChange.onInterfaceFontMono(arg0.parentlayer);
 		}
 	}
 
@@ -6465,7 +6465,7 @@ public class ScriptRunner {
 		arg0.clickmask = arg2.intStack[--arg2.isp] == 1;
 		Client.requestRedrawComponent(arg0);
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetClickMask(arg0.parentlayer);
+			DelayedStateChange.onInterfaceClickMask(arg0.parentlayer);
 		}
 	}
 
@@ -6513,7 +6513,7 @@ public class ScriptRunner {
 		arg0.customisation = null;
 		arg0.model = arg2.intStack[--arg2.isp];
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetModel(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModel(arg0.parentlayer);
 		}
 	}
 
@@ -6539,7 +6539,7 @@ public class ScriptRunner {
 		arg0.model = Client.currentPlayerUid;
 		arg0.field2298 = 0;
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetModel(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModel(arg0.parentlayer);
 		}
 	}
 
@@ -6565,9 +6565,9 @@ public class ScriptRunner {
 		int var5 = arg4.intStack[arg4.isp];
 		int var6 = arg4.intStack[arg4.isp + 1];
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetObjectData(arg0.parentlayer);
-			DelayedStateChange.onClientSetModelZoom(arg0.parentlayer);
-			DelayedStateChange.onClientSetModelAngle(arg0.parentlayer);
+			DelayedStateChange.onInterfaceLinkObjTypeCount(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModelXAnYAnZoom(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModelXOfYOfZAn(arg0.parentlayer);
 		}
 		if (var5 == -1) {
 			arg0.modelkind = 1;
@@ -6695,7 +6695,7 @@ public class ScriptRunner {
 		arg0.customisation = null;
 		arg0.model = arg2.intStack[--arg2.isp];
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetModel(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModel(arg0.parentlayer);
 		}
 	}
 
@@ -6720,7 +6720,7 @@ public class ScriptRunner {
 		arg0.modelkind = 5;
 		arg0.model = arg2.intStack[--arg2.isp];
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetModel(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModel(arg0.parentlayer);
 		}
 	}
 
@@ -6866,7 +6866,7 @@ public class ScriptRunner {
 		arg0.model = Client.currentPlayerUid;
 		arg0.field2298 = 0;
 		if (arg0.id == -1 && !arg1.field2150) {
-			DelayedStateChange.onClientSetModel(arg0.parentlayer);
+			DelayedStateChange.onInterfaceModel(arg0.parentlayer);
 		}
 	}
 
@@ -9580,7 +9580,7 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("hy.vx(Lyf;I)V")
-	public static final void ifHasSub(ClientScriptState arg0) {
+	public static final void if_hassubmodal_hassuboverlay(ClientScriptState arg0) {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
@@ -9594,12 +9594,12 @@ public class ScriptRunner {
 
 	@ObfuscatedName("jx.vb(Lyf;B)V")
 	public static final void if_hassubmodal(ClientScriptState arg0) {
-		ifHasSub(arg0);
+		if_hassubmodal_hassuboverlay(arg0);
 	}
 
 	@ObfuscatedName("vc.vl(Lyf;B)V")
 	public static final void if_hassuboverlay(ClientScriptState arg0) {
-		ifHasSub(arg0);
+		if_hassubmodal_hassuboverlay(arg0);
 	}
 
 	@ObfuscatedName("agk.vr(Lyf;I)V")
@@ -9998,25 +9998,25 @@ public class ScriptRunner {
 	@ObfuscatedName("eb.wi(Lyf;I)V")
 	public static final void stat_base(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		arg0.intStack[++arg0.isp - 1] = Client.localPlayerGameState.getStatBaseLevel(var1);
+		arg0.intStack[++arg0.isp - 1] = Client.localPlayerGameState.getStatLevelMax(var1);
 	}
 
 	@ObfuscatedName("xa.wy(Lyf;B)V")
 	public static final void stat_visible_xp(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		arg0.intStack[++arg0.isp - 1] = Client.localPlayerGameState.getStatVisibleXP(var1);
+		arg0.intStack[++arg0.isp - 1] = Client.localPlayerGameState.getStatXP(var1);
 	}
 
 	@ObfuscatedName("xl.xm(Lyf;I)V")
 	public static final void stat_base_actual(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		arg0.intStack[++arg0.isp - 1] = Client.localPlayerGameState.getStatBaseLevelActual(var1);
+		arg0.intStack[++arg0.isp - 1] = Client.localPlayerGameState.getStatLevelMaxActual(var1);
 	}
 
 	@ObfuscatedName("ze.xl(Lyf;I)V")
 	public static final void stat_visible_xp_actual(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		arg0.intStack[++arg0.isp - 1] = Client.localPlayerGameState.getStatXP(var1);
+		arg0.intStack[++arg0.isp - 1] = Client.localPlayerGameState.getStatXPActual(var1);
 	}
 
 	@ObfuscatedName("afv.xy(Lyf;I)V")
@@ -11042,7 +11042,7 @@ public class ScriptRunner {
 		int var2 = arg0.intStack[arg0.isp + 1];
 		boolean var3 = arg0.intStack[arg0.isp + 2] == 1;
 		PlayerStat var4 = Client.currentPlayerGroup.doGetMember(var1).getStat(var2);
-		arg0.intStack[++arg0.isp - 1] = var3 ? var4.getBaseLevel() : var4.getXP();
+		arg0.intStack[++arg0.isp - 1] = var3 ? var4.getXPLevel() : var4.getXP();
 	}
 
 	@ObfuscatedName("ahb.abx(Lyf;I)V")
@@ -14377,18 +14377,18 @@ public class ScriptRunner {
 	@ObfuscatedName("ag.apv(Lyf;I)V")
 	public static final void create_availablerequest(ClientScriptState arg0) {
 		String var1 = (String) arg0.objectStack[--arg0.osp];
-		AccountCreationManager.method233(var1);
+		AccountCreationManager.requestEmailAvailableCheck(var1);
 	}
 
 	@ObfuscatedName("pc.apd(Lyf;B)V")
 	public static final void create_name_availablerequest(ClientScriptState arg0) {
 		String var1 = (String) arg0.objectStack[--arg0.osp];
-		AccountCreationManager.method18305(var1);
+		AccountCreationManager.requestDisplayNameAvailableCheck(var1);
 	}
 
 	@ObfuscatedName("aaj.apn(Lyf;I)V")
 	public static final void create_suggest_name_request(ClientScriptState arg0) {
-		AccountCreationManager.method648();
+		AccountCreationManager.requestDisplayNameSuggestion();
 	}
 
 	@ObfuscatedName("ki.app(Lyf;B)V")
@@ -14400,12 +14400,12 @@ public class ScriptRunner {
 	public static final void create_createrequest(ClientScriptState arg0) {
 		arg0.osp -= 3;
 		arg0.isp -= 2;
-		AccountCreationManager.method19266((String) arg0.objectStack[arg0.osp], (String) arg0.objectStack[arg0.osp + 1], arg0.intStack[arg0.isp], arg0.intStack[arg0.isp + 1] == 1, (String) arg0.objectStack[arg0.osp + 2]);
+		AccountCreationManager.requestAccountCreation((String) arg0.objectStack[arg0.osp], (String) arg0.objectStack[arg0.osp + 1], arg0.intStack[arg0.isp], arg0.intStack[arg0.isp + 1] == 1, (String) arg0.objectStack[arg0.osp + 2]);
 	}
 
 	@ObfuscatedName("sp.aph(Lyf;I)V")
 	public static final void create_step_reached(ClientScriptState arg0) {
-		AccountCreationManager.method16428(arg0.intStack[--arg0.isp]);
+		AccountCreationManager.requestStatsLogging(arg0.intStack[--arg0.isp]);
 	}
 
 	@ObfuscatedName("xn.apt(Lyf;I)V")

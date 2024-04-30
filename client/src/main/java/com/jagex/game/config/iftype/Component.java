@@ -1159,7 +1159,7 @@ public class Component {
 			if (arg10 == null) {
 				return null;
 			}
-			Model var37 = arg10.method10120(arg0, arg1, arg3, arg4, arg5, arg7, arg8, arg9);
+			Model var37 = arg10.getHeadModel(arg0, arg1, arg3, arg4, arg5, arg7, arg8, arg9);
 			if (var37 == null) {
 				field2338 = true;
 				return null;

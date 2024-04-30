@@ -17,7 +17,7 @@ public class PlayerStat {
 	public int xp = 0;
 
 	@ObfuscatedName("xz.f")
-	public int base = 1;
+	public int xpLevel = 1;
 
 	@ObfuscatedName("xz.w")
 	public int level = 1;
@@ -33,9 +33,9 @@ public class PlayerStat {
 	}
 
 	@ObfuscatedName("xz.n(Lzu;B)I")
-	public int getVisibleXP(ModeAccountType arg0) {
-		if (ModeAccountType.FREE == arg0 && this.skill.isMembers() && this.skill.method9813()) {
-			int var2 = this.skill.method9797();
+	public int getCappedXP(ModeAccountType arg0) {
+		if (ModeAccountType.FREE == arg0 && this.skill.isMembers() && this.skill.isCapped()) {
+			int var2 = this.skill.getCappedXP();
 			if (!this.raw) {
 				var2 /= 10;
 			}
@@ -56,23 +56,23 @@ public class PlayerStat {
 		} else if (!this.raw && this.xp > 200000000) {
 			this.xp = 200000000;
 		}
-		this.calculateBaseLevel();
+		this.recalculateXPLevel();
 	}
 
 	@ObfuscatedName("xz.k(I)I")
-	public int getBaseLevel() {
-		return this.base;
+	public int getXPLevel() {
+		return this.xpLevel;
 	}
 
 	@ObfuscatedName("xz.f(Lzu;B)I")
-	public int getBaseLevel(ModeAccountType arg0) {
-		if (ModeAccountType.FREE == arg0 && this.skill.isMembers() && this.skill.method9813()) {
-			int var2 = this.skill.method9798();
-			if (this.base > var2) {
+	public int getCappedXPLevel(ModeAccountType arg0) {
+		if (ModeAccountType.FREE == arg0 && this.skill.isMembers() && this.skill.isCapped()) {
+			int var2 = this.skill.getCappedLevel();
+			if (this.xpLevel > var2) {
 				return var2;
 			}
 		}
-		return this.base;
+		return this.xpLevel;
 	}
 
 	@ObfuscatedName("xz.w(B)I")
@@ -86,11 +86,11 @@ public class PlayerStat {
 	}
 
 	@ObfuscatedName("xz.u(I)V")
-	public void calculateBaseLevel() {
+	public void recalculateXPLevel() {
 		if (this.raw) {
-			this.base = this.skill.getLevelRaw(this.xp);
+			this.xpLevel = this.skill.getLevelRaw(this.xp);
 		} else {
-			this.base = this.skill.getLevel(this.xp);
+			this.xpLevel = this.skill.getLevel(this.xp);
 		}
 	}
 }

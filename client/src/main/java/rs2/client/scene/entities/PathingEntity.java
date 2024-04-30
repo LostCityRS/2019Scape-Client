@@ -938,7 +938,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 			return false;
 		} else {
 			this.field10462 = arg0;
-			ScriptRunner.runOnLoad(this.field10461.components);
+			ScriptRunner.executeOnLoadComponents(this.field10461.components);
 			return true;
 		}
 	}

@@ -1437,7 +1437,7 @@ public final class Client extends GameShell {
 	public static int lastOnCameraUpdateTransmitRedrawCycle = 0;
 
 	@ObfuscatedName("uk.sr")
-	public static ClientVariableManager clientVariableManager;
+	public static ClientVarDomain clientVarDomain;
 
 	@ObfuscatedName("wh.sq")
 	public static SparseVarDomain varClan;
@@ -2463,7 +2463,7 @@ public final class Client extends GameShell {
 
 	@ObfuscatedName("client.aw(B)V")
 	public final void mainquit() {
-		if (clientVariableManager != null && clientVariableManager.field10252) {
+		if (clientVarDomain != null && clientVarDomain.field10252) {
 			method14147();
 		}
 		Loading.stopRendererThread();
@@ -2775,7 +2775,7 @@ public final class Client extends GameShell {
 			if (openedTopInterface != -1) {
 				computeTopLevelInterfaceLayout(false);
 				method9734();
-				ScriptRunner.runOnLoad(openedTopInterface, null);
+				ScriptRunner.executeOnLoad(openedTopInterface, null);
 			}
 		}
 		LoginManager.resetCredentials();
@@ -2822,7 +2822,7 @@ public final class Client extends GameShell {
 			if (openedTopInterface != -1) {
 				computeTopLevelInterfaceLayout(false);
 				method9734();
-				ScriptRunner.runOnLoad(openedTopInterface, null);
+				ScriptRunner.executeOnLoad(openedTopInterface, null);
 			}
 		}
 		LoginManager.field485 = true;
@@ -3705,7 +3705,7 @@ public final class Client extends GameShell {
 	@ObfuscatedName("aax.fo(I)V")
 	public static void method14147() {
 		FileOnDisk var0 = GameShell.openPrefs("2", modegame.titleURL, true);
-		clientVariableManager.method16418(var0);
+		clientVarDomain.method16418(var0);
 	}
 
 	@ObfuscatedName("client.fy(I)V")
@@ -3812,7 +3812,7 @@ public final class Client extends GameShell {
 												notifyIncrementIdVerification();
 												incrementVerifyIdChanged = false;
 											}
-											if (clientVariableManager.field10252 && clientVariableManager.field10253 < MonotonicTime.get() - 60000L) {
+											if (clientVarDomain.field10252 && clientVarDomain.field10253 < MonotonicTime.get() - 60000L) {
 												method14147();
 											}
 											for (TimestampMessage var25 = (TimestampMessage) field10910.peekFront(); var25 != null; var25 = (TimestampMessage) field10910.prev()) {
@@ -4115,10 +4115,10 @@ public final class Client extends GameShell {
 											for (int var41 = 0; var41 < 5; var41++) {
 												int var10002 = cameraModifierWobbleSpeed[var41]++;
 											}
-											if (clientVariableManager.field10252 && clientVariableManager.field10253 < MonotonicTime.get() - 60000L) {
+											if (clientVarDomain.field10252 && clientVarDomain.field10253 < MonotonicTime.get() - 60000L) {
 												method14147();
 											}
-											clientVariableManager.method16414();
+											clientVarDomain.method16414();
 											for (TimestampMessage var42 = (TimestampMessage) field10910.peekFront(); var42 != null; var42 = (TimestampMessage) field10910.prev()) {
 												if ((long) var42.timestamp < MonotonicTime.get() / 1000L - 5L) {
 													if (var42.worldId > 0) {
@@ -4240,11 +4240,11 @@ public final class Client extends GameShell {
 			long var3 = var1.getTarget();
 			if (var2 == 1) {
 				VarType var5 = (VarType) varBasicTypeList.list((int) var3);
-				clientVariableManager.setVarValueInt(var5, var1.int0);
+				clientVarDomain.setVarValueInt(var5, var1.int0);
 				varcTransmitted[++varcTransmitNum - 1 & 0x3F] = (int) var3;
 			} else if (var2 == 2) {
 				VarType var6 = (VarType) varBasicTypeList.list((int) var3);
-				clientVariableManager.setVarValue(var6, var1.str0);
+				clientVarDomain.setVarValue(var6, var1.str0);
 				varcstrTransmitted[++varcstrTransmitNum - 1 & 0x3F] = (int) var3;
 			} else if (var2 == 3) {
 				Component var7 = Component.get((int) var3);
@@ -5713,7 +5713,7 @@ public final class Client extends GameShell {
 		if (localPlayerEntity != null && (int) var5.x - (localPlayerEntity.size() - 1) * 256 >> 9 == MiniMap.flagSceneTileX && (int) var5.z - (localPlayerEntity.size() - 1) * 256 >> 9 == MiniMap.flagSceneTileZ) {
 			MiniMap.flagSceneTileX = -1;
 			MiniMap.flagSceneTileZ = -1;
-			DelayedStateChange.onClientSetMapFlag();
+			DelayedStateChange.onMiniMapFlag();
 		}
 		pushEntities();
 		if (!arg4) {
@@ -7947,7 +7947,7 @@ public final class Client extends GameShell {
 		MiniMap.flagSceneTileX = arg0;
 		MiniMap.flagSceneTileZ = arg1;
 		MiniMap.mapFlag = false;
-		DelayedStateChange.onClientSetMapFlag();
+		DelayedStateChange.onMiniMapFlag();
 	}
 
 	@ObfuscatedName("el.if(Lax;I)Z")
@@ -8044,7 +8044,7 @@ public final class Client extends GameShell {
 			int var5 = in.g4_alt3();
 			boolean var6 = in.g1() == 1;
 			incrementVerifyId();
-			DelayedStateChange.onServerSetTextAntimacro(var5, var6);
+			DelayedStateChange.setInterfaceAntiTextMacro(var5, var6);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.CLANCHANNEL_FULL == connection.packetType) {
@@ -8070,7 +8070,7 @@ public final class Client extends GameShell {
 			byte var8 = in.g1b_alt3();
 			int var9 = in.g2();
 			incrementVerifyId();
-			DelayedStateChange.onServerVarc(var9, var8);
+			DelayedStateChange.setVarC(var9, var8);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.TELEMETRY_GRID_FULL == connection.packetType) {
@@ -8219,7 +8219,7 @@ public final class Client extends GameShell {
 			int var43 = in.g2_alt2();
 			int var44 = in.g4s();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetColour(var44, var43);
+			DelayedStateChange.setInterfaceColour(var44, var43);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.LOGOUT_FULL == connection.packetType) {
@@ -8290,7 +8290,7 @@ public final class Client extends GameShell {
 			int var63 = in.g2_alt1();
 			int var64 = in.g2_alt2();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModelZoom(var61, var62, var63, var64);
+			DelayedStateChange.setInterfaceModelXAnYAnZoom(var61, var62, var63, var64);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.CLANSETTINGS_FULL == connection.packetType) {
@@ -8358,7 +8358,7 @@ public final class Client extends GameShell {
 			int var80 = in.g2_alt2();
 			int var81 = in.g4_alt1();
 			incrementVerifyId();
-			DelayedStateChange.onServerVarcbit(var80, var81);
+			DelayedStateChange.setVarCBit(var80, var81);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.IF_OPENSUB_ACTIVE_LOC == connection.packetType) {
@@ -8607,7 +8607,7 @@ public final class Client extends GameShell {
 			int var154 = in.g4s();
 			int var155 = in.g1_alt2();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetHide(var154, var155);
+			DelayedStateChange.setInterfaceHide(var154, var155);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.MESSAGE_CLANCHANNEL == connection.packetType) {
@@ -8744,7 +8744,7 @@ public final class Client extends GameShell {
 			int var194 = in.g4_alt3();
 			if (lobbyLoyaltyBalance != var194) {
 				lobbyLoyaltyBalance = var194;
-				ScriptRunner.runTrigger(ClientTriggerType.LOYALTY_UPDATED, -1, -1);
+				ScriptRunner.executeTriggeredScriptMapElement(ClientTriggerType.LOYALTY_UPDATED, -1, -1);
 			}
 			connection.packetType = null;
 			return true;
@@ -8754,7 +8754,7 @@ public final class Client extends GameShell {
 			int var197 = in.g2_alt1();
 			int var198 = in.g2_alt1();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModel(var196, 7, var198 << 16 | var195, var197);
+			DelayedStateChange.setInterfaceModel(var196, 7, var198 << 16 | var195, var197);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.TELEMETRY_GRID_REMOVE_COLUMN == connection.packetType) {
@@ -8837,13 +8837,13 @@ public final class Client extends GameShell {
 			int var216 = in.g1_alt1();
 			int var217 = -var216 - 2;
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModel(var215, 5, var217, 0);
+			DelayedStateChange.setInterfaceModel(var215, 5, var217, 0);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.IF_SETPLAYERMODEL_SELF == connection.packetType) {
 			int var218 = in.g4s();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModel(var218, 5, currentPlayerUid, 0);
+			DelayedStateChange.setInterfaceModel(var218, 5, currentPlayerUid, 0);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.MESSAGE_PUBLIC == connection.packetType) {
@@ -8901,14 +8901,14 @@ public final class Client extends GameShell {
 			int var229 = in.g4_alt2();
 			int var230 = in.g4s();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModel(var229, 1, var230, -1);
+			DelayedStateChange.setInterfaceModel(var229, 1, var230, -1);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.CLIENT_SETVARCBIT_SMALL == connection.packetType) {
 			int var231 = in.g2();
 			byte var232 = in.g1b_alt1();
 			incrementVerifyId();
-			DelayedStateChange.onServerVarcbit(var231, var232);
+			DelayedStateChange.setVarCBit(var231, var232);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.CAM_SMOOTHRESET == connection.packetType) {
@@ -8941,7 +8941,7 @@ public final class Client extends GameShell {
 			int var234 = in.g4_alt2();
 			int var235 = in.g4_alt1();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetGraphic(var235, var234);
+			DelayedStateChange.setInterfaceGraphic(var235, var234);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.MESSAGE_QUICKCHAT_PRIVATE_ECHO == connection.packetType) {
@@ -9068,7 +9068,7 @@ public final class Client extends GameShell {
 			int var262 = in.g4_alt1();
 			int var263 = in.g2_alt2();
 			incrementVerifyId();
-			DelayedStateChange.onServerVarc(var263, var262);
+			DelayedStateChange.setVarC(var263, var262);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.IF_MOVESUB == connection.packetType) {
@@ -9103,7 +9103,7 @@ public final class Client extends GameShell {
 			int var271 = in.g2_alt2();
 			int var272 = in.g4_alt3();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModel(var272, 3, var271, var270);
+			DelayedStateChange.setInterfaceModel(var272, 3, var271, var270);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.LOBBY_APPEARANCE == connection.packetType) {
@@ -9152,7 +9152,7 @@ public final class Client extends GameShell {
 			int var282 = in.g4_alt1();
 			String var283 = in.gjstr();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetText(var282, var283);
+			DelayedStateChange.setInterfaceText(var282, var283);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.PLAYER_GROUP_DELTA == connection.packetType) {
@@ -9167,7 +9167,7 @@ public final class Client extends GameShell {
 			int var287 = in.g2_alt1();
 			int var288 = in.g1_alt1();
 			incrementVerifyId();
-			DelayedStateChange.method18895(var285, var288, var286, var287);
+			DelayedStateChange.setInterfaceRecol(var285, var288, var286, var287);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.RESET_CLIENT_VARCACHE == connection.packetType) {
@@ -9283,7 +9283,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.IF_SETPLAYERHEAD == connection.packetType) {
 			int var319 = in.g4_alt1();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModel(var319, 3, currentPlayerUid, 0);
+			DelayedStateChange.setInterfaceModel(var319, 3, currentPlayerUid, 0);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.PLAYER_GROUP_VARPS == connection.packetType) {
@@ -9307,7 +9307,7 @@ public final class Client extends GameShell {
 			int var326 = in.g4_alt2();
 			if (lobbyJCoinsBalance != var326) {
 				lobbyJCoinsBalance = var326;
-				ScriptRunner.runTrigger(ClientTriggerType.JCOINS_UPDATED, -1, -1);
+				ScriptRunner.executeTriggeredScriptMapElement(ClientTriggerType.JCOINS_UPDATED, -1, -1);
 			}
 			connection.packetType = null;
 			return true;
@@ -9333,7 +9333,7 @@ public final class Client extends GameShell {
 			openedTopInterface = var334;
 			method17758(var334, var335);
 			computeTopLevelInterfaceLayout(false);
-			ScriptRunner.runOnLoad(openedTopInterface, var335);
+			ScriptRunner.executeOnLoad(openedTopInterface, var335);
 			for (int var336 = 0; var336 < 114; var336++) {
 				topLevelComponentRedrawRequestedTemp[var336] = true;
 			}
@@ -9980,7 +9980,7 @@ public final class Client extends GameShell {
 				var518 = -1;
 				var519 = -1;
 			}
-			DelayedStateChange.onServerSetMapFlag(var518, var519);
+			DelayedStateChange.setMiniMapFlag(var518, var519);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.VARP_SMALL == connection.packetType) {
@@ -10011,10 +10011,10 @@ public final class Client extends GameShell {
 			int var528 = in.g4_alt3();
 			int var529 = in.g4_alt1();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetObjectData(var528, var527, var529);
+			DelayedStateChange.setInterfaceLinkObjTypeCount(var528, var527, var529);
 			ObjType var530 = (ObjType) objTypeList.list(var527);
-			DelayedStateChange.onServerSetModelZoom(var528, var530.xan2d, var530.yan2d, var530.zoom2d);
-			DelayedStateChange.onServerSetModelAngle(var528, var530.xof2d, var530.yof2d, var530.zan2d);
+			DelayedStateChange.setInterfaceModelXAnYAnZoom(var528, var530.xan2d, var530.yan2d, var530.zoom2d);
+			DelayedStateChange.setInterfaceModelXOfYOfZAn(var528, var530.xof2d, var530.yof2d, var530.zan2d);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.TELEMETRY_GRID_SET_ROW_PINNED == connection.packetType) {
@@ -10121,7 +10121,7 @@ public final class Client extends GameShell {
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.STORE_SERVERPERM_VARCS_ACK == connection.packetType) {
-			clientVariableManager.method16413();
+			clientVarDomain.method16413();
 			connection.packetType = null;
 			return false;
 		} else if (ServerProt.CREATE_CHECK_EMAIL_REPLY == connection.packetType) {
@@ -10151,7 +10151,7 @@ public final class Client extends GameShell {
 			int var573 = in.g4_alt1();
 			int var574 = in.g4_alt3();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetTextFont(var573, var574);
+			DelayedStateChange.setInterfaceFontType(var573, var574);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.IF_OPENSUB == connection.packetType) {
@@ -10339,7 +10339,7 @@ public final class Client extends GameShell {
 			int var642 = in.g2s_alt2();
 			int var643 = in.g4_alt1();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetPosition(var643, var641, var642);
+			DelayedStateChange.setInterfaceDataXY(var643, var641, var642);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.REDUCE_PLAYER_ATTACK_PRIORITY == connection.packetType) {
@@ -10436,7 +10436,7 @@ public final class Client extends GameShell {
 			int var658 = in.g4s();
 			int var659 = in.g4_alt3();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModelAnim(var658, var659);
+			DelayedStateChange.setInterfaceModelAnim(var658, var659);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.TELEMETRY_GRID_MOVE_COLUMN == connection.packetType) {
@@ -10457,7 +10457,7 @@ public final class Client extends GameShell {
 			int var664 = in.g4_alt3();
 			boolean var665 = in.g1_alt2() == 1;
 			incrementVerifyId();
-			DelayedStateChange.onServerSetClickMask(var664, var665);
+			DelayedStateChange.setInterfaceClickMask(var664, var665);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.TELEMETRY_GRID_ADD_COLUMN == connection.packetType) {
@@ -10482,7 +10482,7 @@ public final class Client extends GameShell {
 			int var670 = in.g2();
 			String var671 = in.gjstr();
 			incrementVerifyId();
-			DelayedStateChange.onServerVarcString(var670, var671);
+			DelayedStateChange.setVarCStr(var670, var671);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.ENVIRONMENT_OVERRIDE == connection.packetType) {
@@ -10543,14 +10543,14 @@ public final class Client extends GameShell {
 			int var685 = in.g4s();
 			int var686 = in.g2_alt2();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetScrollPos(var685, var686);
+			DelayedStateChange.setInterfaceScrollYPos(var685, var686);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.IF_SETNPCHEAD == connection.packetType) {
 			int var687 = in.g4_alt3();
 			int var688 = in.g4_alt2();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModel(var687, 2, var688, -1);
+			DelayedStateChange.setInterfaceModel(var687, 2, var688, -1);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.LOGOUT_TRANSFER == connection.packetType) {
@@ -10608,7 +10608,7 @@ public final class Client extends GameShell {
 			int var708 = in.g4s();
 			int var709 = in.g1_alt1();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetRecol(var708, var709, var706, var707);
+			DelayedStateChange.setInterfaceRetex(var708, var709, var706, var707);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.REBUILD_NORMAL == connection.packetType) {
@@ -10640,7 +10640,7 @@ public final class Client extends GameShell {
 			int var714 = in.g4s();
 			int var715 = in.g4s();
 			incrementVerifyId();
-			DelayedStateChange.onServerSetModel(var714, 5, var713, var715);
+			DelayedStateChange.setInterfaceModel(var714, 5, var713, var715);
 			connection.packetType = null;
 			return true;
 		} else if (ServerProt.CAMERA_UPDATE == connection.packetType) {
@@ -10657,7 +10657,7 @@ public final class Client extends GameShell {
 			int var717 = in.g2();
 			String var718 = in.gjstr();
 			incrementVerifyId();
-			DelayedStateChange.onServerVarcString(var717, var718);
+			DelayedStateChange.setVarCStr(var717, var718);
 			connection.packetType = null;
 			return true;
 		} else {
@@ -12488,7 +12488,7 @@ public final class Client extends GameShell {
 										}
 									}
 									if (var69 && var68 != null && var68.model != null) {
-										var60 = var68.model.method10126(toolkit, var61, basTypeList, idkTypeList, npcTypeList, objTypeList, localPlayerGameState, localPlayerGameState, child.modelAnimator, null, null, null, 0, true, wearposDefaults);
+										var60 = var68.model.getBodyModel(toolkit, var61, basTypeList, idkTypeList, npcTypeList, objTypeList, localPlayerGameState, localPlayerGameState, child.modelAnimator, null, null, null, 0, true, wearposDefaults);
 									}
 								} else if (child.modelkind == 8 || child.modelkind == 9) {
 									ClientInvCache var71 = ClientInvCache.getCachedInvs(child.model, false);
@@ -13174,7 +13174,7 @@ public final class Client extends GameShell {
 										for (int var71 = 0; var71 < var69; var71++) {
 											PlayerEntity var72 = players[var70[var71]];
 											if (var72 != null) {
-												ScriptRunner.runPathingEntity(ClientTriggerType.PROCESS_PLAYER, -1, -1, var72, var70[var71]);
+												ScriptRunner.executeTriggeredScriptPathingEntity(ClientTriggerType.PROCESS_PLAYER, -1, -1, var72, var70[var71]);
 												var72.method16571(var15, var16, var17, var18, var13 - var12.scrollx, var14 - var12.scrolly, arg9, arg10);
 											}
 										}
@@ -13182,7 +13182,7 @@ public final class Client extends GameShell {
 											int var74 = field11036[var73];
 											ObjectNode var75 = (ObjectNode) npcs.get((long) var74);
 											if (var75 != null) {
-												ScriptRunner.runPathingEntity(ClientTriggerType.PROCESS_NPC, ((NpcEntity) var75.value).npcType.id, -1, (PathingEntity) var75.value, var74);
+												ScriptRunner.executeTriggeredScriptPathingEntity(ClientTriggerType.PROCESS_NPC, ((NpcEntity) var75.value).npcType.id, -1, (PathingEntity) var75.value, var74);
 												((PathingEntity) var75.value).method16571(var15, var16, var17, var18, var13 - var12.scrollx, var14 - var12.scrolly, arg9, arg10);
 											}
 										}
@@ -13967,7 +13967,7 @@ public final class Client extends GameShell {
 			method8329(Component.interfaces[var5.parentlayer >>> 16], var5, !arg3);
 		}
 		if (!arg3) {
-			ScriptRunner.runOnLoad(arg1.field11571, arg2);
+			ScriptRunner.executeOnLoad(arg1.field11571, arg2);
 		}
 		if (!arg3 && openedTopInterface != -1) {
 			method1023(openedTopInterface, 1);

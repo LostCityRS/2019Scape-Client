@@ -7,6 +7,12 @@ import com.jagex.game.script.ScriptVarProperty;
 import com.jagex.game.shared.movement.CoordFine;
 import deob.ObfuscatedName;
 
+import java.io.IOException;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.*;
+
 @ObfuscatedName("qw")
 public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 
@@ -635,5 +641,40 @@ public class ScriptVarType implements SerializableEnum, ScriptVarInterface {
 	@ObfuscatedName("qw.l(I)Ljava/lang/Object;")
 	public Object getDefaultValue() {
 		return this.defaultValue;
+	}
+
+	public static void main(String[] args) throws IllegalAccessException, IOException {
+		for (Field field : ScriptVarType.class.getFields()) {
+			if (!Modifier.isStatic(field.getModifiers()) || field.getType() != ScriptVarType.class) {
+				continue;
+			}
+			ScriptVarType type = (ScriptVarType) field.get(null);
+			String baseType = "";
+			if (type.baseType == BaseVarType.INTEGER) {
+				baseType = "BaseVarType.INTEGER";
+			} else if (type.baseType == BaseVarType.LONG) {
+				baseType = "BaseVarType.LONG";
+			} else if (type.baseType == BaseVarType.STRING) {
+				baseType = "BaseVarType.STRING";
+			} else if (type.baseType == BaseVarType.COORDFINE) {
+				baseType = "BaseVarType.COORDFINE";
+			} else {
+				baseType = "BaseVarType.COMPONENT_HOOK";
+			}
+			String name = field.getName();
+			if (name.contains("field")) {
+				continue;
+			}
+			String defaultVal = String.valueOf(type.defaultValue);
+			if (type.defaultValue instanceof String) {
+				defaultVal = "\"" + defaultVal + "\"";
+			}
+			String legacyChar = "null";
+			if (type.legacyChar != 0) {
+				legacyChar = String.valueOf(Cp1252.encode(type.legacyChar) & 0xFF);
+			}
+			String line = "public static readonly " + name + " = new ScriptVarType(" + type.serialID + ", " + legacyChar + ", " + baseType + ", " + defaultVal + ");\n";
+			Files.write(Paths.get("J:\\Users\\Joshua\\Documents\\Workspace\\RSPS\\2019Scape-Client\\console.log"), line.getBytes(StandardCharsets.UTF_8), StandardOpenOption.APPEND);
+		}
 	}
 }
