@@ -1122,8 +1122,8 @@ public class Component {
 					field2338 = true;
 					return null;
 				}
-				if (var33.field1372 < 13) {
-					var33.method1947(2);
+				if (var33.version < 13) {
+					var33.scaleByPowerOfTwo(2);
 				}
 				var32 = arg0.createModel(var33, arg1, field11802, 64, 768);
 				if (this.recol_s != null) {

@@ -8,16 +8,16 @@ import java.lang.ref.SoftReference;
 public class SoftReferenceNode extends ReferenceNode {
 
 	@ObfuscatedName("atm.u")
-	public SoftReference field12549;
+	public SoftReference value;
 
 	public SoftReferenceNode(Object arg0, int arg1) {
 		super(arg1);
-		this.field12549 = new SoftReference(arg0);
+		this.value = new SoftReference(arg0);
 	}
 
 	@ObfuscatedName("atm.e(B)Ljava/lang/Object;")
-	public Object method19423() {
-		return this.field12549.get();
+	public Object getValue() {
+		return this.value.get();
 	}
 
 	@ObfuscatedName("atm.n(I)Z")

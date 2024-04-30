@@ -159,8 +159,8 @@ public class IDKType implements ConfigType {
 			}
 		}
 		for (int var5 = 0; var5 < this.models.length; var5++) {
-			if (var1[var5].field1372 < 13) {
-				var1[var5].method1947(2);
+			if (var1[var5].version < 13) {
+				var1[var5].scaleByPowerOfTwo(2);
 			}
 		}
 		ModelUnlit var6;
@@ -217,8 +217,8 @@ public class IDKType implements ConfigType {
 			}
 		}
 		for (int var6 = 0; var6 < 5; var6++) {
-			if (var1[var6] != null && var1[var6].field1372 < 13) {
-				var1[var6].method1947(2);
+			if (var1[var6] != null && var1[var6].version < 13) {
+				var1[var6].scaleByPowerOfTwo(2);
 			}
 		}
 		ModelUnlit var7 = new ModelUnlit(var1, var2);

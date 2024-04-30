@@ -310,7 +310,7 @@ public class AccountCreationManager {
 			var1.p4((int) (Math.random() * 9.9999999E7D));
 		}
 		var1.p2((int) (Math.random() * 9.9999999E7D));
-		var1.rsaenc(PublicKeys.field624, PublicKeys.field626);
+		var1.rsaenc(PublicKeys.LOGIN_RSAE, PublicKeys.LOGIN_RSAN);
 		arg0.buf.pdata(var1.data, 0, var1.pos);
 		return var2;
 	}

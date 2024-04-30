@@ -6,19 +6,19 @@ import deob.ObfuscatedName;
 public abstract class CacheEntry extends SecondaryNode {
 
 	@ObfuscatedName("asr.l")
-	public final int field12363;
+	public final int cacheWeight;
 
 	@ObfuscatedName("asr.u")
-	public final CacheKey field12362;
+	public final CacheKey cacheKey;
 
 	public CacheEntry(CacheKey arg0, int arg1) {
-		this.field12362 = arg0;
-		this.field12363 = arg1;
+		this.cacheKey = arg0;
+		this.cacheWeight = arg1;
 	}
 
 	@ObfuscatedName("asr.e()Ljava/lang/Object;")
-	public abstract Object method19487();
+	public abstract Object getValue();
 
 	@ObfuscatedName("asr.n()Z")
-	public abstract boolean method19488();
+	public abstract boolean isSoft();
 }

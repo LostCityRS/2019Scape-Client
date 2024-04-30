@@ -411,7 +411,7 @@ public class LoginManager {
 				buf.p8(Client.field10810);
 				buf.p1(Client.modegame.game);
 				buf.p1(Client.secureRandom.nextInt());
-				buf.rsaenc(PublicKeys.field624, PublicKeys.field626);
+				buf.rsaenc(PublicKeys.LOGIN_RSAE, PublicKeys.LOGIN_RSAN);
 				message.buf.pdata(buf.data, 0, buf.pos);
 				message.buf.psize2(message.buf.pos - var4);
 				connection.queue(message);
@@ -1092,7 +1092,7 @@ public class LoginManager {
 			buf.p8(socialname);
 			buf.p8(Client.field10810);
 		}
-		buf.rsaenc(PublicKeys.field624, PublicKeys.field626);
+		buf.rsaenc(PublicKeys.LOGIN_RSAE, PublicKeys.LOGIN_RSAN);
 		return buf;
 	}
 

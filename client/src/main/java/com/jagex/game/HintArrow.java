@@ -56,8 +56,8 @@ public class HintArrow {
 			if (var10 == null) {
 				return null;
 			}
-			if (var10.field1372 < 13) {
-				var10.method1947(2);
+			if (var10.version < 13) {
+				var10.scaleByPowerOfTwo(2);
 			}
 			var8 = arg0.createModel(var10, var9, field753, 64, 768);
 			modelCache.put(var8, var6);

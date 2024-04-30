@@ -13,5 +13,5 @@ public interface Serializable {
 	void decode(Packet buf);
 
 	@ObfuscatedName("acf.e(B)I")
-	int method15118();
+	int computeSize();
 }

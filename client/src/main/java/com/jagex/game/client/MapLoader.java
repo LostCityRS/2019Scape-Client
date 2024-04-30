@@ -446,7 +446,7 @@ public class MapLoader {
 			return;
 		}
 		if (!this.underwater && !arg9) {
-			this.sceneLevelTileFlags.levelTileFlags[level][originX][originZ] = 0;
+			this.sceneLevelTileFlags.flags[level][originX][originZ] = 0;
 		}
 		int opcode = buf.g1();
 		if ((opcode & 0x1) != 0) {
@@ -464,7 +464,7 @@ public class MapLoader {
 			if (this.underwater || arg9) {
 				buf.pos++;
 			} else {
-				this.sceneLevelTileFlags.levelTileFlags[level][originX][originZ] = buf.g1b();
+				this.sceneLevelTileFlags.flags[level][originX][originZ] = buf.g1b();
 			}
 		}
 		if ((opcode & 0x4) != 0) {

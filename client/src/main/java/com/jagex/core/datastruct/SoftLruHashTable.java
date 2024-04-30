@@ -45,15 +45,15 @@ public final class SoftLruHashTable {
 		if (var3 == null) {
 			return null;
 		}
-		Object var4 = var3.method19423();
+		Object var4 = var3.getValue();
 		if (var4 == null) {
 			var3.unlink();
 			var3.secondaryRemove();
-			this.field1756 += var3.field12328;
+			this.field1756 += var3.weight;
 			return null;
 		}
 		if (var3.isSoft()) {
-			HardReferenceNode var5 = new HardReferenceNode(var4, var3.field12328);
+			HardReferenceNode var5 = new HardReferenceNode(var4, var3.weight);
 			this.hashTable.put(var5, var3.nodeId);
 			this.queue.pushBack(var5);
 			var5.secondaryNodeId = 0L;
@@ -77,7 +77,7 @@ public final class SoftLruHashTable {
 		if (arg0 != null) {
 			arg0.unlink();
 			arg0.secondaryRemove();
-			this.field1756 += arg0.field12328;
+			this.field1756 += arg0.weight;
 		}
 	}
 
@@ -102,7 +102,7 @@ public final class SoftLruHashTable {
 			}
 			this.method2918(var5);
 			if (this.field1759 != null) {
-				this.field1759.method2914(var5.method19423());
+				this.field1759.method2914(var5.getValue());
 			}
 		}
 		HardReferenceNode var6 = new HardReferenceNode(arg0, arg2);
@@ -115,13 +115,13 @@ public final class SoftLruHashTable {
 	public void clean(int arg0) {
 		for (ReferenceNode var2 = (ReferenceNode) this.queue.peekFront(); var2 != null; var2 = (ReferenceNode) this.queue.prev()) {
 			if (var2.isSoft()) {
-				if (var2.method19423() == null) {
+				if (var2.getValue() == null) {
 					var2.unlink();
 					var2.secondaryRemove();
-					this.field1756 += var2.field12328;
+					this.field1756 += var2.weight;
 				}
 			} else if (++var2.secondaryNodeId > (long) arg0) {
-				SoftReferenceNode var3 = new SoftReferenceNode(var2.method19423(), var2.field12328);
+				SoftReferenceNode var3 = new SoftReferenceNode(var2.getValue(), var2.weight);
 				this.hashTable.put(var3, var2.nodeId);
 				SecondaryLinkedList.method10144(var3, var2);
 				var2.unlink();
@@ -164,7 +164,7 @@ public final class SoftLruHashTable {
 			if (var1.isSoft()) {
 				var1.unlink();
 				var1.secondaryRemove();
-				this.field1756 += var1.field12328;
+				this.field1756 += var1.weight;
 			}
 		}
 	}
@@ -173,7 +173,7 @@ public final class SoftLruHashTable {
 	public Object method2950() {
 		ReferenceNode var1 = (ReferenceNode) this.hashTable.head();
 		while (var1 != null) {
-			Object var2 = var1.method19423();
+			Object var2 = var1.getValue();
 			if (var2 != null) {
 				return var2;
 			}
@@ -181,7 +181,7 @@ public final class SoftLruHashTable {
 			var1 = (ReferenceNode) this.hashTable.next();
 			var3.unlink();
 			var3.secondaryRemove();
-			this.field1756 += var3.field12328;
+			this.field1756 += var3.weight;
 		}
 		return null;
 	}
@@ -190,7 +190,7 @@ public final class SoftLruHashTable {
 	public Object method2937() {
 		ReferenceNode var1 = (ReferenceNode) this.hashTable.next();
 		while (var1 != null) {
-			Object var2 = var1.method19423();
+			Object var2 = var1.getValue();
 			if (var2 != null) {
 				return var2;
 			}
@@ -198,7 +198,7 @@ public final class SoftLruHashTable {
 			var1 = (ReferenceNode) this.hashTable.next();
 			var3.unlink();
 			var3.secondaryRemove();
-			this.field1756 += var3.field12328;
+			this.field1756 += var3.weight;
 		}
 		return null;
 	}

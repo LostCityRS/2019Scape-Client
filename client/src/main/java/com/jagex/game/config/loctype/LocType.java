@@ -891,8 +891,8 @@ public class LocType implements ConfigType {
 								return null;
 							}
 							var21 = new ModelUnlit(var24);
-							if (var21.field1372 < 13) {
-								var21.method1947(2);
+							if (var21.version < 13) {
+								var21.scaleByPowerOfTwo(2);
 							}
 							if (var14 > 1) {
 								this.factory.field7535[var23] = var21;

@@ -207,8 +207,8 @@ public class EffectAnimType implements ConfigType {
 			if (var21 == null) {
 				return null;
 			}
-			if (var21.field1372 < 13) {
-				var21.method1947(2);
+			if (var21.version < 13) {
+				var21.scaleByPowerOfTwo(2);
 			}
 			var18 = arg0.createModel(var21, var20, this.factory.field8264, this.ambient + 64, this.contrast + 850);
 			if (this.recol_s != null) {

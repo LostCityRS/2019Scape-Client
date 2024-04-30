@@ -12,17 +12,17 @@ import java.util.Map;
 public class SerializableEnums {
 
 	@ObfuscatedName("zn.e")
-	public static Map field8286 = new HashMap();
+	public static Map cache = new HashMap();
 
 	public SerializableEnums() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("akf.e(Ljava/lang/Class;IB)Lza;")
-	public static SerializableEnum method17657(Class arg0, int arg1) {
-		Map var2 = field8286;
-		synchronized (field8286) {
-			Map var3 = (Map) field8286.get(arg0);
+	public static SerializableEnum decode(Class arg0, int arg1) {
+		Map var2 = cache;
+		synchronized (cache) {
+			Map var3 = (Map) cache.get(arg0);
 			if (var3 == null) {
 				var3 = new HashMap();
 				SerializableEnum[] var4 = (SerializableEnum[]) arg0.getEnumConstants();
@@ -30,7 +30,7 @@ public class SerializableEnums {
 					SerializableEnum var6 = var4[var5];
 					var3.put(var6.getId(), var6);
 				}
-				field8286.put(arg0, var3);
+				cache.put(arg0, var3);
 			}
 			return (SerializableEnum) var3.get(arg1);
 		}
@@ -49,8 +49,8 @@ public class SerializableEnums {
 	}
 
 	@ObfuscatedName("g.m(Ljava/lang/Iterable;Lalw;I)V")
-	public static void method618(Iterable arg0, Packet arg1) {
-		int var2 = method5155(arg0);
+	public static void encodeSet(Iterable arg0, Packet arg1) {
+		int var2 = computeSetSize(arg0);
 		arg1.pSmart1or2s(var2);
 		if (var2 == 0) {
 			return;
@@ -69,7 +69,7 @@ public class SerializableEnums {
 	}
 
 	@ObfuscatedName("ko.k(Ljava/lang/Iterable;I)I")
-	public static int method5155(Iterable arg0) {
+	public static int computeSetSize(Iterable arg0) {
 		int var1 = -1;
 		Iterator var2 = arg0.iterator();
 		while (var2.hasNext()) {

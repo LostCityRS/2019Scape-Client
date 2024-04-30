@@ -195,7 +195,7 @@ public class ClientWatch {
 			int var20 = 0;
 			label94: while (true) {
 				if (var20 >= var14.length) {
-					SerializableEnums.method618(var18, var15.buf);
+					SerializableEnums.encodeSet(var18, var15.buf);
 					var15.buf.pSmart1or2(var19.size());
 					if (var19.size() <= 0) {
 						break;

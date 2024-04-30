@@ -1042,7 +1042,7 @@ public class ClientMapLoader extends MapLoader {
 			if (this.levels > 1) {
 				for (int x = 0; x < this.maxTileX; x++) {
 					for (int z = 0; z < this.maxTileZ; z++) {
-						if ((this.sceneLevelTileFlags.levelTileFlags[1][x][z] & 0x2) == 2) {
+						if ((this.sceneLevelTileFlags.flags[1][x][z] & 0x2) == 2) {
 							this.scene.setBridge(x, z);
 						}
 					}

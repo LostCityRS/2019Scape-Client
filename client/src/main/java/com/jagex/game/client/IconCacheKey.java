@@ -29,7 +29,7 @@ public class IconCacheKey implements CacheKey {
 	public boolean field8608;
 
 	@ObfuscatedName("abo.e()J")
-	public long method9641() {
+	public long hash() {
 		long[] var1 = Packet.crc64table;
 		long var2 = -1L;
 		long var4 = var2 >>> 8 ^ var1[(int) ((var2 ^ (long) this.field8607) & 0xFFL)];
@@ -49,7 +49,7 @@ public class IconCacheKey implements CacheKey {
 	}
 
 	@ObfuscatedName("abo.n(Lwk;)Z")
-	public boolean method9638(CacheKey arg0) {
+	public boolean equal(CacheKey arg0) {
 		if (!(arg0 instanceof IconCacheKey)) {
 			return false;
 		}

@@ -6,14 +6,14 @@ import deob.ObfuscatedName;
 public abstract class ReferenceNode extends SecondaryNode {
 
 	@ObfuscatedName("asa.l")
-	public final int field12328;
+	public final int weight;
 
 	public ReferenceNode(int arg0) {
-		this.field12328 = arg0;
+		this.weight = arg0;
 	}
 
 	@ObfuscatedName("asa.e(B)Ljava/lang/Object;")
-	public abstract Object method19423();
+	public abstract Object getValue();
 
 	@ObfuscatedName("asa.n(I)Z")
 	public abstract boolean isSoft();

@@ -158,7 +158,7 @@ public class CoordFine extends Node implements Serializable {
 	}
 
 	@ObfuscatedName("akt.e(B)I")
-	public int method15118() {
+	public int computeSize() {
 		return method3582();
 	}
 

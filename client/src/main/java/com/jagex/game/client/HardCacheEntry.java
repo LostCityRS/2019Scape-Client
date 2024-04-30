@@ -8,20 +8,20 @@ import deob.ObfuscatedName;
 public class HardCacheEntry extends CacheEntry {
 
 	@ObfuscatedName("auf.z")
-	public Object field12566;
+	public Object value;
 
 	public HardCacheEntry(CacheKey arg0, Object arg1, int arg2) {
 		super(arg0, arg2);
-		this.field12566 = arg1;
+		this.value = arg1;
 	}
 
 	@ObfuscatedName("auf.e()Ljava/lang/Object;")
-	public Object method19487() {
-		return this.field12566;
+	public Object getValue() {
+		return this.value;
 	}
 
 	@ObfuscatedName("auf.n()Z")
-	public boolean method19488() {
+	public boolean isSoft() {
 		return false;
 	}
 }

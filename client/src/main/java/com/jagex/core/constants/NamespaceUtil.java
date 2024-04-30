@@ -7,10 +7,10 @@ import deob.ObfuscatedName;
 public class NamespaceUtil {
 
 	@ObfuscatedName("adz.m")
-	public static final char[] field9203 = new char[] { ' ', ' ', '_', '-', 'à', 'á', 'â', 'ä', 'ã', 'À', 'Á', 'Â', 'Ä', 'Ã', 'è', 'é', 'ê', 'ë', 'È', 'É', 'Ê', 'Ë', 'í', 'î', 'ï', 'Í', 'Î', 'Ï', 'ò', 'ó', 'ô', 'ö', 'õ', 'Ò', 'Ó', 'Ô', 'Ö', 'Õ', 'ù', 'ú', 'û', 'ü', 'Ù', 'Ú', 'Û', 'Ü', 'ç', 'Ç', 'ÿ', 'Ÿ', 'ñ', 'Ñ', 'ß' };
+	public static final char[] VALID_CHARS_1 = new char[] { ' ', ' ', '_', '-', 'à', 'á', 'â', 'ä', 'ã', 'À', 'Á', 'Â', 'Ä', 'Ã', 'è', 'é', 'ê', 'ë', 'È', 'É', 'Ê', 'Ë', 'í', 'î', 'ï', 'Í', 'Î', 'Ï', 'ò', 'ó', 'ô', 'ö', 'õ', 'Ò', 'Ó', 'Ô', 'Ö', 'Õ', 'ù', 'ú', 'û', 'ü', 'Ù', 'Ú', 'Û', 'Ü', 'ç', 'Ç', 'ÿ', 'Ÿ', 'ñ', 'Ñ', 'ß' };
 
 	@ObfuscatedName("adz.k")
-	public static final char[] field9202 = new char[] { '[', ']', '#' };
+	public static final char[] VALID_CHARS_2 = new char[] { '[', ']', '#' };
 
 	public NamespaceUtil() throws Throwable {
 		throw new Error();
@@ -37,14 +37,14 @@ public class NamespaceUtil {
 		} else if (StringTools.charIsAlphaNumeric(arg0)) {
 			return true;
 		} else {
-			char[] var1 = field9203;
+			char[] var1 = VALID_CHARS_1;
 			for (int var2 = 0; var2 < var1.length; var2++) {
 				char var3 = var1[var2];
 				if (arg0 == var3) {
 					return true;
 				}
 			}
-			char[] var4 = field9202;
+			char[] var4 = VALID_CHARS_2;
 			for (int var5 = 0; var5 < var4.length; var5++) {
 				char var6 = var4[var5];
 				if (arg0 == var6) {
@@ -61,7 +61,7 @@ public class NamespaceUtil {
 	}
 
 	@ObfuscatedName("adh.k(Ljava/lang/CharSequence;Ladi;B)Ljava/lang/String;")
-	public static String method15191(CharSequence arg0, Namespace arg1) {
+	public static String normalize(CharSequence arg0, Namespace arg1) {
 		if (arg0 == null) {
 			return null;
 		}
@@ -81,7 +81,7 @@ public class NamespaceUtil {
 		for (int var6 = var2; var6 < var3; var6++) {
 			char var7 = arg0.charAt(var6);
 			if (method13783(var7)) {
-				char var8 = method8383(var7);
+				char var8 = normalize(var7);
 				if (var8 != 0) {
 					var5.append(var8);
 				}
@@ -95,7 +95,7 @@ public class NamespaceUtil {
 	}
 
 	@ObfuscatedName("sg.f(CI)C")
-	public static char method8383(char arg0) {
+	public static char normalize(char arg0) {
 		switch(arg0) {
 			case ' ':
 			case '-':

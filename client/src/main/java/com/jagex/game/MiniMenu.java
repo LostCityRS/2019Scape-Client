@@ -786,7 +786,7 @@ public class MiniMenu {
 				var7 = var20 + (Client.localPlayerEntity.size() - 1 << 8) >> 9;
 				var8 = var21 + (Client.localPlayerEntity.size() - 1 << 8) >> 9;
 				byte var22 = Client.localPlayerEntity.level;
-				if (var22 < 3 && (Client.world.getSceneLevelTileFlags().levelTileFlags[1][var20 >> 9][var21 >> 9] & 0x2) != 0) {
+				if (var22 < 3 && (Client.world.getSceneLevelTileFlags().flags[1][var20 >> 9][var21 >> 9] & 0x2) != 0) {
 					int var91 = var22 + 1;
 				}
 			}
@@ -2377,7 +2377,7 @@ public class MiniMenu {
 			int var19 = (int) var17 >> 9;
 			if (var18 > 0 && var19 > 0 && var18 < Client.world.getSizeX() && var19 < Client.world.getSizeZ()) {
 				int var20 = Client.localPlayerEntity.level;
-				if (var20 < 3 && (Client.world.getSceneLevelTileFlags().levelTileFlags[1][var18][var19] & 0x2) != 0) {
+				if (var20 < 3 && (Client.world.getSceneLevelTileFlags().flags[1][var18][var19] & 0x2) != 0) {
 					var20++;
 				}
 				int var21 = var14.field6915[var20].getFineHeight((int) var15, (int) var17);

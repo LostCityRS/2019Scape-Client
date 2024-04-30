@@ -678,8 +678,8 @@ public class ObjType implements ConfigType {
 			if (var17 == null) {
 				return null;
 			}
-			if (var17.field1372 < 13) {
-				var17.method1947(2);
+			if (var17.version < 13) {
+				var17.scaleByPowerOfTwo(2);
 			}
 			var14 = arg0.createModel(var17, var16, this.factory.field8611, this.ambient + 64, this.contrast + 850);
 			if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
@@ -765,8 +765,8 @@ public class ObjType implements ConfigType {
 		if (var11 == null) {
 			return null;
 		}
-		if (var11.field1372 < 13) {
-			var11.method1947(2);
+		if (var11.version < 13) {
+			var11.scaleByPowerOfTwo(2);
 		}
 		if (this.recol_s != null) {
 			for (int var12 = 0; var12 < this.recol_s.length; var12++) {
@@ -1020,21 +1020,21 @@ public class ObjType implements ConfigType {
 		if (var6 == null) {
 			return null;
 		}
-		if (var6.field1372 < 13) {
-			var6.method1947(2);
+		if (var6.version < 13) {
+			var6.scaleByPowerOfTwo(2);
 		}
 		if (var4 != -1) {
 			ModelUnlit var7 = ModelUnlit.get(this.factory.configClient, var4, 0);
-			if (var7.field1372 < 13) {
-				var7.method1947(2);
+			if (var7.version < 13) {
+				var7.scaleByPowerOfTwo(2);
 			}
 			if (var5 == -1) {
 				ModelUnlit[] var10 = new ModelUnlit[] { var6, var7 };
 				var6 = new ModelUnlit(var10, 2);
 			} else {
 				ModelUnlit var8 = ModelUnlit.get(this.factory.configClient, var5, 0);
-				if (var8.field1372 < 13) {
-					var8.method1947(2);
+				if (var8.version < 13) {
+					var8.scaleByPowerOfTwo(2);
 				}
 				ModelUnlit[] var9 = new ModelUnlit[] { var6, var7, var8 };
 				var6 = new ModelUnlit(var9, 3);
@@ -1126,13 +1126,13 @@ public class ObjType implements ConfigType {
 			return null;
 		}
 		ModelUnlit var5 = ModelUnlit.get(this.factory.configClient, var3, 0);
-		if (var5.field1372 < 13) {
-			var5.method1947(2);
+		if (var5.version < 13) {
+			var5.scaleByPowerOfTwo(2);
 		}
 		if (var4 != -1) {
 			ModelUnlit var6 = ModelUnlit.get(this.factory.configClient, var4, 0);
-			if (var6.field1372 < 13) {
-				var6.method1947(2);
+			if (var6.version < 13) {
+				var6.scaleByPowerOfTwo(2);
 			}
 			ModelUnlit[] var7 = new ModelUnlit[] { var5, var6 };
 			var5 = new ModelUnlit(var7, 2);

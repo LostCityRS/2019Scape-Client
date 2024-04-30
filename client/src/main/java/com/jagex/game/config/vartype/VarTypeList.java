@@ -61,7 +61,7 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 		} else if (arg0.value instanceof String) {
 			var3 = var2 + Packet.method8398((String) arg0.value);
 		} else if (arg0.value instanceof Serializable) {
-			var3 = var2 + ((Serializable) arg0.value).method15118();
+			var3 = var2 + ((Serializable) arg0.value).computeSize();
 		} else {
 			throw new IllegalStateException();
 		}

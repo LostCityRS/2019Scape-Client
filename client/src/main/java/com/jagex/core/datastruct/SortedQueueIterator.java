@@ -16,21 +16,21 @@ public class SortedQueueIterator implements Iterator {
 	public int field3570 = 0;
 
 	@ObfuscatedName("ng.m")
-	public int field3572 = this.field3571.field12486;
+	public int field3572 = this.field3571.modCount;
 
 	public SortedQueueIterator(SortedQueue arg0) {
 		this.field3571 = arg0;
 	}
 
 	public boolean hasNext() {
-		return this.field3570 < this.field3571.field12484;
+		return this.field3570 < this.field3571.size;
 	}
 
 	public Object next() {
-		if (this.field3571.field12486 != this.field3572) {
+		if (this.field3571.modCount != this.field3572) {
 			throw new ConcurrentModificationException();
-		} else if (this.field3570 < this.field3571.field12484) {
-			Object var1 = this.field3571.field12482[this.field3570].field3566;
+		} else if (this.field3570 < this.field3571.size) {
+			Object var1 = this.field3571.sortedEntries[this.field3570].value;
 			this.field3570++;
 			return var1;
 		} else {

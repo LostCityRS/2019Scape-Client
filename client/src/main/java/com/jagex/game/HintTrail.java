@@ -17,7 +17,7 @@ import java.util.LinkedList;
 public class HintTrail {
 
 	@ObfuscatedName("ta.e")
-	public static int field6755 = 0;
+	public static int modelDetails = 0;
 
 	@ObfuscatedName("ta.n")
 	public final int field6749;
@@ -60,10 +60,10 @@ public class HintTrail {
 		if (var2 == null) {
 			return null;
 		} else {
-			if (var2.field1372 < 13) {
-				var2.method1947(2);
+			if (var2.version < 13) {
+				var2.scaleByPowerOfTwo(2);
 			}
-			return arg0.createModel(var2, 2048, field6755, 64, 768);
+			return arg0.createModel(var2, 2048, modelDetails, 64, 768);
 		}
 	}
 
@@ -130,7 +130,7 @@ public class HintTrail {
 
 	@ObfuscatedName("qo.f(II)V")
 	public static void resetModelCache(int arg0) {
-		field6755 = arg0;
+		modelDetails = arg0;
 	}
 
 	@ObfuscatedName("ta.w(I)V")

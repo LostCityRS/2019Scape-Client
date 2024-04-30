@@ -29,13 +29,13 @@ public class IconCache {
 
 	@ObfuscatedName("wz.e(Lwk;)Ljava/lang/Object;")
 	public final Object get(CacheKey arg0) {
-		long var2 = arg0.method9641();
+		long var2 = arg0.hash();
 		for (CacheEntry var4 = (CacheEntry) this.hashTable.get(var2); var4 != null; var4 = (CacheEntry) this.hashTable.nextWithKey()) {
-			if (var4.field12362.method9638(arg0)) {
-				Object var5 = var4.method19487();
+			if (var4.cacheKey.equal(arg0)) {
+				Object var5 = var4.getValue();
 				if (var5 != null) {
-					if (var4.method19488()) {
-						HardCacheEntry var6 = new HardCacheEntry(arg0, var5, var4.field12363);
+					if (var4.isSoft()) {
+						HardCacheEntry var6 = new HardCacheEntry(arg0, var5, var4.cacheWeight);
 						this.hashTable.put(var6, var4.nodeId);
 						this.queue.pushBack(var6);
 						var6.secondaryNodeId = 0L;
@@ -49,7 +49,7 @@ public class IconCache {
 				}
 				var4.unlink();
 				var4.secondaryRemove();
-				this.field7611 += var4.field12363;
+				this.field7611 += var4.cacheWeight;
 			}
 		}
 		return null;
@@ -57,9 +57,9 @@ public class IconCache {
 
 	@ObfuscatedName("wz.n(Lwk;)V")
 	public final void method9650(CacheKey arg0) {
-		long var2 = arg0.method9641();
+		long var2 = arg0.hash();
 		for (CacheEntry var4 = (CacheEntry) this.hashTable.get(var2); var4 != null; var4 = (CacheEntry) this.hashTable.nextWithKey()) {
-			if (var4.field12362.method9638(arg0)) {
+			if (var4.cacheKey.equal(arg0)) {
 				this.method9648(var4);
 				break;
 			}
@@ -71,7 +71,7 @@ public class IconCache {
 		if (arg0 != null) {
 			arg0.unlink();
 			arg0.secondaryRemove();
-			this.field7611 += arg0.field12363;
+			this.field7611 += arg0.cacheWeight;
 		}
 	}
 
@@ -92,7 +92,7 @@ public class IconCache {
 			this.method9648(var4);
 		}
 		HardCacheEntry var5 = new HardCacheEntry(arg1, arg0, arg2);
-		this.hashTable.put(var5, arg1.method9641());
+		this.hashTable.put(var5, arg1.hash());
 		this.queue.pushBack(var5);
 		var5.secondaryNodeId = 0L;
 	}
@@ -100,14 +100,14 @@ public class IconCache {
 	@ObfuscatedName("wz.w(I)V")
 	public final void clean(int arg0) {
 		for (CacheEntry var2 = (CacheEntry) this.queue.peekFront(); var2 != null; var2 = (CacheEntry) this.queue.prev()) {
-			if (var2.method19488()) {
-				if (var2.method19487() == null) {
+			if (var2.isSoft()) {
+				if (var2.getValue() == null) {
 					var2.unlink();
 					var2.secondaryRemove();
-					this.field7611 += var2.field12363;
+					this.field7611 += var2.cacheWeight;
 				}
 			} else if (++var2.secondaryNodeId > (long) arg0) {
-				SoftCacheEntry var3 = new SoftCacheEntry(var2.field12362, var2.method19487(), var2.field12363);
+				SoftCacheEntry var3 = new SoftCacheEntry(var2.cacheKey, var2.getValue(), var2.cacheWeight);
 				this.hashTable.put(var3, var2.nodeId);
 				SecondaryLinkedList.method10144(var3, var2);
 				var2.unlink();
@@ -126,10 +126,10 @@ public class IconCache {
 	@ObfuscatedName("wz.u()V")
 	public final void clear() {
 		for (CacheEntry var1 = (CacheEntry) this.queue.peekFront(); var1 != null; var1 = (CacheEntry) this.queue.prev()) {
-			if (var1.method19488()) {
+			if (var1.isSoft()) {
 				var1.unlink();
 				var1.secondaryRemove();
-				this.field7611 += var1.field12363;
+				this.field7611 += var1.cacheWeight;
 			}
 		}
 	}

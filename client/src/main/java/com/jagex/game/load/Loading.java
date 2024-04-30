@@ -256,7 +256,7 @@ public class Loading {
 		}
 		if (field3419 == LoadingStage.field2913) {
 			if (Client.js5Client == null) {
-				Client.js5Client = new Js5Client(Client.js5TcpClient, Client.js5HttpClient, Client.js5DiskCache, PublicKeys.field623, PublicKeys.field625);
+				Client.js5Client = new Js5Client(Client.js5TcpClient, Client.js5HttpClient, Client.js5DiskCache, PublicKeys.JS5_RSAE, PublicKeys.JS5_RSAN);
 			}
 			if (!Client.js5Client.loadMasterIndex()) {
 				return 0;

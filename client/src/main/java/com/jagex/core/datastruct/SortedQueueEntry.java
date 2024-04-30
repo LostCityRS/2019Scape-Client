@@ -6,13 +6,13 @@ import deob.ObfuscatedName;
 public final class SortedQueueEntry {
 
 	@ObfuscatedName("nl.e")
-	public final Object field3566;
+	public final Object value;
 
 	@ObfuscatedName("nl.n")
-	public int field3567;
+	public int slot;
 
 	public SortedQueueEntry(Object arg0, int arg1) {
-		this.field3566 = arg0;
-		this.field3567 = arg1;
+		this.value = arg0;
+		this.slot = arg1;
 	}
 }

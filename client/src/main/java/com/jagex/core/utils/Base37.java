@@ -49,30 +49,33 @@ public final class Base37 {
 	public static String fromBase37(long base37) {
 		if (base37 <= 0L || base37 >= 6582952005840035281L) {
 			return null;
-		} else if (base37 % 37L == 0L) {
-			return null;
-		} else {
-			int length = 0;
-			for (long i = base37; i != 0L; i /= 37L) {
-				length++;
-			}
-			StringBuilder chars = new StringBuilder(length);
-			while (base37 != 0L) {
-				long l1 = base37;
-				base37 /= 37L;
-				char c = ALPHABET[(int) (l1 - base37 * 37L)];
-				if (c == '_') {
-					int index = chars.length() - 1;
-					chars.setCharAt(index, Character.toUpperCase(chars.charAt(index)));
-					c = 160;
-				}
-				chars.append(c);
-			}
-			chars.reverse();
-			chars.setCharAt(0, Character.toUpperCase(chars.charAt(0)));
-			return chars.toString();
 		}
-	}
+
+		if (base37 % 37L == 0L) {
+			return null;
+		}
+
+        int length = 0;
+        for (long i = base37; i != 0L; i /= 37L) {
+            length++;
+        }
+
+        StringBuilder chars = new StringBuilder(length);
+        while (base37 != 0L) {
+            long l1 = base37;
+            base37 /= 37L;
+            char c = ALPHABET[(int) (l1 - base37 * 37L)];
+            if (c == '_') {
+                int index = chars.length() - 1;
+                chars.setCharAt(index, Character.toUpperCase(chars.charAt(index)));
+                c = 160;
+            }
+            chars.append(c);
+        }
+        chars.reverse();
+        chars.setCharAt(0, Character.toUpperCase(chars.charAt(0)));
+        return chars.toString();
+    }
 
 	@ObfuscatedName("ady.m(Ljava/lang/CharSequence;B)Ljava/lang/String;")
 	public static String fromBase37orEmpty(CharSequence chars) {

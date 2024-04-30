@@ -5998,7 +5998,7 @@ public final class Client extends GameShell {
 		SceneLevelTileFlags var1 = world.getSceneLevelTileFlags();
 		if (Client.cameraState != 2 && Client.cameraState != 3 && field810 == -1) {
 			int var2 = getHeightmapY(cameraX, cameraZ, currentPlayerLevel);
-			if (var2 - cameraY < 3200 && (var1.levelTileFlags[currentPlayerLevel][cameraX >> 9][cameraZ >> 9] & 0x4) != 0) {
+			if (var2 - cameraY < 3200 && (var1.flags[currentPlayerLevel][cameraX >> 9][cameraZ >> 9] & 0x4) != 0) {
 				field11096 = true;
 			}
 			return;
@@ -6013,7 +6013,7 @@ public final class Client extends GameShell {
 			}
 			var5 = (int) var4.x - (var3.x << 9);
 			var6 = (int) var4.z - (var3.z << 9);
-			if (var5 < 0 || var6 < 0 || var5 >> 9 >= var1.levelTileFlags[currentPlayerLevel].length || var6 >> 9 >= var1.levelTileFlags[currentPlayerLevel][var5 >> 9].length) {
+			if (var5 < 0 || var6 < 0 || var5 >> 9 >= var1.flags[currentPlayerLevel].length || var6 >> 9 >= var1.flags[currentPlayerLevel][var5 >> 9].length) {
 				return;
 			}
 		} else if (Client.cameraState == 2) {
@@ -6023,7 +6023,7 @@ public final class Client extends GameShell {
 			var5 = field810;
 			var6 = field3538;
 		}
-		if ((var1.levelTileFlags[currentPlayerLevel][var5 >> 9][var6 >> 9] & 0x4) != 0) {
+		if ((var1.flags[currentPlayerLevel][var5 >> 9][var6 >> 9] & 0x4) != 0) {
 			field11096 = true;
 			return;
 		}
@@ -6033,7 +6033,7 @@ public final class Client extends GameShell {
 			Vector3 var7 = cam2.getPosition().method5219();
 			var8 = ((int) var7.x >> 9) - var3.x;
 			var9 = ((int) var7.z >> 9) - var3.z;
-			if (var8 < 0 || var9 < 0 || var8 >= var1.levelTileFlags[currentPlayerLevel].length || var9 >= var1.levelTileFlags[currentPlayerLevel][var8].length) {
+			if (var8 < 0 || var9 < 0 || var8 >= var1.flags[currentPlayerLevel].length || var9 >= var1.flags[currentPlayerLevel][var8].length) {
 				return;
 			}
 		} else {
@@ -6079,15 +6079,15 @@ public final class Client extends GameShell {
 				} else if (var9 > var11) {
 					var9--;
 				}
-				if ((var1.levelTileFlags[currentPlayerLevel][var8][var9] & 0x4) != 0) {
+				if ((var1.flags[currentPlayerLevel][var8][var9] & 0x4) != 0) {
 					field11096 = true;
 					return;
 				}
-				if (var8 + 1 < var1.levelTileFlags[currentPlayerLevel].length && (var1.levelTileFlags[currentPlayerLevel][var8 + 1][var9] & 0x4) != 0) {
+				if (var8 + 1 < var1.flags[currentPlayerLevel].length && (var1.flags[currentPlayerLevel][var8 + 1][var9] & 0x4) != 0) {
 					field11096 = true;
 					return;
 				}
-				if (var8 > 0 && (var1.levelTileFlags[currentPlayerLevel][var8 - 1][var9] & 0x4) != 0) {
+				if (var8 > 0 && (var1.flags[currentPlayerLevel][var8 - 1][var9] & 0x4) != 0) {
 					field11096 = true;
 					return;
 				}
@@ -6096,13 +6096,13 @@ public final class Client extends GameShell {
 					var18 -= 65536;
 					if (var8 < var10) {
 						var8++;
-						if (var8 + 1 < var1.levelTileFlags[currentPlayerLevel].length && (var1.levelTileFlags[currentPlayerLevel][var8 + 1][var9] & 0x4) != 0) {
+						if (var8 + 1 < var1.flags[currentPlayerLevel].length && (var1.flags[currentPlayerLevel][var8 + 1][var9] & 0x4) != 0) {
 							field11096 = true;
 							return;
 						}
 					} else if (var8 > var10) {
 						var8--;
-						if (var8 > 0 && (var1.levelTileFlags[currentPlayerLevel][var8 - 1][var9] & 0x4) != 0) {
+						if (var8 > 0 && (var1.flags[currentPlayerLevel][var8 - 1][var9] & 0x4) != 0) {
 							field11096 = true;
 							return;
 						}
@@ -6119,15 +6119,15 @@ public final class Client extends GameShell {
 			} else if (var8 > var10) {
 				var8--;
 			}
-			if ((var1.levelTileFlags[currentPlayerLevel][var8][var9] & 0x4) != 0) {
+			if ((var1.flags[currentPlayerLevel][var8][var9] & 0x4) != 0) {
 				field11096 = true;
 				return;
 			}
-			if (var9 + 1 < var1.levelTileFlags[currentPlayerLevel][var8].length && (var1.levelTileFlags[currentPlayerLevel][var8][var9 + 1] & 0x4) != 0) {
+			if (var9 + 1 < var1.flags[currentPlayerLevel][var8].length && (var1.flags[currentPlayerLevel][var8][var9 + 1] & 0x4) != 0) {
 				field11096 = true;
 				return;
 			}
-			if (var9 > 0 && (var1.levelTileFlags[currentPlayerLevel][var8][var9 - 1] & 0x4) != 0) {
+			if (var9 > 0 && (var1.flags[currentPlayerLevel][var8][var9 - 1] & 0x4) != 0) {
 				field11096 = true;
 				return;
 			}
@@ -6136,13 +6136,13 @@ public final class Client extends GameShell {
 				var16 -= 65536;
 				if (var9 < var11) {
 					var9++;
-					if (var9 + 1 < var1.levelTileFlags[currentPlayerLevel][var8].length && (var1.levelTileFlags[currentPlayerLevel][var8][var9 + 1] & 0x4) != 0) {
+					if (var9 + 1 < var1.flags[currentPlayerLevel][var8].length && (var1.flags[currentPlayerLevel][var8][var9 + 1] & 0x4) != 0) {
 						field11096 = true;
 						return;
 					}
 				} else if (var9 > var11) {
 					var9--;
-					if (var9 > 0 && (var1.levelTileFlags[currentPlayerLevel][var8][var9 - 1] & 0x4) != 0) {
+					if (var9 > 0 && (var1.flags[currentPlayerLevel][var8][var9 - 1] & 0x4) != 0) {
 						field11096 = true;
 						return;
 					}
@@ -6176,7 +6176,7 @@ public final class Client extends GameShell {
 		Scene var8 = world.getScene();
 		if (Client.cameraState != 2 && Client.cameraState != 3 && field810 == -1) {
 			int var9 = getHeightmapY(cameraX, cameraZ, currentPlayerLevel);
-			if (var9 - cameraY < 3200 && (var7.levelTileFlags[currentPlayerLevel][cameraX >> 9][cameraZ >> 9] & 0x4) != 0) {
+			if (var9 - cameraY < 3200 && (var7.flags[currentPlayerLevel][cameraX >> 9][cameraZ >> 9] & 0x4) != 0) {
 				method7472(var8.levelTiles, 1, cameraX >> 9, cameraZ >> 9, false);
 			}
 			return;
@@ -6191,7 +6191,7 @@ public final class Client extends GameShell {
 			}
 			var12 = (int) var11.x - (var10.x << 9);
 			var13 = (int) var11.z - (var10.z << 9);
-			if (var12 < 0 || var13 < 0 || var12 >> 9 >= var7.levelTileFlags[currentPlayerLevel].length || var13 >> 9 >= var7.levelTileFlags[currentPlayerLevel][var12 >> 9].length) {
+			if (var12 < 0 || var13 < 0 || var12 >> 9 >= var7.flags[currentPlayerLevel].length || var13 >> 9 >= var7.flags[currentPlayerLevel][var12 >> 9].length) {
 				return;
 			}
 		} else if (Client.cameraState == 2) {
@@ -6201,7 +6201,7 @@ public final class Client extends GameShell {
 			var12 = field810;
 			var13 = field3538;
 		}
-		if ((var7.levelTileFlags[currentPlayerLevel][var12 >> 9][var13 >> 9] & 0x4) != 0) {
+		if ((var7.flags[currentPlayerLevel][var12 >> 9][var13 >> 9] & 0x4) != 0) {
 			method7472(var8.levelTiles, 0, var12 >> 9, var13 >> 9, false);
 			return;
 		}
@@ -6211,7 +6211,7 @@ public final class Client extends GameShell {
 			Vector3 var14 = cam2.getPosition().method5219();
 			var15 = ((int) var14.x >> 9) - var10.x;
 			var16 = ((int) var14.z >> 9) - var10.z;
-			if (var15 < 0 || var16 < 0 || var15 >= var7.levelTileFlags[currentPlayerLevel].length || var16 >= var7.levelTileFlags[currentPlayerLevel][var15].length) {
+			if (var15 < 0 || var16 < 0 || var15 >= var7.flags[currentPlayerLevel].length || var16 >= var7.flags[currentPlayerLevel][var15].length) {
 				return;
 			}
 		} else {
@@ -6252,15 +6252,15 @@ public final class Client extends GameShell {
 					} else if (var16 > var18) {
 						var16--;
 					}
-					if ((var7.levelTileFlags[currentPlayerLevel][var15][var16] & 0x4) != 0) {
+					if ((var7.flags[currentPlayerLevel][var15][var16] & 0x4) != 0) {
 						method7472(var8.levelTiles, 1, var15, var16, false);
 						return;
 					}
-					if (var15 + 1 < var7.levelTileFlags[currentPlayerLevel].length && (var7.levelTileFlags[currentPlayerLevel][var15 + 1][var16] & 0x4) != 0) {
+					if (var15 + 1 < var7.flags[currentPlayerLevel].length && (var7.flags[currentPlayerLevel][var15 + 1][var16] & 0x4) != 0) {
 						method7472(var8.levelTiles, 1, var15 + 1, var16, false);
 						return;
 					}
-					if (var15 > 0 && (var7.levelTileFlags[currentPlayerLevel][var15 - 1][var16] & 0x4) != 0) {
+					if (var15 > 0 && (var7.flags[currentPlayerLevel][var15 - 1][var16] & 0x4) != 0) {
 						method7472(var8.levelTiles, 1, var15 - 1, var16, false);
 						return;
 					}
@@ -6269,13 +6269,13 @@ public final class Client extends GameShell {
 						var25 -= 65536;
 						if (var15 < var17) {
 							var15++;
-							if (var15 + 1 < var7.levelTileFlags[currentPlayerLevel].length && (var7.levelTileFlags[currentPlayerLevel][var15 + 1][var16] & 0x4) != 0) {
+							if (var15 + 1 < var7.flags[currentPlayerLevel].length && (var7.flags[currentPlayerLevel][var15 + 1][var16] & 0x4) != 0) {
 								method7472(var8.levelTiles, 1, var15 + 1, var16, false);
 								return;
 							}
 						} else if (var15 > var17) {
 							var15--;
-							if (var15 > 0 && (var7.levelTileFlags[currentPlayerLevel][var15 - 1][var16] & 0x4) != 0) {
+							if (var15 > 0 && (var7.flags[currentPlayerLevel][var15 - 1][var16] & 0x4) != 0) {
 								method7472(var8.levelTiles, 1, var15 - 1, var16, false);
 								return;
 							}
@@ -6292,15 +6292,15 @@ public final class Client extends GameShell {
 				} else if (var15 > var17) {
 					var15--;
 				}
-				if ((var7.levelTileFlags[currentPlayerLevel][var15][var16] & 0x4) != 0) {
+				if ((var7.flags[currentPlayerLevel][var15][var16] & 0x4) != 0) {
 					method7472(var8.levelTiles, 1, var15, var16, false);
 					return;
 				}
-				if (var16 + 1 < var7.levelTileFlags[currentPlayerLevel][var15].length && (var7.levelTileFlags[currentPlayerLevel][var15][var16 + 1] & 0x4) != 0) {
+				if (var16 + 1 < var7.flags[currentPlayerLevel][var15].length && (var7.flags[currentPlayerLevel][var15][var16 + 1] & 0x4) != 0) {
 					method7472(var8.levelTiles, 1, var15, var16 + 1, false);
 					return;
 				}
-				if (var16 > 0 && (var7.levelTileFlags[currentPlayerLevel][var15][var16 - 1] & 0x4) != 0) {
+				if (var16 > 0 && (var7.flags[currentPlayerLevel][var15][var16 - 1] & 0x4) != 0) {
 					method7472(var8.levelTiles, 1, var15, var16 - 1, false);
 					return;
 				}
@@ -6309,13 +6309,13 @@ public final class Client extends GameShell {
 					var23 -= 65536;
 					if (var16 < var18) {
 						var16++;
-						if (var16 + 1 < var7.levelTileFlags[currentPlayerLevel][var15].length && (var7.levelTileFlags[currentPlayerLevel][var15][var16 + 1] & 0x4) != 0) {
+						if (var16 + 1 < var7.flags[currentPlayerLevel][var15].length && (var7.flags[currentPlayerLevel][var15][var16 + 1] & 0x4) != 0) {
 							method7472(var8.levelTiles, 1, var15, var16 + 1, false);
 							return;
 						}
 					} else if (var16 > var18) {
 						var16--;
-						if (var16 > 0 && (var7.levelTileFlags[currentPlayerLevel][var15][var16 - 1] & 0x4) != 0) {
+						if (var16 > 0 && (var7.flags[currentPlayerLevel][var15][var16 - 1] & 0x4) != 0) {
 							method7472(var8.levelTiles, 1, var15, var16 - 1, false);
 							return;
 						}
@@ -6338,7 +6338,7 @@ public final class Client extends GameShell {
 			return false;
 		}
 		SceneLevelTileFlags var7 = world.getSceneLevelTileFlags();
-		if ((var7.levelTileFlags[currentPlayerLevel][arg2][arg3] & 0x4) == 0) {
+		if ((var7.flags[currentPlayerLevel][arg2][arg3] & 0x4) == 0) {
 			return false;
 		}
 		byte var8 = 0;
@@ -6355,13 +6355,13 @@ public final class Client extends GameShell {
 			int var14 = field10984[var9] >> 16 & 0xFF;
 			var9 = var9 + 1 & 0xFFF;
 			boolean var15 = false;
-			if ((var7.levelTileFlags[currentPlayerLevel][var10][var13] & 0x4) == 0) {
+			if ((var7.flags[currentPlayerLevel][var10][var13] & 0x4) == 0) {
 				var15 = true;
 			}
 			boolean var16 = false;
 			if (arg0 != null) {
 				label240: for (int var17 = currentPlayerLevel + 1; var17 <= 3; var17++) {
-					if (arg0[var17] != null && (var7.levelTileFlags[var17][var10][var13] & 0x8) == 0) {
+					if (arg0[var17] != null && (var7.flags[var17][var10][var13] & 0x8) == 0) {
 						if (var15 && arg0[var17][var10][var13] != null) {
 							if (arg0[var17][var10][var13].wall != null) {
 								int var18 = method2014(var11);
@@ -6455,7 +6455,7 @@ public final class Client extends GameShell {
 				}
 				var13++;
 				if (var13 < world.getSizeZ()) {
-					if (var10 - 1 >= 0 && var5[currentPlayerLevel][var10 - 1][var13] != var6 && (var7.levelTileFlags[currentPlayerLevel][var10][var13] & 0x4) == 0 && (var7.levelTileFlags[currentPlayerLevel][var10 - 1][var13 - 1] & 0x4) == 0) {
+					if (var10 - 1 >= 0 && var5[currentPlayerLevel][var10 - 1][var13] != var6 && (var7.flags[currentPlayerLevel][var10][var13] & 0x4) == 0 && (var7.flags[currentPlayerLevel][var10 - 1][var13 - 1] & 0x4) == 0) {
 						field11092[var42] = var10 - 1 | 0x120000 | 0x52000000;
 						field10984[var42] = var13 | 0x130000;
 						var42 = var42 + 1 & 0xFFF;
@@ -6467,7 +6467,7 @@ public final class Client extends GameShell {
 						var42 = var42 + 1 & 0xFFF;
 						var5[currentPlayerLevel][var10][var13] = var6;
 					}
-					if (var10 + 1 < world.getSizeX() && var5[currentPlayerLevel][var10 + 1][var13] != var6 && (var7.levelTileFlags[currentPlayerLevel][var10][var13] & 0x4) == 0 && (var7.levelTileFlags[currentPlayerLevel][var10 + 1][var13 - 1] & 0x4) == 0) {
+					if (var10 + 1 < world.getSizeX() && var5[currentPlayerLevel][var10 + 1][var13] != var6 && (var7.flags[currentPlayerLevel][var10][var13] & 0x4) == 0 && (var7.flags[currentPlayerLevel][var10 + 1][var13 - 1] & 0x4) == 0) {
 						field11092[var42] = var10 + 1 | 0x520000 | 0x92000000;
 						field10984[var42] = var13 | 0x530000;
 						var42 = var42 + 1 & 0xFFF;
@@ -6483,7 +6483,7 @@ public final class Client extends GameShell {
 				}
 				var13--;
 				if (var13 >= 0) {
-					if (var10 - 1 >= 0 && var5[currentPlayerLevel][var10 - 1][var13] != var6 && (var7.levelTileFlags[currentPlayerLevel][var10][var13] & 0x4) == 0 && (var7.levelTileFlags[currentPlayerLevel][var10 - 1][var13 + 1] & 0x4) == 0) {
+					if (var10 - 1 >= 0 && var5[currentPlayerLevel][var10 - 1][var13] != var6 && (var7.flags[currentPlayerLevel][var10][var13] & 0x4) == 0 && (var7.flags[currentPlayerLevel][var10 - 1][var13 + 1] & 0x4) == 0) {
 						field11092[var42] = var10 - 1 | 0xD20000 | 0x12000000;
 						field10984[var42] = var13 | 0xD30000;
 						var42 = var42 + 1 & 0xFFF;
@@ -6495,7 +6495,7 @@ public final class Client extends GameShell {
 						var42 = var42 + 1 & 0xFFF;
 						var5[currentPlayerLevel][var10][var13] = var6;
 					}
-					if (var10 + 1 < world.getSizeX() && var5[currentPlayerLevel][var10 + 1][var13] != var6 && (var7.levelTileFlags[currentPlayerLevel][var10][var13] & 0x4) == 0 && (var7.levelTileFlags[currentPlayerLevel][var10 + 1][var13 + 1] & 0x4) == 0) {
+					if (var10 + 1 < world.getSizeX() && var5[currentPlayerLevel][var10 + 1][var13] != var6 && (var7.flags[currentPlayerLevel][var10][var13] & 0x4) == 0 && (var7.flags[currentPlayerLevel][var10 + 1][var13 + 1] & 0x4) == 0) {
 						field11092[var42] = var10 + 1 | 0x920000 | 0xD2000000;
 						field10984[var42] = var13 | 0x930000;
 						var42 = var42 + 1 & 0xFFF;
@@ -7868,7 +7868,7 @@ public final class Client extends GameShell {
 			return 0;
 		}
 		int realLevel = level;
-		if (level < 3 && (world.getSceneLevelTileFlags().levelTileFlags[1][var3][var4] & 0x2) != 0) {
+		if (level < 3 && (world.getSceneLevelTileFlags().flags[1][var3][var4] & 0x2) != 0) {
 			realLevel = level + 1;
 		}
 		return world.getScene().levelHeightmaps[realLevel].getFineHeight(x, z);
@@ -7889,19 +7889,19 @@ public final class Client extends GameShell {
 			if (var6 < 1 || var7 < 1 || var6 > world.getSizeX() - 1 || var7 > world.getSizeZ() - 1) {
 				return 0;
 			}
-			boolean var8 = (var5.levelTileFlags[1][arg0 >> 9][arg1 >> 9] & 0x2) != 0;
+			boolean var8 = (var5.flags[1][arg0 >> 9][arg1 >> 9] & 0x2) != 0;
 			if ((arg0 & 0x1FF) == 0) {
-				boolean var9 = (var5.levelTileFlags[1][var6 - 1][arg1 >> 9] & 0x2) != 0;
-				boolean var10 = (var5.levelTileFlags[1][var6][arg1 >> 9] & 0x2) != 0;
+				boolean var9 = (var5.flags[1][var6 - 1][arg1 >> 9] & 0x2) != 0;
+				boolean var10 = (var5.flags[1][var6][arg1 >> 9] & 0x2) != 0;
 				if (var9 != var10) {
-					var8 = (var5.levelTileFlags[1][arg2][arg3] & 0x2) != 0;
+					var8 = (var5.flags[1][arg2][arg3] & 0x2) != 0;
 				}
 			}
 			if ((arg1 & 0x1FF) == 0) {
-				boolean var11 = (var5.levelTileFlags[1][arg0 >> 9][var7 - 1] & 0x2) != 0;
-				boolean var12 = (var5.levelTileFlags[1][arg0 >> 9][var7] & 0x2) != 0;
+				boolean var11 = (var5.flags[1][arg0 >> 9][var7 - 1] & 0x2) != 0;
+				boolean var12 = (var5.flags[1][arg0 >> 9][var7] & 0x2) != 0;
 				if (var11 != var12) {
-					var8 = (var5.levelTileFlags[1][arg2][arg3] & 0x2) != 0;
+					var8 = (var5.flags[1][arg2][arg3] & 0x2) != 0;
 				}
 			}
 			if (var8) {
@@ -10220,7 +10220,7 @@ public final class Client extends GameShell {
 				} else {
 					var587[var588].nameUnfiltered = var587[var588].name;
 				}
-				var587[var588].field755 = NamespaceUtil.method15191(var587[var588].nameUnfiltered, namespace);
+				var587[var588].field755 = NamespaceUtil.normalize(var587[var588].nameUnfiltered, namespace);
 				var587[var588].world = in.g2();
 				var587[var588].rank = in.g1b();
 				var587[var588].worldName = in.gjstr();
@@ -10391,7 +10391,7 @@ public final class Client extends GameShell {
 				FriendChatUser var654 = new FriendChatUser();
 				var654.name = var645;
 				var654.nameUnfiltered = var647;
-				var654.field755 = NamespaceUtil.method15191(var654.nameUnfiltered, namespace);
+				var654.field755 = NamespaceUtil.normalize(var654.nameUnfiltered, namespace);
 				var654.world = var648;
 				var654.rank = var649;
 				var654.worldName = var653;
@@ -14221,19 +14221,19 @@ public final class Client extends GameShell {
 			ChatHistory.method1006(4, playerIsMembers ? LocalisedText.FRIENDLIST_FULL_MEMBERS.forLang(language) : LocalisedText.FRIENDLIST_FULL.forLang(language));
 			return;
 		}
-		String var2 = NamespaceUtil.method15191(arg0, namespace);
+		String var2 = NamespaceUtil.normalize(arg0, namespace);
 		if (var2 == null) {
 			return;
 		}
 		for (int var3 = 0; var3 < friendsCount; var3++) {
 			Friend var4 = friends[var3];
-			String var5 = NamespaceUtil.method15191(var4.field606, namespace);
+			String var5 = NamespaceUtil.normalize(var4.field606, namespace);
 			if (var5 != null && var5.equals(var2)) {
 				ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.forLang(language));
 				return;
 			}
 			if (var4.field607 != null) {
-				String var6 = NamespaceUtil.method15191(var4.field607, namespace);
+				String var6 = NamespaceUtil.normalize(var4.field607, namespace);
 				if (var6 != null && var6.equals(var2)) {
 					ChatHistory.method1006(4, arg0 + LocalisedText.FRIENDLISTDUPE.forLang(language));
 					return;
@@ -14242,20 +14242,20 @@ public final class Client extends GameShell {
 		}
 		for (int var7 = 0; var7 < ignoresCount; var7++) {
 			Ignore var8 = ignores[var7];
-			String var9 = NamespaceUtil.method15191(var8.nameUnfiltered, namespace);
+			String var9 = NamespaceUtil.normalize(var8.nameUnfiltered, namespace);
 			if (var9 != null && var9.equals(var2)) {
 				ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.forLang(language) + arg0 + LocalisedText.REMOVEIGNORE2.forLang(language));
 				return;
 			}
 			if (var8.field596 != null) {
-				String var10 = NamespaceUtil.method15191(var8.field596, namespace);
+				String var10 = NamespaceUtil.normalize(var8.field596, namespace);
 				if (var10 != null && var10.equals(var2)) {
 					ChatHistory.method1006(4, LocalisedText.REMOVEIGNORE1.forLang(language) + arg0 + LocalisedText.REMOVEIGNORE2.forLang(language));
 					return;
 				}
 			}
 		}
-		if (NamespaceUtil.method15191(localPlayerEntity.nameUnfiltered, namespace).equals(var2)) {
+		if (NamespaceUtil.normalize(localPlayerEntity.nameUnfiltered, namespace).equals(var2)) {
 			ChatHistory.method1006(4, LocalisedText.FRIENDCANTADDSELF.forLang(language));
 			return;
 		}
@@ -14276,19 +14276,19 @@ public final class Client extends GameShell {
 			ChatHistory.method1006(4, playerIsMembers ? LocalisedText.IGNORELISTFULL_MEMBERS.forLang(language) : LocalisedText.IGNORELISTFULL.forLang(language));
 			return;
 		}
-		String var3 = NamespaceUtil.method15191(arg0, namespace);
+		String var3 = NamespaceUtil.normalize(arg0, namespace);
 		if (var3 == null) {
 			return;
 		}
 		for (int var4 = 0; var4 < ignoresCount; var4++) {
 			Ignore var5 = ignores[var4];
-			String var6 = NamespaceUtil.method15191(var5.nameUnfiltered, namespace);
+			String var6 = NamespaceUtil.normalize(var5.nameUnfiltered, namespace);
 			if (var6 != null && var6.equals(var3)) {
 				ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.forLang(language));
 				return;
 			}
 			if (var5.field596 != null) {
-				String var7 = NamespaceUtil.method15191(var5.field596, namespace);
+				String var7 = NamespaceUtil.normalize(var5.field596, namespace);
 				if (var7 != null && var7.equals(var3)) {
 					ChatHistory.method1006(4, arg0 + LocalisedText.IGNORELISTDUPE.forLang(language));
 					return;
@@ -14297,20 +14297,20 @@ public final class Client extends GameShell {
 		}
 		for (int var8 = 0; var8 < friendsCount; var8++) {
 			Friend var9 = friends[var8];
-			String var10 = NamespaceUtil.method15191(var9.field606, namespace);
+			String var10 = NamespaceUtil.normalize(var9.field606, namespace);
 			if (var10 != null && var10.equals(var3)) {
 				ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.forLang(language) + arg0 + LocalisedText.REMOVEFRIEND2.forLang(language));
 				return;
 			}
 			if (var9.field607 != null) {
-				String var11 = NamespaceUtil.method15191(var9.field607, namespace);
+				String var11 = NamespaceUtil.normalize(var9.field607, namespace);
 				if (var11 != null && var11.equals(var3)) {
 					ChatHistory.method1006(4, LocalisedText.REMOVEFRIEND1.forLang(language) + arg0 + LocalisedText.REMOVEFRIEND2.forLang(language));
 					return;
 				}
 			}
 		}
-		if (NamespaceUtil.method15191(localPlayerEntity.nameUnfiltered, namespace).equals(var3)) {
+		if (NamespaceUtil.normalize(localPlayerEntity.nameUnfiltered, namespace).equals(var3)) {
 			ChatHistory.method1006(4, LocalisedText.IGNORECANTADDSELF.forLang(language));
 			return;
 		}
@@ -14327,14 +14327,14 @@ public final class Client extends GameShell {
 		if (arg0 == null) {
 			return;
 		}
-		String var1 = NamespaceUtil.method15191(arg0, namespace);
+		String var1 = NamespaceUtil.normalize(arg0, namespace);
 		if (var1 == null) {
 			return;
 		}
 		for (int var2 = 0; var2 < friendsCount; var2++) {
 			Friend var3 = friends[var2];
 			String var4 = var3.field606;
-			String var5 = NamespaceUtil.method15191(var4, namespace);
+			String var5 = NamespaceUtil.normalize(var4, namespace);
 			if (FriendRelated.method18886(arg0, var1, var4, var5)) {
 				friendsCount--;
 				for (int var6 = var2; var6 < friendsCount; var6++) {
@@ -14356,14 +14356,14 @@ public final class Client extends GameShell {
 		if (arg0 == null) {
 			return;
 		}
-		String var1 = NamespaceUtil.method15191(arg0, namespace);
+		String var1 = NamespaceUtil.normalize(arg0, namespace);
 		if (var1 == null) {
 			return;
 		}
 		for (int var2 = 0; var2 < ignoresCount; var2++) {
 			Ignore var3 = ignores[var2];
 			String var4 = var3.nameUnfiltered;
-			String var5 = NamespaceUtil.method15191(var4, namespace);
+			String var5 = NamespaceUtil.normalize(var4, namespace);
 			if (FriendRelated.method18886(arg0, var1, var4, var5)) {
 				ignoresCount--;
 				for (int var6 = var2; var6 < ignoresCount; var6++) {

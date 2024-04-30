@@ -632,8 +632,8 @@ public class NPCType implements ConfigType {
 						var31[var32] = ModelUnlit.get(this.factory.configClient, var26[var32], 0);
 					}
 					if (var31[var32] != null) {
-						if (var31[var32].field1372 < 13) {
-							var31[var32].method1947(2);
+						if (var31[var32].version < 13) {
+							var31[var32].scaleByPowerOfTwo(2);
 						}
 						if (this.modeloffset != null && this.modeloffset[var32] != null) {
 							var31[var32].method1945(this.modeloffset[var32][0], this.modeloffset[var32][1], this.modeloffset[var32][2]);
@@ -850,8 +850,8 @@ public class NPCType implements ConfigType {
 					}
 				}
 				for (int var24 = 0; var24 < var15.length; var24++) {
-					if (var20[var24] != null && var20[var24].field1372 < 13) {
-						var20[var24].method1947(2);
+					if (var20[var24] != null && var20[var24].version < 13) {
+						var20[var24].scaleByPowerOfTwo(2);
 					}
 				}
 				ModelUnlit var25;

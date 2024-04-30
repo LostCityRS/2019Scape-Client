@@ -8,20 +8,20 @@ import java.lang.ref.SoftReference;
 public class SoftCacheEntry extends CacheEntry {
 
 	@ObfuscatedName("auj.z")
-	public SoftReference field12567;
+	public SoftReference value;
 
 	public SoftCacheEntry(CacheKey arg0, Object arg1, int arg2) {
 		super(arg0, arg2);
-		this.field12567 = new SoftReference(arg1);
+		this.value = new SoftReference(arg1);
 	}
 
 	@ObfuscatedName("auj.e()Ljava/lang/Object;")
-	public Object method19487() {
-		return this.field12567.get();
+	public Object getValue() {
+		return this.value.get();
 	}
 
 	@ObfuscatedName("auj.n()Z")
-	public boolean method19488() {
+	public boolean isSoft() {
 		return true;
 	}
 }

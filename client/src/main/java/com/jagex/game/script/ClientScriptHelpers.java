@@ -17,12 +17,12 @@ public class ClientScriptHelpers {
 
 	@ObfuscatedName("ss.e(I)V")
 	public static void method8004() {
-		cache.method2969();
+		cache.removeAll();
 	}
 
 	@ObfuscatedName("lv.n(II)Lasc;")
 	public static ClientScript getScript(int scriptId) {
-		ClientScript cached = (ClientScript) cache.method2966((long) scriptId);
+		ClientScript cached = (ClientScript) cache.get((long) scriptId);
 		if (cached != null) {
 			return cached;
 		}
@@ -36,28 +36,28 @@ public class ClientScriptHelpers {
 		} catch (Exception var5) {
 			throw new RuntimeException(var5.getMessage() + " " + scriptId);
 		}
-		cache.method2968(script, (long) scriptId);
+		cache.put(script, (long) scriptId);
 		return script;
 	}
 
 	@ObfuscatedName("vs.m(Luh;IIS)Lasc;")
 	public static ClientScript getByTrigger(ClientTriggerType arg0, int arg1, int arg2) {
 		int var3 = arg0.id | arg1 << 10;
-		ClientScript var4 = (ClientScript) cache.method2966((long) var3 << 16);
+		ClientScript var4 = (ClientScript) cache.get((long) var3 << 16);
 		if (var4 != null) {
 			return var4;
 		}
 		byte[] var5 = Client.clientscriptsJs5.fetchFile(Client.clientscriptsJs5.getGroupId(var3));
 		if (var5 == null) {
 			int var8 = arg0.id | arg2 + 65536 << 10;
-			ClientScript var9 = (ClientScript) cache.method2966((long) var8 << 16);
+			ClientScript var9 = (ClientScript) cache.get((long) var8 << 16);
 			if (var9 != null) {
 				return var9;
 			}
 			byte[] var10 = Client.clientscriptsJs5.fetchFile(Client.clientscriptsJs5.getGroupId(var8));
 			if (var10 == null) {
 				int var13 = arg0.id | 0x3FFFC00;
-				ClientScript var14 = (ClientScript) cache.method2966((long) var13 << 16);
+				ClientScript var14 = (ClientScript) cache.get((long) var13 << 16);
 				if (var14 != null) {
 					return var14;
 				}
@@ -74,7 +74,7 @@ public class ClientScriptHelpers {
 						throw new RuntimeException(var20.getMessage() + " " + var13);
 					}
 					var16.field12373 = arg0;
-					cache.method2968(var16, (long) var13 << 16);
+					cache.put(var16, (long) var13 << 16);
 					return var16;
 				}
 			} else if (var10.length <= 1) {
@@ -87,7 +87,7 @@ public class ClientScriptHelpers {
 					throw new RuntimeException(var19.getMessage() + " " + var8);
 				}
 				var11.field12373 = arg0;
-				cache.method2968(var11, (long) var8 << 16);
+				cache.put(var11, (long) var8 << 16);
 				return var11;
 			}
 		} else if (var5.length <= 1) {
@@ -100,7 +100,7 @@ public class ClientScriptHelpers {
 				throw new RuntimeException(var18.getMessage() + " " + var3);
 			}
 			var6.field12373 = arg0;
-			cache.method2968(var6, (long) var3 << 16);
+			cache.put(var6, (long) var3 << 16);
 			return var6;
 		}
 	}

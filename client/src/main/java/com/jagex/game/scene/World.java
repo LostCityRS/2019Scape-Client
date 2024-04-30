@@ -930,7 +930,7 @@ public class World {
 		this.underwaterMapLoader = null;
 		this.mapLoader = null;
 		if (this.sceneLevelTileFlags != null) {
-			this.sceneLevelTileFlags.method7101();
+			this.sceneLevelTileFlags.clear();
 		}
 		if (this.environmentManager != null) {
 			this.environmentManager.clearEnvironmentMap();

@@ -10,7 +10,7 @@ import deob.ObfuscatedName;
 public class ModelUnlit {
 
 	@ObfuscatedName("dq.k")
-	public int field1372 = 12;
+	public int version = 12;
 
 	@ObfuscatedName("dq.f")
 	public int vertexCount = 0;
@@ -158,7 +158,7 @@ public class ModelUnlit {
 		int var9 = var2.g1();
 		if (var9 == 1) {
 			var2.g1();
-			this.field1372 = var2.g1();
+			this.version = var2.g1();
 			var2.pos = (arg0.length - 26);
 			this.vertexCount = var2.g2();
 			this.faceCount = var2.g2();
@@ -246,9 +246,9 @@ public class ModelUnlit {
 			int var61 = var30 * 6 + var59;
 			int var63 = var31 * 6 + var61;
 			byte var64 = 6;
-			if (this.field1372 == 14) {
+			if (this.version == 14) {
 				var64 = 7;
-			} else if (this.field1372 >= 15) {
+			} else if (this.version >= 15) {
 				var64 = 9;
 			}
 			int var66 = var31 * var64 + var63;
@@ -413,7 +413,7 @@ public class ModelUnlit {
 				if (this.faceMapping != null) {
 					if (this.faceMaterial[var92] == -1) {
 						this.faceMapping[var92] = -1;
-					} else if (this.field1372 >= 16) {
+					} else if (this.version >= 16) {
 						this.faceMapping[var92] = (short) (var8.gSmart1or2() - 1);
 					} else {
 						this.faceMapping[var92] = (short) (var8.g1() - 1);
@@ -899,9 +899,9 @@ public class ModelUnlit {
 				this.textureTriangleVertex1[var7] = (short) arg1.g2();
 				this.textureTriangleVertex2[var7] = (short) arg1.g2();
 				this.textureTriangleVertex3[var7] = (short) arg1.g2();
-				if (this.field1372 < 15) {
+				if (this.version < 15) {
 					this.textureTriangleScaleX[var7] = arg2.g2();
-					if (this.field1372 < 14) {
+					if (this.version < 14) {
 						this.textureTriangleScaleY[var7] = arg2.g2();
 					} else {
 						this.textureTriangleScaleY[var7] = arg2.g3();
@@ -920,9 +920,9 @@ public class ModelUnlit {
 				this.textureTriangleVertex1[var7] = (short) arg1.g2();
 				this.textureTriangleVertex2[var7] = (short) arg1.g2();
 				this.textureTriangleVertex3[var7] = (short) arg1.g2();
-				if (this.field1372 < 15) {
+				if (this.version < 15) {
 					this.textureTriangleScaleX[var7] = arg2.g2();
-					if (this.field1372 < 14) {
+					if (this.version < 14) {
 						this.textureTriangleScaleY[var7] = arg2.g2();
 					} else {
 						this.textureTriangleScaleY[var7] = arg2.g3();
@@ -943,9 +943,9 @@ public class ModelUnlit {
 				this.textureTriangleVertex1[var7] = (short) arg1.g2();
 				this.textureTriangleVertex2[var7] = (short) arg1.g2();
 				this.textureTriangleVertex3[var7] = (short) arg1.g2();
-				if (this.field1372 < 15) {
+				if (this.version < 15) {
 					this.textureTriangleScaleX[var7] = arg2.g2();
-					if (this.field1372 < 14) {
+					if (this.version < 14) {
 						this.textureTriangleScaleY[var7] = arg2.g2();
 					} else {
 						this.textureTriangleScaleY[var7] = arg2.g3();
@@ -1165,7 +1165,7 @@ public class ModelUnlit {
 	}
 
 	@ObfuscatedName("dq.s(I)V")
-	public void method1947(int arg0) {
+	public void scaleByPowerOfTwo(int arg0) {
 		for (int var2 = 0; var2 < this.vertexCount; var2++) {
 			this.vertexX[var2] <<= arg0;
 			this.vertexY[var2] <<= arg0;
