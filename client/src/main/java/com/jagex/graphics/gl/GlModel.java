@@ -1,5 +1,6 @@
 package com.jagex.graphics.gl;
 
+import com.jagex.core.utils.GpuByteArrayUtil;
 import com.jagex.core.utils.Algorithms;
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.HardShadow;
@@ -12,7 +13,6 @@ import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-import deob.Statics;
 import jaclib.memory.Stream;
 import jaggl.OpenGL;
 
@@ -1726,17 +1726,17 @@ public class GlModel extends Model {
 									if (var40 != -1) {
 										if (var15 == null) {
 											this.field9684 = new GlModelRelated1();
-											var15 = this.field9684.field1191 = Statics.method13987(this.field9681);
-											var16 = this.field9684.field1189 = Statics.method13987(this.field9682);
-											var17 = this.field9684.field1188 = Statics.method13987(this.field9644);
-											var18 = this.field9684.field1190 = Statics.method4405(this.field9690);
+											var15 = this.field9684.field1191 = GpuByteArrayUtil.method13987(this.field9681);
+											var16 = this.field9684.field1189 = GpuByteArrayUtil.method13987(this.field9682);
+											var17 = this.field9684.field1188 = GpuByteArrayUtil.method13987(this.field9644);
+											var18 = this.field9684.field1190 = GpuByteArrayUtil.method4405(this.field9690);
 										}
 										if (var19 == null) {
 											GlModelRelated1 var44 = var6.field9684 = new GlModelRelated1();
-											var19 = var44.field1191 = Statics.method13987(var11);
-											var20 = var44.field1189 = Statics.method13987(var12);
-											var21 = var44.field1188 = Statics.method13987(var13);
-											var22 = var44.field1190 = Statics.method4405(var14);
+											var19 = var44.field1191 = GpuByteArrayUtil.method13987(var11);
+											var20 = var44.field1189 = GpuByteArrayUtil.method13987(var12);
+											var21 = var44.field1188 = GpuByteArrayUtil.method13987(var13);
+											var22 = var44.field1190 = GpuByteArrayUtil.method4405(var14);
 										}
 										short var45 = this.field9681[var35];
 										short var46 = this.field9682[var35];
