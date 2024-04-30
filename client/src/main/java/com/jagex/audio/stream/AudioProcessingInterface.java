@@ -4,7 +4,7 @@ import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("wr")
-public interface AudioApiRelated2 {
+public interface AudioProcessingInterface {
 
 	@ObfuscatedName("wr.e(B)V")
 	void method9672();

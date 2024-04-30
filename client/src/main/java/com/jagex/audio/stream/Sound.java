@@ -15,7 +15,7 @@ public class Sound {
 	public SoundBackend field4876;
 
 	@ObfuscatedName("rw.n")
-	public AudioApiRelated2 field4889;
+	public AudioProcessingInterface field4889;
 
 	@ObfuscatedName("rw.m")
 	public SoundVolume field4877 = SoundVolume.field4952;
@@ -45,7 +45,7 @@ public class Sound {
 	public float field4885;
 
 	@ObfuscatedName("rw.c")
-	public AudioApiRelated field4886;
+	public SoundAdjuster field4886;
 
 	@ObfuscatedName("rw.r")
 	public float field4887;
@@ -96,7 +96,7 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.n(Lwr;I)V")
-	public void method7376(AudioApiRelated2 arg0) {
+	public void method7376(AudioProcessingInterface arg0) {
 		this.field4889 = arg0;
 		this.field4885 = 0.0F;
 		this.field4877 = SoundVolume.field4946;
@@ -109,7 +109,7 @@ public class Sound {
 		}
 		Iterator var1 = this.field4879.iterator();
 		while (var1.hasNext()) {
-			SoundRelated2 var2 = (SoundRelated2) var1.next();
+			AudioProcessingUnit var2 = (AudioProcessingUnit) var1.next();
 			if (var2.method7516() == this) {
 				var2.method7484();
 			} else {
@@ -151,7 +151,7 @@ public class Sound {
 		} else if (arg0 <= 0) {
 			Iterator var2 = this.field4879.iterator();
 			while (var2.hasNext()) {
-				SoundRelated2 var3 = (SoundRelated2) var2.next();
+				AudioProcessingUnit var3 = (AudioProcessingUnit) var2.next();
 				if (var3.method7516() == this) {
 					var3.method7489();
 				} else {
@@ -164,7 +164,7 @@ public class Sound {
 			this.field4877 = SoundVolume.field4951;
 			Iterator var4 = this.field4879.iterator();
 			while (var4.hasNext()) {
-				SoundRelated2 var5 = (SoundRelated2) var4.next();
+				AudioProcessingUnit var5 = (AudioProcessingUnit) var4.next();
 				if (var5.method7516() == this) {
 					var5.method7485(0.0F, arg0);
 				} else {
@@ -179,7 +179,7 @@ public class Sound {
 		Iterator var1 = this.field4879.iterator();
 		this.field4877 = SoundVolume.field4947;
 		while (var1.hasNext()) {
-			SoundRelated2 var2 = (SoundRelated2) var1.next();
+			AudioProcessingUnit var2 = (AudioProcessingUnit) var1.next();
 			if (var2.method7516() == this) {
 				var2.method7502();
 			}
@@ -191,7 +191,7 @@ public class Sound {
 		Iterator var1 = this.field4879.iterator();
 		this.field4877 = SoundVolume.field4948;
 		while (var1.hasNext()) {
-			SoundRelated2 var2 = (SoundRelated2) var1.next();
+			AudioProcessingUnit var2 = (AudioProcessingUnit) var1.next();
 			if (var2.method7516() == this) {
 				var2.method7584();
 			}
@@ -199,7 +199,7 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.z(Lro;I)V")
-	public void method7383(AudioApiRelated arg0) {
+	public void method7383(SoundAdjuster arg0) {
 		this.field4886 = arg0;
 	}
 
@@ -213,7 +213,7 @@ public class Sound {
 			}
 		}
 		if (SoundVolume.field4949 == this.field4877 && this.field4878) {
-			SoundRelated2 var2 = this.field4876.method5865(this.field4889.method9679());
+			AudioProcessingUnit var2 = this.field4876.method5865(this.field4889.method9679());
 			if (var2 != null) {
 				boolean var3 = this.field4889.method9675();
 				SoundRelated var4 = new SoundRelated(this);
@@ -237,7 +237,7 @@ public class Sound {
 		boolean var7 = true;
 		while (true) {
 			while (var6.hasNext()) {
-				SoundRelated2 var8 = (SoundRelated2) var6.next();
+				AudioProcessingUnit var8 = (AudioProcessingUnit) var6.next();
 				if (var8.method7516() == this) {
 					if (SoundVolume.field4951 == this.field4877) {
 						if (var8.method7486() == 0.0F) {
@@ -268,7 +268,7 @@ public class Sound {
 	}
 
 	@ObfuscatedName("qv")
-	public static class SoundRelated implements SoundRelatedInterface {
+	public static class SoundRelated implements SoundBaseInterface {
 
 		// $FF: synthetic field
 		public final Sound this$0;
@@ -325,7 +325,7 @@ public class Sound {
 	}
 
 	@ObfuscatedName("rw.x(I)Lwr;")
-	public AudioApiRelated2 method7386() {
+	public AudioProcessingInterface method7386() {
 		return this.field4889;
 	}
 
@@ -387,7 +387,7 @@ public class Sound {
 		int var3 = 0;
 		Iterator var4 = this.field4879.iterator();
 		while (var4.hasNext()) {
-			SoundRelated2 var5 = (SoundRelated2) var4.next();
+			AudioProcessingUnit var5 = (AudioProcessingUnit) var4.next();
 			if (var5.method7516() == this) {
 				var5.method7485(this.field4885, arg1);
 				var3++;

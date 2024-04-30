@@ -4,7 +4,7 @@ import com.jagex.audio.api.AudioBuss;
 import com.jagex.audio.api.SoundBackend;
 import com.jagex.audio.api.SoundBackendType;
 import com.jagex.audio.api.VolumeProvider;
-import com.jagex.audio.stream.AudioApiRelated2;
+import com.jagex.audio.stream.AudioProcessingInterface;
 import com.jagex.audio.stream.AudioStream;
 import com.jagex.audio.stream.AudioStream2;
 import com.jagex.core.datastruct.SoftLruHashTable;
@@ -48,11 +48,11 @@ public class AudioMixer {
 	}
 
 	@ObfuscatedName("nq.k(Lpy;ILwj;ZLeb;I)Lwr;")
-	public static AudioApiRelated2 method6064(Js5 arg0, int arg1, AudioMixerRelated arg2, boolean arg3, SoftLruHashTable arg4) {
+	public static AudioProcessingInterface method6064(Js5 arg0, int arg1, AudioMixerRelated arg2, boolean arg3, SoftLruHashTable arg4) {
 		if (field8056 == null) {
 			return null;
 		} else {
-			return (AudioApiRelated2) (arg3 ? new AudioStream(arg0, arg1, field8056, arg2) : new AudioStream2(arg0, arg1, field8056, arg2, arg4));
+			return (AudioProcessingInterface) (arg3 ? new AudioStream(arg0, arg1, field8056, arg2) : new AudioStream2(arg0, arg1, field8056, arg2, arg4));
 		}
 	}
 

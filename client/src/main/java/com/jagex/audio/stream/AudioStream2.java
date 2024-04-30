@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @ObfuscatedName("we")
-public class AudioStream2 implements AudioApiRelated2 {
+public class AudioStream2 implements AudioProcessingInterface {
 
 	@ObfuscatedName("we.e")
 	public SoundBackend field7617;

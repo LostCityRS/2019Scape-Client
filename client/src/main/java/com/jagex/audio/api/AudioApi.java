@@ -83,24 +83,24 @@ public class AudioApi {
 	public boolean field1857;
 
 	@ObfuscatedName("fb.ae")
-	public AudioApiRelated field1874 = new AudioApiRelated_Sub2(this);
+	public SoundAdjuster field1874 = new SoundStereoAdjuster(this);
 
 	@ObfuscatedName("fb.ag")
-	public AudioApiRelated field1872 = new AudioApiRelated_Sub1(this);
+	public SoundAdjuster field1872 = new SoundSpatializer(this);
 
 	@ObfuscatedName("fb.ah")
-	public AudioApiRelated field1876 = new AudioApiRelated_Sub4(this);
+	public SoundAdjuster field1876 = new SoundVolumeAdjuster(this);
 
 	@ObfuscatedName("fb.al")
-	public AudioApiRelated field1877 = new AudioApiRelated_Sub3(this);
+	public SoundAdjuster field1877 = new SoundPositionAdjuster(this);
 
 	@ObfuscatedName("fn")
-	public static class AudioApiRelated_Sub2 implements AudioApiRelated {
+	public static class SoundStereoAdjuster implements SoundAdjuster {
 
 		// $FF: synthetic field
 		public final AudioApi this$0;
 
-		public AudioApiRelated_Sub2(AudioApi arg0) {
+		public SoundStereoAdjuster(AudioApi arg0) {
 			this.this$0 = arg0;
 		}
 
@@ -172,12 +172,12 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fd")
-	public static class AudioApiRelated_Sub1 implements AudioApiRelated {
+	public static class SoundSpatializer implements SoundAdjuster {
 
 		// $FF: synthetic field
 		public final AudioApi this$0;
 
-		public AudioApiRelated_Sub1(AudioApi arg0) {
+		public SoundSpatializer(AudioApi arg0) {
 			this.this$0 = arg0;
 		}
 
@@ -256,13 +256,13 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fw")
-	public static class AudioApiRelated_Sub4 implements AudioApiRelated {
+	public static class SoundVolumeAdjuster implements SoundAdjuster {
 
 		// $FF: synthetic field
 		public final AudioApi this$0;
 
 		// line 182
-		public AudioApiRelated_Sub4(AudioApi arg0) {
+		public SoundVolumeAdjuster(AudioApi arg0) {
 			this.this$0 = arg0;
 		}
 
@@ -294,13 +294,13 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fi")
-	public static class AudioApiRelated_Sub3 implements AudioApiRelated {
+	public static class SoundPositionAdjuster implements SoundAdjuster {
 
 		// $FF: synthetic field
 		public final AudioApi this$0;
 
 		// line 204
-		public AudioApiRelated_Sub3(AudioApi arg0) {
+		public SoundPositionAdjuster(AudioApi arg0) {
 			this.this$0 = arg0;
 		}
 
@@ -394,7 +394,7 @@ public class AudioApi {
 		}
 
 		@ObfuscatedName("fs.f(Lwr;I)V")
-		public void method3027(AudioApiRelated2 arg0) {
+		public void method3027(AudioProcessingInterface arg0) {
 			Iterator var2 = this.this$0.getSounds().iterator();
 			while (var2.hasNext()) {
 				Sound var3 = (Sound) var2.next();
@@ -407,7 +407,7 @@ public class AudioApi {
 
 		@ObfuscatedName("fs.e(Ljava/lang/Object;I)V")
 		public void method2914(Object arg0) {
-			this.method3027((AudioApiRelated2) arg0);
+			this.method3027((AudioProcessingInterface) arg0);
 		}
 	}
 
@@ -428,17 +428,17 @@ public class AudioApi {
 		}
 		Iterator var1 = this.field1858.values().iterator();
 		while (var1.hasNext()) {
-			AudioApiRelated2 var2 = (AudioApiRelated2) var1.next();
+			AudioProcessingInterface var2 = (AudioProcessingInterface) var1.next();
 			var2.method9672();
 		}
 		Iterator var3 = this.field1865.values().iterator();
 		while (var3.hasNext()) {
-			AudioApiRelated2 var4 = (AudioApiRelated2) var3.next();
+			AudioProcessingInterface var4 = (AudioProcessingInterface) var3.next();
 			var4.method9672();
 		}
 		Iterator var5 = this.field1867.iterator();
 		while (var5.hasNext()) {
-			AudioApiRelated2 var6 = (AudioApiRelated2) var5.next();
+			AudioProcessingInterface var6 = (AudioProcessingInterface) var5.next();
 			if (var6.method9675()) {
 				this.field1865.remove(var6.method9680());
 			} else {
@@ -779,16 +779,16 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fb.b(IZI)Lwr;")
-	public AudioApiRelated2 method3162(int arg0, boolean arg1) {
+	public AudioProcessingInterface method3162(int arg0, boolean arg1) {
 		if (!this.field1860) {
 			return null;
 		}
-		AudioApiRelated2 var3 = (AudioApiRelated2) (arg1 ? this.field1862.get((long) arg0) : this.field1856.get((long) arg0));
+		AudioProcessingInterface var3 = (AudioProcessingInterface) (arg1 ? this.field1862.get((long) arg0) : this.field1856.get((long) arg0));
 		if (var3 == null) {
 			if (arg1) {
-				var3 = (AudioApiRelated2) this.field1865.get(arg0);
+				var3 = (AudioProcessingInterface) this.field1865.get(arg0);
 			} else {
-				var3 = (AudioApiRelated2) this.field1858.get(arg0);
+				var3 = (AudioProcessingInterface) this.field1858.get(arg0);
 			}
 		}
 		return var3;
@@ -796,11 +796,11 @@ public class AudioApi {
 
 	// line 583
 	@ObfuscatedName("fb.h(IZI)Lwr;")
-	public AudioApiRelated2 method3163(int arg0, boolean arg1) {
+	public AudioProcessingInterface method3163(int arg0, boolean arg1) {
 		if (!this.field1860) {
 			return null;
 		}
-		AudioApiRelated2 var3 = this.method3162(arg0, arg1);
+		AudioProcessingInterface var3 = this.method3162(arg0, arg1);
 		if (var3 == null) {
 			AudioMixerRelated_Sub1 var4 = new AudioMixerRelated_Sub1(this);
 			var3 = AudioMixer.method6064(arg1 ? Client.audiostreamsJs5 : Client.vorbisJs5, arg0, var4, arg1, this.field1863);
@@ -825,7 +825,7 @@ public class AudioApi {
 		}
 
 		@ObfuscatedName("fl.e(Lwr;IIZB)V")
-		public void method3130(AudioApiRelated2 arg0, int arg1, int arg2, boolean arg3) {
+		public void method3130(AudioProcessingInterface arg0, int arg1, int arg2, boolean arg3) {
 			this.this$0.method3233().add(arg0);
 			if (arg3) {
 				this.this$0.method3146().put(arg0, (long) arg2);
@@ -835,7 +835,7 @@ public class AudioApi {
 		}
 
 		@ObfuscatedName("fl.n(Lwr;I)V")
-		public void method3131(AudioApiRelated2 arg0) {
+		public void method3131(AudioProcessingInterface arg0) {
 			if (arg0 != null) {
 				this.this$0.method3145().get((long) arg0.method9680());
 			}
@@ -843,7 +843,7 @@ public class AudioApi {
 	}
 
 	@ObfuscatedName("fb.a(Lwr;I)Lrw;")
-	public Sound method3164(AudioApiRelated2 arg0) {
+	public Sound method3164(AudioProcessingInterface arg0) {
 		if (!this.field1860) {
 			return null;
 		}
@@ -895,7 +895,7 @@ public class AudioApi {
 			}
 			float var16 = (float) var14 / 255.0F;
 			float var17 = (float) var15 / 255.0F;
-			AudioApiRelated2 var18 = this.method3163(arg2, arg12);
+			AudioProcessingInterface var18 = this.method3163(arg2, arg12);
 			Sound var19 = this.method3164(var18);
 			if (var19 == null) {
 				return null;

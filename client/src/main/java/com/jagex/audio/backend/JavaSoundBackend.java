@@ -5,7 +5,7 @@ import com.jagex.audio.api.AudioEndianness;
 import com.jagex.audio.api.AudioFormat;
 import com.jagex.audio.api.SoundBackend;
 import com.jagex.audio.stream.BussManager;
-import com.jagex.audio.stream.SoundRelated2;
+import com.jagex.audio.stream.AudioProcessingUnit;
 import com.jagex.audio.stream.SoundRelatedType1;
 import com.jagex.audio.stream.SoundRelatedType2;
 import com.jagex.audio.vorbis.VorbisSound;
@@ -82,7 +82,7 @@ public class JavaSoundBackend extends SoundBackend {
 								}
 								var5 = (SoundRelatedType2) var4.next();
 							} while (var5.field4856);
-							SoundRelated2[] var6 = (SoundRelated2[]) var3.get(var5);
+							AudioProcessingUnit[] var6 = (AudioProcessingUnit[]) var3.get(var5);
 							for (int var7 = 0; var7 < var6.length; var7++) {
 								var6[var7].method7507();
 							}
@@ -123,7 +123,7 @@ public class JavaSoundBackend extends SoundBackend {
 								}
 								var3 = (SoundRelatedType2) var2.next();
 							} while (var3.field4856);
-							SoundRelated2[] var4 = (SoundRelated2[]) var1.get(var3);
+							AudioProcessingUnit[] var4 = (AudioProcessingUnit[]) var1.get(var3);
 							for (int var5 = 0; var5 < var4.length; var5++) {
 								var4[var5].method7504();
 							}
@@ -148,16 +148,16 @@ public class JavaSoundBackend extends SoundBackend {
 		java.util.Iterator var2 = arg0.field8053.keySet().iterator();
 		while (var2.hasNext()) {
 			SoundRelatedType2 var3 = (SoundRelatedType2) var2.next();
-			this.field10688.put(var3, new SoundRelated2[(Integer) arg0.field8053.get(var3)]);
+			this.field10688.put(var3, new AudioProcessingUnit[(Integer) arg0.field8053.get(var3)]);
 		}
 		java.util.Iterator var4 = this.field10688.keySet().iterator();
 		while (var4.hasNext()) {
 			SoundRelatedType2 var5 = (SoundRelatedType2) var4.next();
-			SoundRelated2[] var6 = (SoundRelated2[]) this.field10688.get(var5);
+			AudioProcessingUnit[] var6 = (AudioProcessingUnit[]) this.field10688.get(var5);
 			for (int var7 = 0; var7 < var6.length; var7++) {
 				VorbisSound var8 = new VorbisSound(2.0F);
 				var8.method3774(0, AudioFormat.field3441, AudioEndianness.LITTLE, 2);
-				var6[var7] = new SoundRelated2(var5, 8192, 3, var8, this);
+				var6[var7] = new AudioProcessingUnit(var5, 8192, 3, var8, this);
 			}
 		}
 		PcmPlayer var9 = new PcmPlayer(this, 44100.0F, 32768);
@@ -180,7 +180,7 @@ public class JavaSoundBackend extends SoundBackend {
 		}
 		java.util.Iterator var1 = this.field10688.keySet().iterator();
 		while (true) {
-			SoundRelated2[] var3;
+			AudioProcessingUnit[] var3;
 			byte var6;
 			int var8;
 			do {
@@ -188,7 +188,7 @@ public class JavaSoundBackend extends SoundBackend {
 					return;
 				}
 				SoundRelatedType2 var2 = (SoundRelatedType2) var1.next();
-				var3 = (SoundRelated2[]) this.field10688.get(var2);
+				var3 = (AudioProcessingUnit[]) this.field10688.get(var2);
 				if (!var2.field4856) {
 					boolean var4 = false;
 					for (int var5 = 0; var5 < var3.length; var5++) {
@@ -238,7 +238,7 @@ public class JavaSoundBackend extends SoundBackend {
 		}
 
 		@ObfuscatedName("tt.e(Lrq;Lrq;I)I")
-		public int method8639(SoundRelated2 arg0, SoundRelated2 arg1) {
+		public int method8639(AudioProcessingUnit arg0, AudioProcessingUnit arg1) {
 			float var3 = arg0.method7531();
 			float var4 = arg1.method7531();
 			if (var4 > var3) {
@@ -251,7 +251,7 @@ public class JavaSoundBackend extends SoundBackend {
 		}
 
 		public int compare(Object arg0, Object arg1) {
-			return this.method8639((SoundRelated2) arg0, (SoundRelated2) arg1);
+			return this.method8639((AudioProcessingUnit) arg0, (AudioProcessingUnit) arg1);
 		}
 
 		public boolean equals(Object arg0) {
@@ -332,15 +332,15 @@ public class JavaSoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiz.w(Lqk;B)Lrq;")
-	public SoundRelated2 method5865(SoundRelatedType2 arg0) {
+	public AudioProcessingUnit method5865(SoundRelatedType2 arg0) {
 		java.util.HashMap var2 = this.field10688;
 		synchronized (this.field10688) {
-			SoundRelated2[] var3 = (SoundRelated2[]) this.field10688.get(arg0);
+			AudioProcessingUnit[] var3 = (AudioProcessingUnit[]) this.field10688.get(arg0);
 			if (var3 == null) {
 				return null;
 			}
 			for (int var4 = 0; var4 < var3.length; var4++) {
-				SoundRelated2 var5 = var3[var4];
+				AudioProcessingUnit var5 = var3[var4];
 				SoundRelatedType1 var6 = var5.method7550();
 				if (SoundRelatedType1.field4859 == var6) {
 					var5.method7592();
@@ -369,7 +369,7 @@ public class JavaSoundBackend extends SoundBackend {
 			java.util.Iterator var3 = var1.keySet().iterator();
 			while (var3.hasNext()) {
 				SoundRelatedType2 var4 = (SoundRelatedType2) var3.next();
-				SoundRelated2[] var5 = (SoundRelated2[]) var1.get(var4);
+				AudioProcessingUnit[] var5 = (AudioProcessingUnit[]) var1.get(var4);
 				for (int var6 = 0; var6 < var5.length; var6++) {
 					if (var5[var6].method7550() != SoundRelatedType1.field4859) {
 						var5[var6].method7489();
@@ -385,7 +385,7 @@ public class JavaSoundBackend extends SoundBackend {
 				java.util.Iterator var10 = var1.keySet().iterator();
 				while (var10.hasNext()) {
 					SoundRelatedType2 var11 = (SoundRelatedType2) var10.next();
-					SoundRelated2[] var12 = (SoundRelated2[]) var1.get(var11);
+					AudioProcessingUnit[] var12 = (AudioProcessingUnit[]) var1.get(var11);
 					for (int var13 = 0; var13 < var12.length; var13++) {
 						if (var12[var13].method7550() != SoundRelatedType1.field4859) {
 							var12[var13].method7601();

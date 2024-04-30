@@ -11,7 +11,7 @@ import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("rq")
-public class SoundRelated2 {
+public class AudioProcessingUnit {
 
 	@ObfuscatedName("rq.e")
 	public byte[] field4901;
@@ -38,7 +38,7 @@ public class SoundRelated2 {
 	public float field4902;
 
 	@ObfuscatedName("rq.z")
-	public SoundRelatedInterface field4903;
+	public SoundBaseInterface field4903;
 
 	@ObfuscatedName("rq.p")
 	public int field4904;
@@ -104,7 +104,7 @@ public class SoundRelated2 {
 	public boolean field4924;
 
 	@ObfuscatedName("rq.ac")
-	public AudioApiRelated field4933;
+	public SoundAdjuster field4933;
 
 	@ObfuscatedName("rq.ai")
 	public Object field4905;
@@ -167,7 +167,7 @@ public class SoundRelated2 {
 	public boolean field4911;
 
 	// line 66
-	public SoundRelated2(SoundRelatedType2 arg0, int arg1, int arg2, VorbisInterface arg3, SoundBackend arg4) {
+	public AudioProcessingUnit(SoundRelatedType2 arg0, int arg1, int arg2, VorbisInterface arg3, SoundBackend arg4) {
 		this.field4923 = arg4;
 		this.method7480(SoundRelatedType1.field4859);
 		this.field4907 = arg1;
@@ -183,10 +183,10 @@ public class SoundRelated2 {
 	public static class VorbisInterfaceRelated implements VorbisInterface2 {
 
 		// $FF: synthetic field
-		public final SoundRelated2 this$0;
+		public final AudioProcessingUnit this$0;
 
 		// line 74
-		public VorbisInterfaceRelated(SoundRelated2 arg0) {
+		public VorbisInterfaceRelated(AudioProcessingUnit arg0) {
 			this.this$0 = arg0;
 		}
 
@@ -255,7 +255,7 @@ public class SoundRelated2 {
 	}
 
 	@ObfuscatedName("rq.z([BLrf;IFZZIFLjava/lang/Object;I)Z")
-	public boolean method7487(byte[] arg0, SoundRelatedInterface arg1, int arg2, float arg3, boolean arg4, boolean arg5, int arg6, float arg7, Object arg8) {
+	public boolean method7487(byte[] arg0, SoundBaseInterface arg1, int arg2, float arg3, boolean arg4, boolean arg5, int arg6, float arg7, Object arg8) {
 		synchronized (this) {
 			if (arg1 == null) {
 				this.field4901 = arg0;
@@ -312,7 +312,7 @@ public class SoundRelated2 {
 				this.field4910[var15] = 1.0F;
 			}
 			if (this.field4905 instanceof Sound) {
-				AudioApiRelated2 var16 = ((Sound) this.field4905).method7386();
+				AudioProcessingInterface var16 = ((Sound) this.field4905).method7386();
 				this.field4942 = var16.method9702();
 				this.field4943 = !this.field4942;
 			}
@@ -349,7 +349,7 @@ public class SoundRelated2 {
 	}
 
 	@ObfuscatedName("rq.c(Lro;I)V")
-	public void method7536(AudioApiRelated arg0) {
+	public void method7536(SoundAdjuster arg0) {
 		this.field4933 = arg0;
 		if (this.field4933 != null) {
 			this.field4933.method3053(this.field4905, this.field4910, null);
@@ -743,7 +743,7 @@ public class SoundRelated2 {
 			return;
 		}
 		Sound var2 = (Sound) this.field4905;
-		AudioApiRelated2 var3 = var2.method7386();
+		AudioProcessingInterface var3 = var2.method7386();
 		byte[] var4 = new byte[arg0.pos];
 		System.arraycopy(arg0.data, 0, var4, 0, arg0.pos);
 		Packet var5 = new Packet(var4);
@@ -757,7 +757,7 @@ public class SoundRelated2 {
 			return null;
 		}
 		Sound var2 = (Sound) this.field4905;
-		AudioApiRelated2 var3 = var2.method7386();
+		AudioProcessingInterface var3 = var2.method7386();
 		Packet var4 = var3.method9686(arg0);
 		Packet var5 = new Packet(var4.pos, true);
 		var5.pdata(var4);
@@ -768,7 +768,7 @@ public class SoundRelated2 {
 	public boolean method7512(int arg0) {
 		if (this.field4905 != null && this.field4905 instanceof Sound) {
 			Sound var2 = (Sound) this.field4905;
-			AudioApiRelated2 var3 = var2.method7386();
+			AudioProcessingInterface var3 = var2.method7386();
 			return var3.method9683(arg0);
 		} else {
 			return false;
@@ -779,7 +779,7 @@ public class SoundRelated2 {
 	public int method7561() {
 		if (this.field4905 != null && this.field4905 instanceof Sound) {
 			Sound var1 = (Sound) this.field4905;
-			AudioApiRelated2 var2 = var1.method7386();
+			AudioProcessingInterface var2 = var1.method7386();
 			return var2.method9685();
 		} else {
 			return 0;
@@ -791,7 +791,7 @@ public class SoundRelated2 {
 		synchronized (this) {
 			if (this.field4905 != null && this.field4905 instanceof Sound) {
 				Sound var2 = (Sound) this.field4905;
-				AudioApiRelated2 var3 = var2.method7386();
+				AudioProcessingInterface var3 = var2.method7386();
 				if (var3 != null) {
 					return var3.method9687();
 				}
@@ -805,7 +805,7 @@ public class SoundRelated2 {
 		synchronized (this) {
 			if (this.field4905 != null && this.field4905 instanceof Sound) {
 				Sound var2 = (Sound) this.field4905;
-				AudioApiRelated2 var3 = var2.method7386();
+				AudioProcessingInterface var3 = var2.method7386();
 				if (var3 != null) {
 					var3.method9671(true);
 				}
@@ -879,7 +879,7 @@ public class SoundRelated2 {
 	public static class SoundRelated3 {
 
 		// $FF: synthetic field
-		public final SoundRelated2 this$0;
+		public final AudioProcessingUnit this$0;
 
 		@ObfuscatedName("qb.e")
 		public Packet field4873;
@@ -894,7 +894,7 @@ public class SoundRelated2 {
 		public int field4870;
 
 		// line 750
-		public SoundRelated3(SoundRelated2 arg0, Packet arg1, boolean arg2) {
+		public SoundRelated3(AudioProcessingUnit arg0, Packet arg1, boolean arg2) {
 			this.this$0 = arg0;
 			this.field4873 = arg1;
 			this.field4871 = arg2;

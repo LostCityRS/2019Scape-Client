@@ -7,7 +7,7 @@ import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("wp")
-public class AudioStream implements AudioApiRelated2 {
+public class AudioStream implements AudioProcessingInterface {
 
 	@ObfuscatedName("wp.e")
 	public SoundBackend field7628;
