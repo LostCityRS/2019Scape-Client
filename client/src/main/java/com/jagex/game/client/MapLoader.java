@@ -9,7 +9,7 @@ import com.jagex.game.config.flutype.FloorUnderlayType;
 import com.jagex.game.config.flutype.FloorUnderlayTypeList;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.FloorModel;
-import com.jagex.graphics.Material;
+import com.jagex.graphics.MaterialRaw;
 import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.WaterFogData;
 import com.jagex.math.Trig1;
@@ -1574,7 +1574,7 @@ public class MapLoader {
 			return floType.averagecolour;
 		}
 		if (floType.material != -1) {
-			Material var2 = toolkit.materialList.get(floType.material);
+			MaterialRaw var2 = toolkit.materialList.get(floType.material);
 			if (!var2.highDetail) {
 				return var2.averageColour;
 			}

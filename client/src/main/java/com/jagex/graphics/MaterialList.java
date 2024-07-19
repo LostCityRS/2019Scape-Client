@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 public class MaterialList {
 
 	@ObfuscatedName("df.e")
-	public Material[] field1453;
+	public MaterialRaw[] field1453;
 
 	@ObfuscatedName("df.n")
 	public int field1451;
@@ -26,7 +26,7 @@ public class MaterialList {
 	}
 
 	@ObfuscatedName("df.e(II)Ldv;")
-	public Material get(int arg0) {
+	public MaterialRaw get(int arg0) {
 		this.method2045();
 		return this.field1453[arg0];
 	}
@@ -37,15 +37,15 @@ public class MaterialList {
 			return;
 		}
 		field1454 = false;
-		this.field1453 = new Material[this.field1451];
+		this.field1453 = new MaterialRaw[this.field1451];
 		for (int var1 = 0; var1 < this.field1451; var1++) {
 			Packet var2 = new Packet(this.field1452.getfile(0, var1));
 			if (var2.data == null) {
 				this.field1453[var1] = null;
 			} else {
 				try {
-					Material var3 = new Material();
-					var3.method1909(var1, var2);
+					MaterialRaw var3 = new MaterialRaw();
+					var3.decode(var1, var2);
 					this.field1453[var1] = var3;
 				} catch (Exception var5) {
 					this.field1453[var1] = null;

@@ -280,7 +280,7 @@ public class Loading {
 				return var7 / 5;
 			}
 			Client.graphicsDefaults = new GraphicsDefaults(Client.defaultsJs5);
-			Client.titleDefaults = new TitleDefaults(Client.defaultsJs5);
+			Client.customizationDefaults = new CustomizationDefaults(Client.defaultsJs5);
 			DefaultSprites.method3470(Client.graphicsDefaults);
 			int var8 = Client.preferences.loadingScreen.getValue();
 			field2841 = new LoadingRelated3(Client.modegame, Client.language, loadingScreensJs5);

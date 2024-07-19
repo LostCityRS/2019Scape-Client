@@ -567,13 +567,13 @@ public class WorldMap {
 				field6815[field6812 * arg5 + arg4] = (short) var17;
 				field6802[field6812 * arg5 + arg4] = (byte) var18;
 				if (var19 == 1) {
-					field6817[field6812 * arg5 + arg4] = Integer.valueOf(arg1.gSmart2or4null());
+					field6817[field6812 * arg5 + arg4] = Integer.valueOf(arg1.gSmart2or4s());
 					field6818[field6812 * arg5 + arg4] = arg1.g1b();
 				} else if (var19 > 1) {
 					int[] var20 = new int[var19];
 					byte[] var21 = new byte[var19];
 					for (int var22 = 0; var22 < var19; var22++) {
-						var20[var22] = arg1.gSmart2or4null();
+						var20[var22] = arg1.gSmart2or4s();
 						var21[var22] = arg1.g1b();
 					}
 					field6817[field6812 * arg5 + arg4] = new WorldMapNode(var20, var21);
@@ -585,7 +585,7 @@ public class WorldMap {
 					var23 = new int[var19];
 					var24 = new byte[var19];
 					for (int var25 = 0; var25 < var19; var25++) {
-						var23[var25] = arg1.gSmart2or4null();
+						var23[var25] = arg1.gSmart2or4s();
 						var24[var25] = arg1.g1b();
 					}
 				}

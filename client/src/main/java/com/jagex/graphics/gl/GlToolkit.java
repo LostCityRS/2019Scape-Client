@@ -2767,7 +2767,7 @@ public class GlToolkit extends Toolkit {
 			if (arg0 < 0) {
 				this.method15785();
 			} else {
-				Material var10 = this.materialList.get(arg0);
+				MaterialRaw var10 = this.materialList.get(arg0);
 				if (var10.field1330) {
 					var4 = this.field10026.method1404(var10);
 					if (var10.speedU == 0.0F && var10.speedV == 0.0F) {
@@ -2784,7 +2784,7 @@ public class GlToolkit extends Toolkit {
 				} else {
 					this.method15785();
 				}
-				if (MaterialAlphaMode.TEST == var10.alphaMode) {
+				if (AlphaMode.ALPHA_TESTED == var10.alphaMode) {
 					var9 = var10.alphaThreshold;
 				}
 			}

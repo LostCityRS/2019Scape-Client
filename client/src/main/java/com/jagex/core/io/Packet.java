@@ -492,7 +492,7 @@ public class Packet extends Node {
 	}
 
 	@ObfuscatedName("alw.bk(I)I")
-	public int gSmart2or4null() {
+	public int gSmart2or4s() {
 		if (this.data[this.pos] < 0) {
 			return this.g4s() & Integer.MAX_VALUE;
 		} else {

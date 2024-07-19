@@ -5,7 +5,7 @@ import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("wc")
-public class TitleDefaults {
+public class CustomizationDefaults {
 
 	@ObfuscatedName("wc.e")
 	public int field7671 = -1;
@@ -13,8 +13,8 @@ public class TitleDefaults {
 	@ObfuscatedName("wc.n")
 	public int field7670 = -1;
 
-	public TitleDefaults(Js5 arg0) {
-		byte[] var2 = arg0.fetchFile(DefaultsGroup.TITLE.js5GroupId);
+	public CustomizationDefaults(Js5 arg0) {
+		byte[] var2 = arg0.fetchFile(DefaultsGroup.CUSTOMIZATION.js5GroupId);
 		this.method9831(new Packet(var2));
 	}
 
@@ -26,8 +26,8 @@ public class TitleDefaults {
 				case 0:
 					return;
 				case 1:
-					this.field7671 = arg0.gSmart2or4null();
-					this.field7670 = arg0.gSmart2or4null();
+					this.field7671 = arg0.gSmart2or4s();
+					this.field7670 = arg0.gSmart2or4s();
 					break;
 				default:
 					return;

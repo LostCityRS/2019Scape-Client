@@ -264,7 +264,7 @@ public class GlModel extends Model {
 		for (int var10 = 0; var10 < arg1.faceCount; var10++) {
 			if (arg1.faceType == null || arg1.faceType[var10] != 2) {
 				if (arg1.faceMaterial != null && arg1.faceMaterial[var10] != -1) {
-					Material var11 = var7.get(arg1.faceMaterial[var10] & 0xFFFF);
+					MaterialRaw var11 = var7.get(arg1.faceMaterial[var10] & 0xFFFF);
 					if (((this.field9628 & 0x40) == 0 || !var11.highDetail) && var11.field1361) {
 						continue;
 					}
@@ -283,7 +283,7 @@ public class GlModel extends Model {
 		boolean var13 = (this.field9627 & 0x100) != 0;
 		for (int var14 = 0; var14 < this.field9670; var14++) {
 			int var15 = var9[var14];
-			Material var16 = null;
+			MaterialRaw var16 = null;
 			int var17 = 0;
 			byte var18 = 0;
 			byte var19 = 0;
@@ -298,8 +298,8 @@ public class GlModel extends Model {
 							var21 = true;
 						}
 						if (var24.field3455 != -1) {
-							Material var25 = var7.get(var24.field3455);
-							if (MaterialAlphaMode.MULTIPLY == var25.alphaMode) {
+							MaterialRaw var25 = var7.get(var24.field3455);
+							if (AlphaMode.MULTIPLY == var25.alphaMode) {
 								this.field9632 = true;
 							}
 						}
@@ -345,7 +345,7 @@ public class GlModel extends Model {
 					}
 				}
 			}
-			boolean var31 = arg1.faceTrans != null && arg1.faceTrans[var15] != 0 || var16 != null && MaterialAlphaMode.NONE != var16.alphaMode;
+			boolean var31 = arg1.faceTrans != null && arg1.faceTrans[var15] != 0 || var16 != null && AlphaMode.NONE != var16.alphaMode;
 			if ((var13 || var31) && arg1.facePriority != null) {
 				var17 += arg1.facePriority[var15] << 17;
 			}
@@ -1874,14 +1874,14 @@ public class GlModel extends Model {
 		byte var5 = 0;
 		byte var6 = 0;
 		if (arg0 != -1) {
-			Material var7 = var3.get(arg0 & 0xFFFF);
+			MaterialRaw var7 = var3.get(arg0 & 0xFFFF);
 			var5 = var7.field1364;
 			var6 = var7.field1363;
 		}
 		byte var8 = 0;
 		byte var9 = 0;
 		if (arg1 != -1) {
-			Material var10 = var3.get(arg1 & 0xFFFF);
+			MaterialRaw var10 = var3.get(arg1 & 0xFFFF);
 			var8 = var10.field1364;
 			var9 = var10.field1363;
 			if (var10.speedU != 0.0F || var10.speedV != 0.0F) {
@@ -1940,7 +1940,7 @@ public class GlModel extends Model {
 		}
 		for (int var1 = 0; var1 < this.field9685.length; var1++) {
 			if (this.field9685[var1] != -1) {
-				Material var2 = this.field9626.materialList.get(this.field9685[var1] & 0xFFFF);
+				MaterialRaw var2 = this.field9626.materialList.get(this.field9685[var1] & 0xFFFF);
 				if (var2.field1330 && !this.field9626.field10026.method1397(TextureRelated2.field7586, var2, -1)) {
 					return false;
 				}
@@ -3713,7 +3713,7 @@ public class GlModel extends Model {
 	public int method15548(int arg0, short arg1, int arg2, byte arg3) {
 		int var5 = ColourUtils.field8151[method15559(arg0, arg2)];
 		if (arg1 != -1) {
-			Material var6 = this.field9626.materialList.get(arg1 & 0xFFFF);
+			MaterialRaw var6 = this.field9626.materialList.get(arg1 & 0xFFFF);
 			int var7 = var6.field1364 & 0xFF;
 			if (var7 != 0) {
 				int var8;

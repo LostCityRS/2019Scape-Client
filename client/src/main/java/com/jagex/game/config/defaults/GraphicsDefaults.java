@@ -170,7 +170,7 @@ public class GraphicsDefaults {
 					}
 					var2 = true;
 				} else if (var3 == 2) {
-					this.performancemetricsmodel = buf.gSmart2or4null();
+					this.performancemetricsmodel = buf.gSmart2or4s();
 				} else if (var3 == 3) {
 					this.maxhitmarks = buf.g1();
 					this.hitmarkpos_x = new int[this.maxhitmarks];
@@ -233,21 +233,21 @@ public class GraphicsDefaults {
 				} else if (var3 == 21) {
 					this.field7730 = buf.g1();
 				} else if (var3 == 22) {
-					this.p11_full = buf.gSmart2or4null();
-					this.p12_full = buf.gSmart2or4null();
-					this.b12_full = buf.gSmart2or4null();
-					this.hintarrows = buf.gSmart2or4null();
-					this.field7715 = buf.gSmart2or4null();
-					this.mapflag = buf.gSmart2or4null();
+					this.p11_full = buf.gSmart2or4s();
+					this.p12_full = buf.gSmart2or4s();
+					this.b12_full = buf.gSmart2or4s();
+					this.hintarrows = buf.gSmart2or4s();
+					this.field7715 = buf.gSmart2or4s();
+					this.mapflag = buf.gSmart2or4s();
 					this.field7751 = buf.g1b();
 					this.field7752 = buf.g1b();
-					this.cross = buf.gSmart2or4null();
-					this.mapdots = buf.gSmart2or4null();
-					this.field7755 = buf.gSmart2or4null();
-					this.field7756 = buf.gSmart2or4null();
-					this.compass = buf.gSmart2or4null();
-					this.field7721 = buf.gSmart2or4null();
-					this.field7741 = buf.gSmart2or4null();
+					this.cross = buf.gSmart2or4s();
+					this.mapdots = buf.gSmart2or4s();
+					this.field7755 = buf.gSmart2or4s();
+					this.field7756 = buf.gSmart2or4s();
+					this.compass = buf.gSmart2or4s();
+					this.field7721 = buf.gSmart2or4s();
+					this.field7741 = buf.gSmart2or4s();
 				} else if (var3 == 23) {
 					this.field7714 = new short[10][4];
 					this.field7734 = new short[10][4][];

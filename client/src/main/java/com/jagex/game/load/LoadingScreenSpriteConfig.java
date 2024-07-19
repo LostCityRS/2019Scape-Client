@@ -31,7 +31,7 @@ public class LoadingScreenSpriteConfig implements LoadingScreenElementConfig {
 
 	@ObfuscatedName("nu.e(Lalw;I)Lla;")
 	public static LoadingScreenSpriteConfig method6073(Packet arg0) {
-		int var1 = arg0.gSmart2or4null();
+		int var1 = arg0.gSmart2or4s();
 		LoadingScreenAlignmentX var2 = LoadingScreenAlignmentX.method13948()[arg0.g1()];
 		LoadingScreenAlignmentY var3 = LoadingScreenAlignmentY.method2774()[arg0.g1()];
 		int var4 = arg0.g2s();

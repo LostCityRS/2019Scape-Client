@@ -27,7 +27,7 @@ public class EntityAnimCutsceneAction extends CutsceneAction {
 		super(arg0);
 		this.field10301 = arg0.g2();
 		this.field10298 = new int[4];
-		this.field10299 = arg0.gSmart2or4null();
+		this.field10299 = arg0.gSmart2or4s();
 		Arrays.fill(this.field10298, 0, this.field10298.length, this.field10299);
 		this.field10300 = arg0.g4s();
 	}

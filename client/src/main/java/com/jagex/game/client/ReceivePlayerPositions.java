@@ -554,7 +554,7 @@ public class ReceivePlayerPositions {
 		if ((mask & 0x80) != 0) { // sequences
 			int[] seqs = new int[4];
 			for (int var5 = 0; var5 < 4; var5++) {
-				seqs[var5] = buf.gSmart2or4null();
+				seqs[var5] = buf.gSmart2or4s();
 			}
 			int var6 = buf.g1_alt2();
 			Client.addSequences(player, seqs, var6, false);
@@ -625,7 +625,7 @@ public class ReceivePlayerPositions {
 			int[] var29 = new int[var27];
 			int[] var30 = new int[var27];
 			for (int var31 = 0; var31 < var27; var31++) {
-				seqs[var31] = buf.gSmart2or4null();
+				seqs[var31] = buf.gSmart2or4s();
 				var29[var31] = buf.g1_alt1();
 				var30[var31] = buf.g2_alt3();
 			}

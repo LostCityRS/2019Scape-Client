@@ -78,19 +78,19 @@ public class HeadbarType implements ConfigType {
 		} else if (code == 6) {
 			buf.g1();
 		} else if (code == 7) {
-			this.full = buf.gSmart2or4null();
+			this.full = buf.gSmart2or4s();
 		} else if (code == 8) {
-			this.empty = buf.gSmart2or4null();
+			this.empty = buf.gSmart2or4s();
 		} else if (code == 9) {
-			this.fulllocalpartner = buf.gSmart2or4null();
+			this.fulllocalpartner = buf.gSmart2or4s();
 		} else if (code == 10) {
-			this.emptylocalpartner = buf.gSmart2or4null();
+			this.emptylocalpartner = buf.gSmart2or4s();
 		} else if (code == 11) {
 			this.fadeout = buf.g2();
 		} else if (code == 12) {
-			this.fullglobalpartner = buf.gSmart2or4null();
+			this.fullglobalpartner = buf.gSmart2or4s();
 		} else if (code == 13) {
-			this.emptyglobalpartner = buf.gSmart2or4null();
+			this.emptyglobalpartner = buf.gSmart2or4s();
 		}
 	}
 

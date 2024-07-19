@@ -180,9 +180,9 @@ public class MapElementType implements ConfigType {
 	@ObfuscatedName("hs.u(Lalw;II)V")
 	public void method4038(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.sprite = arg0.gSmart2or4null();
+			this.sprite = arg0.gSmart2or4s();
 		} else if (arg1 == 2) {
-			this.field2403 = arg0.gSmart2or4null();
+			this.field2403 = arg0.gSmart2or4s();
 		} else if (arg1 == 3) {
 			this.text = arg0.gjstr();
 		} else if (arg1 == 4) {
@@ -235,7 +235,7 @@ public class MapElementType implements ConfigType {
 		} else if (arg1 == 17) {
 			this.field2382 = arg0.gjstr();
 		} else if (arg1 == 18) {
-			this.field2383 = arg0.gSmart2or4null();
+			this.field2383 = arg0.gSmart2or4s();
 		} else if (arg1 == 19) {
 			this.category = arg0.g2();
 		} else if (arg1 == 20) {
@@ -261,7 +261,7 @@ public class MapElementType implements ConfigType {
 			this.field2410 = arg0.g2s();
 			this.field2394 = arg0.g2s();
 		} else if (arg1 == 25) {
-			this.field2384 = arg0.gSmart2or4null();
+			this.field2384 = arg0.gSmart2or4s();
 		} else if (arg1 == 26 || arg1 == 27) {
 			this.field2371 = arg0.g2();
 			if (this.field2371 == 65535) {

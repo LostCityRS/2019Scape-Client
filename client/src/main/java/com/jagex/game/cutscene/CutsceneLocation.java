@@ -31,7 +31,7 @@ public class CutsceneLocation {
 	public int field1738;
 
 	public CutsceneLocation(Packet arg0) {
-		this.field1735 = arg0.gSmart2or4null();
+		this.field1735 = arg0.gSmart2or4s();
 		this.field1736 = (LocShape) SerializableEnums.decode(LocShape.values(), arg0.g1());
 	}
 

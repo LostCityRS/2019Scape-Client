@@ -133,7 +133,7 @@ public class PlayerEntity extends PathingEntity {
 					int var9 = buf.g1();
 					int var10 = (var8 << 8) + var9;
 					if (var7 == 0 && var10 == 65535) {
-						var3 = buf.gSmart2or4null();
+						var3 = buf.gSmart2or4s();
 						this.field12060 = buf.g1();
 						break;
 					}
@@ -230,7 +230,7 @@ public class PlayerEntity extends PathingEntity {
 		var7.release();
 		if (showTitle) {
 			this.titleId = buf.gSmart1or2();
-			int titleEnumId = gender == 0 ? Client.titleDefaults.field7671 : Client.titleDefaults.field7670;
+			int titleEnumId = gender == 0 ? Client.customizationDefaults.field7671 : Client.customizationDefaults.field7670;
 			this.title = ((EnumType) Client.enumTypeList.list(titleEnumId)).getValueString(this.titleId);
 		} else {
 			this.titleId = -1;

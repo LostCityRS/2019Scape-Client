@@ -48,7 +48,7 @@ public class PositionedSound extends Node {
 	public Vector3 field11355 = new Vector3(0.0F, 0.0F, 0.0F);
 
 	@ObfuscatedName("akc.o")
-	public int size;
+	public int dropoffrange;
 
 	@ObfuscatedName("akc.s")
 	public int range;
@@ -162,7 +162,7 @@ public class PositionedSound extends Node {
 				this.random = null;
 				this.maxrate = 256;
 				this.minrate = 256;
-				this.size = 0;
+				this.dropoffrange = 0;
 			} else {
 				this.sound = var2.bgsound_sound;
 				this.range = var2.bgsound_range << 9;
@@ -182,14 +182,14 @@ public class PositionedSound extends Node {
 					var4 = var4.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
 				}
 				if (var4 == null) {
-					this.size = 0;
+					this.dropoffrange = 0;
 					this.range = 0;
 					this.volume = 0;
 					this.maxrate = 256;
 					this.minrate = 256;
 				} else {
 					this.range = var4.bgsound_range << 9;
-					this.size = var4.bgsound_size << 9;
+					this.dropoffrange = var4.bgsound_dropoffrange << 9;
 					this.volume = var4.bgsound_volume;
 					this.maxrate = var4.bgsound_maxrate;
 					this.minrate = var4.bgsound_minrate;
@@ -198,7 +198,7 @@ public class PositionedSound extends Node {
 		} else if (this.player != null) {
 			this.sound = getPlayerSound(this.player);
 			this.range = this.player.bgsound_range << 9;
-			this.size = 0;
+			this.dropoffrange = 0;
 			this.volume = this.player.bgsound_volume;
 			this.maxrate = 256;
 			this.minrate = 256;
@@ -234,7 +234,7 @@ public class PositionedSound extends Node {
 			sound.random = loc.bgsound_random;
 			sound.maxrate = loc.bgsound_maxrate;
 			sound.minrate = loc.bgsound_minrate;
-			sound.size = loc.bgsound_size << 9;
+			sound.dropoffrange = loc.bgsound_dropoffrange << 9;
 			if (loc.multiloc != null) {
 				sound.multisound = true;
 				sound.method17660();
@@ -260,7 +260,7 @@ public class PositionedSound extends Node {
 				sound.volume = npcType.bgsound_volume;
 				sound.maxrate = npcType.bgsound_maxrate;
 				sound.minrate = npcType.bgsound_minrate;
-				sound.size = npcType.bgsound_size << 9;
+				sound.dropoffrange = npcType.bgsound_dropoffrange << 9;
 				Client.audioApi.preloadSounds(npcType.bgsound);
 				Client.audioApi.preloadSounds(npcType.bgsound_crawl);
 				Client.audioApi.preloadSounds(npcType.bgsound_walk);
@@ -276,7 +276,7 @@ public class PositionedSound extends Node {
 			sound.volume = player.bgsound_volume;
 			sound.maxrate = 256;
 			sound.minrate = 256;
-			sound.size = 0;
+			sound.dropoffrange = 0;
 			field11366.put(sound, (long) player.localPlayerIndex);
 			Client.audioApi.preloadSounds(player.bgsound_player);
 			Client.audioApi.preloadSounds(player.bgsound_crawl_player);
@@ -500,7 +500,7 @@ public class PositionedSound extends Node {
 				int var8 = (int) ((float) (arg0.maxZ - arg0.minZ) * 0.5F + (float) arg0.minZ);
 				arg0.field11350.x = var7;
 				arg0.field11350.z = var8;
-				arg0.field11371 = Client.audioApi.createSound(SoundType.field1821, arg0, arg0.sound, -1, 0, SubBussType.LOCATION_GENERIC_SUB.getId(), SoundShape.field1838, (float) arg0.size, (float) arg0.range, arg0.field11350, 0, var6, false);
+				arg0.field11371 = Client.audioApi.createSound(SoundType.field1821, arg0, arg0.sound, -1, 0, SubBussType.LOCATION_GENERIC_SUB.getId(), SoundShape.field1838, (float) arg0.dropoffrange, (float) arg0.range, arg0.field11350, 0, var6, false);
 				if (arg0.field11371 != null) {
 					float var9 = (float) var5 / 255.0F;
 					arg0.field11371.method7403(var9, 150);
@@ -523,7 +523,7 @@ public class PositionedSound extends Node {
 				int var15 = (int) ((float) (arg0.maxZ - arg0.minZ) * 0.5F + (float) arg0.minZ);
 				arg0.field11355.x = var14;
 				arg0.field11355.z = var15;
-				arg0.field11372 = Client.audioApi.createSound(SoundType.field1822, arg0, arg0.random[var13], 0, var5, SubBussType.LOCATION_RANDOM_SUB.getId(), SoundShape.field1838, (float) arg0.size, (float) (arg0.range + arg0.size), arg0.field11355, 0, var12, false);
+				arg0.field11372 = Client.audioApi.createSound(SoundType.field1822, arg0, arg0.random[var13], 0, var5, SubBussType.LOCATION_RANDOM_SUB.getId(), SoundShape.field1838, (float) arg0.dropoffrange, (float) (arg0.range + arg0.dropoffrange), arg0.field11355, 0, var12, false);
 				if (arg0.field11372 != null) {
 					arg0.field11372.method7441();
 				}

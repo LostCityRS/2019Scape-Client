@@ -182,7 +182,7 @@ public class PureJavaFloorModel extends FloorModel {
 				}
 				int var33 = arg11[var32];
 				if (var33 != -1) {
-					Material var34 = this.field9423.materialList.get(var33);
+					MaterialRaw var34 = this.field9423.materialList.get(var33);
 					if (!var34.highDetail) {
 						var30 = true;
 						if (this.method15396(var34.effect) || var34.speedU != 0.0F || var34.speedV != 0.0F) {
@@ -244,7 +244,7 @@ public class PureJavaFloorModel extends FloorModel {
 			if (this.field1237[arg0 + 1][arg1] == this.field1237[arg0][arg1] && this.field1237[arg0 + 1][arg1 + 1] == this.field1237[arg0][arg1] && this.field1237[arg0][arg1 + 1] == this.field1237[arg0][arg1]) {
 				var36.field925 = (byte) (var36.field925 | 0x1);
 			}
-			Material var39 = null;
+			MaterialRaw var39 = null;
 			if (var38 != -1) {
 				var39 = this.field9423.materialList.get(var38);
 			}
@@ -359,7 +359,7 @@ public class PureJavaFloorModel extends FloorModel {
 					}
 					int var28 = -16777216;
 					if (arg8[var17] != -1) {
-						Material var29 = this.field9423.materialList.get(arg8[var17]);
+						MaterialRaw var29 = this.field9423.materialList.get(arg8[var17]);
 						if (var29.field1330 && this.method15396(var29.effect)) {
 							var28 = -1694498816;
 						}
@@ -858,7 +858,7 @@ public class PureJavaFloorModel extends FloorModel {
 							arg2.field936 = var79 < 0.0F || var80 < 0.0F || var81 < 0.0F || var79 > (float) arg2.field945 || var80 > (float) arg2.field945 || var81 > (float) arg2.field945;
 							boolean var85 = false;
 							if (var66.field880[var75] != -1) {
-								Material var86 = this.field9423.materialList.get(var66.field880[var75] & 0xFFFF);
+								MaterialRaw var86 = this.field9423.materialList.get(var66.field880[var75] & 0xFFFF);
 								var85 = var86.field1330;
 							}
 							if (var85) {
@@ -997,7 +997,7 @@ public class PureJavaFloorModel extends FloorModel {
 			}
 			boolean var64 = false;
 			if (var10.field926 != -1) {
-				Material var65 = this.field9423.materialList.get(var10.field926 & 0xFFFF);
+				MaterialRaw var65 = this.field9423.materialList.get(var10.field926 & 0xFFFF);
 				var64 = var65.field1330;
 			}
 			if ((var36 - var46) * (var39 - var44) - (var34 - var44) * (var41 - var46) > 0.0F) {
@@ -1113,7 +1113,7 @@ public class PureJavaFloorModel extends FloorModel {
 						float var123 = arg9[var114] + arg9[var115] + arg9[var116];
 						if ((var117 - var118) * (var122 - var121) - (var119 - var118) * (var120 - var121) > 0.0F) {
 							arg4.field936 = var117 < 0.0F || var118 < 0.0F || var119 < 0.0F || var117 > (float) arg4.field945 || var118 > (float) arg4.field945 || var119 > (float) arg4.field945;
-							Material var124 = null;
+							MaterialRaw var124 = null;
 							boolean var125 = false;
 							if (var99.field924[var113] != -1) {
 								var124 = this.field9423.materialList.get(var99.field924[var113] & 0xFFFF);
@@ -1381,7 +1381,7 @@ public class PureJavaFloorModel extends FloorModel {
 				float var56 = (float) var16 * this.field9439 + (float) var13 * this.field9431 + var41 + this.field9446;
 				var57 = arg4.field942 * var56 / var31 + arg4.field941;
 			}
-			Material var90 = null;
+			MaterialRaw var90 = null;
 			boolean var91 = false;
 			if (var12.field913 != -1) {
 				var90 = this.field9423.materialList.get(var12.field913 & 0xFFFF);

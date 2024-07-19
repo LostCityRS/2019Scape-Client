@@ -74,7 +74,7 @@ public class VarDomainType implements SerializableEnum {
 
 	@ObfuscatedName("qe.f(Lec;B)Ljava/lang/Object;")
 	public Object method7211(VarType arg0) {
-		return arg0.field1703 ? this.getDefaultValue(arg0) : arg0.dataType.getDefaultValue();
+		return arg0.legacyDefaultValue ? this.getDefaultValue(arg0) : arg0.dataType.getDefaultValue();
 	}
 
 	@ObfuscatedName("qe.w(Lec;I)Ljava/lang/Object;")

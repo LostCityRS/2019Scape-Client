@@ -65,7 +65,7 @@ public class SkyDecorType implements ConfigType, MutableConfig {
 		} else if (arg1 == 4) {
 			this.field2780 = arg0.g1();
 		} else if (arg1 == 5) {
-			this.field2778 = arg0.gSmart2or4null();
+			this.field2778 = arg0.gSmart2or4s();
 		} else if (arg1 == 6) {
 			this.field2782 = arg0.g3();
 		} else if (arg1 == 7) {

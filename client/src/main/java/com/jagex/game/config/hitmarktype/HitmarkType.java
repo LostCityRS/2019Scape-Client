@@ -107,18 +107,18 @@ public class HitmarkType implements ConfigType {
 	@ObfuscatedName("vb.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			this.damagefont = buf.gSmart2or4null();
+			this.damagefont = buf.gSmart2or4s();
 		} else if (code == 2) {
 			this.damagecolour = buf.g3();
 			this.damagecolour_set = true;
 		} else if (code == 3) {
-			this.classgraphic = buf.gSmart2or4null();
+			this.classgraphic = buf.gSmart2or4s();
 		} else if (code == 4) {
-			this.leftgraphic = buf.gSmart2or4null();
+			this.leftgraphic = buf.gSmart2or4s();
 		} else if (code == 5) {
-			this.middlegraphic = buf.gSmart2or4null();
+			this.middlegraphic = buf.gSmart2or4s();
 		} else if (code == 6) {
-			this.rightgraphic = buf.gSmart2or4null();
+			this.rightgraphic = buf.gSmart2or4s();
 		} else if (code == 7) {
 			this.scrolltooffsetx = buf.g2s();
 		} else if (code == 8) {

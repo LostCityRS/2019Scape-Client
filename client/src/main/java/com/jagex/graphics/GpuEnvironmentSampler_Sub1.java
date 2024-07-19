@@ -26,17 +26,17 @@ public class GpuEnvironmentSampler_Sub1 extends GpuEnvironmentSampler {
 	public GpuCubeTexture method15652() {
 		if (this.field11952 == null) {
 			TextureList var1 = this.field11950.field1596;
-			Material var2 = this.field11950.materialList.get(this.field11951);
+			MaterialRaw var2 = this.field11950.materialList.get(this.field11951);
 			if (var2 == null) {
 				return null;
 			}
 			if (!var2.field1333) {
 				return null;
 			}
-			if (!var1.loadTexture(TextureRelated2.field7585, var2.diffuseTexture, -1, TextureRelated1.field7568, 1.0F, var2.size, var2.size, false)) {
+			if (!var1.loadTexture(TextureRelated2.field7585, var2.diffuseAlphaMapID, -1, TextureRelated1.field7568, 1.0F, var2.size, var2.size, false)) {
 				return null;
 			}
-			int[] var3 = var1.getTexture(TextureRelated2.field7585, var2.diffuseTexture, 1.0F, var2.size, var2.size, false);
+			int[] var3 = var1.getTexture(TextureRelated2.field7585, var2.diffuseAlphaMapID, 1.0F, var2.size, var2.size, false);
 			int var4 = var2.size * var2.size;
 			if (var3 == null) {
 				return null;

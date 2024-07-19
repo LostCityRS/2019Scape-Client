@@ -47,7 +47,7 @@ public class LoginRelated4 implements LoadingScreenElementConfig {
 		LoadingScreenAlignmentY var2 = LoadingScreenAlignmentY.method2774()[arg0.g1()];
 		int var3 = arg0.g2s();
 		int var4 = arg0.g2s();
-		int var5 = arg0.gSmart2or4null();
+		int var5 = arg0.gSmart2or4s();
 		int var6 = arg0.g4s();
 		int var7 = arg0.g1();
 		return new LoginRelated4(var1, var2, var3, var4, var5, var6, var7);

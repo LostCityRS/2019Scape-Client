@@ -23,12 +23,12 @@ public class GlRelated2 {
 	}
 
 	@ObfuscatedName("ca.e(Ldv;)Ladt;")
-	public GlTexture_Sub1 method1404(Material arg0) {
+	public GlTexture_Sub1 method1404(MaterialRaw arg0) {
 		return this.method1398(arg0, arg0.size);
 	}
 
 	@ObfuscatedName("ca.n(Ldv;I)Ladt;")
-	public GlTexture_Sub1 method1398(Material arg0, int arg1) {
+	public GlTexture_Sub1 method1398(MaterialRaw arg0, int arg1) {
 		GlTexture_Sub1 var3 = (GlTexture_Sub1) this.field1185.get((long) arg0.field1329);
 		if (var3 != null) {
 			return var3;
@@ -38,14 +38,14 @@ public class GlRelated2 {
 			}
 			GlTexture_Sub1 var5;
 			if (arg0.field1336 && this.field1187.isBloomEnabled()) {
-				float[] var4 = this.field1186.method1984(TextureRelated2.field7586, arg0.diffuseTexture, arg0.field1302, 0.7F, arg1, arg1, false);
+				float[] var4 = this.field1186.method1984(TextureRelated2.field7586, arg0.diffuseAlphaMapID, arg0.field1302, 0.7F, arg1, arg1, false);
 				var5 = new GlTexture_Sub1(this.field1187, 3553, TextureFormat.RGBA, DataType.FLOAT_16, arg1, arg1, arg0.field1332 != 0, var4, TextureFormat.RGBA);
 			} else {
 				int[] var6;
-				if (MaterialAlphaMode.NONE == arg0.alphaMode && Material.method261(arg0.effect)) {
-					var6 = this.field1186.getTexture(TextureRelated2.field7586, arg0.diffuseTexture, 0.7F, arg1, arg1, true);
+				if (AlphaMode.NONE == arg0.alphaMode && MaterialRaw.method261(arg0.effect)) {
+					var6 = this.field1186.getTexture(TextureRelated2.field7586, arg0.diffuseAlphaMapID, 0.7F, arg1, arg1, true);
 				} else {
-					var6 = this.field1186.getSpecialTexture(TextureRelated2.field7586, arg0.diffuseTexture, 0.7F, arg1, arg1, false);
+					var6 = this.field1186.getSpecialTexture(TextureRelated2.field7586, arg0.diffuseAlphaMapID, 0.7F, arg1, arg1, false);
 				}
 				var5 = new GlTexture_Sub1(this.field1187, 3553, arg1, arg1, arg0.field1332 != 0, var6, 0, 0, false);
 			}
@@ -58,16 +58,16 @@ public class GlRelated2 {
 	}
 
 	@ObfuscatedName("ca.m(Lvk;Ldv;I)Z")
-	public boolean method1397(TextureRelated2 arg0, Material arg1, int arg2) {
+	public boolean method1397(TextureRelated2 arg0, MaterialRaw arg1, int arg2) {
 		if (arg2 == -1) {
 			arg2 = arg1.size;
 		}
 		if (arg1.field1336 && this.field1187.isBloomEnabled()) {
-			return this.field1186.loadTexture(arg0, arg1.diffuseTexture, arg1.field1302, TextureRelated1.field7570, 0.7F, arg2, arg2, false);
-		} else if (MaterialAlphaMode.NONE == arg1.alphaMode && Material.method261(arg1.effect)) {
-			return this.field1186.loadTexture(arg0, arg1.diffuseTexture, -1, TextureRelated1.field7568, 0.7F, arg2, arg2, true);
+			return this.field1186.loadTexture(arg0, arg1.diffuseAlphaMapID, arg1.field1302, TextureRelated1.field7570, 0.7F, arg2, arg2, false);
+		} else if (AlphaMode.NONE == arg1.alphaMode && MaterialRaw.method261(arg1.effect)) {
+			return this.field1186.loadTexture(arg0, arg1.diffuseAlphaMapID, -1, TextureRelated1.field7568, 0.7F, arg2, arg2, true);
 		} else {
-			return this.field1186.loadTexture(arg0, arg1.diffuseTexture, -1, TextureRelated1.field7569, 0.7F, arg2, arg2, false);
+			return this.field1186.loadTexture(arg0, arg1.diffuseAlphaMapID, -1, TextureRelated1.field7569, 0.7F, arg2, arg2, false);
 		}
 	}
 

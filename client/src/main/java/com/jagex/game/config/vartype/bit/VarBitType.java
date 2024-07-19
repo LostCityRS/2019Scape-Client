@@ -87,7 +87,7 @@ public class VarBitType implements VarConfigType {
 				if (this.field3080 == null) {
 					throw new IllegalStateException("");
 				}
-				this.field3075 = arg0.gSmart2or4null();
+				this.field3075 = arg0.gSmart2or4s();
 				if (this.field3077 != null) {
 					ConfigTypeList var6 = (ConfigTypeList) this.field3077.listContainer.get(this.field3080);
 					if (var6 != null) {

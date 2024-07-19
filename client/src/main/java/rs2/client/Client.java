@@ -702,7 +702,7 @@ public final class Client extends GameShell {
 	public static CutsceneDefaults cutsceneDefaults;
 
 	@ObfuscatedName("xh.iw")
-	public static TitleDefaults titleDefaults;
+	public static CustomizationDefaults customizationDefaults;
 
 	@ObfuscatedName("client.ip")
 	public static PlayerGroupResourceProvider field10837 = new ClientPlayerGroupResourceProvider();
@@ -8314,7 +8314,7 @@ public final class Client extends GameShell {
 			return true;
 		} else if (ServerProt.HINT_TRAIL == connection.packetType) {
 			int var66 = in.g1();
-			int var67 = in.gSmart2or4null();
+			int var67 = in.gSmart2or4s();
 			if (hintTrails[var66] != null) {
 				hintTrails[var66].method8404(world.getScene());
 				hintTrails[var66] = null;
@@ -11369,7 +11369,7 @@ public final class Client extends GameShell {
 				int[] var19 = new int[var17];
 				int[] var20 = new int[var17];
 				for (int var21 = 0; var21 < var17; var21++) {
-					int var22 = var0.gSmart2or4null();
+					int var22 = var0.gSmart2or4s();
 					var18[var21] = var22;
 					var19[var21] = var0.g1();
 					var20[var21] = var0.g2_alt2();
@@ -11416,7 +11416,7 @@ public final class Client extends GameShell {
 						int var33 = var0.g1();
 						var32 = new int[var33];
 						for (int var34 = 0; var34 < var33; var34++) {
-							var32[var34] = var0.gSmart2or4null();
+							var32[var34] = var0.gSmart2or4s();
 						}
 					}
 					short[] var35 = null;
@@ -11455,7 +11455,7 @@ public final class Client extends GameShell {
 			if ((var4 & 0x40) != 0) {
 				int[] var47 = new int[4];
 				for (int var48 = 0; var48 < 4; var48++) {
-					var47[var48] = var0.gSmart2or4null();
+					var47[var48] = var0.gSmart2or4s();
 				}
 				int var49 = var0.g1_alt2();
 				addSequences(var3, var47, var49, true);
@@ -11470,7 +11470,7 @@ public final class Client extends GameShell {
 				if (var3.npcType.hasBackgroundSound()) {
 					PositionedSound.method10111(var3);
 				}
-				var3.method19157((NPCType) npcTypeList.list(var0.gSmart2or4null()), (var4 & 0x10000) == 0, (var4 & 0x800000) == 0, true);
+				var3.method19157((NPCType) npcTypeList.list(var0.gSmart2or4s()), (var4 & 0x10000) == 0, (var4 & 0x800000) == 0, true);
 				var3.setSize(var3.npcType.size);
 				var3.field10444 = var3.npcType.turnspeed << 3;
 				if (var3.npcType.hasBackgroundSound()) {
@@ -11579,7 +11579,7 @@ public final class Client extends GameShell {
 						var76[var78] = -1;
 						var77[var78] = -1;
 					} else {
-						var76[var78] = var0.gSmart2or4null();
+						var76[var78] = var0.gSmart2or4s();
 						var77[var78] = (short) var0.gSmart1or2null();
 					}
 				}
@@ -11636,7 +11636,7 @@ public final class Client extends GameShell {
 							var91 = new int[var92][3];
 						}
 						for (int var93 = 0; var93 < var92; var93++) {
-							var88[var93] = var0.gSmart2or4null();
+							var88[var93] = var0.gSmart2or4s();
 							if ((var87 & 0x10) == 16 && var88[var93] != -1) {
 								var89[var93] = var0.gFloat();
 								for (int var94 = 0; var94 < 3; var94++) {

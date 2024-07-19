@@ -1,7 +1,7 @@
 package com.jagex.graphics.safe;
 
 import com.jagex.core.utils.ColourUtils;
-import com.jagex.graphics.MaterialAlphaMode;
+import com.jagex.graphics.AlphaMode;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("bd")
@@ -86,7 +86,7 @@ public class PureJavaRasteriser {
 	public float field957 = 0.0F;
 
 	@ObfuscatedName("bd.ae")
-	public MaterialAlphaMode alphaMode;
+	public AlphaMode alphaMode;
 
 	@ObfuscatedName("bd.ag")
 	public int field959 = 0;
@@ -130,7 +130,7 @@ public class PureJavaRasteriser {
 		this.sizeX = this.renderer.sizeX;
 		this.pixels = this.renderer.colour;
 		this.depth = this.renderer.depth;
-		this.alphaMode = MaterialAlphaMode.NONE;
+		this.alphaMode = AlphaMode.NONE;
 	}
 
 	@ObfuscatedName("bd.e()I")
@@ -3435,9 +3435,9 @@ public class PureJavaRasteriser {
 				int var43 = this.field954[this.field948 * var42 + var41];
 				boolean var44 = true;
 				int var45;
-				if (MaterialAlphaMode.MULTIPLY == this.alphaMode) {
+				if (AlphaMode.MULTIPLY == this.alphaMode) {
 					var45 = (int) ((float) (var43 >> 24 & 0xFF) * arg17 / 255.0F);
-				} else if (MaterialAlphaMode.TEST != this.alphaMode) {
+				} else if (AlphaMode.ALPHA_TESTED != this.alphaMode) {
 					var45 = (int) arg17;
 				} else if ((var43 >> 24 & 0xFF) > this.field959) {
 					var45 = 255;

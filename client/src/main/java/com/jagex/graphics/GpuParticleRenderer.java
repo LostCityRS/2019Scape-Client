@@ -191,12 +191,12 @@ public class GpuParticleRenderer {
 			}
 			arg5.field2991 = null;
 			if (var10 >= 0) {
-				Material var16 = arg0.materialList.get(var10);
+				MaterialRaw var16 = arg0.materialList.get(var10);
 				if (var16.field1330) {
 					arg5.field2991 = arg0.field10188.method5639(var16);
 				}
 				byte var17 = 0;
-				if (MaterialAlphaMode.TEST == var16.alphaMode) {
+				if (AlphaMode.ALPHA_TESTED == var16.alphaMode) {
 					var17 = var16.alphaThreshold;
 				}
 				arg0.method16056(var17);

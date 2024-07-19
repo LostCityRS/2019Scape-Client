@@ -226,7 +226,7 @@ public class PureJavaToolkit extends Toolkit {
 				var3.field11266 += var2;
 				int var4 = var3.field11266 / 50;
 				if (var4 > 0) {
-					Material var5 = this.materialList.get(var3.field11267);
+					MaterialRaw var5 = this.materialList.get(var3.field11267);
 					float var6 = (float) var5.size;
 					var3.method17527((int) ((float) var2 / 1000.0F * var5.speedU * var6), (int) ((float) var2 / 1000.0F * var5.speedV * var6));
 					var3.field11266 -= var4 * 50;
@@ -254,21 +254,21 @@ public class PureJavaToolkit extends Toolkit {
 		SoftLruHashTable var2 = this.materialTextureCache;
 		PureJavaTexture var4;
 		synchronized (var2) {
-			Material var3 = this.materialList.get(arg0);
-			var4 = (PureJavaTexture) this.materialTextureCache.get((long) (var3.diffuseTexture & 0xFFFF) | Long.MIN_VALUE);
+			MaterialRaw var3 = this.materialList.get(arg0);
+			var4 = (PureJavaTexture) this.materialTextureCache.get((long) (var3.diffuseAlphaMapID & 0xFFFF) | Long.MIN_VALUE);
 			if (var4 == null) {
 				int var5 = var3.size;
-				if (!this.field1596.loadTexture(TextureRelated2.field7586, var3.diffuseTexture, -1, TextureRelated1.field7569, 0.7F, var5, var5, true)) {
+				if (!this.field1596.loadTexture(TextureRelated2.field7586, var3.diffuseAlphaMapID, -1, TextureRelated1.field7569, 0.7F, var5, var5, true)) {
 					return null;
 				}
 				int[] var6;
-				if (MaterialAlphaMode.NONE == var3.alphaMode) {
-					var6 = this.field1596.getTexture(TextureRelated2.field7586, var3.diffuseTexture, 0.7F, var5, var5, true);
+				if (AlphaMode.NONE == var3.alphaMode) {
+					var6 = this.field1596.getTexture(TextureRelated2.field7586, var3.diffuseAlphaMapID, 0.7F, var5, var5, true);
 				} else {
-					var6 = this.field1596.getSpecialTexture(TextureRelated2.field7586, var3.diffuseTexture, 0.7F, var5, var5, true);
+					var6 = this.field1596.getSpecialTexture(TextureRelated2.field7586, var3.diffuseAlphaMapID, 0.7F, var5, var5, true);
 				}
-				var4 = new PureJavaTexture(var3.diffuseTexture, var3.field1329, var5, var6, MaterialAlphaMode.TEST != var3.alphaMode);
-				this.materialTextureCache.put(var4, (long) (var3.diffuseTexture & 0xFFFF) | Long.MIN_VALUE, var5 * var5);
+				var4 = new PureJavaTexture(var3.diffuseAlphaMapID, var3.field1329, var5, var6, AlphaMode.ALPHA_TESTED != var3.alphaMode);
+				this.materialTextureCache.put(var4, (long) (var3.diffuseAlphaMapID & 0xFFFF) | Long.MIN_VALUE, var5 * var5);
 			}
 		}
 		var4.field11265 = true;
@@ -277,8 +277,8 @@ public class PureJavaToolkit extends Toolkit {
 
 	@ObfuscatedName("afg.ra(I)Z")
 	public boolean loadMaterialTexture(int arg0) {
-		Material var2 = this.materialList.get(arg0);
-		return this.field1596.loadTexture(TextureRelated2.field7586, var2.diffuseTexture, -1, TextureRelated1.field7569, 0.7F, var2.size, var2.size, true);
+		MaterialRaw var2 = this.materialList.get(arg0);
+		return this.field1596.loadTexture(TextureRelated2.field7586, var2.diffuseAlphaMapID, -1, TextureRelated1.field7569, 0.7F, var2.size, var2.size, true);
 	}
 
 	@ObfuscatedName("afg.rx(I)I")
@@ -287,7 +287,7 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.ry(I)Lvn;")
-	public MaterialAlphaMode getMaterialAlphaMode(int arg0) {
+	public AlphaMode getMaterialAlphaMode(int arg0) {
 		return this.materialList.get(arg0).alphaMode;
 	}
 
@@ -303,7 +303,7 @@ public class PureJavaToolkit extends Toolkit {
 
 	@ObfuscatedName("afg.re(I)Z")
 	public boolean getMaterialRepeat(int arg0) {
-		Material var2 = this.materialList.get(arg0);
+		MaterialRaw var2 = this.materialList.get(arg0);
 		return var2.repeatS != 0 || var2.repeatT != 0;
 	}
 
@@ -2154,7 +2154,7 @@ public class PureJavaToolkit extends Toolkit {
 		if (this.cachedBillboardMaterial != var9) {
 			Sprite var12 = (Sprite) this.billboardMaterialSprites.get((long) var9);
 			if (var12 == null) {
-				Material var13 = this.materialList.get(var9);
+				MaterialRaw var13 = this.materialList.get(var9);
 				int[] var14 = this.getMaterialTexture(var9);
 				if (var14 == null) {
 					return;
@@ -2176,7 +2176,7 @@ public class PureJavaToolkit extends Toolkit {
 			return;
 		}
 		if (arg8 != -1) {
-			Material var13 = this.materialList.get(arg8);
+			MaterialRaw var13 = this.materialList.get(arg8);
 			if (!var13.highDetail) {
 				if (this.cachedBillboardMaterial != arg8) {
 					Sprite var14 = (Sprite) this.billboardMaterialSprites.get((long) arg8);
@@ -2192,7 +2192,7 @@ public class PureJavaToolkit extends Toolkit {
 					this.cachedBillboardMaterial = arg8;
 					this.cachedBillboardSprite = var14;
 				}
-				((PureJavaSprite) this.cachedBillboardSprite).drawAsBillboard(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, MaterialAlphaMode.MULTIPLY != var13.alphaMode);
+				((PureJavaSprite) this.cachedBillboardSprite).drawAsBillboard(arg0, arg1, arg2, arg3 - arg6, arg4 - arg7, arg5, arg6 << 1, arg7 << 1, arg10, arg9, arg11, 1, AlphaMode.MULTIPLY != var13.alphaMode);
 				return;
 			}
 		}

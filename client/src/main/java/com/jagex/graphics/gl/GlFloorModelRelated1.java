@@ -2,7 +2,7 @@ package com.jagex.graphics.gl;
 
 import com.jagex.core.datastruct.Node;
 import com.jagex.graphics.GpuPacket;
-import com.jagex.graphics.Material;
+import com.jagex.graphics.MaterialRaw;
 import com.jagex.graphics.WaterFogData;
 import deob.ObfuscatedName;
 import jaclib.memory.Stream;
@@ -72,7 +72,7 @@ public class GlFloorModelRelated1 extends Node {
 	@ObfuscatedName("akn.k(IIIF)V")
 	public void method17582(int arg0, int arg1, int arg2, float arg3) {
 		if (this.field11296 != -1) {
-			Material var5 = this.field11291.materialList.get(this.field11296);
+			MaterialRaw var5 = this.field11291.materialList.get(this.field11296);
 			int var6 = var5.field1364 & 0xFF;
 			if (var6 != 0 && var5.effect != 4) {
 				int var7;

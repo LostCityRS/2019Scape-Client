@@ -159,7 +159,7 @@ public class QuestType implements ConfigType {
 		} else if (code == 15) {
 			this.pointsrequirement = buf.g2();
 		} else if (code == 17) {
-			this.field2651 = buf.gSmart2or4null();
+			this.field2651 = buf.gSmart2or4s();
 		} else if (code == 18) {
 			int length = buf.g1();
 			this.varpsRequirement = new int[length];

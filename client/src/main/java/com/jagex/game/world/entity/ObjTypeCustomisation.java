@@ -64,16 +64,16 @@ public class ObjTypeCustomisation {
 				var3.field8710[0] = arg1.g2();
 				var3.field8708[0] = arg1.g2();
 			} else {
-				var3.field8710[0] = arg1.gSmart2or4null();
-				var3.field8708[0] = arg1.gSmart2or4null();
+				var3.field8710[0] = arg1.gSmart2or4s();
+				var3.field8708[0] = arg1.gSmart2or4s();
 			}
 			if (arg0.manwear2 != -1 || arg0.womanwear2 != -1) {
 				if (arg2 <= 1) {
 					var3.field8710[1] = arg1.g2();
 					var3.field8708[1] = arg1.g2();
 				} else {
-					var3.field8710[1] = arg1.gSmart2or4null();
-					var3.field8708[1] = arg1.gSmart2or4null();
+					var3.field8710[1] = arg1.gSmart2or4s();
+					var3.field8708[1] = arg1.gSmart2or4s();
 				}
 			}
 			if (arg0.manwear3 != -1 || arg0.womanwear3 != -1) {
@@ -81,8 +81,8 @@ public class ObjTypeCustomisation {
 					var3.field8710[2] = arg1.g2();
 					var3.field8708[2] = arg1.g2();
 				} else {
-					var3.field8710[2] = arg1.gSmart2or4null();
-					var3.field8708[2] = arg1.gSmart2or4null();
+					var3.field8710[2] = arg1.gSmart2or4s();
+					var3.field8708[2] = arg1.gSmart2or4s();
 				}
 			}
 		}
@@ -91,16 +91,16 @@ public class ObjTypeCustomisation {
 				var3.field8709[0] = arg1.g2();
 				var3.field8713[0] = arg1.g2();
 			} else {
-				var3.field8709[0] = arg1.gSmart2or4null();
-				var3.field8713[0] = arg1.gSmart2or4null();
+				var3.field8709[0] = arg1.gSmart2or4s();
+				var3.field8713[0] = arg1.gSmart2or4s();
 			}
 			if (arg0.manhead2 != -1 || arg0.womanhead2 != -1) {
 				if (arg2 <= 1) {
 					var3.field8709[1] = arg1.g2();
 					var3.field8713[1] = arg1.g2();
 				} else {
-					var3.field8709[1] = arg1.gSmart2or4null();
-					var3.field8713[1] = arg1.gSmart2or4null();
+					var3.field8709[1] = arg1.gSmart2or4s();
+					var3.field8713[1] = arg1.gSmart2or4s();
 				}
 			}
 		}

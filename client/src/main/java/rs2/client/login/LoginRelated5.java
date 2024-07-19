@@ -17,7 +17,7 @@ public class LoginRelated5 implements LoadingScreenElementConfig {
 
 	@ObfuscatedName("uc.e(Lalw;I)Lli;")
 	public static LoginRelated5 method8975(Packet arg0) {
-		int var1 = arg0.gSmart2or4null();
+		int var1 = arg0.gSmart2or4s();
 		return new LoginRelated5(var1);
 	}
 

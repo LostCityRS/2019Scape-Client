@@ -245,24 +245,24 @@ public class BASType implements MutableConfig, ConfigType {
 	@ObfuscatedName("vr.u(Lalw;II)V")
 	public void method9298(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.readyanim = arg0.gSmart2or4null();
-			this.walkanim = arg0.gSmart2or4null();
+			this.readyanim = arg0.gSmart2or4s();
+			this.walkanim = arg0.gSmart2or4s();
 		} else if (arg1 == 2) {
-			this.crawlanim = arg0.gSmart2or4null();
+			this.crawlanim = arg0.gSmart2or4s();
 		} else if (arg1 == 3) {
-			this.crawlanim_b = arg0.gSmart2or4null();
+			this.crawlanim_b = arg0.gSmart2or4s();
 		} else if (arg1 == 4) {
-			this.crawlanim_l = arg0.gSmart2or4null();
+			this.crawlanim_l = arg0.gSmart2or4s();
 		} else if (arg1 == 5) {
-			this.crawlanim_r = arg0.gSmart2or4null();
+			this.crawlanim_r = arg0.gSmart2or4s();
 		} else if (arg1 == 6) {
-			this.runanim = arg0.gSmart2or4null();
+			this.runanim = arg0.gSmart2or4s();
 		} else if (arg1 == 7) {
-			this.runanim_b = arg0.gSmart2or4null();
+			this.runanim_b = arg0.gSmart2or4s();
 		} else if (arg1 == 8) {
-			this.runanim_l = arg0.gSmart2or4null();
+			this.runanim_l = arg0.gSmart2or4s();
 		} else if (arg1 == 9) {
-			this.runanim_r = arg0.gSmart2or4null();
+			this.runanim_r = arg0.gSmart2or4s();
 		} else if (arg1 == 26) {
 			this.field7342 = (short) (arg0.g1() * 4);
 			this.field7343 = (short) (arg0.g1() * 4);
@@ -305,15 +305,15 @@ public class BASType implements MutableConfig, ConfigType {
 		} else if (arg1 == 37) {
 			this.walkspeed = arg0.g1();
 		} else if (arg1 == 38) {
-			this.readyanim_l = arg0.gSmart2or4null();
+			this.readyanim_l = arg0.gSmart2or4s();
 		} else if (arg1 == 39) {
-			this.readyanim_r = arg0.gSmart2or4null();
+			this.readyanim_r = arg0.gSmart2or4s();
 		} else if (arg1 == 40) {
-			this.walkanim_b = arg0.gSmart2or4null();
+			this.walkanim_b = arg0.gSmart2or4s();
 		} else if (arg1 == 41) {
-			this.walkanim_l = arg0.gSmart2or4null();
+			this.walkanim_l = arg0.gSmart2or4s();
 		} else if (arg1 == 42) {
-			this.walkanim_r = arg0.gSmart2or4null();
+			this.walkanim_r = arg0.gSmart2or4s();
 		} else if (arg1 == 43) {
 			arg0.g2();
 		} else if (arg1 == 44) {
@@ -321,23 +321,23 @@ public class BASType implements MutableConfig, ConfigType {
 		} else if (arg1 == 45) {
 			this.field7360 = arg0.g2();
 		} else if (arg1 == 46) {
-			this.field7352 = arg0.gSmart2or4null();
+			this.field7352 = arg0.gSmart2or4s();
 		} else if (arg1 == 47) {
-			this.field7337 = arg0.gSmart2or4null();
+			this.field7337 = arg0.gSmart2or4s();
 		} else if (arg1 == 48) {
-			this.field7338 = arg0.gSmart2or4null();
+			this.field7338 = arg0.gSmart2or4s();
 		} else if (arg1 == 49) {
-			this.field7339 = arg0.gSmart2or4null();
+			this.field7339 = arg0.gSmart2or4s();
 		} else if (arg1 == 50) {
-			this.field7320 = arg0.gSmart2or4null();
+			this.field7320 = arg0.gSmart2or4s();
 		} else if (arg1 == 51) {
-			this.field7341 = arg0.gSmart2or4null();
+			this.field7341 = arg0.gSmart2or4s();
 		} else if (arg1 == 52) {
 			int var7 = arg0.g1();
 			this.field7335 = new int[var7];
 			this.field7324 = new int[var7];
 			for (int var8 = 0; var8 < var7; var8++) {
-				this.field7335[var8] = arg0.gSmart2or4null();
+				this.field7335[var8] = arg0.gSmart2or4s();
 				int var9 = arg0.g1();
 				this.field7324[var8] = var9;
 				this.field7327 += var9;

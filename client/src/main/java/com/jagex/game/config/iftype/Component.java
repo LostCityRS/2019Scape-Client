@@ -818,7 +818,7 @@ public class Component {
 		}
 		if (this.type == 6) {
 			this.modelkind = 1;
-			this.model = buf.gSmart2or4null();
+			this.model = buf.gSmart2or4s();
 			int var5 = buf.g1();
 			boolean var6 = (var5 & 0x1) == 1;
 			this.field2274 = (var5 & 0x2) == 2;
@@ -840,7 +840,7 @@ public class Component {
 				this.modelangle_z = buf.g2();
 				this.modelzoom = buf.g2s();
 			}
-			this.modelanim = buf.gSmart2or4null();
+			this.modelanim = buf.gSmart2or4s();
 			if (this.field2356 != 0) {
 				this.modelobjwidth = buf.g2();
 			}
@@ -849,7 +849,7 @@ public class Component {
 			}
 		}
 		if (this.type == 4) {
-			this.textfont = buf.gSmart2or4null();
+			this.textfont = buf.gSmart2or4s();
 			if (var2 >= 2) {
 				this.fontmono = buf.g1() == 1;
 			}

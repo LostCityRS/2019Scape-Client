@@ -8,9 +8,6 @@ import com.jagex.game.config.vartype.constants.VarLifetime;
 import com.jagex.game.config.vartype.constants.VarTransmitLevel;
 import deob.ObfuscatedName;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @ObfuscatedName("ec")
 public abstract class VarType implements VarConfigType {
 
@@ -27,7 +24,7 @@ public abstract class VarType implements VarConfigType {
 	public VarLifetime lifeTime = VarLifetime.TEMPORARY;
 
 	@ObfuscatedName("ec.f")
-	public boolean field1703 = true;
+	public boolean legacyDefaultValue = true;
 
 	public VarType(VarDomainType arg0, int arg1) {
 		this.domain = arg0;
@@ -47,7 +44,7 @@ public abstract class VarType implements VarConfigType {
 			} else {
 				switch(var3.index) {
 					case 0:
-						this.field1703 = false;
+						this.legacyDefaultValue = false;
 						break;
 					case 1:
 						int var4 = buf.g1();

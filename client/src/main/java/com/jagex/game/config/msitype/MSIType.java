@@ -44,7 +44,7 @@ public class MSIType implements ConfigType {
 	@ObfuscatedName("aco.u(Lalw;IB)V")
 	public void method15066(Packet arg0, int arg1) {
 		if (arg1 == 1) {
-			this.field9151 = arg0.gSmart2or4null();
+			this.field9151 = arg0.gSmart2or4s();
 		} else if (arg1 == 2) {
 			this.field9154 = arg0.g3();
 		} else if (arg1 == 3) {

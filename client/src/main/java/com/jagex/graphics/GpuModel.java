@@ -299,7 +299,7 @@ public class GpuModel extends Model {
 		for (int var10 = 0; var10 < arg1.faceCount; var10++) {
 			if (arg1.faceType == null || arg1.faceType[var10] != 2) {
 				if (arg1.faceMaterial != null && arg1.faceMaterial[var10] != -1) {
-					Material var11 = var7.get(arg1.faceMaterial[var10] & 0xFFFF);
+					MaterialRaw var11 = var7.get(arg1.faceMaterial[var10] & 0xFFFF);
 					if (((this.field9700 & 0x40) == 0 || !var11.highDetail) && var11.field1361) {
 						continue;
 					}
@@ -318,7 +318,7 @@ public class GpuModel extends Model {
 		boolean var13 = (this.field9725 & 0x100) != 0;
 		for (int var14 = 0; var14 < this.field9716; var14++) {
 			int var15 = var9[var14];
-			Material var16 = null;
+			MaterialRaw var16 = null;
 			int var17 = 0;
 			byte var18 = 0;
 			byte var19 = 0;
@@ -333,8 +333,8 @@ public class GpuModel extends Model {
 							var21 = true;
 						}
 						if (var24.field3455 != -1) {
-							Material var25 = var7.get(var24.field3455);
-							if (MaterialAlphaMode.MULTIPLY == var25.alphaMode) {
+							MaterialRaw var25 = var7.get(var24.field3455);
+							if (AlphaMode.MULTIPLY == var25.alphaMode) {
 								this.field9737 = true;
 							}
 						}
@@ -377,7 +377,7 @@ public class GpuModel extends Model {
 					}
 				}
 			}
-			boolean var31 = arg1.faceTrans != null && arg1.faceTrans[var15] != 0 || var16 != null && MaterialAlphaMode.NONE != var16.alphaMode;
+			boolean var31 = arg1.faceTrans != null && arg1.faceTrans[var15] != 0 || var16 != null && AlphaMode.NONE != var16.alphaMode;
 			if ((var13 || var31) && arg1.facePriority != null) {
 				var17 += arg1.facePriority[var15] << 17;
 			}
@@ -1952,14 +1952,14 @@ public class GpuModel extends Model {
 		byte var5 = 0;
 		byte var6 = 0;
 		if (arg0 != -1) {
-			Material var7 = var3.get(arg0 & 0xFFFF);
+			MaterialRaw var7 = var3.get(arg0 & 0xFFFF);
 			var5 = var7.field1364;
 			var6 = var7.field1363;
 		}
 		byte var8 = 0;
 		byte var9 = 0;
 		if (arg1 != -1) {
-			Material var10 = var3.get(arg1 & 0xFFFF);
+			MaterialRaw var10 = var3.get(arg1 & 0xFFFF);
 			var8 = var10.field1364;
 			var9 = var10.field1363;
 			if (var10.speedU != 0.0F || var10.speedV != 0.0F) {
@@ -3420,12 +3420,12 @@ public class GpuModel extends Model {
 					var2.field2982.entries[13] = 0.0F;
 					var11[12] = 0.0F;
 				} else {
-					Material var10 = this.field9730.materialList.get(var7 & 0xFFFF);
+					MaterialRaw var10 = this.field9730.materialList.get(var7 & 0xFFFF);
 					var2.field2966 = this.field9730.field10188.method5639(var10);
-					var8 = !Material.method261(var10.effect);
+					var8 = !MaterialRaw.method261(var10.effect);
 					var2.field2982.entries[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.speedU / 64.0F % 1.0F;
 					var2.field2982.entries[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var10.speedV / 64.0F % 1.0F;
-					if (MaterialAlphaMode.TEST == var10.alphaMode) {
+					if (AlphaMode.ALPHA_TESTED == var10.alphaMode) {
 						var9 = var10.alphaThreshold;
 					}
 				}
@@ -3476,7 +3476,7 @@ public class GpuModel extends Model {
 				int var21 = this.field9750[var19 + 1];
 				short var22 = this.field9717[var20];
 				byte var23 = 11;
-				Material var24 = null;
+				MaterialRaw var24 = null;
 				byte var25 = 0;
 				if (var22 == -1) {
 					var2.field2966 = this.field9730.field10140;
@@ -3490,7 +3490,7 @@ public class GpuModel extends Model {
 					var2.method5036(var24.effectArg1);
 					var2.field2982.entries[12] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.speedU % 1.0F;
 					var2.field2982.entries[13] = (float) (this.field9730.field10181 % 128000) / 1000.0F * var24.speedV % 1.0F;
-					if (MaterialAlphaMode.TEST == var24.alphaMode) {
+					if (AlphaMode.ALPHA_TESTED == var24.alphaMode) {
 						var25 = var24.alphaThreshold;
 					}
 				}
@@ -3528,7 +3528,7 @@ public class GpuModel extends Model {
 						}
 						break;
 					case 6:
-						var2.method5019(!Material.method261(var23));
+						var2.method5019(!MaterialRaw.method261(var23));
 						break;
 					case 7:
 						var2.field2969.setTo(this.field9730.field10035.entries[12], this.field9730.field10035.entries[13], this.field9730.field10035.entries[14]);
@@ -3943,7 +3943,7 @@ public class GpuModel extends Model {
 	public int method15609(int arg0, short arg1, int arg2) {
 		int var4 = this.field9730.field10043[this.method15606(arg0, arg2)];
 		if (arg1 != -1) {
-			Material var5 = this.field9730.materialList.get(arg1 & 0xFFFF);
+			MaterialRaw var5 = this.field9730.materialList.get(arg1 & 0xFFFF);
 			int var6 = var5.field1364 & 0xFF;
 			if (var6 != 0) {
 				int var7 = arg2 * 131586;

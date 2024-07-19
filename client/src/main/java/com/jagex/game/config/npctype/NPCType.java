@@ -193,7 +193,7 @@ public class NPCType implements ConfigType {
 	public int bgsound_range = 0;
 
 	@ObfuscatedName("if.bt")
-	public int bgsound_size = 0;
+	public int bgsound_dropoffrange = 0;
 
 	@ObfuscatedName("if.bq")
 	public int bgsound_volume = 255;
@@ -264,7 +264,7 @@ public class NPCType implements ConfigType {
 			int length = buf.g1();
 			this.models = new int[length];
 			for (int index = 0; index < length; index++) {
-				this.models[index] = buf.gSmart2or4null();
+				this.models[index] = buf.gSmart2or4s();
 			}
 		} else if (code == 2) {
 			this.name = buf.gjstr();
@@ -328,7 +328,7 @@ public class NPCType implements ConfigType {
 			int length = buf.g1();
 			this.heads = new int[length];
 			for (int var22 = 0; var22 < length; var22++) {
-				this.heads[var22] = buf.gSmart2or4null();
+				this.heads[var22] = buf.gSmart2or4s();
 			}
 		} else if (code == 93) {
 			this.minimap = false;
@@ -357,7 +357,7 @@ public class NPCType implements ConfigType {
 					this.headicon_groupid[var26] = -1;
 					this.headicon_id[var26] = -1;
 				} else {
-					this.headicon_groupid[var26] = buf.gSmart2or4null();
+					this.headicon_groupid[var26] = buf.gSmart2or4s();
 					this.headicon_id[var26] = (short) buf.gSmart1or2null();
 				}
 			}
@@ -444,7 +444,7 @@ public class NPCType implements ConfigType {
 		} else if (code == 137) {
 			this.cursorattack = buf.g2();
 		} else if (code == 138) {
-			this.covermarker = buf.gSmart2or4null();
+			this.covermarker = buf.gSmart2or4s();
 		} else if (code == 140) {
 			this.bgsound_volume = buf.g1();
 		} else if (code == 141) {
@@ -482,7 +482,7 @@ public class NPCType implements ConfigType {
 			} else if (code == 165) {
 				this.picksizeshift = buf.g1();
 			} else if (code == 168) {
-				this.bgsound_size = buf.g1();
+				this.bgsound_dropoffrange = buf.g1();
 			} else if (code == 169) {
 				this.antimacro = false;
 			} else if (code >= 170 && code < 176) {

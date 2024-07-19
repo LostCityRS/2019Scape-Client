@@ -290,7 +290,7 @@ public class PureJavaModel extends Model {
 		boolean var12 = (this.allowedOperations & 0x100) != 0;
 		for (int var13 = 0; var13 < this.faceCount; var13++) {
 			int var14 = var9[var13];
-			Material var15 = null;
+			MaterialRaw var15 = null;
 			int var16 = 0;
 			byte var17 = 0;
 			byte var18 = 0;
@@ -306,8 +306,8 @@ public class PureJavaModel extends Model {
 							var20 = true;
 						}
 						if (var23.field3455 != -1) {
-							Material var24 = var7.get(var23.field3455);
-							if (MaterialAlphaMode.MULTIPLY == var24.alphaMode) {
+							MaterialRaw var24 = var7.get(var23.field3455);
+							if (AlphaMode.MULTIPLY == var24.alphaMode) {
 								this.field9548 = true;
 							}
 						}
@@ -351,7 +351,7 @@ public class PureJavaModel extends Model {
 				}
 			}
 
-			boolean var30 = this.faceAlpha != null && this.faceAlpha[var14] != 0 || var15 != null && MaterialAlphaMode.MULTIPLY == var15.alphaMode;
+			boolean var30 = this.faceAlpha != null && this.faceAlpha[var14] != 0 || var15 != null && AlphaMode.MULTIPLY == var15.alphaMode;
 			if ((var12 || var30) && this.facePriority != null) {
 				var16 += this.facePriority[var14] << 17;
 			}
@@ -601,13 +601,13 @@ public class PureJavaModel extends Model {
 				if (var124 == -1) {
 					this.field9574[var123] = -1;
 				} else {
-					Material var125 = this.renderer.materialList.get(var124 & 0xFFFF);
+					MaterialRaw var125 = this.renderer.materialList.get(var124 & 0xFFFF);
 					if ((arg5 & 0x40) != 0 && var125.highDetail) {
 						this.field9574[var123] = -1;
 					} else {
 						this.field9574[var123] = var124;
 						var122 = true;
-						if (MaterialAlphaMode.MULTIPLY == var125.alphaMode) {
+						if (AlphaMode.MULTIPLY == var125.alphaMode) {
 							this.field9548 = true;
 						}
 						if (var125.speedU != 0.0F || var125.speedV != 0.0F) {
@@ -911,7 +911,7 @@ public class PureJavaModel extends Model {
 	@ObfuscatedName("afi.hr(ISI)I")
 	public int method15461(int arg0, short arg1, int arg2) {
 		int var4 = ColourUtils.field8151[this.method15462(arg0, arg2)];
-		Material var5 = this.renderer.materialList.get(arg1 & 0xFFFF);
+		MaterialRaw var5 = this.renderer.materialList.get(arg1 & 0xFFFF);
 		int var6 = var5.field1364 & 0xFF;
 		if (var6 != 0) {
 			int var7 = arg2 * 131586;
@@ -3747,7 +3747,7 @@ public class PureJavaModel extends Model {
 			return;
 		}
 		if (!this.field9608 && arg1 >= 0) {
-			Material var3 = this.renderer.materialList.get(arg1 & 0xFFFF);
+			MaterialRaw var3 = this.renderer.materialList.get(arg1 & 0xFFFF);
 			if (var3.speedU != 0.0F || var3.speedV != 0.0F) {
 				this.field9608 = true;
 			}

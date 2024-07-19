@@ -54,9 +54,9 @@ public class SkyBoxType implements ConfigType, MutableConfig {
 		} else if (arg1 == 4) {
 			this.field7235 = (SkyBoxFillMode) SerializableEnums.decode(SkyBoxFillMode.method8341(), arg0.g1());
 		} else if (arg1 == 5) {
-			this.field7236 = arg0.gSmart2or4null();
+			this.field7236 = arg0.gSmart2or4s();
 		} else if (arg1 == 6) {
-			arg0.gSmart2or4null();
+			arg0.gSmart2or4s();
 		}
 	}
 

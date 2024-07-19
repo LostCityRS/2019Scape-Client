@@ -36,7 +36,7 @@ public class DefaultsGroup {
 	public static final DefaultsGroup WORLDMAP = new DefaultsGroup(10);
 
 	@ObfuscatedName("ww.d")
-	public static final DefaultsGroup TITLE = new DefaultsGroup(12);
+	public static final DefaultsGroup CUSTOMIZATION = new DefaultsGroup(12);
 
 	@ObfuscatedName("ww.c")
 	public final int js5GroupId;

@@ -36,7 +36,7 @@ public final class CutsceneEntity {
 		int var3 = arg0.g1();
 		switch(var3) {
 			case 0:
-				this.field1743 = arg0.gSmart2or4null();
+				this.field1743 = arg0.gSmart2or4s();
 				break;
 			case 1:
 				this.field1743 = -1;

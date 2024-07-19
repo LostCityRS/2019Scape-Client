@@ -317,7 +317,7 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("abv.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			this.mesh = buf.gSmart2or4null();
+			this.mesh = buf.gSmart2or4s();
 		} else if (code == 2) {
 			this.name = buf.gjstr();
 		} else if (code == 4) {
@@ -349,13 +349,13 @@ public class ObjType implements ConfigType {
 		} else if (code == 16) {
 			this.members = true;
 		} else if (code == 23) {
-			this.manwear = buf.gSmart2or4null();
+			this.manwear = buf.gSmart2or4s();
 		} else if (code == 24) {
-			this.manwear2 = buf.gSmart2or4null();
+			this.manwear2 = buf.gSmart2or4s();
 		} else if (code == 25) {
-			this.womanwear = buf.gSmart2or4null();
+			this.womanwear = buf.gSmart2or4s();
 		} else if (code == 26) {
-			this.womanwear2 = buf.gSmart2or4null();
+			this.womanwear2 = buf.gSmart2or4s();
 		} else if (code == 27) {
 			this.wearpos3 = buf.g1();
 		} else if (code >= 30 && code < 35) {
@@ -420,17 +420,17 @@ public class ObjType implements ConfigType {
 		} else if (code == 65) {
 			this.stockmarket = true;
 		} else if (code == 78) {
-			this.manwear3 = buf.gSmart2or4null();
+			this.manwear3 = buf.gSmart2or4s();
 		} else if (code == 79) {
-			this.womanwear3 = buf.gSmart2or4null();
+			this.womanwear3 = buf.gSmart2or4s();
 		} else if (code == 90) {
-			this.manhead = buf.gSmart2or4null();
+			this.manhead = buf.gSmart2or4s();
 		} else if (code == 91) {
-			this.womanhead = buf.gSmart2or4null();
+			this.womanhead = buf.gSmart2or4s();
 		} else if (code == 92) {
-			this.manhead2 = buf.gSmart2or4null();
+			this.manhead2 = buf.gSmart2or4s();
 		} else if (code == 93) {
-			this.womanhead2 = buf.gSmart2or4null();
+			this.womanhead2 = buf.gSmart2or4s();
 		} else if (code == 94) {
 			this.category = buf.g2();
 		} else if (code == 95) {

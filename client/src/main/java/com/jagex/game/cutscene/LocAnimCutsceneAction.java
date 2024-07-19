@@ -17,7 +17,7 @@ public class LocAnimCutsceneAction extends CutsceneAction {
 	public LocAnimCutsceneAction(Packet arg0) {
 		super(arg0);
 		this.field10275 = arg0.g2();
-		this.field10274 = arg0.gSmart2or4null();
+		this.field10274 = arg0.gSmart2or4s();
 	}
 
 	@ObfuscatedName("agv.n(I)V")

@@ -82,9 +82,9 @@ public class EffectAnimType implements ConfigType {
 	@ObfuscatedName("yy.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			this.model = buf.gSmart2or4null();
+			this.model = buf.gSmart2or4s();
 		} else if (code == 2) {
-			this.anim = buf.gSmart2or4null();
+			this.anim = buf.gSmart2or4s();
 		} else if (code == 4) {
 			this.resizeh = buf.g2();
 		} else if (code == 5) {

@@ -5,7 +5,7 @@ import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("dv")
-public class Material {
+public class MaterialRaw {
 
 	@ObfuscatedName("dv.ag")
 	public int field1329;
@@ -23,7 +23,7 @@ public class Material {
 	public boolean field1333 = false;
 
 	@ObfuscatedName("dv.aw")
-	public int diffuseTexture = -1;
+	public int diffuseAlphaMapID = -1;
 
 	@ObfuscatedName("dv.as")
 	public int field1302 = -1;
@@ -41,7 +41,7 @@ public class Material {
 	public boolean field1336 = false;
 
 	@ObfuscatedName("dv.ar")
-	public MaterialAlphaMode alphaMode = MaterialAlphaMode.NONE;
+	public AlphaMode alphaMode = AlphaMode.NONE;
 
 	@ObfuscatedName("dv.ap")
 	public byte alphaThreshold = -1;
@@ -106,18 +106,18 @@ public class Material {
 	}
 
 	@ObfuscatedName("dv.m(ILalw;I)V")
-	public void method1909(int arg0, Packet arg1) {
+	public void decode(int arg0, Packet arg1) {
 		this.field1329 = arg0;
 		byte var3 = (byte) arg1.g1();
 		if (var3 == 0) {
-			this.method1904(arg1);
+			this.decodeRT5(arg1);
 		} else {
-			this.method1905(arg1);
+			this.decodeRT7(arg1);
 		}
 	}
 
 	@ObfuscatedName("dv.k(Lalw;I)V")
-	public void method1904(Packet arg0) {
+	public void decodeRT5(Packet arg0) {
 		arg0.g1();
 		int var2 = arg0.g1();
 		this.size = method7618(var2);
@@ -129,7 +129,7 @@ public class Material {
 		this.field1321 = (var3 & 0x8) != 0;
 		this.field1333 = (var3 & 0x10) != 0;
 		if (this.field1330 || this.field1333) {
-			this.diffuseTexture = arg0.g4s();
+			this.diffuseAlphaMapID = arg0.g4s();
 		}
 		if (this.field1321 || this.field1331) {
 			this.field1302 = arg0.g4s();
@@ -148,8 +148,8 @@ public class Material {
 		}
 		this.field1336 = arg0.g1() == 1;
 		SerializableEnums.decode(FacetMode.method4590(), arg0.g1());
-		this.alphaMode = (MaterialAlphaMode) SerializableEnums.decode(MaterialAlphaMode.method8501(), arg0.g1());
-		if (MaterialAlphaMode.TEST == this.alphaMode) {
+		this.alphaMode = (AlphaMode) SerializableEnums.decode(AlphaMode.method8501(), arg0.g1());
+		if (AlphaMode.ALPHA_TESTED == this.alphaMode) {
 			this.alphaThreshold = (byte) arg0.g1();
 		}
 		if (var6) {
@@ -181,13 +181,13 @@ public class Material {
 	}
 
 	@ObfuscatedName("dv.f(Lalw;I)V")
-	public void method1905(Packet arg0) {
+	public void decodeRT7(Packet arg0) {
 		int var2 = arg0.g4s();
 		boolean var3 = (var2 & 0x800) != 0;
 		if ((var2 & 0x20) != 0) {
 			this.field1330 = true;
 			arg0.g1();
-			this.diffuseTexture = arg0.g4s();
+			this.diffuseAlphaMapID = arg0.g4s();
 		}
 		if ((var2 & 0x40) != 0) {
 			arg0.g1();
@@ -239,8 +239,8 @@ public class Material {
 		} else if (MaterialQualityMode.LD == var5) {
 			this.field1361 = true;
 		}
-		this.alphaMode = (MaterialAlphaMode) SerializableEnums.decode(MaterialAlphaMode.method8501(), arg0.g1());
-		if (MaterialAlphaMode.TEST == this.alphaMode) {
+		this.alphaMode = (AlphaMode) SerializableEnums.decode(AlphaMode.method8501(), arg0.g1());
+		if (AlphaMode.ALPHA_TESTED == this.alphaMode) {
 			this.alphaThreshold = (byte) arg0.g1();
 		}
 		this.averageColour = (short) arg0.g2();

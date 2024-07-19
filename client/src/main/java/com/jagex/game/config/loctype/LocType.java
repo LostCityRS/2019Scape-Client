@@ -205,7 +205,7 @@ public class LocType implements ConfigType {
 	public int bgsound_range = 0;
 
 	@ObfuscatedName("vd.bq")
-	public int bgsound_size = 0;
+	public int bgsound_dropoffrange = 0;
 
 	@ObfuscatedName("vd.bm")
 	public int bgsound_volume = 255;
@@ -299,7 +299,7 @@ public class LocType implements ConfigType {
 				int models = buf.g1();
 				this.models[s] = new int[models];
 				for (int m = 0; m < models; m++) {
-					this.models[s][m] = buf.gSmart2or4null();
+					this.models[s][m] = buf.gSmart2or4s();
 				}
 			}
 		} else if (code == 2) {
@@ -320,7 +320,7 @@ public class LocType implements ConfigType {
 			} else if (code == 23) {
 				this.occlude = 1;
 			} else if (code == 24) {
-				int var7 = buf.gSmart2or4null();
+				int var7 = buf.gSmart2or4s();
 				if (var7 != -1) {
 					this.anim = new int[] { var7 };
 				}
@@ -421,12 +421,12 @@ public class LocType implements ConfigType {
 				}
 				int defaultId = -1;
 				if (code == 92) {
-					defaultId = buf.gSmart2or4null();
+					defaultId = buf.gSmart2or4s();
 				}
 				int length = buf.gSmart1or2();
 				this.multiloc = new int[length + 2];
 				for (int index = 0; index <= length; index++) {
-					this.multiloc[index] = buf.gSmart2or4null();
+					this.multiloc[index] = buf.gSmart2or4s();
 				}
 				this.multiloc[length + 1] = defaultId;
 			} else if (code == 78) {
@@ -483,7 +483,7 @@ public class LocType implements ConfigType {
 				this.anim = new int[length];
 				this.anim_weight = new int[length];
 				for (int index = 0; index < length; index++) {
-					this.anim[index] = buf.gSmart2or4null();
+					this.anim[index] = buf.gSmart2or4s();
 					weight += this.anim_weight[index] = buf.g1();
 				}
 				for (int var29 = 0; var29 < length; var29++) {
@@ -529,7 +529,7 @@ public class LocType implements ConfigType {
 				} else if (code == 177) {
 					this.field7524 = true;
 				} else if (code == 178) {
-					this.bgsound_size = buf.g1();
+					this.bgsound_dropoffrange = buf.g1();
 				} else if (code == 186) {
 					this.field7526 = (LocTypeRelated) SerializableEnums.decode(LocTypeRelated.method9002(), buf.g1());
 				} else if (code != 188) {

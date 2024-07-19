@@ -65,7 +65,7 @@ public class IDKType implements ConfigType {
 			int var3 = buf.g1();
 			this.models = new int[var3];
 			for (int var4 = 0; var4 < var3; var4++) {
-				this.models[var4] = buf.gSmart2or4null();
+				this.models[var4] = buf.gSmart2or4s();
 			}
 		} else if (code != 3) {
 			if (code == 40) {
@@ -115,7 +115,7 @@ public class IDKType implements ConfigType {
 					}
 				}
 			} else if (code >= 60 && code < 70) {
-				this.heads[code - 60] = buf.gSmart2or4null();
+				this.heads[code - 60] = buf.gSmart2or4s();
 			}
 		}
 	}

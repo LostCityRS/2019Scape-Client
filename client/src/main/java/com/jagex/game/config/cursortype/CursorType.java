@@ -39,7 +39,7 @@ public class CursorType implements ConfigType {
 	@ObfuscatedName("xj.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			this.graphic = buf.gSmart2or4null();
+			this.graphic = buf.gSmart2or4s();
 		} else if (code == 2) {
 			this.hotspotx = buf.g1();
 			this.hotspoty = buf.g1();

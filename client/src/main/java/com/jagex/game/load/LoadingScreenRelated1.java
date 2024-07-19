@@ -23,7 +23,7 @@ public class LoadingScreenRelated1 extends LoadingScreenProgressDisplayConfig {
 		LoadingScreenProgressDisplayConfig var1 = method18899(arg0);
 		int var2 = arg0.g4s();
 		int var3 = arg0.g4s();
-		int var4 = arg0.gSmart2or4null();
+		int var4 = arg0.gSmart2or4s();
 		return new LoadingScreenRelated1(var1.field3167, var1.field3159, var1.field3161, var1.field3162, var1.field3163, var1.field3160, var1.field3165, var1.field3166, var1.field3164, var2, var3, var4);
 	}
 

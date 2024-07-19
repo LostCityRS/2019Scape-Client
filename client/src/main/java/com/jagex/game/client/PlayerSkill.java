@@ -34,7 +34,7 @@ public class PlayerSkill {
 		this.baseLevel = arg6;
 		if (arg2) {
 			this.cappedLevel = arg4;
-			this.cappedXP = this.getXPRaw(arg4);
+			this.cappedXP = this.getFineXPFromLevel(arg4);
 		} else {
 			this.cappedLevel = -1;
 			this.cappedXP = -1;
@@ -79,7 +79,7 @@ public class PlayerSkill {
 	}
 
 	@ObfuscatedName("wm.u(IB)I")
-	public int getXP(int arg0) {
+	public int getXPFromLevel(int arg0) {
 		if (arg0 > this.maxLevel) {
 			arg0 = this.maxLevel;
 		}
@@ -87,7 +87,7 @@ public class PlayerSkill {
 	}
 
 	@ObfuscatedName("wm.z(II)I")
-	public int getXPRaw(int arg0) {
-		return this.getXP(arg0) * 10;
+	public int getFineXPFromLevel(int arg0) {
+		return this.getXPFromLevel(arg0) * 10;
 	}
 }
