@@ -6,49 +6,49 @@ import deob.ObfuscatedName;
 public class QuickChatDynamicCommand {
 
 	@ObfuscatedName("xs.e")
-	public static final QuickChatDynamicCommand field7941 = new QuickChatDynamicCommand(0, 2, 2, 1);
+	public static final QuickChatDynamicCommand LISTDIALOG = new QuickChatDynamicCommand(0, 2, 2, 1);
 
 	@ObfuscatedName("xs.n")
-	public static final QuickChatDynamicCommand field7924 = new QuickChatDynamicCommand(1, 2, 2, 0);
+	public static final QuickChatDynamicCommand OBJDIALOG = new QuickChatDynamicCommand(1, 2, 2, 0);
 
 	@ObfuscatedName("xs.m")
-	public static final QuickChatDynamicCommand field7934 = new QuickChatDynamicCommand(2, 4, 4, 0);
+	public static final QuickChatDynamicCommand COUNTDIALOG = new QuickChatDynamicCommand(2, 4, 4, 0);
 
 	@ObfuscatedName("xs.k")
-	public static final QuickChatDynamicCommand field7931 = new QuickChatDynamicCommand(4, 1, 1, 1);
+	public static final QuickChatDynamicCommand STAT_BASE = new QuickChatDynamicCommand(4, 1, 1, 1);
 
 	@ObfuscatedName("xs.f")
-	public static final QuickChatDynamicCommand field7927 = new QuickChatDynamicCommand(6, 0, 4, 2);
+	public static final QuickChatDynamicCommand ENUM_STRING = new QuickChatDynamicCommand(6, 0, 4, 2);
 
 	@ObfuscatedName("xs.w")
-	public static final QuickChatDynamicCommand field7928 = new QuickChatDynamicCommand(7, 0, 1, 1);
+	public static final QuickChatDynamicCommand ENUM_STRING_CLAN = new QuickChatDynamicCommand(7, 0, 1, 1);
 
 	@ObfuscatedName("xs.l")
-	public static final QuickChatDynamicCommand field7929 = new QuickChatDynamicCommand(8, 0, 4, 1);
+	public static final QuickChatDynamicCommand TOSTRING_VARP = new QuickChatDynamicCommand(8, 0, 4, 1);
 
 	@ObfuscatedName("xs.u")
-	public static final QuickChatDynamicCommand field7926 = new QuickChatDynamicCommand(9, 0, 4, 1);
+	public static final QuickChatDynamicCommand TOSTRING_VARBIT = new QuickChatDynamicCommand(9, 0, 4, 1);
 
 	@ObfuscatedName("xs.z")
-	public static final QuickChatDynamicCommand field7937 = new QuickChatDynamicCommand(10, 2, 2, 0);
+	public static final QuickChatDynamicCommand OBJTRADEDIALOG = new QuickChatDynamicCommand(10, 2, 2, 0);
 
 	@ObfuscatedName("xs.p")
-	public static final QuickChatDynamicCommand field7932 = new QuickChatDynamicCommand(11, 0, 1, 2);
+	public static final QuickChatDynamicCommand ENUM_STRING_STATBASE = new QuickChatDynamicCommand(11, 0, 1, 2);
 
 	@ObfuscatedName("xs.d")
-	public static final QuickChatDynamicCommand field7933 = new QuickChatDynamicCommand(12, 0, 1, 0);
+	public static final QuickChatDynamicCommand ACC_GETCOUNT_WORLD = new QuickChatDynamicCommand(12, 0, 1, 0);
 
 	@ObfuscatedName("xs.c")
-	public static final QuickChatDynamicCommand field7930 = new QuickChatDynamicCommand(13, 0, 1, 0);
+	public static final QuickChatDynamicCommand ACC_GETMEANCOMBATLEVEL = new QuickChatDynamicCommand(13, 0, 1, 0);
 
 	@ObfuscatedName("xs.r")
-	public static final QuickChatDynamicCommand field7935 = new QuickChatDynamicCommand(14, 0, 4, 1);
+	public static final QuickChatDynamicCommand TOSTRING_SHARED = new QuickChatDynamicCommand(14, 0, 4, 1);
 
 	@ObfuscatedName("xs.v")
-	public static final QuickChatDynamicCommand field7936 = new QuickChatDynamicCommand(15, 0, 1, 0);
+	public static final QuickChatDynamicCommand ACTIVECOMBATLEVEL = new QuickChatDynamicCommand(15, 0, 1, 0);
 
 	@ObfuscatedName("xs.o")
-	public static final QuickChatDynamicCommand field7925 = new QuickChatDynamicCommand(16, 0, 4, 2);
+	public static final QuickChatDynamicCommand ENUM_STRING_VARBIT = new QuickChatDynamicCommand(16, 0, 4, 2);
 
 	@ObfuscatedName("xs.s")
 	public int id;
@@ -64,7 +64,7 @@ public class QuickChatDynamicCommand {
 
 	@ObfuscatedName("vl.e(I)[Lxs;")
 	public static QuickChatDynamicCommand[] method9288() {
-		return new QuickChatDynamicCommand[] { field7936, field7927, field7925, field7924, field7937, field7930, field7941, field7934, field7926, field7931, field7929, field7932, field7933, field7928, field7935 };
+		return new QuickChatDynamicCommand[] {ACTIVECOMBATLEVEL, ENUM_STRING, ENUM_STRING_VARBIT, OBJDIALOG, OBJTRADEDIALOG, ACC_GETMEANCOMBATLEVEL, LISTDIALOG, COUNTDIALOG, TOSTRING_VARBIT, STAT_BASE, TOSTRING_VARP, ENUM_STRING_STATBASE, ACC_GETCOUNT_WORLD, ENUM_STRING_CLAN, TOSTRING_SHARED};
 	}
 
 	public QuickChatDynamicCommand(int arg0, int arg1, int arg2, int arg3) {
@@ -75,7 +75,7 @@ public class QuickChatDynamicCommand {
 	}
 
 	@ObfuscatedName("tl.n(II)Lxs;")
-	public static QuickChatDynamicCommand getDynamicCommand(int arg0) {
+	public static QuickChatDynamicCommand getByID(int arg0) {
 		QuickChatDynamicCommand[] var1 = method9288();
 		for (int var2 = 0; var2 < var1.length; var2++) {
 			if (var1[var2].id == arg0) {

@@ -235,7 +235,7 @@ public class NPCType implements ConfigType {
 	public boolean antimacro = true;
 
 	@ObfuscatedName("if.bp")
-	public int field2765 = 0;
+	public int fadeInDuration = 0;
 
 	@ObfuscatedName("if.bj")
 	public boolean transmogfakenpc = false;
@@ -505,7 +505,7 @@ public class NPCType implements ConfigType {
 					this.clickbox.maxY = buf.gSmart1or2s();
 					this.clickbox.maxZ = buf.gSmart1or2s();
 				} else if (code == 180) {
-					this.field2765 = buf.g1() & 0xFF;
+					this.fadeInDuration = buf.g1() & 0xFF;
 				} else if (code == 181) {
 					this.spotshadowtexture = (short) buf.g2();
 					this.spotshadowtexture_alpha = (byte) buf.g1();

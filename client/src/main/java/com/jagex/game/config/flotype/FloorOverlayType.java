@@ -69,7 +69,7 @@ public class FloorOverlayType implements ConfigType, MutableConfig {
 	@ObfuscatedName("yn.u(Lalw;II)V")
 	public void decode(Packet buf, int code) {
 		if (code == 1) {
-			this.rgb = convertColour(buf.g3());
+			this.rgb = colourFudge(buf.g3());
 		} else if (code == 2) {
 			this.material = buf.g1();
 		} else if (code == 3) {
@@ -81,7 +81,7 @@ public class FloorOverlayType implements ConfigType, MutableConfig {
 		} else if (code == 5) {
 			this.occlude = false;
 		} else if (code == 7) {
-			this.averagecolour = convertColour(buf.g3());
+			this.averagecolour = colourFudge(buf.g3());
 		} else if (code == 8) {
 			// empty
 		} else if (code == 9) {
@@ -113,7 +113,7 @@ public class FloorOverlayType implements ConfigType, MutableConfig {
 	}
 
 	@ObfuscatedName("uk.p(II)I")
-	public static int convertColour(int color) {
+	public static int colourFudge(int color) {
 		return color == 0xFF00FF ? -1 : ColourUtils.hslToRgb(color);
 	}
 

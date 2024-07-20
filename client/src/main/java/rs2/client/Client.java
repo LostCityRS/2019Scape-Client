@@ -8709,7 +8709,7 @@ public final class Client extends GameShell {
 			if (!var189) {
 				messageIds[messageCount] = var187;
 				messageCount = (messageCount + 1) % 100;
-				String var191 = quickChatPhraseTypeList.list(var186).method19507(in);
+				String var191 = quickChatPhraseTypeList.list(var186).getText(in);
 				if (var185.img == -1) {
 					ChatHistory.method15054(18, 0, var179, var180, var179, var191, null, var186, var185);
 				} else {
@@ -8877,7 +8877,7 @@ public final class Client extends GameShell {
 						var221 &= 0x7FFF;
 						QuickChatPhrase var226 = QuickChatPhrase.createQuickChatPhrase(in);
 						var225 = var226.id;
-						var227 = var226.quickChatPhraseType.method19507(in);
+						var227 = var226.quickChatPhraseType.getText(in);
 					} else {
 						var227 = StringHelper.escape(WordPack.method5939(in));
 					}
@@ -8947,7 +8947,7 @@ public final class Client extends GameShell {
 		} else if (ServerProt.MESSAGE_QUICKCHAT_PRIVATE_ECHO == connection.packetType) {
 			String var236 = in.gjstr();
 			int var237 = in.g2();
-			String var238 = quickChatPhraseTypeList.list(var237).method19507(in);
+			String var238 = quickChatPhraseTypeList.list(var237).getText(in);
 			ChatHistory.method15054(19, 0, var236, var236, var236, var238, null, var237, null);
 			connection.packetType = null;
 			return true;
@@ -9225,7 +9225,7 @@ public final class Client extends GameShell {
 			if (!var302) {
 				messageIds[messageCount] = var300;
 				messageCount = (messageCount + 1) % 100;
-				String var306 = quickChatPhraseTypeList.list(var299).method19507(in);
+				String var306 = quickChatPhraseTypeList.list(var299).getText(in);
 				int var307 = var292 ? 42 : 45;
 				if (var298.img == -1) {
 					ChatHistory.method15054(var307, 0, var293, var293, var293, var306, var304.clanName, var299, var298);
@@ -9812,7 +9812,7 @@ public final class Client extends GameShell {
 			if (!var468) {
 				messageIds[messageCount] = var466;
 				messageCount = (messageCount + 1) % 100;
-				String var470 = quickChatPhraseTypeList.list(var465).method19507(in);
+				String var470 = quickChatPhraseTypeList.list(var465).getText(in);
 				if (var464.img == -1) {
 					ChatHistory.method15054(20, 0, var457, var458, var457, var470, var459, var465, var464);
 				} else {
@@ -9864,7 +9864,7 @@ public final class Client extends GameShell {
 			if (!var489) {
 				messageIds[messageCount] = var487;
 				messageCount = (messageCount + 1) % 100;
-				String var491 = quickChatPhraseTypeList.list(var486).method19507(in);
+				String var491 = quickChatPhraseTypeList.list(var486).getText(in);
 				int var492 = var485 ? 23 : 25;
 				if (var484.img == -1) {
 					ChatHistory.method15054(var492, 0, var479, var479, var479, var491, currentPlayerGroup.getDisplayName(), var486, var484);
@@ -11433,7 +11433,7 @@ public final class Client extends GameShell {
 							var37[var38] = (short) var0.g2_alt3();
 						}
 					}
-					long var39 = (long) (++NpcEntity.field12078 - 1);
+					long var39 = (long) (++NpcEntity.headCustomisationCacheBuster - 1);
 					new NPCTypeCustomisation(var39, var32, null, null, null, var35, var37);
 				}
 			}
@@ -11662,7 +11662,7 @@ public final class Client extends GameShell {
 							var98[var99] = (short) var0.g2();
 						}
 					}
-					long var100 = (long) (++NpcEntity.field12077 - 1);
+					long var100 = (long) (++NpcEntity.bodyCustomisationCacheBuster - 1);
 					var3.field12076 = new NPCTypeCustomisation(var100, var88, var89, var90, var91, var96, var98);
 				}
 			}
@@ -12491,7 +12491,7 @@ public final class Client extends GameShell {
 										var60 = var68.model.getBodyModel(toolkit, var61, basTypeList, idkTypeList, npcTypeList, objTypeList, localPlayerGameState, localPlayerGameState, child.modelAnimator, null, null, null, 0, true, wearposDefaults);
 									}
 								} else if (child.modelkind == 8 || child.modelkind == 9) {
-									ClientInvCache var71 = ClientInvCache.getCachedInvs(child.model, false);
+									ClientInvCache var71 = ClientInvCache.getInventory(child.model, false);
 									if (var71 != null) {
 										var60 = var71.method17475(toolkit, var61, child.modelAnimator, child.field2298, child.modelkind == 9, child.field2246 ? localPlayerEntity.model : null);
 									}
@@ -14508,12 +14508,12 @@ public final class Client extends GameShell {
 		int var6 = var5 + (arg1 ? quickChatPhraseTypeList.configClientLargeNum : quickChatPhraseTypeList.configClientSmallNum);
 		for (int var7 = var5; var7 < var6; var7++) {
 			QuickChatPhraseType var8 = quickChatPhraseTypeList.list(var7);
-			if (var8.field12382 && var8.getText().toLowerCase().indexOf(var2) != -1) {
+			if (var8.searchable && var8.getTextDisplay().toLowerCase().indexOf(var2) != -1) {
 				if (var3.size() >= 50) {
 					return -1;
 				}
 				var3.add(var7);
-				var4.add(var8.getText());
+				var4.add(var8.getTextDisplay());
 			}
 		}
 		chatPhraseFindResults = new int[var3.size()];
@@ -14532,7 +14532,7 @@ public final class Client extends GameShell {
 	public static DBTableIndex method146(int arg0) {
 		DBTableIndex var1 = (DBTableIndex) field10834.get((long) arg0);
 		if (var1 == null) {
-			var1 = new DBTableIndex(dbtableIndexJs5, DBUtils.method746(arg0), DBUtils.method15018(arg0));
+			var1 = new DBTableIndex(dbtableIndexJs5, DBUtils.getDBFieldTable(arg0), DBUtils.getDBFieldColumn(arg0));
 			field10834.put(var1, (long) arg0);
 		}
 		return var1;

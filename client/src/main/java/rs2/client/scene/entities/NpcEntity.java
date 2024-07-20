@@ -35,10 +35,10 @@ public class NpcEntity extends PathingEntity {
 	public NPCTypeCustomisation field12076;
 
 	@ObfuscatedName("aqc.cx")
-	public static int field12077 = 1;
+	public static int bodyCustomisationCacheBuster = 1;
 
 	@ObfuscatedName("aqc.cw")
-	public static int field12078 = 1;
+	public static int headCustomisationCacheBuster = 1;
 
 	@ObfuscatedName("aqc.ct")
 	public int field12079 = -1;
@@ -247,10 +247,10 @@ public class NpcEntity extends PathingEntity {
 		boolean var10 = false;
 		if (this.field10433 != 0) {
 			NPCType var11 = this.npcType.multinpc == null ? this.npcType : this.npcType.getMultiNPC(Client.localPlayerGameState, Client.localPlayerGameState);
-			if (var11 == null || Client.loopCycle >= this.field10438 + var11.field2765) {
+			if (var11 == null || Client.loopCycle >= this.field10438 + var11.fadeInDuration) {
 				this.field10433 = 0;
 			} else {
-				this.field10433 = 255 - (Client.loopCycle - this.field10438) * 255 / var11.field2765;
+				this.field10433 = 255 - (Client.loopCycle - this.field10438) * 255 / var11.fadeInDuration;
 				var10 = true;
 			}
 		}

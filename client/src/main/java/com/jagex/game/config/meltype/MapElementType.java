@@ -62,7 +62,7 @@ public class MapElementType implements ConfigType {
 	public boolean field2379 = true;
 
 	@ObfuscatedName("hs.s")
-	public boolean field2404 = false;
+	public boolean showOnMiniMap = false;
 
 	@ObfuscatedName("hs.y")
 	public String[] field2381 = new String[5];
@@ -98,10 +98,10 @@ public class MapElementType implements ConfigType {
 	public int field2391 = -1;
 
 	@ObfuscatedName("hs.ag")
-	public int[] field2392 = null;
+	public int[] multime = null;
 
 	@ObfuscatedName("hs.ah")
-	public int[] field2393;
+	public int[] polygon;
 
 	@ObfuscatedName("hs.al")
 	public int field2373 = Integer.MAX_VALUE;
@@ -197,7 +197,7 @@ public class MapElementType implements ConfigType {
 				this.field2379 = false;
 			}
 			if ((var3 & 0x2) == 2) {
-				this.field2404 = true;
+				this.showOnMiniMap = true;
 			}
 		} else if (arg1 == 8) {
 			arg0.g1();
@@ -216,9 +216,9 @@ public class MapElementType implements ConfigType {
 			this.field2381[arg1 - 10] = arg0.gjstr();
 		} else if (arg1 == 15) {
 			int var4 = arg0.g1();
-			this.field2393 = new int[var4 * 2];
+			this.polygon = new int[var4 * 2];
 			for (int var5 = 0; var5 < var4 * 2; var5++) {
-				this.field2393[var5] = arg0.g2s();
+				this.polygon[var5] = arg0.g2s();
 			}
 			this.field2398 = arg0.g4s();
 			int var6 = arg0.g1();
@@ -279,14 +279,14 @@ public class MapElementType implements ConfigType {
 				}
 			}
 			int var16 = arg0.g1();
-			this.field2392 = new int[var16 + 2];
+			this.multime = new int[var16 + 2];
 			for (int var17 = 0; var17 <= var16; var17++) {
-				this.field2392[var17] = arg0.g2();
-				if (this.field2392[var17] == 65535) {
-					this.field2392[var17] = -1;
+				this.multime[var17] = arg0.g2();
+				if (this.multime[var17] == 65535) {
+					this.multime[var17] = -1;
 				}
 			}
-			this.field2392[var16 + 1] = var15;
+			this.multime[var16 + 1] = var15;
 		} else if (arg1 == 28) {
 			this.field2408 = arg0.g1();
 		} else if (arg1 == 29) {
@@ -315,25 +315,25 @@ public class MapElementType implements ConfigType {
 
 	@ObfuscatedName("hs.n(I)V")
 	public void postDecode() {
-		if (this.field2393 == null) {
+		if (this.polygon == null) {
 			return;
 		}
-		for (int var1 = 0; var1 < this.field2393.length; var1 += 2) {
-			if (this.field2393[var1] < this.field2373) {
-				this.field2373 = this.field2393[var1];
-			} else if (this.field2393[var1] > this.field2396) {
-				this.field2396 = this.field2393[var1];
+		for (int var1 = 0; var1 < this.polygon.length; var1 += 2) {
+			if (this.polygon[var1] < this.field2373) {
+				this.field2373 = this.polygon[var1];
+			} else if (this.polygon[var1] > this.field2396) {
+				this.field2396 = this.polygon[var1];
 			}
-			if (this.field2393[var1 + 1] < this.field2395) {
-				this.field2395 = this.field2393[var1 + 1];
-			} else if (this.field2393[var1 + 1] > this.field2397) {
-				this.field2397 = this.field2393[var1 + 1];
+			if (this.polygon[var1 + 1] < this.field2395) {
+				this.field2395 = this.polygon[var1 + 1];
+			} else if (this.polygon[var1 + 1] > this.field2397) {
+				this.field2397 = this.polygon[var1 + 1];
 			}
 		}
 	}
 
 	@ObfuscatedName("hs.z(Lem;Lep;I)Z")
-	public boolean method4030(VariableTypeProvider arg0, VarIntDomain arg1) {
+	public boolean variableTest(VariableTypeProvider arg0, VarIntDomain arg1) {
 		boolean var3 = true;
 		int var5;
 		if (this.field2387 == -1) {
@@ -346,9 +346,9 @@ public class MapElementType implements ConfigType {
 			VarType var4 = arg0.getVarType(VarDomainType.PLAYER, this.field2387);
 			var5 = arg1.getVarValueInt(var4);
 		}
-		if (this.field2392 != null) {
-			if (var5 < 0 || var5 >= this.field2392.length - 1) {
-				int var7 = this.field2392[this.field2392.length - 1];
+		if (this.multime != null) {
+			if (var5 < 0 || var5 >= this.multime.length - 1) {
+				int var7 = this.multime[this.multime.length - 1];
 				if (var7 == -1) {
 					return false;
 				}
@@ -356,7 +356,7 @@ public class MapElementType implements ConfigType {
 					return false;
 				}
 			}
-			if (this.field2392[var5] == -1) {
+			if (this.multime[var5] == -1) {
 				return false;
 			}
 		} else if (var5 < this.field2386 || var5 > this.field2385) {
@@ -454,7 +454,7 @@ public class MapElementType implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.o(Lem;Lep;S)Lhs;")
-	public final MapElementType method4024(VariableTypeProvider arg0, VarIntDomain arg1) {
+	public final MapElementType getMultiME(VariableTypeProvider arg0, VarIntDomain arg1) {
 		int var3 = -1;
 		if (this.field2371 != -1) {
 			VarBitType var4 = arg0.getVarBitType(this.field2371);
@@ -467,10 +467,10 @@ public class MapElementType implements ConfigType {
 				var3 = arg1.getVarValueInt(var5);
 			}
 		}
-		if (var3 >= 0 && var3 < this.field2392.length - 1) {
-			return this.field2392[var3] == -1 ? null : (MapElementType) this.field2412.list(this.field2392[var3]);
+		if (var3 >= 0 && var3 < this.multime.length - 1) {
+			return this.multime[var3] == -1 ? null : (MapElementType) this.field2412.list(this.multime[var3]);
 		} else {
-			int var6 = this.field2392[this.field2392.length - 1];
+			int var6 = this.multime[this.multime.length - 1];
 			return var6 == -1 ? null : (MapElementType) this.field2412.list(var6);
 		}
 	}

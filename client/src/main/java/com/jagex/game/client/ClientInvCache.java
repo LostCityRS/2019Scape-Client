@@ -41,8 +41,8 @@ public class ClientInvCache extends Node {
 	public VarContainerSparse[] vars = null;
 
 	@ObfuscatedName("aau.e(IIZI)I")
-	public static int getObj(int invId, int slot, boolean arg2) {
-		ClientInvCache inv = getCachedInvs(invId, arg2);
+	public static int getSlotType(int invId, int slot, boolean arg2) {
+		ClientInvCache inv = getInventory(invId, arg2);
 		if (inv == null) {
 			return -1;
 		} else if (slot >= 0 && slot < inv.invSlotObjId.length) {
@@ -53,8 +53,8 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("aal.n(IIZI)I")
-	public static int getNum(int invId, int slot, boolean arg2) {
-		ClientInvCache inv = getCachedInvs(invId, arg2);
+	public static int getSlotCount(int invId, int slot, boolean arg2) {
+		ClientInvCache inv = getInventory(invId, arg2);
 		if (inv == null) {
 			return 0;
 		} else if (slot >= 0 && slot < inv.invSlotObjCount.length) {
@@ -65,10 +65,10 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("adr.m(IIIZB)I")
-	public static int getVar(int invId, int slot, int varbitId, boolean arg3) {
+	public static int getSlotVarBitValue(int invId, int slot, int varbitId, boolean arg3) {
 		VarBitType varbit = (VarBitType) Client.varBitTypeList.list(varbitId);
 		VarType baseVar = varbit.baseVar;
-		ClientInvCache inv = getCachedInvs(invId, arg3);
+		ClientInvCache inv = getInventory(invId, arg3);
 		int var7;
 		if (inv == null || slot < 0 || slot >= inv.invSlotObjCount.length || inv.vars == null || inv.vars[slot] == null) {
 			var7 = (Integer) baseVar.getDefaultValue();
@@ -79,8 +79,8 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("na.k(IIZB)I")
-	public static int total(int invId, int slot, boolean arg2) {
-		ClientInvCache inv = getCachedInvs(invId, arg2);
+	public static int getTotal(int invId, int slot, boolean arg2) {
+		ClientInvCache inv = getInventory(invId, arg2);
 		if (inv == null) {
 			return 0;
 		} else if (slot == -1) {
@@ -97,23 +97,23 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("abe.f(IIZI)I")
-	public static int totalCat(int invId, int categoryId, boolean arg2) {
+	public static int getCategoryCount(int invId, int categoryId, boolean arg2) {
 		int total = 0;
-		ClientInvCache inv = getCachedInvs(invId, arg2);
+		ClientInvCache inv = getInventory(invId, arg2);
 		if (inv == null) {
 			return 0;
 		}
 		for (int slot = 0; slot < inv.invSlotObjId.length; slot++) {
 			if (inv.invSlotObjId[slot] >= 0 && ((ObjType) Client.objTypeList.list(inv.invSlotObjId[slot])).category == categoryId) {
-				total += getNum(invId, slot, arg2);
+				total += getSlotCount(invId, slot, arg2);
 			}
 		}
 		return total;
 	}
 
 	@ObfuscatedName("pu.w(IIZZI)I")
-	public static int totalParam(int invId, int paramId, boolean stack, boolean arg3) {
-		ClientInvCache var4 = getCachedInvs(invId, arg3);
+	public static int getParamCount(int invId, int paramId, boolean stack, boolean arg3) {
+		ClientInvCache var4 = getInventory(invId, arg3);
 		if (var4 == null) {
 			return 0;
 		}
@@ -133,11 +133,11 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("pf.l(IZS)I")
-	public static int freespace(int invId, boolean arg1) {
+	public static int getFreeSpace(int invId, boolean arg1) {
 		if (arg1) {
 			return 0;
 		}
-		ClientInvCache inv = getCachedInvs(invId, arg1);
+		ClientInvCache inv = getInventory(invId, arg1);
 		if (inv == null) {
 			return ((InvType) Client.invTypeList.list(invId)).size;
 		}
@@ -151,7 +151,7 @@ public class ClientInvCache extends Node {
 	}
 
 	@ObfuscatedName("so.u(IZS)Lajo;")
-	public static ClientInvCache getCachedInvs(int arg0, boolean arg1) {
+	public static ClientInvCache getInventory(int arg0, boolean arg1) {
 		long var2 = (long) (arg0 | (arg1 ? Integer.MIN_VALUE : 0));
 		return (ClientInvCache) recentUse.get(var2);
 	}
@@ -200,7 +200,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("qe.p(IZB)V")
 	public static void clear(int arg0, boolean arg1) {
-		ClientInvCache inv = getCachedInvs(arg0, arg1);
+		ClientInvCache inv = getInventory(arg0, arg1);
 		if (inv == null) {
 			return;
 		}
@@ -213,7 +213,7 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("xj.d(IZB)V")
 	public static void remove(int arg0, boolean arg1) {
-		ClientInvCache var2 = getCachedInvs(arg0, arg1);
+		ClientInvCache var2 = getInventory(arg0, arg1);
 		if (var2 != null) {
 			var2.unlink();
 		}

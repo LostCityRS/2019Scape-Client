@@ -12,10 +12,10 @@ import deob.ObfuscatedName;
 public class DBTableType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("adb.e")
-	public ScriptVarType[][] types;
+	public ScriptVarType[][] columnTypes;
 
 	@ObfuscatedName("adb.n")
-	public Object[][] defaultValues;
+	public Object[][] columnDefaultValues;
 
 	@ObfuscatedName("adb.e(Lalw;B)V")
 	public void decode(Packet buf) {
@@ -34,8 +34,8 @@ public class DBTableType implements ConfigType, MutableConfig {
 			return;
 		}
 		int typesLength = buf.g1();
-		if (this.types == null) {
-			this.types = new ScriptVarType[typesLength][];
+		if (this.columnTypes == null) {
+			this.columnTypes = new ScriptVarType[typesLength][];
 		}
 		for (int setting = buf.g1(); setting != 255; setting = buf.g1()) {
 			int column = setting & 0x7F;
@@ -44,12 +44,12 @@ public class DBTableType implements ConfigType, MutableConfig {
 			for (int var8 = 0; var8 < scriptVarTypes.length; var8++) {
 				scriptVarTypes[var8] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
 			}
-			this.types[column] = scriptVarTypes;
+			this.columnTypes[column] = scriptVarTypes;
 			if (var6) {
-				if (this.defaultValues == null) {
-					this.defaultValues = new Object[this.types.length][];
+				if (this.columnDefaultValues == null) {
+					this.columnDefaultValues = new Object[this.columnTypes.length][];
 				}
-				this.defaultValues[column] = DBUtils.decodeValues(buf, scriptVarTypes);
+				this.columnDefaultValues[column] = DBUtils.unpackColumnDataValues(buf, scriptVarTypes);
 			}
 		}
 	}

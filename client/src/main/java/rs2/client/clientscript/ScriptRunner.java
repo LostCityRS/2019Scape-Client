@@ -9932,7 +9932,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getObj(var1, var2, false);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getSlotType(var1, var2, false);
 	}
 
 	@ObfuscatedName("alm.wc(Lyf;B)V")
@@ -9940,7 +9940,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getNum(var1, var2, false);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getSlotCount(var1, var2, false);
 	}
 
 	@ObfuscatedName("iz.wt(Lyf;I)V")
@@ -9948,7 +9948,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.total(var1, var2, false);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getTotal(var1, var2, false);
 	}
 
 	@ObfuscatedName("tg.wx(Lyf;S)V")
@@ -9956,7 +9956,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.totalCat(var1, var2, false);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getCategoryCount(var1, var2, false);
 	}
 
 	@ObfuscatedName("yc.wh(Lyf;I)V")
@@ -9986,7 +9986,7 @@ public class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		int var3 = arg0.intStack[arg0.isp + 2];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getVar(var1, var2, var3, false);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getSlotVarBitValue(var1, var2, var3, false);
 	}
 
 	@ObfuscatedName("nn.ws(Lyf;S)V")
@@ -10132,7 +10132,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getObj(var1, var2, true);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getSlotType(var1, var2, true);
 	}
 
 	@ObfuscatedName("ahd.xo(Lyf;I)V")
@@ -10140,7 +10140,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getNum(var1, var2, true);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getSlotCount(var1, var2, true);
 	}
 
 	@ObfuscatedName("ul.xk(Lyf;I)V")
@@ -10148,7 +10148,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.total(var1, var2, true);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getTotal(var1, var2, true);
 	}
 
 	@ObfuscatedName("iy.xq(Lyf;I)V")
@@ -10157,7 +10157,7 @@ public class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		int var3 = arg0.intStack[arg0.isp + 2];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getVar(var1, var2, var3, true);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getSlotVarBitValue(var1, var2, var3, true);
 	}
 
 	@ObfuscatedName("pm.xf(Lyf;I)V")
@@ -10230,7 +10230,7 @@ public class ScriptRunner {
 	@ObfuscatedName("hn.yb(Lyf;B)V")
 	public static final void inv_freespace(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.freespace(var1, false);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getFreeSpace(var1, false);
 	}
 
 	@ObfuscatedName("vd.yp(Lyf;I)V")
@@ -10238,7 +10238,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.totalParam(var1, var2, false, false);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getParamCount(var1, var2, false, false);
 	}
 
 	@ObfuscatedName("kl.yz(Lyf;B)V")
@@ -10246,7 +10246,7 @@ public class ScriptRunner {
 		arg0.isp -= 2;
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = ClientInvCache.totalParam(var1, var2, true, false);
+		arg0.intStack[++arg0.isp - 1] = ClientInvCache.getParamCount(var1, var2, true, false);
 	}
 
 	@ObfuscatedName("kg.yw(Lyf;I)V")
@@ -12610,7 +12610,7 @@ public class ScriptRunner {
 	@ObfuscatedName("ho.aid(Lyf;S)V")
 	public static final void chatphrase_gettext(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
-		arg0.objectStack[++arg0.osp - 1] = Client.quickChatPhraseTypeList.list(var1).getText();
+		arg0.objectStack[++arg0.osp - 1] = Client.quickChatPhraseTypeList.list(var1).getTextDisplay();
 	}
 
 	@ObfuscatedName("sv.aif(Lyf;B)V")
@@ -12649,7 +12649,7 @@ public class ScriptRunner {
 		int var4 = var3.buf.pos;
 		var3.buf.p1(var1);
 		var3.buf.p2(arg0.activeChatPhrase.id);
-		arg0.activeChatPhrase.quickChatPhraseType.putDynamics(var3.buf, arg0.activeChatPhrase.dynamics);
+		arg0.activeChatPhrase.quickChatPhraseType.packTransmitValues(var3.buf, arg0.activeChatPhrase.dynamics);
 		var3.buf.psize1(var3.buf.pos - var4);
 		var2.queue(var3);
 	}
@@ -12663,7 +12663,7 @@ public class ScriptRunner {
 		int var4 = var3.buf.pos;
 		var3.buf.pjstr(var1);
 		var3.buf.p2(arg0.activeChatPhrase.id);
-		arg0.activeChatPhrase.quickChatPhraseType.putDynamics(var3.buf, arg0.activeChatPhrase.dynamics);
+		arg0.activeChatPhrase.quickChatPhraseType.packTransmitValues(var3.buf, arg0.activeChatPhrase.dynamics);
 		var3.buf.psize1(var3.buf.pos - var4);
 		var2.queue(var3);
 	}
@@ -12692,7 +12692,7 @@ public class ScriptRunner {
 		if (var2 == -1) {
 			arg0.intStack[++arg0.isp - 1] = -1;
 		} else {
-			arg0.intStack[++arg0.isp - 1] = Client.quickChatCatTypeList.list(var1).getSubCategoryByShortcut((char) var2);
+			arg0.intStack[++arg0.isp - 1] = Client.quickChatCatTypeList.list(var1).getSubCategoryIdByCharacter((char) var2);
 		}
 	}
 
@@ -12704,7 +12704,7 @@ public class ScriptRunner {
 		if (var2 == -1) {
 			arg0.intStack[++arg0.isp - 1] = -1;
 		} else {
-			arg0.intStack[++arg0.isp - 1] = Client.quickChatCatTypeList.list(var1).getPhraseByShortcut((char) var2);
+			arg0.intStack[++arg0.isp - 1] = Client.quickChatCatTypeList.list(var1).getPhraseIdByCharacter((char) var2);
 		}
 	}
 
@@ -17046,7 +17046,7 @@ public class ScriptRunner {
 		}
 		Client.field754 = var4.method15187(var3);
 		if (Client.field754 != null) {
-			Client.field10767 = DBUtils.method746(var2);
+			Client.field10767 = DBUtils.getDBFieldTable(var2);
 			Client.field8853 = Client.field754.iterator();
 			if (arg1) {
 				arg0.intStack[++arg0.isp - 1] = Client.field754.size();
@@ -17091,14 +17091,14 @@ public class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		int var3 = arg0.intStack[arg0.isp + 2];
-		int var4 = DBUtils.method746(var2);
-		int var5 = DBUtils.method15018(var2);
+		int var4 = DBUtils.getDBFieldTable(var2);
+		int var5 = DBUtils.getDBFieldColumn(var2);
 		DBRowType var6 = (DBRowType) Client.dbRowTypeList.list(var1);
 		DBTableType var7 = (DBTableType) Client.dbTableTypeList.list(var4);
-		ScriptVarType[] var8 = var7.types[var5];
+		ScriptVarType[] var8 = var7.columnTypes[var5];
 		Object[] var9 = var6.method14711(var5);
-		if (var9 == null && var7.defaultValues != null) {
-			var9 = var7.defaultValues[var5];
+		if (var9 == null && var7.columnDefaultValues != null) {
+			var9 = var7.columnDefaultValues[var5];
 		}
 		if (var9 == null) {
 			for (int var10 = 0; var10 < var8.length; var10++) {
@@ -17137,10 +17137,10 @@ public class ScriptRunner {
 		int var5 = var2 & 0xFF;
 		DBRowType var6 = (DBRowType) Client.dbRowTypeList.list(var1);
 		DBTableType var7 = (DBTableType) Client.dbTableTypeList.list(var4);
-		ScriptVarType[] var8 = var7.types[var5];
+		ScriptVarType[] var8 = var7.columnTypes[var5];
 		Object[] var9 = var6.method14711(var5);
-		if (var9 == null && var7.defaultValues != null) {
-			var9 = var7.defaultValues[var5];
+		if (var9 == null && var7.columnDefaultValues != null) {
+			var9 = var7.columnDefaultValues[var5];
 		}
 		if (var9 != null) {
 			var3 = var9.length / var8.length;
@@ -17166,7 +17166,7 @@ public class ScriptRunner {
 		DBTableIndex var3 = Client.method146(var1);
 		if (var3 == null) {
 			throw new RuntimeException();
-		} else if (DBUtils.method746(var1) != Client.field10767) {
+		} else if (DBUtils.getDBFieldTable(var1) != Client.field10767) {
 			throw new RuntimeException();
 		} else if (Client.field754 == null && Client.field754.isEmpty()) {
 			throw new RuntimeException();

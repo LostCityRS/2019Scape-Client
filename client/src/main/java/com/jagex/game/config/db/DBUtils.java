@@ -12,17 +12,17 @@ public class DBUtils {
 	}
 
 	@ObfuscatedName("aw.e(IB)I")
-	public static int method746(int arg0) {
+	public static int getDBFieldTable(int arg0) {
 		return arg0 >>> 8;
 	}
 
 	@ObfuscatedName("acg.n(II)I")
-	public static int method15018(int arg0) {
+	public static int getDBFieldColumn(int arg0) {
 		return arg0 & 0xFF;
 	}
 
 	@ObfuscatedName("anp.m(Lalw;[Lqw;I)[Ljava/lang/Object;")
-	public static Object[] decodeValues(Packet buf, ScriptVarType[] types) {
+	public static Object[] unpackColumnDataValues(Packet buf, ScriptVarType[] types) {
 		int fieldCount = buf.gSmart1or2();
 		Object[] values = new Object[types.length * fieldCount];
 		for (int fieldId = 0; fieldId < fieldCount; fieldId++) {

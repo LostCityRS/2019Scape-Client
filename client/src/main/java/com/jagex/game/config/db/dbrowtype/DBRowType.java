@@ -15,7 +15,7 @@ public class DBRowType implements ConfigType, MutableConfig {
 	public Object[][] columnValues;
 
 	@ObfuscatedName("abc.n")
-	public ScriptVarType[][] types;
+	public ScriptVarType[][] columnTypes;
 
 	@ObfuscatedName("abc.m")
 	public int tableId;
@@ -42,7 +42,7 @@ public class DBRowType implements ConfigType, MutableConfig {
 			int numColumns = buf.g1();
 			if (this.columnValues == null) {
 				this.columnValues = new Object[numColumns][];
-				this.types = new ScriptVarType[numColumns][];
+				this.columnTypes = new ScriptVarType[numColumns][];
 			}
 			for (int var4 = buf.g1(); var4 != 255; var4 = buf.g1()) {
 				int columnsLength = buf.g1();
@@ -50,8 +50,8 @@ public class DBRowType implements ConfigType, MutableConfig {
 				for (int var7 = 0; var7 < columnsLength; var7++) {
 					columnTypes[var7] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
 				}
-				this.columnValues[var4] = DBUtils.decodeValues(buf, columnTypes);
-				this.types[var4] = columnTypes;
+				this.columnValues[var4] = DBUtils.unpackColumnDataValues(buf, columnTypes);
+				this.columnTypes[var4] = columnTypes;
 			}
 		} else if (code == 4) {
 			this.tableId = buf.gVarInt2();

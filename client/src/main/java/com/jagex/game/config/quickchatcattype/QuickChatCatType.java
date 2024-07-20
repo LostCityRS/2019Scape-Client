@@ -61,7 +61,7 @@ public class QuickChatCatType extends SecondaryNode {
 	}
 
 	@ObfuscatedName("asd.m(CI)I")
-	public int getSubCategoryByShortcut(char shortcut) {
+	public int getSubCategoryIdByCharacter(char shortcut) {
 		if (this.subCategories == null) {
 			return -1;
 		}
@@ -74,7 +74,7 @@ public class QuickChatCatType extends SecondaryNode {
 	}
 
 	@ObfuscatedName("asd.k(CI)I")
-	public int getPhraseByShortcut(char shortcut) {
+	public int getPhraseIdByCharacter(char shortcut) {
 		if (this.phrases == null) {
 			return -1;
 		}

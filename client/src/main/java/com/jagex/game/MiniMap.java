@@ -299,7 +299,7 @@ public class MiniMap {
 							field727.addTail(new IntNode(var49));
 						} else {
 							MapElementType var53 = (MapElementType) Client.mapElementTypeList.list(var47.field6775[var49]);
-							if (var53.field2393 != null && var53.field2396 + var51 >= 0 && var53.field2373 + var51 < var2 && var53.field2397 + var52 >= 0 && var53.field2395 + var52 < var3) {
+							if (var53.polygon != null && var53.field2396 + var51 >= 0 && var53.field2373 + var51 < var2 && var53.field2397 + var52 >= 0 && var53.field2395 + var52 < var3) {
 								field727.addTail(new IntNode(var49));
 							}
 						}
@@ -731,14 +731,14 @@ public class MiniMap {
 	@ObfuscatedName("ace.q(Ldh;Lch;Lhf;IIIIIB)V")
 	public static void method15085(Toolkit arg0, SpriteRelated arg1, Component arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		MapElementType var8 = (MapElementType) Client.mapElementTypeList.list(arg7);
-		if (var8 != null && var8.field2392 != null && var8.method4030(Client.localPlayerGameState, Client.localPlayerGameState)) {
-			var8 = var8.method4024(Client.localPlayerGameState, Client.localPlayerGameState);
+		if (var8 != null && var8.multime != null && var8.variableTest(Client.localPlayerGameState, Client.localPlayerGameState)) {
+			var8 = var8.getMultiME(Client.localPlayerGameState, Client.localPlayerGameState);
 		}
-		if (var8 == null || !var8.field2404 || !var8.method4030(Client.localPlayerGameState, Client.localPlayerGameState)) {
+		if (var8 == null || !var8.showOnMiniMap || !var8.variableTest(Client.localPlayerGameState, Client.localPlayerGameState)) {
 			return;
 		}
-		if (var8.field2393 != null) {
-			int[] var9 = new int[var8.field2393.length];
+		if (var8.polygon != null) {
+			int[] var9 = new int[var8.polygon.length];
 			for (int var10 = 0; var10 < var9.length / 2; var10++) {
 				int var11;
 				if (Client.cameraState == 3) {
@@ -754,8 +754,8 @@ public class MiniMap {
 					var12 = var12 * 256 / (Client.minimapZoom + 256);
 					var13 = var13 * 256 / (Client.minimapZoom + 256);
 				}
-				var9[var10 * 2] = ((var8.field2393[var10 * 2] * 4 + arg5) * var13 + (var8.field2393[var10 * 2 + 1] * 4 + arg6) * var12 >> 14) + arg2.width / 2 + arg3;
-				var9[var10 * 2 + 1] = arg2.height / 2 + arg4 - ((var8.field2393[var10 * 2 + 1] * 4 + arg6) * var13 - (var8.field2393[var10 * 2] * 4 + arg5) * var12 >> 14);
+				var9[var10 * 2] = ((var8.polygon[var10 * 2] * 4 + arg5) * var13 + (var8.polygon[var10 * 2 + 1] * 4 + arg6) * var12 >> 14) + arg2.width / 2 + arg3;
+				var9[var10 * 2 + 1] = arg2.height / 2 + arg4 - ((var8.polygon[var10 * 2 + 1] * 4 + arg6) * var13 - (var8.polygon[var10 * 2] * 4 + arg5) * var12 >> 14);
 			}
 			Graphic var14 = arg2.method3970(arg0);
 			if (var14 != null) {

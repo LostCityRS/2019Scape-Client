@@ -1251,13 +1251,13 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.ag(Ldh;Laks;Lhs;)V")
 	public static void method8533(Toolkit arg0, WorldMapElement arg1, MapElementType arg2) {
-		if (arg2.field2393 == null) {
+		if (arg2.polygon == null) {
 			return;
 		}
-		int[] var3 = new int[arg2.field2393.length];
+		int[] var3 = new int[arg2.polygon.length];
 		for (int var4 = 0; var4 < var3.length / 2; var4++) {
-			int var5 = arg1.field11448 + arg2.field2393[var4 * 2];
-			int var6 = arg1.field11452 + arg2.field2393[var4 * 2 + 1];
+			int var5 = arg1.field11448 + arg2.polygon[var4 * 2];
+			int var6 = arg1.field11452 + arg2.polygon[var4 * 2 + 1];
 			var3[var4 * 2] = (field6851 - field6801) * (var5 - field6845) / (field6847 - field6845) + field6801;
 			var3[var4 * 2 + 1] = field6852 - (field6852 - field6837) * (var6 - field6848) / (field6846 - field6848);
 		}

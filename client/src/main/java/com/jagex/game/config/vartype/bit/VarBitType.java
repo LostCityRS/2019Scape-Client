@@ -30,10 +30,10 @@ public class VarBitType implements VarConfigType {
 	public String debugName;
 
 	@ObfuscatedName("kh.l")
-	public VarDomainType field3080;
+	public VarDomainType domain;
 
 	@ObfuscatedName("kh.u")
-	public int field3075 = -1;
+	public int baseVarId = -1;
 
 	@ObfuscatedName("kh.z")
 	public static int[] masklookup = new int[32];
@@ -83,15 +83,15 @@ public class VarBitType implements VarConfigType {
 				break;
 			case 14:
 				int var5 = arg0.g1();
-				this.field3080 = (VarDomainType) SerializableEnums.decode(VarDomainType.values(), var5);
-				if (this.field3080 == null) {
+				this.domain = (VarDomainType) SerializableEnums.decode(VarDomainType.values(), var5);
+				if (this.domain == null) {
 					throw new IllegalStateException("");
 				}
-				this.field3075 = arg0.gSmart2or4s();
+				this.baseVarId = arg0.gSmart2or4s();
 				if (this.field3077 != null) {
-					ConfigTypeList var6 = (ConfigTypeList) this.field3077.listContainer.get(this.field3080);
+					ConfigTypeList var6 = (ConfigTypeList) this.field3077.listContainer.get(this.domain);
 					if (var6 != null) {
-						this.baseVar = (VarType) var6.list(this.field3075);
+						this.baseVar = (VarType) var6.list(this.baseVarId);
 					} else if (!arg2) {
 						throw new IllegalStateException("");
 					}

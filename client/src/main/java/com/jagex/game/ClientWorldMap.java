@@ -450,15 +450,15 @@ public class ClientWorldMap extends WorldMap {
 		if (arg0 == null) {
 			return false;
 		}
-		if (arg0.field2392 != null) {
-			arg0 = arg0.method4024(field6791, field6790);
+		if (arg0.multime != null) {
+			arg0 = arg0.getMultiME(field6791, field6790);
 			if (arg0 == null) {
 				return false;
 			}
 		}
 		if (!arg0.field2379) {
 			return false;
-		} else if (!arg0.method4030(field6791, field6790)) {
+		} else if (!arg0.variableTest(field6791, field6790)) {
 			return false;
 		} else if (field11667.get((long) arg0.field2367) != null) {
 			return false;
@@ -485,8 +485,8 @@ public class ClientWorldMap extends WorldMap {
 		if (field6819 && !Client.loggedInMembers && !method8534(arg1.field11448, arg1.field11452)) {
 			return false;
 		}
-		if (arg2.field2392 != null) {
-			arg2 = arg2.method4024(WorldMap.field6791, WorldMap.field6790);
+		if (arg2.multime != null) {
+			arg2 = arg2.getMultiME(WorldMap.field6791, WorldMap.field6790);
 			if (arg2 == null) {
 				return false;
 			}
@@ -495,7 +495,7 @@ public class ClientWorldMap extends WorldMap {
 		int var6 = Integer.MIN_VALUE;
 		int var7 = Integer.MAX_VALUE;
 		int var8 = Integer.MIN_VALUE;
-		if (arg2.field2393 != null) {
+		if (arg2.polygon != null) {
 			var5 = (arg1.field11448 + arg2.field2373 - WorldMap.field6845) * (WorldMap.field6851 - WorldMap.field6801) / (WorldMap.field6847 - WorldMap.field6845) + WorldMap.field6801;
 			var6 = (arg1.field11448 + arg2.field2396 - WorldMap.field6845) * (WorldMap.field6851 - WorldMap.field6801) / (WorldMap.field6847 - WorldMap.field6845) + WorldMap.field6801;
 			var8 = WorldMap.field6852 - (arg1.field11452 + arg2.field2395 - WorldMap.field6848) * (WorldMap.field6852 - WorldMap.field6837) / (WorldMap.field6846 - WorldMap.field6848);
@@ -1205,7 +1205,7 @@ public class ClientWorldMap extends WorldMap {
 			return null;
 		} else {
 			MapElementType var1 = (MapElementType) WorldMap.field6788.list(var0.field11446);
-			return var1 != null && var1.field2409 && var1.method4030(WorldMap.field6791, WorldMap.field6790) ? var0 : method13882();
+			return var1 != null && var1.field2409 && var1.variableTest(WorldMap.field6791, WorldMap.field6790) ? var0 : method13882();
 		}
 	}
 
@@ -1216,7 +1216,7 @@ public class ClientWorldMap extends WorldMap {
 		}
 		for (WorldMapElement var0 = (WorldMapElement) field11669.next(); var0 != null; var0 = (WorldMapElement) field11669.next()) {
 			MapElementType var1 = (MapElementType) field6788.list(var0.field11446);
-			if (var1 != null && var1.field2409 && var1.method4030(field6791, field6790)) {
+			if (var1 != null && var1.field2409 && var1.variableTest(field6791, field6790)) {
 				return var0;
 			}
 		}
