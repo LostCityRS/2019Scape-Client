@@ -154,7 +154,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("cr.m(Lals;I)V")
 	public static void runHook(HookRequest arg0) {
-		executeHookInnter(arg0, 500000);
+		executeHookInner(arg0, 500000);
 	}
 
 	@ObfuscatedName("ace.k(I[II)V")
@@ -173,13 +173,13 @@ public class ScriptRunner {
 				HookRequest var3 = new HookRequest();
 				var3.component = var2;
 				var3.onop = var2.onload;
-				executeHookInnter(var3, 5000000);
+				executeHookInner(var3, 5000000);
 			}
 		}
 	}
 
 	@ObfuscatedName("yo.w(Lals;II)V")
-	public static void executeHookInnter(HookRequest arg0, int arg1) {
+	public static void executeHookInner(HookRequest arg0, int arg1) {
 		Object[] var2 = arg0.onop;
 		int var3 = (Integer) var2[0];
 		ClientScript var4 = ClientScriptHelpers.getScript(var3);
