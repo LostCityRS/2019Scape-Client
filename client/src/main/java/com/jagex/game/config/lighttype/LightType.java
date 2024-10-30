@@ -9,16 +9,16 @@ import deob.ObfuscatedName;
 public class LightType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("adl.e")
-	public int field9168 = 0 * 649135051;
+	public int field9168 = 0;
 
 	@ObfuscatedName("adl.n")
-	public int field9169 = 0 * -88051697;
+	public int field9169 = 0;
 
 	@ObfuscatedName("adl.m")
-	public int field9167 = -1468389376 * 243149709;
+	public int field9167 = 2048;
 
 	@ObfuscatedName("adl.k")
-	public int field9170 = -1478424576 * 2054784993;
+	public int field9170 = 2048;
 
 	@ObfuscatedName("adl.e(Lalw;B)V")
 	public void decode(Packet arg0) {

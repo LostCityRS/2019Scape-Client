@@ -10,7 +10,7 @@ import deob.ObfuscatedName;
 public class InvType extends SecondaryNode implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("ady.k")
-	public int stockLength = 0 * 795395889;
+	public int stockLength = 0;
 
 	@ObfuscatedName("ady.f")
 	public int[] stockobj;
@@ -19,7 +19,7 @@ public class InvType extends SecondaryNode implements ConfigType, MutableConfig 
 	public int[] stockcount;
 
 	@ObfuscatedName("ady.l")
-	public int size = 0 * 820091969;
+	public int size = 0;
 
 	@ObfuscatedName("ady.e(Lalw;B)V")
 	public void decode(Packet arg0) {

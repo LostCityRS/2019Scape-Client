@@ -174,7 +174,7 @@ public class Light extends Node {
 		if (this.field11332 != this.field11326) {
 			long var1 = MonotonicTime.get();
 			long var3 = var1 - this.field11328;
-			this.field11327 = (int) ((long) (this.field11327 * -1443914461) - var3 * -1443914461L) * 1570863755;
+			this.field11327 = (int) ((long) (this.field11327) - var3);
 			if (this.field11327 > 0) {
 				this.field11326 = ColourUtils.interpolateColours(this.field11334, this.field11332, (float) (this.field11335 - this.field11327) / (float) this.field11335 * 255.0F);
 			} else {
@@ -187,7 +187,7 @@ public class Light extends Node {
 		}
 		long var5 = MonotonicTime.get();
 		long var7 = var5 - this.field11324;
-		this.field11333 = (int) ((long) (this.field11333 * -1061885795) - var7 * -1061885795L) * 1239997877;
+		this.field11333 = (int) ((long) (this.field11333) - var7);
 		if (this.field11333 > 0) {
 			this.field11329 = (float) (this.field11320 - this.field11333) / (float) this.field11320 * (this.field11330 - this.field11325) + this.field11325;
 		} else {

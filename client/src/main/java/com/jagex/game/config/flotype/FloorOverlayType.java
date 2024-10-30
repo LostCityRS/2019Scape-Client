@@ -13,46 +13,46 @@ public class FloorOverlayType implements ConfigType, MutableConfig {
 	public int id;
 
 	@ObfuscatedName("yn.m")
-	public int rgb = 0 * 592157171;
+	public int rgb = 0;
 
 	@ObfuscatedName("yn.k")
-	public int material = -1685253883 * -462296013;
+	public int material = -1;
 
 	@ObfuscatedName("yn.f")
 	public boolean occlude = true;
 
 	@ObfuscatedName("yn.w")
-	public int averagecolour = -690404605 * 1773420629;
+	public int averagecolour = -1;
 
 	@ObfuscatedName("yn.l")
-	public int materialscale = 183582208 * -2047499425;
+	public int materialscale = 512;
 
 	@ObfuscatedName("yn.u")
 	public boolean hardshadow = true;
 
 	@ObfuscatedName("yn.z")
-	public int priority = 1907344776 * -205172655;
+	public int priority = 0;
 
 	@ObfuscatedName("yn.p")
 	public boolean blend = false;
 
 	@ObfuscatedName("yn.d")
-	public int waterfogcolour = 1233755641 * 1502845029;
+	public int waterfogcolour = 1190717;
 
 	@ObfuscatedName("yn.c")
-	public int waterfogscale = 2059861312;
+	public int waterfogscale = 512;
 
 	@ObfuscatedName("yn.r")
-	public int waterfogoffset = -1677496433 * -503537775;
+	public int waterfogoffset = 256;
 
 	@ObfuscatedName("yn.v")
-	public int field8165 = -535383117 * -129782971;
+	public int field8165 = 64;
 
 	@ObfuscatedName("yn.o")
-	public int field8166 = 0 * -703195503;
+	public int field8166 = 0;
 
 	@ObfuscatedName("yn.s")
-	public int field8167 = -1934904128 * 1714018651;
+	public int field8167 = 64;
 
 	@ObfuscatedName("yn.e(Lalw;B)V")
 	public void decode(Packet arg0) {
@@ -92,7 +92,7 @@ public class FloorOverlayType implements ConfigType, MutableConfig {
 			} else if (arg1 == 13) {
 				this.waterfogcolour = arg0.g3();
 			} else if (arg1 == 14) {
-				this.waterfogscale = (arg0.g1() << 2) * -2115298315;
+				this.waterfogscale = arg0.g1() << 2;
 			} else if (arg1 == 16) {
 				this.waterfogoffset = arg0.g1();
 			} else if (arg1 == 20) {

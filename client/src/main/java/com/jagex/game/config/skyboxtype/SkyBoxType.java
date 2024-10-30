@@ -16,10 +16,10 @@ import deob.ObfuscatedName;
 public class SkyBoxType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("uv.e")
-	public int field7233 = -1895173889 * 887812353;
+	public int field7233 = 0;
 
 	@ObfuscatedName("uv.n")
-	public int field7234 = 1308423683 * 430971733;
+	public int field7234 = 0;
 
 	@ObfuscatedName("uv.m")
 	public int[] field7232;
@@ -28,7 +28,7 @@ public class SkyBoxType implements ConfigType, MutableConfig {
 	public SkyBoxFillMode field7235 = SkyBoxFillMode.field7239;
 
 	@ObfuscatedName("uv.f")
-	public int field7236 = 670946389 * -871926013;
+	public int field7236 = 0;
 
 	@ObfuscatedName("uv.e(Lalw;B)V")
 	public void decode(Packet arg0) {

@@ -683,7 +683,7 @@ public class MapLoader {
 							this.angle++;
 						}
 						if (!this.underwater && arg2 == 0) {
-							this.scene.setWaterFog(var7, var8, var13.waterfogcolour, var13.waterfogscale * 677626600, var13.waterfogoffset, var13.field8165, var13.field8166, var13.field8167);
+							this.scene.setWaterFog(var7, var8, var13.waterfogcolour, var13.waterfogscale, var13.waterfogoffset, var13.field8165, var13.field8166, var13.field8167);
 						}
 					}
 					if (var14 != null) {
@@ -1117,7 +1117,7 @@ public class MapLoader {
 				this.field4575++;
 			}
 			if (!this.underwater && arg1 == 0) {
-				this.scene.setWaterFog(arg2, arg3, arg4.waterfogcolour, arg4.waterfogscale * 677626600, arg4.waterfogoffset, arg4.field8165, arg4.field8166, arg4.field8167);
+				this.scene.setWaterFog(arg2, arg3, arg4.waterfogcolour, arg4.waterfogscale, arg4.waterfogoffset, arg4.field8165, arg4.field8166, arg4.field8167);
 			}
 			if (this.field4573 != 12 && arg4.rgb != -1 && arg4.hardshadow) {
 				this.field4507 = true;

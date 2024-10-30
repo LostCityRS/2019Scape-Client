@@ -440,7 +440,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						}
 						if (this.groupStatus[this.group] == 0) {
 							Node var4 = new Node();
-							var4.nodeId = (long) (this.group * 1382496569) * -257432311L;
+							var4.nodeId = (long) (this.group);
 							this.groupQueue.addTail(var4);
 							var1 = false;
 						}
@@ -477,7 +477,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						}
 						if (this.groupStatus[this.group] != 1) {
 							Node var8 = new Node();
-							var8.nodeId = (long) (this.group * 1382496569) * -257432311L;
+							var8.nodeId = (long) (this.group);
 							this.groupQueue.addTail(var8);
 							var5 = false;
 						}

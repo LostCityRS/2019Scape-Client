@@ -982,14 +982,14 @@ public class Scene {
 		this.eyeY = arg2;
 		this.minDrawTileX = this.eyeTileX - this.drawDistance;
 		if (this.minDrawTileX < 0) {
-			this.field6943 = -(this.minDrawTileX * 336067085) * 1250813125;
+			this.field6943 = -this.minDrawTileX;
 			this.minDrawTileX = 0;
 		} else {
 			this.field6943 = 0;
 		}
 		this.minDrawTileZ = this.eyeTileZ - this.drawDistance;
 		if (this.minDrawTileZ < 0) {
-			this.field6944 = -(this.minDrawTileZ * 10268461) * 742291621;
+			this.field6944 = -this.minDrawTileZ;
 			this.minDrawTileZ = 0;
 		} else {
 			this.field6944 = 0;

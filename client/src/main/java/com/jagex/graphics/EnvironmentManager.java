@@ -315,7 +315,7 @@ public class EnvironmentManager {
 			return;
 		}
 		long var1 = MonotonicTime.get();
-		this.field7838 = (int) ((long) (this.field7838 * 1162824399) - (var1 - this.field7839) * 1162824399L) * 2008775727;
+		this.field7838 = (int) ((long) (this.field7838) - (var1 - this.field7839));
 		if (this.field7838 > 0) {
 			this.currentEnv.setToInterpolation(this.toolkit, this.fadeEnvA, this.fadeEnvB, (float) (this.field7837 - this.field7838) / (float) this.field7837);
 		} else {

@@ -38,7 +38,7 @@ public class EnumType implements ConfigType, MutableConfig {
 	public Object[] field8780;
 
 	@ObfuscatedName("abm.l")
-	public int valuesCount = 0 * -1630596103;
+	public int valuesCount = 0;
 
 	@ObfuscatedName("abm.u")
 	public HashMap field8782;

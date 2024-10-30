@@ -12531,7 +12531,7 @@ public class Client extends GameShell {
 								}
 							} else if (var11.type == 5) {
 								if (var11.field2339 >= 0) {
-									var11.method4012(skyBoxTypeList, skyDecorTypeList).method7945(toolkit, 0, var13, var14, var11.width, var11.height, var11.field2348 * 905019813 << 3, var11.field2162 * -1680348127 << 3, 0, 0);
+									var11.method4012(skyBoxTypeList, skyDecorTypeList).method7945(toolkit, 0, var13, var14, var11.width, var11.height, var11.field2348 << 3, var11.field2162 << 3, 0, 0);
 								} else {
 									Sprite var48;
 									if (var11.invobject != -1) {

@@ -27,12 +27,12 @@ public class PureJavaColorBuffer implements GraphicsDeletable {
 
 	@ObfuscatedName("bf.e()I")
 	public int method1015() {
-		return this.field893 * -1415554075 * -774739475;
+		return this.field893;
 	}
 
 	@ObfuscatedName("bf.n()I")
 	public int method1009() {
-		return this.field892 * -4857121 * -534357729;
+		return this.field892;
 	}
 
 	@ObfuscatedName("bf.m()V")

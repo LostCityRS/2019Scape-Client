@@ -9,13 +9,13 @@ import deob.ObfuscatedName;
 public class FloorUnderlayType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("aaz.e")
-	public int colour = 0 * -1647734771;
+	public int colour = 0;
 
 	@ObfuscatedName("aaz.n")
-	public int material = 1078353519 * -990036111;
+	public int material = 0;
 
 	@ObfuscatedName("aaz.m")
-	public int materialscale = 1555887616 * 1408290995;
+	public int materialscale = 512;
 
 	@ObfuscatedName("aaz.k")
 	public boolean hardshadow = true;

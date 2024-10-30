@@ -62,7 +62,7 @@ public abstract class LookatSpline extends Lookat {
 		Spline var2 = this.field11872[this.field11870];
 		if (this.field11869[this.field11870] > 0.0F) {
 			if (this.field11869[this.field11870] >= arg0) {
-				this.field11869[this.field11870 * 1336623913 * 853149977] -= arg0;
+				this.field11869[this.field11870] -= arg0;
 				return;
 			}
 			arg0 -= this.field11869[this.field11870];

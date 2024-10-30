@@ -417,7 +417,7 @@ public class LoginManager {
 				}
 				Packet var5 = startRSAPAcket();
 				packLoginTOTPDetails(var5, (long) ssoKey);
-				authKey = (long) (ssoKey * 48143567) * 276097583L;
+				authKey = (long) ssoKey;
 				var5.p1(ssoKey);
 				var5.p1(Client.language.getId());
 				var5.p4(Client.playerIsAffiliate);
