@@ -4,6 +4,8 @@ import deob.ObfuscatedName;
 
 public class NativeHeap {
 
+	public long peer;
+
 	@ObfuscatedName("jaclib/memory/heap/NativeHeap.e")
 	public final int field415;
 

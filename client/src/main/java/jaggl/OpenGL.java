@@ -6,6 +6,8 @@ import java.util.Hashtable;
 
 public class OpenGL {
 
+	public long peer;
+
 	@ObfuscatedName("jaggl/OpenGL.e")
 	public Hashtable field0;
 

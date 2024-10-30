@@ -34,9 +34,11 @@ public class GlxRendererFactory {
 			GlxToolkit var11 = new GlxToolkit(var8, arg0, var9, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 			var11.init();
 			return var11;
-		} catch (RuntimeException var14) {
-			throw var14;
-		} catch (Throwable var15) {
+		} catch (RuntimeException ex) {
+			ex.printStackTrace();
+			throw ex;
+		} catch (Throwable ex) {
+			ex.printStackTrace();
 			throw new RuntimeException("");
 		}
 	}
