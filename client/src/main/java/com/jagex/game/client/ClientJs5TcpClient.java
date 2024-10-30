@@ -9,6 +9,7 @@ import com.jagex.js5.network.Js5TcpClient;
 import deob.ObfuscatedName;
 import java.io.IOException;
 import java.util.Iterator;
+import rs2.client.Client;
 
 @ObfuscatedName("aik")
 public class ClientJs5TcpClient extends Js5TcpClient {
@@ -81,7 +82,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 						var9 = var8;
 					}
 					this.stream.read(this.client.data, this.client.pos, var9);
-					if (this.xorcode != 0) {
+					if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 						for (int var10 = 0; var10 < var9; var10++) {
 							this.client.data[this.client.pos + var10] ^= this.xorcode;
 						}
@@ -128,7 +129,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 							var22 = var8;
 						}
 						this.stream.read(this.server.data, this.server.pos, var22);
-						if (this.xorcode != 0) {
+						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 							for (int var23 = 0; var23 < var22; var23++) {
 								this.server.data[this.server.pos + var23] ^= this.xorcode;
 							}
@@ -157,7 +158,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 							var29 = var8;
 						}
 						this.stream.read(var21.data, var21.pos, var29);
-						if (this.xorcode != 0) {
+						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 							for (int var30 = 0; var30 < var29; var30++) {
 								var21.data[var21.pos + var30] ^= this.xorcode;
 							}
@@ -209,7 +210,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 				while (true) {
 					Js5NetRequest var5 = (Js5NetRequest) this.prefetchRequested.pollFront();
 					if (var5 == null) {
-						if (this.xorcode != 0) {
+						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
 							try {
 								this.out.pos = 0;
 								this.out.p1(4);

@@ -468,7 +468,7 @@ public class DeveloperConsole {
 			addline(LocalisedText.DEBUG_CONSOLE_ERROR.forLang(Client.language));
 			return;
 		}
-		if (ModeWhere.LIVE != Client.modewhere || Client.staffModLevel >= 2) {
+		if (ModeWhere.LIVE != Client.modewhere || Client.staffModLevel >= 2|| Client.ALLOW_COMMANDS_ANYWHERE) {
 			try {
 				if (arg0.equalsIgnoreCase("wm1")) {
 					Client.setWindowMode(1, -1, -1, false);
@@ -676,7 +676,7 @@ public class DeveloperConsole {
 				return;
 			}
 		}
-		if (Client.state != 18 && Client.state != 13) {
+		if (Client.state != 18 && Client.state != 13 && !Client.ALLOW_COMMANDS_ANYWHERE) {
 			addline(LocalisedText.DEBUG_CONSOLE_UNKNOWNCOMMAND.forLang(Client.language) + arg0);
 		}
 	}

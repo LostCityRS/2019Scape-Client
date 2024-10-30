@@ -338,6 +338,14 @@ import rs2.client.scene.entities.SpotAnimation;
 
 public class Client extends GameShell {
 
+    public static final boolean ENABLE_RSA = false;
+    public static final boolean ENABLE_JS5_RSA = false;
+    public static final boolean ENABLE_JS5_XOR = false;
+    public static final boolean ENABLE_HOST_CHECK = false;
+    public static final boolean ENABLE_ISAAC = false;
+	public static final boolean ENABLE_TINYENC = false;
+	public static final boolean ALLOW_COMMANDS_ANYWHERE = true;
+
 	@ObfuscatedName("client.bw")
 	public static Namespace namespace;
 

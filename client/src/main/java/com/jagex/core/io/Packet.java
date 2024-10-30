@@ -6,6 +6,7 @@ import com.jagex.core.utils.Cp1252;
 import com.jagex.core.utils.Utf8;
 import deob.ObfuscatedName;
 import java.math.BigInteger;
+import rs2.client.Client;
 
 @ObfuscatedName("alw")
 public class Packet extends Node {
@@ -510,6 +511,10 @@ public class Packet extends Node {
 
 	@ObfuscatedName("alw.bd([II)V")
 	public void tinyenc(int[] arg0) {
+		if (!Client.ENABLE_TINYENC) {
+			return;
+		}
+
 		int var2 = this.pos / 8;
 		this.pos = 0;
 		for (int var3 = 0; var3 < var2; var3++) {
@@ -552,6 +557,10 @@ public class Packet extends Node {
 
 	@ObfuscatedName("alw.bi([IIIB)V")
 	public void tinyenc(int[] arg0, int arg1, int arg2) {
+		if (!Client.ENABLE_TINYENC) {
+			return;
+		}
+
 		int var4 = this.pos;
 		this.pos = arg1;
 		int var5 = (arg2 - arg1) / 8;
@@ -598,6 +607,10 @@ public class Packet extends Node {
 
 	@ObfuscatedName("alw.bt(Ljava/math/BigInteger;Ljava/math/BigInteger;B)V")
 	public void rsaenc(BigInteger arg0, BigInteger arg1) {
+		if (!Client.ENABLE_RSA) {
+			return;
+		}
+
 		int var3 = this.pos;
 		this.pos = 0;
 		byte[] var4 = new byte[var3];

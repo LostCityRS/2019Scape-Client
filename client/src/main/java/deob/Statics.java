@@ -3,5 +3,5 @@ package deob;
 public class Statics {
 
 	@ObfuscatedName("asw.j")
-	public static final int y = 64;
+	public static final int field12460 = 64;
 }

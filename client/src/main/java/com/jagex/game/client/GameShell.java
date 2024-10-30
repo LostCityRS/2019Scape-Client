@@ -35,6 +35,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.net.URL;
+import rs2.client.Client;
 
 @ObfuscatedName("sk")
 public abstract class GameShell implements GameShellStub, Runnable, FocusListener, WindowListener {
@@ -643,6 +644,10 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.b(I)Z")
 	public final boolean checkhost() {
+		if (!Client.ENABLE_HOST_CHECK) {
+			return true;
+		}
+
 		String var1 = field11885.getDocumentBase().getHost().toLowerCase();
 		if (var1.equals("jagex.com") || var1.endsWith(".jagex.com")) {
 			return true;
