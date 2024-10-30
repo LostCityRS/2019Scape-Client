@@ -11446,14 +11446,6 @@ public class ScriptRunner {
 		arg0.intStack[++arg0.isp - 1] = var3 == 2 ? 1 : 0;
 	}
 
-	public static final void dns(ClientScriptState arg0) {
-		arg0.isp -= 2;
-		int var1 = arg0.intStack[arg0.isp];
-		int var2 = arg0.intStack[arg0.isp + 1];
-		int var3 = Client.stockmarketSlots[var2][var1].method7608();
-		arg0.intStack[++arg0.isp - 1] = var3 == 5 ? 1 : 0;
-	}
-
 	@ObfuscatedName("ch.ady(Lyf;S)V")
 	public static final void stockmarket_isofferfinished(ClientScriptState arg0) {
 		arg0.isp -= 2;
