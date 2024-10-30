@@ -1279,7 +1279,7 @@ public class DxToolkit extends GpuToolkit {
 					case 0:
 						return 77;
 					case 1:
-						return D3DFORMAT.field263;
+						return D3DFORMAT.D3DFMT_DXT1;
 					case 2:
 						return 22;
 					case 3:
@@ -1294,7 +1294,7 @@ public class DxToolkit extends GpuToolkit {
 					case 7:
 						return 50;
 					case 8:
-						return D3DFORMAT.field264;
+						return D3DFORMAT.D3DFMT_DXT5;
 				}
 		}
 		throw new IllegalArgumentException("");
@@ -1369,7 +1369,8 @@ public class DxToolkit extends GpuToolkit {
 			arg5.MultiSampleType = var9;
 			arg5.MultiSampleQuality = 0;
 			return true;
-		} catch (Throwable var13) {
+		} catch (Throwable ex) {
+            ex.printStackTrace();
 			return false;
 		}
 	}

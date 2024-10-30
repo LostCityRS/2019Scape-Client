@@ -25,9 +25,11 @@ public class DxToolkitFactory {
 			GpuToolkit.method15968();
 			NativeLibraries.getLoader().load("jagdx");
 			return DxToolkit.method19043(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-		} catch (RuntimeException var10) {
-			throw var10;
-		} catch (Throwable var11) {
+		} catch (RuntimeException ex) {
+			ex.printStackTrace();
+			throw ex;
+		} catch (Throwable ex) {
+			ex.printStackTrace();
 			throw new RuntimeException("");
 		}
 	}
