@@ -3114,24 +3114,25 @@ public class Client extends GameShell {
 								break;
 							case 3:
 								GraphicsPacketQueue.method6971(ToolkitType.field8876);
+                                break;
 						}
+                        if (var31 instanceof GlException) {
+                            preferences.antiAliasing.setValue(0);
+                            preferences.antiAliasing2.setValue(0);
+                        }
+                        int var14 = preferences.displayMode.getValue();
+                        preferences.setPreference(preferences.displayMode, 0);
+                        if (var5 != null) {
+                            try {
+                                var5.dispose();
+                                var5 = null;
+                            } catch (Throwable var28) {
+                            }
+                        }
+                        deleteToolkit();
+                        System.gc();
+                        createToolkit(var14, arg1, arg2);
 					}
-					if (var31 instanceof GlException) {
-						preferences.antiAliasing.setValue(0);
-						preferences.antiAliasing2.setValue(0);
-					}
-					int var14 = preferences.displayMode.getValue();
-					preferences.setPreference(preferences.displayMode, 0);
-					if (var5 != null) {
-						try {
-							var5.dispose();
-							var5 = null;
-						} catch (Throwable var28) {
-						}
-					}
-					deleteToolkit();
-					System.gc();
-					createToolkit(var14, arg1, arg2);
 				} finally {
 					if (var5 != null) {
 						try {

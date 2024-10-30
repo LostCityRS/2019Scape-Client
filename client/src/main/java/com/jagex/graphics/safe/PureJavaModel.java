@@ -549,28 +549,27 @@ public class PureJavaModel extends Model {
 							Model.method1753(this.vertexX[var95], this.vertexY[var95], this.vertexZ[var95], var96, var97, var98, var99, var100, var101, var42);
 							var48[2] = var42[0];
 							var49[2] = var42[1];
-							int var10002;
 							if ((var100 & 0x1) == 0) {
 								if (var48[1] - var48[0] > 0.5F) {
-									var10002 = var48[1]--;
+									var48[1]--;
 								} else if (var48[0] - var48[1] > 0.5F) {
-									var10002 = var48[1]++;
+									var48[1]++;
 								}
 								if (var48[2] - var48[0] > 0.5F) {
-									var10002 = var48[2]--;
+									var48[2]--;
 								} else if (var48[0] - var48[2] > 0.5F) {
-									var10002 = var48[2]++;
+									var48[2]++;
 								}
 							} else {
 								if (var49[1] - var49[0] > 0.5F) {
-									var10002 = var49[1]--;
+									var49[1]--;
 								} else if (var49[0] - var49[1] > 0.5F) {
-									var10002 = var49[1]++;
+									var49[1]++;
 								}
 								if (var49[2] - var49[0] > 0.5F) {
-									var10002 = var49[2]--;
+									var49[2]--;
 								} else if (var49[0] - var49[2] > 0.5F) {
-									var10002 = var49[2]++;
+									var49[2]++;
 								}
 							}
 						}
