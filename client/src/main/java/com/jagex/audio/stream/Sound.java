@@ -3,7 +3,6 @@ package com.jagex.audio.stream;
 import com.jagex.audio.api.SoundBackend;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -203,7 +202,6 @@ public class Sound {
 		this.field4886 = arg0;
 	}
 
-	// line 167
 	@ObfuscatedName("rw.p(B)V")
 	public void method7384() {
 		if (SoundVolume.field4948 == this.field4877) {
@@ -216,7 +214,7 @@ public class Sound {
 			AudioProcessingUnit var2 = this.field4876.method5865(this.field4889.method9679());
 			if (var2 != null) {
 				boolean var3 = this.field4889.method9675();
-				SoundRelated var4 = new SoundRelated(this);
+				Sound.SoundRelated var4 = new Sound.SoundRelated();
 				boolean var5 = var2.method7487(var3 ? null : this.field4889.method9673(0), var3 ? var4 : null, this.field4890, this.field4892 > 0 ? 0.0F : this.field4885, false, this.field4882, this.field4880, this.field4888, this);
 				if (var5) {
 					this.field4877 = SoundVolume.field4950;
@@ -267,24 +265,6 @@ public class Sound {
 		}
 	}
 
-	@ObfuscatedName("qv")
-	public static class SoundRelated implements SoundBaseInterface {
-
-		// $FF: synthetic field
-		public final Sound this$0;
-
-		// line 177
-		public SoundRelated(Sound arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("qv.e(II)[B")
-		public byte[] method7354(int arg0) {
-			return this.this$0.field4889.method9673(arg0);
-		}
-	}
-
-	// line 230
 	@ObfuscatedName("rw.d(I)Lrs;")
 	public SoundVolume method7385() {
 		return this.field4877;
@@ -406,11 +386,19 @@ public class Sound {
 		this.field4880 = arg1;
 	}
 
-	// line 327
 	@ObfuscatedName("rw.ac(FI)V")
 	public void setRate(float arg0) {
 		if (!(arg0 < 0.0F)) {
 			this.field4888 = arg0;
+		}
+	}
+
+	@ObfuscatedName("qv")
+	public class SoundRelated implements SoundBaseInterface {
+
+		@ObfuscatedName("qv.e(II)[B")
+		public byte[] method7354(int arg0) {
+			return Sound.this.field4889.method9673(arg0);
 		}
 	}
 }

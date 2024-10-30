@@ -7,9 +7,29 @@ import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.PacketBit;
 import com.jagex.core.io.Stream;
-import com.jagex.core.utils.*;
+import com.jagex.core.utils.JagException;
+import com.jagex.core.utils.MonotonicTime;
+import com.jagex.core.utils.ReflectionCheck;
+import com.jagex.core.utils.StringTools;
+import com.jagex.core.utils.TotpType;
+import com.jagex.core.utils.VarValue;
 import com.jagex.encryption.Isaac;
-import com.jagex.game.client.*;
+import com.jagex.game.ClientWatch;
+import com.jagex.game.MiniMap;
+import com.jagex.game.MiniMenu;
+import com.jagex.game.client.Browser;
+import com.jagex.game.client.BrowserControl;
+import com.jagex.game.client.ClientInvCache;
+import com.jagex.game.client.ClientMessage;
+import com.jagex.game.client.GameShell;
+import com.jagex.game.client.HostNameProvider;
+import com.jagex.game.client.JavascriptFunction;
+import com.jagex.game.client.LocalisedText;
+import com.jagex.game.client.RebuildRequest;
+import com.jagex.game.client.RebuildType;
+import com.jagex.game.client.ReceivePlayerPositions;
+import com.jagex.game.client.ServerAddress;
+import com.jagex.game.client.StockmarketSlot;
 import com.jagex.game.config.Js5Archive;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.game.config.loctype.LocType;
@@ -21,17 +41,13 @@ import com.jagex.game.network.protocol.ServerProt;
 import com.jagex.game.scene.ChangeLocationRequest;
 import com.jagex.game.script.SubInterface;
 import com.jagex.game.world.entity.PlayerStat;
-import com.jagex.game.ClientWatch;
-import com.jagex.game.MiniMenu;
-import com.jagex.game.MiniMap;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
+import java.io.IOException;
+import java.net.URL;
 import rs2.client.Client;
 import rs2.client.logic.DelayedStateChange;
 import rs2.client.scene.entities.PathingEntity;
-
-import java.io.IOException;
-import java.net.URL;
 
 @ObfuscatedName("m")
 public class LoginManager {
@@ -198,53 +214,53 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("df.z(ILjava/lang/String;ZI)V")
-	public static void requestSocialNetworkLogin(int ssoKey, String newAuthPreference, boolean authDontTrust) {
+	public static void requestSocialNetworkLogin(int arg0, String arg1, boolean arg2) {
 		if (!isLoginReady()) {
 			return;
 		}
-		if (LoginManager.ssoKey != ssoKey) {
+		if (ssoKey != arg0) {
 			socialKey = -1L;
 		}
-		LoginManager.ssoKey = ssoKey;
-		LoginManager.newAuthPreference = newAuthPreference;
-		LoginManager.authDontTrust = authDontTrust;
+		ssoKey = arg0;
+		newAuthPreference = arg1;
+		authDontTrust = arg2;
 		Client.setState(7);
 	}
 
 	@ObfuscatedName("amr.p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZI)V")
-	public static void enterLobby(String username, String password, String newAuthPreference, boolean authDontTrust) {
-		if (username.length() > 320 || !isLoginReady()) {
+	public static void enterLobby(String arg0, String arg1, String arg2, boolean arg3) {
+		if (arg0.length() > 320 || !isLoginReady()) {
 			return;
 		}
 		Client.lobbyConnection.closeGracefully();
 		resetSocialKeys();
-		LoginManager.username = username;
-		LoginManager.password = password;
-		LoginManager.newAuthPreference = newAuthPreference;
-		LoginManager.authDontTrust = authDontTrust;
+		username = arg0;
+		password = arg1;
+		newAuthPreference = arg2;
+		authDontTrust = arg3;
 		Client.setState(17);
 	}
 
 	@ObfuscatedName("aji.d(ILjava/lang/String;ZS)V")
-	public static void enterLobbySocialNetwork(int ssoKey, String newAuthPreference, boolean authDontTrust) {
+	public static void enterLobbySocialNetwork(int arg0, String arg1, boolean arg2) {
 		if (!isLoginReady()) {
 			return;
 		}
-		if (LoginManager.ssoKey != ssoKey) {
+		if (ssoKey != arg0) {
 			socialKey = -1L;
 		}
-		LoginManager.ssoKey = ssoKey;
-		LoginManager.newAuthPreference = newAuthPreference;
-		LoginManager.authDontTrust = authDontTrust;
+		ssoKey = arg0;
+		newAuthPreference = arg1;
+		authDontTrust = arg2;
 		Client.lobbyConnection.closeGracefully();
 		Client.setState(17);
 	}
 
 	@ObfuscatedName("dt.c(Ljava/lang/String;ZI)V")
-	public static void enterGame(String newAuthPreference, boolean authDontTrust) {
+	public static void enterGame(String arg0, boolean arg1) {
 		if (Client.state == 13 && (!isInProgress() && !AccountCreationManager.isInProgress())) {
-			LoginManager.newAuthPreference = newAuthPreference;
-			LoginManager.authDontTrust = authDontTrust;
+			newAuthPreference = arg0;
+			authDontTrust = arg1;
 			Client.setState(15);
 		}
 	}
@@ -286,16 +302,16 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("qj.q(ZZLjava/lang/String;Ljava/lang/String;J)Z")
-	public static boolean requestLogin(boolean isSocialLogin, boolean ssoEnabled, String username, String password, long socialKey) {
-		LoginManager.isSocialLogin = isSocialLogin;
-		if (!ssoEnabled) {
+	public static boolean requestLogin(boolean arg0, boolean arg1, String arg2, String arg3, long arg4) {
+		isSocialLogin = arg0;
+		if (!arg1) {
 			ssoKey = -1;
 		}
-		LoginManager.ssoEnabled = ssoEnabled;
-		LoginManager.username = username;
-		LoginManager.password = password;
-		LoginManager.socialKey = socialKey;
-		if (!LoginManager.ssoEnabled && (LoginManager.username.equals("") || LoginManager.password.equals(""))) {
+		ssoEnabled = arg1;
+		username = arg2;
+		password = arg3;
+		socialKey = arg4;
+		if (!ssoEnabled && (username.equals("") || password.equals(""))) {
 			setReply(3);
 			updateLoginState();
 			return false;
@@ -319,19 +335,19 @@ public class LoginManager {
 			return;
 		}
 		try {
-			short loginwait;
+			short var0;
 			if (loginAttempts == 0 && loginStep < 98) {
-				loginwait = 500;
+				var0 = 500;
 			} else {
-				loginwait = 2000;
+				var0 = 2000;
 			}
 			if (isSocialLogin && loginStep >= 64) {
-				loginwait = 6000;
+				var0 = 6000;
 			}
 			if (requestState == 211 && loginStep != 215 && enterGameReply != 42 || requestState == 132 && enterLobbyReply != 49 && enterLobbyReply != 52) {
-				LoginManager.loginwait++;
+				loginwait++;
 			}
-			if (LoginManager.loginwait > loginwait) {
+			if (loginwait > var0) {
 				connection.closeGracefully();
 				if (loginAttempts >= 3) {
 					loginStep = 7;
@@ -344,7 +360,7 @@ public class LoginManager {
 				} else {
 					WorldSwitcher.currentLobby.configureSocketType();
 				}
-				LoginManager.loginwait = 0;
+				loginwait = 0;
 				loginAttempts++;
 				loginStep = 14;
 			}
@@ -360,9 +376,9 @@ public class LoginManager {
 					Client.secureRandomProvider = null;
 				}
 				connection.clearWriteQueue();
-				ClientMessage message = ClientMessage.createMessage();
-				message.buf.p1(LoginProt.INIT_GAME_CONNECTION.id);
-				connection.queue(message);
+				ClientMessage var1 = ClientMessage.createMessage();
+				var1.buf.p1(LoginProt.INIT_GAME_CONNECTION.id);
+				connection.queue(var1);
 				connection.flush();
 				loginStep = 35;
 			}
@@ -372,11 +388,11 @@ public class LoginManager {
 				}
 				connection.getStream().read(connection.in.data, 0, 9);
 				connection.in.pos = 0;
-				int reply = connection.in.g1();
-				if (reply != 0) {
+				int var2 = connection.in.g1();
+				if (var2 != 0) {
 					loginStep = 7;
-					nothing(reply);
-					setReply(reply);
+					nothing(var2);
+					setReply(var2);
 					connection.closeGracefully();
 					updateLoginState();
 					return;
@@ -390,31 +406,31 @@ public class LoginManager {
 				}
 			}
 			if (loginStep == 276) {
-				ClientMessage message = ClientMessage.createMessage();
-				message.buf.p1(LoginProt.INIT_SOCIAL_NETWORK_CONNECTION.id);
-				message.buf.p2(0);
-				int var4 = message.buf.pos;
-				message.buf.p4(910);
-				message.buf.p4(1);
+				ClientMessage var3 = ClientMessage.createMessage();
+				var3.buf.p1(LoginProt.INIT_SOCIAL_NETWORK_CONNECTION.id);
+				var3.buf.p2(0);
+				int var4 = var3.buf.pos;
+				var3.buf.p4(910);
+				var3.buf.p4(1);
 				if (requestState == 211) {
-					message.buf.p1(Client.state == 14 ? 1 : 0);
+					var3.buf.p1(Client.state == 14 ? 1 : 0);
 				}
-				Packet buf = startRSAPAcket();
-				packLoginTOTPDetails(buf, (long) ssoKey);
-				authKey = ssoKey;
-				buf.p1(ssoKey);
-				buf.p1(Client.language.getId());
-				buf.p4(Client.playerIsAffiliate);
+				Packet var5 = startRSAPAcket();
+				packLoginTOTPDetails(var5, (long) ssoKey);
+				authKey = (long) (ssoKey * 48143567) * 276097583L;
+				var5.p1(ssoKey);
+				var5.p1(Client.language.getId());
+				var5.p4(Client.playerIsAffiliate);
 				for (int var6 = 0; var6 < 5; var6++) {
-					buf.p4(Client.secureRandom.nextInt());
+					var5.p4(Client.secureRandom.nextInt());
 				}
-				buf.p8(Client.field10810);
-				buf.p1(Client.modegame.game);
-				buf.p1(Client.secureRandom.nextInt());
-				buf.rsaenc(PublicKeys.LOGIN_RSAE, PublicKeys.LOGIN_RSAN);
-				message.buf.pdata(buf.data, 0, buf.pos);
-				message.buf.psize2(message.buf.pos - var4);
-				connection.queue(message);
+				var5.p8(Client.field10810);
+				var5.p1(Client.modegame.game);
+				var5.p1(Client.secureRandom.nextInt());
+				var5.rsaenc(PublicKeys.LOGIN_RSAE, PublicKeys.LOGIN_RSAN);
+				var3.buf.pdata(var5.data, 0, var5.pos);
+				var3.buf.psize2(var3.buf.pos - var4);
+				connection.queue(var3);
 				connection.flush();
 				loginStep = 40;
 			}
@@ -464,68 +480,68 @@ public class LoginManager {
 			if (loginStep == 84) {
 				connection.in.pos = 0;
 				connection.clearWriteQueue();
-				ClientMessage message = ClientMessage.createMessage();
-				PacketBit buf = message.buf;
+				ClientMessage var9 = ClientMessage.createMessage();
+				PacketBit var10 = var9.buf;
 				if (requestState == 211) {
-					LoginProt prot;
+					LoginProt var11;
 					if (isSocialLogin) {
-						prot = LoginProt.SOCIAL_NETWORK_LOGIN;
+						var11 = LoginProt.SOCIAL_NETWORK_LOGIN;
 					} else {
-						prot = LoginProt.GAMELOGIN;
+						var11 = LoginProt.GAMELOGIN;
 					}
-					buf.p1(prot.id);
-					buf.p2(0);
-					int var12 = buf.pos;
-					int var13 = buf.pos;
+					var10.p1(var11.id);
+					var10.p2(0);
+					int var12 = var10.pos;
+					int var13 = var10.pos;
 					if (!isSocialLogin) {
-						buf.p4(910);
-						buf.p4(1);
-						buf.p1(Client.state == 14 ? 1 : 0);
-						int var14 = buf.pos;
-						Packet loginPacket = createLoginRSAPacket();
-						buf.pdata(loginPacket.data, 0, loginPacket.pos);
-						var13 = buf.pos;
-						buf.p1(socialKey == -1L ? 1 : 0);
+						var10.p4(910);
+						var10.p4(1);
+						var10.p1(Client.state == 14 ? 1 : 0);
+						int var14 = var10.pos;
+						Packet var15 = createLoginRSAPacket();
+						var10.pdata(var15.data, 0, var15.pos);
+						var13 = var10.pos;
+						var10.p1(socialKey == -1L ? 1 : 0);
 						if (socialKey == -1L) {
-							buf.pjstr(username);
+							var10.pjstr(username);
 						} else {
-							buf.p8(socialKey);
+							var10.p8(socialKey);
 						}
 					}
-					buf.p1(Client.getWindowMode());
-					buf.p2(GameShell.canvasWid);
-					buf.p2(GameShell.canvasHei);
-					buf.p1(Client.preferences.antiAliasing2.getValue());
-					GameShell.pushUID192(buf);
-					buf.pjstr(Client.siteSettings);
-					buf.p4(Client.playerIsAffiliate);
-					Packet preferencesPacket = Client.preferences.createPreferencesBlock();
-					buf.p1(preferencesPacket.pos);
-					buf.pdata(preferencesPacket.data, 0, preferencesPacket.pos);
+					var10.p1(Client.getWindowMode());
+					var10.p2(GameShell.canvasWid);
+					var10.p2(GameShell.canvasHei);
+					var10.p1(Client.preferences.antiAliasing2.getValue());
+					GameShell.pushUID192(var10);
+					var10.pjstr(Client.siteSettings);
+					var10.p4(Client.playerIsAffiliate);
+					Packet var16 = Client.preferences.createPreferencesBlock();
+					var10.p1(var16.pos);
+					var10.pdata(var16.data, 0, var16.pos);
 					Client.preferencesChangeNotified = true;
-					Packet hardwarePacket = new Packet(Client.hardwarePlatform.calculateHardwarePlatformSize());
-					Client.hardwarePlatform.createHardwareBlock(hardwarePacket);
-					buf.pdata(hardwarePacket.data, 0, hardwarePacket.data.length);
-					buf.p4(Client.currentIncrementVerifyId);
-					buf.p4(Client.userFlow2);
-					buf.p4(Client.userFlow1);
-					buf.p4(Client.field10778);
-					buf.p4(Client.field10777);
-					buf.pjstr(Client.field579);
-					buf.p1(Client.createAdditionalInfo == null ? 0 : 1);
+					Packet var17 = new Packet(Client.hardwarePlatform.calculateHardwarePlatformSize());
+					Client.hardwarePlatform.createHardwareBlock(var17);
+					var10.pdata(var17.data, 0, var17.data.length);
+					var10.p4(Client.currentIncrementVerifyId);
+					var10.p4(Client.userFlow2);
+					var10.p4(Client.userFlow1);
+					var10.p4(Client.field10778);
+					var10.p4(Client.field10777);
+					var10.pjstr(Client.field579);
+					var10.p1(Client.createAdditionalInfo == null ? 0 : 1);
 					if (Client.createAdditionalInfo != null) {
-						buf.pjstr(Client.createAdditionalInfo);
+						var10.pjstr(Client.createAdditionalInfo);
 					}
-					buf.p1(Client.javascriptEnabled ? 1 : 0);
-					buf.p1(Client.haveChrome ? 1 : 0);
-					buf.p1(Client.clientType & 0x1);
-					buf.p4(Client.field10788);
-					buf.pjstr(Client.gamepack);
-					buf.p1(WorldSwitcher.field9200 != null && WorldSwitcher.field9200.node == WorldSwitcher.currentWorld.node ? 0 : 1);
-					buf.p2(WorldSwitcher.currentLobby.node);
-					pushJS5CRCs(buf);
-                    buf.tinyenc(outKey, var13, buf.pos);
-					buf.psize2(buf.pos - var12);
+					var10.p1(Client.javascriptEnabled ? 1 : 0);
+					var10.p1(Client.haveChrome ? 1 : 0);
+					var10.p1(Client.clientType & 0x1);
+					var10.p4(Client.field10788);
+					var10.pjstr(Client.gamepack);
+					var10.p1(WorldSwitcher.field9200 != null && WorldSwitcher.field9200.node == WorldSwitcher.currentWorld.node ? 0 : 1);
+					var10.p2(WorldSwitcher.currentLobby.node);
+					pushJS5CRCs(var10);
+					var10.tinyenc(outKey, var13, var10.pos);
+					var10.psize2(var10.pos - var12);
 				} else {
 					LoginProt var18;
 					if (isSocialLogin) {
@@ -533,57 +549,57 @@ public class LoginManager {
 					} else {
 						var18 = LoginProt.LOBBYLOGIN;
 					}
-					buf.p1(var18.id);
-					buf.p2(0);
-					int var19 = buf.pos;
-					int var20 = buf.pos;
+					var10.p1(var18.id);
+					var10.p2(0);
+					int var19 = var10.pos;
+					int var20 = var10.pos;
 					if (!isSocialLogin) {
-						buf.p4(910);
-						buf.p4(1);
+						var10.p4(910);
+						var10.p4(1);
 						Packet var21 = createLoginRSAPacket();
-						buf.pdata(var21.data, 0, var21.pos);
-						var20 = buf.pos;
-						buf.p1(socialKey == -1L ? 1 : 0);
+						var10.pdata(var21.data, 0, var21.pos);
+						var20 = var10.pos;
+						var10.p1(socialKey == -1L ? 1 : 0);
 						if (socialKey == -1L) {
-							buf.pjstr(username);
+							var10.pjstr(username);
 						} else {
-							buf.p8(socialKey);
+							var10.p8(socialKey);
 						}
 					}
-					buf.p1(Client.modegame.game);
-					buf.p1(Client.language.getId());
-					buf.p1(Client.getWindowMode());
-					buf.p2(GameShell.canvasWid);
-					buf.p2(GameShell.canvasHei);
-					buf.p1(Client.preferences.antiAliasing2.getValue());
-					GameShell.pushUID192(buf);
-					buf.pjstr(Client.siteSettings);
-					Packet preferencesPacket = Client.preferences.createPreferencesBlock();
-					buf.p1(preferencesPacket.pos);
-					buf.pdata(preferencesPacket.data, 0, preferencesPacket.pos);
-					Packet hardwarePacket = new Packet(Client.hardwarePlatform.calculateHardwarePlatformSize());
-					Client.hardwarePlatform.createHardwareBlock(hardwarePacket);
-					buf.pdata(hardwarePacket.data, 0, hardwarePacket.data.length);
-					buf.p4(Client.currentIncrementVerifyId);
-					buf.pjstr(Client.field579);
-					buf.p4(Client.playerIsAffiliate);
-					buf.p4(Client.field10788);
-					buf.pjstr(Client.gamepack);
-					buf.p1(Client.clientType & 0x1);
-					buf.pbool(false);
-					pushJS5CRCs(buf);
-                    buf.tinyenc(outKey, var20, buf.pos);
-					buf.psize2(buf.pos - var19);
+					var10.p1(Client.modegame.game);
+					var10.p1(Client.language.getId());
+					var10.p1(Client.getWindowMode());
+					var10.p2(GameShell.canvasWid);
+					var10.p2(GameShell.canvasHei);
+					var10.p1(Client.preferences.antiAliasing2.getValue());
+					GameShell.pushUID192(var10);
+					var10.pjstr(Client.siteSettings);
+					Packet var22 = Client.preferences.createPreferencesBlock();
+					var10.p1(var22.pos);
+					var10.pdata(var22.data, 0, var22.pos);
+					Packet var23 = new Packet(Client.hardwarePlatform.calculateHardwarePlatformSize());
+					Client.hardwarePlatform.createHardwareBlock(var23);
+					var10.pdata(var23.data, 0, var23.data.length);
+					var10.p4(Client.currentIncrementVerifyId);
+					var10.pjstr(Client.field579);
+					var10.p4(Client.playerIsAffiliate);
+					var10.p4(Client.field10788);
+					var10.pjstr(Client.gamepack);
+					var10.p1(Client.clientType & 0x1);
+					var10.pbool(false);
+					pushJS5CRCs(var10);
+					var10.tinyenc(outKey, var20, var10.pos);
+					var10.psize2(var10.pos - var19);
 				}
-				connection.queue(message);
+				connection.queue(var9);
 				connection.flush();
 				connection.randomOut = new Isaac(outKey);
-				int[] inKey = new int[4];
-				for (int index = 0; index < 4; index++) {
-					inKey[index] = outKey[index] + 50;
+				int[] var24 = new int[4];
+				for (int var25 = 0; var25 < 4; var25++) {
+					var24[var25] = outKey[var25] + 50;
 				}
-				connection.randomIn = new Isaac(inKey);
-				new Isaac(inKey);
+				connection.randomIn = new Isaac(var24);
+				new Isaac(var24);
 				connection.in.setIsaac(connection.randomIn);
 				outKey = null;
 				loginStep = 98;
@@ -593,18 +609,18 @@ public class LoginManager {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 1);
-				int reply = connection.in.g1();
+				int var26 = connection.in.g1();
 				connection.in.pos = 0;
-				if (reply == 21) {
+				if (var26 == 21) {
 					loginStep = 126;
-				} else if (reply == 1) {
+				} else if (var26 == 1) {
 					loginStep = 103;
-					setReply(reply);
+					setReply(var26);
 					return;
-				} else if (reply == 52) {
-					loginReply = reply;
+				} else if (var26 == 52) {
+					loginReply = var26;
 					loginStep = 225;
-				} else if (reply == 2) {
+				} else if (var26 == 2) {
 					if (unused) {
 						unused = false;
 						loginStep = 14;
@@ -616,28 +632,28 @@ public class LoginManager {
 					} else {
 						loginStep = 141;
 					}
-				} else if (reply == 15) {
+				} else if (var26 == 15) {
 					connection.packetSize = -2;
 					loginStep = 204;
-				} else if (reply == 23 && loginAttempts < 3) {
-					LoginManager.loginwait = 0;
+				} else if (var26 == 23 && loginAttempts < 3) {
+					loginwait = 0;
 					loginAttempts++;
 					loginStep = 14;
 					connection.closeGracefully();
 					return;
-				} else if (reply == 42) {
+				} else if (var26 == 42) {
 					loginStep = 215;
-					setReply(reply);
+					setReply(var26);
 					return;
-				} else if (requestState == 132 && reply == 49 && Client.state != 9) {
+				} else if (requestState == 132 && var26 == 49 && Client.state != 9) {
 					if (enterLobbyReply != 52) {
-						setReply(reply);
+						setReply(var26);
 					}
 					return;
-				} else if (!ssoEnabled || isSocialLogin || ssoKey == -1 || reply != 35) {
-					if (reply != 53) {
+				} else if (!ssoEnabled || isSocialLogin || ssoKey == -1 || var26 != 35) {
+					if (var26 != 53) {
 						loginStep = 7;
-						setReply(reply);
+						setReply(var26);
 						connection.closeGracefully();
 						updateLoginState();
 						return;
@@ -645,7 +661,7 @@ public class LoginManager {
 					loginStep = 245;
 				} else {
 					isSocialLogin = true;
-					LoginManager.loginwait = 0;
+					loginwait = 0;
 					loginStep = 14;
 					connection.closeGracefully();
 					return;
@@ -765,10 +781,10 @@ public class LoginManager {
 				while (true) {
 					if (connection.in.pos >= connection.packetSize) {
 						if (var31) {
-							ClientMessage message = ClientMessage.createMessage();
-							PacketBit buf = message.buf;
-							buf.p1(LoginProt.GAMELOGIN_CONTINUE.id);
-							connection.queue(message);
+							ClientMessage var33 = ClientMessage.createMessage();
+							PacketBit var34 = var33.buf;
+							var34.p1(LoginProt.GAMELOGIN_CONTINUE.id);
+							connection.queue(var33);
 							connection.flush();
 							loginStep = 138;
 						} else {
@@ -785,20 +801,20 @@ public class LoginManager {
 					return;
 				}
 				connection.getStream().read(connection.in.data, 0, 1);
-				int reply = connection.in.data[0] & 0xFF;
-				if (reply != 2) {
-					if (reply != 29 && reply != 45) {
+				int var35 = connection.in.data[0] & 0xFF;
+				if (var35 != 2) {
+					if (var35 != 29 && var35 != 45) {
 						loginStep = 7;
-						setReply(reply);
+						setReply(var35);
 						connection.closeGracefully();
 						updateLoginState();
 						if (Client.isStateLobby(Client.state)) {
 							Client.logout(true);
-							enterGameReply = reply;
+							enterGameReply = var35;
 						}
 						return;
 					}
-					loginReply = reply;
+					loginReply = var35;
 					loginStep = 194;
 					return;
 				}
@@ -813,70 +829,70 @@ public class LoginManager {
 				loginStep = 157;
 			}
 			if (loginStep == 157) {
-				PacketBit in = connection.in;
+				PacketBit var36 = connection.in;
 				if (requestState == 211) {
 					if (!connection.getStream().hasAvailable(replyPacketSize)) {
 						return;
 					}
-					connection.getStream().read(in.data, 0, replyPacketSize);
-					in.pos = 0;
-					getAuthPreferences(in);
-					Client.staffModLevel = in.g1();
-					Client.playerModLevel = in.g1();
-					Client.field10951 = in.g1() == 1;
-					Client.playerIsQuickChat = in.g1() == 1;
-					Client.field10953 = in.g1() == 1;
-					Client.loggedInQuickChat = in.g1() == 1;
-					Client.currentPlayerUid = in.g2();
-					Client.playerIsMembers = in.g1() == 1;
-					Client.lobbyDOB = in.g3s();
-					Client.loggedInMembers = in.g1() == 1;
-					Client.owner = in.gjstr();
-					Client.field1238 = in.g6() - MonotonicTime.get();
+					connection.getStream().read(var36.data, 0, replyPacketSize);
+					var36.pos = 0;
+					getAuthPreferences(var36);
+					Client.staffModLevel = var36.g1();
+					Client.playerModLevel = var36.g1();
+					Client.field10951 = var36.g1() == 1;
+					Client.playerIsQuickChat = var36.g1() == 1;
+					Client.field10953 = var36.g1() == 1;
+					Client.loggedInQuickChat = var36.g1() == 1;
+					Client.currentPlayerUid = var36.g2();
+					Client.playerIsMembers = var36.g1() == 1;
+					Client.lobbyDOB = var36.g3s();
+					Client.loggedInMembers = var36.g1() == 1;
+					Client.owner = var36.gjstr();
+					Client.field1238 = var36.g6() - MonotonicTime.get();
 					Client.world.getLocTypeList().setAllowMembers(Client.loggedInMembers);
 					Client.asyncRebuild.method7677().getLocTypeList().setAllowMembers(Client.loggedInMembers);
 					Client.objTypeList.setAllowMembers(Client.loggedInMembers);
 					Client.npcTypeList.setAllowMembers(Client.loggedInMembers);
 				} else if (connection.getStream().hasAvailable(replyPacketSize)) {
-					connection.getStream().read(in.data, 0, replyPacketSize);
-					in.pos = 0;
-					getAuthPreferences(in);
-					Client.staffModLevel = in.g1();
-					Client.playerModLevel = in.g1();
-					Client.field10951 = in.g1() == 1;
-					Client.lobbyDOB = in.g3s();
-					Client.localPlayerEntity.gender = (byte) in.g1();
-					Client.playerIsQuickChat = in.g1() == 1;
-					Client.field10953 = in.g1() == 1;
-					Client.lobbyMembership = in.g8();
-					Client.field1238 = Client.lobbyMembership - MonotonicTime.get() - in.g5();
-					int var37 = in.g1();
+					connection.getStream().read(var36.data, 0, replyPacketSize);
+					var36.pos = 0;
+					getAuthPreferences(var36);
+					Client.staffModLevel = var36.g1();
+					Client.playerModLevel = var36.g1();
+					Client.field10951 = var36.g1() == 1;
+					Client.lobbyDOB = var36.g3s();
+					Client.localPlayerEntity.gender = (byte) var36.g1();
+					Client.playerIsQuickChat = var36.g1() == 1;
+					Client.field10953 = var36.g1() == 1;
+					Client.lobbyMembership = var36.g8();
+					Client.field1238 = Client.lobbyMembership - MonotonicTime.get() - var36.g5();
+					int var37 = var36.g1();
 					Client.playerIsMembers = (var37 & 0x1) != 0;
 					Client.field11709 = (var37 & 0x2) != 0;
-					Client.lobbyJCoinsBalance = in.g4s();
-					Client.lobbyLoyaltyBalance = in.g4s();
-					Client.lobbyRecoveryDay = in.g2();
-					Client.lobbyUnreadMessages = in.g2();
-					Client.lobbyLastLoginDay = in.g2();
-					Client.playerHostName = in.g4s();
+					Client.lobbyJCoinsBalance = var36.g4s();
+					Client.lobbyLoyaltyBalance = var36.g4s();
+					Client.lobbyRecoveryDay = var36.g2();
+					Client.lobbyUnreadMessages = var36.g2();
+					Client.lobbyLastLoginDay = var36.g2();
+					Client.playerHostName = var36.g4s();
 					Client.hostNameProvider = new HostNameProvider(Client.playerHostName);
 					(new Thread(Client.hostNameProvider)).start();
-					Client.lobbyEmailStatus = in.g1();
-					Client.lobbyCCExpiry = in.g2();
-					Client.lobbyGraceExpiry = in.g2();
-					Client.lobbyDOBRequested = in.g1() == 1;
-					Client.localPlayerEntity.nameUnfiltered = Client.localPlayerEntity.name = JagException.user = in.gjstr2();
-					Client.lobbyMembersStats = in.g1();
-					Client.lobbyPlayAge = in.g4s();
+					Client.lobbyEmailStatus = var36.g1();
+					Client.lobbyCCExpiry = var36.g2();
+					Client.lobbyGraceExpiry = var36.g2();
+					Client.lobbyDOBRequested = var36.g1() == 1;
+					Client.localPlayerEntity.nameUnfiltered = Client.localPlayerEntity.name = JagException.user = var36.gjstr2();
+					Client.lobbyMembersStats = var36.g1();
+					Client.lobbyPlayAge = var36.g4s();
 					WorldSwitcher.field9200 = new ServerAddress();
-					WorldSwitcher.field9200.node = in.g2();
+					WorldSwitcher.field9200.node = var36.g2();
 					if (WorldSwitcher.field9200.node == 65535) {
 						WorldSwitcher.field9200.node = -1;
 					}
-					WorldSwitcher.field9200.host = in.gjstr2();
-					WorldSwitcher.field9200.port = in.g2();
-					WorldSwitcher.field9200.port2 = in.g2();
-					if (Client.modewhere != ModeWhere.LOCAL && (Client.modewhere != ModeWhere.WTQA || Client.staffModLevel < 2) && WorldSwitcher.currentWorld.isAddressInUse(WorldSwitcher.world)) {
+					WorldSwitcher.field9200.host = var36.gjstr2();
+					WorldSwitcher.field9200.port = var36.g2();
+					WorldSwitcher.field9200.port2 = var36.g2();
+					if (ModeWhere.LOCAL != Client.modewhere && (ModeWhere.WTQA != Client.modewhere || Client.staffModLevel < 2) && WorldSwitcher.currentWorld.isAddressInUse(WorldSwitcher.world)) {
 						WorldSwitcher.method10337();
 					}
 				} else {
@@ -899,7 +915,7 @@ public class LoginManager {
 					} catch (Throwable var47) {
 					}
 				}
-				if (Client.modewhere == ModeWhere.LIVE) {
+				if (ModeWhere.LIVE == Client.modewhere) {
 					JavascriptFunction.field4024.method6090();
 				}
 				if (requestState != 211) {
@@ -920,16 +936,16 @@ public class LoginManager {
 				loginStep = 188;
 			}
 			if (loginStep == 188) {
-				PacketBit in = connection.in;
-				in.pos = 0;
-				if (in.isIsaac2()) {
+				PacketBit var41 = connection.in;
+				var41.pos = 0;
+				if (var41.isIsaac2()) {
 					if (!connection.getStream().hasAvailable(1)) {
 						return;
 					}
-					connection.getStream().read(in.data, 3, 1);
+					connection.getStream().read(var41.data, 3, 1);
 				}
-				connection.packetType = ServerProt.values()[in.gIsaac1or2()];
-				connection.packetSize = in.g2();
+				connection.packetType = ServerProt.values()[var41.gIsaac1or2()];
+				connection.packetSize = var41.g2();
 				loginStep = 160;
 			}
 			if (loginStep == 160) {
@@ -938,22 +954,22 @@ public class LoginManager {
 				}
 				connection.getStream().read(connection.in.data, 0, connection.packetSize);
 				connection.in.pos = 0;
-				int packetSize = connection.packetSize;
+				int var42 = connection.packetSize;
 				loginStep = 7;
 				setReply(2);
 				prepareForMap();
 				ReceivePlayerPositions.receivePlayerPositions(connection.in);
-				int offset = packetSize - connection.in.pos;
-				PacketBit in = new PacketBit(offset);
-				System.arraycopy(connection.in.data, connection.in.pos, in.data, 0, offset);
-				connection.in.pos += offset;
+				int var43 = var42 - connection.in.pos;
+				PacketBit var44 = new PacketBit(var43);
+				System.arraycopy(connection.in.data, connection.in.pos, var44.data, 0, var43);
+				connection.in.pos += var43;
 				if (ServerProt.REBUILD_REGION == connection.packetType) {
-					Client.world.rebuildMap(new RebuildRequest(RebuildType.REBUILD_REGION, in));
+					Client.world.rebuildMap(new RebuildRequest(RebuildType.REBUILD_REGION, var44));
 				} else {
-					Client.world.rebuildMap(new RebuildRequest(RebuildType.REBUILD_NORMAL, in));
+					Client.world.rebuildMap(new RebuildRequest(RebuildType.REBUILD_NORMAL, var44));
 				}
-				if (connection.in.pos != packetSize) {
-					throw new RuntimeException(connection.in.pos + " " + packetSize);
+				if (connection.in.pos != var42) {
+					throw new RuntimeException(connection.in.pos + " " + var42);
 				}
 				connection.packetType = null;
 				return;
@@ -972,18 +988,18 @@ public class LoginManager {
 				}
 				connection.getStream().read(connection.in.data, 0, connection.packetSize);
 				connection.in.pos = 0;
-				int packetSize = connection.packetSize;
+				int var45 = connection.packetSize;
 				loginStep = 7;
 				setReply(15);
 				prepareForPlayers();
 				ReceivePlayerPositions.receivePlayerPositions(connection.in);
-				if (connection.in.pos != packetSize) {
-					throw new RuntimeException(connection.in.pos + " " + packetSize);
+				if (connection.in.pos != var45) {
+					throw new RuntimeException(connection.in.pos + " " + var45);
 				}
 				connection.packetType = null;
 				return;
 			}
-		} catch (IOException ioException) {
+		} catch (IOException var50) {
 			connection.closeGracefully();
 			if (loginAttempts < 3) {
 				if (requestState == 211) {
@@ -1003,16 +1019,16 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("kl.b(Lase;I)V")
-	public static void getAuthPreferences(PacketBit buf) {
-		boolean var1 = buf.g1() == 1;
+	public static void getAuthPreferences(PacketBit arg0) {
+		boolean var1 = arg0.g1() == 1;
 		if (!var1) {
 			return;
 		}
 		boolean var2 = false;
-		int var3 = buf.gIsaac1() << 24;
-		int var4 = var3 | buf.gIsaac1() << 16;
-		int var5 = var4 | buf.gIsaac1() << 8;
-		int var6 = var5 | buf.gIsaac1();
+		int var3 = arg0.gIsaac1() << 24;
+		int var4 = var3 | arg0.gIsaac1() << 16;
+		int var5 = var4 | arg0.gIsaac1() << 8;
+		int var6 = var5 | arg0.gIsaac1();
 		Client.authPreferences.method590(authKey, var6);
 	}
 
@@ -1022,86 +1038,86 @@ public class LoginManager {
 
 	@ObfuscatedName("iq.a(B)Lalw;")
 	public static Packet startRSAPAcket() {
-		Packet buf = new Packet(518);
+		Packet var0 = new Packet(518);
 		outKey = new int[4];
 		outKey[0] = Client.secureRandom.nextInt();
 		outKey[1] = Client.secureRandom.nextInt();
 		outKey[2] = Client.secureRandom.nextInt();
 		outKey[3] = Client.secureRandom.nextInt();
-		buf.p1(10);
-		buf.p4(outKey[0]);
-		buf.p4(outKey[1]);
-		buf.p4(outKey[2]);
-		buf.p4(outKey[3]);
-		buf.p8(field434);
+		var0.p1(10);
+		var0.p4(outKey[0]);
+		var0.p4(outKey[1]);
+		var0.p4(outKey[2]);
+		var0.p4(outKey[3]);
+		var0.p8(field434);
 		if (Client.state == 14) {
-			buf.p4(outKey2[0]);
-			buf.p4(outKey2[1]);
-			buf.p4(outKey2[2]);
-			buf.p4(outKey2[3]);
+			var0.p4(outKey2[0]);
+			var0.p4(outKey2[1]);
+			var0.p4(outKey2[2]);
+			var0.p4(outKey2[3]);
 		}
 		outKey2 = outKey;
-		return buf;
+		return var0;
 	}
 
 	@ObfuscatedName("zl.g(Lalw;J)V")
-	public static void packLoginTOTPDetails(Packet buf, long key) {
-		TotpType totpType;
+	public static void packLoginTOTPDetails(Packet arg0, long arg1) {
+		TotpType var3;
 		if (newAuthPreference != null && newAuthPreference.length() == 6) {
 			if (authDontTrust) {
-				totpType = TotpType.AUTH_DONT_TRUST;
+				var3 = TotpType.AUTH_DONT_TRUST;
 			} else {
-				totpType = TotpType.AUTH_TRUST;
+				var3 = TotpType.AUTH_TRUST;
 			}
-		} else if (Client.authPreferences.containsKey(key)) {
-			totpType = TotpType.AUTH_FOUND;
+		} else if (Client.authPreferences.containsKey(arg1)) {
+			var3 = TotpType.AUTH_FOUND;
 		} else {
-			totpType = TotpType.AUTH_NOT_FOUND;
+			var3 = TotpType.AUTH_NOT_FOUND;
 		}
-		buf.p1(totpType.getId());
-		switch(totpType.index) {
+		arg0.p1(var3.getId());
+		switch(var3.index) {
 			case 0:
-				buf.p4(Client.authPreferences.getValue(key));
+				arg0.p4(Client.authPreferences.getValue(arg1));
 				break;
 			case 1:
 			case 3:
-				buf.p3(Integer.parseInt(newAuthPreference));
-				buf.pos++;
+				arg0.p3(Integer.parseInt(newAuthPreference));
+				arg0.pos++;
 				break;
 			case 2:
-				buf.pos += 4;
+				arg0.pos += 4;
 		}
 	}
 
 	@ObfuscatedName("ap.i(B)Lalw;")
 	public static Packet createLoginRSAPacket() {
-		Packet buf = startRSAPAcket();
+		Packet var0 = startRSAPAcket();
 		if (Client.state != 14) {
-			long authKey;
+			long var1;
 			if (ssoKey != -1) {
-				authKey = ssoKey;
+				var1 = ssoKey;
 			} else if (socialKey == -1L) {
-				authKey = StringTools.method15380(username);
+				var1 = StringTools.method15380(username);
 			} else {
-				authKey = socialKey;
+				var1 = socialKey;
 			}
-			LoginManager.authKey = authKey;
-			packLoginTOTPDetails(buf, authKey);
-			buf.pbool(false);
-			buf.pjstr(password);
-			buf.p8(socialname);
-			buf.p8(Client.field10810);
+			authKey = var1;
+			packLoginTOTPDetails(var0, var1);
+			var0.pbool(false);
+			var0.pjstr(password);
+			var0.p8(socialname);
+			var0.p8(Client.field10810);
 		}
-		buf.rsaenc(PublicKeys.LOGIN_RSAE, PublicKeys.LOGIN_RSAN);
-		return buf;
+		var0.rsaenc(PublicKeys.LOGIN_RSAE, PublicKeys.LOGIN_RSAN);
+		return var0;
 	}
 
 	@ObfuscatedName("ag.j(II)V")
-	public static void setReply(int reply) {
+	public static void setReply(int arg0) {
 		if (requestState == 132) {
-			enterLobbyReply = reply;
+			enterLobbyReply = arg0;
 		} else if (requestState == 211) {
-			enterGameReply = reply;
+			enterGameReply = arg0;
 		}
 	}
 
@@ -1121,16 +1137,16 @@ public class LoginManager {
 	}
 
 	@ObfuscatedName("aab.ae(Lase;I)V")
-	public static void pushJS5CRCs(PacketBit buf) {
-		Js5Archive[] archives = Js5Archive.values();
-		for (int index = 0; index < archives.length; index++) {
-			Js5Archive archive = archives[index];
-			if (Js5Archive.LOADING_SPRITES != archive) {
-				Js5 js5 = (Js5) Client.js5Archives.get(archive);
-				if (js5 == null) {
-					buf.p4(0);
+	public static void pushJS5CRCs(PacketBit arg0) {
+		Js5Archive[] var1 = Js5Archive.values();
+		for (int var2 = 0; var2 < var1.length; var2++) {
+			Js5Archive var3 = var1[var2];
+			if (Js5Archive.LOADING_SPRITES != var3) {
+				Js5 var4 = (Js5) Client.js5Archives.get(var3);
+				if (var4 == null) {
+					arg0.p4(0);
 				} else {
-					buf.p4(js5.getChecksum());
+					arg0.p4(var4.getChecksum());
 				}
 			}
 		}

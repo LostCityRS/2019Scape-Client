@@ -4,14 +4,14 @@ import com.jagex.game.client.NativeLibraries;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
-import com.jagex.graphics.*;
 import com.jagex.graphics.GpuToolkit;
+import com.jagex.graphics.MaterialList;
+import com.jagex.graphics.TextureList;
 import com.jagex.graphics.Toolkit;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
-
-import java.awt.*;
+import java.awt.Canvas;
 
 @ObfuscatedName("ra")
 public class GlxRendererFactory {
@@ -34,11 +34,9 @@ public class GlxRendererFactory {
 			GlxToolkit var11 = new GlxToolkit(var8, arg0, var9, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
 			var11.init();
 			return var11;
-		} catch (RuntimeException ex) {
-			ex.printStackTrace();
-			throw ex;
-		} catch (Throwable ex) {
-			ex.printStackTrace();
+		} catch (RuntimeException var14) {
+			throw var14;
+		} catch (Throwable var15) {
 			throw new RuntimeException("");
 		}
 	}

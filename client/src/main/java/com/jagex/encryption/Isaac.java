@@ -1,10 +1,9 @@
 package com.jagex.encryption;
 
 import deob.ObfuscatedName;
-import rs2.client.Client;
 
 @ObfuscatedName("aav")
-public final class Isaac {
+public class Isaac {
 
 	@ObfuscatedName("aav.k")
 	public int count;
@@ -25,7 +24,9 @@ public final class Isaac {
 	public int c;
 
 	public Isaac(int[] arg0) {
-        System.arraycopy(arg0, 0, this.rsl, 0, arg0.length);
+		for (int var2 = 0; var2 < arg0.length; var2++) {
+			this.rsl[var2] = arg0[var2];
+		}
 		this.init();
 	}
 
@@ -35,12 +36,7 @@ public final class Isaac {
 			this.isaac();
 			this.count = 256;
 		}
-
-		if (Client.ENABLE_ISAAC) {
-			return this.rsl[--this.count];
-		} else {
-			return 0;
-		}
+		return this.rsl[--this.count];
 	}
 
 	@ObfuscatedName("aav.n(I)I")
@@ -49,12 +45,7 @@ public final class Isaac {
 			this.isaac();
 			this.count = 256;
 		}
-
-		if (Client.ENABLE_ISAAC) {
-			return this.rsl[this.count - 1];
-		} else {
-			return 0;
-		}
+		return this.rsl[this.count - 1];
 	}
 
 	@ObfuscatedName("aav.m(I)V")

@@ -20,7 +20,7 @@ public class LoadingScreenRelated1 extends LoadingScreenProgressDisplayConfig {
 
 	@ObfuscatedName("ku.k(Lalw;I)Lkp;")
 	public static LoadingScreenProgressDisplayConfig method5148(Packet arg0) {
-		LoadingScreenProgressDisplayConfig var1 = method18899(arg0);
+		LoadingScreenProgressDisplayConfig var1 = LoadingScreenProgressDisplayConfig.method18899(arg0);
 		int var2 = arg0.g4s();
 		int var3 = arg0.g4s();
 		int var4 = arg0.gSmart2or4s();

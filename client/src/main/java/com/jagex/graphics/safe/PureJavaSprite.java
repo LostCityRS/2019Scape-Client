@@ -1,8 +1,8 @@
 package com.jagex.graphics.safe;
 
 import com.jagex.game.client.JavaGraphicsRelated3;
-import com.jagex.graphics.SpriteRelated;
 import com.jagex.graphics.Sprite;
+import com.jagex.graphics.SpriteRelated;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ael")
@@ -335,5 +335,5 @@ public abstract class PureJavaSprite extends Sprite {
 	public abstract void drawAsBillboard(boolean arg0, boolean arg1, boolean arg2, int arg3, int arg4, float arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, boolean arg12);
 
 	@ObfuscatedName("ael.r(IIIII)V")
-	public abstract void drawSprite(int x, int y, int arg2, int rgb, int arg4);
+	public abstract void drawSprite(int arg0, int arg1, int arg2, int arg3, int arg4);
 }

@@ -3,7 +3,7 @@ package com.jagex.core.datastruct;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("nl")
-public final class SortedQueueEntry {
+public class SortedQueueEntry {
 
 	@ObfuscatedName("nl.e")
 	public final Object value;

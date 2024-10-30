@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amh")
 public class PreferencesSceneryShadows extends Preference {
 
-	public PreferencesSceneryShadows(ClientOptions options) {
-		super(options);
+	public PreferencesSceneryShadows(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesSceneryShadows(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesSceneryShadows(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("amh.o(S)V")
@@ -35,13 +35,13 @@ public class PreferencesSceneryShadows extends Preference {
 	}
 
 	@ObfuscatedName("amh.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return this.options.textures.getValue() == 0 ? 3 : 1;
 	}
 
 	@ObfuscatedName("amh.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amh.y(S)I")

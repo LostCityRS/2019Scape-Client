@@ -38,7 +38,7 @@ public class CompassPoint implements SerializableEnum {
 
 	@ObfuscatedName("vj.e(I)[Lzi;")
 	public static CompassPoint[] values() {
-		return new CompassPoint[] {NORTHWEST, SOUTH, NORTHEAST, NORTH, SOUTHEAST, EAST, SOUTHWEST, WEST};
+		return new CompassPoint[] { NORTHWEST, SOUTH, NORTHEAST, NORTH, SOUTHEAST, EAST, SOUTHWEST, WEST };
 	}
 
 	public CompassPoint(int arg0, int arg1) {

@@ -1,6 +1,14 @@
 package com.jagex.graphics.gl;
 
-import com.jagex.graphics.gl.effects.*;
+import com.jagex.graphics.gl.effects.GlEffect;
+import com.jagex.graphics.gl.effects.GlEnvironmentMapEffect;
+import com.jagex.graphics.gl.effects.GlHDWaterEffect;
+import com.jagex.graphics.gl.effects.GlHDWaterWaveEffect;
+import com.jagex.graphics.gl.effects.GlLakeWaterEffect;
+import com.jagex.graphics.gl.effects.GlLightAbsorbEffect;
+import com.jagex.graphics.gl.effects.GlReflectionEffect;
+import com.jagex.graphics.gl.effects.GlUnderwaterEffect;
+import com.jagex.graphics.gl.effects.GlWaterEffect;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("bw")

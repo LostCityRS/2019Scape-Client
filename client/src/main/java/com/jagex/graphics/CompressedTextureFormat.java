@@ -170,12 +170,12 @@ public class CompressedTextureFormat implements SerializableEnum {
 
 	@ObfuscatedName("bg.e(I)[Lbg;")
 	public static CompressedTextureFormat[] values() {
-		return new CompressedTextureFormat[] {COMPRESSED_RGB_S3TC_DXT1_EXT, COMPRESSED_RGBA_S3TC_DXT1_EXT, COMPRESSED_RGBA_S3TC_DXT3_EXT, COMPRESSED_RGBA_S3TC_DXT5_EXT, PALETTE4_RGB8_OES, PALETTE4_RGBA8_OES, PALETTE4_R5_G6_B5_OES, PALETTE4_RGBA4_OES, PALETTE4_RGB5_A1_OES, field1064, field1067, field1066, field1107, field1068, field1069, field1070, field1080, field1072, field1073, field1104, field1105, field1076, field1078, field1075, field1079, field1101, field1081, field1082, field1083, field1091, field1065, field1086, field1087, field1088, field1077, field1071, field1090, field1092, field1097, field1084, field1095, field1096, field1094, field1098, field1055, field1100, field1063, field1102, field1103, field1099, field1089, field1106 };
+		return new CompressedTextureFormat[] { COMPRESSED_RGB_S3TC_DXT1_EXT, COMPRESSED_RGBA_S3TC_DXT1_EXT, COMPRESSED_RGBA_S3TC_DXT3_EXT, COMPRESSED_RGBA_S3TC_DXT5_EXT, PALETTE4_RGB8_OES, PALETTE4_RGBA8_OES, PALETTE4_R5_G6_B5_OES, PALETTE4_RGBA4_OES, PALETTE4_RGB5_A1_OES, field1064, field1067, field1066, field1107, field1068, field1069, field1070, field1080, field1072, field1073, field1104, field1105, field1076, field1078, field1075, field1079, field1101, field1081, field1082, field1083, field1091, field1065, field1086, field1087, field1088, field1077, field1071, field1090, field1092, field1097, field1084, field1095, field1096, field1094, field1098, field1055, field1100, field1063, field1102, field1103, field1099, field1089, field1106 };
 	}
 
-	public CompressedTextureFormat(int index, String arg1, int code) {
-		this.index = index;
-		this.code = code;
+	public CompressedTextureFormat(int arg0, String arg1, int arg2) {
+		this.index = arg0;
+		this.code = arg2;
 	}
 
 	@ObfuscatedName("bg.n()I")

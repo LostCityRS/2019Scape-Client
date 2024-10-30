@@ -48,9 +48,9 @@ public class LoginProt {
 	public static final LoginProt[] BY_ID = new LoginProt[32];
 
 	static {
-		LoginProt[] all = values();
-		for (int i = 0; i < all.length; i++) {
-			BY_ID[all[i].id] = all[i];
+		LoginProt[] var0 = values();
+		for (int var1 = 0; var1 < var0.length; var1++) {
+			BY_ID[var0[var1].id] = var0[var1];
 		}
 	}
 
@@ -59,7 +59,7 @@ public class LoginProt {
 		return new LoginProt[] { SSL_WEBCONNECTION, INIT_DEBUG_CONNECTION, INIT_JS5REMOTE_CONNECTION, LOBBYLOGIN, SOCIAL_NETWORK_LOGIN, CHECK_WORLD_SUITABILITY, INIT_SOCIAL_NETWORK_CONNECTION, GAMELOGIN_CONTINUE, REQUEST_WORLDLIST, CREATE_ACCOUNT_CONNECT, GAMELOGIN, INIT_GAME_CONNECTION };
 	}
 
-	public LoginProt(int id, int size) {
-		this.id = id;
+	public LoginProt(int arg0, int arg1) {
+		this.id = arg0;
 	}
 }

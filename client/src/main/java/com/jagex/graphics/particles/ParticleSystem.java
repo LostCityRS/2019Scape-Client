@@ -6,7 +6,6 @@ import com.jagex.graphics.ModelParticleEffector;
 import com.jagex.graphics.ModelParticleEmitter;
 import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;

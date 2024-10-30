@@ -33,34 +33,34 @@ public class ClientMessage extends Node {
 	}
 
 	@ObfuscatedName("cj.n(Lnr;Laav;B)Lakl;")
-	public static ClientMessage createMessage(ClientProt prot, Isaac isaac) {
-		ClientMessage message = popMessage();
-		message.prot = prot;
-		message.size = prot.size;
-		if (message.size == -1) {
-			message.buf = new PacketBit(260);
-		} else if (message.size == -2) {
-			message.buf = new PacketBit(10000);
-		} else if (message.size <= 18) {
-			message.buf = new PacketBit(20);
-		} else if (message.size <= 98) {
-			message.buf = new PacketBit(100);
+	public static ClientMessage createMessage(ClientProt arg0, Isaac arg1) {
+		ClientMessage var2 = popMessage();
+		var2.prot = arg0;
+		var2.size = arg0.size;
+		if (var2.size == -1) {
+			var2.buf = new PacketBit(260);
+		} else if (var2.size == -2) {
+			var2.buf = new PacketBit(10000);
+		} else if (var2.size <= 18) {
+			var2.buf = new PacketBit(20);
+		} else if (var2.size <= 98) {
+			var2.buf = new PacketBit(100);
 		} else {
-			message.buf = new PacketBit(260);
+			var2.buf = new PacketBit(260);
 		}
-		message.buf.setIsaac(isaac);
-		message.buf.pIsaac1(message.prot.id);
-		message.pos = 0;
-		return message;
+		var2.buf.setIsaac(arg1);
+		var2.buf.pIsaac1(var2.prot.id);
+		var2.pos = 0;
+		return var2;
 	}
 
 	@ObfuscatedName("zw.m(B)Lakl;")
 	public static ClientMessage createMessage() {
-		ClientMessage message = popMessage();
-		message.prot = null;
-		message.size = 0;
-		message.buf = new PacketBit(5000);
-		return message;
+		ClientMessage var0 = popMessage();
+		var0.prot = null;
+		var0.size = 0;
+		var0.buf = new PacketBit(5000);
+		return var0;
 	}
 
 	@ObfuscatedName("akl.k(I)V")

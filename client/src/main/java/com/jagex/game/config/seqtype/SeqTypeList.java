@@ -34,9 +34,9 @@ public class SeqTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aos.v(II)V")
-	public void cacheClean(int num) {
-		super.cacheClean(num);
-		((SeqTypeFactory) this.factory).cacheClean(num);
+	public void cacheClean(int arg0) {
+		super.cacheClean(arg0);
+		((SeqTypeFactory) this.factory).cacheClean(arg0);
 	}
 
 	@ObfuscatedName("aos.o(I)V")

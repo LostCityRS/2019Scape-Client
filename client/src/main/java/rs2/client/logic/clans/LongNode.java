@@ -9,7 +9,7 @@ public class LongNode extends Node {
 	@ObfuscatedName("aka.k")
 	public long value;
 
-	public LongNode(long value) {
-		this.value = value;
+	public LongNode(long arg0) {
+		this.value = arg0;
 	}
 }

@@ -5,7 +5,12 @@ import com.jagex.game.client.HardShadow;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.cutscene.CutsceneManager;
-import com.jagex.graphics.*;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.FloorModel;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelParticleEffector;
+import com.jagex.graphics.ModelParticleEmitter;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.particles.ParticleSystem;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.Matrix4x3;
@@ -76,17 +81,17 @@ public class DynamicLoc {
 	@ObfuscatedName("sp.b")
 	public LocTypeCustomisation field6678;
 
-	public DynamicLoc(Toolkit toolkit, LocTypeList locTypeList, LocType locType, int shape, int angle, int occludeLevel, GraphEntity entity, boolean underwater, int arg8, int arg9) {
-		this.locTypeList = locTypeList;
-		this.id = locType.id;
-		this.shape = shape;
-		this.angle = angle;
-		this.entity = entity;
+	public DynamicLoc(Toolkit arg0, LocTypeList arg1, LocType arg2, int arg3, int arg4, int arg5, GraphEntity arg6, boolean arg7, int arg8, int arg9) {
+		this.locTypeList = arg1;
+		this.id = arg2.id;
+		this.shape = arg3;
+		this.angle = arg4;
+		this.entity = arg6;
 		this.field6675 = arg8 != -1;
-		this.occludeLevel = (byte) occludeLevel;
-		this.underwater = underwater;
-		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.underwater;
-		this.field6664 = new EntityAnimationNode(entity, false);
+		this.occludeLevel = (byte) arg5;
+		this.underwater = arg7;
+		this.hasHardShadow = arg0.supportsHardShadows() && arg2.hardshadow && !this.underwater;
+		this.field6664 = new EntityAnimationNode(arg6, false);
 		this.method8244(false, arg8, 1, this.field6675 ? arg9 : 0);
 	}
 

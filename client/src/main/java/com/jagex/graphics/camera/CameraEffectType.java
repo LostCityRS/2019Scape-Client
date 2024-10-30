@@ -14,18 +14,18 @@ public class CameraEffectType {
 	@ObfuscatedName("ie.m")
 	public final int index;
 
-	public CameraEffectType(int index) {
-		this.index = index;
+	public CameraEffectType(int arg0) {
+		this.index = arg0;
 	}
 
-    @ObfuscatedName("jp.e(IB)Lie;")
-    public static CameraEffectType of(int index) {
-        if (SHAKE.index == index) {
-            return SHAKE;
-        } else if (ZTILT.index == index) {
-            return ZTILT;
-        } else {
-            return null;
-        }
-    }
+	@ObfuscatedName("jp.e(IB)Lie;")
+	public static CameraEffectType of(int arg0) {
+		if (SHAKE.index == arg0) {
+			return SHAKE;
+		} else if (ZTILT.index == arg0) {
+			return ZTILT;
+		} else {
+			return null;
+		}
+	}
 }

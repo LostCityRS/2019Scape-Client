@@ -1,5 +1,6 @@
 package com.jagex.game.config.skyboxtype;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.MutableConfig;
@@ -15,10 +16,10 @@ import deob.ObfuscatedName;
 public class SkyBoxType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("uv.e")
-	public int field7233 = 0;
+	public int field7233 = -1895173889 * 887812353;
 
 	@ObfuscatedName("uv.n")
-	public int field7234 = 0;
+	public int field7234 = 1308423683 * 430971733;
 
 	@ObfuscatedName("uv.m")
 	public int[] field7232;
@@ -27,16 +28,16 @@ public class SkyBoxType implements ConfigType, MutableConfig {
 	public SkyBoxFillMode field7235 = SkyBoxFillMode.field7239;
 
 	@ObfuscatedName("uv.f")
-	public int field7236 = 0;
+	public int field7236 = 670946389 * -871926013;
 
 	@ObfuscatedName("uv.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int var2 = buf.g1();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method9176(buf, var2);
+			this.method9176(arg0, var2);
 		}
 	}
 
@@ -52,7 +53,7 @@ public class SkyBoxType implements ConfigType, MutableConfig {
 		} else if (arg1 == 3) {
 			this.field7234 = arg0.g1();
 		} else if (arg1 == 4) {
-			this.field7235 = (SkyBoxFillMode) SerializableEnums.decode(SkyBoxFillMode.method8341(), arg0.g1());
+			this.field7235 = (SkyBoxFillMode) SerializableEnums.decode((SerializableEnum[]) SkyBoxFillMode.method8341(), arg0.g1());
 		} else if (arg1 == 5) {
 			this.field7236 = arg0.gSmart2or4s();
 		} else if (arg1 == 6) {

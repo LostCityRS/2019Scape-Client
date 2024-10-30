@@ -52,7 +52,7 @@ public class ZoneProt {
 
 	@ObfuscatedName("kh.e(I)[Lnk;")
 	public static ZoneProt[] values() {
-		return new ZoneProt[] {LOC_PREFETCH, MAP_ANIM, TEXT_COORD, OBJ_COUNT, LOC_ANIM, LOC_DEL, field3618, MAP_PROJANIM, OBJ_REVEAL, OBJ_DEL, LOC_ADD_CHANGE, LOC_CUSTOMISE, MAP_PROJANIM_HALFSQ, OBJ_ADD, SOUND_AREA};
+		return new ZoneProt[] { LOC_PREFETCH, MAP_ANIM, TEXT_COORD, OBJ_COUNT, LOC_ANIM, LOC_DEL, field3618, MAP_PROJANIM, OBJ_REVEAL, OBJ_DEL, LOC_ADD_CHANGE, LOC_CUSTOMISE, MAP_PROJANIM_HALFSQ, OBJ_ADD, SOUND_AREA };
 	}
 
 	public ZoneProt(int arg0) {

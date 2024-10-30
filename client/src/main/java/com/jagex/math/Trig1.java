@@ -13,9 +13,9 @@ public class Trig1 {
 
 	static {
 		double var0 = 3.834951969714103E-4D;
-		for (int i = 0; i < 16384; i++) {
-			sin[i] = (int) (Math.sin((double) i * var0) * 16384.0D);
-			cos[i] = (int) (Math.cos((double) i * var0) * 16384.0D);
+		for (int var2 = 0; var2 < 16384; var2++) {
+			sin[var2] = (int) (Math.sin((double) var2 * var0) * 16384.0D);
+			cos[var2] = (int) (Math.cos((double) var2 * var0) * 16384.0D);
 		}
 	}
 

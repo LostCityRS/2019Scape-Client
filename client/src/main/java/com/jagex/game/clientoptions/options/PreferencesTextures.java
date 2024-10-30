@@ -7,12 +7,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amn")
 public class PreferencesTextures extends Preference {
 
-	public PreferencesTextures(ClientOptions options) {
-		super(options);
+	public PreferencesTextures(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesTextures(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesTextures(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("amn.o(B)V")
@@ -40,17 +40,17 @@ public class PreferencesTextures extends Preference {
 	}
 
 	@ObfuscatedName("amn.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		if (this.options.modeGame() == ModeGame.RUNESCAPE) {
-			return value == 0 || this.options.groundBlending.getValue() == 1 ? 1 : 2;
+			return arg0 == 0 || this.options.groundBlending.getValue() == 1 ? 1 : 2;
 		} else {
 			return 3;
 		}
 	}
 
 	@ObfuscatedName("amn.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amn.y(I)I")

@@ -1,7 +1,6 @@
 package com.jagex.core.datastruct;
 
 import deob.ObfuscatedName;
-
 import java.util.Collection;
 import java.util.Iterator;
 
@@ -27,55 +26,55 @@ public class LinkList implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.n(Ltj;I)V")
-	public void addTail(Node node) {
-		if (node.prev != null) {
-			node.unlink();
+	public void addTail(Node arg0) {
+		if (arg0.prev != null) {
+			arg0.unlink();
 		}
-		node.prev = this.sentinel.prev;
-		node.next = this.sentinel;
-		node.prev.next = node;
-		node.next.prev = node;
+		arg0.prev = this.sentinel.prev;
+		arg0.next = this.sentinel;
+		arg0.prev.next = arg0;
+		arg0.next.prev = arg0;
 	}
 
 	@ObfuscatedName("aq.m(Ltj;Ltj;B)V")
-	public static void addTail(Node node, Node head) {
-		if (node.prev != null) {
-			node.unlink();
+	public static void addTail(Node arg0, Node arg1) {
+		if (arg0.prev != null) {
+			arg0.unlink();
 		}
-		node.prev = head.prev;
-		node.next = head;
-		node.prev.next = node;
-		node.next.prev = node;
+		arg0.prev = arg1.prev;
+		arg0.next = arg1;
+		arg0.prev.next = arg0;
+		arg0.next.prev = arg0;
 	}
 
 	@ObfuscatedName("aat.k(I)Ltj;")
 	public Node removeHead() {
-		Node node = this.sentinel.next;
-		if (this.sentinel == node) {
+		Node var1 = this.sentinel.next;
+		if (this.sentinel == var1) {
 			return null;
 		} else {
-			node.unlink();
-			return node;
+			var1.unlink();
+			return var1;
 		}
 	}
 
 	@ObfuscatedName("aat.f(Laat;Ltj;I)V")
-	public void moveToFront(LinkList queue, Node nextNode) {
-		Node node = this.sentinel.prev;
-		this.sentinel.prev = nextNode.prev;
-		nextNode.prev.next = this.sentinel;
-		if (this.sentinel != nextNode) {
-			nextNode.prev = queue.sentinel.prev;
-			nextNode.prev.next = nextNode;
-			node.next = queue.sentinel;
-			queue.sentinel.prev = node;
+	public void moveToFront(LinkList arg0, Node arg1) {
+		Node var3 = this.sentinel.prev;
+		this.sentinel.prev = arg1.prev;
+		arg1.prev.next = this.sentinel;
+		if (this.sentinel != arg1) {
+			arg1.prev = arg0.sentinel.prev;
+			arg1.prev.next = arg1;
+			var3.next = arg0.sentinel;
+			arg0.sentinel.prev = var3;
 		}
 	}
 
 	@ObfuscatedName("aat.w(Laat;I)V")
-	public void merge(LinkList other) {
+	public void merge(LinkList arg0) {
 		if (this.sentinel.next != this.sentinel) {
-			this.moveToFront(other, this.sentinel.next);
+			this.moveToFront(arg0, this.sentinel.next);
 		}
 	}
 
@@ -85,19 +84,19 @@ public class LinkList implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.u(Ltj;B)Ltj;")
-	public Node head(Node node) {
-		Node it;
-		if (node == null) {
-			it = this.sentinel.next;
+	public Node head(Node arg0) {
+		Node var2;
+		if (arg0 == null) {
+			var2 = this.sentinel.next;
 		} else {
-			it = node;
+			var2 = arg0;
 		}
-		if (this.sentinel == it) {
+		if (this.sentinel == var2) {
 			this.cursor = null;
 			return null;
 		} else {
-			this.cursor = it.next;
-			return it;
+			this.cursor = var2.next;
+			return var2;
 		}
 	}
 
@@ -107,53 +106,53 @@ public class LinkList implements Iterable, Collection {
 	}
 
 	@ObfuscatedName("aat.r(Ltj;I)Ltj;")
-	public Node tail(Node node) {
-		Node it;
-		if (node == null) {
-			it = this.sentinel.prev;
+	public Node tail(Node arg0) {
+		Node var2;
+		if (arg0 == null) {
+			var2 = this.sentinel.prev;
 		} else {
-			it = node;
+			var2 = arg0;
 		}
-		if (this.sentinel == it) {
+		if (this.sentinel == var2) {
 			this.cursor = null;
 			return null;
 		} else {
-			this.cursor = it.prev;
-			return it;
+			this.cursor = var2.prev;
+			return var2;
 		}
 	}
 
 	@ObfuscatedName("aat.v(I)Ltj;")
 	public Node next() {
-		Node node = this.cursor;
-		if (this.sentinel == node) {
+		Node var1 = this.cursor;
+		if (this.sentinel == var1) {
 			this.cursor = null;
 			return null;
 		} else {
-			this.cursor = node.next;
-			return node;
+			this.cursor = var1.next;
+			return var1;
 		}
 	}
 
 	@ObfuscatedName("aat.o(I)Ltj;")
 	public Node prev() {
-		Node node = this.cursor;
-		if (this.sentinel == node) {
+		Node var1 = this.cursor;
+		if (this.sentinel == var1) {
 			this.cursor = null;
 			return null;
 		} else {
-			this.cursor = node.prev;
-			return node;
+			this.cursor = var1.prev;
+			return var1;
 		}
 	}
 
 	@ObfuscatedName("aat.s(I)I")
 	public int _size() {
-		int size = 0;
-		for (Node node = this.sentinel.next; node != this.sentinel; node = node.next) {
-			size++;
+		int var1 = 0;
+		for (Node var2 = this.sentinel.next; var2 != this.sentinel; var2 = var2.next) {
+			var1++;
 		}
-		return size;
+		return var1;
 	}
 
 	@ObfuscatedName("aat.y(I)Z")
@@ -163,12 +162,12 @@ public class LinkList implements Iterable, Collection {
 
 	@ObfuscatedName("aat.q(I)[Ltj;")
 	public Node[] getNodes() {
-		Node[] list = new Node[this._size()];
-		int size = 0;
-		for (Node node = this.sentinel.next; node != this.sentinel; node = node.next) {
-			list[size++] = node;
+		Node[] var1 = new Node[this._size()];
+		int var2 = 0;
+		for (Node var3 = this.sentinel.next; var3 != this.sentinel; var3 = var3.next) {
+			var1[var2++] = var3;
 		}
-		return list;
+		return var1;
 	}
 
 	public Iterator iterator() {
@@ -183,7 +182,7 @@ public class LinkList implements Iterable, Collection {
 		return this._isEmpty();
 	}
 
-	public boolean contains(Object o) {
+	public boolean contains(Object arg0) {
 		throw new RuntimeException();
 	}
 
@@ -191,37 +190,37 @@ public class LinkList implements Iterable, Collection {
 		return this.getNodes();
 	}
 
-	public Object[] toArray(Object[] dest) {
-		int size = 0;
-		for (Node node = this.sentinel.next; node != this.sentinel; node = node.next) {
-			dest[size++] = node;
+	public Object[] toArray(Object[] arg0) {
+		int var2 = 0;
+		for (Node var3 = this.sentinel.next; var3 != this.sentinel; var3 = var3.next) {
+			arg0[var2++] = var3;
 		}
-		return dest;
+		return arg0;
 	}
 
 	@ObfuscatedName("aat.x(Ltj;I)Z")
-	public boolean _add(Node node) {
-		this.addTail(node);
+	public boolean _add(Node arg0) {
+		this.addTail(arg0);
 		return true;
 	}
 
-	public boolean remove(Object o) {
+	public boolean remove(Object arg0) {
 		throw new RuntimeException();
 	}
 
-	public boolean containsAll(Collection c) {
+	public boolean containsAll(Collection arg0) {
 		throw new RuntimeException();
 	}
 
-	public boolean addAll(Collection c) {
+	public boolean addAll(Collection arg0) {
 		throw new RuntimeException();
 	}
 
-	public boolean removeAll(Collection c) {
+	public boolean removeAll(Collection arg0) {
 		throw new RuntimeException();
 	}
 
-	public boolean retainAll(Collection c) {
+	public boolean retainAll(Collection arg0) {
 		throw new RuntimeException();
 	}
 
@@ -229,12 +228,12 @@ public class LinkList implements Iterable, Collection {
 		this.removeAll();
 	}
 
-	public boolean add(Object node) {
-		return this._add((Node) node);
+	public boolean add(Object arg0) {
+		return this._add((Node) arg0);
 	}
 
-	public boolean equals(Object list) {
-		return super.equals(list);
+	public boolean equals(Object arg0) {
+		return super.equals(arg0);
 	}
 
 	public int hashCode() {

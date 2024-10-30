@@ -57,7 +57,7 @@ public class GlTexture_Sub1 extends GlTexture {
 		}
 		this.field1006.method15777(this);
 		if (this.field1009 != 34037 && arg4 && arg6 == 0 && arg7 == 0) {
-			method1109(this.field1009, GlToolkit.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 32993, this.field1006.field9862, arg5);
+			GlTexture.method1109(this.field1009, GlToolkit.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 32993, this.field1006.field9862, arg5);
 			this.method1118(true);
 		} else {
 			OpenGL.glPixelStorei(3314, arg6);
@@ -86,7 +86,7 @@ public class GlTexture_Sub1 extends GlTexture {
 		this.field1006.method15777(this);
 		OpenGL.glPixelStorei(3317, 1);
 		if (arg6 && this.field1009 != 34037) {
-			method1107(arg1, GlToolkit.method15799(this.field1002, this.field1010), arg4, arg5, arg8, arg7);
+			GlTexture.method1107(arg1, GlToolkit.method15799(this.field1002, this.field1010), arg4, arg5, arg8, arg7);
 			this.method1118(true);
 		} else {
 			OpenGL.glTexImage2Dub(this.field1009, 0, GlToolkit.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 0, GlToolkit.method15899(arg8), 5121, arg7, 0);
@@ -102,7 +102,7 @@ public class GlTexture_Sub1 extends GlTexture {
 		this.field9271 = arg5;
 		this.field1006.method15777(this);
 		if (arg6 && this.field1009 != 34037) {
-			method1091(arg1, GlToolkit.method15799(this.field1002, this.field1010), arg4, arg5, arg8, arg7);
+			GlTexture.method1091(arg1, GlToolkit.method15799(this.field1002, this.field1010), arg4, arg5, arg8, arg7);
 			this.method1118(true);
 		} else {
 			OpenGL.glTexImage2Df(this.field1009, 0, GlToolkit.method15799(this.field1002, this.field1010), this.field9272, this.field9271, 0, GlToolkit.method15899(arg8), 5126, arg7, 0);

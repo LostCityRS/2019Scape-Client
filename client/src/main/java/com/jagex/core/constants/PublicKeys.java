@@ -1,7 +1,6 @@
 package com.jagex.core.constants;
 
 import deob.ObfuscatedName;
-
 import java.math.BigInteger;
 
 @ObfuscatedName("ae")

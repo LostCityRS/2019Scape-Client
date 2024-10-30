@@ -1,7 +1,6 @@
 package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
-
 import java.security.SecureRandom;
 import java.util.concurrent.Callable;
 
@@ -10,9 +9,9 @@ public class SecureRandomTask implements Callable {
 
 	@ObfuscatedName("qu.e(I)Ljava/security/SecureRandom;")
 	public static SecureRandom createSecureRandom() {
-		SecureRandom secureRandom = new SecureRandom();
-		secureRandom.nextInt();
-		return secureRandom;
+		SecureRandom var0 = new SecureRandom();
+		var0.nextInt();
+		return var0;
 	}
 
 	public Object call() {

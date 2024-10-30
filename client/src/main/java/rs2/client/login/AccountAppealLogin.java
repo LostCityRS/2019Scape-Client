@@ -6,8 +6,6 @@ import com.jagex.core.utils.WebTools;
 import com.jagex.game.client.Browser;
 import com.jagex.game.client.GameShell;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 import java.math.BigInteger;
@@ -15,6 +13,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Random;
+import rs2.client.Client;
 
 @ObfuscatedName("w")
 public class AccountAppealLogin {
@@ -91,7 +90,7 @@ public class AccountAppealLogin {
 		Packet var11 = new Packet(var10);
 		var11.pjstr(arg1);
 		var11.pos = var10;
-        var11.tinyenc(var6);
+		var11.tinyenc(var6);
 		Packet var12 = new Packet(var11.pos + var5.pos + var4.pos + 5);
 		var12.p1(2);
 		var12.p1(var4.pos);
@@ -129,7 +128,7 @@ public class AccountAppealLogin {
 					} else {
 						var18.tinydec(var6);
 						while (var18.pos > 0 && var18.data[var18.pos - 1] == 0) {
-							var18.pos -= 1;
+							var18.pos--;
 						}
 						String var21 = new String(var18.data, 0, var18.pos);
 						if (method15242(var21)) {

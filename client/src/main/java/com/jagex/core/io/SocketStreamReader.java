@@ -1,7 +1,6 @@
 package com.jagex.core.io;
 
 import deob.ObfuscatedName;
-
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,9 +29,9 @@ public class SocketStreamReader implements Runnable {
 	@ObfuscatedName("ua.l")
 	public IOException ioerror;
 
-	public SocketStreamReader(InputStream inputStream, int limit) {
-		this.inputStream = inputStream;
-		this.bufLimit = limit + 1;
+	public SocketStreamReader(InputStream arg0, int arg1) {
+		this.inputStream = arg0;
+		this.bufLimit = arg1 + 1;
 		this.buf = new byte[this.bufLimit];
 		this.thread = new Thread(this);
 		this.thread.setDaemon(true);
@@ -41,60 +40,60 @@ public class SocketStreamReader implements Runnable {
 
 	public void run() {
 		while (true) {
-			int available;
+			int var2;
 			synchronized (this) {
 				while (true) {
 					if (this.ioerror != null) {
 						return;
 					}
 					if (this.bufPos == 0) {
-						available = this.bufLimit - this.bufLen - 1;
+						var2 = this.bufLimit - this.bufLen - 1;
 					} else if (this.bufPos <= this.bufLen) {
-						available = this.bufLimit - this.bufLen;
+						var2 = this.bufLimit - this.bufLen;
 					} else {
-						available = this.bufPos - this.bufLen - 1;
+						var2 = this.bufPos - this.bufLen - 1;
 					}
-					if (available > 0) {
+					if (var2 > 0) {
 						break;
 					}
 					try {
 						this.wait();
-					} catch (InterruptedException exception) {
+					} catch (InterruptedException var13) {
 					}
 				}
 			}
-			int read;
+			int var5;
 			try {
-				read = this.inputStream.read(this.buf, this.bufLen, available);
-				if (read == -1) {
+				var5 = this.inputStream.read(this.buf, this.bufLen, var2);
+				if (var5 == -1) {
 					throw new EOFException();
 				}
-			} catch (IOException exception) {
-				IOException var6 = exception;
+			} catch (IOException var14) {
+				IOException var6 = var14;
 				synchronized (this) {
 					this.ioerror = var6;
 					return;
 				}
 			}
 			synchronized (this) {
-				this.bufLen = (this.bufLen + read) % this.bufLimit;
+				this.bufLen = (this.bufLen + var5) % this.bufLimit;
 			}
 		}
 	}
 
 	@ObfuscatedName("ua.e(II)Z")
-	public boolean hasAvailable(int amount) throws IOException {
-		if (amount == 0) {
+	public boolean hasAvailable(int arg0) throws IOException {
+		if (arg0 == 0) {
 			return true;
-		} else if (amount > 0 && amount < this.bufLimit) {
+		} else if (arg0 > 0 && arg0 < this.bufLimit) {
 			synchronized (this) {
-				int available;
+				int var3;
 				if (this.bufPos <= this.bufLen) {
-					available = this.bufLen - this.bufPos;
+					var3 = this.bufLen - this.bufPos;
 				} else {
-					available = this.bufLen + (this.bufLimit - this.bufPos);
+					var3 = this.bufLen + (this.bufLimit - this.bufPos);
 				}
-				if (available >= amount) {
+				if (var3 >= arg0) {
 					return true;
 				} else if (this.ioerror == null) {
 					this.notifyAll();
@@ -111,48 +110,48 @@ public class SocketStreamReader implements Runnable {
 	@ObfuscatedName("ua.n(I)I")
 	public int available() throws IOException {
 		synchronized (this) {
-			int available;
+			int var2;
 			if (this.bufPos <= this.bufLen) {
-				available = this.bufLen - this.bufPos;
+				var2 = this.bufLen - this.bufPos;
 			} else {
-				available = this.bufLen + (this.bufLimit - this.bufPos);
+				var2 = this.bufLen + (this.bufLimit - this.bufPos);
 			}
-			if (available <= 0 && this.ioerror != null) {
+			if (var2 <= 0 && this.ioerror != null) {
 				throw new IOException(this.ioerror.toString());
 			}
 			this.notifyAll();
-			return available;
+			return var2;
 		}
 	}
 
 	@ObfuscatedName("ua.m([BIII)I")
-	public int read(byte[] bytes, int off, int len) throws IOException {
-		if (len < 0 || off < 0 || off + len > bytes.length) {
+	public int read(byte[] arg0, int arg1, int arg2) throws IOException {
+		if (arg2 < 0 || arg1 < 0 || arg1 + arg2 > arg0.length) {
 			throw new IOException();
 		}
 		synchronized (this) {
-			int available;
+			int var5;
 			if (this.bufPos <= this.bufLen) {
-				available = this.bufLen - this.bufPos;
+				var5 = this.bufLen - this.bufPos;
 			} else {
-				available = this.bufLen + (this.bufLimit - this.bufPos);
+				var5 = this.bufLen + (this.bufLimit - this.bufPos);
 			}
-			if (len > available) {
-				len = available;
+			if (arg2 > var5) {
+				arg2 = var5;
 			}
-			if (len == 0 && this.ioerror != null) {
+			if (arg2 == 0 && this.ioerror != null) {
 				throw new IOException(this.ioerror.toString());
 			}
-			if (this.bufPos + len <= this.bufLimit) {
-				System.arraycopy(this.buf, this.bufPos, bytes, off, len);
+			if (this.bufPos + arg2 <= this.bufLimit) {
+				System.arraycopy(this.buf, this.bufPos, arg0, arg1, arg2);
 			} else {
-				int remaining = this.bufLimit - this.bufPos;
-				System.arraycopy(this.buf, this.bufPos, bytes, off, remaining);
-				System.arraycopy(this.buf, 0, bytes, off + remaining, len - remaining);
+				int var6 = this.bufLimit - this.bufPos;
+				System.arraycopy(this.buf, this.bufPos, arg0, arg1, var6);
+				System.arraycopy(this.buf, 0, arg0, arg1 + var6, arg2 - var6);
 			}
-			this.bufPos = (this.bufPos + len) % this.bufLimit;
+			this.bufPos = (this.bufPos + arg2) % this.bufLimit;
 			this.notifyAll();
-			return len;
+			return arg2;
 		}
 	}
 
@@ -166,7 +165,7 @@ public class SocketStreamReader implements Runnable {
 		}
 		try {
 			this.thread.join();
-		} catch (InterruptedException exception) {
+		} catch (InterruptedException var4) {
 		}
 	}
 

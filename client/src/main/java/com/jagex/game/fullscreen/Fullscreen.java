@@ -3,11 +3,10 @@ package com.jagex.game.fullscreen;
 import com.jagex.graphics.FullscreenImpl;
 import com.jagex.graphics.FullscreenMode;
 import deob.ObfuscatedName;
-
-import java.awt.*;
+import java.awt.Frame;
 
 @ObfuscatedName("aab")
-public final class Fullscreen {
+public class Fullscreen {
 
 	@ObfuscatedName("aab.e")
 	public static boolean allowed = true;

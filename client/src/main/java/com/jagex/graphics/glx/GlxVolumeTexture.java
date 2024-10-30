@@ -1,8 +1,8 @@
 package com.jagex.graphics.glx;
 
-import com.jagex.graphics.GpuVolumeTexture;
 import com.jagex.game.client.DataType;
 import com.jagex.graphics.GpuTextureRelated;
+import com.jagex.graphics.GpuVolumeTexture;
 import com.jagex.graphics.TextureFormat;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;

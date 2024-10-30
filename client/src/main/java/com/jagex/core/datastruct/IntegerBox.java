@@ -8,7 +8,7 @@ public class IntegerBox {
 	@ObfuscatedName("xe.e")
 	public int intValue;
 
-	public IntegerBox(int intValue) {
-		this.intValue = intValue;
+	public IntegerBox(int arg0) {
+		this.intValue = arg0;
 	}
 }

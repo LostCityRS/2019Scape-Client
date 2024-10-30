@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 import rs2.client.Client;
 
 @ObfuscatedName("d")
-public final class ClientPlayerGroupResourceProvider implements PlayerGroupResourceProvider {
+public class ClientPlayerGroupResourceProvider implements PlayerGroupResourceProvider {
 
 	@ObfuscatedName("d.e(B)Ladd;")
 	public VarTypeList getVarPlayerTypeList() {

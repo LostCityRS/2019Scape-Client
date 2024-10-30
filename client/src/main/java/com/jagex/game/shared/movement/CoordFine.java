@@ -70,11 +70,11 @@ public class CoordFine extends Node implements Serializable {
 		this.level = -1;
 	}
 
-	public CoordFine(int level, int x, int arg2, int z) {
-		this.level = level;
-		this.x = x;
+	public CoordFine(int arg0, int arg1, int arg2, int arg3) {
+		this.level = arg0;
+		this.x = arg1;
 		this.y = arg2;
-		this.z = z;
+		this.z = arg3;
 	}
 
 	public CoordFine(CoordFine arg0) {
@@ -163,15 +163,15 @@ public class CoordFine extends Node implements Serializable {
 	}
 
 	@ObfuscatedName("akt.n(Lalw;S)V")
-	public void encode(Packet buf) {
-		this.method17852(buf);
+	public void encode(Packet arg0) {
+		this.method17852(arg0);
 	}
 
 	@ObfuscatedName("akt.m(Lalw;I)V")
-	public void decode(Packet buf) {
-		this.level = buf.g1();
-		this.x = buf.g4s();
-		this.y = buf.g4s();
-		this.z = buf.g4s();
+	public void decode(Packet arg0) {
+		this.level = arg0.g1();
+		this.x = arg0.g4s();
+		this.y = arg0.g4s();
+		this.z = arg0.g4s();
 	}
 }

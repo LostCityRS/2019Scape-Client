@@ -2,7 +2,15 @@ package com.jagex.graphics.safe;
 
 import com.jagex.core.utils.ColourUtils;
 import com.jagex.game.client.HardShadow;
-import com.jagex.graphics.*;
+import com.jagex.graphics.BlendedTexturedTileData;
+import com.jagex.graphics.BlendedUntexturedTileData1;
+import com.jagex.graphics.BlendedUntexturedTileData2;
+import com.jagex.graphics.FloorModel;
+import com.jagex.graphics.Light;
+import com.jagex.graphics.MaterialRaw;
+import com.jagex.graphics.UnblendedTileData1;
+import com.jagex.graphics.UnblendedTileData2;
+import com.jagex.graphics.WaterFogData;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 

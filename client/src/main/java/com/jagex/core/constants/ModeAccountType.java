@@ -14,8 +14,8 @@ public class ModeAccountType implements SerializableEnum {
 	@ObfuscatedName("zu.m")
 	public final int serialID;
 
-	public ModeAccountType(int serialID, String arg1) {
-		this.serialID = serialID;
+	public ModeAccountType(int arg0, String arg1) {
+		this.serialID = arg0;
 	}
 
 	@ObfuscatedName("zu.n()I")

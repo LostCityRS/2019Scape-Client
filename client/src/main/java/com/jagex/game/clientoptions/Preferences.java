@@ -9,9 +9,8 @@ import com.jagex.game.client.GameShell;
 import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.graphics.RendererInfo;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
 import java.io.IOException;
+import rs2.client.Client;
 
 @ObfuscatedName("aq")
 public class Preferences {
@@ -188,29 +187,29 @@ public class Preferences {
 	}
 
 	@ObfuscatedName("alz.f(Lalq;I)V")
-	public static void setAutosetup(ClientAutoSetupResult autoSetupResult) {
-		autoSetupResult.method18314(0);
-		byte resultId;
+	public static void setAutosetup(ClientAutoSetupResult arg0) {
+		arg0.method18314(0);
+		byte var2;
 		if (GameShell.maxmemory >= 96) {
-			int profileTime = CpuProfiling.profile();
-			if (profileTime <= 100) {
+			int var1 = CpuProfiling.profile();
+			if (var1 <= 100) {
 				setHigh();
-				resultId = 4;
-			} else if (profileTime <= 500) {
+				var2 = 4;
+			} else if (var1 <= 500) {
 				setMedium();
-				resultId = 3;
-			} else if (profileTime <= 1003) {
+				var2 = 3;
+			} else if (var1 <= 1003) {
 				setLow();
-				resultId = 2;
+				var2 = 2;
 			} else {
 				setMin(true);
-				resultId = 1;
+				var2 = 1;
 			}
-			autoSetupResult.method18318(0, profileTime);
+			arg0.method18318(0, var1);
 		} else {
 			setMin(true);
-			resultId = 1;
-			autoSetupResult.method18313(64);
+			var2 = 1;
+			arg0.method18313(64);
 		}
 		if (Client.preferences.displayMode.getValue() == 0) {
 			Client.preferences.setPreferencesDisplayMode(Client.preferences.displayMode, true);
@@ -219,7 +218,7 @@ public class Preferences {
 			Client.setToolkit(0, false);
 		}
 		save();
-		autoSetupResult.setResultId(resultId);
+		arg0.setResultId(var2);
 	}
 
 	@ObfuscatedName("et.w(Lalq;IIB)V")

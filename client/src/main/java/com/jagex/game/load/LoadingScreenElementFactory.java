@@ -2,7 +2,17 @@ package com.jagex.game.load;
 
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-import rs2.client.login.*;
+import rs2.client.login.LoginRelated1;
+import rs2.client.login.LoginRelated2;
+import rs2.client.login.LoginRelated3;
+import rs2.client.login.LoginRelated4;
+import rs2.client.login.LoginRelated5;
+import rs2.client.login.LoginRelated6;
+import rs2.client.login.LoginRelated9;
+import rs2.client.login.LoginScreenRelated2;
+import rs2.client.login.LoginScreenRelated3;
+import rs2.client.login.LoginScreenRelated7;
+import rs2.client.login.LoginScreenRelated8;
 
 @ObfuscatedName("kq")
 public class LoadingScreenElementFactory {

@@ -7,7 +7,6 @@ import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ArchiveUtil;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("abe")
@@ -28,47 +27,45 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	@ObfuscatedName("abe.f")
 	public final ConfigTypeFactory factory;
 
-	// line 20
-	public CachingConfigTypeList(ModeGame modeGame, Language language, Js5 configClient, Js5ConfigGroup configGroup, int cacheSize, ConfigTypeFactory factory) {
-		this.configClient = configClient;
-		this.configGroup = configGroup;
-		this.factory = factory;
+	public CachingConfigTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5ConfigGroup arg3, int arg4, ConfigTypeFactory arg5) {
+		this.configClient = arg2;
+		this.configGroup = arg3;
+		this.factory = arg5;
 		this.num = ArchiveUtil.getArchiveSize(this.configClient, this.configGroup);
-		this.recentUse = new SoftLruHashTable(cacheSize);
+		this.recentUse = new SoftLruHashTable(arg4);
 	}
 
-	// line 30
 	@ObfuscatedName("abe.e(II)Lay;")
-	public ConfigType list(int id) {
+	public ConfigType list(int arg0) {
 		SoftLruHashTable var2 = this.recentUse;
-		ConfigType cachedConfigType;
+		ConfigType var3;
 		synchronized (this.recentUse) {
-			cachedConfigType = (ConfigType) this.recentUse.get((long) id);
+			var3 = (ConfigType) this.recentUse.get((long) arg0);
 		}
-		if (cachedConfigType != null) {
-			return cachedConfigType;
+		if (var3 != null) {
+			return var3;
 		}
-		ConfigType configType = this.list_uncached(id);
+		ConfigType var5 = this.list_uncached(arg0);
 		SoftLruHashTable var6 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.put(configType, (long) id);
-			return configType;
+			this.recentUse.put(var5, (long) arg0);
+			return var5;
 		}
 	}
 
 	@ObfuscatedName("abe.u(II)Lay;")
-	public ConfigType list_uncached(int id) {
+	public ConfigType list_uncached(int arg0) {
 		Js5 var2 = this.configClient;
-		byte[] file;
+		byte[] var3;
 		synchronized (this.configClient) {
-			file = ArchiveUtil.getFile(this.configClient, this.configGroup, id);
+			var3 = ArchiveUtil.getFile(this.configClient, this.configGroup, arg0);
 		}
-		ConfigType type = this.factory.create(id, this);
-		if (file != null) {
-			type.decode(new Packet(file));
+		ConfigType var5 = this.factory.create(arg0, this);
+		if (var3 != null) {
+			var5.decode(new Packet(var3));
 		}
-		type.postDecode();
-		return type;
+		var5.postDecode();
+		return var5;
 	}
 
 	@ObfuscatedName("abe.n(I)I")
@@ -77,11 +74,11 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("abe.z(II)V")
-	public void cacheResize(int size) {
+	public void cacheResize(int arg0) {
 		SoftLruHashTable var2 = this.recentUse;
 		synchronized (this.recentUse) {
 			this.recentUse.reset();
-			this.recentUse = new SoftLruHashTable(size);
+			this.recentUse = new SoftLruHashTable(arg0);
 		}
 	}
 
@@ -94,10 +91,10 @@ public class CachingConfigTypeList implements ConfigTypeList {
 	}
 
 	@ObfuscatedName("abe.v(II)V")
-	public void cacheClean(int num) {
+	public void cacheClean(int arg0) {
 		SoftLruHashTable var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			this.recentUse.clean(num);
+			this.recentUse.clean(arg0);
 		}
 	}
 
@@ -109,44 +106,7 @@ public class CachingConfigTypeList implements ConfigTypeList {
 		}
 	}
 
-	// line 82
 	public Iterator iterator() {
 		return new CachingConfigTypeListIterator(this);
-	}
-
-	@ObfuscatedName("acm")
-	public static class CachingConfigTypeListIterator implements Iterator {
-
-		// $FF: synthetic field
-		public final CachingConfigTypeList this$0;
-
-		@ObfuscatedName("acm.e")
-		public int field8852;
-
-		public CachingConfigTypeListIterator(CachingConfigTypeList arg0) {
-			this.this$0 = arg0;
-		}
-
-		public boolean hasNext() {
-			return this.field8852 < this.this$0.num;
-		}
-
-		// line 90
-		public Object next() {
-			int var1 = ++this.field8852 - 1;
-			SoftLruHashTable var2 = this.this$0.recentUse;
-			synchronized (this.this$0.recentUse) {
-				ConfigType var3 = (ConfigType) this.this$0.recentUse.get((long) var1);
-				if (var3 != null) {
-					return var3;
-				}
-			}
-			return this.this$0.list_uncached(var1);
-		}
-
-		// line 99
-		public void remove() {
-			throw new UnsupportedOperationException();
-		}
 	}
 }

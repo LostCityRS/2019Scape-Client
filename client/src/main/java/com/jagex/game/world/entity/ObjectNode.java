@@ -9,7 +9,7 @@ public class ObjectNode extends Node {
 	@ObfuscatedName("ake.k")
 	public final Object value;
 
-	public ObjectNode(Object value) {
-		this.value = value;
+	public ObjectNode(Object arg0) {
+		this.value = arg0;
 	}
 }

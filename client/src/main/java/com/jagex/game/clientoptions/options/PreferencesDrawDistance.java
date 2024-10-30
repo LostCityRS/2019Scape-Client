@@ -8,12 +8,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("anv")
 public class PreferencesDrawDistance extends Preference {
 
-	public PreferencesDrawDistance(ClientOptions options) {
-		super(options);
+	public PreferencesDrawDistance(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesDrawDistance(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesDrawDistance(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("anv.o(S)V")
@@ -33,13 +33,13 @@ public class PreferencesDrawDistance extends Preference {
 	}
 
 	@ObfuscatedName("anv.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return 1;
 	}
 
 	@ObfuscatedName("anv.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("anv.s(I)I")

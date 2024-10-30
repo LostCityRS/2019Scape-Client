@@ -4,11 +4,10 @@ import com.jagex.graphics.TextureList;
 import com.jagex.graphics.TextureRelated1;
 import com.jagex.graphics.TextureRelated2;
 import deob.ObfuscatedName;
-
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import javax.imageio.ImageIO;
 
 @ObfuscatedName("dk")
 public abstract class BasicTextureListInner implements TextureList {

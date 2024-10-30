@@ -315,7 +315,7 @@ public class EnvironmentManager {
 			return;
 		}
 		long var1 = MonotonicTime.get();
-		this.field7838 = (int) ((long) (this.field7838) - (var1 - this.field7839));
+		this.field7838 = (int) ((long) (this.field7838 * 1162824399) - (var1 - this.field7839) * 1162824399L) * 2008775727;
 		if (this.field7838 > 0) {
 			this.currentEnv.setToInterpolation(this.toolkit, this.fadeEnvA, this.fadeEnvB, (float) (this.field7837 - this.field7838) / (float) this.field7837);
 		} else {
@@ -432,8 +432,8 @@ public class EnvironmentManager {
 	@ObfuscatedName("xu.t(I)V")
 	public void setLightingInterface() {
 		this.toolkit.setSunAmbientIntensity(((float) Client.preferences.brightness.getValue() * 0.1F + 0.7F + Client.world.getAntiMacroBrightnessAdjustment()) * 1.1523438F);
-		this.toolkit.setSun(0xffffff, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
-		this.toolkit.setFog(0xc8c0a8, -1, 0);
+		this.toolkit.setSun(16777215, 0.69921875F, 1.2F, -200.0F, -240.0F, -200.0F);
+		this.toolkit.setFog(13156520, -1, 0);
 		this.toolkit.setEnvironmentSampler(sampler);
 	}
 }

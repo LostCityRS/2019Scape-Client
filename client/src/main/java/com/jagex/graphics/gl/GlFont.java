@@ -1,7 +1,14 @@
 package com.jagex.graphics.gl;
 
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.*;
+import com.jagex.graphics.Font;
+import com.jagex.graphics.FontMetrics;
+import com.jagex.graphics.FullSpriteData;
+import com.jagex.graphics.GlRenderList;
+import com.jagex.graphics.PalettedSpriteData;
+import com.jagex.graphics.SpriteData;
+import com.jagex.graphics.SpriteRelated;
+import com.jagex.graphics.TextureFormat;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 

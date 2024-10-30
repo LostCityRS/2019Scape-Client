@@ -1,6 +1,13 @@
 package com.jagex.game.config.loctype;
 
-import com.jagex.core.datastruct.*;
+import com.jagex.core.constants.SerializableEnum;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.IntNode;
+import com.jagex.core.datastruct.IntegerBox;
+import com.jagex.core.datastruct.Node;
+import com.jagex.core.datastruct.Pair;
+import com.jagex.core.datastruct.SerializableEnums;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.HardShadow;
 import com.jagex.game.config.ConfigType;
@@ -10,12 +17,20 @@ import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
-import com.jagex.game.world.entity.*;
-import com.jagex.graphics.*;
+import com.jagex.game.world.entity.LocShape;
+import com.jagex.game.world.entity.LocTypeCustomisation;
+import com.jagex.game.world.entity.LocTypeRelated;
+import com.jagex.game.world.entity.LocTypeRelated2;
+import com.jagex.game.world.entity.LocTypeRelated3;
+import com.jagex.game.world.entity.ObjectNode;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.FloorModel;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelUnlit;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.Cuboid;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-
 import java.util.Arrays;
 
 @ObfuscatedName("vd")
@@ -258,21 +273,21 @@ public class LocType implements ConfigType {
 	@ObfuscatedName("vd.cg")
 	public Cuboid clickbox;
 
-	public LocType(int id, LocTypeFactory factory, ConfigTypeList locs) {
-		this.id = id;
-		this.factory = factory;
-		this.myList = locs;
+	public LocType(int arg0, LocTypeFactory arg1, ConfigTypeList arg2) {
+		this.id = arg0;
+		this.factory = arg1;
+		this.myList = arg2;
 		this.op = (String[]) this.factory.defaultops.clone();
 	}
 
 	@ObfuscatedName("vd.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
@@ -289,287 +304,287 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			int shapes = buf.g1();
-			this.shapes = new byte[shapes];
-			this.models = new int[shapes][];
-			for (int s = 0; s < shapes; s++) {
-				this.shapes[s] = buf.g1b();
-				int models = buf.g1();
-				this.models[s] = new int[models];
-				for (int m = 0; m < models; m++) {
-					this.models[s][m] = buf.gSmart2or4s();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			int var3 = arg0.g1();
+			this.shapes = new byte[var3];
+			this.models = new int[var3][];
+			for (int var4 = 0; var4 < var3; var4++) {
+				this.shapes[var4] = arg0.g1b();
+				int var5 = arg0.g1();
+				this.models[var4] = new int[var5];
+				for (int var6 = 0; var6 < var5; var6++) {
+					this.models[var4][var6] = arg0.gSmart2or4s();
 				}
 			}
-		} else if (code == 2) {
-			this.name = buf.gjstr().intern();
-		} else if (code == 14) {
-			this.width = buf.g1();
-		} else if (code == 15) {
-			this.length = buf.g1();
-		} else if (code == 17) {
+		} else if (arg1 == 2) {
+			this.name = arg0.gjstr().intern();
+		} else if (arg1 == 14) {
+			this.width = arg0.g1();
+		} else if (arg1 == 15) {
+			this.length = arg0.g1();
+		} else if (arg1 == 17) {
 			this.blockwalk = 0;
-		} else if (code != 18) {
-			if (code == 19) {
-				this.active = buf.g1();
-			} else if (code == 21) {
+		} else if (arg1 != 18) {
+			if (arg1 == 19) {
+				this.active = arg0.g1();
+			} else if (arg1 == 21) {
 				this.hillchange = 1;
-			} else if (code == 22) {
+			} else if (arg1 == 22) {
 				this.sharelight = true;
-			} else if (code == 23) {
+			} else if (arg1 == 23) {
 				this.occlude = 1;
-			} else if (code == 24) {
-				int var7 = buf.gSmart2or4s();
+			} else if (arg1 == 24) {
+				int var7 = arg0.gSmart2or4s();
 				if (var7 != -1) {
 					this.anim = new int[] { var7 };
 				}
-			} else if (code == 27) {
+			} else if (arg1 == 27) {
 				this.blockwalk = 1;
-			} else if (code == 28) {
-				this.walloff = buf.g1() << 2;
-			} else if (code == 29) {
-				this.ambient = buf.g1b();
-			} else if (code == 39) {
-				this.contrast = buf.g1b();
-			} else if (code >= 30 && code < 35) {
-				this.op[code - 30] = buf.gjstr().intern();
-			} else if (code == 40) {
-				int length = buf.g1();
-				this.recol_s = new short[length];
-				this.recol_d = new short[length];
-				for (int index = 0; index < length; index++) {
-					this.recol_s[index] = (short) buf.g2();
-					this.recol_d[index] = (short) buf.g2();
+			} else if (arg1 == 28) {
+				this.walloff = arg0.g1() << 2;
+			} else if (arg1 == 29) {
+				this.ambient = arg0.g1b();
+			} else if (arg1 == 39) {
+				this.contrast = arg0.g1b() * 5;
+			} else if (arg1 >= 30 && arg1 < 35) {
+				this.op[arg1 - 30] = arg0.gjstr().intern();
+			} else if (arg1 == 40) {
+				int var8 = arg0.g1();
+				this.recol_s = new short[var8];
+				this.recol_d = new short[var8];
+				for (int var9 = 0; var9 < var8; var9++) {
+					this.recol_s[var9] = (short) arg0.g2();
+					this.recol_d[var9] = (short) arg0.g2();
 				}
-			} else if (code == 41) {
-				int length = buf.g1();
-				this.retex_s = new short[length];
-				this.retex_d = new short[length];
-				for (int index = 0; index < length; index++) {
-					this.retex_s[index] = (short) buf.g2();
-					this.retex_d[index] = (short) buf.g2();
+			} else if (arg1 == 41) {
+				int var10 = arg0.g1();
+				this.retex_s = new short[var10];
+				this.retex_d = new short[var10];
+				for (int var11 = 0; var11 < var10; var11++) {
+					this.retex_s[var11] = (short) arg0.g2();
+					this.retex_d[var11] = (short) arg0.g2();
 				}
-			} else if (code == 42) {
-				int length = buf.g1();
-				this.recol_d_palette = new byte[length];
-				for (int index = 0; index < length; index++) {
-					this.recol_d_palette[index] = buf.g1b();
+			} else if (arg1 == 42) {
+				int var12 = arg0.g1();
+				this.recol_d_palette = new byte[var12];
+				for (int var13 = 0; var13 < var12; var13++) {
+					this.recol_d_palette[var13] = arg0.g1b();
 				}
-			} else if (code == 44) {
-				int var14 = buf.g2();
-				int length = 0;
+			} else if (arg1 == 44) {
+				int var14 = arg0.g2();
+				int var15 = 0;
 				for (int var16 = var14; var16 > 0; var16 >>= 0x1) {
-					length++;
+					var15++;
 				}
-				this.recolindices = new byte[length];
+				this.recolindices = new byte[var15];
 				byte var17 = 0;
-				for (int index = 0; index < length; index++) {
-					if ((var14 & 0x1 << index) > 0) {
-						this.recolindices[index] = var17++;
+				for (int var18 = 0; var18 < var15; var18++) {
+					if ((var14 & 0x1 << var18) > 0) {
+						this.recolindices[var18] = var17++;
 					} else {
-						this.recolindices[index] = -1;
+						this.recolindices[var18] = -1;
 					}
 				}
-			} else if (code == 45) {
-				int var19 = buf.g2();
-				int length = 0;
+			} else if (arg1 == 45) {
+				int var19 = arg0.g2();
+				int var20 = 0;
 				for (int var21 = var19; var21 > 0; var21 >>= 0x1) {
-					length++;
+					var20++;
 				}
-				this.retexindices = new byte[length];
+				this.retexindices = new byte[var20];
 				byte var22 = 0;
-				for (int index = 0; index < length; index++) {
-					if ((var19 & 0x1 << index) > 0) {
-						this.retexindices[index] = var22++;
+				for (int var23 = 0; var23 < var20; var23++) {
+					if ((var19 & 0x1 << var23) > 0) {
+						this.retexindices[var23] = var22++;
 					} else {
-						this.retexindices[index] = -1;
+						this.retexindices[var23] = -1;
 					}
 				}
-			} else if (code == 62) {
+			} else if (arg1 == 62) {
 				this.mirror = true;
-			} else if (code == 64) {
+			} else if (arg1 == 64) {
 				this.hasHardShadow = false;
-			} else if (code == 65) {
-				this.resizex = buf.g2();
-			} else if (code == 66) {
-				this.resizey = buf.g2();
-			} else if (code == 67) {
-				this.resizez = buf.g2();
-			} else if (code == 69) {
-				buf.g1();
-			} else if (code == 70) {
-				this.xoff = buf.g2s() << 2;
-			} else if (code == 71) {
-				this.yoff = buf.g2s() << 2;
-			} else if (code == 72) {
-				this.zoff = buf.g2s() << 2;
-			} else if (code == 73) {
+			} else if (arg1 == 65) {
+				this.resizex = arg0.g2();
+			} else if (arg1 == 66) {
+				this.resizey = arg0.g2();
+			} else if (arg1 == 67) {
+				this.resizez = arg0.g2();
+			} else if (arg1 == 69) {
+				arg0.g1();
+			} else if (arg1 == 70) {
+				this.xoff = arg0.g2s() << 2;
+			} else if (arg1 == 71) {
+				this.yoff = arg0.g2s() << 2;
+			} else if (arg1 == 72) {
+				this.zoff = arg0.g2s() << 2;
+			} else if (arg1 == 73) {
 				this.forcedecor = true;
-			} else if (code == 74) {
+			} else if (arg1 == 74) {
 				this.breakroutefinding = true;
-			} else if (code == 75) {
-				this.raiseobject = buf.g1();
-			} else if (code == 77 || code == 92) {
-				this.multivarbit = buf.g2();
+			} else if (arg1 == 75) {
+				this.raiseobject = arg0.g1();
+			} else if (arg1 == 77 || arg1 == 92) {
+				this.multivarbit = arg0.g2();
 				if (this.multivarbit == 65535) {
 					this.multivarbit = -1;
 				}
-				this.multivarp = buf.g2();
+				this.multivarp = arg0.g2();
 				if (this.multivarp == 65535) {
 					this.multivarp = -1;
 				}
-				int defaultId = -1;
-				if (code == 92) {
-					defaultId = buf.gSmart2or4s();
+				int var38 = -1;
+				if (arg1 == 92) {
+					var38 = arg0.gSmart2or4s();
 				}
-				int length = buf.gSmart1or2();
-				this.multiloc = new int[length + 2];
-				for (int index = 0; index <= length; index++) {
-					this.multiloc[index] = buf.gSmart2or4s();
+				int var39 = arg0.gSmart1or2();
+				this.multiloc = new int[var39 + 2];
+				for (int var40 = 0; var40 <= var39; var40++) {
+					this.multiloc[var40] = arg0.gSmart2or4s();
 				}
-				this.multiloc[length + 1] = defaultId;
-			} else if (code == 78) {
-				this.bgsound_sound = buf.g2();
-				this.bgsound_range = buf.g1();
-			} else if (code == 79) {
-				this.bgsound_mindelay = buf.g2();
-				this.bgsound_maxdelay = buf.g2();
-				this.bgsound_range = buf.g1();
-				int var24 = buf.g1();
+				this.multiloc[var39 + 1] = var38;
+			} else if (arg1 == 78) {
+				this.bgsound_sound = arg0.g2();
+				this.bgsound_range = arg0.g1();
+			} else if (arg1 == 79) {
+				this.bgsound_mindelay = arg0.g2();
+				this.bgsound_maxdelay = arg0.g2();
+				this.bgsound_range = arg0.g1();
+				int var24 = arg0.g1();
 				this.bgsound_random = new int[var24];
-				for (int index = 0; index < var24; index++) {
-					this.bgsound_random[index] = buf.g2();
+				for (int var25 = 0; var25 < var24; var25++) {
+					this.bgsound_random[var25] = arg0.g2();
 				}
-			} else if (code == 81) {
+			} else if (arg1 == 81) {
 				this.hillchange = 2;
-				this.hillchange_value = buf.g1() * 256;
-			} else if (code == 82) {
+				this.hillchange_value = arg0.g1() * 256;
+			} else if (arg1 == 82) {
 				this.istexture = true;
-			} else if (code == 88) {
+			} else if (arg1 == 88) {
 				this.hardshadow = false;
-			} else if (code == 89) {
+			} else if (arg1 == 89) {
 				this.randomanimframe = false;
-			} else if (code == 91) {
+			} else if (arg1 == 91) {
 				this.members = true;
-			} else if (code == 93) {
+			} else if (arg1 == 93) {
 				this.hillchange = 3;
-				this.hillchange_value = buf.g2();
-			} else if (code == 94) {
+				this.hillchange_value = arg0.g2();
+			} else if (arg1 == 94) {
 				this.hillchange = 4;
-			} else if (code == 95) {
+			} else if (arg1 == 95) {
 				this.hillchange = 5;
-				this.hillchange_value = buf.g2s();
-			} else if (code == 97) {
+				this.hillchange_value = arg0.g2s();
+			} else if (arg1 == 97) {
 				this.mapsceneiconrotate = true;
-			} else if (code == 98) {
+			} else if (arg1 == 98) {
 				this.field7520 = true;
-			} else if (code == 99 || code == 100) {
-				buf.g1();
-				buf.g2();
-			} else if (code == 101) {
-				this.field7488 = buf.g1();
-			} else if (code == 102) {
-				this.mapsceneicon = buf.g2();
-			} else if (code == 103) {
+			} else if (arg1 == 99 || arg1 == 100) {
+				arg0.g1();
+				arg0.g2();
+			} else if (arg1 == 101) {
+				this.field7488 = arg0.g1();
+			} else if (arg1 == 102) {
+				this.mapsceneicon = arg0.g2();
+			} else if (arg1 == 103) {
 				this.occlude = 0;
-			} else if (code == 104) {
-				this.bgsound_volume = buf.g1();
-			} else if (code == 105) {
+			} else if (arg1 == 104) {
+				this.bgsound_volume = arg0.g1();
+			} else if (arg1 == 105) {
 				this.mapsceneiconmirror = true;
-			} else if (code == 106) {
-				int length = buf.g1();
-				int weight = 0;
-				this.anim = new int[length];
-				this.anim_weight = new int[length];
-				for (int index = 0; index < length; index++) {
-					this.anim[index] = buf.gSmart2or4s();
-					weight += this.anim_weight[index] = buf.g1();
+			} else if (arg1 == 106) {
+				int var26 = arg0.g1();
+				int var27 = 0;
+				this.anim = new int[var26];
+				this.anim_weight = new int[var26];
+				for (int var28 = 0; var28 < var26; var28++) {
+					this.anim[var28] = arg0.gSmart2or4s();
+					var27 += this.anim_weight[var28] = arg0.g1();
 				}
-				for (int var29 = 0; var29 < length; var29++) {
-					this.anim_weight[var29] = this.anim_weight[var29] * 65535 / weight;
+				for (int var29 = 0; var29 < var26; var29++) {
+					this.anim_weight[var29] = this.anim_weight[var29] * 65535 / var27;
 				}
-			} else if (code == 107) {
-				this.mapelement = buf.g2();
-			} else if (code >= 150 && code < 155) {
-				this.op[code - 150] = buf.gjstr().intern();
+			} else if (arg1 == 107) {
+				this.mapelement = arg0.g2();
+			} else if (arg1 >= 150 && arg1 < 155) {
+				this.op[arg1 - 150] = arg0.gjstr().intern();
 				if (!this.factory.allowMembers) {
-					this.op[code - 150] = null;
+					this.op[arg1 - 150] = null;
 				}
-			} else if (code == 160) {
-				int length = buf.g1();
-				this.quests = new int[length];
-				for (int index = 0; index < length; index++) {
-					this.quests[index] = buf.g2();
+			} else if (arg1 == 160) {
+				int var30 = arg0.g1();
+				this.quests = new int[var30];
+				for (int var31 = 0; var31 < var30; var31++) {
+					this.quests[var31] = arg0.g2();
 				}
-			} else if (code == 162) {
+			} else if (arg1 == 162) {
 				this.hillchange = 3;
-				this.hillchange_value = buf.g4s();
-			} else if (code == 163) {
-				this.tint_hue = buf.g1b();
-				this.tint_saturation = buf.g1b();
-				this.tint_luminence = buf.g1b();
-				this.tint_weight = buf.g1b();
-			} else if (code == 164) {
-				this.post_xoff = buf.g2s();
-			} else if (code == 165) {
-				this.post_yoff = buf.g2s();
-			} else if (code == 166) {
-				this.post_zoff = buf.g2s();
-			} else if (code == 167) {
-				this.field7448 = buf.g2();
-			} else if (code != 168 && code != 169) {
-				if (code == 170) {
-					this.field7475 = buf.gSmart1or2();
-				} else if (code == 171) {
-					this.field7476 = buf.gSmart1or2();
-				} else if (code == 173) {
-					this.bgsound_minrate = buf.g2();
-					this.bgsound_maxrate = buf.g2();
-				} else if (code == 177) {
+				this.hillchange_value = arg0.g4s();
+			} else if (arg1 == 163) {
+				this.tint_hue = arg0.g1b();
+				this.tint_saturation = arg0.g1b();
+				this.tint_luminence = arg0.g1b();
+				this.tint_weight = arg0.g1b();
+			} else if (arg1 == 164) {
+				this.post_xoff = arg0.g2s();
+			} else if (arg1 == 165) {
+				this.post_yoff = arg0.g2s();
+			} else if (arg1 == 166) {
+				this.post_zoff = arg0.g2s();
+			} else if (arg1 == 167) {
+				this.field7448 = arg0.g2();
+			} else if (arg1 != 168 && arg1 != 169) {
+				if (arg1 == 170) {
+					this.field7475 = arg0.gSmart1or2();
+				} else if (arg1 == 171) {
+					this.field7476 = arg0.gSmart1or2();
+				} else if (arg1 == 173) {
+					this.bgsound_minrate = arg0.g2();
+					this.bgsound_maxrate = arg0.g2();
+				} else if (arg1 == 177) {
 					this.field7524 = true;
-				} else if (code == 178) {
-					this.bgsound_dropoffrange = buf.g1();
-				} else if (code == 186) {
-					this.field7526 = (LocTypeRelated) SerializableEnums.decode(LocTypeRelated.method9002(), buf.g1());
-				} else if (code != 188) {
-					if (code == 189) {
+				} else if (arg1 == 178) {
+					this.bgsound_dropoffrange = arg0.g1();
+				} else if (arg1 == 186) {
+					this.field7526 = (LocTypeRelated) SerializableEnums.decode((SerializableEnum[]) LocTypeRelated.method9002(), arg0.g1());
+				} else if (arg1 != 188) {
+					if (arg1 == 189) {
 						this.antimacro = true;
-					} else if (code >= 190 && code < 196) {
+					} else if (arg1 >= 190 && arg1 < 196) {
 						if (this.cursor == null) {
 							this.cursor = new int[6];
 							Arrays.fill(this.cursor, -1);
 						}
-						this.cursor[code - 190] = buf.g2();
-					} else if (code == 196) {
-						SerializableEnums.decode(LocTypeRelated3.method208(), buf.g1());
-					} else if (code == 197) {
-						SerializableEnums.decode(LocTypeRelated2.method10203(), buf.g1());
-					} else if (code != 198 && code != 199) {
-						if (code == 200) {
+						this.cursor[arg1 - 190] = arg0.g2();
+					} else if (arg1 == 196) {
+						SerializableEnums.decode((SerializableEnum[]) LocTypeRelated3.method208(), arg0.g1());
+					} else if (arg1 == 197) {
+						SerializableEnums.decode((SerializableEnum[]) LocTypeRelated2.method10203(), arg0.g1());
+					} else if (arg1 != 198 && arg1 != 199) {
+						if (arg1 == 200) {
 							this.field7479 = true;
-						} else if (code == 201) {
+						} else if (arg1 == 201) {
 							this.clickbox = new Cuboid();
-							this.clickbox.minX = buf.gSmart1or2s();
-							this.clickbox.minY = buf.gSmart1or2s();
-							this.clickbox.minZ = buf.gSmart1or2s();
-							this.clickbox.maxX = buf.gSmart1or2s();
-							this.clickbox.maxY = buf.gSmart1or2s();
-							this.clickbox.maxZ = buf.gSmart1or2s();
-						} else if (code == 249) {
-							int var32 = buf.g1();
+							this.clickbox.minX = arg0.gSmart1or2s();
+							this.clickbox.minY = arg0.gSmart1or2s();
+							this.clickbox.minZ = arg0.gSmart1or2s();
+							this.clickbox.maxX = arg0.gSmart1or2s();
+							this.clickbox.maxY = arg0.gSmart1or2s();
+							this.clickbox.maxZ = arg0.gSmart1or2s();
+						} else if (arg1 == 249) {
+							int var32 = arg0.g1();
 							if (this.params == null) {
 								int var33 = IntMath.bitceil(var32);
 								this.params = new HashTable(var33);
 							}
 							for (int var34 = 0; var34 < var32; var34++) {
-								boolean var35 = buf.g1() == 1;
-								int var36 = buf.g3();
+								boolean var35 = arg0.g1() == 1;
+								int var36 = arg0.g3();
 								Node var37;
 								if (var35) {
-									var37 = new ObjectNode(buf.gjstr().intern());
+									var37 = new ObjectNode(arg0.gjstr().intern());
 								} else {
-									var37 = new IntNode(buf.g4s());
+									var37 = new IntNode(arg0.g4s());
 								}
 								this.params.put(var37, (long) var36);
 							}
@@ -811,7 +826,7 @@ public class LocType implements ConfigType {
 	@ObfuscatedName("vd.v(Ldh;IIILvp;I)Ldo;")
 	public Model method9476(Toolkit arg0, int arg1, int arg2, int arg3, LocTypeCustomisation arg4) {
 		int var6 = this.ambient + 64;
-		int var7 = this.contrast * 5 + 850;
+		int var7 = this.contrast + 850;
 		int var8 = arg1;
 		boolean var9 = this.mirror || LocShape.WALL_L.id == arg2 && arg3 > 3;
 		if (var9) {
@@ -973,21 +988,21 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.o(Lem;Lep;I)Lvd;")
-	public final LocType getMultiLoc(VariableTypeProvider varProvider, VarIntDomain varDomain) {
-		int i = -1;
+	public final LocType getMultiLoc(VariableTypeProvider arg0, VarIntDomain arg1) {
+		int var3 = -1;
 		if (this.multivarbit != -1) {
-			VarBitType var4 = varProvider.getVarBitType(this.multivarbit);
+			VarBitType var4 = arg0.getVarBitType(this.multivarbit);
 			if (var4 != null) {
-				i = varDomain.getVarBitValue(var4);
+				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.multivarp != -1) {
-			VarType var5 = varProvider.getVarType(VarDomainType.PLAYER, this.multivarp);
+			VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.multivarp);
 			if (var5 != null) {
-				i = varDomain.getVarValueInt(var5);
+				var3 = arg1.getVarValueInt(var5);
 			}
 		}
-		if (i >= 0 && i < this.multiloc.length - 1) {
-			return this.multiloc[i] == -1 ? null : (LocType) this.myList.list(this.multiloc[i]);
+		if (var3 >= 0 && var3 < this.multiloc.length - 1) {
+			return this.multiloc[var3] == -1 ? null : (LocType) this.myList.list(this.multiloc[var3]);
 		} else {
 			int var6 = this.multiloc[this.multiloc.length - 1];
 			return var6 == -1 ? null : (LocType) this.myList.list(var6);
@@ -1063,10 +1078,10 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.g(IB)Z")
-	public boolean hasAnim(int id) {
-		if (this.anim != null && id != -1) {
-			for (int index = 0; index < this.anim.length; index++) {
-				if (this.anim[index] == id) {
+	public boolean hasAnim(int arg0) {
+		if (this.anim != null && arg0 != -1) {
+			for (int var2 = 0; var2 < this.anim.length; var2++) {
+				if (this.anim[var2] == arg0) {
 					return true;
 				}
 			}
@@ -1075,7 +1090,7 @@ public class LocType implements ConfigType {
 	}
 
 	@ObfuscatedName("vd.i(IS)I")
-	public int getCursor(int op) {
-		return this.cursor == null ? -1 : this.cursor[op];
+	public int getCursor(int arg0) {
+		return this.cursor == null ? -1 : this.cursor[arg0];
 	}
 }

@@ -4,7 +4,7 @@ import com.jagex.core.datastruct.Node;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aki")
-public final class ServerKeyProperties extends Node {
+public class ServerKeyProperties extends Node {
 
 	@ObfuscatedName("aki.d")
 	public static final ServerKeyProperties field11386 = new ServerKeyProperties(0, -1);

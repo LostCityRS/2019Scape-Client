@@ -1,7 +1,6 @@
 package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;

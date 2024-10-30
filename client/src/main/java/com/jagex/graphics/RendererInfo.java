@@ -20,11 +20,11 @@ public class RendererInfo {
 	@ObfuscatedName("cz.p")
 	public final long driverVersion;
 
-	public RendererInfo(int toolkitId, String name, int version, String device, long arg4, boolean arg5) {
-		this.toolkitId = toolkitId;
-		this.name = name;
-		this.version = version;
-		this.device = device;
+	public RendererInfo(int arg0, String arg1, int arg2, String arg3, long arg4, boolean arg5) {
+		this.toolkitId = arg0;
+		this.name = arg1;
+		this.version = arg2;
+		this.device = arg3;
 		this.driverVersion = arg4;
 	}
 }

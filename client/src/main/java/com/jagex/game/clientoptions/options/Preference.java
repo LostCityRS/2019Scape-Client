@@ -12,14 +12,14 @@ public abstract class Preference {
 	@ObfuscatedName("zf.f")
 	public int currentValue;
 
-	public Preference(ClientOptions options) {
-		this.options = options;
+	public Preference(ClientOptions arg0) {
+		this.options = arg0;
 		this.currentValue = this.defaultValue();
 	}
 
-	public Preference(int value, ClientOptions options) {
-		this.currentValue = value;
-		this.options = options;
+	public Preference(int arg0, ClientOptions arg1) {
+		this.currentValue = arg0;
+		this.options = arg1;
 	}
 
 	@ObfuscatedName("zf.m(IB)V")
@@ -33,8 +33,8 @@ public abstract class Preference {
 	public abstract int defaultValue();
 
 	@ObfuscatedName("zf.n(II)I")
-	public abstract int canSetValue(int value);
+	public abstract int canSetValue(int arg0);
 
 	@ObfuscatedName("zf.k(II)V")
-	public abstract void setValue(int value);
+	public abstract void setValue(int arg0);
 }

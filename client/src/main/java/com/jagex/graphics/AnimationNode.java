@@ -156,7 +156,7 @@ public class AnimationNode {
 				}
 				this.field8506 = this.field8511 + 1;
 				if (this.field8506 < 0 || this.field8506 >= this.seqType.field1770.length) {
-					this.field8506 = 0;
+					this.field8506 = -1;
 				}
 				if (this.field8503 == 0) {
 					this.method14407(this.seqType, this.field8511);
@@ -346,7 +346,7 @@ public class AnimationNode {
 						this.field8506 -= this.seqType.replayoff;
 					}
 					if (this.field8506 < 0 || this.field8506 >= this.seqType.field1770.length) {
-						this.field8506 = 0;
+						this.field8506 = -1;
 					}
 				}
 				var3 = true;
@@ -375,7 +375,7 @@ public class AnimationNode {
 						this.field8506 -= this.seqType.replayoff;
 					}
 					if (this.field8506 < 0 || this.field8506 >= this.seqType.field1770.length) {
-						this.field8506 = 0;
+						this.field8506 = -1;
 					}
 				}
 			}

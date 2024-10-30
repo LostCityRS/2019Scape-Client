@@ -7,12 +7,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("any")
 public class PreferencesGroundBlending extends Preference {
 
-	public PreferencesGroundBlending(ClientOptions options) {
-		super(options);
+	public PreferencesGroundBlending(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesGroundBlending(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesGroundBlending(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("any.o(I)V")
@@ -36,11 +36,11 @@ public class PreferencesGroundBlending extends Preference {
 	}
 
 	@ObfuscatedName("any.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		if (this.options.modeGame() != ModeGame.RUNESCAPE) {
 			return 3;
 		}
-		if (value == 0) {
+		if (arg0 == 0) {
 			if (this.options.fog.getValue() == 1) {
 				return 2;
 			}
@@ -55,8 +55,8 @@ public class PreferencesGroundBlending extends Preference {
 	}
 
 	@ObfuscatedName("any.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("any.y(I)I")

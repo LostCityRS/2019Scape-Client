@@ -20,12 +20,12 @@ public class PreferencesHardwareInfo {
 	@ObfuscatedName("aag.f")
 	public boolean unused;
 
-	public PreferencesHardwareInfo(int maxmemory, int cpucount, boolean osArchArm, boolean osArchWindows, boolean unused) {
-		this.maxmemory = maxmemory;
-		this.cpucount = cpucount;
-		this.osArchArm = osArchArm;
-		this.osArchWindows = osArchWindows;
-		this.unused = unused;
+	public PreferencesHardwareInfo(int arg0, int arg1, boolean arg2, boolean arg3, boolean arg4) {
+		this.maxmemory = arg0;
+		this.cpucount = arg1;
+		this.osArchArm = arg2;
+		this.osArchWindows = arg3;
+		this.unused = arg4;
 	}
 
 	@ObfuscatedName("aag.e(B)I")

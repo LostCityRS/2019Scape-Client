@@ -1,6 +1,10 @@
 package com.jagex.graphics.safe;
 
-import com.jagex.graphics.*;
+import com.jagex.graphics.Font;
+import com.jagex.graphics.FontMetrics;
+import com.jagex.graphics.FullSpriteData;
+import com.jagex.graphics.Sprite;
+import com.jagex.graphics.SpriteRelated;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("afh")

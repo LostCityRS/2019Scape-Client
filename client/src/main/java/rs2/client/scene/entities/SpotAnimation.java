@@ -1,8 +1,16 @@
 package rs2.client.scene.entities;
 
 import com.jagex.game.config.effectanimtype.EffectAnimType;
-import com.jagex.game.world.entity.*;
-import com.jagex.graphics.*;
+import com.jagex.game.world.entity.EntityAnimationNode;
+import com.jagex.game.world.entity.EntityBounds;
+import com.jagex.game.world.entity.PickableEntity;
+import com.jagex.game.world.entity.Scene;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.FloorModel;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelParticleEffector;
+import com.jagex.graphics.ModelParticleEmitter;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.particles.ParticleSystem;
 import com.jagex.graphics.scenegraph.GraphEntity;
@@ -36,11 +44,11 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	@ObfuscatedName("aur.aw")
 	public int targeted = 0;
 
-	public SpotAnimation(Scene scene, int effectAnim, int arg2, int level, int occludeLevel, int x, int y, int z, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, int arg12, boolean arg13, int targeted) {
-		super(scene, level, occludeLevel, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, false, (byte) 0);
-		this.effectAnim = effectAnim;
+	public SpotAnimation(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, int arg10, int arg11, int arg12, boolean arg13, int arg14) {
+		super(arg0, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, false, (byte) 0);
+		this.effectAnim = arg1;
 		this.field12608 = arg12;
-		this.targeted = targeted;
+		this.targeted = arg14;
 		EffectAnimType var16 = (EffectAnimType) Client.effectAnimTypeList.list(this.effectAnim);
 		int var17 = var16.anim;
 		if (var17 != -1) {
@@ -75,7 +83,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Toolkit toolkit) {
+	public EntityBounds method17371(Toolkit arg0) {
 		return null;
 	}
 
@@ -106,18 +114,18 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Toolkit toolkit) {
-		Model var2 = this.method19748(toolkit, (this.field12608 == 0 ? 0 : 5) | 0x800, this.effectAnim);
+	public PickableEntity draw(Toolkit arg0) {
+		Model var2 = this.method19748(arg0, (this.field12608 == 0 ? 0 : 5) | 0x800, this.effectAnim);
 		if (var2 == null) {
 			return null;
 		}
 		Matrix4x3 var3 = this.method10533();
-		this.method19750(toolkit, var2, var3);
+		this.method19750(arg0, var2, var3);
 		PickableEntity var4 = PickableEntity.getPickableEntity(false);
 		var2.draw(var3, this.entityBounds[0], 0);
 		if (this.field12612 != null) {
 			ParticleList var5 = this.field12612.method9965();
-			toolkit.drawParticles(var5);
+			arg0.drawParticles(var5);
 		}
 		this.field12611 = var2.method1731();
 		this.overlayHeight = var2.getMinY();
@@ -126,10 +134,10 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fw(Ldh;I)V")
-	public void method17373(Toolkit toolkit) {
-		Model var2 = this.method19748(toolkit, 0, this.effectAnim);
+	public void method17373(Toolkit arg0) {
+		Model var2 = this.method19748(arg0, 0, this.effectAnim);
 		if (var2 != null) {
-			this.method19750(toolkit, var2, this.method10533());
+			this.method19750(arg0, var2, this.method10533());
 		}
 	}
 
@@ -155,7 +163,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fa(Ldh;IIB)Z")
-	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
+	public boolean method17375(Toolkit arg0, int arg1, int arg2) {
 		return false;
 	}
 
@@ -165,7 +173,7 @@ public class SpotAnimation extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("aur.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

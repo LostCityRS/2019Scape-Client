@@ -1,7 +1,6 @@
 package com.jagex.core.datastruct;
 
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("aap")
@@ -26,25 +25,25 @@ public class SecondaryLinkedList implements Iterable {
 	}
 
 	@ObfuscatedName("aap.n(Laky;I)V")
-	public void pushBack(SecondaryNode node) {
-		if (node.secondaryNext != null) {
-			node.secondaryRemove();
+	public void pushBack(SecondaryNode arg0) {
+		if (arg0.secondaryNext != null) {
+			arg0.secondaryRemove();
 		}
-		node.secondaryNext = this.head.secondaryNext;
-		node.secondaryPrev = this.head;
-		node.secondaryNext.secondaryPrev = node;
-		node.secondaryPrev.secondaryNext = node;
+		arg0.secondaryNext = this.head.secondaryNext;
+		arg0.secondaryPrev = this.head;
+		arg0.secondaryNext.secondaryPrev = arg0;
+		arg0.secondaryPrev.secondaryNext = arg0;
 	}
 
 	@ObfuscatedName("vj.m(Laky;Laky;I)V")
-	public static void pushNodeBack(SecondaryNode node, SecondaryNode head) {
-		if (node.secondaryNext != null) {
-			node.secondaryRemove();
+	public static void pushNodeBack(SecondaryNode arg0, SecondaryNode arg1) {
+		if (arg0.secondaryNext != null) {
+			arg0.secondaryRemove();
 		}
-		node.secondaryNext = head.secondaryNext;
-		node.secondaryPrev = head;
-		node.secondaryNext.secondaryPrev = node;
-		node.secondaryPrev.secondaryNext = node;
+		arg0.secondaryNext = arg1.secondaryNext;
+		arg0.secondaryPrev = arg1;
+		arg0.secondaryNext.secondaryPrev = arg0;
+		arg0.secondaryPrev.secondaryNext = arg0;
 	}
 
 	@ObfuscatedName("xg.k(Laky;Laky;I)V")
@@ -60,12 +59,12 @@ public class SecondaryLinkedList implements Iterable {
 
 	@ObfuscatedName("aap.f(B)Laky;")
 	public SecondaryNode pollFront() {
-		SecondaryNode node = this.head.secondaryPrev;
-		if (this.head == node) {
+		SecondaryNode var1 = this.head.secondaryPrev;
+		if (this.head == var1) {
 			return null;
 		} else {
-			node.secondaryRemove();
-			return node;
+			var1.secondaryRemove();
+			return var1;
 		}
 	}
 
@@ -105,11 +104,11 @@ public class SecondaryLinkedList implements Iterable {
 
 	@ObfuscatedName("aap.z(I)I")
 	public int length() {
-		int length = 0;
+		int var1 = 0;
 		for (SecondaryNode var2 = this.head.secondaryPrev; var2 != this.head; var2 = var2.secondaryPrev) {
-			length++;
+			var1++;
 		}
-		return length;
+		return var1;
 	}
 
 	public Iterator iterator() {

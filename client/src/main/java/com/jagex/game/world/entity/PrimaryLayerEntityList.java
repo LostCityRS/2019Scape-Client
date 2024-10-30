@@ -6,7 +6,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("uc")
 public class PrimaryLayerEntityList {
 
-    @ObfuscatedName("uc.e")
+	@ObfuscatedName("uc.e")
 	public PrimaryLayerEntity field7057;
 
 	@ObfuscatedName("uc.n")

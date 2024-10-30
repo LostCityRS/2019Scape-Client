@@ -30,11 +30,11 @@ public class Shake extends CameraEffect {
 		this.field12554 = arg3;
 	}
 
-	public Shake(int id, Packet buf) {
-		super(id);
-		this.mode = ShakeMode.of(buf.g1());
-		this.field12555 = buf.gFloat();
-		this.field12554 = buf.gFloat();
+	public Shake(int arg0, Packet arg1) {
+		super(arg0);
+		this.mode = ShakeMode.of(arg1.g1());
+		this.field12555 = arg1.gFloat();
+		this.field12554 = arg1.gFloat();
 	}
 
 	@ObfuscatedName("atd.n(FI)V")
@@ -65,9 +65,9 @@ public class Shake extends CameraEffect {
 	}
 
 	@ObfuscatedName("atd.k(Lalw;I)V")
-	public void decode(Packet buf) {
-		this.mode = ShakeMode.of(buf.g1());
-		this.field12555 = buf.gFloat();
-		this.field12554 = buf.gFloat();
+	public void decode(Packet arg0) {
+		this.mode = ShakeMode.of(arg0.g1());
+		this.field12555 = arg0.gFloat();
+		this.field12554 = arg0.gFloat();
 	}
 }

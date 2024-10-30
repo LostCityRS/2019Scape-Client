@@ -6,7 +6,6 @@ import com.jagex.game.config.CachingConfigTypeList;
 import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-
 import java.util.Map;
 
 @ObfuscatedName("aor")

@@ -1,9 +1,13 @@
 package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
-
 import java.applet.Applet;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringReader;
+import java.io.StringWriter;
 import java.net.URL;
 
 @ObfuscatedName("atc")
@@ -41,8 +45,6 @@ public class JagException extends RuntimeException {
 
 	@ObfuscatedName("wt.e(Ljava/lang/String;Ljava/lang/Throwable;I)V")
 	public static void report(String arg0, Throwable arg1) {
-		arg1.printStackTrace();
-
 		try {
 			String var2 = "";
 			if (arg1 != null) {
@@ -72,15 +74,10 @@ public class JagException extends RuntimeException {
 				var6 = System.getProperty("java.version");
 			} catch (Exception var11) {
 			}
-
-			try {
-				URL var8 = new URL(var4, "clienterror.ws?c=" + field12493 + "&cs=" + field12494 + "&u=" + (user == null ? "" + field12496 : WebTools.urlencode(user)) + "&v1=" + WebTools.urlencode(var5) + "&v2=" + WebTools.urlencode(var6) + "&e=" + var3);
-				DataInputStream var9 = new DataInputStream(var8.openStream());
-				var9.read();
-				var9.close();
-			} catch (IOException var12) {
-				System.err.println("Failed to report exception to clienterror.ws");
-			}
+			URL var8 = new URL(var4, "clienterror.ws?c=" + field12493 + "&cs=" + field12494 + "&u=" + (user == null ? "" + field12496 : WebTools.urlencode(user)) + "&v1=" + WebTools.urlencode(var5) + "&v2=" + WebTools.urlencode(var6) + "&e=" + var3);
+			DataInputStream var9 = new DataInputStream(var8.openStream());
+			var9.read();
+			var9.close();
 		} catch (Exception var12) {
 			var12.printStackTrace();
 		}

@@ -1,7 +1,6 @@
 package com.jagex.core.datastruct;
 
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("aah")
@@ -19,8 +18,8 @@ public class HashTableIterator implements Iterator {
 	@ObfuscatedName("aah.k")
 	public Node prev = null;
 
-	public HashTableIterator(HashTable map) {
-		this.map = map;
+	public HashTableIterator(HashTable arg0) {
+		this.map = arg0;
 		this.advance();
 	}
 
@@ -39,21 +38,21 @@ public class HashTableIterator implements Iterator {
 
 	public Object next() {
 		if (this.map.buckets[this.currentIndex - 1] != this.next) {
-			Node node = this.next;
-			this.next = node.next;
-			this.prev = node;
-			return node;
+			Node var1 = this.next;
+			this.next = var1.next;
+			this.prev = var1;
+			return var1;
 		}
-		Node node;
+		Node var2;
 		do {
 			if (this.currentIndex >= this.map.bucketCount) {
 				return null;
 			}
-			node = this.map.buckets[++this.currentIndex - 1].next;
-		} while (this.map.buckets[this.currentIndex - 1] == node);
-		this.next = node.next;
-		this.prev = node;
-		return node;
+			var2 = this.map.buckets[++this.currentIndex - 1].next;
+		} while (this.map.buckets[this.currentIndex - 1] == var2);
+		this.next = var2.next;
+		this.prev = var2;
+		return var2;
 	}
 
 	public boolean hasNext() {

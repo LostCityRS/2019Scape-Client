@@ -1,5 +1,6 @@
 package com.jagex.game.config.db.dbrowtype;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.MutableConfig;
@@ -21,13 +22,13 @@ public class DBRowType implements ConfigType, MutableConfig {
 	public int tableId;
 
 	@ObfuscatedName("abc.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
@@ -37,24 +38,24 @@ public class DBRowType implements ConfigType, MutableConfig {
 	}
 
 	@ObfuscatedName("abc.p(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 3) {
-			int numColumns = buf.g1();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 3) {
+			int var3 = arg0.g1();
 			if (this.columnValues == null) {
-				this.columnValues = new Object[numColumns][];
-				this.columnTypes = new ScriptVarType[numColumns][];
+				this.columnValues = new Object[var3][];
+				this.columnTypes = new ScriptVarType[var3][];
 			}
-			for (int var4 = buf.g1(); var4 != 255; var4 = buf.g1()) {
-				int columnsLength = buf.g1();
-				ScriptVarType[] columnTypes = new ScriptVarType[columnsLength];
-				for (int var7 = 0; var7 < columnsLength; var7++) {
-					columnTypes[var7] = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
+			for (int var4 = arg0.g1(); var4 != 255; var4 = arg0.g1()) {
+				int var5 = arg0.g1();
+				ScriptVarType[] var6 = new ScriptVarType[var5];
+				for (int var7 = 0; var7 < var5; var7++) {
+					var6[var7] = (ScriptVarType) SerializableEnums.decode((SerializableEnum[]) ScriptVarType.values(), arg0.gSmart1or2());
 				}
-				this.columnValues[var4] = DBUtils.unpackColumnDataValues(buf, columnTypes);
-				this.columnTypes[var4] = columnTypes;
+				this.columnValues[var4] = DBUtils.unpackColumnDataValues(arg0, var6);
+				this.columnTypes[var4] = var6;
 			}
-		} else if (code == 4) {
-			this.tableId = buf.gVarInt2();
+		} else if (arg1 == 4) {
+			this.tableId = arg0.gVarInt2();
 		}
 	}
 

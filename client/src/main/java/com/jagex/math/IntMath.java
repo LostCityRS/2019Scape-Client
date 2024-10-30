@@ -1,7 +1,6 @@
 package com.jagex.math;
 
 import deob.ObfuscatedName;
-
 import java.util.Random;
 
 @ObfuscatedName("acl")
@@ -86,29 +85,29 @@ public class IntMath {
 	}
 
 	@ObfuscatedName("sf.u(II)I")
-	public static int ilog(int v) {
+	public static int ilog(int arg0) {
 		int var1 = 0;
-		if (v < 0 || v >= 65536) {
-			v >>>= 0x10;
+		if (arg0 < 0 || arg0 >= 65536) {
+			arg0 >>>= 0x10;
 			var1 += 16;
 		}
-		if (v >= 256) {
-			v >>>= 0x8;
+		if (arg0 >= 256) {
+			arg0 >>>= 0x8;
 			var1 += 8;
 		}
-		if (v >= 16) {
-			v >>>= 0x4;
+		if (arg0 >= 16) {
+			arg0 >>>= 0x4;
 			var1 += 4;
 		}
-		if (v >= 4) {
-			v >>>= 0x2;
+		if (arg0 >= 4) {
+			arg0 >>>= 0x2;
 			var1 += 2;
 		}
-		if (v >= 1) {
-			v >>>= 0x1;
+		if (arg0 >= 1) {
+			arg0 >>>= 0x1;
 			var1++;
 		}
-		return v + var1;
+		return arg0 + var1;
 	}
 
 	@ObfuscatedName("ni.z(III)I")

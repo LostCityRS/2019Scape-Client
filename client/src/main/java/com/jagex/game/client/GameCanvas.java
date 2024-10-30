@@ -1,16 +1,17 @@
 package com.jagex.game.client;
 
 import deob.ObfuscatedName;
-
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Component;
+import java.awt.Graphics;
 
 @ObfuscatedName("atu")
-public final class GameCanvas extends Canvas {
+public class GameCanvas extends Canvas {
 
 	@ObfuscatedName("atu.e")
-	public java.awt.Component field12487;
+	public Component field12487;
 
-	public GameCanvas(java.awt.Component arg0) {
+	public GameCanvas(Component arg0) {
 		this.field12487 = arg0;
 	}
 

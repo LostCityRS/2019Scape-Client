@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amg")
 public class PreferencesBrightness extends Preference {
 
-	public PreferencesBrightness(ClientOptions options) {
-		super(options);
+	public PreferencesBrightness(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesBrightness(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesBrightness(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("amg.o(I)V")
@@ -27,13 +27,13 @@ public class PreferencesBrightness extends Preference {
 	}
 
 	@ObfuscatedName("amg.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return 1;
 	}
 
 	@ObfuscatedName("amg.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amg.s(B)I")

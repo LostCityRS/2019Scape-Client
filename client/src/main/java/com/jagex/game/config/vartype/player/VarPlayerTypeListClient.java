@@ -10,7 +10,6 @@ import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("adj")
@@ -28,13 +27,13 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 	}
 
 	@ObfuscatedName("adj.e(II)Lay;")
-	public ConfigType list(int id) {
+	public ConfigType list(int arg0) {
 		SoftLruHashTable var2 = this.field9254;
 		synchronized (this.field9254) {
-			VarPlayerType var3 = (VarPlayerType) this.field9254.get((long) id);
+			VarPlayerType var3 = (VarPlayerType) this.field9254.get((long) arg0);
 			if (var3 == null) {
-				var3 = this.method15255(id);
-				this.field9254.put(var3, (long) id);
+				var3 = this.method15255(arg0);
+				this.field9254.put(var3, (long) arg0);
 			}
 			return var3;
 		}
@@ -66,7 +65,6 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 		}
 	}
 
-	// line 54
 	@ObfuscatedName("adj.s(B)V")
 	public void cacheRemoveSoftReferences() {
 		SoftLruHashTable var1 = this.field9254;
@@ -75,43 +73,33 @@ public class VarPlayerTypeListClient extends VarTypeList implements ConfigTypeLi
 		}
 	}
 
-	// line 60
 	public Iterator iterator() {
-		return new VarPlayerTypeListIterator(this);
+		return new VarPlayerTypeListClient.VarPlayerTypeListIterator();
+	}
+
+	@ObfuscatedName("adj.n(I)I")
+	public int length() {
+		return super.length();
 	}
 
 	@ObfuscatedName("gj")
-	public static class VarPlayerTypeListIterator implements Iterator {
-
-		// $FF: synthetic field
-		public final VarPlayerTypeListClient this$0;
+	public class VarPlayerTypeListIterator implements Iterator {
 
 		@ObfuscatedName("gj.e")
 		public int field1982;
 
-		public VarPlayerTypeListIterator(VarPlayerTypeListClient arg0) {
-			this.this$0 = arg0;
-		}
-
 		public boolean hasNext() {
-			return this.field1982 < this.this$0.length();
+			return this.field1982 < VarPlayerTypeListClient.this.length();
 		}
 
-		// line 68
 		public Object next() {
 			int var1 = ++this.field1982 - 1;
-			VarPlayerType var2 = (VarPlayerType) this.this$0.field9254.get((long) var1);
-			return var2 == null ? this.this$0.method15255(var1) : var2;
+			VarPlayerType var2 = (VarPlayerType) VarPlayerTypeListClient.this.field9254.get((long) var1);
+			return var2 == null ? VarPlayerTypeListClient.this.method15255(var1) : var2;
 		}
 
 		public void remove() {
 			throw new UnsupportedOperationException();
 		}
-	}
-
-	// line 81
-	@ObfuscatedName("adj.n(I)I")
-	public int length() {
-		return super.length();
 	}
 }

@@ -3,10 +3,10 @@ package com.jagex.graphics.gl.effects;
 import com.jagex.game.client.DataType;
 import com.jagex.graphics.GlRenderList;
 import com.jagex.graphics.TextureFormat;
-import com.jagex.graphics.gl.GlWaterRelated;
-import com.jagex.graphics.gl.GlToolkit;
 import com.jagex.graphics.gl.GlTexture;
+import com.jagex.graphics.gl.GlToolkit;
 import com.jagex.graphics.gl.GlUnderwaterTexture;
+import com.jagex.graphics.gl.GlWaterRelated;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 

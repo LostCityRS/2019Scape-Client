@@ -1,7 +1,6 @@
 package lzma.sdk.lz;
 
 import deob.ObfuscatedName;
-
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -24,19 +23,19 @@ public class OutWindow {
 	public OutputStream _stream;
 
 	@ObfuscatedName("ru.e(II)V")
-	public void create(int windowSize) {
-		if (this._buffer == null || this._windowSize != windowSize) {
-			this._buffer = new byte[windowSize];
+	public void create(int arg0) {
+		if (this._buffer == null || this._windowSize != arg0) {
+			this._buffer = new byte[arg0];
 		}
-		this._windowSize = windowSize;
+		this._windowSize = arg0;
 		this._pos = 0;
 		this._streamPos = 0;
 	}
 
 	@ObfuscatedName("ru.n(Ljava/io/OutputStream;S)V")
-	public void setStream(OutputStream stream) throws IOException {
+	public void setStream(OutputStream arg0) throws IOException {
 		this.releaseStream();
-		this._stream = stream;
+		this._stream = arg0;
 	}
 
 	@ObfuscatedName("ru.m(B)V")
@@ -46,8 +45,8 @@ public class OutWindow {
 	}
 
 	@ObfuscatedName("ru.k(ZI)V")
-	public void init(boolean solid) {
-		if (!solid) {
+	public void init(boolean arg0) {
+		if (!arg0) {
 			this._streamPos = 0;
 			this._pos = 0;
 		}
@@ -55,11 +54,11 @@ public class OutWindow {
 
 	@ObfuscatedName("ru.f(B)V")
 	public void flush() throws IOException {
-		int size = this._pos - this._streamPos;
-		if (size == 0) {
+		int var1 = this._pos - this._streamPos;
+		if (var1 == 0) {
 			return;
 		}
-		this._stream.write(this._buffer, this._streamPos, size);
+		this._stream.write(this._buffer, this._streamPos, var1);
 		if (this._pos >= this._windowSize) {
 			this._pos = 0;
 		}
@@ -67,36 +66,37 @@ public class OutWindow {
 	}
 
 	@ObfuscatedName("ru.w(IIB)V")
-	public void copyBlock(int distance, int len) throws IOException {
-		int pos = this._pos - distance - 1;
-		if (pos < 0) {
-			pos += this._windowSize;
+	public void copyBlock(int arg0, int arg1) throws IOException {
+		int var3 = this._pos - arg0 - 1;
+		if (var3 < 0) {
+			var3 += this._windowSize;
 		}
-		for (; len != 0; len--) {
-			if (pos >= this._windowSize) {
-				pos = 0;
+		while (arg1 != 0) {
+			if (var3 >= this._windowSize) {
+				var3 = 0;
 			}
-			this._buffer[++this._pos - 1] = this._buffer[pos++];
+			this._buffer[++this._pos - 1] = this._buffer[var3++];
 			if (this._pos >= this._windowSize) {
 				this.flush();
 			}
+			arg1--;
 		}
 	}
 
 	@ObfuscatedName("ru.l(BB)V")
-	public void putByte(byte b) throws IOException {
-		this._buffer[++this._pos - 1] = b;
+	public void putByte(byte arg0) throws IOException {
+		this._buffer[++this._pos - 1] = arg0;
 		if (this._pos >= this._windowSize) {
 			this.flush();
 		}
 	}
 
 	@ObfuscatedName("ru.u(II)B")
-	public byte getByte(int distance) {
-		int pos = this._pos - distance - 1;
-		if (pos < 0) {
-			pos += this._windowSize;
+	public byte getByte(int arg0) {
+		int var2 = this._pos - arg0 - 1;
+		if (var2 < 0) {
+			var2 += this._windowSize;
 		}
-		return this._buffer[pos];
+		return this._buffer[var2];
 	}
 }

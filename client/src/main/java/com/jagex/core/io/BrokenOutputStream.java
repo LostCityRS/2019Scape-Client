@@ -1,7 +1,6 @@
 package com.jagex.core.io;
 
 import deob.ObfuscatedName;
-
 import java.io.IOException;
 import java.io.OutputStream;
 

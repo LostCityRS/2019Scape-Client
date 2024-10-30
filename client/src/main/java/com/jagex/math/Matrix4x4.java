@@ -2,11 +2,10 @@ package com.jagex.math;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-
 import java.util.Arrays;
 
 @ObfuscatedName("pq")
-public final class Matrix4x4 {
+public class Matrix4x4 {
 
 	@ObfuscatedName("pq.n")
 	public static Matrix4x4[] pool = new Matrix4x4[0];

@@ -11,8 +11,8 @@ public abstract class GpuPostProcessEffect {
 	@ObfuscatedName("lh.n")
 	public boolean field3243;
 
-	public GpuPostProcessEffect(GpuToolkit gpuRenderer) {
-		this.gpuRenderer = gpuRenderer;
+	public GpuPostProcessEffect(GpuToolkit arg0) {
+		this.gpuRenderer = arg0;
 	}
 
 	@ObfuscatedName("lh.k()Z")

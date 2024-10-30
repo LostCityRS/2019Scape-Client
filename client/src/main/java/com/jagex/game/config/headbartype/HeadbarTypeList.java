@@ -10,8 +10,8 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aol")
 public class HeadbarTypeList extends CachingConfigTypeList {
 
-	public HeadbarTypeList(ModeGame modeGame, Language language, Js5 configClient, Js5 spritesClient) {
-		super(modeGame, language, configClient, Js5ConfigGroup.HEADBARTYPE, 64, new BasicHeadbarTypeFactory(spritesClient));
+	public HeadbarTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
+		super(arg0, arg1, arg2, Js5ConfigGroup.HEADBARTYPE, 64, new BasicHeadbarTypeFactory(arg3));
 	}
 
 	@ObfuscatedName("aol.r(I)V")
@@ -21,9 +21,9 @@ public class HeadbarTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aol.v(II)V")
-	public void cacheClean(int num) {
-		super.cacheClean(num);
-		((HeadbarTypeFactory) this.factory).cacheClean(num);
+	public void cacheClean(int arg0) {
+		super.cacheClean(arg0);
+		((HeadbarTypeFactory) this.factory).cacheClean(arg0);
 	}
 
 	@ObfuscatedName("aol.o(I)V")

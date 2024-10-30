@@ -7,12 +7,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("and")
 public class PreferencesBloom extends Preference {
 
-	public PreferencesBloom(ClientOptions options) {
-		super(options);
+	public PreferencesBloom(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesBloom(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesBloom(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("and.o(I)V")
@@ -40,13 +40,13 @@ public class PreferencesBloom extends Preference {
 	}
 
 	@ObfuscatedName("and.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return Toolkit.method723(this.options.displayMode.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("and.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("and.y(B)I")

@@ -4,7 +4,7 @@ import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ov")
-public final class Quaternion {
+public class Quaternion {
 
 	@ObfuscatedName("ov.e")
 	public static Quaternion[] pool = new Quaternion[0];

@@ -1,12 +1,19 @@
 package com.jagex.game.shared.console;
 
 import com.jagex.core.constants.ModeWhere;
+import com.jagex.core.io.PacketBit;
 import com.jagex.core.utils.Cp1252;
 import com.jagex.core.utils.FileUtil;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.StringTools;
 import com.jagex.game.MiniMap;
-import com.jagex.game.client.*;
+import com.jagex.game.client.ClientMessage;
+import com.jagex.game.client.GameShell;
+import com.jagex.game.client.KeyboardEvent;
+import com.jagex.game.client.LocalisedText;
+import com.jagex.game.client.RebuildRequest;
+import com.jagex.game.client.RebuildType;
+import com.jagex.game.client.TwitchHardwarePlatform;
 import com.jagex.game.clientoptions.Preferences;
 import com.jagex.game.config.iftype.Component;
 import com.jagex.game.config.vartype.constants.VarDomainType;
@@ -15,13 +22,13 @@ import com.jagex.game.network.ServerConnection;
 import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.entity.SceneManager;
-import com.jagex.graphics.*;
+import com.jagex.graphics.DefaultSprites;
+import com.jagex.graphics.OcclusionManager;
+import com.jagex.graphics.RendererInfo;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-import rs2.client.login.LoginManager;
-import rs2.client.login.WorldSwitcher;
-
+import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
@@ -30,6 +37,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Date;
+import rs2.client.Client;
+import rs2.client.login.LoginManager;
+import rs2.client.login.WorldSwitcher;
 
 @ObfuscatedName("ap")
 public class DeveloperConsole {
@@ -161,8 +171,8 @@ public class DeveloperConsole {
 
 	@ObfuscatedName("xd.u(B)V")
 	public static void update() {
-		if (field776 * 36 < 102) {
-			field776 = field776 * 36 + 6;
+		if (field776 < 102) {
+			field776 += 6;
 		}
 		if (field772 != -1 && field765 < MonotonicTime.get()) {
 			for (int var0 = field772; var0 < field2615.length; var0++) {
@@ -331,12 +341,12 @@ public class DeveloperConsole {
 	}
 
 	@ObfuscatedName("ky.r(Ldh;I)V")
-	public static void draw(Toolkit toolkit) {
+	public static void draw(Toolkit arg0) {
 		if (TwitchHardwarePlatform.isStreaming() && TwitchHardwarePlatform.method8634()) {
 			TwitchHardwarePlatform.drawTwitchStream(0, 0, GameShell.canvasWid, 350);
 		}
-		toolkit.resetBounds(0, 0, GameShell.canvasWid, 350);
-		toolkit.fillRectangle(0, 0, GameShell.canvasWid, 350, field776 * 36 << 24 | 0x332277, 1);
+		arg0.resetBounds(0, 0, GameShell.canvasWid, 350);
+		arg0.fillRectangle(0, 0, GameShell.canvasWid, 350, field776 << 24 | 0x332277, 1);
 		int var1 = 350 / field763;
 		if (field764 > 0) {
 			int var2 = 346 - field763 - 4;
@@ -345,29 +355,29 @@ public class DeveloperConsole {
 			if (field764 > 1) {
 				var4 += (field764 - 1 - field771) * (var2 - var3) / (field764 - 1);
 			}
-			toolkit.fillRectangle(GameShell.canvasWid - 16, var4, 12, var3, field776 * 36 << 24 | 0x332277, 2);
+			arg0.fillRectangle(GameShell.canvasWid - 16, var4, 12, var3, field776 << 24 | 0x332277, 2);
 			for (int var5 = field771; var5 < field771 + var1 && var5 < field764; var5++) {
 				String[] var6 = StringTools.split(field4845[var5], '\b');
 				int var7 = (GameShell.canvasWid - 8 - 16) / var6.length;
 				for (int var8 = 0; var8 < var6.length; var8++) {
 					int var9 = var7 * var8 + 8;
-					toolkit.resetBounds(var9, 0, var7 + var9 - 8, 350);
+					arg0.resetBounds(var9, 0, var7 + var9 - 8, 350);
 					DefaultSprites.p12FullFont.drawString(method14312(var6[var8]), var9, 350 - field768 - 2 - DefaultSprites.p12FullMetrics.field8569 - field763 * (var5 - field771), -1, -16777216);
 				}
 			}
 		}
 		DefaultSprites.p11FullFont.drawStringRight("910 1", GameShell.canvasWid - 25, 330, -1, -16777216);
-		toolkit.resetBounds(0, 0, GameShell.canvasWid, 350);
-		toolkit.drawHorizontalLine(0, 350 - field768, GameShell.canvasWid, -1);
+		arg0.resetBounds(0, 0, GameShell.canvasWid, 350);
+		arg0.drawHorizontalLine(0, 350 - field768, GameShell.canvasWid, -1);
 		DefaultSprites.b12FullFont.drawString("--> " + method14312(currententry), 10, 350 - DefaultSprites.b12FullMetrics.field8569 - 1, -1, -16777216);
 		if (GameShell.focus) {
 			int var10 = -1;
 			if (Client.loopCycle % 30 > 15) {
 				var10 = 16777215;
 			}
-			toolkit.drawVerticalLine(DefaultSprites.b12FullMetrics.stringWidth("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - DefaultSprites.b12FullMetrics.field8569 - 11, 12, var10);
+			arg0.drawVerticalLine(DefaultSprites.b12FullMetrics.stringWidth("--> " + method14312(currententry).substring(0, commandcharpointer)) + 10, 350 - DefaultSprites.b12FullMetrics.field8569 - 11, 12, var10);
 		}
-		toolkit.resetClip();
+		arg0.resetClip();
 		method16858();
 	}
 
@@ -458,7 +468,7 @@ public class DeveloperConsole {
 			addline(LocalisedText.DEBUG_CONSOLE_ERROR.forLang(Client.language));
 			return;
 		}
-		if (Client.modewhere != ModeWhere.LIVE || Client.staffModLevel >= 2 || Client.ALLOW_COMMANDS_ANYWHERE) {
+		if (ModeWhere.LIVE != Client.modewhere || Client.staffModLevel >= 2) {
 			try {
 				if (arg0.equalsIgnoreCase("wm1")) {
 					Client.setWindowMode(1, -1, -1, false);
@@ -661,13 +671,12 @@ public class DeveloperConsole {
 					var31.buf.pjstr(arg0);
 					var30.queue(var31);
 				}
-			} catch (Exception ex) {
-				ex.printStackTrace();
+			} catch (Exception var36) {
 				addline(LocalisedText.DEBUG_CONSOLE_ERROR.forLang(Client.language));
 				return;
 			}
 		}
-		if (Client.state != 18 && Client.state != 13 && !Client.ALLOW_COMMANDS_ANYWHERE) {
+		if (Client.state != 18 && Client.state != 13) {
 			addline(LocalisedText.DEBUG_CONSOLE_UNKNOWNCOMMAND.forLang(Client.language) + arg0);
 		}
 	}

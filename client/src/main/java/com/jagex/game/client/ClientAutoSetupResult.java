@@ -23,8 +23,8 @@ public class ClientAutoSetupResult extends AutoSetupResult implements SendablePa
 	}
 
 	@ObfuscatedName("alq.z(II)V")
-	public void setResultId(int resultId) {
-		this.result = resultId;
+	public void setResultId(int arg0) {
+		this.result = arg0;
 	}
 
 	@ObfuscatedName("alq.p(II)V")
@@ -38,27 +38,27 @@ public class ClientAutoSetupResult extends AutoSetupResult implements SendablePa
 	}
 
 	@ObfuscatedName("alq.c(IIS)V")
-	public void method18318(int arg0, int profileTime) {
-		if (arg0 == 0 && profileTime > 32767) {
-			profileTime = 32767;
-		} else if (profileTime > 8388607) {
-			profileTime = 8388607;
+	public void method18318(int arg0, int arg1) {
+		if (arg0 == 0 && arg1 > 32767) {
+			arg1 = 32767;
+		} else if (arg1 > 8388607) {
+			arg1 = 8388607;
 		}
 		switch(arg0) {
 			case 0:
-				this.field8899 = profileTime;
+				this.field8899 = arg1;
 				break;
 			case 1:
-				this.field8898 = profileTime;
+				this.field8898 = arg1;
 			case 2:
 			case 4:
 			default:
 				break;
 			case 3:
-				this.field8902 = profileTime;
+				this.field8902 = arg1;
 				break;
 			case 5:
-				this.field8903 = profileTime;
+				this.field8903 = arg1;
 		}
 	}
 }

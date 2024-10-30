@@ -13,12 +13,12 @@ public class PreferencesDisplayMode extends Preference {
 	@ObfuscatedName("amd.l")
 	public boolean defaulted = false;
 
-	public PreferencesDisplayMode(ClientOptions options) {
-		super(options);
+	public PreferencesDisplayMode(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesDisplayMode(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesDisplayMode(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("amd.o(I)V")
@@ -40,14 +40,14 @@ public class PreferencesDisplayMode extends Preference {
 	}
 
 	@ObfuscatedName("amd.n(II)I")
-	public int canSetValue(int value) {
-		return value == 3 && !NativeLibraries.getLoader().method7900("jagdx") ? 3 : 2;
+	public int canSetValue(int arg0) {
+		return arg0 == 3 && !NativeLibraries.getLoader().method7900("jagdx") ? 3 : 2;
 	}
 
 	@ObfuscatedName("amd.k(II)V")
-	public void setValue(int value) {
+	public void setValue(int arg0) {
 		this.defaulted = false;
-		this.currentValue = value;
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amd.y(B)I")

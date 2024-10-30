@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface CameraTrackableProvider {
 
 	@ObfuscatedName("jy.e(Ljl;IB)Ljn;")
-	CameraTrackable getCameraTrackable(CameraTrackableType cameraTrackableType, int index);
+	CameraTrackable getCameraTrackable(CameraTrackableType arg0, int arg1);
 }

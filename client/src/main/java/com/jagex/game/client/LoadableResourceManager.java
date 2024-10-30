@@ -1,7 +1,7 @@
 package com.jagex.game.client;
 
-import com.jagex.game.load.Loading;
 import com.jagex.game.ClientWatch;
+import com.jagex.game.load.Loading;
 import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.js5.Js5ArchiveResourceLoader;
 import com.jagex.js5.Js5FileResourceLoader;
@@ -77,17 +77,17 @@ public class LoadableResourceManager {
 			LoadableResource.JS5_CLIENTSCRIPTS.setResourceLoader(new Js5ArchiveResourceLoader(Client.clientscriptsJs5));
 			LoadableResource.JS5_FONT_METRICS.setResourceLoader(new Js5ArchiveResourceLoader(Client.fontmetricsJs5));
 			LoadableResource.JS5_WORLD_MAP_DATA.setResourceLoader(new Js5GroupResourceLoader(Client.worldmapJs5, 0));
-			for (int index = 0; index < loadableResources.length; index++) {
-				if (loadableResources[index].getResourceLoader() == null) {
+			for (int var3 = 0; var3 < loadableResources.length; var3++) {
+				if (loadableResources[var3].getResourceLoader() == null) {
 					throw new RuntimeException();
 				}
 			}
 			int var4 = 0;
-			LoadableResource[] resources = loadableResources;
-			for (int index = 0; index < resources.length; index++) {
-				LoadableResource resource = resources[index];
-				int var8 = resource.getLength();
-				int var9 = resource.getResourceLoader().getPercentageComplete();
+			LoadableResource[] var5 = loadableResources;
+			for (int var6 = 0; var6 < var5.length; var6++) {
+				LoadableResource var7 = var5[var6];
+				int var8 = var7.getLength();
+				int var9 = var7.getResourceLoader().getPercentageComplete();
 				var4 += var8 * var9 / 100;
 			}
 			field4333 = var4;

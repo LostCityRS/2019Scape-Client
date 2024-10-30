@@ -16,14 +16,13 @@ public class Js5NetRequest extends Js5Request {
 	@ObfuscatedName("auq.e(I)[B")
 	public byte[] getBytes() {
 		if (this.incomplete || this.buf.pos < this.buf.data.length - this.offset) {
-			throw new RuntimeException("Not ready!");
+			throw new RuntimeException();
 		}
-
 		return this.buf.data;
 	}
 
 	@ObfuscatedName("auq.n(I)I")
 	public int getPercentageComplete() {
-		return this.buf == null ? 0 : this.buf.pos / (this.buf.data.length - this.offset);
+		return this.buf == null ? 0 : this.buf.pos * 100 / (this.buf.data.length - this.offset);
 	}
 }

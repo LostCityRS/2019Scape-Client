@@ -1,7 +1,6 @@
 package com.jagex.core.datastruct;
 
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("aar")
@@ -16,13 +15,13 @@ public class LinkListIterator implements Iterator {
 	@ObfuscatedName("aar.m")
 	public Node prev = null;
 
-	public LinkListIterator(LinkList queue) {
-		this.set(queue);
+	public LinkListIterator(LinkList arg0) {
+		this.set(arg0);
 	}
 
 	@ObfuscatedName("aar.l(Laat;I)V")
-	public void set(LinkList queue) {
-		this.queue = queue;
+	public void set(LinkList arg0) {
+		this.queue = arg0;
 		this.advance();
 	}
 
@@ -39,15 +38,15 @@ public class LinkListIterator implements Iterator {
 	}
 
 	public Object next() {
-		Node node = this.next;
-		if (this.queue.sentinel == node) {
-			node = null;
+		Node var1 = this.next;
+		if (this.queue.sentinel == var1) {
+			var1 = null;
 			this.next = null;
 		} else {
-			this.next = node.next;
+			this.next = var1.next;
 		}
-		this.prev = node;
-		return node;
+		this.prev = var1;
+		return var1;
 	}
 
 	public boolean hasNext() {

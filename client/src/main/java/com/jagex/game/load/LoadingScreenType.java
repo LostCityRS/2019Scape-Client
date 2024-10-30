@@ -2,7 +2,11 @@ package com.jagex.game.load;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-import rs2.client.login.*;
+import rs2.client.login.LoginRelated4;
+import rs2.client.login.LoginRelated5;
+import rs2.client.login.LoginRelated6;
+import rs2.client.login.LoginScreenRelated2;
+import rs2.client.login.LoginScreenRelated3;
 
 @ObfuscatedName("adn")
 public class LoadingScreenType {

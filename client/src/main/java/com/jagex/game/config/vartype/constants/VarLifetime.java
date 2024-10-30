@@ -20,11 +20,11 @@ public class VarLifetime implements SerializableEnum {
 
 	@ObfuscatedName("aw.e(B)[Lqj;")
 	public static VarLifetime[] values() {
-		return new VarLifetime[] {PERMANENT, TEMPORARY, SERVER_PERMANENT};
+		return new VarLifetime[] { PERMANENT, TEMPORARY, SERVER_PERMANENT };
 	}
 
-	public VarLifetime(int serialID) {
-		this.serialID = serialID;
+	public VarLifetime(int arg0) {
+		this.serialID = arg0;
 	}
 
 	@ObfuscatedName("qj.n()I")

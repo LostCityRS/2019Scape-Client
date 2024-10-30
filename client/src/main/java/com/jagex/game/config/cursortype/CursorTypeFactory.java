@@ -13,8 +13,8 @@ public abstract class CursorTypeFactory {
 	@ObfuscatedName("xd.n")
 	public final SoftLruHashTable cursorCache = new SoftLruHashTable(2);
 
-	public CursorTypeFactory(Js5 js5) {
-		this.js5 = js5;
+	public CursorTypeFactory(Js5 arg0) {
+		this.js5 = arg0;
 	}
 
 	@ObfuscatedName("xd.e(I)V")

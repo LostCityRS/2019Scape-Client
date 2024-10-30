@@ -3,7 +3,7 @@ package com.jagex.core.datastruct;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("eb")
-public final class SoftLruHashTable {
+public class SoftLruHashTable {
 
 	@ObfuscatedName("eb.e")
 	public int field1758;
@@ -20,8 +20,8 @@ public final class SoftLruHashTable {
 	@ObfuscatedName("eb.f")
 	public SoftLruHashTableRemovalListener field1759;
 
-	public SoftLruHashTable(int size) {
-		this(size, size);
+	public SoftLruHashTable(int arg0) {
+		this(arg0, arg0);
 	}
 
 	@ObfuscatedName("eb.e(Len;B)V")

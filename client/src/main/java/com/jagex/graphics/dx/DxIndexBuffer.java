@@ -3,9 +3,10 @@ package com.jagex.graphics.dx;
 import com.jagex.game.client.DataType;
 import com.jagex.graphics.GpuIndexBuffer;
 import deob.ObfuscatedName;
-import jagdx.IDirect3DDevice;
-import jagdx.IUnknown;
 import jagdx.HRESULT;
+import jagdx.IDirect3DDevice;
+import jagdx.IDirect3DIndexBuffer;
+import jagdx.IUnknown;
 
 @ObfuscatedName("ot")
 public class DxIndexBuffer implements GpuIndexBuffer {
@@ -28,9 +29,9 @@ public class DxIndexBuffer implements GpuIndexBuffer {
 	@ObfuscatedName("ot.w")
 	public long field4213 = 0L;
 
-	public DxIndexBuffer(DxToolkit renderer, DataType dataType, boolean arg2) {
-		this.renderer = renderer;
-		this.dataType = dataType;
+	public DxIndexBuffer(DxToolkit arg0, DataType arg1, boolean arg2) {
+		this.renderer = arg0;
+		this.dataType = arg1;
 		this.field4209 = arg2;
 		this.renderer.method15985(this);
 	}
@@ -68,17 +69,17 @@ public class DxIndexBuffer implements GpuIndexBuffer {
 
 	@ObfuscatedName("ot.w(II)J")
 	public long lock(int arg0, int arg1) {
-		return jagdx.IDirect3DIndexBuffer.Lock(this.field4213, arg0, arg1, this.field4209 ? 8192 : 0);
+		return IDirect3DIndexBuffer.Lock(this.field4213, arg0, arg1, this.field4209 ? 8192 : 0);
 	}
 
 	@ObfuscatedName("ot.l()V")
 	public void unlock() {
-		jagdx.IDirect3DIndexBuffer.Unlock(this.field4213);
+		IDirect3DIndexBuffer.Unlock(this.field4213);
 	}
 
 	@ObfuscatedName("ot.f(IIJ)Z")
 	public boolean upload(int arg0, int arg1, long arg2) {
-		return HRESULT.SUCCEEDED(jagdx.IDirect3DIndexBuffer.Upload(this.field4213, arg0, arg1, this.field4209 ? 8192 : 0, arg2));
+		return HRESULT.SUCCEEDED(IDirect3DIndexBuffer.Upload(this.field4213, arg0, arg1, this.field4209 ? 8192 : 0, arg2));
 	}
 
 	@ObfuscatedName("ot.m()V")

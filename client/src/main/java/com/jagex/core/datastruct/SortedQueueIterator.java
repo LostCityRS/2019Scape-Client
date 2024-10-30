@@ -1,7 +1,6 @@
 package com.jagex.core.datastruct;
 
 import deob.ObfuscatedName;
-
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;

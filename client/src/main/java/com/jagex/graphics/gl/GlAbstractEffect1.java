@@ -2,7 +2,6 @@ package com.jagex.graphics.gl;
 
 import com.jagex.graphics.AbstractEffect1;
 import deob.ObfuscatedName;
-
 import java.util.Random;
 
 @ObfuscatedName("aln")

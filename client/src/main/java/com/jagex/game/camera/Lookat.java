@@ -13,15 +13,15 @@ public abstract class Lookat {
 	@ObfuscatedName("aax.e")
 	public final Camera camera;
 
-	public Lookat(Camera camera) {
-		this.camera = camera;
+	public Lookat(Camera arg0) {
+		this.camera = arg0;
 	}
 
 	@ObfuscatedName("aax.e(FB)V")
 	public abstract void method14131(float arg0);
 
 	@ObfuscatedName("aax.w(Lalw;I)V")
-	public abstract void decode(Packet buf);
+	public abstract void decode(Packet arg0);
 
 	@ObfuscatedName("aax.m(I)Lox;")
 	public abstract Vector3 method14133();

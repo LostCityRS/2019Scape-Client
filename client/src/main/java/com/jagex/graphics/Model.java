@@ -134,7 +134,7 @@ public abstract class Model {
 	}
 
 	@ObfuscatedName("do.f(Ldq;[II)Lee;")
-	public ModelRelated1 method1687(ModelUnlit arg0, int[] arg1, int arg2) {
+	public Model.ModelRelated1 method1687(ModelUnlit arg0, int[] arg1, int arg2) {
 		int[] var4 = null;
 		int[] var5 = null;
 		int[] var6 = null;
@@ -231,7 +231,7 @@ public abstract class Model {
 				}
 			}
 		}
-		return new ModelRelated1(this, var4, var5, var6, var7);
+		return new Model.ModelRelated1(var4, var5, var6, var7);
 	}
 
 	@ObfuscatedName("do.w(IIIIFFF)[F")
@@ -826,7 +826,6 @@ public abstract class Model {
 		}
 	}
 
-	// line 768
 	@ObfuscatedName("do.aw(ILcs;I[IFFFIZI[I)V")
 	public void method1756(int arg0, Joint arg1, int arg2, int[] arg3, float arg4, float arg5, float arg6, int arg7, boolean arg8, int arg9, int[] arg10) {
 		int var12 = (int) arg4;
@@ -970,7 +969,7 @@ public abstract class Model {
 	public abstract boolean method1716();
 
 	@ObfuscatedName("do.at(I[IIIIIZ)V")
-	public abstract void applyTransform(int type, int[] labels, int arg2, int arg3, int arg4, int arg5, boolean arg6);
+	public abstract void applyTransform(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6);
 
 	@ObfuscatedName("do.am(I[IIIIZI[I)V")
 	public abstract void method1719(int arg0, int[] arg1, int arg2, int arg3, int arg4, boolean arg5, int arg6, int[] arg7);
@@ -1075,10 +1074,7 @@ public abstract class Model {
 	public abstract void method1893(int arg0);
 
 	@ObfuscatedName("ee")
-	public static class ModelRelated1 {
-
-		// $FF: synthetic field
-		public final Model this$0;
+	public class ModelRelated1 {
 
 		@ObfuscatedName("ee.e")
 		public int[] field1688;
@@ -1092,9 +1088,7 @@ public abstract class Model {
 		@ObfuscatedName("ee.k")
 		public float[][] field1691;
 
-		// line 927
-		public ModelRelated1(Model arg0, int[] arg1, int[] arg2, int[] arg3, float[][] arg4) {
-			this.this$0 = arg0;
+		public ModelRelated1(int[] arg1, int[] arg2, int[] arg3, float[][] arg4) {
 			this.field1688 = arg1;
 			this.field1690 = arg2;
 			this.field1689 = arg3;

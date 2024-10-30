@@ -82,7 +82,7 @@ public class CutsceneManager {
 			field694 = CutsceneLoadingStage.field1724;
 			field1722 = arg0;
 		}
-		if (field694 == CutsceneLoadingStage.field1724) {
+		if (CutsceneLoadingStage.field1724 == field694) {
 			byte[] var1 = Client.cutscenesJs5.fetchFile(arg0);
 			if (var1 == null) {
 				return false;
@@ -120,7 +120,7 @@ public class CutsceneManager {
 			}
 			field694 = CutsceneLoadingStage.field1725;
 		}
-		if (field694 == CutsceneLoadingStage.field1725) {
+		if (CutsceneLoadingStage.field1725 == field694) {
 			boolean var15 = true;
 			CutsceneEntity[] var16 = entities;
 			for (int var17 = 0; var17 < var16.length; var17++) {

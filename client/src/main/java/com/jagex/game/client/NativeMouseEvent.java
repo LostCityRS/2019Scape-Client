@@ -2,8 +2,7 @@ package com.jagex.game.client;
 
 import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
-
-import java.awt.*;
+import java.awt.Point;
 
 @ObfuscatedName("asp")
 public class NativeMouseEvent extends MouseEvent {

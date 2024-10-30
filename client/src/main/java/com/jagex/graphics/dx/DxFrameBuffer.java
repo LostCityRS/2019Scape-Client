@@ -5,9 +5,9 @@ import com.jagex.graphics.FrameBufferInterface;
 import com.jagex.graphics.GpuFrameBuffer;
 import com.jagex.graphics.GraphicsDeletable;
 import deob.ObfuscatedName;
+import jagdx.HRESULT;
 import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;
-import jagdx.HRESULT;
 
 @ObfuscatedName("ath")
 public class DxFrameBuffer extends GpuFrameBuffer {
@@ -63,7 +63,6 @@ public class DxFrameBuffer extends GpuFrameBuffer {
 			}
 			return;
 		}
-
 		if (this.field12502 == 0) {
 			this.height = var2.method1009();
 			this.width = var2.method1015();
@@ -71,7 +70,6 @@ public class DxFrameBuffer extends GpuFrameBuffer {
 		} else if (this.width != var2.method1015() || this.height != var2.method1009()) {
 			throw new RuntimeException();
 		}
-
 		this.field12502 |= 0x10;
 		this.field12498 = var2;
 		if (this.field12504) {
@@ -95,7 +93,6 @@ public class DxFrameBuffer extends GpuFrameBuffer {
 			}
 			return;
 		}
-
 		if (this.field12502 == 0) {
 			this.height = var4.method1009();
 			this.width = var4.method1015();
@@ -103,7 +100,6 @@ public class DxFrameBuffer extends GpuFrameBuffer {
 		} else if (this.width != var4.method1015() || this.height != var4.method1009()) {
 			throw new RuntimeException();
 		}
-
 		this.field12502 |= var3;
 		this.field12505[arg0] = var4;
 		if (this.field12504) {

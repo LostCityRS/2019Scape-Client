@@ -2,15 +2,30 @@ package com.jagex.graphics.camera;
 
 import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.SceneLevelTileFlags;
-import com.jagex.game.camera.*;
+import com.jagex.game.camera.CameraEffect;
+import com.jagex.game.camera.Lookat;
+import com.jagex.game.camera.LookatEntity;
+import com.jagex.game.camera.LookatMode;
+import com.jagex.game.camera.LookatOrientation;
+import com.jagex.game.camera.LookatPoint;
+import com.jagex.game.camera.LookatSpline_Sub1;
+import com.jagex.game.camera.LookatSpline_Sub2;
+import com.jagex.game.camera.LookatSpline_Sub4;
+import com.jagex.game.camera.Lookat_Sub2;
+import com.jagex.game.camera.PositionSpline_Sub1;
+import com.jagex.game.camera.PositionSpline_Sub2;
+import com.jagex.game.camera.PositionSpline_Sub3;
 import com.jagex.game.camera.position.Position;
 import com.jagex.game.camera.position.PositionEntity;
 import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.game.world.entity.PositionPoint;
-import com.jagex.math.*;
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Matrix4x4;
+import com.jagex.math.Quaternion;
+import com.jagex.math.Vector3;
+import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("je")
@@ -185,8 +200,8 @@ public abstract class Camera {
 	}
 
 	@ObfuscatedName("je.k(Ljd;B)V")
-	public void setControlMode(CameraControlMode controlMode) {
-		this.controlMode = controlMode;
+	public void setControlMode(CameraControlMode arg0) {
+		this.controlMode = arg0;
 	}
 
 	@ObfuscatedName("je.f(Lii;ZI)Laax;")

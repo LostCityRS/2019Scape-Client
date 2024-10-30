@@ -1,11 +1,14 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.core.constants.ModeWhere;
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.TextUtil;
+import com.jagex.game.HintArrow;
 import com.jagex.game.client.GameShell;
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.effectanimtype.EffectAnimType;
 import com.jagex.game.config.enumtype.EnumType;
@@ -16,13 +19,16 @@ import com.jagex.game.script.CommunityPartnerType;
 import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.graphics.AnimationNode;
-import com.jagex.game.HintArrow;
 import com.jagex.graphics.Model;
 import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.camera.CameraTrackableType;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.scenegraph.GraphEntity;
-import com.jagex.math.*;
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Quaternion;
+import com.jagex.math.ScaleRotTrans;
+import com.jagex.math.Trig1;
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 import rs2.client.scene.entities.NpcEntity;
@@ -117,8 +123,8 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.hq(Lalw;BI)V")
-	public void setIdentityKit(Packet buf, byte gender) {
-		this.gender = gender;
+	public void setIdentityKit(Packet arg0, byte arg1) {
+		this.gender = arg1;
 		int var3 = -1;
 		this.field12060 = 0;
 		int[] var4 = new int[Client.wearposDefaults.field7766.length];
@@ -126,15 +132,15 @@ public class PlayerEntity extends PathingEntity {
 		ObjType[] var6 = new ObjType[Client.wearposDefaults.field7766.length];
 		for (int var7 = 0; var7 < Client.wearposDefaults.field7766.length; var7++) {
 			if (Client.wearposDefaults.field7766[var7] != 1) {
-				int var8 = buf.g1();
+				int var8 = arg0.g1();
 				if (var8 == 0) {
 					var4[var7] = 0;
 				} else {
-					int var9 = buf.g1();
+					int var9 = arg0.g1();
 					int var10 = (var8 << 8) + var9;
 					if (var7 == 0 && var10 == 65535) {
-						var3 = buf.gSmart2or4s();
-						this.field12060 = buf.g1();
+						var3 = arg0.gSmart2or4s();
+						this.field12060 = arg0.g1();
 						break;
 					}
 					if (var10 >= 2048) {
@@ -152,12 +158,12 @@ public class PlayerEntity extends PathingEntity {
 			}
 		}
 		if (var3 == -1) {
-			int var13 = buf.g2();
+			int var13 = arg0.g2();
 			int var14 = 0;
 			for (int var15 = 0; var15 < Client.wearposDefaults.field7766.length; var15++) {
 				if (Client.wearposDefaults.field7766[var15] == 0) {
 					if ((var13 & 0x1 << var14) != 0) {
-						var5[var15] = ObjTypeCustomisation.method1061(var6[var15], buf);
+						var5[var15] = ObjTypeCustomisation.method1061(var6[var15], arg0);
 					}
 					var14++;
 				}
@@ -165,7 +171,7 @@ public class PlayerEntity extends PathingEntity {
 		}
 		int[] var16 = new int[10];
 		for (int var17 = 0; var17 < 10; var17++) {
-			int var18 = buf.g1();
+			int var18 = arg0.g1();
 			if (PlayerModel.field1434.length < 1 || var18 < 0 || var18 >= PlayerModel.field1434[var17][0].length) {
 				var18 = 0;
 			}
@@ -173,13 +179,13 @@ public class PlayerEntity extends PathingEntity {
 		}
 		int[] var19 = new int[10];
 		for (int var20 = 0; var20 < 10; var20++) {
-			int var21 = buf.g1();
+			int var21 = arg0.g1();
 			if (PlayerModel.field9259.length < 1 || var21 < 0 || var21 >= PlayerModel.field9259[var20][0].length) {
 				var21 = 0;
 			}
 			var19[var20] = var21;
 		}
-		this.bas = buf.g2();
+		this.bas = arg0.g2();
 		if (this.model == null) {
 			this.model = new PlayerModel();
 		}
@@ -215,40 +221,40 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.hf(Lalw;I)V")
-	public final void getAppearance(Packet buf) {
-		buf.pos = 0;
-		int info = buf.g1();
-		byte gender = (byte) (info & 0x1);
-		boolean var4 = (info & 0x4) != 0;
-		int size = super.size();
-		this.setSize((info >> 3 & 0x7) + 1);
-		boolean showTitle = (info & 0x40) != 0;
+	public final void getAppearance(Packet arg0) {
+		arg0.pos = 0;
+		int var2 = arg0.g1();
+		byte var3 = (byte) (var2 & 0x1);
+		boolean var4 = (var2 & 0x4) != 0;
+		int var5 = super.size();
+		this.setSize((var2 >> 3 & 0x7) + 1);
+		boolean var6 = (var2 & 0x40) != 0;
 		Vector3 var7 = Vector3.create(this.getTransform().trans);
-		var7.x += this.size() - size << 8;
-		var7.z += this.size() - size << 8;
+		var7.x += this.size() - var5 << 8;
+		var7.z += this.size() - var5 << 8;
 		this.method10531(var7);
 		var7.release();
-		if (showTitle) {
-			this.titleId = buf.gSmart1or2();
-			int titleEnumId = gender == 0 ? Client.customizationDefaults.field7671 : Client.customizationDefaults.field7670;
-			this.title = ((EnumType) Client.enumTypeList.list(titleEnumId)).getValueString(this.titleId);
+		if (var6) {
+			this.titleId = arg0.gSmart1or2();
+			int var8 = var3 == 0 ? Client.customizationDefaults.field7671 : Client.customizationDefaults.field7670;
+			this.title = ((EnumType) Client.enumTypeList.list(var8)).getValueString(this.titleId);
 		} else {
 			this.titleId = -1;
 			this.title = null;
 		}
-		this.visibility = (PlayerVisibility) SerializableEnums.decode(PlayerVisibility.values(), buf.g1b());
-		if (Client.modewhere == ModeWhere.LIVE && Client.staffModLevel >= 2) {
+		this.visibility = (PlayerVisibility) SerializableEnums.decode((SerializableEnum[]) PlayerVisibility.values(), arg0.g1b());
+		if (ModeWhere.LIVE == Client.modewhere && Client.staffModLevel >= 2) {
 			this.visibility = PlayerVisibility.VISIBLE;
 		}
-		this.setIdentityKit(buf, gender);
-		this.name = buf.gjstr();
+		this.setIdentityKit(arg0, var3);
+		this.name = arg0.gjstr();
 		this.nameUnfiltered = this.name;
 		if (Client.localPlayerEntity == this) {
 			JagException.user = this.name;
 		}
-		this.combatLevel = buf.g1();
+		this.combatLevel = arg0.g1();
 		if (var4) {
-			this.field12059 = buf.g2();
+			this.field12059 = arg0.g2();
 			if (this.field12059 == 65535) {
 				this.field12059 = -1;
 			}
@@ -256,46 +262,46 @@ public class PlayerEntity extends PathingEntity {
 			this.field12058 = -1;
 		} else {
 			this.field12059 = 0;
-			this.field12072 = buf.g1();
-			this.field12058 = buf.g1();
+			this.field12072 = arg0.g1();
+			this.field12058 = arg0.g1();
 			if (this.field12058 == 255) {
 				this.field12058 = -1;
 			}
 		}
-		int bgsound_range = this.bgsound_range;
-		this.bgsound_range = buf.g1();
+		int var9 = this.bgsound_range;
+		this.bgsound_range = arg0.g1();
 		if (this.bgsound_range == 0) {
 			PositionedSound.method5142(this);
 			return;
 		}
-		int bgsound = this.bgsound_player;
-		int bgsound_crawl = this.bgsound_crawl_player;
-		int bgsound_walk = this.bgsound_walk_player;
-		int bgsound_run = this.bgsound_run_player;
-		int bgsound_volume = this.bgsound_volume;
-		this.bgsound_player = buf.g2();
-		this.bgsound_crawl_player = buf.g2();
-		this.bgsound_walk_player = buf.g2();
-		this.bgsound_run_player = buf.g2();
-		this.bgsound_volume = buf.g1();
-		if (this.bgsound_range != bgsound_range || this.bgsound_player != bgsound || this.bgsound_crawl_player != bgsound_crawl || this.bgsound_walk_player != bgsound_walk || this.bgsound_run_player != bgsound_run || this.bgsound_volume != bgsound_volume) {
+		int var10 = this.bgsound_player;
+		int var11 = this.bgsound_crawl_player;
+		int var12 = this.bgsound_walk_player;
+		int var13 = this.bgsound_run_player;
+		int var14 = this.bgsound_volume;
+		this.bgsound_player = arg0.g2();
+		this.bgsound_crawl_player = arg0.g2();
+		this.bgsound_walk_player = arg0.g2();
+		this.bgsound_run_player = arg0.g2();
+		this.bgsound_volume = arg0.g1();
+		if (this.bgsound_range != var9 || this.bgsound_player != var10 || this.bgsound_crawl_player != var11 || this.bgsound_walk_player != var12 || this.bgsound_run_player != var13 || this.bgsound_volume != var14) {
 			PositionedSound.method10310(this);
 		}
 	}
 
 	@ObfuscatedName("aqk.hr(Lalw;I)V")
-	public void getHeadIcons(Packet buf) {
-		buf.pos = 0;
-		int slots = buf.g1();
-		for (int index = 0; index < this.headIconsIds.length; index++) {
-			if ((slots & 0x1 << index) == 0) {
-				this.headIconsIds[index] = -1;
-				this.headIconsGroups[index] = -1;
+	public void getHeadIcons(Packet arg0) {
+		arg0.pos = 0;
+		int var2 = arg0.g1();
+		for (int var3 = 0; var3 < this.headIconsIds.length; var3++) {
+			if ((var2 & 0x1 << var3) == 0) {
+				this.headIconsIds[var3] = -1;
+				this.headIconsGroups[var3] = -1;
 			} else {
-				int id = buf.g1();
-				int groupId = buf.g2();
-				this.headIconsIds[index] = id;
-				this.headIconsGroups[index] = groupId;
+				int var4 = arg0.g1();
+				int var5 = arg0.g2();
+				this.headIconsIds[var3] = var4;
+				this.headIconsGroups[var3] = var5;
 			}
 		}
 	}
@@ -311,16 +317,16 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Toolkit toolkit) {
+	public EntityBounds method17371(Toolkit arg0) {
 		return null;
 	}
 
 	@ObfuscatedName("aqk.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Toolkit toolkit) {
-		if (this.model == null || !this.method19114(toolkit, 2048)) {
+	public PickableEntity draw(Toolkit arg0) {
+		if (this.model == null || !this.method19114(arg0, 2048)) {
 			return null;
 		}
-		Matrix4x3 var2 = toolkit.method2209();
+		Matrix4x3 var2 = arg0.method2209();
 		Matrix4x3 var3 = this.method10533();
 		ScaleRotTrans var4 = this.getTransform();
 		int var5 = this.field10395.method316();
@@ -349,9 +355,9 @@ public class PlayerEntity extends PathingEntity {
 				Object var14 = null;
 				Model var15;
 				if (var12 > -1 && Client.preferences.textures.getValue() == 1) {
-					var15 = SpotShadowFactory.method3283(toolkit, var5, this.field10405, this.field12466, this.field10407, this.idk[0], var12, var13, var11 == null ? var10 : var11);
+					var15 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.idk[0], var12, var13, var11 == null ? var10 : var11);
 				} else {
-					var15 = SpotShadowFactory.method5102(toolkit, var5, this.field10405, this.field12466, this.field10407, 1, this.idk[0], 0, 0, 160, 240, var11 == null ? var10 : var11);
+					var15 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, 1, this.idk[0], 0, 0, 160, 240, var11 == null ? var10 : var11);
 				}
 				if (var15 != null) {
 					if (this.entityBounds == null || this.entityBounds.length < this.idk.length + 1) {
@@ -359,9 +365,9 @@ public class PlayerEntity extends PathingEntity {
 					}
 					var8 = PickableEntity.getPickableEntity(true);
 					this.field10458 = true;
-					toolkit.method2219(false);
+					arg0.method2219(false);
 					var15.draw(var2, this.entityBounds[this.idk.length], 0);
-					toolkit.method2219(true);
+					arg0.method2219(true);
 				}
 			}
 		}
@@ -376,7 +382,7 @@ public class PlayerEntity extends PathingEntity {
 							Vector3 var20 = Vector3.sub(var19.getTransform().trans, Client.localPlayerEntity.getTransform().trans);
 							int var21 = (int) var20.x;
 							int var22 = (int) var20.z;
-							this.method19113(toolkit, var2, this.idk[0], (long) var21, (long) var22, var17.field750, 92160000L);
+							this.method19113(arg0, var2, this.idk[0], (long) var21, (long) var22, var17.field750, 92160000L);
 						}
 					}
 					if (var17.hintType == 2) {
@@ -385,7 +391,7 @@ public class PlayerEntity extends PathingEntity {
 						long var26 = (long) (var17.hintOffsetZ - (int) var23.z);
 						long var28 = (long) (var17.field748 << 9);
 						long var30 = var28 * var28;
-						this.method19113(toolkit, var2, this.idk[0], var24, var26, var17.field750, var30);
+						this.method19113(arg0, var2, this.idk[0], var24, var26, var17.field750, var30);
 					}
 					if (var17.hintType == 10 && var17.field744 >= 0 && var17.field744 < Client.players.length) {
 						PlayerEntity var32 = Client.players[var17.field744];
@@ -393,7 +399,7 @@ public class PlayerEntity extends PathingEntity {
 							Vector3 var33 = Vector3.sub(var32.getTransform().trans, Client.localPlayerEntity.getTransform().trans);
 							int var34 = (int) var33.x;
 							int var35 = (int) var33.z;
-							this.method19113(toolkit, var2, this.idk[0], (long) var34, (long) var35, var17.field750, 92160000L);
+							this.method19113(arg0, var2, this.idk[0], (long) var34, (long) var35, var17.field750, 92160000L);
 						}
 					}
 				}
@@ -407,7 +413,7 @@ public class PlayerEntity extends PathingEntity {
 		if (var8 == null) {
 			var8 = PickableEntity.getPickableEntity(true);
 		}
-		this.method16576(toolkit, this.idk, var2, false);
+		this.method16576(arg0, this.idk, var2, false);
 		for (int var36 = 0; var36 < this.idk.length; var36++) {
 			if (this.idk[var36] == null) {
 				this.entityBounds[var36].field1686 = false;
@@ -417,7 +423,7 @@ public class PlayerEntity extends PathingEntity {
 		}
 		if (this.field10393 != null) {
 			ParticleList var37 = this.field10393.method9965();
-			toolkit.drawParticles(var37);
+			arg0.drawParticles(var37);
 		}
 		for (int var38 = 0; var38 < this.idk.length; var38++) {
 			if (this.idk[var38] != null) {
@@ -430,14 +436,14 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.fw(Ldh;I)V")
-	public void method17373(Toolkit toolkit) {
-		if (this.model == null || !this.field10449 && !this.method19114(toolkit, 0)) {
+	public void method17373(Toolkit arg0) {
+		if (this.model == null || !this.field10449 && !this.method19114(arg0, 0)) {
 			return;
 		}
-		Matrix4x3 var2 = toolkit.method2209();
+		Matrix4x3 var2 = arg0.method2209();
 		var2.setToTransform2(this.getTransform());
 		var2.translate(0.0F, -5.0F, 0.0F);
-		this.method16576(toolkit, this.idk, var2, this.field10449);
+		this.method16576(arg0, this.idk, var2, this.field10449);
 		for (int var3 = 0; var3 < this.idk.length; var3++) {
 			this.idk[var3] = null;
 		}
@@ -479,7 +485,7 @@ public class PlayerEntity extends PathingEntity {
 		if (GameShell.maxmemory < 96 && var12 > 50) {
 			SceneManager.method7319();
 		}
-		if (Client.modewhere != ModeWhere.LIVE && var12 < 50) {
+		if (ModeWhere.LIVE != Client.modewhere && var12 < 50) {
 			int var13 = 50 - var12;
 			while (var13 > Client.field10798) {
 				Client.field9166[Client.field10798] = new byte[102400];
@@ -489,7 +495,7 @@ public class PlayerEntity extends PathingEntity {
 				Client.field10798--;
 				Client.field9166[Client.field10798] = null;
 			}
-		} else if (Client.modewhere != ModeWhere.LIVE) {
+		} else if (ModeWhere.LIVE != Client.modewhere) {
 			Client.field9166 = new byte[50][];
 			Client.field10798 = 0;
 		}
@@ -530,12 +536,12 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.he(ZI)Ljava/lang/String;")
-	public String getName(boolean isFiltered) {
-		return isFiltered ? this.name : this.nameUnfiltered;
+	public String getName(boolean arg0) {
+		return arg0 ? this.name : this.nameUnfiltered;
 	}
 
 	@ObfuscatedName("aqk.hn(IIBB)V")
-	public final void movePlayer(int x, int z, byte speed) {
+	public final void movePlayer(int arg0, int arg1, byte arg2) {
 		if (this.field10454.hasSeqType() && this.field10454.getSeqType().field1782 == 1) {
 			this.field10427 = null;
 			this.field10454.method14362(-1);
@@ -550,26 +556,26 @@ public class PlayerEntity extends PathingEntity {
 			}
 		}
 		this.field12056 = -1;
-		if (x < 0 || x >= Client.world.getSizeX() || z < 0 || z >= Client.world.getSizeZ()) {
-			this.tele(x, z);
+		if (arg0 < 0 || arg0 >= Client.world.getSizeX() || arg1 < 0 || arg1 >= Client.world.getSizeZ()) {
+			this.tele(arg0, arg1);
 		} else if (this.routeWaypointX[0] >= 0 && this.routeWaypointX[0] < Client.world.getSizeX() && this.routeWaypointZ[0] >= 0 && this.routeWaypointZ[0] < Client.world.getSizeZ()) {
-			this.move(x, z, speed);
+			this.move(arg0, arg1, arg2);
 		} else {
-			this.tele(x, z);
+			this.tele(arg0, arg1);
 		}
 	}
 
 	@ObfuscatedName("aqk.hi(IIB)V")
-	public void tele(int x, int z) {
+	public void tele(int arg0, int arg1) {
 		this.routeLength = 0;
 		this.field10396 = 0;
 		this.seqTrigger = 0;
-		this.routeWaypointX[0] = x;
-		this.routeWaypointZ[0] = z;
-		int size = this.size();
+		this.routeWaypointX[0] = arg0;
+		this.routeWaypointZ[0] = arg1;
+		int var3 = this.size();
 		Vector3 var4 = Vector3.create(this.getTransform().trans);
-		var4.x = this.routeWaypointX[0] * 512 + size * 256;
-		var4.z = this.routeWaypointZ[0] * 512 + size * 256;
+		var4.x = this.routeWaypointX[0] * 512 + var3 * 256;
+		var4.z = this.routeWaypointZ[0] * 512 + var3 * 256;
 		this.method10531(var4);
 		var4.release();
 		if (Client.localPlayerEntity == this) {
@@ -581,18 +587,18 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.hw(IIBI)V")
-	public final void move(int nextX, int nextZ, byte speed) {
+	public final void move(int arg0, int arg1, byte arg2) {
 		if (this.routeLength < this.routeWaypointX.length - 1) {
 			this.routeLength++;
 		}
-		for (int index = this.routeLength; index > 0; index--) {
-			this.routeWaypointX[index] = this.routeWaypointX[index - 1];
-			this.routeWaypointZ[index] = this.routeWaypointZ[index - 1];
-			this.routeSpeeds[index] = this.routeSpeeds[index - 1];
+		for (int var4 = this.routeLength; var4 > 0; var4--) {
+			this.routeWaypointX[var4] = this.routeWaypointX[var4 - 1];
+			this.routeWaypointZ[var4] = this.routeWaypointZ[var4 - 1];
+			this.routeSpeeds[var4] = this.routeSpeeds[var4 - 1];
 		}
-		this.routeWaypointX[0] = nextX;
-		this.routeWaypointZ[0] = nextZ;
-		this.routeSpeeds[0] = speed;
+		this.routeWaypointX[0] = arg0;
+		this.routeWaypointZ[0] = arg1;
+		this.routeSpeeds[0] = arg2;
 	}
 
 	@ObfuscatedName("aqk.ht(I)Z")
@@ -616,8 +622,8 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.fa(Ldh;IIB)Z")
-	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
-		if (this.model == null || !this.method19114(toolkit, 131072)) {
+	public boolean method17375(Toolkit arg0, int arg1, int arg2) {
+		if (this.model == null || !this.method19114(arg0, 131072)) {
 			return false;
 		}
 		Matrix4x3 var4 = this.method10533();
@@ -640,7 +646,7 @@ public class PlayerEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqk.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

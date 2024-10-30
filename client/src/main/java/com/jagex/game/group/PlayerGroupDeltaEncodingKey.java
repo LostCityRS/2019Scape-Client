@@ -56,12 +56,12 @@ public class PlayerGroupDeltaEncodingKey implements SerializableEnum {
 
 	@ObfuscatedName("gs.e(B)[Lgs;")
 	public static PlayerGroupDeltaEncodingKey[] values() {
-		return new PlayerGroupDeltaEncodingKey[] {UPDATE_MEMBER_BASE, ADD_MEMBER, SET_MEMBER_ONLINE, SET_VARBIT_VALUE, SET_MEMBER_READY, START_GAME, ADD_BANNED, SET_MEMBER_RANK, SET_VAR_VALUE, DELETE_MEMBER, DELETE_BANNED, SET_MEMBER_OFFLINE, SET_MEMBER_TEAM, SET_GAME_LOADING};
+		return new PlayerGroupDeltaEncodingKey[] { UPDATE_MEMBER_BASE, ADD_MEMBER, SET_MEMBER_ONLINE, SET_VARBIT_VALUE, SET_MEMBER_READY, START_GAME, ADD_BANNED, SET_MEMBER_RANK, SET_VAR_VALUE, DELETE_MEMBER, DELETE_BANNED, SET_MEMBER_OFFLINE, SET_MEMBER_TEAM, SET_GAME_LOADING };
 	}
 
-	public PlayerGroupDeltaEncodingKey(int index, int serialID) {
-		this.index = index;
-		this.serialID = serialID;
+	public PlayerGroupDeltaEncodingKey(int arg0, int arg1) {
+		this.index = arg0;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("gs.n()I")

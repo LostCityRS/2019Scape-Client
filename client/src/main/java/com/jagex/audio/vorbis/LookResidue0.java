@@ -1,6 +1,5 @@
 package com.jagex.audio.vorbis;
 
-import com.jagex.audio.vorbis.VorbisCodebook;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ha")

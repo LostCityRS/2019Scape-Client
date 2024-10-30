@@ -5,18 +5,22 @@ import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.TextUtil;
 import com.jagex.game.shared.console.DeveloperConsole;
 import com.jagex.graphics.GraphicsPacketQueue;
-import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
-import com.jagex.twitchtv.*;
+import com.jagex.graphics.Toolkit;
+import com.jagex.twitchtv.TwitchEvent;
+import com.jagex.twitchtv.TwitchEventLiveStreams;
+import com.jagex.twitchtv.TwitchEventResult;
+import com.jagex.twitchtv.TwitchTV;
+import com.jagex.twitchtv.TwitchWebcamDevice;
+import com.jagex.twitchtv.TwitchWebcamFrameData;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-import rs2.client.clientscript.ScriptRunner;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.LinkedList;
+import rs2.client.Client;
+import rs2.client.clientscript.ScriptRunner;
 
 @ObfuscatedName("vv")
 public class TwitchHardwarePlatform {
@@ -226,7 +230,7 @@ public class TwitchHardwarePlatform {
 		if (var2 == 0) {
 			loginReady = true;
 		} else {
-			JagException.report(10 + TextUtil.COMMA + var2, new RuntimeException());
+			JagException.report((String) (10 + TextUtil.COMMA + var2), (Throwable) new RuntimeException());
 		}
 		return 2;
 	}
@@ -244,9 +248,9 @@ public class TwitchHardwarePlatform {
 	}
 
 	@ObfuscatedName("ff.d(Ljava/lang/String;Ljava/lang/String;B)I")
-	public static int login(String username, String password) {
+	public static int login(String arg0, String arg1) {
 		if (loginReady) {
-			return Client.getCurrentConnection() == Client.gameConnection ? twitchTV.Login(username, password) : 42;
+			return Client.getCurrentConnection() == Client.gameConnection ? twitchTV.Login(arg0, arg1) : 42;
 		} else {
 			return 12;
 		}

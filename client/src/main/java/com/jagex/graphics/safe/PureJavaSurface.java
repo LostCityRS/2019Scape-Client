@@ -2,8 +2,7 @@ package com.jagex.graphics.safe;
 
 import com.jagex.graphics.Surface;
 import deob.ObfuscatedName;
-
-import java.awt.*;
+import java.awt.Canvas;
 
 @ObfuscatedName("aph")
 public abstract class PureJavaSurface extends Surface {

@@ -38,8 +38,8 @@ public class DataType {
 	@ObfuscatedName("dg.d")
 	public final int field1652;
 
-	public DataType(int index, int arg1) {
-		this.index = index;
+	public DataType(int arg0, int arg1) {
+		this.index = arg0;
 		this.field1652 = arg1;
 	}
 }

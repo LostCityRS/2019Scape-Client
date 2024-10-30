@@ -4,9 +4,16 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.camera.CameraEffect;
 import com.jagex.game.camera.LookatMode;
 import com.jagex.game.world.entity.PositionMode;
-import com.jagex.graphics.camera.*;
+import com.jagex.graphics.camera.Camera;
+import com.jagex.graphics.camera.CameraControlMode;
+import com.jagex.graphics.camera.CameraEffectType;
+import com.jagex.graphics.camera.CameraException;
+import com.jagex.graphics.camera.CameraLinearMovementMode;
+import com.jagex.graphics.camera.CameraProjectionMode;
+import com.jagex.graphics.camera.CameraRelated;
+import com.jagex.graphics.camera.CameraSettingType;
+import com.jagex.graphics.camera.CameraTrackableProvider;
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("ahc")
@@ -29,12 +36,12 @@ public class BasicCamera extends Camera {
 	}
 
 	@ObfuscatedName("ahc.fz(Lalw;II)V")
-	public void decode(Packet buf, int size) {
-		int var3 = buf.pos;
-		int var4 = buf.g1();
+	public void decode(Packet arg0, int arg1) {
+		int var3 = arg0.pos;
+		int var4 = arg0.g1();
 		this.setControlMode(CameraControlMode.of(var4 & 0x1));
 		if ((var4 & 0x8) != 0) {
-			LookatMode var5 = LookatMode.of(buf.g1());
+			LookatMode var5 = LookatMode.of(arg0.g1());
 			if (this.lookatMode != var5) {
 				try {
 					this.setLookatMode(var5, true);
@@ -44,7 +51,7 @@ public class BasicCamera extends Camera {
 			}
 		}
 		if ((var4 & 0x10) != 0) {
-			PositionMode var7 = PositionMode.method1058(buf.g1());
+			PositionMode var7 = PositionMode.method1058(arg0.g1());
 			if (this.positionMode != var7) {
 				try {
 					this.setPositionMode(var7, true);
@@ -54,92 +61,92 @@ public class BasicCamera extends Camera {
 			}
 		}
 		if ((var4 >> 7 & 0x1) == 1) {
-			int var9 = buf.g2();
+			int var9 = arg0.g2();
 			if ((var9 >> CameraSettingType.field2810.field2803 & 0x1) == 1) {
-				this.lookatMaxSpeed.decode(buf);
+				this.lookatMaxSpeed.decode(arg0);
 			}
 			if ((var9 >> CameraSettingType.field2797.field2803 & 0x1) == 1) {
-				this.positionMaxSpeed.decode(buf);
+				this.positionMaxSpeed.decode(arg0);
 			}
 			if ((var9 >> CameraSettingType.field2809.field2803 & 0x1) == 1) {
-				this.lookatAcceleration.decode(buf);
+				this.lookatAcceleration.decode(arg0);
 			}
 			if ((var9 >> CameraSettingType.field2799.field2803 & 0x1) == 1) {
-				this.positionAcceleration.decode(buf);
+				this.positionAcceleration.decode(arg0);
 			}
 			if ((var9 >> CameraSettingType.field2798.field2803 & 0x1) == 1) {
-				this.field2855 = buf.gFloat();
-				this.field2859 = buf.gFloat();
+				this.field2855 = arg0.gFloat();
+				this.field2859 = arg0.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2801.field2803 & 0x1) == 1) {
-				this.field2872 = buf.gFloat();
-				this.field2868 = buf.gFloat();
+				this.field2872 = arg0.gFloat();
+				this.field2868 = arg0.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2802.field2803 & 0x1) == 1) {
-				this.projectionMode = CameraProjectionMode.method16906(buf.g1());
+				this.projectionMode = CameraProjectionMode.method16906(arg0.g1());
 			}
 			if ((var9 >> CameraSettingType.field2806.field2803 & 0x1) == 1) {
-				this.field2851 = buf.g3();
-				buf.g1();
+				this.field2851 = arg0.g3();
+				arg0.g1();
 			}
 			if ((var9 >> CameraSettingType.field2804.field2803 & 0x1) == 1) {
-				int var10 = buf.g1();
+				int var10 = arg0.g1();
 				this.field2862 = (var10 & 0x1) == 1;
 				this.field2875 = (var10 & 0x2) == 2;
 			}
 			if ((var9 >> CameraSettingType.field2805.field2803 & 0x1) == 1) {
-				int var11 = buf.g1();
+				int var11 = arg0.g1();
 				for (int var12 = 0; var12 < var11; var12++) {
-					int var13 = buf.g1();
-					int var14 = buf.g1();
+					int var13 = arg0.g1();
+					int var14 = arg0.g1();
 					if (var13 == 0) {
 						this.removeEffect(var14);
 					} else {
-						CameraEffectType var15 = CameraEffectType.of(buf.g1());
+						CameraEffectType var15 = CameraEffectType.of(arg0.g1());
 						boolean var16 = true;
 						Iterator var17 = this.effects.iterator();
 						while (var17.hasNext()) {
 							CameraEffect var18 = (CameraEffect) var17.next();
 							if (var18.id == var14) {
-								var18.decode(buf);
+								var18.decode(arg0);
 								var16 = false;
 								break;
 							}
 						}
 						if (var16) {
-							this.addEffect(CameraEffect.createCameraEffect(var14, var15, buf));
+							this.addEffect(CameraEffect.createCameraEffect(var14, var15, arg0));
 						}
 					}
 				}
 			}
 			if ((var9 >> CameraSettingType.field2811.field2803 & 0x1) == 1) {
-				this.field2876 = buf.g2();
-				this.field2877 = buf.gFloat();
+				this.field2876 = arg0.g2();
+				this.field2877 = arg0.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2807.field2803 & 0x1) == 1) {
-				this.linearMovementMode = CameraLinearMovementMode.method17805(buf.g1());
+				this.linearMovementMode = CameraLinearMovementMode.method17805(arg0.g1());
 			}
 			if ((var9 >> CameraSettingType.field2808.field2803 & 0x1) == 1) {
-				this.lookatSpring.decode(buf);
-				this.positionSpring.decode(buf);
-				this.field2866 = buf.gFloat();
-				this.field2843 = buf.gFloat();
+				this.lookatSpring.decode(arg0);
+				this.positionSpring.decode(arg0);
+				this.field2866 = arg0.gFloat();
+				this.field2843 = arg0.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2796.field2803 & 0x1) == 1) {
-				buf.gFloat();
+				arg0.gFloat();
 			}
 			if ((var9 >> CameraSettingType.field2800.field2803 & 0x1) == 1) {
-				this.positionAngularInterpolation = buf.gFloat();
+				this.positionAngularInterpolation = arg0.gFloat();
 			}
 		}
 		if (this.lookat != null && (var4 >> 5 & 0x1) == 1) {
-			this.lookat.decode(buf);
+			this.lookat.decode(arg0);
 		}
 		if (this.position != null && (var4 >> 6 & 0x1) == 1) {
-			this.position.method5224(buf);
+			this.position.method5224(arg0);
 		}
-		if (buf.pos - var3 != size) {
-			throw new RuntimeException(buf.pos - var3 + "," + size);
+		if (arg0.pos - var3 != arg1) {
+			throw new RuntimeException(arg0.pos - var3 + "," + arg1);
 		}
 	}
 }

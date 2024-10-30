@@ -2,6 +2,7 @@ package com.jagex.game.world.entity;
 
 import com.jagex.core.datastruct.Pair;
 import com.jagex.game.client.HardShadow;
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.FloorModel;
@@ -32,7 +33,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	public EntityBounds field11149;
 
 	@ObfuscatedName("ajk.s")
-	public final int id;
+	public final int field11715;
 
 	@ObfuscatedName("ajk.y")
 	public final byte shape;
@@ -52,27 +53,27 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	@ObfuscatedName("ajk.a")
 	public int field11151;
 
-	public StaticWallDecorEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int arg6, int arg7, int arg8, boolean underwater, int arg10, int arg11, int shape, int angle, ScaleRotTrans arg14) {
-		super(scene, arg6, arg7, arg8, level, occludeLevel, arg10, arg11, arg14);
-		this.locTypeList = locTypeList;
-		this.id = locType.id;
-		this.field11156 = underwater;
-		this.angle = (byte) angle;
-		this.shape = (byte) shape;
-		this.active = locType.active != 0 && !underwater;
-		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.field11156 && Client.preferences.sceneryShadows.getValue() != 0;
+	public StaticWallDecorEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, ScaleRotTrans arg14) {
+		super(arg0, arg6, arg7, arg8, arg4, arg5, arg10, arg11, arg14);
+		this.locTypeList = arg2;
+		this.field11715 = arg3.id;
+		this.field11156 = arg9;
+		this.angle = (byte) arg13;
+		this.shape = (byte) arg12;
+		this.active = arg3.active != 0 && !arg9;
+		this.hasHardShadow = arg1.supportsHardShadows() && arg3.hardshadow && !this.field11156 && Client.preferences.sceneryShadows.getValue() != 0;
 		this.field11151 = arg7;
 		int var16 = 2048;
-		if (locType.antimacro) {
+		if (arg3.antimacro) {
 			var16 |= 0x80000;
 		}
-		Pair var17 = this.method17414(toolkit, var16, this.hasHardShadow);
+		Pair var17 = this.method17414(arg1, var16, this.hasHardShadow);
 		if (var17 != null) {
 			this.model = (Model) var17.first;
 			this.shadow = (HardShadow) var17.second;
-			if (locType.antimacro) {
+			if (arg3.antimacro) {
 				this.model = this.model.method1773((byte) 0, var16, false);
-				if (locType.antimacro) {
+				if (arg3.antimacro) {
 					LocTint var18 = Client.world.method7722();
 					this.model.method1745(var18.field5015, var18.field5013, var18.field5014, var18.field5012);
 				}
@@ -112,7 +113,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 
 	@ObfuscatedName("ajk.bv(Ldh;IZI)Labg;")
 	public Pair method17414(Toolkit arg0, int arg1, boolean arg2) {
-		LocType var4 = (LocType) this.locTypeList.list(this.id);
+		LocType var4 = (LocType) this.locTypeList.list(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
 		if (this.field11156) {
@@ -131,44 +132,44 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 	}
 
 	@ObfuscatedName("ajk.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Toolkit toolkit) {
+	public EntityBounds method17371(Toolkit arg0) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11149 == null) {
-			this.field11149 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17411(toolkit, 0));
+			this.field11149 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17411(arg0, 0));
 		}
 		return this.field11149;
 	}
 
 	@ObfuscatedName("ajk.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Toolkit toolkit) {
+	public PickableEntity draw(Toolkit arg0) {
 		if (this.model == null) {
 			return null;
 		}
-		Matrix4x3 var2 = toolkit.method2209();
+		Matrix4x3 var2 = arg0.method2209();
 		var2.setTo(this.method10533());
 		var2.translate((float) this.field12452, 0.0F, (float) this.field12451);
 		PickableEntity var3 = PickableEntity.getPickableEntity(this.active);
-		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.field11715)).clickbox;
 		if (var4 == null) {
 			this.model.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.model.draw(var2, null, 0);
-			toolkit.method2193(var2, this.entityBounds[0], var4);
+			arg0.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajk.fw(Ldh;I)V")
-	public void method17373(Toolkit toolkit) {
+	public void method17373(Toolkit arg0) {
 	}
 
 	@ObfuscatedName("ajk.fa(Ldh;IIB)Z")
-	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
+	public boolean method17375(Toolkit arg0, int arg1, int arg2) {
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.field11715)).clickbox;
 		if (var4 != null) {
-			return toolkit.pick(arg1, arg2, this.method10533(), var4);
+			return arg0.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17411(toolkit, 131072);
+		Model var5 = this.method17411(arg0, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -179,7 +180,7 @@ public class StaticWallDecorEntity extends WallDecorLayerEntity implements Locat
 
 	@ObfuscatedName("ajk.e(I)I")
 	public int getId() {
-		return this.id;
+		return this.field11715;
 	}
 
 	@ObfuscatedName("ajk.n(I)I")

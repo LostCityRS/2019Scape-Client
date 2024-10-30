@@ -2,7 +2,6 @@ package com.jagex.game.client;
 
 import com.jagex.core.io.AbstractSocket;
 import deob.ObfuscatedName;
-
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -46,11 +45,11 @@ public class ServerAddress {
 	}
 
 	@ObfuscatedName("aba.m(Laba;I)Z")
-	public boolean isAddressInUse(ServerAddress serverAddress) {
-		if (serverAddress == null) {
+	public boolean isAddressInUse(ServerAddress arg0) {
+		if (arg0 == null) {
 			return false;
 		} else {
-			return this.node == serverAddress.node && this.host.equals(serverAddress.host) && this.port == serverAddress.port && this.port2 == serverAddress.port2;
+			return this.node == arg0.node && this.host.equals(arg0.host) && this.port == arg0.port && this.port2 == arg0.port2;
 		}
 	}
 }

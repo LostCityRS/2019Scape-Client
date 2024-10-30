@@ -17,10 +17,10 @@ public class QuickChatPhrase {
 	public int[] dynamics;
 
 	@ObfuscatedName("aac.e(Lalw;B)Lne;")
-	public static QuickChatPhrase createQuickChatPhrase(Packet buf) {
-		QuickChatPhrase quickChatPhrase = new QuickChatPhrase();
-		quickChatPhrase.id = buf.g2();
-		quickChatPhrase.quickChatPhraseType = Client.quickChatPhraseTypeList.list(quickChatPhrase.id);
-		return quickChatPhrase;
+	public static QuickChatPhrase createQuickChatPhrase(Packet arg0) {
+		QuickChatPhrase var1 = new QuickChatPhrase();
+		var1.id = arg0.g2();
+		var1.quickChatPhraseType = Client.quickChatPhraseTypeList.list(var1.id);
+		return var1;
 	}
 }

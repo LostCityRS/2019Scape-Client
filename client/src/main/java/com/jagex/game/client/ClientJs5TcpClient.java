@@ -7,8 +7,6 @@ import com.jagex.js5.Js5CompressionType;
 import com.jagex.js5.network.Js5NetRequest;
 import com.jagex.js5.network.Js5TcpClient;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
 import java.io.IOException;
 import java.util.Iterator;
 
@@ -19,7 +17,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 	public Stream stream;
 
 	@ObfuscatedName("aik.w(IIB)V")
-	public void error(int archive, int group) {
+	public void error(int arg0, int arg1) {
 		try {
 			this.stream.closeGracefully();
 		} catch (Exception var4) {
@@ -28,24 +26,24 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 		this.errorCount++;
 		this.js5State = -1;
 		this.xorcode = (byte) (Math.random() * 255.0D + 1.0D);
-		this.archive = archive;
-		this.group = group;
+		this.archive = arg0;
+		this.group = arg1;
 	}
 
 	@ObfuscatedName("aik.l(I)Z")
 	public boolean process() {
 		if (this.stream != null) {
-			long current = MonotonicTime.get();
-			int delay = (int) (current - this.lastTimestamp);
-			this.lastTimestamp = current;
-			if (delay > 200) {
-				delay = 200;
+			long var1 = MonotonicTime.get();
+			int var3 = (int) (var1 - this.lastTimestamp);
+			this.lastTimestamp = var1;
+			if (var3 > 200) {
+				var3 = 200;
 			}
-			this.delay += delay;
+			this.delay += var3;
 			if (this.delay > 30000) {
 				try {
 					this.stream.closeGracefully();
-				} catch (Exception exception) {
+				} catch (Exception var34) {
 				}
 				this.stream = null;
 			}
@@ -54,63 +52,63 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 			return this.getTotalUrgents() == 0 && this.getTotalPrefetches() == 0;
 		}
 		try {
-			for (Js5NetRequest urgent = (Js5NetRequest) this.urgent.peekFront(); urgent != null; urgent = (Js5NetRequest) this.urgent.prev()) {
+			for (Js5NetRequest var5 = (Js5NetRequest) this.urgent.peekFront(); var5 != null; var5 = (Js5NetRequest) this.urgent.prev()) {
 				this.out.pos = 0;
 				this.out.p1(1);
-				this.out.p5(urgent.secondaryNodeId);
+				this.out.p5(var5.secondaryNodeId);
 				this.stream.write(this.out.data, 0, this.out.data.length);
-				this.urgentRequested.pushBack(urgent);
+				this.urgentRequested.pushBack(var5);
 			}
-			for (Js5NetRequest prefetch = (Js5NetRequest) this.prefetch.peekFront(); prefetch != null; prefetch = (Js5NetRequest) this.prefetch.prev()) {
+			for (Js5NetRequest var6 = (Js5NetRequest) this.prefetch.peekFront(); var6 != null; var6 = (Js5NetRequest) this.prefetch.prev()) {
 				this.out.pos = 0;
 				this.out.p1(0);
-				this.out.p5(prefetch.secondaryNodeId);
+				this.out.p5(var6.secondaryNodeId);
 				this.stream.write(this.out.data, 0, this.out.data.length);
-				this.prefetchRequested.pushBack(prefetch);
+				this.prefetchRequested.pushBack(var6);
 			}
-			for (int index = 0; index < 100; index++) {
-				int available = this.stream.available();
-				if (available < 0) {
+			for (int var7 = 0; var7 < 100; var7++) {
+				int var8 = this.stream.available();
+				if (var8 < 0) {
 					throw new IOException();
 				}
-				if (available == 0) {
+				if (var8 == 0) {
 					break;
 				}
 				this.delay = 0;
 				if (this.currentRequest == null) {
-					int pos = 5 - this.client.pos;
-					if (pos > available) {
-						pos = available;
+					int var9 = 5 - this.client.pos;
+					if (var9 > var8) {
+						var9 = var8;
 					}
-					this.stream.read(this.client.data, this.client.pos, pos);
-					if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
-						for (int i = 0; i < pos; i++) {
-							this.client.data[this.client.pos + i] ^= this.xorcode;
+					this.stream.read(this.client.data, this.client.pos, var9);
+					if (this.xorcode != 0) {
+						for (int var10 = 0; var10 < var9; var10++) {
+							this.client.data[this.client.pos + var10] ^= this.xorcode;
 						}
 					}
-					this.client.pos += pos;
+					this.client.pos += var9;
 					if (this.client.pos >= 5) {
 						this.client.pos = 0;
-						int archive = this.client.g1();
-						int group = this.client.g4s();
-						boolean prefetch = (group & Integer.MIN_VALUE) != 0;
-						int groupId = group & Integer.MAX_VALUE;
-						long uid = ((long) archive << 32) + (long) groupId;
-						if (prefetch) {
-							Iterator prefetchIterator = this.prefetchRequested.iterator();
-							while (prefetchIterator.hasNext()) {
-								Js5NetRequest next = (Js5NetRequest) prefetchIterator.next();
-								if (next.secondaryNodeId == uid) {
-									this.currentRequest = next;
+						int var11 = this.client.g1();
+						int var12 = this.client.g4s();
+						boolean var13 = (var12 & Integer.MIN_VALUE) != 0;
+						int var14 = var12 & Integer.MAX_VALUE;
+						long var15 = ((long) var11 << 32) + (long) var14;
+						if (var13) {
+							Iterator var17 = this.prefetchRequested.iterator();
+							while (var17.hasNext()) {
+								Js5NetRequest var18 = (Js5NetRequest) var17.next();
+								if (var18.secondaryNodeId == var15) {
+									this.currentRequest = var18;
 									break;
 								}
 							}
 						} else {
-							Iterator urgentIterator = this.urgentRequested.iterator();
-							while (urgentIterator.hasNext()) {
-								Js5NetRequest next = (Js5NetRequest) urgentIterator.next();
-								if (next.secondaryNodeId == uid) {
-									this.currentRequest = next;
+							Iterator var19 = this.urgentRequested.iterator();
+							while (var19.hasNext()) {
+								Js5NetRequest var20 = (Js5NetRequest) var19.next();
+								if (var20.secondaryNodeId == var15) {
+									this.currentRequest = var20;
 									break;
 								}
 							}
@@ -123,50 +121,50 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 						this.server.pos = 0;
 					}
 				} else {
-					Packet buf = this.currentRequest.buf;
-					if (buf == null) {
-						int pos = 5 - this.server.pos;
-						if (pos > available) {
-							pos = available;
+					Packet var21 = this.currentRequest.buf;
+					if (var21 == null) {
+						int var22 = 5 - this.server.pos;
+						if (var22 > var8) {
+							var22 = var8;
 						}
-						this.stream.read(this.server.data, this.server.pos, pos);
-						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
-							for (int i = 0; i < pos; i++) {
-								this.server.data[this.server.pos + i] ^= this.xorcode;
+						this.stream.read(this.server.data, this.server.pos, var22);
+						if (this.xorcode != 0) {
+							for (int var23 = 0; var23 < var22; var23++) {
+								this.server.data[this.server.pos + var23] ^= this.xorcode;
 							}
 						}
-						this.server.pos += pos;
+						this.server.pos += var22;
 						if (this.server.pos >= 5) {
 							this.server.pos = 0;
-							int archive = this.server.g1();
-							int group = this.server.g4s();
-							byte length = 5;
-							if (archive != Js5CompressionType.UNCOMPRESSED.getId()) {
-								length = 9;
+							int var24 = this.server.g1();
+							int var25 = this.server.g4s();
+							byte var26 = 5;
+							if (var24 != Js5CompressionType.UNCOMPRESSED.getId()) {
+								var26 = 9;
 							}
-							Packet out = this.currentRequest.buf = new Packet(group + length + this.currentRequest.offset);
-							out.p1(archive);
-							out.p4(group);
+							Packet var27 = this.currentRequest.buf = new Packet(var25 + var26 + this.currentRequest.offset);
+							var27.p1(var24);
+							var27.p4(var25);
 							this.outPos += 5;
 						}
 					} else {
-						int off = buf.data.length - this.currentRequest.offset;
-						int pos = 102400 - this.outPos;
-						if (pos > off - buf.pos) {
-							pos = off - buf.pos;
+						int var28 = var21.data.length - this.currentRequest.offset;
+						int var29 = 102400 - this.outPos;
+						if (var29 > var28 - var21.pos) {
+							var29 = var28 - var21.pos;
 						}
-						if (pos > available) {
-							pos = available;
+						if (var29 > var8) {
+							var29 = var8;
 						}
-						this.stream.read(buf.data, buf.pos, pos);
-						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
-							for (int i = 0; i < pos; i++) {
-								buf.data[buf.pos + i] ^= this.xorcode;
+						this.stream.read(var21.data, var21.pos, var29);
+						if (this.xorcode != 0) {
+							for (int var30 = 0; var30 < var29; var30++) {
+								var21.data[var21.pos + var30] ^= this.xorcode;
 							}
 						}
-						buf.pos += pos;
-						this.outPos += pos;
-						if (buf.pos == off) {
+						var21.pos += var29;
+						this.outPos += var29;
+						if (var21.pos == var28) {
 							this.currentRequest.secondaryRemove();
 							this.currentRequest.incomplete = false;
 							this.currentRequest = null;
@@ -178,7 +176,7 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 				}
 			}
 			return true;
-		} catch (IOException ioException) {
+		} catch (IOException var35) {
 			try {
 				this.stream.closeGracefully();
 			} catch (Exception var33) {
@@ -191,37 +189,37 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 	}
 
 	@ObfuscatedName("aik.u(Ljava/lang/Object;ZI)V")
-	public void createNewJs5Stream(Object stream, boolean isLoggedIn) {
+	public void createNewJs5Stream(Object arg0, boolean arg1) {
 		if (this.stream != null) {
 			try {
 				this.stream.closeGracefully();
-			} catch (Exception exception) {
+			} catch (Exception var10) {
 			}
 			this.stream = null;
 		}
-		this.stream = (Stream) stream;
+		this.stream = (Stream) arg0;
 		this.sendNewStream();
-		this.sendLoginStatus(isLoggedIn);
+		this.sendLoginStatus(arg1);
 		this.client.pos = 0;
 		this.server.pos = 0;
 		this.currentRequest = null;
 		while (true) {
-			Js5NetRequest urgent = (Js5NetRequest) this.urgentRequested.pollFront();
-			if (urgent == null) {
+			Js5NetRequest var4 = (Js5NetRequest) this.urgentRequested.pollFront();
+			if (var4 == null) {
 				while (true) {
-					Js5NetRequest prefetch = (Js5NetRequest) this.prefetchRequested.pollFront();
-					if (prefetch == null) {
-						if (this.xorcode != 0 && Client.ENABLE_JS5_XOR) {
+					Js5NetRequest var5 = (Js5NetRequest) this.prefetchRequested.pollFront();
+					if (var5 == null) {
+						if (this.xorcode != 0) {
 							try {
 								this.out.pos = 0;
 								this.out.p1(4);
 								this.out.p1(this.xorcode);
 								this.out.p4(0);
 								this.stream.write(this.out.data, 0, this.out.data.length);
-							} catch (IOException ioException) {
+							} catch (IOException var9) {
 								try {
 									this.stream.closeGracefully();
-								} catch (Exception exception) {
+								} catch (Exception var8) {
 								}
 								this.stream = null;
 								this.errorCount++;
@@ -232,12 +230,12 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 						this.lastTimestamp = MonotonicTime.get();
 						return;
 					}
-					prefetch.buf = null;
-					this.prefetch.pushBack(prefetch);
+					var5.buf = null;
+					this.prefetch.pushBack(var5);
 				}
 			}
-			urgent.buf = null;
-			this.urgent.pushBack(urgent);
+			var4.buf = null;
+			this.urgent.pushBack(var4);
 		}
 	}
 
@@ -252,10 +250,10 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 			this.out.p3(4);
 			this.out.p2(0);
 			this.stream.write(this.out.data, 0, this.out.data.length);
-		} catch (IOException ioException) {
+		} catch (IOException var4) {
 			try {
 				this.stream.closeGracefully();
-			} catch (Exception exception) {
+			} catch (Exception var3) {
 			}
 			this.stream = null;
 			this.errorCount++;
@@ -264,19 +262,19 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 	}
 
 	@ObfuscatedName("aik.z(ZI)V")
-	public void sendLoginStatus(boolean isLoggedIn) {
+	public void sendLoginStatus(boolean arg0) {
 		if (this.stream == null) {
 			return;
 		}
 		try {
 			this.out.pos = 0;
-			this.out.p1(isLoggedIn ? 2 : 3);
+			this.out.p1(arg0 ? 2 : 3);
 			this.out.p5(0L);
 			this.stream.write(this.out.data, 0, this.out.data.length);
-		} catch (IOException ioException) {
+		} catch (IOException var5) {
 			try {
 				this.stream.closeGracefully();
-			} catch (Exception exception) {
+			} catch (Exception var4) {
 			}
 			this.stream = null;
 			this.errorCount++;
@@ -294,10 +292,10 @@ public class ClientJs5TcpClient extends Js5TcpClient {
 			this.out.p1(7);
 			this.out.p5(0L);
 			this.stream.write(this.out.data, 0, this.out.data.length);
-		} catch (IOException ioException) {
+		} catch (IOException var4) {
 			try {
 				this.stream.closeGracefully();
-			} catch (Exception exception) {
+			} catch (Exception var3) {
 			}
 			this.stream = null;
 			this.errorCount++;

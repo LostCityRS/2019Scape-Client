@@ -4,9 +4,8 @@ import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.Node;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-import sun.misc.Unsafe;
-
 import java.nio.ByteBuffer;
+import sun.misc.Unsafe;
 
 @ObfuscatedName("akx")
 public class GpuFloorModelRelated extends Node {

@@ -35,12 +35,12 @@ public class VarTypeEncodingKey implements SerializableEnum {
 
 	@ObfuscatedName("afy.e(I)[Lev;")
 	public static VarTypeEncodingKey[] values() {
-		return new VarTypeEncodingKey[] {LIFETIME, DOMAIN, TRANSMITLEVEL, VARNAME_HASH32, field1698, DEBUGNAME, TYPE};
+		return new VarTypeEncodingKey[] { LIFETIME, DOMAIN, TRANSMITLEVEL, VARNAME_HASH32, field1698, DEBUGNAME, TYPE };
 	}
 
-	public VarTypeEncodingKey(int index, int serialID) {
-		this.index = index;
-		this.serialID = serialID;
+	public VarTypeEncodingKey(int arg0, int arg1) {
+		this.index = arg0;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("ev.n()I")

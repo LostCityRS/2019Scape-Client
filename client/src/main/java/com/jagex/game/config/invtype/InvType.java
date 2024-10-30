@@ -10,7 +10,7 @@ import deob.ObfuscatedName;
 public class InvType extends SecondaryNode implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("ady.k")
-	public int stockLength = 0;
+	public int stockLength = 0 * 795395889;
 
 	@ObfuscatedName("ady.f")
 	public int[] stockobj;
@@ -19,30 +19,30 @@ public class InvType extends SecondaryNode implements ConfigType, MutableConfig 
 	public int[] stockcount;
 
 	@ObfuscatedName("ady.l")
-	public int size = 0;
+	public int size = 0 * 820091969;
 
 	@ObfuscatedName("ady.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("ady.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 2) {
-			this.size = buf.g2();
-		} else if (code == 4) {
-			this.stockLength = buf.g1();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 2) {
+			this.size = arg0.g2();
+		} else if (arg1 == 4) {
+			this.stockLength = arg0.g1();
 			this.stockobj = new int[this.stockLength];
 			this.stockcount = new int[this.stockLength];
 			for (int var3 = 0; var3 < this.stockLength; var3++) {
-				this.stockobj[var3] = buf.g2();
-				this.stockcount[var3] = buf.g2();
+				this.stockobj[var3] = arg0.g2();
+				this.stockcount[var3] = arg0.g2();
 			}
 		}
 	}

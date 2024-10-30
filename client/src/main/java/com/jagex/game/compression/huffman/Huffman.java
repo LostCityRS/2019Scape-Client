@@ -14,15 +14,15 @@ public class Huffman {
 	@ObfuscatedName("ig.m")
 	public int[] decoded;
 
-	public Huffman(byte[] table) {
-		int var2 = table.length;
+	public Huffman(byte[] arg0) {
+		int var2 = arg0.length;
 		this.encoded = new int[var2];
-		this.table = table;
+		this.table = arg0;
 		int[] var3 = new int[33];
 		this.decoded = new int[8];
 		int var4 = 0;
 		for (int var5 = 0; var5 < var2; var5++) {
-			byte var6 = table[var5];
+			byte var6 = arg0[var5];
 			if (var6 != 0) {
 				int var7 = 0x1 << 32 - var6;
 				int var8 = var3[var6];
@@ -89,7 +89,7 @@ public class Huffman {
 			int var10 = this.encoded[var9];
 			byte var11 = this.table[var9];
 			if (var11 == 0) {
-				throw new RuntimeException("No codeword for data value " + var9);
+				throw new RuntimeException("" + var9);
 			}
 			int var12 = var7 >> 3;
 			int var13 = var7 & 0x7;

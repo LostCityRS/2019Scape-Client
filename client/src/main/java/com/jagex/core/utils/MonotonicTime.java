@@ -3,7 +3,7 @@ package com.jagex.core.utils;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("gz")
-public final class MonotonicTime {
+public class MonotonicTime {
 
 	@ObfuscatedName("gz.e")
 	public static long field2012;

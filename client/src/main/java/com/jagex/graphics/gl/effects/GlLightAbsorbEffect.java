@@ -1,7 +1,7 @@
 package com.jagex.graphics.gl.effects;
 
-import com.jagex.graphics.gl.GlToolkit;
 import com.jagex.graphics.gl.GlTexture;
+import com.jagex.graphics.gl.GlToolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aen")

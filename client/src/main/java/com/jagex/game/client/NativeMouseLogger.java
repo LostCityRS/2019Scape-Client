@@ -4,10 +4,9 @@ import com.jagex.core.io.Packet;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.network.protocol.ClientProt;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
 import java.util.LinkedList;
 import java.util.Queue;
+import rs2.client.Client;
 
 @ObfuscatedName("alp")
 public class NativeMouseLogger extends MouseLogger {

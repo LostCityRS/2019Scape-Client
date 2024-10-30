@@ -2,13 +2,16 @@ package com.jagex.core.utils;
 
 import com.jagex.core.constants.Language;
 import deob.ObfuscatedName;
-
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TimeZone;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 @ObfuscatedName("gd")
-public final class TimeZones {
+public class TimeZones {
 
 	@ObfuscatedName("gd.f")
 	public static final HashMap field2008 = new HashMap();
@@ -16,8 +19,8 @@ public final class TimeZones {
 	@ObfuscatedName("gd.w")
 	public static final Calendar field2009 = Calendar.getInstance(method3626("Europe/London"));
 
-    @ObfuscatedName("gd.l")
-    public static Map field2010;
+	@ObfuscatedName("gd.l")
+	public static Map field2010;
 
 	public TimeZones() throws Throwable {
 		throw new Error();

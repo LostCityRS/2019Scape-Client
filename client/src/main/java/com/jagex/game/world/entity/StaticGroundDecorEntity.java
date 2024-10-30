@@ -2,6 +2,7 @@ package com.jagex.game.world.entity;
 
 import com.jagex.core.datastruct.Pair;
 import com.jagex.game.client.HardShadow;
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.FloorModel;
@@ -32,7 +33,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	public EntityBounds field11187;
 
 	@ObfuscatedName("ajz.s")
-	public final int id;
+	public final int field11715;
 
 	@ObfuscatedName("ajz.y")
 	public final byte angle;
@@ -52,30 +53,30 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	@ObfuscatedName("ajz.a")
 	public int y;
 
-	public StaticGroundDecorEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int angle, boolean arg11, ScaleRotTrans scaleRotTrans) {
-		super(scene, x, y, z, level, occludeLevel, locType.field7448, scaleRotTrans);
-		this.locTypeList = locTypeList;
-		this.id = locType.id;
-		this.underwater = underwater;
-		this.angle = (byte) angle;
-		this.active = locType.active != 0 && !underwater;
+	public StaticGroundDecorEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, boolean arg11, ScaleRotTrans arg12) {
+		super(arg0, arg6, arg7, arg8, arg4, arg5, arg3.field7448, arg12);
+		this.locTypeList = arg2;
+		this.field11715 = arg3.id;
+		this.underwater = arg9;
+		this.angle = (byte) arg10;
+		this.active = arg3.active != 0 && !arg9;
 		this.field11184 = arg11;
-		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
-		this.y = y;
+		this.hasHardShadow = arg1.supportsHardShadows() && arg3.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
+		this.y = arg7;
 		int var14 = 2048;
 		if (this.field11184) {
 			var14 |= 0x10000;
 		}
-		if (locType.antimacro) {
+		if (arg3.antimacro) {
 			var14 |= 0x80000;
 		}
-		Pair var15 = this.method17436(toolkit, var14, this.hasHardShadow);
+		Pair var15 = this.method17436(arg1, var14, this.hasHardShadow);
 		if (var15 != null) {
 			this.model = (Model) var15.first;
 			this.shadow = (HardShadow) var15.second;
-			if (this.field11184 || locType.antimacro) {
+			if (this.field11184 || arg3.antimacro) {
 				this.model = this.model.method1773((byte) 0, var14, false);
-				if (locType.antimacro) {
+				if (arg3.antimacro) {
 					LocTint var16 = Client.world.method7722();
 					this.model.method1745(var16.field5015, var16.field5013, var16.field5014, var16.field5012);
 				}
@@ -115,7 +116,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.bv(Ldh;IZI)Labg;")
 	public Pair method17436(Toolkit arg0, int arg1, boolean arg2) {
-		LocType var4 = (LocType) this.locTypeList.list(this.id);
+		LocType var4 = (LocType) this.locTypeList.list(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
 		if (this.underwater) {
@@ -134,42 +135,42 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Toolkit toolkit) {
+	public EntityBounds method17371(Toolkit arg0) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11187 == null) {
-			this.field11187 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17435(toolkit, 0));
+			this.field11187 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17435(arg0, 0));
 		}
 		return this.field11187;
 	}
 
 	@ObfuscatedName("ajz.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Toolkit toolkit) {
+	public PickableEntity draw(Toolkit arg0) {
 		if (this.model == null) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
 		PickableEntity var3 = PickableEntity.getPickableEntity(this.active);
-		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.field11715)).clickbox;
 		if (var4 == null) {
 			this.model.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.model.draw(var2, null, 0);
-			toolkit.method2193(var2, this.entityBounds[0], var4);
+			arg0.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajz.fw(Ldh;I)V")
-	public void method17373(Toolkit toolkit) {
+	public void method17373(Toolkit arg0) {
 	}
 
 	@ObfuscatedName("ajz.fa(Ldh;IIB)Z")
-	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
+	public boolean method17375(Toolkit arg0, int arg1, int arg2) {
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.field11715)).clickbox;
 		if (var4 != null) {
-			return toolkit.pick(arg1, arg2, this.method10533(), var4);
+			return arg0.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17435(toolkit, 131072);
+		Model var5 = this.method17435(arg0, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -184,9 +185,9 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 	}
 
 	@ObfuscatedName("ajz.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
-		if (entity instanceof StaticGroundDecorEntity) {
-			StaticGroundDecorEntity var7 = (StaticGroundDecorEntity) entity;
+	public void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+		if (arg1 instanceof StaticGroundDecorEntity) {
+			StaticGroundDecorEntity var7 = (StaticGroundDecorEntity) arg1;
 			if (this.model != null && var7.model != null) {
 				this.model.method1686(var7.model, arg2, arg3, arg4, arg5);
 			}
@@ -203,7 +204,7 @@ public class StaticGroundDecorEntity extends GroundDecorLayerEntity implements L
 
 	@ObfuscatedName("ajz.e(I)I")
 	public int getId() {
-		return this.id;
+		return this.field11715;
 	}
 
 	@ObfuscatedName("ajz.n(I)I")

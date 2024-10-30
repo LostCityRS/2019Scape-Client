@@ -13,9 +13,9 @@ public class Js5FileResourceLoader implements ResourceLoader {
 	@ObfuscatedName("pb.n")
 	public final String fileName;
 
-	public Js5FileResourceLoader(Js5 js5, String fileName) {
-		this.js5 = js5;
-		this.fileName = fileName;
+	public Js5FileResourceLoader(Js5 arg0, String arg1) {
+		this.js5 = arg0;
+		this.fileName = arg1;
 	}
 
 	@ObfuscatedName("pb.e(I)I")

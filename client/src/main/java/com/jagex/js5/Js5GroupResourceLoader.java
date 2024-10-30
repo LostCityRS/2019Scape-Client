@@ -13,9 +13,9 @@ public class Js5GroupResourceLoader implements ResourceLoader {
 	@ObfuscatedName("pk.n")
 	public final int group;
 
-	public Js5GroupResourceLoader(Js5 js5, int group) {
-		this.js5 = js5;
-		this.group = group;
+	public Js5GroupResourceLoader(Js5 arg0, int arg1) {
+		this.js5 = arg0;
+		this.group = arg1;
 	}
 
 	@ObfuscatedName("pk.e(I)I")

@@ -1,7 +1,6 @@
 package com.jagex.twitchtv;
 
 import deob.ObfuscatedName;
-
 import java.util.LinkedList;
 
 public class TwitchWebcamDevice {
@@ -22,8 +21,8 @@ public class TwitchWebcamDevice {
 	public LinkedList field240 = new LinkedList();
 
 	public TwitchWebcamDevice(int arg0, int arg1, String arg2, String arg3) {
-		this.field238 = arg0;
-		this.field239 = arg1;
+		this.field238 = arg0 * 849061987 * -1015277237;
+		this.field239 = arg1 * -1720800279 * -1975853991;
 		this.field236 = arg2;
 		this.field237 = arg3;
 	}

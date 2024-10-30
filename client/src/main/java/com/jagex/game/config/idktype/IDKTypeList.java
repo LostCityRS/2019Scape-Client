@@ -10,7 +10,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aov")
 public class IDKTypeList extends CachingConfigTypeList {
 
-	public IDKTypeList(ModeGame modeGame, Language language, Js5 js5, Js5 factoryJs5) {
-		super(modeGame, language, js5, Js5ConfigGroup.IDKTYPE, 64, new IDKTypeFactory(factoryJs5));
+	public IDKTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
+		super(arg0, arg1, arg2, Js5ConfigGroup.IDKTYPE, 64, new IDKTypeFactory(arg3));
 	}
 }

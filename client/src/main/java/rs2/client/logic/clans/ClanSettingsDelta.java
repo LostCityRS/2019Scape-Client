@@ -16,202 +16,196 @@ public class ClanSettingsDelta {
 	@ObfuscatedName("kd.m")
 	public LinkList queue = new LinkList();
 
-	public ClanSettingsDelta(Packet buf) {
-		this.decode(buf);
+	public ClanSettingsDelta(Packet arg0) {
+		this.decode(arg0);
 	}
 
 	@ObfuscatedName("kd.e(Lalw;B)V")
-	public void decode(Packet buf) {
-		this.ownerHash = buf.g8();
-		this.updateNum = buf.g4s();
-		for (int code = buf.g1(); code != 0; code = buf.g1()) {
-			ClanSettingsDeltaEntry entry;
-			if (code == 3) {
-				entry = new AddBanned(this);
-			} else if (code == 1) {
-				entry = new AddMemberV1(this);
-			} else if (code == 13) {
-				entry = new AddMemberV2(this);
-			} else if (code == 4) {
-				entry = new UpdateBaseSettings(this);
-			} else if (code == 6) {
-				entry = new DeleteBanned(this);
-			} else if (code == 5) {
-				entry = new DeleteMember(this);
-			} else if (code == 2) {
-				entry = new SetMemberRank(this);
-			} else if (code == 7) {
-				entry = new SetMemberExtraInfo(this);
-			} else if (code == 14) {
-				entry = new SetMemberMuted(this);
-			} else if (code == 8) {
-				entry = new SetExtraSettingInt(this);
-			} else if (code == 9) {
-				entry = new SetExtraSettingLong(this);
-			} else if (code == 10) {
-				entry = new SetExtraSettingString(this);
-			} else if (code == 11) {
-				entry = new SetExtraSettingVarbit(this);
-			} else if (code == 12) {
-				entry = new SetClanName(this);
+	public void decode(Packet arg0) {
+		this.ownerHash = arg0.g8();
+		this.updateNum = arg0.g4s();
+		for (int var2 = arg0.g1(); var2 != 0; var2 = arg0.g1()) {
+			ClanSettingsDeltaEntry var3;
+			if (var2 == 3) {
+				var3 = new ClanSettingsDelta.AddBanned();
+			} else if (var2 == 1) {
+				var3 = new ClanSettingsDelta.AddMemberV1();
+			} else if (var2 == 13) {
+				var3 = new ClanSettingsDelta.AddMemberV2();
+			} else if (var2 == 4) {
+				var3 = new ClanSettingsDelta.UpdateBaseSettings();
+			} else if (var2 == 6) {
+				var3 = new ClanSettingsDelta.DeleteBanned();
+			} else if (var2 == 5) {
+				var3 = new ClanSettingsDelta.DeleteMember();
+			} else if (var2 == 2) {
+				var3 = new ClanSettingsDelta.SetMemberRank();
+			} else if (var2 == 7) {
+				var3 = new ClanSettingsDelta.SetMemberExtraInfo();
+			} else if (var2 == 14) {
+				var3 = new ClanSettingsDelta.SetMemberMuted();
+			} else if (var2 == 8) {
+				var3 = new ClanSettingsDelta.SetExtraSettingInt();
+			} else if (var2 == 9) {
+				var3 = new ClanSettingsDelta.SetExtraSettingLong();
+			} else if (var2 == 10) {
+				var3 = new ClanSettingsDelta.SetExtraSettingString();
+			} else if (var2 == 11) {
+				var3 = new ClanSettingsDelta.SetExtraSettingVarbit();
+			} else if (var2 == 12) {
+				var3 = new ClanSettingsDelta.SetClanName();
 			} else {
-				throw new RuntimeException("Unrecognised ClanSettingsDelta type in decode()");
+				throw new RuntimeException("");
 			}
-			entry.decode(buf);
-			this.queue.addTail(entry);
+			var3.decode(arg0);
+			this.queue.addTail(var3);
 		}
 	}
 
-	// line 58
 	@ObfuscatedName("kd.n(Lkr;I)V")
-	public void applyToClanSettings(ClanSettings settings) {
-		if (this.ownerHash != settings.owner || this.updateNum != settings.updateNum) {
-            // throw new RuntimeException("ClanSettingsDelta.applyToClanSettings(): Credentials do not match! Settings.owner:" + Q280.g(ef450.h) + " updateNum:" + ef450.s + " delta.owner:" + Q280.g(this.g) + " updateNum:" + this.d);
-			throw new RuntimeException("ClanSettingsDelta.applyToClanSettings(): Credentials do not match!");
+	public void applyToClanSettings(ClanSettings arg0) {
+		if (this.ownerHash != arg0.owner || this.updateNum != arg0.updateNum) {
+			throw new RuntimeException("");
 		}
-		for (ClanSettingsDeltaEntry entry = (ClanSettingsDeltaEntry) this.queue.head(); entry != null; entry = (ClanSettingsDeltaEntry) this.queue.next()) {
-			entry.apply(settings);
+		for (ClanSettingsDeltaEntry var2 = (ClanSettingsDeltaEntry) this.queue.head(); var2 != null; var2 = (ClanSettingsDeltaEntry) this.queue.next()) {
+			var2.apply(arg0);
 		}
-		settings.updateNum++;
+		arg0.updateNum++;
 	}
 
 	@ObfuscatedName("aqj")
-	public static class AddMemberV1 extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+	public class AddMemberV1 extends ClanSettingsDeltaEntry {
 
 		@ObfuscatedName("aqj.k")
-		public long userhash;
+		public long userhash = -1L;
 
 		@ObfuscatedName("aqj.f")
-		public String displayname;
-
-		// line 75
-		public AddMemberV1(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-			this.userhash = -1L;
-			this.displayname = null;
-		}
+		public String displayname = null;
 
 		@ObfuscatedName("aqj.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			if (buf.g1() != 255) {
-				buf.pos -= 1;
-				this.userhash = buf.g8();
+		public void decode(Packet arg0) {
+			if (arg0.g1() != 255) {
+				arg0.pos--;
+				this.userhash = arg0.g8();
 			}
-			this.displayname = buf.fastgstr();
+			this.displayname = arg0.fastgstr();
 		}
 
 		@ObfuscatedName("aqj.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doAddMember(this.userhash, this.displayname, 0);
+		public void apply(ClanSettings arg0) {
+			arg0.doAddMember(this.userhash, this.displayname, 0);
 		}
 	}
 
-	@ObfuscatedName("arc")
-	public static class AddMemberV2 extends ClanSettingsDeltaEntry {
+	@ObfuscatedName("are")
+	public class AddBanned extends ClanSettingsDeltaEntry {
 
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+		@ObfuscatedName("are.k")
+		public long userhash = -1L;
 
-		@ObfuscatedName("arc.k")
-		public long userhash;
+		@ObfuscatedName("are.f")
+		public String displayname = null;
 
-		@ObfuscatedName("arc.f")
-		public String displayname;
-
-		@ObfuscatedName("arc.w")
-		public int joinedRunedays;
-
-		// line 95
-		public AddMemberV2(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-			this.userhash = -1L;
-			this.displayname = null;
-			this.joinedRunedays = 0;
-		}
-
-		@ObfuscatedName("arc.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			if (buf.g1() != 255) {
-				buf.pos -= 1;
-				this.userhash = buf.g8();
+		@ObfuscatedName("are.e(Lalw;B)V")
+		public void decode(Packet arg0) {
+			if (arg0.g1() != 255) {
+				arg0.pos--;
+				this.userhash = arg0.g8();
 			}
-			this.displayname = buf.fastgstr();
-			this.joinedRunedays = buf.g2();
+			this.displayname = arg0.fastgstr();
 		}
 
-		@ObfuscatedName("arc.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doAddMember(this.userhash, this.displayname, this.joinedRunedays);
+		@ObfuscatedName("are.n(Lkr;I)V")
+		public void apply(ClanSettings arg0) {
+			arg0.doAddBanned(this.userhash, this.displayname);
 		}
 	}
 
-	@ObfuscatedName("ari")
-	public static class DeleteMember extends ClanSettingsDeltaEntry {
+	@ObfuscatedName("arx")
+	public class SetMemberMuted extends ClanSettingsDeltaEntry {
 
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+		@ObfuscatedName("arx.k")
+		public int pos = -1;
 
-		@ObfuscatedName("ari.k")
-		public int pos;
+		@ObfuscatedName("arx.f")
+		public boolean muted;
 
-		// line 114
-		public DeleteMember(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-			this.pos = -1;
+		@ObfuscatedName("arx.e(Lalw;B)V")
+		public void decode(Packet arg0) {
+			this.pos = arg0.g2();
+			this.muted = arg0.g1() == 1;
 		}
 
-		@ObfuscatedName("ari.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.pos = buf.g2();
+		@ObfuscatedName("arx.n(Lkr;I)V")
+		public void apply(ClanSettings arg0) {
+			arg0.doSetMemberMuted(this.pos, this.muted);
+		}
+	}
+
+	@ObfuscatedName("arg")
+	public class SetExtraSettingLong extends ClanSettingsDeltaEntry {
+
+		@ObfuscatedName("arg.k")
+		public int uid;
+
+		@ObfuscatedName("arg.f")
+		public long setting;
+
+		@ObfuscatedName("arg.e(Lalw;B)V")
+		public void decode(Packet arg0) {
+			this.uid = arg0.g4s();
+			this.setting = arg0.g8();
 		}
 
-		@ObfuscatedName("ari.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doDeleteMember(this.pos);
+		@ObfuscatedName("arg.n(Lkr;I)V")
+		public void apply(ClanSettings arg0) {
+			arg0.doExtraSettingLong(this.uid, this.setting);
 		}
 	}
 
 	@ObfuscatedName("arp")
-	public static class SetMemberRank extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+	public class SetMemberRank extends ClanSettingsDeltaEntry {
 
 		@ObfuscatedName("arp.k")
-		public int pos;
+		public int pos = -1;
 
 		@ObfuscatedName("arp.f")
 		public byte rank;
 
-		// line 129
-		public SetMemberRank(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-			this.pos = -1;
-		}
-
 		@ObfuscatedName("arp.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.pos = buf.g2();
-			this.rank = buf.g1b();
+		public void decode(Packet arg0) {
+			this.pos = arg0.g2();
+			this.rank = arg0.g1b();
 		}
 
 		@ObfuscatedName("arp.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doSetMemberRank(this.pos, this.rank);
+		public void apply(ClanSettings arg0) {
+			arg0.doSetMemberRank(this.pos, this.rank);
+		}
+	}
+
+	@ObfuscatedName("ari")
+	public class DeleteMember extends ClanSettingsDeltaEntry {
+
+		@ObfuscatedName("ari.k")
+		public int pos = -1;
+
+		@ObfuscatedName("ari.e(Lalw;B)V")
+		public void decode(Packet arg0) {
+			this.pos = arg0.g2();
+		}
+
+		@ObfuscatedName("ari.n(Lkr;I)V")
+		public void apply(ClanSettings arg0) {
+			arg0.doDeleteMember(this.pos);
 		}
 	}
 
 	@ObfuscatedName("ary")
-	public static class SetMemberExtraInfo extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+	public class SetMemberExtraInfo extends ClanSettingsDeltaEntry {
 
 		@ObfuscatedName("ary.k")
-		public int pos;
+		public int pos = -1;
 
 		@ObfuscatedName("ary.f")
 		public int field12226;
@@ -222,147 +216,61 @@ public class ClanSettingsDelta {
 		@ObfuscatedName("ary.l")
 		public int field12228;
 
-		// line 147
-		public SetMemberExtraInfo(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-			this.pos = -1;
-		}
-
 		@ObfuscatedName("ary.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.pos = buf.g2();
-			this.field12226 = buf.g4s();
-			this.field12227 = buf.g1();
-			this.field12228 = buf.g1();
+		public void decode(Packet arg0) {
+			this.pos = arg0.g2();
+			this.field12226 = arg0.g4s();
+			this.field12227 = arg0.g1();
+			this.field12228 = arg0.g1();
 		}
 
 		@ObfuscatedName("ary.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doSetMemberExtraInfo(this.pos, this.field12226, this.field12227, this.field12228);
+		public void apply(ClanSettings arg0) {
+			arg0.doSetMemberExtraInfo(this.pos, this.field12226, this.field12227, this.field12228);
 		}
 	}
 
-	@ObfuscatedName("arx")
-	public static class SetMemberMuted extends ClanSettingsDeltaEntry {
+	@ObfuscatedName("aro")
+	public class SetExtraSettingString extends ClanSettingsDeltaEntry {
 
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+		@ObfuscatedName("aro.k")
+		public int uid;
 
-		@ObfuscatedName("arx.k")
-		public int pos;
+		@ObfuscatedName("aro.f")
+		public String setting;
 
-		@ObfuscatedName("arx.f")
-		public boolean muted;
-
-		// line 165
-		public SetMemberMuted(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-			this.pos = -1;
+		@ObfuscatedName("aro.e(Lalw;B)V")
+		public void decode(Packet arg0) {
+			this.uid = arg0.g4s();
+			this.setting = arg0.gjstr();
 		}
 
-		@ObfuscatedName("arx.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.pos = buf.g2();
-			this.muted = buf.g1() == 1;
-		}
-
-		@ObfuscatedName("arx.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doSetMemberMuted(this.pos, this.muted);
-		}
-	}
-
-	@ObfuscatedName("are")
-	public static class AddBanned extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
-
-		@ObfuscatedName("are.k")
-		public long userhash;
-
-		@ObfuscatedName("are.f")
-		public String displayname;
-
-		// line 181
-		public AddBanned(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-			this.userhash = -1L;
-			this.displayname = null;
-		}
-
-		@ObfuscatedName("are.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			if (buf.g1() != 255) {
-				buf.pos -= 1;
-				this.userhash = buf.g8();
-			}
-			this.displayname = buf.fastgstr();
-		}
-
-		@ObfuscatedName("are.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doAddBanned(this.userhash, this.displayname);
-		}
-	}
-
-	@ObfuscatedName("arb")
-	public static class DeleteBanned extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
-
-		@ObfuscatedName("arb.k")
-		public int pos;
-
-		// line 199
-		public DeleteBanned(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-			this.pos = -1;
-		}
-
-		@ObfuscatedName("arb.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.pos = buf.g2();
-		}
-
-		@ObfuscatedName("arb.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doDeleteBanned(this.pos);
+		@ObfuscatedName("aro.n(Lkr;I)V")
+		public void apply(ClanSettings arg0) {
+			arg0.doExtraSettingString(this.uid, this.setting);
 		}
 	}
 
 	@ObfuscatedName("arl")
-	public static class SetClanName extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+	public class SetClanName extends ClanSettingsDeltaEntry {
 
 		@ObfuscatedName("arl.k")
 		public String clanName;
 
-		// line 213
-		public SetClanName(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-		}
-
 		@ObfuscatedName("arl.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.clanName = buf.gjstr();
-			buf.g4s();
+		public void decode(Packet arg0) {
+			this.clanName = arg0.gjstr();
+			arg0.g4s();
 		}
 
 		@ObfuscatedName("arl.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.clanName = this.clanName;
+		public void apply(ClanSettings arg0) {
+			arg0.clanName = this.clanName;
 		}
 	}
 
 	@ObfuscatedName("arj")
-	public static class UpdateBaseSettings extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+	public class UpdateBaseSettings extends ClanSettingsDeltaEntry {
 
 		@ObfuscatedName("arj.k")
 		public boolean allowUnaffined;
@@ -379,35 +287,55 @@ public class ClanSettingsDelta {
 		@ObfuscatedName("arj.u")
 		public byte coinshare;
 
-		// line 232
-		public UpdateBaseSettings(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-		}
-
 		@ObfuscatedName("arj.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.allowUnaffined = buf.g1() == 1;
-			this.rankTalk = buf.g1b();
-			this.rankKick = buf.g1b();
-			this.rankLootshare = buf.g1b();
-			this.coinshare = buf.g1b();
+		public void decode(Packet arg0) {
+			this.allowUnaffined = arg0.g1() == 1;
+			this.rankTalk = arg0.g1b();
+			this.rankKick = arg0.g1b();
+			this.rankLootshare = arg0.g1b();
+			this.coinshare = arg0.g1b();
 		}
 
 		@ObfuscatedName("arj.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.allowUnaffined = this.allowUnaffined;
-			settings.rankTalk = this.rankTalk;
-			settings.rankKick = this.rankKick;
-			settings.rankLootshare = this.rankLootshare;
-			settings.coinshare = this.coinshare;
+		public void apply(ClanSettings arg0) {
+			arg0.allowUnaffined = this.allowUnaffined;
+			arg0.rankTalk = this.rankTalk;
+			arg0.rankKick = this.rankKick;
+			arg0.rankLootshare = this.rankLootshare;
+			arg0.coinshare = this.coinshare;
+		}
+	}
+
+	@ObfuscatedName("arc")
+	public class AddMemberV2 extends ClanSettingsDeltaEntry {
+
+		@ObfuscatedName("arc.k")
+		public long userhash = -1L;
+
+		@ObfuscatedName("arc.f")
+		public String displayname = null;
+
+		@ObfuscatedName("arc.w")
+		public int joinedRunedays = 0;
+
+		@ObfuscatedName("arc.e(Lalw;B)V")
+		public void decode(Packet arg0) {
+			if (arg0.g1() != 255) {
+				arg0.pos--;
+				this.userhash = arg0.g8();
+			}
+			this.displayname = arg0.fastgstr();
+			this.joinedRunedays = arg0.g2();
+		}
+
+		@ObfuscatedName("arc.n(Lkr;I)V")
+		public void apply(ClanSettings arg0) {
+			arg0.doAddMember(this.userhash, this.displayname, this.joinedRunedays);
 		}
 	}
 
 	@ObfuscatedName("art")
-	public static class SetExtraSettingInt extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+	public class SetExtraSettingInt extends ClanSettingsDeltaEntry {
 
 		@ObfuscatedName("art.k")
 		public int uid;
@@ -415,28 +343,37 @@ public class ClanSettingsDelta {
 		@ObfuscatedName("art.f")
 		public int setting;
 
-		// line 255
-		public SetExtraSettingInt(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-		}
-
 		@ObfuscatedName("art.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.uid = buf.g4s();
-			this.setting = buf.g4s();
+		public void decode(Packet arg0) {
+			this.uid = arg0.g4s();
+			this.setting = arg0.g4s();
 		}
 
 		@ObfuscatedName("art.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doExtraSettingInt(this.uid, this.setting);
+		public void apply(ClanSettings arg0) {
+			arg0.doExtraSettingInt(this.uid, this.setting);
+		}
+	}
+
+	@ObfuscatedName("arb")
+	public class DeleteBanned extends ClanSettingsDeltaEntry {
+
+		@ObfuscatedName("arb.k")
+		public int pos = -1;
+
+		@ObfuscatedName("arb.e(Lalw;B)V")
+		public void decode(Packet arg0) {
+			this.pos = arg0.g2();
+		}
+
+		@ObfuscatedName("arb.n(Lkr;I)V")
+		public void apply(ClanSettings arg0) {
+			arg0.doDeleteBanned(this.pos);
 		}
 	}
 
 	@ObfuscatedName("arw")
-	public static class SetExtraSettingVarbit extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
+	public class SetExtraSettingVarbit extends ClanSettingsDeltaEntry {
 
 		@ObfuscatedName("arw.k")
 		public int uid;
@@ -450,80 +387,17 @@ public class ClanSettingsDelta {
 		@ObfuscatedName("arw.l")
 		public int field12248;
 
-		// line 273
-		public SetExtraSettingVarbit(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-		}
-
 		@ObfuscatedName("arw.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.uid = buf.g4s();
-			this.field12248 = buf.g4s();
-			this.field12246 = buf.g1();
-			this.field12247 = buf.g1();
+		public void decode(Packet arg0) {
+			this.uid = arg0.g4s();
+			this.field12248 = arg0.g4s();
+			this.field12246 = arg0.g1();
+			this.field12247 = arg0.g1();
 		}
 
 		@ObfuscatedName("arw.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doExtraSettingVarbit(this.uid, this.field12248, this.field12246, this.field12247);
-		}
-	}
-
-	@ObfuscatedName("arg")
-	public static class SetExtraSettingLong extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
-
-		@ObfuscatedName("arg.k")
-		public int uid;
-
-		@ObfuscatedName("arg.f")
-		public long setting;
-
-		// line 291
-		public SetExtraSettingLong(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("arg.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.uid = buf.g4s();
-			this.setting = buf.g8();
-		}
-
-		@ObfuscatedName("arg.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doExtraSettingLong(this.uid, this.setting);
-		}
-	}
-
-	@ObfuscatedName("aro")
-	public static class SetExtraSettingString extends ClanSettingsDeltaEntry {
-
-		// $FF: synthetic field
-		public final ClanSettingsDelta this$0;
-
-		@ObfuscatedName("aro.k")
-		public int uid;
-
-		@ObfuscatedName("aro.f")
-		public String setting;
-
-		// line 307
-		public SetExtraSettingString(ClanSettingsDelta arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("aro.e(Lalw;B)V")
-		public void decode(Packet buf) {
-			this.uid = buf.g4s();
-			this.setting = buf.gjstr();
-		}
-
-		@ObfuscatedName("aro.n(Lkr;I)V")
-		public void apply(ClanSettings settings) {
-			settings.doExtraSettingString(this.uid, this.setting);
+		public void apply(ClanSettings arg0) {
+			arg0.doExtraSettingVarbit(this.uid, this.field12248, this.field12246, this.field12247);
 		}
 	}
 }

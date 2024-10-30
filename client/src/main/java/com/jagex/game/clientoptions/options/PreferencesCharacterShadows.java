@@ -32,13 +32,13 @@ public class PreferencesCharacterShadows extends Preference {
 	}
 
 	@ObfuscatedName("amu.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return 1;
 	}
 
 	@ObfuscatedName("amu.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amu.y(I)I")

@@ -2,7 +2,6 @@ package com.jagex.core.io;
 
 import com.jagex.game.client.FileOnDisk;
 import deob.ObfuscatedName;
-
 import java.io.EOFException;
 import java.io.IOException;
 
@@ -257,7 +256,7 @@ public class BufferedFile {
 			this.field8774 = this.field8769;
 		}
 		this.fileOnDisk.write(this.field8768, 0, this.field8770);
-		this.field8774 += (long) (this.field8770);
+		this.field8774 += (long) (this.field8770 * -690117763) * -966644267L;
 		if (this.field8774 > this.field8763) {
 			this.field8763 = this.field8774;
 		}

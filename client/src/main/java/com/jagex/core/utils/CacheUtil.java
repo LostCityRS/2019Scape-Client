@@ -1,7 +1,6 @@
 package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
-
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.util.Hashtable;

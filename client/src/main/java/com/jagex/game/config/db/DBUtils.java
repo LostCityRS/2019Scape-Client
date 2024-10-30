@@ -22,15 +22,15 @@ public class DBUtils {
 	}
 
 	@ObfuscatedName("anp.m(Lalw;[Lqw;I)[Ljava/lang/Object;")
-	public static Object[] unpackColumnDataValues(Packet buf, ScriptVarType[] types) {
-		int fieldCount = buf.gSmart1or2();
-		Object[] values = new Object[types.length * fieldCount];
-		for (int fieldId = 0; fieldId < fieldCount; fieldId++) {
-			for (int typeId = 0; typeId < types.length; typeId++) {
-				int index = types.length * fieldId + typeId;
-				values[index] = types[typeId].baseType.dbDecode(buf);
+	public static Object[] unpackColumnDataValues(Packet arg0, ScriptVarType[] arg1) {
+		int var2 = arg0.gSmart1or2();
+		Object[] var3 = new Object[arg1.length * var2];
+		for (int var4 = 0; var4 < var2; var4++) {
+			for (int var5 = 0; var5 < arg1.length; var5++) {
+				int var6 = arg1.length * var4 + var5;
+				var3[var6] = arg1[var5].baseType.dbDecode(arg0);
 			}
 		}
-		return values;
+		return var3;
 	}
 }

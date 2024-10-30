@@ -13,7 +13,7 @@ public class FrameSet extends SecondaryNode {
 	public static Js5 field12325;
 
 	@ObfuscatedName("arr.u")
-    public static Js5 field12326;
+	public static Js5 field12326;
 
 	@ObfuscatedName("arr.z")
 	public int field12324;

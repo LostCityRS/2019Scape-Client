@@ -17,47 +17,32 @@ public class ShaderData {
 	@ObfuscatedName("hj.w")
 	public ProgramData[] programs;
 
-	// line 13
 	public ShaderData(byte[] arg0) throws ShaderDataException {
 		this.decode(arg0);
 	}
 
-	// line 18
 	@ObfuscatedName("hj.e([BB)V")
-	public void decode(byte[] bytes) throws ShaderDataException {
-		ShaderDataReader buf = new ShaderDataReader(bytes);
-		int var3 = buf.g2();
+	public void decode(byte[] arg0) throws ShaderDataException {
+		ShaderDataReader var2 = new ShaderDataReader(arg0);
+		int var3 = var2.g2();
 		if (var3 != 4) {
 			throw new ShaderDataException(this, var3, 4);
 		}
-		this.name = buf.gstr();
-		this.vertexUniforms = new ProgramUniformData[buf.g2()];
-		this.fragmentUniforms = new ProgramUniformData[buf.g2()];
-		this.programs = new ProgramData[buf.g2()];
+		this.name = var2.gstr();
+		this.vertexUniforms = new ProgramUniformData[var2.g2()];
+		this.fragmentUniforms = new ProgramUniformData[var2.g2()];
+		this.programs = new ProgramData[var2.g2()];
 		for (int var4 = 0; var4 < this.vertexUniforms.length; var4++) {
 			this.vertexUniforms[var4] = new ProgramUniformData();
-			this.vertexUniforms[var4].decode(buf);
+			this.vertexUniforms[var4].decode(var2);
 		}
 		for (int var5 = 0; var5 < this.fragmentUniforms.length; var5++) {
 			this.fragmentUniforms[var5] = new ProgramUniformData();
-			this.fragmentUniforms[var5].decode(buf);
+			this.fragmentUniforms[var5].decode(var2);
 		}
 		for (int var6 = 0; var6 < this.programs.length; var6++) {
 			this.programs[var6] = new ProgramData();
-			this.programs[var6].decode(buf);
-		}
-	}
-
-	@ObfuscatedName("apu")
-	public static class ShaderDataException extends Exception {
-
-		// $FF: synthetic field
-		public final ShaderData this$0;
-
-		// line 40
-		public ShaderDataException(ShaderData arg0, int arg1, int arg2) {
-			super("");
-			this.this$0 = arg0;
+			this.programs[var6].decode(var2);
 		}
 	}
 }

@@ -34,24 +34,21 @@ public abstract class GpuShader {
 	@ObfuscatedName("ho.u")
 	public static final HashMapKey field2571 = new ShaderRelated();
 
-	public GpuShader(GpuToolkit renderer, ShaderData shader) {
-		this.name = shader.name;
-
-		this.uniformsCount = shader.vertexUniforms.length;
+	public GpuShader(GpuToolkit arg0, ShaderData arg1) {
+		this.name = arg1.name;
+		this.uniformsCount = arg1.vertexUniforms.length;
 		this.uniforms = new HashMap(this.uniformsCount, field2571);
-		for (int i = 0; i < this.uniformsCount; i++) {
-			this.uniforms.put(i, shader.vertexUniforms[i].field2586, this.method4165(shader.vertexUniforms[i]));
+		for (int var3 = 0; var3 < this.uniformsCount; var3++) {
+			this.uniforms.put(var3, arg1.vertexUniforms[var3].field2586, this.method4165(arg1.vertexUniforms[var3]));
 		}
-
-		this.uniforms2Count = shader.fragmentUniforms.length;
+		this.uniforms2Count = arg1.fragmentUniforms.length;
 		this.uniforms2 = new HashMap(this.uniforms2Count, field2571);
-		for (int i = 0; i < this.uniforms2Count; i++) {
-			this.uniforms2.put(i, shader.fragmentUniforms[i].field2586, this.method4165(shader.fragmentUniforms[i]));
+		for (int var4 = 0; var4 < this.uniforms2Count; var4++) {
+			this.uniforms2.put(var4, arg1.fragmentUniforms[var4].field2586, this.method4165(arg1.fragmentUniforms[var4]));
 		}
-
-		this.programs = new GpuProgram[shader.programs.length];
-		for (int i = 0; i < shader.programs.length; i++) {
-			this.programs[i] = this.createProgram(renderer, shader.programs[i]);
+		this.programs = new GpuProgram[arg1.programs.length];
+		for (int var5 = 0; var5 < arg1.programs.length; var5++) {
+			this.programs[var5] = this.createProgram(arg0, arg1.programs[var5]);
 		}
 	}
 
@@ -61,22 +58,19 @@ public abstract class GpuShader {
 	}
 
 	@ObfuscatedName("ho.w(Ljava/lang/String;I)Lhi;")
-	public GpuProgram getProgram(String name) throws ProgramNotFoundException {
-		GpuProgram[] programs = this.programs;
-
-		for (int i = 0; i < programs.length; i++) {
-			GpuProgram prg = programs[i];
-			String prgName = prg.getName();
-			if (prgName != null && prgName.equals(name)) {
-				if (!prg.compile()) {
-					throw new ProgramNotFoundException(name);
+	public GpuProgram getProgram(String arg0) throws ProgramNotFoundException {
+		GpuProgram[] var2 = this.programs;
+		for (int var3 = 0; var3 < var2.length; var3++) {
+			GpuProgram var4 = var2[var3];
+			String var5 = var4.getName();
+			if (var5 != null && var5.equals(arg0)) {
+				if (!var4.compile()) {
+					throw new ProgramNotFoundException(arg0);
 				}
-
-				return prg;
+				return var4;
 			}
 		}
-
-		throw new ProgramNotFoundException(name);
+		throw new ProgramNotFoundException(arg0);
 	}
 
 	@ObfuscatedName("ho.l(B)I")
@@ -85,28 +79,27 @@ public abstract class GpuShader {
 	}
 
 	@ObfuscatedName("ho.u(II)Lhi;")
-	public final GpuProgram getProgram(int index) {
-		return this.programs[index];
+	public final GpuProgram getProgram(int arg0) {
+		return this.programs[arg0];
 	}
 
 	@ObfuscatedName("ho.z(Lhi;I)I")
-	public int getProgramIndex(GpuProgram prg) {
-		for (int i = 0; i < this.programs.length; i++) {
-			if (this.programs[i] == prg) {
-				return i;
+	public int getProgramIndex(GpuProgram arg0) {
+		for (int var2 = 0; var2 < this.programs.length; var2++) {
+			if (this.programs[var2] == arg0) {
+				return var2;
 			}
 		}
-
 		return -1;
 	}
 
 	@ObfuscatedName("ho.p(I)Lhi;")
 	public GpuProgram compilePrograms() {
-		GpuProgram[] programs = this.programs;
-		for (int i = 0; i < programs.length; i++) {
-			GpuProgram prg = programs[i];
-			if (prg.compile()) {
-				return prg;
+		GpuProgram[] var1 = this.programs;
+		for (int var2 = 0; var2 < var1.length; var2++) {
+			GpuProgram var3 = var1[var2];
+			if (var3.compile()) {
+				return var3;
 			}
 		}
 		return null;
@@ -222,10 +215,10 @@ public abstract class GpuShader {
 	}
 
 	@ObfuscatedName("ho.as(Ljava/lang/String;B)Laql;")
-	public ProgramUniform getUniform(String name) throws UniformNotFoundException {
-		ProgramUniform var2 = (ProgramUniform) this.uniforms.get(name);
+	public ProgramUniform getUniform(String arg0) throws UniformNotFoundException {
+		ProgramUniform var2 = (ProgramUniform) this.uniforms.get(arg0);
 		if (var2 == null) {
-			throw new UniformNotFoundException(name);
+			throw new UniformNotFoundException(arg0);
 		}
 		return var2;
 	}
@@ -236,13 +229,13 @@ public abstract class GpuShader {
 	}
 
 	@ObfuscatedName("ho.ad(IB)Laql;")
-	public ProgramUniform getUniform2(int id) {
-		return (ProgramUniform) this.uniforms2.get(id);
+	public ProgramUniform getUniform2(int arg0) {
+		return (ProgramUniform) this.uniforms2.get(arg0);
 	}
 
 	@ObfuscatedName("ho.am(Ljava/lang/String;S)Laql;")
-	public ProgramUniform getUniform2(String name) {
-		return (ProgramUniform) this.uniforms2.get(name);
+	public ProgramUniform getUniform2(String arg0) {
+		return (ProgramUniform) this.uniforms2.get(arg0);
 	}
 
 	@ObfuscatedName("ho.au(I)I")

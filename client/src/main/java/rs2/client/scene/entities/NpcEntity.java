@@ -3,19 +3,34 @@ package rs2.client.scene.entities;
 import com.jagex.game.MiniMenu;
 import com.jagex.game.client.GameShell;
 import com.jagex.game.client.MoveSpeed;
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.bastype.BASType;
 import com.jagex.game.config.effectanimtype.EffectAnimType;
-import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.npctype.NPCType;
+import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.shared.movement.CoordGrid;
-import com.jagex.game.world.entity.*;
-import com.jagex.graphics.*;
+import com.jagex.game.world.entity.EntityBounds;
+import com.jagex.game.world.entity.EntityChatLine;
+import com.jagex.game.world.entity.EntityWalkAnimationNode;
+import com.jagex.game.world.entity.NPCHeadIconCustomisation;
+import com.jagex.game.world.entity.PickableEntity;
+import com.jagex.game.world.entity.Scene;
+import com.jagex.game.world.entity.SpotShadowFactory;
+import com.jagex.game.world.entity.Tile;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.CompassPoint;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.camera.CameraTrackableType;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.scenegraph.GraphEntity;
-import com.jagex.math.*;
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Quaternion;
+import com.jagex.math.ScaleRotTrans;
+import com.jagex.math.Trig1;
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 
@@ -132,18 +147,18 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Toolkit toolkit) {
+	public EntityBounds method17371(Toolkit arg0) {
 		return null;
 	}
 
 	@ObfuscatedName("aqc.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Toolkit toolkit) {
-		if (this.npcType == null || !this.isVisible(toolkit, 526336)) {
+	public PickableEntity draw(Toolkit arg0) {
+		if (this.npcType == null || !this.isVisible(arg0, 526336)) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
 		ScaleRotTrans var3 = this.getTransform();
-		Matrix4x3 var4 = toolkit.method2209();
+		Matrix4x3 var4 = arg0.method2209();
 		int var5 = this.field10395.method316();
 		Tile var6 = this.scene.levelTiles[this.level][(int) var3.trans.x >> 9][(int) var3.trans.z >> 9];
 		if (var6 == null || var6.groundDecoration == null) {
@@ -170,14 +185,14 @@ public class NpcEntity extends PathingEntity {
 			}
 			Model var16;
 			if (var14 > -1 && Client.preferences.textures.getValue() == 1) {
-				var16 = SpotShadowFactory.method3283(toolkit, var5, this.field10405, this.field12466, this.field10407, this.idk[0], var14, var15, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method3283(arg0, var5, this.field10405, this.field12466, this.field10407, this.idk[0], var14, var15, var13 == null ? var12 : var13);
 			} else {
-				var16 = SpotShadowFactory.method5102(toolkit, var5, this.field10405, this.field12466, this.field10407, this.npcType.size, this.idk[0], this.npcType.spotshadowcolour_1 & 0xFFFF, this.npcType.spotshadowcolour_2 & 0xFFFF, this.npcType.spotshadowtrans_1 & 0xFF, this.npcType.spotshadowtrans_2 & 0xFF, var13 == null ? var12 : var13);
+				var16 = SpotShadowFactory.method5102(arg0, var5, this.field10405, this.field12466, this.field10407, this.npcType.size, this.idk[0], this.npcType.spotshadowcolour_1 & 0xFFFF, this.npcType.spotshadowcolour_2 & 0xFFFF, this.npcType.spotshadowtrans_1 & 0xFF, this.npcType.spotshadowtrans_2 & 0xFF, var13 == null ? var12 : var13);
 			}
 			if (var16 != null) {
 				var11 = PickableEntity.getPickableEntity(this.method19162());
 				this.field10458 = true;
-				toolkit.method2219(false);
+				arg0.method2219(false);
 				if (var10) {
 					var16.draw(var4, null, 0);
 				} else {
@@ -186,21 +201,21 @@ public class NpcEntity extends PathingEntity {
 					}
 					var16.draw(var4, this.entityBounds[this.idk.length], 0);
 				}
-				toolkit.method2219(true);
+				arg0.method2219(true);
 			}
 		}
 		if (var10) {
 			if (this.entityBounds == null || this.entityBounds.length > 1) {
 				this.createEntityBounds(1);
 			}
-			toolkit.method2193(var4, this.entityBounds[0], var9.clickbox);
+			arg0.method2193(var4, this.entityBounds[0], var9.clickbox);
 		} else if (this.entityBounds == null || this.entityBounds.length < this.idk.length) {
 			this.createEntityBounds(this.idk.length);
 		}
 		if (var11 == null) {
 			var11 = PickableEntity.getPickableEntity(this.method19162());
 		}
-		this.method16576(toolkit, this.idk, var4, false);
+		this.method16576(arg0, this.idk, var4, false);
 		for (int var17 = 0; var17 < this.idk.length; var17++) {
 			if (this.idk[var17] != null) {
 				if (this.npcType.antimacro) {
@@ -217,7 +232,7 @@ public class NpcEntity extends PathingEntity {
 		}
 		if (this.field10393 != null) {
 			ParticleList var18 = this.field10393.method9965();
-			toolkit.drawParticles(var18);
+			arg0.drawParticles(var18);
 		}
 		for (int var19 = 0; var19 < this.idk.length; var19++) {
 			if (this.idk[var19] != null) {
@@ -291,14 +306,14 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fw(Ldh;I)V")
-	public void method17373(Toolkit toolkit) {
-		if (this.npcType == null || !this.field10449 && !this.isVisible(toolkit, 0)) {
+	public void method17373(Toolkit arg0) {
+		if (this.npcType == null || !this.field10449 && !this.isVisible(arg0, 0)) {
 			return;
 		}
-		Matrix4x3 var2 = toolkit.method2209();
+		Matrix4x3 var2 = arg0.method2209();
 		var2.setTo(this.method10533());
 		var2.translate(0.0F, -5.0F, 0.0F);
-		this.method16576(toolkit, this.idk, var2, this.field10449);
+		this.method16576(arg0, this.idk, var2, this.field10449);
 		for (int var3 = 0; var3 < this.idk.length; var3++) {
 			this.idk[var3] = null;
 		}
@@ -467,12 +482,12 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fa(Ldh;IIB)Z")
-	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
+	public boolean method17375(Toolkit arg0, int arg1, int arg2) {
 		if (this.npcType == null) {
 			return false;
 		} else if (this.npcType.clickbox != null) {
-			return toolkit.pick(arg1, arg2, this.method10533(), this.npcType.clickbox);
-		} else if (this.isVisible(toolkit, 131072)) {
+			return arg0.pick(arg1, arg2, this.method10533(), this.npcType.clickbox);
+		} else if (this.isVisible(arg0, 131072)) {
 			Matrix4x3 var4 = this.method10533();
 			boolean var5 = false;
 			for (int var6 = 0; var6 < this.idk.length; var6++) {
@@ -517,7 +532,7 @@ public class NpcEntity extends PathingEntity {
 	}
 
 	@ObfuscatedName("aqc.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

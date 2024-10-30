@@ -3,17 +3,27 @@ package com.jagex.game;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.game.camera.position.PositionEntity;
-import com.jagex.game.client.*;
+import com.jagex.game.client.AppletMouseLogger;
+import com.jagex.game.client.ClientMessage;
+import com.jagex.game.client.GameShell;
+import com.jagex.game.client.KeyboardEvent;
+import com.jagex.game.client.MouseEvent;
+import com.jagex.game.client.NativeMouse;
+import com.jagex.game.client.NativeMouseEvent;
+import com.jagex.game.client.NativeMouseLogger;
+import com.jagex.game.client.NativeMouseLoggerNativeMouseListener;
 import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.graphics.CompressedTextureFormat;
 import com.jagex.graphics.camera.CameraHelpers;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
-import java.awt.*;
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Queue;
-import java.util.*;
+import rs2.client.Client;
 
 @ObfuscatedName("xc")
 public class ClientWatch {
@@ -162,7 +172,7 @@ public class ClientWatch {
 			var9.buf.p2(var6);
 			Client.gameConnection.queue(var9);
 		}
-		if (GameShell.focus != field7944) {
+		if (field7944 != GameShell.focus) {
 			field7944 = GameShell.focus;
 			ClientMessage var10 = ClientMessage.createMessage(ClientProt.EVENT_APPLET_FOCUS, Client.gameConnection.randomOut);
 			var10.buf.p1(GameShell.focus ? 1 : 0);

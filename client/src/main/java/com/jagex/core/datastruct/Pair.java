@@ -11,45 +11,45 @@ public class Pair {
 	@ObfuscatedName("abg.n")
 	public Object second;
 
-	public Pair(Object first, Object second) {
-		this.first = first;
-		this.second = second;
+	public Pair(Object arg0, Object arg1) {
+		this.first = arg0;
+		this.second = arg1;
 	}
 
 	public String toString() {
 		return this.first + ", " + this.second;
 	}
 
-	public boolean equals(Object other) {
-		if (other == null || !(other instanceof Pair)) {
+	public boolean equals(Object arg0) {
+		if (arg0 == null || !(arg0 instanceof Pair)) {
 			return false;
 		}
-		Pair pair = (Pair) other;
+		Pair var2 = (Pair) arg0;
 		if (this.first == null) {
-			if (pair.first != null) {
+			if (var2.first != null) {
 				return false;
 			}
-		} else if (!this.first.equals(pair.first)) {
+		} else if (!this.first.equals(var2.first)) {
 			return false;
 		}
 		if (this.second == null) {
-			if (pair.second != null) {
+			if (var2.second != null) {
 				return false;
 			}
-		} else if (!this.second.equals(pair.second)) {
+		} else if (!this.second.equals(var2.second)) {
 			return false;
 		}
 		return true;
 	}
 
 	public int hashCode() {
-		int hashCode = 0;
+		int var1 = 0;
 		if (this.first != null) {
-			hashCode += this.first.hashCode();
+			var1 += this.first.hashCode();
 		}
 		if (this.second != null) {
-			hashCode += this.second.hashCode() * 31;
+			var1 += this.second.hashCode() * 31;
 		}
-		return hashCode;
+		return var1;
 	}
 }

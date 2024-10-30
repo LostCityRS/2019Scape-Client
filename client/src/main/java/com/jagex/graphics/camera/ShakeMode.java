@@ -26,23 +26,23 @@ public class ShakeMode {
 	@ObfuscatedName("iu.l")
 	public int id;
 
-	public ShakeMode(int id) {
-		this.id = id;
+	public ShakeMode(int arg0) {
+		this.id = arg0;
 	}
 
 	@ObfuscatedName("cj.e(II)Liu;")
-	public static ShakeMode of(int id) {
-		if (field2625.id == id) {
+	public static ShakeMode of(int arg0) {
+		if (field2625.id == arg0) {
 			return field2625;
-		} else if (field2620.id == id) {
+		} else if (field2620.id == arg0) {
 			return field2620;
-		} else if (field2619.id == id) {
+		} else if (field2619.id == arg0) {
 			return field2619;
-		} else if (field2622.id == id) {
+		} else if (field2622.id == arg0) {
 			return field2622;
-		} else if (field2623.id == id) {
+		} else if (field2623.id == arg0) {
 			return field2623;
-		} else if (field2624.id == id) {
+		} else if (field2624.id == arg0) {
 			return field2624;
 		} else {
 			return null;

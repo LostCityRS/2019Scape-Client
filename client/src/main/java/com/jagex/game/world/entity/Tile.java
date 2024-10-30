@@ -48,7 +48,7 @@ public class Tile {
 	@ObfuscatedName("tk.r")
 	public short field6972;
 
-	public Tile(int level) {
-		this.level = (byte) level;
+	public Tile(int arg0) {
+		this.level = (byte) arg0;
 	}
 }

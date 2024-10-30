@@ -1,7 +1,6 @@
 package com.jagex.core.io;
 
 import deob.ObfuscatedName;
-
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -32,9 +31,9 @@ public class SocketStreamWriter implements Runnable {
 	@ObfuscatedName("ug.u")
 	public boolean closed;
 
-	public SocketStreamWriter(OutputStream outputStream, int limit) {
-		this.outputStream = outputStream;
-		this.bufLimit = limit + 1;
+	public SocketStreamWriter(OutputStream arg0, int arg1) {
+		this.outputStream = arg0;
+		this.bufLimit = arg1 + 1;
 		this.buf = new byte[this.bufLimit];
 		this.thread = new Thread(this);
 		this.thread.setDaemon(true);
@@ -61,24 +60,24 @@ public class SocketStreamWriter implements Runnable {
 
 	public void run() {
 		do {
-			int available;
+			int var2;
 			synchronized (this) {
 				while (true) {
 					if (this.ioerror != null) {
 						return;
 					}
 					if (this.bufLen <= this.bufPos) {
-						available = this.bufPos - this.bufLen;
+						var2 = this.bufPos - this.bufLen;
 					} else {
-						available = this.bufPos + (this.bufLimit - this.bufLen);
+						var2 = this.bufPos + (this.bufLimit - this.bufLen);
 					}
-					if (available > 0) {
+					if (var2 > 0) {
 						break;
 					}
 					try {
 						this.outputStream.flush();
-					} catch (IOException exception) {
-						this.ioerror = exception;
+					} catch (IOException var15) {
+						this.ioerror = var15;
 						return;
 					}
 					if (this.isClosed()) {
@@ -86,57 +85,57 @@ public class SocketStreamWriter implements Runnable {
 					}
 					try {
 						this.wait();
-					} catch (InterruptedException exception) {
+					} catch (InterruptedException var16) {
 					}
 				}
 			}
 			try {
-				if (this.bufLen + available <= this.bufLimit) {
-					this.outputStream.write(this.buf, this.bufLen, available);
+				if (this.bufLen + var2 <= this.bufLimit) {
+					this.outputStream.write(this.buf, this.bufLen, var2);
 				} else {
 					int var6 = this.bufLimit - this.bufLen;
 					this.outputStream.write(this.buf, this.bufLen, var6);
-					this.outputStream.write(this.buf, 0, available - var6);
+					this.outputStream.write(this.buf, 0, var2 - var6);
 				}
-			} catch (IOException exception) {
-				IOException var7 = exception;
+			} catch (IOException var14) {
+				IOException var7 = var14;
 				synchronized (this) {
 					this.ioerror = var7;
 					return;
 				}
 			}
 			synchronized (this) {
-				this.bufLen = (this.bufLen + available) % this.bufLimit;
+				this.bufLen = (this.bufLen + var2) % this.bufLimit;
 			}
 		} while (!this.isClosed());
 	}
 
 	@ObfuscatedName("ug.n([BIIB)V")
-	public void write(byte[] bytes, int off, int len) throws IOException {
-		if (len < 0 || off < 0 || off + len > bytes.length) {
+	public void write(byte[] arg0, int arg1, int arg2) throws IOException {
+		if (arg2 < 0 || arg1 < 0 || arg1 + arg2 > arg0.length) {
 			throw new IOException();
 		}
 		synchronized (this) {
 			if (this.ioerror != null) {
 				throw new IOException(this.ioerror.toString());
 			}
-			int available;
+			int var5;
 			if (this.bufLen <= this.bufPos) {
-				available = this.bufLen + (this.bufLimit - this.bufPos) - 1;
+				var5 = this.bufLen + (this.bufLimit - this.bufPos) - 1;
 			} else {
-				available = this.bufLen - this.bufPos - 1;
+				var5 = this.bufLen - this.bufPos - 1;
 			}
-			if (available < len) {
+			if (var5 < arg2) {
 				throw new IOException("");
 			}
-			if (this.bufPos + len <= this.bufLimit) {
-				System.arraycopy(bytes, off, this.buf, this.bufPos, len);
+			if (this.bufPos + arg2 <= this.bufLimit) {
+				System.arraycopy(arg0, arg1, this.buf, this.bufPos, arg2);
 			} else {
-				int remaining = this.bufLimit - this.bufPos;
-				System.arraycopy(bytes, off, this.buf, this.bufPos, remaining);
-				System.arraycopy(bytes, off + remaining, this.buf, 0, len - remaining);
+				int var6 = this.bufLimit - this.bufPos;
+				System.arraycopy(arg0, arg1, this.buf, this.bufPos, var6);
+				System.arraycopy(arg0, arg1 + var6, this.buf, 0, arg2 - var6);
 			}
-			this.bufPos = (this.bufPos + len) % this.bufLimit;
+			this.bufPos = (this.bufPos + arg2) % this.bufLimit;
 			this.notifyAll();
 		}
 	}

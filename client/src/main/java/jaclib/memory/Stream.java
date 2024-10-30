@@ -107,11 +107,11 @@ public class Stream {
 	}
 
 	@ObfuscatedName("jaclib/memory/Stream.u()Z")
-	public static boolean method61() {
+	public static final boolean method61() {
 		return field408;
 	}
 
 	public static native int floatToRawIntBits(float arg0);
 
-	public static native byte getLSB(int arg0);
+	public static final native byte getLSB(int arg0);
 }

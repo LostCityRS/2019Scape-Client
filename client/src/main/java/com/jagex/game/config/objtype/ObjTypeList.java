@@ -8,16 +8,16 @@ import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.game.config.defaults.GraphicsDefaults;
 import com.jagex.game.world.entity.PlayerModel;
 import com.jagex.graphics.Font;
-import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
+import com.jagex.graphics.Toolkit;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aon")
 public class ObjTypeList extends CachingConfigTypeList {
 
-	public ObjTypeList(ModeGame modeGame, Language language, boolean allowMembers, ConfigTypeList configTypeList, Js5 js5, Js5 factoryJs5) {
-		super(modeGame, language, js5, Js5ConfigGroup.OBJTYPE, 64, new BasicObjTypeFactory(modeGame, language, allowMembers, factoryJs5, configTypeList));
+	public ObjTypeList(ModeGame arg0, Language arg1, boolean arg2, ConfigTypeList arg3, Js5 arg4, Js5 arg5) {
+		super(arg0, arg1, arg4, Js5ConfigGroup.OBJTYPE, 64, new BasicObjTypeFactory(arg0, arg1, arg2, arg5, arg3));
 	}
 
 	@ObfuscatedName("aon.al(Ldh;IIIIILxg;I)Lcm;")
@@ -53,9 +53,9 @@ public class ObjTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aon.v(II)V")
-	public void cacheClean(int num) {
-		super.cacheClean(num);
-		((ObjTypeFactory) this.factory).cacheClean(num);
+	public void cacheClean(int arg0) {
+		super.cacheClean(arg0);
+		((ObjTypeFactory) this.factory).cacheClean(arg0);
 	}
 
 	@ObfuscatedName("aon.o(I)V")

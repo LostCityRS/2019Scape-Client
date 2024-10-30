@@ -1,6 +1,7 @@
 package rs2.client.login;
 
 import com.jagex.core.constants.PublicKeys;
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.core.io.Stream;
@@ -10,10 +11,9 @@ import com.jagex.game.client.GameShell;
 import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.network.protocol.LoginProt;
 import deob.ObfuscatedName;
+import java.io.IOException;
 import rs2.client.Client;
 import rs2.client.logic.DelayedStateChange;
-
-import java.io.IOException;
 
 @ObfuscatedName("y")
 public class AccountCreationManager {
@@ -85,7 +85,7 @@ public class AccountCreationManager {
 		int var2 = var1.buf.pos;
 		var1.buf.pjstr(arg0);
 		var1.buf.pos += 7;
-        var1.buf.tinyenc(field581, var2, var1.buf.pos);
+		var1.buf.tinyenc(field581, var2, var1.buf.pos);
 		var1.buf.psize2(var1.buf.pos - var2);
 		Client.lobbyConnection.queue(var1);
 		field872 = CheckEmailReply.field8400;
@@ -101,7 +101,7 @@ public class AccountCreationManager {
 		int var2 = var1.buf.pos;
 		var1.buf.pjstr(arg0);
 		var1.buf.pos += 7;
-        var1.buf.tinyenc(field581, var2, var1.buf.pos);
+		var1.buf.tinyenc(field581, var2, var1.buf.pos);
 		var1.buf.psize1(var1.buf.pos - var2);
 		Client.lobbyConnection.queue(var1);
 		field2589 = CheckNameReply.field8405;
@@ -131,7 +131,7 @@ public class AccountCreationManager {
 		var5.buf.p1(arg3 ? 1 : 0);
 		var5.buf.pjstr(arg4);
 		var5.buf.pos += 7;
-        var5.buf.tinyenc(field581, var6, var5.buf.pos);
+		var5.buf.tinyenc(field581, var6, var5.buf.pos);
 		var5.buf.psize2(var5.buf.pos - var6);
 		Client.lobbyConnection.queue(var5);
 		if (arg2 < 13) {
@@ -223,7 +223,7 @@ public class AccountCreationManager {
 			if (field583 > var0) {
 				method17428();
 			}
-			if (createStage == CreateConnectStage.field515) {
+			if (CreateConnectStage.field515 == createStage) {
 				Client.lobbyConnection.setStream(Stream.createStream(WorldSwitcher.currentLobby.getSocket(), 40000), WorldSwitcher.currentLobby.host);
 				Client.lobbyConnection.clearWriteQueue();
 				ClientMessage var1 = ClientMessage.createMessage();
@@ -249,13 +249,13 @@ public class AccountCreationManager {
 				}
 				Client.hardwarePlatform.createHardwareBlock(var1.buf);
 				var1.buf.pos += 7;
-                var1.buf.tinyenc(field581, var3, var1.buf.pos);
+				var1.buf.tinyenc(field581, var3, var1.buf.pos);
 				var1.buf.psize2(var1.buf.pos - var2);
 				Client.lobbyConnection.queue(var1);
 				Client.lobbyConnection.flush();
 				createStage = CreateConnectStage.field516;
 			}
-			if (createStage == CreateConnectStage.field516) {
+			if (CreateConnectStage.field516 == createStage) {
 				if (Client.lobbyConnection.getStream() == null) {
 					method17428();
 					return;
@@ -264,8 +264,8 @@ public class AccountCreationManager {
 					return;
 				}
 				Client.lobbyConnection.getStream().read(Client.lobbyConnection.in.data, 0, 1);
-				field584 = (ConnectReply) SerializableEnums.decode(ConnectReply.method16743(), Client.lobbyConnection.in.data[0] & 0xFF);
-				if (field584 == ConnectReply.field8364) {
+				field584 = (ConnectReply) SerializableEnums.decode((SerializableEnum[]) ConnectReply.method16743(), Client.lobbyConnection.in.data[0] & 0xFF);
+				if (ConnectReply.field8364 == field584) {
 					Client.lobbyConnection.randomOut = new Isaac(field581);
 					int[] var5 = new int[4];
 					for (int var6 = 0; var6 < 4; var6++) {

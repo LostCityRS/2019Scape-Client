@@ -9,13 +9,13 @@ import deob.ObfuscatedName;
 public class FloorUnderlayType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("aaz.e")
-	public int colour = 0;
+	public int colour = 0 * -1647734771;
 
 	@ObfuscatedName("aaz.n")
-	public int material = 0;
+	public int material = 1078353519 * -990036111;
 
 	@ObfuscatedName("aaz.m")
-	public int materialscale = 512;
+	public int materialscale = 1555887616 * 1408290995;
 
 	@ObfuscatedName("aaz.k")
 	public boolean hardshadow = true;
@@ -36,33 +36,31 @@ public class FloorUnderlayType implements ConfigType, MutableConfig {
 	public int chroma;
 
 	@ObfuscatedName("aaz.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int var2 = buf.g1();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
-
-			this.decode(buf, var2);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("aaz.u(Lalw;IB)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			this.colour = buf.g3();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			this.colour = arg0.g3();
 			this.computeColour(this.colour);
-		} else if (code == 2) {
-			this.material = buf.g2();
-
+		} else if (arg1 == 2) {
+			this.material = arg0.g2();
 			if (this.material == 65535) {
 				this.material = -1;
 			}
-		} else if (code == 3) {
-			this.materialscale = buf.g2() << 2;
-		} else if (code == 4) {
+		} else if (arg1 == 3) {
+			this.materialscale = arg0.g2() << 2;
+		} else if (arg1 == 4) {
 			this.hardshadow = false;
-		} else if (code == 5) {
+		} else if (arg1 == 5) {
 			this.occlude = false;
 		}
 	}

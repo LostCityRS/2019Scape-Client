@@ -15,8 +15,8 @@ public class NativeLibraryFailureType implements SerializableEnum {
 	@ObfuscatedName("acw.m")
 	public final int serialID;
 
-	public NativeLibraryFailureType(int serialID) {
-		this.serialID = serialID;
+	public NativeLibraryFailureType(int arg0) {
+		this.serialID = arg0;
 	}
 
 	@ObfuscatedName("acw.n()I")

@@ -3,7 +3,7 @@ package com.jagex.core.datastruct;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ex")
-public final class ClientScriptCache {
+public class ClientScriptCache {
 
 	@ObfuscatedName("ex.e")
 	public SecondaryNode node = new SecondaryNode();
@@ -23,11 +23,9 @@ public final class ClientScriptCache {
 	public ClientScriptCache(int arg0) {
 		this.capacity = arg0;
 		this.available = arg0;
-
 		int var2;
 		for (var2 = 1; var2 + var2 < arg0; var2 += var2) {
 		}
-
 		this.table = new HashTable(var2);
 	}
 

@@ -11,6 +11,7 @@ import com.jagex.game.config.paramtype.ParamType;
 import com.jagex.game.config.vartype.VarContainerSparse;
 import com.jagex.game.config.vartype.VarType;
 import com.jagex.game.config.vartype.bit.VarBitType;
+import com.jagex.game.world.entity.ObjTypeCustomisation;
 import com.jagex.game.world.entity.PlayerModel;
 import com.jagex.graphics.AnimationNode;
 import com.jagex.graphics.Model;
@@ -41,113 +42,113 @@ public class ClientInvCache extends Node {
 	public VarContainerSparse[] vars = null;
 
 	@ObfuscatedName("aau.e(IIZI)I")
-	public static int getSlotType(int invId, int slot, boolean arg2) {
-		ClientInvCache inv = getInventory(invId, arg2);
-		if (inv == null) {
+	public static int getSlotType(int arg0, int arg1, boolean arg2) {
+		ClientInvCache var3 = getInventory(arg0, arg2);
+		if (var3 == null) {
 			return -1;
-		} else if (slot >= 0 && slot < inv.invSlotObjId.length) {
-			return inv.invSlotObjId[slot];
+		} else if (arg1 >= 0 && arg1 < var3.invSlotObjId.length) {
+			return var3.invSlotObjId[arg1];
 		} else {
 			return -1;
 		}
 	}
 
 	@ObfuscatedName("aal.n(IIZI)I")
-	public static int getSlotCount(int invId, int slot, boolean arg2) {
-		ClientInvCache inv = getInventory(invId, arg2);
-		if (inv == null) {
+	public static int getSlotCount(int arg0, int arg1, boolean arg2) {
+		ClientInvCache var3 = getInventory(arg0, arg2);
+		if (var3 == null) {
 			return 0;
-		} else if (slot >= 0 && slot < inv.invSlotObjCount.length) {
-			return inv.invSlotObjCount[slot];
+		} else if (arg1 >= 0 && arg1 < var3.invSlotObjCount.length) {
+			return var3.invSlotObjCount[arg1];
 		} else {
 			return 0;
 		}
 	}
 
 	@ObfuscatedName("adr.m(IIIZB)I")
-	public static int getSlotVarBitValue(int invId, int slot, int varbitId, boolean arg3) {
-		VarBitType varbit = (VarBitType) Client.varBitTypeList.list(varbitId);
-		VarType baseVar = varbit.baseVar;
-		ClientInvCache inv = getInventory(invId, arg3);
+	public static int getSlotVarBitValue(int arg0, int arg1, int arg2, boolean arg3) {
+		VarBitType var4 = (VarBitType) Client.varBitTypeList.list(arg2);
+		VarType var5 = var4.baseVar;
+		ClientInvCache var6 = getInventory(arg0, arg3);
 		int var7;
-		if (inv == null || slot < 0 || slot >= inv.invSlotObjCount.length || inv.vars == null || inv.vars[slot] == null) {
-			var7 = (Integer) baseVar.getDefaultValue();
+		if (var6 == null || arg1 < 0 || arg1 >= var6.invSlotObjCount.length || var6.vars == null || var6.vars[arg1] == null) {
+			var7 = (Integer) var5.getDefaultValue();
 		} else {
-			var7 = inv.vars[slot].getVarValueInt(baseVar.id);
+			var7 = var6.vars[arg1].getVarValueInt(var5.id);
 		}
-		return varbit.getVarbitValue(var7);
+		return var4.getVarbitValue(var7);
 	}
 
 	@ObfuscatedName("na.k(IIZB)I")
-	public static int getTotal(int invId, int slot, boolean arg2) {
-		ClientInvCache inv = getInventory(invId, arg2);
-		if (inv == null) {
+	public static int getTotal(int arg0, int arg1, boolean arg2) {
+		ClientInvCache var3 = getInventory(arg0, arg2);
+		if (var3 == null) {
 			return 0;
-		} else if (slot == -1) {
+		} else if (arg1 == -1) {
 			return 0;
 		} else {
-			int total = 0;
-			for (int index = 0; index < inv.invSlotObjCount.length; index++) {
-				if (inv.invSlotObjId[index] == slot) {
-					total += inv.invSlotObjCount[index];
+			int var4 = 0;
+			for (int var5 = 0; var5 < var3.invSlotObjCount.length; var5++) {
+				if (var3.invSlotObjId[var5] == arg1) {
+					var4 += var3.invSlotObjCount[var5];
 				}
 			}
-			return total;
+			return var4;
 		}
 	}
 
 	@ObfuscatedName("abe.f(IIZI)I")
-	public static int getCategoryCount(int invId, int categoryId, boolean arg2) {
-		int total = 0;
-		ClientInvCache inv = getInventory(invId, arg2);
-		if (inv == null) {
-			return 0;
-		}
-		for (int slot = 0; slot < inv.invSlotObjId.length; slot++) {
-			if (inv.invSlotObjId[slot] >= 0 && ((ObjType) Client.objTypeList.list(inv.invSlotObjId[slot])).category == categoryId) {
-				total += getSlotCount(invId, slot, arg2);
-			}
-		}
-		return total;
-	}
-
-	@ObfuscatedName("pu.w(IIZZI)I")
-	public static int getParamCount(int invId, int paramId, boolean stack, boolean arg3) {
-		ClientInvCache var4 = getInventory(invId, arg3);
+	public static int getCategoryCount(int arg0, int arg1, boolean arg2) {
+		int var3 = 0;
+		ClientInvCache var4 = getInventory(arg0, arg2);
 		if (var4 == null) {
 			return 0;
 		}
-		int total = 0;
-		for (int slot = 0; slot < var4.invSlotObjId.length; slot++) {
-			if (var4.invSlotObjId[slot] >= 0 && var4.invSlotObjId[slot] < Client.objTypeList.num) {
-				ObjType objType = (ObjType) Client.objTypeList.list(var4.invSlotObjId[slot]);
-				int value = objType.getParam(paramId, ((ParamType) Client.paramTypeList.list(paramId)).defaultint);
-				if (stack) {
-					total += var4.invSlotObjCount[slot] * value;
-				} else if (var4.invSlotObjCount[slot] > 0) {
-					total += value;
+		for (int var5 = 0; var5 < var4.invSlotObjId.length; var5++) {
+			if (var4.invSlotObjId[var5] >= 0 && ((ObjType) Client.objTypeList.list(var4.invSlotObjId[var5])).category == arg1) {
+				var3 += getSlotCount(arg0, var5, arg2);
+			}
+		}
+		return var3;
+	}
+
+	@ObfuscatedName("pu.w(IIZZI)I")
+	public static int getParamCount(int arg0, int arg1, boolean arg2, boolean arg3) {
+		ClientInvCache var4 = getInventory(arg0, arg3);
+		if (var4 == null) {
+			return 0;
+		}
+		int var5 = 0;
+		for (int var6 = 0; var6 < var4.invSlotObjId.length; var6++) {
+			if (var4.invSlotObjId[var6] >= 0 && var4.invSlotObjId[var6] < Client.objTypeList.num) {
+				ObjType var7 = (ObjType) Client.objTypeList.list(var4.invSlotObjId[var6]);
+				int var8 = var7.getParam(arg1, ((ParamType) Client.paramTypeList.list(arg1)).defaultint);
+				if (arg2) {
+					var5 += var4.invSlotObjCount[var6] * var8;
+				} else if (var4.invSlotObjCount[var6] > 0) {
+					var5 += var8;
 				}
 			}
 		}
-		return total;
+		return var5;
 	}
 
 	@ObfuscatedName("pf.l(IZS)I")
-	public static int getFreeSpace(int invId, boolean arg1) {
+	public static int getFreeSpace(int arg0, boolean arg1) {
 		if (arg1) {
 			return 0;
 		}
-		ClientInvCache inv = getInventory(invId, arg1);
-		if (inv == null) {
-			return ((InvType) Client.invTypeList.list(invId)).size;
+		ClientInvCache var2 = getInventory(arg0, arg1);
+		if (var2 == null) {
+			return ((InvType) Client.invTypeList.list(arg0)).size;
 		}
-		int total = 0;
-		for (int var4 = 0; var4 < inv.invSlotObjId.length; var4++) {
-			if (inv.invSlotObjId[var4] == -1) {
-				total++;
+		int var3 = 0;
+		for (int var4 = 0; var4 < var2.invSlotObjId.length; var4++) {
+			if (var2.invSlotObjId[var4] == -1) {
+				var3++;
 			}
 		}
-		return total + (((InvType) Client.invTypeList.list(invId)).size - inv.invSlotObjId.length);
+		return var3 + (((InvType) Client.invTypeList.list(arg0)).size - var2.invSlotObjId.length);
 	}
 
 	@ObfuscatedName("so.u(IZS)Lajo;")
@@ -200,15 +201,15 @@ public class ClientInvCache extends Node {
 
 	@ObfuscatedName("qe.p(IZB)V")
 	public static void clear(int arg0, boolean arg1) {
-		ClientInvCache inv = getInventory(arg0, arg1);
-		if (inv == null) {
+		ClientInvCache var2 = getInventory(arg0, arg1);
+		if (var2 == null) {
 			return;
 		}
-		for (int slot = 0; slot < inv.invSlotObjId.length; slot++) {
-			inv.invSlotObjId[slot] = -1;
-			inv.invSlotObjCount[slot] = 0;
+		for (int var3 = 0; var3 < var2.invSlotObjId.length; var3++) {
+			var2.invSlotObjId[var3] = -1;
+			var2.invSlotObjCount[var3] = 0;
 		}
-		inv.vars = null;
+		var2.vars = null;
 	}
 
 	@ObfuscatedName("xj.d(IZB)V")

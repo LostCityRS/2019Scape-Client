@@ -12,15 +12,14 @@ import com.jagex.game.config.vartype.constants.VarLifetime;
 import com.jagex.game.network.ServerConnection;
 import com.jagex.game.network.protocol.ClientProt;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
 import java.io.EOFException;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import rs2.client.Client;
 
 @ObfuscatedName("afu")
-public final class ClientVarDomain extends SparseVarDomain {
+public class ClientVarDomain extends SparseVarDomain {
 
 	@ObfuscatedName("afu.m")
 	public boolean field10252 = false;
@@ -130,23 +129,23 @@ public final class ClientVarDomain extends SparseVarDomain {
 				}
 			}
 			Packet var5 = new Packet(var2);
-			if (var5.data.length - var5.pos >= 1) {
-				int var7 = var5.g1();
-				if (var7 >= 0 && var7 <= 1) {
-					if (var5.data.length - var5.pos < 2) {
-						return;
-					}
-					int var10 = var5.g2();
-					if (var5.data.length - var5.pos < var10 * 6) {
-						return;
-					}
-					for (int var12 = 0; var12 < var10; var12++) {
-						VarValue var13 = Client.varBasicTypeList.decodeVarValue(var5);
-						if (this.field10251[var13.var] == VarLifetime.PERMANENT && ((VarType) Client.varBasicTypeList.list(var13.var)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.value.getClass())) {
-							this.field1708.setVarValue(var13.var, var13.value);
-						}
-					}
+			if (var5.data.length - var5.pos < 1) {
+				return;
+			}
+			int var7 = var5.g1();
+			if (var7 >= 0 && var7 <= 1) {
+				if (var5.data.length - var5.pos < 2) {
 					return;
+				}
+				int var10 = var5.g2();
+				if (var5.data.length - var5.pos < var10 * 6) {
+					return;
+				}
+				for (int var12 = 0; var12 < var10; var12++) {
+					VarValue var13 = Client.varBasicTypeList.decodeVarValue(var5);
+					if (this.field10251[var13.var] == VarLifetime.PERMANENT && ((VarType) Client.varBasicTypeList.list(var13.var)).dataType.getVarBaseType().javaClass.isAssignableFrom(var13.value.getClass())) {
+						this.field1708.setVarValue(var13.var, var13.value);
+					}
 				}
 				return;
 			}
@@ -224,8 +223,7 @@ public final class ClientVarDomain extends SparseVarDomain {
 		}
 		ClientMessage var5 = ClientMessage.createMessage(ClientProt.STORE_SERVERPERM_VARCS, var4.randomOut);
 		var5.buf.p2(0);
-		int var6 = var5.buf.pos;
-		var5.buf.pos++;
+		int var6 = var5.buf.pos++;
 		while (this.field10258 < this.field10257.length) {
 			VarValue var7 = this.field10257[this.field10258];
 			if (var5.buf.pos + var4.writePos + Client.varBasicTypeList.getValueEncodingLength(var7) > 1500) {

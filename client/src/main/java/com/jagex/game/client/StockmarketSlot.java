@@ -58,7 +58,7 @@ public class StockmarketSlot {
 				if (var5 == 255) {
 					break;
 				}
-				arg0.pos -= 1;
+				arg0.pos--;
 				VarValue var6 = arg1.decodeVarValue(arg0, var4);
 				if (var6 != null) {
 					var2.setVarValue(var6.var, var6.value);

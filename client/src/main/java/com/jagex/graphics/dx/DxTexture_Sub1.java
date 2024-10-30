@@ -6,7 +6,11 @@ import com.jagex.graphics.GraphicsDeletable;
 import com.jagex.graphics.Texture2;
 import com.jagex.graphics.TextureFormat;
 import deob.ObfuscatedName;
-import jagdx.*;
+import jagdx.HRESULT;
+import jagdx.IDirect3DDevice;
+import jagdx.IDirect3DSurface;
+import jagdx.IDirect3DTexture;
+import jagdx.IUnknown;
 
 @ObfuscatedName("aio")
 public class DxTexture_Sub1 extends DxTexture implements Texture2 {

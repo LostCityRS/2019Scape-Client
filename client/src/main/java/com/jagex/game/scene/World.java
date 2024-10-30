@@ -10,7 +10,14 @@ import com.jagex.core.utils.TextUtil;
 import com.jagex.game.HintArrow;
 import com.jagex.game.MiniMap;
 import com.jagex.game.MiniMenu;
-import com.jagex.game.client.*;
+import com.jagex.game.client.ClientMapLoader;
+import com.jagex.game.client.ClientMessage;
+import com.jagex.game.client.GameShell;
+import com.jagex.game.client.LocalisedText;
+import com.jagex.game.client.MapLogicRelated;
+import com.jagex.game.client.RebuildRequest;
+import com.jagex.game.client.RebuildStage;
+import com.jagex.game.client.RebuildType;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.game.config.npctype.NPCType;
@@ -23,20 +30,30 @@ import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.WorldMap;
 import com.jagex.game.world.WorldMapAreaMetadata;
 import com.jagex.game.world.WorldMapRelated;
-import com.jagex.game.world.entity.*;
-import com.jagex.graphics.*;
+import com.jagex.game.world.entity.LocTint;
+import com.jagex.game.world.entity.ObjectNode;
+import com.jagex.game.world.entity.PickableEntity;
+import com.jagex.game.world.entity.PlayerEntity;
+import com.jagex.game.world.entity.PositionedSound;
+import com.jagex.game.world.entity.Scene;
+import com.jagex.graphics.DefaultSprites;
+import com.jagex.graphics.DrawDistance;
+import com.jagex.graphics.EnvironmentManager;
+import com.jagex.graphics.EnvironmentOverride;
+import com.jagex.graphics.FloorModel;
+import com.jagex.graphics.Font;
+import com.jagex.graphics.GraphicsPacketQueue;
 import com.jagex.graphics.particles.ParticleSystemRenderer;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.js5.Js5MapFile;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-import rs2.client.scene.ObjStackList;
-import rs2.client.scene.entities.NpcEntity;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import rs2.client.Client;
+import rs2.client.scene.ObjStackList;
+import rs2.client.scene.entities.NpcEntity;
 
 @ObfuscatedName("rl")
 public class World {
@@ -176,8 +193,8 @@ public class World {
 	@ObfuscatedName("rl.aj")
 	public int npcViewDistance;
 
-	public World(boolean asyncRebuilding) {
-		this.asyncRebuilding = asyncRebuilding;
+	public World(boolean arg0) {
+		this.asyncRebuilding = arg0;
 	}
 
 	@ObfuscatedName("rl.e(I)Lrc;")
@@ -345,7 +362,7 @@ public class World {
 		if (this.mapSizeX == 0) {
 			this.field5034 = 430;
 		} else {
-			this.field5034 = (int) ((double) (this.mapSizeX) * 34.46D);
+			this.field5034 = (int) ((double) this.mapSizeX * 34.46D);
 		}
 		this.field5034 <<= 0x2;
 		if (Client.toolkit.hasExtraDrawDistance()) {
@@ -412,16 +429,16 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ai(Lrt;I)V")
-	public void rebuildMap(RebuildRequest request) {
-		this.rebuildType = request.rebuildType;
+	public void rebuildMap(RebuildRequest arg0) {
+		this.rebuildType = arg0.rebuildType;
 		if (RebuildType.field5063 == this.rebuildType) {
 			this.method7773();
 		} else if (RebuildType.REBUILD_NORMAL == this.rebuildType) {
-			this.rebuildNormalMap(request.buf);
+			this.rebuildNormalMap(arg0.buf);
 		} else if (RebuildType.CUTSCENE == this.rebuildType) {
 			this.method7824();
 		} else if (this.rebuildType.isRegionType()) {
-			this.rebuildRegionMap(request.buf);
+			this.rebuildRegionMap(arg0.buf);
 		}
 	}
 
@@ -446,9 +463,9 @@ public class World {
 		int var6 = 0;
 		for (int var7 = (var3 - (this.mapSizeX >> 4)) / 8; var7 <= ((this.mapSizeX >> 4) + var3) / 8; var7++) {
 			for (int var8 = (var4 - (this.mapSizeZ >> 4)) / 8; var8 <= ((this.mapSizeZ >> 4) + var4) / 8; var8++) {
-				int mapSquareId = (var7 << 8) + var8;
+				int var9 = (var7 << 8) + var8;
 				if (Client.mapsJs5.isGroupValid(this.mapSquareGroupId(var7, var8), Js5MapFile.LAND.id)) {
-					this.rebuildMapSquares[var6] = mapSquareId;
+					this.rebuildMapSquares[var6] = var9;
 					this.rebuildMapSquaresGroupIds[var6] = this.mapSquareGroupId(var7, var8);
 					var6++;
 				}
@@ -472,35 +489,35 @@ public class World {
 
 	@ObfuscatedName("rl.as(Lase;I)V")
 	public void rebuildNormalMap(PacketBit arg0) {
-		int z = arg0.g2_alt2();
+		int var2 = arg0.g2_alt2();
 		this.npcViewDistance = arg0.g1();
-		int count = arg0.g1_alt3();
-		int buildAreaSize = arg0.g1();
-		int x = arg0.g2_alt2();
-		boolean forceRebuild = arg0.g1_alt3() == 1;
+		int var3 = arg0.g1_alt3();
+		int var4 = arg0.g1();
+		int var5 = arg0.g2_alt2();
+		boolean var6 = arg0.g1_alt3() == 1;
 		if (!this.asyncRebuilding) {
 			this.method7854();
 		}
-		this.setBuildAreaSize(BuildAreaSize.buildAreaSizeForId(buildAreaSize));
-		this.rebuildMapSquares = new int[count];
-		this.rebuildMapSquaresGroupIds = new int[count];
-		this.rebuildMapSquaresLands = new byte[count][];
-		this.rebuildMapSquaresLocs = new byte[count][];
+		this.setBuildAreaSize(BuildAreaSize.buildAreaSizeForId(var4));
+		this.rebuildMapSquares = new int[var3];
+		this.rebuildMapSquaresGroupIds = new int[var3];
+		this.rebuildMapSquaresLands = new byte[var3][];
+		this.rebuildMapSquaresLocs = new byte[var3][];
 		this.rebuildMapSquaresNpcs = null;
-		this.rebuildMapSquaresUnderwaterLands = new byte[count][];
-		this.rebuildMapSquaresUnderwaterLocs = new byte[count][];
-		int mapSquaresCount = 0;
-		for (int zoneX = (z - (this.mapSizeX >> 4)) / 8; zoneX <= ((this.mapSizeX >> 4) + z) / 8; zoneX++) {
-			for (int zoneZ = (x - (this.mapSizeZ >> 4)) / 8; zoneZ <= ((this.mapSizeZ >> 4) + x) / 8; zoneZ++) {
-				if (Client.mapsJs5.isGroupValid(this.mapSquareGroupId(zoneX, zoneZ), Js5MapFile.LAND.id)) {
-					this.rebuildMapSquares[mapSquaresCount] = (zoneX << 8) + zoneZ;
-					this.rebuildMapSquaresGroupIds[mapSquaresCount] = this.mapSquareGroupId(zoneX, zoneZ);
-					mapSquaresCount++;
+		this.rebuildMapSquaresUnderwaterLands = new byte[var3][];
+		this.rebuildMapSquaresUnderwaterLocs = new byte[var3][];
+		int var7 = 0;
+		for (int var8 = (var2 - (this.mapSizeX >> 4)) / 8; var8 <= ((this.mapSizeX >> 4) + var2) / 8; var8++) {
+			for (int var9 = (var5 - (this.mapSizeZ >> 4)) / 8; var9 <= ((this.mapSizeZ >> 4) + var5) / 8; var9++) {
+				if (Client.mapsJs5.isGroupValid(this.mapSquareGroupId(var8, var9), Js5MapFile.LAND.id)) {
+					this.rebuildMapSquares[var7] = (var8 << 8) + var9;
+					this.rebuildMapSquaresGroupIds[var7] = this.mapSquareGroupId(var8, var9);
+					var7++;
 				}
 			}
 		}
-		this.rebuildMapSquaresCount = mapSquaresCount;
-		this.method7829(z, x, 3, forceRebuild);
+		this.rebuildMapSquaresCount = var7;
+		this.method7829(var2, var5, 3, var6);
 	}
 
 	@ObfuscatedName("rl.at(Lase;I)V")
@@ -684,16 +701,16 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.am(III)I")
-	public int mapSquareGroupId(int zoneX, int zoneZ) {
-		return zoneX | zoneZ << 7;
+	public int mapSquareGroupId(int arg0, int arg1) {
+		return arg0 | arg1 << 7;
 	}
 
 	@ObfuscatedName("rl.au(Lib;I)V")
-	public void setBuildAreaSize(BuildAreaSize buildAreaSize) {
-		if (this.buildAreaSize == buildAreaSize) {
+	public void setBuildAreaSize(BuildAreaSize arg0) {
+		if (this.buildAreaSize == arg0) {
 			return;
 		}
-		this.mapSizeX = this.mapSizeZ = buildAreaSize.size;
+		this.mapSizeX = this.mapSizeZ = arg0.size;
 		this.field5057 = new int[4][this.mapSizeX >> 3][this.mapSizeZ >> 3];
 		this.field5040 = new int[this.mapSizeX][this.mapSizeZ];
 		this.field5041 = new int[this.mapSizeX][this.mapSizeZ];
@@ -701,7 +718,7 @@ public class World {
 		this.sceneLevelTileFlags = new SceneLevelTileFlags(4, this.mapSizeX, this.mapSizeZ);
 		this.createEnvironmentManager(false);
 		MiniMap.method829();
-		this.buildAreaSize = buildAreaSize;
+		this.buildAreaSize = arg0;
 	}
 
 	@ObfuscatedName("rl.ar(I)V")
@@ -723,7 +740,7 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ap(IIIZB)V")
-	public void method7829(int arg0, int arg1, int arg2, boolean forceRebuild) {
+	public void method7829(int arg0, int arg1, int arg2, boolean arg3) {
 		if (Client.sceneState == 4) {
 			if (this.asyncRebuilding) {
 				throw new IllegalStateException();
@@ -731,7 +748,7 @@ public class World {
 			Client.sceneState = 3;
 			Client.cutsceneId = -1;
 		}
-		if (!forceRebuild && this.field5022 == arg0 && this.field5059 == arg1) {
+		if (!arg3 && this.field5022 == arg0 && this.field5059 == arg1) {
 			return;
 		}
 		this.field5022 = arg0;
@@ -756,20 +773,20 @@ public class World {
 
 	@ObfuscatedName("rl.aq(II)V")
 	public void method7762(int arg0) {
-		int dx = this.sceneBaseTile.x - this.mapLastBase.x;
-		int dz = this.sceneBaseTile.z - this.mapLastBase.z;
+		int var2 = this.sceneBaseTile.x - this.mapLastBase.x;
+		int var3 = this.sceneBaseTile.z - this.mapLastBase.z;
 		if (arg0 == 3) {
 			for (int var4 = 0; var4 < Client.npcCount; var4++) {
 				ObjectNode var5 = Client.field10839[var4];
 				if (var5 != null) {
 					NpcEntity var6 = (NpcEntity) var5.value;
 					for (int var7 = 0; var7 < var6.routeWaypointX.length; var7++) {
-						var6.routeWaypointX[var7] -= dx;
-						var6.routeWaypointZ[var7] -= dz;
+						var6.routeWaypointX[var7] -= var2;
+						var6.routeWaypointZ[var7] -= var3;
 					}
 					Vector3 var8 = Vector3.create(var6.getTransform().trans);
-					var8.x -= dx * 512;
-					var8.z -= dz * 512;
+					var8.x -= var2 * 512;
+					var8.z -= var3 * 512;
 					var6.method10531(var8);
 					var8.release();
 				}
@@ -777,21 +794,21 @@ public class World {
 		} else {
 			boolean var9 = false;
 			Client.npcSlotCount = 0;
-			int var10 = this.mapSizeX - 512;
-			int var11 = this.mapSizeZ - 512;
+			int var10 = this.mapSizeX * 512 - 512;
+			int var11 = this.mapSizeZ * 512 - 512;
 			for (int var12 = 0; var12 < Client.npcCount; var12++) {
 				ObjectNode var13 = Client.field10839[var12];
 				if (var13 != null) {
 					NpcEntity var14 = (NpcEntity) var13.value;
 					Vector3 var15 = Vector3.create(var14.getTransform().trans);
-					var15.x -= dx * 512;
-					var15.z -= dz * 512;
+					var15.x -= var2 * 512;
+					var15.z -= var3 * 512;
 					var14.method10531(var15);
 					if ((int) var15.x >= 0 && (int) var15.x <= var10 && (int) var15.z >= 0 && (int) var15.z <= var11) {
 						boolean var16 = true;
 						for (int var17 = 0; var17 < var14.routeWaypointX.length; var17++) {
-							var14.routeWaypointX[var17] -= dx;
-							var14.routeWaypointZ[var17] -= dz;
+							var14.routeWaypointX[var17] -= var2;
+							var14.routeWaypointZ[var17] -= var3;
 							if (var14.routeWaypointX[var17] < 0 || var14.routeWaypointX[var17] >= this.mapSizeX || var14.routeWaypointZ[var17] < 0 || var14.routeWaypointZ[var17] >= this.mapSizeZ) {
 								var16 = false;
 							}
@@ -825,12 +842,12 @@ public class World {
 			PlayerEntity var22 = Client.players[var21];
 			if (var22 != null) {
 				for (int var23 = 0; var23 < var22.routeWaypointX.length; var23++) {
-					var22.routeWaypointX[var23] -= dx;
-					var22.routeWaypointZ[var23] -= dz;
+					var22.routeWaypointX[var23] -= var2;
+					var22.routeWaypointZ[var23] -= var3;
 				}
 				Vector3 var24 = Vector3.create(var22.getTransform().trans);
-				var24.x -= dx * 512;
-				var24.z -= dz * 512;
+				var24.x -= var2 * 512;
+				var24.z -= var3 * 512;
 				var22.method10531(var24);
 				var24.release();
 			}
@@ -839,13 +856,13 @@ public class World {
 		for (int var26 = 0; var26 < var25.length; var26++) {
 			HintArrow var27 = var25[var26];
 			if (var27 != null) {
-				var27.hintOffsetX -= dx * 512;
-				var27.hintOffsetZ -= dz * 512;
+				var27.hintOffsetX -= var2 * 512;
+				var27.hintOffsetZ -= var3 * 512;
 			}
 		}
 		for (ChangeLocationRequest var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.head(); var28 != null; var28 = (ChangeLocationRequest) ChangeLocationRequest.field11237.next()) {
-			var28.x -= dx;
-			var28.z -= dz;
+			var28.x -= var2;
+			var28.z -= var3;
 			LocType var29 = (LocType) this.locTypeList.list(var28.field11234);
 			int var30;
 			int var31;
@@ -861,8 +878,8 @@ public class World {
 			}
 		}
 		for (ChangeLocationRequest var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.head(); var32 != null; var32 = (ChangeLocationRequest) ChangeLocationRequest.field11242.next()) {
-			var32.x -= dx;
-			var32.z -= dz;
+			var32.x -= var2;
+			var32.z -= var3;
 			LocType var33 = (LocType) this.locTypeList.list(var32.field11234);
 			int var34;
 			int var35;
@@ -894,26 +911,26 @@ public class World {
 			}
 		}
 		if (MiniMap.flagSceneTileX != 0) {
-			MiniMap.flagSceneTileX -= dx;
-			MiniMap.flagSceneTileZ -= dz;
+			MiniMap.flagSceneTileX -= var2;
+			MiniMap.flagSceneTileZ -= var3;
 		}
 		PositionedSound.method13908(false);
 		if (arg0 == 3) {
-			Client.field10892 -= dx * 512;
-			Client.field10893 -= dz * 512;
-			Client.orbitCameraX -= dx * 512;
-			Client.orbitCameraZ -= dz * 512;
+			Client.field10892 -= var2 * 512;
+			Client.field10893 -= var3 * 512;
+			Client.orbitCameraX -= var2 * 512;
+			Client.orbitCameraZ -= var3 * 512;
 			if (Client.cameraState != 4 && Client.cameraState != 3) {
 				Client.cameraReset(Client.getDefaultCameraState());
 			}
 		} else {
-			Client.cameraMoveX -= dx;
-			Client.cameraMoveZ -= dz;
-			Client.cameraLookX -= dx;
-			Client.cameraLookZ -= dz;
-			Client.cameraX -= dx * 512;
-			Client.cameraZ -= dz * 512;
-			if (Math.abs(dx) > this.mapSizeX || Math.abs(dz) > this.mapSizeZ) {
+			Client.cameraMoveX -= var2;
+			Client.cameraMoveZ -= var3;
+			Client.cameraLookX -= var2;
+			Client.cameraLookZ -= var3;
+			Client.cameraX -= var2 * 512;
+			Client.cameraZ -= var3 * 512;
+			if (Math.abs(var2) > this.mapSizeX || Math.abs(var3) > this.mapSizeZ) {
 				this.environmentManager.resetFade();
 			}
 		}
@@ -971,50 +988,50 @@ public class World {
 			this.rebuildStage = RebuildStage.LOAD_MAPS;
 			return false;
 		}
-		for (int index = 0; index < this.rebuildMapSquaresCount; index++) {
-			if (this.rebuildMapSquaresLands[index] == null) {
-				this.rebuildMapSquaresLands[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.LAND.id);
+		for (int var2 = 0; var2 < this.rebuildMapSquaresCount; var2++) {
+			if (this.rebuildMapSquaresLands[var2] == null) {
+				this.rebuildMapSquaresLands[var2] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[var2], Js5MapFile.LAND.id);
 			}
-			if (this.rebuildMapSquaresLocs[index] == null) {
-				this.rebuildMapSquaresLocs[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.LOC.id);
+			if (this.rebuildMapSquaresLocs[var2] == null) {
+				this.rebuildMapSquaresLocs[var2] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[var2], Js5MapFile.LOC.id);
 			}
-			if (this.rebuildMapSquaresUnderwaterLands[index] == null) {
-				this.rebuildMapSquaresUnderwaterLands[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.UNDERWATER_LAND.id);
+			if (this.rebuildMapSquaresUnderwaterLands[var2] == null) {
+				this.rebuildMapSquaresUnderwaterLands[var2] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[var2], Js5MapFile.UNDERWATER_LAND.id);
 			}
-			if (this.rebuildMapSquaresUnderwaterLocs[index] == null) {
-				this.rebuildMapSquaresUnderwaterLocs[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.UNDERWATER_LOC.id);
+			if (this.rebuildMapSquaresUnderwaterLocs[var2] == null) {
+				this.rebuildMapSquaresUnderwaterLocs[var2] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[var2], Js5MapFile.UNDERWATER_LOC.id);
 			}
-			if (this.rebuildMapSquaresNpcs != null && this.rebuildMapSquaresNpcs[index] == null) {
-				this.rebuildMapSquaresNpcs[index] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[index], Js5MapFile.NPC.id);
+			if (this.rebuildMapSquaresNpcs != null && this.rebuildMapSquaresNpcs[var2] == null) {
+				this.rebuildMapSquaresNpcs[var2] = Client.mapsJs5.getfile(this.rebuildMapSquaresGroupIds[var2], Js5MapFile.NPC.id);
 			}
 		}
 		int var3 = this.rebuildLocsCount;
 		IntegerBox var4 = new IntegerBox(-1);
 		IntegerBox var5 = new IntegerBox(-1);
 		this.rebuildLocsCount = 0;
-		for (int index = 0; index < this.rebuildMapSquaresCount; index++) {
-			byte[] locs = this.rebuildMapSquaresLocs[index];
-			if (locs != null) {
-				int var8 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x;
-				int var9 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z;
+		for (int var6 = 0; var6 < this.rebuildMapSquaresCount; var6++) {
+			byte[] var7 = this.rebuildMapSquaresLocs[var6];
+			if (var7 != null) {
+				int var8 = (this.rebuildMapSquares[var6] >> 8) * 64 - this.sceneBaseTile.x;
+				int var9 = (this.rebuildMapSquares[var6] & 0xFF) * 64 - this.sceneBaseTile.z;
 				if (this.rebuildType.isRegionType()) {
 					var8 = 10;
 					var9 = 10;
 				}
-				int var10 = ClientMapLoader.testReadLocs(this.locTypeList, locs, var8, var9, this.mapSizeX, this.mapSizeZ, var5, var4);
+				int var10 = ClientMapLoader.testReadLocs(this.locTypeList, var7, var8, var9, this.mapSizeX, this.mapSizeZ, var5, var4);
 				if (var10 > 0) {
 					this.rebuildLocsCount += var10;
 				}
 			}
-			byte[] ulocs = this.rebuildMapSquaresUnderwaterLocs[index];
-			if (ulocs != null) {
-				int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x;
-				int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z;
+			byte[] var11 = this.rebuildMapSquaresUnderwaterLocs[var6];
+			if (var11 != null) {
+				int var12 = (this.rebuildMapSquares[var6] >> 8) * 64 - this.sceneBaseTile.x;
+				int var13 = (this.rebuildMapSquares[var6] & 0xFF) * 64 - this.sceneBaseTile.z;
 				if (this.rebuildType.isRegionType()) {
 					var12 = 10;
 					var13 = 10;
 				}
-				int var14 = ClientMapLoader.testReadLocs(this.locTypeList, ulocs, var12, var13, this.mapSizeX, this.mapSizeZ, var5, var4);
+				int var14 = ClientMapLoader.testReadLocs(this.locTypeList, var11, var12, var13, this.mapSizeX, this.mapSizeZ, var5, var4);
 				if (var14 > 0) {
 					this.rebuildLocsCount += var14;
 				}
@@ -1057,22 +1074,22 @@ public class World {
 		if (!this.asyncRebuilding) {
 			Client.resetCaches(true);
 		}
-		boolean underwater = false;
+		boolean var19 = false;
 		if (Client.preferences.waterDetail.getValue() == 2) {
 			for (int var20 = 0; var20 < this.rebuildMapSquaresCount; var20++) {
 				if (this.rebuildMapSquaresUnderwaterLocs[var20] != null || this.rebuildMapSquaresUnderwaterLands[var20] != null) {
-					underwater = true;
+					var19 = true;
 					break;
 				}
 			}
 		}
-		int drawDistance = DrawDistance.method17395(Client.preferences.drawDistance.getValue()).field2675;
+		int var21 = DrawDistance.method17395(Client.preferences.drawDistance.getValue()).field2675 * 8;
 		if (Client.toolkit.hasExtraDrawDistance()) {
-			drawDistance++;
+			var21++;
 		}
 		this.method7820();
 		this.method7763();
-		this.scene = new Scene(Client.toolkit, 9, 4, this.mapSizeX, this.mapSizeZ, drawDistance, underwater, Client.toolkit.getMaxLights() > 0);
+		this.scene = new Scene(Client.toolkit, 9, 4, this.mapSizeX, this.mapSizeZ, var21, var19, Client.toolkit.getMaxLights() > 0);
 		this.scene.method8703(false);
 		this.scene.method8701(Client.field11005);
 		this.scene.method8759(this.field5061);
@@ -1100,7 +1117,7 @@ public class World {
 		}
 		this.environmentManager.method9991(this.mapSizeX >> 4, this.mapSizeZ >> 4);
 		this.environmentManager.updatePartial(this);
-		if (underwater) {
+		if (var19) {
 			this.scene.method8703(true);
 			this.underwaterMapLoader = new ClientMapLoader(this.scene, this.locTypeList, 1, this.mapSizeX, this.mapSizeZ, true, this.sceneLevelTileFlags, this.environmentManager);
 			this.underwaterMapLoader.method7136();
@@ -1127,7 +1144,7 @@ public class World {
 				this.sleep(50);
 			}
 		}
-		this.mapLoader.method7144(Client.toolkit, underwater ? this.underwaterMapLoader.levelHeightmap : (int[][][]) null);
+		this.mapLoader.method7144(Client.toolkit, var19 ? this.underwaterMapLoader.levelHeightmap : (int[][][]) null);
 		if (this.rebuildType.isRegionType()) {
 			if (!this.asyncRebuilding) {
 				MapLogicRelated.noTimeoutConnections(true);
@@ -1145,7 +1162,7 @@ public class World {
 		if (!this.asyncRebuilding) {
 			MapLogicRelated.noTimeoutConnections(true);
 		}
-		this.mapLoader.method7200(Client.toolkit, underwater ? this.scene.underwaterLevelHeightMaps[0] : null, null);
+		this.mapLoader.method7200(Client.toolkit, var19 ? this.scene.underwaterLevelHeightMaps[0] : null, null);
 		if (this.asyncRebuilding) {
 			this.sleep(75);
 		}
@@ -1156,7 +1173,7 @@ public class World {
 		if (!this.asyncRebuilding) {
 			MapLogicRelated.noTimeoutConnections(true);
 		}
-		if (underwater) {
+		if (var19) {
 			this.scene.method8703(true);
 			if (!this.asyncRebuilding) {
 				MapLogicRelated.noTimeoutConnections(true);
@@ -1228,7 +1245,7 @@ public class World {
 		}
 		Client.method3128();
 		ChangeLocationRequest.method5070();
-		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION && Client.gameConnection.getStream() != null && Client.state == 3) {
+		if (GameShell.getEnvironment() == GameShell.Environment.APPLICATION && Client.gameConnection.getStream() != null && Client.state == 3) {
 			ClientMessage var31 = ClientMessage.createMessage(ClientProt.DETECT_MODIFIED_CLIENT, Client.gameConnection.randomOut);
 			var31.buf.p4(1057001181);
 			Client.gameConnection.queue(var31);
@@ -1277,65 +1294,65 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ao(II)V")
-	public void sleep(int millis) {
+	public void sleep(int arg0) {
 		try {
-			Thread.sleep((long) millis);
+			Thread.sleep((long) arg0);
 		} catch (InterruptedException var3) {
 		}
 	}
 
 	@ObfuscatedName("rl.aj(Laih;[[BI)V")
-	public void readNormalLandscape(ClientMapLoader mapLoader, byte[][] mapSquareLands) {
-		int length = mapSquareLands.length;
-		for (int index = 0; index < length; index++) {
-			byte[] lands = mapSquareLands[index];
-			if (lands != null) {
-				Packet buf = new Packet(lands);
-				int var7 = this.rebuildMapSquares[index] >> 8;
-				int var8 = this.rebuildMapSquares[index] & 0xFF;
+	public void readNormalLandscape(ClientMapLoader arg0, byte[][] arg1) {
+		int var3 = arg1.length;
+		for (int var4 = 0; var4 < var3; var4++) {
+			byte[] var5 = arg1[var4];
+			if (var5 != null) {
+				Packet var6 = new Packet(var5);
+				int var7 = this.rebuildMapSquares[var4] >> 8;
+				int var8 = this.rebuildMapSquares[var4] & 0xFF;
 				int var9 = var7 * 64 - this.sceneBaseTile.x;
 				int var10 = var8 * 64 - this.sceneBaseTile.z;
 				if (!this.asyncRebuilding && Client.audioApi != null) {
 					Client.audioApi.update();
 				}
-				mapLoader.readNormalLandscape(buf, var9, var10, this.sceneBaseTile.x, this.sceneBaseTile.z);
-				mapLoader.readNormalEnvironment(Client.toolkit, buf, var9, var10);
+				arg0.readNormalLandscape(var6, var9, var10, this.sceneBaseTile.x, this.sceneBaseTile.z);
+				arg0.readNormalEnvironment(Client.toolkit, var6, var9, var10);
 			}
 		}
-		for (int index = 0; index < length; index++) {
-			int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x;
-			int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z;
-			byte[] lands = mapSquareLands[index];
-			if (lands == null && this.field5059 < 800) {
+		for (int var11 = 0; var11 < var3; var11++) {
+			int var12 = (this.rebuildMapSquares[var11] >> 8) * 64 - this.sceneBaseTile.x;
+			int var13 = (this.rebuildMapSquares[var11] & 0xFF) * 64 - this.sceneBaseTile.z;
+			byte[] var14 = arg1[var11];
+			if (var14 == null && this.field5059 < 800) {
 				if (!this.asyncRebuilding && Client.audioApi != null) {
 					Client.audioApi.update();
 				}
-				mapLoader.method7167(var12, var13, 64, 64);
+				arg0.method7167(var12, var13, 64, 64);
 			}
 		}
 	}
 
 	@ObfuscatedName("rl.ay(Laih;[[BI)V")
-	public void readRegionLandscape(ClientMapLoader mapLoader, byte[][] mapSquareLands) {
-		for (int level = 0; level < mapLoader.levels; level++) {
+	public void readRegionLandscape(ClientMapLoader arg0, byte[][] arg1) {
+		for (int var3 = 0; var3 < arg0.levels; var3++) {
 			if (!this.asyncRebuilding) {
 				Client.audioApi.update();
 			}
-			for (int x = 0; x < this.mapSizeX >> 3; x++) {
-				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
-					int var6 = this.field5057[level][x][z];
+			for (int var4 = 0; var4 < this.mapSizeX >> 3; var4++) {
+				for (int var5 = 0; var5 < this.mapSizeZ >> 3; var5++) {
+					int var6 = this.field5057[var3][var4][var5];
 					if (var6 != -1) {
 						int var7 = var6 >> 24 & 0x3;
-						if (!mapLoader.underwater || var7 == 0) {
+						if (!arg0.underwater || var7 == 0) {
 							int var8 = var6 >> 1 & 0x3;
 							int var9 = var6 >> 14 & 0x3FF;
 							int var10 = var6 >> 3 & 0x7FF;
 							int var11 = (var9 / 8 << 8) + var10 / 8;
 							for (int var12 = 0; var12 < this.rebuildMapSquares.length; var12++) {
-								if (this.rebuildMapSquares[var12] == var11 && mapSquareLands[var12] != null) {
-									Packet buf = new Packet(mapSquareLands[var12]);
-									mapLoader.readRegionLandscape(buf, level, x * 8, z * 8, var7, var9, var10, var8);
-									mapLoader.readRegionEnvironment(Client.toolkit, buf, level, x * 8, z * 8, var7, var9, var10, var8);
+								if (this.rebuildMapSquares[var12] == var11 && arg1[var12] != null) {
+									Packet var13 = new Packet(arg1[var12]);
+									arg0.readRegionLandscape(var13, var3, var4 * 8, var5 * 8, var7, var9, var10, var8);
+									arg0.readRegionEnvironment(Client.toolkit, var13, var3, var4 * 8, var5 * 8, var7, var9, var10, var8);
 									break;
 								}
 							}
@@ -1344,15 +1361,15 @@ public class World {
 				}
 			}
 		}
-		for (int level = 0; level < mapLoader.levels; level++) {
+		for (int var14 = 0; var14 < arg0.levels; var14++) {
 			if (!this.asyncRebuilding) {
 				Client.audioApi.update();
 			}
-			for (int x = 0; x < this.mapSizeX >> 3; x++) {
-				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
-					int var17 = this.field5057[level][x][z];
+			for (int var15 = 0; var15 < this.mapSizeX >> 3; var15++) {
+				for (int var16 = 0; var16 < this.mapSizeZ >> 3; var16++) {
+					int var17 = this.field5057[var14][var15][var16];
 					if (var17 == -1) {
-						mapLoader.method7139(level, x * 8, z * 8, 8, 8);
+						arg0.method7139(var14, var15 * 8, var16 * 8, 8, 8);
 					}
 				}
 			}
@@ -1360,16 +1377,16 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.ab(Laih;[[BB)V")
-	public void readNormalLocs(ClientMapLoader mapLoader, byte[][] mapSquareLocs) {
-		for (int index = 0; index < this.rebuildMapSquaresCount; index++) {
-			byte[] locs = mapSquareLocs[index];
-			if (locs != null) {
-				int var5 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x;
-				int var6 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z;
+	public void readNormalLocs(ClientMapLoader arg0, byte[][] arg1) {
+		for (int var3 = 0; var3 < this.rebuildMapSquaresCount; var3++) {
+			byte[] var4 = arg1[var3];
+			if (var4 != null) {
+				int var5 = (this.rebuildMapSquares[var3] >> 8) * 64 - this.sceneBaseTile.x;
+				int var6 = (this.rebuildMapSquares[var3] & 0xFF) * 64 - this.sceneBaseTile.z;
 				if (!this.asyncRebuilding) {
 					Client.audioApi.update();
 				}
-				mapLoader.readNormalLocs(Client.toolkit, locs, var5, var6);
+				arg0.readNormalLocs(Client.toolkit, var4, var5, var6);
 				if (this.asyncRebuilding) {
 					this.sleep(10);
 				}
@@ -1378,24 +1395,24 @@ public class World {
 	}
 
 	@ObfuscatedName("rl.az(Laih;[[BS)V")
-	public void readRegionLocs(ClientMapLoader mapLoader, byte[][] mapSquareLocs) {
-		for (int level = 0; level < mapLoader.levels; level++) {
+	public void readRegionLocs(ClientMapLoader arg0, byte[][] arg1) {
+		for (int var3 = 0; var3 < arg0.levels; var3++) {
 			if (!this.asyncRebuilding) {
 				Client.audioApi.update();
 			}
-			for (int x = 0; x < this.mapSizeX >> 3; x++) {
-				for (int z = 0; z < this.mapSizeZ >> 3; z++) {
-					int var6 = this.field5057[level][x][z];
+			for (int var4 = 0; var4 < this.mapSizeX >> 3; var4++) {
+				for (int var5 = 0; var5 < this.mapSizeZ >> 3; var5++) {
+					int var6 = this.field5057[var3][var4][var5];
 					if (var6 != -1) {
 						int var7 = var6 >> 24 & 0x3;
-						if (!mapLoader.underwater || var7 == 0) {
+						if (!arg0.underwater || var7 == 0) {
 							int var8 = var6 >> 1 & 0x3;
 							int var9 = var6 >> 14 & 0x3FF;
 							int var10 = var6 >> 3 & 0x7FF;
 							int var11 = (var9 / 8 << 8) + var10 / 8;
 							for (int var12 = 0; var12 < this.rebuildMapSquares.length; var12++) {
-								if (this.rebuildMapSquares[var12] == var11 && mapSquareLocs[var12] != null) {
-									mapLoader.readRegionLocs(Client.toolkit, mapSquareLocs[var12], level, x * 8, z * 8, var7, (var9 & 0x7) * 8, (var10 & 0x7) * 8, var8);
+								if (this.rebuildMapSquares[var12] == var11 && arg1[var12] != null) {
+									arg0.readRegionLocs(Client.toolkit, arg1[var12], var3, var4 * 8, var5 * 8, var7, (var9 & 0x7) * 8, (var10 & 0x7) * 8, var8);
 									break;
 								}
 							}
@@ -1411,45 +1428,45 @@ public class World {
 
 	@ObfuscatedName("rl.aa(B)V")
 	public void readNpcs() {
-		int length = this.rebuildMapSquaresNpcs.length;
-		for (int index = 0; index < length; index++) {
-			if (this.rebuildMapSquaresNpcs[index] != null) {
+		int var1 = this.rebuildMapSquaresNpcs.length;
+		for (int var2 = 0; var2 < var1; var2++) {
+			if (this.rebuildMapSquaresNpcs[var2] != null) {
 				int var3 = -1;
 				for (int var4 = 0; var4 < Client.field10938; var4++) {
-					if (Client.field10859[var4] == this.rebuildMapSquares[index]) {
+					if (Client.field10859[var4] == this.rebuildMapSquares[var2]) {
 						var3 = var4;
 						break;
 					}
 				}
 				if (var3 == -1) {
-					Client.field10859[Client.field10938] = this.rebuildMapSquares[index];
+					Client.field10859[Client.field10938] = this.rebuildMapSquares[var2];
 					var3 = ++Client.field10938 - 1;
 				}
-				Packet buf = new Packet(this.rebuildMapSquaresNpcs[index]);
+				Packet var5 = new Packet(this.rebuildMapSquaresNpcs[var2]);
 				int var6 = 0;
-				while (buf.pos < this.rebuildMapSquaresNpcs[index].length && var6 < 511 && Client.npcSlotCount < 1023) {
+				while (var5.pos < this.rebuildMapSquaresNpcs[var2].length && var6 < 511 && Client.npcSlotCount < 1023) {
 					int var7 = var3 | var6++ << 6;
-					int var8 = buf.g2();
+					int var8 = var5.g2();
 					int var9 = var8 >> 14;
 					int var10 = var8 >> 7 & 0x3F;
 					int var11 = var8 & 0x3F;
-					int var12 = (this.rebuildMapSquares[index] >> 8) * 64 - this.sceneBaseTile.x + var10;
-					int var13 = (this.rebuildMapSquares[index] & 0xFF) * 64 - this.sceneBaseTile.z + var11;
-					NPCType var14 = (NPCType) Client.npcTypeList.list(buf.g2());
+					int var12 = (this.rebuildMapSquares[var2] >> 8) * 64 - this.sceneBaseTile.x + var10;
+					int var13 = (this.rebuildMapSquares[var2] & 0xFF) * 64 - this.sceneBaseTile.z + var11;
+					NPCType var14 = (NPCType) Client.npcTypeList.list(var5.g2());
 					ObjectNode var15 = (ObjectNode) Client.npcs.get((long) var7);
 					if (var15 == null && (var14.walkflags & 0x1) > 0 && var12 >= 0 && var14.size + var12 < this.mapSizeX && var13 >= 0 && var14.size + var13 < this.mapSizeZ) {
-						NpcEntity npc = new NpcEntity(this.scene);
-						npc.localPlayerIndex = var7;
-						ObjectNode var17 = new ObjectNode(npc);
+						NpcEntity var16 = new NpcEntity(this.scene);
+						var16.localPlayerIndex = var7;
+						ObjectNode var17 = new ObjectNode(var16);
 						Client.npcs.put(var17, (long) var7);
 						Client.field10839[++Client.npcCount - 1] = var17;
 						Client.field11036[++Client.npcSlotCount - 1] = var7;
-						npc.field10440 = Client.loopCycle;
-						npc.method19156(var14);
-						npc.setSize(npc.npcType.size);
-						npc.field10444 = npc.npcType.turnspeed << 3;
-						npc.method16491(npc.npcType.respawndir.method13895().getId() << 11 & 0x3FFF, true);
-						npc.move(var9, var12, var13, true, npc.size());
+						var16.field10440 = Client.loopCycle;
+						var16.method19156(var14);
+						var16.setSize(var16.npcType.size);
+						var16.field10444 = var16.npcType.turnspeed << 3;
+						var16.method16491(var16.npcType.respawndir.method13895().getId() << 11 & 0x3FFF, true);
+						var16.move(var9, var12, var13, true, var16.size());
 					}
 				}
 			}

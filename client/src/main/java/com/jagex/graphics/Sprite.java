@@ -6,8 +6,8 @@ import deob.ObfuscatedName;
 public abstract class Sprite implements FontGlyph {
 
 	@ObfuscatedName("cm.c(II)V")
-	public final void drawSprite(int x, int y) {
-		this.drawSprite(x, y, 1, -1, 1);
+	public final void drawSprite(int arg0, int arg1) {
+		this.drawSprite(arg0, arg1, 1, -1, 1);
 	}
 
 	@ObfuscatedName("cm.o(IIII)V")
@@ -51,11 +51,11 @@ public abstract class Sprite implements FontGlyph {
 		float var15 = (float) Math.sin(var11) * (float) arg4;
 		float var16 = (float) Math.cos(var11) * (float) arg4;
 		float var17 = (-arg2 * var16 + -arg3 * var13) / 4096.0F + arg0;
-		float var18 = (--arg2 * var15 + -arg3 * var14) / 4096.0F + arg1;
+		float var18 = (arg2 * var15 + -arg3 * var14) / 4096.0F + arg1;
 		float var19 = (((float) this.getX() - arg2) * var16 + -arg3 * var13) / 4096.0F + arg0;
 		float var20 = (-((float) this.getX() - arg2) * var15 + -arg3 * var14) / 4096.0F + arg1;
 		float var21 = (-arg2 * var16 + ((float) this.getY() - arg3) * var13) / 4096.0F + arg0;
-		float var22 = (--arg2 * var15 + ((float) this.getY() - arg3) * var14) / 4096.0F + arg1;
+		float var22 = (arg2 * var15 + ((float) this.getY() - arg3) * var14) / 4096.0F + arg1;
 		this.method1442(var17, var18, var19, var20, var21, var22, arg7, arg8, arg9);
 	}
 
@@ -68,11 +68,11 @@ public abstract class Sprite implements FontGlyph {
 		float var12 = (float) Math.sin(var10) * (float) arg4;
 		float var13 = (float) Math.cos(var10) * (float) arg4;
 		float var14 = (-arg2 * var13 + -arg3 * var12) / 4096.0F + arg0;
-		float var15 = (--arg2 * var12 + -arg3 * var13) / 4096.0F + arg1;
+		float var15 = (arg2 * var12 + -arg3 * var13) / 4096.0F + arg1;
 		float var16 = (((float) this.getX() - arg2) * var13 + -arg3 * var12) / 4096.0F + arg0;
 		float var17 = (-((float) this.getX() - arg2) * var12 + -arg3 * var13) / 4096.0F + arg1;
 		float var18 = (-arg2 * var13 + ((float) this.getY() - arg3) * var12) / 4096.0F + arg0;
-		float var19 = (--arg2 * var12 + ((float) this.getY() - arg3) * var13) / 4096.0F + arg1;
+		float var19 = (arg2 * var12 + ((float) this.getY() - arg3) * var13) / 4096.0F + arg1;
 		this.method1442(var14, var15, var16, var17, var18, var19, arg6, arg7, arg8);
 	}
 
@@ -90,11 +90,11 @@ public abstract class Sprite implements FontGlyph {
 		float var12 = (float) Math.sin(var10) * (float) arg4;
 		float var13 = (float) Math.cos(var10) * (float) arg4;
 		float var14 = (-arg2 * var13 + -arg3 * var12) / 4096.0F + arg0;
-		float var15 = (--arg2 * var12 + -arg3 * var13) / 4096.0F + arg1;
+		float var15 = (arg2 * var12 + -arg3 * var13) / 4096.0F + arg1;
 		float var16 = (((float) this.getX() - arg2) * var13 + -arg3 * var12) / 4096.0F + arg0;
 		float var17 = (-((float) this.getX() - arg2) * var12 + -arg3 * var13) / 4096.0F + arg1;
 		float var18 = (-arg2 * var13 + ((float) this.getY() - arg3) * var12) / 4096.0F + arg0;
-		float var19 = (--arg2 * var12 + ((float) this.getY() - arg3) * var13) / 4096.0F + arg1;
+		float var19 = (arg2 * var12 + ((float) this.getY() - arg3) * var13) / 4096.0F + arg1;
 		this.method1499(var14, var15, var16, var17, var18, var19, arg6, arg7, arg8);
 	}
 
@@ -136,7 +136,7 @@ public abstract class Sprite implements FontGlyph {
 	public abstract void method1441(int arg0, int arg1, int arg2);
 
 	@ObfuscatedName("cm.r(IIIII)V")
-	public abstract void drawSprite(int x, int y, int arg2, int rgb, int arg4);
+	public abstract void drawSprite(int arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("cm.v(IILch;II)V")
 	public abstract void method1444(int arg0, int arg1, SpriteRelated arg2, int arg3, int arg4);

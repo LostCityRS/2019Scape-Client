@@ -2,13 +2,12 @@ package com.jagex.core.utils;
 
 import com.jagex.core.datastruct.SortedQueue;
 import deob.ObfuscatedName;
-
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
 @ObfuscatedName("qy")
-public final class PrioritizedCache {
+public class PrioritizedCache {
 
 	@ObfuscatedName("qy.e")
 	public final Comparator field4631;
@@ -31,44 +30,12 @@ public final class PrioritizedCache {
 	@ObfuscatedName("qy.l")
 	public final int field4633;
 
-	@ObfuscatedName("qi")
-	public static class PrioritizedCacheComparator implements Comparator {
-
-		// $FF: synthetic field
-		public final PrioritizedCache this$0;
-
-		// line 7
-		public PrioritizedCacheComparator(PrioritizedCache arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("qi.e(Lqd;Lqd;B)I")
-		public int method7264(PrioritizedCacheEntry arg0, PrioritizedCacheEntry arg1) {
-			if (arg0.field4624 > arg1.field4624) {
-				return 1;
-			} else if (arg0.field4624 < arg1.field4624) {
-				return -1;
-			} else {
-				return 0;
-			}
-		}
-
-		public int compare(Object arg0, Object arg1) {
-			return this.method7264((PrioritizedCacheEntry) arg0, (PrioritizedCacheEntry) arg1);
-		}
-
-		public boolean equals(Object arg0) {
-			return super.equals(arg0);
-		}
-	}
-
-	// line 30
 	public PrioritizedCache(int arg0, PrioritizedCacheMode arg1) {
 		this(-1L, arg0, arg1);
 	}
 
 	public PrioritizedCache(long arg0, int arg1, PrioritizedCacheMode arg2) {
-		this.field4631 = new PrioritizedCacheComparator(this);
+		this.field4631 = new PrioritizedCache.PrioritizedCacheComparator();
 		this.field4632 = arg0;
 		this.field4633 = arg1;
 		this.field4627 = arg2;
@@ -169,6 +136,29 @@ public final class PrioritizedCache {
 			if (this.method7277()) {
 				this.field4630.remove(var3);
 			}
+		}
+	}
+
+	@ObfuscatedName("qi")
+	public class PrioritizedCacheComparator implements Comparator {
+
+		@ObfuscatedName("qi.e(Lqd;Lqd;B)I")
+		public int method7264(PrioritizedCacheEntry arg0, PrioritizedCacheEntry arg1) {
+			if (arg0.field4624 > arg1.field4624) {
+				return 1;
+			} else if (arg0.field4624 < arg1.field4624) {
+				return -1;
+			} else {
+				return 0;
+			}
+		}
+
+		public int compare(Object arg0, Object arg1) {
+			return this.method7264((PrioritizedCacheEntry) arg0, (PrioritizedCacheEntry) arg1);
+		}
+
+		public boolean equals(Object arg0) {
+			return super.equals(arg0);
 		}
 	}
 }

@@ -30,7 +30,7 @@ public class ClientNativeLibraryFailure implements SendablePacket {
 	@ObfuscatedName("ur.e(I)V")
 	public void method9201() {
 		ClientMessage var1 = ClientMessage.createMessage(ClientProt.NATIVE_LIBRARY_FAILURE, Client.gameConnection.randomOut);
-		int var2 = var1.buf.pos++;
+		int var2 = ++var1.buf.pos;
 		var1.buf.p1(this.field7278.getId());
 		var1.buf.pjstr(this.field7276);
 		var1.buf.p2(this.field7277);

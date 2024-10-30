@@ -1,7 +1,7 @@
 package rs2.client.logic.clans;
 
-import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.Algorithms;
@@ -87,74 +87,74 @@ public class ClanSettings {
 	@ObfuscatedName("kr.t")
 	public HashTable settingsMap;
 
-	public ClanSettings(Packet buf) {
-		this.decode(buf);
+	public ClanSettings(Packet arg0) {
+		this.decode(arg0);
 	}
 
 	@ObfuscatedName("kr.e(II)V")
-	public void allocAffined(int num) {
+	public void allocAffined(int arg0) {
 		if (this.useUserHashes) {
 			if (this.affinedUserHashes == null) {
-				this.affinedUserHashes = new long[num];
+				this.affinedUserHashes = new long[arg0];
 			} else {
-				System.arraycopy(this.affinedUserHashes, 0, this.affinedUserHashes = new long[num], 0, this.memberCount);
+				System.arraycopy(this.affinedUserHashes, 0, this.affinedUserHashes = new long[arg0], 0, this.memberCount);
 			}
 		}
 		if (this.useDisplayNames) {
 			if (this.affinedDisplayNames == null) {
-				this.affinedDisplayNames = new String[num];
+				this.affinedDisplayNames = new String[arg0];
 			} else {
-				System.arraycopy(this.affinedDisplayNames, 0, this.affinedDisplayNames = new String[num], 0, this.memberCount);
+				System.arraycopy(this.affinedDisplayNames, 0, this.affinedDisplayNames = new String[arg0], 0, this.memberCount);
 			}
 		}
 		if (this.affinedRanks == null) {
-			this.affinedRanks = new byte[num];
+			this.affinedRanks = new byte[arg0];
 		} else {
-			System.arraycopy(this.affinedRanks, 0, this.affinedRanks = new byte[num], 0, this.memberCount);
+			System.arraycopy(this.affinedRanks, 0, this.affinedRanks = new byte[arg0], 0, this.memberCount);
 		}
 		if (this.extra == null) {
-			this.extra = new int[num];
+			this.extra = new int[arg0];
 		} else {
-			System.arraycopy(this.extra, 0, this.extra = new int[num], 0, this.memberCount);
+			System.arraycopy(this.extra, 0, this.extra = new int[arg0], 0, this.memberCount);
 		}
 		if (this.affinedJoinedRunedays == null) {
-			this.affinedJoinedRunedays = new int[num];
+			this.affinedJoinedRunedays = new int[arg0];
 		} else {
-			System.arraycopy(this.affinedJoinedRunedays, 0, this.affinedJoinedRunedays = new int[num], 0, this.memberCount);
+			System.arraycopy(this.affinedJoinedRunedays, 0, this.affinedJoinedRunedays = new int[arg0], 0, this.memberCount);
 		}
 		if (this.affinedMutes == null) {
-			this.affinedMutes = new boolean[num];
+			this.affinedMutes = new boolean[arg0];
 		} else {
-			System.arraycopy(this.affinedMutes, 0, this.affinedMutes = new boolean[num], 0, this.memberCount);
+			System.arraycopy(this.affinedMutes, 0, this.affinedMutes = new boolean[arg0], 0, this.memberCount);
 		}
 	}
 
 	@ObfuscatedName("kr.n(II)V")
-	public void allocBanned(int num) {
+	public void allocBanned(int arg0) {
 		if (this.useUserHashes) {
 			if (this.bannedUserHashes == null) {
-				this.bannedUserHashes = new long[num];
+				this.bannedUserHashes = new long[arg0];
 			} else {
-				System.arraycopy(this.bannedUserHashes, 0, this.bannedUserHashes = new long[num], 0, this.bannedCount);
+				System.arraycopy(this.bannedUserHashes, 0, this.bannedUserHashes = new long[arg0], 0, this.bannedCount);
 			}
 		}
 		if (!this.useDisplayNames) {
 			return;
 		}
 		if (this.bannedDisplayNames == null) {
-			this.bannedDisplayNames = new String[num];
+			this.bannedDisplayNames = new String[arg0];
 		} else {
-			System.arraycopy(this.bannedDisplayNames, 0, this.bannedDisplayNames = new String[num], 0, this.bannedCount);
+			System.arraycopy(this.bannedDisplayNames, 0, this.bannedDisplayNames = new String[arg0], 0, this.bannedCount);
 		}
 	}
 
 	@ObfuscatedName("kr.m(Ljava/lang/String;B)I")
-	public int getAffinedSlot(String displayName) {
-		if (displayName == null || displayName.length() == 0) {
+	public int getAffinedSlot(String arg0) {
+		if (arg0 == null || arg0.length() == 0) {
 			return -1;
 		}
 		for (int var2 = 0; var2 < this.memberCount; var2++) {
-			if (this.affinedDisplayNames[var2].equals(displayName)) {
+			if (this.affinedDisplayNames[var2].equals(arg0)) {
 				return var2;
 			}
 		}
@@ -168,32 +168,32 @@ public class ClanSettings {
 	}
 
 	@ObfuscatedName("kr.f(II)Ljava/lang/Integer;")
-	public Integer getSettingInt(int uid) {
+	public Integer getSettingInt(int arg0) {
 		if (this.settingsMap == null) {
 			return null;
 		} else {
-			Node node = this.settingsMap.get((long) uid);
-			return node != null && node instanceof IntNode ? Integer.valueOf(((IntNode) node).value) : null;
+			Node var2 = this.settingsMap.get((long) arg0);
+			return var2 != null && var2 instanceof IntNode ? Integer.valueOf(((IntNode) var2).value) : null;
 		}
 	}
 
 	@ObfuscatedName("kr.w(II)Ljava/lang/Long;")
-	public Long getSettingLong(int uid) {
+	public Long getSettingLong(int arg0) {
 		if (this.settingsMap == null) {
 			return null;
 		} else {
-			Node node = this.settingsMap.get((long) uid);
-			return node != null && node instanceof LongNode ? Long.valueOf(((LongNode) node).value) : null;
+			Node var2 = this.settingsMap.get((long) arg0);
+			return var2 != null && var2 instanceof LongNode ? Long.valueOf(((LongNode) var2).value) : null;
 		}
 	}
 
 	@ObfuscatedName("kr.l(II)Ljava/lang/String;")
-	public String getSettingString(int uid) {
+	public String getSettingString(int arg0) {
 		if (this.settingsMap == null) {
 			return null;
 		} else {
-			Node node = this.settingsMap.get((long) uid);
-			return node != null && node instanceof ObjectNode ? (String) ((ObjectNode) node).value : null;
+			Node var2 = this.settingsMap.get((long) arg0);
+			return var2 != null && var2 instanceof ObjectNode ? (String) ((ObjectNode) var2).value : null;
 		}
 	}
 
@@ -216,21 +216,21 @@ public class ClanSettings {
 	}
 
 	@ObfuscatedName("kr.z(JLjava/lang/String;IB)V")
-	public void doAddMember(long userhash, String displayname, int joinedRunedays) {
-		if (displayname != null && displayname.length() == 0) {
-			displayname = null;
+	public void doAddMember(long arg0, String arg1, int arg2) {
+		if (arg1 != null && arg1.length() == 0) {
+			arg1 = null;
 		}
-		if (this.useUserHashes != userhash > 0L) {
-			throw new RuntimeException("Invalid UserHash arg to this method - useUserHashes:" + this.useUserHashes + " but userhash:" + userhash);
-		} else if ((displayname != null) == this.useDisplayNames) {
-			if (userhash > 0L && (this.affinedUserHashes == null || this.memberCount >= this.affinedUserHashes.length) || displayname != null && (this.affinedDisplayNames == null || this.memberCount >= this.affinedDisplayNames.length)) {
+		if (this.useUserHashes != arg0 > 0L) {
+			throw new RuntimeException("");
+		} else if ((arg1 != null) == this.useDisplayNames) {
+			if (arg0 > 0L && (this.affinedUserHashes == null || this.memberCount >= this.affinedUserHashes.length) || arg1 != null && (this.affinedDisplayNames == null || this.memberCount >= this.affinedDisplayNames.length)) {
 				this.allocAffined(this.memberCount + 5);
 			}
 			if (this.affinedUserHashes != null) {
-				this.affinedUserHashes[this.memberCount] = userhash;
+				this.affinedUserHashes[this.memberCount] = arg0;
 			}
 			if (this.affinedDisplayNames != null) {
-				this.affinedDisplayNames[this.memberCount] = displayname;
+				this.affinedDisplayNames[this.memberCount] = arg1;
 			}
 			if (this.currentOwnerSlot == -1) {
 				this.currentOwnerSlot = this.memberCount;
@@ -239,19 +239,19 @@ public class ClanSettings {
 				this.affinedRanks[this.memberCount] = 0;
 			}
 			this.extra[this.memberCount] = 0;
-			this.affinedJoinedRunedays[this.memberCount] = joinedRunedays;
+			this.affinedJoinedRunedays[this.memberCount] = arg2;
 			this.affinedMutes[this.memberCount] = false;
 			this.memberCount++;
 			this.field3118 = null;
 		} else {
-			throw new RuntimeException("Invalid DisplayName arg to this method - useDisplayNames:" + this.useDisplayNames + " but displayname:" + displayname);
+			throw new RuntimeException("");
 		}
 	}
 
 	@ObfuscatedName("kr.p(II)V")
-	public void doDeleteMember(int pos) {
-		if (pos < 0 || pos >= this.memberCount) {
-			throw new RuntimeException("Invalid pos in doDeleteMember - pos:" + pos + " memberCount:" + this.memberCount);
+	public void doDeleteMember(int arg0) {
+		if (arg0 < 0 || arg0 >= this.memberCount) {
+			throw new RuntimeException("");
 		}
 		this.memberCount--;
 		this.field3118 = null;
@@ -266,15 +266,15 @@ public class ClanSettings {
 			this.replacementOwnerSlot = -1;
 			return;
 		}
-		System.arraycopy(this.affinedRanks, pos + 1, this.affinedRanks, pos, this.memberCount - pos);
-		System.arraycopy(this.extra, pos + 1, this.extra, pos, this.memberCount - pos);
-		System.arraycopy(this.affinedJoinedRunedays, pos + 1, this.affinedJoinedRunedays, pos, this.memberCount - pos);
-		System.arraycopy(this.affinedMutes, pos + 1, this.affinedMutes, pos, this.memberCount - pos);
+		System.arraycopy(this.affinedRanks, arg0 + 1, this.affinedRanks, arg0, this.memberCount - arg0);
+		System.arraycopy(this.extra, arg0 + 1, this.extra, arg0, this.memberCount - arg0);
+		System.arraycopy(this.affinedJoinedRunedays, arg0 + 1, this.affinedJoinedRunedays, arg0, this.memberCount - arg0);
+		System.arraycopy(this.affinedMutes, arg0 + 1, this.affinedMutes, arg0, this.memberCount - arg0);
 		if (this.affinedUserHashes != null) {
-			System.arraycopy(this.affinedUserHashes, pos + 1, this.affinedUserHashes, pos, this.memberCount - pos);
+			System.arraycopy(this.affinedUserHashes, arg0 + 1, this.affinedUserHashes, arg0, this.memberCount - arg0);
 		}
 		if (this.affinedDisplayNames != null) {
-			System.arraycopy(this.affinedDisplayNames, pos + 1, this.affinedDisplayNames, pos, this.memberCount - pos);
+			System.arraycopy(this.affinedDisplayNames, arg0 + 1, this.affinedDisplayNames, arg0, this.memberCount - arg0);
 		}
 		this.method5299();
 	}
@@ -308,30 +308,30 @@ public class ClanSettings {
 	}
 
 	@ObfuscatedName("kr.c(JLjava/lang/String;I)V")
-	public void doAddBanned(long userhash, String displayname) {
-		if (displayname != null && displayname.length() == 0) {
-			displayname = null;
+	public void doAddBanned(long arg0, String arg1) {
+		if (arg1 != null && arg1.length() == 0) {
+			arg1 = null;
 		}
-		if (this.useUserHashes != userhash > 0L) {
-			throw new RuntimeException("Invalid UserHash arg to this method - useUserHashes:" + this.useUserHashes + " but userhash:" + userhash);
-		} else if ((displayname != null) == this.useDisplayNames) {
-			if (userhash > 0L && (this.bannedUserHashes == null || this.bannedCount >= this.bannedUserHashes.length) || displayname != null && (this.bannedDisplayNames == null || this.bannedCount >= this.bannedDisplayNames.length)) {
+		if (this.useUserHashes != arg0 > 0L) {
+			throw new RuntimeException("");
+		} else if ((arg1 != null) == this.useDisplayNames) {
+			if (arg0 > 0L && (this.bannedUserHashes == null || this.bannedCount >= this.bannedUserHashes.length) || arg1 != null && (this.bannedDisplayNames == null || this.bannedCount >= this.bannedDisplayNames.length)) {
 				this.allocBanned(this.bannedCount + 5);
 			}
 			if (this.bannedUserHashes != null) {
-				this.bannedUserHashes[this.bannedCount] = userhash;
+				this.bannedUserHashes[this.bannedCount] = arg0;
 			}
 			if (this.bannedDisplayNames != null) {
-				this.bannedDisplayNames[this.bannedCount] = displayname;
+				this.bannedDisplayNames[this.bannedCount] = arg1;
 			}
 			this.bannedCount++;
 		} else {
-			throw new RuntimeException("Invalid DisplayName arg to this method - useDisplayNames:" + this.useDisplayNames + " but displayname:" + displayname);
+			throw new RuntimeException("");
 		}
 	}
 
 	@ObfuscatedName("kr.r(II)V")
-	public void doDeleteBanned(int pos) {
+	public void doDeleteBanned(int arg0) {
 		this.bannedCount--;
 		if (this.bannedCount == 0) {
 			this.bannedUserHashes = null;
@@ -339,79 +339,79 @@ public class ClanSettings {
 			return;
 		}
 		if (this.bannedUserHashes != null) {
-			System.arraycopy(this.bannedUserHashes, pos + 1, this.bannedUserHashes, pos, this.bannedCount - pos);
+			System.arraycopy(this.bannedUserHashes, arg0 + 1, this.bannedUserHashes, arg0, this.bannedCount - arg0);
 		}
 		if (this.bannedDisplayNames != null) {
-			System.arraycopy(this.bannedDisplayNames, pos + 1, this.bannedDisplayNames, pos, this.bannedCount - pos);
+			System.arraycopy(this.bannedDisplayNames, arg0 + 1, this.bannedDisplayNames, arg0, this.bannedCount - arg0);
 		}
 	}
 
 	@ObfuscatedName("kr.v(IBB)I")
-	public int doSetMemberRank(int pos, byte rank) {
-		if (rank == 126 || rank == 127) {
+	public int doSetMemberRank(int arg0, byte arg1) {
+		if (arg1 == 126 || arg1 == 127) {
 			return -1;
-		} else if (this.currentOwnerSlot == pos && (this.replacementOwnerSlot == -1 || this.affinedRanks[this.replacementOwnerSlot] < 125)) {
+		} else if (this.currentOwnerSlot == arg0 && (this.replacementOwnerSlot == -1 || this.affinedRanks[this.replacementOwnerSlot] < 125)) {
 			return -1;
-		} else if (this.affinedRanks[pos] == rank) {
+		} else if (this.affinedRanks[arg0] == arg1) {
 			return -1;
 		} else {
-			this.affinedRanks[pos] = rank;
+			this.affinedRanks[arg0] = arg1;
 			this.method5299();
-			return pos;
+			return arg0;
 		}
 	}
 
 	@ObfuscatedName("kr.o(IZB)I")
-	public int doSetMemberMuted(int pos, boolean muted) {
-		if (this.affinedMutes[pos] == muted) {
+	public int doSetMemberMuted(int arg0, boolean arg1) {
+		if (this.affinedMutes[arg0] == arg1) {
 			return -1;
 		} else {
-			this.affinedMutes[pos] = muted;
-			return pos;
+			this.affinedMutes[arg0] = arg1;
+			return arg0;
 		}
 	}
 
 	@ObfuscatedName("kr.s(IIIIB)I")
-	public int doSetMemberExtraInfo(int pos, int arg1, int arg2, int arg3) {
+	public int doSetMemberExtraInfo(int arg0, int arg1, int arg2, int arg3) {
 		int var5 = (0x1 << arg2) - 1;
 		int var6 = arg3 == 31 ? -1 : (0x1 << arg3 + 1) - 1;
 		int var7 = var6 ^ var5;
 		int var8 = arg1 << arg2;
 		int var9 = var8 & var7;
-		int var10 = this.extra[pos];
+		int var10 = this.extra[arg0];
 		if ((var10 & var7) == var9) {
 			return -1;
 		} else {
 			int var11 = var10 & ~var7;
-			this.extra[pos] = var11 | var9;
-			return pos;
+			this.extra[arg0] = var11 | var9;
+			return arg0;
 		}
 	}
 
 	@ObfuscatedName("kr.y(III)Z")
-	public boolean doExtraSettingInt(int uid, int setting) {
+	public boolean doExtraSettingInt(int arg0, int arg1) {
 		if (this.settingsMap == null) {
 			this.settingsMap = new HashTable(4);
 		} else {
-			Node node = this.settingsMap.get((long) uid);
-			if (node != null) {
-				if (node instanceof IntNode) {
-					IntNode settingValue = (IntNode) node;
-					if (settingValue.value == setting) {
+			Node var3 = this.settingsMap.get((long) arg0);
+			if (var3 != null) {
+				if (var3 instanceof IntNode) {
+					IntNode var4 = (IntNode) var3;
+					if (var4.value == arg1) {
 						return false;
 					}
-					settingValue.value = setting;
+					var4.value = arg1;
 					return true;
 				}
-				node.unlink();
+				var3.unlink();
 			}
 		}
-		this.settingsMap.put(new IntNode(setting), (long) uid);
+		this.settingsMap.put(new IntNode(arg1), (long) arg0);
 		return true;
 	}
 
 	@ObfuscatedName("kr.q(IIIII)Z")
-	public boolean doExtraSettingVarbit(int uid, int arg1, int arg2, int arg3) {
+	public boolean doExtraSettingVarbit(int arg0, int arg1, int arg2, int arg3) {
 		int var5 = (0x1 << arg2) - 1;
 		int var6 = arg3 == 31 ? -1 : (0x1 << arg3 + 1) - 1;
 		int var7 = var6 ^ var5;
@@ -420,87 +420,87 @@ public class ClanSettings {
 		if (this.settingsMap == null) {
 			this.settingsMap = new HashTable(4);
 		} else {
-			Node node = this.settingsMap.get((long) uid);
-			if (node != null) {
-				if (node instanceof IntNode) {
-					IntNode settingValue = (IntNode) node;
-					if ((settingValue.value & var7) == var9) {
+			Node var10 = this.settingsMap.get((long) arg0);
+			if (var10 != null) {
+				if (var10 instanceof IntNode) {
+					IntNode var11 = (IntNode) var10;
+					if ((var11.value & var7) == var9) {
 						return false;
 					}
-					settingValue.value &= ~var7;
-					settingValue.value |= var9;
+					var11.value &= ~var7;
+					var11.value |= var9;
 					return true;
 				}
-				node.unlink();
+				var10.unlink();
 			}
 		}
-		this.settingsMap.put(new IntNode(var9), (long) uid);
+		this.settingsMap.put(new IntNode(var9), (long) arg0);
 		return true;
 	}
 
 	@ObfuscatedName("kr.x(IJ)Z")
-	public boolean doExtraSettingLong(int uid, long setting) {
+	public boolean doExtraSettingLong(int arg0, long arg1) {
 		if (this.settingsMap == null) {
 			this.settingsMap = new HashTable(4);
 		} else {
-			Node node = this.settingsMap.get((long) uid);
-			if (node != null) {
-				if (node instanceof LongNode) {
-					LongNode settingValue = (LongNode) node;
-					if (settingValue.value == setting) {
+			Node var4 = this.settingsMap.get((long) arg0);
+			if (var4 != null) {
+				if (var4 instanceof LongNode) {
+					LongNode var5 = (LongNode) var4;
+					if (var5.value == arg1) {
 						return false;
 					}
-					settingValue.value = setting;
+					var5.value = arg1;
 					return true;
 				}
-				node.unlink();
+				var4.unlink();
 			}
 		}
-		this.settingsMap.put(new LongNode(setting), (long) uid);
+		this.settingsMap.put(new LongNode(arg1), (long) arg0);
 		return true;
 	}
 
 	@ObfuscatedName("kr.b(ILjava/lang/String;I)Z")
-	public boolean doExtraSettingString(int uid, String setting) {
-		if (setting == null) {
-			setting = "";
-		} else if (setting.length() > 80) {
-			setting = setting.substring(0, 80);
+	public boolean doExtraSettingString(int arg0, String arg1) {
+		if (arg1 == null) {
+			arg1 = "";
+		} else if (arg1.length() > 80) {
+			arg1 = arg1.substring(0, 80);
 		}
 		if (this.settingsMap == null) {
 			this.settingsMap = new HashTable(4);
 		} else {
-			Node node = this.settingsMap.get((long) uid);
-			if (node != null) {
-				if (node instanceof ObjectNode) {
-					ObjectNode settingValue = (ObjectNode) node;
-					if (settingValue.value instanceof String) {
-						if (setting.equals(settingValue.value)) {
+			Node var3 = this.settingsMap.get((long) arg0);
+			if (var3 != null) {
+				if (var3 instanceof ObjectNode) {
+					ObjectNode var4 = (ObjectNode) var3;
+					if (var4.value instanceof String) {
+						if (arg1.equals(var4.value)) {
 							return false;
 						}
-						settingValue.unlink();
-						this.settingsMap.put(new ObjectNode(setting), settingValue.nodeId);
+						var4.unlink();
+						this.settingsMap.put(new ObjectNode(arg1), var4.nodeId);
 						return true;
 					}
 				}
-				node.unlink();
+				var3.unlink();
 			}
 		}
-		this.settingsMap.put(new ObjectNode(setting), (long) uid);
+		this.settingsMap.put(new ObjectNode(arg1), (long) arg0);
 		return true;
 	}
 
 	@ObfuscatedName("kr.h(Lalw;B)V")
-	public void decode(Packet buf) {
-		int version = buf.g1();
-		if (version < 1 || version > 6) {
-			throw new RuntimeException("Unsupported ClanSettings version: " + version);
+	public void decode(Packet arg0) {
+		int var2 = arg0.g1();
+		if (var2 < 1 || var2 > 6) {
+			throw new RuntimeException("" + var2);
 		}
-		int info = buf.g1();
-		if ((info & 0x1) != 0) {
+		int var3 = arg0.g1();
+		if ((var3 & 0x1) != 0) {
 			this.useUserHashes = true;
 		}
-		if ((info & 0x2) != 0) {
+		if ((var3 & 0x2) != 0) {
 			this.useDisplayNames = true;
 		}
 		if (!this.useUserHashes) {
@@ -511,22 +511,22 @@ public class ClanSettings {
 			this.affinedDisplayNames = null;
 			this.bannedDisplayNames = null;
 		}
-		this.updateNum = buf.g4s();
-		this.field3096 = buf.g4s();
-		if (version <= 3 && this.field3096 != 0) {
+		this.updateNum = arg0.g4s();
+		this.field3096 = arg0.g4s();
+		if (var2 <= 3 && this.field3096 != 0) {
 			this.field3096 += 16912800;
 		}
-		this.memberCount = buf.g2();
-		this.bannedCount = buf.g1();
-		this.clanName = buf.gjstr();
-		if (version >= 4) {
-			buf.g4s();
+		this.memberCount = arg0.g2();
+		this.bannedCount = arg0.g1();
+		this.clanName = arg0.gjstr();
+		if (var2 >= 4) {
+			arg0.g4s();
 		}
-		this.allowUnaffined = buf.g1() == 1;
-		this.rankTalk = buf.g1b();
-		this.rankKick = buf.g1b();
-		this.rankLootshare = buf.g1b();
-		this.coinshare = buf.g1b();
+		this.allowUnaffined = arg0.g1() == 1;
+		this.rankTalk = arg0.g1b();
+		this.rankKick = arg0.g1b();
+		this.rankLootshare = arg0.g1b();
+		this.coinshare = arg0.g1b();
 		if (this.memberCount > 0) {
 			if (this.useUserHashes && (this.affinedUserHashes == null || this.affinedUserHashes.length < this.memberCount)) {
 				this.affinedUserHashes = new long[this.memberCount];
@@ -546,26 +546,26 @@ public class ClanSettings {
 			if (this.affinedMutes == null || this.affinedMutes.length < this.memberCount) {
 				this.affinedMutes = new boolean[this.memberCount];
 			}
-			for (int index = 0; index < this.memberCount; index++) {
+			for (int var4 = 0; var4 < this.memberCount; var4++) {
 				if (this.useUserHashes) {
-					this.affinedUserHashes[index] = buf.g8();
+					this.affinedUserHashes[var4] = arg0.g8();
 				}
 				if (this.useDisplayNames) {
-					this.affinedDisplayNames[index] = buf.fastgstr();
+					this.affinedDisplayNames[var4] = arg0.fastgstr();
 				}
-				this.affinedRanks[index] = buf.g1b();
-				if (version >= 2) {
-					this.extra[index] = buf.g4s();
+				this.affinedRanks[var4] = arg0.g1b();
+				if (var2 >= 2) {
+					this.extra[var4] = arg0.g4s();
 				}
-				if (version >= 5) {
-					this.affinedJoinedRunedays[index] = buf.g2();
+				if (var2 >= 5) {
+					this.affinedJoinedRunedays[var4] = arg0.g2();
 				} else {
-					this.affinedJoinedRunedays[index] = 0;
+					this.affinedJoinedRunedays[var4] = 0;
 				}
-				if (version >= 6) {
-					this.affinedMutes[index] = buf.g1() == 1;
+				if (var2 >= 6) {
+					this.affinedMutes[var4] = arg0.g1() == 1;
 				} else {
-					this.affinedMutes[index] = false;
+					this.affinedMutes[var4] = false;
 				}
 			}
 			this.method5299();
@@ -577,36 +577,36 @@ public class ClanSettings {
 			if (this.useDisplayNames && (this.bannedDisplayNames == null || this.bannedDisplayNames.length < this.bannedCount)) {
 				this.bannedDisplayNames = new String[this.bannedCount];
 			}
-			for (int index = 0; index < this.bannedCount; index++) {
+			for (int var5 = 0; var5 < this.bannedCount; var5++) {
 				if (this.useUserHashes) {
-					this.bannedUserHashes[index] = buf.g8();
+					this.bannedUserHashes[var5] = arg0.g8();
 				}
 				if (this.useDisplayNames) {
-					this.bannedDisplayNames[index] = buf.fastgstr();
+					this.bannedDisplayNames[var5] = arg0.fastgstr();
 				}
 			}
 		}
-		if (version < 3) {
+		if (var2 < 3) {
 			return;
 		}
-		int settingsCount = buf.g2();
-		if (settingsCount <= 0) {
+		int var6 = arg0.g2();
+		if (var6 <= 0) {
 			return;
 		}
-		this.settingsMap = new HashTable(settingsCount < 16 ? IntMath.bitceil(settingsCount) : 16);
-		while (settingsCount-- > 0) {
-			int setting = buf.g4s();
-			int uid = setting & 0x3FFFFFFF;
-			int type = setting >>> 30;
-			if (type == 0) {
-				int value = buf.g4s();
-				this.settingsMap.put(new IntNode(value), (long) uid);
-			} else if (type == 1) {
-				long value = buf.g8();
-				this.settingsMap.put(new LongNode(value), (long) uid);
-			} else if (type == 2) {
-				String value = buf.gjstr();
-				this.settingsMap.put(new ObjectNode(value), (long) uid);
+		this.settingsMap = new HashTable(var6 < 16 ? IntMath.bitceil(var6) : 16);
+		while (var6-- > 0) {
+			int var7 = arg0.g4s();
+			int var8 = var7 & 0x3FFFFFFF;
+			int var9 = var7 >>> 30;
+			if (var9 == 0) {
+				int var10 = arg0.g4s();
+				this.settingsMap.put(new IntNode(var10), (long) var8);
+			} else if (var9 == 1) {
+				long var11 = arg0.g8();
+				this.settingsMap.put(new LongNode(var11), (long) var8);
+			} else if (var9 == 2) {
+				String var13 = arg0.gjstr();
+				this.settingsMap.put(new ObjectNode(var13), (long) var8);
 			}
 		}
 	}

@@ -1,6 +1,5 @@
 package com.jagex.graphics.glx;
 
-import com.jagex.graphics.GpuVolumeTexture;
 import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
@@ -13,18 +12,46 @@ import com.jagex.game.client.PrimitiveType;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
-import com.jagex.graphics.*;
+import com.jagex.graphics.BaseTexture;
+import com.jagex.graphics.BlendMode;
+import com.jagex.graphics.EffectInterface;
+import com.jagex.graphics.EnvironmentSampler;
+import com.jagex.graphics.FrameBuffer;
+import com.jagex.graphics.GpuCubeTexture;
+import com.jagex.graphics.GpuIndexBuffer;
+import com.jagex.graphics.GpuShader;
+import com.jagex.graphics.GpuTexture;
+import com.jagex.graphics.GpuToolkit;
+import com.jagex.graphics.GpuVolumeTexture;
+import com.jagex.graphics.GraphicsDeletable;
+import com.jagex.graphics.Light;
+import com.jagex.graphics.MaterialList;
+import com.jagex.graphics.RendererException;
+import com.jagex.graphics.RendererInfo;
+import com.jagex.graphics.ShaderData;
+import com.jagex.graphics.Sprite;
+import com.jagex.graphics.Surface;
+import com.jagex.graphics.Texture2;
+import com.jagex.graphics.TextureCombineMode;
+import com.jagex.graphics.TextureCombiner;
+import com.jagex.graphics.TextureFormat;
+import com.jagex.graphics.TextureList;
+import com.jagex.graphics.TextureTramsformType;
+import com.jagex.graphics.VertexBuffer;
+import com.jagex.graphics.VertexDeclaration;
+import com.jagex.graphics.VertexDeclarationElement;
+import com.jagex.graphics.VertexDeclarationElementComponent;
+import com.jagex.graphics.VertexDeclaration_Sub1;
 import com.jagex.js5.Js5;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 import jaclib.memory.Stream;
 import jaggl.MapBuffer;
 import jaggl.OpenGL;
-
-import java.awt.*;
+import java.awt.Canvas;
 
 @ObfuscatedName("aqv")
-public final class GlxToolkit extends GpuToolkit {
+public class GlxToolkit extends GpuToolkit {
 
 	@ObfuscatedName("aqv.hx")
 	public OpenGL opengl;
@@ -252,70 +279,56 @@ public final class GlxToolkit extends GpuToolkit {
 					throw new RuntimeException("");
 				}
 			}
-
 			NativeLibraryConfig.osName.startsWith("mac");
 			this.field12027 = Stream.method61() ? 33639 : 5121;
-
 			if (this.field12001.indexOf("radeon") != -1 || this.field12037.indexOf("intel") != -1) {
-				int model = 0;
-
-				boolean isIntel = this.field12037.indexOf("intel") != -1;
+				int var18 = 0;
+				boolean var19 = this.field12037.indexOf("intel") != -1;
 				boolean var20 = false;
 				boolean var21 = false;
-
-				String[] parts = StringTools.split(this.field12001.replace('/', ' '), ' ');
-				for (int i = 0; i < parts.length; i++) {
-					String part = parts[i];
+				String[] var22 = StringTools.split(this.field12001.replace('/', ' '), ' ');
+				for (int var23 = 0; var23 < var22.length; var23++) {
+					String var24 = var22[var23];
 					try {
-						if (part.length() > 0) {
-							if (part.charAt(0) == 'x' && part.length() >= 3 && StringTools.method9836(part.substring(1, 3))) {
-								part = part.substring(1);
+						if (var24.length() > 0) {
+							if (var24.charAt(0) == 'x' && var24.length() >= 3 && StringTools.method9836(var24.substring(1, 3))) {
+								var24 = var24.substring(1);
 								var21 = true;
 							}
-
-							if (part.equals("hd")) {
-								var20 = true;
-							} else if (part.equals("xe")) {
-								// modern intel graphics
+							if (var24.equals("hd")) {
 								var20 = true;
 							} else {
-								if (part.startsWith("hd")) {
-									part = part.substring(2);
+								if (var24.startsWith("hd")) {
+									var24 = var24.substring(2);
 									var20 = true;
 								}
-
-								if (part.length() >= 4 && StringTools.method9836(part.substring(0, 4))) {
-									model = StringTools.parseInt(part.substring(0, 4));
+								if (var24.length() >= 4 && StringTools.method9836(var24.substring(0, 4))) {
+									var18 = StringTools.parseInt(var24.substring(0, 4));
 									break;
 								}
 							}
 						}
-					} catch (Exception ignored) {
+					} catch (Exception var31) {
 					}
 				}
-
-				if (!isIntel) {
+				if (!var19) {
 					if (!var21 && !var20) {
-						if (model >= 7000 && model <= 7999) {
+						if (var18 >= 7000 && var18 <= 7999) {
 							this.hasVertexBufferObject = false;
 						}
-
-						if (model >= 7000 && model <= 9250) {
+						if (var18 >= 7000 && var18 <= 9250) {
 							this.field10125 = false;
 						}
 					}
-
 					this.hasTextureRectangle &= this.opengl.method0("GL_ARB_half_float_pixel");
 					this.field12016 = true;
 				} else if (!var20) {
-					 this.hasFramebufferObject = false;
+					this.hasFramebufferObject = false;
 				}
 			}
-
 			if (!this.hasVertexBufferObject) {
 				throw new RuntimeException("");
 			}
-
 			try {
 				int[] var26 = new int[1];
 				OpenGL.glGenBuffersARB(1, var26, 0);

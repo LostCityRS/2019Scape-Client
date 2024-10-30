@@ -26,12 +26,12 @@ public class PlayerGroupMemberStatus implements SerializableEnum {
 
 	@ObfuscatedName("gv.e(I)[Lgv;")
 	public static PlayerGroupMemberStatus[] values() {
-		return new PlayerGroupMemberStatus[] {NOT_READY, READY, GAME_LOADING, TELEPORTED};
+		return new PlayerGroupMemberStatus[] { NOT_READY, READY, GAME_LOADING, TELEPORTED };
 	}
 
-	public PlayerGroupMemberStatus(int index, int serialID) {
-		this.index = index;
-		this.serialID = serialID;
+	public PlayerGroupMemberStatus(int arg0, int arg1) {
+		this.index = arg0;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("gv.n()I")

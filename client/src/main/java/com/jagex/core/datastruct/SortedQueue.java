@@ -1,8 +1,11 @@
 package com.jagex.core.datastruct;
 
 import deob.ObfuscatedName;
-
-import java.util.*;
+import java.util.AbstractQueue;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Map;
 
 @ObfuscatedName("att")
 public class SortedQueue extends AbstractQueue {

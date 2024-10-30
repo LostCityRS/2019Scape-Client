@@ -1,12 +1,12 @@
 package com.jagex.game.group;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.VarValue;
 import com.jagex.game.config.vartype.VarContainerSparse;
 import com.jagex.game.world.entity.PlayerStat;
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("gy")
@@ -45,45 +45,45 @@ public class PlayerGroupMember {
 	@ObfuscatedName("gy.r")
 	public VarContainerSparse variables;
 
-	public PlayerGroupMember(Packet buf, boolean hasUid, boolean hasDisplayName, PlayerGroupResourceProvider groupResourceProvider) {
-		if (hasUid) {
-			this.groupUid = buf.g8();
+	public PlayerGroupMember(Packet arg0, boolean arg1, boolean arg2, PlayerGroupResourceProvider arg3) {
+		if (arg1) {
+			this.groupUid = arg0.g8();
 		} else {
 			this.groupUid = -1L;
 		}
-		if (hasDisplayName) {
-			this.displayName = buf.fastgstr();
+		if (arg2) {
+			this.displayName = arg0.fastgstr();
 		}
-		int info = buf.g1();
-		this.members = (info & 0x1) != 0;
-		this.online = (info & 0x2) != 0;
-		this.stats = new PlayerStat[groupResourceProvider.getSkillDefaults().getSkillCount()];
-		int var6 = buf.g1();
+		int var5 = arg0.g1();
+		this.members = (var5 & 0x1) != 0;
+		this.online = (var5 & 0x2) != 0;
+		this.stats = new PlayerStat[arg3.getSkillDefaults().getSkillCount()];
+		int var6 = arg0.g1();
 		if (var6 > this.stats.length) {
 			throw new IllegalStateException("");
 		}
-		for (int index = 0; index < this.stats.length; index++) {
-			PlayerStat stat = this.stats[index] = new PlayerStat(groupResourceProvider.getSkillDefaults().getSkill(index), true);
-			if (index < var6) {
-				stat.setXP(buf.g4s());
+		for (int var7 = 0; var7 < this.stats.length; var7++) {
+			PlayerStat var8 = this.stats[var7] = new PlayerStat(arg3.getSkillDefaults().getSkill(var7), true);
+			if (var7 < var6) {
+				var8.setXP(arg0.g4s());
 			} else {
-				stat.setXP(0);
+				var8.setXP(0);
 			}
-			stat.setLevel(stat.getXPLevel());
+			var8.setLevel(var8.getXPLevel());
 		}
-		int varsCount = buf.g2();
-		this.vars = new VarContainerSparse(groupResourceProvider.getVarPlayerTypeList());
-		for (int index = 0; index < varsCount; index++) {
-			VarValue varValue = groupResourceProvider.getVarPlayerTypeList().decodeVarValue(buf);
-			this.vars.setVarValue(varValue.var, varValue.value);
+		int var9 = arg0.g2();
+		this.vars = new VarContainerSparse(arg3.getVarPlayerTypeList());
+		for (int var10 = 0; var10 < var9; var10++) {
+			VarValue var11 = arg3.getVarPlayerTypeList().decodeVarValue(arg0);
+			this.vars.setVarValue(var11.var, var11.value);
 		}
-		this.nodeId = buf.g2();
+		this.nodeId = arg0.g2();
 		if (this.nodeId == 65535) {
 			this.nodeId = -1;
 		}
-		this.rank = buf.g1();
-		this.status = (PlayerGroupMemberStatus) SerializableEnums.decode(PlayerGroupMemberStatus.values(), buf.g1());
-		this.team = buf.g1();
+		this.rank = arg0.g1();
+		this.status = (PlayerGroupMemberStatus) SerializableEnums.decode((SerializableEnum[]) PlayerGroupMemberStatus.values(), arg0.g1());
+		this.team = arg0.g1();
 	}
 
 	@ObfuscatedName("gy.e(I)Ljava/lang/String;")
@@ -97,8 +97,8 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.m(IB)V")
-	public void setRank(int rank) {
-		this.rank = rank;
+	public void setRank(int arg0) {
+		this.rank = arg0;
 	}
 
 	@ObfuscatedName("gy.k(B)I")
@@ -107,8 +107,8 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.f(II)V")
-	public void setNodeId(int nodeId) {
-		this.nodeId = nodeId;
+	public void setNodeId(int arg0) {
+		this.nodeId = arg0;
 	}
 
 	@ObfuscatedName("gy.w(B)Z")
@@ -117,8 +117,8 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.l(ZB)V")
-	public void setOnline(boolean online) {
-		this.online = online;
+	public void setOnline(boolean arg0) {
+		this.online = arg0;
 	}
 
 	@ObfuscatedName("gy.u(S)Lgv;")
@@ -127,8 +127,8 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.z(Lgv;I)V")
-	public void setStatus(PlayerGroupMemberStatus status) {
-		this.status = status;
+	public void setStatus(PlayerGroupMemberStatus arg0) {
+		this.status = arg0;
 	}
 
 	@ObfuscatedName("gy.p(B)I")
@@ -137,8 +137,8 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.d(II)V")
-	public void setTeam(int team) {
-		this.team = team;
+	public void setTeam(int arg0) {
+		this.team = arg0;
 	}
 
 	@ObfuscatedName("gy.c(I)J")
@@ -152,8 +152,8 @@ public class PlayerGroupMember {
 	}
 
 	@ObfuscatedName("gy.v(IB)Lxz;")
-	public PlayerStat getStat(int stat) {
-		return this.stats[stat];
+	public PlayerStat getStat(int arg0) {
+		return this.stats[arg0];
 	}
 
 	@ObfuscatedName("gy.o(Lgy;I)V")

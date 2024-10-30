@@ -16,35 +16,35 @@ public class LocPositionAdjustment {
 	@ObfuscatedName("vz.m")
 	public ScaleRotTrans field7539;
 
-	public LocPositionAdjustment(Packet buf) {
-		this(buf, false);
+	public LocPositionAdjustment(Packet arg0) {
+		this(arg0, false);
 	}
 
-	public LocPositionAdjustment(Packet buf, boolean arg1) {
-		this(buf, arg1, true);
+	public LocPositionAdjustment(Packet arg0, boolean arg1) {
+		this(arg0, arg1, true);
 	}
 
-	public LocPositionAdjustment(Packet buf, int arg1, boolean arg2) {
-		this(buf, arg1, arg2, true);
+	public LocPositionAdjustment(Packet arg0, int arg1, boolean arg2) {
+		this(arg0, arg1, arg2, true);
 	}
 
-	public LocPositionAdjustment(Packet buf, boolean arg1, boolean arg2) {
-		this(buf, buf.g1(), arg1, arg2);
+	public LocPositionAdjustment(Packet arg0, boolean arg1, boolean arg2) {
+		this(arg0, arg0.g1(), arg1, arg2);
 	}
 
-	public LocPositionAdjustment(Packet buf, int info, boolean arg2, boolean arg3) {
-		boolean var5 = (info & 0x80) != 0;
+	public LocPositionAdjustment(Packet arg0, int arg1, boolean arg2, boolean arg3) {
+		boolean var5 = (arg1 & 0x80) != 0;
 		if (arg2) {
-			int var6 = buf.g1();
-			this.shape = info & 0x7F;
+			int var6 = arg0.g1();
+			this.shape = arg1 & 0x7F;
 			this.angle = var6;
 		} else {
-			this.shape = info >> 2 & 0x1F;
-			this.angle = info & 0x3;
+			this.shape = arg1 >> 2 & 0x1F;
+			this.angle = arg1 & 0x3;
 		}
 		this.field7539 = null;
 		if (var5) {
-			this.field7539 = new ScaleRotTrans(buf, arg3);
+			this.field7539 = new ScaleRotTrans(arg0, arg3);
 		}
 	}
 }

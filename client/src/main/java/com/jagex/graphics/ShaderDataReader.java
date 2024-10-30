@@ -11,31 +11,31 @@ public class ShaderDataReader {
 	@ObfuscatedName("hw.n")
 	public int pos;
 
-	public ShaderDataReader(byte[] bytes) {
-		this.bytes = bytes;
+	public ShaderDataReader(byte[] arg0) {
+		this.bytes = arg0;
 		this.pos = 0;
 	}
 
 	@ObfuscatedName("hw.e(I)I")
 	public int g2() {
-		short value = 0;
-		for (int index = 0; index < 2; index++) {
-			value = (short) (value | (this.bytes[++this.pos - 1] & 0xFF) << index * 8);
+		short var1 = 0;
+		for (int var2 = 0; var2 < 2; var2++) {
+			var1 = (short) (var1 | (this.bytes[++this.pos - 1] & 0xFF) << var2 * 8);
 		}
-		return value;
+		return var1;
 	}
 
 	@ObfuscatedName("hw.n(I)Ljava/lang/String;")
 	public String gstr() {
-		int length = this.g2();
-		if (length == -1) {
+		int var1 = this.g2();
+		if (var1 == -1) {
 			return null;
-		} else if (length > 256) {
+		} else if (var1 > 256) {
 			throw new ShaderDataReaderException();
 		} else {
-			String value = new String(this.bytes, this.pos, length);
-			this.pos += length;
-			return value;
+			String var2 = new String(this.bytes, this.pos, var1);
+			this.pos += var1;
+			return var2;
 		}
 	}
 }

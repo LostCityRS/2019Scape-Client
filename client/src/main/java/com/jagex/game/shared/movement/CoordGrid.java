@@ -18,27 +18,27 @@ public class CoordGrid {
 		this.level = -1;
 	}
 
-	public CoordGrid(int level, int x, int z) {
-		this.level = level;
-		this.x = x;
-		this.z = z;
+	public CoordGrid(int arg0, int arg1, int arg2) {
+		this.level = arg0;
+		this.x = arg1;
+		this.z = arg2;
 	}
 
-	public CoordGrid(int packed) {
-		if (packed == -1) {
+	public CoordGrid(int arg0) {
+		if (arg0 == -1) {
 			this.level = -1;
 		} else {
-			this.level = packed >> 28 & 0x3;
-			this.x = packed >> 14 & 0x3FFF;
-			this.z = packed & 0x3FFF;
+			this.level = arg0 >> 28 & 0x3;
+			this.x = arg0 >> 14 & 0x3FFF;
+			this.z = arg0 & 0x3FFF;
 		}
 	}
 
 	@ObfuscatedName("ve.e(Lakt;B)V")
-	public void fromFine(CoordFine fine) {
-		this.level = fine.level;
-		this.x = fine.x >> 9;
-		this.z = fine.z >> 9;
+	public void fromFine(CoordFine arg0) {
+		this.level = arg0.level;
+		this.x = arg0.x >> 9;
+		this.z = arg0.z >> 9;
 	}
 
 	@ObfuscatedName("ve.n(S)I")
@@ -46,27 +46,27 @@ public class CoordGrid {
 		return this.level << 28 | this.x << 14 | this.z;
 	}
 
-	public boolean equals(Object other) {
-		if (other == this) {
+	public boolean equals(Object arg0) {
+		if (arg0 == this) {
 			return true;
-		} else if (other instanceof CoordGrid) {
-			return this.matches((CoordGrid) other);
+		} else if (arg0 instanceof CoordGrid) {
+			return this.matches((CoordGrid) arg0);
 		} else {
 			return false;
 		}
 	}
 
 	@ObfuscatedName("ve.m(Lve;I)Z")
-	public boolean matches(CoordGrid other) {
-		return this.matches(other.level, other.x, other.z);
+	public boolean matches(CoordGrid arg0) {
+		return this.matches(arg0.level, arg0.x, arg0.z);
 	}
 
 	@ObfuscatedName("ve.k(IIII)Z")
-	public boolean matches(int level, int x, int z) {
-		if (this.level != level) {
+	public boolean matches(int arg0, int arg1, int arg2) {
+		if (this.level != arg0) {
 			return false;
-		} else if (this.x == x) {
-			return this.z == z;
+		} else if (this.x == arg1) {
+			return this.z == arg2;
 		} else {
 			return false;
 		}
@@ -81,8 +81,7 @@ public class CoordGrid {
 	}
 
 	@ObfuscatedName("ve.f(Ljava/lang/String;I)Ljava/lang/String;")
-	public String debug(String separator) {
-		// e.g. 3222,3222,0 -> 0_50_50_22_22
-		return this.level + separator + (this.x >> 6) + separator + (this.z >> 6) + separator + (this.x & 0x3F) + separator + (this.z & 0x3F);
+	public String debug(String arg0) {
+		return this.level + arg0 + (this.x >> 6) + arg0 + (this.z >> 6) + arg0 + (this.x & 0x3F) + arg0 + (this.z & 0x3F);
 	}
 }

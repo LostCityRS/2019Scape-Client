@@ -2,10 +2,10 @@ package com.jagex.graphics.dx;
 
 import com.jagex.graphics.VertexBuffer;
 import deob.ObfuscatedName;
+import jagdx.HRESULT;
 import jagdx.IDirect3DDevice;
 import jagdx.IDirect3DVertexBuffer;
 import jagdx.IUnknown;
-import jagdx.HRESULT;
 
 @ObfuscatedName("om")
 public class DxVertexBuffer implements VertexBuffer {

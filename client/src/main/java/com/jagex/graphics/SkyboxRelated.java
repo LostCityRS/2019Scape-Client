@@ -1,5 +1,6 @@
 package com.jagex.graphics;
 
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.math.IntMath;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;

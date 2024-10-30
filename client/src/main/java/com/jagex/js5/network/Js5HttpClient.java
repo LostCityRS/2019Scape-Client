@@ -4,7 +4,6 @@ import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ByteArrayPool;
 import com.jagex.core.utils.MonotonicTime;
 import deob.ObfuscatedName;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -39,10 +38,10 @@ public class Js5HttpClient {
 	@ObfuscatedName("pu.c")
 	public boolean field4468 = false;
 
-	public Js5HttpClient(String host, int port, int game) {
-		this.host = host;
-		this.port = port;
-		this.game = game;
+	public Js5HttpClient(String arg0, int arg1, int arg2) {
+		this.host = arg0;
+		this.port = arg1;
+		this.game = arg2;
 	}
 
 	@ObfuscatedName("pu.e(I)Z")
@@ -56,47 +55,40 @@ public class Js5HttpClient {
 	}
 
 	@ObfuscatedName("pu.m(IIBZIII)Latb;")
-	public Js5HttpRequest sendHttpRequest(int archive, int group, byte padding, boolean urgent, int crc, int version) {
-		if (archive < 0 || group < 0) {
-			throw new RuntimeException(archive + "," + group);
-		}
-
-		if (this.isPendingRequestsFull()) {
+	public Js5HttpRequest sendHttpRequest(int arg0, int arg1, byte arg2, boolean arg3, int arg4, int arg5) {
+		if (arg0 < 0 || arg1 < 0) {
+			throw new RuntimeException(arg0 + "," + arg1);
+		} else if (this.isPendingRequestsFull()) {
 			return null;
+		} else {
+			boolean var7 = arg0 == 255 && arg1 == 255;
+			if (!this.field4468 && !var7) {
+				return null;
+			} else if (this.lastException + 10000L >= MonotonicTime.get()) {
+				return null;
+			} else {
+				Object var8 = null;
+				String var9;
+				if (var7) {
+					var9 = "&cb=" + MonotonicTime.get();
+				} else {
+					var9 = "&c=" + arg4 + "&v=" + arg5;
+				}
+				URL var10;
+				try {
+					var10 = new URL("http", this.host, this.port, "/ms?m=" + this.game + "&a=" + arg0 + "&g=" + arg1 + var9);
+				} catch (MalformedURLException var14) {
+					return null;
+				}
+				Js5HttpRequest var12 = new Js5HttpRequest(arg2);
+				var12.urgent = arg3;
+				this.pendingRequests++;
+				Future var13 = this.executor.submit(new Js5HttpClient.Js5HTTPClient_Task(var10, var12));
+				var12.setFutureResponse(var13);
+				return var12;
+			}
 		}
-
-        boolean isMasterIndex = archive == 255 && group == 255;
-        if (!this.field4468 && !isMasterIndex) {
-            return null;
-        }
-
-		if (this.lastException + 10000L >= MonotonicTime.get()) {
-            return null;
-        }
-
-        Object var8 = null;
-        String file;
-        if (isMasterIndex) {
-            file = "&cb=" + MonotonicTime.get();
-        } else {
-            file = "&c=" + crc + "&v=" + version;
-        }
-
-        URL url;
-        try {
-            url = new URL("http", this.host, this.port, "/ms?m=" + this.game + "&a=" + archive + "&g=" + group + file);
-        } catch (MalformedURLException var14) {
-            return null;
-        }
-
-        Js5HttpRequest newRequest = new Js5HttpRequest(padding);
-        newRequest.urgent = urgent;
-        this.pendingRequests++;
-
-        Future future = this.executor.submit(new Js5HTTPClient_Task(this, url, newRequest));
-        newRequest.setFutureResponse(future);
-        return newRequest;
-    }
+	}
 
 	@ObfuscatedName("pu.k(I)V")
 	public void removePendingRequest() {
@@ -108,17 +100,69 @@ public class Js5HttpClient {
 		this.executor.shutdown();
 	}
 
-	// line 75
 	@ObfuscatedName("pu.w(ZB)V")
 	public void method7053(boolean arg0) {
 		this.field4468 = arg0;
 	}
 
-	@ObfuscatedName("pv")
-	public static class Js5HTTPClient_Task implements Callable {
+	@ObfuscatedName("pr")
+	public class Js5HTTPClientResponse {
 
-		// $FF: synthetic field
-		public final Js5HttpClient this$0;
+		@ObfuscatedName("pr.e")
+		public byte[] response = null;
+
+		public Js5HTTPClientResponse(InputStream arg1, Js5HttpRequest arg2, URL arg3) {
+			if (arg1 != null) {
+				short var5 = 10240;
+				Packet var6 = new Packet(var5, true);
+				int var7 = 0;
+				byte[] var8 = ByteArrayPool.alloc(1024);
+				while (var7 >= 0) {
+					try {
+						var7 = arg1.read(var8);
+					} catch (IOException var18) {
+						var18.printStackTrace();
+						var7 = -1;
+					}
+					if (var7 > 0) {
+						if (var6.pos + var7 >= var6.data.length) {
+							int var10 = var6.data.length + 10240;
+							byte[] var11 = ByteArrayPool.alloc(var10, true);
+							System.arraycopy(var6.data, 0, var11, 0, var6.pos);
+							ByteArrayPool.release(var6.data);
+							var6.data = var11;
+						}
+						var6.pdata(var8, 0, var7);
+					}
+				}
+				for (int var12 = 0; var12 < arg2.padding; var12++) {
+					var6.p1(0);
+				}
+				byte[] var13 = new byte[var6.pos];
+				System.arraycopy(var6.data, 0, var13, 0, var6.pos);
+				var6.release();
+				Object var14 = null;
+				ByteArrayPool.release(var8);
+				Object var15 = null;
+				this.response = var13;
+				try {
+					arg1.close();
+				} catch (IOException var17) {
+					var17.printStackTrace();
+				}
+			}
+			arg2.incomplete = false;
+			Js5HttpClient.this.removePendingRequest();
+		}
+
+		@ObfuscatedName("pr.e(I)[B")
+		public byte[] getResponseBytes() {
+			return this.response;
+		}
+	}
+
+	@ObfuscatedName("pv")
+	public class Js5HTTPClient_Task implements Callable {
 
 		@ObfuscatedName("pv.e")
 		public URL url;
@@ -126,9 +170,7 @@ public class Js5HttpClient {
 		@ObfuscatedName("pv.n")
 		public Js5HttpRequest request;
 
-		// line 82
-		public Js5HTTPClient_Task(Js5HttpClient arg0, URL arg1, Js5HttpRequest arg2) {
-			this.this$0 = arg0;
+		public Js5HTTPClient_Task(URL arg1, Js5HttpRequest arg2) {
 			this.url = arg1;
 			this.request = arg2;
 		}
@@ -137,78 +179,14 @@ public class Js5HttpClient {
 			URLConnection var1 = this.url.openConnection();
 			var1.setConnectTimeout(10000);
 			var1.setReadTimeout(60000);
-
 			boolean var2 = true;
 			try {
 				var1.connect();
 			} catch (IOException var4) {
-				this.this$0.lastException = MonotonicTime.get();
+				Js5HttpClient.this.lastException = MonotonicTime.get();
 				var2 = false;
 			}
-
-			return new Js5HTTPClientResponse(this.this$0, var2 ? var1.getInputStream() : null, this.request, this.url);
-		}
-	}
-
-	@ObfuscatedName("pr")
-	public static class Js5HTTPClientResponse {
-
-		// $FF: synthetic field
-		public final Js5HttpClient this$0;
-
-		@ObfuscatedName("pr.e")
-		public byte[] response;
-
-		// line 106
-		public Js5HTTPClientResponse(Js5HttpClient httpclient, InputStream in, Js5HttpRequest request, URL arg3) {
-			this.this$0 = httpclient;
-			this.response = null;
-			if (in != null) {
-				short var5 = 10240;
-				Packet buf = new Packet(var5, true);
-				int length = 0;
-				byte[] alloc = ByteArrayPool.alloc(1024);
-				while (length >= 0) {
-					try {
-						length = in.read(alloc);
-					} catch (IOException ioException) {
-						ioException.printStackTrace();
-						length = -1;
-					}
-					if (length > 0) {
-						if (buf.pos + length >= buf.data.length) {
-							int size = buf.data.length + 10240;
-							byte[] bytes = ByteArrayPool.alloc(size, true);
-							System.arraycopy(buf.data, 0, bytes, 0, buf.pos);
-							ByteArrayPool.release(buf.data);
-							buf.data = bytes;
-						}
-						buf.pdata(alloc, 0, length);
-					}
-				}
-				for (int index = 0; index < request.padding; index++) {
-					buf.p1(0);
-				}
-				byte[] bytes = new byte[buf.pos];
-				System.arraycopy(buf.data, 0, bytes, 0, buf.pos);
-				buf.release();
-				Object var14 = null;
-				ByteArrayPool.release(alloc);
-				Object var15 = null;
-				this.response = bytes;
-				try {
-					in.close();
-				} catch (IOException ioException) {
-					ioException.printStackTrace();
-				}
-			}
-			request.incomplete = false;
-			httpclient.removePendingRequest();
-		}
-
-		@ObfuscatedName("pr.e(I)[B")
-		public byte[] getResponseBytes() {
-			return this.response;
+			return Js5HttpClient.this.new Js5HTTPClientResponse(var2 ? var1.getInputStream() : null, this.request, this.url);
 		}
 	}
 }

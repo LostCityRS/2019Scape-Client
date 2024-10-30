@@ -3,7 +3,11 @@ package com.jagex.game.config.effectanimtype;
 import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
-import com.jagex.graphics.*;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.FloorModel;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelUnlit;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yy")
@@ -63,96 +67,96 @@ public class EffectAnimType implements ConfigType {
 	@ObfuscatedName("yy.x")
 	public int hillskew_value = -1;
 
-	public EffectAnimType(int id, EffectAnimTypeFactory factory) {
-		this.id = id;
-		this.factory = factory;
+	public EffectAnimType(int arg0, EffectAnimTypeFactory arg1) {
+		this.id = arg0;
+		this.factory = arg1;
 	}
 
 	@ObfuscatedName("yy.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("yy.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			this.model = buf.gSmart2or4s();
-		} else if (code == 2) {
-			this.anim = buf.gSmart2or4s();
-		} else if (code == 4) {
-			this.resizeh = buf.g2();
-		} else if (code == 5) {
-			this.resizev = buf.g2();
-		} else if (code == 6) {
-			this.orientation = buf.g2();
-		} else if (code == 7) {
-			this.ambient = buf.g1();
-		} else if (code == 8) {
-			this.contrast = buf.g1();
-		} else if (code == 10) {
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			this.model = arg0.gSmart2or4s();
+		} else if (arg1 == 2) {
+			this.anim = arg0.gSmart2or4s();
+		} else if (arg1 == 4) {
+			this.resizeh = arg0.g2();
+		} else if (arg1 == 5) {
+			this.resizev = arg0.g2();
+		} else if (arg1 == 6) {
+			this.orientation = arg0.g2();
+		} else if (arg1 == 7) {
+			this.ambient = arg0.g1();
+		} else if (arg1 == 8) {
+			this.contrast = arg0.g1();
+		} else if (arg1 == 10) {
 			this.field8261 = true;
-		} else if (code == 9) {
+		} else if (arg1 == 9) {
 			this.hillskew_mode = 3;
 			this.hillskew_value = 8224;
-		} else if (code == 15) {
+		} else if (arg1 == 15) {
 			this.hillskew_mode = 3;
-			this.hillskew_value = buf.g2();
-		} else if (code == 16) {
+			this.hillskew_value = arg0.g2();
+		} else if (arg1 == 16) {
 			this.hillskew_mode = 3;
-			this.hillskew_value = buf.g4s();
-		} else if (code == 40) {
-			int length = buf.g1();
-			this.recol_s = new short[length];
-			this.recol_d = new short[length];
-			for (int index = 0; index < length; index++) {
-				this.recol_s[index] = (short) buf.g2();
-				this.recol_d[index] = (short) buf.g2();
+			this.hillskew_value = arg0.g4s();
+		} else if (arg1 == 40) {
+			int var3 = arg0.g1();
+			this.recol_s = new short[var3];
+			this.recol_d = new short[var3];
+			for (int var4 = 0; var4 < var3; var4++) {
+				this.recol_s[var4] = (short) arg0.g2();
+				this.recol_d[var4] = (short) arg0.g2();
 			}
-		} else if (code == 41) {
-			int length = buf.g1();
-			this.retex_s = new short[length];
-			this.retex_d = new short[length];
-			for (int index = 0; index < length; index++) {
-				this.retex_s[index] = (short) buf.g2();
-				this.retex_d[index] = (short) buf.g2();
+		} else if (arg1 == 41) {
+			int var5 = arg0.g1();
+			this.retex_s = new short[var5];
+			this.retex_d = new short[var5];
+			for (int var6 = 0; var6 < var5; var6++) {
+				this.retex_s[var6] = (short) arg0.g2();
+				this.retex_d[var6] = (short) arg0.g2();
 			}
-		} else if (code == 44) {
-			int var7 = buf.g2();
-			int length = 0;
+		} else if (arg1 == 44) {
+			int var7 = arg0.g2();
+			int var8 = 0;
 			for (int var9 = var7; var9 > 0; var9 >>= 0x1) {
-				length++;
+				var8++;
 			}
-			this.recolindices = new byte[length];
+			this.recolindices = new byte[var8];
 			byte var10 = 0;
-			for (int index = 0; index < length; index++) {
-				if ((var7 & 0x1 << index) > 0) {
-					this.recolindices[index] = var10++;
+			for (int var11 = 0; var11 < var8; var11++) {
+				if ((var7 & 0x1 << var11) > 0) {
+					this.recolindices[var11] = var10++;
 				} else {
-					this.recolindices[index] = -1;
+					this.recolindices[var11] = -1;
 				}
 			}
-		} else if (code == 45) {
-			int var12 = buf.g2();
-			int length = 0;
+		} else if (arg1 == 45) {
+			int var12 = arg0.g2();
+			int var13 = 0;
 			for (int var14 = var12; var14 > 0; var14 >>= 0x1) {
-				length++;
+				var13++;
 			}
-			this.retexindices = new byte[length];
+			this.retexindices = new byte[var13];
 			byte var15 = 0;
-			for (int index = 0; index < length; index++) {
-				if ((var12 & 0x1 << index) > 0) {
-					this.retexindices[index] = var15++;
+			for (int var16 = 0; var16 < var13; var16++) {
+				if ((var12 & 0x1 << var16) > 0) {
+					this.retexindices[var16] = var15++;
 				} else {
-					this.retexindices[index] = -1;
+					this.retexindices[var16] = -1;
 				}
 			}
-		} else if (code == 46) {
+		} else if (arg1 == 46) {
 		}
 	}
 

@@ -36,33 +36,29 @@ public class VorbisResidue {
 	public int[][] field2023;
 
 	@ObfuscatedName("gi.e(Lhk;)V")
-	public void unpack(VorbisSound opb) {
-		this.opb = opb;
+	public void unpack(VorbisSound arg0) {
+		this.opb = arg0;
 		this.field2019 = this.opb.read(16);
 		this.begin = this.opb.read(24);
 		this.end = this.opb.read(24);
 		this.grouping = this.opb.read(24) + 1;
 		this.partitions = this.opb.read(6) + 1;
 		this.groupbook = this.opb.read(8);
-
 		if (this.secondstages == null || this.secondstages.length != this.partitions) {
 			this.secondstages = new int[this.partitions];
 		}
-
-		for (int j = 0; j < this.partitions; j++) {
+		for (int var2 = 0; var2 < this.partitions; var2++) {
 			int var3 = 0;
-			int cascade = this.opb.read(3);
+			int var4 = this.opb.read(3);
 			boolean var5 = this.opb.readBit() != 0;
 			if (var5) {
 				var3 = this.opb.read(5);
 			}
-			this.secondstages[j] = var3 << 3 | cascade;
+			this.secondstages[var2] = var3 << 3 | var4;
 		}
-
 		if (this.booklist == null || this.partitions * 8 != this.booklist.length) {
 			this.booklist = new int[this.partitions * 8];
 		}
-
 		for (int var6 = 0; var6 < this.partitions * 8; var6++) {
 			this.booklist[var6] = (this.secondstages[var6 >> 3] & 0x1 << (var6 & 0x7)) == 0 ? -1 : this.opb.read(8);
 		}

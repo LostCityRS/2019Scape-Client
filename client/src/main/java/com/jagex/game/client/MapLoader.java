@@ -237,14 +237,14 @@ public class MapLoader {
 	@ObfuscatedName("qg.cx")
 	public int[] field4589 = null;
 
-	public MapLoader(Scene scene, int levels, int maxTileX, int maxTileZ, boolean underwater, FloorOverlayTypeList overlays, FloorUnderlayTypeList underlays, SceneLevelTileFlags arg7) {
-		this.scene = scene;
-		this.levels = levels;
-		this.maxTileX = maxTileX;
-		this.maxTileZ = maxTileZ;
-		this.underwater = underwater;
-		this.overlays = overlays;
-		this.underlays = underlays;
+	public MapLoader(Scene arg0, int arg1, int arg2, int arg3, boolean arg4, FloorOverlayTypeList arg5, FloorUnderlayTypeList arg6, SceneLevelTileFlags arg7) {
+		this.scene = arg0;
+		this.levels = arg1;
+		this.maxTileX = arg2;
+		this.maxTileZ = arg3;
+		this.underwater = arg4;
+		this.overlays = arg5;
+		this.underlays = arg6;
 		this.sceneLevelTileFlags = arg7;
 		this.levelTileUnderlayIds = new short[this.levels][this.maxTileX][this.maxTileZ];
 		this.levelTileOverlayIds = new short[this.levels][this.maxTileX][this.maxTileZ];
@@ -320,71 +320,71 @@ public class MapLoader {
 	}
 
 	@ObfuscatedName("qg.f(Lalw;IIIIB)V")
-	public final void readNormalLandscape(Packet buf, int arg1, int arg2, int arg3, int arg4) {
+	public final void readNormalLandscape(Packet arg0, int arg1, int arg2, int arg3, int arg4) {
 		int var6 = arg1 + arg3;
 		int var7 = arg2 + arg4;
-		for (int l = 0; l < this.levels; l++) {
-			for (int x = 0; x < 64; x++) {
-				for (int z = 0; z < 64; z++) {
-					this.readLandscape(buf, l, arg1 + x, arg2 + z, 0, 0, var6 + x, var7 + z, 0, false);
+		for (int var8 = 0; var8 < this.levels; var8++) {
+			for (int var9 = 0; var9 < 64; var9++) {
+				for (int var10 = 0; var10 < 64; var10++) {
+					this.readLandscape(arg0, var8, arg1 + var9, arg2 + var10, 0, 0, var6 + var9, var7 + var10, 0, false);
 				}
 			}
 		}
 	}
 
 	@ObfuscatedName("qg.w(Lalw;IIIIIIII)V")
-	public final void readRegionLandscape(Packet buf, int level, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
+	public final void readRegionLandscape(Packet arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		int var9 = (arg5 & 0x7) * 8;
 		int var10 = (arg6 & 0x7) * 8;
 		int var11 = (arg5 & 0xFFFFFFF8) << 3;
 		int var12 = (arg6 & 0xFFFFFFF8) << 3;
-		byte xOffset = 0;
-		byte zOffset = 0;
+		byte var13 = 0;
+		byte var14 = 0;
 		if (arg7 == 1) {
-			zOffset = 1;
+			var14 = 1;
 		} else if (arg7 == 2) {
-			xOffset = 1;
-			zOffset = 1;
+			var13 = 1;
+			var14 = 1;
 		} else if (arg7 == 3) {
-			xOffset = 1;
+			var13 = 1;
 		}
-		for (int l = 0; l < this.levels; l++) {
-			for (int x = 0; x < 64; x++) {
-				for (int z = 0; z < 64; z++) {
-					if (arg4 == l && x >= var9 && x <= var9 + 8 && z >= var10 && z <= var10 + 8) {
-						int originX;
-						int originZ;
-						if (var9 + 8 == x || var10 + 8 == z) {
+		for (int var15 = 0; var15 < this.levels; var15++) {
+			for (int var16 = 0; var16 < 64; var16++) {
+				for (int var17 = 0; var17 < 64; var17++) {
+					if (arg4 == var15 && var16 >= var9 && var16 <= var9 + 8 && var17 >= var10 && var17 <= var10 + 8) {
+						int var18;
+						int var19;
+						if (var9 + 8 == var16 || var10 + 8 == var17) {
 							if (arg7 == 0) {
-								originX = x - var9 + arg2;
-								originZ = z - var10 + arg3;
+								var18 = var16 - var9 + arg2;
+								var19 = var17 - var10 + arg3;
 							} else if (arg7 == 1) {
-								originX = z - var10 + arg2;
-								originZ = arg3 + 8 - (x - var9);
+								var18 = var17 - var10 + arg2;
+								var19 = arg3 + 8 - (var16 - var9);
 							} else if (arg7 == 2) {
-								originX = arg2 + 8 - (x - var9);
-								originZ = arg3 + 8 - (z - var10);
+								var18 = arg2 + 8 - (var16 - var9);
+								var19 = arg3 + 8 - (var17 - var10);
 							} else {
-								originX = arg2 + 8 - (z - var10);
-								originZ = x - var9 + arg3;
+								var18 = arg2 + 8 - (var17 - var10);
+								var19 = var16 - var9 + arg3;
 							}
-							this.readLandscape(buf, level, originX, originZ, 0, 0, var11 + x, var12 + z, 0, true);
+							this.readLandscape(arg0, arg1, var18, var19, 0, 0, var11 + var16, var12 + var17, 0, true);
 						} else {
-							originX = arg2 + MapCoordUtil.method14888(x & 0x7, z & 0x7, arg7);
-							originZ = arg3 + MapCoordUtil.method14756(x & 0x7, z & 0x7, arg7);
-							this.readLandscape(buf, level, originX, originZ, xOffset, zOffset, var11 + x, var12 + z, arg7, false);
+							var18 = arg2 + MapCoordUtil.method14888(var16 & 0x7, var17 & 0x7, arg7);
+							var19 = arg3 + MapCoordUtil.method14756(var16 & 0x7, var17 & 0x7, arg7);
+							this.readLandscape(arg0, arg1, var18, var19, var13, var14, var11 + var16, var12 + var17, arg7, false);
 						}
-						if (x == 63 || z == 63) {
+						if (var16 == 63 || var17 == 63) {
 							byte var20 = 1;
-							if (x == 63 && z == 63) {
+							if (var16 == 63 && var17 == 63) {
 								var20 = 3;
 							}
 							for (int var21 = 0; var21 < var20; var21++) {
-								int var22 = x;
-								int var23 = z;
+								int var22 = var16;
+								int var23 = var17;
 								if (var21 == 0) {
-									var22 = x == 63 ? 64 : x;
-									var23 = z == 63 ? 64 : z;
+									var22 = var16 == 63 ? 64 : var16;
+									var23 = var17 == 63 ? 64 : var17;
 								} else if (var21 == 1) {
 									var22 = 64;
 								} else if (var21 == 2) {
@@ -406,12 +406,12 @@ public class MapLoader {
 									var25 = var22 - var9 + arg3;
 								}
 								if (var24 >= 0 && var24 < this.maxTileX && var25 >= 0 && var25 < this.maxTileZ) {
-									this.levelHeightmap[level][var24][var25] = this.levelHeightmap[level][xOffset + originX][zOffset + originZ];
+									this.levelHeightmap[arg1][var24][var25] = this.levelHeightmap[arg1][var13 + var18][var14 + var19];
 								}
 							}
 						}
 					} else {
-						this.readLandscape(buf, 0, -1, -1, 0, 0, 0, 0, 0, false);
+						this.readLandscape(arg0, 0, -1, -1, 0, 0, 0, 0, 0, false);
 					}
 				}
 			}
@@ -419,81 +419,81 @@ public class MapLoader {
 	}
 
 	@ObfuscatedName("qg.l(Lalw;IIIIIIIIZB)V")
-	public final void readLandscape(Packet buf, int level, int originX, int originZ, int xOffset, int zOffset, int arg6, int arg7, int arg8, boolean arg9) {
+	public final void readLandscape(Packet arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9) {
 		if (arg8 == 1) {
-			zOffset = 1;
+			arg5 = 1;
 		} else if (arg8 == 2) {
-			xOffset = 1;
-			zOffset = 1;
+			arg4 = 1;
+			arg5 = 1;
 		} else if (arg8 == 3) {
-			xOffset = 1;
+			arg4 = 1;
 		}
-		if (originX < 0 || originX >= this.maxTileX || originZ < 0 || originZ >= this.maxTileZ) {
-			int opcode = buf.g1();
-			if ((opcode & 0x1) != 0) {
-				buf.g1();
-				buf.gSmart1or2();
+		if (arg2 < 0 || arg2 >= this.maxTileX || arg3 < 0 || arg3 >= this.maxTileZ) {
+			int var14 = arg0.g1();
+			if ((var14 & 0x1) != 0) {
+				arg0.g1();
+				arg0.gSmart1or2();
 			}
-			if ((opcode & 0x2) != 0) {
-				buf.pos++;
+			if ((var14 & 0x2) != 0) {
+				arg0.pos++;
 			}
-			if ((opcode & 0x4) != 0) {
-				buf.gSmart1or2();
+			if ((var14 & 0x4) != 0) {
+				arg0.gSmart1or2();
 			}
-			if ((opcode & 0x8) != 0) {
-				buf.g1();
+			if ((var14 & 0x8) != 0) {
+				arg0.g1();
 			}
 			return;
 		}
 		if (!this.underwater && !arg9) {
-			this.sceneLevelTileFlags.flags[level][originX][originZ] = 0;
+			this.sceneLevelTileFlags.flags[arg1][arg2][arg3] = 0;
 		}
-		int opcode = buf.g1();
-		if ((opcode & 0x1) != 0) {
+		int var11 = arg0.g1();
+		if ((var11 & 0x1) != 0) {
 			if (arg9) {
-				buf.g1();
-				buf.gSmart1or2();
+				arg0.g1();
+				arg0.gSmart1or2();
 			} else {
-				int var12 = buf.g1();
-				this.levelTileOverlayIds[level][originX][originZ] = (short) buf.gSmart1or2();
-				this.levelTileOverlayShape[level][originX][originZ] = (byte) (var12 >> 2);
-				this.levelTileOverlayRotation[level][originX][originZ] = (byte) (arg8 + var12 & 0x3);
+				int var12 = arg0.g1();
+				this.levelTileOverlayIds[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
+				this.levelTileOverlayShape[arg1][arg2][arg3] = (byte) (var12 >> 2);
+				this.levelTileOverlayRotation[arg1][arg2][arg3] = (byte) (arg8 + var12 & 0x3);
 			}
 		}
-		if ((opcode & 0x2) != 0) {
+		if ((var11 & 0x2) != 0) {
 			if (this.underwater || arg9) {
-				buf.pos++;
+				arg0.pos++;
 			} else {
-				this.sceneLevelTileFlags.flags[level][originX][originZ] = buf.g1b();
+				this.sceneLevelTileFlags.flags[arg1][arg2][arg3] = arg0.g1b();
 			}
 		}
-		if ((opcode & 0x4) != 0) {
+		if ((var11 & 0x4) != 0) {
 			if (arg9) {
-				buf.gSmart1or2();
+				arg0.gSmart1or2();
 			} else {
-				this.levelTileUnderlayIds[level][originX][originZ] = (short) buf.gSmart1or2();
+				this.levelTileUnderlayIds[arg1][arg2][arg3] = (short) arg0.gSmart1or2();
 			}
 		}
-		if ((opcode & 0x8) != 0) {
-			int height = buf.g1();
+		if ((var11 & 0x8) != 0) {
+			int var13 = arg0.g1();
 			if (this.underwater) {
-				this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = height * 8 << 2;
+				this.levelHeightmap[0][arg2 + arg4][arg3 + arg5] = var13 * 8 << 2;
 			} else {
-				if (height == 1) {
-					height = 0;
+				if (var13 == 1) {
+					var13 = 0;
 				}
-				if (level == 0) {
-					this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = -height * 8 << 2;
+				if (arg1 == 0) {
+					this.levelHeightmap[0][arg2 + arg4][arg3 + arg5] = -var13 * 8 << 2;
 				} else {
-					this.levelHeightmap[level][originX + xOffset][originZ + zOffset] = this.levelHeightmap[level - 1][originX + xOffset][originZ + zOffset] - (height * 8 << 2);
+					this.levelHeightmap[arg1][arg2 + arg4][arg3 + arg5] = this.levelHeightmap[arg1 - 1][arg2 + arg4][arg3 + arg5] - (var13 * 8 << 2);
 				}
 			}
 		} else if (this.underwater) {
-			this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = 0;
-		} else if (level == 0) {
-			this.levelHeightmap[0][originX + xOffset][originZ + zOffset] = -perlin(arg6 + 932731, arg7 + 556238) * 8 << 2;
+			this.levelHeightmap[0][arg2 + arg4][arg3 + arg5] = 0;
+		} else if (arg1 == 0) {
+			this.levelHeightmap[0][arg2 + arg4][arg3 + arg5] = -perlin(arg6 + 932731, arg7 + 556238) * 8 << 2;
 		} else {
-			this.levelHeightmap[level][originX + xOffset][originZ + zOffset] = this.levelHeightmap[level - 1][originX + xOffset][originZ + zOffset] - 960;
+			this.levelHeightmap[arg1][arg2 + arg4][arg3 + arg5] = this.levelHeightmap[arg1 - 1][arg2 + arg4][arg3 + arg5] - 960;
 		}
 	}
 
@@ -509,7 +509,7 @@ public class MapLoader {
 
 	@ObfuscatedName("qg.z(Ldh;[[[II)V")
 	public void method7144(Toolkit arg0, int[][][] arg1) {
-		for (int level = 0; level < this.levels; level++) {
+		for (int var3 = 0; var3 < this.levels; var3++) {
 			int var4 = 0;
 			int var5 = 0;
 			if (!this.underwater) {
@@ -530,8 +530,8 @@ public class MapLoader {
 			if (!this.isTexturing) {
 				var5 |= 0x20;
 			}
-			int[][] var6 = arg1 == null || level >= arg1.length ? this.levelHeightmap[level] : arg1[level];
-			this.scene.setLevelHeightmap(level, arg0.createFloor(this.maxTileX, this.maxTileZ, this.levelHeightmap[level], var6, 512, var4, var5));
+			int[][] var6 = arg1 == null || var3 >= arg1.length ? this.levelHeightmap[var3] : arg1[var3];
+			this.scene.setLevelHeightmap(var3, arg0.createFloor(this.maxTileX, this.maxTileZ, this.levelHeightmap[var3], var6, 512, var4, var5));
 		}
 	}
 
@@ -545,7 +545,7 @@ public class MapLoader {
 			this.blendChroma = new int[this.maxTileZ];
 			this.blendMagnitude = new int[this.maxTileZ];
 		}
-		for (int level = 0; level < this.levels; level++) {
+		for (int var5 = 0; var5 < this.levels; var5++) {
 			for (int var6 = 0; var6 < this.maxTileZ; var6++) {
 				this.blendHue[var6] = 0;
 				this.blendSaturation[var6] = 0;
@@ -553,72 +553,72 @@ public class MapLoader {
 				this.blendChroma[var6] = 0;
 				this.blendMagnitude[var6] = 0;
 			}
-			for (int x0 = -5; x0 < this.maxTileX; x0++) {
-				for (int z0 = 0; z0 < this.maxTileZ; z0++) {
-					int x1 = x0 + 5;
-					int debugMag;
-					if (x1 < this.maxTileX) {
-						int underlayId = this.levelTileUnderlayIds[level][x1][z0] & 0x7FFF;
-						if (underlayId > 0) {
-							FloorUnderlayType flu = (FloorUnderlayType) this.underlays.list(underlayId - 1);
-							this.blendHue[z0] += flu.hue;
-							this.blendSaturation[z0] += flu.saturation;
-							this.blendLightness[z0] += flu.lightness;
-							this.blendChroma[z0] += flu.chroma;
-							debugMag = this.blendMagnitude[z0]++;
+			for (int var7 = -5; var7 < this.maxTileX; var7++) {
+				for (int var8 = 0; var8 < this.maxTileZ; var8++) {
+					int var9 = var7 + 5;
+					int var10002;
+					if (var9 < this.maxTileX) {
+						int var10 = this.levelTileUnderlayIds[var5][var9][var8] & 0x7FFF;
+						if (var10 > 0) {
+							FloorUnderlayType var11 = (FloorUnderlayType) this.underlays.list(var10 - 1);
+							this.blendHue[var8] += var11.hue;
+							this.blendSaturation[var8] += var11.saturation;
+							this.blendLightness[var8] += var11.lightness;
+							this.blendChroma[var8] += var11.chroma;
+							var10002 = this.blendMagnitude[var8]++;
 						}
 					}
-					int x2 = x0 - 5;
-					if (x2 >= 0) {
-						int underlayId = this.levelTileUnderlayIds[level][x2][z0] & 0x7FFF;
-						if (underlayId > 0) {
-							FloorUnderlayType flu = (FloorUnderlayType) this.underlays.list(underlayId - 1);
-							this.blendHue[z0] -= flu.hue;
-							this.blendSaturation[z0] -= flu.saturation;
-							this.blendLightness[z0] -= flu.lightness;
-							this.blendChroma[z0] -= flu.chroma;
-							debugMag = this.blendMagnitude[z0]--;
+					int var12 = var7 - 5;
+					if (var12 >= 0) {
+						int var13 = this.levelTileUnderlayIds[var5][var12][var8] & 0x7FFF;
+						if (var13 > 0) {
+							FloorUnderlayType var14 = (FloorUnderlayType) this.underlays.list(var13 - 1);
+							this.blendHue[var8] -= var14.hue;
+							this.blendSaturation[var8] -= var14.saturation;
+							this.blendLightness[var8] -= var14.lightness;
+							this.blendChroma[var8] -= var14.chroma;
+							var10002 = this.blendMagnitude[var8]--;
 						}
 					}
 				}
-				if (x0 >= 0) {
-					int hueAccumulator = 0;
-					int saturationAccumulator = 0;
-					int lightnessAccumulator = 0;
-					int luminanceAccumulator = 0;
-					int magnitudeAccumulator = 0;
-					for (int z0 = -5; z0 < this.maxTileZ; z0++) {
-						int dz1 = z0 + 5;
-						if (dz1 < this.maxTileZ) {
-							hueAccumulator += this.blendHue[dz1];
-							saturationAccumulator += this.blendSaturation[dz1];
-							lightnessAccumulator += this.blendLightness[dz1];
-							luminanceAccumulator += this.blendChroma[dz1];
-							magnitudeAccumulator += this.blendMagnitude[dz1];
+				if (var7 >= 0) {
+					int var15 = 0;
+					int var16 = 0;
+					int var17 = 0;
+					int var18 = 0;
+					int var19 = 0;
+					for (int var20 = -5; var20 < this.maxTileZ; var20++) {
+						int var21 = var20 + 5;
+						if (var21 < this.maxTileZ) {
+							var15 += this.blendHue[var21];
+							var16 += this.blendSaturation[var21];
+							var17 += this.blendLightness[var21];
+							var18 += this.blendChroma[var21];
+							var19 += this.blendMagnitude[var21];
 						}
-						int dz2 = z0 - 5;
-						if (dz2 >= 0) {
-							hueAccumulator -= this.blendHue[dz2];
-							saturationAccumulator -= this.blendSaturation[dz2];
-							lightnessAccumulator -= this.blendLightness[dz2];
-							luminanceAccumulator -= this.blendChroma[dz2];
-							magnitudeAccumulator -= this.blendMagnitude[dz2];
+						int var22 = var20 - 5;
+						if (var22 >= 0) {
+							var15 -= this.blendHue[var22];
+							var16 -= this.blendSaturation[var22];
+							var17 -= this.blendLightness[var22];
+							var18 -= this.blendChroma[var22];
+							var19 -= this.blendMagnitude[var22];
 						}
-						if (z0 >= 0 && luminanceAccumulator > 0 && magnitudeAccumulator > 0) {
-							var4[x0][z0] = ColourUtils.hsl24to16(hueAccumulator * 256 / luminanceAccumulator, saturationAccumulator / magnitudeAccumulator, lightnessAccumulator / magnitudeAccumulator);
+						if (var20 >= 0 && var18 > 0 && var19 > 0) {
+							var4[var7][var20] = ColourUtils.hsl24to16(var15 * 256 / var18, var16 / var19, var17 / var19);
 						}
 					}
 				}
 			}
 			if (this.isGroundBlending) {
-				this.method7147(arg0, this.scene.levelHeightmaps[level], level, var4, level == 0 ? arg1 : null, level == 0 ? arg2 : null);
+				this.method7147(arg0, this.scene.levelHeightmaps[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
 			} else {
-				this.method7199(arg0, this.scene.levelHeightmaps[level], level, var4, level == 0 ? arg1 : null, level == 0 ? arg2 : null);
+				this.method7199(arg0, this.scene.levelHeightmaps[var5], var5, var4, var5 == 0 ? arg1 : null, var5 == 0 ? arg2 : null);
 			}
-			this.levelTileUnderlayIds[level] = null;
-			this.levelTileOverlayIds[level] = null;
-			this.levelTileOverlayShape[level] = null;
-			this.levelTileOverlayRotation[level] = null;
+			this.levelTileUnderlayIds[var5] = null;
+			this.levelTileOverlayIds[var5] = null;
+			this.levelTileOverlayShape[var5] = null;
+			this.levelTileOverlayRotation[var5] = null;
 		}
 		if (!this.underwater) {
 			if (this.sceneryShadows != 0) {
@@ -683,7 +683,7 @@ public class MapLoader {
 							this.angle++;
 						}
 						if (!this.underwater && arg2 == 0) {
-							this.scene.setWaterFog(var7, var8, var13.waterfogcolour, var13.waterfogscale, var13.waterfogoffset, var13.field8165, var13.field8166, var13.field8167);
+							this.scene.setWaterFog(var7, var8, var13.waterfogcolour, var13.waterfogscale * 677626600, var13.waterfogoffset, var13.field8165, var13.field8166, var13.field8167);
 						}
 					}
 					if (var14 != null) {
@@ -1117,7 +1117,7 @@ public class MapLoader {
 				this.field4575++;
 			}
 			if (!this.underwater && arg1 == 0) {
-				this.scene.setWaterFog(arg2, arg3, arg4.waterfogcolour, arg4.waterfogscale, arg4.waterfogoffset, arg4.field8165, arg4.field8166, arg4.field8167);
+				this.scene.setWaterFog(arg2, arg3, arg4.waterfogcolour, arg4.waterfogscale * 677626600, arg4.waterfogoffset, arg4.field8165, arg4.field8166, arg4.field8167);
 			}
 			if (this.field4573 != 12 && arg4.rgb != -1 && arg4.hardshadow) {
 				this.field4507 = true;
@@ -1569,17 +1569,17 @@ public class MapLoader {
 	}
 
 	@ObfuscatedName("pd.b(Ldh;Lyn;I)I")
-	public static final int method6823(Toolkit toolkit, FloorOverlayType floType) {
-		if (floType.averagecolour != -1) {
-			return floType.averagecolour;
+	public static final int method6823(Toolkit arg0, FloorOverlayType arg1) {
+		if (arg1.averagecolour != -1) {
+			return arg1.averagecolour;
 		}
-		if (floType.material != -1) {
-			MaterialRaw var2 = toolkit.materialList.get(floType.material);
+		if (arg1.material != -1) {
+			MaterialRaw var2 = arg0.materialList.get(arg1.material);
 			if (!var2.highDetail) {
 				return var2.averageColour;
 			}
 		}
-		return floType.rgb;
+		return arg1.rgb;
 	}
 
 	@ObfuscatedName("vp.h(IIII)I")
@@ -1595,51 +1595,51 @@ public class MapLoader {
 	}
 
 	@ObfuscatedName("l.a(III)I")
-	public static final int perlin(int x, int z) {
-		int p = perlinScale(x + 45365, z + 91923, 4) - 128 + (perlinScale(x + 10294, z + 37821, 2) - 128 >> 1) + (perlinScale(x, z, 1) - 128 >> 2);
-		int value = (int) ((double) p * 0.3D) + 35;
-		if (value < 10) {
-			value = 10;
-		} else if (value > 60) {
-			value = 60;
+	public static final int perlin(int arg0, int arg1) {
+		int var2 = perlinScale(arg0 + 45365, arg1 + 91923, 4) - 128 + (perlinScale(arg0 + 10294, arg1 + 37821, 2) - 128 >> 1) + (perlinScale(arg0, arg1, 1) - 128 >> 2);
+		int var3 = (int) ((double) var2 * 0.3D) + 35;
+		if (var3 < 10) {
+			var3 = 10;
+		} else if (var3 > 60) {
+			var3 = 60;
 		}
-		return value;
+		return var3;
 	}
 
 	@ObfuscatedName("dd.g(IIIS)I")
-	public static final int perlinScale(int x, int z, int scale) {
-		int intX = x / scale;
-		int fracX = x & scale - 1;
-		int intZ = z / scale;
-		int fracZ = z & scale - 1;
-		int v1 = smoothNoise(intX, intZ);
-		int v2 = smoothNoise(intX + 1, intZ);
-		int v3 = smoothNoise(intX, intZ + 1);
-		int v4 = smoothNoise(intX + 1, intZ + 1);
-		int i1 = interpolate(v1, v2, fracX, scale);
-		int i2 = interpolate(v3, v4, fracX, scale);
-		return interpolate(i1, i2, fracZ, scale);
+	public static final int perlinScale(int arg0, int arg1, int arg2) {
+		int var3 = arg0 / arg2;
+		int var4 = arg0 & arg2 - 1;
+		int var5 = arg1 / arg2;
+		int var6 = arg1 & arg2 - 1;
+		int var7 = smoothNoise(var3, var5);
+		int var8 = smoothNoise(var3 + 1, var5);
+		int var9 = smoothNoise(var3, var5 + 1);
+		int var10 = smoothNoise(var3 + 1, var5 + 1);
+		int var11 = interpolate(var7, var8, var4, arg2);
+		int var12 = interpolate(var9, var10, var4, arg2);
+		return interpolate(var11, var12, var6, arg2);
 	}
 
 	@ObfuscatedName("ki.i(IIIII)I")
-	public static final int interpolate(int a, int b, int c, int scale) {
-		int f = 65536 - Trig1.cos[c * 8192 / scale] >> 1;
-		return ((65536 - f) * a >> 16) + (b * f >> 16);
+	public static final int interpolate(int arg0, int arg1, int arg2, int arg3) {
+		int var4 = 65536 - Trig1.cos[arg2 * 8192 / arg3] >> 1;
+		return ((65536 - var4) * arg0 >> 16) + (arg1 * var4 >> 16);
 	}
 
 	@ObfuscatedName("zu.j(III)I")
-	public static final int smoothNoise(int x, int z) {
-		int corners = noise(x - 1, z - 1) + noise(x + 1, z - 1) + noise(x - 1, z + 1) + noise(x + 1, z + 1);
-		int sides = noise(x - 1, z) + noise(x + 1, z) + noise(x, z - 1) + noise(x, z + 1);
-		int center = noise(x, z);
-		return center / 4 + corners / 16 + sides / 8;
+	public static final int smoothNoise(int arg0, int arg1) {
+		int var2 = noise(arg0 - 1, arg1 - 1) + noise(arg0 + 1, arg1 - 1) + noise(arg0 - 1, arg1 + 1) + noise(arg0 + 1, arg1 + 1);
+		int var3 = noise(arg0 - 1, arg1) + noise(arg0 + 1, arg1) + noise(arg0, arg1 - 1) + noise(arg0, arg1 + 1);
+		int var4 = noise(arg0, arg1);
+		return var4 / 4 + var2 / 16 + var3 / 8;
 	}
 
 	@ObfuscatedName("at.t(III)I")
-	public static final int noise(int x, int z) {
-		int n = z * 57 + x;
-		int n1 = n << 13 ^ n;
-		int n2 = (n1 * n1 * 15731 + 789221) * n1 + 1376312589 & Integer.MAX_VALUE;
-		return n2 >> 19 & 0xFF;
+	public static final int noise(int arg0, int arg1) {
+		int var2 = arg1 * 57 + arg0;
+		int var3 = var2 << 13 ^ var2;
+		int var4 = (var3 * var3 * 15731 + 789221) * var3 + 1376312589 & Integer.MAX_VALUE;
+		return var4 >> 19 & 0xFF;
 	}
 }

@@ -5,7 +5,7 @@ import com.jagex.graphics.ProgramUniformData;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("atg")
-public final class DxProgramUniform extends ProgramUniform {
+public class DxProgramUniform extends ProgramUniform {
 
 	@ObfuscatedName("atg.d")
 	public DxProgramManager programManager;

@@ -2,7 +2,6 @@ package com.jagex.game.client;
 
 import deob.ObfuscatedName;
 import jaclib.ping.IcmpService;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -55,7 +54,7 @@ public class NativeMouse extends IcmpService {
 		field11719 = null;
 	}
 
-    public void notify(int arg0) {
+	public void notify(int arg0) {
 		Iterator var2 = this.field11718.iterator();
 		while (var2.hasNext()) {
 			NativeMouseListener var3 = (NativeMouseListener) var2.next();

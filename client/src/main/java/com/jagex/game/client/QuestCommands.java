@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 import rs2.client.Client;
 
 @ObfuscatedName("yr")
-public final class QuestCommands {
+public class QuestCommands {
 
 	public QuestCommands() throws Throwable {
 		throw new Error();

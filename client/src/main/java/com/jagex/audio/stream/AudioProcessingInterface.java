@@ -49,5 +49,5 @@ public interface AudioProcessingInterface {
 	int method9680();
 
 	@ObfuscatedName("wr.m(I)Lwl;")
-    AudioStreamRelated method9674();
+	AudioStreamRelated method9674();
 }

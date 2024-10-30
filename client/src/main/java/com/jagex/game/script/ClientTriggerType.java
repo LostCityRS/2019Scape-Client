@@ -7,28 +7,28 @@ import deob.ObfuscatedName;
 public class ClientTriggerType implements TriggerType {
 
 	@ObfuscatedName("uh.e")
-	public static final ClientTriggerType OPWORLDMAPELEMENT1 = new ClientTriggerType("", 10, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
+	public static final ClientTriggerType OPWORLDMAPELEMENT1 = new ClientTriggerType("", 10, new ScriptVarType[] { ScriptVarType.MAPELEMENT }, null);
 
 	@ObfuscatedName("uh.n")
-	public static final ClientTriggerType OPWORLDMAPELEMENT2 = new ClientTriggerType("", 11, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
+	public static final ClientTriggerType OPWORLDMAPELEMENT2 = new ClientTriggerType("", 11, new ScriptVarType[] { ScriptVarType.MAPELEMENT }, null);
 
 	@ObfuscatedName("uh.m")
-	public static final ClientTriggerType OPWORLDMAPELEMENT3 = new ClientTriggerType("", 12, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
+	public static final ClientTriggerType OPWORLDMAPELEMENT3 = new ClientTriggerType("", 12, new ScriptVarType[] { ScriptVarType.MAPELEMENT }, null);
 
 	@ObfuscatedName("uh.k")
-	public static final ClientTriggerType OPWORLDMAPELEMENT4 = new ClientTriggerType("", 13, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
+	public static final ClientTriggerType OPWORLDMAPELEMENT4 = new ClientTriggerType("", 13, new ScriptVarType[] { ScriptVarType.MAPELEMENT }, null);
 
 	@ObfuscatedName("uh.f")
-	public static final ClientTriggerType OPWORLDMAPELEMENT5 = new ClientTriggerType("", 14, new ScriptVarType[] { ScriptVarType.MAPELEMENT}, null);
+	public static final ClientTriggerType OPWORLDMAPELEMENT5 = new ClientTriggerType("", 14, new ScriptVarType[] { ScriptVarType.MAPELEMENT }, null);
 
 	@ObfuscatedName("uh.w")
-	public static final ClientTriggerType WORLDMAPELEMENTMOUSEOVER = new ClientTriggerType("", 15, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT}, null);
+	public static final ClientTriggerType WORLDMAPELEMENTMOUSEOVER = new ClientTriggerType("", 15, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT }, null);
 
 	@ObfuscatedName("uh.l")
-	public static final ClientTriggerType WORLDMAPELEMENTMOUSELEAVE = new ClientTriggerType("", 16, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT}, null);
+	public static final ClientTriggerType WORLDMAPELEMENTMOUSELEAVE = new ClientTriggerType("", 16, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT }, null);
 
 	@ObfuscatedName("uh.u")
-	public static final ClientTriggerType WORLDMAPELEMENTMOUSEREPEAT = new ClientTriggerType("", 17, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT}, null);
+	public static final ClientTriggerType WORLDMAPELEMENTMOUSEREPEAT = new ClientTriggerType("", 17, new ScriptVarType[] { ScriptVarType.MAPELEMENT, ScriptVarType.INT, ScriptVarType.INT }, null);
 
 	@ObfuscatedName("uh.z")
 	public static final ClientTriggerType VIDEO_END = new ClientTriggerType("", 18);
@@ -37,7 +37,7 @@ public class ClientTriggerType implements TriggerType {
 	public static final ClientTriggerType JCOINS_UPDATED = new ClientTriggerType("", 19);
 
 	@ObfuscatedName("uh.d")
-	public static final ClientTriggerType CUTSCENE_SUBTITLE = new ClientTriggerType("", 20, new ScriptVarType[] { ScriptVarType.STRING, ScriptVarType.INT}, null);
+	public static final ClientTriggerType CUTSCENE_SUBTITLE = new ClientTriggerType("", 20, new ScriptVarType[] { ScriptVarType.STRING, ScriptVarType.INT }, null);
 
 	@ObfuscatedName("uh.c")
 	public static final ClientTriggerType LOYALTY_UPDATED = new ClientTriggerType("", 21);
@@ -46,7 +46,7 @@ public class ClientTriggerType implements TriggerType {
 	public static final ClientTriggerType PROCESS_NPC = new ClientTriggerType("", 22);
 
 	@ObfuscatedName("uh.v")
-	public static final ClientTriggerType PROCESS_PLAYER = new ClientTriggerType("", 23, new ScriptVarType[] { ScriptVarType.PLAYER_UID}, null);
+	public static final ClientTriggerType PROCESS_PLAYER = new ClientTriggerType("", 23, new ScriptVarType[] { ScriptVarType.PLAYER_UID }, null);
 
 	@ObfuscatedName("uh.o")
 	public static final ClientTriggerType IF_PROCESS_ACTIVE_NPC = new ClientTriggerType("", 24);

@@ -5,7 +5,11 @@ import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.world.entity.PositionMode;
 import com.jagex.game.world.entity.PositionPoint;
 import com.jagex.graphics.camera.Camera;
-import com.jagex.math.*;
+import com.jagex.math.Matrix3x3;
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Quaternion;
+import com.jagex.math.Vector3;
+import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("anb")
@@ -47,8 +51,8 @@ public class LookatOrientation extends Lookat {
 	@ObfuscatedName("anb.r")
 	public static float field11861 = -1.0F;
 
-	public LookatOrientation(Camera camera) {
-		super(camera);
+	public LookatOrientation(Camera arg0) {
+		super(arg0);
 	}
 
 	@ObfuscatedName("anb.q(Lov;I)V")
@@ -202,7 +206,7 @@ public class LookatOrientation extends Lookat {
 	}
 
 	@ObfuscatedName("anb.w(Lalw;I)V")
-	public void decode(Packet buf) {
-		this.field11856.decode(buf);
+	public void decode(Packet arg0) {
+		this.field11856.decode(arg0);
 	}
 }

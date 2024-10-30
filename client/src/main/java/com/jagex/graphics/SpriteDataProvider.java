@@ -24,15 +24,15 @@ public class SpriteDataProvider {
 	}
 
 	@ObfuscatedName("cd.m(Lpy;II)[Lde;")
-	public static SpriteData[] method1608(Js5 js5, int group, int file) {
-		byte[] var3 = js5.getfile(group, file);
+	public static SpriteData[] method1608(Js5 arg0, int arg1, int arg2) {
+		byte[] var3 = arg0.getfile(arg1, arg2);
 		return var3 == null ? null : method1615(var3);
 	}
 
 	@ObfuscatedName("cd.k([B)[Lde;")
 	public static SpriteData[] method1615(byte[] arg0) {
 		Packet var1 = new Packet(arg0);
-		var1.pos = (arg0.length - 2);
+		var1.pos = arg0.length - 2;
 		int var2 = var1.g2();
 		int var3 = var2 >> 15;
 		int var4 = var2 & 0x7FFF;
@@ -41,7 +41,7 @@ public class SpriteDataProvider {
 			for (int var6 = 0; var6 < var4; var6++) {
 				var5[var6] = new PalettedSpriteData();
 			}
-			var1.pos = (arg0.length - 7 - var4 * 8);
+			var1.pos = arg0.length - 7 - var4 * 8;
 			int var7 = var1.g2();
 			int var8 = var1.g2();
 			int var9 = (var1.g1() & 0xFF) + 1;
@@ -62,7 +62,7 @@ public class SpriteDataProvider {
 				var15.field10223 = var7 - var15.field10220 - var15.field10222;
 				var15.field10225 = var8 - var15.field10221 - var15.field10224;
 			}
-			var1.pos = (arg0.length - 7 - var4 * 8 - (var9 - 1) * 3);
+			var1.pos = arg0.length - 7 - var4 * 8 - (var9 - 1) * 3;
 			int[] var16 = new int[var9];
 			for (int var17 = 1; var17 < var9; var17++) {
 				var16[var17] = var1.g3();

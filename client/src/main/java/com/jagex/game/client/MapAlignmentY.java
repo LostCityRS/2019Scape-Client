@@ -21,17 +21,17 @@ public class MapAlignmentY implements SerializableEnum {
 	@ObfuscatedName("hy.f")
 	public final int serialID;
 
-	public MapAlignmentY(int index, int serialID) {
-		this.index = index;
-		this.serialID = serialID;
+	@ObfuscatedName("ace.e(I)[Lhy;")
+	public static MapAlignmentY[] values() {
+		return new MapAlignmentY[] { field2422, field2426, field2424 };
 	}
 
-    @ObfuscatedName("ace.e(I)[Lhy;")
-    public static MapAlignmentY[] values() {
-        return new MapAlignmentY[] {field2422, field2426, field2424};
-    }
+	public MapAlignmentY(int arg0, int arg1) {
+		this.index = arg0;
+		this.serialID = arg1;
+	}
 
-    @ObfuscatedName("hy.n()I")
+	@ObfuscatedName("hy.n()I")
 	public int getId() {
 		return this.serialID;
 	}

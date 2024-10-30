@@ -53,7 +53,7 @@ public class VorbisFloor {
 		this.decoder = arg0;
 		int var3 = this.decoder.read(16);
 		if (var3 != 1) {
-			throw new RuntimeException("Unsupported floor type " + var3);
+			throw new RuntimeException();
 		}
 		if (this.field2035 != null && this.field2035.length == arg1) {
 			for (int var4 = 0; var4 < this.field2035.length; var4++) {
@@ -326,7 +326,6 @@ public class VorbisFloor {
 				int var9 = this.y[arg2][var7] * this.multiplier;
 				this.renderLine(var5, var6, var8, var9, arg0, arg1);
 				if (var8 >= arg1) {
-					// return; // (550)
 				}
 				var5 = var8;
 				var6 = var9;

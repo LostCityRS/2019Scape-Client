@@ -1,7 +1,7 @@
 package com.jagex.game.config.iftype;
 
-import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
@@ -10,8 +10,8 @@ import com.jagex.game.client.GroupUserKind;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.idktype.IDKTypeList;
 import com.jagex.game.config.iftype.componentproperties.ServerKeyProperties;
-import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.npctype.NPCType;
+import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.npctype.NPCTypeList;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.objtype.ObjTypeList;
@@ -23,7 +23,21 @@ import com.jagex.game.config.vartype.VarIntDomain;
 import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.world.entity.ObjectNode;
 import com.jagex.game.world.entity.PlayerModel;
-import com.jagex.graphics.*;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.Font;
+import com.jagex.graphics.FontFactory;
+import com.jagex.graphics.FontMetrics;
+import com.jagex.graphics.FontProvider;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelParticleEffector;
+import com.jagex.graphics.ModelParticleEmitter;
+import com.jagex.graphics.ModelUnlit;
+import com.jagex.graphics.SkyBox;
+import com.jagex.graphics.Sprite;
+import com.jagex.graphics.SpriteData;
+import com.jagex.graphics.SpriteDataProvider;
+import com.jagex.graphics.SpriteRelated;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.particles.ParticleSystem;
 import com.jagex.js5.Js5;
 import com.jagex.math.Matrix4x3;
@@ -759,123 +773,123 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.z(Lalw;I)V")
-	public void decode(Packet buf) {
-		int var2 = buf.g1();
+	public void decode(Packet arg0) {
+		int var2 = arg0.g1();
 		if (var2 == 255) {
 			var2 = -1;
 		}
-		this.type = buf.g1();
+		this.type = arg0.g1();
 		if ((this.type & 0x80) != 0) {
 			this.type &= 0x7F;
-			this.name = buf.gjstr();
+			this.name = arg0.gjstr();
 		}
-		this.clientcode = buf.g2();
-		this.xpos = buf.g2s();
-		this.ypos = buf.g2s();
-		this.wsize = buf.g2();
-		this.hsize = buf.g2();
-		this.field2356 = buf.g1b();
-		this.field2174 = buf.g1b();
-		this.xmode = buf.g1b();
-		this.ymode = buf.g1b();
+		this.clientcode = arg0.g2();
+		this.xpos = arg0.g2s();
+		this.ypos = arg0.g2s();
+		this.wsize = arg0.g2();
+		this.hsize = arg0.g2();
+		this.field2356 = arg0.g1b();
+		this.field2174 = arg0.g1b();
+		this.xmode = arg0.g1b();
+		this.ymode = arg0.g1b();
 		if (this.field2356 == 4 || this.field2174 == 4) {
-			this.aspectwidth = buf.g2();
-			this.aspectheight = buf.g2();
+			this.aspectwidth = arg0.g2();
+			this.aspectheight = arg0.g2();
 		}
-		this.layer = buf.g2();
+		this.layer = arg0.g2();
 		if (this.layer == 65535) {
 			this.layer = -1;
 		} else {
 			this.layer += this.parentlayer & 0xFFFF0000;
 		}
-		int var3 = buf.g1();
+		int var3 = arg0.g1();
 		this.hide = (var3 & 0x1) != 0;
 		if (var2 >= 0) {
 			this.noclickthrough = (var3 & 0x2) != 0;
 		}
 		if (this.type == 0) {
-			this.scrollwidth = buf.g2();
-			this.scrollheight = buf.g2();
+			this.scrollwidth = arg0.g2();
+			this.scrollheight = arg0.g2();
 			if (var2 < 0) {
-				this.noclickthrough = buf.g1() == 1;
+				this.noclickthrough = arg0.g1() == 1;
 			}
 		}
 		if (this.type == 5) {
-			this.graphic = buf.g4s();
-			this.angle2d = buf.g2();
-			int var4 = buf.g1();
+			this.graphic = arg0.g4s();
+			this.angle2d = arg0.g2();
+			int var4 = arg0.g1();
 			this.tiling = (var4 & 0x1) != 0;
 			this.alpha = (var4 & 0x2) != 0;
-			this.trans = buf.g1();
-			this.outline = buf.g1();
-			this.graphicshadow = buf.g4s();
-			this.vflip = buf.g1() == 1;
-			this.hflip = buf.g1() == 1;
-			this.colour = buf.g4s();
+			this.trans = arg0.g1();
+			this.outline = arg0.g1();
+			this.graphicshadow = arg0.g4s();
+			this.vflip = arg0.g1() == 1;
+			this.hflip = arg0.g1() == 1;
+			this.colour = arg0.g4s();
 			if (var2 >= 3) {
-				this.clickmask = buf.g1() == 1;
+				this.clickmask = arg0.g1() == 1;
 			}
 		}
 		if (this.type == 6) {
 			this.modelkind = 1;
-			this.model = buf.gSmart2or4s();
-			int var5 = buf.g1();
+			this.model = arg0.gSmart2or4s();
+			int var5 = arg0.g1();
 			boolean var6 = (var5 & 0x1) == 1;
 			this.field2274 = (var5 & 0x2) == 2;
 			this.modelorthog = (var5 & 0x4) == 4;
 			this.field2260 = (var5 & 0x8) == 8;
 			if (var6) {
-				this.modelorigin_x = buf.g2s();
-				this.modelorigin_y = buf.g2s();
-				this.modelangle_x = buf.g2();
-				this.modelangle_y = buf.g2();
-				this.modelangle_z = buf.g2();
-				this.modelzoom = buf.g2();
+				this.modelorigin_x = arg0.g2s();
+				this.modelorigin_y = arg0.g2s();
+				this.modelangle_x = arg0.g2();
+				this.modelangle_y = arg0.g2();
+				this.modelangle_z = arg0.g2();
+				this.modelzoom = arg0.g2();
 			} else if (this.field2274) {
-				this.modelorigin_x = buf.g2s();
-				this.modelorigin_y = buf.g2s();
-				this.modelorigin_z = buf.g2s();
-				this.modelangle_x = buf.g2();
-				this.modelangle_y = buf.g2();
-				this.modelangle_z = buf.g2();
-				this.modelzoom = buf.g2s();
+				this.modelorigin_x = arg0.g2s();
+				this.modelorigin_y = arg0.g2s();
+				this.modelorigin_z = arg0.g2s();
+				this.modelangle_x = arg0.g2();
+				this.modelangle_y = arg0.g2();
+				this.modelangle_z = arg0.g2();
+				this.modelzoom = arg0.g2s();
 			}
-			this.modelanim = buf.gSmart2or4s();
+			this.modelanim = arg0.gSmart2or4s();
 			if (this.field2356 != 0) {
-				this.modelobjwidth = buf.g2();
+				this.modelobjwidth = arg0.g2();
 			}
 			if (this.field2174 != 0) {
-				this.field2238 = buf.g2();
+				this.field2238 = arg0.g2();
 			}
 		}
 		if (this.type == 4) {
-			this.textfont = buf.gSmart2or4s();
+			this.textfont = arg0.gSmart2or4s();
 			if (var2 >= 2) {
-				this.fontmono = buf.g1() == 1;
+				this.fontmono = arg0.g1() == 1;
 			}
-			this.text = buf.gjstr();
-			this.field2229 = buf.g1();
-			this.field2223 = buf.g1();
-			this.field2264 = buf.g1();
-			this.textshadow = buf.g1() == 1;
-			this.colour = buf.g4s();
-			this.trans = buf.g1();
+			this.text = arg0.gjstr();
+			this.field2229 = arg0.g1();
+			this.field2223 = arg0.g1();
+			this.field2264 = arg0.g1();
+			this.textshadow = arg0.g1() == 1;
+			this.colour = arg0.g4s();
+			this.trans = arg0.g1();
 			if (var2 >= 0) {
-				this.maxlines = buf.g1();
+				this.maxlines = arg0.g1();
 			}
 		}
 		if (this.type == 3) {
-			this.colour = buf.g4s();
-			this.fill = buf.g1() == 1;
-			this.trans = buf.g1();
+			this.colour = arg0.g4s();
+			this.fill = arg0.g1() == 1;
+			this.trans = arg0.g1();
 		}
 		if (this.type == 9) {
-			this.linewid = buf.g1();
-			this.colour = buf.g4s();
-			this.linedirection = buf.g1() == 1;
+			this.linewid = arg0.g1();
+			this.colour = arg0.g4s();
+			this.linedirection = arg0.g1() == 1;
 		}
-		int var7 = buf.g3();
-		int var8 = buf.g1();
+		int var7 = arg0.g3();
+		int var8 = arg0.g1();
 		if (var8 != 0) {
 			this.field2270 = new byte[11][];
 			this.field2281 = new byte[11][];
@@ -883,131 +897,131 @@ public class Component {
 			this.field2300 = new int[11];
 			while (var8 != 0) {
 				int var9 = (var8 >> 4) - 1;
-				int var10 = var8 << 8 | buf.g1();
+				int var10 = var8 << 8 | arg0.g1();
 				int var11 = var10 & 0xFFF;
 				if (var11 == 4095) {
 					var11 = -1;
 				}
-				byte var12 = buf.g1b();
+				byte var12 = arg0.g1b();
 				if (var12 != 0) {
 					this.field2324 = true;
 				}
-				byte var13 = buf.g1b();
+				byte var13 = arg0.g1b();
 				this.field2211[var9] = var11;
 				this.field2270[var9] = new byte[] { var12 };
 				this.field2281[var9] = new byte[] { var13 };
-				var8 = buf.g1();
+				var8 = arg0.g1();
 			}
 		}
-		this.opbase = buf.gjstr();
-		int var14 = buf.g1();
+		this.opbase = arg0.gjstr();
+		int var14 = arg0.g1();
 		int var15 = var14 & 0xF;
 		int var16 = var14 >> 4;
 		if (var15 > 0) {
 			this.op = new String[var15];
 			for (int var17 = 0; var17 < var15; var17++) {
-				this.op[var17] = buf.gjstr();
+				this.op[var17] = arg0.gjstr();
 			}
 		}
 		if (var16 > 0) {
-			int var18 = buf.g1();
+			int var18 = arg0.g1();
 			this.opcursor = new int[var18 + 1];
 			for (int var19 = 0; var19 < this.opcursor.length; var19++) {
 				this.opcursor[var19] = -1;
 			}
-			this.opcursor[var18] = buf.g2();
+			this.opcursor[var18] = arg0.g2();
 		}
 		if (var16 > 1) {
-			int var20 = buf.g1();
-			this.opcursor[var20] = buf.g2();
+			int var20 = arg0.g1();
+			this.opcursor[var20] = arg0.g2();
 		}
-		this.pausetext = buf.gjstr();
+		this.pausetext = arg0.gjstr();
 		if (this.pausetext.equals("")) {
 			this.pausetext = null;
 		}
-		this.dragdeadzone = buf.g1();
-		this.dragdeadtime = buf.g1();
-		this.dragrenderbehaviour = buf.g1();
-		this.targetverb = buf.gjstr();
+		this.dragdeadzone = arg0.g1();
+		this.dragdeadtime = arg0.g1();
+		this.dragrenderbehaviour = arg0.g1();
+		this.targetverb = arg0.gjstr();
 		int var21 = -1;
 		if (ServerKeyProperties.method16667(var7) != 0) {
-			var21 = buf.g2();
+			var21 = arg0.g2();
 			if (var21 == 65535) {
 				var21 = -1;
 			}
-			this.field2202 = buf.g2();
+			this.field2202 = arg0.g2();
 			if (this.field2202 == 65535) {
 				this.field2202 = -1;
 			}
-			this.field2269 = buf.g2();
+			this.field2269 = arg0.g2();
 			if (this.field2269 == 65535) {
 				this.field2269 = -1;
 			}
 		}
 		if (var2 >= 0) {
-			this.mouseovercursor = buf.g2();
+			this.mouseovercursor = arg0.g2();
 			if (this.mouseovercursor == 65535) {
 				this.mouseovercursor = -1;
 			}
 		}
 		this.field2268 = new ServerKeyProperties(var7, var21);
 		if (var2 >= 0) {
-			int var22 = buf.g1();
+			int var22 = arg0.g1();
 			for (int var23 = 0; var23 < var22; var23++) {
-				int var24 = buf.g3();
-				int var25 = buf.g4s();
+				int var24 = arg0.g3();
+				int var25 = arg0.g4s();
 				this.params.put(new IntNode(var25), (long) var24);
 			}
-			int var26 = buf.g1();
+			int var26 = arg0.g1();
 			for (int var27 = 0; var27 < var26; var27++) {
-				int var28 = buf.g3();
-				String var29 = buf.gjstr2();
+				int var28 = arg0.g3();
+				String var29 = arg0.gjstr2();
 				this.params.put(new ObjectNode(var29), (long) var28);
 			}
 		}
-		this.onload = this.decodeHook(buf);
-		this.onmouseover = this.decodeHook(buf);
-		this.onmouseleave = this.decodeHook(buf);
-		this.ontargetleave = this.decodeHook(buf);
-		this.ontargetenter = this.decodeHook(buf);
-		this.onvartransmit = this.decodeHook(buf);
-		this.oninvtransmit = this.decodeHook(buf);
-		this.onstattransmit = this.decodeHook(buf);
-		this.ontimer = this.decodeHook(buf);
-		this.onop = this.decodeHook(buf);
+		this.onload = this.decodeHook(arg0);
+		this.onmouseover = this.decodeHook(arg0);
+		this.onmouseleave = this.decodeHook(arg0);
+		this.ontargetleave = this.decodeHook(arg0);
+		this.ontargetenter = this.decodeHook(arg0);
+		this.onvartransmit = this.decodeHook(arg0);
+		this.oninvtransmit = this.decodeHook(arg0);
+		this.onstattransmit = this.decodeHook(arg0);
+		this.ontimer = this.decodeHook(arg0);
+		this.onop = this.decodeHook(arg0);
 		if (var2 >= 0) {
-			this.onopt = this.decodeHook(buf);
+			this.onopt = this.decodeHook(arg0);
 		}
-		this.onmouserepeat = this.decodeHook(buf);
-		this.onclick = this.decodeHook(buf);
-		this.onclickrepeat = this.decodeHook(buf);
-		this.onrelease = this.decodeHook(buf);
-		this.onhold = this.decodeHook(buf);
-		this.ondrag = this.decodeHook(buf);
-		this.ondragcomplete = this.decodeHook(buf);
-		this.onscrollwheel = this.decodeHook(buf);
-		this.onvarctransmit = this.decodeHook(buf);
-		this.onvarcstrtransmit = this.decodeHook(buf);
-		this.onvartransmitlist = this.decodeTransmitList(buf);
-		this.oninvtransmitlist = this.decodeTransmitList(buf);
-		this.onstattransmitlist = this.decodeTransmitList(buf);
-		this.onvarctransmitlist = this.decodeTransmitList(buf);
-		this.onvarcstrtransmitlist = this.decodeTransmitList(buf);
+		this.onmouserepeat = this.decodeHook(arg0);
+		this.onclick = this.decodeHook(arg0);
+		this.onclickrepeat = this.decodeHook(arg0);
+		this.onrelease = this.decodeHook(arg0);
+		this.onhold = this.decodeHook(arg0);
+		this.ondrag = this.decodeHook(arg0);
+		this.ondragcomplete = this.decodeHook(arg0);
+		this.onscrollwheel = this.decodeHook(arg0);
+		this.onvarctransmit = this.decodeHook(arg0);
+		this.onvarcstrtransmit = this.decodeHook(arg0);
+		this.onvartransmitlist = this.decodeTransmitList(arg0);
+		this.oninvtransmitlist = this.decodeTransmitList(arg0);
+		this.onstattransmitlist = this.decodeTransmitList(arg0);
+		this.onvarctransmitlist = this.decodeTransmitList(arg0);
+		this.onvarcstrtransmitlist = this.decodeTransmitList(arg0);
 	}
 
 	@ObfuscatedName("hf.p(Lalw;I)[Ljava/lang/Object;")
-	public Object[] decodeHook(Packet buf) {
-		int length = buf.g1();
-		if (length == 0) {
+	public Object[] decodeHook(Packet arg0) {
+		int var2 = arg0.g1();
+		if (var2 == 0) {
 			return null;
 		}
-		Object[] var3 = new Object[length];
-		for (int index = 0; index < length; index++) {
-			int var5 = buf.g1();
+		Object[] var3 = new Object[var2];
+		for (int var4 = 0; var4 < var2; var4++) {
+			int var5 = arg0.g1();
 			if (var5 == 0) {
-				var3[index] = Integer.valueOf(buf.g4s());
+				var3[var4] = Integer.valueOf(arg0.g4s());
 			} else if (var5 == 1) {
-				var3[index] = buf.gjstr();
+				var3[var4] = arg0.gjstr();
 			}
 		}
 		this.hashook = true;
@@ -1015,14 +1029,14 @@ public class Component {
 	}
 
 	@ObfuscatedName("hf.d(Lalw;B)[I")
-	public int[] decodeTransmitList(Packet buf) {
-		int length = buf.g1();
-		if (length == 0) {
+	public int[] decodeTransmitList(Packet arg0) {
+		int var2 = arg0.g1();
+		if (var2 == 0) {
 			return null;
 		}
-		int[] var3 = new int[length];
-		for (int index = 0; index < length; index++) {
-			var3[index] = buf.g4s();
+		int[] var3 = new int[var2];
+		for (int var4 = 0; var4 < var2; var4++) {
+			var3[var4] = arg0.g4s();
 		}
 		return var3;
 	}
@@ -1137,9 +1151,6 @@ public class Component {
 					}
 				}
 				modelCache.put(var32, var30);
-			}
-			if (var32 == null) {
-				return null;
 			}
 			if (arg9 != null) {
 				var32 = var32.method1773((byte) 1, arg1, true);

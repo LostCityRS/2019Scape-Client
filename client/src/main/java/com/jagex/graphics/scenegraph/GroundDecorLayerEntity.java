@@ -19,15 +19,15 @@ public abstract class GroundDecorLayerEntity extends GraphEntity {
 	@ObfuscatedName("asv.h")
 	public Light[] field12447 = new Light[4];
 
-	public GroundDecorLayerEntity(Scene scene, int x, int y, int z, int level, int occludeLevel, int arg6, ScaleRotTrans scaleRotTrans) {
-		super(scene, scaleRotTrans);
-		this.level = (byte) level;
-		this.occludeLevel = (byte) occludeLevel;
+	public GroundDecorLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, ScaleRotTrans arg7) {
+		super(arg0, arg7);
+		this.level = (byte) arg4;
+		this.occludeLevel = (byte) arg5;
 		this.field12448 = (short) arg6;
-		if (scaleRotTrans != null) {
-			this.method10529(scaleRotTrans);
+		if (arg7 != null) {
+			this.method10529(arg7);
 		}
-		this.method10532((float) x, (float) y, (float) z);
+		this.method10532((float) arg1, (float) arg2, (float) arg3);
 		for (int var9 = 0; var9 < 4; var9++) {
 			this.field12447[var9] = null;
 		}
@@ -47,7 +47,7 @@ public abstract class GroundDecorLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asv.ga(Ldh;S)Z")
-	public boolean isOccluded(Toolkit toolkit) {
+	public boolean isOccluded(Toolkit arg0) {
 		Vector3 var2 = this.getTransform().trans;
 		return this.scene.occlusionManager.tileVisible(this.occludeLevel, (int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size);
 	}

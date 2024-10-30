@@ -1,10 +1,11 @@
 package com.jagex.game.cutscene;
 
+import com.jagex.audio.api.SubBussType;
 import com.jagex.audio.stream.Sound;
 import com.jagex.audio.stream.SoundShape;
 import com.jagex.audio.stream.SoundType;
-import com.jagex.audio.api.SubBussType;
 import com.jagex.core.io.Packet;
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 

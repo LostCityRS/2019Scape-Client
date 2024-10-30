@@ -383,8 +383,8 @@ public class ClientProt {
 	@ObfuscatedName("nr.dh")
 	public final int size;
 
-	public ClientProt(int id, int size) {
-		this.id = id;
-		this.size = size;
+	public ClientProt(int arg0, int arg1) {
+		this.id = arg0;
+		this.size = arg1;
 	}
 }

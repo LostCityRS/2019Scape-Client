@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amt")
 public class PreferencesWaterDetail extends Preference {
 
-	public PreferencesWaterDetail(ClientOptions options) {
-		super(options);
+	public PreferencesWaterDetail(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesWaterDetail(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesWaterDetail(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("amt.o(I)V")
@@ -32,13 +32,13 @@ public class PreferencesWaterDetail extends Preference {
 	}
 
 	@ObfuscatedName("amt.n(II)I")
-	public int canSetValue(int value) {
-		return value == 0 || this.options.groundBlending.getValue() == 1 ? 1 : 2;
+	public int canSetValue(int arg0) {
+		return arg0 == 0 || this.options.groundBlending.getValue() == 1 ? 1 : 2;
 	}
 
 	@ObfuscatedName("amt.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amt.y(I)I")

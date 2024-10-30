@@ -16,9 +16,9 @@ public class LocReference {
 	@ObfuscatedName("yv.m")
 	public final int field8197;
 
-	public LocReference(CoordGrid arg0, int shape, int angle, int arg3) {
+	public LocReference(CoordGrid arg0, int arg1, int arg2, int arg3) {
 		this.field8196 = arg0;
-		this.shape = shape;
+		this.shape = arg1;
 		this.field8197 = arg3;
 	}
 

@@ -107,12 +107,12 @@ public class LookatEntity extends Lookat {
 	}
 
 	@ObfuscatedName("anw.w(Lalw;I)V")
-	public void decode(Packet buf) {
-		CameraTrackableType var2 = CameraTrackableType.of(buf.g1());
-		int var3 = buf.g2();
+	public void decode(Packet arg0) {
+		CameraTrackableType var2 = CameraTrackableType.of(arg0.g1());
+		int var3 = arg0.g2();
 		this.field11867 = this.camera.method4697().getCameraTrackable(var2, var3);
-		this.field11863.decode(buf);
-		if (buf.g1() == 1) {
+		this.field11863.decode(arg0);
+		if (arg0.g1() == 1) {
 			this.field11864 = true;
 		} else {
 			this.field11864 = false;

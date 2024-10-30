@@ -1,10 +1,18 @@
 package com.jagex.graphics.dx;
 
-import com.jagex.graphics.*;
+import com.jagex.graphics.BaseTexture;
+import com.jagex.graphics.GpuProgram;
+import com.jagex.graphics.GpuShader;
+import com.jagex.graphics.GpuToolkit;
+import com.jagex.graphics.ProgramData;
+import com.jagex.graphics.ProgramManagerException;
+import com.jagex.graphics.ProgramUniform;
+import com.jagex.graphics.ProgramUniformData;
+import com.jagex.graphics.ShaderData;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("agc")
-public final class DxProgramManager extends GpuShader {
+public class DxProgramManager extends GpuShader {
 
 	@ObfuscatedName("agc.z")
 	public final DxToolkit field10388;

@@ -23,8 +23,8 @@ public class PureJavaFrameBuffer extends FrameBuffer {
 	@ObfuscatedName("apn.w")
 	public int height = 0;
 
-	public PureJavaFrameBuffer(PureJavaToolkit renderer) {
-		this.renderer = renderer;
+	public PureJavaFrameBuffer(PureJavaToolkit arg0) {
+		this.renderer = arg0;
 	}
 
 	@ObfuscatedName("apn.e()I")

@@ -10,8 +10,8 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aod")
 public class NPCTypeList extends CachingConfigTypeList {
 
-	public NPCTypeList(ModeGame modeGame, Language language, boolean allowMembers, Js5 js5, Js5 factoryJs5) {
-		super(modeGame, language, js5, Js5ConfigGroup.NPCTYPE, 64, new BasicNPCTypeFactory(allowMembers, factoryJs5, language, modeGame));
+	public NPCTypeList(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, Js5 arg4) {
+		super(arg0, arg1, arg3, Js5ConfigGroup.NPCTYPE, 64, new BasicNPCTypeFactory(arg2, arg4, arg1, arg0));
 	}
 
 	@ObfuscatedName("aod.al(ZI)V")
@@ -32,9 +32,9 @@ public class NPCTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aod.v(II)V")
-	public void cacheClean(int num) {
-		super.cacheClean(num);
-		((NPCTypeFactory) this.factory).cacheClean(num);
+	public void cacheClean(int arg0) {
+		super.cacheClean(arg0);
+		((NPCTypeFactory) this.factory).cacheClean(arg0);
 	}
 
 	@ObfuscatedName("aod.o(I)V")

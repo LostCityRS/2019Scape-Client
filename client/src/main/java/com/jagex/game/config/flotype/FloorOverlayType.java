@@ -13,97 +13,95 @@ public class FloorOverlayType implements ConfigType, MutableConfig {
 	public int id;
 
 	@ObfuscatedName("yn.m")
-	public int rgb = 0;
+	public int rgb = 0 * 592157171;
 
 	@ObfuscatedName("yn.k")
-	public int material = -1;
+	public int material = -1685253883 * -462296013;
 
 	@ObfuscatedName("yn.f")
 	public boolean occlude = true;
 
 	@ObfuscatedName("yn.w")
-	public int averagecolour = -1;
+	public int averagecolour = -690404605 * 1773420629;
 
 	@ObfuscatedName("yn.l")
-	public int materialscale = 512;
+	public int materialscale = 183582208 * -2047499425;
 
 	@ObfuscatedName("yn.u")
 	public boolean hardshadow = true;
 
 	@ObfuscatedName("yn.z")
-	public int priority = 0;
+	public int priority = 1907344776 * -205172655;
 
 	@ObfuscatedName("yn.p")
 	public boolean blend = false;
 
 	@ObfuscatedName("yn.d")
-	public int waterfogcolour = 0x122b3d;
+	public int waterfogcolour = 1233755641 * 1502845029;
 
 	@ObfuscatedName("yn.c")
-	public int waterfogscale = 512;
+	public int waterfogscale = 2059861312;
 
 	@ObfuscatedName("yn.r")
-	public int waterfogoffset = 256;
+	public int waterfogoffset = -1677496433 * -503537775;
 
 	@ObfuscatedName("yn.v")
-	public int field8165 = 64;
+	public int field8165 = -535383117 * -129782971;
 
 	@ObfuscatedName("yn.o")
-	public int field8166 = 0;
+	public int field8166 = 0 * -703195503;
 
 	@ObfuscatedName("yn.s")
-	public int field8167 = 64;
+	public int field8167 = -1934904128 * 1714018651;
 
 	@ObfuscatedName("yn.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("yn.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			this.rgb = colourFudge(buf.g3());
-		} else if (code == 2) {
-			this.material = buf.g1();
-		} else if (code == 3) {
-			this.material = buf.g2();
-
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			this.rgb = colourFudge(arg0.g3());
+		} else if (arg1 == 2) {
+			this.material = arg0.g1();
+		} else if (arg1 == 3) {
+			this.material = arg0.g2();
 			if (this.material == 65535) {
 				this.material = -1;
 			}
-		} else if (code == 5) {
+		} else if (arg1 == 5) {
 			this.occlude = false;
-		} else if (code == 7) {
-			this.averagecolour = colourFudge(buf.g3());
-		} else if (code == 8) {
-			// empty
-		} else if (code == 9) {
-			this.materialscale = buf.g2() << 2;
-		} else if (code == 10) {
-			this.hardshadow = false;
-		} else if (code == 11) {
-			this.priority = buf.g1();
-		} else if (code == 12) {
-			this.blend = true;
-		} else if (code == 13) {
-			this.waterfogcolour = buf.g3();
-		} else if (code == 14) {
-			this.waterfogscale = buf.g1() << 2;
-		} else if (code == 16) {
-			this.waterfogoffset = buf.g1();
-		} else if (code == 20) {
-			this.field8165 = buf.g2();
-		} else if (code == 21) {
-			this.field8166 = buf.g1();
-		} else if (code == 22) {
-			this.field8167 = buf.g2();
+		} else if (arg1 == 7) {
+			this.averagecolour = colourFudge(arg0.g3());
+		} else if (arg1 != 8) {
+			if (arg1 == 9) {
+				this.materialscale = arg0.g2() << 2;
+			} else if (arg1 == 10) {
+				this.hardshadow = false;
+			} else if (arg1 == 11) {
+				this.priority = arg0.g1();
+			} else if (arg1 == 12) {
+				this.blend = true;
+			} else if (arg1 == 13) {
+				this.waterfogcolour = arg0.g3();
+			} else if (arg1 == 14) {
+				this.waterfogscale = (arg0.g1() << 2) * -2115298315;
+			} else if (arg1 == 16) {
+				this.waterfogoffset = arg0.g1();
+			} else if (arg1 == 20) {
+				this.field8165 = arg0.g2();
+			} else if (arg1 == 21) {
+				this.field8166 = arg0.g1();
+			} else if (arg1 == 22) {
+				this.field8167 = arg0.g2();
+			}
 		}
 	}
 
@@ -113,12 +111,12 @@ public class FloorOverlayType implements ConfigType, MutableConfig {
 	}
 
 	@ObfuscatedName("uk.p(II)I")
-	public static int colourFudge(int color) {
-		return color == 0xFF00FF ? -1 : ColourUtils.hslToRgb(color);
+	public static int colourFudge(int arg0) {
+		return arg0 == 16711935 ? -1 : ColourUtils.hslToRgb(arg0);
 	}
 
 	@ObfuscatedName("yn.z(IB)V")
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int arg0) {
+		this.id = arg0;
 	}
 }

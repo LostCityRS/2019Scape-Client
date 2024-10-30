@@ -24,9 +24,9 @@ public class TotpType implements SerializableEnum {
 	@ObfuscatedName("abi.w")
 	public final int serialID;
 
-	public TotpType(int index, int serialID) {
-		this.index = index;
-		this.serialID = serialID;
+	public TotpType(int arg0, int arg1) {
+		this.index = arg0;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("abi.n()I")

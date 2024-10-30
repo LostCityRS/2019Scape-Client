@@ -8,7 +8,7 @@ public class IntNode extends Node {
 	@ObfuscatedName("akd.k")
 	public int value;
 
-	public IntNode(int value) {
-		this.value = value;
+	public IntNode(int arg0) {
+		this.value = arg0;
 	}
 }

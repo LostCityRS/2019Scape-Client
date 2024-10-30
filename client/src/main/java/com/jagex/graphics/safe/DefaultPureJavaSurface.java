@@ -1,15 +1,20 @@
 package com.jagex.graphics.safe;
 
-import com.jagex.graphics.safe.PureJavaToolkit;
-import com.jagex.graphics.safe.PureJavaSurface;
 import deob.ObfuscatedName;
-
-import java.awt.*;
-import java.awt.image.*;
+import java.awt.Canvas;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferInt;
+import java.awt.image.DirectColorModel;
+import java.awt.image.Raster;
+import java.awt.image.WritableRaster;
 import java.util.Hashtable;
 
 @ObfuscatedName("ats")
-public final class DefaultPureJavaSurface extends PureJavaSurface {
+public class DefaultPureJavaSurface extends PureJavaSurface {
 
 	@ObfuscatedName("ats.u")
 	public Image field12515;

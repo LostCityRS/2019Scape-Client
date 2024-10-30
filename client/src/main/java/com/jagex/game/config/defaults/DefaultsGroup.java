@@ -41,7 +41,7 @@ public class DefaultsGroup {
 	@ObfuscatedName("ww.c")
 	public final int js5GroupId;
 
-	public DefaultsGroup(int id) {
-		this.js5GroupId = id;
+	public DefaultsGroup(int arg0) {
+		this.js5GroupId = arg0;
 	}
 }

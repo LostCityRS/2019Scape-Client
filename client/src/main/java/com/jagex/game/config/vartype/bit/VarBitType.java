@@ -1,5 +1,6 @@
 package com.jagex.game.config.vartype.bit;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigTypeList;
@@ -52,8 +53,8 @@ public class VarBitType implements VarConfigType {
 	}
 
 	@ObfuscatedName("kh.e(Lalw;B)V")
-	public void decode(Packet buf) {
-		this.decode(buf, false);
+	public void decode(Packet arg0) {
+		this.decode(arg0, false);
 	}
 
 	@ObfuscatedName("kh.u(Lalw;ZI)V")
@@ -73,7 +74,7 @@ public class VarBitType implements VarConfigType {
 
 	@ObfuscatedName("kh.z(Lalw;IZI)V")
 	public void method5184(Packet arg0, int arg1, boolean arg2) {
-		VarBitTypeEncodingKey var4 = (VarBitTypeEncodingKey) SerializableEnums.decode(VarBitTypeEncodingKey.values(), arg1);
+		VarBitTypeEncodingKey var4 = (VarBitTypeEncodingKey) SerializableEnums.decode((SerializableEnum[]) VarBitTypeEncodingKey.values(), arg1);
 		switch(var4.index) {
 			case 7:
 				this.startBit = arg0.g1();
@@ -83,7 +84,7 @@ public class VarBitType implements VarConfigType {
 				break;
 			case 14:
 				int var5 = arg0.g1();
-				this.domain = (VarDomainType) SerializableEnums.decode(VarDomainType.values(), var5);
+				this.domain = (VarDomainType) SerializableEnums.decode((SerializableEnum[]) VarDomainType.values(), var5);
 				if (this.domain == null) {
 					throw new IllegalStateException("");
 				}

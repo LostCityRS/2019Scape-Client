@@ -2,7 +2,6 @@ package com.jagex.game.client;
 
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-
 import java.util.Random;
 
 @ObfuscatedName("ol")

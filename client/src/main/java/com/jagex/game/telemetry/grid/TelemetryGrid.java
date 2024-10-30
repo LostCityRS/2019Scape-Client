@@ -1,7 +1,6 @@
 package com.jagex.game.telemetry.grid;
 
 import deob.ObfuscatedName;
-
 import java.util.ArrayList;
 import java.util.List;
 

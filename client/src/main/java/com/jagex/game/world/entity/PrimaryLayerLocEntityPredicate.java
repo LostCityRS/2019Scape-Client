@@ -4,7 +4,7 @@ import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("s")
-public final class PrimaryLayerLocEntityPredicate implements PrimaryLayerEntityPredicate {
+public class PrimaryLayerLocEntityPredicate implements PrimaryLayerEntityPredicate {
 
 	@ObfuscatedName("s.e(Lash;I)Z")
 	public boolean method478(PrimaryLayerEntity arg0) {

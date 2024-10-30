@@ -2,7 +2,11 @@ package com.jagex.game.camera;
 
 import com.jagex.core.io.Packet;
 import com.jagex.graphics.camera.Camera;
-import com.jagex.math.*;
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Quaternion;
+import com.jagex.math.Spline;
+import com.jagex.math.Vector3;
+import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ani")
@@ -73,7 +77,7 @@ public class Lookat_Sub2 extends Lookat {
 	}
 
 	@ObfuscatedName("ani.w(Lalw;I)V")
-	public void decode(Packet buf) {
-		this.field11874 = new Spline(buf);
+	public void decode(Packet arg0) {
+		this.field11874 = new Spline(arg0);
 	}
 }

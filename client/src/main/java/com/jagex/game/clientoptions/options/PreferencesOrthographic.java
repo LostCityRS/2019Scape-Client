@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amz")
 public class PreferencesOrthographic extends Preference {
 
-	public PreferencesOrthographic(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesOrthographic(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
-	public PreferencesOrthographic(ClientOptions options) {
-		super(options);
+	public PreferencesOrthographic(ClientOptions arg0) {
+		super(arg0);
 	}
 
 	@ObfuscatedName("amz.o(I)V")
@@ -32,13 +32,13 @@ public class PreferencesOrthographic extends Preference {
 	}
 
 	@ObfuscatedName("amz.n(II)I")
-	public int canSetValue(int value) {
-		return value == 2 ? 2 : 1;
+	public int canSetValue(int arg0) {
+		return arg0 == 2 ? 2 : 1;
 	}
 
 	@ObfuscatedName("amz.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amz.y(B)I")

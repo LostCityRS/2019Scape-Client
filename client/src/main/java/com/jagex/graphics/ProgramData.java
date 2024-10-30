@@ -21,21 +21,21 @@ public class ProgramData {
 	public ProgramDefineData[] fragmentPrograms;
 
 	@ObfuscatedName("hn.e(Lhw;I)V")
-	public void decode(ShaderDataReader buf) {
-		this.name = buf.gstr();
-		this.vertexShaderFile = buf.gstr();
-		this.fragmentShaderFile = buf.gstr();
-		int var2 = buf.g2();
-		int var3 = buf.g2();
+	public void decode(ShaderDataReader arg0) {
+		this.name = arg0.gstr();
+		this.vertexShaderFile = arg0.gstr();
+		this.fragmentShaderFile = arg0.gstr();
+		int var2 = arg0.g2();
+		int var3 = arg0.g2();
 		this.vertexPrograms = var2 == 0 ? null : new ProgramDefineData[var2];
 		this.fragmentPrograms = var3 == 0 ? null : new ProgramDefineData[var3];
-		for (int index = 0; index < var2; index++) {
-			this.vertexPrograms[index] = new ProgramDefineData();
-			this.vertexPrograms[index].decode(buf);
+		for (int var4 = 0; var4 < var2; var4++) {
+			this.vertexPrograms[var4] = new ProgramDefineData();
+			this.vertexPrograms[var4].decode(arg0);
 		}
-		for (int index = 0; index < var3; index++) {
-			this.fragmentPrograms[index] = new ProgramDefineData();
-			this.fragmentPrograms[index].decode(buf);
+		for (int var5 = 0; var5 < var3; var5++) {
+			this.fragmentPrograms[var5] = new ProgramDefineData();
+			this.fragmentPrograms[var5].decode(arg0);
 		}
 	}
 }

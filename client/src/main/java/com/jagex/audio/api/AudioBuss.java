@@ -31,11 +31,11 @@ public class AudioBuss {
 	@ObfuscatedName("mj.u")
 	public long volumeEaseTime2;
 
-	public AudioBuss(int arg0, float priority, Object arg2, BussManager arg3, VolumeProvider volumeProvider, AudioBuss parent) {
-		this.parent = parent;
-		this.volumeProvider = volumeProvider;
+	public AudioBuss(int arg0, float arg1, Object arg2, BussManager arg3, VolumeProvider arg4, AudioBuss arg5) {
+		this.parent = arg5;
+		this.volumeProvider = arg4;
 		this.volume = 1.0F;
-		this.priority = priority;
+		this.priority = arg1;
 		this.volumeEaseVolume1 = -1.0F;
 		this.volumeEaseVolume2 = -1.0F;
 		this.volumeEaseTime1 = -1L;

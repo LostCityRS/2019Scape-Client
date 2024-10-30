@@ -2,16 +2,35 @@ package com.jagex.game.client;
 
 import com.jagex.core.io.BufferedFile;
 import com.jagex.core.io.Packet;
-import com.jagex.core.utils.*;
+import com.jagex.core.utils.CacheUtil;
+import com.jagex.core.utils.JagException;
+import com.jagex.core.utils.MonotonicTime;
+import com.jagex.core.utils.PreciseSleep;
+import com.jagex.core.utils.StringTools;
+import com.jagex.core.utils.Timer;
 import com.jagex.game.fullscreen.Fullscreen;
 import com.jagex.graphics.FullscreenImpl;
 import deob.ObfuscatedName;
 import jaclib.nanotime.QueryPerformanceCounter;
-import rs2.client.Client;
-
 import java.applet.Applet;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Container;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Insets;
+import java.awt.LayoutManager;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.awt.image.ImageObserver;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -128,6 +147,15 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	@ObfuscatedName("b.ap")
 	public static int archiveCount;
 
+	@ObfuscatedName("sk.aj")
+	public static BufferedFile uidDat = null;
+
+	@ObfuscatedName("sk.ay")
+	public static BufferedFile cacheDat = null;
+
+	@ObfuscatedName("sk.ab")
+	public static BufferedFile masterIndex = null;
+
 	@ObfuscatedName("vs.az")
 	public static BufferedFile[] cacheIndex;
 
@@ -140,17 +168,8 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	@ObfuscatedName("la.ak")
 	public static String[] historicCacheDirectories;
 
-	@ObfuscatedName("sk.aj")
-	public static BufferedFile uidDat = null;
-
-	@ObfuscatedName("sk.ay")
-	public static BufferedFile cacheDat = null;
-
-	@ObfuscatedName("sk.ab")
-	public static BufferedFile masterIndex = null;
-
 	@ObfuscatedName("sk.bl")
-	public static GameShell3$Environment environment = null;
+	public static GameShell.Environment environment = null;
 
 	@ObfuscatedName("sk.bk")
 	public static long killtime = 0L;
@@ -199,14 +218,14 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.e(Lsq;Ljava/lang/String;Ljava/lang/String;IIIIZI)V")
-	public final void startApplet(GameShell3$FrameParameters arg0, String arg1, String arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
+	public final void startApplet(GameShell.FrameParameters arg0, String arg1, String arg2, int arg3, int arg4, int arg5, int arg6, boolean arg7) {
 		try {
-			this.setEnvironment(GameShell3$Environment.APPLET, arg7);
+			this.setEnvironment(GameShell.Environment.APPLET, arg7);
 			frameWid = canvasWid = arg0.getWidth();
 			frameHei = canvasHei = arg0.getHeight();
 			leftMargin = 0;
 			topMargin = 0;
-			if (getEnvironment() == GameShell3$Environment.APPLET_WITH_EXTERNAL_FRAME) {
+			if (getEnvironment() == GameShell.Environment.APPLET_WITH_EXTERNAL_FRAME) {
 				frameWid += arg0.getXMargin() * 2;
 				frameHei += arg0.getYMargin() * 2;
 				this.createAndShowFrame(arg0.getTitle());
@@ -214,8 +233,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			JagException.field9164 = field11885;
 			this.startCommon(arg1, arg2, arg3, arg4, arg5, arg6);
 		} catch (Throwable var10) {
-            // logger.error("", throwable);
-			JagException.report(null, var10);
+			JagException.report(null, (Throwable) var10);
 			this.error("crash");
 		}
 	}
@@ -277,7 +295,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		} catch (Throwable var27) {
 		}
 		historicCacheLocations = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", homeDir, "/tmp/", "" };
-		historicCacheDirectories = new String[] { ".jagex_cache_" + historicCacheId, ".file_store_" + historicCacheId};
+		historicCacheDirectories = new String[] { ".jagex_cache_" + historicCacheId, ".file_store_" + historicCacheId };
 		int var14 = 0;
 		label131: while (var14 < 4) {
 			cacheDirectory = this.getCacheDirectory(arg0, arg1, var14);
@@ -312,7 +330,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		}
 		try {
 			fsimp14 = new FullscreenImpl();
-		} catch (Exception ex) {
+		} catch (Exception var26) {
 			Fullscreen.allowed = false;
 		}
 		mouseImp = new CursorManager();
@@ -372,22 +390,18 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 					}
 				}
 				var8.close();
-                // logger.debug("Cache: Read cache locator file from: {}, state: {}", cacheLocator, (Object)n3);
 			} catch (IOException var29) {
-                // logger.error("Cache: Error opening cache locator file.", iOException);
 				var29.printStackTrace();
 			}
 			if (var5 != null) {
 				File var14 = new File(var5);
 				if (!var14.exists()) {
-	                // logger.debug("Cache: Cache locator location does not exist: {}", string4);
 					var5 = null;
 				}
 			}
 			if (var5 != null) {
 				File var15 = new File(var5, "test.dat");
 				if (!this.checkWritable(var15, true)) {
-	                // logger.debug("Cache: Cache locator location not writable: {}", string4);
 					var5 = null;
 				}
 			}
@@ -399,19 +413,16 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 					if (var18.exists() && this.checkWritable(new File(var18, "test.dat"), true)) {
 						var5 = var18.toString();
 						var7 = true;
-	                    // logger.debug("Cache: Legacy cache found: {}", (Object)string4);
 						break label103;
 					}
 				}
 			}
 		}
 		if (var5 == null) {
-            // logger.debug("Cache: No previous cache found, using default.");
 			var5 = homeDir + File.separatorChar + "jagexcache" + var4 + File.separatorChar + arg0 + File.separatorChar + arg1 + File.separatorChar;
 			var7 = true;
 		}
 		if (var6 != null) {
-            // logger.debug("Cache: Copying cache from old location: {}", string5);
 			File var19 = new File(var6);
 			File var20 = new File(var5);
 			try {
@@ -420,14 +431,12 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				for (int var23 = 0; var23 < var22.length; var23++) {
 					File var24 = var22[var23];
 					File var25 = new File(var20, var24.getName());
-                    // logger.debug("Cache: Copying old file: {} to {}", file, (Object)file2);
 					boolean var26 = var24.renameTo(var25);
 					if (!var26) {
 						throw new IOException();
 					}
 				}
 			} catch (Exception var28) {
-                // logger.error("Cache: Error when copying cache from old location.", exception);
 				var28.printStackTrace();
 			}
 			var7 = true;
@@ -435,14 +444,12 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		if (var7) {
 			this.writeCacheLocator(new File(var5), null);
 		}
-        // logger.debug("Cache: Using cache at: {}", string4);
 		return new File(var5);
 	}
 
 	@ObfuscatedName("sk.k(Ljava/io/File;Ljava/io/File;I)V")
 	public void writeCacheLocator(File arg0, File arg1) {
 		try {
-            // logger.debug("Cache: Writing cache locator file with new location: {} old location: {}", file, file2 == null ? "N/A" : file2);
 			FileOnDisk var3 = new FileOnDisk(cacheLocator, "rw", 10000L);
 			Packet var4 = new Packet(500);
 			var4.p1(3);
@@ -454,7 +461,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			var3.write(var4.data, 0, var4.pos);
 			var3.close();
 		} catch (IOException var6) {
-            // logger.error("Cache: Error writing cache locator file.", iOException);
 			var6.printStackTrace();
 		}
 	}
@@ -487,7 +493,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		File var3 = new File(cacheDirectory, "preferences" + arg0 + ".dat");
 		if (var3.exists()) {
 			try {
-                // logger.debug("Prefs: Opening existing prefs {} in modern location: {}", (Object)string, (Object)file);
 				return new FileOnDisk(var3, "rw", 10000L);
 			} catch (IOException var14) {
 			}
@@ -501,13 +506,11 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		File var7 = new File(homeDir, "jagex_" + arg1 + "_preferences" + arg0 + var6 + ".dat");
 		if (!arg2 && var7.exists()) {
 			try {
-                // logger.debug("Prefs: Opening existing prefs {} in historic location: {}", (Object)string, (Object)file2);
 				return new FileOnDisk(var7, "rw", 10000L);
 			} catch (IOException var13) {
 			}
 		}
 		try {
-            // logger.debug("Prefs: Opening new prefs {} in modern location: {}", (Object)string, (Object)file);
 			return new FileOnDisk(var3, "rw", 10000L);
 		} catch (IOException var12) {
 			throw new RuntimeException();
@@ -520,21 +523,18 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			File var0 = new File(homeDir, "random.dat");
 			if (var0.exists()) {
 				uidDat = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
-                // logger.debug("UID: Opening UID in user's home directory: {}", file);
 			} else {
 				label34: for (int var1 = 0; var1 < historicCacheDirectories.length; var1++) {
 					for (int var2 = 0; var2 < historicCacheLocations.length; var2++) {
 						File var3 = new File(historicCacheLocations[var2] + historicCacheDirectories[var1] + File.separatorChar + "random.dat");
 						if (var3.exists()) {
 							uidDat = new BufferedFile(new FileOnDisk(var3, "rw", 25L), 24, 0);
-	                        // logger.debug("UID: Opening UID in historic directory: {}", file2);
 							break label34;
 						}
 					}
 				}
 			}
 			if (uidDat == null) {
-                // logger.debug("UID: Couldn't find existing UID, creating new one in user's home directory: {}", file);
 				RandomAccessFile var4 = new RandomAccessFile(var0, "rw");
 				int var5 = var4.read();
 				var4.seek(0L);
@@ -544,7 +544,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 				uidDat = new BufferedFile(new FileOnDisk(var0, "rw", 25L), 24, 0);
 			}
 		} catch (IOException var7) {
-            // logger.error("Error opening random.dat", iOException);
 		}
 	}
 
@@ -644,10 +643,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.b(I)Z")
 	public final boolean checkhost() {
-		if (!Client.ENABLE_HOST_CHECK) {
-			return true;
-		}
-
 		String var1 = field11885.getDocumentBase().getHost().toLowerCase();
 		if (var1.equals("jagex.com") || var1.endsWith(".jagex.com")) {
 			return true;
@@ -671,7 +666,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	public void run() {
-        // logger.debug("run");
 		try {
 			this.run_inner();
 		} catch (ThreadDeath var7) {
@@ -686,7 +680,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 
 	@ObfuscatedName("sk.h(I)V")
 	public void run_inner() {
-        // logger.debug("run_inner");
 		if (javaVendor != null) {
 			String var1 = javaVendor.toLowerCase();
 			if (var1.indexOf("sun") != -1 || var1.indexOf("apple") != -1) {
@@ -711,10 +704,8 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		maxmemory = (int) (Runtime.getRuntime().maxMemory() / 1048576L) + 1;
 		cpucount = Runtime.getRuntime().availableProcessors();
 		this.addcanvas();
-        // logger.debug("maininit");
 		this.maininit();
 		field6594 = Timer.method6109();
-        // logger.debug("mainloop");
 		while (killtime == 0L || MonotonicTime.get() < killtime) {
 			field6624 = field6594.method8158(logicUpdateInterval);
 			for (int var5 = 0; var5 < field6624; var5++) {
@@ -795,7 +786,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			}
 			shutdown = true;
 		}
-        // logger.debug("Shutdown start - clean:{}", bl);
 		try {
 			this.mainquit();
 		} catch (Exception var11) {
@@ -830,7 +820,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			frame.dispose();
 			frame = null;
 		}
-        // logger.debug("Shutdown complete - clean:{}", bl);
 	}
 
 	@ObfuscatedName("nw.ae(B)I")
@@ -929,7 +918,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		try {
 			Graphics var5 = canvas.getGraphics();
 			if (field9147 == null) {
-				field9147 = new java.awt.Font("Helvetica", 1, 13);
+				field9147 = new Font("Helvetica", 1, 13);
 			}
 			if (arg2 == null) {
 				arg2 = new Color(140, 17, 17);
@@ -1003,7 +992,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			return;
 		}
 		this.alreadyerrored = true;
-        // logger.debug("error_game_{}", (Object)string);
 		System.out.println("error_game_" + arg0);
 		try {
 			BrowserControl.call(field11885, "loggedout");
@@ -1012,7 +1000,6 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 		try {
 			field11885.getAppletContext().showDocument(new URL(field11885.getCodeBase(), "error_game_" + arg0 + ".ws"), "_top");
 		} catch (Exception var4) {
-            // logger.error("", exception);
 		}
 	}
 
@@ -1022,7 +1009,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 			return;
 		}
 		this.alreadyerrored = true;
-		System.out.println("error_game_" + arg0 + "?" + arg1);
+		System.out.println("error_game_" + arg0);
 		try {
 			BrowserControl.call(field11885, "loggedout");
 		} catch (Throwable var6) {
@@ -1050,13 +1037,13 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("sk.ar(Lsm;ZI)V")
-	public void setEnvironment(GameShell3$Environment arg0, boolean arg1) {
+	public void setEnvironment(GameShell.Environment arg0, boolean arg1) {
 		if (arg0 == null) {
 			throw new NullPointerException();
-		} else if (GameShell3$Environment.APPLET == arg0 || GameShell3$Environment.APPLICATION == arg0) {
+		} else if (GameShell.Environment.APPLET == arg0 || GameShell.Environment.APPLICATION == arg0) {
 			environment = arg0;
-			if (environment != GameShell3$Environment.APPLICATION && arg1) {
-				environment = GameShell3$Environment.APPLET_WITH_EXTERNAL_FRAME;
+			if (environment != GameShell.Environment.APPLICATION && arg1) {
+				environment = GameShell.Environment.APPLET_WITH_EXTERNAL_FRAME;
 			}
 		} else {
 			throw new IllegalStateException();
@@ -1064,7 +1051,7 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	}
 
 	@ObfuscatedName("in.ap(B)Lsm;")
-	public static GameShell3$Environment getEnvironment() {
+	public static GameShell.Environment getEnvironment() {
 		return environment;
 	}
 
@@ -1081,4 +1068,69 @@ public abstract class GameShell implements GameShellStub, Runnable, FocusListene
 	public abstract void mainquit();
 
 	public abstract void init();
+
+	@ObfuscatedName("sm")
+	public static class Environment {
+
+		@ObfuscatedName("sm.e")
+		public static final GameShell.Environment APPLICATION = new GameShell.Environment();
+
+		@ObfuscatedName("sm.n")
+		public static final GameShell.Environment APPLET = new GameShell.Environment();
+
+		@ObfuscatedName("sm.m")
+		public static final GameShell.Environment APPLET_WITH_EXTERNAL_FRAME = new GameShell.Environment();
+	}
+
+	@ObfuscatedName("sq")
+	public static class FrameParameters {
+
+		@ObfuscatedName("sq.e")
+		public int width;
+
+		@ObfuscatedName("sq.n")
+		public int height;
+
+		@ObfuscatedName("sq.m")
+		public int xMargin;
+
+		@ObfuscatedName("sq.k")
+		public int yMargin;
+
+		@ObfuscatedName("sq.f")
+		public String title;
+
+		public FrameParameters(int arg0, int arg1, int arg2, int arg3, String arg4) {
+			this.width = arg0;
+			this.height = arg1;
+			this.xMargin = arg2;
+			this.yMargin = arg3;
+			this.title = arg4;
+		}
+
+		@ObfuscatedName("sq.e(I)I")
+		public int getWidth() {
+			return this.width;
+		}
+
+		@ObfuscatedName("sq.n(I)I")
+		public int getHeight() {
+			return this.height;
+		}
+
+		@ObfuscatedName("sq.m(I)I")
+		public int getXMargin() {
+			return this.xMargin;
+		}
+
+		@ObfuscatedName("sq.k(I)I")
+		public int getYMargin() {
+			return this.yMargin;
+		}
+
+		@ObfuscatedName("sq.f(B)Ljava/lang/String;")
+		public String getTitle() {
+			return this.title;
+		}
+	}
 }

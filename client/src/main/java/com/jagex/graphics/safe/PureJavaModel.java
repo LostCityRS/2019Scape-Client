@@ -7,7 +7,17 @@ import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.BillboardType;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEmitterType;
-import com.jagex.graphics.*;
+import com.jagex.graphics.AlphaMode;
+import com.jagex.graphics.Billboard;
+import com.jagex.graphics.BillboardPlacement;
+import com.jagex.graphics.FloorModel;
+import com.jagex.graphics.MaterialList;
+import com.jagex.graphics.MaterialRaw;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelBillboard;
+import com.jagex.graphics.ModelParticleEffector;
+import com.jagex.graphics.ModelParticleEmitter;
+import com.jagex.graphics.ModelUnlit;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Trig1;
@@ -250,42 +260,40 @@ public class PureJavaModel extends Model {
 	@ObfuscatedName("afi.cf")
 	public PureJavaModel[] field9539;
 
-	public PureJavaModel(PureJavaToolkit renderer) {
-		this.renderer = renderer;
+	public PureJavaModel(PureJavaToolkit arg0) {
+		this.renderer = arg0;
 	}
 
-	public PureJavaModel(PureJavaToolkit renderer, ModelUnlit model, int allowedOperations, int arg3, int arg4, int arg5) {
-		this.renderer = renderer;
-		this.allowedOperations = allowedOperations;
+	public PureJavaModel(PureJavaToolkit arg0, ModelUnlit arg1, int arg2, int arg3, int arg4, int arg5) {
+		this.renderer = arg0;
+		this.allowedOperations = arg2;
 		this.field9546 = arg3;
 		this.field9600 = arg4;
 		MaterialList var7 = this.renderer.materialList;
 		BillboardTypeList var8 = this.renderer.billboardList;
-		this.vertexCount = model.vertexCount;
-		this.field9549 = model.field1374;
-		this.vertexX = model.vertexX;
-		this.vertexY = model.vertexY;
-		this.vertexZ = model.vertexZ;
-		this.faceCount = model.faceCount;
-		this.faceVertex1 = model.faceVertex1;
-		this.faceVertex2 = model.faceVertex2;
-		this.faceVertex3 = model.faceVertex3;
-		this.facePriority = model.facePriority;
-		this.faceColour = model.faceColour;
-		this.faceAlpha = model.faceTrans;
-		this.field9576 = model.field1399;
-		this.faceType = model.faceType;
-		this.emitters = model.emitters;
-		this.effectors = model.effectors;
-		this.vertexSourceModels = model.vertexSourceModels;
-
+		this.vertexCount = arg1.vertexCount;
+		this.field9549 = arg1.field1374;
+		this.vertexX = arg1.vertexX;
+		this.vertexY = arg1.vertexY;
+		this.vertexZ = arg1.vertexZ;
+		this.faceCount = arg1.faceCount;
+		this.faceVertex1 = arg1.faceVertex1;
+		this.faceVertex2 = arg1.faceVertex2;
+		this.faceVertex3 = arg1.faceVertex3;
+		this.facePriority = arg1.facePriority;
+		this.faceColour = arg1.faceColour;
+		this.faceAlpha = arg1.faceTrans;
+		this.field9576 = arg1.field1399;
+		this.faceType = arg1.faceType;
+		this.emitters = arg1.emitters;
+		this.effectors = arg1.effectors;
+		this.vertexSourceModels = arg1.vertexSourceModels;
 		this.field9557 = this.faceCount;
 		int[] var9 = new int[this.faceCount];
 		int var10 = 0;
 		while (var10 < this.faceCount) {
 			var9[var10] = var10++;
 		}
-
 		long[] var11 = new long[this.faceCount];
 		boolean var12 = (this.allowedOperations & 0x100) != 0;
 		for (int var13 = 0; var13 < this.faceCount; var13++) {
@@ -295,11 +303,10 @@ public class PureJavaModel extends Model {
 			byte var17 = 0;
 			byte var18 = 0;
 			byte var19 = 0;
-
-			if (model.billboard != null) {
+			if (arg1.billboard != null) {
 				boolean var20 = false;
-				for (int var21 = 0; var21 < model.billboard.length; var21++) {
-					ModelBillboard var22 = model.billboard[var21];
+				for (int var21 = 0; var21 < arg1.billboard.length; var21++) {
+					ModelBillboard var22 = arg1.billboard[var21];
 					if (var22.field1654 == var14) {
 						BillboardType var23 = var8.get(var22.field1653);
 						if (var23.field3456) {
@@ -319,10 +326,10 @@ public class PureJavaModel extends Model {
 					continue;
 				}
 			}
-			if (model.emitters != null) {
+			if (arg1.emitters != null) {
 				boolean var25 = false;
-				for (int var26 = 0; var26 < model.emitters.length; var26++) {
-					ModelParticleEmitter var27 = model.emitters[var26];
+				for (int var26 = 0; var26 < arg1.emitters.length; var26++) {
+					ModelParticleEmitter var27 = arg1.emitters[var26];
 					if (var27.field1463 == var14) {
 						ParticleEmitterType var28 = this.renderer.emitterTypeList.get(var27.particle);
 						if (var28.field3510) {
@@ -336,10 +343,9 @@ public class PureJavaModel extends Model {
 					continue;
 				}
 			}
-
 			short var29 = -1;
-			if (model.faceMaterial != null) {
-				var29 = model.faceMaterial[var14];
+			if (arg1.faceMaterial != null) {
+				var29 = arg1.faceMaterial[var14];
 				if (var29 != -1) {
 					var15 = var7.get(var29 & 0xFFFF);
 					if ((arg5 & 0x40) != 0 && var15.highDetail) {
@@ -350,16 +356,13 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-
 			boolean var30 = this.faceAlpha != null && this.faceAlpha[var14] != 0 || var15 != null && AlphaMode.MULTIPLY == var15.alphaMode;
 			if ((var12 || var30) && this.facePriority != null) {
 				var16 += this.facePriority[var14] << 17;
 			}
-
 			if (var30) {
 				var16 += 65536;
 			}
-
 			int var31 = ((var18 & 0xFF) << 8) + var16;
 			int var32 = (var19 & 0xFF) + var31;
 			int var33 = ((var29 & 0xFFFF) << 16) + var17;
@@ -367,54 +370,50 @@ public class PureJavaModel extends Model {
 			var11[var13] = ((long) var32 << 32) + (long) var34;
 			this.field9548 |= var30;
 		}
-
 		Algorithms.quicksortParallel(var11, var9);
-
-		if (model.billboard != null) {
-			this.billboardCount = model.billboard.length;
+		if (arg1.billboard != null) {
+			this.billboardCount = arg1.billboard.length;
 			this.billboards = new Billboard[this.billboardCount];
 			this.billboardPlacements = new BillboardPlacement[this.billboardCount];
-			for (int var35 = 0; var35 < model.billboard.length; var35++) {
-				ModelBillboard var36 = model.billboard[var35];
+			for (int var35 = 0; var35 < arg1.billboard.length; var35++) {
+				ModelBillboard var36 = arg1.billboard[var35];
 				BillboardType var37 = var8.get(var36.field1653);
-				int var38 = ColourUtils.field8149[model.faceColour[var36.field1654] & 0xFFFF] & 0xFFFFFF;
-				int var39 = var38 | 255 - (model.faceTrans == null ? 0 : model.faceTrans[var36.field1654] & 0xFF) << 24;
-				this.billboards[var35] = new Billboard(var36.field1654, model.faceVertex1[var36.field1654], model.faceVertex2[var36.field1654], model.faceVertex3[var36.field1654], var37.field3451, var37.field3452, var37.field3455, var37.field3450, var37.field3453, var37.field3456, var36.field1656);
+				int var38 = ColourUtils.field8149[arg1.faceColour[var36.field1654] & 0xFFFF] & 0xFFFFFF;
+				int var39 = var38 | 255 - (arg1.faceTrans == null ? 0 : arg1.faceTrans[var36.field1654] & 0xFF) << 24;
+				this.billboards[var35] = new Billboard(var36.field1654, arg1.faceVertex1[var36.field1654], arg1.faceVertex2[var36.field1654], arg1.faceVertex3[var36.field1654], var37.field3451, var37.field3452, var37.field3455, var37.field3450, var37.field3453, var37.field3456, var36.field1656);
 				this.billboardPlacements[var35] = new BillboardPlacement(var39);
 			}
 		}
-
 		this.faceVertexU = new float[this.faceCount][];
 		this.faceVertexV = new float[this.faceCount][];
-		ModelRelated1 var40 = this.method1687(model, var9, this.faceCount);
+		Model.ModelRelated1 var40 = this.method1687(arg1, var9, this.faceCount);
 		PureJavaToolkitContext var41 = this.renderer.getContext(Thread.currentThread());
 		float[] var42 = var41.field860;
 		boolean var43 = false;
-
 		for (int var44 = 0; var44 < this.faceCount; var44++) {
 			int var45 = var9[var44];
-			short var46 = model.faceMaterial == null ? -1 : model.faceMaterial[var45];
+			short var46 = arg1.faceMaterial == null ? -1 : arg1.faceMaterial[var45];
 			if (var46 != -1 && (arg5 & 0x40) != 0 && var7.get(var46 & 0xFFFF).highDetail) {
 				var46 = -1;
 			}
 			if (var46 != -1) {
-				short var47 = model.faceMapping == null ? -1 : model.faceMapping[var45];
+				short var47 = arg1.faceMapping == null ? -1 : arg1.faceMapping[var45];
 				var43 = true;
 				float[] var48 = this.faceVertexU[var45] = new float[3];
 				float[] var49 = this.faceVertexV[var45] = new float[3];
 				if (var47 == 32766) {
-					int var50 = model.faceTextureVertexOffset1[var45] & 0xFF;
-					int var51 = model.faceTextureVertexOffset2[var45] & 0xFF;
-					int var52 = model.faceTextureVertexOffset3[var45] & 0xFF;
-					int var53 = model.vertexTextureVertex[model.faceVertex1[var45]] + var50;
-					int var54 = model.vertexTextureVertex[model.faceVertex2[var45]] + var51;
-					int var55 = model.vertexTextureVertex[model.faceVertex3[var45]] + var52;
-					var48[0] = model.textureVertexU[var53];
-					var49[0] = model.textureVertexV[var53];
-					var48[1] = model.textureVertexU[var54];
-					var49[1] = model.textureVertexV[var54];
-					var48[2] = model.textureVertexU[var55];
-					var49[2] = model.textureVertexV[var55];
+					int var50 = arg1.faceTextureVertexOffset1[var45] & 0xFF;
+					int var51 = arg1.faceTextureVertexOffset2[var45] & 0xFF;
+					int var52 = arg1.faceTextureVertexOffset3[var45] & 0xFF;
+					int var53 = arg1.vertexTextureVertex[arg1.faceVertex1[var45]] + var50;
+					int var54 = arg1.vertexTextureVertex[arg1.faceVertex2[var45]] + var51;
+					int var55 = arg1.vertexTextureVertex[arg1.faceVertex3[var45]] + var52;
+					var48[0] = arg1.textureVertexU[var53];
+					var49[0] = arg1.textureVertexV[var53];
+					var48[1] = arg1.textureVertexU[var54];
+					var49[1] = arg1.textureVertexV[var54];
+					var48[2] = arg1.textureVertexU[var55];
+					var49[2] = arg1.textureVertexV[var55];
 				} else if (var47 == -1) {
 					var48[0] = 0.0F;
 					var49[0] = 1.0F;
@@ -424,14 +423,14 @@ public class PureJavaModel extends Model {
 					var49[2] = 0.0F;
 				} else {
 					int var56 = var47 & 0xFFFF;
-					byte var57 = model.textureTriangleType[var56];
+					byte var57 = arg1.textureTriangleType[var56];
 					if (var57 == 0) {
 						short var58 = this.faceVertex1[var45];
 						short var59 = this.faceVertex2[var45];
 						short var60 = this.faceVertex3[var45];
-						short var61 = model.textureTriangleVertex1[var56];
-						short var62 = model.textureTriangleVertex2[var56];
-						short var63 = model.textureTriangleVertex3[var56];
+						short var61 = arg1.textureTriangleVertex1[var56];
+						short var62 = arg1.textureTriangleVertex2[var56];
+						short var63 = arg1.textureTriangleVertex3[var56];
 						float var64 = (float) this.vertexX[var61];
 						float var65 = (float) this.vertexY[var61];
 						float var66 = (float) this.vertexZ[var61];
@@ -475,17 +474,17 @@ public class PureJavaModel extends Model {
 						int var97 = var40.field1690[var56];
 						int var98 = var40.field1689[var56];
 						float[] var99 = var40.field1691[var56];
-						byte var100 = model.textureTriangleDirection[var56];
-						float var101 = (float) model.textureTriangleSpeed[var56] / 256.0F;
+						byte var100 = arg1.textureTriangleDirection[var56];
+						float var101 = (float) arg1.textureTriangleSpeed[var56] / 256.0F;
 						if (var57 == 1) {
-							float var102 = (float) model.textureTriangleScaleZ[var56] / 1024.0F;
-							method1684(this.vertexX[var93], this.vertexY[var93], this.vertexZ[var93], var96, var97, var98, var99, var102, var100, var101, var42);
+							float var102 = (float) arg1.textureTriangleScaleZ[var56] / 1024.0F;
+							Model.method1684(this.vertexX[var93], this.vertexY[var93], this.vertexZ[var93], var96, var97, var98, var99, var102, var100, var101, var42);
 							var48[0] = var42[0];
 							var49[0] = var42[1];
-							method1684(this.vertexX[var94], this.vertexY[var94], this.vertexZ[var94], var96, var97, var98, var99, var102, var100, var101, var42);
+							Model.method1684(this.vertexX[var94], this.vertexY[var94], this.vertexZ[var94], var96, var97, var98, var99, var102, var100, var101, var42);
 							var48[1] = var42[0];
 							var49[1] = var42[1];
-							method1684(this.vertexX[var95], this.vertexY[var95], this.vertexZ[var95], var96, var97, var98, var99, var102, var100, var101, var42);
+							Model.method1684(this.vertexX[var95], this.vertexY[var95], this.vertexZ[var95], var96, var97, var98, var99, var102, var100, var101, var42);
 							var48[2] = var42[0];
 							var49[2] = var42[1];
 							float var103 = var102 / 2.0F;
@@ -513,8 +512,8 @@ public class PureJavaModel extends Model {
 								}
 							}
 						} else if (var57 == 2) {
-							float var104 = (float) model.textureTriangleTranslationU[var56] / 256.0F;
-							float var105 = (float) model.textureTriangleTranslationV[var56] / 256.0F;
+							float var104 = (float) arg1.textureTriangleTranslationU[var56] / 256.0F;
+							float var105 = (float) arg1.textureTriangleTranslationV[var56] / 256.0F;
 							int var106 = this.vertexX[var94] - this.vertexX[var93];
 							int var107 = this.vertexY[var94] - this.vertexY[var93];
 							int var108 = this.vertexZ[var94] - this.vertexZ[var93];
@@ -524,53 +523,54 @@ public class PureJavaModel extends Model {
 							int var112 = var107 * var111 - var108 * var110;
 							int var113 = var108 * var109 - var106 * var111;
 							int var114 = var106 * var110 - var107 * var109;
-							float var115 = 64.0F / (float) model.textureTriangleScaleX[var56];
-							float var116 = 64.0F / (float) model.textureTriangleScaleY[var56];
-							float var117 = 64.0F / (float) model.textureTriangleScaleZ[var56];
+							float var115 = 64.0F / (float) arg1.textureTriangleScaleX[var56];
+							float var116 = 64.0F / (float) arg1.textureTriangleScaleY[var56];
+							float var117 = 64.0F / (float) arg1.textureTriangleScaleZ[var56];
 							float var118 = (var99[2] * (float) var114 + var99[0] * (float) var112 + var99[1] * (float) var113) / var115;
 							float var119 = (var99[5] * (float) var114 + var99[3] * (float) var112 + var99[4] * (float) var113) / var116;
 							float var120 = (var99[8] * (float) var114 + var99[6] * (float) var112 + var99[7] * (float) var113) / var117;
-							int var121 = method1685(var118, var119, var120);
-							method1708(this.vertexX[var93], this.vertexY[var93], this.vertexZ[var93], var96, var97, var98, var121, var99, var100, var101, var104, var105, var42);
+							int var121 = Model.method1685(var118, var119, var120);
+							Model.method1708(this.vertexX[var93], this.vertexY[var93], this.vertexZ[var93], var96, var97, var98, var121, var99, var100, var101, var104, var105, var42);
 							var48[0] = var42[0];
 							var49[0] = var42[1];
-							method1708(this.vertexX[var94], this.vertexY[var94], this.vertexZ[var94], var96, var97, var98, var121, var99, var100, var101, var104, var105, var42);
+							Model.method1708(this.vertexX[var94], this.vertexY[var94], this.vertexZ[var94], var96, var97, var98, var121, var99, var100, var101, var104, var105, var42);
 							var48[1] = var42[0];
 							var49[1] = var42[1];
-							method1708(this.vertexX[var95], this.vertexY[var95], this.vertexZ[var95], var96, var97, var98, var121, var99, var100, var101, var104, var105, var42);
+							Model.method1708(this.vertexX[var95], this.vertexY[var95], this.vertexZ[var95], var96, var97, var98, var121, var99, var100, var101, var104, var105, var42);
 							var48[2] = var42[0];
 							var49[2] = var42[1];
 						} else if (var57 == 3) {
-							method1753(this.vertexX[var93], this.vertexY[var93], this.vertexZ[var93], var96, var97, var98, var99, var100, var101, var42);
+							Model.method1753(this.vertexX[var93], this.vertexY[var93], this.vertexZ[var93], var96, var97, var98, var99, var100, var101, var42);
 							var48[0] = var42[0];
 							var49[0] = var42[1];
-							method1753(this.vertexX[var94], this.vertexY[var94], this.vertexZ[var94], var96, var97, var98, var99, var100, var101, var42);
+							Model.method1753(this.vertexX[var94], this.vertexY[var94], this.vertexZ[var94], var96, var97, var98, var99, var100, var101, var42);
 							var48[1] = var42[0];
 							var49[1] = var42[1];
-							method1753(this.vertexX[var95], this.vertexY[var95], this.vertexZ[var95], var96, var97, var98, var99, var100, var101, var42);
+							Model.method1753(this.vertexX[var95], this.vertexY[var95], this.vertexZ[var95], var96, var97, var98, var99, var100, var101, var42);
 							var48[2] = var42[0];
 							var49[2] = var42[1];
+							int var10002;
 							if ((var100 & 0x1) == 0) {
 								if (var48[1] - var48[0] > 0.5F) {
-									var48[1]--;
+									var10002 = var48[1]--;
 								} else if (var48[0] - var48[1] > 0.5F) {
-									var48[1]++;
+									var10002 = var48[1]++;
 								}
 								if (var48[2] - var48[0] > 0.5F) {
-									var48[2]--;
+									var10002 = var48[2]--;
 								} else if (var48[0] - var48[2] > 0.5F) {
-									var48[2]++;
+									var10002 = var48[2]++;
 								}
 							} else {
 								if (var49[1] - var49[0] > 0.5F) {
-									var49[1]--;
+									var10002 = var49[1]--;
 								} else if (var49[0] - var49[1] > 0.5F) {
-									var49[1]++;
+									var10002 = var49[1]++;
 								}
 								if (var49[2] - var49[0] > 0.5F) {
-									var49[2]--;
+									var10002 = var49[2]--;
 								} else if (var49[0] - var49[2] > 0.5F) {
-									var49[2]++;
+									var10002 = var49[2]++;
 								}
 							}
 						}
@@ -582,22 +582,22 @@ public class PureJavaModel extends Model {
 			this.faceVertexV = null;
 			this.faceVertexU = null;
 		}
-		if (model.vertexLabel != null && (this.allowedOperations & 0x20) != 0) {
-			this.labelVertices = model.method1940(true);
+		if (arg1.vertexLabel != null && (this.allowedOperations & 0x20) != 0) {
+			this.labelVertices = arg1.method1940(true);
 		}
-		if (model.faceLabel != null && (this.allowedOperations & 0x180) != 0) {
-			this.labelFaces = model.method1941();
+		if (arg1.faceLabel != null && (this.allowedOperations & 0x180) != 0) {
+			this.labelFaces = arg1.method1941();
 		}
-		if (model.billboard != null && (this.allowedOperations & 0x400) != 0) {
-			this.labelBillboards = model.method1963();
+		if (arg1.billboard != null && (this.allowedOperations & 0x400) != 0) {
+			this.labelBillboards = arg1.method1963();
 		}
-		if (model.faceMaterial == null) {
+		if (arg1.faceMaterial == null) {
 			this.field9574 = null;
 		} else {
 			this.field9574 = new short[this.faceCount];
 			boolean var122 = false;
 			for (int var123 = 0; var123 < this.faceCount; var123++) {
-				short var124 = model.faceMaterial[var123];
+				short var124 = arg1.faceMaterial[var123];
 				if (var124 == -1) {
 					this.field9574[var123] = -1;
 				} else {
@@ -620,7 +620,6 @@ public class PureJavaModel extends Model {
 				this.field9574 = null;
 			}
 		}
-
 		if (this.field9548 || this.billboards != null) {
 			this.field9554 = new short[this.faceCount];
 			for (int var126 = 0; var126 < this.faceCount; var126++) {
@@ -1975,12 +1974,12 @@ public class PureJavaModel extends Model {
 	}
 
 	@ObfuscatedName("afi.at(I[IIIIIZ)V")
-	public void applyTransform(int type, int[] labels, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
-		int var8 = labels.length;
-		if (type == 0) {
-			int x = arg2 << 4;
-			int y = arg3 << 4;
-			int z = arg4 << 4;
+	public void applyTransform(int arg0, int[] arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6) {
+		int var8 = arg1.length;
+		if (arg0 == 0) {
+			int var9 = arg2 << 4;
+			int var10 = arg3 << 4;
+			int var11 = arg4 << 4;
 			if (!this.verticesUpscaled) {
 				for (int var12 = 0; var12 < this.vertexCount; var12++) {
 					this.vertexX[var12] <<= 0x4;
@@ -1989,33 +1988,33 @@ public class PureJavaModel extends Model {
 				}
 				this.verticesUpscaled = true;
 			}
-			int count = 0;
+			int var13 = 0;
 			this.baseX = 0;
 			this.baseY = 0;
 			this.baseZ = 0;
-			for (int g = 0; g < var8; g++) {
-				int label = labels[g];
-				if (label < this.labelVertices.length) {
-					int[] vertices = this.labelVertices[label];
-					for (int i = 0; i < vertices.length; i++) {
-						int v = vertices[i];
-						this.baseX += this.vertexX[v];
-						this.baseY += this.vertexY[v];
-						this.baseZ += this.vertexZ[v];
-						count++;
+			for (int var14 = 0; var14 < var8; var14++) {
+				int var15 = arg1[var14];
+				if (var15 < this.labelVertices.length) {
+					int[] var16 = this.labelVertices[var15];
+					for (int var17 = 0; var17 < var16.length; var17++) {
+						int var18 = var16[var17];
+						this.baseX += this.vertexX[var18];
+						this.baseY += this.vertexY[var18];
+						this.baseZ += this.vertexZ[var18];
+						var13++;
 					}
 				}
 			}
-			if (count > 0) {
-				this.baseX = this.baseX / count + x;
-				this.baseY = this.baseY / count + y;
-				this.baseZ = this.baseZ / count + z;
+			if (var13 > 0) {
+				this.baseX = this.baseX / var13 + var9;
+				this.baseY = this.baseY / var13 + var10;
+				this.baseZ = this.baseZ / var13 + var11;
 			} else {
-				this.baseX = x;
-				this.baseY = y;
-				this.baseZ = z;
+				this.baseX = var9;
+				this.baseY = var10;
+				this.baseZ = var11;
 			}
-		} else if (type == 1) {
+		} else if (arg0 == 1) {
 			int var19 = arg2 << 4;
 			int var20 = arg3 << 4;
 			int var21 = arg4 << 4;
@@ -2028,7 +2027,7 @@ public class PureJavaModel extends Model {
 				this.verticesUpscaled = true;
 			}
 			for (int var23 = 0; var23 < var8; var23++) {
-				int var24 = labels[var23];
+				int var24 = arg1[var23];
 				if (var24 < this.labelVertices.length) {
 					int[] var25 = this.labelVertices[var24];
 					for (int var26 = 0; var26 < var25.length; var26++) {
@@ -2039,9 +2038,9 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (type == 2) {
+		} else if (arg0 == 2) {
 			for (int var28 = 0; var28 < var8; var28++) {
-				int var29 = labels[var28];
+				int var29 = arg1[var28];
 				if (var29 < this.labelVertices.length) {
 					int[] var30 = this.labelVertices[var29];
 					if ((arg5 & 0x1) == 0) {
@@ -2109,9 +2108,9 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (type == 3) {
+		} else if (arg0 == 3) {
 			for (int var53 = 0; var53 < var8; var53++) {
-				int var54 = labels[var53];
+				int var54 = arg1[var53];
 				if (var54 < this.labelVertices.length) {
 					int[] var55 = this.labelVertices[var54];
 					for (int var56 = 0; var56 < var55.length; var56++) {
@@ -2128,10 +2127,10 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (type == 5) {
+		} else if (arg0 == 5) {
 			if (this.labelFaces != null && this.faceAlpha != null) {
 				for (int var58 = 0; var58 < var8; var58++) {
-					int var59 = labels[var58];
+					int var59 = arg1[var58];
 					if (var59 < this.labelFaces.length) {
 						int[] var60 = this.labelFaces[var59];
 						for (int var61 = 0; var61 < var60.length; var61++) {
@@ -2154,10 +2153,10 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (type == 7) {
+		} else if (arg0 == 7) {
 			if (this.labelFaces != null) {
 				for (int var67 = 0; var67 < var8; var67++) {
-					int var68 = labels[var67];
+					int var68 = arg1[var67];
 					if (var68 < this.labelFaces.length) {
 						int[] var69 = this.labelFaces[var68];
 						for (int var70 = 0; var70 < var69.length; var70++) {
@@ -2192,10 +2191,10 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (type == 8) {
+		} else if (arg0 == 8) {
 			if (this.labelBillboards != null) {
 				for (int var82 = 0; var82 < var8; var82++) {
-					int var83 = labels[var82];
+					int var83 = arg1[var82];
 					if (var83 < this.labelBillboards.length) {
 						int[] var84 = this.labelBillboards[var83];
 						for (int var85 = 0; var85 < var84.length; var85++) {
@@ -2206,10 +2205,10 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (type == 10) {
+		} else if (arg0 == 10) {
 			if (this.labelBillboards != null) {
 				for (int var87 = 0; var87 < var8; var87++) {
-					int var88 = labels[var87];
+					int var88 = arg1[var87];
 					if (var88 < this.labelBillboards.length) {
 						int[] var89 = this.labelBillboards[var88];
 						for (int var90 = 0; var90 < var89.length; var90++) {
@@ -2220,9 +2219,9 @@ public class PureJavaModel extends Model {
 					}
 				}
 			}
-		} else if (type == 9 && this.labelBillboards != null) {
+		} else if (arg0 == 9 && this.labelBillboards != null) {
 			for (int var92 = 0; var92 < var8; var92++) {
-				int var93 = labels[var92];
+				int var93 = arg1[var92];
 				if (var93 < this.labelBillboards.length) {
 					int[] var94 = this.labelBillboards[var93];
 					for (int var95 = 0; var95 < var94.length; var95++) {

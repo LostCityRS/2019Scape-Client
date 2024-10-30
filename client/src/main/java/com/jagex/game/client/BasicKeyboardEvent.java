@@ -4,7 +4,7 @@ import com.jagex.core.datastruct.Node;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("akk")
-public final class BasicKeyboardEvent extends Node implements KeyboardEvent {
+public class BasicKeyboardEvent extends Node implements KeyboardEvent {
 
 	@ObfuscatedName("akk.z")
 	public int field11466;

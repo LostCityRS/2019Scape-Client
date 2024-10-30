@@ -1,11 +1,15 @@
 package com.jagex.graphics.glx;
 
 import com.jagex.core.utils.ArrayUtil;
-import com.jagex.graphics.*;
+import com.jagex.graphics.BaseTexture;
+import com.jagex.graphics.GpuProgram;
+import com.jagex.graphics.ProgramData;
+import com.jagex.graphics.ProgramDefineData;
+import com.jagex.graphics.ProgramUniform;
+import com.jagex.graphics.UniformType;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -60,13 +64,13 @@ public class GlxProgram extends GpuProgram {
 	@ObfuscatedName("agl.a")
 	public String fragmentShaderName;
 
-	public GlxProgram(GlxToolkit glRenderer, GlxProgramManager glProgram, ProgramData programData) {
-		this(glRenderer, programData);
-		this.glProgram = glProgram;
-		this.glRenderer = glRenderer;
+	public GlxProgram(GlxToolkit arg0, GlxProgramManager arg1, ProgramData arg2) {
+		this(arg0, arg2);
+		this.glProgram = arg1;
+		this.glRenderer = arg0;
 	}
 
-	public GlxProgram(GlxToolkit glRenderer, ProgramData programData) {
+	public GlxProgram(GlxToolkit arg0, ProgramData arg1) {
 		this.field10373 = 0;
 		this.vertexShader3d = 0;
 		this.pixelShader3d = 0;
@@ -77,32 +81,32 @@ public class GlxProgram extends GpuProgram {
 		this.field10383 = new HashMap();
 		this.field10382 = new HashMap();
 		this.field10384 = new HashMap();
-		this.name = programData.name;
-		StringBuilder stringBuilder = new StringBuilder();
-		if (programData.vertexShaderFile != null) {
-			this.vertexShaderFile = programData.vertexShaderFile;
-			if (programData.vertexPrograms != null) {
-				ProgramDefineData[] var4 = programData.vertexPrograms;
+		this.name = arg1.name;
+		StringBuilder var3 = new StringBuilder();
+		if (arg1.vertexShaderFile != null) {
+			this.vertexShaderFile = arg1.vertexShaderFile;
+			if (arg1.vertexPrograms != null) {
+				ProgramDefineData[] var4 = arg1.vertexPrograms;
 				for (int var5 = 0; var5 < var4.length; var5++) {
 					ProgramDefineData var6 = var4[var5];
-					stringBuilder.append("#define " + var6.field2566 + " " + var6.field2565 + '\n');
+					var3.append("#define " + var6.field2566 + " " + var6.field2565 + '\n');
 				}
 			}
-			stringBuilder.append(new String(glRenderer.method19089(this.vertexShaderFile)));
-			this.vertexShaderName = stringBuilder.toString();
+			var3.append(new String(arg0.method19089(this.vertexShaderFile)));
+			this.vertexShaderName = var3.toString();
 		}
-		if (programData.fragmentShaderFile != null) {
-			this.fragmentShaderFile = programData.fragmentShaderFile;
-			stringBuilder.setLength(0);
-			if (programData.fragmentPrograms != null) {
-				ProgramDefineData[] var7 = programData.fragmentPrograms;
-				for (int index = 0; index < var7.length; index++) {
-					ProgramDefineData var9 = var7[index];
-					stringBuilder.append("#define " + var9.field2566 + " " + var9.field2565 + '\n');
+		if (arg1.fragmentShaderFile != null) {
+			this.fragmentShaderFile = arg1.fragmentShaderFile;
+			var3.setLength(0);
+			if (arg1.fragmentPrograms != null) {
+				ProgramDefineData[] var7 = arg1.fragmentPrograms;
+				for (int var8 = 0; var8 < var7.length; var8++) {
+					ProgramDefineData var9 = var7[var8];
+					var3.append("#define " + var9.field2566 + " " + var9.field2565 + '\n');
 				}
 			}
-			stringBuilder.append(new String(glRenderer.method19089(this.fragmentShaderFile)));
-			this.fragmentShaderName = stringBuilder.toString();
+			var3.append(new String(arg0.method19089(this.fragmentShaderFile)));
+			this.fragmentShaderName = var3.toString();
 		}
 		ArrayUtil.method14009(this.field10377, 0, this.field10377.length, -1);
 	}

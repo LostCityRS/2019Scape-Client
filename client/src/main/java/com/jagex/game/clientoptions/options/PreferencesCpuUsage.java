@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ank")
 public class PreferencesCpuUsage extends Preference {
 
-	public PreferencesCpuUsage(ClientOptions options) {
-		super(options);
+	public PreferencesCpuUsage(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesCpuUsage(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesCpuUsage(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("ank.o(B)V")
@@ -27,13 +27,13 @@ public class PreferencesCpuUsage extends Preference {
 	}
 
 	@ObfuscatedName("ank.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return 1;
 	}
 
 	@ObfuscatedName("ank.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("ank.s(B)I")

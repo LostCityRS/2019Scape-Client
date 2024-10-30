@@ -30,25 +30,25 @@ public class QuickChatCatTypeList {
 	}
 
 	@ObfuscatedName("qr.e(IB)Lasd;")
-	public QuickChatCatType list(int id) {
-		QuickChatCatType cached = (QuickChatCatType) this.recentUse.get((long) id);
-		if (cached != null) {
-			return cached;
+	public QuickChatCatType list(int arg0) {
+		QuickChatCatType var2 = (QuickChatCatType) this.recentUse.get((long) arg0);
+		if (var2 != null) {
+			return var2;
 		}
-		byte[] bytes;
-		if (id >= 32768) {
-			bytes = this.configClientLarge.getfile(0, id & 0x7FFF);
+		byte[] var3;
+		if (arg0 >= 32768) {
+			var3 = this.configClientLarge.getfile(0, arg0 & 0x7FFF);
 		} else {
-			bytes = this.configClientSmall.getfile(0, id);
+			var3 = this.configClientSmall.getfile(0, arg0);
 		}
-		QuickChatCatType quickChatCatType = new QuickChatCatType();
-		if (bytes != null) {
-			quickChatCatType.decode(new Packet(bytes));
+		QuickChatCatType var4 = new QuickChatCatType();
+		if (var3 != null) {
+			var4.decode(new Packet(var3));
 		}
-		if (id >= 32768) {
-			quickChatCatType.postDecode();
+		if (arg0 >= 32768) {
+			var4.postDecode();
 		}
-		this.recentUse.put(quickChatCatType, (long) id);
-		return quickChatCatType;
+		this.recentUse.put(var4, (long) arg0);
+		return var4;
 	}
 }

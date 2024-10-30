@@ -4,12 +4,11 @@ import com.jagex.core.io.Packet;
 import com.jagex.game.client.FileOnDisk;
 import com.jagex.game.client.GameShell;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
 import java.io.EOFException;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
+import rs2.client.Client;
 
 @ObfuscatedName("h")
 public class TotpPreferences {
@@ -65,8 +64,8 @@ public class TotpPreferences {
 	}
 
 	@ObfuscatedName("h.k(J)I")
-	public int getValue(long key) {
-		return (Integer) this.field600.get(key);
+	public int getValue(long arg0) {
+		return (Integer) this.field600.get(arg0);
 	}
 
 	@ObfuscatedName("ane.f(I)Lh;")

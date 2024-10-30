@@ -12,8 +12,8 @@ public class RebuildRequest {
 	@ObfuscatedName("rt.n")
 	public PacketBit buf;
 
-	public RebuildRequest(RebuildType rebuildType, PacketBit buf) {
-		this.rebuildType = rebuildType;
-		this.buf = buf;
+	public RebuildRequest(RebuildType arg0, PacketBit arg1) {
+		this.rebuildType = arg0;
+		this.buf = arg1;
 	}
 }

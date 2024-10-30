@@ -7,8 +7,8 @@ import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
 import com.jagex.graphics.dx.DxToolkitFactory;
-import com.jagex.graphics.glx.GlxRendererFactory;
 import com.jagex.graphics.gl.GlToolkitFactory;
+import com.jagex.graphics.glx.GlxRendererFactory;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.graphics.safe.PureJavaToolkitFactory;
 import com.jagex.js5.Js5;
@@ -16,8 +16,8 @@ import com.jagex.math.Cuboid;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
-
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Dimension;
 import java.lang.reflect.Method;
 import java.util.Enumeration;
 import java.util.Hashtable;
@@ -293,13 +293,13 @@ public abstract class Toolkit {
 	}
 
 	@ObfuscatedName("dh.bb(IIIIII)V")
-	public final void drawRectangle(int x, int y, int width, int height, int rgb) {
-		this.drawRectangle(x, y, width, height, rgb, 1);
+	public final void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4) {
+		this.drawRectangle(arg0, arg1, arg2, arg3, arg4, 1);
 	}
 
 	@ObfuscatedName("dh.be(IIIIIB)V")
-	public final void fillRectangle(int x, int y, int width, int height, int rgb) {
-		this.fillRectangle(x, y, width, height, rgb, 1);
+	public final void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4) {
+		this.fillRectangle(arg0, arg1, arg2, arg3, arg4, 1);
 	}
 
 	@ObfuscatedName("dh.by(IIIII)V")
@@ -308,18 +308,18 @@ public abstract class Toolkit {
 	}
 
 	@ObfuscatedName("dh.bu(IIIIB)V")
-	public final void drawHorizontalLine(int x, int y, int width, int rgb) {
-		this.drawHorizontalLine(x, y, width, rgb, 1);
+	public final void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3) {
+		this.drawHorizontalLine(arg0, arg1, arg2, arg3, 1);
 	}
 
 	@ObfuscatedName("dh.bw(IIIII)V")
-	public final void drawVerticalLine(int x, int y, int height, int rgb) {
-		this.drawVerticalLine(x, y, height, rgb, 1);
+	public final void drawVerticalLine(int arg0, int arg1, int arg2, int arg3) {
+		this.drawVerticalLine(arg0, arg1, arg2, arg3, 1);
 	}
 
 	@ObfuscatedName("dh.bo(IIIIII)V")
-	public final void drawLine(int x1, int y1, int x2, int y2, int rgb) {
-		this.drawLine(x1, y1, x2, y2, rgb, 1);
+	public final void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
+		this.drawLine(arg0, arg1, arg2, arg3, arg4, 1);
 	}
 
 	@ObfuscatedName("dh.ci(IILou;Loj;I)Z")
@@ -503,7 +503,7 @@ public abstract class Toolkit {
 	public abstract String hardwareInfo();
 
 	@ObfuscatedName("dh.bp(IIIII)V")
-	public abstract void drawVerticalLine(int x1, int y1, int x2, int y2, int arg4);
+	public abstract void drawVerticalLine(int arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("dh.x()Z")
 	public abstract boolean supportsAntiAliasing();
@@ -542,7 +542,7 @@ public abstract class Toolkit {
 	public abstract void method2160(int arg0, int arg1, int[] arg2, int[] arg3);
 
 	@ObfuscatedName("dh.bn(IIII)V")
-	public abstract void setBounds(int left, int top, int right, int bottom);
+	public abstract void setBounds(int arg0, int arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.aa(III)V")
 	public abstract void method2163(int arg0, int arg1, int arg2);
@@ -554,7 +554,7 @@ public abstract class Toolkit {
 	public abstract void resetClip();
 
 	@ObfuscatedName("dh.bi(IIII)V")
-	public abstract void resetBounds(int left, int top, int right, int bottom);
+	public abstract void resetBounds(int arg0, int arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.bq([I)V")
 	public abstract void method2171(int[] arg0);
@@ -563,7 +563,7 @@ public abstract class Toolkit {
 	public abstract void method2172(int arg0, int arg1, int arg2, int arg3);
 
 	@ObfuscatedName("dh.bz(IIIIII)V")
-	public abstract void drawRectangle(int x, int y, int width, int height, int rgb, int arg5);
+	public abstract void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("dh.bg(IIIII)V")
 	public abstract void method2182(int arg0, int arg1, int arg2, int arg3, int arg4);
@@ -572,7 +572,7 @@ public abstract class Toolkit {
 	public abstract void method2183(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, SpriteRelated arg6, int arg7, int arg8);
 
 	@ObfuscatedName("dh.bj(IIIIII)V")
-	public abstract void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5);
+	public abstract void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("dh.cl(IIIIIIIII)V")
 	public abstract void method2187(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8);
@@ -581,7 +581,7 @@ public abstract class Toolkit {
 	public abstract Sprite createSprite(int[] arg0, int arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("dh.ce(IIIIIII)V")
-	public abstract void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5, int arg6);
+	public abstract void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6);
 
 	@ObfuscatedName("dh.cv(Lou;Led;Loj;)V")
 	public abstract void method2193(Matrix4x3 arg0, ScreenBoundingBox arg1, Cuboid arg2);
@@ -725,7 +725,7 @@ public abstract class Toolkit {
 	public abstract int method2348(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("dh.bv(IIIIII)V")
-	public abstract void fillRectangle(int x, int y, int width, int height, int rgb, int arg5);
+	public abstract void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5);
 
 	@ObfuscatedName("dh.dq()Lpq;")
 	public abstract Matrix4x4 method2355();
@@ -746,7 +746,7 @@ public abstract class Toolkit {
 	public abstract int[] textureFormat();
 
 	@ObfuscatedName("dh.ba(IIIII)V")
-	public abstract void drawHorizontalLine(int x, int y, int width, int rgb, int arg4);
+	public abstract void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3, int arg4);
 
 	@ObfuscatedName("dh.dl(Ldz;Ldz;FLdz;)Ldz;")
 	public abstract EnvironmentSampler method2435(EnvironmentSampler arg0, EnvironmentSampler arg1, float arg2, EnvironmentSampler arg3);

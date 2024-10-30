@@ -2,10 +2,10 @@ package com.jagex.game.config.headbartype;
 
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
-import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.graphics.SpriteData;
 import com.jagex.graphics.SpriteDataProvider;
+import com.jagex.graphics.Toolkit;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
@@ -48,82 +48,82 @@ public class HeadbarType implements ConfigType {
 	@ObfuscatedName("uk.r")
 	public int emptyglobalpartner = -1;
 
-	public HeadbarType(int arg0, HeadbarTypeFactory factory) {
-		this.factory = factory;
+	public HeadbarType(int arg0, HeadbarTypeFactory arg1) {
+		this.factory = arg1;
 	}
 
 	@ObfuscatedName("uk.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("uk.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			buf.g2();
-		} else if (code == 2) {
-			this.showpriority = buf.g1();
-		} else if (code == 3) {
-			this.hidepriority = buf.g1();
-		} else if (code == 4) {
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			arg0.g2();
+		} else if (arg1 == 2) {
+			this.showpriority = arg0.g1();
+		} else if (arg1 == 3) {
+			this.hidepriority = arg0.g1();
+		} else if (arg1 == 4) {
 			this.fadeout = 0;
-		} else if (code == 5) {
-			this.sticktime = buf.g2();
-		} else if (code == 6) {
-			buf.g1();
-		} else if (code == 7) {
-			this.full = buf.gSmart2or4s();
-		} else if (code == 8) {
-			this.empty = buf.gSmart2or4s();
-		} else if (code == 9) {
-			this.fulllocalpartner = buf.gSmart2or4s();
-		} else if (code == 10) {
-			this.emptylocalpartner = buf.gSmart2or4s();
-		} else if (code == 11) {
-			this.fadeout = buf.g2();
-		} else if (code == 12) {
-			this.fullglobalpartner = buf.gSmart2or4s();
-		} else if (code == 13) {
-			this.emptyglobalpartner = buf.gSmart2or4s();
+		} else if (arg1 == 5) {
+			this.sticktime = arg0.g2();
+		} else if (arg1 == 6) {
+			arg0.g1();
+		} else if (arg1 == 7) {
+			this.full = arg0.gSmart2or4s();
+		} else if (arg1 == 8) {
+			this.empty = arg0.gSmart2or4s();
+		} else if (arg1 == 9) {
+			this.fulllocalpartner = arg0.gSmart2or4s();
+		} else if (arg1 == 10) {
+			this.emptylocalpartner = arg0.gSmart2or4s();
+		} else if (arg1 == 11) {
+			this.fadeout = arg0.g2();
+		} else if (arg1 == 12) {
+			this.fullglobalpartner = arg0.gSmart2or4s();
+		} else if (arg1 == 13) {
+			this.emptyglobalpartner = arg0.gSmart2or4s();
 		}
 	}
 
 	@ObfuscatedName("uk.z(Ldh;IB)Lcm;")
-	public Sprite getSprite(Toolkit toolkit, int id) {
-		if (id < 0) {
+	public Sprite getSprite(Toolkit arg0, int arg1) {
+		if (arg1 < 0) {
 			return null;
 		}
-		Sprite var3 = (Sprite) this.factory.spriteCache.get((long) id);
+		Sprite var3 = (Sprite) this.factory.spriteCache.get((long) arg1);
 		if (var3 == null) {
-			this.loadSprites(toolkit);
-			var3 = (Sprite) this.factory.spriteCache.get((long) id);
+			this.loadSprites(arg0);
+			var3 = (Sprite) this.factory.spriteCache.get((long) arg1);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("uk.p(Ldh;II)V")
-	public void loadSprite(Toolkit toolkit, int id) {
-		Js5 js5 = this.factory.configClient;
-		if (id >= 0 && this.factory.spriteCache.get((long) id) == null && js5.loadFile(id)) {
-			SpriteData var4 = SpriteDataProvider.get(js5, id);
-			this.factory.spriteCache.put(toolkit.createSprite(var4, true), (long) id);
+	public void loadSprite(Toolkit arg0, int arg1) {
+		Js5 var3 = this.factory.configClient;
+		if (arg1 >= 0 && this.factory.spriteCache.get((long) arg1) == null && var3.loadFile(arg1)) {
+			SpriteData var4 = SpriteDataProvider.get(var3, arg1);
+			this.factory.spriteCache.put(arg0.createSprite(var4, true), (long) arg1);
 		}
 	}
 
 	@ObfuscatedName("uk.d(Ldh;I)V")
-	public void loadSprites(Toolkit toolkit) {
-		this.loadSprite(toolkit, this.full);
-		this.loadSprite(toolkit, this.empty);
-		this.loadSprite(toolkit, this.fulllocalpartner);
-		this.loadSprite(toolkit, this.emptylocalpartner);
-		this.loadSprite(toolkit, this.fullglobalpartner);
-		this.loadSprite(toolkit, this.emptyglobalpartner);
+	public void loadSprites(Toolkit arg0) {
+		this.loadSprite(arg0, this.full);
+		this.loadSprite(arg0, this.empty);
+		this.loadSprite(arg0, this.fulllocalpartner);
+		this.loadSprite(arg0, this.emptylocalpartner);
+		this.loadSprite(arg0, this.fullglobalpartner);
+		this.loadSprite(arg0, this.emptyglobalpartner);
 	}
 
 	@ObfuscatedName("uk.n(I)V")

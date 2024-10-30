@@ -3,7 +3,7 @@ package com.jagex.core.utils;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("zm")
-public final class StringTools {
+public class StringTools {
 
 	public StringTools() throws Throwable {
 		throw new Error();

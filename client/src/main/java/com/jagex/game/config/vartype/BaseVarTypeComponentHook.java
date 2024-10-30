@@ -5,7 +5,7 @@ import com.jagex.game.client.ComponentHook;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qo")
-public final class BaseVarTypeComponentHook implements BaseVarTypeCodec {
+public class BaseVarTypeComponentHook implements BaseVarTypeCodec {
 
 	@ObfuscatedName("qo.e(Lalw;I)Ljava/lang/Object;")
 	public Object decode(Packet arg0) {

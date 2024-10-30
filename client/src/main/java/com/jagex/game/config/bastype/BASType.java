@@ -8,7 +8,6 @@ import com.jagex.game.config.ConfigType;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -148,44 +147,44 @@ public class BASType implements MutableConfig, ConfigType {
 	public boolean field7346;
 
 	public BASType() {
-		this.readyanim = -1;
+		this.readyanim = -727082723 * -1368125749;
 		this.field7335 = null;
 		this.field7324 = null;
-		this.field7327 = 0;
-		this.readyanim_l = -1;
-		this.readyanim_r = -1;
-		this.walkanim = -1;
-		this.walkanim_b = -1;
-		this.walkanim_l = -1;
-		this.walkanim_r = -1;
-		this.runanim = -1;
-		this.runanim_b = -1;
-		this.runanim_l = -1;
-		this.runanim_r = -1;
-		this.crawlanim = -1;
-		this.crawlanim_b = -1;
-		this.crawlanim_l = -1;
-		this.crawlanim_r = -1;
-		this.field7352 = -1;
-		this.field7337 = -1;
-		this.field7338 = -1;
-		this.field7339 = -1;
-		this.field7320 = -1;
-		this.field7341 = -1;
-		this.field7342 = 0;
-		this.field7343 = 0;
-		this.field7344 = 0;
-		this.field7323 = 0;
-		this.field7321 = 0;
-		this.field7340 = 0;
-		this.field7353 = 0;
-		this.field7336 = 0;
-		this.field7355 = 0;
-		this.field7356 = 0;
-		this.field7334 = 0;
-		this.field7358 = 0;
-		this.walkspeed = -1;
-		this.field7360 = -1;
+		this.field7327 = 0 * -612334255;
+		this.readyanim_l = -1755274647 * -2000621017;
+		this.readyanim_r = -1352988691 * -1002073573;
+		this.walkanim = -256153741 * 601549381;
+		this.walkanim_b = 1877640913 * 269905359;
+		this.walkanim_l = -1383884533 * -65366691;
+		this.walkanim_r = -2004980231 * -1975567433;
+		this.runanim = 1896122835 * 1046628773;
+		this.runanim_b = 1765736413 * 884977547;
+		this.runanim_l = 1405861053 * 1798234475;
+		this.runanim_r = -1207382591 * 1632091583;
+		this.crawlanim = -2077928117 * -216108131;
+		this.crawlanim_b = 347248581 * 1363226867;
+		this.crawlanim_l = 2100122063 * -2038961455;
+		this.crawlanim_r = 1262317395 * 285037349;
+		this.field7352 = 1473716629 * 1183309379;
+		this.field7337 = 166032075 * 736304413;
+		this.field7338 = 1564254695 * 252124713;
+		this.field7339 = 474689073 * 760255791;
+		this.field7320 = -301996799 * 136766719;
+		this.field7341 = 1168300693 * -589963453;
+		this.field7342 = 0 * -1915635865;
+		this.field7343 = 0 * 512505351;
+		this.field7344 = 0 * 81786893;
+		this.field7323 = 0 * -154907541;
+		this.field7321 = 0 * -1929569151;
+		this.field7340 = 0 * 1431111415;
+		this.field7353 = 0 * -1927476887;
+		this.field7336 = 0 * 1885537941;
+		this.field7355 = 0 * -1220545965;
+		this.field7356 = 0 * 1789145629;
+		this.field7334 = 0 * 2046903685;
+		this.field7358 = 0 * -572659623;
+		this.walkspeed = -941909983 * -1681517537;
+		this.field7360 = -267821457 * -329236623;
 		this.field7346 = true;
 	}
 
@@ -232,13 +231,13 @@ public class BASType implements MutableConfig, ConfigType {
 	}
 
 	@ObfuscatedName("vr.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int var2 = buf.g1();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method9298(buf, var2);
+			this.method9298(arg0, var2);
 		}
 	}
 

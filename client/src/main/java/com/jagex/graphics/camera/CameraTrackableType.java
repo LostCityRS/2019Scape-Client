@@ -14,18 +14,18 @@ public class CameraTrackableType {
 	@ObfuscatedName("jl.m")
 	public int id;
 
-	public CameraTrackableType(int id) {
-		this.id = id;
+	public CameraTrackableType(int arg0) {
+		this.id = arg0;
 	}
 
-    @ObfuscatedName("ads.e(II)Ljl;")
-    public static CameraTrackableType of(int index) {
-        if (PLAYER.id == index) {
-            return PLAYER;
-        } else if (NPC.id == index) {
-            return NPC;
-        } else {
-            return null;
-        }
-    }
+	@ObfuscatedName("ads.e(II)Ljl;")
+	public static CameraTrackableType of(int arg0) {
+		if (PLAYER.id == arg0) {
+			return PLAYER;
+		} else if (NPC.id == arg0) {
+			return NPC;
+		} else {
+			return null;
+		}
+	}
 }

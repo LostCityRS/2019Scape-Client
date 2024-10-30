@@ -9,8 +9,8 @@ import deob.ObfuscatedName;
 public class QuestTypeFactory implements ConfigTypeFactory {
 
 	@ObfuscatedName("in.v(ILao;I)Lay;")
-	public ConfigType create(int id, ConfigTypeList configTypeList) {
-		return new QuestType(id, configTypeList);
+	public ConfigType create(int arg0, ConfigTypeList arg1) {
+		return new QuestType(arg0, arg1);
 	}
 
 	@ObfuscatedName("in.o(B)Ljava/lang/Class;")

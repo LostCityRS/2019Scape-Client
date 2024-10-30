@@ -11,7 +11,7 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ape")
 public class StructTypeList extends ConfigTypeListPreload {
 
-	public StructTypeList(ModeGame modeGame, Language language, Js5 configClient, boolean preload) {
-		super(modeGame, language, Js5ConfigGroup.STRUCTTYPE, configClient, new BasicTypeFactory(StructType.class), preload);
+	public StructTypeList(ModeGame arg0, Language arg1, Js5 arg2, boolean arg3) {
+		super(arg0, arg1, Js5ConfigGroup.STRUCTTYPE, arg2, new BasicTypeFactory(StructType.class), arg3);
 	}
 }

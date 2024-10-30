@@ -10,7 +10,6 @@ import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.vartype.constants.BaseVarType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -106,8 +105,6 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 				var4.value = var6;
 			} catch (InstantiationException var9) {
 			} catch (IllegalAccessException var10) {
-			} catch (java.lang.reflect.InvocationTargetException var11) {
-			} catch (NoSuchMethodException var12) {
 			}
 		} else {
 			throw new IllegalStateException();
@@ -133,8 +130,6 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 				var4.value = var6;
 			} catch (InstantiationException var10) {
 			} catch (IllegalAccessException var11) {
-			} catch (java.lang.reflect.InvocationTargetException var12) {
-			} catch (NoSuchMethodException var13) {
 			}
 		} else {
 			throw new IllegalStateException();
@@ -144,5 +139,5 @@ public abstract class VarTypeList extends BaseConfigTypeList implements DefaultV
 	}
 
 	@ObfuscatedName("add.e(II)Lay;")
-	public abstract ConfigType list(int id);
+	public abstract ConfigType list(int arg0);
 }

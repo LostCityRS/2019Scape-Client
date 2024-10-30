@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("anz")
 public class PreferencesUnknown7 extends Preference {
 
-	public PreferencesUnknown7(ClientOptions options) {
-		super(options);
+	public PreferencesUnknown7(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesUnknown7(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesUnknown7(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("anz.o(I)V")
@@ -35,8 +35,8 @@ public class PreferencesUnknown7 extends Preference {
 	}
 
 	@ObfuscatedName("anz.n(II)I")
-	public int canSetValue(int value) {
-		if (value == 0) {
+	public int canSetValue(int arg0) {
+		if (arg0 == 0) {
 			return 1;
 		} else if (this.options.hardwareInfo().cpucount() < 2) {
 			return 3;
@@ -47,8 +47,8 @@ public class PreferencesUnknown7 extends Preference {
 	}
 
 	@ObfuscatedName("anz.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("anz.s(S)I")

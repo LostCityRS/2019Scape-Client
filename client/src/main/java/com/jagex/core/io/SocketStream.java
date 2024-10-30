@@ -1,7 +1,6 @@
 package com.jagex.core.io;
 
 import deob.ObfuscatedName;
-
 import java.io.IOException;
 import java.net.Socket;
 
@@ -17,19 +16,19 @@ public class SocketStream extends Stream {
 	@ObfuscatedName("all.m")
 	public SocketStreamWriter out;
 
-	public SocketStream(Socket socket, int inLimit, int outLimit) throws IOException {
-		this.socket = socket;
+	public SocketStream(Socket arg0, int arg1, int arg2) throws IOException {
+		this.socket = arg0;
 		this.socket.setSoTimeout(30000);
 		this.socket.setTcpNoDelay(true);
 		this.socket.setReceiveBufferSize(65536);
 		this.socket.setSendBufferSize(65536);
-		this.in = new SocketStreamReader(this.socket.getInputStream(), inLimit);
-		this.out = new SocketStreamWriter(this.socket.getOutputStream(), outLimit);
+		this.in = new SocketStreamReader(this.socket.getInputStream(), arg1);
+		this.out = new SocketStreamWriter(this.socket.getOutputStream(), arg2);
 	}
 
 	@ObfuscatedName("all.m(II)Z")
-	public boolean hasAvailable(int amount) throws IOException {
-		return this.in.hasAvailable(amount);
+	public boolean hasAvailable(int arg0) throws IOException {
+		return this.in.hasAvailable(arg0);
 	}
 
 	@ObfuscatedName("all.k(B)I")
@@ -38,13 +37,13 @@ public class SocketStream extends Stream {
 	}
 
 	@ObfuscatedName("all.f([BIIB)I")
-	public int read(byte[] bytes, int off, int len) throws IOException {
-		return this.in.read(bytes, off, len);
+	public int read(byte[] arg0, int arg1, int arg2) throws IOException {
+		return this.in.read(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("all.w([BIII)V")
-	public void write(byte[] bytes, int off, int len) throws IOException {
-		this.out.write(bytes, off, len);
+	public void write(byte[] arg0, int arg1, int arg2) throws IOException {
+		this.out.write(arg0, arg1, arg2);
 	}
 
 	@ObfuscatedName("all.l(I)V")
@@ -52,7 +51,7 @@ public class SocketStream extends Stream {
 		this.out.closeGracefully();
 		try {
 			this.socket.close();
-		} catch (IOException exception) {
+		} catch (IOException var2) {
 		}
 		this.in.closeGracefully();
 	}

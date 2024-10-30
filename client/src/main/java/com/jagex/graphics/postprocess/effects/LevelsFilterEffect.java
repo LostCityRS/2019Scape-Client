@@ -1,6 +1,15 @@
 package com.jagex.graphics.postprocess.effects;
 
-import com.jagex.graphics.*;
+import com.jagex.graphics.EffectInterface;
+import com.jagex.graphics.FrameBuffer;
+import com.jagex.graphics.GpuPostProcessEffect;
+import com.jagex.graphics.GpuProgram;
+import com.jagex.graphics.GpuShader;
+import com.jagex.graphics.GpuTexture;
+import com.jagex.graphics.GpuToolkit;
+import com.jagex.graphics.ProgramNotFoundException;
+import com.jagex.graphics.ProgramUniform;
+import com.jagex.graphics.UniformNotFoundException;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aia")

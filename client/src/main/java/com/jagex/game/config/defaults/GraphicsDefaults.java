@@ -80,13 +80,13 @@ public class GraphicsDefaults {
 	public boolean field7749;
 
 	@ObfuscatedName("ws.ah")
-	public int invHundredColor = 0xFFFF00;
+	public int invHundredColor = 16776960;
 
 	@ObfuscatedName("ws.al")
-	public int invThousandColor = 0xFFFFFF;
+	public int invThousandColor = 16777215;
 
 	@ObfuscatedName("ws.ac")
-	public int invMillionColor = 0x00FF80;
+	public int invMillionColor = 65408;
 
 	@ObfuscatedName("ws.ai")
 	public int p11_full = -1;
@@ -133,17 +133,17 @@ public class GraphicsDefaults {
 	@ObfuscatedName("ws.ay")
 	public int field7741 = -1;
 
-	public GraphicsDefaults(Js5 js5) {
-		byte[] bytes = js5.fetchFile(DefaultsGroup.GRAPHICS.js5GroupId);
-		this.decode(new Packet(bytes));
+	public GraphicsDefaults(Js5 arg0) {
+		byte[] var2 = arg0.fetchFile(DefaultsGroup.GRAPHICS.js5GroupId);
+		this.decode(new Packet(var2));
 	}
 
 	@ObfuscatedName("ws.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		boolean var2 = false;
 		while (true) {
 			while (true) {
-				int var3 = buf.g1();
+				int var3 = arg0.g1();
 				if (var3 == 0) {
 					if (!var2) {
 						if (this.hitmarkpos_x == null) {
@@ -165,36 +165,36 @@ public class GraphicsDefaults {
 						this.hitmarkpos_y = new int[4];
 					}
 					for (int var5 = 0; var5 < this.hitmarkpos_x.length; var5++) {
-						this.hitmarkpos_x[var5] = buf.g2s();
-						this.hitmarkpos_y[var5] = buf.g2s();
+						this.hitmarkpos_x[var5] = arg0.g2s();
+						this.hitmarkpos_y[var5] = arg0.g2s();
 					}
 					var2 = true;
 				} else if (var3 == 2) {
-					this.performancemetricsmodel = buf.gSmart2or4s();
+					this.performancemetricsmodel = arg0.gSmart2or4s();
 				} else if (var3 == 3) {
-					this.maxhitmarks = buf.g1();
+					this.maxhitmarks = arg0.g1();
 					this.hitmarkpos_x = new int[this.maxhitmarks];
 					this.hitmarkpos_y = new int[this.maxhitmarks];
 				} else if (var3 == 4) {
 					this.field7727 = false;
 				} else if (var3 == 5) {
-					this.login_interface = buf.g3();
+					this.login_interface = arg0.g3();
 				} else if (var3 == 6) {
-					this.lobby_interface = buf.g3();
+					this.lobby_interface = arg0.g3();
 				} else if (var3 == 7) {
 					this.field7731 = new short[10][4];
 					this.field7729 = new short[10][4][];
 					for (int var6 = 0; var6 < 10; var6++) {
 						for (int var7 = 0; var7 < 4; var7++) {
-							int var8 = buf.g2();
+							int var8 = arg0.g2();
 							if (var8 == 65535) {
 								var8 = -1;
 							}
 							this.field7731[var6][var7] = (short) var8;
-							int var9 = buf.g2();
+							int var9 = arg0.g2();
 							this.field7729[var6][var7] = new short[var9];
 							for (int var10 = 0; var10 < var9; var10++) {
-								int var11 = buf.g2();
+								int var11 = arg0.g2();
 								if (var11 == 65535) {
 									var11 = -1;
 								}
@@ -205,63 +205,63 @@ public class GraphicsDefaults {
 				} else if (var3 == 8) {
 					this.npcShouldDisplayChat = false;
 				} else if (var3 == 9) {
-					this.npcChatTimeout = buf.g1();
+					this.npcChatTimeout = arg0.g1();
 				} else if (var3 == 10) {
 					this.playerShouldDisplayChat = false;
 				} else if (var3 == 11) {
-					this.playerChatTimeout = buf.g1();
+					this.playerChatTimeout = arg0.g1();
 				} else if (var3 == 12) {
-					this.field7739 = buf.g2();
-					this.field7740 = buf.g2();
+					this.field7739 = arg0.g2();
+					this.field7740 = arg0.g2();
 				} else if (var3 == 13) {
-					this.field7745 = buf.g1();
+					this.field7745 = arg0.g1();
 				} else if (var3 == 14) {
-					this.field7719 = buf.g1();
+					this.field7719 = arg0.g1();
 				} else if (var3 == 15) {
-					this.field7723 = buf.g1();
+					this.field7723 = arg0.g1();
 				} else if (var3 == 16) {
 					this.field7749 = true;
 				} else if (var3 == 17) {
-					this.invHundredColor = buf.g4s();
+					this.invHundredColor = arg0.g4s();
 				} else if (var3 == 18) {
-					this.invThousandColor = buf.g4s();
+					this.invThousandColor = arg0.g4s();
 				} else if (var3 == 19) {
-					this.invMillionColor = buf.g4s();
+					this.invMillionColor = arg0.g4s();
 				} else if (var3 == 20) {
-					this.spotshadowtexture = (short) buf.g2();
-					this.spotshadowtexture_alpha = (byte) buf.g1();
+					this.spotshadowtexture = (short) arg0.g2();
+					this.spotshadowtexture_alpha = (byte) arg0.g1();
 				} else if (var3 == 21) {
-					this.field7730 = buf.g1();
+					this.field7730 = arg0.g1();
 				} else if (var3 == 22) {
-					this.p11_full = buf.gSmart2or4s();
-					this.p12_full = buf.gSmart2or4s();
-					this.b12_full = buf.gSmart2or4s();
-					this.hintarrows = buf.gSmart2or4s();
-					this.field7715 = buf.gSmart2or4s();
-					this.mapflag = buf.gSmart2or4s();
-					this.field7751 = buf.g1b();
-					this.field7752 = buf.g1b();
-					this.cross = buf.gSmart2or4s();
-					this.mapdots = buf.gSmart2or4s();
-					this.field7755 = buf.gSmart2or4s();
-					this.field7756 = buf.gSmart2or4s();
-					this.compass = buf.gSmart2or4s();
-					this.field7721 = buf.gSmart2or4s();
-					this.field7741 = buf.gSmart2or4s();
+					this.p11_full = arg0.gSmart2or4s();
+					this.p12_full = arg0.gSmart2or4s();
+					this.b12_full = arg0.gSmart2or4s();
+					this.hintarrows = arg0.gSmart2or4s();
+					this.field7715 = arg0.gSmart2or4s();
+					this.mapflag = arg0.gSmart2or4s();
+					this.field7751 = arg0.g1b();
+					this.field7752 = arg0.g1b();
+					this.cross = arg0.gSmart2or4s();
+					this.mapdots = arg0.gSmart2or4s();
+					this.field7755 = arg0.gSmart2or4s();
+					this.field7756 = arg0.gSmart2or4s();
+					this.compass = arg0.gSmart2or4s();
+					this.field7721 = arg0.gSmart2or4s();
+					this.field7741 = arg0.gSmart2or4s();
 				} else if (var3 == 23) {
 					this.field7714 = new short[10][4];
 					this.field7734 = new short[10][4][];
 					for (int var12 = 0; var12 < 10; var12++) {
 						for (int var13 = 0; var13 < 4; var13++) {
-							int var14 = buf.g2();
+							int var14 = arg0.g2();
 							if (var14 == 65535) {
 								var14 = -1;
 							}
 							this.field7714[var12][var13] = (short) var14;
-							int var15 = buf.g2();
+							int var15 = arg0.g2();
 							this.field7734[var12][var13] = new short[var15];
 							for (int var16 = 0; var16 < var15; var16++) {
-								int var17 = buf.g2();
+								int var17 = arg0.g2();
 								if (var17 == 65535) {
 									var17 = -1;
 								}

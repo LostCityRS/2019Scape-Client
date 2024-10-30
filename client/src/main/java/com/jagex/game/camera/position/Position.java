@@ -14,8 +14,8 @@ public abstract class Position {
 	@ObfuscatedName("kl.e")
 	public final Camera camera;
 
-	public Position(Camera camera) {
-		this.camera = camera;
+	public Position(Camera arg0) {
+		this.camera = arg0;
 	}
 
 	@ObfuscatedName("kl.n(I)Z")

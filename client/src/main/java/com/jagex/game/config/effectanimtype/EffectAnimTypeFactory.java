@@ -17,8 +17,8 @@ public abstract class EffectAnimTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("yc.m")
 	public int field8264;
 
-	public EffectAnimTypeFactory(Js5 configClient) {
-		this.configClient = configClient;
+	public EffectAnimTypeFactory(Js5 arg0) {
+		this.configClient = arg0;
 	}
 
 	@ObfuscatedName("yc.e(II)V")

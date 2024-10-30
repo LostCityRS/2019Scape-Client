@@ -3,8 +3,8 @@ package com.jagex.graphics.glx;
 import com.jagex.graphics.GpuSurface;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
-
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Dimension;
 
 @ObfuscatedName("atx")
 public class GlxSurface extends GpuSurface {

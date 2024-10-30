@@ -6,5 +6,5 @@ import deob.ObfuscatedName;
 public interface HashMapKey {
 
 	@ObfuscatedName("it.e(Ljava/lang/String;I)J")
-	long hash(String value);
+	long hash(String arg0);
 }

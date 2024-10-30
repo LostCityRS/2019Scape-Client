@@ -1,8 +1,17 @@
 package com.jagex.game.client;
 
-import com.jagex.graphics.*;
+import com.jagex.graphics.EffectInterface;
+import com.jagex.graphics.FrameBuffer;
+import com.jagex.graphics.GpuPostProcessEffect;
+import com.jagex.graphics.GpuToolkit;
+import com.jagex.graphics.GraphicsDeletable;
+import com.jagex.graphics.Texture2;
+import com.jagex.graphics.TextureFormat;
+import com.jagex.graphics.VertexBuffer;
+import com.jagex.graphics.VertexDeclaration;
+import com.jagex.graphics.VertexDeclarationElement;
+import com.jagex.graphics.VertexDeclarationElementComponent;
 import deob.ObfuscatedName;
-
 import java.nio.ByteBuffer;
 import java.util.Vector;
 

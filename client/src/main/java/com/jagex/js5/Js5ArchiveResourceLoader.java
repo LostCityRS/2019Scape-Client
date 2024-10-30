@@ -10,8 +10,8 @@ public class Js5ArchiveResourceLoader implements ResourceLoader {
 	@ObfuscatedName("pw.e")
 	public final Js5 js5;
 
-	public Js5ArchiveResourceLoader(Js5 js5) {
-		this.js5 = js5;
+	public Js5ArchiveResourceLoader(Js5 arg0) {
+		this.js5 = arg0;
 	}
 
 	@ObfuscatedName("pw.e(I)I")

@@ -98,7 +98,7 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 	}
 
 	@ObfuscatedName("apo.r(IIIII)V")
-	public void drawSprite(int x, int y, int arg2, int rgb, int arg4) {
+	public void drawSprite(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		if (this.field9373.method15654()) {
 			throw new IllegalStateException();
 		}
@@ -107,8 +107,8 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 			return;
 		}
 		int var7 = this.field9373.sizeX;
-		int var8 = this.field9358 + x;
-		int var9 = this.field9359 + y;
+		int var8 = this.field9358 + arg0;
+		int var9 = this.field9359 + arg1;
 		int var10 = var7 * var9 + var8;
 		int var11 = 0;
 		int var12 = this.field9372;
@@ -161,9 +161,9 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 					var11 += var15;
 				}
 			} else if (arg2 == 0) {
-				int var21 = rgb >> 16 & 0xFF;
-				int var22 = rgb >> 8 & 0xFF;
-				int var23 = rgb & 0xFF;
+				int var21 = arg3 >> 16 & 0xFF;
+				int var22 = arg3 >> 8 & 0xFF;
+				int var23 = arg3 & 0xFF;
 				for (int var24 = -var12; var24 < 0; var24++) {
 					for (int var25 = -var13; var25 < 0; var25++) {
 						int var26 = this.field11904[var11++];
@@ -179,8 +179,8 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 				for (int var30 = -var12; var30 < 0; var30++) {
 					for (int var31 = -var13; var31 < 0; var31++) {
 						int var32 = this.field11904[var11++];
-						int var33 = rgb + var32;
-						int var34 = (rgb & 0xFF00FF) + (var32 & 0xFF00FF);
+						int var33 = arg3 + var32;
+						int var34 = (arg3 & 0xFF00FF) + (var32 & 0xFF00FF);
 						int var35 = (var33 - var34 & 0x10000) + (var34 & 0x1000100);
 						var6[var10++] = var33 - var35 | var35 - (var35 >>> 8);
 					}
@@ -188,10 +188,10 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 					var11 += var15;
 				}
 			} else if (arg2 == 2) {
-				int var36 = rgb >>> 24;
+				int var36 = arg3 >>> 24;
 				int var37 = 256 - var36;
-				int var38 = (rgb & 0xFF00FF) * var37 & 0xFF00FF00;
-				int var39 = (rgb & 0xFF00) * var37 & 0xFF0000;
+				int var38 = (arg3 & 0xFF00FF) * var37 & 0xFF00FF00;
+				int var39 = (arg3 & 0xFF00) * var37 & 0xFF0000;
 				int var40 = (var38 | var39) >>> 8;
 				for (int var41 = -var12; var41 < 0; var41++) {
 					for (int var42 = -var13; var42 < 0; var42++) {
@@ -228,9 +228,9 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 					var11 += var15;
 				}
 			} else if (arg2 == 0) {
-				int var103 = rgb >> 16 & 0xFF;
-				int var104 = rgb >> 8 & 0xFF;
-				int var105 = rgb & 0xFF;
+				int var103 = arg3 >> 16 & 0xFF;
+				int var104 = arg3 >> 8 & 0xFF;
+				int var105 = arg3 & 0xFF;
 				for (int var106 = -var12; var106 < 0; var106++) {
 					for (int var107 = -var13; var107 < 0; var107++) {
 						int var108 = this.field11904[var11++];
@@ -255,8 +255,8 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 				for (int var117 = -var12; var117 < 0; var117++) {
 					for (int var118 = -var13; var118 < 0; var118++) {
 						int var119 = this.field11904[var11++];
-						int var120 = rgb + var119;
-						int var121 = (rgb & 0xFF00FF) + (var119 & 0xFF00FF);
+						int var120 = arg3 + var119;
+						int var121 = (arg3 & 0xFF00FF) + (var119 & 0xFF00FF);
 						int var122 = (var120 - var121 & 0x10000) + (var121 & 0x1000100);
 						int var123 = var120 - var122 | var122 - (var122 >>> 8);
 						int var124 = var6[var10];
@@ -269,10 +269,10 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 					var11 += var15;
 				}
 			} else if (arg2 == 2) {
-				int var128 = rgb >>> 24;
+				int var128 = arg3 >>> 24;
 				int var129 = 256 - var128;
-				int var130 = (rgb & 0xFF00FF) * var129 & 0xFF00FF00;
-				int var131 = (rgb & 0xFF00) * var129 & 0xFF0000;
+				int var130 = (arg3 & 0xFF00FF) * var129 & 0xFF00FF00;
+				int var131 = (arg3 & 0xFF00) * var129 & 0xFF0000;
 				int var132 = (var130 | var131) >>> 8;
 				for (int var133 = -var12; var133 < 0; var133++) {
 					for (int var134 = -var13; var134 < 0; var134++) {
@@ -338,8 +338,8 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 				var11 += var15;
 			}
 		} else if (arg2 == 0) {
-			if ((rgb & 0xFFFFFF) == 16777215) {
-				int var53 = rgb >>> 24;
+			if ((arg3 & 0xFFFFFF) == 16777215) {
+				int var53 = arg3 >>> 24;
 				int var54 = 256 - var53;
 				for (int var55 = -var12; var55 < 0; var55++) {
 					for (int var56 = -var13; var56 < 0; var56++) {
@@ -355,10 +355,10 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 					var11 += var15;
 				}
 			} else {
-				int var59 = rgb >> 16 & 0xFF;
-				int var60 = rgb >> 8 & 0xFF;
-				int var61 = rgb & 0xFF;
-				int var62 = rgb >>> 24;
+				int var59 = arg3 >> 16 & 0xFF;
+				int var60 = arg3 >> 8 & 0xFF;
+				int var61 = arg3 & 0xFF;
+				int var62 = arg3 >>> 24;
 				int var63 = 256 - var62;
 				for (int var64 = -var12; var64 < 0; var64++) {
 					for (int var65 = -var13; var65 < 0; var65++) {
@@ -384,13 +384,13 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 				}
 			}
 		} else if (arg2 == 3) {
-			int var75 = rgb >>> 24;
+			int var75 = arg3 >>> 24;
 			int var76 = 256 - var75;
 			for (int var77 = -var12; var77 < 0; var77++) {
 				for (int var78 = -var13; var78 < 0; var78++) {
 					int var79 = this.field11904[var11++];
-					int var80 = rgb + var79;
-					int var81 = (rgb & 0xFF00FF) + (var79 & 0xFF00FF);
+					int var80 = arg3 + var79;
+					int var81 = (arg3 & 0xFF00FF) + (var79 & 0xFF00FF);
 					int var82 = (var80 - var81 & 0x10000) + (var81 & 0x1000100);
 					int var83 = var80 - var82 | var82 - (var82 >>> 8);
 					if (var79 == 0 && var75 != 255) {
@@ -403,10 +403,10 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 				var11 += var15;
 			}
 		} else if (arg2 == 2) {
-			int var86 = rgb >>> 24;
+			int var86 = arg3 >>> 24;
 			int var87 = 256 - var86;
-			int var88 = (rgb & 0xFF00FF) * var87 & 0xFF00FF00;
-			int var89 = (rgb & 0xFF00) * var87 & 0xFF0000;
+			int var88 = (arg3 & 0xFF00FF) * var87 & 0xFF00FF00;
+			int var89 = (arg3 & 0xFF00) * var87 & 0xFF0000;
 			int var90 = (var88 | var89) >>> 8;
 			for (int var91 = -var12; var91 < 0; var91++) {
 				for (int var92 = -var13; var92 < 0; var92++) {
@@ -2176,9 +2176,9 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 					var10001 = arg0;
 					var74 = arg0 + 1;
 					int var6 = this.field11904[var10001];
-					int var7 = (var6 & 0xFF0000) * field9382 & 0xFF000000;
-					int var8 = (var6 & 0xFF00) * field9386 & 0xFF0000;
-					int var9 = (var6 & 0xFF) * field9387 & 0xFF00;
+					int var7 = (var6 & 0xFF0000) * PureJavaSprite.field9382 & 0xFF000000;
+					int var8 = (var6 & 0xFF00) * PureJavaSprite.field9386 & 0xFF0000;
+					int var9 = (var6 & 0xFF) * PureJavaSprite.field9387 & 0xFF00;
 					arg2[arg1] = (var7 | var8 | var9) >>> 8;
 				} else if (arg3 == 3) {
 					var10001 = arg0;
@@ -2191,9 +2191,9 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 					arg2[arg1] = var12 - var14 | var14 - (var14 >>> 8);
 				} else if (arg3 == 2) {
 					int var15 = this.field11904[arg0];
-					int var16 = (var15 & 0xFF00FF) * field9383 & 0xFF00FF00;
-					int var17 = (var15 & 0xFF00) * field9383 & 0xFF0000;
-					arg2[arg1] = ((var16 | var17) >>> 8) + field9379;
+					int var16 = (var15 & 0xFF00FF) * PureJavaSprite.field9383 & 0xFF00FF00;
+					int var17 = (var15 & 0xFF00) * PureJavaSprite.field9383 & 0xFF0000;
+					arg2[arg1] = ((var16 | var17) >>> 8) + PureJavaSprite.field9379;
 				} else {
 					throw new IllegalArgumentException();
 				}
@@ -2214,9 +2214,9 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 			} else if (arg3 == 0) {
 				int var47 = this.field11904[arg0];
 				if (var47 != 0) {
-					int var48 = (var47 & 0xFF0000) * field9382 & 0xFF000000;
-					int var49 = (var47 & 0xFF00) * field9386 & 0xFF0000;
-					int var50 = (var47 & 0xFF) * field9387 & 0xFF00;
+					int var48 = (var47 & 0xFF0000) * PureJavaSprite.field9382 & 0xFF000000;
+					int var49 = (var47 & 0xFF00) * PureJavaSprite.field9386 & 0xFF0000;
+					int var50 = (var47 & 0xFF) * PureJavaSprite.field9387 & 0xFF00;
 					int var51 = (var48 | var49 | var50) >>> 8;
 					int var52 = arg2[arg1];
 					int var53 = var51 + var52;
@@ -2239,9 +2239,9 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 			} else if (arg3 == 2) {
 				int var66 = this.field11904[arg0];
 				if (var66 != 0) {
-					int var67 = (var66 & 0xFF00FF) * field9383 & 0xFF00FF00;
-					int var68 = (var66 & 0xFF00) * field9383 & 0xFF0000;
-					int var69 = ((var67 | var68) >>> 8) + field9379;
+					int var67 = (var66 & 0xFF00FF) * PureJavaSprite.field9383 & 0xFF00FF00;
+					int var68 = (var66 & 0xFF00) * PureJavaSprite.field9383 & 0xFF0000;
+					int var69 = ((var67 | var68) >>> 8) + PureJavaSprite.field9379;
 					int var70 = arg2[arg1];
 					int var71 = var69 + var70;
 					int var72 = (var69 & 0xFF00FF) + (var70 & 0xFF00FF);
@@ -2262,18 +2262,18 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 					int var21 = 256 - var20;
 					int var22 = arg2[arg1];
 					arg2[arg1] = ((var19 & 0xFF00FF) * var20 + (var22 & 0xFF00FF) * var21 & 0xFF00FF00) + ((var19 & 0xFF00) * var20 + (var22 & 0xFF00) * var21 & 0xFF0000) >> 8;
-				} else if (field9383 == 255) {
-					int var28 = (var19 & 0xFF0000) * field9382 & 0xFF000000;
-					int var29 = (var19 & 0xFF00) * field9386 & 0xFF0000;
-					int var30 = (var19 & 0xFF) * field9387 & 0xFF00;
+				} else if (PureJavaSprite.field9383 == 255) {
+					int var28 = (var19 & 0xFF0000) * PureJavaSprite.field9382 & 0xFF000000;
+					int var29 = (var19 & 0xFF00) * PureJavaSprite.field9386 & 0xFF0000;
+					int var30 = (var19 & 0xFF) * PureJavaSprite.field9387 & 0xFF00;
 					arg2[arg1] = (var28 | var29 | var30) >>> 8;
 				} else {
-					int var23 = (var19 & 0xFF0000) * field9382 & 0xFF000000;
-					int var24 = (var19 & 0xFF00) * field9386 & 0xFF0000;
-					int var25 = (var19 & 0xFF) * field9387 & 0xFF00;
+					int var23 = (var19 & 0xFF0000) * PureJavaSprite.field9382 & 0xFF000000;
+					int var24 = (var19 & 0xFF00) * PureJavaSprite.field9386 & 0xFF0000;
+					int var25 = (var19 & 0xFF) * PureJavaSprite.field9387 & 0xFF00;
 					int var26 = (var23 | var24 | var25) >>> 8;
 					int var27 = arg2[arg1];
-					arg2[arg1] = ((var26 & 0xFF00FF) * field9383 + (var27 & 0xFF00FF) * field9366 & 0xFF00FF00) + ((var26 & 0xFF00) * field9383 + (var27 & 0xFF00) * field9366 & 0xFF0000) >> 8;
+					arg2[arg1] = ((var26 & 0xFF00FF) * PureJavaSprite.field9383 + (var27 & 0xFF00FF) * PureJavaSprite.field9366 & 0xFF00FF00) + ((var26 & 0xFF00) * PureJavaSprite.field9383 + (var27 & 0xFF00) * PureJavaSprite.field9366 & 0xFF0000) >> 8;
 				}
 			}
 		} else if (arg3 == 3) {
@@ -2283,19 +2283,19 @@ public class PureJavaSpriteNormal extends PureJavaSprite {
 			int var34 = (var31 & 0xFF00FF) + (var32 & 0xFF00FF);
 			int var35 = (var33 - var34 & 0x10000) + (var34 & 0x1000100);
 			int var36 = var33 - var35 | var35 - (var35 >>> 8);
-			if (var31 == 0 && field9383 != 255) {
+			if (var31 == 0 && PureJavaSprite.field9383 != 255) {
 				int var38 = arg2[arg1];
-				var36 = ((var36 & 0xFF00FF) * field9383 + (var38 & 0xFF00FF) * field9366 & 0xFF00FF00) + ((var36 & 0xFF00) * field9383 + (var38 & 0xFF00) * field9366 & 0xFF0000) >> 8;
+				var36 = ((var36 & 0xFF00FF) * PureJavaSprite.field9383 + (var38 & 0xFF00FF) * PureJavaSprite.field9366 & 0xFF00FF00) + ((var36 & 0xFF00) * PureJavaSprite.field9383 + (var38 & 0xFF00) * PureJavaSprite.field9366 & 0xFF0000) >> 8;
 			}
 			arg2[arg1] = var36;
 		} else if (arg3 == 2) {
 			int var39 = this.field11904[arg0];
 			if (var39 != 0) {
-				int var40 = (var39 & 0xFF00FF) * field9383 & 0xFF00FF00;
-				int var41 = (var39 & 0xFF00) * field9383 & 0xFF0000;
+				int var40 = (var39 & 0xFF00FF) * PureJavaSprite.field9383 & 0xFF00FF00;
+				int var41 = (var39 & 0xFF00) * PureJavaSprite.field9383 & 0xFF0000;
 				var10001 = arg1;
 				int var75 = arg1 + 1;
-				arg2[var10001] = ((var40 | var41) >>> 8) + field9379;
+				arg2[var10001] = ((var40 | var41) >>> 8) + PureJavaSprite.field9379;
 			}
 		} else {
 			throw new IllegalArgumentException();

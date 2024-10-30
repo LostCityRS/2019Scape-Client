@@ -14,15 +14,15 @@ public class CameraControlMode {
 	@ObfuscatedName("jd.m")
 	public int index;
 
-	public CameraControlMode(int index) {
-		this.index = index;
+	public CameraControlMode(int arg0) {
+		this.index = arg0;
 	}
 
 	@ObfuscatedName("ir.e(II)Ljd;")
-	public static CameraControlMode of(int index) {
-		if (SERVER.index == index) {
+	public static CameraControlMode of(int arg0) {
+		if (SERVER.index == arg0) {
 			return SERVER;
-		} else if (CLIENT.index == index) {
+		} else if (CLIENT.index == arg0) {
 			return CLIENT;
 		} else {
 			return null;

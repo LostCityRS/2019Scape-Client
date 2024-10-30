@@ -34,13 +34,13 @@ public abstract class GraphEntity extends GraphNode {
 	@ObfuscatedName("alh.q")
 	public ScaleRotTrans scaleRotTrans;
 
-	public GraphEntity(Scene scene) {
-		this(scene, (ScaleRotTrans) null);
+	public GraphEntity(Scene arg0) {
+		this(arg0, (ScaleRotTrans) null);
 	}
 
-	public GraphEntity(Scene scene, ScaleRotTrans scaleRotTrans) {
-		this.scene = scene;
-		this.scaleRotTrans = scaleRotTrans;
+	public GraphEntity(Scene arg0, ScaleRotTrans arg1) {
+		this.scene = arg0;
+		this.scaleRotTrans = arg1;
 	}
 
 	@ObfuscatedName("alh.gp(I)I")
@@ -90,15 +90,15 @@ public abstract class GraphEntity extends GraphNode {
 	}
 
 	@ObfuscatedName("alh.gg(II)V")
-	public void createEntityBounds(int stack) {
-		this.entityBounds = new ScreenBoundingBox[stack];
-		for (int index = 0; index < this.entityBounds.length; index++) {
-			this.entityBounds[index] = new ScreenBoundingBox();
+	public void createEntityBounds(int arg0) {
+		this.entityBounds = new ScreenBoundingBox[arg0];
+		for (int var2 = 0; var2 < this.entityBounds.length; var2++) {
+			this.entityBounds[var2] = new ScreenBoundingBox();
 		}
 	}
 
 	@ObfuscatedName("alh.fa(Ldh;IIB)Z")
-	public abstract boolean method17375(Toolkit toolkit, int arg1, int arg2);
+	public abstract boolean method17375(Toolkit arg0, int arg1, int arg2);
 
 	@ObfuscatedName("alh.fp(I)Z")
 	public abstract boolean method17379();
@@ -113,16 +113,16 @@ public abstract class GraphEntity extends GraphNode {
 	public abstract void applyLighting();
 
 	@ObfuscatedName("alh.fw(Ldh;I)V")
-	public abstract void method17373(Toolkit toolkit);
+	public abstract void method17373(Toolkit arg0);
 
 	@ObfuscatedName("alh.fq(Ldh;Lalh;IIIZB)V")
-	public abstract void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5);
+	public abstract void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5);
 
 	@ObfuscatedName("alh.ga(Ldh;S)Z")
-	public abstract boolean isOccluded(Toolkit toolkit);
+	public abstract boolean isOccluded(Toolkit arg0);
 
 	@ObfuscatedName("alh.fc(Ldh;I)Ltl;")
-	public abstract PickableEntity draw(Toolkit toolkit);
+	public abstract PickableEntity draw(Toolkit arg0);
 
 	@ObfuscatedName("alh.gn(I)Z")
 	public abstract boolean isVisible();
@@ -131,7 +131,7 @@ public abstract class GraphEntity extends GraphNode {
 	public abstract int overlayHeight();
 
 	@ObfuscatedName("alh.fv(Ldh;B)Luq;")
-	public abstract EntityBounds method17371(Toolkit toolkit);
+	public abstract EntityBounds method17371(Toolkit arg0);
 
 	@ObfuscatedName("alh.gy([Lakf;S)I")
 	public abstract int method18375(Light[] arg0);

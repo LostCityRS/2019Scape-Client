@@ -17,10 +17,10 @@ public class Js5MasterIndexArchiveData {
 	@ObfuscatedName("ps.k")
 	public final byte[] whirlpool;
 
-	public Js5MasterIndexArchiveData(int crc, int groupCount, int version, int arg3, byte[] whirlpool) {
-		this.crc = crc;
-		this.groupCount = groupCount;
-		this.version = version;
-		this.whirlpool = whirlpool;
+	public Js5MasterIndexArchiveData(int arg0, int arg1, int arg2, int arg3, byte[] arg4) {
+		this.crc = arg0;
+		this.groupCount = arg1;
+		this.version = arg2;
+		this.whirlpool = arg4;
 	}
 }

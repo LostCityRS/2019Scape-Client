@@ -7,12 +7,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aml")
 public class PreferencesBuildArea extends Preference {
 
-	public PreferencesBuildArea(ClientOptions options) {
-		super(options);
+	public PreferencesBuildArea(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesBuildArea(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesBuildArea(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("aml.o(B)V")
@@ -49,14 +49,14 @@ public class PreferencesBuildArea extends Preference {
 	}
 
 	@ObfuscatedName("aml.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		if (this.options.hardwareInfo().unused()) {
 			return 3;
 		}
-		int maxmemory = this.options.hardwareInfo().maxmemory();
-		if (maxmemory < 245) {
+		int var2 = this.options.hardwareInfo().maxmemory();
+		if (var2 < 245) {
 			return 3;
-		} else if (BuildAreaSize.SIZE_168.id == value && maxmemory < 500) {
+		} else if (BuildAreaSize.SIZE_168.id == arg0 && var2 < 500) {
 			return 3;
 		} else {
 			return 1;
@@ -64,8 +64,8 @@ public class PreferencesBuildArea extends Preference {
 	}
 
 	@ObfuscatedName("aml.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("aml.y(B)I")

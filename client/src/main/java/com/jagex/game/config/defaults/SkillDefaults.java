@@ -5,7 +5,6 @@ import com.jagex.game.client.PlayerSkill;
 import com.jagex.game.client.PlayerSkillXPTable;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 

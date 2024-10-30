@@ -29,12 +29,12 @@ public class MoveSpeed implements SerializableEnum {
 
 	@ObfuscatedName("zj.e(I)[Lzj;")
 	public static MoveSpeed[] values() {
-		return new MoveSpeed[] {STATIONARY, CRAWL, WALK, RUN, INSTANT};
+		return new MoveSpeed[] { STATIONARY, CRAWL, WALK, RUN, INSTANT };
 	}
 
-	public MoveSpeed(int index, byte serialID) {
-		this.index = index;
-		this.serialID = serialID;
+	public MoveSpeed(int arg0, byte arg1) {
+		this.index = arg0;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("zj.n()I")

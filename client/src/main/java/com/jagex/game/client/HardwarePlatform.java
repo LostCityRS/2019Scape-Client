@@ -4,7 +4,6 @@ import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 import jaclib.hardware_info.HardwareInfo;
-
 import java.util.HashMap;
 
 @ObfuscatedName("aly")
@@ -338,35 +337,35 @@ public class HardwarePlatform extends Node {
 	}
 
 	@ObfuscatedName("aly.n(Lalw;I)V")
-	public void createHardwareBlock(Packet buf) {
-		buf.p1(8);
-		buf.p1(this.operatingSystem);
-		buf.p1(this.osArch64 ? 1 : 0);
-		buf.p2(this.osVersion);
-		buf.p1(this.javaVendor);
-		buf.p1(this.javaVersionMajor);
-		buf.p1(this.javaVersionMinor);
-		buf.p1(this.javaVersionPatch);
-		buf.p1(this.unused ? 1 : 0);
-		buf.p2(this.maxMemory);
-		buf.p1(this.availableProcessors);
-		buf.p3(this.cpuInfoRam);
-		buf.p2(this.cpuInfoSpeed);
-		buf.pjstr2(this.gpuInfoDescription);
-		buf.pjstr2(this.unused1);
-		buf.pjstr2(this.directXVersion);
-		buf.pjstr2(this.unused2);
-		buf.p1(this.dxDriverDateMonth);
-		buf.p2(this.dxDriverDateYear);
-		buf.pjstr2(this.rawCpuInfoVendor);
-		buf.pjstr2(this.rawCpuInfoDescription);
-		buf.p1(this.rawCpuInfoProcessors);
-		buf.p1(this.rawCpuInfoProcessors2);
+	public void createHardwareBlock(Packet arg0) {
+		arg0.p1(8);
+		arg0.p1(this.operatingSystem);
+		arg0.p1(this.osArch64 ? 1 : 0);
+		arg0.p2(this.osVersion);
+		arg0.p1(this.javaVendor);
+		arg0.p1(this.javaVersionMajor);
+		arg0.p1(this.javaVersionMinor);
+		arg0.p1(this.javaVersionPatch);
+		arg0.p1(this.unused ? 1 : 0);
+		arg0.p2(this.maxMemory);
+		arg0.p1(this.availableProcessors);
+		arg0.p3(this.cpuInfoRam);
+		arg0.p2(this.cpuInfoSpeed);
+		arg0.pjstr2(this.gpuInfoDescription);
+		arg0.pjstr2(this.unused1);
+		arg0.pjstr2(this.directXVersion);
+		arg0.pjstr2(this.unused2);
+		arg0.p1(this.dxDriverDateMonth);
+		arg0.p2(this.dxDriverDateYear);
+		arg0.pjstr2(this.rawCpuInfoVendor);
+		arg0.pjstr2(this.rawCpuInfoDescription);
+		arg0.p1(this.rawCpuInfoProcessors);
+		arg0.p1(this.rawCpuInfoProcessors2);
 		for (int var2 = 0; var2 < this.rawCpuInfoUnknown.length; var2++) {
-			buf.p4(this.rawCpuInfoUnknown[var2]);
+			arg0.p4(this.rawCpuInfoUnknown[var2]);
 		}
-		buf.p4(this.rawCpuInfoUnknown1);
-		buf.pjstr2(this.unused3);
+		arg0.p4(this.rawCpuInfoUnknown1);
+		arg0.pjstr2(this.unused3);
 	}
 
 	@ObfuscatedName("aly.m(I)I")

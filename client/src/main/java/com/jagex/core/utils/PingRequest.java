@@ -3,7 +3,7 @@ package com.jagex.core.utils;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yb")
-public final class PingRequest {
+public class PingRequest {
 
 	@ObfuscatedName("yb.e")
 	public volatile String host;

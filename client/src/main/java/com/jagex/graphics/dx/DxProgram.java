@@ -1,7 +1,11 @@
 package com.jagex.graphics.dx;
 
 import com.jagex.core.utils.ArrayUtil;
-import com.jagex.graphics.*;
+import com.jagex.graphics.BaseTexture;
+import com.jagex.graphics.GpuProgram;
+import com.jagex.graphics.ProgramData;
+import com.jagex.graphics.ProgramUniform;
+import com.jagex.graphics.UniformType;
 import com.jagex.graphics.glx.GlxError;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
@@ -9,7 +13,7 @@ import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;
 
 @ObfuscatedName("agt")
-public final class DxProgram extends GpuProgram {
+public class DxProgram extends GpuProgram {
 
 	@ObfuscatedName("agt.k")
 	public DxProgramManager programManager;
@@ -41,26 +45,26 @@ public final class DxProgram extends GpuProgram {
 	@ObfuscatedName("agt.o")
 	public final boolean[] field10359;
 
-	public DxProgram(DxToolkit renderer, DxProgramManager programManager, ProgramData programData) {
-		this(renderer, programData);
-		this.renderer = renderer;
-		this.programManager = programManager;
+	public DxProgram(DxToolkit arg0, DxProgramManager arg1, ProgramData arg2) {
+		this(arg0, arg2);
+		this.renderer = arg0;
+		this.programManager = arg1;
 	}
 
-	public DxProgram(DxToolkit renderer, ProgramData programData) {
+	public DxProgram(DxToolkit arg0, ProgramData arg1) {
 		this.field10357 = false;
 		this.field10366 = new float[2][];
 		this.field10359 = new boolean[2];
-		this.name = programData.name;
-		if (programData.vertexShaderFile != null) {
-			this.vertexShaderFile = programData.vertexShaderFile;
-			this.vertexShader = renderer.getShader(this.vertexShaderFile);
+		this.name = arg1.name;
+		if (arg1.vertexShaderFile != null) {
+			this.vertexShaderFile = arg1.vertexShaderFile;
+			this.vertexShader = arg0.getShader(this.vertexShaderFile);
 		}
-		if (programData.fragmentShaderFile != null) {
-			this.fragmentShaderFile = programData.fragmentShaderFile;
-			this.fragmentShader = renderer.getShader(this.fragmentShaderFile);
+		if (arg1.fragmentShaderFile != null) {
+			this.fragmentShaderFile = arg1.fragmentShaderFile;
+			this.fragmentShader = arg0.getShader(this.fragmentShaderFile);
 		}
-		renderer.method15985(this);
+		arg0.method15985(this);
 	}
 
 	@ObfuscatedName("agt.n()Z")

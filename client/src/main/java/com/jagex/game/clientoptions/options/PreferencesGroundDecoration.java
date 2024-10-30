@@ -7,12 +7,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amc")
 public class PreferencesGroundDecoration extends Preference {
 
-	public PreferencesGroundDecoration(ClientOptions options) {
-		super(options);
+	public PreferencesGroundDecoration(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesGroundDecoration(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesGroundDecoration(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("amc.o(S)V")
@@ -36,13 +36,13 @@ public class PreferencesGroundDecoration extends Preference {
 	}
 
 	@ObfuscatedName("amc.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return this.options.modeGame() == ModeGame.RUNESCAPE ? 1 : 3;
 	}
 
 	@ObfuscatedName("amc.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amc.y(I)I")

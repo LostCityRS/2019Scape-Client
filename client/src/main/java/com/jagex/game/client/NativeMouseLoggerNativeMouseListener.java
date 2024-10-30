@@ -2,11 +2,10 @@ package com.jagex.game.client;
 
 import com.jagex.game.ClientWatch;
 import deob.ObfuscatedName;
-
 import java.util.Queue;
 
 @ObfuscatedName("xr")
-public final class NativeMouseLoggerNativeMouseListener implements NativeMouseListener {
+public class NativeMouseLoggerNativeMouseListener implements NativeMouseListener {
 
 	@ObfuscatedName("xr.e(ZI)V")
 	public void method10225(boolean arg0) {

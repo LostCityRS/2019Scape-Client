@@ -231,7 +231,7 @@ public class ParticleEmitter {
 					int var42 = this.field7772.field3514 + (int) (Math.random() * (double) (this.field7772.field3505 - this.field7772.field3514));
 					int var43 = this.field7772.field3482 + (int) (Math.random() * (double) (this.field7772.field3483 - this.field7772.field3482));
 					int var44 = this.field7772.field3501 + (int) (Math.random() * (double) (this.field7772.field3472 - this.field7772.field3501));
-					int var45 = this.field7772.field3525 * 64;
+					int var45 = this.field7772.field3525;
 					if (this.field7772.field3534 != 0) {
 						if (this.field7772.field3503 == 0) {
 							var45 += (int) (Math.random() * (double) (this.field7772.field3534 + 1));
@@ -239,7 +239,7 @@ public class ParticleEmitter {
 							var45 += (int) (Math.random() * (double) (this.field7772.field3503 + 1)) * (this.field7772.field3534 / this.field7772.field3503);
 						}
 					}
-					int var46 = this.field7772.field3533 * 8;
+					int var46 = this.field7772.field3533;
 					if (this.field7772.field3535 != 0) {
 						var46 += (int) (Math.random() * (double) (this.field7772.field3535 + 1));
 					}

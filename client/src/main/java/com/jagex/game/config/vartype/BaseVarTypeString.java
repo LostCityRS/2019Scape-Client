@@ -4,7 +4,7 @@ import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qf")
-public final class BaseVarTypeString implements BaseVarTypeCodec {
+public class BaseVarTypeString implements BaseVarTypeCodec {
 
 	@ObfuscatedName("qf.e(Lalw;I)Ljava/lang/Object;")
 	public Object decode(Packet arg0) {

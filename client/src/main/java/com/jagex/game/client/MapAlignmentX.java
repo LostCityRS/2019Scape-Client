@@ -26,9 +26,9 @@ public class MapAlignmentX implements SerializableEnum {
 		return new MapAlignmentX[] { field2418, field2420, field2417 };
 	}
 
-	public MapAlignmentX(int index, int serialID) {
-		this.index = index;
-		this.serialID = serialID;
+	public MapAlignmentX(int arg0, int arg1) {
+		this.index = arg0;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("hp.n()I")

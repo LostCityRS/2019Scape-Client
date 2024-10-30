@@ -9,9 +9,8 @@ import com.jagex.encryption.Isaac;
 import com.jagex.game.client.ClientMessage;
 import com.jagex.game.network.protocol.ServerProt;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
 import java.io.IOException;
+import rs2.client.Client;
 
 @ObfuscatedName("ax")
 public class ServerConnection {
@@ -80,10 +79,10 @@ public class ServerConnection {
 	public PingProvider pingProvider = new PingProvider();
 
 	public ServerConnection() {
-		Thread thread = new Thread(this.pingProvider);
-		thread.setDaemon(true);
-		thread.setPriority(1);
-		thread.start();
+		Thread var1 = new Thread(this.pingProvider);
+		var1.setDaemon(true);
+		var1.setPriority(1);
+		var1.start();
 	}
 
 	@ObfuscatedName("ax.e(I)V")
@@ -99,27 +98,27 @@ public class ServerConnection {
 		}
 		this.out.pos = 0;
 		while (true) {
-			ClientMessage message = (ClientMessage) this.writeQueue.head();
-			if (message == null || message.pos > this.out.data.length - this.out.pos) {
+			ClientMessage var1 = (ClientMessage) this.writeQueue.head();
+			if (var1 == null || var1.pos > this.out.data.length - this.out.pos) {
 				this.stream.write(this.out.data, 0, this.out.pos);
 				this.totalBytesSent += this.out.pos;
 				this.numConnections = 0;
 				break;
 			}
-			this.out.pdata(message.buf.data, 0, message.pos);
-			this.writePos -= message.pos;
-			message.unlink();
-			message.buf.release();
-			message.pushMessage();
+			this.out.pdata(var1.buf.data, 0, var1.pos);
+			this.writePos -= var1.pos;
+			var1.unlink();
+			var1.buf.release();
+			var1.pushMessage();
 		}
 	}
 
 	@ObfuscatedName("ax.m(Lakl;I)V")
-	public final void queue(ClientMessage message) {
-		this.writeQueue.addTail(message);
-		message.pos = message.buf.pos;
-		message.buf.pos = 0;
-		this.writePos += message.pos;
+	public final void queue(ClientMessage arg0) {
+		this.writeQueue.addTail(arg0);
+		arg0.pos = arg0.buf.pos;
+		arg0.buf.pos = 0;
+		this.writePos += arg0.pos;
 	}
 
 	@ObfuscatedName("ax.k(I)V")
@@ -133,9 +132,9 @@ public class ServerConnection {
 	}
 
 	@ObfuscatedName("ax.f(Luz;Ljava/lang/String;I)V")
-	public void setStream(Stream stream, String host) {
-		this.stream = stream;
-		this.pingProvider.setPingHost(host);
+	public void setStream(Stream arg0, String arg1) {
+		this.stream = arg0;
+		this.pingProvider.setPingHost(arg1);
 	}
 
 	@ObfuscatedName("ax.w(B)V")

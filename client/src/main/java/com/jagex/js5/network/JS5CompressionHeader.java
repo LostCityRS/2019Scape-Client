@@ -1,5 +1,6 @@
 package com.jagex.js5.network;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.js5.Js5CompressionType;
@@ -17,14 +18,13 @@ public class JS5CompressionHeader {
 	@ObfuscatedName("pc.m")
 	public final int unpackedLength;
 
-	public JS5CompressionHeader(Packet buf) {
-		this.compressionType = (Js5CompressionType) SerializableEnums.decode(Js5CompressionType.values(), buf.g1());
-		this.packedLength = buf.g4s();
-
+	public JS5CompressionHeader(Packet arg0) {
+		this.compressionType = (Js5CompressionType) SerializableEnums.decode((SerializableEnum[]) Js5CompressionType.values(), arg0.g1());
+		this.packedLength = arg0.g4s();
 		if (Js5CompressionType.UNCOMPRESSED == this.compressionType) {
 			this.unpackedLength = this.packedLength;
 		} else {
-			this.unpackedLength = buf.g4s();
+			this.unpackedLength = arg0.g4s();
 		}
 	}
 

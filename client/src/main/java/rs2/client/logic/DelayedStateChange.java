@@ -1,7 +1,7 @@
 package rs2.client.logic;
 
-import com.jagex.core.datastruct.SecondaryLinkedList;
 import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.SecondaryLinkedList;
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.MonotonicTime;
@@ -39,15 +39,15 @@ public class DelayedStateChange extends SecondaryNode {
 	public static boolean lastPushNew = false;
 
 	@ObfuscatedName("jx.e(IJ)Lars;")
-	public static DelayedStateChange cache(int type, long target) {
+	public static DelayedStateChange cache(int arg0, long arg1) {
 		lastPushNew = false;
-		DelayedStateChange change = (DelayedStateChange) cache.get((long) type << 56 | target);
-		if (change == null) {
-			change = new DelayedStateChange(type, target);
-			cache.put(change, change.nodeId);
+		DelayedStateChange var3 = (DelayedStateChange) cache.get((long) arg0 << 56 | arg1);
+		if (var3 == null) {
+			var3 = new DelayedStateChange(arg0, arg1);
+			cache.put(var3, var3.nodeId);
 			lastPushNew = true;
 		}
-		return change;
+		return var3;
 	}
 
 	@ObfuscatedName("al.n(I)V")
@@ -59,25 +59,25 @@ public class DelayedStateChange extends SecondaryNode {
 
 	@ObfuscatedName("kh.m(B)Lars;")
 	public static DelayedStateChange poll() {
-		DelayedStateChange serverChange = (DelayedStateChange) serverQueue.peekFront();
-		if (serverChange != null) {
-			serverChange.unlink();
-			serverChange.secondaryRemove();
-			return serverChange;
+		DelayedStateChange var0 = (DelayedStateChange) serverQueue.peekFront();
+		if (var0 != null) {
+			var0.unlink();
+			var0.secondaryRemove();
+			return var0;
 		}
-		DelayedStateChange clientChange;
+		DelayedStateChange var1;
 		do {
-			clientChange = (DelayedStateChange) clientQueue.peekFront();
-			if (clientChange == null) {
+			var1 = (DelayedStateChange) clientQueue.peekFront();
+			if (var1 == null) {
 				return null;
 			}
-			if (clientChange.getTime() > MonotonicTime.get()) {
+			if (var1.getTime() > MonotonicTime.get()) {
 				return null;
 			}
-			clientChange.unlink();
-			clientChange.secondaryRemove();
-		} while ((clientChange.secondaryNodeId & Long.MIN_VALUE) == 0L);
-		return clientChange;
+			var1.unlink();
+			var1.secondaryRemove();
+		} while ((var1.secondaryNodeId & Long.MIN_VALUE) == 0L);
+		return var1;
 	}
 
 	@ObfuscatedName("gv.k(Lec;I)V")
@@ -218,7 +218,7 @@ public class DelayedStateChange extends SecondaryNode {
 			var3.int0 = var2.setVarbitValue(var3.int0, arg1);
 			var3.pushServerQueue();
 		} catch (VarBitOverflowException var5) {
-			JagException.report("" + arg0, var5);
+			JagException.report((String) ("" + arg0), (Throwable) var5);
 		}
 	}
 
@@ -359,8 +359,8 @@ public class DelayedStateChange extends SecondaryNode {
 		var4.int1 = arg3;
 	}
 
-	public DelayedStateChange(int type, long target) {
-		this.nodeId = (long) type << 56 | target;
+	public DelayedStateChange(int arg0, long arg1) {
+		this.nodeId = (long) arg0 << 56 | arg1;
 	}
 
 	@ObfuscatedName("ars.aa(I)V")

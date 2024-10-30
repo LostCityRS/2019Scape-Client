@@ -47,7 +47,7 @@ public class ChatCrownType implements SerializableEnum {
 
 	@ObfuscatedName("nn.e(I)[Lnn;")
 	public static ChatCrownType[] method6043() {
-		return new ChatCrownType[] {HARDCORE, STAFF_MOD, PREMIER_CLUB_PLAYER_MOD, LOCAL_MOD, IRONMAN, HARDCORE_IRONMAN, PLAYER_MOD, NONE, PREMIER_CLUB};
+		return new ChatCrownType[] { HARDCORE, STAFF_MOD, PREMIER_CLUB_PLAYER_MOD, LOCAL_MOD, IRONMAN, HARDCORE_IRONMAN, PLAYER_MOD, NONE, PREMIER_CLUB };
 	}
 
 	public ChatCrownType(int arg0, int arg1, boolean arg2, boolean arg3, boolean arg4) {

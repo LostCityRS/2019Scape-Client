@@ -98,37 +98,36 @@ public class DefaultSprites {
 	@ObfuscatedName("sj.al")
 	public static Sprite[] field6719;
 
-
 	public DefaultSprites() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("gl.e(Lws;B)V")
-	public static void method3470(GraphicsDefaults graphics) {
-		p11_full = graphics.p11_full;
-		p12_full = graphics.p12_full;
-		b12_full = graphics.b12_full;
+	public static void method3470(GraphicsDefaults arg0) {
+		p11_full = arg0.p11_full;
+		p12_full = arg0.p12_full;
+		b12_full = arg0.b12_full;
 	}
 
 	@ObfuscatedName("aft.n(Lws;I)V")
-	public static void method16430(GraphicsDefaults graphics) {
-		hintarrows = graphics.hintarrows;
-		field514 = graphics.field7715;
-		mapflag = graphics.mapflag;
-		field11888 = graphics.field7751;
-		field10232 = graphics.field7752;
-		cross = graphics.cross;
-		mapdots = graphics.mapdots;
-		field511 = graphics.field7755;
-		field7572 = graphics.field7756;
-		compass = graphics.compass;
-		field512 = graphics.field7721;
-		field12241 = graphics.field7741;
+	public static void method16430(GraphicsDefaults arg0) {
+		hintarrows = arg0.hintarrows;
+		field514 = arg0.field7715;
+		mapflag = arg0.mapflag;
+		field11888 = arg0.field7751;
+		field10232 = arg0.field7752;
+		cross = arg0.cross;
+		mapdots = arg0.mapdots;
+		field511 = arg0.field7755;
+		field7572 = arg0.field7756;
+		compass = arg0.compass;
+		field512 = arg0.field7721;
+		field12241 = arg0.field7741;
 	}
 
 	@ObfuscatedName("au.m(I)[I")
 	public static int[] fonts() {
-		return new int[] {p11_full, p12_full, b12_full};
+		return new int[] { p11_full, p12_full, b12_full };
 	}
 
 	@ObfuscatedName("qx.k(Ldh;I)V")
@@ -142,39 +141,39 @@ public class DefaultSprites {
 	}
 
 	@ObfuscatedName("aej.f(Lpy;I)I")
-	public static int getLoadedSpritesCount(Js5 spritesJs5) {
-		int count = 0;
-		if (spritesJs5.loadFile(hintarrows)) {
-			count++;
+	public static int getLoadedSpritesCount(Js5 arg0) {
+		int var1 = 0;
+		if (arg0.loadFile(hintarrows)) {
+			var1++;
 		}
-		if (spritesJs5.loadFile(field514)) {
-			count++;
+		if (arg0.loadFile(field514)) {
+			var1++;
 		}
-		if (spritesJs5.loadFile(mapflag)) {
-			count++;
+		if (arg0.loadFile(mapflag)) {
+			var1++;
 		}
-		if (spritesJs5.loadFile(cross)) {
-			count++;
+		if (arg0.loadFile(cross)) {
+			var1++;
 		}
-		if (spritesJs5.loadFile(mapdots)) {
-			count++;
+		if (arg0.loadFile(mapdots)) {
+			var1++;
 		}
-		if (spritesJs5.loadFile(field511)) {
-			count++;
+		if (arg0.loadFile(field511)) {
+			var1++;
 		}
-		if (spritesJs5.loadFile(field7572)) {
-			count++;
+		if (arg0.loadFile(field7572)) {
+			var1++;
 		}
-		if (spritesJs5.loadFile(compass)) {
-			count++;
+		if (arg0.loadFile(compass)) {
+			var1++;
 		}
-		if (spritesJs5.loadFile(field512)) {
-			count++;
+		if (arg0.loadFile(field512)) {
+			var1++;
 		}
-		if (spritesJs5.loadFile(field12241)) {
-			count++;
+		if (arg0.loadFile(field12241)) {
+			var1++;
 		}
-		return count;
+		return var1;
 	}
 
 	@ObfuscatedName("aam.w(I)I")
@@ -183,49 +182,49 @@ public class DefaultSprites {
 	}
 
 	@ObfuscatedName("kh.l(Ldh;Lpy;I)V")
-	public static void loadSprites(Toolkit toolkit, Js5 spritesJs5) {
-		SpriteData[] hintarrows = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.hintarrows, 0);
-		DefaultSprites.hintarrowSprites = new Sprite[hintarrows.length];
-		for (int var3 = 0; var3 < hintarrows.length; var3++) {
-			DefaultSprites.hintarrowSprites[var3] = toolkit.createSprite(hintarrows[var3], true);
+	public static void loadSprites(Toolkit arg0, Js5 arg1) {
+		SpriteData[] var2 = SpriteDataProvider.method1608(arg1, hintarrows, 0);
+		hintarrowSprites = new Sprite[var2.length];
+		for (int var3 = 0; var3 < var2.length; var3++) {
+			hintarrowSprites[var3] = arg0.createSprite(var2[var3], true);
 		}
-		SpriteData[] var4 = SpriteDataProvider.method1608(spritesJs5, field514, 0);
+		SpriteData[] var4 = SpriteDataProvider.method1608(arg1, field514, 0);
 		field513 = new Sprite[var4.length];
 		for (int var5 = 0; var5 < var4.length; var5++) {
-			field513[var5] = toolkit.createSprite(var4[var5], true);
+			field513[var5] = arg0.createSprite(var4[var5], true);
 		}
-		SpriteData[] mapflags = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.mapflag, 0);
-		DefaultSprites.mapflagSprites = new Sprite[mapflags.length];
+		SpriteData[] var6 = SpriteDataProvider.method1608(arg1, mapflag, 0);
+		mapflagSprites = new Sprite[var6.length];
 		byte var7 = 25;
-		for (int var8 = 0; var8 < mapflags.length; var8++) {
-			mapflags[var8].method2605(-var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D));
-			DefaultSprites.mapflagSprites[var8] = toolkit.createSprite(mapflags[var8], true);
+		for (int var8 = 0; var8 < var6.length; var8++) {
+			var6[var8].method2605(-var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D), -var7 + (int) (Math.random() * (double) var7 * 2.0D));
+			mapflagSprites[var8] = arg0.createSprite(var6[var8], true);
 		}
-		SpriteData[] crosses = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.cross, 0);
-		DefaultSprites.crossSprites = new Sprite[crosses.length];
-		for (int var10 = 0; var10 < crosses.length; var10++) {
-			DefaultSprites.crossSprites[var10] = toolkit.createSprite(crosses[var10], true);
+		SpriteData[] var9 = SpriteDataProvider.method1608(arg1, cross, 0);
+		crossSprites = new Sprite[var9.length];
+		for (int var10 = 0; var10 < var9.length; var10++) {
+			crossSprites[var10] = arg0.createSprite(var9[var10], true);
 		}
-		SpriteData[] mapdots = SpriteDataProvider.method1608(spritesJs5, DefaultSprites.mapdots, 0);
-		DefaultSprites.mapdotsSprites = new Sprite[mapdots.length];
+		SpriteData[] var11 = SpriteDataProvider.method1608(arg1, mapdots, 0);
+		mapdotsSprites = new Sprite[var11.length];
 		byte var12 = 12;
-		for (int var13 = 0; var13 < mapdots.length; var13++) {
-			mapdots[var13].method2605(-var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D));
-			DefaultSprites.mapdotsSprites[var13] = toolkit.createSprite(mapdots[var13], true);
+		for (int var13 = 0; var13 < var11.length; var13++) {
+			var11[var13].method2605(-var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D), -var12 + (int) (Math.random() * (double) var12 * 2.0D));
+			mapdotsSprites[var13] = arg0.createSprite(var11[var13], true);
 		}
-		SpriteData[] var14 = SpriteDataProvider.method1608(spritesJs5, field511, 0);
+		SpriteData[] var14 = SpriteDataProvider.method1608(arg1, field511, 0);
 		field10302 = new Sprite[var14.length];
 		byte var15 = 12;
 		for (int var16 = 0; var16 < var14.length; var16++) {
 			var14[var16].method2605(-var15 + (int) (Math.random() * (double) var15 * 2.0D), -var15 + (int) (Math.random() * (double) var15 * 2.0D), -var15 + (int) (Math.random() * (double) var15 * 2.0D));
-			field10302[var16] = toolkit.createSprite(var14[var16], true);
+			field10302[var16] = arg0.createSprite(var14[var16], true);
 		}
-		compassSprites = toolkit.createSprite(SpriteDataProvider.method1609(spritesJs5, compass, 0), true);
-		field1940 = toolkit.createSprite(SpriteDataProvider.method1609(spritesJs5, field512, 0), true);
-		SpriteData[] var17 = SpriteDataProvider.method1608(spritesJs5, field12241, 0);
+		compassSprites = arg0.createSprite(SpriteDataProvider.method1609(arg1, compass, 0), true);
+		field1940 = arg0.createSprite(SpriteDataProvider.method1609(arg1, field512, 0), true);
+		SpriteData[] var17 = SpriteDataProvider.method1608(arg1, field12241, 0);
 		field6719 = new Sprite[var17.length];
 		for (int var18 = 0; var18 < var17.length; var18++) {
-			field6719[var18] = toolkit.createSprite(var17[var18], true);
+			field6719[var18] = arg0.createSprite(var17[var18], true);
 		}
 	}
 

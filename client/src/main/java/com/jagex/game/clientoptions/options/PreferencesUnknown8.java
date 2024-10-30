@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ant")
 public class PreferencesUnknown8 extends Preference {
 
-	public PreferencesUnknown8(ClientOptions options) {
-		super(options);
+	public PreferencesUnknown8(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesUnknown8(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesUnknown8(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("ant.o(B)V")
@@ -27,13 +27,13 @@ public class PreferencesUnknown8 extends Preference {
 	}
 
 	@ObfuscatedName("ant.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return 1;
 	}
 
 	@ObfuscatedName("ant.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("ant.s(I)I")

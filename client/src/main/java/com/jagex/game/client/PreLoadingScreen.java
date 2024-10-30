@@ -4,15 +4,22 @@ import com.jagex.core.utils.StringTools;
 import com.jagex.game.load.Loading;
 import com.jagex.game.load.LoadingScreen;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.MediaTracker;
+import java.awt.Toolkit;
 import java.awt.geom.AffineTransform;
+import java.awt.image.ImageObserver;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import rs2.client.Client;
 
 @ObfuscatedName("jm")
 public class PreLoadingScreen implements LoadingScreen {
@@ -78,7 +85,7 @@ public class PreLoadingScreen implements LoadingScreen {
 							}
 							if (var8 != null) {
 								var3.addImage(var8, var4++);
-								this.field2892.add(new PreLoadingImage(this, var8, StringTools.parseInt(var7[1]), StringTools.parseInt(var7[2])));
+								this.field2892.add(new PreLoadingScreen.PreLoadingImage(var8, StringTools.parseInt(var7[1]), StringTools.parseInt(var7[2])));
 							}
 						} else if (var6[0].equals("rotatingimage")) {
 							String[] var10 = StringTools.split(var6[1], ',');
@@ -90,11 +97,11 @@ public class PreLoadingScreen implements LoadingScreen {
 							}
 							if (var11 != null) {
 								var3.addImage(var11, var4++);
-								this.field2892.add(new PreLoadingRotatingImage(this, var11, StringTools.parseInt(var10[1]), StringTools.parseInt(var10[2]), Float.parseFloat(var10[3])));
+								this.field2892.add(new PreLoadingScreen.PreLoadingRotatingImage(var11, StringTools.parseInt(var10[1]), StringTools.parseInt(var10[2]), Float.parseFloat(var10[3])));
 							}
 						} else if (var6[0].equals("progress")) {
 							String[] var13 = StringTools.split(var6[1], ',');
-							this.field2892.add(new PreLoadingProgressImage(this, Boolean.parseBoolean(var13[0]), var13[1], StringTools.parseInt(var13[2]), Integer.decode(var13[3]), StringTools.parseInt(var13[4]), StringTools.parseInt(var13[5])));
+							this.field2892.add(new PreLoadingScreen.PreLoadingProgressImage(Boolean.parseBoolean(var13[0]), var13[1], StringTools.parseInt(var13[2]), Integer.decode(var13[3]), StringTools.parseInt(var13[4]), StringTools.parseInt(var13[5])));
 						}
 					}
 					var3.waitForAll();
@@ -123,7 +130,7 @@ public class PreLoadingScreen implements LoadingScreen {
 			var16.fillRect(0, 0, GameShell.canvasWid, GameShell.canvasHei);
 			Iterator var17 = this.field2892.iterator();
 			while (var17.hasNext()) {
-				PreLoadingRelated var18 = (PreLoadingRelated) var17.next();
+				PreLoadingScreen.PreLoadingRelated var18 = (PreLoadingScreen.PreLoadingRelated) var17.next();
 				var18.method4987(var16);
 			}
 			var15.drawImage(GameShell.field2575, 0, 0, null);
@@ -180,17 +187,13 @@ public class PreLoadingScreen implements LoadingScreen {
 		return true;
 	}
 
-	// line 177
 	@ObfuscatedName("jm.p(B)I")
 	public int method4895() {
 		return 0;
 	}
 
 	@ObfuscatedName("jq")
-	public abstract static class PreLoadingRelated {
-
-		// $FF: synthetic field
-		public final PreLoadingScreen this$0;
+	public abstract class PreLoadingRelated {
 
 		@ObfuscatedName("jq.e")
 		public int field2947;
@@ -198,9 +201,7 @@ public class PreLoadingScreen implements LoadingScreen {
 		@ObfuscatedName("jq.n")
 		public int field2948;
 
-		// line 184
-		public PreLoadingRelated(PreLoadingScreen arg0, int arg1, int arg2) {
-			this.this$0 = arg0;
+		public PreLoadingRelated(int arg1, int arg2) {
 			this.field2947 = arg1;
 			this.field2948 = arg2;
 		}
@@ -209,35 +210,64 @@ public class PreLoadingScreen implements LoadingScreen {
 		public abstract void method4987(Graphics arg0);
 	}
 
-	@ObfuscatedName("ahw")
-	public static class PreLoadingImage extends PreLoadingRelated {
+	@ObfuscatedName("ahj")
+	public class PreLoadingProgressImage extends PreLoadingScreen.PreLoadingRelated {
 
-		// $FF: synthetic field
-		public final PreLoadingScreen this$0;
+		@ObfuscatedName("ahj.m")
+		public boolean field10469;
+
+		@ObfuscatedName("ahj.k")
+		public Font field10467;
+
+		@ObfuscatedName("ahj.f")
+		public FontMetrics field10468;
+
+		@ObfuscatedName("ahj.w")
+		public Color field10466;
+
+		public PreLoadingProgressImage(boolean arg1, String arg2, int arg3, int arg4, int arg5, int arg6) {
+			super(arg5, arg6);
+			this.field10469 = arg1;
+			this.field10467 = new Font(arg2, 0, arg3);
+			this.field10468 = GameShell.canvas.getFontMetrics(this.field10467);
+			this.field10466 = new Color(arg4);
+		}
+
+		@ObfuscatedName("ahj.e(Ljava/awt/Graphics;B)V")
+		public void method4987(Graphics arg0) {
+			String var2;
+			if (this.field10469) {
+				var2 = PreLoadingScreen.this.field2896;
+			} else {
+				var2 = PreLoadingScreen.this.field2897 + " " + PreLoadingScreen.this.field2896;
+			}
+			arg0.setFont(this.field10467);
+			arg0.setColor(this.field10466);
+			arg0.drawString(var2, PreLoadingScreen.this.method4893(this.field10468.stringWidth(var2)) + this.field2947, PreLoadingScreen.this.method4887(0) + this.field2948);
+		}
+	}
+
+	@ObfuscatedName("ahw")
+	public class PreLoadingImage extends PreLoadingScreen.PreLoadingRelated {
 
 		@ObfuscatedName("ahw.m")
 		public Image field10470;
 
-		// line 195
-		public PreLoadingImage(PreLoadingScreen arg0, Image arg1, int arg2, int arg3) {
-			super(arg0, arg2, arg3);
-			this.this$0 = arg0;
+		public PreLoadingImage(Image arg1, int arg2, int arg3) {
+			super(arg2, arg3);
 			this.field10470 = arg1;
 		}
 
 		@ObfuscatedName("ahw.e(Ljava/awt/Graphics;B)V")
 		public void method4987(Graphics arg0) {
-			int var2 = this.this$0.method4893(this.field10470.getWidth(null)) + this.field2947;
-			int var3 = this.this$0.method4887(this.field10470.getHeight(null)) + this.field2948;
+			int var2 = PreLoadingScreen.this.method4893(this.field10470.getWidth(null)) + this.field2947;
+			int var3 = PreLoadingScreen.this.method4887(this.field10470.getHeight(null)) + this.field2948;
 			arg0.drawImage(this.field10470, var2, var3, null);
 		}
 	}
 
 	@ObfuscatedName("aqz")
-	public static class PreLoadingRotatingImage extends PreLoadingImage {
-
-		// $FF: synthetic field
-		public final PreLoadingScreen this$0;
+	public class PreLoadingRotatingImage extends PreLoadingScreen.PreLoadingImage {
 
 		@ObfuscatedName("aqz.k")
 		public float field12091;
@@ -245,10 +275,8 @@ public class PreLoadingScreen implements LoadingScreen {
 		@ObfuscatedName("aqz.f")
 		public float field12092;
 
-		// line 211
-		public PreLoadingRotatingImage(PreLoadingScreen arg0, Image arg1, int arg2, int arg3, float arg4) {
-			super(arg0, arg1, arg2, arg3);
-			this.this$0 = arg0;
+		public PreLoadingRotatingImage(Image arg1, int arg2, int arg3, float arg4) {
+			super(arg1, arg2, arg3);
 			this.field12091 = arg4;
 			this.field12092 = -this.field12091;
 		}
@@ -264,52 +292,10 @@ public class PreLoadingScreen implements LoadingScreen {
 			int var4 = this.field10470.getWidth(null);
 			int var5 = this.field10470.getHeight(null);
 			Graphics2D var6 = (Graphics2D) arg0;
-			var6.rotate(var2, (double) (this.this$0.method4893(var4) + var4 / 2 + this.field2947), (double) (this.this$0.method4887(var5) + var5 / 2 + this.field2948));
-			var6.translate(this.this$0.method4893(var4) + this.field2947, this.this$0.method4887(var5) + this.field2948);
+			var6.rotate(var2, (double) (PreLoadingScreen.this.method4893(var4) + var4 / 2 + this.field2947), (double) (PreLoadingScreen.this.method4887(var5) + var5 / 2 + this.field2948));
+			var6.translate(PreLoadingScreen.this.method4893(var4) + this.field2947, PreLoadingScreen.this.method4887(var5) + this.field2948);
 			var6.drawImage(this.field10470, null, null);
-			var6.setTransform(this.this$0.field2898);
-		}
-	}
-
-	@ObfuscatedName("ahj")
-	public static class PreLoadingProgressImage extends PreLoadingRelated {
-
-		// $FF: synthetic field
-		public final PreLoadingScreen this$0;
-
-		@ObfuscatedName("ahj.m")
-		public boolean field10469;
-
-		@ObfuscatedName("ahj.k")
-		public java.awt.Font field10467;
-
-		@ObfuscatedName("ahj.f")
-		public java.awt.FontMetrics field10468;
-
-		@ObfuscatedName("ahj.w")
-		public Color field10466;
-
-		// line 238
-		public PreLoadingProgressImage(PreLoadingScreen arg0, boolean arg1, String arg2, int arg3, int arg4, int arg5, int arg6) {
-			super(arg0, arg5, arg6);
-			this.this$0 = arg0;
-			this.field10469 = arg1;
-			this.field10467 = new java.awt.Font(arg2, 0, arg3);
-			this.field10468 = GameShell.canvas.getFontMetrics(this.field10467);
-			this.field10466 = new Color(arg4);
-		}
-
-		@ObfuscatedName("ahj.e(Ljava/awt/Graphics;B)V")
-		public void method4987(Graphics arg0) {
-			String var2;
-			if (this.field10469) {
-				var2 = this.this$0.field2896;
-			} else {
-				var2 = this.this$0.field2897 + " " + this.this$0.field2896;
-			}
-			arg0.setFont(this.field10467);
-			arg0.setColor(this.field10466);
-			arg0.drawString(var2, this.this$0.method4893(this.field10468.stringWidth(var2)) + this.field2947, this.this$0.method4887(0) + this.field2948);
+			var6.setTransform(PreLoadingScreen.this.field2898);
 		}
 	}
 }

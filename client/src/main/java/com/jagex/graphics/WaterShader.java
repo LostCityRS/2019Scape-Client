@@ -73,8 +73,8 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 	@ObfuscatedName("ahi.ac")
 	public float[] field10612 = new float[3];
 
-	public WaterShader(GpuToolkit gpuRenderer) {
-		super(gpuRenderer);
+	public WaterShader(GpuToolkit arg0) {
+		super(arg0);
 		new Matrix4x3();
 		this.field10611 = new Matrix4x4[this.gpuRenderer.maxSimutaneousTextures];
 		for (int var2 = 0; var2 < this.gpuRenderer.maxSimutaneousTextures; var2++) {
@@ -83,8 +83,8 @@ public abstract class WaterShader extends GpuRendererRelated2 {
 	}
 
 	@ObfuscatedName("ahi.h(Ljava/lang/String;)Z")
-	public boolean createShaderProgram(String name) throws ShaderException {
-		this.shader = this.gpuRenderer.createShader(name);
+	public boolean createShaderProgram(String arg0) throws ShaderException {
+		this.shader = this.gpuRenderer.createShader(arg0);
 		if (this.shader == null) {
 			throw new ShaderException("");
 		}

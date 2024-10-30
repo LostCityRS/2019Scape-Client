@@ -15,8 +15,8 @@ public class PacketBit extends Packet {
 	@ObfuscatedName("ase.v")
 	public int bitPos;
 
-	public PacketBit(int size) {
-		super(size);
+	public PacketBit(int arg0) {
+		super(arg0);
 	}
 
 	@ObfuscatedName("ase.jg(Laav;B)V")
@@ -26,12 +26,12 @@ public class PacketBit extends Packet {
 
 	@ObfuscatedName("ase.jx(II)V")
 	public void pIsaac1(int arg0) {
-		this.data[(++this.pos) - 1] = (byte) (arg0 + this.isaac.nextInt());
+		this.data[++this.pos - 1] = (byte) (arg0 + this.isaac.nextInt());
 	}
 
 	@ObfuscatedName("ase.jh(I)I")
 	public int gIsaac1() {
-		return this.data[(++this.pos) - 1] - this.isaac.nextInt() & 0xFF;
+		return this.data[++this.pos - 1] - this.isaac.nextInt() & 0xFF;
 	}
 
 	@ObfuscatedName("ase.jp(I)Z")
@@ -42,14 +42,14 @@ public class PacketBit extends Packet {
 
 	@ObfuscatedName("ase.jk(I)I")
 	public int gIsaac1or2() {
-		int var1 = this.data[(++this.pos) - 1] - this.isaac.nextInt() & 0xFF;
-		return var1 < 128 ? var1 : (var1 - 128 << 8) + (this.data[(++this.pos) - 1] - this.isaac.nextInt() & 0xFF);
+		int var1 = this.data[++this.pos - 1] - this.isaac.nextInt() & 0xFF;
+		return var1 < 128 ? var1 : (var1 - 128 << 8) + (this.data[++this.pos - 1] - this.isaac.nextInt() & 0xFF);
 	}
 
 	@ObfuscatedName("ase.kw([BIII)V")
 	public void gIsaacArrayBuffer(byte[] arg0, int arg1, int arg2) {
 		for (int var4 = 0; var4 < arg2; var4++) {
-			arg0[arg1 + var4] = (byte) (this.data[(++this.pos) - 1] - this.isaac.nextInt());
+			arg0[arg1 + var4] = (byte) (this.data[++this.pos - 1] - this.isaac.nextInt());
 		}
 	}
 

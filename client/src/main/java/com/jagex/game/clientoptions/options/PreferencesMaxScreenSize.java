@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amw")
 public class PreferencesMaxScreenSize extends Preference {
 
-	public PreferencesMaxScreenSize(ClientOptions options) {
-		super(options);
+	public PreferencesMaxScreenSize(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesMaxScreenSize(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesMaxScreenSize(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("amw.o(I)V")
@@ -27,13 +27,13 @@ public class PreferencesMaxScreenSize extends Preference {
 	}
 
 	@ObfuscatedName("amw.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return 1;
 	}
 
 	@ObfuscatedName("amw.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amw.s(I)I")

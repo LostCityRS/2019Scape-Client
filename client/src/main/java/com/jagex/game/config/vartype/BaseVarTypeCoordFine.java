@@ -5,7 +5,7 @@ import com.jagex.game.shared.movement.CoordFine;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qm")
-public final class BaseVarTypeCoordFine implements BaseVarTypeCodec {
+public class BaseVarTypeCoordFine implements BaseVarTypeCodec {
 
 	@ObfuscatedName("qm.e(Lalw;I)Ljava/lang/Object;")
 	public Object decode(Packet arg0) {

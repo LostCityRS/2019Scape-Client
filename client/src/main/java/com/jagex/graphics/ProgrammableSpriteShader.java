@@ -5,7 +5,7 @@ import com.jagex.math.Vector4;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahz")
-public final class ProgrammableSpriteShader extends SpriteShader {
+public class ProgrammableSpriteShader extends SpriteShader {
 
 	@ObfuscatedName("ahz.p")
 	public GpuShader field10532;

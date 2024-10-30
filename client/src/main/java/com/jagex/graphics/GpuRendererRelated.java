@@ -1,12 +1,11 @@
 package com.jagex.graphics;
 
 import deob.ObfuscatedName;
-
 import java.lang.ref.ReferenceQueue;
 import java.util.ArrayList;
 
 @ObfuscatedName("adc")
-public final class GpuRendererRelated {
+public class GpuRendererRelated {
 
 	@ObfuscatedName("adc.e")
 	public int field9176;

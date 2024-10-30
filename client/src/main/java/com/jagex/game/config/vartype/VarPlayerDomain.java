@@ -10,7 +10,7 @@ import rs2.client.Client;
 import rs2.client.logic.clans.LongNode;
 
 @ObfuscatedName("wu")
-public final class VarPlayerDomain implements VarDomain {
+public class VarPlayerDomain implements VarDomain {
 
 	@ObfuscatedName("wu.f")
 	public int[] field7604 = new int[Client.varPlayerTypeList.length()];
@@ -24,7 +24,7 @@ public final class VarPlayerDomain implements VarDomain {
 	@ObfuscatedName("wu.i(ZI)I")
 	public int pollServerValue(boolean arg0) {
 		long var2 = MonotonicTime.get();
-        for (LongNode var4 = (LongNode) (arg0 ? this.field7610.head() : this.field7610.next()); var4 != null; var4 = (LongNode) this.field7610.next()) {
+		for (LongNode var4 = (LongNode) (arg0 ? this.field7610.head() : this.field7610.next()); var4 != null; var4 = (LongNode) this.field7610.next()) {
 			if ((var4.value & 0x3FFFFFFFFFFFFFFFL) < var2) {
 				if ((var4.value & 0x4000000000000000L) != 0L) {
 					int var5 = (int) var4.nodeId;
@@ -61,7 +61,7 @@ public final class VarPlayerDomain implements VarDomain {
 		LongNode var3 = (LongNode) this.field7610.get((long) arg0.id);
 		if (var3 == null) {
 			LongNode var4 = new LongNode(MonotonicTime.get() + 500L);
-            this.field7610.put(var4, (long) arg0.id);
+			this.field7610.put(var4, (long) arg0.id);
 		} else {
 			var3.value = MonotonicTime.get() + 500L;
 		}

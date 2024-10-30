@@ -1,11 +1,15 @@
 package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
-
-import java.io.*;
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 @ObfuscatedName("abu")
-public final class FileUtil {
+public class FileUtil {
 
 	public FileUtil() throws Throwable {
 		throw new Error();

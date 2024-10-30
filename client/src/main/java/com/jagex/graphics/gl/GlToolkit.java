@@ -15,25 +15,50 @@ import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
+import com.jagex.graphics.AlphaMode;
+import com.jagex.graphics.ColourRemapper;
+import com.jagex.graphics.EffectInterface;
+import com.jagex.graphics.EnvironmentSampler;
+import com.jagex.graphics.FloorModel;
+import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
-import com.jagex.graphics.*;
+import com.jagex.graphics.FrameBuffer;
+import com.jagex.graphics.GlPostProcessing;
+import com.jagex.graphics.GpuPacket;
+import com.jagex.graphics.GraphicsDeletable;
+import com.jagex.graphics.Light;
+import com.jagex.graphics.MaterialList;
+import com.jagex.graphics.MaterialRaw;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelUnlit;
+import com.jagex.graphics.PostProcessingRelated;
+import com.jagex.graphics.RendererException;
+import com.jagex.graphics.RendererInfo;
+import com.jagex.graphics.Sprite;
+import com.jagex.graphics.SpriteData;
+import com.jagex.graphics.SpriteRelated;
+import com.jagex.graphics.Surface;
+import com.jagex.graphics.TextureFormat;
+import com.jagex.graphics.TextureList;
 import com.jagex.graphics.Toolkit;
+import com.jagex.graphics.WaterFogData;
 import com.jagex.graphics.particles.ParticleList;
-import com.jagex.math.*;
+import com.jagex.math.Cuboid;
+import com.jagex.math.GlTrig;
+import com.jagex.math.IntMath;
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 import jaclib.memory.Buffer;
 import jaclib.memory.Stream;
 import jaclib.memory.heap.NativeHeap;
 import jaggl.OpenGL;
-import sun.misc.Unsafe;
-
-import java.awt.*;
+import java.awt.Canvas;
 import java.lang.reflect.Field;
+import sun.misc.Unsafe;
 
 @ObfuscatedName("afa")
 public class GlToolkit extends Toolkit {
-
-	public static final boolean ALLOW_MICROSOFT = true; // microsoft support is better now!
 
 	@ObfuscatedName("afa.cl")
 	public OpenGL field10022;
@@ -593,67 +618,55 @@ public class GlToolkit extends Toolkit {
 					this.field9989 = false;
 				}
 			}
-
 			this.field9862 = this.field10017 ? 33639 : 5121;
 			this.isAmd = this.field9977.indexOf("radeon") != -1;
-			boolean isIntel = this.field9996.indexOf("intel") != -1;
+			boolean var19 = this.field9996.indexOf("intel") != -1;
 			boolean var20 = false;
 			boolean var21 = false;
-
-			int model = 0;
-			if (this.isAmd || isIntel) {
-				String[] parts = StringTools.split(this.field9977.replace('/', ' '), ' ');
-				for (int i = 0; i < parts.length; i++) {
-					String part = parts[i];
+			int var22 = 0;
+			if (this.isAmd || var19) {
+				String[] var23 = StringTools.split(this.field9977.replace('/', ' '), ' ');
+				for (int var24 = 0; var24 < var23.length; var24++) {
+					String var25 = var23[var24];
 					try {
-						if (part.length() > 0) {
-							if (part.charAt(0) == 'x' && part.length() >= 3 && StringTools.method9836(part.substring(1, 3))) {
-								part = part.substring(1);
+						if (var25.length() > 0) {
+							if (var25.charAt(0) == 'x' && var25.length() >= 3 && StringTools.method9836(var25.substring(1, 3))) {
+								var25 = var25.substring(1);
 								var21 = true;
 							}
-
-							if (part.equals("hd")) {
-								var20 = true;
-							} else if (part.equals("xe")) {
-								// modern intel graphics
+							if (var25.equals("hd")) {
 								var20 = true;
 							} else {
-								if (part.startsWith("hd")) {
-									part = part.substring(2);
+								if (var25.startsWith("hd")) {
+									var25 = var25.substring(2);
 									var20 = true;
 								}
-
-								if (part.length() >= 4 && StringTools.method9836(part.substring(0, 4))) {
-									model = StringTools.parseInt(part.substring(0, 4));
+								if (var25.length() >= 4 && StringTools.method9836(var25.substring(0, 4))) {
+									var22 = StringTools.parseInt(var25.substring(0, 4));
 									break;
 								}
 							}
 						}
-					} catch (Exception ignored) {
+					} catch (Exception var35) {
 					}
 				}
 			}
-
-			if (this.field9967 != 0 && isIntel && !var20) {
+			if (this.field9967 != 0 && var19 && !var20) {
 				throw new GlException("");
 			}
-
-			if (this.isAmd || isIntel) {
-				if (!isIntel) {
+			if (this.isAmd || var19) {
+				if (!var19) {
 					if (!var21 && !var20) {
-						if (model >= 7000 && model <= 7999) {
+						if (var22 >= 7000 && var22 <= 7999) {
 							this.field9990 = false;
 						}
-
-						if (model >= 7000 && model <= 9250) {
+						if (var22 >= 7000 && var22 <= 9250) {
 							this.field9889 = false;
 						}
 					}
-
-					if (!var20 || model < 4000) {
+					if (!var20 || var22 < 4000) {
 						this.field9997 = false;
 					}
-
 					this.field9965 &= this.field10022.method0("GL_ARB_half_float_pixel");
 					this.field9991 = this.field9990;
 				} else if (!var20) {
@@ -662,7 +675,6 @@ public class GlToolkit extends Toolkit {
 					this.field9989 = false;
 				}
 			}
-
 			this.field10003 = !this.field9996.equals("s3 graphics");
 			if (this.field9990) {
 				try {
@@ -672,7 +684,6 @@ public class GlToolkit extends Toolkit {
 					throw new RuntimeException("");
 				}
 			}
-
 			ColourUtils.method10156(false, true);
 			this.field9875 = true;
 			this.field10026 = new GlRelated2(this, this.field1596);
@@ -743,7 +754,7 @@ public class GlToolkit extends Toolkit {
 		int var1 = 0;
 		this.field9996 = OpenGL.glGetString(7936).toLowerCase();
 		this.field9977 = OpenGL.glGetString(7937).toLowerCase();
-		if (!GlToolkit.ALLOW_MICROSOFT && this.field9996.indexOf("microsoft") != -1) {
+		if (this.field9996.indexOf("microsoft") != -1) {
 			var1 |= 0x1;
 		}
 		if (this.field9996.indexOf("brian paul") != -1 || this.field9996.indexOf("mesa") != -1) {
@@ -1312,14 +1323,14 @@ public class GlToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afa.bz(IIIIII)V")
-	public void drawRectangle(int x, int y, int width, int height, int rgb, int arg5) {
-		float var7 = (float) x + 0.35F;
-		float var8 = (float) y + 0.35F;
-		float var9 = (float) width + var7 - 1.0F;
-		float var10 = (float) height + var8 - 1.0F;
+	public void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		float var7 = (float) arg0 + 0.35F;
+		float var8 = (float) arg1 + 0.35F;
+		float var9 = (float) arg2 + var7 - 1.0F;
+		float var10 = (float) arg3 + var8 - 1.0F;
 		this.method15771();
 		this.method15791(arg5);
-		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
+		OpenGL.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, (byte) (arg4 >> 24));
 		if (this.field9988) {
 			OpenGL.glDisable(32925);
 		}
@@ -1335,14 +1346,14 @@ public class GlToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afa.bv(IIIIII)V")
-	public void fillRectangle(int x, int y, int width, int height, int rgb, int arg5) {
-		float var7 = (float) x + 0.35F;
-		float var8 = (float) y + 0.35F;
-		float var9 = (float) width + var7;
-		float var10 = (float) height + var8;
+	public void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		float var7 = (float) arg0 + 0.35F;
+		float var8 = (float) arg1 + 0.35F;
+		float var9 = (float) arg2 + var7;
+		float var10 = (float) arg3 + var8;
 		this.method15771();
 		this.method15791(arg5);
-		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
+		OpenGL.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, (byte) (arg4 >> 24));
 		if (this.field9988) {
 			OpenGL.glDisable(32925);
 		}
@@ -1419,37 +1430,37 @@ public class GlToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afa.ba(IIIII)V")
-	public void drawHorizontalLine(int x, int y, int width, int rgb, int arg4) {
+	public void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		this.method15771();
 		this.method15791(arg4);
-		float var6 = (float) x + 0.35F;
-		float var7 = (float) y + 0.35F;
-		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
+		float var6 = (float) arg0 + 0.35F;
+		float var7 = (float) arg1 + 0.35F;
+		OpenGL.glColor4ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3, (byte) (arg3 >> 24));
 		OpenGL.glBegin(1);
 		OpenGL.glVertex2f(var6, var7);
-		OpenGL.glVertex2f((float) width + var6, var7);
+		OpenGL.glVertex2f((float) arg2 + var6, var7);
 		OpenGL.glEnd();
 	}
 
 	@ObfuscatedName("afa.bp(IIIII)V")
-	public void drawVerticalLine(int x1, int y1, int x2, int y2, int arg4) {
+	public void drawVerticalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		this.method15771();
 		this.method15791(arg4);
-		float var6 = (float) x1 + 0.35F;
-		float var7 = (float) y1 + 0.35F;
-		OpenGL.glColor4ub((byte) (y2 >> 16), (byte) (y2 >> 8), (byte) y2, (byte) (y2 >> 24));
+		float var6 = (float) arg0 + 0.35F;
+		float var7 = (float) arg1 + 0.35F;
+		OpenGL.glColor4ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3, (byte) (arg3 >> 24));
 		OpenGL.glBegin(1);
 		OpenGL.glVertex2f(var6, var7);
-		OpenGL.glVertex2f(var6, (float) x2 + var7);
+		OpenGL.glVertex2f(var6, (float) arg2 + var7);
 		OpenGL.glEnd();
 	}
 
 	@ObfuscatedName("afa.bj(IIIIII)V")
-	public void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5) {
+	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		this.method15771();
 		this.method15791(arg5);
-		float var7 = (float) x2 - (float) x1;
-		float var8 = (float) y2 - (float) y1;
+		float var7 = (float) arg2 - (float) arg0;
+		float var8 = (float) arg3 - (float) arg1;
 		float var9;
 		if (var7 == 0.0F && var8 == 0.0F) {
 			var9 = 1.0F;
@@ -1458,10 +1469,10 @@ public class GlToolkit extends Toolkit {
 			var9 = var7 * var10;
 			var8 *= var10;
 		}
-		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
+		OpenGL.glColor4ub((byte) (arg4 >> 16), (byte) (arg4 >> 8), (byte) arg4, (byte) (arg4 >> 24));
 		OpenGL.glBegin(1);
-		OpenGL.glVertex2f((float) x1 + 0.35F, (float) y1 + 0.35F);
-		OpenGL.glVertex2f((float) x2 + var9 + 0.35F, (float) y2 + var8 + 0.35F);
+		OpenGL.glVertex2f((float) arg0 + 0.35F, (float) arg1 + 0.35F);
+		OpenGL.glVertex2f((float) arg2 + var9 + 0.35F, (float) arg3 + var8 + 0.35F);
 		OpenGL.glEnd();
 	}
 
@@ -1648,9 +1659,9 @@ public class GlToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afa.ce(IIIIIII)V")
-	public void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5, int arg6) {
+	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		OpenGL.glLineWidth((float) arg5);
-		this.drawLine(x1, y1, x2, y2, rgb, arg6);
+		this.drawLine(arg0, arg1, arg2, arg3, arg4, arg6);
 		OpenGL.glLineWidth(1.0F);
 	}
 
@@ -1859,7 +1870,7 @@ public class GlToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afa.cy(Laac;Lde;Z)Leu;")
-	public com.jagex.graphics.Font createFont(FontMetrics arg0, SpriteData arg1, boolean arg2) {
+	public Font createFont(FontMetrics arg0, SpriteData arg1, boolean arg2) {
 		return new GlFont(this, arg0, arg1, arg2);
 	}
 
@@ -1869,12 +1880,7 @@ public class GlToolkit extends Toolkit {
 
 	@ObfuscatedName("afa.cj(Ldq;IIII)Ldo;")
 	public Model createModel(ModelUnlit arg0, int arg1, int arg2, int arg3, int arg4) {
-		try {
-			return new GlModel(this, arg0, arg1, arg3, arg4, arg2);
-		} catch (Exception ex) {
-			// todo: note - come back here if no models appear
-			return null;
-		}
+		return new GlModel(this, arg0, arg1, arg3, arg4, arg2);
 	}
 
 	@ObfuscatedName("afa.cd(II)I")
@@ -1986,43 +1992,43 @@ public class GlToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afa.bi(IIII)V")
-	public final void resetBounds(int left, int top, int right, int bottom) {
+	public final void resetBounds(int arg0, int arg1, int arg2, int arg3) {
 		if (this.renderTarget == null) {
 			return;
 		}
-		if (left < 0) {
-			left = 0;
+		if (arg0 < 0) {
+			arg0 = 0;
 		}
-		if (right > this.renderTarget.getWidth()) {
-			right = this.renderTarget.getWidth();
+		if (arg2 > this.renderTarget.getWidth()) {
+			arg2 = this.renderTarget.getWidth();
 		}
-		if (top < 0) {
-			top = 0;
+		if (arg1 < 0) {
+			arg1 = 0;
 		}
-		if (bottom > this.renderTarget.getHeight()) {
-			bottom = this.renderTarget.getHeight();
+		if (arg3 > this.renderTarget.getHeight()) {
+			arg3 = this.renderTarget.getHeight();
 		}
-		this.field9927 = left;
-		this.field9925 = top;
-		this.field9928 = right;
-		this.field9926 = bottom;
+		this.field9927 = arg0;
+		this.field9925 = arg1;
+		this.field9928 = arg2;
+		this.field9926 = arg3;
 		OpenGL.glEnable(3089);
 		this.method15743();
 	}
 
 	@ObfuscatedName("afa.bn(IIII)V")
-	public final void setBounds(int left, int top, int right, int bottom) {
-		if (this.field9927 < left) {
-			this.field9927 = left;
+	public final void setBounds(int arg0, int arg1, int arg2, int arg3) {
+		if (this.field9927 < arg0) {
+			this.field9927 = arg0;
 		}
-		if (this.field9928 > right) {
-			this.field9928 = right;
+		if (this.field9928 > arg2) {
+			this.field9928 = arg2;
 		}
-		if (this.field9925 < top) {
-			this.field9925 = top;
+		if (this.field9925 < arg1) {
+			this.field9925 = arg1;
 		}
-		if (this.field9926 > bottom) {
-			this.field9926 = bottom;
+		if (this.field9926 > arg3) {
+			this.field9926 = arg3;
 		}
 		OpenGL.glEnable(3089);
 		this.method15743();

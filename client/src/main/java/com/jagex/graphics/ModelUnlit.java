@@ -159,7 +159,7 @@ public class ModelUnlit {
 		if (var9 == 1) {
 			var2.g1();
 			this.version = var2.g1();
-			var2.pos = (arg0.length - 26);
+			var2.pos = arg0.length - 26;
 			this.vertexCount = var2.g2();
 			this.faceCount = var2.g2();
 			this.field1387 = var2.g2();
@@ -261,7 +261,7 @@ public class ModelUnlit {
 			int var77 = arg0.length;
 			if (var17) {
 				Packet var78 = new Packet(arg0);
-				var78.pos = (arg0.length - 26);
+				var78.pos = arg0.length - 26;
 				var78.pos -= arg0[var78.pos - 1];
 				this.field1381 = var78.g2();
 				int var79 = var78.g2();

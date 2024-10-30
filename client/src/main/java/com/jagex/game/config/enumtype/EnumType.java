@@ -1,5 +1,6 @@
 package com.jagex.game.config.enumtype;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.Cp1252;
@@ -7,8 +8,12 @@ import com.jagex.game.client.MutableConfig;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
 import deob.ObfuscatedName;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
 @ObfuscatedName("abm")
@@ -33,63 +38,63 @@ public class EnumType implements ConfigType, MutableConfig {
 	public Object[] field8780;
 
 	@ObfuscatedName("abm.l")
-	public int valuesCount = 0;
+	public int valuesCount = 0 * -1630596103;
 
 	@ObfuscatedName("abm.u")
-	public java.util.HashMap field8782;
+	public HashMap field8782;
 
 	@ObfuscatedName("abm.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("abm.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			char var3 = Cp1252.byteToCp1252Char(buf.g1b());
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			char var3 = Cp1252.byteToCp1252Char(arg0.g1b());
 			this.inputtype = ScriptVarType.getByLegacyChar(var3);
-		} else if (code == 2) {
-			char var4 = Cp1252.byteToCp1252Char(buf.g1b());
+		} else if (arg1 == 2) {
+			char var4 = Cp1252.byteToCp1252Char(arg0.g1b());
 			this.outputtype = ScriptVarType.getByLegacyChar(var4);
-		} else if (code == 3) {
-			this.defaultString = buf.gjstr();
-		} else if (code == 4) {
-			this.defaultInt = buf.g4s();
-		} else if (code == 5 || code == 6) {
-			this.valuesCount = buf.g2();
-			this.values = new java.util.HashMap(this.valuesCount);
+		} else if (arg1 == 3) {
+			this.defaultString = arg0.gjstr();
+		} else if (arg1 == 4) {
+			this.defaultInt = arg0.g4s();
+		} else if (arg1 == 5 || arg1 == 6) {
+			this.valuesCount = arg0.g2();
+			this.values = new HashMap(this.valuesCount);
 			for (int var8 = 0; var8 < this.valuesCount; var8++) {
-				int var9 = buf.g4s();
+				int var9 = arg0.g4s();
 				Object var10;
-				if (code == 5) {
-					var10 = buf.gjstr();
+				if (arg1 == 5) {
+					var10 = arg0.gjstr();
 				} else {
-					var10 = Integer.valueOf(buf.g4s());
+					var10 = Integer.valueOf(arg0.g4s());
 				}
 				this.values.put(Integer.valueOf(var9), var10);
 			}
-		} else if (code == 7 || code == 8) {
-			int var5 = buf.g2();
-			this.valuesCount = buf.g2();
+		} else if (arg1 == 7 || arg1 == 8) {
+			int var5 = arg0.g2();
+			this.valuesCount = arg0.g2();
 			this.field8780 = new Object[var5];
 			for (int var6 = 0; var6 < this.valuesCount; var6++) {
-				int var7 = buf.g2();
-				if (code == 7) {
-					this.field8780[var7] = buf.gjstr();
+				int var7 = arg0.g2();
+				if (arg1 == 7) {
+					this.field8780[var7] = arg0.gjstr();
 				} else {
-					this.field8780[var7] = Integer.valueOf(buf.g4s());
+					this.field8780[var7] = Integer.valueOf(arg0.g4s());
 				}
 			}
-		} else if (code == 101) {
-			this.inputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
-		} else if (code == 102) {
-			this.outputtype = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
+		} else if (arg1 == 101) {
+			this.inputtype = (ScriptVarType) SerializableEnums.decode((SerializableEnum[]) ScriptVarType.values(), arg0.gSmart1or2());
+		} else if (arg1 == 102) {
+			this.outputtype = (ScriptVarType) SerializableEnums.decode((SerializableEnum[]) ScriptVarType.values(), arg0.gSmart1or2());
 		}
 	}
 
@@ -147,7 +152,7 @@ public class EnumType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("abm.q(B)V")
 	public void method14853() {
-		java.util.HashMap var1 = new java.util.HashMap();
+		HashMap var1 = new HashMap();
 		if (this.field8780 == null) {
 			if (this.values == null) {
 				throw new IllegalStateException();
@@ -176,7 +181,7 @@ public class EnumType implements ConfigType, MutableConfig {
 				}
 			}
 		}
-		this.field8782 = new java.util.HashMap();
+		this.field8782 = new HashMap();
 		Iterator var9 = var1.entrySet().iterator();
 		while (var9.hasNext()) {
 			Entry var10 = (Entry) var9.next();

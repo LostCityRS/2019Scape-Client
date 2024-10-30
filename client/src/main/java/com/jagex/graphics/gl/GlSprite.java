@@ -2,8 +2,8 @@ package com.jagex.graphics.gl;
 
 import com.jagex.game.client.DataType;
 import com.jagex.graphics.GraphicsDeletable;
-import com.jagex.graphics.SpriteRelated;
 import com.jagex.graphics.Sprite;
+import com.jagex.graphics.SpriteRelated;
 import com.jagex.graphics.TextureFormat;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
@@ -177,13 +177,13 @@ public class GlSprite extends Sprite {
 	}
 
 	@ObfuscatedName("aei.r(IIIII)V")
-	public void drawSprite(int x, int y, int arg2, int rgb, int arg4) {
+	public void drawSprite(int arg0, int arg1, int arg2, int arg3, int arg4) {
 		this.field9396.method1082(false);
 		this.field9399.method15772();
 		this.field9399.method15791(arg4);
-		OpenGL.glColor4ub((byte) (rgb >> 16), (byte) (rgb >> 8), (byte) rgb, (byte) (rgb >> 24));
-		int var6 = this.field9391 + x;
-		int var7 = this.field9392 + y;
+		OpenGL.glColor4ub((byte) (arg3 >> 16), (byte) (arg3 >> 8), (byte) arg3, (byte) (arg3 >> 24));
+		int var6 = this.field9391 + arg0;
+		int var7 = this.field9392 + arg1;
 		if (this.field9393 == null) {
 			this.field9399.method15777(this.field9396);
 			this.field9399.method15778(arg2);

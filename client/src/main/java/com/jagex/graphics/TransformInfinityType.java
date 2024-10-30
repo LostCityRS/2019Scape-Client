@@ -45,7 +45,7 @@ public class TransformInfinityType implements SerializableEnum {
 
 	@ObfuscatedName("al.m(IB)Ldb;")
 	public static TransformInfinityType method713(int arg0) {
-		TransformInfinityType var1 = (TransformInfinityType) SerializableEnums.decode(method9164(), arg0);
+		TransformInfinityType var1 = (TransformInfinityType) SerializableEnums.decode((SerializableEnum[]) method9164(), arg0);
 		if (var1 == null) {
 			var1 = field1581;
 		}

@@ -7,7 +7,6 @@ import com.jagex.graphics.TextureFormat;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DCubeTexture;
 import jagdx.IDirect3DDevice;
-
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("aif")

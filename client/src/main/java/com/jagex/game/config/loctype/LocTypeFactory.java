@@ -35,10 +35,10 @@ public abstract class LocTypeFactory {
 	@ObfuscatedName("vh.u")
 	public Pair field7529 = new Pair(null, null);
 
-	public LocTypeFactory(boolean allowMembers, Language language, ModeGame modeGame) {
-		this.allowMembers = allowMembers;
-		if (ModeGame.RUNESCAPE == modeGame) {
-			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.forLang(language) };
+	public LocTypeFactory(boolean arg0, Language arg1, ModeGame arg2) {
+		this.allowMembers = arg0;
+		if (ModeGame.RUNESCAPE == arg2) {
+			this.defaultops = new String[] { null, null, null, null, null, LocalisedText.EXAMINE.forLang(arg1) };
 		} else {
 			this.defaultops = new String[] { null, null, null, null, null, null };
 		}

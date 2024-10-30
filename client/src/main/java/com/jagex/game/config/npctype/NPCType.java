@@ -1,7 +1,12 @@
 package com.jagex.game.config.npctype;
 
 import com.jagex.core.constants.ModeGame;
-import com.jagex.core.datastruct.*;
+import com.jagex.core.constants.SerializableEnum;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.IntNode;
+import com.jagex.core.datastruct.Node;
+import com.jagex.core.datastruct.SerializableEnums;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.MoveSpeed;
 import com.jagex.game.config.ConfigType;
@@ -14,14 +19,17 @@ import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.game.world.entity.ObjectNode;
-import com.jagex.graphics.*;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.CompassPoint;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelUnlit;
+import com.jagex.graphics.Toolkit;
 import com.jagex.js5.Js5;
 import com.jagex.math.Cuboid;
 import com.jagex.math.IntMath;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-
 import java.util.Arrays;
 
 @ObfuscatedName("if")
@@ -240,291 +248,291 @@ public class NPCType implements ConfigType {
 	@ObfuscatedName("if.bj")
 	public boolean transmogfakenpc = false;
 
-	public NPCType(int id, NPCTypeFactory factory, ConfigTypeList npcs) {
-		this.id = id;
-		this.factory = factory;
-		this.myList = npcs;
+	public NPCType(int arg0, NPCTypeFactory arg1, ConfigTypeList arg2) {
+		this.id = arg0;
+		this.factory = arg1;
+		this.myList = arg2;
 		this.op = (String[]) this.factory.defaultops.clone();
 	}
 
 	@ObfuscatedName("if.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("if.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			int length = buf.g1();
-			this.models = new int[length];
-			for (int index = 0; index < length; index++) {
-				this.models[index] = buf.gSmart2or4s();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			int var3 = arg0.g1();
+			this.models = new int[var3];
+			for (int var4 = 0; var4 < var3; var4++) {
+				this.models[var4] = arg0.gSmart2or4s();
 			}
-		} else if (code == 2) {
-			this.name = buf.gjstr();
-		} else if (code == 12) {
-			this.size = buf.g1();
-		} else if (code >= 30 && code < 35) {
-			this.op[code - 30] = buf.gjstr();
-		} else if (code == 40) {
-			int length = buf.g1();
-			this.recol_s = new short[length];
-			this.recol_d = new short[length];
-			for (int index = 0; index < length; index++) {
-				this.recol_s[index] = (short) buf.g2();
-				this.recol_d[index] = (short) buf.g2();
+		} else if (arg1 == 2) {
+			this.name = arg0.gjstr();
+		} else if (arg1 == 12) {
+			this.size = arg0.g1();
+		} else if (arg1 >= 30 && arg1 < 35) {
+			this.op[arg1 - 30] = arg0.gjstr();
+		} else if (arg1 == 40) {
+			int var5 = arg0.g1();
+			this.recol_s = new short[var5];
+			this.recol_d = new short[var5];
+			for (int var6 = 0; var6 < var5; var6++) {
+				this.recol_s[var6] = (short) arg0.g2();
+				this.recol_d[var6] = (short) arg0.g2();
 			}
-		} else if (code == 41) {
-			int length = buf.g1();
-			this.retex_s = new short[length];
-			this.retex_d = new short[length];
-			for (int var8 = 0; var8 < length; var8++) {
-				this.retex_s[var8] = (short) buf.g2();
-				this.retex_d[var8] = (short) buf.g2();
+		} else if (arg1 == 41) {
+			int var7 = arg0.g1();
+			this.retex_s = new short[var7];
+			this.retex_d = new short[var7];
+			for (int var8 = 0; var8 < var7; var8++) {
+				this.retex_s[var8] = (short) arg0.g2();
+				this.retex_d[var8] = (short) arg0.g2();
 			}
-		} else if (code == 42) {
-			int length = buf.g1();
-			this.recol_d_palette = new byte[length];
-			for (int index = 0; index < length; index++) {
-				this.recol_d_palette[index] = buf.g1b();
+		} else if (arg1 == 42) {
+			int var9 = arg0.g1();
+			this.recol_d_palette = new byte[var9];
+			for (int var10 = 0; var10 < var9; var10++) {
+				this.recol_d_palette[var10] = arg0.g1b();
 			}
-		} else if (code == 44) {
-			int var11 = buf.g2();
-			int length = 0;
+		} else if (arg1 == 44) {
+			int var11 = arg0.g2();
+			int var12 = 0;
 			for (int var13 = var11; var13 > 0; var13 >>= 0x1) {
-				length++;
+				var12++;
 			}
-			this.recolindices = new byte[length];
+			this.recolindices = new byte[var12];
 			byte var14 = 0;
-			for (int index = 0; index < length; index++) {
-				if ((var11 & 0x1 << index) > 0) {
-					this.recolindices[index] = var14++;
+			for (int var15 = 0; var15 < var12; var15++) {
+				if ((var11 & 0x1 << var15) > 0) {
+					this.recolindices[var15] = var14++;
 				} else {
-					this.recolindices[index] = -1;
+					this.recolindices[var15] = -1;
 				}
 			}
-		} else if (code == 45) {
-			int var16 = buf.g2();
-			int length = 0;
+		} else if (arg1 == 45) {
+			int var16 = arg0.g2();
+			int var17 = 0;
 			for (int var18 = var16; var18 > 0; var18 >>= 0x1) {
-				length++;
+				var17++;
 			}
-			this.retexindices = new byte[length];
+			this.retexindices = new byte[var17];
 			byte var19 = 0;
-			for (int index = 0; index < length; index++) {
-				if ((var16 & 0x1 << index) > 0) {
-					this.retexindices[index] = var19++;
+			for (int var20 = 0; var20 < var17; var20++) {
+				if ((var16 & 0x1 << var20) > 0) {
+					this.retexindices[var20] = var19++;
 				} else {
-					this.retexindices[index] = -1;
+					this.retexindices[var20] = -1;
 				}
 			}
-		} else if (code == 60) {
-			int length = buf.g1();
-			this.heads = new int[length];
-			for (int var22 = 0; var22 < length; var22++) {
-				this.heads[var22] = buf.gSmart2or4s();
+		} else if (arg1 == 60) {
+			int var21 = arg0.g1();
+			this.heads = new int[var21];
+			for (int var22 = 0; var22 < var21; var22++) {
+				this.heads[var22] = arg0.gSmart2or4s();
 			}
-		} else if (code == 93) {
+		} else if (arg1 == 93) {
 			this.minimap = false;
-		} else if (code == 95) {
-			this.vislevel = buf.g2();
-		} else if (code == 97) {
-			this.resizeh = buf.g2();
-		} else if (code == 98) {
-			this.resizev = buf.g2();
-		} else if (code == 99) {
+		} else if (arg1 == 95) {
+			this.vislevel = arg0.g2();
+		} else if (arg1 == 97) {
+			this.resizeh = arg0.g2();
+		} else if (arg1 == 98) {
+			this.resizev = arg0.g2();
+		} else if (arg1 == 99) {
 			this.drawabove = true;
-		} else if (code == 100) {
-			this.ambient = buf.g1b();
-		} else if (code == 101) {
-			this.contrast = buf.g1b() * 5;
-		} else if (code == 102) {
-			int var23 = buf.g1();
-			int length = 0;
+		} else if (arg1 == 100) {
+			this.ambient = arg0.g1b();
+		} else if (arg1 == 101) {
+			this.contrast = arg0.g1b();
+		} else if (arg1 == 102) {
+			int var23 = arg0.g1();
+			int var24 = 0;
 			for (int var25 = var23; var25 != 0; var25 >>= 0x1) {
-				length++;
+				var24++;
 			}
-			this.headicon_groupid = new int[length];
-			this.headicon_id = new short[length];
-			for (int var26 = 0; var26 < length; var26++) {
+			this.headicon_groupid = new int[var24];
+			this.headicon_id = new short[var24];
+			for (int var26 = 0; var26 < var24; var26++) {
 				if ((var23 & 0x1 << var26) == 0) {
 					this.headicon_groupid[var26] = -1;
 					this.headicon_id[var26] = -1;
 				} else {
-					this.headicon_groupid[var26] = buf.gSmart2or4s();
-					this.headicon_id[var26] = (short) buf.gSmart1or2null();
+					this.headicon_groupid[var26] = arg0.gSmart2or4s();
+					this.headicon_id[var26] = (short) arg0.gSmart1or2null();
 				}
 			}
-		} else if (code == 103) {
-			this.turnspeed = buf.g2();
-		} else if (code == 106 || code == 118) {
-			this.multivarbit = buf.g2();
+		} else if (arg1 == 103) {
+			this.turnspeed = arg0.g2();
+		} else if (arg1 == 106 || arg1 == 118) {
+			this.multivarbit = arg0.g2();
 			if (this.multivarbit == 65535) {
 				this.multivarbit = -1;
 			}
-			this.multivarp = buf.g2();
+			this.multivarp = arg0.g2();
 			if (this.multivarp == 65535) {
 				this.multivarp = -1;
 			}
-			int defaultId = -1;
-			if (code == 118) {
-				defaultId = buf.g2();
-				if (defaultId == 65535) {
-					defaultId = -1;
+			int var40 = -1;
+			if (arg1 == 118) {
+				var40 = arg0.g2();
+				if (var40 == 65535) {
+					var40 = -1;
 				}
 			}
-			int length = buf.gSmart1or2();
-			this.multinpc = new int[length + 2];
-			for (int index = 0; index <= length; index++) {
-				this.multinpc[index] = buf.g2();
-				if (this.multinpc[index] == 65535) {
-					this.multinpc[index] = -1;
+			int var41 = arg0.gSmart1or2();
+			this.multinpc = new int[var41 + 2];
+			for (int var42 = 0; var42 <= var41; var42++) {
+				this.multinpc[var42] = arg0.g2();
+				if (this.multinpc[var42] == 65535) {
+					this.multinpc[var42] = -1;
 				}
 			}
-			this.multinpc[length + 1] = defaultId;
-		} else if (code == 107) {
+			this.multinpc[var41 + 1] = var40;
+		} else if (arg1 == 107) {
 			this.active = false;
-		} else if (code == 109) {
+		} else if (arg1 == 109) {
 			this.walksmoothing = false;
-		} else if (code == 111) {
+		} else if (arg1 == 111) {
 			this.spotshadow = false;
-		} else if (code == 113) {
-			this.spotshadowcolour_1 = (short) buf.g2();
-			this.spotshadowcolour_2 = (short) buf.g2();
-		} else if (code == 114) {
-			this.spotshadowtrans_1 = buf.g1b();
-			this.spotshadowtrans_2 = buf.g1b();
-		} else if (code == 119) {
-			this.walkflags = buf.g1b();
-		} else if (code == 121) {
+		} else if (arg1 == 113) {
+			this.spotshadowcolour_1 = (short) arg0.g2();
+			this.spotshadowcolour_2 = (short) arg0.g2();
+		} else if (arg1 == 114) {
+			this.spotshadowtrans_1 = arg0.g1b();
+			this.spotshadowtrans_2 = arg0.g1b();
+		} else if (arg1 == 119) {
+			this.walkflags = arg0.g1b();
+		} else if (arg1 == 121) {
 			this.modeloffset = new int[this.models.length][];
-			int length = buf.g1();
-			for (int index = 0; index < length; index++) {
-				int offset = buf.g1();
-				int[] offsets = this.modeloffset[offset] = new int[3];
-				offsets[0] = buf.g1b();
-				offsets[1] = buf.g1b();
-				offsets[2] = buf.g1b();
+			int var27 = arg0.g1();
+			for (int var28 = 0; var28 < var27; var28++) {
+				int var29 = arg0.g1();
+				int[] var30 = this.modeloffset[var29] = new int[3];
+				var30[0] = arg0.g1b();
+				var30[1] = arg0.g1b();
+				var30[2] = arg0.g1b();
 			}
-		} else if (code == 123) {
-			this.overlayheight = buf.g2();
-		} else if (code == 125) {
-			this.respawndir = (CompassPoint) SerializableEnums.decode(CompassPoint.values(), buf.g1b());
-		} else if (code == 127) {
-			this.bas = buf.g2();
-		} else if (code == 128) {
-			SerializableEnums.decode(MoveSpeed.values(), buf.g1());
-		} else if (code == 134) {
-			this.bgsound = buf.g2();
+		} else if (arg1 == 123) {
+			this.overlayheight = arg0.g2();
+		} else if (arg1 == 125) {
+			this.respawndir = (CompassPoint) SerializableEnums.decode((SerializableEnum[]) CompassPoint.values(), arg0.g1b());
+		} else if (arg1 == 127) {
+			this.bas = arg0.g2();
+		} else if (arg1 == 128) {
+			SerializableEnums.decode((SerializableEnum[]) MoveSpeed.values(), arg0.g1());
+		} else if (arg1 == 134) {
+			this.bgsound = arg0.g2();
 			if (this.bgsound == 65535) {
 				this.bgsound = -1;
 			}
-			this.bgsound_crawl = buf.g2();
+			this.bgsound_crawl = arg0.g2();
 			if (this.bgsound_crawl == 65535) {
 				this.bgsound_crawl = -1;
 			}
-			this.bgsound_walk = buf.g2();
+			this.bgsound_walk = arg0.g2();
 			if (this.bgsound_walk == 65535) {
 				this.bgsound_walk = -1;
 			}
-			this.bgsound_run = buf.g2();
+			this.bgsound_run = arg0.g2();
 			if (this.bgsound_run == 65535) {
 				this.bgsound_run = -1;
 			}
-			this.bgsound_range = buf.g1();
-		} else if (code == 135 || code == 136) {
-			buf.g1();
-			buf.g2();
-		} else if (code == 137) {
-			this.cursorattack = buf.g2();
-		} else if (code == 138) {
-			this.covermarker = buf.gSmart2or4s();
-		} else if (code == 140) {
-			this.bgsound_volume = buf.g1();
-		} else if (code == 141) {
+			this.bgsound_range = arg0.g1();
+		} else if (arg1 == 135 || arg1 == 136) {
+			arg0.g1();
+			arg0.g2();
+		} else if (arg1 == 137) {
+			this.cursorattack = arg0.g2();
+		} else if (arg1 == 138) {
+			this.covermarker = arg0.gSmart2or4s();
+		} else if (arg1 == 140) {
+			this.bgsound_volume = arg0.g1();
+		} else if (arg1 == 141) {
 			this.follower = true;
-		} else if (code == 142) {
-			this.mapelement = buf.g2();
-		} else if (code == 143) {
+		} else if (arg1 == 142) {
+			this.mapelement = arg0.g2();
+		} else if (arg1 == 143) {
 			this.drawbelow = true;
-		} else if (code >= 150 && code < 155) {
-			this.op[code - 150] = buf.gjstr();
+		} else if (arg1 >= 150 && arg1 < 155) {
+			this.op[arg1 - 150] = arg0.gjstr();
 			if (!this.factory.allowMembers) {
-				this.op[code - 150] = null;
+				this.op[arg1 - 150] = null;
 			}
-		} else if (code == 155) {
-			this.tint_hue = buf.g1b();
-			this.tint_saturation = buf.g1b();
-			this.tint_luminence = buf.g1b();
-			this.tint_weight = buf.g1b();
-		} else if (code == 158) {
+		} else if (arg1 == 155) {
+			this.tint_hue = arg0.g1b();
+			this.tint_saturation = arg0.g1b();
+			this.tint_luminence = arg0.g1b();
+			this.tint_weight = arg0.g1b();
+		} else if (arg1 == 158) {
 			this.reprioritiseattackop = 1;
-		} else if (code == 159) {
+		} else if (arg1 == 159) {
 			this.reprioritiseattackop = 0;
-		} else if (code == 160) {
-			int var31 = buf.g1();
+		} else if (arg1 == 160) {
+			int var31 = arg0.g1();
 			this.quests = new int[var31];
 			for (int var32 = 0; var32 < var31; var32++) {
-				this.quests[var32] = buf.g2();
+				this.quests[var32] = arg0.g2();
 			}
-		} else if (code != 162) {
-			if (code == 163) {
-				this.picksize = buf.g1();
-			} else if (code == 164) {
-				this.bgsound_minrate = buf.g2();
-				this.bgsound_maxrate = buf.g2();
-			} else if (code == 165) {
-				this.picksizeshift = buf.g1();
-			} else if (code == 168) {
-				this.bgsound_dropoffrange = buf.g1();
-			} else if (code == 169) {
+		} else if (arg1 != 162) {
+			if (arg1 == 163) {
+				this.picksize = arg0.g1();
+			} else if (arg1 == 164) {
+				this.bgsound_minrate = arg0.g2();
+				this.bgsound_maxrate = arg0.g2();
+			} else if (arg1 == 165) {
+				this.picksizeshift = arg0.g1();
+			} else if (arg1 == 168) {
+				this.bgsound_dropoffrange = arg0.g1();
+			} else if (arg1 == 169) {
 				this.antimacro = false;
-			} else if (code >= 170 && code < 176) {
+			} else if (arg1 >= 170 && arg1 < 176) {
 				if (this.cursor == null) {
 					this.cursor = new int[6];
 					Arrays.fill(this.cursor, -1);
 				}
-				int cursor = buf.g2();
-				if (cursor == 65535) {
-					cursor = -1;
+				int var33 = arg0.g2();
+				if (var33 == 65535) {
+					var33 = -1;
 				}
-				this.cursor[code - 170] = cursor;
-			} else if (code != 178) {
-				if (code == 179) {
+				this.cursor[arg1 - 170] = var33;
+			} else if (arg1 != 178) {
+				if (arg1 == 179) {
 					this.clickbox = new Cuboid();
-					this.clickbox.minX = buf.gSmart1or2s();
-					this.clickbox.minY = buf.gSmart1or2s();
-					this.clickbox.minZ = buf.gSmart1or2s();
-					this.clickbox.maxX = buf.gSmart1or2s();
-					this.clickbox.maxY = buf.gSmart1or2s();
-					this.clickbox.maxZ = buf.gSmart1or2s();
-				} else if (code == 180) {
-					this.fadeInDuration = buf.g1() & 0xFF;
-				} else if (code == 181) {
-					this.spotshadowtexture = (short) buf.g2();
-					this.spotshadowtexture_alpha = (byte) buf.g1();
-				} else if (code == 182) {
+					this.clickbox.minX = arg0.gSmart1or2s();
+					this.clickbox.minY = arg0.gSmart1or2s();
+					this.clickbox.minZ = arg0.gSmart1or2s();
+					this.clickbox.maxX = arg0.gSmart1or2s();
+					this.clickbox.maxY = arg0.gSmart1or2s();
+					this.clickbox.maxZ = arg0.gSmart1or2s();
+				} else if (arg1 == 180) {
+					this.fadeInDuration = arg0.g1() & 0xFF;
+				} else if (arg1 == 181) {
+					this.spotshadowtexture = (short) arg0.g2();
+					this.spotshadowtexture_alpha = (byte) arg0.g1();
+				} else if (arg1 == 182) {
 					this.transmogfakenpc = true;
-				} else if (code == 249) {
-					int var34 = buf.g1();
+				} else if (arg1 == 249) {
+					int var34 = arg0.g1();
 					if (this.params == null) {
 						int var35 = IntMath.bitceil(var34);
 						this.params = new HashTable(var35);
 					}
 					for (int var36 = 0; var36 < var34; var36++) {
-						boolean var37 = buf.g1() == 1;
-						int var38 = buf.g3();
+						boolean var37 = arg0.g1() == 1;
+						int var38 = arg0.g3();
 						Node var39;
 						if (var37) {
-							var39 = new ObjectNode(buf.gjstr());
+							var39 = new ObjectNode(arg0.gjstr());
 						} else {
-							var39 = new IntNode(buf.g4s());
+							var39 = new IntNode(arg0.g4s());
 						}
 						this.params.put(var39, (long) var38);
 					}
@@ -688,7 +696,7 @@ public class NPCType implements ConfigType {
 			} else {
 				var43 = new ModelUnlit(var31, var31.length);
 			}
-			var22 = arg0.createModel(var43, var25, this.factory.field2773, this.ambient + 64, this.contrast + 850);
+			var22 = arg0.createModel(var43, var25, this.factory.field2773, this.ambient + 64, this.contrast * 5 + 850);
 			if (this.recol_s != null) {
 				short[] var44;
 				if (arg10 == null || arg10.field2684 == null) {
@@ -910,15 +918,15 @@ public class NPCType implements ConfigType {
 		if (this.models == null) {
 			return true;
 		}
-		boolean ready = true;
+		boolean var1 = true;
 		int[] var2 = this.models;
 		for (int var3 = 0; var3 < var2.length; var3++) {
 			int var4 = var2[var3];
 			if (!this.factory.configClient.requestdownload(var4, 0)) {
-				ready = false;
+				var1 = false;
 			}
 		}
-		return ready;
+		return var1;
 	}
 
 	@ObfuscatedName("if.r(IIB)I")
@@ -942,21 +950,21 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.o(Lem;Lep;S)Lif;")
-	public final NPCType getMultiNPC(VariableTypeProvider varProvider, VarIntDomain varDomain) {
-		int i = -1;
+	public final NPCType getMultiNPC(VariableTypeProvider arg0, VarIntDomain arg1) {
+		int var3 = -1;
 		if (this.multivarbit != -1) {
-			VarBitType var4 = varProvider.getVarBitType(this.multivarbit);
+			VarBitType var4 = arg0.getVarBitType(this.multivarbit);
 			if (var4 != null) {
-				i = varDomain.getVarBitValue(var4);
+				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.multivarp != -1) {
-			VarType var5 = varProvider.getVarType(VarDomainType.PLAYER, this.multivarp);
+			VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.multivarp);
 			if (var5 != null) {
-				i = varDomain.getVarValueInt(var5);
+				var3 = arg1.getVarValueInt(var5);
 			}
 		}
-		if (i >= 0 && i < this.multinpc.length - 1) {
-			return this.multinpc[i] == -1 ? null : (NPCType) this.myList.list(this.multinpc[i]);
+		if (var3 >= 0 && var3 < this.multinpc.length - 1) {
+			return this.multinpc[var3] == -1 ? null : (NPCType) this.myList.list(this.multinpc[var3]);
 		} else {
 			int var6 = this.multinpc[this.multinpc.length - 1];
 			return var6 == -1 ? null : (NPCType) this.myList.list(var6);
@@ -964,20 +972,20 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.s(Lem;Lep;I)Z")
-	public boolean isVisible(VariableTypeProvider varProvider, VarIntDomain varDomain) {
+	public boolean isVisible(VariableTypeProvider arg0, VarIntDomain arg1) {
 		if (this.multinpc == null) {
 			return true;
 		}
 		int var3 = -1;
 		if (this.multivarbit != -1) {
-			VarBitType var4 = varProvider.getVarBitType(this.multivarbit);
+			VarBitType var4 = arg0.getVarBitType(this.multivarbit);
 			if (var4 != null) {
-				var3 = varDomain.getVarBitValue(var4);
+				var3 = arg1.getVarBitValue(var4);
 			}
 		} else if (this.multivarp != -1) {
-			VarType var5 = varProvider.getVarType(VarDomainType.PLAYER, this.multivarp);
+			VarType var5 = arg0.getVarType(VarDomainType.PLAYER, this.multivarp);
 			if (var5 != null) {
-				var3 = varDomain.getVarValueInt(var5);
+				var3 = arg1.getVarValueInt(var5);
 			}
 		}
 		if (var3 >= 0 && var3 < this.multinpc.length - 1) {
@@ -1005,7 +1013,7 @@ public class NPCType implements ConfigType {
 	}
 
 	@ObfuscatedName("if.q(II)I")
-	public int getCursor(int op) {
-		return this.cursor == null ? -1 : this.cursor[op];
+	public int getCursor(int arg0) {
+		return this.cursor == null ? -1 : this.cursor[arg0];
 	}
 }

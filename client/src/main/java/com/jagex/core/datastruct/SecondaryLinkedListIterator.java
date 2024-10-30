@@ -1,7 +1,6 @@
 package com.jagex.core.datastruct;
 
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("aai")
@@ -16,8 +15,8 @@ public class SecondaryLinkedListIterator implements Iterator {
 	@ObfuscatedName("aai.m")
 	public SecondaryNode prev = null;
 
-	public SecondaryLinkedListIterator(SecondaryLinkedList queue) {
-		this.queue = queue;
+	public SecondaryLinkedListIterator(SecondaryLinkedList arg0) {
+		this.queue = arg0;
 		this.next = this.queue.head.secondaryPrev;
 		this.prev = null;
 	}
@@ -35,15 +34,15 @@ public class SecondaryLinkedListIterator implements Iterator {
 	}
 
 	public Object next() {
-		SecondaryNode node = this.next;
-		if (this.queue.head == node) {
-			node = null;
+		SecondaryNode var1 = this.next;
+		if (this.queue.head == var1) {
+			var1 = null;
 			this.next = null;
 		} else {
-			this.next = node.secondaryPrev;
+			this.next = var1.secondaryPrev;
 		}
-		this.prev = node;
-		return node;
+		this.prev = var1;
+		return var1;
 	}
 
 	public boolean hasNext() {

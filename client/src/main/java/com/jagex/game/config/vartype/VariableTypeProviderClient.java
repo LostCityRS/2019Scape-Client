@@ -7,15 +7,15 @@ import deob.ObfuscatedName;
 import rs2.client.Client;
 
 @ObfuscatedName("js")
-public final class VariableTypeProviderClient implements VariableTypeProvider {
+public class VariableTypeProviderClient implements VariableTypeProvider {
 
 	@ObfuscatedName("js.w(Lqe;II)Lec;")
-	public VarType getVarType(VarDomainType domainType, int id) {
-		return (VarType) ((ConfigTypeList) Client.varDomainToListEnumMap.get(domainType)).list(id);
+	public VarType getVarType(VarDomainType arg0, int arg1) {
+		return (VarType) ((ConfigTypeList) Client.varDomainToListEnumMap.get(arg0)).list(arg1);
 	}
 
 	@ObfuscatedName("js.l(IB)Lkh;")
-	public VarBitType getVarBitType(int id) {
-		return (VarBitType) Client.varBitTypeList.list(id);
+	public VarBitType getVarBitType(int arg0) {
+		return (VarBitType) Client.varBitTypeList.list(arg0);
 	}
 }

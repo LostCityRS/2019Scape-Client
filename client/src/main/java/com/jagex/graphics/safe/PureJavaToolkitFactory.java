@@ -4,11 +4,10 @@ import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
 import com.jagex.graphics.MaterialList;
-import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.TextureList;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
-
-import java.awt.*;
+import java.awt.Canvas;
 
 @ObfuscatedName("af")
 public class PureJavaToolkitFactory {

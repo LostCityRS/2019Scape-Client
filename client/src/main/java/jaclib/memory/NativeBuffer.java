@@ -11,13 +11,11 @@ public class NativeBuffer implements Buffer, Source {
 	public long field410;
 
 	@ObfuscatedName("jaclib/memory/NativeBuffer.e()I")
-	@Override
 	public final int getSize() {
 		return this.field409;
 	}
 
 	@ObfuscatedName("jaclib/memory/NativeBuffer.n()J")
-	@Override
 	public final long getAddress() {
 		return this.field410;
 	}

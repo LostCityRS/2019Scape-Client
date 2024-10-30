@@ -3,8 +3,8 @@ package com.jagex.graphics.gl;
 import com.jagex.graphics.Surface;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
-
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Dimension;
 
 @ObfuscatedName("apt")
 public class GlSurface extends Surface {

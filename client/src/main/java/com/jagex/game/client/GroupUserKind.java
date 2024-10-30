@@ -30,9 +30,9 @@ public class GroupUserKind implements SerializableEnum {
 	@ObfuscatedName("hd.u")
 	public final int serialID;
 
-	public GroupUserKind(int index, int serialID) {
-		this.index = index;
-		this.serialID = serialID;
+	public GroupUserKind(int arg0, int arg1) {
+		this.index = arg0;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("hd.n()I")

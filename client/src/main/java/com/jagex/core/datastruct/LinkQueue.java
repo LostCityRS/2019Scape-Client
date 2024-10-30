@@ -19,80 +19,80 @@ public class LinkQueue {
 	@ObfuscatedName("aas.e(I)V")
 	public void clear() {
 		while (true) {
-			Link node = this.head.prev;
-			if (this.head == node) {
+			Link var1 = this.head.prev;
+			if (this.head == var1) {
 				this.peeked = null;
 				return;
 			}
-			node.unlink();
+			var1.unlink();
 		}
 	}
 
 	@ObfuscatedName("aas.n(Ltc;B)V")
-	public void pushBack(Link node) {
-		if (node.next != null) {
-			node.unlink();
+	public void pushBack(Link arg0) {
+		if (arg0.next != null) {
+			arg0.unlink();
 		}
-		node.next = this.head.next;
-		node.prev = this.head;
-		node.next.prev = node;
-		node.prev.next = node;
+		arg0.next = this.head.next;
+		arg0.prev = this.head;
+		arg0.next.prev = arg0;
+		arg0.prev.next = arg0;
 	}
 
 	@ObfuscatedName("aas.m(Ltc;I)V")
-	public void pushFront(Link node) {
-		if (node.next != null) {
-			node.unlink();
+	public void pushFront(Link arg0) {
+		if (arg0.next != null) {
+			arg0.unlink();
 		}
-		node.next = this.head;
-		node.prev = this.head.prev;
-		node.next.prev = node;
-		node.prev.next = node;
+		arg0.next = this.head;
+		arg0.prev = this.head.prev;
+		arg0.next.prev = arg0;
+		arg0.prev.next = arg0;
 	}
 
 	@ObfuscatedName("adz.k(Ltc;Ltc;B)V")
-	public static void pushNode(Link node, Link head) {
-		if (node.next != null) {
-			node.unlink();
+	public static void pushNode(Link arg0, Link arg1) {
+		if (arg0.next != null) {
+			arg0.unlink();
 		}
-		node.next = head;
-		node.prev = head.prev;
-		node.next.prev = node;
-		node.prev.next = node;
+		arg0.next = arg1;
+		arg0.prev = arg1.prev;
+		arg0.next.prev = arg0;
+		arg0.prev.next = arg0;
 	}
 
 	@ObfuscatedName("aas.f(I)Ltc;")
 	public Link pollFront() {
-		Link node = this.head.prev;
-		if (this.head == node) {
+		Link var1 = this.head.prev;
+		if (this.head == var1) {
 			return null;
 		} else {
-			node.unlink();
-			return node;
+			var1.unlink();
+			return var1;
 		}
 	}
 
 	@ObfuscatedName("aas.w(S)Ltc;")
 	public Link peekFront() {
-		Link node = this.head.prev;
-		if (this.head == node) {
+		Link var1 = this.head.prev;
+		if (this.head == var1) {
 			this.peeked = null;
 			return null;
 		} else {
-			this.peeked = node.prev;
-			return node;
+			this.peeked = var1.prev;
+			return var1;
 		}
 	}
 
 	@ObfuscatedName("aas.l(I)Ltc;")
 	public Link prev() {
-		Link node = this.peeked;
-		if (this.head == node) {
+		Link var1 = this.peeked;
+		if (this.head == var1) {
 			this.peeked = null;
 			return null;
 		} else {
-			this.peeked = node.prev;
-			return node;
+			this.peeked = var1.prev;
+			return var1;
 		}
 	}
 

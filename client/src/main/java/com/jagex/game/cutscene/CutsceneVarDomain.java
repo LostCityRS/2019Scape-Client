@@ -8,7 +8,7 @@ import deob.ObfuscatedName;
 import rs2.client.Client;
 
 @ObfuscatedName("et")
-public final class CutsceneVarDomain implements VarIntDomain {
+public class CutsceneVarDomain implements VarIntDomain {
 
 	@ObfuscatedName("et.u(Lec;I)I")
 	public int getVarValueInt(VarType arg0) {

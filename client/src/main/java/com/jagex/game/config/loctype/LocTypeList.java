@@ -10,8 +10,8 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aop")
 public class LocTypeList extends CachingConfigTypeList {
 
-	public LocTypeList(ModeGame modeGame, Language language, boolean allowMembers, Js5 js5, Js5 factoryJs5) {
-		super(modeGame, language, js5, Js5ConfigGroup.LOCTYPE, 256, new BasicLocTypeFactory(allowMembers, factoryJs5, language, modeGame));
+	public LocTypeList(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, Js5 arg4) {
+		super(arg0, arg1, arg3, Js5ConfigGroup.LOCTYPE, 256, new BasicLocTypeFactory(arg2, arg4, arg1, arg0));
 	}
 
 	@ObfuscatedName("aop.al(ZI)V")
@@ -31,9 +31,9 @@ public class LocTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aop.v(II)V")
-	public void cacheClean(int num) {
-		super.cacheClean(num);
-		((LocTypeFactory) this.factory).cacheClean(num);
+	public void cacheClean(int arg0) {
+		super.cacheClean(arg0);
+		((LocTypeFactory) this.factory).cacheClean(arg0);
 	}
 
 	@ObfuscatedName("aop.o(I)V")

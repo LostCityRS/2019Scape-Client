@@ -1,11 +1,14 @@
 package com.jagex.game.client;
 
 import deob.ObfuscatedName;
-
-import java.io.*;
+import java.io.EOFException;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.io.SyncFailedException;
 
 @ObfuscatedName("abl")
-public final class FileOnDisk {
+public class FileOnDisk {
 
 	@ObfuscatedName("abl.e")
 	public RandomAccessFile file;
@@ -58,11 +61,11 @@ public final class FileOnDisk {
 	}
 
 	@ObfuscatedName("abl.k(ZI)V")
-	public final void close(boolean flush) throws IOException {
+	public final void close(boolean arg0) throws IOException {
 		if (this.file == null) {
 			return;
 		}
-		if (flush) {
+		if (arg0) {
 			try {
 				this.file.getFD().sync();
 			} catch (SyncFailedException var3) {
@@ -88,8 +91,7 @@ public final class FileOnDisk {
 
 	public void finalize() throws Throwable {
 		if (this.file != null) {
-			// string taken from rev 550
-			System.out.println("Warning! fileondisk " + this.file + " not closed correctly using close(). Auto-closing instead. ");
+			System.out.println("");
 			this.close();
 		}
 	}

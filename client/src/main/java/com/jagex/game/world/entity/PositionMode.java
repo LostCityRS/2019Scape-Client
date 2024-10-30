@@ -26,8 +26,8 @@ public class PositionMode {
 	@ObfuscatedName("im.l")
 	public final boolean field2820;
 
-	public PositionMode(int index, boolean arg1) {
-		this.index = index;
+	public PositionMode(int arg0, boolean arg1) {
+		this.index = arg0;
 		this.field2820 = arg1;
 	}
 

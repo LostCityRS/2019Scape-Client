@@ -2,7 +2,6 @@ package com.jagex.js5.network;
 
 import com.jagex.js5.Js5Request;
 import deob.ObfuscatedName;
-
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -15,13 +14,13 @@ public class Js5HttpRequest extends Js5Request {
 	@ObfuscatedName("atb.d")
 	public final int padding;
 
-	public Js5HttpRequest(int padding) {
-		this.padding = padding;
+	public Js5HttpRequest(int arg0) {
+		this.padding = arg0;
 	}
 
 	@ObfuscatedName("atb.l(Ljava/util/concurrent/Future;B)V")
-	public void setFutureResponse(Future futureResponse) {
-		this.futureResponse = futureResponse;
+	public void setFutureResponse(Future arg0) {
+		this.futureResponse = arg0;
 	}
 
 	@ObfuscatedName("atb.e(I)[B")

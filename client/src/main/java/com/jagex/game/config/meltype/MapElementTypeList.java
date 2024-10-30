@@ -16,9 +16,9 @@ public class MapElementTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aoc.al(III)V")
-	public void cacheResize(int size, int elementCacheSize) {
-		super.cacheResize(size);
-		((MapElementTypeFactory) this.factory).elementCache = new SoftLruHashTable(elementCacheSize);
+	public void cacheResize(int arg0, int arg1) {
+		super.cacheResize(arg0);
+		((MapElementTypeFactory) this.factory).elementCache = new SoftLruHashTable(arg1);
 	}
 
 	@ObfuscatedName("aoc.r(I)V")
@@ -28,9 +28,9 @@ public class MapElementTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aoc.v(II)V")
-	public void cacheClean(int num) {
-		super.cacheClean(num);
-		((MapElementTypeFactory) this.factory).elementCache.clean(num);
+	public void cacheClean(int arg0) {
+		super.cacheClean(arg0);
+		((MapElementTypeFactory) this.factory).elementCache.clean(arg0);
 	}
 
 	@ObfuscatedName("aoc.o(I)V")

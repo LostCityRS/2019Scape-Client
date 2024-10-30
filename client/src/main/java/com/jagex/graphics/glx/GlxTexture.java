@@ -1,7 +1,11 @@
 package com.jagex.graphics.glx;
 
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.*;
+import com.jagex.graphics.GpuTextureRelated;
+import com.jagex.graphics.GraphicsDeletable;
+import com.jagex.graphics.RenderTarget;
+import com.jagex.graphics.Texture2;
+import com.jagex.graphics.TextureFormat;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;

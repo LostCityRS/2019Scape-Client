@@ -1,7 +1,6 @@
 package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
-
 import java.net.URL;
 
 @ObfuscatedName("rr")

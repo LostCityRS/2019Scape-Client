@@ -2,9 +2,12 @@ package com.jagex.graphics.dx;
 
 import com.jagex.graphics.GpuSurface;
 import deob.ObfuscatedName;
-import jagdx.*;
-
-import java.awt.*;
+import jagdx.D3DPRESENT_PARAMETERS;
+import jagdx.HRESULT;
+import jagdx.IDirect3DDevice;
+import jagdx.IDirect3DSwapChain;
+import jagdx.IUnknown;
+import java.awt.Canvas;
 
 @ObfuscatedName("aic")
 public class DxSurface extends GpuSurface implements DxInterface1 {

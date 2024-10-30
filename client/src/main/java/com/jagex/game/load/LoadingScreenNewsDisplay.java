@@ -2,6 +2,8 @@ package com.jagex.game.load;
 
 import com.jagex.graphics.DefaultSprites;
 import com.jagex.graphics.Font;
+import com.jagex.graphics.Sprite;
+import com.jagex.graphics.SpriteRelated;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 

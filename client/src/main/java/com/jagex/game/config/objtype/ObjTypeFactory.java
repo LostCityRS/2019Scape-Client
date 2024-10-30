@@ -11,8 +11,8 @@ import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.defaults.GraphicsDefaults;
 import com.jagex.game.world.entity.PlayerModel;
 import com.jagex.graphics.Font;
-import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
+import com.jagex.graphics.Toolkit;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
 
@@ -49,12 +49,12 @@ public abstract class ObjTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("abr.p")
 	public final String[] defaultiops;
 
-	public ObjTypeFactory(ModeGame modeGame, Language language, boolean allowMembers, Js5 configClient, ConfigTypeList list) {
-		this.languageId = language;
-		this.allowMembers = allowMembers;
-		this.configClient = configClient;
-		this.paramTL = list;
-		if (ModeGame.RUNESCAPE == modeGame) {
+	public ObjTypeFactory(ModeGame arg0, Language arg1, boolean arg2, Js5 arg3, ConfigTypeList arg4) {
+		this.languageId = arg1;
+		this.allowMembers = arg2;
+		this.configClient = arg3;
+		this.paramTL = arg4;
+		if (ModeGame.RUNESCAPE == arg0) {
 			this.defaultops = new String[] { null, null, LocalisedText.TAKE.forLang(this.languageId), null, null, LocalisedText.EXAMINE.forLang(this.languageId) };
 		} else {
 			this.defaultops = new String[] { null, null, LocalisedText.TAKE.forLang(this.languageId), null, null, null };

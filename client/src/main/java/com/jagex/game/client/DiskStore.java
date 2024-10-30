@@ -2,12 +2,11 @@ package com.jagex.game.client;
 
 import com.jagex.core.io.BufferedFile;
 import deob.ObfuscatedName;
-
 import java.io.EOFException;
 import java.io.IOException;
 
 @ObfuscatedName("uf")
-public final class DiskStore {
+public class DiskStore {
 
 	@ObfuscatedName("uf.e")
 	public static byte[] field7090 = new byte[520];

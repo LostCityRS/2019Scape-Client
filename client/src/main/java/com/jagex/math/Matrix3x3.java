@@ -3,7 +3,7 @@ package com.jagex.math;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("oc")
-public final class Matrix3x3 {
+public class Matrix3x3 {
 
 	@ObfuscatedName("oc.e")
 	public float[] data = new float[9];

@@ -2,10 +2,10 @@ package com.jagex.game.config.msitype;
 
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
-import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.graphics.SpriteData;
 import com.jagex.graphics.SpriteDataProvider;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("aco")
@@ -31,13 +31,13 @@ public class MSIType implements ConfigType {
 	}
 
 	@ObfuscatedName("aco.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int var2 = buf.g1();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method15066(buf, var2);
+			this.method15066(arg0, var2);
 		}
 	}
 

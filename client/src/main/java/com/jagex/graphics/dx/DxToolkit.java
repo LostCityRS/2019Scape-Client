@@ -1,7 +1,5 @@
 package com.jagex.graphics.dx;
 
-import com.jagex.graphics.Toolkit;
-import com.jagex.graphics.GpuVolumeTexture;
 import com.jagex.core.datastruct.LinkList;
 import com.jagex.game.client.DataType;
 import com.jagex.game.client.PrimitiveType;
@@ -9,14 +7,51 @@ import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
 import com.jagex.game.world.entity.ObjectNode;
-import com.jagex.graphics.*;
+import com.jagex.graphics.EffectInterface;
+import com.jagex.graphics.EnvironmentSampler;
+import com.jagex.graphics.FrameBuffer;
+import com.jagex.graphics.GpuCubeTexture;
+import com.jagex.graphics.GpuIndexBuffer;
+import com.jagex.graphics.GpuShader;
+import com.jagex.graphics.GpuTexture;
+import com.jagex.graphics.GpuTextureRelated;
+import com.jagex.graphics.GpuToolkit;
+import com.jagex.graphics.GpuVolumeTexture;
+import com.jagex.graphics.GraphicsDeletable;
+import com.jagex.graphics.Light;
+import com.jagex.graphics.MaterialList;
+import com.jagex.graphics.RendererException;
+import com.jagex.graphics.RendererInfo;
+import com.jagex.graphics.ShaderData;
+import com.jagex.graphics.Surface;
+import com.jagex.graphics.Texture2;
+import com.jagex.graphics.TextureCombineMode;
+import com.jagex.graphics.TextureCombiner;
+import com.jagex.graphics.TextureFormat;
+import com.jagex.graphics.TextureList;
+import com.jagex.graphics.TextureTramsformType;
+import com.jagex.graphics.Toolkit;
+import com.jagex.graphics.VertexBuffer;
+import com.jagex.graphics.VertexDeclaration;
+import com.jagex.graphics.VertexDeclarationElement;
 import com.jagex.js5.Js5;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
-import jagdx.*;
-
-import java.awt.*;
+import jagdx.D3DADAPTER_IDENTIFIER;
+import jagdx.D3DCAPS;
+import jagdx.D3DDISPLAYMODE;
+import jagdx.D3DFORMAT;
+import jagdx.D3DLIGHT;
+import jagdx.D3DPRESENT_PARAMETERS;
+import jagdx.HRESULT;
+import jagdx.IDirect3D;
+import jagdx.IDirect3DDevice;
+import jagdx.IDirect3DEventQuery;
+import jagdx.IDirect3DSurface;
+import jagdx.IUnknown;
+import jagdx.JagDXException;
+import java.awt.Canvas;
 
 @ObfuscatedName("aqd")
 public class DxToolkit extends GpuToolkit {
@@ -148,10 +183,10 @@ public class DxToolkit extends GpuToolkit {
 	public int field11995 = 0;
 
 	@ObfuscatedName("aqd.ic")
-	public static final int[] field11996 = new int[] { D3DFORMAT.D3DFMT_D24X8, D3DFORMAT.D3DFMT_D16 };
+	public static final int[] field11996 = new int[] { 77, 80 };
 
 	@ObfuscatedName("aqd.jd")
-	public static final int[] field11997 = new int[] { D3DFORMAT.D3DFMT_X8R8G8B8, D3DFORMAT.D3DFMT_R5G6B5 };
+	public static final int[] field11997 = new int[] { 22, 23 };
 
 	@ObfuscatedName("aqd.rx()Z")
 	public boolean hasVertexShader() {
@@ -270,13 +305,13 @@ public class DxToolkit extends GpuToolkit {
 			this.field10116 = this.hasFramebufferObject;
 			this.hasFramebufferBlit = this.caps.NumSimultaneousRTs > 0;
 			this.hasMultiSample = this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, true, 2) == 0;
-			this.hasFramebufferMultisample = this.caps.NumSimultaneousRTs > 0 && this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, D3DFORMAT.D3DFMT_A16B16G16R16F, true, 2) == 0;
-			this.field11979 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, makeFourCC('A', 'T', 'O', 'C')) == 0;
-			this.field11980 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, makeFourCC('A', '2', 'M', '1')) == 0;
-			this.field11971 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, makeFourCC('S', 'S', 'A', 'A')) == 0;
+			this.hasFramebufferMultisample = this.caps.NumSimultaneousRTs > 0 && this.field10180 > 0 || IDirect3D.CheckDeviceMultiSampleType(this.field11955, this.field11956, this.field11954, 113, true, 2) == 0;
+			this.field11979 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, GpuToolkit.makeFourCC('A', 'T', 'O', 'C')) == 0;
+			this.field11980 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, GpuToolkit.makeFourCC('A', '2', 'M', '1')) == 0;
+			this.field11971 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.present.BackBufferFormat, 0, 1, GpuToolkit.makeFourCC('S', 'S', 'A', 'A')) == 0;
 			this.hasBlendFuncSeparate = (this.caps.PrimitiveMiscCaps & 0x20000) != 0;
-			this.field11953 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.displayMode.Format, 524288, 3, D3DFORMAT.D3DFMT_A16B16G16R16F) == 0;
-			this.field11983 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.displayMode.Format, 524288, 3, D3DFORMAT.D3DFMT_A32B32G32R32F) == 0;
+			this.field11953 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.displayMode.Format, 524288, 3, 113) == 0;
+			this.field11983 = IDirect3D.CheckDeviceFormat(this.field11955, this.field11956, this.field11954, this.displayMode.Format, 524288, 3, 116) == 0;
 			this.field11965 = new boolean[this.maxSimutaneousTextures];
 			this.field11966 = new boolean[this.maxSimutaneousTextures];
 			this.field11981 = new boolean[this.maxSimutaneousTextures];
@@ -289,8 +324,8 @@ public class DxToolkit extends GpuToolkit {
 			this.field11968 = new Matrix4x4();
 			this.field11968.setToMatrix4x3(var17);
 			IDirect3DDevice.BeginScene(this.device);
-		} catch (Throwable ex) {
-			ex.printStackTrace();
+		} catch (Throwable var19) {
+			var19.printStackTrace();
 			this.dispose();
 			throw new RuntimeException("");
 		}
@@ -321,7 +356,7 @@ public class DxToolkit extends GpuToolkit {
 	@ObfuscatedName("aqd.ahz(II)Z")
 	public boolean method19019(int arg0, int arg1) {
 		int var3 = IDirect3DDevice.TestCooperativeLevel(this.device);
-		if (var3 == 0 || var3 == 0x88760869) {
+		if (var3 == 0 || var3 == -2005530519) {
 			IDirect3DDevice.SetDepthStencilSurface(this.device, 0L);
 			for (int var4 = 1; var4 < 4; var4++) {
 				IDirect3DDevice.SetRenderTarget(this.device, var4, 0L);
@@ -366,18 +401,18 @@ public class DxToolkit extends GpuToolkit {
 			this.field11962[var1] = 0;
 		}
 		IDirect3DDevice.SetTextureStageState(this.device, 0, 6, 1);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SHADEMODE, 2);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ZFUNC, 4);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ALPHAFUNC, 5);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ALPHAREF, 0);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SEPARATEALPHABLENDENABLE, this.hasBlendFuncSeparate);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ADAPTIVETESS_Y, 0);
+		IDirect3DDevice.SetRenderState(this.device, 9, 2);
+		IDirect3DDevice.SetRenderState(this.device, 23, 4);
+		IDirect3DDevice.SetRenderState(this.device, 25, 5);
+		IDirect3DDevice.SetRenderState(this.device, 24, 0);
+		IDirect3DDevice.SetRenderState(this.device, 206, this.hasBlendFuncSeparate);
+		IDirect3DDevice.SetRenderState(this.device, 181, 0);
 		this.enableCullMode();
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_AMBIENTMATERIALSOURCE, 1);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_DIFFUSEMATERIALSOURCE, 1);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_FOGDENSITY, 0.95F);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_FOGTABLEMODE, 3);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_POINTSIZE, 1.0F);
+		IDirect3DDevice.SetRenderState(this.device, 147, 1);
+		IDirect3DDevice.SetRenderState(this.device, 145, 1);
+		IDirect3DDevice.SetRenderState(this.device, 38, 0.95F);
+		IDirect3DDevice.SetRenderState(this.device, 35, 3);
+		IDirect3DDevice.SetRenderState(this.device, 154, 1.0F);
 		D3DLIGHT.SetType(this.field11961, 3);
 		D3DLIGHT.SetType(this.field11988, 3);
 		D3DLIGHT.SetType(this.field11970, 1);
@@ -691,7 +726,7 @@ public class DxToolkit extends GpuToolkit {
 
 	@ObfuscatedName("aqd.sj()V")
 	public void enableScissorTest() {
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SCISSORTESTENABLE, this.field10182);
+		IDirect3DDevice.SetRenderState(this.device, 174, this.field10182);
 	}
 
 	@ObfuscatedName("aqd.ahh(J)V")
@@ -707,9 +742,9 @@ public class DxToolkit extends GpuToolkit {
 
 	@ObfuscatedName("aqd.rn(Lpq;Lpq;Lpq;)V")
 	public void method15967(Matrix4x4 arg0, Matrix4x4 arg1, Matrix4x4 arg2) {
-		IDirect3DDevice.SetTransform(this.device, class6.D3DTTFF_PROJECTED, arg0.entries);
-		IDirect3DDevice.SetTransform(this.device, class6.D3DTTFF_COUNT2, arg1.entries);
-		IDirect3DDevice.SetTransform(this.device, class6.D3DTTFF_COUNT3, arg2.entries);
+		IDirect3DDevice.SetTransform(this.device, 256, arg0.entries);
+		IDirect3DDevice.SetTransform(this.device, 2, arg1.entries);
+		IDirect3DDevice.SetTransform(this.device, 3, arg2.entries);
 	}
 
 	@ObfuscatedName("aqd.ti(Lpq;)V")
@@ -719,18 +754,18 @@ public class DxToolkit extends GpuToolkit {
 
 	@ObfuscatedName("aqd.tp()V")
 	public void enableDepth() {
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ZENABLE, this.field10109 && this.field10044);
+		IDirect3DDevice.SetRenderState(this.device, 7, this.field10109 && this.field10044);
 	}
 
 	@ObfuscatedName("aqd.tv()V")
 	public void enableDepthWrite() {
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ZWRITEENABLE, this.field10107 && this.field10108);
+		IDirect3DDevice.SetRenderState(this.device, 14, this.field10107 && this.field10108);
 	}
 
 	@ObfuscatedName("aqd.tg()V")
 	public void enableLighting() {
 		if (this.lightingEnabled) {
-			IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_LIGHTING, this.field10111 && !this.field10113);
+			IDirect3DDevice.SetRenderState(this.device, 137, this.field10111 && !this.field10113);
 		}
 	}
 
@@ -931,7 +966,7 @@ public class DxToolkit extends GpuToolkit {
 	@ObfuscatedName("aqd.vt()V")
 	public void method16052() {
 		if (this.lightingEnabled) {
-			int var1 = this.field11981[this.field10177] ? getTextureCombineModeStage(this.field10137[this.field10177]) : class6.D3DTSS_COLOROP;
+			int var1 = this.field11981[this.field10177] ? getTextureCombineModeStage(this.field10137[this.field10177]) : 1;
 			IDirect3DDevice.SetTextureStageState(this.device, this.field10177, 4, var1);
 		}
 	}
@@ -988,7 +1023,7 @@ public class DxToolkit extends GpuToolkit {
 	@ObfuscatedName("aqd.vr()V")
 	public final void enableTextureFactor() {
 		if (this.lightingEnabled) {
-			IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_TEXTUREFACTOR, this.field10160);
+			IDirect3DDevice.SetRenderState(this.device, 60, this.field10160);
 		}
 	}
 
@@ -996,15 +1031,15 @@ public class DxToolkit extends GpuToolkit {
 	public static final int getTextureCombineModeStage(TextureCombineMode arg0) {
 		switch(arg0.field3394) {
 			case 0:
-				return class6.D3DTSS_BUMPENVMAT11;
+				return 10;
 			case 1:
-				return class6.D3DTSS_BUMPENVMAT00;
+				return 7;
 			case 2:
-				return class6.D3DTSS_COLORARG0;
+				return 26;
 			case 3:
-				return class6.D3DTSS_COLORARG1;
+				return 2;
 			case 4:
-				return class6.D3DTSS_ALPHAOP;
+				return 4;
 			default:
 				throw new IllegalArgumentException();
 		}
@@ -1027,47 +1062,47 @@ public class DxToolkit extends GpuToolkit {
 	}
 
 	@ObfuscatedName("aqd.ahi(Lmv;)I")
-	public static final int getTextureTransformFormat(TextureTramsformType textureTramsformType) {
-		switch(textureTramsformType.index) {
+	public static final int getTextureTransformFormat(TextureTramsformType arg0) {
+		switch(arg0.index) {
 			case 0:
-				return class6.D3DTTFF_COUNT2;
+				return 2;
 			case 1:
-				return class6.D3DTTFF_COUNT3;
+				return 3;
 			case 2:
-				return class6.D3DTTFF_COUNT4;
+				return 4;
 			case 3:
-				return class6.D3DTTFF_COUNT1;
+				return 1;
 			case 4:
-				return class6.D3DTTFF_PROJECTED;
+				return 256;
 			default:
-				return class6.D3DTTFF_DISABLE;
+				return 0;
 		}
 	}
 
 	@ObfuscatedName("aqd.vy(I)V")
 	public void enableColorWriteTest(int arg0) {
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_COLORWRITEENABLE, arg0);
+		IDirect3DDevice.SetRenderState(this.device, 168, arg0);
 	}
 
 	@ObfuscatedName("aqd.ve()V")
 	public void enableAlphaTest() {
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ALPHATESTENABLE, this.alphaTestEnabled);
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ALPHAREF, this.alphaRef & 0xFF);
+		IDirect3DDevice.SetRenderState(this.device, 15, this.alphaTestEnabled);
+		IDirect3DDevice.SetRenderState(this.device, 24, this.alphaRef & 0xFF);
 		if (this.present.MultiSampleType <= 0) {
 			return;
 		}
 		if (this.alphaTestEnabled && this.alphaRef != 0) {
 			if (this.field11971) {
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ADAPTIVETESS_Y, makeFourCC('S', 'S', 'A', 'A'));
+				IDirect3DDevice.SetRenderState(this.device, 181, GpuToolkit.makeFourCC('S', 'S', 'A', 'A'));
 			} else if (this.field11979) {
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ADAPTIVETESS_Y, makeFourCC('A', 'T', 'O', 'C'));
+				IDirect3DDevice.SetRenderState(this.device, 181, GpuToolkit.makeFourCC('A', 'T', 'O', 'C'));
 			} else if (this.field11980) {
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_POINTSIZE, makeFourCC('A', '2', 'M', '1'));
+				IDirect3DDevice.SetRenderState(this.device, 154, GpuToolkit.makeFourCC('A', '2', 'M', '1'));
 			}
 		} else if (this.field11971 || this.field11979) {
-			IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ADAPTIVETESS_Y, 0);
+			IDirect3DDevice.SetRenderState(this.device, 181, 0);
 		} else if (this.field11980) {
-			IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_POINTSIZE, 1.0F);
+			IDirect3DDevice.SetRenderState(this.device, 154, 1.0F);
 		}
 	}
 
@@ -1075,54 +1110,54 @@ public class DxToolkit extends GpuToolkit {
 	public void enableBlend() {
 		switch(this.field10211.field3360) {
 			case 0:
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SRCBLEND, 2);
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_DESTBLEND, 1);
+				IDirect3DDevice.SetRenderState(this.device, 19, 2);
+				IDirect3DDevice.SetRenderState(this.device, 20, 1);
 				break;
 			case 1:
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SRCBLEND, 9);
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_DESTBLEND, 2);
+				IDirect3DDevice.SetRenderState(this.device, 19, 9);
+				IDirect3DDevice.SetRenderState(this.device, 20, 2);
 				break;
 			case 2:
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SRCBLEND, 5);
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_DESTBLEND, 6);
+				IDirect3DDevice.SetRenderState(this.device, 19, 5);
+				IDirect3DDevice.SetRenderState(this.device, 20, 6);
 				break;
 			case 3:
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SRCBLEND, 2);
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_DESTBLEND, 2);
+				IDirect3DDevice.SetRenderState(this.device, 19, 2);
+				IDirect3DDevice.SetRenderState(this.device, 20, 2);
 		}
 		switch(this.field10174) {
 			case 0:
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SRCBLENDALPHA, 1);
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_DESTBLENDALPHA, 1);
+				IDirect3DDevice.SetRenderState(this.device, 207, 1);
+				IDirect3DDevice.SetRenderState(this.device, 208, 1);
 				break;
 			case 1:
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SRCBLENDALPHA, 2);
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_DESTBLENDALPHA, 1);
+				IDirect3DDevice.SetRenderState(this.device, 207, 2);
+				IDirect3DDevice.SetRenderState(this.device, 208, 1);
 				break;
 			case 2:
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SRCBLENDALPHA, 2);
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_DESTBLENDALPHA, 2);
+				IDirect3DDevice.SetRenderState(this.device, 207, 2);
+				IDirect3DDevice.SetRenderState(this.device, 208, 2);
 				break;
 			case 3:
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_SRCBLENDALPHA, 1);
-				IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_DESTBLENDALPHA, 2);
+				IDirect3DDevice.SetRenderState(this.device, 207, 1);
+				IDirect3DDevice.SetRenderState(this.device, 208, 2);
 		}
 	}
 
 	@ObfuscatedName("aqd.vg()V")
 	public void enableAlphaBlend() {
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_ALPHABLENDENABLE, this.alphaBlendEnabled);
+		IDirect3DDevice.SetRenderState(this.device, 27, this.alphaBlendEnabled);
 	}
 
 	@ObfuscatedName("aqd.ahy()V")
 	public void enableCullMode() {
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_CULLMODE, this.cullModeEnabled);
+		IDirect3DDevice.SetRenderState(this.device, 22, this.cullModeEnabled);
 	}
 
 	@ObfuscatedName("aqd.vz()V")
 	public void enableFog() {
 		if (this.lightingEnabled) {
-			IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_FOGENABLE, this.field10167 && this.field10166 && this.field10169 >= 0);
+			IDirect3DDevice.SetRenderState(this.device, 28, this.field10167 && this.field10166 && this.field10169 >= 0);
 		}
 	}
 
@@ -1134,15 +1169,15 @@ public class DxToolkit extends GpuToolkit {
 			this.fogStart = this.field10170;
 		}
 		if (this.lightingEnabled) {
-			IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_FOGSTART, this.fogStart);
-			IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_FOGEND, this.fogEnd);
-			IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_FOGDENSITY, this.fogDensity);
+			IDirect3DDevice.SetRenderState(this.device, 36, this.fogStart);
+			IDirect3DDevice.SetRenderState(this.device, 37, this.fogEnd);
+			IDirect3DDevice.SetRenderState(this.device, 34, this.fogDensity);
 		}
 	}
 
 	@ObfuscatedName("aqd.vj(Z)V")
-	public void enableAntiAliasing(boolean multisampleEnabled) {
-		IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_MULTISAMPLEANTIALIAS, multisampleEnabled);
+	public void enableAntiAliasing(boolean arg0) {
+		IDirect3DDevice.SetRenderState(this.device, 161, arg0);
 	}
 
 	@ObfuscatedName("aqd.vc(Z)Lml;")
@@ -1227,39 +1262,39 @@ public class DxToolkit extends GpuToolkit {
 	}
 
 	@ObfuscatedName("aqd.aix(Lck;Ldg;)I")
-	public static final int getD3DFormat(TextureFormat textureFormat, DataType dataType) {
-		switch(dataType.index) {
+	public static final int getD3DFormat(TextureFormat arg0, DataType arg1) {
+		switch(arg1.index) {
 			case 0:
-				if (TextureFormat.RGBA == textureFormat) {
-					return D3DFORMAT.D3DFMT_A32B32G32R32F;
+				if (TextureFormat.RGBA == arg0) {
+					return 116;
 				}
 				break;
 			case 3:
-				if (TextureFormat.RGBA == textureFormat) {
-					return D3DFORMAT.D3DFMT_A16B16G16R16F;
+				if (TextureFormat.RGBA == arg0) {
+					return 113;
 				}
 				break;
 			case 7:
-				switch(textureFormat.index) {
+				switch(arg0.index) {
 					case 0:
-						return D3DFORMAT.D3DFMT_D24X8;
+						return 77;
 					case 1:
-						return D3DFORMAT.D3DFMT_DXT1;
+						return D3DFORMAT.field263;
 					case 2:
-						return D3DFORMAT.D3DFMT_X8R8G8B8;
+						return 22;
 					case 3:
-						return D3DFORMAT.D3DFMT_A8L8;
+						return 51;
 					case 4:
-						return D3DFORMAT.D3DFMT_A8R8G8B8;
+						return 21;
 					case 5:
 					default:
 						break;
 					case 6:
-						return D3DFORMAT.D3DFMT_A8;
+						return 28;
 					case 7:
-						return D3DFORMAT.D3DFMT_L8;
+						return 50;
 					case 8:
-						return D3DFORMAT.D3DFMT_DXT5;
+						return D3DFORMAT.field264;
 				}
 		}
 		throw new IllegalArgumentException("");
@@ -1268,9 +1303,9 @@ public class DxToolkit extends GpuToolkit {
 	@ObfuscatedName("aqd.ait(Ldg;)I")
 	public static final int getD3DFormatForDataType(DataType arg0) {
 		if (DataType.UNSIGNED_INT_16 == arg0) {
-			return D3DFORMAT.D3DFMT_D16;
+			return 80;
 		} else if (DataType.UNSIGNED_INT_24 == arg0) {
-			return D3DFORMAT.D3DFMT_D24X8;
+			return 77;
 		} else {
 			throw new IllegalArgumentException("");
 		}
@@ -1280,17 +1315,17 @@ public class DxToolkit extends GpuToolkit {
 	public static final int getD3DPrimitiveType(PrimitiveType arg0) {
 		switch(arg0.index) {
 			case 0:
-				return class6.D3DPT_TRIANGLESTRIP;
+				return 5;
 			case 1:
-				return class6.D3DPT_TRIANGLELIST;
+				return 4;
 			case 2:
-				return class6.D3DPT_LINESTRIP;
+				return 3;
 			case 3:
-				return class6.D3DPT_TRIANGLEFAN;
+				return 6;
 			case 4:
-				return class6.D3DPT_POINTLIST;
+				return 1;
 			case 5:
-				return class6.D3DPT_LINELIST;
+				return 2;
 			default:
 				throw new IllegalArgumentException("");
 		}
@@ -1355,7 +1390,7 @@ public class DxToolkit extends GpuToolkit {
 	public void enableFillMode(int arg0) {
 		if (!this.fillModeEnabled) {
 			int var2 = (arg0 & 0x2) == 0 ? 3 : 2;
-			IDirect3DDevice.SetRenderState(this.device, class6.D3DRS_FILLMODE, var2);
+			IDirect3DDevice.SetRenderState(this.device, 8, var2);
 		}
 	}
 

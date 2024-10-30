@@ -21,23 +21,23 @@ public class ClientScriptHelpers {
 	}
 
 	@ObfuscatedName("lv.n(II)Lasc;")
-	public static ClientScript getScript(int scriptId) {
-		ClientScript cached = (ClientScript) cache.get((long) scriptId);
-		if (cached != null) {
-			return cached;
+	public static ClientScript getScript(int arg0) {
+		ClientScript var1 = (ClientScript) cache.get((long) arg0);
+		if (var1 != null) {
+			return var1;
 		}
-		byte[] bytes = Client.clientscriptsJs5.getfile(scriptId, 0);
-		if (bytes == null || bytes.length <= 1) {
+		byte[] var2 = Client.clientscriptsJs5.getfile(arg0, 0);
+		if (var2 == null || var2.length <= 1) {
 			return null;
 		}
-		ClientScript script;
+		ClientScript var3;
 		try {
-			script = decode(bytes);
+			var3 = decode(var2);
 		} catch (Exception var5) {
-			throw new RuntimeException(var5.getMessage() + " " + scriptId);
+			throw new RuntimeException(var5.getMessage() + " " + arg0);
 		}
-		cache.put(script, (long) scriptId);
-		return script;
+		cache.put(var3, (long) arg0);
+		return var3;
 	}
 
 	@ObfuscatedName("vs.m(Luh;IIS)Lasc;")
@@ -106,7 +106,7 @@ public class ClientScriptHelpers {
 	}
 
 	@ObfuscatedName("ek.k([BS)Lasc;")
-	public static ClientScript decode(byte[] bytes) {
-		return new ClientScript(new Packet(bytes), Client.variableTypeProvider);
+	public static ClientScript decode(byte[] arg0) {
+		return new ClientScript(new Packet(arg0), Client.variableTypeProvider);
 	}
 }

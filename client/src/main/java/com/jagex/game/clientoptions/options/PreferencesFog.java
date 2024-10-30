@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amb")
 public class PreferencesFog extends Preference {
 
-	public PreferencesFog(ClientOptions options) {
-		super(options);
+	public PreferencesFog(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesFog(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesFog(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("amb.o(I)V")
@@ -38,10 +38,10 @@ public class PreferencesFog extends Preference {
 	}
 
 	@ObfuscatedName("amb.n(II)I")
-	public int canSetValue(int value) {
-		if (value != 0 && this.options.orthographic.getValue() == 2) {
+	public int canSetValue(int arg0) {
+		if (arg0 != 0 && this.options.orthographic.getValue() == 2) {
 			return 3;
-		} else if (value == 0 || this.options.groundBlending.getValue() == 1) {
+		} else if (arg0 == 0 || this.options.groundBlending.getValue() == 1) {
 			return 1;
 		} else {
 			return 2;
@@ -49,8 +49,8 @@ public class PreferencesFog extends Preference {
 	}
 
 	@ObfuscatedName("amb.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amb.y(I)I")

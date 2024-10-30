@@ -1,8 +1,10 @@
 package com.jagex.game.client;
 
 import deob.ObfuscatedName;
-
-import java.awt.*;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Point;
+import java.awt.Robot;
 import java.awt.image.BufferedImage;
 
 @ObfuscatedName("si")
@@ -18,7 +20,7 @@ public class CursorManager {
 		this.field6625.mouseMove(arg0, arg1);
 	}
 
-	public void setcustomcursor(java.awt.Component arg0, int[] arg1, int arg2, int arg3, Point arg4) {
+	public void setcustomcursor(Component arg0, int[] arg1, int arg2, int arg3, Point arg4) {
 		if (arg1 == null) {
 			arg0.setCursor(null);
 		} else {

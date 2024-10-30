@@ -17,25 +17,25 @@ public abstract class CameraEffect extends SecondaryNode {
 	public final int id;
 
 	@ObfuscatedName("ary.e(ILie;Lalw;I)Laso;")
-	public static CameraEffect createCameraEffect(int arg0, CameraEffectType arg1, Packet buf) {
+	public static CameraEffect createCameraEffect(int arg0, CameraEffectType arg1, Packet arg2) {
 		if (CameraEffectType.SHAKE == arg1) {
-			return new Shake(arg0, buf);
+			return new Shake(arg0, arg2);
 		} else if (CameraEffectType.ZTILT == arg1) {
-			return new ZTilt(arg0, buf);
+			return new ZTilt(arg0, arg2);
 		} else {
 			return null;
 		}
 	}
 
-	public CameraEffect(int id) {
-		this.id = id;
+	public CameraEffect(int arg0) {
+		this.id = arg0;
 	}
 
 	@ObfuscatedName("aso.n(FI)V")
 	public abstract void method19431(float arg0);
 
 	@ObfuscatedName("aso.k(Lalw;I)V")
-	public abstract void decode(Packet buf);
+	public abstract void decode(Packet arg0);
 
 	@ObfuscatedName("aso.m(Lju;Lou;Lpq;I)V")
 	public abstract void method19440(Vector3i arg0, Matrix4x3 arg1, Matrix4x4 arg2);

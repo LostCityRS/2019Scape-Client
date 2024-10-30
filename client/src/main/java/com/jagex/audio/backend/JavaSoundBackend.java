@@ -4,26 +4,30 @@ import com.jagex.audio.api.AudioBuss;
 import com.jagex.audio.api.AudioEndianness;
 import com.jagex.audio.api.AudioFormat;
 import com.jagex.audio.api.SoundBackend;
-import com.jagex.audio.stream.BussManager;
 import com.jagex.audio.stream.AudioProcessingUnit;
+import com.jagex.audio.stream.BussManager;
 import com.jagex.audio.stream.SoundRelatedType1;
 import com.jagex.audio.stream.SoundRelatedType2;
 import com.jagex.audio.vorbis.VorbisSound;
 import com.jagex.core.utils.JagException;
 import com.jagex.core.utils.PreciseSleep;
 import deob.ObfuscatedName;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.DataLine;
+import javax.sound.sampled.DataLine.Info;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
-import java.util.*;
 
 @ObfuscatedName("aiz")
 public class JavaSoundBackend extends SoundBackend {
 
 	@ObfuscatedName("aiz.n")
-	public java.util.HashMap field10688 = new java.util.HashMap();
+	public HashMap field10688 = new HashMap();
 
 	@ObfuscatedName("aiz.m")
 	public BussManager field10694 = new BussManager(this);
@@ -41,116 +45,23 @@ public class JavaSoundBackend extends SoundBackend {
 	public List field10693 = new ArrayList();
 
 	@ObfuscatedName("aiz.u")
-	public Runnable field10687 = new JavaSoundBackend_Task1(this);
+	public Runnable field10687 = new JavaSoundBackend.JavaSoundBackend_Task1();
 
 	@ObfuscatedName("aiz.z")
-	public Runnable field10695 = new JavaSoundBackend_Task2(this);
+	public Runnable field10695 = new JavaSoundBackend.JavaSoundBackend_Task2();
 
-	@ObfuscatedName("tp")
-	public static class JavaSoundBackend_Task1 implements Runnable {
-
-		// $FF: synthetic field
-		public final JavaSoundBackend this$0;
-
-		// line 35
-		public JavaSoundBackend_Task1(JavaSoundBackend arg0) {
-			this.this$0 = arg0;
-		}
-
-		public void run() {
-			label54: while (true) {
-				try {
-					if (!this.this$0.field10690) {
-						Iterator var1 = this.this$0.field10693.iterator();
-						while (var1.hasNext()) {
-							PcmPlayer var2 = (PcmPlayer) var1.next();
-							var2.method8646();
-						}
-						HashMap var3 = this.this$0.method16804();
-						Iterator var4 = var3.keySet().iterator();
-						while (true) {
-							SoundRelatedType2 var5;
-							do {
-								if (!var4.hasNext()) {
-									Iterator var8 = this.this$0.field10693.iterator();
-									while (var8.hasNext()) {
-										PcmPlayer var9 = (PcmPlayer) var8.next();
-										var9.method8647();
-									}
-									PreciseSleep.sleep(6L);
-									continue label54;
-								}
-								var5 = (SoundRelatedType2) var4.next();
-							} while (var5.field4856);
-							AudioProcessingUnit[] var6 = (AudioProcessingUnit[]) var3.get(var5);
-							for (int var7 = 0; var7 < var6.length; var7++) {
-								var6[var7].method7507();
-							}
-						}
-					}
-				} catch (Exception var11) {
-					JagException.report(null, var11);
-					var11.printStackTrace();
-				}
-				return;
-			}
-		}
-	}
-
-	@ObfuscatedName("tv")
-	public static class JavaSoundBackend_Task2 implements Runnable {
-
-		// $FF: synthetic field
-		public final JavaSoundBackend this$0;
-
-		// line 72
-		public JavaSoundBackend_Task2(JavaSoundBackend arg0) {
-			this.this$0 = arg0;
-		}
-
-		public void run() {
-			label36: while (true) {
-				try {
-					if (!this.this$0.field10690) {
-						HashMap var1 = this.this$0.method16804();
-						Iterator var2 = var1.keySet().iterator();
-						while (true) {
-							SoundRelatedType2 var3;
-							do {
-								if (!var2.hasNext()) {
-									PreciseSleep.sleep(10L);
-									continue label36;
-								}
-								var3 = (SoundRelatedType2) var2.next();
-							} while (var3.field4856);
-							AudioProcessingUnit[] var4 = (AudioProcessingUnit[]) var1.get(var3);
-							for (int var5 = 0; var5 < var4.length; var5++) {
-								var4[var5].method7504();
-							}
-						}
-					}
-				} catch (Exception var7) {
-					JagException.report(null, var7);
-					var7.printStackTrace();
-				}
-				return;
-			}
-		}
-	}
-
-	// line 99
 	@ObfuscatedName("aiz.aw(I)Ljava/util/HashMap;")
-	public java.util.HashMap method16804() {
+	public HashMap method16804() {
 		return this.field10688;
 	}
 
 	public JavaSoundBackend(SoundBackendConfig arg0) {
-		java.util.Iterator var2 = arg0.field8053.keySet().iterator();
+		Iterator var2 = arg0.field8053.keySet().iterator();
 		while (var2.hasNext()) {
 			SoundRelatedType2 var3 = (SoundRelatedType2) var2.next();
 			this.field10688.put(var3, new AudioProcessingUnit[(Integer) arg0.field8053.get(var3)]);
 		}
-		java.util.Iterator var4 = this.field10688.keySet().iterator();
+		Iterator var4 = this.field10688.keySet().iterator();
 		while (var4.hasNext()) {
 			SoundRelatedType2 var5 = (SoundRelatedType2) var4.next();
 			AudioProcessingUnit[] var6 = (AudioProcessingUnit[]) this.field10688.get(var5);
@@ -160,8 +71,8 @@ public class JavaSoundBackend extends SoundBackend {
 				var6[var7] = new AudioProcessingUnit(var5, 8192, 3, var8, this);
 			}
 		}
-		PcmPlayer var9 = new PcmPlayer(this, 44100.0F, 32768);
-		PcmPlayer var10 = new PcmPlayer(this, 22050.0F, 16384);
+		JavaSoundBackend.PcmPlayer var9 = new JavaSoundBackend.PcmPlayer(44100.0F, 32768);
+		JavaSoundBackend.PcmPlayer var10 = new JavaSoundBackend.PcmPlayer(22050.0F, 16384);
 		this.field10693.add(var9);
 		this.field10693.add(var10);
 		this.field10691 = new Thread(this.field10695);
@@ -172,13 +83,12 @@ public class JavaSoundBackend extends SoundBackend {
 		this.field10692.start();
 	}
 
-	// line 138
 	@ObfuscatedName("aiz.e(I)V")
 	public void method5874() {
 		if (this.field10694 != null) {
 			this.field10694.update();
 		}
-		java.util.Iterator var1 = this.field10688.keySet().iterator();
+		Iterator var1 = this.field10688.keySet().iterator();
 		while (true) {
 			AudioProcessingUnit[] var3;
 			byte var6;
@@ -196,7 +106,7 @@ public class JavaSoundBackend extends SoundBackend {
 						var4 |= var3[var5].method7588();
 					}
 					if (var4) {
-						Arrays.sort(var3, new JavaSoundBackendComparator(this));
+						Arrays.sort(var3, new JavaSoundBackend.JavaSoundBackendComparator());
 					}
 				}
 				var6 = 6;
@@ -226,67 +136,33 @@ public class JavaSoundBackend extends SoundBackend {
 		}
 	}
 
-	@ObfuscatedName("tt")
-	public static class JavaSoundBackendComparator implements Comparator {
-
-		// $FF: synthetic field
-		public final JavaSoundBackend this$0;
-
-		// line 150
-		public JavaSoundBackendComparator(JavaSoundBackend arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("tt.e(Lrq;Lrq;I)I")
-		public int method8639(AudioProcessingUnit arg0, AudioProcessingUnit arg1) {
-			float var3 = arg0.method7531();
-			float var4 = arg1.method7531();
-			if (var4 > var3) {
-				return 1;
-			} else if (var4 < var3) {
-				return -1;
-			} else {
-				return 0;
-			}
-		}
-
-		public int compare(Object arg0, Object arg1) {
-			return this.method8639((AudioProcessingUnit) arg0, (AudioProcessingUnit) arg1);
-		}
-
-		public boolean equals(Object arg0) {
-			return super.equals(arg0);
-		}
-	}
-
-	// line 198
 	@ObfuscatedName("aiz.f(Ljava/lang/Object;I)I")
 	public int method5864(Object arg0) {
-		if (arg0 == null || !(arg0 instanceof SoundSample)) {
+		if (arg0 == null || !(arg0 instanceof JavaSoundBackend.SoundSample)) {
 			return 0;
 		}
-		SoundSample var2 = (SoundSample) arg0;
-		PcmPlayer var3 = var2.field6863;
+		JavaSoundBackend.SoundSample var2 = (JavaSoundBackend.SoundSample) arg0;
+		JavaSoundBackend.PcmPlayer var3 = var2.field6863;
 		synchronized (var2.field6863) {
 			return var2.method8628();
 		}
 	}
 
 	@ObfuscatedName("aiz.as(FI)Lts;")
-	public PcmPlayer method16806(float arg0) {
+	public JavaSoundBackend.PcmPlayer method16806(float arg0) {
 		float var2 = -1.0F;
 		float var3 = Float.MAX_VALUE;
-		PcmPlayer var4 = null;
+		JavaSoundBackend.PcmPlayer var4 = null;
 		Iterator var5 = this.field10693.iterator();
 		while (true) {
-			PcmPlayer var6;
+			JavaSoundBackend.PcmPlayer var6;
 			float var7;
 			float var8;
 			do {
 				if (!var5.hasNext()) {
 					return var4;
 				}
-				var6 = (PcmPlayer) var5.next();
+				var6 = (JavaSoundBackend.PcmPlayer) var5.next();
 				var7 = var6.field6875;
 				var8 = Math.abs(var7 - arg0);
 			} while (!(var2 < 0.0F) && !(var8 < var3));
@@ -297,10 +173,10 @@ public class JavaSoundBackend extends SoundBackend {
 	}
 
 	@ObfuscatedName("aiz.n(IILnd;Lmw;IFB)Ljava/lang/Object;")
-	public Object playSample(int arg0, int arg1, AudioFormat format, AudioEndianness endianness, int arg4, float arg5) {
-		PcmPlayer var7 = this.method16806((float) arg1 * arg5);
-		SoundSample var8 = new SoundSample(this, var7, arg4, (float) arg1 * arg5, format.field3445, arg0 < 2 ? 2 : arg0, AudioFormat.field3441 == format || AudioFormat.field3442 == format, AudioEndianness.BIG == endianness);
-		PcmPlayer var9 = var8.field6863;
+	public Object playSample(int arg0, int arg1, AudioFormat arg2, AudioEndianness arg3, int arg4, float arg5) {
+		JavaSoundBackend.PcmPlayer var7 = this.method16806((float) arg1 * arg5);
+		JavaSoundBackend.SoundSample var8 = new JavaSoundBackend.SoundSample(var7, arg4, (float) arg1 * arg5, arg2.field3445, arg0 < 2 ? 2 : arg0, AudioFormat.field3441 == arg2 || AudioFormat.field3442 == arg2, AudioEndianness.BIG == arg3);
+		JavaSoundBackend.PcmPlayer var9 = var8.field6863;
 		synchronized (var8.field6863) {
 			var8.field6863.method8649(var8);
 			return var8;
@@ -309,11 +185,11 @@ public class JavaSoundBackend extends SoundBackend {
 
 	@ObfuscatedName("aiz.m(Ljava/lang/Object;I)V")
 	public void method5863(Object arg0) {
-		if (arg0 == null || !(arg0 instanceof SoundSample)) {
+		if (arg0 == null || !(arg0 instanceof JavaSoundBackend.SoundSample)) {
 			return;
 		}
-		SoundSample var2 = (SoundSample) arg0;
-		PcmPlayer var3 = var2.field6863;
+		JavaSoundBackend.SoundSample var2 = (JavaSoundBackend.SoundSample) arg0;
+		JavaSoundBackend.PcmPlayer var3 = var2.field6863;
 		synchronized (var2.field6863) {
 			var2.field6863.method8650(var2);
 		}
@@ -321,11 +197,11 @@ public class JavaSoundBackend extends SoundBackend {
 
 	@ObfuscatedName("aiz.k(Ljava/lang/Object;[BIII)V")
 	public void method5875(Object arg0, byte[] arg1, int arg2, int arg3) {
-		if (arg0 == null || !(arg0 instanceof SoundSample)) {
+		if (arg0 == null || !(arg0 instanceof JavaSoundBackend.SoundSample)) {
 			return;
 		}
-		SoundSample var5 = (SoundSample) arg0;
-		PcmPlayer var6 = var5.field6863;
+		JavaSoundBackend.SoundSample var5 = (JavaSoundBackend.SoundSample) arg0;
+		JavaSoundBackend.PcmPlayer var6 = var5.field6863;
 		synchronized (var5.field6863) {
 			var5.method8626(arg1, arg2, arg3);
 		}
@@ -333,7 +209,7 @@ public class JavaSoundBackend extends SoundBackend {
 
 	@ObfuscatedName("aiz.w(Lqk;B)Lrq;")
 	public AudioProcessingUnit method5865(SoundRelatedType2 arg0) {
-		java.util.HashMap var2 = this.field10688;
+		HashMap var2 = this.field10688;
 		synchronized (this.field10688) {
 			AudioProcessingUnit[] var3 = (AudioProcessingUnit[]) this.field10688.get(arg0);
 			if (var3 == null) {
@@ -361,12 +237,11 @@ public class JavaSoundBackend extends SoundBackend {
 		return this.field10694;
 	}
 
-	// line 278
 	@ObfuscatedName("aiz.z(B)V")
 	public void method5868() {
-		java.util.HashMap var1 = this.method16804();
+		HashMap var1 = this.method16804();
 		synchronized (var1) {
-			java.util.Iterator var3 = var1.keySet().iterator();
+			Iterator var3 = var1.keySet().iterator();
 			while (var3.hasNext()) {
 				SoundRelatedType2 var4 = (SoundRelatedType2) var3.next();
 				AudioProcessingUnit[] var5 = (AudioProcessingUnit[]) var1.get(var4);
@@ -382,7 +257,7 @@ public class JavaSoundBackend extends SoundBackend {
 		while (!var8) {
 			var8 = true;
 			synchronized (var1) {
-				java.util.Iterator var10 = var1.keySet().iterator();
+				Iterator var10 = var1.keySet().iterator();
 				while (var10.hasNext()) {
 					SoundRelatedType2 var11 = (SoundRelatedType2) var10.next();
 					AudioProcessingUnit[] var12 = (AudioProcessingUnit[]) var1.get(var11);
@@ -409,11 +284,98 @@ public class JavaSoundBackend extends SoundBackend {
 		}
 	}
 
-	@ObfuscatedName("ts")
-	public static class PcmPlayer {
+	@ObfuscatedName("th")
+	public class SoundSample {
 
-		// $FF: synthetic field
-		public final JavaSoundBackend this$0;
+		@ObfuscatedName("th.e")
+		public JavaSoundBackend.PcmPlayer field6863;
+
+		@ObfuscatedName("th.n")
+		public byte[] field6857;
+
+		@ObfuscatedName("th.m")
+		public byte[] field6858;
+
+		@ObfuscatedName("th.k")
+		public int field6865;
+
+		@ObfuscatedName("th.f")
+		public int field6856;
+
+		@ObfuscatedName("th.w")
+		public int field6860;
+
+		@ObfuscatedName("th.l")
+		public int field6861;
+
+		@ObfuscatedName("th.u")
+		public final float field6862;
+
+		@ObfuscatedName("th.z")
+		public final int field6859;
+
+		@ObfuscatedName("th.p")
+		public final int field6864;
+
+		public SoundSample(JavaSoundBackend.PcmPlayer arg1, int arg2, float arg3, int arg4, int arg5, boolean arg6, boolean arg7) {
+			this.field6863 = arg1;
+			this.field6857 = new byte[arg2];
+			this.field6858 = new byte[arg4 / 8];
+			this.field6860 = this.field6857.length;
+			this.field6862 = arg3;
+			this.field6859 = arg4;
+			this.field6864 = arg5;
+			this.field6856 = 0;
+			this.field6865 = 0;
+			this.field6861 = 0;
+		}
+
+		@ObfuscatedName("th.e([BIIB)V")
+		public void method8626(byte[] arg0, int arg1, int arg2) {
+			int var4 = arg1;
+			while (var4 < arg1 + arg2) {
+				this.field6857[this.field6856] = arg0[var4];
+				this.field6857[this.field6856 + 1] = arg0[var4 + 1];
+				var4 += 2;
+				this.field6856 += 2;
+				this.field6856 %= this.field6857.length;
+				this.field6860 -= 2;
+			}
+		}
+
+		@ObfuscatedName("th.n(I)I")
+		public int method8628() {
+			return this.field6860;
+		}
+	}
+
+	@ObfuscatedName("tt")
+	public class JavaSoundBackendComparator implements Comparator {
+
+		@ObfuscatedName("tt.e(Lrq;Lrq;I)I")
+		public int method8639(AudioProcessingUnit arg0, AudioProcessingUnit arg1) {
+			float var3 = arg0.method7531();
+			float var4 = arg1.method7531();
+			if (var4 > var3) {
+				return 1;
+			} else if (var4 < var3) {
+				return -1;
+			} else {
+				return 0;
+			}
+		}
+
+		public int compare(Object arg0, Object arg1) {
+			return this.method8639((AudioProcessingUnit) arg0, (AudioProcessingUnit) arg1);
+		}
+
+		public boolean equals(Object arg0) {
+			return super.equals(arg0);
+		}
+	}
+
+	@ObfuscatedName("ts")
+	public class PcmPlayer {
 
 		@ObfuscatedName("ts.e")
 		public boolean field6869;
@@ -440,20 +402,15 @@ public class JavaSoundBackend extends SoundBackend {
 		public float field6875;
 
 		@ObfuscatedName("ts.z")
-		public int field6873;
+		public int field6873 = 16;
 
 		@ObfuscatedName("ts.p")
-		public int field6877;
+		public int field6877 = 2;
 
 		@ObfuscatedName("ts.d")
-		public List field6878;
+		public List field6878 = new ArrayList();
 
-		// line 340
-		public PcmPlayer(JavaSoundBackend arg0, float arg1, int arg2) {
-			this.this$0 = arg0;
-			this.field6873 = 16;
-			this.field6877 = 2;
-			this.field6878 = new ArrayList();
+		public PcmPlayer(float arg1, int arg2) {
 			if (!this.field6869) {
 				this.field6875 = arg1;
 				if (this.field6873 > 16) {
@@ -462,7 +419,7 @@ public class JavaSoundBackend extends SoundBackend {
 				try {
 					javax.sound.sampled.AudioFormat var4 = new javax.sound.sampled.AudioFormat(this.field6875, this.field6873, this.field6877, true, false);
 					try {
-						DataLine.Info var5 = new DataLine.Info(SourceDataLine.class, var4, arg2);
+						Info var5 = new Info(SourceDataLine.class, var4, arg2);
 						this.field6871 = (SourceDataLine) AudioSystem.getLine(var5);
 					} catch (IllegalArgumentException var8) {
 						return;
@@ -513,7 +470,7 @@ public class JavaSoundBackend extends SoundBackend {
 				boolean var5 = false;
 				Iterator var6 = this.field6878.iterator();
 				while (var6.hasNext()) {
-					SoundSample var7 = (SoundSample) var6.next();
+					JavaSoundBackend.SoundSample var7 = (JavaSoundBackend.SoundSample) var6.next();
 					int var8 = var7.field6857.length - var7.field6860;
 					if (this.field6875 != var7.field6862) {
 						int var9 = (int) (this.field6875 / var7.field6862 * (float) var8);
@@ -532,13 +489,13 @@ public class JavaSoundBackend extends SoundBackend {
 					int var10 = this.field6873 / 8;
 					Iterator var11 = this.field6878.iterator();
 					while (true) {
-						SoundSample var12;
+						JavaSoundBackend.SoundSample var12;
 						do {
 							if (!var11.hasNext()) {
 								this.field6868 = var2;
 								return;
 							}
-							var12 = (SoundSample) var11.next();
+							var12 = (JavaSoundBackend.SoundSample) var11.next();
 						} while (var12.field6861 < var2);
 						int var13 = this.field6874;
 						int var14 = 0;
@@ -625,83 +582,89 @@ public class JavaSoundBackend extends SoundBackend {
 		}
 
 		@ObfuscatedName("ts.k(Lth;B)V")
-		public void method8649(SoundSample arg0) {
+		public void method8649(JavaSoundBackend.SoundSample arg0) {
 			this.field6878.add(arg0);
 		}
 
 		@ObfuscatedName("ts.f(Lth;I)V")
-		public void method8650(SoundSample arg0) {
+		public void method8650(JavaSoundBackend.SoundSample arg0) {
 			this.field6878.remove(arg0);
 		}
 	}
 
-	@ObfuscatedName("th")
-	public static class SoundSample {
+	@ObfuscatedName("tp")
+	public class JavaSoundBackend_Task1 implements Runnable {
 
-		// $FF: synthetic field
-		public final JavaSoundBackend this$0;
-
-		@ObfuscatedName("th.e")
-		public PcmPlayer field6863;
-
-		@ObfuscatedName("th.n")
-		public byte[] field6857;
-
-		@ObfuscatedName("th.m")
-		public byte[] field6858;
-
-		@ObfuscatedName("th.k")
-		public int field6865;
-
-		@ObfuscatedName("th.f")
-		public int field6856;
-
-		@ObfuscatedName("th.w")
-		public int field6860;
-
-		@ObfuscatedName("th.l")
-		public int field6861;
-
-		@ObfuscatedName("th.u")
-		public final float field6862;
-
-		@ObfuscatedName("th.z")
-		public final int field6859;
-
-		@ObfuscatedName("th.p")
-		public final int field6864;
-
-		// line 524
-		public SoundSample(JavaSoundBackend arg0, PcmPlayer arg1, int arg2, float arg3, int arg4, int arg5, boolean arg6, boolean arg7) {
-			this.this$0 = arg0;
-			this.field6863 = arg1;
-			this.field6857 = new byte[arg2];
-			this.field6858 = new byte[arg4 / 8];
-			this.field6860 = this.field6857.length;
-			this.field6862 = arg3;
-			this.field6859 = arg4;
-			this.field6864 = arg5;
-			this.field6856 = 0;
-			this.field6865 = 0;
-			this.field6861 = 0;
-		}
-
-		@ObfuscatedName("th.e([BIIB)V")
-		public void method8626(byte[] arg0, int arg1, int arg2) {
-			int var4 = arg1;
-			while (var4 < arg1 + arg2) {
-				this.field6857[this.field6856] = arg0[var4];
-				this.field6857[this.field6856 + 1] = arg0[var4 + 1];
-				var4 += 2;
-				this.field6856 += 2;
-				this.field6856 %= this.field6857.length;
-				this.field6860 -= 2;
+		public void run() {
+			label54: while (true) {
+				try {
+					if (!JavaSoundBackend.this.field10690) {
+						Iterator var1 = JavaSoundBackend.this.field10693.iterator();
+						while (var1.hasNext()) {
+							JavaSoundBackend.PcmPlayer var2 = (JavaSoundBackend.PcmPlayer) var1.next();
+							var2.method8646();
+						}
+						HashMap var3 = JavaSoundBackend.this.method16804();
+						Iterator var4 = var3.keySet().iterator();
+						while (true) {
+							SoundRelatedType2 var5;
+							do {
+								if (!var4.hasNext()) {
+									Iterator var8 = JavaSoundBackend.this.field10693.iterator();
+									while (var8.hasNext()) {
+										JavaSoundBackend.PcmPlayer var9 = (JavaSoundBackend.PcmPlayer) var8.next();
+										var9.method8647();
+									}
+									PreciseSleep.sleep(6L);
+									continue label54;
+								}
+								var5 = (SoundRelatedType2) var4.next();
+							} while (var5.field4856);
+							AudioProcessingUnit[] var6 = (AudioProcessingUnit[]) var3.get(var5);
+							for (int var7 = 0; var7 < var6.length; var7++) {
+								var6[var7].method7507();
+							}
+						}
+					}
+				} catch (Exception var11) {
+					JagException.report(null, (Throwable) var11);
+					var11.printStackTrace();
+				}
+				return;
 			}
 		}
+	}
 
-		@ObfuscatedName("th.n(I)I")
-		public int method8628() {
-			return this.field6860;
+	@ObfuscatedName("tv")
+	public class JavaSoundBackend_Task2 implements Runnable {
+
+		public void run() {
+			label36: while (true) {
+				try {
+					if (!JavaSoundBackend.this.field10690) {
+						HashMap var1 = JavaSoundBackend.this.method16804();
+						Iterator var2 = var1.keySet().iterator();
+						while (true) {
+							SoundRelatedType2 var3;
+							do {
+								if (!var2.hasNext()) {
+									PreciseSleep.sleep(10L);
+									continue label36;
+								}
+								var3 = (SoundRelatedType2) var2.next();
+							} while (var3.field4856);
+							AudioProcessingUnit[] var4 = (AudioProcessingUnit[]) var1.get(var3);
+							for (int var5 = 0; var5 < var4.length; var5++) {
+								var4[var5].method7504();
+							}
+						}
+					}
+				} catch (Exception var7) {
+					JagException.report(null, (Throwable) var7);
+					var7.printStackTrace();
+				}
+				return;
+			}
 		}
 	}
 }

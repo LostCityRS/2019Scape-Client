@@ -1,6 +1,11 @@
 package com.jagex.graphics.gl.effects;
 
-import com.jagex.graphics.gl.*;
+import com.jagex.graphics.gl.GlCubeTexture;
+import com.jagex.graphics.gl.GlProgram;
+import com.jagex.graphics.gl.GlShader;
+import com.jagex.graphics.gl.GlTexture;
+import com.jagex.graphics.gl.GlToolkit;
+import com.jagex.graphics.gl.GlWaterRelated;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 

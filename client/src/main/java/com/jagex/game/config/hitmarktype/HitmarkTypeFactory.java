@@ -13,8 +13,8 @@ public abstract class HitmarkTypeFactory {
 	@ObfuscatedName("vl.n")
 	public final SoftLruHashTable spriteCache = new SoftLruHashTable(20);
 
-	public HitmarkTypeFactory(Js5 configClient) {
-		this.configClient = configClient;
+	public HitmarkTypeFactory(Js5 arg0) {
+		this.configClient = arg0;
 	}
 
 	@ObfuscatedName("vl.e(I)V")

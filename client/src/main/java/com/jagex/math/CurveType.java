@@ -57,7 +57,7 @@ public class CurveType implements SerializableEnum {
 
 	@ObfuscatedName("fg.m(II)Lcy;")
 	public static CurveType method2995(int arg0) {
-		CurveType var1 = (CurveType) SerializableEnums.decode(method2582(), arg0);
+		CurveType var1 = (CurveType) SerializableEnums.decode((SerializableEnum[]) method2582(), arg0);
 		if (var1 == null) {
 			var1 = field1253;
 		}

@@ -27,9 +27,9 @@ public class MSITypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aox.v(II)V")
-	public void cacheClean(int num) {
-		super.cacheClean(num);
-		((MSITypeFactory) this.factory).cacheClean(num);
+	public void cacheClean(int arg0) {
+		super.cacheClean(arg0);
+		((MSITypeFactory) this.factory).cacheClean(arg0);
 	}
 
 	@ObfuscatedName("aox.o(I)V")

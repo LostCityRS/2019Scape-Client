@@ -28,7 +28,7 @@ public class GlCubeTexture extends GlTexture {
 		this.field1006.method15777(this);
 		if (arg4) {
 			for (int var7 = 0; var7 < 6; var7++) {
-				method1109(var7 + 34069, GlToolkit.method15799(this.field1002, this.field1010), arg3, arg3, 32993, this.field1006.field9862, arg5[var7]);
+				GlTexture.method1109(var7 + 34069, GlToolkit.method15799(this.field1002, this.field1010), arg3, arg3, 32993, this.field1006.field9862, arg5[var7]);
 			}
 		} else {
 			for (int var8 = 0; var8 < 6; var8++) {

@@ -4,12 +4,13 @@ import com.jagex.game.client.BasicMouseEvent;
 import com.jagex.game.client.JavaMouse;
 import com.jagex.game.client.MouseEvent;
 import deob.ObfuscatedName;
+import java.awt.Component;
 
 @ObfuscatedName("uj")
 public abstract class Mouse {
 
 	@ObfuscatedName("pm.e(Ljava/awt/Component;ZI)Luj;")
-	public static Mouse create(java.awt.Component arg0, boolean arg1) {
+	public static Mouse create(Component arg0, boolean arg1) {
 		return new JavaMouse(arg0, arg1);
 	}
 

@@ -3,7 +3,7 @@ package com.jagex.core.utils;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qd")
-public final class PrioritizedCacheEntry implements Comparable {
+public class PrioritizedCacheEntry implements Comparable {
 
 	@ObfuscatedName("qd.e")
 	public Object field4625;

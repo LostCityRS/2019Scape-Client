@@ -44,7 +44,7 @@ public class TransformType implements SerializableEnum {
 
 	@ObfuscatedName("aqz.m(IS)Ldt;")
 	public static TransformType method19197(int arg0) {
-		TransformType var1 = (TransformType) SerializableEnums.decode(method6986(), arg0);
+		TransformType var1 = (TransformType) SerializableEnums.decode((SerializableEnum[]) method6986(), arg0);
 		if (var1 == null) {
 			var1 = field1296;
 		}

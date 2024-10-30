@@ -42,80 +42,80 @@ public class IDKType implements ConfigType {
 	@ObfuscatedName("jv.d")
 	public static final int[] field2959 = new int[] { 7, 8, 9, 10, 11, 12, 13, 15 };
 
-	public IDKType(int id, Js5 configClient) {
-		this.configClient = configClient;
+	public IDKType(int arg0, Js5 arg1) {
+		this.configClient = arg1;
 	}
 
 	@ObfuscatedName("jv.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("jv.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			buf.g1();
-		} else if (code == 2) {
-			int var3 = buf.g1();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			arg0.g1();
+		} else if (arg1 == 2) {
+			int var3 = arg0.g1();
 			this.models = new int[var3];
 			for (int var4 = 0; var4 < var3; var4++) {
-				this.models[var4] = buf.gSmart2or4s();
+				this.models[var4] = arg0.gSmart2or4s();
 			}
-		} else if (code != 3) {
-			if (code == 40) {
-				int length = buf.g1();
-				this.recol_s = new short[length];
-				this.recol_d = new short[length];
-				for (int index = 0; index < length; index++) {
-					this.recol_s[index] = (short) buf.g2();
-					this.recol_d[index] = (short) buf.g2();
+		} else if (arg1 != 3) {
+			if (arg1 == 40) {
+				int var5 = arg0.g1();
+				this.recol_s = new short[var5];
+				this.recol_d = new short[var5];
+				for (int var6 = 0; var6 < var5; var6++) {
+					this.recol_s[var6] = (short) arg0.g2();
+					this.recol_d[var6] = (short) arg0.g2();
 				}
-			} else if (code == 41) {
-				int length = buf.g1();
-				this.retex_s = new short[length];
-				this.retex_d = new short[length];
-				for (int index = 0; index < length; index++) {
-					this.retex_s[index] = (short) buf.g2();
-					this.retex_d[index] = (short) buf.g2();
+			} else if (arg1 == 41) {
+				int var7 = arg0.g1();
+				this.retex_s = new short[var7];
+				this.retex_d = new short[var7];
+				for (int var8 = 0; var8 < var7; var8++) {
+					this.retex_s[var8] = (short) arg0.g2();
+					this.retex_d[var8] = (short) arg0.g2();
 				}
-			} else if (code == 44) {
-				int var9 = buf.g2();
-				int length = 0;
+			} else if (arg1 == 44) {
+				int var9 = arg0.g2();
+				int var10 = 0;
 				for (int var11 = var9; var11 > 0; var11 >>= 0x1) {
-					length++;
+					var10++;
 				}
-				this.recolindices = new byte[length];
+				this.recolindices = new byte[var10];
 				byte var12 = 0;
-				for (int index = 0; index < length; index++) {
-					if ((var9 & 0x1 << index) > 0) {
-						this.recolindices[index] = var12++;
+				for (int var13 = 0; var13 < var10; var13++) {
+					if ((var9 & 0x1 << var13) > 0) {
+						this.recolindices[var13] = var12++;
 					} else {
-						this.recolindices[index] = -1;
+						this.recolindices[var13] = -1;
 					}
 				}
-			} else if (code == 45) {
-				int var14 = buf.g2();
-				int length = 0;
+			} else if (arg1 == 45) {
+				int var14 = arg0.g2();
+				int var15 = 0;
 				for (int var16 = var14; var16 > 0; var16 >>= 0x1) {
-					length++;
+					var15++;
 				}
-				this.retexindices = new byte[length];
+				this.retexindices = new byte[var15];
 				byte var17 = 0;
-				for (int index = 0; index < length; index++) {
-					if ((var14 & 0x1 << index) > 0) {
-						this.retexindices[index] = var17++;
+				for (int var18 = 0; var18 < var15; var18++) {
+					if ((var14 & 0x1 << var18) > 0) {
+						this.retexindices[var18] = var17++;
 					} else {
-						this.retexindices[index] = -1;
+						this.retexindices[var18] = -1;
 					}
 				}
-			} else if (code >= 60 && code < 70) {
-				this.heads[code - 60] = buf.gSmart2or4s();
+			} else if (arg1 >= 60 && arg1 < 70) {
+				this.heads[arg1 - 60] = arg0.gSmart2or4s();
 			}
 		}
 	}
@@ -129,15 +129,15 @@ public class IDKType implements ConfigType {
 		if (this.models == null) {
 			return true;
 		}
-		boolean ready = true;
+		boolean var1 = true;
 		Js5 var2 = this.configClient;
 		synchronized (this.configClient) {
-			for (int index = 0; index < this.models.length; index++) {
-				if (!this.configClient.requestdownload(this.models[index], 0)) {
-					ready = false;
+			for (int var3 = 0; var3 < this.models.length; var3++) {
+				if (!this.configClient.requestdownload(this.models[var3], 0)) {
+					var1 = false;
 				}
 			}
-			return ready;
+			return var1;
 		}
 	}
 

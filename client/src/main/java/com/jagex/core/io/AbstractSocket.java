@@ -1,7 +1,6 @@
 package com.jagex.core.io;
 
 import deob.ObfuscatedName;
-
 import java.io.IOException;
 import java.net.Socket;
 
@@ -15,11 +14,11 @@ public abstract class AbstractSocket {
 	public int port;
 
 	@ObfuscatedName("mz.e(Ljava/lang/String;II)Labx;")
-	public static AbstractSocket createProxySocket(String host, int port) {
-		ProxySocket socket = new ProxySocket();
-		socket.host = host;
-		socket.port = port;
-		return socket;
+	public static AbstractSocket createProxySocket(String arg0, int arg1) {
+		ProxySocket var2 = new ProxySocket();
+		var2.host = arg0;
+		var2.port = arg1;
+		return var2;
 	}
 
 	@ObfuscatedName("abx.m(I)Ljava/net/Socket;")

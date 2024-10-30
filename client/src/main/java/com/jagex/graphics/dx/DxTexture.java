@@ -8,7 +8,6 @@ import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
 import jagdx.IDirect3DTexture;
-
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("aiy")

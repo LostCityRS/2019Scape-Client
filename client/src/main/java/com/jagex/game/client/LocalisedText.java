@@ -2,7 +2,6 @@ package com.jagex.game.client;
 
 import com.jagex.core.constants.Language;
 import deob.ObfuscatedName;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -540,16 +539,16 @@ public class LocalisedText {
 	@ObfuscatedName("acz.fo")
 	public final Map texts = new HashMap(7);
 
-	public LocalisedText(String english, String german, String french, String portuguese, String spanish) {
-		this.texts.put(Language.EN, english);
-		this.texts.put(Language.DE, german);
-		this.texts.put(Language.FR, french);
-		this.texts.put(Language.PT, portuguese);
-		this.texts.put(Language.ES_MX, spanish);
+	public LocalisedText(String arg0, String arg1, String arg2, String arg3, String arg4) {
+		this.texts.put(Language.EN, arg0);
+		this.texts.put(Language.DE, arg1);
+		this.texts.put(Language.FR, arg2);
+		this.texts.put(Language.PT, arg3);
+		this.texts.put(Language.ES_MX, arg4);
 	}
 
 	@ObfuscatedName("acz.e(Lzt;B)Ljava/lang/String;")
-	public String forLang(Language language) {
-		return (String) this.texts.get(language);
+	public String forLang(Language arg0) {
+		return (String) this.texts.get(arg0);
 	}
 }

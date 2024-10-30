@@ -39,7 +39,6 @@ public abstract class CutsceneAction {
 				break;
 			case 6:
 				var3 = new EntityRouteCutsceneAction(arg0);
-				break;
 			case 7:
 			case 17:
 			case 18:
@@ -107,7 +106,6 @@ public abstract class CutsceneAction {
 				break;
 			case 30:
 				var3 = new SubtitleCutsceneAction(arg0);
-				break;
 		}
 		return var3;
 	}

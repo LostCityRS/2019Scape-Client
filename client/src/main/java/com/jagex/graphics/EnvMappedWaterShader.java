@@ -105,11 +105,11 @@ public class EnvMappedWaterShader extends WaterShader {
 	@ObfuscatedName("aqe.bq")
 	public GpuProgram envMappedWaterProgram;
 
-	public EnvMappedWaterShader(GpuToolkit arg0, GpuWaterRelated arg1, boolean isEnvMappedSea) throws ShaderException {
+	public EnvMappedWaterShader(GpuToolkit arg0, GpuWaterRelated arg1, boolean arg2) throws ShaderException {
 		super(arg0);
 		new Matrix4x4();
 		this.field12122 = arg1;
-		this.isEnvMappedSea = isEnvMappedSea;
+		this.isEnvMappedSea = arg2;
 		if (arg0.hasVertexShader() && arg0.hasFragmentShader()) {
 			this.field12131 = this.createShaderProgram("EnvMappedWater");
 		} else {

@@ -8,8 +8,8 @@ import deob.ObfuscatedName;
 public interface VariableTypeProvider {
 
 	@ObfuscatedName("em.l(IB)Lkh;")
-	VarBitType getVarBitType(int id);
+	VarBitType getVarBitType(int arg0);
 
 	@ObfuscatedName("em.w(Lqe;II)Lec;")
-	VarType getVarType(VarDomainType domainType, int id);
+	VarType getVarType(VarDomainType arg0, int arg1);
 }

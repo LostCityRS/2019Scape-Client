@@ -1,5 +1,6 @@
 package com.jagex.game.world.entity;
 
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.Model;
@@ -26,10 +27,10 @@ public class DynamicWallDecorEntity extends WallDecorLayerEntity implements Loca
 	@ObfuscatedName("ajh.o")
 	public boolean field11177 = true;
 
-	public DynamicWallDecorEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int arg4, int occludeLevel, int arg6, int arg7, int arg8, boolean underwater, int arg10, int arg11, int shape, int angle, int arg14, int arg15, ScaleRotTrans scaleRotTrans) {
-		super(scene, arg6, arg7, arg8, arg4, occludeLevel, arg10, arg11, scaleRotTrans);
-		this.loc = new DynamicLoc(toolkit, locTypeList, locType, shape, angle, occludeLevel, this, underwater, arg14, arg15);
-		this.active = locType.active != 0 && !underwater;
+	public DynamicWallDecorEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, ScaleRotTrans arg16) {
+		super(arg0, arg6, arg7, arg8, arg4, arg5, arg10, arg11, arg16);
+		this.loc = new DynamicLoc(arg1, arg2, arg3, arg12, arg13, arg5, this, arg9, arg14, arg15);
+		this.active = arg3.active != 0 && !arg9;
 		this.createEntityBounds(1);
 	}
 
@@ -44,7 +45,7 @@ public class DynamicWallDecorEntity extends WallDecorLayerEntity implements Loca
 	}
 
 	@ObfuscatedName("ajh.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Toolkit toolkit) {
+	public EntityBounds method17371(Toolkit arg0) {
 		return this.field11176;
 	}
 
@@ -64,29 +65,29 @@ public class DynamicWallDecorEntity extends WallDecorLayerEntity implements Loca
 	}
 
 	@ObfuscatedName("ajh.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Toolkit toolkit) {
-		Model var2 = this.loc.getModel(toolkit, 2048, false, true);
+	public PickableEntity draw(Toolkit arg0) {
+		Model var2 = this.loc.getModel(arg0, 2048, false, true);
 		if (var2 == null) {
 			return null;
 		}
-		Matrix4x3 var3 = toolkit.method2209();
+		Matrix4x3 var3 = arg0.method2209();
 		var3.setTo(this.method10533());
 		var3.translate((float) this.field12452, 0.0F, (float) this.field12451);
 		ScaleRotTrans var4 = this.getTransform();
 		PickableEntity var5 = PickableEntity.getPickableEntity(this.active);
 		int var6 = (int) var4.trans.x >> 9;
 		int var7 = (int) var4.trans.z >> 9;
-		this.loc.method8239(toolkit, var2, var3, var6, var6, var7, var7, true);
+		this.loc.method8239(arg0, var2, var3, var6, var6, var7, var7, true);
 		LocType var8 = this.loc.getLocType();
 		if (var8.clickbox == null) {
 			var2.draw(var3, this.entityBounds[0], 0);
 		} else {
 			var2.draw(var3, null, 0);
-			toolkit.method2193(var3, this.entityBounds[0], var8.clickbox);
+			arg0.method2193(var3, this.entityBounds[0], var8.clickbox);
 		}
 		if (this.loc.field6680 != null) {
 			ParticleList var9 = this.loc.field6680.method9965();
-			toolkit.drawParticles(var9);
+			arg0.drawParticles(var9);
 		}
 		this.field11177 = var2.method1731() || this.loc.field6680 != null;
 		if (this.field11176 == null) {
@@ -98,8 +99,8 @@ public class DynamicWallDecorEntity extends WallDecorLayerEntity implements Loca
 	}
 
 	@ObfuscatedName("ajh.fw(Ldh;I)V")
-	public void method17373(Toolkit toolkit) {
-		Model var2 = this.loc.getModel(toolkit, 262144, false, true);
+	public void method17373(Toolkit arg0) {
+		Model var2 = this.loc.getModel(arg0, 262144, false, true);
 		if (var2 == null) {
 			return;
 		}
@@ -107,17 +108,17 @@ public class DynamicWallDecorEntity extends WallDecorLayerEntity implements Loca
 		ScaleRotTrans var4 = this.getTransform();
 		int var5 = (int) var4.trans.x >> 9;
 		int var6 = (int) var4.trans.z >> 9;
-		this.loc.method8239(toolkit, var2, var3, var5, var5, var6, var6, false);
+		this.loc.method8239(arg0, var2, var3, var5, var5, var6, var6, false);
 	}
 
 	@ObfuscatedName("ajh.fa(Ldh;IIB)Z")
-	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
+	public boolean method17375(Toolkit arg0, int arg1, int arg2) {
 		LocType var4 = this.loc.getLocType();
 		if (var4.clickbox == null) {
-			Model var5 = this.loc.getModel(toolkit, 131072, false, false);
+			Model var5 = this.loc.getModel(arg0, 131072, false, false);
 			return var5 == null ? false : var5.method1725(arg1, arg2, this.method10533(), false, 0);
 		} else {
-			return toolkit.pick(arg1, arg2, this.method10533(), var4.clickbox);
+			return arg0.pick(arg1, arg2, this.method10533(), var4.clickbox);
 		}
 	}
 

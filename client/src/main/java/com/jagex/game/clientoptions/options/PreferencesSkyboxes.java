@@ -7,12 +7,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ane")
 public class PreferencesSkyboxes extends Preference {
 
-	public PreferencesSkyboxes(ClientOptions options) {
-		super(options);
+	public PreferencesSkyboxes(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesSkyboxes(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesSkyboxes(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("ane.o(I)V")
@@ -33,13 +33,13 @@ public class PreferencesSkyboxes extends Preference {
 	}
 
 	@ObfuscatedName("ane.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return Toolkit.method723(this.options.displayMode.getValue()) ? 1 : 3;
 	}
 
 	@ObfuscatedName("ane.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("ane.y(I)I")

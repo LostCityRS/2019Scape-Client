@@ -5,7 +5,7 @@ import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahf")
-public final class FixedFunctionParticleShader extends ParticleShader {
+public class FixedFunctionParticleShader extends ParticleShader {
 
 	public FixedFunctionParticleShader(GpuToolkit arg0) {
 		super(arg0);

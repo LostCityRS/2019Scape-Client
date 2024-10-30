@@ -1,7 +1,7 @@
 package com.jagex.graphics.particles;
 
-import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.client.MovingParticle;
 import com.jagex.game.config.ParticleEffectorType;
@@ -10,7 +10,6 @@ import com.jagex.game.config.ParticleEmitterTypeList;
 import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;

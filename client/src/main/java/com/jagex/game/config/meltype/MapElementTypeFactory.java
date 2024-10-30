@@ -14,8 +14,8 @@ public abstract class MapElementTypeFactory implements ConfigTypeFactory {
 	@ObfuscatedName("hh.n")
 	public SoftLruHashTable elementCache;
 
-	public MapElementTypeFactory(Js5 configClient, int size) {
-		this.configClient = configClient;
-		this.elementCache = new SoftLruHashTable(size);
+	public MapElementTypeFactory(Js5 arg0, int arg1) {
+		this.configClient = arg0;
+		this.elementCache = new SoftLruHashTable(arg1);
 	}
 }

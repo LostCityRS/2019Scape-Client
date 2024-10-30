@@ -41,8 +41,8 @@ public class TextureFormat {
 	@ObfuscatedName("ck.c")
 	public final int id;
 
-	public TextureFormat(int index, int id) {
-		this.index = index;
-		this.id = id;
+	public TextureFormat(int arg0, int arg1) {
+		this.index = arg0;
+		this.id = arg1;
 	}
 }

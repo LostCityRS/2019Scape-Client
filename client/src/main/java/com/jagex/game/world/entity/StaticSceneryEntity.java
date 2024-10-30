@@ -2,6 +2,7 @@ package com.jagex.game.world.entity;
 
 import com.jagex.core.datastruct.Pair;
 import com.jagex.game.client.HardShadow;
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.FloorModel;
@@ -32,7 +33,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	public EntityBounds field11148;
 
 	@ObfuscatedName("ajv.s")
-	public final int id;
+	public final int field11715;
 
 	@ObfuscatedName("ajv.y")
 	public final byte shape;
@@ -53,53 +54,44 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	public boolean hasHardShadow;
 
 	@ObfuscatedName("ajv.g")
-	public final boolean field12470;
+	public final boolean raised;
 
 	@ObfuscatedName("ajv.i")
 	public int field11138;
 
-	public StaticSceneryEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, int shape, int angle, boolean arg16, boolean arg17, ScaleRotTrans scaleRotTrans) {
-		super(scene, level, occludeLevel, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, locType.raiseobject == 1, method14062(shape, angle), scaleRotTrans);
-		this.locTypeList = locTypeList;
-		this.id = locType.id;
-		this.occludeLevel = (byte) occludeLevel;
-		this.underwater = underwater;
-		this.shape = (byte) shape;
-		this.angle = (byte) angle;
-		this.active = locType.active != 0 && !underwater;
+	public StaticSceneryEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, int arg12, int arg13, int arg14, int arg15, boolean arg16, boolean arg17, ScaleRotTrans arg18) {
+		super(arg0, arg4, arg5, arg6, arg7, arg8, arg10, arg11, arg12, arg13, arg3.raiseobject == 1, method14062(arg14, arg15), arg18);
+		this.locTypeList = arg2;
+		this.field11715 = arg3.id;
+		this.occludeLevel = (byte) arg5;
+		this.underwater = arg9;
+		this.shape = (byte) arg14;
+		this.angle = (byte) arg15;
+		this.active = arg3.active != 0 && !arg9;
 		this.field11139 = arg16;
-		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
-		this.field12470 = arg17;
-		this.field11138 = y;
+		this.hasHardShadow = arg1.supportsHardShadows() && arg3.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
+		this.raised = arg17;
+		this.field11138 = arg7;
 		int var20 = 2048;
 		if (this.field11139) {
 			var20 |= 0x10000;
 		}
-		if (locType.antimacro) {
+		if (arg3.antimacro) {
 			var20 |= 0x80000;
 		}
-		Pair var21 = this.method17400(toolkit, var20, this.hasHardShadow);
+		Pair var21 = this.method17400(arg1, var20, this.hasHardShadow);
 		if (var21 != null) {
 			this.model = (Model) var21.first;
 			this.shadow = (HardShadow) var21.second;
-			if (this.field11139 || locType.antimacro) {
+			if (this.field11139 || arg3.antimacro) {
 				this.model = this.model.method1773((byte) 0, var20, false);
-				if (locType.antimacro) {
+				if (arg3.antimacro) {
 					LocTint var22 = Client.world.method7722();
 					this.model.method1745(var22.field5015, var22.field5013, var22.field5014, var22.field5012);
 				}
 			}
 		}
 		this.createEntityBounds(1);
-	}
-
-	@ObfuscatedName("zg.bz(III)B")
-	public static byte method14062(int arg0, int arg1) {
-		if (LocShape.WALL_DIAGONAL.id == arg0) {
-			return (byte) ((arg1 & 0x1) == 0 ? 1 : 2);
-		} else {
-			return 0;
-		}
 	}
 
 	@ObfuscatedName("ajv.bu(B)Z")
@@ -114,6 +106,15 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	@ObfuscatedName("ajv.bw(S)Z")
 	public boolean method16489() {
 		return this.model == null ? false : this.model.method1731();
+	}
+
+	@ObfuscatedName("zg.bz(III)B")
+	public static byte method14062(int arg0, int arg1) {
+		if (LocShape.WALL_DIAGONAL.id == arg0) {
+			return (byte) ((arg1 & 0x1) == 0 ? 1 : 2);
+		} else {
+			return 0;
+		}
 	}
 
 	@ObfuscatedName("ajv.by(B)I")
@@ -133,7 +134,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 
 	@ObfuscatedName("ajv.bg(Ldh;IZI)Labg;")
 	public Pair method17400(Toolkit arg0, int arg1, boolean arg2) {
-		LocType var4 = (LocType) this.locTypeList.list(this.id);
+		LocType var4 = (LocType) this.locTypeList.list(this.field11715);
 		FloorModel var5;
 		FloorModel var6;
 		if (this.underwater) {
@@ -152,42 +153,42 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Toolkit toolkit) {
+	public EntityBounds method17371(Toolkit arg0) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11148 == null) {
-			this.field11148 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17399(toolkit, 0));
+			this.field11148 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17399(arg0, 0));
 		}
 		return this.field11148;
 	}
 
 	@ObfuscatedName("ajv.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Toolkit toolkit) {
+	public PickableEntity draw(Toolkit arg0) {
 		if (this.model == null) {
 			return null;
 		}
 		Matrix4x3 var2 = this.method10533();
 		PickableEntity var3 = PickableEntity.getPickableEntity(this.active);
-		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.field11715)).clickbox;
 		if (var4 == null) {
 			this.model.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.model.draw(var2, null, 0);
-			toolkit.method2193(var2, this.entityBounds[0], var4);
+			arg0.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajv.fw(Ldh;I)V")
-	public void method17373(Toolkit toolkit) {
+	public void method17373(Toolkit arg0) {
 	}
 
 	@ObfuscatedName("ajv.fa(Ldh;IIB)Z")
-	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
-		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
+	public boolean method17375(Toolkit arg0, int arg1, int arg2) {
+		Cuboid var4 = ((LocType) this.locTypeList.list(this.field11715)).clickbox;
 		if (var4 != null) {
-			return toolkit.pick(arg1, arg2, this.method10533(), var4);
+			return arg0.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17399(toolkit, 131072);
+		Model var5 = this.method17399(arg0, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -202,14 +203,14 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 	}
 
 	@ObfuscatedName("ajv.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
-		if (entity instanceof StaticWallEntity) {
-			StaticWallEntity var7 = (StaticWallEntity) entity;
+	public void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+		if (arg1 instanceof StaticWallEntity) {
+			StaticWallEntity var7 = (StaticWallEntity) arg1;
 			if (this.model != null && var7.model != null) {
 				this.model.method1686(var7.model, arg2, arg3, arg4, arg5);
 			}
-		} else if (entity instanceof StaticSceneryEntity) {
-			StaticSceneryEntity var8 = (StaticSceneryEntity) entity;
+		} else if (arg1 instanceof StaticSceneryEntity) {
+			StaticSceneryEntity var8 = (StaticSceneryEntity) arg1;
 			if (this.model != null && var8.model != null) {
 				this.model.method1686(var8.model, arg2, arg3, arg4, arg5);
 			}
@@ -226,7 +227,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 
 	@ObfuscatedName("ajv.e(I)I")
 	public int getId() {
-		return this.id;
+		return this.field11715;
 	}
 
 	@ObfuscatedName("ajv.n(I)I")
@@ -248,7 +249,7 @@ public class StaticSceneryEntity extends PrimaryLayerEntity implements Location 
 
 	@ObfuscatedName("ajv.w(B)Z")
 	public boolean method8207() {
-		return this.field12470;
+		return this.raised;
 	}
 
 	@ObfuscatedName("ajv.f(I)Z")

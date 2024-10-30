@@ -2,7 +2,12 @@ package com.jagex.graphics.gl;
 
 import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.*;
+import com.jagex.graphics.AlphaMode;
+import com.jagex.graphics.MaterialRaw;
+import com.jagex.graphics.TextureFormat;
+import com.jagex.graphics.TextureList;
+import com.jagex.graphics.TextureRelated1;
+import com.jagex.graphics.TextureRelated2;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ca")

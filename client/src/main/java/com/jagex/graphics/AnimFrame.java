@@ -68,7 +68,7 @@ public class AnimFrame {
 			int var7 = 0;
 			int var8 = -1;
 			int var9 = -1;
-			var4.pos = (var3.pos + var6);
+			var4.pos = var3.pos + var6;
 			for (int var10 = 0; var10 < var6; var10++) {
 				int var11 = this.field1628.field11314[var10];
 				if (var11 == 0) {

@@ -3,7 +3,11 @@ package com.jagex.game.camera;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.GameShell;
 import com.jagex.graphics.camera.Camera;
-import com.jagex.math.*;
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Quaternion;
+import com.jagex.math.Spline;
+import com.jagex.math.Vector3;
+import com.jagex.math.Vector3i;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ano")
@@ -58,7 +62,7 @@ public abstract class LookatSpline extends Lookat {
 		Spline var2 = this.field11872[this.field11870];
 		if (this.field11869[this.field11870] > 0.0F) {
 			if (this.field11869[this.field11870] >= arg0) {
-				this.field11869[this.field11870] -= arg0;
+				this.field11869[this.field11870 * 1336623913 * 853149977] -= arg0;
 				return;
 			}
 			arg0 -= this.field11869[this.field11870];
@@ -151,18 +155,18 @@ public abstract class LookatSpline extends Lookat {
 	}
 
 	@ObfuscatedName("ano.w(Lalw;I)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		this.field11873 = 0.0F;
 		this.field11871 = 0.0F;
 		this.field11870 = 0;
-		int var2 = buf.g1();
+		int var2 = arg0.g1();
 		this.field11872 = new Spline[var2];
 		this.field11869 = new float[var2];
 		for (int var3 = 0; var3 < var2; var3++) {
-			this.field11872[var3] = new Spline(buf);
-			this.field11869[var3] = buf.gFloat();
+			this.field11872[var3] = new Spline(arg0);
+			this.field11869[var3] = arg0.gFloat();
 		}
-		this.method18839(buf, var2);
+		this.method18839(arg0, var2);
 	}
 
 	@ObfuscatedName("ano.b(FFFI)F")

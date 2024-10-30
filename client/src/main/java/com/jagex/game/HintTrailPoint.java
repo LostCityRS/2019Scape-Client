@@ -1,6 +1,10 @@
 package com.jagex.game;
 
-import com.jagex.game.world.entity.*;
+import com.jagex.game.client.ScreenBoundingBox;
+import com.jagex.game.world.entity.EntityBounds;
+import com.jagex.game.world.entity.PickableEntity;
+import com.jagex.game.world.entity.Scene;
+import com.jagex.game.world.entity.Tile;
 import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
@@ -14,13 +18,13 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 	@ObfuscatedName("auu.ae")
 	public HintTrail hintTrail;
 
-	public HintTrailPoint(Scene scene, HintTrail hintTrail, int level, int occludeLevel, int x, int y, int z) {
-		super(scene, level, occludeLevel, x, y, z, x >> 9, x >> 9, z >> 9, z >> 9, false, (byte) 0);
-		this.hintTrail = hintTrail;
+	public HintTrailPoint(Scene arg0, HintTrail arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+		super(arg0, arg2, arg3, arg4, arg5, arg6, arg4 >> 9, arg4 >> 9, arg6 >> 9, arg6 >> 9, false, (byte) 0);
+		this.hintTrail = arg1;
 	}
 
 	@ObfuscatedName("auu.fa(Ldh;IIB)Z")
-	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
+	public boolean method17375(Toolkit arg0, int arg1, int arg2) {
 		return false;
 	}
 
@@ -40,7 +44,7 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("auu.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 	}
 
 	@ObfuscatedName("auu.ff(B)V")
@@ -48,11 +52,11 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("auu.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Toolkit toolkit) {
+	public PickableEntity draw(Toolkit arg0) {
 		if (this.hintTrail.model == null) {
 			return null;
 		}
-		Matrix4x3 var2 = toolkit.method2209();
+		Matrix4x3 var2 = arg0.method2209();
 		Matrix4x3 var3 = this.method10533();
 		ScaleRotTrans var4 = this.getTransform();
 		var2.setTo(var3);
@@ -65,11 +69,11 @@ public class HintTrailPoint extends PrimaryLayerEntity {
 	}
 
 	@ObfuscatedName("auu.fw(Ldh;I)V")
-	public void method17373(Toolkit toolkit) {
+	public void method17373(Toolkit arg0) {
 	}
 
 	@ObfuscatedName("auu.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Toolkit toolkit) {
+	public EntityBounds method17371(Toolkit arg0) {
 		return null;
 	}
 

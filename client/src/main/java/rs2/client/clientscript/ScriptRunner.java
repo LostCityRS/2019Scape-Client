@@ -1,22 +1,66 @@
 package rs2.client.clientscript;
 
+import com.jagex.audio.api.SubBussType;
 import com.jagex.audio.stream.Sound;
 import com.jagex.audio.stream.SoundShape;
 import com.jagex.audio.stream.SoundType;
-import com.jagex.audio.api.SubBussType;
 import com.jagex.core.constants.Language;
-import com.jagex.core.datastruct.*;
+import com.jagex.core.constants.SerializableEnum;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.IntNode;
+import com.jagex.core.datastruct.Node;
+import com.jagex.core.datastruct.SecondaryLinkedList;
+import com.jagex.core.datastruct.SerializableEnums;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
-import com.jagex.core.utils.*;
+import com.jagex.core.utils.Algorithms;
+import com.jagex.core.utils.ArrayUtil;
+import com.jagex.core.utils.Base37;
+import com.jagex.core.utils.ColourUtils;
+import com.jagex.core.utils.Cp1252;
+import com.jagex.core.utils.JagException;
+import com.jagex.core.utils.MonotonicTime;
+import com.jagex.core.utils.StringComparator;
+import com.jagex.core.utils.StringHelper;
+import com.jagex.core.utils.StringTools;
+import com.jagex.core.utils.TextUtil;
+import com.jagex.core.utils.TimeFormatter;
+import com.jagex.core.utils.TimeZones;
+import com.jagex.core.utils.WebTools;
 import com.jagex.game.ClientWorldMap;
 import com.jagex.game.MiniMap;
 import com.jagex.game.MiniMenu;
 import com.jagex.game.MiniMenuEntry;
-import com.jagex.game.camera.*;
+import com.jagex.game.camera.CameraEffect;
+import com.jagex.game.camera.LookatEntity;
+import com.jagex.game.camera.LookatMode;
+import com.jagex.game.camera.LookatOrientation;
+import com.jagex.game.camera.LookatPoint;
+import com.jagex.game.camera.LookatSpline;
+import com.jagex.game.camera.PositionSpline;
 import com.jagex.game.camera.effects.Shake;
 import com.jagex.game.camera.effects.ZTilt;
 import com.jagex.game.camera.position.PositionEntity;
-import com.jagex.game.client.*;
+import com.jagex.game.client.Browser;
+import com.jagex.game.client.ClientInvCache;
+import com.jagex.game.client.ClientMessage;
+import com.jagex.game.client.CpuProfiling;
+import com.jagex.game.client.GameShell;
+import com.jagex.game.client.Graphic;
+import com.jagex.game.client.GroupUserKind;
+import com.jagex.game.client.InterfaceAnimationNode;
+import com.jagex.game.client.JavascriptFunction;
+import com.jagex.game.client.LocalisedText;
+import com.jagex.game.client.MoveSpeed;
+import com.jagex.game.client.NativeLibraryConfig;
+import com.jagex.game.client.PrivateChatFilter;
+import com.jagex.game.client.QuestCommands;
+import com.jagex.game.client.ReceivePlayerPositions;
+import com.jagex.game.client.RuneScapeSetup;
+import com.jagex.game.client.ScreenBoundingBox;
+import com.jagex.game.client.ServerPorts;
+import com.jagex.game.client.ServerType;
+import com.jagex.game.client.TwitchCommands;
 import com.jagex.game.clientoptions.Preferences;
 import com.jagex.game.compression.huffman.WordPack;
 import com.jagex.game.config.bastype.BASType;
@@ -32,8 +76,8 @@ import com.jagex.game.config.iftype.componentproperties.ServerKeyProperties;
 import com.jagex.game.config.invtype.InvType;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.meltype.MapElementType;
-import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.npctype.NPCType;
+import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.paramtype.ParamType;
 import com.jagex.game.config.quickchatcattype.QuickChatCatType;
@@ -59,9 +103,18 @@ import com.jagex.game.load.LoadingScreenAlignmentY;
 import com.jagex.game.load.MessageBox;
 import com.jagex.game.network.ServerConnection;
 import com.jagex.game.network.protocol.ClientProt;
-import com.jagex.game.script.*;
+import com.jagex.game.script.ClientScript;
+import com.jagex.game.script.ClientScriptCommand;
+import com.jagex.game.script.ClientScriptHelpers;
+import com.jagex.game.script.ClientScriptState;
+import com.jagex.game.script.ClientTriggerType;
+import com.jagex.game.script.HookRequest;
+import com.jagex.game.script.ScriptFrame;
+import com.jagex.game.script.SubInterface;
 import com.jagex.game.script.activepointers.ActiveComponent;
 import com.jagex.game.shared.console.DeveloperConsole;
+import com.jagex.game.shared.framework.chat.ChatCrownType;
+import com.jagex.game.shared.framework.chat.QuickChatDynamicCommand;
 import com.jagex.game.shared.framework.gwc.GWC;
 import com.jagex.game.shared.framework.gwc.GWCWorld;
 import com.jagex.game.shared.movement.CoordFine;
@@ -69,18 +122,40 @@ import com.jagex.game.shared.movement.CoordGrid;
 import com.jagex.game.world.WorldMap;
 import com.jagex.game.world.WorldMapAreaMetadata;
 import com.jagex.game.world.WorldMapElement;
-import com.jagex.game.world.entity.*;
+import com.jagex.game.world.entity.EntityChatLine;
+import com.jagex.game.world.entity.Location;
+import com.jagex.game.world.entity.ObjReference;
+import com.jagex.game.world.entity.ObjStackEntity;
+import com.jagex.game.world.entity.ObjectNode;
+import com.jagex.game.world.entity.PlayerEntity;
+import com.jagex.game.world.entity.PlayerStat;
+import com.jagex.game.world.entity.PositionMode;
+import com.jagex.game.world.entity.PositionPoint;
+import com.jagex.game.world.entity.SpotShadowFactory;
+import com.jagex.graphics.DefaultSprites;
 import com.jagex.graphics.FontMetrics;
-import com.jagex.graphics.*;
+import com.jagex.graphics.FullscreenMode;
 import com.jagex.graphics.camera.CameraException;
 import com.jagex.graphics.camera.CameraHelpers;
 import com.jagex.graphics.camera.CameraLinearMovementMode;
 import com.jagex.graphics.camera.ShakeMode;
 import com.jagex.graphics.particles.ParticleSystemRenderer;
 import com.jagex.graphics.scenegraph.GraphEntity;
-import com.jagex.math.*;
+import com.jagex.math.IntMath;
+import com.jagex.math.Quaternion;
+import com.jagex.math.RayTracing;
+import com.jagex.math.Trig1;
+import com.jagex.math.Vector3;
 import com.jagex.twitchtv.TwitchEvent;
 import deob.ObfuscatedName;
+import java.awt.Point;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.Transferable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.TimeZone;
 import rs2.client.Client;
 import rs2.client.clientscript.emoji.EmojiList;
 import rs2.client.logic.DelayedStateChange;
@@ -89,15 +164,13 @@ import rs2.client.logic.chat.ChatLine;
 import rs2.client.logic.clans.ClanSettings;
 import rs2.client.logic.friendchat.Friend;
 import rs2.client.logic.friendchat.Ignore;
-import rs2.client.login.*;
+import rs2.client.login.AccountAppealLogin;
+import rs2.client.login.AccountCreationManager;
+import rs2.client.login.LoginManager;
+import rs2.client.login.SuggestNameReply;
+import rs2.client.login.WorldSwitcher;
 import rs2.client.scene.entities.NpcEntity;
 import rs2.client.scene.entities.PathingEntity;
-
-import java.awt.*;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.Transferable;
-import java.util.*;
-import java.util.List;
 
 @ObfuscatedName("ym")
 public class ScriptRunner {
@@ -141,10 +214,9 @@ public class ScriptRunner {
 		if (clientScriptStatePoolUsedCount == clientScriptStatePool.size()) {
 			clientScriptStatePool.add(new ClientScriptState());
 		}
-
-		ClientScriptState state = (ClientScriptState) clientScriptStatePool.get(clientScriptStatePoolUsedCount);
+		ClientScriptState var0 = (ClientScriptState) clientScriptStatePool.get(clientScriptStatePoolUsedCount);
 		clientScriptStatePoolUsedCount++;
-		return state;
+		return var0;
 	}
 
 	@ObfuscatedName("vu.n(B)V")
@@ -196,31 +268,31 @@ public class ScriptRunner {
 		for (int var9 = 1; var9 < var2.length; var9++) {
 			if (var2[var9] instanceof Integer) {
 				int var10 = (Integer) var2[var9];
-				if (var10 == 0x80000001) {
+				if (var10 == -2147483647) {
 					var10 = arg0.mouseX;
 				}
-				if (var10 == 0x80000002) {
+				if (var10 == -2147483646) {
 					var10 = arg0.mouseY;
 				}
-				if (var10 == 0x80000003) {
+				if (var10 == -2147483645) {
 					var10 = arg0.component == null ? -1 : arg0.component.parentlayer;
 				}
-				if (var10 == 0x80000004) {
+				if (var10 == -2147483644) {
 					var10 = arg0.opindex;
 				}
-				if (var10 == 0x80000005) {
+				if (var10 == -2147483643) {
 					var10 = arg0.component == null ? -1 : arg0.component.id;
 				}
-				if (var10 == 0x80000006) {
+				if (var10 == -2147483642) {
 					var10 = arg0.drop == null ? -1 : arg0.drop.parentlayer;
 				}
-				if (var10 == 0x80000007) {
+				if (var10 == -2147483641) {
 					var10 = arg0.drop == null ? -1 : arg0.drop.id;
 				}
-				if (var10 == 0x80000008) {
+				if (var10 == -2147483640) {
 					var10 = arg0.key;
 				}
-				if (var10 == 0x80000009) {
+				if (var10 == -2147483639) {
 					var10 = arg0.keychar;
 				}
 				var5.intLocals[var6++] = var10;
@@ -273,24 +345,24 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("iq.d(Luh;IILyf;I)V")
-	public static void executeTrigger(ClientTriggerType arg0, int arg1, int arg2, ClientScriptState state) {
-		ClientScript script = ClientScriptHelpers.getByTrigger(arg0, arg1, arg2);
-		if (script == null) {
+	public static void executeTrigger(ClientTriggerType arg0, int arg1, int arg2, ClientScriptState arg3) {
+		ClientScript var4 = ClientScriptHelpers.getByTrigger(arg0, arg1, arg2);
+		if (var4 == null) {
 			releaseClientScriptState();
 			return;
 		}
-		state.intLocals = new int[script.intLocalCount];
-		state.objectLocals = new Object[script.objectLocalCount];
-		if (ClientTriggerType.WORLDMAPELEMENTMOUSEOVER == script.field12373 || ClientTriggerType.WORLDMAPELEMENTMOUSEREPEAT == script.field12373 || ClientTriggerType.WORLDMAPELEMENTMOUSELEAVE == script.field12373) {
-			state.intLocals[0] = arg1;
-			state.intLocals[1] = Client.mouse.getX();
-			state.intLocals[2] = Client.mouse.getY();
-		} else if (ClientTriggerType.OPWORLDMAPELEMENT1 == script.field12373 || ClientTriggerType.OPWORLDMAPELEMENT2 == script.field12373 || ClientTriggerType.OPWORLDMAPELEMENT3 == script.field12373 || ClientTriggerType.OPWORLDMAPELEMENT4 == script.field12373 || ClientTriggerType.OPWORLDMAPELEMENT5 == script.field12373) {
-			state.intLocals[0] = arg1;
-		} else if (ClientTriggerType.PROCESS_PLAYER == script.field12373) {
-			state.intLocals[0] = state.field8231;
+		arg3.intLocals = new int[var4.intLocalCount];
+		arg3.objectLocals = new Object[var4.objectLocalCount];
+		if (ClientTriggerType.WORLDMAPELEMENTMOUSEOVER == var4.field12373 || ClientTriggerType.WORLDMAPELEMENTMOUSEREPEAT == var4.field12373 || ClientTriggerType.WORLDMAPELEMENTMOUSELEAVE == var4.field12373) {
+			arg3.intLocals[0] = arg1;
+			arg3.intLocals[1] = Client.mouse.getX();
+			arg3.intLocals[2] = Client.mouse.getY();
+		} else if (ClientTriggerType.OPWORLDMAPELEMENT1 == var4.field12373 || ClientTriggerType.OPWORLDMAPELEMENT2 == var4.field12373 || ClientTriggerType.OPWORLDMAPELEMENT3 == var4.field12373 || ClientTriggerType.OPWORLDMAPELEMENT4 == var4.field12373 || ClientTriggerType.OPWORLDMAPELEMENT5 == var4.field12373) {
+			arg3.intLocals[0] = arg1;
+		} else if (ClientTriggerType.PROCESS_PLAYER == var4.field12373) {
+			arg3.intLocals[0] = arg3.field8231;
 		}
-		executeScript(script, 500000, state);
+		executeScript(var4, 500000, arg3);
 	}
 
 	@ObfuscatedName("jf.c(ILjava/lang/String;II)V")
@@ -299,98 +371,97 @@ public class ScriptRunner {
 		if (var3 == null) {
 			return;
 		}
-		ClientScriptState state = createClientScriptState();
-		state.intLocals = new int[var3.intLocalCount];
-		state.objectLocals = new String[var3.objectLocalCount];
-		state.objectLocals[0] = arg1;
-		state.intLocals[0] = arg2;
-		executeScript(var3, 500000, state);
+		ClientScriptState var4 = createClientScriptState();
+		var4.intLocals = new int[var3.intLocalCount];
+		var4.objectLocals = new String[var3.objectLocalCount];
+		var4.objectLocals[0] = arg1;
+		var4.intLocals[0] = arg2;
+		executeScript(var3, 500000, var4);
 	}
 
 	@ObfuscatedName("zj.r(ILcom/jagex/twitchtv/TwitchEvent;B)V")
 	public static void executeTriggeredScriptTwitch(int arg0, TwitchEvent arg1) {
-		ClientScript script = ClientScriptHelpers.getByTrigger(ClientTriggerType.TWITCH, arg0, -1);
-		if (script == null) {
+		ClientScript var2 = ClientScriptHelpers.getByTrigger(ClientTriggerType.TWITCH, arg0, -1);
+		if (var2 == null) {
 			return;
 		}
-		ClientScriptState state = createClientScriptState();
-		if (script.longLocalCount != 0) {
-			state.longLocals = new long[script.longLocalCount];
+		ClientScriptState var3 = createClientScriptState();
+		if (var2.longLocalCount != 0) {
+			var3.longLocals = new long[var2.longLocalCount];
 		}
-		if (script.intLocalCount != 0) {
-			state.intLocals = new int[script.intLocalCount];
+		if (var2.intLocalCount != 0) {
+			var3.intLocals = new int[var2.intLocalCount];
 		}
-		if (script.objectLocalCount != 0) {
-			state.objectLocals = new String[script.objectLocalCount];
+		if (var2.objectLocalCount != 0) {
+			var3.objectLocals = new String[var2.objectLocalCount];
 		}
-		arg1.method12(state.intLocals, state.longLocals, state.objectLocals);
-		executeScript(script, 500000, state);
+		arg1.method12(var3.intLocals, var3.longLocals, var3.objectLocals);
+		executeScript(var2, 500000, var3);
 	}
 
 	@ObfuscatedName("adv.v(Lasc;ILyf;I)V")
-	public static void executeScript(ClientScript script, int oplimit, ClientScriptState state) {
-		state.isp = 0;
-		state.osp = 0;
-		state.pc = -1;
-		state.script = script;
-		state.instructions = state.script.instructions;
-		state.intOperands = state.script.intOperands;
-		ClientScriptCommand command = null;
-		state.fp = 0;
-		state.primaryVars.clear();
-		state.primaryVars.put(VarDomainType.PLAYER, Client.localPlayerGameState.varps);
-		state.primaryVars.put(VarDomainType.CLIENT, Client.clientVarDomain);
-		state.primaryVars.put(VarDomainType.CLAN, Client.varClan);
-		if (state.activeClanSettings != null) {
-			state.primaryVars.put(VarDomainType.CLAN_SETTING, createVarClanSettingsDomain(state.activeClanSettings));
+	public static void executeScript(ClientScript arg0, int arg1, ClientScriptState arg2) {
+		arg2.isp = 0;
+		arg2.osp = 0;
+		arg2.pc = -1;
+		arg2.script = arg0;
+		arg2.instructions = arg2.script.instructions;
+		arg2.intOperands = arg2.script.intOperands;
+		ClientScriptCommand var3 = null;
+		arg2.fp = 0;
+		arg2.primaryVars.clear();
+		arg2.primaryVars.put(VarDomainType.PLAYER, Client.localPlayerGameState.varps);
+		arg2.primaryVars.put(VarDomainType.CLIENT, Client.clientVarDomain);
+		arg2.primaryVars.put(VarDomainType.CLAN, Client.varClan);
+		if (arg2.activeClanSettings != null) {
+			arg2.primaryVars.put(VarDomainType.CLAN_SETTING, createVarClanSettingsDomain(arg2.activeClanSettings));
 		}
-		if (state.activeEntity instanceof NpcEntity) {
-			state.primaryVars.put(VarDomainType.NPC, state.activeEntity.varDomain);
+		if (arg2.activeEntity instanceof NpcEntity) {
+			arg2.primaryVars.put(VarDomainType.NPC, arg2.activeEntity.varDomain);
 		}
-		if (state.activeEntity instanceof PlayerEntity) {
-			state.secondaryVars.put(VarDomainType.PLAYER, state.activeEntity.varDomain);
+		if (arg2.activeEntity instanceof PlayerEntity) {
+			arg2.secondaryVars.put(VarDomainType.PLAYER, arg2.activeEntity.varDomain);
 		}
 		if (Client.currentPlayerGroup != null) {
-			state.primaryVars.put(VarDomainType.PLAYER_GROUP, Client.currentPlayerGroup.getVarDomain());
+			arg2.primaryVars.put(VarDomainType.PLAYER_GROUP, Client.currentPlayerGroup.getVarDomain());
 		}
 		try {
 			opcount = 0;
 			while (true) {
 				opcount++;
-				if (opcount > oplimit) {
-					throw new RuntimeException("slow");
+				if (opcount > arg1) {
+					throw new RuntimeException("");
 				}
-				command = state.instructions[++state.pc];
-				if (field8206 && (field8205 == null || state.script.scriptName != null && state.script.scriptName.indexOf(field8205) != -1)) {
-					System.out.println(state.script.scriptName + ": " + command);
+				var3 = arg2.instructions[++arg2.pc];
+				if (field8206 && (field8205 == null || arg2.script.scriptName != null && arg2.script.scriptName.indexOf(field8205) != -1)) {
+					System.out.println(arg2.script.scriptName + ": " + var3);
 				}
-				if (state.intOperands[state.pc] == 1) {
-					state.secondary = true;
+				if (arg2.intOperands[arg2.pc] == 1) {
+					arg2.secondary = true;
 				} else {
-					state.secondary = false;
+					arg2.secondary = false;
 				}
-				if (ClientScriptCommand._RETURN == command && state.fp == 0) {
+				if (ClientScriptCommand._RETURN == var3 && arg2.fp == 0) {
 					return;
 				}
-				executeCommand(command, state);
+				executeCommand(var3, arg2);
 			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			error(state, command, ex, "S");
+		} catch (Exception var8) {
+			error(arg2, var3, var8, "S");
 		} finally {
 			releaseClientScriptState();
 		}
 	}
 
 	@ObfuscatedName("jh.o(Lyf;Lss;Ljava/lang/Exception;Ljava/lang/String;I)V")
-	public static void error(ClientScriptState state, ClientScriptCommand command, Exception exception, String arg3) {
+	public static void error(ClientScriptState arg0, ClientScriptCommand arg1, Exception arg2, String arg3) {
 		StringBuilder var4 = new StringBuilder(30);
-		var4.append(arg3 + " ").append(state.script.nodeId).append(" ");
-		for (int var5 = state.fp - 1; var5 >= 0; var5--) {
-			var4.append("").append(state.frames[var5].script.nodeId).append(" ");
+		var4.append(arg3 + " ").append(arg0.script.nodeId).append(" ");
+		for (int var5 = arg0.fp - 1; var5 >= 0; var5--) {
+			var4.append("").append(arg0.frames[var5].script.nodeId).append(" ");
 		}
-		var4.append("").append(command.index);
-		JagException.report(var4.toString(), exception);
+		var4.append("").append(arg1.index);
+		JagException.report((String) var4.toString(), (Throwable) arg2);
 	}
 
 	@ObfuscatedName("ki.s(Lhq;IIIZLyf;I)V")
@@ -422,7 +493,7 @@ public class ScriptRunner {
 			}
 		}
 		if (arg3 > 0 && var6.subcomponents[arg3 - 1] == null) {
-			throw new RuntimeException("Gap at:" + (arg3 - 1));
+			throw new RuntimeException("" + (arg3 - 1));
 		}
 		Component var12 = new Component();
 		var12.type = arg2;
@@ -554,244 +625,244 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("yx.h(Lss;Lyf;I)V")
-	public static final void executeCommand(ClientScriptCommand command, ClientScriptState state) throws CameraException, VarBitOverflowException {
-		switch(command.index) {
+	public static final void executeCommand(ClientScriptCommand arg0, ClientScriptState arg1) throws CameraException, VarBitOverflowException {
+		switch(arg0.index) {
 			case 0:
-				telemetry_get_group_count(state);
+				telemetry_get_group_count(arg1);
 				return;
 			case 1:
-				targetmode_active(state);
+				targetmode_active(arg1);
 				return;
 			case 2:
-				if_setoptkey(state);
+				if_setoptkey(arg1);
 				return;
 			case 3:
-				detailget_buildarea(state);
+				detailget_buildarea(arg1);
 				return;
 			case 4:
-				chatphrase_gettext(state);
+				chatphrase_gettext(arg1);
 				return;
 			case 5:
-				detail_anisotropicfiltering(state);
+				detail_anisotropicfiltering(arg1);
 				return;
 			case 6:
-				sound_synth(state);
+				sound_synth(arg1);
 				return;
 			case 7:
-				cam2_getpositionentity_lookatangle(state);
+				cam2_getpositionentity_lookatangle(arg1);
 				return;
 			case 8:
-				abort_dialog(state);
+				abort_dialog(arg1);
 				return;
 			case 9:
-				worldmap_getsourcecoord(state);
+				worldmap_getsourcecoord(arg1);
 				return;
 			case 10:
-				worldmap_getdisplayposition(state);
+				worldmap_getdisplayposition(arg1);
 				return;
 			case 11:
-				shop_isproductrecommended(state);
+				shop_isproductrecommended(arg1);
 				return;
 			case 12:
-				if_sendto(true, state);
+				if_sendto(true, arg1);
 				return;
 			case 13:
-				cc_setheld(state);
+				cc_setheld(arg1);
 				return;
 			case 14:
-				clan_getchatminkick(state);
+				clan_getchatminkick(arg1);
 				return;
 			case 15:
-				cc_getx(state);
+				cc_getx(arg1);
 				return;
 			case 16:
-				cc_setonplayergroupvarptransmit(state);
+				cc_setonplayergroupvarptransmit(arg1);
 				return;
 			case 17:
-				scale(state);
+				scale(arg1);
 				return;
 			case 18:
-				if_setonhorizontalpinch(state);
+				if_setonhorizontalpinch(arg1);
 				return;
 			case 19:
-				cc_find(state);
+				cc_find(arg1);
 				return;
 			case 20:
-				detailget_maxforegroundfps(state);
+				detailget_maxforegroundfps(arg1);
 				return;
 			case 21:
-				cc_setongamepadtrigger(state);
+				cc_setongamepadtrigger(arg1);
 				return;
 			case 22:
-				get_selfyangle(state);
+				get_selfyangle(arg1);
 				return;
 			case 23:
-				cc_setontargetenter(state);
+				cc_setontargetenter(arg1);
 				return;
 			case 24:
-				activeclansettings_getaffinedcount(state);
+				activeclansettings_getaffinedcount(arg1);
 				return;
 			case 25:
-				autosetup_dosetupstatus(state);
+				autosetup_dosetupstatus(arg1);
 				return;
 			case 26:
-				cam2_setlookatmaxspeed_axis(state);
+				cam2_setlookatmaxspeed_axis(arg1);
 				return;
 			case 27:
-				char_isnumeric(state);
+				char_isnumeric(arg1);
 				return;
 			case 28:
-				oc_minimenu_colour_overridden(state);
+				oc_minimenu_colour_overridden(arg1);
 				return;
 			case 29:
-				interface_getpickingradius(state);
+				interface_getpickingradius(arg1);
 				return;
 			case 30:
-				ignore_is_temp(state);
+				ignore_is_temp(arg1);
 				return;
 			case 31:
-				cc_setopbase(state);
+				cc_setopbase(arg1);
 				return;
 			case 32:
-				map_members(state);
+				map_members(arg1);
 				return;
 			case 33:
-				preload_percent(state);
+				preload_percent(arg1);
 				return;
 			case 34:
-				if_setswipeflags(state);
+				if_setswipeflags(arg1);
 				return;
 			case 35:
-				cam_dec_x(state);
+				cam_dec_x(arg1);
 				return;
 			case 36:
-				map_build_complete(state);
+				map_build_complete(arg1);
 				return;
 			case 37:
-				chat_setmode(state);
+				chat_setmode(arg1);
 				return;
 			case 38:
-				minimenu_close(state);
+				minimenu_close(arg1);
 				return;
 			case 39:
-				struct_param(state);
+				struct_param(arg1);
 				return;
 			case 40:
-				cc_setopchar(state);
+				cc_setopchar(arg1);
 				return;
 			case 41:
-				TwitchCommands.ttv_setdebugoutput(state);
+				TwitchCommands.ttv_setdebugoutput(arg1);
 				return;
 			case 42:
-				detailget_maxscreensize(state);
+				detailget_maxscreensize(arg1);
 				return;
 			case 43:
-				if_getgraphic(state);
+				if_getgraphic(arg1);
 				return;
 			case 44:
-				if_getmodelangle_x(state);
+				if_getmodelangle_x(arg1);
 				return;
 			case 45:
-				random_sound_pitch(state);
+				random_sound_pitch(arg1);
 				return;
 			case 46:
-				getclipboard(state);
+				getclipboard(arg1);
 				return;
 			case 47:
-				cam_smoothreset(state);
+				cam_smoothreset(arg1);
 				return;
 			case 48:
-				if_setlinkfriend(state);
+				if_setlinkfriend(arg1);
 				return;
 			case 49:
-				gosub_with_params(state);
+				gosub_with_params(arg1);
 				return;
 			case 50:
-				define_array(state);
+				define_array(arg1);
 				return;
 			case 51:
-				if_settextantimacro(state);
+				if_settextantimacro(arg1);
 				return;
 			case 52:
-				map_loadingscreen_isopen(state);
+				map_loadingscreen_isopen(arg1);
 				return;
 			case 53:
-				cam2_updateeffect_ztilt(state);
+				cam2_updateeffect_ztilt(arg1);
 				return;
 			case 54:
-				if_setontimer(state);
+				if_setontimer(arg1);
 				return;
 			case 55:
-				activeclanchannel_getusercount(state);
+				activeclanchannel_getusercount(arg1);
 				return;
 			case 56:
-				cam2_setlookatorientation_xrotation(state);
+				cam2_setlookatorientation_xrotation(arg1);
 				return;
 			case 57:
-				QuestCommands.quest_varbitreq_count(state);
+				QuestCommands.quest_varbitreq_count(arg1);
 				return;
 			case 58:
-				tostring(state);
+				tostring(arg1);
 				return;
 			case 59:
-				worldmap_perpetualflash(state);
+				worldmap_perpetualflash(arg1);
 				return;
 			case 60:
-				char_isvalid(state);
+				char_isvalid(arg1);
 				return;
 			case 61:
-				os_iswindows(state);
+				os_iswindows(arg1);
 				return;
 			case 62:
-				ignore_del(state);
+				ignore_del(arg1);
 				return;
 			case 63:
-				map_preload(state);
+				map_preload(arg1);
 				return;
 			case 64:
-				baseidkit(state);
+				baseidkit(arg1);
 				return;
 			case 65:
-				cc_getgraphicdimensions(state);
+				cc_getgraphicdimensions(arg1);
 				return;
 			case 66:
-				if_find(state);
+				if_find(arg1);
 				return;
 			case 67:
-				setbit_range_toint(state);
+				setbit_range_toint(arg1);
 				return;
 			case 68:
-				join_string(state);
+				join_string(arg1);
 				return;
 			case 69:
-				push_array(state, true, true);
+				push_array(arg1, true, true);
 				return;
 			case 70:
-				if_getmodelangle_z(state);
+				if_getmodelangle_z(arg1);
 				return;
 			case 71:
-				detailget_lightingquality(state);
+				detailget_lightingquality(arg1);
 				return;
 			case 72:
-				if_getfontgraphic(state);
+				if_getfontgraphic(arg1);
 				return;
 			case 73:
-				cam2_setpositionpointcollision(state);
+				cam2_setpositionpointcollision(arg1);
 				return;
 			case 74:
-				worldmap_getzoom(state);
+				worldmap_getzoom(arg1);
 				return;
 			case 75:
-				cam2_removeeffect(state);
+				cam2_removeeffect(arg1);
 				return;
 			case 76:
-				if_setonhorizontalswipe(state);
+				if_setonhorizontalswipe(arg1);
 				return;
 			case 77:
-				detailcanmod_vsync(state);
+				detailcanmod_vsync(arg1);
 				return;
 			case 78:
-				detailcanmod_skydetail(state);
+				detailcanmod_skydetail(arg1);
 				return;
 			case 79:
 			case 103:
@@ -801,4047 +872,4047 @@ public class ScriptRunner {
 			default:
 				throw new RuntimeException();
 			case 80:
-				detail_antialiasing(state);
+				detail_antialiasing(arg1);
 				return;
 			case 81:
-				detailget_bloom(state);
+				detailget_bloom(arg1);
 				return;
 			case 82:
-				cc_setonstattransmit(state);
+				cc_setonstattransmit(arg1);
 				return;
 			case 83:
-				if_setoutline(state);
+				if_setoutline(arg1);
 				return;
 			case 84:
-				worldmap_getdisplaycoord(state);
+				worldmap_getdisplaycoord(arg1);
 				return;
 			case 85:
-				if_setplayermodel(state);
+				if_setplayermodel(arg1);
 				return;
 			case 86:
-				get_currentcursor(state);
+				get_currentcursor(arg1);
 				return;
 			case 87:
-				nc_param(state);
+				nc_param(arg1);
 				return;
 			case 88:
-				cc_setlinedirection(state);
+				cc_setlinedirection(arg1);
 				return;
 			case 89:
-				oc_tradeable(state);
+				oc_tradeable(arg1);
 				return;
 			case 90:
-				detailget_antialiasing(state);
+				detailget_antialiasing(arg1);
 				return;
 			case 91:
-				if_resetmodellighting(state);
+				if_resetmodellighting(arg1);
 				return;
 			case 92:
-				TwitchCommands.ttv_webcam_supported(state);
+				TwitchCommands.ttv_webcam_supported(arg1);
 				return;
 			case 93:
-				oc_name(state);
+				oc_name(arg1);
 				return;
 			case 94:
-				player_group_member_is_owner(state);
+				player_group_member_is_owner(arg1);
 				return;
 			case 95:
-				lobby_enterlobby(state);
+				lobby_enterlobby(arg1);
 				return;
 			case 96:
-				if_getx(state);
+				if_getx(arg1);
 				return;
 			case 97:
-				notifications_sendgroupedlocal(state);
+				notifications_sendgroupedlocal(arg1);
 				return;
 			case 98:
-				unknown_command_98(state);
+				unknown_command_98(arg1);
 				return;
 			case 99:
-				detailget_removeroofs_option(state);
+				detailget_removeroofs_option(arg1);
 				return;
 			case 100:
-				urlencode(state);
+				urlencode(arg1);
 				return;
 			case 101:
-				if_setondragcomplete(state);
+				if_setondragcomplete(arg1);
 				return;
 			case 102:
-				detailget_idleanims_many(state);
+				detailget_idleanims_many(arg1);
 				return;
 			case 104:
-				date_runeday_todate(state);
+				date_runeday_todate(arg1);
 				return;
 			case 105:
-				preload_download_downloadedsize(state);
+				preload_download_downloadedsize(arg1);
 				return;
 			case 106:
-				cam2_getcontrolmode(state);
+				cam2_getcontrolmode(arg1);
 				return;
 			case 107:
-				if_setvflip(state);
+				if_setvflip(arg1);
 				return;
 			case 108:
-				if_getop(state);
+				if_getop(arg1);
 				return;
 			case 109:
-				cc_getmodelangle_x(state);
+				cc_getmodelangle_x(arg1);
 				return;
 			case 110:
-				player_group_get_owner_slot(state);
+				player_group_get_owner_slot(arg1);
 				return;
 			case 111:
-				userdetail_lobby_graceexpiry(state);
+				userdetail_lobby_graceexpiry(arg1);
 				return;
 			case 112:
-				date_minutes_fromruneday(state);
+				date_minutes_fromruneday(arg1);
 				return;
 			case 113:
-				stockmarket_getoffercount(state);
+				stockmarket_getoffercount(arg1);
 				return;
 			case 114:
-				preload_download_complete(state);
+				preload_download_complete(arg1);
 				return;
 			case 115:
-				stat_visible_xp_actual(state);
+				stat_visible_xp_actual(arg1);
 				return;
 			case 116:
-				activechatphrase_prepare(state);
+				activechatphrase_prepare(arg1);
 				return;
 			case 117:
-				QuestCommands.quest_varbitreq_met(state);
+				QuestCommands.quest_varbitreq_met(arg1);
 				return;
 			case 118:
-				cc_setonscrollwheel(state);
+				cc_setonscrollwheel(arg1);
 				return;
 			case 119:
-				fullscreen_enter(state);
+				fullscreen_enter(arg1);
 				return;
 			case 120:
-				cc_settext(state);
+				cc_settext(arg1);
 				return;
 			case 121:
-				oc_wearpos2(state);
+				oc_wearpos2(arg1);
 				return;
 			case 122:
-				paraline(state);
+				paraline(arg1);
 				return;
 			case 123:
-				detail_vsync(state);
+				detail_vsync(arg1);
 				return;
 			case 124:
-				if_setsize(state);
+				if_setsize(arg1);
 				return;
 			case 125:
-				sqrt(state);
+				sqrt(arg1);
 				return;
 			case 126:
-				clan_getchatrank(state);
+				clan_getchatrank(arg1);
 				return;
 			case 127:
-				branch_if_false(state);
+				branch_if_false(arg1);
 				return;
 			case 128:
-				if_getnextsubid(state);
+				if_getnextsubid(arg1);
 				return;
 			case 129:
-				movescripted(state);
+				movescripted(arg1);
 				return;
 			case 130:
-				cam2_getpositionpoint_point(state);
+				cam2_getpositionpoint_point(arg1);
 				return;
 			case 131:
-				if_setmodelzoom(state);
+				if_setmodelzoom(arg1);
 				return;
 			case 132:
-				cc_setmouseovercursor(state);
+				cc_setmouseovercursor(arg1);
 				return;
 			case 133:
-				inv_totalcat(state);
+				inv_totalcat(arg1);
 				return;
 			case 134:
-				clearbit_range(state);
+				clearbit_range(arg1);
 				return;
 			case 135:
-				activeclansettings_getaffinedextrainfo(state);
+				activeclansettings_getaffinedextrainfo(arg1);
 				return;
 			case 136:
-				friend_count(state);
+				friend_count(arg1);
 				return;
 			case 137:
-				detailcanmod_interfacescale(state);
+				detailcanmod_interfacescale(arg1);
 				return;
 			case 138:
-				cam2_isenabled(state);
+				cam2_isenabled(arg1);
 				return;
 			case 139:
-				get_npc_name(state);
+				get_npc_name(arg1);
 				return;
 			case 140:
-				worldmap_3dview_enable(state);
+				worldmap_3dview_enable(arg1);
 				return;
 			case 141:
-				runjavascript(state);
+				runjavascript(arg1);
 				return;
 			case 142:
-				activechatphrase_sendprivate(state);
+				activechatphrase_sendprivate(arg1);
 				return;
 			case 143:
-				method4982(state);
+				method4982(arg1);
 				return;
 			case 144:
-				method2775(state);
+				method2775(arg1);
 				return;
 			case 145:
-				date_minutes(state);
+				date_minutes(arg1);
 				return;
 			case 146:
-				detail_antialiasingmode(state);
+				detail_antialiasingmode(arg1);
 				return;
 			case 147:
-				emoji_removeall(state);
+				emoji_removeall(arg1);
 				return;
 			case 148:
-				activeclansettings_find_listened(state);
+				activeclansettings_find_listened(arg1);
 				return;
 			case 149:
-				cc_setondialogabort(state);
+				cc_setondialogabort(arg1);
 				return;
 			case 150:
-				method3591(state);
+				method3591(arg1);
 				return;
 			case 151:
-				ignore_add(state);
+				ignore_add(arg1);
 				return;
 			case 152:
-				stockmarket_getoffercompletedcount(state);
+				stockmarket_getoffercompletedcount(arg1);
 				return;
 			case 153:
-				cc_setonmisctransmit(state);
+				cc_setonmisctransmit(arg1);
 				return;
 			case 154:
-				stringwidth(state);
+				stringwidth(arg1);
 				return;
 			case 155:
-				cc_setonclick(state);
+				cc_setonclick(arg1);
 				return;
 			case 156:
-				create_reply(state);
+				create_reply(arg1);
 				return;
 			case 157:
-				if_setmodelorigin(state);
+				if_setmodelorigin(arg1);
 				return;
 			case 158:
-				cc_setoptkeyrate(state);
+				cc_setoptkeyrate(arg1);
 				return;
 			case 159:
-				sound_vorbis_volume_rate_group(state);
+				sound_vorbis_volume_rate_group(arg1);
 				return;
 			case 160:
-				cam2_settraildistance(state);
+				cam2_settraildistance(arg1);
 				return;
 			case 161:
-				cam_getangle_ya(state);
+				cam_getangle_ya(arg1);
 				return;
 			case 162:
-				if_setonop(state);
+				if_setonop(arg1);
 				return;
 			case 163:
-				cc_param(state);
+				cc_param(arg1);
 				return;
 			case 164:
-				login_queue_position(state);
+				login_queue_position(arg1);
 				return;
 			case 165:
-				add(state);
+				add(arg1);
 				return;
 			case 166:
-				detailcanmod_antialiasingmode(state);
+				detailcanmod_antialiasingmode(arg1);
 				return;
 			case 167:
-				oc_shard(state);
+				oc_shard(arg1);
 				return;
 			case 168:
-				coord_finetogrid(state);
+				coord_finetogrid(arg1);
 				return;
 			case 169:
-				worldmap_isloaded(state);
+				worldmap_isloaded(arg1);
 				return;
 			case 170:
-				if_setonstocktransmit(state);
+				if_setonstocktransmit(arg1);
 				return;
 			case 171:
-				clan_kickuser(state);
+				clan_kickuser(arg1);
 				return;
 			case 172:
-				activeclansettings_getaffineddisplayname(state);
+				activeclansettings_getaffineddisplayname(arg1);
 				return;
 			case 173:
-				worldlist_start(state);
+				worldlist_start(arg1);
 				return;
 			case 174:
-				if_setswipedeadzone(state);
+				if_setswipedeadzone(arg1);
 				return;
 			case 175:
-				get_obj_overlay_height(state);
+				get_obj_overlay_height(arg1);
 				return;
 			case 176:
-				cc_setclickmask(state);
+				cc_setclickmask(arg1);
 				return;
 			case 177:
-				cc_setoptkeyignoreheld(state);
+				cc_setoptkeyignoreheld(arg1);
 				return;
 			case 178:
-				mec_textsize(state);
+				mec_textsize(arg1);
 				return;
 			case 179:
-				if_setonsubchange(state);
+				if_setonsubchange(arg1);
 				return;
 			case 180:
-				method18922(state);
+				method18922(arg1);
 				return;
 			case 181:
-				emoji_remove(state);
+				emoji_remove(arg1);
 				return;
 			case 182:
-				oc_findnext(state);
+				oc_findnext(arg1);
 				return;
 			case 183:
-				detail_particles(state);
+				detail_particles(arg1);
 				return;
 			case 184:
-				email_validation_change_address(state);
+				email_validation_change_address(arg1);
 				return;
 			case 185:
-				if_settiling(state);
+				if_settiling(arg1);
 				return;
 			case 186:
-				push_array(state, false, false);
+				push_array(arg1, false, false);
 				return;
 			case 187:
-				telemetry_get_column_count(state);
+				telemetry_get_column_count(arg1);
 				return;
 			case 188:
-				cc_addpinchflags(state);
+				cc_addpinchflags(arg1);
 				return;
 			case 189:
-				if_setobject(state);
+				if_setobject(arg1);
 				return;
 			case 190:
-				friend_platform(state);
+				friend_platform(arg1);
 				return;
 			case 191:
-				enum_getreverseindex(state);
+				enum_getreverseindex(arg1);
 				return;
 			case 192:
-				stockmarket_getoffercompletedgold(state);
+				stockmarket_getoffercompletedgold(arg1);
 				return;
 			case 193:
-				pop_string_local(state);
+				pop_string_local(arg1);
 				return;
 			case 194:
-				worldmap_3dview_gettextfont(state);
+				worldmap_3dview_gettextfont(arg1);
 				return;
 			case 195:
-				detail_dof(state);
+				detail_dof(arg1);
 				return;
 			case 196:
-				if_setonclanchanneltransmit(state);
+				if_setonclanchanneltransmit(arg1);
 				return;
 			case 197:
-				substring(state);
+				substring(arg1);
 				return;
 			case 198:
-				if_setnpcmodel(state);
+				if_setnpcmodel(arg1);
 				return;
 			case 199:
-				sound_song_volume(state);
+				sound_song_volume(arg1);
 				return;
 			case 200:
-				autosetup_getlevel(state);
+				autosetup_getlevel(arg1);
 				return;
 			case 201:
-				email_validation_add_new_address(state);
+				email_validation_add_new_address(arg1);
 				return;
 			case 202:
-				if_setoncameraupdatetransmit(state);
+				if_setoncameraupdatetransmit(arg1);
 				return;
 			case 203:
-				frombilling(state);
+				frombilling(arg1);
 				return;
 			case 204:
-				push_constant_int(state);
+				push_constant_int(arg1);
 				return;
 			case 205:
-				detailcanmod_maxforegroundfps(state);
+				detailcanmod_maxforegroundfps(arg1);
 				return;
 			case 206:
-				chatphrase_findnext(state);
+				chatphrase_findnext(arg1);
 				return;
 			case 207:
-				create_connect_reply(state);
+				create_connect_reply(arg1);
 				return;
 			case 208:
-				profile_cpu(state);
+				profile_cpu(arg1);
 				return;
 			case 209:
-				shop_isproductavailable(state);
+				shop_isproductavailable(arg1);
 				return;
 			case 210:
-				detailget_safemode(state);
+				detailget_safemode(arg1);
 				return;
 			case 211:
-				worldmap_jumptosourcecoord(state);
+				worldmap_jumptosourcecoord(arg1);
 				return;
 			case 212:
-				spline_new(state);
+				spline_new(arg1);
 				return;
 			case 213:
-				QuestCommands.quest_param(state);
+				QuestCommands.quest_param(arg1);
 				return;
 			case 214:
-				cam_getangle_xa(state);
+				cam_getangle_xa(arg1);
 				return;
 			case 215:
-				cam2_setfieldofviewscreen(state);
+				cam2_setfieldofviewscreen(arg1);
 				return;
 			case 216:
-				if_getinvcount(state);
+				if_getinvcount(arg1);
 				return;
 			case 217:
-				login_last_transfer_reply(state);
+				login_last_transfer_reply(arg1);
 				return;
 			case 218:
-				date_isleapyear(state);
+				date_isleapyear(arg1);
 				return;
 			case 219:
-				activeclansettings_getaffinedslot(state);
+				activeclansettings_getaffinedslot(arg1);
 				return;
 			case 220:
-				battery_ischarging(state);
+				battery_ischarging(arg1);
 				return;
 			case 221:
-				oc_minimenu_colour(state);
+				oc_minimenu_colour(arg1);
 				return;
 			case 222:
-				pop_string_discard(state);
+				pop_string_discard(arg1);
 				return;
 			case 223:
-				friend_del(state);
+				friend_del(arg1);
 				return;
 			case 224:
-				if_dragpickup(state);
+				if_dragpickup(arg1);
 				return;
 			case 225:
-				cc_setonfriendtransmit(state);
+				cc_setonfriendtransmit(arg1);
 				return;
 			case 226:
-				player_group_find(state);
+				player_group_find(arg1);
 				return;
 			case 227:
-				login_ban_duration(state);
+				login_ban_duration(arg1);
 				return;
 			case 228:
-				player_group_member_get_rank(state);
+				player_group_member_get_rank(arg1);
 				return;
 			case 229:
-				if_setopkey(state);
+				if_setopkey(arg1);
 				return;
 			case 230:
-				if_setmodellighting(state);
+				if_setmodellighting(arg1);
 				return;
 			case 231:
-				sso_displayname(state);
+				sso_displayname(arg1);
 				return;
 			case 232:
-				viewport_getzoom(state);
+				viewport_getzoom(arg1);
 				return;
 			case 233:
-				lobby_entergame(state);
+				lobby_entergame(arg1);
 				return;
 			case 234:
-				viewport_setfov(state);
+				viewport_setfov(arg1);
 				return;
 			case 235:
-				addpercent(state);
+				addpercent(arg1);
 				return;
 			case 236:
-				if_close(state);
+				if_close(arg1);
 				return;
 			case 237:
-				cc_setoptchar(state);
+				cc_setoptchar(arg1);
 				return;
 			case 238:
-				resume_hsldialog(state);
+				resume_hsldialog(arg1);
 				return;
 			case 239:
-				pop_varbit(state);
+				pop_varbit(arg1);
 				return;
 			case 240:
-				TwitchCommands.ttv_stream_start(state);
+				TwitchCommands.ttv_stream_start(arg1);
 				return;
 			case 241:
-				cam2_setpositionspringproperties(state);
+				cam2_setpositionspringproperties(arg1);
 				return;
 			case 242:
-				cc_setonvarclantransmit(state);
+				cc_setonvarclantransmit(arg1);
 				return;
 			case 243:
-				TwitchCommands.ttv_webcam_getdevice_byuniquename(state);
+				TwitchCommands.ttv_webcam_getdevice_byuniquename(arg1);
 				return;
 			case 244:
-				if_debug_button3(state);
+				if_debug_button3(arg1);
 				return;
 			case 245:
-				detailget_flickering_on(state);
+				detailget_flickering_on(arg1);
 				return;
 			case 246:
-				detail_loadingscreentype(state);
+				detail_loadingscreentype(arg1);
 				return;
 			case 248:
-				userdetail_lobby_lastloginaddress(state);
+				userdetail_lobby_lastloginaddress(arg1);
 				return;
 			case 249:
-				cc_settextshadow(state);
+				cc_settextshadow(arg1);
 				return;
 			case 251:
-				string_indexof_char(state);
+				string_indexof_char(arg1);
 				return;
 			case 252:
-				inv_getvar(state);
+				inv_getvar(arg1);
 				return;
 			case 253:
-				string_length(state);
+				string_length(arg1);
 				return;
 			case 254:
-				stat_base_actual(state);
+				stat_base_actual(arg1);
 				return;
 			case 255:
-				mes(state);
+				mes(arg1);
 				return;
 			case 256:
-				cc_settrans(state);
+				cc_settrans(arg1);
 				return;
 			case 257:
-				if_debug_getopenifid(state);
+				if_debug_getopenifid(arg1);
 				return;
 			case 258:
-				if_closesubclient(state);
+				if_closesubclient(arg1);
 				return;
 			case 259:
-				QuestCommands.quest_statreq_count(state);
+				QuestCommands.quest_statreq_count(arg1);
 				return;
 			case 260:
-				map_world(state);
+				map_world(arg1);
 				return;
 			case 261:
-				detailcanset_shadows(state);
+				detailcanset_shadows(arg1);
 				return;
 			case 262:
-				if_setop(state);
+				if_setop(arg1);
 				return;
 			case 263:
-				if_setdragdeadzone(state);
+				if_setdragdeadzone(arg1);
 				return;
 			case 264:
-				chat_sendabusereport(state);
+				chat_sendabusereport(arg1);
 				return;
 			case 265:
-				cam2_setlookatorientation_zmovement(state);
+				cam2_setlookatorientation_zmovement(arg1);
 				return;
 			case 266:
-				chatcat_getphrasecount(state);
+				chatcat_getphrasecount(arg1);
 				return;
 			case 267:
-				detailcanset_bloom(state);
+				detailcanset_bloom(arg1);
 				return;
 			case 268:
-				telemetry_get_row_count(state);
+				telemetry_get_row_count(arg1);
 				return;
 			case 269:
-				detailcanmod_anisotropicfiltering(state);
+				detailcanmod_anisotropicfiltering(arg1);
 				return;
 			case 270:
-				cc_setlinkfriend(state);
+				cc_setlinkfriend(arg1);
 				return;
 			case 271:
-				if_setobject_alwaysnum(state);
+				if_setobject_alwaysnum(arg1);
 				return;
 			case 272:
-				worldlist_specific(state);
+				worldlist_specific(arg1);
 				return;
 			case 273:
-				detailget_shadows(state);
+				detailget_shadows(arg1);
 				return;
 			case 274:
-				clearbit(state);
+				clearbit(arg1);
 				return;
 			case 275:
-				cc_setonchattransmit(state);
+				cc_setonchattransmit(arg1);
 				return;
 			case 276:
-				if_setonmouserepeat(state);
+				if_setonmouserepeat(arg1);
 				return;
 			case 277:
-				clan_getchatuserworldname(state);
+				clan_getchatuserworldname(arg1);
 				return;
 			case 278:
-				cc_sendto(false, state);
+				cc_sendto(false, arg1);
 				return;
 			case 279:
-				worldmap_disabletextsize(state);
+				worldmap_disabletextsize(arg1);
 				return;
 			case 280:
-				worldmap_setflashloops_default(state);
+				worldmap_setflashloops_default(arg1);
 				return;
 			case 281:
-				worldmap_getcategorypriority(state);
+				worldmap_getcategorypriority(arg1);
 				return;
 			case 282:
-				userdetail_lobby_jcoins_balance(state);
+				userdetail_lobby_jcoins_balance(arg1);
 				return;
 			case 283:
-				create_email_validate_reply(state);
+				create_email_validate_reply(arg1);
 				return;
 			case 284:
-				if_hassubmodal(state);
+				if_hassubmodal(arg1);
 				return;
 			case 285:
-				cc_setmaxlines(state);
+				cc_setmaxlines(arg1);
 				return;
 			case 286:
-				TwitchCommands.ttv_webcam_getcap_byindex(state);
+				TwitchCommands.ttv_webcam_getcap_byindex(arg1);
 				return;
 			case 287:
-				detailget_loadingscreentype(state);
+				detailget_loadingscreentype(arg1);
 				return;
 			case 288:
-				cc_settiling(state);
+				cc_settiling(arg1);
 				return;
 			case 289:
-				worldmap_jumptodisplaycoord(state);
+				worldmap_jumptodisplaycoord(arg1);
 				return;
 			case 290:
-				login_request_social_network(state);
+				login_request_social_network(arg1);
 				return;
 			case 291:
-				detailget_maxdiskcachesize(state);
+				detailget_maxdiskcachesize(arg1);
 				return;
 			case 292:
-				if_setonkey(state);
+				if_setonkey(arg1);
 				return;
 			case 293:
-				cam2_addeffect_shake(state);
+				cam2_addeffect_shake(arg1);
 				return;
 			case 294:
-				cc_setobject_wearcol(state);
+				cc_setobject_wearcol(arg1);
 				return;
 			case 295:
-				preload_download_remainingsize(state);
+				preload_download_remainingsize(arg1);
 				return;
 			case 296:
-				playermember(state);
+				playermember(arg1);
 				return;
 			case 297:
-				userdetail_lobby_lastloginday(state);
+				userdetail_lobby_lastloginday(arg1);
 				return;
 			case 298:
-				method8396(state);
+				method8396(arg1);
 				return;
 			case 299:
-				if_settextalign(state);
+				if_settextalign(arg1);
 				return;
 			case 300:
-				abs(state);
+				abs(arg1);
 				return;
 			case 301:
-				if_setongamepadbutton(state);
+				if_setongamepadbutton(arg1);
 				return;
 			case 302:
-				QuestCommands.quest_statreq_level(state);
+				QuestCommands.quest_statreq_level(arg1);
 				return;
 			case 303:
-				chatcat_getdesc(state);
+				chatcat_getdesc(arg1);
 				return;
 			case 304:
-				chatphrase_findrestart(state);
+				chatphrase_findrestart(arg1);
 				return;
 			case 305:
-				friend_getrank(state);
+				friend_getrank(arg1);
 				return;
 			case 306:
-				worldmap_3dview_getcoordfine(state);
+				worldmap_3dview_getcoordfine(arg1);
 				return;
 			case 307:
-				activeclansettings_getsortedaffinedslot(state);
+				activeclansettings_getsortedaffinedslot(arg1);
 				return;
 			case 308:
-				detailcanmod_buildarea(state);
+				detailcanmod_buildarea(arg1);
 				return;
 			case 309:
-				detail_ambientocclusion(state);
+				detail_ambientocclusion(arg1);
 				return;
 			case 310:
-				get_entity_screen_position(state);
+				get_entity_screen_position(arg1);
 				return;
 			case 311:
-				QuestCommands.quest_questreq(state);
+				QuestCommands.quest_questreq(arg1);
 				return;
 			case 312:
-				video_advert_force_remove(state);
+				video_advert_force_remove(arg1);
 				return;
 			case 313:
-				cc_getscrolly(state);
+				cc_getscrolly(arg1);
 				return;
 			case 314:
-				detailcanset_maxscreensize(state);
+				detailcanset_maxscreensize(arg1);
 				return;
 			case 315:
-				QuestCommands.quest_type(state);
+				QuestCommands.quest_type(arg1);
 				return;
 			case 316:
-				worldmap_setflashtics_default(state);
+				worldmap_setflashtics_default(arg1);
 				return;
 			case 317:
-				if_setondialogabort(state);
+				if_setondialogabort(arg1);
 				return;
 			case 318:
-				telemetry_get_group_id(state);
+				telemetry_get_group_id(arg1);
 				return;
 			case 319:
-				cc_setonkey(state);
+				cc_setonkey(arg1);
 				return;
 			case 320:
-				get_minimenu_length(state);
+				get_minimenu_length(arg1);
 				return;
 			case 321:
-				cc_setgraphicshadow(state);
+				cc_setgraphicshadow(arg1);
 				return;
 			case 322:
-				oc_stackable(state);
+				oc_stackable(arg1);
 				return;
 			case 323:
-				cam2_enable(state);
+				cam2_enable(arg1);
 				return;
 			case 324:
-				interface_setpickingradius(state);
+				interface_setpickingradius(arg1);
 				return;
 			case 325:
-				if_setmodelanim(state);
+				if_setmodelanim(arg1);
 				return;
 			case 326:
-				detailcanset_orthographic(state);
+				detailcanset_orthographic(arg1);
 				return;
 			case 327:
-				if_setopkeyrate(state);
+				if_setopkeyrate(arg1);
 				return;
 			case 328:
-				autosetup_sethigh(state);
+				autosetup_sethigh(arg1);
 				return;
 			case 329:
-				cc_getmodelzoom(state);
+				cc_getmodelzoom(arg1);
 				return;
 			case 330:
-				cc_setongamepadaxis(state);
+				cc_setongamepadaxis(arg1);
 				return;
 			case 331:
-				enum_hasoutput(state);
+				enum_hasoutput(arg1);
 				return;
 			case 332:
-				method5356(state);
+				method5356(arg1);
 				return;
 			case 333:
-				worldmap_setmap_coord_override(state);
+				worldmap_setmap_coord_override(arg1);
 				return;
 			case 334:
-				detailget_shadowquality(state);
+				detailget_shadowquality(arg1);
 				return;
 			case 335:
-				cc_setpausetext(state);
+				cc_setpausetext(arg1);
 				return;
 			case 336:
-				if_resume_pausebutton(state);
+				if_resume_pausebutton(arg1);
 				return;
 			case 337:
-				cc_setongamepadbuttonheld(state);
+				cc_setongamepadbuttonheld(arg1);
 				return;
 			case 338:
-				long_branch_not(state);
+				long_branch_not(arg1);
 				return;
 			case 339:
-				if_gettargetmask(state);
+				if_gettargetmask(arg1);
 				return;
 			case 340:
-				if_getcolour(state);
+				if_getcolour(arg1);
 				return;
 			case 341:
-				detailcanmod_toolkit_default(state);
+				detailcanmod_toolkit_default(arg1);
 				return;
 			case 342:
-				userdetail_lobby_playage(state);
+				userdetail_lobby_playage(arg1);
 				return;
 			case 343:
-				cc_setgraphic(state);
+				cc_setgraphic(arg1);
 				return;
 			case 344:
-				shop_getproductcount(state);
+				shop_getproductcount(arg1);
 				return;
 			case 345:
-				detailget_dof(state);
+				detailget_dof(arg1);
 				return;
 			case 346:
-				ignore_getname_unfiltered(state);
+				ignore_getname_unfiltered(arg1);
 				return;
 			case 347:
-				cc_getcharindexatpos(state);
+				cc_getcharindexatpos(arg1);
 				return;
 			case 348:
-				db_getfield(state);
+				db_getfield(arg1);
 				return;
 			case 349:
-				char_touppercase(state);
+				char_touppercase(arg1);
 				return;
 			case 350:
-				fps_stats(state);
+				fps_stats(arg1);
 				return;
 			case 351:
-				friend_getworld(state);
+				friend_getworld(arg1);
 				return;
 			case 352:
-				if_setlinewid(state);
+				if_setlinewid(arg1);
 				return;
 			case 353:
-				detailget_performance_metric(state);
+				detailget_performance_metric(arg1);
 				return;
 			case 354:
-				cc_getopbase(state);
+				cc_getopbase(arg1);
 				return;
 			case 355:
-				cam2_setlookatmode(state);
+				cam2_setlookatmode(arg1);
 				return;
 			case 356:
-				push_int_local(state);
+				push_int_local(arg1);
 				return;
 			case 357:
-				cc_getcharposatindex(state);
+				cc_getcharposatindex(arg1);
 				return;
 			case 358:
-				movecoord_fine(state);
+				movecoord_fine(arg1);
 				return;
 			case 359:
-				clan_getchatownername(state);
+				clan_getchatownername(arg1);
 				return;
 			case 360:
-				detail_maxscreensize(state);
+				detail_maxscreensize(arg1);
 				return;
 			case 361:
-				cc_setalpha(state);
+				cc_setalpha(arg1);
 				return;
 			case 362:
-				cc_setonopt(state);
+				cc_setonopt(arg1);
 				return;
 			case 363:
-				mec_category(state);
+				mec_category(arg1);
 				return;
 			case 364:
-				lowercase(state);
+				lowercase(arg1);
 				return;
 			case 365:
-				cc_setlinewid(state);
+				cc_setlinewid(arg1);
 				return;
 			case 366:
-				cam2_getpositionmode(state);
+				cam2_getpositionmode(arg1);
 				return;
 			case 367:
-				keyheld_alt(state);
+				keyheld_alt(arg1);
 				return;
 			case 368:
-				activeclansettings_getreplacementowner_slot(state);
+				activeclansettings_getreplacementowner_slot(arg1);
 				return;
 			case 369:
-				if_setlinkplayergroup(state);
+				if_setlinkplayergroup(arg1);
 				return;
 			case 370:
-				oc_placeholder(state);
+				oc_placeholder(arg1);
 				return;
 			case 371:
-				if_delswipeflags(state);
+				if_delswipeflags(arg1);
 				return;
 			case 372:
-				detailcanset_interfacescale(state);
+				detailcanset_interfacescale(arg1);
 				return;
 			case 373:
-				cc_setonvarcstrtransmit(state);
+				cc_setonvarcstrtransmit(arg1);
 				return;
 			case 374:
-				detailget_toolkit(state);
+				detailget_toolkit(arg1);
 				return;
 			case 375:
-				cc_getmodelangle_z(state);
+				cc_getmodelangle_z(arg1);
 				return;
 			case 376:
-				cc_setonstocktransmit(state);
+				cc_setonstocktransmit(arg1);
 				return;
 			case 377:
-				cc_setrecol(state);
+				cc_setrecol(arg1);
 				return;
 			case 378:
-				player_group_member_get_status(state);
+				player_group_member_get_status(arg1);
 				return;
 			case 379:
-				lastlogin(state);
+				lastlogin(arg1);
 				return;
 			case 380:
-				chat_getfilter_trade(state);
+				chat_getfilter_trade(arg1);
 				return;
 			case 381:
-				activeclansettings_getaffinedrank(state);
+				activeclansettings_getaffinedrank(arg1);
 				return;
 			case 382:
-				oc_members(state);
+				oc_members(arg1);
 				return;
 			case 383:
-				cc_callonresize(state);
+				cc_callonresize(arg1);
 				return;
 			case 384:
-				shop_getcategorycount(state);
+				shop_getcategorycount(arg1);
 				return;
 			case 385:
-				detailget_cpuusage(state);
+				detailget_cpuusage(arg1);
 				return;
 			case 386:
-				detailcanmod_spotshadows(state);
+				detailcanmod_spotshadows(arg1);
 				return;
 			case 387:
-				sound_speech_volume(state);
+				sound_speech_volume(arg1);
 				return;
 			case 388:
-				method16447(state);
+				method16447(arg1);
 				return;
 			case 389:
-				paraheight(state);
+				paraheight(arg1);
 				return;
 			case 390:
-				spline_length(state);
+				spline_length(arg1);
 				return;
 			case 391:
-				TwitchCommands.ttv_logout(state);
+				TwitchCommands.ttv_logout(arg1);
 				return;
 			case 392:
-				os_physicalmemorysize(state);
+				os_physicalmemorysize(arg1);
 				return;
 			case 394:
-				player_find_active_minimenu_entry(state);
+				player_find_active_minimenu_entry(arg1);
 				return;
 			case 395:
-				cc_setvflip(state);
+				cc_setvflip(arg1);
 				return;
 			case 396:
-				cc_clearops(state);
+				cc_clearops(arg1);
 				return;
 			case 397:
-				player_group_member_count(state);
+				player_group_member_count(arg1);
 				return;
 			case 398:
-				detailget_speechvol(state);
+				detailget_speechvol(arg1);
 				return;
 			case 399:
-				if_setlinkfriendchat(state);
+				if_setlinkfriendchat(arg1);
 				return;
 			case 400:
-				coordz(state);
+				coordz(arg1);
 				return;
 			case 401:
-				cam2_setdepthplanes(state);
+				cam2_setdepthplanes(arg1);
 				return;
 			case 402:
-				clan_getchatuserrank(state);
+				clan_getchatuserrank(arg1);
 				return;
 			case 403:
-				gender(state);
+				gender(arg1);
 				return;
 			case 404:
-				cam2_setlookatentity_npc(state);
+				cam2_setlookatentity_npc(arg1);
 				return;
 			case 405:
-				pop_long_local(state);
+				pop_long_local(arg1);
 				return;
 			case 406:
-				activeclanchannel_getuserworld(state);
+				activeclanchannel_getuserworld(arg1);
 				return;
 			case 407:
-				if_setonplayergrouptransmit(state);
+				if_setonplayergrouptransmit(arg1);
 				return;
 			case 408:
-				if_opensubclient(state);
+				if_opensubclient(arg1);
 				return;
 			case 409:
-				cam2_addeffect_ztilt(state);
+				cam2_addeffect_ztilt(arg1);
 				return;
 			case 410:
-				detail_groundblending(state);
+				detail_groundblending(arg1);
 				return;
 			case 411:
-				long_branch_greater_than_or_equals(state);
+				long_branch_greater_than_or_equals(arg1);
 				return;
 			case 412:
-				method10758(state);
+				method10758(arg1);
 				return;
 			case 413:
-				seqlength(state);
+				seqlength(arg1);
 				return;
 			case 414:
-				method15087(state);
+				method15087(arg1);
 				return;
 			case 415:
-				worldlist_sort(state);
+				worldlist_sort(arg1);
 				return;
 			case 416:
-				if_delpinchflags(state);
+				if_delpinchflags(arg1);
 				return;
 			case 417:
-				create_name_validate_reply(state);
+				create_name_validate_reply(arg1);
 				return;
 			case 418:
-				cc_npc_setcustombodymodel_transformed(state);
+				cc_npc_setcustombodymodel_transformed(arg1);
 				return;
 			case 419:
-				cc_setfill(state);
+				cc_setfill(arg1);
 				return;
 			case 420:
-				shader_preload_throttle(state);
+				shader_preload_throttle(arg1);
 				return;
 			case 421:
-				sound_synth_volume(state);
+				sound_synth_volume(arg1);
 				return;
 			case 422:
-				ignore_getname(state);
+				ignore_getname(arg1);
 				return;
 			case 423:
-				resume_clanforumqfcdialog(state);
+				resume_clanforumqfcdialog(arg1);
 				return;
 			case 424:
-				if_setmodelangle(state);
+				if_setmodelangle(arg1);
 				return;
 			case 425:
-				cc_setoptkey(state);
+				cc_setoptkey(arg1);
 				return;
 			case 426:
-				worldmap_getconfigzoom(state);
+				worldmap_getconfigzoom(arg1);
 				return;
 			case 427:
-				get_mousebuttons(state);
+				get_mousebuttons(arg1);
 				return;
 			case 428:
-				if_setsubtractinsets(state);
+				if_setsubtractinsets(arg1);
 				return;
 			case 429:
-				cc_getscrollwidth(state);
+				cc_getscrollwidth(arg1);
 				return;
 			case 430:
-				pop_long_discard(state);
+				pop_long_discard(arg1);
 				return;
 			case 431:
-				inv_totalparam_stack(state);
+				inv_totalparam_stack(arg1);
 				return;
 			case 432:
-				if_setopcursor(state);
+				if_setopcursor(arg1);
 				return;
 			case 433:
-				cc_setobject_wearcol_alwaysnum(state);
+				cc_setobject_wearcol_alwaysnum(arg1);
 				return;
 			case 434:
-				cam2_getpositionentity_lookatdistance(state);
+				cam2_getpositionentity_lookatdistance(arg1);
 				return;
 			case 435:
-				if_setcolour(state);
+				if_setcolour(arg1);
 				return;
 			case 436:
-				if_sethflip(state);
+				if_sethflip(arg1);
 				return;
 			case 437:
-				cc_setfontmono(state);
+				cc_setfontmono(arg1);
 				return;
 			case 438:
-				detailget_reflections(state);
+				detailget_reflections(arg1);
 				return;
 			case 439:
-				if_getgraphicdimensions(state);
+				if_getgraphicdimensions(arg1);
 				return;
 			case 440:
-				detailcanset_spotshadows(state);
+				detailcanset_spotshadows(arg1);
 				return;
 			case 441:
-				if_getmodelyof(state);
+				if_getmodelyof(arg1);
 				return;
 			case 442:
-				compare(state);
+				compare(arg1);
 				return;
 			case 443:
-				detailget_soundvol(state);
+				detailget_soundvol(arg1);
 				return;
 			case 444:
-				worldmap_flashelement(state);
+				worldmap_flashelement(arg1);
 				return;
 			case 445:
-				chatcat_getsubcatcount(state);
+				chatcat_getsubcatcount(arg1);
 				return;
 			case 446:
-				detail_gamerenderscale(state);
+				detail_gamerenderscale(arg1);
 				return;
 			case 447:
-				QuestCommands.quest_pointsreq_met(state);
+				QuestCommands.quest_pointsreq_met(arg1);
 				return;
 			case 448:
-				video_advert_play(state);
+				video_advert_play(arg1);
 				return;
 			case 449:
-				if_getmodelzoom(state);
+				if_getmodelzoom(arg1);
 				return;
 			case 450:
-				detailcanset_anisotropicfiltering(state);
+				detailcanset_anisotropicfiltering(arg1);
 				return;
 			case 451:
-				if_setmaxlines(state);
+				if_setmaxlines(arg1);
 				return;
 			case 452:
-				if_setondrag(state);
+				if_setondrag(arg1);
 				return;
 			case 453:
-				cc_setswipedeadzone(state);
+				cc_setswipedeadzone(arg1);
 				return;
 			case 454:
-				detailget_customcursors(state);
+				detailget_customcursors(arg1);
 				return;
 			case 455:
-				map_loadingscreen_settriggerpercent(state);
+				map_loadingscreen_settriggerpercent(arg1);
 				return;
 			case 456:
-				if_debug_button8(state);
+				if_debug_button8(arg1);
 				return;
 			case 457:
-				detail_maxbackgroundfps(state);
+				detail_maxbackgroundfps(arg1);
 				return;
 			case 458:
-				detailcanmod_gamerenderscale(state);
+				detailcanmod_gamerenderscale(arg1);
 				return;
 			case 459:
-				reboottimer(state);
+				reboottimer(arg1);
 				return;
 			case 460:
-				if_setplayermodel_self(state);
+				if_setplayermodel_self(arg1);
 				return;
 			case 461:
-				detailget_brightness(state);
+				detailget_brightness(arg1);
 				return;
 			case 462:
-				shop_requestdatastatus(state);
+				shop_requestdatastatus(arg1);
 				return;
 			case 463:
-				lobby_enterlobby_social_network(state);
+				lobby_enterlobby_social_network(arg1);
 				return;
 			case 464:
-				branch_if_true(state);
+				branch_if_true(arg1);
 				return;
 			case 465:
-				if_settextfont(state);
+				if_settextfont(arg1);
 				return;
 			case 466:
-				db_find_get(state);
+				db_find_get(arg1);
 				return;
 			case 467:
-				telemetry_get_row_index(state);
+				telemetry_get_row_index(arg1);
 				return;
 			case 468:
-				cc_deleteall(state);
+				cc_deleteall(arg1);
 				return;
 			case 469:
-				method9286(state);
+				method9286(arg1);
 				return;
 			case 470:
-				cam_forceangle(state);
+				cam_forceangle(arg1);
 				return;
 			case 471:
-				cam2_setlookatentity_player(state);
+				cam2_setlookatentity_player(arg1);
 				return;
 			case 472:
-				setup_messagebox(state);
+				setup_messagebox(arg1);
 				return;
 			case 473:
-				string_indexof_string(state);
+				string_indexof_string(arg1);
 				return;
 			case 474:
-				db_getfieldcount(state);
+				db_getfieldcount(arg1);
 				return;
 			case 475:
-				openurl(state);
+				openurl(arg1);
 				return;
 			case 476:
-				if_setonrelease(state);
+				if_setonrelease(arg1);
 				return;
 			case 477:
-				cc_setswipeflags(state);
+				cc_setswipeflags(arg1);
 				return;
 			case 478:
-				activeclanchannel_getuserdisplayname(state);
+				activeclanchannel_getuserdisplayname(arg1);
 				return;
 			case 479:
-				cc_gettext(state);
+				cc_gettext(arg1);
 				return;
 			case 480:
-				method5949(state);
+				method5949(arg1);
 				return;
 			case 481:
-				detailcanset_maxforegroundfps(state);
+				detailcanset_maxforegroundfps(arg1);
 				return;
 			case 482:
-				pop_var(state);
+				pop_var(arg1);
 				return;
 			case 483:
-				detailcanset_antialiasing(state);
+				detailcanset_antialiasing(arg1);
 				return;
 			case 484:
-				create_createrequest(state);
+				create_createrequest(arg1);
 				return;
 			case 485:
-				if_setonchattransmit(state);
+				if_setonchattransmit(arg1);
 				return;
 			case 486:
-				cam2_setlookatorientation_yrotation(state);
+				cam2_setlookatorientation_yrotation(arg1);
 				return;
 			case 487:
-				minimenuopen(state);
+				minimenuopen(arg1);
 				return;
 			case 488:
-				worldmap_3dview_setlighting(state);
+				worldmap_3dview_setlighting(arg1);
 				return;
 			case 489:
-				if_debug_button5(state);
+				if_debug_button5(arg1);
 				return;
 			case 490:
-				if_sendto(false, state);
+				if_sendto(false, arg1);
 				return;
 			case 491:
-				if_setonmouseover(state);
+				if_setonmouseover(arg1);
 				return;
 			case 492:
-				battery_getlevelpercent(state);
+				battery_getlevelpercent(arg1);
 				return;
 			case 493:
-				detailcanset_antialiasingmode(state);
+				detailcanset_antialiasingmode(arg1);
 				return;
 			case 494:
-				detailget_orthographic(state);
+				detailget_orthographic(arg1);
 				return;
 			case 495:
-				format_datetime_from_minutes(state);
+				format_datetime_from_minutes(arg1);
 				return;
 			case 496:
-				TwitchCommands.ttv_login(state);
+				TwitchCommands.ttv_login(arg1);
 				return;
 			case 497:
-				create_suggest_name_request(state);
+				create_suggest_name_request(arg1);
 				return;
 			case 498:
-				detail_antialiasing_default(state);
+				detail_antialiasing_default(arg1);
 				return;
 			case 499:
-				detailcanmod_bloom(state);
+				detailcanmod_bloom(arg1);
 				return;
 			case 500:
-				ignore_count(state);
+				ignore_count(arg1);
 				return;
 			case 501:
-				viewport_setzoom(state);
+				viewport_setzoom(arg1);
 				return;
 			case 502:
-				worldmap_stopcurrentflashes(state);
+				worldmap_stopcurrentflashes(arg1);
 				return;
 			case 503:
-				activeclansettings_getclanname(state);
+				activeclansettings_getclanname(arg1);
 				return;
 			case 504:
-				setbit(state);
+				setbit(arg1);
 				return;
 			case 505:
-				cc_setonverticalswipe(state);
+				cc_setonverticalswipe(arg1);
 				return;
 			case 506:
-				fromdate(state);
+				fromdate(arg1);
 				return;
 			case 507:
-				method10336(state);
+				method10336(arg1);
 				return;
 			case 508:
-				coord(state);
+				coord(arg1);
 				return;
 			case 509:
-				if_npc_setcustomrecol(state);
+				if_npc_setcustomrecol(arg1);
 				return;
 			case 510:
-				get_loc_bounding_box(state);
+				get_loc_bounding_box(arg1);
 				return;
 			case 511:
-				activechatphrase_setdynamicint(state);
+				activechatphrase_setdynamicint(arg1);
 				return;
 			case 512:
-				if_setonstattransmit(state);
+				if_setonstattransmit(arg1);
 				return;
 			case 513:
-				detailget_idleanims(state);
+				detailget_idleanims(arg1);
 				return;
 			case 514:
-				cam2_setpositionacceleration_axis(state);
+				cam2_setpositionacceleration_axis(arg1);
 				return;
 			case 515:
-				detail_diskcachesize(state);
+				detail_diskcachesize(arg1);
 				return;
 			case 516:
-				cam_lookat(state);
+				cam_lookat(arg1);
 				return;
 			case 517:
-				sethardcodedopcursors(state);
+				sethardcodedopcursors(arg1);
 				return;
 			case 518:
-				if_setonresize(state);
+				if_setonresize(arg1);
 				return;
 			case 519:
-				cc_setsize(state);
+				cc_setsize(arg1);
 				return;
 			case 520:
-				worldmap_closemap(state);
+				worldmap_closemap(arg1);
 				return;
 			case 521:
-				oc_uncert(state);
+				oc_uncert(arg1);
 				return;
 			case 522:
-				if_gettext(state);
+				if_gettext(arg1);
 				return;
 			case 523:
-				enum_string(state);
+				enum_string(arg1);
 				return;
 			case 524:
-				push_var(state);
+				push_var(arg1);
 				return;
 			case 525:
-				cc_settextalign(state);
+				cc_settextalign(arg1);
 				return;
 			case 526:
-				detailcanset_skydetail(state);
+				detailcanset_skydetail(arg1);
 				return;
 			case 527:
-				login_continue(state);
+				login_continue(arg1);
 				return;
 			case 528:
-				get_col_tag(state);
+				get_col_tag(arg1);
 				return;
 			case 529:
-				pop_array(state, true);
+				pop_array(arg1, true);
 				return;
 			case 530:
-				if_setgraphic(state);
+				if_setgraphic(arg1);
 				return;
 			case 531:
-				pop_array(state, false);
+				pop_array(arg1, false);
 				return;
 			case 532:
-				TwitchCommands.ttv_library_getstate(state);
+				TwitchCommands.ttv_library_getstate(arg1);
 				return;
 			case 533:
-				setbit_range(state);
+				setbit_range(arg1);
 				return;
 			case 534:
-				if_setpinchdeadzone(state);
+				if_setpinchdeadzone(arg1);
 				return;
 			case 535:
-				detailcanmod_groundblending(state);
+				detailcanmod_groundblending(arg1);
 				return;
 			case 536:
-				viewport_geteffectivesize(state);
+				viewport_geteffectivesize(arg1);
 				return;
 			case 537:
-				sound_jingle(state);
+				sound_jingle(arg1);
 				return;
 			case 538:
-				if_setongamepadtrigger(state);
+				if_setongamepadtrigger(arg1);
 				return;
 			case 539:
-				cos_deg(state);
+				cos_deg(arg1);
 				return;
 			case 540:
-				os_ismac(state);
+				os_ismac(arg1);
 				return;
 			case 541:
-				invother_total(state);
+				invother_total(arg1);
 				return;
 			case 542:
-				sound_mixbuss_add(state);
+				sound_mixbuss_add(arg1);
 				return;
 			case 543:
-				branch_not(state);
+				branch_not(arg1);
 				return;
 			case 544:
-				if_setonverticalpinch(state);
+				if_setonverticalpinch(arg1);
 				return;
 			case 545:
-				cc_settargetopcursor(state);
+				cc_settargetopcursor(arg1);
 				return;
 			case 546:
-				setgender(state);
+				setgender(arg1);
 				return;
 			case 547:
-				notifications_cancellocal(state);
+				notifications_cancellocal(arg1);
 				return;
 			case 548:
-				push_long_local(state);
+				push_long_local(arg1);
 				return;
 			case 549:
-				detail_volumetriclighting(state);
+				detail_volumetriclighting(arg1);
 				return;
 			case 550:
-				stat_base(state);
+				stat_base(arg1);
 				return;
 			case 551:
-				TwitchCommands.ttv_library_request(state);
+				TwitchCommands.ttv_library_request(arg1);
 				return;
 			case 552:
-				sound_synth_rate(state);
+				sound_synth_rate(arg1);
 				return;
 			case 553:
-				is_npc_active(state);
+				is_npc_active(arg1);
 				return;
 			case 554:
-				cc_setontargetleave(state);
+				cc_setontargetleave(arg1);
 				return;
 			case 555:
-				cc_getheight(state);
+				cc_getheight(arg1);
 				return;
 			case 556:
-				detail_maxforegroundfps(state);
+				detail_maxforegroundfps(arg1);
 				return;
 			case 557:
-				activeclanchannel_getuserrank(state);
+				activeclanchannel_getuserrank(arg1);
 				return;
 			case 558:
-				clan_getchatusername(state);
+				clan_getchatusername(arg1);
 				return;
 			case 559:
-				clan_isself(state);
+				clan_isself(arg1);
 				return;
 			case 560:
-				cam2_getpositionentity_lookatangleoffsets(state);
+				cam2_getpositionentity_lookatangleoffsets(arg1);
 				return;
 			case 561:
-				if_setonhold(state);
+				if_setonhold(arg1);
 				return;
 			case 562:
-				resend_uid_passport_request(state);
+				resend_uid_passport_request(arg1);
 				return;
 			case 563:
-				map_lang(state);
+				map_lang(arg1);
 				return;
 			case 564:
-				long_branch_greater_than(state);
+				long_branch_greater_than(arg1);
 				return;
 			case 565:
-				detailget_maxbackgroundfps(state);
+				detailget_maxbackgroundfps(arg1);
 				return;
 			case 566:
-				enum_hasoutput_string(state);
+				enum_hasoutput_string(arg1);
 				return;
 			case 567:
-				date_runeday_fromdate(state);
+				date_runeday_fromdate(arg1);
 				return;
 			case 568:
-				viewport_clampfov(state);
+				viewport_clampfov(arg1);
 				return;
 			case 569:
-				keyheld_ctrl(state);
+				keyheld_ctrl(arg1);
 				return;
 			case 570:
-				movecoord(state);
+				movecoord(arg1);
 				return;
 			case 571:
-				chat_setfilter(state);
+				chat_setfilter(arg1);
 				return;
 			case 572:
-				opcount(state);
+				opcount(arg1);
 				return;
 			case 573:
-				worldlist_pingworlds(state);
+				worldlist_pingworlds(arg1);
 				return;
 			case 574:
-				if_setopchar(state);
+				if_setopchar(arg1);
 				return;
 			case 575:
-				cc_npc_setcustomretex(state);
+				cc_npc_setcustomretex(arg1);
 				return;
 			case 576:
-				if_setopkeyignoreheld(state);
+				if_setopkeyignoreheld(arg1);
 				return;
 			case 577:
-				TwitchCommands.ttv_webcam_flip(state);
+				TwitchCommands.ttv_webcam_flip(arg1);
 				return;
 			case 578:
-				cc_setonverticalpinch(state);
+				cc_setonverticalpinch(arg1);
 				return;
 			case 579:
-				telemetry_get_column_index(state);
+				telemetry_get_column_index(arg1);
 				return;
 			case 580:
-				runenergy_visible(state);
+				runenergy_visible(arg1);
 				return;
 			case 581:
-				activeclansettings_getcurrentowner_slot(state);
+				activeclansettings_getcurrentowner_slot(arg1);
 				return;
 			case 582:
-				TwitchCommands.ttv_livestreams_update(state);
+				TwitchCommands.ttv_livestreams_update(arg1);
 				return;
 			case 583:
-				cc_setparam_string(state);
+				cc_setparam_string(arg1);
 				return;
 			case 584:
-				os_isios(state);
+				os_isios(arg1);
 				return;
 			case 585:
-				if_setonscrollwheel(state);
+				if_setonscrollwheel(arg1);
 				return;
 			case 586:
-				multiply(state);
+				multiply(arg1);
 				return;
 			case 587:
-				cc_sendto(true, state);
+				cc_sendto(true, arg1);
 				return;
 			case 588:
-				detailget_musicvol(state);
+				detailget_musicvol(arg1);
 				return;
 			case 589:
-				worldmap_getconfigbounds(state);
+				worldmap_getconfigbounds(arg1);
 				return;
 			case 590:
-				min(state);
+				min(arg1);
 				return;
 			case 591:
-				setsubmenuminlength(state);
+				setsubmenuminlength(arg1);
 				return;
 			case 592:
-				if_addpinchflags(state);
+				if_addpinchflags(arg1);
 				return;
 			case 593:
-				db_find(state, true);
+				db_find(arg1, true);
 				return;
 			case 594:
-				if_debug_target(state);
+				if_debug_target(arg1);
 				return;
 			case 595:
-				if_gettop(state);
+				if_gettop(arg1);
 				return;
 			case 596:
-				openurl_shim(state);
+				openurl_shim(arg1);
 				return;
 			case 597:
-				cc_setdragrenderbehaviour(state);
+				cc_setdragrenderbehaviour(arg1);
 				return;
 			case 598:
-				cc_gethide(state);
+				cc_gethide(arg1);
 				return;
 			case 599:
-				cc_dragpickup(state);
+				cc_dragpickup(arg1);
 				return;
 			case 600:
-				playermod(state);
+				playermod(arg1);
 				return;
 			case 601:
-				worldmap_getsize(state);
+				worldmap_getsize(arg1);
 				return;
 			case 602:
-				shop_applypendingtransactions(state);
+				shop_applypendingtransactions(arg1);
 				return;
 			case 603:
-				emoji_add(state);
+				emoji_add(arg1);
 				return;
 			case 604:
-				cc_setnoclickthrough(state);
+				cc_setnoclickthrough(arg1);
 				return;
 			case 605:
-				if_settargetopcursor(state);
+				if_settargetopcursor(arg1);
 				return;
 			case 606:
-				oc_wearpos(state);
+				oc_wearpos(arg1);
 				return;
 			case 607:
-				cam2_setpositionangularinterpolation(state);
+				cam2_setpositionangularinterpolation(arg1);
 				return;
 			case 608:
-				logout_getreason(state);
+				logout_getreason(arg1);
 				return;
 			case 609:
-				cc_delswipeflags(state);
+				cc_delswipeflags(arg1);
 				return;
 			case 610:
-				TwitchCommands.ttv_webcam_getcap_count(state);
+				TwitchCommands.ttv_webcam_getcap_count(arg1);
 				return;
 			case 611:
-				cc_sethflip(state);
+				cc_sethflip(arg1);
 				return;
 			case 612:
-				detailcanmod_ambientocclusion(state);
+				detailcanmod_ambientocclusion(arg1);
 				return;
 			case 613:
-				TwitchCommands.ttv_stream_stop(state);
+				TwitchCommands.ttv_stream_stop(arg1);
 				return;
 			case 614:
-				if_setfontmono(state);
+				if_setfontmono(arg1);
 				return;
 			case 615:
-				worldmap_setmap(state);
+				worldmap_setmap(arg1);
 				return;
 			case 616:
-				cc_setsubtractinsets(state);
+				cc_setsubtractinsets(arg1);
 				return;
 			case 617:
-				worldmap_flashelementcategory(state);
+				worldmap_flashelementcategory(arg1);
 				return;
 			case 618:
-				viewport_getfov(state);
+				viewport_getfov(arg1);
 				return;
 			case 619:
-				inv_total(state);
+				inv_total(arg1);
 				return;
 			case 620:
-				cam2_setfieldofview(state);
+				cam2_setfieldofview(arg1);
 				return;
 			case 621:
-				cc_getinvobject(state);
+				cc_getinvobject(arg1);
 				return;
 			case 622:
-				if_setfill(state);
+				if_setfill(arg1);
 				return;
 			case 623:
-				player_group_member_get_displayname(state);
+				player_group_member_get_displayname(arg1);
 				return;
 			case 624:
-				activeclansettings_getaffinedmuted(state);
+				activeclansettings_getaffinedmuted(arg1);
 				return;
 			case 625:
-				worldlist_next(state);
+				worldlist_next(arg1);
 				return;
 			case 626:
-				activeclansettings_find_affined(state);
+				activeclansettings_find_affined(arg1);
 				return;
 			case 627:
-				QuestCommands.quest_points(state);
+				QuestCommands.quest_points(arg1);
 				return;
 			case 628:
-				create_name_availablerequest(state);
+				create_name_availablerequest(arg1);
 				return;
 			case 629:
-				detailcanset_toolkit_default(state);
+				detailcanset_toolkit_default(arg1);
 				return;
 			case 630:
-				if_setmouseovercursor(state);
+				if_setmouseovercursor(arg1);
 				return;
 			case 631:
-				if_setonclansettingstransmit(state);
+				if_setonclansettingstransmit(arg1);
 				return;
 			case 632:
-				create_step_reached(state);
+				create_step_reached(arg1);
 				return;
 			case 633:
-				cc_sethide(state);
+				cc_sethide(arg1);
 				return;
 			case 634:
-				lobby_enterlobby_sso(state);
+				lobby_enterlobby_sso(arg1);
 				return;
 			case 635:
-				escape(state);
+				escape(arg1);
 				return;
 			case 636:
-				detailget_stereo(state);
+				detailget_stereo(arg1);
 				return;
 			case 637:
-				worldmap_getconfigsize(state);
+				worldmap_getconfigsize(arg1);
 				return;
 			case 638:
-				userdetail_lobby_membership(state);
+				userdetail_lobby_membership(arg1);
 				return;
 			case 639:
-				activeclansettings_getbannedcount(state);
+				activeclansettings_getbannedcount(arg1);
 				return;
 			case 640:
-				npc_type(state);
+				npc_type(arg1);
 				return;
 			case 641:
-				method3485(state);
+				method3485(arg1);
 				return;
 			case 642:
-				date_year(state);
+				date_year(arg1);
 				return;
 			case 643:
-				cc_setaspect(state);
+				cc_setaspect(arg1);
 				return;
 			case 644:
-				if_setparam_string(state);
+				if_setparam_string(arg1);
 				return;
 			case 645:
-				detail_cpuusage(state);
+				detail_cpuusage(arg1);
 				return;
 			case 646:
-				enum_getreversecount(state);
+				enum_getreversecount(arg1);
 				return;
 			case 647:
-				detailget_particles(state);
+				detailget_particles(arg1);
 				return;
 			case 648:
-				notifications_init(state);
+				notifications_init(arg1);
 				return;
 			case 649:
-				cc_setonmouseleave(state);
+				cc_setonmouseleave(arg1);
 				return;
 			case 650:
-				method4060(state);
+				method4060(arg1);
 				return;
 			case 651:
-				cc_setonhorizontalpinch(state);
+				cc_setonhorizontalpinch(arg1);
 				return;
 			case 652:
-				getwindowmode(state);
+				getwindowmode(arg1);
 				return;
 			case 653:
-				bug_report(state);
+				bug_report(arg1);
 				return;
 			case 654:
-				invother_getnum(state);
+				invother_getnum(arg1);
 				return;
 			case 655:
-				and(state);
+				and(arg1);
 				return;
 			case 656:
-				if_debug_button10(state);
+				if_debug_button10(arg1);
 				return;
 			case 657:
-				worldmap_3dview_settextfont(state);
+				worldmap_3dview_settextfont(arg1);
 				return;
 			case 658:
-				worldmap_setzoom(state);
+				worldmap_setzoom(arg1);
 				return;
 			case 659:
-				detailget_grounddecor_on(state);
+				detailget_grounddecor_on(arg1);
 				return;
 			case 660:
-				QuestCommands.quest_pointsreq(state);
+				QuestCommands.quest_pointsreq(arg1);
 				return;
 			case 661:
-				keyheld_shift(state);
+				keyheld_shift(arg1);
 				return;
 			case 662:
-				cc_getid(state);
+				cc_getid(arg1);
 				return;
 			case 663:
-				oc_cert(state);
+				oc_cert(arg1);
 				return;
 			case 664:
-				sound_group_start(state);
+				sound_group_start(arg1);
 				return;
 			case 665:
-				detailcanmod_lightingquality(state);
+				detailcanmod_lightingquality(arg1);
 				return;
 			case 666:
-				if_gety(state);
+				if_gety(arg1);
 				return;
 			case 667:
-				enum_getoutputcount(state);
+				enum_getoutputcount(arg1);
 				return;
 			case 668:
-				method5069(state);
+				method5069(arg1);
 				return;
 			case 669:
-				cc_setcolour(state);
+				cc_setcolour(arg1);
 				return;
 			case 670:
-				setdefaultcursors(state);
+				setdefaultcursors(arg1);
 				return;
 			case 671:
-				cam_dec_y(state);
+				cam_dec_y(arg1);
 				return;
 			case 672:
-				if_getopbase(state);
+				if_getopbase(arg1);
 				return;
 			case 673:
-				if_gethide(state);
+				if_gethide(arg1);
 				return;
 			case 674:
-				map_quickchat(state);
+				map_quickchat(arg1);
 				return;
 			case 675:
-				worldmap_3dview_getscreenposition(state);
+				worldmap_3dview_getscreenposition(arg1);
 				return;
 			case 676:
-				detailcanset_dof(state);
+				detailcanset_dof(arg1);
 				return;
 			case 677:
-				method2581(state);
+				method2581(arg1);
 				return;
 			case 678:
-				shader_preload_allow(state);
+				shader_preload_allow(arg1);
 				return;
 			case 679:
-				cc_addswipeflags(state);
+				cc_addswipeflags(arg1);
 				return;
 			case 680:
-				if_setheld(state);
+				if_setheld(arg1);
 				return;
 			case 681:
-				create_under13(state);
+				create_under13(arg1);
 				return;
 			case 682:
-				cc_setobject_wearcol_nonum(state);
+				cc_setobject_wearcol_nonum(arg1);
 				return;
 			case 683:
-				friend_getname(state);
+				friend_getname(arg1);
 				return;
 			case 684:
-				opplayert(state);
+				opplayert(arg1);
 				return;
 			case 685:
-				method5896(state);
+				method5896(arg1);
 				return;
 			case 686:
-				chat_sendprivate(state);
+				chat_sendprivate(arg1);
 				return;
 			case 687:
-				worldmap_getmap(state);
+				worldmap_getmap(arg1);
 				return;
 			case 688:
-				method7352(state);
+				method7352(arg1);
 				return;
 			case 689:
-				oc_shardcount(state);
+				oc_shardcount(arg1);
 				return;
 			case 690:
-				is_npc_visible(state);
+				is_npc_visible(arg1);
 				return;
 			case 691:
-				cc_setpinchdeadzone(state);
+				cc_setpinchdeadzone(arg1);
 				return;
 			case 692:
-				player_group_banned_count(state);
+				player_group_banned_count(arg1);
 				return;
 			case 693:
-				branch_greater_than(state);
+				branch_greater_than(arg1);
 				return;
 			case 694:
-				detailget_skydetail(state);
+				detailget_skydetail(arg1);
 				return;
 			case 695:
-				oc_hasvarobj(state);
+				oc_hasvarobj(arg1);
 				return;
 			case 696:
-				detailget_volumetriclighting(state);
+				detailget_volumetriclighting(arg1);
 				return;
 			case 697:
-				method5073(state);
+				method5073(arg1);
 				return;
 			case 698:
-				detailcanset_groundblending(state);
+				detailcanset_groundblending(arg1);
 				return;
 			case 699:
-				enum_getreverseindex_string(state);
+				enum_getreverseindex_string(arg1);
 				return;
 			case 700:
-				cam_getfollowheight(state);
+				cam_getfollowheight(arg1);
 				return;
 			case 701:
-				cc_getlayer(state);
+				cc_getlayer(arg1);
 				return;
 			case 702:
-				detail_removeroofs_option(state);
+				detail_removeroofs_option(arg1);
 				return;
 			case 703:
-				clan_joinchat(state);
+				clan_joinchat(arg1);
 				return;
 			case 704:
-				stat_visible_xp(state);
+				stat_visible_xp(arg1);
 				return;
 			case 705:
-				map_isowner(state);
+				map_isowner(arg1);
 				return;
 			case 706:
-				login_request(state);
+				login_request(arg1);
 				return;
 			case 707:
-				detail_lightingquality(state);
+				detail_lightingquality(arg1);
 				return;
 			case 708:
-				setwindowmode(state);
+				setwindowmode(arg1);
 				return;
 			case 709:
-				preload_download_rate(state);
+				preload_download_rate(arg1);
 				return;
 			case 710:
-				cc_setonclanchanneltransmit(state);
+				cc_setonclanchanneltransmit(arg1);
 				return;
 			case 711:
-				get_entity_bounding_box(state);
+				get_entity_bounding_box(arg1);
 				return;
 			case 712:
-				coordz_fine(state);
+				coordz_fine(arg1);
 				return;
 			case 713:
-				autosetup_blackflaglast(state);
+				autosetup_blackflaglast(arg1);
 				return;
 			case 714:
-				cc_setoutline(state);
+				cc_setoutline(arg1);
 				return;
 			case 715:
-				detailget_gamerenderscale(state);
+				detailget_gamerenderscale(arg1);
 				return;
 			case 716:
-				detail_removeroofs_option_override(state);
+				detail_removeroofs_option_override(arg1);
 				return;
 			case 717:
-				if_debug_button2(state);
+				if_debug_button2(arg1);
 				return;
 			case 718:
-				detailcanmod_texturing(state);
+				detailcanmod_texturing(arg1);
 				return;
 			case 719:
-				detail_flickering_on(state);
+				detail_flickering_on(arg1);
 				return;
 			case 720:
-				sso_available(state);
+				sso_available(arg1);
 				return;
 			case 721:
-				get_obj_screen_position(state);
+				get_obj_screen_position(arg1);
 				return;
 			case 722:
-				if_setdraggable(state);
+				if_setdraggable(arg1);
 				return;
 			case 723:
-				friend_is_referred(state);
+				friend_is_referred(arg1);
 				return;
 			case 724:
-				cc_npc_setcustomheadmodel(state);
+				cc_npc_setcustomheadmodel(arg1);
 				return;
 			case 725:
-				detailcanmod_fog(state);
+				detailcanmod_fog(arg1);
 				return;
 			case 726:
-				cc_getmodelyof(state);
+				cc_getmodelyof(arg1);
 				return;
 			case 727:
-				method10757(state);
+				method10757(arg1);
 				return;
 			case 728:
-				cc_getfontmetrics(state);
+				cc_getfontmetrics(arg1);
 				return;
 			case 729:
-				method4479(state);
+				method4479(arg1);
 				return;
 			case 730:
-				worldmap_disableelements(state);
+				worldmap_disableelements(arg1);
 				return;
 			case 731:
-				if_sethide(state);
+				if_sethide(arg1);
 				return;
 			case 732:
-				oc_op(state);
+				oc_op(arg1);
 				return;
 			case 733:
-				method18150(state);
+				method18150(arg1);
 				return;
 			case 734:
-				cc_create(state);
+				cc_create(arg1);
 				return;
 			case 735:
-				cc_setmodelzoom(state);
+				cc_setmodelzoom(arg1);
 				return;
 			case 736:
-				if_setretex(state);
+				if_setretex(arg1);
 				return;
 			case 737:
-				if_setoncamfinished(state);
+				if_setoncamfinished(arg1);
 				return;
 			case 738:
-				detailcanmod_shadows(state);
+				detailcanmod_shadows(arg1);
 				return;
 			case 739:
-				setdefaultwindowmode(state);
+				setdefaultwindowmode(arg1);
 				return;
 			case 740:
-				TwitchCommands.ttv_hasprerequisites(state);
+				TwitchCommands.ttv_hasprerequisites(arg1);
 				return;
 			case 741:
-				chatcat_findphrasebyshortcut(state);
+				chatcat_findphrasebyshortcut(arg1);
 				return;
 			case 742:
-				cc_setonvarctransmit(state);
+				cc_setonvarctransmit(arg1);
 				return;
 			case 743:
-				TwitchCommands.ttv_webcam_getstate(state);
+				TwitchCommands.ttv_webcam_getstate(arg1);
 				return;
 			case 744:
-				preload_download_totalsize(state);
+				preload_download_totalsize(arg1);
 				return;
 			case 745:
-				get_mousey(state);
+				get_mousey(arg1);
 				return;
 			case 746:
-				cc_delpinchflags(state);
+				cc_delpinchflags(arg1);
 				return;
 			case 747:
-				login_hoptime(state);
+				login_hoptime(arg1);
 				return;
 			case 748:
-				if_gettrans(state);
+				if_gettrans(arg1);
 				return;
 			case 749:
-				shop_opencategories(state);
+				shop_opencategories(arg1);
 				return;
 			case 750:
-				chatcat_getsubcat(state);
+				chatcat_getsubcat(arg1);
 				return;
 			case 751:
-				detail_stereo(state);
+				detail_stereo(arg1);
 				return;
 			case 752:
-				detail_idleanims_many(state);
+				detail_idleanims_many(arg1);
 				return;
 			case 753:
-				userdetail_lobby_membersstats(state);
+				userdetail_lobby_membersstats(arg1);
 				return;
 			case 754:
-				opplayer(state);
+				opplayer(arg1);
 				return;
 			case 755:
-				cc_setmodelorigin(state);
+				cc_setmodelorigin(arg1);
 				return;
 			case 756:
-				resume_countdialog(state);
+				resume_countdialog(arg1);
 				return;
 			case 757:
-				activeclansettings_getallowunaffined(state);
+				activeclansettings_getallowunaffined(arg1);
 				return;
 			case 758:
-				append_num(state);
+				append_num(arg1);
 				return;
 			case 759:
-				if_setoptchar(state);
+				if_setoptchar(arg1);
 				return;
 			case 760:
-				if_setmodelorthog(state);
+				if_setmodelorthog(arg1);
 				return;
 			case 761:
-				push_long_constant(state);
+				push_long_constant(arg1);
 				return;
 			case 762:
-				openurl_nologin(state);
+				openurl_nologin(arg1);
 				return;
 			case 763:
-				detailget_antialiasing_default(state);
+				detailget_antialiasing_default(arg1);
 				return;
 			case 764:
-				if_getmodelangle_y(state);
+				if_getmodelangle_y(arg1);
 				return;
 			case 765:
-				cam_inc_x(state);
+				cam_inc_x(arg1);
 				return;
 			case 766:
-				not(state);
+				not(arg1);
 				return;
 			case 767:
-				if_setonopt(state);
+				if_setonopt(arg1);
 				return;
 			case 768:
-				method1921(state);
+				method1921(arg1);
 				return;
 			case 769:
-				detailget_chosesafemode(state);
+				detailget_chosesafemode(arg1);
 				return;
 			case 770:
-				clan_leavechat(state);
+				clan_leavechat(arg1);
 				return;
 			case 771:
-				if_debug_getname(state);
+				if_debug_getname(arg1);
 				return;
 			case 772:
-				if_getheight(state);
+				if_getheight(arg1);
 				return;
 			case 773:
-				method5129(state);
+				method5129(arg1);
 				return;
 			case 774:
-				clan_getchatdisplayname(state);
+				clan_getchatdisplayname(arg1);
 				return;
 			case 775:
-				if_setongamepadbuttonheld(state);
+				if_setongamepadbuttonheld(arg1);
 				return;
 			case 776:
-				if_setongamepadaxis(state);
+				if_setongamepadaxis(arg1);
 				return;
 			case 777:
-				userdetail_lobby_unreadmessages(state);
+				userdetail_lobby_unreadmessages(arg1);
 				return;
 			case 778:
-				if_setnoclickthrough(state);
+				if_setnoclickthrough(arg1);
 				return;
 			case 779:
-				if_setoptkeyrate(state);
+				if_setoptkeyrate(arg1);
 				return;
 			case 780:
-				cc_setobject_nonum(state);
+				cc_setobject_nonum(arg1);
 				return;
 			case 781:
-				cc_setoncameraupdatetransmit(state);
+				cc_setoncameraupdatetransmit(arg1);
 				return;
 			case 782:
-				facing_fine(state);
+				facing_fine(arg1);
 				return;
 			case 783:
-				if_set_gamescreen_enabled(state);
+				if_set_gamescreen_enabled(arg1);
 				return;
 			case 784:
-				method17434(state);
+				method17434(arg1);
 				return;
 			case 785:
-				if_debug_getcomcount(state);
+				if_debug_getcomcount(arg1);
 				return;
 			case 786:
-				cam2_setlinearmovementmode(state);
+				cam2_setlinearmovementmode(arg1);
 				return;
 			case 787:
-				randominc(state);
+				randominc(arg1);
 				return;
 			case 788:
-				detailcanset_animdetail(state);
+				detailcanset_animdetail(arg1);
 				return;
 			case 789:
-				friend_getslotfromname(state);
+				friend_getslotfromname(arg1);
 				return;
 			case 790:
-				cam_reset(state);
+				cam_reset(arg1);
 				return;
 			case 791:
-				detailcanset_reflections(state);
+				detailcanset_reflections(arg1);
 				return;
 			case 792:
-				cc_setmodeltint(state);
+				cc_setmodeltint(arg1);
 				return;
 			case 793:
-				cam2_setpositionpoint_point(state);
+				cam2_setpositionpoint_point(arg1);
 				return;
 			case 794:
-				detailcanset_waterdetail(state);
+				detailcanset_waterdetail(arg1);
 				return;
 			case 795:
-				userdetail_lobby_dobrequested(state);
+				userdetail_lobby_dobrequested(arg1);
 				return;
 			case 796:
-				detail_waterdetail_high(state);
+				detail_waterdetail_high(arg1);
 				return;
 			case 797:
-				detailcanmod_shadowquality(state);
+				detailcanmod_shadowquality(arg1);
 				return;
 			case 798:
-				sound_jingle_volume(state);
+				sound_jingle_volume(arg1);
 				return;
 			case 799:
-				invpow(state);
+				invpow(arg1);
 				return;
 			case 800:
-				inv_freespace(state);
+				inv_freespace(arg1);
 				return;
 			case 801:
-				login_cancel(state);
+				login_cancel(arg1);
 				return;
 			case 802:
-				method7884(state);
+				method7884(arg1);
 				return;
 			case 803:
-				method257(state);
+				method257(arg1);
 				return;
 			case 804:
-				activeclanchannel_getuserslot(state);
+				activeclanchannel_getuserslot(arg1);
 				return;
 			case 805:
-				if_triggerop(state);
+				if_triggerop(arg1);
 				return;
 			case 806:
-				if_getscrolly(state);
+				if_getscrolly(arg1);
 				return;
 			case 807:
-				method8435(state);
+				method8435(arg1);
 				return;
 			case 808:
-				if_setlinkactiveclanchannel(state);
+				if_setlinkactiveclanchannel(arg1);
 				return;
 			case 809:
-				chat_playername(state);
+				chat_playername(arg1);
 				return;
 			case 810:
-				_enum(state);
+				_enum(arg1);
 				return;
 			case 811:
-				cam2_setpositionentity_npc(state);
+				cam2_setpositionentity_npc(arg1);
 				return;
 			case 812:
-				worldmap_disabletype(state);
+				worldmap_disabletype(arg1);
 				return;
 			case 813:
-				worldlist_fetch(state);
+				worldlist_fetch(arg1);
 				return;
 			case 814:
-				worldmap_disableelement(state);
+				worldmap_disableelement(arg1);
 				return;
 			case 815:
-				push_string_local(state);
+				push_string_local(arg1);
 				return;
 			case 816:
-				removetags(state);
+				removetags(arg1);
 				return;
 			case 817:
-				QuestCommands.quest_getsortname(state);
+				QuestCommands.quest_getsortname(arg1);
 				return;
 			case 818:
-				cc_getinvcount(state);
+				cc_getinvcount(arg1);
 				return;
 			case 819:
-				shop_getcategorydescription(state);
+				shop_getcategorydescription(arg1);
 				return;
 			case 820:
-				chat_gethistory_byuid(state);
+				chat_gethistory_byuid(arg1);
 				return;
 			case 821:
-				cc_setplayermodel(state);
+				cc_setplayermodel(arg1);
 				return;
 			case 822:
-				userdetail_dob(state);
+				userdetail_dob(arg1);
 				return;
 			case 823:
-				modulo(state);
+				modulo(arg1);
 				return;
 			case 824:
-				chat_getfilter_private(state);
+				chat_getfilter_private(arg1);
 				return;
 			case 825:
-				detailget_bgsoundvol(state);
+				detailget_bgsoundvol(arg1);
 				return;
 			case 826:
-				spline_addpoint(state);
+				spline_addpoint(arg1);
 				return;
 			case 827:
-				worldmap_coordinmap(state);
+				worldmap_coordinmap(arg1);
 				return;
 			case 828:
-				bas_getanim_ready(state);
+				bas_getanim_ready(arg1);
 				return;
 			case 829:
-				TwitchCommands.ttv_webcam_stop(state);
+				TwitchCommands.ttv_webcam_stop(arg1);
 				return;
 			case 830:
-				sound_song_stop(state);
+				sound_song_stop(arg1);
 				return;
 			case 831:
-				detail_toolkit(state);
+				detail_toolkit(arg1);
 				return;
 			case 832:
-				detailcanmod_maxscreensize(state);
+				detailcanmod_maxscreensize(arg1);
 				return;
 			case 833:
-				cam2_setlookatorientation_vector(state);
+				cam2_setlookatorientation_vector(arg1);
 				return;
 			case 834:
-				cc_setobject(state);
+				cc_setobject(arg1);
 				return;
 			case 835:
-				cc_setdraggable(state);
+				cc_setdraggable(arg1);
 				return;
 			case 836:
-				append_signnum(state);
+				append_signnum(arg1);
 				return;
 			case 837:
-				TwitchCommands.ttv_webcam_getdevice_count(state);
+				TwitchCommands.ttv_webcam_getdevice_count(arg1);
 				return;
 			case 838:
-				staffmodlevel(state);
+				staffmodlevel(arg1);
 				return;
 			case 839:
-				QuestCommands.quest_started(state);
+				QuestCommands.quest_started(arg1);
 				return;
 			case 840:
-				detailcanset_texturing(state);
+				detailcanset_texturing(arg1);
 				return;
 			case 841:
-				if_settargetcursors(state);
+				if_settargetcursors(arg1);
 				return;
 			case 842:
-				char_isalpha(state);
+				char_isalpha(arg1);
 				return;
 			case 843:
-				chat_clear(state);
+				chat_clear(arg1);
 				return;
 			case 844:
-				detail_loginvol(state);
+				detail_loginvol(arg1);
 				return;
 			case 845:
-				shop_open(state);
+				shop_open(arg1);
 				return;
 			case 846:
-				worldmap_findnearestelement(state);
+				worldmap_findnearestelement(arg1);
 				return;
 			case 847:
-				db_find(state, false);
+				db_find(arg1, false);
 				return;
 			case 848:
-				if_debug_button7(state);
+				if_debug_button7(arg1);
 				return;
 			case 849:
-				if_setdragrenderbehaviour(state);
+				if_setdragrenderbehaviour(arg1);
 				return;
 			case 850:
-				if_debug_button1(state);
+				if_debug_button1(arg1);
 				return;
 			case 851:
-				detailget_texturing(state);
+				detailget_texturing(arg1);
 				return;
 			case 852:
-				cc_getgraphic(state);
+				cc_getgraphic(arg1);
 				return;
 			case 853:
-				cc_setmodelangle(state);
+				cc_setmodelangle(arg1);
 				return;
 			case 854:
-				player_group_banned_get_displayname(state);
+				player_group_banned_get_displayname(arg1);
 				return;
 			case 855:
-				shop_getindexforcategoryname(state);
+				shop_getindexforcategoryname(arg1);
 				return;
 			case 856:
-				if_clearscripthooks(state);
+				if_clearscripthooks(arg1);
 				return;
 			case 857:
-				userdetail_lobby_ccexpiry(state);
+				userdetail_lobby_ccexpiry(arg1);
 				return;
 			case 858:
-				oc_find(state);
+				oc_find(arg1);
 				return;
 			case 859:
-				stockmarket_isofferadding(state);
+				stockmarket_isofferadding(arg1);
 				return;
 			case 860:
-				if_getmodel(state);
+				if_getmodel(arg1);
 				return;
 			case 861:
-				cc_setonvartransmit(state);
+				cc_setonvartransmit(arg1);
 				return;
 			case 862:
-				clienttype(state);
+				clienttype(arg1);
 				return;
 			case 863:
-				fullscreen_getmode(state);
+				fullscreen_getmode(arg1);
 				return;
 			case 864:
-				detail_reflections(state);
+				detail_reflections(arg1);
 				return;
 			case 865:
-				detailcanmod_antialiasing(state);
+				detailcanmod_antialiasing(arg1);
 				return;
 			case 866:
-				branch(state);
+				branch(arg1);
 				return;
 			case 867:
-				QuestCommands.quest_getdifficulty(state);
+				QuestCommands.quest_getdifficulty(arg1);
 				return;
 			case 868:
-				affinedclansettings_setmuted_fromchannel(state);
+				affinedclansettings_setmuted_fromchannel(arg1);
 				return;
 			case 869:
-				sub(state);
+				QuickChatDynamicCommand.add(arg1, (short) -32146);
 				return;
 			case 870:
-				cam2_removealleffects(state);
+				cam2_removealleffects(arg1);
 				return;
 			case 871:
-				activeclansettings_getbanneddisplayname(state);
+				activeclansettings_getbanneddisplayname(arg1);
 				return;
 			case 872:
-				ignore_getnotes(state);
+				ignore_getnotes(arg1);
 				return;
 			case 873:
-				inv_totalparam(state);
+				inv_totalparam(arg1);
 				return;
 			case 874:
-				activeclansettings_getranktalk(state);
+				activeclansettings_getranktalk(arg1);
 				return;
 			case 875:
-				TwitchCommands.ttv_chat_sendmessage(state);
+				TwitchCommands.ttv_chat_sendmessage(arg1);
 				return;
 			case 876:
-				if_getfontmetrics(state);
+				if_getfontmetrics(arg1);
 				return;
 			case 877:
-				db_findnext(state);
+				db_findnext(arg1);
 				return;
 			case 878:
-				cc_setposition(state);
+				cc_setposition(arg1);
 				return;
 			case 879:
-				if_setgraphicshadow(state);
+				if_setgraphicshadow(arg1);
 				return;
 			case 880:
-				worldmap_getdisableelementcategory(state);
+				worldmap_getdisableelementcategory(arg1);
 				return;
 			case 881:
-				shop_getproductdetails(state);
+				shop_getproductdetails(arg1);
 				return;
 			case 882:
-				create_connectrequest(state);
+				create_connectrequest(arg1);
 				return;
 			case 883:
-				player_group_member_get_join_xp(state);
+				player_group_member_get_join_xp(arg1);
 				return;
 			case 884:
-				map_loadedpercent(state);
+				map_loadedpercent(arg1);
 				return;
 			case 885:
-				get_loc_overlay_height(state);
+				get_loc_overlay_height(arg1);
 				return;
 			case 886:
-				fullscreen_lastmode(state);
+				fullscreen_lastmode(arg1);
 				return;
 			case 887:
-				detail_soundvol(state);
+				detail_soundvol(arg1);
 				return;
 			case 888:
-				parawidth(state);
+				parawidth(arg1);
 				return;
 			case 889:
-				if_getcharposatindex(state);
+				if_getcharposatindex(arg1);
 				return;
 			case 890:
-				cc_setmodel(state);
+				cc_setmodel(arg1);
 				return;
 			case 891:
-				if_callonresize(state);
+				if_callonresize(arg1);
 				return;
 			case 892:
-				if_setopbase(state);
+				if_setopbase(arg1);
 				return;
 			case 893:
-				applet_hasfocus(state);
+				applet_hasfocus(arg1);
 				return;
 			case 894:
-				chatcat_getphraseshortcut(state);
+				chatcat_getphraseshortcut(arg1);
 				return;
 			case 895:
-				if_setonverticalswipe(state);
+				if_setonverticalswipe(arg1);
 				return;
 			case 896:
-				detailcanset_ambientocclusion(state);
+				detailcanset_ambientocclusion(arg1);
 				return;
 			case 897:
-				detailget_toolkit_default(state);
+				detailget_toolkit_default(arg1);
 				return;
 			case 898:
-				if_settrans(state);
+				if_settrans(arg1);
 				return;
 			case 899:
-				stockmarket_isofferempty(state);
+				stockmarket_isofferempty(arg1);
 				return;
 			case 900:
-				sound_song(state);
+				sound_song(arg1);
 				return;
 			case 901:
-				if_setonclickrepeat(state);
+				if_setonclickrepeat(arg1);
 				return;
 			case 902:
-				QuestCommands.quest_allreqmet(state);
+				QuestCommands.quest_allreqmet(arg1);
 				return;
 			case 903:
-				cancel_interface_drag(state);
+				cancel_interface_drag(arg1);
 				return;
 			case 904:
-				worldmap_3dview_active(state);
+				worldmap_3dview_active(arg1);
 				return;
 			case 905:
-				detailget_canchoosesafemode(state);
+				detailget_canchoosesafemode(arg1);
 				return;
 			case 906:
-				coord_fine(state);
+				coord_fine(arg1);
 				return;
 			case 907:
-				os_driver_vendor(state);
+				os_driver_vendor(arg1);
 				return;
 			case 908:
-				chat_gethistorylength(state);
+				chat_gethistorylength(arg1);
 				return;
 			case 909:
-				if_getwidth(state);
+				if_getwidth(arg1);
 				return;
 			case 910:
-				get_npc_vislevel(state);
+				get_npc_vislevel(arg1);
 				return;
 			case 911:
-				telemetry_get_column_id(state);
+				telemetry_get_column_id(arg1);
 				return;
 			case 912:
-				cc_setlinkfriendchat(state);
+				cc_setlinkfriendchat(arg1);
 				return;
 			case 913:
-				oc_param(state);
+				oc_param(arg1);
 				return;
 			case 914:
-				detailcanset_fog(state);
+				detailcanset_fog(arg1);
 				return;
 			case 915:
-				setobj(state);
+				setobj(arg1);
 				return;
 			case 916:
-				defaultminimenu(state);
+				defaultminimenu(arg1);
 				return;
 			case 917:
-				if_hassuboverlay(state);
+				if_hassuboverlay(arg1);
 				return;
 			case 918:
-				cam2_setpositionmaxspeed(state);
+				cam2_setpositionmaxspeed(arg1);
 				return;
 			case 919:
-				if_setonvarcstrtransmit(state);
+				if_setonvarcstrtransmit(arg1);
 				return;
 			case 920:
-				method5146(state);
+				method5146(arg1);
 				return;
 			case 921:
-				divide(state);
+				divide(arg1);
 				return;
 			case 922:
-				cc_setmodelanim(state);
+				cc_setmodelanim(arg1);
 				return;
 			case 923:
-				method7328(state);
+				method7328(arg1);
 				return;
 			case 924:
-				if_setoninvtransmit(state);
+				if_setoninvtransmit(arg1);
 				return;
 			case 925:
-				worldlist_autoworld(state);
+				worldlist_autoworld(arg1);
 				return;
 			case 926:
-				if_setonclantransmit(state);
+				if_setonclantransmit(arg1);
 				return;
 			case 927:
-				resume_objdialog(state);
+				resume_objdialog(arg1);
 				return;
 			case 928:
-				stockmarket_getofferitem(state);
+				stockmarket_getofferitem(arg1);
 				return;
 			case 929:
-				detail_bgsoundvol(state);
+				detail_bgsoundvol(arg1);
 				return;
 			case 930:
-				chat_playername_unfiltered(state);
+				chat_playername_unfiltered(arg1);
 				return;
 			case 931:
-				invother_getvar(state);
+				invother_getvar(arg1);
 				return;
 			case 932:
-				os_driver_outdated(state);
+				os_driver_outdated(arg1);
 				return;
 			case 933:
-				activeclansettings_getcoinshare(state);
+				activeclansettings_getcoinshare(arg1);
 				return;
 			case 934:
-				if_setonvarclantransmit(state);
+				if_setonvarclantransmit(arg1);
 				return;
 			case 935:
-				getgridcoordrelativetocamera(state);
+				getgridcoordrelativetocamera(arg1);
 				return;
 			case 936:
-				TwitchCommands.ttv_webcam_getdevice_byindex(state);
+				TwitchCommands.ttv_webcam_getdevice_byindex(arg1);
 				return;
 			case 937:
-				worldmap_3dview_setloddistance(state);
+				worldmap_3dview_setloddistance(arg1);
 				return;
 			case 938:
-				mec_param(state);
+				mec_param(arg1);
 				return;
 			case 939:
-				cc_setpinchflags(state);
+				cc_setpinchflags(arg1);
 				return;
 			case 940:
-				if_setalpha(state);
+				if_setalpha(arg1);
 				return;
 			case 941:
-				resume_stringdialog(state);
+				resume_stringdialog(arg1);
 				return;
 			case 942:
-				QuestCommands.quest_varbitreq_desc(state);
+				QuestCommands.quest_varbitreq_desc(arg1);
 				return;
 			case 943:
-				if_setpinchflags(state);
+				if_setpinchflags(arg1);
 				return;
 			case 944:
-				mes_typed(state);
+				mes_typed(arg1);
 				return;
 			case 945:
-				push_array(state, true, false);
+				push_array(arg1, true, false);
 				return;
 			case 946:
-				cc_gettargetmask(state);
+				cc_gettargetmask(arg1);
 				return;
 			case 947:
-				get_entity_say(state);
+				get_entity_say(arg1);
 				return;
 			case 948:
-				cc_setonrelease(state);
+				cc_setonrelease(arg1);
 				return;
 			case 949:
-				cc_setonresize(state);
+				cc_setonresize(arg1);
 				return;
 			case 950:
-				if_resetlinkplayer(state);
+				if_resetlinkplayer(arg1);
 				return;
 			case 951:
-				bitcount(state);
+				bitcount(arg1);
 				return;
 			case 952:
-				create_suggest_name_reply(state);
+				create_suggest_name_reply(arg1);
 				return;
 			case 953:
-				cc_setplayermodel_self(state);
+				cc_setplayermodel_self(arg1);
 				return;
 			case 954:
-				detailget_ambientocclusion(state);
+				detailget_ambientocclusion(arg1);
 				return;
 			case 955:
-				login_reply(state);
+				login_reply(arg1);
 				return;
 			case 956:
-				detailcanmod_hardshadows(state);
+				detailcanmod_hardshadows(arg1);
 				return;
 			case 957:
-				chatphrase_getautoresponse(state);
+				chatphrase_getautoresponse(arg1);
 				return;
 			case 958:
-				email_validation_submit_code(state);
+				email_validation_submit_code(arg1);
 				return;
 			case 959:
-				setwalkmarker(state);
+				setwalkmarker(arg1);
 				return;
 			case 960:
-				if_getcharindexatpos(state);
+				if_getcharindexatpos(arg1);
 				return;
 			case 961:
-				friend_add(state);
+				friend_add(arg1);
 				return;
 			case 962:
-				cam2_setlookatspringproperties(state);
+				cam2_setlookatspringproperties(arg1);
 				return;
 			case 963:
-				shop_getcategoryid(state);
+				shop_getcategoryid(arg1);
 				return;
 			case 964:
-				cc_setdragdeadzone(state);
+				cc_setdragdeadzone(arg1);
 				return;
 			case 965:
-				show_software_license(state);
+				show_software_license(arg1);
 				return;
 			case 966:
-				if_debug_button6(state);
+				if_debug_button6(arg1);
 				return;
 			case 967:
-				max(state);
+				max(arg1);
 				return;
 			case 968:
-				worldmap_setflashloops(state);
+				worldmap_setflashloops(arg1);
 				return;
 			case 969:
-				player_group_get_create_mins_since_epoch(state);
+				player_group_get_create_mins_since_epoch(arg1);
 				return;
 			case 970:
-				detailcanmod_maxbackgroundfps(state);
+				detailcanmod_maxbackgroundfps(arg1);
 				return;
 			case 971:
-				get_loc_screen_position(state);
+				get_loc_screen_position(arg1);
 				return;
 			case 972:
-				cc_setplayerhead_self(state);
+				cc_setplayerhead_self(arg1);
 				return;
 			case 973:
-				worldmap_setflashtics(state);
+				worldmap_setflashtics(arg1);
 				return;
 			case 974:
-				worldmap_getmapname(state);
+				worldmap_getmapname(arg1);
 				return;
 			case 975:
-				lobby_entergamereply(state);
+				lobby_entergamereply(arg1);
 				return;
 			case 976:
-				cc_getscrollheight(state);
+				cc_getscrollheight(arg1);
 				return;
 			case 977:
-				get_minimenu_target(state);
+				get_minimenu_target(arg1);
 				return;
 			case 978:
-				cam2_setlookatangularinterpolation(state);
+				cam2_setlookatangularinterpolation(arg1);
 				return;
 			case 979:
-				if_setscrollsize(state);
+				if_setscrollsize(arg1);
 				return;
 			case 980:
-				detailget_mindiskcachesize(state);
+				detailget_mindiskcachesize(arg1);
 				return;
 			case 981:
-				notify_accountcreatestarted(state);
+				notify_accountcreatestarted(arg1);
 				return;
 			case 982:
-				fullscreen_modecount(state);
+				fullscreen_modecount(arg1);
 				return;
 			case 983:
-				detailget_drawdistance(state);
+				detailget_drawdistance(arg1);
 				return;
 			case 984:
-				method3911(state);
+				method3911(arg1);
 				return;
 			case 985:
-				if_setdragdeadtime(state);
+				if_setdragdeadtime(arg1);
 				return;
 			case 986:
-				if_getscrollwidth(state);
+				if_getscrollwidth(arg1);
 				return;
 			case 987:
-				cc_setonmouseover(state);
+				cc_setonmouseover(arg1);
 				return;
 			case 988:
-				npc_find_active_minimenu_entry(state);
+				npc_find_active_minimenu_entry(arg1);
 				return;
 			case 989:
-				if_setonvarctransmit(state);
+				if_setonvarctransmit(arg1);
 				return;
 			case 990:
-				detail_buildarea(state);
+				detail_buildarea(arg1);
 				return;
 			case 991:
-				detailget_animdetail(state);
+				detailget_animdetail(arg1);
 				return;
 			case 992:
-				activechatphrase_setdynamicobj(state);
+				activechatphrase_setdynamicobj(arg1);
 				return;
 			case 993:
-				get_obj_bounding_box(state);
+				get_obj_bounding_box(arg1);
 				return;
 			case 994:
-				if_settargetverb(state);
+				if_settargetverb(arg1);
 				return;
 			case 995:
-				cc_setnpchead(state);
+				cc_setnpchead(arg1);
 				return;
 			case 996:
-				docheat(state);
+				docheat(arg1);
 				return;
 			case 997:
-				or(state);
+				or(arg1);
 				return;
 			case 998:
-				worldmap_getcurrentmap(state);
+				worldmap_getcurrentmap(arg1);
 				return;
 			case 999:
-				cc_setopkeyrate(state);
+				cc_setopkeyrate(arg1);
 				return;
 			case 1000:
-				coordy(state);
+				coordy(arg1);
 				return;
 			case 1001:
-				detailget_anisotropicfiltering(state);
+				detailget_anisotropicfiltering(arg1);
 				return;
 			case 1002:
-				detail_lightdetail_high(state);
+				detail_lightdetail_high(arg1);
 				return;
 			case 1003:
-				detail_idleanims(state);
+				detail_idleanims(arg1);
 				return;
 			case 1004:
-				cc_getop(state);
+				cc_getop(arg1);
 				return;
 			case 1005:
-				worldmap_getdisableelement(state);
+				worldmap_getdisableelement(arg1);
 				return;
 			case 1006:
-				cc_setonclansettingstransmit(state);
+				cc_setonclansettingstransmit(arg1);
 				return;
 			case 1007:
-				worldmap_getconfigorigin(state);
+				worldmap_getconfigorigin(arg1);
 				return;
 			case 1008:
-				method13982(state);
+				method13982(arg1);
 				return;
 			case 1009:
-				cc_gety(state);
+				cc_gety(arg1);
 				return;
 			case 1010:
-				detailget_antialiasingmode(state);
+				detailget_antialiasingmode(arg1);
 				return;
 			case 1011:
-				basecolour(state);
+				basecolour(arg1);
 				return;
 			case 1012:
-				cc_settargetverb(state);
+				cc_settargetverb(arg1);
 				return;
 			case 1013:
-				if_setrecol(state);
+				if_setrecol(arg1);
 				return;
 			case 1014:
-				hsvtorgb(state);
+				hsvtorgb(arg1);
 				return;
 			case 1015:
-				if_getparentlayer(state);
+				if_getparentlayer(arg1);
 				return;
 			case 1016:
-				text_gender(state);
+				text_gender(arg1);
 				return;
 			case 1017:
-				video_advert_allow_skip(state);
+				video_advert_allow_skip(arg1);
 				return;
 			case 1018:
-				emoji_substitute(state);
+				emoji_substitute(arg1);
 				return;
 			case 1019:
-				chat_getfilter_public(state);
+				chat_getfilter_public(arg1);
 				return;
 			case 1020:
-				cam2_setlookatorientation_maxdistanceclamping(state);
+				cam2_setlookatorientation_maxdistanceclamping(arg1);
 				return;
 			case 1021:
-				inv_getobj(state);
+				inv_getobj(arg1);
 				return;
 			case 1022:
-				player_group_get_overall_status(state);
+				player_group_get_overall_status(arg1);
 				return;
 			case 1023:
-				detailcanmod_volumetriclighting(state);
+				detailcanmod_volumetriclighting(arg1);
 				return;
 			case 1024:
-				if_addswipeflags(state);
+				if_addswipeflags(arg1);
 				return;
 			case 1025:
-				stockmarket_getoffertype(state);
+				stockmarket_getoffertype(arg1);
 				return;
 			case 1026:
-				detailcanset_particles(state);
+				detailcanset_particles(arg1);
 				return;
 			case 1027:
-				char_tolowercase(state);
+				char_tolowercase(arg1);
 				return;
 			case 1028:
-				TwitchCommands.ttv_webcam_getcap_byuniqueid(state);
+				TwitchCommands.ttv_webcam_getcap_byuniqueid(arg1);
 				return;
 			case 1029:
-				if_setonmouseleave(state);
+				if_setonmouseleave(arg1);
 				return;
 			case 1030:
-				os_islinux(state);
+				os_islinux(arg1);
 				return;
 			case 1031:
-				TwitchCommands.ttv_stream_getquality(state);
+				TwitchCommands.ttv_stream_getquality(arg1);
 				return;
 			case 1032:
-				shop_requestdata(state);
+				shop_requestdata(arg1);
 				return;
 			case 1033:
-				worldmap_3dview_getloddistance(state);
+				worldmap_3dview_getloddistance(arg1);
 				return;
 			case 1034:
-				cc_setparam(state);
+				cc_setparam(arg1);
 				return;
 			case 1035:
-				friend_getnotes(state);
+				friend_getnotes(arg1);
 				return;
 			case 1036:
-				player_group_get_create_seconds_to_now(state);
+				player_group_get_create_seconds_to_now(arg1);
 				return;
 			case 1037:
-				if_setaspect(state);
+				if_setaspect(arg1);
 				return;
 			case 1038:
-				detailget_groundblending(state);
+				detailget_groundblending(arg1);
 				return;
 			case 1039:
-				togglebit(state);
+				togglebit(arg1);
 				return;
 			case 1040:
-				if_getmodelxof(state);
+				if_getmodelxof(arg1);
 				return;
 			case 1041:
-				if_hassub(state);
+				if_hassub(arg1);
 				return;
 			case 1042:
-				if_setposition(state);
+				if_setposition(arg1);
 				return;
 			case 1043:
-				writeconsole(state);
+				writeconsole(arg1);
 				return;
 			case 1044:
-				telemetry_is_grid_processor_set(state);
+				telemetry_is_grid_processor_set(arg1);
 				return;
 			case 1045:
-				preload_progress(state);
+				preload_progress(arg1);
 				return;
 			case 1046:
-				activeclanchannel_getsorteduserslot(state);
+				activeclanchannel_getsorteduserslot(arg1);
 				return;
 			case 1047:
-				quit(state);
+				quit(arg1);
 				return;
 			case 1048:
-				window_getinsets(state);
+				window_getinsets(arg1);
 				return;
 			case 1049:
-				QuestCommands.quest_finished(state);
+				QuestCommands.quest_finished(arg1);
 				return;
 			case 1050:
-				if_setobject_wearcol_nonum(state);
+				if_setobject_wearcol_nonum(arg1);
 				return;
 			case 1051:
-				cam_removeroof(state);
+				cam_removeroof(arg1);
 				return;
 			case 1052:
-				cc_set2dangle(state);
+				cc_set2dangle(arg1);
 				return;
 			case 1053:
-				cc_setondragcomplete(state);
+				cc_setondragcomplete(arg1);
 				return;
 			case 1054:
-				if_debug_getopenifcount(state);
+				if_debug_getopenifcount(arg1);
 				return;
 			case 1055:
-				QuestCommands.quest_questreq_count(state);
+				QuestCommands.quest_questreq_count(arg1);
 				return;
 			case 1056:
-				stockmarket_isofferstable(state);
+				stockmarket_isofferstable(arg1);
 				return;
 			case 1057:
-				cc_setonclantransmit(state);
+				cc_setonclantransmit(arg1);
 				return;
 			case 1058:
-				mec_text(state);
+				mec_text(arg1);
 				return;
 			case 1059:
-				if_setobject_wearcol_alwaysnum(state);
+				if_setobject_wearcol_alwaysnum(arg1);
 				return;
 			case 1060:
-				has_nxt(state);
+				has_nxt(arg1);
 				return;
 			case 1061:
-				detail_hardshadows(state);
+				detail_hardshadows(arg1);
 				return;
 			case 1062:
-				activeclanchannel_kickuser(state);
+				activeclanchannel_kickuser(arg1);
 				return;
 			case 1063:
-				worldlist_specific_thisworld(state);
+				worldlist_specific_thisworld(arg1);
 				return;
 			case 1064:
-				is_gamescreen_state(state);
+				is_gamescreen_state(arg1);
 				return;
 			case 1065:
-				cam2_setpositionmode(state);
+				cam2_setpositionmode(arg1);
 				return;
 			case 1066:
-				branch_less_than_or_equals(state);
+				branch_less_than_or_equals(arg1);
 				return;
 			case 1067:
-				automatedtestflags(state);
+				automatedtestflags(arg1);
 				return;
 			case 1068:
-				detailcanset_vsync(state);
+				detailcanset_vsync(arg1);
 				return;
 			case 1069:
-				pow(state);
+				pow(arg1);
 				return;
 			case 1070:
-				self_player_uid(state);
+				self_player_uid(arg1);
 				return;
 			case 1071:
-				pop_int_local(state);
+				pop_int_local(arg1);
 				return;
 			case 1072:
-				append(state);
+				append(arg1);
 				return;
 			case 1073:
-				autosetup_setlow(state);
+				autosetup_setlow(arg1);
 				return;
 			case 1074:
-				chatcat_findsubcatbyshortcut(state);
+				chatcat_findsubcatbyshortcut(arg1);
 				return;
 			case 1075:
-				detailcanmod_animdetail(state);
+				detailcanmod_animdetail(arg1);
 				return;
 			case 1076:
-				detail_grounddecor_on(state);
+				detail_grounddecor_on(arg1);
 				return;
 			case 1077:
-				cc_setonsubchange(state);
+				cc_setonsubchange(arg1);
 				return;
 			case 1078:
-				sound_distancefocusfilter_setparams(state);
+				sound_distancefocusfilter_setparams(arg1);
 				return;
 			case 1079:
-				autosetup_setultra(state);
+				autosetup_setultra(arg1);
 				return;
 			case 1080:
-				stockmarket_getofferprice(state);
+				stockmarket_getofferprice(arg1);
 				return;
 			case 1081:
-				stockmarket_isofferfinished(state);
+				stockmarket_isofferfinished(arg1);
 				return;
 			case 1082:
-				cam2_setcollisionmode(state);
+				cam2_setcollisionmode(arg1);
 				return;
 			case 1083:
-				QuestCommands.quest_varpreq_desc(state);
+				QuestCommands.quest_varpreq_desc(arg1);
 				return;
 			case 1084:
-				coordlevel_fine(state);
+				coordlevel_fine(arg1);
 				return;
 			case 1085:
-				inv_size(state);
+				inv_size(arg1);
 				return;
 			case 1086:
-				if_debug_button9(state);
+				if_debug_button9(arg1);
 				return;
 			case 1087:
-				if_setplayerhead_self(state);
+				if_setplayerhead_self(arg1);
 				return;
 			case 1088:
-				video_advert_has_finished(state);
+				video_advert_has_finished(arg1);
 				return;
 			case 1089:
-				create_availablerequest(state);
+				create_availablerequest(arg1);
 				return;
 			case 1090:
-				if_debug_button4(state);
+				if_debug_button4(arg1);
 				return;
 			case 1091:
-				detailget_fog_on(state);
+				detailget_fog_on(arg1);
 				return;
 			case 1092:
-				detail_fog_on(state);
+				detail_fog_on(arg1);
 				return;
 			case 1093:
-				worldmap_getdisabletype(state);
+				worldmap_getdisabletype(arg1);
 				return;
 			case 1094:
-				db_listall(state);
+				db_listall(arg1);
 				return;
 			case 1095:
-				is_targeted_entity(state);
+				is_targeted_entity(arg1);
 				return;
 			case 1096:
-				cc_get2dangle(state);
+				cc_get2dangle(arg1);
 				return;
 			case 1097:
-				can_run_java_client(state);
+				can_run_java_client(arg1);
 				return;
 			case 1098:
-				chatphrase_getautoresponsecount(state);
+				chatphrase_getautoresponsecount(arg1);
 				return;
 			case 1099:
-				testbit(state);
+				testbit(arg1);
 				return;
 			case 1100:
-				char_isalphanumeric(state);
+				char_isalphanumeric(arg1);
 				return;
 			case 1101:
-				coordx(state);
+				coordx(arg1);
 				return;
 			case 1102:
-				friend_test(state);
+				friend_test(arg1);
 				return;
 			case 1103:
-				long_branch_less_than_or_equals(state);
+				long_branch_less_than_or_equals(arg1);
 				return;
 			case 1104:
-				cc_setmodellighting(state);
+				cc_setmodellighting(arg1);
 				return;
 			case 1105:
-				cam_movealong(state);
+				cam_movealong(arg1);
 				return;
 			case 1106:
-				cam2_setlookatpoint_point(state);
+				cam2_setlookatpoint_point(arg1);
 				return;
 			case 1107:
-				cc_setdragdeadtime(state);
+				cc_setdragdeadtime(arg1);
 				return;
 			case 1108:
-				worldmap_listelement_start(state);
+				worldmap_listelement_start(arg1);
 				return;
 			case 1109:
-				cc_setontimer(state);
+				cc_setontimer(arg1);
 				return;
 			case 1110:
-				oc_findrestart(state);
+				oc_findrestart(arg1);
 				return;
 			case 1111:
-				cc_setonmouserepeat(state);
+				cc_setonmouserepeat(arg1);
 				return;
 			case 1112:
-				if_setnpchead(state);
+				if_setnpchead(arg1);
 				return;
 			case 1113:
-				activeclanchannel_find_listened(state);
+				activeclanchannel_find_listened(arg1);
 				return;
 			case 1114:
-				if_settext(state);
+				if_settext(arg1);
 				return;
 			case 1115:
-				chatphrase_getdynamiccommand(state);
+				chatphrase_getdynamiccommand(arg1);
 				return;
 			case 1116:
-				detailcanset_buildarea(state);
+				detailcanset_buildarea(arg1);
 				return;
 			case 1117:
-				cc_setonclickrepeat(state);
+				cc_setonclickrepeat(arg1);
 				return;
 			case 1118:
-				detail_drawdistance(state);
+				detail_drawdistance(arg1);
 				return;
 			case 1119:
-				if_getscrollx(state);
+				if_getscrollx(arg1);
 				return;
 			case 1120:
-				cc_triggerop(state);
+				cc_triggerop(arg1);
 				return;
 			case 1121:
-				detailcanmod_dof(state);
+				detailcanmod_dof(arg1);
 				return;
 			case 1122:
-				branch_greater_than_or_equals(state);
+				branch_greater_than_or_equals(arg1);
 				return;
 			case 1123:
-				if_getscrollheight(state);
+				if_getscrollheight(arg1);
 				return;
 			case 1124:
-				cc_setscrollpos(state);
+				cc_setscrollpos(arg1);
 				return;
 			case 1125:
-				worldlist_switch(state);
+				worldlist_switch(arg1);
 				return;
 			case 1126:
-				enum_getreversecount_string(state);
+				enum_getreversecount_string(arg1);
 				return;
 			case 1127:
-				cam2_setsnapdistances(state);
+				cam2_setsnapdistances(arg1);
 				return;
 			case 1128:
-				TwitchCommands.ttv_login_getstate(state);
+				TwitchCommands.ttv_login_getstate(arg1);
 				return;
 			case 1129:
-				cc_setongamepadbutton(state);
+				cc_setongamepadbutton(arg1);
 				return;
 			case 1130:
-				if_setonfriendtransmit(state);
+				if_setonfriendtransmit(arg1);
 				return;
 			case 1131:
-				if_getinvobject(state);
+				if_getinvobject(arg1);
 				return;
 			case 1132:
-				cc_settextfont(state);
+				cc_settextfont(arg1);
 				return;
 			case 1133:
-				cam2_setpositionmaxspeed_axis(state);
+				cam2_setpositionmaxspeed_axis(arg1);
 				return;
 			case 1134:
-				playerdemo(state);
+				playerdemo(arg1);
 				return;
 			case 1135:
-				cam2_setlookatorientation_xmovement(state);
+				cam2_setlookatorientation_xmovement(arg1);
 				return;
 			case 1136:
-				comlevel_active(state);
+				comlevel_active(arg1);
 				return;
 			case 1137:
-				if_setmodeltint(state);
+				if_setmodeltint(arg1);
 				return;
 			case 1138:
-				if_get2dangle(state);
+				if_get2dangle(arg1);
 				return;
 			case 1139:
-				cc_getmodelxof(state);
+				cc_getmodelxof(arg1);
 				return;
 			case 1140:
-				TwitchCommands.ttv_stream_getviewers(state);
+				TwitchCommands.ttv_stream_getviewers(arg1);
 				return;
 			case 1141:
-				clanforumqfc_tostring(state);
+				clanforumqfc_tostring(arg1);
 				return;
 			case 1142:
-				interpolate(state);
+				interpolate(arg1);
 				return;
 			case 1143:
-				if_setpausetext(state);
+				if_setpausetext(arg1);
 				return;
 			case 1144:
 				return;
 			case 1145:
-				create_setunder13(state);
+				create_setunder13(arg1);
 				return;
 			case 1146:
-				oc_iop(state);
+				oc_iop(arg1);
 				return;
 			case 1147:
-				worldmap_getdisableelements(state);
+				worldmap_getdisableelements(arg1);
 				return;
 			case 1148:
-				cc_gettrans(state);
+				cc_gettrans(arg1);
 				return;
 			case 1149:
-				friend_getworldname(state);
+				friend_getworldname(arg1);
 				return;
 			case 1150:
-				QuestCommands.quest_statreq_stat(state);
+				QuestCommands.quest_statreq_stat(arg1);
 				return;
 			case 1151:
-				sound_vorbis_rate(state);
+				sound_vorbis_rate(arg1);
 				return;
 			case 1152:
-				cc_setretex(state);
+				cc_setretex(arg1);
 				return;
 			case 1153:
-				detailget_recommendeddiskcachesize(state);
+				detailget_recommendeddiskcachesize(arg1);
 				return;
 			case 1154:
-				detailcanset_hardshadows(state);
+				detailcanset_hardshadows(arg1);
 				return;
 			case 1155:
-				if_getlayer(state);
+				if_getlayer(arg1);
 				return;
 			case 1156:
-				affinedclansettings_addbanned_fromchannel(state);
+				affinedclansettings_addbanned_fromchannel(arg1);
 				return;
 			case 1157:
-				TwitchCommands.ttv_stream_setsmoothresize(state);
+				TwitchCommands.ttv_stream_setsmoothresize(arg1);
 				return;
 			case 1158:
-				oc_cost(state);
+				oc_cost(arg1);
 				return;
 			case 1159:
-				player_group_get_max_size(state);
+				player_group_get_max_size(arg1);
 				return;
 			case 1160:
-				if_setmodel(state);
+				if_setmodel(arg1);
 				return;
 			case 1161:
-				shader_preload_percent(state);
+				shader_preload_percent(arg1);
 				return;
 			case 1162:
-				lc_param(state);
+				lc_param(arg1);
 				return;
 			case 1163:
-				if_setobject_wearcol(state);
+				if_setobject_wearcol(arg1);
 				return;
 			case 1164:
-				telemetry_get_grid_value(state);
+				telemetry_get_grid_value(arg1);
 				return;
 			case 1165:
-				activeclanchannel_find_affined(state);
+				activeclanchannel_find_affined(arg1);
 				return;
 			case 1166:
-				method484(state);
+				method484(arg1);
 				return;
 			case 1167:
-				_switch(state);
+				_switch(arg1);
 				return;
 			case 1168:
-				chat_getnextuid(state);
+				chat_getnextuid(arg1);
 				return;
 			case 1169:
-				activeclansettings_getranklootshare(state);
+				activeclansettings_getranklootshare(arg1);
 				return;
 			case 1170:
-				detailcanset_gamerenderscale(state);
+				detailcanset_gamerenderscale(arg1);
 				return;
 			case 1171:
-				if_setparam_int(state);
+				if_setparam_int(arg1);
 				return;
 			case 1172:
-				cc_settextantimacro(state);
+				cc_settextantimacro(arg1);
 				return;
 			case 1173:
-				date_runeday(state);
+				date_runeday(arg1);
 				return;
 			case 1174:
-				cc_setondrag(state);
+				cc_setondrag(arg1);
 				return;
 			case 1175:
-				worldmap_getdisabletextsize(state);
+				worldmap_getdisabletextsize(arg1);
 				return;
 			case 1176:
-				autosetup_setmin(state);
+				autosetup_setmin(arg1);
 				return;
 			case 1177:
-				if_setclickmask(state);
+				if_setclickmask(arg1);
 				return;
 			case 1178:
-				if_debug_getservertriggers(state);
+				if_debug_getservertriggers(arg1);
 				return;
 			case 1179:
-				get_active_minimenu_entry(state);
+				get_active_minimenu_entry(arg1);
 				return;
 			case 1180:
-				sin_deg(state);
+				sin_deg(arg1);
 				return;
 			case 1181:
-				atan2_deg(state);
+				atan2_deg(arg1);
 				return;
 			case 1182:
-				telemetry_is_row_pinned(state);
+				telemetry_is_row_pinned(arg1);
 				return;
 			case 1183:
-				oc_wearpos3(state);
+				oc_wearpos3(arg1);
 				return;
 			case 1184:
-				QuestCommands.quest_varpreq_met(state);
+				QuestCommands.quest_varpreq_met(arg1);
 				return;
 			case 1185:
-				userflowflags(state);
+				userflowflags(arg1);
 				return;
 			case 1186:
-				cam2_getlookatmode(state);
+				cam2_getlookatmode(arg1);
 				return;
 			case 1187:
-				detailget_waterdetail_high(state);
+				detailget_waterdetail_high(arg1);
 				return;
 			case 1188:
-				detail_musicvol(state);
+				detail_musicvol(arg1);
 				return;
 			case 1189:
-				if_setoptkeyignoreheld(state);
+				if_setoptkeyignoreheld(arg1);
 				return;
 			case 1190:
-				method3564(state);
+				method3564(arg1);
 				return;
 			case 1191:
-				method5893(state);
+				method5893(arg1);
 				return;
 			case 1192:
-				cc_setswipeunknown2(state);
+				cc_setswipeunknown2(arg1);
 				return;
 			case 1193:
-				cc_getmodel(state);
+				cc_getmodel(arg1);
 				return;
 			case 1194:
-				friend_is_referrer(state);
+				friend_is_referrer(arg1);
 				return;
 			case 1195:
-				if_debug_getcomname(state);
+				if_debug_getcomname(arg1);
 				return;
 			case 1196:
-				notify_accountcreated(state);
+				notify_accountcreated(arg1);
 				return;
 			case 1197:
-				cc_npc_setcustomrecol(state);
+				cc_npc_setcustomrecol(arg1);
 				return;
 			case 1198:
-				cc_setmodelorthog(state);
+				cc_setmodelorthog(arg1);
 				return;
 			case 1199:
-				openurlraw(state);
+				openurlraw(arg1);
 				return;
 			case 1200:
-				chat_sendpublic(state);
+				chat_sendpublic(arg1);
 				return;
 			case 1201:
-				if_setonmisctransmit(state);
+				if_setonmisctransmit(arg1);
 				return;
 			case 1202:
-				inv_getnum(state);
+				inv_getnum(arg1);
 				return;
 			case 1203:
-				player_group_member_get_team(state);
+				player_group_member_get_team(arg1);
 				return;
 			case 1204:
-				cc_resetmodellighting(state);
+				cc_resetmodellighting(arg1);
 				return;
 			case 1205:
-				detailcanset_lightingquality(state);
+				detailcanset_lightingquality(arg1);
 				return;
 			case 1206:
-				detail_shadows(state);
+				detail_shadows(arg1);
 				return;
 			case 1207:
-				QuestCommands.quest_statreq_met(state);
+				QuestCommands.quest_statreq_met(arg1);
 				return;
 			case 1208:
-				QuestCommands.quest_varpreq_count(state);
+				QuestCommands.quest_varpreq_count(arg1);
 				return;
 			case 1209:
-				notifications_sendlocal(state);
+				notifications_sendlocal(arg1);
 				return;
 			case 1210:
-				login_disallowtrigger(state);
+				login_disallowtrigger(arg1);
 				return;
 			case 1211:
-				login_accountappeal(state);
+				login_accountappeal(arg1);
 				return;
 			case 1212:
-				telemetry_get_row_id(state);
+				telemetry_get_row_id(arg1);
 				return;
 			case 1213:
-				pop_int_discard(state);
+				pop_int_discard(arg1);
 				return;
 			case 1214:
-				coord_gridtofine(state);
+				coord_gridtofine(arg1);
 				return;
 			case 1215:
-				basematerial(state);
+				basematerial(arg1);
 				return;
 			case 1216:
-				playermodlevel(state);
+				playermodlevel(arg1);
 				return;
 			case 1217:
-				oc_id(state);
+				oc_id(arg1);
 				return;
 			case 1218:
-				method9271(state);
+				method9271(arg1);
 				return;
 			case 1219:
-				TwitchCommands.ttv_livestreams_getstream_next(state);
+				TwitchCommands.ttv_livestreams_getstream_next(arg1);
 				return;
 			case 1220:
-				cc_setonop(state);
+				cc_setonop(arg1);
 				return;
 			case 1221:
-				shop_getindexforcategoryid(state);
+				shop_getindexforcategoryid(arg1);
 				return;
 			case 1222:
-				worldmap_3dview_disable(state);
+				worldmap_3dview_disable(arg1);
 				return;
 			case 1223:
-				clanprofile_find(state);
+				clanprofile_find(arg1);
 				return;
 			case 1224:
-				if_set2dangle(state);
+				if_set2dangle(arg1);
 				return;
 			case 1225:
-				get_displayname_withextras(state);
+				get_displayname_withextras(arg1);
 				return;
 			case 1226:
-				if_setonplayergroupvarptransmit(state);
+				if_setonplayergroupvarptransmit(arg1);
 				return;
 			case 1227:
-				if_setscrollpos(state);
+				if_setscrollpos(arg1);
 				return;
 			case 1228:
-				cc_setonhold(state);
+				cc_setonhold(arg1);
 				return;
 			case 1229:
-				get_entity_overlay_height(state);
+				get_entity_overlay_height(arg1);
 				return;
 			case 1230:
-				if_npc_setcustomretex(state);
+				if_npc_setcustomretex(arg1);
 				return;
 			case 1231:
-				worldmap_jumptosourcecoord_instant(state);
+				worldmap_jumptosourcecoord_instant(arg1);
 				return;
 			case 1232:
-				detail_interfacescale(state);
+				detail_interfacescale(arg1);
 				return;
 			case 1233:
-				db_find_refine(state);
+				db_find_refine(arg1);
 				return;
 			case 1234:
-				cam2_setpositionentity_player(state);
+				cam2_setpositionentity_player(arg1);
 				return;
 			case 1235:
-				detail_speechvol(state);
+				detail_speechvol(arg1);
 				return;
 			case 1236:
-				cam2_setpositionacceleration(state);
+				cam2_setpositionacceleration(arg1);
 				return;
 			case 1237:
-				cc_setopkey(state);
+				cc_setopkey(arg1);
 				return;
 			case 1238:
-				worldmap_disableelementcategory(state);
+				worldmap_disableelementcategory(arg1);
 				return;
 			case 1239:
-				stat(state);
+				stat(arg1);
 				return;
 			case 1240:
-				player_group_member_get_same_world_var(state);
+				player_group_member_get_same_world_var(arg1);
 				return;
 			case 1241:
-				method6023(state);
+				method6023(arg1);
 				return;
 			case 1242:
-				array_sort(state);
+				array_sort(arg1);
 				return;
 			case 1243:
-				activeclanchannel_getranktalk(state);
+				activeclanchannel_getranktalk(arg1);
 				return;
 			case 1244:
-				cc_delete(state);
+				cc_delete(arg1);
 				return;
 			case 1245:
-				autosetup_dosetup(state);
+				autosetup_dosetup(arg1);
 				return;
 			case 1246:
-				cc_getfontgraphic(state);
+				cc_getfontgraphic(arg1);
 				return;
 			case 1247:
-				method4373(state);
+				method4373(arg1);
 				return;
 			case 1248:
-				method7233(state);
+				method7233(arg1);
 				return;
 			case 1249:
-				TwitchCommands.ttv_webcam_start(state);
+				TwitchCommands.ttv_webcam_start(arg1);
 				return;
 			case 1250:
-				cc_setlinkactiveclanchannel(state);
+				cc_setlinkactiveclanchannel(arg1);
 				return;
 			case 1251:
-				cc_setscrollsize(state);
+				cc_setscrollsize(arg1);
 				return;
 			case 1252:
-				oc_unshard(state);
+				oc_unshard(arg1);
 				return;
 			case 1253:
-				method4065(state);
+				method4065(arg1);
 				return;
 			case 1254:
-				cam2_setlookatacceleration_axis(state);
+				cam2_setlookatacceleration_axis(arg1);
 				return;
 			case 1255:
-				detailcanmod_grounddecor(state);
+				detailcanmod_grounddecor(arg1);
 				return;
 			case 1256:
-				coordy_fine(state);
+				coordy_fine(arg1);
 				return;
 			case 1257:
-				affiliate(state);
+				affiliate(arg1);
 				return;
 			case 1258:
-				cam_inc_y(state);
+				cam_inc_y(arg1);
 				return;
 			case 1259:
-				friend_setnotes(state);
+				friend_setnotes(arg1);
 				return;
 			case 1260:
-				QuestCommands.quest_getmembers(state);
+				QuestCommands.quest_getmembers(arg1);
 				return;
 			case 1261:
-				activeclanchannel_getrankkick(state);
+				activeclanchannel_getrankkick(arg1);
 				return;
 			case 1262:
-				if_setontargetleave(state);
+				if_setontargetleave(arg1);
 				return;
 			case 1263:
-				formatminimenu(state);
+				formatminimenu(arg1);
 				return;
 			case 1264:
-				getdefaultwindowmode(state);
+				getdefaultwindowmode(arg1);
 				return;
 			case 1265:
-				if_npc_setcustombodymodel(state);
+				if_npc_setcustombodymodel(arg1);
 				return;
 			case 1266:
-				chat_lastuid(state);
+				chat_lastuid(arg1);
 				return;
 			case 1267:
-				marketing_sendevent(state);
+				marketing_sendevent(arg1);
 				return;
 			case 1268:
-				sound_vorbis_volume(state);
+				sound_vorbis_volume(arg1);
 				return;
 			case 1269:
-				detail_spotshadows_on(state);
+				detail_spotshadows_on(arg1);
 				return;
 			case 1270:
-				detailcanset_shadowquality(state);
+				detailcanset_shadowquality(arg1);
 				return;
 			case 1271:
-				detail_bloom(state);
+				detail_bloom(arg1);
 				return;
 			case 1272:
-				clientclock(state);
+				clientclock(arg1);
 				return;
 			case 1273:
-				oc_category(state);
+				oc_category(arg1);
 				return;
 			case 1274:
-				QuestCommands.quest_questreq_met(state);
+				QuestCommands.quest_questreq_met(arg1);
 				return;
 			case 1275:
-				os_isandroid(state);
+				os_isandroid(arg1);
 				return;
 			case 1276:
-				worldmap_getsourceposition(state);
+				worldmap_getsourceposition(arg1);
 				return;
 			case 1277:
-				method4422(state);
+				method4422(arg1);
 				return;
 			case 1278:
-				if_npc_setcustombodymodel_transformed(state);
+				if_npc_setcustombodymodel_transformed(arg1);
 				return;
 			case 1279:
-				cc_setoninvtransmit(state);
+				cc_setoninvtransmit(arg1);
 				return;
 			case 1280:
-				detailget_diskcachesize(state);
+				detailget_diskcachesize(arg1);
 				return;
 			case 1281:
-				activeclansettings_getaffinedjoinruneday(state);
+				activeclansettings_getaffinedjoinruneday(arg1);
 				return;
 			case 1282:
-				chatphrase_getdynamiccommandcount(state);
+				chatphrase_getdynamiccommandcount(arg1);
 				return;
 			case 1283:
-				player_group_member_is_online(state);
+				player_group_member_is_online(arg1);
 				return;
 			case 1284:
-				detail_brightness(state);
+				detail_brightness(arg1);
 				return;
 			case 1285:
-				cc_setopcursor(state);
+				cc_setopcursor(arg1);
 				return;
 			case 1286:
-				long_branch_less_than(state);
+				long_branch_less_than(arg1);
 				return;
 			case 1287:
-				activeclanchannel_getclanname(state);
+				activeclanchannel_getclanname(arg1);
 				return;
 			case 1288:
-				notifications_opensettings(state);
+				notifications_opensettings(arg1);
 				return;
 			case 1289:
-				get_mousex(state);
+				get_mousex(arg1);
 				return;
 			case 1290:
-				login_resetreply(state);
+				login_resetreply(arg1);
 				return;
 			case 1291:
-				if_setonvartransmit(state);
+				if_setonvartransmit(arg1);
 				return;
 			case 1292:
-				method8382(state);
+				method8382(arg1);
 				return;
 			case 1293:
-				cc_setopkeyignoreheld(state);
+				cc_setopkeyignoreheld(arg1);
 				return;
 			case 1294:
-				login_disallowresult(state);
+				login_disallowresult(arg1);
 				return;
 			case 1295:
-				userdetail_lobby_recoveryday(state);
+				userdetail_lobby_recoveryday(arg1);
 				return;
 			case 1296:
-				worldmap_jumptodisplaycoord_instant(state);
+				worldmap_jumptodisplaycoord_instant(arg1);
 				return;
 			case 1297:
-				detailget_interfacescale(state);
+				detailget_interfacescale(arg1);
 				return;
 			case 1298:
-				chatphrase_find(state);
+				chatphrase_find(arg1);
 				return;
 			case 1299:
-				getbit_range(state);
+				getbit_range(arg1);
 				return;
 			case 1300:
-				cc_setop(state);
+				cc_setop(arg1);
 				return;
 			case 1301:
-				clan_getchatusername_unfiltered(state);
+				clan_getchatusername_unfiltered(arg1);
 				return;
 			case 1302:
-				TwitchCommands.ttv_stream_settitle(state);
+				TwitchCommands.ttv_stream_settitle(arg1);
 				return;
 			case 1303:
-				worldmap_listelement_next(state);
+				worldmap_listelement_next(arg1);
 				return;
 			case 1304:
-				cam2_setlookatacceleration(state);
+				cam2_setlookatacceleration(arg1);
 				return;
 			case 1305:
-				cam2_getpositionentity_angleoffsets(state);
+				cam2_getpositionentity_angleoffsets(arg1);
 				return;
 			case 1306:
-				marketing_init(state);
+				marketing_init(arg1);
 				return;
 			case 1307:
-				if_npc_setcustomheadmodel(state);
+				if_npc_setcustomheadmodel(arg1);
 				return;
 			case 1308:
-				invother_getobj(state);
+				invother_getobj(arg1);
 				return;
 			case 1309:
-				worldmap_setmap_coord(state);
+				worldmap_setmap_coord(arg1);
 				return;
 			case 1310:
-				player_group_get_displayname(state);
+				player_group_get_displayname(arg1);
 				return;
 			case 1311:
-				cc_setonplayergrouptransmit(state);
+				cc_setonplayergrouptransmit(arg1);
 				return;
 			case 1312:
-				chatcat_getsubcatshortcut(state);
+				chatcat_getsubcatshortcut(arg1);
 				return;
 			case 1313:
-				login_inprogress(state);
+				login_inprogress(arg1);
 				return;
 			case 1314:
-				cc_setoncamfinished(state);
+				cc_setoncamfinished(arg1);
 				return;
 			case 1315:
-				if_setontargetenter(state);
+				if_setontargetenter(arg1);
 				return;
 			case 1316:
-				if_get_gamescreen(state);
+				if_get_gamescreen(arg1);
 				return;
 			case 1317:
-				db_getrowtable(state);
+				db_getrowtable(arg1);
 				return;
 			case 1318:
-				detail_texturing(state);
+				detail_texturing(arg1);
 				return;
 			case 1319:
-				lobby_enterlobbyreply(state);
+				lobby_enterlobbyreply(arg1);
 				return;
 			case 1320:
-				TwitchCommands.ttv_chat_getstate(state);
+				TwitchCommands.ttv_chat_getstate(arg1);
 				return;
 			case 1321:
-				cc_getwidth(state);
+				cc_getwidth(arg1);
 				return;
 			case 1322:
-				cc_resetlinkplayer(state);
+				cc_resetlinkplayer(arg1);
 				return;
 			case 1323:
-				cc_getscrollx(state);
+				cc_getscrollx(arg1);
 				return;
 			case 1324:
-				targetmode_cancel(state);
+				targetmode_cancel(arg1);
 				return;
 			case 1325:
-				method3039(state);
+				method3039(arg1);
 				return;
 			case 1326:
-				clan_getchatuserworld(state);
+				clan_getchatuserworld(arg1);
 				return;
 			case 1327:
-				cc_setnpcmodel(state);
+				cc_setnpcmodel(arg1);
 				return;
 			case 1328:
-				branch_less_than(state);
+				branch_less_than(arg1);
 				return;
 			case 1329:
-				chat_getprevuid(state);
+				chat_getprevuid(arg1);
 				return;
 			case 1330:
-				friend_getworldflags(state);
+				friend_getworldflags(arg1);
 				return;
 			case 1331:
-				ignore_add_temp(state);
+				ignore_add_temp(arg1);
 				return;
 			case 1332:
-				cc_setonhorizontalswipe(state);
+				cc_setonhorizontalswipe(arg1);
 				return;
 			case 1333:
-				TwitchCommands.ttv_stream_getstate(state);
+				TwitchCommands.ttv_stream_getstate(arg1);
 				return;
 			case 1334:
-				fullscreen_exit(state);
+				fullscreen_exit(arg1);
 				return;
 			case 1335:
-				detail_skydetail(state);
+				detail_skydetail(arg1);
 				return;
 			case 1336:
-				player_group_is_members_only(state);
+				player_group_is_members_only(arg1);
 				return;
 			case 1337:
-				playercountry(state);
+				playercountry(arg1);
 				return;
 			case 1338:
-				sound_group_stop(state);
+				sound_group_stop(arg1);
 				return;
 			case 1339:
-				activeclansettings_getrankkick(state);
+				activeclansettings_getrankkick(arg1);
 				return;
 			case 1340:
-				detail_customcursors(state);
+				detail_customcursors(arg1);
 				return;
 			case 1341:
-				if_settextshadow(state);
+				if_settextshadow(arg1);
 				return;
 			case 1342:
-				player_group_member_get_last_seen_node_id(state);
+				player_group_member_get_last_seen_node_id(arg1);
 				return;
 			case 1343:
-				activechatphrase_send(state);
+				activechatphrase_send(arg1);
 				return;
 			case 1344:
-				QuestCommands.quest_getname(state);
+				QuestCommands.quest_getname(arg1);
 				return;
 			case 1345:
-				string_distance(state);
+				string_distance(arg1);
 				return;
 			case 1346:
-				telemetry_get_group_index(state);
+				telemetry_get_group_index(arg1);
 				return;
 			case 1347:
-				cam2_resetsnapdistances(state);
+				cam2_resetsnapdistances(arg1);
 				return;
 			case 1348:
-				detail_toolkit_default(state);
+				detail_toolkit_default(arg1);
 				return;
 			case 1349:
-				_return(state);
+				_return(arg1);
 				return;
 			case 1350:
-				has_html5(state);
+				has_html5(arg1);
 				return;
 			case 1351:
-				push_varbit(state);
+				push_varbit(arg1);
 				return;
 			case 1352:
-				cc_setswipedeadtime(state);
+				cc_setswipedeadtime(arg1);
 				return;
 			case 1353:
-				chatphrase_getdynamiccommandparam_enum(state);
+				chatphrase_getdynamiccommandparam_enum(arg1);
 				return;
 			case 1354:
-				detailcanmod_waterdetail(state);
+				detailcanmod_waterdetail(arg1);
 				return;
 			case 1355:
-				cc_resume_pausebutton(state);
+				cc_resume_pausebutton(arg1);
 				return;
 			case 1356:
-				detailcanset_maxbackgroundfps(state);
+				detailcanset_maxbackgroundfps(arg1);
 				return;
 			case 1357:
-				coordx_fine(state);
+				coordx_fine(arg1);
 				return;
 			case 1358:
-				if_setonclick(state);
+				if_setonclick(arg1);
 				return;
 			case 1359:
-				char_isprintable(state);
+				char_isprintable(arg1);
 				return;
 			case 1360:
-				detail_shadowquality(state);
+				detail_shadowquality(arg1);
 				return;
 			case 1361:
-				force_interface_drag(state);
+				force_interface_drag(arg1);
 				return;
 			case 1362:
-				runweight_visible(state);
+				runweight_visible(arg1);
 				return;
 			case 1363:
-				detailcanmod_particles(state);
+				detailcanmod_particles(arg1);
 				return;
 			case 1364:
-				oc_icursor(state);
+				oc_icursor(arg1);
 				return;
 			case 1365:
-				if_clearops(state);
+				if_clearops(arg1);
 				return;
 			case 1366:
-				mec_sprite(state);
+				mec_sprite(arg1);
 				return;
 			case 1367:
-				autosetup_setcustom(state);
+				autosetup_setcustom(arg1);
 				return;
 			case 1368:
-				worldmap_setcategorypriority(state);
+				worldmap_setcategorypriority(arg1);
 				return;
 			case 1369:
-				clan_getchatcount(state);
+				clan_getchatcount(arg1);
 				return;
 			case 1370:
-				cam2_setlookatmaxspeed(state);
+				cam2_setlookatmaxspeed(arg1);
 				return;
 			case 1371:
-				cc_setlinkplayergroup(state);
+				cc_setlinkplayergroup(arg1);
 				return;
 			case 1372:
-				cam2_legacycam_ready(state);
+				cam2_legacycam_ready(arg1);
 				return;
 			case 1373:
-				text_switch(state);
+				text_switch(arg1);
 				return;
 			case 1374:
-				detail_animdetail(state);
+				detail_animdetail(arg1);
 				return;
 			case 1375:
-				random(state);
+				random(arg1);
 				return;
 			case 1376:
-				push_constant_string(state);
+				push_constant_string(arg1);
 				return;
 			case 1377:
-				cc_getcolour(state);
+				cc_getcolour(arg1);
 				return;
 			case 1378:
-				cam_followcoord(state);
+				cam_followcoord(arg1);
 				return;
 			case 1379:
-				cam_setfollowheight(state);
+				cam_setfollowheight(arg1);
 				return;
 			case 1380:
-				append_char(state);
+				append_char(arg1);
 				return;
 			case 1381:
-				detailcanmod_orthographic(state);
+				detailcanmod_orthographic(arg1);
 				return;
 			case 1382:
-				resume_namedialog(state);
+				resume_namedialog(arg1);
 				return;
 			case 1383:
-				chat_gethistory_bytypeandline(state);
+				chat_gethistory_bytypeandline(arg1);
 				return;
 			case 1384:
-				cam2_setpositionspline_spline(state);
+				cam2_setpositionspline_spline(arg1);
 				return;
 			case 1385:
-				userdetail_lobby_emailstatus(state);
+				userdetail_lobby_emailstatus(arg1);
 				return;
 			case 1386:
-				method6079(state);
+				method6079(arg1);
 				return;
 			case 1387:
-				if_setswipedeadtime(state);
+				if_setswipedeadtime(arg1);
 				return;
 			case 1388:
-				cc_settargetcursors(state);
+				cc_settargetcursors(arg1);
 				return;
 			case 1389:
-				player_group_member_is_member(state);
+				player_group_member_is_member(arg1);
 				return;
 			case 1390:
-				seq_param(state);
+				seq_param(arg1);
 				return;
 			case 1391:
-				if_setlinedirection(state);
+				if_setlinedirection(arg1);
 				return;
 			case 1392:
-				ignore_getslotfromname(state);
+				ignore_getslotfromname(arg1);
 				return;
 			case 1393:
-				emoji_enable_auto_chatline(state);
+				emoji_enable_auto_chatline(arg1);
 				return;
 			case 1394:
-				cc_getmodelangle_y(state);
+				cc_getmodelangle_y(arg1);
 				return;
 			case 1395:
-				detailcanset_volumetriclighting(state);
+				detailcanset_volumetriclighting(arg1);
 				return;
 			case 1396:
-				sound_mixbuss_setlevel(state);
+				sound_mixbuss_setlevel(arg1);
 				return;
 			case 1397:
-				ignore_test(state);
+				ignore_test(arg1);
 				return;
 			case 1398:
-				detailget_spotshadows_on(state);
+				detailget_spotshadows_on(arg1);
 				return;
 			case 1399:
-				cc_setobject_alwaysnum(state);
+				cc_setobject_alwaysnum(arg1);
 				return;
 			case 1400:
-				cc_npc_setcustombodymodel(state);
+				cc_npc_setcustombodymodel(arg1);
 				return;
 			case 1401:
-				method4048(state);
+				method4048(arg1);
 				return;
 			case 1402:
-				detailcanmod_reflections(state);
+				detailcanmod_reflections(arg1);
 				return;
 			case 1403:
-				long_branch_equals(state);
+				long_branch_equals(arg1);
 				return;
 			case 1404:
-				create_get_email(state);
+				create_get_email(arg1);
 				return;
 			case 1405:
-				method253(state);
+				method253(arg1);
 				return;
 			case 1406:
-				detailget_vsync(state);
+				detailget_vsync(arg1);
 				return;
 			case 1407:
-				detailget_lightdetail_high(state);
+				detailget_lightdetail_high(arg1);
 				return;
 			case 1408:
-				autosetup_setmedium(state);
+				autosetup_setmedium(arg1);
 				return;
 			case 1409:
-				if_setobject_nonum(state);
+				if_setobject_nonum(arg1);
 				return;
 			case 1410:
-				chatcat_getphrase(state);
+				chatcat_getphrase(arg1);
 				return;
 			case 1411:
-				ignore_setnotes(state);
+				ignore_setnotes(arg1);
 				return;
 			case 1412:
-				get_npc_stat(state);
+				get_npc_stat(arg1);
 				return;
 			case 1413:
-				cc_clearscripthooks(state);
+				cc_clearscripthooks(arg1);
 				return;
 			case 1414:
-				userdetail_quickchat(state);
+				userdetail_quickchat(arg1);
 				return;
 			case 1415:
-				userdetail_lobby_loyalty_balance(state);
+				userdetail_lobby_loyalty_balance(arg1);
 				return;
 			case 1416:
-				tostring_localised(state);
+				tostring_localised(arg1);
 				return;
 			case 1417:
-				cc_setparam_int(state);
+				cc_setparam_int(arg1);
 				return;
 			case 1418:
-				cam_moveto(state);
+				cam_moveto(arg1);
 				return;
 			case 1419:
-				branch_equals(state);
+				branch_equals(arg1);
 				return;
 			case 1420:
-				friend_setrank(state);
+				friend_setrank(arg1);
 				return;
 			case 1421:
-				detailcanset_grounddecor(state);
+				detailcanset_grounddecor(arg1);
 				return;
 			case 1422:
-				cam2_setspringproperties(state);
+				cam2_setspringproperties(arg1);
 				return;
 			case 1423:
-				get_second_minimenu_entry(state);
+				get_second_minimenu_entry(arg1);
 				return;
 			case 1424:
-				detailget_hardshadows(state);
+				detailget_hardshadows(arg1);
 				return;
 			case 1425:
-				detailget_loginvol(state);
+				detailget_loginvol(arg1);
 				return;
 			case 1426:
-				cam2_setlookatspline_spline(state);
+				cam2_setlookatspline_spline(arg1);
 				return;
 			case 1427:
-				inv_stockbase(state);
+				inv_stockbase(arg1);
 				return;
 			case 1428:
-				TwitchCommands.ttv_livestreams_getstream_start(state);
+				TwitchCommands.ttv_livestreams_getstream_start(arg1);
 				return;
 			case 1429:
-				lobby_leavelobby(state);
+				lobby_leavelobby(arg1);
 				return;
 			case 1430:
-				cam_modeisfollowplayer(state);
+				cam_modeisfollowplayer(arg1);
 				return;
 			case 1431:
-				cc_getparentlayer(state);
+				cc_getparentlayer(arg1);
 		}
 	}
 
@@ -4866,9 +4937,8 @@ public class ScriptRunner {
 					var4 = "null";
 				}
 				arg0.objectStack[++arg0.osp - 1] = var4;
-			} catch (Exception ex) {
-				ex.printStackTrace();
-				throw new RuntimeException(ex);
+			} catch (Exception var6) {
+				throw new RuntimeException(var6);
 			}
 		} else {
 			throw new RuntimeException();
@@ -4940,18 +5010,18 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("vr.ac(Lyf;B)V")
-	public static final void _return(ClientScriptState state) {
-		if (state.fp == 0) {
+	public static final void _return(ClientScriptState arg0) {
+		if (arg0.fp == 0) {
 			return;
 		}
-		ScriptFrame frame = state.frames[--state.fp];
-		state.script = frame.script;
-		state.instructions = state.script.instructions;
-		state.intOperands = state.script.intOperands;
-		state.pc = frame.pc;
-		state.intLocals = frame.intLocals;
-		state.objectLocals = frame.objectLocals;
-		state.longLocals = frame.longLocals;
+		ScriptFrame var1 = arg0.frames[--arg0.fp];
+		arg0.script = var1.script;
+		arg0.instructions = arg0.script.instructions;
+		arg0.intOperands = arg0.script.intOperands;
+		arg0.pc = var1.pc;
+		arg0.intLocals = var1.intLocals;
+		arg0.objectLocals = var1.objectLocals;
+		arg0.longLocals = var1.longLocals;
 	}
 
 	@ObfuscatedName("xt.ai(Lyf;B)V")
@@ -4992,8 +5062,8 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("aat.ad(Lyf;I)V")
-	public static final void push_int_local(ClientScriptState state) {
-		state.intStack[++state.isp - 1] = state.intLocals[state.intOperands[state.pc]];
+	public static final void push_int_local(ClientScriptState arg0) {
+		arg0.intStack[++arg0.isp - 1] = arg0.intLocals[arg0.intOperands[arg0.pc]];
 	}
 
 	@ObfuscatedName("dr.am(Lyf;B)V")
@@ -5030,44 +5100,44 @@ public class ScriptRunner {
 	}
 
 	@ObfuscatedName("amy.av(Lyf;I)V")
-	public static final void gosub_with_params(ClientScriptState state) {
-		int scriptId = state.intOperands[state.pc];
-		ClientScript script = ClientScriptHelpers.getScript(scriptId);
-		if (script == null) {
+	public static final void gosub_with_params(ClientScriptState arg0) {
+		int var1 = arg0.intOperands[arg0.pc];
+		ClientScript var2 = ClientScriptHelpers.getScript(var1);
+		if (var2 == null) {
 			throw new RuntimeException();
 		}
-		int[] intLocals = new int[script.intLocalCount];
-		Object[] objectLocals = new Object[script.objectLocalCount];
-		long[] longLocals = new long[script.longLocalCount];
-		for (int index = 0; index < script.intArgCount; index++) {
-			intLocals[index] = state.intStack[state.isp - script.intArgCount + index];
+		int[] var3 = new int[var2.intLocalCount];
+		Object[] var4 = new Object[var2.objectLocalCount];
+		long[] var5 = new long[var2.longLocalCount];
+		for (int var6 = 0; var6 < var2.intArgCount; var6++) {
+			var3[var6] = arg0.intStack[arg0.isp - var2.intArgCount + var6];
 		}
-		for (int index = 0; index < script.objectArgCount; index++) {
-			objectLocals[index] = state.objectStack[state.osp - script.objectArgCount + index];
+		for (int var7 = 0; var7 < var2.objectArgCount; var7++) {
+			var4[var7] = arg0.objectStack[arg0.osp - var2.objectArgCount + var7];
 		}
-		for (int index = 0; index < script.longArgCount; index++) {
-			longLocals[index] = state.longStack[state.lsp - script.longArgCount + index];
+		for (int var8 = 0; var8 < var2.longArgCount; var8++) {
+			var5[var8] = arg0.longStack[arg0.lsp - var2.longArgCount + var8];
 		}
-		state.isp -= script.intArgCount;
-		state.osp -= script.objectArgCount;
-		state.lsp -= script.longArgCount;
-		ScriptFrame frame = new ScriptFrame();
-		frame.script = state.script;
-		frame.pc = state.pc;
-		frame.intLocals = state.intLocals;
-		frame.objectLocals = state.objectLocals;
-		frame.longLocals = state.longLocals;
-		if (state.fp >= state.frames.length) {
+		arg0.isp -= var2.intArgCount;
+		arg0.osp -= var2.objectArgCount;
+		arg0.lsp -= var2.longArgCount;
+		ScriptFrame var9 = new ScriptFrame();
+		var9.script = arg0.script;
+		var9.pc = arg0.pc;
+		var9.intLocals = arg0.intLocals;
+		var9.objectLocals = arg0.objectLocals;
+		var9.longLocals = arg0.longLocals;
+		if (arg0.fp >= arg0.frames.length) {
 			throw new RuntimeException();
 		}
-		state.frames[++state.fp - 1] = frame;
-		state.script = script;
-		state.instructions = state.script.instructions;
-		state.intOperands = state.script.intOperands;
-		state.pc = -1;
-		state.intLocals = intLocals;
-		state.objectLocals = objectLocals;
-		state.longLocals = longLocals;
+		arg0.frames[++arg0.fp - 1] = var9;
+		arg0.script = var2;
+		arg0.instructions = arg0.script.instructions;
+		arg0.intOperands = arg0.script.intOperands;
+		arg0.pc = -1;
+		arg0.intLocals = var3;
+		arg0.objectLocals = var4;
+		arg0.longLocals = var5;
 	}
 
 	@ObfuscatedName("ef.ao(Lyf;B)V")
@@ -5229,9 +5299,9 @@ public class ScriptRunner {
 			var2.subcomponents[var1.com.id] = null;
 			Client.requestRedrawComponent(var2);
 		} else if (arg0.secondary) {
-			throw new RuntimeException("Tried to .cc_delete static .active-component!");
+			throw new RuntimeException("");
 		} else {
-			throw new RuntimeException("Tried to cc_delete static active-component!");
+			throw new RuntimeException("");
 		}
 	}
 
@@ -9415,6 +9485,13 @@ public class ScriptRunner {
 		arg0.intStack[++arg0.isp - 1] = var2.scrolly;
 	}
 
+	@ObfuscatedName("dz.uz(Lyf;I)V")
+	public static final void if_gettext(ClientScriptState arg0) {
+		int var1 = arg0.intStack[--arg0.isp];
+		Component var2 = Component.get(var1);
+		arg0.objectStack[++arg0.osp - 1] = var2.text;
+	}
+
 	@ObfuscatedName("jv.ug(Lyf;I)V")
 	public static final void if_getscrollwidth(ClientScriptState arg0) {
 		int var1 = arg0.intStack[--arg0.isp];
@@ -9483,13 +9560,6 @@ public class ScriptRunner {
 		int var1 = arg0.intStack[--arg0.isp];
 		Component var2 = Component.get(var1);
 		arg0.intStack[++arg0.isp - 1] = var2.graphic;
-	}
-
-	@ObfuscatedName("dz.uz(Lyf;I)V")
-	public static final void if_gettext(ClientScriptState arg0) {
-		int var1 = arg0.intStack[--arg0.isp];
-		Component var2 = Component.get(var1);
-		arg0.objectStack[++arg0.osp - 1] = var2.text;
 	}
 
 	@ObfuscatedName("po.uh(Lyf;I)V")
@@ -11376,6 +11446,14 @@ public class ScriptRunner {
 		arg0.intStack[++arg0.isp - 1] = var3 == 2 ? 1 : 0;
 	}
 
+	public static final void dns(ClientScriptState arg0) {
+		arg0.isp -= 2;
+		int var1 = arg0.intStack[arg0.isp];
+		int var2 = arg0.intStack[arg0.isp + 1];
+		int var3 = Client.stockmarketSlots[var2][var1].method7608();
+		arg0.intStack[++arg0.isp - 1] = var3 == 5 ? 1 : 0;
+	}
+
 	@ObfuscatedName("ch.ady(Lyf;S)V")
 	public static final void stockmarket_isofferfinished(ClientScriptState arg0) {
 		arg0.isp -= 2;
@@ -11400,14 +11478,6 @@ public class ScriptRunner {
 		int var1 = arg0.intStack[arg0.isp];
 		int var2 = arg0.intStack[arg0.isp + 1];
 		arg0.intStack[++arg0.isp - 1] = var1 + var2;
-	}
-
-	@ObfuscatedName("xs.add(Lclient!yf;S)V")
-	public static final void sub(ClientScriptState arg0) {
-		arg0.isp -= 2;
-		int var2 = arg0.intStack[arg0.isp];
-		int var3 = arg0.intStack[arg0.isp + 1];
-		arg0.intStack[++arg0.isp - 1] = var2 - var3;
 	}
 
 	@ObfuscatedName("yx.adq(Lyf;I)V")
@@ -11800,7 +11870,7 @@ public class ScriptRunner {
 		String var1 = (String) arg0.objectStack[--arg0.osp];
 		int var2 = arg0.intStack[--arg0.isp];
 		if (var2 == -1) {
-			throw new RuntimeException("null char");
+			throw new RuntimeException("");
 		}
 		arg0.objectStack[++arg0.osp - 1] = var1 + (char) var2;
 	}
@@ -12373,114 +12443,114 @@ public class ScriptRunner {
 			return;
 		}
 		String var2 = var1.toLowerCase();
-		byte colour = 0;
+		byte var3 = 0;
 		if (var2.startsWith(LocalisedText.CHATCOL0.forLang(Language.EN))) {
-			colour = 0;
+			var3 = 0;
 			var1 = var1.substring(LocalisedText.CHATCOL0.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL1.forLang(Language.EN))) {
-			colour = 1;
+			var3 = 1;
 			var1 = var1.substring(LocalisedText.CHATCOL1.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL2.forLang(Language.EN))) {
-			colour = 2;
+			var3 = 2;
 			var1 = var1.substring(LocalisedText.CHATCOL2.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL3.forLang(Language.EN))) {
-			colour = 3;
+			var3 = 3;
 			var1 = var1.substring(LocalisedText.CHATCOL3.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL4.forLang(Language.EN))) {
-			colour = 4;
+			var3 = 4;
 			var1 = var1.substring(LocalisedText.CHATCOL4.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL5.forLang(Language.EN))) {
-			colour = 5;
+			var3 = 5;
 			var1 = var1.substring(LocalisedText.CHATCOL5.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL6.forLang(Language.EN))) {
-			colour = 6;
+			var3 = 6;
 			var1 = var1.substring(LocalisedText.CHATCOL6.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL7.forLang(Language.EN))) {
-			colour = 7;
+			var3 = 7;
 			var1 = var1.substring(LocalisedText.CHATCOL7.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL8.forLang(Language.EN))) {
-			colour = 8;
+			var3 = 8;
 			var1 = var1.substring(LocalisedText.CHATCOL8.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL9.forLang(Language.EN))) {
-			colour = 9;
+			var3 = 9;
 			var1 = var1.substring(LocalisedText.CHATCOL9.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL10.forLang(Language.EN))) {
-			colour = 10;
+			var3 = 10;
 			var1 = var1.substring(LocalisedText.CHATCOL10.forLang(Language.EN).length());
 		} else if (var2.startsWith(LocalisedText.CHATCOL11.forLang(Language.EN))) {
-			colour = 11;
+			var3 = 11;
 			var1 = var1.substring(LocalisedText.CHATCOL11.forLang(Language.EN).length());
-		} else if (Client.language != Language.EN) {
+		} else if (Language.EN != Client.language) {
 			if (var2.startsWith(LocalisedText.CHATCOL0.forLang(Client.language))) {
-				colour = 0;
+				var3 = 0;
 				var1 = var1.substring(LocalisedText.CHATCOL0.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL1.forLang(Client.language))) {
-				colour = 1;
+				var3 = 1;
 				var1 = var1.substring(LocalisedText.CHATCOL1.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL2.forLang(Client.language))) {
-				colour = 2;
+				var3 = 2;
 				var1 = var1.substring(LocalisedText.CHATCOL2.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL3.forLang(Client.language))) {
-				colour = 3;
+				var3 = 3;
 				var1 = var1.substring(LocalisedText.CHATCOL3.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL4.forLang(Client.language))) {
-				colour = 4;
+				var3 = 4;
 				var1 = var1.substring(LocalisedText.CHATCOL4.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL5.forLang(Client.language))) {
-				colour = 5;
+				var3 = 5;
 				var1 = var1.substring(LocalisedText.CHATCOL5.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL6.forLang(Client.language))) {
-				colour = 6;
+				var3 = 6;
 				var1 = var1.substring(LocalisedText.CHATCOL6.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL7.forLang(Client.language))) {
-				colour = 7;
+				var3 = 7;
 				var1 = var1.substring(LocalisedText.CHATCOL7.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL8.forLang(Client.language))) {
-				colour = 8;
+				var3 = 8;
 				var1 = var1.substring(LocalisedText.CHATCOL8.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL9.forLang(Client.language))) {
-				colour = 9;
+				var3 = 9;
 				var1 = var1.substring(LocalisedText.CHATCOL9.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL10.forLang(Client.language))) {
-				colour = 10;
+				var3 = 10;
 				var1 = var1.substring(LocalisedText.CHATCOL10.forLang(Client.language).length());
 			} else if (var2.startsWith(LocalisedText.CHATCOL11.forLang(Client.language))) {
-				colour = 11;
+				var3 = 11;
 				var1 = var1.substring(LocalisedText.CHATCOL11.forLang(Client.language).length());
 			}
 		}
 		String var4 = var1.toLowerCase();
-		byte effect = 0;
+		byte var5 = 0;
 		if (var4.startsWith(LocalisedText.CHATEFFECT1.forLang(Language.EN))) {
-			effect = 1;
+			var5 = 1;
 			var1 = var1.substring(LocalisedText.CHATEFFECT1.forLang(Language.EN).length());
 		} else if (var4.startsWith(LocalisedText.CHATEFFECT2.forLang(Language.EN))) {
-			effect = 2;
+			var5 = 2;
 			var1 = var1.substring(LocalisedText.CHATEFFECT2.forLang(Language.EN).length());
 		} else if (var4.startsWith(LocalisedText.CHATEFFECT3.forLang(Language.EN))) {
-			effect = 3;
+			var5 = 3;
 			var1 = var1.substring(LocalisedText.CHATEFFECT3.forLang(Language.EN).length());
 		} else if (var4.startsWith(LocalisedText.CHATEFFECT4.forLang(Language.EN))) {
-			effect = 4;
+			var5 = 4;
 			var1 = var1.substring(LocalisedText.CHATEFFECT4.forLang(Language.EN).length());
 		} else if (var4.startsWith(LocalisedText.CHATEFFECT5.forLang(Language.EN))) {
-			effect = 5;
+			var5 = 5;
 			var1 = var1.substring(LocalisedText.CHATEFFECT5.forLang(Language.EN).length());
-		} else if (Client.language != Language.EN) {
+		} else if (Language.EN != Client.language) {
 			if (var4.startsWith(LocalisedText.CHATEFFECT1.forLang(Client.language))) {
-				effect = 1;
+				var5 = 1;
 				var1 = var1.substring(LocalisedText.CHATEFFECT1.forLang(Client.language).length());
 			} else if (var4.startsWith(LocalisedText.CHATEFFECT2.forLang(Client.language))) {
-				effect = 2;
+				var5 = 2;
 				var1 = var1.substring(LocalisedText.CHATEFFECT2.forLang(Client.language).length());
 			} else if (var4.startsWith(LocalisedText.CHATEFFECT3.forLang(Client.language))) {
-				effect = 3;
+				var5 = 3;
 				var1 = var1.substring(LocalisedText.CHATEFFECT3.forLang(Client.language).length());
 			} else if (var4.startsWith(LocalisedText.CHATEFFECT4.forLang(Client.language))) {
-				effect = 4;
+				var5 = 4;
 				var1 = var1.substring(LocalisedText.CHATEFFECT4.forLang(Client.language).length());
 			} else if (var4.startsWith(LocalisedText.CHATEFFECT5.forLang(Client.language))) {
-				effect = 5;
+				var5 = 5;
 				var1 = var1.substring(LocalisedText.CHATEFFECT5.forLang(Client.language).length());
 			}
 		}
@@ -12488,8 +12558,8 @@ public class ScriptRunner {
 		ClientMessage var7 = ClientMessage.createMessage(ClientProt.MESSAGE_PUBLIC, var6.randomOut);
 		var7.buf.p1(0);
 		int var8 = var7.buf.pos;
-		var7.buf.p1(colour);
-		var7.buf.p1(effect);
+		var7.buf.p1(var3);
+		var7.buf.p1(var5);
 		WordPack.encode(var7.buf, var1);
 		var7.buf.psize1(var7.buf.pos - var8);
 		var6.queue(var7);
@@ -12747,7 +12817,7 @@ public class ScriptRunner {
 		int var3 = arg0.intStack[arg0.isp + 2];
 		QuickChatPhraseType var4 = Client.quickChatPhraseTypeList.list(var1);
 		if (var4.getDynamicCommand(var2).id != 0) {
-			throw new RuntimeException("bad command");
+			throw new RuntimeException("");
 		}
 		arg0.intStack[++arg0.isp - 1] = var4.method19506(var2, var3);
 	}
@@ -13426,7 +13496,7 @@ public class ScriptRunner {
 		if (Fullscreen.allowed && GameShell.fsframe != null) {
 			Client.setWindowMode(Client.preferences.windowMode.getValue(), -1, -1, false);
 		}
-		if (GameShell.getEnvironment() == GameShell3$Environment.APPLICATION) {
+		if (GameShell.getEnvironment() == GameShell.Environment.APPLICATION) {
 			Client.method14147();
 			System.exit(0);
 		} else {
@@ -13640,7 +13710,7 @@ public class ScriptRunner {
 		if (var2 + 1 >= Client.cutsceneSpline[Client.field10904].length >> 1) {
 			throw new RuntimeException();
 		}
-		Client.field10909 = var2 * 2;
+		Client.field10909 = var2;
 		Client.field10976 = 0;
 		Client.field10843 = arg0.intStack[arg0.isp + 2];
 		Client.field10913 = arg0.intStack[arg0.isp + 3];
@@ -13653,7 +13723,7 @@ public class ScriptRunner {
 		if (var4 + 1 >= Client.cutsceneSpline[Client.field10908].length >> 1) {
 			throw new RuntimeException();
 		}
-		Client.field10932 = var4 * 4;
+		Client.field10932 = var4;
 		Client.cameraState = 6;
 		Client.field3538 = -1;
 		Client.field810 = -1;
@@ -13710,12 +13780,12 @@ public class ScriptRunner {
 		if (var1 < 0) {
 			var1 = 0;
 		}
-		Client.cameraFollowHeight = Client.field11089 * 35 + var1;
+		Client.cameraFollowHeight = Client.field11089 + var1;
 	}
 
 	@ObfuscatedName("jx.anf(Lyf;B)V")
 	public static final void cam_getfollowheight(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = Client.cameraFollowHeight - Client.field11089 * 35;
+		arg0.intStack[++arg0.isp - 1] = Client.cameraFollowHeight - Client.field11089;
 	}
 
 	@ObfuscatedName("wv.anq(Lyf;B)V")
@@ -14415,7 +14485,7 @@ public class ScriptRunner {
 
 	@ObfuscatedName("yu.apa(Lyf;I)V")
 	public static final void login_hoptime(ClientScriptState arg0) {
-		arg0.intStack[++arg0.isp - 1] = LoginManager.hoptime * 2500;
+		arg0.intStack[++arg0.isp - 1] = LoginManager.hoptime;
 	}
 
 	@ObfuscatedName("ea.apf(Lyf;I)V")
@@ -16887,7 +16957,7 @@ public class ScriptRunner {
 	@ObfuscatedName("dj.bdu(Lyf;I)V")
 	public static final void movescripted(ClientScriptState arg0) {
 		arg0.isp -= 2;
-		MoveSpeed var1 = (MoveSpeed) SerializableEnums.decode(MoveSpeed.values(), arg0.intStack[arg0.isp]);
+		MoveSpeed var1 = (MoveSpeed) SerializableEnums.decode((SerializableEnum[]) MoveSpeed.values(), arg0.intStack[arg0.isp]);
 		CoordGrid var2 = new CoordGrid(arg0.intStack[arg0.isp + 1]);
 		if (var2.level == -1) {
 			throw new RuntimeException("");
@@ -17172,7 +17242,7 @@ public class ScriptRunner {
 			throw new RuntimeException();
 		} else {
 			List var4 = var3.method15187(var2);
-			Client.field754 = new java.util.LinkedList(Client.field754);
+			Client.field754 = new LinkedList(Client.field754);
 			if (var4 == null) {
 				Client.field754.clear();
 			} else {

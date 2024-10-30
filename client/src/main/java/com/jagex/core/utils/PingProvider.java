@@ -2,7 +2,6 @@ package com.jagex.core.utils;
 
 import deob.ObfuscatedName;
 import jaclib.ping.Ping;
-
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
@@ -22,14 +21,14 @@ public class PingProvider implements Runnable {
 	public volatile boolean running = true;
 
 	@ObfuscatedName("e.e(Ljava/lang/String;I)V")
-	public void setPingHost(String host) {
-		this.host = host;
+	public void setPingHost(String arg0) {
+		this.host = arg0;
 		this.inetAddress = null;
 		this.pingedAddress = -1L;
 		if (this.host != null) {
 			try {
 				this.inetAddress = InetAddress.getByName(this.host);
-			} catch (UnknownHostException exception) {
+			} catch (UnknownHostException var3) {
 			}
 		}
 	}

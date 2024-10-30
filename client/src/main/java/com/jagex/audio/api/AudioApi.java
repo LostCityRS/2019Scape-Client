@@ -3,24 +3,28 @@ package com.jagex.audio.api;
 import com.jagex.audio.backend.AudioMixer;
 import com.jagex.audio.backend.AudioMixerRelated;
 import com.jagex.audio.backend.SoundBackendConfig;
-import com.jagex.audio.stream.*;
-import com.jagex.core.datastruct.SoftLruHashTableRemovalListener;
+import com.jagex.audio.stream.AudioProcessingInterface;
+import com.jagex.audio.stream.Sound;
+import com.jagex.audio.stream.SoundAdjuster;
+import com.jagex.audio.stream.SoundShape;
+import com.jagex.audio.stream.SoundType;
+import com.jagex.audio.stream.SoundVolume;
 import com.jagex.core.datastruct.SoftLruHashTable;
+import com.jagex.core.datastruct.SoftLruHashTableRemovalListener;
 import com.jagex.game.client.ClientMessage;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-import rs2.client.scene.entities.PathingEntity;
-import rs2.client.scene.entities.ProjectileAnimation;
-import rs2.client.scene.entities.SpotAnimation;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import rs2.client.Client;
+import rs2.client.scene.entities.PathingEntity;
+import rs2.client.scene.entities.ProjectileAnimation;
+import rs2.client.scene.entities.SpotAnimation;
 
 @ObfuscatedName("fb")
 public class AudioApi {
@@ -83,263 +87,17 @@ public class AudioApi {
 	public boolean field1857;
 
 	@ObfuscatedName("fb.ae")
-	public SoundAdjuster field1874 = new SoundStereoAdjuster(this);
+	public SoundAdjuster field1874 = new AudioApi.SoundStereoAdjuster();
 
 	@ObfuscatedName("fb.ag")
-	public SoundAdjuster field1872 = new SoundSpatializer(this);
+	public SoundAdjuster field1872 = new AudioApi.SoundSpatializer();
 
 	@ObfuscatedName("fb.ah")
-	public SoundAdjuster field1876 = new SoundVolumeAdjuster(this);
+	public SoundAdjuster field1876 = new AudioApi.SoundVolumeAdjuster();
 
 	@ObfuscatedName("fb.al")
-	public SoundAdjuster field1877 = new SoundPositionAdjuster(this);
+	public SoundAdjuster field1877 = new AudioApi.SoundPositionAdjuster();
 
-	@ObfuscatedName("fn")
-	public static class SoundStereoAdjuster implements SoundAdjuster {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		public SoundStereoAdjuster(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		// line 61
-		@ObfuscatedName("fn.e(Ljava/lang/Object;[F[Ljava/lang/Object;B)V")
-		public void method3053(Object arg0, float[] arg1, Object[] arg2) {
-			Sound var4 = (Sound) arg0;
-			Vector3 var5 = var4.method7395();
-			float var6 = var4.method7436();
-			float var7 = var4.method7397();
-			Vector3 var8 = Vector3.sub(var5, this.this$0.method3147());
-			float var9 = 0.0F;
-			float var10 = var8.length();
-			if (var10 >= var7) {
-				float var11 = 0.0F;
-			}
-			float var12;
-			if (var10 <= var6) {
-				var12 = 1.0F;
-			} else {
-				float var13 = 1.0F - 1.0F / (var7 - var6) * (var10 - var6);
-				if ((double) var13 < 0.0D || (double) var13 > 1.0D) {
-					var13 = Math.min(Math.max(var13, 0.0F), 1.0F);
-				}
-				var12 = var13;
-			}
-			int var14 = 8192;
-			float var15 = 0.0F;
-			float var19;
-			if (Client.cameraState == 3) {
-				float var16 = Client.cam2.method4719();
-				if (var8.x != 0.0F || var8.z != 0.0F) {
-					int var17 = (int) ((double) (var16 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var8.x, (double) var8.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
-					if (var17 > 8192) {
-						var17 = 16384 - var17;
-					}
-					int var18;
-					if (var10 <= 0.0F) {
-						var18 = 8192;
-					} else if (var10 >= 4096.0F) {
-						var18 = 16384;
-					} else {
-						var18 = (int) (var10 * 8192.0F / 4096.0F + 8192.0F);
-					}
-					var14 = (16384 - var18 >> 1) + var17 * var18 / 8192;
-				}
-				var19 = (float) var14 * 6.1035156E-5F;
-			} else {
-				if (var8.x != 0.0F || var8.z != 0.0F) {
-					int var20 = -Client.cameraYaw - (int) (Math.atan2((double) var8.x, (double) var8.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
-					if (var20 > 8192) {
-						var20 = 16384 - var20;
-					}
-					int var21;
-					if (var10 <= 0.0F) {
-						var21 = 8192;
-					} else if (var10 >= 4096.0F) {
-						var21 = 16384;
-					} else {
-						var21 = (int) (var10 * 8192.0F / 4096.0F + 8192.0F);
-					}
-					var14 = (16384 - var21 >> 1) + var20 * var21 / 8192;
-				}
-				var19 = (float) var14 * 6.1035156E-5F;
-			}
-			arg1[0] = (float) (var14 < 0 ? (double) var12 : (double) var12 * Math.sqrt((double) ((1.0F - var19) * 2.0F)));
-			arg1[1] = (float) (var14 < 0 ? (double) -var12 : (double) var12 * Math.sqrt((double) (var19 * 2.0F)));
-		}
-	}
-
-	@ObfuscatedName("fd")
-	public static class SoundSpatializer implements SoundAdjuster {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		public SoundSpatializer(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		// line 116
-		@ObfuscatedName("fd.e(Ljava/lang/Object;[F[Ljava/lang/Object;B)V")
-		public void method3053(Object arg0, float[] arg1, Object[] arg2) {
-			Sound var4 = (Sound) arg0;
-			Vector3 var5 = var4.method7395();
-			float var6 = var4.method7436();
-			float var7 = var4.method7397();
-			Vector3 var8 = this.this$0.method3147();
-			Vector3 var9 = Vector3.sub(var5, var8);
-			float var10 = 0.0F;
-			int var11 = 8192;
-			float var12 = var9.length();
-			float var13 = 0.0F;
-			if (var12 >= var7) {
-				var10 = 0.0F;
-			} else {
-				float var14 = (Float) arg2[0];
-				float var15 = (Float) arg2[1];
-				if (var8.x > var5.x - var14 / 2.0F && var8.x < var14 / 2.0F + var5.x && var8.z > var5.z - var15 / 2.0F && var8.z < var15 / 2.0F + var5.z) {
-					float var16 = Math.abs(var8.x - (var14 / 2.0F + var5.x));
-					float var17 = Math.abs(var8.x - (var5.x - var14 / 2.0F));
-					float var18 = Math.abs(var8.z - (var15 / 2.0F + var5.x));
-					float var19 = Math.abs(var8.z - (var5.x - var15 / 2.0F));
-					float var20 = var7 - var6;
-					float var21 = Math.min(var16, var17);
-					float var22 = Math.min(var18, var19);
-					float var23 = 1.0F / var20 * var21;
-					float var24 = 1.0F / var20 * var22;
-					float var25 = Math.min(Math.max(var23, 0.0F), 1.0F);
-					float var26 = Math.min(Math.max(var24, 0.0F), 1.0F);
-					var10 = Math.min(var25, var26);
-				}
-				if (var9.x != 0.0F || var9.z != 0.0F) {
-					if (Client.cameraState == 3) {
-						float var27 = Client.cam2.method4719();
-						if (var9.x != 0.0F || var9.z != 0.0F) {
-							int var28 = (int) ((double) (var27 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var9.x, (double) var9.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
-							if (var28 > 8192) {
-								var28 = 16384 - var28;
-							}
-							int var29;
-							if (var12 <= 0.0F) {
-								var29 = 8192;
-							} else if (var12 >= 4096.0F) {
-								var29 = 16384;
-							} else {
-								var29 = (int) (var12 * 8192.0F / 4096.0F + 8192.0F);
-							}
-							var11 = (16384 - var29 >> 1) + var28 * var29 / 8192;
-						}
-						var13 = (float) var11 * 6.1035156E-5F;
-					} else {
-						int var30 = -Client.cameraYaw - (int) (Math.atan2((double) var9.x, (double) var9.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
-						if (var30 > 8192) {
-							var30 = 16384 - var30;
-						}
-						int var31;
-						if (var12 <= 0.0F) {
-							var31 = 8192;
-						} else if (var12 >= 4096.0F) {
-							var31 = 16384;
-						} else {
-							var31 = (int) (var12 * 8192.0F / 4096.0F + 8192.0F);
-						}
-						var11 = (16384 - var31 >> 1) + var30 * var31 / 8192;
-						var13 = (float) var11 * 6.1035156E-5F;
-					}
-				}
-			}
-			arg1[0] = (float) (var11 < 0 ? (double) var10 : (double) var10 * Math.sqrt((double) (1.0F - var13)));
-			arg1[1] = (float) (var11 < 0 ? (double) -var10 : (double) var10 * Math.sqrt((double) var13));
-		}
-	}
-
-	@ObfuscatedName("fw")
-	public static class SoundVolumeAdjuster implements SoundAdjuster {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		// line 182
-		public SoundVolumeAdjuster(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("fw.e(Ljava/lang/Object;[F[Ljava/lang/Object;B)V")
-		public void method3053(Object arg0, float[] arg1, Object[] arg2) {
-			Sound var4 = (Sound) arg0;
-			Vector3 var5 = var4.method7395();
-			float var6 = var4.method7436();
-			float var7 = var4.method7397();
-			Vector3 var8 = Vector3.sub(var5, this.this$0.method3147());
-			float var9 = 0.0F;
-			float var10 = var8.length();
-			if (var10 >= var7) {
-				float var11 = 0.0F;
-			}
-			float var12;
-			if (var10 <= var6) {
-				var12 = 1.0F;
-			} else {
-				float var13 = 1.0F - 1.0F / (var7 - var6) * (var10 - var6);
-				if ((double) var13 < 0.0D || (double) var13 > 1.0D) {
-					var13 = Math.min(Math.max(var13, 0.0F), 1.0F);
-				}
-				var12 = var13;
-			}
-			arg1[0] = var12;
-			arg1[1] = var12;
-		}
-	}
-
-	@ObfuscatedName("fi")
-	public static class SoundPositionAdjuster implements SoundAdjuster {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		// line 204
-		public SoundPositionAdjuster(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("fi.e(Ljava/lang/Object;[F[Ljava/lang/Object;B)V")
-		public void method3053(Object arg0, float[] arg1, Object[] arg2) {
-			Sound var4 = (Sound) arg0;
-			Vector3 var5 = var4.method7395();
-			float var6 = var4.method7436();
-			float var7 = var4.method7397();
-			Vector3 var8 = this.this$0.method3147();
-			Vector3 var9 = Vector3.sub(var5, var8);
-			float var10 = 0.0F;
-			float var11 = var9.length();
-			if (var11 >= var7) {
-				var10 = 0.0F;
-			} else {
-				float var12 = (Float) arg2[0];
-				float var13 = (Float) arg2[1];
-				if (var8.x > var5.x - var12 / 2.0F && var8.x < var12 / 2.0F + var5.x && var8.z > var5.z - var13 / 2.0F && var8.z < var13 / 2.0F + var5.z) {
-					float var14 = Math.abs(var8.x - (var12 / 2.0F + var5.x));
-					float var15 = Math.abs(var8.x - (var5.x - var12 / 2.0F));
-					float var16 = Math.abs(var8.z - (var13 / 2.0F + var5.x));
-					float var17 = Math.abs(var8.z - (var5.x - var13 / 2.0F));
-					float var18 = var7 - var6;
-					float var19 = Math.min(var14, var15);
-					float var20 = Math.min(var16, var17);
-					float var21 = 1.0F / var18 * var19;
-					float var22 = 1.0F / var18 * var20;
-					float var23 = Math.min(Math.max(var21, 0.0F), 1.0F);
-					float var24 = Math.min(Math.max(var22, 0.0F), 1.0F);
-					var10 = Math.min(var23, var24);
-				}
-			}
-			arg1[0] = var10;
-			arg1[1] = var10;
-		}
-	}
-
-	// line 241
 	@ObfuscatedName("fb.e(I)Ljava/util/List;")
 	public List getSounds() {
 		return this.sounds;
@@ -365,7 +123,6 @@ public class AudioApi {
 		return this.field1873;
 	}
 
-	// line 263
 	@ObfuscatedName("fb.w(III)V")
 	public void init(int arg0, int arg1) {
 		if (this.field1860) {
@@ -374,7 +131,7 @@ public class AudioApi {
 		this.field1864 = arg0;
 		this.field1856 = new SoftLruHashTable(arg1, 100);
 		this.field1862 = new SoftLruHashTable(10);
-		this.field1856.setRemovalListener(new AudioApiRemovalListener(this));
+		this.field1856.setRemovalListener(new AudioApi.AudioApiRemovalListener());
 		SoundBackendConfig var3 = new SoundBackendConfig(SoundBackendType.DUMMY);
 		AudioMixer.createBackend(var3);
 		this.configureRoutingArchitecture();
@@ -382,36 +139,6 @@ public class AudioApi {
 		this.field1860 = true;
 	}
 
-	@ObfuscatedName("fs")
-	public static class AudioApiRemovalListener implements SoftLruHashTableRemovalListener {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		// line 267
-		public AudioApiRemovalListener(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("fs.f(Lwr;I)V")
-		public void method3027(AudioProcessingInterface arg0) {
-			Iterator var2 = this.this$0.getSounds().iterator();
-			while (var2.hasNext()) {
-				Sound var3 = (Sound) var2.next();
-				if (var3.method7386() == arg0) {
-					var3.method7377();
-					var2.remove();
-				}
-			}
-		}
-
-		@ObfuscatedName("fs.e(Ljava/lang/Object;I)V")
-		public void method2914(Object arg0) {
-			this.method3027((AudioProcessingInterface) arg0);
-		}
-	}
-
-	// line 291
 	@ObfuscatedName("fb.l(S)V")
 	public void update() {
 		if (!this.field1860) {
@@ -471,7 +198,7 @@ public class AudioApi {
 						Iterator var12 = this.field1851.keySet().iterator();
 						while (var12.hasNext()) {
 							int var13 = (Integer) var12.next();
-							AudioApiRelated5 var14 = (AudioApiRelated5) this.field1851.get(var13);
+							AudioApi.AudioApiRelated5 var14 = (AudioApi.AudioApiRelated5) this.field1851.get(var13);
 							if (var14.method3120().contains(var9)) {
 								var14.method3114(var9);
 								break;
@@ -537,7 +264,6 @@ public class AudioApi {
 		}
 	}
 
-	// line 411
 	@ObfuscatedName("fb.u(B)V")
 	public void stop() {
 		AudioMixer.method7606();
@@ -548,9 +274,9 @@ public class AudioApi {
 		if (arg0 == null) {
 			return;
 		}
-		AudioApiRelated5 var4 = (AudioApiRelated5) this.field1851.get(arg1);
+		AudioApi.AudioApiRelated5 var4 = (AudioApi.AudioApiRelated5) this.field1851.get(arg1);
 		if (var4 == null) {
-			var4 = new AudioApiRelated5(this);
+			var4 = new AudioApi.AudioApiRelated5();
 			this.field1851.put(arg1, var4);
 		}
 		if (!var4.method3113(arg0)) {
@@ -561,7 +287,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.p(IB)V")
 	public void startGroup(int arg0) {
-		AudioApiRelated5 var2 = (AudioApiRelated5) this.field1851.get(arg0);
+		AudioApi.AudioApiRelated5 var2 = (AudioApi.AudioApiRelated5) this.field1851.get(arg0);
 		if (var2 == null) {
 			return;
 		}
@@ -577,7 +303,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.d(II)V")
 	public void stopGroup(int arg0) {
-		AudioApiRelated5 var2 = (AudioApiRelated5) this.field1851.get(arg0);
+		AudioApi.AudioApiRelated5 var2 = (AudioApi.AudioApiRelated5) this.field1851.get(arg0);
 		if (var2 == null) {
 			return;
 		}
@@ -591,7 +317,7 @@ public class AudioApi {
 
 	@ObfuscatedName("fb.c(IB)V")
 	public void preloadSoundGroup(int arg0) {
-		AudioApiRelated5 var2 = (AudioApiRelated5) this.field1851.get(arg0);
+		AudioApi.AudioApiRelated5 var2 = (AudioApi.AudioApiRelated5) this.field1851.get(arg0);
 		if (var2 == null) {
 			return;
 		}
@@ -603,14 +329,13 @@ public class AudioApi {
 		}
 	}
 
-	// line 470
 	@ObfuscatedName("fb.r(I)V")
 	public void configureRoutingArchitecture() {
-		MainEffectsVolumeProvider var1 = new MainEffectsVolumeProvider(this);
-		MainMusicVolumeProvider var2 = new MainMusicVolumeProvider(this);
-		LoginMusicVolumeProvider var3 = new LoginMusicVolumeProvider(this);
-		BackgroundEffectsVolumeProvider var4 = new BackgroundEffectsVolumeProvider(this);
-		SpeechVolumeProvider var5 = new SpeechVolumeProvider(this);
+		AudioApi.MainEffectsVolumeProvider var1 = new AudioApi.MainEffectsVolumeProvider();
+		AudioApi.MainMusicVolumeProvider var2 = new AudioApi.MainMusicVolumeProvider();
+		AudioApi.LoginMusicVolumeProvider var3 = new AudioApi.LoginMusicVolumeProvider();
+		AudioApi.BackgroundEffectsVolumeProvider var4 = new AudioApi.BackgroundEffectsVolumeProvider();
+		AudioApi.SpeechVolumeProvider var5 = new AudioApi.SpeechVolumeProvider();
 		AudioMixer.addBuss(BussType.SFX.getId(), BussType.MASTER.getId(), 0.2F, var1);
 		AudioMixer.addBuss(BussType.MUSIC.getId(), BussType.MASTER.getId(), 1.0F, var2);
 		AudioMixer.addBuss(BussType.MUSIC_LOGIN.getId(), BussType.MASTER.getId(), 1.0F, var3);
@@ -629,93 +354,6 @@ public class AudioApi {
 		AudioMixer.method5401(SubBussType.MUSIC_SUB.getId()).method5897(0.75F);
 	}
 
-	@ObfuscatedName("fv")
-	public static class MainEffectsVolumeProvider implements VolumeProvider {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		// line 470
-		public MainEffectsVolumeProvider(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		// line 472
-		@ObfuscatedName("fv.e(I)F")
-		public float getVolume() {
-			return (float) Client.preferences.soundVolume.getValue() / 255.0F;
-		}
-	}
-
-	@ObfuscatedName("fc")
-	public static class MainMusicVolumeProvider implements VolumeProvider {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		// line 475
-		public MainMusicVolumeProvider(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("fc.e(I)F")
-		public float getVolume() {
-			return (float) Client.preferences.unknownVolume1.getValue() / 255.0F;
-		}
-	}
-
-	@ObfuscatedName("fp")
-	public static class LoginMusicVolumeProvider implements VolumeProvider {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		// line 480
-		public LoginMusicVolumeProvider(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("fp.e(I)F")
-		public float getVolume() {
-			return (float) Client.preferences.unknownVolume2.getValue() / 255.0F;
-		}
-	}
-
-	@ObfuscatedName("ff")
-	public static class BackgroundEffectsVolumeProvider implements VolumeProvider {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		// line 485
-		public BackgroundEffectsVolumeProvider(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("ff.e(I)F")
-		public float getVolume() {
-			return (float) Client.preferences.backgroundSoundVolume.getValue() / 255.0F;
-		}
-	}
-
-	@ObfuscatedName("fa")
-	public static class SpeechVolumeProvider implements VolumeProvider {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		public SpeechVolumeProvider(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		// line 492
-		@ObfuscatedName("fa.e(I)F")
-		public float getVolume() {
-			return (float) Client.preferences.speechVolume.getValue() / 255.0F;
-		}
-	}
-
-	// line 514
 	@ObfuscatedName("fb.v(IIIB)V")
 	public void addBuss(int arg0, int arg1, int arg2) {
 		int var4 = BussType.MASTER.getId();
@@ -745,7 +383,6 @@ public class AudioApi {
 		return var3;
 	}
 
-	// line 541
 	@ObfuscatedName("fb.y(IB)V")
 	public void stopVorbisSpeech(int arg0) {
 		Iterator var2 = this.sounds.iterator();
@@ -794,7 +431,6 @@ public class AudioApi {
 		return var3;
 	}
 
-	// line 583
 	@ObfuscatedName("fb.h(IZI)Lwr;")
 	public AudioProcessingInterface method3163(int arg0, boolean arg1) {
 		if (!this.field1860) {
@@ -802,7 +438,7 @@ public class AudioApi {
 		}
 		AudioProcessingInterface var3 = this.method3162(arg0, arg1);
 		if (var3 == null) {
-			AudioMixerRelated_Sub1 var4 = new AudioMixerRelated_Sub1(this);
+			AudioApi.AudioMixerRelated_Sub1 var4 = new AudioApi.AudioMixerRelated_Sub1();
 			var3 = AudioMixer.method6064(arg1 ? Client.audiostreamsJs5 : Client.vorbisJs5, arg0, var4, arg1, this.field1863);
 			if (arg1) {
 				this.field1865.put(arg0, var3);
@@ -811,35 +447,6 @@ public class AudioApi {
 			}
 		}
 		return var3;
-	}
-
-	@ObfuscatedName("fl")
-	public static class AudioMixerRelated_Sub1 implements AudioMixerRelated {
-
-		// $FF: synthetic field
-		public final AudioApi this$0;
-
-		// line 586
-		public AudioMixerRelated_Sub1(AudioApi arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("fl.e(Lwr;IIZB)V")
-		public void method3130(AudioProcessingInterface arg0, int arg1, int arg2, boolean arg3) {
-			this.this$0.method3233().add(arg0);
-			if (arg3) {
-				this.this$0.method3146().put(arg0, (long) arg2);
-			} else {
-				this.this$0.method3145().put(arg0, (long) arg2, arg0.method9678());
-			}
-		}
-
-		@ObfuscatedName("fl.n(Lwr;I)V")
-		public void method3131(AudioProcessingInterface arg0) {
-			if (arg0 != null) {
-				this.this$0.method3145().get((long) arg0.method9680());
-			}
-		}
 	}
 
 	@ObfuscatedName("fb.a(Lwr;I)Lrw;")
@@ -1181,7 +788,6 @@ public class AudioApi {
 		}
 	}
 
-	// line 916
 	@ObfuscatedName("fb.ar(Lfg;II)V")
 	public void playSequenceSound(SeqType arg0, int arg1) {
 		if (arg0 == null || arg0.sound == null || arg1 >= arg0.sound.length || arg0.sound[arg1] == null) {
@@ -1204,20 +810,281 @@ public class AudioApi {
 		this.playSound(SoundType.field1832, var4, var5, var8, SubBussType.NPC_ANIMATION_SUB.getId(), SoundShape.field1835, 0.0F, 0.0F, null, 0, var7, 0);
 	}
 
-	@ObfuscatedName("fq")
-	public static class AudioApiRelated5 {
+	@ObfuscatedName("fs")
+	public class AudioApiRemovalListener implements SoftLruHashTableRemovalListener {
 
-		// $FF: synthetic field
-		public final AudioApi this$0;
+		@ObfuscatedName("fs.f(Lwr;I)V")
+		public void method3027(AudioProcessingInterface arg0) {
+			Iterator var2 = AudioApi.this.getSounds().iterator();
+			while (var2.hasNext()) {
+				Sound var3 = (Sound) var2.next();
+				if (var3.method7386() == arg0) {
+					var3.method7377();
+					var2.remove();
+				}
+			}
+		}
+
+		@ObfuscatedName("fs.e(Ljava/lang/Object;I)V")
+		public void method2914(Object arg0) {
+			this.method3027((AudioProcessingInterface) arg0);
+		}
+	}
+
+	@ObfuscatedName("fd")
+	public class SoundSpatializer implements SoundAdjuster {
+
+		@ObfuscatedName("fd.e(Ljava/lang/Object;[F[Ljava/lang/Object;B)V")
+		public void method3053(Object arg0, float[] arg1, Object[] arg2) {
+			Sound var4 = (Sound) arg0;
+			Vector3 var5 = var4.method7395();
+			float var6 = var4.method7436();
+			float var7 = var4.method7397();
+			Vector3 var8 = AudioApi.this.method3147();
+			Vector3 var9 = Vector3.sub(var5, var8);
+			float var10 = 0.0F;
+			int var11 = 8192;
+			float var12 = var9.length();
+			float var13 = 0.0F;
+			if (var12 >= var7) {
+				var10 = 0.0F;
+			} else {
+				float var14 = (Float) arg2[0];
+				float var15 = (Float) arg2[1];
+				if (var8.x > var5.x - var14 / 2.0F && var8.x < var14 / 2.0F + var5.x && var8.z > var5.z - var15 / 2.0F && var8.z < var15 / 2.0F + var5.z) {
+					float var16 = Math.abs(var8.x - (var14 / 2.0F + var5.x));
+					float var17 = Math.abs(var8.x - (var5.x - var14 / 2.0F));
+					float var18 = Math.abs(var8.z - (var15 / 2.0F + var5.x));
+					float var19 = Math.abs(var8.z - (var5.x - var15 / 2.0F));
+					float var20 = var7 - var6;
+					float var21 = Math.min(var16, var17);
+					float var22 = Math.min(var18, var19);
+					float var23 = 1.0F / var20 * var21;
+					float var24 = 1.0F / var20 * var22;
+					float var25 = Math.min(Math.max(var23, 0.0F), 1.0F);
+					float var26 = Math.min(Math.max(var24, 0.0F), 1.0F);
+					var10 = Math.min(var25, var26);
+				}
+				if (var9.x != 0.0F || var9.z != 0.0F) {
+					if (Client.cameraState == 3) {
+						float var27 = Client.cam2.method4719();
+						if (var9.x != 0.0F || var9.z != 0.0F) {
+							int var28 = (int) ((double) (var27 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var9.x, (double) var9.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
+							if (var28 > 8192) {
+								var28 = 16384 - var28;
+							}
+							int var29;
+							if (var12 <= 0.0F) {
+								var29 = 8192;
+							} else if (var12 >= 4096.0F) {
+								var29 = 16384;
+							} else {
+								var29 = (int) (var12 * 8192.0F / 4096.0F + 8192.0F);
+							}
+							var11 = (16384 - var29 >> 1) + var28 * var29 / 8192;
+						}
+						var13 = (float) var11 * 6.1035156E-5F;
+					} else {
+						int var30 = -Client.cameraYaw - (int) (Math.atan2((double) var9.x, (double) var9.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
+						if (var30 > 8192) {
+							var30 = 16384 - var30;
+						}
+						int var31;
+						if (var12 <= 0.0F) {
+							var31 = 8192;
+						} else if (var12 >= 4096.0F) {
+							var31 = 16384;
+						} else {
+							var31 = (int) (var12 * 8192.0F / 4096.0F + 8192.0F);
+						}
+						var11 = (16384 - var31 >> 1) + var30 * var31 / 8192;
+						var13 = (float) var11 * 6.1035156E-5F;
+					}
+				}
+			}
+			arg1[0] = (float) (var11 < 0 ? (double) var10 : (double) var10 * Math.sqrt((double) (1.0F - var13)));
+			arg1[1] = (float) (var11 < 0 ? (double) -var10 : (double) var10 * Math.sqrt((double) var13));
+		}
+	}
+
+	@ObfuscatedName("fn")
+	public class SoundStereoAdjuster implements SoundAdjuster {
+
+		@ObfuscatedName("fn.e(Ljava/lang/Object;[F[Ljava/lang/Object;B)V")
+		public void method3053(Object arg0, float[] arg1, Object[] arg2) {
+			Sound var4 = (Sound) arg0;
+			Vector3 var5 = var4.method7395();
+			float var6 = var4.method7436();
+			float var7 = var4.method7397();
+			Vector3 var8 = Vector3.sub(var5, AudioApi.this.method3147());
+			float var9 = 0.0F;
+			float var10 = var8.length();
+			if (var10 >= var7) {
+				float var11 = 0.0F;
+			}
+			float var12;
+			if (var10 <= var6) {
+				var12 = 1.0F;
+			} else {
+				float var13 = 1.0F - 1.0F / (var7 - var6) * (var10 - var6);
+				if ((double) var13 < 0.0D || (double) var13 > 1.0D) {
+					var13 = Math.min(Math.max(var13, 0.0F), 1.0F);
+				}
+				var12 = var13;
+			}
+			int var14 = 8192;
+			float var15 = 0.0F;
+			float var19;
+			if (Client.cameraState == 3) {
+				float var16 = Client.cam2.method4719();
+				if (var8.x != 0.0F || var8.z != 0.0F) {
+					int var17 = (int) ((double) (var16 * -1.0F) * 2607.5945876176133D) - (int) (Math.atan2((double) var8.x, (double) var8.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
+					if (var17 > 8192) {
+						var17 = 16384 - var17;
+					}
+					int var18;
+					if (var10 <= 0.0F) {
+						var18 = 8192;
+					} else if (var10 >= 4096.0F) {
+						var18 = 16384;
+					} else {
+						var18 = (int) (var10 * 8192.0F / 4096.0F + 8192.0F);
+					}
+					var14 = (16384 - var18 >> 1) + var17 * var18 / 8192;
+				}
+				var19 = (float) var14 * 6.1035156E-5F;
+			} else {
+				if (var8.x != 0.0F || var8.z != 0.0F) {
+					int var20 = -Client.cameraYaw - (int) (Math.atan2((double) var8.x, (double) var8.z) * 2607.5945876176133D) - 4096 & 0x3FFF;
+					if (var20 > 8192) {
+						var20 = 16384 - var20;
+					}
+					int var21;
+					if (var10 <= 0.0F) {
+						var21 = 8192;
+					} else if (var10 >= 4096.0F) {
+						var21 = 16384;
+					} else {
+						var21 = (int) (var10 * 8192.0F / 4096.0F + 8192.0F);
+					}
+					var14 = (16384 - var21 >> 1) + var20 * var21 / 8192;
+				}
+				var19 = (float) var14 * 6.1035156E-5F;
+			}
+			arg1[0] = (float) (var14 < 0 ? (double) var12 : (double) var12 * Math.sqrt((double) ((1.0F - var19) * 2.0F)));
+			arg1[1] = (float) (var14 < 0 ? (double) -var12 : (double) var12 * Math.sqrt((double) (var19 * 2.0F)));
+		}
+	}
+
+	@ObfuscatedName("fi")
+	public class SoundPositionAdjuster implements SoundAdjuster {
+
+		@ObfuscatedName("fi.e(Ljava/lang/Object;[F[Ljava/lang/Object;B)V")
+		public void method3053(Object arg0, float[] arg1, Object[] arg2) {
+			Sound var4 = (Sound) arg0;
+			Vector3 var5 = var4.method7395();
+			float var6 = var4.method7436();
+			float var7 = var4.method7397();
+			Vector3 var8 = AudioApi.this.method3147();
+			Vector3 var9 = Vector3.sub(var5, var8);
+			float var10 = 0.0F;
+			float var11 = var9.length();
+			if (var11 >= var7) {
+				var10 = 0.0F;
+			} else {
+				float var12 = (Float) arg2[0];
+				float var13 = (Float) arg2[1];
+				if (var8.x > var5.x - var12 / 2.0F && var8.x < var12 / 2.0F + var5.x && var8.z > var5.z - var13 / 2.0F && var8.z < var13 / 2.0F + var5.z) {
+					float var14 = Math.abs(var8.x - (var12 / 2.0F + var5.x));
+					float var15 = Math.abs(var8.x - (var5.x - var12 / 2.0F));
+					float var16 = Math.abs(var8.z - (var13 / 2.0F + var5.x));
+					float var17 = Math.abs(var8.z - (var5.x - var13 / 2.0F));
+					float var18 = var7 - var6;
+					float var19 = Math.min(var14, var15);
+					float var20 = Math.min(var16, var17);
+					float var21 = 1.0F / var18 * var19;
+					float var22 = 1.0F / var18 * var20;
+					float var23 = Math.min(Math.max(var21, 0.0F), 1.0F);
+					float var24 = Math.min(Math.max(var22, 0.0F), 1.0F);
+					var10 = Math.min(var23, var24);
+				}
+			}
+			arg1[0] = var10;
+			arg1[1] = var10;
+		}
+	}
+
+	@ObfuscatedName("fv")
+	public class MainEffectsVolumeProvider implements VolumeProvider {
+
+		@ObfuscatedName("fv.e(I)F")
+		public float getVolume() {
+			return (float) Client.preferences.soundVolume.getValue() / 255.0F;
+		}
+	}
+
+	@ObfuscatedName("fc")
+	public class MainMusicVolumeProvider implements VolumeProvider {
+
+		@ObfuscatedName("fc.e(I)F")
+		public float getVolume() {
+			return (float) Client.preferences.unknownVolume1.getValue() / 255.0F;
+		}
+	}
+
+	@ObfuscatedName("fw")
+	public class SoundVolumeAdjuster implements SoundAdjuster {
+
+		@ObfuscatedName("fw.e(Ljava/lang/Object;[F[Ljava/lang/Object;B)V")
+		public void method3053(Object arg0, float[] arg1, Object[] arg2) {
+			Sound var4 = (Sound) arg0;
+			Vector3 var5 = var4.method7395();
+			float var6 = var4.method7436();
+			float var7 = var4.method7397();
+			Vector3 var8 = Vector3.sub(var5, AudioApi.this.method3147());
+			float var9 = 0.0F;
+			float var10 = var8.length();
+			if (var10 >= var7) {
+				float var11 = 0.0F;
+			}
+			float var12;
+			if (var10 <= var6) {
+				var12 = 1.0F;
+			} else {
+				float var13 = 1.0F - 1.0F / (var7 - var6) * (var10 - var6);
+				if ((double) var13 < 0.0D || (double) var13 > 1.0D) {
+					var13 = Math.min(Math.max(var13, 0.0F), 1.0F);
+				}
+				var12 = var13;
+			}
+			arg1[0] = var12;
+			arg1[1] = var12;
+		}
+	}
+
+	@ObfuscatedName("fa")
+	public class SpeechVolumeProvider implements VolumeProvider {
+
+		@ObfuscatedName("fa.e(I)F")
+		public float getVolume() {
+			return (float) Client.preferences.speechVolume.getValue() / 255.0F;
+		}
+	}
+
+	@ObfuscatedName("fp")
+	public class LoginMusicVolumeProvider implements VolumeProvider {
+
+		@ObfuscatedName("fp.e(I)F")
+		public float getVolume() {
+			return (float) Client.preferences.unknownVolume2.getValue() / 255.0F;
+		}
+	}
+
+	@ObfuscatedName("fq")
+	public class AudioApiRelated5 {
 
 		@ObfuscatedName("fq.e")
-		public List field1845;
-
-		// line 933
-		public AudioApiRelated5(AudioApi arg0) {
-			this.this$0 = arg0;
-			this.field1845 = new ArrayList();
-		}
+		public List field1845 = new ArrayList();
 
 		@ObfuscatedName("fq.e(Lrw;I)V")
 		public void method3110(Sound arg0) {
@@ -1237,6 +1104,36 @@ public class AudioApi {
 		@ObfuscatedName("fq.k(Lrw;I)Z")
 		public boolean method3113(Sound arg0) {
 			return this.field1845.contains(arg0);
+		}
+	}
+
+	@ObfuscatedName("ff")
+	public class BackgroundEffectsVolumeProvider implements VolumeProvider {
+
+		@ObfuscatedName("ff.e(I)F")
+		public float getVolume() {
+			return (float) Client.preferences.backgroundSoundVolume.getValue() / 255.0F;
+		}
+	}
+
+	@ObfuscatedName("fl")
+	public class AudioMixerRelated_Sub1 implements AudioMixerRelated {
+
+		@ObfuscatedName("fl.e(Lwr;IIZB)V")
+		public void method3130(AudioProcessingInterface arg0, int arg1, int arg2, boolean arg3) {
+			AudioApi.this.method3233().add(arg0);
+			if (arg3) {
+				AudioApi.this.method3146().put(arg0, (long) arg2);
+			} else {
+				AudioApi.this.method3145().put(arg0, (long) arg2, arg0.method9678());
+			}
+		}
+
+		@ObfuscatedName("fl.n(Lwr;I)V")
+		public void method3131(AudioProcessingInterface arg0) {
+			if (arg0 != null) {
+				AudioApi.this.method3145().get((long) arg0.method9680());
+			}
 		}
 	}
 }

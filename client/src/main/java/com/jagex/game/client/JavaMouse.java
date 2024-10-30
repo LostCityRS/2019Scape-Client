@@ -4,7 +4,7 @@ import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.utils.MonotonicTime;
 import com.jagex.game.shared.framework.input.Mouse;
 import deob.ObfuscatedName;
-
+import java.awt.Component;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
@@ -38,18 +38,18 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	public LinkList field11696 = new LinkList();
 
 	@ObfuscatedName("alb.c")
-	public java.awt.Component field11697;
+	public Component field11697;
 
 	@ObfuscatedName("alb.r")
 	public boolean field11687;
 
-	public JavaMouse(java.awt.Component arg0, boolean arg1) {
+	public JavaMouse(Component arg0, boolean arg1) {
 		this.method18295(arg0);
 		this.field11687 = arg1;
 	}
 
 	@ObfuscatedName("alb.ao(Ljava/awt/Component;I)V")
-	public void method18295(java.awt.Component arg0) {
+	public void method18295(Component arg0) {
 		this.method18297();
 		this.field11697 = arg0;
 		this.field11697.addMouseListener(this);
@@ -79,7 +79,7 @@ public class JavaMouse extends Mouse implements MouseListener, MouseMotionListen
 	@ObfuscatedName("alb.ay(IIIIB)V")
 	public void method18303(int arg0, int arg1, int arg2, int arg3) {
 		BasicMouseEvent var5 = BasicMouseEvent.method8438(arg0, arg1, arg2, MonotonicTime.get(), arg3);
-        this.field11696.addTail(var5);
+		this.field11696.addTail(var5);
 	}
 
 	@ObfuscatedName("alb.ab(III)V")

@@ -57,17 +57,17 @@ public class VarBitTypeEncodingKey implements SerializableEnum {
 	@ObfuscatedName("ks.y")
 	public final int serialID;
 
-	public VarBitTypeEncodingKey(int index, int serialID) {
-		this.index = index;
-		this.serialID = serialID;
+	@ObfuscatedName("dd.e(I)[Lks;")
+	public static VarBitTypeEncodingKey[] values() {
+		return new VarBitTypeEncodingKey[] { IGNOREOVERLAP, DEBUGNAME, VARBITNAME_HASH32, TRANSMITLEVELOTHER, field3071, QUESTPOINTS, BITS, WEALTHEQUIVALENT, WARNONDECREASE, TRANSMITLEVEL, BASEVAR, MASTERQUEST, SETVARALLOWED, field3061, SENDTOGAMELOGWORLD };
 	}
 
-    @ObfuscatedName("dd.e(I)[Lks;")
-    public static VarBitTypeEncodingKey[] values() {
-        return new VarBitTypeEncodingKey[] {IGNOREOVERLAP, DEBUGNAME, VARBITNAME_HASH32, TRANSMITLEVELOTHER, field3071, QUESTPOINTS, BITS, WEALTHEQUIVALENT, WARNONDECREASE, TRANSMITLEVEL, BASEVAR, MASTERQUEST, SETVARALLOWED, field3061, SENDTOGAMELOGWORLD};
-    }
+	public VarBitTypeEncodingKey(int arg0, int arg1) {
+		this.index = arg0;
+		this.serialID = arg1;
+	}
 
-    @ObfuscatedName("ks.n()I")
+	@ObfuscatedName("ks.n()I")
 	public int getId() {
 		return this.serialID;
 	}

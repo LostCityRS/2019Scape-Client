@@ -12,7 +12,7 @@ public class SkyDecorType implements ConfigType, MutableConfig {
 	public int field2780;
 
 	@ObfuscatedName("iy.n")
-	public int field2776 = 0;
+	public int field2776 = 1385777912 * -1875676513;
 
 	@ObfuscatedName("iy.m")
 	public int field2783;
@@ -27,7 +27,7 @@ public class SkyDecorType implements ConfigType, MutableConfig {
 	public boolean field2781;
 
 	@ObfuscatedName("iy.l")
-	public int field2782 = 16777216;
+	public int field2782 = 1996845577 * -1567865913;
 
 	@ObfuscatedName("iy.u")
 	public int field2778;
@@ -42,13 +42,13 @@ public class SkyDecorType implements ConfigType, MutableConfig {
 	public int field2786;
 
 	@ObfuscatedName("iy.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int var2 = buf.g1();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method4593(buf, var2);
+			this.method4593(arg0, var2);
 		}
 	}
 

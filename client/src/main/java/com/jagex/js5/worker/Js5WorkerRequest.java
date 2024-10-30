@@ -19,9 +19,8 @@ public class Js5WorkerRequest extends Js5Request {
 	@ObfuscatedName("atf.e(I)[B")
 	public byte[] getBytes() {
 		if (this.incomplete) {
-			throw new RuntimeException("Not ready!");
+			throw new RuntimeException();
 		}
-
 		return this.bytes;
 	}
 

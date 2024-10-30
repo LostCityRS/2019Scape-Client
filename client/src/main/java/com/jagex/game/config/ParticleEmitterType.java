@@ -328,11 +328,11 @@ public class ParticleEmitterType {
 			if (arg1 == 29) {
 				if (arg0.g1() == 0) {
 					var10003 = arg0.g2s();
-					this.field3471 = var10003 * 64;
-					this.field3533 = var10003 * 64;
+					this.field3471 = var10003 * 8;
+					this.field3533 = var10003 * 8;
 				} else {
-					this.field3533 = arg0.g2s() * 64;
-					this.field3471 = arg0.g2s() * 64;
+					this.field3533 = arg0.g2s() * 8;
+					this.field3471 = arg0.g2s() * 8;
 				}
 			} else if (arg1 == 30) {
 				this.field3506 = true;
@@ -410,7 +410,7 @@ public class ParticleEmitterType {
 			}
 			this.field3521 = (this.field3473 - ((this.field3472 - this.field3501) / 2 + this.field3501)) / this.field3509;
 		}
-		this.field3534 = this.field3502 * 64 - this.field3525 * 64;
-		this.field3535 = this.field3471 * 8 - this.field3533 * 8;
+		this.field3534 = this.field3502 - this.field3525;
+		this.field3535 = this.field3471 - this.field3533;
 	}
 }

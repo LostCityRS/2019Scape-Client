@@ -1,0 +1,59 @@
+[profile]
+input = "ref/innerpack.jar"
+
+[profile.deob]
+enable = true
+
+transformers = [
+    "AnnotateObfuscatedNames",
+    "UniqueRenamer",
+    "CalledMethods",
+    "ErrorHandlers",
+    "ParameterChecks",
+    "UnreachableCode",
+    "Goto",
+    "StaticMethods",
+    "SortMethods",
+    "StaticFields",
+    "SortFieldsName",
+    "VariableSplitter",
+    "ExpressionSorter",
+    "RlMath",
+    "Visibility"
+]
+
+[profile.deob.parameter_checks]
+complex = true
+
+[profile.deob.sort_fields]
+unreliable = true
+
+[profile.remap]
+enable = true
+
+[profile.source]
+decompile = true
+cleanup = true
+
+classpath = [
+    "lib/stub.jar"
+]
+
+transformers = [
+    "Unenclose",
+    "NegativeLiteral",
+    "Complement",
+    "Not",
+    "IfElse",
+    "Ternary",
+    "BinaryExprOrder",
+    "Identity",
+    "BitMask",
+    "HexLiteral",
+    "ValueOf",
+    "NewInstance",
+    "Increment",
+    "ForLoopCondition",
+    "RedundantCast",
+    "Enclose"
+]

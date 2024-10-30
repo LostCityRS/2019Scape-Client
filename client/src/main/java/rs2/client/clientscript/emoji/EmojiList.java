@@ -1,7 +1,6 @@
 package rs2.client.clientscript.emoji;
 
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 
@@ -23,8 +22,8 @@ public class EmojiList {
 	}
 
 	@ObfuscatedName("io.n(ZS)V")
-	public void setAutochat(boolean autochat) {
-		this.autochat = autochat;
+	public void setAutochat(boolean arg0) {
+		this.autochat = arg0;
 	}
 
 	@ObfuscatedName("io.m(I)I")

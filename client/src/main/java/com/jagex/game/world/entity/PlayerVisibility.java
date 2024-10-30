@@ -20,11 +20,11 @@ public class PlayerVisibility implements SerializableEnum {
 
 	@ObfuscatedName("xh.e(I)[Lxh;")
 	public static PlayerVisibility[] values() {
-		return new PlayerVisibility[] {VISIBLE, HIDDEN, MINIMAP};
+		return new PlayerVisibility[] { VISIBLE, HIDDEN, MINIMAP };
 	}
 
-	public PlayerVisibility(int serialID) {
-		this.serialID = serialID;
+	public PlayerVisibility(int arg0) {
+		this.serialID = arg0;
 	}
 
 	@ObfuscatedName("xh.n()I")

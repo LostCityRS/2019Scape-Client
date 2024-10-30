@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amq")
 public class PreferencesShadowQuality extends Preference {
 
-	public PreferencesShadowQuality(ClientOptions options) {
-		super(options);
+	public PreferencesShadowQuality(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesShadowQuality(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesShadowQuality(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("amq.o(B)V")
@@ -32,13 +32,13 @@ public class PreferencesShadowQuality extends Preference {
 	}
 
 	@ObfuscatedName("amq.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return 1;
 	}
 
 	@ObfuscatedName("amq.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("amq.y(I)I")

@@ -115,17 +115,15 @@ public class CutsceneCommand {
 	}
 
 	@ObfuscatedName("fp.n(IB)Ladr;")
-	public static CutsceneCommand method3108(int id) {
-		CutsceneCommand[] values = values();
-		CutsceneCommand[] ref = values;
-
-		for (int i = 0; i < ref.length; i++) {
-			CutsceneCommand command = ref[i];
-			if (command.id == id) {
-				return command;
+	public static CutsceneCommand method3108(int arg0) {
+		CutsceneCommand[] var1 = values();
+		CutsceneCommand[] var2 = var1;
+		for (int var3 = 0; var3 < var2.length; var3++) {
+			CutsceneCommand var4 = var2[var3];
+			if (var4.id == arg0) {
+				return var4;
 			}
 		}
-
 		return null;
 	}
 }

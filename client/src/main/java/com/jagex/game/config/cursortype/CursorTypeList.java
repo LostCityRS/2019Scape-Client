@@ -10,8 +10,8 @@ import deob.ObfuscatedName;
 @ObfuscatedName("aog")
 public class CursorTypeList extends CachingConfigTypeList {
 
-	public CursorTypeList(ModeGame modeGame, Language language, Js5 js5, Js5 factoryJs5) {
-		super(modeGame, language, js5, Js5ConfigGroup.CURSORTYPE, 64, new BasicCursorTypeFactory(factoryJs5));
+	public CursorTypeList(ModeGame arg0, Language arg1, Js5 arg2, Js5 arg3) {
+		super(arg0, arg1, arg2, Js5ConfigGroup.CURSORTYPE, 64, new BasicCursorTypeFactory(arg3));
 	}
 
 	@ObfuscatedName("aog.r(I)V")
@@ -21,9 +21,9 @@ public class CursorTypeList extends CachingConfigTypeList {
 	}
 
 	@ObfuscatedName("aog.v(II)V")
-	public void cacheClean(int num) {
-		super.cacheClean(num);
-		((CursorTypeFactory) this.factory).cacheClean(num);
+	public void cacheClean(int arg0) {
+		super.cacheClean(arg0);
+		((CursorTypeFactory) this.factory).cacheClean(arg0);
 	}
 
 	@ObfuscatedName("aog.o(I)V")

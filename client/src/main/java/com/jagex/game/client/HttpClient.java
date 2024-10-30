@@ -2,7 +2,6 @@ package com.jagex.game.client;
 
 import com.jagex.core.utils.JagException;
 import deob.ObfuscatedName;
-
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -55,7 +54,7 @@ public class HttpClient implements Runnable {
 					var2.field739 = true;
 				}
 			} catch (Exception var13) {
-				JagException.report(null, var13);
+				JagException.report(null, (Throwable) var13);
 			}
 		}
 	}

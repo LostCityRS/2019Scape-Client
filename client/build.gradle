@@ -4,17 +4,13 @@ plugins {
 }
 
 dependencies {
-    compileOnly project(':deob-annotations')
     compileOnly 'lib:stub'
     implementation 'com.twelvemonkeys.imageio:imageio-jpeg:3.10.1'
 }
 
 java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(8))
-    }
-
-    sourceCompatibility = JavaVersion.VERSION_1_6
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 application {
@@ -27,6 +23,12 @@ jar {
             'Main-Class': 'AppletViewer'
         )
     }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.withType(JavaCompile) {

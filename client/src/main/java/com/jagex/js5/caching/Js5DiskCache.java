@@ -33,17 +33,17 @@ public class Js5DiskCache implements Runnable {
 		var3.type = 1;
 		SecondaryLinkedList var4 = this.queue;
 		synchronized (this.queue) {
-			Js5WorkerRequest other = (Js5WorkerRequest) this.queue.peekFront();
+			Js5WorkerRequest var5 = (Js5WorkerRequest) this.queue.peekFront();
 			while (true) {
-				if (other == null) {
+				if (var5 == null) {
 					break;
 				}
-				if (other.secondaryNodeId == (long) arg0 && other.diskStore == arg1 && other.type == 2) {
-					var3.bytes = other.bytes;
+				if (var5.secondaryNodeId == (long) arg0 && var5.diskStore == arg1 && var5.type == 2) {
+					var3.bytes = var5.bytes;
 					var3.incomplete = false;
 					return var3;
 				}
-				other = (Js5WorkerRequest) this.queue.prev();
+				var5 = (Js5WorkerRequest) this.queue.prev();
 			}
 		}
 		var3.bytes = arg1.read(arg0);
@@ -107,7 +107,7 @@ public class Js5DiskCache implements Runnable {
 					var2.bytes = var2.diskStore.read((int) var2.secondaryNodeId);
 				}
 			} catch (Exception var6) {
-				JagException.report(null, var6);
+				JagException.report(null, (Throwable) var6);
 			}
 			var2.incomplete = false;
 		}

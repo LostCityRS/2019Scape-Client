@@ -1,11 +1,14 @@
 package com.jagex.graphics;
 
 import com.jagex.core.io.SendablePacket;
-import com.jagex.game.client.*;
+import com.jagex.game.client.ClientAutoSetupResult;
+import com.jagex.game.client.ClientDirectXFailure;
+import com.jagex.game.client.ClientMapBuildStuck;
+import com.jagex.game.client.ClientNativeLibraryFailure;
+import com.jagex.game.client.NativeLibraryFailureType;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
 import java.util.LinkedList;
+import rs2.client.Client;
 
 @ObfuscatedName("uu")
 public class GraphicsPacketQueue {

@@ -4,7 +4,6 @@ import com.jagex.core.utils.PrioritizedCache;
 import com.jagex.core.utils.PrioritizedCacheMode;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
-
 import java.util.Random;
 
 @ObfuscatedName("acp")

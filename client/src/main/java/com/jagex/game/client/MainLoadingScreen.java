@@ -3,17 +3,21 @@ package com.jagex.game.client;
 import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.GZip;
 import com.jagex.core.utils.MonotonicTime;
-import com.jagex.game.load.*;
-import com.jagex.graphics.Toolkit;
+import com.jagex.game.load.Loading;
+import com.jagex.game.load.LoadingScreen;
+import com.jagex.game.load.LoadingScreenElement;
+import com.jagex.game.load.LoadingScreenElementFactory;
+import com.jagex.game.load.LoadingScreenType;
 import com.jagex.graphics.Sprite;
 import com.jagex.graphics.SpriteDataProvider;
+import com.jagex.graphics.Toolkit;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
+import java.awt.Container;
+import java.awt.Image;
+import java.awt.MediaTracker;
+import java.awt.image.PixelGrabber;
 import rs2.client.Client;
-
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
 
 @ObfuscatedName("jr")
 public class MainLoadingScreen implements LoadingScreen {
@@ -135,20 +139,28 @@ public class MainLoadingScreen implements LoadingScreen {
 	}
 
 	@ObfuscatedName("gh.f([BI)Lcm;")
-	public static Sprite method3594(byte[] src) {
-		if (src == null) {
+	public static Sprite method3594(byte[] arg0) {
+		if (arg0 == null) {
 			throw new RuntimeException("");
 		}
-
-		try {
-			BufferedImage img = ImageIO.read(new ByteArrayInputStream(src));
-			int width = img.getWidth();
-			int height = img.getHeight();
-			int[] pixels = new int[width * height];
-			img.getRGB(0, 0, width, height, pixels, 0, width);
-			return Client.toolkit.createSprite(pixels, 0, width, width, height);
-		} catch (Exception ex) {
-			return null;
+		while (true) {
+			try {
+				Image var1 = java.awt.Toolkit.getDefaultToolkit().createImage(arg0);
+				Container var2 = GameShell.getTopContainer();
+				MediaTracker var3 = new MediaTracker(var2);
+				var3.addImage(var1, 0);
+				var3.waitForAll();
+				int var4 = var1.getWidth(var2);
+				int var5 = var1.getHeight(var2);
+				if (!var3.isErrorAny() && var4 >= 0 && var5 >= 0) {
+					int[] var6 = new int[var4 * var5];
+					PixelGrabber var7 = new PixelGrabber(var1, 0, 0, var4, var5, var6, 0, var4);
+					var7.grabPixels();
+					return Client.toolkit.createSprite(var6, 0, var4, var4, var5);
+				}
+				throw new RuntimeException("");
+			} catch (InterruptedException var9) {
+			}
 		}
 	}
 

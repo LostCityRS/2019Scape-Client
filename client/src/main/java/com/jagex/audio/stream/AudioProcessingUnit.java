@@ -53,7 +53,7 @@ public class AudioProcessingUnit {
 	public int field4907;
 
 	@ObfuscatedName("rq.v")
-	public SoundRelated3[] field4908;
+	public AudioProcessingUnit.SoundRelated3[] field4908;
 
 	@ObfuscatedName("rq.o")
 	public int field4909;
@@ -166,7 +166,6 @@ public class AudioProcessingUnit {
 	@ObfuscatedName("rq.ak")
 	public boolean field4911;
 
-	// line 66
 	public AudioProcessingUnit(SoundRelatedType2 arg0, int arg1, int arg2, VorbisInterface arg3, SoundBackend arg4) {
 		this.field4923 = arg4;
 		this.method7480(SoundRelatedType1.field4859);
@@ -175,28 +174,10 @@ public class AudioProcessingUnit {
 		this.field4921 = arg3;
 		this.field4909 = 0;
 		this.field4924 = false;
-		this.field4921.method3770(new VorbisInterfaceRelated(this));
+		this.field4921.method3770(new AudioProcessingUnit.VorbisInterfaceRelated());
 		this.method7517();
 	}
 
-	@ObfuscatedName("rp")
-	public static class VorbisInterfaceRelated implements VorbisInterface2 {
-
-		// $FF: synthetic field
-		public final AudioProcessingUnit this$0;
-
-		// line 74
-		public VorbisInterfaceRelated(AudioProcessingUnit arg0) {
-			this.this$0 = arg0;
-		}
-
-		@ObfuscatedName("rp.e(I)V")
-		public void method5932() {
-			this.this$0.method7506(true);
-		}
-	}
-
-	// line 83
 	@ObfuscatedName("rq.e(I)Lqn;")
 	public SoundRelatedType1 method7550() {
 		return this.field4912;
@@ -306,7 +287,7 @@ public class AudioProcessingUnit {
 				var13 += this.field4917[var14];
 			}
 			this.field4919 = var12.pos;
-			this.field4908 = new SoundRelated3[this.field4895];
+			this.field4908 = new AudioProcessingUnit.SoundRelated3[this.field4895];
 			this.field4910 = new float[2];
 			for (int var15 = 0; var15 < this.field4910.length; var15++) {
 				this.field4910[var15] = 1.0F;
@@ -579,7 +560,7 @@ public class AudioProcessingUnit {
 				if (this.field4908[this.field4932] == null) {
 					Packet var3 = this.method7511(this.field4941);
 					if (var3 != null) {
-						this.field4908[this.field4932] = new SoundRelated3(this, var3, false);
+						this.field4908[this.field4932] = new AudioProcessingUnit.SoundRelated3(var3, false);
 						int var4 = this.field4921.method3722();
 						int var5 = this.field4921.method3730(this.field4908[this.field4932].field4873.pos / var4);
 						this.field4945 += var5;
@@ -611,7 +592,7 @@ public class AudioProcessingUnit {
 				if (!this.field4930 && this.field4908[this.field4932] == null) {
 					if (VorbisRelated.field3426 != var2 && var8 > 0) {
 						Packet var10 = this.method7515(var9);
-						this.field4908[this.field4932] = var10 == null ? null : new SoundRelated3(this, var10, false);
+						this.field4908[this.field4932] = var10 == null ? null : new AudioProcessingUnit.SoundRelated3(var10, false);
 						int var11 = this.field4908[this.field4932] == null ? 0 : this.field4908[this.field4932].field4873.pos;
 						int var12 = this.field4921.method3722();
 						int var13 = this.field4921.method3730(var11 / var12);
@@ -818,7 +799,6 @@ public class AudioProcessingUnit {
 		return this.field4905;
 	}
 
-	// line 686
 	@ObfuscatedName("rq.ar(I)V")
 	public void method7517() {
 		synchronized (this) {
@@ -876,10 +856,7 @@ public class AudioProcessingUnit {
 	}
 
 	@ObfuscatedName("qb")
-	public static class SoundRelated3 {
-
-		// $FF: synthetic field
-		public final AudioProcessingUnit this$0;
+	public class SoundRelated3 {
 
 		@ObfuscatedName("qb.e")
 		public Packet field4873;
@@ -893,9 +870,7 @@ public class AudioProcessingUnit {
 		@ObfuscatedName("qb.k")
 		public int field4870;
 
-		// line 750
-		public SoundRelated3(AudioProcessingUnit arg0, Packet arg1, boolean arg2) {
-			this.this$0 = arg0;
+		public SoundRelated3(Packet arg1, boolean arg2) {
 			this.field4873 = arg1;
 			this.field4871 = arg2;
 			this.field4872 = -1;
@@ -909,6 +884,15 @@ public class AudioProcessingUnit {
 			}
 			this.field4872 = -1;
 			this.field4870 = -1;
+		}
+	}
+
+	@ObfuscatedName("rp")
+	public class VorbisInterfaceRelated implements VorbisInterface2 {
+
+		@ObfuscatedName("rp.e(I)V")
+		public void method5932() {
+			AudioProcessingUnit.this.method7506(true);
 		}
 	}
 }

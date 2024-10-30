@@ -21,42 +21,42 @@ public class CursorType implements ConfigType {
 	@ObfuscatedName("xj.k")
 	public int hotspoty;
 
-	public CursorType(int id, CursorTypeFactory factory) {
-		this.myList = factory;
+	public CursorType(int arg0, CursorTypeFactory arg1) {
+		this.myList = arg1;
 	}
 
 	@ObfuscatedName("xj.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("xj.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			this.graphic = buf.gSmart2or4s();
-		} else if (code == 2) {
-			this.hotspotx = buf.g1();
-			this.hotspoty = buf.g1();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			this.graphic = arg0.gSmart2or4s();
+		} else if (arg1 == 2) {
+			this.hotspotx = arg0.g1();
+			this.hotspoty = arg0.g1();
 		}
 	}
 
 	@ObfuscatedName("xj.z(I)Lde;")
 	public synchronized SpriteData getCursor() {
-		SpriteData cached = (SpriteData) this.myList.cursorCache.get((long) this.graphic);
-		if (cached != null) {
-			return cached;
+		SpriteData var1 = (SpriteData) this.myList.cursorCache.get((long) this.graphic);
+		if (var1 != null) {
+			return var1;
 		}
-		SpriteData sprite = SpriteDataProvider.method1609(this.myList.js5, this.graphic, 0);
-		if (sprite != null) {
-			this.myList.cursorCache.put(sprite, (long) this.graphic);
+		SpriteData var2 = SpriteDataProvider.method1609(this.myList.js5, this.graphic, 0);
+		if (var2 != null) {
+			this.myList.cursorCache.put(var2, (long) this.graphic);
 		}
-		return sprite;
+		return var2;
 	}
 
 	@ObfuscatedName("xj.n(I)V")

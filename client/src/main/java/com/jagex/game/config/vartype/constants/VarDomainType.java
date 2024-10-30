@@ -2,7 +2,12 @@ package com.jagex.game.config.vartype.constants;
 
 import com.jagex.core.constants.SerializableEnum;
 import com.jagex.game.config.Js5ConfigGroup;
-import com.jagex.game.config.vartype.*;
+import com.jagex.game.config.vartype.VarDomainTypeClient;
+import com.jagex.game.config.vartype.VarDomainTypeController;
+import com.jagex.game.config.vartype.VarDomainTypeNpc;
+import com.jagex.game.config.vartype.VarDomainTypePlayer;
+import com.jagex.game.config.vartype.VarDomainTypeWorld;
+import com.jagex.game.config.vartype.VarType;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("qe")
@@ -48,18 +53,18 @@ public class VarDomainType implements SerializableEnum {
 	public final int serialID;
 
 	// $FF: synthetic method
-	public VarDomainType(Js5ConfigGroup js5GroupID, int serialID, boolean arg2, boolean arg3, VarDomainTypePlayer arg4) {
-		this(js5GroupID, serialID, arg2, arg3);
+	public VarDomainType(Js5ConfigGroup arg0, int arg1, boolean arg2, boolean arg3, VarDomainTypePlayer arg4) {
+		this(arg0, arg1, arg2, arg3);
 	}
 
 	@ObfuscatedName("qe.e(I)[Lqe;")
 	public static VarDomainType[] values() {
-		return new VarDomainType[] {PLAYER_GROUP, CLAN_SETTING, CONTROLLER, GLOBAL, PLAYER, CLIENT, REGION, OBJECT, WORLD, NPC, CLAN};
+		return new VarDomainType[] { PLAYER_GROUP, CLAN_SETTING, CONTROLLER, GLOBAL, PLAYER, CLIENT, REGION, OBJECT, WORLD, NPC, CLAN };
 	}
 
-	public VarDomainType(Js5ConfigGroup js5GroupID, int serialID, boolean arg2, boolean arg3) {
-		this.js5GroupID = js5GroupID;
-		this.serialID = serialID;
+	public VarDomainType(Js5ConfigGroup arg0, int arg1, boolean arg2, boolean arg3) {
+		this.js5GroupID = arg0;
+		this.serialID = arg1;
 	}
 
 	@ObfuscatedName("qe.m(B)Lxq;")

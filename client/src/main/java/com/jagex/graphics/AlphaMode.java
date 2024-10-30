@@ -18,16 +18,16 @@ public class AlphaMode implements SerializableEnum {
 	@ObfuscatedName("vn.k")
 	public final int field7576;
 
+	@ObfuscatedName("tz.e(I)[Lvn;")
+	public static AlphaMode[] method8501() {
+		return new AlphaMode[] { MULTIPLY, NONE, ALPHA_TESTED };
+	}
+
 	public AlphaMode(int arg0) {
 		this.field7576 = arg0;
 	}
 
-    @ObfuscatedName("tz.e(I)[Lvn;")
-    public static AlphaMode[] method8501() {
-        return new AlphaMode[] { MULTIPLY, NONE, ALPHA_TESTED};
-    }
-
-    @ObfuscatedName("vn.n()I")
+	@ObfuscatedName("vn.n()I")
 	public int getId() {
 		return this.field7576;
 	}

@@ -29,10 +29,10 @@ public class QuickChatPhraseTypeList {
 	@ObfuscatedName("ach.u")
 	public QuickChatDynamicProvider quickChatDynamicProvider = null;
 
-	public QuickChatPhraseTypeList(Language arg0, Js5 configClientSmall, Js5 configClientLarge, QuickChatDynamicProvider quickChatDynamicProvider) {
-		this.configClientSmall = configClientSmall;
-		this.configClientLarge = configClientLarge;
-		this.quickChatDynamicProvider = quickChatDynamicProvider;
+	public QuickChatPhraseTypeList(Language arg0, Js5 arg1, Js5 arg2, QuickChatDynamicProvider arg3) {
+		this.configClientSmall = arg1;
+		this.configClientLarge = arg2;
+		this.quickChatDynamicProvider = arg3;
 		if (this.configClientSmall != null) {
 			this.configClientSmallNum = this.configClientSmall.getGroupCapacity(1);
 		}
@@ -42,27 +42,27 @@ public class QuickChatPhraseTypeList {
 	}
 
 	@ObfuscatedName("ach.e(II)Lasq;")
-	public QuickChatPhraseType list(int id) {
-		QuickChatPhraseType cached = (QuickChatPhraseType) this.recentUse.get((long) id);
-		if (cached != null) {
-			return cached;
+	public QuickChatPhraseType list(int arg0) {
+		QuickChatPhraseType var2 = (QuickChatPhraseType) this.recentUse.get((long) arg0);
+		if (var2 != null) {
+			return var2;
 		}
-		byte[] bytes;
-		if (id >= 32768) {
-			bytes = this.configClientLarge.getfile(1, id & 0x7FFF);
+		byte[] var3;
+		if (arg0 >= 32768) {
+			var3 = this.configClientLarge.getfile(1, arg0 & 0x7FFF);
 		} else {
-			bytes = this.configClientSmall.getfile(1, id);
+			var3 = this.configClientSmall.getfile(1, arg0);
 		}
-		QuickChatPhraseType quickChatPhraseType = new QuickChatPhraseType();
-		quickChatPhraseType.phrases = this;
-		if (bytes != null) {
-			quickChatPhraseType.decode(new Packet(bytes));
+		QuickChatPhraseType var4 = new QuickChatPhraseType();
+		var4.phrases = this;
+		if (var3 != null) {
+			var4.decode(new Packet(var3));
 		}
-		if (id >= 32768) {
-			quickChatPhraseType.postDecode();
+		if (arg0 >= 32768) {
+			var4.postDecode();
 		}
-		this.recentUse.put(quickChatPhraseType, (long) id);
-		return quickChatPhraseType;
+		this.recentUse.put(var4, (long) arg0);
+		return var4;
 	}
 
 	@ObfuscatedName("ach.n(Lxs;[IJ)Ljava/lang/String;")

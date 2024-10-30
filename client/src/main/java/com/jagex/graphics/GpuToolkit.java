@@ -4,7 +4,12 @@ import com.jagex.core.datastruct.Heap;
 import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.utils.ColourUtils;
-import com.jagex.game.client.*;
+import com.jagex.game.client.DataType;
+import com.jagex.game.client.GpuPostProcessManager;
+import com.jagex.game.client.NativeLibraries;
+import com.jagex.game.client.NativeLibraryException;
+import com.jagex.game.client.PrimitiveType;
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
@@ -23,13 +28,12 @@ import jaclib.memory.DirectBufferHelper;
 import jaclib.memory.Stream;
 import jaclib.memory.heap.NativeHeap;
 import jaclib.memory.heap.NativeHeapBuffer;
-import sun.misc.Unsafe;
-
 import java.lang.reflect.Field;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.Iterator;
+import sun.misc.Unsafe;
 
 @ObfuscatedName("afc")
 public abstract class GpuToolkit extends Toolkit {
@@ -269,7 +273,7 @@ public abstract class GpuToolkit extends Toolkit {
 	public float[] field10075 = new float[] { 0.0F, 0.0F, 1.0F, 0.0F };
 
 	@ObfuscatedName("afc.dp")
-	public int field10118 = -33488896;
+	public int field10118 = 16777215;
 
 	@ObfuscatedName("afc.dy")
 	public float field10142 = 1.0F;
@@ -1398,24 +1402,24 @@ public abstract class GpuToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afc.bi(IIII)V")
-	public final void resetBounds(int left, int top, int right, int bottom) {
-		int width;
-		int height;
+	public final void resetBounds(int arg0, int arg1, int arg2, int arg3) {
+		int var5;
+		int var6;
 		if (this.renderTarget == null) {
-			height = 0;
-			width = 0;
+			var6 = 0;
+			var5 = 0;
 		} else {
-			width = this.renderTarget.getWidth();
-			height = this.renderTarget.getHeight();
+			var5 = this.renderTarget.getWidth();
+			var6 = this.renderTarget.getHeight();
 		}
-		if (left <= 0 && right >= width - 1 && top <= 0 && bottom >= height - 1) {
+		if (arg0 <= 0 && arg2 >= var5 - 1 && arg1 <= 0 && arg3 >= var6 - 1) {
 			this.resetClip();
 			return;
 		}
-		this.left = left >= 0 ? left : 0;
-		this.right = right <= width ? right : width;
-		this.top = top >= 0 ? top : 0;
-		this.bottom = bottom <= height ? bottom : height;
+		this.left = arg0 >= 0 ? arg0 : 0;
+		this.right = arg2 <= var5 ? arg2 : var5;
+		this.top = arg1 >= 0 ? arg1 : 0;
+		this.bottom = arg3 <= var6 ? arg3 : var6;
 		if (!this.field10182 && (this.field10144 || this.method16337() == GpuImageRelated.field3236)) {
 			this.field10182 = true;
 			this.enableScissorTest();
@@ -1426,20 +1430,20 @@ public abstract class GpuToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afc.bn(IIII)V")
-	public final void setBounds(int left, int top, int right, int bottom) {
-		int width;
-		int height;
+	public final void setBounds(int arg0, int arg1, int arg2, int arg3) {
+		int var5;
+		int var6;
 		if (this.renderTarget == null) {
-			height = 0;
-			width = 0;
+			var6 = 0;
+			var5 = 0;
 		} else {
-			width = this.renderTarget.getWidth();
-			height = this.renderTarget.getHeight();
+			var5 = this.renderTarget.getWidth();
+			var6 = this.renderTarget.getHeight();
 		}
-		int var7 = left >= 0 ? left : 0;
-		int var8 = right <= width ? right : width;
-		int var9 = top >= 0 ? top : 0;
-		int var10 = bottom <= height ? bottom : height;
+		int var7 = arg0 >= 0 ? arg0 : 0;
+		int var8 = arg2 <= var5 ? arg2 : var5;
+		int var9 = arg1 >= 0 ? arg1 : 0;
+		int var10 = arg3 <= var6 ? arg3 : var6;
 		boolean var11 = false;
 		if (this.left < var7) {
 			this.left = var7;
@@ -2168,16 +2172,16 @@ public abstract class GpuToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afc.bv(IIIIII)V")
-	public final void fillRectangle(int x, int y, int width, int height, int rgb, int arg5) {
+	public final void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		if (this.hasMultiSample && this.field10180 != 0) {
 			this.enableAntiAliasing(false);
 		}
 		if (this.field10107) {
 			this.method2219(false);
-			this.field10057.drawTintedScaled(x, y, width, height, 0, rgb, arg5);
+			this.field10057.drawTintedScaled(arg0, arg1, arg2, arg3, 0, arg4, arg5);
 			this.method2219(true);
 		} else {
-			this.field10057.drawTintedScaled(x, y, width, height, 0, rgb, arg5);
+			this.field10057.drawTintedScaled(arg0, arg1, arg2, arg3, 0, arg4, arg5);
 		}
 		if (this.hasMultiSample && this.field10180 != 0) {
 			this.enableAntiAliasing(true);
@@ -2185,9 +2189,9 @@ public abstract class GpuToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afc.bz(IIIIII)V")
-	public final void drawRectangle(int x, int y, int width, int height, int rgb, int arg5) {
-		int var8 = width - 1;
-		int var9 = height - 1;
+	public final void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		int var8 = arg2 - 1;
+		int var9 = arg3 - 1;
 		byte var7 = 0;
 		if (this instanceof GlxToolkit) {
 			var7 = -1;
@@ -2195,10 +2199,10 @@ public abstract class GpuToolkit extends Toolkit {
 		if (this.hasMultiSample && this.field10180 != 0) {
 			this.enableAntiAliasing(false);
 		}
-		this.drawLine(x, y + var7, x + var8, y + var7, rgb, arg5);
-		this.drawLine(x, y + var9 + var7, x + var8, y + var9 + var7, rgb, arg5);
-		this.drawLine(x, y, x, y + var9, rgb, arg5);
-		this.drawLine(x + var8, y, x + var8, y + var9, rgb, arg5);
+		this.drawLine(arg0, arg1 + var7, arg0 + var8, arg1 + var7, arg4, arg5);
+		this.drawLine(arg0, arg1 + var9 + var7, arg0 + var8, arg1 + var9 + var7, arg4, arg5);
+		this.drawLine(arg0, arg1, arg0, arg1 + var9, arg4, arg5);
+		this.drawLine(arg0 + var8, arg1, arg0 + var8, arg1 + var9, arg4, arg5);
 		if (this.hasMultiSample && this.field10180 != 0) {
 			this.enableAntiAliasing(true);
 		}
@@ -2213,18 +2217,18 @@ public abstract class GpuToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afc.ba(IIIII)V")
-	public final void drawHorizontalLine(int x, int y, int width, int rgb, int arg4) {
-		this.drawLine(x, y, x + width, y, rgb, arg4);
+	public final void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
+		this.drawLine(arg0, arg1, arg0 + arg2, arg1, arg3, arg4);
 	}
 
 	@ObfuscatedName("afc.bp(IIIII)V")
-	public final void drawVerticalLine(int x1, int y1, int x2, int y2, int arg4) {
-		this.drawLine(x1, y1, x1, y1 + x2, y2, arg4);
+	public final void drawVerticalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
+		this.drawLine(arg0, arg1, arg0, arg1 + arg2, arg3, arg4);
 	}
 
 	@ObfuscatedName("afc.bj(IIIIII)V")
-	public final void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5) {
-		this.drawLine(x1, y1, x2, y2, rgb, 1, arg5);
+	public final void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		this.drawLine(arg0, arg1, arg2, arg3, arg4, 1, arg5);
 	}
 
 	@ObfuscatedName("afc.cl(IIIIIIIII)V")
@@ -2317,11 +2321,11 @@ public abstract class GpuToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afc.ce(IIIIIII)V")
-	public final void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5, int arg6) {
-		int var8 = (int) ((float) x1 + 1.0F);
-		int var9 = (int) ((float) y1 + 1.0F);
-		int var10 = (int) ((float) x2 + 1.0F);
-		int var11 = (int) ((float) y2 + 1.0F);
+	public final void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
+		int var8 = (int) ((float) arg0 + 1.0F);
+		int var9 = (int) ((float) arg1 + 1.0F);
+		int var10 = (int) ((float) arg2 + 1.0F);
+		int var11 = (int) ((float) arg3 + 1.0F);
 		float var12 = (float) (var10 - var8);
 		float var13 = (float) (var11 - var9);
 		float var14 = 1.0F / (float) Math.sqrt((double) (var12 * var12 + var13 * var13));
@@ -2332,7 +2336,7 @@ public abstract class GpuToolkit extends Toolkit {
 		float var19 = -var16;
 		float var21 = (float) arg5 * 0.5F * var19;
 		float var22 = (float) arg5 * 0.5F * var15;
-		this.field10057.method1442((float) var17 - var21, (float) var18 - var22, (float) var10 - var21, (float) var11 - var22, (float) var17 + var21, (float) var18 + var22, 0, rgb, arg6);
+		this.field10057.method1442((float) var17 - var21, (float) var18 - var22, (float) var10 - var21, (float) var11 - var22, (float) var17 + var21, (float) var18 + var22, 0, arg4, arg6);
 	}
 
 	@ObfuscatedName("afc.dt(Ldm;)V")
@@ -2388,51 +2392,9 @@ public abstract class GpuToolkit extends Toolkit {
 		this.field10205 = 8;
 	}
 
-	// line 1872
 	@ObfuscatedName("afc.wv(CCCC)I")
 	public static int makeFourCC(char arg0, char arg1, char arg2, char arg3) {
 		return (arg0 & 0xFF) << 0 | (arg1 & 0xFF) << 8 | (arg2 & 0xFF) << 16 | (arg3 & 0xFF) << 24;
-	}
-
-	@ObfuscatedName("mi")
-	public static class PrimitiveVertexBuffer {
-
-		// $FF: synthetic field
-		public final GpuToolkit this$0;
-
-		@ObfuscatedName("mi.e")
-		public VertexBuffer field3412;
-
-		@ObfuscatedName("mi.n")
-		public int field3411;
-
-		// line 1879
-		public PrimitiveVertexBuffer(GpuToolkit arg0, int arg1) {
-			this.this$0 = arg0;
-			this.method5836();
-			this.method5840(arg1, this.field3411);
-		}
-
-		@ObfuscatedName("mi.e()V")
-		public void method5836() {
-			this.field3412 = this.this$0.createVertexBuffer(true);
-			this.this$0.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
-			this.this$0.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
-			this.this$0.createVertexDeclaration(new VertexDeclarationElement[] { new VertexDeclarationElement(new VertexDeclarationElementComponent[] { VertexDeclarationElementComponent.VERTEX, VertexDeclarationElementComponent.COLOR }) });
-			this.field3411 = 16;
-		}
-
-		@ObfuscatedName("mi.n()V")
-		public void method5838() {
-			this.field3412.delete();
-		}
-
-		@ObfuscatedName("mi.m(II)V")
-		public void method5840(int arg0, int arg1) {
-			if (!this.field3412.allocate(arg0, arg1)) {
-				System.out.println("PrimitiveVertexBuffer:ensureSize: failed vertexBuffer.allocate !");
-			}
-		}
 	}
 
 	@ObfuscatedName("afc.sr()F")

@@ -8,10 +8,9 @@ import com.jagex.graphics.Model;
 import com.jagex.graphics.ModelUnlit;
 import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-
 import java.util.Iterator;
 import java.util.LinkedList;
+import rs2.client.Client;
 
 @ObfuscatedName("ta")
 public class HintTrail {

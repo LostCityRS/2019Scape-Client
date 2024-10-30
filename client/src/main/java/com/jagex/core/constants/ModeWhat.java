@@ -28,7 +28,7 @@ public class ModeWhat {
 
 	@ObfuscatedName("rg.e(B)[Laaa;")
 	public static ModeWhat[] method7705() {
-		return new ModeWhat[] {WIP, BUILDLIVE, LIVE, RC, INTBETA};
+		return new ModeWhat[] { WIP, BUILDLIVE, LIVE, RC, INTBETA };
 	}
 
 	public ModeWhat(String arg0, int arg1) {

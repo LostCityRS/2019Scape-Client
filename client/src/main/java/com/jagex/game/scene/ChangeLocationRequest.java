@@ -2,16 +2,22 @@ package com.jagex.game.scene;
 
 import com.jagex.core.datastruct.LinkList;
 import com.jagex.core.datastruct.Node;
-import com.jagex.game.client.ClientMapLoader;
-import com.jagex.game.world.entity.*;
 import com.jagex.game.MiniMap;
+import com.jagex.game.client.ClientMapLoader;
+import com.jagex.game.world.entity.DynamicGroundDecorEntity;
+import com.jagex.game.world.entity.DynamicSceneryEntity;
+import com.jagex.game.world.entity.DynamicWallDecorEntity;
+import com.jagex.game.world.entity.DynamicWallEntity;
+import com.jagex.game.world.entity.LocTypeCustomisation;
+import com.jagex.game.world.entity.Location;
+import com.jagex.game.world.entity.Scene;
 import com.jagex.graphics.scenegraph.GraphEntity;
 import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 
 @ObfuscatedName("ajt")
-public final class ChangeLocationRequest extends Node {
+public class ChangeLocationRequest extends Node {
 
 	@ObfuscatedName("ajt.k")
 	public int level;

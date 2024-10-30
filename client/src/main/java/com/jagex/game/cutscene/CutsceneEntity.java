@@ -11,7 +11,7 @@ import rs2.client.scene.entities.NpcEntity;
 import rs2.client.scene.entities.PathingEntity;
 
 @ObfuscatedName("ea")
-public final class CutsceneEntity {
+public class CutsceneEntity {
 
 	@ObfuscatedName("ea.n")
 	public final int field1741;

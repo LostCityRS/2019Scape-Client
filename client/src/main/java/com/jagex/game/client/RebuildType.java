@@ -35,8 +35,8 @@ public class RebuildType {
 	@ObfuscatedName("rc.p")
 	public boolean field5065;
 
-	public RebuildType(boolean regionType, boolean arg1) {
-		this.regionType = regionType;
+	public RebuildType(boolean arg0, boolean arg1) {
+		this.regionType = arg0;
 		this.field5065 = arg1;
 	}
 

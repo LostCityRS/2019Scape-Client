@@ -17,8 +17,19 @@ import com.jagex.game.config.vartype.VarDomain;
 import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.game.shared.movement.CoordFine;
 import com.jagex.game.shared.movement.CoordGrid;
-import com.jagex.game.world.entity.*;
-import com.jagex.graphics.*;
+import com.jagex.game.world.entity.EntityAnimationNode;
+import com.jagex.game.world.entity.EntityChatLine;
+import com.jagex.game.world.entity.EntitySpotAnim;
+import com.jagex.game.world.entity.EntityWalkAnimationNode;
+import com.jagex.game.world.entity.PathingEntityVarDomain;
+import com.jagex.game.world.entity.Scene;
+import com.jagex.game.world.entity.Tile;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelParticleEffector;
+import com.jagex.graphics.ModelParticleEmitter;
+import com.jagex.graphics.Toolkit;
+import com.jagex.graphics.UnknownEntityAnimationNode;
 import com.jagex.graphics.camera.CameraTrackable;
 import com.jagex.graphics.particles.ParticleSystem;
 import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
@@ -536,12 +547,12 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	}
 
 	@ObfuscatedName("ahm.h(IIIIZIB)V")
-	public final void addSpotAnimation(int spotAnimId, int arg1, int arg2, int arg3, boolean arg4, int index) {
-		EntitySpotAnim var7 = this.spotAnims[index];
+	public final void addSpotAnimation(int arg0, int arg1, int arg2, int arg3, boolean arg4, int arg5) {
+		EntitySpotAnim var7 = this.spotAnims[arg5];
 		int var8 = var7.field6657;
-		if (spotAnimId != -1 && var8 != -1) {
-			if (spotAnimId == var8) {
-				EffectAnimType var9 = (EffectAnimType) Client.effectAnimTypeList.list(spotAnimId);
+		if (arg0 != -1 && var8 != -1) {
+			if (arg0 == var8) {
+				EffectAnimType var9 = (EffectAnimType) Client.effectAnimTypeList.list(arg0);
 				if (var9.field8261 && var9.anim != -1) {
 					SeqType var10 = (SeqType) Client.seqTypeList.list(var9.anim);
 					int var11 = var10.field1768;
@@ -554,7 +565,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 					}
 				}
 			} else {
-				EffectAnimType var12 = (EffectAnimType) Client.effectAnimTypeList.list(spotAnimId);
+				EffectAnimType var12 = (EffectAnimType) Client.effectAnimTypeList.list(arg0);
 				EffectAnimType var13 = (EffectAnimType) Client.effectAnimTypeList.list(var8);
 				if (var12.anim != -1 && var13.anim != -1) {
 					SeqType var14 = (SeqType) Client.seqTypeList.list(var12.anim);
@@ -566,17 +577,17 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 			}
 		}
 		byte var16 = 0;
-		if (spotAnimId != -1 && !((EffectAnimType) Client.effectAnimTypeList.list(spotAnimId)).field8261) {
+		if (arg0 != -1 && !((EffectAnimType) Client.effectAnimTypeList.list(arg0)).field8261) {
 			var16 = 2;
 		}
-		if (spotAnimId != -1 && arg4) {
+		if (arg0 != -1 && arg4) {
 			var16 = 1;
 		}
-		var7.field6657 = spotAnimId;
+		var7.field6657 = arg0;
 		var7.field6658 = arg3;
 		var7.field6661 = arg1 >> 16;
 		var7.field6660 = arg2;
-		var7.field6659.method14353(spotAnimId == -1 ? -1 : ((EffectAnimType) Client.effectAnimTypeList.list(spotAnimId)).anim, arg1 & 0xFFFF, var16, false);
+		var7.field6659.method14353(arg0 == -1 ? -1 : ((EffectAnimType) Client.effectAnimTypeList.list(arg0)).anim, arg1 & 0xFFFF, var16, false);
 	}
 
 	@ObfuscatedName("ahm.a(B)V")
@@ -586,7 +597,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	}
 
 	@ObfuscatedName("ahm.g(IIIIIII)V")
-	public final void addHitmark(int hitmarkId, int arg1, int arg2, int arg3, int arg4, int arg5) {
+	public final void addHitmark(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		boolean var7 = true;
 		boolean var8 = true;
 		for (int var9 = 0; var9 < Client.graphicsDefaults.maxhitmarks; var9++) {
@@ -599,8 +610,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		int var10 = -1;
 		int var11 = -1;
 		int var12 = 0;
-		if (hitmarkId >= 0) {
-			HitmarkType var13 = (HitmarkType) Client.hitmarkTypeList.list(hitmarkId);
+		if (arg0 >= 0) {
+			HitmarkType var13 = (HitmarkType) Client.hitmarkTypeList.list(arg0);
 			var11 = var13.replacemode;
 			var12 = var13.sticktime;
 		}
@@ -645,7 +656,7 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 		if (var10 < 0) {
 			return;
 		}
-		this.field10411[var10] = hitmarkId;
+		this.field10411[var10] = arg0;
 		this.field10412[var10] = arg1;
 		this.field10456[var10] = arg2;
 		this.field10445[var10] = arg3;
@@ -653,8 +664,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	}
 
 	@ObfuscatedName("ahm.i(IIIIIII)V")
-	public final void addHeadbar(int headbarId, int arg1, int arg2, int arg3, int arg4, int arg5) {
-		HeadbarType var7 = (HeadbarType) Client.headbarTypeList.list(headbarId);
+	public final void addHeadbar(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		HeadbarType var7 = (HeadbarType) Client.headbarTypeList.list(arg0);
 		Headbar var8 = null;
 		Headbar var9 = null;
 		int var10 = var7.hidepriority;
@@ -723,8 +734,8 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	}
 
 	@ObfuscatedName("ahm.t(II)V")
-	public void setSize(int size) {
-		this.size = size;
+	public void setSize(int arg0) {
+		this.size = arg0;
 	}
 
 	@ObfuscatedName("ahm.bz(I)I")
@@ -913,14 +924,14 @@ public abstract class PathingEntity extends PrimaryLayerEntity implements Camera
 	}
 
 	@ObfuscatedName("ahm.cu(Ljava/lang/String;IIII)V")
-	public void setChatLine(String text, int color, int effect, int time) {
+	public void setChatLine(String arg0, int arg1, int arg2, int arg3) {
 		if (this.currentChatLine == null) {
 			this.currentChatLine = new EntityChatLine();
 		}
-		this.currentChatLine.text = text;
-		this.currentChatLine.colour = color;
-		this.currentChatLine.effect = effect;
-		this.currentChatLine.time = this.currentChatLine.field6685 = time;
+		this.currentChatLine.text = arg0;
+		this.currentChatLine.colour = arg1;
+		this.currentChatLine.effect = arg2;
+		this.currentChatLine.time = this.currentChatLine.field6685 = arg3;
 	}
 
 	@ObfuscatedName("ahm.ci(I)Z")

@@ -14,14 +14,14 @@ public class BasicLocTypeFactory extends LocTypeFactory implements ConfigTypeFac
 	@ObfuscatedName("alf.z")
 	public final Js5 js5;
 
-	public BasicLocTypeFactory(boolean allowMembers, Js5 js5, Language language, ModeGame modeGame) {
-		super(allowMembers, language, modeGame);
-		this.js5 = js5;
+	public BasicLocTypeFactory(boolean arg0, Js5 arg1, Language arg2, ModeGame arg3) {
+		super(arg0, arg2, arg3);
+		this.js5 = arg1;
 	}
 
 	@ObfuscatedName("alf.v(ILao;I)Lay;")
-	public ConfigType create(int id, ConfigTypeList configTypeList) {
-		return new LocType(id, this, configTypeList);
+	public ConfigType create(int arg0, ConfigTypeList arg1) {
+		return new LocType(arg0, this, arg1);
 	}
 
 	@ObfuscatedName("alf.o(B)Ljava/lang/Class;")

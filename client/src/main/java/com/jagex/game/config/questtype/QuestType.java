@@ -1,7 +1,7 @@
 package com.jagex.game.config.questtype;
 
-import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.ConfigType;
@@ -88,116 +88,116 @@ public class QuestType implements ConfigType {
 	@ObfuscatedName("ir.g")
 	public int field2651 = -1;
 
-	public QuestType(int arg0, ConfigTypeList configTypeList) {
-		this.configTypeList = configTypeList;
+	public QuestType(int arg0, ConfigTypeList arg1) {
+		this.configTypeList = arg1;
 	}
 
 	@ObfuscatedName("ir.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("ir.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			this.name = buf.gjstr2();
-		} else if (code == 2) {
-			this.sortname = buf.gjstr2();
-		} else if (code == 3) {
-			int length = buf.g1();
-			this.field2632 = new int[length][3];
-			for (int index = 0; index < length; index++) {
-				this.field2632[index][0] = buf.g2();
-				this.field2632[index][1] = buf.g4s();
-				this.field2632[index][2] = buf.g4s();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			this.name = arg0.gjstr2();
+		} else if (arg1 == 2) {
+			this.sortname = arg0.gjstr2();
+		} else if (arg1 == 3) {
+			int var3 = arg0.g1();
+			this.field2632 = new int[var3][3];
+			for (int var4 = 0; var4 < var3; var4++) {
+				this.field2632[var4][0] = arg0.g2();
+				this.field2632[var4][1] = arg0.g4s();
+				this.field2632[var4][2] = arg0.g4s();
 			}
-		} else if (code == 4) {
-			int length = buf.g1();
-			this.field2630 = new int[length][3];
-			for (int index = 0; index < length; index++) {
-				this.field2630[index][0] = buf.g2();
-				this.field2630[index][1] = buf.g4s();
-				this.field2630[index][2] = buf.g4s();
+		} else if (arg1 == 4) {
+			int var5 = arg0.g1();
+			this.field2630 = new int[var5][3];
+			for (int var6 = 0; var6 < var5; var6++) {
+				this.field2630[var6][0] = arg0.g2();
+				this.field2630[var6][1] = arg0.g4s();
+				this.field2630[var6][2] = arg0.g4s();
 			}
-		} else if (code == 5) {
-			buf.g2();
-		} else if (code == 6) {
-			this.type = buf.g1();
-		} else if (code == 7) {
-			this.difficulty = buf.g1();
-		} else if (code == 8) {
+		} else if (arg1 == 5) {
+			arg0.g2();
+		} else if (arg1 == 6) {
+			this.type = arg0.g1();
+		} else if (arg1 == 7) {
+			this.difficulty = arg0.g1();
+		} else if (arg1 == 8) {
 			this.members = true;
-		} else if (code == 9) {
-			this.points = buf.g1();
-		} else if (code == 10) {
-			int length = buf.g1();
-			this.field2638 = new int[length];
-			for (int index = 0; index < length; index++) {
-				this.field2638[index] = buf.g4s();
+		} else if (arg1 == 9) {
+			this.points = arg0.g1();
+		} else if (arg1 == 10) {
+			int var7 = arg0.g1();
+			this.field2638 = new int[var7];
+			for (int var8 = 0; var8 < var7; var8++) {
+				this.field2638[var8] = arg0.g4s();
 			}
-		} else if (code == 12) {
-			buf.g4s();
-		} else if (code == 13) {
-			int length = buf.g1();
-			this.questrequirements = new int[length];
-			for (int index = 0; index < length; index++) {
-				this.questrequirements[index] = buf.g2();
+		} else if (arg1 == 12) {
+			arg0.g4s();
+		} else if (arg1 == 13) {
+			int var9 = arg0.g1();
+			this.questrequirements = new int[var9];
+			for (int var10 = 0; var10 < var9; var10++) {
+				this.questrequirements[var10] = arg0.g2();
 			}
-		} else if (code == 14) {
-			int length = buf.g1();
-			this.statRequirements = new int[length][2];
-			for (int index = 0; index < length; index++) {
-				this.statRequirements[index][0] = buf.g1();
-				this.statRequirements[index][1] = buf.g1();
+		} else if (arg1 == 14) {
+			int var11 = arg0.g1();
+			this.statRequirements = new int[var11][2];
+			for (int var12 = 0; var12 < var11; var12++) {
+				this.statRequirements[var12][0] = arg0.g1();
+				this.statRequirements[var12][1] = arg0.g1();
 			}
-		} else if (code == 15) {
-			this.pointsrequirement = buf.g2();
-		} else if (code == 17) {
-			this.field2651 = buf.gSmart2or4s();
-		} else if (code == 18) {
-			int length = buf.g1();
-			this.varpsRequirement = new int[length];
-			this.field2643 = new int[length];
-			this.field2629 = new int[length];
-			this.varpsDescriptions = new String[length];
-			for (int index = 0; index < length; index++) {
-				this.varpsRequirement[index] = buf.g4s();
-				this.field2643[index] = buf.g4s();
-				this.field2629[index] = buf.g4s();
-				this.varpsDescriptions[index] = buf.gjstr();
+		} else if (arg1 == 15) {
+			this.pointsrequirement = arg0.g2();
+		} else if (arg1 == 17) {
+			this.field2651 = arg0.gSmart2or4s();
+		} else if (arg1 == 18) {
+			int var13 = arg0.g1();
+			this.varpsRequirement = new int[var13];
+			this.field2643 = new int[var13];
+			this.field2629 = new int[var13];
+			this.varpsDescriptions = new String[var13];
+			for (int var14 = 0; var14 < var13; var14++) {
+				this.varpsRequirement[var14] = arg0.g4s();
+				this.field2643[var14] = arg0.g4s();
+				this.field2629[var14] = arg0.g4s();
+				this.varpsDescriptions[var14] = arg0.gjstr();
 			}
-		} else if (code == 19) {
-			int length = buf.g1();
-			this.varbitsRequirement = new int[length];
-			this.field2647 = new int[length];
-			this.field2648 = new int[length];
-			this.varbitsDescriptions = new String[length];
-			for (int index = 0; index < length; index++) {
-				this.varbitsRequirement[index] = buf.g4s();
-				this.field2647[index] = buf.g4s();
-				this.field2648[index] = buf.g4s();
-				this.varbitsDescriptions[index] = buf.gjstr();
+		} else if (arg1 == 19) {
+			int var15 = arg0.g1();
+			this.varbitsRequirement = new int[var15];
+			this.field2647 = new int[var15];
+			this.field2648 = new int[var15];
+			this.varbitsDescriptions = new String[var15];
+			for (int var16 = 0; var16 < var15; var16++) {
+				this.varbitsRequirement[var16] = arg0.g4s();
+				this.field2647[var16] = arg0.g4s();
+				this.field2648[var16] = arg0.g4s();
+				this.varbitsDescriptions[var16] = arg0.gjstr();
 			}
-		} else if (code == 249) {
-			int var17 = buf.g1();
+		} else if (arg1 == 249) {
+			int var17 = arg0.g1();
 			if (this.params == null) {
 				int var18 = IntMath.bitceil(var17);
 				this.params = new HashTable(var18);
 			}
 			for (int var19 = 0; var19 < var17; var19++) {
-				boolean var20 = buf.g1() == 1;
-				int var21 = buf.g3();
+				boolean var20 = arg0.g1() == 1;
+				int var21 = arg0.g3();
 				Node var22;
 				if (var20) {
-					var22 = new ObjectNode(buf.gjstr());
+					var22 = new ObjectNode(arg0.gjstr());
 				} else {
-					var22 = new IntNode(buf.g4s());
+					var22 = new IntNode(arg0.g4s());
 				}
 				this.params.put(var22, (long) var21);
 			}

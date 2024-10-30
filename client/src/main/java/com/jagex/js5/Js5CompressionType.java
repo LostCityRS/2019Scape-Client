@@ -29,9 +29,9 @@ public class Js5CompressionType implements SerializableEnum {
 		return new Js5CompressionType[] { GZIP, LZMA, BZIP2, UNCOMPRESSED };
 	}
 
-	public Js5CompressionType(String name, int id) {
-		this.name = name;
-		this.id = id;
+	public Js5CompressionType(String arg0, int arg1) {
+		this.name = arg0;
+		this.id = arg1;
 	}
 
 	@ObfuscatedName("pj.n()I")

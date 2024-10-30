@@ -171,7 +171,7 @@ public class LoadingScreenRenderer implements Runnable {
 								Client.toolkit.method2115();
 							}
 						} catch (RendererException var18) {
-							JagException.report(var18.getMessage() + Client.field8301.method8038(), var18);
+							JagException.report((String) (var18.getMessage() + Client.field8301.method8038()), (Throwable) var18);
 							Client.setToolkit(0, true);
 						}
 					}

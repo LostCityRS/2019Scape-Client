@@ -2,8 +2,8 @@ package com.jagex.graphics;
 
 import com.jagex.core.datastruct.SecondaryNode;
 import com.jagex.game.client.DataType;
-import com.jagex.graphics.gl.GlToolkit;
 import com.jagex.graphics.gl.GlPostProcessingRelated;
+import com.jagex.graphics.gl.GlToolkit;
 import deob.ObfuscatedName;
 import jaggl.OpenGL;
 

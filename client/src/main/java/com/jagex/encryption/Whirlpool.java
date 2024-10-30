@@ -40,7 +40,7 @@ public class Whirlpool {
 
 	static {
 		for (int var0 = 0; var0 < 256; var0++) {
-			char var1 = "ᠣ웨螸ŏ㚦틵祯酒悼鮎ꌌ笵ᷠퟂ\u2e4b﹗ᕷ㟥\u9ff0䫚壉⤊놠殅뵝ჴ쬾է\ue427䆋Ᵹ闘ﯮ籦\udd17䞞쨭뼇굚茳挂ꩱ젙䧙\uf2e3守騦㊰\ue90f햀뻍㑈ｺ遟\u2068\u1aae둔錢擱猒䀈쏬\udba1贽需켫皂혛떯橐䗳ワ㽕ꋪ斺⿀\ude1c\ufd4d鉵ڊ닦ฟ拔ꢖ暈╙葲㥌幸㢌톥\ue261댡鰞䏇ﰄ写洍\ufadf縤㮫츑轎럫㲁铷뤓ⳓ\ue76e쐃噄義⪻셓\udc0b鵬ㅴ\uf646겉ᓡᘺ椉炶탭챂颤⡜\uf886".charAt(var0 / 2);
+			char var1 = "ᠣ웨螸ŏ㚦틵祯酒悼鮎ꌌ笵ᷠퟂ⹋﹗ᕷ㟥鿰䫚壉⤊놠殅뵝ჴ쬾է\ue427䆋Ᵹ闘ﯮ籦\udd17䞞쨭뼇굚茳挂ꩱ젙䧙\uf2e3守騦㊰\ue90f햀뻍㑈ｺ遟\u2068\u1aae둔錢擱猒䀈쏬\udba1贽需켫皂혛떯橐䗳ワ㽕ꋪ斺⿀\ude1c﵍鉵ڊ닦ฟ拔ꢖ暈╙葲㥌幸㢌톥\ue261댡鰞䏇ﰄ写洍\ufadf縤㮫츑轎럫㲁铷뤓ⳓ\ue76e쐃噄義⪻셓\udc0b鵬ㅴ\uf646겉ᓡᘺ椉炶탭챂颤⡜\uf886".charAt(var0 / 2);
 			long var2 = (var0 & 0x1) == 0 ? (long) (var1 >>> 8) : (long) (var1 & 0xFF);
 			long var4 = var2 << 1;
 			if (var4 >= 256L) {
@@ -147,7 +147,7 @@ public class Whirlpool {
 			if (var12 < 0 || var12 >= 256) {
 				throw new RuntimeException();
 			}
-			this.field8595[this.field8598] = (byte) (this.field8595[this.field8598] | var12 >>> var6);
+			this.field8595[this.field8598 * -1461397227 * 1094495805] = (byte) (this.field8595[this.field8598 * -1461397227 * 1094495805] | var12 >>> var6);
 			this.field8598++;
 			this.field8596 += 8 - var6;
 			if (this.field8596 == 512) {
@@ -163,12 +163,12 @@ public class Whirlpool {
 		int var13;
 		if (arg1 > 0L) {
 			var13 = arg0[var4] << var5 & 0xFF;
-			this.field8595[this.field8598] = (byte) (this.field8595[this.field8598] | var13 >>> var6);
+			this.field8595[this.field8598 * -1461397227 * 1094495805] = (byte) (this.field8595[this.field8598 * -1461397227 * 1094495805] | var13 >>> var6);
 		} else {
 			var13 = 0;
 		}
 		if ((long) var6 + arg1 < 8L) {
-			this.field8596 = (int) ((long) (this.field8596) + arg1);
+			this.field8596 = (int) ((long) (this.field8596 * -1106523889) + arg1 * -1106523889L) * -1831991825;
 			return;
 		}
 		this.field8598++;
@@ -185,7 +185,7 @@ public class Whirlpool {
 
 	@ObfuscatedName("aam.k([BII)V")
 	public void method14598(byte[] arg0, int arg1) {
-		this.field8595[this.field8598] = (byte) (this.field8595[this.field8598] | 0x80 >>> (this.field8596 & 0x7));
+		this.field8595[this.field8598 * -1461397227 * 1094495805] = (byte) (this.field8595[this.field8598 * -1461397227 * 1094495805] | 0x80 >>> (this.field8596 & 0x7));
 		this.field8598++;
 		if (this.field8598 > 32) {
 			while (true) {

@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ans")
 public class PreferencesCustomCursors extends Preference {
 
-	public PreferencesCustomCursors(ClientOptions options) {
-		super(options);
+	public PreferencesCustomCursors(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesCustomCursors(int value, ClientOptions options) {
-		super(options);
+	public PreferencesCustomCursors(int arg0, ClientOptions arg1) {
+		super(arg1);
 	}
 
 	@ObfuscatedName("ans.o(I)V")
@@ -27,13 +27,13 @@ public class PreferencesCustomCursors extends Preference {
 	}
 
 	@ObfuscatedName("ans.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return 1;
 	}
 
 	@ObfuscatedName("ans.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("ans.s(I)I")

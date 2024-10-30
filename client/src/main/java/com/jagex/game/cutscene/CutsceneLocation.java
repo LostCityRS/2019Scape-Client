@@ -1,11 +1,13 @@
 package com.jagex.game.cutscene;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.seqtype.SeqType;
 import com.jagex.game.scene.ChangeLocationRequest;
 import com.jagex.game.world.entity.LocShape;
+import com.jagex.math.ScaleRotTrans;
 import deob.ObfuscatedName;
 import rs2.client.Client;
 
@@ -32,7 +34,7 @@ public class CutsceneLocation {
 
 	public CutsceneLocation(Packet arg0) {
 		this.field1735 = arg0.gSmart2or4s();
-		this.field1736 = (LocShape) SerializableEnums.decode(LocShape.values(), arg0.g1());
+		this.field1736 = (LocShape) SerializableEnums.decode((SerializableEnum[]) LocShape.values(), arg0.g1());
 	}
 
 	@ObfuscatedName("ef.e(IIIIB)V")

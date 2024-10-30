@@ -32,26 +32,26 @@ public class LookatMode {
 	@ObfuscatedName("ii.z")
 	public final boolean field2793;
 
-	public LookatMode(int id, boolean arg1) {
-		this.id = id;
+	public LookatMode(int arg0, boolean arg1) {
+		this.id = arg0;
 		this.field2793 = arg1;
 	}
 
 	@ObfuscatedName("fb.e(II)Lii;")
-	public static LookatMode of(int id) {
-		if (POINT.id == id) {
+	public static LookatMode of(int arg0) {
+		if (POINT.id == arg0) {
 			return POINT;
-		} else if (ENTITY.id == id) {
+		} else if (ENTITY.id == arg0) {
 			return ENTITY;
-		} else if (field2789.id == id) {
+		} else if (field2789.id == arg0) {
 			return field2789;
-		} else if (ORIENTATION.id == id) {
+		} else if (ORIENTATION.id == arg0) {
 			return ORIENTATION;
-		} else if (field2795.id == id) {
+		} else if (field2795.id == arg0) {
 			return field2795;
-		} else if (field2792.id == id) {
+		} else if (field2792.id == arg0) {
 			return field2792;
-		} else if (field2787.id == id) {
+		} else if (field2787.id == arg0) {
 			return field2787;
 		} else {
 			return null;

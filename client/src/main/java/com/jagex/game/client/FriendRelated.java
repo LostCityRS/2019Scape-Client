@@ -3,7 +3,7 @@ package com.jagex.game.client;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("hg")
-public final class FriendRelated {
+public class FriendRelated {
 
 	public FriendRelated() throws Throwable {
 		throw new Error();

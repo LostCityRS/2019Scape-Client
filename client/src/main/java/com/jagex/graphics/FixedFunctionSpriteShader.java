@@ -5,7 +5,7 @@ import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("ahu")
-public final class FixedFunctionSpriteShader extends SpriteShader {
+public class FixedFunctionSpriteShader extends SpriteShader {
 
 	public FixedFunctionSpriteShader(GpuToolkit arg0) {
 		super(arg0);

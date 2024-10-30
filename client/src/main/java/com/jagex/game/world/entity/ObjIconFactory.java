@@ -5,12 +5,11 @@ import com.jagex.game.config.iftype.Component;
 import com.jagex.graphics.DefaultSprites;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
-import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.SpriteDataProvider;
+import com.jagex.graphics.Toolkit;
 import deob.ObfuscatedName;
+import java.awt.Canvas;
 import rs2.client.Client;
-
-import java.awt.*;
 
 @ObfuscatedName("ag")
 public class ObjIconFactory {

@@ -1,5 +1,6 @@
 package com.jagex.game.config.paramtype;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.Cp1252;
@@ -24,29 +25,29 @@ public class ParamType implements ConfigType, MutableConfig {
 	public boolean autodisable = true;
 
 	@ObfuscatedName("adp.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("adp.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			char c = Cp1252.byteToCp1252Char(buf.g1b());
-			this.type = ScriptVarType.getByLegacyChar(c);
-		} else if (code == 2) {
-			this.defaultint = buf.g4s();
-		} else if (code == 4) {
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			char var3 = Cp1252.byteToCp1252Char(arg0.g1b());
+			this.type = ScriptVarType.getByLegacyChar(var3);
+		} else if (arg1 == 2) {
+			this.defaultint = arg0.g4s();
+		} else if (arg1 == 4) {
 			this.autodisable = false;
-		} else if (code == 5) {
-			this.defaultstr = buf.gjstr();
-		} else if (code == 101) {
-			this.type = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), buf.gSmart1or2());
+		} else if (arg1 == 5) {
+			this.defaultstr = arg0.gjstr();
+		} else if (arg1 == 101) {
+			this.type = (ScriptVarType) SerializableEnums.decode((SerializableEnum[]) ScriptVarType.values(), arg0.gSmart1or2());
 		}
 	}
 

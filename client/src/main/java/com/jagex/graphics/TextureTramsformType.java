@@ -26,7 +26,7 @@ public class TextureTramsformType {
 	@ObfuscatedName("mv.l")
 	public final int index;
 
-	public TextureTramsformType(int index) {
-		this.index = index;
+	public TextureTramsformType(int arg0) {
+		this.index = arg0;
 	}
 }

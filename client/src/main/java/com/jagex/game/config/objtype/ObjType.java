@@ -1,12 +1,13 @@
 package com.jagex.game.config.objtype;
 
 import com.jagex.core.constants.Language;
-import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.LocalisedText;
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.ConfigType;
 import com.jagex.game.config.ConfigTypeList;
 import com.jagex.game.config.defaults.GraphicsDefaults;
@@ -14,13 +15,17 @@ import com.jagex.game.config.paramtype.ParamType;
 import com.jagex.game.world.entity.ObjTypeCustomisation;
 import com.jagex.game.world.entity.ObjectNode;
 import com.jagex.game.world.entity.PlayerModel;
-import com.jagex.graphics.*;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.Font;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelUnlit;
+import com.jagex.graphics.Sprite;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.IntMath;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Trig1;
 import deob.ObfuscatedName;
-
 import java.util.Arrays;
 
 @ObfuscatedName("abv")
@@ -254,10 +259,10 @@ public class ObjType implements ConfigType {
 	@ObfuscatedName("abv.ce")
 	public static String COL_TAG_END = "</col>";
 
-	public ObjType(int id, ConfigTypeList objs, ObjTypeFactory factory) {
-		this.id = id;
-		this.myList = objs;
-		this.factory = factory;
+	public ObjType(int arg0, ConfigTypeList arg1, ObjTypeFactory arg2) {
+		this.id = arg0;
+		this.myList = arg1;
+		this.factory = arg2;
 		this.op = (String[]) this.factory.defaultops.clone();
 		this.iop = (String[]) this.factory.defaultiops.clone();
 	}
@@ -289,10 +294,10 @@ public class ObjType implements ConfigType {
 			return;
 		}
 		boolean var1 = false;
-		for (Node param = this.params.head(); param != null; param = this.params.next()) {
-			ParamType paramType = (ParamType) this.factory.paramTL.list((int) param.nodeId);
-			if (paramType.autodisable) {
-				param.unlink();
+		for (Node var2 = this.params.head(); var2 != null; var2 = this.params.next()) {
+			ParamType var3 = (ParamType) this.factory.paramTL.list((int) var2.nodeId);
+			if (var3.autodisable) {
+				var2.unlink();
 			} else {
 				var1 = true;
 			}
@@ -303,233 +308,233 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		this.tradeable = true;
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("abv.u(Lalw;II)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			this.mesh = buf.gSmart2or4s();
-		} else if (code == 2) {
-			this.name = buf.gjstr();
-		} else if (code == 4) {
-			this.zoom2d = buf.g2();
-		} else if (code == 5) {
-			this.xan2d = buf.g2();
-		} else if (code == 6) {
-			this.yan2d = buf.g2();
-		} else if (code == 7) {
-			this.xof2d = buf.g2();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			this.mesh = arg0.gSmart2or4s();
+		} else if (arg1 == 2) {
+			this.name = arg0.gjstr();
+		} else if (arg1 == 4) {
+			this.zoom2d = arg0.g2();
+		} else if (arg1 == 5) {
+			this.xan2d = arg0.g2();
+		} else if (arg1 == 6) {
+			this.yan2d = arg0.g2();
+		} else if (arg1 == 7) {
+			this.xof2d = arg0.g2();
 			if (this.xof2d > 32767) {
 				this.xof2d -= 65536;
 			}
-		} else if (code == 8) {
-			this.yof2d = buf.g2();
+		} else if (arg1 == 8) {
+			this.yof2d = arg0.g2();
 			if (this.yof2d > 32767) {
 				this.yof2d -= 65536;
 			}
-		} else if (code == 11) {
-			this.stackable = 1; // always
-		} else if (code == 12) {
-			this.cost = buf.g4s();
-		} else if (code == 13) {
-			this.wearpos = buf.g1();
-		} else if (code == 14) {
-			this.wearpos2 = buf.g1();
-		} else if (code == 15) {
+		} else if (arg1 == 11) {
+			this.stackable = 1;
+		} else if (arg1 == 12) {
+			this.cost = arg0.g4s();
+		} else if (arg1 == 13) {
+			this.wearpos = arg0.g1();
+		} else if (arg1 == 14) {
+			this.wearpos2 = arg0.g1();
+		} else if (arg1 == 15) {
 			this.tradeable = false;
-		} else if (code == 16) {
+		} else if (arg1 == 16) {
 			this.members = true;
-		} else if (code == 23) {
-			this.manwear = buf.gSmart2or4s();
-		} else if (code == 24) {
-			this.manwear2 = buf.gSmart2or4s();
-		} else if (code == 25) {
-			this.womanwear = buf.gSmart2or4s();
-		} else if (code == 26) {
-			this.womanwear2 = buf.gSmart2or4s();
-		} else if (code == 27) {
-			this.wearpos3 = buf.g1();
-		} else if (code >= 30 && code < 35) {
-			this.op[code - 30] = buf.gjstr();
-		} else if (code >= 35 && code < 40) {
-			this.iop[code - 35] = buf.gjstr();
-		} else if (code == 40) {
-			int length = buf.g1();
-			this.recol_s = new short[length];
-			this.recol_d = new short[length];
-			for (int index = 0; index < length; index++) {
-				this.recol_s[index] = (short) buf.g2();
-				this.recol_d[index] = (short) buf.g2();
+		} else if (arg1 == 23) {
+			this.manwear = arg0.gSmart2or4s();
+		} else if (arg1 == 24) {
+			this.manwear2 = arg0.gSmart2or4s();
+		} else if (arg1 == 25) {
+			this.womanwear = arg0.gSmart2or4s();
+		} else if (arg1 == 26) {
+			this.womanwear2 = arg0.gSmart2or4s();
+		} else if (arg1 == 27) {
+			this.wearpos3 = arg0.g1();
+		} else if (arg1 >= 30 && arg1 < 35) {
+			this.op[arg1 - 30] = arg0.gjstr();
+		} else if (arg1 >= 35 && arg1 < 40) {
+			this.iop[arg1 - 35] = arg0.gjstr();
+		} else if (arg1 == 40) {
+			int var3 = arg0.g1();
+			this.recol_s = new short[var3];
+			this.recol_d = new short[var3];
+			for (int var4 = 0; var4 < var3; var4++) {
+				this.recol_s[var4] = (short) arg0.g2();
+				this.recol_d[var4] = (short) arg0.g2();
 			}
-		} else if (code == 41) {
-			int length = buf.g1();
-			this.retex_s = new short[length];
-			this.retex_d = new short[length];
-			for (int index = 0; index < length; index++) {
-				this.retex_s[index] = (short) buf.g2();
-				this.retex_d[index] = (short) buf.g2();
+		} else if (arg1 == 41) {
+			int var5 = arg0.g1();
+			this.retex_s = new short[var5];
+			this.retex_d = new short[var5];
+			for (int var6 = 0; var6 < var5; var6++) {
+				this.retex_s[var6] = (short) arg0.g2();
+				this.retex_d[var6] = (short) arg0.g2();
 			}
-		} else if (code == 42) {
-			int length = buf.g1();
-			this.recol_d_palette = new byte[length];
-			for (int index = 0; index < length; index++) {
-				this.recol_d_palette[index] = buf.g1b();
+		} else if (arg1 == 42) {
+			int var7 = arg0.g1();
+			this.recol_d_palette = new byte[var7];
+			for (int var8 = 0; var8 < var7; var8++) {
+				this.recol_d_palette[var8] = arg0.g1b();
 			}
-		} else if (code == 43) {
-			this.minimenu_colour = buf.g4s();
+		} else if (arg1 == 43) {
+			this.minimenu_colour = arg0.g4s();
 			this.minimenu_colour_overridden = true;
-		} else if (code == 44) {
-			int var9 = buf.g2();
-			int length = 0;
+		} else if (arg1 == 44) {
+			int var9 = arg0.g2();
+			int var10 = 0;
 			for (int var11 = var9; var11 > 0; var11 >>= 0x1) {
-				length++;
+				var10++;
 			}
-			this.recolindices = new byte[length];
+			this.recolindices = new byte[var10];
 			byte var12 = 0;
-			for (int index = 0; index < length; index++) {
-				if ((var9 & 0x1 << index) > 0) {
-					this.recolindices[index] = var12++;
+			for (int var13 = 0; var13 < var10; var13++) {
+				if ((var9 & 0x1 << var13) > 0) {
+					this.recolindices[var13] = var12++;
 				} else {
-					this.recolindices[index] = -1;
+					this.recolindices[var13] = -1;
 				}
 			}
-		} else if (code == 45) {
-			int var14 = buf.g2();
-			int length = 0;
+		} else if (arg1 == 45) {
+			int var14 = arg0.g2();
+			int var15 = 0;
 			for (int var16 = var14; var16 > 0; var16 >>= 0x1) {
-				length++;
+				var15++;
 			}
-			this.retexindices = new byte[length];
+			this.retexindices = new byte[var15];
 			byte var17 = 0;
-			for (int index = 0; index < length; index++) {
-				if ((var14 & 0x1 << index) > 0) {
-					this.retexindices[index] = var17++;
+			for (int var18 = 0; var18 < var15; var18++) {
+				if ((var14 & 0x1 << var18) > 0) {
+					this.retexindices[var18] = var17++;
 				} else {
-					this.retexindices[index] = -1;
+					this.retexindices[var18] = -1;
 				}
 			}
-		} else if (code == 65) {
+		} else if (arg1 == 65) {
 			this.stockmarket = true;
-		} else if (code == 78) {
-			this.manwear3 = buf.gSmart2or4s();
-		} else if (code == 79) {
-			this.womanwear3 = buf.gSmart2or4s();
-		} else if (code == 90) {
-			this.manhead = buf.gSmart2or4s();
-		} else if (code == 91) {
-			this.womanhead = buf.gSmart2or4s();
-		} else if (code == 92) {
-			this.manhead2 = buf.gSmart2or4s();
-		} else if (code == 93) {
-			this.womanhead2 = buf.gSmart2or4s();
-		} else if (code == 94) {
-			this.category = buf.g2();
-		} else if (code == 95) {
-			this.zan2d = buf.g2();
-		} else if (code == 96) {
-			this.dummyitem = buf.g1();
-		} else if (code == 97) {
-			this.certlink = buf.g2();
-		} else if (code == 98) {
-			this.certtemplate = buf.g2();
-		} else if (code >= 100 && code < 110) {
+		} else if (arg1 == 78) {
+			this.manwear3 = arg0.gSmart2or4s();
+		} else if (arg1 == 79) {
+			this.womanwear3 = arg0.gSmart2or4s();
+		} else if (arg1 == 90) {
+			this.manhead = arg0.gSmart2or4s();
+		} else if (arg1 == 91) {
+			this.womanhead = arg0.gSmart2or4s();
+		} else if (arg1 == 92) {
+			this.manhead2 = arg0.gSmart2or4s();
+		} else if (arg1 == 93) {
+			this.womanhead2 = arg0.gSmart2or4s();
+		} else if (arg1 == 94) {
+			this.category = arg0.g2();
+		} else if (arg1 == 95) {
+			this.zan2d = arg0.g2();
+		} else if (arg1 == 96) {
+			this.dummyitem = arg0.g1();
+		} else if (arg1 == 97) {
+			this.certlink = arg0.g2();
+		} else if (arg1 == 98) {
+			this.certtemplate = arg0.g2();
+		} else if (arg1 >= 100 && arg1 < 110) {
 			if (this.countobj == null) {
 				this.countobj = new int[10];
 				this.countco = new int[10];
 			}
-			this.countobj[code - 100] = buf.g2();
-			this.countco[code - 100] = buf.g2();
-		} else if (code == 110) {
-			this.resizex = buf.g2();
-		} else if (code == 111) {
-			this.resizey = buf.g2();
-		} else if (code == 112) {
-			this.resizez = buf.g2();
-		} else if (code == 113) {
-			this.ambient = buf.g1b();
-		} else if (code == 114) {
-			this.contrast = buf.g1b() * 5;
-		} else if (code == 115) {
-			this.team = buf.g1();
-		} else if (code == 121) {
-			this.lentlink = buf.g2();
-		} else if (code == 122) {
-			this.lenttemplate = buf.g2();
-		} else if (code == 125) {
-			this.manwearxoff = buf.g1b() << 2;
-			this.manwearyoff = buf.g1b() << 2;
-			this.manwearzoff = buf.g1b() << 2;
-		} else if (code == 126) {
-			this.womanwearxoff = buf.g1b() << 2;
-			this.womanwearyoff = buf.g1b() << 2;
-			this.womanwearzoff = buf.g1b() << 2;
-		} else if (code == 127 || code == 128 || code == 129 || code == 130) {
-			buf.g1();
-			buf.g2();
-		} else if (code == 132) {
-			int length = buf.g1();
-			this.quests = new int[length];
-			for (int index = 0; index < length; index++) {
-				this.quests[index] = buf.g2();
+			this.countobj[arg1 - 100] = arg0.g2();
+			this.countco[arg1 - 100] = arg0.g2();
+		} else if (arg1 == 110) {
+			this.resizex = arg0.g2();
+		} else if (arg1 == 111) {
+			this.resizey = arg0.g2();
+		} else if (arg1 == 112) {
+			this.resizez = arg0.g2();
+		} else if (arg1 == 113) {
+			this.ambient = arg0.g1b();
+		} else if (arg1 == 114) {
+			this.contrast = arg0.g1b();
+		} else if (arg1 == 115) {
+			this.team = arg0.g1();
+		} else if (arg1 == 121) {
+			this.lentlink = arg0.g2();
+		} else if (arg1 == 122) {
+			this.lenttemplate = arg0.g2();
+		} else if (arg1 == 125) {
+			this.manwearxoff = arg0.g1b() << 2;
+			this.manwearyoff = arg0.g1b() << 2;
+			this.manwearzoff = arg0.g1b() << 2;
+		} else if (arg1 == 126) {
+			this.womanwearxoff = arg0.g1b() << 2;
+			this.womanwearyoff = arg0.g1b() << 2;
+			this.womanwearzoff = arg0.g1b() << 2;
+		} else if (arg1 == 127 || arg1 == 128 || arg1 == 129 || arg1 == 130) {
+			arg0.g1();
+			arg0.g2();
+		} else if (arg1 == 132) {
+			int var19 = arg0.g1();
+			this.quests = new int[var19];
+			for (int var20 = 0; var20 < var19; var20++) {
+				this.quests[var20] = arg0.g2();
 			}
-		} else if (code == 134) {
-			this.picksizeshift = buf.g1();
-		} else if (code == 139) {
-			this.boughtlink = buf.g2();
-		} else if (code == 140) {
-			this.boughttemplate = buf.g2();
-		} else if (code >= 142 && code < 147) {
+		} else if (arg1 == 134) {
+			this.picksizeshift = arg0.g1();
+		} else if (arg1 == 139) {
+			this.boughtlink = arg0.g2();
+		} else if (arg1 == 140) {
+			this.boughttemplate = arg0.g2();
+		} else if (arg1 >= 142 && arg1 < 147) {
 			if (this.cursor == null) {
 				this.cursor = new int[6];
 				Arrays.fill(this.cursor, -1);
 			}
-			this.cursor[code - 142] = buf.g2();
-		} else if (code >= 150 && code < 155) {
+			this.cursor[arg1 - 142] = arg0.g2();
+		} else if (arg1 >= 150 && arg1 < 155) {
 			if (this.icursor == null) {
 				this.icursor = new int[5];
 				Arrays.fill(this.icursor, -1);
 			}
-			this.icursor[code - 150] = buf.g2();
-		} else if (code != 156) {
-			if (code == 157) {
+			this.icursor[arg1 - 150] = arg0.g2();
+		} else if (arg1 != 156) {
+			if (arg1 == 157) {
 				this.field8697 = true;
-			} else if (code == 161) {
-				this.shardlink = buf.g2();
-			} else if (code == 162) {
-				this.shardtemplate = buf.g2();
-			} else if (code == 163) {
-				this.shardcount = buf.g2();
-			} else if (code == 164) {
-				this.shardname = buf.gjstr();
-			} else if (code == 165) {
-				this.stackable = 2; // never
-			} else if (code == 167) {
+			} else if (arg1 == 161) {
+				this.shardlink = arg0.g2();
+			} else if (arg1 == 162) {
+				this.shardtemplate = arg0.g2();
+			} else if (arg1 == 163) {
+				this.shardcount = arg0.g2();
+			} else if (arg1 == 164) {
+				this.shardname = arg0.gjstr();
+			} else if (arg1 == 165) {
+				this.stackable = 2;
+			} else if (arg1 == 167) {
 				this.cert_not_tradeable = true;
-			} else if (code == 168) {
+			} else if (arg1 == 168) {
 				this.placeholder = false;
-			} else if (code == 249) {
-				int length = buf.g1();
+			} else if (arg1 == 249) {
+				int var21 = arg0.g1();
 				if (this.params == null) {
-					int var22 = IntMath.bitceil(length);
+					int var22 = IntMath.bitceil(var21);
 					this.params = new HashTable(var22);
 				}
-				for (int index = 0; index < length; index++) {
-					boolean isString = buf.g1() == 1;
-					int var25 = buf.g3();
+				for (int var23 = 0; var23 < var21; var23++) {
+					boolean var24 = arg0.g1() == 1;
+					int var25 = arg0.g3();
 					Node var26;
-					if (isString) {
-						var26 = new ObjectNode(buf.gjstr());
+					if (var24) {
+						var26 = new ObjectNode(arg0.gjstr());
 					} else {
-						var26 = new IntNode(buf.g4s());
+						var26 = new IntNode(arg0.g4s());
 					}
 					this.params.put(var26, (long) var25);
 				}
@@ -538,98 +543,98 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.z(Labq;Labv;Labv;Lacz;Lzt;I)V")
-	public void gen(DerivedObjType derived, ObjType from, ObjType to, LocalisedText localisedText, Language language) {
-		this.mesh = from.mesh;
-		this.zoom2d = from.zoom2d;
-		this.xan2d = from.xan2d;
-		this.yan2d = from.yan2d;
-		this.zan2d = from.zan2d;
-		this.xof2d = from.xof2d;
-		this.yof2d = from.yof2d;
-		ObjType objType = DerivedObjType.CERT == derived ? from : to;
-		this.recol_s = objType.recol_s;
-		this.recol_d = objType.recol_d;
-		this.recol_d_palette = objType.recol_d_palette;
-		this.retex_s = objType.retex_s;
-		this.retex_d = objType.retex_d;
-		this.name = to.name;
-		this.members = to.members;
-		if (DerivedObjType.CERT == derived) {
-			this.cost = to.cost;
+	public void gen(DerivedObjType arg0, ObjType arg1, ObjType arg2, LocalisedText arg3, Language arg4) {
+		this.mesh = arg1.mesh;
+		this.zoom2d = arg1.zoom2d;
+		this.xan2d = arg1.xan2d;
+		this.yan2d = arg1.yan2d;
+		this.zan2d = arg1.zan2d;
+		this.xof2d = arg1.xof2d;
+		this.yof2d = arg1.yof2d;
+		ObjType var6 = DerivedObjType.CERT == arg0 ? arg1 : arg2;
+		this.recol_s = var6.recol_s;
+		this.recol_d = var6.recol_d;
+		this.recol_d_palette = var6.recol_d_palette;
+		this.retex_s = var6.retex_s;
+		this.retex_d = var6.retex_d;
+		this.name = arg2.name;
+		this.members = arg2.members;
+		if (DerivedObjType.CERT == arg0) {
+			this.cost = arg2.cost;
 			this.stackable = 1;
-			if (to.cert_not_tradeable) {
+			if (arg2.cert_not_tradeable) {
 				this.tradeable = false;
 			} else {
-				this.tradeable = to.tradeable;
+				this.tradeable = arg2.tradeable;
 			}
-		} else if (DerivedObjType.SHARD == derived) {
-			this.name = to.shardname;
-			this.cost = (int) Math.floor((double) (to.cost / to.shardcount));
+		} else if (DerivedObjType.SHARD == arg0) {
+			this.name = arg2.shardname;
+			this.cost = (int) Math.floor((double) (arg2.cost / arg2.shardcount));
 			this.stackable = 1;
-			this.stockmarket = to.stockmarket;
-			this.tradeable = to.tradeable;
-			this.category = from.category;
-			this.cursor = from.cursor;
-			this.icursor = from.icursor;
+			this.stockmarket = arg2.stockmarket;
+			this.tradeable = arg2.tradeable;
+			this.category = arg1.category;
+			this.cursor = arg1.cursor;
+			this.icursor = arg1.icursor;
 			this.iop = new String[5];
-			this.iop[0] = LocalisedText.SHARD_ITEM_COMBINE.forLang(language);
-			this.iop[4] = localisedText.forLang(language);
+			this.iop[0] = LocalisedText.SHARD_ITEM_COMBINE.forLang(arg4);
+			this.iop[4] = arg3.forLang(arg4);
 		} else {
 			this.cost = 0;
-			this.stackable = to.stackable;
+			this.stackable = arg2.stackable;
 			this.tradeable = false;
-			this.wearpos = to.wearpos;
-			this.wearpos2 = to.wearpos2;
-			this.wearpos3 = to.wearpos3;
-			this.manwear = to.manwear;
-			this.manwear2 = to.manwear2;
-			this.manwear3 = to.manwear3;
-			this.womanwear = to.womanwear;
-			this.womanwear2 = to.womanwear2;
-			this.womanwear3 = to.womanwear3;
-			this.manwearxoff = to.manwearxoff;
-			this.womanwearxoff = to.womanwearxoff;
-			this.manwearyoff = to.manwearyoff;
-			this.womanwearyoff = to.womanwearyoff;
-			this.manwearzoff = to.manwearzoff;
-			this.womanwearzoff = to.womanwearzoff;
-			this.manhead = to.manhead;
-			this.manhead2 = to.manhead2;
-			this.womanhead = to.womanhead;
-			this.womanhead2 = to.womanhead2;
-			this.category = to.category;
-			this.team = to.team;
-			this.op = to.op;
-			this.params = to.params;
+			this.wearpos = arg2.wearpos;
+			this.wearpos2 = arg2.wearpos2;
+			this.wearpos3 = arg2.wearpos3;
+			this.manwear = arg2.manwear;
+			this.manwear2 = arg2.manwear2;
+			this.manwear3 = arg2.manwear3;
+			this.womanwear = arg2.womanwear;
+			this.womanwear2 = arg2.womanwear2;
+			this.womanwear3 = arg2.womanwear3;
+			this.manwearxoff = arg2.manwearxoff;
+			this.womanwearxoff = arg2.womanwearxoff;
+			this.manwearyoff = arg2.manwearyoff;
+			this.womanwearyoff = arg2.womanwearyoff;
+			this.manwearzoff = arg2.manwearzoff;
+			this.womanwearzoff = arg2.womanwearzoff;
+			this.manhead = arg2.manhead;
+			this.manhead2 = arg2.manhead2;
+			this.womanhead = arg2.womanhead;
+			this.womanhead2 = arg2.womanhead2;
+			this.category = arg2.category;
+			this.team = arg2.team;
+			this.op = arg2.op;
+			this.params = arg2.params;
 			this.iop = new String[5];
-			if (to.iop != null) {
-				for (int index = 0; index < 4; index++) {
-					this.iop[index] = to.iop[index];
+			if (arg2.iop != null) {
+				for (int var7 = 0; var7 < 4; var7++) {
+					this.iop[var7] = arg2.iop[var7];
 				}
 			}
-			this.iop[4] = localisedText.forLang(language);
+			this.iop[4] = arg3.forLang(arg4);
 			this.placeholder = false;
 		}
 	}
 
 	@ObfuscatedName("abv.p(Labv;Labv;Lzt;S)V")
-	public void genCert(ObjType from, ObjType to, Language language) {
-		this.gen(DerivedObjType.CERT, from, to, null, language);
+	public void genCert(ObjType arg0, ObjType arg1, Language arg2) {
+		this.gen(DerivedObjType.CERT, arg0, arg1, null, arg2);
 	}
 
 	@ObfuscatedName("abv.d(Labv;Labv;Lzt;I)V")
-	public void genLent(ObjType from, ObjType to, Language language) {
-		this.gen(DerivedObjType.LENT, from, to, LocalisedText.LENT_ITEM_RETURN, language);
+	public void genLent(ObjType arg0, ObjType arg1, Language arg2) {
+		this.gen(DerivedObjType.LENT, arg0, arg1, LocalisedText.LENT_ITEM_RETURN, arg2);
 	}
 
 	@ObfuscatedName("abv.c(Labv;Labv;Lzt;I)V")
-	public void genBought(ObjType from, ObjType to, Language language) {
-		this.gen(DerivedObjType.BOUGHT, from, to, LocalisedText.BOUGHT_ITEM_DISCARD, language);
+	public void genBought(ObjType arg0, ObjType arg1, Language arg2) {
+		this.gen(DerivedObjType.BOUGHT, arg0, arg1, LocalisedText.BOUGHT_ITEM_DISCARD, arg2);
 	}
 
 	@ObfuscatedName("abv.r(Labv;Labv;Lzt;I)V")
-	public void genShard(ObjType from, ObjType to, Language language) {
-		this.gen(DerivedObjType.SHARD, from, to, LocalisedText.DROP, language);
+	public void genShard(ObjType arg0, ObjType arg1, Language arg2) {
+		this.gen(DerivedObjType.SHARD, arg0, arg1, LocalisedText.DROP, arg2);
 	}
 
 	@ObfuscatedName("abv.v(Ldh;IILxg;Laaq;IIIII)Ldo;")
@@ -681,7 +686,7 @@ public class ObjType implements ConfigType {
 			if (var17.version < 13) {
 				var17.scaleByPowerOfTwo(2);
 			}
-			var14 = arg0.createModel(var17, var16, this.factory.field8611, this.ambient + 64, this.contrast + 850);
+			var14 = arg0.createModel(var17, var16, this.factory.field8611, this.ambient + 64, this.contrast * 5 + 850);
 			if (this.resizex != 128 || this.resizey != 128 || this.resizez != 128) {
 				var14.scale(this.resizex, this.resizey, this.resizez);
 			}
@@ -744,16 +749,16 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.o(II)Labv;")
-	public ObjType getMeshAddress(int n) {
-		if (this.countobj != null && n > 1) {
-			int id = -1;
-			for (int index = 0; index < 10; index++) {
-				if (n >= this.countco[index] && this.countco[index] != 0) {
-					id = this.countobj[index];
+	public ObjType getMeshAddress(int arg0) {
+		if (this.countobj != null && arg0 > 1) {
+			int var2 = -1;
+			for (int var3 = 0; var3 < 10; var3++) {
+				if (arg0 >= this.countco[var3] && this.countco[var3] != 0) {
+					var2 = this.countobj[var3];
 				}
 			}
-			if (id != -1) {
-				return (ObjType) this.myList.list(id);
+			if (var2 != -1) {
+				return (ObjType) this.myList.list(var2);
 			}
 		}
 		return this;
@@ -804,7 +809,7 @@ public class ObjType implements ConfigType {
 			var19 = true;
 			var18 |= 0x7;
 		}
-		Model var20 = arg0.createModel(var11, var18, 64, this.ambient + 64, this.contrast + 768);
+		Model var20 = arg0.createModel(var11, var18, 64, this.ambient + 64, this.contrast * 5 + 768);
 		if (!var20.method1746()) {
 			return null;
 		}
@@ -843,7 +848,7 @@ public class ObjType implements ConfigType {
 		}
 		Matrix4x4 var23 = arg0.method2355();
 		Matrix4x4 var24 = arg0.method2208();
-		var24.method6703(16.0F, 16.0F, 512.0F, 512.0F, 50.0F, 2.14748365E9F, (float) arg0.getRenderTarget().getWidth(), (float) arg0.getRenderTarget().getHeight());
+		var24.method6703(16.0F, 16.0F, 512.0F, 512.0F, 50.0F, 2.1474836E9F, (float) arg0.getRenderTarget().getWidth(), (float) arg0.getRenderTarget().getHeight());
 		arg0.method2220(var24);
 		arg0.method2164(0, 0, arg0.getRenderTarget().getWidth(), arg0.getRenderTarget().getHeight());
 		Matrix4x3 var25 = new Matrix4x3();
@@ -934,19 +939,19 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("jf.x(ILzt;Lws;I)Ljava/lang/String;")
-	public static String formatObjCount(int amount, Language language, GraphicsDefaults graphics) {
-		if (amount < 100000) {
-			return formatObjCountTagged(graphics.invHundredColor) + amount + COL_TAG_END;
-		} else if (amount < 10000000) {
-			return formatObjCountTagged(graphics.invThousandColor) + amount / 1000 + LocalisedText.THOUSAND_SHORT.forLang(language) + COL_TAG_END;
+	public static String formatObjCount(int arg0, Language arg1, GraphicsDefaults arg2) {
+		if (arg0 < 100000) {
+			return formatObjCountTagged(arg2.invHundredColor) + arg0 + COL_TAG_END;
+		} else if (arg0 < 10000000) {
+			return formatObjCountTagged(arg2.invThousandColor) + arg0 / 1000 + LocalisedText.THOUSAND_SHORT.forLang(arg1) + COL_TAG_END;
 		} else {
-			return formatObjCountTagged(graphics.invMillionColor) + amount / 1000000 + LocalisedText.MILLION_SHORT.forLang(language) + COL_TAG_END;
+			return formatObjCountTagged(arg2.invMillionColor) + arg0 / 1000000 + LocalisedText.MILLION_SHORT.forLang(arg1) + COL_TAG_END;
 		}
 	}
 
 	@ObfuscatedName("ku.b(IB)Ljava/lang/String;")
-	public static String formatObjCountTagged(int rgb) {
-		return "<col=" + Integer.toHexString(rgb) + ">";
+	public static String formatObjCountTagged(int arg0) {
+		return "<col=" + Integer.toHexString(arg0) + ">";
 	}
 
 	@ObfuscatedName("abv.h(ZLabw;I)Z")
@@ -1183,12 +1188,12 @@ public class ObjType implements ConfigType {
 	}
 
 	@ObfuscatedName("abv.ae(II)I")
-	public int getCursor(int op) {
-		return this.cursor == null ? -1 : this.cursor[op];
+	public int getCursor(int arg0) {
+		return this.cursor == null ? -1 : this.cursor[arg0];
 	}
 
 	@ObfuscatedName("abv.ag(II)I")
-	public int getICursor(int op) {
-		return this.icursor == null ? -1 : this.icursor[op];
+	public int getICursor(int arg0) {
+		return this.icursor == null ? -1 : this.icursor[arg0];
 	}
 }

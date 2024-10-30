@@ -7,16 +7,38 @@ import com.jagex.core.utils.MonotonicTime;
 import com.jagex.core.utils.Timer;
 import com.jagex.core.utils.TotpPreferences;
 import com.jagex.game.MiniMenu;
-import com.jagex.game.client.*;
+import com.jagex.game.client.ClientDynamicProvider;
+import com.jagex.game.client.FileOnDisk;
+import com.jagex.game.client.GameShell;
+import com.jagex.game.client.HardwarePlatform;
+import com.jagex.game.client.HardwarePlatformLoader;
+import com.jagex.game.client.LoadableResourceManager;
+import com.jagex.game.client.MainLoadingScreen;
+import com.jagex.game.client.NativeLibraries;
+import com.jagex.game.client.NoiseGeneratorRelated;
 import com.jagex.game.clientoptions.Preferences;
 import com.jagex.game.compression.huffman.Huffman;
 import com.jagex.game.compression.huffman.WordPack;
-import com.jagex.game.config.*;
+import com.jagex.game.config.BasicBillboardTypeList;
+import com.jagex.game.config.BasicParticleEffectorTypeList;
+import com.jagex.game.config.BasicParticleEmitterTypeList;
+import com.jagex.game.config.BasicTextureList;
+import com.jagex.game.config.BasicTypeFactory;
+import com.jagex.game.config.CachingConfigTypeList;
+import com.jagex.game.config.Js5Archive;
+import com.jagex.game.config.Js5ConfigGroup;
 import com.jagex.game.config.bastype.BASTypeList;
 import com.jagex.game.config.cursortype.CursorTypeList;
 import com.jagex.game.config.db.dbrowtype.DBRowType;
 import com.jagex.game.config.db.dbtabletype.DBTableType;
-import com.jagex.game.config.defaults.*;
+import com.jagex.game.config.defaults.CustomizationDefaults;
+import com.jagex.game.config.defaults.CutsceneDefaults;
+import com.jagex.game.config.defaults.DefaultsGroup;
+import com.jagex.game.config.defaults.GraphicsDefaults;
+import com.jagex.game.config.defaults.MiniMenuDefaults;
+import com.jagex.game.config.defaults.SkillDefaults;
+import com.jagex.game.config.defaults.WearposDefaults;
+import com.jagex.game.config.defaults.WorldMapDefaults;
 import com.jagex.game.config.effectanimtype.EffectAnimTypeList;
 import com.jagex.game.config.enumtype.EnumTypeList;
 import com.jagex.game.config.flotype.FloorOverlayTypeList;
@@ -51,7 +73,14 @@ import com.jagex.game.script.ClientVarDomain;
 import com.jagex.game.world.WorldMap;
 import com.jagex.game.world.entity.PlayerGameState;
 import com.jagex.game.world.entity.PlayerModel;
-import com.jagex.graphics.*;
+import com.jagex.graphics.AnimationNode;
+import com.jagex.graphics.DefaultSprites;
+import com.jagex.graphics.EnvironmentManager;
+import com.jagex.graphics.FontProvider;
+import com.jagex.graphics.GraphicsPacketQueue;
+import com.jagex.graphics.MaterialList;
+import com.jagex.graphics.SkyBox;
+import com.jagex.graphics.ToolkitType;
 import com.jagex.graphics.particles.ParticleSystemRenderer;
 import com.jagex.js5.Js5;
 import com.jagex.js5.network.Js5Client;
@@ -61,6 +90,7 @@ import rs2.client.login.LoginManager;
 
 @ObfuscatedName("ji")
 public class Loading {
+
 	@ObfuscatedName("ji.e")
 	public static LoadingStage[] field2938;
 
@@ -154,7 +184,7 @@ public class Loading {
 			if (field3419.field2925) {
 				field4964 = field4964 + " - " + NoiseGeneratorRelated.field9130 + "%";
 			}
-		} else if (field3419 == LoadingStage.field2919) {
+		} else if (LoadingStage.field2919 == field3419) {
 			field593 = null;
 			Client.setState(4);
 			if (field2944) {
@@ -254,7 +284,7 @@ public class Loading {
 				}
 			}
 		}
-		if (field3419 == LoadingStage.field2913) {
+		if (LoadingStage.field2913 == field3419) {
 			if (Client.js5Client == null) {
 				Client.js5Client = new Js5Client(Client.js5TcpClient, Client.js5HttpClient, Client.js5DiskCache, PublicKeys.JS5_RSAE, PublicKeys.JS5_RSAN);
 			}
@@ -268,7 +298,7 @@ public class Loading {
 			Client.fontmetricsJs5 = Client.createJs5(Js5Archive.FONTMETRICS, false, 1, true, true);
 			Client.defaultsJs5 = Client.createJs5(Js5Archive.DEFAULTS, true, 1, true, true);
 		}
-		if (field3419 == LoadingStage.field2911) {
+		if (LoadingStage.field2911 == field3419) {
 			boolean var1 = loadingScreensJs5.fetchAll();
 			boolean var2 = Client.defaultsJs5.fetchAll();
 			int var3 = Client.js5Providers[Js5Archive.LOADING_SCREENS.getArchiveId()].getPercentageComplete();
@@ -296,17 +326,17 @@ public class Loading {
 				}
 			}
 		}
-		if (field3419 == LoadingStage.field2904) {
+		if (LoadingStage.field2904 == field3419) {
 			Client.fontProvider = new FontProvider(Client.toolkit, loadingSpritesJs5, Client.fontmetricsJs5, DefaultSprites.fonts());
 		}
-		if (field3419 == LoadingStage.field2905) {
+		if (LoadingStage.field2905 == field3419) {
 			int var12 = Client.fontProvider.getLoadedFontsCount();
 			int var13 = Client.fontProvider.getFontsCount();
 			if (var12 < var13) {
 				return var12 * 100 / var13;
 			}
 		}
-		if (field3419 == LoadingStage.field2906) {
+		if (LoadingStage.field2906 == field3419) {
 			if (field2939 != null && field2939.length > 0) {
 				if (field2939[0].method4912() < 100) {
 					return 0;
@@ -319,7 +349,7 @@ public class Loading {
 			DefaultSprites.loadFonts(Client.toolkit);
 			Client.setState(11);
 		}
-		if (field3419 == LoadingStage.OPEN_JS5_ARCHIVES) {
+		if (LoadingStage.OPEN_JS5_ARCHIVES == field3419) {
 			Client.spritesJs5 = Client.createJs5(Js5Archive.SPRITES, false, 1, false, true);
 			Client.animsJs5 = Client.createJs5(Js5Archive.ANIMS, false, 1, false, true);
 			Client.animsKeyframesJs5 = Client.createJs5(Js5Archive.ANIMS_KEYFRAMES, false, 1, false, true);
@@ -352,7 +382,7 @@ public class Loading {
 			Client.dllsJs5 = Client.createJs5(Js5Archive.DLLS, true, 1, false, true);
 			Client.shadersJs5 = Client.createJs5(Js5Archive.SHADERS, true, 1, true, true);
 		}
-		if (field3419 == LoadingStage.GET_JS5_INDEXES) {
+		if (LoadingStage.GET_JS5_INDEXES == field3419) {
 			int var14 = 0;
 			int var15 = 0;
 			for (int var16 = 0; var16 < Client.js5Providers.length; var16++) {
@@ -373,7 +403,7 @@ public class Loading {
 			DefaultSprites.method16430(Client.graphicsDefaults);
 			Client.fontProvider = new FontProvider(Client.toolkit, Client.spritesJs5, Client.fontmetricsJs5, DefaultSprites.fonts());
 		}
-		if (field3419 == LoadingStage.field2909) {
+		if (LoadingStage.field2909 == field3419) {
 			byte[] var17 = Client.defaultsJs5.fetchFile(DefaultsGroup.AUDIO.js5GroupId);
 			if (var17 == null) {
 				return 0;
@@ -383,11 +413,11 @@ public class Loading {
 			method714(var17);
 			Client.setState(1);
 		}
-		if (field3419 == LoadingStage.field2910 && Client.hardwarePlatformLoader == null) {
+		if (LoadingStage.field2910 == field3419 && Client.hardwarePlatformLoader == null) {
 			Client.hardwarePlatformLoader = new HardwarePlatformLoader(Client.dllsJs5);
 			NativeLibraries.method14694(Client.hardwarePlatformLoader);
 		}
-		if (field3419 == LoadingStage.DOWNLOAD_STUFF) {
+		if (LoadingStage.DOWNLOAD_STUFF == field3419) {
 			int var18 = LoadableResourceManager.method5140();
 			if (var18 < 100) {
 				return var18;
@@ -407,7 +437,7 @@ public class Loading {
 			Client.cutsceneDefaults = new CutsceneDefaults(Client.defaultsJs5);
 			WorldMap.worldMapDefaults = new WorldMapDefaults(Client.defaultsJs5);
 		}
-		if (field3419 == LoadingStage.SETUP_CONFIG_DECODERS) {
+		if (LoadingStage.SETUP_CONFIG_DECODERS == field3419) {
 			if (Client.graphicsDefaults.performancemetricsmodel != -1 && !Client.modelsJs5.requestdownload(Client.graphicsDefaults.performancemetricsmodel, 0)) {
 				return 99;
 			}
@@ -447,7 +477,7 @@ public class Loading {
 			Client.varClanSettingTypeList = new VarBasicTypeListClient(Client.modegame, VarDomainType.CLAN_SETTING, Client.language, Client.configJs5);
 			Client.varPlayerGroupTypeList = new VarBasicTypeListClient(Client.modegame, VarDomainType.PLAYER_GROUP, Client.language, Client.configJs5);
 			Client.varObjTypeList = new VarBasicTypeListClient(Client.modegame, VarDomainType.OBJECT, Client.language, Client.configJs5);
-			Client.varDomainToListEnumMap = VarTypeList.createDomainToListEnumMap(new VarTypeList[] { Client.varBasicTypeList, Client.varPlayerTypeList, Client.varNpcTypeList, Client.varClanTypeList, Client.varClanSettingTypeList, Client.varPlayerGroupTypeList, Client.varObjTypeList});
+			Client.varDomainToListEnumMap = VarTypeList.createDomainToListEnumMap(new VarTypeList[] { Client.varBasicTypeList, Client.varPlayerTypeList, Client.varNpcTypeList, Client.varClanTypeList, Client.varClanSettingTypeList, Client.varPlayerGroupTypeList, Client.varObjTypeList });
 			Client.varBitTypeList = new VarBitTypeList(Client.modegame, Client.language, Client.configJs5, Client.varDomainToListEnumMap);
 			Client.variableTypeProvider = new VariableTypeProviderClient();
 			Component.method3669(Client.interfacesJs5, Client.modelsJs5, Client.spritesJs5, Client.fontmetricsJs5);
@@ -466,17 +496,17 @@ public class Loading {
 			GameShell.field6594 = Timer.method6109();
 			Client.hardwarePlatform = new HardwarePlatform(true);
 		}
-		if (field3419 == LoadingStage.SETUP_STATIC_SPRITES) {
+		if (LoadingStage.SETUP_STATIC_SPRITES == field3419) {
 			int var20 = DefaultSprites.getLoadedSpritesCount(Client.spritesJs5) + Client.fontProvider.getLoadedFontsCount(true);
 			int var21 = DefaultSprites.getSpritesCount() + Client.fontProvider.getFontsCount();
 			if (var20 < var21) {
 				return var20 * 100 / var21;
 			}
 		}
-		if (field3419 == LoadingStage.field2914) {
+		if (LoadingStage.field2914 == field3419) {
 			WorldMap.method8506(Client.worldmapJs5, Client.worldmapAreaDataJs5, Client.overlayTypeList, Client.underlayTypeList, Client.world.getLocTypeList(), Client.mapElementTypeList, Client.msiTypeList, Client.localPlayerGameState, Client.localPlayerGameState);
 		}
-		if (field3419 == LoadingStage.SETUP_VARC_SYSTEM) {
+		if (LoadingStage.SETUP_VARC_SYSTEM == field3419) {
 			Client.clientVarDomain = new ClientVarDomain(Client.varBasicTypeList);
 			method9212();
 			Client.authPreferences = TotpPreferences.method18618();
@@ -486,7 +516,7 @@ public class Loading {
 			Client.binaryJs5.discardNames(true, true);
 			Client.field10807 = true;
 		}
-		if (field3419 == LoadingStage.field2916 && Client.graphicsDefaults.login_interface != -1) {
+		if (LoadingStage.field2916 == field3419 && Client.graphicsDefaults.login_interface != -1) {
 			if (!Component.openInterface(Client.graphicsDefaults.login_interface, null)) {
 				return 0;
 			}
@@ -501,10 +531,10 @@ public class Loading {
 				return 0;
 			}
 		}
-		if (field3419 == LoadingStage.field2917) {
+		if (LoadingStage.field2917 == field3419) {
 			Client.method7227(true);
 		}
-		if (field3419 == LoadingStage.field2903) {
+		if (LoadingStage.field2903 == field3419) {
 			field593.method4856();
 			try {
 				field2940.join();

@@ -8,6 +8,7 @@ import com.jagex.game.config.defaults.WearposDefaults;
 import com.jagex.game.config.idktype.IDKType;
 import com.jagex.game.config.idktype.IDKTypeList;
 import com.jagex.game.config.npctype.NPCType;
+import com.jagex.game.config.npctype.NPCTypeCustomisation;
 import com.jagex.game.config.npctype.NPCTypeList;
 import com.jagex.game.config.objtype.ObjType;
 import com.jagex.game.config.objtype.ObjTypeList;

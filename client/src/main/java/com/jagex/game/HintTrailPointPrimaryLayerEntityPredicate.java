@@ -1,8 +1,7 @@
 package com.jagex.game;
 
-import com.jagex.game.HintTrailPoint;
-import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.game.world.entity.PrimaryLayerEntityPredicate;
+import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("tr")

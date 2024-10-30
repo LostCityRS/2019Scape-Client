@@ -10,7 +10,6 @@ import com.jagex.game.config.vartype.VarTypeList;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.js5.Js5;
 import deob.ObfuscatedName;
-
 import java.util.Iterator;
 
 @ObfuscatedName("adm")
@@ -28,13 +27,13 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 	}
 
 	@ObfuscatedName("adm.e(II)Lay;")
-	public ConfigType list(int id) {
+	public ConfigType list(int arg0) {
 		SoftLruHashTable var2 = this.recentUse;
 		synchronized (this.recentUse) {
-			VarBasicType var3 = (VarBasicType) this.recentUse.get((long) id);
+			VarBasicType var3 = (VarBasicType) this.recentUse.get((long) arg0);
 			if (var3 == null) {
-				var3 = this.method15266(id);
-				this.recentUse.put(var3, (long) id);
+				var3 = this.method15266(arg0);
+				this.recentUse.put(var3, (long) arg0);
 			}
 			return var3;
 		}
@@ -78,36 +77,6 @@ public class VarBasicTypeListClient extends VarTypeList implements ConfigTypeLis
 		return new VarBasicTypeListClientIterator(this);
 	}
 
-	@ObfuscatedName("xn")
-	public static class VarBasicTypeListClientIterator implements Iterator {
-
-		// $FF: synthetic field
-		public final VarBasicTypeListClient this$0;
-
-		@ObfuscatedName("xn.e")
-		public int field7882;
-
-		public VarBasicTypeListClientIterator(VarBasicTypeListClient arg0) {
-			this.this$0 = arg0;
-		}
-
-		public boolean hasNext() {
-			return this.field7882 < this.this$0.length();
-		}
-
-		// line 68
-		public Object next() {
-			int var1 = ++this.field7882 - 1;
-			VarBasicType var2 = (VarBasicType) this.this$0.recentUse.get((long) var1);
-			return var2 == null ? this.this$0.method15266(var1) : var2;
-		}
-
-		public void remove() {
-			throw new UnsupportedOperationException();
-		}
-	}
-
-	// line 81
 	@ObfuscatedName("adm.n(I)I")
 	public int length() {
 		return super.length();

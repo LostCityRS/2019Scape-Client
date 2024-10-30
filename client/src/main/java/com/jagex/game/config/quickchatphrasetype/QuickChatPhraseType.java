@@ -28,55 +28,55 @@ public class QuickChatPhraseType extends SecondaryNode {
 	public boolean searchable = true;
 
 	@ObfuscatedName("asq.e(Lalw;I)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int code = buf.g1();
-			if (code == 0) {
+			int var2 = arg0.g1();
+			if (var2 == 0) {
 				return;
 			}
-			this.decode(buf, code);
+			this.decode(arg0, var2);
 		}
 	}
 
 	@ObfuscatedName("asq.n(Lalw;IB)V")
-	public void decode(Packet buf, int code) {
-		if (code == 1) {
-			this.text = StringTools.split(buf.gjstr(), '<');
-		} else if (code == 2) {
-			int length = buf.g1();
-			this.autoResponses = new int[length];
-			for (int index = 0; index < length; index++) {
-				this.autoResponses[index] = buf.g2();
+	public void decode(Packet arg0, int arg1) {
+		if (arg1 == 1) {
+			this.text = StringTools.split(arg0.gjstr(), '<');
+		} else if (arg1 == 2) {
+			int var3 = arg0.g1();
+			this.autoResponses = new int[var3];
+			for (int var4 = 0; var4 < var3; var4++) {
+				this.autoResponses[var4] = arg0.g2();
 			}
-		} else if (code == 3) {
-			int length = buf.g1();
-			this.dynamicCommands = new int[length];
-			this.dynamicCommandParameters = new int[length][];
-			for (int index = 0; index < length; index++) {
-				int var7 = buf.g2();
-				QuickChatDynamicCommand dynamicCommand = QuickChatDynamicCommand.getByID(var7);
-				if (dynamicCommand != null) {
-					this.dynamicCommands[index] = var7;
-					this.dynamicCommandParameters[index] = new int[dynamicCommand.field7923];
-					for (int var9 = 0; var9 < dynamicCommand.field7923; var9++) {
-						this.dynamicCommandParameters[index][var9] = buf.g2();
+		} else if (arg1 == 3) {
+			int var5 = arg0.g1();
+			this.dynamicCommands = new int[var5];
+			this.dynamicCommandParameters = new int[var5][];
+			for (int var6 = 0; var6 < var5; var6++) {
+				int var7 = arg0.g2();
+				QuickChatDynamicCommand var8 = QuickChatDynamicCommand.getByID(var7);
+				if (var8 != null) {
+					this.dynamicCommands[var6] = var7;
+					this.dynamicCommandParameters[var6] = new int[var8.field7923];
+					for (int var9 = 0; var9 < var8.field7923; var9++) {
+						this.dynamicCommandParameters[var6][var9] = arg0.g2();
 					}
 				}
 			}
-		} else if (code == 4) {
+		} else if (arg1 == 4) {
 			this.searchable = false;
 		}
 	}
 
 	@ObfuscatedName("asq.m(Lalw;[II)V")
-	public void packTransmitValues(Packet buf, int[] dynamics) {
+	public void packTransmitValues(Packet arg0, int[] arg1) {
 		if (this.dynamicCommands == null) {
 			return;
 		}
-		for (int index = 0; index < this.dynamicCommands.length && index < dynamics.length; index++) {
-			int var4 = this.getDynamicCommand(index).field7939;
+		for (int var3 = 0; var3 < this.dynamicCommands.length && var3 < arg1.length; var3++) {
+			int var4 = this.getDynamicCommand(var3).field7939;
 			if (var4 > 0) {
-				buf.pVarLong((long) dynamics[index], var4);
+				arg0.pVarLong((long) arg1[var3], var4);
 			}
 		}
 	}

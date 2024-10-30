@@ -18,16 +18,16 @@ public class LocTypeRelated implements SerializableEnum {
 	@ObfuscatedName("vg.k")
 	public final int field7441;
 
+	@ObfuscatedName("ua.e(S)[Lvg;")
+	public static LocTypeRelated[] method9002() {
+		return new LocTypeRelated[] { field7440, field7439, field7438 };
+	}
+
 	public LocTypeRelated(int arg0) {
 		this.field7441 = arg0;
 	}
 
-    @ObfuscatedName("ua.e(S)[Lvg;")
-    public static LocTypeRelated[] method9002() {
-        return new LocTypeRelated[] {field7440, field7439, field7438};
-    }
-
-    @ObfuscatedName("vg.n()I")
+	@ObfuscatedName("vg.n()I")
 	public int getId() {
 		return this.field7441;
 	}

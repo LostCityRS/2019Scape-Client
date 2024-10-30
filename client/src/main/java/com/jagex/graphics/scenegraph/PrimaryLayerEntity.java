@@ -34,25 +34,25 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 	@ObfuscatedName("ash.t")
 	public Light[] field12473;
 
-	public PrimaryLayerEntity(Scene scene, int level, int occludeLevel, int x, int y, int z, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, boolean raised, byte arg11) {
-		this(scene, level, occludeLevel, x, y, z, minSceneTileX, maxSceneTileX, minSceneTileZ, maxSceneTileZ, raised, arg11, (ScaleRotTrans) null);
+	public PrimaryLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11) {
+		this(arg0, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, (ScaleRotTrans) null);
 	}
 
-	public PrimaryLayerEntity(Scene scene, int level, int occludeLevel, int x, int y, int z, int minSceneTileX, int maxSceneTileX, int minSceneTileZ, int maxSceneTileZ, boolean raised, byte arg11, ScaleRotTrans scaleRotTrans) {
-		super(scene, scaleRotTrans);
+	public PrimaryLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, int arg8, int arg9, boolean arg10, byte arg11, ScaleRotTrans arg12) {
+		super(arg0, arg12);
 		this.field12466 = 0;
 		this.field12473 = new Light[4];
-		this.level = (byte) level;
-		this.occludeLevel = (byte) occludeLevel;
-		if (scaleRotTrans != null) {
-			this.method10529(scaleRotTrans);
+		this.level = (byte) arg1;
+		this.occludeLevel = (byte) arg2;
+		if (arg12 != null) {
+			this.method10529(arg12);
 		}
-		this.method10532((float) x, (float) y, (float) z);
-		this.minSceneTileX = (short) minSceneTileX;
-		this.maxSceneTileX = (short) maxSceneTileX;
-		this.minSceneTileZ = (short) minSceneTileZ;
-		this.maxSceneTileZ = (short) maxSceneTileZ;
-		this.raised = raised;
+		this.method10532((float) arg3, (float) arg4, (float) arg5);
+		this.minSceneTileX = (short) arg6;
+		this.maxSceneTileX = (short) arg7;
+		this.minSceneTileZ = (short) arg8;
+		this.maxSceneTileZ = (short) arg9;
+		this.raised = arg10;
 		this.field12469 = arg11;
 		for (int var14 = 0; var14 < 4; var14++) {
 			this.field12473[var14] = null;
@@ -167,8 +167,8 @@ public abstract class PrimaryLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("ash.ga(Ldh;S)Z")
-	public boolean isOccluded(Toolkit toolkit) {
-		return this.scene.occlusionManager.locVisible(this.occludeLevel, this.minSceneTileX, this.maxSceneTileX, this.minSceneTileZ, this.maxSceneTileZ, this.method17371(toolkit));
+	public boolean isOccluded(Toolkit arg0) {
+		return this.scene.occlusionManager.locVisible(this.occludeLevel, this.minSceneTileX, this.maxSceneTileX, this.minSceneTileZ, this.maxSceneTileZ, this.method17371(arg0));
 	}
 
 	@ObfuscatedName("ash.gn(I)Z")

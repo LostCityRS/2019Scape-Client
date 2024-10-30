@@ -3,8 +3,6 @@ package com.jagex.core.datastruct;
 import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -12,7 +10,7 @@ import java.util.Map;
 public class SerializableEnums {
 
 	@ObfuscatedName("zn.e")
-	public static Map cache = new HashMap();
+	public static Map cache = new java.util.HashMap();
 
 	public SerializableEnums() throws Throwable {
 		throw new Error();
@@ -24,7 +22,7 @@ public class SerializableEnums {
 		synchronized (cache) {
 			Map var3 = (Map) cache.get(arg0);
 			if (var3 == null) {
-				var3 = new HashMap();
+				var3 = new java.util.HashMap();
 				SerializableEnum[] var4 = (SerializableEnum[]) arg0.getEnumConstants();
 				for (int var5 = 0; var5 < var4.length; var5++) {
 					SerializableEnum var6 = var4[var5];

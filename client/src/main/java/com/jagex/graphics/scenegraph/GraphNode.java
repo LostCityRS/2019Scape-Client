@@ -1,6 +1,10 @@
 package com.jagex.graphics.scenegraph;
 
-import com.jagex.math.*;
+import com.jagex.math.Matrix4x3;
+import com.jagex.math.Matrix4x4;
+import com.jagex.math.Quaternion;
+import com.jagex.math.ScaleRotTrans;
+import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("yq")

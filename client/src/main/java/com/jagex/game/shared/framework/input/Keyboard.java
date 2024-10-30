@@ -3,12 +3,13 @@ package com.jagex.game.shared.framework.input;
 import com.jagex.game.client.JavaKeyboard;
 import com.jagex.game.client.KeyboardEvent;
 import deob.ObfuscatedName;
+import java.awt.Component;
 
 @ObfuscatedName("ub")
 public abstract class Keyboard {
 
 	@ObfuscatedName("acg.e(Ljava/awt/Component;I)Lub;")
-	public static Keyboard create(java.awt.Component arg0) {
+	public static Keyboard create(Component arg0) {
 		return new JavaKeyboard(arg0);
 	}
 

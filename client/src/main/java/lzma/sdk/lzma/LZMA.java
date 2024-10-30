@@ -2,7 +2,6 @@ package lzma.sdk.lzma;
 
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -26,7 +25,7 @@ public class LZMA {
 	@ObfuscatedName("tz.e(Lalw;II)[B")
 	public static byte[] decompress(Packet arg0, int arg1) throws IOException {
 		ByteArrayInputStream var2 = new ByteArrayInputStream(arg0.data);
-		var2.skip(arg0.pos);
+		var2.skip((long) arg0.pos);
 		return method4477(var2, arg1);
 	}
 
@@ -38,11 +37,11 @@ public class LZMA {
 		}
 		ByteArrayOutputStream var3 = new ByteArrayOutputStream(arg1);
 		Decoder var4 = field6728;
-		synchronized (var4) {
+		synchronized (field6728) {
 			if (!field6728.setDecoderProperties(var2)) {
 				throw new IOException("3");
 			}
-			field6728.code(arg0, var3, arg1);
+			field6728.code(arg0, var3, (long) arg1);
 		}
 		var3.flush();
 		return var3.toByteArray();

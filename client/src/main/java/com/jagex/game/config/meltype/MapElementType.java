@@ -1,7 +1,8 @@
 package com.jagex.game.config.meltype;
 
-import com.jagex.core.datastruct.IntNode;
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.IntNode;
 import com.jagex.core.datastruct.Node;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
@@ -15,10 +16,10 @@ import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.config.vartype.bit.VarBitType;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import com.jagex.game.world.entity.ObjectNode;
-import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
 import com.jagex.graphics.SpriteData;
 import com.jagex.graphics.SpriteDataProvider;
+import com.jagex.graphics.Toolkit;
 import com.jagex.math.IntMath;
 import deob.ObfuscatedName;
 
@@ -167,13 +168,13 @@ public class MapElementType implements ConfigType {
 	}
 
 	@ObfuscatedName("hs.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int var2 = buf.g1();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method4038(buf, var2);
+			this.method4038(arg0, var2);
 		}
 	}
 
@@ -290,9 +291,9 @@ public class MapElementType implements ConfigType {
 		} else if (arg1 == 28) {
 			this.field2408 = arg0.g1();
 		} else if (arg1 == 29) {
-			this.field2365 = (MapAlignmentX) SerializableEnums.decode(MapAlignmentX.values(), arg0.g1());
+			this.field2365 = (MapAlignmentX) SerializableEnums.decode((SerializableEnum[]) MapAlignmentX.values(), arg0.g1());
 		} else if (arg1 == 30) {
-			this.field2405 = (MapAlignmentY) SerializableEnums.decode(MapAlignmentY.values(), arg0.g1());
+			this.field2405 = (MapAlignmentY) SerializableEnums.decode((SerializableEnum[]) MapAlignmentY.values(), arg0.g1());
 		} else if (arg1 == 249) {
 			int var9 = arg0.g1();
 			if (this.params == null) {

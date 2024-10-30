@@ -1,7 +1,6 @@
 package com.jagex.core.datastruct;
 
 import deob.ObfuscatedName;
-
 import java.lang.ref.SoftReference;
 
 @ObfuscatedName("atm")

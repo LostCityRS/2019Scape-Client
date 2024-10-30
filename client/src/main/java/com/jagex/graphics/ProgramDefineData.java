@@ -12,8 +12,8 @@ public class ProgramDefineData {
 	public String field2565;
 
 	@ObfuscatedName("hc.e(Lhw;I)V")
-	public void decode(ShaderDataReader buf) {
-		this.field2566 = buf.gstr();
-		this.field2565 = buf.gstr();
+	public void decode(ShaderDataReader arg0) {
+		this.field2566 = arg0.gstr();
+		this.field2565 = arg0.gstr();
 	}
 }

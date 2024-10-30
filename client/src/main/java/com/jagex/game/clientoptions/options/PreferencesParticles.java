@@ -7,13 +7,13 @@ import deob.ObfuscatedName;
 @ObfuscatedName("amf")
 public class PreferencesParticles extends Preference {
 
-	public PreferencesParticles(ClientOptions options) {
-		super(options);
+	public PreferencesParticles(ClientOptions arg0) {
+		super(arg0);
 		ParticleSystemRenderer.method4293(this.currentValue);
 	}
 
-	public PreferencesParticles(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesParticles(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 		ParticleSystemRenderer.method4293(this.currentValue);
 	}
 
@@ -38,13 +38,13 @@ public class PreferencesParticles extends Preference {
 	}
 
 	@ObfuscatedName("amf.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return this.options.hardwareInfo().maxmemory() < 245 ? 3 : 1;
 	}
 
 	@ObfuscatedName("amf.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 		ParticleSystemRenderer.method4293(this.currentValue);
 	}
 

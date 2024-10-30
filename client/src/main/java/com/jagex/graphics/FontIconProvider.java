@@ -6,8 +6,8 @@ import deob.ObfuscatedName;
 public interface FontIconProvider {
 
 	@ObfuscatedName("aaw.c(Ldh;II)[Lcm;")
-	Sprite[] getIconSprites(Toolkit toolkit, int id);
+	Sprite[] getIconSprites(Toolkit arg0, int arg1);
 
 	@ObfuscatedName("aaw.r(II)I")
-	int getIconWidth(int id);
+	int getIconWidth(int arg0);
 }

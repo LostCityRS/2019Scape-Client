@@ -1,4 +1,4 @@
-rootProject.name = "2019Scape-Client"
+rootProject.name = 'rs2client'
 
 dependencyResolutionManagement {
     repositories {
@@ -10,7 +10,5 @@ dependencyResolutionManagement {
 }
 
 include(
-    "deob-annotations",
-    "loader",
     "client"
 )

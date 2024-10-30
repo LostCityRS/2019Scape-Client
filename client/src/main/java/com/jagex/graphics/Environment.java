@@ -77,12 +77,12 @@ public class Environment {
 
 	@ObfuscatedName("xv.e(B)V")
 	public void method10077() {
-		this.sunColour = 0xffffff;
+		this.sunColour = 16777215;
 		this.sunDirection = Vector3.create(-50.0F, -60.0F, -50.0F);
 		this.sunAmbientIntensity = 1.1523438F;
 		this.sunDiffuseIntensity = 0.69921875F;
 		this.sunShadowIntensity = 1.2F;
-		this.fogColour = 0xc8c0a8;
+		this.fogColour = 13156520;
 		this.fogDepth = 0;
 		this.sampler = EnvironmentManager.sampler;
 		this.bloomWhitePointSq = 1.0F;
@@ -94,13 +94,11 @@ public class Environment {
 		this.levelsInputMax = 1.0F;
 		this.levelsOutputMin = 0.0F;
 		this.levelsOutputMax = 1.0F;
-
 		int[] var1 = this.colourRemappingMap;
 		int[] var2 = this.colourRemappingMap;
 		this.colourRemappingMap[2] = -1;
 		var2[1] = -1;
 		var1[0] = -1;
-
 		float[] var3 = this.colourRemappingWeight;
 		float[] var4 = this.colourRemappingWeight;
 		this.colourRemappingWeight[2] = 0.0F;
@@ -109,30 +107,30 @@ public class Environment {
 	}
 
 	@ObfuscatedName("xv.n(Lxv;B)V")
-	public void setTo(Environment env) {
-		this.sunColour = env.sunColour;
-		this.sunAmbientIntensity = env.sunAmbientIntensity;
-		this.sunDiffuseIntensity = env.sunDiffuseIntensity;
-		this.sunShadowIntensity = env.sunShadowIntensity;
-		this.sunDirection.setTo(env.sunDirection);
-		this.fogColour = env.fogColour;
-		this.fogDepth = env.fogDepth;
-		this.sampler = env.sampler;
-		this.bloomWhitePointSq = env.bloomWhitePointSq;
-		this.bloomIntensity = env.bloomIntensity;
-		this.bloomThreshold = env.bloomThreshold;
-		this.skybox = env.skybox;
-		this.levelsGamma = env.levelsGamma;
-		this.levelsInputMin = env.levelsInputMin;
-		this.levelsInputMax = env.levelsInputMax;
-		this.levelsOutputMin = env.levelsOutputMin;
-		this.levelsOutputMax = env.levelsOutputMax;
-		this.colourRemappingMap[0] = env.colourRemappingMap[0];
-		this.colourRemappingMap[1] = env.colourRemappingMap[1];
-		this.colourRemappingMap[2] = env.colourRemappingMap[2];
-		this.colourRemappingWeight[0] = env.colourRemappingWeight[0];
-		this.colourRemappingWeight[1] = env.colourRemappingWeight[1];
-		this.colourRemappingWeight[2] = env.colourRemappingWeight[2];
+	public void setTo(Environment arg0) {
+		this.sunColour = arg0.sunColour;
+		this.sunAmbientIntensity = arg0.sunAmbientIntensity;
+		this.sunDiffuseIntensity = arg0.sunDiffuseIntensity;
+		this.sunShadowIntensity = arg0.sunShadowIntensity;
+		this.sunDirection.setTo(arg0.sunDirection);
+		this.fogColour = arg0.fogColour;
+		this.fogDepth = arg0.fogDepth;
+		this.sampler = arg0.sampler;
+		this.bloomWhitePointSq = arg0.bloomWhitePointSq;
+		this.bloomIntensity = arg0.bloomIntensity;
+		this.bloomThreshold = arg0.bloomThreshold;
+		this.skybox = arg0.skybox;
+		this.levelsGamma = arg0.levelsGamma;
+		this.levelsInputMin = arg0.levelsInputMin;
+		this.levelsInputMax = arg0.levelsInputMax;
+		this.levelsOutputMin = arg0.levelsOutputMin;
+		this.levelsOutputMax = arg0.levelsOutputMax;
+		this.colourRemappingMap[0] = arg0.colourRemappingMap[0];
+		this.colourRemappingMap[1] = arg0.colourRemappingMap[1];
+		this.colourRemappingMap[2] = arg0.colourRemappingMap[2];
+		this.colourRemappingWeight[0] = arg0.colourRemappingWeight[0];
+		this.colourRemappingWeight[1] = arg0.colourRemappingWeight[1];
+		this.colourRemappingWeight[2] = arg0.colourRemappingWeight[2];
 	}
 
 	@ObfuscatedName("xv.m(Ldh;Lxv;Lxv;FI)V")
@@ -176,7 +174,6 @@ public class Environment {
 			this.colourRemappingMap[2] = -1;
 			var9[1] = -1;
 			var8[0] = -1;
-
 			float[] var10 = this.colourRemappingWeight;
 			float[] var11 = this.colourRemappingWeight;
 			this.colourRemappingWeight[2] = 0.0F;
@@ -250,41 +247,41 @@ public class Environment {
 	}
 
 	@ObfuscatedName("xv.k(Lalw;Lxu;B)V")
-	public void decode(Packet buf, EnvironmentManager manager) {
-		int var3 = buf.g1();
+	public void decode(Packet arg0, EnvironmentManager arg1) {
+		int var3 = arg0.g1();
 		if (Client.preferences.lightingDetail.getValue() == 1 && Client.toolkit.getMaxLights() > 0) {
 			if ((var3 & EnvironmentProperty.field8143.field8144) == 0) {
 				this.sunColour = 16777215;
 			} else {
-				this.sunColour = buf.g4s();
+				this.sunColour = arg0.g4s();
 			}
 			if ((var3 & EnvironmentProperty.field8139.field8144) == 0) {
 				this.sunAmbientIntensity = 1.1523438F;
 			} else {
-				this.sunAmbientIntensity = (float) buf.g2() / 256.0F;
+				this.sunAmbientIntensity = (float) arg0.g2() / 256.0F;
 			}
 			if ((var3 & EnvironmentProperty.field8138.field8144) == 0) {
 				this.sunDiffuseIntensity = 0.69921875F;
 			} else {
-				this.sunDiffuseIntensity = (float) buf.g2() / 256.0F;
+				this.sunDiffuseIntensity = (float) arg0.g2() / 256.0F;
 			}
 			if ((var3 & EnvironmentProperty.field8137.field8144) == 0) {
 				this.sunShadowIntensity = 1.2F;
 			} else {
-				this.sunShadowIntensity = (float) buf.g2() / 256.0F;
+				this.sunShadowIntensity = (float) arg0.g2() / 256.0F;
 			}
 		} else {
 			if ((var3 & EnvironmentProperty.field8143.field8144) != 0) {
-				buf.g4s();
+				arg0.g4s();
 			}
 			if ((var3 & EnvironmentProperty.field8139.field8144) != 0) {
-				buf.g2();
+				arg0.g2();
 			}
 			if ((var3 & EnvironmentProperty.field8138.field8144) != 0) {
-				buf.g2();
+				arg0.g2();
 			}
 			if ((var3 & EnvironmentProperty.field8137.field8144) != 0) {
-				buf.g2();
+				arg0.g2();
 			}
 			this.sunColour = 16777215;
 			this.sunShadowIntensity = 1.2F;
@@ -294,117 +291,117 @@ public class Environment {
 		if ((var3 & EnvironmentProperty.field8140.field8144) == 0) {
 			this.sunDirection = Vector3.create(-50.0F, -60.0F, -50.0F);
 		} else {
-			this.sunDirection = Vector3.create((float) buf.g2s(), (float) buf.g2s(), (float) buf.g2s());
+			this.sunDirection = Vector3.create((float) arg0.g2s(), (float) arg0.g2s(), (float) arg0.g2s());
 		}
 		if ((var3 & EnvironmentProperty.field8141.field8144) == 0) {
 			this.fogColour = 13156520;
 		} else {
-			this.fogColour = buf.g4s();
+			this.fogColour = arg0.g4s();
 		}
 		if ((var3 & EnvironmentProperty.field8142.field8144) == 0) {
 			this.fogDepth = 0;
 		} else {
-			this.fogDepth = buf.g2();
+			this.fogDepth = arg0.g2();
 		}
 		if ((var3 & EnvironmentProperty.field8136.field8144) == 0) {
 			this.sampler = EnvironmentManager.sampler;
 		} else {
-			int var4 = buf.g2();
-			this.sampler = manager.createEnvironmentSampler(var4);
+			int var4 = arg0.g2();
+			this.sampler = arg1.createEnvironmentSampler(var4);
 		}
 	}
 
 	@ObfuscatedName("xv.f(Lalw;I)V")
-	public void decodeBloom(Packet buf) {
-		this.bloomWhitePointSq = buf.gFloat();
-		this.bloomIntensity = buf.gFloat();
-		this.bloomThreshold = buf.gFloat();
+	public void decodeBloom(Packet arg0) {
+		this.bloomWhitePointSq = arg0.gFloat();
+		this.bloomIntensity = arg0.gFloat();
+		this.bloomThreshold = arg0.gFloat();
 	}
 
 	@ObfuscatedName("xv.w(Lalw;I)V")
-	public void decodeColourRemapping(Packet buf) {
-		this.decodeColourRemapping(buf, 0);
+	public void decodeColourRemapping(Packet arg0) {
+		this.decodeColourRemapping(arg0, 0);
 	}
 
 	@ObfuscatedName("xv.l(Lalw;II)V")
-	public void decodeColourRemapping(Packet buf, int arg1) {
-		this.colourRemappingMap[arg1] = buf.g2();
-		this.colourRemappingWeight[arg1] = buf.gFloat();
+	public void decodeColourRemapping(Packet arg0, int arg1) {
+		this.colourRemappingMap[arg1] = arg0.g2();
+		this.colourRemappingWeight[arg1] = arg0.gFloat();
 	}
 
 	@ObfuscatedName("xv.u(Lalw;Lxu;I)V")
-	public void decodeSkybox(Packet buf, EnvironmentManager manager) {
-		int var3 = buf.g2();
-		int var4 = buf.g2s();
-		int var5 = buf.g2s();
-		int var6 = buf.g2s();
-		int var7 = buf.g2();
+	public void decodeSkybox(Packet arg0, EnvironmentManager arg1) {
+		int var3 = arg0.g2();
+		int var4 = arg0.g2s();
+		int var5 = arg0.g2s();
+		int var6 = arg0.g2s();
+		int var7 = arg0.g2();
 		Client.field3023 = var7;
-		this.skybox = manager.createSkybox(var3, var4, var5, var6);
+		this.skybox = arg1.createSkybox(var3, var4, var5, var6);
 	}
 
 	@ObfuscatedName("xv.z(Lxv;I)Z")
-	public boolean equal(Environment env) {
-		return this.sunColour == env.sunColour && this.sunAmbientIntensity == env.sunAmbientIntensity && this.sunDiffuseIntensity == env.sunDiffuseIntensity && this.sunShadowIntensity == env.sunShadowIntensity && this.bloomIntensity == env.bloomIntensity && this.bloomWhitePointSq == env.bloomWhitePointSq && this.bloomThreshold == env.bloomThreshold && this.fogColour == env.fogColour && this.fogDepth == env.fogDepth && this.sampler == env.sampler && this.skybox == env.skybox && this.levelsGamma == env.levelsGamma && this.levelsInputMin == env.levelsInputMin && this.levelsInputMax == env.levelsInputMax && this.levelsOutputMin == env.levelsOutputMin && this.levelsOutputMax == env.levelsOutputMax && this.colourRemappingMap[0] == env.colourRemappingMap[0] && this.colourRemappingMap[1] == env.colourRemappingMap[1] && this.colourRemappingMap[2] == env.colourRemappingMap[2] && this.colourRemappingWeight[0] == env.colourRemappingWeight[0] && this.colourRemappingWeight[1] == env.colourRemappingWeight[1] && this.colourRemappingWeight[2] == env.colourRemappingWeight[2];
+	public boolean equal(Environment arg0) {
+		return this.sunColour == arg0.sunColour && this.sunAmbientIntensity == arg0.sunAmbientIntensity && this.sunDiffuseIntensity == arg0.sunDiffuseIntensity && this.sunShadowIntensity == arg0.sunShadowIntensity && this.bloomIntensity == arg0.bloomIntensity && this.bloomWhitePointSq == arg0.bloomWhitePointSq && this.bloomThreshold == arg0.bloomThreshold && this.fogColour == arg0.fogColour && this.fogDepth == arg0.fogDepth && this.sampler == arg0.sampler && this.skybox == arg0.skybox && this.levelsGamma == arg0.levelsGamma && this.levelsInputMin == arg0.levelsInputMin && this.levelsInputMax == arg0.levelsInputMax && this.levelsOutputMin == arg0.levelsOutputMin && this.levelsOutputMax == arg0.levelsOutputMax && this.colourRemappingMap[0] == arg0.colourRemappingMap[0] && this.colourRemappingMap[1] == arg0.colourRemappingMap[1] && this.colourRemappingMap[2] == arg0.colourRemappingMap[2] && this.colourRemappingWeight[0] == arg0.colourRemappingWeight[0] && this.colourRemappingWeight[1] == arg0.colourRemappingWeight[1] && this.colourRemappingWeight[2] == arg0.colourRemappingWeight[2];
 	}
 
 	@ObfuscatedName("xv.p(Lxu;Lyj;I)V")
-	public void applyOverride(EnvironmentManager manager, EnvironmentOverride override) {
+	public void applyOverride(EnvironmentManager arg0, EnvironmentOverride arg1) {
 		if (Client.preferences.lightingDetail.getValue() == 1 && Client.toolkit.getMaxLights() > 0) {
-			if (override.getSunColour() != -1) {
-				this.sunColour = override.getSunColour();
+			if (arg1.getSunColour() != -1) {
+				this.sunColour = arg1.getSunColour();
 			}
-			if (override.getSunAmbientIntensity() != -1.0F) {
-				this.sunAmbientIntensity = override.getSunAmbientIntensity();
+			if (arg1.getSunAmbientIntensity() != -1.0F) {
+				this.sunAmbientIntensity = arg1.getSunAmbientIntensity();
 			}
-			if (override.getSunDiffiseIntensity() != -1.0F) {
-				this.sunDiffuseIntensity = override.getSunDiffiseIntensity();
+			if (arg1.getSunDiffiseIntensity() != -1.0F) {
+				this.sunDiffuseIntensity = arg1.getSunDiffiseIntensity();
 			}
-			if (override.getSunShadowIntensity() != -1.0F) {
-				this.sunShadowIntensity = override.getSunShadowIntensity();
+			if (arg1.getSunShadowIntensity() != -1.0F) {
+				this.sunShadowIntensity = arg1.getSunShadowIntensity();
 			}
 		}
-		if (override.getSunDirection() != null) {
-			this.sunDirection.setTo(override.getSunDirection());
+		if (arg1.getSunDirection() != null) {
+			this.sunDirection.setTo(arg1.getSunDirection());
 		}
-		if (override.getFogColour() != -1) {
-			this.fogColour = override.getFogColour();
+		if (arg1.getFogColour() != -1) {
+			this.fogColour = arg1.getFogColour();
 		}
-		if (override.getFogDepth() != -1) {
-			this.fogDepth = override.getFogDepth();
+		if (arg1.getFogDepth() != -1) {
+			this.fogDepth = arg1.getFogDepth();
 		}
-		if (override.getBloomItensity() != -1.0F) {
-			this.bloomIntensity = override.getBloomItensity();
+		if (arg1.getBloomItensity() != -1.0F) {
+			this.bloomIntensity = arg1.getBloomItensity();
 		}
-		if (override.getBloomThreshold() != -1.0F) {
-			this.bloomThreshold = override.getBloomThreshold();
+		if (arg1.getBloomThreshold() != -1.0F) {
+			this.bloomThreshold = arg1.getBloomThreshold();
 		}
-		if (override.getBloomWhitePointSq() != -1.0F) {
-			this.bloomWhitePointSq = override.getBloomWhitePointSq();
+		if (arg1.getBloomWhitePointSq() != -1.0F) {
+			this.bloomWhitePointSq = arg1.getBloomWhitePointSq();
 		}
-		if (override.getSampler() != -1) {
-			this.sampler = manager.createEnvironmentSampler(override.getSampler());
+		if (arg1.getSampler() != -1) {
+			this.sampler = arg0.createEnvironmentSampler(arg1.getSampler());
 		}
-		if (override.method10390() != -1) {
-			int var3 = override.method10390();
-			int var4 = override.method10391();
-			int var5 = override.method10430();
-			int var6 = override.method10393();
-			int var7 = override.method10394();
+		if (arg1.method10390() != -1) {
+			int var3 = arg1.method10390();
+			int var4 = arg1.method10391();
+			int var5 = arg1.method10430();
+			int var6 = arg1.method10393();
+			int var7 = arg1.method10394();
 			Client.field3023 = var7;
-			this.skybox = manager.createSkybox(var3, var4, var5, var6);
+			this.skybox = arg0.createSkybox(var3, var4, var5, var6);
 		}
-		if (override.getColourRemappingMap(0) != -1) {
-			this.colourRemappingMap[0] = override.getColourRemappingMap(0);
-			this.colourRemappingWeight[0] = override.method10378(0);
+		if (arg1.getColourRemappingMap(0) != -1) {
+			this.colourRemappingMap[0] = arg1.getColourRemappingMap(0);
+			this.colourRemappingWeight[0] = arg1.method10378(0);
 		}
-		if (override.getColourRemappingMap(1) != -1) {
-			this.colourRemappingMap[1] = override.getColourRemappingMap(1);
-			this.colourRemappingWeight[1] = override.method10378(1);
+		if (arg1.getColourRemappingMap(1) != -1) {
+			this.colourRemappingMap[1] = arg1.getColourRemappingMap(1);
+			this.colourRemappingWeight[1] = arg1.method10378(1);
 		}
-		if (override.getColourRemappingMap(2) != -1) {
-			this.colourRemappingMap[2] = override.getColourRemappingMap(2);
-			this.colourRemappingWeight[2] = override.method10378(2);
+		if (arg1.getColourRemappingMap(2) != -1) {
+			this.colourRemappingMap[2] = arg1.getColourRemappingMap(2);
+			this.colourRemappingWeight[2] = arg1.method10378(2);
 		}
 	}
 

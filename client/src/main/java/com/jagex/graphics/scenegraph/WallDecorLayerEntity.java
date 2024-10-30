@@ -22,14 +22,14 @@ public abstract class WallDecorLayerEntity extends GraphEntity {
 	@ObfuscatedName("asm.a")
 	public Light[] field12453 = new Light[4];
 
-	public WallDecorLayerEntity(Scene scene, int arg1, int arg2, int arg3, int level, int occludeLevel, int arg6, int arg7, ScaleRotTrans scaleRotTrans) {
-		super(scene, scaleRotTrans);
-		this.level = (byte) level;
-		this.occludeLevel = (byte) occludeLevel;
+	public WallDecorLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7, ScaleRotTrans arg8) {
+		super(arg0, arg8);
+		this.level = (byte) arg4;
+		this.occludeLevel = (byte) arg5;
 		this.field12452 = (short) arg6;
 		this.field12451 = (short) arg7;
-		if (scaleRotTrans != null) {
-			this.method10529(scaleRotTrans);
+		if (arg8 != null) {
+			this.method10529(arg8);
 		}
 		this.method10532((float) arg1, (float) arg2, (float) arg3);
 		for (int var10 = 0; var10 < 4; var10++) {
@@ -51,7 +51,7 @@ public abstract class WallDecorLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asm.ga(Ldh;S)Z")
-	public boolean isOccluded(Toolkit toolkit) {
+	public boolean isOccluded(Toolkit arg0) {
 		Vector3 var2 = this.getTransform().trans;
 		return this.scene.occlusionManager.visible(this.occludeLevel, (int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size, this.overlayHeight());
 	}
@@ -68,7 +68,7 @@ public abstract class WallDecorLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("asm.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 

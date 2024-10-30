@@ -62,10 +62,10 @@ public class WaterfallShader extends WaterShader {
 	@ObfuscatedName("aqw.aa")
 	public int field12117;
 
-	public WaterfallShader(GpuToolkit gpuRenderer, GpuWaterRelated arg1) throws ShaderException {
-		super(gpuRenderer);
+	public WaterfallShader(GpuToolkit arg0, GpuWaterRelated arg1) throws ShaderException {
+		super(arg0);
 		this.field12119 = arg1;
-		if (this.field12119.method5407() && gpuRenderer.hasVertexShader()) {
+		if (this.field12119.method5407() && arg0.hasVertexShader()) {
 			this.createShaderProgram("Waterfall");
 		}
 	}

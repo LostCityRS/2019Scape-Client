@@ -6,7 +6,6 @@ import com.jagex.graphics.VertexDeclarationElementComponent;
 import deob.ObfuscatedName;
 import jagdx.IDirect3DDevice;
 import jagdx.IUnknown;
-
 import java.nio.ByteBuffer;
 
 @ObfuscatedName("ait")

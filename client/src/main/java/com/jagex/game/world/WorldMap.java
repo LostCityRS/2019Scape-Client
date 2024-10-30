@@ -1,8 +1,8 @@
 package com.jagex.game.world;
 
-import com.jagex.core.datastruct.SecondaryLinkedList;
 import com.jagex.core.datastruct.HashTable;
 import com.jagex.core.datastruct.LinkList;
+import com.jagex.core.datastruct.SecondaryLinkedList;
 import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.io.Packet;
 import com.jagex.core.utils.ColourUtils;
@@ -24,15 +24,15 @@ import com.jagex.game.config.vartype.VariableTypeProvider;
 import com.jagex.game.world.entity.LocShape;
 import com.jagex.graphics.CompassPoint;
 import com.jagex.graphics.MaterialList;
-import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.Sprite;
+import com.jagex.graphics.Toolkit;
 import com.jagex.js5.Js5;
 import com.jagex.js5.Js5WorldMapGroup;
 import deob.ObfuscatedName;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Iterator;
 
 @ObfuscatedName("tf")
@@ -174,7 +174,7 @@ public class WorldMap {
 	public static final int SOUTHEAST = CompassPoint.SOUTHEAST.getId();
 
 	@ObfuscatedName("tf.ay")
-	public static java.util.HashMap[][][] field6830;
+	public static HashMap[][][] field6830;
 
 	@ObfuscatedName("tf.ab")
 	public static SoftLruHashTable field6831 = new SoftLruHashTable(4096, 256);
@@ -220,7 +220,6 @@ public class WorldMap {
 
 	@ObfuscatedName("tf.bt")
 	public static int field6846;
-
 
 	@ObfuscatedName("tf.bq")
 	public static int field6847;
@@ -289,7 +288,7 @@ public class WorldMap {
 		field6802 = new byte[field6812 * field6810];
 		field6817 = new Object[field6812 * field6810];
 		field6818 = new byte[field6812 * field6810];
-		field6830 = new java.util.HashMap[3][field6812 >> 6][field6810 >> 6];
+		field6830 = new HashMap[3][field6812 >> 6][field6810 >> 6];
 		field6854 = new int[field6839.length() + 1];
 		field6820 = new boolean[field6812 / 8][field6810 / 8];
 	}
@@ -481,9 +480,9 @@ public class WorldMap {
 				short[] var32 = new short[field6812 * field6810];
 				for (int var33 = 0; var33 < field6830[var31].length; var33++) {
 					for (int var34 = 0; var34 < field6830[var31][0].length; var34++) {
-						java.util.HashMap var35 = field6830[var31][var33][var34];
+						HashMap var35 = field6830[var31][var33][var34];
 						if (var35 != null) {
-							java.util.Iterator var36 = var35.values().iterator();
+							Iterator var36 = var35.values().iterator();
 							while (var36.hasNext()) {
 								WorldMapUpperLevelTileData var37 = (WorldMapUpperLevelTileData) var36.next();
 								var32[(var34 * 64 + var37.field6769) * field6812 + var33 * 64 + var37.field6774] = (short) var37.field6770;
@@ -494,9 +493,9 @@ public class WorldMap {
 				method8509(var32, field6813, field6814, arg1, arg2);
 				for (int var38 = 0; var38 < field6830[var31].length; var38++) {
 					for (int var39 = 0; var39 < field6830[var31][0].length; var39++) {
-						java.util.HashMap var40 = field6830[var31][var38][var39];
+						HashMap var40 = field6830[var31][var38][var39];
 						if (var40 != null) {
-							java.util.Iterator var41 = var40.values().iterator();
+							Iterator var41 = var40.values().iterator();
 							while (var41.hasNext()) {
 								WorldMapUpperLevelTileData var42 = (WorldMapUpperLevelTileData) var41.next();
 								int var43 = (var39 * 64 + var42.field6769) * field6812 + var38 * 64 + var42.field6774;
@@ -590,7 +589,7 @@ public class WorldMap {
 					}
 				}
 				if (field6830[var15 - 1][arg2 - (field6786 >> 6)][arg3 - (field6808 >> 6)] == null) {
-					field6830[var15 - 1][arg2 - (field6786 >> 6)][arg3 - (field6808 >> 6)] = new java.util.HashMap();
+					field6830[var15 - 1][arg2 - (field6786 >> 6)][arg3 - (field6808 >> 6)] = new HashMap();
 				}
 				int var26 = ((arg4 & 0x3F) << 8) + (arg5 & 0x3F);
 				WorldMapUpperLevelTileData var27 = new WorldMapUpperLevelTileData(arg4 & 0x3F, arg5 & 0x3F, var16, var17, var18, var23, var24);
@@ -648,9 +647,9 @@ public class WorldMap {
 		for (int var14 = 0; var14 < 3; var14++) {
 			for (int var15 = 0; var15 < field6830[0].length; var15++) {
 				label89: for (int var16 = 0; var16 < field6830[0][0].length; var16++) {
-					java.util.HashMap var17 = field6830[var14][var15][var16];
+					HashMap var17 = field6830[var14][var15][var16];
 					if (var17 != null) {
-						java.util.Iterator var18 = var17.values().iterator();
+						Iterator var18 = var17.values().iterator();
 						while (true) {
 							WorldMapUpperLevelTileData var19;
 							do {
@@ -1006,7 +1005,7 @@ public class WorldMap {
 					if (var51 < var50) {
 						var51 = var50;
 					}
-					java.util.HashMap var52 = field6830[var40][var38][var39];
+					HashMap var52 = field6830[var40][var38][var39];
 					if (var52 != null) {
 						WorldMapUpperLevelTileData var53 = (WorldMapUpperLevelTileData) var52.get((var43 << 8) + var49);
 						if (var53 != null) {
@@ -1022,7 +1021,7 @@ public class WorldMap {
 					int var58 = var9 + var57;
 					if (!var10 || method8534(var55, var58)) {
 						int var59 = var58 & 0x3F;
-						java.util.HashMap var60 = field6830[var40][var38][var39];
+						HashMap var60 = field6830[var40][var38][var39];
 						if (var60 != null) {
 							WorldMapUpperLevelTileData var61 = (WorldMapUpperLevelTileData) var60.get((var56 << 8) + var59);
 							if (var61 != null) {

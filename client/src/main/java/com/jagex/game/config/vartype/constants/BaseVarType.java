@@ -3,7 +3,12 @@ package com.jagex.game.config.vartype.constants;
 import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.io.Packet;
 import com.jagex.game.client.ComponentHook;
-import com.jagex.game.config.vartype.*;
+import com.jagex.game.config.vartype.BaseVarTypeCodec;
+import com.jagex.game.config.vartype.BaseVarTypeComponentHook;
+import com.jagex.game.config.vartype.BaseVarTypeCoordFine;
+import com.jagex.game.config.vartype.BaseVarTypeInteger;
+import com.jagex.game.config.vartype.BaseVarTypeLong;
+import com.jagex.game.config.vartype.BaseVarTypeString;
 import com.jagex.game.shared.movement.CoordFine;
 import deob.ObfuscatedName;
 
@@ -37,21 +42,16 @@ public class BaseVarType implements SerializableEnum {
 	@ObfuscatedName("qa.z")
 	public final BaseVarTypeCodec codec;
 
-	public BaseVarType(int index, int serialID, Class javaClass, BaseVarTypeCodec codec) {
-		this.index = index;
-		this.serialID = serialID;
-		this.javaClass = javaClass;
-		this.codec = codec;
-	}
-
 	@ObfuscatedName("qa.e(I)[Lqa;")
 	public static BaseVarType[] values() {
-		return new BaseVarType[] {COORDFINE, CCHOOK, STRING, INTEGER, LONG};
+		return new BaseVarType[] { COORDFINE, CCHOOK, STRING, INTEGER, LONG };
 	}
 
-	@ObfuscatedName("qa.n()I")
-	public int getId() {
-		return this.serialID;
+	public BaseVarType(int arg0, int arg1, Class arg2, BaseVarTypeCodec arg3) {
+		this.index = arg0;
+		this.serialID = arg1;
+		this.javaClass = arg2;
+		this.codec = arg3;
 	}
 
 	@ObfuscatedName("qa.m(Ljava/lang/Class;I)Lqa;")
@@ -75,8 +75,13 @@ public class BaseVarType implements SerializableEnum {
 		return var1.codec;
 	}
 
+	@ObfuscatedName("qa.n()I")
+	public int getId() {
+		return this.serialID;
+	}
+
 	@ObfuscatedName("qa.w(Lalw;B)Ljava/lang/Object;")
-	public Object dbDecode(Packet buf) {
-		return this.codec.decode(buf);
+	public Object dbDecode(Packet arg0) {
+		return this.codec.decode(arg0);
 	}
 }

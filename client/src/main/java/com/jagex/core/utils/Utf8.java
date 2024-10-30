@@ -3,7 +3,7 @@ package com.jagex.core.utils;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("xo")
-public final class Utf8 {
+public class Utf8 {
 
 	public Utf8() throws Throwable {
 		throw new Error();

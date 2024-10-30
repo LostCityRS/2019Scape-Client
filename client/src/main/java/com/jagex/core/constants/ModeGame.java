@@ -32,24 +32,24 @@ public class ModeGame {
 	@ObfuscatedName("zd.z")
 	public final int game;
 
-	public ModeGame(String titleURL, String title, int game, Namespace arg3) {
-		this.titleURL = titleURL;
-		this.title = title;
-		this.game = game;
-	}
-
 	@ObfuscatedName("qx.e(B)[Lzd;")
 	public static ModeGame[] values() {
-		return new ModeGame[] {RUNESCAPE, ALTERNATEREALITY, OLDSCAPE, TRANSFORMERS, SCRATCH, STELLARDAWN};
+		return new ModeGame[] { RUNESCAPE, ALTERNATEREALITY, OLDSCAPE, TRANSFORMERS, SCRATCH, STELLARDAWN };
+	}
+
+	public ModeGame(String arg0, String arg1, int arg2, Namespace arg3) {
+		this.titleURL = arg0;
+		this.title = arg1;
+		this.game = arg2;
 	}
 
 	@ObfuscatedName("rg.n(II)Lzd;")
-	public static ModeGame of(int game) {
-		ModeGame[] modes = values();
-		for (int index = 0; index < modes.length; index++) {
-			ModeGame mode = modes[index];
-			if (mode.game == game) {
-				return mode;
+	public static ModeGame of(int arg0) {
+		ModeGame[] var1 = values();
+		for (int var2 = 0; var2 < var1.length; var2++) {
+			ModeGame var3 = var1[var2];
+			if (var3.game == arg0) {
+				return var3;
 			}
 		}
 		return null;

@@ -1,12 +1,21 @@
 package com.jagex.game.world.entity;
 
 import com.jagex.game.client.HardShadow;
-import com.jagex.graphics.*;
+import com.jagex.graphics.FloorModel;
+import com.jagex.graphics.Font;
+import com.jagex.graphics.Light;
+import com.jagex.graphics.OcclusionManager;
+import com.jagex.graphics.Toolkit;
+import com.jagex.graphics.WaterFogData;
 import com.jagex.graphics.particles.ParticleSystemRenderer;
-import com.jagex.graphics.scenegraph.*;
+import com.jagex.graphics.scenegraph.GraphEntity;
+import com.jagex.graphics.scenegraph.GroundDecorLayerEntity;
+import com.jagex.graphics.scenegraph.ObjLayerEntity;
+import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
+import com.jagex.graphics.scenegraph.WallDecorLayerEntity;
+import com.jagex.graphics.scenegraph.WallLayerEntity;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -208,21 +217,21 @@ public class Scene {
 	@ObfuscatedName("tx.bb")
 	public boolean[][] field6922;
 
-	public Scene(Toolkit toolkit, int size, int maxLevel, int maxTileX, int maxTileZ, int drawDistance, boolean underwater, boolean lights) {
-		this.toolkit = toolkit;
+	public Scene(Toolkit arg0, int arg1, int arg2, int arg3, int arg4, int arg5, boolean arg6, boolean arg7) {
+		this.toolkit = arg0;
 		this.lighting = this.toolkit.getMaxLights() > 0;
-		this.size = size;
+		this.size = arg1;
 		this.field6901 = 0x1 << this.size;
 		this.field6924 = this.field6901 >> 1;
-		this.maxLevel = maxLevel;
-		this.maxTileX = maxTileX;
-		this.maxTileZ = maxTileZ;
-		this.drawDistance = drawDistance;
+		this.maxLevel = arg2;
+		this.maxTileX = arg3;
+		this.maxTileZ = arg4;
+		this.drawDistance = arg5;
 		this.debugger = new SceneDebugging();
 		this.occlusionManager = new OcclusionManager(this);
-		this.field6904 = new Tile[maxLevel][this.maxTileX][this.maxTileZ];
-		this.field6915 = new FloorModel[maxLevel];
-		if (underwater) {
+		this.field6904 = new Tile[arg2][this.maxTileX][this.maxTileZ];
+		this.field6915 = new FloorModel[arg2];
+		if (arg6) {
 			this.waterFogColour = new int[this.maxTileX][this.maxTileZ];
 			this.waterFogOffset = new byte[this.maxTileX][this.maxTileZ];
 			this.waterFogScale = new short[this.maxTileX][this.maxTileZ];
@@ -232,8 +241,8 @@ public class Scene {
 			this.field6914 = new Tile[1][this.maxTileX][this.maxTileZ];
 			this.underwaterLevelHeightMaps = new FloorModel[1];
 		}
-		if (lights) {
-			this.field6954 = new long[maxLevel][maxTileX][maxTileZ];
+		if (arg7) {
+			this.field6954 = new long[arg2][arg3][arg4];
 			this.field6926 = new StaticPointLight[65253];
 			this.field6956 = new boolean[65253];
 			this.field6953 = 0;
@@ -276,336 +285,336 @@ public class Scene {
 
 	@ObfuscatedName("tx.k(I)V")
 	public void reset() {
-		for (int x = 0; x < this.maxTileX; x++) {
-			for (int z = 0; z < this.maxTileZ; z++) {
-				if (this.levelTiles[0][x][z] == null) {
-					this.levelTiles[0][x][z] = new Tile(0);
+		for (int var1 = 0; var1 < this.maxTileX; var1++) {
+			for (int var2 = 0; var2 < this.maxTileZ; var2++) {
+				if (this.levelTiles[0][var1][var2] == null) {
+					this.levelTiles[0][var1][var2] = new Tile(0);
 				}
 			}
 		}
 	}
 
 	@ObfuscatedName("tx.f(III)V")
-	public void setBridge(int x, int z) {
-		Tile ground = this.levelTiles[0][x][z];
-		for (int level = 0; level < 3; level++) {
-			Tile tile = this.levelTiles[level][x][z] = this.levelTiles[level + 1][x][z];
-			if (tile != null) {
-				for (PrimaryLayerEntityList var6 = tile.entities; var6 != null; var6 = var6.field7058) {
+	public void setBridge(int arg0, int arg1) {
+		Tile var3 = this.levelTiles[0][arg0][arg1];
+		for (int var4 = 0; var4 < 3; var4++) {
+			Tile var5 = this.levelTiles[var4][arg0][arg1] = this.levelTiles[var4 + 1][arg0][arg1];
+			if (var5 != null) {
+				for (PrimaryLayerEntityList var6 = var5.entities; var6 != null; var6 = var6.field7058) {
 					PrimaryLayerEntity var7 = var6.field7057;
-					if (var7.minSceneTileX == x && var7.minSceneTileZ == z) {
+					if (var7.minSceneTileX == arg0 && var7.minSceneTileZ == arg1) {
 						var7.level--;
 					}
 				}
-				if (tile.groundDecoration != null) {
-					tile.groundDecoration.level--;
+				if (var5.groundDecoration != null) {
+					var5.groundDecoration.level--;
 				}
-				if (tile.wall != null) {
-					tile.wall.level--;
+				if (var5.wall != null) {
+					var5.wall.level--;
 				}
-				if (tile.dynamicWall != null) {
-					tile.dynamicWall.level--;
+				if (var5.dynamicWall != null) {
+					var5.dynamicWall.level--;
 				}
-				if (tile.wallDecoration != null) {
-					tile.wallDecoration.level--;
+				if (var5.wallDecoration != null) {
+					var5.wallDecoration.level--;
 				}
-				if (tile.dynamicWallDecoration != null) {
-					tile.dynamicWallDecoration.level--;
+				if (var5.dynamicWallDecoration != null) {
+					var5.dynamicWallDecoration.level--;
 				}
 			}
 		}
-		if (this.levelTiles[0][x][z] == null) {
-			this.levelTiles[0][x][z] = new Tile(0);
-			this.levelTiles[0][x][z].level = 1;
+		if (this.levelTiles[0][arg0][arg1] == null) {
+			this.levelTiles[0][arg0][arg1] = new Tile(0);
+			this.levelTiles[0][arg0][arg1].level = 1;
 		}
-		this.levelTiles[0][x][z].bridge = ground;
-		this.levelTiles[3][x][z] = null;
+		this.levelTiles[0][arg0][arg1].bridge = var3;
+		this.levelTiles[3][arg0][arg1] = null;
 	}
 
 	@ObfuscatedName("tx.w(IIIB)Ltk;")
-	public Tile getTile(int level, int x, int z) {
-		if (this.levelTiles[level][x][z] == null) {
-			boolean bridged = this.levelTiles[0][x][z] != null && this.levelTiles[0][x][z].bridge != null;
-			if (bridged && level >= this.maxLevel - 1) {
+	public Tile getTile(int arg0, int arg1, int arg2) {
+		if (this.levelTiles[arg0][arg1][arg2] == null) {
+			boolean var4 = this.levelTiles[0][arg1][arg2] != null && this.levelTiles[0][arg1][arg2].bridge != null;
+			if (var4 && arg0 >= this.maxLevel - 1) {
 				return null;
 			}
-			this.createTile(level, x, z);
+			this.createTile(arg0, arg1, arg2);
 		}
-		return this.levelTiles[level][x][z];
+		return this.levelTiles[arg0][arg1][arg2];
 	}
 
 	@ObfuscatedName("tx.l(IIIB)Ltk;")
-	public Tile getTileCoerce(int level, int x, int z) {
-		return this.getTile(level, Math.min(this.maxTileX - 1, Math.max(0, x)), Math.min(this.maxTileZ - 1, Math.max(0, z)));
+	public Tile getTileCoerce(int arg0, int arg1, int arg2) {
+		return this.getTile(arg0, Math.min(this.maxTileX - 1, Math.max(0, arg1)), Math.min(this.maxTileZ - 1, Math.max(0, arg2)));
 	}
 
 	@ObfuscatedName("tx.u(IIII)V")
-	public void createTile(int level, int x, int z) {
-		boolean bridged = this.levelTiles[0][x][z] != null && this.levelTiles[0][x][z].bridge != null;
-		for (int l = level; l >= 0; l--) {
-			if (this.levelTiles[l][x][z] == null) {
-				Tile tile = this.levelTiles[l][x][z] = new Tile(l);
-				if (bridged) {
-					tile.level++;
+	public void createTile(int arg0, int arg1, int arg2) {
+		boolean var4 = this.levelTiles[0][arg1][arg2] != null && this.levelTiles[0][arg1][arg2].bridge != null;
+		for (int var5 = arg0; var5 >= 0; var5--) {
+			if (this.levelTiles[var5][arg1][arg2] == null) {
+				Tile var6 = this.levelTiles[var5][arg1][arg2] = new Tile(var5);
+				if (var4) {
+					var6.level++;
 				}
 			}
 		}
 	}
 
 	@ObfuscatedName("tx.z(ILcb;I)V")
-	public void setLevelHeightmap(int level, FloorModel floor) {
-		this.levelHeightmaps[level] = floor;
+	public void setLevelHeightmap(int arg0, FloorModel arg1) {
+		this.levelHeightmaps[arg0] = arg1;
 	}
 
 	@ObfuscatedName("tx.p(III)I")
-	public int getWaterFogScale(int x, int z) {
-		return this.waterFogScale == null ? 0 : this.waterFogScale[x][z] & 0xFFFF;
+	public int getWaterFogScale(int arg0, int arg1) {
+		return this.waterFogScale == null ? 0 : this.waterFogScale[arg0][arg1] & 0xFFFF;
 	}
 
 	@ObfuscatedName("tx.d(IIB)I")
-	public int getWaterFogColour(int x, int z) {
-		return this.waterFogColour == null ? 0 : this.waterFogColour[x][z] & 0xFFFFFF;
+	public int getWaterFogColour(int arg0, int arg1) {
+		return this.waterFogColour == null ? 0 : this.waterFogColour[arg0][arg1] & 0xFFFFFF;
 	}
 
 	@ObfuscatedName("tx.c(III)I")
-	public int getWaterFogOffset(int x, int z) {
-		return this.waterFogOffset == null ? 0 : this.waterFogOffset[x][z] & 0xFF;
+	public int getWaterFogOffset(int arg0, int arg1) {
+		return this.waterFogOffset == null ? 0 : this.waterFogOffset[arg0][arg1] & 0xFF;
 	}
 
 	@ObfuscatedName("tx.r(IIS)I")
-	public int method8713(int x, int z) {
-		return this.field6921 == null ? 0 : this.field6921[x][z] & 0xFF;
+	public int method8713(int arg0, int arg1) {
+		return this.field6921 == null ? 0 : this.field6921[arg0][arg1] & 0xFF;
 	}
 
 	@ObfuscatedName("tx.v(IIB)I")
-	public int method8760(int x, int z) {
-		return this.field6963 == null ? 0 : this.field6963[x][z] & 0xFF;
+	public int method8760(int arg0, int arg1) {
+		return this.field6963 == null ? 0 : this.field6963[arg0][arg1] & 0xFF;
 	}
 
 	@ObfuscatedName("tx.o(IIB)I")
-	public int method8715(int x, int z) {
-		return this.field6905 == null ? 0 : this.field6905[x][z] & 0xFF;
+	public int method8715(int arg0, int arg1) {
+		return this.field6905 == null ? 0 : this.field6905[arg0][arg1] & 0xFF;
 	}
 
 	@ObfuscatedName("tx.s(IIIIIIIII)V")
-	public void setWaterFog(int x, int z, int colour, int scale, int offset, int arg5, int arg6, int arg7) {
+	public void setWaterFog(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6, int arg7) {
 		if (this.waterFogColour != null) {
-			this.waterFogColour[x][z] = colour | 0xFF000000;
+			this.waterFogColour[arg0][arg1] = arg2 | 0xFF000000;
 		}
 		if (this.waterFogScale != null) {
-			this.waterFogScale[x][z] = (short) scale;
+			this.waterFogScale[arg0][arg1] = (short) arg3;
 		}
 		if (this.waterFogOffset != null) {
-			this.waterFogOffset[x][z] = (byte) offset;
+			this.waterFogOffset[arg0][arg1] = (byte) arg4;
 		}
 		if (this.field6921 != null) {
-			this.field6921[x][z] = (byte) arg5;
+			this.field6921[arg0][arg1] = (byte) arg5;
 		}
 		if (this.field6963 != null) {
-			this.field6963[x][z] = (byte) arg6;
+			this.field6963[arg0][arg1] = (byte) arg6;
 		}
 		if (this.field6905 != null) {
-			this.field6905[x][z] = (byte) arg7;
+			this.field6905[arg0][arg1] = (byte) arg7;
 		}
 	}
 
 	@ObfuscatedName("tx.y(IIILasv;B)V")
-	public void addGroundDecoration(int level, int x, int z, GroundDecorLayerEntity groundDecoration) {
-		Tile tile = this.getTile(level, x, z);
-		if (tile == null) {
+	public void addGroundDecoration(int arg0, int arg1, int arg2, GroundDecorLayerEntity arg3) {
+		Tile var5 = this.getTile(arg0, arg1, arg2);
+		if (var5 == null) {
 			return;
 		}
-		tile.groundDecoration = groundDecoration;
+		var5.groundDecoration = arg3;
 		int var6 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-		if (!groundDecoration.method16488()) {
-			groundDecoration.field11712 = this.field6945[var6];
-			this.field6945[var6] = groundDecoration;
-		} else if (groundDecoration.method16489()) {
-			groundDecoration.field11712 = this.field6929[var6];
-			this.field6929[var6] = groundDecoration;
+		if (!arg3.method16488()) {
+			arg3.field11712 = this.field6945[var6];
+			this.field6945[var6] = arg3;
+		} else if (arg3.method16489()) {
+			arg3.field11712 = this.field6929[var6];
+			this.field6929[var6] = arg3;
 		} else {
-			groundDecoration.field11712 = this.field6916[var6];
-			this.field6916[var6] = groundDecoration;
+			arg3.field11712 = this.field6916[var6];
+			this.field6916[var6] = arg3;
 		}
 	}
 
 	@ObfuscatedName("tx.q(IIIILast;S)V")
-	public void addObjStack(int level, int x, int z, int arg3, ObjLayerEntity objStack) {
-		Tile tile = this.getTile(level, x, z);
-		if (tile == null) {
+	public void addObjStack(int arg0, int arg1, int arg2, int arg3, ObjLayerEntity arg4) {
+		Tile var6 = this.getTile(arg0, arg1, arg2);
+		if (var6 == null) {
 			return;
 		}
-		objStack.method10531(new Vector3((float) ((x << this.size) + this.field6924), (float) arg3, (float) ((z << this.size) + this.field6924)));
-		tile.objStack = objStack;
+		arg4.method10531(new Vector3((float) ((arg1 << this.size) + this.field6924), (float) arg3, (float) ((arg2 << this.size) + this.field6924)));
+		var6.objStack = arg4;
 		int var7 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-		if (!objStack.method16488()) {
-			objStack.field11712 = this.field6945[var7];
-			this.field6945[var7] = objStack;
-		} else if (objStack.method16489()) {
-			objStack.field11712 = this.field6929[var7];
-			this.field6929[var7] = objStack;
+		if (!arg4.method16488()) {
+			arg4.field11712 = this.field6945[var7];
+			this.field6945[var7] = arg4;
+		} else if (arg4.method16489()) {
+			arg4.field11712 = this.field6929[var7];
+			this.field6929[var7] = arg4;
 		} else {
-			objStack.field11712 = this.field6916[var7];
-			this.field6916[var7] = objStack;
+			arg4.field11712 = this.field6916[var7];
+			this.field6916[var7] = arg4;
 		}
 	}
 
 	@ObfuscatedName("tx.x(IIILasw;Lasw;I)V")
-	public void addWall(int level, int x, int z, WallLayerEntity wall, WallLayerEntity dynamicWall) {
-		Tile tile = this.getTile(level, x, z);
-		if (tile == null) {
+	public void addWall(int arg0, int arg1, int arg2, WallLayerEntity arg3, WallLayerEntity arg4) {
+		Tile var6 = this.getTile(arg0, arg1, arg2);
+		if (var6 == null) {
 			return;
 		}
-		tile.wall = wall;
-		tile.dynamicWall = dynamicWall;
+		var6.wall = arg3;
+		var6.dynamicWall = arg4;
 		int var7 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-		if (!wall.method16488()) {
-			wall.field11712 = this.field6945[var7];
-			this.field6945[var7] = wall;
-		} else if (wall.method16489()) {
-			wall.field11712 = this.field6929[var7];
-			this.field6929[var7] = wall;
+		if (!arg3.method16488()) {
+			arg3.field11712 = this.field6945[var7];
+			this.field6945[var7] = arg3;
+		} else if (arg3.method16489()) {
+			arg3.field11712 = this.field6929[var7];
+			this.field6929[var7] = arg3;
 		} else {
-			wall.field11712 = this.field6916[var7];
-			this.field6916[var7] = wall;
+			arg3.field11712 = this.field6916[var7];
+			this.field6916[var7] = arg3;
 		}
-		if (dynamicWall == null) {
+		if (arg4 == null) {
 			return;
 		}
-		if (!dynamicWall.method16488()) {
-			dynamicWall.field11712 = this.field6945[var7];
-			this.field6945[var7] = dynamicWall;
-		} else if (dynamicWall.method16489()) {
-			dynamicWall.field11712 = this.field6929[var7];
-			this.field6929[var7] = dynamicWall;
+		if (!arg4.method16488()) {
+			arg4.field11712 = this.field6945[var7];
+			this.field6945[var7] = arg4;
+		} else if (arg4.method16489()) {
+			arg4.field11712 = this.field6929[var7];
+			this.field6929[var7] = arg4;
 		} else {
-			dynamicWall.field11712 = this.field6916[var7];
-			this.field6916[var7] = dynamicWall;
+			arg4.field11712 = this.field6916[var7];
+			this.field6916[var7] = arg4;
 		}
 	}
 
 	@ObfuscatedName("tx.b(IIILasm;Lasm;B)V")
-	public void addWallDecoration(int level, int x, int z, WallDecorLayerEntity wallDecoration, WallDecorLayerEntity dynamicWallDecoration) {
-		Tile tile = this.getTile(level, x, z);
-		if (tile == null) {
+	public void addWallDecoration(int arg0, int arg1, int arg2, WallDecorLayerEntity arg3, WallDecorLayerEntity arg4) {
+		Tile var6 = this.getTile(arg0, arg1, arg2);
+		if (var6 == null) {
 			return;
 		}
-		tile.wallDecoration = wallDecoration;
-		tile.dynamicWallDecoration = dynamicWallDecoration;
+		var6.wallDecoration = arg3;
+		var6.dynamicWallDecoration = arg4;
 		int var7 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-		if (!wallDecoration.method16488()) {
-			wallDecoration.field11712 = this.field6945[var7];
-			this.field6945[var7] = wallDecoration;
-		} else if (wallDecoration.method16489()) {
-			wallDecoration.field11712 = this.field6929[var7];
-			this.field6929[var7] = wallDecoration;
+		if (!arg3.method16488()) {
+			arg3.field11712 = this.field6945[var7];
+			this.field6945[var7] = arg3;
+		} else if (arg3.method16489()) {
+			arg3.field11712 = this.field6929[var7];
+			this.field6929[var7] = arg3;
 		} else {
-			wallDecoration.field11712 = this.field6916[var7];
-			this.field6916[var7] = wallDecoration;
+			arg3.field11712 = this.field6916[var7];
+			this.field6916[var7] = arg3;
 		}
-		if (dynamicWallDecoration == null) {
+		if (arg4 == null) {
 			return;
 		}
-		if (!dynamicWallDecoration.method16488()) {
-			dynamicWallDecoration.field11712 = this.field6945[var7];
-			this.field6945[var7] = dynamicWallDecoration;
-		} else if (dynamicWallDecoration.method16489()) {
-			dynamicWallDecoration.field11712 = this.field6929[var7];
-			this.field6929[var7] = dynamicWallDecoration;
+		if (!arg4.method16488()) {
+			arg4.field11712 = this.field6945[var7];
+			this.field6945[var7] = arg4;
+		} else if (arg4.method16489()) {
+			arg4.field11712 = this.field6929[var7];
+			this.field6929[var7] = arg4;
 		} else {
-			dynamicWallDecoration.field11712 = this.field6916[var7];
-			this.field6916[var7] = dynamicWallDecoration;
+			arg4.field11712 = this.field6916[var7];
+			this.field6916[var7] = arg4;
 		}
 	}
 
 	@ObfuscatedName("tx.h(Lash;ZI)Z")
-	public boolean addEntity(PrimaryLayerEntity entity, boolean arg1) {
+	public boolean addEntity(PrimaryLayerEntity arg0, boolean arg1) {
 		boolean var3 = this.underwaterLevelHeightMaps == this.levelHeightmaps;
-		int colour = 0;
-		short scale = 0;
-		byte offset = 0;
-		entity.method16529();
+		int var4 = 0;
+		short var5 = 0;
+		byte var6 = 0;
+		arg0.method16529();
 		short var7 = 0;
-		int minX = Math.min(this.maxTileX - 1, Math.max(0, entity.minSceneTileX));
-		int maxX = Math.min(this.maxTileX - 1, Math.max(0, entity.maxSceneTileX));
-		int minZ = Math.min(this.maxTileZ - 1, Math.max(0, entity.minSceneTileZ));
-		int maxZ = Math.min(this.maxTileZ - 1, Math.max(0, entity.maxSceneTileZ));
-		for (int x = minX; x <= maxX; x++) {
-			for (int z = minZ; z <= maxZ; z++) {
-				Tile tile = this.getTileCoerce(entity.level, x, z);
-				if (tile != null) {
-					PrimaryLayerEntityList var15 = PrimaryLayerEntityList.method644(entity);
-					PrimaryLayerEntityList var16 = tile.entities;
+		int var8 = Math.min(this.maxTileX - 1, Math.max(0, arg0.minSceneTileX));
+		int var9 = Math.min(this.maxTileX - 1, Math.max(0, arg0.maxSceneTileX));
+		int var10 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.minSceneTileZ));
+		int var11 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.maxSceneTileZ));
+		for (int var12 = var8; var12 <= var9; var12++) {
+			for (int var13 = var10; var13 <= var11; var13++) {
+				Tile var14 = this.getTileCoerce(arg0.level, var12, var13);
+				if (var14 != null) {
+					PrimaryLayerEntityList var15 = PrimaryLayerEntityList.method644(arg0);
+					PrimaryLayerEntityList var16 = var14.entities;
 					if (var16 == null) {
-						tile.entities = var15;
+						var14.entities = var15;
 					} else {
 						while (var16.field7058 != null) {
 							var16 = var16.field7058;
 						}
 						var16.field7058 = var15;
 					}
-					if (var3 && (this.waterFogColour[x][z] & 0xFF000000) != 0) {
-						colour = this.waterFogColour[x][z];
-						scale = this.waterFogScale[x][z];
-						offset = this.waterFogOffset[x][z];
+					if (var3 && (this.waterFogColour[var12][var13] & 0xFF000000) != 0) {
+						var4 = this.waterFogColour[var12][var13];
+						var5 = this.waterFogScale[var12][var13];
+						var6 = this.waterFogOffset[var12][var13];
 					}
-					if (!arg1 && tile.groundDecoration != null && tile.groundDecoration.field12448 > var7) {
-						var7 = tile.groundDecoration.field12448;
+					if (!arg1 && var14.groundDecoration != null && var14.groundDecoration.field12448 > var7) {
+						var7 = var14.groundDecoration.field12448;
 					}
 				}
 			}
 		}
-		if (var3 && (colour & 0xFF000000) != 0) {
-			for (int x = minX; x <= maxX; x++) {
-				for (int z = minZ; z <= maxZ; z++) {
-					if ((this.waterFogColour[x][z] & 0xFF000000) == 0) {
-						this.waterFogColour[x][z] = colour;
-						this.waterFogScale[x][z] = scale;
-						this.waterFogOffset[x][z] = offset;
+		if (var3 && (var4 & 0xFF000000) != 0) {
+			for (int var17 = var8; var17 <= var9; var17++) {
+				for (int var18 = var10; var18 <= var11; var18++) {
+					if ((this.waterFogColour[var17][var18] & 0xFF000000) == 0) {
+						this.waterFogColour[var17][var18] = var4;
+						this.waterFogScale[var17][var18] = var5;
+						this.waterFogOffset[var17][var18] = var6;
 					}
 				}
 			}
 		}
 		if (arg1) {
-			this.entities[++this.entityCount - 1] = entity;
-			entity.scene = this;
+			this.entities[++this.entityCount - 1] = arg0;
+			arg0.scene = this;
 		} else {
 			int var19 = this.underwaterLevelHeightMaps == this.levelHeightmaps ? 1 : 0;
-			if (!entity.method16488()) {
-				entity.field11712 = this.field6945[var19];
-				this.field6945[var19] = entity;
-			} else if (entity.method16489()) {
-				entity.field11712 = this.field6929[var19];
-				this.field6929[var19] = entity;
+			if (!arg0.method16488()) {
+				arg0.field11712 = this.field6945[var19];
+				this.field6945[var19] = arg0;
+			} else if (arg0.method16489()) {
+				arg0.field11712 = this.field6929[var19];
+				this.field6929[var19] = arg0;
 			} else {
-				entity.field11712 = this.field6916[var19];
-				this.field6916[var19] = entity;
+				arg0.field11712 = this.field6916[var19];
+				this.field6916[var19] = arg0;
 			}
 		}
 		if (arg1) {
-			Vector3 var20 = Vector3.create(entity.getTransform().trans);
+			Vector3 var20 = Vector3.create(arg0.getTransform().trans);
 			var20.y -= var7;
-			entity.method10531(var20);
+			arg0.method10531(var20);
 			var20.release();
 		}
 		return true;
 	}
 
 	@ObfuscatedName("tx.a(IIIII)V")
-	public void setWallDecorationOffset(int level, int x, int z, int walloff) {
-		Tile tile = this.levelTiles[level][x][z];
-		if (tile == null) {
+	public void setWallDecorationOffset(int arg0, int arg1, int arg2, int arg3) {
+		Tile var5 = this.levelTiles[arg0][arg1][arg2];
+		if (var5 == null) {
 			return;
 		}
-		WallDecorLayerEntity wallDecoration = tile.wallDecoration;
-		WallDecorLayerEntity dynamicWallDecoration = tile.dynamicWallDecoration;
-		if (wallDecoration != null) {
-			wallDecoration.field12452 = (short) (wallDecoration.field12452 * walloff / (0x10 << this.size - 7));
-			wallDecoration.field12451 = (short) (wallDecoration.field12451 * walloff / (0x10 << this.size - 7));
+		WallDecorLayerEntity var6 = var5.wallDecoration;
+		WallDecorLayerEntity var7 = var5.dynamicWallDecoration;
+		if (var6 != null) {
+			var6.field12452 = (short) (var6.field12452 * arg3 / (0x10 << this.size - 7));
+			var6.field12451 = (short) (var6.field12451 * arg3 / (0x10 << this.size - 7));
 		}
-		if (dynamicWallDecoration != null) {
-			dynamicWallDecoration.field12452 = (short) (dynamicWallDecoration.field12452 * walloff / (0x10 << this.size - 7));
-			dynamicWallDecoration.field12451 = (short) (dynamicWallDecoration.field12451 * walloff / (0x10 << this.size - 7));
+		if (var7 != null) {
+			var7.field12452 = (short) (var7.field12452 * arg3 / (0x10 << this.size - 7));
+			var7.field12451 = (short) (var7.field12451 * arg3 / (0x10 << this.size - 7));
 		}
 	}
 
@@ -620,122 +629,122 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.i(IIIB)Lasw;")
-	public WallLayerEntity removeWall(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		if (tile != null) {
-			this.method8732(tile.wall);
-			if (tile.wall != null) {
-				WallLayerEntity wall = tile.wall;
-				tile.wall = null;
-				return wall;
+	public WallLayerEntity removeWall(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		if (var4 != null) {
+			this.method8732(var4.wall);
+			if (var4.wall != null) {
+				WallLayerEntity var5 = var4.wall;
+				var4.wall = null;
+				return var5;
 			}
 		}
 		return null;
 	}
 
 	@ObfuscatedName("tx.j(IIIB)Lasw;")
-	public WallLayerEntity removeDynamicWall(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		if (tile != null) {
-			this.method8732(tile.dynamicWall);
-			if (tile.dynamicWall != null) {
-				WallLayerEntity wall = tile.dynamicWall;
-				tile.dynamicWall = null;
-				return wall;
+	public WallLayerEntity removeDynamicWall(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		if (var4 != null) {
+			this.method8732(var4.dynamicWall);
+			if (var4.dynamicWall != null) {
+				WallLayerEntity var5 = var4.dynamicWall;
+				var4.dynamicWall = null;
+				return var5;
 			}
 		}
 		return null;
 	}
 
 	@ObfuscatedName("tx.t(IIII)Lasm;")
-	public WallDecorLayerEntity removeWallDecoration(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		if (tile != null) {
-			this.method8732(tile.wallDecoration);
-			if (tile.wallDecoration != null) {
-				WallDecorLayerEntity wallDecoration = tile.wallDecoration;
-				tile.wallDecoration = null;
-				return wallDecoration;
+	public WallDecorLayerEntity removeWallDecoration(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		if (var4 != null) {
+			this.method8732(var4.wallDecoration);
+			if (var4.wallDecoration != null) {
+				WallDecorLayerEntity var5 = var4.wallDecoration;
+				var4.wallDecoration = null;
+				return var5;
 			}
 		}
 		return null;
 	}
 
 	@ObfuscatedName("tx.ae(IIII)Lasm;")
-	public WallDecorLayerEntity removeDynamicWallDecoration(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		if (tile != null) {
-			this.method8732(tile.dynamicWallDecoration);
-			if (tile.dynamicWallDecoration != null) {
-				WallDecorLayerEntity wallDecoration = tile.dynamicWallDecoration;
-				tile.dynamicWallDecoration = null;
-				return wallDecoration;
+	public WallDecorLayerEntity removeDynamicWallDecoration(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		if (var4 != null) {
+			this.method8732(var4.dynamicWallDecoration);
+			if (var4.dynamicWallDecoration != null) {
+				WallDecorLayerEntity var5 = var4.dynamicWallDecoration;
+				var4.dynamicWallDecoration = null;
+				return var5;
 			}
 		}
 		return null;
 	}
 
 	@ObfuscatedName("tx.ag(IIIB)Lasv;")
-	public GroundDecorLayerEntity removeGroundDecoration(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		if (tile == null) {
+	public GroundDecorLayerEntity removeGroundDecoration(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		if (var4 == null) {
 			return null;
 		}
-		this.method8732(tile.groundDecoration);
-		if (tile.groundDecoration == null) {
+		this.method8732(var4.groundDecoration);
+		if (var4.groundDecoration == null) {
 			return null;
 		} else {
-			GroundDecorLayerEntity groundDecoration = tile.groundDecoration;
-			tile.groundDecoration = null;
-			return groundDecoration;
+			GroundDecorLayerEntity var5 = var4.groundDecoration;
+			var4.groundDecoration = null;
+			return var5;
 		}
 	}
 
 	@ObfuscatedName("tx.ah(IIIB)Last;")
-	public ObjLayerEntity removeObjStack(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		if (tile == null) {
+	public ObjLayerEntity removeObjStack(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		if (var4 == null) {
 			return null;
 		} else {
-			ObjLayerEntity objStack = tile.objStack;
-			tile.objStack = null;
-			this.method8732(objStack);
-			return objStack;
+			ObjLayerEntity var5 = var4.objStack;
+			var4.objStack = null;
+			this.method8732(var5);
+			return var5;
 		}
 	}
 
 	@ObfuscatedName("tx.al(IIILtd;I)Lash;")
-	public PrimaryLayerEntity removeEntity(int level, int x, int z, PrimaryLayerEntityPredicate arg3) {
-		Tile tile = this.levelTiles[level][x][z];
-		if (tile == null) {
+	public PrimaryLayerEntity removeEntity(int arg0, int arg1, int arg2, PrimaryLayerEntityPredicate arg3) {
+		Tile var5 = this.levelTiles[arg0][arg1][arg2];
+		if (var5 == null) {
 			return null;
 		}
-		for (PrimaryLayerEntityList nextEntity = tile.entities; nextEntity != null; nextEntity = nextEntity.field7058) {
-			PrimaryLayerEntity entity = nextEntity.field7057;
-			if ((arg3 == null || arg3.method478(entity)) && entity.minSceneTileX == x && entity.minSceneTileZ == z) {
-				this.removeEntity(entity, false);
-				return entity;
+		for (PrimaryLayerEntityList var6 = var5.entities; var6 != null; var6 = var6.field7058) {
+			PrimaryLayerEntity var7 = var6.field7057;
+			if ((arg3 == null || arg3.method478(var7)) && var7.minSceneTileX == arg1 && var7.minSceneTileZ == arg2) {
+				this.removeEntity(var7, false);
+				return var7;
 			}
 		}
 		return null;
 	}
 
 	@ObfuscatedName("tx.ac(Lash;ZI)V")
-	public void removeEntity(PrimaryLayerEntity entity, boolean arg1) {
-		int minX = Math.min(this.maxTileX - 1, Math.max(0, entity.minSceneTileX));
-		int maxX = Math.min(this.maxTileX - 1, Math.max(0, entity.maxSceneTileX));
-		int minZ = Math.min(this.maxTileZ - 1, Math.max(0, entity.minSceneTileZ));
-		int maxZ = Math.min(this.maxTileZ - 1, Math.max(0, entity.maxSceneTileZ));
-		for (int x = minX; x <= maxX; x++) {
-			for (int z = minZ; z <= maxZ; z++) {
-				Tile tile = this.levelTiles[entity.level][x][z];
-				if (tile != null) {
-					PrimaryLayerEntityList var10 = tile.entities;
+	public void removeEntity(PrimaryLayerEntity arg0, boolean arg1) {
+		int var3 = Math.min(this.maxTileX - 1, Math.max(0, arg0.minSceneTileX));
+		int var4 = Math.min(this.maxTileX - 1, Math.max(0, arg0.maxSceneTileX));
+		int var5 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.minSceneTileZ));
+		int var6 = Math.min(this.maxTileZ - 1, Math.max(0, arg0.maxSceneTileZ));
+		for (int var7 = var3; var7 <= var4; var7++) {
+			for (int var8 = var5; var8 <= var6; var8++) {
+				Tile var9 = this.levelTiles[arg0.level][var7][var8];
+				if (var9 != null) {
+					PrimaryLayerEntityList var10 = var9.entities;
 					PrimaryLayerEntityList var11 = null;
 					while (var10 != null) {
-						if (var10.field7057 == entity) {
+						if (var10.field7057 == arg0) {
 							if (var11 == null) {
-								tile.entities = var10.field7058;
+								var9.entities = var10.field7058;
 							} else {
 								var11.field7058 = var10.field7058;
 							}
@@ -749,7 +758,7 @@ public class Scene {
 			}
 		}
 		if (!arg1) {
-			this.method8732(entity);
+			this.method8732(arg0);
 		}
 	}
 
@@ -800,38 +809,38 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.aw(IIII)Lasw;")
-	public WallLayerEntity getWall(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		return tile == null ? null : tile.wall;
+	public WallLayerEntity getWall(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		return var4 == null ? null : var4.wall;
 	}
 
 	@ObfuscatedName("tx.as(IIII)Lasw;")
-	public WallLayerEntity getDynamicWall(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		return tile == null ? null : tile.dynamicWall;
+	public WallLayerEntity getDynamicWall(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		return var4 == null ? null : var4.dynamicWall;
 	}
 
 	@ObfuscatedName("tx.at(IIII)Lasm;")
-	public WallDecorLayerEntity getWallDecoration(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		return tile == null ? null : tile.wallDecoration;
+	public WallDecorLayerEntity getWallDecoration(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		return var4 == null ? null : var4.wallDecoration;
 	}
 
 	@ObfuscatedName("tx.ad(IIIB)Last;")
-	public ObjLayerEntity getObjStack(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		return tile == null ? null : tile.objStack;
+	public ObjLayerEntity getObjStack(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		return var4 == null ? null : var4.objStack;
 	}
 
 	@ObfuscatedName("tx.am(IIILtd;B)Lash;")
-	public PrimaryLayerEntity getEntity(int level, int x, int z, PrimaryLayerEntityPredicate arg3) {
-		Tile tile = this.levelTiles[level][x][z];
-		if (tile == null) {
+	public PrimaryLayerEntity getEntity(int arg0, int arg1, int arg2, PrimaryLayerEntityPredicate arg3) {
+		Tile var5 = this.levelTiles[arg0][arg1][arg2];
+		if (var5 == null) {
 			return null;
 		}
-		for (PrimaryLayerEntityList nextEntity = tile.entities; nextEntity != null; nextEntity = nextEntity.field7058) {
-			PrimaryLayerEntity var7 = nextEntity.field7057;
-			if ((arg3 == null || arg3.method478(var7)) && var7.minSceneTileX == x && var7.minSceneTileZ == z) {
+		for (PrimaryLayerEntityList var6 = var5.entities; var6 != null; var6 = var6.field7058) {
+			PrimaryLayerEntity var7 = var6.field7057;
+			if ((arg3 == null || arg3.method478(var7)) && var7.minSceneTileX == arg1 && var7.minSceneTileZ == arg2) {
 				return var7;
 			}
 		}
@@ -839,45 +848,45 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.au(IIIB)Luc;")
-	public PrimaryLayerEntityList getEntities(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		return tile == null ? null : tile.entities;
+	public PrimaryLayerEntityList getEntities(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		return var4 == null ? null : var4.entities;
 	}
 
 	@ObfuscatedName("tx.ar(IIII)Lasv;")
-	public GroundDecorLayerEntity getGroundDecoration(int level, int x, int z) {
-		Tile tile = this.levelTiles[level][x][z];
-		return tile == null || tile.groundDecoration == null ? null : tile.groundDecoration;
+	public GroundDecorLayerEntity getGroundDecoration(int arg0, int arg1, int arg2) {
+		Tile var4 = this.levelTiles[arg0][arg1][arg2];
+		return var4 == null || var4.groundDecoration == null ? null : var4.groundDecoration;
 	}
 
 	@ObfuscatedName("tx.ap()V")
 	public void buildModels() {
-		for (int level = 0; level < this.maxLevel; level++) {
-			for (int x = 0; x < this.maxTileX; x++) {
-				for (int z = 0; z < this.maxTileZ; z++) {
-					Tile tile = this.levelTiles[level][x][z];
-					if (tile != null) {
-						WallLayerEntity wall = tile.wall;
-						WallLayerEntity dynamicWall = tile.dynamicWall;
-						if (wall != null && wall.method17379()) {
-							this.mergeLocNormals(wall, level, x, z, 1, 1);
-							if (dynamicWall != null && dynamicWall.method17379()) {
-								this.mergeLocNormals(dynamicWall, level, x, z, 1, 1);
-								dynamicWall.mergeNormals(this.toolkit, wall, 0, 0, 0, false);
-								dynamicWall.applyLighting();
+		for (int var1 = 0; var1 < this.maxLevel; var1++) {
+			for (int var2 = 0; var2 < this.maxTileX; var2++) {
+				for (int var3 = 0; var3 < this.maxTileZ; var3++) {
+					Tile var4 = this.levelTiles[var1][var2][var3];
+					if (var4 != null) {
+						WallLayerEntity var5 = var4.wall;
+						WallLayerEntity var6 = var4.dynamicWall;
+						if (var5 != null && var5.method17379()) {
+							this.mergeLocNormals(var5, var1, var2, var3, 1, 1);
+							if (var6 != null && var6.method17379()) {
+								this.mergeLocNormals(var6, var1, var2, var3, 1, 1);
+								var6.mergeNormals(this.toolkit, var5, 0, 0, 0, false);
+								var6.applyLighting();
 							}
-							wall.applyLighting();
+							var5.applyLighting();
 						}
-						for (PrimaryLayerEntityList var7 = tile.entities; var7 != null; var7 = var7.field7058) {
+						for (PrimaryLayerEntityList var7 = var4.entities; var7 != null; var7 = var7.field7058) {
 							PrimaryLayerEntity var8 = var7.field7057;
 							if (var8 != null && var8.method17379()) {
-								this.mergeLocNormals(var8, level, x, z, var8.maxSceneTileX - var8.minSceneTileX + 1, var8.maxSceneTileZ - var8.minSceneTileZ + 1);
+								this.mergeLocNormals(var8, var1, var2, var3, var8.maxSceneTileX - var8.minSceneTileX + 1, var8.maxSceneTileZ - var8.minSceneTileZ + 1);
 								var8.applyLighting();
 							}
 						}
-						GroundDecorLayerEntity var9 = tile.groundDecoration;
+						GroundDecorLayerEntity var9 = var4.groundDecoration;
 						if (var9 != null && var9.method17379()) {
-							this.mergeGroundDecorationNormals(var9, level, x, z);
+							this.mergeGroundDecorationNormals(var9, var1, var2, var3);
 							var9.applyLighting();
 						}
 					}
@@ -887,105 +896,100 @@ public class Scene {
 	}
 
 	@ObfuscatedName("tx.aq(Lalh;IIIS)V")
-	public void mergeGroundDecorationNormals(GraphEntity entity, int level, int x, int z) {
-		if (x < this.maxTileX) {
-			Tile tile = this.levelTiles[level][x + 1][z];
-			if (tile != null && tile.groundDecoration != null && tile.groundDecoration.method17379()) {
-				int var6 = (this.levelHeightmaps[level].getTileHeight(x + 1, z) + this.levelHeightmaps[level].getTileHeight(x + 1 + 1, z) + this.levelHeightmaps[level].getTileHeight(x + 1, z + 1) + this.levelHeightmaps[level].getTileHeight(x + 1 + 1, z + 1)) / 4 - (this.levelHeightmaps[level].getTileHeight(x, z) + this.levelHeightmaps[level].getTileHeight(x + 1, z) + this.levelHeightmaps[level].getTileHeight(x, z + 1) + this.levelHeightmaps[level].getTileHeight(x + 1, z + 1)) / 4;
-				entity.mergeNormals(this.toolkit, tile.groundDecoration, this.field6901, var6, 0, true);
+	public void mergeGroundDecorationNormals(GraphEntity arg0, int arg1, int arg2, int arg3) {
+		if (arg2 < this.maxTileX) {
+			Tile var5 = this.levelTiles[arg1][arg2 + 1][arg3];
+			if (var5 != null && var5.groundDecoration != null && var5.groundDecoration.method17379()) {
+				int var6 = (this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1 + 1, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1 + 1, arg3 + 1)) / 4 - (this.levelHeightmaps[arg1].getTileHeight(arg2, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2, arg3 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1)) / 4;
+				arg0.mergeNormals(this.toolkit, var5.groundDecoration, this.field6901, var6, 0, true);
 			}
 		}
-		if (z < this.maxTileX) {
-			Tile tile = this.levelTiles[level][x][z + 1];
-			if (tile != null && tile.groundDecoration != null && tile.groundDecoration.method17379()) {
-				int var8 = (this.levelHeightmaps[level].getTileHeight(x, z) + this.levelHeightmaps[level].getTileHeight(x + 1, z + 1) + this.levelHeightmaps[level].getTileHeight(x, z + 1 + 1) + this.levelHeightmaps[level].getTileHeight(x + 1, z + 1 + 1)) / 4 - (this.levelHeightmaps[level].getTileHeight(x, z) + this.levelHeightmaps[level].getTileHeight(x + 1, z) + this.levelHeightmaps[level].getTileHeight(x, z + 1) + this.levelHeightmaps[level].getTileHeight(x + 1, z + 1)) / 4;
-				entity.mergeNormals(this.toolkit, tile.groundDecoration, 0, var8, this.field6901, true);
+		if (arg3 < this.maxTileX) {
+			Tile var7 = this.levelTiles[arg1][arg2][arg3 + 1];
+			if (var7 != null && var7.groundDecoration != null && var7.groundDecoration.method17379()) {
+				int var8 = (this.levelHeightmaps[arg1].getTileHeight(arg2, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2, arg3 + 1 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1 + 1)) / 4 - (this.levelHeightmaps[arg1].getTileHeight(arg2, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2, arg3 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1)) / 4;
+				arg0.mergeNormals(this.toolkit, var7.groundDecoration, 0, var8, this.field6901, true);
 			}
 		}
-		if (x < this.maxTileX && z < this.maxTileZ) {
-			Tile tile = this.levelTiles[level][x + 1][z + 1];
-			if (tile != null && tile.groundDecoration != null && tile.groundDecoration.method17379()) {
-				int var10 = (this.levelHeightmaps[level].getTileHeight(x + 1, z + 1) + this.levelHeightmaps[level].getTileHeight(x + 1 + 1, z + 1) + this.levelHeightmaps[level].getTileHeight(x + 1, z + 1 + 1) + this.levelHeightmaps[level].getTileHeight(x + 1 + 1, z + 1 + 1)) / 4 - (this.levelHeightmaps[level].getTileHeight(x, z) + this.levelHeightmaps[level].getTileHeight(x + 1, z) + this.levelHeightmaps[level].getTileHeight(x, z + 1) + this.levelHeightmaps[level].getTileHeight(x + 1, z + 1)) / 4;
-				entity.mergeNormals(this.toolkit, tile.groundDecoration, this.field6901, var10, this.field6901, true);
+		if (arg2 < this.maxTileX && arg3 < this.maxTileZ) {
+			Tile var9 = this.levelTiles[arg1][arg2 + 1][arg3 + 1];
+			if (var9 != null && var9.groundDecoration != null && var9.groundDecoration.method17379()) {
+				int var10 = (this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1 + 1, arg3 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1 + 1, arg3 + 1 + 1)) / 4 - (this.levelHeightmaps[arg1].getTileHeight(arg2, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2, arg3 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1)) / 4;
+				arg0.mergeNormals(this.toolkit, var9.groundDecoration, this.field6901, var10, this.field6901, true);
 			}
 		}
-		if (x >= this.maxTileX || z <= 0) {
+		if (arg2 >= this.maxTileX || arg3 <= 0) {
 			return;
 		}
-		Tile tile = this.levelTiles[level][x + 1][z - 1];
-		if (tile != null && tile.groundDecoration != null && tile.groundDecoration.method17379()) {
-			int var12 = (this.levelHeightmaps[level].getTileHeight(x + 1, z - 1) + this.levelHeightmaps[level].getTileHeight(x + 1 + 1, z - 1) + this.levelHeightmaps[level].getTileHeight(x + 1, z + 1 - 1) + this.levelHeightmaps[level].getTileHeight(x + 1 + 1, z + 1 - 1)) / 4 - (this.levelHeightmaps[level].getTileHeight(x, z) + this.levelHeightmaps[level].getTileHeight(x + 1, z) + this.levelHeightmaps[level].getTileHeight(x, z + 1) + this.levelHeightmaps[level].getTileHeight(x + 1, z + 1)) / 4;
-			entity.mergeNormals(this.toolkit, tile.groundDecoration, this.field6901, var12, -this.field6901, true);
+		Tile var11 = this.levelTiles[arg1][arg2 + 1][arg3 - 1];
+		if (var11 != null && var11.groundDecoration != null && var11.groundDecoration.method17379()) {
+			int var12 = (this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 - 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1 + 1, arg3 - 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1 - 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1 + 1, arg3 + 1 - 1)) / 4 - (this.levelHeightmaps[arg1].getTileHeight(arg2, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2, arg3 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1)) / 4;
+			arg0.mergeNormals(this.toolkit, var11.groundDecoration, this.field6901, var12, -this.field6901, true);
 		}
 	}
 
 	@ObfuscatedName("tx.ax(Lalh;IIIII)V")
-	public void mergeLocNormals(GraphEntity entity, int level, int tileX, int tileZ, int sizeX, int sizeZ) {
-		boolean allowFaceRemoval = true;
-		int minTileX = tileX;
-		int maxTileX = tileX + sizeX;
-		int minTileZ = tileZ - 1;
-		int maxTileZ = tileZ + sizeZ;
-		for (int l = level; l <= level + 1; l++) {
-            if (this.maxLevel == l) {
-                continue;
-            }
-            for (int x = minTileX; x <= maxTileX; x++) {
-                if (x < 0 || x >= this.maxTileX) {
-                    continue;
-                }
-                for (int z = minTileZ; z <= maxTileZ; z++) {
-                    if (z < 0 || z >= this.maxTileZ || (allowFaceRemoval && x < maxTileX && z < maxTileZ && (z >= tileZ || tileX == x))) {
-                        continue;
-                    }
-                    Tile tile = this.levelTiles[l][x][z];
-                    if (tile == null) {
-                        continue;
-                    }
-                    int var16 = (this.levelHeightmaps[l].getTileHeight(x, z) + this.levelHeightmaps[l].getTileHeight(x + 1, z) + this.levelHeightmaps[l].getTileHeight(x, z + 1) + this.levelHeightmaps[l].getTileHeight(x + 1, z + 1)) / 4 - (this.levelHeightmaps[level].getTileHeight(tileX, tileZ) + this.levelHeightmaps[level].getTileHeight(tileX + 1, tileZ) + this.levelHeightmaps[level].getTileHeight(tileX, tileZ + 1) + this.levelHeightmaps[level].getTileHeight(tileX + 1, tileZ + 1)) / 4;
-                    WallLayerEntity wall = tile.wall;
-                    WallLayerEntity dynamicWall = tile.dynamicWall;
-                    if (wall != null && wall.method17379()) {
-                        entity.mergeNormals(this.toolkit, wall, this.field6924 * (1 - sizeX) + this.field6901 * (x - tileX), var16, this.field6924 * (1 - sizeZ) + this.field6901 * (z - tileZ), allowFaceRemoval);
-                    }
-                    if (dynamicWall != null && dynamicWall.method17379()) {
-                        entity.mergeNormals(this.toolkit, dynamicWall, this.field6924 * (1 - sizeX) + this.field6901 * (x - tileX), var16, this.field6924 * (1 - sizeZ) + this.field6901 * (z - tileZ), allowFaceRemoval);
-                    }
-                    for (PrimaryLayerEntityList var19 = tile.entities; var19 != null; var19 = var19.field7058) {
-                        PrimaryLayerEntity var20 = var19.field7057;
-                        if (var20 == null || !var20.method17379() || (var20.minSceneTileX != x && minTileX != x) || (var20.minSceneTileZ != z && minTileZ != z)) {
-                            continue;
-                        }
-                        int var21 = var20.maxSceneTileX - var20.minSceneTileX + 1;
-                        int var22 = var20.maxSceneTileZ - var20.minSceneTileZ + 1;
-                        entity.mergeNormals(this.toolkit, var20, this.field6924 * (var21 - sizeX) + this.field6901 * (var20.minSceneTileX - tileX), var16, this.field6924 * (var22 - sizeZ) + this.field6901 * (var20.minSceneTileZ - tileZ), allowFaceRemoval);
-                    }
-                }
-            }
-            minTileX--;
-            allowFaceRemoval = false;
-        }
+	public void mergeLocNormals(GraphEntity arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		boolean var7 = true;
+		int var8 = arg2;
+		int var9 = arg2 + arg4;
+		int var10 = arg3 - 1;
+		int var11 = arg3 + arg5;
+		for (int var12 = arg1; var12 <= arg1 + 1; var12++) {
+			if (this.maxLevel != var12) {
+				for (int var13 = var8; var13 <= var9; var13++) {
+					if (var13 >= 0 && var13 < this.maxTileX) {
+						for (int var14 = var10; var14 <= var11; var14++) {
+							if (var14 >= 0 && var14 < this.maxTileZ && (!var7 || var13 >= var9 || var14 >= var11 || var14 < arg3 && arg2 != var13)) {
+								Tile var15 = this.levelTiles[var12][var13][var14];
+								if (var15 != null) {
+									int var16 = (this.levelHeightmaps[var12].getTileHeight(var13, var14) + this.levelHeightmaps[var12].getTileHeight(var13 + 1, var14) + this.levelHeightmaps[var12].getTileHeight(var13, var14 + 1) + this.levelHeightmaps[var12].getTileHeight(var13 + 1, var14 + 1)) / 4 - (this.levelHeightmaps[arg1].getTileHeight(arg2, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3) + this.levelHeightmaps[arg1].getTileHeight(arg2, arg3 + 1) + this.levelHeightmaps[arg1].getTileHeight(arg2 + 1, arg3 + 1)) / 4;
+									WallLayerEntity var17 = var15.wall;
+									WallLayerEntity var18 = var15.dynamicWall;
+									if (var17 != null && var17.method17379()) {
+										arg0.mergeNormals(this.toolkit, var17, this.field6924 * (1 - arg4) + this.field6901 * (var13 - arg2), var16, this.field6924 * (1 - arg5) + this.field6901 * (var14 - arg3), var7);
+									}
+									if (var18 != null && var18.method17379()) {
+										arg0.mergeNormals(this.toolkit, var18, this.field6924 * (1 - arg4) + this.field6901 * (var13 - arg2), var16, this.field6924 * (1 - arg5) + this.field6901 * (var14 - arg3), var7);
+									}
+									for (PrimaryLayerEntityList var19 = var15.entities; var19 != null; var19 = var19.field7058) {
+										PrimaryLayerEntity var20 = var19.field7057;
+										if (var20 != null && var20.method17379() && (var20.minSceneTileX == var13 || var8 == var13) && (var20.minSceneTileZ == var14 || var10 == var14)) {
+											int var21 = var20.maxSceneTileX - var20.minSceneTileX + 1;
+											int var22 = var20.maxSceneTileZ - var20.minSceneTileZ + 1;
+											arg0.mergeNormals(this.toolkit, var20, this.field6924 * (var21 - arg4) + this.field6901 * (var20.minSceneTileX - arg2), var16, this.field6924 * (var22 - arg5) + this.field6901 * (var20.minSceneTileZ - arg3), var7);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				var8--;
+				var7 = false;
+			}
+		}
 	}
 
 	@ObfuscatedName("tx.av(IIII[[[B[I[I[I[I[IIBIIZZIZ)V")
-	public void draw(int cycle, int eyeX, int eyeY, int eyeZ, byte[][][] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int arg10, byte arg11, int arg12, int arg13, boolean arg14, boolean arg15, int arg16, boolean arg17) {
+	public void draw(int arg0, int arg1, int arg2, int arg3, byte[][][] arg4, int[] arg5, int[] arg6, int[] arg7, int[] arg8, int[] arg9, int arg10, byte arg11, int arg12, int arg13, boolean arg14, boolean arg15, int arg16, boolean arg17) {
 		this.occlusionManager.field7017 = true;
 		this.field6955 = arg15;
-		this.eyeTileX = eyeX >> this.size;
-		this.eyeTileZ = eyeZ >> this.size;
-		this.eyeX = eyeX;
-		this.eyeZ = eyeZ;
-		this.eyeY = eyeY;
+		this.eyeTileX = arg1 >> this.size;
+		this.eyeTileZ = arg3 >> this.size;
+		this.eyeX = arg1;
+		this.eyeZ = arg3;
+		this.eyeY = arg2;
 		this.minDrawTileX = this.eyeTileX - this.drawDistance;
 		if (this.minDrawTileX < 0) {
-			this.field6943 = -(this.minDrawTileX);
+			this.field6943 = -(this.minDrawTileX * 336067085) * 1250813125;
 			this.minDrawTileX = 0;
 		} else {
 			this.field6943 = 0;
 		}
 		this.minDrawTileZ = this.eyeTileZ - this.drawDistance;
 		if (this.minDrawTileZ < 0) {
-			this.field6944 = -(this.minDrawTileZ);
+			this.field6944 = -(this.minDrawTileZ * 10268461) * 742291621;
 			this.minDrawTileZ = 0;
 		} else {
 			this.field6944 = 0;
@@ -998,7 +1002,7 @@ public class Scene {
 		if (this.maxDrawTileZ > this.maxTileZ) {
 			this.maxDrawTileZ = this.maxTileZ;
 		}
-		boolean[][] visibilityMap = this.visibilityMap;
+		boolean[][] var19 = this.visibilityMap;
 		boolean[][] var20 = this.field6960;
 		if (this.field6955) {
 			for (int var21 = 0; var21 < this.drawDistance + this.drawDistance + 2; var21++) {
@@ -1068,7 +1072,7 @@ public class Scene {
 		}
 		if (this.lighting) {
 			for (int var36 = 0; var36 < this.field6953; var36++) {
-				this.field6926[var36].method8898(cycle, arg14);
+				this.field6926[var36].method8898(arg0, arg14);
 			}
 		}
 		if (this.field6914 != null) {
@@ -1080,7 +1084,7 @@ public class Scene {
 		}
 		this.method8744(false, arg4, arg10, arg11, arg16);
 		if (!this.field6955) {
-			this.visibilityMap = visibilityMap;
+			this.visibilityMap = var19;
 			this.field6960 = var20;
 		}
 	}

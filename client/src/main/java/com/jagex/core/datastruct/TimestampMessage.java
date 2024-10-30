@@ -15,8 +15,8 @@ public class TimestampMessage extends Link {
 	@ObfuscatedName("ajd.f")
 	public short worldId;
 
-	public TimestampMessage(String message, int worldId) {
-		this.message = message;
-		this.worldId = (short) worldId;
+	public TimestampMessage(String arg0, int arg1) {
+		this.message = arg0;
+		this.worldId = (short) arg1;
 	}
 }

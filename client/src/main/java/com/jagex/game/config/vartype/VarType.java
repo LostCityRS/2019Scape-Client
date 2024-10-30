@@ -1,5 +1,6 @@
 package com.jagex.game.config.vartype;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.vartype.constants.ScriptVarType;
@@ -32,32 +33,32 @@ public abstract class VarType implements VarConfigType {
 	}
 
 	@ObfuscatedName("ec.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int var2 = buf.g1();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
-			VarTypeEncodingKey var3 = (VarTypeEncodingKey) SerializableEnums.decode(VarTypeEncodingKey.values(), var2);
+			VarTypeEncodingKey var3 = (VarTypeEncodingKey) SerializableEnums.decode((SerializableEnum[]) VarTypeEncodingKey.values(), var2);
 			if (var3 == null) {
-				this.decode(buf, var2);
+				this.decode(arg0, var2);
 			} else {
 				switch(var3.index) {
 					case 0:
 						this.legacyDefaultValue = false;
 						break;
 					case 1:
-						int var4 = buf.g1();
-						this.dataType = (ScriptVarType) SerializableEnums.decode(ScriptVarType.values(), var4);
+						int var4 = arg0.g1();
+						this.dataType = (ScriptVarType) SerializableEnums.decode((SerializableEnum[]) ScriptVarType.values(), var4);
 						if (this.dataType != null) {
 							break;
 						}
 						throw new IllegalStateException("");
 					case 2:
-						buf.gjstr2();
+						arg0.gjstr2();
 						break;
 					case 3:
-						SerializableEnums.decode(VarTransmitLevel.values(), buf.g1());
+						SerializableEnums.decode((SerializableEnum[]) VarTransmitLevel.values(), arg0.g1());
 						break;
 					case 4:
 					default:
@@ -65,7 +66,7 @@ public abstract class VarType implements VarConfigType {
 					case 5:
 						break;
 					case 6:
-						this.lifeTime = (VarLifetime) SerializableEnums.decode(VarLifetime.values(), buf.g1());
+						this.lifeTime = (VarLifetime) SerializableEnums.decode((SerializableEnum[]) VarLifetime.values(), arg0.g1());
 				}
 			}
 		}

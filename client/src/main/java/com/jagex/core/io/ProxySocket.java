@@ -2,14 +2,20 @@ package com.jagex.core.io;
 
 import com.jagex.game.client.ProxyAuthenticationRequiredException;
 import deob.ObfuscatedName;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
-import java.net.*;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.net.Proxy.Type;
+import java.net.ProxySelector;
+import java.net.Socket;
+import java.net.SocketAddress;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.List;
 
@@ -26,19 +32,15 @@ public class ProxySocket extends AbstractSocket {
 			System.setProperty("java.net.useSystemProxies", "true");
 		}
 		boolean var2 = this.port == 443;
-		List var3 = null;
-		List var4 = null;
+		List var3;
+		List var4;
 		try {
-			try {
-				var3 = this.field11880.select(new URI((var2 ? "https" : "http") + "://" + this.host));
-				var4 = this.field11880.select(new URI((var2 ? "http" : "https") + "://" + this.host));
-			} catch (URISyntaxException var17) {
-				return this.createSocket();
-			}
-			var3.addAll(var4);
-		} catch (UnsupportedOperationException ex) {
-			ex.printStackTrace();
+			var3 = this.field11880.select(new URI((var2 ? "https" : "http") + "://" + this.host));
+			var4 = this.field11880.select(new URI((var2 ? "http" : "https") + "://" + this.host));
+		} catch (URISyntaxException var17) {
+			return this.createSocket();
 		}
+		var3.addAll(var4);
 		Object[] var6 = var3.toArray();
 		ProxyAuthenticationRequiredException var7 = null;
 		Object[] var8 = var6;

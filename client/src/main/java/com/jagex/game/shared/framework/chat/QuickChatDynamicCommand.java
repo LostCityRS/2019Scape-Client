@@ -1,5 +1,6 @@
 package com.jagex.game.shared.framework.chat;
 
+import com.jagex.game.script.ClientScriptState;
 import deob.ObfuscatedName;
 
 @ObfuscatedName("xs")
@@ -64,7 +65,7 @@ public class QuickChatDynamicCommand {
 
 	@ObfuscatedName("vl.e(I)[Lxs;")
 	public static QuickChatDynamicCommand[] method9288() {
-		return new QuickChatDynamicCommand[] {ACTIVECOMBATLEVEL, ENUM_STRING, ENUM_STRING_VARBIT, OBJDIALOG, OBJTRADEDIALOG, ACC_GETMEANCOMBATLEVEL, LISTDIALOG, COUNTDIALOG, TOSTRING_VARBIT, STAT_BASE, TOSTRING_VARP, ENUM_STRING_STATBASE, ACC_GETCOUNT_WORLD, ENUM_STRING_CLAN, TOSTRING_SHARED};
+		return new QuickChatDynamicCommand[] { ACTIVECOMBATLEVEL, ENUM_STRING, ENUM_STRING_VARBIT, OBJDIALOG, OBJTRADEDIALOG, ACC_GETMEANCOMBATLEVEL, LISTDIALOG, COUNTDIALOG, TOSTRING_VARBIT, STAT_BASE, TOSTRING_VARP, ENUM_STRING_STATBASE, ACC_GETCOUNT_WORLD, ENUM_STRING_CLAN, TOSTRING_SHARED };
 	}
 
 	public QuickChatDynamicCommand(int arg0, int arg1, int arg2, int arg3) {
@@ -85,4 +86,10 @@ public class QuickChatDynamicCommand {
 		return null;
 	}
 
+	public static final void add(ClientScriptState arg0, short arg1) {
+		arg0.isp -= 2;
+		int var2 = arg0.intStack[arg0.isp];
+		int var3 = arg0.intStack[arg0.isp + 1];
+		arg0.intStack[++arg0.isp - 1] = var2 - var3;
+	}
 }

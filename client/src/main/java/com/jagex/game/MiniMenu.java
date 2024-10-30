@@ -1,9 +1,19 @@
 package com.jagex.game;
 
 import com.jagex.core.constants.ModeGame;
-import com.jagex.core.datastruct.*;
+import com.jagex.core.datastruct.HashTable;
+import com.jagex.core.datastruct.LinkList;
+import com.jagex.core.datastruct.LinkListIterator;
+import com.jagex.core.datastruct.SecondaryLinkedList;
+import com.jagex.core.datastruct.SecondaryLinkedListIterator;
+import com.jagex.core.datastruct.SoftLruHashTable;
 import com.jagex.core.utils.TextUtil;
-import com.jagex.game.client.*;
+import com.jagex.game.client.ClientMessage;
+import com.jagex.game.client.GameShell;
+import com.jagex.game.client.KeyHeldBinding;
+import com.jagex.game.client.LocalisedText;
+import com.jagex.game.client.MouseEvent;
+import com.jagex.game.client.ReceivePlayerPositions;
 import com.jagex.game.config.defaults.Binding;
 import com.jagex.game.config.defaults.MiniMenuDefaults;
 import com.jagex.game.config.iftype.Component;
@@ -16,21 +26,33 @@ import com.jagex.game.config.questtype.QuestType;
 import com.jagex.game.network.protocol.ClientProt;
 import com.jagex.game.player.AttackOpPriority;
 import com.jagex.game.shared.movement.CoordGrid;
-import com.jagex.game.world.entity.*;
-import com.jagex.graphics.*;
+import com.jagex.game.world.entity.Location;
+import com.jagex.game.world.entity.Obj;
+import com.jagex.game.world.entity.ObjStackEntity;
+import com.jagex.game.world.entity.ObjectNode;
+import com.jagex.game.world.entity.PickableEntity;
+import com.jagex.game.world.entity.PickableEntityList;
+import com.jagex.game.world.entity.PlayerEntity;
+import com.jagex.game.world.entity.Scene;
+import com.jagex.graphics.DefaultSprites;
+import com.jagex.graphics.Font;
+import com.jagex.graphics.FontMetrics;
+import com.jagex.graphics.Sprite;
+import com.jagex.graphics.SpriteData;
+import com.jagex.graphics.SpriteDataProvider;
+import com.jagex.graphics.Toolkit;
 import com.jagex.graphics.scenegraph.PrimaryLayerEntity;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import com.jagex.math.Vector3;
 import deob.ObfuscatedName;
+import java.util.Iterator;
+import java.util.List;
 import rs2.client.Client;
 import rs2.client.logic.DelayedStateChange;
 import rs2.client.scene.ObjStackList;
 import rs2.client.scene.entities.NpcEntity;
 import rs2.client.scene.entities.PathingEntity;
-
-import java.util.Iterator;
-import java.util.List;
 
 @ObfuscatedName("o")
 public class MiniMenu {
@@ -1180,9 +1202,9 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("py.ai(IIB)V")
-	public static void setBounds(int viewportX, int viewportY) {
-		MiniMenu.viewportX = viewportX;
-		MiniMenu.viewportY = viewportY;
+	public static void setBounds(int arg0, int arg1) {
+		viewportX = arg0;
+		viewportY = arg1;
 	}
 
 	@ObfuscatedName("aoq.aw(Lhf;IIB)V")
@@ -1379,15 +1401,15 @@ public class MiniMenu {
 	}
 
 	@ObfuscatedName("mw.ax(Lou;Lpq;IIB)V")
-	public static void method5928(Matrix4x3 arg0, Matrix4x4 arg1, int viewportWidth, int viewportHeight) {
+	public static void method5928(Matrix4x3 arg0, Matrix4x4 arg1, int arg2, int arg3) {
 		if (field553 == null) {
 			field553 = new Matrix4x4(arg1);
 		} else {
 			field553.setTo(arg1);
 		}
 		field572.setTo(arg0);
-		MiniMenu.viewportWidth = viewportWidth;
-		MiniMenu.viewportHeight = viewportHeight;
+		viewportWidth = arg2;
+		viewportHeight = arg3;
 	}
 
 	@ObfuscatedName("xl.av(Lpq;B)V")
@@ -2017,29 +2039,29 @@ public class MiniMenu {
 		if (arg0 == null || field542.sentinel == arg0) {
 			return;
 		}
-		int sceneBaseTileX = arg0.sceneBaseTileX;
-		int sceneBaseTileZ = arg0.sceneBaseTileZ;
-		int action = arg0.menuAction;
+		int var4 = arg0.sceneBaseTileX;
+		int var5 = arg0.sceneBaseTileZ;
+		int var6 = arg0.menuAction;
 		int var7 = (int) arg0.field12300;
 		long var8 = arg0.field12300;
-		if (action >= 2000) {
-			action -= 2000;
+		if (var6 >= 2000) {
+			var6 -= 2000;
 		}
 		CoordGrid var10 = Client.world.getBase();
-		if (action == 1008 || action == 1009 || action == 1010 || action == 1011 || action == 1012) {
-			ClientWorldMap.method15110(action, var7, sceneBaseTileX);
+		if (var6 == 1008 || var6 == 1009 || var6 == 1010 || var6 == 1011 || var6 == 1012) {
+			ClientWorldMap.method15110(var6, var7, var4);
 		}
-		if (action == 58) {
-			Component var11 = Component.method16682(sceneBaseTileZ, sceneBaseTileX);
+		if (var6 == 58) {
+			Component var11 = Component.method16682(var5, var4);
 			if (var11 != null) {
 				Client.method5926(var11);
 			}
 		}
-		if (action == 57 || action == 1007) {
-			Client.method4527(var7, sceneBaseTileZ, sceneBaseTileX, arg0.field12301);
+		if (var6 == 57 || var6 == 1007) {
+			Client.method4527(var7, var5, var4, arg0.field12301);
 		}
-		if (action == 25) {
-			Component var12 = Component.method16682(sceneBaseTileZ, sceneBaseTileX);
+		if (var6 == 25) {
+			Component var12 = Component.method16682(var5, var4);
 			if (var12 != null) {
 				Client.method9403();
 				ServerKeyProperties var13 = Client.method17197(var12);
@@ -2052,74 +2074,74 @@ public class MiniMenu {
 			}
 			return;
 		}
-		ClientProt opplayer = null;
-		if (action == 44) {
-			opplayer = ClientProt.OPPLAYER1;
-		} else if (action == 45) {
-			opplayer = ClientProt.OPPLAYER2;
-		} else if (action == 46) {
-			opplayer = ClientProt.OPPLAYER3;
-		} else if (action == 47) {
-			opplayer = ClientProt.OPPLAYER4;
-		} else if (action == 48) {
-			opplayer = ClientProt.OPPLAYER5;
-		} else if (action == 49) {
-			opplayer = ClientProt.OPPLAYER6;
-		} else if (action == 50) {
-			opplayer = ClientProt.OPPLAYER7;
-		} else if (action == 51) {
-			opplayer = ClientProt.OPPLAYER8;
-		} else if (action == 52) {
-			opplayer = ClientProt.OPPLAYER9;
-		} else if (action == 53) {
-			opplayer = ClientProt.OPPLAYER10;
+		ClientProt var14 = null;
+		if (var6 == 44) {
+			var14 = ClientProt.OPPLAYER1;
+		} else if (var6 == 45) {
+			var14 = ClientProt.OPPLAYER2;
+		} else if (var6 == 46) {
+			var14 = ClientProt.OPPLAYER3;
+		} else if (var6 == 47) {
+			var14 = ClientProt.OPPLAYER4;
+		} else if (var6 == 48) {
+			var14 = ClientProt.OPPLAYER5;
+		} else if (var6 == 49) {
+			var14 = ClientProt.OPPLAYER6;
+		} else if (var6 == 50) {
+			var14 = ClientProt.OPPLAYER7;
+		} else if (var6 == 51) {
+			var14 = ClientProt.OPPLAYER8;
+		} else if (var6 == 52) {
+			var14 = ClientProt.OPPLAYER9;
+		} else if (var6 == 53) {
+			var14 = ClientProt.OPPLAYER10;
 		}
-		if (opplayer != null) {
+		if (var14 != null) {
 			PlayerEntity var15 = Client.players[var7];
 			if (var15 != null) {
 				Client.crossX = arg1;
 				Client.crossY = arg2;
 				Client.crossMode = 2;
 				Client.crossCycle = 0;
-				ClientMessage var16 = ClientMessage.createMessage(opplayer, Client.gameConnection.randomOut);
+				ClientMessage var16 = ClientMessage.createMessage(var14, Client.gameConnection.randomOut);
 				var16.buf.p2(var7);
 				var16.buf.p1_alt1(isCtrlKeyHeld() ? 1 : 0);
 				Client.gameConnection.queue(var16);
 				Client.method6820(var15.routeWaypointX[0], var15.routeWaypointZ[0]);
 			}
 		}
-		ClientProt oploc = null;
-		if (action == 3) {
-			oploc = ClientProt.OPLOC1;
-		} else if (action == 4) {
-			oploc = ClientProt.OPLOC2;
-		} else if (action == 5) {
-			oploc = ClientProt.OPLOC3;
-		} else if (action == 6) {
-			oploc = ClientProt.OPLOC4;
-		} else if (action == 1001) {
-			oploc = ClientProt.OPLOC5;
-		} else if (action == 1002) {
-			oploc = ClientProt.OPLOC6;
+		ClientProt var17 = null;
+		if (var6 == 3) {
+			var17 = ClientProt.OPLOC1;
+		} else if (var6 == 4) {
+			var17 = ClientProt.OPLOC2;
+		} else if (var6 == 5) {
+			var17 = ClientProt.OPLOC3;
+		} else if (var6 == 6) {
+			var17 = ClientProt.OPLOC4;
+		} else if (var6 == 1001) {
+			var17 = ClientProt.OPLOC5;
+		} else if (var6 == 1002) {
+			var17 = ClientProt.OPLOC6;
 		}
-		if (oploc != null) {
+		if (var17 != null) {
 			Client.crossX = arg1;
 			Client.crossY = arg2;
 			Client.crossMode = 2;
 			Client.crossCycle = 0;
-			ClientMessage var18 = ClientMessage.createMessage(oploc, Client.gameConnection.randomOut);
+			ClientMessage var18 = ClientMessage.createMessage(var17, Client.gameConnection.randomOut);
 			var18.buf.p1_alt2(isCtrlKeyHeld() ? 1 : 0);
-			var18.buf.p2(var10.z + sceneBaseTileZ);
+			var18.buf.p2(var10.z + var5);
 			var18.buf.p4((int) (var8 >>> 32) & Integer.MAX_VALUE);
-			var18.buf.p2_alt3(var10.x + sceneBaseTileX);
+			var18.buf.p2_alt3(var10.x + var4);
 			Client.gameConnection.queue(var18);
-			Client.method6820(sceneBaseTileX, sceneBaseTileZ);
+			Client.method6820(var4, var5);
 		}
-		if (action == 23) {
+		if (var6 == 23) {
 			if (Client.staffModLevel > 0 && isShiftKeyHeld()) {
-				Client.jtele(Client.localPlayerEntity.level, var10.x + sceneBaseTileX, var10.z + sceneBaseTileZ);
+				Client.jtele(Client.localPlayerEntity.level, var10.x + var4, var10.z + var5);
 			} else {
-				ClientMessage var19 = method9839(sceneBaseTileX, sceneBaseTileZ, var7);
+				ClientMessage var19 = method9839(var4, var5, var7);
 				if (var7 == 1) {
 					var19.buf.p1(-1);
 					var19.buf.p1(-1);
@@ -2139,24 +2161,24 @@ public class MiniMenu {
 					Client.crossCycle = 0;
 				}
 				Client.gameConnection.queue(var19);
-				Client.method6820(sceneBaseTileX, sceneBaseTileZ);
+				Client.method6820(var4, var5);
 			}
 		}
-		ClientProt opnpc = null;
-		if (action == 9) {
-			opnpc = ClientProt.OPNPC1;
-		} else if (action == 10) {
-			opnpc = ClientProt.OPNPC2;
-		} else if (action == 11) {
-			opnpc = ClientProt.OPNPC3;
-		} else if (action == 12) {
-			opnpc = ClientProt.OPNPC4;
-		} else if (action == 13) {
-			opnpc = ClientProt.OPNPC5;
-		} else if (action == 1003) {
-			opnpc = ClientProt.OPNPC6;
+		ClientProt var21 = null;
+		if (var6 == 9) {
+			var21 = ClientProt.OPNPC1;
+		} else if (var6 == 10) {
+			var21 = ClientProt.OPNPC2;
+		} else if (var6 == 11) {
+			var21 = ClientProt.OPNPC3;
+		} else if (var6 == 12) {
+			var21 = ClientProt.OPNPC4;
+		} else if (var6 == 13) {
+			var21 = ClientProt.OPNPC5;
+		} else if (var6 == 1003) {
+			var21 = ClientProt.OPNPC6;
 		}
-		if (opnpc != null) {
+		if (var21 != null) {
 			ObjectNode var22 = (ObjectNode) Client.npcs.get((long) var7);
 			if (var22 != null) {
 				NpcEntity var23 = (NpcEntity) var22.value;
@@ -2164,14 +2186,14 @@ public class MiniMenu {
 				Client.crossY = arg2;
 				Client.crossMode = 2;
 				Client.crossCycle = 0;
-				ClientMessage var24 = ClientMessage.createMessage(opnpc, Client.gameConnection.randomOut);
+				ClientMessage var24 = ClientMessage.createMessage(var21, Client.gameConnection.randomOut);
 				var24.buf.p1_alt3(isCtrlKeyHeld() ? 1 : 0);
 				var24.buf.p2_alt2(var7);
 				Client.gameConnection.queue(var24);
 				Client.method6820(var23.routeWaypointX[0], var23.routeWaypointZ[0]);
 			}
 		}
-		if (action == 17) {
+		if (var6 == 17) {
 			Client.crossX = arg1;
 			Client.crossY = arg2;
 			Client.crossMode = 2;
@@ -2180,14 +2202,14 @@ public class MiniMenu {
 			var25.buf.p2_alt1(var7);
 			var25.buf.p1_alt1(isCtrlKeyHeld() ? 1 : 0);
 			var25.buf.p2_alt1(Client.activeComponentInvobject);
-			var25.buf.p2_alt1(var10.z + sceneBaseTileZ);
-			var25.buf.p2_alt1(var10.x + sceneBaseTileX);
+			var25.buf.p2_alt1(var10.z + var5);
+			var25.buf.p2_alt1(var10.x + var4);
 			var25.buf.p4_alt2(Client.activeComponentParentLayer);
 			var25.buf.p2_alt3(Client.activeComponentId);
 			Client.gameConnection.queue(var25);
-			Client.method6820(sceneBaseTileX, sceneBaseTileZ);
+			Client.method6820(var4, var5);
 		}
-		if (action == 8) {
+		if (var6 == 8) {
 			ObjectNode var26 = (ObjectNode) Client.npcs.get((long) var7);
 			if (var26 != null) {
 				NpcEntity var27 = (NpcEntity) var26.value;
@@ -2205,37 +2227,37 @@ public class MiniMenu {
 				Client.method6820(var27.routeWaypointX[0], var27.routeWaypointZ[0]);
 			}
 		}
-		if (action == 2) {
+		if (var6 == 2) {
 			Client.crossX = arg1;
 			Client.crossY = arg2;
 			Client.crossMode = 2;
 			Client.crossCycle = 0;
 			ClientMessage var29 = ClientMessage.createMessage(ClientProt.OPLOCT, Client.gameConnection.randomOut);
 			var29.buf.p1_alt1(isCtrlKeyHeld() ? 1 : 0);
-			var29.buf.p2_alt1(var10.x + sceneBaseTileX);
+			var29.buf.p2_alt1(var10.x + var4);
 			var29.buf.p2_alt1(Client.activeComponentInvobject);
-			var29.buf.p2_alt3(var10.z + sceneBaseTileZ);
+			var29.buf.p2_alt3(var10.z + var5);
 			var29.buf.p4_alt1(Client.activeComponentParentLayer);
 			var29.buf.p4_alt2((int) (var8 >>> 32) & Integer.MAX_VALUE);
 			var29.buf.p2(Client.activeComponentId);
 			Client.gameConnection.queue(var29);
-			Client.method6820(sceneBaseTileX, sceneBaseTileZ);
+			Client.method6820(var4, var5);
 		}
-		if (action == 60) {
+		if (var6 == 60) {
 			if (Client.staffModLevel > 0 && isShiftKeyHeld()) {
-				Client.jtele(Client.localPlayerEntity.level, var10.x + sceneBaseTileX, var10.z + sceneBaseTileZ);
+				Client.jtele(Client.localPlayerEntity.level, var10.x + var4, var10.z + var5);
 			} else {
 				Client.crossX = arg1;
 				Client.crossY = arg2;
 				Client.crossMode = 1;
 				Client.crossCycle = 0;
 				ClientMessage var30 = ClientMessage.createMessage(ClientProt.FACE_SQUARE, Client.gameConnection.randomOut);
-				var30.buf.p2_alt2(var10.z + sceneBaseTileZ);
-				var30.buf.p2_alt3(var10.x + sceneBaseTileX);
+				var30.buf.p2_alt2(var10.z + var5);
+				var30.buf.p2_alt3(var10.x + var4);
 				Client.gameConnection.queue(var30);
 			}
 		}
-		if (action == 16) {
+		if (var6 == 16) {
 			Client.crossX = arg1;
 			Client.crossY = arg2;
 			Client.crossMode = 2;
@@ -2248,34 +2270,34 @@ public class MiniMenu {
 			var31.buf.p4_alt2(Client.activeComponentParentLayer);
 			Client.gameConnection.queue(var31);
 		}
-		ClientProt opobj = null;
-		if (action == 18) {
-			opobj = ClientProt.OPOBJ1;
-		} else if (action == 19) {
-			opobj = ClientProt.OPOBJ2;
-		} else if (action == 20) {
-			opobj = ClientProt.OPOBJ3;
-		} else if (action == 21) {
-			opobj = ClientProt.OPOBJ4;
-		} else if (action == 22) {
-			opobj = ClientProt.OPOBJ5;
-		} else if (action == 1004) {
-			opobj = ClientProt.OPOBJ6;
+		ClientProt var32 = null;
+		if (var6 == 18) {
+			var32 = ClientProt.OPOBJ1;
+		} else if (var6 == 19) {
+			var32 = ClientProt.OPOBJ2;
+		} else if (var6 == 20) {
+			var32 = ClientProt.OPOBJ3;
+		} else if (var6 == 21) {
+			var32 = ClientProt.OPOBJ4;
+		} else if (var6 == 22) {
+			var32 = ClientProt.OPOBJ5;
+		} else if (var6 == 1004) {
+			var32 = ClientProt.OPOBJ6;
 		}
-		if (opobj != null) {
+		if (var32 != null) {
 			Client.crossX = arg1;
 			Client.crossY = arg2;
 			Client.crossMode = 2;
 			Client.crossCycle = 0;
-			ClientMessage var33 = ClientMessage.createMessage(opobj, Client.gameConnection.randomOut);
+			ClientMessage var33 = ClientMessage.createMessage(var32, Client.gameConnection.randomOut);
 			var33.buf.p2_alt1(var7);
-			var33.buf.p2_alt1(var10.x + sceneBaseTileX);
-			var33.buf.p2(var10.z + sceneBaseTileZ);
+			var33.buf.p2_alt1(var10.x + var4);
+			var33.buf.p2(var10.z + var5);
 			var33.buf.p1_alt3((arg3 ? 2 : 0) | (isCtrlKeyHeld() ? 1 : 0));
 			Client.gameConnection.queue(var33);
-			Client.method6820(sceneBaseTileX, sceneBaseTileZ);
+			Client.method6820(var4, var5);
 		}
-		if (action == 15) {
+		if (var6 == 15) {
 			PlayerEntity var34 = Client.players[var7];
 			if (var34 != null) {
 				Client.crossX = arg1;
@@ -2292,23 +2314,23 @@ public class MiniMenu {
 				Client.method6820(var34.routeWaypointX[0], var34.routeWaypointZ[0]);
 			}
 		}
-		if (action == 59) {
+		if (var6 == 59) {
 			Client.crossX = arg1;
 			Client.crossY = arg2;
 			Client.crossMode = 1;
 			Client.crossCycle = 0;
 			ClientMessage var36 = ClientMessage.createMessage(ClientProt.APCOORDT, Client.gameConnection.randomOut);
-			var36.buf.p2_alt2(var10.x + sceneBaseTileX);
+			var36.buf.p2_alt2(var10.x + var4);
 			var36.buf.p4_alt1(Client.activeComponentParentLayer);
 			var36.buf.p2(Client.activeComponentInvobject);
-			var36.buf.p2_alt2(var10.z + sceneBaseTileZ);
+			var36.buf.p2_alt2(var10.z + var5);
 			var36.buf.p2_alt2(Client.activeComponentId);
 			Client.gameConnection.queue(var36);
-			Client.method6820(sceneBaseTileX, sceneBaseTileZ);
+			Client.method6820(var4, var5);
 		}
-		if (action == 30 && Client.pressedContinueOption == null) {
-			Client.method612(sceneBaseTileZ, sceneBaseTileX);
-			Client.pressedContinueOption = Component.method16682(sceneBaseTileZ, sceneBaseTileX);
+		if (var6 == 30 && Client.pressedContinueOption == null) {
+			Client.method612(var5, var4);
+			Client.pressedContinueOption = Component.method16682(var5, var4);
 			if (Client.pressedContinueOption != null) {
 				Client.requestRedrawComponent(Client.pressedContinueOption);
 			}

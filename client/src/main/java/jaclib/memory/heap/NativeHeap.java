@@ -2,10 +2,7 @@ package jaclib.memory.heap;
 
 import deob.ObfuscatedName;
 
-public final class NativeHeap {
-
-	@ObfuscatedName("jaclib/memory/heap/NativeHeap.peer")
-	public long peer;
+public class NativeHeap {
 
 	@ObfuscatedName("jaclib/memory/heap/NativeHeap.e")
 	public final int field415;

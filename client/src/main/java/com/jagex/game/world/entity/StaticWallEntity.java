@@ -2,6 +2,7 @@ package com.jagex.game.world.entity;
 
 import com.jagex.core.datastruct.Pair;
 import com.jagex.game.client.HardShadow;
+import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.loctype.LocType;
 import com.jagex.game.config.loctype.LocTypeList;
 import com.jagex.graphics.FloorModel;
@@ -61,31 +62,31 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	@ObfuscatedName("ajg.j")
 	public int y;
 
-	public StaticWallEntity(Scene scene, Toolkit toolkit, LocTypeList locTypeList, LocType locType, int level, int occludeLevel, int x, int y, int z, boolean underwater, int shape, int angle, boolean arg12, ScaleRotTrans scaleRotTrans) {
-		super(scene, x, y, z, level, occludeLevel, getType(shape, angle), scaleRotTrans);
-		this.locTypeList = locTypeList;
-		this.id = locType.id;
-		this.underwater = underwater;
-		this.shape = (byte) shape;
-		this.angle = (byte) angle;
-		this.active = locType.active != 0 && !underwater;
+	public StaticWallEntity(Scene arg0, Toolkit arg1, LocTypeList arg2, LocType arg3, int arg4, int arg5, int arg6, int arg7, int arg8, boolean arg9, int arg10, int arg11, boolean arg12, ScaleRotTrans arg13) {
+		super(arg0, arg6, arg7, arg8, arg4, arg5, getType(arg10, arg11), arg13);
+		this.locTypeList = arg2;
+		this.id = arg3.id;
+		this.underwater = arg9;
+		this.shape = (byte) arg10;
+		this.angle = (byte) arg11;
+		this.active = arg3.active != 0 && !arg9;
 		this.field11171 = arg12;
-		this.hasHardShadow = toolkit.supportsHardShadows() && locType.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
-		this.y = y;
+		this.hasHardShadow = arg1.supportsHardShadows() && arg3.hardshadow && !this.underwater && Client.preferences.sceneryShadows.getValue() != 0;
+		this.y = arg7;
 		int var15 = 2048;
 		if (this.field11171) {
 			var15 |= 0x10000;
 		}
-		if (locType.antimacro) {
+		if (arg3.antimacro) {
 			var15 |= 0x80000;
 		}
-		Pair var16 = this.method17420(toolkit, var15, this.hasHardShadow);
+		Pair var16 = this.method17420(arg1, var15, this.hasHardShadow);
 		if (var16 != null) {
 			this.model = (Model) var16.first;
 			this.shadow = (HardShadow) var16.second;
-			if (this.field11171 || locType.antimacro) {
+			if (this.field11171 || arg3.antimacro) {
 				this.model = this.model.method1773((byte) 0, var15, false);
-				if (locType.antimacro) {
+				if (arg3.antimacro) {
 					LocTint var17 = Client.world.method7722();
 					this.model.method1745(var17.field5015, var17.field5013, var17.field5014, var17.field5012);
 				}
@@ -114,8 +115,8 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("cs.bz(III)I")
-	public static int getType(int shape, int angle) {
-		return LocShape.WALL_DIAGONAL_CORNER.id == shape || LocShape.WALL_SQUARE_CORNER.id == shape ? ROTATION_WALL_CORNER_TYPE[angle & 0x3] : ROTATION_WALL_TYPE[angle & 0x3];
+	public static int getType(int arg0, int arg1) {
+		return LocShape.WALL_DIAGONAL_CORNER.id == arg0 || LocShape.WALL_SQUARE_CORNER.id == arg0 ? ROTATION_WALL_CORNER_TYPE[arg1 & 0x3] : ROTATION_WALL_TYPE[arg1 & 0x3];
 	}
 
 	@ObfuscatedName("ajg.bv(Ldh;II)Ldo;")
@@ -149,16 +150,16 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.fv(Ldh;B)Luq;")
-	public EntityBounds method17371(Toolkit toolkit) {
+	public EntityBounds method17371(Toolkit arg0) {
 		Vector3 var2 = this.getTransform().trans;
 		if (this.field11165 == null) {
-			this.field11165 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17419(toolkit, 0));
+			this.field11165 = GraphEntity.method15111((int) var2.x, (int) var2.y, (int) var2.z, this.method17419(arg0, 0));
 		}
 		return this.field11165;
 	}
 
 	@ObfuscatedName("ajg.fc(Ldh;I)Ltl;")
-	public PickableEntity draw(Toolkit toolkit) {
+	public PickableEntity draw(Toolkit arg0) {
 		if (this.model == null) {
 			return null;
 		}
@@ -169,22 +170,22 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 			this.model.draw(var2, this.entityBounds[0], 0);
 		} else {
 			this.model.draw(var2, null, 0);
-			toolkit.method2193(var2, this.entityBounds[0], var4);
+			arg0.method2193(var2, this.entityBounds[0], var4);
 		}
 		return var3;
 	}
 
 	@ObfuscatedName("ajg.fw(Ldh;I)V")
-	public void method17373(Toolkit toolkit) {
+	public void method17373(Toolkit arg0) {
 	}
 
 	@ObfuscatedName("ajg.fa(Ldh;IIB)Z")
-	public boolean method17375(Toolkit toolkit, int arg1, int arg2) {
+	public boolean method17375(Toolkit arg0, int arg1, int arg2) {
 		Cuboid var4 = ((LocType) this.locTypeList.list(this.id)).clickbox;
 		if (var4 != null) {
-			return toolkit.pick(arg1, arg2, this.method10533(), var4);
+			return arg0.pick(arg1, arg2, this.method10533(), var4);
 		}
-		Model var5 = this.method17419(toolkit, 131072);
+		Model var5 = this.method17419(arg0, 131072);
 		if (var5 == null) {
 			return false;
 		} else {
@@ -199,14 +200,14 @@ public class StaticWallEntity extends WallLayerEntity implements Location {
 	}
 
 	@ObfuscatedName("ajg.fq(Ldh;Lalh;IIIZB)V")
-	public void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
-		if (entity instanceof StaticWallEntity) {
-			StaticWallEntity var7 = (StaticWallEntity) entity;
+	public void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
+		if (arg1 instanceof StaticWallEntity) {
+			StaticWallEntity var7 = (StaticWallEntity) arg1;
 			if (this.model != null && var7.model != null) {
 				this.model.method1686(var7.model, arg2, arg3, arg4, arg5);
 			}
-		} else if (entity instanceof StaticSceneryEntity) {
-			StaticSceneryEntity var8 = (StaticSceneryEntity) entity;
+		} else if (arg1 instanceof StaticSceneryEntity) {
+			StaticSceneryEntity var8 = (StaticSceneryEntity) arg1;
 			if (this.model != null && var8.model != null) {
 				this.model.method1686(var8.model, arg2, arg3, arg4, arg5);
 			}

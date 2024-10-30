@@ -1,14 +1,10 @@
 package jaggl;
 
 import deob.ObfuscatedName;
-
-import java.awt.*;
+import java.awt.Canvas;
 import java.util.Hashtable;
 
 public class OpenGL {
-
-	@ObfuscatedName("jaggl/OpenGL.peer")
-	public long peer;
 
 	@ObfuscatedName("jaggl/OpenGL.e")
 	public Hashtable field0;

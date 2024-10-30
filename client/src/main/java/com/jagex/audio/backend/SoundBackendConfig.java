@@ -3,7 +3,6 @@ package com.jagex.audio.backend;
 import com.jagex.audio.api.SoundBackendType;
 import com.jagex.audio.stream.SoundRelatedType2;
 import deob.ObfuscatedName;
-
 import java.util.HashMap;
 
 @ObfuscatedName("xf")

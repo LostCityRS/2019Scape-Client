@@ -7,7 +7,7 @@ import deob.ObfuscatedName;
 import rs2.client.Client;
 
 @ObfuscatedName("yi")
-public final class TwitchCommands {
+public class TwitchCommands {
 
 	@ObfuscatedName("yi.e")
 	public static boolean debugging = false;

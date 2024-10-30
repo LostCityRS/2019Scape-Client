@@ -1,9 +1,8 @@
 package com.jagex.game.client;
 
 import deob.ObfuscatedName;
-
 import java.applet.Applet;
-import java.awt.*;
+import java.awt.Desktop;
 import java.awt.Desktop.Action;
 import java.net.URI;
 import java.net.URL;

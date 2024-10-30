@@ -3,15 +3,14 @@ package com.jagex.game.load;
 import com.jagex.game.client.ServerPorts;
 import com.jagex.game.client.ServerType;
 import deob.ObfuscatedName;
-import rs2.client.Client;
-import rs2.client.login.WorldSwitcher;
-
 import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
+import rs2.client.Client;
+import rs2.client.login.WorldSwitcher;
 
 @ObfuscatedName("kf")
 public class LoadingScreenNewsManager implements Runnable {

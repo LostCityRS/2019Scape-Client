@@ -12,7 +12,6 @@ import com.jagex.js5.caching.Js5DiskCache;
 import com.jagex.js5.index.Js5Index;
 import com.jagex.js5.worker.Js5WorkerRequest;
 import deob.ObfuscatedName;
-
 import java.util.zip.CRC32;
 
 @ObfuscatedName("aij")
@@ -87,22 +86,22 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	@ObfuscatedName("aij.ag")
 	public static CRC32 crc32 = new CRC32();
 
-	public Js5NetResourceProvider(int archive, DiskStore datafs, DiskStore masterfs, Js5TcpClient tcpClient, Js5HttpClient httpClient, Js5DiskCache diskCache, int crc, byte[] whirlpool, int indexversion, boolean arg9, int arg10) {
-		this.archive = archive;
-		this.datafs = datafs;
+	public Js5NetResourceProvider(int arg0, DiskStore arg1, DiskStore arg2, Js5TcpClient arg3, Js5HttpClient arg4, Js5DiskCache arg5, int arg6, byte[] arg7, int arg8, boolean arg9, int arg10) {
+		this.archive = arg0;
+		this.datafs = arg1;
 		if (this.datafs == null) {
 			this.verifyAll = false;
 		} else {
 			this.verifyAll = true;
 			this.groupQueue = new LinkList();
 		}
-		this.masterfs = masterfs;
-		this.tcpClient = tcpClient;
-		this.httpClient = httpClient;
-		this.diskCache = diskCache;
-		this.crc = crc;
-		this.whirlpool = whirlpool;
-		this.indexversion = indexversion;
+		this.masterfs = arg2;
+		this.tcpClient = arg3;
+		this.httpClient = arg4;
+		this.diskCache = arg5;
+		this.crc = arg6;
+		this.whirlpool = arg7;
+		this.indexversion = arg8;
 		this.discardOrphans = arg9;
 		if (this.masterfs != null) {
 			this.currentRequest = this.diskCache.readSynchronous(this.archive, this.masterfs);
@@ -110,13 +109,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@ObfuscatedName("aij.o(I[BIII)V")
-	public void method16821(int crc, byte[] whirlpool, int indexversion, int arg3) {
-		if (this.method16822(crc, whirlpool, indexversion, arg3)) {
+	public void method16821(int arg0, byte[] arg1, int arg2, int arg3) {
+		if (this.method16822(arg0, arg1, arg2, arg3)) {
 			return;
 		}
-		this.crc = crc;
-		this.whirlpool = whirlpool;
-		this.indexversion = indexversion;
+		this.crc = arg0;
+		this.whirlpool = arg1;
+		this.indexversion = arg2;
 		this.index = null;
 		this.currentRequest = null;
 		if (!this.tcpClient.isUrgentsFull()) {
@@ -125,11 +124,11 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@ObfuscatedName("aij.s(I[BIII)Z")
-	public boolean method16822(int crc, byte[] whirlpool, int indexversion, int arg3) {
-		if (this.crc == crc && this.indexversion == indexversion) {
+	public boolean method16822(int arg0, byte[] arg1, int arg2, int arg3) {
+		if (this.crc == arg0 && this.indexversion == arg2) {
 			boolean var5 = true;
 			for (int var6 = 0; var6 < this.whirlpool.length; var6++) {
-				if (this.whirlpool[var6] != whirlpool[var6]) {
+				if (this.whirlpool[var6] != arg1[var6]) {
 					var5 = false;
 					break;
 				}
@@ -164,13 +163,13 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.currentRequest.incomplete) {
 			return null;
 		}
-		byte[] bytes = this.currentRequest.getBytes();
+		byte[] var1 = this.currentRequest.getBytes();
 		if (this.currentRequest instanceof Js5WorkerRequest) {
 			try {
-				if (bytes == null) {
+				if (var1 == null) {
 					throw new RuntimeException();
 				}
-				this.index = new Js5Index(bytes, this.crc, this.whirlpool);
+				this.index = new Js5Index(var1, this.crc, this.whirlpool);
 				if (this.index.version != this.indexversion) {
 					throw new RuntimeException();
 				}
@@ -185,10 +184,10 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 			}
 		} else {
 			try {
-				if (bytes == null) {
+				if (var1 == null) {
 					throw new RuntimeException();
 				}
-				this.index = new Js5Index(bytes, this.crc, this.whirlpool);
+				this.index = new Js5Index(var1, this.crc, this.whirlpool);
 			} catch (RuntimeException var5) {
 				this.tcpClient.error(255, this.archive);
 				this.index = null;
@@ -200,7 +199,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				return null;
 			}
 			if (this.masterfs != null) {
-				this.diskCache.write(this.archive, bytes, this.masterfs);
+				this.diskCache.write(this.archive, var1, this.masterfs);
 			}
 		}
 		this.currentRequest = null;
@@ -213,206 +212,175 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@ObfuscatedName("aij.n(II)[B")
 	public byte[] fetchgroup(int arg0) {
-		Js5Request request = this.fetchgroup_inner(arg0, 0);
-		if (request == null) {
+		Js5Request var2 = this.fetchgroup_inner(arg0, 0);
+		if (var2 == null) {
 			return null;
 		} else {
-			byte[] bytes = request.getBytes();
-			request.unlink();
-			return bytes;
+			byte[] var3 = var2.getBytes();
+			var2.unlink();
+			return var3;
 		}
 	}
 
 	@ObfuscatedName("aij.q(IIB)Lask;")
-	public Js5Request fetchgroup_inner(int group, int arg1) {
-		Js5Request request = (Js5Request) this.requests.get((long) group);
-		if (request != null && arg1 == 0 && !request.urgent && request.incomplete) {
-			request.unlink();
-			request = null;
+	public Js5Request fetchgroup_inner(int arg0, int arg1) {
+		Js5Request var3 = (Js5Request) this.requests.get((long) arg0);
+		if (var3 != null && arg1 == 0 && !var3.urgent && var3.incomplete) {
+			var3.unlink();
+			var3 = null;
 		}
-
-		if (request == null) {
+		if (var3 == null) {
 			if (arg1 == 0) {
-				if (this.datafs != null && this.groupStatus[group] != -1) {
-					request = this.diskCache.readSynchronous(group, this.datafs);
+				if (this.datafs != null && this.groupStatus[arg0] != -1) {
+					var3 = this.diskCache.readSynchronous(arg0, this.datafs);
 				} else if (this.httpClient == null) {
 					if (this.tcpClient.isUrgentsFull()) {
 						return null;
 					}
-					request = this.tcpClient.queueRequest(this.archive, group, (byte) 2, true);
+					var3 = this.tcpClient.queueRequest(this.archive, arg0, (byte) 2, true);
 				} else {
-					request = this.httpClient.sendHttpRequest(this.archive, group, (byte) 2, true, this.index.groupChecksums[group], this.index.groupVersions[group]);
-					if (request == null) {
+					var3 = this.httpClient.sendHttpRequest(this.archive, arg0, (byte) 2, true, this.index.groupChecksums[arg0], this.index.groupVersions[arg0]);
+					if (var3 == null) {
 						return null;
 					}
 				}
 			} else if (arg1 == 1) {
 				if (this.datafs == null) {
-					throw new RuntimeException("fetchgroup_inner - VERIFY requested but no datafs available!");
+					throw new RuntimeException();
 				}
-
-				request = this.diskCache.read(group, this.datafs);
+				var3 = this.diskCache.read(arg0, this.datafs);
 			} else if (arg1 == 2) {
 				if (this.datafs == null) {
-					throw new RuntimeException("fetchgroup_inner - PREFETCH requested but no datafs available!");
+					throw new RuntimeException();
 				}
-
-				if (this.groupStatus[group] != -1) {
-					throw new RuntimeException("fetchgroup_inner - PREFETCH requested, but cache isn't known invalid!");
+				if (this.groupStatus[arg0] != -1) {
+					throw new RuntimeException();
 				}
-
 				if (this.httpClient != null) {
 					return null;
 				}
-
 				if (this.tcpClient.isPrefetchesFull()) {
 					return null;
 				}
-
-				request = this.tcpClient.queueRequest(this.archive, group, (byte) 2, false);
+				var3 = this.tcpClient.queueRequest(this.archive, arg0, (byte) 2, false);
 			} else {
-				throw new RuntimeException("Invalid fetchgroup mode!");
+				throw new RuntimeException();
 			}
-
-			this.requests.put(request, (long) group);
+			this.requests.put(var3, (long) arg0);
 		}
-
-		if (request.incomplete) {
+		if (var3.incomplete) {
 			return null;
 		}
-
-		byte[] data = request.getBytes();
-		if (!(request instanceof Js5WorkerRequest)) {
+		byte[] var4 = var3.getBytes();
+		if (!(var3 instanceof Js5WorkerRequest)) {
 			try {
-				if (data == null || data.length <= 2) {
+				if (var4 == null || var4.length <= 2) {
 					if (this.httpClient != null) {
-						request.unlink();
+						var3.unlink();
 						return null;
 					}
-
-					throw new RuntimeException("Data from server too small - data:" + data);
+					throw new RuntimeException();
 				}
-
 				crc32.reset();
-				crc32.update(data, 0, data.length - 2);
-
+				crc32.update(var4, 0, var4.length - 2);
 				int var13 = (int) crc32.getValue();
-				if (this.index.groupChecksums[group] != var13) {
-					throw new RuntimeException("Net fetch CRC incorrect");
+				if (this.index.groupChecksums[arg0] != var13) {
+					throw new RuntimeException();
 				}
-
-				if (this.index.groupDigests != null && this.index.groupDigests[group] != null) {
-					byte[] whirlpool = this.index.groupDigests[group];
-					byte[] resulted = Whirlpool.compute(data, 0, data.length - 2);
-					for (int index = 0; index < 64; index++) {
-						if (whirlpool[index] != resulted[index]) {
-		                    // throw new RuntimeException("Whirlpool for group " + arg0 + " incorrect - got:" + hexString(var14) + " expected:" + hexString(var15));
-							throw new RuntimeException("Whirlpool for group " + group + " incorrect");
+				if (this.index.groupDigests != null && this.index.groupDigests[arg0] != null) {
+					byte[] var14 = this.index.groupDigests[arg0];
+					byte[] var15 = Whirlpool.compute(var4, 0, var4.length - 2);
+					for (int var16 = 0; var16 < 64; var16++) {
+						if (var14[var16] != var15[var16]) {
+							throw new RuntimeException();
 						}
 					}
 				}
-
 				if (this.httpClient != null) {
 					this.tcpClient.errorCount = 0;
 					this.tcpClient.js5State = 0;
 				}
 			} catch (RuntimeException var21) {
-				this.tcpClient.error(this.archive, group);
-				request.unlink();
-				if (request.urgent) {
+				this.tcpClient.error(this.archive, arg0);
+				var3.unlink();
+				if (var3.urgent) {
 					if (this.httpClient == null) {
 						if (!this.tcpClient.isUrgentsFull()) {
-							Js5NetRequest netRequest = this.tcpClient.queueRequest(this.archive, group, (byte) 2, true);
-							this.requests.put(netRequest, (long) group);
+							Js5NetRequest var19 = this.tcpClient.queueRequest(this.archive, arg0, (byte) 2, true);
+							this.requests.put(var19, (long) arg0);
 						}
 					} else if (!this.httpClient.isPendingRequestsFull()) {
-						Js5HttpRequest httpRequest = this.httpClient.sendHttpRequest(this.archive, group, (byte) 2, true, this.index.groupChecksums[group], this.index.groupVersions[group]);
-						if (httpRequest != null) {
-							this.requests.put(httpRequest, (long) group);
+						Js5HttpRequest var18 = this.httpClient.sendHttpRequest(this.archive, arg0, (byte) 2, true, this.index.groupChecksums[arg0], this.index.groupVersions[arg0]);
+						if (var18 != null) {
+							this.requests.put(var18, (long) arg0);
 						}
 					}
 				}
 				return null;
 			}
-
-			data[data.length - 2] = (byte) (this.index.groupVersions[group] >>> 8);
-			data[data.length - 1] = (byte) this.index.groupVersions[group];
-
+			var4[var4.length - 2] = (byte) (this.index.groupVersions[arg0] >>> 8);
+			var4[var4.length - 1] = (byte) this.index.groupVersions[arg0];
 			if (this.datafs != null) {
-				this.diskCache.write(group, data, this.datafs);
-				if (this.groupStatus[group] != 1) {
+				this.diskCache.write(arg0, var4, this.datafs);
+				if (this.groupStatus[arg0] != 1) {
 					this.verifiedGroups++;
-					this.groupStatus[group] = 1;
+					this.groupStatus[arg0] = 1;
 				}
 			}
-
-			if (!request.urgent) {
-				request.unlink();
+			if (!var3.urgent) {
+				var3.unlink();
 			}
-
-			return request;
+			return var3;
 		}
-
 		try {
-			if (data == null || data.length <= 2) {
-				throw new RuntimeException("Data not in cache - data:" + data);
+			if (var4 == null || var4.length <= 2) {
+				throw new RuntimeException();
 			}
-
 			crc32.reset();
-			crc32.update(data, 0, data.length - 2);
-
-			int crc = (int) crc32.getValue();
-			if (this.index.groupChecksums[group] != crc) {
-				throw new RuntimeException("Net fetch CRC incorrect");
+			crc32.update(var4, 0, var4.length - 2);
+			int var5 = (int) crc32.getValue();
+			if (this.index.groupChecksums[arg0] != var5) {
+				throw new RuntimeException();
 			}
-
-			if (this.index.groupDigests != null && this.index.groupDigests[group] != null) {
-				byte[] whirlpool = this.index.groupDigests[group];
-				byte[] resulted = Whirlpool.compute(data, 0, data.length - 2);
-				for (int index = 0; index < 64; index++) {
-					if (whirlpool[index] != resulted[index]) {
-						throw new RuntimeException("Disk fetch Whirlpool incorrect");
+			if (this.index.groupDigests != null && this.index.groupDigests[arg0] != null) {
+				byte[] var6 = this.index.groupDigests[arg0];
+				byte[] var7 = Whirlpool.compute(var4, 0, var4.length - 2);
+				for (int var8 = 0; var8 < 64; var8++) {
+					if (var6[var8] != var7[var8]) {
+						throw new RuntimeException();
 					}
 				}
 			}
-
-			int version = ((data[data.length - 2] & 0xFF) << 8) + (data[data.length - 1] & 0xFF);
-			if ((this.index.groupVersions[group] & 0xFFFF) != version) {
-				throw new RuntimeException("Version incorrect - wanted:" + this.index.groupVersions[group] + " got:" + version);
+			int var9 = ((var4[var4.length - 2] & 0xFF) << 8) + (var4[var4.length - 1] & 0xFF);
+			if ((this.index.groupVersions[arg0] & 0xFFFF) != var9) {
+				throw new RuntimeException();
 			}
-
-			if (this.groupStatus[group] != 1) {
-				if (this.groupStatus[group] == 0) {
-					// this.x++; // (tfu)
+			if (this.groupStatus[arg0] != 1) {
+				if (this.groupStatus[arg0] == 0) {
 				}
-
 				this.verifiedGroups++;
-				this.groupStatus[group] = 1;
+				this.groupStatus[arg0] = 1;
 			}
-
-			if (!request.urgent) {
-				request.unlink();
+			if (!var3.urgent) {
+				var3.unlink();
 			}
-
-			return request;
+			return var3;
 		} catch (Exception var20) {
-			this.groupStatus[group] = -1;
-			request.unlink();
-
-			if (request.urgent) {
+			this.groupStatus[arg0] = -1;
+			var3.unlink();
+			if (var3.urgent) {
 				if (this.httpClient == null) {
 					if (!this.tcpClient.isUrgentsFull()) {
-						Js5NetRequest var12 = this.tcpClient.queueRequest(this.archive, group, (byte) 2, true);
-						this.requests.put(var12, (long) group);
+						Js5NetRequest var12 = this.tcpClient.queueRequest(this.archive, arg0, (byte) 2, true);
+						this.requests.put(var12, (long) arg0);
 					}
 				} else if (!this.httpClient.isPendingRequestsFull()) {
-					Js5HttpRequest var11 = this.httpClient.sendHttpRequest(this.archive, group, (byte) 2, true, this.index.groupChecksums[group], this.index.groupVersions[group]);
+					Js5HttpRequest var11 = this.httpClient.sendHttpRequest(this.archive, arg0, (byte) 2, true, this.index.groupChecksums[arg0], this.index.groupVersions[arg0]);
 					if (var11 != null) {
-						this.requests.put(var11, (long) group);
+						this.requests.put(var11, (long) arg0);
 					}
 				}
 			}
-
 			return null;
 		}
 	}
@@ -422,19 +390,19 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.groupQueue == null || this.fetchindex() == null) {
 			return;
 		}
-		for (Node node = this.field10741.head(); node != null; node = this.field10741.next()) {
-			int group = (int) node.nodeId;
-			if (group < 0 || group >= this.index.capacity || this.index.groupSizes[group] == 0) {
-				node.unlink();
+		for (Node var1 = this.field10741.head(); var1 != null; var1 = this.field10741.next()) {
+			int var2 = (int) var1.nodeId;
+			if (var2 < 0 || var2 >= this.index.capacity || this.index.groupSizes[var2] == 0) {
+				var1.unlink();
 			} else {
-				if (this.groupStatus[group] == 0) {
-					this.fetchgroup_inner(group, 1);
+				if (this.groupStatus[var2] == 0) {
+					this.fetchgroup_inner(var2, 1);
 				}
-				if (this.groupStatus[group] == -1) {
-					this.fetchgroup_inner(group, 2);
+				if (this.groupStatus[var2] == -1) {
+					this.fetchgroup_inner(var2, 2);
 				}
-				if (this.groupStatus[group] == 1) {
-					node.unlink();
+				if (this.groupStatus[var2] == 1) {
+					var1.unlink();
 				}
 			}
 		}
@@ -472,7 +440,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						}
 						if (this.groupStatus[this.group] == 0) {
 							Node var4 = new Node();
-							var4.nodeId = (long) (this.group);
+							var4.nodeId = (long) (this.group * 1382496569) * -257432311L;
 							this.groupQueue.addTail(var4);
 							var1 = false;
 						}
@@ -509,7 +477,7 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 						}
 						if (this.groupStatus[this.group] != 1) {
 							Node var8 = new Node();
-							var8.nodeId = (long) (this.group);
+							var8.nodeId = (long) (this.group * 1382496569) * -257432311L;
 							this.groupQueue.addTail(var8);
 							var5 = false;
 						}
@@ -524,22 +492,23 @@ public class Js5NetResourceProvider extends Js5ResourceProvider {
 				this.groupQueue = null;
 			}
 		}
-        if (this.discardOrphans && MonotonicTime.get() >= this.orphanCheckTime) {
-            for (Js5Request var9 = (Js5Request) this.requests.head(); var9 != null; var9 = (Js5Request) this.requests.next()) {
-                if (!var9.incomplete) {
-                    if (var9.orphan) {
-                        if (!var9.urgent) {
-                            throw new RuntimeException();
-                        }
-                        var9.unlink();
-                    } else {
-                        var9.orphan = true;
-                    }
-                }
-            }
-            this.orphanCheckTime = MonotonicTime.get() + 1000L;
-        }
-    }
+		if (!this.discardOrphans || MonotonicTime.get() < this.orphanCheckTime) {
+			return;
+		}
+		for (Js5Request var9 = (Js5Request) this.requests.head(); var9 != null; var9 = (Js5Request) this.requests.next()) {
+			if (!var9.incomplete) {
+				if (var9.orphan) {
+					if (!var9.urgent) {
+						throw new RuntimeException();
+					}
+					var9.unlink();
+				} else {
+					var9.orphan = true;
+				}
+			}
+		}
+		this.orphanCheckTime = MonotonicTime.get() + 1000L;
+	}
 
 	@ObfuscatedName("aij.h(B)I")
 	public int method16826() {

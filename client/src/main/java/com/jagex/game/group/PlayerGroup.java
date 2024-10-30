@@ -7,7 +7,6 @@ import com.jagex.game.config.vartype.VarContainerSparse;
 import com.jagex.game.config.vartype.VarDomain;
 import com.jagex.game.config.vartype.constants.VarDomainType;
 import deob.ObfuscatedName;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -52,44 +51,44 @@ public class PlayerGroup {
 	@ObfuscatedName("gq.s")
 	public int field1913;
 
-	public PlayerGroup(long hashcode, Packet buf, boolean arg2, PlayerGroupResourceProvider groupResourceProvider) {
-		this.hashcode = hashcode;
-		int var6 = buf.g1();
+	public PlayerGroup(long arg0, Packet arg1, boolean arg2, PlayerGroupResourceProvider arg3) {
+		this.hashcode = arg0;
+		int var6 = arg1.g1();
 		if (var6 <= 0 || var6 > 1) {
 			throw new IllegalStateException("");
 		}
-		int info = buf.g1();
-		this.membersOnly = (info & 0x1) != 0;
-		this.hasUid = (info & 0x2) != 0;
-		this.hasDisplayName = (info & 0x4) != 0;
-		this.field1913 = buf.g4s();
-		this.creationTime = buf.g8();
-		this.displayName = buf.gjstr();
-		this.maxSize = buf.g2s();
-		buf.g4s();
-		buf.g8();
-		int membersCount = buf.g2();
-		this.members = new ArrayList(membersCount);
-		for (int index = 0; index < membersCount; index++) {
-			this.members.add(new PlayerGroupMember(buf, this.hasUid, this.hasDisplayName, groupResourceProvider));
+		int var7 = arg1.g1();
+		this.membersOnly = (var7 & 0x1) != 0;
+		this.hasUid = (var7 & 0x2) != 0;
+		this.hasDisplayName = (var7 & 0x4) != 0;
+		this.field1913 = arg1.g4s();
+		this.creationTime = arg1.g8();
+		this.displayName = arg1.gjstr();
+		this.maxSize = arg1.g2s();
+		arg1.g4s();
+		arg1.g8();
+		int var8 = arg1.g2();
+		this.members = new ArrayList(var8);
+		for (int var9 = 0; var9 < var8; var9++) {
+			this.members.add(new PlayerGroupMember(arg1, this.hasUid, this.hasDisplayName, arg3));
 		}
-		int bannedCount = buf.g2();
-		this.banned = new ArrayList(bannedCount);
-		for (int index = 0; index < bannedCount; index++) {
-			this.banned.add(new PlayerGroupBanned(buf, this.hasUid, this.hasDisplayName));
+		int var10 = arg1.g2();
+		this.banned = new ArrayList(var10);
+		for (int var11 = 0; var11 < var10; var11++) {
+			this.banned.add(new PlayerGroupBanned(arg1, this.hasUid, this.hasDisplayName));
 		}
-		this.vars = new VarContainerSparse(groupResourceProvider.getVarPlayerGroupTypeList());
-		int varsCount = buf.g2();
-		for (int index = 0; index < varsCount; index++) {
-			VarValue var14 = groupResourceProvider.getVarPlayerGroupTypeList().decodeVarValue(buf);
+		this.vars = new VarContainerSparse(arg3.getVarPlayerGroupTypeList());
+		int var12 = arg1.g2();
+		for (int var13 = 0; var13 < var12; var13++) {
+			VarValue var14 = arg3.getVarPlayerGroupTypeList().decodeVarValue(arg1);
 			this.vars.setVarValue(var14.var, var14.value);
 		}
 		if (!arg2) {
-			buf.g2();
-			buf.g2();
-			buf.g2();
-			buf.g2();
-			buf.g2();
+			arg1.g2();
+			arg1.g2();
+			arg1.g2();
+			arg1.g2();
+			arg1.g2();
 		}
 		this.setOwnerSlot();
 	}
@@ -135,17 +134,17 @@ public class PlayerGroup {
 
 	@ObfuscatedName("gq.u(I)V")
 	public void setOwnerSlot() {
-		int previous = -1;
-		int highest = -1;
-		for (int index = 0; index < this.members.size(); index++) {
-			PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
-			int rank = member.getRank();
-			if (rank > previous) {
-				previous = rank;
-				highest = index;
+		int var1 = -1;
+		int var2 = -1;
+		for (int var3 = 0; var3 < this.members.size(); var3++) {
+			PlayerGroupMember var4 = (PlayerGroupMember) this.members.get(var3);
+			int var5 = var4.getRank();
+			if (var5 > var1) {
+				var1 = var5;
+				var2 = var3;
 			}
 		}
-		this.ownerSlot = highest;
+		this.ownerSlot = var2;
 	}
 
 	@ObfuscatedName("gq.z(B)I")
@@ -158,27 +157,27 @@ public class PlayerGroup {
 		if (this.members.isEmpty()) {
 			return PlayerGroupMemberStatus.TELEPORTED;
 		}
-		PlayerGroupMemberStatus status = ((PlayerGroupMember) this.members.get(0)).getStatus();
-		switch(status.index) {
+		PlayerGroupMemberStatus var1 = ((PlayerGroupMember) this.members.get(0)).getStatus();
+		switch(var1.index) {
 			case 1:
 			case 2:
-				return status;
+				return var1;
 			default:
-				Iterator iterator = this.members.iterator();
+				Iterator var2 = this.members.iterator();
 				PlayerGroupMember var3;
 				do {
-					if (!iterator.hasNext()) {
+					if (!var2.hasNext()) {
 						return PlayerGroupMemberStatus.NOT_READY;
 					}
-					var3 = (PlayerGroupMember) iterator.next();
+					var3 = (PlayerGroupMember) var2.next();
 				} while (var3.getStatus() != PlayerGroupMemberStatus.TELEPORTED);
 				return PlayerGroupMemberStatus.TELEPORTED;
 		}
 	}
 
 	@ObfuscatedName("gq.d(II)Lgy;")
-	public PlayerGroupMember doGetMember(int index) {
-		return index == -1 ? null : (PlayerGroupMember) this.members.get(index);
+	public PlayerGroupMember doGetMember(int arg0) {
+		return arg0 == -1 ? null : (PlayerGroupMember) this.members.get(arg0);
 	}
 
 	@ObfuscatedName("gq.c(I)Ljava/lang/String;")
@@ -192,78 +191,78 @@ public class PlayerGroup {
 	}
 
 	@ObfuscatedName("gq.v(Lgy;B)V")
-	public void doAddMember(PlayerGroupMember member) {
-		this.members.add(member);
+	public void doAddMember(PlayerGroupMember arg0) {
+		this.members.add(arg0);
 		this.setOwnerSlot();
 	}
 
 	@ObfuscatedName("gq.o(II)V")
-	public void doDeleteMember(int index) {
-		this.members.remove(index);
+	public void doDeleteMember(int arg0) {
+		this.members.remove(arg0);
 		this.setOwnerSlot();
 	}
 
 	@ObfuscatedName("gq.s(Lga;S)V")
-	public void doAddBanned(PlayerGroupBanned banned) {
-		this.banned.add(banned);
+	public void doAddBanned(PlayerGroupBanned arg0) {
+		this.banned.add(arg0);
 	}
 
 	@ObfuscatedName("gq.y(II)V")
-	public void doDeleteBanned(int index) {
-		this.banned.remove(index);
+	public void doDeleteBanned(int arg0) {
+		this.banned.remove(arg0);
 	}
 
 	@ObfuscatedName("gq.q(III)V")
-	public void doSetMemberRank(int index, int rank) {
-		((PlayerGroupMember) this.members.get(index)).setRank(rank);
+	public void doSetMemberRank(int arg0, int arg1) {
+		((PlayerGroupMember) this.members.get(arg0)).setRank(arg1);
 		this.setOwnerSlot();
 	}
 
 	@ObfuscatedName("gq.x(III)V")
-	public void doSetMemberOnline(int index, int nodeId) {
-		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(index);
-		var3.setNodeId(nodeId);
+	public void doSetMemberOnline(int arg0, int arg1) {
+		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
+		var3.setNodeId(arg1);
 		var3.setOnline(true);
 	}
 
 	@ObfuscatedName("gq.b(II)V")
-	public void doSetMemberOffline(int index) {
-		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
-		member.setOnline(false);
+	public void doSetMemberOffline(int arg0) {
+		PlayerGroupMember var2 = (PlayerGroupMember) this.members.get(arg0);
+		var2.setOnline(false);
 	}
 
 	@ObfuscatedName("gq.h(IZS)V")
-	public void doSetMemberReady(int index, boolean loading) {
-		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
-		member.setStatus(loading ? PlayerGroupMemberStatus.NOT_READY : PlayerGroupMemberStatus.TELEPORTED);
+	public void doSetMemberReady(int arg0, boolean arg1) {
+		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
+		var3.setStatus(arg1 ? PlayerGroupMemberStatus.NOT_READY : PlayerGroupMemberStatus.TELEPORTED);
 	}
 
 	@ObfuscatedName("gq.a(IIB)V")
-	public void doSetMemberTeam(int index, int team) {
-		((PlayerGroupMember) this.members.get(index)).setTeam(team);
+	public void doSetMemberTeam(int arg0, int arg1) {
+		((PlayerGroupMember) this.members.get(arg0)).setTeam(arg1);
 	}
 
 	@ObfuscatedName("gq.g(I)V")
 	public void setMembersGameLoading() {
-		Iterator iterator = this.members.iterator();
-		while (iterator.hasNext()) {
-			PlayerGroupMember member = (PlayerGroupMember) iterator.next();
-			member.setStatus(PlayerGroupMemberStatus.GAME_LOADING);
+		Iterator var1 = this.members.iterator();
+		while (var1.hasNext()) {
+			PlayerGroupMember var2 = (PlayerGroupMember) var1.next();
+			var2.setStatus(PlayerGroupMemberStatus.GAME_LOADING);
 		}
 	}
 
 	@ObfuscatedName("gq.i(B)V")
 	public void doSetMembersReady() {
-		Iterator iterator = this.members.iterator();
-		while (iterator.hasNext()) {
-			PlayerGroupMember member = (PlayerGroupMember) iterator.next();
-			member.setStatus(PlayerGroupMemberStatus.READY);
+		Iterator var1 = this.members.iterator();
+		while (var1.hasNext()) {
+			PlayerGroupMember var2 = (PlayerGroupMember) var1.next();
+			var2.setStatus(PlayerGroupMemberStatus.READY);
 		}
 	}
 
 	@ObfuscatedName("gq.j(ILgy;I)V")
-	public void updateMember(int index, PlayerGroupMember arg1) {
-		PlayerGroupMember member = (PlayerGroupMember) this.members.get(index);
-		member.update(arg1);
+	public void updateMember(int arg0, PlayerGroupMember arg1) {
+		PlayerGroupMember var3 = (PlayerGroupMember) this.members.get(arg0);
+		var3.update(arg1);
 	}
 }

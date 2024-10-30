@@ -97,11 +97,11 @@ public class LoadableResource {
 
 	@ObfuscatedName("acg.e(B)[Lacg;")
 	public static LoadableResource[] values() {
-		return new LoadableResource[] {JS5_DEFAULTS, DLL_JACLIB, DLL_JAGGL, DLL_JAGDX, DLL_SW3D, DLL_SETUP_EXE, DLL_HW3D, JS5_SHADERS, JS5_MATERIALS, JS5_CONFIG, JS5_CONFIG_LOC, JS5_CONFIG_ENUM, JS5_CONFIG_NPC, JS5_CONFIG_OBJ, JS5_CONFIG_SEQ, JS5_CONFIG_SPOT, JS5_CONFIG_STRUCT, JS5_DBTABLE_INDEX, JS5_QUICK_CHAT, JS5_QUICK_CHAT_GLOBAL, JS5_CONFIG_PARTICLE, JS5_CONFIG_BILLBOARD, JS5_BINARY_HUFFMAN, JS5_INTERFACES, JS5_CLIENTSCRIPTS, JS5_FONT_METRICS, JS5_WORLD_MAP_DATA};
+		return new LoadableResource[] { JS5_DEFAULTS, DLL_JACLIB, DLL_JAGGL, DLL_JAGDX, DLL_SW3D, DLL_SETUP_EXE, DLL_HW3D, JS5_SHADERS, JS5_MATERIALS, JS5_CONFIG, JS5_CONFIG_LOC, JS5_CONFIG_ENUM, JS5_CONFIG_NPC, JS5_CONFIG_OBJ, JS5_CONFIG_SEQ, JS5_CONFIG_SPOT, JS5_CONFIG_STRUCT, JS5_DBTABLE_INDEX, JS5_QUICK_CHAT, JS5_QUICK_CHAT_GLOBAL, JS5_CONFIG_PARTICLE, JS5_CONFIG_BILLBOARD, JS5_BINARY_HUFFMAN, JS5_INTERFACES, JS5_CLIENTSCRIPTS, JS5_FONT_METRICS, JS5_WORLD_MAP_DATA };
 	}
 
-	public LoadableResource(LoadableResourceType resourceType) {
-		this.resourceType = resourceType;
+	public LoadableResource(LoadableResourceType arg0) {
+		this.resourceType = arg0;
 		this.length = 1;
 	}
 
@@ -111,8 +111,8 @@ public class LoadableResource {
 	}
 
 	@ObfuscatedName("acg.m(IS)V")
-	public void setLength(int length) {
-		this.length = length;
+	public void setLength(int arg0) {
+		this.length = arg0;
 	}
 
 	@ObfuscatedName("acg.k(I)Lacu;")
@@ -121,10 +121,10 @@ public class LoadableResource {
 	}
 
 	@ObfuscatedName("acg.f(Lacu;I)V")
-	public void setResourceLoader(ResourceLoader resourceLoader) {
-		if (resourceLoader.getLoadableResourceType() != this.resourceType) {
+	public void setResourceLoader(ResourceLoader arg0) {
+		if (arg0.getLoadableResourceType() != this.resourceType) {
 			throw new IllegalArgumentException();
 		}
-		this.resourceLoader = resourceLoader;
+		this.resourceLoader = arg0;
 	}
 }

@@ -4,7 +4,7 @@ import deob.ObfuscatedName;
 import jaclib.memory.Buffer;
 import jaclib.memory.Source;
 
-public final class NativeHeapBuffer implements Buffer, Source {
+public class NativeHeapBuffer implements Buffer, Source {
 
 	@ObfuscatedName("jaclib/memory/heap/NativeHeapBuffer.e")
 	public final int field411;

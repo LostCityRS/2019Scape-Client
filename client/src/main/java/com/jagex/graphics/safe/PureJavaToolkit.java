@@ -10,17 +10,41 @@ import com.jagex.game.client.ScreenBoundingBox;
 import com.jagex.game.config.BillboardTypeList;
 import com.jagex.game.config.ParticleEffectorTypeList;
 import com.jagex.game.config.ParticleEmitterTypeList;
+import com.jagex.graphics.AlphaMode;
+import com.jagex.graphics.ColourRemapper;
+import com.jagex.graphics.EffectInterface;
+import com.jagex.graphics.EnvironmentSampler;
+import com.jagex.graphics.FloorModel;
 import com.jagex.graphics.Font;
 import com.jagex.graphics.FontMetrics;
-import com.jagex.graphics.*;
+import com.jagex.graphics.FrameBuffer;
+import com.jagex.graphics.FullSpriteData;
+import com.jagex.graphics.GraphicsDeletable;
+import com.jagex.graphics.Light;
+import com.jagex.graphics.MaterialList;
+import com.jagex.graphics.MaterialRaw;
+import com.jagex.graphics.Model;
+import com.jagex.graphics.ModelUnlit;
+import com.jagex.graphics.PalettedSpriteData;
+import com.jagex.graphics.Particle;
+import com.jagex.graphics.RendererException;
+import com.jagex.graphics.RendererInfo;
+import com.jagex.graphics.Sprite;
+import com.jagex.graphics.SpriteData;
+import com.jagex.graphics.SpriteRelated;
+import com.jagex.graphics.Surface;
+import com.jagex.graphics.TextureFormat;
+import com.jagex.graphics.TextureList;
+import com.jagex.graphics.TextureRelated1;
+import com.jagex.graphics.TextureRelated2;
 import com.jagex.graphics.Toolkit;
+import com.jagex.graphics.WaterFogData;
 import com.jagex.graphics.particles.ParticleList;
 import com.jagex.math.Cuboid;
 import com.jagex.math.Matrix4x3;
 import com.jagex.math.Matrix4x4;
 import deob.ObfuscatedName;
-
-import java.awt.*;
+import java.awt.Canvas;
 
 @ObfuscatedName("afg")
 public class PureJavaToolkit extends Toolkit {
@@ -173,7 +197,6 @@ public class PureJavaToolkit extends Toolkit {
 		this.field9799 = 0.0F;
 		this.billboardMaterialSprites = new SoftLruHashTable(16);
 		this.cachedBillboardMaterial = -1;
-
 		try {
 			this.materialTextureCache = new SoftLruHashTable(10485760, 256);
 			this.field9792 = new Matrix4x3();
@@ -253,7 +276,7 @@ public class PureJavaToolkit extends Toolkit {
 	public int[] getMaterialTexture(int arg0) {
 		SoftLruHashTable var2 = this.materialTextureCache;
 		PureJavaTexture var4;
-		synchronized (var2) {
+		synchronized (this.materialTextureCache) {
 			MaterialRaw var3 = this.materialList.get(arg0);
 			var4 = (PureJavaTexture) this.materialTextureCache.get((long) (var3.diffuseAlphaMapID & 0xFFFF) | Long.MIN_VALUE);
 			if (var4 == null) {
@@ -492,17 +515,17 @@ public class PureJavaToolkit extends Toolkit {
 			int var2 = var1 - (var1 & 0x7);
 			int var3 = 0;
 			while (var3 < var2) {
-				this.depth[var3++] = 2.14748365E9F;
-				this.depth[var3++] = 2.14748365E9F;
-				this.depth[var3++] = 2.14748365E9F;
-				this.depth[var3++] = 2.14748365E9F;
-				this.depth[var3++] = 2.14748365E9F;
-				this.depth[var3++] = 2.14748365E9F;
-				this.depth[var3++] = 2.14748365E9F;
-				this.depth[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.1474836E9F;
+				this.depth[var3++] = 2.1474836E9F;
+				this.depth[var3++] = 2.1474836E9F;
+				this.depth[var3++] = 2.1474836E9F;
+				this.depth[var3++] = 2.1474836E9F;
+				this.depth[var3++] = 2.1474836E9F;
+				this.depth[var3++] = 2.1474836E9F;
+				this.depth[var3++] = 2.1474836E9F;
 			}
 			while (var3 < var1) {
-				this.depth[var3++] = 2.14748365E9F;
+				this.depth[var3++] = 2.1474836E9F;
 			}
 			return;
 		}
@@ -518,21 +541,21 @@ public class PureJavaToolkit extends Toolkit {
 				int var12 = var8;
 				do {
 					var10++;
-					this.depth[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.1474836E9F;
 					var10++;
-					this.depth[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.1474836E9F;
 					var10++;
-					this.depth[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.1474836E9F;
 					var10++;
-					this.depth[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.1474836E9F;
 					var10++;
-					this.depth[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.1474836E9F;
 					var10++;
-					this.depth[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.1474836E9F;
 					var10++;
-					this.depth[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.1474836E9F;
 					var10++;
-					this.depth[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.1474836E9F;
 					var12--;
 				} while (var12 > 0);
 			}
@@ -540,7 +563,7 @@ public class PureJavaToolkit extends Toolkit {
 				int var13 = var9;
 				do {
 					var10++;
-					this.depth[var10] = 2.14748365E9F;
+					this.depth[var10] = 2.1474836E9F;
 					var13--;
 				} while (var13 > 0);
 			}
@@ -629,39 +652,39 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.bi(IIII)V")
-	public void resetBounds(int left, int top, int right, int bottom) {
-		if (left < 0) {
-			left = 0;
+	public void resetBounds(int arg0, int arg1, int arg2, int arg3) {
+		if (arg0 < 0) {
+			arg0 = 0;
 		}
-		if (top < 0) {
-			top = 0;
+		if (arg1 < 0) {
+			arg1 = 0;
 		}
-		if (right > this.sizeX) {
-			right = this.sizeX;
+		if (arg2 > this.sizeX) {
+			arg2 = this.sizeX;
 		}
-		if (bottom > this.sizeY) {
-			bottom = this.sizeY;
+		if (arg3 > this.sizeY) {
+			arg3 = this.sizeY;
 		}
-		this.clipMinX = left;
-		this.clipMaxX = right;
-		this.clipMinY = top;
-		this.clipMaxY = bottom;
+		this.clipMinX = arg0;
+		this.clipMaxX = arg2;
+		this.clipMinY = arg1;
+		this.clipMaxY = arg3;
 		this.method15664();
 	}
 
 	@ObfuscatedName("afg.bn(IIII)V")
-	public void setBounds(int left, int top, int right, int bottom) {
-		if (this.clipMinX < left) {
-			this.clipMinX = left;
+	public void setBounds(int arg0, int arg1, int arg2, int arg3) {
+		if (this.clipMinX < arg0) {
+			this.clipMinX = arg0;
 		}
-		if (this.clipMinY < top) {
-			this.clipMinY = top;
+		if (this.clipMinY < arg1) {
+			this.clipMinY = arg1;
 		}
-		if (this.clipMaxX > right) {
-			this.clipMaxX = right;
+		if (this.clipMaxX > arg2) {
+			this.clipMaxX = arg2;
 		}
-		if (this.clipMaxY > bottom) {
-			this.clipMaxY = bottom;
+		if (this.clipMaxY > arg3) {
+			this.clipMaxY = arg3;
 		}
 		this.method15664();
 	}
@@ -685,62 +708,62 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.bz(IIIIII)V")
-	public void drawRectangle(int x, int y, int width, int height, int rgb, int arg5) {
-		this.drawHorizontalLine(x, y, width, rgb, arg5);
-		this.drawHorizontalLine(x, y + height - 1, width, rgb, arg5);
-		this.drawVerticalLine(x, y + 1, height - 2, rgb, arg5);
-		this.drawVerticalLine(x + width - 1, y + 1, height - 2, rgb, arg5);
+	public void drawRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		this.drawHorizontalLine(arg0, arg1, arg2, arg4, arg5);
+		this.drawHorizontalLine(arg0, arg1 + arg3 - 1, arg2, arg4, arg5);
+		this.drawVerticalLine(arg0, arg1 + 1, arg3 - 2, arg4, arg5);
+		this.drawVerticalLine(arg0 + arg2 - 1, arg1 + 1, arg3 - 2, arg4, arg5);
 	}
 
 	@ObfuscatedName("afg.bv(IIIIII)V")
-	public void fillRectangle(int x, int y, int width, int height, int rgb, int arg5) {
+	public void fillRectangle(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		if (this.colour == null) {
 			return;
 		}
-		if (x < this.clipMinX) {
-			width -= this.clipMinX - x;
-			x = this.clipMinX;
+		if (arg0 < this.clipMinX) {
+			arg2 -= this.clipMinX - arg0;
+			arg0 = this.clipMinX;
 		}
-		if (y < this.clipMinY) {
-			height -= this.clipMinY - y;
-			y = this.clipMinY;
+		if (arg1 < this.clipMinY) {
+			arg3 -= this.clipMinY - arg1;
+			arg1 = this.clipMinY;
 		}
-		if (x + width > this.clipMaxX) {
-			width = this.clipMaxX - x;
+		if (arg0 + arg2 > this.clipMaxX) {
+			arg2 = this.clipMaxX - arg0;
 		}
-		if (y + height > this.clipMaxY) {
-			height = this.clipMaxY - y;
+		if (arg1 + arg3 > this.clipMaxY) {
+			arg3 = this.clipMaxY - arg1;
 		}
-		if (width <= 0 || height <= 0 || x > this.clipMaxX || y > this.clipMaxY) {
+		if (arg2 <= 0 || arg3 <= 0 || arg0 > this.clipMaxX || arg1 > this.clipMaxY) {
 			return;
 		}
-		int var7 = this.sizeX - width;
-		int var8 = this.sizeX * y + x;
-		int var9 = rgb >>> 24;
+		int var7 = this.sizeX - arg2;
+		int var8 = this.sizeX * arg1 + arg0;
+		int var9 = arg4 >>> 24;
 		if (arg5 == 0 || arg5 == 1 && var9 == 255) {
-			int var22 = width >> 3;
-			int var23 = width & 0x7;
+			int var22 = arg2 >> 3;
+			int var23 = arg2 & 0x7;
 			int var24 = var8 - 1;
-			for (int var25 = -height; var25 < 0; var25++) {
+			for (int var25 = -arg3; var25 < 0; var25++) {
 				if (var22 > 0) {
 					int var26 = var22;
 					do {
 						var24++;
-						this.colour[var24] = rgb;
+						this.colour[var24] = arg4;
 						var24++;
-						this.colour[var24] = rgb;
+						this.colour[var24] = arg4;
 						var24++;
-						this.colour[var24] = rgb;
+						this.colour[var24] = arg4;
 						var24++;
-						this.colour[var24] = rgb;
+						this.colour[var24] = arg4;
 						var24++;
-						this.colour[var24] = rgb;
+						this.colour[var24] = arg4;
 						var24++;
-						this.colour[var24] = rgb;
+						this.colour[var24] = arg4;
 						var24++;
-						this.colour[var24] = rgb;
+						this.colour[var24] = arg4;
 						var24++;
-						this.colour[var24] = rgb;
+						this.colour[var24] = arg4;
 						var26--;
 					} while (var26 > 0);
 				}
@@ -748,17 +771,17 @@ public class PureJavaToolkit extends Toolkit {
 					int var27 = var23;
 					do {
 						var24++;
-						this.colour[var24] = rgb;
+						this.colour[var24] = arg4;
 						var27--;
 					} while (var27 > 0);
 				}
 				var24 += var7;
 			}
 		} else if (arg5 == 1) {
-			int var10 = ((rgb & 0xFF00FF) * var9 >> 8 & 0xFF00FF) + (((rgb & 0xFF00FF00) >>> 8) * var9 & 0xFF00FF00);
+			int var10 = ((arg4 & 0xFF00FF) * var9 >> 8 & 0xFF00FF) + (((arg4 & 0xFF00FF00) >>> 8) * var9 & 0xFF00FF00);
 			int var11 = 256 - var9;
-			for (int var12 = 0; var12 < height; var12++) {
-				for (int var13 = -width; var13 < 0; var13++) {
+			for (int var12 = 0; var12 < arg3; var12++) {
+				for (int var13 = -arg2; var13 < 0; var13++) {
 					int var14 = this.colour[var8];
 					int var15 = ((var14 & 0xFF00FF) * var11 >> 8 & 0xFF00FF) + (((var14 & 0xFF00FF00) >>> 8) * var11 & 0xFF00FF00);
 					this.colour[var8++] = var10 + var15;
@@ -766,11 +789,11 @@ public class PureJavaToolkit extends Toolkit {
 				var8 += var7;
 			}
 		} else if (arg5 == 2) {
-			for (int var16 = 0; var16 < height; var16++) {
-				for (int var17 = -width; var17 < 0; var17++) {
+			for (int var16 = 0; var16 < arg3; var16++) {
+				for (int var17 = -arg2; var17 < 0; var17++) {
 					int var18 = this.colour[var8];
-					int var19 = rgb + var18;
-					int var20 = (rgb & 0xFF00FF) + (var18 & 0xFF00FF);
+					int var19 = arg4 + var18;
+					int var20 = (arg4 & 0xFF00FF) + (var18 & 0xFF00FF);
 					int var21 = (var19 - var20 & 0x10000) + (var20 & 0x1000100);
 					this.colour[var8++] = var19 - var21 | var21 - (var21 >>> 8);
 				}
@@ -972,36 +995,36 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.ba(IIIII)V")
-	public void drawHorizontalLine(int x, int y, int width, int rgb, int arg4) {
-		if (this.colour == null || (y < this.clipMinY || y >= this.clipMaxY)) {
+	public void drawHorizontalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
+		if (this.colour == null || (arg1 < this.clipMinY || arg1 >= this.clipMaxY)) {
 			return;
 		}
-		if (x < this.clipMinX) {
-			width -= this.clipMinX - x;
-			x = this.clipMinX;
+		if (arg0 < this.clipMinX) {
+			arg2 -= this.clipMinX - arg0;
+			arg0 = this.clipMinX;
 		}
-		if (x + width > this.clipMaxX) {
-			width = this.clipMaxX - x;
+		if (arg0 + arg2 > this.clipMaxX) {
+			arg2 = this.clipMaxX - arg0;
 		}
-		int var6 = this.sizeX * y + x;
-		int var7 = rgb >>> 24;
+		int var6 = this.sizeX * arg1 + arg0;
+		int var7 = arg3 >>> 24;
 		if (arg4 == 0 || arg4 == 1 && var7 == 255) {
-			for (int var18 = 0; var18 < width; var18++) {
-				this.colour[var6 + var18] = rgb;
+			for (int var18 = 0; var18 < arg2; var18++) {
+				this.colour[var6 + var18] = arg3;
 			}
 		} else if (arg4 == 1) {
-			int var8 = (var7 << 24) + ((rgb & 0xFF00FF) * var7 >> 8 & 0xFF00FF) + ((rgb & 0xFF00) * var7 >> 8 & 0xFF00);
+			int var8 = (var7 << 24) + ((arg3 & 0xFF00FF) * var7 >> 8 & 0xFF00FF) + ((arg3 & 0xFF00) * var7 >> 8 & 0xFF00);
 			int var9 = 256 - var7;
-			for (int var10 = 0; var10 < width; var10++) {
+			for (int var10 = 0; var10 < arg2; var10++) {
 				int var11 = this.colour[var6 + var10];
 				int var12 = ((var11 & 0xFF00) * var9 >> 8 & 0xFF00) + ((var11 & 0xFF00FF) * var9 >> 8 & 0xFF00FF);
 				this.colour[var6 + var10] = var8 + var12;
 			}
 		} else if (arg4 == 2) {
-			for (int var13 = 0; var13 < width; var13++) {
+			for (int var13 = 0; var13 < arg2; var13++) {
 				int var14 = this.colour[var6 + var13];
-				int var15 = rgb + var14;
-				int var16 = (rgb & 0xFF00FF) + (var14 & 0xFF00FF);
+				int var15 = arg3 + var14;
+				int var16 = (arg3 & 0xFF00FF) + (var14 & 0xFF00FF);
 				int var17 = (var15 - var16 & 0x10000) + (var16 & 0x1000100);
 				this.colour[var6 + var13] = var15 - var17 | var17 - (var17 >>> 8);
 			}
@@ -1063,38 +1086,38 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.bp(IIIII)V")
-	public void drawVerticalLine(int x1, int y1, int x2, int y2, int arg4) {
-		if (this.colour == null || (x1 < this.clipMinX || x1 >= this.clipMaxX)) {
+	public void drawVerticalLine(int arg0, int arg1, int arg2, int arg3, int arg4) {
+		if (this.colour == null || (arg0 < this.clipMinX || arg0 >= this.clipMaxX)) {
 			return;
 		}
-		if (y1 < this.clipMinY) {
-			x2 -= this.clipMinY - y1;
-			y1 = this.clipMinY;
+		if (arg1 < this.clipMinY) {
+			arg2 -= this.clipMinY - arg1;
+			arg1 = this.clipMinY;
 		}
-		if (y1 + x2 > this.clipMaxY) {
-			x2 = this.clipMaxY - y1;
+		if (arg1 + arg2 > this.clipMaxY) {
+			arg2 = this.clipMaxY - arg1;
 		}
-		int var6 = this.sizeX * y1 + x1;
-		int var7 = y2 >>> 24;
+		int var6 = this.sizeX * arg1 + arg0;
+		int var7 = arg3 >>> 24;
 		if (arg4 == 0 || arg4 == 1 && var7 == 255) {
-			for (int var20 = 0; var20 < x2; var20++) {
-				this.colour[this.sizeX * var20 + var6] = y2;
+			for (int var20 = 0; var20 < arg2; var20++) {
+				this.colour[this.sizeX * var20 + var6] = arg3;
 			}
 		} else if (arg4 == 1) {
-			int var8 = (var7 << 24) + ((y2 & 0xFF00) * var7 >> 8 & 0xFF00) + ((y2 & 0xFF00FF) * var7 >> 8 & 0xFF00FF);
+			int var8 = (var7 << 24) + ((arg3 & 0xFF00) * var7 >> 8 & 0xFF00) + ((arg3 & 0xFF00FF) * var7 >> 8 & 0xFF00FF);
 			int var9 = 256 - var7;
-			for (int var10 = 0; var10 < x2; var10++) {
+			for (int var10 = 0; var10 < arg2; var10++) {
 				int var11 = this.sizeX * var10 + var6;
 				int var12 = this.colour[var11];
 				int var13 = ((var12 & 0xFF00) * var9 >> 8 & 0xFF00) + ((var12 & 0xFF00FF) * var9 >> 8 & 0xFF00FF);
 				this.colour[var11] = var8 + var13;
 			}
 		} else if (arg4 == 2) {
-			for (int var14 = 0; var14 < x2; var14++) {
+			for (int var14 = 0; var14 < arg2; var14++) {
 				int var15 = this.sizeX * var14 + var6;
 				int var16 = this.colour[var15];
-				int var17 = y2 + var16;
-				int var18 = (y2 & 0xFF00FF) + (var16 & 0xFF00FF);
+				int var17 = arg3 + var16;
+				int var18 = (arg3 & 0xFF00FF) + (var16 & 0xFF00FF);
 				int var19 = (var17 - var18 & 0x10000) + (var18 & 0x1000100);
 				this.colour[var15] = var17 - var19 | var19 - (var19 >>> 8);
 			}
@@ -1158,138 +1181,138 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.bj(IIIIII)V")
-	public void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5) {
+	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
 		if (this.colour == null) {
 			return;
 		}
-		int var7 = x2 - x1;
-		int var8 = y2 - y1;
+		int var7 = arg2 - arg0;
+		int var8 = arg3 - arg1;
 		if (var8 == 0) {
 			if (var7 >= 0) {
-				this.drawHorizontalLine(x1, y1, var7 + 1, rgb, arg5);
+				this.drawHorizontalLine(arg0, arg1, var7 + 1, arg4, arg5);
 			} else {
-				this.drawHorizontalLine(x1 + var7, y1, -var7 + 1, rgb, arg5);
+				this.drawHorizontalLine(arg0 + var7, arg1, -var7 + 1, arg4, arg5);
 			}
 		} else if (var7 != 0) {
 			if (var7 + var8 < 0) {
-				x1 += var7;
+				arg0 += var7;
 				var7 = -var7;
-				y1 += var8;
+				arg1 += var8;
 				var8 = -var8;
 			}
 			if (var7 > var8) {
-				int var9 = y1 << 16;
+				int var9 = arg1 << 16;
 				int var10 = var9 + 32768;
 				int var11 = var8 << 16;
 				int var12 = (int) Math.floor((double) var11 / (double) var7 + 0.5D);
-				int var13 = x1 + var7;
-				if (x1 < this.clipMinX) {
-					var10 += (this.clipMinX - x1) * var12;
-					x1 = this.clipMinX;
+				int var13 = arg0 + var7;
+				if (arg0 < this.clipMinX) {
+					var10 += (this.clipMinX - arg0) * var12;
+					arg0 = this.clipMinX;
 				}
 				if (var13 >= this.clipMaxX) {
 					var13 = this.clipMaxX - 1;
 				}
-				int var14 = rgb >>> 24;
+				int var14 = arg4 >>> 24;
 				if (arg5 == 0 || arg5 == 1 && var14 == 255) {
-					while (x1 <= var13) {
+					while (arg0 <= var13) {
 						int var27 = var10 >> 16;
 						if (var27 >= this.clipMinY && var27 < this.clipMaxY) {
-							this.colour[this.sizeX * var27 + x1] = rgb;
+							this.colour[this.sizeX * var27 + arg0] = arg4;
 						}
 						var10 += var12;
-						x1++;
+						arg0++;
 					}
 				} else if (arg5 == 1) {
-					int var15 = (var14 << 24) + ((rgb & 0xFF00) * var14 >> 8 & 0xFF00) + ((rgb & 0xFF00FF) * var14 >> 8 & 0xFF00FF);
+					int var15 = (var14 << 24) + ((arg4 & 0xFF00) * var14 >> 8 & 0xFF00) + ((arg4 & 0xFF00FF) * var14 >> 8 & 0xFF00FF);
 					int var16 = 256 - var14;
-					while (x1 <= var13) {
+					while (arg0 <= var13) {
 						int var17 = var10 >> 16;
 						if (var17 >= this.clipMinY && var17 < this.clipMaxY) {
-							int var18 = this.sizeX * var17 + x1;
+							int var18 = this.sizeX * var17 + arg0;
 							int var19 = this.colour[var18];
 							int var20 = ((var19 & 0xFF00) * var16 >> 8 & 0xFF00) + ((var19 & 0xFF00FF) * var16 >> 8 & 0xFF00FF);
 							this.colour[var18] = var15 + var20;
 						}
 						var10 += var12;
-						x1++;
+						arg0++;
 					}
 				} else if (arg5 == 2) {
-					while (x1 <= var13) {
+					while (arg0 <= var13) {
 						int var21 = var10 >> 16;
 						if (var21 >= this.clipMinY && var21 < this.clipMaxY) {
-							int var22 = this.sizeX * var21 + x1;
+							int var22 = this.sizeX * var21 + arg0;
 							int var23 = this.colour[var22];
-							int var24 = rgb + var23;
-							int var25 = (rgb & 0xFF00FF) + (var23 & 0xFF00FF);
+							int var24 = arg4 + var23;
+							int var25 = (arg4 & 0xFF00FF) + (var23 & 0xFF00FF);
 							int var26 = (var24 - var25 & 0x10000) + (var25 & 0x1000100);
 							this.colour[var22] = var24 - var26 | var26 - (var26 >>> 8);
 						}
 						var10 += var12;
-						x1++;
+						arg0++;
 					}
 				} else {
 					throw new IllegalArgumentException();
 				}
 			} else {
-				int var28 = x1 << 16;
+				int var28 = arg0 << 16;
 				int var29 = var28 + 32768;
 				int var30 = var7 << 16;
 				int var31 = (int) Math.floor((double) var30 / (double) var8 + 0.5D);
-				int var32 = y1 + var8;
-				if (y1 < this.clipMinY) {
-					var29 += (this.clipMinY - y1) * var31;
-					y1 = this.clipMinY;
+				int var32 = arg1 + var8;
+				if (arg1 < this.clipMinY) {
+					var29 += (this.clipMinY - arg1) * var31;
+					arg1 = this.clipMinY;
 				}
 				if (var32 >= this.clipMaxY) {
 					var32 = this.clipMaxY - 1;
 				}
-				int var33 = rgb >>> 24;
+				int var33 = arg4 >>> 24;
 				if (arg5 == 0 || arg5 == 1 && var33 == 255) {
-					while (y1 <= var32) {
+					while (arg1 <= var32) {
 						int var46 = var29 >> 16;
 						if (var46 >= this.clipMinX && var46 < this.clipMaxX) {
-							this.colour[this.sizeX * y1 + var46] = rgb;
+							this.colour[this.sizeX * arg1 + var46] = arg4;
 						}
 						var29 += var31;
-						y1++;
+						arg1++;
 					}
 				} else if (arg5 == 1) {
-					int var34 = (var33 << 24) + ((rgb & 0xFF00FF) * var33 >> 8 & 0xFF00FF) + ((rgb & 0xFF00) * var33 >> 8 & 0xFF00);
+					int var34 = (var33 << 24) + ((arg4 & 0xFF00FF) * var33 >> 8 & 0xFF00FF) + ((arg4 & 0xFF00) * var33 >> 8 & 0xFF00);
 					int var35 = 256 - var33;
-					while (y1 <= var32) {
+					while (arg1 <= var32) {
 						int var36 = var29 >> 16;
 						if (var36 >= this.clipMinX && var36 < this.clipMaxX) {
-							int var37 = this.sizeX * y1 + var36;
+							int var37 = this.sizeX * arg1 + var36;
 							int var38 = this.colour[var37];
 							int var39 = ((var38 & 0xFF00FF) * var35 >> 8 & 0xFF00FF) + ((var38 & 0xFF00) * var35 >> 8 & 0xFF00);
-							this.colour[this.sizeX * y1 + var36] = var34 + var39;
+							this.colour[this.sizeX * arg1 + var36] = var34 + var39;
 						}
 						var29 += var31;
-						y1++;
+						arg1++;
 					}
 				} else if (arg5 == 2) {
-					while (y1 <= var32) {
+					while (arg1 <= var32) {
 						int var40 = var29 >> 16;
 						if (var40 >= this.clipMinX && var40 < this.clipMaxX) {
-							int var41 = this.sizeX * y1 + var40;
+							int var41 = this.sizeX * arg1 + var40;
 							int var42 = this.colour[var41];
-							int var43 = rgb + var42;
-							int var44 = (rgb & 0xFF00FF) + (var42 & 0xFF00FF);
+							int var43 = arg4 + var42;
+							int var44 = (arg4 & 0xFF00FF) + (var42 & 0xFF00FF);
 							int var45 = (var43 - var44 & 0x10000) + (var44 & 0x1000100);
 							this.colour[var41] = var43 - var45 | var45 - (var45 >>> 8);
 						}
 						var29 += var31;
-						y1++;
+						arg1++;
 					}
 				} else {
 					throw new IllegalArgumentException();
 				}
 			}
 		} else if (var8 >= 0) {
-			this.drawVerticalLine(x1, y1, var8 + 1, rgb, arg5);
+			this.drawVerticalLine(arg0, arg1, var8 + 1, arg4, arg5);
 		} else {
-			this.drawVerticalLine(x1, y1 + var8, -var8 + 1, rgb, arg5);
+			this.drawVerticalLine(arg0, arg1 + var8, -var8 + 1, arg4, arg5);
 		}
 	}
 
@@ -1759,14 +1782,14 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.ce(IIIIIII)V")
-	public void drawLine(int x1, int y1, int x2, int y2, int rgb, int arg5, int arg6) {
+	public void drawLine(int arg0, int arg1, int arg2, int arg3, int arg4, int arg5, int arg6) {
 		if (this.colour == null) {
 			return;
 		}
 		PureJavaToolkitContext var8 = this.getContext(Thread.currentThread());
 		PureJavaRasteriser var9 = var8.rasteriser;
-		int var10 = x2 - x1;
-		int var11 = y2 - y1;
+		int var10 = arg2 - arg0;
+		int var11 = arg3 - arg1;
 		int var12 = var10 >= 0 ? var10 : -var10;
 		int var13 = var11 >= 0 ? var11 : -var11;
 		int var14 = var12;
@@ -1789,8 +1812,8 @@ public class PureJavaToolkit extends Toolkit {
 		int var20 = arg5 * var16 + 1 >> 17;
 		int var21 = arg5 * var15 >> 17;
 		int var22 = arg5 * var15 + 1 >> 17;
-		int var23 = x1 - var9.method1025();
-		int var24 = y1 - var9.method1026();
+		int var23 = arg0 - var9.method1025();
+		int var24 = arg1 - var9.method1026();
 		int var25 = var19 + var23;
 		int var26 = var23 - var20;
 		int var27 = var17 + var23 - var20;
@@ -1802,15 +1825,15 @@ public class PureJavaToolkit extends Toolkit {
 		if (arg6 == 0) {
 			var9.field935 = 0;
 		} else if (arg6 == 1) {
-			var9.field935 = 255 - (rgb >>> 24);
+			var9.field935 = 255 - (arg4 >>> 24);
 		} else {
 			throw new IllegalArgumentException();
 		}
 		this.method2219(false);
 		var9.field936 = var25 < 0 || var25 > var9.field945 || var26 < 0 || var26 > var9.field945 || var27 < 0 || var27 > var9.field945;
-		var9.drawTriangle(true, false, false, (float) var29, (float) var30, (float) var31, (float) var25, (float) var26, (float) var27, 100.0F, 100.0F, 100.0F, rgb);
+		var9.drawTriangle(true, false, false, (float) var29, (float) var30, (float) var31, (float) var25, (float) var26, (float) var27, 100.0F, 100.0F, 100.0F, arg4);
 		var9.field936 = var25 < 0 || var25 > var9.field945 || var27 < 0 || var27 > var9.field945 || var28 < 0 || var28 > var9.field945;
-		var9.drawTriangle(true, false, false, (float) var29, (float) var31, (float) var32, (float) var25, (float) var27, (float) var28, 100.0F, 100.0F, 100.0F, rgb);
+		var9.drawTriangle(true, false, false, (float) var29, (float) var31, (float) var32, (float) var25, (float) var27, (float) var28, 100.0F, 100.0F, 100.0F, arg4);
 		this.method2219(true);
 	}
 
@@ -1993,33 +2016,24 @@ public class PureJavaToolkit extends Toolkit {
 	}
 
 	@ObfuscatedName("afg.cy(Laac;Lde;Z)Leu;")
-	public Font createFont(FontMetrics metrics, SpriteData sprite, boolean font) {
-		boolean translucent = sprite.isTranslucent();
-		boolean paletted = sprite.isPaletted();
-
-		if (font) {
-			if (paletted) {
-				if (translucent) {
-					return new PureJavaTranslucentFont(this, metrics, (PalettedSpriteData) sprite);
-				} else {
-					return new PureJavaOpaqueFont(this, metrics, (PalettedSpriteData) sprite);
-				}
-			}
-
-			if (translucent) {
-				return new PureJavaTranslucentFont(this, metrics, (FullSpriteData) sprite);
+	public Font createFont(FontMetrics arg0, SpriteData arg1, boolean arg2) {
+		boolean var4 = arg1.isTranslucent();
+		boolean var5 = arg1.isPaletted();
+		if (arg2) {
+			if (var5) {
+				return var4 ? new PureJavaTranslucentFont(this, arg0, (PalettedSpriteData) arg1) : new PureJavaOpaqueFont(this, arg0, (PalettedSpriteData) arg1);
+			} else if (var4) {
+				return new PureJavaTranslucentFont(this, arg0, (FullSpriteData) arg1);
 			} else {
-				return new PureJavaOpaqueFont(this, metrics, (FullSpriteData) sprite);
+				return new PureJavaOpaqueFont(this, arg0, (FullSpriteData) arg1);
 			}
+		} else if (!var5) {
+			return new PureJavaFont1(this, arg0, (FullSpriteData) arg1);
+		} else if (var4) {
+			throw new IllegalArgumentException("");
+		} else {
+			return new PureJavaFont2(this, arg0, (PalettedSpriteData) arg1);
 		}
-
-		if (!paletted) {
-			return new PureJavaFont1(this, metrics, (FullSpriteData) sprite);
-		} else if (!translucent) {
-			return new PureJavaFont2(this, metrics, (PalettedSpriteData) sprite);
-		}
-
-		throw new IllegalArgumentException("");
 	}
 
 	@ObfuscatedName("afg.ck(I)V")
@@ -2118,28 +2132,22 @@ public class PureJavaToolkit extends Toolkit {
 			int var9 = var6.z >> 12;
 			float var10 = this.field9803.entries[10] * (float) var9 + this.field9803.entries[2] * (float) var7 + this.field9803.entries[6] * (float) var8 + this.field9803.entries[14];
 			float var11 = this.field9803.entries[11] * (float) var9 + this.field9803.entries[7] * (float) var8 + this.field9803.entries[3] * (float) var7 + this.field9803.entries[15];
-			if (var10 < -var11) {
-				continue;
+			if (!(var10 < -var11)) {
+				float var12 = this.field9813 * var10 / var11 + this.field9799;
+				if (!(var10 > var5.field865)) {
+					float var13 = this.field9803.entries[8] * (float) var9 + this.field9803.entries[4] * (float) var8 + this.field9803.entries[0] * (float) var7 + this.field9803.entries[12];
+					float var14 = this.field9803.entries[9] * (float) var9 + this.field9803.entries[5] * (float) var8 + this.field9803.entries[1] * (float) var7 + this.field9803.entries[13];
+					if (!(var13 < -var11) && !(var13 > var11) && !(var14 < -var11) && !(var14 > var11)) {
+						float var15 = (float) var6.field12162 / 4096.0F;
+						float var16 = this.field9795.entries[0] * var15 + var13;
+						float var17 = this.field9795.entries[3] * var15 + var11;
+						float var18 = this.field9789 * var13 / var11 + this.field9814;
+						float var19 = this.field9802 * var14 / var11 + this.field9806;
+						float var20 = this.field9789 * var16 / var17 + this.field9814;
+						this.drawParticle(arg0, arg1, arg2, var6, (int) var18, (int) var19, var12, (int) (var20 < var18 ? var18 - var20 : var20 - var18));
+					}
+				}
 			}
-
-			float var12 = this.field9813 * var10 / var11 + this.field9799;
-			if (var10 > var5.field865) {
-				continue;
-			}
-
-			float var13 = this.field9803.entries[8] * (float) var9 + this.field9803.entries[4] * (float) var8 + this.field9803.entries[0] * (float) var7 + this.field9803.entries[12];
-			float var14 = this.field9803.entries[9] * (float) var9 + this.field9803.entries[5] * (float) var8 + this.field9803.entries[1] * (float) var7 + this.field9803.entries[13];
-			if (var13 < -var11 || var13 > var11 || var14 < -var11 || var14 > var11) {
-				continue;
-			}
-
-			float var15 = (float) var6.field12162 / 4096.0F;
-			float var16 = this.field9795.entries[0] * var15 + var13;
-			float var17 = this.field9795.entries[3] * var15 + var11;
-			float var18 = this.field9789 * var13 / var11 + this.field9814;
-			float var19 = this.field9802 * var14 / var11 + this.field9806;
-			float var20 = this.field9789 * var16 / var17 + this.field9814;
-			this.drawParticle(arg0, arg1, arg2, var6, (int) var18, (int) var19, var12, (int) (var20 < var18 ? var18 - var20 : var20 - var18));
 		}
 	}
 
@@ -2438,7 +2446,7 @@ public class PureJavaToolkit extends Toolkit {
 	public void setSun(int arg0, float arg1, float arg2, float arg3, float arg4, float arg5) {
 		this.field9783 = (int) (arg1 * 65535.0F);
 		this.field9790 = (int) (arg2 * 65535.0F);
-		float var7 = (float) Math.sqrt(arg5 * arg5 + arg3 * arg3 + arg4 * arg4);
+		float var7 = (float) Math.sqrt((double) (arg5 * arg5 + arg3 * arg3 + arg4 * arg4));
 		this.field9804 = (int) (arg3 * 65535.0F / var7);
 		this.field9787 = (int) (arg4 * 65535.0F / var7);
 		this.field9788 = (int) (arg5 * 65535.0F / var7);

@@ -26,7 +26,7 @@ public class PrimitiveType {
 	@ObfuscatedName("ms.l")
 	public final int index;
 
-	public PrimitiveType(int index) {
-		this.index = index;
+	public PrimitiveType(int arg0) {
+		this.index = arg0;
 	}
 }

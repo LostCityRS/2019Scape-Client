@@ -6,12 +6,12 @@ import deob.ObfuscatedName;
 @ObfuscatedName("anp")
 public class PreferencesLoadingScreen extends Preference {
 
-	public PreferencesLoadingScreen(ClientOptions options) {
-		super(options);
+	public PreferencesLoadingScreen(ClientOptions arg0) {
+		super(arg0);
 	}
 
-	public PreferencesLoadingScreen(int value, ClientOptions options) {
-		super(value, options);
+	public PreferencesLoadingScreen(int arg0, ClientOptions arg1) {
+		super(arg0, arg1);
 	}
 
 	@ObfuscatedName("anp.o(I)V")
@@ -24,13 +24,13 @@ public class PreferencesLoadingScreen extends Preference {
 	}
 
 	@ObfuscatedName("anp.n(II)I")
-	public int canSetValue(int value) {
+	public int canSetValue(int arg0) {
 		return 1;
 	}
 
 	@ObfuscatedName("anp.k(II)V")
-	public void setValue(int value) {
-		this.currentValue = value;
+	public void setValue(int arg0) {
+		this.currentValue = arg0;
 	}
 
 	@ObfuscatedName("anp.s(I)I")

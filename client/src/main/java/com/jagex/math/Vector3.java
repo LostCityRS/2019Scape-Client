@@ -9,8 +9,8 @@ public class Vector3 {
 	@ObfuscatedName("ox.e")
 	public static Vector3[] pool;
 
-    @ObfuscatedName("ox.n")
-    public static int poolCapacity;
+	@ObfuscatedName("ox.n")
+	public static int poolCapacity;
 
 	@ObfuscatedName("ox.m")
 	public static int poolSize;
@@ -102,41 +102,41 @@ public class Vector3 {
 	public Vector3() {
 	}
 
-	public Vector3(float x, float y, float z) {
-		this.x = x;
-		this.y = y;
-		this.z = z;
+	public Vector3(float arg0, float arg1, float arg2) {
+		this.x = arg0;
+		this.y = arg1;
+		this.z = arg2;
 	}
 
-	public Vector3(Vector3 vector3) {
-		this.x = vector3.x;
-		this.y = vector3.y;
-		this.z = vector3.z;
+	public Vector3(Vector3 arg0) {
+		this.x = arg0.x;
+		this.y = arg0.y;
+		this.z = arg0.z;
 	}
 
-	public Vector3(Packet buf) {
-		this.x = buf.gFloat();
-		this.y = buf.gFloat();
-		this.z = buf.gFloat();
+	public Vector3(Packet arg0) {
+		this.x = arg0.gFloat();
+		this.y = arg0.gFloat();
+		this.z = arg0.gFloat();
 	}
 
 	@ObfuscatedName("ox.l(Lalw;)V")
-	public void decode(Packet buf) {
-		this.x = buf.gFloat();
-		this.y = buf.gFloat();
-		this.z = buf.gFloat();
+	public void decode(Packet arg0) {
+		this.x = arg0.gFloat();
+		this.y = arg0.gFloat();
+		this.z = arg0.gFloat();
 	}
 
 	@ObfuscatedName("ox.u(FFF)V")
-	public void setTo(float x, float y, float z) {
-		this.x = x;
-		this.y = y;
-		this.z = z;
+	public void setTo(float arg0, float arg1, float arg2) {
+		this.x = arg0;
+		this.y = arg1;
+		this.z = arg2;
 	}
 
 	@ObfuscatedName("ox.z(Lox;)V")
-	public void setTo(Vector3 vector3) {
-		this.setTo(vector3.x, vector3.y, vector3.z);
+	public void setTo(Vector3 arg0) {
+		this.setTo(arg0.x, arg0.y, arg0.z);
 	}
 
 	@ObfuscatedName("ox.p()V")
@@ -147,8 +147,8 @@ public class Vector3 {
 	}
 
 	@ObfuscatedName("ox.d(Lox;)Z")
-	public boolean isEqualTo(Vector3 other) {
-		return this.x == other.x && this.y == other.y && this.z == other.z;
+	public boolean isEqualTo(Vector3 arg0) {
+		return this.x == arg0.x && this.y == arg0.y && this.z == arg0.z;
 	}
 
 	@ObfuscatedName("ox.c()V")
@@ -167,59 +167,59 @@ public class Vector3 {
 	}
 
 	@ObfuscatedName("ox.v(Lox;)V")
-	public final void add(Vector3 other) {
-		this.x += other.x;
-		this.y += other.y;
-		this.z += other.z;
+	public final void add(Vector3 arg0) {
+		this.x += arg0.x;
+		this.y += arg0.y;
+		this.z += arg0.z;
 	}
 
 	@ObfuscatedName("ox.o(Lox;F)V")
-	public final void addScaled(Vector3 other, float factor) {
-		this.x += other.x * factor;
-		this.y += other.y * factor;
-		this.z += other.z * factor;
+	public final void addScaled(Vector3 arg0, float arg1) {
+		this.x += arg0.x * arg1;
+		this.y += arg0.y * arg1;
+		this.z += arg0.z * arg1;
 	}
 
 	@ObfuscatedName("ox.s(Lox;Lox;)Lox;")
-	public static final Vector3 add(Vector3 a, Vector3 b) {
-		Vector3 var2 = create(a);
-		var2.add(b);
+	public static final Vector3 add(Vector3 arg0, Vector3 arg1) {
+		Vector3 var2 = create(arg0);
+		var2.add(arg1);
 		return var2;
 	}
 
 	@ObfuscatedName("ox.y(Lox;)V")
-	public final void sub(Vector3 other) {
-		this.x -= other.x;
-		this.y -= other.y;
-		this.z -= other.z;
+	public final void sub(Vector3 arg0) {
+		this.x -= arg0.x;
+		this.y -= arg0.y;
+		this.z -= arg0.z;
 	}
 
 	@ObfuscatedName("ox.q(Lox;Lox;)Lox;")
-	public static final Vector3 sub(Vector3 a, Vector3 b) {
-		Vector3 var2 = create(a);
-		var2.sub(b);
+	public static final Vector3 sub(Vector3 arg0, Vector3 arg1) {
+		Vector3 var2 = create(arg0);
+		var2.sub(arg1);
 		return var2;
 	}
 
 	@ObfuscatedName("ox.x(Lox;)F")
-	public final float dot(Vector3 other) {
-		return this.z * other.z + this.y * other.y + this.x * other.x;
+	public final float dot(Vector3 arg0) {
+		return this.z * arg0.z + this.y * arg0.y + this.x * arg0.x;
 	}
 
 	@ObfuscatedName("ox.b(Lox;Lox;)F")
-	public static final float dot(Vector3 a, Vector3 b) {
-		return a.dot(b);
+	public static final float dot(Vector3 arg0, Vector3 arg1) {
+		return arg0.dot(arg1);
 	}
 
 	@ObfuscatedName("ox.h(Lox;)V")
-	public final void cross(Vector3 other) {
-		this.setTo(this.y * other.z - this.z * other.y, this.z * other.x - this.x * other.z, this.x * other.y - this.y * other.x);
+	public final void cross(Vector3 arg0) {
+		this.setTo(this.y * arg0.z - this.z * arg0.y, this.z * arg0.x - this.x * arg0.z, this.x * arg0.y - this.y * arg0.x);
 	}
 
 	@ObfuscatedName("ox.a(Lox;Lox;)Lox;")
-	public static final Vector3 cross(Vector3 a, Vector3 b) {
-		Vector3 var2 = create(a);
-		var2.cross(b);
+	public static final Vector3 cross(Vector3 arg0, Vector3 arg1) {
+		Vector3 var2 = create(arg0);
+		var2.cross(arg1);
 		return var2;
 	}
 
@@ -242,16 +242,16 @@ public class Vector3 {
 	}
 
 	@ObfuscatedName("ox.j(Lox;)V")
-	public final void multiply(Vector3 other) {
-		this.x *= other.x;
-		this.y *= other.y;
-		this.z *= other.z;
+	public final void multiply(Vector3 arg0) {
+		this.x *= arg0.x;
+		this.y *= arg0.y;
+		this.z *= arg0.z;
 	}
 
 	@ObfuscatedName("ox.t(Lox;Lox;)Lox;")
-	public static final Vector3 multiply(Vector3 a, Vector3 b) {
-		Vector3 var2 = create(a);
-		var2.multiply(b);
+	public static final Vector3 multiply(Vector3 arg0, Vector3 arg1) {
+		Vector3 var2 = create(arg0);
+		var2.multiply(arg1);
 		return var2;
 	}
 

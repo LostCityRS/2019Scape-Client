@@ -1,5 +1,6 @@
 package com.jagex.graphics;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import deob.ObfuscatedName;
@@ -147,8 +148,8 @@ public class MaterialRaw {
 			arg0.gFloat();
 		}
 		this.field1336 = arg0.g1() == 1;
-		SerializableEnums.decode(FacetMode.method4590(), arg0.g1());
-		this.alphaMode = (AlphaMode) SerializableEnums.decode(AlphaMode.method8501(), arg0.g1());
+		SerializableEnums.decode((SerializableEnum[]) FacetMode.method4590(), arg0.g1());
+		this.alphaMode = (AlphaMode) SerializableEnums.decode((SerializableEnum[]) AlphaMode.method8501(), arg0.g1());
 		if (AlphaMode.ALPHA_TESTED == this.alphaMode) {
 			this.alphaThreshold = (byte) arg0.g1();
 		}
@@ -232,14 +233,14 @@ public class MaterialRaw {
 		byte var4 = (byte) arg0.g1();
 		this.repeatS = (byte) (var4 & 0x7);
 		this.repeatT = (byte) (var4 >> 3 & 0x7);
-		SerializableEnums.decode(FacetMode.method4590(), arg0.g1());
-		MaterialQualityMode var5 = (MaterialQualityMode) SerializableEnums.decode(MaterialQualityMode.method745(), arg0.g1());
+		SerializableEnums.decode((SerializableEnum[]) FacetMode.method4590(), arg0.g1());
+		MaterialQualityMode var5 = (MaterialQualityMode) SerializableEnums.decode((SerializableEnum[]) MaterialQualityMode.method745(), arg0.g1());
 		if (MaterialQualityMode.HD == var5) {
 			this.highDetail = true;
 		} else if (MaterialQualityMode.LD == var5) {
 			this.field1361 = true;
 		}
-		this.alphaMode = (AlphaMode) SerializableEnums.decode(AlphaMode.method8501(), arg0.g1());
+		this.alphaMode = (AlphaMode) SerializableEnums.decode((SerializableEnum[]) AlphaMode.method8501(), arg0.g1());
 		if (AlphaMode.ALPHA_TESTED == this.alphaMode) {
 			this.alphaThreshold = (byte) arg0.g1();
 		}

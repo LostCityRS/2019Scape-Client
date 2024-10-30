@@ -1,12 +1,11 @@
 package lzma.sdk.lzma;
 
-import lzma.sdk.rangecoder.BitTreeDecoder;
-import lzma.sdk.lz.OutWindow;
 import deob.ObfuscatedName;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import lzma.sdk.lz.OutWindow;
+import lzma.sdk.rangecoder.BitTreeDecoder;
 
 @ObfuscatedName("sz")
 public class Decoder {
@@ -45,13 +44,13 @@ public class Decoder {
 	public BitTreeDecoder m_PosAlignDecoder = new BitTreeDecoder(4);
 
 	@ObfuscatedName("sz.c")
-	public LenDecoder m_LenDecoder = new LenDecoder(this);
+	public Decoder.LenDecoder m_LenDecoder = new Decoder.LenDecoder();
 
 	@ObfuscatedName("sz.r")
-	public LenDecoder m_RepLenDecoder = new LenDecoder(this);
+	public Decoder.LenDecoder m_RepLenDecoder = new Decoder.LenDecoder();
 
 	@ObfuscatedName("sz.v")
-	public LiteralDecoder m_LiteralDecoder = new LiteralDecoder(this);
+	public Decoder.LiteralDecoder m_LiteralDecoder = new Decoder.LiteralDecoder();
 
 	@ObfuscatedName("sz.o")
 	public int m_DictionarySize = -1;
@@ -63,57 +62,22 @@ public class Decoder {
 	public int m_PosStateMask;
 
 	public Decoder() {
-		for (int i = 0; i < 4; i++) {
-			this.m_PosSlotDecoder[i] = new BitTreeDecoder(6);
+		for (int var1 = 0; var1 < 4; var1++) {
+			this.m_PosSlotDecoder[var1] = new BitTreeDecoder(6);
 		}
 	}
 
 	@ObfuscatedName("sz.e(IB)Z")
-	public boolean setDictionarySize(int dictionarySize) {
-		if (dictionarySize < 0) {
+	public boolean setDictionarySize(int arg0) {
+		if (arg0 < 0) {
 			return false;
 		}
-		if (this.m_DictionarySize != dictionarySize) {
-			this.m_DictionarySize = dictionarySize;
+		if (this.m_DictionarySize != arg0) {
+			this.m_DictionarySize = arg0;
 			this.m_DictionarySizeCheck = Math.max(this.m_DictionarySize, 1);
 			this.m_OutWindow.create(Math.max(this.m_DictionarySizeCheck, 4096));
 		}
 		return true;
-	}
-
-	@ObfuscatedName("sz.n(IIII)Z")
-	public boolean setLcLpPb(int lc, int lp, int pb) {
-		if (lc > 8 || lp > 4 || pb > 4) {
-			return false;
-		}
-		this.m_LiteralDecoder.create(lp, lc);
-		int numPosStates = 0x1 << pb;
-		this.m_LenDecoder.create(numPosStates);
-		this.m_RepLenDecoder.create(numPosStates);
-		this.m_PosStateMask = numPosStates - 1;
-		return true;
-	}
-
-	@ObfuscatedName("sz.m(I)V")
-	public void init() throws IOException {
-		this.m_OutWindow.init(false);
-
-		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsMatchDecoders);
-		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRep0LongDecoders);
-		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRepDecoders);
-		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRepG0Decoders);
-		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRepG1Decoders);
-		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRepG2Decoders);
-		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_PosDecoders);
-
-		this.m_LiteralDecoder.init();
-		for (int i = 0; i < 4; i++) {
-			this.m_PosSlotDecoder[i].init();
-		}
-		this.m_LenDecoder.init();
-		this.m_RepLenDecoder.init();
-		this.m_PosAlignDecoder.init();
-		this.m_RangeDecoder.init();
 	}
 
 	@ObfuscatedName("nc.k([SILjp;II)I")
@@ -129,194 +93,195 @@ public class Decoder {
 		return var5;
 	}
 
+	@ObfuscatedName("sz.n(IIII)Z")
+	public boolean setLcLpPb(int arg0, int arg1, int arg2) {
+		if (arg0 > 8 || arg1 > 4 || arg2 > 4) {
+			return false;
+		}
+		this.m_LiteralDecoder.create(arg1, arg0);
+		int var4 = 0x1 << arg2;
+		this.m_LenDecoder.create(var4);
+		this.m_RepLenDecoder.create(var4);
+		this.m_PosStateMask = var4 - 1;
+		return true;
+	}
+
+	@ObfuscatedName("sz.m(I)V")
+	public void init() throws IOException {
+		this.m_OutWindow.init(false);
+		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsMatchDecoders);
+		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRep0LongDecoders);
+		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRepDecoders);
+		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRepG0Decoders);
+		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRepG1Decoders);
+		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_IsRepG2Decoders);
+		lzma.sdk.rangecoder.Decoder.initBitModels(this.m_PosDecoders);
+		this.m_LiteralDecoder.init();
+		for (int var1 = 0; var1 < 4; var1++) {
+			this.m_PosSlotDecoder[var1].init();
+		}
+		this.m_LenDecoder.init();
+		this.m_RepLenDecoder.init();
+		this.m_PosAlignDecoder.init();
+		this.m_RangeDecoder.init();
+	}
+
 	@ObfuscatedName("sz.k(Ljava/io/InputStream;Ljava/io/OutputStream;J)Z")
-	public boolean code(InputStream inStream, OutputStream outStream, long outSize) throws IOException {
-		this.m_RangeDecoder.setStream(inStream);
-		this.m_OutWindow.setStream(outStream);
+	public boolean code(InputStream arg0, OutputStream arg1, long arg2) throws IOException {
+		this.m_RangeDecoder.setStream(arg0);
+		this.m_OutWindow.setStream(arg1);
 		this.init();
-
-		int state = Base.stateInit();
-		int rep0 = 0;
-		int rep1 = 0;
-		int rep2 = 0;
-		int rep3 = 0;
-
-		long nowPos64 = 0L;
-		byte prevByte = 0;
+		int var5 = Base.stateInit();
+		int var6 = 0;
+		int var7 = 0;
+		int var8 = 0;
+		int var9 = 0;
+		long var10 = 0L;
+		byte var12 = 0;
 		while (true) {
 			int var15;
 			label71: {
-				while (outSize < 0L || nowPos64 < outSize) {
-					int posState = (int) nowPos64 & this.m_PosStateMask;
-					if (this.m_RangeDecoder.decodeBit(this.m_IsMatchDecoders, (state << 4) + posState) != 0) {
-						if (this.m_RangeDecoder.decodeBit(this.m_IsRepDecoders, state) == 1) {
+				while (arg2 < 0L || var10 < arg2) {
+					int var13 = (int) var10 & this.m_PosStateMask;
+					if (this.m_RangeDecoder.decodeBit(this.m_IsMatchDecoders, (var5 << 4) + var13) != 0) {
+						if (this.m_RangeDecoder.decodeBit(this.m_IsRepDecoders, var5) == 1) {
 							var15 = 0;
-							if (this.m_RangeDecoder.decodeBit(this.m_IsRepG0Decoders, state) != 0) {
+							if (this.m_RangeDecoder.decodeBit(this.m_IsRepG0Decoders, var5) != 0) {
 								int var16;
-								if (this.m_RangeDecoder.decodeBit(this.m_IsRepG1Decoders, state) == 0) {
-									var16 = rep1;
+								if (this.m_RangeDecoder.decodeBit(this.m_IsRepG1Decoders, var5) == 0) {
+									var16 = var7;
 								} else {
-									if (this.m_RangeDecoder.decodeBit(this.m_IsRepG2Decoders, state) == 0) {
-										var16 = rep2;
+									if (this.m_RangeDecoder.decodeBit(this.m_IsRepG2Decoders, var5) == 0) {
+										var16 = var8;
 									} else {
-										var16 = rep3;
-										rep3 = rep2;
+										var16 = var9;
+										var9 = var8;
 									}
-									rep2 = rep1;
+									var8 = var7;
 								}
-								rep1 = rep0;
-								rep0 = var16;
-							} else if (this.m_RangeDecoder.decodeBit(this.m_IsRep0LongDecoders, (state << 4) + posState) == 0) {
-								state = Base.stateUpdateShortRep(state);
+								var7 = var6;
+								var6 = var16;
+							} else if (this.m_RangeDecoder.decodeBit(this.m_IsRep0LongDecoders, (var5 << 4) + var13) == 0) {
+								var5 = Base.stateUpdateShortRep(var5);
 								var15 = 1;
 							}
 							if (var15 == 0) {
-								var15 = this.m_RepLenDecoder.decode(this.m_RangeDecoder, posState) + 2;
-								state = Base.stateUpdateRep(state);
+								var15 = this.m_RepLenDecoder.decode(this.m_RangeDecoder, var13) + 2;
+								var5 = Base.stateUpdateRep(var5);
 							}
 							break label71;
 						}
-						rep3 = rep2;
-						rep2 = rep1;
-						rep1 = rep0;
-						var15 = this.m_LenDecoder.decode(this.m_RangeDecoder, posState) + 2;
-						state = Base.stateUpdateMatch(state);
+						var9 = var8;
+						var8 = var7;
+						var7 = var6;
+						var15 = this.m_LenDecoder.decode(this.m_RangeDecoder, var13) + 2;
+						var5 = Base.stateUpdateMatch(var5);
 						int var17 = this.m_PosSlotDecoder[Base.getLenToPosState(var15)].decode(this.m_RangeDecoder);
 						if (var17 < 4) {
-							rep0 = var17;
+							var6 = var17;
 							break label71;
 						}
-						int numDirectBits = (var17 >> 1) - 1;
-						int var19 = (var17 & 0x1 | 0x2) << numDirectBits;
+						int var18 = (var17 >> 1) - 1;
+						int var19 = (var17 & 0x1 | 0x2) << var18;
 						if (var17 < 14) {
-							rep0 = var19 + reverseDecode(this.m_PosDecoders, var19 - var17 - 1, this.m_RangeDecoder, numDirectBits);
+							var6 = var19 + reverseDecode(this.m_PosDecoders, var19 - var17 - 1, this.m_RangeDecoder, var18);
 							break label71;
 						}
-						int var20 = var19 + (this.m_RangeDecoder.decodeDirectBits(numDirectBits - 4) << 4);
-						rep0 = var20 + this.m_PosAlignDecoder.reverseDecode(this.m_RangeDecoder);
-						if (rep0 >= 0) {
+						int var20 = var19 + (this.m_RangeDecoder.decodeDirectBits(var18 - 4) << 4);
+						var6 = var20 + this.m_PosAlignDecoder.reverseDecode(this.m_RangeDecoder);
+						if (var6 >= 0) {
 							break label71;
 						}
-						if (rep0 != -1) {
+						if (var6 != -1) {
 							return false;
 						}
 						break;
 					}
-					LiteralDecoder.Decoder2 decoder2 = this.m_LiteralDecoder.getDecoder((int) nowPos64, prevByte);
-					if (Base.stateIsCharState(state)) {
-						prevByte = decoder2.decodeNormal(this.m_RangeDecoder);
+					Decoder.Decoder2 var14 = this.m_LiteralDecoder.getDecoder((int) var10, var12);
+					if (Base.stateIsCharState(var5)) {
+						var12 = var14.decodeNormal(this.m_RangeDecoder);
 					} else {
-						prevByte = decoder2.decodeWithMatchByte(this.m_RangeDecoder, this.m_OutWindow.getByte(rep0));
+						var12 = var14.decodeWithMatchByte(this.m_RangeDecoder, this.m_OutWindow.getByte(var6));
 					}
-					this.m_OutWindow.putByte(prevByte);
-					state = Base.stateUpdateChar(state);
-					nowPos64++;
+					this.m_OutWindow.putByte(var12);
+					var5 = Base.stateUpdateChar(var5);
+					var10++;
 				}
 				this.m_OutWindow.flush();
 				this.m_OutWindow.releaseStream();
 				this.m_RangeDecoder.releaseStream();
 				return true;
 			}
-			if ((long) rep0 >= nowPos64 || rep0 >= this.m_DictionarySizeCheck) {
+			if ((long) var6 >= var10 || var6 >= this.m_DictionarySizeCheck) {
 				return false;
 			}
-			this.m_OutWindow.copyBlock(rep0, var15);
-			nowPos64 += var15;
-			prevByte = this.m_OutWindow.getByte(0);
+			this.m_OutWindow.copyBlock(var6, var15);
+			var10 += var15;
+			var12 = this.m_OutWindow.getByte(0);
 		}
 	}
 
-	// line 155
 	@ObfuscatedName("sz.f([BI)Z")
-	public boolean setDecoderProperties(byte[] properties) {
-		if (properties.length < 5) {
+	public boolean setDecoderProperties(byte[] arg0) {
+		if (arg0.length < 5) {
 			return false;
 		}
-		int val = properties[0] & 0xFF;
-		int lc = val % 9;
-		int remainder = val / 9;
-		int lp = remainder % 5;
-		int pb = remainder / 5;
-		int dictionarySize = 0;
-		for (int i = 0; i < 4; i++) {
-			dictionarySize += (properties[i + 1] & 0xFF) << i * 8;
+		int var2 = arg0[0] & 0xFF;
+		int var3 = var2 % 9;
+		int var4 = var2 / 9;
+		int var5 = var4 % 5;
+		int var6 = var4 / 5;
+		int var7 = 0;
+		for (int var8 = 0; var8 < 4; var8++) {
+			var7 += (arg0[var8 + 1] & 0xFF) << var8 * 8;
 		}
-		return this.setLcLpPb(lc, lp, pb) ? this.setDictionarySize(dictionarySize) : false;
+		return this.setLcLpPb(var3, var5, var6) ? this.setDictionarySize(var7) : false;
 	}
 
-	@ObfuscatedName("sc")
-	public static class LenDecoder {
+	@ObfuscatedName("sa")
+	public class Decoder2 {
 
-		// $FF: synthetic field
-		public final Decoder this$0;
+		@ObfuscatedName("sa.e")
+		public short[] m_Decoders = new short[768];
 
-		@ObfuscatedName("sc.e")
-		public short[] m_Choice;
-
-		@ObfuscatedName("sc.n")
-		public BitTreeDecoder[] m_LowCoder;
-
-		@ObfuscatedName("sc.m")
-		public BitTreeDecoder[] m_MidCoder;
-
-		@ObfuscatedName("sc.k")
-		public BitTreeDecoder m_HighCoder;
-
-		@ObfuscatedName("sc.f")
-		public int m_NumPosStates;
-
-		// line 174
-		public LenDecoder(Decoder arg0) {
-			this.this$0 = arg0;
-			this.m_Choice = new short[2];
-			this.m_LowCoder = new BitTreeDecoder[16];
-			this.m_MidCoder = new BitTreeDecoder[16];
-			this.m_HighCoder = new BitTreeDecoder(8);
-			this.m_NumPosStates = 0;
-		}
-
-		@ObfuscatedName("sc.e(II)V")
-		public void create(int numPosStates) {
-			for (; m_NumPosStates < numPosStates; m_NumPosStates++) {
-				this.m_LowCoder[this.m_NumPosStates] = new BitTreeDecoder(3);
-				this.m_MidCoder[this.m_NumPosStates] = new BitTreeDecoder(3);
-			}
-		}
-
-		@ObfuscatedName("sc.n(B)V")
+		@ObfuscatedName("sa.e(I)V")
 		public void init() {
-			lzma.sdk.rangecoder.Decoder.initBitModels(this.m_Choice);
-			for (int posState = 0; posState < this.m_NumPosStates; posState++) {
-				this.m_LowCoder[posState].init();
-				this.m_MidCoder[posState].init();
-			}
-			this.m_HighCoder.init();
+			lzma.sdk.rangecoder.Decoder.initBitModels(this.m_Decoders);
 		}
 
-		@ObfuscatedName("sc.m(Ljp;IB)I")
-		public int decode(lzma.sdk.rangecoder.Decoder rangeDecoder, int posState) throws IOException {
-			if (rangeDecoder.decodeBit(this.m_Choice, 0) == 0) {
-				return this.m_LowCoder[posState].decode(rangeDecoder);
-			}
-			byte symbol = 8;
-			int var4;
-			if (rangeDecoder.decodeBit(this.m_Choice, 1) == 0) {
-				var4 = symbol + this.m_MidCoder[posState].decode(rangeDecoder);
-			} else {
-				var4 = symbol + 8 + this.m_HighCoder.decode(rangeDecoder);
-			}
-			return var4;
+		@ObfuscatedName("sa.n(Ljp;I)B")
+		public byte decodeNormal(lzma.sdk.rangecoder.Decoder arg0) throws IOException {
+			int var2 = 1;
+			do {
+				var2 = var2 << 1 | arg0.decodeBit(this.m_Decoders, var2);
+			} while (var2 < 256);
+			return (byte) var2;
+		}
+
+		@ObfuscatedName("sa.m(Ljp;BI)B")
+		public byte decodeWithMatchByte(lzma.sdk.rangecoder.Decoder arg0, byte arg1) throws IOException {
+			int var3 = 1;
+			do {
+				int var4 = arg1 >> 7 & 0x1;
+				arg1 = (byte) (arg1 << 1);
+				int var5 = arg0.decodeBit(this.m_Decoders, (var4 + 1 << 8) + var3);
+				var3 = var3 << 1 | var5;
+				if (var4 != var5) {
+					while (var3 < 256) {
+						var3 = var3 << 1 | arg0.decodeBit(this.m_Decoders, var3);
+					}
+					return (byte) var3;
+				}
+			} while (var3 < 256);
+			return (byte) var3;
 		}
 	}
 
 	@ObfuscatedName("sj")
-	public static class LiteralDecoder {
-
-		// $FF: synthetic field
-		public final Decoder this$0;
+	public class LiteralDecoder {
 
 		@ObfuscatedName("sj.e")
-		public Decoder2[] m_Coders;
+		public Decoder.Decoder2[] m_Coders;
 
 		@ObfuscatedName("sj.n")
 		public int m_NumPrevBits;
@@ -327,87 +292,85 @@ public class Decoder {
 		@ObfuscatedName("sj.k")
 		public int m_PosMask;
 
-		// line 207
-		public LiteralDecoder(Decoder arg0) {
-			this.this$0 = arg0;
-		}
-
-		// line 210
 		@ObfuscatedName("sj.e(III)V")
-		public void create(int numPosBits, int numPrevBits) {
-			if (this.m_Coders != null && this.m_NumPrevBits == numPrevBits && this.m_NumPosBits == numPosBits) {
+		public void create(int arg0, int arg1) {
+			if (this.m_Coders != null && this.m_NumPrevBits == arg1 && this.m_NumPosBits == arg0) {
 				return;
 			}
-			this.m_NumPosBits = numPosBits;
-			this.m_PosMask = (0x1 << numPosBits) - 1;
-			this.m_NumPrevBits = numPrevBits;
-			int numStates = 0x1 << this.m_NumPosBits + this.m_NumPrevBits;
-			this.m_Coders = new Decoder2[numStates];
-			for (int i = 0; i < numStates; i++) {
-				this.m_Coders[i] = new Decoder2(this);
+			this.m_NumPosBits = arg0;
+			this.m_PosMask = (0x1 << arg0) - 1;
+			this.m_NumPrevBits = arg1;
+			int var3 = 0x1 << this.m_NumPosBits + this.m_NumPrevBits;
+			this.m_Coders = new Decoder.Decoder2[var3];
+			for (int var4 = 0; var4 < var3; var4++) {
+				this.m_Coders[var4] = new Decoder.Decoder2();
 			}
 		}
 
 		@ObfuscatedName("sj.n(I)V")
 		public void init() {
-			int numStates = 0x1 << this.m_NumPosBits + this.m_NumPrevBits;
-			for (int i = 0; i < numStates; i++) {
-				this.m_Coders[i].init();
+			int var1 = 0x1 << this.m_NumPosBits + this.m_NumPrevBits;
+			for (int var2 = 0; var2 < var1; var2++) {
+				this.m_Coders[var2].init();
 			}
 		}
 
-		// line 225
 		@ObfuscatedName("sj.m(IBI)Lsa;")
-		public Decoder2 getDecoder(int pos, byte prevByte) {
-			return this.m_Coders[((prevByte & 0xFF) >>> 8 - this.m_NumPrevBits) + ((pos & this.m_PosMask) << this.m_NumPrevBits)];
+		public Decoder.Decoder2 getDecoder(int arg0, byte arg1) {
+			return this.m_Coders[((arg1 & 0xFF) >>> 8 - this.m_NumPrevBits) + ((arg0 & this.m_PosMask) << this.m_NumPrevBits)];
+		}
+	}
+
+	@ObfuscatedName("sc")
+	public class LenDecoder {
+
+		@ObfuscatedName("sc.e")
+		public short[] m_Choice = new short[2];
+
+		@ObfuscatedName("sc.n")
+		public BitTreeDecoder[] m_LowCoder = new BitTreeDecoder[16];
+
+		@ObfuscatedName("sc.m")
+		public BitTreeDecoder[] m_MidCoder = new BitTreeDecoder[16];
+
+		@ObfuscatedName("sc.k")
+		public BitTreeDecoder m_HighCoder = new BitTreeDecoder(8);
+
+		@ObfuscatedName("sc.f")
+		public int m_NumPosStates = 0;
+
+		@ObfuscatedName("sc.e(II)V")
+		public void create(int arg0) {
+			while (this.m_NumPosStates < arg0) {
+				this.m_LowCoder[this.m_NumPosStates] = new BitTreeDecoder(3);
+				this.m_MidCoder[this.m_NumPosStates] = new BitTreeDecoder(3);
+				this.m_NumPosStates++;
+			}
 		}
 
-		@ObfuscatedName("sa")
-		public static class Decoder2 {
-
-			// $FF: synthetic field
-			public final LiteralDecoder this$1;
-
-			@ObfuscatedName("sa.e")
-			public short[] m_Decoders;
-
-			// line 231
-			public Decoder2(LiteralDecoder arg0) {
-				this.this$1 = arg0;
-				this.m_Decoders = new short[768];
+		@ObfuscatedName("sc.n(B)V")
+		public void init() {
+			lzma.sdk.rangecoder.Decoder.initBitModels(this.m_Choice);
+			for (int var1 = 0; var1 < this.m_NumPosStates; var1++) {
+				this.m_LowCoder[var1].init();
+				this.m_MidCoder[var1].init();
 			}
+			this.m_HighCoder.init();
+		}
 
-			@ObfuscatedName("sa.e(I)V")
-			public void init() {
-				lzma.sdk.rangecoder.Decoder.initBitModels(this.m_Decoders);
+		@ObfuscatedName("sc.m(Ljp;IB)I")
+		public int decode(lzma.sdk.rangecoder.Decoder arg0, int arg1) throws IOException {
+			if (arg0.decodeBit(this.m_Choice, 0) == 0) {
+				return this.m_LowCoder[arg1].decode(arg0);
 			}
-
-			@ObfuscatedName("sa.n(Ljp;I)B")
-			public byte decodeNormal(lzma.sdk.rangecoder.Decoder rangeDecoder) throws IOException {
-				int symbol = 1;
-				do {
-					symbol = symbol << 1 | rangeDecoder.decodeBit(this.m_Decoders, symbol);
-				} while (symbol < 256);
-				return (byte) symbol;
+			byte var3 = 8;
+			int var4;
+			if (arg0.decodeBit(this.m_Choice, 1) == 0) {
+				var4 = var3 + this.m_MidCoder[arg1].decode(arg0);
+			} else {
+				var4 = var3 + 8 + this.m_HighCoder.decode(arg0);
 			}
-
-			@ObfuscatedName("sa.m(Ljp;BI)B")
-			public byte decodeWithMatchByte(lzma.sdk.rangecoder.Decoder rangeDecoder, byte matchByte) throws IOException {
-				int symbol = 1;
-				do {
-					int matchBit = matchByte >> 7 & 0x1;
-					matchByte = (byte) (matchByte << 1);
-					int bit = rangeDecoder.decodeBit(this.m_Decoders, (matchBit + 1 << 8) + symbol);
-					symbol = symbol << 1 | bit;
-					if (matchBit != bit) {
-						while (symbol < 256) {
-							symbol = symbol << 1 | rangeDecoder.decodeBit(this.m_Decoders, symbol);
-						}
-						return (byte) symbol;
-					}
-				} while (symbol < 256);
-				return (byte) symbol;
-			}
+			return var4;
 		}
 	}
 }

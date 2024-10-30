@@ -1,6 +1,7 @@
 package com.jagex.graphics.gl;
 
 import com.jagex.game.client.DataType;
+import com.jagex.graphics.GraphicsDeletable;
 import com.jagex.graphics.PostProcessingRelated;
 import com.jagex.graphics.TextureFormat;
 import deob.ObfuscatedName;

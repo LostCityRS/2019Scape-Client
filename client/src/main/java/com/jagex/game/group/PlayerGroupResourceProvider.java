@@ -18,5 +18,5 @@ public interface PlayerGroupResourceProvider {
 	SkillDefaults getSkillDefaults();
 
 	@ObfuscatedName("gu.e(B)Ladd;")
-    VarTypeList getVarPlayerTypeList();
+	VarTypeList getVarPlayerTypeList();
 }

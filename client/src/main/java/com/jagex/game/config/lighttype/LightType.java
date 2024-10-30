@@ -9,25 +9,25 @@ import deob.ObfuscatedName;
 public class LightType implements ConfigType, MutableConfig {
 
 	@ObfuscatedName("adl.e")
-	public int field9168 = 0;
+	public int field9168 = 0 * 649135051;
 
 	@ObfuscatedName("adl.n")
-	public int field9169 = 0;
+	public int field9169 = 0 * -88051697;
 
 	@ObfuscatedName("adl.m")
-	public int field9167 = 2048;
+	public int field9167 = -1468389376 * 243149709;
 
 	@ObfuscatedName("adl.k")
-	public int field9170 = 2048;
+	public int field9170 = -1478424576 * 2054784993;
 
 	@ObfuscatedName("adl.e(Lalw;B)V")
-	public void decode(Packet buf) {
+	public void decode(Packet arg0) {
 		while (true) {
-			int var2 = buf.g1();
+			int var2 = arg0.g1();
 			if (var2 == 0) {
 				return;
 			}
-			this.method15145(buf, var2);
+			this.method15145(arg0, var2);
 		}
 	}
 

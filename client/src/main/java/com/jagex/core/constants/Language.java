@@ -1,7 +1,6 @@
 package com.jagex.core.constants;
 
 import deob.ObfuscatedName;
-
 import java.util.Locale;
 
 @ObfuscatedName("zt")
@@ -44,27 +43,27 @@ public class Language implements SerializableEnum {
 	public static final Language[] LANGUAGES;
 
 	static {
-		Language[] languages = values();
-		LANGUAGES = new Language[languages.length];
-		Language[] var1 = languages;
-		for (int index = 0; index < var1.length; index++) {
-			Language language = var1[index];
-			if (LANGUAGES[language.serialID] != null) {
+		Language[] var0 = values();
+		LANGUAGES = new Language[var0.length];
+		Language[] var1 = var0;
+		for (int var2 = 0; var2 < var1.length; var2++) {
+			Language var3 = var1[var2];
+			if (LANGUAGES[var3.serialID] != null) {
 				throw new IllegalStateException();
 			}
-			LANGUAGES[language.serialID] = language;
+			LANGUAGES[var3.serialID] = var3;
 		}
 	}
 
 	@ObfuscatedName("zt.e(I)[Lzt;")
 	public static Language[] values() {
-		return new Language[] {PT, NL, EN, DE, ES, ES_MX, FR};
+		return new Language[] { PT, NL, EN, DE, ES, ES_MX, FR };
 	}
 
-	public Language(String arg0, String arg1, String arg2, ModeWhere arg3, int serialID, String arg5) {
+	public Language(String arg0, String arg1, String arg2, ModeWhere arg3, int arg4, String arg5) {
 		this.field8295 = arg0;
 		this.field8293 = arg1;
-		this.serialID = serialID;
+		this.serialID = arg4;
 		if (arg5 == null) {
 			this.locale = new Locale(arg1.substring(0, 2));
 		} else {
@@ -88,8 +87,8 @@ public class Language implements SerializableEnum {
 	}
 
 	@ObfuscatedName("zt.w(II)Lzt;")
-	public static Language getLanguage(int index) {
-		return index >= 0 && index < LANGUAGES.length ? LANGUAGES[index] : null;
+	public static Language getLanguage(int arg0) {
+		return arg0 >= 0 && arg0 < LANGUAGES.length ? LANGUAGES[arg0] : null;
 	}
 
 	public String toString() {

@@ -1,5 +1,6 @@
 package com.jagex.game.config.vartype.player;
 
+import com.jagex.core.constants.SerializableEnum;
 import com.jagex.core.datastruct.SerializableEnums;
 import com.jagex.core.io.Packet;
 import com.jagex.game.config.vartype.VarType;
@@ -18,7 +19,7 @@ public class VarPlayerType extends VarType {
 
 	@ObfuscatedName("aff.u(Lalw;IS)V")
 	public void decode(Packet arg0, int arg1) {
-		VarPlayerTypeEncodingKey var3 = (VarPlayerTypeEncodingKey) SerializableEnums.decode(VarPlayerTypeEncodingKey.values(), arg1);
+		VarPlayerTypeEncodingKey var3 = (VarPlayerTypeEncodingKey) SerializableEnums.decode((SerializableEnum[]) VarPlayerTypeEncodingKey.values(), arg1);
 		if (VarPlayerTypeEncodingKey.CLIENTCODE == var3) {
 			this.clientCode = arg0.g2();
 		}

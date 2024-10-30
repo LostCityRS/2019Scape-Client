@@ -71,7 +71,7 @@ public class LookatPoint extends Lookat {
 	}
 
 	@ObfuscatedName("anc.w(Lalw;I)V")
-	public void decode(Packet buf) {
-		this.field11848.decode(buf);
+	public void decode(Packet arg0) {
+		this.field11848.decode(arg0);
 	}
 }

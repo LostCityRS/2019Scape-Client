@@ -9,5 +9,5 @@ public interface ConfigTypeFactory {
 	Class type();
 
 	@ObfuscatedName("abs.v(ILao;I)Lay;")
-	ConfigType create(int id, ConfigTypeList configTypeList);
+	ConfigType create(int arg0, ConfigTypeList arg1);
 }

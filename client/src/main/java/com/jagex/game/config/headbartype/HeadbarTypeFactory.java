@@ -13,8 +13,8 @@ public abstract class HeadbarTypeFactory {
 	@ObfuscatedName("uy.n")
 	public SoftLruHashTable spriteCache = new SoftLruHashTable(20);
 
-	public HeadbarTypeFactory(Js5 configClient) {
-		this.configClient = configClient;
+	public HeadbarTypeFactory(Js5 arg0) {
+		this.configClient = arg0;
 	}
 
 	@ObfuscatedName("uy.e(I)V")

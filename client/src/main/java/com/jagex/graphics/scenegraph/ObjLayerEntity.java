@@ -10,11 +10,11 @@ import deob.ObfuscatedName;
 @ObfuscatedName("ast")
 public abstract class ObjLayerEntity extends GraphEntity {
 
-	public ObjLayerEntity(Scene scene, int x, int y, int z, int level, int occludeLevel) {
-		super(scene);
-		this.level = (byte) level;
-		this.occludeLevel = (byte) occludeLevel;
-		this.method10531(new Vector3((float) x, (float) y, (float) z));
+	public ObjLayerEntity(Scene arg0, int arg1, int arg2, int arg3, int arg4, int arg5) {
+		super(arg0);
+		this.level = (byte) arg4;
+		this.occludeLevel = (byte) arg5;
+		this.method10531(new Vector3((float) arg1, (float) arg2, (float) arg3));
 	}
 
 	@ObfuscatedName("ast.gy([Lakf;S)I")
@@ -24,7 +24,7 @@ public abstract class ObjLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("ast.ga(Ldh;S)Z")
-	public boolean isOccluded(Toolkit toolkit) {
+	public boolean isOccluded(Toolkit arg0) {
 		Vector3 var2 = this.getTransform().trans;
 		PrimaryLayerEntityList var3 = this.scene.getEntities(this.occludeLevel, (int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size);
 		return var3 != null && var3.field7057.raised ? this.scene.occlusionManager.visible(this.occludeLevel, (int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size, var3.field7057.overlayHeight() + this.overlayHeight()) : this.scene.occlusionManager.tileVisible(this.occludeLevel, (int) var2.x >> this.scene.size, (int) var2.z >> this.scene.size);
@@ -42,7 +42,7 @@ public abstract class ObjLayerEntity extends GraphEntity {
 	}
 
 	@ObfuscatedName("ast.fq(Ldh;Lalh;IIIZB)V")
-	public final void mergeNormals(Toolkit toolkit, GraphEntity entity, int arg2, int arg3, int arg4, boolean arg5) {
+	public final void mergeNormals(Toolkit arg0, GraphEntity arg1, int arg2, int arg3, int arg4, boolean arg5) {
 		throw new IllegalStateException();
 	}
 
