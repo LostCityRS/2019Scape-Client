@@ -17,87 +17,87 @@ public class Polynomial {
 	}
 
 	@ObfuscatedName("vi.e([FIFZFZ[FB)I")
-	public static int polyZeroes(float[] arg0, int arg1, float arg2, boolean arg3, float arg4, boolean arg5, float[] arg6) {
-		float var7 = 0.0F;
-		for (int var8 = 0; var8 < arg1 + 1; var8++) {
-			var7 += Math.abs(arg0[var8]);
+	public static int polyZeroes(float[] poly, int deg, float a, boolean aClosed, float b, boolean bClosed, float[] roots) {
+		float f = 0.0F;
+		for (int var8 = 0; var8 < deg + 1; var8++) {
+			f += Math.abs(poly[var8]);
 		}
-		float var9 = (Math.abs(arg2) + Math.abs(arg4)) * (float) (arg1 + 1) * CurveEvaluator.EPSILON;
-		if (var7 <= var9) {
+		float tolerance = (Math.abs(a) + Math.abs(b)) * (float) (deg + 1) * CurveEvaluator.EPSILON;
+		if (f <= tolerance) {
 			return -1;
 		}
-		float[] var10 = new float[arg1 + 1];
-		for (int var11 = 0; var11 < arg1 + 1; var11++) {
-			var10[var11] = 1.0F / var7 * arg0[var11];
+		float[] coefficients = new float[deg + 1];
+		for (int nr = 0; nr < deg + 1; nr++) {
+			coefficients[nr] = 1.0F / f * poly[nr];
 		}
-		while (Math.abs(var10[arg1]) < var9) {
-			arg1--;
+		while (Math.abs(coefficients[deg]) < tolerance) {
+			deg--;
 		}
 		int var12 = 0;
-		if (arg1 == 0) {
+		if (deg == 0) {
 			return var12;
-		} else if (arg1 == 1) {
-			arg6[0] = -var10[0] / var10[1];
-			boolean var13 = arg3 ? arg2 < arg6[0] + var9 : arg2 < arg6[0] - var9;
-			boolean var14 = arg5 ? arg4 > arg6[0] - var9 : arg4 > arg6[0] + var9;
-			int var15 = var13 && var14 ? 1 : 0;
-			if (var15 > 0) {
-				if (arg3 && arg6[0] < arg2) {
-					arg6[0] = arg2;
-				} else if (arg5 && arg6[0] > arg4) {
-					arg6[0] = arg4;
+		} else if (deg == 1) {
+			roots[0] = -coefficients[0] / coefficients[1];
+			boolean leftOk = aClosed ? a < roots[0] + tolerance : a < roots[0] - tolerance;
+			boolean rightOk = bClosed ? b > roots[0] - tolerance : b > roots[0] + tolerance;
+			int nr = leftOk && rightOk ? 1 : 0;
+			if (nr > 0) {
+				if (aClosed && roots[0] < a) {
+					roots[0] = a;
+				} else if (bClosed && roots[0] > b) {
+					roots[0] = b;
 				}
 			}
-			return var15;
+			return nr;
 		} else {
-			Polynomial var16 = new Polynomial(var10, arg1);
-			float[] var17 = new float[arg1 + 1];
-			for (int var18 = 1; var18 <= arg1; var18++) {
-				var17[var18 - 1] = var10[var18] * (float) var18;
+			Polynomial polynomial = new Polynomial(coefficients, deg);
+			float[] d = new float[deg + 1];
+			for (int i = 1; i <= deg; i++) {
+				d[i - 1] = coefficients[i] * (float) i;
 			}
-			float[] var19 = new float[arg1 + 1];
-			int var20 = polyZeroes(var17, arg1 - 1, arg2, false, arg4, false, var19);
-			if (var20 == -1) {
+			float[] dr = new float[deg + 1];
+			int ndr = polyZeroes(d, deg - 1, a, false, b, false, dr);
+			if (ndr == -1) {
 				return 0;
 			}
-			boolean var21 = false;
-			float var22 = 0.0F;
-			float var23 = 0.0F;
-			float var24 = 0.0F;
-			for (int var25 = 0; var25 <= var20; var25++) {
-				if (var12 > arg1) {
+			boolean skip = false;
+			float pe = 0.0F;
+			float ps = 0.0F;
+			float end = 0.0F;
+			for (int i = 0; i <= ndr; i++) {
+				if (var12 > deg) {
 					return var12;
 				}
-				float var26;
+				float start;
 				float var27;
-				if (var25 == 0) {
-					var26 = arg2;
-					var27 = horner1(var10, arg1, arg2);
-					if (Math.abs(var27) <= var9 && arg3) {
-						arg6[var12++] = arg2;
+				if (i == 0) {
+					start = a;
+					var27 = horner1(coefficients, deg, a);
+					if (Math.abs(var27) <= tolerance && aClosed) {
+						roots[var12++] = a;
 					}
 				} else {
-					var26 = var24;
-					var27 = var22;
+					start = end;
+					var27 = pe;
 				}
-				if (var20 == var25) {
-					var24 = arg4;
-					var21 = false;
+				if (ndr == i) {
+					end = b;
+					skip = false;
 				} else {
-					var24 = var19[var25];
+					end = dr[i];
 				}
-				var22 = horner1(var10, arg1, var24);
-				if (var21) {
-					var21 = false;
-				} else if (Math.abs(var22) < var9) {
-					if (var20 != var25 || arg5) {
-						arg6[var12++] = var24;
-						var21 = true;
+				pe = horner1(coefficients, deg, end);
+				if (skip) {
+					skip = false;
+				} else if (Math.abs(pe) < tolerance) {
+					if (ndr != i || bClosed) {
+						roots[var12++] = end;
+						skip = true;
 					}
-				} else if (var27 < 0.0F && var22 > 0.0F || var27 > 0.0F && var22 < 0.0F) {
-					arg6[var12++] = zeroin(var16, var26, var24, 0.0F);
-					if (var12 > 1 && arg6[var12 - 2] >= arg6[var12 - 1] - var9) {
-						arg6[var12 - 2] = (arg6[var12 - 2] + arg6[var12 - 1]) * 0.5F;
+				} else if (var27 < 0.0F && pe > 0.0F || var27 > 0.0F && pe < 0.0F) {
+					roots[var12++] = zeroin(polynomial, start, end, 0.0F);
+					if (var12 > 1 && roots[var12 - 2] >= roots[var12 - 1] - tolerance) {
+						roots[var12 - 2] = (roots[var12 - 2] + roots[var12 - 1]) * 0.5F;
 						var12--;
 					}
 				}
@@ -149,7 +149,7 @@ public class Polynomial {
 				var5 = var9;
 				var9 = var4;
 			}
-			float var13 = CurveEvaluator.field1288 * Math.abs(arg2) + arg3 * 0.5F;
+			float var13 = CurveEvaluator.DOUBLE_EPSILON * Math.abs(arg2) + arg3 * 0.5F;
 			float var14 = (var6 - arg2) * 0.5F;
 			boolean var15 = Math.abs(var14) > var13 && var5 != 0.0F;
 			if (var15) {

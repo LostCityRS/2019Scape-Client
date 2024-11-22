@@ -11,173 +11,173 @@ public class CurveEvaluator {
 	public static final float EPSILON = Math.ulp(1.0F);
 
 	@ObfuscatedName("da.f")
-	public static final float field1288 = EPSILON * 2.0F;
+	public static final float DOUBLE_EPSILON = EPSILON * 2.0F;
 
 	public CurveEvaluator() throws Throwable {
 		throw new Error();
 	}
 
 	@ObfuscatedName("ub.e(Ldn;FI)F")
-	public static float method9083(Curve arg0, float arg1) {
-		if (arg0 == null || arg0.method2015() == 0) {
+	public static float evaluate(Curve curve, float time) {
+		if (curve == null || curve.getKeyframeCount() == 0) {
 			return 0.0F;
-		} else if (arg1 < (float) arg0.field1439[0].field1663) {
-			return TransformInfinityType.field1581 == arg0.field1437 ? arg0.field1439[0].field1660 : method7313(arg0, arg1, true);
-		} else if (arg1 > (float) arg0.field1439[arg0.method2015() - 1].field1663) {
-			return TransformInfinityType.field1581 == arg0.field1438 ? arg0.field1439[arg0.method2015() - 1].field1660 : method7313(arg0, arg1, false);
-		} else if (arg0.field1444) {
-			return arg0.field1439[0].field1660;
+		} else if (time < (float) curve.keyframes[0].time) {
+			return TransformInfinityType.CONSTANT == curve.preInfinityType ? curve.keyframes[0].value : evaluateInfinity(curve, time, true);
+		} else if (time > (float) curve.keyframes[curve.getKeyframeCount() - 1].time) {
+			return TransformInfinityType.CONSTANT == curve.postInfinityType ? curve.keyframes[curve.getKeyframeCount() - 1].value : evaluateInfinity(curve, time, false);
+		} else if (curve.field1444) {
+			return curve.keyframes[0].value;
 		} else {
-			KeyFrame var2 = arg0.method2022(arg1);
+			KeyFrame keyframe = curve.getKeyframeByTime(time);
 			boolean var3 = false;
 			boolean var4 = false;
-			if (var2 == null) {
+			if (keyframe == null) {
 				return 0.0F;
 			}
-			if ((double) var2.field1664 == 0.0D && (double) var2.field1659 == 0.0D) {
+			if ((double) keyframe.tanOutX == 0.0D && (double) keyframe.tanOutY == 0.0D) {
 				var3 = true;
-			} else if (var2.field1664 == Float.MAX_VALUE && var2.field1659 == Float.MAX_VALUE) {
+			} else if (keyframe.tanOutX == Float.MAX_VALUE && keyframe.tanOutY == Float.MAX_VALUE) {
 				var4 = true;
-			} else if (var2.field1665 == null) {
+			} else if (keyframe.next == null) {
 				var3 = true;
-			} else if (arg0.field1445) {
+			} else if (curve.field1445) {
 				float[] var5 = new float[4];
 				float[] var6 = new float[4];
-				var5[0] = var2.field1663;
-				var6[0] = var2.field1660;
-				var5[1] = var2.field1664 * 0.33333334F + var5[0];
-				var6[1] = var2.field1659 * 0.33333334F + var6[0];
-				var5[3] = var2.field1665.field1663;
-				var6[3] = var2.field1665.field1660;
-				var5[2] = var5[3] - var2.field1665.field1661 * 0.33333334F;
-				var6[2] = var6[3] - var2.field1665.field1662 * 0.33333334F;
-				if (arg0.field1435) {
-					method14845(arg0, var5, var6);
+				var5[0] = keyframe.time;
+				var6[0] = keyframe.value;
+				var5[1] = keyframe.tanOutX * 0.33333334F + var5[0];
+				var6[1] = keyframe.tanOutY * 0.33333334F + var6[0];
+				var5[3] = keyframe.next.time;
+				var6[3] = keyframe.next.value;
+				var5[2] = var5[3] - keyframe.next.tanInX * 0.33333334F;
+				var6[2] = var6[3] - keyframe.next.tanInY * 0.33333334F;
+				if (curve.useBezierInterpolation) {
+					method14845(curve, var5, var6);
 				} else {
-					method16639(arg0, var5, var6);
+					method16639(curve, var5, var6);
 				}
-				arg0.field1445 = false;
+				curve.field1445 = false;
 			}
 			if (var3) {
-				return var2.field1660;
+				return keyframe.value;
 			} else if (var4) {
-				return (float) var2.field1663 == arg1 || var2.field1665 == null ? var2.field1660 : var2.field1665.field1660;
-			} else if (arg0.field1435) {
-				return method13878(arg0, arg1);
+				return (float) keyframe.time == time || keyframe.next == null ? keyframe.value : keyframe.next.value;
+			} else if (curve.useBezierInterpolation) {
+				return method13878(curve, time);
 			} else {
-				return method5372(arg0, arg1);
+				return hermite(curve, time);
 			}
 		}
 	}
 
 	@ObfuscatedName("zt.n(Ldn;FI)F")
-	public static float method13878(Curve arg0, float arg1) {
-		if (arg0 == null) {
+	public static float method13878(Curve curve, float time) {
+		if (curve == null) {
 			return 0.0F;
 		}
-		float var2;
-		if (arg0.field1441 == arg1) {
-			var2 = 0.0F;
-		} else if (arg0.field1443 == arg1) {
-			var2 = 1.0F;
+		float s;
+		if (curve.field1441 == time) {
+			s = 0.0F;
+		} else if (curve.field1443 == time) {
+			s = 1.0F;
 		} else {
-			var2 = (arg1 - arg0.field1441) / (arg0.field1443 - arg0.field1441);
+			s = (time - curve.field1441) / (curve.field1443 - curve.field1441);
 		}
-		float var3;
-		if (arg0.field1440) {
-			var3 = var2;
+		float t;
+		if (curve.field1440) {
+			t = s;
 		} else {
-			float[] var4 = new float[] { arg0.field1449[0] - var2, arg0.field1449[1], arg0.field1449[2], arg0.field1449[3] };
-			float[] var5 = new float[5];
-			int var6 = Polynomial.polyZeroes(var4, 3, 0.0F, true, 1.0F, true, var5);
-			if (var6 == 1) {
-				var3 = var5[0];
+			float[] poly = new float[] { curve.field1449[0] - s, curve.field1449[1], curve.field1449[2], curve.field1449[3] };
+			float[] roots = new float[5];
+			int numRoots = Polynomial.polyZeroes(poly, 3, 0.0F, true, 1.0F, true, roots);
+			if (numRoots == 1) {
+				t = roots[0];
 			} else {
-				var3 = 0.0F;
+				t = 0.0F;
 			}
 		}
-		return ((arg0.field1442[3] * var3 + arg0.field1442[2]) * var3 + arg0.field1442[1]) * var3 + arg0.field1442[0];
+		return ((curve.field1442[3] * t + curve.field1442[2]) * t + curve.field1442[1]) * t + curve.field1442[0];
 	}
 
 	@ObfuscatedName("km.m(Ldn;FI)F")
-	public static float method5372(Curve arg0, float arg1) {
-		if (arg0 == null) {
+	public static float hermite(Curve curve, float time) {
+		if (curve == null) {
 			return 0.0F;
 		} else {
-			float var2 = arg1 - arg0.field1441;
-			return ((arg0.field1449[0] * var2 + arg0.field1449[1]) * var2 + arg0.field1449[2]) * var2 + arg0.field1449[3];
+			float var2 = time - curve.field1441;
+			return ((curve.field1449[0] * var2 + curve.field1449[1]) * var2 + curve.field1449[2]) * var2 + curve.field1449[3];
 		}
 	}
 
 	@ObfuscatedName("qo.k(Ldn;FZI)F")
-	public static float method7313(Curve arg0, float arg1, boolean arg2) {
+	public static float evaluateInfinity(Curve curve, float time, boolean preInfinity) {
 		float var3 = 0.0F;
-		if (arg0 == null || arg0.method2015() == 0) {
+		if (curve == null || curve.getKeyframeCount() == 0) {
 			return var3;
 		}
-		float var4 = (float) arg0.field1439[0].field1663;
-		float var5 = (float) arg0.field1439[arg0.method2015() - 1].field1663;
-		float var6 = var5 - var4;
-		if ((double) var6 == 0.0D) {
-			return arg0.field1439[0].field1660;
+		float firstKeyframeTime = (float) curve.keyframes[0].time;
+		float lastKeyframeTime = (float) curve.keyframes[curve.getKeyframeCount() - 1].time;
+		float range = lastKeyframeTime - firstKeyframeTime;
+		if ((double) range == 0.0D) {
+			return curve.keyframes[0].value;
 		}
 		float var7 = 0.0F;
 		float var8;
-		if (arg1 > var5) {
-			var8 = (arg1 - var5) / var6;
+		if (time > lastKeyframeTime) {
+			var8 = (time - lastKeyframeTime) / range;
 		} else {
-			var8 = (arg1 - var4) / var6;
+			var8 = (time - firstKeyframeTime) / range;
 		}
 		double var9 = (double) var8;
 		float var11 = Math.abs((float) ((double) var8 - var9));
-		float var12 = var6 * var11;
+		float var12 = range * var11;
 		double var13 = Math.abs(var9 + 1.0D);
 		double var15 = var13 / 2.0D;
 		double var17 = (double) var15;
 		float var19 = (float) (var15 - var17);
-		if (arg2) {
-			if (TransformInfinityType.field1580 == arg0.field1437) {
+		if (preInfinity) {
+			if (TransformInfinityType.OSCILLATE == curve.preInfinityType) {
 				if ((double) var19 == 0.0D) {
-					var12 = var5 - var12;
+					var12 = lastKeyframeTime - var12;
 				} else {
-					var12 += var4;
+					var12 += firstKeyframeTime;
 				}
-			} else if (TransformInfinityType.field1582 == arg0.field1437 || TransformInfinityType.field1583 == arg0.field1437) {
-				var12 = var5 - var12;
-			} else if (TransformInfinityType.field1585 == arg0.field1437) {
-				float var20 = var4 - arg1;
-				float var21 = arg0.field1439[0].field1661;
-				float var22 = arg0.field1439[0].field1662;
-				float var23 = arg0.field1439[0].field1660;
+			} else if (TransformInfinityType.CYCLE == curve.preInfinityType || TransformInfinityType.CYCLE_RELATIVE == curve.preInfinityType) {
+				var12 = lastKeyframeTime - var12;
+			} else if (TransformInfinityType.LINEAR == curve.preInfinityType) {
+				float var20 = firstKeyframeTime - time;
+				float var21 = curve.keyframes[0].tanInX;
+				float var22 = curve.keyframes[0].tanInY;
+				float var23 = curve.keyframes[0].value;
 				if ((double) var21 != 0.0D) {
 					var23 -= var20 * var22 / var21;
 				}
 				return var23;
 			}
-		} else if (TransformInfinityType.field1580 == arg0.field1438) {
+		} else if (TransformInfinityType.OSCILLATE == curve.postInfinityType) {
 			if ((double) var19 == 0.0D) {
-				var12 += var4;
+				var12 += firstKeyframeTime;
 			} else {
-				var12 = var5 - var12;
+				var12 = lastKeyframeTime - var12;
 			}
-		} else if (TransformInfinityType.field1582 == arg0.field1438 || TransformInfinityType.field1583 == arg0.field1438) {
-			var12 += var4;
-		} else if (TransformInfinityType.field1585 == arg0.field1438) {
-			float var24 = arg1 - var5;
-			float var25 = arg0.field1439[arg0.method2015() - 1].field1664;
-			float var26 = arg0.field1439[arg0.method2015() - 1].field1659;
-			float var27 = arg0.field1439[arg0.method2015() - 1].field1660;
+		} else if (TransformInfinityType.CYCLE == curve.postInfinityType || TransformInfinityType.CYCLE_RELATIVE == curve.postInfinityType) {
+			var12 += firstKeyframeTime;
+		} else if (TransformInfinityType.LINEAR == curve.postInfinityType) {
+			float var24 = time - lastKeyframeTime;
+			float var25 = curve.keyframes[curve.getKeyframeCount() - 1].tanOutX;
+			float var26 = curve.keyframes[curve.getKeyframeCount() - 1].tanOutY;
+			float var27 = curve.keyframes[curve.getKeyframeCount() - 1].value;
 			if ((double) var25 != 0.0D) {
 				var27 += var24 * var26 / var25;
 			}
 			return var27;
 		}
-		float var28 = method9083(arg0, var12);
-		if (arg2 && TransformInfinityType.field1583 == arg0.field1437) {
-			float var29 = arg0.field1439[arg0.method2015() - 1].field1660 - arg0.field1439[0].field1660;
+		float var28 = evaluate(curve, var12);
+		if (preInfinity && TransformInfinityType.CYCLE_RELATIVE == curve.preInfinityType) {
+			float var29 = curve.keyframes[curve.getKeyframeCount() - 1].value - curve.keyframes[0].value;
 			var28 = (float) ((double) var28 - (double) var29 * var13);
-		} else if (!arg2 && TransformInfinityType.field1583 == arg0.field1438) {
-			float var30 = arg0.field1439[arg0.method2015() - 1].field1660 - arg0.field1439[0].field1660;
+		} else if (!preInfinity && TransformInfinityType.CYCLE_RELATIVE == curve.postInfinityType) {
+			float var30 = curve.keyframes[curve.getKeyframeCount() - 1].value - curve.keyframes[0].value;
 			var28 = (float) ((double) var30 * var13 + (double) var28);
 		}
 		return var28;
