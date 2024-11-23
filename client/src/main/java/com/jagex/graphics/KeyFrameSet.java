@@ -31,7 +31,7 @@ public class KeyFrameSet extends SecondaryNode {
 	public int field12313;
 
 	@ObfuscatedName("ard.v")
-	public AnimBase field12317;
+	public AnimBase base;
 
 	@ObfuscatedName("ard.o")
 	public int field12319 = 0;
@@ -72,42 +72,42 @@ public class KeyFrameSet extends SecondaryNode {
 		boolean var3 = true;
 		Packet var4 = new Packet(this.field12314);
 		int var5 = var4.g1();
-		int var6 = var4.g2();
+		int baseGroupId = var4.g2();
 		Js5 var7 = field8302;
 		boolean var8;
 		synchronized (field8302) {
-			var8 = var3 & field8302.loadFile(var6);
+			var8 = var3 & field8302.loadFile(baseGroupId);
 		}
 		if (!var8) {
 			return false;
 		}
 		Js5 var10 = field7411;
 		synchronized (field7411) {
-			this.field12317 = new AnimBase(var6, field8302.fetchFile(var6));
-			this.method19379(var4, var5);
+			this.base = new AnimBase(baseGroupId, field8302.fetchFile(baseGroupId));
+			this.decode(var4, var5);
 			this.field12314 = null;
 			return true;
 		}
 	}
 
 	@ObfuscatedName("ard.m(Lalw;IB)V")
-	public void method19379(Packet arg0, int arg1) {
+	public void decode(Packet arg0, int arg1) {
 		this.field12316 = arg0.g2();
 		this.field12313 = arg0.g2();
 		this.field12319 = arg0.g1();
 		int var3 = arg0.g2();
-		this.field12322 = new Curve[this.field12317.field11313][];
+		this.field12322 = new Curve[this.base.field11313][];
 		for (int var4 = 0; var4 < var3; var4++) {
 			TransformType var5 = TransformType.method19197(arg0.g1());
 			int var6 = arg0.gSmart1or2s();
 			TransformComponentType var7 = TransformComponentType.method8644(arg0.g1());
-			Curve var8 = new Curve();
-			var8.method2036(arg0, arg1);
+			Curve curve = new Curve();
+			curve.decode(arg0, arg1);
 			int var9 = var5.method1674();
 			if (this.field12322[var6] == null) {
 				this.field12322[var6] = new Curve[var9];
 			}
-			this.field12322[var6][var7.method1421()] = var8;
+			this.field12322[var6][var7.method1421()] = curve;
 			if (TransformType.field1297 == var5) {
 				this.field12318 = true;
 			} else if (TransformType.field1291 == var5) {

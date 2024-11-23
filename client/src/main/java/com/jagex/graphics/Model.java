@@ -386,7 +386,7 @@ public abstract class Model {
 	public final void method1705(KeyFrameSet arg0, int arg1, int arg2, boolean arg3) {
 		this.method1702();
 		if (this.method1716()) {
-			AnimBase var5 = arg0.field12317;
+			AnimBase var5 = arg0.base;
 			this.method1713(var5, arg0, arg1, arg2, arg3, null, false, 65535, null);
 			this.method1776();
 			this.method1703();
@@ -471,11 +471,11 @@ public abstract class Model {
 			this.method1703();
 			return;
 		}
-		AnimBase var7 = arg0.field12317;
+		AnimBase var7 = arg0.base;
 		int var8 = arg1 % (arg0.method19384() + 1);
 		this.method1713(var7, arg0, var8, 0, arg5, arg4, false, 65535, null);
 		this.applyTransform(0, new int[0], 0, 0, 0, 0, arg5);
-		AnimBase var9 = arg2.field12317;
+		AnimBase var9 = arg2.base;
 		int var10 = arg3 % (arg2.method19384() + 1);
 		this.method1713(var9, arg2, var10, 0, arg5, arg4, true, 65535, null);
 		this.method1776();
@@ -496,7 +496,7 @@ public abstract class Model {
 			this.method1703();
 			return;
 		}
-		AnimBase var11 = arg0.field12317;
+		AnimBase var11 = arg0.base;
 		int var12 = arg1 % (arg0.method19384() + 1);
 		this.method1713(var11, arg0, var12, 0, arg9, arg8, false, 65535, null);
 		AnimFrame var13 = arg2.field12327[arg3];
@@ -538,7 +538,7 @@ public abstract class Model {
 		}
 		this.method1712(var12, var11, var13, arg4, arg5, 0, arg8, false, arg9, 65535, null);
 		this.applyTransform(0, new int[0], 0, 0, 0, 0, arg9);
-		AnimBase var14 = arg6.field12317;
+		AnimBase var14 = arg6.base;
 		int var15 = arg7 % (arg6.method19384() + 1);
 		this.method1713(var14, arg6, var15, 0, arg9, arg8, true, 65535, null);
 		this.method1776();
@@ -747,27 +747,27 @@ public abstract class Model {
 					}
 					int var21 = arg0.field11314[var12];
 					for (int var22 = 0; var22 < arg1.field12322[var12].length; var22++) {
-						Curve var23 = arg1.field12322[var12][var22];
-						if (var23 != null && (var21 != 7 || var22 < 0 || var22 >= 3)) {
-							float var24 = var23.method2017(arg2);
+						Curve curve = arg1.field12322[var12][var22];
+						if (curve != null && (var21 != 7 || var22 < 0 || var22 >= 3)) {
+							float value = curve.getValue(arg2);
 							switch(var22) {
 								case 0:
-									var14 = var24;
+									var14 = value;
 									break;
 								case 1:
-									var15 = var24;
+									var15 = value;
 									break;
 								case 2:
-									var16 = var24;
+									var16 = value;
 									break;
 								case 3:
-									var14 = var24;
+									var14 = value;
 									break;
 								case 4:
-									var15 = var24;
+									var15 = value;
 									break;
 								case 5:
-									var16 = var24;
+									var16 = value;
 							}
 						}
 					}

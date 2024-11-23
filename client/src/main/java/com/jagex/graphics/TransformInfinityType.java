@@ -8,19 +8,19 @@ import deob.ObfuscatedName;
 public class TransformInfinityType implements SerializableEnum {
 
 	@ObfuscatedName("db.e")
-	public static final TransformInfinityType field1581 = new TransformInfinityType(0, 0);
+	public static final TransformInfinityType CONSTANT = new TransformInfinityType(0, 0);
 
 	@ObfuscatedName("db.n")
-	public static final TransformInfinityType field1585 = new TransformInfinityType(1, 1);
+	public static final TransformInfinityType LINEAR = new TransformInfinityType(1, 1);
 
 	@ObfuscatedName("db.m")
-	public static final TransformInfinityType field1582 = new TransformInfinityType(2, 2);
+	public static final TransformInfinityType CYCLE = new TransformInfinityType(2, 2);
 
 	@ObfuscatedName("db.k")
-	public static final TransformInfinityType field1583 = new TransformInfinityType(3, 3);
+	public static final TransformInfinityType CYCLE_RELATIVE = new TransformInfinityType(3, 3);
 
 	@ObfuscatedName("db.f")
-	public static final TransformInfinityType field1580 = new TransformInfinityType(4, 4);
+	public static final TransformInfinityType OSCILLATE = new TransformInfinityType(4, 4);
 
 	@ObfuscatedName("db.w")
 	public final int field1584;
@@ -30,7 +30,7 @@ public class TransformInfinityType implements SerializableEnum {
 
 	@ObfuscatedName("uk.e(B)[Ldb;")
 	public static TransformInfinityType[] method9164() {
-		return new TransformInfinityType[] { field1581, field1585, field1582, field1583, field1580 };
+		return new TransformInfinityType[] {CONSTANT, LINEAR, CYCLE, CYCLE_RELATIVE, OSCILLATE};
 	}
 
 	public TransformInfinityType(int arg0, int arg1) {
@@ -44,11 +44,11 @@ public class TransformInfinityType implements SerializableEnum {
 	}
 
 	@ObfuscatedName("al.m(IB)Ldb;")
-	public static TransformInfinityType method713(int arg0) {
-		TransformInfinityType var1 = (TransformInfinityType) SerializableEnums.decode((SerializableEnum[]) method9164(), arg0);
-		if (var1 == null) {
-			var1 = field1581;
+	public static TransformInfinityType getByValue(int value) {
+		TransformInfinityType type = (TransformInfinityType) SerializableEnums.decode((SerializableEnum[]) method9164(), value);
+		if (type == null) {
+			type = CONSTANT;
 		}
-		return var1;
+		return type;
 	}
 }
